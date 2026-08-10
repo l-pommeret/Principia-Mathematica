@@ -21,14 +21,18 @@
       "audit_path": "reviews/Q201-review.md",
       "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·01 and ✱2·02",
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "aristotle_project_id": "305757ee-c756-4388-9e29-d2513e160f0d",
       "aristotle_task_id": "a73c6bbe-d763-4b00-8246-909af1b321cd",
       "aristotle_latest_task_id": "a73c6bbe-d763-4b00-8246-909af1b321cd",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_request_path": "aristotle/Q201.md",
-      "aristotle_request_sha256": "3fa26fcf0f7a65605e36097eaa929ad7c07bb980b04182a2fbb950a57f1d9033"
+      "aristotle_request_sha256": "3fa26fcf0f7a65605e36097eaa929ad7c07bb980b04182a2fbb950a57f1d9033",
+      "aristotle_latest_task_name": "Formalize Q201.md",
+      "aristotle_latest_task_created": "6 mins ago",
+      "aristotle_result_path": "aristotle/results/Q201-final.tar.gz",
+      "aristotle_result_sha256": "4bc27ab8bfe7f84c9c2fedd9778997f5a37668f1d7f83d47e6998b4d1210aed5"
     }
   },
   "items": {
@@ -51,6 +55,14 @@
     "PM1:✱1·3": {
       "batch": "PM1-STAR1-PILOT-01",
       "status": "kernel-checked"
+    },
+    "PM1:✱2·01": {
+      "batch": "PM1-STAR2-Q201",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·02": {
+      "batch": "PM1-STAR2-Q201",
+      "status": "awaiting-ci"
     }
   }
 }
