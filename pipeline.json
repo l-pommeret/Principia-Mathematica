@@ -12,14 +12,26 @@
   },
   "questions": {
     "Q200": {
-      "canonical_ids": ["PM-META:detach"],
+      "canonical_ids": [
+        "PM-META:detach"
+      ],
       "source": "PM volume I, first edition, ✱1·1 and ✱1·11",
       "prompt_path": "aristotle/Q200.md",
       "audit_path": "reviews/Q200-review.md",
       "audit_status": "A",
       "lean_scope": "metalinguistic case distinction combining exactly ✱1·1 and ✱1·11",
-      "depends_on": ["PM1:✱1·1", "PM1:✱1·11"],
-      "aristotle_status": "not-submitted"
+      "depends_on": [
+        "PM1:✱1·1",
+        "PM1:✱1·11"
+      ],
+      "aristotle_status": "submitted",
+      "aristotle_project_id": "3b8adbc4-3463-4dac-908f-1a59b224ab72",
+      "aristotle_task_id": "f347de50-05d4-47df-a4bf-7612644c5d41",
+      "aristotle_latest_task_id": "f347de50-05d4-47df-a4bf-7612644c5d41",
+      "aristotle_latest_task_status": "QUEUED",
+      "aristotle_remote_status": "QUEUED",
+      "aristotle_request_path": "aristotle/Q200.md",
+      "aristotle_request_sha256": "732a797ee1b85d75a79db3bfa859da84c51262117f7e1f31e19726ec9d5c8e77"
     },
     "Q201": {
       "canonical_ids": [
