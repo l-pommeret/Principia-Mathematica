@@ -74,7 +74,13 @@ def step_blocks(source: str) -> list[str]:
             current = None
     if current:
         blocks.append(current)
-    return ["\n".join(lines) for lines in blocks]
+    rendered = ["\n".join(lines) for lines in blocks]
+    if rendered:
+        return rendered
+    # Short demonstrations are often printed entirely in the reference
+    # bracket following the proposition, without a separate `Dem.` block.
+    return [f"⊢ . {match.group(1).strip()}"
+            for match in re.finditer(r"\[([^\]]+)\]", source)]
 
 
 def parse_step(block: str, volume: int = 1, current_item: str | None = None) -> dict:

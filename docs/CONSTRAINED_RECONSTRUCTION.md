@@ -35,6 +35,12 @@ historical locus. Family aliases such as `Transp` remain explicit finite
 families rather than being silently resolved to whichever theorem happens to
 close the goal.
 
+Rules that PM declares globally implicit may be supplied separately with
+`--global-convention`. They enter the whitelist but are not misreported as
+literal bracket citations. This covers, for example, silently used inference
+rules ✱1·1/✱1·11 and later ✱9·12; the choice must come from an audited source
+convention at the current locus.
+
 Substitutions are retained as first-class audit data. In the elementary
 fragment they may be implemented by instantiation of Lean schema parameters,
 as documented in `docs/SUBSTITUTION.md`; the manifest nevertheless records the

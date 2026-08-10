@@ -52,6 +52,7 @@ def classify_reconstruction(manifest: dict, used_pm_items: list[str]) -> dict:
         "used_pm_items": sorted(used),
         "added_beyond_print": extra,
         "allowed_but_unused": unused_allowed,
+        "global_conventions": list(manifest.get("global_conventions", [])),
         "printed_event_coverage": event_coverage,
         "uncovered_printed_events": uncovered,
     }

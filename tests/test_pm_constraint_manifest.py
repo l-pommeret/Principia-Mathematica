@@ -76,6 +76,17 @@ class ConstraintManifestTests(unittest.TestCase):
         manifest = compile_manifest(skeleton, self.registry)
         self.assertEqual(manifest["substitutions"], [{"step": 1, "printed": "∼q/q"}])
 
+    def test_reviewed_global_convention_is_allowed_but_not_a_printed_event(self):
+        skeleton = parse_demonstration(
+            "✱2·45. ⊢ : p [✱2·05]", current_item="PM1:✱2·45"
+        )
+        manifest = compile_manifest(
+            skeleton, self.registry, global_conventions=["PM1:✱1·2"]
+        )
+        self.assertIn("PM1:✱1·2", manifest["allowed_pm_items"])
+        self.assertEqual(manifest["global_conventions"], ["PM1:✱1·2"])
+        self.assertEqual(len(manifest["proof_permissions"]), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

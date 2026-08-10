@@ -9,6 +9,17 @@ import pm_proof_skeleton as skeleton
 
 
 class PMProofSkeletonTests(unittest.TestCase):
+    def test_inline_bracket_is_a_demonstration_step(self):
+        result = skeleton.parse_demonstration(
+            "✱2·45. ⊢ : ∼(p ∨ q) . ⊃ . ∼p [✱2·2.Transp.]",
+            current_item="PM1:✱2·45",
+        )
+        self.assertEqual(len(result["steps"]), 1)
+        self.assertEqual(
+            [event["printed"] for event in result["steps"][0]["events"]],
+            ["✱2·2", "Transp"],
+        )
+
     def test_compressed_reference_expands_without_losing_printed_form(self):
         self.assertEqual(skeleton.expand_reference("✱4·84·85"),
                          ["PM1:✱4·84", "PM1:✱4·85"])

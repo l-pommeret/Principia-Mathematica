@@ -80,14 +80,19 @@ def context_closure(roots: set[str], registry: dict[str, dict]) -> list[str]:
     return sorted(visited)
 
 
-def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool = True) -> dict:
+def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool = True,
+                     global_conventions: list[str] | None = None) -> dict:
     permissions = event_permissions(skeleton)
+    conventions = list(global_conventions or [])
+    if len(conventions) != len(set(conventions)):
+        raise ConstraintError("global conventions must be unique")
     printed_candidates = {
         candidate for permission in permissions for candidate in permission["candidates"]
     }
-    missing = sorted(candidate for candidate in printed_candidates if candidate not in registry)
+    all_candidates = printed_candidates | set(conventions)
+    missing = sorted(candidate for candidate in all_candidates if candidate not in registry)
     non_kernel = sorted(
-        candidate for candidate in printed_candidates
+        candidate for candidate in all_candidates
         if candidate in registry and registry[candidate].get("formal_status") != "kernel-checked"
     )
     unresolved = [
@@ -104,7 +109,7 @@ def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool 
             details.append("aliases require a current PM locus")
         raise ConstraintError("; ".join(details))
 
-    available = printed_candidates - set(missing) - set(non_kernel)
+    available = all_candidates - set(missing) - set(non_kernel)
     closure = context_closure(available, registry)
     declarations = {
         identifier: registry[identifier]["declaration"]
@@ -120,6 +125,7 @@ def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool 
         },
         "current_item": skeleton.get("current_item"),
         "proof_permissions": permissions,
+        "global_conventions": conventions,
         "allowed_pm_items": sorted(available),
         "allowed_lean_declarations": {
             identifier: declarations[identifier] for identifier in sorted(available)
@@ -147,12 +153,15 @@ def main() -> None:
     parser.add_argument("--volume", type=int, default=1)
     parser.add_argument("--metadata-dir", type=Path, default=Path("metadata/items"))
     parser.add_argument("--diagnostic", action="store_true", help="emit incomplete manifests")
+    parser.add_argument("--global-convention", action="append", default=[],
+                        help="reviewed implicit PM rule licensed at this locus")
     options = parser.parse_args()
     skeleton = parse_demonstration(
         options.source.read_text(encoding="utf-8"), options.volume, options.item
     )
     manifest = compile_manifest(
-        skeleton, load_item_registry(options.metadata_dir), strict=not options.diagnostic
+        skeleton, load_item_registry(options.metadata_dir), strict=not options.diagnostic,
+        global_conventions=options.global_convention,
     )
     print(json.dumps(manifest, ensure_ascii=False, sort_keys=True, indent=2))
 
