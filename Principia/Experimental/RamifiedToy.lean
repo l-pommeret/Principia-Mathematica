@@ -801,7 +801,8 @@ def eraseElementaryIndexed? : {order : Nat} →
   | _, .neg LegacyNegationMeaning.elementary inner => do
       let erased ← eraseElementaryIndexed? inner
       pure ⟨.neg erased.proposition, erased.order_eq⟩
-  | _, .disj LegacyDisjunctionMeaning.elementary left right => do
+  | 0, .disj (leftOrder := 0) (rightOrder := 0)
+      LegacyDisjunctionMeaning.elementary left right => do
       let erasedLeft ← eraseElementaryIndexed? left
       let erasedRight ← eraseElementaryIndexed? right
       have resultOrder : max 0 0 = 0 := rfl
