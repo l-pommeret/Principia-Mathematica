@@ -7,23 +7,50 @@
     "maximum_items": 5,
     "subagent_review_required": true
   },
-  "secrets": { "aristotle": "environment-only" },
+  "secrets": {
+    "aristotle": "environment-only"
+  },
   "questions": {
     "Q201": {
-      "canonical_ids": ["PM1:✱2·01", "PM1:✱2·02"],
+      "canonical_ids": [
+        "PM1:✱2·01",
+        "PM1:✱2·02"
+      ],
       "source": "PM volume I, first edition, pp. 104–105",
       "prompt_path": "aristotle/Q201.md",
       "audit_path": "reviews/Q201-review.md",
       "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·01 and ✱2·02",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "submitted",
+      "aristotle_project_id": "305757ee-c756-4388-9e29-d2513e160f0d",
+      "aristotle_task_id": "a73c6bbe-d763-4b00-8246-909af1b321cd",
+      "aristotle_latest_task_id": "a73c6bbe-d763-4b00-8246-909af1b321cd",
+      "aristotle_latest_task_status": "QUEUED",
+      "aristotle_remote_status": "QUEUED",
+      "aristotle_request_path": "aristotle/Q201.md",
+      "aristotle_request_sha256": "3fa26fcf0f7a65605e36097eaa929ad7c07bb980b04182a2fbb950a57f1d9033"
     }
   },
   "items": {
-    "PM1:✱1·01": { "batch": "PM1-STAR1-PILOT-01", "status": "kernel-checked" },
-    "PM1:✱1·1": { "batch": "PM1-STAR1-PILOT-01", "status": "kernel-checked" },
-    "PM1:✱1·11": { "batch": "PM1-STAR1-PILOT-01", "status": "kernel-checked" },
-    "PM1:✱1·2": { "batch": "PM1-STAR1-PILOT-01", "status": "kernel-checked" },
-    "PM1:✱1·3": { "batch": "PM1-STAR1-PILOT-01", "status": "kernel-checked" }
+    "PM1:✱1·01": {
+      "batch": "PM1-STAR1-PILOT-01",
+      "status": "kernel-checked"
+    },
+    "PM1:✱1·1": {
+      "batch": "PM1-STAR1-PILOT-01",
+      "status": "kernel-checked"
+    },
+    "PM1:✱1·11": {
+      "batch": "PM1-STAR1-PILOT-01",
+      "status": "kernel-checked"
+    },
+    "PM1:✱1·2": {
+      "batch": "PM1-STAR1-PILOT-01",
+      "status": "kernel-checked"
+    },
+    "PM1:✱1·3": {
+      "batch": "PM1-STAR1-PILOT-01",
+      "status": "kernel-checked"
+    }
   }
 }
