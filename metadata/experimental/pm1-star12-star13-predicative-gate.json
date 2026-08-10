@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "experimental-architecture-evidence-only",
+  "canonical_item_metadata": false,
+  "scope": ["PM1:✱12·1", "PM1:✱12·11", "PM1:✱13·01", "PM1:✱13·101"],
+  "source_witnesses": {
+    "canonical_scan": {
+      "uri": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+      "sha256": "52fd0ba446ab2dc97f08d6d4b16d67196edb6d991b0a0445e1ee4dbb57fa2eab",
+      "leaves": [
+        {"leaf": 196, "printed_page": 174, "sha256": "56e8d8644f7db3d93d3a29d208fd75a5fc346a11c11fff337211ec9194f4cb79"},
+        {"leaf": 197, "printed_page": 175, "sha256": "190549556ab8e2ca2c757baa0ed705181ade995cdc21742d5478a72ba25fb0ed"},
+        {"leaf": 198, "printed_page": 176, "sha256": "4b4f4e557eba3e16e231f3e437af150fb6f347ea20b6602948f363432048227a"},
+        {"leaf": 199, "printed_page": 177, "sha256": "377a277639f9d194f712cf5d0a88d5979b7243b26088b04133d0be91464b4960"}
+      ]
+    },
+    "project_gutenberg": {
+      "ebook": 78050,
+      "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm",
+      "sha256": "f9e000e6e66bcd865d03ad41bbf7cbc74618678eceb6af0fb113c3df51e0200a",
+      "relation": "concordant-transcription"
+    },
+    "wikisource": {
+      "uri": "https://en.wikisource.org/wiki/Index:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+      "page_transcription": "absent"
+    }
+  },
+  "formalization_boundary": "Primitive reducibility packages and the first transport move only; not a canonical proof of star 13.101."
+}

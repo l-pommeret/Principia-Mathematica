@@ -49,3 +49,12 @@ shapes printed on ✱14 p. 181 when the description fails to denote. The source
 shapes are scan-collated, but this remains an experimental HOAS gate rather
 than the eventual canonical ✱14 syntax; de Bruijn substitution tests still
 remain necessary.
+
+`Principia.Experimental.PredicativeGateToy` tests the next architectural
+boundary directly against the printed shapes of ✱12·1, ✱12·11, ✱13·01, and
+the first reducibility-dependent move of ✱13·101. General applications and
+predicative applications are distinct constructors in the proposition AST;
+their renaming and substitution operations preserve that distinction.
+Reducibility is supplied as an explicit unary or binary package whose
+certificate is indexed by the same marked syntax. This remains an experimental
+gate, not canonical coverage of ✱12–✱13 or a completed proof of ✱13·101.
