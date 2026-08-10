@@ -24,6 +24,15 @@ inductive Derivation : {Γ : RealContext} → Elementary Γ → Prop where
   /-- ✱1·3. Principle of addition (`Add`). -/
   | star_1_3 {Γ : RealContext} (p q : Elementary Γ) :
       Derivation (q ⊃ₚ (p ∨ₚ q))
+  /-- ✱1·4. Principle of permutation (`Perm`). -/
+  | star_1_4 {Γ : RealContext} (p q : Elementary Γ) :
+      Derivation ((p ∨ₚ q) ⊃ₚ (q ∨ₚ p))
+  /-- ✱1·5. Associative principle (`Assoc`). -/
+  | star_1_5 {Γ : RealContext} (p q r : Elementary Γ) :
+      Derivation ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ (q ∨ₚ (p ∨ₚ r)))
+  /-- ✱1·6. Principle of summation (`Sum`). -/
+  | star_1_6 {Γ : RealContext} (p q r : Elementary Γ) :
+      Derivation ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)))
 
 notation:45 "⊢ₚ " p => Derivation p
 

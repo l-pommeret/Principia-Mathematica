@@ -177,4 +177,88 @@ def star_1_3_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
 theorem star_1_3 (p q : PM.Elementary Γ) : ⊢ₚ (q ⊃ₚ (p ∨ₚ q)) :=
   PM.Derivation.star_1_3 p q
 
+/- PM-VERBATIM-BEGIN PM1:✱1·4
+✱1·4.  ⊢ : p ∨ q . ⊃ . q ∨ p     Pp.
+
+This principle states that “p or q” implies “q or p.” It states the permutative
+law for logical addition of propositions, and will be called the “principle of
+permutation.” It will be referred to as “Perm.”
+PM-VERBATIM-END PM1:✱1·4 -/
+
+/- PM-FORMAL-GLOSS
+The canonical scan reads `q ∨ p` in the consequent. Project Gutenberg's
+`data-tex` reading `p ∨ p` is a digital-witness error, recorded separately in
+the critical apparatus; it is not an error in PM and receives no `[sic]`.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱1·5
+✱1·5.  ⊢ : p ∨ (q ∨ r) . ⊃ . q ∨ (p ∨ r)     Pp.
+
+This principle states: “If either p is true, or ‘q or r’ is true, then either q
+is true, or ‘p or r’ is true.” It is a form of the associative law for logical
+addition, and will be called the “associative principle.” It will be referred
+to as “Assoc.” The proposition
+
+                 p ∨ (q ∨ r) . ⊃ . (p ∨ q) ∨ r,
+
+which would be the natural form for the associative law, has less deductive
+power, and is therefore not taken as a primitive proposition.
+PM-VERBATIM-END PM1:✱1·5 -/
+
+/- PM-FORMAL-GLOSS
+The displayed comparison proposition is part of PM's explanation, but it is not
+the primitive proposition. The primitive consequent is `q ∨ (p ∨ r)`.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱1·6
+✱1·6.  ⊢ :. q ⊃ r . ⊃ : p ∨ q . ⊃ . p ∨ r     Pp.
+
+This principle states: “If q implies r, then ‘p or q’ implies ‘p or r.’” In
+other words, in an implication, an alternative may be added to both premiss and
+conclusion without impairing the truth of the implication. The principle will
+be called the “principle of summation,” and will be referred to as “Sum.”
+PM-VERBATIM-END PM1:✱1·6 -/
+
+/- PM-EDITORIAL
+Sources for ✱1·4–✱1·6:
+- scan, printed p. 100: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/122
+- scan, printed p. 101: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/123
+- working transcription: Project Gutenberg ebook 78050
+Verification status: double-checked against the canonical scan and independent
+digital witnesses. The apparatus records witness divergence without altering
+the diplomatic text.
+-/
+
+/-- Audited scope reading of ✱1·4. -/
+def star_1_4_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ q . ⊃ . q ∨ p     Pp."
+  parsed := (p ∨ₚ q) ⊃ₚ (q ∨ₚ p)
+  scopeReading := "The single dots delimit p ∨ q as antecedent and q ∨ p as consequent."
+
+/-- Lean presentation of the primitive assertion ✱1·4 (`Perm`). -/
+theorem star_1_4 (p q : PM.Elementary Γ) : ⊢ₚ ((p ∨ₚ q) ⊃ₚ (q ∨ₚ p)) :=
+  PM.Derivation.star_1_4 p q
+
+/-- Audited scope reading of ✱1·5. -/
+def star_1_5_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ (q ∨ r) . ⊃ . q ∨ (p ∨ r)     Pp."
+  parsed := (p ∨ₚ (q ∨ₚ r)) ⊃ₚ (q ∨ₚ (p ∨ₚ r))
+  scopeReading := "Parentheses fix the nested disjunctions; the single dots delimit the implication."
+
+/-- Lean presentation of the primitive assertion ✱1·5 (`Assoc`). -/
+theorem star_1_5 (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ (q ∨ₚ (p ∨ₚ r))) :=
+  PM.Derivation.star_1_5 p q r
+
+/-- Audited scope reading of ✱1·6. -/
+def star_1_6_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. q ⊃ r . ⊃ : p ∨ q . ⊃ . p ∨ r     Pp."
+  parsed := (q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))
+  scopeReading := "The colon and dots group q ⊃ r as antecedent and (p ∨ q) ⊃ (p ∨ r) as consequent."
+
+/-- Lean presentation of the primitive assertion ✱1·6 (`Sum`). -/
+theorem star_1_6 (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) :=
+  PM.Derivation.star_1_6 p q r
+
 end PM.FirstEdition.Volume1.Star1

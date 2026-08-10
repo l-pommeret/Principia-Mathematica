@@ -135,9 +135,27 @@ def check_item_metadata() -> None:
             lean_path = ROOT / item.get("lean_path", "")
             if not lean_path.is_file():
                 fail(f"Lean path for {item_id} does not exist: {lean_path}")
+        formal_statuses = {item.get("formal_status") for item in items}
         evidence = batch.get("ci_evidence", {})
-        if evidence.get("conclusion") != "success" or not evidence.get("run"):
-            fail(f"{path} lacks successful immutable CI evidence")
+        evidence_values = {
+            evidence.get("commit"), evidence.get("run"), evidence.get("conclusion")
+        }
+        if formal_statuses == {"awaiting-ci"}:
+            if evidence_values != {"pending"}:
+                fail(
+                    f"{path} awaiting-ci batch must have entirely pending "
+                    "CI evidence"
+                )
+        elif formal_statuses == {"kernel-checked"}:
+            if "pending" in evidence_values:
+                fail(f"{path} mixes pending and successful CI evidence")
+            if evidence.get("conclusion") != "success" or not evidence.get("run"):
+                fail(f"{path} lacks successful immutable CI evidence")
+        else:
+            fail(
+                f"{path} must contain only awaiting-ci items or only "
+                "kernel-checked items"
+            )
     numbered = {item_id for item_id in blocks if "✱" in item_id}
     missing = numbered - metadata_ids
     if missing:
