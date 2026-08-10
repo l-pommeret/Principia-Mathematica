@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import re
@@ -11,6 +12,7 @@ import shutil
 from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import quote
+from urllib.parse import unquote
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -109,6 +111,45 @@ def external_link(uri: str, label: str) -> str:
     return f'<a href="{safe}" rel="noreferrer">{html.escape(label)}</a>'
 
 
+def scan_urls(canonical_scan: str, leaf: int | str) -> dict[str, str]:
+    """Return deterministic Wikimedia URLs for a page in a multipage scan.
+
+    MediaWiki's ``Special:Redirect/file`` currently renders page 1 even when a
+    ``page`` query parameter is supplied.  Wikimedia's documented thumbnail
+    layout is deterministic, however: it uses the MD5 of the underscore-
+    normalised file name and a ``pageN-Wpx`` derivative name.  Generating that
+    path here keeps the static build reproducible and network-free.
+    """
+    parts = urlsplit(canonical_scan)
+    marker = "/wiki/File:"
+    if parts.scheme != "https" or marker not in parts.path:
+        raise ValueError(f"unsupported canonical scan URL: {canonical_scan}")
+    filename = unquote(parts.path.split(marker, 1)[1]).replace(" ", "_")
+    if not filename.lower().endswith((".djvu", ".pdf")):
+        raise ValueError(f"canonical scan is not multipage: {canonical_scan}")
+    page_number = int(leaf)
+    if page_number < 1:
+        raise ValueError(f"invalid scan leaf: {leaf}")
+    digest = hashlib.md5(filename.encode("utf-8")).hexdigest()
+    encoded = quote(filename, safe="_,.-()")
+    base = (
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/"
+        f"{digest[0]}/{digest[:2]}/{encoded}/"
+    )
+
+    def thumbnail(width: int) -> str:
+        return f"{base}page{page_number}-{width}px-{encoded}.jpg"
+
+    page_title = quote(f"Page:{filename}/{page_number}", safe="_:,.-()")
+    file_title = quote(f"File:{filename}", safe="_:,.-()")
+    return {
+        "display": thumbnail(1280),
+        "zoom": thumbnail(1920),
+        "page": f"https://en.wikisource.org/wiki/{page_title}",
+        "file": f"https://commons.wikimedia.org/wiki/{file_title}",
+    }
+
+
 def apparatus_html(records: list[dict]) -> str:
     if not records:
         return '<p class="quiet">No apparatus entry is currently linked to this item.</p>'
@@ -143,7 +184,7 @@ def printed_formula_markup(printed: str) -> str:
 def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]) -> str:
     scan = batch["source_range"]["canonical_scan"]
     leaf = item.get("scan_leaf")
-    scan_page = scan.replace("File:", "Page:") + (f"/{leaf}" if leaf else "")
+    scan_media = scan_urls(scan, leaf)
     printed = printed_formula_markup(item["printed"])
     source = html.escape(block.text)
     lean = html.escape(lean_excerpt(item))
@@ -161,7 +202,8 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
 <button type="button" class="scope-toggle" aria-pressed="false">Show printed scope marks</button></div>
 <div class="parallel" aria-label="Source and formal edition">
 <section class="panel scan"><h2>Facsimile</h2><p>Canonical witness: first edition scan, leaf {leaf}.</p>
-<p>{external_link(scan_page, 'Open the exact scan leaf')}</p><div class="scan-placeholder" aria-hidden="true">VOLUME I<br><b>p. {item['printed_page']}</b><br>facsimile</div></section>
+<figure class="scan-figure"><a class="scan-image-link" href="{html.escape(scan_media['zoom'], quote=True)}" target="_blank" rel="noreferrer" aria-label="Open a larger image of scan leaf {leaf}"><img src="{html.escape(scan_media['display'], quote=True)}" loading="lazy" decoding="async" width="1280" alt="Principia Mathematica, volume {batch['volume']}, first edition: scan leaf {leaf}, printed page {item['printed_page']}"></a>
+<figcaption><a href="{html.escape(scan_media['page'], quote=True)}" rel="noreferrer">Page and transcription on Wikisource</a> · <a href="{html.escape(scan_media['file'], quote=True)}" rel="noreferrer">Original scan and provenance on Wikimedia Commons</a> · <a href="{html.escape(scan_media['zoom'], quote=True)}" target="_blank" rel="noreferrer">Larger image</a></figcaption></figure></section>
 <section class="panel transcription"><h2>Diplomatic transcription</h2><pre class="source-text">{source}</pre></section>
 <section class="panel lean"><h2>Lean reconstruction</h2><pre><code>{lean}</code></pre>
 <dl><dt>Declaration</dt><dd><code>{html.escape(item['declaration'])}</code></dd><dt>Formal scope</dt><dd>{html.escape(item['formal_scope'])}</dd></dl></section>

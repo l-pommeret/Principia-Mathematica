@@ -20,6 +20,8 @@ retains a downloadable preview artifact for every run. A successful run on
 `main` also deploys that exact generated tree to the `github-pages`
 environment; repository Pages must use **GitHub Actions** as its source.
 
-The facsimile panel links to the exact canonical scan leaf instead of copying
-scan images into the repository. This keeps witness attribution explicit and
-avoids presenting an unverified derivative image as canonical.
+The facsimile panel embeds a 1280-pixel Wikimedia page derivative and links to
+the exact Wikisource leaf, a 1920-pixel image, and the original Commons scan.
+Its deterministic URL is generated without a network request or copied binary.
+No scan images are stored in the repository. This keeps witness attribution
+explicit and avoids presenting an unverified derivative image as canonical.

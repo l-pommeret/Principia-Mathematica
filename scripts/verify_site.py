@@ -18,6 +18,7 @@ class Links(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
         self.links: list[str] = []
+        self.images: list[dict[str, str | None]] = []
         self.ids: set[str] = set()
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
@@ -28,6 +29,8 @@ class Links(HTMLParser):
             attr = "href" if tag != "script" else "src"
             if values.get(attr):
                 self.links.append(values[attr] or "")
+        if tag == "img":
+            self.images.append(values)
 
 
 def fail(message: str) -> None:
@@ -59,6 +62,21 @@ def verify(site: Path) -> None:
         parser.feed(source)
         if path != site / "index.html" and "content" not in parser.ids:
             fail(f"{path} lacks the main content landmark")
+        if path != site / "index.html":
+            if "scan-placeholder" in source:
+                fail(f"facsimile placeholder remains in {path}")
+            if len(parser.images) != 1:
+                fail(f"{path} must contain exactly one facsimile image")
+            image = parser.images[0]
+            src = image.get("src") or ""
+            if urlsplit(src).scheme != "https":
+                fail(f"facsimile image in {path} does not use an HTTPS src")
+            if urlsplit(src).hostname != "upload.wikimedia.org":
+                fail(f"facsimile image in {path} is not served by Wikimedia")
+            if not re.search(r"/page\d+-1280px-.*\.(?:djvu|pdf)\.jpg$", urlsplit(src).path, re.I):
+                fail(f"facsimile image in {path} is not an exact scan-page derivative")
+            if image.get("loading") != "lazy" or not image.get("alt"):
+                fail(f"facsimile image in {path} lacks lazy loading or alternative text")
         for link in parser.links:
             parts = urlsplit(link)
             if parts.scheme or link.startswith("//") or not parts.path:
