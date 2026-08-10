@@ -1,0 +1,16 @@
+{
+  "id": "APP-PM1-INTRO-P10-PG-001",
+  "item": "PM1:INTRODUCTION-CH1-PP4-10",
+  "locus": {"volume": 1, "printed_page": 10, "scan_leaf": 32, "line_or_formula": "first Group II example continued from p. 9"},
+  "classification": "digital-witness-error",
+  "diplomatic_reading": "(∃x, y)",
+  "other_reading": "(∃x, ∼y)",
+  "witnesses": [
+    {"siglum": "PM1-1910-SCAN", "reading": "(∃x, y)", "uri": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/32"},
+    {"siglum": "PG78050", "reading": "(∃x, ∼y)", "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"},
+    {"siglum": "WS-PM1", "reading": "(∃x, y)", "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/32&action=raw"}
+  ],
+  "evidence": "The scan has an unnegated y and Wikisource agrees. The tilde in PG78050 is a digital transcription error, not a printed sic.",
+  "status": "single-checked",
+  "review": {"editor": "Codex source audit", "date": "2026-08-10"}
+}

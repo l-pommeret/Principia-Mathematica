@@ -15,6 +15,8 @@ from urllib.parse import quote
 from urllib.parse import unquote
 from urllib.parse import urlsplit
 
+from verify_dependencies import audit as audit_dependencies
+
 ROOT = Path(__file__).resolve().parents[1]
 VERBATIM = re.compile(
     r"PM-VERBATIM-BEGIN\s+(\S+)\s*\n(.*?)\nPM-VERBATIM-END\s+\1", re.DOTALL
@@ -181,6 +183,16 @@ def printed_formula_markup(printed: str) -> str:
     )
 
 
+def dependency_list(values: list[str], *, code: bool = False) -> str:
+    if not values:
+        return '<p class="quiet">No direct dependency.</p>'
+    entries = []
+    for value in values:
+        rendered = html.escape(value)
+        entries.append(f'<li><code>{rendered}</code></li>' if code else f'<li>{rendered}</li>')
+    return '<ul class="dependency-list">' + ''.join(entries) + '</ul>'
+
+
 def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]) -> str:
     scan = batch["source_range"]["canonical_scan"]
     leaf = item.get("scan_leaf")
@@ -209,6 +221,12 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
 <dl><dt>Declaration</dt><dd><code>{html.escape(item['declaration'])}</code></dd><dt>Formal scope</dt><dd>{html.escape(item['formal_scope'])}</dd></dl></section>
 </div>
 <section class="apparatus"><h2>Critical apparatus</h2>{apparatus_html(apparatus)}</section>
+<section class="dependencies"><h2>Dependency audit</h2>
+<p class="quiet">Direct edges only. PM citations and constants extracted from the Lean source term are recorded separately.</p>
+<div class="dependency-pair"><div><h3>Historical PM graph</h3>{dependency_list(item.get('printed_dependencies', []))}</div>
+<div><h3>Lean source graph</h3>{dependency_list(item.get('lean_dependencies', []), code=True)}</div></div>
+<p><b>Normalized PM edges:</b> {html.escape(', '.join(item.get('normalized_dependencies', [])) or 'none')}</p>
+<p><a href="../dependencies.html">Open the corpus dependency graphs</a></p></section>
 <section class="provenance"><h2>Provenance and verification</h2><dl>
 <dt>Source file</dt><dd><code>{html.escape(str(block.path.relative_to(ROOT)))}</code></dd>
 <dt>Lean file</dt><dd><code>{html.escape(item['lean_path'])}</code></dd>
@@ -217,9 +235,53 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
     return page(item["id"], body, depth=1)
 
 
+def source_block_page(
+    record: dict, block: SourceBlock, apparatus: list[dict]
+) -> str:
+    """Render extended prose and notes without pretending they are Lean items."""
+    source_range = record["source_range"]
+    leaves = source_range["scan_leaves"]
+    first_leaf = leaves[0]
+    scan = source_range["canonical_scan"]
+    scan_media = scan_urls(scan, first_leaf)
+    witness_list = "".join(
+        f'<li><b>{html.escape(witness["siglum"])}</b> · '
+        f'{html.escape(witness["role"])} · '
+        f'{external_link(witness["uri"], "source")}</li>'
+        for witness in record["witnesses"]
+    )
+    source = html.escape(block.text)
+    pages = html.escape(str(source_range["printed_pages"]))
+    body = f"""
+<nav aria-label="Breadcrumb"><a href="../index.html">Contents</a> / Volume {record['volume']} / Introduction</nav>
+<article class="edition-item source-block">
+<header class="item-header"><p class="eyebrow">Volume {record['volume']} · printed pages {pages}</p>
+<h1>{html.escape(record['title'])}</h1>
+<p><span class="badge">{html.escape(record['kind'])}</span> <span class="badge">{html.escape(record['source_status'])}</span></p></header>
+<div class="parallel source-parallel" aria-label="Facsimile and diplomatic source">
+<section class="panel scan"><h2>Facsimile</h2><p>Canonical witness: first-edition scan, first leaf of this block ({first_leaf}).</p>
+<figure class="scan-figure"><a class="scan-image-link" href="{html.escape(scan_media['zoom'], quote=True)}" target="_blank" rel="noreferrer" aria-label="Open a larger image of scan leaf {first_leaf}"><img src="{html.escape(scan_media['display'], quote=True)}" loading="lazy" decoding="async" width="1280" alt="Principia Mathematica, volume {record['volume']}, first edition: scan leaf {first_leaf}, printed pages {pages}"></a>
+<figcaption><a href="{html.escape(scan_media['page'], quote=True)}" rel="noreferrer">First page on Wikisource</a> · <a href="{html.escape(scan_media['file'], quote=True)}" rel="noreferrer">Original scan and provenance</a> · leaves {html.escape(', '.join(map(str, leaves)))}</figcaption></figure></section>
+<section class="panel transcription"><h2>Diplomatic transcription</h2><pre class="source-text">{source}</pre></section>
+</div>
+<section class="apparatus"><h2>Critical apparatus</h2>{apparatus_html(apparatus)}</section>
+<section class="provenance"><h2>Provenance</h2><dl>
+<dt>Canonical UTF-8 body</dt><dd><code>{html.escape(record['canonical_body']['sha256'])}</code> · {record['canonical_body']['byte_length']} bytes</dd>
+<dt>Lean source container</dt><dd><code>{html.escape(record['lean_path'])}</code></dd>
+<dt>Critical status</dt><dd>{html.escape(record['critical_status'])}</dd></dl>
+<details><summary>Witnesses</summary><ul>{witness_list}</ul></details></section>
+</article>"""
+    return page(record["id"], body, depth=1)
+
+
 def build(output: Path) -> None:
+    dependency_graph = audit_dependencies(ROOT)
     blocks = source_blocks()
     batches = [load_json(path) for path in sorted((ROOT / "metadata/items").glob("*.json"))]
+    source_records = [
+        load_json(path)
+        for path in sorted((ROOT / "metadata/source_blocks").glob("*.json"))
+    ]
     apparatus = [load_json(path) for path in sorted((ROOT / "metadata/apparatus").glob("*.json"))]
     items: list[tuple[dict, dict]] = [(item, batch) for batch in batches for item in batch["items"]]
     if output.exists():
@@ -234,7 +296,25 @@ def build(output: Path) -> None:
         target.write_text(item_page(item, batch, blocks[item["id"]], linked), encoding="utf-8")
         cards.append(f"""<li><a href="items/{target.name}"><b>{html.escape(item['id'].split(':', 1)[1])}</b>
 <span>{html.escape(item['kind'])}</span><small>p. {item['printed_page']} · {html.escape(item['printed'])}</small></a></li>""")
-    orphan = [record for record in apparatus if record["item"] not in indexed_ids]
+    source_cards = []
+    source_ids = {record["id"] for record in source_records}
+    for record in source_records:
+        linked = [entry for entry in apparatus if entry["item"] == record["id"]]
+        target = output / "items" / f"{slug(record['id'])}.html"
+        target.write_text(
+            source_block_page(record, blocks[record["id"]], linked),
+            encoding="utf-8",
+        )
+        source_cards.append(
+            f'<li><a href="items/{target.name}"><b>{html.escape(record["title"])}</b>'
+            f'<span>{html.escape(record["kind"])}</span>'
+            f'<small>pp. {html.escape(str(record["source_range"]["printed_pages"]))}</small></a></li>'
+        )
+    orphan = [
+        record
+        for record in apparatus
+        if record["item"] not in indexed_ids | source_ids
+    ]
     orphan_note = ""
     if orphan:
         orphan_note = ("<section><h2>Apparatus awaiting an item page</h2><p>These records are retained but the corresponding "
@@ -242,13 +322,42 @@ def build(output: Path) -> None:
     body = f"""<section class="hero"><p class="eyebrow">First edition · Volumes I–III</p>
 <h1>A formal edition faithful to the printed page</h1>
 <p>Read the historical English, inspect the facsimile, and compare the audited Lean reconstruction. Scope punctuation and editorial interventions remain visible.</p></section>
-<section><h2>Available items</h2><ol class="contents">{''.join(cards)}</ol></section>{orphan_note}
+<section><h2>Historical text and notes</h2><ol class="contents source-contents">{''.join(source_cards)}</ol></section>
+<section><h2>Available formal items</h2><p><a href="dependencies.html">Explore the audited historical and Lean dependency graphs</a>.</p><ol class="contents">{''.join(cards)}</ol></section>{orphan_note}
 <section class="method"><h2>How to read this edition</h2><p>The transcription is diplomatic. A <i>sic</i> is rendered only from a reviewed apparatus record and never inserted into canonical source bytes. Lean declarations are reconstructions, not silent replacements for PM's notation.</p></section>"""
     (output / "index.html").write_text(page("Contents", body), encoding="utf-8")
+    historical_rows = ''.join(
+        f'<tr><td>{html.escape(edge["from"])}</td><td>→</td><td>{html.escape(edge["to"])}</td></tr>'
+        for edge in dependency_graph["historical_graph"]["edges"]
+    ) or '<tr><td colspan="3">No edge.</td></tr>'
+    lean_rows = ''.join(
+        f'<tr><td>{html.escape(edge["from"])}</td><td>→</td><td><code>{html.escape(edge["to"])}</code></td></tr>'
+        for edge in dependency_graph["lean_graph"]["edges"]
+    ) or '<tr><td colspan="3">No edge.</td></tr>'
+    graph_body = f'''<section class="hero"><p class="eyebrow">Audited direct dependencies</p>
+<h1>Two views of the deductive structure</h1><p>This provisional graph covers exactly the {dependency_graph["coverage"]["audited_items"]} items already marked kernel-checked. It does not claim coverage of future volumes or items awaiting CI.</p></section>
+<div class="dependency-pair"><section><h2>Historical PM graph</h2><p>Edges explicitly printed in the demonstrations, after resolving PM aliases.</p><table><tbody>{historical_rows}</tbody></table></section>
+<section><h2>Lean source graph</h2><p>Constants extracted directly from each Lean declaration body.</p><table><tbody>{lean_rows}</tbody></table></section></div>
+<p><a href="dependency-graph.json">Machine-readable graph and coverage statement</a></p>'''
+    (output / "dependencies.html").write_text(page("Dependency graphs", graph_body), encoding="utf-8")
+    (output / "dependency-graph.json").write_text(
+        json.dumps(dependency_graph, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
     (output / ".nojekyll").write_text("", encoding="utf-8")
-    manifest = {"items": len(items), "apparatus": len(apparatus), "item_ids": sorted(indexed_ids)}
+    manifest = {
+        "items": len(items),
+        "source_blocks": len(source_records),
+        "apparatus": len(apparatus),
+        "item_ids": sorted(indexed_ids),
+        "source_block_ids": sorted(source_ids),
+        "dependency_graph": "dependency-graph.json",
+        "dependency_coverage": dependency_graph["coverage"],
+    }
     (output / "edition-manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"built {len(items)} item pages in {output}")
+    print(
+        f"built {len(items)} formal item pages and "
+        f"{len(source_records)} source-block pages in {output}"
+    )
 
 
 def main() -> None:

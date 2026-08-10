@@ -1,0 +1,62 @@
+{
+  "id": "PM1:INTRODUCTION-CH1-PP4-10",
+  "edition": "first",
+  "volume": 1,
+  "kind": "source-critical-prose",
+  "title": "Introduction, Chapter I — pp. 4–10",
+  "source_range": {
+    "printed_pages": "4–10",
+    "scan_leaves": [26, 27, 28, 29, 30, 31, 32],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "lean_path": "Principia/FirstEdition/Volume1/Introduction/Chapter1/Pages4To10.lean",
+  "witnesses": [
+    {
+      "siglum": "PM1-1910-SCAN",
+      "role": "canonical",
+      "uri": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+      "sha256": "52fd0ba446ab2dc97f08d6d4b16d67196edb6d991b0a0445e1ee4dbb57fa2eab"
+    },
+    {
+      "siglum": "PG78050",
+      "role": "control",
+      "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm",
+      "sha256": "f9e000e6e66bcd865d03ad41bbf7cbc74618678eceb6af0fb113c3df51e0200a"
+    },
+    {
+      "siglum": "WS-PM1",
+      "role": "control",
+      "uri": "https://en.wikisource.org/wiki/Index:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+    }
+  ],
+  "leaf_derivatives": [
+    {"scan_leaf": 26, "printed_page": 4, "sha256": "33527083a01dcf6b992a4f2afa55e1bf2fdf3ebdb366bf32d3c2de47aed5b5aa"},
+    {"scan_leaf": 27, "printed_page": 5, "sha256": "3a7d4e4aff512cf9e28bd2e13a150d38dfb6f6acf91636249299eb2d2805da54"},
+    {"scan_leaf": 28, "printed_page": 6, "sha256": "14bd0ed69c2815acdcded8a06d3b072d684cdc4a1bf91613fa560d4c84e3c636"},
+    {"scan_leaf": 29, "printed_page": 7, "sha256": "8344a6102d1d4e76a6be2fa40f31aeb3148422e98b80b88080b7be59deee7269"},
+    {"scan_leaf": 30, "printed_page": 8, "sha256": "314fb60bf3164f4773e49c613a86a25dab70ec75812cb88a7514529e3ece0b88"},
+    {"scan_leaf": 31, "printed_page": 9, "sha256": "2d901c25c8939cc76615d92dbbe0aafebad8f465f0c055725dc7c4336936c881"},
+    {"scan_leaf": 32, "printed_page": 10, "sha256": "fd55b37300f9138e58f8e4c59ad7c191555182e57c7fb474bbedba3ee17ae70a"}
+  ],
+  "footnotes": [1, 2, 3],
+  "source_status": "scan-collated-three-witness",
+  "critical_status": "digital-witness-errors-recorded",
+  "transcription": {
+    "policy": "verbal-diplomatic-reflow",
+    "line_end_hyphenation": "silently-rejoined",
+    "page_breaks": "recorded-in-metadata-not-canonical-body",
+    "note_markers": "global-numeric-labels-1-through-3-replace-page-local-asterisks",
+    "typography": "presentation-layer-not-encoded-in-canonical-body",
+    "formulae_and_scope_punctuation": "collated-against-scan"
+  },
+  "canonical_body": {
+    "encoding": "UTF-8",
+    "byte_length": 20438,
+    "sha256": "e1a54d300da79dc14f05dcfb4b6936d7d81be6b10d907291e61f8275d78b9ac5"
+  },
+  "review": {
+    "apparatus_required": true,
+    "sic_required": false,
+    "note": "All recorded divergences are errors of PG78050 or WS-PM1, not errors of the 1910 printing."
+  }
+}

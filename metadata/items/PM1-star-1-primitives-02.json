@@ -19,7 +19,11 @@
       "declaration": "PM.FirstEdition.Volume1.Star1.star_1_4",
       "formal_scope": "(p ∨ q) ⊃ (q ∨ p), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": [],
+      "lean_dependencies": ["PM.Derivation.star_1_4"],
+      "normalized_dependencies": [],
+      "substitutions": []
     },
     {
       "id": "PM1:✱1·5",
@@ -31,7 +35,11 @@
       "declaration": "PM.FirstEdition.Volume1.Star1.star_1_5",
       "formal_scope": "(p ∨ (q ∨ r)) ⊃ (q ∨ (p ∨ r)), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": [],
+      "lean_dependencies": ["PM.Derivation.star_1_5"],
+      "normalized_dependencies": [],
+      "substitutions": []
     },
     {
       "id": "PM1:✱1·6",
@@ -43,7 +51,11 @@
       "declaration": "PM.FirstEdition.Volume1.Star1.star_1_6",
       "formal_scope": "(q ⊃ r) ⊃ ((p ∨ q) ⊃ (p ∨ r)), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": [],
+      "lean_dependencies": ["PM.Derivation.star_1_6"],
+      "normalized_dependencies": [],
+      "substitutions": []
     }
   ],
   "ci_evidence": {

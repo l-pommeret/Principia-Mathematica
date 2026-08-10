@@ -19,7 +19,12 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_03",
       "formal_scope": "(p ⊃ ∼q) ⊃ (q ⊃ ∼p), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": ["PM1:✱1·4", "PM1:✱1·01"],
+      "lean_dependencies": ["PM.Derivation.star_1_4"],
+      "normalized_dependencies": ["PM1:✱1·4", "PM1:✱1·01"],
+      "substitutions": ["∼p, ∼q/p, q"],
+      "dependency_justifications": [{"kind":"definitional-reading","pm_dependency":"PM1:✱1·01","evidence":"Printed line [(1).(✱1·01)]; implication reduces definitionally in Lean."}]
     },
     {
       "id": "PM1:✱2·04",
@@ -31,7 +36,12 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_04",
       "formal_scope": "(p ⊃ (q ⊃ r)) ⊃ (q ⊃ (p ⊃ r)), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": ["PM1:✱1·5", "PM1:✱1·01"],
+      "lean_dependencies": ["PM.Derivation.star_1_5"],
+      "normalized_dependencies": ["PM1:✱1·5", "PM1:✱1·01"],
+      "substitutions": ["∼p, ∼q/p, q"],
+      "dependency_justifications": [{"kind":"definitional-reading","pm_dependency":"PM1:✱1·01","evidence":"Printed line [(1).(✱1·01)]; implication reduces definitionally in Lean."}]
     },
     {
       "id": "PM1:✱2·05",
@@ -43,7 +53,12 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_05",
       "formal_scope": "(q ⊃ r) ⊃ ((p ⊃ q) ⊃ (p ⊃ r)), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": ["PM1:✱1·6", "PM1:✱1·01"],
+      "lean_dependencies": ["PM.Derivation.star_1_6"],
+      "normalized_dependencies": ["PM1:✱1·6", "PM1:✱1·01"],
+      "substitutions": ["∼p/p"],
+      "dependency_justifications": [{"kind":"definitional-reading","pm_dependency":"PM1:✱1·01","evidence":"Printed line [(1).(✱1·01)]; implication reduces definitionally in Lean."}]
     }
   ],
   "ci_evidence": {

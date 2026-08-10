@@ -19,7 +19,12 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_06",
       "formal_scope": "(p ⊃ q) ⊃ ((q ⊃ r) ⊃ (p ⊃ r)), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": ["PM1:✱2·04", "PM1:✱2·05", "PM1:✱1·11"],
+      "lean_dependencies": ["PM.Derivation.detach", "PM.FirstEdition.Volume1.Star2.star_2_04", "PM.FirstEdition.Volume1.Star2.star_2_05"],
+      "normalized_dependencies": ["PM1:✱2·04", "PM1:✱2·05", "PM1:✱1·11"],
+      "substitutions": ["(q ⊃ r, p ⊃ q, p ⊃ r)/(p, q, r)"],
+      "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"PM explicitly prints [(1).(2).✱1·11]; detach selects that rule in a nonempty real-variable context."}]
     },
     {
       "id": "PM1:✱2·07",
@@ -31,7 +36,11 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_07",
       "formal_scope": "p ⊃ (p ∨ p), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": ["PM1:✱1·3"],
+      "lean_dependencies": ["PM.Derivation.star_1_3"],
+      "normalized_dependencies": ["PM1:✱1·3"],
+      "substitutions": ["p/q"]
     },
     {
       "id": "PM1:✱2·08",
@@ -43,7 +52,12 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_08",
       "formal_scope": "p ⊃ p, over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": ["PM1:✱2·05", "PM1:✱1·2", "PM1:✱1·11", "PM1:✱2·07"],
+      "lean_dependencies": ["PM.Derivation.detach", "PM.Derivation.star_1_2", "PM.FirstEdition.Volume1.Star2.star_2_05", "PM.FirstEdition.Volume1.Star2.star_2_07"],
+      "normalized_dependencies": ["PM1:✱2·05", "PM1:✱1·2", "PM1:✱1·11", "PM1:✱2·07"],
+      "substitutions": ["(p ∨ p, p)/(q, r)"],
+      "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"Both printed detachments cite ✱1·11 by PM's stated omission convention; detach selects it for real variables."}]
     },
     {
       "id": "PM1:✱2·1",
@@ -55,7 +69,12 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_1",
       "formal_scope": "∼p ∨ p, definitionally read from p ⊃ p over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": ["PM1:✱2·08", "PM1:✱1·01"],
+      "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_08"],
+      "normalized_dependencies": ["PM1:✱2·08", "PM1:✱1·01"],
+      "substitutions": [],
+      "dependency_justifications": [{"kind":"definitional-reading","pm_dependency":"PM1:✱1·01","evidence":"Printed [Id. (✱1·01)]; implication reduces definitionally to ∼p ∨ p in Lean."}]
     }
   ],
   "ci_evidence": {

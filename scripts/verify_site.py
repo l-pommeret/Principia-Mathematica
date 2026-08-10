@@ -43,6 +43,12 @@ def verify(site: Path) -> None:
     if not (site / "index.html").is_file() or not manifest_path.is_file():
         fail("index.html or edition-manifest.json is missing")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    graph_path = site / manifest.get("dependency_graph", "")
+    if not graph_path.is_file():
+        fail("dependency graph JSON is missing")
+    graph = json.loads(graph_path.read_text(encoding="utf-8"))
+    if graph.get("coverage", {}).get("status") != "kernel-checked-items-only":
+        fail("dependency graph lacks its limited coverage statement")
     expected_ids = sorted(
         item["id"]
         for metadata_path in sorted((ROOT / "metadata/items").glob("*.json"))
@@ -50,10 +56,20 @@ def verify(site: Path) -> None:
     )
     if manifest.get("item_ids") != expected_ids:
         fail("generated manifest does not match metadata/items")
+    expected_source_ids = sorted(
+        json.loads(path.read_text(encoding="utf-8"))["id"]
+        for path in sorted((ROOT / "metadata/source_blocks").glob("*.json"))
+    )
+    if manifest.get("source_block_ids") != expected_source_ids:
+        fail("generated manifest does not match metadata/source_blocks")
     pages = sorted((site / "items").glob("*.html"))
-    if len(pages) != manifest["items"]:
-        fail(f"manifest says {manifest['items']} items but {len(pages)} pages exist")
-    html_paths = [site / "index.html", *pages]
+    expected_page_count = manifest["items"] + manifest["source_blocks"]
+    if len(pages) != expected_page_count:
+        fail(
+            f"manifest says {expected_page_count} edition pages but "
+            f"{len(pages)} pages exist"
+        )
+    html_paths = [site / "index.html", site / "dependencies.html", *pages]
     for path in html_paths:
         source = path.read_text(encoding="utf-8")
         if re.search(r"arstl_[A-Za-z0-9]+", source):
@@ -62,7 +78,7 @@ def verify(site: Path) -> None:
         parser.feed(source)
         if path != site / "index.html" and "content" not in parser.ids:
             fail(f"{path} lacks the main content landmark")
-        if path != site / "index.html":
+        if path not in {site / "index.html", site / "dependencies.html"}:
             if "scan-placeholder" in source:
                 fail(f"facsimile placeholder remains in {path}")
             if len(parser.images) != 1:
@@ -91,7 +107,7 @@ def verify(site: Path) -> None:
     for path in site.rglob("*"):
         if path.is_file() and re.search(r"arstl_[A-Za-z0-9]+", path.read_text(encoding="utf-8")):
             fail(f"credential-like string leaked into {path}")
-    print(f"site checks passed ({len(pages)} item pages)")
+    print(f"site checks passed ({len(pages)} edition pages)")
 
 
 def main() -> None:
