@@ -21,9 +21,18 @@ def main() -> None:
         "def expand : Formula → CoreFormula",
         "def negOutsideDescription",
         "def negInsideDescription",
+        "def narrowDescriptionImplication",
+        ".imp (.descriptionScope nonDenoting matrix) (.truth false)",
+        "def wideDescriptionImplication",
+        ".descriptionScope nonDenoting (fun x => .imp (matrix x) (.truth false))",
         "theorem negOutsideDescription_isTrue",
         "theorem negInsideDescription_isFalse",
         "theorem scopeReadings_haveDifferentTruthValues",
+        "theorem narrowDescriptionImplication_isTrue",
+        "theorem wideDescriptionImplication_isFalse",
+        "theorem implicationScopeReadings_haveDifferentTruthValues",
+        "12a57b46d16f08df1de909a28f2cc91553861a1ea5d191922791e050fc0ebabc",
+        "23427375b6f708a53ed91a28fb43eed247d732ff4047ee7e88fd779e2a50ad28",
     )
     missing = [fragment for fragment in required if fragment not in source]
     if missing:
@@ -38,6 +47,8 @@ def main() -> None:
         "accepted edition namespace": r"namespace\s+PM\.FirstEdition",
         "syntax-only separation":
             r"scopeReadings_haveDifferentTruthValues[^:]*:\s*negOutsideDescription\s*≠",
+        "syntax-only implication separation":
+            r"implicationScopeReadings_haveDifferentTruthValues[^:]*:\s*narrowDescriptionImplication\s*≠",
     }
     failures = [label for label, pattern in forbidden.items()
                 if re.search(pattern, code, flags=re.MULTILINE)]
