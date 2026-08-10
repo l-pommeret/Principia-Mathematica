@@ -784,21 +784,20 @@ def embedElementary : PM.Elementary realContext →
 
 /-- Evidence that an order-zero ramified formula is in the syntactic image of
 `embedElementary`. This deliberately avoids claiming a parser for arbitrary formulas. -/
-structure ElementaryImage
-    {realContext : PM.RealContext}
-    (proposition : Formula legacySignature (realContext.map legacySort) [] 0) where
+structure ElementaryImage (realContext : PM.RealContext)
+    (proposition : Formula legacySignature (List.map legacySort realContext) [] 0) where
   source : PM.Elementary realContext
   embedded : embedElementary source = proposition
 
 def elementaryImage {realContext : PM.RealContext}
     (proposition : PM.Elementary realContext) :
-    ElementaryImage (embedElementary proposition) :=
+    ElementaryImage realContext (embedElementary proposition) :=
   ⟨proposition, rfl⟩
 
 /-- Erasure is defined only on a certified syntactic image, not on every order-zero formula. -/
 def eraseElementary? {realContext : PM.RealContext} (proposition :
-    Formula legacySignature (realContext.map legacySort) [] 0)
-    (image : ElementaryImage proposition) : Option (PM.Elementary realContext) :=
+    Formula legacySignature (List.map legacySort realContext) [] 0)
+    (image : ElementaryImage realContext proposition) : Option (PM.Elementary realContext) :=
   some image.source
 
 @[simp] theorem erase_embedElementary {realContext : PM.RealContext}

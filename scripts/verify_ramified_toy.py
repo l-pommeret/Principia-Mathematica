@@ -94,7 +94,10 @@ def main() -> None:
         raise SystemExit("the higher-order witness ignores the reduction certificate")
     eraser = code.split("def eraseElementary?", 1)[1].split(
         "theorem erase_embedElementary", 1)[0]
-    if "Formula legacySignature (realContext.map legacySort) [] 0" not in eraser:
+    if not any(index in eraser for index in (
+        "Formula legacySignature (realContext.map legacySort) [] 0",
+        "Formula legacySignature (List.map legacySort realContext) [] 0",
+    )):
         raise SystemExit("elementary erasure is not restricted by its order-zero index")
     print("Experimental ramified-type architecture checks passed")
 
