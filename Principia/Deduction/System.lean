@@ -8,7 +8,6 @@ source-critical records. This prevents accidental import of Lean's deduction
 rules as rules of PM. -/
 inductive Derivation : Formula → Prop
 
-notation:45 "PM ⊢ₚ " p => Derivation p
+notation:45 "⊢ₚ " p => Derivation p
 
 end PM
-
