@@ -323,11 +323,13 @@
       "aristotle_status": "submitted",
       "aristotle_task_id": "b9ff76bf-6eb5-4abf-8a8d-f4a657124aac",
       "aristotle_latest_task_id": "b9ff76bf-6eb5-4abf-8a8d-f4a657124aac",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_latest_task_status": "IN_PROGRESS",
+      "aristotle_remote_status": "IN_PROGRESS",
       "aristotle_project_id": "efd2b872-651e-48b4-b585-176a7dbc87b3",
       "aristotle_request_path": "aristotle/Q210.md",
-      "aristotle_request_sha256": "e70d4835d45f9774495229eb6ec2d1c6e8eec535e250d35d26701670ac3bfe4e"
+      "aristotle_request_sha256": "e70d4835d45f9774495229eb6ec2d1c6e8eec535e250d35d26701670ac3bfe4e",
+      "aristotle_latest_task_name": "Formalize Q210.md",
+      "aristotle_latest_task_created": "3 mins ago"
     },
     "Q211": {
       "canonical_ids": [
@@ -623,6 +625,9 @@
       "audit_status": "prepared-needs-kernel-context",
       "lean_scope": "exact PM1 ✱3·37 through ✱3·43 selected sequence",
       "depends_on": [
+        "PM1:✱1·01",
+        "PM1:✱2·16",
+        "PM1:✱2·17",
         "PM1:✱2·51",
         "PM1:✱2·77",
         "PM1:✱3·01",
@@ -650,7 +655,13 @@
       "audit_status": "prepared-needs-kernel-context",
       "lean_scope": "exact PM1 ✱3·44 through ✱3·48 selected sequence",
       "depends_on": [
-        "PM1:✱2·06",
+        "PM1:✱1·01",
+        "PM1:✱1·6",
+        "PM1:✱2·04",
+        "PM1:✱2·05",
+        "PM1:✱2·6",
+        "PM1:✱2·16",
+        "PM1:✱2·17",
         "PM1:✱2·53",
         "PM1:✱2·83",
         "PM1:✱3·03",
@@ -679,6 +690,7 @@
       "audit_status": "prepared-needs-kernel-context",
       "lean_scope": "exact PM1 ✱4·01–✱4·02 definitions and ✱4·1, ✱4·12, ✱4·13",
       "depends_on": [
+        "PM1:✱1·01",
         "PM1:✱2·03",
         "PM1:✱2·12",
         "PM1:✱2·14",
@@ -703,6 +715,7 @@
       "audit_status": "prepared-needs-kernel-context",
       "lean_scope": "exact PM1 ✱4·11, ✱4·14, ✱4·15 and ✱4·2",
       "depends_on": [
+        "PM1:✱2·1",
         "PM1:✱2·16",
         "PM1:✱2·17",
         "PM1:✱3·2",
@@ -730,6 +743,8 @@
       "audit_status": "prepared-needs-kernel-context",
       "lean_scope": "exact PM1 ✱4·21 through ✱4·25 selected sequence",
       "depends_on": [
+        "PM1:✱1·3",
+        "PM1:✱2·08",
         "PM1:✱2·43",
         "PM1:✱2·83",
         "PM1:✱3·02",
@@ -757,6 +772,7 @@
       "audit_status": "prepared-needs-kernel-context",
       "lean_scope": "exact PM1 ✱4·3, ✱4·31, ✱4·32 and ✱4·33",
       "depends_on": [
+        "PM1:✱2·05",
         "PM1:✱2·31",
         "PM1:✱2·32",
         "PM1:✱3·01",
