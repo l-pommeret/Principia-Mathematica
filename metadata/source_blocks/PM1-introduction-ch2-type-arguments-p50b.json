@@ -1,0 +1,61 @@
+{
+  "id": "PM1:INTRODUCTION-CH2-TYPE-ARGUMENTS-P50B",
+  "edition": "first",
+  "volume": 1,
+  "kind": "source-critical-prose",
+  "title": "Introduction, Chapter II — arguments of a certain type (opening)",
+  "source_range": {
+    "printed_pages": "50 (second part)",
+    "scan_leaves": [
+      72
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "lean_path": "Principia/FirstEdition/Volume1/Introduction/Chapter2/Pages39To50.lean",
+  "witnesses": [
+    {
+      "siglum": "PM1-1910-SCAN",
+      "role": "canonical",
+      "uri": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+      "sha256": "52fd0ba446ab2dc97f08d6d4b16d67196edb6d991b0a0445e1ee4dbb57fa2eab"
+    },
+    {
+      "siglum": "PG78050",
+      "role": "control",
+      "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm",
+      "sha256": "f9e000e6e66bcd865d03ad41bbf7cbc74618678eceb6af0fb113c3df51e0200a"
+    },
+    {
+      "siglum": "WS-PM1",
+      "role": "control",
+      "uri": "https://en.wikisource.org/wiki/Index:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+    }
+  ],
+  "leaf_derivatives": [
+    {
+      "scan_leaf": 72,
+      "printed_page": 50,
+      "sha256": "41f443a1a0d7ae58b82298a16d65132441d9cbcdab1be159b0547b419f0ea853"
+    }
+  ],
+  "source_status": "scan-collated-three-witness",
+  "critical_status": "scan-collated-no-variant",
+  "transcription": {
+    "policy": "verbal-diplomatic-reflow",
+    "line_end_hyphenation": "silently-rejoined",
+    "page_breaks": "recorded-in-metadata-not-canonical-body",
+    "note_markers": "global-numeric-labels-replace-page-local-asterisks",
+    "typography": "presentation-layer-not-encoded-in-canonical-body",
+    "formulae_and_scope_punctuation": "collated-against-scan"
+  },
+  "canonical_body": {
+    "encoding": "UTF-8",
+    "byte_length": 2541,
+    "sha256": "773305a6b0e648b1557e7c84b9383edda9d2fe923689ce56ad42ea399641a7ca"
+  },
+  "review": {
+    "apparatus_required": false,
+    "sic_required": false,
+    "note": "No printed Errata entry concerns pp. 39–50; digital-witness errors do not warrant sic."
+  }
+}

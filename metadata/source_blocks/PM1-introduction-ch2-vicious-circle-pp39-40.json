@@ -1,0 +1,67 @@
+{
+  "id": "PM1:INTRODUCTION-CH2-VICIOUS-CIRCLE-PP39-40",
+  "edition": "first",
+  "volume": 1,
+  "kind": "source-critical-prose",
+  "title": "Introduction, Chapter II — the vicious-circle principle",
+  "source_range": {
+    "printed_pages": "39–40",
+    "scan_leaves": [
+      61,
+      62
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "lean_path": "Principia/FirstEdition/Volume1/Introduction/Chapter2/Pages39To50.lean",
+  "witnesses": [
+    {
+      "siglum": "PM1-1910-SCAN",
+      "role": "canonical",
+      "uri": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+      "sha256": "52fd0ba446ab2dc97f08d6d4b16d67196edb6d991b0a0445e1ee4dbb57fa2eab"
+    },
+    {
+      "siglum": "PG78050",
+      "role": "control",
+      "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm",
+      "sha256": "f9e000e6e66bcd865d03ad41bbf7cbc74618678eceb6af0fb113c3df51e0200a"
+    },
+    {
+      "siglum": "WS-PM1",
+      "role": "control",
+      "uri": "https://en.wikisource.org/wiki/Index:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+    }
+  ],
+  "leaf_derivatives": [
+    {
+      "scan_leaf": 61,
+      "printed_page": 39,
+      "sha256": "6126e2f412ff82603800c585facf236efcb8118925c515b77925ec1437437e67"
+    },
+    {
+      "scan_leaf": 62,
+      "printed_page": 40,
+      "sha256": "11e06b7bdeab32b1ffd225f198a26ca6621c2f62b641579294ce30e4b488c436"
+    }
+  ],
+  "source_status": "scan-collated-three-witness",
+  "critical_status": "scan-collated-no-variant",
+  "transcription": {
+    "policy": "verbal-diplomatic-reflow",
+    "line_end_hyphenation": "silently-rejoined",
+    "page_breaks": "recorded-in-metadata-not-canonical-body",
+    "note_markers": "global-numeric-labels-replace-page-local-asterisks",
+    "typography": "presentation-layer-not-encoded-in-canonical-body",
+    "formulae_and_scope_punctuation": "collated-against-scan"
+  },
+  "canonical_body": {
+    "encoding": "UTF-8",
+    "byte_length": 5039,
+    "sha256": "9bb288822ccec2ccf4dc5dfab1c9a6403c2601892f7ce299ffdcc33df6f1de4e"
+  },
+  "review": {
+    "apparatus_required": false,
+    "sic_required": false,
+    "note": "No printed Errata entry concerns pp. 39–50; digital-witness errors do not warrant sic."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "APP-PM1-INTRO-P49-PG-NEGATION-001",
+  "item": "PM1:INTRODUCTION-CH2-SYSTEMATIC-AMBIGUITY-PP49-50A",
+  "locus": {
+    "volume": 1,
+    "printed_page": 49,
+    "scan_leaf": 71,
+    "line_or_formula": "definition of the negation of (x).φx"
+  },
+  "classification": "digital-witness-error",
+  "diplomatic_reading": "(∃x).∼φx",
+  "other_reading": "(∃x).φx",
+  "witnesses": [
+    {
+      "siglum": "SCAN",
+      "reading": "(∃x).∼φx",
+      "uri": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/71"
+    },
+    {
+      "siglum": "PG78050",
+      "reading": "(∃x).φx",
+      "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+    },
+    {
+      "siglum": "WS-PM1",
+      "reading": "(∃x).∼φx",
+      "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/71&action=raw"
+    }
+  ],
+  "evidence": "The scan and Wikisource print the negation sign; PG omits it from the displayed definition.",
+  "status": "double-checked",
+  "review": {
+    "editor": "Codex source audit",
+    "date": "2026-08-10",
+    "second_reviewer": "scan/WS cross-check"
+  }
+}
+
