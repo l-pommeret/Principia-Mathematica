@@ -1,7 +1,6 @@
 # Audit Q252 — PM I, ✱9·01, ✱9·02, ✱9·011 and ✱9·021
 
-Verdict: **A FOR TARGET AND CONTEXT — await follow-up GitHub CI before
-submission**. Canonical source:
+Verdict: **A — prêt pour soumission**. Canonical source:
 first edition, vol. I, pp. 132–135, leaves 154–157. The complete introductory
 text and the definitions through ✱9·08 are embedded in the prompt so that the
 formalizer receives PM's type-theoretic motivation, not four contextless
@@ -27,6 +26,7 @@ sides; `star_9_011` and `star_9_021` are aliases only, correctly recording
 PM's brace omission without inventing theorem dependencies. No semantic
 Lean quantifier, new axiom, or alternate syntax is introduced.
 
-The target/context audit is A with high confidence. Submission remains gated
-only because the current `Quantified`/`FirstOrder` worktree addition does not
-yet have immutable GitHub CI evidence; run 31427351077 covers its predecessor.
+The target/context audit is A with high confidence. The exact architecture is
+kernel-checked at commit `aff113e94058397d3b84a8319a0ef0f37ce58d3f` by
+[GitHub CI run 31428730300](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31428730300),
+conclusion `success`; the submission gate is satisfied.
