@@ -38,3 +38,9 @@ higher-order function variables, and systematic ambiguity remain explicit
 future grammar gates. Until those are implemented and tested
 against their source loci, parser success must not be claimed for those
 sections.
+
+`scripts/verify_pm_parser_coverage.py` makes routing explicit for the formal
+catalogue. Every item must either parse as object syntax or carry one of the
+reviewed metalinguistic rule kinds. At the current frontier this accounts for
+73 object-language statements and exactly two metalinguistic rules, ✱1·1 and
+✱1·11. Each parsed AST receives a deterministic SHA-256 in the audit result.

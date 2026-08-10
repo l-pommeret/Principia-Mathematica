@@ -36,6 +36,8 @@ jobs:
         run: python3 scripts/verify_predicative_gate_toy.py
       - name: Verify generated isolated Aristotle contexts
         run: python3 scripts/verify_context_bundles.py
+      - name: Verify deterministic PM parser coverage
+        run: python3 scripts/verify_pm_parser_coverage.py
       - name: Kernel-check the isolated elementary context fixture
         run: lake env lean aristotle/contexts/PM1-star-2-45.lean
       - name: Build and kernel-check the edition

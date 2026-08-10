@@ -54,7 +54,7 @@ GREEK_FUNCTION_SYMBOLS = "φψχθ"
 
 def mark_count(text: str) -> int:
     """A colon is typographically two dots; mixed groups add normally."""
-    return text.count(".") + 2 * text.count(":")
+    return text.count(".") + text.count("·") + 2 * text.count(":")
 
 
 def raw_tokens(source: str) -> list[Token]:
@@ -99,9 +99,9 @@ def raw_tokens(source: str) -> list[Token]:
                 result.append(Token(kind, text, index))
                 index += len(text)
                 continue
-        if char in ".:":
+        if char in ".:·":
             end = index + 1
-            while end < len(source) and source[end] in ".:":
+            while end < len(source) and source[end] in ".:·":
                 end += 1
             text = source[index:end]
             result.append(Token("mark", text, index, mark_count(text), mark_count(text)))
