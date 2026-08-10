@@ -107,7 +107,7 @@ def Term.renameApparent (rho : ApparentRenaming source target) :
     Term signature realContext source sort → Term signature realContext target sort
   | .real entryVar => .real entryVar
   | .apparent entryVar => .apparent (rho entryVar)
-  | @Term.symbol _ _ _ _ symbol => .symbol symbol
+  | @Term.symbol _ _ _ _ _ symbol => .symbol symbol
 
 def Arguments.renameApparent (rho : ApparentRenaming source target) :
     Arguments signature realContext source sorts →
@@ -139,7 +139,7 @@ def Term.renameReal (rho : RealRenaming source target) :
     Term signature source apparentContext sort → Term signature target apparentContext sort
   | .real entryVar => .real (rho entryVar)
   | .apparent entryVar => .apparent entryVar
-  | @Term.symbol _ _ _ _ symbol => .symbol symbol
+  | @Term.symbol _ _ _ _ _ symbol => .symbol symbol
 
 def Arguments.renameReal (rho : RealRenaming source target) :
     Arguments signature source apparentContext sorts →
@@ -178,7 +178,7 @@ def Term.substitute
     Term signature realContext source sort → Term signature realContext target sort
   | .real entryVar => .real entryVar
   | .apparent entryVar => substitution entryVar
-  | @Term.symbol _ _ _ _ symbol => .symbol symbol
+  | @Term.symbol _ _ _ _ _ symbol => .symbol symbol
 
 def Arguments.substitute
     (substitution : ApparentSubstitution signature realContext source target) :
@@ -238,7 +238,7 @@ def Term.abstractHead {signature : Signature} {head sort : RamifiedSort}
       | .real retained => .real retained
       | .apparent abstracted => .apparent abstracted
   | .apparent entryVar => .apparent (.succ entryVar)
-  | @Term.symbol _ _ _ _ symbol => .symbol symbol
+  | @Term.symbol _ _ _ _ _ symbol => .symbol symbol
 
 /-- Inverse operation: give the fresh apparentContext head the realContext head value. -/
 def Term.valueHead {signature : Signature} {head sort : RamifiedSort}
@@ -250,7 +250,7 @@ def Term.valueHead {signature : Signature} {head sort : RamifiedSort}
       match valueHeadVar (realContext := realContext) entryVar with
       | .real valued => .real valued
       | .apparent retained => .apparent retained
-  | @Term.symbol _ _ _ _ symbol => .symbol symbol
+  | @Term.symbol _ _ _ _ _ symbol => .symbol symbol
 
 def Arguments.abstractHead :
     Arguments signature (head :: realContext) apparentContext sorts →
@@ -357,9 +357,12 @@ def renameReal (rho : RealRenaming source target) :
     (term : Term signature (head :: realContext) apparentContext sort) :
     term.abstractHead.valueHead = term := by
   cases term with
-  | real entryVar => cases entryVar <;> rfl
-  | apparent entryVar => rfl
-  | symbol symbol => rfl
+  | real entryVar =>
+      cases entryVar <;>
+        simp [Term.abstractHead, Term.valueHead, abstractHeadVar, valueHeadVar]
+  | apparent entryVar =>
+      simp [Term.abstractHead, Term.valueHead, abstractHeadVar, valueHeadVar]
+  | symbol symbol => simp [Term.abstractHead, Term.valueHead]
 
 @[simp] theorem arguments_value_abstract_head
     (arguments : Arguments signature (head :: realContext) apparentContext sorts) :
@@ -779,7 +782,7 @@ def embedElementary : PM.Elementary realContext →
         LegacyDisjunctionMeaning.elementary
         (embedElementary left) (embedElementary right)
 
-structure ErasedElementary (order : Nat) where
+structure ErasedElementary (realContext : PM.RealContext) (order : Nat) where
   proposition : PM.Elementary realContext
   order_eq : order = 0
 
