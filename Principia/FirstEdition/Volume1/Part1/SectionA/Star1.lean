@@ -11,7 +11,38 @@ are independent working aids. Text between `PM-VERBATIM` markers is historical
 source text, not modern editorial explanation.
 -/
 
-/- PM-SOURCE-EXCERPT-BEGIN PM1:PRIMITIVE-IDEAS
+/- PM-VERBATIM-BEGIN PM1:PRIMITIVE-IDEAS
+✱1. PRIMITIVE IDEAS AND PROPOSITIONS.
+
+Since all definitions of terms are effected by means of other terms, every
+system of definitions which is not circular must start from a certain apparatus
+of undefined terms. It is to some extent optional what ideas we take as
+undefined in mathematics; the motives guiding our choice will be (1) to make
+the number of undefined ideas as small as possible, (2) as between two systems
+in which the number is equal, to choose the one which seems the simpler and
+easier. We know no way of proving that such and such a system of undefined
+ideas contains as few as will give such and such results[38]. Hence we can only
+say that such and such ideas are undefined in such and such a system, not that
+they are indefinable. Following Peano, we shall call the undefined ideas and
+the undemonstrated propositions primitive ideas and primitive propositions
+respectively. The primitive ideas are explained by means of descriptions
+intended to point out to the reader what is meant; but the explanations do not
+constitute definitions, because they really involve the ideas they explain.
+
+In the present number, we shall first enumerate the primitive ideas required in
+this section; then we shall define implication; and then we shall enunciate the
+primitive propositions required in this section. Every definition or
+proposition in the work has a number, for purposes of reference. Following
+Peano, we use numbers having a decimal as well as an integral part, in order to
+be able to insert new propositions between any two. A change in the integral
+part of the number will be used to correspond to a new chapter. Definitions
+will generally have numbers whose decimal part is less than ·1, and will be
+usually put at the beginning of chapters. In references, the integral parts of
+the numbers of propositions will be distinguished by being preceded by a star;
+thus “✱1·01” will mean the definition or proposition so numbered, and “✱1”
+will mean the chapter in which propositions have numbers whose integral part
+is 1, i.e. the present chapter. Chapters will generally be called “numbers.”
+
 PRIMITIVE IDEAS.
 
 (1) Elementary propositions. By an “elementary” proposition we mean one which
@@ -21,7 +52,7 @@ proposition such as “this is red,” where “this” is something given in se
 will be elementary. Any combination of given elementary propositions by means
 of negation, disjunction or conjunction (see below) will be elementary. In the
 primitive propositions of the present number, and therefore in the deductions
-from these primitive propositions in ✱2–✱5, the letters p, q, r, s will be used
+from these primitive propositions in ✱2—✱5, the letters p, q, r, s will be used
 to denote elementary propositions.
 
 (2) Elementary propositional functions. By an “elementary propositional
@@ -32,16 +63,70 @@ assigned to the variable or variables, the resulting value of the expression in
 question is an elementary proposition. Thus if p is an undetermined elementary
 proposition, “not-p” is an elementary propositional function.
 
+We shall show in ✱9 how to extend the results of this and the following numbers
+(✱1—✱5) to propositions which are not elementary.
+
 (3) Assertion. Any proposition may be either asserted or merely considered.
 If I say “Caesar died,” I assert the proposition “Caesar died,” if I say
 “‘Caesar died’ is a proposition,” I make a different assertion, and “Caesar
-died” is no longer asserted, but merely considered.
+died” is no longer asserted, but merely considered. Similarly in a hypothetical
+proposition, e.g. “if a = b, then b = a,” we have two unasserted propositions,
+namely “a = b” and “b = a,” while what is asserted is that the first of these
+implies the second. In language, we indicate when a proposition is merely
+considered by “if so-and-so” or “that so-and-so” or merely by inverted commas.
+In symbols, if p is a proposition, p by itself will stand for the unasserted
+proposition, while the asserted proposition will be designated by
+
+“⊢ . p.”
+
+The sign “⊢” is called the assertion-sign[39]; it may be read “it is true that”
+(although philosophically this is not exactly what it means). The dots after
+the assertion-sign indicate its range; that is to say, everything following is
+asserted until we reach either an equal number of dots preceding a sign of
+implication or the end of the sentence. Thus “⊢ : p . ⊃ . q” means “it is true
+that p implies q,” whereas “⊢ . p . ⊃ ⊢ . q” means “p is true; therefore q is
+true[40].” The first of these does not necessarily involve the truth either of
+p or of q, while the second involves the truth of both.
 
 (4) Assertion of a propositional function. Besides the assertion of definite
 propositions, we need what we shall call “assertion of a propositional
 function.” The general notion of asserting any propositional function is not
 used until ✱9, but we use at once the notion of asserting various special
 elementary propositional functions.
+
+Let φx be a propositional function whose argument is x; then we may assert φx
+without assigning a value to x. This is done, for example, when the law of
+identity is asserted in the form “A is A.” Here A is left undetermined, because,
+however A may be determined, the result will be true. Thus when we assert φx,
+leaving x undetermined, we are asserting an ambiguous value of our function.
+This is only legitimate if, however the ambiguity may be determined, the result
+will be true. Thus take, as an illustration, the primitive proposition ✱1·2
+below, namely
+
+“⊢ : p ∨ p . ⊃ . p,”
+
+i.e. “‘p or p’ implies p.” Here p may be any elementary proposition: by leaving p
+undetermined, we obtain an assertion which can be applied to any particular
+elementary proposition. Such assertions are like the particular enunciations
+in Euclid: when it is said “let ABC be an isosceles triangle; then the angles at
+the base will be equal,” what is said applies to any isosceles triangle; it is
+stated concerning one triangle, but not concerning a definite one. All the
+assertions in the present work, with a very few exceptions, assert
+propositional functions, not definite propositions.
+
+As a matter of fact, no constant elementary proposition will occur in the
+present work, or can occur in any work which employs only logical ideas. The
+ideas and propositions of logic are all general: an assertion (for example)
+which is true of Socrates but not of Plato, will not belong to logic[41], and
+if an assertion which is true of both is to occur in logic, it must not be made
+concerning either, but concerning a variable x. In order to obtain, in logic,
+a definite proposition instead of a propositional function, it is necessary to
+take some propositional function and assert that it is true always or
+sometimes, i.e. with all possible values of the variable or with some possible
+value. Thus, giving the name “individual” to whatever there is that is neither
+a proposition nor a function, the proposition “every individual is identical
+with itself” or the proposition “there are individuals” will be a proposition
+belonging to logic. But these propositions are not elementary.
 
 (5) Negation. If p is any proposition, the proposition “not-p,” or “p is
 false,” will be represented by “∼p.” For the present, p must be an elementary
@@ -50,15 +135,37 @@ proposition.
 (6) Disjunction. If p and q are any propositions, the proposition “p or q,”
 i.e. “either p is true or q is true,” where the alternatives are to be not
 mutually exclusive, will be represented by “p ∨ q.” This is called the
-disjunction or the logical sum of p and q. For the present, p and q must be
-elementary propositions.
-PM-SOURCE-EXCERPT-END PM1:PRIMITIVE-IDEAS -/
+disjunction or the logical sum of p and q. Thus “∼p ∨ q” will mean “p is false
+or q is true”; ∼(p ∨ q) will mean “it is false that either p or q is true,”
+which is equivalent to “p and q are both false”; ∼(∼p ∨ ∼q) will mean “it is
+false that either p is false or q is false,” which is equivalent to “p and q are
+both true”; and so on. For the present, p and q must be elementary propositions.
+
+The above are all the primitive ideas required in the theory of deduction.
+Other primitive ideas will be introduced in Section B.
+
+[38] The recognized methods of proving independence are not applicable, without
+reserve, to fundamentals. Cf. Principles of Mathematics, § 17. What is there
+said concerning primitive propositions applies with even greater force to
+primitive ideas.
+
+[39] We have adopted both the idea and the symbol of assertion from Frege.
+
+[40] Cf. Principles of Mathematics, § 38.
+
+[41] When we say that a proposition “belongs to logic,” we mean that it can be
+expressed in terms of the primitive ideas of logic. We do not mean that logic
+applies to it, for that would of course be true of any proposition.
+PM-VERBATIM-END PM1:PRIMITIVE-IDEAS -/
 
 /- PM-EDITORIAL
-The six passages above are primitive ideas explained in prose, not definitions
-or additional axioms. The transcription is abbreviated within (3), (4), and
-(6); it is therefore not yet the final diplomatic transcription of pp. 95–98.
-Status: source-checked excerpt, incomplete surrounding prose.
+The passages above are primitive ideas explained in prose, not definitions or
+additional axioms. This verbal-diplomatic reflow silently rejoins line-end
+hyphenation and records page boundaries in metadata rather than in the canonical
+body. Numeric note labels [38]–[41] replace the page-local *, † print markers.
+Typography (especially italics) is a separate presentation layer. The wording,
+formulae, punctuation, and scope dots were collated against scan leaves 117–120;
+no error of the first-edition printing was found in this locus.
 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱1·01

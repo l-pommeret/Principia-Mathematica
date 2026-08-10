@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -162,11 +163,67 @@ def check_item_metadata() -> None:
         fail(f"numbered verbatim items lack metadata: {sorted(missing)}")
 
 
+def check_source_block_metadata() -> None:
+    blocks = collect_verbatim()
+    required = {
+        "id", "edition", "volume", "kind", "title", "source_range",
+        "lean_path", "witnesses", "source_status", "critical_status",
+        "transcription", "canonical_body", "review",
+    }
+    identifiers: set[str] = set()
+    directory = ROOT / "metadata" / "source_blocks"
+    for path in sorted(directory.glob("*.json")):
+        try:
+            record = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as error:
+            fail(f"invalid source-block JSON {path}: {error}")
+        missing = required - record.keys()
+        if missing:
+            fail(f"{path} lacks required fields: {sorted(missing)}")
+        item_id = record["id"]
+        if item_id in identifiers:
+            fail(f"duplicate source-block ID {item_id}")
+        identifiers.add(item_id)
+        if item_id not in blocks:
+            fail(f"source-block metadata {item_id} has no PM-VERBATIM block")
+        lean_path = ROOT / record["lean_path"]
+        if not lean_path.is_file():
+            fail(f"Lean path for source block {item_id} does not exist: {lean_path}")
+        witnesses = record["witnesses"]
+        if not isinstance(witnesses, list) or not witnesses:
+            fail(f"{path} must cite at least one witness")
+        if sum(witness.get("role") == "canonical" for witness in witnesses) != 1:
+            fail(f"{path} must identify exactly one canonical witness")
+        for witness in witnesses:
+            if not {"siglum", "role", "uri"} <= witness.keys():
+                fail(f"incomplete witness in {path}")
+        body = blocks[item_id].encode("utf-8")
+        canonical = record["canonical_body"]
+        expected_length = canonical.get("byte_length")
+        expected_hash = canonical.get("sha256")
+        if expected_length != len(body):
+            fail(
+                f"canonical byte length for {item_id} is {expected_length}, "
+                f"not {len(body)}"
+            )
+        actual_hash = hashlib.sha256(body).hexdigest()
+        if expected_hash != actual_hash:
+            fail(
+                f"canonical SHA-256 for {item_id} is {expected_hash}, "
+                f"not {actual_hash}"
+            )
+        review = record["review"]
+        if record["critical_status"] == "no-authorial-print-error-detected":
+            if review.get("apparatus_required") or review.get("sic_required"):
+                fail(f"{path} contradicts its no-error critical status")
+
+
 def main() -> None:
     check_verbatim_blocks()
     check_excerpt_blocks()
     check_apparatus()
     check_item_metadata()
+    check_source_block_metadata()
     print("editorial checks passed")
 
 
