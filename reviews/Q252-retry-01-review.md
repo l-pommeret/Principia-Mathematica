@@ -99,7 +99,6 @@ reports `lake build Principia` successful and four disposable `rfl` checks
 successful, including both negation reductions and both brace-omission
 aliases; the check file was removed from the archive.
 
-The canonical Star9 file and item metadata are integrated with formal status
-`awaiting-ci`. No local Lean command, commit, or push was performed for this
-final audit; only repository CI may promote the four items to
-`kernel-checked`.
+The canonical Star9 file and item metadata were kernel-checked by repository
+CI at commit `5683a13ddc1fbb6e29d71f3de7fa0df592599389`, run
+`31432040301`, conclusion `success`. No local Lean command was run.

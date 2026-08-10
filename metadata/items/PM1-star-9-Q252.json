@@ -13,7 +13,7 @@
     "task_id": "44e52428-6a47-4593-aadb-d2d8bca9faed",
     "archive": "aristotle/results/Q252-retry-01-final.tar.gz",
     "sha256": "449ec59064bd288acbe1d739b0e1f14bb9496c438a77844947dde453c60ee627",
-    "audit": "accepted-awaiting-ci"
+    "audit": "accepted-kernel-checked"
   },
   "items": [
     {
@@ -25,8 +25,11 @@
       "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_01",
       "formal_scope": "first-order negation of always swaps to primitive sometimes and negates the elementary matrix",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱9·02",
@@ -37,8 +40,11 @@
       "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_02",
       "formal_scope": "first-order negation of sometimes swaps to primitive always and negates the elementary matrix",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱9·011",
@@ -49,8 +55,11 @@
       "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_011",
       "formal_scope": "printed brace-omission alias of ✱9·01",
+      "printed_dependencies": ["PM1:✱9·01"],
+      "lean_dependencies": ["PM.FirstEdition.Volume1.Star9.star_9_01"],
+      "normalized_dependencies": ["PM1:✱9·01"],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱9·021",
@@ -61,13 +70,16 @@
       "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_021",
       "formal_scope": "printed brace-omission alias of ✱9·02",
+      "printed_dependencies": ["PM1:✱9·02"],
+      "lean_dependencies": ["PM.FirstEdition.Volume1.Star9.star_9_02"],
+      "normalized_dependencies": ["PM1:✱9·02"],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "5683a13ddc1fbb6e29d71f3de7fa0df592599389",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31432040301",
+    "conclusion": "success"
   }
 }

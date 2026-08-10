@@ -18,6 +18,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DECL_START = re.compile(r"^\s*(?:theorem|def|abbrev)\s+([A-Za-z0-9_']+)\b")
 KNOWN_BRIDGES = {"PM.Derivation.detach"}
+KNOWN_SYNTAX_INFRASTRUCTURE = {
+    "PM.FirstOrder.neg",
+    "PM.FirstOrder.always",
+    "PM.FirstOrder.sometimes",
+}
 
 
 class DependencyError(ValueError):
@@ -128,7 +133,7 @@ def extract_lean_dependencies(item: dict, declarations: dict[str, str], root: Pa
     )
     aliases = json.loads((root / "metadata/dependency_aliases.json").read_text(encoding="utf-8"))
     candidates = set(declarations) | set(aliases["lean_realizations"]) | KNOWN_BRIDGES
-    reject_unindexed_references(item, body, candidates)
+    reject_unindexed_references(item, body, candidates | KNOWN_SYNTAX_INFRASTRUCTURE)
     # Longest first avoids treating one fully qualified name as a prefix.
     return sorted(name for name in candidates if name != item["declaration"] and _occurs(body, name))
 
