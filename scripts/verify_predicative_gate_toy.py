@@ -65,6 +65,24 @@ def main() -> None:
                 if re.search(pattern, code, flags=re.MULTILINE)]
     if failures:
         raise SystemExit("predicative gate violation: " + ", ".join(failures))
+    derivation_match = re.search(
+        r"inductive\s+DeepDerivation\b([\s\S]*?)(?=\ndef\s+unaryReducibilityFormula\b)",
+        code,
+    )
+    if derivation_match is None:
+        raise SystemExit("DeepDerivation boundary cannot be located")
+    if re.search(r"(?m)^\s*\|", derivation_match.group(1)):
+        raise SystemExit(
+            "DeepDerivation acquired a primitive constructor before its PM rule audit"
+        )
+    if re.search(
+        r"(?:star10_23|star10_27|star13_101)[A-Za-z0-9_']*[^\n]*"
+        r"DeepDerivation|DeepDerivation[^\n]*(?:star10_23|star10_27|star13_101)",
+        code,
+    ):
+        raise SystemExit(
+            "a derived ✱10/✱13 result was smuggled into the deep derivation interface"
+        )
     premise = code.split("def star13_101ReducibilityPremise", 1)[1]
     if "(reducibility : UnaryReducibility12_1" not in premise:
         raise SystemExit("✱13·101 premise lost its explicit ✱12·1 package")
