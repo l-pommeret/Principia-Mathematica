@@ -11,6 +11,12 @@ Every item retains its original starred number and page-level provenance. A
 proof is accepted only after Lean and CI checks, with no `sorry`, `admit`, unsafe
 escape hatch, or unrecorded axiom.
 
+Printed statements and demonstrations can be compiled into deterministic,
+strict prover manifests. See
+[`docs/CONSTRAINED_RECONSTRUCTION.md`](docs/CONSTRAINED_RECONSTRUCTION.md): the
+printed citations form the proof whitelist, while their transitive compilation
+closure is tracked separately and grants no additional proof permission.
+
 Aristotle credentials must exist only in `ARISTOTLE_API_KEY` or the macOS
 Keychain. They must never occur in tracked files, prompts, manifests, logs,
 archives, or command-line arguments.
