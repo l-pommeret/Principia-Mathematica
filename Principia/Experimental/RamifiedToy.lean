@@ -825,13 +825,15 @@ def eraseElementary? (proposition :
     eraseElementaryIndexed? (embedElementary proposition) =
       some ⟨proposition, rfl⟩ := by
   induction proposition with
-  | constant name => rfl
+  | constant name =>
+      simp [embedElementary, eraseElementaryIndexed?, erasePropositionTerm?]
   | var entryVar => simp [embedElementary, eraseElementaryIndexed?,
       erasePropositionTerm?]
   | neg proposition inductionHypothesis =>
       simp [embedElementary, eraseElementaryIndexed?, inductionHypothesis]
   | disj left right leftHypothesis rightHypothesis =>
-      simp [embedElementary, eraseElementaryIndexed?, leftHypothesis, rightHypothesis]
+      simp only [embedElementary, eraseElementaryIndexed?]
+      rw [leftHypothesis, rightHypothesis]
 
 @[simp] theorem erase_embedElementary (proposition : PM.Elementary realContext) :
     eraseElementary? (embedElementary proposition) = some proposition := by
