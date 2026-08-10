@@ -19,7 +19,7 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_03",
       "formal_scope": "(p ⊃ ∼q) ⊃ (q ⊃ ∼p), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·04",
@@ -31,7 +31,7 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_04",
       "formal_scope": "(p ⊃ (q ⊃ r)) ⊃ (q ⊃ (p ⊃ r)), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·05",
@@ -43,12 +43,12 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_05",
       "formal_scope": "(q ⊃ r) ⊃ ((p ⊃ q) ⊃ (p ⊃ r)), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "c5a6ac32bc8341ab0928b27bf7d9dce8c2950d2a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31412692132",
+    "conclusion": "success"
   }
 }
