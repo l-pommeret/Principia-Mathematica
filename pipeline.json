@@ -1524,10 +1524,10 @@
       "aristotle_latest_task_created": "12 mins ago",
       "aristotle_archive_path": "aristotle/results/Q253-final.tar.gz",
       "aristotle_archive_sha256": "1af516841e5ae1826bbf8a80bc2a17188face8c3dcf92be530aa59ca43dafb1f",
-      "integration_status": "awaiting-ci",
-      "lean_ci_commit": "pending",
-      "lean_ci_run": "pending",
-      "lean_ci_conclusion": "pending"
+      "integration_status": "kernel-checked",
+      "lean_ci_commit": "73b0a321aaaa8cd865b867572b89f3bf5eb607a3",
+      "lean_ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31439710731",
+      "lean_ci_conclusion": "success"
     },
     "Q254": {
       "canonical_ids": [
@@ -2088,6 +2088,22 @@
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31432040301",
         "conclusion": "success"
       }
+    },
+    "PM1:✱9·03": {
+      "batch": "PM1-STAR9-Q253", "status": "kernel-checked",
+      "ci_evidence": {"commit": "73b0a321aaaa8cd865b867572b89f3bf5eb607a3", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31439710731", "conclusion": "success"}
+    },
+    "PM1:✱9·04": {
+      "batch": "PM1-STAR9-Q253", "status": "kernel-checked",
+      "ci_evidence": {"commit": "73b0a321aaaa8cd865b867572b89f3bf5eb607a3", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31439710731", "conclusion": "success"}
+    },
+    "PM1:✱9·05": {
+      "batch": "PM1-STAR9-Q253", "status": "kernel-checked",
+      "ci_evidence": {"commit": "73b0a321aaaa8cd865b867572b89f3bf5eb607a3", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31439710731", "conclusion": "success"}
+    },
+    "PM1:✱9·06": {
+      "batch": "PM1-STAR9-Q253", "status": "kernel-checked",
+      "ci_evidence": {"commit": "73b0a321aaaa8cd865b867572b89f3bf5eb607a3", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31439710731", "conclusion": "success"}
     }
   }
 }

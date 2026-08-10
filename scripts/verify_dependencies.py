@@ -22,6 +22,8 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "PM.FirstOrder.neg",
     "PM.FirstOrder.always",
     "PM.FirstOrder.sometimes",
+    "PM.FirstOrder.disjRightElementary",
+    "PM.FirstOrder.disjElementaryLeft",
 }
 
 

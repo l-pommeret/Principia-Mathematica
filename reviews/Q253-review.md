@@ -34,4 +34,8 @@ Only the four aliases are accepted for integration against the authoritative
 repository API. `open scoped Classical` occurs solely in generated
 `RequestProject/Main.lean` and is recorded by the archive auditor as a
 harness-only exception. Final verdict: **A for the four exact aliases,
-awaiting repository CI**.
+kernel-checked by repository CI**. Commit
+`73b0a321aaaa8cd865b867572b89f3bf5eb607a3`, run
+[31439710731](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31439710731),
+conclusion `success`; all four aliases are now accepted in the authoritative
+repository context.

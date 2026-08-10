@@ -68,6 +68,19 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("assert", "⊢", index))
             index += 1
             continue
+        if char == "(":
+            binder = re.match(
+                r"\(\s*(∃)?\s*([A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′']*"
+                r"(?:\s*,\s*[A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′']*)*)\s*\)"
+                r"(?=\s*[\.:])",
+                source[index:],
+            )
+            if binder:
+                text = binder.group(0)
+                kind = "exists_binder" if binder.group(1) else "forall_binder"
+                result.append(Token(kind, text, index))
+                index += len(text)
+                continue
         if char in ".:":
             end = index + 1
             while end < len(source) and source[end] in ".:":
@@ -111,6 +124,18 @@ def attach_scope_marks(tokens: list[Token]) -> list[Token]:
     """
     consumed: set[int] = set()
     result: list[Token] = []
+    # Group II: a mark following an apparent-variable bracket works forward.
+    for index, token in enumerate(tokens):
+        if token.kind not in {"forall_binder", "exists_binder"}:
+            continue
+        following = (tokens[index + 1]
+                     if index + 1 < len(tokens) and tokens[index + 1].kind == "mark" else None)
+        if following is not None:
+            consumed.add(index + 1)
+            tokens[index] = Token(
+                token.kind, token.text, token.position,
+                right_scope=following.right_scope,
+            )
     for index, token in enumerate(tokens):
         if token.kind != "operator":
             continue
@@ -149,6 +174,19 @@ def binding_power(token: Token, side: str) -> int:
     return {"≡": 1100, "⊃": 1200, "∨": 1300, "·": 1400}[token.text]
 
 
+def binder_binding_power(token: Token) -> int:
+    if token.right_scope:
+        # Group II lies strictly between Group I and Group III at equal count.
+        return 1000 - 100 * token.right_scope - 5
+    return 1000
+
+
+def binder_variables(text: str) -> str:
+    interior = text[text.index("(") + 1:text.rindex(")")]
+    interior = interior.replace("∃", "", 1)
+    return ",".join(part.strip() for part in interior.split(","))
+
+
 class Parser:
     def __init__(self, source: str):
         self.tokens = attach_scope_marks(raw_tokens(source))
@@ -183,6 +221,13 @@ class Parser:
             left = AST("atom", value=token.text)
         elif token.kind == "neg":
             left = AST("not", (self.expression(1500),))
+        elif token.kind in {"forall_binder", "exists_binder"}:
+            body = self.expression(binder_binding_power(token))
+            left = AST(
+                "forall" if token.kind == "forall_binder" else "exists",
+                (body,),
+                binder_variables(token.text),
+            )
         elif token.kind == "lparen":
             left = self.expression(0)
             close = self.take()
@@ -196,7 +241,13 @@ class Parser:
             if left_bp < minimum:
                 break
             operator = self.take()
-            right = self.expression(binding_power(operator, "right"))
+            right_minimum = binding_power(operator, "right")
+            # PM later records the unmarked n-ary surface conventions as
+            # left-associated (✱2·33 for disjunction, ✱3·02/✱4·34 for
+            # products). Implication remains right-associated.
+            if operator.right_scope == 0 and operator.text in {"∨", "·"}:
+                right_minimum += 1
+            right = self.expression(right_minimum)
             left = AST(OPERATORS.get(operator.text, "and"), (left, right))
         return left
 
@@ -205,12 +256,35 @@ def parse(source: str) -> AST:
     return Parser(source).parse()
 
 
+ITEM_PREFIX = re.compile(r"^\s*✱[0-9]+·[0-9]+\.\s*")
+DEFINITION_SIGN = re.compile(r"\s*([.:]+)\s*=\s*([.:]+)\s*")
+
+
+def parse_statement(source: str) -> AST:
+    """Parse a complete numbered formula or definition line.
+
+    Numbering and the terminal `Df` are editorial attributes; the definition
+    sign itself becomes an object in the parsed record rather than an equality
+    proposition.
+    """
+    body = ITEM_PREFIX.sub("", source, count=1).strip()
+    body = re.sub(r"\s+Df\.?\s*$", "", body).strip()
+    match = DEFINITION_SIGN.search(body)
+    if match:
+        left_text = body[:match.start()].strip()
+        right_text = body[match.end():].strip()
+        if not left_text or not right_text:
+            raise PMSyntaxError("definition sign has an empty side")
+        return AST("definition", (parse(left_text), parse(right_text)))
+    return parse(body)
+
+
 def main(arguments: list[str] | None = None) -> None:
     import argparse
     cli = argparse.ArgumentParser()
     cli.add_argument("formula")
     options = cli.parse_args(arguments)
-    print(json.dumps(parse(options.formula).to_dict(), ensure_ascii=False, sort_keys=True))
+    print(json.dumps(parse_statement(options.formula).to_dict(), ensure_ascii=False, sort_keys=True))
 
 
 if __name__ == "__main__":
