@@ -20,10 +20,44 @@ Each item records the edition, volume, printed page, scan leaf and URL, source
 image checksum, transcription checksum, verification status, and editorial
 interventions. Suspected misprints are recorded, never silently corrected.
 
+## Critical apparatus
+
+The repository distinguishes the canonical printed witness from derived digital
+witnesses. A discrepancy is classified before any marker is displayed:
+
+- `authorial-print-sic`: an apparent error actually present in the canonical
+  1910–1913 printing; the diplomatic text is preserved and the reading is
+  displayed with `[sic]` in the reader-facing edition;
+- `digital-witness-error`: an OCR, TeX, or transcription error absent from the
+  canonical scan; it is attributed to that digital witness and never marked as
+  an error by Whitehead or Russell;
+- `editorial-correction`: a supplied corrected reading, always separate from
+  the diplomatic reading;
+- `variant`: a reading from another impression or the second edition;
+- `uncertain`: insufficient evidence; no silent choice is made.
+
+Apparatus records use standard labels where applicable: `sic`, `corr.`, `conj.`,
+`lege`, `om.`, and `add.`. Every record gives an exact locus, diplomatic reading,
+proposed or witnessed reading, witness sigla, evidence, editor, date, and status.
+
+`[sic]` is never inserted into the canonical byte-for-byte transcription. It is
+rendered from the linked apparatus record, so fidelity checks remain possible.
+It may be assigned only after checking the scan and at least one independent
+witness or second physical copy. A suspicious OCR string alone can never justify
+`sic`.
+
+Witness sigla initially used by the project are:
+
+- `PM1-1910-SCAN`: facsimile of volume I, first edition (canonical witness);
+- `PG78050`: Project Gutenberg HTML/TeX transcription (derived witness);
+- `WS-PM1`: Wikisource transcription and page facsimile (derived witness).
+
+The apparatus is cumulative and immutable: a superseded judgment remains in
+history and is replaced by a new reviewed record rather than silently rewritten.
+
 ## Stable names
 
 The editorial ID preserves volume and printed label, for example
 `PM1:✱2·01`. Lean names follow the printed hierarchy, for example
 `PM.FirstEdition.Volume1.Star2.p01`; they never introduce a competing
 mathematical numbering.
-

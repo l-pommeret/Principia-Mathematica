@@ -1,0 +1,37 @@
+{
+  "id": "APP-PM1-1.4-PG78050-001",
+  "item": "PM1:✱1·4",
+  "locus": {
+    "volume": 1,
+    "printed_page": 100,
+    "scan_leaf": 122,
+    "line_or_formula": "consequent of the displayed primitive proposition"
+  },
+  "classification": "digital-witness-error",
+  "diplomatic_reading": "⊢ : p ∨ q . ⊃ . q ∨ p     Pp.",
+  "other_reading": "⊢ : p ∨ q . ⊃ . p ∨ p     Pp.",
+  "witnesses": [
+    {
+      "siglum": "PM1-1910-SCAN",
+      "reading": "⊢ : p ∨ q . ⊃ . q ∨ p     Pp.",
+      "uri": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/122"
+    },
+    {
+      "siglum": "PG78050",
+      "reading": "⊢ : p ∨ q . ⊃ . p ∨ p     Pp.",
+      "uri": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+    },
+    {
+      "siglum": "WS-PM1",
+      "reading": "⊢ : p ∨ q . ⊃ . q ∨ p     Pp.",
+      "uri": "https://en.wikisource.org/wiki/Russell_%26_Whitehead%27s_Principia_Mathematica/Part_1/Section_A"
+    }
+  ],
+  "evidence": "The canonical scan and the explanatory sentence immediately following the formula agree on q ∨ p; only the PG78050 data-tex has p ∨ p. This is not a sic in PM.",
+  "status": "double-checked",
+  "review": {
+    "editor": "Codex source audit",
+    "date": "2026-08-10",
+    "second_reviewer": "independent source sub-agent"
+  }
+}
