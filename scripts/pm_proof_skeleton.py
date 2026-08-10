@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+"""Parse a printed PM demonstration into an ordered, non-proving skeleton."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+import argparse
+import json
+import re
+from pathlib import Path
+
+
+PRINTED_ALIASES = {
+    "Taut": ["PM1:✱1·2"], "Add": ["PM1:✱1·3"],
+    "Perm": ["PM1:✱1·4"], "Assoc": ["PM1:✱1·5"],
+    "Sum": ["PM1:✱1·6"], "Comm": ["PM1:✱2·04"],
+    "Syll": ["PM1:✱2·05", "PM1:✱2·06", "PM1:✱3·33", "PM1:✱3·34"],
+    "Abs": ["PM1:✱2·01"], "Id": ["PM1:✱2·08"],
+    "Transp": ["PM1:✱2·16", "PM1:✱2·17"],
+    "Fact": ["PM1:✱3·45"], "Comp": ["PM1:✱3·43"],
+    "Exp": ["PM1:✱3·3"], "Imp": ["PM1:✱3·31"],
+    "Simp": ["PM1:✱3·26", "PM1:✱3·27"],
+    "Ass": ["PM1:✱3·35"],
+}
+
+REFERENCE = re.compile(r"✱([0-9]+)·([0-9]+(?:·[0-9]+)*)")
+LINE_REFERENCE = re.compile(r"\(([0-9]+)\)")
+SUBSTITUTION = re.compile(r"[\[(]([^\]\n()]*?/[^\]\n()]*?)[\])]" )
+
+
+def expand_reference(text: str, volume: int = 1) -> list[str]:
+    match = REFERENCE.fullmatch(text)
+    if match is None:
+        raise ValueError(f"not a PM reference: {text!r}")
+    number, suffixes = match.groups()
+    return [f"PM{volume}:✱{number}·{suffix}" for suffix in suffixes.split("·")]
+
+
+def item_order(item_id: str) -> tuple[int, int]:
+    match = re.fullmatch(r"PM[0-9]+:✱([0-9]+)·([0-9]+)", item_id)
+    if match is None:
+        raise ValueError(f"invalid current PM item {item_id!r}")
+    number, suffix = match.groups()
+    # Preserve decimal ordering: ·3 < ·31 < ·311 < ·32.
+    return int(number), int(suffix) * 10 ** (12 - len(suffix))
+
+
+def alias_candidates(alias: str, current_item: str | None) -> tuple[list[str], str]:
+    candidates = PRINTED_ALIASES[alias]
+    if alias != "Syll":
+        return candidates, "exact" if len(candidates) == 1 else "form-family"
+    if current_item is None:
+        return candidates, "locus-required"
+    # PM explicitly announces after ✱3·33/·34 that these forms will henceforth
+    # be called Syll; earlier occurrences resolve to the ✱2·05/·06 family.
+    if item_order(current_item) >= item_order("PM1:✱3·35"):
+        return ["PM1:✱3·33", "PM1:✱3·34"], "historically-scoped-family"
+    return ["PM1:✱2·05", "PM1:✱2·06"], "historically-scoped-family"
+
+
+def step_blocks(source: str) -> list[str]:
+    blocks: list[list[str]] = []
+    current: list[str] | None = None
+    for line in source.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("⊢"):
+            if current:
+                blocks.append(current)
+            current = [stripped]
+        elif current is not None and (stripped.startswith("[") or stripped.startswith("[(")):
+            current.append(stripped)
+        elif current is not None and stripped == "":
+            blocks.append(current)
+            current = None
+    if current:
+        blocks.append(current)
+    return ["\n".join(lines) for lines in blocks]
+
+
+def parse_step(block: str, volume: int = 1, current_item: str | None = None) -> dict:
+    events: list[tuple[int, dict]] = []
+    for match in REFERENCE.finditer(block):
+        events.append((match.start(), {
+            "kind": "printed-reference",
+            "printed": match.group(0),
+            "normalized_candidates": expand_reference(match.group(0), volume),
+        }))
+    for alias, resolutions in PRINTED_ALIASES.items():
+        for match in re.finditer(rf"(?<![A-Za-z]){re.escape(alias)}(?![A-Za-z])", block):
+            resolved, status = alias_candidates(alias, current_item)
+            events.append((match.start(), {
+                "kind": "printed-alias", "printed": alias,
+                "normalized_candidates": resolved,
+                "resolution_status": status,
+            }))
+    substitutions = [" ".join(match.group(1).split()) for match in SUBSTITUTION.finditer(block)]
+    labels = list(LINE_REFERENCE.finditer(block))
+    trailing = re.search(r"\(([0-9]+)\)\s*$", block)
+    produced = trailing.group(1) if trailing else None
+    used = [match.group(1) for match in labels
+            if trailing is None or match.start() != trailing.start()]
+    for match in labels:
+        if trailing is not None and match.start() == trailing.start():
+            continue
+        events.append((match.start(), {
+            "kind": "line-reference", "printed": f"({match.group(1)})",
+            "line": match.group(1),
+        }))
+    return {
+        "printed": block,
+        "events": [event for _, event in sorted(events, key=lambda pair: pair[0])],
+        "substitutions": substitutions,
+        "uses_lines": used,
+        "produces_line": produced,
+    }
+
+
+def parse_demonstration(source: str, volume: int = 1,
+                        current_item: str | None = None) -> dict:
+    blocks = step_blocks(source)
+    return {
+        "kind": "pm-demonstration-skeleton",
+        "volume": volume,
+        "current_item": current_item,
+        "steps": [parse_step(block, volume, current_item) for block in blocks],
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("source", type=Path)
+    parser.add_argument("--volume", type=int, default=1)
+    parser.add_argument("--item")
+    options = parser.parse_args()
+    result = parse_demonstration(
+        options.source.read_text(encoding="utf-8"), options.volume, options.item
+    )
+    print(json.dumps(result, ensure_ascii=False, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()
