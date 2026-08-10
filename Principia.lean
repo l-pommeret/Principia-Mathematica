@@ -3,7 +3,6 @@ import Principia.Syntax.Apparent
 import Principia.Syntax.Printed
 import Principia.Deduction.System
 import Principia.Experimental.RamifiedToy
-import Principia.Experimental.PredicativeGateToy
 import Principia.Experimental.TypicalAmbiguityToy
 import Principia.Experimental.DescriptionScopeToy
 import Principia.FirstEdition.Volume1.Introduction
