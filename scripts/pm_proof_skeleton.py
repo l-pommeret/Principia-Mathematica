@@ -25,7 +25,15 @@ PRINTED_ALIASES = ALIAS_REGISTRY["aliases"]
 
 REFERENCE = re.compile(r"✱([0-9]+)·([0-9]+(?:·[0-9]+)*)")
 LINE_REFERENCE = re.compile(r"\(([0-9]+)\)")
-SUBSTITUTION = re.compile(r"[\[(]([^\]\n()]*?/[^\]\n()]*?)[\])]" )
+# PM prints substitutions both in square brackets (`[∼q/q]`) and inline after
+# a cited proposition (`✱2·74 ∼q/q`, `✱2·73 (q,p)/(p,q)`).  Parenthesized
+# tuples are operands here, not delimiters around the whole substitution.
+SUBSTITUTION = re.compile(
+    r"(?:\[\s*)?"
+    r"(\([^()\n]+\)|[^\s.\[\]()]+)\s*/\s*"
+    r"(\([^()\n]+\)|[^\s.\[\]()]+)"
+    r"(?:\s*\])?"
+)
 
 
 def expand_reference(text: str, volume: int = 1) -> list[str]:
@@ -105,7 +113,10 @@ def parse_step(block: str, volume: int = 1, current_item: str | None = None) -> 
                 "normalized_candidates": resolved,
                 "resolution_status": status,
             }))
-    substitutions = [" ".join(match.group(1).split()) for match in SUBSTITUTION.finditer(block)]
+    substitutions = [
+        " ".join(match.group(0).strip().removeprefix("[").removesuffix("]").split())
+        for match in SUBSTITUTION.finditer(block)
+    ]
     labels = list(LINE_REFERENCE.finditer(block))
     trailing = re.search(r"\(([0-9]+)\)\s*$", block)
     produced = trailing.group(1) if trailing else None

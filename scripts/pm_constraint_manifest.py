@@ -81,7 +81,8 @@ def context_closure(roots: set[str], registry: dict[str, dict]) -> list[str]:
 
 
 def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool = True,
-                     global_conventions: list[str] | None = None) -> dict:
+                     global_conventions: list[str] | None = None,
+                     local_declarations: dict[str, str] | None = None) -> dict:
     permissions = event_permissions(skeleton)
     conventions = list(global_conventions or [])
     if len(conventions) != len(set(conventions)):
@@ -90,7 +91,14 @@ def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool 
         candidate for permission in permissions for candidate in permission["candidates"]
     }
     all_candidates = printed_candidates | set(conventions)
-    missing = sorted(candidate for candidate in all_candidates if candidate not in registry)
+    local = dict(local_declarations or {})
+    overlap = sorted(set(local) & set(registry))
+    if overlap:
+        raise ConstraintError(f"local items already exist in the kernel registry: {overlap}")
+    missing = sorted(
+        candidate for candidate in all_candidates
+        if candidate not in registry and candidate not in local
+    )
     non_kernel = sorted(
         candidate for candidate in all_candidates
         if candidate in registry and registry[candidate].get("formal_status") != "kernel-checked"
@@ -110,10 +118,15 @@ def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool 
         raise ConstraintError("; ".join(details))
 
     available = all_candidates - set(missing) - set(non_kernel)
-    closure = context_closure(available, registry)
+    external_available = available - set(local)
+    closure = context_closure(external_available, registry)
     declarations = {
         identifier: registry[identifier]["declaration"]
         for identifier in closure
+    }
+    allowed_declarations = {
+        identifier: (local[identifier] if identifier in local else registry[identifier]["declaration"])
+        for identifier in sorted(available)
     }
     lean_paths = sorted({registry[identifier]["lean_path"] for identifier in closure})
     return {
@@ -127,9 +140,8 @@ def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool 
         "proof_permissions": permissions,
         "global_conventions": conventions,
         "allowed_pm_items": sorted(available),
-        "allowed_lean_declarations": {
-            identifier: declarations[identifier] for identifier in sorted(available)
-        },
+        "allowed_lean_declarations": allowed_declarations,
+        "local_proof_items": sorted(set(available) & set(local)),
         "context_closure": closure,
         "context_declarations": declarations,
         "context_lean_paths": lean_paths,
@@ -143,6 +155,69 @@ def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool 
             for index, step in enumerate(skeleton["steps"], start=1)
             for substitution in step["substitutions"]
         ],
+    }
+
+
+def compile_batch_manifest(
+    skeletons: list[dict],
+    registry: dict[str, dict],
+    target_declarations: dict[str, str],
+    *,
+    strict: bool = True,
+    global_conventions: dict[str, list[str]] | None = None,
+) -> dict:
+    """Compile an ordered batch whose later targets may cite earlier targets.
+
+    A local target is proof permission only after its declaration has appeared
+    earlier in the batch.  It is never inserted into the trusted external
+    context closure and never masquerades as a kernel-checked repository item.
+    """
+    if not skeletons:
+        raise ConstraintError("a constrained batch must contain at least one target")
+    conventions = global_conventions or {}
+    seen: dict[str, str] = {}
+    manifests: list[dict] = []
+    for skeleton in skeletons:
+        identifier = skeleton.get("current_item")
+        if identifier not in target_declarations:
+            raise ConstraintError(f"missing target declaration for {identifier}")
+        manifest = compile_manifest(
+            skeleton,
+            registry,
+            strict=strict,
+            global_conventions=conventions.get(identifier, []),
+            local_declarations=seen,
+        )
+        manifests.append(manifest)
+        seen[identifier] = target_declarations[identifier]
+
+    declared = [manifest["current_item"] for manifest in manifests]
+    unused = sorted(set(target_declarations) - set(declared))
+    if unused:
+        raise ConstraintError(f"target declarations without skeletons: {unused}")
+    closure = sorted({item for manifest in manifests for item in manifest["context_closure"]})
+    context_declarations = {
+        identifier: registry[identifier]["declaration"] for identifier in closure
+    }
+    return {
+        "kind": "pm-constrained-prover-batch-manifest",
+        "policy": {
+            "proof_permissions_are_exact_per_target": True,
+            "local_targets_must_precede_use": True,
+            "context_closure_grants_proof_permission": False,
+            "strict": strict,
+        },
+        "batch_items": manifests,
+        "target_order": declared,
+        "target_declarations": {
+            identifier: target_declarations[identifier] for identifier in declared
+        },
+        "context_closure": closure,
+        "context_declarations": context_declarations,
+        "context_lean_paths": sorted({registry[item]["lean_path"] for item in closure}),
+        "proof_permissions": sorted({
+            item for manifest in manifests for item in manifest["allowed_pm_items"]
+        }),
     }
 
 

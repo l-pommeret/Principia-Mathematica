@@ -1,0 +1,35 @@
+{
+  "kind": "pm-constrained-batch-spec",
+  "volume": 1,
+  "prompt_path": "aristotle/Q218.md",
+  "items": [
+    {
+      "id": "PM1:✱2·73",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-2-73.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_73",
+      "lean_target": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_73 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ q) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (q ∨ₚ r))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+      "global_conventions": ["PM1:✱1·11"]
+    },
+    {
+      "id": "PM1:✱2·74",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-2-74.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_74",
+      "lean_target": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_74 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+      "global_conventions": ["PM1:✱1·11"]
+    },
+    {
+      "id": "PM1:✱2·75",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-2-75.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_75",
+      "lean_target": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_75 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ∨ₚ q) ⊃ₚ ((p ∨ₚ (q ⊃ₚ r)) ⊃ₚ (p ∨ₚ r))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+      "global_conventions": ["PM1:✱1·11"]
+    },
+    {
+      "id": "PM1:✱2·76",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-2-76.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_76",
+      "lean_target": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_76 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ∨ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+      "global_conventions": ["PM1:✱1·11"]
+    }
+  ]
+}

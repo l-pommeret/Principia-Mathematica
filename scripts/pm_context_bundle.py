@@ -54,7 +54,9 @@ def clean_declaration(item: dict, root: Path) -> str:
 
 
 def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -> dict:
-    if manifest.get("kind") != "pm-constrained-prover-manifest":
+    if manifest.get("kind") not in {
+        "pm-constrained-prover-manifest", "pm-constrained-prover-batch-manifest"
+    }:
         raise BundleError("not a PM constrained-prover manifest")
     closure = list(manifest.get("context_closure", []))
     unknown = sorted(set(closure) - registry.keys())
@@ -105,14 +107,16 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
     canonical_manifest = json.dumps(
         manifest, ensure_ascii=False, sort_keys=True, separators=(",", ":")
     )
-    return {
+    result = {
         "kind": "pm-isolated-context-bundle",
         "profile": "elementary-pm1",
         "current_item": manifest.get("current_item"),
         "manifest_sha256": sha256_text(canonical_manifest),
         "source_sha256": sha256_text(source),
         "source_bytes": len(source.encode("utf-8")),
-        "proof_permissions": list(manifest.get("allowed_pm_items", [])),
+        "proof_permissions": list(
+            manifest.get("allowed_pm_items", manifest.get("proof_permissions", []))
+        ),
         "context_closure": closure,
         "sources": sources,
         "lean_source": source,
@@ -122,6 +126,9 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
             "requires_remote_kernel_check": True,
         },
     }
+    if "target_order" in manifest:
+        result["target_order"] = list(manifest["target_order"])
+    return result
 
 
 def main() -> None:

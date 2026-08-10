@@ -574,7 +574,7 @@
       "source": "PM volume I, first edition, p. 113",
       "prompt_path": "aristotle/Q218.md",
       "audit_path": "reviews/Q218-review.md",
-      "audit_status": "A-pending-mixed-disjunction-CI-and-Q252",
+      "audit_status": "A-pending-isolated-context-CI",
       "lean_scope": "exact PM1 ✱2·73 through ✱2·76",
       "depends_on": [
         "PM1:✱2·31",
@@ -583,7 +583,14 @@
         "PM1:✱2·621"
       ],
       "parallel_group": "STAR2-WAVE-4A",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "not-submitted",
+      "constraint_manifest_path": "aristotle/manifests/Q218.json",
+      "isolated_context_path": "aristotle/contexts/Q218.lean",
+      "context_ci_evidence": {
+        "commit": "pending",
+        "run": "pending",
+        "conclusion": "pending"
+      }
     },
     "Q219": {
       "canonical_ids": [

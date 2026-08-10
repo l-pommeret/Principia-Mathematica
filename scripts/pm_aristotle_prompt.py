@@ -83,6 +83,82 @@ extract dependencies from the returned term and reject any unlicensed item.
 """
 
 
+def render_batch_prompt(manifest: dict, *, printed_targets: dict[str, str],
+                        lean_targets: dict[str, str], context: str) -> str:
+    if manifest.get("kind") != "pm-constrained-prover-batch-manifest":
+        raise PromptError("not a PM constrained-prover batch manifest")
+    if manifest.get("context_closure") and not context.strip():
+        raise PromptError("a reviewed isolated Lean context is required for this closure")
+    sections = []
+    for index, item_manifest in enumerate(manifest["batch_items"], start=1):
+        identifier = item_manifest["current_item"]
+        if identifier not in printed_targets or identifier not in lean_targets:
+            raise PromptError(f"missing printed or Lean target for {identifier}")
+        diagnostics = item_manifest.get("diagnostics", {})
+        if any(diagnostics.get(key) for key in (
+            "missing_items", "non_kernel_checked_items", "unresolved_aliases"
+        )):
+            raise PromptError(f"unresolved strict-mode diagnostics for {identifier}")
+        whitelist = "\n".join(
+            f"- `{pm_id}` → `{declaration}`"
+            for pm_id, declaration in item_manifest["allowed_lean_declarations"].items()
+        ) or "- none"
+        substitutions = "\n".join(
+            f"- step {entry['step']}: `{entry['printed']}`"
+            for entry in item_manifest.get("substitutions", [])
+        ) or "- none"
+        local = ", ".join(item_manifest.get("local_proof_items", [])) or "none"
+        sections.append(f"""### {index}. {identifier}
+
+Printed target:
+
+```text
+{printed_targets[identifier].rstrip()}
+```
+
+Required Lean declaration:
+
+```lean
+{lean_targets[identifier].rstrip()}
+```
+
+Exact whitelist for this declaration:
+
+{whitelist}
+
+Earlier local targets licensed here: {local}.
+
+Printed substitutions:
+
+{substitutions}
+""")
+    clean_context = "\n".join(line.rstrip() for line in context.rstrip().splitlines())
+    return f"""# Strict ordered PM reconstruction batch
+
+Produce the following declarations in exactly this order. A target may use an
+earlier target only where that earlier PM number occurs in its own whitelist.
+No later/forward target is available. Each proof is audited independently.
+
+{chr(10).join(sections)}
+
+## Reviewed isolated Lean context
+
+The declarations below are compilation scaffolding. They grant no proof
+permission unless separately listed in the target's whitelist.
+
+```lean
+{clean_context}
+```
+
+## Output contract
+
+Return only the requested Lean declarations, in order. Do not add an axiom,
+instance, notation, alternate syntax, `Classical`, `unsafe`, `sorry`, `admit`,
+semantic truth-table shortcut, or any theorem outside each target's whitelist.
+The repository will extract dependencies from every returned theorem separately.
+"""
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("manifest", type=Path)

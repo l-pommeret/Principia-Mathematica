@@ -4,8 +4,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from pm_constraint_manifest import ConstraintError, compile_manifest
+from pm_constraint_manifest import ConstraintError, compile_batch_manifest, compile_manifest
 from pm_proof_skeleton import parse_demonstration
+from pm_aristotle_prompt import render_batch_prompt
 
 
 def item(identifier, declaration, dependencies=(), status="kernel-checked"):
@@ -75,6 +76,69 @@ class ConstraintManifestTests(unittest.TestCase):
         )
         manifest = compile_manifest(skeleton, self.registry)
         self.assertEqual(manifest["substitutions"], [{"step": 1, "printed": "∼q/q"}])
+
+    def test_inline_tuple_and_unbracketed_substitutions_are_preserved(self):
+        skeleton = parse_demonstration(
+            "✱2·74. ⊢ : p [✱2·16 (q,p)/(p,q) . ✱2·17 ∼q/q]",
+            current_item="PM1:✱2·18",
+        )
+        manifest = compile_manifest(skeleton, self.registry)
+        self.assertEqual(
+            [entry["printed"] for entry in manifest["substitutions"]],
+            ["(q,p)/(p,q)", "∼q/q"],
+        )
+
+    def test_ordered_batch_allows_only_preceding_local_targets(self):
+        first = parse_demonstration(
+            "✱2·18. ⊢ : p [✱2·16]", current_item="PM1:✱2·18"
+        )
+        second = parse_demonstration(
+            "✱2·19. ⊢ : p [✱2·18 . ✱2·17]", current_item="PM1:✱2·19"
+        )
+        batch = compile_batch_manifest(
+            [first, second], self.registry,
+            {
+                "PM1:✱2·18": "PM.star_2_18",
+                "PM1:✱2·19": "PM.star_2_19",
+            },
+        )
+        self.assertEqual(batch["target_order"], ["PM1:✱2·18", "PM1:✱2·19"])
+        self.assertEqual(batch["batch_items"][1]["local_proof_items"], ["PM1:✱2·18"])
+        self.assertNotIn("PM1:✱2·18", batch["context_closure"])
+
+    def test_batch_rejects_forward_local_reference(self):
+        first = parse_demonstration(
+            "✱2·18. ⊢ : p [✱2·19]", current_item="PM1:✱2·18"
+        )
+        second = parse_demonstration(
+            "✱2·19. ⊢ : p [✱2·16]", current_item="PM1:✱2·19"
+        )
+        with self.assertRaisesRegex(ConstraintError, "missing metadata"):
+            compile_batch_manifest(
+                [first, second], self.registry,
+                {"PM1:✱2·18": "PM.star_2_18", "PM1:✱2·19": "PM.star_2_19"},
+            )
+
+    def test_batch_prompt_keeps_per_target_whitelists_separate(self):
+        first = parse_demonstration(
+            "✱2·18. ⊢ : p [✱2·16]", current_item="PM1:✱2·18"
+        )
+        second = parse_demonstration(
+            "✱2·19. ⊢ : p [✱2·18 . ✱2·17]", current_item="PM1:✱2·19"
+        )
+        batch = compile_batch_manifest(
+            [first, second], self.registry,
+            {"PM1:✱2·18": "PM.star_2_18", "PM1:✱2·19": "PM.star_2_19"},
+        )
+        prompt = render_batch_prompt(
+            batch,
+            printed_targets={"PM1:✱2·18": "printed 18", "PM1:✱2·19": "printed 19"},
+            lean_targets={"PM1:✱2·18": "lean 18", "PM1:✱2·19": "lean 19"},
+            context="inductive Context where",
+        )
+        second_section = prompt.split("### 2. PM1:✱2·19", 1)[1]
+        self.assertIn("PM1:✱2·18", second_section)
+        self.assertIn("Earlier local targets licensed here: PM1:✱2·18", second_section)
 
     def test_reviewed_global_convention_is_allowed_but_not_a_printed_event(self):
         skeleton = parse_demonstration(

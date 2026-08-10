@@ -68,3 +68,13 @@ editorial outcomes:
 The current manifest compiler is the deterministic boundary. Automatic prompt
 rendering and minimal-relaxation search may be built on it, but must not merge
 proof permissions with implementation closure.
+
+## Ordered batches
+
+Small batches may contain a genuine forward sequence such as
+✱2·73→✱2·74→✱2·75→✱2·76. A batch manifest audits each declaration separately:
+an earlier target becomes a local proof permission only after it has been
+declared, is never added to the kernel-checked external closure, and cannot be
+used by a preceding target. `metadata/constrained_batches/Q218.json` is the
+first end-to-end fixture. Its manifest, isolated context, and compact
+Aristotle request are reproduced by `scripts/verify_constrained_batches.py`.
