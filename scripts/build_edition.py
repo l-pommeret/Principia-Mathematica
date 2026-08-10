@@ -82,12 +82,14 @@ def slug(item_id: str) -> str:
     return "item-" + quote(item_id, safe="").replace("%", "-").lower()
 
 
-def source_record_order(record: dict) -> tuple[int, int, str]:
+def source_record_order(record: dict) -> tuple[int, int, int, str]:
     """Keep prose in printed order while placing page notes after their host text."""
     printed_pages = str(record["source_range"]["printed_pages"])
     first_page = re.search(r"\d+", printed_pages)
+    part_order = 1 if "(second part)" in printed_pages else 0
     return (
         int(first_page.group()) if first_page else 10**9,
+        part_order,
         1 if record["kind"] == "source-critical-note" else 0,
         record["id"],
     )

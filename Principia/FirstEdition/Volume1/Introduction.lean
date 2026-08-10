@@ -3,6 +3,7 @@ import Principia.FirstEdition.Volume1.Introduction.Chapter1.Pages4To10
 import Principia.FirstEdition.Volume1.Introduction.Chapter1.Pages11To25
 import Principia.FirstEdition.Volume1.Introduction.Chapter1.Pages26To38
 import Principia.FirstEdition.Volume1.Introduction.Chapter2.Pages39To50
+import Principia.FirstEdition.Volume1.Introduction.Chapter2.Pages51To62
 
 /-! # Volume I Introduction
 
