@@ -108,14 +108,16 @@ def substitute (σ : Substitution Γ Δ Ξ) : Apparent Γ Δ → Apparent Γ Ξ
   | .disj left right => .disj (substitute σ left) (substitute σ right)
   | .all body => .all (substitute (liftSubstitution σ) body)
 
+/-- The substitution which replaces the nearest binder and lowers the rest. -/
+def instantiateSubstitution (argument : Apparent Γ Δ) :
+    Substitution Γ (.elementaryProposition :: Δ) Δ
+  | .zero => argument
+  | .succ predecessor => .bound predecessor
+
 /-- Instantiate the nearest apparent-variable binder. -/
 def instantiate (body : Apparent Γ (.elementaryProposition :: Δ))
-    (argument : Apparent Γ Δ) :
-    Apparent Γ Δ :=
-  substitute (fun v =>
-    match v with
-    | .zero => argument
-    | .succ predecessor => boundFormula predecessor) body
+    (argument : Apparent Γ Δ) : Apparent Γ Δ :=
+  substitute (instantiateSubstitution argument) body
 
 /-- Decidable structural occurrence of a free apparent variable. -/
 def significant (v : BoundVar Δ .elementaryProposition) : Apparent Γ Δ → Bool
