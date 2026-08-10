@@ -483,6 +483,106 @@ Fractional substitutions are linearized as `replacement/variable`, preserving
 their printed order; physical line breaks are reflowed.
 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱2·3
+✱2·3.  ⊢ : p ∨ (q ∨ r) . ⊃ . p ∨ (r ∨ q)
+
+Dem.
+
+        [Perm  (q, r)/(p, q)]
+              ⊢ : q ∨ r . ⊃ . r ∨ q :
+        [Sum  (q ∨ r, r ∨ q)/(q, r)] ⊃
+              ⊢ : p ∨ (q ∨ r) . ⊃ . p ∨ (r ∨ q)
+PM-VERBATIM-END PM1:✱2·3 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·31
+✱2·31.  ⊢ : p ∨ (q ∨ r) . ⊃ . (p ∨ q) ∨ r
+
+This proposition and ✱2·32 together constitute the associative law for
+logical addition of propositions. In the proof, the following abbreviation
+(constantly used hereafter) will be employed*: When we have a series of
+propositions of the form a ⊃ b, b ⊃ c, c ⊃ d, all asserted, and
+“a ⊃ d” is the proposition to be proved, the proof in full is as follows:
+
+        [Syll.]  ⊢ :. a ⊃ b . ⊃ : b ⊃ c . ⊃ . a ⊃ c       (1)
+                 ⊢ : a . ⊃ . b                                  (2)
+        [(1).(2).✱1·11]
+                 ⊢ : b ⊃ c . ⊃ . a ⊃ c                       (3)
+                 ⊢ : b . ⊃ . c                                  (4)
+        [(3).(4).✱1·11]
+                 ⊢ : a . ⊃ . c                                  (5)
+        [Syll.]  ⊢ :. a ⊃ c . ⊃ : c ⊃ d . ⊃ . a ⊃ d       (6)
+        [(5).(6).✱1·11]
+                 ⊢ : c ⊃ d . ⊃ . a ⊃ d                       (7)
+                 ⊢ : c . ⊃ . d                                  (8)
+        [(7).(8).✱1·11]
+                 ⊢ : a . ⊃ . d
+
+It is tedious to write out this process in full; we therefore write simply
+
+                 ⊢ : a . ⊃ . b .
+        [etc.]          ⊃ . c .
+        [etc.]          ⊃ . d : ⊃ ⊢ . Prop,
+
+where “a ⊃ d” is the proposition to be proved. We indicate on the left by
+references in square brackets the propositions in virtue of which the
+successive implications hold. We put one dot (not two) after “b,” to show
+that it is b, not “a ⊃ b,” that implies c. But we put two dots after d, to
+show that now the whole proposition “a ⊃ d” is concerned. If “a ⊃ d” is not
+the proposition to be proved, but is to be used subsequently in the proof,
+we put
+
+                 ⊢ : a . ⊃ . b .
+        [etc.]          ⊃ . c .
+        [etc.]          ⊃ . d                                  (1),
+
+and then “(1)” means “a ⊃ d.” The proof of ✱2·31 is as follows:
+
+Dem.
+
+        [✱2·3]  ⊢ : p ∨ (q ∨ r) .
+                    ⊃ . p ∨ (r ∨ q) .
+        [Assoc  (r, q)/(q, r)]
+                    ⊃ . r ∨ (p ∨ q) .
+        [Perm  (r, p ∨ q)/(p, q)]
+                    ⊃ . (p ∨ q) ∨ r : ⊃ ⊢ . Prop
+
+* This abbreviation applies to the same type of cases as those concerned in
+the note to ✱2·15, but is often more convenient than the abbreviation explained
+in that note.
+PM-VERBATIM-END PM1:✱2·31 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·32
+✱2·32.  ⊢ : (p ∨ q) ∨ r . ⊃ . p ∨ (q ∨ r)
+
+Dem.
+
+        [Perm  (p ∨ q, r)/(p, q)]
+              ⊢ : (p ∨ q) ∨ r . ⊃ . r ∨ (p ∨ q)
+        [Assoc  (r, p, q)/(p, q, r)]
+                    ⊃ . p ∨ (r ∨ q)
+        [✱2·3]      ⊃ . p ∨ (q ∨ r) : ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱2·32 -/
+
+/- PM-FORMAL-GLOSS
+In ✱2·3, Perm is raised by Sum and detached exactly as displayed. The long
+note preceding ✱2·31 defines PM's sorites abbreviation by expanding it into
+Syll. and ✱1·11; the Lean proofs of ✱2·31 and ✱2·32 retain that expansion
+through exact ✱2·05 instances and `PM.Derivation.detach`. No generic composition
+lemma replaces the printed reasoning.
+-/
+
+/- PM-EDITORIAL
+Source for ✱2·3, ✱2·31 and ✱2·32:
+- scan, printed pp. 109–110: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/131 and /132
+- working witnesses: Project Gutenberg ebook 78050 and Wikisource
+Verification status: directly collated against the facsimile and checked
+against two independent digital witnesses; the formal audit is recorded in
+`reviews/Q208-review.md`. Physical line breaks are editorially reflowed while
+the English, punctuation, formula structure and footnote are retained. No
+authorial print error or witness divergence requiring `sic`, `corr.`, or
+`conj.` was found.
+-/
+
 /-! ## Printed syntax and audited scope readings -/
 
 /-- Audited scope reading of ✱2·01. -/
@@ -861,6 +961,66 @@ theorem star_2_27 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
     ⊢ₚ (p ⊃ₚ ((p ⊃ₚ q) ⊃ₚ q)) :=
   star_2_26 p q
 
+/-- Audited scope reading of ✱2·3. -/
+def star_2_3_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ (q ∨ r) . ⊃ . p ∨ (r ∨ q)"
+  parsed := (p ∨ₚ (q ∨ₚ r)) ⊃ₚ (p ∨ₚ (r ∨ₚ q))
+  scopeReading := "The displayed parentheses fix both nested disjunctions; the principal connective is implication."
+
+def star_2_3_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Perm (q, r)/(p, q)] ⊢ : q ∨ r . ⊃ . r ∨ q :; [Sum (q ∨ r, r ∨ q)/(q, r)] ⊃ ⊢ : p ∨ (q ∨ r) . ⊃ . p ∨ (r ∨ q)"
+
+/-- PM ✱2·3: Perm `q r`, raised by Sum `p`, then detached. -/
+theorem star_2_3 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ (p ∨ₚ (r ∨ₚ q))) :=
+  PM.Derivation.detach
+    (PM.Derivation.star_1_4 q r)
+    (PM.Derivation.star_1_6 p (q ∨ₚ r) (r ∨ₚ q))
+
+/-- Audited scope reading of ✱2·31. -/
+def star_2_31_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ (q ∨ r) . ⊃ . (p ∨ q) ∨ r"
+  parsed := (p ∨ₚ (q ∨ₚ r)) ⊃ₚ ((p ∨ₚ q) ∨ₚ r)
+  scopeReading := "The theorem changes right-nesting into the explicitly printed left-nesting."
+
+def star_2_31_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·3] p ∨ (q ∨ r) ⊃ p ∨ (r ∨ q); [Assoc (r, q)/(q, r)] ⊃ r ∨ (p ∨ q); [Perm (r, p ∨ q)/(p, q)] ⊃ (p ∨ q) ∨ r : ⊃ ⊢ . Prop"
+
+/-- PM ✱2·31, expanding PM's newly stated sorites abbreviation with ✱2·05. -/
+theorem star_2_31 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ ((p ∨ₚ q) ∨ₚ r)) :=
+  PM.Derivation.detach
+    (PM.Derivation.detach
+      (star_2_3 p q r)
+      (PM.Derivation.detach
+        (PM.Derivation.star_1_5 p r q)
+        (star_2_05 (p ∨ₚ (q ∨ₚ r)) (p ∨ₚ (r ∨ₚ q)) (r ∨ₚ (p ∨ₚ q)))))
+    (PM.Derivation.detach
+      (PM.Derivation.star_1_4 r (p ∨ₚ q))
+      (star_2_05 (p ∨ₚ (q ∨ₚ r)) (r ∨ₚ (p ∨ₚ q)) ((p ∨ₚ q) ∨ₚ r)))
+
+/-- Audited scope reading of ✱2·32. -/
+def star_2_32_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : (p ∨ q) ∨ r . ⊃ . p ∨ (q ∨ r)"
+  parsed := ((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ (q ∨ₚ r))
+  scopeReading := "This is the converse associative direction, with both bracketings explicit."
+
+def star_2_32_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Perm (p ∨ q, r)/(p, q)] (p ∨ q) ∨ r ⊃ r ∨ (p ∨ q); [Assoc (r, p, q)/(p, q, r)] ⊃ p ∨ (r ∨ q); [✱2·3] ⊃ p ∨ (q ∨ r) : ⊃ ⊢ . Prop"
+
+/-- PM ✱2·32, expanding the same sorites abbreviation in printed order. -/
+theorem star_2_32 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ (q ∨ₚ r))) :=
+  PM.Derivation.detach
+    (PM.Derivation.detach
+      (PM.Derivation.star_1_4 (p ∨ₚ q) r)
+      (PM.Derivation.detach
+        (PM.Derivation.star_1_5 r p q)
+        (star_2_05 ((p ∨ₚ q) ∨ₚ r) (r ∨ₚ (p ∨ₚ q)) (p ∨ₚ (r ∨ₚ q)))))
+    (PM.Derivation.detach
+      (star_2_3 p r q)
+      (star_2_05 ((p ∨ₚ q) ∨ₚ r) (p ∨ₚ (r ∨ₚ q)) (p ∨ₚ (q ∨ₚ r))))
+
 /- PM-VERBATIM-BEGIN PM1:✱2·33
 ✱2·33.  p ∨ q ∨ r .=. (p ∨ q) ∨ r     Df
 
@@ -893,5 +1053,186 @@ def star_2_33_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
 /-- ✱2·33 as a Lean abbreviation; this introduces no object-language connective. -/
 abbrev star_2_33 (p q r : PM.Elementary Γ) : PM.Elementary Γ :=
   p ∨ₚ q ∨ₚ r
+
+/- PM-VERBATIM-BEGIN PM1:✱2·36
+✱2·36.  ⊢ :. q ⊃ r . ⊃ : p ∨ q . ⊃ . r ∨ p
+
+Dem.
+
+        [Perm]  ⊢ : p ∨ r . ⊃ . r ∨ p :
+        [Syll  (p ∨ q, p ∨ r, r ∨ p)/(p, q, r)]
+                ⊃ ⊢ :. p ∨ q . ⊃ . p ∨ r : ⊃ :
+                         p ∨ q . ⊃ . r ∨ p                    (1)
+        [Sum]   ⊢ :. q ⊃ r . ⊃ : p ∨ q . ⊃ . p ∨ r  (2)
+        ⊢ .(1).(2).Syll. ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱2·36 -/
+
+/- PM-FORMAL-GLOSS
+The four printed stages are preserved: Perm, the displayed specialized Syll.,
+Sum, then the final Syll.  Both syllogisms are expanded only through ✱2·05
+and metalinguistic detachment.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·37
+✱2·37.  ⊢ :. q ⊃ r . ⊃ : q ∨ p . ⊃ . p ∨ r
+                                            [Syll.Perm.Sum]
+PM-VERBATIM-END PM1:✱2·37 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·38
+✱2·38.  ⊢ :. q ⊃ r . ⊃ : q ∨ p . ⊃ . r ∨ p
+                                            [Syll.Perm.Sum]
+
+The proofs of ✱2·37·38 are exactly analogous to that of ✱2·36. (We use
+"✱2·37·38" as an abbreviation for "✱2·37 and ✱2·38." Such abbreviations
+will be used throughout.)
+
+The use of a general principle of deduction, such as either form of "Syll,"
+in a proof, is different from the use of the particular premisses to which
+the principle of deduction is applied. The principle of deduction gives the
+general rule according to which the inference is made, but is not itself a
+premiss in the inference. If we treated it as a premiss, we should need either
+it or some other general rule to enable us to infer the desired conclusion,
+and thus we should gradually acquire an increasing accumulation of premisses
+without ever being able to make any inference. Thus when a general rule is
+adduced in drawing an inference, as when we write
+"[Syll] ⊢ .(1).(2). ⊃ ⊢ . Prop," the mention of "Syll" is only required in
+order to remind the reader how the inference is drawn.
+
+The rule of inference may, however, also occur as one of the ordinary
+premisses, that is to say, in the case of "Syll" for example, the proposition
+"p ⊃ q . ⊃ : q ⊃ r . ⊃ . p ⊃ r" may be one of those to which our rules
+of deduction are applied, and it is then an ordinary premiss. The distinction
+between the two uses of principles of deduction is of some philosophical
+importance, and in the above proofs we have indicated it by putting the rule
+of inference in square brackets. It is, however, practically inconvenient to
+continue to distinguish in the manner of the reference. We shall therefore
+henceforth both adduce ordinary premisses in square brackets where convenient,
+and adduce rules of inference, along with other propositions, in asserted
+premisses, i.e. we shall write e.g.
+
+        "⊢ .(1).(2).Syll. ⊃ ⊢ . Prop"
+        rather than     "Syll ⊢ .(1).(2). ⊃ ⊢ . Prop"
+PM-VERBATIM-END PM1:✱2·38 -/
+
+/- PM-FORMAL-GLOSS
+PM says that ✱2·37 and ✱2·38 are exactly analogous to ✱2·36. Their Lean
+terms therefore expose the input and output Perm instances and expand each
+printed Syll. through the two previously proved forms ✱2·05 and ✱2·06.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·41
+✱2·41.  ⊢ :. q . ∨ . p ∨ q : ⊃ . p ∨ q
+
+Dem.
+
+        [Assoc  (q, p, q)/(p, q, r)]
+              ⊢ :. q . ∨ . p ∨ q : ⊃ : p . ∨ . q ∨ q :
+        [Taut.Sum]  ⊃ : p ∨ q : ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱2·41 -/
+
+/- PM-FORMAL-GLOSS
+The proof keeps the printed `Assoc q p q` instance, followed by Taut at `q`
+lifted with Sum at `p`, and the concluding Syll. composition.
+-/
+
+/- PM-EDITORIAL
+Source for ✱2·36–✱2·38 and ✱2·41:
+- scan, printed pp. 110–111: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/132 and /133
+- working witnesses: Project Gutenberg ebook 78050 and Wikisource
+Verification status: double-witness-checked and collated directly against the
+facsimile; the source and formal audit is recorded in `reviews/Q209-review.md`.
+Project Gutenberg's `data-tex` corrupts two expressions in the demonstration
+of ✱2·36 (`p ∨ r` and `q ⊃ r`); the readings above follow the scan. These are
+digital-witness errors, not errors in the 1910 impression, so no `[sic]`,
+`corr.`, or `conj.` entry is attached.
+-/
+
+/-! ## Q209: audited scope readings and formal derivations -/
+
+def star_2_36_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. q ⊃ r . ⊃ : p ∨ q . ⊃ . r ∨ p"
+  parsed := (q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (r ∨ₚ p))
+  scopeReading := "The outer antecedent is q ⊃ r; its consequent is (p ∨ q) ⊃ (r ∨ p)."
+
+def star_2_36_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Perm]; [Syll (p ∨ q, p ∨ r, r ∨ p)/(p, q, r)] (1); [Sum] (2); [(1).(2).Syll.] ⊢ .Prop"
+
+theorem star_2_36 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (r ∨ₚ p))) := by
+  have perm : ⊢ₚ ((p ∨ₚ r) ⊃ₚ (r ∨ₚ p)) := PM.Derivation.star_1_4 p r
+  have syll : ⊢ₚ (((p ∨ₚ r) ⊃ₚ (r ∨ₚ p)) ⊃ₚ
+      (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (r ∨ₚ p)))) :=
+    star_2_05 (p ∨ₚ q) (p ∨ₚ r) (r ∨ₚ p)
+  have line1 : ⊢ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (r ∨ₚ p))) :=
+    PM.Derivation.detach perm syll
+  have line2 : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) :=
+    PM.Derivation.star_1_6 p q r
+  exact PM.Derivation.detach line2
+    (PM.Derivation.detach line1
+      (star_2_05 (q ⊃ₚ r) ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ((p ∨ₚ q) ⊃ₚ (r ∨ₚ p))))
+
+def star_2_37_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. q ⊃ r . ⊃ : q ∨ p . ⊃ . p ∨ r"
+  parsed := (q ⊃ₚ r) ⊃ₚ ((q ∨ₚ p) ⊃ₚ (p ∨ₚ r))
+  scopeReading := "The outer antecedent is q ⊃ r; its consequent is (q ∨ p) ⊃ (p ∨ r)."
+
+def star_2_37_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Syll.Perm.Sum]"
+
+theorem star_2_37 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((q ∨ₚ p) ⊃ₚ (p ∨ₚ r))) := by
+  have permIn : ⊢ₚ ((q ∨ₚ p) ⊃ₚ (p ∨ₚ q)) := PM.Derivation.star_1_4 q p
+  have syll : ⊢ₚ (((q ∨ₚ p) ⊃ₚ (p ∨ₚ q)) ⊃ₚ
+      (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ ((q ∨ₚ p) ⊃ₚ (p ∨ₚ r)))) :=
+    star_2_06 (q ∨ₚ p) (p ∨ₚ q) (p ∨ₚ r)
+  have line1 : ⊢ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ ((q ∨ₚ p) ⊃ₚ (p ∨ₚ r))) :=
+    PM.Derivation.detach permIn syll
+  have sum : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) := PM.Derivation.star_1_6 p q r
+  exact PM.Derivation.detach sum
+    (PM.Derivation.detach line1
+      (star_2_05 (q ⊃ₚ r) ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ((q ∨ₚ p) ⊃ₚ (p ∨ₚ r))))
+
+def star_2_38_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. q ⊃ r . ⊃ : q ∨ p . ⊃ . r ∨ p"
+  parsed := (q ⊃ₚ r) ⊃ₚ ((q ∨ₚ p) ⊃ₚ (r ∨ₚ p))
+  scopeReading := "The outer antecedent is q ⊃ r; its consequent is (q ∨ p) ⊃ (r ∨ p)."
+
+def star_2_38_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Syll.Perm.Sum]"
+
+theorem star_2_38 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((q ∨ₚ p) ⊃ₚ (r ∨ₚ p))) := by
+  have permIn : ⊢ₚ ((q ∨ₚ p) ⊃ₚ (p ∨ₚ q)) := PM.Derivation.star_1_4 q p
+  have permOut : ⊢ₚ ((p ∨ₚ r) ⊃ₚ (r ∨ₚ p)) := PM.Derivation.star_1_4 p r
+  have line1 : ⊢ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ ((q ∨ₚ p) ⊃ₚ (p ∨ₚ r))) :=
+    PM.Derivation.detach permIn (star_2_06 (q ∨ₚ p) (p ∨ₚ q) (p ∨ₚ r))
+  have line2 : ⊢ₚ (((q ∨ₚ p) ⊃ₚ (p ∨ₚ r)) ⊃ₚ ((q ∨ₚ p) ⊃ₚ (r ∨ₚ p))) :=
+    PM.Derivation.detach permOut (star_2_05 (q ∨ₚ p) (p ∨ₚ r) (r ∨ₚ p))
+  have line3 : ⊢ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ ((q ∨ₚ p) ⊃ₚ (r ∨ₚ p))) :=
+    PM.Derivation.detach line2
+      (PM.Derivation.detach line1
+        (star_2_06 ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ((q ∨ₚ p) ⊃ₚ (p ∨ₚ r)) ((q ∨ₚ p) ⊃ₚ (r ∨ₚ p))))
+  have sum : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) := PM.Derivation.star_1_6 p q r
+  exact PM.Derivation.detach sum
+    (PM.Derivation.detach line3
+      (star_2_05 (q ⊃ₚ r) ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ((q ∨ₚ p) ⊃ₚ (r ∨ₚ p))))
+
+def star_2_41_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. q . ∨ . p ∨ q : ⊃ . p ∨ q"
+  parsed := (q ∨ₚ (p ∨ₚ q)) ⊃ₚ (p ∨ₚ q)
+  scopeReading := "The dots override ✱2·33: the antecedent is q ∨ (p ∨ q)."
+
+def star_2_41_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Assoc (q, p, q)/(p, q, r)]; [Taut.Sum] ⊃ ⊢ .Prop"
+
+theorem star_2_41 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((q ∨ₚ (p ∨ₚ q)) ⊃ₚ (p ∨ₚ q)) := by
+  have assoc : ⊢ₚ ((q ∨ₚ (p ∨ₚ q)) ⊃ₚ (p ∨ₚ (q ∨ₚ q))) := PM.Derivation.star_1_5 q p q
+  have taut : ⊢ₚ ((q ∨ₚ q) ⊃ₚ q) := PM.Derivation.star_1_2 q
+  have line2 : ⊢ₚ ((p ∨ₚ (q ∨ₚ q)) ⊃ₚ (p ∨ₚ q)) :=
+    PM.Derivation.detach taut (PM.Derivation.star_1_6 p (q ∨ₚ q) q)
+  exact PM.Derivation.detach assoc
+    (PM.Derivation.detach line2
+      (star_2_05 (q ∨ₚ (p ∨ₚ q)) (p ∨ₚ (q ∨ₚ q)) (p ∨ₚ q)))
 
 end PM.FirstEdition.Volume1.Star2

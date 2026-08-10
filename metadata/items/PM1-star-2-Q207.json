@@ -13,7 +13,7 @@
     "task_id": "b284384f-6d02-4b7d-a112-f3ef57fbefc6",
     "archive": "aristotle/results/Q207-final.tar.gz",
     "sha256": "1aa70d025472c3bff7ec1e22b1a3e90c988fb5117a2c015c033c0ad9ad3bd52f",
-    "audit": "accepted-awaiting-github-ci"
+    "audit": "accepted-kernel-checked"
   },
   "items": [
     {
@@ -30,7 +30,7 @@
       "normalized_dependencies": ["PM1:✱2·1", "PM1:✱1·5", "PM1:✱1·11"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The printed chained assertion applies Assoc to the asserted ✱2·1 instance in the elementary real-variable context."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·26",
@@ -45,7 +45,7 @@
       "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_25"],
       "normalized_dependencies": ["PM1:✱2·25"],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·27",
@@ -60,12 +60,12 @@
       "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_26"],
       "normalized_dependencies": ["PM1:✱2·26"],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "67240793223f6e73effdaf8064ad09b974a88395",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31418809547",
+    "conclusion": "success"
   }
 }

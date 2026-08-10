@@ -192,7 +192,7 @@
         "PM1:✱2·18"
       ],
       "parallel_group": "STAR2-WAVE-2A",
-      "aristotle_status": "awaiting-ci",
+      "aristotle_status": "complete",
       "aristotle_task_id": "a67c6b39-8b4a-4fe4-aa2f-a5fd603c681d",
       "aristotle_latest_task_id": "a67c6b39-8b4a-4fe4-aa2f-a5fd603c681d",
       "aristotle_latest_task_status": "COMPLETE",
@@ -203,7 +203,10 @@
       "aristotle_latest_task_name": "Formalize Q206.md",
       "aristotle_latest_task_created": "7 mins ago",
       "aristotle_result_path": "aristotle/results/Q206-final.tar.gz",
-      "aristotle_result_sha256": "3ffd141774c506e5c962778e83a36448330b773999314323e4c292f5033dd6d7"
+      "aristotle_result_sha256": "3ffd141774c506e5c962778e83a36448330b773999314323e4c292f5033dd6d7",
+      "lean_commit": "67240793223f6e73effdaf8064ad09b974a88395",
+      "lean_ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31418809547",
+      "lean_ci_conclusion": "success"
     },
     "Q207": {
       "canonical_ids": [
@@ -220,7 +223,7 @@
         "PM1:✱2·18"
       ],
       "parallel_group": "STAR2-WAVE-2A",
-      "aristotle_status": "awaiting-ci",
+      "aristotle_status": "complete",
       "aristotle_task_id": "b284384f-6d02-4b7d-a112-f3ef57fbefc6",
       "aristotle_latest_task_id": "b284384f-6d02-4b7d-a112-f3ef57fbefc6",
       "aristotle_latest_task_status": "COMPLETE",
@@ -231,7 +234,10 @@
       "aristotle_latest_task_name": "Formalize Q207.md",
       "aristotle_latest_task_created": "7 mins ago",
       "aristotle_result_path": "aristotle/results/Q207-final.tar.gz",
-      "aristotle_result_sha256": "1aa70d025472c3bff7ec1e22b1a3e90c988fb5117a2c015c033c0ad9ad3bd52f"
+      "aristotle_result_sha256": "1aa70d025472c3bff7ec1e22b1a3e90c988fb5117a2c015c033c0ad9ad3bd52f",
+      "lean_commit": "67240793223f6e73effdaf8064ad09b974a88395",
+      "lean_ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31418809547",
+      "lean_ci_conclusion": "success"
     },
     "Q208": {
       "canonical_ids": [
@@ -251,11 +257,16 @@
       "aristotle_status": "submitted",
       "aristotle_task_id": "bbd8c638-d7a3-4bdd-bb3e-e618a2d70983",
       "aristotle_latest_task_id": "bbd8c638-d7a3-4bdd-bb3e-e618a2d70983",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_project_id": "194ae313-ff77-4514-88b8-4262e4f0ee29",
       "aristotle_request_path": "aristotle/Q208.md",
-      "aristotle_request_sha256": "7f2bc870b21ae9a3b69262eb9367c23ec76db6a36ead361da86f314c2dc63ab1"
+      "aristotle_request_sha256": "7f2bc870b21ae9a3b69262eb9367c23ec76db6a36ead361da86f314c2dc63ab1",
+      "aristotle_latest_task_name": "Formalize Q208.md",
+      "aristotle_latest_task_created": "7 mins ago",
+      "aristotle_archive_path": "aristotle/results/Q208-final.tar.gz",
+      "aristotle_archive_sha256": "f530a04800377e29ec1121638fcf392faa9b143b98dcaddab155f80ec88ab8af",
+      "integration_status": "awaiting-ci"
     },
     "Q209": {
       "canonical_ids": [
@@ -276,11 +287,16 @@
       "aristotle_status": "submitted",
       "aristotle_task_id": "01929137-aca2-43e8-a7f0-d83c5ca0a1c0",
       "aristotle_latest_task_id": "01929137-aca2-43e8-a7f0-d83c5ca0a1c0",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_project_id": "76856bb2-ecd8-4edc-983f-286c0edab4a4",
       "aristotle_request_path": "aristotle/Q209.md",
-      "aristotle_request_sha256": "ccdb728ae4e6f280ff4a415d34e36e879e5a6fd3d9a9827c0824d82a397ab91e"
+      "aristotle_request_sha256": "ccdb728ae4e6f280ff4a415d34e36e879e5a6fd3d9a9827c0824d82a397ab91e",
+      "aristotle_latest_task_name": "Formalize Q209.md",
+      "aristotle_latest_task_created": "10 mins ago",
+      "aristotle_archive_path": "aristotle/results/Q209-final.tar.gz",
+      "aristotle_archive_sha256": "927145575d1980e56313b741c8e37eef0f114d5e94fb7729684e0f9b579d5ad7",
+      "integration_status": "awaiting-ci"
     },
     "Q210": {
       "canonical_ids": [
@@ -579,6 +595,167 @@
       ],
       "parallel_group": "STAR3-WAVE-1D",
       "aristotle_status": "not-submitted"
+    },
+    "Q225": {
+      "canonical_ids": [
+        "PM1:✱3·37",
+        "PM1:✱3·4",
+        "PM1:✱3·41",
+        "PM1:✱3·42",
+        "PM1:✱3·43"
+      ],
+      "source": "PM volume I, first edition, p. 118",
+      "prompt_path": "aristotle/Q225.md",
+      "audit_path": "reviews/Q225-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱3·37 through ✱3·43 selected sequence",
+      "depends_on": [
+        "PM1:✱2·51",
+        "PM1:✱2·77",
+        "PM1:✱3·01",
+        "PM1:✱3·2",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·3",
+        "PM1:✱3·31",
+        "PM1:✱3·33",
+        "PM1:✱3·34"
+      ],
+      "parallel_group": "STAR3-WAVE-2A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q226": {
+      "canonical_ids": [
+        "PM1:✱3·44",
+        "PM1:✱3·45",
+        "PM1:✱3·47",
+        "PM1:✱3·48"
+      ],
+      "source": "PM volume I, first edition, pp. 118–119",
+      "prompt_path": "aristotle/Q226.md",
+      "audit_path": "reviews/Q226-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱3·44 through ✱3·48 selected sequence",
+      "depends_on": [
+        "PM1:✱2·06",
+        "PM1:✱2·53",
+        "PM1:✱2·83",
+        "PM1:✱3·03",
+        "PM1:✱3·22",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·3",
+        "PM1:✱3·31",
+        "PM1:✱3·33",
+        "PM1:✱3·34"
+      ],
+      "parallel_group": "STAR3-WAVE-2A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q227": {
+      "canonical_ids": [
+        "PM1:✱4·01",
+        "PM1:✱4·02",
+        "PM1:✱4·1",
+        "PM1:✱4·12",
+        "PM1:✱4·13"
+      ],
+      "source": "PM volume I, first edition, pp. 120–122",
+      "prompt_path": "aristotle/Q227.md",
+      "audit_path": "reviews/Q227-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱4·01–✱4·02 definitions and ✱4·1, ✱4·12, ✱4·13",
+      "depends_on": [
+        "PM1:✱2·03",
+        "PM1:✱2·12",
+        "PM1:✱2·14",
+        "PM1:✱2·15",
+        "PM1:✱2·16",
+        "PM1:✱2·17",
+        "PM1:✱3·01"
+      ],
+      "parallel_group": "STAR4-FOUNDATIONS",
+      "aristotle_status": "not-submitted"
+    },
+    "Q228": {
+      "canonical_ids": [
+        "PM1:✱4·11",
+        "PM1:✱4·14",
+        "PM1:✱4·15",
+        "PM1:✱4·2"
+      ],
+      "source": "PM volume I, first edition, pp. 121–122",
+      "prompt_path": "aristotle/Q228.md",
+      "audit_path": "reviews/Q228-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱4·11, ✱4·14, ✱4·15 and ✱4·2",
+      "depends_on": [
+        "PM1:✱2·16",
+        "PM1:✱2·17",
+        "PM1:✱3·2",
+        "PM1:✱3·22",
+        "PM1:✱3·37",
+        "PM1:✱3·47",
+        "PM1:✱4·01",
+        "PM1:✱4·1",
+        "PM1:✱4·12",
+        "PM1:✱4·13"
+      ],
+      "parallel_group": "STAR4-WAVE-1B",
+      "aristotle_status": "not-submitted"
+    },
+    "Q229": {
+      "canonical_ids": [
+        "PM1:✱4·21",
+        "PM1:✱4·22",
+        "PM1:✱4·24",
+        "PM1:✱4·25"
+      ],
+      "source": "PM volume I, first edition, pp. 121–123",
+      "prompt_path": "aristotle/Q229.md",
+      "audit_path": "reviews/Q229-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱4·21 through ✱4·25 selected sequence",
+      "depends_on": [
+        "PM1:✱2·43",
+        "PM1:✱2·83",
+        "PM1:✱3·02",
+        "PM1:✱3·03",
+        "PM1:✱3·2",
+        "PM1:✱3·22",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱4·01",
+        "PM1:✱4·02"
+      ],
+      "parallel_group": "STAR4-WAVE-1B",
+      "aristotle_status": "not-submitted"
+    },
+    "Q230": {
+      "canonical_ids": [
+        "PM1:✱4·3",
+        "PM1:✱4·31",
+        "PM1:✱4·32",
+        "PM1:✱4·33"
+      ],
+      "source": "PM volume I, first edition, pp. 121 and 123",
+      "prompt_path": "aristotle/Q230.md",
+      "audit_path": "reviews/Q230-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱4·3, ✱4·31, ✱4·32 and ✱4·33",
+      "depends_on": [
+        "PM1:✱2·31",
+        "PM1:✱2·32",
+        "PM1:✱3·01",
+        "PM1:✱3·22",
+        "PM1:✱4·01",
+        "PM1:✱4·11",
+        "PM1:✱4·12",
+        "PM1:✱4·15",
+        "PM1:✱4·22"
+      ],
+      "parallel_group": "STAR4-WAVE-1C",
+      "aristotle_status": "not-submitted"
     }
   },
   "editorial_tracks": {
@@ -609,6 +786,20 @@
       "printed": "Given asserted φp and ψp of the same elementary real-variable type, assert φp · ψp",
       "status": "prepared-with-Q217",
       "note": "Must be a theorem of Derivation, never an axiom. The printed proof's circular citation is preserved and linked to uncertain apparatus APP-PM1-3.03-CIRCULAR-001; conjectural correction ✱3·01."
+    },
+    "PM1:✱4·01": {
+      "kind": "connective-definition",
+      "source": "PM volume I, first edition, pp. 120 and 122",
+      "printed": "p ≡ q .=. p ⊃ q . q ⊃ p Df",
+      "status": "prepared-with-Q227",
+      "note": "Equivalence is an Elementary abbreviation for the logical product of the two implications, never Lean Iff, equality, or an asserted proposition. Wikisource leaf 142 drops '. q' in the first occurrence; digital witness only."
+    },
+    "PM1:✱4·02": {
+      "kind": "proof-abbreviation-definition",
+      "source": "PM volume I, first edition, p. 122",
+      "printed": "p ≡ q ≡ r .=. p ≡ q . q ≡ r Df",
+      "status": "prepared-with-Q227",
+      "note": "This surface chain abbreviates the logical product of two equivalences; it is not infix associativity and not an asserted proposition."
     }
   },
   "items": {
@@ -719,6 +910,30 @@
     },
     "PM1:✱2·18": {
       "batch": "PM1-STAR2-Q205",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·2": {
+      "batch": "PM1-STAR2-Q206",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·21": {
+      "batch": "PM1-STAR2-Q206",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·24": {
+      "batch": "PM1-STAR2-Q206",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·25": {
+      "batch": "PM1-STAR2-Q207",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·26": {
+      "batch": "PM1-STAR2-Q207",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·27": {
+      "batch": "PM1-STAR2-Q207",
       "status": "kernel-checked"
     }
   }
