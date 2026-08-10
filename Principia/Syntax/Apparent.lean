@@ -43,9 +43,8 @@ infixl:55 " ∨ₐ " => disj
 /-- Regard a variable of the currently available PM real type as an atomic
 formula. This match is intentionally exhaustive over `RealType`: adding a new
 argument type later will force an audited account of its atomic formulae. -/
-def boundFormula (v : BoundVar Δ τ) : Apparent Γ Δ :=
-  match τ, v with
-  | .elementaryProposition, proposition => .bound proposition
+def boundFormula (v : BoundVar Δ .elementaryProposition) : Apparent Γ Δ :=
+  .bound v
 
 /-- The conservative inclusion of the pre-✱9 elementary syntax. -/
 def ofElementary : Elementary Γ → Apparent Γ Δ
@@ -68,12 +67,13 @@ def toElementary? : Apparent Γ Δ → Option (Elementary Γ)
 
 /-- Capture-free renamings of apparent variables. -/
 abbrev Renaming (Δ Ξ : BoundContext) :=
-  {τ : RealType} → BoundVar Δ τ → BoundVar Ξ τ
+  BoundVar Δ .elementaryProposition → BoundVar Ξ .elementaryProposition
 
 /-- Lift a renaming through one binder. -/
-def liftRenaming (ρ : Renaming Δ Ξ) : Renaming (τ :: Δ) (τ :: Ξ)
-  | _, .zero => .zero
-  | _, .succ v => .succ (ρ v)
+def liftRenaming (ρ : Renaming Δ Ξ) :
+    Renaming (.elementaryProposition :: Δ) (.elementaryProposition :: Ξ)
+  | .zero => .zero
+  | .succ v => .succ (ρ v)
 
 /-- Simultaneous, capture-free renaming of apparent variables. -/
 def rename (ρ : Renaming Δ Ξ) : Apparent Γ Δ → Apparent Γ Ξ
@@ -90,13 +90,14 @@ def weaken (proposition : Apparent Γ Δ) : Apparent Γ (τ :: Δ) :=
 
 /-- Capture-free simultaneous substitutions for apparent variables. -/
 abbrev Substitution (Γ : RealContext) (Δ Ξ : BoundContext) :=
-  {τ : RealType} → BoundVar Δ τ → Apparent Γ Ξ
+  BoundVar Δ .elementaryProposition → Apparent Γ Ξ
 
 /-- Lift a substitution through one binder. -/
 def liftSubstitution (σ : Substitution Γ Δ Ξ) :
-    Substitution Γ (τ :: Δ) (τ :: Ξ)
-  | _, .zero => boundFormula .zero
-  | _, .succ v => weaken (σ v)
+    Substitution Γ (.elementaryProposition :: Δ)
+      (.elementaryProposition :: Ξ)
+  | .zero => boundFormula .zero
+  | .succ v => weaken (σ v)
 
 /-- Simultaneous, capture-free substitution of apparent variables. -/
 def substitute (σ : Substitution Γ Δ Ξ) : Apparent Γ Δ → Apparent Γ Ξ
@@ -111,31 +112,32 @@ def substitute (σ : Substitution Γ Δ Ξ) : Apparent Γ Δ → Apparent Γ Ξ
 def instantiate (body : Apparent Γ (.elementaryProposition :: Δ))
     (argument : Apparent Γ Δ) :
     Apparent Γ Δ :=
-  substitute (fun {_} v =>
+  substitute (fun v =>
     match v with
     | .zero => argument
     | .succ predecessor => boundFormula predecessor) body
 
 /-- Decidable structural occurrence of a free apparent variable. -/
-def significant (v : BoundVar Δ τ) : Apparent Γ Δ → Bool
+def significant (v : BoundVar Δ .elementaryProposition) : Apparent Γ Δ → Bool
   | .constant _ => false
   | .real _ => false
   | .bound candidate =>
-      match τ, v, candidate with
-      | .elementaryProposition, x, y => x == y
+      v == candidate
   | .neg proposition => significant v proposition
   | .disj left right => significant v left || significant v right
   | .all body => significant (.succ v) body
 
 /-- Proposition-valued, auditable form of syntactic significance. -/
-def Significant (v : BoundVar Δ τ) (proposition : Apparent Γ Δ) : Prop :=
+def Significant (v : BoundVar Δ .elementaryProposition)
+    (proposition : Apparent Γ Δ) : Prop :=
   significant v proposition = true
 
-@[simp] theorem rename_bound (ρ : Renaming Δ Ξ) (v : BoundVar Δ τ) :
+@[simp] theorem rename_bound (ρ : Renaming Δ Ξ)
+    (v : BoundVar Δ .elementaryProposition) :
     rename ρ (.bound v : Apparent Γ Δ) = .bound (ρ v) := rfl
 
 @[simp] theorem substitute_bound (σ : Substitution Γ Δ Ξ)
-    (v : BoundVar Δ τ) :
+    (v : BoundVar Δ .elementaryProposition) :
     substitute σ (.bound v : Apparent Γ Δ) = σ v := rfl
 
 @[simp] theorem instantiate_zero (argument : Apparent Γ Δ) :
