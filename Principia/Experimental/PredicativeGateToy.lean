@@ -73,6 +73,12 @@ inductive DeepFormula (signature : Signature)
   | implication : DeepFormula signature realContext apparentContext order →
       DeepFormula signature realContext apparentContext order →
       DeepFormula signature realContext apparentContext order
+  | existentialAntecedentImplication {argument : RamifiedSort}
+      {matrixOrder : Nat} :
+      DeepFormula signature realContext (argument :: apparentContext) matrixOrder →
+      DeepFormula signature realContext apparentContext matrixOrder →
+      DeepFormula signature realContext apparentContext
+        (bindOrder matrixOrder argument)
   | equivalence : DeepFormula signature realContext apparentContext order →
       DeepFormula signature realContext apparentContext order →
       DeepFormula signature realContext apparentContext order
@@ -94,6 +100,10 @@ def DeepFormula.renameApparent (rho : ApparentRenaming source target) :
       .applyPredicative (function.renameApparent rho) (inputs.renameApparent rho)
   | .implication left right =>
       .implication (left.renameApparent rho) (right.renameApparent rho)
+  | .existentialAntecedentImplication matrix right =>
+      .existentialAntecedentImplication
+        (matrix.renameApparent (liftApparentRenaming rho))
+        (right.renameApparent rho)
   | .equivalence left right =>
       .equivalence (left.renameApparent rho) (right.renameApparent rho)
   | .alwaysFunction body =>
@@ -110,6 +120,9 @@ def DeepFormula.renameReal (rho : RealRenaming source target) :
       .applyPredicative (function.renameReal rho) (inputs.renameReal rho)
   | .implication left right =>
       .implication (left.renameReal rho) (right.renameReal rho)
+  | .existentialAntecedentImplication matrix right =>
+      .existentialAntecedentImplication
+        (matrix.renameReal rho) (right.renameReal rho)
   | .equivalence left right =>
       .equivalence (left.renameReal rho) (right.renameReal rho)
   | .alwaysFunction body => .alwaysFunction (body.renameReal rho)
@@ -125,6 +138,10 @@ def DeepFormula.substitute
       .applyPredicative (function.substitute substitution) (inputs.substitute substitution)
   | .implication left right =>
       .implication (left.substitute substitution) (right.substitute substitution)
+  | .existentialAntecedentImplication matrix right =>
+      .existentialAntecedentImplication
+        (matrix.substitute (liftSubstitution substitution))
+        (right.substitute substitution)
   | .equivalence left right =>
       .equivalence (left.substitute substitution) (right.substitute substitution)
   | .alwaysFunction body =>
@@ -140,6 +157,10 @@ def DeepFormula.abstractHead :
   | .applyPredicative function inputs =>
       .applyPredicative function.abstractHead inputs.abstractHead
   | .implication left right => .implication left.abstractHead right.abstractHead
+  | .existentialAntecedentImplication matrix right =>
+      .existentialAntecedentImplication
+        (matrix.abstractHead.renameApparent Formula.swapAbstractedWithBinder)
+        right.abstractHead
   | .equivalence left right => .equivalence left.abstractHead right.abstractHead
   | .alwaysFunction body =>
       .alwaysFunction
@@ -154,6 +175,11 @@ def DeepFormula.valueHead
   let weakenedReal := formula.renameReal (fun entryVar => .succ entryVar)
   weakenedReal.substitute (instantiateSubstitution (.real .zero))
 
+def DeepFormula.weakenApparent
+    (formula : DeepFormula signature realContext apparentContext order) :
+    DeepFormula signature realContext (fresh :: apparentContext) order :=
+  formula.renameApparent (fun entryVar => .succ entryVar)
+
 /-- Even at excess zero, omitting and printing `!` are different syntax. -/
 theorem generalApply_ne_predicativeApply
     (function : Term signature realContext apparentContext
@@ -163,6 +189,26 @@ theorem generalApply_ne_predicativeApply
       DeepFormula.applyPredicative function inputs := by
   intro equality
   cases equality
+
+/-- Exact scoped proposition printed at ✱10·23.  The left side binds the
+argument over an implication; the right side places the existential
+proposition in antecedent position without moving `p` under its binder. -/
+def star10_23Formula
+    (matrix : DeepFormula signature realContext [argument] matrixOrder)
+    (p : DeepFormula signature realContext [] matrixOrder) :
+    DeepFormula signature realContext [] (bindOrder matrixOrder argument) :=
+  .equivalence
+    (.alwaysFunction (.implication matrix p.weakenApparent))
+    (.existentialAntecedentImplication matrix p)
+
+/-- Exact scoped proposition printed at ✱10·27.  It transports a pointwise
+implication under the universal binder; no semantic quantifier rule is used. -/
+def star10_27Formula
+    (left right : DeepFormula signature realContext [argument] matrixOrder) :
+    DeepFormula signature realContext [] (bindOrder matrixOrder argument) :=
+  .implication
+    (.alwaysFunction (.implication left right))
+    (.implication (.alwaysFunction left) (.alwaysFunction right))
 
 /-- Derivability for the marked deep syntax. It has no unconditional
 constructor: evidence enters only through the explicitly scoped primitive

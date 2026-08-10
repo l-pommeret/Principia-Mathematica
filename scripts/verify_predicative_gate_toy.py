@@ -18,11 +18,16 @@ def main() -> None:
     code = code_without_comments_or_strings(source)
     required = (
         "inductive DeepFormula", "applyGeneral", "applyPredicative",
+        "existentialAntecedentImplication",
         "alwaysFunction", "sometimesFunction",
         ".function arguments resultOrder 0", "def DeepFormula.renameApparent",
         "def DeepFormula.renameReal", "def DeepFormula.substitute",
         "def DeepFormula.abstractHead", "def DeepFormula.valueHead",
         "theorem generalApply_ne_predicativeApply",
+        "def star10_23Formula", "def star10_27Formula",
+        "(.alwaysFunction (.implication matrix p.weakenApparent))",
+        "(.existentialAntecedentImplication matrix p)",
+        "(.alwaysFunction (.implication left right))",
         "inductive DeepDerivation", "def unaryReducibilityFormula",
         ".sometimesFunction", ".alwaysFunction",
         ".applyGeneral (weakenApparent (weakenApparent function))",
@@ -51,6 +56,7 @@ def main() -> None:
         "variadic reducibility": r"structure\s+(Nary|Variadic|Ternary)Reducibility",
         "mark-erasing projection": r"\b(toFormula|eraseMark|forgetMark)\b",
         "markless certificate": r"\bToyDerivation\b",
+        "generic mixed implication": r"\b(mixedImplication|heterogeneousImplication)\b",
         "accepted namespace claim": r"namespace\s+PM\.FirstEdition",
         "predicative positive excess":
             r"applyPredicative[\s\S]{0,160}\.function[^\n]*resultOrder\s+\([1-9]",
@@ -91,6 +97,15 @@ def main() -> None:
             raise SystemExit(f"{witness} URL/hash provenance is incomplete")
     if source_record["source_witnesses"]["wikisource"].get("page_transcription") != "absent":
         raise SystemExit("Wikisource absence is not recorded")
+    leaf_records = {entry["leaf"]: entry["sha256"]
+                    for entry in source_record["source_witnesses"]["canonical_scan"]["leaves"]}
+    expected_support = {
+        170: "59d588829248e1c1015dbd46daa67323af388dbe310dbd5c34c02cd2681173c9",
+        171: "5c4b9bf2adf5e719f65e76b612f794c635d76b88482835b38cca2cf051c2532c",
+        172: "2a50239974ad6686032ac4c3940075e17beaa139539be2e8f0909c89d3859f97",
+    }
+    if any(leaf_records.get(leaf) != digest for leaf, digest in expected_support.items()):
+        raise SystemExit("✱10·23/·27 supporting scan hashes are incomplete")
     evidence = source_record.get("architecture_ci", {})
     if evidence != {"commit": "pending", "run": "pending", "conclusion": "pending"}:
         if evidence.get("conclusion") != "success" or len(evidence.get("commit", "")) != 40:
