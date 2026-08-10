@@ -574,7 +574,7 @@
       "source": "PM volume I, first edition, p. 113",
       "prompt_path": "aristotle/Q218.md",
       "audit_path": "reviews/Q218-review.md",
-      "audit_status": "A-pending-mixed-disjunction-CI-and-Q252",
+      "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·73 through ✱2·76",
       "depends_on": [
         "PM1:✱2·31",
@@ -1464,8 +1464,8 @@
       "parallel_group": "STAR9-ARCHITECTURE",
       "aristotle_status": "complete",
       "architecture_evidence": {
-        "commit": "aff113e94058397d3b84a8319a0ef0f37ce58d3f",
-        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31428730300",
+        "commit": "2b8fa9279357f37ece84722e91a51604ea5c0528",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31438387772",
         "conclusion": "success",
         "scope": "capture-safe Apparent matrices plus distinct Quantified always/sometimes and definitional FirstOrder negation"
       },
@@ -1478,7 +1478,7 @@
       "aristotle_request_path": "aristotle/Q252.md",
       "aristotle_request_sha256": "a8d1a9f8206746a223939ee345afd2ddf5e45331fa03778aefd36337254512fd",
       "aristotle_latest_task_name": "# Q252 retry 01 — repair th...",
-      "aristotle_latest_task_created": "11 mins ago",
+      "aristotle_latest_task_created": "1 hour ago",
       "aristotle_followup_prompt": "aristotle/followups/Q252-retry-01.md",
       "aristotle_followup_prompt_sha256": "6129dfd826cb1bcb2a86e521fd5d58082d3abca8631a747d6edeb7015662d7ab",
       "aristotle_archive_path": "aristotle/results/Q252-retry-01-final.tar.gz",
@@ -1510,9 +1510,9 @@
         "commit": "aff113e94058397d3b84a8319a0ef0f37ce58d3f",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31428730300",
         "conclusion": "success",
-        "scope": "Quantified/FirstOrder binders and first-order negation; smart mixed-disjunction operations pending CI"
+        "scope": "Quantified/FirstOrder binders, first-order negation, and the four smart mixed-disjunction reductions"
       },
-      "submission_gate": "awaiting CI for mixed-disjunction operations and integrated kernel-checked Q252"
+      "submission_gate": "satisfied; Q252 integrated/kernel-checked at 5683a13d, CI 31432040301"
     },
     "Q254": {
       "canonical_ids": [
