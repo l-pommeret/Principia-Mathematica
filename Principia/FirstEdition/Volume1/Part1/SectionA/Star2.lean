@@ -1748,11 +1748,11 @@ theorem star_2_64 {Γ} (p q : PM.Elementary Γ) :
   -- Perm in front of the outer antecedent, applied to ✱2·63 with `(q,p)/(p,q)`:
   have s : ⊢ₚ ((p ∨ₚ q) ⊃ₚ ((∼ₚ q ∨ₚ p) ⊃ₚ p)) :=
     PM.Derivation.detach (star_2_63 q p)
-      (PM.Derivation.detach (star_1_4 p q)
+      (PM.Derivation.detach (PM.Derivation.star_1_4 p q)
         (star_2_06 (p ∨ₚ q) (q ∨ₚ p) ((∼ₚ q ∨ₚ p) ⊃ₚ p)))
   -- Perm in front of the inner antecedent:
   have t : ⊢ₚ (((∼ₚ q ∨ₚ p) ⊃ₚ p) ⊃ₚ ((p ∨ₚ ∼ₚ q) ⊃ₚ p)) :=
-    PM.Derivation.detach (star_1_4 p (∼ₚ q))
+    PM.Derivation.detach (PM.Derivation.star_1_4 p (∼ₚ q))
       (star_2_06 (p ∨ₚ ∼ₚ q) (∼ₚ q ∨ₚ p) p)
   exact PM.Derivation.detach t
     (PM.Derivation.detach s

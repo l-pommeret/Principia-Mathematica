@@ -43,21 +43,21 @@ infixl:55 " ∨ₐ " => disj
 /-- Regard a variable of the currently available PM real type as an atomic
 formula. This match is intentionally exhaustive over `RealType`: adding a new
 argument type later will force an audited account of its atomic formulae. -/
-def boundFormula (variable : BoundVar Δ τ) : Apparent Γ Δ :=
-  match τ, variable with
+def boundFormula (v : BoundVar Δ τ) : Apparent Γ Δ :=
+  match τ, v with
   | .elementaryProposition, proposition => .bound proposition
 
 /-- The conservative inclusion of the pre-✱9 elementary syntax. -/
 def ofElementary : Elementary Γ → Apparent Γ Δ
   | .constant name => .constant name
-  | .var variable => .real variable
+  | .var v => .real v
   | .neg proposition => .neg (ofElementary proposition)
   | .disj left right => .disj (ofElementary left) (ofElementary right)
 
 /-- Partial erasure to elementary syntax; binders and bound variables fail. -/
 def toElementary? : Apparent Γ Δ → Option (Elementary Γ)
   | .constant name => some (.constant name)
-  | .real variable => some (.var variable)
+  | .real v => some (.var v)
   | .bound _ => none
   | .neg proposition => (toElementary? proposition).map .neg
   | .disj left right => do
@@ -73,20 +73,20 @@ abbrev Renaming (Δ Ξ : BoundContext) :=
 /-- Lift a renaming through one binder. -/
 def liftRenaming (ρ : Renaming Δ Ξ) : Renaming (τ :: Δ) (τ :: Ξ)
   | _, .zero => .zero
-  | _, .succ variable => .succ (ρ variable)
+  | _, .succ v => .succ (ρ v)
 
 /-- Simultaneous, capture-free renaming of apparent variables. -/
 def rename (ρ : Renaming Δ Ξ) : Apparent Γ Δ → Apparent Γ Ξ
   | .constant name => .constant name
-  | .real variable => .real variable
-  | .bound variable => .bound (ρ variable)
+  | .real v => .real v
+  | .bound v => .bound (ρ v)
   | .neg proposition => .neg (rename ρ proposition)
   | .disj left right => .disj (rename ρ left) (rename ρ right)
   | .all τ body => .all τ (rename (liftRenaming ρ) body)
 
 /-- Weakening by a freshly bound apparent variable. -/
 def weaken (proposition : Apparent Γ Δ) : Apparent Γ (τ :: Δ) :=
-  rename (fun variable => .succ variable) proposition
+  rename (fun v => .succ v) proposition
 
 /-- Capture-free simultaneous substitutions for apparent variables. -/
 abbrev Substitution (Γ : RealContext) (Δ Ξ : BoundContext) :=
@@ -96,13 +96,13 @@ abbrev Substitution (Γ : RealContext) (Δ Ξ : BoundContext) :=
 def liftSubstitution (σ : Substitution Γ Δ Ξ) :
     Substitution Γ (τ :: Δ) (τ :: Ξ)
   | _, .zero => boundFormula .zero
-  | _, .succ variable => weaken (σ variable)
+  | _, .succ v => weaken (σ v)
 
 /-- Simultaneous, capture-free substitution of apparent variables. -/
 def substitute (σ : Substitution Γ Δ Ξ) : Apparent Γ Δ → Apparent Γ Ξ
   | .constant name => .constant name
-  | .real variable => .real variable
-  | .bound variable => σ variable
+  | .real v => .real v
+  | .bound v => σ v
   | .neg proposition => .neg (substitute σ proposition)
   | .disj left right => .disj (substitute σ left) (substitute σ right)
   | .all τ body => .all τ (substitute (liftSubstitution σ) body)
@@ -112,29 +112,29 @@ def instantiate (body : Apparent Γ (τ :: Δ)) (argument : Apparent Γ Δ) :
     Apparent Γ Δ :=
   substitute (fun
     | _, .zero => argument
-    | _, .succ variable => boundFormula variable) body
+    | _, .succ v => boundFormula v) body
 
 /-- Decidable structural occurrence of a free apparent variable. -/
-def significant (variable : BoundVar Δ τ) : Apparent Γ Δ → Bool
+def significant (v : BoundVar Δ τ) : Apparent Γ Δ → Bool
   | .constant _ => false
   | .real _ => false
   | .bound candidate =>
-      match τ, variable, candidate with
+      match τ, v, candidate with
       | .elementaryProposition, x, y => x == y
-  | .neg proposition => significant variable proposition
-  | .disj left right => significant variable left || significant variable right
-  | .all _ body => significant (.succ variable) body
+  | .neg proposition => significant v proposition
+  | .disj left right => significant v left || significant v right
+  | .all _ body => significant (.succ v) body
 
 /-- Proposition-valued, auditable form of syntactic significance. -/
-def Significant (variable : BoundVar Δ τ) (proposition : Apparent Γ Δ) : Prop :=
-  significant variable proposition = true
+def Significant (v : BoundVar Δ τ) (proposition : Apparent Γ Δ) : Prop :=
+  significant v proposition = true
 
-@[simp] theorem rename_bound (ρ : Renaming Δ Ξ) (variable : BoundVar Δ τ) :
-    rename ρ (.bound variable : Apparent Γ Δ) = .bound (ρ variable) := rfl
+@[simp] theorem rename_bound (ρ : Renaming Δ Ξ) (v : BoundVar Δ τ) :
+    rename ρ (.bound v : Apparent Γ Δ) = .bound (ρ v) := rfl
 
 @[simp] theorem substitute_bound (σ : Substitution Γ Δ Ξ)
-    (variable : BoundVar Δ τ) :
-    substitute σ (.bound variable : Apparent Γ Δ) = σ variable := rfl
+    (v : BoundVar Δ τ) :
+    substitute σ (.bound v : Apparent Γ Δ) = σ v := rfl
 
 @[simp] theorem instantiate_zero (argument : Apparent Γ Δ) :
     instantiate
@@ -145,7 +145,7 @@ def Significant (variable : BoundVar Δ τ) (proposition : Apparent Γ Δ) : Pro
     toElementary? (ofElementary proposition : Apparent Γ Δ) = some proposition := by
   induction proposition with
   | constant name => rfl
-  | var variable => rfl
+  | var v => rfl
   | neg proposition ih => simp [ofElementary, toElementary?, ih]
   | disj left right ihLeft ihRight =>
       simp [ofElementary, toElementary?, ihLeft, ihRight]

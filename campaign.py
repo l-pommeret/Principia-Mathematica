@@ -607,6 +607,14 @@ def ci_view(run_id: str | None) -> None:
     emit(json.loads(completed.stdout))
 
 
+def ci_logs(run_id: str | None, failed: bool) -> None:
+    """Return CI logs through the campaign wrapper for failure diagnosis."""
+    selected = run_id or str(latest_ci()["databaseId"])
+    command = ["gh", "run", "view", selected, "--log-failed" if failed else "--log"]
+    completed = run(command)
+    print(completed.stdout, end="")
+
+
 def book_build() -> None:
     rendered = run([sys.executable, str(ROOT / "proof_pipeline.py"), "render"])
     run(["latexmk", "-lualatex", "-interaction=nonstopmode", "-halt-on-error", "main.tex"], cwd=ROOT / "publication")
@@ -660,6 +668,9 @@ def parser() -> argparse.ArgumentParser:
     ci_commands.add_parser("latest")
     view = ci_commands.add_parser("view")
     view.add_argument("run_id", nargs="?")
+    logs = ci_commands.add_parser("logs")
+    logs.add_argument("run_id", nargs="?")
+    logs.add_argument("--failed", action="store_true")
 
     book = groups.add_parser("book")
     book_commands = book.add_subparsers(dest="command", required=True)
@@ -694,6 +705,8 @@ def main(argv: list[str] | None = None) -> int:
             ci_latest()
         elif (args.group, args.command) == ("ci", "view"):
             ci_view(args.run_id)
+        elif (args.group, args.command) == ("ci", "logs"):
+            ci_logs(args.run_id, args.failed)
         elif (args.group, args.command) == ("book", "build"):
             book_build()
         return 0
