@@ -11,6 +11,16 @@
     "aristotle": "environment-only"
   },
   "questions": {
+    "Q200": {
+      "canonical_ids": ["PM-META:detach"],
+      "source": "PM volume I, first edition, ✱1·1 and ✱1·11",
+      "prompt_path": "aristotle/Q200.md",
+      "audit_path": "reviews/Q200-review.md",
+      "audit_status": "A",
+      "lean_scope": "metalinguistic case distinction combining exactly ✱1·1 and ✱1·11",
+      "depends_on": ["PM1:✱1·1", "PM1:✱1·11"],
+      "aristotle_status": "not-submitted"
+    },
     "Q201": {
       "canonical_ids": [
         "PM1:✱2·01",
@@ -49,10 +59,12 @@
       "aristotle_project_id": "174380bb-479d-40aa-83cf-098021d78a20",
       "aristotle_task_id": "5de17520-1039-46d7-8da5-5ca58938f6ed",
       "aristotle_latest_task_id": "5de17520-1039-46d7-8da5-5ca58938f6ed",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_latest_task_status": "IN_PROGRESS",
+      "aristotle_remote_status": "IN_PROGRESS",
       "aristotle_request_path": "aristotle/Q202.md",
-      "aristotle_request_sha256": "a7ed5b1dcc34c2ba94a590cc6f2587edfc761f96d3f0ac7702bc6c15a6f45451"
+      "aristotle_request_sha256": "a7ed5b1dcc34c2ba94a590cc6f2587edfc761f96d3f0ac7702bc6c15a6f45451",
+      "aristotle_latest_task_name": "Formalize Q202.md",
+      "aristotle_latest_task_created": "2 mins ago"
     }
   },
   "items": {
