@@ -28,6 +28,8 @@ constraint, not merely as prose checked after a proof has been found.
    trusted syntax/deduction foundation, appends only declarations in the
    implementation closure, and records SHA-256 digests for every source and
    slice. The generated source still requires a remote kernel check before use.
+   A tracked bundle is accepted only when its metadata records a successful CI
+   run that kernel-checks the standalone generated file.
 
 The context closure grants no proof permission. A generated Aristotle request
 must state the whitelist explicitly, and the returned term must still pass the

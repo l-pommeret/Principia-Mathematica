@@ -29,6 +29,11 @@ def verify(root: Path = ROOT) -> int:
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         expected = build_bundle(manifest, registry, root)
         actual_metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        evidence = actual_metadata.pop("ci_evidence", None)
+        if (not isinstance(evidence, dict) or evidence.get("conclusion") != "success" or
+                not isinstance(evidence.get("commit"), str) or
+                not isinstance(evidence.get("run"), str)):
+            raise ContextBundleVerificationError(f"missing successful CI evidence for {stem}")
         actual_source = source_path.read_text(encoding="utf-8")
         forbidden = re.search(
             r"(?m)(?:\bsorry\b|\badmit\b|^\s*axiom\b|^\s*unsafe\b|\bClassical\b)",
