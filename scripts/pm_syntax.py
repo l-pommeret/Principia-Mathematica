@@ -48,8 +48,14 @@ class AST:
         return result
 
 
-OPERATORS = {"∨": "or", "⊃": "implies", "≡": "equiv", "=": "equal", "∈": "member"}
+OPERATORS = {
+    "∨": "or", "⊃": "implies", "≡": "equiv", "=": "equal", "∈": "member",
+    "∩": "class_intersection", "∪": "class_union", "⊂": "class_inclusion",
+    "∩̇": "relation_intersection", "⋃̇": "relation_union",
+    "⊂̇": "relation_inclusion", "|": "relative_product",
+}
 GREEK_FUNCTION_SYMBOLS = "φψχθ"
+CLASS_SYMBOLS = "αβγκ"
 
 
 def mark_count(text: str) -> int:
@@ -73,8 +79,33 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("relation_binder", "x̂ŷ", index))
             index += len("x̂ŷ")
             continue
+        decorated_relation_operator = next(
+            (operator for operator in ("∩̇", "⋃̇", "⊂̇")
+             if source.startswith(operator, index)),
+            None,
+        )
+        if decorated_relation_operator:
+            result.append(Token("operator", decorated_relation_operator, index))
+            index += len(decorated_relation_operator)
+            continue
+        relation_converse = re.match(r"([RSPQ])̌(?![A-Za-z])", source[index:])
+        if relation_converse:
+            text = relation_converse.group(0)
+            result.append(Token("relation_converse", text, index))
+            index += len(text)
+            continue
+        relation_power = re.match(r"([RSPQ])²(?![A-Za-z])", source[index:])
+        if relation_power:
+            text = relation_power.group(0)
+            result.append(Token("relation_power", text, index))
+            index += len(text)
+            continue
         if char == "ẑ":
             result.append(Token("class_binder", char, index))
+            index += 1
+            continue
+        if char in CLASS_SYMBOLS:
+            result.append(Token("class_symbol", char, index))
             index += 1
             continue
         if char == "(":
@@ -124,6 +155,14 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("neg", char, index))
             index += 1
             continue
+        if char == "−":
+            if source.startswith("−̇", index):
+                result.append(Token("relation_neg", "−̇", index))
+                index += len("−̇")
+            else:
+                result.append(Token("class_neg", char, index))
+                index += 1
+            continue
         if char in "([{":
             result.append(Token("lparen", char, index))
             index += 1
@@ -133,6 +172,10 @@ def raw_tokens(source: str) -> list[Token]:
             text = relation_value.group(0)
             result.append(Token("relation_value", text, index))
             index += len(text)
+            continue
+        if char in "RSPQ" and (index + 1 == len(source) or not source[index + 1].isalpha()):
+            result.append(Token("relation_symbol", char, index))
+            index += 1
             continue
         if char in ")]}" :
             result.append(Token("rparen", char, index))
@@ -223,7 +266,11 @@ def binding_power(token: Token, side: str) -> int:
         return 1000 - 100 * scope - group_force
     if token.text.startswith("≡"):
         return 1100
-    return {"⊃": 1200, "∨": 1300, "·": 1400, "=": 1450, "∈": 1450}[token.text]
+    return {
+        "⊃": 1200, "∨": 1300, "·": 1400, "=": 1450, "∈": 1450,
+        "⊂": 1450, "∪": 1500, "∩": 1510,
+        "⊂̇": 1450, "⋃̇": 1500, "∩̇": 1510, "|": 1520,
+    }[token.text]
 
 
 def binder_binding_power(token: Token) -> int:
@@ -268,13 +315,74 @@ def bind_description_occurrences(node: AST, variable: str, condition: AST) -> AS
 
 
 def contains_incomplete_symbol(node: AST) -> bool:
-    return node.tag in {"description", "class_incomplete", "relation_incomplete"} or any(
+    return node.tag in {
+        "description", "class_incomplete", "class_symbol", "class_union",
+        "class_intersection", "class_complement", "relation_incomplete",
+        "relation_symbol", "relation_union", "relation_intersection",
+        "relation_complement", "relative_product", "relation_converse",
+        "relation_power",
+    } or any(
         contains_incomplete_symbol(child) for child in node.children
     )
 
 
 def relation_binder_variables(text: str) -> str:
     return "x,y" if text == "x̂ŷ" else text
+
+
+def is_class_surface(node: AST) -> bool:
+    return node.tag in {
+        "class_incomplete", "class_symbol", "class_union",
+        "class_intersection", "class_complement",
+    }
+
+
+def seal_class_surface(node: AST) -> AST:
+    """Move a surface class expression beneath a contextual owner."""
+    mapping = {
+        "class_incomplete": "class_comprehension_spec",
+        "class_symbol": "class_reference",
+        "class_union": "class_union_spec",
+        "class_intersection": "class_intersection_spec",
+        "class_complement": "class_complement_spec",
+    }
+    if node.tag not in mapping:
+        raise PMSyntaxError(f"not a class surface expression: {node.tag}")
+    return AST(
+        mapping[node.tag],
+        tuple(seal_class_surface(child) if is_class_surface(child) else child
+              for child in node.children),
+        node.value,
+    )
+
+
+def is_relation_surface(node: AST) -> bool:
+    return node.tag in {
+        "relation_incomplete", "relation_symbol", "relation_union",
+        "relation_intersection", "relation_complement", "relative_product",
+        "relation_converse", "relation_power",
+    }
+
+
+def seal_relation_surface(node: AST) -> AST:
+    mapping = {
+        "relation_incomplete": "relation_comprehension_spec",
+        "relation_symbol": "relation_reference",
+        "relation_union": "relation_union_spec",
+        "relation_intersection": "relation_intersection_spec",
+        "relation_complement": "relation_complement_spec",
+        "relative_product": "relative_product_spec",
+        "relation_converse": "relation_converse_spec",
+        "relation_power": "relation_power_spec",
+    }
+    if node.tag not in mapping:
+        raise PMSyntaxError(f"not a relation surface expression: {node.tag}")
+    return AST(
+        mapping[node.tag],
+        tuple(seal_relation_surface(child) if is_relation_surface(child) else child
+              for child in node.children),
+        node.value,
+    )
 
 
 class Parser:
@@ -320,11 +428,29 @@ class Parser:
         elif token.kind == "class_binder":
             condition = self.parenthesized_argument()
             left = AST("class_incomplete", (condition,), "z")
+        elif token.kind == "class_symbol":
+            left = AST("class_symbol", value=token.text)
+        elif token.kind == "class_neg":
+            operand = self.expression(1600)
+            if not is_class_surface(operand):
+                raise PMSyntaxError("class complement requires a class expression")
+            left = AST("class_complement", (operand,))
         elif token.kind == "relation_binder":
             condition = self.expression(1500)
             left = AST(
                 "relation_incomplete", (condition,), relation_binder_variables(token.text)
             )
+        elif token.kind == "relation_symbol":
+            left = AST("relation_symbol", value=token.text)
+        elif token.kind == "relation_converse":
+            left = AST("relation_converse", (AST("relation_symbol", value=token.text[0]),))
+        elif token.kind == "relation_power":
+            left = AST("relation_power", (AST("relation_symbol", value=token.text[0]),), "2")
+        elif token.kind == "relation_neg":
+            operand = self.expression(1600)
+            if not is_relation_surface(operand):
+                raise PMSyntaxError("relation complement requires a relation expression")
+            left = AST("relation_complement", (operand,))
         elif token.kind == "relation_value":
             left = AST(
                 "relation_value",
@@ -371,26 +497,49 @@ class Parser:
                 right_minimum += 1
             right = self.expression(right_minimum)
             tag, value = operator_tag(operator.text)
-            if tag == "member" and right.tag == "class_incomplete":
-                left = AST("class_membership", (left, right.children[0]), right.value)
-            elif tag == "equal" and left.tag == right.tag == "class_incomplete":
+            if tag in {"class_union", "class_intersection"}:
+                if not is_class_surface(left) or not is_class_surface(right):
+                    raise PMSyntaxError(f"{operator.text} requires two class expressions")
+                left = AST(tag, (left, right))
+            elif tag in {"relation_union", "relation_intersection", "relative_product"}:
+                if not is_relation_surface(left) or not is_relation_surface(right):
+                    raise PMSyntaxError(f"{operator.text} requires two relation expressions")
+                left = AST(tag, (left, right))
+            elif tag == "member" and is_class_surface(right):
+                left = AST("class_membership", (left, seal_class_surface(right)))
+            elif tag == "class_inclusion":
+                if not is_class_surface(left) or not is_class_surface(right):
+                    raise PMSyntaxError("class inclusion requires two class expressions")
                 left = AST(
-                    "class_extensional_equal", (left.children[0], right.children[0]),
-                    f"{left.value},{right.value}",
+                    "class_inclusion", (seal_class_surface(left), seal_class_surface(right))
                 )
-            elif tag == "equal" and right.tag == "class_incomplete":
-                left = AST("class_defined_equal", (left, right.children[0]), right.value)
-            elif tag == "equal" and left.tag == "class_incomplete":
-                left = AST("class_defined_equal", (right, left.children[0]), left.value)
-            elif tag == "equal" and left.tag == right.tag == "relation_incomplete":
+            elif tag == "relation_inclusion":
+                if not is_relation_surface(left) or not is_relation_surface(right):
+                    raise PMSyntaxError("relation inclusion requires two relation expressions")
                 left = AST(
-                    "relation_extensional_equal", (left.children[0], right.children[0]),
-                    f"{left.value};{right.value}",
+                    "relation_inclusion",
+                    (seal_relation_surface(left), seal_relation_surface(right)),
                 )
-            elif tag == "equal" and right.tag == "relation_incomplete":
-                left = AST("relation_defined_equal", (left, right.children[0]), right.value)
-            elif tag == "equal" and left.tag == "relation_incomplete":
-                left = AST("relation_defined_equal", (right, left.children[0]), left.value)
+            elif tag == "equal" and is_class_surface(left) and is_class_surface(right):
+                left = AST(
+                    "class_extensional_equal",
+                    (seal_class_surface(left), seal_class_surface(right)),
+                )
+            elif tag == "equal" and is_class_surface(right):
+                left = AST("class_defined_equal", (left, seal_class_surface(right)))
+            elif tag == "equal" and is_class_surface(left):
+                left = AST("class_defined_equal", (right, seal_class_surface(left)))
+            elif tag == "member" and is_relation_surface(left):
+                left = AST("relation_membership", (seal_relation_surface(left), right))
+            elif tag == "equal" and is_relation_surface(left) and is_relation_surface(right):
+                left = AST(
+                    "relation_extensional_equal",
+                    (seal_relation_surface(left), seal_relation_surface(right)),
+                )
+            elif tag == "equal" and is_relation_surface(right):
+                left = AST("relation_defined_equal", (left, seal_relation_surface(right)))
+            elif tag == "equal" and is_relation_surface(left):
+                left = AST("relation_defined_equal", (right, seal_relation_surface(left)))
             else:
                 left = AST(tag, (left, right), value)
         return left
@@ -433,19 +582,19 @@ class Parser:
         else:
             raise PMSyntaxError(f"function {function.text!r} has no argument")
         application_tag = "apply_predicative" if predicative else "apply_general"
-        if len(arguments) == 1 and arguments[0].tag == "class_incomplete":
+        if len(arguments) == 1 and is_class_surface(arguments[0]):
             incomplete = arguments[0]
             continuation = AST(
-                application_tag, (AST("class_bound", value=incomplete.value),), function.text
+                application_tag, (AST("class_bound"),), function.text
             )
-            return AST("class_scope", (incomplete.children[0], continuation), incomplete.value)
-        if len(arguments) == 1 and arguments[0].tag == "relation_incomplete":
+            return AST("class_scope", (seal_class_surface(incomplete), continuation))
+        if len(arguments) == 1 and is_relation_surface(arguments[0]):
             incomplete = arguments[0]
             continuation = AST(
-                application_tag, (AST("relation_bound", value=incomplete.value),), function.text
+                application_tag, (AST("relation_bound"),), function.text
             )
             return AST(
-                "relation_scope", (incomplete.children[0], continuation), incomplete.value
+                "relation_scope", (seal_relation_surface(incomplete), continuation)
             )
         return AST(application_tag, tuple(arguments), function.text)
 

@@ -183,7 +183,7 @@ class PMDotSyntaxTests(unittest.TestCase):
         membership = shape("x ∈ ẑ(φz)")
         contextual = shape("f{ẑ(φz)}")
         self.assertEqual(membership["tag"], "class_membership")
-        self.assertEqual(membership["value"], "z")
+        self.assertEqual(membership["children"][1]["tag"], "class_comprehension_spec")
         self.assertEqual(contextual["tag"], "class_scope")
         self.assertIn("class_bound", tags(contextual))
         self.assertNotIn("class_incomplete", tags(membership))
@@ -192,7 +192,7 @@ class PMDotSyntaxTests(unittest.TestCase):
     def test_class_equality_is_contextual_not_native_set_equality(self):
         defined = shape("α = ẑ(φz)")
         extensional = shape("ẑ(φz) = ẑ(ψz)")
-        self.assertEqual(defined["tag"], "class_defined_equal")
+        self.assertEqual(defined["tag"], "class_extensional_equal")
         self.assertEqual(extensional["tag"], "class_extensional_equal")
         self.assertNotIn("class_incomplete", tags(extensional))
 
@@ -207,7 +207,7 @@ class PMDotSyntaxTests(unittest.TestCase):
         })
         self.assertEqual(contextual["tag"], "relation_scope")
         self.assertIn("relation_bound", tags(contextual))
-        self.assertEqual(defined["tag"], "relation_defined_equal")
+        self.assertEqual(defined["tag"], "relation_extensional_equal")
         self.assertNotIn("relation_incomplete", tags(contextual))
 
     def test_incomplete_class_or_relation_cannot_escape_without_context(self):
@@ -215,6 +215,63 @@ class PMDotSyntaxTests(unittest.TestCase):
             shape("ẑ(φz)")
         with self.assertRaisesRegex(pm_syntax.PMSyntaxError, "without an explicit context"):
             shape("x̂ŷφ(x,y)")
+
+    def test_class_algebra_is_sealed_inside_its_context(self):
+        intersection = shape("x ∈ α ∩ β")
+        union = shape("x ∈ α ∪ β")
+        complement = shape("x ∈ −α")
+        inclusion = shape("α ⊂ β")
+        contextual = shape("f{α ∪ β}")
+        self.assertIn("class_intersection_spec", tags(intersection))
+        self.assertIn("class_union_spec", tags(union))
+        self.assertIn("class_complement_spec", tags(complement))
+        self.assertEqual(inclusion["tag"], "class_inclusion")
+        self.assertEqual(contextual["tag"], "class_scope")
+        for parsed in (intersection, union, complement, inclusion, contextual):
+            self.assertFalse(any(tag in {
+                "class_symbol", "class_union", "class_intersection", "class_complement"
+            } for tag in tags(parsed)))
+
+    def test_freestanding_class_algebra_is_rejected(self):
+        for source in ("α", "α ∩ β", "−α"):
+            with self.subTest(source=source):
+                with self.assertRaisesRegex(
+                    pm_syntax.PMSyntaxError, "without an explicit context"
+                ):
+                    shape(source)
+
+    def test_relation_algebra_is_sealed_inside_propositions(self):
+        membership = shape("R ∈ Rel")
+        intersection = shape("R ∩̇ S = S ∩̇ R")
+        union = shape("R ⋃̇ S = S ⋃̇ R")
+        complement = shape("−̇R = −̇S")
+        inclusion = shape("R ⊂̇ S")
+        relative = shape("(R | S) | P = R | (S | P)")
+        square = shape("R² = R | R")
+        converse = shape("Ř = x̂ŷyRx")
+        self.assertEqual(membership["tag"], "relation_membership")
+        self.assertIn("relation_intersection_spec", tags(intersection))
+        self.assertIn("relation_union_spec", tags(union))
+        self.assertIn("relation_complement_spec", tags(complement))
+        self.assertEqual(inclusion["tag"], "relation_inclusion")
+        self.assertIn("relative_product_spec", tags(relative))
+        self.assertIn("relation_power_spec", tags(square))
+        self.assertIn("relation_converse_spec", tags(converse))
+        for parsed in (membership, intersection, union, complement, inclusion,
+                       relative, square, converse):
+            self.assertFalse(any(tag in {
+                "relation_symbol", "relation_union", "relation_intersection",
+                "relation_complement", "relative_product", "relation_converse",
+                "relation_power", "relation_incomplete",
+            } for tag in tags(parsed)))
+
+    def test_freestanding_relation_algebra_is_rejected(self):
+        for source in ("R", "R ∩̇ S", "R | S", "Ř", "R²"):
+            with self.subTest(source=source):
+                with self.assertRaisesRegex(
+                    pm_syntax.PMSyntaxError, "without an explicit context"
+                ):
+                    shape(source)
 
 
 if __name__ == "__main__":

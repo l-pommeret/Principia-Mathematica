@@ -32,8 +32,16 @@ and `f{...}` becomes `class_scope` or `relation_scope` with a bound placeholder.
 No Python set, Lean `Set`, native equality, or freestanding class/relation term
 is introduced by this layer.
 
+The currently collated algebraic surface is handled under the same rule.
+Class complement/intersection/union/inclusion and relation complement,
+intersection, union, inclusion, converse, square, and relative product are
+sealed into contextual specification nodes before the AST is returned.
+Freestanding `α ∩ β`, `R | S`, `Ř`, and analogous expressions are rejected;
+their accepted occurrences must be owned by membership, equality, inclusion,
+or a contextual function application.
+
 This is still a syntactic AST, not yet the intrinsically typed Lean AST of the
-canonical ramified calculus. Class/relation algebra, relative products,
+canonical ramified calculus. Relation images and descriptive functions,
 higher-order function variables, and systematic ambiguity remain explicit
 future grammar gates. Until those are implemented and tested
 against their source loci, parser success must not be claimed for those
