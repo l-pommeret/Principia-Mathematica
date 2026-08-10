@@ -15,3 +15,12 @@ Aristotle credentials must exist only in `ARISTOTLE_API_KEY` or the macOS
 Keychain. They must never occur in tracked files, prompts, manifests, logs,
 archives, or command-line arguments.
 
+## Experimental ramified-type vertical slice
+
+`Principia.Experimental.RamifiedToy` is an isolated architecture test for
+explicitly ramified function types. It is not source-critical coverage of any
+numbered PM proposition, and the accepted `Elementary`, `Apparent`, and
+`Derivation` modules do not import it. Reducibility is available only as an
+explicitly passed `UnaryReducibility` value, never as a global axiom.
+Its connection with the accepted elementary syntax is only a syntax embedding
+with a partial retraction; no deductive conservativity theorem is claimed.
