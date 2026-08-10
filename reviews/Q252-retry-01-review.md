@@ -1,7 +1,10 @@
 # Audit Q252 retry 01 — terminal error and repository-context mismatch
 
-Verdict: **B — exact target declarations recovered; same-project context
-repair required**. Confidence: high.
+Final verdict: **A — accepted, awaiting repository CI**. Confidence: high.
+
+The B diagnosis below records why the first terminal task required a
+same-project continuation. The final retry result is audited in the last
+section.
 
 ## Evidence inspected
 
@@ -63,6 +66,40 @@ plus explicit `rfl` reduction checks. It neither widens nor narrows the
 canonical target and forbids placeholders, axioms, unsafe declarations, and
 other escape hatches.
 
-No continuation was submitted, no local Lean command was run, and no commit
-or push was performed during this audit.
+During that preparatory audit, no continuation was submitted, no local Lean
+command was run, and no commit or push was performed.
 
+## Retry result audit
+
+Same Aristotle project `118e4b43-2dc7-4e58-a81d-efe890562749`, retry task
+`44e52428-6a47-4593-aadb-d2d8bca9faed`, terminal status `COMPLETE`.
+The immutable archive `aristotle/results/Q252-retry-01-final.tar.gz` has
+SHA-256
+`449ec59064bd288acbe1d739b0e1f14bb9496c438a77844947dde453c60ee627`.
+All twelve archive entries were inspected.
+
+The restored context is byte-exact against the current repository:
+
+- `Principia/Syntax/Formula.lean`:
+  `4ae57f04fe68659b5afc75e7edf065a229ca1b68ef7ada719797c5011240bb8d`;
+- `Principia/Syntax/Apparent.lean`:
+  `781387ff47f160b546d91106d5bf9afe5750735aec49ccb58bcf28501d4e069b`.
+
+The diplomatic source body is byte-exact against the canonical text in
+`aristotle/Q252.md`. The returned declaration section is also byte-exact:
+it contains exactly `star_9_01`, `star_9_02`, `star_9_011`, and
+`star_9_021`, with no extra declaration and no changed parameter, context,
+body, or namespace. Thus all four canonical IDs are covered; ✱9·011 and
+✱9·021 remain aliases rather than new logical claims.
+
+Negative source audit found no `sorry`, `admit`, new `axiom`, `unsafe`,
+`@[implemented_by]`, `native_decide`, quotient, alternate syntax, semantic
+object-language quantifier, weakened target, or added hypothesis. Aristotle
+reports `lake build Principia` successful and four disposable `rfl` checks
+successful, including both negation reductions and both brace-omission
+aliases; the check file was removed from the archive.
+
+The canonical Star9 file and item metadata are integrated with formal status
+`awaiting-ci`. No local Lean command, commit, or push was performed for this
+final audit; only repository CI may promote the four items to
+`kernel-checked`.
