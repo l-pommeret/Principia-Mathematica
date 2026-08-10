@@ -107,7 +107,7 @@ def Term.renameApparent (rho : ApparentRenaming source target) :
     Term signature realContext source sort → Term signature realContext target sort
   | .real entryVar => .real entryVar
   | .apparent entryVar => .apparent (rho entryVar)
-  | .symbol .. symbol => .symbol symbol
+  | @Term.symbol _ _ _ _ symbol => .symbol symbol
 
 def Arguments.renameApparent (rho : ApparentRenaming source target) :
     Arguments signature realContext source sorts →
@@ -139,7 +139,7 @@ def Term.renameReal (rho : RealRenaming source target) :
     Term signature source apparentContext sort → Term signature target apparentContext sort
   | .real entryVar => .real (rho entryVar)
   | .apparent entryVar => .apparent entryVar
-  | .symbol .. symbol => .symbol symbol
+  | @Term.symbol _ _ _ _ symbol => .symbol symbol
 
 def Arguments.renameReal (rho : RealRenaming source target) :
     Arguments signature source apparentContext sorts →
@@ -178,7 +178,7 @@ def Term.substitute
     Term signature realContext source sort → Term signature realContext target sort
   | .real entryVar => .real entryVar
   | .apparent entryVar => substitution entryVar
-  | .symbol .. symbol => .symbol symbol
+  | @Term.symbol _ _ _ _ symbol => .symbol symbol
 
 def Arguments.substitute
     (substitution : ApparentSubstitution signature realContext source target) :
@@ -213,15 +213,32 @@ def Formula.instantiate (body : Formula signature realContext (sort :: apparentC
     Formula signature realContext apparentContext order :=
   Formula.substitute (instantiateSubstitution argument) body
 
+inductive HeadOccurrence (realContext : RealContext) (apparentContext : ApparentContext)
+    (sort : RamifiedSort) where
+  | real : Var realContext sort → HeadOccurrence realContext apparentContext sort
+  | apparent : Var apparentContext sort → HeadOccurrence realContext apparentContext sort
+
+def abstractHeadVar : Var (head :: realContext) sort →
+    HeadOccurrence realContext (head :: apparentContext) sort
+  | .zero => .apparent .zero
+  | .succ entryVar => .real entryVar
+
+def valueHeadVar : Var (head :: apparentContext) sort →
+    HeadOccurrence (head :: realContext) apparentContext sort
+  | .zero => .real .zero
+  | .succ entryVar => .apparent entryVar
+
 /-- Move the head realContext entryVar into a fresh apparentContext-entryVar position. -/
 def Term.abstractHead {signature : Signature} {head sort : RamifiedSort}
     {realContext : RealContext} {apparentContext : ApparentContext} :
     Term signature (head :: realContext) apparentContext sort →
       Term signature realContext (head :: apparentContext) sort
-  | .real (sort := .(head)) .zero => .apparent .zero
-  | .real (.succ entryVar) => .real entryVar
+  | .real entryVar =>
+      match abstractHeadVar (apparentContext := apparentContext) entryVar with
+      | .real retained => .real retained
+      | .apparent abstracted => .apparent abstracted
   | .apparent entryVar => .apparent (.succ entryVar)
-  | .symbol .. symbol => .symbol symbol
+  | @Term.symbol _ _ _ _ symbol => .symbol symbol
 
 /-- Inverse operation: give the fresh apparentContext head the realContext head value. -/
 def Term.valueHead {signature : Signature} {head sort : RamifiedSort}
@@ -229,9 +246,11 @@ def Term.valueHead {signature : Signature} {head sort : RamifiedSort}
     Term signature realContext (head :: apparentContext) sort →
       Term signature (head :: realContext) apparentContext sort
   | .real entryVar => .real (.succ entryVar)
-  | .apparent (sort := .(head)) .zero => .real .zero
-  | .apparent (.succ entryVar) => .apparent entryVar
-  | .symbol .. symbol => .symbol symbol
+  | .apparent entryVar =>
+      match valueHeadVar (realContext := realContext) entryVar with
+      | .real valued => .real valued
+      | .apparent retained => .apparent retained
+  | @Term.symbol _ _ _ _ symbol => .symbol symbol
 
 def Arguments.abstractHead :
     Arguments signature (head :: realContext) apparentContext sorts →
@@ -760,26 +779,38 @@ def embedElementary : PM.Elementary realContext →
         LegacyDisjunctionMeaning.elementary
         (embedElementary left) (embedElementary right)
 
+structure ErasedElementary (order : Nat) where
+  proposition : PM.Elementary realContext
+  order_eq : order = 0
+
 def erasePropositionTerm? : {order : Nat} →
     Term legacySignature (realContext.map legacySort) [] (.proposition order) →
-      Option (PM.Elementary realContext)
-  | 0, .real entryVar => some (.var (eraseRealVar realContext entryVar))
-  | 0, .symbol (.elementaryConstant name) => some (.constant name)
+      Option (ErasedElementary (realContext := realContext) order)
+  | 0, .real entryVar => some ⟨.var (eraseRealVar realContext entryVar), rfl⟩
+  | 0, .symbol (.elementaryConstant name) => some ⟨.constant name, rfl⟩
   | _, _ => none
+
+def eraseElementaryIndexed? : {order : Nat} →
+    Formula legacySignature (realContext.map legacySort) [] order →
+      Option (ErasedElementary (realContext := realContext) order)
+  | _, .propositionVariable entryVar => erasePropositionTerm? entryVar
+  | _, .apply _ _ => none
+  | _, .neg LegacyNegationMeaning.elementary inner => do
+      let erased ← eraseElementaryIndexed? inner
+      pure ⟨.neg erased.proposition, erased.order_eq⟩
+  | _, .disj LegacyDisjunctionMeaning.elementary left right => do
+      let erasedLeft ← eraseElementaryIndexed? left
+      let erasedRight ← eraseElementaryIndexed? right
+      have resultOrder : max 0 0 = 0 := rfl
+      pure ⟨.disj erasedLeft.proposition erasedRight.proposition, resultOrder⟩
+  | _, .always _ => none
+  | _, .sometimes _ => none
 
 def eraseElementary? (proposition :
     Formula legacySignature (realContext.map legacySort) [] 0) :
-    Option (PM.Elementary realContext) :=
-  match proposition with
-  | .propositionVariable entryVar => erasePropositionTerm? entryVar
-  | .apply _ _ => none
-  | .neg (order := 0) LegacyNegationMeaning.elementary inner =>
-      (eraseElementary? inner).map .neg
-  | .disj (leftOrder := 0) (rightOrder := 0)
-      LegacyDisjunctionMeaning.elementary left right => do
-      let erasedLeft ← eraseElementary? left
-      let erasedRight ← eraseElementary? right
-      pure (.disj erasedLeft erasedRight)
+    Option (PM.Elementary realContext) := do
+  let erased ← eraseElementaryIndexed? proposition
+  pure erased.proposition
 
 @[simp] theorem erase_embedElementary (proposition : PM.Elementary realContext) :
     eraseElementary? (embedElementary proposition) = some proposition := by
