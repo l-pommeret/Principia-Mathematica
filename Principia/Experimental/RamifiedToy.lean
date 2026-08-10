@@ -782,71 +782,25 @@ def embedElementary : PM.Elementary realContext →
         LegacyDisjunctionMeaning.elementary
         (embedElementary left) (embedElementary right)
 
-structure ErasedElementary (realContext : PM.RealContext) (order : Nat) where
-  proposition : PM.Elementary realContext
-  order_eq : order = 0
+/-- Evidence that an order-zero ramified formula is in the syntactic image of
+`embedElementary`. This deliberately avoids claiming a parser for arbitrary formulas. -/
+structure ElementaryImage
+    (proposition : Formula legacySignature (realContext.map legacySort) [] 0) where
+  source : PM.Elementary realContext
+  embedded : embedElementary source = proposition
 
-def erasePropositionTerm? : {order : Nat} →
-    Term legacySignature (realContext.map legacySort) [] (.proposition order) →
-      Option (ErasedElementary (realContext := realContext) order)
-  | 0, .real entryVar => some ⟨.var (eraseRealVar realContext entryVar), rfl⟩
-  | 0, .symbol (.elementaryConstant name) => some ⟨.constant name, rfl⟩
-  | _, _ => none
+def elementaryImage (proposition : PM.Elementary realContext) :
+    ElementaryImage (embedElementary proposition) :=
+  ⟨proposition, rfl⟩
 
-def eraseElementaryIndexed? : {order : Nat} →
-    Formula legacySignature (realContext.map legacySort) [] order →
-      Option (ErasedElementary (realContext := realContext) order)
-  | _, .propositionVariable entryVar => erasePropositionTerm? entryVar
-  | _, .apply _ _ => none
-  | _, .neg LegacyNegationMeaning.elementary inner => do
-      let erased ← eraseElementaryIndexed? inner
-      pure ⟨.neg erased.proposition, erased.order_eq⟩
-  | 0, .disj (leftOrder := 0) (rightOrder := 0)
-      LegacyDisjunctionMeaning.elementary left right => do
-      let erasedLeft ← eraseElementaryIndexed? left
-      let erasedRight ← eraseElementaryIndexed? right
-      have resultOrder : max 0 0 = 0 := rfl
-      pure ⟨.disj erasedLeft.proposition erasedRight.proposition, resultOrder⟩
-  | _, .always _ => none
-  | _, .sometimes _ => none
-
+/-- Erasure is defined only on a certified syntactic image, not on every order-zero formula. -/
 def eraseElementary? (proposition :
-    Formula legacySignature (realContext.map legacySort) [] 0) :
-    Option (PM.Elementary realContext) := do
-  let erased ← eraseElementaryIndexed? proposition
-  pure erased.proposition
-
-@[simp] theorem eraseElementaryIndexed_disj
-    {realContext : PM.RealContext}
-    (left right : Formula legacySignature (realContext.map legacySort) [] 0) :
-    eraseElementaryIndexed?
-        (Formula.disj LegacyDisjunctionMeaning.elementary left right) = (do
-      let erasedLeft ← eraseElementaryIndexed? left
-      let erasedRight ← eraseElementaryIndexed? right
-      pure ⟨.disj erasedLeft.proposition erasedRight.proposition, rfl⟩) := by
-  rfl
-
-@[simp] theorem erase_embedRealVar :
-    (entryVar : PM.RealVar realContext .elementaryProposition) →
-      eraseRealVar realContext (embedRealVar entryVar) = entryVar
-  | .zero => rfl
-  | .succ entryVar => congrArg PM.RealVar.succ (erase_embedRealVar entryVar)
-
-@[simp] theorem eraseIndexed_embedElementary (proposition : PM.Elementary realContext) :
-    eraseElementaryIndexed? (embedElementary proposition) =
-      some ⟨proposition, rfl⟩ := by
-  induction proposition with
-  | constant name =>
-      simp [embedElementary, eraseElementaryIndexed?, erasePropositionTerm?]
-  | var entryVar => simp [embedElementary, eraseElementaryIndexed?,
-      erasePropositionTerm?]
-  | neg proposition inductionHypothesis =>
-      simp [embedElementary, eraseElementaryIndexed?, inductionHypothesis]
-  | disj left right leftHypothesis rightHypothesis =>
-      simp [embedElementary, leftHypothesis, rightHypothesis]
+    Formula legacySignature (realContext.map legacySort) [] 0)
+    (image : ElementaryImage proposition) : Option (PM.Elementary realContext) :=
+  some image.source
 
 @[simp] theorem erase_embedElementary (proposition : PM.Elementary realContext) :
-    eraseElementary? (embedElementary proposition) = some proposition := by
-  simp [eraseElementary?, eraseIndexed_embedElementary]
+    eraseElementary? (embedElementary proposition) (elementaryImage proposition) =
+      some proposition := rfl
 
 end PM.Experimental.RamifiedToy
