@@ -18,6 +18,11 @@ constraint, not merely as prose checked after a proof has been found.
    from the returned Lean term with that manifest. It classifies strict
    closure, unused printed citations, and relaxed closure, recording the exact
    additional PM items required by a relaxation.
+5. `scripts/pm_aristotle_prompt.py` renders the compact request. For any
+   nonempty implementation closure it refuses to produce a submission without
+   an explicitly supplied, reviewed isolated Lean context. The context is
+   labelled as compilation scaffolding and the proof whitelist is printed in a
+   separate section.
 
 The context closure grants no proof permission. A generated Aristotle request
 must state the whitelist explicitly, and the returned term must still pass the
