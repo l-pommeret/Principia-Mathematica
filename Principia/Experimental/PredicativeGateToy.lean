@@ -40,8 +40,20 @@ Verbatim proof transcription for the last item:
 
 `⊢ . (1) . (2) . ⊃ ⊢ . Prop`
 
+The two still-missing transport theorems were checked directly against the
+first-edition scan (pp. 148--150, leaves 170--172):
+
+* `✱10·23  ⊢ :: (x) . φx ⊃ p . ≡ : (∃x) . φx . ⊃ . p`
+* `✱10·27  ⊢ :: (z) . φz ⊃ ψz . ⊃ : (z) . φz . ⊃ . (z) . ψz`
+
+The principal printed proof of ✱10·23 cites ✱4·2 and the definitions ✱9·03,
+✱9·02, and ✱1·01.  PM identifies ✱10·27 directly with ✱9·21; its alternative
+proof cites ✱10·14, Ass, ✱10·1, ✱10·21, and Exp.  These are theorem
+dependencies, not additional non-logical assumptions.  Neither theorem is
+postulated by the experiment below.
+
 The code below exposes the primitive reducibility packages and the transport
-shape only. It does not claim to reconstruct the printed proof of ✱13·101,
+premise only. It does not claim to reconstruct the printed proof of ✱13·101,
 whose ✱10·23/·27 dependencies are not yet formalized here.
 -/
 
@@ -68,6 +80,10 @@ inductive DeepFormula (signature : Signature)
       DeepFormula signature realContext (functionSort :: apparentContext) matrixOrder →
       DeepFormula signature realContext apparentContext
         (bindOrder matrixOrder functionSort)
+  | sometimesFunction {functionSort : RamifiedSort} {matrixOrder : Nat} :
+      DeepFormula signature realContext (functionSort :: apparentContext) matrixOrder →
+      DeepFormula signature realContext apparentContext
+        (bindOrder matrixOrder functionSort)
 
 def DeepFormula.renameApparent (rho : ApparentRenaming source target) :
     DeepFormula signature realContext source order →
@@ -82,6 +98,8 @@ def DeepFormula.renameApparent (rho : ApparentRenaming source target) :
       .equivalence (left.renameApparent rho) (right.renameApparent rho)
   | .alwaysFunction body =>
       .alwaysFunction (body.renameApparent (liftApparentRenaming rho))
+  | .sometimesFunction body =>
+      .sometimesFunction (body.renameApparent (liftApparentRenaming rho))
 
 def DeepFormula.renameReal (rho : RealRenaming source target) :
     DeepFormula signature source apparentContext order →
@@ -95,6 +113,7 @@ def DeepFormula.renameReal (rho : RealRenaming source target) :
   | .equivalence left right =>
       .equivalence (left.renameReal rho) (right.renameReal rho)
   | .alwaysFunction body => .alwaysFunction (body.renameReal rho)
+  | .sometimesFunction body => .sometimesFunction (body.renameReal rho)
 
 def DeepFormula.substitute
     (substitution : ApparentSubstitution signature realContext source target) :
@@ -110,6 +129,8 @@ def DeepFormula.substitute
       .equivalence (left.substitute substitution) (right.substitute substitution)
   | .alwaysFunction body =>
       .alwaysFunction (body.substitute (liftSubstitution substitution))
+  | .sometimesFunction body =>
+      .sometimesFunction (body.substitute (liftSubstitution substitution))
 
 def DeepFormula.abstractHead :
     DeepFormula signature (head :: realContext) apparentContext order →
@@ -122,6 +143,9 @@ def DeepFormula.abstractHead :
   | .equivalence left right => .equivalence left.abstractHead right.abstractHead
   | .alwaysFunction body =>
       .alwaysFunction
+        (body.abstractHead.renameApparent Formula.swapAbstractedWithBinder)
+  | .sometimesFunction body =>
+      .sometimesFunction
         (body.abstractHead.renameApparent Formula.swapAbstractedWithBinder)
 
 def DeepFormula.valueHead
@@ -146,42 +170,48 @@ packages below. -/
 inductive DeepDerivation (signature : Signature) :
     {order : Nat} → DeepFormula signature [] [] order → Prop
 
-/-- The exact unary equivalence matrix of ✱12·1: the general function occurs
-on the left, its predicative representative on the right, under one binder. -/
-def unaryEquivalenceFormula
-    (function : Term signature [] [] (.function [argument] resultOrder excess))
-    (representative : Term signature [] [] (.function [argument] resultOrder 0)) :
-    DeepFormula signature [] [] (bindOrder resultOrder argument) :=
-  .alwaysFunction
-    (.equivalence
-      (.applyGeneral (weakenApparent function) (.cons (.apparent .zero) .nil))
-      (.applyPredicative (weakenApparent representative)
-        (.cons (.apparent .zero) .nil)))
+/-- The exact object-language formula of ✱12·1.  The outer existential binds
+the predicative representative; the inner universal binds its argument. -/
+def unaryReducibilityFormula
+    (function : Term signature [] [] (.function [argument] resultOrder excess)) :
+    DeepFormula signature [] []
+      (bindOrder (bindOrder resultOrder argument)
+        (.function [argument] resultOrder 0)) :=
+  .sometimesFunction
+    (.alwaysFunction
+      (.equivalence
+        (.applyGeneral (weakenApparent (weakenApparent function))
+          (.cons (.apparent .zero) .nil))
+        (.applyPredicative (.apparent (.succ .zero))
+          (.cons (.apparent .zero) .nil))))
 
 /-- Experimental package matching the arity of ✱12·1 exactly. -/
 structure UnaryReducibility12_1 (signature : Signature)
     {argument : RamifiedSort} {resultOrder excess : Nat}
     (function : Term signature [] []
       (.function [argument] resultOrder excess)) where
-  representative : Term signature [] [] (.function [argument] resultOrder 0)
   certificate : DeepDerivation signature
-    (unaryEquivalenceFormula function representative)
+    (unaryReducibilityFormula function)
 
-/-- The exact binary equivalence matrix of ✱12·11, under two binders. -/
-def binaryEquivalenceFormula
+/-- The exact object-language formula of ✱12·11: one existential function
+binder followed by the two argument binders, and no variadic generalisation. -/
+def binaryReducibilityFormula
     (function : Term signature [] []
-      (.function [left, right] resultOrder excess))
-    (representative : Term signature [] []
-      (.function [left, right] resultOrder 0)) :
+      (.function [left, right] resultOrder excess)) :
     DeepFormula signature [] []
-      (bindOrder (bindOrder resultOrder right) left) :=
-  .alwaysFunction
+      (bindOrder (bindOrder (bindOrder resultOrder right) left)
+        (.function [left, right] resultOrder 0)) :=
+  .sometimesFunction
     (.alwaysFunction
-      (.equivalence
-        (.applyGeneral (weakenApparent (weakenApparent function))
-          (.cons (.apparent (.succ .zero)) (.cons (.apparent .zero) .nil)))
-        (.applyPredicative (weakenApparent (weakenApparent representative))
-          (.cons (.apparent (.succ .zero)) (.cons (.apparent .zero) .nil)))))
+      (.alwaysFunction
+        (.equivalence
+          (.applyGeneral
+            (weakenApparent (weakenApparent (weakenApparent function)))
+            (.cons (.apparent (.succ .zero))
+              (.cons (.apparent .zero) .nil)))
+          (.applyPredicative (.apparent (.succ (.succ .zero)))
+            (.cons (.apparent (.succ .zero))
+              (.cons (.apparent .zero) .nil))))))
 
 /-- Separate experimental package matching the arity of ✱12·11 exactly.
 There is deliberately no variadic or arity-three reducibility interface. -/
@@ -189,10 +219,8 @@ structure BinaryReducibility12_11 (signature : Signature)
     {left right : RamifiedSort} {resultOrder excess : Nat}
     (function : Term signature [] []
       (.function [left, right] resultOrder excess)) where
-  representative :
-    Term signature [] [] (.function [left, right] resultOrder 0)
   certificate : DeepDerivation signature
-    (binaryEquivalenceFormula function representative)
+    (binaryReducibilityFormula function)
 
 /-- Exact experimental definiens shape for ✱13·01: the same bound predicative
 function `φ!` occurs on both sides, first at `x`, then at `y`. -/
@@ -207,33 +235,14 @@ def star13_01Df
       (.applyPredicative (.apparent .zero)
         (.cons (weakenApparent y) .nil)))
 
-/-- The explicit result of the experimental ✱13·101 transport shape. The
-representative, its `φ!` application, and its certificate are dependent data. -/
-structure Star13_101Transport
-    (signature : Signature)
-    (argument : RamifiedSort) (resultOrder excess : Nat)
-    (function : Term signature [] [] (.function [argument] resultOrder excess))
-    (inputSymbol : signature.Symbol argument) where
-  representative : Term signature [] [] (.function [argument] resultOrder 0)
-  predicativeOccurrence : DeepFormula signature [] [] resultOrder
-  isMarkedRepresentative : predicativeOccurrence =
-    .applyPredicative representative (.cons (.symbol inputSymbol) .nil)
-  certificate : DeepDerivation signature
-    (unaryEquivalenceFormula function representative)
-
-/-- Toy transport corresponding only to the reducibility-dependent first move
-in the printed proof of ✱13·101. It cannot be called without the scoped ✱12·1
-package, and consumes both fields of that package. -/
-def star13_101TransportShape
+/-- The reducibility-dependent first premise of ✱13·101 is now the printed
+existential proposition itself, rather than a stronger meta-level witness.
+The remaining ✱10·23/·27 transport is deliberately not postulated here. -/
+def star13_101ReducibilityPremise
     {signature : Signature}
     (function : Term signature [] [] (.function [argument] resultOrder excess))
-    (reducibility : UnaryReducibility12_1 signature function)
-    (inputSymbol : signature.Symbol argument) :
-    Star13_101Transport signature argument resultOrder excess function inputSymbol :=
-  let representative := reducibility.representative
-  ⟨representative,
-    .applyPredicative representative (.cons (.symbol inputSymbol) .nil),
-    rfl,
-    reducibility.certificate⟩
+    (reducibility : UnaryReducibility12_1 signature function) :
+    DeepDerivation signature (unaryReducibilityFormula function) :=
+  reducibility.certificate
 
 end PM.Experimental.PredicativeGateToy

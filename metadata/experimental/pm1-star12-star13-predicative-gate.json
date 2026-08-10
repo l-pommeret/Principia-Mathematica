@@ -3,11 +3,15 @@
   "status": "experimental-architecture-evidence-only",
   "canonical_item_metadata": false,
   "scope": ["PM1:✱12·1", "PM1:✱12·11", "PM1:✱13·01", "PM1:✱13·101"],
+  "supporting_loci": ["PM1:✱10·23", "PM1:✱10·27"],
   "source_witnesses": {
     "canonical_scan": {
       "uri": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
       "sha256": "52fd0ba446ab2dc97f08d6d4b16d67196edb6d991b0a0445e1ee4dbb57fa2eab",
       "leaves": [
+        {"leaf": 170, "printed_page": 148, "sha256": "59d588829248e1c1015dbd46daa67323af388dbe310dbd5c34c02cd2681173c9", "locus": "PM1:✱10·23"},
+        {"leaf": 171, "printed_page": 149, "sha256": "5c4b9bf2adf5e719f65e76b612f794c635d76b88482835b38cca2cf051c2532c", "locus": "PM1:✱10·27 statement"},
+        {"leaf": 172, "printed_page": 150, "sha256": "2a50239974ad6686032ac4c3940075e17beaa139539be2e8f0909c89d3859f97", "locus": "PM1:✱10·27 demonstration"},
         {"leaf": 196, "printed_page": 174, "sha256": "56e8d8644f7db3d93d3a29d208fd75a5fc346a11c11fff337211ec9194f4cb79"},
         {"leaf": 197, "printed_page": 175, "sha256": "190549556ab8e2ca2c757baa0ed705181ade995cdc21742d5478a72ba25fb0ed"},
         {"leaf": 198, "printed_page": 176, "sha256": "4b4f4e557eba3e16e231f3e437af150fb6f347ea20b6602948f363432048227a"},
@@ -26,9 +30,15 @@
     }
   },
   "architecture_ci": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "prior_architecture_ci": {
     "commit": "cbef6d91eacd3164e6e86d9f2ebb48b4e1ad914b",
     "run": 31436937560,
-    "conclusion": "success"
+    "conclusion": "success",
+    "scope": "marked meta-level witness prototype, superseded by the object-language existential package"
   },
-  "formalization_boundary": "Primitive reducibility packages and the first transport move only; not a canonical proof of star 13.101."
+  "formalization_boundary": "Exact object-language shapes for unary and binary reducibility and the first premise of star 13.101; star 10.23, star 10.27, and the complete proof of star 13.101 remain unformalized."
 }

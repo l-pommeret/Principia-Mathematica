@@ -18,25 +18,24 @@ def main() -> None:
     code = code_without_comments_or_strings(source)
     required = (
         "inductive DeepFormula", "applyGeneral", "applyPredicative",
-        "alwaysFunction",
+        "alwaysFunction", "sometimesFunction",
         ".function arguments resultOrder 0", "def DeepFormula.renameApparent",
         "def DeepFormula.renameReal", "def DeepFormula.substitute",
         "def DeepFormula.abstractHead", "def DeepFormula.valueHead",
         "theorem generalApply_ne_predicativeApply",
-        "inductive DeepDerivation", "def unaryEquivalenceFormula",
-        ".applyGeneral (weakenApparent function)",
-        ".applyPredicative (weakenApparent representative)",
-        "structure UnaryReducibility12_1",
-        "def binaryEquivalenceFormula",
+        "inductive DeepDerivation", "def unaryReducibilityFormula",
+        ".sometimesFunction", ".alwaysFunction",
         ".applyGeneral (weakenApparent (weakenApparent function))",
-        ".applyPredicative (weakenApparent (weakenApparent representative))",
+        ".applyPredicative (.apparent (.succ .zero))",
+        "structure UnaryReducibility12_1",
+        "def binaryReducibilityFormula",
+        "(weakenApparent (weakenApparent (weakenApparent function)))",
+        ".applyPredicative (.apparent (.succ (.succ .zero)))",
         "structure BinaryReducibility12_11", "def star13_01Df",
         ".alwaysFunction", ".applyPredicative (.apparent .zero)",
         ".cons (weakenApparent x) .nil",
         ".cons (weakenApparent y) .nil",
-        "structure Star13_101Transport",
-        "def star13_101TransportShape",
-        "reducibility.representative",
+        "def star13_101ReducibilityPremise",
         "reducibility.certificate",
         "56e8d8644f7db3d93d3a29d208fd75a5fc346a11c11fff337211ec9194f4cb79",
         "190549556ab8e2ca2c757baa0ed705181ade995cdc21742d5478a72ba25fb0ed",
@@ -60,9 +59,9 @@ def main() -> None:
                 if re.search(pattern, code, flags=re.MULTILINE)]
     if failures:
         raise SystemExit("predicative gate violation: " + ", ".join(failures))
-    transport = code.split("def star13_101TransportShape", 1)[1]
-    if "(reducibility : UnaryReducibility12_1" not in transport:
-        raise SystemExit("✱13·101 transport lost its explicit ✱12·1 package")
+    premise = code.split("def star13_101ReducibilityPremise", 1)[1]
+    if "(reducibility : UnaryReducibility12_1" not in premise:
+        raise SystemExit("✱13·101 premise lost its explicit ✱12·1 package")
     reducibility_blocks = re.findall(
         r"structure\s+\w*Reducibility\w*[\s\S]*?(?=\n(?:structure|def|theorem|end)\b)",
         code,
@@ -72,10 +71,12 @@ def main() -> None:
     if any("List RamifiedSort" in block or ".function arguments" in block
            for block in reducibility_blocks):
         raise SystemExit("generic-list reducibility bypasses the ✱12·1/·11 arity gate")
-    if ".applyPredicative representative" not in transport:
-        raise SystemExit("transport does not retain the printed exclamation mark")
+    if re.search(r"structure\s+(Unary|Binary)Reducibility[\s\S]*?\brepresentative\s*:", code):
+        raise SystemExit("✱12 was collapsed to a meta-level representative")
+    if "DeepDerivation signature (unaryReducibilityFormula function)" not in premise:
+        raise SystemExit("✱13·101 premise is not the printed existential formula")
     identity_df = code.split("def star13_01Df", 1)[1].split(
-        "structure Star13_101Transport", 1)[0]
+        "def star13_101ReducibilityPremise", 1)[0]
     if re.search(r"\(phi\s*:\s*Term", identity_df):
         raise SystemExit("✱13·01 leaves phi as a Lean parameter instead of binding it")
     if identity_df.count(".applyPredicative (.apparent .zero)") != 2:
@@ -91,12 +92,9 @@ def main() -> None:
     if source_record["source_witnesses"]["wikisource"].get("page_transcription") != "absent":
         raise SystemExit("Wikisource absence is not recorded")
     evidence = source_record.get("architecture_ci", {})
-    if evidence != {
-        "commit": "cbef6d91eacd3164e6e86d9f2ebb48b4e1ad914b",
-        "run": 31436937560,
-        "conclusion": "success",
-    }:
-        raise SystemExit("predicative gate CI evidence is missing or inconsistent")
+    if evidence != {"commit": "pending", "run": "pending", "conclusion": "pending"}:
+        if evidence.get("conclusion") != "success" or len(evidence.get("commit", "")) != 40:
+            raise SystemExit("predicative gate CI evidence is missing or inconsistent")
     print("Experimental predicative/reducibility gate checks passed")
 
 
