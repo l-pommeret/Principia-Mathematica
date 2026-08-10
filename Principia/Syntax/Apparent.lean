@@ -110,9 +110,10 @@ def substitute (σ : Substitution Γ Δ Ξ) : Apparent Γ Δ → Apparent Γ Ξ
 /-- Instantiate the nearest apparent-variable binder. -/
 def instantiate (body : Apparent Γ (τ :: Δ)) (argument : Apparent Γ Δ) :
     Apparent Γ Δ :=
-  substitute (fun
-    | _, .zero => argument
-    | _, .succ v => boundFormula v) body
+  substitute (fun {_} v =>
+    match v with
+    | .zero => argument
+    | .succ predecessor => boundFormula predecessor) body
 
 /-- Decidable structural occurrence of a free apparent variable. -/
 def significant (v : BoundVar Δ τ) : Apparent Γ Δ → Bool
