@@ -7,10 +7,31 @@
     "Assoc": ["PM1:✱1·5"],
     "Sum": ["PM1:✱1·6"],
     "Comm": ["PM1:✱2·04"],
-    "Syll": ["PM1:✱2·05", "PM1:✱2·06"],
+    "Syll": ["PM1:✱2·05", "PM1:✱2·06", "PM1:✱3·33", "PM1:✱3·34"],
     "Abs": ["PM1:✱2·01"],
     "Id": ["PM1:✱2·08"],
+    "Transp": ["PM1:✱2·16", "PM1:✱2·17"],
+    "Fact": ["PM1:✱3·45"],
+    "Comp": ["PM1:✱3·43"],
+    "Exp": ["PM1:✱3·3"],
+    "Imp": ["PM1:✱3·31"],
+    "Simp": ["PM1:✱3·26", "PM1:✱3·27"],
+    "Ass": ["PM1:✱3·35"],
     "detach": ["PM1:✱1·1", "PM1:✱1·11"]
+  },
+  "historical_scopes": {
+    "Syll": [
+      {
+        "before": "PM1:✱3·35",
+        "candidates": ["PM1:✱2·05", "PM1:✱2·06"],
+        "evidence": "Before ✱3·33–·34 are named Syll, PM uses the earlier syllogistic family."
+      },
+      {
+        "from": "PM1:✱3·35",
+        "candidates": ["PM1:✱3·33", "PM1:✱3·34"],
+        "evidence": "PM announces after ✱3·33–·34 that these forms will henceforth be called Syll."
+      }
+    ]
   },
   "bridges": {
     "PM.Derivation.detach": {

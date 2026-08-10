@@ -370,8 +370,29 @@ def audit(root: Path = ROOT) -> dict:
     order = {item["id"]: pm_order(item["id"]) for item in items}
     aliases = json.loads((root / "metadata/dependency_aliases.json").read_text(encoding="utf-8"))
     for alias, resolutions in aliases["aliases"].items():
-        if not resolutions or any(resolution not in order for resolution in resolutions):
-            raise DependencyError(f"alias {alias} has an empty or unknown PM resolution")
+        if not resolutions:
+            raise DependencyError(f"alias {alias} has an empty PM resolution")
+        try:
+            for resolution in resolutions:
+                pm_order(resolution)
+        except DependencyError as error:
+            raise DependencyError(f"alias {alias} has an invalid PM resolution") from error
+    for alias, scopes in aliases.get("historical_scopes", {}).items():
+        if alias not in aliases["aliases"] or not isinstance(scopes, list) or not scopes:
+            raise DependencyError(f"invalid historical alias scope for {alias}")
+        for scope in scopes:
+            if (not scope.get("evidence") or not scope.get("candidates") or
+                    any(candidate not in aliases["aliases"][alias]
+                        for candidate in scope["candidates"])):
+                raise DependencyError(f"invalid historical alias scope entry for {alias}")
+            for boundary in ("from", "before"):
+                if boundary in scope:
+                    try:
+                        pm_order(scope[boundary])
+                    except DependencyError as error:
+                        raise DependencyError(
+                            f"invalid {boundary} boundary for alias {alias}"
+                        ) from error
     edges = []
     lean_edges = []
     assumption_parameter_evidence = []

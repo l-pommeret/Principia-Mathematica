@@ -9,19 +9,19 @@ import json
 import re
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
 
-PRINTED_ALIASES = {
-    "Taut": ["PM1:✱1·2"], "Add": ["PM1:✱1·3"],
-    "Perm": ["PM1:✱1·4"], "Assoc": ["PM1:✱1·5"],
-    "Sum": ["PM1:✱1·6"], "Comm": ["PM1:✱2·04"],
-    "Syll": ["PM1:✱2·05", "PM1:✱2·06", "PM1:✱3·33", "PM1:✱3·34"],
-    "Abs": ["PM1:✱2·01"], "Id": ["PM1:✱2·08"],
-    "Transp": ["PM1:✱2·16", "PM1:✱2·17"],
-    "Fact": ["PM1:✱3·45"], "Comp": ["PM1:✱3·43"],
-    "Exp": ["PM1:✱3·3"], "Imp": ["PM1:✱3·31"],
-    "Simp": ["PM1:✱3·26", "PM1:✱3·27"],
-    "Ass": ["PM1:✱3·35"],
-}
+
+def load_alias_registry(path: Path = ROOT / "metadata/dependency_aliases.json") -> dict:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    return {
+        "aliases": payload["aliases"],
+        "historical_scopes": payload.get("historical_scopes", {}),
+    }
+
+
+ALIAS_REGISTRY = load_alias_registry()
+PRINTED_ALIASES = ALIAS_REGISTRY["aliases"]
 
 REFERENCE = re.compile(r"✱([0-9]+)·([0-9]+(?:·[0-9]+)*)")
 LINE_REFERENCE = re.compile(r"\(([0-9]+)\)")
@@ -47,15 +47,21 @@ def item_order(item_id: str) -> tuple[int, int]:
 
 def alias_candidates(alias: str, current_item: str | None) -> tuple[list[str], str]:
     candidates = PRINTED_ALIASES[alias]
-    if alias != "Syll":
+    scopes = ALIAS_REGISTRY["historical_scopes"].get(alias)
+    if not scopes:
         return candidates, "exact" if len(candidates) == 1 else "form-family"
     if current_item is None:
         return candidates, "locus-required"
-    # PM explicitly announces after ✱3·33/·34 that these forms will henceforth
-    # be called Syll; earlier occurrences resolve to the ✱2·05/·06 family.
-    if item_order(current_item) >= item_order("PM1:✱3·35"):
-        return ["PM1:✱3·33", "PM1:✱3·34"], "historically-scoped-family"
-    return ["PM1:✱2·05", "PM1:✱2·06"], "historically-scoped-family"
+    current = item_order(current_item)
+    matches = []
+    for scope in scopes:
+        after_start = "from" not in scope or current >= item_order(scope["from"])
+        before_end = "before" not in scope or current < item_order(scope["before"])
+        if after_start and before_end:
+            matches.append(scope)
+    if len(matches) != 1:
+        raise ValueError(f"alias {alias} has no unique historical scope at {current_item}")
+    return list(matches[0]["candidates"]), "historically-scoped-family"
 
 
 def step_blocks(source: str) -> list[str]:

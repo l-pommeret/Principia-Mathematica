@@ -9,6 +9,12 @@ import pm_proof_skeleton as skeleton
 
 
 class PMProofSkeletonTests(unittest.TestCase):
+    def test_aliases_are_loaded_from_editorial_registry(self):
+        self.assertEqual(
+            skeleton.PRINTED_ALIASES["Transp"], ["PM1:✱2·16", "PM1:✱2·17"]
+        )
+        self.assertIn("Syll", skeleton.ALIAS_REGISTRY["historical_scopes"])
+
     def test_inline_bracket_is_a_demonstration_step(self):
         result = skeleton.parse_demonstration(
             "✱2·45. ⊢ : ∼(p ∨ q) . ⊃ . ∼p [✱2·2.Transp.]",
