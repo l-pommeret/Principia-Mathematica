@@ -107,7 +107,7 @@ def Term.renameApparent (rho : ApparentRenaming source target) :
     Term signature realContext source sort → Term signature realContext target sort
   | .real entryVar => .real entryVar
   | .apparent entryVar => .apparent (rho entryVar)
-  | @Term.symbol _ _ _ _ _ symbol => .symbol symbol
+  | .symbol payload => .symbol payload
 
 def Arguments.renameApparent (rho : ApparentRenaming source target) :
     Arguments signature realContext source sorts →
@@ -139,7 +139,7 @@ def Term.renameReal (rho : RealRenaming source target) :
     Term signature source apparentContext sort → Term signature target apparentContext sort
   | .real entryVar => .real (rho entryVar)
   | .apparent entryVar => .apparent entryVar
-  | @Term.symbol _ _ _ _ _ symbol => .symbol symbol
+  | .symbol payload => .symbol payload
 
 def Arguments.renameReal (rho : RealRenaming source target) :
     Arguments signature source apparentContext sorts →
@@ -178,7 +178,7 @@ def Term.substitute
     Term signature realContext source sort → Term signature realContext target sort
   | .real entryVar => .real entryVar
   | .apparent entryVar => substitution entryVar
-  | @Term.symbol _ _ _ _ _ symbol => .symbol symbol
+  | .symbol payload => .symbol payload
 
 def Arguments.substitute
     (substitution : ApparentSubstitution signature realContext source target) :
@@ -238,7 +238,7 @@ def Term.abstractHead {signature : Signature} {head sort : RamifiedSort}
       | .real retained => .real retained
       | .apparent abstracted => .apparent abstracted
   | .apparent entryVar => .apparent (.succ entryVar)
-  | @Term.symbol _ _ _ _ _ symbol => .symbol symbol
+  | .symbol payload => .symbol payload
 
 /-- Inverse operation: give the fresh apparentContext head the realContext head value. -/
 def Term.valueHead {signature : Signature} {head sort : RamifiedSort}
@@ -250,7 +250,7 @@ def Term.valueHead {signature : Signature} {head sort : RamifiedSort}
       match valueHeadVar (realContext := realContext) entryVar with
       | .real valued => .real valued
       | .apparent retained => .apparent retained
-  | @Term.symbol _ _ _ _ _ symbol => .symbol symbol
+  | .symbol payload => .symbol payload
 
 def Arguments.abstractHead :
     Arguments signature (head :: realContext) apparentContext sorts →
@@ -815,22 +815,26 @@ def eraseElementary? (proposition :
   let erased ← eraseElementaryIndexed? proposition
   pure erased.proposition
 
-@[simp] theorem erase_embedElementary (proposition : PM.Elementary realContext) :
-    eraseElementary? (embedElementary proposition) = some proposition := by
+@[simp] theorem erase_embedRealVar :
+    (entryVar : PM.RealVar realContext .elementaryProposition) →
+      eraseRealVar realContext (embedRealVar entryVar) = entryVar
+  | .zero => rfl
+  | .succ entryVar => congrArg PM.RealVar.succ (erase_embedRealVar entryVar)
+
+@[simp] theorem eraseIndexed_embedElementary (proposition : PM.Elementary realContext) :
+    eraseElementaryIndexed? (embedElementary proposition) =
+      some ⟨proposition, rfl⟩ := by
   induction proposition with
   | constant name => rfl
-  | var entryVar =>
-      induction entryVar with
-      | zero => rfl
-      | succ entryVar inductionHypothesis =>
-          simp [embedElementary, eraseElementary?,
-            erasePropositionTerm?, embedRealVar, eraseRealVar,
-            inductionHypothesis]
+  | var entryVar => simp [embedElementary, eraseElementaryIndexed?,
+      erasePropositionTerm?]
   | neg proposition inductionHypothesis =>
-      simp [embedElementary, eraseElementary?,
-        inductionHypothesis]
+      simp [embedElementary, eraseElementaryIndexed?, inductionHypothesis]
   | disj left right leftHypothesis rightHypothesis =>
-      simp [embedElementary, eraseElementary?,
-        leftHypothesis, rightHypothesis]
+      simp [embedElementary, eraseElementaryIndexed?, leftHypothesis, rightHypothesis]
+
+@[simp] theorem erase_embedElementary (proposition : PM.Elementary realContext) :
+    eraseElementary? (embedElementary proposition) = some proposition := by
+  simp [eraseElementary?, eraseIndexed_embedElementary]
 
 end PM.Experimental.RamifiedToy
