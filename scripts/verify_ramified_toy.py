@@ -76,7 +76,7 @@ def main() -> None:
         "def ramifiedFunctionOrder", 1)[0]
     if "Formula.disj" in rules or "signature.DisjunctionMeaning" in rules:
         raise SystemExit("toy rules bypass their certified scope-normal forms")
-    if "{left right : Formula signature real [] operandOrder}" not in rules:
+    if "{left right : Formula signature realContext [] operandOrder}" not in rules:
         raise SystemExit("toy detachment operands do not share one assigned order")
     if "ImplicationAt signature operandOrder" not in rules:
         raise SystemExit("toy detachment does not expose its assigned operand order")
