@@ -1567,7 +1567,10 @@
       ,
       "aristotle_archive": "aristotle/results/Q254-final.tar.gz",
       "aristotle_archive_sha256": "8695922974804f7b381f76db5be55cb35d3e7b490e0a53ea06b508341c9c24c5",
-      "integration_status": "awaiting-ci"
+      "integration_status": "kernel-checked",
+      "lean_ci_commit": "d6149713c8d1117ed1cdcc1b3cd1645f06ba3643",
+      "lean_ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31440864586",
+      "lean_ci_conclusion": "success"
     },
     "Q255": {
       "canonical_ids": [
@@ -2135,6 +2138,24 @@
       "ci_evidence": {
         "commit": "73b0a321aaaa8cd865b867572b89f3bf5eb607a3",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31439710731",
+        "conclusion": "success"
+      }
+    },
+    "PM1:✱9·07": {
+      "batch": "PM1-STAR9-Q254",
+      "status": "kernel-checked",
+      "ci_evidence": {
+        "commit": "d6149713c8d1117ed1cdcc1b3cd1645f06ba3643",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31440864586",
+        "conclusion": "success"
+      }
+    },
+    "PM1:✱9·08": {
+      "batch": "PM1-STAR9-Q254",
+      "status": "kernel-checked",
+      "ci_evidence": {
+        "commit": "d6149713c8d1117ed1cdcc1b3cd1645f06ba3643",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31440864586",
         "conclusion": "success"
       }
     }

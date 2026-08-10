@@ -1,6 +1,6 @@
 # Audit Q254a (machine ID Q254) — PM I, ✱9·07 and ✱9·08
 
-Verdict: **A — ARISTOTLE COMPLETE; EXACT ALIASES INTEGRATED, AWAITING REPOSITORY CI**. Source: first edition, vol. I, pp. 135–136,
+Verdict: **A — ACCEPTED AND KERNEL-CHECKED**. Source: first edition, vol. I, pp. 135–136,
 leaves 157–158.
 
 The exact targets are the two direction-sensitive nested-binder definitions.
@@ -29,4 +29,8 @@ As in Q253, Aristotle reconstructed an incompatible local syntax context. That
 context and its checks are rejected. The two requested aliases themselves are
 byte-for-byte the requested declarations and have been integrated against the
 repository's already kernel-checked API. Final acceptance therefore requires a
-fresh repository CI run; until then the metadata remains `awaiting-ci`.
+fresh repository CI run. That gate passed at commit
+`d6149713c8d1117ed1cdcc1b3cd1645f06ba3643`, Lean CI run
+[31440864586](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31440864586),
+including source, dependency, architecture, kernel, placeholder, and unsafe
+checks. The two definitions are now accepted as `kernel-checked`.
