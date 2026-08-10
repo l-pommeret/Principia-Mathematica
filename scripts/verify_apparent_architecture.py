@@ -22,6 +22,10 @@ def main() -> None:
         "def disjRightElementary", "def disjElementaryLeft",
         "theorem star_9_03_reduction", "theorem star_9_04_reduction",
         "theorem star_9_05_reduction", "theorem star_9_06_reduction",
+        "def outerVariableRenaming", "def innerVariableRenaming",
+        "abbrev SecondOrder", "def disjAlwaysSometimes",
+        "def disjSometimesAlways", "theorem star_9_07_reduction",
+        "theorem star_9_08_reduction",
     )
     missing = [item for item in required if item not in source]
     if missing:
@@ -63,6 +67,22 @@ def main() -> None:
               if expression not in source]
     if absent:
         raise SystemExit("missing mixed-disjunction reductions: " + ", ".join(absent))
+    assigned_order_contract = (
+        "renameMatrix : {Δ Ξ : BoundContext}",
+        "disjMatrix : {Δ : BoundContext}",
+        "Apparent.outerVariableRenaming",
+        "Apparent.innerVariableRenaming",
+        "Quantified (Quantified Matrix)",
+        "| .zero => .succ .zero",
+        "| .zero => .zero",
+        "theorem star_9_07_reduction",
+        "theorem star_9_08_reduction",
+    )
+    missing_contract = [fragment for fragment in assigned_order_contract
+                        if fragment not in source]
+    if missing_contract:
+        raise SystemExit("incomplete assigned-order ✱9·07/08 API: " +
+                         ", ".join(missing_contract))
     print("Apparent-variable architecture checks passed")
 
 

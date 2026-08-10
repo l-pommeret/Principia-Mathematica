@@ -81,6 +81,12 @@ with one elementary operand is likewise represented by two direction-sensitive
 operations whose four constructor reductions correspond exactly to ✱9·03–06.
 No commutativity or inference principle is hidden in those operations.
 Disjunction between two quantified orders and metalinguistic rules will be
-introduced only at their audited PM loci. The later metatheory must prove the
+introduced only at their audited PM loci. For ✱9·07–08, the implementation
+receives renaming and disjunction explicitly for one fixed matrix family,
+uses separate de Bruijn embeddings for the outer `x` and inner `y`, and then
+constructs exactly two `Quantified` layers. This supports PM's stated
+repetition at an assigned higher order without positing a polymorphic
+object-language connective over all orders. Metalinguistic rules remain
+absent. The later metatheory must prove the
 relevant erasure or model theorem before the edition labels the extension
 conservative or derives a relative-consistency result.

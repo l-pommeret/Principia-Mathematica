@@ -1,21 +1,18 @@
-# Audit Q254 — PM I, ✱9·07, ✱9·08, ✱9·1 and ✱9·11
+# Audit Q254a (machine ID Q254) — PM I, ✱9·07 and ✱9·08
 
-Verdict: **NOT A — blocked on higher-order operations and first-order
-assertion**. Source: first edition,
-vol. I, pp. 135–137, leaves 157–159. ✱9·07/08 are nested-binder disjunction
-definitions and explicitly extend beyond pairs of elementary functions.
-✱9·1 and ✱9·11 are printed primitive propositions, not Lean existential
-rules. The latter cannot be obtained using ✱4·77 because that proof depends
-on the very analogue of ✱1·2 still to be established. No PM print error is
-established. Wikisource's `unchaged/unchanged` and `is/if` are digital-only
-defects in the surrounding prose.
+Verdict: **A FOR TARGET AND CONTEXT — follow-up CI and Q253 kernel result
+required before submission**. Source: first edition, vol. I, pp. 135–136,
+leaves 157–158.
 
-The kernel-checked `Quantified` type supports one generic binding step, but
-the repository does not expose the fixed-order-polymorphic renaming,
-weakening, and disjunction structure required by PM's explicit extension of
-✱9·07/08 to functions not both elementary. An elementary-only target would
-be a material narrowing. Separately, `PM.Derivation` is indexed only by
-`PM.Elementary`, so it cannot state ✱9·1/11 as asserted first-order primitive
-propositions. These are API gaps, not Aristotle proof obligations. No exact
-Lean target can responsibly be frozen until both interfaces are audited and
-kernel-checked. Confidence in source collation and this obstruction: high.
+The exact targets are the two direction-sensitive nested-binder definitions.
+Both put universal `x` outside existential `y`; ✱9·07 has matrix `φx∨ψy`,
+whereas ✱9·08 has `ψy∨φx`. The accepted generic operations take renaming and
+disjunction for one fixed matrix order and therefore honor PM's explicit
+extension when the two functions are not both elementary, without inventing
+an all-orders universe. The two de Bruijn insertions distinguish outer and
+inner variables capture-freely. Specialized reductions are `rfl`, and the
+prompt requests only two editorial aliases.
+
+No PM error is established. Wikisource's `unchaged/unchanged` is digital
+only. Target/context audit A with high confidence. Submission remains gated
+on immutable CI for the current API additions and the integrated Q253 result.

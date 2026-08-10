@@ -69,6 +69,22 @@ def liftRenaming (ρ : Renaming Δ Ξ) :
   | .zero => .zero
   | .succ v => .succ (ρ v)
 
+/-- Embed a one-variable matrix under a new inner variable. The old head
+variable becomes the outer variable (index one). -/
+def outerVariableRenaming :
+    Renaming (.elementaryProposition :: Δ)
+      (.elementaryProposition :: .elementaryProposition :: Δ)
+  | .zero => .succ .zero
+  | .succ v => .succ (.succ v)
+
+/-- Embed a one-variable matrix as the new inner variable. The old head stays
+at index zero, while variables from the tail cross both binders. -/
+def innerVariableRenaming :
+    Renaming (.elementaryProposition :: Δ)
+      (.elementaryProposition :: .elementaryProposition :: Δ)
+  | .zero => .zero
+  | .succ v => .succ (.succ v)
+
 /-- Simultaneous, capture-free renaming of apparent variables. -/
 def rename (ρ : Renaming Δ Ξ) : Apparent Γ Δ → Apparent Γ Ξ
   | .constant name => .constant name
@@ -168,6 +184,36 @@ def neg (matrixNeg : {Δ : BoundContext} → Matrix Δ → Matrix Δ) :
   | .always body => .sometimes (matrixNeg body)
   | .sometimes body => .always (matrixNeg body)
 
+/-- ✱9·07 at one explicitly assigned matrix order.
+
+`renameMatrix` and `disjMatrix` are supplied for that fixed order. The result
+performs exactly two quantifier steps, with `x` outermost and `y` innermost. -/
+def disjAlwaysSometimes
+    (renameMatrix : {Δ Ξ : BoundContext} → Apparent.Renaming Δ Ξ →
+      Matrix Δ → Matrix Ξ)
+    (disjMatrix : {Δ : BoundContext} → Matrix Δ → Matrix Δ → Matrix Δ)
+    (φ ψ : Matrix (.elementaryProposition :: Δ)) :
+    Quantified (Quantified Matrix) Δ :=
+  Quantified.always
+    (Quantified.sometimes
+      (disjMatrix
+        (renameMatrix Apparent.outerVariableRenaming φ)
+        (renameMatrix Apparent.innerVariableRenaming ψ)))
+
+/-- ✱9·08 at one explicitly assigned matrix order. The binders remain `x`
+outside `y`; only the printed operand order in the matrix is reversed. -/
+def disjSometimesAlways
+    (renameMatrix : {Δ Ξ : BoundContext} → Apparent.Renaming Δ Ξ →
+      Matrix Δ → Matrix Ξ)
+    (disjMatrix : {Δ : BoundContext} → Matrix Δ → Matrix Δ → Matrix Δ)
+    (ψ φ : Matrix (.elementaryProposition :: Δ)) :
+    Quantified (Quantified Matrix) Δ :=
+  Quantified.always
+    (Quantified.sometimes
+      (disjMatrix
+        (renameMatrix Apparent.innerVariableRenaming ψ)
+        (renameMatrix Apparent.outerVariableRenaming φ)))
+
 @[simp] theorem neg_always
     {Matrix : BoundContext → Type}
     (matrixNeg : {Δ : BoundContext} → Matrix Δ → Matrix Δ)
@@ -187,6 +233,10 @@ end Quantified
 /-- First-order propositions: one quantified step over elementary matrices. -/
 abbrev FirstOrder (Γ : RealContext) : BoundContext → Type :=
   Quantified (Apparent Γ)
+
+/-- Propositions obtained by a second assigned quantifier step. -/
+abbrev SecondOrder (Γ : RealContext) : BoundContext → Type :=
+  Quantified (FirstOrder Γ)
 
 namespace FirstOrder
 
@@ -282,6 +332,35 @@ def disjElementaryLeft : Elementary Γ → FirstOrder Γ Δ → FirstOrder Γ Δ
     (body : Apparent Γ (.elementaryProposition :: Δ)) :
     disjElementaryLeft proposition (sometimes body) =
       sometimes (Apparent.ofElementary proposition ∨ₐ body) := rfl
+
+/-- The elementary-matrix specialization of ✱9·07. -/
+def disjAlwaysSometimes
+    (φ ψ : Apparent Γ (.elementaryProposition :: Δ)) : SecondOrder Γ Δ :=
+  Quantified.disjAlwaysSometimes Apparent.rename Apparent.disj φ ψ
+
+/-- The elementary-matrix specialization of ✱9·08. Arguments retain the
+printed left-to-right order: existential body `ψ`, then universal body `φ`. -/
+def disjSometimesAlways
+    (ψ φ : Apparent Γ (.elementaryProposition :: Δ)) : SecondOrder Γ Δ :=
+  Quantified.disjSometimesAlways Apparent.rename Apparent.disj ψ φ
+
+/-- ✱9·07 as an exact kernel reduction. -/
+@[simp] theorem star_9_07_reduction
+    (φ ψ : Apparent Γ (.elementaryProposition :: Δ)) :
+    disjAlwaysSometimes φ ψ =
+      Quantified.always
+        (Quantified.sometimes
+          (Apparent.rename Apparent.outerVariableRenaming φ ∨ₐ
+            Apparent.rename Apparent.innerVariableRenaming ψ)) := rfl
+
+/-- ✱9·08 as an exact kernel reduction. -/
+@[simp] theorem star_9_08_reduction
+    (ψ φ : Apparent Γ (.elementaryProposition :: Δ)) :
+    disjSometimesAlways ψ φ =
+      Quantified.always
+        (Quantified.sometimes
+          (Apparent.rename Apparent.innerVariableRenaming ψ ∨ₐ
+            Apparent.rename Apparent.outerVariableRenaming φ)) := rfl
 
 end FirstOrder
 end PM

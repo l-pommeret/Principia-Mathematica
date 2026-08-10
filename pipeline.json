@@ -1472,13 +1472,13 @@
       "submission_gate": "satisfied",
       "aristotle_task_id": "0f7e984b-0eec-4af6-af8f-671ac5cfcc56",
       "aristotle_latest_task_id": "0f7e984b-0eec-4af6-af8f-671ac5cfcc56",
-      "aristotle_latest_task_status": "IN_PROGRESS",
-      "aristotle_remote_status": "IN_PROGRESS",
+      "aristotle_latest_task_status": "COMPLETE_WITH_ERRORS",
+      "aristotle_remote_status": "COMPLETE_WITH_ERRORS",
       "aristotle_project_id": "118e4b43-2dc7-4e58-a81d-efe890562749",
       "aristotle_request_path": "aristotle/Q252.md",
       "aristotle_request_sha256": "a8d1a9f8206746a223939ee345afd2ddf5e45331fa03778aefd36337254512fd",
       "aristotle_latest_task_name": "Formalize Q252.md",
-      "aristotle_latest_task_created": "6 mins ago"
+      "aristotle_latest_task_created": "10 mins ago"
     },
     "Q253": {
       "canonical_ids": [
@@ -1509,18 +1509,19 @@
     "Q254": {
       "canonical_ids": [
         "PM1:✱9·07",
-        "PM1:✱9·08",
-        "PM1:✱9·1",
-        "PM1:✱9·11"
+        "PM1:✱9·08"
       ],
-      "source": "PM volume I, first edition, pp. 135–137",
+      "editorial_label": "Q254a",
+      "source": "PM volume I, first edition, pp. 135–136",
       "prompt_path": "aristotle/Q254.md",
       "audit_path": "reviews/Q254-review.md",
-      "audit_status": "blocked-missing-higher-order-disjunction-and-first-order-assertion",
-      "lean_scope": "exact PM1 ✱9·07, ✱9·08, ✱9·1 and ✱9·11",
+      "audit_status": "A-pending-higher-order-disjunction-CI-and-Q253",
+      "lean_scope": "exact PM1 ✱9·07 and ✱9·08 nested-binder disjunction definitions",
       "depends_on": [
-        "PM1:✱9·01",
-        "PM1:✱9·02"
+        "PM1:✱9·03",
+        "PM1:✱9·04",
+        "PM1:✱9·05",
+        "PM1:✱9·06"
       ],
       "parallel_group": "STAR9-WAVE-1",
       "aristotle_status": "not-submitted",
@@ -1528,8 +1529,9 @@
         "commit": "aff113e94058397d3b84a8319a0ef0f37ce58d3f",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31428730300",
         "conclusion": "success",
-        "remaining_gap": "fixed-order polymorphic disjunction/renaming plus first-order assertion calculus"
-      }
+        "scope": "base Quantified/FirstOrder API; higher-order disjunction additions pending CI"
+      },
+      "submission_gate": "awaiting CI for higher-order disjunction operations and integrated kernel-checked Q253"
     },
     "Q255": {
       "canonical_ids": [
@@ -1601,6 +1603,30 @@
       ],
       "parallel_group": "STAR9-WAVE-3",
       "aristotle_status": "not-submitted"
+    },
+    "Q258": {
+      "canonical_ids": [
+        "PM1:✱9·1",
+        "PM1:✱9·11"
+      ],
+      "editorial_label": "Q254b",
+      "source": "PM volume I, first edition, pp. 136–137",
+      "prompt_path": "aristotle/Q258.md",
+      "audit_path": "reviews/Q258-review.md",
+      "audit_status": "blocked-missing-first-order-assertion",
+      "lean_scope": "exact PM1 primitive propositions ✱9·1 and ✱9·11",
+      "depends_on": [
+        "PM1:✱1·01",
+        "PM1:✱9·06"
+      ],
+      "parallel_group": "STAR9-WAVE-1-ASSERTION",
+      "aristotle_status": "not-submitted",
+      "architecture_evidence": {
+        "commit": "aff113e94058397d3b84a8319a0ef0f37ce58d3f",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31428730300",
+        "conclusion": "success",
+        "remaining_gap": "assertion/derivation family for first-order propositions"
+      }
     }
   },
   "editorial_tracks": {
