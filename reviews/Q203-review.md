@@ -1,7 +1,7 @@
 # Audit Q203 — PM I, ✱2·06–✱2·1
 
-Verdict: **A (préparation seulement) — texte, portée, dépendances et cibles
-formelles audités; ne pas soumettre avant certification noyau de Q200 et Q202**.
+Verdict: **A — texte, portée, dépendances, archive Aristotle et intégration
+formelle audités; en attente de la certification par la CI GitHub**.
 
 Sources canoniques: Whitehead et Russell, *Principia Mathematica*, première
 édition, volume I (1910), pp. 104–105, feuilles de scan 126–127:
@@ -103,15 +103,35 @@ Ordre interne du lot: ✱2·06, ✱2·07, ✱2·08, ✱2·1.
 corps est conservé dans le prompt autonome avec ✱2·04–✱2·05 pour reproduire
 sans trou le bloc antérieur Q202. Aucun résultat postérieur n'est permis.
 
-## Porte de soumission
+## Audit du résultat Aristotle et porte CI
 
-Au moment de cet audit, les déclarations issues de Q200 (`detach`) et Q202
-(✱2·03–✱2·05) ne sont pas toutes présentes ensemble dans le fichier Lean
-canonique sous forme intégrée et certifiée. Q203 est donc **prepared**, non
-**submitted**. La réussite d'une CI portant seulement sur les prompts ou sur
-une branche antérieure n'est pas une preuve noyau de ces dépendances. La
-soumission ne devient licite qu'après intégration des corps, compilation par
-la CI GitHub, et contrôle de l'absence de `sorry`, `admit` ou axiome ajouté.
+Q200 (`detach`) et Q202 (✱2·03–✱2·05) ont été intégrés et certifiés par la
+CI avant la soumission de Q203. La tâche Aristotle
+`012131af-25b4-48ca-94b6-1689fb56e3de`, dans le projet
+`5f49ddc8-6fe3-45c6-b367-b7a44fb74e10`, s'est terminée avec l'état
+`COMPLETE`. Son archive immuable `aristotle/results/Q203-final.tar.gz` a pour
+SHA-256:
+
+`a6d9cf0bea400680dc7b47df8012a1627b224c7029c346ec72c36ef067a095f4`.
+
+Inspection indépendante de `RequestProject/Q203.lean`:
+
+- les quatre cibles exactes ✱2·06, ✱2·07, ✱2·08 et ✱2·1 sont présentes,
+  dans l'ordre demandé, sans paramètre ni conclusion modifiés;
+- ✱2·06 détache exactement ✱2·05 de l'instance imprimée de Comm;
+- ✱2·07 est l'instance directe d'Add;
+- ✱2·08 conserve les deux détachements dans l'ordre Taut, puis ✱2·07;
+- ✱2·1 est obtenu par réduction définitionnelle de ✱1·01;
+- le fichier de preuve n'emploie ni `sorry`, ni `admit`, ni nouvel axiome,
+  constructeur ou `unsafe`, ni `Classical`, `by_cases`, sémantique moderne ou
+  règle générique de modus ponens.
+
+Le `Main.lean` générique de l'environnement Aristotle ouvre plusieurs scopes
+Mathlib, dont `Classical`, mais `Q203.lean` ne les importe ni ne les emploie;
+aucun de ces scopes n'est intégré dans l'édition canonique. Les corps audités
+sont maintenant intégrés avec l'état **awaiting-ci**. Ils ne deviendront
+`kernel-checked` qu'après une exécution GitHub Actions réussie portant sur le
+commit exact d'intégration.
 
 Confiance: élevée pour la transcription, les portées, les substitutions et le
 graphe de dépendances, sur inspection directe des deux pages canoniques.

@@ -102,7 +102,7 @@
         "PM1:✱2·04",
         "PM1:✱2·05"
       ],
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "aristotle_task_id": "012131af-25b4-48ca-94b6-1689fb56e3de",
       "aristotle_latest_task_id": "012131af-25b4-48ca-94b6-1689fb56e3de",
       "aristotle_latest_task_status": "COMPLETE",
@@ -111,7 +111,9 @@
       "aristotle_request_path": "aristotle/Q203.md",
       "aristotle_request_sha256": "55acc9c75df20a0714915df41a7a371f185dc96d1cb64f9ff859e3257fa07ac2",
       "aristotle_latest_task_name": "Formalize Q203.md",
-      "aristotle_latest_task_created": "12 mins ago"
+      "aristotle_latest_task_created": "12 mins ago",
+      "aristotle_result_path": "aristotle/results/Q203-final.tar.gz",
+      "aristotle_result_sha256": "a6d9cf0bea400680dc7b47df8012a1627b224c7029c346ec72c36ef067a095f4"
     },
     "Q204": {
       "canonical_ids": [
@@ -424,6 +426,22 @@
     "PM1:✱2·05": {
       "batch": "PM1-STAR2-Q202",
       "status": "kernel-checked"
+    },
+    "PM1:✱2·06": {
+      "batch": "PM1-STAR2-Q203",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·07": {
+      "batch": "PM1-STAR2-Q203",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·08": {
+      "batch": "PM1-STAR2-Q203",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·1": {
+      "batch": "PM1-STAR2-Q203",
+      "status": "awaiting-ci"
     }
   }
 }

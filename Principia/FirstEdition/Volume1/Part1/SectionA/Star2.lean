@@ -124,6 +124,87 @@ demonstrations are linearized as `replacements/variables`; their order and
 punctuation are preserved.
 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱2·06
+✱2·06.  ⊢ :. p ⊃ q . ⊃ : q ⊃ r . ⊃ . p ⊃ r
+
+Dem.
+
+        [Comm  (q ⊃ r, p ⊃ q, p ⊃ r)/(p, q, r)]
+              ⊢ :: q ⊃ r . ⊃ : p ⊃ q . ⊃ . p ⊃ r :.
+                   ⊃ :. p ⊃ q . ⊃ : q ⊃ r . ⊃ . p ⊃ r       (1)
+        [✱2·05]  ⊢ :. q ⊃ r . ⊃ : p ⊃ q . ⊃ . p ⊃ r        (2)
+        [(1).(2).✱1·11]
+              ⊢ :. p ⊃ q . ⊃ : q ⊃ r . ⊃ . p ⊃ r
+
+In the last line of this proof, “(1).(2).✱1·11” means that we are inferring
+in accordance with ✱1·11, having before us a proposition, namely
+p ⊃ q . ⊃ : q ⊃ r . ⊃ . p ⊃ r, which, by (1), is implied by
+q ⊃ r . ⊃ : p ⊃ q . ⊃ . p ⊃ r, which, by (2), is true. In general, in
+such cases, we shall omit the reference to ✱1·11.
+
+The above two propositions will both be referred to as the “principle of
+the syllogism” (shortened to “Syll.”), because, as will appear later, the
+syllogism in Barbara is derived from them.
+PM-VERBATIM-END PM1:✱2·06 -/
+
+/- PM-FORMAL-GLOSS
+Comm (✱2·04) is instantiated, in PM's printed order, with `q ⊃ₚ r`,
+`p ⊃ₚ q`, and `p ⊃ₚ r`. Its antecedent is exactly ✱2·05; one use of
+the proved metalinguistic bridge `PM.Derivation.detach` reconstructs the
+printed `(1).(2).✱1·11` step without adding a new object-language rule.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·07
+✱2·07.  ⊢ : p . ⊃ . p ∨ p                    [✱1·3  p/q]
+
+Here we put nothing beyond “✱1·3 p/q,” because the proposition to be proved
+is what ✱1·3 becomes when p is written in place of q.
+PM-VERBATIM-END PM1:✱2·07 -/
+
+/- PM-FORMAL-GLOSS
+This is exactly Add (✱1·3) with both Lean parameters instantiated by `p`.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·08
+✱2·08.  ⊢ . p ⊃ p
+
+Dem.
+
+        [✱2·05  (p ∨ p, p)/(q, r)]
+              ⊢ :: p ∨ p . ⊃ . p : ⊃ :. p . ⊃ . p ∨ p : ⊃ . p ⊃ p   (1)
+        [Taut]  ⊢ : p ∨ p . ⊃ . p                                   (2)
+        [(1).(2).✱1·11]
+              ⊢ :. p . ⊃ . p ∨ p : ⊃ . p ⊃ p                       (3)
+        [2·07]  ⊢ : p . ⊃ . p ∨ p                                  (4)
+        [(3).(4).✱1·11]  ⊢ . p ⊃ p
+PM-VERBATIM-END PM1:✱2·08 -/
+
+/- PM-FORMAL-GLOSS
+The proof preserves PM's two detachments and their order: first Taut (✱1·2)
+is detached from the displayed ✱2·05 instance, and then ✱2·07 is detached
+from the resulting line (3).
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·1
+✱2·1.   ⊢ . ∼p ∨ p                              [Id. (✱1·01)]
+PM-VERBATIM-END PM1:✱2·1 -/
+
+/- PM-FORMAL-GLOSS
+This is solely the ✱1·01 definitional reading of ✱2·08: `p ⊃ₚ p` reduces
+to `∼ₚ p ∨ₚ p`. It does not invoke excluded middle as a semantic principle.
+-/
+
+/- PM-EDITORIAL
+Source for ✱2·06–✱2·1:
+- scan, printed pp. 104–105: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/126 and /127
+- working witnesses: Project Gutenberg ebook 78050 and Wikisource
+Verification status: double-witness-checked and collated directly against the
+facsimile; the source and formal audit is recorded in `reviews/Q203-review.md`.
+No authorial print error or witness divergence requiring `sic`, `corr.`, or
+`conj.` was found in these four items. The parenthesized substitutions are
+linearized without changing their order; physical line breaks are reflowed.
+-/
+
 /-! ## Printed syntax and audited scope readings -/
 
 /-- Audited scope reading of ✱2·01. -/
@@ -200,6 +281,69 @@ def star_2_05_demonstration_printed : PM.PrintedFormula :=
 theorem star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
     ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
   PM.Derivation.star_1_6 (∼ₚ p) q r
+
+/-- Audited scope reading of ✱2·06. -/
+def star_2_06_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. p ⊃ q . ⊃ : q ⊃ r . ⊃ . p ⊃ r"
+  parsed := (p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r))
+  scopeReading := "The outer colon groups p ⊃ q as antecedent and (q ⊃ r) ⊃ (p ⊃ r) as consequent."
+
+/-- Diplomatic surface syntax of the printed demonstration of ✱2·06. -/
+def star_2_06_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Comm (q ⊃ r, p ⊃ q, p ⊃ r)/(p, q, r)] (1); [✱2·05] (2); [(1).(2).✱1·11]"
+
+/-- PM ✱2·06 (`Syll.`), with the exact printed Comm instance followed by detachment. -/
+theorem star_2_06 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r))) :=
+  PM.Derivation.detach (star_2_05 p q r)
+    (star_2_04 (q ⊃ₚ r) (p ⊃ₚ q) (p ⊃ₚ r))
+
+/-- Audited scope reading of ✱2·07. -/
+def star_2_07_reading (p : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . ⊃ . p ∨ p"
+  parsed := p ⊃ₚ (p ∨ₚ p)
+  scopeReading := "The single dots delimit p as antecedent and p ∨ p as consequent."
+
+/-- Diplomatic surface syntax of the printed one-line proof of ✱2·07. -/
+def star_2_07_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱1·3  p/q]"
+
+/-- PM ✱2·07, the direct Add instance `p/q`. -/
+theorem star_2_07 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ (p ∨ₚ p)) :=
+  PM.Derivation.star_1_3 p p
+
+/-- Audited scope reading of ✱2·08. -/
+def star_2_08_reading (p : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ . p ⊃ p"
+  parsed := p ⊃ₚ p
+  scopeReading := "The formula is the implication p ⊃ p."
+
+/-- Diplomatic surface syntax of the printed demonstration of ✱2·08. -/
+def star_2_08_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·05 (p ∨ p, p)/(q, r)] (1); [Taut] (2); [(1).(2).✱1·11] (3); [2·07] (4); [(3).(4).✱1·11]"
+
+/-- PM ✱2·08 (`Id.`), preserving the two printed detachments in order. -/
+theorem star_2_08 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ p) :=
+  PM.Derivation.detach (star_2_07 p)
+    (PM.Derivation.detach (PM.Derivation.star_1_2 p)
+      (star_2_05 p (p ∨ₚ p) p))
+
+/-- Audited scope reading of ✱2·1. -/
+def star_2_1_reading (p : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ . ∼p ∨ p"
+  parsed := ∼ₚ p ∨ₚ p
+  scopeReading := "By ✱1·01 this is the definitional reading of p ⊃ p."
+
+/-- Diplomatic surface syntax of the printed one-line proof of ✱2·1. -/
+def star_2_1_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Id. (✱1·01)]"
+
+/-- PM ✱2·1, obtained only by the ✱1·01 definitional reading of ✱2·08. -/
+theorem star_2_1 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ p ∨ₚ p) :=
+  star_2_08 p
 
 /- PM-VERBATIM-BEGIN PM1:✱2·33
 ✱2·33.  p ∨ q ∨ r .=. (p ∨ q) ∨ r     Df
