@@ -16,6 +16,7 @@ from urllib.parse import unquote
 from urllib.parse import urlsplit
 
 from verify_dependencies import audit as audit_dependencies
+from verify_dependencies import pm_order
 
 ROOT = Path(__file__).resolve().parents[1]
 VERBATIM = re.compile(
@@ -327,6 +328,10 @@ def build(output: Path) -> None:
     }
     apparatus = [load_json(path) for path in sorted((ROOT / "metadata/apparatus").glob("*.json"))]
     items: list[tuple[dict, dict]] = [(item, batch) for batch in batches for item in batch["items"]]
+    # Metadata files are grouped by Aristotle/editorial batch, not by printed
+    # sequence.  The reader must follow PM's decimal numbering (so ·33 is
+    # between ·32 and ·36), independently of filenames and integration date.
+    items.sort(key=lambda pair: pm_order(pair[0]["id"]))
     if output.exists():
         shutil.rmtree(output)
     (output / "items").mkdir(parents=True)
@@ -337,7 +342,7 @@ def build(output: Path) -> None:
         linked = [record for record in apparatus if record["item"] == item["id"]]
         target = output / "items" / f"{slug(item['id'])}.html"
         target.write_text(item_page(item, batch, blocks[item["id"]], linked), encoding="utf-8")
-        cards.append(f"""<li><a href="items/{target.name}"><b>{html.escape(item['id'].split(':', 1)[1])}</b>
+        cards.append(f"""<li data-item-id="{html.escape(item['id'])}"><a href="items/{target.name}"><b>{html.escape(item['id'].split(':', 1)[1])}</b>
 <span>{html.escape(item['kind'])}</span><small>p. {item['printed_page']} · {html.escape(item['printed'])}</small></a></li>""")
     source_cards = []
     source_ids = {record["id"] for record in source_records}
@@ -402,6 +407,7 @@ def build(output: Path) -> None:
         "source_blocks": len(source_records),
         "apparatus": len(apparatus),
         "item_ids": sorted(indexed_ids),
+        "ordered_item_ids": [item["id"] for item, _ in items],
         "source_block_ids": sorted(source_ids),
         "dependency_graph": "dependency-graph.json",
         "dependency_coverage": dependency_graph["coverage"],

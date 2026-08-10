@@ -11,6 +11,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
+from verify_dependencies import pm_order
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -56,6 +58,13 @@ def verify(site: Path) -> None:
     )
     if manifest.get("item_ids") != expected_ids:
         fail("generated manifest does not match metadata/items")
+    expected_order = sorted(expected_ids, key=pm_order)
+    if manifest.get("ordered_item_ids") != expected_order:
+        fail("generated manifest does not follow PM decimal item order")
+    index_source = (site / "index.html").read_text(encoding="utf-8")
+    rendered_order = re.findall(r'<li data-item-id="([^"]+)"', index_source)
+    if rendered_order != expected_order:
+        fail("index does not render formal items in PM decimal order")
     expected_source_ids = sorted(
         json.loads(path.read_text(encoding="utf-8"))["id"]
         for path in sorted((ROOT / "metadata/source_blocks").glob("*.json"))
