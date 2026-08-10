@@ -24,5 +24,21 @@ constructeurs primitifs ✱1·1–✱1·6, sans déclaration auxiliaire opaque. 
 SHA-256 du prompt final est
 `e459df2cb3dc3d4561c55d46a517b13525288a1039890ac9f06151eba0210797`.
 Aucun `sorry`, `admit`, nouvel axiome, `unsafe`, `Classical` ou argument
-sémantique n’est fourni. Le pipeline est éligible mais aucune soumission n’a
-été effectuée.
+sémantique n’est fourni.
+
+## Audit du résultat Aristotle
+
+Verdict: **A — accepté, en attente de CI**. Projet
+`ddec702d-934f-4174-8025-c1019f2c6d2f`, tâche
+`b47500d3-d2f2-4e46-b47c-eb8271aac195`, statut terminal `COMPLETE`.
+L’archive immuable `aristotle/results/Q214-final.tar.gz` a pour SHA-256
+`ce0d2fad17bd501076cab0f88c1d03a192d2c9cca860200543b77734b7579709`.
+
+Les quatre déclarations ont exactement les cibles demandées. ✱2·6 conserve
+`line1`, `line2`, puis la composition par le corps fourni de ✱2·06; ✱2·61 et
+✱2·621 détachent les instances exactes de ✱2·04; ✱2·62 compose ✱2·53 et
+✱2·6 via ✱2·06. La clôture Lean ne contient que les dépendances déclarées et
+`PM.Derivation.detach`. Recherche négative confirmée pour `sorry`, `admit`,
+nouvel `axiom`, `unsafe`, `Classical`, hypothèse ajoutée, sémantique ou cible
+rétrécie. Les preuves et lectures diplomatiques sont intégrées; le statut
+reste `awaiting-ci` conformément à l’interdiction de Lean local et d’action Git.

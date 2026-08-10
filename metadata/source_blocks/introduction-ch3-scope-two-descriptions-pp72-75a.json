@@ -1,0 +1,79 @@
+{
+  "id": "PM1:INTRODUCTION-CH3-SCOPE-TWO-DESCRIPTIONS-PP72-75A",
+  "edition": "first",
+  "volume": 1,
+  "kind": "source-critical-prose",
+  "title": "Introduction, Chapter III — secondary occurrence, scope and two descriptions",
+  "source_range": {
+    "printed_pages": "72–75",
+    "scan_leaves": [
+      94,
+      95,
+      96,
+      97
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "lean_path": "Principia/FirstEdition/Volume1/Introduction/Chapter3/Pages69To78.lean",
+  "witnesses": [
+    {
+      "siglum": "PM1-1910-SCAN",
+      "role": "canonical",
+      "uri": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+      "sha256": "52fd0ba446ab2dc97f08d6d4b16d67196edb6d991b0a0445e1ee4dbb57fa2eab"
+    },
+    {
+      "siglum": "PG78050",
+      "role": "control",
+      "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm",
+      "sha256": "f9e000e6e66bcd865d03ad41bbf7cbc74618678eceb6af0fb113c3df51e0200a"
+    },
+    {
+      "siglum": "WS-PM1",
+      "role": "control",
+      "uri": "https://en.wikisource.org/wiki/Index:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+    }
+  ],
+  "leaf_derivatives": [
+    {
+      "scan_leaf": 94,
+      "printed_page": "72",
+      "sha256": "724e0a7670143aa798fa70baf9ea1c9bc325ec35f7d54bbacda88b98a91913b8"
+    },
+    {
+      "scan_leaf": 95,
+      "printed_page": "73",
+      "sha256": "35f49572bbeefd1eb98aad104262492a258a29c4d1e89606a787425a00f95298"
+    },
+    {
+      "scan_leaf": 96,
+      "printed_page": "74",
+      "sha256": "ca66d67f45664c941d8a695736a6362c958156c91751fa3b767d1247e6534ac2"
+    },
+    {
+      "scan_leaf": 97,
+      "printed_page": "75",
+      "sha256": "b175b1cc2e79688964bfb0f7018b8727822b9e4bf5ae141d070b58ef73109f93"
+    }
+  ],
+  "source_status": "scan-collated-three-witness",
+  "critical_status": "printed-sic-and-digital-errors-recorded",
+  "transcription": {
+    "policy": "verbal-diplomatic-reflow",
+    "line_end_hyphenation": "silently-rejoined",
+    "page_breaks": "recorded-in-metadata-not-canonical-body",
+    "note_markers": "global-numeric-labels-replace-page-local-asterisks",
+    "typography": "presentation-layer-not-encoded-in-canonical-body",
+    "formulae_and_scope_punctuation": "collated-against-scan"
+  },
+  "canonical_body": {
+    "encoding": "UTF-8",
+    "byte_length": 9661,
+    "sha256": "63db67011deeb01a1aac41e4d063183e4704ef78cd6adee4bfd3e108e8b2e45f"
+  },
+  "review": {
+    "apparatus_required": true,
+    "sic_required": true,
+    "note": "Formula (4) diplomatically retains printed x = c; correction x = d and all digital-only errors are external apparatus readings."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "APP-PM1-INTRO-P70-PG-PAREN-001",
+  "item": "PM1:INTRODUCTION-CH3-DESCRIPTIONS-PP69-71",
+  "locus": {"volume": 1, "printed_page": 70, "scan_leaf": 92, "line_or_formula": "description-symbol discussion"},
+  "classification": "digital-witness-error",
+  "marker": "corr.",
+  "diplomatic_reading": "balanced parentheses around (℩x)(φx)",
+  "other_reading": "Project Gutenberg source has unbalanced TeX parentheses",
+  "witnesses": [
+    {"siglum": "PM1-1910-SCAN", "reading": "balanced parentheses", "uri": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/92"},
+    {"siglum": "PG78050", "reading": "unbalanced TeX delimiters", "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"}
+  ],
+  "evidence": "The imbalance is confined to Gutenberg's TeX transcription; the printed formula is balanced.",
+  "status": "double-checked",
+  "review": {"editor": "Codex source audit", "date": "2026-08-10", "second_reviewer": "scan/WS control"}
+}

@@ -391,16 +391,19 @@
         "PM1:✱2·49"
       ],
       "parallel_group": "STAR2-WAVE-3B",
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "aristotle_task_id": "757034c8-3d4e-427d-ac3f-3eff3fd0c8c0",
       "aristotle_latest_task_id": "757034c8-3d4e-427d-ac3f-3eff3fd0c8c0",
-      "aristotle_latest_task_status": "IN_PROGRESS",
-      "aristotle_remote_status": "IN_PROGRESS",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_project_id": "c06fb266-05c5-4988-a54c-220826ff6d5c",
       "aristotle_request_path": "aristotle/Q212.md",
       "aristotle_request_sha256": "517d82199eb0d979af2ae76d3d6c82fa8fda7a967ac30d8fe6919dc77fc17b85",
       "aristotle_latest_task_name": "Formalize Q212.md",
-      "aristotle_latest_task_created": "3 mins ago"
+      "aristotle_latest_task_created": "9 mins ago",
+      "aristotle_archive_path": "aristotle/results/Q212-final.tar.gz",
+      "aristotle_archive_sha256": "3c922a2fe44109e92ed5da99806793f88cdc963258b2b7f0be3520f7c4f6540c",
+      "integration_status": "awaiting-ci"
     },
     "Q213": {
       "canonical_ids": [
@@ -457,14 +460,19 @@
         "PM1:✱2·53"
       ],
       "parallel_group": "STAR2-WAVE-3B",
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "aristotle_task_id": "b47500d3-d2f2-4e46-b47c-eb8271aac195",
       "aristotle_latest_task_id": "b47500d3-d2f2-4e46-b47c-eb8271aac195",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_project_id": "ddec702d-934f-4174-8025-c1019f2c6d2f",
       "aristotle_request_path": "aristotle/Q214.md",
-      "aristotle_request_sha256": "744fd06b89b95aa03f81fbd6c6aac527930b391c09c491c13670191a50c6c0e0"
+      "aristotle_request_sha256": "744fd06b89b95aa03f81fbd6c6aac527930b391c09c491c13670191a50c6c0e0",
+      "aristotle_latest_task_name": "Formalize Q214.md",
+      "aristotle_latest_task_created": "7 mins ago",
+      "aristotle_archive_path": "aristotle/results/Q214-final.tar.gz",
+      "aristotle_archive_sha256": "ce0d2fad17bd501076cab0f88c1d03a192d2c9cca860200543b77734b7579709",
+      "integration_status": "awaiting-ci"
     },
     "Q215": {
       "canonical_ids": [
@@ -1663,6 +1671,22 @@
     "PM1:✱2·49": {
       "batch": "PM1-STAR2-Q211",
       "status": "kernel-checked"
+    },
+    "PM1:✱2·5": {
+      "batch": "PM1-STAR2-Q212",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·51": {
+      "batch": "PM1-STAR2-Q212",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·52": {
+      "batch": "PM1-STAR2-Q212",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·521": {
+      "batch": "PM1-STAR2-Q212",
+      "status": "awaiting-ci"
     },
     "PM1:✱2·53": {
       "batch": "PM1-STAR2-Q213",

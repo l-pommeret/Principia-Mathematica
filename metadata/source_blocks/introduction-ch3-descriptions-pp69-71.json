@@ -1,0 +1,73 @@
+{
+  "id": "PM1:INTRODUCTION-CH3-DESCRIPTIONS-PP69-71",
+  "edition": "first",
+  "volume": 1,
+  "kind": "source-critical-prose",
+  "title": "Introduction, Chapter III — descriptions",
+  "source_range": {
+    "printed_pages": "69–71",
+    "scan_leaves": [
+      91,
+      92,
+      93
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "lean_path": "Principia/FirstEdition/Volume1/Introduction/Chapter3/Pages69To78.lean",
+  "witnesses": [
+    {
+      "siglum": "PM1-1910-SCAN",
+      "role": "canonical",
+      "uri": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+      "sha256": "52fd0ba446ab2dc97f08d6d4b16d67196edb6d991b0a0445e1ee4dbb57fa2eab"
+    },
+    {
+      "siglum": "PG78050",
+      "role": "control",
+      "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm",
+      "sha256": "f9e000e6e66bcd865d03ad41bbf7cbc74618678eceb6af0fb113c3df51e0200a"
+    },
+    {
+      "siglum": "WS-PM1",
+      "role": "control",
+      "uri": "https://en.wikisource.org/wiki/Index:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+    }
+  ],
+  "leaf_derivatives": [
+    {
+      "scan_leaf": 91,
+      "printed_page": "69",
+      "sha256": "039ba2df3133e207b6ec928353c7c8dc0508d92911460485189d80c2de3e5620"
+    },
+    {
+      "scan_leaf": 92,
+      "printed_page": "70",
+      "sha256": "d700dfbc05bd960ebb6ac324a1e557b9e2c48e4446c5dae7de6a5777fb3a62e0"
+    },
+    {
+      "scan_leaf": 93,
+      "printed_page": "71",
+      "sha256": "f9ea0882a3da150acb2ec6107aadc30d24382516bfa91f34139778204810fa61"
+    }
+  ],
+  "source_status": "scan-collated-three-witness",
+  "critical_status": "digital-witness-errors-recorded",
+  "transcription": {
+    "policy": "verbal-diplomatic-reflow",
+    "line_end_hyphenation": "silently-rejoined",
+    "page_breaks": "recorded-in-metadata-not-canonical-body",
+    "note_markers": "global-numeric-labels-replace-page-local-asterisks",
+    "typography": "presentation-layer-not-encoded-in-canonical-body",
+    "formulae_and_scope_punctuation": "collated-against-scan"
+  },
+  "canonical_body": {
+    "encoding": "UTF-8",
+    "byte_length": 8569,
+    "sha256": "cb9e7893d912be3d12c0dfe117ff67d34dfefdcf0b22b3e0c2256e7979c83ca0"
+  },
+  "review": {
+    "apparatus_required": true,
+    "sic_required": false,
+    "note": "The canonical scan restores balanced description parentheses; Gutenberg’s malformed TeX is apparatus-only."
+  }
+}
