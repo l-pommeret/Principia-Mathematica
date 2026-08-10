@@ -107,7 +107,7 @@ def Term.renameApparent (rho : ApparentRenaming source target) :
     Term signature realContext source sort → Term signature realContext target sort
   | .real entryVar => .real entryVar
   | .apparent entryVar => .apparent (rho entryVar)
-  | .symbol symbol => .symbol symbol
+  | .symbol _ symbol => .symbol symbol
 
 def Arguments.renameApparent (rho : ApparentRenaming source target) :
     Arguments signature realContext source sorts →
@@ -139,7 +139,7 @@ def Term.renameReal (rho : RealRenaming source target) :
     Term signature source apparentContext sort → Term signature target apparentContext sort
   | .real entryVar => .real (rho entryVar)
   | .apparent entryVar => .apparent entryVar
-  | .symbol symbol => .symbol symbol
+  | .symbol _ symbol => .symbol symbol
 
 def Arguments.renameReal (rho : RealRenaming source target) :
     Arguments signature source apparentContext sorts →
@@ -178,7 +178,7 @@ def Term.substitute
     Term signature realContext source sort → Term signature realContext target sort
   | .real entryVar => .real entryVar
   | .apparent entryVar => substitution entryVar
-  | .symbol symbol => .symbol symbol
+  | .symbol _ symbol => .symbol symbol
 
 def Arguments.substitute
     (substitution : ApparentSubstitution signature realContext source target) :
@@ -217,19 +217,19 @@ def Formula.instantiate (body : Formula signature realContext (sort :: apparentC
 def Term.abstractHead :
     Term signature (head :: realContext) apparentContext sort →
       Term signature realContext (head :: apparentContext) sort
-  | .real .zero => .apparent .zero
+  | .real (sort := head) .zero => .apparent .zero
   | .real (.succ entryVar) => .real entryVar
   | .apparent entryVar => .apparent (.succ entryVar)
-  | .symbol symbol => .symbol symbol
+  | .symbol _ symbol => .symbol symbol
 
 /-- Inverse operation: give the fresh apparentContext head the realContext head value. -/
 def Term.valueHead :
     Term signature realContext (head :: apparentContext) sort →
       Term signature (head :: realContext) apparentContext sort
   | .real entryVar => .real (.succ entryVar)
-  | .apparent .zero => .real .zero
+  | .apparent (sort := head) .zero => .real .zero
   | .apparent (.succ entryVar) => .apparent entryVar
-  | .symbol symbol => .symbol symbol
+  | .symbol _ symbol => .symbol symbol
 
 def Arguments.abstractHead :
     Arguments signature (head :: realContext) apparentContext sorts →
@@ -336,8 +336,8 @@ def renameReal (rho : RealRenaming source target) :
     (term : Term signature (head :: realContext) apparentContext sort) :
     term.abstractHead.valueHead = term := by
   cases term with
-  | realContext entryVar => cases entryVar <;> rfl
-  | apparentContext entryVar => rfl
+  | real entryVar => cases entryVar <;> rfl
+  | apparent entryVar => rfl
   | symbol symbol => rfl
 
 @[simp] theorem arguments_value_abstract_head
@@ -396,10 +396,10 @@ all-orders connective. -/
 structure ScopedConnectives (signature : Signature) (argument : RamifiedSort) where
   neg0 : signature.NegationMeaning 0
   neg1 : signature.NegationMeaning (bindOrder 0 argument)
-  disj00 : signature.DisjunctionMeaning 0 0
-  disj01 : signature.DisjunctionMeaning 0 (bindOrder 0 argument)
-  disj10 : signature.DisjunctionMeaning (bindOrder 0 argument) 0
-  disj11 : signature.DisjunctionMeaning
+  disj00Meaning : signature.DisjunctionMeaning 0 0
+  disj01Meaning : signature.DisjunctionMeaning 0 (bindOrder 0 argument)
+  disj10Meaning : signature.DisjunctionMeaning (bindOrder 0 argument) 0
+  disj11Meaning : signature.DisjunctionMeaning
     (bindOrder 0 argument) (bindOrder 0 argument)
 
 namespace ScopedConnectives
@@ -407,24 +407,24 @@ namespace ScopedConnectives
 def disj00 (scope : ScopedConnectives signature argument)
     (left right : Formula signature realContext apparentContext 0) :
     Formula signature realContext apparentContext 0 :=
-  .disj scope.disj00 left right
+  .disj scope.disj00Meaning left right
 
 def disj01 (scope : ScopedConnectives signature argument)
     (left : Formula signature realContext apparentContext 0)
     (right : Formula signature realContext apparentContext (bindOrder 0 argument)) :
     Formula signature realContext apparentContext (bindOrder 0 argument) :=
-  .disj scope.disj01 left right
+  .disj scope.disj01Meaning left right
 
 def disj10 (scope : ScopedConnectives signature argument)
     (left : Formula signature realContext apparentContext (bindOrder 0 argument))
     (right : Formula signature realContext apparentContext 0) :
     Formula signature realContext apparentContext (bindOrder 0 argument) :=
-  .disj scope.disj10 left right
+  .disj scope.disj10Meaning left right
 
 def disj11 (scope : ScopedConnectives signature argument)
     (left right : Formula signature realContext apparentContext (bindOrder 0 argument)) :
     Formula signature realContext apparentContext (bindOrder 0 argument) :=
-  .disj scope.disj11 left right
+  .disj scope.disj11Meaning left right
 
 def imp00 (scope : ScopedConnectives signature argument)
     (left right : Formula signature realContext apparentContext 0) :
@@ -448,9 +448,12 @@ def imp11 (scope : ScopedConnectives signature argument)
     Formula signature realContext apparentContext (bindOrder 0 argument) :=
   scope.disj11 (.neg scope.neg1 left) right
 
+def emptyApparentRenaming : ApparentRenaming [] [argument]
+  | _, entryVar => nomatch entryVar
+
 def weakenClosed (proposition : Formula signature realContext [] 0) :
     Formula signature realContext [argument] 0 :=
-  Formula.renameApparent (fun entryVar => nomatch entryVar) proposition
+  Formula.renameApparent emptyApparentRenaming proposition
 
 /-- Scope-normal form for `p ⊃ (exists x).phi x`, using the mixed
 disjunction definitions corresponding to ✱9·04/06 rather than retaining an
@@ -515,7 +518,7 @@ def bodyUnderTwoReals (function : ElementaryFunction signature realContext argum
 end ElementaryFunction
 
 /-- Experimental rule-shape test, not canonical PM coverage. -/
-inductive ToyDerivation (signature : Signature) :
+inductive ToyDerivation {signature : Signature} :
     {realContext : RealContext} → {order : Nat} →
       Formula signature realContext [] order → Prop where
   | toy_star_9_1
@@ -627,10 +630,10 @@ def witnessSignature : Signature where
 def higherScope : ScopedConnectives witnessSignature predicateSort where
   neg0 := WitnessNegation.order0
   neg1 := WitnessNegation.order2
-  disj00 := WitnessDisjunction.order00
-  disj01 := WitnessDisjunction.order02
-  disj10 := WitnessDisjunction.order20
-  disj11 := WitnessDisjunction.order22
+  disj00Meaning := WitnessDisjunction.order00
+  disj01Meaning := WitnessDisjunction.order02
+  disj10Meaning := WitnessDisjunction.order20
+  disj11Meaning := WitnessDisjunction.order22
 
 /-- A genuine elementary function whose argument is itself a first-order
 function type; its evaluator is consequently a higher-order application. -/
@@ -703,10 +706,9 @@ def higherStar10WithReducibility
 
 /-- Concrete realContext-head/apparentContext-head round trip at a function argument type. -/
 @[simp] theorem higherFunctionHeadRoundTrip :
-    ElementaryFunction.abstractHead higherFunctionWitness.valueHead =
-      higherFunctionWitness := by
-  cases higherFunctionWitness
-  rfl
+    higherFunctionWitness.valueHead.abstractHead.valueHead =
+      higherFunctionWitness.valueHead :=
+  ElementaryMatrix.value_abstract_head higherFunctionWitness.valueHead
 
 /-! ## Elementary-syntax embedding and partial retraction -/
 
