@@ -81,6 +81,26 @@
       "aristotle_latest_task_created": "7 mins ago",
       "aristotle_result_path": "aristotle/results/Q202-final.tar.gz",
       "aristotle_result_sha256": "72d3ce6bf365835cf8d81ad1c4b5505de960d0d3ca47bc427cc8cd62cb291778"
+    },
+    "Q203": {
+      "canonical_ids": [
+        "PM1:✱2·06",
+        "PM1:✱2·07",
+        "PM1:✱2·08",
+        "PM1:✱2·1"
+      ],
+      "source": "PM volume I, first edition, pp. 104–105",
+      "prompt_path": "aristotle/Q203.md",
+      "audit_path": "reviews/Q203-review.md",
+      "audit_status": "A",
+      "lean_scope": "exact PM1 ✱2·06, ✱2·07, ✱2·08 and ✱2·1",
+      "depends_on": [
+        "PM-META:detach",
+        "PM1:✱2·03",
+        "PM1:✱2·04",
+        "PM1:✱2·05"
+      ],
+      "aristotle_status": "not-submitted"
     }
   },
   "items": {
