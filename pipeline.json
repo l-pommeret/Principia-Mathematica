@@ -367,7 +367,10 @@
       "aristotle_latest_task_created": "11 mins ago",
       "aristotle_archive_path": "aristotle/results/Q211-final.tar.gz",
       "aristotle_archive_sha256": "fb9130274bfcecd6ec20b2f10f920e7dec83ad6e8531ab75e66a029ec1f1e026",
-      "integration_status": "awaiting-ci"
+      "integration_status": "kernel-checked",
+      "lean_commit": "d41b8a34bdcaad43e4f753e775a7bd2c79b45add",
+      "lean_ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31422968106",
+      "lean_ci_conclusion": "success"
     },
     "Q212": {
       "canonical_ids": [
@@ -379,7 +382,7 @@
       "source": "PM volume I, first edition, p. 112",
       "prompt_path": "aristotle/Q212.md",
       "audit_path": "reviews/Q212-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·5 through ✱2·521",
       "depends_on": [
         "PM1:✱2·17",
@@ -421,7 +424,10 @@
       "aristotle_latest_task_created": "11 mins ago",
       "aristotle_archive_path": "aristotle/results/Q213-final.tar.gz",
       "aristotle_archive_sha256": "1c8d71614b081eacf4cc0409af24285810ecde012feed01e0cbc68f35257f95a",
-      "integration_status": "awaiting-ci"
+      "integration_status": "kernel-checked",
+      "lean_commit": "d41b8a34bdcaad43e4f753e775a7bd2c79b45add",
+      "lean_ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31422968106",
+      "lean_ci_conclusion": "success"
     },
     "Q214": {
       "canonical_ids": [
@@ -433,7 +439,7 @@
       "source": "PM volume I, first edition, p. 112",
       "prompt_path": "aristotle/Q214.md",
       "audit_path": "reviews/Q214-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·6 through ✱2·621",
       "depends_on": [
         "PM1:✱2·04",
@@ -1624,23 +1630,23 @@
     },
     "PM1:✱2·45": {
       "batch": "PM1-STAR2-Q211",
-      "status": "awaiting-ci"
+      "status": "kernel-checked"
     },
     "PM1:✱2·46": {
       "batch": "PM1-STAR2-Q211",
-      "status": "awaiting-ci"
+      "status": "kernel-checked"
     },
     "PM1:✱2·47": {
       "batch": "PM1-STAR2-Q211",
-      "status": "awaiting-ci"
+      "status": "kernel-checked"
     },
     "PM1:✱2·48": {
       "batch": "PM1-STAR2-Q211",
-      "status": "awaiting-ci"
+      "status": "kernel-checked"
     },
     "PM1:✱2·49": {
       "batch": "PM1-STAR2-Q211",
-      "status": "awaiting-ci"
+      "status": "kernel-checked"
     },
     "PM1:✱2·53": {
       "batch": "PM1-STAR2-Q213",

@@ -1,6 +1,11 @@
 # Audit Q211 — PM I, ✱2·45–✱2·49
 
-Verdict: **A — réponse Aristotle acceptée, en attente de CI**. L'archive
+Verdict: **A — réponse Aristotle acceptée et intégration kernel-checkée**.
+Le commit immuable
+`d41b8a34bdcaad43e4f753e775a7bd2c79b45add` a passé le step GitHub Actions
+« Build and kernel-check the edition » du run
+`https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31422968106`.
+L'archive
 immuable `aristotle/results/Q211-final.tar.gz` a l'empreinte SHA-256
 `fb9130274bfcecd6ec20b2f10f920e7dec83ad6e8531ab75e66a029ec1f1e026`.
 Elle contient exactement les cinq cibles ✱2·45–✱2·49, sans modification de
@@ -32,6 +37,6 @@ la distinction métalinguistique entre ✱1·1 et ✱1·11. Les dépendances exa
 sont consignées dans `metadata/items/PM1-star-2-Q211.json`.
 
 L'archive autonome d'Aristotle utilise Lean 4.28.0 malgré la demande 4.30.0;
-elle est donc une réponse à auditer, non une certification du dépôt. Le lot
-intégré reste explicitement `awaiting-ci` jusqu'à la vérification GitHub avec
-la version Lean épinglée du dépôt.
+elle est donc une réponse à auditer, non une certification du dépôt. La
+certification finale est celle du lot intégré, vérifié par GitHub CI avec la
+version Lean épinglée du dépôt.
