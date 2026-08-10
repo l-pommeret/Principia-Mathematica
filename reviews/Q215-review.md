@@ -1,6 +1,6 @@
 # Audit Q215 — PM I, ✱2·63–✱2·65
 
-Verdict: **A — prêt pour soumission, non soumis**. Q214 et sa fermeture
+Verdict: **A — accepté et kernel-checké**. Q214 et sa fermeture
 transitive sont kernel-checkés au commit
 `b9eb7851d644043582bdc07b67e5ad05c5af40d3` par le workflow GitHub Actions
 [`31424832320`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31424832320),
@@ -25,7 +25,7 @@ Q215 et n'est donc pas ajouté artificiellement à sa fermeture.
 
 ## Audit du résultat Aristotle
 
-Verdict: **A — accepté, en attente de CI**. Projet
+Verdict: **A — accepté et kernel-checké**. Projet
 `17de70f9-8c43-49ff-9c25-dd2bccece8bf`, tâche
 `4f215488-b66d-40cb-88fc-6c4d95ae39ca`, statut terminal `COMPLETE`.
 L’archive immuable `aristotle/results/Q215-final.tar.gz` a pour SHA-256
@@ -33,5 +33,8 @@ L’archive immuable `aristotle/results/Q215-final.tar.gz` a pour SHA-256
 Les trois cibles sont exactes: ✱2·63 et ✱2·65 restent définitionnelles;
 ✱2·64 conserve la substitution simultanée et les deux Perm nécessaires.
 Aucun `sorry`, `admit`, nouvel `axiom`, `unsafe`, `Classical`, ajout
-d’hypothèse, sémantique ou rétrécissement. Preuves et lectures intégrées;
-statut `awaiting-ci` car Lean local et actions Git sont interdits.
+d’hypothèse, sémantique ou rétrécissement. Preuves et lectures intégrées.
+La CI du dépôt a vérifié l’intégration exacte au commit
+`2280728f3f9cad6735b2ec7f8987db4c16277499`, dans le workflow GitHub Actions
+[`31427351077`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31427351077),
+conclusion `success`. Le statut final est `kernel-checked`.

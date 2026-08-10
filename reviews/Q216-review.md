@@ -1,6 +1,6 @@
 # Audit Q216 — PM I, ✱2·67–✱2·69
 
-Verdict: **A — complet et apparemment correct; éligible Aristotle**. Le
+Verdict: **A — accepté et kernel-checké**. Le
 contexte complet de Q206, Q212, Q213 et Q214 est intégré au commit
 `b9eb7851d644043582bdc07b67e5ad05c5af40d3` et vérifié par le noyau dans la
 run GitHub Actions `31424832320` (conclusion `success`). Le prompt autonome
@@ -21,7 +21,7 @@ système syntaxique PM, sans axiome auxiliaire ni affaiblissement de portée.
 
 ## Audit du résultat Aristotle
 
-Verdict: **A — accepté, en attente de CI**. Projet
+Verdict: **A — accepté et kernel-checké**. Projet
 `5bbfa176-bd5a-4f14-9c7d-dafd0d9f035d`, tâche
 `dfa4cf2e-4dbc-4cfc-9241-eb769b65672f`, statut terminal `COMPLETE`.
 L’archive immuable `aristotle/results/Q216-final.tar.gz` a pour SHA-256
@@ -34,5 +34,8 @@ exacte `star_2_62 q p`. La clôture n’emploie que les dépendances déclarées
 les corps certifiés de ✱2·05/✱2·06 et `PM.Derivation.detach`. Recherche
 négative confirmée pour `sorry`, `admit`, nouvel `axiom`, `unsafe`,
 `Classical`, hypothèse ajoutée, sémantique ou cible rétrécie. Les preuves,
-lectures et transcriptions diplomatiques sont intégrées. Conformément à
-l’interdiction de Lean local et d’action Git, le statut reste `awaiting-ci`.
+lectures et transcriptions diplomatiques sont intégrées. La CI du dépôt a
+vérifié l’intégration exacte au commit
+`2280728f3f9cad6735b2ec7f8987db4c16277499`, dans le workflow GitHub Actions
+[`31427351077`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31427351077),
+conclusion `success`. Le statut final est `kernel-checked`.
