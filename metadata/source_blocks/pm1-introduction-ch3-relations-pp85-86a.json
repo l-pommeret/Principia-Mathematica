@@ -1,0 +1,67 @@
+{
+  "id": "PM1:INTRODUCTION-CH3-RELATIONS-PP85-86A",
+  "edition": "first",
+  "volume": 1,
+  "kind": "source-critical-prose",
+  "title": "Introduction, Chapter III — relations",
+  "source_range": {
+    "printed_pages": "85–86 (first part)",
+    "scan_leaves": [
+      107,
+      108
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "lean_path": "Principia/FirstEdition/Volume1/Introduction/Chapter3/Pages79To88.lean",
+  "witnesses": [
+    {
+      "siglum": "PM1-1910-SCAN",
+      "role": "canonical",
+      "uri": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+      "sha256": "52fd0ba446ab2dc97f08d6d4b16d67196edb6d991b0a0445e1ee4dbb57fa2eab"
+    },
+    {
+      "siglum": "PG78050",
+      "role": "control",
+      "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm",
+      "sha256": "f9e000e6e66bcd865d03ad41bbf7cbc74618678eceb6af0fb113c3df51e0200a"
+    },
+    {
+      "siglum": "WS-PM1",
+      "role": "control",
+      "uri": "https://en.wikisource.org/wiki/Index:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+    }
+  ],
+  "leaf_derivatives": [
+    {
+      "scan_leaf": 107,
+      "printed_page": "85",
+      "sha256": "0f41b36a2d4b6f92a3fe8c352af07c646a2012c74ad042812519533fa144e338"
+    },
+    {
+      "scan_leaf": 108,
+      "printed_page": "86",
+      "sha256": "ca0f199267562e3c06f36a3072b33e09e4fbe817e30dd725e35465ee759506a0"
+    }
+  ],
+  "source_status": "scan-collated-three-witness",
+  "critical_status": "authorial-print-sic-and-digital-witness-errors-recorded",
+  "transcription": {
+    "policy": "verbal-diplomatic-reflow",
+    "line_end_hyphenation": "silently-rejoined",
+    "page_breaks": "recorded-in-metadata-not-canonical-body",
+    "note_markers": "global-numeric-labels-replace-page-local-asterisks",
+    "typography": "presentation-layer-not-encoded-in-canonical-body",
+    "formulae_and_scope_punctuation": "collated-against-scan"
+  },
+  "canonical_body": {
+    "encoding": "UTF-8",
+    "byte_length": 2970,
+    "sha256": "2ab4a14a150894e10470b126bf5700bd345fe1f94474d9c78ea0ca10475ae2be"
+  },
+  "review": {
+    "apparatus_required": true,
+    "sic_required": true,
+    "note": "The page-86 first-impression wording is retained verbatim and marked sic only in the apparatus; the printed Errata correction and a Wikisource-only duplicated formula segment are recorded separately."
+  }
+}

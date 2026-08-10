@@ -13,7 +13,7 @@
     "task_id": "b47500d3-d2f2-4e46-b47c-eb8271aac195",
     "archive": "aristotle/results/Q214-final.tar.gz",
     "sha256": "ce0d2fad17bd501076cab0f88c1d03a192d2c9cca860200543b77734b7579709",
-    "audit": "accepted-awaiting-ci"
+    "audit": "accepted-kernel-checked"
   },
   "items": [
     {
@@ -25,7 +25,7 @@
       "printed_dependencies": ["PM1:✱2·38", "PM1:✱1·2", "PM1:✱2·05", "PM1:✱2·06", "PM1:✱1·11"],
       "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_38", "PM.Derivation.star_1_2", "PM.FirstEdition.Volume1.Star2.star_2_05", "PM.FirstEdition.Volume1.Star2.star_2_06", "PM.Derivation.detach"],
       "normalized_dependencies": ["PM1:✱2·38", "PM1:✱1·2", "PM1:✱2·05", "PM1:✱2·06", "PM1:✱1·11"],
-      "source_status": "double-witness-checked", "formal_status": "awaiting-ci"
+      "source_status": "double-witness-checked", "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·61", "kind": "derived-proposition",
@@ -35,7 +35,7 @@
       "printed_dependencies": ["PM1:✱2·6", "PM1:✱2·04", "PM1:✱1·11"],
       "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_6", "PM.FirstEdition.Volume1.Star2.star_2_04", "PM.Derivation.detach"],
       "normalized_dependencies": ["PM1:✱2·6", "PM1:✱2·04", "PM1:✱1·11"],
-      "source_status": "double-witness-checked", "formal_status": "awaiting-ci"
+      "source_status": "double-witness-checked", "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·62", "kind": "derived-proposition",
@@ -45,7 +45,7 @@
       "printed_dependencies": ["PM1:✱2·53", "PM1:✱2·6", "PM1:✱2·06", "PM1:✱1·11"],
       "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_53", "PM.FirstEdition.Volume1.Star2.star_2_6", "PM.FirstEdition.Volume1.Star2.star_2_06", "PM.Derivation.detach"],
       "normalized_dependencies": ["PM1:✱2·53", "PM1:✱2·6", "PM1:✱2·06", "PM1:✱1·11"],
-      "source_status": "double-witness-checked", "formal_status": "awaiting-ci"
+      "source_status": "double-witness-checked", "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·621", "kind": "derived-proposition",
@@ -55,8 +55,8 @@
       "printed_dependencies": ["PM1:✱2·62", "PM1:✱2·04", "PM1:✱1·11"],
       "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_62", "PM.FirstEdition.Volume1.Star2.star_2_04", "PM.Derivation.detach"],
       "normalized_dependencies": ["PM1:✱2·62", "PM1:✱2·04", "PM1:✱1·11"],
-      "source_status": "double-witness-checked", "formal_status": "awaiting-ci"
+      "source_status": "double-witness-checked", "formal_status": "kernel-checked"
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {"commit": "b9eb7851d644043582bdc07b67e5ad05c5af40d3", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31424832320", "conclusion": "success"}
 }

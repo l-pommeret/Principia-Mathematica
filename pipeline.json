@@ -403,7 +403,10 @@
       "aristotle_latest_task_created": "9 mins ago",
       "aristotle_archive_path": "aristotle/results/Q212-final.tar.gz",
       "aristotle_archive_sha256": "3c922a2fe44109e92ed5da99806793f88cdc963258b2b7f0be3520f7c4f6540c",
-      "integration_status": "awaiting-ci"
+      "integration_status": "kernel-checked",
+      "lean_commit": "b9eb7851d644043582bdc07b67e5ad05c5af40d3",
+      "lean_ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31424832320",
+      "lean_ci_conclusion": "success"
     },
     "Q213": {
       "canonical_ids": [
@@ -472,7 +475,10 @@
       "aristotle_latest_task_created": "7 mins ago",
       "aristotle_archive_path": "aristotle/results/Q214-final.tar.gz",
       "aristotle_archive_sha256": "ce0d2fad17bd501076cab0f88c1d03a192d2c9cca860200543b77734b7579709",
-      "integration_status": "awaiting-ci"
+      "integration_status": "kernel-checked",
+      "lean_commit": "b9eb7851d644043582bdc07b67e5ad05c5af40d3",
+      "lean_ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31424832320",
+      "lean_ci_conclusion": "success"
     },
     "Q215": {
       "canonical_ids": [
@@ -483,7 +489,7 @@
       "source": "PM volume I, first edition, p. 112",
       "prompt_path": "aristotle/Q215.md",
       "audit_path": "reviews/Q215-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·63 through ✱2·65",
       "depends_on": [
         "PM1:✱2·62"
@@ -500,7 +506,7 @@
       "source": "PM volume I, first edition, pp. 112–113",
       "prompt_path": "aristotle/Q216.md",
       "audit_path": "reviews/Q216-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·67 through ✱2·69",
       "depends_on": [
         "PM1:✱2·24",
@@ -1674,19 +1680,39 @@
     },
     "PM1:✱2·5": {
       "batch": "PM1-STAR2-Q212",
-      "status": "awaiting-ci"
+      "status": "kernel-checked",
+      "ci_evidence": {
+        "commit": "b9eb7851d644043582bdc07b67e5ad05c5af40d3",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31424832320",
+        "conclusion": "success"
+      }
     },
     "PM1:✱2·51": {
       "batch": "PM1-STAR2-Q212",
-      "status": "awaiting-ci"
+      "status": "kernel-checked",
+      "ci_evidence": {
+        "commit": "b9eb7851d644043582bdc07b67e5ad05c5af40d3",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31424832320",
+        "conclusion": "success"
+      }
     },
     "PM1:✱2·52": {
       "batch": "PM1-STAR2-Q212",
-      "status": "awaiting-ci"
+      "status": "kernel-checked",
+      "ci_evidence": {
+        "commit": "b9eb7851d644043582bdc07b67e5ad05c5af40d3",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31424832320",
+        "conclusion": "success"
+      }
     },
     "PM1:✱2·521": {
       "batch": "PM1-STAR2-Q212",
-      "status": "awaiting-ci"
+      "status": "kernel-checked",
+      "ci_evidence": {
+        "commit": "b9eb7851d644043582bdc07b67e5ad05c5af40d3",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31424832320",
+        "conclusion": "success"
+      }
     },
     "PM1:✱2·53": {
       "batch": "PM1-STAR2-Q213",
@@ -1703,6 +1729,42 @@
     "PM1:✱2·56": {
       "batch": "PM1-STAR2-Q213",
       "status": "kernel-checked"
+    },
+    "PM1:✱2·6": {
+      "batch": "PM1-STAR2-Q214",
+      "status": "kernel-checked",
+      "ci_evidence": {
+        "commit": "b9eb7851d644043582bdc07b67e5ad05c5af40d3",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31424832320",
+        "conclusion": "success"
+      }
+    },
+    "PM1:✱2·61": {
+      "batch": "PM1-STAR2-Q214",
+      "status": "kernel-checked",
+      "ci_evidence": {
+        "commit": "b9eb7851d644043582bdc07b67e5ad05c5af40d3",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31424832320",
+        "conclusion": "success"
+      }
+    },
+    "PM1:✱2·62": {
+      "batch": "PM1-STAR2-Q214",
+      "status": "kernel-checked",
+      "ci_evidence": {
+        "commit": "b9eb7851d644043582bdc07b67e5ad05c5af40d3",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31424832320",
+        "conclusion": "success"
+      }
+    },
+    "PM1:✱2·621": {
+      "batch": "PM1-STAR2-Q214",
+      "status": "kernel-checked",
+      "ci_evidence": {
+        "commit": "b9eb7851d644043582bdc07b67e5ad05c5af40d3",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31424832320",
+        "conclusion": "success"
+      }
     }
   }
 }

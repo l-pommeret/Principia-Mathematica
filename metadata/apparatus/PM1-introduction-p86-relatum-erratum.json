@@ -1,0 +1,39 @@
+{
+  "id": "APP-PM1-INTRO-P86-RELATUM-001",
+  "item": "PM1:INTRODUCTION-CH3-RELATIONS-PP85-86A",
+  "locus": {
+    "volume": 1,
+    "printed_page": 86,
+    "scan_leaf": 108,
+    "line_or_formula": "relations paragraph: self-reference restriction"
+  },
+  "classification": "authorial-print-sic",
+  "marker": "sic",
+  "diplomatic_reading": "so a relation must not be referent or relatum with respect to itself",
+  "corrected_reading": "so a relation must neither be nor not be referent or relatum with respect to itself",
+  "other_reading": "Printed Errata: after “must” insert “neither be nor”.",
+  "witnesses": [
+    {
+      "siglum": "PM1-1910-SCAN",
+      "reading": "must not be",
+      "uri": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/108"
+    },
+    {
+      "siglum": "PM1-1910-ERRATA",
+      "reading": "after “must” insert “neither be nor”",
+      "uri": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/15"
+    },
+    {
+      "siglum": "WS-PM1",
+      "reading": "displays the first-impression text with a SIC correction template",
+      "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/108&action=raw"
+    }
+  ],
+  "evidence": "The first impression prints “must not be”. The volume's Errata explicitly directs insertion of “neither be nor” after “must”; the canonical block retains the printed wording and the correction remains external.",
+  "status": "double-checked",
+  "review": {
+    "editor": "Codex source audit",
+    "date": "2026-08-10",
+    "second_reviewer": "scan/printed Errata/WS control"
+  }
+}
