@@ -13,7 +13,7 @@
     "task_id": "b9ff76bf-6eb5-4abf-8a8d-f4a657124aac",
     "archive": "aristotle/results/Q210-final.tar.gz",
     "sha256": "4f0d59f1f63a2c8960d9de45adb264200bc8ef62310309b41bee106e8f36739a",
-    "audit": "accepted-awaiting-ci"
+    "audit": "accepted-kernel-checked"
   },
   "items": [
     {
@@ -30,7 +30,7 @@
       "normalized_dependencies": ["PM1:✱2·31", "PM1:✱1·2", "PM1:✱2·38", "PM1:✱2·05", "PM1:✱1·11"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The printed final Syll. composition and the application of Taut through ✱2·38 are expanded by detachment in the real-variable case."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·42",
@@ -46,7 +46,7 @@
       "normalized_dependencies": ["PM1:✱2·4"],
       "substitutions": ["∼p/p"],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·43",
@@ -62,12 +62,12 @@
       "normalized_dependencies": ["PM1:✱2·42", "PM1:✱1·01"],
       "dependency_justifications": [{"kind":"definitional-reading","pm_dependency":"PM1:✱1·01","evidence":"The printed citation ✱2·42 becomes the displayed implication form only by the definition of implication at ✱1·01."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "f812e029eeec66059c5acb3d106836b82bf26dc6",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31420848675",
+    "conclusion": "success"
   }
 }

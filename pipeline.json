@@ -332,7 +332,10 @@
       "aristotle_latest_task_created": "9 mins ago",
       "aristotle_archive_path": "aristotle/results/Q210-final.tar.gz",
       "aristotle_archive_sha256": "4f0d59f1f63a2c8960d9de45adb264200bc8ef62310309b41bee106e8f36739a",
-      "integration_status": "awaiting-ci"
+      "integration_status": "kernel-checked",
+      "lean_commit": "f812e029eeec66059c5acb3d106836b82bf26dc6",
+      "lean_ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31420848675",
+      "lean_ci_conclusion": "success"
     },
     "Q211": {
       "canonical_ids": [
@@ -1204,6 +1207,18 @@
     },
     "PM1:✱2·41": {
       "batch": "PM1-STAR2-Q209",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·4": {
+      "batch": "PM1-STAR2-Q210",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·42": {
+      "batch": "PM1-STAR2-Q210",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·43": {
+      "batch": "PM1-STAR2-Q210",
       "status": "kernel-checked"
     }
   }

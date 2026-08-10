@@ -1,6 +1,6 @@
 # Audit Q210 — PM I, ✱2·4, ✱2·42, ✱2·43
 
-Verdict: **A (réponse Aristotle acceptée, en attente de CI)**. L'archive
+Verdict: **A (réponse Aristotle acceptée et certifiée par CI)**. L'archive
 immuable `aristotle/results/Q210-final.tar.gz` a l'empreinte SHA-256
 `4f0d59f1f63a2c8960d9de45adb264200bc8ef62310309b41bee106e8f36739a`.
 Elle contient exactement les trois cibles ✱2·4, ✱2·42 et ✱2·43, sans
@@ -24,9 +24,11 @@ strictement l'instance `∼p/p`; ✱2·43 n'ajoute que la lecture définitionnel
 `metadata/items/PM1-star-2-Q210.json`.
 
 L'archive autonome d'Aristotle utilise Lean 4.28.0 malgré la demande 4.30.0;
-elle constitue une réponse à auditer, non une certification du dépôt. Seule
-la prochaine CI GitHub épinglée à Lean 4.30.0 pourra établir le statut
-`kernel-checked`.
+elle constituait donc une réponse à auditer, non la certification du dépôt.
+La certification noyau définitive a été obtenue avec Lean 4.30.0 au commit
+`f812e029eeec66059c5acb3d106836b82bf26dc6`, exécution GitHub Actions
+`https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31420848675`,
+conclusion `success`.
 
 ✱2·33 est volontairement exclu: c'est une définition éditoriale de portée,
 `p ∨ q ∨ r := (p ∨ q) ∨ r`, à traiter séparément. Elle entre en tension avec
