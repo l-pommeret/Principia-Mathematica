@@ -1,0 +1,31 @@
+{
+  "id": "APP-PM1-3.03-CIRCULAR-001",
+  "item": "PM1:✱3·03",
+  "locus": {
+    "volume": 1,
+    "printed_page": 116,
+    "scan_leaf": 138,
+    "line_or_formula": "third line of the demonstration, parenthesized reference after (2)"
+  },
+  "classification": "uncertain",
+  "diplomatic_reading": "⊢ . (2) . (✱3·03) . ⊃ ⊢ :. φp . ⊃ : ψp . ⊃ . φp · ψp",
+  "other_reading": "⊢ . (2) . (✱3·01) . ⊃ ⊢ :. φp . ⊃ : ψp . ⊃ . φp · ψp",
+  "witnesses": [
+    {
+      "siglum": "PM1-1910-SCAN",
+      "reading": "(✱3·03)",
+      "uri": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/138"
+    },
+    {
+      "siglum": "PG78050",
+      "reading": "(✱3·03)",
+      "uri": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+    }
+  ],
+  "evidence": "The canonical scan contains a self-reference to ✱3·03. The explanatory derivation on p. 114 and the change from ∼(∼φp∨∼ψp) to φp·ψp require application of definition ✱3·01, making ✱3·01 the conjectural corrected citation. PG78050 is derived from the same scan and is not an independent physical witness, so the project does not yet assign sic.",
+  "status": "single-checked",
+  "review": {
+    "editor": "Codex source audit",
+    "date": "2026-08-10"
+  }
+}

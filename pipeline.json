@@ -33,7 +33,7 @@
       "aristotle_request_path": "aristotle/Q200.md",
       "aristotle_request_sha256": "732a797ee1b85d75a79db3bfa859da84c51262117f7e1f31e19726ec9d5c8e77",
       "aristotle_latest_task_name": "Formalize Q200.md",
-      "aristotle_latest_task_created": "31 mins ago",
+      "aristotle_latest_task_created": "36 mins ago",
       "aristotle_result_path": "aristotle/results/Q200-final.tar.gz",
       "aristotle_result_sha256": "a161ad56cfde7764e72c21bcc2dd72318861ea421ffe51230867aafdd16f39cd"
     },
@@ -56,7 +56,7 @@
       "aristotle_request_path": "aristotle/Q201.md",
       "aristotle_request_sha256": "3fa26fcf0f7a65605e36097eaa929ad7c07bb980b04182a2fbb950a57f1d9033",
       "aristotle_latest_task_name": "Formalize Q201.md",
-      "aristotle_latest_task_created": "51 mins ago",
+      "aristotle_latest_task_created": "57 mins ago",
       "aristotle_result_path": "aristotle/results/Q201-final.tar.gz",
       "aristotle_result_sha256": "4bc27ab8bfe7f84c9c2fedd9778997f5a37668f1d7f83d47e6998b4d1210aed5"
     },
@@ -80,7 +80,7 @@
       "aristotle_request_path": "aristotle/Q202.md",
       "aristotle_request_sha256": "a7ed5b1dcc34c2ba94a590cc6f2587edfc761f96d3f0ac7702bc6c15a6f45451",
       "aristotle_latest_task_name": "Formalize Q202.md",
-      "aristotle_latest_task_created": "36 mins ago",
+      "aristotle_latest_task_created": "42 mins ago",
       "aristotle_result_path": "aristotle/results/Q202-final.tar.gz",
       "aristotle_result_sha256": "72d3ce6bf365835cf8d81ad1c4b5505de960d0d3ca47bc427cc8cd62cb291778"
     },
@@ -111,7 +111,7 @@
       "aristotle_request_path": "aristotle/Q203.md",
       "aristotle_request_sha256": "55acc9c75df20a0714915df41a7a371f185dc96d1cb64f9ff859e3257fa07ac2",
       "aristotle_latest_task_name": "Formalize Q203.md",
-      "aristotle_latest_task_created": "19 mins ago",
+      "aristotle_latest_task_created": "25 mins ago",
       "aristotle_result_path": "aristotle/results/Q203-final.tar.gz",
       "aristotle_result_sha256": "a6d9cf0bea400680dc7b47df8012a1627b224c7029c346ec72c36ef067a095f4"
     },
@@ -133,11 +133,13 @@
       "aristotle_status": "submitted",
       "aristotle_task_id": "16e2d599-50fc-4908-818a-7cd46f1ba7e9",
       "aristotle_latest_task_id": "16e2d599-50fc-4908-818a-7cd46f1ba7e9",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_latest_task_status": "IN_PROGRESS",
+      "aristotle_remote_status": "IN_PROGRESS",
       "aristotle_project_id": "a5ae3859-2a76-49aa-8200-b893afdd539a",
       "aristotle_request_path": "aristotle/Q204.md",
-      "aristotle_request_sha256": "83da0c926218c0a99b299a02dd72341f188a216a9294b06b03a8d5a53bac14ca"
+      "aristotle_request_sha256": "83da0c926218c0a99b299a02dd72341f188a216a9294b06b03a8d5a53bac14ca",
+      "aristotle_latest_task_name": "Formalize Q204.md",
+      "aristotle_latest_task_created": "6 mins ago"
     },
     "Q205": {
       "canonical_ids": [
@@ -361,6 +363,167 @@
       ],
       "parallel_group": "STAR2-WAVE-3C",
       "aristotle_status": "not-submitted"
+    },
+    "Q217": {
+      "canonical_ids": [
+        "PM1:✱3·01",
+        "PM1:✱3·02",
+        "PM1:✱3·03"
+      ],
+      "source": "PM volume I, first edition, pp. 114 and 116",
+      "prompt_path": "aristotle/Q217.md",
+      "audit_path": "reviews/Q217-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱3·01–✱3·03 definitions and derivation theorem",
+      "depends_on": [
+        "PM1:✱2·11",
+        "PM1:✱2·32"
+      ],
+      "parallel_group": "STAR3-FOUNDATIONS",
+      "aristotle_status": "not-submitted"
+    },
+    "Q218": {
+      "canonical_ids": [
+        "PM1:✱2·73",
+        "PM1:✱2·74",
+        "PM1:✱2·75",
+        "PM1:✱2·76"
+      ],
+      "source": "PM volume I, first edition, p. 113",
+      "prompt_path": "aristotle/Q218.md",
+      "audit_path": "reviews/Q218-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱2·73 through ✱2·76",
+      "depends_on": [
+        "PM1:✱2·31",
+        "PM1:✱2·38",
+        "PM1:✱2·53",
+        "PM1:✱2·621"
+      ],
+      "parallel_group": "STAR2-WAVE-4A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q219": {
+      "canonical_ids": [
+        "PM1:✱2·77",
+        "PM1:✱2·8",
+        "PM1:✱2·81"
+      ],
+      "source": "PM volume I, first edition, p. 113",
+      "prompt_path": "aristotle/Q219.md",
+      "audit_path": "reviews/Q219-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱2·77, ✱2·8 and ✱2·81",
+      "depends_on": [
+        "PM1:✱2·38",
+        "PM1:✱2·53",
+        "PM1:✱2·76"
+      ],
+      "parallel_group": "STAR2-WAVE-4B",
+      "aristotle_status": "not-submitted"
+    },
+    "Q220": {
+      "canonical_ids": [
+        "PM1:✱2·82",
+        "PM1:✱2·83",
+        "PM1:✱2·85",
+        "PM1:✱2·86"
+      ],
+      "source": "PM volume I, first edition, p. 113",
+      "prompt_path": "aristotle/Q220.md",
+      "audit_path": "reviews/Q220-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱2·82 through ✱2·86 selected sequence",
+      "depends_on": [
+        "PM1:✱2·54",
+        "PM1:✱2·55",
+        "PM1:✱2·8",
+        "PM1:✱2·81"
+      ],
+      "parallel_group": "STAR2-WAVE-4C",
+      "aristotle_status": "not-submitted"
+    },
+    "Q221": {
+      "canonical_ids": [
+        "PM1:✱3·1",
+        "PM1:✱3·11",
+        "PM1:✱3·12",
+        "PM1:✱3·13",
+        "PM1:✱3·14"
+      ],
+      "source": "PM volume I, first edition, pp. 116–117",
+      "prompt_path": "aristotle/Q221.md",
+      "audit_path": "reviews/Q221-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱3·1 through ✱3·14 selected sequence",
+      "depends_on": [
+        "PM1:✱2·11",
+        "PM1:✱3·01",
+        "PM1:✱3·03"
+      ],
+      "parallel_group": "STAR3-WAVE-1A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q222": {
+      "canonical_ids": [
+        "PM1:✱3·2",
+        "PM1:✱3·21",
+        "PM1:✱3·22",
+        "PM1:✱3·24"
+      ],
+      "source": "PM volume I, first edition, pp. 116–117",
+      "prompt_path": "aristotle/Q222.md",
+      "audit_path": "reviews/Q222-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱3·2, ✱3·21, ✱3·22 and ✱3·24",
+      "depends_on": [
+        "PM1:✱3·12",
+        "PM1:✱3·13",
+        "PM1:✱3·14"
+      ],
+      "parallel_group": "STAR3-WAVE-1B",
+      "aristotle_status": "not-submitted"
+    },
+    "Q223": {
+      "canonical_ids": [
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·3",
+        "PM1:✱3·31"
+      ],
+      "source": "PM volume I, first edition, p. 117",
+      "prompt_path": "aristotle/Q223.md",
+      "audit_path": "reviews/Q223-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱3·26, ✱3·27, ✱3·3 and ✱3·31",
+      "depends_on": [
+        "PM1:✱2·31",
+        "PM1:✱2·53",
+        "PM1:✱3·01",
+        "PM1:✱3·22"
+      ],
+      "parallel_group": "STAR3-WAVE-1C",
+      "aristotle_status": "not-submitted"
+    },
+    "Q224": {
+      "canonical_ids": [
+        "PM1:✱3·33",
+        "PM1:✱3·34",
+        "PM1:✱3·35"
+      ],
+      "source": "PM volume I, first edition, p. 118",
+      "prompt_path": "aristotle/Q224.md",
+      "audit_path": "reviews/Q224-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱3·33 through ✱3·35",
+      "depends_on": [
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱2·27",
+        "PM1:✱3·31"
+      ],
+      "parallel_group": "STAR3-WAVE-1D",
+      "aristotle_status": "not-submitted"
     }
   },
   "editorial_tracks": {
@@ -370,6 +533,27 @@
       "printed": "p ∨ q ∨ r .=. (p ∨ q) ∨ r Df",
       "status": "prepared-separately",
       "note": "Not an Aristotle theorem; audit the conflict with Lean's current right-associative disjunction notation before integration."
+    },
+    "PM1:✱3·01": {
+      "kind": "connective-definition",
+      "source": "PM volume I, first edition, p. 114",
+      "printed": "p · q .=. ∼(∼p ∨ ∼q) Df",
+      "status": "prepared-with-Q217",
+      "note": "Logical product is an abbreviation over primitive negation and disjunction, never Lean And."
+    },
+    "PM1:✱3·02": {
+      "kind": "proof-abbreviation-definition",
+      "source": "PM volume I, first edition, p. 114",
+      "printed": "p ⊃ q ⊃ r .=. p ⊃ q · q ⊃ r Df",
+      "status": "prepared-with-Q217",
+      "note": "This surface chain abbreviates the logical product of two implications; it is not right-associated implication."
+    },
+    "PM1:✱3·03": {
+      "kind": "metalinguistic-derivation-theorem",
+      "source": "PM volume I, first edition, pp. 114 and 116",
+      "printed": "Given asserted φp and ψp of the same elementary real-variable type, assert φp · ψp",
+      "status": "prepared-with-Q217",
+      "note": "Must be a theorem of Derivation, never an axiom. The printed proof's circular citation is preserved and linked to uncertain apparatus APP-PM1-3.03-CIRCULAR-001; conjectural correction ✱3·01."
     }
   },
   "items": {
