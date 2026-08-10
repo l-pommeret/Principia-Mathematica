@@ -403,6 +403,86 @@ The four divergences recorded there are errors of the Gutenberg digital
 witness, not of the 1910 impression; no `sic`, `corr.`, or `conj.` is attached.
 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱2·2
+✱2·2.   ⊢ : p . ⊃ . p ∨ q
+
+Dem.
+
+        ⊢ . Add . ⊃ ⊢ : p . ⊃ . q ∨ p                 (1)
+        [Perm] ⊢ : q ∨ p . ⊃ . p ∨ q                    (2)
+        [Syll.] ⊢ .(1).(2). ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱2·2 -/
+
+/- PM-FORMAL-GLOSS
+The three printed stages are retained literally. `Add` is ✱1·3, `Perm` is
+✱1·4, and the displayed `Syll.` is expanded with ✱2·05 and two uses of
+the proved metalinguistic detachment bridge.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·21
+✱2·21.  ⊢ : ∼p . ⊃ . p ⊃ q                    [✱2·2  ∼p/p]
+
+The above two propositions are very frequently used.
+PM-VERBATIM-END PM1:✱2·21 -/
+
+/- PM-FORMAL-GLOSS
+This is exactly the displayed instance of ✱2·2 with `∼p` in place of `p`;
+the inner disjunction is merely read as implication by ✱1·01.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·24
+✱2·24.  ⊢ : p . ⊃ . ∼p ⊃ q                    [✱2·21.Comm]
+PM-VERBATIM-END PM1:✱2·24 -/
+
+/- PM-FORMAL-GLOSS
+`Comm` is ✱2·04 instantiated so that its antecedent is the exact result
+✱2·21; detachment gives the printed consequent.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·25
+✱2·25.  ⊢ :· p : ∨ : p ∨ q . ⊃ . q
+
+Dem.
+
+        ⊢ . ✱2·1 . ⊃ ⊢ : ∼(p ∨ q) . ∨ . (p ∨ q) :
+        [Assoc.]  ⊃ ⊢ : p . ∨ . {∼(p ∨ q) . ∨ . q} : ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱2·25 -/
+
+/- PM-FORMAL-GLOSS
+The colon-and-dot scope has abstract syntax `p ∨ ((p ∨ q) ⊃ q)`, not
+`(p ∨ (p ∨ q)) ⊃ q`. The proof instantiates ✱2·1 at `p ∨ q`, then
+uses Assoc (✱1·5) and detachment exactly as printed.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·26
+✱2·26.  ⊢ :· ∼p : ∨ : p ⊃ q . ⊃ . q                    [✱2·25  ∼p/p]
+PM-VERBATIM-END PM1:✱2·26 -/
+
+/- PM-FORMAL-GLOSS
+This is the displayed substitution instance of ✱2·25; implication is reduced
+only according to ✱1·01.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·27
+✱2·27.  ⊢ :· p . ⊃ : p ⊃ q . ⊃ . q                    [✱2·26]
+PM-VERBATIM-END PM1:✱2·27 -/
+
+/- PM-FORMAL-GLOSS
+This is solely the ✱1·01 reading of ✱2·26; it adds no inference step.
+-/
+
+/- PM-EDITORIAL
+Source for ✱2·2, ✱2·21 and ✱2·24–✱2·27:
+- scan, printed pp. 108–109: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/130 and /131
+- working witnesses: Project Gutenberg ebook 78050 and Wikisource
+Verification status: double-witness-checked and collated directly against the
+facsimile; the independent formal audits are recorded in
+`reviews/Q206-review.md` and `reviews/Q207-review.md`. No authorial print error
+or digital-witness divergence requiring `sic`, `corr.`, or `conj.` was found.
+Fractional substitutions are linearized as `replacement/variable`, preserving
+their printed order; physical line breaks are reflowed.
+-/
+
 /-! ## Printed syntax and audited scope readings -/
 
 /-- Audited scope reading of ✱2·01. -/
@@ -690,6 +770,96 @@ theorem star_2_18 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
   have syll2 := PM.Derivation.detach line3
     (star_2_06 (∼ₚ p ⊃ₚ p) (∼ₚ (∼ₚ p)) p)
   exact PM.Derivation.detach line4 syll2
+
+/-- Audited scope reading of ✱2·2. -/
+def star_2_2_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . ⊃ . p ∨ q"
+  parsed := p ⊃ₚ (p ∨ₚ q)
+  scopeReading := "The single dots delimit p as antecedent and p ∨ q as consequent."
+
+def star_2_2_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "⊢ . Add . ⊃ ⊢ (1); [Perm] (2); [Syll.] ⊢ .(1).(2). ⊃ ⊢ . Prop"
+
+/-- ✱2·2, preserving Add, Perm and the printed Syll. in that order. -/
+theorem star_2_2 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ (p ∨ₚ q)) := by
+  have line1 : ⊢ₚ (p ⊃ₚ (q ∨ₚ p)) := PM.Derivation.star_1_3 q p
+  have line2 : ⊢ₚ ((q ∨ₚ p) ⊃ₚ (p ∨ₚ q)) := PM.Derivation.star_1_4 q p
+  have syll := star_2_05 p (q ∨ₚ p) (p ∨ₚ q)
+  exact PM.Derivation.detach line1 (PM.Derivation.detach line2 syll)
+
+/-- Audited scope reading of ✱2·21. -/
+def star_2_21_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼p . ⊃ . p ⊃ q"
+  parsed := ∼ₚ p ⊃ₚ (p ⊃ₚ q)
+  scopeReading := "The target is the exact ✱2·2 instance with ∼p in place of p."
+
+def star_2_21_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·2  ∼p/p]"
+
+/-- ✱2·21, exactly the printed substitution instance of ✱2·2. -/
+theorem star_2_21 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ p ⊃ₚ (p ⊃ₚ q)) :=
+  star_2_2 (∼ₚ p) q
+
+/-- Audited scope reading of ✱2·24. -/
+def star_2_24_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . ⊃ . ∼p ⊃ q"
+  parsed := p ⊃ₚ (∼ₚ p ⊃ₚ q)
+  scopeReading := "Comm exchanges the two antecedents in the exact ✱2·21 result."
+
+def star_2_24_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·21.Comm]"
+
+/-- ✱2·24, the printed `✱2·21.Comm` construction. -/
+theorem star_2_24 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ (∼ₚ p ⊃ₚ q)) := by
+  have comm := star_2_04 (∼ₚ p) p q
+  exact PM.Derivation.detach (star_2_21 p q) comm
+
+/-- Audited scope reading of ✱2·25. -/
+def star_2_25_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :· p : ∨ : p ∨ q . ⊃ . q"
+  parsed := p ∨ₚ ((p ∨ₚ q) ⊃ₚ q)
+  scopeReading := "The principal connective is ∨: p ∨ ((p ∨ q) ⊃ q)."
+
+def star_2_25_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "⊢ . ✱2·1 . ⊃ ⊢ : ∼(p ∨ q) . ∨ . (p ∨ q) :; [Assoc.] ⊃ ⊢ : p . ∨ . {∼(p ∨ q) . ∨ . q} : ⊃ ⊢ . Prop"
+
+/-- ✱2·25, preserving the printed ✱2·1 then Assoc construction. -/
+theorem star_2_25 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (p ∨ₚ ((p ∨ₚ q) ⊃ₚ q)) := by
+  have line1 : ⊢ₚ (∼ₚ (p ∨ₚ q) ∨ₚ (p ∨ₚ q)) := star_2_1 (p ∨ₚ q)
+  have assoc := PM.Derivation.star_1_5 (∼ₚ (p ∨ₚ q)) p q
+  exact PM.Derivation.detach line1 assoc
+
+/-- Audited scope reading of ✱2·26. -/
+def star_2_26_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :· ∼p : ∨ : p ⊃ q . ⊃ . q"
+  parsed := ∼ₚ p ∨ₚ ((p ⊃ₚ q) ⊃ₚ q)
+  scopeReading := "This is ✱2·25 with ∼p substituted for p."
+
+def star_2_26_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·25  ∼p/p]"
+
+/-- ✱2·26, exactly the displayed substitution instance of ✱2·25. -/
+theorem star_2_26 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ p ∨ₚ ((p ⊃ₚ q) ⊃ₚ q)) :=
+  star_2_25 (∼ₚ p) q
+
+/-- Audited scope reading of ✱2·27. -/
+def star_2_27_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :· p . ⊃ : p ⊃ q . ⊃ . q"
+  parsed := p ⊃ₚ ((p ⊃ₚ q) ⊃ₚ q)
+  scopeReading := "The outer implication is the ✱1·01 reading of the leading disjunction in ✱2·26."
+
+def star_2_27_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·26]"
+
+/-- ✱2·27, solely the printed ✱1·01 reading of ✱2·26. -/
+theorem star_2_27 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ ((p ⊃ₚ q) ⊃ₚ q)) :=
+  star_2_26 p q
 
 /- PM-VERBATIM-BEGIN PM1:✱2·33
 ✱2·33.  p ∨ q ∨ r .=. (p ∨ q) ∨ r     Df
