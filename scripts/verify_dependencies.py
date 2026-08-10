@@ -24,6 +24,37 @@ class DependencyError(ValueError):
     pass
 
 
+def strip_lean_comments(source: str) -> str:
+    """Remove nested Lean block comments and line comments from source text.
+
+    Dependency extraction concerns the term accepted by Lean, not editorial
+    prose adjacent to it.  Keep strings intact because printed-reading
+    declarations are never audited as theorem bodies.
+    """
+    result: list[str] = []
+    index = 0
+    depth = 0
+    while index < len(source):
+        if source.startswith("/-", index):
+            depth += 1
+            index += 2
+        elif depth and source.startswith("-/", index):
+            depth -= 1
+            index += 2
+        elif depth:
+            index += 1
+        elif source.startswith("--", index):
+            newline = source.find("\n", index)
+            if newline < 0:
+                break
+            result.append("\n")
+            index = newline + 1
+        else:
+            result.append(source[index])
+            index += 1
+    return "".join(result)
+
+
 def pm_order(item_id: str) -> tuple[int, int, Fraction]:
     match = re.fullmatch(r"PM([0-9]+):✱([0-9]+)·([0-9]+)", item_id)
     if not match:
@@ -92,7 +123,9 @@ def extract_lean_dependencies(item: dict, declarations: dict[str, str], root: Pa
         # These are constructors of the Derivation inductive, hence have no
         # proof body and no prior dependencies to extract.
         return []
-    body = declaration_body(root / item["lean_path"], item["declaration"])
+    body = strip_lean_comments(
+        declaration_body(root / item["lean_path"], item["declaration"])
+    )
     aliases = json.loads((root / "metadata/dependency_aliases.json").read_text(encoding="utf-8"))
     candidates = set(declarations) | set(aliases["lean_realizations"]) | KNOWN_BRIDGES
     reject_unindexed_references(item, body, candidates)

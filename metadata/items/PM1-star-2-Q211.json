@@ -1,0 +1,108 @@
+{
+  "batch": "PM1-STAR2-Q211",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "111–112",
+    "scan_leaves": [133, 134],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "aristotle_evidence": {
+    "project_id": "d8fed407-a1f0-4b06-9954-538032392322",
+    "task_id": "80912849-318c-4a65-8854-d0c6605ee550",
+    "archive": "aristotle/results/Q211-final.tar.gz",
+    "sha256": "fb9130274bfcecd6ec20b2f10f920e7dec83ad6e8531ab75e66a029ec1f1e026",
+    "audit": "accepted-awaiting-ci"
+  },
+  "items": [
+    {
+      "id": "PM1:✱2·45",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∼(p ∨ q) . ⊃ . ∼p",
+      "printed_page": 111,
+      "scan_leaf": 133,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_45",
+      "formal_scope": "∼(p ∨ q) ⊃ ∼p, over an elementary real-variable context",
+      "printed_dependencies": ["PM1:✱2·2", "PM1:✱2·16", "PM1:✱1·11"],
+      "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_2", "PM.FirstEdition.Volume1.Star2.star_2_16", "PM.Derivation.detach"],
+      "normalized_dependencies": ["PM1:✱2·2", "PM1:✱2·16", "PM1:✱1·11"],
+      "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The two printed asserted premisses are combined by detachment in the real-variable case."}],
+      "source_status": "double-witness-checked",
+      "formal_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱2·46",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∼(p ∨ q) . ⊃ . ∼q",
+      "printed_page": 111,
+      "scan_leaf": 133,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_46",
+      "formal_scope": "∼(p ∨ q) ⊃ ∼q, over an elementary real-variable context",
+      "printed_dependencies": ["PM1:✱1·3", "PM1:✱2·16", "PM1:✱1·11"],
+      "lean_dependencies": ["PM.Derivation.star_1_3", "PM.FirstEdition.Volume1.Star2.star_2_16", "PM.Derivation.detach"],
+      "normalized_dependencies": ["PM1:✱1·3", "PM1:✱2·16", "PM1:✱1·11"],
+      "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The two printed asserted premisses are combined by detachment in the real-variable case."}],
+      "source_status": "double-witness-checked",
+      "formal_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱2·47",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∼(p ∨ q) . ⊃ . ∼p ∨ q",
+      "printed_page": 112,
+      "scan_leaf": 134,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_47",
+      "formal_scope": "∼(p ∨ q) ⊃ (∼p ∨ q), over an elementary real-variable context",
+      "printed_dependencies": ["PM1:✱2·45", "PM1:✱2·2", "PM1:✱2·05", "PM1:✱1·11"],
+      "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_45", "PM.FirstEdition.Volume1.Star2.star_2_2", "PM.FirstEdition.Volume1.Star2.star_2_05", "PM.Derivation.detach"],
+      "normalized_dependencies": ["PM1:✱2·45", "PM1:✱2·2", "PM1:✱2·05", "PM1:✱1·11"],
+      "substitutions": ["∼p/p"],
+      "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The printed Syll. composition is expanded by ✱2·05 and detachment."}],
+      "source_status": "double-witness-checked",
+      "formal_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱2·48",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∼(p ∨ q) . ⊃ . p ∨ ∼q",
+      "printed_page": 112,
+      "scan_leaf": 134,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_48",
+      "formal_scope": "∼(p ∨ q) ⊃ (p ∨ ∼q), over an elementary real-variable context",
+      "printed_dependencies": ["PM1:✱2·46", "PM1:✱1·3", "PM1:✱2·05", "PM1:✱1·11"],
+      "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_46", "PM.Derivation.star_1_3", "PM.FirstEdition.Volume1.Star2.star_2_05", "PM.Derivation.detach"],
+      "normalized_dependencies": ["PM1:✱2·46", "PM1:✱1·3", "PM1:✱2·05", "PM1:✱1·11"],
+      "substitutions": ["∼q/q"],
+      "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The printed Syll. composition is expanded by ✱2·05 and detachment."}],
+      "source_status": "double-witness-checked",
+      "formal_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱2·49",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∼(p ∨ q) . ⊃ . ∼p ∨ ∼q",
+      "printed_page": 112,
+      "scan_leaf": 134,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_49",
+      "formal_scope": "∼(p ∨ q) ⊃ (∼p ∨ ∼q), over an elementary real-variable context",
+      "printed_dependencies": ["PM1:✱2·45", "PM1:✱2·2", "PM1:✱2·05", "PM1:✱1·11"],
+      "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_45", "PM.FirstEdition.Volume1.Star2.star_2_2", "PM.FirstEdition.Volume1.Star2.star_2_05", "PM.Derivation.detach"],
+      "normalized_dependencies": ["PM1:✱2·45", "PM1:✱2·2", "PM1:✱2·05", "PM1:✱1·11"],
+      "substitutions": ["(∼p, ∼q)/(p, q)"],
+      "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The printed Syll. composition is expanded by ✱2·05 and detachment."}],
+      "source_status": "double-witness-checked",
+      "formal_status": "awaiting-ci"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

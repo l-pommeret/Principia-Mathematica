@@ -355,16 +355,19 @@
         "PM1:✱2·16"
       ],
       "parallel_group": "STAR2-WAVE-3A",
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "aristotle_task_id": "80912849-318c-4a65-8854-d0c6605ee550",
       "aristotle_latest_task_id": "80912849-318c-4a65-8854-d0c6605ee550",
-      "aristotle_latest_task_status": "IN_PROGRESS",
-      "aristotle_remote_status": "IN_PROGRESS",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_project_id": "d8fed407-a1f0-4b06-9954-538032392322",
       "aristotle_request_path": "aristotle/Q211.md",
       "aristotle_request_sha256": "7d32efdaff73a07e80379ba217f6d6aa16e48e6a2c8f89010482c2fbd699624a",
       "aristotle_latest_task_name": "Formalize Q211.md",
-      "aristotle_latest_task_created": "2 mins ago"
+      "aristotle_latest_task_created": "11 mins ago",
+      "aristotle_archive_path": "aristotle/results/Q211-final.tar.gz",
+      "aristotle_archive_sha256": "fb9130274bfcecd6ec20b2f10f920e7dec83ad6e8531ab75e66a029ec1f1e026",
+      "integration_status": "awaiting-ci"
     },
     "Q212": {
       "canonical_ids": [
@@ -406,16 +409,19 @@
         "PM1:✱2·38"
       ],
       "parallel_group": "STAR2-WAVE-3A",
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "aristotle_task_id": "4f032463-a431-465e-86ff-87b0ff8c27f4",
       "aristotle_latest_task_id": "4f032463-a431-465e-86ff-87b0ff8c27f4",
-      "aristotle_latest_task_status": "IN_PROGRESS",
-      "aristotle_remote_status": "IN_PROGRESS",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_project_id": "68d5c1c7-f74c-440e-93f7-080a9a6f95d5",
       "aristotle_request_path": "aristotle/Q213.md",
       "aristotle_request_sha256": "a07da095d1fe4bf37dd14a4c8476c53f0c7aefe4e2875e930e17708caf18779b",
       "aristotle_latest_task_name": "Formalize Q213.md",
-      "aristotle_latest_task_created": "2 mins ago"
+      "aristotle_latest_task_created": "11 mins ago",
+      "aristotle_archive_path": "aristotle/results/Q213-final.tar.gz",
+      "aristotle_archive_sha256": "1c8d71614b081eacf4cc0409af24285810ecde012feed01e0cbc68f35257f95a",
+      "integration_status": "awaiting-ci"
     },
     "Q214": {
       "canonical_ids": [
@@ -1188,6 +1194,193 @@
       ],
       "parallel_group": "STAR4-5-WAVE-3B",
       "aristotle_status": "not-submitted"
+    },
+    "Q245": {
+      "canonical_ids": [
+        "PM1:✱5·18",
+        "PM1:✱5·19",
+        "PM1:✱5·21",
+        "PM1:✱5·22"
+      ],
+      "source": "PM volume I, first edition, pp. 129–130",
+      "prompt_path": "aristotle/Q245.md",
+      "audit_path": "reviews/Q245-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱5·18, ✱5·19, ✱5·21 and ✱5·22",
+      "depends_on": [
+        "PM1:✱4·2",
+        "PM1:✱4·11",
+        "PM1:✱4·39",
+        "PM1:✱4·51",
+        "PM1:✱4·61",
+        "PM1:✱5·1",
+        "PM1:✱5·15",
+        "PM1:✱5·16",
+        "PM1:✱5·17"
+      ],
+      "parallel_group": "STAR5-WAVE-4A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q246": {
+      "canonical_ids": [
+        "PM1:✱5·23",
+        "PM1:✱5·24",
+        "PM1:✱5·25",
+        "PM1:✱5·3"
+      ],
+      "source": "PM volume I, first edition, p. 130",
+      "prompt_path": "aristotle/Q246.md",
+      "audit_path": "reviews/Q246-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱5·23–✱5·25 and ✱5·3",
+      "depends_on": [
+        "PM1:✱2·62",
+        "PM1:✱2·68",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·33",
+        "PM1:✱3·34",
+        "PM1:✱3·43",
+        "PM1:✱4·13",
+        "PM1:✱4·36",
+        "PM1:✱5·18",
+        "PM1:✱5·22"
+      ],
+      "parallel_group": "STAR5-WAVE-4B",
+      "aristotle_status": "not-submitted"
+    },
+    "Q247": {
+      "canonical_ids": [
+        "PM1:✱5·31",
+        "PM1:✱5·32",
+        "PM1:✱5·33",
+        "PM1:✱5·35",
+        "PM1:✱5·36"
+      ],
+      "source": "PM volume I, first edition, p. 130",
+      "prompt_path": "aristotle/Q247.md",
+      "audit_path": "reviews/Q247-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱5·31–✱5·36",
+      "depends_on": [
+        "PM1:✱3·3",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·31",
+        "PM1:✱3·35",
+        "PM1:✱3·43",
+        "PM1:✱4·38",
+        "PM1:✱4·73",
+        "PM1:✱4·76",
+        "PM1:✱4·84",
+        "PM1:✱5·1",
+        "PM1:✱5·3"
+      ],
+      "parallel_group": "STAR5-WAVE-4C",
+      "aristotle_status": "not-submitted"
+    },
+    "Q248": {
+      "canonical_ids": [
+        "PM1:✱5·4",
+        "PM1:✱5·41",
+        "PM1:✱5·42",
+        "PM1:✱5·44"
+      ],
+      "source": "PM volume I, first edition, p. 130",
+      "prompt_path": "aristotle/Q248.md",
+      "audit_path": "reviews/Q248-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱5·4, ✱5·41, ✱5·42 and ✱5·44",
+      "depends_on": [
+        "PM1:✱2·43",
+        "PM1:✱2·77",
+        "PM1:✱2·86",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱4·76",
+        "PM1:✱4·87",
+        "PM1:✱5·3",
+        "PM1:✱5·32"
+      ],
+      "parallel_group": "STAR5-WAVE-4D",
+      "aristotle_status": "not-submitted"
+    },
+    "Q249": {
+      "canonical_ids": [
+        "PM1:✱5·5",
+        "PM1:✱5·501",
+        "PM1:✱5·53",
+        "PM1:✱5·54"
+      ],
+      "source": "PM volume I, first edition, p. 130",
+      "prompt_path": "aristotle/Q249.md",
+      "audit_path": "reviews/Q249-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱5·5, ✱5·501, ✱5·53 and ✱5·54",
+      "depends_on": [
+        "PM1:✱2·16",
+        "PM1:✱2·17",
+        "PM1:✱3·3",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·35",
+        "PM1:✱4·44",
+        "PM1:✱4·73",
+        "PM1:✱4·77",
+        "PM1:✱5·1"
+      ],
+      "parallel_group": "STAR5-WAVE-4D",
+      "aristotle_status": "not-submitted"
+    },
+    "Q250": {
+      "canonical_ids": [
+        "PM1:✱5·55",
+        "PM1:✱5·6",
+        "PM1:✱5·61",
+        "PM1:✱5·62"
+      ],
+      "source": "PM volume I, first edition, p. 130",
+      "prompt_path": "aristotle/Q250.md",
+      "audit_path": "reviews/Q250-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱5·55, ✱5·6, ✱5·61 and ✱5·62",
+      "depends_on": [
+        "PM1:✱1·3",
+        "PM1:✱4·7",
+        "PM1:✱4·64",
+        "PM1:✱4·74",
+        "PM1:✱4·85",
+        "PM1:✱4·87",
+        "PM1:✱5·1",
+        "PM1:✱5·32"
+      ],
+      "parallel_group": "STAR5-WAVE-4D",
+      "aristotle_status": "not-submitted"
+    },
+    "Q251": {
+      "canonical_ids": [
+        "PM1:✱5·63",
+        "PM1:✱5·7",
+        "PM1:✱5·71"
+      ],
+      "source": "PM volume I, first edition, pp. 130–131",
+      "prompt_path": "aristotle/Q251.md",
+      "audit_path": "reviews/Q251-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱5·63, ✱5·7 and ✱5·71",
+      "depends_on": [
+        "PM1:✱1·3",
+        "PM1:✱4·4",
+        "PM1:✱4·22",
+        "PM1:✱4·37",
+        "PM1:✱4·51",
+        "PM1:✱4·62",
+        "PM1:✱4·74",
+        "PM1:✱5·1",
+        "PM1:✱5·62"
+      ],
+      "parallel_group": "STAR5-WAVE-4E",
+      "aristotle_status": "not-submitted"
     }
   },
   "editorial_tracks": {
@@ -1428,6 +1621,42 @@
     "PM1:✱2·43": {
       "batch": "PM1-STAR2-Q210",
       "status": "kernel-checked"
+    },
+    "PM1:✱2·45": {
+      "batch": "PM1-STAR2-Q211",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·46": {
+      "batch": "PM1-STAR2-Q211",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·47": {
+      "batch": "PM1-STAR2-Q211",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·48": {
+      "batch": "PM1-STAR2-Q211",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·49": {
+      "batch": "PM1-STAR2-Q211",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·53": {
+      "batch": "PM1-STAR2-Q213",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·54": {
+      "batch": "PM1-STAR2-Q213",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·55": {
+      "batch": "PM1-STAR2-Q213",
+      "status": "awaiting-ci"
+    },
+    "PM1:✱2·56": {
+      "batch": "PM1-STAR2-Q213",
+      "status": "awaiting-ci"
     }
   }
 }

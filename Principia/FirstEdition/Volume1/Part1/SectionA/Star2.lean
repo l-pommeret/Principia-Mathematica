@@ -1318,4 +1318,206 @@ theorem star_2_43 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ⊃ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ q)) :=
   star_2_42 p q
 
+/- PM-VERBATIM-BEGIN PM1:✱2·45
+✱2·45.  ⊢ : ∼(p ∨ q) . ⊃ . ∼p                    [✱2·2.Transp.]
+PM-VERBATIM-END PM1:✱2·45 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·46
+✱2·46.  ⊢ : ∼(p ∨ q) . ⊃ . ∼q                    [✱1·3.Transp.]
+PM-VERBATIM-END PM1:✱2·46 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·47
+✱2·47.  ⊢ : ∼(p ∨ q) . ⊃ . ∼p ∨ q                [✱2·45.✱2·2  ∼p/p.Syll.]
+PM-VERBATIM-END PM1:✱2·47 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·48
+✱2·48.  ⊢ : ∼(p ∨ q) . ⊃ . p ∨ ∼q                [✱2·46.✱1·3  ∼q/q.Syll.]
+PM-VERBATIM-END PM1:✱2·48 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·49
+✱2·49.  ⊢ : ∼(p ∨ q) . ⊃ . ∼p ∨ ∼q               [✱2·45.✱2·2  (∼p, ∼q)/(p, q).Syll.]
+PM-VERBATIM-END PM1:✱2·49 -/
+
+/- PM-FORMAL-GLOSS
+✱2·45 and ✱2·46 detach the printed antecedent propositions from Transp.
+(✱2·16).  The remaining three propositions preserve the printed Syll.
+compositions, expanded through ✱2·05 and metalinguistic detachment.  Lean
+parameters perform only the substitutions displayed by PM.
+-/
+
+/- PM-EDITORIAL
+Source for ✱2·45–✱2·49:
+- scan, printed pp. 111–112: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/133 and /134
+- working witnesses: Project Gutenberg ebook 78050 and Wikisource
+Verification status: double-witness-checked and collated directly against the
+facsimile; the source and formal audit is recorded in `reviews/Q211-review.md`.
+No `sic`, `corr.`, or `conj.` entry is required.
+-/
+
+/-! ## Q211: audited scope readings and formal derivations -/
+
+def star_2_45_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼(p ∨ q) . ⊃ . ∼p"
+  parsed := ∼ₚ (p ∨ₚ q) ⊃ₚ ∼ₚ p
+  scopeReading := "The antecedent is the negation of the complete disjunction p ∨ q."
+
+def star_2_45_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·2.Transp.]"
+
+theorem star_2_45 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ (p ∨ₚ q) ⊃ₚ ∼ₚ p) := by
+  exact PM.Derivation.detach (star_2_2 p q) (star_2_16 p (p ∨ₚ q))
+
+def star_2_46_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼(p ∨ q) . ⊃ . ∼q"
+  parsed := ∼ₚ (p ∨ₚ q) ⊃ₚ ∼ₚ q
+  scopeReading := "The antecedent is the negation of the complete disjunction p ∨ q."
+
+def star_2_46_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱1·3.Transp.]"
+
+theorem star_2_46 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ (p ∨ₚ q) ⊃ₚ ∼ₚ q) := by
+  exact PM.Derivation.detach (PM.Derivation.star_1_3 p q)
+    (star_2_16 q (p ∨ₚ q))
+
+def star_2_47_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼(p ∨ q) . ⊃ . ∼p ∨ q"
+  parsed := ∼ₚ (p ∨ₚ q) ⊃ₚ (∼ₚ p ∨ₚ q)
+  scopeReading := "The outer consequent is the disjunction ∼p ∨ q."
+
+def star_2_47_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·45.✱2·2 ∼p/p.Syll.]"
+
+theorem star_2_47 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ (p ∨ₚ q) ⊃ₚ (∼ₚ p ∨ₚ q)) := by
+  exact PM.Derivation.detach (star_2_45 p q)
+    (PM.Derivation.detach (star_2_2 (∼ₚ p) q)
+      (star_2_05 (∼ₚ (p ∨ₚ q)) (∼ₚ p) (∼ₚ p ∨ₚ q)))
+
+def star_2_48_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼(p ∨ q) . ⊃ . p ∨ ∼q"
+  parsed := ∼ₚ (p ∨ₚ q) ⊃ₚ (p ∨ₚ ∼ₚ q)
+  scopeReading := "The outer consequent is the disjunction p ∨ ∼q."
+
+def star_2_48_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·46.✱1·3 ∼q/q.Syll.]"
+
+theorem star_2_48 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ (p ∨ₚ q) ⊃ₚ (p ∨ₚ ∼ₚ q)) := by
+  exact PM.Derivation.detach (star_2_46 p q)
+    (PM.Derivation.detach (PM.Derivation.star_1_3 p (∼ₚ q))
+      (star_2_05 (∼ₚ (p ∨ₚ q)) (∼ₚ q) (p ∨ₚ ∼ₚ q)))
+
+def star_2_49_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼(p ∨ q) . ⊃ . ∼p ∨ ∼q"
+  parsed := ∼ₚ (p ∨ₚ q) ⊃ₚ (∼ₚ p ∨ₚ ∼ₚ q)
+  scopeReading := "The outer consequent is the disjunction ∼p ∨ ∼q."
+
+def star_2_49_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·45.✱2·2 (∼p, ∼q)/(p, q).Syll.]"
+
+theorem star_2_49 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ (p ∨ₚ q) ⊃ₚ (∼ₚ p ∨ₚ ∼ₚ q)) := by
+  exact PM.Derivation.detach (star_2_45 p q)
+    (PM.Derivation.detach (star_2_2 (∼ₚ p) (∼ₚ q))
+      (star_2_05 (∼ₚ (p ∨ₚ q)) (∼ₚ p) (∼ₚ p ∨ₚ ∼ₚ q)))
+
+/- PM-VERBATIM-BEGIN PM1:✱2·53
+✱2·53.  ⊢ : p ∨ q . ⊃ . ∼p ⊃ q
+
+Dem.
+
+        ⊢ .✱2·12·38. ⊃ ⊢ : p ∨ q . ⊃ . ∼(∼p) ∨ q : ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱2·53 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·54
+✱2·54.  ⊢ : ∼p ⊃ q . ⊃ . p ∨ q                    [✱2·14·38]
+PM-VERBATIM-END PM1:✱2·54 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·55
+✱2·55.  ⊢ :. ∼p . ⊃ : p ∨ q . ⊃ . q               [✱2·53.Comm]
+PM-VERBATIM-END PM1:✱2·55 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·56
+✱2·56.  ⊢ :. ∼q . ⊃ : p ∨ q . ⊃ . p               [✱2·55 (q, p)/(p, q).Perm]
+PM-VERBATIM-END PM1:✱2·56 -/
+
+/- PM-FORMAL-GLOSS
+✱2·53 and ✱2·54 lift exactly the printed propositions ✱2·12 and ✱2·14 by
+✱2·38, preserving direction.  ✱2·55 applies Comm (✱2·04) to ✱2·53.
+For ✱2·56, Lean instantiates ✱2·55 at `(q, p)` and expands the printed Perm
+step using primitive Perm (✱1·4), Syll. (✱2·05/✱2·06), and detachment.
+-/
+
+/- PM-EDITORIAL
+Source for ✱2·53–✱2·56:
+- scan, printed p. 112: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/134
+- working witnesses: Project Gutenberg ebook 78050 and Wikisource
+Verification status: double-witness-checked and collated directly against the
+facsimile; the source and formal audit is recorded in `reviews/Q213-review.md`.
+No `sic`, `corr.`, or `conj.` entry is required.
+-/
+
+/-! ## Q213: audited scope readings and formal derivations -/
+
+def star_2_53_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ q . ⊃ . ∼p ⊃ q"
+  parsed := (p ∨ₚ q) ⊃ₚ (∼ₚ p ⊃ₚ q)
+  scopeReading := "The antecedent is p ∨ q; the consequent is ∼p ⊃ q."
+
+def star_2_53_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "⊢ .✱2·12·38. ⊃ ⊢ : p ∨ q . ⊃ . ∼(∼p) ∨ q : ⊃ ⊢ . Prop"
+
+theorem star_2_53 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ q) ⊃ₚ (∼ₚ p ⊃ₚ q)) := by
+  have lift : ⊢ₚ ((p ⊃ₚ ∼ₚ (∼ₚ p)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (∼ₚ (∼ₚ p) ∨ₚ q))) :=
+    star_2_38 q p (∼ₚ (∼ₚ p))
+  exact PM.Derivation.detach (star_2_12 p) lift
+
+def star_2_54_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼p ⊃ q . ⊃ . p ∨ q"
+  parsed := (∼ₚ p ⊃ₚ q) ⊃ₚ (p ∨ₚ q)
+  scopeReading := "The antecedent is ∼p ⊃ q; the consequent is p ∨ q."
+
+def star_2_54_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·14·38]"
+
+theorem star_2_54 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((∼ₚ p ⊃ₚ q) ⊃ₚ (p ∨ₚ q)) := by
+  have lift : ⊢ₚ ((∼ₚ (∼ₚ p) ⊃ₚ p) ⊃ₚ ((∼ₚ (∼ₚ p) ∨ₚ q) ⊃ₚ (p ∨ₚ q))) :=
+    star_2_38 q (∼ₚ (∼ₚ p)) p
+  exact PM.Derivation.detach (star_2_14 p) lift
+
+def star_2_55_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. ∼p . ⊃ : p ∨ q . ⊃ . q"
+  parsed := ∼ₚ p ⊃ₚ ((p ∨ₚ q) ⊃ₚ q)
+  scopeReading := "The outer antecedent is ∼p; its consequent is (p ∨ q) ⊃ q."
+
+def star_2_55_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·53.Comm]"
+
+theorem star_2_55 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ p ⊃ₚ ((p ∨ₚ q) ⊃ₚ q)) := by
+  exact PM.Derivation.detach (star_2_53 p q) (star_2_04 (p ∨ₚ q) (∼ₚ p) q)
+
+def star_2_56_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. ∼q . ⊃ : p ∨ q . ⊃ . p"
+  parsed := ∼ₚ q ⊃ₚ ((p ∨ₚ q) ⊃ₚ p)
+  scopeReading := "The outer antecedent is ∼q; its consequent is (p ∨ q) ⊃ p."
+
+def star_2_56_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·55 (q, p)/(p, q).Perm]"
+
+theorem star_2_56 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ q ⊃ₚ ((p ∨ₚ q) ⊃ₚ p)) := by
+  have inst : ⊢ₚ (∼ₚ q ⊃ₚ ((q ∨ₚ p) ⊃ₚ p)) := star_2_55 q p
+  have perm : ⊢ₚ ((p ∨ₚ q) ⊃ₚ (q ∨ₚ p)) := PM.Derivation.star_1_4 p q
+  have syll : ⊢ₚ (((q ∨ₚ p) ⊃ₚ p) ⊃ₚ ((p ∨ₚ q) ⊃ₚ p)) :=
+    PM.Derivation.detach perm (star_2_06 (p ∨ₚ q) (q ∨ₚ p) p)
+  have lift : ⊢ₚ ((∼ₚ q ⊃ₚ ((q ∨ₚ p) ⊃ₚ p)) ⊃ₚ (∼ₚ q ⊃ₚ ((p ∨ₚ q) ⊃ₚ p))) :=
+    PM.Derivation.detach syll
+      (star_2_05 (∼ₚ q) ((q ∨ₚ p) ⊃ₚ p) ((p ∨ₚ q) ⊃ₚ p))
+  exact PM.Derivation.detach inst lift
+
 end PM.FirstEdition.Volume1.Star2

@@ -1,9 +1,10 @@
 # Audit Q211 — PM I, ✱2·45–✱2·49
 
-Verdict: **A — prêt pour soumission**. Texte, AST et graphe audités; Q205,
-Q206 et Q210 ainsi que leur clôture de dépendances sont désormais certifiés
-par GitHub CI. Le prompt autonome reproduit les véritables corps Lean du
-dépôt, sans postuler aucun résultat antérieur.
+Verdict: **A — réponse Aristotle acceptée, en attente de CI**. L'archive
+immuable `aristotle/results/Q211-final.tar.gz` a l'empreinte SHA-256
+`fb9130274bfcecd6ec20b2f10f920e7dec83ad6e8531ab75e66a029ec1f1e026`.
+Elle contient exactement les cinq cibles ✱2·45–✱2·49, sans modification de
+leurs énoncés. Texte, AST et graphe ont été audités contre l'imprimé.
 
 Sources canoniques: première édition, vol. I, pp. 111–112, feuilles 133–134.
 SHA-256 des JPEG Wikimedia 1920 px: feuille 133
@@ -17,8 +18,20 @@ formes prouvées de Transp.; les trois suivantes sont les Syll. imprimés.
 `Transp` et `Syll` ne sont pas de nouveaux constructeurs. Aucun défaut de
 l'imprimé ni divergence substantielle des témoins n'est établi. Confiance haute.
 
-Audit du prompt: cinq cibles et seulement cinq, ✱2·45–✱2·49. Les corps
-certifiés de ✱2·03–✱2·08, ✱2·1, ✱2·11, ✱2·12, ✱2·16 et ✱2·2 fournissent une
-clôture autonome. La notation `∨ₚ` associe à gauche conformément à ✱2·33 et
-`detach` est le corps certifié distinguant ✱1·1 de ✱1·11. Aucun `sorry`,
-`admit`, axiome auxiliaire, `unsafe` ou recours à `Classical` n'est fourni.
+Audit formel: cinq cibles et seulement cinq, ✱2·45–✱2·49. Les corps intégrés
+emploient les déclarations Q205/Q206 déjà kernel-checkées du dépôt, et non des
+axiomes ni les copies autonomes de l'archive. ✱2·45 et ✱2·46 utilisent
+exactement Transp. (✱2·16); ✱2·47–✱2·49 développent chacun le Syll. imprimé
+par ✱2·05 et `detach`. Les substitutions imprimées restent des instanciations
+de paramètres Lean, sans règle générique ajoutée.
+
+Aucun `sorry`, `admit`, `unsafe`, nouvel axiome, appel à `Classical`, preuve
+sémantique ou cible supplémentaire n'apparaît dans le fichier de réponse.
+La notation `∨ₚ` associe à gauche conformément à ✱2·33 et `detach` conserve
+la distinction métalinguistique entre ✱1·1 et ✱1·11. Les dépendances exactes
+sont consignées dans `metadata/items/PM1-star-2-Q211.json`.
+
+L'archive autonome d'Aristotle utilise Lean 4.28.0 malgré la demande 4.30.0;
+elle est donc une réponse à auditer, non une certification du dépôt. Le lot
+intégré reste explicitement `awaiting-ci` jusqu'à la vérification GitHub avec
+la version Lean épinglée du dépôt.
