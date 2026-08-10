@@ -13,7 +13,7 @@
     "task_id": "16e2d599-50fc-4908-818a-7cd46f1ba7e9",
     "archive": "aristotle/results/Q204-final.tar.gz",
     "sha256": "4e2893472492ddf637083af934a3e1cf1796dbd2334b6113bd25e55442af8554",
-    "audit": "accepted-awaiting-ci"
+    "audit": "accepted-kernel-checked"
   },
   "items": [
     {
@@ -29,7 +29,7 @@
       "lean_dependencies": ["PM.Derivation.star_1_4", "PM.FirstEdition.Volume1.Star2.star_2_1", "PM.Derivation.detach"],
       "normalized_dependencies": ["PM1:✱1·4", "PM1:✱2·1", "PM1:✱1·11"],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·12",
@@ -51,7 +51,7 @@
         }
       ],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·13",
@@ -66,7 +66,7 @@
       "lean_dependencies": ["PM.Derivation.star_1_6", "PM.FirstEdition.Volume1.Star2.star_2_12", "PM.Derivation.detach", "PM.FirstEdition.Volume1.Star2.star_2_11"],
       "normalized_dependencies": ["PM1:✱1·6", "PM1:✱2·12", "PM1:✱1·11", "PM1:✱2·11"],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·14",
@@ -88,12 +88,12 @@
         }
       ],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "76e47f4442c398020fca7f3bbdcf095d5a12abaf",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31415776030",
+    "conclusion": "success"
   }
 }
