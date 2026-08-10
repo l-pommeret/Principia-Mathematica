@@ -285,6 +285,124 @@ only that digital-witness error; it is not an emendation of PM. No `sic`,
 `corr.`, or `conj.` entry concerning the printed edition is required.
 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱2·15
+✱2·15.  ⊢ : ∼p ⊃ q . ⊃ . ∼q ⊃ p
+
+Dem.
+
+ [✱2·05  (∼p, ∼(∼q))/(p, r)]
+      ⊢ :. q ⊃ ∼(∼q) . ⊃ : ∼p ⊃ q . ⊃ . ∼p ⊃ ∼(∼q)          (1)
+ [✱2·12  q/p]  ⊢ . q ⊃ ∼(∼q)                                (2)
+ [(1).(2).✱1·11]
+      ⊢ : ∼p ⊃ q . ⊃ . ∼p ⊃ ∼(∼q)                           (3)
+ [✱2·03  (∼p, ∼q)/(p, q)]
+      ⊢ : ∼p ⊃ ∼(∼q) . ⊃ . ∼q ⊃ ∼(∼p)                       (4)
+ [✱2·05  (∼q, ∼(∼p), p)/(p, q, r)]
+      ⊢ :. ∼(∼p) ⊃ p . ⊃ : ∼q ⊃ ∼(∼p) . ⊃ . ∼q ⊃ p          (5)
+ [(5).✱2·14.✱1·11]
+      ⊢ : ∼q ⊃ ∼(∼p) . ⊃ . ∼q ⊃ p                           (6)
+ [✱2·05  (∼p ⊃ q, ∼p ⊃ ∼(∼q), ∼q ⊃ ∼(∼p))/(p, q, r)]
+      ⊢ :: ∼p ⊃ ∼(∼q) . ⊃ . ∼q ⊃ ∼(∼p) : ⊃ :.
+             ∼p ⊃ q . ⊃ . ∼p ⊃ ∼(∼q) : ⊃ :
+             ∼p ⊃ q . ⊃ . ∼q ⊃ ∼(∼p)                       (7)
+ [(4).(7).✱1·11]
+      ⊢ :. ∼p ⊃ q . ⊃ . ∼p ⊃ ∼(∼q) : ⊃ :
+             ∼p ⊃ q . ⊃ . ∼q ⊃ ∼(∼p)                       (8)
+ [(3).(8).✱1·11]
+      ⊢ : ∼p ⊃ q . ⊃ . ∼q ⊃ ∼(∼p)                           (9)
+ [✱2·05  (∼p ⊃ q, ∼q ⊃ ∼(∼p), ∼q ⊃ p)/(p, q, r)]
+      ⊢ :: ∼q ⊃ ∼(∼p) . ⊃ . ∼q ⊃ p : ⊃ :.
+             ∼p ⊃ q . ⊃ . ∼q ⊃ ∼(∼p) : ⊃ :
+             ∼p ⊃ q . ⊃ . ∼q ⊃ p                            (10)
+ [(6).(10).✱1·11]
+      ⊢ :. ∼p ⊃ q . ⊃ . ∼q ⊃ ∼(∼p) : ⊃ :
+             ∼p ⊃ q . ⊃ . ∼q ⊃ p                            (11)
+ [(9).(11).✱1·11]  ⊢ : ∼p ⊃ q . ⊃ . ∼q ⊃ p
+
+Note on the proof of ✱2·15. In the above proof, it will be seen that (3),
+(4), (6) are respectively of the forms p₁ ⊃ p₂, p₂ ⊃ p₃, p₃ ⊃ p₄, where
+p₁ ⊃ p₄ is the proposition to be proved. From p₁ ⊃ p₂, p₂ ⊃ p₃, p₃ ⊃ p₄
+the proposition p₁ ⊃ p₄ results by repeated applications of ✱2·05 or ✱2·06
+(both of which are called “Syll.”). It is tedious and unnecessary to repeat
+this process every time it is used; it will therefore be abbreviated into
+“[Syll.] ⊢ .(a).(b).(c). ⊃ ⊢ .(d),” where (a) is of the form p₁ ⊃ p₂, (b)
+of the form p₂ ⊃ p₃, (c) of the form p₃ ⊃ p₄, and (d) of the form p₁ ⊃ p₄.
+The same abbreviation will be applied to a sorites of any length. Also where
+we have “⊢ .p₁ .⊃ [etc.] ⊢ .p₂,” and p₂ is the proposition to be proved, it
+is convenient to write simply “⊢ .p₁ .⊃ [etc.] ⊢ .p₂,” where “etc.” will be
+a reference to the previous propositions in virtue of which the implication
+p₁ ⊃ p₂ holds. This form embodies the use of ✱1·11 or ✱1·1, and makes many
+proofs at once shorter and easier to follow. It is used in the first two lines
+of the following proof.
+PM-VERBATIM-END PM1:✱2·15 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·16
+✱2·16.  ⊢ : p ⊃ q . ⊃ . ∼q ⊃ ∼p
+
+Dem.
+
+ [✱2·12]  ⊢ . q ⊃ ∼(∼q) . ⊃
+ [✱2·05]  ⊢ : p ⊃ q . ⊃ . p ⊃ ∼(∼q)                         (1)
+ [✱2·03  ∼q/q]
+           ⊢ : p ⊃ ∼(∼q) . ⊃ . ∼q ⊃ ∼p                     (2)
+ [Syll.]   ⊢ .(1).(2). ⊃ ⊢ : p ⊃ q . ⊃ . ∼q ⊃ ∼p
+
+Note. The proposition to be proved will be called “Prop,” and when a proof
+ends, like that of ✱2·16, by an implication between asserted propositions, of
+which the consequent is the proposition to be proved, we shall write
+“⊢ .etc. ⊃ ⊢ .Prop”. Thus “⊃ ⊢ .Prop” ends a proof, and more or less
+corresponds to “q.e.d.”
+PM-VERBATIM-END PM1:✱2·16 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·17
+✱2·17.  ⊢ : ∼q ⊃ ∼p . ⊃ . p ⊃ q
+
+Dem.
+
+ [✱2·03  (∼q, p)/(p, q)]
+           ⊢ : ∼q ⊃ ∼p . ⊃ . p ⊃ ∼(∼q)                     (1)
+ [✱2·14]  ⊢ : ∼(∼q) ⊃ q : ⊃
+ [✱2·05]  ⊢ : p ⊃ ∼(∼q) . ⊃ . p ⊃ q                        (2)
+ [Syll.]   ⊢ .(1).(2). ⊃ ⊢ .Prop
+
+✱2·15, ✱2·16 and ✱2·17 are forms of the principle of transposition, and
+will be all referred to as “Transp.”
+PM-VERBATIM-END PM1:✱2·17 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·18
+✱2·18.  ⊢ : ∼p ⊃ p . ⊃ . p
+
+Dem.
+
+ [✱2·12]  ⊢ . p ⊃ ∼(∼p) . ⊃
+ [✱2·05]  ⊢ . ∼p ⊃ p . ⊃ . ∼p ⊃ ∼(∼p)                      (1)
+ [✱2·01  ∼p/p]
+           ⊢ : ∼p ⊃ ∼(∼p) . ⊃ . ∼(∼p)                     (2)
+ [Syll.]   ⊢ .(1).(2). ⊃ ⊢ : ∼p ⊃ p . ⊃ . ∼(∼p)            (3)
+ [✱2·14]  ⊢ . ∼(∼p) ⊃ p                                   (4)
+ [Syll.]   ⊢ .(3).(4). ⊃ ⊢ .Prop
+
+This is the complement of the principle of the reductio ad absurdum. It
+states that a proposition which follows from the hypothesis of its own
+falsehood is true.
+PM-VERBATIM-END PM1:✱2·18 -/
+
+/- PM-FORMAL-GLOSS
+The four proofs preserve every displayed PM step. The long demonstration of
+✱2·15 is retained rather than replaced by the later abbreviation Transp.;
+each Syll. in ✱2·16–✱2·18 is expanded through ✱2·06 and detachment.
+-/
+
+/- PM-EDITORIAL
+Source for ✱2·15–✱2·18:
+- scan, printed pp. 106–108: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/128 through /130
+- working witnesses: Project Gutenberg ebook 78050 and Wikisource
+Verification status: double-witness-checked and collated directly against the
+facsimile; the source and formal audit is recorded in `reviews/Q205-review.md`.
+The four divergences recorded there are errors of the Gutenberg digital
+witness, not of the 1910 impression; no `sic`, `corr.`, or `conj.` is attached.
+-/
+
 /-! ## Printed syntax and audited scope readings -/
 
 /-- Audited scope reading of ✱2·01. -/
@@ -488,6 +606,90 @@ theorem star_2_14 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
     ⊢ₚ (∼ₚ (∼ₚ p) ⊃ₚ p) := by
   have hperm := PM.Derivation.star_1_4 p (∼ₚ (∼ₚ (∼ₚ p)))
   exact PM.Derivation.detach (star_2_13 p) hperm
+
+/-- Audited scope reading of ✱2·15. -/
+def star_2_15_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼p ⊃ q . ⊃ . ∼q ⊃ p"
+  parsed := (∼ₚ p ⊃ₚ q) ⊃ₚ (∼ₚ q ⊃ₚ p)
+  scopeReading := "The dot hierarchy groups the two displayed implications as antecedent and consequent."
+
+def star_2_15_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "✱2·05 (1); ✱2·12 (2); detach (3); ✱2·03 (4); ✱2·05 (5); detach (6); ✱2·05 (7); detach (8),(9); ✱2·05 (10); detach (11), Prop"
+
+/-- PM ✱2·15, retaining the complete printed eleven-line sorites. -/
+theorem star_2_15 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((∼ₚ p ⊃ₚ q) ⊃ₚ (∼ₚ q ⊃ₚ p)) := by
+  have line1 := star_2_05 (∼ₚ p) q (∼ₚ (∼ₚ q))
+  have line2 := star_2_12 q
+  have line3 := PM.Derivation.detach line2 line1
+  have line4 := star_2_03 (∼ₚ p) (∼ₚ q)
+  have line5 := star_2_05 (∼ₚ q) (∼ₚ (∼ₚ p)) p
+  have line6 := PM.Derivation.detach (star_2_14 p) line5
+  have line7 := star_2_05 (∼ₚ p ⊃ₚ q) (∼ₚ p ⊃ₚ ∼ₚ (∼ₚ q))
+    (∼ₚ q ⊃ₚ ∼ₚ (∼ₚ p))
+  have line8 := PM.Derivation.detach line4 line7
+  have line9 := PM.Derivation.detach line3 line8
+  have line10 := star_2_05 (∼ₚ p ⊃ₚ q) (∼ₚ q ⊃ₚ ∼ₚ (∼ₚ p)) (∼ₚ q ⊃ₚ p)
+  have line11 := PM.Derivation.detach line6 line10
+  exact PM.Derivation.detach line9 line11
+
+/-- Audited scope reading of ✱2·16. -/
+def star_2_16_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ q . ⊃ . ∼q ⊃ ∼p"
+  parsed := (p ⊃ₚ q) ⊃ₚ (∼ₚ q ⊃ₚ ∼ₚ p)
+  scopeReading := "The proposition is the first displayed form of Transp."
+
+def star_2_16_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·12] ⊃ [✱2·05] (1); [✱2·03 ∼q/q] (2); [Syll.] ⊢ .(1).(2). ⊃ ⊢ .Prop"
+
+theorem star_2_16 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ q) ⊃ₚ (∼ₚ q ⊃ₚ ∼ₚ p)) := by
+  have line1 := PM.Derivation.detach (star_2_12 q)
+    (star_2_05 p q (∼ₚ (∼ₚ q)))
+  have line2 := star_2_03 p (∼ₚ q)
+  have syll := PM.Derivation.detach line1
+    (star_2_06 (p ⊃ₚ q) (p ⊃ₚ ∼ₚ (∼ₚ q)) (∼ₚ q ⊃ₚ ∼ₚ p))
+  exact PM.Derivation.detach line2 syll
+
+/-- Audited scope reading of ✱2·17. -/
+def star_2_17_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼q ⊃ ∼p . ⊃ . p ⊃ q"
+  parsed := (∼ₚ q ⊃ₚ ∼ₚ p) ⊃ₚ (p ⊃ₚ q)
+  scopeReading := "The proposition is the converse transposition form."
+
+def star_2_17_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·03 (∼q, p)/(p, q)] (1); [✱2·14] ⊃ [✱2·05] (2); [Syll.] ⊢ .Prop"
+
+theorem star_2_17 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((∼ₚ q ⊃ₚ ∼ₚ p) ⊃ₚ (p ⊃ₚ q)) := by
+  have line1 := star_2_03 (∼ₚ q) p
+  have line2 := PM.Derivation.detach (star_2_14 q)
+    (star_2_05 p (∼ₚ (∼ₚ q)) q)
+  have syll := PM.Derivation.detach line1
+    (star_2_06 (∼ₚ q ⊃ₚ ∼ₚ p) (p ⊃ₚ ∼ₚ (∼ₚ q)) (p ⊃ₚ q))
+  exact PM.Derivation.detach line2 syll
+
+/-- Audited scope reading of ✱2·18. -/
+def star_2_18_reading (p : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼p ⊃ p . ⊃ . p"
+  parsed := (∼ₚ p ⊃ₚ p) ⊃ₚ p
+  scopeReading := "The antecedent is ∼p ⊃ p and the consequent is p."
+
+def star_2_18_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·12] ⊃ [✱2·05] (1); [✱2·01 ∼p/p] (2); [Syll.] (3); [✱2·14] (4); [Syll.] ⊢ .Prop"
+
+theorem star_2_18 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ ((∼ₚ p ⊃ₚ p) ⊃ₚ p) := by
+  have line1 := PM.Derivation.detach (star_2_12 p)
+    (star_2_05 (∼ₚ p) p (∼ₚ (∼ₚ p)))
+  have line2 := star_2_01 (∼ₚ p)
+  have syll1 := PM.Derivation.detach line1
+    (star_2_06 (∼ₚ p ⊃ₚ p) (∼ₚ p ⊃ₚ ∼ₚ (∼ₚ p)) (∼ₚ (∼ₚ p)))
+  have line3 := PM.Derivation.detach line2 syll1
+  have line4 := star_2_14 p
+  have syll2 := PM.Derivation.detach line3
+    (star_2_06 (∼ₚ p ⊃ₚ p) (∼ₚ (∼ₚ p)) p)
+  exact PM.Derivation.detach line4 syll2
 
 /- PM-VERBATIM-BEGIN PM1:✱2·33
 ✱2·33.  p ∨ q ∨ r .=. (p ∨ q) ∨ r     Df

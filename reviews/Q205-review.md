@@ -168,3 +168,24 @@ Q202, Q203 et Q204 reproduits dans son prompt soient présents dans le fichier
 canonique, vérifiés sans `sorry`, `admit`, axiome ajouté ou échappatoire
 `unsafe`, et certifiés par GitHub CI. Confiance élevée sur les quatre énoncés,
 les démonstrations, le sorite, les notes anglaises et les divergences PG.
+
+## Audit du résultat Aristotle
+
+Projet `4f862879-a48c-4ade-bc5f-4d829cd11c49`, tâche
+`c9767f09-c065-47b7-b7e4-219df760cdab`, état terminal `COMPLETE`. L'archive
+immuable `aristotle/results/Q205-final.tar.gz` porte le SHA-256
+`404b741e8fcad61a2e25fd57f11eb2b9c872a95c2d01a474d2e0faa418019634`.
+
+Couverture acceptée: les quatre énoncés exacts ✱2·15–✱2·18 et chaque ligne
+imprimée de leurs démonstrations sont présents. Le fichier cible n'emploie ni
+`sorry`, `admit`, nouvel axiome, déclaration `unsafe`, `Classical`, `by_cases`,
+raisonnement sémantique, ni règle générique de substitution. Le fichier
+`Main.lean` produit automatiquement par le service ouvre un scope `Classical`,
+mais Q205 ne l'importe ni ne l'utilise; ce harnais n'est pas intégré.
+
+Les dépendances directes des termes Lean ont été confrontées ligne par ligne
+aux références imprimées. `PM.Derivation.detach` se normalise vers ✱1·11 dans
+ce contexte de variables réelles; `Syll.` est développé par ✱2·06. Les triples
+historique/Lean/normalisé sont consignés dans
+`metadata/items/PM1-star-2-Q205.json`. Verdict: **A, awaiting-ci**; le statut
+`kernel-checked` reste interdit jusqu'au succès de la CI GitHub.
