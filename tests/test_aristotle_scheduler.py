@@ -122,6 +122,44 @@ class SchedulerTests(unittest.TestCase):
             self.assertEqual(recorded["aristotle_project_id"], pid)
             self.assertEqual(recorded["aristotle_latest_task_status"], "QUEUED")
 
+    def test_campaign_dry_run_counts_two_remote_active_projects(self):
+        pids = [
+            "10000000-0000-0000-0000-000000000001",
+            "10000000-0000-0000-0000-000000000002",
+        ]
+        tids = [
+            "00000000-0000-0000-0000-000000000001",
+            "00000000-0000-0000-0000-000000000002",
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            manifest = root / "pipeline.json"
+            manifest.write_text(json.dumps({
+                "items": {},
+                "questions": {
+                    "Q1": {"aristotle_project_id": pids[0]},
+                    "Q2": {"aristotle_project_id": pids[1]},
+                },
+            }), encoding="utf-8")
+            statuses = dict(zip(pids, zip(tids, ["QUEUED", "IN_PROGRESS"])))
+
+            def fake_run(command, **_kwargs):
+                pid = command[command.index("tasks") + 1]
+                tid, status = statuses[pid]
+                output = f"{tid}  1 min ago            Formalize {pid} {status}\n"
+                return subprocess.CompletedProcess(command, 0, output, "")
+
+            emitted = []
+            with mock.patch.object(campaign, "ROOT", root), \
+                 mock.patch.object(campaign, "MANIFEST", manifest), \
+                 mock.patch.object(campaign, "require_api_key") as require_key, \
+                 mock.patch.object(campaign, "run", side_effect=fake_run), \
+                 mock.patch.object(campaign, "emit", side_effect=emitted.append):
+                campaign.aristotle_schedule(dry_run=True, cap=15)
+            require_key.assert_called_once_with()
+            self.assertEqual(emitted[-1]["active"], 2)
+            self.assertEqual(emitted[-1]["free_slots"], 13)
+
 
 if __name__ == "__main__":
     unittest.main()

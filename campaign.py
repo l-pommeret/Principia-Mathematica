@@ -514,8 +514,10 @@ def aristotle_schedule(*, dry_run: bool, cap: int) -> None:
     """Reconcile the whole remote queue and fill it without exceeding ``cap``."""
     if cap < 1 or cap > 15:
         raise CampaignError("Aristotle concurrency cap must be between 1 and 15")
-    if not dry_run:
-        require_api_key()
+    # Dry-run still performs live reconciliation.  Without credentials the
+    # Aristotle CLI may return an empty task table, which must never be
+    # mistaken for an idle queue.
+    require_api_key()
 
     def list_tasks(pid: str) -> list[dict[str, str]]:
         result = run([*ARISTOTLE, "tasks", pid, "--limit", "100"])
