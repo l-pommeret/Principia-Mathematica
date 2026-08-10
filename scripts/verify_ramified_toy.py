@@ -88,7 +88,7 @@ def main() -> None:
         raise SystemExit("reducibility can be consumed without an explicit hypothesis")
     if "formalEquivalenceOrder argument resultOrder leftExcess rightExcess" not in code:
         raise SystemExit("formal equivalence order ignores a function excess")
-    if "Sigma fun representative" not in code:
+    if "PSigma fun representative" not in code:
         raise SystemExit("the higher-order witness does not depend on its representative")
     if "reducibility.certificate higherNonPredicativeEntry" not in code:
         raise SystemExit("the higher-order witness ignores the reduction certificate")

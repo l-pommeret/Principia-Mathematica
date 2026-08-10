@@ -107,7 +107,7 @@ def Term.renameApparent (rho : ApparentRenaming source target) :
     Term signature realContext source sort → Term signature realContext target sort
   | .real entryVar => .real entryVar
   | .apparent entryVar => .apparent (rho entryVar)
-  | .symbol _ symbol => .symbol symbol
+  | .symbol _ _ symbol => .symbol symbol
 
 def Arguments.renameApparent (rho : ApparentRenaming source target) :
     Arguments signature realContext source sorts →
@@ -139,7 +139,7 @@ def Term.renameReal (rho : RealRenaming source target) :
     Term signature source apparentContext sort → Term signature target apparentContext sort
   | .real entryVar => .real (rho entryVar)
   | .apparent entryVar => .apparent entryVar
-  | .symbol _ symbol => .symbol symbol
+  | .symbol _ _ symbol => .symbol symbol
 
 def Arguments.renameReal (rho : RealRenaming source target) :
     Arguments signature source apparentContext sorts →
@@ -178,7 +178,7 @@ def Term.substitute
     Term signature realContext source sort → Term signature realContext target sort
   | .real entryVar => .real entryVar
   | .apparent entryVar => substitution entryVar
-  | .symbol _ symbol => .symbol symbol
+  | .symbol _ _ symbol => .symbol symbol
 
 def Arguments.substitute
     (substitution : ApparentSubstitution signature realContext source target) :
@@ -217,19 +217,19 @@ def Formula.instantiate (body : Formula signature realContext (sort :: apparentC
 def Term.abstractHead :
     Term signature (head :: realContext) apparentContext sort →
       Term signature realContext (head :: apparentContext) sort
-  | .real (sort := head) .zero => .apparent .zero
+  | .real (sort := .(head)) .zero => .apparent .zero
   | .real (.succ entryVar) => .real entryVar
   | .apparent entryVar => .apparent (.succ entryVar)
-  | .symbol _ symbol => .symbol symbol
+  | .symbol _ _ symbol => .symbol symbol
 
 /-- Inverse operation: give the fresh apparentContext head the realContext head value. -/
 def Term.valueHead :
     Term signature realContext (head :: apparentContext) sort →
       Term signature (head :: realContext) apparentContext sort
   | .real entryVar => .real (.succ entryVar)
-  | .apparent (sort := head) .zero => .real .zero
+  | .apparent (sort := .(head)) .zero => .real .zero
   | .apparent (.succ entryVar) => .apparent entryVar
-  | .symbol _ symbol => .symbol symbol
+  | .symbol _ _ symbol => .symbol symbol
 
 def Arguments.abstractHead :
     Arguments signature (head :: realContext) apparentContext sorts →
@@ -418,13 +418,17 @@ def disj01 (scope : ScopedConnectives signature argument)
 def disj10 (scope : ScopedConnectives signature argument)
     (left : Formula signature realContext apparentContext (bindOrder 0 argument))
     (right : Formula signature realContext apparentContext 0) :
-    Formula signature realContext apparentContext (bindOrder 0 argument) :=
-  .disj scope.disj10Meaning left right
+    Formula signature realContext apparentContext
+      (max (bindOrder 0 argument) 0) :=
+  Formula.disj (leftOrder := bindOrder 0 argument) (rightOrder := 0)
+    scope.disj10Meaning left right
 
 def disj11 (scope : ScopedConnectives signature argument)
     (left right : Formula signature realContext apparentContext (bindOrder 0 argument)) :
-    Formula signature realContext apparentContext (bindOrder 0 argument) :=
-  .disj scope.disj11Meaning left right
+    Formula signature realContext apparentContext
+      (max (bindOrder 0 argument) (bindOrder 0 argument)) :=
+  Formula.disj (leftOrder := bindOrder 0 argument)
+    (rightOrder := bindOrder 0 argument) scope.disj11Meaning left right
 
 def imp00 (scope : ScopedConnectives signature argument)
     (left right : Formula signature realContext apparentContext 0) :
@@ -440,12 +444,14 @@ def imp01 (scope : ScopedConnectives signature argument)
 def imp10 (scope : ScopedConnectives signature argument)
     (left : Formula signature realContext apparentContext (bindOrder 0 argument))
     (right : Formula signature realContext apparentContext 0) :
-    Formula signature realContext apparentContext (bindOrder 0 argument) :=
+    Formula signature realContext apparentContext
+      (max (bindOrder 0 argument) 0) :=
   scope.disj10 (.neg scope.neg1 left) right
 
 def imp11 (scope : ScopedConnectives signature argument)
     (left right : Formula signature realContext apparentContext (bindOrder 0 argument)) :
-    Formula signature realContext apparentContext (bindOrder 0 argument) :=
+    Formula signature realContext apparentContext
+      (max (bindOrder 0 argument) (bindOrder 0 argument)) :=
   scope.disj11 (.neg scope.neg1 left) right
 
 def emptyApparentRenaming : ApparentRenaming [] [argument]
@@ -689,7 +695,7 @@ structure HigherStar10ReducibilityWitness
     (higherScope.normalImp10Always
       higherNonPredicativeFunctionWitness.bodyUnderOneReal
       higherNonPredicativeFunctionWitness.valueHead.toFormula)
-  reduction : Sigma fun representative :
+  reduction : PSigma fun representative :
       Term witnessSignature [] [] (.function [predicateSort] 0 0) =>
     ToyDerivation
       (formalEquivalence.formula
@@ -748,7 +754,8 @@ def embedElementary : PM.Elementary realContext →
   | .neg proposition =>
       .neg LegacyNegationMeaning.elementary (embedElementary proposition)
   | .disj left right =>
-      .disj LegacyDisjunctionMeaning.elementary
+      Formula.disj (leftOrder := 0) (rightOrder := 0)
+        LegacyDisjunctionMeaning.elementary
         (embedElementary left) (embedElementary right)
 
 def erasePropositionTerm? : {order : Nat} →
@@ -764,9 +771,10 @@ def eraseElementary? (proposition :
   match proposition with
   | .propositionVariable entryVar => erasePropositionTerm? entryVar
   | .apply _ _ => none
-  | .neg LegacyNegationMeaning.elementary inner =>
+  | .neg (order := 0) LegacyNegationMeaning.elementary inner =>
       (eraseElementary? inner).map .neg
-  | .disj LegacyDisjunctionMeaning.elementary left right => do
+  | .disj (leftOrder := 0) (rightOrder := 0)
+      LegacyDisjunctionMeaning.elementary left right => do
       let erasedLeft ← eraseElementary? left
       let erasedRight ← eraseElementary? right
       pure (.disj erasedLeft erasedRight)
