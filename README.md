@@ -24,3 +24,11 @@ numbered PM proposition, and the accepted `Elementary`, `Apparent`, and
 explicitly passed `UnaryReducibility` value, never as a global axiom.
 Its connection with the accepted elementary syntax is only a syntax embedding
 with a partial retraction; no deductive conservativity theorem is claimed.
+The current vertical slice is kernel-checked at commit `2f88937` by Lean CI
+run `31434813268`. This validates only the exercised experimental declarations;
+the remaining discriminating tests are tracked in
+[`docs/ARCHITECTURE_GATES.md`](docs/ARCHITECTURE_GATES.md).
+
+The separate editorial convention for schematic instantiation, ✱1·1/✱1·11,
+and capture-free syntactic substitution is recorded in
+[`docs/SUBSTITUTION.md`](docs/SUBSTITUTION.md).
