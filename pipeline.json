@@ -323,13 +323,13 @@
       "aristotle_status": "submitted",
       "aristotle_task_id": "b9ff76bf-6eb5-4abf-8a8d-f4a657124aac",
       "aristotle_latest_task_id": "b9ff76bf-6eb5-4abf-8a8d-f4a657124aac",
-      "aristotle_latest_task_status": "IN_PROGRESS",
-      "aristotle_remote_status": "IN_PROGRESS",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_project_id": "efd2b872-651e-48b4-b585-176a7dbc87b3",
       "aristotle_request_path": "aristotle/Q210.md",
       "aristotle_request_sha256": "e70d4835d45f9774495229eb6ec2d1c6e8eec535e250d35d26701670ac3bfe4e",
       "aristotle_latest_task_name": "Formalize Q210.md",
-      "aristotle_latest_task_created": "3 mins ago"
+      "aristotle_latest_task_created": "9 mins ago"
     },
     "Q211": {
       "canonical_ids": [
@@ -785,6 +785,209 @@
       ],
       "parallel_group": "STAR4-WAVE-1C",
       "aristotle_status": "not-submitted"
+    },
+    "Q231": {
+      "canonical_ids": [
+        "PM1:✱4·34",
+        "PM1:✱4·36",
+        "PM1:✱4·37",
+        "PM1:✱4·38",
+        "PM1:✱4·39"
+      ],
+      "source": "PM volume I, first edition, p. 124",
+      "prompt_path": "aristotle/Q231.md",
+      "audit_path": "reviews/Q231-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱4·34 notation definition and ✱4·36–✱4·39",
+      "depends_on": [
+        "PM1:✱1·6",
+        "PM1:✱3·01",
+        "PM1:✱3·22",
+        "PM1:✱3·45",
+        "PM1:✱3·47",
+        "PM1:✱3·48",
+        "PM1:✱4·01",
+        "PM1:✱4·32"
+      ],
+      "parallel_group": "STAR4-WAVE-2A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q232": {
+      "canonical_ids": [
+        "PM1:✱4·4",
+        "PM1:✱4·41",
+        "PM1:✱4·42"
+      ],
+      "source": "PM volume I, first edition, p. 124",
+      "prompt_path": "aristotle/Q232.md",
+      "audit_path": "reviews/Q232-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱4·4, ✱4·41 and ✱4·42",
+      "depends_on": [
+        "PM1:✱1·6",
+        "PM1:✱2·11",
+        "PM1:✱2·53",
+        "PM1:✱2·54",
+        "PM1:✱3·2",
+        "PM1:✱3·21",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·31",
+        "PM1:✱3·43",
+        "PM1:✱3·44",
+        "PM1:✱3·47",
+        "PM1:✱3·48",
+        "PM1:✱4·01"
+      ],
+      "parallel_group": "STAR4-WAVE-2A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q233": {
+      "canonical_ids": [
+        "PM1:✱4·43",
+        "PM1:✱4·44",
+        "PM1:✱4·45"
+      ],
+      "source": "PM volume I, first edition, p. 125",
+      "prompt_path": "aristotle/Q233.md",
+      "audit_path": "reviews/Q233-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱4·43–✱4·45",
+      "depends_on": [
+        "PM1:✱2·08",
+        "PM1:✱2·2",
+        "PM1:✱2·53",
+        "PM1:✱2·65",
+        "PM1:✱3·26",
+        "PM1:✱3·31",
+        "PM1:✱3·43",
+        "PM1:✱3·44",
+        "PM1:✱3·47",
+        "PM1:✱4·01"
+      ],
+      "parallel_group": "STAR4-WAVE-2A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q234": {
+      "canonical_ids": [
+        "PM1:✱4·5",
+        "PM1:✱4·51",
+        "PM1:✱4·52",
+        "PM1:✱4·53",
+        "PM1:✱4·54"
+      ],
+      "source": "PM volume I, first edition, p. 125",
+      "prompt_path": "aristotle/Q234.md",
+      "audit_path": "reviews/Q234-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱4·5–✱4·54 selected De Morgan sequence",
+      "depends_on": [
+        "PM1:✱3·01",
+        "PM1:✱4·01",
+        "PM1:✱4·2",
+        "PM1:✱4·12",
+        "PM1:✱4·13"
+      ],
+      "parallel_group": "STAR4-WAVE-2A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q235": {
+      "canonical_ids": [
+        "PM1:✱4·55",
+        "PM1:✱4·56",
+        "PM1:✱4·57",
+        "PM1:✱4·6"
+      ],
+      "source": "PM volume I, first edition, pp. 125–126",
+      "prompt_path": "aristotle/Q235.md",
+      "audit_path": "reviews/Q235-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱4·55–✱4·6 selected sequence",
+      "depends_on": [
+        "PM1:✱1·01",
+        "PM1:✱4·01",
+        "PM1:✱4·2",
+        "PM1:✱4·12",
+        "PM1:✱4·13",
+        "PM1:✱4·54"
+      ],
+      "parallel_group": "STAR4-WAVE-2B",
+      "aristotle_status": "not-submitted"
+    },
+    "Q236": {
+      "canonical_ids": [
+        "PM1:✱4·61",
+        "PM1:✱4·62",
+        "PM1:✱4·63",
+        "PM1:✱4·64"
+      ],
+      "source": "PM volume I, first edition, p. 126",
+      "prompt_path": "aristotle/Q236.md",
+      "audit_path": "reviews/Q236-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱4·61–✱4·64",
+      "depends_on": [
+        "PM1:✱2·53",
+        "PM1:✱2·54",
+        "PM1:✱4·01",
+        "PM1:✱4·11",
+        "PM1:✱4·5",
+        "PM1:✱4·52",
+        "PM1:✱4·6"
+      ],
+      "parallel_group": "STAR4-WAVE-2B",
+      "aristotle_status": "not-submitted"
+    },
+    "Q237": {
+      "canonical_ids": [
+        "PM1:✱4·65",
+        "PM1:✱4·66",
+        "PM1:✱4·67"
+      ],
+      "source": "PM volume I, first edition, p. 126",
+      "prompt_path": "aristotle/Q237.md",
+      "audit_path": "reviews/Q237-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱4·65–✱4·67",
+      "depends_on": [
+        "PM1:✱4·01",
+        "PM1:✱4·11",
+        "PM1:✱4·54",
+        "PM1:✱4·56",
+        "PM1:✱4·64"
+      ],
+      "parallel_group": "STAR4-WAVE-2C",
+      "aristotle_status": "not-submitted"
+    },
+    "Q238": {
+      "canonical_ids": [
+        "PM1:✱4·7",
+        "PM1:✱4·71",
+        "PM1:✱4·72"
+      ],
+      "source": "PM volume I, first edition, p. 126",
+      "prompt_path": "aristotle/Q238.md",
+      "audit_path": "reviews/Q238-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱4·7, ✱4·71 and ✱4·72",
+      "depends_on": [
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱2·08",
+        "PM1:✱3·21",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·3",
+        "PM1:✱3·43",
+        "PM1:✱4·01",
+        "PM1:✱4·1",
+        "PM1:✱4·12",
+        "PM1:✱4·22",
+        "PM1:✱4·31",
+        "PM1:✱4·57"
+      ],
+      "parallel_group": "STAR4-WAVE-2B",
+      "aristotle_status": "not-submitted"
     }
   },
   "editorial_tracks": {
@@ -829,6 +1032,13 @@
       "printed": "p ≡ q ≡ r .=. p ≡ q . q ≡ r Df",
       "status": "prepared-with-Q227",
       "note": "This surface chain abbreviates the logical product of two equivalences; it is not infix associativity and not an asserted proposition."
+    },
+    "PM1:✱4·34": {
+      "kind": "scope-definition",
+      "source": "PM volume I, first edition, p. 124",
+      "printed": "p.q.r .=. (p.q).r Df",
+      "status": "prepared-with-Q231",
+      "note": "The unbracketed product chain is explicitly left-associated. It is a notation definition, never an asserted proposition or a theorem."
     }
   },
   "items": {
