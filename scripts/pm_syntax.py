@@ -389,7 +389,8 @@ def parse_statement(source: str) -> AST:
     proposition.
     """
     body = ITEM_PREFIX.sub("", source, count=1).strip()
-    body = re.sub(r"\s+Df\.?\s*$", "", body).strip()
+    body = re.sub(r"\s+\[[^\]]+\]\s*$", "", body).strip()
+    body = re.sub(r"\s+(?:Df|Pp)\.?\s*$", "", body).strip()
     match = DEFINITION_SIGN.search(body)
     if match:
         left_text = body[:match.start()].strip()

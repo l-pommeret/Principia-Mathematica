@@ -122,7 +122,7 @@ class PMDotSyntaxTests(unittest.TestCase):
         self.assertEqual([child["value"] for child in binary["children"]], ["x", "y"])
 
     def test_star_12_1_preserves_function_quantifier_and_bang(self):
-        parsed = shape("⊢ : (∃f) : φx . ≡ₓ . f!x")
+        parsed = statement_shape("✱12·1. ⊢ : (∃f) : φx . ≡ₓ . f!x    Pp")
         existential = parsed["children"][0]
         self.assertEqual(existential["tag"], "exists")
         self.assertEqual(existential["value"], "f")
@@ -131,6 +131,13 @@ class PMDotSyntaxTests(unittest.TestCase):
         self.assertEqual(equivalence["value"], "ₓ")
         self.assertEqual(equivalence["children"][0]["tag"], "apply_general")
         self.assertEqual(equivalence["children"][1]["tag"], "apply_predicative")
+
+    def test_trailing_proof_reference_is_not_object_syntax(self):
+        parsed = statement_shape(
+            "✱2·45. ⊢ : ∼(p ∨ q) . ⊃ . ∼p [✱2·2.Transp.]"
+        )
+        self.assertEqual(parsed["tag"], "assert")
+        self.assertEqual(parsed["children"][0]["tag"], "implies")
 
     def test_star_13_01_binds_one_predicative_function(self):
         parsed = statement_shape(
