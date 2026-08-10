@@ -1,6 +1,6 @@
 # Audit Q218 — PM I, ✱2·73–✱2·76
 
-Verdict: **A FOR TARGET AND ORDERED CONTEXT — pending remote kernel CI**.
+Verdict: **A — target and ordered context kernel-checked; eligible**.
 Canonical source: first
 edition, vol. I, p. 113, leaf 135; SHA-256
 `0015ae56c8a9c1eedab541d07e06d683c499319b60fa021d088077535f93f2f0`.
@@ -18,4 +18,7 @@ convention. Each later target may use only its immediately preceding local
 target plus its own printed aliases/references. Local targets are absent from
 the external context closure. The 10.9 kB isolated context and the full
 Aristotle prompt are reproducible from `metadata/constrained_batches/Q218.json`.
-Submission remains forbidden until GitHub CI kernel-checks that context.
+GitHub CI kernel-checked the generated standalone context and the whole edition
+at commit `8f8ce44395c4dea80d206690d4677089f9a0bf4a`, run
+[`31442908274`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31442908274),
+conclusion `success`. Q218 is eligible for one constrained Aristotle request.
