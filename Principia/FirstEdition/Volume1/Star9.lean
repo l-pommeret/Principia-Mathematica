@@ -229,6 +229,14 @@ PM-VERBATIM-END PM1:✱9·05 -/
 ✱9·06.  p.∨.(∃x).φx :=. (∃x).p∨φx  Df
 PM-VERBATIM-END PM1:✱9·06 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱9·07
+✱9·07.  (x).φx.∨.(∃y).ψy :=: (x):(∃y).φx∨ψy  Df
+PM-VERBATIM-END PM1:✱9·07 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·08
+✱9·08.  (∃y).ψy.∨.(x).φx :=: (x):(∃y).ψy∨φx  Df
+PM-VERBATIM-END PM1:✱9·08 -/
+
 /- PM-EDITORIAL
 Source: Principia Mathematica, first edition, volume I (1910), printed
 pp. 132–135, scan leaves 154–157. The diplomatic transcription above was
@@ -287,5 +295,15 @@ abbrev star_9_06 {Γ Δ}
     PM.FirstOrder Γ Δ :=
   PM.FirstOrder.disjElementaryLeft
     proposition (PM.FirstOrder.sometimes body)
+
+abbrev star_9_07 {Γ Δ}
+    (φ ψ : PM.Apparent Γ (.elementaryProposition :: Δ)) :
+    PM.SecondOrder Γ Δ :=
+  PM.FirstOrder.disjAlwaysSometimes φ ψ
+
+abbrev star_9_08 {Γ Δ}
+    (ψ φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :
+    PM.SecondOrder Γ Δ :=
+  PM.FirstOrder.disjSometimesAlways ψ φ
 
 end PM.FirstEdition.Volume1.Star9
