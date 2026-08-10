@@ -125,8 +125,12 @@
   "items": {
     "PM-META:detach": {
       "batch": "PM-META-Q200",
-      "status": "awaiting-ci",
-      "ci_evidence": "pending"
+      "status": "kernel-checked",
+      "ci_evidence": {
+        "commit": "b28dd7b001626917072901295b5f51309441d08e",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31412999665",
+        "conclusion": "success"
+      }
     },
     "PM1:✱1·01": {
       "batch": "PM1-STAR1-PILOT-01",
