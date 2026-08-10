@@ -818,10 +818,11 @@ def eraseElementary? (proposition :
 @[simp] theorem eraseElementaryIndexed_disj
     (left right : Formula legacySignature (realContext.map legacySort) [] 0) :
     eraseElementaryIndexed?
-        (Formula.disj LegacyDisjunctionMeaning.elementary left right) = do
+        (Formula.disj LegacyDisjunctionMeaning.elementary left right) = (do
       let erasedLeft ← eraseElementaryIndexed? left
       let erasedRight ← eraseElementaryIndexed? right
-      pure ⟨.disj erasedLeft.proposition erasedRight.proposition, rfl⟩ := rfl
+      pure ⟨.disj erasedLeft.proposition erasedRight.proposition, rfl⟩) := by
+  rfl
 
 @[simp] theorem erase_embedRealVar :
     (entryVar : PM.RealVar realContext .elementaryProposition) →
