@@ -61,4 +61,6 @@ gate, not canonical coverage of ✱12–✱13 or a completed proof of ✱13·101
 The earlier marked-witness slice was kernel-checked at commit `cbef6d9` by Lean
 CI run `31436937560`. The current refinement represents ✱12 itself as a scoped
 object-language existential and is kernel-checked at commit `81d086c` by Lean
-CI run `31437661828`.
+CI run `31437661828`. The exact scope ASTs supporting ✱10·23 and ✱10·27 are
+kernel-checked at commit `c6c0e96` by Lean CI run `31437950385`; they do not yet
+carry derivations.

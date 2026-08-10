@@ -110,6 +110,12 @@ def main() -> None:
     if evidence != {"commit": "pending", "run": "pending", "conclusion": "pending"}:
         if evidence.get("conclusion") != "success" or len(evidence.get("commit", "")) != 40:
             raise SystemExit("predicative gate CI evidence is missing or inconsistent")
+    if source_record.get("transport_scope_ci") != {
+        "commit": "c6c0e9637cf5595a5aa2f5b6df9829dcf5525f46",
+        "run": 31437950385,
+        "conclusion": "success",
+    }:
+        raise SystemExit("✱10 transport-scope CI evidence is missing or inconsistent")
     print("Experimental predicative/reducibility gate checks passed")
 
 
