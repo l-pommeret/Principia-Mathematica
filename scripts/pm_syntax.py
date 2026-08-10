@@ -48,7 +48,8 @@ class AST:
         return result
 
 
-OPERATORS = {"∨": "or", "⊃": "implies", "≡": "equiv"}
+OPERATORS = {"∨": "or", "⊃": "implies", "≡": "equiv", "=": "equal", "∈": "member"}
+GREEK_FUNCTION_SYMBOLS = "φψχθ"
 
 
 def mark_count(text: str) -> int:
@@ -69,12 +70,21 @@ def raw_tokens(source: str) -> list[Token]:
             index += 1
             continue
         if char == "(":
-            binder = re.match(
+            description = re.match(
+                r"\(\s*℩\s*([A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′']*)\s*\)",
+                source[index:],
+            )
+            if description:
+                text = description.group(0)
+                result.append(Token("description_binder", text, index))
+                index += len(text)
+                continue
+            binder = (None if result and result[-1].kind == "description_binder" else re.match(
                 r"\(\s*(∃)?\s*([A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′']*"
                 r"(?:\s*,\s*[A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′']*)*)\s*\)"
                 r"(?=\s*[\.:])",
                 source[index:],
-            )
+            ))
             if binder:
                 text = binder.group(0)
                 kind = "exists_binder" if binder.group(1) else "forall_binder"
@@ -88,6 +98,15 @@ def raw_tokens(source: str) -> list[Token]:
             text = source[index:end]
             result.append(Token("mark", text, index, mark_count(text), mark_count(text)))
             index = end
+            continue
+        if char == "≡":
+            decorated = re.match(
+                r"≡(?:[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ]+(?:,[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ]+)*)?",
+                source[index:],
+            )
+            text = decorated.group(0) if decorated else char
+            result.append(Token("operator", text, index))
+            index += len(text)
             continue
         if char in OPERATORS:
             result.append(Token("operator", char, index))
@@ -105,7 +124,24 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("rparen", char, index))
             index += 1
             continue
-        match = re.match(r"[A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′']*", source[index:])
+        if char == ",":
+            result.append(Token("comma", char, index))
+            index += 1
+            continue
+        if char in GREEK_FUNCTION_SYMBOLS or (
+            char in "fg" and index + 1 < len(source) and source[index + 1] in "!("
+        ):
+            result.append(Token("function", char, index))
+            index += 1
+            continue
+        if char == "!":
+            result.append(Token("bang", char, index))
+            index += 1
+            continue
+        match = re.match(
+            r"[A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*",
+            source[index:],
+        )
         if match:
             text = match.group(0)
             result.append(Token("atom", text, index))
@@ -171,7 +207,9 @@ def binding_power(token: Token, side: str) -> int:
         # (a marked connective) is external to Group III (logical product).
         group_force = 10 if token.text != "·" else 0
         return 1000 - 100 * scope - group_force
-    return {"≡": 1100, "⊃": 1200, "∨": 1300, "·": 1400}[token.text]
+    if token.text.startswith("≡"):
+        return 1100
+    return {"⊃": 1200, "∨": 1300, "·": 1400, "=": 1450, "∈": 1450}[token.text]
 
 
 def binder_binding_power(token: Token) -> int:
@@ -185,6 +223,34 @@ def binder_variables(text: str) -> str:
     interior = text[text.index("(") + 1:text.rindex(")")]
     interior = interior.replace("∃", "", 1)
     return ",".join(part.strip() for part in interior.split(","))
+
+
+def description_variable(text: str) -> str:
+    interior = text[text.index("(") + 1:text.rindex(")")]
+    return interior.replace("℩", "", 1).strip()
+
+
+def operator_tag(text: str) -> tuple[str, str | None]:
+    if text.startswith("≡") and text != "≡":
+        return "formal_equiv", text[1:]
+    return OPERATORS.get(text, "and"), None
+
+
+def bind_description_occurrences(node: AST, variable: str, condition: AST) -> AST:
+    """Eliminate matching surface descriptions inside their explicit scope.
+
+    The returned object AST has no description-valued term: occurrences of the
+    printed incomplete symbol become a bound placeholder owned by the
+    surrounding `description_scope` node.
+    """
+    if node.tag == "description" and node.value == variable and node.children == (condition,):
+        return AST("description_bound", value=variable)
+    return AST(
+        node.tag,
+        tuple(bind_description_occurrences(child, variable, condition)
+              for child in node.children),
+        node.value,
+    )
 
 
 class Parser:
@@ -219,6 +285,11 @@ class Parser:
         token = self.take()
         if token.kind == "atom":
             left = AST("atom", value=token.text)
+        elif token.kind == "function":
+            left = self.application(token)
+        elif token.kind == "description_binder":
+            condition = self.parenthesized_argument()
+            left = AST("description", (condition,), description_variable(token.text))
         elif token.kind == "neg":
             left = AST("not", (self.expression(1500),))
         elif token.kind in {"forall_binder", "exists_binder"}:
@@ -233,6 +304,16 @@ class Parser:
             close = self.take()
             if close.kind != "rparen":
                 raise PMSyntaxError(f"missing closing bracket before offset {close.position}")
+            if token.text == "[" and left.tag == "description":
+                marker = self.peek()
+                if marker is None or marker.kind != "binary" or marker.text != "·":
+                    raise PMSyntaxError("a bracketed description must be followed by a scope mark")
+                marker = self.take()
+                continuation = self.expression(binding_power(marker, "right"))
+                continuation = bind_description_occurrences(
+                    continuation, left.value or "", left.children[0]
+                )
+                left = AST("description_scope", (left.children[0], continuation), left.value)
         else:
             raise PMSyntaxError(f"expected proposition at offset {token.position}")
 
@@ -248,8 +329,48 @@ class Parser:
             if operator.right_scope == 0 and operator.text in {"∨", "·"}:
                 right_minimum += 1
             right = self.expression(right_minimum)
-            left = AST(OPERATORS.get(operator.text, "and"), (left, right))
+            tag, value = operator_tag(operator.text)
+            left = AST(tag, (left, right), value)
         return left
+
+    def parenthesized_argument(self) -> AST:
+        opening = self.take()
+        if opening.kind != "lparen" or opening.text != "(":
+            raise PMSyntaxError(f"expected parenthesized matrix at offset {opening.position}")
+        argument = self.expression(0)
+        closing = self.take()
+        if closing.kind != "rparen" or closing.text != ")":
+            raise PMSyntaxError(f"missing closing matrix bracket before offset {closing.position}")
+        return argument
+
+    def application(self, function: Token) -> AST:
+        predicative = self.peek() is not None and self.peek().kind == "bang"
+        if predicative:
+            self.take()
+        arguments: list[AST] = []
+        next_token = self.peek()
+        if next_token is not None and next_token.kind == "lparen" and next_token.text == "(":
+            self.take()
+            while True:
+                arguments.append(self.expression(0))
+                separator = self.take()
+                if separator.kind == "rparen" and separator.text == ")":
+                    break
+                if separator.kind != "comma":
+                    raise PMSyntaxError(f"expected comma at offset {separator.position}")
+        elif next_token is not None and next_token.kind in {"atom", "description_binder"}:
+            argument_token = self.take()
+            if argument_token.kind == "atom":
+                arguments.append(AST("atom", value=argument_token.text))
+            else:
+                condition = self.parenthesized_argument()
+                arguments.append(AST(
+                    "description", (condition,), description_variable(argument_token.text)
+                ))
+        else:
+            raise PMSyntaxError(f"function {function.text!r} has no argument")
+        return AST("apply_predicative" if predicative else "apply_general",
+                   tuple(arguments), function.text)
 
 
 def parse(source: str) -> AST:

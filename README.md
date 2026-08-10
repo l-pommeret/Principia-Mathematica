@@ -16,6 +16,8 @@ strict prover manifests. See
 [`docs/CONSTRAINED_RECONSTRUCTION.md`](docs/CONSTRAINED_RECONSTRUCTION.md): the
 printed citations form the proof whitelist, while their transitive compilation
 closure is tracked separately and grants no additional proof permission.
+The audited grammar and its current limits are recorded in
+[`docs/PM_PARSER.md`](docs/PM_PARSER.md).
 
 Aristotle credentials must exist only in `ARISTOTLE_API_KEY` or the macOS
 Keychain. They must never occur in tracked files, prompts, manifests, logs,

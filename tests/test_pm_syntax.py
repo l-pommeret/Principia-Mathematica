@@ -16,6 +16,10 @@ def statement_shape(source: str):
     return pm_syntax.parse_statement(source).to_dict()
 
 
+def tags(node):
+    return [node["tag"]] + [tag for child in node.get("children", []) for tag in tags(child)]
+
+
 class PMDotSyntaxTests(unittest.TestCase):
     def test_colon_counts_as_two_dots(self):
         self.assertEqual(pm_syntax.mark_count(":"), 2)
@@ -65,7 +69,10 @@ class PMDotSyntaxTests(unittest.TestCase):
         self.assertEqual(parsed["tag"], "implies")
         self.assertEqual(parsed["children"][0], {
             "tag": "forall", "value": "x",
-            "children": [{"tag": "atom", "value": "φx"}],
+            "children": [{
+                "tag": "apply_general", "value": "φ",
+                "children": [{"tag": "atom", "value": "x"}],
+            }],
         })
 
     def test_group_two_binder_contains_equal_group_three_product(self):
@@ -104,6 +111,66 @@ class PMDotSyntaxTests(unittest.TestCase):
         parsed = shape("p ⊃ q ⊃ r")
         self.assertEqual(parsed["tag"], "implies")
         self.assertEqual(parsed["children"][1]["tag"], "implies")
+
+    def test_general_and_predicative_applications_are_distinct(self):
+        general = shape("φx")
+        predicative = shape("φ!x")
+        binary = shape("ψ(x,y)")
+        self.assertEqual(general["tag"], "apply_general")
+        self.assertEqual(predicative["tag"], "apply_predicative")
+        self.assertNotEqual(general, predicative)
+        self.assertEqual([child["value"] for child in binary["children"]], ["x", "y"])
+
+    def test_star_12_1_preserves_function_quantifier_and_bang(self):
+        parsed = shape("⊢ : (∃f) : φx . ≡ₓ . f!x")
+        existential = parsed["children"][0]
+        self.assertEqual(existential["tag"], "exists")
+        self.assertEqual(existential["value"], "f")
+        equivalence = existential["children"][0]
+        self.assertEqual(equivalence["tag"], "formal_equiv")
+        self.assertEqual(equivalence["value"], "ₓ")
+        self.assertEqual(equivalence["children"][0]["tag"], "apply_general")
+        self.assertEqual(equivalence["children"][1]["tag"], "apply_predicative")
+
+    def test_star_13_01_binds_one_predicative_function(self):
+        parsed = statement_shape(
+            "✱13·01. x = y .=: (φ) : φ!x .⊃. φ!y  Df"
+        )
+        self.assertEqual(parsed["tag"], "definition")
+        self.assertEqual(parsed["children"][0]["tag"], "equal")
+        quantified = parsed["children"][1]
+        self.assertEqual((quantified["tag"], quantified["value"]), ("forall", "φ"))
+        implication = quantified["children"][0]
+        self.assertEqual(implication["tag"], "implies")
+        self.assertEqual(
+            [child["tag"] for child in implication["children"]],
+            ["apply_predicative", "apply_predicative"],
+        )
+        self.assertEqual(
+            [child["value"] for child in implication["children"]], ["φ", "φ"]
+        )
+
+    def test_description_scope_is_contextual_not_a_term_application(self):
+        narrow = shape("[(℩x)(φx)] . ψ(℩x)(φx) .⊃. p")
+        wide = shape("[(℩x)(φx)] : ψ(℩x)(φx) .⊃. p")
+        self.assertEqual(narrow["tag"], "implies")
+        self.assertEqual(narrow["children"][0]["tag"], "description_scope")
+        self.assertEqual(wide["tag"], "description_scope")
+        self.assertEqual(wide["children"][1]["tag"], "implies")
+        self.assertNotEqual(narrow, wide)
+        self.assertNotIn("description", tags(narrow))
+        self.assertNotIn("description", tags(wide))
+        self.assertIn("description_bound", tags(narrow))
+
+    def test_star_14_01_definition_has_contextual_description_lhs(self):
+        parsed = statement_shape(
+            "✱14·01. [(℩x)(φx)] . ψ(℩x)(φx) .=: "
+            "(∃b) : φx .≡ₓ. x = b : ψb  Df"
+        )
+        self.assertEqual(parsed["tag"], "definition")
+        self.assertEqual(parsed["children"][0]["tag"], "description_scope")
+        self.assertEqual(parsed["children"][1]["tag"], "exists")
+        self.assertNotIn("description", tags(parsed))
 
 
 if __name__ == "__main__":
