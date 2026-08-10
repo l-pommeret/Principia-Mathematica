@@ -6,7 +6,13 @@ namespace PM
 
 `Derivation [] p` represents assertion of a definite proposition. For nonempty
 `Γ`, `Derivation Γ p` represents assertion of an elementary propositional
-function with real variables; members of `Γ` are not hypotheses. -/
+function with real variables; members of `Γ` are not hypotheses.
+
+The formula parameters of the primitive propositions provide schematic Lean
+instantiation for PM's printed substitutions. That metalinguistic convention is
+not a constructor of this inductive type and is distinct both from ✱1·1/✱1·11
+and from capture-free object-syntactic substitution under the binders of ✱9.
+See `docs/SUBSTITUTION.md`. -/
 inductive Derivation : {Γ : RealContext} → Elementary Γ → Prop where
   /-- ✱1·1. Inference between asserted definite elementary propositions. -/
   | star_1_1 {p q : Elementary []} :
