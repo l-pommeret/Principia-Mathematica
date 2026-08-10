@@ -1,0 +1,30 @@
+{
+  "batch": "PM1-STAR2-DEFINITION-2-33",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "110",
+    "scan_leaves": [132],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "items": [
+    {
+      "id": "PM1:✱2·33",
+      "kind": "definition",
+      "printed": "p ∨ q ∨ r .=. (p ∨ q) ∨ r     Df",
+      "printed_page": 110,
+      "scan_leaf": 132,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_33",
+      "formal_scope": "metalinguistic left-association convention: p ∨ q ∨ r abbreviates (p ∨ q) ∨ r",
+      "source_status": "double-witness-checked",
+      "formal_status": "awaiting-ci"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -34,7 +34,10 @@ inductive Elementary : RealContext → Type where
 namespace Elementary
 
 prefix:max "∼ₚ" => neg
-infixr:55 " ∨ₚ " => disj
+/-- PM's unbracketed iterated disjunction, introduced at ✱2·33, associates
+to the left: `p ∨ q ∨ r` abbreviates `(p ∨ q) ∨ r`.  Formulae printed
+before ✱2·33 retain their explicit brackets in the edition. -/
+infixl:55 " ∨ₚ " => disj
 
 /-- ✱1·01: `p ⊃ q .=. ∼p ∨ q  Df.`
 
@@ -46,4 +49,3 @@ infixr:54 " ⊃ₚ " => imp
 
 end Elementary
 end PM
-

@@ -201,4 +201,37 @@ theorem star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
     ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
   PM.Derivation.star_1_6 (∼ₚ p) q r
 
+/- PM-VERBATIM-BEGIN PM1:✱2·33
+✱2·33.  p ∨ q ∨ r .=. (p ∨ q) ∨ r     Df
+
+This definition serves only for the avoidance of brackets.
+PM-VERBATIM-END PM1:✱2·33 -/
+
+/- PM-FORMAL-GLOSS
+✱2·33 is a metalinguistic convention for reading an unbracketed chain, not an
+asserted equivalence and not an associativity theorem. Accordingly `∨ₚ` is
+left-associative in Lean: `p ∨ₚ q ∨ₚ r` elaborates directly to
+`(p ∨ₚ q) ∨ₚ r`. Earlier PM formulae keep their printed parentheses, so
+this notation declaration changes none of their audited abstract syntax trees.
+-/
+
+/- PM-EDITORIAL
+Source for ✱2·33:
+- scan, printed p. 110: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/132
+- working transcription: Project Gutenberg ebook 78050
+Verification status: scan-collated against two independent digital witnesses.
+All three witnesses agree on the left-associated definiens and on the following
+sentence. No `sic`, `corr.`, or `conj.` entry is required.
+-/
+
+/-- Audited definitional reading of PM's bracket-avoidance convention ✱2·33. -/
+def star_2_33_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "p ∨ q ∨ r .=. (p ∨ q) ∨ r     Df"
+  parsed := p ∨ₚ q ∨ₚ r
+  scopeReading := "The unbracketed chain associates to the left: (p ∨ q) ∨ r."
+
+/-- ✱2·33 as a Lean abbreviation; this introduces no object-language connective. -/
+abbrev star_2_33 (p q r : PM.Elementary Γ) : PM.Elementary Γ :=
+  p ∨ₚ q ∨ₚ r
+
 end PM.FirstEdition.Volume1.Star2
