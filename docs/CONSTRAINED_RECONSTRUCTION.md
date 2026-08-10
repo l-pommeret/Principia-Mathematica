@@ -13,7 +13,11 @@ constraint, not merely as prose checked after a proof has been found.
      results that a reconstructed proof may cite;
    - `context_closure` / `context_declarations`: declarations that must be
      present merely so that the allowed results typecheck in an isolated
-     sandbox.
+   sandbox.
+4. `scripts/pm_constraint_audit.py` compares the PM dependencies extracted
+   from the returned Lean term with that manifest. It classifies strict
+   closure, unused printed citations, and relaxed closure, recording the exact
+   additional PM items required by a relaxation.
 
 The context closure grants no proof permission. A generated Aristotle request
 must state the whitelist explicitly, and the returned term must still pass the
