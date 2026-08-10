@@ -11,7 +11,7 @@ are independent working aids. Text between `PM-VERBATIM` markers is historical
 source text, not modern editorial explanation.
 -/
 
-/- PM-VERBATIM-BEGIN PM1:PRIMITIVE-IDEAS
+/- PM-SOURCE-EXCERPT-BEGIN PM1:PRIMITIVE-IDEAS
 PRIMITIVE IDEAS.
 
 (1) Elementary propositions. By an “elementary” proposition we mean one which
@@ -52,7 +52,7 @@ i.e. “either p is true or q is true,” where the alternatives are to be not
 mutually exclusive, will be represented by “p ∨ q.” This is called the
 disjunction or the logical sum of p and q. For the present, p and q must be
 elementary propositions.
-PM-VERBATIM-END PM1:PRIMITIVE-IDEAS -/
+PM-SOURCE-EXCERPT-END PM1:PRIMITIVE-IDEAS -/
 
 /- PM-EDITORIAL
 The six passages above are primitive ideas explained in prose, not definitions

@@ -11,6 +11,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BEGIN = re.compile(r"PM-VERBATIM-BEGIN\s+(\S+)")
 END = re.compile(r"PM-VERBATIM-END\s+(\S+)")
+EXCERPT_BEGIN = re.compile(r"PM-SOURCE-EXCERPT-BEGIN\s+(\S+)")
+EXCERPT_END = re.compile(r"PM-SOURCE-EXCERPT-END\s+(\S+)")
 
 
 def fail(message: str) -> None:
@@ -41,6 +43,38 @@ def check_verbatim_blocks() -> None:
             fail(f"unclosed PM-VERBATIM block {stack[-1]} in {path}")
     if not seen:
         fail("no PM-VERBATIM blocks found")
+
+
+def collect_verbatim() -> dict[str, str]:
+    blocks: dict[str, str] = {}
+    pattern = re.compile(
+        r"PM-VERBATIM-BEGIN\s+(\S+)\n(.*?)\nPM-VERBATIM-END\s+(\S+)",
+        re.DOTALL,
+    )
+    for path in sorted((ROOT / "Principia").rglob("*.lean")):
+        source = path.read_text(encoding="utf-8")
+        for match in pattern.finditer(source):
+            begin, body, end = match.groups()
+            if begin != end:
+                fail(f"verbatim ID mismatch {begin}/{end} in {path}")
+            blocks[begin] = body
+    return blocks
+
+
+def check_excerpt_blocks() -> None:
+    for path in sorted((ROOT / "Principia").rglob("*.lean")):
+        stack: list[str] = []
+        for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+            if match := EXCERPT_BEGIN.search(line):
+                if stack:
+                    fail(f"nested PM-SOURCE-EXCERPT block at {path}:{number}")
+                stack.append(match.group(1))
+            if match := EXCERPT_END.search(line):
+                item = match.group(1)
+                if not stack or stack.pop() != item:
+                    fail(f"unmatched PM-SOURCE-EXCERPT end {item} at {path}:{number}")
+        if stack:
+            fail(f"unclosed PM-SOURCE-EXCERPT block {stack[-1]} in {path}")
 
 
 def check_apparatus() -> None:
@@ -74,12 +108,49 @@ def check_apparatus() -> None:
             fail(f"digital witness error in {path} must not attribute sic to PM")
 
 
+def check_item_metadata() -> None:
+    blocks = collect_verbatim()
+    metadata_ids: set[str] = set()
+    for path in sorted((ROOT / "metadata" / "items").glob("*.json")):
+        try:
+            batch = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as error:
+            fail(f"invalid item metadata JSON {path}: {error}")
+        items = batch.get("items")
+        if not isinstance(items, list) or not items:
+            fail(f"{path} must contain a nonempty items array")
+        if len(items) > 5:
+            fail(f"{path} exceeds the campaign batch cap of five items")
+        for item in items:
+            item_id = item.get("id")
+            if not item_id or item_id in metadata_ids:
+                fail(f"missing or duplicate item ID {item_id!r} in {path}")
+            metadata_ids.add(item_id)
+            if item_id not in blocks:
+                fail(f"metadata item {item_id} has no PM-VERBATIM block")
+            printed = " ".join(item.get("printed", "").split())
+            verbatim = " ".join(blocks[item_id].split())
+            if printed not in verbatim:
+                fail(f"printed reading for {item_id} does not occur in its verbatim block")
+            lean_path = ROOT / item.get("lean_path", "")
+            if not lean_path.is_file():
+                fail(f"Lean path for {item_id} does not exist: {lean_path}")
+        evidence = batch.get("ci_evidence", {})
+        if evidence.get("conclusion") != "success" or not evidence.get("run"):
+            fail(f"{path} lacks successful immutable CI evidence")
+    numbered = {item_id for item_id in blocks if "✱" in item_id}
+    missing = numbered - metadata_ids
+    if missing:
+        fail(f"numbered verbatim items lack metadata: {sorted(missing)}")
+
+
 def main() -> None:
     check_verbatim_blocks()
+    check_excerpt_blocks()
     check_apparatus()
+    check_item_metadata()
     print("editorial checks passed")
 
 
 if __name__ == "__main__":
     main()
-
