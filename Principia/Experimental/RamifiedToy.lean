@@ -13,68 +13,68 @@ metalinguistic derivability judgement.
 
 /-- A function records argument types, result-proposition order, and its
 excess above the least compatible (predicative) order. -/
-inductive Sort where
+inductive RamifiedSort where
   | individual
   | proposition (order : Nat)
-  | function (arguments : List Sort) (resultOrder excess : Nat)
+  | function (arguments : List RamifiedSort) (resultOrder excess : Nat)
   deriving DecidableEq, Repr
 
-namespace Sort
+namespace RamifiedSort
 
 mutual
-  def height : Sort → Nat
+  def height : RamifiedSort → Nat
     | .individual => 0
     | .proposition order => order
     | .function arguments resultOrder excess =>
         max (Nat.succ (maxHeight arguments)) (Nat.succ resultOrder) + excess
 
-  def maxHeight : List Sort → Nat
+  def maxHeight : List RamifiedSort → Nat
     | [] => 0
     | argument :: arguments => max (height argument) (maxHeight arguments)
 end
 
-def minimumFunctionOrder (arguments : List Sort) (resultOrder : Nat) : Nat :=
+def minimumFunctionOrder (arguments : List RamifiedSort) (resultOrder : Nat) : Nat :=
   max (Nat.succ (maxHeight arguments)) (Nat.succ resultOrder)
 
-def Predicative : Sort → Prop
+def Predicative : RamifiedSort → Prop
   | .function _ _ 0 => True
   | _ => False
 
-end Sort
+end RamifiedSort
 
-abbrev RealContext := List Sort
-abbrev ApparentContext := List Sort
+abbrev RealContext := List RamifiedSort
+abbrev ApparentContext := List RamifiedSort
 
-inductive Var : List Sort → Sort → Type where
+inductive Var : List RamifiedSort → RamifiedSort → Type where
   | zero : Var (sort :: context) sort
   | succ : Var context sort → Var (other :: context) sort
   deriving DecidableEq, Repr
 
 /-- Connective meanings exist only at explicitly assigned orders. -/
 structure Signature where
-  Symbol : Sort → Type
+  Symbol : RamifiedSort → Type
   NegationMeaning : Nat → Type
   DisjunctionMeaning : Nat → Nat → Type
 
 inductive Term (signature : Signature) (real : RealContext)
-    (apparent : ApparentContext) : Sort → Type where
+    (apparent : ApparentContext) : RamifiedSort → Type where
   | real : Var real sort → Term signature real apparent sort
   | apparent : Var apparent sort → Term signature real apparent sort
   | symbol : signature.Symbol sort → Term signature real apparent sort
 
 /-- Full applications are intrinsically typed by their argument vector. -/
 inductive Arguments (signature : Signature) (real : RealContext)
-    (apparent : ApparentContext) : List Sort → Type where
+    (apparent : ApparentContext) : List RamifiedSort → Type where
   | nil : Arguments signature real apparent []
   | cons : Term signature real apparent sort →
       Arguments signature real apparent sorts →
       Arguments signature real apparent (sort :: sorts)
 
-def bindOrder (matrixOrder : Nat) (sort : Sort) : Nat :=
+def bindOrder (matrixOrder : Nat) (sort : RamifiedSort) : Nat :=
   max matrixOrder (Nat.succ sort.height)
 
-inductive Formula (signature : Signature) (real : RealContext)
-    (apparent : ApparentContext) : Nat → Type where
+inductive Formula (signature : Signature) (real : RealContext) :
+    ApparentContext → Nat → Type where
   | propositionVariable :
       Term signature real apparent (.proposition order) →
       Formula signature real apparent order
@@ -97,91 +97,91 @@ inductive Formula (signature : Signature) (real : RealContext)
 namespace Formula
 
 abbrev ApparentRenaming (source target : ApparentContext) :=
-  {sort : Sort} → Var source sort → Var target sort
+  {sort : RamifiedSort} → Var source sort → Var target sort
 
 abbrev RealRenaming (source target : RealContext) :=
-  {sort : Sort} → Var source sort → Var target sort
+  {sort : RamifiedSort} → Var source sort → Var target sort
 
-def liftApparentRenaming (renaming : ApparentRenaming source target) :
+def liftApparentRenaming (rho : ApparentRenaming source target) :
     ApparentRenaming (sort :: source) (sort :: target)
   | _, .zero => .zero
-  | _, .succ variable => .succ (renaming variable)
+  | _, .succ entryVar => .succ (rho entryVar)
 
-def Term.renameApparent (renaming : ApparentRenaming source target) :
+def Term.renameApparent (rho : ApparentRenaming source target) :
     Term signature real source sort → Term signature real target sort
-  | .real variable => .real variable
-  | .apparent variable => .apparent (renaming variable)
+  | .real entryVar => .real entryVar
+  | .apparent entryVar => .apparent (rho entryVar)
   | .symbol symbol => .symbol symbol
 
-def Arguments.renameApparent (renaming : ApparentRenaming source target) :
+def Arguments.renameApparent (rho : ApparentRenaming source target) :
     Arguments signature real source sorts →
       Arguments signature real target sorts
   | .nil => .nil
   | .cons argument arguments =>
-      .cons (argument.renameApparent renaming)
-        (arguments.renameApparent renaming)
+      .cons (argument.renameApparent rho)
+        (arguments.renameApparent rho)
 
-def renameApparent (renaming : ApparentRenaming source target) :
+def renameApparent (rho : ApparentRenaming source target) :
     Formula signature real source order → Formula signature real target order
-  | .propositionVariable variable =>
-      .propositionVariable (variable.renameApparent renaming)
+  | .propositionVariable entryVar =>
+      .propositionVariable (entryVar.renameApparent rho)
   | .apply function arguments =>
-      .apply (function.renameApparent renaming)
-        (arguments.renameApparent renaming)
-  | .neg meaning proposition => .neg meaning (renameApparent renaming proposition)
+      .apply (function.renameApparent rho)
+        (arguments.renameApparent rho)
+  | .neg meaning proposition => .neg meaning (renameApparent rho proposition)
   | .disj meaning left right =>
-      .disj meaning (renameApparent renaming left) (renameApparent renaming right)
-  | .always body => .always (renameApparent (liftApparentRenaming renaming) body)
+      .disj meaning (renameApparent rho left) (renameApparent rho right)
+  | .always body => .always (renameApparent (liftApparentRenaming rho) body)
   | .sometimes body =>
-      .sometimes (renameApparent (liftApparentRenaming renaming) body)
+      .sometimes (renameApparent (liftApparentRenaming rho) body)
 
 def weakenApparent (term : Term signature real apparent sort) :
     Term signature real (fresh :: apparent) sort :=
-  term.renameApparent (fun variable => .succ variable)
+  term.renameApparent (fun entryVar => .succ entryVar)
 
-def Term.renameReal (renaming : RealRenaming source target) :
+def Term.renameReal (rho : RealRenaming source target) :
     Term signature source apparent sort → Term signature target apparent sort
-  | .real variable => .real (renaming variable)
-  | .apparent variable => .apparent variable
+  | .real entryVar => .real (rho entryVar)
+  | .apparent entryVar => .apparent entryVar
   | .symbol symbol => .symbol symbol
 
-def Arguments.renameReal (renaming : RealRenaming source target) :
+def Arguments.renameReal (rho : RealRenaming source target) :
     Arguments signature source apparent sorts →
       Arguments signature target apparent sorts
   | .nil => .nil
   | .cons argument arguments =>
-      .cons (argument.renameReal renaming) (arguments.renameReal renaming)
+      .cons (argument.renameReal rho) (arguments.renameReal rho)
 
-def renameReal (renaming : RealRenaming source target) :
+def renameReal (rho : RealRenaming source target) :
     Formula signature source apparent order → Formula signature target apparent order
-  | .propositionVariable variable => .propositionVariable (variable.renameReal renaming)
+  | .propositionVariable entryVar => .propositionVariable (entryVar.renameReal rho)
   | .apply function arguments =>
-      .apply (function.renameReal renaming) (arguments.renameReal renaming)
-  | .neg meaning proposition => .neg meaning (renameReal renaming proposition)
+      .apply (function.renameReal rho) (arguments.renameReal rho)
+  | .neg meaning proposition => .neg meaning (renameReal rho proposition)
   | .disj meaning left right =>
-      .disj meaning (renameReal renaming left) (renameReal renaming right)
-  | .always body => .always (renameReal renaming body)
-  | .sometimes body => .sometimes (renameReal renaming body)
+      .disj meaning (renameReal rho left) (renameReal rho right)
+  | .always body => .always (renameReal rho body)
+  | .sometimes body => .sometimes (renameReal rho body)
 
 def weakenReal (proposition : Formula signature real apparent order) :
     Formula signature (fresh :: real) apparent order :=
-  renameReal (fun variable => .succ variable) proposition
+  renameReal (fun entryVar => .succ entryVar) proposition
 
 abbrev ApparentSubstitution (signature : Signature) (real : RealContext)
     (source target : ApparentContext) :=
-  {sort : Sort} → Var source sort → Term signature real target sort
+  {sort : RamifiedSort} → Var source sort → Term signature real target sort
 
 def liftSubstitution
     (substitution : ApparentSubstitution signature real source target) :
     ApparentSubstitution signature real (sort :: source) (sort :: target)
   | _, .zero => .apparent .zero
-  | _, .succ variable => weakenApparent (substitution variable)
+  | _, .succ entryVar => weakenApparent (substitution entryVar)
 
 def Term.substitute
     (substitution : ApparentSubstitution signature real source target) :
     Term signature real source sort → Term signature real target sort
-  | .real variable => .real variable
-  | .apparent variable => substitution variable
+  | .real entryVar => .real entryVar
+  | .apparent entryVar => substitution entryVar
   | .symbol symbol => .symbol symbol
 
 def Arguments.substitute
@@ -196,8 +196,8 @@ def Arguments.substitute
 def substitute
     (substitution : ApparentSubstitution signature real source target) :
     Formula signature real source order → Formula signature real target order
-  | .propositionVariable variable =>
-      .propositionVariable (variable.substitute substitution)
+  | .propositionVariable entryVar =>
+      .propositionVariable (entryVar.substitute substitution)
   | .apply function arguments =>
       .apply (function.substitute substitution)
         (arguments.substitute substitution)
@@ -210,7 +210,7 @@ def substitute
 def instantiateSubstitution (argument : Term signature real apparent sort) :
     ApparentSubstitution signature real (sort :: apparent) apparent
   | _, .zero => argument
-  | _, .succ variable => .apparent variable
+  | _, .succ entryVar => .apparent entryVar
 
 def instantiate (body : Formula signature real (sort :: apparent) order)
     (argument : Term signature real apparent sort) :
@@ -219,22 +219,22 @@ def instantiate (body : Formula signature real (sort :: apparent) order)
 
 end Formula
 
-/-- Move the head real variable into a fresh apparent-variable position. -/
+/-- Move the head real entryVar into a fresh apparent-entryVar position. -/
 def Term.abstractHead :
     Term signature (head :: real) apparent sort →
       Term signature real (head :: apparent) sort
   | .real .zero => .apparent .zero
-  | .real (.succ variable) => .real variable
-  | .apparent variable => .apparent (.succ variable)
+  | .real (.succ entryVar) => .real entryVar
+  | .apparent entryVar => .apparent (.succ entryVar)
   | .symbol symbol => .symbol symbol
 
 /-- Inverse operation: give the fresh apparent head the real head value. -/
 def Term.valueHead :
     Term signature real (head :: apparent) sort →
       Term signature (head :: real) apparent sort
-  | .real variable => .real (.succ variable)
+  | .real entryVar => .real (.succ entryVar)
   | .apparent .zero => .real .zero
-  | .apparent (.succ variable) => .apparent variable
+  | .apparent (.succ entryVar) => .apparent entryVar
   | .symbol symbol => .symbol symbol
 
 def Arguments.abstractHead :
@@ -252,7 +252,7 @@ def Arguments.valueHead :
 
 namespace Formula
 
-/-- Exchange the newly abstracted variable with an already present inner
+/-- Exchange the newly abstracted entryVar with an already present inner
 binder.  This is the critical capture-avoidance step absent from the simpler
 matrix-only operation. -/
 def swapAbstractedWithBinder :
@@ -260,16 +260,16 @@ def swapAbstractedWithBinder :
       (binder :: head :: apparent)
   | _, .zero => .succ .zero
   | _, .succ .zero => .zero
-  | _, .succ (.succ variable) => .succ (.succ variable)
+  | _, .succ (.succ entryVar) => .succ (.succ entryVar)
 
-/-- Turn the real variable at the head of the real context into the new head
-apparent variable, preserving the proposition order and every existing
+/-- Turn the real entryVar at the head of the real context into the new head
+apparent entryVar, preserving the proposition order and every existing
 binder. -/
 def abstractRealHead :
     Formula signature (head :: real) apparent order →
       Formula signature real (head :: apparent) order
-  | .propositionVariable variable =>
-      .propositionVariable variable.abstractHead
+  | .propositionVariable entryVar =>
+      .propositionVariable entryVar.abstractHead
   | .apply function arguments =>
       .apply function.abstractHead arguments.abstractHead
   | .neg meaning proposition => .neg meaning proposition.abstractRealHead
@@ -306,14 +306,14 @@ namespace ElementaryMatrix
 
 def toFormula : ElementaryMatrix signature real apparent →
     Formula signature real apparent 0
-  | .propositionVariable variable => .propositionVariable variable
+  | .propositionVariable entryVar => .propositionVariable entryVar
   | .apply function arguments => .apply function arguments
   | .neg meaning proposition => .neg meaning proposition.toFormula
   | .disj meaning left right => .disj meaning left.toFormula right.toFormula
 
 def abstractHead : ElementaryMatrix signature (head :: real) apparent →
     ElementaryMatrix signature real (head :: apparent)
-  | .propositionVariable variable => .propositionVariable variable.abstractHead
+  | .propositionVariable entryVar => .propositionVariable entryVar.abstractHead
   | .apply function arguments =>
       .apply function.abstractHead arguments.abstractHead
   | .neg meaning proposition => .neg meaning proposition.abstractHead
@@ -322,28 +322,28 @@ def abstractHead : ElementaryMatrix signature (head :: real) apparent →
 
 def valueHead : ElementaryMatrix signature real (head :: apparent) →
     ElementaryMatrix signature (head :: real) apparent
-  | .propositionVariable variable => .propositionVariable variable.valueHead
+  | .propositionVariable entryVar => .propositionVariable entryVar.valueHead
   | .apply function arguments => .apply function.valueHead arguments.valueHead
   | .neg meaning proposition => .neg meaning proposition.valueHead
   | .disj meaning left right => .disj meaning left.valueHead right.valueHead
 
-def renameReal (renaming : Formula.RealRenaming source target) :
+def renameReal (rho : Formula.RealRenaming source target) :
     ElementaryMatrix signature source apparent →
       ElementaryMatrix signature target apparent
-  | .propositionVariable variable =>
-      .propositionVariable (variable.renameReal renaming)
+  | .propositionVariable entryVar =>
+      .propositionVariable (entryVar.renameReal rho)
   | .apply function arguments =>
-      .apply (function.renameReal renaming) (arguments.renameReal renaming)
-  | .neg meaning proposition => .neg meaning (renameReal renaming proposition)
+      .apply (function.renameReal rho) (arguments.renameReal rho)
+  | .neg meaning proposition => .neg meaning (renameReal rho proposition)
   | .disj meaning left right =>
-      .disj meaning (renameReal renaming left) (renameReal renaming right)
+      .disj meaning (renameReal rho left) (renameReal rho right)
 
 @[simp] theorem term_value_abstract_head
     (term : Term signature (head :: real) apparent sort) :
     term.abstractHead.valueHead = term := by
   cases term with
-  | real variable => cases variable <;> rfl
-  | apparent variable => rfl
+  | real entryVar => cases entryVar <;> rfl
+  | apparent entryVar => rfl
   | symbol symbol => rfl
 
 @[simp] theorem arguments_value_abstract_head
@@ -358,7 +358,7 @@ def renameReal (renaming : Formula.RealRenaming source target) :
     (matrix : ElementaryMatrix signature (head :: real) apparent) :
     matrix.abstractHead.valueHead = matrix := by
   induction matrix with
-  | propositionVariable variable =>
+  | propositionVariable entryVar =>
       simp [abstractHead, valueHead]
   | apply function arguments =>
       simp [abstractHead, valueHead]
@@ -371,7 +371,7 @@ end ElementaryMatrix
 
 /-- An elementary propositional function with one exactly typed argument. -/
 structure ElementaryFunction (signature : Signature)
-    (real : RealContext) (argument : Sort) where
+    (real : RealContext) (argument : RamifiedSort) where
   body : ElementaryMatrix signature real [argument]
 
 namespace ElementaryFunction
@@ -392,14 +392,14 @@ def valueHead (function : ElementaryFunction signature real argument) :
 
 def weakenReal (function : ElementaryFunction signature real argument) :
     ElementaryFunction signature (fresh :: real) argument :=
-  ⟨function.body.renameReal (fun variable => .succ variable)⟩
+  ⟨function.body.renameReal (fun entryVar => .succ entryVar)⟩
 
 end ElementaryFunction
 
 /-- Exactly the four assigned scope combinations needed around one binder.
 The names `00`, `01`, `10`, and `11` refer to matrix/bound scope, not to an
 all-orders connective. -/
-structure ScopedConnectives (signature : Signature) (argument : Sort) where
+structure ScopedConnectives (signature : Signature) (argument : RamifiedSort) where
   neg0 : signature.NegationMeaning 0
   neg1 : signature.NegationMeaning (bindOrder 0 argument)
   disj00 : signature.DisjunctionMeaning 0 0
@@ -456,7 +456,7 @@ def imp11 (scope : ScopedConnectives signature argument)
 
 def weakenClosed (proposition : Formula signature real [] 0) :
     Formula signature real [argument] 0 :=
-  Formula.renameApparent (fun variable => nomatch variable) proposition
+  Formula.renameApparent (fun entryVar => nomatch entryVar) proposition
 
 /-- Scope-normal form for `p ⊃ (exists x).phi x`, using the mixed
 disjunction definitions corresponding to ✱9·04/06 rather than retaining an
@@ -508,7 +508,7 @@ def valueFirst (function : ElementaryFunction signature real argument) :
 
 def valueSecond (function : ElementaryFunction signature real argument) :
     Formula signature (argument :: argument :: real) [] 0 :=
-  (function.valueHead.renameReal (fun variable => .succ variable)).toFormula
+  (function.valueHead.renameReal (fun entryVar => .succ entryVar)).toFormula
 
 def bodyUnderOneReal (function : ElementaryFunction signature real argument) :
     ElementaryMatrix signature (argument :: real) [argument] :=
@@ -556,11 +556,11 @@ inductive ToyDerivation (signature : Signature) :
 
 /-- Order is computed from the complete function sort, never supplied as a
 detached numeral. -/
-def ramifiedFunctionOrder (arguments : List Sort) (resultOrder excess : Nat) : Nat :=
-  Sort.height (.function arguments resultOrder excess)
+def ramifiedFunctionOrder (arguments : List RamifiedSort) (resultOrder excess : Nat) : Nat :=
+  RamifiedSort.height (.function arguments resultOrder excess)
 
 /-- Explicit domain element for a reducibility assumption. -/
-structure ReducibleAt (signature : Signature) (argument : Sort)
+structure ReducibleAt (signature : Signature) (argument : RamifiedSort)
     (resultOrder excess : Nat) where
   function : Term signature [] [] (.function [argument] resultOrder excess)
 
@@ -572,13 +572,13 @@ def ReducibleAt.targetOrder
     (_entry : ReducibleAt signature argument resultOrder excess) : Nat :=
   ramifiedFunctionOrder [argument] resultOrder 0
 
-def formalEquivalenceOrder (argument : Sort) (resultOrder leftExcess
+def formalEquivalenceOrder (argument : RamifiedSort) (resultOrder leftExcess
     rightExcess : Nat) : Nat :=
   max (ramifiedFunctionOrder [argument] resultOrder leftExcess)
     (ramifiedFunctionOrder [argument] resultOrder rightExcess)
 
 structure UnaryFormalEquivalence (signature : Signature) where
-  formula : {argument : Sort} → {resultOrder leftExcess rightExcess : Nat} →
+  formula : {argument : RamifiedSort} → {resultOrder leftExcess rightExcess : Nat} →
     Term signature [] [] (.function [argument] resultOrder leftExcess) →
     Term signature [] [] (.function [argument] resultOrder rightExcess) →
     Formula signature [] []
@@ -587,10 +587,10 @@ structure UnaryFormalEquivalence (signature : Signature) where
 /-- Explicit scoped hypothesis, never a global axiom or derivation rule. -/
 structure UnaryReducibility (signature : Signature)
     (formalEquivalence : UnaryFormalEquivalence signature) where
-  representative : {argument : Sort} → {resultOrder excess : Nat} →
+  representative : {argument : RamifiedSort} → {resultOrder excess : Nat} →
     ReducibleAt signature argument resultOrder excess →
     Term signature [] [] (.function [argument] resultOrder 0)
-  certificate : {argument : Sort} → {resultOrder excess : Nat} →
+  certificate : {argument : RamifiedSort} → {resultOrder excess : Nat} →
     (entry : ReducibleAt signature argument resultOrder excess) →
     ToyDerivation
       (formalEquivalence.formula entry.function (representative entry))
@@ -605,10 +605,10 @@ def reducedRepresentative
 
 /-! ## Concrete higher-order witness for the architectural barrier -/
 
-def individualSort : Sort := .individual
-def predicateSort : Sort := .function [individualSort] 0 0
+def individualSort : RamifiedSort := .individual
+def predicateSort : RamifiedSort := .function [individualSort] 0 0
 
-inductive WitnessSymbol : Sort → Type where
+inductive WitnessSymbol : RamifiedSort → Type where
   | predicate : WitnessSymbol predicateSort
   | evaluator : WitnessSymbol (.function [predicateSort] 0 0)
   | nonPredicativeEvaluator : WitnessSymbol (.function [predicateSort] 0 1)
@@ -716,10 +716,10 @@ def higherStar10WithReducibility
 
 /-! ## Elementary-syntax embedding and partial retraction -/
 
-def legacySort : PM.RealType → Sort
+def legacySort : PM.RealType → RamifiedSort
   | .elementaryProposition => .proposition 0
 
-inductive LegacySymbol : Sort → Type where
+inductive LegacySymbol : RamifiedSort → Type where
   | elementaryConstant : String → LegacySymbol (.proposition 0)
 
 inductive LegacyNegationMeaning : Nat → Type where
@@ -736,19 +736,19 @@ def legacySignature : Signature where
 def embedRealVar : PM.RealVar real .elementaryProposition →
     Var (real.map legacySort) (.proposition 0)
   | .zero => .zero
-  | .succ variable => .succ (embedRealVar variable)
+  | .succ entryVar => .succ (embedRealVar entryVar)
 
 def eraseRealVar : (real : PM.RealContext) →
     Var (real.map legacySort) (.proposition 0) →
       PM.RealVar real .elementaryProposition
   | _ :: _, .zero => .zero
-  | _ :: _, .succ variable => .succ (eraseRealVar _ variable)
+  | _ :: _, .succ entryVar => .succ (eraseRealVar _ entryVar)
 
 def embedElementary : PM.Elementary real →
     Formula legacySignature (real.map legacySort) [] 0
   | .constant name =>
       .propositionVariable (.symbol (.elementaryConstant name))
-  | .var variable => .propositionVariable (.real (embedRealVar variable))
+  | .var entryVar => .propositionVariable (.real (embedRealVar entryVar))
   | .neg proposition => .neg .elementary (embedElementary proposition)
   | .disj left right =>
       .disj .elementary (embedElementary left) (embedElementary right)
@@ -756,7 +756,7 @@ def embedElementary : PM.Elementary real →
 def erasePropositionTerm? : {order : Nat} →
     Term legacySignature (real.map legacySort) [] (.proposition order) →
       Option (PM.Elementary real)
-  | 0, .real variable => some (.var (eraseRealVar real variable))
+  | 0, .real entryVar => some (.var (eraseRealVar real entryVar))
   | 0, .symbol (.elementaryConstant name) => some (.constant name)
   | _, _ => none
 
@@ -764,7 +764,7 @@ def eraseElementary? (proposition :
     Formula legacySignature (real.map legacySort) [] 0) :
     Option (PM.Elementary real) :=
   match proposition with
-  | .propositionVariable variable => erasePropositionTerm? variable
+  | .propositionVariable entryVar => erasePropositionTerm? entryVar
   | .apply _ _ => none
   | .neg .elementary inner => (eraseElementary? inner).map .neg
   | .disj .elementary left right => do
@@ -778,10 +778,10 @@ def eraseElementary? (proposition :
     eraseElementary? (embedElementary proposition) = some proposition := by
   induction proposition with
   | constant name => rfl
-  | var variable =>
-      induction variable with
+  | var entryVar =>
+      induction entryVar with
       | zero => rfl
-      | succ variable inductionHypothesis =>
+      | succ entryVar inductionHypothesis =>
           simp [embedElementary, eraseElementary?,
             erasePropositionTerm?, embedRealVar, eraseRealVar,
             inductionHypothesis]

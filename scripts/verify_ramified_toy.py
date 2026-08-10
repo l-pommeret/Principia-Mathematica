@@ -15,7 +15,7 @@ def main() -> None:
     code = code_without_comments_or_strings(source)
     required = (
         "namespace PM.Experimental.RamifiedToy",
-        "inductive Sort", "| individual", "| proposition", "| function",
+        "inductive RamifiedSort", "| individual", "| proposition", "| function",
         "def height", "def Predicative", "abbrev RealContext",
         "abbrev ApparentContext", "inductive Var", "inductive Term",
         "| real", "| apparent", "inductive Arguments", "inductive Formula",
