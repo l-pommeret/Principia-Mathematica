@@ -28,8 +28,12 @@ jobs:
         run: python3 scripts/verify_substitution_architecture.py
       - name: Guard the isolated ramified-type experiment
         run: python3 scripts/verify_ramified_toy.py
+      - name: Guard the experimental predicative/reducibility gate
+        run: python3 scripts/verify_predicative_gate_toy.py
       - name: Guard the isolated typical-ambiguity experiment
         run: python3 scripts/verify_typical_ambiguity_toy.py
+      - name: Guard incomplete symbols and description scope
+        run: python3 scripts/verify_description_scope_toy.py
       - name: Build and kernel-check the edition
         run: lake build
       - name: Reject placeholders and unsafe declarations

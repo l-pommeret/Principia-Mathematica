@@ -39,3 +39,11 @@ typical ambiguity. One class proposition is parameterised by a reified PM
 functions of individuals. Its negative check establishes only sort separation
 and sort-preserving substitution; it is not yet a reconstruction of the full
 type-schematic convention used throughout the class calculus.
+
+`Principia.Experimental.DescriptionScopeToy` is a still smaller feasibility
+test for incomplete symbols. A description can occur only together with the
+continuation that consumes its witness; expansion eliminates it into an
+existence-and-uniqueness formula. A two-object countermodel separates wide and
+narrow negation when the description fails to denote. This is not yet the
+canonical ✱14 syntax: it uses a HOAS continuation and requires later de Bruijn
+substitution tests plus exact source-level validation.
