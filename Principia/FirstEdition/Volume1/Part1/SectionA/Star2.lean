@@ -1235,4 +1235,87 @@ theorem star_2_41 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
     (PM.Derivation.detach line2
       (star_2_05 (q ∨ₚ (p ∨ₚ q)) (p ∨ₚ (q ∨ₚ q)) (p ∨ₚ q)))
 
+/- PM-VERBATIM-BEGIN PM1:✱2·4
+✱2·4.  ⊢ :. p . ∨ . p ∨ q : ⊃ . p ∨ q
+
+Dem.
+
+        ⊢ .✱2·31. ⊃ ⊢ :. p . ∨ . p ∨ q :
+                         ⊃ : p ∨ p . ∨ q :
+        [Taut.✱2·38]     ⊃ : p ∨ q : ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱2·4 -/
+
+/- PM-FORMAL-GLOSS
+The derivation preserves the printed order. First ✱2·31 changes the displayed
+right-nesting into `(p ∨ p) ∨ q`. Taut at `p` is then lifted on the right by
+✱2·38, and the printed concluding Syll. composition is expanded by ✱2·05 and
+metalinguistic detachment.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·42
+✱2·42.  ⊢ :. ∼p . ∨ . p ⊃ q : ⊃ . p ⊃ q          [✱2·4 ∼p/p]
+PM-VERBATIM-END PM1:✱2·42 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·43
+✱2·43.  ⊢ :. p . ⊃ . p ⊃ q : ⊃ . p ⊃ q             [✱2·42]
+PM-VERBATIM-END PM1:✱2·43 -/
+
+/- PM-FORMAL-GLOSS
+✱2·42 is exactly ✱2·4 under the printed substitution `∼p/p`.  ✱2·43 changes
+no proof content: it is the ✱1·01 definitional reading of ✱2·42.
+-/
+
+/- PM-EDITORIAL
+Source for ✱2·4, ✱2·42 and ✱2·43:
+- scan, printed p. 111: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/133
+- working witnesses: Project Gutenberg ebook 78050 and Wikisource
+Verification status: double-witness-checked and collated directly against the
+facsimile; the source and formal audit is recorded in `reviews/Q210-review.md`.
+No `sic`, `corr.`, or `conj.` entry is required.
+-/
+
+/-! ## Q210: audited scope readings and formal derivations -/
+
+def star_2_4_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. p . ∨ . p ∨ q : ⊃ . p ∨ q"
+  parsed := (p ∨ₚ (p ∨ₚ q)) ⊃ₚ (p ∨ₚ q)
+  scopeReading := "The dotted antecedent is p ∨ (p ∨ q); it is not the left-associated chain fixed by ✱2·33."
+
+def star_2_4_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·31]; [Taut.✱2·38]; [Syll.] ⊃ ⊢ .Prop"
+
+theorem star_2_4 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ (p ∨ₚ q)) ⊃ₚ (p ∨ₚ q)) := by
+  have assoc : ⊢ₚ ((p ∨ₚ (p ∨ₚ q)) ⊃ₚ ((p ∨ₚ p) ∨ₚ q)) := star_2_31 p p q
+  have taut : ⊢ₚ ((p ∨ₚ p) ⊃ₚ p) := PM.Derivation.star_1_2 p
+  have lifted : ⊢ₚ (((p ∨ₚ p) ∨ₚ q) ⊃ₚ (p ∨ₚ q)) :=
+    PM.Derivation.detach taut (star_2_38 q (p ∨ₚ p) p)
+  exact PM.Derivation.detach assoc
+    (PM.Derivation.detach lifted
+      (star_2_05 (p ∨ₚ (p ∨ₚ q)) ((p ∨ₚ p) ∨ₚ q) (p ∨ₚ q)))
+
+def star_2_42_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. ∼p . ∨ . p ⊃ q : ⊃ . p ⊃ q"
+  parsed := (∼ₚ p ∨ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ q)
+  scopeReading := "The consequent of the outer implication is p ⊃ q."
+
+def star_2_42_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·4 ∼p/p]"
+
+theorem star_2_42 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((∼ₚ p ∨ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ q)) :=
+  star_2_4 (∼ₚ p) q
+
+def star_2_43_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. p . ⊃ . p ⊃ q : ⊃ . p ⊃ q"
+  parsed := (p ⊃ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ q)
+  scopeReading := "This is the ✱1·01 expansion of the disjunctive antecedent in ✱2·42."
+
+def star_2_43_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·42]"
+
+theorem star_2_43 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ q)) :=
+  star_2_42 p q
+
 end PM.FirstEdition.Volume1.Star2
