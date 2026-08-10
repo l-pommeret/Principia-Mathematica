@@ -46,8 +46,8 @@ whose ✱10·23/·27 dependencies are not yet formalized here.
 -/
 
 /-- A minimal proposition AST in which the exclamation mark survives. -/
-inductive DeepFormula (signature : Signature) (realContext : RealContext)
-    (apparentContext : ApparentContext) : Nat → Type where
+inductive DeepFormula (signature : Signature)
+    (realContext : RamifiedToy.RealContext) : ApparentContext → Nat → Type where
   | applyGeneral {arguments : List RamifiedSort} {resultOrder excess : Nat} :
       Term signature realContext apparentContext
         (.function arguments resultOrder excess) →
