@@ -237,5 +237,51 @@ prefix:max "∼₁" => neg
     (body : Apparent Γ (.elementaryProposition :: Δ)) :
     neg (sometimes body) = always (.neg body) := rfl
 
+/-- Disjunction of a first-order proposition with an elementary proposition.
+The binder is preserved and elementary disjunction is formed in its matrix;
+the two branches are precisely ✱9·03 and ✱9·05. -/
+def disjRightElementary : FirstOrder Γ Δ → Elementary Γ → FirstOrder Γ Δ
+  | Quantified.always body, proposition =>
+      always (body ∨ₐ Apparent.ofElementary proposition)
+  | Quantified.sometimes body, proposition =>
+      sometimes (body ∨ₐ Apparent.ofElementary proposition)
+
+/-- Disjunction of an elementary proposition with a first-order proposition.
+Operand order is retained in the matrix; the two branches are precisely
+✱9·04 and ✱9·06. -/
+def disjElementaryLeft : Elementary Γ → FirstOrder Γ Δ → FirstOrder Γ Δ
+  | proposition, Quantified.always body =>
+      always (Apparent.ofElementary proposition ∨ₐ body)
+  | proposition, Quantified.sometimes body =>
+      sometimes (Apparent.ofElementary proposition ∨ₐ body)
+
+/-- ✱9·03 as a kernel reduction. -/
+@[simp] theorem star_9_03_reduction
+    (body : Apparent Γ (.elementaryProposition :: Δ))
+    (proposition : Elementary Γ) :
+    disjRightElementary (always body) proposition =
+      always (body ∨ₐ Apparent.ofElementary proposition) := rfl
+
+/-- ✱9·04 as a kernel reduction. -/
+@[simp] theorem star_9_04_reduction
+    (proposition : Elementary Γ)
+    (body : Apparent Γ (.elementaryProposition :: Δ)) :
+    disjElementaryLeft proposition (always body) =
+      always (Apparent.ofElementary proposition ∨ₐ body) := rfl
+
+/-- ✱9·05 as a kernel reduction. -/
+@[simp] theorem star_9_05_reduction
+    (body : Apparent Γ (.elementaryProposition :: Δ))
+    (proposition : Elementary Γ) :
+    disjRightElementary (sometimes body) proposition =
+      sometimes (body ∨ₐ Apparent.ofElementary proposition) := rfl
+
+/-- ✱9·06 as a kernel reduction. -/
+@[simp] theorem star_9_06_reduction
+    (proposition : Elementary Γ)
+    (body : Apparent Γ (.elementaryProposition :: Δ)) :
+    disjElementaryLeft proposition (sometimes body) =
+      sometimes (Apparent.ofElementary proposition ∨ₐ body) := rfl
+
 end FirstOrder
 end PM

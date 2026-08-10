@@ -19,6 +19,9 @@ def main() -> None:
         "def substitute", "def instantiate", "def Significant",
         "inductive Quantified", "abbrev FirstOrder", "namespace FirstOrder",
         "abbrev always", "abbrev sometimes", "def neg",
+        "def disjRightElementary", "def disjElementaryLeft",
+        "theorem star_9_03_reduction", "theorem star_9_04_reduction",
+        "theorem star_9_05_reduction", "theorem star_9_06_reduction",
     )
     missing = [item for item in required if item not in source]
     if missing:
@@ -50,6 +53,16 @@ def main() -> None:
         raise SystemExit("✱9·01 is not represented by a definitional reduction")
     if "| .sometimes body => .always (matrixNeg body)" not in source:
         raise SystemExit("✱9·02 is not represented by a definitional reduction")
+    mixed_reductions = {
+        "✱9·03": "disjRightElementary (always body) proposition",
+        "✱9·04": "disjElementaryLeft proposition (always body)",
+        "✱9·05": "disjRightElementary (sometimes body) proposition",
+        "✱9·06": "disjElementaryLeft proposition (sometimes body)",
+    }
+    absent = [label for label, expression in mixed_reductions.items()
+              if expression not in source]
+    if absent:
+        raise SystemExit("missing mixed-disjunction reductions: " + ", ".join(absent))
     print("Apparent-variable architecture checks passed")
 
 

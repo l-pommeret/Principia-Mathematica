@@ -555,7 +555,7 @@
       "source": "PM volume I, first edition, pp. 114 and 116",
       "prompt_path": "aristotle/Q217.md",
       "audit_path": "reviews/Q217-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "blocked-missing-higher-order-disjunction-and-first-order-assertion",
       "lean_scope": "exact PM1 ✱3·01–✱3·03 definitions and derivation theorem",
       "depends_on": [
         "PM1:✱2·11",
@@ -574,7 +574,7 @@
       "source": "PM volume I, first edition, p. 113",
       "prompt_path": "aristotle/Q218.md",
       "audit_path": "reviews/Q218-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "A-pending-mixed-disjunction-CI-and-Q252",
       "lean_scope": "exact PM1 ✱2·73 through ✱2·76",
       "depends_on": [
         "PM1:✱2·31",
@@ -1478,7 +1478,7 @@
       "aristotle_request_path": "aristotle/Q252.md",
       "aristotle_request_sha256": "a8d1a9f8206746a223939ee345afd2ddf5e45331fa03778aefd36337254512fd",
       "aristotle_latest_task_name": "Formalize Q252.md",
-      "aristotle_latest_task_created": "3 mins ago"
+      "aristotle_latest_task_created": "6 mins ago"
     },
     "Q253": {
       "canonical_ids": [
@@ -1490,14 +1490,21 @@
       "source": "PM volume I, first edition, p. 135",
       "prompt_path": "aristotle/Q253.md",
       "audit_path": "reviews/Q253-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "A-pending-mixed-disjunction-CI-and-Q252",
       "lean_scope": "exact PM1 ✱9·03–✱9·06 mixed-order disjunction definitions",
       "depends_on": [
         "PM1:✱9·01",
         "PM1:✱9·02"
       ],
       "parallel_group": "STAR9-WAVE-1",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "not-submitted",
+      "architecture_evidence": {
+        "commit": "aff113e94058397d3b84a8319a0ef0f37ce58d3f",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31428730300",
+        "conclusion": "success",
+        "scope": "Quantified/FirstOrder binders and first-order negation; smart mixed-disjunction operations pending CI"
+      },
+      "submission_gate": "awaiting CI for mixed-disjunction operations and integrated kernel-checked Q252"
     },
     "Q254": {
       "canonical_ids": [
@@ -1506,17 +1513,23 @@
         "PM1:✱9·1",
         "PM1:✱9·11"
       ],
-      "source": "PM volume I, first edition, pp. 135–136",
+      "source": "PM volume I, first edition, pp. 135–137",
       "prompt_path": "aristotle/Q254.md",
       "audit_path": "reviews/Q254-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "blocked-missing-higher-order-disjunction-and-first-order-assertion",
       "lean_scope": "exact PM1 ✱9·07, ✱9·08, ✱9·1 and ✱9·11",
       "depends_on": [
         "PM1:✱9·01",
         "PM1:✱9·02"
       ],
       "parallel_group": "STAR9-WAVE-1",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "not-submitted",
+      "architecture_evidence": {
+        "commit": "aff113e94058397d3b84a8319a0ef0f37ce58d3f",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31428730300",
+        "conclusion": "success",
+        "remaining_gap": "fixed-order polymorphic disjunction/renaming plus first-order assertion calculus"
+      }
     },
     "Q255": {
       "canonical_ids": [

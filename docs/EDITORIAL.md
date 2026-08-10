@@ -77,7 +77,10 @@ It contains no new derivation rules, no semantic Lean quantifiers, and no
 generic hierarchy ranging over all proposition orders. The two equations of
 first-order negation are kernel reductions corresponding to ✱9·01 and ✱9·02;
 the bracket omissions of ✱9·011 and ✱9·021 remain notation only. Disjunction
-and metalinguistic rules will be introduced only at their audited PM loci. The
-later metatheory must prove the
+with one elementary operand is likewise represented by two direction-sensitive
+operations whose four constructor reductions correspond exactly to ✱9·03–06.
+No commutativity or inference principle is hidden in those operations.
+Disjunction between two quantified orders and metalinguistic rules will be
+introduced only at their audited PM loci. The later metatheory must prove the
 relevant erasure or model theorem before the edition labels the extension
 conservative or derives a relative-consistency result.
