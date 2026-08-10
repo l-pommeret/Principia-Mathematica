@@ -32,7 +32,7 @@ inductive Apparent (Γ : RealContext) : BoundContext → Type where
   | bound : BoundVar Δ .elementaryProposition → Apparent Γ Δ
   | neg : Apparent Γ Δ → Apparent Γ Δ
   | disj : Apparent Γ Δ → Apparent Γ Δ → Apparent Γ Δ
-  | all (τ : RealType) : Apparent Γ (τ :: Δ) → Apparent Γ Δ
+  | all : Apparent Γ (.elementaryProposition :: Δ) → Apparent Γ Δ
   deriving DecidableEq, Repr
 
 namespace Apparent
@@ -64,7 +64,7 @@ def toElementary? : Apparent Γ Δ → Option (Elementary Γ)
       let p ← toElementary? left
       let q ← toElementary? right
       pure (.disj p q)
-  | .all _ _ => none
+  | .all _ => none
 
 /-- Capture-free renamings of apparent variables. -/
 abbrev Renaming (Δ Ξ : BoundContext) :=
@@ -82,7 +82,7 @@ def rename (ρ : Renaming Δ Ξ) : Apparent Γ Δ → Apparent Γ Ξ
   | .bound v => .bound (ρ v)
   | .neg proposition => .neg (rename ρ proposition)
   | .disj left right => .disj (rename ρ left) (rename ρ right)
-  | .all τ body => .all τ (rename (liftRenaming ρ) body)
+  | .all body => .all (rename (liftRenaming ρ) body)
 
 /-- Weakening by a freshly bound apparent variable. -/
 def weaken (proposition : Apparent Γ Δ) : Apparent Γ (τ :: Δ) :=
@@ -105,10 +105,11 @@ def substitute (σ : Substitution Γ Δ Ξ) : Apparent Γ Δ → Apparent Γ Ξ
   | .bound v => σ v
   | .neg proposition => .neg (substitute σ proposition)
   | .disj left right => .disj (substitute σ left) (substitute σ right)
-  | .all τ body => .all τ (substitute (liftSubstitution σ) body)
+  | .all body => .all (substitute (liftSubstitution σ) body)
 
 /-- Instantiate the nearest apparent-variable binder. -/
-def instantiate (body : Apparent Γ (τ :: Δ)) (argument : Apparent Γ Δ) :
+def instantiate (body : Apparent Γ (.elementaryProposition :: Δ))
+    (argument : Apparent Γ Δ) :
     Apparent Γ Δ :=
   substitute (fun {_} v =>
     match v with
@@ -124,7 +125,7 @@ def significant (v : BoundVar Δ τ) : Apparent Γ Δ → Bool
       | .elementaryProposition, x, y => x == y
   | .neg proposition => significant v proposition
   | .disj left right => significant v left || significant v right
-  | .all _ body => significant (.succ v) body
+  | .all body => significant (.succ v) body
 
 /-- Proposition-valued, auditable form of syntactic significance. -/
 def Significant (v : BoundVar Δ τ) (proposition : Apparent Γ Δ) : Prop :=
