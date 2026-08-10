@@ -19,11 +19,16 @@ preuve sémantique n'est fourni.
 
 ## Audit du résultat Aristotle
 
-Verdict: **A — accepté, en attente de GitHub CI**. Projet
+Verdict: **A — accepté et intégré, kernel-checké par GitHub CI**. Projet
 `68d5c1c7-f74c-440e-93f7-080a9a6f95d5`, tâche
 `4f032463-a431-465e-86ff-87b0ff8c27f4`; archive immuable
 `aristotle/results/Q213-final.tar.gz`, SHA-256
 `1c8d71614b081eacf4cc0409af24285810ecde012feed01e0cbc68f35257f95a`.
+Le commit immuable `d41b8a34bdcaad43e4f753e775a7bd2c79b45add` a
+passé le run GitHub Actions
+[`31422968106`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31422968106)
+avec conclusion `success`, notamment les contrôles kernel et l’interdiction
+des placeholders et déclarations non sûres.
 
 La couverture est exactement celle demandée: quatre déclarations finales et
 aucune cible omise ou ajoutée. Les corps de contexte fournis sont reproduits
