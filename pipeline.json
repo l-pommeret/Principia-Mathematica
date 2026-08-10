@@ -8,6 +8,17 @@
     "subagent_review_required": true
   },
   "secrets": { "aristotle": "environment-only" },
+  "questions": {
+    "Q201": {
+      "canonical_ids": ["PM1:✱2·01", "PM1:✱2·02"],
+      "source": "PM volume I, first edition, pp. 104–105",
+      "prompt_path": "aristotle/Q201.md",
+      "audit_path": "reviews/Q201-review.md",
+      "audit_status": "A",
+      "lean_scope": "exact PM1 ✱2·01 and ✱2·02",
+      "aristotle_status": "not-submitted"
+    }
+  },
   "items": {
     "PM1:✱1·01": { "batch": "PM1-STAR1-PILOT-01", "status": "kernel-checked" },
     "PM1:✱1·1": { "batch": "PM1-STAR1-PILOT-01", "status": "kernel-checked" },
