@@ -1538,7 +1538,7 @@
       "source": "PM volume I, first edition, pp. 135–136",
       "prompt_path": "aristotle/Q254.md",
       "audit_path": "reviews/Q254-review.md",
-      "audit_status": "A-pending-higher-order-disjunction-CI-and-Q253",
+      "audit_status": "A",
       "lean_scope": "exact PM1 ✱9·07 and ✱9·08 nested-binder disjunction definitions",
       "depends_on": [
         "PM1:✱9·03",
@@ -1549,12 +1549,12 @@
       "parallel_group": "STAR9-WAVE-1",
       "aristotle_status": "not-submitted",
       "architecture_evidence": {
-        "commit": "aff113e94058397d3b84a8319a0ef0f37ce58d3f",
-        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31428730300",
+        "commit": "73b0a321aaaa8cd865b867572b89f3bf5eb607a3",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31439710731",
         "conclusion": "success",
-        "scope": "base Quantified/FirstOrder API; higher-order disjunction additions pending CI"
+        "scope": "generic assigned-order nested-binder disjunction and elementary specializations, with Q253 integrated"
       },
-      "submission_gate": "awaiting CI for higher-order disjunction operations and integrated kernel-checked Q253"
+      "submission_gate": "satisfied"
     },
     "Q255": {
       "canonical_ids": [
