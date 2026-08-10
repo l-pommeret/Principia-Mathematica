@@ -1472,11 +1472,13 @@
       "submission_gate": "satisfied",
       "aristotle_task_id": "0f7e984b-0eec-4af6-af8f-671ac5cfcc56",
       "aristotle_latest_task_id": "0f7e984b-0eec-4af6-af8f-671ac5cfcc56",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_latest_task_status": "IN_PROGRESS",
+      "aristotle_remote_status": "IN_PROGRESS",
       "aristotle_project_id": "118e4b43-2dc7-4e58-a81d-efe890562749",
       "aristotle_request_path": "aristotle/Q252.md",
-      "aristotle_request_sha256": "a8d1a9f8206746a223939ee345afd2ddf5e45331fa03778aefd36337254512fd"
+      "aristotle_request_sha256": "a8d1a9f8206746a223939ee345afd2ddf5e45331fa03778aefd36337254512fd",
+      "aristotle_latest_task_name": "Formalize Q252.md",
+      "aristotle_latest_task_created": "3 mins ago"
     },
     "Q253": {
       "canonical_ids": [
@@ -1527,7 +1529,7 @@
       "source": "PM volume I, first edition, pp. 137–138",
       "prompt_path": "aristotle/Q255.md",
       "audit_path": "reviews/Q255-review.md",
-      "audit_status": "prepared-needs-architecture-review",
+      "audit_status": "blocked-needs-functions-significance-and-higher-order-derivation",
       "lean_scope": "exact PM1 metarules ✱9·12/13, eight-clause ✱9·131, and Pp ✱9·14/15",
       "depends_on": [
         "PM1:✱9·01",
