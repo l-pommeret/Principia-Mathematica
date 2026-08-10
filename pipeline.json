@@ -33,6 +33,19 @@
       "aristotle_latest_task_created": "6 mins ago",
       "aristotle_result_path": "aristotle/results/Q201-final.tar.gz",
       "aristotle_result_sha256": "4bc27ab8bfe7f84c9c2fedd9778997f5a37668f1d7f83d47e6998b4d1210aed5"
+    },
+    "Q202": {
+      "canonical_ids": [
+        "PM1:✱2·03",
+        "PM1:✱2·04",
+        "PM1:✱2·05"
+      ],
+      "source": "PM volume I, first edition, p. 104",
+      "prompt_path": "aristotle/Q202.md",
+      "audit_path": "reviews/Q202-review.md",
+      "audit_status": "A",
+      "lean_scope": "exact PM1 ✱2·03 through ✱2·05",
+      "aristotle_status": "not-submitted"
     }
   },
   "items": {
@@ -56,13 +69,37 @@
       "batch": "PM1-STAR1-PILOT-01",
       "status": "kernel-checked"
     },
+    "PM1:✱1·4": {
+      "batch": "PM1-STAR1-PRIMITIVES-02",
+      "status": "kernel-checked"
+    },
+    "PM1:✱1·5": {
+      "batch": "PM1-STAR1-PRIMITIVES-02",
+      "status": "kernel-checked"
+    },
+    "PM1:✱1·6": {
+      "batch": "PM1-STAR1-PRIMITIVES-02",
+      "status": "kernel-checked"
+    },
     "PM1:✱2·01": {
       "batch": "PM1-STAR2-Q201",
-      "status": "awaiting-ci"
+      "status": "kernel-checked"
     },
     "PM1:✱2·02": {
       "batch": "PM1-STAR2-Q201",
-      "status": "awaiting-ci"
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·03": {
+      "batch": "PM1-STAR2-Q202",
+      "status": "not-submitted"
+    },
+    "PM1:✱2·04": {
+      "batch": "PM1-STAR2-Q202",
+      "status": "not-submitted"
+    },
+    "PM1:✱2·05": {
+      "batch": "PM1-STAR2-Q202",
+      "status": "not-submitted"
     }
   }
 }
