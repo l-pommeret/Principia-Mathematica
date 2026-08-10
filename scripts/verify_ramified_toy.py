@@ -94,8 +94,8 @@ def main() -> None:
         raise SystemExit("the higher-order witness ignores the reduction certificate")
     eraser = code.split("def eraseElementary?", 1)[1].split(
         "theorem erase_embedElementary", 1)[0]
-    if "| .always _ => none" not in eraser or "| .sometimes _ => none" not in eraser:
-        raise SystemExit("elementary erasure has uncovered quantified branches")
+    if "Formula legacySignature (realContext.map legacySort) [] 0" not in eraser:
+        raise SystemExit("elementary erasure is not restricted by its order-zero index")
     print("Experimental ramified-type architecture checks passed")
 
 
