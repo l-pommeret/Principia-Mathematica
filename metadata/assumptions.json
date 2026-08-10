@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "assumptions": [
+    {
+      "id": "PM1:REDUCIBILITY",
+      "label": "Axiom of reducibility",
+      "volume": 1,
+      "loci": ["Introduction, Chapter II, pp. 58–60", "✱12·1 and ✱12·11"],
+      "status": "catalogued-not-yet-formalized",
+      "editorial_note": "Future Lean declarations must carry reducibility as an explicit scoped hypothesis, never as a global axiom or instance."
+    },
+    {
+      "id": "PM2:INFINITY",
+      "label": "Axiom of infinity",
+      "volume": 2,
+      "loci": ["Volume II; exact first-edition proposition loci to be source-audited before item integration"],
+      "status": "catalogued-locus-pending-source-audit",
+      "editorial_note": "Registered early so later items can expose, rather than erase, their non-logical assumptions."
+    },
+    {
+      "id": "PM2:MULTIPLICATIVE",
+      "label": "Multiplicative axiom",
+      "volume": 2,
+      "loci": ["Volume II; exact first-edition proposition loci to be source-audited before item integration"],
+      "status": "catalogued-locus-pending-source-audit",
+      "editorial_note": "Registered early so later items can expose, rather than erase, their non-logical assumptions."
+    }
+  ]
+}

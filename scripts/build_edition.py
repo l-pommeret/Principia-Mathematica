@@ -218,6 +218,8 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
     run = batch.get("ci_evidence", {}).get("run", "")
     evidence = (external_link(run, "Successful GitHub Actions run")
                 if urlsplit(run).scheme in {"http", "https"} else "Pending CI evidence")
+    direct_assumptions = item.get("direct_assumptions", [])
+    inherited_assumptions = item.get("inherited_assumptions", [])
     body = f"""
 <nav aria-label="Breadcrumb"><a href="../index.html">Contents</a> / Volume {item['volume'] if 'volume' in item else batch['volume']} / {html.escape(item['id'])}</nav>
 <article class="edition-item">
@@ -240,6 +242,9 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
 <div class="dependency-pair"><div><h3>Historical PM graph</h3>{dependency_list(item.get('printed_dependencies', []))}</div>
 <div><h3>Lean source graph</h3>{dependency_list(item.get('lean_dependencies', []), code=True)}</div></div>
 <p><b>Normalized PM edges:</b> {html.escape(', '.join(item.get('normalized_dependencies', [])) or 'none')}</p>
+<div class="dependency-pair"><div><h3>Direct non-logical assumptions</h3>{dependency_list(direct_assumptions)}</div>
+<div><h3>Inherited non-logical assumptions</h3>{dependency_list(inherited_assumptions)}</div></div>
+<p class="quiet">Assumption metadata is distinct from theorem dependencies. Automatic checking against Lean parameters is a future integration gate.</p>
 <p><a href="../dependencies.html">Open the corpus dependency graphs</a></p></section>
 <section class="provenance"><h2>Provenance and verification</h2><dl>
 <dt>Source file</dt><dd><code>{html.escape(str(block.path.relative_to(ROOT)))}</code></dd>
@@ -392,10 +397,26 @@ def build(output: Path) -> None:
         f'<tr><td>{html.escape(edge["from"])}</td><td>→</td><td><code>{html.escape(edge["to"])}</code></td></tr>'
         for edge in dependency_graph["lean_graph"]["edges"]
     ) or '<tr><td colspan="3">No edge.</td></tr>'
+    assumption_data = dependency_graph["nonlogical_assumptions"]
+    assumption_rows = ''.join(
+        f'<tr><td><code>{html.escape(record["id"])}</code></td><td>{html.escape(record["label"])}</td><td>{html.escape(record["status"])}</td></tr>'
+        for record in assumption_data["registry"]
+    )
+    direct_assumption_rows = ''.join(
+        f'<tr><td>{html.escape(edge["from"])}</td><td>→</td><td><code>{html.escape(edge["to"])}</code></td></tr>'
+        for edge in assumption_data["direct_edges"]
+    ) or '<tr><td colspan="3">No item declares a direct assumption yet.</td></tr>'
+    inherited_assumption_rows = ''.join(
+        f'<tr><td>{html.escape(edge["from"])}</td><td>→</td><td><code>{html.escape(edge["to"])}</code></td></tr>'
+        for edge in assumption_data["inherited_edges"]
+    ) or '<tr><td colspan="3">No inherited assumption edge yet.</td></tr>'
     graph_body = f'''<section class="hero"><p class="eyebrow">Audited direct dependencies</p>
 <h1>Two views of the deductive structure</h1><p>This provisional graph covers exactly the {dependency_graph["coverage"]["audited_items"]} items already marked kernel-checked. It does not claim coverage of future volumes or items awaiting CI.</p></section>
 <div class="dependency-pair"><section><h2>Historical PM graph</h2><p>Edges explicitly printed in the demonstrations, after resolving PM aliases.</p><table><tbody>{historical_rows}</tbody></table></section>
 <section><h2>Lean source graph</h2><p>Constants extracted directly from each Lean declaration body.</p><table><tbody>{lean_rows}</tbody></table></section></div>
+<section><h2>Non-logical assumption registry</h2><p>This ledger is separate from the theorem graphs. Direct and dependency-inherited uses are recorded independently; checking that a declared use corresponds to an explicit Lean parameter remains a future gate.</p><table><tbody>{assumption_rows}</tbody></table></section>
+<div class="dependency-pair"><section><h2>Direct assumption uses</h2><table><tbody>{direct_assumption_rows}</tbody></table></section>
+<section><h2>Inherited assumption uses</h2><table><tbody>{inherited_assumption_rows}</tbody></table></section></div>
 <p><a href="dependency-graph.json">Machine-readable graph and coverage statement</a></p>'''
     (output / "dependencies.html").write_text(page("Dependency graphs", graph_body), encoding="utf-8")
     (output / "dependency-graph.json").write_text(

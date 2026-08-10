@@ -79,6 +79,99 @@ def load_items(root: Path = ROOT) -> list[dict]:
     return result
 
 
+def load_assumptions(root: Path = ROOT) -> dict[str, dict]:
+    """Load the reviewed non-logical-assumption catalogue.
+
+    This catalogue is deliberately independent of theorem nodes: an axiom or
+    scoped hypothesis is not smuggled into the historical proof graph as if it
+    were an earlier proposition.
+    """
+    payload = json.loads((root / "metadata/assumptions.json").read_text(encoding="utf-8"))
+    if payload.get("schema_version") != 1 or not isinstance(payload.get("assumptions"), list):
+        raise DependencyError("invalid non-logical assumption registry header")
+    result: dict[str, dict] = {}
+    required = {"id", "label", "volume", "loci", "status", "editorial_note"}
+    allowed_statuses = {
+        "catalogued-not-yet-formalized",
+        "catalogued-locus-pending-source-audit",
+        "formalized-explicit-hypothesis",
+    }
+    for record in payload["assumptions"]:
+        if not isinstance(record, dict) or not required <= record.keys():
+            raise DependencyError(f"incomplete non-logical assumption record {record!r}")
+        identifier = record["id"]
+        if identifier in result:
+            raise DependencyError(f"duplicate non-logical assumption ID {identifier}")
+        if not re.fullmatch(r"PM[123]:[A-Z][A-Z0-9_-]*", identifier):
+            raise DependencyError(f"invalid non-logical assumption ID {identifier!r}")
+        if record["volume"] != int(identifier[2]) or record["status"] not in allowed_statuses:
+            raise DependencyError(f"incoherent non-logical assumption record {identifier}")
+        if not isinstance(record["loci"], list) or not record["loci"]:
+            raise DependencyError(f"non-logical assumption {identifier} has no locus")
+        result[identifier] = record
+    return result
+
+
+def assumption_closure(items: list[dict], registry: dict[str, dict]) -> dict[str, dict[str, list[str]]]:
+    """Validate and compute direct/inherited assumptions through PM edges.
+
+    Metadata remains backwards compatible: an item declaring neither field has
+    no assumptions. Once one field is introduced both are required, making the
+    inherited closure an auditable assertion rather than generated decoration.
+    """
+    by_id = {item["id"]: item for item in items}
+    visiting: set[str] = set()
+    memo: dict[str, dict[str, list[str]]] = {}
+
+    def visit(item_id: str) -> dict[str, list[str]]:
+        if item_id in memo:
+            return memo[item_id]
+        if item_id in visiting:
+            raise DependencyError(f"cycle while computing assumption closure at {item_id}")
+        visiting.add(item_id)
+        item = by_id[item_id]
+        has_direct = "direct_assumptions" in item
+        has_inherited = "inherited_assumptions" in item
+        if has_direct != has_inherited:
+            raise DependencyError(
+                f"{item_id}: direct_assumptions and inherited_assumptions must be declared together"
+            )
+        direct = item.get("direct_assumptions", [])
+        declared_inherited = item.get("inherited_assumptions", [])
+        if not isinstance(direct, list) or not isinstance(declared_inherited, list):
+            raise DependencyError(f"{item_id}: assumption fields must be lists")
+        if len(direct) != len(set(direct)) or len(declared_inherited) != len(set(declared_inherited)):
+            raise DependencyError(f"{item_id}: duplicate non-logical assumption ID")
+        unknown = (set(direct) | set(declared_inherited)) - registry.keys()
+        if unknown:
+            raise DependencyError(f"{item_id}: unknown non-logical assumptions {sorted(unknown)}")
+        inherited: set[str] = set()
+        for dependency in item.get("normalized_dependencies", []):
+            if dependency not in by_id:
+                raise DependencyError(f"{item_id}: unknown PM dependency {dependency}")
+            dependency_assumptions = visit(dependency)
+            inherited.update(dependency_assumptions["effective"])
+        if set(declared_inherited) != inherited:
+            raise DependencyError(
+                f"{item_id}: inherited assumptions {sorted(declared_inherited)} "
+                f"!= dependency closure {sorted(inherited)}"
+            )
+        if set(direct) & inherited:
+            raise DependencyError(f"{item_id}: an assumption cannot be both direct and inherited")
+        result = {
+            "direct": sorted(direct),
+            "inherited": sorted(inherited),
+            "effective": sorted(set(direct) | inherited),
+        }
+        memo[item_id] = result
+        visiting.remove(item_id)
+        return result
+
+    for identifier in by_id:
+        visit(identifier)
+    return memo
+
+
 def declaration_body(path: Path, declaration: str) -> str:
     """Return a declaration through the line before the next declaration."""
     short = declaration.rsplit(".", 1)[-1]
@@ -173,6 +266,8 @@ def normalize(item: dict, lean_dependencies: list[str], declaration_to_id: dict[
 
 def audit(root: Path = ROOT) -> dict:
     items = load_items(root)
+    assumptions = load_assumptions(root)
+    assumption_usage = assumption_closure(items, assumptions)
     checked = [item for item in items if item.get("formal_status") == "kernel-checked"]
     declarations = {item["declaration"]: item["id"] for item in items}
     order = {item["id"]: pm_order(item["id"]) for item in items}
@@ -217,6 +312,23 @@ def audit(root: Path = ROOT) -> dict:
                   for item in items],
         "historical_graph": {"edges": edges},
         "lean_graph": {"edges": lean_edges},
+        "nonlogical_assumptions": {
+            "coverage": {
+                "status": "metadata-declared-only",
+                "lean_parameter_detection": "not-yet-implemented",
+            },
+            "registry": list(assumptions.values()),
+            "direct_edges": [
+                {"from": item_id, "to": assumption}
+                for item_id, usage in assumption_usage.items()
+                for assumption in usage["direct"]
+            ],
+            "inherited_edges": [
+                {"from": item_id, "to": assumption}
+                for item_id, usage in assumption_usage.items()
+                for assumption in usage["inherited"]
+            ],
+        },
         # Kept as a small compatibility convenience for downstream readers.
         "edges": edges,
     }

@@ -32,3 +32,10 @@ the remaining discriminating tests are tracked in
 The separate editorial convention for schematic instantiation, ✱1·1/✱1·11,
 and capture-free syntactic substitution is recorded in
 [`docs/SUBSTITUTION.md`](docs/SUBSTITUTION.md).
+
+`Principia.Experimental.TypicalAmbiguityToy` adds a separate minimal test for
+typical ambiguity. One class proposition is parameterised by a reified PM
+`RamifiedSort` and instantiated both for individuals and for predicative unary
+functions of individuals. Its negative check establishes only sort separation
+and sort-preserving substitution; it is not yet a reconstruction of the full
+type-schematic convention used throughout the class calculus.

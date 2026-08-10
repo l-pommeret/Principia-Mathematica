@@ -13,6 +13,16 @@ covers kernel-checked items; it is not a claim about unintegrated future text.
 `dependency_aliases.json` is the reviewed resolution table for PM's names
 (`Taut`, `Perm`, `Syll`, and so on) and for Lean-only presentation bridges.
 
+`assumptions.json` is a separate registry of non-logical assumptions. Items
+that use it must declare both `direct_assumptions` and
+`inherited_assumptions`; the dependency audit checks that the latter is exactly
+the transitive closure inherited from `normalized_dependencies`. Older items
+may omit both fields and are interpreted as having empty lists. Assumption IDs
+are deliberately not theorem nodes. At present this is a metadata audit only:
+before the first such item is promoted to `kernel-checked`, a future gate must
+also verify that every direct assumption is represented by an explicit scoped
+Lean parameter (and not by a global axiom, instance, or hidden coercion).
+
 One JSON record under `source_blocks/` describes each unnumbered or extended
 prose block retained in a `PM-VERBATIM` comment. These records identify the
 canonical scan leaves and control witnesses, state the reflow policy, and pin

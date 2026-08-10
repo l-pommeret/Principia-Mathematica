@@ -49,6 +49,51 @@ class DependencyAuditTests(unittest.TestCase):
                 item, "theorem test : True := Classical.choice h", set()
             )
 
+    def test_nonlogical_assumption_registry_is_separate_and_known(self):
+        graph = dependencies.audit(ROOT)
+        ledger = graph["nonlogical_assumptions"]
+        self.assertEqual(
+            {record["id"] for record in ledger["registry"]},
+            {"PM1:REDUCIBILITY", "PM2:INFINITY", "PM2:MULTIPLICATIVE"},
+        )
+        self.assertEqual(ledger["direct_edges"], [])
+        self.assertEqual(ledger["inherited_edges"], [])
+        self.assertNotIn("PM1:REDUCIBILITY", {node["id"] for node in graph["nodes"]})
+
+    def test_assumption_closure_distinguishes_direct_and_inherited(self):
+        registry = {"PM1:REDUCIBILITY": {"id": "PM1:REDUCIBILITY"}}
+        items = [
+            {"id": "PM1:✱12·1", "normalized_dependencies": [],
+             "direct_assumptions": ["PM1:REDUCIBILITY"], "inherited_assumptions": []},
+            {"id": "PM1:✱13·1", "normalized_dependencies": ["PM1:✱12·1"],
+             "direct_assumptions": [], "inherited_assumptions": ["PM1:REDUCIBILITY"]},
+        ]
+        closure = dependencies.assumption_closure(items, registry)
+        self.assertEqual(closure["PM1:✱12·1"]["direct"], ["PM1:REDUCIBILITY"])
+        self.assertEqual(closure["PM1:✱13·1"]["inherited"], ["PM1:REDUCIBILITY"])
+
+    def test_assumption_closure_requires_downstream_declaration(self):
+        registry = {"PM1:REDUCIBILITY": {"id": "PM1:REDUCIBILITY"}}
+        with self.assertRaises(dependencies.DependencyError):
+            dependencies.assumption_closure([
+                {"id": "PM1:✱12·1", "normalized_dependencies": [],
+                 "direct_assumptions": ["PM1:REDUCIBILITY"], "inherited_assumptions": []},
+                {"id": "PM1:✱13·1", "normalized_dependencies": ["PM1:✱12·1"]},
+            ], registry)
+
+    def test_assumption_closure_rejects_unknown_and_false_inheritance(self):
+        registry = {"PM1:REDUCIBILITY": {"id": "PM1:REDUCIBILITY"}}
+        with self.assertRaises(dependencies.DependencyError):
+            dependencies.assumption_closure([
+                {"id": "PM1:✱12·1", "normalized_dependencies": [],
+                 "direct_assumptions": ["PM1:UNKNOWN"], "inherited_assumptions": []}
+            ], registry)
+        with self.assertRaises(dependencies.DependencyError):
+            dependencies.assumption_closure([
+                {"id": "PM1:✱12·1", "normalized_dependencies": [],
+                 "direct_assumptions": [], "inherited_assumptions": ["PM1:REDUCIBILITY"]}
+            ], registry)
+
 
 if __name__ == "__main__":
     unittest.main()

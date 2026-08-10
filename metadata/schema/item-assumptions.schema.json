@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/principia/item-assumptions.schema.json",
+  "title": "Optional non-logical-assumption fields on a PM item",
+  "description": "A composable schema fragment. Both fields are omitted for legacy empty records or declared together; semantic closure is checked by verify_dependencies.py.",
+  "type": "object",
+  "properties": {
+    "direct_assumptions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^PM[123]:[A-Z][A-Z0-9_-]*$" }
+    },
+    "inherited_assumptions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^PM[123]:[A-Z][A-Z0-9_-]*$" }
+    }
+  },
+  "dependentRequired": {
+    "direct_assumptions": ["inherited_assumptions"],
+    "inherited_assumptions": ["direct_assumptions"]
+  }
+}
