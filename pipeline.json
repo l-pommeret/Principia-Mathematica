@@ -254,7 +254,7 @@
         "PM1:✱2·18"
       ],
       "parallel_group": "STAR2-WAVE-2A",
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "aristotle_task_id": "bbd8c638-d7a3-4bdd-bb3e-e618a2d70983",
       "aristotle_latest_task_id": "bbd8c638-d7a3-4bdd-bb3e-e618a2d70983",
       "aristotle_latest_task_status": "COMPLETE",
@@ -266,7 +266,10 @@
       "aristotle_latest_task_created": "7 mins ago",
       "aristotle_archive_path": "aristotle/results/Q208-final.tar.gz",
       "aristotle_archive_sha256": "f530a04800377e29ec1121638fcf392faa9b143b98dcaddab155f80ec88ab8af",
-      "integration_status": "awaiting-ci"
+      "integration_status": "kernel-checked",
+      "lean_commit": "4b7b91c6cda7a7b792d80c9e67a0f118045e8979",
+      "lean_ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31419425003",
+      "lean_ci_conclusion": "success"
     },
     "Q209": {
       "canonical_ids": [
@@ -284,7 +287,7 @@
         "PM1:✱2·18"
       ],
       "parallel_group": "STAR2-WAVE-2A",
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "aristotle_task_id": "01929137-aca2-43e8-a7f0-d83c5ca0a1c0",
       "aristotle_latest_task_id": "01929137-aca2-43e8-a7f0-d83c5ca0a1c0",
       "aristotle_latest_task_status": "COMPLETE",
@@ -296,7 +299,10 @@
       "aristotle_latest_task_created": "10 mins ago",
       "aristotle_archive_path": "aristotle/results/Q209-final.tar.gz",
       "aristotle_archive_sha256": "927145575d1980e56313b741c8e37eef0f114d5e94fb7729684e0f9b579d5ad7",
-      "integration_status": "awaiting-ci"
+      "integration_status": "kernel-checked",
+      "lean_commit": "4b7b91c6cda7a7b792d80c9e67a0f118045e8979",
+      "lean_ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31419425003",
+      "lean_ci_conclusion": "success"
     },
     "Q210": {
       "canonical_ids": [
@@ -934,6 +940,34 @@
     },
     "PM1:✱2·27": {
       "batch": "PM1-STAR2-Q207",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·3": {
+      "batch": "PM1-STAR2-Q208",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·31": {
+      "batch": "PM1-STAR2-Q208",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·32": {
+      "batch": "PM1-STAR2-Q208",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·36": {
+      "batch": "PM1-STAR2-Q209",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·37": {
+      "batch": "PM1-STAR2-Q209",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·38": {
+      "batch": "PM1-STAR2-Q209",
+      "status": "kernel-checked"
+    },
+    "PM1:✱2·41": {
+      "batch": "PM1-STAR2-Q209",
       "status": "kernel-checked"
     }
   }

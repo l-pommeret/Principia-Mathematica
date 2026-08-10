@@ -1,6 +1,6 @@
 # Audit Q209 — PM I, ✱2·36–✱2·38 et ✱2·41
 
-Verdict: **A (réponse Aristotle acceptée, en attente de CI)**. L'archive
+Verdict: **A (réponse Aristotle acceptée et certifiée par CI)**. L'archive
 immuable `aristotle/results/Q209-final.tar.gz` a l'empreinte SHA-256
 `927145575d1980e56313b741c8e37eef0f114d5e94fb7729684e0f9b579d5ad7`.
 Les quatre cibles ✱2·36, ✱2·37, ✱2·38 et ✱2·41 sont présentes sans
@@ -24,3 +24,8 @@ ni ✱2·32, ni ✱2·4. Les dépendances PM, Lean et normalisées sont consign�
 dans `metadata/items/PM1-star-2-Q209.json`. La version autonome d'Aristotle
 était étiquetée Lean 4.28.0 bien que le prompt demandât 4.30.0; seule la CI
 GitHub du dépôt, épinglée à Lean 4.30.0, vaut certification finale.
+
+Certification noyau: commit
+`4b7b91c6cda7a7b792d80c9e67a0f118045e8979`, exécution GitHub Actions
+`https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31419425003`,
+conclusion `success`.

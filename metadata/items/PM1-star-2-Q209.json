@@ -13,7 +13,7 @@
     "task_id": "01929137-aca2-43e8-a7f0-d83c5ca0a1c0",
     "archive": "aristotle/results/Q209-final.tar.gz",
     "sha256": "927145575d1980e56313b741c8e37eef0f114d5e94fb7729684e0f9b579d5ad7",
-    "audit": "accepted-awaiting-ci"
+    "audit": "accepted-kernel-checked"
   },
   "items": [
     {
@@ -30,7 +30,7 @@
       "normalized_dependencies": ["PM1:✱1·4", "PM1:✱2·05", "PM1:✱1·6", "PM1:✱1·11"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The final printed Syll. inference and the asserted-implication convention are expanded by detachment in the real-variable case."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·37",
@@ -46,7 +46,7 @@
       "normalized_dependencies": ["PM1:✱2·05", "PM1:✱2·06", "PM1:✱1·4", "PM1:✱1·6", "PM1:✱1·11"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"PM's exactly-analogous Syll.Perm.Sum proof is expanded using Syll. and detachment in the real-variable case."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·38",
@@ -62,7 +62,7 @@
       "normalized_dependencies": ["PM1:✱2·05", "PM1:✱2·06", "PM1:✱1·4", "PM1:✱1·6", "PM1:✱1·11"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"PM's exactly-analogous Syll.Perm.Sum proof is expanded using Syll. and detachment in the real-variable case."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·41",
@@ -78,12 +78,12 @@
       "normalized_dependencies": ["PM1:✱1·5", "PM1:✱1·2", "PM1:✱1·6", "PM1:✱2·05", "PM1:✱1·11"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The printed implication chain ends by the asserted-implication convention, expanded as detachment in the real-variable case."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4b7b91c6cda7a7b792d80c9e67a0f118045e8979",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31419425003",
+    "conclusion": "success"
   }
 }

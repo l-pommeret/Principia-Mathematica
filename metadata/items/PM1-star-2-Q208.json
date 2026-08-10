@@ -13,7 +13,7 @@
     "task_id": "bbd8c638-d7a3-4bdd-bb3e-e618a2d70983",
     "archive": "aristotle/results/Q208-final.tar.gz",
     "sha256": "f530a04800377e29ec1121638fcf392faa9b143b98dcaddab155f80ec88ab8af",
-    "audit": "accepted-awaiting-ci"
+    "audit": "accepted-kernel-checked"
   },
   "items": [
     {
@@ -30,7 +30,7 @@
       "normalized_dependencies": ["PM1:✱1·4", "PM1:✱1·6", "PM1:✱1·11"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The second displayed line raises Perm by Sum and uses the asserted-implication convention, which PM states embodies ✱1·11 in the real-variable case."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·31",
@@ -46,7 +46,7 @@
       "normalized_dependencies": ["PM1:✱2·3", "PM1:✱1·5", "PM1:✱1·4", "PM1:✱2·05", "PM1:✱1·11"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The immediately preceding PM note expands this sorites abbreviation into repeated Syll. (✱2·05) and ✱1·11 steps."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·32",
@@ -62,12 +62,12 @@
       "normalized_dependencies": ["PM1:✱1·4", "PM1:✱1·5", "PM1:✱2·3", "PM1:✱2·05", "PM1:✱1·11"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"PM applies the sorites abbreviation just defined before ✱2·31; its full expansion uses repeated Syll. (✱2·05) and ✱1·11 steps."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4b7b91c6cda7a7b792d80c9e67a0f118045e8979",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31419425003",
+    "conclusion": "success"
   }
 }
