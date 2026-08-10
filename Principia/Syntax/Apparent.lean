@@ -169,11 +169,13 @@ def neg (matrixNeg : {Δ : BoundContext} → Matrix Δ → Matrix Δ) :
   | .sometimes body => .always (matrixNeg body)
 
 @[simp] theorem neg_always
+    {Matrix : BoundContext → Type}
     (matrixNeg : {Δ : BoundContext} → Matrix Δ → Matrix Δ)
     (body : Matrix (.elementaryProposition :: Δ)) :
     neg matrixNeg (.always body) = .sometimes (matrixNeg body) := rfl
 
 @[simp] theorem neg_sometimes
+    {Matrix : BoundContext → Type}
     (matrixNeg : {Δ : BoundContext} → Matrix Δ → Matrix Δ)
     (body : Matrix (.elementaryProposition :: Δ)) :
     neg matrixNeg (.sometimes body) = .always (matrixNeg body) := rfl
@@ -188,32 +190,35 @@ namespace FirstOrder
 
 /-- PM's primitive idea `(x).φx`. -/
 abbrev always (body : Apparent Γ (.elementaryProposition :: Δ)) :
-    FirstOrder Γ Δ := .always body
+    FirstOrder Γ Δ := Quantified.always body
 
 /-- PM's primitive idea `(∃x).φx`. -/
 abbrev sometimes (body : Apparent Γ (.elementaryProposition :: Δ)) :
-    FirstOrder Γ Δ := .sometimes body
+    FirstOrder Γ Δ := Quantified.sometimes body
 
 /-- Capture-free renaming beneath either primitive binder. -/
 def rename (ρ : Apparent.Renaming Δ Ξ) : FirstOrder Γ Δ → FirstOrder Γ Ξ
-  | .always body => .always (Apparent.rename (Apparent.liftRenaming ρ) body)
-  | .sometimes body =>
-      .sometimes (Apparent.rename (Apparent.liftRenaming ρ) body)
+  | Quantified.always body =>
+      Quantified.always (Apparent.rename (Apparent.liftRenaming ρ) body)
+  | Quantified.sometimes body =>
+      Quantified.sometimes (Apparent.rename (Apparent.liftRenaming ρ) body)
 
 /-- Capture-free substitution beneath either primitive binder. -/
 def substitute (σ : Apparent.Substitution Γ Δ Ξ) :
     FirstOrder Γ Δ → FirstOrder Γ Ξ
-  | .always body =>
-      .always (Apparent.substitute (Apparent.liftSubstitution σ) body)
-  | .sometimes body =>
-      .sometimes (Apparent.substitute (Apparent.liftSubstitution σ) body)
+  | Quantified.always body =>
+      Quantified.always
+        (Apparent.substitute (Apparent.liftSubstitution σ) body)
+  | Quantified.sometimes body =>
+      Quantified.sometimes
+        (Apparent.substitute (Apparent.liftSubstitution σ) body)
 
 /-- A free apparent variable is significant in a quantified proposition when
 its shifted occurrence is significant in the matrix. -/
 def Significant (v : BoundVar Δ .elementaryProposition) :
     FirstOrder Γ Δ → Prop
-  | .always body => Apparent.Significant (.succ v) body
-  | .sometimes body => Apparent.Significant (.succ v) body
+  | Quantified.always body => Apparent.Significant (.succ v) body
+  | Quantified.sometimes body => Apparent.Significant (.succ v) body
 
 /-- First-order negation. The two constructor cases reduce definitionally to
 ✱9·01 and ✱9·02; no semantic Lean negation is involved. -/
