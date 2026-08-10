@@ -17,6 +17,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 import browser_sync
+import aristotle_scheduler as scheduler
 
 
 ROOT = Path(__file__).resolve().parent
@@ -509,6 +510,79 @@ def aristotle_download(qid_arg: str, destination: Path) -> None:
     emit({"ok": True, "qid": qid, "project_id": pid, "destination": str(destination), "bytes": destination.stat().st_size, "sha256": digest})
 
 
+def aristotle_schedule(*, dry_run: bool, cap: int) -> None:
+    """Reconcile the whole remote queue and fill it without exceeding ``cap``."""
+    if cap < 1 or cap > 15:
+        raise CampaignError("Aristotle concurrency cap must be between 1 and 15")
+    if not dry_run:
+        require_api_key()
+
+    def list_tasks(pid: str) -> list[dict[str, str]]:
+        result = run([*ARISTOTLE, "tasks", pid, "--limit", "100"])
+        tasks = scheduler.parse_tasks(result.stdout)
+        if result.stdout.strip() and not tasks:
+            raise CampaignError(f"could not parse Aristotle tasks for {pid}")
+        return tasks
+
+    lock_path = MANIFEST.with_suffix(".lock")
+    with lock_path.open("w") as lock:
+        # One process owns reconciliation, decision, submission, and recording.
+        # Holding this advisory lock across network calls prevents two campaign
+        # operators from consuming the same slot or submitting the same item.
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        current = manifest()
+        active, active_projects = scheduler.reconcile(current, list_tasks)
+        queue = scheduler.candidates(current, ROOT, active_projects)
+        slots = max(0, cap - active)
+        selected = queue[:slots]
+        plan = [{"qid": c.qid, "kind": c.kind, "path": str(c.path.relative_to(ROOT))} for c in selected]
+        if dry_run:
+            emit({"ok": True, "dry_run": True, "cap": cap, "active": active,
+                  "free_slots": slots, "eligible": len(queue), "selected": plan})
+            return
+
+        # Persist reconciliation before any external mutation.
+        atomic_write(MANIFEST, json.dumps(current, ensure_ascii=False, indent=2) + "\n")
+        submitted: list[dict] = []
+        for candidate in selected:
+            if not candidate.path.is_file():
+                raise CampaignError(f"request file not found: {candidate.path.relative_to(ROOT)}")
+            content = candidate.path.read_text(encoding="utf-8").strip()
+            if not content:
+                raise CampaignError(f"request file is empty: {candidate.path.relative_to(ROOT)}")
+            # Persist intent first: if the CLI creates a remote task and then
+            # crashes, a later scheduler cannot blindly duplicate it.
+            scheduler.mark_intent(current, candidate)
+            atomic_write(MANIFEST, json.dumps(current, ensure_ascii=False, indent=2) + "\n")
+            if candidate.kind == "project":
+                raw = run([*ARISTOTLE, "formalize", str(candidate.path.resolve())])
+                matches = re.findall(
+                    r"(?:Project created:|Project:)\s*"
+                    r"([0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12})",
+                    raw.stdout + "\n" + raw.stderr, flags=re.I,
+                )
+                if not matches:
+                    raise CampaignError("Aristotle returned no project ID; submission remains marked submitting")
+                pid = matches[-1]
+                owners = [qid for qid, item in current["questions"].items()
+                          if qid != candidate.qid and item.get("aristotle_project_id") == pid]
+                if owners:
+                    raise CampaignError(f"Aristotle returned project ID already owned by {owners[0]}")
+            else:
+                pid = candidate.project_id or ""
+                run([*ARISTOTLE, "continue", pid, content, "--mode", "instruct"])
+            tasks = list_tasks(pid)
+            if not tasks or tasks[0]["status"] not in ACTIVE_TASKS:
+                raise CampaignError(f"Aristotle created no active task for {candidate.qid}; submission remains marked submitting")
+            result = {"project_id": pid, "task": tasks[0]}
+            scheduler.record_submission(current, candidate, result, content)
+            atomic_write(MANIFEST, json.dumps(current, ensure_ascii=False, indent=2) + "\n")
+            submitted.append({"qid": candidate.qid, "kind": candidate.kind,
+                              "project_id": pid, "task_id": tasks[0]["task_id"]})
+        emit({"ok": True, "dry_run": False, "cap": cap, "active_before": active,
+              "submitted": submitted, "active_after": active + len(submitted)})
+
+
 GH_FIELDS = "conclusion,createdAt,databaseId,event,headBranch,headSha,name,status,updatedAt,url,workflowName"
 
 
@@ -575,6 +649,9 @@ def parser() -> argparse.ArgumentParser:
     downloaded = aristotle_commands.add_parser("download")
     downloaded.add_argument("qid")
     downloaded.add_argument("destination", type=Path)
+    scheduled = aristotle_commands.add_parser("schedule")
+    scheduled.add_argument("--dry-run", action="store_true")
+    scheduled.add_argument("--cap", type=int, default=15)
 
     ci = groups.add_parser("ci")
     ci_commands = ci.add_subparsers(dest="command", required=True)
@@ -609,6 +686,8 @@ def main(argv: list[str] | None = None) -> int:
             aristotle_continue(args.qid, args.prompt_file)
         elif (args.group, args.command) == ("aristotle", "download"):
             aristotle_download(args.qid, args.destination)
+        elif (args.group, args.command) == ("aristotle", "schedule"):
+            aristotle_schedule(dry_run=args.dry_run, cap=args.cap)
         elif (args.group, args.command) == ("ci", "latest"):
             ci_latest()
         elif (args.group, args.command) == ("ci", "view"):
@@ -616,7 +695,8 @@ def main(argv: list[str] | None = None) -> int:
         elif (args.group, args.command) == ("book", "build"):
             book_build()
         return 0
-    except (CampaignError, OSError, UnicodeError, json.JSONDecodeError, subprocess.SubprocessError) as exc:
+    except (CampaignError, scheduler.SchedulerError, OSError, UnicodeError,
+            json.JSONDecodeError, subprocess.SubprocessError) as exc:
         emit({"ok": False, "error": str(exc)}, stream=sys.stderr)
         return 2
 
