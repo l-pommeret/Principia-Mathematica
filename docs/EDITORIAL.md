@@ -64,16 +64,20 @@ mathematical numbering.
 
 ## Planned conservativity at ✱9
 
-The pre-✱9 kernel has a deliberately separate apparent-variable syntax in
+The ✱9 kernel has a deliberately separate apparent-variable syntax in
 `Principia.Syntax.Apparent`. Its intrinsically typed de Bruijn indices make
 capture impossible by construction, while `ofElementary` and the checked
 partial inverse `toElementary?` expose the intended conservative inclusion of
-the elementary fragment.
+the elementary fragment. `Apparent` contains matrices; the generic
+`Quantified` constructor performs exactly one assigned order step and keeps
+PM's primitive `always` and `sometimes` binders injectively distinct.
 
 This foundation is not itself a claim that PM's extension is conservative.
 It contains no new derivation rules, no semantic Lean quantifiers, and no
-generic hierarchy ranging over all proposition orders. Existential binding,
-order-sensitive negation and disjunction, and metalinguistic rules will be
-introduced only at their audited PM loci. The later metatheory must prove the
+generic hierarchy ranging over all proposition orders. The two equations of
+first-order negation are kernel reductions corresponding to ✱9·01 and ✱9·02;
+the bracket omissions of ✱9·011 and ✱9·021 remain notation only. Disjunction
+and metalinguistic rules will be introduced only at their audited PM loci. The
+later metatheory must prove the
 relevant erasure or model theorem before the edition labels the extension
 conservative or derives a relative-consistency result.

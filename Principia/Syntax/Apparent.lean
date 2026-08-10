@@ -5,11 +5,11 @@ namespace PM
 /-!
 # Apparent variables
 
-This file is the capture-safe syntactic foundation required before ✱9. It
-adds apparent-variable binding without changing `Elementary` and without
-postulating any rules of deduction. The existential binder and the
-order-sensitive operations described at ✱9 are deliberately not anticipated
-here: they enter only at their audited printed loci.
+This file is the capture-safe syntactic foundation required at ✱9. It does
+not change `Elementary` and postulates no rules of deduction. `Apparent` is a
+matrix with free apparent variables; `Quantified` performs one explicit step
+to the next proposition order. Thus higher orders can be constructed one at a
+time without a universe ranging over every order.
 -/
 
 /-- A context of typed apparent variables, not a context of assumptions. -/
@@ -21,18 +21,13 @@ inductive BoundVar : (Δ : BoundContext) → RealType → Type where
   | succ : BoundVar Δ τ → BoundVar (σ :: Δ) τ
   deriving DecidableEq, Repr
 
-/-- Formulae in which variables from `Δ` may occur apparently.
-
-The connectives record an elementary matrix. `all` is only the binding form
-needed to state the first primitive idea at ✱9; this datatype gives it no
-deductive force. -/
+/-- Elementary matrices in which variables from `Δ` may occur apparently. -/
 inductive Apparent (Γ : RealContext) : BoundContext → Type where
   | constant : String → Apparent Γ Δ
   | real : RealVar Γ .elementaryProposition → Apparent Γ Δ
   | bound : BoundVar Δ .elementaryProposition → Apparent Γ Δ
   | neg : Apparent Γ Δ → Apparent Γ Δ
   | disj : Apparent Γ Δ → Apparent Γ Δ → Apparent Γ Δ
-  | all : Apparent Γ (.elementaryProposition :: Δ) → Apparent Γ Δ
   deriving DecidableEq, Repr
 
 namespace Apparent
@@ -63,7 +58,6 @@ def toElementary? : Apparent Γ Δ → Option (Elementary Γ)
       let p ← toElementary? left
       let q ← toElementary? right
       pure (.disj p q)
-  | .all _ => none
 
 /-- Capture-free renamings of apparent variables. -/
 abbrev Renaming (Δ Ξ : BoundContext) :=
@@ -82,7 +76,6 @@ def rename (ρ : Renaming Δ Ξ) : Apparent Γ Δ → Apparent Γ Ξ
   | .bound v => .bound (ρ v)
   | .neg proposition => .neg (rename ρ proposition)
   | .disj left right => .disj (rename ρ left) (rename ρ right)
-  | .all body => .all (rename (liftRenaming ρ) body)
 
 /-- Weakening by a freshly bound apparent variable. -/
 def weaken (proposition : Apparent Γ Δ) : Apparent Γ (τ :: Δ) :=
@@ -106,7 +99,6 @@ def substitute (σ : Substitution Γ Δ Ξ) : Apparent Γ Δ → Apparent Γ Ξ
   | .bound v => σ v
   | .neg proposition => .neg (substitute σ proposition)
   | .disj left right => .disj (substitute σ left) (substitute σ right)
-  | .all body => .all (substitute (liftSubstitution σ) body)
 
 /-- The substitution which replaces the nearest binder and lowers the rest. -/
 def instantiateSubstitution (argument : Apparent Γ Δ) :
@@ -127,7 +119,6 @@ def significant (v : BoundVar Δ .elementaryProposition) : Apparent Γ Δ → Bo
       v == candidate
   | .neg proposition => significant v proposition
   | .disj left right => significant v left || significant v right
-  | .all body => significant (.succ v) body
 
 /-- Proposition-valued, auditable form of syntactic significance. -/
 def Significant (v : BoundVar Δ .elementaryProposition)
@@ -157,4 +148,87 @@ def Significant (v : BoundVar Δ .elementaryProposition)
       simp [ofElementary, toElementary?, ihLeft, ihRight]
 
 end Apparent
+
+/-- One fixed step from matrices to quantified propositions.
+
+The two constructors are PM's two primitive binding ideas, kept injectively
+distinct. The parameter `Matrix` permits repetition for any *assigned* next
+order; it is not a quantification over all proposition orders. -/
+inductive Quantified (Matrix : BoundContext → Type) (Δ : BoundContext) where
+  | always : Matrix (.elementaryProposition :: Δ) → Quantified Matrix Δ
+  | sometimes : Matrix (.elementaryProposition :: Δ) → Quantified Matrix Δ
+
+namespace Quantified
+
+/-- Negation at one quantified order, given negation for its fixed matrix
+order. Its two equations are the definitional reductions printed at ✱9·01
+and ✱9·02. -/
+def neg (matrixNeg : {Δ : BoundContext} → Matrix Δ → Matrix Δ) :
+    Quantified Matrix Δ → Quantified Matrix Δ
+  | .always body => .sometimes (matrixNeg body)
+  | .sometimes body => .always (matrixNeg body)
+
+@[simp] theorem neg_always
+    (matrixNeg : {Δ : BoundContext} → Matrix Δ → Matrix Δ)
+    (body : Matrix (.elementaryProposition :: Δ)) :
+    neg matrixNeg (.always body) = .sometimes (matrixNeg body) := rfl
+
+@[simp] theorem neg_sometimes
+    (matrixNeg : {Δ : BoundContext} → Matrix Δ → Matrix Δ)
+    (body : Matrix (.elementaryProposition :: Δ)) :
+    neg matrixNeg (.sometimes body) = .always (matrixNeg body) := rfl
+
+end Quantified
+
+/-- First-order propositions: one quantified step over elementary matrices. -/
+abbrev FirstOrder (Γ : RealContext) : BoundContext → Type :=
+  Quantified (Apparent Γ)
+
+namespace FirstOrder
+
+/-- PM's primitive idea `(x).φx`. -/
+abbrev always (body : Apparent Γ (.elementaryProposition :: Δ)) :
+    FirstOrder Γ Δ := .always body
+
+/-- PM's primitive idea `(∃x).φx`. -/
+abbrev sometimes (body : Apparent Γ (.elementaryProposition :: Δ)) :
+    FirstOrder Γ Δ := .sometimes body
+
+/-- Capture-free renaming beneath either primitive binder. -/
+def rename (ρ : Apparent.Renaming Δ Ξ) : FirstOrder Γ Δ → FirstOrder Γ Ξ
+  | .always body => .always (Apparent.rename (Apparent.liftRenaming ρ) body)
+  | .sometimes body =>
+      .sometimes (Apparent.rename (Apparent.liftRenaming ρ) body)
+
+/-- Capture-free substitution beneath either primitive binder. -/
+def substitute (σ : Apparent.Substitution Γ Δ Ξ) :
+    FirstOrder Γ Δ → FirstOrder Γ Ξ
+  | .always body =>
+      .always (Apparent.substitute (Apparent.liftSubstitution σ) body)
+  | .sometimes body =>
+      .sometimes (Apparent.substitute (Apparent.liftSubstitution σ) body)
+
+/-- A free apparent variable is significant in a quantified proposition when
+its shifted occurrence is significant in the matrix. -/
+def Significant (v : BoundVar Δ .elementaryProposition) :
+    FirstOrder Γ Δ → Prop
+  | .always body => Apparent.Significant (.succ v) body
+  | .sometimes body => Apparent.Significant (.succ v) body
+
+/-- First-order negation. The two constructor cases reduce definitionally to
+✱9·01 and ✱9·02; no semantic Lean negation is involved. -/
+def neg : FirstOrder Γ Δ → FirstOrder Γ Δ :=
+  Quantified.neg (fun proposition => Apparent.neg proposition)
+
+prefix:max "∼₁" => neg
+
+@[simp] theorem neg_always
+    (body : Apparent Γ (.elementaryProposition :: Δ)) :
+    neg (always body) = sometimes (.neg body) := rfl
+
+@[simp] theorem neg_sometimes
+    (body : Apparent Γ (.elementaryProposition :: Δ)) :
+    neg (sometimes body) = always (.neg body) := rfl
+
+end FirstOrder
 end PM

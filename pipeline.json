@@ -1458,11 +1458,18 @@
       "source": "PM volume I, first edition, pp. 132–135",
       "prompt_path": "aristotle/Q252.md",
       "audit_path": "reviews/Q252-review.md",
-      "audit_status": "prepared-needs-architecture-review",
-      "lean_scope": "typed apparent-variable architecture and exact PM1 ✱9·01, ✱9·02, ✱9·011, ✱9·021 definitions",
+      "audit_status": "A-pending-kernel-context",
+      "lean_scope": "exact PM1 ✱9·01, ✱9·02, ✱9·011, ✱9·021 definitions over the kernel-checked Apparent foundation",
       "depends_on": [],
       "parallel_group": "STAR9-ARCHITECTURE",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "not-submitted",
+      "architecture_evidence": {
+        "commit": "2280728",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31427351077",
+        "conclusion": "success",
+        "scope": "capture-safe predecessor foundation only"
+      },
+      "submission_gate": "awaiting CI for current Quantified/FirstOrder worktree API"
     },
     "Q253": {
       "canonical_ids": [
