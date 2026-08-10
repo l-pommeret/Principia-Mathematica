@@ -1,0 +1,85 @@
+{
+  "id": "PM1:INTRO-CH1-DESCRIPTIVE-RELATION-FUNCTIONS",
+  "edition": "first",
+  "volume": 1,
+  "kind": "source-critical-prose",
+  "title": "Introduction, Chapter I — descriptive functions of relations",
+  "source_range": {
+    "printed_pages": "33–37",
+    "scan_leaves": [
+      55,
+      56,
+      57,
+      58,
+      59
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "lean_path": "Principia/FirstEdition/Volume1/Introduction/Chapter1/Pages26To38.lean",
+  "witnesses": [
+    {
+      "siglum": "PM1-1910-SCAN",
+      "role": "canonical",
+      "uri": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+      "sha256": "52fd0ba446ab2dc97f08d6d4b16d67196edb6d991b0a0445e1ee4dbb57fa2eab"
+    },
+    {
+      "siglum": "PG78050",
+      "role": "control",
+      "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm",
+      "sha256": "f9e000e6e66bcd865d03ad41bbf7cbc74618678eceb6af0fb113c3df51e0200a"
+    },
+    {
+      "siglum": "WS-PM1",
+      "role": "control",
+      "uri": "https://en.wikisource.org/wiki/Index:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+    }
+  ],
+  "leaf_derivatives": [
+    {
+      "scan_leaf": 55,
+      "printed_page": 33,
+      "sha256": "a06dffe21dbe02ee4aa4d11109cb0698443559bcec0cd9dc307fee4eec9795c4"
+    },
+    {
+      "scan_leaf": 56,
+      "printed_page": 34,
+      "sha256": "71c225df05f423ed27f3370b4ea51424aa9e11367400aa9ee12b9b4ec07a2167"
+    },
+    {
+      "scan_leaf": 57,
+      "printed_page": 35,
+      "sha256": "8338ddc54cc9d3db96706201dc0a2fee9700060c248bdd9b78901d365dc1f341"
+    },
+    {
+      "scan_leaf": 58,
+      "printed_page": 36,
+      "sha256": "fbd51e5d81fcb89523ae9f2686264e9d17602dd0f40853e4c0b42de56f3124ea"
+    },
+    {
+      "scan_leaf": 59,
+      "printed_page": 37,
+      "sha256": "3a87e4745a37d6c0ffb58dc52edd395c759a4a12ad6136af24d8ca10b9e8b451"
+    }
+  ],
+  "source_status": "scan-collated-three-witness",
+  "critical_status": "authorial-print-errors-and-digital-variants-recorded",
+  "transcription": {
+    "policy": "verbal-diplomatic-reflow",
+    "line_end_hyphenation": "silently-rejoined",
+    "page_breaks": "recorded-in-metadata-not-canonical-body",
+    "note_markers": "global-numeric-labels-replace-page-local-asterisks",
+    "typography": "presentation-layer-not-encoded-in-canonical-body",
+    "formulae_and_scope_punctuation": "collated-against-scan"
+  },
+  "canonical_body": {
+    "encoding": "UTF-8",
+    "byte_length": 7546,
+    "sha256": "726c3a60a95b7e69632787c01ec3ed44206b2324b71393d6b5d9c15b43153336"
+  },
+  "review": {
+    "apparatus_required": true,
+    "sic_required": true,
+    "note": "Four printing errors are retained diplomatically and corrected only in the apparatus."
+  }
+}

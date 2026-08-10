@@ -82,6 +82,17 @@ def slug(item_id: str) -> str:
     return "item-" + quote(item_id, safe="").replace("%", "-").lower()
 
 
+def source_record_order(record: dict) -> tuple[int, int, str]:
+    """Keep prose in printed order while placing page notes after their host text."""
+    printed_pages = str(record["source_range"]["printed_pages"])
+    first_page = re.search(r"\d+", printed_pages)
+    return (
+        int(first_page.group()) if first_page else 10**9,
+        1 if record["kind"] == "source-critical-note" else 0,
+        record["id"],
+    )
+
+
 def page(title: str, body: str, *, depth: int = 0) -> str:
     prefix = "../" * depth
     return f"""<!doctype html>
@@ -236,7 +247,11 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
 
 
 def source_block_page(
-    record: dict, block: SourceBlock, apparatus: list[dict]
+    record: dict,
+    block: SourceBlock,
+    apparatus: list[dict],
+    previous_record: dict | None = None,
+    next_record: dict | None = None,
 ) -> str:
     """Render extended prose and notes without pretending they are Lean items."""
     source_range = record["source_range"]
@@ -252,6 +267,23 @@ def source_block_page(
     )
     source = html.escape(block.text)
     pages = html.escape(str(source_range["printed_pages"]))
+    sequence_links = []
+    if previous_record:
+        sequence_links.append(
+            f'<a rel="prev" href="{slug(previous_record["id"])}.html">← '
+            f'{html.escape(previous_record["title"])}</a>'
+        )
+    if next_record:
+        sequence_links.append(
+            f'<a rel="next" href="{slug(next_record["id"])}.html">'
+            f'{html.escape(next_record["title"])} →</a>'
+        )
+    sequence_navigation = (
+        '<nav class="sequence-navigation" aria-label="Introduction sequence">'
+        + "".join(sequence_links)
+        + "</nav>"
+        if sequence_links else ""
+    )
     body = f"""
 <nav aria-label="Breadcrumb"><a href="../index.html">Contents</a> / Volume {record['volume']} / Introduction</nav>
 <article class="edition-item source-block">
@@ -270,6 +302,7 @@ def source_block_page(
 <dt>Lean source container</dt><dd><code>{html.escape(record['lean_path'])}</code></dd>
 <dt>Critical status</dt><dd>{html.escape(record['critical_status'])}</dd></dl>
 <details><summary>Witnesses</summary><ul>{witness_list}</ul></details></section>
+{sequence_navigation}
 </article>"""
     return page(record["id"], body, depth=1)
 
@@ -282,6 +315,14 @@ def build(output: Path) -> None:
         load_json(path)
         for path in sorted((ROOT / "metadata/source_blocks").glob("*.json"))
     ]
+    source_records.sort(key=source_record_order)
+    narrative_records = [
+        record for record in source_records
+        if record["kind"] != "source-critical-note"
+    ]
+    narrative_positions = {
+        record["id"]: index for index, record in enumerate(narrative_records)
+    }
     apparatus = [load_json(path) for path in sorted((ROOT / "metadata/apparatus").glob("*.json"))]
     items: list[tuple[dict, dict]] = [(item, batch) for batch in batches for item in batch["items"]]
     if output.exists():
@@ -301,8 +342,18 @@ def build(output: Path) -> None:
     for record in source_records:
         linked = [entry for entry in apparatus if entry["item"] == record["id"]]
         target = output / "items" / f"{slug(record['id'])}.html"
+        narrative_index = narrative_positions.get(record["id"])
         target.write_text(
-            source_block_page(record, blocks[record["id"]], linked),
+            source_block_page(
+                record,
+                blocks[record["id"]],
+                linked,
+                narrative_records[narrative_index - 1]
+                if narrative_index is not None and narrative_index else None,
+                narrative_records[narrative_index + 1]
+                if narrative_index is not None
+                and narrative_index + 1 < len(narrative_records) else None,
+            ),
             encoding="utf-8",
         )
         source_cards.append(

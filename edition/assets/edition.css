@@ -57,6 +57,8 @@ table { width: 100%; border-collapse: collapse; }
 td { padding: .45rem; border-bottom: 1px solid var(--rule); overflow-wrap: anywhere; }
 .apparatus-card { border-left: 3px solid var(--accent); padding-left: 1rem; }
 .quiet { color: var(--muted); }
+.sequence-navigation { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+.sequence-navigation a { max-width: 46%; }
 @media (max-width: 900px) {
   .parallel { grid-template-columns: 1fr; }
   .dependency-pair { grid-template-columns: 1fr; }

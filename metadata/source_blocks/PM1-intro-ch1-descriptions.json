@@ -1,0 +1,73 @@
+{
+  "id": "PM1:INTRO-CH1-DESCRIPTIONS",
+  "edition": "first",
+  "volume": 1,
+  "kind": "source-critical-prose",
+  "title": "Introduction, Chapter I — descriptions",
+  "source_range": {
+    "printed_pages": "31–33",
+    "scan_leaves": [
+      53,
+      54,
+      55
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "lean_path": "Principia/FirstEdition/Volume1/Introduction/Chapter1/Pages26To38.lean",
+  "witnesses": [
+    {
+      "siglum": "PM1-1910-SCAN",
+      "role": "canonical",
+      "uri": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+      "sha256": "52fd0ba446ab2dc97f08d6d4b16d67196edb6d991b0a0445e1ee4dbb57fa2eab"
+    },
+    {
+      "siglum": "PG78050",
+      "role": "control",
+      "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm",
+      "sha256": "f9e000e6e66bcd865d03ad41bbf7cbc74618678eceb6af0fb113c3df51e0200a"
+    },
+    {
+      "siglum": "WS-PM1",
+      "role": "control",
+      "uri": "https://en.wikisource.org/wiki/Index:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+    }
+  ],
+  "leaf_derivatives": [
+    {
+      "scan_leaf": 53,
+      "printed_page": 31,
+      "sha256": "b83d3636d9afe066118734a81a758e225bbc64fec08b7a53cb5e01c4f3533994"
+    },
+    {
+      "scan_leaf": 54,
+      "printed_page": 32,
+      "sha256": "d4132b0657f410269fcea6d4fac39a62d9e50869c3814d3f1016997ccfcdab57"
+    },
+    {
+      "scan_leaf": 55,
+      "printed_page": 33,
+      "sha256": "a06dffe21dbe02ee4aa4d11109cb0698443559bcec0cd9dc307fee4eec9795c4"
+    }
+  ],
+  "source_status": "scan-collated-three-witness",
+  "critical_status": "digital-witness-errors-recorded",
+  "transcription": {
+    "policy": "verbal-diplomatic-reflow",
+    "line_end_hyphenation": "silently-rejoined",
+    "page_breaks": "recorded-in-metadata-not-canonical-body",
+    "note_markers": "global-numeric-labels-replace-page-local-asterisks",
+    "typography": "presentation-layer-not-encoded-in-canonical-body",
+    "formulae_and_scope_punctuation": "collated-against-scan"
+  },
+  "canonical_body": {
+    "encoding": "UTF-8",
+    "byte_length": 6943,
+    "sha256": "f9150fd7e6bb3ff6ccdb1bb3dfff79ee3c75ad93b06e0c5069fbacdda0385772"
+  },
+  "review": {
+    "apparatus_required": true,
+    "sic_required": false,
+    "note": "Digital-witness errors do not warrant sic."
+  }
+}

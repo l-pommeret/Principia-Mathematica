@@ -1,0 +1,37 @@
+{
+  "id": "APP-PM1-INTRO-P28-PG-002",
+  "item": "PM1:INTRO-CH1-CLASSES-RELATIONS-CONT",
+  "locus": {
+    "volume": 1,
+    "printed_page": 28,
+    "scan_leaf": 50,
+    "line_or_formula": "definition recalled for equivalence"
+  },
+  "classification": "digital-witness-error",
+  "diplomatic_reading": "p ⊃ q . q ⊃ p",
+  "other_reading": "p ⊃ q . q ⊂ p",
+  "witnesses": [
+    {
+      "siglum": "SCAN",
+      "reading": "p ⊃ q . q ⊃ p",
+      "uri": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/50"
+    },
+    {
+      "siglum": "PG78050",
+      "reading": "p ⊃ q . q ⊂ p",
+      "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+    },
+    {
+      "siglum": "WS-PM1",
+      "reading": "p ⊃ q . q ⊃ p",
+      "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/50&action=raw"
+    }
+  ],
+  "evidence": "The scan and Wikisource have implication in both conjuncts; PG mis-transcribes the second sign as inclusion.",
+  "status": "double-checked",
+  "review": {
+    "editor": "Codex source audit",
+    "date": "2026-08-10",
+    "second_reviewer": "scan/definition cross-check"
+  }
+}

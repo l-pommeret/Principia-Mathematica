@@ -1,0 +1,37 @@
+{
+  "id": "APP-PM1-INTRO-P12-WS-PRODUCT-001",
+  "item": "PM1:INTRODUCTION-CH1-DEFINITIONS-PP11-12",
+  "locus": {
+    "volume": 1,
+    "printed_page": 12,
+    "scan_leaf": 34,
+    "line_or_formula": "first formula under ‘Three definitions have been introduced’"
+  },
+  "classification": "digital-witness-error",
+  "diplomatic_reading": "p · q .=. ∼(∼p ∨ ∼q) Df",
+  "other_reading": "p ∨ q .=. ∼(∼p ∨ ∼q) Df",
+  "witnesses": [
+    {
+      "siglum": "PM1-1910-SCAN",
+      "reading": "p · q .=. ∼(∼p ∨ ∼q) Df",
+      "uri": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/34"
+    },
+    {
+      "siglum": "WS-PM1",
+      "reading": "p ∨ q .=. ∼(∼p ∨ ∼q) Df",
+      "uri": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/34"
+    },
+    {
+      "siglum": "PG78050",
+      "reading": "p · q .=. ∼(∼p ∨ ∼q) Df",
+      "uri": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+    }
+  ],
+  "evidence": "The scan and PG78050 agree on logical product. Only the Wikisource transcription substitutes disjunction on the definiendum. This is not a defect of PM and receives no sic marker.",
+  "status": "double-checked",
+  "review": {
+    "editor": "Codex source audit",
+    "date": "2026-08-10",
+    "second_reviewer": "independent formula collation"
+  }
+}

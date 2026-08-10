@@ -1,0 +1,38 @@
+{
+  "id": "APP-PM1-INTRO-P36-PRODUCT-002",
+  "item": "PM1:INTRO-CH1-DESCRIPTIVE-RELATION-FUNCTIONS",
+  "locus": {
+    "volume": 1,
+    "printed_page": 36,
+    "scan_leaf": 58,
+    "line_or_formula": "second inclusion law for relational product"
+  },
+  "classification": "authorial-print-sic",
+  "marker": "sic",
+  "diplomatic_reading": "(Q ∩̇ R) | P ⊂̇ (Q | P) ∩̇ (Q | R)",
+  "other_reading": "(Q ∩̇ R) | P ⊂̇ (Q | P) ∩̇ (R | P)",
+  "witnesses": [
+    {
+      "siglum": "SCAN",
+      "reading": "(Q ∩̇ R) | P ⊂̇ (Q | P) ∩̇ (Q | R)",
+      "uri": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/58"
+    },
+    {
+      "siglum": "PG78050",
+      "reading": "(Q ∩̇ R) | P ⊂̇ (Q | P) ∩̇ (R | P)",
+      "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+    },
+    {
+      "siglum": "WS-PM1",
+      "reading": "(Q ∩̇ R) | P ⊂̇ (Q | P) ∩̇ (Q | R)",
+      "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/58&action=raw"
+    }
+  ],
+  "evidence": "The defining expansion requires the second factor R | P. PG silently corrects the printed Q | R.",
+  "status": "double-checked",
+  "review": {
+    "editor": "Codex source audit",
+    "date": "2026-08-10",
+    "second_reviewer": "scan/definition cross-check"
+  }
+}
