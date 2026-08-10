@@ -105,13 +105,13 @@
       "aristotle_status": "submitted",
       "aristotle_task_id": "012131af-25b4-48ca-94b6-1689fb56e3de",
       "aristotle_latest_task_id": "012131af-25b4-48ca-94b6-1689fb56e3de",
-      "aristotle_latest_task_status": "IN_PROGRESS",
-      "aristotle_remote_status": "IN_PROGRESS",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_project_id": "5f49ddc8-6fe3-45c6-b367-b7a44fb74e10",
       "aristotle_request_path": "aristotle/Q203.md",
       "aristotle_request_sha256": "55acc9c75df20a0714915df41a7a371f185dc96d1cb64f9ff859e3257fa07ac2",
       "aristotle_latest_task_name": "Formalize Q203.md",
-      "aristotle_latest_task_created": "8 mins ago"
+      "aristotle_latest_task_created": "12 mins ago"
     },
     "Q204": {
       "canonical_ids": [
@@ -148,58 +148,209 @@
       "aristotle_status": "not-submitted"
     },
     "Q206": {
-      "canonical_ids": ["PM1:✱2·2", "PM1:✱2·21", "PM1:✱2·24"],
+      "canonical_ids": [
+        "PM1:✱2·2",
+        "PM1:✱2·21",
+        "PM1:✱2·24"
+      ],
       "source": "PM volume I, first edition, pp. 108–109",
       "prompt_path": "aristotle/Q206.md",
       "audit_path": "reviews/Q206-review.md",
       "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·2, ✱2·21 and ✱2·24",
-      "depends_on": ["PM1:✱2·18"],
+      "depends_on": [
+        "PM1:✱2·18"
+      ],
       "parallel_group": "STAR2-WAVE-2A",
       "aristotle_status": "not-submitted"
     },
     "Q207": {
-      "canonical_ids": ["PM1:✱2·25", "PM1:✱2·26", "PM1:✱2·27"],
+      "canonical_ids": [
+        "PM1:✱2·25",
+        "PM1:✱2·26",
+        "PM1:✱2·27"
+      ],
       "source": "PM volume I, first edition, p. 109",
       "prompt_path": "aristotle/Q207.md",
       "audit_path": "reviews/Q207-review.md",
       "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·25 through ✱2·27",
-      "depends_on": ["PM1:✱2·18"],
+      "depends_on": [
+        "PM1:✱2·18"
+      ],
       "parallel_group": "STAR2-WAVE-2A",
       "aristotle_status": "not-submitted"
     },
     "Q208": {
-      "canonical_ids": ["PM1:✱2·3", "PM1:✱2·31", "PM1:✱2·32"],
+      "canonical_ids": [
+        "PM1:✱2·3",
+        "PM1:✱2·31",
+        "PM1:✱2·32"
+      ],
       "source": "PM volume I, first edition, pp. 109–110",
       "prompt_path": "aristotle/Q208.md",
       "audit_path": "reviews/Q208-review.md",
       "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·3, ✱2·31 and ✱2·32",
-      "depends_on": ["PM1:✱2·18"],
+      "depends_on": [
+        "PM1:✱2·18"
+      ],
       "parallel_group": "STAR2-WAVE-2A",
       "aristotle_status": "not-submitted"
     },
     "Q209": {
-      "canonical_ids": ["PM1:✱2·36", "PM1:✱2·37", "PM1:✱2·38", "PM1:✱2·41"],
+      "canonical_ids": [
+        "PM1:✱2·36",
+        "PM1:✱2·37",
+        "PM1:✱2·38",
+        "PM1:✱2·41"
+      ],
       "source": "PM volume I, first edition, pp. 110–111",
       "prompt_path": "aristotle/Q209.md",
       "audit_path": "reviews/Q209-review.md",
       "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·36 through ✱2·38 and ✱2·41",
-      "depends_on": ["PM1:✱2·18"],
+      "depends_on": [
+        "PM1:✱2·18"
+      ],
       "parallel_group": "STAR2-WAVE-2A",
       "aristotle_status": "not-submitted"
     },
     "Q210": {
-      "canonical_ids": ["PM1:✱2·4", "PM1:✱2·42", "PM1:✱2·43"],
+      "canonical_ids": [
+        "PM1:✱2·4",
+        "PM1:✱2·42",
+        "PM1:✱2·43"
+      ],
       "source": "PM volume I, first edition, p. 111",
       "prompt_path": "aristotle/Q210.md",
       "audit_path": "reviews/Q210-review.md",
       "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·4, ✱2·42 and ✱2·43",
-      "depends_on": ["PM1:✱2·31", "PM1:✱2·38"],
+      "depends_on": [
+        "PM1:✱2·31",
+        "PM1:✱2·38"
+      ],
       "parallel_group": "STAR2-WAVE-2B",
+      "aristotle_status": "not-submitted"
+    },
+    "Q211": {
+      "canonical_ids": [
+        "PM1:✱2·45",
+        "PM1:✱2·46",
+        "PM1:✱2·47",
+        "PM1:✱2·48",
+        "PM1:✱2·49"
+      ],
+      "source": "PM volume I, first edition, pp. 111–112",
+      "prompt_path": "aristotle/Q211.md",
+      "audit_path": "reviews/Q211-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱2·45 through ✱2·49",
+      "depends_on": [
+        "PM1:✱2·2",
+        "PM1:✱2·16"
+      ],
+      "parallel_group": "STAR2-WAVE-3A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q212": {
+      "canonical_ids": [
+        "PM1:✱2·5",
+        "PM1:✱2·51",
+        "PM1:✱2·52",
+        "PM1:✱2·521"
+      ],
+      "source": "PM volume I, first edition, p. 112",
+      "prompt_path": "aristotle/Q212.md",
+      "audit_path": "reviews/Q212-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱2·5 through ✱2·521",
+      "depends_on": [
+        "PM1:✱2·17",
+        "PM1:✱2·47",
+        "PM1:✱2·48",
+        "PM1:✱2·49"
+      ],
+      "parallel_group": "STAR2-WAVE-3B",
+      "aristotle_status": "not-submitted"
+    },
+    "Q213": {
+      "canonical_ids": [
+        "PM1:✱2·53",
+        "PM1:✱2·54",
+        "PM1:✱2·55",
+        "PM1:✱2·56"
+      ],
+      "source": "PM volume I, first edition, p. 112",
+      "prompt_path": "aristotle/Q213.md",
+      "audit_path": "reviews/Q213-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱2·53 through ✱2·56",
+      "depends_on": [
+        "PM1:✱2·04",
+        "PM1:✱2·12",
+        "PM1:✱2·14",
+        "PM1:✱2·38"
+      ],
+      "parallel_group": "STAR2-WAVE-3A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q214": {
+      "canonical_ids": [
+        "PM1:✱2·6",
+        "PM1:✱2·61",
+        "PM1:✱2·62",
+        "PM1:✱2·621"
+      ],
+      "source": "PM volume I, first edition, p. 112",
+      "prompt_path": "aristotle/Q214.md",
+      "audit_path": "reviews/Q214-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱2·6 through ✱2·621",
+      "depends_on": [
+        "PM1:✱2·04",
+        "PM1:✱2·05",
+        "PM1:✱2·38",
+        "PM1:✱2·53"
+      ],
+      "parallel_group": "STAR2-WAVE-3B",
+      "aristotle_status": "not-submitted"
+    },
+    "Q215": {
+      "canonical_ids": [
+        "PM1:✱2·63",
+        "PM1:✱2·64",
+        "PM1:✱2·65"
+      ],
+      "source": "PM volume I, first edition, p. 112",
+      "prompt_path": "aristotle/Q215.md",
+      "audit_path": "reviews/Q215-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱2·63 through ✱2·65",
+      "depends_on": [
+        "PM1:✱2·62"
+      ],
+      "parallel_group": "STAR2-WAVE-3C",
+      "aristotle_status": "not-submitted"
+    },
+    "Q216": {
+      "canonical_ids": [
+        "PM1:✱2·67",
+        "PM1:✱2·68",
+        "PM1:✱2·69"
+      ],
+      "source": "PM volume I, first edition, pp. 112–113",
+      "prompt_path": "aristotle/Q216.md",
+      "audit_path": "reviews/Q216-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱2·67 through ✱2·69",
+      "depends_on": [
+        "PM1:✱2·24",
+        "PM1:✱2·54",
+        "PM1:✱2·62"
+      ],
+      "parallel_group": "STAR2-WAVE-3C",
       "aristotle_status": "not-submitted"
     }
   },
