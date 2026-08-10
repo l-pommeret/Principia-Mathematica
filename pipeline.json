@@ -24,7 +24,7 @@
         "PM1:✱1·1",
         "PM1:✱1·11"
       ],
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "aristotle_project_id": "3b8adbc4-3463-4dac-908f-1a59b224ab72",
       "aristotle_task_id": "f347de50-05d4-47df-a4bf-7612644c5d41",
       "aristotle_latest_task_id": "f347de50-05d4-47df-a4bf-7612644c5d41",
@@ -33,7 +33,9 @@
       "aristotle_request_path": "aristotle/Q200.md",
       "aristotle_request_sha256": "732a797ee1b85d75a79db3bfa859da84c51262117f7e1f31e19726ec9d5c8e77",
       "aristotle_latest_task_name": "Formalize Q200.md",
-      "aristotle_latest_task_created": "7 mins ago"
+      "aristotle_latest_task_created": "7 mins ago",
+      "aristotle_result_path": "aristotle/results/Q200-final.tar.gz",
+      "aristotle_result_sha256": "a161ad56cfde7764e72c21bcc2dd72318861ea421ffe51230867aafdd16f39cd"
     },
     "Q201": {
       "canonical_ids": [
@@ -104,6 +106,11 @@
     }
   },
   "items": {
+    "PM-META:detach": {
+      "batch": "PM-META-Q200",
+      "status": "awaiting-ci",
+      "ci_evidence": "pending"
+    },
     "PM1:✱1·01": {
       "batch": "PM1-STAR1-PILOT-01",
       "status": "kernel-checked"

@@ -36,4 +36,35 @@ inductive Derivation : {Γ : RealContext} → Elementary Γ → Prop where
 
 notation:45 "⊢ₚ " p => Derivation p
 
+namespace Derivation
+
+/-! ## Uniform metalinguistic detachment
+
+The following is an editorial interface lemma, not a proposition printed in
+PM.  It combines, without identifying them, the two primitive rules printed in
+the first edition, volume I:
+
+* ✱1·1, p. 98: “Anything implied by a true elementary proposition is true.”
+* ✱1·11, p. 99: the corresponding assertion rule for an elementary
+  propositional function with one or more real variables.
+
+The shape of `Γ` records precisely which historical rule applies.  It is not a
+context of logical hypotheses.
+-/
+
+/-- Metalinguistic detachment, uniform in the real-variable context `Γ`.
+
+For `Γ = []` this is exactly ✱1·1.  For `Γ = τ :: Δ` this is exactly ✱1·11,
+with only the structural witness that the real-variable context is nonempty.
+-/
+theorem detach {Γ : PM.RealContext} {φ ψ : PM.Elementary Γ}
+    (hφ : PM.Derivation φ) (hφψ : PM.Derivation (φ ⊃ₚ ψ)) :
+    PM.Derivation ψ := by
+  match Γ, φ, ψ, hφ, hφψ with
+  | [], φ, ψ, hφ, hφψ => exact PM.Derivation.star_1_1 hφ hφψ
+  | (τ :: Δ), φ, ψ, hφ, hφψ =>
+      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hφ hφψ
+
+end Derivation
+
 end PM

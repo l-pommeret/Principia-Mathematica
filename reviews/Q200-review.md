@@ -72,3 +72,26 @@ démonstration.
 
 Confiance: élevée pour la correspondance entre les deux branches et les deux
 règles primitives. Aucune proposition historique nouvelle n'est revendiquée.
+
+## Audit du résultat Aristotle
+
+Archive immuable: `aristotle/results/Q200-final.tar.gz`
+SHA-256: `a161ad56cfde7764e72c21bcc2dd72318861ea421ffe51230867aafdd16f39cd`
+
+Verdict du résultat: **complet, en attente de CI du dépôt**.
+
+La déclaration livrée conserve exactement les paramètres dépendants, les deux
+hypothèses explicites et la conclusion demandés. Son unique analyse porte sur
+la forme de `Γ`:
+
+- la branche `[]` appelle seulement `PM.Derivation.star_1_1`;
+- la branche `τ :: Δ` appelle seulement `PM.Derivation.star_1_11`, avec
+  `List.cons_ne_nil τ Δ` comme seule preuve structurelle supplémentaire.
+
+Le fichier de preuve `RequestProject/Q200.lean` ne contient ni `Classical`, ni
+`by_cases`, ni nouvel axiome, ni `sorry`, `admit` ou déclaration `unsafe`. Le
+`open scoped Classical` trouvé dans le fichier générique
+`RequestProject/Main.lean` de l'archive n'est pas importé par la preuve Q200 et
+n'entre pas dans la déclaration intégrée. La vérification kernel définitive de
+l'intégration est réservée à GitHub Actions, conformément à la politique du
+projet; aucune compilation Lean locale n'a été exécutée pendant cet audit.
