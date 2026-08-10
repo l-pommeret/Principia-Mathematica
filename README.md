@@ -58,3 +58,4 @@ their renaming and substitution operations preserve that distinction.
 Reducibility is supplied as an explicit unary or binary package whose
 certificate is indexed by the same marked syntax. This remains an experimental
 gate, not canonical coverage of ✱12–✱13 or a completed proof of ✱13·101.
+The slice is kernel-checked at commit `cbef6d9` by Lean CI run `31436937560`.

@@ -90,6 +90,13 @@ def main() -> None:
             raise SystemExit(f"{witness} URL/hash provenance is incomplete")
     if source_record["source_witnesses"]["wikisource"].get("page_transcription") != "absent":
         raise SystemExit("Wikisource absence is not recorded")
+    evidence = source_record.get("architecture_ci", {})
+    if evidence != {
+        "commit": "cbef6d91eacd3164e6e86d9f2ebb48b4e1ad914b",
+        "run": 31436937560,
+        "conclusion": "success",
+    }:
+        raise SystemExit("predicative gate CI evidence is missing or inconsistent")
     print("Experimental predicative/reducibility gate checks passed")
 
 
