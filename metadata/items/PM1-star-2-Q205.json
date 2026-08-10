@@ -13,7 +13,7 @@
     "task_id": "c9767f09-c065-47b7-b7e4-219df760cdab",
     "archive": "aristotle/results/Q205-final.tar.gz",
     "sha256": "404b741e8fcad61a2e25fd57f11eb2b9c872a95c2d01a474d2e0faa418019634",
-    "audit": "accepted-awaiting-github-ci"
+    "audit": "accepted-kernel-checked"
   },
   "items": [
     {
@@ -30,7 +30,7 @@
       "normalized_dependencies": ["PM1:✱2·05", "PM1:✱2·12", "PM1:✱1·11", "PM1:✱2·03", "PM1:✱2·14"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The demonstration explicitly cites ✱1·11 on lines (3), (6), (8), (9), (11) and the conclusion."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·16",
@@ -46,7 +46,7 @@
       "normalized_dependencies": ["PM1:✱2·12", "PM1:✱2·05", "PM1:✱2·03", "PM1:✱2·06", "PM1:✱1·11"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"PM's Syll. and asserted-implication abbreviations embody ✱1·11 in this real-variable context."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·17",
@@ -62,7 +62,7 @@
       "normalized_dependencies": ["PM1:✱2·03", "PM1:✱2·14", "PM1:✱2·05", "PM1:✱2·06", "PM1:✱1·11"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"PM's Syll. and asserted-implication abbreviations embody ✱1·11 in this real-variable context."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·18",
@@ -78,12 +78,12 @@
       "normalized_dependencies": ["PM1:✱2·12", "PM1:✱2·05", "PM1:✱2·01", "PM1:✱2·06", "PM1:✱2·14", "PM1:✱1·11"],
       "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"Both printed Syll. steps and asserted-implication steps embody ✱1·11 in this real-variable context."}],
       "source_status": "double-witness-checked",
-      "formal_status": "awaiting-ci"
+      "formal_status": "kernel-checked"
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4fea5580f72e4d9bba96e7fd3555602a9e1d6a94",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31417330606",
+    "conclusion": "success"
   }
 }

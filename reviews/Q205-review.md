@@ -187,5 +187,7 @@ Les dépendances directes des termes Lean ont été confrontées ligne par ligne
 aux références imprimées. `PM.Derivation.detach` se normalise vers ✱1·11 dans
 ce contexte de variables réelles; `Syll.` est développé par ✱2·06. Les triples
 historique/Lean/normalisé sont consignés dans
-`metadata/items/PM1-star-2-Q205.json`. Verdict: **A, awaiting-ci**; le statut
-`kernel-checked` reste interdit jusqu'au succès de la CI GitHub.
+`metadata/items/PM1-star-2-Q205.json`. Verdict final: **A, kernel-checked**.
+Le noyau Lean et le contrôle anti-échappatoires ont réussi sur le commit
+`4fea5580f72e4d9bba96e7fd3555602a9e1d6a94`, exécution GitHub Actions
+https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31417330606.
