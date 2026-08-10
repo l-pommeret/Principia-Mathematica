@@ -122,3 +122,25 @@ contrôle d'absence de `sorry`, `admit`, `unsafe` ou axiome ajouté.
 Confiance: élevée pour les formules, les portées, le nombre de négations et le
 graphe de dépendances, sur inspection des deux dérivés canoniques identifiés
 ci-dessus et collation avec le témoin Gutenberg.
+
+## Audit du résultat Aristotle
+
+Verdict du résultat: **A — accepté pour intégration, en attente de GitHub CI**.
+
+- projet: `a5ae3859-2a76-49aa-8200-b893afdd539a`;
+- tâche terminale: `16e2d599-50fc-4908-818a-7cd46f1ba7e9` (`COMPLETE`);
+- archive immuable: `aristotle/results/Q204-final.tar.gz`;
+- SHA-256: `4e2893472492ddf637083af934a3e1cf1796dbd2334b6113bd25e55442af8554`.
+
+L'archive contient exactement les quatre déclarations demandées, dans l'ordre
+✱2·11–✱2·14 et avec les cibles auditées ci-dessus. Le fichier formel ne
+contient aucun `sorry`, `admit`, `axiom`, `unsafe`, emploi de `Classical`, ni
+raisonnement sémantique. Les corps suivent les démonstrations imprimées:
+Perm puis ✱2·1 pour ✱2·11; instance de ✱2·11 et ✱1·01 pour ✱2·12; Sum,
+✱2·12 et ✱2·11 pour ✱2·13; Perm et ✱2·13 pour ✱2·14. Chaque emploi imprimé
+de ✱1·11 est réalisé par `PM.Derivation.detach`. Aucune dépendance logique
+postérieure ou non imprimée n'a été introduite.
+
+La compilation annoncée dans l'environnement Aristotle n'est pas la preuve
+de publication de cette édition: le statut demeure `awaiting-ci` jusqu'au
+succès de la CI GitHub au commit intégrant ce lot.

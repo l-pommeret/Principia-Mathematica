@@ -205,6 +205,86 @@ No authorial print error or witness divergence requiring `sic`, `corr.`, or
 linearized without changing their order; physical line breaks are reflowed.
 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱2·11
+✱2·11.  ⊢ . p ∨ ∼p
+
+Dem.
+
+        [Perm  ∼p, p/p, q]  ⊢ : ∼p ∨ p . ⊃ . p ∨ ∼p       (1)
+        [(1).✱2·1.✱1·11]  ⊢ . p ∨ ∼p
+
+This is the law of excluded middle.
+PM-VERBATIM-END PM1:✱2·11 -/
+
+/- PM-FORMAL-GLOSS
+Perm (✱1·4) is instantiated with `∼p` and `p`; its consequent is detached
+from ✱2·1 exactly as in the printed second line.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·12
+✱2·12.  ⊢ . p ⊃ ∼(∼p)
+
+Dem.
+
+        [✱2·11  ∼p/p]  ⊢ . ∼p ∨ ∼(∼p)       (1)
+        [(1).(✱1·01)]  ⊢ . p ⊃ ∼(∼p)
+PM-VERBATIM-END PM1:✱2·12 -/
+
+/- PM-FORMAL-GLOSS
+The proof is ✱2·11 with `∼p` substituted for `p`; ✱1·01 changes only its
+definitional presentation into implication notation.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·13
+✱2·13.  ⊢ . p ∨ ∼{∼(∼p)}
+
+This proposition is a lemma for ✱2·14, which, with ✱2·12, constitutes the
+principle of double negation.
+
+Dem.
+
+        [Sum  ∼p, ∼{∼(∼p)}/q, r]
+          ⊢ :. ∼p . ⊃ . ∼{∼(∼p)} : ⊃ :
+               p ∨ ∼p . ⊃ . p ∨ ∼{∼(∼p)}       (1)
+        [✱2·12  ∼p/p]  ⊢ : ∼p . ⊃ . ∼{∼(∼p)}       (2)
+        [(1).(2).✱1·11]
+          ⊢ : p ∨ ∼p . ⊃ . p ∨ ∼{∼(∼p)}       (3)
+        [(3).✱2·11.✱1·11]  ⊢ : p ∨ ∼{∼(∼p)}
+PM-VERBATIM-END PM1:✱2·13 -/
+
+/- PM-FORMAL-GLOSS
+Sum (✱1·6) receives the displayed three-negation term. The two subsequent
+detachments use ✱2·12 at `∼p` and then ✱2·11, in the printed order.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·14
+✱2·14.  ⊢ . ∼(∼p) ⊃ p
+
+Dem.
+
+        [Perm  ∼{∼(∼p)}/q]
+          ⊢ : p ∨ ∼{∼(∼p)} . ⊃ . ∼{∼(∼p)} ∨ p       (1)
+        [(1).✱2·13.✱1·11]  ⊢ : ∼{∼(∼p)} ∨ p       (2)
+        [(2).(✱1·01)]  ⊢ : ∼(∼p) ⊃ p
+PM-VERBATIM-END PM1:✱2·14 -/
+
+/- PM-FORMAL-GLOSS
+Perm (✱1·4) exchanges `p` and `∼{∼(∼p)}`; detachment against ✱2·13 gives
+the disjunction which ✱1·01 reads definitionally as the asserted implication.
+-/
+
+/- PM-EDITORIAL
+Source for ✱2·11–✱2·14:
+- scan, printed pp. 105–106: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/127 and /128
+- working transcription: Project Gutenberg ebook 78050
+Verification status: double-witness-checked and collated directly against the
+facsimile; the source and formal audit is recorded in `reviews/Q204-review.md`.
+In the first demonstration line of ✱2·13, Gutenberg's `data-tex` concatenates
+the two numerator expressions. The comma above follows the scan and repairs
+only that digital-witness error; it is not an emendation of PM. No `sic`,
+`corr.`, or `conj.` entry concerning the printed edition is required.
+-/
+
 /-! ## Printed syntax and audited scope readings -/
 
 /-- Audited scope reading of ✱2·01. -/
@@ -344,6 +424,70 @@ def star_2_1_demonstration_printed : PM.PrintedFormula :=
 theorem star_2_1 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
     ⊢ₚ (∼ₚ p ∨ₚ p) :=
   star_2_08 p
+
+/-- Audited scope reading of ✱2·11. -/
+def star_2_11_reading (p : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ . p ∨ ∼p"
+  parsed := p ∨ₚ ∼ₚ p
+  scopeReading := "The assertion is the disjunction p ∨ ∼p."
+
+/-- Diplomatic surface syntax of the printed demonstration of ✱2·11. -/
+def star_2_11_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Perm ∼p, p/p, q] (1); [(1).✱2·1.✱1·11]"
+
+/-- PM ✱2·11, preserving its Perm instance and printed detachment. -/
+theorem star_2_11 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ∨ₚ ∼ₚ p) := by
+  have hperm := PM.Derivation.star_1_4 (∼ₚ p) p
+  exact PM.Derivation.detach (star_2_1 p) hperm
+
+/-- Audited scope reading of ✱2·12. -/
+def star_2_12_reading (p : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ . p ⊃ ∼(∼p)"
+  parsed := p ⊃ₚ ∼ₚ (∼ₚ p)
+  scopeReading := "The consequent contains exactly two iterated negations."
+
+/-- Diplomatic surface syntax of the printed demonstration of ✱2·12. -/
+def star_2_12_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·11 ∼p/p] (1); [(1).(✱1·01)]"
+
+/-- PM ✱2·12, definitionally the indicated ✱2·11 instance. -/
+theorem star_2_12 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ ∼ₚ (∼ₚ p)) := by
+  exact star_2_11 (∼ₚ p)
+
+/-- Audited scope reading of ✱2·13. -/
+def star_2_13_reading (p : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ . p ∨ ∼{∼(∼p)}"
+  parsed := p ∨ₚ ∼ₚ (∼ₚ (∼ₚ p))
+  scopeReading := "The second disjunct contains exactly three iterated negations."
+
+/-- Diplomatic surface syntax of the printed demonstration of ✱2·13. -/
+def star_2_13_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Sum ∼p, ∼{∼(∼p)}/q, r] (1); [✱2·12 ∼p/p] (2); [(1).(2).✱1·11] (3); [(3).✱2·11.✱1·11]"
+
+/-- PM ✱2·13, preserving the Sum instance and both printed detachments. -/
+theorem star_2_13 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ∨ₚ ∼ₚ (∼ₚ (∼ₚ p))) := by
+  have hsum := PM.Derivation.star_1_6 p (∼ₚ p) (∼ₚ (∼ₚ (∼ₚ p)))
+  have hstep := PM.Derivation.detach (star_2_12 (∼ₚ p)) hsum
+  exact PM.Derivation.detach (star_2_11 p) hstep
+
+/-- Audited scope reading of ✱2·14. -/
+def star_2_14_reading (p : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ . ∼(∼p) ⊃ p"
+  parsed := ∼ₚ (∼ₚ p) ⊃ₚ p
+  scopeReading := "The antecedent is the double negation of p."
+
+/-- Diplomatic surface syntax of the printed demonstration of ✱2·14. -/
+def star_2_14_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Perm ∼{∼(∼p)}/q] (1); [(1).✱2·13.✱1·11] (2); [(2).(✱1·01)]"
+
+/-- PM ✱2·14, preserving the displayed Perm instance and detachment. -/
+theorem star_2_14 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ (∼ₚ p) ⊃ₚ p) := by
+  have hperm := PM.Derivation.star_1_4 p (∼ₚ (∼ₚ (∼ₚ p)))
+  exact PM.Derivation.detach (star_2_13 p) hperm
 
 /- PM-VERBATIM-BEGIN PM1:✱2·33
 ✱2·33.  p ∨ q ∨ r .=. (p ∨ q) ∨ r     Df
