@@ -583,14 +583,23 @@
         "PM1:✱2·621"
       ],
       "parallel_group": "STAR2-WAVE-4A",
-      "aristotle_status": "not-submitted",
+      "aristotle_status": "submitted",
       "constraint_manifest_path": "aristotle/manifests/Q218.json",
       "isolated_context_path": "aristotle/contexts/Q218.lean",
       "context_ci_evidence": {
         "commit": "8f8ce44395c4dea80d206690d4677089f9a0bf4a",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31442908274",
         "conclusion": "success"
-      }
+      },
+      "aristotle_project_id": "b63ae6ca-fe1c-4f9e-b649-a1208d2dcaa5",
+      "aristotle_task_id": "606157ec-392e-4688-a85b-cde27f90c65c",
+      "aristotle_latest_task_id": "606157ec-392e-4688-a85b-cde27f90c65c",
+      "aristotle_latest_task_status": "QUEUED",
+      "aristotle_remote_status": "QUEUED",
+      "aristotle_request_path": "aristotle/Q218.md",
+      "aristotle_request_sha256": "3e6169d2e6df2b75b52f6a139130b88d1447dc3e2fe6f6370c8e6c399fefe371",
+      "aristotle_latest_task_name": "Formalize Q218.md",
+      "aristotle_latest_task_created": "7 secs ago"
     },
     "Q219": {
       "canonical_ids": [
@@ -1570,8 +1579,7 @@
       "aristotle_request_path": "aristotle/Q254.md",
       "aristotle_request_sha256": "a5ebd0debaa5508c940e772708a5be5e66cce8726467ceff9779f6d616261975",
       "aristotle_latest_task_name": "Formalize Q254.md",
-      "aristotle_latest_task_created": "10 mins ago"
-      ,
+      "aristotle_latest_task_created": "10 mins ago",
       "aristotle_archive": "aristotle/results/Q254-final.tar.gz",
       "aristotle_archive_sha256": "8695922974804f7b381f76db5be55cb35d3e7b490e0a53ea06b508341c9c24c5",
       "integration_status": "kernel-checked",
