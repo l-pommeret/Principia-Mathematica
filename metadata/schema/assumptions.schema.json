@@ -12,7 +12,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "label", "volume", "loci", "status", "editorial_note"],
+        "required": ["id", "label", "volume", "loci", "status", "lean_parameter_types", "editorial_note"],
         "properties": {
           "id": { "type": "string", "pattern": "^PM[123]:[A-Z][A-Z0-9_-]*$" },
           "label": { "type": "string", "minLength": 1 },
@@ -27,6 +27,14 @@
               "catalogued-locus-pending-source-audit",
               "formalized-explicit-hypothesis"
             ]
+          },
+          "lean_parameter_types": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z_][A-Za-z0-9_']*(\\.[A-Za-z_][A-Za-z0-9_']*)+$"
+            }
           },
           "editorial_note": { "type": "string", "minLength": 1 }
         }

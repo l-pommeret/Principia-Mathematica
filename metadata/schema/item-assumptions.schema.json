@@ -14,10 +14,24 @@
       "type": "array",
       "uniqueItems": true,
       "items": { "type": "string", "pattern": "^PM[123]:[A-Z][A-Z0-9_-]*$" }
+    },
+    "assumption_parameters": {
+      "type": "object",
+      "propertyNames": { "pattern": "^PM[123]:[A-Z][A-Z0-9_-]*$" },
+      "additionalProperties": {
+        "type": "object",
+        "required": ["parameter", "lean_type"],
+        "properties": {
+          "parameter": { "type": "string", "pattern": "^[A-Za-z_][A-Za-z0-9_']*$" },
+          "lean_type": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
     }
   },
   "dependentRequired": {
-    "direct_assumptions": ["inherited_assumptions"],
-    "inherited_assumptions": ["direct_assumptions"]
+    "direct_assumptions": ["inherited_assumptions", "assumption_parameters"],
+    "inherited_assumptions": ["direct_assumptions", "assumption_parameters"],
+    "assumption_parameters": ["direct_assumptions", "inherited_assumptions"]
   }
 }

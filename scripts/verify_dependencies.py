@@ -90,7 +90,10 @@ def load_assumptions(root: Path = ROOT) -> dict[str, dict]:
     if payload.get("schema_version") != 1 or not isinstance(payload.get("assumptions"), list):
         raise DependencyError("invalid non-logical assumption registry header")
     result: dict[str, dict] = {}
-    required = {"id", "label", "volume", "loci", "status", "editorial_note"}
+    required = {
+        "id", "label", "volume", "loci", "status", "editorial_note",
+        "lean_parameter_types",
+    }
     allowed_statuses = {
         "catalogued-not-yet-formalized",
         "catalogued-locus-pending-source-audit",
@@ -108,6 +111,15 @@ def load_assumptions(root: Path = ROOT) -> dict[str, dict]:
             raise DependencyError(f"incoherent non-logical assumption record {identifier}")
         if not isinstance(record["loci"], list) or not record["loci"]:
             raise DependencyError(f"non-logical assumption {identifier} has no locus")
+        parameter_types = record["lean_parameter_types"]
+        if (not isinstance(parameter_types, list) or
+                len(parameter_types) != len(set(parameter_types)) or
+                any(not isinstance(name, str) or not re.fullmatch(
+                    r"[A-Za-z_][A-Za-z0-9_']*(?:\.[A-Za-z_][A-Za-z0-9_']*)+", name
+                ) for name in parameter_types)):
+            raise DependencyError(
+                f"non-logical assumption {identifier} has invalid Lean parameter types"
+            )
         result[identifier] = record
     return result
 
@@ -190,6 +202,87 @@ def declaration_body(path: Path, declaration: str) -> str:
             end = index
             break
     return "\n".join(lines[start:end])
+
+
+def declaration_header(body: str) -> str:
+    """Return the declaration portion before its value/proof.
+
+    This deliberately remains a source-level audit.  A scoped non-logical
+    assumption must occur in a named ordinary parameter of the declaration;
+    mentioning it only in the proof body, or resolving it through an instance,
+    must not satisfy the gate.
+    """
+    clean = strip_lean_comments(body)
+    if ":=" in clean:
+        return clean.split(":=", 1)[0]
+    match = re.search(r"(?m)^\s*where\s*$", clean)
+    return clean[:match.start()] if match else clean
+
+
+def verify_assumption_parameters(
+    item: dict,
+    usage: dict[str, list[str]],
+    registry: dict[str, dict],
+    body: str,
+) -> list[dict[str, str]]:
+    """Match every effective assumption to an explicit Lean parameter.
+
+    Metadata names the parameter and its registered base type. Requiring the
+    exact effective closure makes inherited assumptions visible in descendant
+    theorem signatures instead of allowing them to disappear into proof terms.
+    """
+    effective = set(usage["effective"])
+    bindings = item.get("assumption_parameters")
+    if not effective:
+        if bindings not in (None, {}):
+            raise DependencyError(
+                f"{item['id']}: assumption_parameters declared with empty assumption closure"
+            )
+        return []
+    if not isinstance(bindings, dict) or set(bindings) != effective:
+        actual = sorted(bindings) if isinstance(bindings, dict) else []
+        raise DependencyError(
+            f"{item['id']}: assumption parameter bindings {actual} "
+            f"!= effective assumptions {sorted(effective)}"
+        )
+
+    header = declaration_header(body)
+    verified: list[dict[str, str]] = []
+    seen_parameters: set[str] = set()
+    for assumption in sorted(effective):
+        binding = bindings[assumption]
+        if not isinstance(binding, dict) or set(binding) != {"parameter", "lean_type"}:
+            raise DependencyError(f"{item['id']}: invalid binding for {assumption}")
+        parameter = binding["parameter"]
+        lean_type = binding["lean_type"]
+        if (not isinstance(parameter, str) or
+                not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_']*", parameter)):
+            raise DependencyError(f"{item['id']}: invalid parameter name for {assumption}")
+        if parameter in seen_parameters:
+            raise DependencyError(f"{item['id']}: assumption parameter {parameter} is reused")
+        seen_parameters.add(parameter)
+        allowed = registry[assumption]["lean_parameter_types"]
+        if lean_type not in allowed:
+            raise DependencyError(
+                f"{item['id']}: Lean type {lean_type!r} is not registered for {assumption}"
+            )
+        # Only `(name : Type ...)` counts. In particular `[name : Type]`, a
+        # body-only occurrence, or an anonymous parameter cannot pass.
+        pattern = re.compile(
+            rf"\(\s*{re.escape(parameter)}\s*:\s*"
+            rf"{re.escape(lean_type)}(?![A-Za-z0-9_'.])"
+        )
+        if not pattern.search(header):
+            raise DependencyError(
+                f"{item['id']}: no explicit scoped parameter "
+                f"({parameter} : {lean_type} ...) in Lean declaration header"
+            )
+        verified.append({
+            "assumption": assumption,
+            "parameter": parameter,
+            "lean_type": lean_type,
+        })
+    return verified
 
 
 def _occurs(body: str, name: str) -> bool:
@@ -277,10 +370,24 @@ def audit(root: Path = ROOT) -> dict:
             raise DependencyError(f"alias {alias} has an empty or unknown PM resolution")
     edges = []
     lean_edges = []
+    assumption_parameter_evidence = []
     for item in checked:
         for field in ("printed_dependencies", "lean_dependencies", "normalized_dependencies"):
             if field not in item or not isinstance(item[field], list):
                 raise DependencyError(f"{item['id']}: missing dependency field {field}")
+        # Legacy primitive-rule items are inductive constructors rather than
+        # standalone declarations. They currently have empty assumption
+        # closures, so no header exists or is needed. Any future assumption-
+        # bearing item must expose a declaration whose parameters can be
+        # audited here.
+        body = (declaration_body(root / item["lean_path"], item["declaration"])
+                if assumption_usage[item["id"]]["effective"] else "")
+        verified_parameters = verify_assumption_parameters(
+            item, assumption_usage[item["id"]], assumptions, body
+        )
+        assumption_parameter_evidence.extend(
+            {"item": item["id"], **evidence} for evidence in verified_parameters
+        )
         actual = extract_lean_dependencies(item, declarations, root)
         if sorted(item["lean_dependencies"]) != actual:
             raise DependencyError(
@@ -314,8 +421,8 @@ def audit(root: Path = ROOT) -> dict:
         "lean_graph": {"edges": lean_edges},
         "nonlogical_assumptions": {
             "coverage": {
-                "status": "metadata-declared-only",
-                "lean_parameter_detection": "not-yet-implemented",
+                "status": "metadata-and-lean-signature-audited-for-kernel-checked-items",
+                "lean_parameter_detection": "explicit-named-ordinary-parameters",
             },
             "registry": list(assumptions.values()),
             "direct_edges": [
@@ -328,6 +435,7 @@ def audit(root: Path = ROOT) -> dict:
                 for item_id, usage in assumption_usage.items()
                 for assumption in usage["inherited"]
             ],
+            "lean_parameter_evidence": assumption_parameter_evidence,
         },
         # Kept as a small compatibility convenience for downstream readers.
         "edges": edges,

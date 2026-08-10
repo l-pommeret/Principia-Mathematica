@@ -18,10 +18,13 @@ that use it must declare both `direct_assumptions` and
 `inherited_assumptions`; the dependency audit checks that the latter is exactly
 the transitive closure inherited from `normalized_dependencies`. Older items
 may omit both fields and are interpreted as having empty lists. Assumption IDs
-are deliberately not theorem nodes. At present this is a metadata audit only:
-before the first such item is promoted to `kernel-checked`, a future gate must
-also verify that every direct assumption is represented by an explicit scoped
-Lean parameter (and not by a global axiom, instance, or hidden coercion).
+are deliberately not theorem nodes. Every kernel-checked item with an effective
+assumption closure must also provide `assumption_parameters`, mapping each ID to
+a named ordinary Lean parameter and a base type authorized by the registry.
+The dependency audit inspects the declaration header: an occurrence only in the
+proof body, an anonymous parameter, or an instance parameter does not pass.
+Inherited assumptions therefore remain visible in descendant theorem signatures
+instead of disappearing after the first use.
 
 One JSON record under `source_blocks/` describes each unnumbered or extended
 prose block retained in a `PM-VERBATIM` comment. These records identify the

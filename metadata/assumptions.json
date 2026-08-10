@@ -7,6 +7,10 @@
       "volume": 1,
       "loci": ["Introduction, Chapter II, pp. 58–60", "✱12·1 and ✱12·11"],
       "status": "catalogued-not-yet-formalized",
+      "lean_parameter_types": [
+        "PM.Experimental.PredicativeGateToy.UnaryReducibility12_1",
+        "PM.Experimental.PredicativeGateToy.BinaryReducibility12_11"
+      ],
       "editorial_note": "Future Lean declarations must carry reducibility as an explicit scoped hypothesis, never as a global axiom or instance."
     },
     {
@@ -15,6 +19,7 @@
       "volume": 2,
       "loci": ["Volume II; exact first-edition proposition loci to be source-audited before item integration"],
       "status": "catalogued-locus-pending-source-audit",
+      "lean_parameter_types": [],
       "editorial_note": "Registered early so later items can expose, rather than erase, their non-logical assumptions."
     },
     {
@@ -23,6 +28,7 @@
       "volume": 2,
       "loci": ["Volume II; exact first-edition proposition loci to be source-audited before item integration"],
       "status": "catalogued-locus-pending-source-audit",
+      "lean_parameter_types": [],
       "editorial_note": "Registered early so later items can expose, rather than erase, their non-logical assumptions."
     }
   ]

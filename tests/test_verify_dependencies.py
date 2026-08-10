@@ -88,6 +88,84 @@ class DependencyAuditTests(unittest.TestCase):
                 {"id": "PM1:✱12·1", "normalized_dependencies": [],
                  "direct_assumptions": ["PM1:UNKNOWN"], "inherited_assumptions": []}
             ], registry)
+
+    def test_explicit_assumption_parameter_is_verified(self):
+        assumption = "PM1:REDUCIBILITY"
+        lean_type = "PM.Experimental.PredicativeGateToy.UnaryReducibility12_1"
+        item = {
+            "id": "PM1:✱13·101",
+            "assumption_parameters": {
+                assumption: {"parameter": "reducibility", "lean_type": lean_type}
+            },
+        }
+        usage = {"direct": [], "inherited": [assumption], "effective": [assumption]}
+        registry = {assumption: {"lean_parameter_types": [lean_type]}}
+        body = f"""theorem star_13_101
+            (reducibility : {lean_type} signature function)
+            (x y : Term) : Target := by
+          exact use reducibility
+        """
+        evidence = dependencies.verify_assumption_parameters(item, usage, registry, body)
+        self.assertEqual(evidence[0]["parameter"], "reducibility")
+
+    def test_body_only_assumption_type_is_rejected(self):
+        assumption = "PM1:REDUCIBILITY"
+        lean_type = "PM.Experimental.PredicativeGateToy.UnaryReducibility12_1"
+        item = {
+            "id": "PM1:✱13·101",
+            "assumption_parameters": {
+                assumption: {"parameter": "reducibility", "lean_type": lean_type}
+            },
+        }
+        usage = {"direct": [assumption], "inherited": [], "effective": [assumption]}
+        registry = {assumption: {"lean_parameter_types": [lean_type]}}
+        body = f"""theorem star_13_101 (h : Input) : Target := by
+          let reducibility : {lean_type} signature function := hidden h
+          exact use reducibility
+        """
+        with self.assertRaises(dependencies.DependencyError):
+            dependencies.verify_assumption_parameters(item, usage, registry, body)
+
+    def test_instance_assumption_parameter_is_rejected(self):
+        assumption = "PM1:REDUCIBILITY"
+        lean_type = "PM.Experimental.PredicativeGateToy.UnaryReducibility12_1"
+        item = {
+            "id": "PM1:✱13·101",
+            "assumption_parameters": {
+                assumption: {"parameter": "reducibility", "lean_type": lean_type}
+            },
+        }
+        usage = {"direct": [assumption], "inherited": [], "effective": [assumption]}
+        registry = {assumption: {"lean_parameter_types": [lean_type]}}
+        body = (
+            f"theorem star_13_101 "
+            f"[reducibility : {lean_type} signature function] : Target := by exact proof"
+        )
+        with self.assertRaises(dependencies.DependencyError):
+            dependencies.verify_assumption_parameters(item, usage, registry, body)
+
+    def test_effective_assumption_requires_exact_binding_set_and_registered_type(self):
+        assumption = "PM1:REDUCIBILITY"
+        lean_type = "PM.Experimental.PredicativeGateToy.UnaryReducibility12_1"
+        usage = {"direct": [assumption], "inherited": [], "effective": [assumption]}
+        registry = {assumption: {"lean_parameter_types": [lean_type]}}
+        with self.assertRaises(dependencies.DependencyError):
+            dependencies.verify_assumption_parameters(
+                {"id": "PM1:✱12·1"}, usage, registry,
+                "theorem star_12_1 : Target := proof",
+            )
+        with self.assertRaises(dependencies.DependencyError):
+            dependencies.verify_assumption_parameters(
+                {
+                    "id": "PM1:✱12·1",
+                    "assumption_parameters": {
+                        assumption: {"parameter": "r", "lean_type": "PM.Wrong.Type"}
+                    },
+                },
+                usage,
+                registry,
+                "theorem star_12_1 (r : PM.Wrong.Type) : Target := proof",
+            )
         with self.assertRaises(dependencies.DependencyError):
             dependencies.assumption_closure([
                 {"id": "PM1:✱12·1", "normalized_dependencies": [],
