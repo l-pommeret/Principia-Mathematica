@@ -816,6 +816,7 @@ def eraseElementary? (proposition :
   pure erased.proposition
 
 @[simp] theorem eraseElementaryIndexed_disj
+    {realContext : PM.RealContext}
     (left right : Formula legacySignature (realContext.map legacySort) [] 0) :
     eraseElementaryIndexed?
         (Formula.disj LegacyDisjunctionMeaning.elementary left right) = (do
