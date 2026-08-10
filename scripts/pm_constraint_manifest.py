@@ -155,6 +155,7 @@ def main() -> None:
     parser.add_argument("--diagnostic", action="store_true", help="emit incomplete manifests")
     parser.add_argument("--global-convention", action="append", default=[],
                         help="reviewed implicit PM rule licensed at this locus")
+    parser.add_argument("--output", type=Path)
     options = parser.parse_args()
     skeleton = parse_demonstration(
         options.source.read_text(encoding="utf-8"), options.volume, options.item
@@ -163,7 +164,11 @@ def main() -> None:
         skeleton, load_item_registry(options.metadata_dir), strict=not options.diagnostic,
         global_conventions=options.global_convention,
     )
-    print(json.dumps(manifest, ensure_ascii=False, sort_keys=True, indent=2))
+    rendered = json.dumps(manifest, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
+    if options.output:
+        options.output.write_text(rendered, encoding="utf-8")
+    else:
+        print(rendered, end="")
 
 
 if __name__ == "__main__":

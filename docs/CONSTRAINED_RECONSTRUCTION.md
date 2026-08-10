@@ -23,6 +23,11 @@ constraint, not merely as prose checked after a proof has been found.
    an explicitly supplied, reviewed isolated Lean context. The context is
    labelled as compilation scaffolding and the proof whitelist is printed in a
    separate section.
+6. `scripts/pm_context_bundle.py` constructs that isolated context for the
+   elementary profile. It strips commentary and imports from the complete
+   trusted syntax/deduction foundation, appends only declarations in the
+   implementation closure, and records SHA-256 digests for every source and
+   slice. The generated source still requires a remote kernel check before use.
 
 The context closure grants no proof permission. A generated Aristotle request
 must state the whitelist explicitly, and the returned term must still pass the

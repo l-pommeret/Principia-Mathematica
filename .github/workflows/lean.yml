@@ -34,6 +34,10 @@ jobs:
         run: python3 scripts/verify_description_scope_toy.py
       - name: Guard predicative syntax and scoped reducibility
         run: python3 scripts/verify_predicative_gate_toy.py
+      - name: Verify generated isolated Aristotle contexts
+        run: python3 scripts/verify_context_bundles.py
+      - name: Kernel-check the isolated elementary context fixture
+        run: lake env lean aristotle/contexts/PM1-star-2-45.lean
       - name: Build and kernel-check the edition
         run: lake build
       - name: Reject placeholders and unsafe declarations
