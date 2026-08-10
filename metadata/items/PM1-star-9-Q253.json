@@ -1,0 +1,57 @@
+{
+  "batch": "PM1-STAR9-Q253",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "135",
+    "scan_leaves": [157],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "aristotle_evidence": {
+    "project_id": "04f70730-8f11-494c-aab8-37e62216d354",
+    "task_id": "2a3da878-e0aa-4702-883f-c16633b5e07d",
+    "archive": "aristotle/results/Q253-final.tar.gz",
+    "sha256": "1af516841e5ae1826bbf8a80bc2a17188face8c3dcf92be530aa59ca43dafb1f",
+    "audit": "accepted-aliases-only-repository-ci-required"
+  },
+  "items": [
+    {
+      "id": "PM1:✱9·03", "kind": "definition",
+      "printed": "(x).φx.∨.p :=. (x).φx∨p  Df", "printed_page": 135, "scan_leaf": 157,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_03",
+      "formal_scope": "universal first-order proposition disjoined on the right with an elementary proposition, pushed beneath the same binder",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "source_status": "double-witness-checked", "formal_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱9·04", "kind": "definition",
+      "printed": "p.∨.(x).φx :=. (x).p∨φx  Df", "printed_page": 135, "scan_leaf": 157,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_04",
+      "formal_scope": "elementary proposition disjoined on the left with a universal first-order proposition, pushed beneath the same binder",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "source_status": "double-witness-checked", "formal_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱9·05", "kind": "definition",
+      "printed": "(∃x).φx.∨.p :=. (∃x).φx∨p  Df", "printed_page": 135, "scan_leaf": 157,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_05",
+      "formal_scope": "existential first-order proposition disjoined on the right with an elementary proposition, pushed beneath the same binder",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "source_status": "double-witness-checked", "formal_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱9·06", "kind": "definition",
+      "printed": "p.∨.(∃x).φx :=. (∃x).p∨φx  Df", "printed_page": 135, "scan_leaf": 157,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_06",
+      "formal_scope": "elementary proposition disjoined on the left with an existential first-order proposition, pushed beneath the same binder",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "source_status": "double-witness-checked", "formal_status": "awaiting-ci"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

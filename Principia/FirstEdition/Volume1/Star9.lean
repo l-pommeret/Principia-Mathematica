@@ -213,6 +213,22 @@ PM-VERBATIM-END PM1:✱9·011 -/
 ✱9·021.  ∼(∃x).φx .=. ∼{(∃x).φx}  Df
 PM-VERBATIM-END PM1:✱9·021 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱9·03
+✱9·03.  (x).φx.∨.p :=. (x).φx∨p  Df
+PM-VERBATIM-END PM1:✱9·03 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·04
+✱9·04.  p.∨.(x).φx :=. (x).p∨φx  Df
+PM-VERBATIM-END PM1:✱9·04 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·05
+✱9·05.  (∃x).φx.∨.p :=. (∃x).φx∨p  Df
+PM-VERBATIM-END PM1:✱9·05 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·06
+✱9·06.  p.∨.(∃x).φx :=. (∃x).p∨φx  Df
+PM-VERBATIM-END PM1:✱9·06 -/
+
 /- PM-EDITORIAL
 Source: Principia Mathematica, first edition, volume I (1910), printed
 pp. 132–135, scan leaves 154–157. The diplomatic transcription above was
@@ -245,5 +261,31 @@ abbrev star_9_021 {Γ Δ}
     (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :
     PM.FirstOrder Γ Δ :=
   star_9_02 φ
+
+abbrev star_9_03 {Γ Δ}
+    (body : PM.Apparent Γ (.elementaryProposition :: Δ))
+    (proposition : PM.Elementary Γ) : PM.FirstOrder Γ Δ :=
+  PM.FirstOrder.disjRightElementary
+    (PM.FirstOrder.always body) proposition
+
+abbrev star_9_04 {Γ Δ}
+    (proposition : PM.Elementary Γ)
+    (body : PM.Apparent Γ (.elementaryProposition :: Δ)) :
+    PM.FirstOrder Γ Δ :=
+  PM.FirstOrder.disjElementaryLeft
+    proposition (PM.FirstOrder.always body)
+
+abbrev star_9_05 {Γ Δ}
+    (body : PM.Apparent Γ (.elementaryProposition :: Δ))
+    (proposition : PM.Elementary Γ) : PM.FirstOrder Γ Δ :=
+  PM.FirstOrder.disjRightElementary
+    (PM.FirstOrder.sometimes body) proposition
+
+abbrev star_9_06 {Γ Δ}
+    (proposition : PM.Elementary Γ)
+    (body : PM.Apparent Γ (.elementaryProposition :: Δ)) :
+    PM.FirstOrder Γ Δ :=
+  PM.FirstOrder.disjElementaryLeft
+    proposition (PM.FirstOrder.sometimes body)
 
 end PM.FirstEdition.Volume1.Star9
