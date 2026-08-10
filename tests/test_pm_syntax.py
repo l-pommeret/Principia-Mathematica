@@ -179,6 +179,43 @@ class PMDotSyntaxTests(unittest.TestCase):
         self.assertEqual(parsed["children"][1]["tag"], "exists")
         self.assertNotIn("description", tags(parsed))
 
+    def test_class_abstraction_is_eliminated_in_membership_and_application(self):
+        membership = shape("x ∈ ẑ(φz)")
+        contextual = shape("f{ẑ(φz)}")
+        self.assertEqual(membership["tag"], "class_membership")
+        self.assertEqual(membership["value"], "z")
+        self.assertEqual(contextual["tag"], "class_scope")
+        self.assertIn("class_bound", tags(contextual))
+        self.assertNotIn("class_incomplete", tags(membership))
+        self.assertNotIn("class_incomplete", tags(contextual))
+
+    def test_class_equality_is_contextual_not_native_set_equality(self):
+        defined = shape("α = ẑ(φz)")
+        extensional = shape("ẑ(φz) = ẑ(ψz)")
+        self.assertEqual(defined["tag"], "class_defined_equal")
+        self.assertEqual(extensional["tag"], "class_extensional_equal")
+        self.assertNotIn("class_incomplete", tags(extensional))
+
+    def test_relation_application_and_incomplete_relation_context(self):
+        value = shape("xRy")
+        contextual = shape("f{x̂ŷφ(x,y)}")
+        defined = shape("R = x̂ŷφ(x,y)")
+        self.assertEqual(value, {
+            "tag": "relation_value", "value": "R",
+            "children": [{"tag": "atom", "value": "x"},
+                         {"tag": "atom", "value": "y"}],
+        })
+        self.assertEqual(contextual["tag"], "relation_scope")
+        self.assertIn("relation_bound", tags(contextual))
+        self.assertEqual(defined["tag"], "relation_defined_equal")
+        self.assertNotIn("relation_incomplete", tags(contextual))
+
+    def test_incomplete_class_or_relation_cannot_escape_without_context(self):
+        with self.assertRaisesRegex(pm_syntax.PMSyntaxError, "without an explicit context"):
+            shape("ẑ(φz)")
+        with self.assertRaisesRegex(pm_syntax.PMSyntaxError, "without an explicit context"):
+            shape("x̂ŷφ(x,y)")
+
 
 if __name__ == "__main__":
     unittest.main()

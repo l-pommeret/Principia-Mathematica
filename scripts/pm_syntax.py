@@ -69,6 +69,14 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("assert", "⊢", index))
             index += 1
             continue
+        if source.startswith("x̂ŷ", index):
+            result.append(Token("relation_binder", "x̂ŷ", index))
+            index += len("x̂ŷ")
+            continue
+        if char == "ẑ":
+            result.append(Token("class_binder", char, index))
+            index += 1
+            continue
         if char == "(":
             description = re.match(
                 r"\(\s*℩\s*([A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′']*)\s*\)",
@@ -120,6 +128,12 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("lparen", char, index))
             index += 1
             continue
+        relation_value = re.match(r"([a-z])([RSPQ])([a-z])", source[index:])
+        if relation_value:
+            text = relation_value.group(0)
+            result.append(Token("relation_value", text, index))
+            index += len(text)
+            continue
         if char in ")]}" :
             result.append(Token("rparen", char, index))
             index += 1
@@ -129,7 +143,7 @@ def raw_tokens(source: str) -> list[Token]:
             index += 1
             continue
         if char in GREEK_FUNCTION_SYMBOLS or (
-            char in "fg" and index + 1 < len(source) and source[index + 1] in "!("
+            char in "fg" and index + 1 < len(source) and source[index + 1] in "!({"
         ):
             result.append(Token("function", char, index))
             index += 1
@@ -253,6 +267,16 @@ def bind_description_occurrences(node: AST, variable: str, condition: AST) -> AS
     )
 
 
+def contains_incomplete_symbol(node: AST) -> bool:
+    return node.tag in {"description", "class_incomplete", "relation_incomplete"} or any(
+        contains_incomplete_symbol(child) for child in node.children
+    )
+
+
+def relation_binder_variables(text: str) -> str:
+    return "x,y" if text == "x̂ŷ" else text
+
+
 class Parser:
     def __init__(self, source: str):
         self.tokens = attach_scope_marks(raw_tokens(source))
@@ -279,7 +303,10 @@ class Parser:
         if self.peek() is not None:
             token = self.peek()
             raise PMSyntaxError(f"unconsumed token {token.text!r} at offset {token.position}")
-        return AST("assert", (expression,)) if asserted else expression
+        result = AST("assert", (expression,)) if asserted else expression
+        if contains_incomplete_symbol(result):
+            raise PMSyntaxError("an incomplete symbol occurs without an explicit context of use")
+        return result
 
     def expression(self, minimum: int) -> AST:
         token = self.take()
@@ -290,6 +317,20 @@ class Parser:
         elif token.kind == "description_binder":
             condition = self.parenthesized_argument()
             left = AST("description", (condition,), description_variable(token.text))
+        elif token.kind == "class_binder":
+            condition = self.parenthesized_argument()
+            left = AST("class_incomplete", (condition,), "z")
+        elif token.kind == "relation_binder":
+            condition = self.expression(1500)
+            left = AST(
+                "relation_incomplete", (condition,), relation_binder_variables(token.text)
+            )
+        elif token.kind == "relation_value":
+            left = AST(
+                "relation_value",
+                (AST("atom", value=token.text[0]), AST("atom", value=token.text[2])),
+                token.text[1],
+            )
         elif token.kind == "neg":
             left = AST("not", (self.expression(1500),))
         elif token.kind in {"forall_binder", "exists_binder"}:
@@ -330,7 +371,28 @@ class Parser:
                 right_minimum += 1
             right = self.expression(right_minimum)
             tag, value = operator_tag(operator.text)
-            left = AST(tag, (left, right), value)
+            if tag == "member" and right.tag == "class_incomplete":
+                left = AST("class_membership", (left, right.children[0]), right.value)
+            elif tag == "equal" and left.tag == right.tag == "class_incomplete":
+                left = AST(
+                    "class_extensional_equal", (left.children[0], right.children[0]),
+                    f"{left.value},{right.value}",
+                )
+            elif tag == "equal" and right.tag == "class_incomplete":
+                left = AST("class_defined_equal", (left, right.children[0]), right.value)
+            elif tag == "equal" and left.tag == "class_incomplete":
+                left = AST("class_defined_equal", (right, left.children[0]), left.value)
+            elif tag == "equal" and left.tag == right.tag == "relation_incomplete":
+                left = AST(
+                    "relation_extensional_equal", (left.children[0], right.children[0]),
+                    f"{left.value};{right.value}",
+                )
+            elif tag == "equal" and right.tag == "relation_incomplete":
+                left = AST("relation_defined_equal", (left, right.children[0]), right.value)
+            elif tag == "equal" and left.tag == "relation_incomplete":
+                left = AST("relation_defined_equal", (right, left.children[0]), left.value)
+            else:
+                left = AST(tag, (left, right), value)
         return left
 
     def parenthesized_argument(self) -> AST:
@@ -349,12 +411,13 @@ class Parser:
             self.take()
         arguments: list[AST] = []
         next_token = self.peek()
-        if next_token is not None and next_token.kind == "lparen" and next_token.text == "(":
-            self.take()
+        if next_token is not None and next_token.kind == "lparen" and next_token.text in "({":
+            opening = self.take()
+            expected_close = ")" if opening.text == "(" else "}"
             while True:
                 arguments.append(self.expression(0))
                 separator = self.take()
-                if separator.kind == "rparen" and separator.text == ")":
+                if separator.kind == "rparen" and separator.text == expected_close:
                     break
                 if separator.kind != "comma":
                     raise PMSyntaxError(f"expected comma at offset {separator.position}")
@@ -369,8 +432,22 @@ class Parser:
                 ))
         else:
             raise PMSyntaxError(f"function {function.text!r} has no argument")
-        return AST("apply_predicative" if predicative else "apply_general",
-                   tuple(arguments), function.text)
+        application_tag = "apply_predicative" if predicative else "apply_general"
+        if len(arguments) == 1 and arguments[0].tag == "class_incomplete":
+            incomplete = arguments[0]
+            continuation = AST(
+                application_tag, (AST("class_bound", value=incomplete.value),), function.text
+            )
+            return AST("class_scope", (incomplete.children[0], continuation), incomplete.value)
+        if len(arguments) == 1 and arguments[0].tag == "relation_incomplete":
+            incomplete = arguments[0]
+            continuation = AST(
+                application_tag, (AST("relation_bound", value=incomplete.value),), function.text
+            )
+            return AST(
+                "relation_scope", (incomplete.children[0], continuation), incomplete.value
+            )
+        return AST(application_tag, tuple(arguments), function.text)
 
 
 def parse(source: str) -> AST:

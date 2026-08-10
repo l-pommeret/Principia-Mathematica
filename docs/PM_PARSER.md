@@ -13,6 +13,9 @@ The currently audited grammar covers:
   `φ!x`, including multiple arguments;
 - object equality, membership, and indexed formal equivalence such as `≡ₓ`;
 - contextual descriptions with explicit printed scope.
+- class abstractions and relation abstractions only in a context of use:
+  membership, defined/extensional equality, or contextual function application;
+- direct relation values such as `xRy`, kept distinct from relation objects.
 
 The discriminating source tests include the exact shapes of ✱12·1, ✱13·01,
 and ✱14·01. In the resulting ✱14 AST, a description is never retained as a
@@ -21,9 +24,17 @@ and matching surface occurrences in its continuation become
 `description_bound`. Narrow and wide scope therefore produce different trees
 without postulating a denoting description object.
 
+The same firewall applies to the Introduction's class and relation notation.
+`ẑ(φz)` and `x̂ŷφ(x,y)` are temporary surface nodes during parsing and are
+rejected if they escape without a context. Membership becomes
+`class_membership`; equality becomes a contextual defined/extensional node;
+and `f{...}` becomes `class_scope` or `relation_scope` with a bound placeholder.
+No Python set, Lean `Set`, native equality, or freestanding class/relation term
+is introduced by this layer.
+
 This is still a syntactic AST, not yet the intrinsically typed Lean AST of the
-canonical ramified calculus. Class abstractions, relation expressions,
-relative products, higher-order function variables, and systematic ambiguity
-remain explicit future grammar gates. Until those are implemented and tested
+canonical ramified calculus. Class/relation algebra, relative products,
+higher-order function variables, and systematic ambiguity remain explicit
+future grammar gates. Until those are implemented and tested
 against their source loci, parser success must not be claimed for those
 sections.
