@@ -33,7 +33,7 @@
       "aristotle_request_path": "aristotle/Q200.md",
       "aristotle_request_sha256": "732a797ee1b85d75a79db3bfa859da84c51262117f7e1f31e19726ec9d5c8e77",
       "aristotle_latest_task_name": "Formalize Q200.md",
-      "aristotle_latest_task_created": "11 mins ago",
+      "aristotle_latest_task_created": "16 mins ago",
       "aristotle_result_path": "aristotle/results/Q200-final.tar.gz",
       "aristotle_result_sha256": "a161ad56cfde7764e72c21bcc2dd72318861ea421ffe51230867aafdd16f39cd"
     },
@@ -56,7 +56,7 @@
       "aristotle_request_path": "aristotle/Q201.md",
       "aristotle_request_sha256": "3fa26fcf0f7a65605e36097eaa929ad7c07bb980b04182a2fbb950a57f1d9033",
       "aristotle_latest_task_name": "Formalize Q201.md",
-      "aristotle_latest_task_created": "31 mins ago",
+      "aristotle_latest_task_created": "36 mins ago",
       "aristotle_result_path": "aristotle/results/Q201-final.tar.gz",
       "aristotle_result_sha256": "4bc27ab8bfe7f84c9c2fedd9778997f5a37668f1d7f83d47e6998b4d1210aed5"
     },
@@ -80,7 +80,7 @@
       "aristotle_request_path": "aristotle/Q202.md",
       "aristotle_request_sha256": "a7ed5b1dcc34c2ba94a590cc6f2587edfc761f96d3f0ac7702bc6c15a6f45451",
       "aristotle_latest_task_name": "Formalize Q202.md",
-      "aristotle_latest_task_created": "17 mins ago",
+      "aristotle_latest_task_created": "21 mins ago",
       "aristotle_result_path": "aristotle/results/Q202-final.tar.gz",
       "aristotle_result_sha256": "72d3ce6bf365835cf8d81ad1c4b5505de960d0d3ca47bc427cc8cd62cb291778"
     },
@@ -105,11 +105,13 @@
       "aristotle_status": "submitted",
       "aristotle_task_id": "012131af-25b4-48ca-94b6-1689fb56e3de",
       "aristotle_latest_task_id": "012131af-25b4-48ca-94b6-1689fb56e3de",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_latest_task_status": "IN_PROGRESS",
+      "aristotle_remote_status": "IN_PROGRESS",
       "aristotle_project_id": "5f49ddc8-6fe3-45c6-b367-b7a44fb74e10",
       "aristotle_request_path": "aristotle/Q203.md",
-      "aristotle_request_sha256": "55acc9c75df20a0714915df41a7a371f185dc96d1cb64f9ff859e3257fa07ac2"
+      "aristotle_request_sha256": "55acc9c75df20a0714915df41a7a371f185dc96d1cb64f9ff859e3257fa07ac2",
+      "aristotle_latest_task_name": "Formalize Q203.md",
+      "aristotle_latest_task_created": "8 mins ago"
     },
     "Q204": {
       "canonical_ids": [
@@ -144,6 +146,70 @@
         "PM1:✱2·14"
       ],
       "aristotle_status": "not-submitted"
+    },
+    "Q206": {
+      "canonical_ids": ["PM1:✱2·2", "PM1:✱2·21", "PM1:✱2·24"],
+      "source": "PM volume I, first edition, pp. 108–109",
+      "prompt_path": "aristotle/Q206.md",
+      "audit_path": "reviews/Q206-review.md",
+      "audit_status": "A",
+      "lean_scope": "exact PM1 ✱2·2, ✱2·21 and ✱2·24",
+      "depends_on": ["PM1:✱2·18"],
+      "parallel_group": "STAR2-WAVE-2A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q207": {
+      "canonical_ids": ["PM1:✱2·25", "PM1:✱2·26", "PM1:✱2·27"],
+      "source": "PM volume I, first edition, p. 109",
+      "prompt_path": "aristotle/Q207.md",
+      "audit_path": "reviews/Q207-review.md",
+      "audit_status": "A",
+      "lean_scope": "exact PM1 ✱2·25 through ✱2·27",
+      "depends_on": ["PM1:✱2·18"],
+      "parallel_group": "STAR2-WAVE-2A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q208": {
+      "canonical_ids": ["PM1:✱2·3", "PM1:✱2·31", "PM1:✱2·32"],
+      "source": "PM volume I, first edition, pp. 109–110",
+      "prompt_path": "aristotle/Q208.md",
+      "audit_path": "reviews/Q208-review.md",
+      "audit_status": "A",
+      "lean_scope": "exact PM1 ✱2·3, ✱2·31 and ✱2·32",
+      "depends_on": ["PM1:✱2·18"],
+      "parallel_group": "STAR2-WAVE-2A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q209": {
+      "canonical_ids": ["PM1:✱2·36", "PM1:✱2·37", "PM1:✱2·38", "PM1:✱2·41"],
+      "source": "PM volume I, first edition, pp. 110–111",
+      "prompt_path": "aristotle/Q209.md",
+      "audit_path": "reviews/Q209-review.md",
+      "audit_status": "A",
+      "lean_scope": "exact PM1 ✱2·36 through ✱2·38 and ✱2·41",
+      "depends_on": ["PM1:✱2·18"],
+      "parallel_group": "STAR2-WAVE-2A",
+      "aristotle_status": "not-submitted"
+    },
+    "Q210": {
+      "canonical_ids": ["PM1:✱2·4", "PM1:✱2·42", "PM1:✱2·43"],
+      "source": "PM volume I, first edition, p. 111",
+      "prompt_path": "aristotle/Q210.md",
+      "audit_path": "reviews/Q210-review.md",
+      "audit_status": "A",
+      "lean_scope": "exact PM1 ✱2·4, ✱2·42 and ✱2·43",
+      "depends_on": ["PM1:✱2·31", "PM1:✱2·38"],
+      "parallel_group": "STAR2-WAVE-2B",
+      "aristotle_status": "not-submitted"
+    }
+  },
+  "editorial_tracks": {
+    "PM1:✱2·33": {
+      "kind": "scope-definition",
+      "source": "PM volume I, first edition, p. 110",
+      "printed": "p ∨ q ∨ r .=. (p ∨ q) ∨ r Df",
+      "status": "prepared-separately",
+      "note": "Not an Aristotle theorem; audit the conflict with Lean's current right-associative disjunction notation before integration."
     }
   },
   "items": {
