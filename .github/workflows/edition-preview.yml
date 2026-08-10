@@ -30,6 +30,8 @@ jobs:
         run: lake build
       - name: Reject placeholders and unsafe declarations
         run: python3 scripts/verify_lean_policy.py
+      - name: Guard the conservative apparent-variable architecture
+        run: python3 scripts/verify_apparent_architecture.py
       - name: Build the reader edition
         run: python3 scripts/build_edition.py
       - name: Verify the reader edition

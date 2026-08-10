@@ -61,3 +61,19 @@ The editorial ID preserves volume and printed label, for example
 `PM1:✱2·01`. Lean names follow the printed hierarchy, for example
 `PM.FirstEdition.Volume1.Star2.p01`; they never introduce a competing
 mathematical numbering.
+
+## Planned conservativity at ✱9
+
+The pre-✱9 kernel has a deliberately separate apparent-variable syntax in
+`Principia.Syntax.Apparent`. Its intrinsically typed de Bruijn indices make
+capture impossible by construction, while `ofElementary` and the checked
+partial inverse `toElementary?` expose the intended conservative inclusion of
+the elementary fragment.
+
+This foundation is not itself a claim that PM's extension is conservative.
+It contains no new derivation rules, no semantic Lean quantifiers, and no
+generic hierarchy ranging over all proposition orders. Existential binding,
+order-sensitive negation and disjunction, and metalinguistic rules will be
+introduced only at their audited PM loci. The later metatheory must prove the
+relevant erasure or model theorem before the edition labels the extension
+conservative or derives a relative-consistency result.

@@ -22,3 +22,16 @@ et le détachement prouvé. Le prompt contient désormais le corps accepté de
 aucun axiome, hypothèse, placeholder ou principe sémantique n'est admis.
 Q212 est également promu par la même CI, mais n'est pas une dépendance de
 Q215 et n'est donc pas ajouté artificiellement à sa fermeture.
+
+## Audit du résultat Aristotle
+
+Verdict: **A — accepté, en attente de CI**. Projet
+`17de70f9-8c43-49ff-9c25-dd2bccece8bf`, tâche
+`4f215488-b66d-40cb-88fc-6c4d95ae39ca`, statut terminal `COMPLETE`.
+L’archive immuable `aristotle/results/Q215-final.tar.gz` a pour SHA-256
+`aa8874b8d3542a18c88f3ecf1a388cbead61af9fd74e67a9b262d064f08b3b62`.
+Les trois cibles sont exactes: ✱2·63 et ✱2·65 restent définitionnelles;
+✱2·64 conserve la substitution simultanée et les deux Perm nécessaires.
+Aucun `sorry`, `admit`, nouvel `axiom`, `unsafe`, `Classical`, ajout
+d’hypothèse, sémantique ou rétrécissement. Preuves et lectures intégrées;
+statut `awaiting-ci` car Lean local et actions Git sont interdits.

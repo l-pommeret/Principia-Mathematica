@@ -18,3 +18,21 @@ Syll final; ✱2·68 conserve l'instance `¬p/p` et ✱2·54; ✱2·69 conserve 
 et l'instance de ✱2·62. Aucun défaut imprimé ni divergence substantielle.
 Confiance haute. Cible Lean sûre: les trois énoncés canoniques exacts dans le
 système syntaxique PM, sans axiome auxiliaire ni affaiblissement de portée.
+
+## Audit du résultat Aristotle
+
+Verdict: **A — accepté, en attente de CI**. Projet
+`5bbfa176-bd5a-4f14-9c7d-dafd0d9f035d`, tâche
+`dfa4cf2e-4dbc-4cfc-9241-eb769b65672f`, statut terminal `COMPLETE`.
+L’archive immuable `aristotle/results/Q216-final.tar.gz` a pour SHA-256
+`552480353fdd94dce2c73a20ca73938cb7c8c060b600e58bf21eed8015952e30`.
+
+Les trois déclarations correspondent exactement aux portées canoniques.
+✱2·67 conserve `line1`, `line2`, puis leur Syll final; ✱2·68 conserve
+l’instance `∼p/p` de ✱2·67 puis ✱2·54; ✱2·69 conserve Perm et l’instance
+exacte `star_2_62 q p`. La clôture n’emploie que les dépendances déclarées,
+les corps certifiés de ✱2·05/✱2·06 et `PM.Derivation.detach`. Recherche
+négative confirmée pour `sorry`, `admit`, nouvel `axiom`, `unsafe`,
+`Classical`, hypothèse ajoutée, sémantique ou cible rétrécie. Les preuves,
+lectures et transcriptions diplomatiques sont intégrées. Conformément à
+l’interdiction de Lean local et d’action Git, le statut reste `awaiting-ci`.

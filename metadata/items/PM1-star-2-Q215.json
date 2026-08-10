@@ -1,0 +1,24 @@
+{
+  "batch": "PM1-STAR2-Q215", "edition": "first", "volume": 1,
+  "source_range": {"printed_pages": "112", "scan_leaves": [134], "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},
+  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "aristotle_evidence": {"project_id": "17de70f9-8c43-49ff-9c25-dd2bccece8bf", "task_id": "4f215488-b66d-40cb-88fc-6c4d95ae39ca", "archive": "aristotle/results/Q215-final.tar.gz", "sha256": "aa8874b8d3542a18c88f3ecf1a388cbead61af9fd74e67a9b262d064f08b3b62", "audit": "accepted-awaiting-ci"},
+  "items": [
+    {
+      "id": "PM1:✱2·63", "kind": "derived-proposition", "printed": "⊢ :. p ∨ q . ⊃ : ∼p ∨ q . ⊃ . q", "printed_page": 112, "scan_leaf": 134,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean", "declaration": "PM.FirstEdition.Volume1.Star2.star_2_63", "formal_scope": "(p ∨ q) ⊃ ((∼p ∨ q) ⊃ q), over an elementary real-variable context",
+      "printed_dependencies": ["PM1:✱2·62"], "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_62"], "normalized_dependencies": ["PM1:✱2·62"], "source_status": "double-witness-checked", "formal_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱2·64", "kind": "derived-proposition", "printed": "⊢ :. p ∨ q . ⊃ : p ∨ ∼q . ⊃ . p", "printed_page": 112, "scan_leaf": 134,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean", "declaration": "PM.FirstEdition.Volume1.Star2.star_2_64", "formal_scope": "(p ∨ q) ⊃ ((p ∨ ∼q) ⊃ p), over an elementary real-variable context",
+      "printed_dependencies": ["PM1:✱2·63", "PM1:✱1·4", "PM1:✱2·06", "PM1:✱1·11"], "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_63", "PM.Derivation.star_1_4", "PM.FirstEdition.Volume1.Star2.star_2_06", "PM.Derivation.detach"], "normalized_dependencies": ["PM1:✱2·63", "PM1:✱1·4", "PM1:✱2·06", "PM1:✱1·11"], "source_status": "double-witness-checked", "formal_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱2·65", "kind": "derived-proposition", "printed": "⊢ :. p ⊃ q . ⊃ : p ⊃ ∼q . ⊃ . ∼p", "printed_page": 112, "scan_leaf": 134,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean", "declaration": "PM.FirstEdition.Volume1.Star2.star_2_65", "formal_scope": "(p ⊃ q) ⊃ ((p ⊃ ∼q) ⊃ ∼p), over an elementary real-variable context",
+      "printed_dependencies": ["PM1:✱2·64"], "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_64"], "normalized_dependencies": ["PM1:✱2·64"], "source_status": "double-witness-checked", "formal_status": "awaiting-ci"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

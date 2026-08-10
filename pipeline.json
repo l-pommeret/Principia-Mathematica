@@ -495,14 +495,20 @@
         "PM1:✱2·62"
       ],
       "parallel_group": "STAR2-WAVE-3C",
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "aristotle_task_id": "4f215488-b66d-40cb-88fc-6c4d95ae39ca",
       "aristotle_latest_task_id": "4f215488-b66d-40cb-88fc-6c4d95ae39ca",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_project_id": "17de70f9-8c43-49ff-9c25-dd2bccece8bf",
       "aristotle_request_path": "aristotle/Q215.md",
-      "aristotle_request_sha256": "7a87e37b4667fc87b65a1880035dd14d15cdf106a9739b79945640500115ebfc"
+      "aristotle_request_sha256": "7a87e37b4667fc87b65a1880035dd14d15cdf106a9739b79945640500115ebfc",
+      "aristotle_latest_task_name": "Formalize Q215.md",
+      "aristotle_latest_task_created": "12 mins ago",
+      "aristotle_archive_path": "aristotle/results/Q215-final.tar.gz",
+      "aristotle_archive_sha256": "aa8874b8d3542a18c88f3ecf1a388cbead61af9fd74e67a9b262d064f08b3b62",
+      "integration_status": "awaiting-ci",
+      "lean_commit": "pending", "lean_ci_run": "pending", "lean_ci_conclusion": "pending"
     },
     "Q216": {
       "canonical_ids": [
@@ -521,14 +527,22 @@
         "PM1:✱2·62"
       ],
       "parallel_group": "STAR2-WAVE-3C",
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "aristotle_task_id": "dfa4cf2e-4dbc-4cfc-9241-eb769b65672f",
       "aristotle_latest_task_id": "dfa4cf2e-4dbc-4cfc-9241-eb769b65672f",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_project_id": "5bbfa176-bd5a-4f14-9c7d-dafd0d9f035d",
       "aristotle_request_path": "aristotle/Q216.md",
-      "aristotle_request_sha256": "ae47a651c784ae17f7d79f9df79c451cf131148adbf5e21ae278b73360f153b4"
+      "aristotle_request_sha256": "ae47a651c784ae17f7d79f9df79c451cf131148adbf5e21ae278b73360f153b4",
+      "aristotle_latest_task_name": "Formalize Q216.md",
+      "aristotle_latest_task_created": "7 mins ago",
+      "aristotle_archive_path": "aristotle/results/Q216-final.tar.gz",
+      "aristotle_archive_sha256": "552480353fdd94dce2c73a20ca73938cb7c8c060b600e58bf21eed8015952e30",
+      "integration_status": "awaiting-ci",
+      "lean_commit": "pending",
+      "lean_ci_run": "pending",
+      "lean_ci_conclusion": "pending"
     },
     "Q217": {
       "canonical_ids": [
@@ -1430,6 +1444,131 @@
         "PM1:✱5·62"
       ],
       "parallel_group": "STAR5-WAVE-4E",
+      "aristotle_status": "not-submitted"
+    },
+    "Q252": {
+      "canonical_ids": [
+        "PM1:✱9·01",
+        "PM1:✱9·02",
+        "PM1:✱9·011",
+        "PM1:✱9·021"
+      ],
+      "source": "PM volume I, first edition, pp. 132–135",
+      "prompt_path": "aristotle/Q252.md",
+      "audit_path": "reviews/Q252-review.md",
+      "audit_status": "prepared-needs-architecture-review",
+      "lean_scope": "typed apparent-variable architecture and exact PM1 ✱9·01, ✱9·02, ✱9·011, ✱9·021 definitions",
+      "depends_on": [],
+      "parallel_group": "STAR9-ARCHITECTURE",
+      "aristotle_status": "not-submitted"
+    },
+    "Q253": {
+      "canonical_ids": [
+        "PM1:✱9·03",
+        "PM1:✱9·04",
+        "PM1:✱9·05",
+        "PM1:✱9·06"
+      ],
+      "source": "PM volume I, first edition, p. 135",
+      "prompt_path": "aristotle/Q253.md",
+      "audit_path": "reviews/Q253-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱9·03–✱9·06 mixed-order disjunction definitions",
+      "depends_on": [
+        "PM1:✱9·01",
+        "PM1:✱9·02"
+      ],
+      "parallel_group": "STAR9-WAVE-1",
+      "aristotle_status": "not-submitted"
+    },
+    "Q254": {
+      "canonical_ids": [
+        "PM1:✱9·07",
+        "PM1:✱9·08",
+        "PM1:✱9·1",
+        "PM1:✱9·11"
+      ],
+      "source": "PM volume I, first edition, pp. 135–136",
+      "prompt_path": "aristotle/Q254.md",
+      "audit_path": "reviews/Q254-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱9·07, ✱9·08, ✱9·1 and ✱9·11",
+      "depends_on": [
+        "PM1:✱9·01",
+        "PM1:✱9·02"
+      ],
+      "parallel_group": "STAR9-WAVE-1",
+      "aristotle_status": "not-submitted"
+    },
+    "Q255": {
+      "canonical_ids": [
+        "PM1:✱9·12",
+        "PM1:✱9·13",
+        "PM1:✱9·131",
+        "PM1:✱9·14",
+        "PM1:✱9·15"
+      ],
+      "source": "PM volume I, first edition, pp. 137–138",
+      "prompt_path": "aristotle/Q255.md",
+      "audit_path": "reviews/Q255-review.md",
+      "audit_status": "prepared-needs-architecture-review",
+      "lean_scope": "exact PM1 metarules ✱9·12/13, eight-clause ✱9·131, and Pp ✱9·14/15",
+      "depends_on": [
+        "PM1:✱9·01",
+        "PM1:✱9·02"
+      ],
+      "parallel_group": "STAR9-WAVE-1",
+      "aristotle_status": "not-submitted"
+    },
+    "Q256": {
+      "canonical_ids": [
+        "PM1:✱9·2",
+        "PM1:✱9·21",
+        "PM1:✱9·22"
+      ],
+      "source": "PM volume I, first edition, pp. 138–139",
+      "prompt_path": "aristotle/Q256.md",
+      "audit_path": "reviews/Q256-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱9·2, ✱9·21 and ✱9·22",
+      "depends_on": [
+        "PM1:✱1·01",
+        "PM1:✱1·11",
+        "PM1:✱2·08",
+        "PM1:✱2·1",
+        "PM1:✱9·01",
+        "PM1:✱9·02",
+        "PM1:✱9·05",
+        "PM1:✱9·06",
+        "PM1:✱9·07",
+        "PM1:✱9·08",
+        "PM1:✱9·1",
+        "PM1:✱9·12",
+        "PM1:✱9·13"
+      ],
+      "parallel_group": "STAR9-WAVE-2",
+      "aristotle_status": "not-submitted"
+    },
+    "Q257": {
+      "canonical_ids": [
+        "PM1:✱9·23",
+        "PM1:✱9·24",
+        "PM1:✱9·25"
+      ],
+      "source": "PM volume I, first edition, p. 140",
+      "prompt_path": "aristotle/Q257.md",
+      "audit_path": "reviews/Q257-review.md",
+      "audit_status": "prepared-needs-kernel-context",
+      "lean_scope": "exact PM1 ✱9·23, ✱9·24 and ✱9·25",
+      "depends_on": [
+        "PM1:Id",
+        "PM1:✱9·04",
+        "PM1:✱9·13",
+        "PM1:✱9·21",
+        "PM1:✱9·22",
+        "PM1:✱9·23"
+      ],
+      "parallel_group": "STAR9-WAVE-3",
       "aristotle_status": "not-submitted"
     }
   },
