@@ -64,6 +64,66 @@ closing quotation mark and punctuation without treating the line-end hyphen as
 lexical.
 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱2·03
+✱2·03.  ⊢ : p ⊃ ∼q . ⊃ . q ⊃ ∼p
+
+Dem.
+
+        [Perm  ∼p, ∼q/p, q]  ⊢ : ∼p ∨ ∼q . ⊃ . ∼q ∨ ∼p       (1)
+        [(1).(✱1·01)]       ⊢ : p ⊃ ∼q . ⊃ . q ⊃ ∼p
+PM-VERBATIM-END PM1:✱2·03 -/
+
+/- PM-FORMAL-GLOSS
+The first demonstration line is precisely Perm (✱1·4) with its variables
+replaced by `∼p` and `∼q`. The second line applies only the definitional
+reading of ✱1·01 to both disjunctions. Lean parameter instantiation records
+this displayed primitive instance; it is not a generic object-language
+substitution rule.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·04
+✱2·04.  ⊢ :. p . ⊃ . q ⊃ r : ⊃ : q . ⊃ . p ⊃ r
+
+Dem.
+
+        [Assoc  ∼p, ∼q/p, q]  ⊢ :. ∼p ∨ (∼q ∨ r) . ⊃ . ∼q ∨ (∼p ∨ r)       (1)
+        [(1).(✱1·01)]        ⊢ :. p . ⊃ . q ⊃ r : ⊃ : q . ⊃ . p ⊃ r
+PM-VERBATIM-END PM1:✱2·04 -/
+
+/- PM-FORMAL-GLOSS
+The first demonstration line is precisely Assoc (✱1·5) with its first two
+variables replaced by `∼p` and `∼q`, while `r` is unchanged. The second
+line changes only the notation according to ✱1·01.
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·05
+✱2·05.  ⊢ :. q ⊃ r . ⊃ : p ⊃ q . ⊃ . p ⊃ r
+
+Dem.
+
+        [Sum  ∼p/p]        ⊢ :. q ⊃ r . ⊃ : ∼p ∨ q . ⊃ . ∼p ∨ r       (1)
+        [(1).(✱1·01)]  ⊢ :. q ⊃ r . ⊃ : p ⊃ q . ⊃ . p ⊃ r
+PM-VERBATIM-END PM1:✱2·05 -/
+
+/- PM-FORMAL-GLOSS
+The first demonstration line is precisely Sum (✱1·6) with its first
+parameter replaced by `∼p`, leaving `q` and `r` unchanged. The second line
+changes only the two displayed disjunctions into the ✱1·01 implication
+notation.
+-/
+
+/- PM-EDITORIAL
+Source for ✱2·03–✱2·05:
+- scan, printed p. 104: https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/126
+- working transcription: Project Gutenberg ebook 78050
+Verification status: double-witness-checked; the independent source and formal
+audit is recorded in `reviews/Q202-review.md`. Direct collation against the
+scan found no error or witness divergence affecting these items, so no `sic`,
+`corr.`, or `conj.` entry is required. Fractional substitutions printed in the
+demonstrations are linearized as `replacements/variables`; their order and
+punctuation are preserved.
+-/
+
 /-! ## Printed syntax and audited scope readings -/
 
 /-- Audited scope reading of ✱2·01. -/
@@ -95,5 +155,50 @@ def star_2_02_demonstration_printed : PM.PrintedFormula :=
 theorem star_2_02 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
     ⊢ₚ (q ⊃ₚ (p ⊃ₚ q)) :=
   PM.Derivation.star_1_3 (∼ₚ p) q
+
+/-- Audited scope reading of ✱2·03. -/
+def star_2_03_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ ∼q . ⊃ . q ⊃ ∼p"
+  parsed := (p ⊃ₚ ∼ₚ q) ⊃ₚ (q ⊃ₚ ∼ₚ p)
+  scopeReading := "The single dots delimit p ⊃ ∼q as antecedent and q ⊃ ∼p as consequent."
+
+/-- Diplomatic surface syntax of the two-line printed demonstration of ✱2·03. -/
+def star_2_03_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Perm  ∼p, ∼q/p, q] ⊢ : ∼p ∨ ∼q . ⊃ . ∼q ∨ ∼p; [(1).(✱1·01)] ⊢ : p ⊃ ∼q . ⊃ . q ⊃ ∼p"
+
+/-- ✱2·03, exactly the instance of Perm specified in PM's demonstration. -/
+theorem star_2_03 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ ∼ₚ q) ⊃ₚ (q ⊃ₚ ∼ₚ p)) :=
+  PM.Derivation.star_1_4 (∼ₚ p) (∼ₚ q)
+
+/-- Audited scope reading of ✱2·04. -/
+def star_2_04_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. p . ⊃ . q ⊃ r : ⊃ : q . ⊃ . p ⊃ r"
+  parsed := (p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ (q ⊃ₚ (p ⊃ₚ r))
+  scopeReading := "The colon groups p ⊃ (q ⊃ r) as antecedent and q ⊃ (p ⊃ r) as consequent."
+
+/-- Diplomatic surface syntax of the two-line printed demonstration of ✱2·04. -/
+def star_2_04_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Assoc  ∼p, ∼q/p, q] ⊢ :. ∼p ∨ (∼q ∨ r) . ⊃ . ∼q ∨ (∼p ∨ r); [(1).(✱1·01)] ⊢ :. p . ⊃ . q ⊃ r : ⊃ : q . ⊃ . p ⊃ r"
+
+/-- ✱2·04, exactly the instance of Assoc specified in PM's demonstration. -/
+theorem star_2_04 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ (q ⊃ₚ (p ⊃ₚ r))) :=
+  PM.Derivation.star_1_5 (∼ₚ p) (∼ₚ q) r
+
+/-- Audited scope reading of ✱2·05. -/
+def star_2_05_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :. q ⊃ r . ⊃ : p ⊃ q . ⊃ . p ⊃ r"
+  parsed := (q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))
+  scopeReading := "The dots and colons group q ⊃ r as the outer antecedent and (p ⊃ q) ⊃ (p ⊃ r) as consequent."
+
+/-- Diplomatic surface syntax of the two-line printed demonstration of ✱2·05. -/
+def star_2_05_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Sum  ∼p/p] ⊢ :. q ⊃ r . ⊃ : ∼p ∨ q . ⊃ . ∼p ∨ r; [(1).(✱1·01)] ⊢ :. q ⊃ r . ⊃ : p ⊃ q . ⊃ . p ⊃ r"
+
+/-- ✱2·05, exactly the instance of Sum specified in PM's demonstration. -/
+theorem star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
+  PM.Derivation.star_1_6 (∼ₚ p) q r
 
 end PM.FirstEdition.Volume1.Star2
