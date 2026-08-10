@@ -124,18 +124,11 @@ def DeepFormula.abstractHead :
       .alwaysFunction
         (body.abstractHead.renameApparent Formula.swapAbstractedWithBinder)
 
-def DeepFormula.valueHead :
-    DeepFormula signature realContext (head :: apparentContext) order →
-      DeepFormula signature (head :: realContext) apparentContext order
-  | .applyGeneral function inputs =>
-      .applyGeneral function.valueHead inputs.valueHead
-  | .applyPredicative function inputs =>
-      .applyPredicative function.valueHead inputs.valueHead
-  | .implication left right => .implication left.valueHead right.valueHead
-  | .equivalence left right => .equivalence left.valueHead right.valueHead
-  | .alwaysFunction body =>
-      .alwaysFunction
-        ((body.renameApparent Formula.swapAbstractedWithBinder).valueHead)
+def DeepFormula.valueHead
+    (formula : DeepFormula signature realContext (head :: apparentContext) order) :
+    DeepFormula signature (head :: realContext) apparentContext order :=
+  let weakenedReal := formula.renameReal (fun entryVar => .succ entryVar)
+  weakenedReal.substitute (instantiateSubstitution (.real .zero))
 
 /-- Even at excess zero, omitting and printing `!` are different syntax. -/
 theorem generalApply_ne_predicativeApply
