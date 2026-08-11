@@ -187,3 +187,19 @@ PM-VERBATIM-END PM3:✱251·53 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·54
 ✱251·54.  ⊢ : P, Q ∈ Bord .⊃ . P × Q ∈ Bord
 PM-VERBATIM-END PM3:✱251·54 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·55
+✱251·55.  ⊢ : P, Q ∈ Ω .⊃ . P × Q ∈ Ω  [✱251·54 . ✱204·53]
+PM-VERBATIM-END PM3:✱251·55 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·56
+✱251·56.  ⊢ : α, β ∈ NO .⊃ . α ×̂ β ∈ NO  [✱184·13 . ✱251·55·1]
+PM-VERBATIM-END PM3:✱251·56 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·6
+✱251·6.  ⊢ : P, Q ∈ Rel² excl . CʻP ⊂ Ω . S ∈ P smor Q ∩ Rlʻsmor .⊃ . μ = λ {(∃N) . N ∈ CʻQ . λ = (SʻN) smor N} . ι ▷ μ ∈ εₐʻμ
+PM-VERBATIM-END PM3:✱251·6 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·61
+✱251·61.  ⊢ :: P, Q ∈ Rel² excl . CʻP ⊂ Ω .⊃ : ∃! (P smor Q) ∩ Rlʻsmor .≡ . P smor smor Q
+PM-VERBATIM-END PM3:✱251·61 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·62
+✱251·62.  ⊢ : Hp ✱251·61 . ∃! P smor Q ∩ Rlʻsmor .⊃ . ΣʻP smor ΣʻQ . ΠʻP smor ΠʻQ . Σ NrʻP = Σ NrʻQ . Π NrʻP = Π NrʻQ
+PM-VERBATIM-END PM3:✱251·62 -/
