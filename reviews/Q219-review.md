@@ -1,6 +1,6 @@
 # Audit Q219 — PM I, ✱2·77, ✱2·8, ✱2·81
 
-Verdict: **A — strict constrained result integrated, awaiting repository CI**.
+Verdict: **A — strict constrained result integrated and kernel-checked**.
 Source: first edition, vol. I,
 p. 113, leaf 135; SHA-256
 `0015ae56c8a9c1eedab541d07e06d683c499319b60fa021d088077535f93f2f0`.
@@ -29,4 +29,7 @@ The target file contains no `sorry`, `admit`, `unsafe`, `Classical`, or new
 axiom. The machine audit in `reviews/Q219-reconstruction-audit.json` classifies
 all three targets as strict closures: every printed citation event is covered
 and no dependency beyond the whitelist plus reviewed ✱1·11 is introduced.
-The accepted bodies are integrated with status `awaiting-ci`.
+The accepted bodies were integrated with status `awaiting-ci`. GitHub CI run
+[`31446586113`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31446586113)
+successfully kernel-checked the full edition at commit
+`6efdae022feea6bfa00ee5a4a4f5baf514109ea9`; all three items are promoted.

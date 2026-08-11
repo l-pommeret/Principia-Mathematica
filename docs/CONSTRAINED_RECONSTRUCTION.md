@@ -97,3 +97,7 @@ causes all generated artifacts to become mandatory immediately.
 Context reproducibility is checked on the exact extracted declaration slice.
 The recorded whole-container hash remains provenance, but appending a later
 declaration to that Lean file does not invalidate an unchanged earlier bundle.
+
+Once a batch gate is cleared, `python3 scripts/generate_constrained_batch.py
+QNNN` writes its manifest, minimal Lean context, context metadata and compact
+Aristotle request from the reviewed source specification.
