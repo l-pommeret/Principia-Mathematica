@@ -106,7 +106,12 @@ def retry_spec(qid: str, item: dict, data: dict, root: Path) -> Candidate | None
         return None
     path = item.get("aristotle_retry_path")
     original = data.get("questions", {}).get(canonical)
+    # The canonical record normally owns its Aristotle project identity.  An
+    # operational retry may retain the identity explicitly when its canonical
+    # record is intentionally kept source-only in the committed pipeline.
     pid = original.get("aristotle_project_id") if isinstance(original, dict) else None
+    if not isinstance(pid, str) or not UUID_RE.fullmatch(pid):
+        pid = item.get("canonical_project_id")
     if not isinstance(path, str) or not path or not isinstance(pid, str) or not UUID_RE.fullmatch(pid):
         raise SchedulerError(f"{qid}: retry needs a followup path and canonical project ID")
     return Candidate(qid, "retry", root / path, pid, path)

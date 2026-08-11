@@ -84,6 +84,21 @@ class SchedulerTests(unittest.TestCase):
         scheduler.mark_intent(data, candidate)
         self.assertEqual(data["questions"]["Q9001"]["aristotle_retry_status"], "submitting")
 
+    def test_retry_can_retain_canonical_project_for_source_only_record(self):
+        pid = "10000000-0000-0000-0000-000000000001"
+        data = {"items": {}, "questions": {
+            "Q234": {"aristotle_status": "not-submitted"},
+            "Q9001": {
+                "retry_of": "Q234", "promotion_key": "Q234",
+                "canonical_promotion_forbidden": True,
+                "canonical_project_id": pid,
+                "aristotle_retry_status": "not-submitted",
+                "aristotle_retry_path": "aristotle/followups/Q234.md",
+            },
+        }}
+        candidate = scheduler.candidates(data, Path("/repo"), set())[0]
+        self.assertEqual(candidate.project_id, pid)
+
     def test_retry_cannot_promote_itself(self):
         data = {"items": {}, "questions": {
             "Q234": {"aristotle_project_id": "10000000-0000-0000-0000-000000000001"},
