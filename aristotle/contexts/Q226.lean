@@ -592,7 +592,7 @@ namespace PM.FirstEdition.Volume1.Star2
 
 theorem star_2_82 {Γ} (p q r s : PM.Elementary Γ) :
     ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (((p ∨ₚ ∼ₚ r) ∨ₚ s) ⊃ₚ ((p ∨ₚ q) ∨ₚ s))) := by
-  have compose : ∀ A B C : PM.Elementary Γ, (⊢ₚ (A ⊃ₚ B)) →
+  have compose : ∀ A B C : Elementary Γ, (⊢ₚ (A ⊃ₚ B)) →
       (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
     intro A B C h₁ h₂
     exact PM.Derivation.detach h₁
@@ -627,7 +627,7 @@ namespace PM.FirstEdition.Volume1.Star2
 theorem star_2_83 {Γ} (p q r s : PM.Elementary Γ) :
     ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ
       ((p ⊃ₚ (r ⊃ₚ s)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ s)))) := by
-  have compose : ∀ A B C : PM.Elementary Γ, (⊢ₚ (A ⊃ₚ B)) →
+  have compose : ∀ A B C : Elementary Γ, (⊢ₚ (A ⊃ₚ B)) →
       (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
     intro A B C h₁ h₂
     exact PM.Derivation.detach h₁
