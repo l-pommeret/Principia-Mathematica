@@ -65,6 +65,15 @@ class ContextBundleTests(unittest.TestCase):
             source.index("axiom star_4_13"),
         )
 
+    def test_q230_interface_closure_contains_equiv_chain(self):
+        from pm_constraint_manifest import load_item_registry
+
+        manifest = json.loads((ROOT / "aristotle/manifests/Q230.json").read_text())
+        source = build_bundle(
+            manifest, load_item_registry(ROOT / "metadata/items"), ROOT
+        )["lean_source"]
+        self.assertLess(source.index("axiom equivChain"), source.index("axiom star_4_22"))
+
     def test_formation_profile_contains_separate_judgement(self):
         manifest = {
             "kind": "pm-constrained-prover-manifest",

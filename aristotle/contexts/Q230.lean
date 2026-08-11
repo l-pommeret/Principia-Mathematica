@@ -960,6 +960,14 @@ end PM.Elementary
 -- PM-CONTEXT-INTERFACE-SYNTAX PM1:✱4·01
 infix:53 " ≡ₚ " => PM.Elementary.equiv
 
+-- PM-CONTEXT-ITEM PM1:✱4·02 PM.Elementary.equivChain
+namespace PM.Elementary
+
+axiom equivChain (p q r : PM.Elementary Γ) : PM.Elementary Γ
+
+
+end PM.Elementary
+
 -- PM-CONTEXT-ITEM PM1:✱4·11 PM.FirstEdition.Volume1.Star4.star_4_11
 namespace PM.FirstEdition.Volume1.Star4
 

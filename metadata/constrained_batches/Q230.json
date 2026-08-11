@@ -9,11 +9,11 @@
   "interface_syntax": [{"id":"PM1:✱4·01","lean":"infix:53 \" ≡ₚ \" => PM.Elementary.equiv"}],
   "volume": 1,
   "prompt_path": "aristotle/Q230.md",
-  "blockers": ["PM1:✱3·22", "PM1:✱4·01", "PM1:✱4·11", "PM1:✱4·12", "PM1:✱4·15", "PM1:✱4·22"],
+  "blockers": ["PM1:✱3·22", "PM1:✱4·01", "PM1:✱4·02", "PM1:✱4·11", "PM1:✱4·12", "PM1:✱4·15", "PM1:✱4·22"],
   "items": [
     {"id":"PM1:✱4·3","demonstration_path":"aristotle/demonstrations/PM1-star-4-3.txt","declaration":"PM.FirstEdition.Volume1.Star4.star_4_3","context_dependencies":["PM1:✱4·01"],"lean_target":"namespace PM.FirstEdition.Volume1.Star4\n\ntheorem star_4_3 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ q) ≡ₚ (q ∧ₚ p)) := by\n  -- [✱3·22]; preserve the following general φ-symmetry note editorially\n\nend PM.FirstEdition.Volume1.Star4"},
     {"id":"PM1:✱4·31","demonstration_path":"aristotle/demonstrations/PM1-star-4-31.txt","declaration":"PM.FirstEdition.Volume1.Star4.star_4_31","context_dependencies":["PM1:✱4·01"],"lean_target":"namespace PM.FirstEdition.Volume1.Star4\n\ntheorem star_4_31 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∨ₚ q) ≡ₚ (q ∨ₚ p)) := by\n  -- [Perm]\n\nend PM.FirstEdition.Volume1.Star4"},
-    {"id":"PM1:✱4·32","demonstration_path":"aristotle/demonstrations/PM1-star-4-32.txt","declaration":"PM.FirstEdition.Volume1.Star4.star_4_32","context_dependencies":["PM1:✱4·01"],"global_conventions":["PM1:✱4·22"],"documented_relaxations":["PM1:✱4·22"],"lean_target":"namespace PM.FirstEdition.Volume1.Star4\n\ntheorem star_4_32 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ∧ₚ q) ∧ₚ r) ≡ₚ (p ∧ₚ (q ∧ₚ r))) := by\n  -- ✱4·15, ✱4·12, tacit ✱4·22, ✱4·11, ✱1·01, ✱3·01\n\nend PM.FirstEdition.Volume1.Star4"},
+    {"id":"PM1:✱4·32","demonstration_path":"aristotle/demonstrations/PM1-star-4-32.txt","declaration":"PM.FirstEdition.Volume1.Star4.star_4_32","context_dependencies":["PM1:✱4·01","PM1:✱4·02"],"global_conventions":["PM1:✱4·22"],"documented_relaxations":["PM1:✱4·22"],"lean_target":"namespace PM.FirstEdition.Volume1.Star4\n\ntheorem star_4_32 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ∧ₚ q) ∧ₚ r) ≡ₚ (p ∧ₚ (q ∧ₚ r))) := by\n  -- ✱4·15, ✱4·12, tacit ✱4·22, ✱4·11, ✱1·01, ✱3·01\n\nend PM.FirstEdition.Volume1.Star4"},
     {"id":"PM1:✱4·33","demonstration_path":"aristotle/demonstrations/PM1-star-4-33.txt","declaration":"PM.FirstEdition.Volume1.Star4.star_4_33","context_dependencies":["PM1:✱4·01"],"lean_target":"namespace PM.FirstEdition.Volume1.Star4\n\ntheorem star_4_33 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ≡ₚ (p ∨ₚ (q ∨ₚ r))) := by\n  -- [✱2·31·32]\n\nend PM.FirstEdition.Volume1.Star4"}
   ]
 }
