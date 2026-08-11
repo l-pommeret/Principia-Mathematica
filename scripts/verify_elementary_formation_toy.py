@@ -17,6 +17,10 @@ def audit(source: str) -> None:
         "| star_1_7 (hp : Formation p)",
         "| star_1_71 (hp : Formation (Γ := []) p)",
         "| star_1_72 (hasRealVariable : Γ ≠ [])",
+        "def ofElementary",
+        "| [], .disj p q => .star_1_71",
+        "| (_ :: _), .disj p q =>",
+        ".star_1_72 (List.cons_ne_nil _ _)",
         "structure FormedDerivation",
         "formation : Formation p",
         "derivation : PM.Derivation p",
@@ -26,6 +30,10 @@ def audit(source: str) -> None:
         "formation := Formation.star_1_7 joined",
         "PM.Derivation.detach hφ.derivation implication",
         "PM.Derivation.detach hψ.derivation afterφ",
+        "theorem star_3_03_derivation",
+        "(star_3_03 hasRealVariable",
+        "{ formation := Formation.ofElementary φ, derivation := hφ }",
+        "{ formation := Formation.ofElementary ψ, derivation := hψ }).derivation",
         "def closedConjunctionFormation",
         "Formation.star_1_71",
     )
@@ -53,7 +61,7 @@ def audit(source: str) -> None:
 
 def _formation_block(code: str) -> str:
     match = re.search(
-        r"inductive\s+Formation\b(?P<body>.*?)(?=\nstructure\s+FormedDerivation)",
+        r"inductive\s+Formation\b(?P<body>.*?)(?=\nnamespace\s+Formation)",
         code,
         re.DOTALL,
     )

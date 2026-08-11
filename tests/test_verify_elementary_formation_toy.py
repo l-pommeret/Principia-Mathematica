@@ -35,6 +35,14 @@ class ElementaryFormationToyPolicyTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "incomplete elementary-formation toy"):
             formation.audit(mutated)
 
+    def test_projection_cannot_bypass_formation_aware_theorem(self):
+        source = formation.TOY.read_text(encoding="utf-8")
+        mutated = source.replace(
+            "(star_3_03 hasRealVariable",
+            "(directStar3 hasRealVariable")
+        with self.assertRaisesRegex(ValueError, "incomplete elementary-formation toy"):
+            formation.audit(mutated)
+
 
 if __name__ == "__main__":
     unittest.main()

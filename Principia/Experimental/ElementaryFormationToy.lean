@@ -45,6 +45,22 @@ inductive Formation : {Γ : PM.RealContext} → PM.Elementary Γ → Prop where
       (hφ : Formation (Γ := Γ) φ) (hψ : Formation (Γ := Γ) ψ) :
       Formation (φ ∨ₚ ψ)
 
+namespace Formation
+
+/-- Reconstruct the explicit PM formation history of an intrinsically typed
+elementary expression.  This is the bridge needed by the existing edition: it
+does not add a generic formation constructor, but recursively uses exactly
+✱1·7 and one of ✱1·71/✱1·72 according to the real-variable context. -/
+def ofElementary : {Γ : PM.RealContext} → (p : PM.Elementary Γ) → Formation p
+  | _, .constant name => .constant name
+  | _, .var x => .realVar x
+  | _, .neg p => .star_1_7 (ofElementary p)
+  | [], .disj p q => .star_1_71 (ofElementary p) (ofElementary q)
+  | (_ :: _), .disj p q =>
+      .star_1_72 (List.cons_ne_nil _ _) (ofElementary p) (ofElementary q)
+
+end Formation
+
 /-- An asserted elementary expression together with the independent evidence
 that PM's formation Pp license that expression.  Neither field can be omitted
 when constructing a result. -/
@@ -88,6 +104,19 @@ theorem star_3_03 {Γ : PM.RealContext} (hasRealVariable : Γ ≠ [])
   have afterφ : PM.Derivation (ψ ⊃ₚ ∼ₚ a) :=
     PM.Derivation.detach hφ.derivation implication
   exact PM.Derivation.detach hψ.derivation afterφ
+
+/-- Compatibility projection for the accepted elementary calculus.  The old
+API still returns `PM.Derivation`, but its implementation now factors through
+the formation-aware ✱3·03 object.  Thus downstream ✱3–✱5 proofs need not be
+rewritten merely to carry a second field, while the historical formation proof
+remains a real dependency of this bridge. -/
+theorem star_3_03_derivation {Γ : PM.RealContext} (hasRealVariable : Γ ≠ [])
+    {φ ψ : PM.Elementary Γ}
+    (hφ : PM.Derivation φ) (hψ : PM.Derivation ψ) :
+    PM.Derivation (φ ∧ₑ ψ) :=
+  (star_3_03 hasRealVariable
+    { formation := Formation.ofElementary φ, derivation := hφ }
+    { formation := Formation.ofElementary ψ, derivation := hψ }).derivation
 
 /-- Closed-proposition companion using ✱1·71 rather than ✱1·72.  It is kept
 separate so the two printed formation Pp cannot collapse into one generic Lean
