@@ -5,6 +5,85 @@ Diplomatic source record only; Lean formalization is tracked separately.
 Canonical scan leaves: 152–153 (printed pp. 130–131).
 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱5·1
+✱5·1.  ⊢ : p . q . ⊃ . p ≡ q   [✱3·4·22]
+
+✱5. Miscellaneous Propositions.
+
+Summary of ✱5.
+
+The present number consists chiefly of propositions of two sorts: (1) those which will be required as lemmas in one or more subsequent proofs, (2) those which are on their own account illustrative, or would be important in other developments than those that we wish to make. A few of the propositions of this number, however, will be used very frequently. These are:
+
+✱5·1. ⊢ : p . q . ⊃ . p ≡ q
+
+I.e. two propositions are equivalent if they are both true. (The statement that two propositions are equivalent if they are both false is ✱5·21.)
+
+✱5·32. ⊢ :. p . ⊃ . q ≡ r : ≡ : p . q . ≡ . p . r
+
+I.e. to say that, on the hypothesis p, q and r are equivalent, is equivalent to saying that the joint assertion of p and q is equivalent to the joint assertion of p and r. This is a very useful rule in inference.
+
+✱5·6. ⊢ :. p . ∼q . ⊃ . r : ≡ : p . ⊃ . q ∨ r
+
+I.e. “p and not-q imply r” is equivalent to “p implies q or r.”
+
+Among propositions never subsequently referred to, but inserted for their intrinsic interest, are the following: ✱5·11·12·13·14, which state that, given any two propositions p, q, either p or ∼p must imply q, and p must imply either q or not-q, and either p implies q or q implies p; and given any third proposition r, either p implies q or q implies r*.
+
+Other propositions not subsequently referred to are ✱5·22·23·24; in these it is shown that two propositions are not equivalent when, and only when, one is true and the other false, and that two propositions are equivalent when, and only when, both are true or both false. It follows (✱5·24) that the negation of “p . q . ∨ . ∼p . ∼q” is equivalent to “p . ∼q . ∨ . q . ∼p.” ✱5·54·55 state that both the product and the sum of p and q are equivalent, respectively, either to p or to q.
+
+The proofs of the following propositions are all easy, and we shall therefore often merely indicate the propositions used in the proofs.
+
+* Cf. Schröder, *Vorlesungen über Algebra der Logik*, Zweiter Band (Leipzig, 1891), pp. 270–271, where the apparent oddity of the above proposition is explained.
+PM-VERBATIM-END PM1:✱5·1 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱5·11
+✱5·11.  ⊢ : p ⊃ q . ∨ . ∼p ⊃ q   [✱2·51·54]
+PM-VERBATIM-END PM1:✱5·11 -/
+/- PM-VERBATIM-BEGIN PM1:✱5·12
+✱5·12.  ⊢ : p ⊃ q . ∨ . p ⊃ ∼q   [✱2·52·54]
+PM-VERBATIM-END PM1:✱5·12 -/
+/- PM-VERBATIM-BEGIN PM1:✱5·13
+✱5·13.  ⊢ : p ⊃ q . ∨ . q ⊃ p   [✱2·5·21]
+PM-VERBATIM-END PM1:✱5·13 -/
+/- PM-VERBATIM-BEGIN PM1:✱5·14
+✱5·14.  ⊢ : p ⊃ q . ∨ . q ⊃ r   [Simp . Transp . ✱2·21]
+PM-VERBATIM-END PM1:✱5·14 -/
+/- PM-VERBATIM-BEGIN PM1:✱5·15
+✱5·15.  ⊢ : p ≡ q . ∨ . p ≡ ∼q
+
+Dem.
+⊢ . ✱4·61 . ⊃ ⊢ : ∼(p ⊃ q) . ⊃ . p . ∼q :
+[✱5·1] ⊃ . p ≡ ∼q :
+[✱2·54] ⊃ ⊢ : p ⊃ q . ∨ . p ≡ ∼q   (1)
+⊢ . ✱4·61 . ⊃ ⊢ : ∼(q ⊃ p) . ⊃ . q . ∼p :
+[✱5·1] ⊃ . q ≡ ∼p :
+[✱4·12] ⊃ . p ≡ ∼q :
+[✱2·54] ⊃ ⊢ : q ⊃ p . ∨ . p ≡ ∼q   (2)
+⊢ . (1) . (2) . ✱4·41 . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱5·15 -/
+/- PM-VERBATIM-BEGIN PM1:✱5·16
+✱5·16.  ⊢ . ∼(p ≡ q . p ≡ ∼q)
+
+Dem.
+⊢ . ✱3·26 . ⊃ ⊢ : p ≡ q . p ⊃ ∼q . ⊃ . p ⊃ q . p ⊃ ∼q :
+[✱4·82] ⊃ . ∼p   (1)
+⊢ . ✱3·27 . ⊃ ⊢ : p ≡ q . p ⊃ ∼q . ⊃ . q ⊃ p . p ⊃ ∼q :
+[Syll] ⊃ . q ⊃ ∼q :
+[Abs] ⊃ . ∼q   (2)
+⊢ . (1) . (2) . Comp . ⊃ ⊢ : p ≡ q . p ⊃ ∼q . ⊃ . ∼p . ∼q :
+[✱4·65 (q,p)/(p,q)] ⊃ . ∼(∼q ⊃ p)   (3)
+⊢ . (3) . Exp . ⊃ ⊢ : p ≡ q . ⊃ : p ⊃ ∼q . ⊃ . ∼(∼q ⊃ p) :
+[Id . (✱1·01)] ⊃ : ∼(p ⊃ ∼q) . ∨ . ∼(∼q ⊃ p) :
+[✱4·51 . (✱4·01)] ⊃ : ∼(p ≡ ∼q) :. ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱5·16 -/
+/- PM-VERBATIM-BEGIN PM1:✱5·17
+✱5·17.  ⊢ : p ∨ q . ∼(p . q) . ≡ . p ≡ ∼q
+
+Dem.
+⊢ . ✱4·64·21 . ⊃ ⊢ : p ∨ q . ≡ . ∼q ⊃ p   (1)
+⊢ . ✱4·63 . Transp . ⊃ ⊢ : ∼(p . q) . ≡ . p ⊃ ∼q   (2)
+⊢ . (1) . (2) . ✱4·38·21 . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱5·17 -/
+
 /- PM-VERBATIM-BEGIN PM1:✱5·18
 ✱5·18.  ⊢ : p ≡ q . ≡ . ∼(p ≡ ∼q)   [✱5·15·16 . ✱5·17 (p ≡ q, p ≡ ∼q)/(p, q)]
 PM-VERBATIM-END PM1:✱5·18 -/

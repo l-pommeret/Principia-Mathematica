@@ -1,0 +1,18 @@
+{
+  "batch": "PM1-STAR5-Q244",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "129",
+    "scan_leaves": [151],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "scan_sha256": {"151": "8ad683eab8e99f0aab97f8a6b1e0179c28e354a9f678c4df2cd1e2fb2d510f4a"}
+  },
+  "witnesses": ["PM1-1910-SCAN", "WS-PM1"],
+  "items": [
+    {"id":"PM1:✱5·15","kind":"derived-proposition","printed":"⊢ : p ≡ q . ∨ . p ≡ ∼q","printed_page":129,"scan_leaf":151,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star5.lean","declaration":"PM.FirstEdition.Volume1.Star5.star_5_15","formal_scope":"(p≡q)∨(p≡∼q), over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"prepared","printed_dependencies":["PM1:✱4·61","PM1:✱5·1","PM1:✱2·54","PM1:✱4·12","PM1:✱4·41"],"normalized_dependencies":[],"blocked_dependencies":["PM1:✱4·61","PM1:✱5·1","PM1:✱2·54","PM1:✱4·12","PM1:✱4·41"]},
+    {"id":"PM1:✱5·16","kind":"derived-proposition","printed":"⊢ . ∼(p ≡ q . p ≡ ∼q)","printed_page":129,"scan_leaf":151,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star5.lean","declaration":"PM.FirstEdition.Volume1.Star5.star_5_16","formal_scope":"∼((p≡q)·(p≡∼q)), over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"prepared","printed_dependencies":["PM1:✱3·26","PM1:✱4·82","PM1:✱3·27","Syll","Abs","Comp","PM1:✱4·65","Exp","Id","PM1:✱1·01","PM1:✱4·51","PM1:✱4·01"],"normalized_dependencies":[],"blocked_dependencies":["PM1:✱3·26","PM1:✱4·82","PM1:✱3·27","PM1:✱3·31","PM1:✱2·05","PM1:✱2·08","PM1:✱4·65","PM1:✱1·01","PM1:✱4·51","PM1:✱4·01"]},
+    {"id":"PM1:✱5·17","kind":"derived-proposition","printed":"⊢ : p ∨ q . ∼(p . q) . ≡ . p ≡ ∼q","printed_page":129,"scan_leaf":151,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star5.lean","declaration":"PM.FirstEdition.Volume1.Star5.star_5_17","formal_scope":"((p∨q)·∼(p·q))≡(p≡∼q), over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"prepared","printed_dependencies":["PM1:✱4·64·21","PM1:✱4·63","Transp","PM1:✱4·38·21"],"normalized_dependencies":[],"blocked_dependencies":["PM1:✱4·64","PM1:✱4·21","PM1:✱4·63","PM1:✱2·16","PM1:✱4·38"]}
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

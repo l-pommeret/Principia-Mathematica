@@ -1,0 +1,50 @@
+{
+  "kind": "pm-statement-only-interface-manifest",
+  "batch": "Q243",
+  "source_backfill_required": false,
+  "integration_blocked": true,
+  "audit_status": "A-interface-only",
+  "audit_basis": "canonical PM-VERBATIM backfill linked to the reviewed scan hashes; diplomatic citation skeletons parsed per target",
+  "promotion_prohibited": "formal dependency/remote-kernel audit still required",
+  "canonical_ids": [
+    "PM1:✱5·11",
+    "PM1:✱5·12",
+    "PM1:✱5·13",
+    "PM1:✱5·14"
+  ],
+  "prompt_path": "aristotle/Q243.md",
+  "review_path": "reviews/Q243-review.md",
+  "scan_hashes": [
+    "8ad683eab8e99f0aab97f8a6b1e0179c28e354a9f678c4df2cd1e2fb2d510f4a"
+  ],
+  "opaque_dependency_stubs": [
+    "PM1:✱2·16",
+    "PM1:✱2·17",
+    "PM1:✱2·21",
+    "PM1:✱2·5",
+    "PM1:✱2·51",
+    "PM1:✱2·52",
+    "PM1:✱2·54",
+    "PM1:✱3·26"
+  ],
+  "citation_comments": [
+    "✱2·51·54",
+    "✱2·52·54",
+    "✱2·5·21",
+    "Simp.Transp.✱2·21"
+  ],
+  "exact_lean_targets": [
+    "namespace PM.FirstEdition.Volume1.Star5\ntheorem star_5_11 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ q) ∨ₚ (∼ₚ p ⊃ₚ q)) := by\n  -- [✱2·51·54]\ntheorem star_5_12 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ q) ∨ₚ (p ⊃ₚ ∼ₚ q)) := by\n  -- [✱2·52·54]\ntheorem star_5_13 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ q) ∨ₚ (q ⊃ₚ p)) := by\n  -- [✱2·5·21]\ntheorem star_5_14 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ q) ∨ₚ (q ⊃ₚ r)) := by\n  -- [Simp.Transp.✱2·21]\nend PM.FirstEdition.Volume1.Star5\n"
+  ],
+  "prompt_sha256": "d115e20dedd0df972bc328b623dbfdb9103dba45cd2d6bc77ac36d9f5b43c2b2",
+  "review_sha256": "0be782268b05f2e11818da8c1efa425754ea2d60b572ed676e1a9937580a4864",
+  "exact_lean_target_sha256": [
+    "4308c32d0e44c3ee55e6f66ecb2fca708c453b278c3def4dda07fe4a6c50cec3"
+  ],
+  "canonical_backfill_audit": {
+    "verbatim": true,
+    "item_metadata": true,
+    "parsed_demonstrations": true,
+    "integration_still_blocked": true
+  }
+}

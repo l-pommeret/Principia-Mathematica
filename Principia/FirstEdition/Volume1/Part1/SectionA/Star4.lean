@@ -348,6 +348,16 @@ PM-VERBATIM-END PM1:✱4·76 -/
 ✱4·77.  ⊢ : q ⊃ p . r ⊃ p . ≡ : q ∨ r . ⊃ . p   [✱3·44 . Add . ✱2·2]
 PM-VERBATIM-END PM1:✱4·77 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱4·86
+✱4·86.  ⊢ : p ≡ q . ⊃ : p ≡ r . ≡ . q ≡ r   [✱4·21·22]
+PM-VERBATIM-END PM1:✱4·86 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·87
+✱4·87.  ⊢ : p . q . ⊃ . r : ≡ : p . ⊃ . q ⊃ r : ≡ : q . ⊃ . p ⊃ r : ≡ : q . p . ⊃ . r   [Exp . Comm . Imp]
+
+✱4·87 embodies in one proposition the principles of exportation and importation and the commutative principle.
+PM-VERBATIM-END PM1:✱4·87 -/
+
 /- PM-VERBATIM-BEGIN PM1:✱4·82
 ✱4·82.  ⊢ : p ⊃ q . p ⊃ ∼q . ≡ . ∼p   [✱2·65 . Imp . ✱2·21 . Comp]
 PM-VERBATIM-END PM1:✱4·82 -/

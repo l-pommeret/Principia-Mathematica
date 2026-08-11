@@ -1,0 +1,11 @@
+/- Non-repository opaque interface. Do not promote or import into the repository.
+   Exact target declarations are in the paired manifest/prompt; dependencies below are stubs only. -/
+
+-- OPAQUE-PM-DEPENDENCY PM1:✱2·16
+-- OPAQUE-PM-DEPENDENCY PM1:✱2·17
+-- OPAQUE-PM-DEPENDENCY PM1:✱2·21
+-- OPAQUE-PM-DEPENDENCY PM1:✱2·5
+-- OPAQUE-PM-DEPENDENCY PM1:✱2·51
+-- OPAQUE-PM-DEPENDENCY PM1:✱2·52
+-- OPAQUE-PM-DEPENDENCY PM1:✱2·54
+-- OPAQUE-PM-DEPENDENCY PM1:✱3·26

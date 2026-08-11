@@ -1,0 +1,52 @@
+{
+  "kind": "pm-statement-only-interface-manifest",
+  "batch": "Q242",
+  "source_backfill_required": false,
+  "integration_blocked": true,
+  "audit_status": "A-interface-only",
+  "audit_basis": "canonical PM-VERBATIM backfill linked to the reviewed scan hashes; diplomatic citation skeletons parsed per target",
+  "promotion_prohibited": "formal dependency/remote-kernel audit still required",
+  "canonical_ids": [
+    "PM1:✱4·86",
+    "PM1:✱4·87",
+    "PM1:✱5·1"
+  ],
+  "prompt_path": "aristotle/Q242.md",
+  "review_path": "reviews/Q242-review.md",
+  "scan_hashes": [
+    "8ad683eab8e99f0aab97f8a6b1e0179c28e354a9f678c4df2cd1e2fb2d510f4a",
+    "afdca6640d248e94fc93bd1144afa53935688c80c995072602ab9493b3cae767",
+    "beb343764a3217212dc4cc569966e477f2fb691dc4edd1f1a67c05a14c628b9b"
+  ],
+  "opaque_dependency_stubs": [
+    "PM1:✱2·04",
+    "PM1:✱3·01",
+    "PM1:✱3·3",
+    "PM1:✱3·31",
+    "PM1:✱3·4",
+    "PM1:✱4·01",
+    "PM1:✱4·02",
+    "PM1:✱4·21",
+    "PM1:✱4·22",
+    "PM1:✱4·34"
+  ],
+  "citation_comments": [
+    "✱4·21·22",
+    "Exp.Comm.Imp",
+    "✱3·4·22"
+  ],
+  "exact_lean_targets": [
+    "namespace PM.Elementary\n/-- Diplomatic reading used by ✱4·87: the left-associated product of the\nthree adjacent equivalences, by ✱4·02 and ✱4·34. -/\ndef equivChain4 (a b c d : PM.Elementary Γ) : PM.Elementary Γ :=\n  ((a ≡ₚ b) ∧ₚ (b ≡ₚ c)) ∧ₚ (c ≡ₚ d)\nend PM.Elementary\n\nnamespace PM.FirstEdition.Volume1.Star4\ntheorem star_4_86 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ≡ₚ q) ⊃ₚ ((p ≡ₚ r) ≡ₚ (q ≡ₚ r))) := by\n  -- [✱4·21·22]\ntheorem star_4_87 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (PM.Elementary.equivChain4\n      ((p ∧ₚ q) ⊃ₚ r)\n      (p ⊃ₚ (q ⊃ₚ r))\n      (q ⊃ₚ (p ⊃ₚ r))\n      ((q ∧ₚ p) ⊃ₚ r)) := by\n  -- [Exp.Comm.Imp]\nend PM.FirstEdition.Volume1.Star4\n\nnamespace PM.FirstEdition.Volume1.Star5\ntheorem star_5_1 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ q) ⊃ₚ (p ≡ₚ q)) := by\n  -- [✱3·4·22]\nend PM.FirstEdition.Volume1.Star5\n"
+  ],
+  "prompt_sha256": "8a152850e2979bd8864e90a9a7f68fa60a0a245d014946d1d4d9bb315eacdf6c",
+  "review_sha256": "9270720e9d04578ce85f9487b13cb10e5f58ecc8fda8fdd3b6da052aded72ea4",
+  "exact_lean_target_sha256": [
+    "5bdb47593e413ba20474073b41697c46339a82a22c97289d39f0eab678002226"
+  ],
+  "canonical_backfill_audit": {
+    "verbatim": true,
+    "item_metadata": true,
+    "parsed_demonstrations": true,
+    "integration_still_blocked": true
+  }
+}

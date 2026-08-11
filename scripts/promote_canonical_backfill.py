@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import re
 import sys
 
 from pm_constraint_manifest import load_item_registry
@@ -22,6 +23,15 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def canonical_json(value: dict) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+
+
+def demonstration_path(item_id: str) -> Path:
+    """Locate the diplomatic transcript from the canonical PM item identity."""
+    match = re.fullmatch(r"PM(\d+):✱(\d+)·(\d+)", item_id)
+    if match is None:
+        raise ValueError(f"invalid PM item identity: {item_id}")
+    volume, star, suffix = match.groups()
+    return ROOT / "aristotle" / "demonstrations" / f"PM{volume}-star-{star}-{suffix}.txt"
 
 
 def promote(batch: str) -> None:
@@ -36,14 +46,13 @@ def promote(batch: str) -> None:
             raise ValueError(f"{batch}: no prepared metadata for {item_id}")
         if item_id not in blocks:
             raise ValueError(f"{batch}: no PM-VERBATIM block for {item_id}")
-        suffix = item_id.rsplit("·", 1)[1]
-        demo = ROOT / "aristotle" / "demonstrations" / f"PM1-star-5-{suffix}.txt"
+        demo = demonstration_path(item_id)
         if not demo.is_file():
             raise ValueError(f"{batch}: no demonstration transcript for {item_id}")
         parse_demonstration(demo.read_text(encoding="utf-8"), 1, item_id)
     manifest["source_backfill_required"] = False
     manifest["audit_basis"] = (
-        "canonical PM-VERBATIM backfill on scan leaves 152–153; "
+        "canonical PM-VERBATIM backfill linked to the reviewed scan hashes; "
         "diplomatic citation skeletons parsed per target"
     )
     manifest["canonical_backfill_audit"] = {

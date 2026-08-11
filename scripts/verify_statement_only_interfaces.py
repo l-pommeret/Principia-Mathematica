@@ -11,12 +11,22 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import re
 import sys
 
 from generate_statement_only_interfaces import FENCE, ROOT, SCAN, sha256_text
 from pm_constraint_manifest import load_item_registry
 from pm_proof_skeleton import parse_demonstration
 from verify_editorial import collect_verbatim
+
+
+def demonstration_path(item_id: str) -> Path:
+    """Locate the diplomatic transcript from the canonical PM item identity."""
+    match = re.fullmatch(r"PM(\d+):✱(\d+)·(\d+)", item_id)
+    if match is None:
+        raise ValueError(f"invalid PM item identity: {item_id}")
+    volume, star, suffix = match.groups()
+    return ROOT / "aristotle" / "demonstrations" / f"PM{volume}-star-{star}-{suffix}.txt"
 
 
 def verify() -> int:
@@ -74,8 +84,7 @@ def verify() -> int:
                     raise ValueError(f"{batch}: {item_id} lacks prepared canonical metadata")
                 if item_id not in verbatim:
                     raise ValueError(f"{batch}: {item_id} lacks PM-VERBATIM")
-                number = item_id.rsplit("·", 1)[1]
-                demo = ROOT / "aristotle" / "demonstrations" / f"PM1-star-5-{number}.txt"
+                demo = demonstration_path(item_id)
                 if not demo.is_file():
                     raise ValueError(f"{batch}: {item_id} lacks demonstration transcript")
                 parse_demonstration(demo.read_text(encoding="utf-8"), 1, item_id)
