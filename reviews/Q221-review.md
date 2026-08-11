@@ -1,6 +1,6 @@
 # Audit Q221 — PM I, ✱3·1–✱3·14
 
-Verdict: **A — contexte exact kernel-checké, éligible à une tâche Aristotle**.
+Verdict: **CONTINUATION ACTIVE — première archive rejetée par l’audit strict**.
 La CI Lean
 [`31452200404`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31452200404)
 a réussi sur le commit `85865c7a46df398f2f44ebc6a8c867f756dc7ad9`, y compris
@@ -19,8 +19,15 @@ Scopes: `p·q→¬(¬p∨¬q)`, its converse,
 three-place disjunction is left-associated under ✱2·33. No print defect is
 established in these five items. Confidence high.
 
-Queue state: the sole permitted Aristotle request was submitted after that
-kernel gate, as project `2aa01a68-f240-40cf-9642-17ef17d264c5`, task
-`10f781a5-9c34-4aa4-9608-f0934778ac3f`. No theorem in this Q221 batch is yet
-claimed proved or promoted; the next state transition requires a terminal
-archive plus independent reconstruction audit.
+The first immutable archive, task `10f781a5-9c34-4aa4-9608-f0934778ac3f`, is
+`aristotle/results/Q221-final.tar.gz`, SHA-256
+`db4dfb80d6c00c81d5f22e5075705002c0b1c91868b22f5e8ceebd08d373c339`.
+Its safety audit found no placeholder, axiom or unsafe escape hatch (only the
+reported `Classical` harness exception), but its reconstruction audit rejected
+✱3·1, ✱3·11 and ✱3·14: the former two leave printed ✱3·01 uncovered and the
+last bypasses both printed citations ✱3·1 and `Transp` through direct ✱2·12.
+
+The same project therefore has one fidelity-only continuation, task
+`80b9650e-4ee8-4b4a-8523-c75a04a2a58a`, instructed to make ✱3·01 explicit in
+✱3·1/·11 and to reconstruct ✱3·14 through ✱3·1, ✱2·16, ✱2·12, ✱2·06 and
+✱1·11. No theorem in this Q221 batch is yet claimed proved or promoted.
