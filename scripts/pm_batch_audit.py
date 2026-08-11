@@ -69,6 +69,7 @@ def audit_batch(manifest: dict, source_path: Path, registry: dict[str, dict],
         return body.split(":=", 1)[1] if ":=" in body else ""
 
     def collect_used(proof: str, identifier: str, conventions: list[str],
+                     allowed_items: list[str],
                      visited_helpers: set[str]) -> set[str]:
         used = {
             pm_id for declaration, pm_id in declaration_to_id.items()
@@ -76,9 +77,15 @@ def audit_batch(manifest: dict, source_path: Path, registry: dict[str, dict],
             and occurs_qualified(proof, declaration)
         }
         if occurs_qualified(proof, "PM.Derivation.detach"):
-            if "PM1:✱1·11" not in conventions:
-                raise BatchAuditError(f"{identifier}: detach lacks reviewed convention")
-            used.add("PM1:✱1·11")
+            licensed = set(conventions) | set(allowed_items)
+            if "PM1:✱1·11" in licensed:
+                used.add("PM1:✱1·11")
+            elif "PM1:✱1·1" in licensed:
+                used.add("PM1:✱1·1")
+            else:
+                raise BatchAuditError(
+                    f"{identifier}: detach lacks an explicit or reviewed PM rule"
+                )
         for local in sorted(local_names):
             if local in visited_helpers or not occurs_qualified(proof, local):
                 continue
@@ -87,7 +94,8 @@ def audit_batch(manifest: dict, source_path: Path, registry: dict[str, dict],
                 continue
             visited_helpers.add(local)
             used.update(collect_used(
-                proof_of(local), identifier, conventions, visited_helpers
+                proof_of(local), identifier, conventions, allowed_items,
+                visited_helpers
             ))
         return used
 
@@ -99,7 +107,8 @@ def audit_batch(manifest: dict, source_path: Path, registry: dict[str, dict],
         ))
         proof = body.split(":=", 1)[1] if ":=" in body else ""
         used = collect_used(
-            proof, identifier, item_manifest.get("global_conventions", []), set()
+            proof, identifier, item_manifest.get("global_conventions", []),
+            item_manifest.get("allowed_pm_items", []), set()
         )
 
         indexed_short = {name.rsplit(".", 1)[-1] for name in declaration_to_id}

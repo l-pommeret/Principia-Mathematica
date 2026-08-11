@@ -73,6 +73,28 @@ end PM.Batch
         self.assertEqual(audit["classification"], "strict-closure")
         self.assertEqual(audit["used_pm_items"], ["PM1:✱1·2", "PM1:✱1·3"])
 
+    def test_explicit_printed_star_1_11_licenses_detach_helper(self):
+        registry = {
+            "PM1:✱1·11": item("PM1:✱1·11", "PM.Derivation.star_1_11"),
+        }
+        target = parse_demonstration(
+            "✱8·1. ⊢ . p [✱1·11]", current_item="PM1:✱8·1"
+        )
+        batch = compile_batch_manifest(
+            [target], registry, {"PM1:✱8·1": "PM.Batch.star_8_1"}
+        )
+        source = """namespace PM.Batch
+theorem star_8_1 : True := by exact PM.Derivation.detach hp hpq
+end PM.Batch
+"""
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "Result.lean"
+            path.write_text(source, encoding="utf-8")
+            result = audit_batch(batch, path, registry, {"lean_realizations": {}})
+        audit = result["target_audits"][0]
+        self.assertEqual(audit["classification"], "strict-closure")
+        self.assertEqual(audit["used_pm_items"], ["PM1:✱1·11"])
+
 
 if __name__ == "__main__":
     unittest.main()
