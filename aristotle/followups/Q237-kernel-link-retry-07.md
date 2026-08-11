@@ -1,0 +1,3 @@
+# Q237 continuation — replace local Star4 reconstruction
+
+The preceding terminal archive (task `1e80ab63-7a95-403c-8ef5-89ee59816ac3`, SHA-256 `c68db3322ac3d6d5c1d6564deff8ec2f0d405465539dfd02f10cee5fde5f06f8`) is incomplete: it retains an archive-local Star4 dependency graph. Reuse only diagnostics. Continue this same project and deliver exact unconditional Q237 targets from Q237.md in submitted order/signatures using accepted project-visible exact-whitelist bodies only. No copy/remap/module/context/import/helper, Classical, axiom, opaque, sorry, admit, unsafe, conditional target, or scope change. If blocked, exact missing bodies only; incomplete.

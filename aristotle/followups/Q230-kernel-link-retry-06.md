@@ -1,0 +1,3 @@
+# Q230 continuation — replace forbidden local Star4 output
+
+The preceding terminal archive (task `be87fa14-e60d-4849-a8ee-f43a4362d6fe`, SHA-256 `10535ad1a1d76222ad827ef43aec29a46647d715d87b6352ac30dd25f9e3b8f6`) is rejected: its local Star4 output contains `sorry` and `Classical`. Reuse only any diagnostic identification of missing kernel declarations. Continue this same project and deliver exact unconditional Q230 targets from Q230.md in submitted order/signatures, using accepted project-visible exact-whitelist bodies only. No copied/remapped context/interface/module/import/helper, Classical, axiom, opaque, sorry, admit, unsafe, off-whitelist rule, conditional target, or diagnostic Lean declaration. If blocked, exact missing bodies only; incomplete.

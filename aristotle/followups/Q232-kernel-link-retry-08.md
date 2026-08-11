@@ -1,0 +1,3 @@
+# Q232 continuation — replace local PM reconstruction
+
+The preceding terminal archive (task `71994cdb-723a-46cc-aa30-9f12eff30704`, SHA-256 `9f816bcc5311aebe7633db0dfb79073d042ff0610c229a9603ee6a49d37b4fbe`) is rejected for archive-local Language/Star1–4 modules. Reuse only diagnostic information. Continue this same project and deliver exact unconditional Q232 targets from Q232.md in submitted order/signatures using accepted project-visible exact-whitelist bodies only. No copy/remap/module/context/import/helper, Classical, axiom, opaque, sorry, admit, unsafe, conditional target, or scope change. If blocked, exact missing bodies only; incomplete.
