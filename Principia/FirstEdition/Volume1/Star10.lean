@@ -141,3 +141,23 @@ PM-VERBATIM-END PM1:✱10·36 -/
 /- PM-VERBATIM-BEGIN PM1:✱10·37
 ✱10·37.  ⊢ : .(∃x).p⊃φx .≡ : p .⊃ .(∃x).φx  [✱10·36  ∼p/p]
 PM-VERBATIM-END PM1:✱10·37 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·39
+✱10·39.  ⊢ : φx⊃ₓχx .ψx⊃ₓθx .⊃ : φx .ψx .⊃ₓ .χx .θx
+Dem.  By ✱10·22, ✱3·47, and ✱10·27, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·39 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·4
+✱10·4.  ⊢ : φx≡ₓχx .ψx≡ₓθx .⊃ : φx .ψx .≡ₓ .χx .θx
+Dem.  By ✱10·22, ✱10·39, Comp, and ✱10·22, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·4 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·41
+✱10·41.  ⊢ : .(x).φx .∨ .(x).ψx .⊃ .(x).φx∨ψx
+Dem.  By ✱10·1, ✱2·2, ✱1·3, ✱10·13, ✱3·44, and ✱10·11·21,
+⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·41 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·411
+✱10·411.  ⊢ : φx≡ₓχx .ψx≡ₓθx .⊃ : φx∨ψx .≡ₓ .χx∨θx
+Dem.  By ✱10·14, ✱4·39, and ✱10·11·21, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·411 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·412
+✱10·412.  ⊢ : φx≡ₓψx .≡ .∼φx≡ₓ∼ψx  [✱4·11 . ✱10·11·271]
+PM-VERBATIM-END PM1:✱10·412 -/
