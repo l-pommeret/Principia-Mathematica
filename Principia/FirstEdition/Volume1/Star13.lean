@@ -21,3 +21,18 @@ Dem.
 [✱10·23] ⊃ :: (∃φ) : ψx .≡ .φ!x : ψy .≡ .φ!y : ⊃ : ψx .⊃ .ψy  (2)
 ⊢ . (1).(2) . ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱13·101 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·11
+✱13·11.  ⊢ :: x = y .≡ : φ!x .≡φ . φ!y
+PM-VERBATIM-END PM1:✱13·11 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·12
+✱13·12.  ⊢ : x = y .⊃ . ψx .≡ . ψy
+PM-VERBATIM-END PM1:✱13·12 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·13
+✱13·13.  ⊢ : ψx . x = y .⊃ . ψy
+PM-VERBATIM-END PM1:✱13·13 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·14
+✱13·14.  ⊢ : ψx . ∼ψy .⊃ . x ≠ y
+PM-VERBATIM-END PM1:✱13·14 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·15
+✱13·15.  ⊢ . x = x
+PM-VERBATIM-END PM1:✱13·15 -/
