@@ -1,0 +1,37 @@
+{
+  "kind": "pm-architecture-experimental-interface-manifest",
+  "batch": "Q252",
+  "architecture_experimental": true,
+  "canonical_source_claim": false,
+  "canonical_integration_forbidden": true,
+  "requires_one_to_one_kernel_remap": true,
+  "integration_blocked": true,
+  "audit_status": "A-architecture-experimental",
+  "audit_basis": "reviewed exact Lean target blocks and source hashes; isolated architecture experiment only",
+  "promotion_prohibited": "not canonical; requires separate canonical source/dependency audit",
+  "canonical_ids": [
+    "PM1:✱9·01",
+    "PM1:✱9·02",
+    "PM1:✱9·011",
+    "PM1:✱9·021"
+  ],
+  "prompt_path": "aristotle/Q252.md",
+  "review_path": "reviews/Q252-retry-01-review.md",
+  "scan_hashes": [
+    "363c83aadd162a46a3c61d2d15c1054922f178d1569e885170fcb15eeddb819d",
+    "4281b4d22cf863a1f8b33be7e31d82fa02eb13b9f84fd92a5ce6a55e05757d6b",
+    "59b4e6f8e631cafdf572990447ff09edaa372e46441c792f2cb6bf495a1b7ee5",
+    "bab18d35435eae4c68c5e91d129a46f55de4b8e43229e71f1448208bb3ae9f61"
+  ],
+  "exact_lean_targets": [
+    "inductive Quantified (Matrix : BoundContext → Type) (Δ : BoundContext) where\n  | always : Matrix (.elementaryProposition :: Δ) → Quantified Matrix Δ\n  | sometimes : Matrix (.elementaryProposition :: Δ) → Quantified Matrix Δ\n\nnamespace Quantified\n\ndef neg (matrixNeg : {Δ : BoundContext} → Matrix Δ → Matrix Δ) :\n    Quantified Matrix Δ → Quantified Matrix Δ\n  | .always body => .sometimes (matrixNeg body)\n  | .sometimes body => .always (matrixNeg body)\n\n@[simp] theorem neg_always\n    {Matrix : BoundContext → Type}\n    (matrixNeg : {Δ : BoundContext} → Matrix Δ → Matrix Δ)\n    (body : Matrix (.elementaryProposition :: Δ)) :\n    neg (Δ := Δ) matrixNeg (@Quantified.always Matrix Δ body) =\n      @Quantified.sometimes Matrix Δ (matrixNeg body) := rfl\n\n@[simp] theorem neg_sometimes\n    {Matrix : BoundContext → Type}\n    (matrixNeg : {Δ : BoundContext} → Matrix Δ → Matrix Δ)\n    (body : Matrix (.elementaryProposition :: Δ)) :\n    neg (Δ := Δ) matrixNeg (@Quantified.sometimes Matrix Δ body) =\n      @Quantified.always Matrix Δ (matrixNeg body) := rfl\n\nend Quantified\n\nabbrev FirstOrder (Γ : RealContext) : BoundContext → Type :=\n  Quantified (Apparent Γ)\n\nnamespace FirstOrder\n\nabbrev always (body : Apparent Γ (.elementaryProposition :: Δ)) :\n    FirstOrder Γ Δ := Quantified.always body\n\nabbrev sometimes (body : Apparent Γ (.elementaryProposition :: Δ)) :\n    FirstOrder Γ Δ := Quantified.sometimes body\n\ndef neg : FirstOrder Γ Δ → FirstOrder Γ Δ :=\n  Quantified.neg (fun proposition => Apparent.neg proposition)\n\nprefix:max \"∼₁\" => neg\n\n@[simp] theorem neg_always\n    (body : Apparent Γ (.elementaryProposition :: Δ)) :\n    neg (always body) = sometimes (.neg body) := rfl\n\n@[simp] theorem neg_sometimes\n    (body : Apparent Γ (.elementaryProposition :: Δ)) :\n    neg (sometimes body) = always (.neg body) := rfl\n\nend FirstOrder\n",
+    "namespace PM.FirstEdition.Volume1.Star9\n\nabbrev star_9_01 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ :=\n  PM.FirstOrder.neg (PM.FirstOrder.always φ)\n\nabbrev star_9_02 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ :=\n  PM.FirstOrder.neg (PM.FirstOrder.sometimes φ)\n\nabbrev star_9_011 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ :=\n  star_9_01 φ\n\nabbrev star_9_021 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ :=\n  star_9_02 φ\n\nend PM.FirstEdition.Volume1.Star9\n"
+  ],
+  "exact_lean_target_sha256": [
+    "9bb0ba439a7b6110b1e4ab87369f1af02c3bbb4b218b5517ad8644b73d07dbcb",
+    "81f8457f611ea11860c537b2ed506db0063f1b6a6c69723a4286b962bedf712b"
+  ],
+  "prompt_sha256": "fa6a3a868bcc264decbe3e36c547d2f97197f2560185c27b1c9c7d2d313f5de8",
+  "review_sha256": "e36eb74d879a5e6ae0447691954e95630113fd55b8b8f973ff362ab204651b93",
+  "opaque_dependency_stubs": []
+}

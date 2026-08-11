@@ -1,0 +1,72 @@
+{
+  "kind": "pm-architecture-experimental-interface-manifest",
+  "batch": "Q254",
+  "architecture_experimental": true,
+  "canonical_source_claim": false,
+  "canonical_integration_forbidden": true,
+  "requires_one_to_one_kernel_remap": true,
+  "integration_blocked": true,
+  "audit_status": "A-architecture-experimental",
+  "audit_basis": "reviewed exact Lean target blocks and source hashes; isolated architecture experiment only",
+  "promotion_prohibited": "not canonical; requires separate canonical source/dependency audit",
+  "canonical_ids": [
+    "PM1:✱9·07",
+    "PM1:✱9·08"
+  ],
+  "prompt_path": "aristotle/Q254.md",
+  "review_path": "reviews/Q254-review.md",
+  "scan_hashes": [
+    "51d5b82a8bf22f893a08be72fd7e5f307188b9ed7edb443ec36ace8c9a107f0f",
+    "bab18d35435eae4c68c5e91d129a46f55de4b8e43229e71f1448208bb3ae9f61"
+  ],
+  "exact_lean_targets": [
+    "def disjAlwaysSometimes\n    (renameMatrix : {Δ Ξ : BoundContext} → Apparent.Renaming Δ Ξ →\n      Matrix Δ → Matrix Ξ)\n    (disjMatrix : {Δ : BoundContext} → Matrix Δ → Matrix Δ → Matrix Δ)\n    (φ ψ : Matrix (.elementaryProposition :: Δ)) :\n    Quantified (Quantified Matrix) Δ :=\n  Quantified.always\n    (Quantified.sometimes\n      (disjMatrix\n        (renameMatrix Apparent.outerVariableRenaming φ)\n        (renameMatrix Apparent.innerVariableRenaming ψ)))\n\ndef disjSometimesAlways\n    (renameMatrix : {Δ Ξ : BoundContext} → Apparent.Renaming Δ Ξ →\n      Matrix Δ → Matrix Ξ)\n    (disjMatrix : {Δ : BoundContext} → Matrix Δ → Matrix Δ → Matrix Δ)\n    (ψ φ : Matrix (.elementaryProposition :: Δ)) :\n    Quantified (Quantified Matrix) Δ :=\n  Quantified.always\n    (Quantified.sometimes\n      (disjMatrix\n        (renameMatrix Apparent.innerVariableRenaming ψ)\n        (renameMatrix Apparent.outerVariableRenaming φ)))\n",
+    "abbrev SecondOrder (Γ : RealContext) : BoundContext → Type :=\n  Quantified (FirstOrder Γ)\n\ndef disjAlwaysSometimes\n    (φ ψ : Apparent Γ (.elementaryProposition :: Δ)) : SecondOrder Γ Δ :=\n  Quantified.disjAlwaysSometimes Apparent.rename Apparent.disj φ ψ\n\ndef disjSometimesAlways\n    (ψ φ : Apparent Γ (.elementaryProposition :: Δ)) : SecondOrder Γ Δ :=\n  Quantified.disjSometimesAlways Apparent.rename Apparent.disj ψ φ\n\n@[simp] theorem star_9_07_reduction\n    (φ ψ : Apparent Γ (.elementaryProposition :: Δ)) :\n    disjAlwaysSometimes φ ψ =\n      Quantified.always\n        (Quantified.sometimes\n          (Apparent.rename Apparent.outerVariableRenaming φ ∨ₐ\n            Apparent.rename Apparent.innerVariableRenaming ψ)) := rfl\n\n@[simp] theorem star_9_08_reduction\n    (ψ φ : Apparent Γ (.elementaryProposition :: Δ)) :\n    disjSometimesAlways ψ φ =\n      Quantified.always\n        (Quantified.sometimes\n          (Apparent.rename Apparent.innerVariableRenaming ψ ∨ₐ\n            Apparent.rename Apparent.outerVariableRenaming φ)) := rfl\n",
+    "namespace PM.FirstEdition.Volume1.Star9\n\nabbrev star_9_07 {Γ Δ}\n    (φ ψ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.SecondOrder Γ Δ :=\n  PM.FirstOrder.disjAlwaysSometimes φ ψ\n\nabbrev star_9_08 {Γ Δ}\n    (ψ φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.SecondOrder Γ Δ :=\n  PM.FirstOrder.disjSometimesAlways ψ φ\n\nend PM.FirstEdition.Volume1.Star9\n"
+  ],
+  "exact_lean_target_sha256": [
+    "8197e45c2719e113e756c59c5b460d31c555b6921d1e5d20bc1fdab3d12a6852",
+    "441d4e108490ad5c170be61c10ba1b6b4bc291cf08b43c92cf47cfee30a5ecd9",
+    "7c6ca660b9709e3f57251a9d2bc4e5f50609177ff8ea10ca6b0e6daa4a5e7056"
+  ],
+  "prompt_sha256": "0266e2102d6327dbd656319e5bf2db98d25cd2f634120d20d380ea59d79c95e0",
+  "review_sha256": "9bc0efc008585e4582485427d8eee24b614e28ee0ce50b9df4ee85b6f550edba",
+  "opaque_dependency_stubs": [
+    {
+      "id": "PM1:✱9·03",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_03",
+      "metadata_path": "metadata/items/PM1-star-9-Q253.json",
+      "signature": "abbrev star_9_03 {Γ Δ}\n    (body : PM.Apparent Γ (.elementaryProposition :: Δ))\n    (proposition : PM.Elementary Γ) : PM.FirstOrder Γ Δ\n",
+      "signature_sha256": "4a93ebde8b2739c4df14f6bca9d50ff02b1eed5f2b48c2824d113d5b55872e00",
+      "opaque_declaration": "opaque star_9_03 {Γ Δ}\n    (body : PM.Apparent Γ (.elementaryProposition :: Δ))\n    (proposition : PM.Elementary Γ) : PM.FirstOrder Γ Δ\n",
+      "opaque_declaration_sha256": "8d57647c4238fa074171e9802f7ff5cd1c352b484519c2d0df3e7519de0aca16"
+    },
+    {
+      "id": "PM1:✱9·04",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_04",
+      "metadata_path": "metadata/items/PM1-star-9-Q253.json",
+      "signature": "abbrev star_9_04 {Γ Δ}\n    (proposition : PM.Elementary Γ)\n    (body : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
+      "signature_sha256": "3e70e4d0a88f30428a666afffd907f0c5df6d7da75594d3fe7e69cb0628ae6a6",
+      "opaque_declaration": "opaque star_9_04 {Γ Δ}\n    (proposition : PM.Elementary Γ)\n    (body : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
+      "opaque_declaration_sha256": "e35fc812c0c3c46b85e286fcbf5903e5faac66c9315701a65ba8cfaa1bf90408"
+    },
+    {
+      "id": "PM1:✱9·05",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_05",
+      "metadata_path": "metadata/items/PM1-star-9-Q253.json",
+      "signature": "abbrev star_9_05 {Γ Δ}\n    (body : PM.Apparent Γ (.elementaryProposition :: Δ))\n    (proposition : PM.Elementary Γ) : PM.FirstOrder Γ Δ\n",
+      "signature_sha256": "b7886cd8227a0f21f0564e5586112b13ea0bd0106aa61547a218440e0b12d97c",
+      "opaque_declaration": "opaque star_9_05 {Γ Δ}\n    (body : PM.Apparent Γ (.elementaryProposition :: Δ))\n    (proposition : PM.Elementary Γ) : PM.FirstOrder Γ Δ\n",
+      "opaque_declaration_sha256": "7fc052d98f7a8d469426391c5d16bc9c7fbb7835862889e4b52c6f3bdee1abea"
+    },
+    {
+      "id": "PM1:✱9·06",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_06",
+      "metadata_path": "metadata/items/PM1-star-9-Q253.json",
+      "signature": "abbrev star_9_06 {Γ Δ}\n    (proposition : PM.Elementary Γ)\n    (body : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
+      "signature_sha256": "49af3daa13583aa728671180ffe5283c557de4648c8a80ebc1fb1a19ffb4c380",
+      "opaque_declaration": "opaque star_9_06 {Γ Δ}\n    (proposition : PM.Elementary Γ)\n    (body : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
+      "opaque_declaration_sha256": "e388a7bac9701a0833e9e1d0d592a89220bd53f145c83b9678495182c36b8ee7"
+    }
+  ]
+}

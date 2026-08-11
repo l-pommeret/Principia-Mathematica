@@ -1,0 +1,53 @@
+{
+  "kind": "pm-architecture-experimental-interface-manifest",
+  "batch": "Q253",
+  "architecture_experimental": true,
+  "canonical_source_claim": false,
+  "canonical_integration_forbidden": true,
+  "requires_one_to_one_kernel_remap": true,
+  "integration_blocked": true,
+  "audit_status": "A-architecture-experimental",
+  "audit_basis": "reviewed exact Lean target blocks and source hashes; isolated architecture experiment only",
+  "promotion_prohibited": "not canonical; requires separate canonical source/dependency audit",
+  "canonical_ids": [
+    "PM1:✱9·03",
+    "PM1:✱9·04",
+    "PM1:✱9·05",
+    "PM1:✱9·06"
+  ],
+  "prompt_path": "aristotle/Q253.md",
+  "review_path": "reviews/Q253-review.md",
+  "scan_hashes": [
+    "bab18d35435eae4c68c5e91d129a46f55de4b8e43229e71f1448208bb3ae9f61"
+  ],
+  "exact_lean_targets": [
+    "def disjRightElementary : FirstOrder Γ Δ → Elementary Γ → FirstOrder Γ Δ\n  | Quantified.always body, proposition =>\n      always (body ∨ₐ Apparent.ofElementary proposition)\n  | Quantified.sometimes body, proposition =>\n      sometimes (body ∨ₐ Apparent.ofElementary proposition)\n\ndef disjElementaryLeft : Elementary Γ → FirstOrder Γ Δ → FirstOrder Γ Δ\n  | proposition, Quantified.always body =>\n      always (Apparent.ofElementary proposition ∨ₐ body)\n  | proposition, Quantified.sometimes body =>\n      sometimes (Apparent.ofElementary proposition ∨ₐ body)\n\n@[simp] theorem star_9_03_reduction\n    (body : Apparent Γ (.elementaryProposition :: Δ))\n    (proposition : Elementary Γ) :\n    disjRightElementary (always body) proposition =\n      always (body ∨ₐ Apparent.ofElementary proposition) := rfl\n\n@[simp] theorem star_9_04_reduction\n    (proposition : Elementary Γ)\n    (body : Apparent Γ (.elementaryProposition :: Δ)) :\n    disjElementaryLeft proposition (always body) =\n      always (Apparent.ofElementary proposition ∨ₐ body) := rfl\n\n@[simp] theorem star_9_05_reduction\n    (body : Apparent Γ (.elementaryProposition :: Δ))\n    (proposition : Elementary Γ) :\n    disjRightElementary (sometimes body) proposition =\n      sometimes (body ∨ₐ Apparent.ofElementary proposition) := rfl\n\n@[simp] theorem star_9_06_reduction\n    (proposition : Elementary Γ)\n    (body : Apparent Γ (.elementaryProposition :: Δ)) :\n    disjElementaryLeft proposition (sometimes body) =\n      sometimes (Apparent.ofElementary proposition ∨ₐ body) := rfl\n",
+    "namespace PM.FirstEdition.Volume1.Star9\n\nabbrev star_9_03 {Γ Δ}\n    (body : PM.Apparent Γ (.elementaryProposition :: Δ))\n    (proposition : PM.Elementary Γ) : PM.FirstOrder Γ Δ :=\n  PM.FirstOrder.disjRightElementary\n    (PM.FirstOrder.always body) proposition\n\nabbrev star_9_04 {Γ Δ}\n    (proposition : PM.Elementary Γ)\n    (body : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ :=\n  PM.FirstOrder.disjElementaryLeft\n    proposition (PM.FirstOrder.always body)\n\nabbrev star_9_05 {Γ Δ}\n    (body : PM.Apparent Γ (.elementaryProposition :: Δ))\n    (proposition : PM.Elementary Γ) : PM.FirstOrder Γ Δ :=\n  PM.FirstOrder.disjRightElementary\n    (PM.FirstOrder.sometimes body) proposition\n\nabbrev star_9_06 {Γ Δ}\n    (proposition : PM.Elementary Γ)\n    (body : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ :=\n  PM.FirstOrder.disjElementaryLeft\n    proposition (PM.FirstOrder.sometimes body)\n\nend PM.FirstEdition.Volume1.Star9\n"
+  ],
+  "exact_lean_target_sha256": [
+    "1417db36edd35b2d863b6fe0470cb8d5355ec4adfed8473b1d3adad687685785",
+    "3f8b0546a1f5251054448dbade40755f1748229b599c4d06bb51e6968a1367ea"
+  ],
+  "prompt_sha256": "0ef0899a0d3ba25b5d4a0ed588504cad6b9b7c1652cf2a888344761b55ae6777",
+  "review_sha256": "3e44ae1c06a6a20bc68b7d424bad789e7a60c017b93e249fe5a8d9d60b0047da",
+  "opaque_dependency_stubs": [
+    {
+      "id": "PM1:✱9·01",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_01",
+      "metadata_path": "metadata/items/PM1-star-9-Q252.json",
+      "signature": "abbrev star_9_01 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
+      "signature_sha256": "009cec501533f0f8c6f5cf676ab4664c4eb3839cc7738d980f2576ad5f2a7130",
+      "opaque_declaration": "opaque star_9_01 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
+      "opaque_declaration_sha256": "21aa9f42c5bd434eaca0d9dc93274f7b12b6a1e0f520ef76d40f4da38545184d"
+    },
+    {
+      "id": "PM1:✱9·02",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_02",
+      "metadata_path": "metadata/items/PM1-star-9-Q252.json",
+      "signature": "abbrev star_9_02 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
+      "signature_sha256": "c5ffbb7ba451938e668acb8d9fb39ec0217c003f4e57a1706e519e9084013660",
+      "opaque_declaration": "opaque star_9_02 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
+      "opaque_declaration_sha256": "d1b64e26b6296139f61a6a9600fef525d9c0ad3ef04ba1c580639dc50d4161d6"
+    }
+  ]
+}
