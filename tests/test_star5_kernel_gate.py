@@ -28,19 +28,21 @@ class Star5KernelGateTests(unittest.TestCase):
             ["PM1:✱1·1", "PM1:✱1·11", "PM1:✱2·54"],
         )
 
-    def test_star_5_25_explicit_inference_candidate_awaits_fresh_ci(self):
+    def test_star_5_25_explicit_inference_is_kernel_checked(self):
         metadata = json.loads(
             (ROOT / "metadata/items/PM1-star-5-kernel-Q246-25.json").read_text(
                 encoding="utf-8"
             )
         )
         self.assertEqual(metadata["ci_evidence"], {
-            "commit": "pending", "run": "pending", "conclusion": "pending"
+            "commit": "312fc3c1b375a11d02415a02428b025856496aae",
+            "run": "31546934083",
+            "conclusion": "success",
         })
         self.assertEqual(len(metadata["items"]), 1)
         item = metadata["items"][0]
         self.assertEqual(item["id"], "PM1:✱5·25")
-        self.assertEqual(item["formal_status"], "awaiting-ci")
+        self.assertEqual(item["formal_status"], "kernel-checked")
         self.assertEqual(item["printed_dependencies"], ["PM1:✱2·62", "PM1:✱2·68"])
 
     def test_star_5_13_keeps_the_scan_citation_and_closed_term_dependencies(self):
