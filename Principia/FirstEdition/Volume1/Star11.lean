@@ -100,3 +100,24 @@ PM-VERBATIM-END PM1:✱11·3 -/
 ✱11·31.  ⊢ : .(x, y).φ(x, y) : (x̂, ŷ).ψ(x, y) .≡ : (x, y) φ(x, y).ψ(x, y)
 Dem.  By ✱10·22 and ✱10·22·271, ⊢ . Prop.
 PM-VERBATIM-END PM1:✱11·31 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·311
+✱11·311.  If φ(x̂, ŷ), ψ(x̂, ŷ) take arguments of the same type, and we have
+“⊢.φ(x, y)” and “⊢.ψ(x, y),” we shall have “⊢.φ(x, y).ψ(x, y).”
+[Proof as in ✱10·13.]
+PM-VERBATIM-END PM1:✱11·311 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·32
+✱11·32.  ⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : ⊃ :
+(x, y).φ(x, y) .⊃ .(x, y).ψ(x, y)  [✱10·27]
+PM-VERBATIM-END PM1:✱11·32 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·33
+✱11·33.  ⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : ⊃ :
+(x, y).φ(x, y) .≡ .(x, y).ψ(x, y)  [✱10·271]
+PM-VERBATIM-END PM1:✱11·33 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·34
+✱11·34.  ⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : ⊃ :
+(∃x, y).φ(x, y) .⊃ .(∃x, y).ψ(x, y)  [✱10·27·28]
+PM-VERBATIM-END PM1:✱11·34 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·341
+✱11·341.  ⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : ⊃ :
+(∃x, y).φ(x, y) .≡ .(∃x, y).ψ(x, y)  [✱10·271·281]
+PM-VERBATIM-END PM1:✱11·341 -/
