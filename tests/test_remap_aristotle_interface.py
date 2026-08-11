@@ -174,6 +174,14 @@ end PM.Local
 
     def test_q310_retry_uses_only_byte_identical_audited_context(self):
         archive = ROOT / "aristotle/results/Q310-retry-01-final.tar.gz"
+        if not archive.is_file():
+            # Terminal archives are immutable audit inputs but are not kept
+            # in git.  A clean CI checkout must exercise the fail-closed path;
+            # the synthetic test above covers the successful rfl-only remap.
+            report = run_remap(ROOT, "Q310", archive)
+            self.assertEqual(report["status"], "blocked")
+            self.assertEqual(report["reasons"], ["terminal archive unavailable"])
+            return
         with tempfile.TemporaryDirectory() as directory:
             transplant = Path(directory) / "Q310-interface.lean"
             report = run_remap(ROOT, "Q310", archive, transplant=transplant)
