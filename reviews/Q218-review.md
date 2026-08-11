@@ -22,3 +22,19 @@ GitHub CI kernel-checked the generated standalone context and the whole edition
 at commit `8f8ce44395c4dea80d206690d4677089f9a0bf4a`, run
 [`31442908274`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31442908274),
 conclusion `success`. Q218 is eligible for one constrained Aristotle request.
+
+## Aristotle result — relaxed, not yet integrated
+
+Project `b63ae6ca-fe1c-4f9e-b649-a1208d2dcaa5`, task
+`606157ec-392e-4688-a85b-cde27f90c65c`, completed. Immutable local archive
+`aristotle/results/Q218-final.tar.gz`, SHA-256
+`f08cddeb7c49680c4771b96c522c12ff4f46f285654f2752b88d4aefa15a8021`.
+The archive contains no `sorry`, `admit`, `unsafe`, or new axiom in the target
+file; `Classical` occurs only in Aristotle's generated harness.
+
+The per-target machine audit is tracked in
+`reviews/Q218-reconstruction-audit.json`. The result is **not a strict
+closure**: ✱2·73 adds ✱1·6; ✱2·74 adds ✱1·4 and ✱1·6 while leaving the printed
+`Assoc` unused; ✱2·75 adds ✱1·4, ✱1·5 and ✱1·6. ✱2·76 is strict relative to
+the preceding local target. No returned body is integrated until the metadata
+can represent these historical dependency relaxations explicitly.

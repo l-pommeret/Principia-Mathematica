@@ -78,3 +78,6 @@ declared, is never added to the kernel-checked external closure, and cannot be
 used by a preceding target. `metadata/constrained_batches/Q218.json` is the
 first end-to-end fixture. Its manifest, isolated context, and compact
 Aristotle request are reproduced by `scripts/verify_constrained_batches.py`.
+Returned declarations are then classified independently by
+`scripts/pm_batch_audit.py`; one relaxed target cannot make its neighbours look
+strict, and every additional PM item is retained as explicit audit data.
