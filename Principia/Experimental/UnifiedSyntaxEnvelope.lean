@@ -144,8 +144,10 @@ def weakenDescriptionEnvelope :
   | .description formula => .description formula.weaken
 
 @[simp] theorem injectDescription_weaken
+    {fresh : ObjectSort}
     (formula : Formula signature realContext apparentContext order) :
-    injectDescription formula.weaken = weakenDescriptionEnvelope (injectDescription formula) := rfl
+    injectDescription (formula.weaken (fresh := fresh)) =
+      weakenDescriptionEnvelope (fresh := fresh) (injectDescription formula) := rfl
 
 /-!
 There is intentionally no rename/substitute operation for `Elementary` or
