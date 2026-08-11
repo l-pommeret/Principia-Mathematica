@@ -1,172 +1,3 @@
-# Strict ordered PM reconstruction batch
-
-Produce the following declarations in exactly this order. A target may use an
-earlier target only where that earlier PM number occurs in its own whitelist.
-No later/forward target is available. Each proof is audited independently.
-
-### 1. PM1:✱3·1
-
-Printed target:
-
-```text
-✱3·1.  ⊢ : p . q . ⊃ . ∼(∼p ∨ ∼q)     [Id . (✱3·01)]
-```
-
-Required Lean declaration:
-
-```lean
-namespace PM.FirstEdition.Volume1.Star3
-
-theorem star_3_1 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ ((p ∧ₚ q) ⊃ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))) := by
-  -- fill exactly from the generated whitelist
-
-end PM.FirstEdition.Volume1.Star3
-```
-
-Exact whitelist for this declaration:
-
-- `PM1:✱2·08` → `PM.FirstEdition.Volume1.Star2.star_2_08`
-- `PM1:✱3·01` → `PM.Elementary.conj`
-
-Earlier local targets licensed here: none.
-
-Printed substitutions:
-
-- none
-
-### 2. PM1:✱3·11
-
-Printed target:
-
-```text
-✱3·11.  ⊢ : ∼(∼p ∨ ∼q) . ⊃ . p . q     [Id . (✱3·01)]
-```
-
-Required Lean declaration:
-
-```lean
-namespace PM.FirstEdition.Volume1.Star3
-
-theorem star_3_11 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ ((∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) ⊃ₚ (p ∧ₚ q)) := by
-  -- fill exactly from the generated whitelist
-
-end PM.FirstEdition.Volume1.Star3
-```
-
-Exact whitelist for this declaration:
-
-- `PM1:✱2·08` → `PM.FirstEdition.Volume1.Star2.star_2_08`
-- `PM1:✱3·01` → `PM.Elementary.conj`
-
-Earlier local targets licensed here: none.
-
-Printed substitutions:
-
-- none
-
-### 3. PM1:✱3·12
-
-Printed target:
-
-```text
-✱3·12.  ⊢ : ∼p ∨ ∼q . ∨ . p . q     [✱2·11 (∼p ∨ ∼q)/p]
-```
-
-Required Lean declaration:
-
-```lean
-namespace PM.FirstEdition.Volume1.Star3
-
-theorem star_3_12 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ (((∼ₚ p) ∨ₚ (∼ₚ q)) ∨ₚ (p ∧ₚ q)) := by
-  -- fill exactly from the generated whitelist
-
-end PM.FirstEdition.Volume1.Star3
-```
-
-Exact whitelist for this declaration:
-
-- `PM1:✱2·11` → `PM.FirstEdition.Volume1.Star2.star_2_11`
-
-Earlier local targets licensed here: none.
-
-Printed substitutions:
-
-- step 1: `(∼p ∨ ∼q)/p`
-
-### 4. PM1:✱3·13
-
-Printed target:
-
-```text
-✱3·13.  ⊢ : ∼(p . q) . ⊃ . ∼p ∨ ∼q     [✱3·11 . Transp]
-```
-
-Required Lean declaration:
-
-```lean
-namespace PM.FirstEdition.Volume1.Star3
-
-theorem star_3_13 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ ((∼ₚ (p ∧ₚ q)) ⊃ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) := by
-  -- fill exactly from the generated whitelist
-
-end PM.FirstEdition.Volume1.Star3
-```
-
-Exact whitelist for this declaration:
-
-- `PM1:✱2·16` → `PM.FirstEdition.Volume1.Star2.star_2_16`
-- `PM1:✱2·17` → `PM.FirstEdition.Volume1.Star2.star_2_17`
-- `PM1:✱3·11` → `PM.FirstEdition.Volume1.Star3.star_3_11`
-
-Earlier local targets licensed here: PM1:✱3·11.
-
-Printed substitutions:
-
-- none
-
-### 5. PM1:✱3·14
-
-Printed target:
-
-```text
-✱3·14.  ⊢ : ∼p ∨ ∼q . ⊃ . ∼(p . q)     [✱3·1 . Transp]
-```
-
-Required Lean declaration:
-
-```lean
-namespace PM.FirstEdition.Volume1.Star3
-
-theorem star_3_14 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ (((∼ₚ p) ∨ₚ (∼ₚ q)) ⊃ₚ (∼ₚ (p ∧ₚ q))) := by
-  -- fill exactly from the generated whitelist
-
-end PM.FirstEdition.Volume1.Star3
-```
-
-Exact whitelist for this declaration:
-
-- `PM1:✱2·16` → `PM.FirstEdition.Volume1.Star2.star_2_16`
-- `PM1:✱2·17` → `PM.FirstEdition.Volume1.Star2.star_2_17`
-- `PM1:✱3·1` → `PM.FirstEdition.Volume1.Star3.star_3_1`
-
-Earlier local targets licensed here: PM1:✱3·1.
-
-Printed substitutions:
-
-- none
-
-
-## Reviewed isolated Lean context
-
-The declarations below are compilation scaffolding. They grant no proof
-permission unless separately listed in the target's whitelist.
-
-```lean
 -- PM-CONTEXT-FOUNDATION Principia/Syntax/Formula.lean
 namespace PM
 
@@ -205,26 +36,26 @@ end PM
 namespace PM
 
 inductive Derivation : {Γ : RealContext} → Elementary Γ → Prop where
-
+  
   | star_1_1 {p q : Elementary []} :
       Derivation p → Derivation (p ⊃ₚ q) → Derivation q
-
+  
   | star_1_11 {Γ : RealContext} {φ ψ : Elementary Γ}
       (hasRealVariable : Γ ≠ []) :
       Derivation φ → Derivation (φ ⊃ₚ ψ) → Derivation ψ
-
+  
   | star_1_2 {Γ : RealContext} (p : Elementary Γ) :
       Derivation ((p ∨ₚ p) ⊃ₚ p)
-
+  
   | star_1_3 {Γ : RealContext} (p q : Elementary Γ) :
       Derivation (q ⊃ₚ (p ∨ₚ q))
-
+  
   | star_1_4 {Γ : RealContext} (p q : Elementary Γ) :
       Derivation ((p ∨ₚ q) ⊃ₚ (q ∨ₚ p))
-
+  
   | star_1_5 {Γ : RealContext} (p q r : Elementary Γ) :
       Derivation ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ (q ∨ₚ (p ∨ₚ r)))
-
+  
   | star_1_6 {Γ : RealContext} (p q r : Elementary Γ) :
       Derivation ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)))
 
@@ -429,11 +260,3 @@ def conj (p q : PM.Elementary Γ) : PM.Elementary Γ :=
 infixl:56 " ∧ₚ " => conj
 
 end PM.Elementary
-```
-
-## Output contract
-
-Return only the requested Lean declarations, in order. Do not add an axiom,
-instance, notation, alternate syntax, `Classical`, `unsafe`, `sorry`, `admit`,
-semantic truth-table shortcut, or any theorem outside each target's whitelist.
-The repository will extract dependencies from every returned theorem separately.

@@ -1,0 +1,515 @@
+{
+  "kind": "pm-constrained-prover-batch-manifest",
+  "policy": {
+    "proof_permissions_are_exact_per_target": true,
+    "local_targets_must_precede_use": true,
+    "context_closure_grants_proof_permission": false,
+    "strict": true
+  },
+  "batch_items": [
+    {
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true
+      },
+      "current_item": "PM1:✱3·1",
+      "proof_permissions": [
+        {
+          "step": 1,
+          "event": 1,
+          "printed": "Id",
+          "kind": "printed-alias",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱2·08"
+          ]
+        },
+        {
+          "step": 1,
+          "event": 2,
+          "printed": "✱3·01",
+          "kind": "printed-reference",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱3·01"
+          ]
+        }
+      ],
+      "global_conventions": [],
+      "allowed_pm_items": [
+        "PM1:✱2·08",
+        "PM1:✱3·01"
+      ],
+      "allowed_lean_declarations": {
+        "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08",
+        "PM1:✱3·01": "PM.Elementary.conj"
+      },
+      "local_proof_items": [],
+      "context_closure": [
+        "PM1:✱1·01",
+        "PM1:✱1·11",
+        "PM1:✱1·2",
+        "PM1:✱1·3",
+        "PM1:✱1·6",
+        "PM1:✱2·05",
+        "PM1:✱2·07",
+        "PM1:✱2·08",
+        "PM1:✱3·01"
+      ],
+      "context_declarations": {
+        "PM1:✱1·01": "PM.Elementary.imp",
+        "PM1:✱1·11": "PM.Derivation.star_1_11",
+        "PM1:✱1·2": "PM.FirstEdition.Volume1.Star1.star_1_2",
+        "PM1:✱1·3": "PM.FirstEdition.Volume1.Star1.star_1_3",
+        "PM1:✱1·6": "PM.FirstEdition.Volume1.Star1.star_1_6",
+        "PM1:✱2·05": "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM1:✱2·07": "PM.FirstEdition.Volume1.Star2.star_2_07",
+        "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08",
+        "PM1:✱3·01": "PM.Elementary.conj"
+      },
+      "context_lean_paths": [
+        "Principia/Deduction/System.lean",
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+        "Principia/Syntax/Formula.lean"
+      ],
+      "diagnostics": {
+        "missing_items": [],
+        "non_kernel_checked_items": [],
+        "unresolved_aliases": []
+      },
+      "substitutions": []
+    },
+    {
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true
+      },
+      "current_item": "PM1:✱3·11",
+      "proof_permissions": [
+        {
+          "step": 1,
+          "event": 1,
+          "printed": "Id",
+          "kind": "printed-alias",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱2·08"
+          ]
+        },
+        {
+          "step": 1,
+          "event": 2,
+          "printed": "✱3·01",
+          "kind": "printed-reference",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱3·01"
+          ]
+        }
+      ],
+      "global_conventions": [],
+      "allowed_pm_items": [
+        "PM1:✱2·08",
+        "PM1:✱3·01"
+      ],
+      "allowed_lean_declarations": {
+        "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08",
+        "PM1:✱3·01": "PM.Elementary.conj"
+      },
+      "local_proof_items": [],
+      "context_closure": [
+        "PM1:✱1·01",
+        "PM1:✱1·11",
+        "PM1:✱1·2",
+        "PM1:✱1·3",
+        "PM1:✱1·6",
+        "PM1:✱2·05",
+        "PM1:✱2·07",
+        "PM1:✱2·08",
+        "PM1:✱3·01"
+      ],
+      "context_declarations": {
+        "PM1:✱1·01": "PM.Elementary.imp",
+        "PM1:✱1·11": "PM.Derivation.star_1_11",
+        "PM1:✱1·2": "PM.FirstEdition.Volume1.Star1.star_1_2",
+        "PM1:✱1·3": "PM.FirstEdition.Volume1.Star1.star_1_3",
+        "PM1:✱1·6": "PM.FirstEdition.Volume1.Star1.star_1_6",
+        "PM1:✱2·05": "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM1:✱2·07": "PM.FirstEdition.Volume1.Star2.star_2_07",
+        "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08",
+        "PM1:✱3·01": "PM.Elementary.conj"
+      },
+      "context_lean_paths": [
+        "Principia/Deduction/System.lean",
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+        "Principia/Syntax/Formula.lean"
+      ],
+      "diagnostics": {
+        "missing_items": [],
+        "non_kernel_checked_items": [],
+        "unresolved_aliases": []
+      },
+      "substitutions": []
+    },
+    {
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true
+      },
+      "current_item": "PM1:✱3·12",
+      "proof_permissions": [
+        {
+          "step": 1,
+          "event": 1,
+          "printed": "✱2·11",
+          "kind": "printed-reference",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱2·11"
+          ]
+        }
+      ],
+      "global_conventions": [],
+      "allowed_pm_items": [
+        "PM1:✱2·11"
+      ],
+      "allowed_lean_declarations": {
+        "PM1:✱2·11": "PM.FirstEdition.Volume1.Star2.star_2_11"
+      },
+      "local_proof_items": [],
+      "context_closure": [
+        "PM1:✱1·01",
+        "PM1:✱1·11",
+        "PM1:✱1·2",
+        "PM1:✱1·3",
+        "PM1:✱1·4",
+        "PM1:✱1·6",
+        "PM1:✱2·05",
+        "PM1:✱2·07",
+        "PM1:✱2·08",
+        "PM1:✱2·1",
+        "PM1:✱2·11"
+      ],
+      "context_declarations": {
+        "PM1:✱1·01": "PM.Elementary.imp",
+        "PM1:✱1·11": "PM.Derivation.star_1_11",
+        "PM1:✱1·2": "PM.FirstEdition.Volume1.Star1.star_1_2",
+        "PM1:✱1·3": "PM.FirstEdition.Volume1.Star1.star_1_3",
+        "PM1:✱1·4": "PM.FirstEdition.Volume1.Star1.star_1_4",
+        "PM1:✱1·6": "PM.FirstEdition.Volume1.Star1.star_1_6",
+        "PM1:✱2·05": "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM1:✱2·07": "PM.FirstEdition.Volume1.Star2.star_2_07",
+        "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08",
+        "PM1:✱2·1": "PM.FirstEdition.Volume1.Star2.star_2_1",
+        "PM1:✱2·11": "PM.FirstEdition.Volume1.Star2.star_2_11"
+      },
+      "context_lean_paths": [
+        "Principia/Deduction/System.lean",
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+        "Principia/Syntax/Formula.lean"
+      ],
+      "diagnostics": {
+        "missing_items": [],
+        "non_kernel_checked_items": [],
+        "unresolved_aliases": []
+      },
+      "substitutions": [
+        {
+          "step": 1,
+          "printed": "(∼p ∨ ∼q)/p"
+        }
+      ]
+    },
+    {
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true
+      },
+      "current_item": "PM1:✱3·13",
+      "proof_permissions": [
+        {
+          "step": 1,
+          "event": 1,
+          "printed": "✱3·11",
+          "kind": "printed-reference",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱3·11"
+          ]
+        },
+        {
+          "step": 1,
+          "event": 2,
+          "printed": "Transp",
+          "kind": "printed-alias",
+          "resolution_status": "form-family",
+          "candidates": [
+            "PM1:✱2·16",
+            "PM1:✱2·17"
+          ]
+        }
+      ],
+      "global_conventions": [],
+      "allowed_pm_items": [
+        "PM1:✱2·16",
+        "PM1:✱2·17",
+        "PM1:✱3·11"
+      ],
+      "allowed_lean_declarations": {
+        "PM1:✱2·16": "PM.FirstEdition.Volume1.Star2.star_2_16",
+        "PM1:✱2·17": "PM.FirstEdition.Volume1.Star2.star_2_17",
+        "PM1:✱3·11": "PM.FirstEdition.Volume1.Star3.star_3_11"
+      },
+      "local_proof_items": [
+        "PM1:✱3·11"
+      ],
+      "context_closure": [
+        "PM1:✱1·01",
+        "PM1:✱1·11",
+        "PM1:✱1·2",
+        "PM1:✱1·3",
+        "PM1:✱1·4",
+        "PM1:✱1·5",
+        "PM1:✱1·6",
+        "PM1:✱2·03",
+        "PM1:✱2·04",
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱2·07",
+        "PM1:✱2·08",
+        "PM1:✱2·1",
+        "PM1:✱2·11",
+        "PM1:✱2·12",
+        "PM1:✱2·13",
+        "PM1:✱2·14",
+        "PM1:✱2·16",
+        "PM1:✱2·17"
+      ],
+      "context_declarations": {
+        "PM1:✱1·01": "PM.Elementary.imp",
+        "PM1:✱1·11": "PM.Derivation.star_1_11",
+        "PM1:✱1·2": "PM.FirstEdition.Volume1.Star1.star_1_2",
+        "PM1:✱1·3": "PM.FirstEdition.Volume1.Star1.star_1_3",
+        "PM1:✱1·4": "PM.FirstEdition.Volume1.Star1.star_1_4",
+        "PM1:✱1·5": "PM.FirstEdition.Volume1.Star1.star_1_5",
+        "PM1:✱1·6": "PM.FirstEdition.Volume1.Star1.star_1_6",
+        "PM1:✱2·03": "PM.FirstEdition.Volume1.Star2.star_2_03",
+        "PM1:✱2·04": "PM.FirstEdition.Volume1.Star2.star_2_04",
+        "PM1:✱2·05": "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM1:✱2·06": "PM.FirstEdition.Volume1.Star2.star_2_06",
+        "PM1:✱2·07": "PM.FirstEdition.Volume1.Star2.star_2_07",
+        "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08",
+        "PM1:✱2·1": "PM.FirstEdition.Volume1.Star2.star_2_1",
+        "PM1:✱2·11": "PM.FirstEdition.Volume1.Star2.star_2_11",
+        "PM1:✱2·12": "PM.FirstEdition.Volume1.Star2.star_2_12",
+        "PM1:✱2·13": "PM.FirstEdition.Volume1.Star2.star_2_13",
+        "PM1:✱2·14": "PM.FirstEdition.Volume1.Star2.star_2_14",
+        "PM1:✱2·16": "PM.FirstEdition.Volume1.Star2.star_2_16",
+        "PM1:✱2·17": "PM.FirstEdition.Volume1.Star2.star_2_17"
+      },
+      "context_lean_paths": [
+        "Principia/Deduction/System.lean",
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+        "Principia/Syntax/Formula.lean"
+      ],
+      "diagnostics": {
+        "missing_items": [],
+        "non_kernel_checked_items": [],
+        "unresolved_aliases": []
+      },
+      "substitutions": []
+    },
+    {
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true
+      },
+      "current_item": "PM1:✱3·14",
+      "proof_permissions": [
+        {
+          "step": 1,
+          "event": 1,
+          "printed": "✱3·1",
+          "kind": "printed-reference",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱3·1"
+          ]
+        },
+        {
+          "step": 1,
+          "event": 2,
+          "printed": "Transp",
+          "kind": "printed-alias",
+          "resolution_status": "form-family",
+          "candidates": [
+            "PM1:✱2·16",
+            "PM1:✱2·17"
+          ]
+        }
+      ],
+      "global_conventions": [],
+      "allowed_pm_items": [
+        "PM1:✱2·16",
+        "PM1:✱2·17",
+        "PM1:✱3·1"
+      ],
+      "allowed_lean_declarations": {
+        "PM1:✱2·16": "PM.FirstEdition.Volume1.Star2.star_2_16",
+        "PM1:✱2·17": "PM.FirstEdition.Volume1.Star2.star_2_17",
+        "PM1:✱3·1": "PM.FirstEdition.Volume1.Star3.star_3_1"
+      },
+      "local_proof_items": [
+        "PM1:✱3·1"
+      ],
+      "context_closure": [
+        "PM1:✱1·01",
+        "PM1:✱1·11",
+        "PM1:✱1·2",
+        "PM1:✱1·3",
+        "PM1:✱1·4",
+        "PM1:✱1·5",
+        "PM1:✱1·6",
+        "PM1:✱2·03",
+        "PM1:✱2·04",
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱2·07",
+        "PM1:✱2·08",
+        "PM1:✱2·1",
+        "PM1:✱2·11",
+        "PM1:✱2·12",
+        "PM1:✱2·13",
+        "PM1:✱2·14",
+        "PM1:✱2·16",
+        "PM1:✱2·17"
+      ],
+      "context_declarations": {
+        "PM1:✱1·01": "PM.Elementary.imp",
+        "PM1:✱1·11": "PM.Derivation.star_1_11",
+        "PM1:✱1·2": "PM.FirstEdition.Volume1.Star1.star_1_2",
+        "PM1:✱1·3": "PM.FirstEdition.Volume1.Star1.star_1_3",
+        "PM1:✱1·4": "PM.FirstEdition.Volume1.Star1.star_1_4",
+        "PM1:✱1·5": "PM.FirstEdition.Volume1.Star1.star_1_5",
+        "PM1:✱1·6": "PM.FirstEdition.Volume1.Star1.star_1_6",
+        "PM1:✱2·03": "PM.FirstEdition.Volume1.Star2.star_2_03",
+        "PM1:✱2·04": "PM.FirstEdition.Volume1.Star2.star_2_04",
+        "PM1:✱2·05": "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM1:✱2·06": "PM.FirstEdition.Volume1.Star2.star_2_06",
+        "PM1:✱2·07": "PM.FirstEdition.Volume1.Star2.star_2_07",
+        "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08",
+        "PM1:✱2·1": "PM.FirstEdition.Volume1.Star2.star_2_1",
+        "PM1:✱2·11": "PM.FirstEdition.Volume1.Star2.star_2_11",
+        "PM1:✱2·12": "PM.FirstEdition.Volume1.Star2.star_2_12",
+        "PM1:✱2·13": "PM.FirstEdition.Volume1.Star2.star_2_13",
+        "PM1:✱2·14": "PM.FirstEdition.Volume1.Star2.star_2_14",
+        "PM1:✱2·16": "PM.FirstEdition.Volume1.Star2.star_2_16",
+        "PM1:✱2·17": "PM.FirstEdition.Volume1.Star2.star_2_17"
+      },
+      "context_lean_paths": [
+        "Principia/Deduction/System.lean",
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+        "Principia/Syntax/Formula.lean"
+      ],
+      "diagnostics": {
+        "missing_items": [],
+        "non_kernel_checked_items": [],
+        "unresolved_aliases": []
+      },
+      "substitutions": []
+    }
+  ],
+  "target_order": [
+    "PM1:✱3·1",
+    "PM1:✱3·11",
+    "PM1:✱3·12",
+    "PM1:✱3·13",
+    "PM1:✱3·14"
+  ],
+  "target_declarations": {
+    "PM1:✱3·1": "PM.FirstEdition.Volume1.Star3.star_3_1",
+    "PM1:✱3·11": "PM.FirstEdition.Volume1.Star3.star_3_11",
+    "PM1:✱3·12": "PM.FirstEdition.Volume1.Star3.star_3_12",
+    "PM1:✱3·13": "PM.FirstEdition.Volume1.Star3.star_3_13",
+    "PM1:✱3·14": "PM.FirstEdition.Volume1.Star3.star_3_14"
+  },
+  "context_closure": [
+    "PM1:✱1·01",
+    "PM1:✱1·11",
+    "PM1:✱1·2",
+    "PM1:✱1·3",
+    "PM1:✱1·4",
+    "PM1:✱1·5",
+    "PM1:✱1·6",
+    "PM1:✱2·03",
+    "PM1:✱2·04",
+    "PM1:✱2·05",
+    "PM1:✱2·06",
+    "PM1:✱2·07",
+    "PM1:✱2·08",
+    "PM1:✱2·1",
+    "PM1:✱2·11",
+    "PM1:✱2·12",
+    "PM1:✱2·13",
+    "PM1:✱2·14",
+    "PM1:✱2·16",
+    "PM1:✱2·17",
+    "PM1:✱3·01"
+  ],
+  "context_declarations": {
+    "PM1:✱1·01": "PM.Elementary.imp",
+    "PM1:✱1·11": "PM.Derivation.star_1_11",
+    "PM1:✱1·2": "PM.FirstEdition.Volume1.Star1.star_1_2",
+    "PM1:✱1·3": "PM.FirstEdition.Volume1.Star1.star_1_3",
+    "PM1:✱1·4": "PM.FirstEdition.Volume1.Star1.star_1_4",
+    "PM1:✱1·5": "PM.FirstEdition.Volume1.Star1.star_1_5",
+    "PM1:✱1·6": "PM.FirstEdition.Volume1.Star1.star_1_6",
+    "PM1:✱2·03": "PM.FirstEdition.Volume1.Star2.star_2_03",
+    "PM1:✱2·04": "PM.FirstEdition.Volume1.Star2.star_2_04",
+    "PM1:✱2·05": "PM.FirstEdition.Volume1.Star2.star_2_05",
+    "PM1:✱2·06": "PM.FirstEdition.Volume1.Star2.star_2_06",
+    "PM1:✱2·07": "PM.FirstEdition.Volume1.Star2.star_2_07",
+    "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08",
+    "PM1:✱2·1": "PM.FirstEdition.Volume1.Star2.star_2_1",
+    "PM1:✱2·11": "PM.FirstEdition.Volume1.Star2.star_2_11",
+    "PM1:✱2·12": "PM.FirstEdition.Volume1.Star2.star_2_12",
+    "PM1:✱2·13": "PM.FirstEdition.Volume1.Star2.star_2_13",
+    "PM1:✱2·14": "PM.FirstEdition.Volume1.Star2.star_2_14",
+    "PM1:✱2·16": "PM.FirstEdition.Volume1.Star2.star_2_16",
+    "PM1:✱2·17": "PM.FirstEdition.Volume1.Star2.star_2_17",
+    "PM1:✱3·01": "PM.Elementary.conj"
+  },
+  "context_lean_paths": [
+    "Principia/Deduction/System.lean",
+    "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
+    "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+    "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+    "Principia/Syntax/Formula.lean"
+  ],
+  "proof_permissions": [
+    "PM1:✱2·08",
+    "PM1:✱2·11",
+    "PM1:✱2·16",
+    "PM1:✱2·17",
+    "PM1:✱3·01",
+    "PM1:✱3·1",
+    "PM1:✱3·11"
+  ]
+}

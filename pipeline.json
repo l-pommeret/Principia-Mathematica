@@ -764,7 +764,7 @@
       "source": "PM volume I, first edition, pp. 116–117",
       "prompt_path": "aristotle/Q221.md",
       "audit_path": "reviews/Q221-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "generated-context-awaiting-ci",
       "lean_scope": "exact PM1 ✱3·1 through ✱3·14 selected sequence",
       "depends_on": [
         "PM1:✱2·11",
@@ -772,7 +772,14 @@
         "PM1:✱3·03"
       ],
       "parallel_group": "STAR3-WAVE-1A",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "not-submitted",
+      "constraint_manifest_path": "aristotle/manifests/Q221.json",
+      "isolated_context_path": "aristotle/contexts/Q221.lean",
+      "context_ci_evidence": {
+        "commit": "pending",
+        "run": "pending",
+        "conclusion": "pending"
+      }
     },
     "Q222": {
       "canonical_ids": [
