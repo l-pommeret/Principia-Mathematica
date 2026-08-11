@@ -18,14 +18,12 @@ jobs:
           curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
             | sh -s -- -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-      - name: Verify source-critical apparatus
-        run: python3 scripts/verify_editorial.py
+      - name: Aggregate source, dependency, and context preflight
+        run: python3 scripts/verify_preflight.py
       - name: Verify the complete first-edition Errata registry
         run: python3 scripts/verify_errata_registry.py
       - name: Verify the PM anomaly register
         run: python3 scripts/verify_anomaly_registry.py
-      - name: Audit PM/Lean dependency agreement
-        run: python3 scripts/verify_dependencies.py
       - name: Guard the conservative apparent-variable architecture
         run: python3 scripts/verify_apparent_architecture.py
       - name: Guard schema instantiation and syntactic substitution
@@ -40,8 +38,6 @@ jobs:
         run: python3 scripts/verify_description_scope_toy.py
       - name: Guard predicative syntax and scoped reducibility
         run: python3 scripts/verify_predicative_gate_toy.py
-      - name: Verify generated isolated Aristotle contexts
-        run: python3 scripts/verify_context_bundles.py
       - name: Verify ordered constrained Aristotle batches
         run: python3 scripts/verify_constrained_batches.py
       - name: Verify deterministic PM parser coverage

@@ -7,6 +7,7 @@ import hashlib
 import json
 import re
 import sys
+import argparse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,9 +17,12 @@ EXCERPT_BEGIN = re.compile(r"PM-SOURCE-EXCERPT-BEGIN\s+(\S+)")
 EXCERPT_END = re.compile(r"PM-SOURCE-EXCERPT-END\s+(\S+)")
 
 
+class EditorialError(ValueError):
+    pass
+
+
 def fail(message: str) -> None:
-    print(f"editorial error: {message}", file=sys.stderr)
-    raise SystemExit(1)
+    raise EditorialError(message)
 
 
 def check_verbatim_blocks() -> None:
@@ -218,12 +222,43 @@ def check_source_block_metadata() -> None:
                 fail(f"{path} contradicts its no-error critical status")
 
 
+def report_all() -> list[str]:
+    """Collect one deterministic failure from each independent editorial gate."""
+    errors = []
+    for check in (
+        check_verbatim_blocks,
+        check_excerpt_blocks,
+        check_apparatus,
+        check_item_metadata,
+        check_source_block_metadata,
+    ):
+        try:
+            check()
+        except EditorialError as error:
+            errors.append(f"{check.__name__}: {error}")
+    return errors
+
+
 def main() -> None:
-    check_verbatim_blocks()
-    check_excerpt_blocks()
-    check_apparatus()
-    check_item_metadata()
-    check_source_block_metadata()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--report-all", action="store_true")
+    options = parser.parse_args()
+    if options.report_all:
+        errors = report_all()
+        if errors:
+            print("\n".join(f"editorial error: {error}" for error in errors), file=sys.stderr)
+            raise SystemExit(1)
+        print("editorial checks passed")
+        return
+    try:
+        check_verbatim_blocks()
+        check_excerpt_blocks()
+        check_apparatus()
+        check_item_metadata()
+        check_source_block_metadata()
+    except EditorialError as error:
+        print(f"editorial error: {error}", file=sys.stderr)
+        raise SystemExit(1)
     print("editorial checks passed")
 
 

@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import argparse
 from fractions import Fraction
 from pathlib import Path
 
@@ -406,7 +407,43 @@ def verify_dependency_alignment(item: dict, normalized: list[str], root: Path = 
         raise DependencyError(f"{item['id']}: invalid relaxation evidence")
 
 
-def audit(root: Path = ROOT) -> dict:
+def audit_item(
+    item: dict, *, items: list[dict], declarations: dict[str, str], order: dict[str, tuple],
+    assumptions: dict[str, dict], assumption_usage: dict[str, dict[str, list[str]]], root: Path,
+) -> tuple[list[dict], list[dict], list[dict]]:
+    """Audit one kernel-checked declaration without masking sibling failures."""
+    for field in ("printed_dependencies", "lean_dependencies", "normalized_dependencies"):
+        if field not in item or not isinstance(item[field], list):
+            raise DependencyError(f"{item['id']}: missing dependency field {field}")
+    body = (declaration_body(root / item["lean_path"], item["declaration"])
+            if assumption_usage[item["id"]]["effective"] else "")
+    verified_parameters = verify_assumption_parameters(
+        item, assumption_usage[item["id"]], assumptions, body
+    )
+    actual = extract_lean_dependencies(item, declarations, root)
+    if sorted(item["lean_dependencies"]) != actual:
+        raise DependencyError(
+            f"{item['id']}: Lean dependencies differ: metadata={sorted(item['lean_dependencies'])}, extracted={actual}"
+        )
+    normalized = normalize(item, actual, declarations, root)
+    if sorted(set(item["normalized_dependencies"])) != normalized:
+        raise DependencyError(f"{item['id']}: normalized metadata {item['normalized_dependencies']} != {normalized}")
+    verify_dependency_alignment(item, normalized, root)
+    edges = []
+    for dependency in normalized:
+        if dependency not in order:
+            raise DependencyError(f"{item['id']}: unknown PM dependency {dependency}")
+        if order[dependency] >= order[item["id"]]:
+            raise DependencyError(f"{item['id']}: dependency {dependency} is not earlier in the audited corpus")
+        edges.append({"from": item["id"], "to": dependency})
+    return (
+        edges,
+        [{"from": item["id"], "to": dependency} for dependency in actual],
+        [{"item": item["id"], **evidence} for evidence in verified_parameters],
+    )
+
+
+def audit(root: Path = ROOT, *, report_all: bool = False) -> dict:
     items = load_items(root)
     assumptions = load_assumptions(root)
     assumption_usage = assumption_closure(items, assumptions)
@@ -441,41 +478,21 @@ def audit(root: Path = ROOT) -> dict:
     edges = []
     lean_edges = []
     assumption_parameter_evidence = []
+    errors = []
     for item in checked:
-        for field in ("printed_dependencies", "lean_dependencies", "normalized_dependencies"):
-            if field not in item or not isinstance(item[field], list):
-                raise DependencyError(f"{item['id']}: missing dependency field {field}")
-        # Legacy primitive-rule items are inductive constructors rather than
-        # standalone declarations. They currently have empty assumption
-        # closures, so no header exists or is needed. Any future assumption-
-        # bearing item must expose a declaration whose parameters can be
-        # audited here.
-        body = (declaration_body(root / item["lean_path"], item["declaration"])
-                if assumption_usage[item["id"]]["effective"] else "")
-        verified_parameters = verify_assumption_parameters(
-            item, assumption_usage[item["id"]], assumptions, body
-        )
-        assumption_parameter_evidence.extend(
-            {"item": item["id"], **evidence} for evidence in verified_parameters
-        )
-        actual = extract_lean_dependencies(item, declarations, root)
-        if sorted(item["lean_dependencies"]) != actual:
-            raise DependencyError(
-                f"{item['id']}: Lean dependencies differ: metadata={sorted(item['lean_dependencies'])}, extracted={actual}"
+        try:
+            item_edges, item_lean_edges, item_assumption_evidence = audit_item(
+                item, items=items, declarations=declarations, order=order,
+                assumptions=assumptions, assumption_usage=assumption_usage, root=root,
             )
-        normalized = normalize(item, actual, declarations, root)
-        if sorted(set(item["normalized_dependencies"])) != normalized:
-            raise DependencyError(f"{item['id']}: normalized metadata {item['normalized_dependencies']} != {normalized}")
-        verify_dependency_alignment(item, normalized, root)
-        for dependency in normalized:
-            if dependency not in order:
-                raise DependencyError(f"{item['id']}: unknown PM dependency {dependency}")
-            if order[dependency] >= order[item["id"]]:
-                raise DependencyError(f"{item['id']}: dependency {dependency} is not earlier in the audited corpus")
-            edges.append({"from": item["id"], "to": dependency})
-        lean_edges.extend({"from": item["id"], "to": dependency}
-                          for dependency in actual)
-    return {
+            edges.extend(item_edges)
+            lean_edges.extend(item_lean_edges)
+            assumption_parameter_evidence.extend(item_assumption_evidence)
+        except DependencyError as error:
+            if not report_all:
+                raise
+            errors.append(str(error))
+    graph = {
         "schema_version": 1,
         "coverage": {
             "status": "kernel-checked-items-only",
@@ -507,10 +524,32 @@ def audit(root: Path = ROOT) -> dict:
         # Kept as a small compatibility convenience for downstream readers.
         "edges": edges,
     }
+    if report_all:
+        graph["errors"] = errors
+    return graph
+
+
+def report_all(root: Path = ROOT) -> list[str]:
+    """Collect dependency errors for every independently auditable item."""
+    return audit(root, report_all=True).get("errors", [])
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--report-all", action="store_true",
+        help="report every independently auditable dependency error",
+    )
+    options = parser.parse_args()
     try:
+        if options.report_all:
+            errors = report_all()
+            if errors:
+                print("\n".join(errors), file=sys.stderr)
+                raise SystemExit(1)
+            graph = audit()
+            print(f"dependency checks passed ({graph['coverage']['audited_items']} kernel-checked items, {len(graph['edges'])} edges)")
+            return
         graph = audit()
     except (DependencyError, OSError, json.JSONDecodeError) as error:
         print(f"dependency error: {error}", file=sys.stderr)
