@@ -6,19 +6,19 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 387,
+    "catalogued_items": 389,
     "object_language_ast_parsed": 216,
     "metalinguistic_routes": 8,
-    "architecture_gated_source_routes": 163,
+    "architecture_gated_source_routes": 165,
     "catalogued_items_with_proof_skeleton": 54,
     "all_proof_skeleton_targets": 54,
-    "catalogued_items_missing_proof_skeleton": 333,
+    "catalogued_items_missing_proof_skeleton": 335,
     "constrained_batches": 14,
     "complete_batch_artifact_sets": 13,
     "planned_campaign_questions": 63,
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
-    "catalogued_items_without_campaign_question": 168,
+    "catalogued_items_without_campaign_question": 170,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
@@ -45,7 +45,7 @@
       "PM1:✱10": 49,
       "PM1:✱11": 61,
       "PM1:✱12": 2,
-      "PM1:✱13": 25,
+      "PM1:✱13": 27,
       "PM1:✱2": 68,
       "PM1:✱3": 28,
       "PM1:✱4": 61,
@@ -68,7 +68,7 @@
       "PM1:✱10": 49,
       "PM1:✱11": 61,
       "PM1:✱12": 2,
-      "PM1:✱13": 25,
+      "PM1:✱13": 27,
       "PM1:✱2": 1,
       "PM1:✱9": 22
     }
@@ -2027,6 +2027,32 @@
     },
     {
       "id": "PM1:✱13·196",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱13·21",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱13·22",
       "kind": "derived-proposition",
       "source_catalogue": true,
       "formal_status": "prepared",
@@ -6460,6 +6486,8 @@
     "PM1:✱13·194",
     "PM1:✱13·195",
     "PM1:✱13·196",
+    "PM1:✱13·21",
+    "PM1:✱13·22",
     "PM1:✱1·01",
     "PM1:✱1·1",
     "PM1:✱1·11",
