@@ -11,15 +11,16 @@
         "status response was HTML containing </body></html>",
         "subsequent status request returned HTTP 500",
         "two status requests were suspended",
-        "local status probe then failed with No space left on device in ~/.cache/uv/simple-v19/pypi/.tmpDorfOZ"
+        "local status probe then failed with No space left on device in ~/.cache/uv/simple-v19/pypi/.tmpDorfOZ",
+        "continuation task 778587a0 intermittently reported NO_TASKS after IN_PROGRESS; three readings five seconds apart after each occurrence confirmed IN_PROGRESS"
       ],
-      "authoritative_status": "indeterminate",
+      "authoritative_status": "IN_PROGRESS confirmed by repeated polling",
       "duplicate_submission": "prohibited pending authoritative active-task confirmation",
       "classification": "infrastructure-transport-failure",
       "pm_or_reconstruction_impact": "none established; this is neither a PM source anomaly nor a reconstruction finding",
       "kernel_impact": "unknown; no archive, Lean result, or CI claim is inferred from the failed transport/status responses",
       "provenance": ["Aristotle status observations for project fdbc74ae-1841-4f2d-9870-eb8c3052934f"],
-      "resolution_status": "open-awaiting-authoritative-status"
+      "resolution_status": "open-active-task-polling-instability"
     }
   ]
 }

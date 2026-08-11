@@ -43,7 +43,7 @@ class AnomalyRegistryTests(unittest.TestCase):
         self.assertGreaterEqual(sum(entry["category"] == "digital-witness-error" for entry in entries.values()), 1)
         incidents = {incident["id"]: incident for incident in payload["infrastructure_incidents"]}
         q226 = incidents["PM1-INFRA-Q226-ARISTOTLE-HTTP500"]
-        self.assertEqual(q226["authoritative_status"], "indeterminate")
+        self.assertEqual(q226["authoritative_status"], "IN_PROGRESS confirmed by repeated polling")
         self.assertEqual(q226["classification"], "infrastructure-transport-failure")
         self.assertIn("neither a PM source anomaly", q226["pm_or_reconstruction_impact"])
 
