@@ -211,3 +211,29 @@ PM-VERBATIM-END PM1:✱11·51 -/
 ∼{(x, y) : φ(x, y) .⊃ .∼ψ(x, y)}
 Dem.  By ✱4·51·62, ✱11·11·33, and ✱11·22, ⊢ . Prop.
 PM-VERBATIM-END PM1:✱11·52 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·521
+✱11·521.  ⊢ : .∼(∃x, y).φ(x, y).∼ψ(x, y) .≡ :
+(x, y) : φ(x, y) .⊃ .ψ(x, y)
+[✱11·52.Transp. ∼φ, ∼ψ / φ, ψ]
+PM-VERBATIM-END PM1:✱11·521 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·53
+✱11·53.  ⊢ : .(x, y).φx ⊃ ψy .≡ :
+(∃x).φx .⊃ .(y).ψy
+Dem.  By ✱10·21·271, ✱10·23, ✱11·57, ✱3·47, ✱11·32, and ✱11·1,
+⊢ . Prop.
+PM-VERBATIM-END PM1:✱11·53 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·54
+✱11·54.  ⊢ : .(∃x, y).φx.ψy .≡ :
+(∃x).φx : (∃y).ψy
+Dem.  By ✱10·35, ✱10·11·281, and ✱10·35, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱11·54 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·55
+✱11·55.  ⊢ : .(∃x, y).φx.ψ(x, y) .≡ :
+(∃x) : φx : (∃y).ψ(x, y)
+Dem.  By ✱10·35, ✱10·11, and ✱10·281, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱11·55 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·56
+✱11·56.  ⊢ : .(x).φx : (y).ψy .≡ :
+(x, y).φx.ψy
+Dem.  By ✱10·33, ✱10·11, ✱10·271, and ✱11·01, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱11·56 -/
