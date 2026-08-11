@@ -309,6 +309,21 @@ class PMDotSyntaxTests(unittest.TestCase):
         parsed = statement_shape("✱14·02. E!(℩x)(φx) .=: (∃b) : φx .≡ₓ. x = b Df")
         self.assertIn("description_exists", tags(parsed))
 
+    def test_star_14_03_preserves_two_printed_description_scopes(self):
+        parsed = statement_shape(
+            "✱14·03. [(℩x)(φx), (℩x)(ψx)] . "
+            "f{(℩x)(φx), (℩x)(ψx)}"
+        )
+        self.assertEqual(tags(parsed).count("description_scope"), 2)
+        self.assertNotIn("description", tags(parsed))
+
+    def test_star_14_04_keeps_unbracketed_description_at_inner_scope(self):
+        parsed = statement_shape(
+            "✱14·04. [(℩x)(ψx)] . f{(℩x)(φx), (℩x)(ψx)}"
+        )
+        self.assertEqual(tags(parsed).count("description_scope"), 2)
+        self.assertNotIn("description", tags(parsed))
+
     def test_q102_87_preserves_nested_diplomatic_xi_similarity_index(self):
         parsed = statement_shape(
             "✱102·87. ⊢ : μ = Nc(β)ʻδ . ∃!Nc(ξ)ʻδ .⊃ . "

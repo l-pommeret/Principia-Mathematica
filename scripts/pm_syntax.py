@@ -441,6 +441,18 @@ def bind_description_occurrences(node: AST, variable: str, condition: AST) -> AS
     )
 
 
+def surface_descriptions(node: AST) -> list[AST]:
+    """Return distinct unscoped descriptions in deterministic print order."""
+    found: list[AST] = []
+    if node.tag == "description" and node not in found:
+        found.append(node)
+    for child in node.children:
+        for entry in surface_descriptions(child):
+            if entry not in found:
+                found.append(entry)
+    return found
+
+
 def contains_incomplete_symbol(node: AST) -> bool:
     return node.tag in {
         "description", "class_incomplete", "class_symbol", "class_union",
@@ -689,19 +701,43 @@ class Parser:
             )
         elif token.kind == "lparen":
             left = self.expression(0)
+            bracketed_descriptions = [left]
+            if token.text == "[":
+                while self.peek() is not None and self.peek().kind == "comma":
+                    self.take()
+                    bracketed_descriptions.append(self.expression(0))
             close = self.take()
             if close.kind != "rparen":
                 raise PMSyntaxError(f"missing closing bracket before offset {close.position}")
-            if token.text == "[" and left.tag == "description":
+            if token.text == "[":
+                if not all(entry.tag == "description" for entry in bracketed_descriptions):
+                    raise PMSyntaxError("description brackets require description entries")
                 marker = self.peek()
                 if marker is None or marker.kind != "binary" or marker.text != "·":
                     raise PMSyntaxError("a bracketed description must be followed by a scope mark")
                 marker = self.take()
                 continuation = self.expression(binding_power(marker, "right"))
-                continuation = bind_description_occurrences(
-                    continuation, left.value or "", left.children[0]
-                )
-                left = AST("description_scope", (left.children[0], continuation), left.value)
+                for entry in bracketed_descriptions:
+                    continuation = bind_description_occurrences(
+                        continuation, entry.value or "", entry.children[0]
+                    )
+                # Descriptions not named by the outer bracket retain their
+                # narrow, in-place scope.  Materialise that scope explicitly
+                # before wrapping the bracketed (outer) descriptions.
+                implicit_descriptions = surface_descriptions(continuation)
+                for entry in implicit_descriptions:
+                    continuation = bind_description_occurrences(
+                        continuation, entry.value or "", entry.children[0]
+                    )
+                for entry in reversed(implicit_descriptions):
+                    continuation = AST(
+                        "description_scope", (entry.children[0], continuation), entry.value
+                    )
+                left = continuation
+                for entry in reversed(bracketed_descriptions):
+                    left = AST(
+                        "description_scope", (entry.children[0], left), entry.value
+                    )
         else:
             raise PMSyntaxError(f"expected proposition at offset {token.position}")
 

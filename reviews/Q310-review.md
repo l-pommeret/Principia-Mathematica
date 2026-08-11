@@ -1,6 +1,6 @@
 # Q310 review — PM I ✱14·02, ✱14·03 and ✱14·04
 
-**Verdict: A — interface-only, submission-ready.** These are
+**Verdict: A — strictly remapped and kernel-checked.** These are
 the smallest remaining reductional definitions in the source-only Q297 lot.
 They are collated from first-edition volume I, printed p. 182, leaf 204,
 SHA-256
@@ -20,15 +20,16 @@ they may not cite the regression lemmas `star_14_02_reduction`,
 `star_14_03_reduction`, or `star_14_04_reduction`. The Q296 countermodel is
 absent and supplies no proof permission.
 
-Canonical promotion is forbidden until the exact Q310 context is remotely
-kernel-checked, returned bodies are audited, and every declaration is remapped
+The retry archive was audited as three `rfl` bodies, its supplied context was
+byte-identical to the sealed interface, and every declaration was remapped
 one-to-one to the corresponding `PM.FirstEdition.Volume1.Star14Source`
-declaration followed by online Lean CI. The exact isolated context and full
+declaration. The resulting canonical transplant and the full edition were
+kernel-checked by CI
+[31529111742](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31529111742)
+at commit `3167dacbec913db5d4e2471de6d2a5fc6460bec8`. The earlier exact isolated context and full
 edition were kernel-checked successfully by CI
 [31517498507](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31517498507)
-at commit `f5fafdf6ec8003a0a70be5a4b69ca79383742c59`. This evidence makes
-Q310 submission-ready only at the sealed interface: it does not promote an
-Aristotle body or establish any of the three PM definitions canonically.
+at commit `f5fafdf6ec8003a0a70be5a4b69ca79383742c59`.
 
 The derived items ✱14·18/·21 and every item in Q298/Q299/Q302 remain blocked:
 they require an assertion/derivation layer for contextual descriptions,
