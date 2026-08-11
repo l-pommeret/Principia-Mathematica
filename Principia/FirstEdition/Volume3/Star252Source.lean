@@ -90,3 +90,20 @@ PM-VERBATIM-END PM3:✱252·371 -/
 /- PM-VERBATIM-BEGIN PM3:✱252·372
 ✱252·372.  ⊢ :: P ∈ Ω .⊃ : sʻP ∈ Ω : E! BʻP .⊃ . NrʻsʻP = NrʻP : ∼E! BʻP .⊃ . NrʻsʻP = NrʻP + i
 PM-VERBATIM-END PM3:✱252·372 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱252·38
+✱252·38.  ⊢ : P ∈ Ω .⊃ . sʻP* = P⃗;P ↦ CʻP
+PM-VERBATIM-END PM3:✱252·38 -/
+/- PM-VERBATIM-BEGIN PM3:✱252·381
+✱252·381.  ⊢ : P ∈ Ω .⊃ . sʻP* ∈ Ω . NrʻsʻP* = NrʻP + i
+PM-VERBATIM-END PM3:✱252·381 -/
+/- PM-VERBATIM-BEGIN PM3:✱252·4
+✱252·4.  ⊢ : P ∈ Ω . λ ⊂ sectʻP . ∃! λ .⊃ . pʻλ ∈ λ
+PM-VERBATIM-END PM3:✱252·4 -/
+/- PM-VERBATIM-BEGIN PM3:✱252·41
+✱252·41.  ⊢ : P ∈ Ω . λ ⊂ sectʻP . ∃! λ .⊃ . sʻλ ∈ λ  [Proof as in ✱252·4]
+PM-VERBATIM-END PM3:✱252·41 -/
+/- PM-VERBATIM-BEGIN PM3:✱252·42
+✱252·42.  ⊢ :: P ∈ Ω . (CnvʻsʻP*)ʻʻσ ⊂ σ : λ ⊂ σ . ∃! λ ∩ CʻsʻP* .⊃ λ . sʻ(λ ∩ CʻsʻP*) ∈ σ : ⊃ . (CnvʻsʻP*)ʻʻσ ⊂ σ
+  [✱250·361 . ✱252·381 . ✱212·322]
+PM-VERBATIM-END PM3:✱252·42 -/
