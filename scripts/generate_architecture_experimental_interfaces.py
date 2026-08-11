@@ -23,6 +23,13 @@ ROOT = Path(__file__).resolve().parents[1]
 FENCE = re.compile(r"```lean\n(.*?)```", re.S)
 SCAN = re.compile(r"\b[0-9a-f]{64}\b")
 
+# Q253/254 contain declaration slices whose opaque signatures use the ✱9
+# syntax foundation. Q252 declares that foundation itself, so it has no import.
+FOUNDATION_IMPORTS = {
+    "Q253": ("Principia.Syntax.Apparent",),
+    "Q254": ("Principia.Syntax.Apparent",),
+}
+
 
 def sha256_text(value: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
@@ -51,12 +58,15 @@ def dependency_stubs(question: dict, registry: dict[str, dict]) -> list[dict]:
     return stubs
 
 
-def render_context(stubs: list[dict]) -> str:
+def render_context(stubs: list[dict], imports: tuple[str, ...]) -> str:
     chunks = [
         "/- Architecture-experimental opaque interface. This file is not a repository import,",
         "   does not establish canonical PM coverage, and cannot be promoted. -/",
         "",
     ]
+    chunks.extend(f"import {module}" for module in imports)
+    if imports:
+        chunks.append("")
     for stub in stubs:
         chunks.extend([
             f"-- OPAQUE-PM-DEPENDENCY {stub['id']} {stub['signature_sha256']}",
@@ -81,6 +91,7 @@ def generate(batch: str) -> None:
     if question.get("audit_status") != "A":
         raise ValueError(f"{batch}: audit is not A; architecture task stays blocked")
     stubs = dependency_stubs(question, load_item_registry(ROOT / "metadata" / "items"))
+    imports = FOUNDATION_IMPORTS.get(batch, ())
     payload = {
         "kind": "pm-architecture-experimental-interface-manifest",
         "batch": batch,
@@ -103,8 +114,9 @@ def generate(batch: str) -> None:
         "prompt_sha256": sha256_text(prompt),
         "review_sha256": sha256_text(review),
         "opaque_dependency_stubs": stubs,
+        **({"foundation_imports": list(imports)} if imports else {}),
     }
-    context = render_context(stubs)
+    context = render_context(stubs, imports)
     manifest_path = ROOT / "aristotle" / "manifests" / f"{batch}-architecture-interface.json"
     context_path = ROOT / "aristotle" / "contexts" / f"{batch}-architecture-interface.lean"
     bundle_path = ROOT / "metadata" / "architecture_interface_bundles" / f"{batch}.json"

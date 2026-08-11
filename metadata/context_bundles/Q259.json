@@ -4,7 +4,7 @@
   "integration_blocked": true,
   "interface_dependencies": [],
   "kind": "pm-isolated-context-bundle",
-  "manifest_sha256": "f0ac5373d147a73272c89a5e69d76967c6d04ee8caf297c05c46397b156e0c2a",
+  "manifest_sha256": "53f311155c9b9656093edd0856acd7aa7c87d35016b0c3e9a2a09a695c388b9f",
   "policy": {
     "canonical_integration_forbidden": true,
     "grants_no_additional_proof_permission": true,
@@ -31,8 +31,8 @@
     "PM1:✱9·25"
   ],
   "source_backfill_required": true,
-  "source_bytes": 24721,
-  "source_sha256": "8d378905d21d9fb7a6d006dd37353db7e67fbfb6f8aea18e6402bebe2a3a52b3",
+  "source_bytes": 28546,
+  "source_sha256": "b2a314b510481d74a69aa65079c2afab3f616d38a548aae900ebc58dc166658b",
   "sources": [
     {
       "bytes": 805,
@@ -42,40 +42,40 @@
       "source_sha256": "4ae57f04fe68659b5afc75e7edf065a229ca1b68ef7ada719797c5011240bb8d"
     },
     {
-      "bytes": 13233,
+      "bytes": 15593,
       "kind": "foundation",
       "path": "Principia/Syntax/Apparent.lean",
-      "slice_sha256": "8e87485a8127e11f0eedac403f562b0014ab5cd042ca43bf8ff08f4ecbf31ed1",
-      "source_sha256": "c974f9a4f99d86942c5e6f916c2115784644a5b8a3272adde99685a544ae22cc"
+      "slice_sha256": "1163140edb784846c156c6c21e73817ad8d5325d775c9ff00146e0a21052708f",
+      "source_sha256": "6fcb430767029efc441380496002f6bafb374746ec59b5a4aeec1dca3fcf8ab6"
     },
     {
-      "bytes": 2339,
+      "bytes": 2566,
       "kind": "foundation",
       "path": "Principia/Syntax/Ordered.lean",
-      "slice_sha256": "36962f22d58a5073e6118eb6bd4317f8b7518e76a1547e809982a2b740d51dc0",
-      "source_sha256": "bad8721f7585ee0fb41487ba3960d9681db6b52e49ebad85094be235f4348766"
+      "slice_sha256": "78f5bb811c12c0990fd4530d1981210897a5ef278835318e334e1e7a101c600f",
+      "source_sha256": "1216031b3fb51e71456c72385e4fe4b147ff87c6ce3c521253bf4416ad2426db"
     },
     {
-      "bytes": 1401,
+      "bytes": 1387,
       "kind": "foundation",
       "path": "Principia/Deduction/System.lean",
-      "slice_sha256": "ad9a24dc5cb24f303e4da377b36a2b3b7111ded291456dbdbe03313ba345cea1",
+      "slice_sha256": "c59624099204ba6efc543229391b6a8b4e3901c89c08d4a6cadf403dbf629d55",
       "source_sha256": "d245ec933fc304e3f9acd04a8f9efaadab6a991e5f76bbdd91f021f08c32ba82"
     },
     {
-      "bytes": 971,
+      "bytes": 564,
       "kind": "foundation",
       "path": "Principia/Deduction/Ordered.lean",
-      "slice_sha256": "9394233450541f75439c62d9b8e27ca443645664e16534c195de407f3ca6d5d2",
-      "source_sha256": "58144710943dbe64b48851280851ff15f1b97487f9f2df75f35b083ea5b46381"
+      "slice_sha256": "e4988c19fe91f872c9e8f04bea83ca1ec3a4af8ecfecd4925c2195265f40f297",
+      "source_sha256": "3e6792db484aa9a6eb87c04adc663b9df0ffbceb0b748af125e39eac7e96f77f"
     },
     {
-      "bytes": 3537,
+      "bytes": 5200,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/FirstOrderPrerequisites.lean",
-      "slice_sha256": "75e63c5e7b3407d1ceb394fbc436ff2288e1134796f3bfec245e173b5ada7754",
-      "source_sha256": "e4ab032f50065e8fb1d7ced953be7fbad2de59d8677da10292e5d7a3d4cd0bc4"
+      "slice_sha256": "0ff61ee3fefb41684b15def2757dc7a584b33c828c64d4e39fd1c3d42b43f374",
+      "source_sha256": "c2574ab169bb2125c73b8da7efba739cb451ff73e0047be8882cfdb3a595279a"
     },
     {
       "bytes": 906,
@@ -86,11 +86,11 @@
       "source_sha256": "2f2b7a3e177c54f6f12af2348eb572ee8d9396935bfce1b7503304d9c8905881"
     },
     {
-      "bytes": 1039,
+      "bytes": 1035,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/Q259ClosedRuleBook.lean",
-      "slice_sha256": "bdf2bd61d2945621cc1f476b01ced14e82c4510f9c77c43a35c67aca124749b4",
+      "slice_sha256": "ddec38cf73b741865953b68d8020e53b6bb9812425a129e91dfcb3d3b1ad650e",
       "source_sha256": "e1d4083aeb8f538b33cd270ec13f91c31a289d723592f40dad23fc094c5a752e"
     }
   ],

@@ -37,8 +37,8 @@
       "metadata_path": "metadata/items/PM1-star-9-Q252.json",
       "signature": "abbrev star_9_01 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
       "signature_sha256": "009cec501533f0f8c6f5cf676ab4664c4eb3839cc7738d980f2576ad5f2a7130",
-      "opaque_declaration": "opaque star_9_01 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
-      "opaque_declaration_sha256": "21aa9f42c5bd434eaca0d9dc93274f7b12b6a1e0f520ef76d40f4da38545184d"
+      "opaque_declaration": "axiom star_9_01 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
+      "opaque_declaration_sha256": "a2a3a6fcce50f317f5f2ffdb9dfd0c8c6c7494bb465ea4275a3c57466240aeb1"
     },
     {
       "id": "PM1:✱9·02",
@@ -46,8 +46,11 @@
       "metadata_path": "metadata/items/PM1-star-9-Q252.json",
       "signature": "abbrev star_9_02 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
       "signature_sha256": "c5ffbb7ba451938e668acb8d9fb39ec0217c003f4e57a1706e519e9084013660",
-      "opaque_declaration": "opaque star_9_02 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
-      "opaque_declaration_sha256": "d1b64e26b6296139f61a6a9600fef525d9c0ad3ef04ba1c580639dc50d4161d6"
+      "opaque_declaration": "axiom star_9_02 {Γ Δ}\n    (φ : PM.Apparent Γ (.elementaryProposition :: Δ)) :\n    PM.FirstOrder Γ Δ\n",
+      "opaque_declaration_sha256": "87a9e33a37f38a81a8bf90bef70b8c06d970c4e4f8c4c19f565089ae5f63173c"
     }
+  ],
+  "foundation_imports": [
+    "Principia.Syntax.Apparent"
   ]
 }
