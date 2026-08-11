@@ -1,0 +1,23 @@
+{
+  "batch": "PM3-STAR250-Q603",
+  "edition": "first",
+  "volume": 3,
+  "source_range": {
+    "printed_pages": "6",
+    "scan_leaves": [14],
+    "canonical_scan": "https://archive.org/details/in.ernet.dli.2015.449496",
+    "leaf_derivatives": [{"scan_leaf":14,"printed_page":6,"uri":"https://archive.org/download/in.ernet.dli.2015.449496/page/n14_w1400.jpg","sha256":"6270a6523705b87d80c94ecfa0c276a41d27f1fc6a004c23a4e48d9baec4b850"}],
+    "project_gutenberg": {"status":"no-volume-III-record-found","checked_via":"https://gutendex.com/books?search=Principia%20Mathematica","checked_on":"2026-08-11"}
+  },
+  "witnesses": ["PM3-1913-IA-DLI-SCAN"],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "source-only-no-formal-target",
+  "items": [
+    {"id":"PM3:✱250·103","kind":"derived-proposition","printed":"✱250·103. ⊢ : P ∈ Bord .≡ . Pₚₒ ∈ Bord [✱250·102 . ✱211·17]","printed_page":6,"scan_leaf":14,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and printed citation only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-III-series-relation-syntax-or-derivation-layer","printed_dependencies":["PM3:✱250·102","PM1:✱211·17"],"normalized_dependencies":[]},
+    {"id":"PM3:✱250·104","kind":"derived-proposition","printed":"✱250·104. ⊢ . Bord ⊂ RlʻJ","printed_page":6,"scan_leaf":14,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and printed demonstration skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-III-series-relation-syntax-or-derivation-layer","printed_dependencies":["PM3:✱250·1","PM1:✱205·194"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-250-104.txt"},
+    {"id":"PM3:✱250·105","kind":"derived-proposition","printed":"✱250·105. ⊢ : P ∈ Bord .⊃ . Pₚₒ ⊂ J [✱250·103·104]","printed_page":6,"scan_leaf":14,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and printed citation only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-III-series-relation-syntax-or-derivation-layer","printed_dependencies":["PM3:✱250·103","PM3:✱250·104"],"normalized_dependencies":[]},
+    {"id":"PM3:✱250·11","kind":"derived-proposition","printed":"✱250·11. ⊢ :: P ∈ connex .⊃ :: P ∈ Bord .≡ : ∃! α ∩ CʻP .⊃ₐ . E! minₚʻα : ≡ : α ⊂ CʻP . ∃! α .⊃ₐ . E! minₚʻα [✱250·1·101 . ✱205·32]","printed_page":6,"scan_leaf":14,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and printed citation only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-III-series-relation-syntax-or-derivation-layer","printed_dependencies":["PM3:✱250·1","PM3:✱250·101","PM1:✱205·32"],"normalized_dependencies":[]},
+    {"id":"PM3:✱250·111","kind":"derived-proposition","printed":"✱250·111. ⊢ :: P ∈ Bord .⊃ : P ∈ connex .≡ . minₚ ∈ 1 → Cls","printed_page":6,"scan_leaf":14,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and p. 6-only demonstration skeleton; the demonstration continues on p. 7 and no missing material is supplied.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-III-series-relation-syntax-or-derivation-layer","printed_dependencies":["PM3:✱250·1","PM1:✱71·1","PM1:✱54·4"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-250-111.txt"}
+  ],
+  "ci_evidence": {"commit":"pending","run":"pending","conclusion":"pending"}
+}
