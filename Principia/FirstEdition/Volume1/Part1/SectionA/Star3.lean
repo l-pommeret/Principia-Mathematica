@@ -474,4 +474,140 @@ Dem.
 ⊢ . (1) . (2) . ✱2·83 . ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱3·48 -/
 
+/-- ✱3·44. -/
+theorem star_3_44 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)) ⊃ₚ ((q ∨ₚ r) ⊃ₚ p)) := by
+  have syll : ∀ A B C : PM.Elementary Γ, (⊢ₚ (A ⊃ₚ B)) →
+      (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C h₁ h₂
+    exact PM.Derivation.detach h₂ (PM.Derivation.detach h₁
+      (PM.Derivation.detach (star_3_33 A B C)
+        (star_3_3 (A ⊃ₚ B) (B ⊃ₚ C) (A ⊃ₚ C))))
+  have printedSyll : ⊢ₚ ((((∼ₚ q) ⊃ₚ r) ∧ₚ (r ⊃ₚ p)) ⊃ₚ ((∼ₚ q) ⊃ₚ p)) :=
+    star_3_33 (∼ₚ q) r p
+  have line1 : ⊢ₚ ((((∼ₚ q) ⊃ₚ r) ∧ₚ (r ⊃ₚ p)) ⊃ₚ ((q ⊃ₚ p) ⊃ₚ p)) :=
+    syll _ _ _ printedSyll (PM.FirstEdition.Volume1.Star2.star_2_6 q p)
+  have exported : ⊢ₚ (((∼ₚ q) ⊃ₚ r) ⊃ₚ ((r ⊃ₚ p) ⊃ₚ ((q ⊃ₚ p) ⊃ₚ p))) :=
+    PM.Derivation.detach line1
+      (star_3_3 ((∼ₚ q) ⊃ₚ r) (r ⊃ₚ p) ((q ⊃ₚ p) ⊃ₚ p))
+  have commInner : ⊢ₚ (((∼ₚ q) ⊃ₚ r) ⊃ₚ ((q ⊃ₚ p) ⊃ₚ ((r ⊃ₚ p) ⊃ₚ p))) :=
+    syll _ _ _ exported (PM.FirstEdition.Volume1.Star2.star_2_04 (r ⊃ₚ p) (q ⊃ₚ p) p)
+  have commOuter : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (((∼ₚ q) ⊃ₚ r) ⊃ₚ ((r ⊃ₚ p) ⊃ₚ p))) :=
+    PM.Derivation.detach commInner
+      (PM.FirstEdition.Volume1.Star2.star_2_04 ((∼ₚ q) ⊃ₚ r) (q ⊃ₚ p) ((r ⊃ₚ p) ⊃ₚ p))
+  have commInner₂ : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ ((r ⊃ₚ p) ⊃ₚ (((∼ₚ q) ⊃ₚ r) ⊃ₚ p))) :=
+    syll _ _ _ commOuter (PM.FirstEdition.Volume1.Star2.star_2_04 ((∼ₚ q) ⊃ₚ r) (r ⊃ₚ p) p)
+  have line2 : ⊢ₚ (((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)) ⊃ₚ (((∼ₚ q) ⊃ₚ r) ⊃ₚ p)) :=
+    PM.Derivation.detach commInner₂
+      (star_3_31 (q ⊃ₚ p) (r ⊃ₚ p) (((∼ₚ q) ⊃ₚ r) ⊃ₚ p))
+  have transfer : ⊢ₚ ((((∼ₚ q) ⊃ₚ r) ⊃ₚ p) ⊃ₚ ((q ∨ₚ r) ⊃ₚ p)) :=
+    PM.Derivation.detach (PM.FirstEdition.Volume1.Star2.star_2_53 q r)
+      (PM.Derivation.detach (star_3_33 (q ∨ₚ r) ((∼ₚ q) ⊃ₚ r) p)
+        (star_3_3 ((q ∨ₚ r) ⊃ₚ ((∼ₚ q) ⊃ₚ r)) (((∼ₚ q) ⊃ₚ r) ⊃ₚ p) ((q ∨ₚ r) ⊃ₚ p)))
+  exact syll _ _ _ line2 transfer
+
+/-- ✱3·45. The two uses of ✱3·3 are the documented implicit exportations. -/
+theorem star_3_45 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((p ∧ₚ r) ⊃ₚ (q ∧ₚ r))) := by
+  have printedSyll : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r)))) :=
+    PM.Derivation.detach (star_3_33 p q (∼ₚ r))
+      (star_3_3 (p ⊃ₚ q) (q ⊃ₚ (∼ₚ r)) (p ⊃ₚ (∼ₚ r)))
+  have transp : ⊢ₚ (((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ
+        ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r))))) :=
+    PM.FirstEdition.Volume1.Star2.star_2_16 (q ⊃ₚ (∼ₚ r)) (p ⊃ₚ (∼ₚ r))
+  exact PM.Derivation.detach transp (PM.Derivation.detach printedSyll
+    (PM.Derivation.detach
+      (star_3_33 (p ⊃ₚ q) ((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r)))
+        ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r)))))
+      (star_3_3 ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r))))
+        (((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r)))))
+        ((p ⊃ₚ q) ⊃ₚ ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r)))))))
+
+/-- ✱3·47. ✱3·2 is the documented equivalence-packaging relaxation in both
+context branches; ✱3·03 remains the printed nonempty-context adjunction. -/
+theorem star_3_47 {Γ} (p q r s : PM.Elementary Γ) :
+    ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (r ∧ₚ s))) := by
+  have syllOf :
+      (∀ A B : PM.Elementary Γ, (⊢ₚ A) → (⊢ₚ B) → (⊢ₚ (A ∧ₚ B))) →
+      ∀ A B C : PM.Elementary Γ, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro adjoin A B C h₁ h₂
+    have k₁ : ⊢ₚ ((((A ⊃ₚ B) ∧ₚ (B ⊃ₚ C))) ⊃ₚ (A ⊃ₚ B)) := star_3_26 (A ⊃ₚ B) (B ⊃ₚ C)
+    have k₂ : ⊢ₚ ((((A ⊃ₚ B) ∧ₚ (B ⊃ₚ C))) ⊃ₚ (B ⊃ₚ C)) := star_3_27 (A ⊃ₚ B) (B ⊃ₚ C)
+    have k₃ : ⊢ₚ ((((A ⊃ₚ B) ∧ₚ (B ⊃ₚ C))) ⊃ₚ (A ⊃ₚ C)) :=
+      PM.Derivation.detach k₂ (PM.Derivation.detach k₁
+        (PM.FirstEdition.Volume1.Star2.star_2_83 ((A ⊃ₚ B) ∧ₚ (B ⊃ₚ C)) A B C))
+    exact PM.Derivation.detach (adjoin _ _ h₁ h₂) k₃
+  have printed :
+      (∀ A B : PM.Elementary Γ, (⊢ₚ A) → (⊢ₚ B) → (⊢ₚ (A ∧ₚ B))) →
+      (∀ W M : PM.Elementary Γ, (⊢ₚ M) → (⊢ₚ (W ⊃ₚ M))) →
+      ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (r ∧ₚ s))) := by
+    intro adjoin carry
+    have syll := syllOf adjoin
+    have first : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ (p ⊃ₚ r)) := star_3_26 (p ⊃ₚ r) (q ⊃ₚ s)
+    have fact₁ : ⊢ₚ ((p ⊃ₚ r) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (r ∧ₚ q))) := star_3_45 p r q
+    have firstFact : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (r ∧ₚ q))) :=
+      syll _ _ _ first fact₁
+    have perm₁ : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((r ∧ₚ q) ⊃ₚ (q ∧ₚ r))) :=
+      carry _ _ (star_3_22 r q)
+    have line1 : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (q ∧ₚ r))) :=
+      PM.Derivation.detach perm₁ (PM.Derivation.detach firstFact
+        (PM.FirstEdition.Volume1.Star2.star_2_83 ((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) (p ∧ₚ q) (r ∧ₚ q) (q ∧ₚ r)))
+    have second : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ (q ⊃ₚ s)) := star_3_27 (p ⊃ₚ r) (q ⊃ₚ s)
+    have fact₂ : ⊢ₚ ((q ⊃ₚ s) ⊃ₚ ((q ∧ₚ r) ⊃ₚ (s ∧ₚ r))) := star_3_45 q s r
+    have secondFact : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((q ∧ₚ r) ⊃ₚ (s ∧ₚ r))) :=
+      syll _ _ _ second fact₂
+    have perm₂ : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((s ∧ₚ r) ⊃ₚ (r ∧ₚ s))) :=
+      carry _ _ (star_3_22 s r)
+    have line2 : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((q ∧ₚ r) ⊃ₚ (r ∧ₚ s))) :=
+      PM.Derivation.detach perm₂ (PM.Derivation.detach secondFact
+        (PM.FirstEdition.Volume1.Star2.star_2_83 ((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) (q ∧ₚ r) (s ∧ₚ r) (r ∧ₚ s)))
+    have joined := adjoin _ _ line1 line2
+    have readBack₁ := PM.Derivation.detach joined
+      (star_3_26 (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (q ∧ₚ r)))
+        (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((q ∧ₚ r) ⊃ₚ (r ∧ₚ s))))
+    have readBack₂ := PM.Derivation.detach joined
+      (star_3_27 (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (q ∧ₚ r)))
+        (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((q ∧ₚ r) ⊃ₚ (r ∧ₚ s))))
+    exact PM.Derivation.detach readBack₂ (PM.Derivation.detach readBack₁
+      (PM.FirstEdition.Volume1.Star2.star_2_83 ((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) (p ∧ₚ q) (q ∧ₚ r) (r ∧ₚ s)))
+  cases Γ with
+  | nil =>
+      have adjoin : ∀ A B : PM.Elementary [], (⊢ₚ A) → (⊢ₚ B) → (⊢ₚ (A ∧ₚ B)) :=
+        fun A B hA hB => PM.Derivation.detach hB (PM.Derivation.detach hA (star_3_2 A B))
+      exact printed adjoin fun W M hM => syllOf adjoin _ _ _
+        (PM.Derivation.detach hM (star_3_2 M W)) (star_3_26 M W)
+  | cons τ Δ =>
+      have adjoin : ∀ A B : PM.Elementary (τ :: Δ), (⊢ₚ A) → (⊢ₚ B) → (⊢ₚ (A ∧ₚ B)) :=
+        fun A B hA hB => (star_3_03 (List.cons_ne_nil τ Δ)
+          ⟨PM.Formation.ofElementary A, hA⟩ ⟨PM.Formation.ofElementary B, hB⟩).derivation
+      exact printed adjoin fun W M hM => syllOf adjoin _ _ _
+        (PM.Derivation.detach hM (star_3_2 M W)) (star_3_26 M W)
+
+/-- ✱3·48. -/
+theorem star_3_48 {Γ} (p q r s : PM.Elementary Γ) :
+    ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (r ∨ₚ s))) := by
+  have syll : ∀ A B C : PM.Elementary Γ, (⊢ₚ (A ⊃ₚ B)) →
+      (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C h₁ h₂
+    exact PM.Derivation.detach h₁ (PM.Derivation.detach h₂
+      (PM.FirstEdition.Volume1.Star1.star_1_6 (∼ₚ A) B C))
+  have second : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ (q ⊃ₚ s)) := star_3_27 (p ⊃ₚ r) (q ⊃ₚ s)
+  have sum₁ : ⊢ₚ ((q ⊃ₚ s) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ s))) :=
+    PM.FirstEdition.Volume1.Star1.star_1_6 p q s
+  have secondSum : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ s))) := syll _ _ _ second sum₁
+  have perm₁ : ⊢ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (s ∨ₚ p))) :=
+    PM.Derivation.detach (PM.FirstEdition.Volume1.Star1.star_1_4 p s)
+      (PM.FirstEdition.Volume1.Star1.star_1_6 (∼ₚ (p ∨ₚ q)) (p ∨ₚ s) (s ∨ₚ p))
+  have line1 : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (s ∨ₚ p))) := syll _ _ _ secondSum perm₁
+  have first : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ (p ⊃ₚ r)) := star_3_26 (p ⊃ₚ r) (q ⊃ₚ s)
+  have sum₂ : ⊢ₚ ((p ⊃ₚ r) ⊃ₚ ((s ∨ₚ p) ⊃ₚ (s ∨ₚ r))) :=
+    PM.FirstEdition.Volume1.Star1.star_1_6 s p r
+  have firstSum : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((s ∨ₚ p) ⊃ₚ (s ∨ₚ r))) := syll _ _ _ first sum₂
+  have perm₂ : ⊢ₚ (((s ∨ₚ p) ⊃ₚ (s ∨ₚ r)) ⊃ₚ ((s ∨ₚ p) ⊃ₚ (r ∨ₚ s))) :=
+    PM.Derivation.detach (PM.FirstEdition.Volume1.Star1.star_1_4 s r)
+      (PM.FirstEdition.Volume1.Star1.star_1_6 (∼ₚ (s ∨ₚ p)) (s ∨ₚ r) (r ∨ₚ s))
+  have line2 : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((s ∨ₚ p) ⊃ₚ (r ∨ₚ s))) := syll _ _ _ firstSum perm₂
+  exact PM.Derivation.detach line2 (PM.Derivation.detach line1
+    (PM.FirstEdition.Volume1.Star2.star_2_83 ((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) (p ∨ₚ q) (s ∨ₚ p) (r ∨ₚ s)))
+
 end PM.FirstEdition.Volume1.Star3
