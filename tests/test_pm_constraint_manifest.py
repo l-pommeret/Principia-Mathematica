@@ -22,6 +22,7 @@ def item(identifier, declaration, dependencies=(), status="kernel-checked"):
 class ConstraintManifestTests(unittest.TestCase):
     def setUp(self):
         self.registry = {
+            "PM1:✱1·3": item("PM1:✱1·3", "PM.star_1_3"),
             "PM1:✱2·05": item("PM1:✱2·05", "PM.star_2_05", ["PM1:✱1·2"]),
             "PM1:✱2·06": item("PM1:✱2·06", "PM.star_2_06", ["PM1:✱1·2"]),
             "PM1:✱1·2": item("PM1:✱1·2", "PM.star_1_2"),
@@ -150,6 +151,17 @@ class ConstraintManifestTests(unittest.TestCase):
         self.assertIn("PM1:✱1·2", manifest["allowed_pm_items"])
         self.assertEqual(manifest["global_conventions"], ["PM1:✱1·2"])
         self.assertEqual(len(manifest["proof_permissions"]), 1)
+
+    def test_reference_bracket_before_assertion_starts_a_demonstration_line(self):
+        skeleton = parse_demonstration(
+            "[Add . Syll] ⊢ : p ⊃ q (1)\n⊢ . (1) . ⊃ ⊢ . Prop",
+            current_item="PM1:✱2·85",
+        )
+        manifest = compile_manifest(skeleton, self.registry)
+        self.assertEqual(
+            manifest["allowed_pm_items"],
+            ["PM1:✱1·3", "PM1:✱2·05", "PM1:✱2·06"],
+        )
 
 
 if __name__ == "__main__":

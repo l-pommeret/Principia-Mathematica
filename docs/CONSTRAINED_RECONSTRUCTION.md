@@ -88,3 +88,8 @@ set differences—dependencies added beyond print and printed citations left
 unused—and requires a tracked strict-attempt audit plus an editorial note.
 Without that record, the longstanding equality between printed and normalized
 Lean dependencies remains mandatory.
+
+A future batch may be source-collated before its dependencies are available by
+setting a reviewed `generation_status` beginning with `blocked-on-`. The
+reproducer then requires no manifest/context/prompt yet. Removing that gate
+causes all generated artifacts to become mandatory immediately.

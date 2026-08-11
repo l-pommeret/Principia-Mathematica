@@ -77,7 +77,9 @@ def step_blocks(source: str) -> list[str]:
     current: list[str] | None = None
     for line in source.splitlines():
         stripped = line.strip()
-        if stripped.startswith("⊢"):
+        if stripped.startswith("⊢") or (
+            current is None and stripped.startswith("[") and "⊢" in stripped
+        ):
             if current:
                 blocks.append(current)
             current = [stripped]

@@ -1,0 +1,36 @@
+{
+  "kind": "pm-constrained-batch-spec",
+  "generation_status": "blocked-on-Q219-kernel-context",
+  "volume": 1,
+  "prompt_path": "aristotle/Q220.md",
+  "items": [
+    {
+      "id": "PM1:✱2·82",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-2-82.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_82",
+      "lean_target": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_82 {Γ} (p q r s : PM.Elementary Γ) :\n    ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (((p ∨ₚ ∼ₚ r) ∨ₚ s) ⊃ₚ ((p ∨ₚ q) ∨ₚ s))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+      "global_conventions": ["PM1:✱1·11"]
+    },
+    {
+      "id": "PM1:✱2·83",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-2-83.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_83",
+      "lean_target": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_83 {Γ} (p q r s : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ\n      ((p ⊃ₚ (r ⊃ₚ s)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ s)))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+      "global_conventions": ["PM1:✱1·11"]
+    },
+    {
+      "id": "PM1:✱2·85",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-2-85.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_85",
+      "lean_target": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_85 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ (p ∨ₚ (q ⊃ₚ r))) := by\n  -- preserve printed lines (1), (2), Comm and final ✱2·54\n\nend PM.FirstEdition.Volume1.Star2",
+      "global_conventions": ["PM1:✱1·11"]
+    },
+    {
+      "id": "PM1:✱2·86",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-2-86.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_86",
+      "lean_target": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_86 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+      "global_conventions": ["PM1:✱1·11"]
+    }
+  ]
+}

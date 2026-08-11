@@ -24,6 +24,11 @@ def verify(root: Path = ROOT) -> int:
         spec = json.loads(spec_path.read_text(encoding="utf-8"))
         if spec.get("kind") != "pm-constrained-batch-spec":
             raise BatchVerificationError(f"invalid batch spec {spec_path}")
+        generation_status = spec.get("generation_status", "ready")
+        if generation_status != "ready":
+            if not isinstance(generation_status, str) or not generation_status.startswith("blocked-on-"):
+                raise BatchVerificationError(f"invalid generation status in {spec_path}")
+            continue
         stem = spec_path.stem
         skeletons = []
         targets = {}
