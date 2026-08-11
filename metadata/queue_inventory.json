@@ -19,7 +19,7 @@
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
     "catalogued_items_without_campaign_question": 147,
-    "locally_scheduler_eligible": 2
+    "locally_scheduler_eligible": 0
   },
   "question_statuses": {
     "audit": {
@@ -30,11 +30,13 @@
       "prepared-needs-kernel-context": 28
     },
     "aristotle": {
-      "complete": 27,
+      "complete": 28,
       "complete-relaxed-printed-gaps": 1,
       "complete-relaxed-result-not-integrated": 1,
       "missing": 2,
-      "not-submitted": 30
+      "needs-review": 1,
+      "not-submitted": 13,
+      "submitted": 15
     }
   },
   "pm_section_coverage": {
@@ -69,18 +71,7 @@
       "PM1:✱9": 26
     }
   },
-  "local_scheduler_candidates": [
-    {
-      "question": "Q9001",
-      "kind": "retry",
-      "prompt_path": "aristotle/followups/Q234-kernel-hygiene-retry.md"
-    },
-    {
-      "question": "Q9002",
-      "kind": "retry",
-      "prompt_path": "aristotle/followups/Q238-kernel-hygiene-retry.md"
-    }
-  ],
+  "local_scheduler_candidates": [],
   "batches": {
     "Q217": {
       "generation_status": "ready",
