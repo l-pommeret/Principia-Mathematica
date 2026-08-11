@@ -36,3 +36,48 @@ PM-VERBATIM-END PM1:✱13·14 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·15
 ✱13·15.  ⊢ . x = x
 PM-VERBATIM-END PM1:✱13·15 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·16
+✱13·16.  ⊢ : x = y .≡ . y = x
+PM-VERBATIM-END PM1:✱13·16 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·17
+✱13·17.  ⊢ : x = y . y = z .⊃ . x = z
+PM-VERBATIM-END PM1:✱13·17 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·171
+✱13·171.  ⊢ : x = y . x = z .⊃ . y = z
+PM-VERBATIM-END PM1:✱13·171 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·172
+✱13·172.  ⊢ : y = x . z = x .⊃ . y = z
+PM-VERBATIM-END PM1:✱13·172 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·18
+✱13·18.  ⊢ : x = y . x ≠ z .⊃ . y ≠ z
+PM-VERBATIM-END PM1:✱13·18 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·181
+✱13·181.  ⊢ : x = y . y ≠ z .⊃ . x ≠ z
+PM-VERBATIM-END PM1:✱13·181 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·182
+✱13·182.  ⊢ :: x = y .⊃ : z = x .≡ . z = y
+PM-VERBATIM-END PM1:✱13·182 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·183
+✱13·183.  ⊢ :: x = y .≡ : z = x .≡z . z = y
+PM-VERBATIM-END PM1:✱13·183 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·19
+✱13·19.  ⊢ . (∃y). y = x
+PM-VERBATIM-END PM1:✱13·19 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·191
+✱13·191.  ⊢ :: y = x .⊃y . φy : ≡ . φx
+PM-VERBATIM-END PM1:✱13·191 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·192
+✱13·192.  ⊢ :: (∃c) : x = b .≡x . x = c : ψc : ≡ . ψb
+PM-VERBATIM-END PM1:✱13·192 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·193
+✱13·193.  ⊢ : φx . x = y .≡ . φy . x = y
+PM-VERBATIM-END PM1:✱13·193 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·194
+✱13·194.  ⊢ : φx . x = y .≡ . φx . φy . x = y
+PM-VERBATIM-END PM1:✱13·194 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·195
+✱13·195.  ⊢ : (∃y). y = x . φy .≡ . φx
+PM-VERBATIM-END PM1:✱13·195 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·196
+✱13·196.  ⊢ :: ∼φx .≡ : φy .⊃y . y ≠ x
+PM-VERBATIM-END PM1:✱13·196 -/
