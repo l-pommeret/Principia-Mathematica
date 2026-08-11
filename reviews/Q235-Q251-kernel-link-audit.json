@@ -1,0 +1,24 @@
+{
+  "kind": "pm-precompiled-kernel-link-audit",
+  "policy": "A clean archive is accepted-precompiled only. It becomes transplantable only after every referenced declaration is remapped one-to-one to a repository kernel constant and remote CI checks the transplant.",
+  "batches": [
+    {"batch":"Q235","archive_sha256":"c913cf6646f85108fa7fa0b8d3ec486f854099891a03927bce6900a1e5a0e34a","status":"not-linkable","reason":"Target imports archive-local PM/Star4Context.lean rather than repository kernel declarations."},
+    {"batch":"Q236","archive_sha256":"b6f9012a536cbdf1f9d5087827baae8c0b6afcc0aefdec3dfd96a72f8969c157","status":"not-linkable","reason":"Target supplies local orMono, conjMono, equivI/equivE and Star4 dependencies over archive-local Basic."},
+    {"batch":"Q237","archive_sha256":"877c04453e88e2a3bb9fba25d3af708b93b85b25b050e61f6b9390bf76300266","status":"not-linkable","reason":"Archive recreates Elementary, iff, Star2/Star3 rules and Star4 helpers."},
+    {"batch":"Q238","archive_sha256":"c1b5e695e6adabf2a5ea6a1598ce652ab2b5ee9295e84132ea748ad8232ddc92","status":"rejected-retry-Q9002","reason":"Classical namespace occurs in PM/Star2.lean outside generated Main harness."},
+    {"batch":"Q239","archive_sha256":"d26396103cf244a5b7923ebc57d3001708e3b5029182e1cb99eba6697f8a0807","status":"not-linkable","reason":"Archive adds Proof.Equiv/EquivComm and archive-local prior Star4 declarations."},
+    {"batch":"Q240","archive_sha256":"78675acdd5dac3fa85f1db077dfadf9ab83f4bcda0980c604a735873a5b37c95","status":"not-linkable","reason":"Archive imports local Star4 and includes an extra classAnalogue_star_4_78_fails theorem."},
+    {"batch":"Q241","archive_sha256":"57e593d645fd99bf55f2c7fd9c514c7fd4d4fed1c070a09cf62e19f02802ff16","status":"rejected-retry-needed","reason":"Target Q241.lean contains sorry."},
+    {"batch":"Q242","archive_sha256":"d800e5210b56ad2df8266f3c855470d689f42dd53d7da39649fb400d083c21b4","status":"not-linkable","reason":"Returned PM Star2–Star5 files form an archive-local context; no remap is supplied."},
+    {"batch":"Q243","archive_sha256":"903ce265b7702c91841192347949fa3b9e891f3929d99bfc1ae8b16945e2b85b","status":"not-linkable","reason":"Target redefines Elementary.imp and builds Derived/Star2 rules locally."},
+    {"batch":"Q244","archive_sha256":"733a0c48d42279bac5adc9437f8c1e53c61b87de57cc59ae0ca6fdf324182133","status":"not-linkable","reason":"Target imports archive-local Star4 and the archive supplies Star3–Star5 modules."},
+    {"batch":"Q245","status":"remote-active","reason":"No immutable terminal archive yet."},
+    {"batch":"Q246","status":"remote-active","reason":"No immutable terminal archive yet."},
+    {"batch":"Q247","archive_sha256":"22ce1774785fe79f2be9c31bf0be5f942f8f121359be0161defb433375317287","status":"accepted-precompiled-not-linkable","reason":"Hygiene scan is clean, but PMDeduction/PMProof/PMSoundness/PMStar3–5/PMSyntax are archive-local modules."},
+    {"batch":"Q248","archive_sha256":"e32388eb7fdbbf0476a98c261b6ce55c07f5df1bf1fd7af8b35da6373c29b3ff","status":"retry-active","reason":"Initial clean precompiled output is separately recorded; retry project is active."},
+    {"batch":"Q249","archive_sha256":"17bf4b8a252f3836eb6f63590c47d9ee2f588d0502f8522c52b96b181098e752","status":"accepted-precompiled-not-linkable","reason":"Hygiene scan is clean, but PM Adequacy/Language/Star2–5 are archive-local modules."},
+    {"batch":"Q250","status":"remote-active","reason":"No immutable terminal archive yet."},
+    {"batch":"Q251","archive_sha256":"663a710ac2c3b8a46d077ce35d0e28f08d86ed7a3c275033b19d72cdba01a164","status":"accepted-precompiled-not-linkable","reason":"Hygiene scan is clean, but PM Language/Proof/Rules/Star4/Star5 are archive-local modules."}
+  ],
+  "summary": {"linkable": [], "remote_active": ["Q245","Q246","Q248","Q250"], "rejected": ["Q238","Q241"], "blocked_precompiled": ["Q235","Q236","Q237","Q239","Q240","Q242","Q243","Q244","Q247","Q249","Q251"]}
+}
