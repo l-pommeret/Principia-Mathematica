@@ -131,6 +131,26 @@ PM-VERBATIM-END PM1:✱4·32 -/
 The above are the associative laws for multiplication and addition.
 PM-VERBATIM-END PM1:✱4·33 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱4·34
+✱4·34.  p . q . r .=. (p . q) . r   Df
+PM-VERBATIM-END PM1:✱4·34 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·36
+✱4·36.  ⊢ : p ≡ q . ⊃ : p . r . ≡ . q . r   [Fact . ✱3·47]
+PM-VERBATIM-END PM1:✱4·36 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·37
+✱4·37.  ⊢ : p ≡ q . ⊃ : p ∨ r . ≡ . q ∨ r   [Sum . ✱3·47]
+PM-VERBATIM-END PM1:✱4·37 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·38
+✱4·38.  ⊢ : p ≡ r . q ≡ s . ⊃ : p . q . ≡ . r . s   [✱3·47 . ✱4·32 . ✱3·22]
+PM-VERBATIM-END PM1:✱4·38 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·39
+✱4·39.  ⊢ : p ≡ r . q ≡ s . ⊃ : p ∨ q . ≡ . r ∨ s   [✱3·48 . ✱4·32 . ✱3·22]
+PM-VERBATIM-END PM1:✱4·39 -/
+
 namespace PM.Elementary
 
 /-- PM I (1910), p. 120, ✱4·01: equivalence is an object-language
