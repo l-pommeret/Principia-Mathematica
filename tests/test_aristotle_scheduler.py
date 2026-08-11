@@ -141,6 +141,17 @@ class SchedulerTests(unittest.TestCase):
         self.assertEqual(rows[0]["qid"], "Q229")
         self.assertEqual(rows[1]["qid"], None)
 
+    def test_ci_run_dispatches_only_main(self):
+        emitted = []
+        completed = subprocess.CompletedProcess([], 0, "https://example.test/run\n", "")
+        with mock.patch.object(campaign, "run", return_value=completed) as run, \
+             mock.patch.object(campaign, "emit", side_effect=emitted.append):
+            campaign.ci_run("main")
+        run.assert_called_once_with(["gh", "workflow", "run", "lean.yml", "--ref", "main"])
+        self.assertEqual(emitted[-1]["workflow"], "lean.yml")
+        with self.assertRaisesRegex(campaign.CampaignError, "restricted to main"):
+            campaign.ci_run("feature")
+
     def test_record_preserves_nested_manifest_path(self):
         pid = "10000000-0000-0000-0000-000000000001"
         data = {"questions": {"Q1": {}}}

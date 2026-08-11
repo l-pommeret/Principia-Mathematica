@@ -676,6 +676,15 @@ def ci_latest() -> None:
     emit(latest_ci())
 
 
+def ci_run(ref: str) -> None:
+    """Dispatch the repository's manual Lean checkpoint through the wrapper."""
+    if ref != "main":
+        raise CampaignError("CI dispatch is restricted to main")
+    completed = run(["gh", "workflow", "run", "lean.yml", "--ref", ref])
+    emit({"ok": True, "workflow": "lean.yml", "ref": ref,
+          "dispatch": completed.stdout.strip()})
+
+
 def ci_view(run_id: str | None) -> None:
     selected = run_id or str(latest_ci()["databaseId"])
     fields = GH_FIELDS + ",jobs"
@@ -748,6 +757,8 @@ def parser() -> argparse.ArgumentParser:
     ci = groups.add_parser("ci")
     ci_commands = ci.add_subparsers(dest="command", required=True)
     ci_commands.add_parser("latest")
+    ci_run_parser = ci_commands.add_parser("run")
+    ci_run_parser.add_argument("--ref", default="main")
     view = ci_commands.add_parser("view")
     view.add_argument("run_id", nargs="?")
     logs = ci_commands.add_parser("logs")
@@ -787,6 +798,8 @@ def main(argv: list[str] | None = None) -> int:
             aristotle_schedule(dry_run=args.dry_run, cap=args.cap)
         elif (args.group, args.command) == ("ci", "latest"):
             ci_latest()
+        elif (args.group, args.command) == ("ci", "run"):
+            ci_run(args.ref)
         elif (args.group, args.command) == ("ci", "view"):
             ci_view(args.run_id)
         elif (args.group, args.command) == ("ci", "logs"):
