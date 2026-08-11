@@ -44,3 +44,18 @@ PM-VERBATIM-END PM1:✱14·111 -/
 /- PM-VERBATIM-BEGIN PM1:✱14·112
 ✱14·112. ⊢ : f{(℩x)(φx), (℩x)(ψx)} .≡ : (∃b,c) : φx .≡ₓ. x = b : ψx .≡ₓ. x = c : f(b,c)
 PM-VERBATIM-END PM1:✱14·112 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·113
+✱14·113. ⊢ : [(℩x)(ψx)] . f{(℩x)(φx), (℩x)(ψx)} .≡ . f{(℩x)(φx), (℩x)(ψx)}  [✱14·111·112]
+PM-VERBATIM-END PM1:✱14·113 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·12
+✱14·12. ⊢ : E!(℩x)(φx) .⊃ : φx . φy .⊃ₓ,ᵧ. x = y
+PM-VERBATIM-END PM1:✱14·12 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·121
+✱14·121. ⊢ : φx .≡ₓ. x = b : φx .≡ₓ. x = c : ⊃ . b = c
+PM-VERBATIM-END PM1:✱14·121 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·122
+✱14·122. ⊢ : φx .≡ₓ. x = b : ≡ : φx .⊃ₓ. x = b : φb : ≡ : φx .⊃ₓ. x = b : (∃x). φx
+PM-VERBATIM-END PM1:✱14·122 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·123
+✱14·123. ⊢ : φ(z,w) .≡_{z,w}. z = x . w = y : ≡ : φ(z,w) .⊃_{z,w}. z = x . w = y : φ(x,y) : ≡ : φ(z,w) .⊃_{z,w}. z = x . w = y : (∃z,w). φ(z,w)
+PM-VERBATIM-END PM1:✱14·123 -/
