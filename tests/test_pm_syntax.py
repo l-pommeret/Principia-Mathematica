@@ -113,6 +113,27 @@ class PMDotSyntaxTests(unittest.TestCase):
         self.assertEqual(parsed["children"][0]["tag"], "or")
         self.assertEqual(parsed["children"][1]["value"], "r")
 
+    def test_star_3_12_printed_marks_are_left_associated(self):
+        parsed = statement_shape(
+            "✱3·12.  ⊢ : ∼p . ∨ . ∼q . ∨ . p . q "
+            "[✱2·11 (∼p ∨ ∼q)/p]"
+        )
+        asserted = parsed["children"][0]
+        self.assertEqual(asserted["tag"], "or")
+        self.assertEqual(asserted["children"][0]["tag"], "or")
+        self.assertEqual(asserted["children"][1]["tag"], "and")
+
+    def test_star_3_2_printed_marks_are_right_nested_implications(self):
+        parsed = statement_shape(
+            "✱3·2.  ⊢ : p . ⊃ : q . ⊃ . p . q [✱3·12]"
+        )
+        asserted = parsed["children"][0]
+        self.assertEqual(asserted["tag"], "implies")
+        self.assertEqual(asserted["children"][0]["value"], "p")
+        self.assertEqual(asserted["children"][1]["tag"], "implies")
+        self.assertEqual(asserted["children"][1]["children"][0]["value"], "q")
+        self.assertEqual(asserted["children"][1]["children"][1]["tag"], "and")
+
     def test_unmarked_implication_remains_right_associated(self):
         parsed = shape("p ⊃ q ⊃ r")
         self.assertEqual(parsed["tag"], "implies")
