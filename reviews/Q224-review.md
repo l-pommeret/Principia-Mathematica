@@ -7,5 +7,7 @@ p. 118, leaf 140; SHA-256
 Scopes: `((p→q)·(q→r))→(p→r)`,
 `((q→r)·(p→q))→(p→r)`, and `(p·(p→q))→q`. In particular,
 the first two instantiate the ✱3·02 chain definition; they are not nested
-right-associated implications. No print defect is established. Confidence
+right-associated implications. The canonical scan has the opening bracket in
+✱3·34's `[Syll.Imp]`; Wikisource omits it, a separately recorded digital-witness
+error with no AST or PM emendation. No PM print defect is established. Confidence
 high.

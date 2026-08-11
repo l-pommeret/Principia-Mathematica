@@ -310,6 +310,21 @@ Dem.
 [Id . (✱3·01)] ⊃ : p . q . ⊃ . r : . ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱3·31 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱3·33
+✱3·33.  ⊢ : p ⊃ q . q ⊃ r . ⊃ . p ⊃ r     [Syll.Imp]
+PM-VERBATIM-END PM1:✱3·33 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·34
+✱3·34.  ⊢ : q ⊃ r . p ⊃ q . ⊃ . p ⊃ r     [Syll.Imp]
+PM-VERBATIM-END PM1:✱3·34 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·35
+These two propositions will hereafter be referred to as "Syll"; they are
+usually more convenient than either ✱2·05 or ✱2·06.
+
+✱3·35.  ⊢ : p . p ⊃ q . ⊃ . q     [✱2·27.Imp]
+PM-VERBATIM-END PM1:✱3·35 -/
+
 /- PM-VERBATIM-BEGIN PM1:✱3·37
 ✱3·37.  ⊢ : p . q . ⊃ . r : ⊃ : p . ∼r . ⊃ . ∼q
 
