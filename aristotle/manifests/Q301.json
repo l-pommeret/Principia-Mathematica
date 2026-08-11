@@ -1,0 +1,66 @@
+{
+  "kind": "pm-sequential-remap-gate",
+  "batch": "Q301",
+  "audit_status": "A-interface-only",
+  "submission_prohibited": true,
+  "promotion_prohibited": true,
+  "canonical_integration_forbidden": true,
+  "reason": "Q300 has no terminal kernel-checked theorem body to remap",
+  "canonical_source": {
+    "edition": "first",
+    "volume": 1,
+    "printed_page": 140,
+    "scan_leaf": 162,
+    "scan_sha256": "bd0e3af38b946e64c1f6d9a59d95d427ff9dac0fef26f9f7f7898896ea1ddcab",
+    "verbatim_path": "Principia/FirstEdition/Volume1/Star9.lean"
+  },
+  "targets_in_order": [
+    {
+      "id": "PM1:✱9·23",
+      "printed_citation": "Id.✱9·13·21",
+      "declaration": "PM.Architecture.FirstOrderPrerequisites.star_9_23",
+      "signature": "theorem star_9_23\n    (φ : Apparent Γ [.elementaryProposition]) :\n    OrderedAssertion (star_9_23_target φ)\n",
+      "exact_dependencies": [
+        "PM1:✱2·08",
+        "PM1:✱9·13",
+        "PM1:✱9·21"
+      ],
+      "identity_instance": "PM.FirstEdition.Volume1.Star2.star_2_08 (Apparent.openHead (matrixImp φ φ))"
+    },
+    {
+      "id": "PM1:✱9·25",
+      "printed_citation": "Id.✱9·23.(✱9·04)",
+      "declaration": "PM.Architecture.FirstOrderPrerequisites.star_9_25",
+      "signature": "theorem star_9_25\n    (p : Elementary Γ) (φ : Apparent Γ [.elementaryProposition]) :\n    Star_9_25Derivation p φ\n",
+      "exact_dependencies": [
+        "PM1:✱9·23",
+        "PM1:✱9·04"
+      ],
+      "local_predecessor_required": "PM1:✱9·23"
+    }
+  ],
+  "q300_remap_contract": {
+    "source_batch": "Q300",
+    "source_item": "PM1:✱9·21",
+    "expected_declaration": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
+    "expected_signature": "theorem star_9_21\n    (φ ψ : Apparent Γ [.elementaryProposition]) :\n    Star_9_21Derivation φ ψ\n",
+    "required_evidence": [
+      "terminal_aristotle_archive_sha256",
+      "canonical_aristotle_project_id",
+      "one_to_one_declaration_remap",
+      "canonical_commit",
+      "successful_github_actions_run"
+    ],
+    "opaque_interface_policy": "no executable opaque declaration is permitted; this contract may be materialized only by the remapped kernel theorem body"
+  },
+  "forbidden": [
+    "target primitive",
+    "axiom",
+    "bodyless opaque theorem",
+    "Classical",
+    "object Prop",
+    "semantic quantifier theorem",
+    "generic substitution",
+    "proof-irrelevance shortcut"
+  ]
+}
