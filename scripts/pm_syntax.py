@@ -790,6 +790,15 @@ class Parser:
                 )
                 left = AST("apply_named", (left, *arguments))
                 continue
+            if (next_token.kind == "lparen" and next_token.text == "{" and
+                    left.tag in {"atom", "type_indexed", "apply_named"}):
+                if 1800 < minimum:
+                    break
+                argument = self.braced_argument()
+                if is_class_surface(argument):
+                    argument = seal_class_surface(argument)
+                left = AST("apply_named", (left, argument), "braced")
+                continue
             if next_token.kind == "of":
                 # PM's turned comma binds more tightly than every dot group.
                 # Equal `of` strokes associate to the left, preserving the

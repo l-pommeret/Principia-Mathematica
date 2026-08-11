@@ -20,24 +20,24 @@ We put
 where “NO” stands for “ordinal number.”
 PM-VERBATIM-END PM3:STAR251-SUMMARY-P18 -/
 
-/- PM-VERBATIM-BEGIN PM3:✱251·61
+/- PM-VERBATIM-SUMMARY-BEGIN PM3:STAR251-SUMMARY-251-61
 ✱251·61.  ⊢ :: P, Q ∈ Rel² excl . CʻP ⊂ Ω .⊃ : ∃! (P smor Q) ∩ Rlʻsmor .≡ . P smor smor Q
-PM-VERBATIM-END PM3:✱251·61 -/
+PM-VERBATIM-SUMMARY-END PM3:STAR251-SUMMARY-251-61 -/
 
-/- PM-VERBATIM-BEGIN PM3:✱251·621
+/- PM-VERBATIM-SUMMARY-BEGIN PM3:STAR251-SUMMARY-251-621
 ✱251·621.  ⊢ : CʻP ⊂ Ω . ∃! (P smor Q) ∩ Rlʻsmor .⊃ . Σ NrʻP = Σ NrʻQ . Π NrʻP = Π NrʻQ
-PM-VERBATIM-END PM3:✱251·621 -/
+PM-VERBATIM-SUMMARY-END PM3:STAR251-SUMMARY-251-621 -/
 
-/- PM-VERBATIM-BEGIN PM3:✱251·65
+/- PM-VERBATIM-SUMMARY-BEGIN PM3:STAR251-SUMMARY-251-65
 ✱251·65.  ⊢ : α ∈ NO − ιʻΛ . β ∈ NR . P ∈ β . CʻP ⊂ α .⊃ . Σ NrʻP = β × α . Π NrʻP = α expᵣ β
-PM-VERBATIM-END PM3:✱251·65 -/
+PM-VERBATIM-SUMMARY-END PM3:STAR251-SUMMARY-251-65 -/
 
-/- PM-VERBATIM-BEGIN PM3:✱251·7
+/- PM-VERBATIM-SUMMARY-BEGIN PM3:STAR251-SUMMARY-251-7
 ✱251·7.  ⊢ : ∃! Ω − ιʻΛ ∩ t∞ʻα .≡ . ∃! 2ᵣ ∩ t∞ʻα .≡ . ∃! 2 ∩ tʻα .≡ . ∃! 2ₐ
-PM-VERBATIM-END PM3:✱251·7 -/
-/- PM-VERBATIM-BEGIN PM3:✱251·71
+PM-VERBATIM-SUMMARY-END PM3:STAR251-SUMMARY-251-7 -/
+/- PM-VERBATIM-SUMMARY-BEGIN PM3:STAR251-SUMMARY-251-71
 ✱251·71.  ⊢ . ∃! Ω − ιʻΛ ∩ t∞ʻCls . ∃! Ω − ιʻΛ ∩ t∞ʻRel  [✱251·7 . ✱101·42·43]
-PM-VERBATIM-END PM3:✱251·71 -/
+PM-VERBATIM-SUMMARY-END PM3:STAR251-SUMMARY-251-71 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱251·01
 ✱251·01.  NO = NrʻʻΩ  Df
@@ -220,3 +220,10 @@ PM-VERBATIM-END PM3:✱251·64 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·65
 ✱251·65.  ⊢ : α ∈ NO − ιʻΛ . β ∈ NR . P ∈ β . CʻP ⊂ α .⊃ . Σ NrʻP = β ×̂ α . Π NrʻP = α expᵣ β
 PM-VERBATIM-END PM3:✱251·65 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·7
+✱251·7.  ⊢ : ∃! Ω − ιʻΛ ∩ t∞ʻα .≡ . ∃! 2ᵣ ∩ t∞ʻα .≡ . ∃! 2 ∩ tʻα .≡ . ∃! 2ₐ
+PM-VERBATIM-END PM3:✱251·7 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·71
+✱251·71.  ⊢ . ∃! Ω − ιʻΛ ∩ t∞ʻCls . ∃! Ω − ιʻΛ ∩ t∞ʻRel  [✱251·7 . ✱101·42·43]
+PM-VERBATIM-END PM3:✱251·71 -/
