@@ -2240,6 +2240,61 @@
         "remaining_gap": "assertion/derivation family for first-order propositions"
       }
     },
+    "Q259": {
+      "canonical_ids": [
+        "PM1:✱9·3",
+        "PM1:✱9·31",
+        "PM1:✱9·32",
+        "PM1:✱9·33"
+      ],
+      "source": "PM volume I, first edition, p. 140, leaf 162",
+      "prompt_path": "aristotle/Q259.md",
+      "audit_path": "reviews/Q259-review.md",
+      "audit_status": "A",
+      "audit_label": "A-interface-only",
+      "lean_scope": "exact PM1 ✱9·3, ✱9·31, ✱9·32 and ✱9·33 in the audited assigned-first-order interface",
+      "depends_on": [],
+      "interface_only": true,
+      "source_backfill_required": false,
+      "integration_status": "blocked-one-to-one-canonical-remap",
+      "canonical_integration_forbidden": true,
+      "requires_one_to_one_kernel_remap": true,
+      "parallel_group": "STAR9-INTERFACE",
+      "aristotle_status": "not-submitted",
+      "architecture_evidence": {
+        "commit": "6518732a70f6c7e794abaf459e08543531dee0ef",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31509710050",
+        "conclusion": "success",
+        "scope": "isolated-interface; canonical integration forbidden"
+      },
+      "submission_gate": "satisfied for isolated interface only; PM source collation complete, canonical remap pending"
+    },
+    "Q300": {
+      "canonical_ids": [
+        "PM1:✱9·21"
+      ],
+      "source": "PM volume I, first edition, pp. 138–139, leaves 160–161",
+      "prompt_path": "aristotle/Q300.md",
+      "audit_path": "reviews/Q300-review.md",
+      "audit_status": "A",
+      "audit_label": "A-interface-only",
+      "lean_scope": "exact PM1 ✱9·21 assigned 1→2 derivation in the sealed architecture interface",
+      "depends_on": [],
+      "interface_only": true,
+      "source_backfill_required": false,
+      "integration_status": "blocked-one-to-one-canonical-remap",
+      "canonical_integration_forbidden": true,
+      "requires_one_to_one_kernel_remap": true,
+      "parallel_group": "STAR9-INTERFACE",
+      "aristotle_status": "not-submitted",
+      "architecture_evidence": {
+        "commit": "6518732a70f6c7e794abaf459e08543531dee0ef",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31509710050",
+        "conclusion": "success",
+        "scope": "isolated-interface; canonical integration forbidden"
+      },
+      "submission_gate": "satisfied for isolated interface only; PM source collation complete, canonical remap pending"
+    },
     "Q9001": {
       "retry_of": "Q234",
       "promotion_key": "Q234",

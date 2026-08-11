@@ -199,6 +199,15 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
     if len(local_context_paths) != len(set(local_context_paths)):
         raise BundleError("local_context_paths must be unique")
     interface_gated = bool(manifest.get("policy", {}).get("interface_gated", False))
+    source_backfill_required = manifest.get("source_backfill_required", interface_gated)
+    if not isinstance(source_backfill_required, bool):
+        raise BundleError("source_backfill_required must be boolean when supplied")
+    source_backfill_audit = manifest.get("source_backfill_audit")
+    if interface_gated and not source_backfill_required:
+        if not isinstance(source_backfill_audit, dict):
+            raise BundleError(
+                "completed source backfill requires an explicit source_backfill_audit"
+            )
     if local_context_paths and not interface_gated:
         raise BundleError("local architecture context requires interface-gated policy")
     for relative in local_context_paths:
@@ -323,9 +332,11 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
             "requires_one_to_one_kernel_remap": interface_gated,
         },
         "interface_dependencies": non_kernel,
-        "source_backfill_required": interface_gated,
+        "source_backfill_required": source_backfill_required,
         "integration_blocked": interface_gated,
     }
+    if source_backfill_audit is not None:
+        result["source_backfill_audit"] = source_backfill_audit
     if "target_order" in manifest:
         result["target_order"] = list(manifest["target_order"])
     return result

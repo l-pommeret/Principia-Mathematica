@@ -8,7 +8,7 @@
   "integration_blocked": true,
   "interface_dependencies": [],
   "kind": "pm-isolated-context-bundle",
-  "manifest_sha256": "68e046c56b62340e44e9429ce8926d09d81892d51f1ff4242bb3f06eb4853724",
+  "manifest_sha256": "da76e2b2c038ff3e24bdb5e8e5fbd3dfef8899b407b48b9dcb07e86e1924083d",
   "policy": {
     "canonical_integration_forbidden": true,
     "grants_no_additional_proof_permission": true,
@@ -28,7 +28,17 @@
     "PM1:✱9·12",
     "PM1:✱9·13"
   ],
-  "source_backfill_required": true,
+  "source_backfill_audit": {
+    "basis": "PM-VERBATIM, item metadata, scan collation, and parsed diplomatic demonstration",
+    "demonstration_paths": [
+      "aristotle/demonstrations/PM1-star-9-21.txt"
+    ],
+    "item_ids": [
+      "PM1:✱9·21"
+    ],
+    "status": "complete"
+  },
+  "source_backfill_required": false,
   "source_bytes": 28926,
   "source_sha256": "b5ca1ce5e16a4de3b3bf87f9994cbc52d0e9ef926f12177b7690eb99f2cf71a9",
   "sources": [
@@ -104,8 +114,11 @@
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "6518732a70f6c7e794abaf459e08543531dee0ef",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31509710050",
+    "conclusion": "success",
+    "scope": "isolated-interface",
+    "canonical_integration": "forbidden",
+    "one_to_one_remap": "pending"
   }
 }

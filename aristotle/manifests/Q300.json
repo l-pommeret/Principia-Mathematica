@@ -11,6 +11,17 @@
   },
   "foundation_profile": "ordered-first-order-pm1",
   "context_whitespace_policy": "strip-trailing",
+  "source_backfill_required": false,
+  "source_backfill_audit": {
+    "status": "complete",
+    "basis": "PM-VERBATIM, item metadata, scan collation, and parsed diplomatic demonstration",
+    "item_ids": [
+      "PM1:✱9·21"
+    ],
+    "demonstration_paths": [
+      "aristotle/demonstrations/PM1-star-9-21.txt"
+    ]
+  },
   "local_context_paths": [
     "Principia/Architecture/FirstOrderPrerequisites.lean"
   ],

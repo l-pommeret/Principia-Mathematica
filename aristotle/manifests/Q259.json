@@ -11,6 +11,23 @@
   },
   "foundation_profile": "ordered-first-order-pm1",
   "context_whitespace_policy": "strip-trailing",
+  "source_backfill_required": false,
+  "source_backfill_audit": {
+    "status": "complete",
+    "basis": "PM-VERBATIM, item metadata, scan collation, and parsed diplomatic demonstrations",
+    "item_ids": [
+      "PM1:✱9·3",
+      "PM1:✱9·31",
+      "PM1:✱9·32",
+      "PM1:✱9·33"
+    ],
+    "demonstration_paths": [
+      "aristotle/demonstrations/PM1-star-9-3.txt",
+      "aristotle/demonstrations/PM1-star-9-31.txt",
+      "aristotle/demonstrations/PM1-star-9-32.txt",
+      "aristotle/demonstrations/PM1-star-9-33.txt"
+    ]
+  },
   "local_context_paths": [
     "Principia/Architecture/FirstOrderPrerequisites.lean",
     "Principia/Architecture/FirstOrderQ259.lean",

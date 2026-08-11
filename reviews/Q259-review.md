@@ -45,6 +45,15 @@ printed discussion explicitly records the circularity through ✱1·2.
   integration. A remote kernel result for this bundle is evidence for the
   isolated task only.
 
+## Isolated-context CI evidence
+
+CI [31509710050](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31509710050)
+at commit `6518732a70f6c7e794abaf459e08543531dee0ef` compiled the exact
+hash-audited Q259 standalone context. It licenses submission to Aristotle in
+this interface only; it is not canonical CI evidence. PM-VERBATIM, metadata,
+scan collation, and all four parsed demonstrations are complete. The only
+remaining promotion gate is the explicit one-to-one canonical remap.
+
 No native logical semantics, `Classical`, axioms, placeholders, generic
 substitution/inference rule, target-as-primitive constructor, or unscoped
 first-order disjunction is permitted.

@@ -11,6 +11,8 @@ import argparse
 
 from pm_constraint_manifest import load_item_registry
 from pm_context_bundle import ROOT, build_bundle, preserve_historical_container_hashes
+from pm_proof_skeleton import parse_demonstration
+from verify_editorial import collect_verbatim
 
 
 class ContextBundleVerificationError(ValueError):
@@ -56,15 +58,43 @@ def verify_one(metadata_path: Path, registry: dict[str, dict], root: Path) -> No
     if opaque_stubs and not interface_gated:
         raise ContextBundleVerificationError(f"opaque stub outside interface gate for {stem}")
     if interface_gated:
-        if (actual_metadata.get("source_backfill_required") is not True or
+        if (not isinstance(actual_metadata.get("source_backfill_required"), bool) or
                 actual_metadata.get("integration_blocked") is not True):
             raise ContextBundleVerificationError(
                 f"interface-gated bundle {stem} lacks promotion blocks"
             )
         if successful:
-            raise ContextBundleVerificationError(
-                f"interface-gated bundle {stem} cannot carry canonical CI success"
-            )
+            if (evidence.get("scope") != "isolated-interface" or
+                    evidence.get("canonical_integration") != "forbidden" or
+                    evidence.get("one_to_one_remap") != "pending"):
+                raise ContextBundleVerificationError(
+                    f"interface-gated bundle {stem} CI evidence must be explicitly isolated"
+                )
+        if not actual_metadata.get("source_backfill_required"):
+            audit = actual_metadata.get("source_backfill_audit")
+            if not isinstance(audit, dict) or audit.get("status") != "complete":
+                raise ContextBundleVerificationError(
+                    f"interface-gated bundle {stem} claims completed source backfill without audit"
+                )
+            item_ids = audit.get("item_ids")
+            demonstrations = audit.get("demonstration_paths")
+            if (not isinstance(item_ids, list) or not item_ids or
+                    not all(isinstance(item, str) for item in item_ids) or
+                    not isinstance(demonstrations, list) or
+                    len(item_ids) != len(demonstrations)):
+                raise ContextBundleVerificationError(
+                    f"interface-gated bundle {stem} has malformed source backfill audit"
+                )
+            verbatim = collect_verbatim()
+            for item_id, relative in zip(item_ids, demonstrations, strict=True):
+                item = registry.get(item_id)
+                path = root / relative
+                if (item is None or item.get("source_status") != "source-catalogued" or
+                        item_id not in verbatim or not path.is_file()):
+                    raise ContextBundleVerificationError(
+                        f"interface-gated bundle {stem} lacks collated source for {item_id}"
+                    )
+                parse_demonstration(path.read_text(encoding="utf-8"), 1, item_id)
         expected_ids = sorted(actual_metadata.get("interface_dependencies", []))
         stub_ids = sorted(source.get("id") for source in opaque_stubs)
         if expected_ids != stub_ids:
