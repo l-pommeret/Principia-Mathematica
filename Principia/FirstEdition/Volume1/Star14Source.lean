@@ -128,3 +128,12 @@ PM-VERBATIM-END PM1:✱14·271 -/
 /- PM-VERBATIM-BEGIN PM1:✱14·272
 ✱14·272. ⊢ : φx .≡ₓ. ψx .⊃ : χ(℩x)(φx) .≡ . χ(℩x)(ψx)
 PM-VERBATIM-END PM1:✱14·272 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·3
+✱14·3. ⊢ : p ≡ q .⊃ₚ,ᵩ. f(p) ≡ f(q) : E!(℩x)(φx) .⊃ : f{[(℩x)(φx)] . χ(℩x)(φx)} .≡ . [(℩x)(φx)] . f{χ(℩x)(φx)}
+PM-VERBATIM-END PM1:✱14·3 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·31
+✱14·31. ⊢ : E!(℩x)(φx) .⊃ : [(℩x)(φx)] . p ∨ χ(℩x)(φx) .≡ : p ∨ [(℩x)(φx)] . χ(℩x)(φx)
+PM-VERBATIM-END PM1:✱14·31 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·32
+✱14·32. ⊢ : E!(℩x)(φx) .≡ : [(℩x)(φx)] . ∼χ(℩x)(φx) .≡ . ∼[(℩x)(φx)] . χ(℩x)(φx)
+PM-VERBATIM-END PM1:✱14·32 -/
