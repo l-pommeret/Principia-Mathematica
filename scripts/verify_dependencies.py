@@ -20,6 +20,8 @@ DECL_START = re.compile(r"^\s*(?:theorem|def|abbrev)\s+([A-Za-z0-9_']+)\b")
 KNOWN_BRIDGES = {"PM.Derivation.detach"}
 KNOWN_SYNTAX_INFRASTRUCTURE = {
     "List.cons_ne_nil",
+    "PM.Elementary",
+    "PM.Formation.ofElementary",
     "PM.FirstOrder.neg",
     "PM.FirstOrder.always",
     "PM.FirstOrder.sometimes",

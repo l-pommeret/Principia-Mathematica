@@ -1,0 +1,26 @@
+{
+  "batch": "PM1-STAR3-Q226-PROMOTED",
+  "edition": "first",
+  "volume": 1,
+  "items": [
+    {
+      "id": "PM1:✱3·47",
+      "kind": "derived-proposition",
+      "printed": "⊢ : p ⊃ r . q ⊃ s . ⊃ : p . q . ⊃ . r . s",
+      "printed_page": 119,
+      "scan_leaf": 141,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_47",
+      "formal_scope": "((p⊃r)·(q⊃s))⊃((p·q)⊃(r·s)), over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "kernel-checked",
+      "printed_dependencies": ["PM1:✱1·11", "PM1:✱3·26", "Fact", "PM1:✱3·22", "PM1:✱3·03", "PM1:✱2·83"],
+      "lean_dependencies": ["PM.Derivation.detach", "PM.FirstEdition.Volume1.Star2.star_2_83", "PM.FirstEdition.Volume1.Star3.star_3_03", "PM.FirstEdition.Volume1.Star3.star_3_2", "PM.FirstEdition.Volume1.Star3.star_3_22", "PM.FirstEdition.Volume1.Star3.star_3_26", "PM.FirstEdition.Volume1.Star3.star_3_27", "PM.FirstEdition.Volume1.Star3.star_3_45"],
+      "normalized_dependencies": ["PM1:✱1·11", "PM1:✱2·83", "PM1:✱3·03", "PM1:✱3·2", "PM1:✱3·22", "PM1:✱3·26", "PM1:✱3·27", "PM1:✱3·45"],
+      "dependency_justifications": [{"kind": "metalinguistic-rule-selection", "lean_dependency": "PM.Derivation.detach", "pm_dependency": "PM1:✱1·11", "evidence": "The accepted Q226 proof uses the reviewed detachment convention; the empty-context branch is made explicit by the already kernel-checked local theorem."}],
+      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": ["PM1:✱3·2", "PM1:✱3·27", "PM1:✱3·45"], "printed_but_unused": ["Fact"], "strict_attempt_evidence": "reviews/Q226-review.md", "editorial_note": "The printed ✱3·03 remains the real-variable adjunction branch. The kernel-checked proof makes its two Fact calls explicit through local ✱3·45, uses the second projection ✱3·27, and uses ✱3·2 only for the documented equivalence-packaging carry in both branches."},
+      "dependency_fidelity": "kernel-checked-relaxed-printed-gaps"
+    }
+  ],
+  "ci_evidence": {"commit": "fcfe6f5285732f672241281f1ff73f15477b9184", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31487053480", "conclusion": "success"}
+}
