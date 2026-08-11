@@ -558,14 +558,20 @@
       "source": "PM volume I, first edition, pp. 114 and 116",
       "prompt_path": "aristotle/Q217.md",
       "audit_path": "reviews/Q217-review.md",
-      "audit_status": "blocked-missing-explicit-elementary-formation-judgement",
+      "audit_status": "architecture-prototype-kernel-checked-needs-canonical-integration",
       "lean_scope": "exact PM1 ✱1·7·71·72 formation Pp, ✱3·01·02 definitions, and ✱3·03 metalinguistic derivation theorem",
       "depends_on": [
         "PM1:✱2·11",
         "PM1:✱2·32"
       ],
       "parallel_group": "STAR3-FOUNDATIONS",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "not-submitted",
+      "formation_architecture_evidence": {
+        "module": "Principia/Experimental/ElementaryFormationToy.lean",
+        "commit": "01d3ef23bc5ec7b427a4cbdf76f66682fd19e36a",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31449618624",
+        "conclusion": "success"
+      }
     },
     "Q218": {
       "canonical_ids": [

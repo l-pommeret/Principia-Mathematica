@@ -1,7 +1,7 @@
 # Audit Q217 — PM I, ✱3·01–✱3·03 foundations
 
-Verdict: **ARCHITECTURALLY BLOCKED — explicit PM formation judgement required
-before Aristotle submission**. Sources: first edition, vol. I,
+Verdict: **ARCHITECTURE PROTOTYPE KERNEL-CHECKED — canonical integration and
+generated context still required before Aristotle submission**. Sources: first edition, vol. I,
 pp. 114 and 116, leaves 136 and 138. SHA-256 of the Wikimedia 1920 px JPEGs:
 leaf 136 `2d592ee0372fd62e7d41c0260e3da50cea813616a91ba89dfd27453875792b1b`;
 leaf 138 `c18eb6890dc92335e8df8773cbd46b8e98c2e550cdcb01f91a397bed27e9958b`.
@@ -27,6 +27,23 @@ represented as historical rules. Adding a redundant predicate whose proofs
 are unused by ✱3·03 would only falsify the dependency audit. Q217 therefore
 remains outside the generated Aristotle queue until a separate formation
 judgement, and its honest connection to assertion, survives kernel CI.
+
+That feasibility gate is now satisfied experimentally. Module
+`Principia.Experimental.ElementaryFormationToy` introduces distinct
+constructors for ✱1·7, ✱1·71 and ✱1·72; the latter requires a nonempty real
+context, while ✱1·71 is restricted to the empty context. `Formation.ofElementary`
+reconstructs a formation history recursively without a generic disjunction
+constructor. The formation-aware ✱3·03 returns both its formation proof and its
+`PM.Derivation`; its compatibility projection to the accepted API factors
+through that object rather than duplicating the derivation or discarding a dead
+formation witness. Mutation tests reject both shortcuts.
+
+GitHub CI kernel-checked the bridge and the unchanged full corpus at commit
+`01d3ef23bc5ec7b427a4cbdf76f66682fd19e36a`, run
+[`31449618624`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31449618624),
+conclusion `success`. This proves architectural compatibility, not yet canonical
+integration: the numbered source items, verbatim blocks, metadata and generated
+isolated Q217 context remain to be installed before Aristotle submission.
 
 Critical locus `PM1:✱3·03:dem-line-3-reference`: the 1910 scan reads
 `(✱3·03)` in the third line of its own demonstration. The explanatory text and
