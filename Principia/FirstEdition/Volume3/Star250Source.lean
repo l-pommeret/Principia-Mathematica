@@ -290,3 +290,81 @@ PM-VERBATIM-END PM3:✱250·301 -/
 /- PM-VERBATIM-BEGIN PM3:✱250·31
 ✱250·31.  ⊢ :: P ∈ connex :: α ⊂ CʻP ∩ σ .⊃ₐ . seqₚʻα ⊂ σ : ⊃ₐ . CʻP ⊂ σ :: ⊃ . P ∈ Ω
 PM-VERBATIM-END PM3:✱250·31 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·32
+✱250·32.  ⊢ :: P ∈ connex .⊃ :: P ∈ Bord .≡ :: α ⊂ CʻP ∩ σ .⊃ₐ . seqₚʻα ⊂ σ :
+  ⊃ₐ . CʻP ⊂ σ  [✱250·3·31]
+PM-VERBATIM-END PM3:✱250·32 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·33
+✱250·33.  ⊢ . Ω = connex ∩ P̂ {α ⊂ CʻP ∩ σ .⊃ₐ . seqₚʻα ⊂ σ : ⊃ₐ . CʻP ⊂ σ}
+  [✱250·32·113]
+PM-VERBATIM-END PM3:✱250·33 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·34
+✱250·34.  ⊢ :: P ∈ Bord : x ∈ CʻP . P⃗ʻx ⊂ σ .⊃ₓ . x ∈ σ : ⊃ₐ . CʻP ⊂ σ
+PM-VERBATIM-END PM3:✱250·34 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·341
+✱250·341.  ⊢ :: x ∈ CʻP . P⃗ʻx ⊂ σ .⊃ₓ . x ∈ σ : ⊃ₐ . CʻP ⊂ σ :: ⊃ . P ∈ Bord
+PM-VERBATIM-END PM3:✱250·341 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·35
+✱250·35.  ⊢ . Bord = P̂ {x ∈ CʻP . P⃗ʻx ⊂ σ .⊃ₓ . x ∈ σ : ⊃ₐ . CʻP ⊂ σ}
+  [✱250·34·341]
+PM-VERBATIM-END PM3:✱250·35 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·36
+✱250·36.  ⊢ :: P ∈ Ω : λ ⊂ σ . ∃! λ ∩ CʻP .⊃ₗ . seqₚʻλ ⊂ σ : ⊃ . P⃗ʻσ ⊂ σ
+PM-VERBATIM-END PM3:✱250·36 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·361
+✱250·361.  ⊢ :: P ∈ Ω . P̈ʻσ ⊂ σ : λ ⊂ σ . ∃! (λ ∩ CʻP) .⊃ₗ . limaxₚʻλ ⊂ σ :
+  ⊃ . P̈ʻσ ⊂ σ
+PM-VERBATIM-END PM3:✱250·361 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·362
+✱250·362.  ⊢ :: P ∈ Ω . P₁̈σ ⊂ σ : λ ⊂ σ . ∃! λ ∩ CʻP .⊃ₗ . liminₚʻλ ⊂ σ :
+  ⊃ . P̈ʻσ ⊂ σ  [✱250·361 / ✱121·26]
+PM-VERBATIM-END PM3:✱250·362 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·4
+✱250·4.  ⊢ . Λ ∈ Ω
+PM-VERBATIM-END PM3:✱250·4 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·41
+✱250·41.  ⊢ : x ≠ y .⊃ . x ↓ y ∈ Ω
+PM-VERBATIM-END PM3:✱250·41 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·42
+✱250·42.  ⊢ : P ∈ Ω − ιʻΛ .⊃ . E! 2ₚ . 2ₚ = P⃗₁ʻBʻP . P⃗ʻ2ₚ = ιʻBʻP . P ▷ P⃗ʻ2ₚ = Λ
+PM-VERBATIM-END PM3:✱250·42 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·43
+✱250·43.  ⊢ . 0ᵣ = Ω ∩ Cʻʻ0
+PM-VERBATIM-END PM3:✱250·43 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·44
+✱250·44.  ⊢ . 2ᵣ = Ω ∩ Cʻʻ2
+PM-VERBATIM-END PM3:✱250·44 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·5
+✱250·5.  ⊢ : P ∈ Ω .⊃ . minₚ ▷ Cl exʻCʻP ∈ εₐʻCl exʻCʻP . ιʻCʻP = ProdʻCl exʻCʻP
+  [✱205·33 . ✱250·1 . ✱115·17]
+PM-VERBATIM-END PM3:✱250·5 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·51
+✱250·51.  ⊢ : α ∈ CʻʻΩ .⊃ . ∃! εₐʻCl exʻα  [✱250·5]
+PM-VERBATIM-END PM3:✱250·51 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·52
+✱250·52.  ⊢ : α ∈ CʻʻΩ . β ⊂ α .⊃ . ∃! εₐʻCl exʻβ  [✱88·22·2 . ✱250·51]
+PM-VERBATIM-END PM3:✱250·52 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·53
+✱250·53.  ⊢ : sʻκ ∈ CʻʻΩ . Λ ∼ ε κ .⊃ . ∃! εₐʻκ
+PM-VERBATIM-END PM3:✱250·53 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·54
+✱250·54.  ⊢ : CʻʻΩ ∪ 1 = Cls .⊃ . Mult ax
+PM-VERBATIM-END PM3:✱250·54 -/
