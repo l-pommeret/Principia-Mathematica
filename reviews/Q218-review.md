@@ -39,4 +39,7 @@ closure**: ✱2·73 adds ✱1·6; ✱2·74 adds ✱1·4 and ✱1·6 while leavin
 the preceding local target. The four bodies are now integrated with
 `formal_status=awaiting-ci`; the three relaxed items carry exact
 `historical_dependency_relaxation` records, while ✱2·76 retains ordinary strict
-dependency equality. GitHub CI remains the only kernel authority.
+dependency equality. GitHub CI run
+[`31445060351`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31445060351)
+kernel-checked the edition at commit
+`e5204018b69d12fc0f2896a1c24717b780833324`; all four items are promoted.

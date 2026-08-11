@@ -13,7 +13,7 @@
     "task_id": "606157ec-392e-4688-a85b-cde27f90c65c",
     "archive": "aristotle/results/Q218-final.tar.gz",
     "sha256": "f08cddeb7c49680c4771b96c522c12ff4f46f285654f2752b88d4aefa15a8021",
-    "audit": "accepted-relaxed-closure-awaiting-ci"
+    "audit": "accepted-relaxed-closure-kernel-checked"
   },
   "items": [
     {
@@ -23,7 +23,7 @@
       "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_621", "PM.FirstEdition.Volume1.Star2.star_2_38", "PM.Derivation.star_1_6", "PM.Derivation.detach"],
       "normalized_dependencies": ["PM1:✱2·621", "PM1:✱2·38", "PM1:✱1·6", "PM1:✱1·11"],
       "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": ["PM1:✱1·6"], "printed_but_unused": [], "strict_attempt_evidence": "reviews/Q218-reconstruction-audit.json", "editorial_note": "The constrained result required Sum/Syll to compose the two compactly cited implications."},
-      "source_status": "scan-collated", "formal_status": "awaiting-ci"
+      "source_status": "scan-collated", "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·74", "kind": "derived-proposition", "printed": "⊢ : q ⊃ p . ⊃ : p ∨ q ∨ r . ⊃ . p ∨ r", "printed_page": 113, "scan_leaf": 135,
@@ -32,7 +32,7 @@
       "lean_dependencies": ["PM.Derivation.star_1_4", "PM.Derivation.star_1_6", "PM.FirstEdition.Volume1.Star2.star_2_05", "PM.FirstEdition.Volume1.Star2.star_2_06", "PM.FirstEdition.Volume1.Star2.star_2_73", "PM.Derivation.detach"],
       "normalized_dependencies": ["PM1:✱1·4", "PM1:✱1·6", "PM1:✱2·05", "PM1:✱2·06", "PM1:✱2·73", "PM1:✱1·11"],
       "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": ["PM1:✱1·4", "PM1:✱1·6"], "printed_but_unused": ["PM1:✱1·5"], "strict_attempt_evidence": "reviews/Q218-reconstruction-audit.json", "editorial_note": "The returned left-associated reconstruction used Perm and Sum; the printed Assoc citation was not realized."},
-      "source_status": "scan-collated", "formal_status": "awaiting-ci"
+      "source_status": "scan-collated", "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·75", "kind": "derived-proposition", "printed": "⊢ : p ∨ q . ⊃ : p ∨ (q ⊃ r) . ⊃ . p ∨ r", "printed_page": 113, "scan_leaf": 135,
@@ -41,7 +41,7 @@
       "lean_dependencies": ["PM.Derivation.star_1_4", "PM.Derivation.star_1_5", "PM.Derivation.star_1_6", "PM.FirstEdition.Volume1.Star2.star_2_31", "PM.FirstEdition.Volume1.Star2.star_2_53", "PM.FirstEdition.Volume1.Star2.star_2_74", "PM.Derivation.detach"],
       "normalized_dependencies": ["PM1:✱1·4", "PM1:✱1·5", "PM1:✱1·6", "PM1:✱2·31", "PM1:✱2·53", "PM1:✱2·74", "PM1:✱1·11"],
       "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": ["PM1:✱1·4", "PM1:✱1·5", "PM1:✱1·6"], "printed_but_unused": [], "strict_attempt_evidence": "reviews/Q218-reconstruction-audit.json", "editorial_note": "The constrained result required primitive Perm, Assoc and Sum in addition to the compact printed chain."},
-      "source_status": "scan-collated", "formal_status": "awaiting-ci"
+      "source_status": "scan-collated", "formal_status": "kernel-checked"
     },
     {
       "id": "PM1:✱2·76", "kind": "derived-proposition", "printed": "⊢ : p ∨ (q ⊃ r) . ⊃ : p ∨ q . ⊃ . p ∨ r", "printed_page": 113, "scan_leaf": 135,
@@ -49,8 +49,8 @@
       "printed_dependencies": ["PM1:✱2·75", "PM1:✱2·04", "PM1:✱1·11"],
       "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_75", "PM.FirstEdition.Volume1.Star2.star_2_04", "PM.Derivation.detach"],
       "normalized_dependencies": ["PM1:✱2·75", "PM1:✱2·04", "PM1:✱1·11"],
-      "source_status": "scan-collated", "formal_status": "awaiting-ci"
+      "source_status": "scan-collated", "formal_status": "kernel-checked"
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {"commit": "e5204018b69d12fc0f2896a1c24717b780833324", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31445060351", "conclusion": "success"}
 }
