@@ -6,19 +6,19 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 685,
-    "object_language_ast_parsed": 317,
+    "catalogued_items": 696,
+    "object_language_ast_parsed": 323,
     "metalinguistic_routes": 8,
-    "architecture_gated_source_routes": 360,
+    "architecture_gated_source_routes": 365,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
-    "catalogued_items_missing_proof_skeleton": 627,
+    "catalogued_items_missing_proof_skeleton": 638,
     "constrained_batches": 16,
     "complete_batch_artifact_sets": 15,
     "planned_campaign_questions": 65,
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
-    "catalogued_items_without_campaign_question": 462,
+    "catalogued_items_without_campaign_question": 473,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
@@ -59,9 +59,9 @@
       "PM2:✱102": 28,
       "PM2:✱103": 20,
       "PM2:✱104": 5,
-      "PM2:✱105": 8,
+      "PM2:✱105": 14,
       "PM3:✱250": 70,
-      "PM3:✱251": 26
+      "PM3:✱251": 31
     },
     "planned": {
       "PM1:✱1": 3,
@@ -91,9 +91,9 @@
       "PM2:✱102": 28,
       "PM2:✱103": 20,
       "PM2:✱104": 5,
-      "PM2:✱105": 8,
+      "PM2:✱105": 14,
       "PM3:✱250": 70,
-      "PM3:✱251": 26
+      "PM3:✱251": 31
     }
   },
   "local_scheduler_candidates": [],
@@ -9009,6 +9009,90 @@
       }
     },
     {
+      "id": "PM2:✱105·01",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "7ceb07500a4cd6d83bb56c1b0c213bcc4c60b4c337e86470dce490240a2b3845"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·011",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "59707c4266a0ba7eba5419948a33075dbedcae7dada096d96d18cf8ac7a990c2"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·02",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "041a53953dbd19efa2642eb6b47641408c4c2a38199d2b91530fb4f198f78cc0"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·021",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "9b62262e1e2b7c29e771cab5939d00aac10e978d8f62d74364000f86987ddb93"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·03",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "5b2a423eccd387ab3e41ee33f7cd6eddaf4fc3125a0929f2f265c75de88a0ac0"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·031",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "37fd8cfe178d111ee3251821552b5c7bac393813c7da0ed7eac83d694a090513"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
       "id": "PM2:✱105·25",
       "kind": "derived-proposition",
       "source_catalogue": true,
@@ -10339,6 +10423,71 @@
       }
     },
     {
+      "id": "PM3:✱251·25",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·26",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·3",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·31",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·32",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
       "id": "PM3:✱251·61",
       "kind": "summary-enunciation",
       "source_catalogue": true,
@@ -10737,6 +10886,12 @@
     "PM2:✱104·03",
     "PM2:✱104·12",
     "PM2:✱104·2",
+    "PM2:✱105·01",
+    "PM2:✱105·011",
+    "PM2:✱105·02",
+    "PM2:✱105·021",
+    "PM2:✱105·03",
+    "PM2:✱105·031",
     "PM2:✱105·25",
     "PM2:✱105·251",
     "PM2:✱105·26",
@@ -10838,6 +10993,11 @@
     "PM3:✱251·22",
     "PM3:✱251·23",
     "PM3:✱251·24",
+    "PM3:✱251·25",
+    "PM3:✱251·26",
+    "PM3:✱251·3",
+    "PM3:✱251·31",
+    "PM3:✱251·32",
     "PM3:✱251·61",
     "PM3:✱251·621",
     "PM3:✱251·65"
