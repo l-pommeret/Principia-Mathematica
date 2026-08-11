@@ -24,9 +24,6 @@ assertion interface without changing any of the first 85 kernel-checked
 derivations or smuggling formation into Lean parameter instantiation.
 -/
 
-/-- Explicit evidence that a typed elementary expression was licensed by PM's
-formation apparatus.  Only ✱1·71 and ✱1·72 form disjunctions; their context
-conditions make the historical distinction observable. -/
 namespace FormedDerivation
 
 /-- ✱3·01, retained as a definition rather than an equivalence theorem. -/
