@@ -49,6 +49,30 @@ end PM.Batch
         self.assertEqual(result["target_audits"][1]["added_beyond_print"], ["PM1:✱1·3"])
         self.assertFalse(result["all_targets_strict"])
 
+    def test_local_helpers_are_expanded_and_suffix_qualified_calls_are_seen(self):
+        registry = {
+            "PM1:✱1·2": item("PM1:✱1·2", "PM.Base.star_1_2"),
+            "PM1:✱1·3": item("PM1:✱1·3", "PM.Base.star_1_3"),
+        }
+        target = parse_demonstration(
+            "✱8·1. ⊢ : p [✱1·2 . ✱1·3]", current_item="PM1:✱8·1"
+        )
+        batch = compile_batch_manifest(
+            [target], registry, {"PM1:✱8·1": "PM.Batch.star_8_1"}
+        )
+        source = """namespace PM.Batch
+private theorem helper : True := by exact Base.star_1_2
+theorem star_8_1 : True := by exact helper; exact Base.star_1_3
+end PM.Batch
+"""
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "Result.lean"
+            path.write_text(source, encoding="utf-8")
+            result = audit_batch(batch, path, registry, {"lean_realizations": {}})
+        audit = result["target_audits"][0]
+        self.assertEqual(audit["classification"], "strict-closure")
+        self.assertEqual(audit["used_pm_items"], ["PM1:✱1·2", "PM1:✱1·3"])
+
 
 if __name__ == "__main__":
     unittest.main()
