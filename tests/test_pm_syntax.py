@@ -287,6 +287,10 @@ class PMDotSyntaxTests(unittest.TestCase):
         parsed = statement_shape("✱103·32. ⊢ . NCᵝ(α) − ιʻΛ ⊂ N₀C(α)")
         self.assertIn("class_difference_spec", tags(parsed))
 
+    def test_q103_44_preserves_the_membership_tuple(self):
+        parsed = statement_shape("✱103·44. ⊢ :: μ,ν ∈ N₀C .⊃ : μ = smʻʻν .≡ . ν = smʻʻμ")
+        self.assertIn("tuple", tags(parsed))
+
     def test_nested_of_application_preserves_left_nesting(self):
         parsed = shape("E!Ncʻα")
         value = parsed["children"][0]

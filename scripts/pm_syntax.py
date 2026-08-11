@@ -642,6 +642,20 @@ class Parser:
             raise PMSyntaxError(f"expected proposition at offset {token.position}")
 
         while (next_token := self.peek()) is not None:
+            if next_token.kind == "comma" and minimum == 0:
+                # A top-level comma-list before membership is a tuple of
+                # terms, not the separator consumed by named applications.
+                lookahead = self.tokens[self.index + 1:]
+                if not any(token.kind == "binary" and token.text == "∈"
+                           for token in lookahead):
+                    break
+                self.take()
+                right = self.expression(1600)
+                left = AST(
+                    "tuple",
+                    (*left.children, right) if left.tag == "tuple" else (left, right),
+                )
+                continue
             if next_token.kind == "postfix_type_index":
                 if 1800 < minimum:
                     break
