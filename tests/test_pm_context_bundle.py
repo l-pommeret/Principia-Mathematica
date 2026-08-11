@@ -61,6 +61,7 @@ class ContextBundleTests(unittest.TestCase):
             "foundation_profile": "ordered-first-order-pm1",
             "context_closure": [],
             "allowed_pm_items": [],
+            "policy": {"interface_gated": True},
             "local_context_paths": ["Principia/Architecture/FirstOrderQ259.lean"],
         }
         bundle = build_bundle(manifest, {}, ROOT)
@@ -74,11 +75,22 @@ class ContextBundleTests(unittest.TestCase):
         self.assertFalse(local[0]["grants_proof_permission"])
         self.assertIn("def star_9_3_target", bundle["lean_source"])
 
+    def test_local_architecture_context_requires_interface_gate(self):
+        manifest = {
+            "kind": "pm-constrained-prover-manifest",
+            "context_closure": [],
+            "allowed_pm_items": [],
+            "local_context_paths": ["Principia/Architecture/FirstOrderQ259.lean"],
+        }
+        with self.assertRaisesRegex(ValueError, "requires interface-gated policy"):
+            build_bundle(manifest, {}, ROOT)
+
     def test_parent_traversal_is_rejected_for_local_architecture_context(self):
         manifest = {
             "kind": "pm-constrained-prover-manifest",
             "context_closure": [],
             "allowed_pm_items": [],
+            "policy": {"interface_gated": True},
             "local_context_paths": ["../outside.lean"],
         }
         with self.assertRaisesRegex(ValueError, "invalid local context path"):

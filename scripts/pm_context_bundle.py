@@ -196,6 +196,9 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
         raise BundleError("local_context_paths must be a list of relative paths")
     if len(local_context_paths) != len(set(local_context_paths)):
         raise BundleError("local_context_paths must be unique")
+    interface_gated = bool(manifest.get("policy", {}).get("interface_gated", False))
+    if local_context_paths and not interface_gated:
+        raise BundleError("local architecture context requires interface-gated policy")
     for relative in local_context_paths:
         local_path = Path(relative)
         if local_path.is_absolute() or ".." in local_path.parts:
@@ -221,7 +224,6 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
 
     # Constructors and `detach` live inside the complete System foundation;
     # ✱1·01 lives inside Formula. Do not duplicate those declarations.
-    interface_gated = bool(manifest.get("policy", {}).get("interface_gated", False))
     non_kernel = sorted(
         identifier for identifier in closure
         if registry[identifier].get("formal_status") != "kernel-checked"
