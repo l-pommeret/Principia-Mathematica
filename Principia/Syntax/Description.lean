@@ -135,13 +135,13 @@ def liftSubstitution (substitution : Substitution signature realContext source t
       match substitution entry with
       | .real entry => .real entry
       | .apparent entry => .apparent (.succ entry)
-      | .symbol (sort := _) symbol => .symbol symbol
+      | .symbol (sort := _) payload => .symbol payload
 
 def Term.substitute (substitution : Substitution signature realContext source target) :
     Term signature realContext source sort → Term signature realContext target sort
   | .real entry => .real entry
   | .apparent entry => substitution entry
-  | .symbol (sort := _) symbol => .symbol symbol
+  | .symbol (sort := _) payload => .symbol payload
 
 def Arguments.substitute
     (substitution : Substitution signature realContext source target) :
