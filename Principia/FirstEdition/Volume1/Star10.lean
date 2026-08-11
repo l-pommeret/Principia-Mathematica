@@ -55,3 +55,25 @@ Dem.  ⊢ . ✱10·1 . ⊃ ⊢ : (x).φx .⊃ .φy  (1)
 ⊢ . ✱10·1 . ⊃ ⊢ : (x).ψx .⊃ .ψy  (2)
 ⊢ . (1) . (2) . ✱10·13 . ⊃ ⊢ : (x).φx : (x).ψx : ⊃ .φy .ψy
 PM-VERBATIM-END PM1:✱10·14 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·2
+✱10·2.  ⊢ : .(x).p∨φx .≡ : p .∨ .(x).φx
+Dem.  ⊢ . ✱10·1 . ✱1·6 . ⊃ ⊢ : p .∨ .(x).φx : ⊃ .p∨φy :
+[✱10·11] ⊃ ⊢ : (y) : p .∨ .(x).φx : ⊃ .p∨φy :
+[✱10·12] ⊃ ⊢ : p .∨ .(x).φx : ⊃ .(y).p∨φy  (1)
+⊢ . ✱10·12 . ⊃ ⊢ : (y).p∨φy .⊃ : p .∨ .(x).φx  (2)
+⊢ . (1) . (2) . ⊃ ⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·2 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·21
+✱10·21.  ⊢ : .(x).p⊃φx .≡ : p .⊃ .(x).φx  [✱10·2  ∼p/p]
+PM-VERBATIM-END PM1:✱10·21 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·22
+✱10·22.  ⊢ : .(x).φx .ψx .≡ : (x).φx : (x).ψx
+Dem.  By ✱10·1, ✱3·26, ✱10·11, ✱10·21, ✱3·27, Comp, and ✱10·14·11,
+⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·22 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·221
+✱10·221.  If φx contains a constituent χ(x, y, z, ...) and ψx contains a
+constituent χ(x, u, v, ...), where χ is an elementary function and y, z, ...,
+u, v, ... are either constants or apparent variables, then φx̂ and ψx̂ take
+arguments of the same type.
+PM-VERBATIM-END PM1:✱10·221 -/
