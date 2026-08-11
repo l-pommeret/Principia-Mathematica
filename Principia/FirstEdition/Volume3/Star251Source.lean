@@ -144,3 +144,19 @@ PM-VERBATIM-END PM3:✱251·351 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·36
 ✱251·36.  ⊢ : P ∈ Ω .⊃ . Pcl ∈ Ser
 PM-VERBATIM-END PM3:✱251·36 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·361
+✱251·361.  ⊢ : P ∈ Ω .⊃ . Pcl ∈ Ser  [✱251·36 . ✱170·101]
+PM-VERBATIM-END PM3:✱251·361 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·37
+✱251·37.  ⊢ : P ∈ Ω .⊃ . Pcl = Ptd  [✱251·35 . ✱171·2]
+PM-VERBATIM-END PM3:✱251·37 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·371
+✱251·371.  ⊢ : P ∈ Ω .⊃ . Pcl = Ptd  [✱251·37 . ✱170·101 . ✱171·101]
+PM-VERBATIM-END PM3:✱251·371 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·4
+✱251·4.  ⊢ : P ∈ Rel³ arithm ∩ Bord . CʻP ⊂ Bord . CʻΣʻP ⊂ Bord .⊃ . ΣʻΣʻP ∈ Bord
+PM-VERBATIM-END PM3:✱251·4 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·41
+✱251·41.  ⊢ : P ∈ Rel³ arithm ∩ Ω . CʻP ⊂ Ω . CʻΣʻP ⊂ Ω .⊃ . ΣʻΣʻP ∈ Ω  [✱204·54 . ✱251·4]
+PM-VERBATIM-END PM3:✱251·41 -/
