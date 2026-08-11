@@ -2305,7 +2305,9 @@
         "commit": "275e8a12e1cdfeef2cf17521eb20d77e7b31db40",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31514985850",
         "conclusion": "success",
-        "scope": "isolated-interface; canonical integration forbidden; one-to-one remap pending"
+        "scope": "isolated-interface",
+        "canonical_integration": "forbidden",
+        "one_to_one_remap": "pending"
       },
       "context_sha256": "9e8aaa9bba962c719dbfb0452c87ec8c323c6be41bbdb7eaa906f72228025f46",
       "manifest_sha256": "a8197801228dd330024ed9a0ddef6becad0819af5d1db56c75855d66b6242cc7",
@@ -2315,8 +2317,42 @@
       "aristotle_project_id": "c94c6138-6bb1-4402-8278-afde6091aef1",
       "aristotle_task_id": "6fcb7502-57b3-4ca7-acb4-1caffc26122c",
       "aristotle_latest_task_id": "6fcb7502-57b3-4ca7-acb4-1caffc26122c",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED"
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
+      "aristotle_latest_task_name": "Formalize Q296.md",
+      "aristotle_latest_task_created": "10 mins ago"
+    },
+    "Q310": {
+      "canonical_ids": [
+        "PM1:✱14·02",
+        "PM1:✱14·03",
+        "PM1:✱14·04"
+      ],
+      "source": "PM volume I, first edition, p. 182, leaf 204",
+      "prompt_path": "aristotle/Q310.md",
+      "audit_path": "reviews/Q310-review.md",
+      "audit_status": "A",
+      "audit_label": "A-interface-only",
+      "lean_scope": "exact contextual reductions PM1 ✱14·02, ✱14·03 and ✱14·04 in the typed de Bruijn description interface",
+      "depends_on": [],
+      "interface_only": true,
+      "source_backfill_required": false,
+      "integration_status": "blocked-awaiting-aristotle-bodies-and-one-to-one-canonical-remap",
+      "canonical_integration_forbidden": true,
+      "requires_one_to_one_kernel_remap": true,
+      "parallel_group": "STAR14-INTERFACE",
+      "aristotle_status": "ready",
+      "context_ci_evidence": {
+        "commit": "f5fafdf6ec8003a0a70be5a4b69ca79383742c59",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31517498507",
+        "conclusion": "success",
+        "scope": "isolated-interface; canonical integration forbidden; one-to-one remap pending"
+      },
+      "context_sha256": "bed2425794bf6b50b9e0a905054cc51c776df03e879e2c0f83bb52a2d2674c74",
+      "manifest_sha256": "e014c00ac460637efafc134ac3e42f2a0af43fdf7deadb13707859d41730dae1",
+      "submission_gate": "satisfied for isolated interface only; source collation and exact targets complete; canonical promotion blocked pending Aristotle bodies and one-to-one remap",
+      "aristotle_request_path": "aristotle/Q310.md",
+      "aristotle_request_sha256": "8886889e08fcfe5a112aa6bf03b871f94fa9975489ebd02e65f18a898224fe77"
     },
     "Q300": {
       "canonical_ids": [

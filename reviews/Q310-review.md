@@ -1,6 +1,6 @@
 # Q310 review — PM I ✱14·02, ✱14·03 and ✱14·04
 
-**Verdict: A — architecture-interface only, pending isolated CI.** These are
+**Verdict: A — interface-only, submission-ready.** These are
 the smallest remaining reductional definitions in the source-only Q297 lot.
 They are collated from first-edition volume I, printed p. 182, leaf 204,
 SHA-256
@@ -23,7 +23,12 @@ absent and supplies no proof permission.
 Canonical promotion is forbidden until the exact Q310 context is remotely
 kernel-checked, returned bodies are audited, and every declaration is remapped
 one-to-one to the corresponding `PM.FirstEdition.Volume1.Star14Source`
-declaration followed by online Lean CI.
+declaration followed by online Lean CI. The exact isolated context and full
+edition were kernel-checked successfully by CI
+[31517498507](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31517498507)
+at commit `f5fafdf6ec8003a0a70be5a4b69ca79383742c59`. This evidence makes
+Q310 submission-ready only at the sealed interface: it does not promote an
+Aristotle body or establish any of the three PM definitions canonically.
 
 The derived items ✱14·18/·21 and every item in Q298/Q299/Q302 remain blocked:
 they require an assertion/derivation layer for contextual descriptions,

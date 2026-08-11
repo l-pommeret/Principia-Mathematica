@@ -15,15 +15,15 @@
     "catalogued_items_missing_proof_skeleton": 365,
     "constrained_batches": 16,
     "complete_batch_artifact_sets": 15,
-    "planned_campaign_questions": 64,
+    "planned_campaign_questions": 65,
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
-    "catalogued_items_without_campaign_question": 203,
+    "catalogued_items_without_campaign_question": 200,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
     "audit": {
-      "A": 33,
+      "A": 34,
       "A-kernel-checked": 1,
       "blocked-missing-first-order-assertion": 1,
       "blocked-needs-functions-significance-and-higher-order-derivation": 1,
@@ -36,6 +36,7 @@
       "missing": 2,
       "needs-review": 2,
       "not-submitted": 13,
+      "ready": 1,
       "submitted": 18
     }
   },
@@ -55,7 +56,7 @@
     },
     "planned": {
       "PM1:✱1": 3,
-      "PM1:✱14": 1,
+      "PM1:✱14": 4,
       "PM1:✱2": 67,
       "PM1:✱3": 28,
       "PM1:✱4": 61,
@@ -71,7 +72,7 @@
       "PM1:✱11": 61,
       "PM1:✱12": 2,
       "PM1:✱13": 27,
-      "PM1:✱14": 33,
+      "PM1:✱14": 30,
       "PM1:✱2": 1,
       "PM1:✱9": 22
     }
@@ -2117,7 +2118,9 @@
       "kind": "definition",
       "source_catalogue": true,
       "formal_status": "prepared",
-      "campaign_questions": [],
+      "campaign_questions": [
+        "Q310"
+      ],
       "ast": {
         "status": "architecture-gated-source-route"
       },
@@ -2137,7 +2140,9 @@
       "kind": "definition",
       "source_catalogue": true,
       "formal_status": "prepared",
-      "campaign_questions": [],
+      "campaign_questions": [
+        "Q310"
+      ],
       "ast": {
         "status": "architecture-gated-source-route"
       },
@@ -2157,7 +2162,9 @@
       "kind": "definition",
       "source_catalogue": true,
       "formal_status": "prepared",
-      "campaign_questions": [],
+      "campaign_questions": [
+        "Q310"
+      ],
       "ast": {
         "status": "architecture-gated-source-route"
       },
@@ -6986,9 +6993,6 @@
     "PM1:✱13·196",
     "PM1:✱13·21",
     "PM1:✱13·22",
-    "PM1:✱14·02",
-    "PM1:✱14·03",
-    "PM1:✱14·04",
     "PM1:✱14·1",
     "PM1:✱14·101",
     "PM1:✱14·11",
