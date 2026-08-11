@@ -267,6 +267,10 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("bang", char, index))
             index += 1
             continue
+        if char == "ₐ":
+            result.append(Token("postfix_type_index", char, index))
+            index += 1
+            continue
         if char.isascii() and char.isdigit():
             match = re.match(r"[0-9]+", source[index:])
             assert match is not None
@@ -422,7 +426,7 @@ def relation_binder_variables(text: str) -> str:
 def is_class_surface(node: AST) -> bool:
     return node.tag in {
         "class_incomplete", "class_symbol", "class_union",
-        "class_intersection", "class_complement", "of",
+        "class_intersection", "class_difference", "class_complement", "of",
     }
 
 
@@ -433,6 +437,7 @@ def seal_class_surface(node: AST) -> AST:
         "class_symbol": "class_reference",
         "class_union": "class_union_spec",
         "class_intersection": "class_intersection_spec",
+        "class_difference": "class_difference_spec",
         "class_complement": "class_complement_spec",
         # A value stroke is type-sensitive in PM.  In a class-only context it
         # is sealed as a class-valued application without guessing its type
@@ -637,6 +642,12 @@ class Parser:
             raise PMSyntaxError(f"expected proposition at offset {token.position}")
 
         while (next_token := self.peek()) is not None:
+            if next_token.kind == "postfix_type_index":
+                if 1800 < minimum:
+                    break
+                index = self.take()
+                left = AST("type_indexed", (left,), index.text)
+                continue
             if (next_token.kind == "lparen" and next_token.text == "(" and
                     left.tag in {"atom", "type_indexed", "apply_named"}):
                 if 1800 < minimum:

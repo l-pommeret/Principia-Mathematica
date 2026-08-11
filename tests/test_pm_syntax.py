@@ -180,7 +180,7 @@ class PMDotSyntaxTests(unittest.TestCase):
 
     def test_q101_16_binary_class_difference_is_not_a_prefix_complement(self):
         parsed = statement_shape("✱101·16. ⊢ . μ ∈ NC − ιʻ0")
-        self.assertIn("class_difference", tags(parsed))
+        self.assertIn("class_difference_spec", tags(parsed))
         with self.assertRaisesRegex(pm_syntax.PMSyntaxError, "unconsumed token"):
             statement_shape("✱101·16. ⊢ . μ ∈ NC ιʻ0")
 
@@ -274,6 +274,18 @@ class PMDotSyntaxTests(unittest.TestCase):
             "smₐʻʻμ = smₐʻʻsmᵟʻʻμ"
         )
         self.assertGreaterEqual(tags(parsed).count("type_indexed"), 2)
+
+    def test_q103_1_preserves_postfix_alpha_type_index(self):
+        parsed = statement_shape(
+            "✱103·1. ⊢ . N₀cʻα = (Ncʻα)ₐ = Nc(α)ʻα = Nc(αₐ)ʻα"
+        )
+        self.assertIn("type_indexed", tags(parsed))
+        with self.assertRaisesRegex(pm_syntax.PMSyntaxError, "expected proposition"):
+            shape("ₐNcʻα")
+
+    def test_q103_32_seals_class_difference_before_inclusion(self):
+        parsed = statement_shape("✱103·32. ⊢ . NCᵝ(α) − ιʻΛ ⊂ N₀C(α)")
+        self.assertIn("class_difference_spec", tags(parsed))
 
     def test_nested_of_application_preserves_left_nesting(self):
         parsed = shape("E!Ncʻα")
