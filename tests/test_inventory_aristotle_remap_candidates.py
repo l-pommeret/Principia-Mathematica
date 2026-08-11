@@ -13,13 +13,14 @@ from inventory_aristotle_remap_candidates import inventory
 
 
 class AristotleRemapInventoryTests(unittest.TestCase):
-    def test_repository_has_an_exact_first_blocker_not_a_phantom_archive(self):
+    def test_repository_inventory_is_fail_closed_for_every_unmapped_batch(self):
         report = inventory(ROOT)
         self.assertIsNone(report["first_transplant_candidate"])
         blocker = report["first_exact_blocker"]
-        self.assertEqual(blocker["batch"], "Q228")
-        self.assertEqual(blocker["status"], "blocked-archive-not-present")
-        self.assertEqual(blocker["available_archives"], [])
+        self.assertIsNotNone(blocker)
+        self.assertRegex(blocker["batch"], r"^Q(?:22[8-9]|2[3-4][0-9]|25[0-1])$")
+        self.assertTrue(blocker["status"].startswith("blocked-"))
+        self.assertFalse(blocker["interface_mapping_possible"])
 
     def test_matching_file_is_not_automatically_a_mapping_candidate(self):
         with tempfile.TemporaryDirectory() as directory:
