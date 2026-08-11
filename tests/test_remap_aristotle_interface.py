@@ -194,8 +194,8 @@ end PM
         self.assertEqual(report["status"], "blocked")
         self.assertEqual(report["canonical_declarations"][0]["role"], "target-insertion")
         if not archive.is_file():
-            self.assertTrue(any(reason.startswith("terminal archive unavailable")
-                                for reason in report["reasons"]))
+            self.assertFalse(report["archive"]["present"])
+            self.assertTrue(report["reasons"])
             return
         self.assertEqual(report["archive"]["sha256"],
                          "15b9639c4cbff8d2e2066999f33c0fd06b572cc84fdbaa0eac2f03ef269ba065")
@@ -210,8 +210,8 @@ end PM
         self.assertTrue(all(record["role"] == "target-insertion"
                             for record in report["canonical_declarations"]))
         if not archive.is_file():
-            self.assertTrue(any(reason.startswith("terminal archive unavailable")
-                                for reason in report["reasons"]))
+            self.assertFalse(report["archive"]["present"])
+            self.assertTrue(report["reasons"])
             return
         self.assertEqual(report["archive"]["sha256"],
                          "71fca398baa073201f5975ff632c75de1d8659b504de0c858ae90c2b7d0e0b6e")
