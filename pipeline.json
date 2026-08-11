@@ -603,7 +603,12 @@
       "aristotle_archive_path": "aristotle/results/Q218-final.tar.gz",
       "aristotle_archive_sha256": "f08cddeb7c49680c4771b96c522c12ff4f46f285654f2752b88d4aefa15a8021",
       "reconstruction_audit_path": "reviews/Q218-reconstruction-audit.json",
-      "integration_status": "relaxed-closure-review-required"
+      "integration_status": "awaiting-ci-relaxed-closure-recorded",
+      "integration_ci_evidence": {
+        "commit": "pending",
+        "run": "pending",
+        "conclusion": "pending"
+      }
     },
     "Q219": {
       "canonical_ids": [

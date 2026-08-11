@@ -36,5 +36,7 @@ The per-target machine audit is tracked in
 `reviews/Q218-reconstruction-audit.json`. The result is **not a strict
 closure**: ✱2·73 adds ✱1·6; ✱2·74 adds ✱1·4 and ✱1·6 while leaving the printed
 `Assoc` unused; ✱2·75 adds ✱1·4, ✱1·5 and ✱1·6. ✱2·76 is strict relative to
-the preceding local target. No returned body is integrated until the metadata
-can represent these historical dependency relaxations explicitly.
+the preceding local target. The four bodies are now integrated with
+`formal_status=awaiting-ci`; the three relaxed items carry exact
+`historical_dependency_relaxation` records, while ✱2·76 retains ordinary strict
+dependency equality. GitHub CI remains the only kernel authority.

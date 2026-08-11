@@ -93,15 +93,20 @@ def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool 
     all_candidates = printed_candidates | set(conventions)
     local = dict(local_declarations or {})
     overlap = sorted(set(local) & set(registry))
-    if overlap:
-        raise ConstraintError(f"local items already exist in the kernel registry: {overlap}")
+    mismatched = [
+        identifier for identifier in overlap
+        if registry[identifier].get("declaration") != local[identifier]
+    ]
+    if mismatched:
+        raise ConstraintError(f"local items conflict with the repository registry: {mismatched}")
     missing = sorted(
         candidate for candidate in all_candidates
         if candidate not in registry and candidate not in local
     )
     non_kernel = sorted(
         candidate for candidate in all_candidates
-        if candidate in registry and registry[candidate].get("formal_status") != "kernel-checked"
+        if candidate in registry and candidate not in local and
+        registry[candidate].get("formal_status") != "kernel-checked"
     )
     unresolved = [
         permission for permission in permissions

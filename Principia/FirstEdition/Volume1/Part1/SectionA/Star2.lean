@@ -1869,4 +1869,137 @@ theorem star_2_69 {Γ} (p q : PM.Elementary Γ) :
     (PM.Derivation.detach perm
       (star_2_06 ((p ⊃ₚ q) ⊃ₚ q) (q ∨ₚ p) ((q ⊃ₚ p) ⊃ₚ p)))
 
+/- PM-VERBATIM-BEGIN PM1:✱2·73
+✱2·73.  ⊢ : p ⊃ q . ⊃ : p ∨ q ∨ r . ⊃ . q ∨ r    [✱2·621·38]
+PM-VERBATIM-END PM1:✱2·73 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·74
+✱2·74.  ⊢ : q ⊃ p . ⊃ : p ∨ q ∨ r . ⊃ . p ∨ r    [✱2·73 (q,p)/(p,q) . Assoc . Syll]
+PM-VERBATIM-END PM1:✱2·74 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·75
+✱2·75.  ⊢ : p ∨ q . ⊃ : p ∨ (q ⊃ r) . ⊃ . p ∨ r    [✱2·74 ∼q/q . ✱2·53·31]
+PM-VERBATIM-END PM1:✱2·75 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱2·76
+✱2·76.  ⊢ : p ∨ (q ⊃ r) . ⊃ : p ∨ q . ⊃ . p ∨ r    [✱2·75 . Comm]
+PM-VERBATIM-END PM1:✱2·76 -/
+
+/- PM-FORMAL-GLOSS
+The three-place sums are left-associated according to PM's convention:
+`p ∨ q ∨ r` reads `(p ∨ q) ∨ r`. The printed substitutions and aliases remain
+verbatim above. A constrained reconstruction found a strict closure for
+✱2·76, but required additional primitive propositions for ✱2·73–·75. Those
+differences are not inserted into PM's bytes; they are recorded item by item in
+`metadata/items/PM1-star-2-Q218.json` and
+`reviews/Q218-reconstruction-audit.json`.
+-/
+
+def star_2_73_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ q . ⊃ : p ∨ q ∨ r . ⊃ . q ∨ r"
+  parsed := (p ⊃ₚ q) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (q ∨ₚ r))
+  scopeReading := "The triple sum is left-associated; the outer antecedent is p ⊃ q."
+
+def star_2_73_demonstration_printed : PM.PrintedFormula := PM.pmPrinted "[✱2·621·38]"
+
+theorem star_2_73 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ q) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (q ∨ₚ r))) := by
+  have first : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((p ∨ₚ q) ⊃ₚ q)) := star_2_621 p q
+  have second : ⊢ₚ (((p ∨ₚ q) ⊃ₚ q) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (q ∨ₚ r))) :=
+    star_2_38 r (p ∨ₚ q) q
+  have syll :
+      ⊢ₚ ((((p ∨ₚ q) ⊃ₚ q) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (q ∨ₚ r))) ⊃ₚ
+          (((p ⊃ₚ q) ⊃ₚ ((p ∨ₚ q) ⊃ₚ q)) ⊃ₚ
+            ((p ⊃ₚ q) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (q ∨ₚ r))))) :=
+    PM.Derivation.star_1_6 (∼ₚ (p ⊃ₚ q)) ((p ∨ₚ q) ⊃ₚ q)
+      (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (q ∨ₚ r))
+  exact PM.Derivation.detach first (PM.Derivation.detach second syll)
+
+def star_2_74_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : q ⊃ p . ⊃ : p ∨ q ∨ r . ⊃ . p ∨ r"
+  parsed := (q ⊃ₚ p) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))
+  scopeReading := "The displayed (q,p)/(p,q) substitution precedes Assoc and Syll."
+
+def star_2_74_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·73 (q,p)/(p,q) . Assoc . Syll]"
+
+theorem star_2_74 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))) := by
+  have perm : ⊢ₚ ((p ∨ₚ q) ⊃ₚ (q ∨ₚ p)) := PM.Derivation.star_1_4 p q
+  have sum : ⊢ₚ ((r ∨ₚ (p ∨ₚ q)) ⊃ₚ (r ∨ₚ (q ∨ₚ p))) :=
+    PM.Derivation.detach perm (PM.Derivation.star_1_6 r (p ∨ₚ q) (q ∨ₚ p))
+  have rotateIn : ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (r ∨ₚ (p ∨ₚ q))) :=
+    PM.Derivation.star_1_4 (p ∨ₚ q) r
+  have rotateOut : ⊢ₚ ((r ∨ₚ (q ∨ₚ p)) ⊃ₚ ((q ∨ₚ p) ∨ₚ r)) :=
+    PM.Derivation.star_1_4 r (q ∨ₚ p)
+  have half : ⊢ₚ ((r ∨ₚ (p ∨ₚ q)) ⊃ₚ ((q ∨ₚ p) ∨ₚ r)) :=
+    PM.Derivation.detach sum
+      (PM.Derivation.detach rotateOut
+        (star_2_05 (r ∨ₚ (p ∨ₚ q)) (r ∨ₚ (q ∨ₚ p)) ((q ∨ₚ p) ∨ₚ r)))
+  have swap : ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ ((q ∨ₚ p) ∨ₚ r)) :=
+    PM.Derivation.detach rotateIn
+      (PM.Derivation.detach half
+        (star_2_05 ((p ∨ₚ q) ∨ₚ r) (r ∨ₚ (p ∨ₚ q)) ((q ∨ₚ p) ∨ₚ r)))
+  have base : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (((q ∨ₚ p) ∨ₚ r) ⊃ₚ (p ∨ₚ r))) := star_2_73 q p r
+  have inner :
+      ⊢ₚ ((((q ∨ₚ p) ∨ₚ r) ⊃ₚ (p ∨ₚ r)) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))) :=
+    PM.Derivation.detach swap
+      (star_2_06 ((p ∨ₚ q) ∨ₚ r) ((q ∨ₚ p) ∨ₚ r) (p ∨ₚ r))
+  exact PM.Derivation.detach base
+    (PM.Derivation.detach inner
+      (star_2_05 (q ⊃ₚ p) (((q ∨ₚ p) ∨ₚ r) ⊃ₚ (p ∨ₚ r))
+        (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))))
+
+def star_2_75_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ q . ⊃ : p ∨ (q ⊃ r) . ⊃ . p ∨ r"
+  parsed := (p ∨ₚ q) ⊃ₚ ((p ∨ₚ (q ⊃ₚ r)) ⊃ₚ (p ∨ₚ r))
+  scopeReading := "The second antecedent is p ∨ (q ⊃ r), not (p ∨ q) ⊃ r."
+
+def star_2_75_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·74 ∼q/q . ✱2·53·31]"
+
+theorem star_2_75 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ q) ⊃ₚ ((p ∨ₚ (q ⊃ₚ r)) ⊃ₚ (p ∨ₚ r))) := by
+  have perm : ⊢ₚ ((p ∨ₚ q) ⊃ₚ (q ∨ₚ p)) := PM.Derivation.star_1_4 p q
+  have fromDisj : ⊢ₚ ((q ∨ₚ p) ⊃ₚ (∼ₚ q ⊃ₚ p)) := star_2_53 q p
+  have hyp : ⊢ₚ ((p ∨ₚ q) ⊃ₚ (∼ₚ q ⊃ₚ p)) :=
+    PM.Derivation.detach perm
+      (PM.Derivation.detach fromDisj
+        (PM.Derivation.star_1_6 (∼ₚ (p ∨ₚ q)) (q ∨ₚ p) (∼ₚ q ⊃ₚ p)))
+  have shifted :
+      ⊢ₚ ((∼ₚ q ⊃ₚ p) ⊃ₚ (((p ∨ₚ ∼ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))) :=
+    star_2_74 p (∼ₚ q) r
+  have curried :
+      ⊢ₚ ((p ∨ₚ q) ⊃ₚ (((p ∨ₚ ∼ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))) :=
+    PM.Derivation.detach hyp
+      (PM.Derivation.detach shifted
+        (PM.Derivation.star_1_6 (∼ₚ (p ∨ₚ q)) (∼ₚ q ⊃ₚ p)
+          (((p ∨ₚ ∼ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))))
+  have commuted :
+      ⊢ₚ (((p ∨ₚ ∼ₚ q) ∨ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) :=
+    PM.Derivation.detach curried
+      (PM.Derivation.star_1_5 (∼ₚ (p ∨ₚ q)) (∼ₚ ((p ∨ₚ ∼ₚ q) ∨ₚ r)) (p ∨ₚ r))
+  have assoc : ⊢ₚ ((p ∨ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∨ₚ ∼ₚ q) ∨ₚ r)) :=
+    star_2_31 p (∼ₚ q) r
+  have joined :
+      ⊢ₚ ((p ∨ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) :=
+    PM.Derivation.detach assoc
+      (PM.Derivation.detach commuted
+        (PM.Derivation.star_1_6 (∼ₚ (p ∨ₚ (q ⊃ₚ r))) ((p ∨ₚ ∼ₚ q) ∨ₚ r)
+          ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))))
+  exact PM.Derivation.detach joined
+    (PM.Derivation.star_1_5 (∼ₚ (p ∨ₚ (q ⊃ₚ r))) (∼ₚ (p ∨ₚ q)) (p ∨ₚ r))
+
+def star_2_76_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ (q ⊃ r) . ⊃ : p ∨ q . ⊃ . p ∨ r"
+  parsed := (p ∨ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))
+  scopeReading := "Comm exchanges the two antecedents of ✱2·75."
+
+def star_2_76_demonstration_printed : PM.PrintedFormula := PM.pmPrinted "[✱2·75 . Comm]"
+
+theorem star_2_76 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) := by
+  exact PM.Derivation.detach (star_2_75 p q r)
+    (star_2_04 (p ∨ₚ q) (p ∨ₚ (q ⊃ₚ r)) (p ∨ₚ r))
+
 end PM.FirstEdition.Volume1.Star2
