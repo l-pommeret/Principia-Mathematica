@@ -261,3 +261,39 @@ PM-VERBATIM-END PM2:✱103·2 -/
 /- PM-VERBATIM-BEGIN PM2:✱103·26
 ✱103·26.  ⊢ :: μ ∈ NC .⊃ : α ∈ μ .≡ . N₀cʻα = μ
 PM-VERBATIM-END PM2:✱103·26 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱103·01
+✱103·01.  N₀cʻα = Ncʻα ∩ tʻα  Df
+PM-VERBATIM-END PM2:✱103·01 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱103·02
+✱103·02.  N₀C = DʻN₀c  Df
+PM-VERBATIM-END PM2:✱103·02 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱103·1
+✱103·1.  ⊢ . N₀cʻα = (Ncʻα)ₐ = Nc(α)ʻα = Nc(αₐ)ʻα  [✱102·6 . (✱103·01)]
+PM-VERBATIM-END PM2:✱103·1 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱103·16
+✱103·16.  ⊢ : N₀cʻα = Ncʻβ .≡ . Ncʻα = Ncʻβ
+PM-VERBATIM-END PM2:✱103·16 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱103·22
+✱103·22.  ⊢ : μ ∈ N₀C .⊃ . ∃!μ  [✱103·13·2]
+PM-VERBATIM-END PM2:✱103·22 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱103·23
+✱103·23.  ⊢ . Λ ∼∈ N₀C  [✱103·22]
+PM-VERBATIM-END PM2:✱103·23 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱103·301
+✱103·301.  ⊢ . NCᵅ(α) = N₀C(α)
+PM-VERBATIM-END PM2:✱103·301 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱103·31
+✱103·31.  ⊢ : ∃!Nc(αᵦ)ʻδ .⊃ . Nc(αᵦ)ʻδ ∈ N₀C(α)
+PM-VERBATIM-END PM2:✱103·31 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱103·32
+✱103·32.  ⊢ . NCᵝ(α) − ιʻΛ ⊂ N₀C(α)
+PM-VERBATIM-END PM2:✱103·32 -/
