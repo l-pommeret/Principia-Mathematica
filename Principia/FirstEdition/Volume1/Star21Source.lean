@@ -156,3 +156,15 @@ PM-VERBATIM-END PM1:✱21·62 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·63
 ✱21·63. ⊢ : (R). p ∨ fR .⊃ : p .∨ . (R). fR  [Proof as in ✱20·63]
 PM-VERBATIM-END PM1:✱21·63 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·631
+✱21·631. If "fR" is significant, then if S is of the same type as R, "fS" is significant, and vice versa.  [Proof as in ✱20·631]
+PM-VERBATIM-END PM1:✱21·631 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·632
+✱21·632. If, for some R, there is a proposition fR, then there is a function fR̂, and vice versa.  [Proof as in ✱20·632]
+PM-VERBATIM-END PM1:✱21·632 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·633
+✱21·633. "Whatever possible relation R may be, f(R,S) is true whatever possible relation S may be" implies "whatever possible relation S may be, f(R,S) is true whatever possible relation R may be."  [Proof as in ✱20·633]
+PM-VERBATIM-END PM1:✱21·633 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·64
+✱21·64. ⊢ : (R). fR : (R). gR .⊃ . fS . gS  [Proof as in ✱20·64]
+PM-VERBATIM-END PM1:✱21·64 -/
