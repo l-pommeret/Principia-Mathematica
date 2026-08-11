@@ -1,4 +1,5 @@
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star5
+import Principia.FirstEdition.Volume1.Part1.SectionA.Star4
 
 /-!
 # PM I, first edition, ✱5 — kernel candidates
