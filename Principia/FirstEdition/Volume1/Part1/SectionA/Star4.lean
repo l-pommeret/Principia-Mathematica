@@ -1,3 +1,5 @@
+import Principia.FirstEdition.Volume1.Part1.SectionA.Star3
+
 /-!
 # PM I, first edition, ✱4 — equivalence and formal rules
 
@@ -128,3 +130,93 @@ PM-VERBATIM-END PM1:✱4·32 -/
 
 The above are the associative laws for multiplication and addition.
 PM-VERBATIM-END PM1:✱4·33 -/
+
+namespace PM.Elementary
+
+/-- PM I (1910), p. 120, ✱4·01: equivalence is an object-language
+abbreviation. -/
+def equiv (p q : PM.Elementary Γ) : PM.Elementary Γ :=
+  (p ⊃ₚ q) ∧ₚ (q ⊃ₚ p)
+
+infix:53 " ≡ₚ " => equiv
+
+/-- PM I (1910), p. 122, ✱4·02: a special three-place chain abbreviation. -/
+def equivChain (p q r : PM.Elementary Γ) : PM.Elementary Γ :=
+  (p ≡ₚ q) ∧ₚ (q ≡ₚ r)
+
+end PM.Elementary
+
+namespace PM.FirstEdition.Volume1.Star4
+
+open PM
+open PM.Elementary
+
+/-- PM I (1910), p. 120, ✱4·1.  The two uses of the primitive inference are
+the documented closed/nonempty-context branches. -/
+theorem star_4_1 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ q) ≡ₚ (∼ₚ q ⊃ₚ ∼ₚ p)) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer
+    (PM.FirstEdition.Volume1.Star2.star_2_17 p q)
+    (infer
+      (PM.FirstEdition.Volume1.Star2.star_2_16 p q)
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        ((p ⊃ₚ q) ⊃ₚ (∼ₚ q ⊃ₚ ∼ₚ p)) ((∼ₚ q ⊃ₚ ∼ₚ p) ⊃ₚ (p ⊃ₚ q))))
+
+/-- PM I (1910), p. 122, ✱4·12.  The two packaging calls and the primitive
+inference branches are the documented non-printed additions for this locus. -/
+theorem star_4_12 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ≡ₚ (∼ₚ q)) ≡ₚ (q ≡ₚ (∼ₚ p))) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have a₁ := PM.FirstEdition.Volume1.Star2.star_2_03 p q
+  have a₂ := PM.FirstEdition.Volume1.Star2.star_2_15 q p
+  have haPair :=
+    infer a₂ (infer a₁
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        ((p ⊃ₚ ∼ₚ q) ⊃ₚ (q ⊃ₚ ∼ₚ p)) ((∼ₚ q ⊃ₚ p) ⊃ₚ (∼ₚ p ⊃ₚ q))))
+  have hFwd :=
+    infer haPair
+      (PM.FirstEdition.Volume1.Star3.star_3_47
+        (p ⊃ₚ ∼ₚ q) (∼ₚ q ⊃ₚ p) (q ⊃ₚ ∼ₚ p) (∼ₚ p ⊃ₚ q))
+  have b₁ := PM.FirstEdition.Volume1.Star2.star_2_03 q p
+  have b₂ := PM.FirstEdition.Volume1.Star2.star_2_15 p q
+  have hbPair :=
+    infer b₂ (infer b₁
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        ((q ⊃ₚ ∼ₚ p) ⊃ₚ (p ⊃ₚ ∼ₚ q)) ((∼ₚ p ⊃ₚ q) ⊃ₚ (∼ₚ q ⊃ₚ p))))
+  have hBwd :=
+    infer hbPair
+      (PM.FirstEdition.Volume1.Star3.star_3_47
+        (q ⊃ₚ ∼ₚ p) (∼ₚ p ⊃ₚ q) (p ⊃ₚ ∼ₚ q) (∼ₚ q ⊃ₚ p))
+  exact infer hBwd (infer hFwd
+    (PM.FirstEdition.Volume1.Star3.star_3_2
+      ((p ≡ₚ (∼ₚ q)) ⊃ₚ (q ≡ₚ (∼ₚ p))) ((q ≡ₚ (∼ₚ p)) ⊃ₚ (p ≡ₚ (∼ₚ q)))))
+
+/-- PM I (1910), p. 121, ✱4·13.  The primitive-inference branches and ✱3·2
+are the documented additions required to package the printed citations. -/
+theorem star_4_13 {Γ} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ≡ₚ (∼ₚ (∼ₚ p))) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer
+    (PM.FirstEdition.Volume1.Star2.star_2_14 p)
+    (infer
+      (PM.FirstEdition.Volume1.Star2.star_2_12 p)
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        (p ⊃ₚ ∼ₚ (∼ₚ p)) (∼ₚ (∼ₚ p) ⊃ₚ p)))
+
+end PM.FirstEdition.Volume1.Star4
