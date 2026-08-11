@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "id": "PM1-1910-ERRATA",
+  "edition": "first",
+  "volume": 1,
+  "title": "ERRATA",
+  "source": {
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "scan_sha256": "52fd0ba446ab2dc97f08d6d4b16d67196edb6d991b0a0445e1ee4dbb57fa2eab",
+    "scan_leaf": 15,
+    "derivative_sha256": "1b258d38fac5059d15030f1cc7ee6ea71e441e855099a3a01beb45871956221f",
+    "status": "facsimile-verified"
+  },
+  "policy": "The registry transcribes the printed Errata diplomatically. Integrated first-impression text remains unchanged; a linked apparatus notice records the correction. Future loci remain pending until their source text is integrated.",
+  "entries": [
+    {
+      "id": "PM1-ERRATA-P14-L2-STATES",
+      "printed_page": 14,
+      "line": "2",
+      "operation": "replace",
+      "printed": "states",
+      "corrected": "allows us to infer",
+      "diplomatic_instruction": "for ‘states’ read ‘allows us to infer’",
+      "integration": {
+        "status": "integrated",
+        "source_item": "PM1:INTRODUCTION-CH1-PRIMITIVES-PP13-15A",
+        "apparatus_id": "APP-PM1-INTRO-P14-STATES-001"
+      }
+    },
+    {
+      "id": "PM1-ERRATA-P14-L7-REFERENCES",
+      "printed_page": 14,
+      "line": "7",
+      "operation": "insert-after",
+      "anchor": "✱3·03",
+      "inserted": "✱1·7, ✱1·71, ✱1·72",
+      "diplomatic_instruction": "after ‘✱3·03’ insert ‘✱1·7, ✱1·71, ✱1·72’",
+      "integration": {
+        "status": "integrated",
+        "source_item": "PM1:INTRODUCTION-CH1-PRIMITIVES-PP13-15A",
+        "apparatus_id": "APP-PM1-INTRO-P14-REFERENCES-001"
+      }
+    },
+    {
+      "id": "PM1-ERRATA-P15-PENULTIMATE-FUNCTION-OF",
+      "printed_page": 15,
+      "line": "penultimate",
+      "operation": "replace",
+      "printed": "function of φx̂",
+      "corrected": "function φx̂",
+      "diplomatic_instruction": "for ‘function of φx̂’ read ‘function φx̂’",
+      "integration": {
+        "status": "integrated",
+        "source_item": "PM1:INTRODUCTION-CH1-FUNCTIONS-PP15B-17",
+        "apparatus_id": "APP-PM1-INTRO-P15-FUNCTION-OF-001"
+      }
+    },
+    {
+      "id": "PM1-ERRATA-P34-L15-X-R",
+      "printed_page": 34,
+      "line": "15",
+      "operation": "replace",
+      "printed": "x",
+      "corrected": "R",
+      "diplomatic_instruction": "for ‘x’ read ‘R’",
+      "integration": {
+        "status": "integrated",
+        "source_item": "PM1:INTRO-CH1-DESCRIPTIVE-RELATION-FUNCTIONS",
+        "apparatus_id": "APP-PM1-INTRO-P34-ERRATA-001"
+      }
+    },
+    {
+      "id": "PM1-ERRATA-P68-L20-CLASSES",
+      "printed_page": 68,
+      "line": "20",
+      "operation": "replace",
+      "printed": "classes",
+      "corrected": "classes of classes",
+      "diplomatic_instruction": "for ‘classes’ read ‘classes of classes’",
+      "integration": {
+        "status": "integrated",
+        "source_item": "PM1:INTRODUCTION-CH2-TYPICAL-AMBIGUITY-P68",
+        "apparatus_id": "APP-PM1-INTRO-P68-CLASSES-001"
+      }
+    },
+    {
+      "id": "PM1-ERRATA-P86-L2-MUST",
+      "printed_page": 86,
+      "line": "2",
+      "operation": "insert-after",
+      "anchor": "must",
+      "inserted": "neither be nor",
+      "diplomatic_instruction": "after ‘must’ insert ‘neither be nor’",
+      "integration": {
+        "status": "integrated",
+        "source_item": "PM1:INTRODUCTION-CH3-RELATIONS-PP85-86A",
+        "apparatus_id": "APP-PM1-INTRO-P86-RELATUM-001"
+      }
+    },
+    {
+      "id": "PM1-ERRATA-P91-L8-AND-3-03",
+      "printed_page": 91,
+      "line": "8",
+      "operation": "delete",
+      "deleted": "and in ✱3·03.",
+      "diplomatic_instruction": "delete ‘and in ✱3·03.’",
+      "integration": {"status": "pending", "reason": "printed locus not yet integrated"}
+    },
+    {
+      "id": "PM1-ERRATA-P103-L7-ASSUMPTION",
+      "printed_page": 103,
+      "line": "7",
+      "operation": "replace",
+      "printed": "assumption",
+      "corrected": "assertion",
+      "diplomatic_instruction": "for ‘assumption’ read ‘assertion’",
+      "integration": {"status": "pending", "reason": "printed locus not yet integrated"}
+    },
+    {
+      "id": "PM1-ERRATA-P103-L25-Q-R",
+      "printed_page": 103,
+      "line": "25",
+      "operation": "replace",
+      "printed": "q",
+      "corrected": "r",
+      "diplomatic_instruction": "for ‘q’ read ‘r’",
+      "integration": {"status": "pending", "reason": "printed locus not yet integrated"}
+    },
+    {
+      "id": "PM1-ERRATA-P218-PENULTIMATE-DELTA-LAMBDA",
+      "printed_page": 218,
+      "line": "penultimate",
+      "operation": "replace",
+      "printed": "Δ",
+      "corrected": "Λ",
+      "diplomatic_instruction": "for ‘Δ’ read ‘Λ’",
+      "integration": {"status": "pending", "reason": "printed locus not yet integrated"}
+    },
+    {
+      "id": "PM1-ERRATA-P382-PENULTIMATE-SELECTIONS",
+      "printed_page": 382,
+      "line": "penultimate",
+      "operation": "delete",
+      "deleted": "in the theory of selections (✱83·92) and",
+      "diplomatic_instruction": "delete ‘in the theory of selections (✱83·92) and’",
+      "integration": {"status": "pending", "reason": "printed locus not yet integrated"}
+    },
+    {
+      "id": "PM1-ERRATA-P487-L13-STAR95",
+      "printed_page": 487,
+      "line": "13",
+      "operation": "replace",
+      "printed": "✱95",
+      "corrected": "✱94",
+      "diplomatic_instruction": "for ‘✱95’ read ‘✱94’",
+      "integration": {"status": "pending", "reason": "printed locus not yet integrated"}
+    },
+    {
+      "id": "PM1-ERRATA-P503-L14-STAR88-38",
+      "printed_page": 503,
+      "line": "14",
+      "operation": "replace",
+      "printed": "✱88·38",
+      "corrected": "✱88·36",
+      "diplomatic_instruction": "for ‘✱88·38’ read ‘✱88·36’",
+      "integration": {"status": "pending", "reason": "printed locus not yet integrated"}
+    }
+  ]
+}

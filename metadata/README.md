@@ -32,3 +32,9 @@ canonical scan leaves and control witnesses, state the reflow policy, and pin
 the canonical UTF-8 body and downloaded witnesses with SHA-256 hashes where a
 stable byte stream is available. Page-local footnote symbols may be replaced by
 global numeric labels only when the mapping is recorded explicitly.
+
+`errata/PM1-1910-errata.json` is the complete machine-readable register of the
+thirteen corrections printed on volume I leaf 15. Integrated loci link exactly
+one apparatus notice; corrections on not-yet-transcribed pages remain explicit
+`pending` obligations. `scripts/verify_errata_registry.py` checks both coverage
+directions so a source locus cannot silently lose its printed correction.
