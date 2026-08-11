@@ -6,19 +6,19 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 659,
-    "object_language_ast_parsed": 310,
+    "catalogued_items": 677,
+    "object_language_ast_parsed": 313,
     "metalinguistic_routes": 8,
-    "architecture_gated_source_routes": 341,
+    "architecture_gated_source_routes": 356,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
-    "catalogued_items_missing_proof_skeleton": 601,
+    "catalogued_items_missing_proof_skeleton": 619,
     "constrained_batches": 16,
     "complete_batch_artifact_sets": 15,
     "planned_campaign_questions": 65,
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
-    "catalogued_items_without_campaign_question": 436,
+    "catalogued_items_without_campaign_question": 454,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
@@ -49,7 +49,7 @@
       "PM1:✱14": 51,
       "PM1:✱2": 68,
       "PM1:✱20": 50,
-      "PM1:✱21": 3,
+      "PM1:✱21": 8,
       "PM1:✱3": 28,
       "PM1:✱4": 61,
       "PM1:✱5": 36,
@@ -59,8 +59,9 @@
       "PM2:✱102": 28,
       "PM2:✱103": 20,
       "PM2:✱104": 5,
+      "PM2:✱105": 3,
       "PM3:✱250": 70,
-      "PM3:✱251": 16
+      "PM3:✱251": 26
     },
     "planned": {
       "PM1:✱1": 3,
@@ -83,15 +84,16 @@
       "PM1:✱14": 47,
       "PM1:✱2": 1,
       "PM1:✱20": 50,
-      "PM1:✱21": 3,
+      "PM1:✱21": 8,
       "PM1:✱9": 22,
       "PM2:✱100": 12,
       "PM2:✱101": 15,
       "PM2:✱102": 28,
       "PM2:✱103": 20,
       "PM2:✱104": 5,
+      "PM2:✱105": 3,
       "PM3:✱250": 70,
-      "PM3:✱251": 16
+      "PM3:✱251": 26
     }
   },
   "local_scheduler_candidates": [],
@@ -3643,6 +3645,71 @@
     },
     {
       "id": "PM1:✱21·03",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱21·07",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱21·071",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱21·072",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱21·08",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱21·081",
       "kind": "definition",
       "source_catalogue": true,
       "formal_status": "prepared",
@@ -8903,6 +8970,48 @@
       }
     },
     {
+      "id": "PM2:✱105·25",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "46d0e29cd07d8a7970ba625a87c4a40f14983b295b0fed5e5893be78b76cf27e"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·251",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "a4f468f4f5b7e56c03627be6cfcb78272585aa7722304de747729e9bc162e5c6"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·26",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "09c50b23f301701fd005e110b427e7174824c6bbb221f5240086c093855e0e39"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
       "id": "PM3:✱250·01",
       "kind": "definition",
       "source_catalogue": true,
@@ -9992,6 +10101,136 @@
       }
     },
     {
+      "id": "PM3:✱251·15",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·16",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·17",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·171",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·2",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·21",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·211",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·22",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·23",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·24",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
       "id": "PM3:✱251·61",
       "kind": "summary-enunciation",
       "source_catalogue": true,
@@ -10279,6 +10518,11 @@
     "PM1:✱21·01",
     "PM1:✱21·02",
     "PM1:✱21·03",
+    "PM1:✱21·07",
+    "PM1:✱21·071",
+    "PM1:✱21·072",
+    "PM1:✱21·08",
+    "PM1:✱21·081",
     "PM1:✱2·33",
     "PM1:✱9·34",
     "PM1:✱9·35",
@@ -10382,6 +10626,9 @@
     "PM2:✱104·03",
     "PM2:✱104·12",
     "PM2:✱104·2",
+    "PM2:✱105·25",
+    "PM2:✱105·251",
+    "PM2:✱105·26",
     "PM3:✱250·01",
     "PM3:✱250·02",
     "PM3:✱250·1",
@@ -10465,6 +10712,16 @@
     "PM3:✱251·14",
     "PM3:✱251·141",
     "PM3:✱251·142",
+    "PM3:✱251·15",
+    "PM3:✱251·16",
+    "PM3:✱251·17",
+    "PM3:✱251·171",
+    "PM3:✱251·2",
+    "PM3:✱251·21",
+    "PM3:✱251·211",
+    "PM3:✱251·22",
+    "PM3:✱251·23",
+    "PM3:✱251·24",
     "PM3:✱251·61",
     "PM3:✱251·621",
     "PM3:✱251·65"
