@@ -59,3 +59,9 @@ PM-VERBATIM-END PM1:✱14·122 -/
 /- PM-VERBATIM-BEGIN PM1:✱14·123
 ✱14·123. ⊢ : φ(z,w) .≡_{z,w}. z = x . w = y : ≡ : φ(z,w) .⊃_{z,w}. z = x . w = y : φ(x,y) : ≡ : φ(z,w) .⊃_{z,w}. z = x . w = y : (∃z,w). φ(z,w)
 PM-VERBATIM-END PM1:✱14·123 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·124
+✱14·124. ⊢ : (∃x,y) : φ(z,w) .≡_{z,w}. z = x . w = y : ≡ : (∃x,y). φ(x,y) : φ(z,w) . φ(u,v) .⊃_{z,w,u,v}. z = u . w = v
+PM-VERBATIM-END PM1:✱14·124 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·131
+✱14·131. ⊢ : (℩x)(φx) = (℩x)(ψx) .≡ . (℩x)(ψx) = (℩x)(φx)
+PM-VERBATIM-END PM1:✱14·131 -/
