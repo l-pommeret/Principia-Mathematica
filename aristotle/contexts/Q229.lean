@@ -833,9 +833,6 @@ infix:53 " ≡ₚ " => equiv
 
 end PM.Elementary
 
--- PM-CONTEXT-INTERFACE-SYNTAX PM1:✱4·01
-infix:53 " ≡ₚ " => PM.Elementary.equiv
-
 -- PM-CONTEXT-ITEM PM1:✱4·02 PM.Elementary.equivChain
 namespace PM.Elementary
 

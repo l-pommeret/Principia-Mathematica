@@ -7,7 +7,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from pm_context_bundle import build_bundle, interface_stub, preserve_historical_container_hashes
+from pm_context_bundle import (
+    BundleError,
+    build_bundle,
+    interface_stub,
+    preserve_historical_container_hashes,
+)
 
 
 class ContextBundleTests(unittest.TestCase):
@@ -70,13 +75,17 @@ class ContextBundleTests(unittest.TestCase):
             source.index(target),
         )
 
-    def test_interface_syntax_may_follow_a_kernel_definition(self):
+    def test_interface_syntax_must_belong_to_a_stub(self):
         from pm_constraint_manifest import load_item_registry
 
         registry = load_item_registry(ROOT / "metadata/items")
         manifest = json.loads((ROOT / "aristotle/manifests/Q228.json").read_text())
-        source = build_bundle(manifest, registry, ROOT)["lean_source"]
-        self.assertLess(source.index("def equiv"), source.index('infix:53 " ≡ₚ "'))
+        manifest["interface_syntax"] = [{
+            "id": "PM1:✱4·01",
+            "lean": 'infix:53 " ≡ₚ " => PM.Elementary.equiv',
+        }]
+        with self.assertRaisesRegex(BundleError, "interface syntax must belong to a stub"):
+            build_bundle(manifest, registry, ROOT)
 
     def test_q230_interface_closure_contains_equiv_chain(self):
         from pm_constraint_manifest import load_item_registry

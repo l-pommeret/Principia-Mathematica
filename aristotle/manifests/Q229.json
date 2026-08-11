@@ -754,12 +754,6 @@
   "integration_blocked": true,
   "foundation_profile": "elementary-formation-pm1",
   "context_whitespace_policy": "strip-trailing",
-  "interface_syntax": [
-    {
-      "id": "PM1:✱4·01",
-      "lean": "infix:53 \" ≡ₚ \" => PM.Elementary.equiv"
-    }
-  ],
   "interface_signature_targets": {
     "PM1:✱4·21": "namespace PM.FirstEdition.Volume1.Star4\n\ntheorem star_4_21 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ≡ₚ q) ≡ₚ (q ≡ₚ p)) := by\n  -- [✱3·22]\n\nend PM.FirstEdition.Volume1.Star4",
     "PM1:✱4·22": "namespace PM.FirstEdition.Volume1.Star4\n\ntheorem star_4_22 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (PM.Elementary.equivChain p q r ⊃ₚ (p ≡ₚ r)) := by\n  -- preserve the complete printed derivation (1)–(6), then Comp\n\nend PM.FirstEdition.Volume1.Star4",

@@ -959,9 +959,6 @@ infix:53 " ≡ₚ " => equiv
 
 end PM.Elementary
 
--- PM-CONTEXT-INTERFACE-SYNTAX PM1:✱4·01
-infix:53 " ≡ₚ " => PM.Elementary.equiv
-
 -- PM-CONTEXT-ITEM PM1:✱4·13 PM.FirstEdition.Volume1.Star4.star_4_13
 namespace PM.FirstEdition.Volume1.Star4
 

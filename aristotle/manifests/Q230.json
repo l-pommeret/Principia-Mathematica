@@ -683,12 +683,6 @@
   "integration_blocked": true,
   "foundation_profile": "elementary-formation-pm1",
   "context_whitespace_policy": "strip-trailing",
-  "interface_syntax": [
-    {
-      "id": "PM1:✱4·01",
-      "lean": "infix:53 \" ≡ₚ \" => PM.Elementary.equiv"
-    }
-  ],
   "interface_signature_targets": {
     "PM1:✱4·3": "namespace PM.FirstEdition.Volume1.Star4\n\ntheorem star_4_3 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ q) ≡ₚ (q ∧ₚ p)) := by\n  -- [✱3·22]; preserve the following general φ-symmetry note editorially\n\nend PM.FirstEdition.Volume1.Star4",
     "PM1:✱4·31": "namespace PM.FirstEdition.Volume1.Star4\n\ntheorem star_4_31 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∨ₚ q) ≡ₚ (q ∨ₚ p)) := by\n  -- [Perm]\n\nend PM.FirstEdition.Volume1.Star4",
