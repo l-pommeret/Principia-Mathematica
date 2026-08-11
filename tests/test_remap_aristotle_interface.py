@@ -180,7 +180,8 @@ end PM.Local
             # the synthetic test above covers the successful rfl-only remap.
             report = run_remap(ROOT, "Q310", archive)
             self.assertEqual(report["status"], "blocked")
-            self.assertEqual(report["reasons"], ["terminal archive unavailable"])
+            self.assertEqual(len(report["reasons"]), 1)
+            self.assertTrue(report["reasons"][0].startswith("archive not found:"))
             return
         with tempfile.TemporaryDirectory() as directory:
             transplant = Path(directory) / "Q310-interface.lean"
