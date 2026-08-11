@@ -15,11 +15,12 @@ class ParserCoverageTests(unittest.TestCase):
         result = audit(ROOT)
         self.assertGreaterEqual(result["counts"]["object_language"], 73)
         self.assertEqual(
-            result["metalinguistic_rules"], ["PM1:✱1·1", "PM1:✱1·11"]
+            result["metalinguistic_rules"],
+            ["PM1:✱1·1", "PM1:✱1·11", "PM1:✱1·7", "PM1:✱1·71", "PM1:✱1·72"],
         )
         self.assertEqual(
             result["counts"]["total"],
-            result["counts"]["object_language"] + 2,
+            result["counts"]["object_language"] + len(result["metalinguistic_rules"]),
         )
 
     def test_unparsed_object_item_fails_the_gate(self):

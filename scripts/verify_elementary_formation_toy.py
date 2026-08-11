@@ -8,6 +8,16 @@ from verify_lean_policy import code_without_comments_or_strings
 
 ROOT = Path(__file__).resolve().parents[1]
 TOY = ROOT / "Principia/Experimental/ElementaryFormationToy.lean"
+CORE = ROOT / "Principia/Deduction/Formation.lean"
+FORMED = ROOT / "Principia/Deduction/Formed.lean"
+SYSTEM = ROOT / "Principia/Deduction/System.lean"
+
+
+def repository_source() -> str:
+    return (CORE.read_text(encoding="utf-8") + "\n" +
+            FORMED.read_text(encoding="utf-8") + "\n" +
+            SYSTEM.read_text(encoding="utf-8") + "\n" +
+            TOY.read_text(encoding="utf-8"))
 
 
 def audit(source: str) -> None:
@@ -23,7 +33,7 @@ def audit(source: str) -> None:
         ".star_1_72 (List.cons_ne_nil _ _)",
         "structure FormedDerivation",
         "formation : Formation p",
-        "derivation : PM.Derivation p",
+        "derivation : Derivation p",
         "theorem star_3_03",
         "(hasRealVariable : Γ ≠ [])",
         "Formation.star_1_72 hasRealVariable notφ notψ",
@@ -48,7 +58,6 @@ def audit(source: str) -> None:
     forbidden = {
         "generic disjunction formation": r"\|\s+(?:disj|or|sum)\b",
         "new assertion axiom": r"\baxiom\b",
-        "new accepted Derivation constructor": r"inductive\s+(?:PM\.)?Derivation\b",
         "semantic shortcut": r"\b(Classical|by_cases|decide)\b",
         "native conjunction": r"\bAnd\b",
         "placeholder": r"\b(sorry|admit)\b",
@@ -57,6 +66,8 @@ def audit(source: str) -> None:
                 if re.search(pattern, code, re.MULTILINE)]
     if failures:
         raise ValueError("elementary-formation policy violation: " + ", ".join(failures))
+    if len(re.findall(r"inductive\s+(?:PM\.)?Derivation\b", code)) != 1:
+        raise ValueError("the accepted Derivation inductive must remain unique")
 
 
 def _formation_block(code: str) -> str:
@@ -71,7 +82,7 @@ def _formation_block(code: str) -> str:
 
 
 def main() -> None:
-    audit(TOY.read_text(encoding="utf-8"))
+    audit(repository_source())
     print("Experimental elementary-formation architecture checks passed")
 
 

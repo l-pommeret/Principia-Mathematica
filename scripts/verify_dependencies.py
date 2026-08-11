@@ -314,7 +314,11 @@ def reject_unindexed_references(item: dict, body: str, candidates: set[str]) -> 
 
 
 def extract_lean_dependencies(item: dict, declarations: dict[str, str], root: Path = ROOT) -> list[str]:
-    if item["kind"] in {"primitive-inference-rule", "primitive-function-inference-rule"}:
+    if item["kind"] in {
+        "primitive-inference-rule",
+        "primitive-function-inference-rule",
+        "primitive-formation-rule",
+    }:
         # These are constructors of the Derivation inductive, hence have no
         # proof body and no prior dependencies to extract.
         return []

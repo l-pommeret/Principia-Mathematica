@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 METALINGUISTIC_KINDS = {
     "primitive-inference-rule",
     "primitive-function-inference-rule",
+    "primitive-formation-rule",
 }
 
 

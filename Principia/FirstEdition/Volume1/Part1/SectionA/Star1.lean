@@ -1,3 +1,4 @@
+import Principia.Deduction.Formation
 import Principia.Deduction.System
 import Principia.Syntax.Printed
 
@@ -367,5 +368,46 @@ def star_1_6_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
 theorem star_1_6 (p q r : PM.Elementary Γ) :
     ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) :=
   PM.Derivation.star_1_6 p q r
+
+/- PM-VERBATIM-BEGIN PM1:✱1·7
+✱1·7. If p is an elementary proposition, ∼p is an elementary proposition. Pp.
+PM-VERBATIM-END PM1:✱1·7 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱1·71
+✱1·71. If p and q are elementary propositions, p ∨ q is an elementary proposition. Pp.
+PM-VERBATIM-END PM1:✱1·71 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱1·72
+✱1·72. If φp and ψp are elementary propositional functions which take
+elementary propositions as arguments, φp ∨ ψp is an elementary propositional
+function. Pp.
+PM-VERBATIM-END PM1:✱1·72 -/
+
+/- PM-FORMAL-GLOSS
+These are primitive propositions of formation, not asserted object-language
+formulae and not constructors of `PM.Derivation`. They are represented by the
+three distinct constructors `PM.Formation.star_1_7`, `star_1_71`, and
+`star_1_72`. The last constructor requires both functions to inhabit the same
+explicit nonempty real-variable context; this is PM's axiom of identification
+of type at the elementary level.
+-/
+
+def star_1_7_printed : PM.PrintedFormula :=
+  PM.pmPrinted "If p is an elementary proposition, ∼p is an elementary proposition. Pp."
+
+def star_1_71_printed : PM.PrintedFormula :=
+  PM.pmPrinted "If p and q are elementary propositions, p ∨ q is an elementary proposition. Pp."
+
+def star_1_72_printed : PM.PrintedFormula :=
+  PM.pmPrinted "If φp and ψp are elementary propositional functions which take elementary propositions as arguments, φp ∨ ψp is an elementary propositional function. Pp."
+
+/- PM-EDITORIAL
+Source: first edition, volume I, printed p. 101, scan leaf 123:
+https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/123
+Project Gutenberg 78050 agrees on all three sentences. The printed Errata to
+the Introduction adds references to ✱1·7, ✱1·71 and ✱1·72 after ✱3·03 and
+identifies ✱1·72 as the statement of the axiom of identification of type.
+No print defect is established in these three items.
+-/
 
 end PM.FirstEdition.Volume1.Star1

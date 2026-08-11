@@ -1,0 +1,62 @@
+{
+  "batch": "PM1-STAR1-Q217-FORMATION",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "101",
+    "scan_leaves": [123],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "items": [
+    {
+      "id": "PM1:✱1·7",
+      "kind": "primitive-formation-rule",
+      "printed": "If p is an elementary proposition, ∼p is an elementary proposition. Pp.",
+      "printed_page": 101,
+      "scan_leaf": 123,
+      "lean_path": "Principia/Deduction/Formation.lean",
+      "declaration": "PM.Formation.star_1_7",
+      "formal_scope": "formation of negation in the same elementary real-variable context",
+      "source_status": "scan-and-PG-checked",
+      "formal_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "substitutions": []
+    },
+    {
+      "id": "PM1:✱1·71",
+      "kind": "primitive-formation-rule",
+      "printed": "If p and q are elementary propositions, p ∨ q is an elementary proposition. Pp.",
+      "printed_page": 101,
+      "scan_leaf": 123,
+      "lean_path": "Principia/Deduction/Formation.lean",
+      "declaration": "PM.Formation.star_1_71",
+      "formal_scope": "formation of disjunction in the empty real-variable context",
+      "source_status": "scan-and-PG-checked",
+      "formal_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "substitutions": []
+    },
+    {
+      "id": "PM1:✱1·72",
+      "kind": "primitive-formation-rule",
+      "printed": "If φp and ψp are elementary propositional functions which take elementary propositions as arguments, φp ∨ ψp is an elementary propositional function. Pp.",
+      "printed_page": 101,
+      "scan_leaf": 123,
+      "lean_path": "Principia/Deduction/Formation.lean",
+      "declaration": "PM.Formation.star_1_72",
+      "formal_scope": "formation of disjunction after identifying the same nonempty real-variable context for both elementary functions",
+      "source_status": "scan-and-PG-checked",
+      "formal_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "substitutions": []
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

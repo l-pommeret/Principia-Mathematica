@@ -19,16 +19,16 @@ class ElementaryFormationToyPolicyTests(unittest.TestCase):
         formation.main()
 
     def test_generic_disjunction_constructor_is_rejected(self):
-        source = formation.TOY.read_text(encoding="utf-8")
+        source = formation.repository_source()
         mutated = source.replace(
-            "  | star_1_7 (hp : Formation p) : Formation (∼ₚ p)",
-            "  | disj (hp : Formation p) (hq : Formation q) : Formation (p ∨ₚ q)\n"
-            "  | star_1_7 (hp : Formation p) : Formation (∼ₚ p)")
+            "  | star_1_7 (hp : Formation p) : Formation (Elementary.neg p)",
+            "  | disj (hp : Formation p) (hq : Formation q) : Formation (Elementary.disj p q)\n"
+            "  | star_1_7 (hp : Formation p) : Formation (Elementary.neg p)")
         with self.assertRaisesRegex(ValueError, "unexpected Formation constructors"):
             formation.audit(mutated)
 
     def test_dead_formation_result_is_rejected(self):
-        source = formation.TOY.read_text(encoding="utf-8")
+        source = formation.repository_source()
         mutated = source.replace(
             "formation := Formation.star_1_7 joined",
             "formation := hφ.formation")
@@ -36,7 +36,7 @@ class ElementaryFormationToyPolicyTests(unittest.TestCase):
             formation.audit(mutated)
 
     def test_projection_cannot_bypass_formation_aware_theorem(self):
-        source = formation.TOY.read_text(encoding="utf-8")
+        source = formation.repository_source()
         mutated = source.replace(
             "(star_3_03 hasRealVariable",
             "(directStar3 hasRealVariable")

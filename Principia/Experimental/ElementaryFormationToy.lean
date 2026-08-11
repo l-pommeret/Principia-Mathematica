@@ -1,3 +1,4 @@
+import Principia.Deduction.Formed
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star2
 
 namespace PM.Experimental.ElementaryFormationToy
@@ -26,48 +27,6 @@ derivations or smuggling formation into Lean parameter instantiation.
 /-- Explicit evidence that a typed elementary expression was licensed by PM's
 formation apparatus.  Only ✱1·71 and ✱1·72 form disjunctions; their context
 conditions make the historical distinction observable. -/
-inductive Formation : {Γ : PM.RealContext} → PM.Elementary Γ → Prop where
-  /-- Primitive elementary constants are admitted by the primitive idea of an
-  elementary proposition, not by one of the numbered formation Pp. -/
-  | constant (name : String) : Formation (.constant name)
-  /-- A real propositional variable is admitted by the primitive idea of an
-  elementary propositional function. -/
-  | realVar (x : PM.RealVar Γ .elementaryProposition) : Formation (.var x)
-  /-- ✱1·7. Negation preserves elementary formation. -/
-  | star_1_7 (hp : Formation p) : Formation (∼ₚ p)
-  /-- ✱1·71. Disjunction of two definite elementary propositions. -/
-  | star_1_71 (hp : Formation (Γ := []) p) (hq : Formation (Γ := []) q) :
-      Formation (p ∨ₚ q)
-  /-- ✱1·72. Identification of the real-variable type for elementary
-  propositional functions.  The same nonempty context is required on both
-  sides and is retained in the result. -/
-  | star_1_72 (hasRealVariable : Γ ≠ [])
-      (hφ : Formation (Γ := Γ) φ) (hψ : Formation (Γ := Γ) ψ) :
-      Formation (φ ∨ₚ ψ)
-
-namespace Formation
-
-/-- Reconstruct the explicit PM formation history of an intrinsically typed
-elementary expression.  This is the bridge needed by the existing edition: it
-does not add a generic formation constructor, but recursively uses exactly
-✱1·7 and one of ✱1·71/✱1·72 according to the real-variable context. -/
-def ofElementary : {Γ : PM.RealContext} → (p : PM.Elementary Γ) → Formation p
-  | _, .constant name => .constant name
-  | _, .var x => .realVar x
-  | _, .neg p => .star_1_7 (ofElementary p)
-  | [], .disj p q => .star_1_71 (ofElementary p) (ofElementary q)
-  | (_ :: _), .disj p q =>
-      .star_1_72 (List.cons_ne_nil _ _) (ofElementary p) (ofElementary q)
-
-end Formation
-
-/-- An asserted elementary expression together with the independent evidence
-that PM's formation Pp license that expression.  Neither field can be omitted
-when constructing a result. -/
-structure FormedDerivation {Γ : PM.RealContext} (p : PM.Elementary Γ) : Prop where
-  formation : Formation p
-  derivation : PM.Derivation p
-
 namespace FormedDerivation
 
 /-- ✱3·01, retained as a definition rather than an equivalence theorem. -/
