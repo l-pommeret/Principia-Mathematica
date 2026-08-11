@@ -184,6 +184,41 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
             "bytes": len(clean.encode("utf-8")),
         })
 
+    # An assigned-order experiment may need a small, audited architecture
+    # adapter which is not yet an edition item.  Keep this separate from both
+    # PM declaration slices and opaque interfaces: its whole source is copied
+    # into the isolated context with a hash, and it grants no proof
+    # permission.  This route is deliberately manifest-explicit so a context
+    # cannot acquire an unrecorded local import.
+    local_context_paths = manifest.get("local_context_paths", [])
+    if (not isinstance(local_context_paths, list) or
+            not all(isinstance(relative, str) for relative in local_context_paths)):
+        raise BundleError("local_context_paths must be a list of relative paths")
+    if len(local_context_paths) != len(set(local_context_paths)):
+        raise BundleError("local_context_paths must be unique")
+    for relative in local_context_paths:
+        local_path = Path(relative)
+        if local_path.is_absolute() or ".." in local_path.parts:
+            raise BundleError(f"invalid local context path {relative!r}")
+        if relative in foundation_paths:
+            raise BundleError(f"local context duplicates foundation {relative}")
+        path = root / local_path
+        if not path.is_file():
+            raise BundleError(f"local context path is not a file: {relative}")
+        raw = path.read_text(encoding="utf-8")
+        clean = clean_foundation(
+            raw, strip_trailing_whitespace=whitespace_policy == "strip-trailing"
+        )
+        chunks.append(f"-- PM-CONTEXT-LOCAL {relative}\n{clean}")
+        sources.append({
+            "kind": "local-architecture-context",
+            "path": relative,
+            "source_sha256": sha256_text(raw),
+            "slice_sha256": sha256_text(clean),
+            "bytes": len(clean.encode("utf-8")),
+            "grants_proof_permission": False,
+        })
+
     # Constructors and `detach` live inside the complete System foundation;
     # ✱1·01 lives inside Formula. Do not duplicate those declarations.
     interface_gated = bool(manifest.get("policy", {}).get("interface_gated", False))
