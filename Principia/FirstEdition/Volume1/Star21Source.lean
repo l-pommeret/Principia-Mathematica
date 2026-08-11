@@ -49,3 +49,15 @@ PM-VERBATIM-END PM1:✱21·08 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·081
 ✱21·081. P{φ!(ẑR,ẑS)}Q .= . φ!(P,Q)  Df
 PM-VERBATIM-END PM1:✱21·081 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱21·082
+✱21·082. f{ẑR(ψR)} .=: (∃φ) : ψR .≡ᴿ. φ!R : f(φ!ẑR)  Df
+PM-VERBATIM-END PM1:✱21·082 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱21·083
+✱21·083. R ε φ!ẑR .= . φ!R  Df
+PM-VERBATIM-END PM1:✱21·083 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱21·1
+✱21·1. ⊢ : f{ẑxẑyψ(x,y)} .≡ : (∃φ) : φ!(x,y) .≡₍x,y₎. ψ(x,y) : f{φ!(ẑu,ẑv)}  [✱4·2.(✱21·01)]
+PM-VERBATIM-END PM1:✱21·1 -/
