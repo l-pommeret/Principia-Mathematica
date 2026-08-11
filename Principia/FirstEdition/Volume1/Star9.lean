@@ -237,6 +237,45 @@ PM-VERBATIM-END PM1:✱9·07 -/
 ✱9·08.  (∃y).ψy.∨.(x).φx :=: (x):(∃y).ψy∨φx  Df
 PM-VERBATIM-END PM1:✱9·08 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱9·3
+✱9·3.  ⊢ : .(x).φx .∨. (x).φx : ⊃ . (x).φx
+
+Dem.
+⊢ . ✱1·2 . ⊃ ⊢ . φx ∨ φx . ⊃ . φx   (1)
+⊢ . (1) . ✱9·1 . ⊃ ⊢ : (∃y) : φx ∨ φy . ⊃ . φx   (2)
+⊢ . (2) . ✱9·13 . ⊃ ⊢ : .(x) : .(∃y) : φx ∨ φy . ⊃ . φx   (3)
+[(3) . (✱9·05·01·04)] ⊢ : .(x) : .φx .∨. (y).φy : ⊃ . φx   (4)
+⊢ . (4) . ✱9·21 . ⊃ ⊢ : .(x) : φx .∨. (y).φy : ⊃ . (x).φx   (5)
+[(5) . (✱9·03)] ⊢ : .(x).φx .∨. (y).φy : ⊃ . (x).φx : .⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱9·3 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·31
+✱9·31.  ⊢ : .(∃x).φx .∨. (∃x).φx : ⊃ . (∃x).φx
+
+This is the only proposition which employs ✱9·11.
+
+Dem.
+⊢ . ✱9·11·13 . ⊃ ⊢ : (y) : φx ∨ φy . ⊃ . (∃z).φz   (1)
+[(1) . (✱9·03·02)] ⊢ : (∃y).φx ∨ φy . ⊃ . (∃z).φz   (2)
+⊢ . (2) . ✱9·13 . ⊃ ⊢ : (x) : (∃y).φx ∨ φy . ⊃ . (∃z).φz   (3)
+[(3) . (✱9·03·02)] ⊢ : .(∃x) : (∃y).φx ∨ φy : ⊃ . (∃z).φz   (4)
+[(4) . (✱9·05·06)] ⊢ : .(∃x).φx .∨. (∃y).φy : ⊃ . (∃z).φz
+PM-VERBATIM-END PM1:✱9·31 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·32
+✱9·32.  ⊢ : .q . ⊃ : (x).φx .∨. q
+
+Dem.
+⊢ . ✱1·3 . ⊃ ⊢ : .q . ⊃ : φx .∨. q   (1)
+⊢ . (1) . ✱9·13 . ⊃ ⊢ : .(x) : .q . ⊃ : φx .∨. q
+[✱9·25] ⊃ ⊢ : .q . ⊃ : (x) : φx .∨. q   (2)
+[(2) . (✱9·03)] ⊢ : .q . ⊃ : (x).φx .∨. q
+PM-VERBATIM-END PM1:✱9·32 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·33
+✱9·33.  ⊢ : .q . ⊃ : (∃x).φx .∨. q   [Proof as above]
+PM-VERBATIM-END PM1:✱9·33 -/
+
 /- PM-EDITORIAL
 Source: Principia Mathematica, first edition, volume I (1910), printed
 pp. 132–135, scan leaves 154–157. The diplomatic transcription above was
