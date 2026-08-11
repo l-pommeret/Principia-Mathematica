@@ -1,0 +1,17 @@
+{
+  "kind": "pm-aristotle-terminal-archive-audit",
+  "batch": "Q248",
+  "archive_sha256": "e32388eb7fdbbf0476a98c261b6ce55c07f5df1bf1fd7af8b35da6373c29b3ff",
+  "targets": ["PM1:✱5·4", "PM1:✱5·41", "PM1:✱5·42", "PM1:✱5·44"],
+  "verdict": "accepted-precompiled",
+  "forbidden_constructs": [],
+  "scoped_exceptions": ["output-final_aristotle/RequestProject/Main.lean: Classical compilation harness only"],
+  "declared_opaque_stubs": ["PM1:✱2·43", "PM1:✱2·77", "PM1:✱2·86", "PM1:✱3·26", "PM1:✱3·27", "PM1:✱4·76", "PM1:✱4·87", "PM1:✱5·3", "PM1:✱5·32"],
+  "local_precompiled_modules": ["PM/Basic.lean", "PM/Star5.lean"],
+  "integration": {
+    "source_backfill_required": false,
+    "integration_blocked": true,
+    "reason": "The returned Basic/Star5 modules are archive-local. A one-to-one remap to repository kernel declarations and remote CI are required before any transplant or promotion."
+  },
+  "provenance": ["reviews/Q248-review.md", "aristotle/manifests/Q248-interface.json", "metadata/interface_bundles/Q248.json"]
+}
