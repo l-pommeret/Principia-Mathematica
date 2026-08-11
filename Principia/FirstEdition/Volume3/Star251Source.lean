@@ -20,18 +20,6 @@ We put
 where “NO” stands for “ordinal number.”
 PM-VERBATIM-END PM3:STAR251-SUMMARY-P18 -/
 
-/- PM-VERBATIM-BEGIN PM3:✱251·132·142
-✱251·132·142.  ⊢ : α ∈ NO .≡ . α + i ∈ NO .≡ . i + α ∈ NO
-PM-VERBATIM-END PM3:✱251·132·142 -/
-
-/- PM-VERBATIM-BEGIN PM3:✱251·15·16
-✱251·15·16.  ⊢ . 0ᵣ, 2ᵣ ∈ NO
-PM-VERBATIM-END PM3:✱251·15·16 -/
-
-/- PM-VERBATIM-BEGIN PM3:✱251·24
-✱251·24.  ⊢ : α, β ∈ NO .⊃ . α + β ∈ NO
-PM-VERBATIM-END PM3:✱251·24 -/
-
 /- PM-VERBATIM-BEGIN PM3:✱251·61
 ✱251·61.  ⊢ :: P, Q ∈ Rel² excl . CʻP ⊂ Ω .⊃ : ∃! (P smor Q) ∩ Rlʻsmor .≡ . P smor smor Q
 PM-VERBATIM-END PM3:✱251·61 -/
