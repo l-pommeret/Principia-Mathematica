@@ -63,7 +63,7 @@ theorem star_5_1 {Γ} (p q : PM.Elementary Γ) :
   have compose : ∀ {A B C : PM.Elementary Γ},
       (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
     intro A B C hAB hBC
-    exact infer hBC (infer hAB (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
   have hForwardBase : ⊢ₚ ((h ∧ₚ p) ⊃ₚ q) :=
     compose (PM.FirstEdition.Volume1.Star3.star_3_26 h p)
       (PM.FirstEdition.Volume1.Star3.star_3_27 p q)
@@ -75,16 +75,15 @@ theorem star_5_1 {Γ} (p q : PM.Elementary Γ) :
   have hBackward : ⊢ₚ (h ⊃ₚ backward) :=
     infer hBackwardBase (PM.FirstEdition.Volume1.Star3.star_3_3 h q p)
   have hPair : ⊢ₚ ((h ⊃ₚ forward) ∧ₚ (h ⊃ₚ backward)) :=
-    infer hForward
-      (infer hBackward
+    infer hBackward
+      (infer hForward
         (PM.FirstEdition.Volume1.Star3.star_3_2 (h ⊃ₚ forward) (h ⊃ₚ backward)))
   have hLift : ⊢ₚ ((h ∧ₚ h) ⊃ₚ (forward ∧ₚ backward)) :=
     infer hPair
       (PM.FirstEdition.Volume1.Star3.star_3_47 h h forward backward)
   have hDuplicate : ⊢ₚ (h ⊃ₚ (h ∧ₚ h)) :=
     infer (PM.FirstEdition.Volume1.Star2.star_2_08 h)
-      (infer (PM.FirstEdition.Volume1.Star2.star_2_08 h)
-        (PM.FirstEdition.Volume1.Star3.star_3_2 (h ⊃ₚ h) (h ⊃ₚ h)))
+      (PM.FirstEdition.Volume1.Star3.star_3_2 h h)
   exact compose hDuplicate hLift
 
 end PM.FirstEdition.Volume1.Star5
