@@ -795,7 +795,12 @@
       "archive_sha256": "aa7a9bca9bceadd9b58fda40b04207a19dff54b25c5a674c055c4de5afb0c8b8",
       "reconstruction_audit_path": "reviews/Q221-reconstruction-audit.json",
       "reconstruction_classification": "strict-closure",
-      "integration_status": "awaiting-ci"
+      "integration_status": "kernel-checked",
+      "integration_ci_evidence": {
+        "commit": "9e65fe440ed5195e71df874091da45ba7da04442",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31453889043",
+        "conclusion": "success"
+      }
     },
     "Q222": {
       "canonical_ids": [
@@ -2476,6 +2481,56 @@
       "ci_evidence": {
         "commit": "3c6c6aed3cea38823fd4c2025091c6c9cc846dfc",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31451332250",
+        "conclusion": "success"
+      }
+    },
+    "PM1:✱3·1": {
+      "batch": "PM1-STAR3-Q221",
+      "status": "kernel-checked",
+      "closure_classification": "strict-closure",
+      "ci_evidence": {
+        "commit": "9e65fe440ed5195e71df874091da45ba7da04442",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31453889043",
+        "conclusion": "success"
+      }
+    },
+    "PM1:✱3·11": {
+      "batch": "PM1-STAR3-Q221",
+      "status": "kernel-checked",
+      "closure_classification": "strict-closure",
+      "ci_evidence": {
+        "commit": "9e65fe440ed5195e71df874091da45ba7da04442",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31453889043",
+        "conclusion": "success"
+      }
+    },
+    "PM1:✱3·12": {
+      "batch": "PM1-STAR3-Q221",
+      "status": "kernel-checked",
+      "closure_classification": "strict-closure",
+      "ci_evidence": {
+        "commit": "9e65fe440ed5195e71df874091da45ba7da04442",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31453889043",
+        "conclusion": "success"
+      }
+    },
+    "PM1:✱3·13": {
+      "batch": "PM1-STAR3-Q221",
+      "status": "kernel-checked",
+      "closure_classification": "strict-closure",
+      "ci_evidence": {
+        "commit": "9e65fe440ed5195e71df874091da45ba7da04442",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31453889043",
+        "conclusion": "success"
+      }
+    },
+    "PM1:✱3·14": {
+      "batch": "PM1-STAR3-Q221",
+      "status": "kernel-checked",
+      "closure_classification": "strict-closure",
+      "ci_evidence": {
+        "commit": "9e65fe440ed5195e71df874091da45ba7da04442",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31453889043",
         "conclusion": "success"
       }
     }

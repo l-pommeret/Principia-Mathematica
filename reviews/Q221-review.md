@@ -1,6 +1,6 @@
 # Audit Q221 — PM I, ✱3·1–✱3·14
 
-Verdict: **ARCHIVE DE CONTINUATION ACCEPTÉE — intégration en attente de CI Lean distante**.
+Verdict: **ACCEPTÉ ET KERNEL-CHECKÉ — cinq reconstructions à clôture stricte**.
 La CI Lean
 [`31452200404`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31452200404)
 a réussi sur le commit `85865c7a46df398f2f44ebc6a8c867f756dc7ad9`, y compris
@@ -38,5 +38,8 @@ five returned declarations. The constrained reconstruction audit
 for all five targets. In particular, ✱3·1 and ✱3·11 unfold ✱3·01 explicitly;
 ✱3·13 uses ✱3·11 then the ✱2·15 `Transp` form; and ✱3·14 follows ✱3·1,
 ✱2·16, ✱2·12, ✱2·06 and detach/✱1·11 in that order. No excess permission or
-uncovered printed citation remains. The imported source remains **awaiting
-remote kernel CI**; no Q221 theorem is promoted until that CI succeeds.
+uncovered printed citation remains. The Lean CI for commit
+`9e65fe440ed5195e71df874091da45ba7da04442` completed successfully:
+[run 31453889043](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31453889043).
+It kernel-checked the isolated contexts and the complete edition. All five
+Q221 entries are consequently promoted to `kernel-checked`.
