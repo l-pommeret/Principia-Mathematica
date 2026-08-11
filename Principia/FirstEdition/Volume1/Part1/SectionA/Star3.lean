@@ -1,4 +1,5 @@
 import Principia.Deduction.Formed
+import Principia.FirstEdition.Volume1.Part1.SectionA.Star1
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star2
 
 namespace PM.Elementary
@@ -521,7 +522,7 @@ theorem star_3_45 {Γ} (p q r : PM.Elementary Γ) :
         ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r)))))
       (star_3_3 ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r))))
         (((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r)))))
-        ((p ⊃ₚ q) ⊃ₚ ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r)))))))
+        ((p ⊃ₚ q) ⊃ₚ ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r))))))))
 
 /-- ✱3·47. ✱3·2 is the documented equivalence-packaging relaxation in both
 context branches; ✱3·03 remains the printed nonempty-context adjunction. -/
