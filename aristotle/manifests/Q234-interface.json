@@ -1,9 +1,11 @@
 {
   "kind": "pm-statement-only-interface-manifest",
   "batch": "Q234",
-  "source_backfill_required": true,
+  "source_backfill_required": false,
   "integration_blocked": true,
-  "promotion_prohibited": "PM-VERBATIM plus parsed demonstration audit required",
+  "audit_status": "A-interface-only",
+  "audit_basis": "canonical PM-VERBATIM backfill on scan leaf 147",
+  "promotion_prohibited": "formal dependency/remote-kernel audit still required",
   "canonical_ids": [
     "PM1:✱4·5",
     "PM1:✱4·51",
@@ -32,5 +34,10 @@
   ],
   "exact_lean_targets": [
     "namespace PM.FirstEdition.Volume1.Star4\ntheorem star_4_5 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ q) ≡ₚ ∼ₚ (∼ₚ p ∨ₚ ∼ₚ q)) := by\n  -- [✱4·2.(✱3·01)]\ntheorem star_4_51 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (∼ₚ (p ∧ₚ q) ≡ₚ (∼ₚ p ∨ₚ ∼ₚ q)) := by\n  -- [✱4·5·12]\ntheorem star_4_52 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ ∼ₚ q) ≡ₚ ∼ₚ (∼ₚ p ∨ₚ q)) := by\n  -- [✱4·5 (∼q/q).✱4·13]\ntheorem star_4_53 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (∼ₚ (p ∧ₚ ∼ₚ q) ≡ₚ (∼ₚ p ∨ₚ q)) := by\n  -- [✱4·52·12]\ntheorem star_4_54 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((∼ₚ p ∧ₚ q) ≡ₚ ∼ₚ (p ∨ₚ ∼ₚ q)) := by\n  -- [✱4·5 (∼p/p).✱4·13]\nend PM.FirstEdition.Volume1.Star4\n"
+  ],
+  "prompt_sha256": "94db5beedaacaeee33966a13a808ed5e014ea6c9ae969747287fca507a8ef83c",
+  "review_sha256": "f77b987a16c332dd97e0d72232d3900a950b035f54354b249ecb539982fba9eb",
+  "exact_lean_target_sha256": [
+    "9476291c1bcb2c59806e195b1098dc224ba9b7ff4ec28e2b887876b96b8c2a2b"
   ]
 }
