@@ -34,3 +34,12 @@ documented equivalence-packaging carry in both Γ branches; ✱3·47 calls local
 kernel-checked remotely at commit `fcfe6f5285732f672241281f1ff73f15477b9184`,
 [run 31487053480](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31487053480),
 whose edition build, placeholder guard, and reader build all succeeded.
+
+Retry-06 was a terminal, source-preserving validation pass. Its immutable
+archive `aristotle/results/Q226-retry-06-final.tar.gz` has SHA-256
+`978c30ff1b9280b7c509a0b3af9900c081e3a42dd1ceabd93532f88b374901ee`.
+Independent literal extraction confirms ✱3·45 has exactly two direct ✱3·3
+uses; ✱3·47 calls local ✱3·45 twice, has no direct ✱3·3, and uses ✱3·2 only
+for the authorized packaging (twice at Γ = [] and once at Γ ≠ []). No
+forbidden constructor, `syllRuleQ220`, placeholder, unsafe declaration, or
+axiom declaration occurs in the delivered proof/context sources.
