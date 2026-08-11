@@ -28,6 +28,10 @@ class AnomalyRegistryTests(unittest.TestCase):
             ["resolution_status"],
             "blocked-awaiting-targeted-fidelity-continuation",
         )
+        chain = entries["PM1-ANOM-Q222-CHAIN-COMPOSITION-GAP"]
+        self.assertEqual(chain["category"], "incomplete-printed-citation")
+        self.assertFalse(chain["strict"])
+        self.assertEqual(chain["relaxation_use"][0]["uses"], 2)
         self.assertGreaterEqual(sum(entry["category"] == "digital-witness-error" for entry in entries.values()), 1)
 
     def test_registry_cannot_drop_an_attested_digital_witness_error(self):

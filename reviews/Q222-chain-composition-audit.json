@@ -1,0 +1,23 @@
+{
+  "kind": "pm-incomplete-printed-citation-audit",
+  "batch": "Q222",
+  "item": "PM1:✱3·22",
+  "strict": false,
+  "classification": "incomplete-printed-citation",
+  "printed_events": ["PM1:✱3·13 (q,p)/(p,q)", "Perm/PM1:✱1·4", "PM1:✱3·14", "Transp/PM1:✱2·17"],
+  "missing_composition": "Syll/PM1:✱2·06",
+  "minimal_relaxation": {"id": "PM1:✱2·06", "uses": 2, "purpose": "join the first two printed implications and then join that result to the third"},
+  "evidence": {
+    "archive": "aristotle/results/Q222-repair-3-22-citations-final.tar.gz",
+    "archive_sha256": "98db29f6adebc8bb531127e9247d69ba09501ad3a07ca8d634ce920a67ee9232",
+    "finite_closure": {"formula_size_bound": 40, "provable_formulae": 687, "finding": "no formula combines more than one printed link without Syll"},
+    "source": "The PM chain visibly requires composition, but its printed citation line names only its three links and Transp."
+  },
+  "output_hygiene": {
+    "verdict": "rejected",
+    "classification": "reconstruction-gap/forbidden-output",
+    "reported_forbidden_material": ["sorry", "admit", "Classical"],
+    "separate_from_source_gap": true
+  },
+  "resolution_status": "awaiting-clean-continuation"
+}

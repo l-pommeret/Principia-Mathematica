@@ -40,6 +40,8 @@
           "lean_impact": {"type": "object"},
           "review_provenance": {"type": "array", "minItems": 1},
           "resolution_status": {"type": "string"},
+          "strict": {"type": "boolean"},
+          "relaxation_use": {"type": "array"},
           "apparatus_id": {"type": "string"},
           "linked_official_errata_ids": {"type": "array", "items": {"type": "string"}}
         }

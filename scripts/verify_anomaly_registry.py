@@ -28,6 +28,8 @@ REQUIRED_MANUAL = {
     "PM1-ANOM-Q221-FIRST-ARCHIVE-FIDELITY-GAP",
     "PM1-ANOM-Q222-ASSOCIATION-GAP",
     "PM1-ANOM-Q222-RELAXED-ARCHIVE-UNCOVERED-CITATIONS",
+    "PM1-ANOM-Q222-CHAIN-COMPOSITION-GAP",
+    "PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT",
 }
 
 
@@ -91,6 +93,14 @@ def verify_registry(root: Path = ROOT) -> dict:
     if (by_id["PM1-ANOM-Q222-RELAXED-ARCHIVE-UNCOVERED-CITATIONS"]
             ["resolution_status"] != "blocked-awaiting-targeted-fidelity-continuation"):
         fail("Q222 terminal archive bypass must remain blocked pending fidelity repair")
+    chain = by_id["PM1-ANOM-Q222-CHAIN-COMPOSITION-GAP"]
+    if (chain["category"] != "incomplete-printed-citation" or chain.get("strict") is not False
+            or chain["minimal_relaxation"] != ["PM1:✱2·06"]
+            or chain.get("relaxation_use", [{}])[0].get("uses") != 2):
+        fail("Q222 chain gap must record the approved non-strict ✱2·06 relaxation twice")
+    forbidden = by_id["PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT"]
+    if forbidden["lean_impact"].get("kind") != "forbidden-output":
+        fail("Q222 retry-02 must remain a separate forbidden-output reconstruction gap")
     digital = [entry for entry in entries if entry["category"] == "digital-witness-error"]
     if not digital:
         fail("attested digital witness errors were not backfilled")
