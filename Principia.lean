@@ -9,6 +9,7 @@ import Principia.Experimental.TypicalAmbiguityToy
 import Principia.Experimental.DescriptionScopeToy
 import Principia.Experimental.ElementaryFormationToy
 import Principia.Experimental.PredicativeGateToy
+import Principia.Experimental.UnifiedSyntaxEnvelope
 import Principia.Architecture.FirstOrderPrerequisites
 import Principia.Architecture.FirstOrderQ259
 import Principia.Architecture.Q259ClosedRuleBook
