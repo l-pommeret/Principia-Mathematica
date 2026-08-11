@@ -519,3 +519,19 @@ PM-VERBATIM-END PM2:✱105·312 -/
 /- PM-VERBATIM-BEGIN PM2:✱105·313
 ✱105·313. ⊢ : γ ∈ N₂cʻα .⊃ . α ∈ N²cʻγ . N²cʻγ = N₀cʻα
 PM-VERBATIM-END PM2:✱105·313 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·314
+✱105·314. ⊢ : N₁cʻα = N₀cʻγ .⊃ . N₀cʻα = N¹cʻγ  [✱105·312 . ✱103·12]
+PM-VERBATIM-END PM2:✱105·314 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·315
+✱105·315. ⊢ : N₂cʻα = N₀cʻγ .⊃ . N₀cʻα = N²cʻγ
+PM-VERBATIM-END PM2:✱105·315 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·316
+✱105·316. ⊢ : ∃!N₁cʻα . N₁cʻα = N₁cʻβ .⊃ . N₀cʻα = N₀cʻβ
+PM-VERBATIM-END PM2:✱105·316 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·317
+✱105·317. ⊢ : ∃!N₂cʻα . N₂cʻα = N₂cʻβ .⊃ . N₀cʻα = N₀cʻβ
+PM-VERBATIM-END PM2:✱105·317 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·32
+✱105·32. ⊢ : N₀cʻα = N₀cʻβ .⊃ . N₁cʻα = N₁cʻβ
+PM-VERBATIM-END PM2:✱105·32 -/
