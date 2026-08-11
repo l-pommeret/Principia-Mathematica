@@ -2,12 +2,16 @@
   "kind": "pm-isolated-context-bundle",
   "profile": "elementary-pm1",
   "current_item": null,
-  "manifest_sha256": "e25b16e1ee988991cf37bc585c30a767a1b6252f0fc716947aaf252ad5587295",
-  "source_sha256": "f7c0cbe788d17a065f5985f8c744e965dbec6b2624bafcf81d11aa2545b45583",
-  "source_bytes": 8821,
+  "manifest_sha256": "6c6aecf74b212184590078a34635ee9772f00a00f89a71db0d192dbfeda3a448",
+  "source_sha256": "c830a331acff664e7dfa13f43fcf9c78306d332aa14a987b3fbddf80976c778f",
+  "source_bytes": 9819,
   "proof_permissions": [
+    "PM1:✱1·11",
+    "PM1:✱2·06",
     "PM1:✱2·08",
     "PM1:✱2·11",
+    "PM1:✱2·12",
+    "PM1:✱2·15",
     "PM1:✱2·16",
     "PM1:✱2·17",
     "PM1:✱3·01",
@@ -33,6 +37,7 @@
     "PM1:✱2·12",
     "PM1:✱2·13",
     "PM1:✱2·14",
+    "PM1:✱2·15",
     "PM1:✱2·16",
     "PM1:✱2·17",
     "PM1:✱3·01"
@@ -195,6 +200,15 @@
       "source_sha256": "1d70a86635d26027b2bf74dc626542f651e363060206dc3a38d8639eb010611a",
       "slice_sha256": "964b35b1571d2d720621732d1f78c43a245361ab7437744212582da1169a7550",
       "bytes": 229
+    },
+    {
+      "kind": "item-declaration",
+      "id": "PM1:✱2·15",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_15",
+      "source_sha256": "1d70a86635d26027b2bf74dc626542f651e363060206dc3a38d8639eb010611a",
+      "slice_sha256": "2754d002941e1283de11b8f4e1e6c68a51a957efbc26e6d5019307abf38daa98",
+      "bytes": 848
     },
     {
       "kind": "item-declaration",

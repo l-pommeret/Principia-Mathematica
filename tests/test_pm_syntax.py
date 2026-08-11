@@ -107,6 +107,12 @@ class PMDotSyntaxTests(unittest.TestCase):
         self.assertEqual(parsed["tag"], "definition")
         self.assertEqual(parsed["children"][0], parsed["children"][1])
 
+    def test_equal_group_one_disjunction_marks_preserve_left_association(self):
+        parsed = shape("p . ∨ . q . ∨ . r")
+        self.assertEqual(parsed["tag"], "or")
+        self.assertEqual(parsed["children"][0]["tag"], "or")
+        self.assertEqual(parsed["children"][1]["value"], "r")
+
     def test_unmarked_implication_remains_right_associated(self):
         parsed = shape("p ⊃ q ⊃ r")
         self.assertEqual(parsed["tag"], "implies")

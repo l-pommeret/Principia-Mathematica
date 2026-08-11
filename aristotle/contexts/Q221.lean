@@ -223,6 +223,27 @@ theorem star_2_14 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
 
 end PM.FirstEdition.Volume1.Star2
 
+-- PM-CONTEXT-ITEM PM1:✱2·15 PM.FirstEdition.Volume1.Star2.star_2_15
+namespace PM.FirstEdition.Volume1.Star2
+
+theorem star_2_15 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((∼ₚ p ⊃ₚ q) ⊃ₚ (∼ₚ q ⊃ₚ p)) := by
+  have line1 := star_2_05 (∼ₚ p) q (∼ₚ (∼ₚ q))
+  have line2 := star_2_12 q
+  have line3 := PM.Derivation.detach line2 line1
+  have line4 := star_2_03 (∼ₚ p) (∼ₚ q)
+  have line5 := star_2_05 (∼ₚ q) (∼ₚ (∼ₚ p)) p
+  have line6 := PM.Derivation.detach (star_2_14 p) line5
+  have line7 := star_2_05 (∼ₚ p ⊃ₚ q) (∼ₚ p ⊃ₚ ∼ₚ (∼ₚ q))
+    (∼ₚ q ⊃ₚ ∼ₚ (∼ₚ p))
+  have line8 := PM.Derivation.detach line4 line7
+  have line9 := PM.Derivation.detach line3 line8
+  have line10 := star_2_05 (∼ₚ p ⊃ₚ q) (∼ₚ q ⊃ₚ ∼ₚ (∼ₚ p)) (∼ₚ q ⊃ₚ p)
+  have line11 := PM.Derivation.detach line6 line10
+  exact PM.Derivation.detach line9 line11
+
+end PM.FirstEdition.Volume1.Star2
+
 -- PM-CONTEXT-ITEM PM1:✱2·16 PM.FirstEdition.Volume1.Star2.star_2_16
 namespace PM.FirstEdition.Volume1.Star2
 

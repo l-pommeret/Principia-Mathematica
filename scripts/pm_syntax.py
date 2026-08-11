@@ -490,10 +490,19 @@ class Parser:
                 break
             operator = self.take()
             right_minimum = binding_power(operator, "right")
-            # PM later records the unmarked n-ary surface conventions as
-            # left-associated (✱2·33 for disjunction, ✱3·02/✱4·34 for
-            # products). Implication remains right-associated.
-            if operator.right_scope == 0 and operator.text in {"∨", "·"}:
+            # PM records the n-ary surface conventions as left-associated
+            # (✱2·33 for disjunction, ✱3·02/✱4·34 for products). This also
+            # governs a tie between successive symmetrically Group-I-marked
+            # connectives, e.g. `p . ∨ . q . ∨ . r`: equal scope marks do
+            # not silently reverse the convention. Implication remains
+            # right-associated, and unequal directional scope marks continue
+            # to determine their own bracketing.
+            tied_marked_product_or_sum = (
+                operator.left_scope != 0 and
+                operator.left_scope == operator.right_scope
+            )
+            if (operator.text in {"∨", "·"} and
+                    (operator.right_scope == 0 or tied_marked_product_or_sum)):
                 right_minimum += 1
             right = self.expression(right_minimum)
             tag, value = operator_tag(operator.text)

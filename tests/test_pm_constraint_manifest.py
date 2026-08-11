@@ -26,6 +26,7 @@ class ConstraintManifestTests(unittest.TestCase):
             "PM1:✱2·05": item("PM1:✱2·05", "PM.star_2_05", ["PM1:✱1·2"]),
             "PM1:✱2·06": item("PM1:✱2·06", "PM.star_2_06", ["PM1:✱1·2"]),
             "PM1:✱1·2": item("PM1:✱1·2", "PM.star_1_2"),
+            "PM1:✱2·15": item("PM1:✱2·15", "PM.star_2_15"),
             "PM1:✱2·16": item("PM1:✱2·16", "PM.star_2_16"),
             "PM1:✱2·17": item("PM1:✱2·17", "PM.star_2_17"),
         }
@@ -47,7 +48,8 @@ class ConstraintManifestTests(unittest.TestCase):
         )
         manifest = compile_manifest(skeleton, self.registry)
         self.assertEqual(
-            manifest["allowed_pm_items"], ["PM1:✱2·16", "PM1:✱2·17"]
+            manifest["allowed_pm_items"],
+            ["PM1:✱2·15", "PM1:✱2·16", "PM1:✱2·17"],
         )
         self.assertEqual(
             manifest["proof_permissions"][0]["resolution_status"], "form-family"

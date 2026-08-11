@@ -257,18 +257,25 @@
           "kind": "printed-alias",
           "resolution_status": "form-family",
           "candidates": [
+            "PM1:✱2·15",
             "PM1:✱2·16",
             "PM1:✱2·17"
           ]
         }
       ],
-      "global_conventions": [],
+      "global_conventions": [
+        "PM1:✱1·11"
+      ],
       "allowed_pm_items": [
+        "PM1:✱1·11",
+        "PM1:✱2·15",
         "PM1:✱2·16",
         "PM1:✱2·17",
         "PM1:✱3·11"
       ],
       "allowed_lean_declarations": {
+        "PM1:✱1·11": "PM.Derivation.star_1_11",
+        "PM1:✱2·15": "PM.FirstEdition.Volume1.Star2.star_2_15",
         "PM1:✱2·16": "PM.FirstEdition.Volume1.Star2.star_2_16",
         "PM1:✱2·17": "PM.FirstEdition.Volume1.Star2.star_2_17",
         "PM1:✱3·11": "PM.FirstEdition.Volume1.Star3.star_3_11"
@@ -295,6 +302,7 @@
         "PM1:✱2·12",
         "PM1:✱2·13",
         "PM1:✱2·14",
+        "PM1:✱2·15",
         "PM1:✱2·16",
         "PM1:✱2·17"
       ],
@@ -317,6 +325,7 @@
         "PM1:✱2·12": "PM.FirstEdition.Volume1.Star2.star_2_12",
         "PM1:✱2·13": "PM.FirstEdition.Volume1.Star2.star_2_13",
         "PM1:✱2·14": "PM.FirstEdition.Volume1.Star2.star_2_14",
+        "PM1:✱2·15": "PM.FirstEdition.Volume1.Star2.star_2_15",
         "PM1:✱2·16": "PM.FirstEdition.Volume1.Star2.star_2_16",
         "PM1:✱2·17": "PM.FirstEdition.Volume1.Star2.star_2_17"
       },
@@ -359,18 +368,31 @@
           "kind": "printed-alias",
           "resolution_status": "form-family",
           "candidates": [
+            "PM1:✱2·15",
             "PM1:✱2·16",
             "PM1:✱2·17"
           ]
         }
       ],
-      "global_conventions": [],
+      "global_conventions": [
+        "PM1:✱1·11",
+        "PM1:✱2·06",
+        "PM1:✱2·12"
+      ],
       "allowed_pm_items": [
+        "PM1:✱1·11",
+        "PM1:✱2·06",
+        "PM1:✱2·12",
+        "PM1:✱2·15",
         "PM1:✱2·16",
         "PM1:✱2·17",
         "PM1:✱3·1"
       ],
       "allowed_lean_declarations": {
+        "PM1:✱1·11": "PM.Derivation.star_1_11",
+        "PM1:✱2·06": "PM.FirstEdition.Volume1.Star2.star_2_06",
+        "PM1:✱2·12": "PM.FirstEdition.Volume1.Star2.star_2_12",
+        "PM1:✱2·15": "PM.FirstEdition.Volume1.Star2.star_2_15",
         "PM1:✱2·16": "PM.FirstEdition.Volume1.Star2.star_2_16",
         "PM1:✱2·17": "PM.FirstEdition.Volume1.Star2.star_2_17",
         "PM1:✱3·1": "PM.FirstEdition.Volume1.Star3.star_3_1"
@@ -397,6 +419,7 @@
         "PM1:✱2·12",
         "PM1:✱2·13",
         "PM1:✱2·14",
+        "PM1:✱2·15",
         "PM1:✱2·16",
         "PM1:✱2·17"
       ],
@@ -419,6 +442,7 @@
         "PM1:✱2·12": "PM.FirstEdition.Volume1.Star2.star_2_12",
         "PM1:✱2·13": "PM.FirstEdition.Volume1.Star2.star_2_13",
         "PM1:✱2·14": "PM.FirstEdition.Volume1.Star2.star_2_14",
+        "PM1:✱2·15": "PM.FirstEdition.Volume1.Star2.star_2_15",
         "PM1:✱2·16": "PM.FirstEdition.Volume1.Star2.star_2_16",
         "PM1:✱2·17": "PM.FirstEdition.Volume1.Star2.star_2_17"
       },
@@ -469,6 +493,7 @@
     "PM1:✱2·12",
     "PM1:✱2·13",
     "PM1:✱2·14",
+    "PM1:✱2·15",
     "PM1:✱2·16",
     "PM1:✱2·17",
     "PM1:✱3·01"
@@ -492,6 +517,7 @@
     "PM1:✱2·12": "PM.FirstEdition.Volume1.Star2.star_2_12",
     "PM1:✱2·13": "PM.FirstEdition.Volume1.Star2.star_2_13",
     "PM1:✱2·14": "PM.FirstEdition.Volume1.Star2.star_2_14",
+    "PM1:✱2·15": "PM.FirstEdition.Volume1.Star2.star_2_15",
     "PM1:✱2·16": "PM.FirstEdition.Volume1.Star2.star_2_16",
     "PM1:✱2·17": "PM.FirstEdition.Volume1.Star2.star_2_17",
     "PM1:✱3·01": "PM.Elementary.conj"
@@ -504,8 +530,12 @@
     "Principia/Syntax/Formula.lean"
   ],
   "proof_permissions": [
+    "PM1:✱1·11",
+    "PM1:✱2·06",
     "PM1:✱2·08",
     "PM1:✱2·11",
+    "PM1:✱2·12",
+    "PM1:✱2·15",
     "PM1:✱2·16",
     "PM1:✱2·17",
     "PM1:✱3·01",

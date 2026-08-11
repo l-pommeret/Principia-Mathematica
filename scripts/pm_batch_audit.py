@@ -81,7 +81,7 @@ def audit_batch(manifest: dict, source_path: Path, registry: dict[str, dict],
         }
         used.update(
             pm_id for notation, pm_id in notation_to_id.items()
-            if notation in proof
+            if notation in proof and pm_id in allowed_items
         )
         if occurs_qualified(proof, "PM.Derivation.detach"):
             licensed = set(conventions) | set(allowed_items)

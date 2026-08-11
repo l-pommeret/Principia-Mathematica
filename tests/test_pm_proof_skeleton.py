@@ -11,7 +11,8 @@ import pm_proof_skeleton as skeleton
 class PMProofSkeletonTests(unittest.TestCase):
     def test_aliases_are_loaded_from_editorial_registry(self):
         self.assertEqual(
-            skeleton.PRINTED_ALIASES["Transp"], ["PM1:✱2·16", "PM1:✱2·17"]
+            skeleton.PRINTED_ALIASES["Transp"],
+            ["PM1:✱2·15", "PM1:✱2·16", "PM1:✱2·17"],
         )
         self.assertIn("Syll", skeleton.ALIAS_REGISTRY["historical_scopes"])
 
