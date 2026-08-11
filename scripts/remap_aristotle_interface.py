@@ -36,7 +36,7 @@ FORBIDDEN = {
 }
 DECLARATION = re.compile(
     r"(?m)^[ \t]*(theorem|def|abbrev|axiom|opaque|inductive|structure|class)\s+"
-    r"([A-Za-z_][A-Za-z0-9_']*)"
+    r"([A-Za-z_][A-Za-z0-9_']*(?:\.[A-Za-z_][A-Za-z0-9_']*)*)"
 )
 NAMESPACE = re.compile(r"(?m)^[ \t]*namespace\s+([A-Za-z_][A-Za-z0-9_.']*)\s*$")
 END = re.compile(r"(?m)^[ \t]*end(?:\s+[A-Za-z_][A-Za-z0-9_.']*)?\s*$")
@@ -128,7 +128,9 @@ def scan_declarations(source: str, path: str) -> list[dict[str, Any]]:
                 "start": position,
                 "kind": match.group(1),
                 "name": match.group(2),
-                "qualified": ".".join([part for frame in namespaces for part in frame] + [match.group(2)]),
+                "qualified": ".".join(
+                    [part for frame in namespaces for part in frame] + match.group(2).split(".")
+                ),
             })
     for index, declaration in enumerate(declarations):
         same_file = [candidate for candidate in declarations[index + 1:]
@@ -162,6 +164,11 @@ def prompt_signatures(path: Path) -> list[dict[str, str]]:
 
 
 def expected_archive_hash(root: Path, batch: str) -> str | None:
+    # Q300's terminal archive is deliberately retained only as negative
+    # evidence.  Its immutable digest still belongs in the plan so a later
+    # replacement cannot masquerade as this reviewed failure.
+    if batch == "Q300":
+        return "15b9639c4cbff8d2e2066999f33c0fd06b572cc84fdbaa0eac2f03ef269ba065"
     if not ARCHIVE_AUDIT.is_file() or root != ROOT:
         audit_path = root / "reviews/Q228-Q244-aristotle-archive-audit.json"
     else:
@@ -229,6 +236,10 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
                 "source": target["source"],
                 "canonical": canonical,
                 "signature": target["signature"],
+                # This theorem is the artifact to insert.  It is not a
+                # pre-existing dependency, so its present absence cannot be
+                # used to reject a body which otherwise remaps exactly.
+                "insertion_target": batch == "Q300",
             })
     for target in targets:
         target["signature_sha256"] = sha256_text(target["signature"])
@@ -327,7 +338,8 @@ def replace_references(body: str, mappings: list[dict[str, str]]) -> str:
     return rewritten
 
 
-def emit_transplant(path: Path, report: dict[str, Any], target_declarations: list[dict[str, Any]],
+def emit_transplant(path: Path, report: dict[str, Any],
+                    target_declarations: list[tuple[dict[str, Any], dict[str, Any]]],
                     mappings: list[dict[str, str]]) -> None:
     lines = [
         "-- PM-INTERFACE-ONLY-TRANSPLANT",
@@ -336,8 +348,13 @@ def emit_transplant(path: Path, report: dict[str, Any], target_declarations: lis
         f"-- Report SHA-256: {sha256_text(json.dumps(report, ensure_ascii=False, sort_keys=True))}",
         "",
     ]
-    for declaration in target_declarations:
+    for target, declaration in target_declarations:
+        canonical_namespace, _ = target["canonical"].rsplit(".", 1)
+        lines.append(f"namespace {canonical_namespace}")
+        lines.append("")
         lines.append(replace_references(declaration["body"], mappings).rstrip())
+        lines.append("")
+        lines.append(f"end {canonical_namespace}")
         lines.append("")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
@@ -363,12 +380,16 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
     except (OSError, json.JSONDecodeError, RemapError) as error:
         mappings = []
         report["reasons"].append(f"invalid mapping: {error}")
-    canonical_names = {target["canonical"] for target in plan["targets"]}
+    # A target marked for insertion is intentionally absent from the edition;
+    # only mapped dependencies and non-insertion targets must already resolve.
+    canonical_names = {target["canonical"] for target in plan["targets"]
+                       if not target.get("insertion_target", False)}
     canonical_names.update(record["canonical"] for record in mappings)
     canonical = find_canonical_declarations(root, canonical_names)
     report["canonical_declarations"] = [
         {
             "declaration": target["canonical"],
+            "role": "target-insertion" if target.get("insertion_target") else "dependency-or-existing-target",
             "exists": target["canonical"] in canonical,
             "expected_signature_sha256": target["signature_sha256"],
             "actual_signature_sha256": canonical.get(target["canonical"], {}).get("signature_sha256"),
@@ -376,6 +397,8 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
         for target in plan["targets"]
     ]
     for record in report["canonical_declarations"]:
+        if record["role"] == "target-insertion":
+            continue
         if not record["exists"]:
             report["reasons"].append(f"missing canonical declaration {record['declaration']}")
         elif record["expected_signature_sha256"] != record["actual_signature_sha256"]:
@@ -414,22 +437,41 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
     unmapped = sorted(set(source_by_name) - set(mapped))
     if unmapped:
         report["reasons"].append("unmapped local declarations: " + ", ".join(unmapped))
+    if batch == "Q300":
+        target_sources = {target["source"] for target in plan["targets"]}
+        local_declarations = sorted(set(source_by_name) - target_sources)
+        if local_declarations:
+            report["reasons"].append(
+                "Q300 forbids archive-local declarations: " + ", ".join(local_declarations)
+            )
+        forbidden_kinds = sorted(
+            declaration["qualified"] for declaration in declarations
+            if declaration["kind"] in {"axiom", "opaque"}
+        )
+        if forbidden_kinds:
+            report["reasons"].append(
+                "Q300 forbids axiom/opaque declarations: " + ", ".join(forbidden_kinds)
+            )
     mapped_records: list[dict[str, Any]] = []
     for source_name, canonical_name in sorted(mapped.items()):
         source = source_by_name.get(source_name)
         canonical_record = canonical.get(canonical_name)
+        insertion = any(target["source"] == source_name and target.get("insertion_target")
+                        for target in plan["targets"])
         item: dict[str, Any] = {
             "source": source_name,
             "canonical": canonical_name,
             "source_present": source is not None,
             "canonical_present": canonical_record is not None,
+            "role": "target-insertion" if insertion else "dependency-mapping",
         }
         if source is None:
             report["reasons"].append(f"mapped source declaration absent: {source_name}")
         else:
             item["source_signature_sha256"] = source["signature_sha256"]
         if canonical_record is None:
-            report["reasons"].append(f"mapped canonical declaration absent: {canonical_name}")
+            if not insertion:
+                report["reasons"].append(f"mapped canonical declaration absent: {canonical_name}")
         else:
             item["canonical_signature_sha256"] = canonical_record["signature_sha256"]
         if source is not None and canonical_record is not None and (
@@ -446,6 +488,7 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
             "expected_signature_sha256": target["signature_sha256"],
             "actual_signature_sha256": source.get("signature_sha256") if source else None,
             "exact_signature": exact,
+            "role": "target-insertion" if target.get("insertion_target") else "existing-target",
         })
         if not exact:
             report["reasons"].append(f"target signature mismatch or absent: {target['source']}")
@@ -459,7 +502,8 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
             "requires_independent_remote_kernel_check": True,
         }
         if transplant is not None:
-            target_declarations = [source_by_name[target["source"]] for target in plan["targets"]]
+            target_declarations = [(target, source_by_name[target["source"]])
+                                   for target in plan["targets"]]
             emit_transplant(transplant, report, target_declarations,
                             [{"source": source, "canonical": canonical}
                              for source, canonical in mapped.items()])

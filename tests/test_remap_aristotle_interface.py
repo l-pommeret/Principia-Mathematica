@@ -58,6 +58,36 @@ end PM.Local
             self.assertIn("unmapped local declarations", joined)
             self.assertIn("PM.Local.imported_interface", joined)
             self.assertIn("PM.Local.helper", joined)
+            self.assertIn("Q300 forbids archive-local declarations", joined)
+
+    def test_q300_target_is_an_insertion_not_a_missing_dependency(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "Principia").mkdir()
+            archive = root / "result.tar.gz"
+            write_archive(archive, {"Target.lean": """namespace PM.Local
+theorem target : True := by trivial
+end PM.Local
+"""})
+            signature = "theorem target : True\n"
+            plan = {
+                "kind": "pm-interface-kernel-remap-plan", "batch": "Q300",
+                "archive_sha256": sha256_bytes(archive.read_bytes()),
+                "targets": [{"id": "PM1:✱9·21", "source": "PM.Local.target",
+                             "canonical": "PM.Canonical.target", "signature": signature,
+                             "signature_sha256": __import__("hashlib").sha256(
+                                 signature.encode("utf-8")).hexdigest(),
+                             "insertion_target": True}],
+            }
+            transplant = root / "candidate.lean"
+            with patch("remap_aristotle_interface.batch_plan", return_value=plan):
+                report = run_remap(root, "Q300", archive, transplant=transplant)
+            self.assertEqual(report["status"], "transplantable-interface-only")
+            self.assertFalse(report["canonical_declarations"][0]["exists"])
+            self.assertEqual(report["canonical_declarations"][0]["role"], "target-insertion")
+            rendered = transplant.read_text(encoding="utf-8")
+            self.assertIn("namespace PM.Canonical", rendered)
+            self.assertIn("end PM.Canonical", rendered)
 
     def test_exact_bijective_remap_emits_only_an_interface_candidate(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -100,6 +130,23 @@ end A.B
         self.assertEqual(declarations[0]["signature"],
                          "theorem theorem_name {α : Type} (x : α) : x = x\n")
         self.assertEqual(len(declarations[0]["signature_sha256"]), 64)
+
+    def test_scanner_keeps_a_dotted_declaration_in_its_namespace(self):
+        declarations = scan_declarations("""namespace PM
+theorem Defn.sound : True := by trivial
+end PM
+""", "fixture.lean")
+        self.assertEqual(declarations[0]["qualified"], "PM.Defn.sound")
+
+    def test_q300_terminal_archive_is_rejected_without_treating_insertion_as_missing(self):
+        report = run_remap(ROOT, "Q300", ROOT / "aristotle/results/Q300-final.tar.gz")
+        self.assertEqual(report["status"], "blocked")
+        self.assertEqual(report["archive"]["sha256"],
+                         "15b9639c4cbff8d2e2066999f33c0fd06b572cc84fdbaa0eac2f03ef269ba065")
+        self.assertEqual(report["canonical_declarations"][0]["role"], "target-insertion")
+        self.assertNotIn("missing canonical declaration", "\n".join(report["reasons"]))
+        self.assertIn("forbidden Classical", "\n".join(report["reasons"]))
+        self.assertIn("Q300 forbids archive-local declarations", "\n".join(report["reasons"]))
 
     def test_bad_mapping_schema_is_fail_closed(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -1,8 +1,41 @@
 {
   "archive": {
-    "expected_sha256": null,
-    "path": "/Users/user/principia_mathematica/aristotle/results/Q300-final.tar.gz",
-    "present": false
+    "expected_sha256": "15b9639c4cbff8d2e2066999f33c0fd06b572cc84fdbaa0eac2f03ef269ba065",
+    "lean_files": [
+      {
+        "bytes": 563,
+        "path": "Q300_aristotle/RequestProject/Main.lean",
+        "sha256": "929b0bddef0b781f3fb42c7a99f252dc0bda7331f698104f7075e12ff637c52d"
+      },
+      {
+        "bytes": 7549,
+        "path": "Q300_aristotle/RequestProject/PM/Deduction.lean",
+        "sha256": "c46ec1c6d73b7e703482dfab199fe3b593323a9e9b444dfa9d82e14a60c49dac"
+      },
+      {
+        "bytes": 7828,
+        "path": "Q300_aristotle/RequestProject/PM/Star9_21.lean",
+        "sha256": "79cf64d5e8d5842536f7868433f9c490fbceb3c43dfe6b6ea22f07423e8e5b3a"
+      },
+      {
+        "bytes": 12109,
+        "path": "Q300_aristotle/RequestProject/PM/Soundness.lean",
+        "sha256": "0c7c7b9e1b424b5524946dad19869f5c92b77714937f3975b982a6c7827cdb0d"
+      },
+      {
+        "bytes": 1459,
+        "path": "Q300_aristotle/RequestProject/PM/Examples.lean",
+        "sha256": "ffcfae9c84d622b2c40f139f3b13b3c0cda57bf5369c227ef7744176ce6f9093"
+      },
+      {
+        "bytes": 12041,
+        "path": "Q300_aristotle/RequestProject/PM/Syntax.lean",
+        "sha256": "d43c7dcbfd15cf3c1d2aa7ffa3020e569cfc55b286e5b5e5c5002ab43621f722"
+      }
+    ],
+    "path": "aristotle/results/Q300-final.tar.gz",
+    "present": true,
+    "sha256": "15b9639c4cbff8d2e2066999f33c0fd06b572cc84fdbaa0eac2f03ef269ba065"
   },
   "batch": "Q300",
   "canonical_declarations": [
@@ -10,12 +43,26 @@
       "actual_signature_sha256": null,
       "declaration": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
       "exists": false,
-      "expected_signature_sha256": "cc950b29ae81b530a7f6176c8670b61a178a6165859092224fbff53f59f6116e"
+      "expected_signature_sha256": "cc950b29ae81b530a7f6176c8670b61a178a6165859092224fbff53f59f6116e",
+      "role": "target-insertion"
     }
+  ],
+  "declaration_mappings": [
+    {
+      "canonical": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
+      "canonical_present": false,
+      "role": "target-insertion",
+      "source": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
+      "source_present": true,
+      "source_signature_sha256": "98e589c62f15261df329a5d03ad54514bd16d26a350d16ac80ad00fa55b2d461"
+    }
+  ],
+  "forbidden_constructs": [
+    "Q300_aristotle/RequestProject/Main.lean: forbidden Classical"
   ],
   "kind": "pm-interface-kernel-remap-report",
   "plan": {
-    "archive_sha256": null,
+    "archive_sha256": "15b9639c4cbff8d2e2066999f33c0fd06b572cc84fdbaa0eac2f03ef269ba065",
     "batch": "Q300",
     "canonical_integration_forbidden": true,
     "kind": "pm-interface-kernel-remap-plan",
@@ -25,6 +72,7 @@
       {
         "canonical": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
         "id": "PM1:✱9·21",
+        "insertion_target": true,
         "signature": "theorem star_9_21\n    (φ ψ : Apparent Γ [.elementaryProposition]) :\n    Star_9_21Derivation φ ψ\n",
         "signature_sha256": "cc950b29ae81b530a7f6176c8670b61a178a6165859092224fbff53f59f6116e",
         "source": "PM.Architecture.FirstOrderPrerequisites.star_9_21"
@@ -37,8 +85,21 @@
     "requires_one_to_one_kernel_remap": true
   },
   "reasons": [
-    "missing canonical declaration PM.Architecture.FirstOrderPrerequisites.star_9_21",
-    "terminal archive unavailable"
+    "Q300 forbids archive-local declarations: PM.Defn, PM.Defn.sound, PM.PMForm, PM.PMForm.isMatrix, PM.PMForm.isMatrix_subst, PM.PMForm.noBinder, PM.PMForm.noBinder_ex, PM.PMForm.noBinder_of_isMatrix, PM.PMForm.noBinder_subst, PM.PMForm.occFree, PM.PMForm.occFree_ex_of_ne, PM.PMForm.occFree_subst_intro, PM.PMForm.occFree_subst_of_ne, PM.PMForm.occFree_subst_self, PM.PMForm.subst, PM.PMForm.subst_of_not_occFree, PM.PMForm.subst_subst, PM.Thm, PM.Thm.sound, PM.Thm.star_2_05, PM.Thm.star_2_07, PM.Thm.star_2_08, PM.Valid, PM.eval, PM.eval_congr, PM.eval_subst, PM.eval_update_of_not_occFree, PM.not_thm_atom, PM.star_9_21_concrete, PM.star_9_21_valid",
+    "Q300_aristotle/RequestProject/Main.lean: forbidden Classical",
+    "target signature mismatch or absent: PM.Architecture.FirstOrderPrerequisites.star_9_21",
+    "unmapped local declarations: PM.Defn, PM.Defn.sound, PM.PMForm, PM.PMForm.isMatrix, PM.PMForm.isMatrix_subst, PM.PMForm.noBinder, PM.PMForm.noBinder_ex, PM.PMForm.noBinder_of_isMatrix, PM.PMForm.noBinder_subst, PM.PMForm.occFree, PM.PMForm.occFree_ex_of_ne, PM.PMForm.occFree_subst_intro, PM.PMForm.occFree_subst_of_ne, PM.PMForm.occFree_subst_self, PM.PMForm.subst, PM.PMForm.subst_of_not_occFree, PM.PMForm.subst_subst, PM.Thm, PM.Thm.sound, PM.Thm.star_2_05, PM.Thm.star_2_07, PM.Thm.star_2_08, PM.Valid, PM.eval, PM.eval_congr, PM.eval_subst, PM.eval_update_of_not_occFree, PM.not_thm_atom, PM.star_9_21_concrete, PM.star_9_21_valid"
   ],
-  "status": "blocked"
+  "status": "blocked",
+  "targets": [
+    {
+      "actual_signature_sha256": "98e589c62f15261df329a5d03ad54514bd16d26a350d16ac80ad00fa55b2d461",
+      "canonical": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
+      "exact_signature": false,
+      "expected_signature_sha256": "cc950b29ae81b530a7f6176c8670b61a178a6165859092224fbff53f59f6116e",
+      "id": "PM1:✱9·21",
+      "role": "target-insertion",
+      "source": "PM.Architecture.FirstOrderPrerequisites.star_9_21"
+    }
+  ]
 }
