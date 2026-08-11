@@ -6,19 +6,19 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 713,
-    "object_language_ast_parsed": 325,
+    "catalogued_items": 723,
+    "object_language_ast_parsed": 327,
     "metalinguistic_routes": 8,
-    "architecture_gated_source_routes": 380,
+    "architecture_gated_source_routes": 388,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
-    "catalogued_items_missing_proof_skeleton": 655,
+    "catalogued_items_missing_proof_skeleton": 665,
     "constrained_batches": 16,
     "complete_batch_artifact_sets": 15,
     "planned_campaign_questions": 65,
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
-    "catalogued_items_without_campaign_question": 490,
+    "catalogued_items_without_campaign_question": 500,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
@@ -49,7 +49,7 @@
       "PM1:✱14": 51,
       "PM1:✱2": 68,
       "PM1:✱20": 50,
-      "PM1:✱21": 16,
+      "PM1:✱21": 21,
       "PM1:✱3": 28,
       "PM1:✱4": 61,
       "PM1:✱5": 36,
@@ -59,9 +59,9 @@
       "PM2:✱102": 28,
       "PM2:✱103": 20,
       "PM2:✱104": 5,
-      "PM2:✱105": 16,
+      "PM2:✱105": 18,
       "PM3:✱250": 70,
-      "PM3:✱251": 41
+      "PM3:✱251": 44
     },
     "planned": {
       "PM1:✱1": 3,
@@ -84,16 +84,16 @@
       "PM1:✱14": 47,
       "PM1:✱2": 1,
       "PM1:✱20": 50,
-      "PM1:✱21": 16,
+      "PM1:✱21": 21,
       "PM1:✱9": 22,
       "PM2:✱100": 12,
       "PM2:✱101": 15,
       "PM2:✱102": 28,
       "PM2:✱103": 20,
       "PM2:✱104": 5,
-      "PM2:✱105": 16,
+      "PM2:✱105": 18,
       "PM3:✱250": 70,
-      "PM3:✱251": 41
+      "PM3:✱251": 44
     }
   },
   "local_scheduler_candidates": [],
@@ -3814,6 +3814,71 @@
     },
     {
       "id": "PM1:✱21·13",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱21·14",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱21·15",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱21·151",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱21·16",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱21·17",
       "kind": "derived-proposition",
       "source_catalogue": true,
       "formal_status": "prepared",
@@ -9186,6 +9251,34 @@
       }
     },
     {
+      "id": "PM2:✱105·11",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "c38f1477613344a5288ee5dc340624ace5d4b8bc3fd511007f354f4f1c492eea"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·111",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "fa10dc6213729a6be2454ecf99c50a3ae327b75e9d06349d3e5e790e31f3df0c"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
       "id": "PM2:✱105·25",
       "kind": "derived-proposition",
       "source_catalogue": true,
@@ -10711,6 +10804,45 @@
       }
     },
     {
+      "id": "PM3:✱251·42",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·43",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·44",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
       "id": "PM3:✱251·61",
       "kind": "summary-enunciation",
       "source_catalogue": true,
@@ -11011,6 +11143,11 @@
     "PM1:✱21·112",
     "PM1:✱21·12",
     "PM1:✱21·13",
+    "PM1:✱21·14",
+    "PM1:✱21·15",
+    "PM1:✱21·151",
+    "PM1:✱21·16",
+    "PM1:✱21·17",
     "PM1:✱2·33",
     "PM1:✱9·34",
     "PM1:✱9·35",
@@ -11122,6 +11259,8 @@
     "PM2:✱105·031",
     "PM2:✱105·1",
     "PM2:✱105·101",
+    "PM2:✱105·11",
+    "PM2:✱105·111",
     "PM2:✱105·25",
     "PM2:✱105·251",
     "PM2:✱105·26",
@@ -11238,6 +11377,9 @@
     "PM3:✱251·371",
     "PM3:✱251·4",
     "PM3:✱251·41",
+    "PM3:✱251·42",
+    "PM3:✱251·43",
+    "PM3:✱251·44",
     "PM3:✱251·61",
     "PM3:✱251·621",
     "PM3:✱251·65"

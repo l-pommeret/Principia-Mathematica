@@ -386,3 +386,9 @@ PM-VERBATIM-END PM2:✱105·1 -/
 /- PM-VERBATIM-BEGIN PM2:✱105·101
 ✱105·101. ⊢ . N₂cʻα = Ncʻα ∩ t₁ʻα  [✱63·41 . (✱105·011)]
 PM-VERBATIM-END PM2:✱105·101 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·11
+✱105·11. ⊢ : β ∈ N₁cʻα .≡ . β ∈ Ncʻα . β ∈ t₀ʻα .≡ . β sm α . β ∈ t₀ʻα .≡ . β sm α . β ⊂ t₁ʻα  [✱105·1 . ✱100·31 . ✱63·51]
+PM-VERBATIM-END PM2:✱105·11 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·111
+✱105·111. ⊢ : β ∈ N₂cʻα .≡ . β ∈ Ncʻα . β ∈ t₁ʻα .≡ . β sm α . β ∈ t₁ʻα .≡ . β sm α . β ⊂ t₂ʻα  [✱105·101 . ✱100·31 . ✱63·52]
+PM-VERBATIM-END PM2:✱105·111 -/
