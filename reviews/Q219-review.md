@@ -16,4 +16,7 @@ and ✱2·81, rather than paraphrased in the request. Their manifests resolve to
 ✱2·77={✱2·76}; ✱2·8={✱2·53, Perm, ✱2·38};
 ✱2·81={Sum, ✱2·76, Syll}, plus the reviewed ✱1·11 convention. The generated
 15.9 kB standalone context contains only their transitive implementation
-closure. Submission remains forbidden until GitHub CI kernel-checks it.
+closure. GitHub CI kernel-checked it at commit
+`ed6e8e7ca74a32e9422535b51e1622a4989f665d`, run
+[`31445303359`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31445303359),
+conclusion `success`. Q219 is eligible for one constrained Aristotle request.
