@@ -42,7 +42,7 @@ PM-VERBATIM-END PM1:✱5·11 -/
 ✱5·12.  ⊢ : p ⊃ q . ∨ . p ⊃ ∼q   [✱2·52·54]
 PM-VERBATIM-END PM1:✱5·12 -/
 /- PM-VERBATIM-BEGIN PM1:✱5·13
-✱5·13.  ⊢ : p ⊃ q . ∨ . q ⊃ p   [✱2·5·21]
+✱5·13.  ⊢ : p ⊃ q . ∨ . q ⊃ p   [✱2·521]
 PM-VERBATIM-END PM1:✱5·13 -/
 /- PM-VERBATIM-BEGIN PM1:✱5·14
 ✱5·14.  ⊢ : p ⊃ q . ∨ . q ⊃ r   [Simp . Transp . ✱2·21]
