@@ -96,3 +96,18 @@ PM-VERBATIM-END PM1:✱21·16 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·17
 ✱21·17. ⊢ : (φ). f{ẑxẑyφ!(x,y)} .⊃ . f{ẑxẑyψ(x,y)}
 PM-VERBATIM-END PM1:✱21·17 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·2
+✱21·2. ⊢ . ẑxẑyφ(x,y) = ẑxẑyφ(x,y)
+PM-VERBATIM-END PM1:✱21·2 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·21
+✱21·21. ⊢ : ẑxẑyφ(x,y) = ẑxẑyψ(x,y) .≡ . ẑxẑyψ(x,y) = ẑxẑyφ(x,y)
+PM-VERBATIM-END PM1:✱21·21 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·22
+✱21·22. ⊢ : ẑxẑyφ(x,y) = ẑxẑyψ(x,y) . ẑxẑyψ(x,y) = ẑxẑyχ(x,y) .⊃ . ẑxẑyφ(x,y) = ẑxẑyχ(x,y)
+PM-VERBATIM-END PM1:✱21·22 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·23
+✱21·23. ⊢ : ẑxẑyφ(x,y) = ẑxẑyψ(x,y) . ẑxẑyφ(x,y) = ẑxẑyχ(x,y) .⊃ . ẑxẑyψ(x,y) = ẑxẑyχ(x,y)
+PM-VERBATIM-END PM1:✱21·23 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·24
+✱21·24. ⊢ : ẑxẑyψ(x,y) = ẑxẑyφ(x,y) . ẑxẑyχ(x,y) = ẑxẑyφ(x,y) .⊃ . ẑxẑyψ(x,y) = ẑxẑyχ(x,y)
+PM-VERBATIM-END PM1:✱21·24 -/
