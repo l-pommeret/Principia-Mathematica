@@ -39,8 +39,11 @@ present in the Q296 context.
   [31513533839](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31513533839)
   at commit `94a49e0` kernel-checked `Principia.Syntax.Description`.
 - Q296's generated standalone context is provenance-hashed in
-  `metadata/context_bundles/Q296.json`. Its own isolated CI evidence remains
-  pending until the next consolidated run.
+  `metadata/context_bundles/Q296.json`. CI
+  [31514985850](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31514985850)
+  at commit `275e8a12e1cdfeef2cf17521eb20d77e7b31db40` compiled that exact
+  isolated context and the full edition. This makes Q296 submission-ready;
+  it is not canonical proof evidence for ✱14·01.
 - The whitelist is empty: only definitional reduction is licensed. No PM
   theorem, semantic truth table, choice operator, `Classical`, axiom, unsafe
   declaration, placeholder, or countermodel theorem may occur in the body.

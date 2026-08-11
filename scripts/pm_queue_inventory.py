@@ -200,6 +200,21 @@ def inventory(root: Path = ROOT) -> dict:
         for batch in batches.values()
     )
 
+    def scheduler_record(candidate) -> dict:
+        question = questions[candidate.qid]
+        record = {
+            "question": candidate.qid,
+            "kind": candidate.kind,
+            "prompt_path": str(candidate.path.relative_to(root)),
+            "audit_label": question.get("audit_label", question.get("audit_status")),
+            "submission_status": question.get("submission_status", "not-recorded"),
+            "integration_status": question.get("integration_status", "not-recorded"),
+        }
+        evidence = question.get("context_ci_evidence")
+        if evidence is not None:
+            record["context_ci_evidence"] = evidence
+        return record
+
     return {
         "kind": "pm-deterministic-queue-inventory",
         "scope": {
@@ -238,7 +253,7 @@ def inventory(root: Path = ROOT) -> dict:
             ),
         },
         "local_scheduler_candidates": [
-            {"question": candidate.qid, "kind": candidate.kind, "prompt_path": str(candidate.path.relative_to(root))}
+            scheduler_record(candidate)
             for candidate in local_candidates
         ],
         "batches": batches,

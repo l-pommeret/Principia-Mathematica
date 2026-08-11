@@ -1145,6 +1145,7 @@
       ],
       "parallel_group": "STAR4-FOUNDATIONS",
       "aristotle_status": "not-submitted",
+      "submission_status": "ready",
       "aristotle_latest_task_id": "6c596637-541a-4006-b1f6-355af61a2663",
       "aristotle_latest_task_status": "COMPLETE_WITH_ERRORS",
       "aristotle_latest_task_name": "# Documented-relaxed ordere...",
@@ -2298,11 +2299,17 @@
         "commit": "94a49e0",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31513533839",
         "conclusion": "success",
-        "scope": "canonical description architecture; Q296 isolated context CI pending"
+        "scope": "canonical description architecture"
+      },
+      "context_ci_evidence": {
+        "commit": "275e8a12e1cdfeef2cf17521eb20d77e7b31db40",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31514985850",
+        "conclusion": "success",
+        "scope": "isolated-interface; canonical integration forbidden; one-to-one remap pending"
       },
       "context_sha256": "9e8aaa9bba962c719dbfb0452c87ec8c323c6be41bbdb7eaa906f72228025f46",
       "manifest_sha256": "a8197801228dd330024ed9a0ddef6becad0819af5d1db56c75855d66b6242cc7",
-      "submission_gate": "pending isolated-context CI; source collation and exact target complete",
+      "submission_gate": "satisfied for isolated interface only; source collation and exact target complete; canonical promotion blocked pending Aristotle body and one-to-one remap",
       "aristotle_request_path": "aristotle/Q296.md",
       "aristotle_request_sha256": "25518e16e629e16cf89048a75604854e06ed5590f350f5d1332183f458ce482f"
     },

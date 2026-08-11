@@ -80,7 +80,16 @@
     {
       "question": "Q296",
       "kind": "project",
-      "prompt_path": "aristotle/Q296.md"
+      "prompt_path": "aristotle/Q296.md",
+      "audit_label": "A-interface-only",
+      "submission_status": "not-recorded",
+      "integration_status": "blocked-awaiting-aristotle-body-and-one-to-one-canonical-remap",
+      "context_ci_evidence": {
+        "commit": "275e8a12e1cdfeef2cf17521eb20d77e7b31db40",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31514985850",
+        "conclusion": "success",
+        "scope": "isolated-interface; canonical integration forbidden; one-to-one remap pending"
+      }
     }
   ],
   "batches": {
