@@ -1,0 +1,54 @@
+import Principia.Architecture.FirstOrderPrerequisites
+import Principia.Architecture.FirstOrderQ259
+
+namespace PM.Architecture.Q259ClosedRuleBook
+
+/-!
+# Closed citation environment for PM I ✱9·3, ·31, ·32, ·33
+
+`OrderedAssertion` already contains exactly the two printed first-order Pp's
+✱9·1/·11 and the two printed inference forms ✱9·12/·13.  This structure adds
+only the two earlier *derived* citations used by the four demonstrations:
+✱9·21 and ✱9·25.  It has no target constructor, arbitrary primitive family,
+or order-polymorphic rule.
+
+The polymorphism below ranges only over PM real-variable contexts.  Each
+conclusion is fixed at assigned order one, and each implication is the
+scope-certified `OrderedFormula.firstImp` from the audited prerequisites.
+-/
+
+open PM.Architecture.FirstOrderPrerequisites
+
+structure Q259ClosedRuleBook where
+  /-- The cited universal monotonicity theorem ✱9·21, at its exact schema. -/
+  star_9_21 : {Γ : RealContext} →
+    (φ ψ : Apparent Γ [.elementaryProposition]) →
+    Star_9_21Derivation φ ψ
+  /-- The cited distribution theorem ✱9·25, at its exact schema. -/
+  star_9_25 : {Γ : RealContext} → (p : Elementary Γ) →
+    (φ : Apparent Γ [.elementaryProposition]) →
+    Star_9_25Derivation p φ
+
+/-- The exact assertion contract for the analogue of ✱1·2 on universals.
+It is a target, never a `Q259ClosedRuleBook` field. -/
+abbrev Star_9_3Derivation (φ : Apparent Γ [.elementaryProposition]) : Prop :=
+  OrderedAssertion (FirstOrderQ259.star_9_3_target φ)
+
+/-- The exact assertion contract for the analogue of ✱1·2 on existentials.
+It is a target, never a `Q259ClosedRuleBook` field. -/
+abbrev Star_9_31Derivation (φ : Apparent Γ [.elementaryProposition]) : Prop :=
+  OrderedAssertion (FirstOrderQ259.star_9_31_target φ)
+
+/-- The exact assertion contract for the universal right-injection analogue
+of ✱1·3. It is a target, never a `Q259ClosedRuleBook` field. -/
+abbrev Star_9_32Derivation (q : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop :=
+  OrderedAssertion (FirstOrderQ259.star_9_32_target q φ)
+
+/-- The exact assertion contract for the existential right-injection analogue
+of ✱1·3. It is a target, never a `Q259ClosedRuleBook` field. -/
+abbrev Star_9_33Derivation (q : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop :=
+  OrderedAssertion (FirstOrderQ259.star_9_33_target q φ)
+
+end PM.Architecture.Q259ClosedRuleBook

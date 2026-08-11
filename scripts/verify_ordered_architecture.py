@@ -11,6 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 ORDERED = ROOT / "Principia/Syntax/Ordered.lean"
 DERIVATION = ROOT / "Principia/Deduction/Ordered.lean"
 Q259 = ROOT / "Principia/Architecture/FirstOrderQ259.lean"
+PREREQUISITES = ROOT / "Principia/Architecture/FirstOrderPrerequisites.lean"
+CLOSED_RULEBOOK = ROOT / "Principia/Architecture/Q259ClosedRuleBook.lean"
 APPARENT = ROOT / "Principia/Syntax/Apparent.lean"
 
 
@@ -18,6 +20,8 @@ def main() -> None:
     ordered = code_without_comments_or_strings(ORDERED.read_text(encoding="utf-8"))
     derivation = code_without_comments_or_strings(DERIVATION.read_text(encoding="utf-8"))
     targets = code_without_comments_or_strings(Q259.read_text(encoding="utf-8"))
+    prerequisites = code_without_comments_or_strings(PREREQUISITES.read_text(encoding="utf-8"))
+    closed_rulebook = code_without_comments_or_strings(CLOSED_RULEBOOK.read_text(encoding="utf-8"))
     apparent = code_without_comments_or_strings(APPARENT.read_text(encoding="utf-8"))
     required = (
         "inductive OrderedFormula", "| elementary", "| firstOrder", "| neg", "| disj",
@@ -27,9 +31,11 @@ def main() -> None:
         "structure OrderedRuleBook", "Primitive : OrderedFormula",
         "inductive OrderedDerivation", "| primitive", "| detach", "| elementary",
         "def embedElementary", "def impElementaryToFirst",
+        "inductive OrderedAssertion", "star_9_12_elementary_to_first",
+        "structure Q259ClosedRuleBook", "star_9_21", "star_9_25",
         "star_9_3_target", "star_9_31_target", "star_9_32_target", "star_9_33_target",
     )
-    corpus = "\n".join((ordered, derivation, targets, apparent))
+    corpus = "\n".join((ordered, derivation, targets, prerequisites, closed_rulebook, apparent))
     missing = [entry for entry in required if entry not in corpus]
     if missing:
         raise SystemExit("incomplete ordered architecture: " + ", ".join(missing))
@@ -44,6 +50,8 @@ def main() -> None:
         raise SystemExit("Q259 order-one disjunction bypasses its scope certificate")
     if "OrderedDisjunctionScope order" not in derivation:
         raise SystemExit("ordered detachment omits its disjunction scope certificate")
+    if re.search(r"(?m)^\s+star_9_(?:3|31|32|33)\s*:", closed_rulebook):
+        raise SystemExit("Q259 target appears as a closed-rulebook primitive")
     print("Ordered first-order architecture checks passed")
 
 
