@@ -149,3 +149,9 @@ PM-VERBATIM-END PM1:✱14·332 -/
 /- PM-VERBATIM-BEGIN PM1:✱14·34
 ✱14·34. ⊢ : p : [(℩x)(φx)] . χ(℩x)(φx) .≡ : [(℩x)(φx)] : p . χ(℩x)(φx)
 PM-VERBATIM-END PM1:✱14·34 -/
+/- PM-VERBATIM-BEGIN PM1:✱20·01
+✱20·01. f{ẑ(ψz)} .=: (∃φ) : φ!x .≡ₓ. ψx : f{φ!ẑ}  Df
+PM-VERBATIM-END PM1:✱20·01 -/
+/- PM-VERBATIM-BEGIN PM1:✱20·02
+✱20·02. x ε (φ!ẑ) .= . φ!x  Df
+PM-VERBATIM-END PM1:✱20·02 -/
