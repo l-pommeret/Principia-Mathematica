@@ -24,6 +24,7 @@ GATES = (
     ("ramified-types", ["verify_ramified_toy.py"]),
     ("typical-ambiguity", ["verify_typical_ambiguity_toy.py"]),
     ("description-scope", ["verify_description_scope_toy.py"]),
+    ("description-architecture", ["verify_description_architecture.py"]),
     ("predicative-gate", ["verify_predicative_gate_toy.py"]),
     ("parser-coverage", ["verify_pm_parser_coverage.py"]),
     ("lean-policy", ["verify_lean_policy.py"]),

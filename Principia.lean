@@ -1,6 +1,7 @@
 import Principia.Syntax.Formula
 import Principia.Syntax.Apparent
 import Principia.Syntax.Printed
+import Principia.Syntax.Description
 import Principia.Deduction.System
 import Principia.Experimental.RamifiedToy
 import Principia.Experimental.TypicalAmbiguityToy

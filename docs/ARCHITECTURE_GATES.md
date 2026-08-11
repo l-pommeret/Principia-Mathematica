@@ -53,6 +53,15 @@ continuation have different values. A mere syntactic inequality is too weak.
 The same mechanism must later accept class and relation continuations for ✱20,
 ✱21, and ✱30 without introducing a second notion of scope.
 
+The experimental countermodel is retained in `DescriptionScopeToy`.  The
+canonical ✱14 syntax is separately promoted in `Syntax/Description`: its
+scope bracket is an intrinsically typed AST constructor, its candidate and
+continuation use de Bruijn contexts, and ✱14·01 expands capture-safely into a
+description-free formula.  There is no description constructor in the term
+language.  This promotion settles the syntax gate only; individual numbered
+items still require diplomatic collation, constrained reconstruction, and
+kernel checking before publication.
+
 ## 5. Scoped non-logical assumptions
 
 Item metadata needs an assumption ledger distinct from theorem dependencies.
