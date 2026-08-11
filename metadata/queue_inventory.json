@@ -6,19 +6,19 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 901,
-    "object_language_ast_parsed": 372,
+    "catalogued_items": 911,
+    "object_language_ast_parsed": 383,
     "metalinguistic_routes": 8,
-    "architecture_gated_source_routes": 521,
+    "architecture_gated_source_routes": 520,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
-    "catalogued_items_missing_proof_skeleton": 843,
+    "catalogued_items_missing_proof_skeleton": 853,
     "constrained_batches": 16,
     "complete_batch_artifact_sets": 15,
     "planned_campaign_questions": 65,
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
-    "catalogued_items_without_campaign_question": 678,
+    "catalogued_items_without_campaign_question": 688,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
@@ -60,7 +60,7 @@
       "PM2:✱102": 28,
       "PM2:✱103": 20,
       "PM2:✱104": 5,
-      "PM2:✱105": 63,
+      "PM2:✱105": 73,
       "PM3:✱250": 70,
       "PM3:✱251": 56,
       "PM3:✱252": 25,
@@ -95,7 +95,7 @@
       "PM2:✱102": 28,
       "PM2:✱103": 20,
       "PM2:✱104": 5,
-      "PM2:✱105": 63,
+      "PM2:✱105": 73,
       "PM3:✱250": 70,
       "PM3:✱251": 56,
       "PM3:✱252": 25,
@@ -10656,20 +10656,6 @@
       }
     },
     {
-      "id": "PM2:✱105·3",
-      "kind": "derived-proposition",
-      "source_catalogue": true,
-      "formal_status": "prepared",
-      "campaign_questions": [],
-      "ast": {
-        "status": "parsed",
-        "sha256": "9628ffdb34a1e231b86203eaf18c331591c20f1aefde9fe5f27ff1a53fda4c52"
-      },
-      "proof_skeleton": {
-        "status": "missing"
-      }
-    },
-    {
       "id": "PM2:✱105·301",
       "kind": "derived-proposition",
       "source_catalogue": true,
@@ -10824,20 +10810,6 @@
       }
     },
     {
-      "id": "PM2:✱105·322",
-      "kind": "derived-proposition",
-      "source_catalogue": true,
-      "formal_status": "prepared",
-      "campaign_questions": [],
-      "ast": {
-        "status": "parsed",
-        "sha256": "09677adff704ee570ccf10ee212e16ba364379487673b56019ef2b53d6687329"
-      },
-      "proof_skeleton": {
-        "status": "missing"
-      }
-    },
-    {
       "id": "PM2:✱105·323",
       "kind": "derived-proposition",
       "source_catalogue": true,
@@ -10908,6 +10880,34 @@
       }
     },
     {
+      "id": "PM2:✱105·33",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "afa28adc9752eee6430106b7f799de41377d6a2b9f89e397e200441ece430870"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·331",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "4af324a2dda6f60c50a152ba4b87957ac6fec23369d4d133fb5361b86000837d"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
       "id": "PM2:✱105·34",
       "kind": "derived-proposition",
       "source_catalogue": true,
@@ -10916,6 +10916,76 @@
       "ast": {
         "status": "parsed",
         "sha256": "c653881600dc8b6e30282aa5242884d280b59026de9b86ae934747f6231a605e"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·341",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "5f86da6bd1147a5d5c34a47ea9613c7a799a326cb3c90795f593a1b79da1de93"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·342",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "9312102dec6ada4208acaa0abfe55cae4814cd894ab30df1f9a3b6f12437c13f"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·343",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "5db56886798d3e37dd3c5f7af7ceb45b7aa1927cd0a9b420d07d6f9769f135f3"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·344",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "d57298c2aeaa55f71f0b0c674cd38afe6b9f9653329a0281ceb36db58aa4590c"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·345",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "f97fdaaf66f87a9b485d8ef7d88ac15e2b99b2087f2c6194237e9c3b4fd0e79c"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -10936,13 +11006,84 @@
       }
     },
     {
-      "id": "PM2:✱105·38",
+      "id": "PM2:✱105·351",
       "kind": "derived-proposition",
       "source_catalogue": true,
       "formal_status": "prepared",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "d6486ae45e5a0636f3a6818778e05a87095c6d522bce52ca312ded45217c7996"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·352",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "5cd32a29ba2e04dbc37b58188cbdc080e4cbc4652b4d714528771e7182c5b5bd"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·353",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "880fea1e0f315e6d800110a7ef4efd10302b7616b43e9c8c68228163966e0b9e"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·354",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "e41304631d77ffc559c45d12fdc235fc7dc07145a7f2f0a533e44148e9819dc1"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·355",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "589de3c8a0ce31528a21883e8611fff518bf5a02f4e0a3f1fa81677b00cfdb7d"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·356",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "78643b2399af0b14ebba5aea0fbd8f025611b128ce7fcb2f738e6ac4f40dda41"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -13729,7 +13870,6 @@
     "PM2:✱105·28",
     "PM2:✱105·281",
     "PM2:✱105·29",
-    "PM2:✱105·3",
     "PM2:✱105·301",
     "PM2:✱105·31",
     "PM2:✱105·311",
@@ -13741,15 +13881,26 @@
     "PM2:✱105·317",
     "PM2:✱105·32",
     "PM2:✱105·321",
-    "PM2:✱105·322",
     "PM2:✱105·323",
     "PM2:✱105·324",
     "PM2:✱105·325",
     "PM2:✱105·326",
     "PM2:✱105·327",
+    "PM2:✱105·33",
+    "PM2:✱105·331",
     "PM2:✱105·34",
+    "PM2:✱105·341",
+    "PM2:✱105·342",
+    "PM2:✱105·343",
+    "PM2:✱105·344",
+    "PM2:✱105·345",
     "PM2:✱105·35",
-    "PM2:✱105·38",
+    "PM2:✱105·351",
+    "PM2:✱105·352",
+    "PM2:✱105·353",
+    "PM2:✱105·354",
+    "PM2:✱105·355",
+    "PM2:✱105·356",
     "PM3:✱250·01",
     "PM3:✱250·02",
     "PM3:✱250·1",

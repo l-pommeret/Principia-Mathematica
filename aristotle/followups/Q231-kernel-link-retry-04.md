@@ -1,0 +1,3 @@
+# Q231 continuation — exact canonical bodies only
+
+Task `867bd013-eae7-4a68-849b-987b350b29f4` (SHA-256 `80eb881bb852396d2e2877d0ada661f1b1b8e3924c0be8f4ed2a2af610a189bc`) is incomplete: its large local Q231 deliverable is not a verified canonical kernel link. Continue this same project and deliver only exact unconditional Q231 targets from Q231.md in submitted order/signatures, using accepted project-visible exact-whitelist bodies. No local/copy/remap code, module/context/import/helper, Classical, axiom, opaque, sorry, admit, unsafe, conditional or changed target. If blocked, exact missing bodies only; incomplete.
