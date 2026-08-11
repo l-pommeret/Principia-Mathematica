@@ -1,0 +1,73 @@
+{
+  "kind": "pm-constrained-prover-manifest",
+  "current_item": "PM1:✱9·21",
+  "policy": {
+    "proof_permissions_are_exact": true,
+    "context_closure_grants_proof_permission": false,
+    "strict": true,
+    "interface_gated": true,
+    "canonical_integration_forbidden": true,
+    "requires_one_to_one_kernel_remap": true
+  },
+  "foundation_profile": "ordered-first-order-pm1",
+  "context_whitespace_policy": "strip-trailing",
+  "local_context_paths": [
+    "Principia/Architecture/FirstOrderPrerequisites.lean"
+  ],
+  "allowed_pm_items": [
+    "PM1:✱1·01",
+    "PM1:✱2·08",
+    "PM1:✱9·01",
+    "PM1:✱9·06",
+    "PM1:✱9·08",
+    "PM1:✱9·1",
+    "PM1:✱9·12",
+    "PM1:✱9·13"
+  ],
+  "allowed_lean_declarations": {
+    "PM1:✱1·01": "PM.Elementary.imp",
+    "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08",
+    "PM1:✱9·01": "PM.FirstOrder.neg_always",
+    "PM1:✱9·06": "PM.FirstOrder.star_9_06_reduction",
+    "PM1:✱9·08": "PM.FirstOrder.star_9_08_reduction",
+    "PM1:✱9·1": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_1",
+    "PM1:✱9·12": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_12",
+    "PM1:✱9·13": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_13 / star_9_13_first"
+  },
+  "proof_permissions": [
+    "PM1:✱1·01",
+    "PM1:✱2·08",
+    "PM1:✱9·01",
+    "PM1:✱9·06",
+    "PM1:✱9·08",
+    "PM1:✱9·1",
+    "PM1:✱9·12",
+    "PM1:✱9·13"
+  ],
+  "context_closure": [
+    "PM1:✱2·05",
+    "PM1:✱2·07",
+    "PM1:✱2·08"
+  ],
+  "context_declarations": {
+    "PM1:✱2·05": "PM.FirstEdition.Volume1.Star2.star_2_05",
+    "PM1:✱2·07": "PM.FirstEdition.Volume1.Star2.star_2_07",
+    "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08"
+  },
+  "context_lean_paths": [
+    "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean"
+  ],
+  "interface_dependencies": [],
+  "diagnostics": {
+    "missing_items": [],
+    "non_kernel_checked_items": [],
+    "unresolved_aliases": []
+  },
+  "scope_ledger": {
+    "line_1": "PM1:✱2·08 at the elementary matrix φz ⊃ ψz",
+    "lines_2_3": "two exact PM1:✱9·1 applications with displayed y then x",
+    "line_4": "the sole assigned 1→2 PM1:✱9·13 constructor",
+    "lines_5_7": "only PM1:✱9·06, PM1:✱1·01 and PM1:✱9·08 reductions",
+    "final": "explicit closed-binder alpha certificates; no substitution theorem"
+  }
+}

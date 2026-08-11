@@ -38,6 +38,10 @@ inductive OrderedDisjunctionScope : Nat → Type where
 inductive OrderedFormula (Γ : RealContext) : Nat → Type where
   | elementary : Elementary Γ → OrderedFormula Γ 0
   | firstOrder : FirstOrder Γ [] → OrderedFormula Γ 1
+  /-- One explicit next assigned order.  This is not an all-orders binder:
+  values are exactly `Quantified (FirstOrder Γ) []`, i.e. one further PM
+  apparent-variable step above the first-order matrix. -/
+  | secondOrder : SecondOrder Γ [] → OrderedFormula Γ 2
   | neg : OrderedFormula Γ order → OrderedFormula Γ order
   | disj : OrderedDisjunctionScope order → OrderedFormula Γ order →
       OrderedFormula Γ order → OrderedFormula Γ order
@@ -70,11 +74,18 @@ def always (body : Apparent Γ [.elementaryProposition]) : OrderedFormula Γ 1 :
 def sometimes (body : Apparent Γ [.elementaryProposition]) : OrderedFormula Γ 1 :=
   .firstOrder (FirstOrder.sometimes body)
 
+/-- The one fixed order-two universal used by the printed line (4) of
+✱9·21.  No polymorphic `all` operation is exported from this syntax layer. -/
+def alwaysFirstOrder (body : FirstOrder Γ [.elementaryProposition]) :
+    OrderedFormula Γ 2 :=
+  .secondOrder (Quantified.always body)
+
 def embedElementary (p : Elementary Γ) : OrderedFormula Γ 0 := .elementary p
 
 def eraseElementary? : OrderedFormula Γ order → Option (Elementary Γ)
   | .elementary p => some p
   | .firstOrder _ => none
+  | .secondOrder _ => none
   | .neg p => (eraseElementary? p).map .neg
   | .disj .elementary p q => do
       let p ← eraseElementary? p

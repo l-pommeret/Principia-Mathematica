@@ -21,6 +21,51 @@ is admitted here.
 
 open PM.OrderedFormula
 
+/-- A sealed description of the matrix operations licensed for one *fixed*
+successor step.  It is private on purpose: clients cannot manufacture a
+new family, choose an arbitrary order, or turn it into a free all-orders
+generalization principle.  The sole value below is the audited first-order to
+second-order instance used at ✱9·21, line (4). -/
+private structure MatrixSyntaxAt (order : Nat) where
+  Matrix : RealContext → BoundContext → Type
+  renameReal : {Γ Ξ : RealContext} → {Δ : BoundContext} →
+    Apparent.RealRenaming Γ Ξ → Matrix Γ Δ → Matrix Ξ Δ
+  abstractHead : {Γ : RealContext} → {Δ : BoundContext} →
+    Matrix (.elementaryProposition :: Γ) Δ →
+      Matrix Γ (.elementaryProposition :: Δ)
+  all : {Γ : RealContext} →
+    Matrix Γ [.elementaryProposition] → OrderedFormula Γ (order + 1)
+
+/-- The only installed `MatrixSyntaxAt` instance.  Its operations are the
+capture-safe first-order operations of `Apparent.lean`; they are not a
+semantic interpretation and they do not range over an arbitrary level. -/
+private def firstOrderMatrixSyntaxAt : MatrixSyntaxAt 1 where
+  Matrix := fun Γ Δ => FirstOrder Γ Δ
+  renameReal := fun ρ proposition => FirstOrder.renameReal ρ proposition
+  abstractHead := fun proposition => FirstOrder.abstractRealHead proposition
+  all := fun body => OrderedFormula.alwaysFirstOrder body
+
+/-- The public name is intentionally specific to the sole audited 1→2
+transition.  It exposes no constructor indexed by an arbitrary order. -/
+def firstOrderToSecondAll (body : FirstOrder Γ [.elementaryProposition]) :
+    OrderedFormula Γ 2 :=
+  firstOrderMatrixSyntaxAt.all body
+
+@[simp] theorem firstOrderToSecondAll_reduction
+    (body : FirstOrder Γ [.elementaryProposition]) :
+    firstOrderToSecondAll body = OrderedFormula.alwaysFirstOrder body := rfl
+
+/-- Alpha-renaming a closed first-order proposition has no free apparent
+variable to alter.  The empty renaming is explicit so later uses of the
+printed `y` and `z` binders cannot silently invoke substitution. -/
+def closedFirstOrderAlphaRenaming : Apparent.Renaming [] [] :=
+  fun variable => nomatch variable
+
+@[simp] theorem closedFirstOrder_alpha
+    (body : Apparent Γ [.elementaryProposition]) :
+    FirstOrder.rename closedFirstOrderAlphaRenaming (FirstOrder.always body) =
+      FirstOrder.always body := rfl
+
 /-- Elementary implication in a one-place matrix.  It is only the printed
 ✱1·01 abbreviation at matrix level, never Lean implication. -/
 def matrixImp (φ ψ : Apparent Γ Δ) : Apparent Γ Δ :=
@@ -109,6 +154,15 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
       OrderedAssertion (Γ := .elementaryProposition :: Γ)
         (.elementary (Apparent.openHead φ)) →
       OrderedAssertion (.firstOrder (FirstOrder.always φ))
+  /-- The one assigned next-order instance of ✱9·13 required by line (4) of
+  the printed proof of ✱9·21.  Its premise opens exactly one leading
+  apparent-variable slot as a leading real variable, and its conclusion
+  immediately closes that same slot.  There is deliberately no constructor
+  quantified over arbitrary proposition orders or arbitrary matrix APIs. -/
+  | star_9_13_first (φ : FirstOrder Γ [.elementaryProposition]) :
+      OrderedAssertion (Γ := .elementaryProposition :: Γ)
+        (.firstOrder (FirstOrder.openRealHead φ)) →
+      OrderedAssertion (firstOrderToSecondAll φ)
 
 /-- The exact judgement sought for ✱9·21.  It is a target contract, not an
 invented primitive: it becomes inhabited only by a derivation from the

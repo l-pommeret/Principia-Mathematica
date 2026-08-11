@@ -1,0 +1,111 @@
+{
+  "context_closure": [
+    "PM1:✱2·05",
+    "PM1:✱2·07",
+    "PM1:✱2·08"
+  ],
+  "current_item": "PM1:✱9·21",
+  "integration_blocked": true,
+  "interface_dependencies": [],
+  "kind": "pm-isolated-context-bundle",
+  "manifest_sha256": "68e046c56b62340e44e9429ce8926d09d81892d51f1ff4242bb3f06eb4853724",
+  "policy": {
+    "canonical_integration_forbidden": true,
+    "grants_no_additional_proof_permission": true,
+    "interface_gated": true,
+    "requires_one_to_one_kernel_remap": true,
+    "requires_remote_kernel_check": true,
+    "standalone_context_only": true
+  },
+  "profile": "ordered-first-order-pm1",
+  "proof_permissions": [
+    "PM1:✱1·01",
+    "PM1:✱2·08",
+    "PM1:✱9·01",
+    "PM1:✱9·06",
+    "PM1:✱9·08",
+    "PM1:✱9·1",
+    "PM1:✱9·12",
+    "PM1:✱9·13"
+  ],
+  "source_backfill_required": true,
+  "source_bytes": 27450,
+  "source_sha256": "2241fb3ad2469e0dce2617883dd3f65b51897a8e935af1364f9d076343676bef",
+  "sources": [
+    {
+      "bytes": 805,
+      "kind": "foundation",
+      "path": "Principia/Syntax/Formula.lean",
+      "slice_sha256": "84d2f44d722352633ec63757d0e431294f39e400aab5f2268bad06df5c8b889f",
+      "source_sha256": "4ae57f04fe68659b5afc75e7edf065a229ca1b68ef7ada719797c5011240bb8d"
+    },
+    {
+      "bytes": 15593,
+      "kind": "foundation",
+      "path": "Principia/Syntax/Apparent.lean",
+      "slice_sha256": "1163140edb784846c156c6c21e73817ad8d5325d775c9ff00146e0a21052708f",
+      "source_sha256": "6fcb430767029efc441380496002f6bafb374746ec59b5a4aeec1dca3fcf8ab6"
+    },
+    {
+      "bytes": 2566,
+      "kind": "foundation",
+      "path": "Principia/Syntax/Ordered.lean",
+      "slice_sha256": "78f5bb811c12c0990fd4530d1981210897a5ef278835318e334e1e7a101c600f",
+      "source_sha256": "1216031b3fb51e71456c72385e4fe4b147ff87c6ce3c521253bf4416ad2426db"
+    },
+    {
+      "bytes": 1387,
+      "kind": "foundation",
+      "path": "Principia/Deduction/System.lean",
+      "slice_sha256": "c59624099204ba6efc543229391b6a8b4e3901c89c08d4a6cadf403dbf629d55",
+      "source_sha256": "d245ec933fc304e3f9acd04a8f9efaadab6a991e5f76bbdd91f021f08c32ba82"
+    },
+    {
+      "bytes": 564,
+      "kind": "foundation",
+      "path": "Principia/Deduction/Ordered.lean",
+      "slice_sha256": "e4988c19fe91f872c9e8f04bea83ca1ec3a4af8ecfecd4925c2195265f40f297",
+      "source_sha256": "3e6792db484aa9a6eb87c04adc663b9df0ffbceb0b748af125e39eac7e96f77f"
+    },
+    {
+      "bytes": 5200,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/FirstOrderPrerequisites.lean",
+      "slice_sha256": "0ff61ee3fefb41684b15def2757dc7a584b33c828c64d4e39fd1c3d42b43f374",
+      "source_sha256": "c2574ab169bb2125c73b8da7efba739cb451ff73e0047be8882cfdb3a595279a"
+    },
+    {
+      "bytes": 179,
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_05",
+      "id": "PM1:✱2·05",
+      "kind": "item-declaration",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "slice_sha256": "7710bc5a169e21b9fb6082d67ea08d7c9f95f442de84dbfb8ddf531b0c5bc11a",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+    },
+    {
+      "bytes": 131,
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_07",
+      "id": "PM1:✱2·07",
+      "kind": "item-declaration",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "slice_sha256": "ac4881c13cba3cabb8fc305b50f4367f008204643a7266f80eaf92cc1e1d5324",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+    },
+    {
+      "bytes": 217,
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_08",
+      "id": "PM1:✱2·08",
+      "kind": "item-declaration",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "slice_sha256": "f4a2e56aeaadc61e857e2f8722ab3c3e9bfbfe70d64cc9988f4812515df996cd",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}
