@@ -16,6 +16,9 @@ The currently audited grammar covers:
 - class abstractions and relation abstractions only in a context of use:
   membership, defined/extensional equality, or contextual function application;
 - direct relation values such as `xRy`, kept distinct from relation objects.
+- the turned comma `ʻ` as PM's high-binding `of` application, e.g.
+  `Ncʻα` as `of(Nc, α)` and `E!Ncʻα` as an existence assertion of that
+  application.
 
 The discriminating source tests include the exact shapes of ✱12·1, ✱13·01,
 and ✱14·01. In the resulting ✱14 AST, a description is never retained as a
@@ -41,11 +44,10 @@ their accepted occurrences must be owned by membership, equality, inclusion,
 or a contextual function application.
 
 This is still a syntactic AST, not yet the intrinsically typed Lean AST of the
-canonical ramified calculus. Relation images and descriptive functions,
-higher-order function variables, and systematic ambiguity remain explicit
-future grammar gates. Until those are implemented and tested
-against their source loci, parser success must not be claimed for those
-sections.
+canonical ramified calculus. Relation images, higher-order function variables,
+and systematic ambiguity remain explicit future grammar gates. Until those
+are implemented and tested against their source loci, parser success must not
+be claimed for those sections.
 
 `scripts/verify_pm_parser_coverage.py` makes routing explicit for the formal
 catalogue. Every item must either parse as object syntax or carry one of the

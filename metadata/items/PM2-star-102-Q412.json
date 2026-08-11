@@ -1,1 +1,74 @@
-{"batch":"PM2-STAR102-Q412","edition":"first","volume":2,"source_range":{"printed_pages":"27","scan_leaves":[67],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu","leaf_derivatives":[{"scan_leaf":67,"printed_page":27,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page67-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg","sha256":"38de239bf8da1c3717f2dd804ee3bed32f2a9e131ab28ca659e4997dc0116dd7"}],"project_gutenberg":"https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},"witnesses":["PM2-1912-SCAN","PG78255"],"source_status":"source-catalogued-PM-VERBATIM","integration_status":"source-only-no-formal-target","items":[{"id":"PM2:✱102·11","kind":"derived-proposition","printed":"✱102·11. ⊢ : R ∈ 1→1 .⊃ . R_(x,y) ∈ 1(x)→1(y)","printed_page":27,"scan_leaf":67,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and citation-order skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer","printed_dependencies":["PM1:✱37·402","PM1:✱65·1","PM1:✱33·15","PM1:✱63·5","PM1:✱71·102","PM1:✱65·02","PM1:✱70·1"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM2-star-102-11.txt"},{"id":"PM2:✱102·13","kind":"derived-proposition","printed":"✱102·13. ⊢ : R ∈ 1→1 .⊃ . R_x ∈ 1(x)→1 [Proof as in ✱102·11]","printed_page":27,"scan_leaf":67,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and cited-proof skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer","printed_dependencies":["PM2:✱102·11"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM2-star-102-13.txt"},{"id":"PM2:✱102·2","kind":"derived-proposition","printed":"✱102·2. ⊢ : γ sm_(α,β) δ .≡ . γ sm δ . γ ∈ tʻα . δ ∈ tʻβ [✱35·102 . (✱65·1)]","printed_page":27,"scan_leaf":67,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and printed citation only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer","printed_dependencies":["PM1:✱35·102","PM1:✱65·1"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM2-star-102-2.txt"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM2-STAR102-Q412",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "27",
+    "scan_leaves": [67],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "leaf_derivatives": [{
+      "scan_leaf": 67,
+      "printed_page": 27,
+      "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page67-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg",
+      "sha256": "38de239bf8da1c3717f2dd804ee3bed32f2a9e131ab28ca659e4997dc0116dd7"
+    }],
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "source-only-no-formal-target",
+  "items": [
+    {
+      "id": "PM2:✱102·11",
+      "kind": "derived-proposition",
+      "printed": "✱102·11. ⊢ : R ∈ 1→1 .⊃ . R₍ₓ,ᵧ₎ ∈ 1(x)→1(y)",
+      "printed_page": 27,
+      "scan_leaf": 67,
+      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and citation-order skeleton only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer",
+      "printed_dependencies": ["PM1:✱37·402", "PM1:✱65·1", "PM1:✱33·15", "PM1:✱63·5", "PM1:✱71·102", "PM1:✱65·02", "PM1:✱70·1"],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-11.txt"
+    },
+    {
+      "id": "PM2:✱102·13",
+      "kind": "derived-proposition",
+      "printed": "✱102·13. ⊢ : R ∈ 1→1 .⊃ . Rₓ ∈ 1(x)→1 [Proof as in ✱102·11]",
+      "printed_page": 27,
+      "scan_leaf": 67,
+      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and cited-proof skeleton only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer",
+      "printed_dependencies": ["PM2:✱102·11"],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-13.txt"
+    },
+    {
+      "id": "PM2:✱102·2",
+      "kind": "derived-proposition",
+      "printed": "✱102·2. ⊢ : γ sm₍ₐ,ᵦ₎ δ .≡ . γ sm δ . γ ∈ tʻα . δ ∈ tʻβ [✱35·102 . (✱65·1)]",
+      "printed_page": 27,
+      "scan_leaf": 67,
+      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and printed citation only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer",
+      "printed_dependencies": ["PM1:✱35·102", "PM1:✱65·1"],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-2.txt"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

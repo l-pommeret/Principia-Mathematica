@@ -49,13 +49,16 @@ class AST:
 
 
 OPERATORS = {
-    "∨": "or", "⊃": "implies", "≡": "equiv", "=": "equal", "∈": "member",
+    "∨": "or", "⊃": "implies", "≡": "equiv", "=": "equal", "≠": "not_equal", "∈": "member",
     "∩": "class_intersection", "∪": "class_union", "⊂": "class_inclusion",
     "∩̇": "relation_intersection", "⋃̇": "relation_union",
     "⊂̇": "relation_inclusion", "|": "relative_product",
+    "→": "function_relation",
+    "sm": "similar",
 }
 GREEK_FUNCTION_SYMBOLS = "φψχθ"
 CLASS_SYMBOLS = "αβγκ"
+OF = "ʻ"
 
 
 def mark_count(text: str) -> int:
@@ -78,6 +81,32 @@ def raw_tokens(source: str) -> list[Token]:
         if source.startswith("x̂ŷ", index):
             result.append(Token("relation_binder", "x̂ŷ", index))
             index += len("x̂ŷ")
+            continue
+        if source.startswith("E!", index):
+            result.append(Token("existence_predicate", "E!", index))
+            index += len("E!")
+            continue
+        if source.startswith("∃!", index):
+            result.append(Token("unique_existence_predicate", "∃!", index))
+            index += len("∃!")
+            continue
+        # The turned comma is PM's postfix/infix ``of`` operator: `Rʻx`
+        # denotes the selected value of a relation/function at its argument.
+        # It is distinct from both the converse caron and an identifier mark.
+        if char == OF:
+            end = index + 1
+            while end < len(source) and source[end] == OF:
+                end += 1
+            result.append(Token("of", source[index:end], index))
+            index = end
+            continue
+        similar = re.match(r"sm(₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθᵝᵦ,]+₎)?", source[index:])
+        if similar and (
+                index + len(similar.group(0)) == len(source) or
+                source[index + len(similar.group(0))].isspace()):
+            text = similar.group(0)
+            result.append(Token("operator", text, index))
+            index += len(text)
             continue
         decorated_relation_operator = next(
             (operator for operator in ("∩̇", "⋃̇", "⊂̇")
@@ -103,6 +132,22 @@ def raw_tokens(source: str) -> list[Token]:
         if char == "ẑ":
             result.append(Token("class_binder", char, index))
             index += 1
+            continue
+        type_index = re.match(
+            r"([A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*)"
+            r"(ᵝ|ᵦ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
+            source[index:],
+        )
+        if type_index:
+            text = type_index.group(0)
+            result.append(Token("type_index", text, index))
+            index += len(text)
+            continue
+        class_binder = re.match(r"([Α-Ωα-ω])̂(?=\s*\{)", source[index:])
+        if class_binder:
+            text = class_binder.group(0)
+            result.append(Token("class_binder", text, index))
+            index += len(text)
             continue
         if char in CLASS_SYMBOLS:
             result.append(Token("class_symbol", char, index))
@@ -159,6 +204,10 @@ def raw_tokens(source: str) -> list[Token]:
             if source.startswith("−̇", index):
                 result.append(Token("relation_neg", "−̇", index))
                 index += len("−̇")
+            elif result and result[-1].kind in {
+                    "atom", "class_symbol", "rparen", "relation_symbol"}:
+                result.append(Token("operator", char, index))
+                index += 1
             else:
                 result.append(Token("class_neg", char, index))
                 index += 1
@@ -166,6 +215,12 @@ def raw_tokens(source: str) -> list[Token]:
         if char in "([{":
             result.append(Token("lparen", char, index))
             index += 1
+            continue
+        type_marked_value = re.match(r"(?:[A-Za-z]↓|↓[A-Za-z])(?=ʻ)", source[index:])
+        if type_marked_value:
+            text = type_marked_value.group(0)
+            result.append(Token("atom", text, index))
+            index += len(text)
             continue
         relation_value = re.match(r"([a-z])([RSPQ])([a-z])", source[index:])
         if relation_value:
@@ -195,8 +250,15 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("bang", char, index))
             index += 1
             continue
+        if char.isdigit():
+            match = re.match(r"[0-9]+", source[index:])
+            assert match is not None
+            text = match.group(0)
+            result.append(Token("atom", text, index))
+            index += len(text)
+            continue
         match = re.match(
-            r"[A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*",
+            r"[A-Za-zΑ-Ωα-ωᗡ][A-Za-z0-9_Α-Ωα-ωᗡ′'\u0300-\u036f]*",
             source[index:],
         )
         if match:
@@ -266,10 +328,13 @@ def binding_power(token: Token, side: str) -> int:
         return 1000 - 100 * scope - group_force
     if token.text.startswith("≡") or (token.text.startswith("⊃") and token.text != "⊃"):
         return 1100
+    if token.text.startswith("sm"):
+        return 1450
     return {
-        "⊃": 1200, "∨": 1300, "·": 1400, "=": 1450, "∈": 1450,
-        "⊂": 1450, "∪": 1500, "∩": 1510,
-        "⊂̇": 1450, "⋃̇": 1500, "∩̇": 1510, "|": 1520,
+        "⊃": 1200, "∨": 1300, "·": 1400, "=": 1450, "≠": 1450, "∈": 1450,
+        "⊂": 1450, "∪": 1500, "∩": 1510, "−": 1500,
+        "⊂̇": 1450, "⋃̇": 1500, "∩̇": 1510, "|": 1520, "→": 1520,
+        "sm": 1450,
     }[token.text]
 
 
@@ -292,10 +357,14 @@ def description_variable(text: str) -> str:
 
 
 def operator_tag(text: str) -> tuple[str, str | None]:
+    if text == "−":
+        return "class_difference", None
     if text.startswith("≡") and text != "≡":
         return "formal_equiv", text[1:]
     if text.startswith("⊃") and text != "⊃":
         return "formal_implies", text[1:]
+    if text.startswith("sm"):
+        return "similar", text[2:] or None
     return OPERATORS.get(text, "and"), None
 
 
@@ -335,7 +404,7 @@ def relation_binder_variables(text: str) -> str:
 def is_class_surface(node: AST) -> bool:
     return node.tag in {
         "class_incomplete", "class_symbol", "class_union",
-        "class_intersection", "class_complement",
+        "class_intersection", "class_complement", "of",
     }
 
 
@@ -347,6 +416,10 @@ def seal_class_surface(node: AST) -> AST:
         "class_union": "class_union_spec",
         "class_intersection": "class_intersection_spec",
         "class_complement": "class_complement_spec",
+        # A value stroke is type-sensitive in PM.  In a class-only context it
+        # is sealed as a class-valued application without guessing its type
+        # outside that context.
+        "of": "class_of_value",
     }
     if node.tag not in mapping:
         raise PMSyntaxError(f"not a class surface expression: {node.tag}")
@@ -358,12 +431,26 @@ def seal_class_surface(node: AST) -> AST:
     )
 
 
+def is_class_context_candidate(node: AST) -> bool:
+    """Whether PM's surrounding class syntax supplies a class reading."""
+    return is_class_surface(node) or node.tag == "atom"
+
+
+def seal_as_class(node: AST) -> AST:
+    """Seal a surface class, or a printed class constant, in class context."""
+    if is_class_surface(node):
+        return seal_class_surface(node)
+    if node.tag == "atom":
+        return AST("class_constant_reference", value=node.value)
+    raise PMSyntaxError(f"not a class expression in this context: {node.tag}")
+
+
 def is_relation_surface(node: AST) -> bool:
     return node.tag in {
         "relation_incomplete", "relation_symbol", "relation_union",
         "relation_intersection", "relation_complement", "relative_product",
-        "relation_converse", "relation_power",
-    }
+        "relation_converse", "relation_power", "function_relation",
+    } or (node.tag == "type_indexed" and is_relation_surface(node.children[0]))
 
 
 def seal_relation_surface(node: AST) -> AST:
@@ -376,6 +463,8 @@ def seal_relation_surface(node: AST) -> AST:
         "relative_product": "relative_product_spec",
         "relation_converse": "relation_converse_spec",
         "relation_power": "relation_power_spec",
+        "function_relation": "function_relation_spec",
+        "type_indexed": "relation_type_indexed",
     }
     if node.tag not in mapping:
         raise PMSyntaxError(f"not a relation surface expression: {node.tag}")
@@ -422,14 +511,41 @@ class Parser:
         token = self.take()
         if token.kind == "atom":
             left = AST("atom", value=token.text)
+        elif token.kind == "type_index":
+            indexed = re.fullmatch(
+                r"(?P<head>[A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*)"
+                r"(?P<index>ᵝ|ᵦ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
+                token.text,
+            )
+            assert indexed is not None
+            head = indexed.group("head")
+            left = AST(
+                "type_indexed",
+                (AST("relation_symbol" if head in "RSPQ" else "atom", value=head),),
+                indexed.group("index"),
+            )
         elif token.kind == "function":
             left = self.application(token)
+        elif token.kind == "existence_predicate":
+            value = self.expression(1700)
+            if value.tag != "of":
+                raise PMSyntaxError("E! requires a PM `of` application")
+            left = AST("exists_value", (value,))
+        elif token.kind == "unique_existence_predicate":
+            value = self.expression(1500)
+            left = AST(
+                "exists_unique",
+                (seal_class_surface(value) if is_class_surface(value) else value,),
+            )
         elif token.kind == "description_binder":
             condition = self.parenthesized_argument()
             left = AST("description", (condition,), description_variable(token.text))
         elif token.kind == "class_binder":
-            condition = self.parenthesized_argument()
-            left = AST("class_incomplete", (condition,), "z")
+            condition = (
+                self.parenthesized_argument() if token.text == "ẑ"
+                else self.braced_argument()
+            )
+            left = AST("class_incomplete", (condition,), token.text[0])
         elif token.kind == "class_symbol":
             left = AST("class_symbol", value=token.text)
         elif token.kind == "class_neg":
@@ -486,7 +602,34 @@ class Parser:
         else:
             raise PMSyntaxError(f"expected proposition at offset {token.position}")
 
-        while (next_token := self.peek()) is not None and next_token.kind == "binary":
+        while (next_token := self.peek()) is not None:
+            if (next_token.kind == "lparen" and next_token.text == "(" and
+                    left.tag in {"atom", "type_indexed", "apply_named"}):
+                if 1800 < minimum:
+                    break
+                arguments = tuple(
+                    seal_as_class(argument) if is_class_surface(argument) else argument
+                    for argument in self.parenthesized_arguments()
+                )
+                left = AST("apply_named", (left, *arguments))
+                continue
+            if next_token.kind == "of":
+                # PM's turned comma binds more tightly than every dot group.
+                # Equal `of` strokes associate to the left, preserving the
+                # printed nesting in terms such as `sʻClʻʻ2`.
+                if 1700 < minimum:
+                    break
+                operator = self.take()
+                right = self.expression(1701)
+                if is_class_surface(right):
+                    right = seal_class_surface(right)
+                left = AST(
+                    "of", (left, right),
+                    operator.text if len(operator.text) > 1 else None,
+                )
+                continue
+            if next_token.kind != "binary":
+                break
             left_bp = binding_power(next_token, "left")
             if left_bp < minimum:
                 break
@@ -509,15 +652,51 @@ class Parser:
             right = self.expression(right_minimum)
             tag, value = operator_tag(operator.text)
             if tag in {"class_union", "class_intersection"}:
-                if not is_class_surface(left) or not is_class_surface(right):
+                if not is_class_context_candidate(left) or not is_class_context_candidate(right):
                     raise PMSyntaxError(f"{operator.text} requires two class expressions")
-                left = AST(tag, (left, right))
+                left = AST(tag, (seal_as_class(left), seal_as_class(right)))
+            elif tag == "class_difference":
+                left = AST(
+                    "class_difference",
+                    (seal_as_class(left) if is_class_context_candidate(left) else left,
+                     seal_as_class(right) if is_class_context_candidate(right) else right),
+                )
+            elif tag == "not_equal":
+                left = AST(
+                    "not_equal",
+                    (seal_as_class(left) if is_class_context_candidate(left) else left,
+                     seal_as_class(right) if is_class_context_candidate(right) else right),
+                )
             elif tag in {"relation_union", "relation_intersection", "relative_product"}:
                 if not is_relation_surface(left) or not is_relation_surface(right):
                     raise PMSyntaxError(f"{operator.text} requires two relation expressions")
                 left = AST(tag, (left, right))
-            elif tag == "member" and is_class_surface(right):
-                left = AST("class_membership", (left, seal_class_surface(right)))
+            elif tag == "function_relation":
+                left = AST(tag, (left, right))
+            elif tag == "member" and is_relation_surface(left):
+                left = AST(
+                    "relation_membership",
+                    (
+                        seal_relation_surface(left),
+                        seal_relation_surface(right)
+                        if is_relation_surface(right) else right,
+                    ),
+                )
+            elif tag == "member" and is_class_context_candidate(right):
+                left = AST(
+                    "class_membership",
+                    (seal_as_class(left) if is_class_context_candidate(left) else left,
+                     seal_as_class(right)),
+                )
+            elif tag == "member" and is_class_surface(left):
+                left = AST("member", (seal_class_surface(left), right))
+            elif tag == "similar":
+                left = AST(
+                    "similar",
+                    (seal_class_surface(left) if is_class_surface(left) else left,
+                     seal_class_surface(right) if is_class_surface(right) else right),
+                    value,
+                )
             elif tag == "class_inclusion":
                 if not is_class_surface(left) or not is_class_surface(right):
                     raise PMSyntaxError("class inclusion requires two class expressions")
@@ -540,8 +719,6 @@ class Parser:
                 left = AST("class_defined_equal", (left, seal_class_surface(right)))
             elif tag == "equal" and is_class_surface(left):
                 left = AST("class_defined_equal", (right, seal_class_surface(left)))
-            elif tag == "member" and is_relation_surface(left):
-                left = AST("relation_membership", (seal_relation_surface(left), right))
             elif tag == "equal" and is_relation_surface(left) and is_relation_surface(right):
                 left = AST(
                     "relation_extensional_equal",
@@ -563,6 +740,29 @@ class Parser:
         closing = self.take()
         if closing.kind != "rparen" or closing.text != ")":
             raise PMSyntaxError(f"missing closing matrix bracket before offset {closing.position}")
+        return argument
+
+    def parenthesized_arguments(self) -> list[AST]:
+        opening = self.take()
+        if opening.kind != "lparen" or opening.text != "(":
+            raise PMSyntaxError(f"expected parenthesized arguments at offset {opening.position}")
+        arguments: list[AST] = []
+        while True:
+            arguments.append(self.expression(0))
+            separator = self.take()
+            if separator.kind == "rparen" and separator.text == ")":
+                return arguments
+            if separator.kind != "comma":
+                raise PMSyntaxError(f"expected comma at offset {separator.position}")
+
+    def braced_argument(self) -> AST:
+        opening = self.take()
+        if opening.kind != "lparen" or opening.text != "{":
+            raise PMSyntaxError(f"expected braced matrix at offset {opening.position}")
+        argument = self.expression(0)
+        closing = self.take()
+        if closing.kind != "rparen" or closing.text != "}":
+            raise PMSyntaxError(f"missing closing matrix brace before offset {closing.position}")
         return argument
 
     def application(self, function: Token) -> AST:

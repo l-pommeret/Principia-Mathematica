@@ -148,6 +148,81 @@ class PMDotSyntaxTests(unittest.TestCase):
         self.assertNotEqual(general, predicative)
         self.assertEqual([child["value"] for child in binary["children"]], ["x", "y"])
 
+    def test_q400_descriptive_function_stroke_is_an_of_application(self):
+        parsed = statement_shape("✱100·2. ⊢ . E!Ncʻα [✱32·12.(✱100·01)]")
+        self.assertEqual(parsed, {
+            "tag": "assert",
+            "children": [{
+                "tag": "exists_value",
+                "children": [{
+                    "tag": "of",
+                    "children": [
+                        {"tag": "atom", "value": "Nc"},
+                        {"tag": "class_reference", "value": "α"},
+                    ],
+                }],
+            }],
+        })
+
+    def test_q400_of_stroke_cannot_be_mutated_into_an_identifier(self):
+        with self.assertRaisesRegex(pm_syntax.PMSyntaxError, "PM `of` application"):
+            statement_shape("✱100·2. ⊢ . E!Ncα [✱32·12.(✱100·01)]")
+
+    def test_q100_51_seals_a_class_value_on_the_left_of_membership(self):
+        parsed = statement_shape("✱100·51. ⊢ : μ ∈ NC . α ∈ μ .⊃ . smʻʻμ = Ncʻα")
+        antecedent = parsed["children"][0]["children"][0]
+        membership = antecedent["children"][1]
+        self.assertEqual(membership["children"][0]["tag"], "class_reference")
+
+    def test_q101_16_preserves_the_printed_alpha_subscript_on_implication(self):
+        parsed = statement_shape("✱101·16. ⊢ :. μ ∈ NC − ιʻ0 .⊃ : α ∈ μ .⊃ₐ. ∃!α")
+        self.assertIn("formal_implies", tags(parsed))
+
+    def test_q101_16_binary_class_difference_is_not_a_prefix_complement(self):
+        parsed = statement_shape("✱101·16. ⊢ . μ ∈ NC − ιʻ0")
+        self.assertIn("class_difference", tags(parsed))
+        with self.assertRaisesRegex(pm_syntax.PMSyntaxError, "unconsumed token"):
+            statement_shape("✱101·16. ⊢ . μ ∈ NC ιʻ0")
+
+    def test_q101_24_uses_class_context_for_one_and_cl_value(self):
+        parsed = statement_shape("✱101·24. ⊢ : ∃!α .⊃ . ∃!1 ∩ Clʻα")
+        self.assertIn("class_intersection_spec", tags(parsed))
+        self.assertIn("class_constant_reference", tags(parsed))
+
+    def test_q101_25_preserves_object_level_not_equal(self):
+        parsed = statement_shape("✱101·25. ⊢ : α ∈ 1 . β ⊂ α . β ≠ α .⊃ . β ∈ 0")
+        self.assertIn("not_equal", tags(parsed))
+        self.assertNotIn("not", tags(parsed))
+
+    def test_q101_301_preserves_the_alpha_hat_class_binder(self):
+        parsed = statement_shape("✱101·301. ⊢ . 2 = α̂{(∃x). x ∈ α . α − ιʻx ∈ 1}")
+        self.assertIn("class_comprehension_spec", tags(parsed))
+
+    def test_q102_01_preserves_explicit_type_indices(self):
+        parsed = statement_shape("✱102·01. NCᵝ(α) = DʻNc(αᵦ) Df")
+        self.assertIn("type_indexed", tags(parsed))
+        self.assertIn("apply_named", tags(parsed))
+
+    def test_q102_11_and_13_preserve_relation_type_indices(self):
+        binary = statement_shape("✱102·11. ⊢ : R ∈ 1→1 .⊃ . R₍ₓ,ᵧ₎ ∈ 1(x)→1(y)")
+        unary = statement_shape("✱102·13. ⊢ : R ∈ 1→1 .⊃ . Rₓ ∈ 1(x)→1")
+        self.assertIn("relation_type_indexed", tags(binary))
+        self.assertIn("relation_type_indexed", tags(unary))
+
+    def test_q102_2_preserves_the_indexed_similarity_relation(self):
+        parsed = statement_shape("✱102·2. ⊢ : γ sm₍ₐ,ᵦ₎ δ .≡ . γ sm δ . γ ∈ tʻα . δ ∈ tʻβ")
+        similarities = [
+            child for child in parsed["children"][0]["children"]
+            if child["tag"] == "similar"
+        ]
+        self.assertEqual(similarities[0]["value"], "₍ₐ,ᵦ₎")
+
+    def test_nested_of_application_preserves_left_nesting(self):
+        parsed = shape("E!Ncʻα")
+        value = parsed["children"][0]
+        self.assertEqual(value["tag"], "of")
+        self.assertEqual(value["children"][0]["value"], "Nc")
+
     def test_star_12_1_preserves_function_quantifier_and_bang(self):
         parsed = statement_shape("✱12·1. ⊢ : (∃f) : φx . ≡ₓ . f!x    Pp")
         existential = parsed["children"][0]

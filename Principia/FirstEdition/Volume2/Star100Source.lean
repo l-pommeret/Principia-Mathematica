@@ -74,7 +74,7 @@ PM-VERBATIM-END PM2:✱101·14 -/
 PM-VERBATIM-END PM2:✱101·15 -/
 
 /- PM-VERBATIM-BEGIN PM2:✱101·16
-✱101·16.  ⊢ :. μ ∈ NC − ιʻ0 .⊃ : α ∈ μ .⊃_α. ∃!α
+✱101·16.  ⊢ :. μ ∈ NC − ιʻ0 .⊃ : α ∈ μ .⊃ₐ. ∃!α
 PM-VERBATIM-END PM2:✱101·16 -/
 
 /- PM-VERBATIM-BEGIN PM2:✱101·24
@@ -121,12 +121,12 @@ shall consider the relation, to a class δ which is given as of the same type as
 β, of the class μ of those classes γ which are similar to δ and of the same
 type as α. We shall then put
 
-μ = Nc(α_β)ʻδ,
-γ ∈ Nc(α_β)ʻδ,
+μ = Nc(αᵦ)ʻδ,
+γ ∈ Nc(αᵦ)ʻδ,
 γ sm_(α,β) δ,
 
 and the class of all such numbers as μ for a given α and β we shall call
-NC^β(α), so that NC^β(α) = DʻNc(α_β).
+NCᵝ(α), so that NCᵝ(α) = DʻNc(αᵦ).
 PM-VERBATIM-END PM2:STAR102-SUMMARY-OPENING-P24 -/
 
 /- PM-VERBATIM-BEGIN PM2:STAR102-TYPICAL-DEFINITENESS-P25
@@ -135,21 +135,21 @@ of R(x_y).
 
 We have, in virtue of the above, as will be proved in ✱102·46,
 
-⊢ : γ ∈ tʻα . δ ∈ tʻβ . γ sm δ .≡ . γ ∈ Nc(α_β)ʻδ.
+⊢ : γ ∈ tʻα . δ ∈ tʻβ . γ sm δ .≡ . γ ∈ Nc(αᵦ)ʻδ.
 PM-VERBATIM-END PM2:STAR102-TYPICAL-DEFINITENESS-P25 -/
 
 /- PM-VERBATIM-BEGIN PM2:✱102·01
-✱102·01.  NC^β(α) = DʻNc(α_β)  Df
+✱102·01.  NCᵝ(α) = DʻNc(αᵦ)  Df
 PM-VERBATIM-END PM2:✱102·01 -/
 
 /- PM-VERBATIM-BEGIN PM2:✱102·11
-✱102·11.  ⊢ : R ∈ 1→1 .⊃ . R_(x,y) ∈ 1(x)→1(y)
+✱102·11.  ⊢ : R ∈ 1→1 .⊃ . R₍ₓ,ᵧ₎ ∈ 1(x)→1(y)
 PM-VERBATIM-END PM2:✱102·11 -/
 
 /- PM-VERBATIM-BEGIN PM2:✱102·13
-✱102·13.  ⊢ : R ∈ 1→1 .⊃ . R_x ∈ 1(x)→1  [Proof as in ✱102·11]
+✱102·13.  ⊢ : R ∈ 1→1 .⊃ . Rₓ ∈ 1(x)→1  [Proof as in ✱102·11]
 PM-VERBATIM-END PM2:✱102·13 -/
 
 /- PM-VERBATIM-BEGIN PM2:✱102·2
-✱102·2.  ⊢ : γ sm_(α,β) δ .≡ . γ sm δ . γ ∈ tʻα . δ ∈ tʻβ  [✱35·102 . (✱65·1)]
+✱102·2.  ⊢ : γ sm₍ₐ,ᵦ₎ δ .≡ . γ sm δ . γ ∈ tʻα . δ ∈ tʻβ  [✱35·102 . (✱65·1)]
 PM-VERBATIM-END PM2:✱102·2 -/
