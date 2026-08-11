@@ -203,3 +203,13 @@ PM-VERBATIM-END PM3:✱251·61 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·62
 ✱251·62.  ⊢ : Hp ✱251·61 . ∃! P smor Q ∩ Rlʻsmor .⊃ . ΣʻP smor ΣʻQ . ΠʻP smor ΠʻQ . Σ NrʻP = Σ NrʻQ . Π NrʻP = Π NrʻQ
 PM-VERBATIM-END PM3:✱251·62 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·63
+✱251·63.  ⊢ : α ∈ NO − ιʻΛ . β ∈ NR . P ∈ Rel² excl . P ∈ β . CʻP ⊂ α .⊃ . ΣʻP ∈ β ×̂ α . Σ NrʻP = β ×̂ α
+PM-VERBATIM-END PM3:✱251·63 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·64
+✱251·64.  ⊢ : Hp ✱251·63 .⊃ . ΠʻP ∈ (α expᵣ β) . Π NrʻP = α expᵣ β  [Proof as in ✱251·63]
+PM-VERBATIM-END PM3:✱251·64 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·65
+✱251·65.  ⊢ : α ∈ NO − ιʻΛ . β ∈ NR . P ∈ β . CʻP ⊂ α .⊃ . Σ NrʻP = β ×̂ α . Π NrʻP = α expᵣ β
+PM-VERBATIM-END PM3:✱251·65 -/
