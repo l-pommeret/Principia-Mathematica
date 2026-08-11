@@ -110,3 +110,18 @@ PM-VERBATIM-END PM1:✱22·391 -/
 /- PM-VERBATIM-BEGIN PM1:✱22·392
 ✱22·392. ⊢ . −ẑz(φz) = ẑz(∼φz)  [Similar proof]
 PM-VERBATIM-END PM1:✱22·392 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·4
+✱22·4. ⊢ : α ⊂ β . β ⊂ α .≡ : x ε α .≡ₓ. x ε β
+PM-VERBATIM-END PM1:✱22·4 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·41
+✱22·41. ⊢ : α ⊂ β . β ⊂ α .≡ . α = β  [✱22·4.*20·43]
+PM-VERBATIM-END PM1:✱22·41 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·42
+✱22·42. ⊢ . α ⊂ α  [Id.*10·11]
+PM-VERBATIM-END PM1:✱22·42 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·43
+✱22·43. ⊢ : α ∩ β ⊂ α  [✱3·26.*10·11]
+PM-VERBATIM-END PM1:✱22·43 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·45
+✱22·45. ⊢ : α ⊂ β . α ⊂ γ .≡ . α ⊂ β ∩ γ
+PM-VERBATIM-END PM1:✱22·45 -/
