@@ -109,6 +109,14 @@ class SchedulerTests(unittest.TestCase):
         with self.assertRaises(scheduler.SchedulerError):
             scheduler.candidates(data, Path("/repo"), set())
 
+    def test_project_discovery_requires_one_qid_label(self):
+        rows = campaign.parse_project_list(
+            "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa  1 hour  Q229 kernel-link  RUNNING\n"
+            "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb  1 hour  Q229 Q230  IDLE\n"
+        )
+        self.assertEqual(rows[0]["qid"], "Q229")
+        self.assertEqual(rows[1]["qid"], None)
+
     def test_record_preserves_nested_manifest_path(self):
         pid = "10000000-0000-0000-0000-000000000001"
         data = {"questions": {"Q1": {}}}

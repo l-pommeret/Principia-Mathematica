@@ -352,6 +352,64 @@ def remote_status(qid: str, pid: str) -> dict:
         return {"qid": qid, "project_id": pid, "status": "ERROR", "error": str(exc)}
 
 
+def parse_project_list(output: str) -> list[dict[str, str | None]]:
+    """Extract unambiguous QID-labelled projects from ``aristotle list``.
+
+    The Aristotle CLI currently renders a human table rather than a stable
+    JSON API.  Treat rows without exactly one QID label as evidence only: they
+    must never be silently attached to a canonical campaign question.
+    """
+    projects: list[dict[str, str | None]] = []
+    for line in output.splitlines():
+        match = re.match(r"\s*([0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12})\b(.*)$", line, re.I)
+        if match is None:
+            continue
+        labels = sorted({label.upper() for label in QID_RE.findall(match.group(2))})
+        projects.append({
+            "project_id": match.group(1).lower(),
+            "qid": labels[0] if len(labels) == 1 else None,
+            "label_count": str(len(labels)),
+            "row": line.strip(),
+        })
+    return projects
+
+
+def aristotle_discover(*, limit: int) -> None:
+    """List remote project identities without changing the campaign manifest."""
+    if limit < 1 or limit > 100:
+        raise CampaignError("Aristotle discovery limit must be between 1 and 100")
+    require_api_key()
+    result = run([*ARISTOTLE, "list", "--limit", str(limit)])
+    observed = parse_project_list(result.stdout)
+    data = manifest()
+    known = data.get("questions", {})
+    candidates: dict[str, list[str]] = {}
+    evidence_only: list[dict[str, str | None]] = []
+    for project in observed:
+        qid = project["qid"]
+        if isinstance(qid, str) and qid in known:
+            candidates.setdefault(qid, []).append(str(project["project_id"]))
+        else:
+            evidence_only.append(project)
+    stable = [
+        {"qid": qid, "project_id": project_ids[0]}
+        for qid, project_ids in sorted(candidates.items())
+        if len(project_ids) == 1
+    ]
+    ambiguous = [
+        {"qid": qid, "project_ids": sorted(project_ids)}
+        for qid, project_ids in sorted(candidates.items()) if len(project_ids) != 1
+    ]
+    emit({
+        "readonly": True,
+        "limit": limit,
+        "observed_projects": len(observed),
+        "stable_identities": stable,
+        "ambiguous_identities": ambiguous,
+        "evidence_only": evidence_only,
+    })
+
+
 def aristotle_status(qid_args: list[str], *, record: bool = True) -> None:
     require_api_key()
     data = manifest()
@@ -653,6 +711,10 @@ def parser() -> argparse.ArgumentParser:
     status.add_argument("qids", nargs="*")
     status.add_argument("--readonly", action="store_true",
                         help="query remote task state without rewriting pipeline.json")
+    discover = aristotle_commands.add_parser("discover")
+    discover.add_argument("--readonly", action="store_true", required=True,
+                          help="list QID-labelled remote projects without rewriting pipeline.json")
+    discover.add_argument("--limit", type=int, default=100)
     submitted = aristotle_commands.add_parser("submit")
     submitted.add_argument("qid")
     submitted.add_argument("request_file", type=Path)
@@ -696,6 +758,8 @@ def main(argv: list[str] | None = None) -> int:
             browser_submit(args.prompt, args.cap)
         elif (args.group, args.command) == ("aristotle", "status"):
             aristotle_status(args.qids, record=not args.readonly)
+        elif (args.group, args.command) == ("aristotle", "discover"):
+            aristotle_discover(limit=args.limit)
         elif (args.group, args.command) == ("aristotle", "submit"):
             aristotle_submit(args.qid, args.request_file)
         elif (args.group, args.command) == ("aristotle", "continue"):
