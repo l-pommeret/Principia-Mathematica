@@ -367,6 +367,38 @@ PM-VERBATIM-END PM1:✱4·84 -/
 ✱4·85.  ⊢ : p ≡ q . ⊃ : r ⊃ p . ≡ . r ⊃ q   [✱2·05 . ✱3·47]
 PM-VERBATIM-END PM1:✱4·85 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱4·78
+✱4·78.  ⊢ : p ⊃ q . ∨ . p ⊃ r . ≡ : p . ⊃ . q ∨ r
+
+Dem.
+
+⊢ . ✱4·2 . (✱1·01) . ⊃ ⊢ : p ⊃ q . ∨ . p ⊃ r . ≡ : ∼p ∨ q . ∨ . ∼p ∨ r:
+[✱4·33] ≡ . ∼p . ∨ . q ∨ ∼p ∨ r:
+[✱4·31·37] ≡ : ∼p . ∨ . ∼p ∨ q ∨ r:
+[✱4·33] ≡ : ∼p ∨ ∼p . ∨ . q ∨ r:
+[✱4·25·37] ≡ : ∼p . ∨ . q ∨ r:
+[✱4·2 . (✱1·01)] ≡ : p . ⊃ . q ∨ r . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱4·78 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·79
+✱4·79.  ⊢ : q ⊃ p . ∨ . r ⊃ p . ≡ : q . r . ⊃ . p
+
+Dem.
+
+⊢ . ✱4·1·39 . ⊃ ⊢ : q ⊃ p . ∨ . r ⊃ p . ≡ : ∼p ⊃ ∼q . ∨ . ∼p ⊃ ∼r:
+[✱4·78] ≡ : ∼p . ⊃ . ∼q ∨ ∼r:
+[✱2·15] ≡ : ∼(∼q ∨ ∼r) . ⊃ . p:
+[✱4·2 . (✱3·01)] ≡ : q . r . ⊃ . p . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱4·79 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·8
+✱4·8.  ⊢ : p ⊃ ∼p . ≡ . ∼p   [✱2·01 . Simp]
+PM-VERBATIM-END PM1:✱4·8 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·81
+✱4·81.  ⊢ : ∼p ⊃ p . ≡ . p   [✱2·18 . Simp]
+PM-VERBATIM-END PM1:✱4·81 -/
+
 namespace PM.Elementary
 
 /-- PM I (1910), p. 120, ✱4·01: equivalence is an object-language

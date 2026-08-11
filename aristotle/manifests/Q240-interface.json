@@ -1,0 +1,48 @@
+{
+  "kind": "pm-statement-only-interface-manifest",
+  "batch": "Q240",
+  "source_backfill_required": false,
+  "integration_blocked": true,
+  "audit_status": "A-interface-only",
+  "audit_basis": "reviewed exact prompt targets, citations, and scan hashes; no PM-VERBATIM proof skeleton",
+  "promotion_prohibited": "PM-VERBATIM plus parsed demonstration audit required",
+  "canonical_ids": [
+    "PM1:✱4·78",
+    "PM1:✱4·79",
+    "PM1:✱4·8",
+    "PM1:✱4·81"
+  ],
+  "prompt_path": "aristotle/Q240.md",
+  "review_path": "reviews/Q240-review.md",
+  "scan_hashes": [
+    "afdca6640d248e94fc93bd1144afa53935688c80c995072602ab9493b3cae767"
+  ],
+  "opaque_dependency_stubs": [
+    "PM1:✱1·01",
+    "PM1:✱2·01",
+    "PM1:✱2·15",
+    "PM1:✱2·18",
+    "PM1:✱3·01",
+    "PM1:✱3·26",
+    "PM1:✱4·01",
+    "PM1:✱4·1",
+    "PM1:✱4·2",
+    "PM1:✱4·25",
+    "PM1:✱4·31",
+    "PM1:✱4·33",
+    "PM1:✱4·37",
+    "PM1:✱4·39"
+  ],
+  "citation_comments": [
+    "✱2·01.Simp",
+    "✱2·18.Simp"
+  ],
+  "exact_lean_targets": [
+    "namespace PM.FirstEdition.Volume1.Star4\ntheorem star_4_78 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ⊃ₚ q) ∨ₚ (p ⊃ₚ r)) ≡ₚ (p ⊃ₚ (q ∨ₚ r))) := by\n  -- preserve the full chain: ✱4·2.(✱1·01), ✱4·33, ✱4·31·37,\n  -- ✱4·33, ✱4·25·37, ✱4·2.(✱1·01)\ntheorem star_4_79 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((q ⊃ₚ p) ∨ₚ (r ⊃ₚ p)) ≡ₚ ((q ∧ₚ r) ⊃ₚ p)) := by\n  -- preserve ✱4·1·39, ✱4·78, ✱2·15, ✱4·2.(✱3·01)\ntheorem star_4_8 {Γ} (p : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ ∼ₚ p) ≡ₚ ∼ₚ p) := by\n  -- [✱2·01.Simp]\ntheorem star_4_81 {Γ} (p : PM.Elementary Γ) :\n    ⊢ₚ ((∼ₚ p ⊃ₚ p) ≡ₚ p) := by\n  -- [✱2·18.Simp]\nend PM.FirstEdition.Volume1.Star4\n"
+  ],
+  "prompt_sha256": "bac0ea05268e806e0d586bae353f2ba0e0ac5dcb428f94181c072dc88bedd186",
+  "review_sha256": "9f7e73abc36c9c43997b2499c1e05bf1f7148c3ac0d1338964b5dbbeae6646e7",
+  "exact_lean_target_sha256": [
+    "b97f6c748b7bc3e94c910e2799583f22c6f8c4a86b6b3f3b2656caf87f93457d"
+  ]
+}
