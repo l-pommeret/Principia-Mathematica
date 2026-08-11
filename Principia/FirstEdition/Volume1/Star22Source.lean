@@ -95,3 +95,18 @@ PM-VERBATIM-END PM1:✱22·351 -/
 /- PM-VERBATIM-BEGIN PM1:✱22·36
 ✱22·36. ⊢ . α ∩ β ε Cls  [✱20·41]
 PM-VERBATIM-END PM1:✱22·36 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·37
+✱22·37. ⊢ . α ∪ β ε Cls  [✱20·41]
+PM-VERBATIM-END PM1:✱22·37 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·38
+✱22·38. ⊢ . −α ε Cls  [✱20·41]
+PM-VERBATIM-END PM1:✱22·38 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·39
+✱22·39. ⊢ . ẑz(φz) ∩ ẑz(ψz) = ẑz(φz . ψz)
+PM-VERBATIM-END PM1:✱22·39 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·391
+✱22·391. ⊢ . ẑz(φz) ∪ ẑz(ψz) = ẑz(φz ∨ ψz)  [Similar proof]
+PM-VERBATIM-END PM1:✱22·391 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·392
+✱22·392. ⊢ . −ẑz(φz) = ẑz(∼φz)  [Similar proof]
+PM-VERBATIM-END PM1:✱22·392 -/
