@@ -3,7 +3,7 @@
   "profile": "elementary-formation-pm1",
   "current_item": null,
   "manifest_sha256": "49693f0a637e9d175f90cf483d7f9dcad894c88dfdd380fe66e6ac124f0b7d2d",
-  "source_sha256": "5cdc8464a9f18b130870119b29d6375818aec56c04a105369071d2664e151040",
+  "source_sha256": "502dce8f1ff9427c215836cc15d7cf6e360f529b02753f634a474582e6fa0fb9",
   "source_bytes": 42905,
   "proof_permissions": [
     "PM1:✱2·08",
@@ -600,6 +600,13 @@
       "remap_required": true
     },
     {
+      "kind": "interface-syntax",
+      "id": "PM1:✱4·01",
+      "lean": "infix:53 \" ≡ₚ \" => PM.Elementary.equiv\n",
+      "slice_sha256": "4391472caa5919f8c46d605c03605ddb56324500e87d861052d798893dcde48e",
+      "bytes": 43
+    },
+    {
       "kind": "opaque-interface-stub",
       "id": "PM1:✱4·13",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
@@ -610,13 +617,6 @@
       "signature_sha256": "2d85ab2f6474ec3197bf74cae725f420b0c35bbe5047dc46432759579ab9b925",
       "signature": "theorem star_4_13 {Γ} (p : PM.Elementary Γ) :\n    ⊢ₚ (p ≡ₚ (∼ₚ (∼ₚ p)))\n",
       "remap_required": true
-    },
-    {
-      "kind": "interface-syntax",
-      "id": "PM1:✱4·01",
-      "lean": "infix:53 \" ≡ₚ \" => PM.Elementary.equiv\n",
-      "slice_sha256": "4391472caa5919f8c46d605c03605ddb56324500e87d861052d798893dcde48e",
-      "bytes": 43
     }
   ],
   "policy": {

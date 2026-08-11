@@ -3,7 +3,7 @@
   "profile": "elementary-formation-pm1",
   "current_item": null,
   "manifest_sha256": "79004968042aa80189ef312fdef8d99de11987ac73d1351523c41ce84031c247",
-  "source_sha256": "0678beaaf8deb1900219dec61d92c57e91ae4291ead7c36e243b421bc5c39384",
+  "source_sha256": "a2162188f708a8881da26f7ff9a25fb5ce77a55f0d039b52f363a98796ec6757",
   "source_bytes": 44253,
   "proof_permissions": [
     "PM1:✱1·01",
@@ -606,6 +606,13 @@
       "remap_required": true
     },
     {
+      "kind": "interface-syntax",
+      "id": "PM1:✱4·01",
+      "lean": "infix:53 \" ≡ₚ \" => PM.Elementary.equiv\n",
+      "slice_sha256": "4391472caa5919f8c46d605c03605ddb56324500e87d861052d798893dcde48e",
+      "bytes": 43
+    },
+    {
       "kind": "opaque-interface-stub",
       "id": "PM1:✱4·11",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
@@ -676,13 +683,6 @@
       "signature_sha256": "fbb1705cd0ce47ae4e2826be8a957a2abeffd3839ff5bb56ebd44287e81ef188",
       "signature": "theorem star_4_22 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (PM.Elementary.equivChain p q r ⊃ₚ (p ≡ₚ r))\n",
       "remap_required": true
-    },
-    {
-      "kind": "interface-syntax",
-      "id": "PM1:✱4·01",
-      "lean": "infix:53 \" ≡ₚ \" => PM.Elementary.equiv\n",
-      "slice_sha256": "4391472caa5919f8c46d605c03605ddb56324500e87d861052d798893dcde48e",
-      "bytes": 43
     }
   ],
   "policy": {

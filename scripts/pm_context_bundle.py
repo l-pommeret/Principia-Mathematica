@@ -235,6 +235,23 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
             "non-kernel context requires explicit interface-gated policy: "
             + ", ".join(non_kernel)
         )
+    syntax = manifest.get("interface_syntax", [])
+    if syntax:
+        if not interface_gated or not isinstance(syntax, list) or not all(
+            isinstance(entry, dict) and set(entry) == {"id", "lean"}
+            and isinstance(entry["id"], str) and isinstance(entry["lean"], str)
+            for entry in syntax
+        ):
+            raise BundleError("invalid interface syntax declaration")
+        syntax_by_id = {entry["id"]: entry for entry in syntax}
+        if len(syntax_by_id) != len(syntax):
+            raise BundleError("duplicate interface syntax declaration")
+        for identifier in syntax_by_id:
+            if identifier not in non_kernel:
+                raise BundleError(f"interface syntax must belong to a stub: {identifier}")
+    else:
+        syntax_by_id = {}
+
     sliced = [registry[identifier] for identifier in closure
               if registry[identifier]["lean_path"] not in foundation_paths]
     sliced.sort(key=lambda item: pm_order(item["id"]))
@@ -266,18 +283,10 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
                 "remap_required": True,
             } if is_interface else {}),
         })
-
-    syntax = manifest.get("interface_syntax", [])
-    if syntax:
-        if not interface_gated or not isinstance(syntax, list) or not all(
-            isinstance(entry, dict) and set(entry) == {"id", "lean"}
-            and isinstance(entry["id"], str) and isinstance(entry["lean"], str)
-            for entry in syntax
-        ):
-            raise BundleError("invalid interface syntax declaration")
-        for entry in syntax:
-            if entry["id"] not in non_kernel:
-                raise BundleError(f"interface syntax must belong to a stub: {entry['id']}")
+        # Syntax which names an interface declaration must immediately follow
+        # that declaration: later interface headers may use the notation.
+        entry = syntax_by_id.get(item["id"])
+        if entry is not None:
             clean = entry["lean"].strip() + "\n"
             chunks.append(f"-- PM-CONTEXT-INTERFACE-SYNTAX {entry['id']}\n{clean}")
             sources.append({

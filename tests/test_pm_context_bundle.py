@@ -1,3 +1,4 @@
+import json
 import sys
 import tempfile
 import unittest
@@ -51,6 +52,18 @@ class ContextBundleTests(unittest.TestCase):
         )
         self.assertTrue(stub.lstrip().startswith("axiom star_3_37"))
         self.assertTrue(signature.lstrip().startswith("theorem star_3_37"))
+
+    def test_interface_syntax_precedes_a_dependent_stub(self):
+        from pm_constraint_manifest import load_item_registry
+
+        manifest = json.loads((ROOT / "aristotle/manifests/Q228.json").read_text())
+        source = build_bundle(
+            manifest, load_item_registry(ROOT / "metadata/items"), ROOT
+        )["lean_source"]
+        self.assertLess(
+            source.index('infix:53 " ≡ₚ "'),
+            source.index("axiom star_4_13"),
+        )
 
     def test_formation_profile_contains_separate_judgement(self):
         manifest = {

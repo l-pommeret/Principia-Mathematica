@@ -3,7 +3,7 @@
   "profile": "elementary-formation-pm1",
   "current_item": null,
   "manifest_sha256": "e330d377b0a2b38dd39fc8d5ce1f3d94caa7fea5e0fbd308fc5266b556be06eb",
-  "source_sha256": "b1b86c44dbd2b1ee0e75de643716ef703dcb431b8819bb5f3e9491ee83c556e8",
+  "source_sha256": "e15ce1bdcc8ea491455c773376226190bb4865f30ee58c571e945025409971be",
   "source_bytes": 34658,
   "proof_permissions": [
     "PM1:✱1·2",
@@ -567,6 +567,13 @@
       "remap_required": true
     },
     {
+      "kind": "interface-syntax",
+      "id": "PM1:✱4·01",
+      "lean": "infix:53 \" ≡ₚ \" => PM.Elementary.equiv\n",
+      "slice_sha256": "4391472caa5919f8c46d605c03605ddb56324500e87d861052d798893dcde48e",
+      "bytes": 43
+    },
+    {
       "kind": "opaque-interface-stub",
       "id": "PM1:✱4·02",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
@@ -577,13 +584,6 @@
       "signature_sha256": "5eb878f0287d32b7b8ab2c9258e5e68912a8433ada803dba12a558bbe239f4c9",
       "signature": "def equivChain (p q r : PM.Elementary Γ) : PM.Elementary Γ\n",
       "remap_required": true
-    },
-    {
-      "kind": "interface-syntax",
-      "id": "PM1:✱4·01",
-      "lean": "infix:53 \" ≡ₚ \" => PM.Elementary.equiv\n",
-      "slice_sha256": "4391472caa5919f8c46d605c03605ddb56324500e87d861052d798893dcde48e",
-      "bytes": 43
     }
   ],
   "policy": {
