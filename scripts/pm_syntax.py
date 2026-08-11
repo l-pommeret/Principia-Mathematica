@@ -138,9 +138,9 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("mark", text, index, mark_count(text), mark_count(text)))
             index = end
             continue
-        if char == "≡":
+        if char in {"≡", "⊃"}:
             decorated = re.match(
-                r"≡(?:[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ]+(?:,[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ]+)*)?",
+                rf"{re.escape(char)}(?:[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ]+(?:,[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ]+)*)?",
                 source[index:],
             )
             text = decorated.group(0) if decorated else char
@@ -264,7 +264,7 @@ def binding_power(token: Token, side: str) -> int:
         # (a marked connective) is external to Group III (logical product).
         group_force = 10 if token.text != "·" else 0
         return 1000 - 100 * scope - group_force
-    if token.text.startswith("≡"):
+    if token.text.startswith("≡") or (token.text.startswith("⊃") and token.text != "⊃"):
         return 1100
     return {
         "⊃": 1200, "∨": 1300, "·": 1400, "=": 1450, "∈": 1450,
@@ -294,6 +294,8 @@ def description_variable(text: str) -> str:
 def operator_tag(text: str) -> tuple[str, str | None]:
     if text.startswith("≡") and text != "≡":
         return "formal_equiv", text[1:]
+    if text.startswith("⊃") and text != "⊃":
+        return "formal_implies", text[1:]
     return OPERATORS.get(text, "and"), None
 
 
@@ -405,7 +407,7 @@ class Parser:
         if asserted:
             self.take()
             # Dots following ⊢ are assertion scope, not object syntax.
-            if self.peek() is not None and self.peek().kind == "binary" and self.peek().text == "·":
+            while self.peek() is not None and self.peek().kind == "binary" and self.peek().text == "·":
                 self.take()
         expression = self.expression(0)
         if self.peek() is not None:

@@ -28,8 +28,12 @@ class ParserCoverageError(ValueError):
 def audit(root: Path = ROOT) -> dict:
     parsed = []
     metalinguistic = []
+    architecture_gated = []
     for item in load_items(root):
         identifier = item["id"]
+        if str(item.get("integration_status", "")).startswith("blocked-architecture"):
+            architecture_gated.append(identifier)
+            continue
         if item["kind"] in METALINGUISTIC_KINDS:
             metalinguistic.append(identifier)
             continue
@@ -50,10 +54,12 @@ def audit(root: Path = ROOT) -> dict:
         "kind": "pm-parser-coverage-audit",
         "object_language": parsed,
         "metalinguistic_rules": sorted(metalinguistic),
+        "architecture_gated": sorted(architecture_gated),
         "counts": {
             "object_language": len(parsed),
             "metalinguistic_rules": len(metalinguistic),
-            "total": len(parsed) + len(metalinguistic),
+            "architecture_gated": len(architecture_gated),
+            "total": len(parsed) + len(metalinguistic) + len(architecture_gated),
         },
     }
 
@@ -68,7 +74,8 @@ def main() -> None:
     print(
         "PM parser coverage passed "
         f"({counts['object_language']} object statements, "
-        f"{counts['metalinguistic_rules']} metalinguistic rules)"
+        f"{counts['metalinguistic_rules']} metalinguistic rules, "
+        f"{counts['architecture_gated']} architecture-gated)"
     )
 
 

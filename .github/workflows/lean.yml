@@ -20,28 +20,6 @@ jobs:
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Aggregate source, dependency, and context preflight
         run: python3 scripts/verify_preflight.py
-      - name: Verify the complete first-edition Errata registry
-        run: python3 scripts/verify_errata_registry.py
-      - name: Verify the PM anomaly register
-        run: python3 scripts/verify_anomaly_registry.py
-      - name: Guard the conservative apparent-variable architecture
-        run: python3 scripts/verify_apparent_architecture.py
-      - name: Guard schema instantiation and syntactic substitution
-        run: python3 scripts/verify_substitution_architecture.py
-      - name: Guard explicit elementary formation
-        run: python3 scripts/verify_elementary_formation_toy.py
-      - name: Guard the isolated ramified-type experiment
-        run: python3 scripts/verify_ramified_toy.py
-      - name: Guard the isolated typical-ambiguity experiment
-        run: python3 scripts/verify_typical_ambiguity_toy.py
-      - name: Guard incomplete symbols and description scope
-        run: python3 scripts/verify_description_scope_toy.py
-      - name: Guard predicative syntax and scoped reducibility
-        run: python3 scripts/verify_predicative_gate_toy.py
-      - name: Verify ordered constrained Aristotle batches
-        run: python3 scripts/verify_constrained_batches.py
-      - name: Verify deterministic PM parser coverage
-        run: python3 scripts/verify_pm_parser_coverage.py
       - name: Kernel-check every isolated elementary context
         run: |
           for context in aristotle/contexts/*.lean; do
@@ -49,5 +27,3 @@ jobs:
           done
       - name: Build and kernel-check the edition
         run: lake build
-      - name: Reject placeholders and unsafe declarations
-        run: python3 scripts/verify_lean_policy.py

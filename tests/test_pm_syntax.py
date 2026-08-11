@@ -159,6 +159,17 @@ class PMDotSyntaxTests(unittest.TestCase):
         self.assertEqual(equivalence["children"][0]["tag"], "apply_general")
         self.assertEqual(equivalence["children"][1]["tag"], "apply_predicative")
 
+    def test_star_10_02_preserves_formal_implication_subscript(self):
+        parsed = statement_shape("✱10·02. φx ⊃ₓ ψx .=. (x).φx ⊃ ψx  Df")
+        self.assertEqual(parsed["tag"], "definition")
+        self.assertEqual(parsed["children"][0]["tag"], "formal_implies")
+        self.assertEqual(parsed["children"][0]["value"], "ₓ")
+
+    def test_double_assertion_scope_marks_are_not_object_connectives(self):
+        parsed = statement_shape("✱5·42. ⊢ : :p . ⊃ . q")
+        self.assertEqual(parsed["tag"], "assert")
+        self.assertEqual(parsed["children"][0]["tag"], "implies")
+
     def test_trailing_proof_reference_is_not_object_syntax(self):
         parsed = statement_shape(
             "✱2·45. ⊢ : ∼(p ∨ q) . ⊃ . ∼p [✱2·2.Transp.]"
