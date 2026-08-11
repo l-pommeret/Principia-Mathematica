@@ -206,7 +206,7 @@ theorem star_3_22 {Γ} (p q : PM.Elementary Γ) :
     (PM.Derivation.detach (star_3_14 p q)
       (PM.Derivation.detach
         (PM.Derivation.detach
-          (PM.FirstEdition.Volume1.Star1.star_1_4 (∼ₚ q) (∼ₚ p))
+          (PM.Derivation.star_1_4 (∼ₚ q) (∼ₚ p))
           (PM.Derivation.detach (star_3_13 q p)
             (PM.FirstEdition.Volume1.Star2.star_2_06 (∼ₚ (q ∧ₚ p))
               ((∼ₚ q) ∨ₚ (∼ₚ p)) ((∼ₚ p) ∨ₚ (∼ₚ q)))))
