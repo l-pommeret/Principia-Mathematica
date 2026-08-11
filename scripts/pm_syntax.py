@@ -55,6 +55,7 @@ OPERATORS = {
     "⊂̇": "relation_inclusion", "|": "relative_product",
     "→": "function_relation",
     "sm": "similar",
+    "∼∈": "not_member",
 }
 GREEK_FUNCTION_SYMBOLS = "φψχθ"
 CLASS_SYMBOLS = "αβγκ"
@@ -89,6 +90,10 @@ def raw_tokens(source: str) -> list[Token]:
         if source.startswith("∃!", index):
             result.append(Token("unique_existence_predicate", "∃!", index))
             index += len("∃!")
+            continue
+        if source.startswith("∼∈", index):
+            result.append(Token("operator", "∼∈", index))
+            index += len("∼∈")
             continue
         # The turned comma is PM's postfix/infix ``of`` operator: `Rʻx`
         # denotes the selected value of a relation/function at its argument.
@@ -135,7 +140,7 @@ def raw_tokens(source: str) -> list[Token]:
             continue
         type_index = re.match(
             r"([A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*)"
-            r"(ᵝ|ᵦ|ₐ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
+            r"(ᵗʻ[Α-Ωα-ω]|ᵅ|ᵝ|ᵦ|ₐ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
             source[index:],
         )
         if type_index:
@@ -143,7 +148,7 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("type_index", text, index))
             index += len(text)
             continue
-        class_binder = re.match(r"([Α-Ωα-ω])̂(?=\s*\{)", source[index:])
+        class_binder = re.match(r"([Α-Ωα-ω])̂(?=\s*[\({])", source[index:])
         if class_binder:
             text = class_binder.group(0)
             result.append(Token("class_binder", text, index))
@@ -334,6 +339,7 @@ def binding_power(token: Token, side: str) -> int:
         return 1450
     return {
         "⊃": 1200, "∨": 1300, "·": 1400, "=": 1450, "≠": 1450, "∈": 1450,
+        "∼∈": 1450,
         "⊂": 1450, "∪": 1500, "∩": 1510, "−": 1500,
         "⊂̇": 1450, "⋃̇": 1500, "∩̇": 1510, "|": 1520, "→": 1520,
         "sm": 1450,
@@ -435,7 +441,11 @@ def seal_class_surface(node: AST) -> AST:
 
 def is_class_context_candidate(node: AST) -> bool:
     """Whether PM's surrounding class syntax supplies a class reading."""
-    return is_class_surface(node) or node.tag == "atom"
+    return (
+        is_class_surface(node) or node.tag == "atom" or
+        (node.tag == "type_indexed" and node.children[0].tag == "atom") or
+        (node.tag == "apply_named" and is_class_context_candidate(node.children[0]))
+    )
 
 
 def seal_as_class(node: AST) -> AST:
@@ -444,6 +454,17 @@ def seal_as_class(node: AST) -> AST:
         return seal_class_surface(node)
     if node.tag == "atom":
         return AST("class_constant_reference", value=node.value)
+    if node.tag == "type_indexed" and node.children[0].tag == "atom":
+        return AST(
+            "class_type_indexed",
+            (seal_as_class(node.children[0]),),
+            node.value,
+        )
+    if node.tag == "apply_named" and is_class_context_candidate(node.children[0]):
+        return AST(
+            "class_named_application",
+            (seal_as_class(node.children[0]), *node.children[1:]),
+        )
     raise PMSyntaxError(f"not a class expression in this context: {node.tag}")
 
 
@@ -516,7 +537,7 @@ class Parser:
         elif token.kind == "type_index":
             indexed = re.fullmatch(
                 r"(?P<head>[A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*)"
-                r"(?P<index>ᵝ|ᵦ|ₐ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
+                r"(?P<index>ᵗʻ[Α-Ωα-ω]|ᵅ|ᵝ|ᵦ|ₐ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
                 token.text,
             )
             assert indexed is not None
@@ -544,7 +565,8 @@ class Parser:
             left = AST("description", (condition,), description_variable(token.text))
         elif token.kind == "class_binder":
             condition = (
-                self.parenthesized_argument() if token.text == "ẑ"
+                self.parenthesized_argument()
+                if token.text == "ẑ" or self.peek().text == "("
                 else self.braced_argument()
             )
             left = AST("class_incomplete", (condition,), token.text[0])
@@ -686,6 +708,8 @@ class Parser:
                         if is_relation_surface(right) else right,
                     ),
                 )
+            elif tag == "not_member":
+                left = AST("not_member", (left, right))
             elif tag == "member" and is_class_context_candidate(right):
                 left = AST(
                     "class_membership",

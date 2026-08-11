@@ -243,6 +243,25 @@ class PMDotSyntaxTests(unittest.TestCase):
         )
         self.assertIn("type_indexed", tags(parsed))
 
+    def test_q102_55_preserves_alpha_and_beta_type_indices(self):
+        parsed = statement_shape("✱102·55. ⊢ : Λ ∼∈ NCᵅ(β) .⊃ . NCᵝ(α) − ιʻΛ = NCᵅ(α)")
+        self.assertGreaterEqual(tags(parsed).count("type_indexed"), 2)
+        self.assertIn("not_member", tags(parsed))
+
+    def test_q102_6_preserves_gamma_hat_parenthesized_class_binder(self):
+        parsed = statement_shape(
+            "✱102·6. ⊢ . Nc(α)ʻβ = Nc(αᵦ)ʻβ = γ̂(γ sm β . γ ∈ tʻα) = Ncʻβ ∩ tʻα"
+        )
+        self.assertIn("class_comprehension_spec", tags(parsed))
+
+    def test_q102_74_preserves_the_composite_typed_superscript(self):
+        parsed = statement_shape("✱102·74. ⊢ . Λ ∈ NCᵗʻα(α)")
+        self.assertIn("class_type_indexed", tags(parsed))
+
+    def test_q102_75_seals_typed_named_classes_only_in_union_context(self):
+        parsed = statement_shape("✱102·75. ⊢ . NCᵗʻα(α) = NCᵅ(α) ∪ ιʻΛ")
+        self.assertIn("class_named_application", tags(parsed))
+
     def test_nested_of_application_preserves_left_nesting(self):
         parsed = shape("E!Ncʻα")
         value = parsed["children"][0]
