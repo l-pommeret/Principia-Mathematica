@@ -183,3 +183,9 @@ PM-VERBATIM-END PM1:✱21·703 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·704
 ✱21·704. ⊢ : (∃g) : f(R,α) .≡₍R,α₎. g!(R,α)  [Proof as in ✱20·703]
 PM-VERBATIM-END PM1:✱21·704 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·705
+✱21·705. ⊢ : (∃g) : f(α,R) .≡₍α,R₎. g!(α,R)  [Proof as in ✱20·703]
+PM-VERBATIM-END PM1:✱21·705 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·71
+✱21·71. ⊢ : R = S .≡ : g!R .⊃₍g₎. g!S  [Proof as in ✱20·71]
+PM-VERBATIM-END PM1:✱21·71 -/
