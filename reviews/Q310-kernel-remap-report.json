@@ -1,0 +1,79 @@
+{
+  "archive": {
+    "expected_sha256": null,
+    "path": "/Users/user/principia_mathematica/aristotle/results/Q310-final.tar.gz",
+    "present": false
+  },
+  "batch": "Q310",
+  "canonical_declarations": [
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star14Source.star_14_02",
+      "exists": false,
+      "expected_signature_sha256": "ce501a3e71cdeb3dbc34d0e698fbab652b5a3a2939ef635290dcdae08eaea18c",
+      "role": "target-insertion"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star14Source.star_14_03",
+      "exists": false,
+      "expected_signature_sha256": "e683a528308e08f387a6ac6057eb81e1bcfef32015b60d3b2bc782ee6cdfaf45",
+      "role": "target-insertion"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star14Source.star_14_04",
+      "exists": false,
+      "expected_signature_sha256": "5c8e1eb739c58c9fcfe14ef50381507b378db97cd67ae06314c167865ebba0c1",
+      "role": "target-insertion"
+    }
+  ],
+  "kind": "pm-interface-kernel-remap-report",
+  "plan": {
+    "archive_sha256": null,
+    "artifact_audit_records": [],
+    "batch": "Q310",
+    "canonical_integration_forbidden": true,
+    "kind": "pm-interface-kernel-remap-plan",
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true,
+    "targets": [
+      {
+        "body_policy": "rfl-only",
+        "canonical": "PM.FirstEdition.Volume1.Star14Source.star_14_02",
+        "id": "PM1:✱14·02",
+        "insertion_target": true,
+        "signature": "theorem star_14_02\n    (vocabulary : DescriptionVocabulary signature sort order)\n    (condition : Formula signature realContext (sort :: apparentContext) order) :\n    descriptionExists vocabulary condition =\n      .sometimes vocabulary.existential (uniqueMatrix vocabulary condition)\n",
+        "signature_sha256": "ce501a3e71cdeb3dbc34d0e698fbab652b5a3a2939ef635290dcdae08eaea18c",
+        "source": "PM.FirstEdition.Volume1.Star14Source.star_14_02"
+      },
+      {
+        "body_policy": "rfl-only",
+        "canonical": "PM.FirstEdition.Volume1.Star14Source.star_14_03",
+        "id": "PM1:✱14·03",
+        "insertion_target": true,
+        "signature": "theorem star_14_03\n    (outerVocabulary : DescriptionVocabulary signature outerSort order)\n    (innerVocabulary : DescriptionVocabulary signature innerSort order)\n    (outerCondition : Formula signature realContext (outerSort :: apparentContext) order)\n    (innerCondition : Formula signature realContext (innerSort :: apparentContext) order)\n    (continuation : Formula signature realContext\n      (innerSort :: outerSort :: apparentContext) order) :\n    descriptionScopePair outerVocabulary innerVocabulary outerCondition\n        innerCondition continuation =\n      .descriptionScope outerVocabulary outerCondition\n        (.descriptionScope innerVocabulary\n          (conditionUnderOuter innerCondition)\n          continuation)\n",
+        "signature_sha256": "e683a528308e08f387a6ac6057eb81e1bcfef32015b60d3b2bc782ee6cdfaf45",
+        "source": "PM.FirstEdition.Volume1.Star14Source.star_14_03"
+      },
+      {
+        "body_policy": "rfl-only",
+        "canonical": "PM.FirstEdition.Volume1.Star14Source.star_14_04",
+        "id": "PM1:✱14·04",
+        "insertion_target": true,
+        "signature": "theorem star_14_04\n    (laterVocabulary : DescriptionVocabulary signature laterSort order)\n    (earlierVocabulary : DescriptionVocabulary signature earlierSort order)\n    (laterCondition : Formula signature realContext (laterSort :: apparentContext) order)\n    (earlierCondition : Formula signature realContext (earlierSort :: apparentContext) order)\n    (continuation : Formula signature realContext\n      (earlierSort :: laterSort :: apparentContext) order) :\n    laterDescriptionOuterScope laterVocabulary earlierVocabulary laterCondition\n        earlierCondition continuation =\n      descriptionScopePair laterVocabulary earlierVocabulary laterCondition\n        earlierCondition continuation\n",
+        "signature_sha256": "5c8e1eb739c58c9fcfe14ef50381507b378db97cd67ae06314c167865ebba0c1",
+        "source": "PM.FirstEdition.Volume1.Star14Source.star_14_04"
+      }
+    ]
+  },
+  "policy": {
+    "canonical_integration_forbidden": true,
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true
+  },
+  "reasons": [
+    "terminal archive unavailable"
+  ],
+  "status": "blocked"
+}

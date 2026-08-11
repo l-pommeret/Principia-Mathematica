@@ -271,15 +271,12 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
             ]
             if {target["source"] for target in prompt_targets} != declared_targets:
                 raise RemapError(f"prompt/manifest target mismatch for {batch}")
-        item_file = {
-            "Q296": root / "metadata/items/PM1-star-14-Q296.json",
-            "Q310": root / "metadata/items/PM1-star-14-Q297.json",
-        }.get(batch, root / "metadata/items/PM1-star-9-Q259.json")
+        item_file = root / "metadata/items/PM1-star-9-Q259.json"
         # Q300 is a prerequisite proof rather than a source-backfill batch,
         # so it deliberately has no separate item-registry file yet.
         item_payload = (
             json.loads(item_file.read_text(encoding="utf-8"))
-            if batch in {"Q259", *RFL_ONLY_INSERTION_BATCHES}
+            if batch == "Q259"
             else []
         )
         items = item_payload.get("items", []) if isinstance(item_payload, dict) else item_payload
@@ -289,6 +286,14 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
             record["declaration"].rsplit(".", 1)[-1]: record["declaration"]
             for record in items
         }
+        if batch in RFL_ONLY_INSERTION_BATCHES:
+            # These strict definition batches are inserted under exactly the
+            # declaration name already sealed by their manifest.  They have
+            # no item-registry indirection and no dependency mapping surface.
+            canonical_by_short_name = {
+                target["source"].rsplit(".", 1)[-1]: target["source"]
+                for target in prompt_targets
+            }
         if batch == "Q300":
             # Q300 is intentionally routed to the prerequisite theorem
             # demanded by its Q301 sequential-remap gate, not to a fabricated
@@ -302,9 +307,13 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
             if canonical is None:
                 raise RemapError(f"no canonical target registered for {target['source']}")
             targets.append({
-                "id": next((record["id"] for record in items
-                            if record["declaration"].rsplit(".", 1)[-1] == short_name),
-                          "PM1:✱9·21"),
+                "id": next(
+                    (identifier for identifier in manifest.get("target_order", [])
+                     if manifest.get("target_declarations", {}).get(identifier) == target["source"]),
+                    next((record["id"] for record in items
+                          if record["declaration"].rsplit(".", 1)[-1] == short_name),
+                         "PM1:✱9·21"),
+                ),
                 "source": target["source"],
                 "canonical": canonical,
                 "signature": target["signature"],

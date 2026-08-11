@@ -118,6 +118,53 @@ end PM.Local
         self.assertEqual(report["canonical_declarations"][0]["role"], "target-insertion")
         self.assertNotIn("missing canonical declaration", "\n".join(report["reasons"]))
 
+    def test_q310_has_three_manifest_sealed_rfl_only_insertions(self):
+        plan = batch_plan(ROOT, "Q310")
+        self.assertEqual([target["id"] for target in plan["targets"]], [
+            "PM1:✱14·02", "PM1:✱14·03", "PM1:✱14·04",
+        ])
+        self.assertTrue(all(target["insertion_target"] for target in plan["targets"]))
+        self.assertTrue(all(target["body_policy"] == "rfl-only" for target in plan["targets"]))
+        self.assertEqual([target["canonical"] for target in plan["targets"]], [
+            "PM.FirstEdition.Volume1.Star14Source.star_14_02",
+            "PM.FirstEdition.Volume1.Star14Source.star_14_03",
+            "PM.FirstEdition.Volume1.Star14Source.star_14_04",
+        ])
+
+    def test_q310_clean_three_target_rfl_fixture_is_transplantable(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "Principia").mkdir()
+            archive = root / "result.tar.gz"
+            source = "\n".join([
+                "namespace PM.Local",
+                *[f"theorem star_14_0{index} : True := by rfl" for index in range(2, 5)],
+                "end PM.Local", "",
+            ])
+            write_archive(archive, {"Target.lean": source})
+            targets = []
+            for index in range(2, 5):
+                signature = f"theorem star_14_0{index} : True\n"
+                targets.append({
+                    "id": f"PM1:✱14·0{index}", "source": f"PM.Local.star_14_0{index}",
+                    "canonical": f"PM.Canonical.star_14_0{index}", "signature": signature,
+                    "signature_sha256": __import__("hashlib").sha256(
+                        signature.encode("utf-8")).hexdigest(), "insertion_target": True,
+                    "body_policy": "rfl-only",
+                })
+            plan = {"kind": "pm-interface-kernel-remap-plan", "batch": "Q310",
+                    "archive_sha256": sha256_bytes(archive.read_bytes()), "targets": targets}
+            with patch("remap_aristotle_interface.batch_plan", return_value=plan):
+                report = run_remap(root, "Q310", archive)
+            self.assertEqual(report["status"], "transplantable-interface-only")
+
+    def test_q310_unavailable_archive_is_machine_readable_and_insertion_only(self):
+        report = run_remap(ROOT, "Q310")
+        self.assertEqual(report["status"], "blocked")
+        self.assertEqual(report["reasons"], ["terminal archive unavailable"])
+        self.assertTrue(all(record["role"] == "target-insertion"
+                            for record in report["canonical_declarations"]))
+
     def test_q228_plan_is_exact_and_non_promotional(self):
         plan = batch_plan(ROOT, "Q228")
         self.assertEqual([target["id"] for target in plan["targets"]], [
