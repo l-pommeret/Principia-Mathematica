@@ -1,7 +1,10 @@
 # Audit Q217 — PM I, ✱3·01–✱3·03 foundations
 
-Verdict: **A — Aristotle result integrated; exact printed closure confirmed,
-awaiting repository CI**. The immutable final archive is
+Verdict: **A — Aristotle result integrated and kernel-checked; exact printed
+closure confirmed**. GitHub Lean run
+[`31451332250`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31451332250)
+succeeded on exact commit `3c6c6aed3cea38823fd4c2025091c6c9cc846dfc`.
+The immutable final archive is
 `aristotle/results/Q217-final.tar.gz`, SHA-256
 `b2ac2d081c5d61b2bfb0f116656fd0c4c6f573b25ed110dcd49be002f60cfec0`.
 Its target uses exactly ✱1·01, ✱1·11, ✱1·7, ✱1·72, ✱2·11, ✱2·32 and the

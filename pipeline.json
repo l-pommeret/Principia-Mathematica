@@ -558,7 +558,7 @@
       "source": "PM volume I, first edition, pp. 114 and 116",
       "prompt_path": "aristotle/Q217.md",
       "audit_path": "reviews/Q217-review.md",
-      "audit_status": "A-integrated-awaiting-ci",
+      "audit_status": "A-kernel-checked",
       "lean_scope": "exact PM1 ✱1·7·71·72 formation Pp, ✱3·01·02 definitions, and ✱3·03 metalinguistic derivation theorem",
       "depends_on": [
         "PM1:✱2·11",
@@ -608,7 +608,10 @@
       "aristotle_latest_task_created": "5 mins ago"
       ,"aristotle_archive_path": "aristotle/results/Q217-final.tar.gz"
       ,"aristotle_archive_sha256": "b2ac2d081c5d61b2bfb0f116656fd0c4c6f573b25ed110dcd49be002f60cfec0"
-      ,"integration_status": "awaiting-ci"
+      ,"integration_status": "kernel-checked"
+      ,"lean_commit": "3c6c6aed3cea38823fd4c2025091c6c9cc846dfc"
+      ,"lean_ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31451332250"
+      ,"lean_ci_conclusion": "success"
     },
     "Q218": {
       "canonical_ids": [
@@ -2440,6 +2443,16 @@
       "ci_evidence": {
         "commit": "be2669eda2a262ebb6c07637787f2bc12b0732b3",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31450728523",
+        "conclusion": "success"
+      }
+    },
+    "PM1:✱3·03": {
+      "batch": "PM1-STAR3-Q217-RULE",
+      "status": "kernel-checked",
+      "closure_classification": "strict-closure",
+      "ci_evidence": {
+        "commit": "3c6c6aed3cea38823fd4c2025091c6c9cc846dfc",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31451332250",
         "conclusion": "success"
       }
     }
