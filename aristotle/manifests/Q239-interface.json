@@ -1,0 +1,46 @@
+{
+  "kind": "pm-statement-only-interface-manifest",
+  "batch": "Q239",
+  "source_backfill_required": false,
+  "integration_blocked": true,
+  "audit_status": "A-interface-only",
+  "audit_basis": "reviewed exact prompt targets, citations, and scan hashes; no PM-VERBATIM proof skeleton",
+  "promotion_prohibited": "PM-VERBATIM plus parsed demonstration audit required",
+  "canonical_ids": [
+    "PM1:✱4·73",
+    "PM1:✱4·74",
+    "PM1:✱4·76",
+    "PM1:✱4·77"
+  ],
+  "prompt_path": "aristotle/Q239.md",
+  "review_path": "reviews/Q239-review.md",
+  "scan_hashes": [
+    "afdca6640d248e94fc93bd1144afa53935688c80c995072602ab9493b3cae767"
+  ],
+  "opaque_dependency_stubs": [
+    "PM1:✱1·01",
+    "PM1:✱1·3",
+    "PM1:✱2·2",
+    "PM1:✱2·21",
+    "PM1:✱3·26",
+    "PM1:✱3·44",
+    "PM1:✱4·01",
+    "PM1:✱4·41",
+    "PM1:✱4·71",
+    "PM1:✱4·72"
+  ],
+  "citation_comments": [
+    "Simp.✱4·71",
+    "✱2·21.✱4·72",
+    "✱4·41 (∼p/p).(✱1·01)",
+    "✱3·44.Add.✱2·2"
+  ],
+  "exact_lean_targets": [
+    "namespace PM.FirstEdition.Volume1.Star4\ntheorem star_4_73 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (q ⊃ₚ (p ≡ₚ (p ∧ₚ q))) := by\n  -- [Simp.✱4·71]\ntheorem star_4_74 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (∼ₚ p ⊃ₚ (q ≡ₚ (p ∨ₚ q))) := by\n  -- [✱2·21.✱4·72]\ntheorem star_4_76 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ⊃ₚ q) ∧ₚ (p ⊃ₚ r)) ≡ₚ (p ⊃ₚ (q ∧ₚ r))) := by\n  -- [✱4·41 (∼p/p).(✱1·01)]\ntheorem star_4_77 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)) ≡ₚ ((q ∨ₚ r) ⊃ₚ p)) := by\n  -- [✱3·44.Add.✱2·2]\nend PM.FirstEdition.Volume1.Star4\n"
+  ],
+  "prompt_sha256": "f2fc6f5059aa2ceb2960906377279c60c00d058bf0ad1432686fc13bb209c0b0",
+  "review_sha256": "89ea4df25c7867f52293b1bb942d4a50e465ece36f9fbf7db7b74db9945361b5",
+  "exact_lean_target_sha256": [
+    "6a5dce61a0fb2e44e593182edea96c06e3d12f40dec5a0886dedea96f9d879c2"
+  ]
+}

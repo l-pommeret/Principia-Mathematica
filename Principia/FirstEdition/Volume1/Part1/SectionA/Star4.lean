@@ -328,6 +328,26 @@ Dem.
 [✱4·31] ≡ : q . ≡ . p ∨ q . ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱4·72 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱4·73
+✱4·73.  ⊢ : q . ⊃ : p . ≡ . p . q   [Simp . ✱4·71]
+
+This proposition is very useful, since it shows that a true factor may be
+omitted from a product without altering its truth or falsehood, just as a true
+hypothesis may be omitted from an implication.
+PM-VERBATIM-END PM1:✱4·73 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·74
+✱4·74.  ⊢ : ∼p . ⊃ : q . ≡ . p ∨ q   [✱2·21 . ✱4·72]
+PM-VERBATIM-END PM1:✱4·74 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·76
+✱4·76.  ⊢ : p ⊃ q . p ⊃ r . ≡ : p . ⊃ . q . r   [✱4·41 ∼p/p . (✱1·01)]
+PM-VERBATIM-END PM1:✱4·76 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·77
+✱4·77.  ⊢ : q ⊃ p . r ⊃ p . ≡ : q ∨ r . ⊃ . p   [✱3·44 . Add . ✱2·2]
+PM-VERBATIM-END PM1:✱4·77 -/
+
 namespace PM.Elementary
 
 /-- PM I (1910), p. 120, ✱4·01: equivalence is an object-language
