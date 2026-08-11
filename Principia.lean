@@ -18,5 +18,6 @@ import Principia.FirstEdition.Volume1.Part1.SectionA.Star1
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star2
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star3
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star4
+import Principia.FirstEdition.Volume1.Part1.SectionA.Star5Kernel
 import Principia.FirstEdition.Volume1.Star9
 import Principia.FirstEdition.Volume1.Star14
