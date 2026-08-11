@@ -1,0 +1,38 @@
+{
+  "kind": "pm-statement-only-interface-manifest",
+  "batch": "Q231",
+  "source_backfill_required": true,
+  "integration_blocked": true,
+  "promotion_prohibited": "PM-VERBATIM plus parsed demonstration audit required",
+  "canonical_ids": [
+    "PM1:✱4·34",
+    "PM1:✱4·36",
+    "PM1:✱4·37",
+    "PM1:✱4·38",
+    "PM1:✱4·39"
+  ],
+  "prompt_path": "aristotle/Q231.md",
+  "review_path": "reviews/Q231-review.md",
+  "scan_hashes": [
+    "40f3f9f53b48ecb64ab6eef02a576500daeee43e232e5f157171a60fa21836c6"
+  ],
+  "opaque_dependency_stubs": [
+    "PM1:✱1·6",
+    "PM1:✱3·01",
+    "PM1:✱3·22",
+    "PM1:✱3·45",
+    "PM1:✱3·47",
+    "PM1:✱3·48",
+    "PM1:✱4·01",
+    "PM1:✱4·32"
+  ],
+  "citation_comments": [
+    "Fact.✱3·47",
+    "Sum.✱3·47",
+    "✱3·47.✱4·32.✱3·22",
+    "✱3·48.✱4·32.✱3·22"
+  ],
+  "exact_lean_targets": [
+    "namespace PM.Elementary\n/-- ✱4·34: `p.q.r .=. (p.q).r  Df`. -/\ndef productChain (p q r : PM.Elementary Γ) : PM.Elementary Γ :=\n  (p ∧ₚ q) ∧ₚ r\nend PM.Elementary\n\nnamespace PM.FirstEdition.Volume1.Star4\ntheorem star_4_36 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ≡ₚ q) ⊃ₚ ((p ∧ₚ r) ≡ₚ (q ∧ₚ r))) := by\n  -- [Fact.✱3·47]\ntheorem star_4_37 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ≡ₚ q) ⊃ₚ ((p ∨ₚ r) ≡ₚ (q ∨ₚ r))) := by\n  -- [Sum.✱3·47]\ntheorem star_4_38 {Γ} (p q r s : PM.Elementary Γ) :\n    ⊢ₚ (((p ≡ₚ r) ∧ₚ (q ≡ₚ s)) ⊃ₚ ((p ∧ₚ q) ≡ₚ (r ∧ₚ s))) := by\n  -- [✱3·47.✱4·32.✱3·22]\ntheorem star_4_39 {Γ} (p q r s : PM.Elementary Γ) :\n    ⊢ₚ (((p ≡ₚ r) ∧ₚ (q ≡ₚ s)) ⊃ₚ ((p ∨ₚ q) ≡ₚ (r ∨ₚ s))) := by\n  -- [✱3·48.✱4·32.✱3·22]\nend PM.FirstEdition.Volume1.Star4\n"
+  ]
+}

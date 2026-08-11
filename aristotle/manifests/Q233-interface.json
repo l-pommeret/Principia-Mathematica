@@ -1,0 +1,35 @@
+{
+  "kind": "pm-statement-only-interface-manifest",
+  "batch": "Q233",
+  "source_backfill_required": true,
+  "integration_blocked": true,
+  "promotion_prohibited": "PM-VERBATIM plus parsed demonstration audit required",
+  "canonical_ids": [
+    "PM1:✱4·43",
+    "PM1:✱4·44",
+    "PM1:✱4·45"
+  ],
+  "prompt_path": "aristotle/Q233.md",
+  "review_path": "reviews/Q233-review.md",
+  "scan_hashes": [
+    "6d4b78636c9be9fcfb708786adbdca26e4f16fdcb0b78ac66c7936e9f3fd2b9f"
+  ],
+  "opaque_dependency_stubs": [
+    "PM1:✱2·08",
+    "PM1:✱2·2",
+    "PM1:✱2·53",
+    "PM1:✱2·65",
+    "PM1:✱3·26",
+    "PM1:✱3·31",
+    "PM1:✱3·43",
+    "PM1:✱3·44",
+    "PM1:✱3·47",
+    "PM1:✱4·01"
+  ],
+  "citation_comments": [
+    "✱3·26.✱2·2"
+  ],
+  "exact_lean_targets": [
+    "namespace PM.FirstEdition.Volume1.Star4\ntheorem star_4_43 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (p ≡ₚ ((p ∨ₚ q) ∧ₚ (p ∨ₚ ∼ₚ q))) := by\n  -- ✱2·2, Comp; ✱2·65[∼p/p], Imp, ✱2·53, ✱3·47; retain (1),(2)\ntheorem star_4_44 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (p ≡ₚ (p ∨ₚ (p ∧ₚ q))) := by\n  -- ✱2·2, Id, ✱3·26, ✱3·44; retain (1),(2)\ntheorem star_4_45 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (p ≡ₚ (p ∧ₚ (p ∨ₚ q))) := by\n  -- [✱3·26.✱2·2]\nend PM.FirstEdition.Volume1.Star4\n"
+  ]
+}

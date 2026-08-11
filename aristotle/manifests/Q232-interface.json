@@ -1,0 +1,37 @@
+{
+  "kind": "pm-statement-only-interface-manifest",
+  "batch": "Q232",
+  "source_backfill_required": true,
+  "integration_blocked": true,
+  "promotion_prohibited": "PM-VERBATIM plus parsed demonstration audit required",
+  "canonical_ids": [
+    "PM1:✱4·4",
+    "PM1:✱4·41",
+    "PM1:✱4·42"
+  ],
+  "prompt_path": "aristotle/Q232.md",
+  "review_path": "reviews/Q232-review.md",
+  "scan_hashes": [
+    "40f3f9f53b48ecb64ab6eef02a576500daeee43e232e5f157171a60fa21836c6"
+  ],
+  "opaque_dependency_stubs": [
+    "PM1:✱1·6",
+    "PM1:✱2·11",
+    "PM1:✱2·53",
+    "PM1:✱2·54",
+    "PM1:✱3·2",
+    "PM1:✱3·21",
+    "PM1:✱3·26",
+    "PM1:✱3·27",
+    "PM1:✱3·31",
+    "PM1:✱3·43",
+    "PM1:✱3·44",
+    "PM1:✱3·47",
+    "PM1:✱3·48",
+    "PM1:✱4·01"
+  ],
+  "citation_comments": [],
+  "exact_lean_targets": [
+    "namespace PM.FirstEdition.Volume1.Star4\ntheorem star_4_4 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ (q ∨ₚ r)) ≡ₚ ((p ∧ₚ q) ∨ₚ (p ∧ₚ r))) := by\n  -- preserve the printed proof (1)–(5): ✱3·2, Comp, ✱3·48, Imp,\n  -- ✱3·26, ✱3·44, ✱3·27\ntheorem star_4_41 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ∨ₚ (q ∧ₚ r)) ≡ₚ ((p ∨ₚ q) ∧ₚ (p ∨ₚ r))) := by\n  -- preserve (1)–(4): ✱3·26/·27.Sum, Comp, ✱2·53, ✱3·47, ✱2·54\ntheorem star_4_42 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (p ≡ₚ ((p ∧ₚ q) ∨ₚ (p ∧ₚ ∼ₚ q))) := by\n  -- preserve (1),(2): ✱3·21, ✱2·11, ✱3·26, then ✱4·4\nend PM.FirstEdition.Volume1.Star4\n"
+  ]
+}
