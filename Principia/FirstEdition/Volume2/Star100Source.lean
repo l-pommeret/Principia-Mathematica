@@ -604,3 +604,9 @@ PM-VERBATIM-END PM2:✱105·356 -/
 /- PM-VERBATIM-BEGIN PM2:✱105·357
 ✱105·357. ⊢ : μ ∈ NC . ∃!μ⁽²⁾ .⊃ . {μ⁽²⁾}⁽²⁾ = μ
 PM-VERBATIM-END PM2:✱105·357 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·36
+✱105·36. ⊢ : β ∈ N₁cʻα . γ ∈ N₁cʻβ .⊃ . γ ∈ N₂cʻα
+PM-VERBATIM-END PM2:✱105·36 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·361
+✱105·361. ⊢ : β ∈ N₁cʻα . γ ∈ N₂cʻα .⊃ . γ ∈ N₁cʻβ
+PM-VERBATIM-END PM2:✱105·361 -/
