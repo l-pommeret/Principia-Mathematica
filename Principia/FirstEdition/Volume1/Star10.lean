@@ -29,3 +29,29 @@ PM-VERBATIM-END PM1:✱10·281 -/
 /- PM-VERBATIM-BEGIN PM1:✱10·35
 ✱10·35.  ⊢ : .(∃x).p .φx .≡ : p : (∃x).φx
 PM-VERBATIM-END PM1:✱10·35 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·12
+✱10·12.  ⊢ : .(x).p ∨ φx .⊃ : p .∨ .(x).φx  [✱9·25]
+PM-VERBATIM-END PM1:✱10·12 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·121
+✱10·121.  If “φx” is significant, then if a is of the same type as x, “φa” is
+significant, and vice versa.  [✱9·14]
+PM-VERBATIM-END PM1:✱10·121 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·122
+✱10·122.  If, for some a, there is a proposition φa, then there is a function
+φx̂, and vice versa.  [✱9·15]
+PM-VERBATIM-END PM1:✱10·122 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·13
+✱10·13.  If φx̂ and ψx̂ take arguments of the same type, and we have “⊢.φx”
+and “⊢.ψx,” we shall have “⊢.φx.ψx.”
+Dem.  By repeated use of 9·61·62·63·131 (3), there is a function ∼φx̂∨∼ψx̂.
+Hence by ✱2·11 and ✱3·01,
+⊢ : ∼φx∨∼ψx .∨ .φx .ψx  (1)
+⊢ . (1) . ✱2·32 . (✱1·01) . ⊃ ⊢ : .φx .⊃ : ψx .⊃ .φx .ψx  (2)
+⊢ . (2) . ✱9·12 . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱10·13 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·14
+✱10·14.  ⊢ : .(x).φx : (x).ψx : ⊃ .φy .ψy
+Dem.  ⊢ . ✱10·1 . ⊃ ⊢ : (x).φx .⊃ .φy  (1)
+⊢ . ✱10·1 . ⊃ ⊢ : (x).ψx .⊃ .ψy  (2)
+⊢ . (1) . (2) . ✱10·13 . ⊃ ⊢ : (x).φx : (x).ψx : ⊃ .φy .ψy
+PM-VERBATIM-END PM1:✱10·14 -/
