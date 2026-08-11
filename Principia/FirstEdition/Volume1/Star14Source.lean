@@ -125,3 +125,6 @@ PM-VERBATIM-END PM1:✱14·27 -/
 /- PM-VERBATIM-BEGIN PM1:✱14·271
 ✱14·271. ⊢ : φx .≡ₓ. ψx .⊃ : E!(℩x)(φx) .≡ . E!(℩x)(ψx)
 PM-VERBATIM-END PM1:✱14·271 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·272
+✱14·272. ⊢ : φx .≡ₓ. ψx .⊃ : χ(℩x)(φx) .≡ . χ(℩x)(ψx)
+PM-VERBATIM-END PM1:✱14·272 -/
