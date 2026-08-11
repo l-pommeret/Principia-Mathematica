@@ -362,6 +362,27 @@ PM-VERBATIM-END PM1:✱9·52 -/
 ✱9·521.  ⊢ : : (∃x).φx .⊃. q : ⊃ : .(∃x).φx .∨. r .⊃ . q ∨ r   [As above]
 PM-VERBATIM-END PM1:✱9·521 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱9·6
+✱9·6.  (x).φx, ∼(x).φx, (∃x).φx and ∼(∃x).φx are of the same type.  [✱9·131, (7) and (8)]
+PM-VERBATIM-END PM1:✱9·6 -/
+/- PM-VERBATIM-BEGIN PM1:✱9·61
+✱9·61.  If φx̂ and ψx̂ are elementary functions of the same type, there is a function φx̂ ∨ ψx̂.
+
+Dem.
+By ✱9·14·15, there is an a for which “ψa,” and therefore “φa,” are significant, and therefore so is “φa ∨ ψa,” by the primitive idea of disjunction. Hence the result by ✱9·15.
+
+The same proof holds for functions of any number of variables.
+PM-VERBATIM-END PM1:✱9·61 -/
+/- PM-VERBATIM-BEGIN PM1:✱9·62
+✱9·62.  If φ(x̂, ŷ) and ψẑ are elementary functions, and the x-argument to φ is of the same type as the argument to ψ, there are functions (y).φ(x̂,y).∨.ψx̂, (∃y).φ(x̂,y).∨.ψx̂.
+
+Dem.
+By ✱9·15, there are propositions φ(x,b) and ψa, where by hypothesis x and a are of the same type. Hence by ✱9·14 there is a proposition φ(a,b), and therefore, by the primitive idea of disjunction, there is a proposition φ(a,b) ∨ ψa, and therefore, by ✱9·15 and ✱9·03, there is a proposition (y).φ(a,y).∨.ψa. Similarly there is a proposition (∃y).φ(a,y).∨.ψa. Hence the result, by ✱9·15.
+PM-VERBATIM-END PM1:✱9·62 -/
+/- PM-VERBATIM-BEGIN PM1:✱9·63
+✱9·63.  If φ(x̂, ŷ), ψ(x̂, ŷ) are elementary functions of the same type, there are functions (y).φ(x̂,y).∨.(z).ψ(x̂,z), etc.  [Proof as above]
+PM-VERBATIM-END PM1:✱9·63 -/
+
 /- PM-EDITORIAL
 Source: Principia Mathematica, first edition, volume I (1910), printed
 pp. 132–135, scan leaves 154–157. The diplomatic transcription above was
