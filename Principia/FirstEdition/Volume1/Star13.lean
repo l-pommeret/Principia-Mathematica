@@ -81,3 +81,9 @@ PM-VERBATIM-END PM1:✱13·195 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·196
 ✱13·196.  ⊢ :: ∼φx .≡ : φy .⊃y . y ≠ x
 PM-VERBATIM-END PM1:✱13·196 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·21
+✱13·21.  ⊢ :: z = x . w = y .⊃z,w . φ(z, w) : ≡ . φ(x, y)
+PM-VERBATIM-END PM1:✱13·21 -/
+/- PM-VERBATIM-BEGIN PM1:✱13·22
+✱13·22.  ⊢ : (∃z, w). z = x . w = y . φ(z, w) .≡ . φ(x, y)
+PM-VERBATIM-END PM1:✱13·22 -/
