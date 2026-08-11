@@ -237,3 +237,14 @@ PM-VERBATIM-END PM1:✱11·55 -/
 (x, y).φx.ψy
 Dem.  By ✱10·33, ✱10·11, ✱10·271, and ✱11·01, ⊢ . Prop.
 PM-VERBATIM-END PM1:✱11·56 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·57
+✱11·57.  ⊢ : (x).φx .≡ .(x, y).φx.φy  [✱11·56. ✱4·24]
+PM-VERBATIM-END PM1:✱11·57 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·58
+✱11·58.  ⊢ : (∃x).φx .≡ .(∃x, y).φx.φy  [✱11·54. ✱4·24]
+PM-VERBATIM-END PM1:✱11·58 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·59
+✱11·59.  ⊢ : .φx .⊃ₓ .ψx : ≡ :
+φx.φy .⊃ₓ,ᵧ .ψx.ψy
+Dem.  By ✱11·57, ✱3·47, ✱11·32, ✱11·1, and ✱10·11·21, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱11·59 -/
