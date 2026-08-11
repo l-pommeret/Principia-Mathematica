@@ -348,6 +348,25 @@ PM-VERBATIM-END PM1:✱4·76 -/
 ✱4·77.  ⊢ : q ⊃ p . r ⊃ p . ≡ : q ∨ r . ⊃ . p   [✱3·44 . Add . ✱2·2]
 PM-VERBATIM-END PM1:✱4·77 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱4·82
+✱4·82.  ⊢ : p ⊃ q . p ⊃ ∼q . ≡ . ∼p   [✱2·65 . Imp . ✱2·21 . Comp]
+PM-VERBATIM-END PM1:✱4·82 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·83
+✱4·83.  ⊢ : p ⊃ q . ∼p ⊃ q . ≡ . q   [✱2·61 . Imp . Simp . Comp]
+
+Note. ✱4·82·83 may also be obtained from ✱4·43, of which they are virtually
+other forms.
+PM-VERBATIM-END PM1:✱4·83 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·84
+✱4·84.  ⊢ : p ≡ q . ⊃ : p ⊃ r . ≡ . q ⊃ r   [✱2·06 . ✱3·47]
+PM-VERBATIM-END PM1:✱4·84 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·85
+✱4·85.  ⊢ : p ≡ q . ⊃ : r ⊃ p . ≡ . r ⊃ q   [✱2·05 . ✱3·47]
+PM-VERBATIM-END PM1:✱4·85 -/
+
 namespace PM.Elementary
 
 /-- PM I (1910), p. 120, ✱4·01: equivalence is an object-language
