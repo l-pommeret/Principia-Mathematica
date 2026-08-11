@@ -1,0 +1,152 @@
+{
+  "kind": "pm-description-judgement-formalization-roadmap",
+  "batch": "Q297",
+  "status": "blocked-before-first-assertion-carrier",
+  "policy": {
+    "machine_auditable": true,
+    "no_oracle_axiom_or_opaque_rule": true,
+    "no_pipeline_or_ci_was_run": true,
+    "no_lean_was_run": true
+  },
+  "roadmap_scope": {
+    "targets": ["PM1:14.18", "PM1:14.21"],
+    "rule_families": 8,
+    "source_to_kernel_direction": "PM1:10 -> PM1:14",
+    "non_goal": "This is not authorization to create a DescriptionDerivation carrier or any new Lean declaration."
+  },
+  "current_kernel_boundaries": [
+    {
+      "declaration": "PM.Derivation.detach",
+      "state": "kernel",
+      "carrier": "PM.Elementary Γ",
+      "use": "source analogue of PM1:1.1/1.11 only",
+      "limitation": "cannot certify DescriptionSyntax.Formula"
+    },
+    {
+      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_45",
+      "state": "kernel",
+      "carrier": "PM.Elementary Γ",
+      "use": "exact existing realization of PM1:3.45 (Fact)",
+      "limitation": "cannot frame a first-order/description formula"
+    },
+    {
+      "declaration": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_12",
+      "state": "kernel",
+      "carrier": "OrderedFormula Γ 1",
+      "use": "assigned-order detachment",
+      "limitation": "no translation from DescriptionSyntax.Formula is authorized"
+    },
+    {
+      "declarations": ["PM.DescriptionSyntax.Formula.descriptionExists", "PM.DescriptionSyntax.Formula.descriptionScopePair", "PM.DescriptionSyntax.Formula.laterDescriptionOuterScope"],
+      "state": "kernel",
+      "carrier": "DescriptionSyntax.Formula",
+      "use": "reductional syntax only",
+      "limitation": "none is an assertion judgement or an inference rule"
+    }
+  ],
+  "families": [
+    {
+      "id": "judgement-composition",
+      "pm_locus": ["PM1:1.1", "PM1:1.11", "PM I (1910) p.189, final ⊃ ⊢ . Prop chain"],
+      "printed_role": "detachment/chaining of the displayed asserted implications",
+      "lean_state": "kernel-on-incompatible-carriers",
+      "kernel_evidence": ["PM.Derivation.detach", "OrderedAssertion.star_9_12"],
+      "missing": "a source-authorized common judgement carrier for Formula, including its exact constructor/rule signature",
+      "formalization_predecessors": [],
+      "blocks": ["all other seven families"]
+    },
+    {
+      "id": "fact-frame",
+      "pm_locus": ["PM1:3.45 (Fact)", "PM I (1910) p.189, ✱14.18 line [Fact]"],
+      "printed_role": "frames φx ≡ₓ x = b around the instantiated implication",
+      "lean_state": "kernel-on-incompatible-carrier",
+      "kernel_evidence": ["PM.FirstEdition.Volume1.Star3.star_3_45"],
+      "missing": "lifting of the exact PM1:3.45 schema to the still-unfixed first-order judgement carrier; no polymorphic reuse is licensed",
+      "formalization_predecessors": ["judgement-composition"],
+      "blocks": ["PM1:14.18"]
+    },
+    {
+      "id": "universal-instantiation",
+      "pm_locus": ["PM1:10.1, printed p.144 / scan leaf 166", "PM I (1910) p.189, ✱14.18 first line"],
+      "printed_role": "(x).ψx entails ψb",
+      "lean_state": "source-only",
+      "kernel_evidence": ["Principia/FirstEdition/Volume1/Star10.lean is diplomatic source record only"],
+      "missing": "first-order judgement rule with capture-safe typed candidate instantiation; Formula.substitute is syntax only",
+      "formalization_predecessors": ["judgement-composition"],
+      "blocks": ["PM1:14.18", "PM1:10.28", "PM1:10.35"]
+    },
+    {
+      "id": "generalization",
+      "pm_locus": ["PM1:10.11, printed p.144 / scan leaf 166", "PM I (1910) p.189, fused citation ✱10.11·28"],
+      "printed_role": "raises an argument-uniform assertion to the universal form",
+      "lean_state": "source-only",
+      "kernel_evidence": ["Principia/FirstEdition/Volume1/Star10.lean is diplomatic source record only"],
+      "missing": "exact premise/context side condition and a first-order judgement carrier",
+      "formalization_predecessors": ["judgement-composition"],
+      "blocks": ["PM1:14.18", "PM1:10.28", "PM1:10.35", "PM1:10.5"]
+    },
+    {
+      "id": "existential-monotonicity",
+      "pm_locus": ["PM1:10.28, printed p.145 / scan leaf 167", "PM I (1910) p.189, fused citation ✱10.11·28"],
+      "printed_role": "lifts a universally valid implication through ∃",
+      "lean_state": "source-only",
+      "kernel_evidence": ["metadata/items/PM1-star-10-Q265.json: blocked-architecture-first-order-assertion"],
+      "transitive_printed_dependencies": ["PM1:9.22", "PM1:10.1", "PM1:10.11·21", "PM1:10.27"],
+      "missing": "the cited first-order rules and their common judgement carrier",
+      "formalization_predecessors": ["judgement-composition", "universal-instantiation", "generalization", "PM1:9.22", "PM1:10.21", "PM1:10.27"],
+      "blocks": ["PM1:14.18", "PM1:10.35", "PM1:10.5"]
+    },
+    {
+      "id": "existential-product-scope",
+      "pm_locus": ["PM1:10.35, printed p.145 / scan leaf 167", "PM I (1910) p.189, line [✱10.35]"],
+      "printed_role": "moves a proposition factor across an existential product before the description definitions are used",
+      "lean_state": "source-only",
+      "kernel_evidence": ["metadata/items/PM1-star-10-Q265.json: blocked-architecture-first-order-assertion"],
+      "transitive_printed_dependencies": ["PM1:3.26", "PM1:10.11", "PM1:10.23", "PM1:3.27", "PM1:10.28", "PM1:3.2", "PM1:10.11·21"],
+      "missing": "first-order product/existential judgement rules, with the source's scoped binder order preserved",
+      "formalization_predecessors": ["judgement-composition", "generalization", "existential-monotonicity", "PM1:3.26", "PM1:3.27", "PM1:3.2", "PM1:10.23", "PM1:10.21"],
+      "blocks": ["PM1:14.18"]
+    },
+    {
+      "id": "existential-product-projection",
+      "pm_locus": ["PM1:10.5, printed p.155 / scan leaf 177", "PM I (1910) p.190, line [✱10.5]"],
+      "printed_role": "projects ∃x.(φx . ψx) to (∃x).φx",
+      "lean_state": "source-only",
+      "kernel_evidence": ["metadata/items/PM1-star-10-Q273.json: blocked-architecture-first-order-assertion"],
+      "transitive_printed_dependencies": ["PM1:3.26", "PM1:10.11", "PM1:10.28", "PM1:3.27", "Comp/PM1:3.43"],
+      "missing": "first-order existential/product judgement rules and composition on their carrier",
+      "formalization_predecessors": ["judgement-composition", "generalization", "existential-monotonicity", "PM1:3.26", "PM1:3.27", "PM1:3.43"],
+      "blocks": ["PM1:14.21"]
+    },
+    {
+      "id": "description-definitional-rewrite",
+      "pm_locus": ["PM1:14.1, printed p.184 / scan leaf 206", "PM1:14.11, printed p.184 / scan leaf 206", "PM I (1910) pp.189-190, final citations"],
+      "printed_role": "rewrites the description scope and E! into existential/unique-witness formulae",
+      "lean_state": "syntax-kernel-plus-assertion-source-only",
+      "kernel_evidence": ["descriptionScope expansion (reductional)", "descriptionExists (reductional)", "Q296/Q310 rfl-only insertions"],
+      "missing": "asserted object-language equivalence/congruence for PM1:14.1 and PM1:14.11; equality of syntax is insufficient",
+      "formalization_predecessors": ["judgement-composition", "PM1:4.2", "PM1:14.01 reduction", "PM1:14.02 reduction"],
+      "blocks": ["PM1:14.18", "PM1:14.21"]
+    }
+  ],
+  "minimal_formalization_order": [
+    {"step": 0, "work": "retain the already closed rfl-only syntax vertical: PM1:14.01 (Q296), PM1:14.02/03/04 (Q310)", "status": "kernel-available; no assertion theorem"},
+    {"step": 1, "work": "collate—not implement—the exact PM judgement carrier and PM1:1.1/1.11 signatures for the first-order syntax carrier", "status": "blocking source audit"},
+    {"step": 2, "work": "formalize the source-authorized first-order primitives PM1:10.1 and PM1:10.11 on that carrier, including binder/context side conditions", "status": "blocked by step 1"},
+    {"step": 3, "work": "port the necessary propositional closure only after a carrier bridge is proved: PM1:3.45/Fact, PM1:3.26, PM1:3.27, PM1:3.43, PM1:3.2", "status": "blocked by steps 1-2; Elementary proofs are not reusable by coercion"},
+    {"step": 4, "work": "formalize PM1:10.27 and PM1:10.21, then PM1:10.28", "status": "blocked by steps 1-3 and PM1:9.22"},
+    {"step": 5, "work": "formalize PM1:10.5 and PM1:10.35", "status": "blocked by step 4 and their listed source dependencies"},
+    {"step": 6, "work": "formalize asserted PM1:14.1 and PM1:14.11 from PM1:4.2 plus the already reductional 14.01/14.02", "status": "blocked by step 1; must remain Formula-scoped"},
+    {"step": 7, "work": "derive PM1:14.18 from 10.1, Fact, 10.11, 10.28, 10.35, 14.1, 14.11; derive PM1:14.21 from 14.1, 10.5, 14.11", "status": "blocked by steps 1-6"}
+  ],
+  "first_small_vertical_lot_without_oracle": {
+    "lot": ["PM1:14.01", "PM1:14.02", "PM1:14.03", "PM1:14.04"],
+    "kind": "exact reductional syntax equalities only",
+    "why_closed": "each body is rfl against an existing DescriptionSyntax definition and needs no judgement carrier",
+    "state": "already available through Q296/Q310; no new work is authorized here",
+    "does_not_unlock": ["PM1:14.18", "PM1:14.21"],
+    "next_new_vertical_lot": null,
+    "blocker_for_any_new_assertion_lot": "the source has not yet authorized the exact first-order Formula judgement carrier and its PM1:1.1/1.11 rule signatures"
+  },
+  "conclusion": "The dependency order is concrete but deliberately stops before implementing a new judgement. The present kernel supplies reductional description syntax and elementary-only propositional proofs; it does not supply the source-authorized first-order carrier required to reuse either."
+}
