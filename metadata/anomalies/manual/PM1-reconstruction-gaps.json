@@ -48,6 +48,22 @@
       "lean_impact": {"kind": "pending-documented-relaxation", "status": "not-integrated", "rejected_archive_sha256": "9af547b4f74b"},
       "review_provenance": ["reviews/Q222-review.md", "reviews/Q222-association-audit.md", "aristotle/manifests/Q222.json"],
       "resolution_status": "blocked-awaiting-approved-relaxed-reconstruction"
+    },
+    {
+      "id": "PM1-ANOM-Q222-RELAXED-ARCHIVE-UNCOVERED-CITATIONS",
+      "category": "reconstruction-gap",
+      "pm_locus": {"volume": 1, "printed_pages": [116], "scan_leaves": [138], "items": ["PM1:✱3·22"]},
+      "printed_reading": "✱3·22 prints a chain headed by ✱3·13 (with substitution), Perm, and ✱3·14, then Transp.",
+      "printed_citations": ["PM1:✱3·13", "Perm/PM1:✱1·4", "PM1:✱3·14", "Transp/PM1:✱2·15–17"],
+      "corrected_or_added_reading": "No correction to PM: the terminal relaxed archive bypasses ✱3·13 and ✱3·14 by transposing Perm directly, so it does not cover the printed demonstration events.",
+      "canonical_witness_evidence": {"canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/138", "scan_leaf": 138, "sha256": "c18eb6890dc92335e8df8773cbd46b8e98c2e550cdcb01f91a397bed27e9958b", "hash_kind": "audited leaf derivative"},
+      "digital_witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+      "affected_ast_items_batches": {"items": ["PM1:✱3·22"], "batches": ["Q222"], "ast_effect": "None; the printed AST and the accepted ✱2·32 association relaxation for ✱3·2 remain unchanged."},
+      "strict_audit_status": "terminal archive 7da6232a2f1b6b1f06bf43bd8befa91110149269b181edcaeacd708817c125b5 is rejected for fidelity: ✱3·13 and ✱3·14 are allowed but uncovered printed events.",
+      "minimal_relaxation": [],
+      "lean_impact": {"kind": "rejected-fidelity-continuation", "status": "not-integrated", "archive": "aristotle/results/Q222-relaxed-association-final.tar.gz", "archive_sha256": "7da6232a2f1b6b1f06bf43bd8befa91110149269b181edcaeacd708817c125b5"},
+      "review_provenance": ["aristotle/results/Q222-relaxed-association-final.tar.gz", "aristotle/manifests/Q222.json", "reviews/Q222-association-audit.md"],
+      "resolution_status": "blocked-awaiting-targeted-fidelity-continuation"
     }
   ]
 }

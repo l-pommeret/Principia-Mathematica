@@ -23,6 +23,11 @@ class AnomalyRegistryTests(unittest.TestCase):
         self.assertIn("PM1-ANOM-Q220-ASSOCIATION-GAP", entries)
         self.assertIn("PM1-ANOM-Q221-FIRST-ARCHIVE-FIDELITY-GAP", entries)
         self.assertEqual(entries["PM1-ANOM-Q222-ASSOCIATION-GAP"]["minimal_relaxation"], ["PM1:✱2·32"])
+        self.assertEqual(
+            entries["PM1-ANOM-Q222-RELAXED-ARCHIVE-UNCOVERED-CITATIONS"]
+            ["resolution_status"],
+            "blocked-awaiting-targeted-fidelity-continuation",
+        )
         self.assertGreaterEqual(sum(entry["category"] == "digital-witness-error" for entry in entries.values()), 1)
 
     def test_registry_cannot_drop_an_attested_digital_witness_error(self):

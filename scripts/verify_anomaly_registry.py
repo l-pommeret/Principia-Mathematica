@@ -27,6 +27,7 @@ REQUIRED_MANUAL = {
     "PM1-ANOM-Q220-ASSOCIATION-GAP",
     "PM1-ANOM-Q221-FIRST-ARCHIVE-FIDELITY-GAP",
     "PM1-ANOM-Q222-ASSOCIATION-GAP",
+    "PM1-ANOM-Q222-RELAXED-ARCHIVE-UNCOVERED-CITATIONS",
 }
 
 
@@ -87,6 +88,9 @@ def verify_registry(root: Path = ROOT) -> dict:
         fail("Q222 must record only the approved minimal ✱2·32 relaxation")
     if by_id["PM1-ANOM-Q221-FIRST-ARCHIVE-FIDELITY-GAP"]["resolution_status"] != "resolved-strict-retry":
         fail("Q221 first-archive gap must remain a resolved reconstruction gap")
+    if (by_id["PM1-ANOM-Q222-RELAXED-ARCHIVE-UNCOVERED-CITATIONS"]
+            ["resolution_status"] != "blocked-awaiting-targeted-fidelity-continuation"):
+        fail("Q222 terminal archive bypass must remain blocked pending fidelity repair")
     digital = [entry for entry in entries if entry["category"] == "digital-witness-error"]
     if not digital:
         fail("attested digital witness errors were not backfilled")
