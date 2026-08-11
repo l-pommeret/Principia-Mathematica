@@ -29,10 +29,15 @@
     "PM1:✱2·621"
   ],
   "current_item": null,
+  "integration_blocked": false,
+  "interface_dependencies": [],
   "kind": "pm-isolated-context-bundle",
   "manifest_sha256": "50e48bcb68a0bb79b57f36512d9098c83d82dcf972f86da449980995654c50e5",
   "policy": {
+    "canonical_integration_forbidden": false,
     "grants_no_additional_proof_permission": true,
+    "interface_gated": false,
+    "requires_one_to_one_kernel_remap": false,
     "requires_remote_kernel_check": true,
     "standalone_context_only": true
   },
@@ -51,6 +56,7 @@
     "PM1:✱2·74",
     "PM1:✱2·75"
   ],
+  "source_backfill_required": false,
   "source_bytes": 10861,
   "source_sha256": "340192402f027a8c77042141308937973b6270a69e70cb35f6ef8e430fe3cfcb",
   "sources": [
@@ -75,7 +81,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
       "slice_sha256": "f9b9e4925652ab89c5a6147b7b5c0b08b4ade0aade79f434b73b5a998e822b85",
-      "source_sha256": "aee3a16ffbc61a735c813962647ffb2144f4a52a5f4b68ea83d998a710cb6999"
+      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3"
     },
     {
       "bytes": 106,
@@ -84,7 +90,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
       "slice_sha256": "7c5b46d1fc873982b09fe32e11bcc720acec95c4bbf6db7ed0334a925ddfd36f",
-      "source_sha256": "aee3a16ffbc61a735c813962647ffb2144f4a52a5f4b68ea83d998a710cb6999"
+      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3"
     },
     {
       "bytes": 117,
@@ -93,7 +99,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
       "slice_sha256": "88c51a159a23c0effbd5f581418c18969aa358ce8218284ffd45896db67635c5",
-      "source_sha256": "aee3a16ffbc61a735c813962647ffb2144f4a52a5f4b68ea83d998a710cb6999"
+      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3"
     },
     {
       "bytes": 147,
@@ -102,7 +108,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
       "slice_sha256": "9a044a470aa52406bda039f6b1c0f5cb69319d6960721a6cdea9ebf8df899d54",
-      "source_sha256": "aee3a16ffbc61a735c813962647ffb2144f4a52a5f4b68ea83d998a710cb6999"
+      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3"
     },
     {
       "bytes": 147,
@@ -111,7 +117,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
       "slice_sha256": "d8e5dda8d246bd80a61e16fc8a9dc96af6679fbdba7accfedc2c1ab118b324fe",
-      "source_sha256": "aee3a16ffbc61a735c813962647ffb2144f4a52a5f4b68ea83d998a710cb6999"
+      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3"
     },
     {
       "bytes": 188,
@@ -120,7 +126,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "6e0b9ed6cb91d771a9ca78d346c809df9adde05942d5ae9b3ca194374a5ee29e",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 179,
@@ -129,7 +135,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "7710bc5a169e21b9fb6082d67ea08d7c9f95f442de84dbfb8ddf531b0c5bc11a",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 235,
@@ -138,7 +144,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "b0102b02632be2cdca03271fad48a771de5152c7c702ad9965dd1da03241d93d",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 131,
@@ -147,7 +153,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "ac4881c13cba3cabb8fc305b50f4367f008204643a7266f80eaf92cc1e1d5324",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 217,
@@ -156,7 +162,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "f4a2e56aeaadc61e857e2f8722ab3c3e9bfbfe70d64cc9988f4812515df996cd",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 111,
@@ -165,7 +171,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "0c6ebf8600b2271862ab8894ab1ee35e1ed5221be0c5b0064d4085fb13eadcab",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 201,
@@ -174,7 +180,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "f6904e4d493f9c1e2d512a1e87e1169f0b194b79dfd8caa9a46170a0f88b9bce",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 139,
@@ -183,7 +189,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "61a294a08c5353381d592f31228cf289c05fd937eed0495a591e864c9e3e37ac",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 251,
@@ -192,7 +198,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "86c9a2dab28eb58e9516e648ebc6fea4a49c911f49ef023080da081381446020",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 535,
@@ -201,7 +207,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "cb4408af4cb9b1738b0dbac2f1b5dafd0f449d9797aeaa8f2d75e0f7e0f1a820",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 1265,
@@ -210,7 +216,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "1d3d2c3690d052978ee42b603dc7384576dd21aadb908679bba238a7d1b96e1e",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 324,
@@ -219,7 +225,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "6ece0d6f1eaf1cacfcc107d2b489de836c54fb576132759404db9415d3473077",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 651,
@@ -228,7 +234,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "1846e4cef73098d4468b848198f16e0a9c26ec88928a023f7501abd1e337d5f8",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 291,
@@ -237,7 +243,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "423ea570a9823fcd2524128f42f8823f9d2c95a087bc6a34387490c2cc0966df",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
       "bytes": 219,
@@ -246,7 +252,7 @@
       "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "0b1e5574403caf214520c8964164309a95138d499ef2d08d860dc15e338df8e7",
-      "source_sha256": "572a4eaa6deded76e00c6f385d78d60748fc59462b3ab16f7a07cf136cc4776c"
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     }
   ],
   "target_order": [

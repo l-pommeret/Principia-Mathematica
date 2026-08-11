@@ -866,9 +866,21 @@ end PM.FirstEdition.Volume1.Star3
 -- PM-CONTEXT-ITEM PM1:✱3·45 PM.FirstEdition.Volume1.Star3.star_3_45
 namespace PM.FirstEdition.Volume1.Star3
 
-opaque star_3_45 {Γ} (p q r : PM.Elementary Γ) :
-    ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((p ∧ₚ r) ⊃ₚ (q ∧ₚ r)))
-
+theorem star_3_45 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((p ∧ₚ r) ⊃ₚ (q ∧ₚ r))) := by
+  have printedSyll : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r)))) :=
+    PM.Derivation.detach (star_3_33 p q (∼ₚ r))
+      (star_3_3 (p ⊃ₚ q) (q ⊃ₚ (∼ₚ r)) (p ⊃ₚ (∼ₚ r)))
+  have transp : ⊢ₚ (((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ
+        ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r))))) :=
+    PM.FirstEdition.Volume1.Star2.star_2_16 (q ⊃ₚ (∼ₚ r)) (p ⊃ₚ (∼ₚ r))
+  exact PM.Derivation.detach transp (PM.Derivation.detach printedSyll
+    (PM.Derivation.detach
+      (star_3_33 (p ⊃ₚ q) ((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r)))
+        ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r)))))
+      (star_3_3 ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r))))
+        (((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r)))))
+        ((p ⊃ₚ q) ⊃ₚ ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r))))))))
 
 end PM.FirstEdition.Volume1.Star3
 
