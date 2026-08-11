@@ -14,11 +14,13 @@ class Star42KernelGateTests(unittest.TestCase):
             )
         )
         self.assertEqual(metadata["ci_evidence"], {
-            "commit": "pending", "run": "pending", "conclusion": "pending"
+            "commit": "53590b025db7e7e04f9152c6a7907e415b0d46d5",
+            "run": "31547444055",
+            "conclusion": "success",
         })
         item = metadata["items"][0]
         self.assertEqual(item["id"], "PM1:✱4·2")
-        self.assertEqual(item["formal_status"], "awaiting-ci")
+        self.assertEqual(item["formal_status"], "kernel-checked")
         self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
         self.assertIn("PM.Derivation.star_1_1", item["lean_dependencies"])
         self.assertIn("PM.Derivation.star_1_11", item["lean_dependencies"])

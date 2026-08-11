@@ -27,8 +27,8 @@
       "declaration": "PM.FirstEdition.Volume1.Star4.star_4_2",
       "formal_scope": "p≡p, over an elementary real-variable context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-kernel-candidate",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked-relaxed-printed-gap",
       "printed_dependencies": [
         "Id",
         "PM1:✱3·2"
@@ -52,15 +52,17 @@
           "PM1:✱1·11",
           "PM1:✱2·08"
         ],
-        "printed_but_unused": [],
+        "printed_but_unused": [
+          "Id"
+        ],
         "strict_attempt_evidence": "reviews/Q228-star4-2-kernel-gate.md",
         "editorial_note": "The scan's Id is reconstructed by the accepted theorem ✱2·08. The two identical components are joined by ✱3·2, which is the definitional product underlying equivalence."
       }
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "53590b025db7e7e04f9152c6a7907e415b0d46d5",
+    "run": "31547444055",
+    "conclusion": "success"
   }
 }
