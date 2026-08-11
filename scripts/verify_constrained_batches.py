@@ -69,6 +69,8 @@ def verify(root: Path = ROOT) -> int:
             manifest["context_whitespace_policy"] = spec["context_whitespace_policy"]
         if "interface_syntax" in spec:
             manifest["interface_syntax"] = spec["interface_syntax"]
+        if "local_context_paths" in spec:
+            manifest["local_context_paths"] = spec["local_context_paths"]
         manifest["interface_signature_targets"] = lean
         manifest_path = root / "aristotle/manifests" / f"{stem}.json"
         actual_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))

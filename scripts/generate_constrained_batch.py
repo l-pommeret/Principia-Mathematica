@@ -58,6 +58,8 @@ def generate(batch: str, root: Path = ROOT) -> None:
         manifest["context_whitespace_policy"] = spec["context_whitespace_policy"]
     if "interface_syntax" in spec:
         manifest["interface_syntax"] = spec["interface_syntax"]
+    if "local_context_paths" in spec:
+        manifest["local_context_paths"] = spec["local_context_paths"]
     # Exact audited declaration texts are retained solely to derive future
     # statement-only interfaces when a later batch depends on this prepared
     # target before canonical integration.
