@@ -41,7 +41,10 @@ class AnomalyRegistryTests(unittest.TestCase):
         self.assertFalse(q223["strict"])
         self.assertEqual([use["target"] for use in q223["relaxation_use"]], ["PM1:✱3·27", "PM1:✱3·31"])
         q226_gap = entries["PM1-ANOM-Q226-CONTEXT-POLYMORPHISM-GAP"]
-        self.assertEqual(q226_gap["category"], "context-polymorphism-gap")
+        self.assertEqual(
+            q226_gap["category"],
+            "incomplete-printed-citation/equivalence-packaging-gap",
+        )
         self.assertFalse(q226_gap["strict"])
         self.assertEqual(q226_gap["relaxation_use"][0]["target"], "PM1:✱3·47")
         self.assertGreaterEqual(sum(entry["category"] == "digital-witness-error" for entry in entries.values()), 1)

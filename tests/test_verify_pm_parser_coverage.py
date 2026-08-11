@@ -23,7 +23,8 @@ class ParserCoverageTests(unittest.TestCase):
         )
         self.assertEqual(
             result["counts"]["total"],
-            result["counts"]["object_language"] + len(result["metalinguistic_rules"]),
+            result["counts"]["object_language"] + len(result["metalinguistic_rules"]) +
+            result["counts"]["architecture_gated"],
         )
 
     def test_unparsed_object_item_fails_the_gate(self):

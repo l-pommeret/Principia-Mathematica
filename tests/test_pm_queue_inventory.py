@@ -16,7 +16,8 @@ class PMQueueInventoryTests(unittest.TestCase):
         self.assertGreaterEqual(counts["catalogued_items"], 75)
         self.assertEqual(
             counts["catalogued_items"],
-            counts["object_language_ast_parsed"] + counts["metalinguistic_routes"],
+            counts["object_language_ast_parsed"] + counts["metalinguistic_routes"] +
+            counts["architecture_gated_source_routes"],
         )
         self.assertGreaterEqual(counts["all_proof_skeleton_targets"], 17)
         self.assertGreater(counts["planned_uncatalogued_pm_ids"], 0)

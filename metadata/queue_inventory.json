@@ -6,43 +6,50 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 134,
-    "object_language_ast_parsed": 128,
+    "catalogued_items": 352,
+    "object_language_ast_parsed": 208,
     "metalinguistic_routes": 6,
+    "architecture_gated_source_routes": 138,
     "catalogued_items_with_proof_skeleton": 54,
     "all_proof_skeleton_targets": 54,
-    "catalogued_items_missing_proof_skeleton": 80,
+    "catalogued_items_missing_proof_skeleton": 298,
     "constrained_batches": 14,
-    "complete_batch_artifact_sets": 10,
-    "planned_campaign_questions": 59,
-    "planned_uncatalogued_pm_ids": 93,
+    "complete_batch_artifact_sets": 13,
+    "planned_campaign_questions": 61,
+    "planned_uncatalogued_pm_ids": 13,
     "planned_uncatalogued_non_pm_ids": 1,
-    "catalogued_items_without_campaign_question": 9,
+    "catalogued_items_without_campaign_question": 147,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
     "audit": {
-      "A": 29,
+      "A": 31,
       "A-kernel-checked": 1,
       "blocked-missing-first-order-assertion": 1,
       "blocked-needs-functions-significance-and-higher-order-derivation": 1,
       "prepared-needs-kernel-context": 27
     },
     "aristotle": {
-      "complete": 27,
+      "complete": 34,
       "complete-relaxed-printed-gaps": 1,
       "complete-relaxed-result-not-integrated": 1,
-      "not-submitted": 29,
-      "submitted": 1
+      "missing": 2,
+      "needs-review": 2,
+      "not-submitted": 5,
+      "submitted": 16
     }
   },
   "pm_section_coverage": {
     "catalogued": {
       "PM1:✱1": 11,
+      "PM1:✱10": 49,
+      "PM1:✱11": 61,
+      "PM1:✱12": 2,
       "PM1:✱2": 68,
       "PM1:✱3": 28,
-      "PM1:✱4": 17,
-      "PM1:✱9": 10
+      "PM1:✱4": 61,
+      "PM1:✱5": 36,
+      "PM1:✱9": 36
     },
     "planned": {
       "PM1:✱1": 3,
@@ -53,13 +60,15 @@
       "PM1:✱9": 23
     },
     "planned_but_uncatalogued": {
-      "PM1:✱4": 44,
-      "PM1:✱5": 36,
       "PM1:✱9": 13
     },
     "catalogued_without_campaign_question": {
       "PM1:✱1": 8,
-      "PM1:✱2": 1
+      "PM1:✱10": 49,
+      "PM1:✱11": 61,
+      "PM1:✱12": 2,
+      "PM1:✱2": 1,
+      "PM1:✱9": 26
     }
   },
   "local_scheduler_candidates": [],
@@ -206,46 +215,1502 @@
       "prompt": true
     },
     "Q228": {
-      "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+      "generation_status": "ready",
       "targets": [
         "PM1:✱4·11",
         "PM1:✱4·14",
         "PM1:✱4·15",
         "PM1:✱4·2"
       ],
-      "manifest": false,
-      "context": false,
-      "context_metadata": false,
+      "manifest": true,
+      "context": true,
+      "context_metadata": true,
       "prompt": true
     },
     "Q229": {
-      "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+      "generation_status": "ready",
       "targets": [
         "PM1:✱4·21",
         "PM1:✱4·22",
         "PM1:✱4·24",
         "PM1:✱4·25"
       ],
-      "manifest": false,
-      "context": false,
-      "context_metadata": false,
+      "manifest": true,
+      "context": true,
+      "context_metadata": true,
       "prompt": true
     },
     "Q230": {
-      "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+      "generation_status": "ready",
       "targets": [
         "PM1:✱4·3",
         "PM1:✱4·31",
         "PM1:✱4·32",
         "PM1:✱4·33"
       ],
-      "manifest": false,
-      "context": false,
-      "context_metadata": false,
+      "manifest": true,
+      "context": true,
+      "context_metadata": true,
       "prompt": true
     }
   },
   "catalogued_items": [
+    {
+      "id": "PM1:✱10·01",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·02",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·03",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·1",
+      "kind": "primitive-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·11",
+      "kind": "primitive-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·12",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·121",
+      "kind": "primitive-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·122",
+      "kind": "primitive-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·13",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·14",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·2",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·21",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·22",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·221",
+      "kind": "metatheoretic-principle",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·23",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·24",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·25",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·251",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·252",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·253",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·27",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·271",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·28",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·281",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·29",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·3",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·301",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·31",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·311",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·33",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·34",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·35",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·36",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·37",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·39",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·4",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·41",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·411",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·412",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·413",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·414",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·42",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·43",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·5",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·51",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·52",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·53",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·541",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱10·542",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·01",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·02",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·03",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·04",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·05",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·06",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·07",
+      "kind": "primitive-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·1",
+      "kind": "primitive-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·11",
+      "kind": "primitive-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·12",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·13",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·14",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·2",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·21",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·22",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·23",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·24",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·25",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·26",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·27",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·3",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·31",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·311",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·32",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·33",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·34",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·341",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·35",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·36",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·37",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·371",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·38",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·39",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·391",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·4",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·401",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·41",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·42",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·421",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·43",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·44",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·45",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·46",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·47",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·5",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·51",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·52",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·521",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·53",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·54",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·55",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·56",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·57",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·58",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·59",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·6",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·61",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·62",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·63",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·7",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱11·71",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱12·1",
+      "kind": "primitive-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱12·11",
+      "kind": "primitive-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
     {
       "id": "PM1:✱1·01",
       "kind": "definition",
@@ -2105,7 +3570,7 @@
       "id": "PM1:✱3·44",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "kernel-checked",
       "campaign_questions": [
         "Q226"
       ],
@@ -2128,7 +3593,7 @@
       "id": "PM1:✱3·45",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "kernel-checked",
       "campaign_questions": [
         "Q226"
       ],
@@ -2151,7 +3616,7 @@
       "id": "PM1:✱3·47",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "kernel-checked",
       "campaign_questions": [
         "Q226"
       ],
@@ -2174,7 +3639,7 @@
       "id": "PM1:✱3·48",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "kernel-checked",
       "campaign_questions": [
         "Q226"
       ],
@@ -2276,12 +3741,12 @@
       },
       "proof_skeleton": {
         "batch": "Q228",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-4-11.txt",
         "demonstration_sha256": "f7866ab4fdd8e3e9bbae2a512a8e76e9fea3433c21000db9e8120615ede89cb7",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2345,12 +3810,12 @@
       },
       "proof_skeleton": {
         "batch": "Q228",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-4-14.txt",
         "demonstration_sha256": "8b39064e5ab75b36a8da415b364461ba37f4986a9463615d9aaf7ef9c25c204e",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2368,12 +3833,12 @@
       },
       "proof_skeleton": {
         "batch": "Q228",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-4-15.txt",
         "demonstration_sha256": "54d47720dcad30b65c290ce87273fdc3d8d79877d5b9d8320c14971ca1efa1e2",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2391,12 +3856,12 @@
       },
       "proof_skeleton": {
         "batch": "Q228",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-4-2.txt",
         "demonstration_sha256": "1f7b4ad4f3a148bdc7a557ef360b948088f4bfbb12af77ecf027e81e92007e56",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2414,12 +3879,12 @@
       },
       "proof_skeleton": {
         "batch": "Q229",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-4-21.txt",
         "demonstration_sha256": "197ffa48bca002efc20b4662a3bafdb98e91e356481e2bfecd1dd1e00b7deb74",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2437,12 +3902,12 @@
       },
       "proof_skeleton": {
         "batch": "Q229",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-4-22.txt",
         "demonstration_sha256": "8d6da62e672f95ac71e194053fc8f30dea0ff6c1985788309ab70f016b8d0157",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2460,12 +3925,12 @@
       },
       "proof_skeleton": {
         "batch": "Q229",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-4-24.txt",
         "demonstration_sha256": "cbac6690660ad59ad35a61a8909c667a605f95e7642ce6142fb8445410474d2d",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2483,12 +3948,12 @@
       },
       "proof_skeleton": {
         "batch": "Q229",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-4-25.txt",
         "demonstration_sha256": "b99df3d9f68c9d0d7d6d90b0b512bb2440d5ea2b8c35cfe062ade30d797957a1",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2506,12 +3971,12 @@
       },
       "proof_skeleton": {
         "batch": "Q230",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-4-3.txt",
         "demonstration_sha256": "b131950fb411a910735513d45dd4e30b8de59827cf0c9fa13dd89b552d1cea04",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2529,12 +3994,12 @@
       },
       "proof_skeleton": {
         "batch": "Q230",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-4-31.txt",
         "demonstration_sha256": "4746185389168ca5efa5ac476117e0e3202a28730b599a55cd7ab8831db4102c",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2552,12 +4017,12 @@
       },
       "proof_skeleton": {
         "batch": "Q230",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-4-32.txt",
         "demonstration_sha256": "0623302b5f7a9503b1aaa14b76a18c4991406533c4ffa62df9a737828b2e07eb",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2575,13 +4040,1293 @@
       },
       "proof_skeleton": {
         "batch": "Q230",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-4-33.txt",
         "demonstration_sha256": "7363e8c35e5094fbd607cff7f991db278f4895b44de893ec24cbbbd7f6ce8641",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·34",
+      "kind": "notation-definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q231"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "a244ad82a4adfa75b1f8d02c8691cde766c12a48c8830dcd812e11050efcf968"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·36",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q231"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "b66c863b03fa52674c539a6b3b193c0716e2979635d75b2cfa1fde307dce7a8a"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·37",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q231"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "47ac1b39976aec2311238875ae0fb2fcc3960aa8305b851d5b64aebe2bd0a6cb"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·38",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q231"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "6719c0d0b4c9d0b2d7d23c08446c285db7df196eb6bc3f48156ec794b7698ab8"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·39",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q231"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "ed492cc7d98a038834472d3d62d52d1a7a6fc5b4b71dcf33d515278b3fd6639c"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·4",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q232"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "4a8d529713a048fb86e751964d689ecb4f7a00ead7b3c1babcf2fcdbd797ddfb"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·41",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q232"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "102c70eaa125bd74f8d1c0f3b42be2815e1e20ca3f7d72198bfbea8fbbafd7d5"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·42",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q232"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "57351a237511cb5f5f8bbaeeb362fa44a4b87770bfac1c73c59ff63b54fe6bbd"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·43",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q233"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "d513e33efc123c25a042ef1cb3e90466fd77e8d1a465fc7d34af1c6e742718cb"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·44",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q233"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "fca77767a60190d376f7c1ae27ed2a555edcd2793f15aaa6893d18bcbbd33909"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·45",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q233"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "b44f6599e4f2022c8f15ab251e9b19606f057234e238fcf03db43623bb5b9d3d"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·5",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q234"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "0ed909d2b741ab408b21c51b5d5aacfc312ac07fb421541d78ef85e800ca5568"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·51",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q234"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "3843cd7a3e7a15474433c494254844b3b1c9ce4291d15876f3811c2adfa50e29"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·52",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q234"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "847e30690794a8c33535f270a59a3371beec10e35b90c1fa4f5a456c063b1197"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·53",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q234"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "c33533274512b6699cd9296bd783d71709c863d7ce9764a1679126b53c4736a3"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·54",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q234"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "487e53841bb79903ce920ba750e43d972b7d82dc282e41859410fbe38e059824"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·55",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q235"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "f8357dbc1e559e1ad86c20fcda44149a8d723ad592d1bbfd8dc83bcbea67be0f"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·56",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q235"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "31db175d61eff17bdcf1eeedf0af80afb528d3c98fbb27fce9d23474c674aceb"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·57",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q235"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "46bd7a6fd6fce30b8f3a2330ce6846afdc02aceb2fd6d0a4aa8673919f71803b"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·6",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q235"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "6522cbfc4af72a61fc23efc6b07f7797e60a3005282a7b2b93f4f28c921502e4"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·61",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q236"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "2e1e813aac68961addca07417d9bcf3e5a746109cdea830df22ac6ae4928bdc5"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·62",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q236"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "b645872ba756353d63451540d8a14fab36d8af1aa6449226761fc91260dbce61"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·63",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q236"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "220a2fc5fcaf1b966a48ce8d6c47d1e6050ed2b33658b3b43191ff7bb03539ed"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·64",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q236"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "c4c76b9237d63f548923e146765a06fda8df5087965c110d0c6ae0ddcee97dd5"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·65",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q237"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "df7b425a69e6218dca0457234dde9dcb1ee07c14b1468b7bfb5ef1afa67dfec5"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·66",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q237"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "408cb736acde168baa799f0664d56a67ad47a58d32fcbf8ee975999060e5e49b"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·67",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q237"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "cc858a26f79ba5b72d951214fdc7d426bedc1e3801a170ff65acc9d81342ac4e"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·7",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q238"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "5fabc25b09e1c721da8d95d0d67b3e9b95417a8995863f5edb2223b85abbca77"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·71",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q238"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "d36ae863aec90485e34f92f516bcdac4ef52bc4818ad7c4f13c0c5a51c9af4e3"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·72",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q238"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "e29422e806c6af5eef23b7dae03045ae7886a652601fa1f4b4047693664985e2"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·73",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q239"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "2fca96abcf89a5b92beb30277147bd180c4941649249395b47dccb5ac3f8917d"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·74",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q239"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "bfa1986625ef40704d39441afb62534f5668b34db7e26d826b1d4dfbf919c931"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·76",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q239"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "697121932fadd1caefec6eb510c1cd10f2b67550eef29e3e5223889f4c28ba45"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·77",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q239"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "def416e31bfe645790a63a916ece1d751871ef85bfde50f31d65de7c1bd83bc4"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·78",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q240"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "93d41387d058717a17b8bc54b453916fc0104ed5cf86c7384d8c3430d6f6694c"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·79",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q240"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "9cca4243bfb7fe8c2846daf77c062d88cc44bf391e422b7a67e4d8df53c35d64"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·8",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q240"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "44ccf133e94b99134148286c50d2b2e2dd56ad4601bef098c410d6c3a8ba7613"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·81",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q240"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "56735951a5d6ba955ec0a77615ebf17b8c583d6e8c91bf3c94e54014074c13b4"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·82",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q241"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "e73a82fbda5193eaef5697c8fd309ebe7a0a337ff6a8ac1ec7ccd640bdeb618d"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·83",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q241"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "e2af09550ec0b2c0265e993fa45334ef877383ecd195d455a01dfc0a8735edfa"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·84",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q241"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "205781102f7e156e62238da0ea778e755a32a17b0dc1a80e4dd1e38fa31e4ae2"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·85",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q241"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "8cfdbe29d2f4c4ee550cdcd90d25559422728d9f3584d96c9bd0987e820ef160"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·86",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q242"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "11f46481e6820e1e350adb022da9d209f5e8e2f9b62cd2adc84e6568836ffb82"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱4·87",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q242"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "df84f7c7b4f423d152a30eb17bc197eb9f8fa04960494144cc7d0c54263c3507"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·1",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q242"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "e7e0646e7d3117ee5cc5d0bf72d5e31f0cc2d4fbccc945b032a4ae16ec52b43d"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·11",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q243"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "3b03bf8d5f7eedc8d3392a2508920ec40ddf449e885c9f781aec372bef308623"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·12",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q243"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "a950dfc8d956923381763bae5ffdfed9bff3040a1b940f23f95ff61edb57b177"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·13",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q243"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "39ab2a11184892081d82c04502bb9a1ea39026e3015a76d8064a9d6530e2cabb"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·14",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q243"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "e89b92fc5bc0ecef5c44d7319faf4383dff4dc5941c24f120fc1cd297eefade1"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·15",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q244"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "dbc0f615eaed7bc360b26fc782abd82dbecf6ce4c982cdf86418d966b291eb4f"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·16",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q244"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "a0b7d5b3fffd7697c6b7a3a6687329c00d824f60df6e0e0d2aaf44e9f350320c"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·17",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q244"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "4559953f01e307c159162f8b5cc7409b52452b78ef5feaf19e2f1196cc76e274"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·18",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q245"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "bb86cd35e00dd010c51e99f657852af6fba4ba269b87128da869b70cade5e4d8"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·19",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q245"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "16c3ac04434109195bb137ec52c62ab1bdb03fff2827a49b3471d8e143277dc3"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·21",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q245"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "68b7593f5309944f38c41e06ccb016a45393cd35f8bf552c04ca44efd1d20b81"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·22",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q245"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "42f7c19e307f85203ab7a56b3bd277b8507ea25a699cf554524652eff41869d7"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·23",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q246"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "f0569caef2f050c0ee72e706dd5457c64a39422c566473d8022a5c09bd90d80d"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·24",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q246"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "740cbf502e27446951677b31c069775904b69fc225a73f1fe2a766406daff762"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·25",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q246"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "78938639b414f3551b3e6e3b2491af551b759853e56d89a163455a4ae7b91f25"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·3",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q246"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "a83c1124443f4db919b0bc0e4633d96b6b06f2b6ddbfee6d79191f0312a4ce6f"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·31",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q247"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "98d21e2fc00a287de275ceb64d3dfd6b1b900a9b8ad3d2beb6b13d8200f385cf"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·32",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q247"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "6aa78d4d4db4824b259182419794bcfb7bb6c1886a5b3241d45be76e8dd919fc"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·33",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q247"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "91b01c5215f74c7e2c946ba3c1318c24f65afcf432e1ac269e127dc240754e79"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·35",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q247"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "c25d2e0ff4a05cb37780d1b81938e9c9d138923b61cfbfda2d64023e3807daf6"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·36",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q247"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "ee9b4fc10507ba63d69e9c18ed57e903694b8898502dac632ac7be879767e5f8"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·4",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q248"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "0cee29c03bf180c58c31972c03ac4cee4b40cc1a52d4a1dc4bd8851f69c4b0a3"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·41",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q248"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "2c546b7cd38cf4941aa2930108e6730d45e6926a6f8ba32c6a9bafef52a7f41f"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·42",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q248"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "b03edd7a043fc55ce4171d2b31fc596b83d6f9475d0040397e8b024722843576"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·44",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q248"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "f5475563247939f2317747d502d4d4edd7d5e91aa3e1d074abce66df2b8d80ba"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·5",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q249"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "089fa793540788290369d282639fdc73478753de7cb4c71c34270eb623075fc2"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·501",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q249"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "05083265b12b8f79a47dc9c0cc4ed95ad62f2b3574410b9ad3e4ecf7706049d8"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·53",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q249"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "3a71024e543cc07df9a97a569f7ab81c8c4d0abd4ac9d82fc41e3088c45a469f"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·54",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q249"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "1e9f3e96551228eac3568e5bd6fb48ff276c1e0f703db516cd950d33b6f0f865"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·55",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q250"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "04749dfa18653f9bb7a9203399cd1542a7c3ccbad4aec64b9aded851a6fc53ca"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·6",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q250"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "e7a553c8fbee1d8fb4694874dff1cda85580f466a3ecde4006e514b00ae83d86"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·61",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q250"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "73f762502bbeba452f577f68b1bee786b6ac1a3bef17b6a25d32f9c217584b34"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·62",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q250"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "2f063f2c3213c5ed4ea97f46b035edefd6cba21650d2ee4e4fd99bd89b2efe31"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·63",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q251"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "d87fe8c9f45e417160e519d6470fc4f5e67917a2453a32acb82f3f9aba6f98fd"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·7",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q251"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "3e0fd5dc02652f4b2c1c824ccd8d8efd5f968f9346145a9e16831c7c0745a2cb"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·71",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q251"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "c58ae22bc89e422e4740c8747d951c3168dbb85576460b90950c1a54d4f4f7e0"
+      },
+      "proof_skeleton": {
+        "status": "missing"
       }
     },
     {
@@ -2743,9 +5488,459 @@
       "proof_skeleton": {
         "status": "missing"
       }
+    },
+    {
+      "id": "PM1:✱9·3",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·31",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·32",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·33",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·34",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·35",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·36",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·361",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·37",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·371",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·4",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·401",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·41",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·411",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·42",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·421",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·5",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·501",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·51",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·511",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·52",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·521",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·6",
+      "kind": "type-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·61",
+      "kind": "function-existence",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·62",
+      "kind": "function-existence",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·63",
+      "kind": "function-existence",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
     }
   ],
   "catalogued_not_yet_in_campaign": [
+    "PM1:✱10·01",
+    "PM1:✱10·02",
+    "PM1:✱10·03",
+    "PM1:✱10·1",
+    "PM1:✱10·11",
+    "PM1:✱10·12",
+    "PM1:✱10·121",
+    "PM1:✱10·122",
+    "PM1:✱10·13",
+    "PM1:✱10·14",
+    "PM1:✱10·2",
+    "PM1:✱10·21",
+    "PM1:✱10·22",
+    "PM1:✱10·221",
+    "PM1:✱10·23",
+    "PM1:✱10·24",
+    "PM1:✱10·25",
+    "PM1:✱10·251",
+    "PM1:✱10·252",
+    "PM1:✱10·253",
+    "PM1:✱10·27",
+    "PM1:✱10·271",
+    "PM1:✱10·28",
+    "PM1:✱10·281",
+    "PM1:✱10·29",
+    "PM1:✱10·3",
+    "PM1:✱10·301",
+    "PM1:✱10·31",
+    "PM1:✱10·311",
+    "PM1:✱10·33",
+    "PM1:✱10·34",
+    "PM1:✱10·35",
+    "PM1:✱10·36",
+    "PM1:✱10·37",
+    "PM1:✱10·39",
+    "PM1:✱10·4",
+    "PM1:✱10·41",
+    "PM1:✱10·411",
+    "PM1:✱10·412",
+    "PM1:✱10·413",
+    "PM1:✱10·414",
+    "PM1:✱10·42",
+    "PM1:✱10·43",
+    "PM1:✱10·5",
+    "PM1:✱10·51",
+    "PM1:✱10·52",
+    "PM1:✱10·53",
+    "PM1:✱10·541",
+    "PM1:✱10·542",
+    "PM1:✱11·01",
+    "PM1:✱11·02",
+    "PM1:✱11·03",
+    "PM1:✱11·04",
+    "PM1:✱11·05",
+    "PM1:✱11·06",
+    "PM1:✱11·07",
+    "PM1:✱11·1",
+    "PM1:✱11·11",
+    "PM1:✱11·12",
+    "PM1:✱11·13",
+    "PM1:✱11·14",
+    "PM1:✱11·2",
+    "PM1:✱11·21",
+    "PM1:✱11·22",
+    "PM1:✱11·23",
+    "PM1:✱11·24",
+    "PM1:✱11·25",
+    "PM1:✱11·26",
+    "PM1:✱11·27",
+    "PM1:✱11·3",
+    "PM1:✱11·31",
+    "PM1:✱11·311",
+    "PM1:✱11·32",
+    "PM1:✱11·33",
+    "PM1:✱11·34",
+    "PM1:✱11·341",
+    "PM1:✱11·35",
+    "PM1:✱11·36",
+    "PM1:✱11·37",
+    "PM1:✱11·371",
+    "PM1:✱11·38",
+    "PM1:✱11·39",
+    "PM1:✱11·391",
+    "PM1:✱11·4",
+    "PM1:✱11·401",
+    "PM1:✱11·41",
+    "PM1:✱11·42",
+    "PM1:✱11·421",
+    "PM1:✱11·43",
+    "PM1:✱11·44",
+    "PM1:✱11·45",
+    "PM1:✱11·46",
+    "PM1:✱11·47",
+    "PM1:✱11·5",
+    "PM1:✱11·51",
+    "PM1:✱11·52",
+    "PM1:✱11·521",
+    "PM1:✱11·53",
+    "PM1:✱11·54",
+    "PM1:✱11·55",
+    "PM1:✱11·56",
+    "PM1:✱11·57",
+    "PM1:✱11·58",
+    "PM1:✱11·59",
+    "PM1:✱11·6",
+    "PM1:✱11·61",
+    "PM1:✱11·62",
+    "PM1:✱11·63",
+    "PM1:✱11·7",
+    "PM1:✱11·71",
+    "PM1:✱12·1",
+    "PM1:✱12·11",
     "PM1:✱1·01",
     "PM1:✱1·1",
     "PM1:✱1·11",
@@ -2754,249 +5949,35 @@
     "PM1:✱1·4",
     "PM1:✱1·5",
     "PM1:✱1·6",
-    "PM1:✱2·33"
+    "PM1:✱2·33",
+    "PM1:✱9·3",
+    "PM1:✱9·31",
+    "PM1:✱9·32",
+    "PM1:✱9·33",
+    "PM1:✱9·34",
+    "PM1:✱9·35",
+    "PM1:✱9·36",
+    "PM1:✱9·361",
+    "PM1:✱9·37",
+    "PM1:✱9·371",
+    "PM1:✱9·4",
+    "PM1:✱9·401",
+    "PM1:✱9·41",
+    "PM1:✱9·411",
+    "PM1:✱9·42",
+    "PM1:✱9·421",
+    "PM1:✱9·5",
+    "PM1:✱9·501",
+    "PM1:✱9·51",
+    "PM1:✱9·511",
+    "PM1:✱9·52",
+    "PM1:✱9·521",
+    "PM1:✱9·6",
+    "PM1:✱9·61",
+    "PM1:✱9·62",
+    "PM1:✱9·63"
   ],
   "planned_but_uncatalogued": {
-    "PM1:✱4·34": [
-      "Q231"
-    ],
-    "PM1:✱4·36": [
-      "Q231"
-    ],
-    "PM1:✱4·37": [
-      "Q231"
-    ],
-    "PM1:✱4·38": [
-      "Q231"
-    ],
-    "PM1:✱4·39": [
-      "Q231"
-    ],
-    "PM1:✱4·4": [
-      "Q232"
-    ],
-    "PM1:✱4·41": [
-      "Q232"
-    ],
-    "PM1:✱4·42": [
-      "Q232"
-    ],
-    "PM1:✱4·43": [
-      "Q233"
-    ],
-    "PM1:✱4·44": [
-      "Q233"
-    ],
-    "PM1:✱4·45": [
-      "Q233"
-    ],
-    "PM1:✱4·5": [
-      "Q234"
-    ],
-    "PM1:✱4·51": [
-      "Q234"
-    ],
-    "PM1:✱4·52": [
-      "Q234"
-    ],
-    "PM1:✱4·53": [
-      "Q234"
-    ],
-    "PM1:✱4·54": [
-      "Q234"
-    ],
-    "PM1:✱4·55": [
-      "Q235"
-    ],
-    "PM1:✱4·56": [
-      "Q235"
-    ],
-    "PM1:✱4·57": [
-      "Q235"
-    ],
-    "PM1:✱4·6": [
-      "Q235"
-    ],
-    "PM1:✱4·61": [
-      "Q236"
-    ],
-    "PM1:✱4·62": [
-      "Q236"
-    ],
-    "PM1:✱4·63": [
-      "Q236"
-    ],
-    "PM1:✱4·64": [
-      "Q236"
-    ],
-    "PM1:✱4·65": [
-      "Q237"
-    ],
-    "PM1:✱4·66": [
-      "Q237"
-    ],
-    "PM1:✱4·67": [
-      "Q237"
-    ],
-    "PM1:✱4·7": [
-      "Q238"
-    ],
-    "PM1:✱4·71": [
-      "Q238"
-    ],
-    "PM1:✱4·72": [
-      "Q238"
-    ],
-    "PM1:✱4·73": [
-      "Q239"
-    ],
-    "PM1:✱4·74": [
-      "Q239"
-    ],
-    "PM1:✱4·76": [
-      "Q239"
-    ],
-    "PM1:✱4·77": [
-      "Q239"
-    ],
-    "PM1:✱4·78": [
-      "Q240"
-    ],
-    "PM1:✱4·79": [
-      "Q240"
-    ],
-    "PM1:✱4·8": [
-      "Q240"
-    ],
-    "PM1:✱4·81": [
-      "Q240"
-    ],
-    "PM1:✱4·82": [
-      "Q241"
-    ],
-    "PM1:✱4·83": [
-      "Q241"
-    ],
-    "PM1:✱4·84": [
-      "Q241"
-    ],
-    "PM1:✱4·85": [
-      "Q241"
-    ],
-    "PM1:✱4·86": [
-      "Q242"
-    ],
-    "PM1:✱4·87": [
-      "Q242"
-    ],
-    "PM1:✱5·1": [
-      "Q242"
-    ],
-    "PM1:✱5·11": [
-      "Q243"
-    ],
-    "PM1:✱5·12": [
-      "Q243"
-    ],
-    "PM1:✱5·13": [
-      "Q243"
-    ],
-    "PM1:✱5·14": [
-      "Q243"
-    ],
-    "PM1:✱5·15": [
-      "Q244"
-    ],
-    "PM1:✱5·16": [
-      "Q244"
-    ],
-    "PM1:✱5·17": [
-      "Q244"
-    ],
-    "PM1:✱5·18": [
-      "Q245"
-    ],
-    "PM1:✱5·19": [
-      "Q245"
-    ],
-    "PM1:✱5·21": [
-      "Q245"
-    ],
-    "PM1:✱5·22": [
-      "Q245"
-    ],
-    "PM1:✱5·23": [
-      "Q246"
-    ],
-    "PM1:✱5·24": [
-      "Q246"
-    ],
-    "PM1:✱5·25": [
-      "Q246"
-    ],
-    "PM1:✱5·3": [
-      "Q246"
-    ],
-    "PM1:✱5·31": [
-      "Q247"
-    ],
-    "PM1:✱5·32": [
-      "Q247"
-    ],
-    "PM1:✱5·33": [
-      "Q247"
-    ],
-    "PM1:✱5·35": [
-      "Q247"
-    ],
-    "PM1:✱5·36": [
-      "Q247"
-    ],
-    "PM1:✱5·4": [
-      "Q248"
-    ],
-    "PM1:✱5·41": [
-      "Q248"
-    ],
-    "PM1:✱5·42": [
-      "Q248"
-    ],
-    "PM1:✱5·44": [
-      "Q248"
-    ],
-    "PM1:✱5·5": [
-      "Q249"
-    ],
-    "PM1:✱5·501": [
-      "Q249"
-    ],
-    "PM1:✱5·53": [
-      "Q249"
-    ],
-    "PM1:✱5·54": [
-      "Q249"
-    ],
-    "PM1:✱5·55": [
-      "Q250"
-    ],
-    "PM1:✱5·6": [
-      "Q250"
-    ],
-    "PM1:✱5·61": [
-      "Q250"
-    ],
-    "PM1:✱5·62": [
-      "Q250"
-    ],
-    "PM1:✱5·63": [
-      "Q251"
-    ],
-    "PM1:✱5·7": [
-      "Q251"
-    ],
-    "PM1:✱5·71": [
-      "Q251"
-    ],
     "PM1:✱9·1": [
       "Q258"
     ],

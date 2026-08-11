@@ -146,6 +146,7 @@ def inventory(root: Path = ROOT) -> dict:
     records = []
     object_language = 0
     metalinguistic = 0
+    architecture_gated = 0
     for item in sorted(catalogue, key=lambda value: value["id"]):
         identifier = item["id"]
         record = {
@@ -155,7 +156,10 @@ def inventory(root: Path = ROOT) -> dict:
             "formal_status": item.get("formal_status", "unspecified"),
             "campaign_questions": question_ids_by_item.get(identifier, []),
         }
-        if item["kind"] in METALINGUISTIC_KINDS:
+        if str(item.get("integration_status", "")).startswith("blocked-architecture"):
+            record["ast"] = {"status": "architecture-gated-source-route"}
+            architecture_gated += 1
+        elif item["kind"] in METALINGUISTIC_KINDS:
             record["ast"] = {"status": "metalinguistic-route"}
             metalinguistic += 1
         else:
@@ -207,6 +211,7 @@ def inventory(root: Path = ROOT) -> dict:
             "catalogued_items": len(records),
             "object_language_ast_parsed": object_language,
             "metalinguistic_routes": metalinguistic,
+            "architecture_gated_source_routes": architecture_gated,
             "catalogued_items_with_proof_skeleton": skeleton_catalogued,
             "all_proof_skeleton_targets": len(by_batch_item),
             "catalogued_items_missing_proof_skeleton": len(records) - skeleton_catalogued,
