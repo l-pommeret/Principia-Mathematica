@@ -1,7 +1,130 @@
-{"batch":"PM1-STAR11-Q279","edition":"first","volume":1,"source_range":{"printed_pages":"160–161","scan_leaves":[182,183],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":182,"printed_page":160,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page182-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"26cf5dbcbcae3b8bad11e5e4e744e04fff8ee0050a924f26b17ebaef0e6b8470"},{"scan_leaf":183,"printed_page":161,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page183-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"fd0d74942b7e318c64a90094844bb6160b3c223d87bcafada79c1e3f4c4bc0e2"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱11·25","kind":"derived-proposition","printed":"⊢ : ∼{(∃x, y).φ(x, y)} .≡ .(x, y).∼φ(x, y)  [✱11·22.Transp]","printed_page":160,"scan_leaf":182,"lean_path":"Principia/FirstEdition/Volume1/Star11.lean","declaration":"PM.FirstEdition.Volume1.Star11.star_11_25","formal_scope":"two-variable existential negation equivalence; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-functions-significance","printed_dependencies":["PM1:✱11·22"],"normalized_dependencies":[]},
-{"id":"PM1:✱11·26","kind":"derived-proposition","printed":"⊢ : .(∃x) : (y).φ(x, y) .⊃ : (y) : (∃x).φ(x, y)","printed_page":161,"scan_leaf":183,"lean_path":"Principia/FirstEdition/Volume1/Star11.lean","declaration":"PM.FirstEdition.Volume1.Star11.star_11_26","formal_scope":"quantifier interchange implication; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-functions-significance","printed_dependencies":["PM1:✱10·1·28","PM1:✱10·11·21"],"normalized_dependencies":[]},
-{"id":"PM1:✱11·27","kind":"derived-proposition","printed":"⊢ : .(∃x, y) : (∃z).φ(x, y, z) .≡ : (∃x) : (∃y, z).φ(x, y, z) ≡ : (∃x, y, z).φ(x, y, z)","printed_page":161,"scan_leaf":183,"lean_path":"Principia/FirstEdition/Volume1/Star11.lean","declaration":"PM.FirstEdition.Volume1.Star11.star_11_27","formal_scope":"three-variable existential reassociation; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-functions-significance","printed_dependencies":["PM1:✱4·2","PM1:✱11·03","PM1:✱10·11·281","PM1:✱11·04"],"normalized_dependencies":[]},
-{"id":"PM1:✱11·3","kind":"derived-proposition","printed":"⊢ : .p .⊃ .(x, y).φ(x, y) .≡ : (x, y) : p .⊃ .φ(x, y)","printed_page":161,"scan_leaf":183,"lean_path":"Principia/FirstEdition/Volume1/Star11.lean","declaration":"PM.FirstEdition.Volume1.Star11.star_11_3","formal_scope":"two-variable implication distribution; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":["PM1:✱10·21","PM1:✱10·21·271"],"normalized_dependencies":[]},
-{"id":"PM1:✱11·31","kind":"derived-proposition","printed":"⊢ : .(x, y).φ(x, y) : (x̂, ŷ).ψ(x, y) .≡ : (x, y) φ(x, y).ψ(x, y)","printed_page":161,"scan_leaf":183,"lean_path":"Principia/FirstEdition/Volume1/Star11.lean","declaration":"PM.FirstEdition.Volume1.Star11.star_11_31","formal_scope":"two-variable universal conjunction equivalence; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-functions-significance","printed_dependencies":["PM1:✱10·22","PM1:✱10·22·271"],"normalized_dependencies":[]}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR11-Q279",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "160–161",
+    "scan_leaves": [
+      182,
+      183
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 182,
+        "printed_page": 160,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page182-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "26cf5dbcbcae3b8bad11e5e4e744e04fff8ee0050a924f26b17ebaef0e6b8470"
+      },
+      {
+        "scan_leaf": 183,
+        "printed_page": 161,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page183-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "fd0d74942b7e318c64a90094844bb6160b3c223d87bcafada79c1e3f4c4bc0e2"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱11·25",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∼{(∃x, y).φ(x, y)} .≡ .(x, y).∼φ(x, y)  [✱11·22.Transp]",
+      "printed_page": 160,
+      "scan_leaf": 182,
+      "lean_path": "Principia/FirstEdition/Volume1/Star11.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star11.star_11_25",
+      "formal_scope": "two-variable existential negation equivalence; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-functions-significance",
+      "printed_dependencies": [
+        "PM1:✱11·22"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱11·26",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .(∃x) : (y).φ(x, y) .⊃ : (y) : (∃x).φ(x, y)",
+      "printed_page": 161,
+      "scan_leaf": 183,
+      "lean_path": "Principia/FirstEdition/Volume1/Star11.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star11.star_11_26",
+      "formal_scope": "quantifier interchange implication; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-functions-significance",
+      "printed_dependencies": [
+        "PM1:✱10·1·28",
+        "PM1:✱10·11·21"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱11·27",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .(∃x, y) : (∃z).φ(x, y, z) .≡ : (∃x) : (∃y, z).φ(x, y, z) ≡ : (∃x, y, z).φ(x, y, z)",
+      "printed_page": 161,
+      "scan_leaf": 183,
+      "lean_path": "Principia/FirstEdition/Volume1/Star11.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star11.star_11_27",
+      "formal_scope": "three-variable existential reassociation; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-functions-significance",
+      "printed_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱11·03",
+        "PM1:✱10·11·281",
+        "PM1:✱11·04"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱11·3",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .p .⊃ .(x, y).φ(x, y) .≡ : (x, y) : p .⊃ .φ(x, y)",
+      "printed_page": 161,
+      "scan_leaf": 183,
+      "lean_path": "Principia/FirstEdition/Volume1/Star11.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star11.star_11_3",
+      "formal_scope": "two-variable implication distribution; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [
+        "PM1:✱10·21",
+        "PM1:✱10·21·271"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱11·31",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .(x, y).φ(x, y) : (x̂, ŷ).ψ(x, y) .≡ : (x, y) φ(x, y).ψ(x, y)",
+      "printed_page": 161,
+      "scan_leaf": 183,
+      "lean_path": "Principia/FirstEdition/Volume1/Star11.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star11.star_11_31",
+      "formal_scope": "two-variable universal conjunction equivalence; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-functions-significance",
+      "printed_dependencies": [
+        "PM1:✱10·22",
+        "PM1:✱10·22·271"
+      ],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}
