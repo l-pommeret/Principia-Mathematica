@@ -44,3 +44,15 @@ PM-VERBATIM-END PM3:✱254·144 -/
 /- PM-VERBATIM-BEGIN PM3:✱254·15
 ✱254·15. ⊢ :: Qₚₒ ∈ J . ∃! BʻP . Pₚₒ ∈ J .⊃ : Q ∈ CʻPₛₘ .≡ . CʻQₛ ⊂ CʻPₛₘ
 PM-VERBATIM-END PM3:✱254·15 -/
+/- PM-VERBATIM-BEGIN PM3:✱254·16
+✱254·16. ⊢ : Q smor Q′ .⊃ . P⃗ₛₘʻQ = P⃗ₛₘʻQ′ . Q ∈ CʻPₛₘ .≡ . Q′ ∈ CʻPₛₘ
+PM-VERBATIM-END PM3:✱254·16 -/
+/- PM-VERBATIM-BEGIN PM3:✱254·161
+✱254·161. ⊢ : P smor P′ .⊃ . CʻPₛₘ = CʻP′ₛₘ
+PM-VERBATIM-END PM3:✱254·161 -/
+/- PM-VERBATIM-BEGIN PM3:✱254·162
+✱254·162. ⊢ :: P smor P′ . Q smor Q′ .⊃ : Q ∈ CʻPₛₘ .≡ . Q′ ∈ CʻP′ₛₘ  [✱254·16·161]
+PM-VERBATIM-END PM3:✱254·162 -/
+/- PM-VERBATIM-BEGIN PM3:✱254·163
+✱254·163. ⊢ : R ∈ CʻQₛₘ .⊃ . CʻRₛₘ ⊂ CʻQₛₘ
+PM-VERBATIM-END PM3:✱254·163 -/
