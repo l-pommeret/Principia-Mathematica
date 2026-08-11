@@ -77,3 +77,9 @@ constituent χ(x, u, v, ...), where χ is an elementary function and y, z, ...,
 u, v, ... are either constants or apparent variables, then φx̂ and ψx̂ take
 arguments of the same type.
 PM-VERBATIM-END PM1:✱10·221 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·23
+✱10·23.  ⊢ : .(x).φx⊃p .≡ : (∃x).φx .⊃ .p
+Dem.  By ✱4·2, ✱9·03, ✱9·02, and ✱1·01, ⊢ . Prop.
+In the alternative method, by Transp, ✱10·01, ✱10·21, ✱10·1,
+✱10·11, and ✱10·11·21, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·23 -/
