@@ -82,8 +82,8 @@ theorem star_5_1 {Γ} (p q : PM.Elementary Γ) :
     infer hPair
       (PM.FirstEdition.Volume1.Star3.star_3_47 h h forward backward)
   have hDuplicate : ⊢ₚ (h ⊃ₚ (h ∧ₚ h)) :=
-    infer (PM.FirstEdition.Volume1.Star2.star_2_08 h)
-      (PM.FirstEdition.Volume1.Star3.star_3_2 h h)
+    infer (PM.FirstEdition.Volume1.Star3.star_3_2 h h)
+      (PM.FirstEdition.Volume1.Star2.star_2_43 h (h ∧ₚ h))
   exact compose hDuplicate hLift
 
 end PM.FirstEdition.Volume1.Star5
