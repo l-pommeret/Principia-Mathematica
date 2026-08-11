@@ -273,3 +273,9 @@ PM-VERBATIM-END PM1:✱11·63 -/
 ✱11·7.  ⊢ :: (∃x, y) : φ(x, y) .∨ .φ(y, x) .≡ .(∃x, y).φ(x, y)
 Dem.  By ✱11·41, ✱11·23, and ✱4·25, ⊢ . Prop.
 PM-VERBATIM-END PM1:✱11·7 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·71
+✱11·71.  ⊢ :: (∃z).φz : (∃w).χw : ⊃ :
+φz .⊃z .ψz : χw .⊃w .θw : ≡ : φz.χw .⊃z,w .ψz.θw
+Dem.  By ✱10·1, ✱3·47, ✱11·11·3, ✱10·28, ✱10·35,
+✱10·11·21, and ✱3·47.Comp, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱11·71 -/
