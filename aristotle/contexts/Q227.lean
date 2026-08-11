@@ -856,24 +856,6 @@ theorem star_3_33 {Γ} (p q r : PM.Elementary Γ) :
 
 end PM.FirstEdition.Volume1.Star3
 
--- PM-CONTEXT-ITEM PM1:✱3·34 PM.FirstEdition.Volume1.Star3.star_3_34
-namespace PM.FirstEdition.Volume1.Star3
-
-theorem star_3_34 {Γ} (p q r : PM.Elementary Γ) :
-    ⊢ₚ (((q ⊃ₚ r) ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ r)) := by
-  have minor : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
-    PM.FirstEdition.Volume1.Star2.star_2_05 p q r
-  have major :
-      ⊢ₚ (((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) ⊃ₚ
-            (((q ⊃ₚ r) ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ r))) :=
-    star_3_31 (q ⊃ₚ r) (p ⊃ₚ q) (p ⊃ₚ r)
-  match Γ, p, q, r, minor, major with
-  | [], _, _, _, minor, major => exact PM.Derivation.star_1_1 minor major
-  | (τ :: Δ), _, _, _, minor, major =>
-      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) minor major
-
-end PM.FirstEdition.Volume1.Star3
-
 -- PM-CONTEXT-ITEM PM1:✱3·45 PM.FirstEdition.Volume1.Star3.star_3_45
 namespace PM.FirstEdition.Volume1.Star3
 

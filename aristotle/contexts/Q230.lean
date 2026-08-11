@@ -804,6 +804,26 @@ theorem star_3_27 {Γ} (p q : PM.Elementary Γ) :
 
 end PM.FirstEdition.Volume1.Star3
 
+-- PM-CONTEXT-ITEM PM1:✱3·3 PM.FirstEdition.Volume1.Star3.star_3_3
+namespace PM.FirstEdition.Volume1.Star3
+
+theorem star_3_3 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r))) := by
+  have a := PM.FirstEdition.Volume1.Star2.star_2_15 ((∼ₚ p) ∨ₚ (∼ₚ q)) r
+  have b := PM.FirstEdition.Volume1.Star2.star_2_04 (∼ₚ r) p (∼ₚ q)
+  have c := PM.Derivation.detach
+    (PM.FirstEdition.Volume1.Star2.star_2_17 q r)
+    (PM.FirstEdition.Volume1.Star2.star_2_05 p ((∼ₚ r) ⊃ₚ (∼ₚ q)) (q ⊃ₚ r))
+  have ab := PM.Derivation.detach b
+    (PM.Derivation.detach a (PM.FirstEdition.Volume1.Star2.star_2_06
+      ((p ∧ₚ q) ⊃ₚ r) ((∼ₚ r) ⊃ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))
+      (p ⊃ₚ ((∼ₚ r) ⊃ₚ (∼ₚ q)))))
+  exact PM.Derivation.detach c (PM.Derivation.detach ab
+    (PM.FirstEdition.Volume1.Star2.star_2_06 ((p ∧ₚ q) ⊃ₚ r)
+      (p ⊃ₚ ((∼ₚ r) ⊃ₚ (∼ₚ q))) (p ⊃ₚ (q ⊃ₚ r))))
+
+end PM.FirstEdition.Volume1.Star3
+
 -- PM-CONTEXT-ITEM PM1:✱3·31 PM.FirstEdition.Volume1.Star3.star_3_31
 namespace PM.FirstEdition.Volume1.Star3
 
@@ -829,24 +849,6 @@ theorem star_3_33 {Γ} (p q r : PM.Elementary Γ) :
       ⊢ₚ (((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r))) ⊃ₚ
             (((p ⊃ₚ q) ∧ₚ (q ⊃ₚ r)) ⊃ₚ (p ⊃ₚ r))) :=
     star_3_31 (p ⊃ₚ q) (q ⊃ₚ r) (p ⊃ₚ r)
-  match Γ, p, q, r, minor, major with
-  | [], _, _, _, minor, major => exact PM.Derivation.star_1_1 minor major
-  | (τ :: Δ), _, _, _, minor, major =>
-      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) minor major
-
-end PM.FirstEdition.Volume1.Star3
-
--- PM-CONTEXT-ITEM PM1:✱3·34 PM.FirstEdition.Volume1.Star3.star_3_34
-namespace PM.FirstEdition.Volume1.Star3
-
-theorem star_3_34 {Γ} (p q r : PM.Elementary Γ) :
-    ⊢ₚ (((q ⊃ₚ r) ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ r)) := by
-  have minor : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
-    PM.FirstEdition.Volume1.Star2.star_2_05 p q r
-  have major :
-      ⊢ₚ (((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) ⊃ₚ
-            (((q ⊃ₚ r) ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ r))) :=
-    star_3_31 (q ⊃ₚ r) (p ⊃ₚ q) (p ⊃ₚ r)
   match Γ, p, q, r, minor, major with
   | [], _, _, _, minor, major => exact PM.Derivation.star_1_1 minor major
   | (τ :: Δ), _, _, _, minor, major =>
