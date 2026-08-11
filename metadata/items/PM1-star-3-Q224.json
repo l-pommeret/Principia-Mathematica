@@ -18,13 +18,14 @@
       "scan_leaf": 140,
       "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_33",
-      "formal_scope": "((p⊃q)·(q⊃r))⊃(p⊃r), over an elementary real-variable context",
+      "formal_scope": "((p⊃q)·(q⊃r))⊃(p⊃r), over any elementary context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "prepared",
-      "printed_dependencies": ["PM1:✱2·05", "PM1:✱2·06", "PM1:✱3·31"],
-      "normalized_dependencies": ["PM1:✱1·11", "PM1:✱2·05", "PM1:✱2·06", "PM1:✱3·31"],
-      "dependency_justifications": [{"kind": "metalinguistic-rule-selection", "pm_dependency": "PM1:✱1·11", "evidence": "The compact printed Syll.Imp application is reconstructed by the reviewed detachment convention in the elementary real-variable context."}],
-      "dependency_fidelity": "strict-closure"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": ["PM1:✱1·11", "PM1:✱2·05", "PM1:✱2·06", "PM1:✱3·31"],
+      "lean_dependencies": ["PM.Derivation.star_1_1", "PM.Derivation.star_1_11", "PM.FirstEdition.Volume1.Star2.star_2_06", "PM.FirstEdition.Volume1.Star3.star_3_31"],
+      "normalized_dependencies": ["PM1:✱1·1", "PM1:✱1·11", "PM1:✱2·06", "PM1:✱3·31"],
+      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": ["PM1:✱1·1"], "printed_but_unused": ["PM1:✱2·05"], "strict_attempt_evidence": "reviews/Q224-review.md", "editorial_note": "The generic theorem includes Γ = []; the printed Syll.Imp citation licenses the nonempty ✱1·11 branch, while exactly ✱1·1 closes the otherwise unavailable empty-context detachment branch."},
+      "dependency_fidelity": "relaxed-implicit-detachment-gap"
     },
     {
       "id": "PM1:✱3·34",
@@ -34,13 +35,14 @@
       "scan_leaf": 140,
       "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_34",
-      "formal_scope": "((q⊃r)·(p⊃q))⊃(p⊃r), over an elementary real-variable context",
+      "formal_scope": "((q⊃r)·(p⊃q))⊃(p⊃r), over any elementary context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "prepared",
-      "printed_dependencies": ["PM1:✱2·05", "PM1:✱2·06", "PM1:✱3·31"],
-      "normalized_dependencies": ["PM1:✱1·11", "PM1:✱2·05", "PM1:✱2·06", "PM1:✱3·31"],
-      "dependency_justifications": [{"kind": "metalinguistic-rule-selection", "pm_dependency": "PM1:✱1·11", "evidence": "The compact printed Syll.Imp application is reconstructed by the reviewed detachment convention in the elementary real-variable context."}],
-      "dependency_fidelity": "strict-closure"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": ["PM1:✱1·11", "PM1:✱2·05", "PM1:✱2·06", "PM1:✱3·31"],
+      "lean_dependencies": ["PM.Derivation.star_1_1", "PM.Derivation.star_1_11", "PM.FirstEdition.Volume1.Star2.star_2_05", "PM.FirstEdition.Volume1.Star3.star_3_31"],
+      "normalized_dependencies": ["PM1:✱1·1", "PM1:✱1·11", "PM1:✱2·05", "PM1:✱3·31"],
+      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": ["PM1:✱1·1"], "printed_but_unused": ["PM1:✱2·06"], "strict_attempt_evidence": "reviews/Q224-review.md", "editorial_note": "The generic theorem includes Γ = []; exactly ✱1·1 supplies the empty-context detachment branch, while ✱1·11 remains the printed nonempty branch."},
+      "dependency_fidelity": "relaxed-implicit-detachment-gap"
     },
     {
       "id": "PM1:✱3·35",
@@ -50,14 +52,16 @@
       "scan_leaf": 140,
       "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_35",
-      "formal_scope": "(p·(p⊃q))⊃q, over an elementary real-variable context",
+      "formal_scope": "(p·(p⊃q))⊃q, over any elementary context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "prepared",
-      "printed_dependencies": ["PM1:✱2·27", "PM1:✱3·31"],
-      "normalized_dependencies": ["PM1:✱1·11", "PM1:✱2·27", "PM1:✱3·31"],
-      "dependency_justifications": [{"kind": "metalinguistic-rule-selection", "pm_dependency": "PM1:✱1·11", "evidence": "The compact printed ✱2·27.Imp application is reconstructed by the reviewed detachment convention in the elementary real-variable context."}],
-      "dependency_fidelity": "strict-closure"
+      "formal_status": "kernel-checked",
+      "printed_dependencies": ["PM1:✱1·11", "PM1:✱2·27", "PM1:✱3·31"],
+      "lean_dependencies": ["PM.Derivation.star_1_1", "PM.Derivation.star_1_11", "PM.FirstEdition.Volume1.Star2.star_2_27", "PM.FirstEdition.Volume1.Star3.star_3_31"],
+      "normalized_dependencies": ["PM1:✱1·1", "PM1:✱1·11", "PM1:✱2·27", "PM1:✱3·31"],
+      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": ["PM1:✱1·1"], "printed_but_unused": [], "strict_attempt_evidence": "reviews/Q224-review.md", "editorial_note": "The generic theorem includes Γ = []; exactly ✱1·1 supplies the empty-context detachment branch, while ✱1·11 remains the printed nonempty branch."},
+      "dependency_fidelity": "relaxed-implicit-detachment-gap"
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "aristotle_evidence": {"project_id": "fc351106-569f-461e-97c7-a4d92b0526e2", "task_id": "9bd2293f-da11-48ee-9114-5e582d2ec850", "archive": "aristotle/results/Q224-relax-implicit-detachment-final.tar.gz", "sha256": "2e6011ebad20b3e51bde4945b66ad2696468a92567b298dfd1d01de2c82d6ef5", "strict_rejected_archive_sha256": "f22814d205cad296734ebaa176311acb4dd855afe3a8102f9dedc4080105612b", "audit": "kernel-checked-relaxed-printed-gaps"},
+  "ci_evidence": {"commit": "eff84d63c362fe72e2f2ce0e655b594e579b448e", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31465395073", "conclusion": "success"}
 }

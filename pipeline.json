@@ -955,12 +955,49 @@
         "PM1:✱3·31"
       ],
       "parallel_group": "STAR3-WAVE-1D",
-      "aristotle_status": "not-submitted",
+      "aristotle_status": "complete",
       "constraint_manifest_path": "aristotle/manifests/Q224.json",
       "isolated_context_path": "aristotle/contexts/Q224.lean",
-      "context_validation": "deterministic-static-verifiers-passed",
-      "reconstruction_classification": "strict-parser-generated-pending-remote-kernel-check",
-      "strict": true
+      "context_validation": "remote-kernel-checked",
+      "context_ci_evidence": {
+        "commit": "eff84d63c362fe72e2f2ce0e655b594e579b448e",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31465395073",
+        "conclusion": "success"
+      },
+      "reconstruction_classification": "kernel-checked-relaxed-printed-gaps",
+      "strict": false,
+      "historical_gaps": {
+        "implicit_detachment": {
+          "items": ["PM1:✱3·33", "PM1:✱3·34", "PM1:✱3·35"],
+          "added": "PM1:✱1·1",
+          "uses_per_item": 1,
+          "status": "documented-relaxation"
+        }
+      },
+      "rejected_archives": [{
+        "sha256": "f22814d205cad296734ebaa176311acb4dd855afe3a8102f9dedc4080105612b",
+        "reason": "strict-impossibility-empty-context-detachment",
+        "promoted": false
+      }],
+      "aristotle_task_id": "9bd2293f-da11-48ee-9114-5e582d2ec850",
+      "aristotle_latest_task_id": "9bd2293f-da11-48ee-9114-5e582d2ec850",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
+      "aristotle_project_id": "fc351106-569f-461e-97c7-a4d92b0526e2",
+      "aristotle_request_path": "aristotle/Q224.md",
+      "aristotle_request_sha256": "58bdc1795659d6f81c213382d36d2b1ae90b5af93974c884fe8d691abee9036c",
+      "aristotle_latest_task_name": "# Q224 continuation — autho...",
+      "aristotle_latest_task_created": "12 mins ago",
+      "aristotle_followup_prompt": "aristotle/followups/Q224-relax-implicit-detachment.md",
+      "aristotle_followup_prompt_sha256": "0b6d44ff1ec6c08d15efc42020f7a6d172481c1aa2a107ef40045da50d43f5c7",
+      "aristotle_archive_path": "aristotle/results/Q224-relax-implicit-detachment-final.tar.gz",
+      "aristotle_archive_sha256": "2e6011ebad20b3e51bde4945b66ad2696468a92567b298dfd1d01de2c82d6ef5",
+      "integration_status": "kernel-checked-relaxed-printed-gaps",
+      "integration_ci_evidence": {
+        "commit": "eff84d63c362fe72e2f2ce0e655b594e579b448e",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31465395073",
+        "conclusion": "success"
+      }
     },
     "Q225": {
       "canonical_ids": [
@@ -1003,8 +1040,13 @@
       "source": "PM volume I, first edition, pp. 118–119",
       "prompt_path": "aristotle/Q226.md",
       "audit_path": "reviews/Q226-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "A",
       "lean_scope": "exact PM1 ✱3·44 through ✱3·48 selected sequence",
+      "constraint_manifest_path": "aristotle/manifests/Q226.json",
+      "isolated_context_path": "aristotle/contexts/Q226.lean",
+      "context_validation": "deterministic-static-verifiers-passed",
+      "reconstruction_classification": "strict-parser-generated-pending-remote-kernel-check",
+      "strict": true,
       "depends_on": [
         "PM1:✱1·01",
         "PM1:✱1·6",

@@ -2434,6 +2434,92 @@
       "resolution_status": "resolved-documented-relaxation-kernel-checked"
     },
     {
+      "id": "PM1-ANOM-Q224-IMPLICIT-DETACHMENT-GAP",
+      "category": "incomplete-printed-citation",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          118
+        ],
+        "scan_leaves": [
+          140
+        ],
+        "items": [
+          "PM1:✱3·33",
+          "PM1:✱3·34",
+          "PM1:✱3·35"
+        ]
+      },
+      "printed_reading": "✱3·33 and ✱3·34 cite Syll.Imp; ✱3·35 cites ✱2·27.Imp. Each compact citation requires detachment for the generic elementary context but prints no inference branch for Γ = [].",
+      "printed_citations": [
+        "Syll/PM1:✱2·05–✱2·06",
+        "Imp/PM1:✱3·31",
+        "PM1:✱2·27"
+      ],
+      "corrected_or_added_reading": "No correction to PM: retain the printed ✱1·11 detachment in nonempty real-variable contexts and add exactly primitive ✱1·1 only for the Γ = [] detachment branch at each target.",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/140",
+        "scan_leaf": 140,
+        "sha256": "20db12e87b5e387660bb8d9fd44527b82fe2b63f0c1ea8211e89b8be1dd64ebe",
+        "hash_kind": "audited leaf derivative"
+      },
+      "digital_witnesses": [
+        "PM1-1910-SCAN",
+        "WS-PM1"
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:✱3·33",
+          "PM1:✱3·34",
+          "PM1:✱3·35"
+        ],
+        "batches": [
+          "Q224"
+        ],
+        "ast_effect": "None; the gap is the unprinted empty-context inference branch, not an alteration of the printed formulae or their Syll/Imp alias resolution."
+      },
+      "strict_audit_status": "strict retry archive f22814d205cad296734ebaa176311acb4dd855afe3a8102f9dedc4080105612b is rejected: its generic Γ target cannot close the empty-context detachment branch with ✱1·11 alone.",
+      "minimal_relaxation": [
+        "PM1:✱1·1"
+      ],
+      "strict": false,
+      "relaxation_use": [
+        {
+          "id": "PM1:✱1·1",
+          "uses": 1,
+          "target": "PM1:✱3·33",
+          "purpose": "Γ = [] detachment branch"
+        },
+        {
+          "id": "PM1:✱1·1",
+          "uses": 1,
+          "target": "PM1:✱3·34",
+          "purpose": "Γ = [] detachment branch"
+        },
+        {
+          "id": "PM1:✱1·1",
+          "uses": 1,
+          "target": "PM1:✱3·35",
+          "purpose": "Γ = [] detachment branch"
+        }
+      ],
+      "lean_impact": {
+        "kind": "kernel-checked-relaxed-printed-gaps",
+        "status": "kernel-checked",
+        "accepted_archive": "aristotle/results/Q224-relax-implicit-detachment-final.tar.gz",
+        "accepted_archive_sha256": "2e6011ebad20b3e51bde4945b66ad2696468a92567b298dfd1d01de2c82d6ef5",
+        "strict_rejected_archive_sha256": "f22814d205cad296734ebaa176311acb4dd855afe3a8102f9dedc4080105612b",
+        "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31465395073"
+      },
+      "review_provenance": [
+        "reviews/Q224-review.md",
+        "aristotle/followups/Q224-retry-01.md",
+        "aristotle/followups/Q224-relax-implicit-detachment.md",
+        "aristotle/results/Q224-relax-implicit-detachment-final.tar.gz"
+      ],
+      "resolution_status": "resolved-documented-relaxation-kernel-checked"
+    },
+    {
       "id": "PM1-ANOM-Q227-EQUIVALENCE-PACKAGING-GAP",
       "category": "incomplete-printed-citation",
       "pm_locus": {

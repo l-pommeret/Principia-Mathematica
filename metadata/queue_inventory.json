@@ -13,7 +13,7 @@
     "all_proof_skeleton_targets": 54,
     "catalogued_items_missing_proof_skeleton": 80,
     "constrained_batches": 14,
-    "complete_batch_artifact_sets": 9,
+    "complete_batch_artifact_sets": 10,
     "planned_campaign_questions": 59,
     "planned_uncatalogued_pm_ids": 93,
     "planned_uncatalogued_non_pm_ids": 1,
@@ -22,18 +22,17 @@
   },
   "question_statuses": {
     "audit": {
-      "A": 28,
+      "A": 29,
       "A-kernel-checked": 1,
       "blocked-missing-first-order-assertion": 1,
       "blocked-needs-functions-significance-and-higher-order-derivation": 1,
-      "prepared-needs-kernel-context": 28
+      "prepared-needs-kernel-context": 27
     },
     "aristotle": {
-      "complete": 26,
+      "complete": 27,
       "complete-relaxed-printed-gaps": 1,
       "complete-relaxed-result-not-integrated": 1,
-      "not-submitted": 30,
-      "submitted": 1
+      "not-submitted": 30
     }
   },
   "pm_section_coverage": {
@@ -179,16 +178,16 @@
       "prompt": true
     },
     "Q226": {
-      "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+      "generation_status": "ready",
       "targets": [
         "PM1:✱3·44",
         "PM1:✱3·45",
         "PM1:✱3·47",
         "PM1:✱3·48"
       ],
-      "manifest": false,
-      "context": false,
-      "context_metadata": false,
+      "manifest": true,
+      "context": true,
+      "context_metadata": true,
       "prompt": true
     },
     "Q227": {
@@ -1921,7 +1920,7 @@
       "id": "PM1:✱3·33",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "kernel-checked",
       "campaign_questions": [
         "Q224"
       ],
@@ -1944,7 +1943,7 @@
       "id": "PM1:✱3·34",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "kernel-checked",
       "campaign_questions": [
         "Q224"
       ],
@@ -1967,7 +1966,7 @@
       "id": "PM1:✱3·35",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "kernel-checked",
       "campaign_questions": [
         "Q224"
       ],
@@ -2115,12 +2114,12 @@
       },
       "proof_skeleton": {
         "batch": "Q226",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-3-44.txt",
         "demonstration_sha256": "82d061d1520303b6b20657eba3e8fd8bdaae2e62bae516fb7e740169a289e77d",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2138,12 +2137,12 @@
       },
       "proof_skeleton": {
         "batch": "Q226",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-3-45.txt",
         "demonstration_sha256": "556e0e3d4d7d38049b58e2192d0b4bdd0a8b0bb8d64922f4fac682bba7b4f6f5",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2161,12 +2160,12 @@
       },
       "proof_skeleton": {
         "batch": "Q226",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-3-47.txt",
         "demonstration_sha256": "fb5fc9e22194b0e4f17b630e982bc842e2cc1d04f23000e1b3dffb45bbda830d",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
@@ -2184,12 +2183,12 @@
       },
       "proof_skeleton": {
         "batch": "Q226",
-        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "generation_status": "ready",
         "demonstration_path": "aristotle/demonstrations/PM1-star-3-48.txt",
         "demonstration_sha256": "78a5b8f6185190796099e06aa2be04874584f310bbe8dcc5898172d2ee60206e",
-        "manifest": false,
-        "context": false,
-        "context_metadata": false,
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
         "prompt": true
       }
     },
