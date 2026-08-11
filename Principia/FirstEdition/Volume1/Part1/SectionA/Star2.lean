@@ -2116,20 +2116,13 @@ private theorem syllRuleQ220 {Γ : PM.RealContext} {x y z : PM.Elementary Γ}
     (hxy : ⊢ₚ (x ⊃ₚ y)) (hyz : ⊢ₚ (y ⊃ₚ z)) : ⊢ₚ (x ⊃ₚ z) :=
   PM.Derivation.detach hyz (PM.Derivation.detach hxy (star_2_06 x y z))
 
-/-- The right-associated instance produced literally by the printed citations
-of ✱2·82, before applying PM's tacit associativity conversions. -/
-private theorem star_2_82_rightAssociated {Γ} (p q r s : PM.Elementary Γ) :
-    ⊢ₚ ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ
-      ((p ∨ₚ (∼ₚ r ∨ₚ s)) ⊃ₚ (p ∨ₚ (q ∨ₚ s)))) :=
-  PM.Derivation.detach (star_2_8 q r s)
-    (star_2_81 p (q ∨ₚ r) (∼ₚ r ∨ₚ s) (q ∨ₚ s))
-
 theorem star_2_82 {Γ} (p q r s : PM.Elementary Γ) :
     ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (((p ∨ₚ ∼ₚ r) ∨ₚ s) ⊃ₚ ((p ∨ₚ q) ∨ₚ s))) := by
   have printed :
       ⊢ₚ ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ
         ((p ∨ₚ (∼ₚ r ∨ₚ s)) ⊃ₚ (p ∨ₚ (q ∨ₚ s)))) :=
-    star_2_82_rightAssociated p q r s
+    PM.Derivation.detach (star_2_8 q r s)
+      (star_2_81 p (q ∨ₚ r) (∼ₚ r ∨ₚ s) (q ∨ₚ s))
   have antecedent : ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ (q ∨ₚ r))) :=
     star_2_32 p q r
   have innerAntecedent :

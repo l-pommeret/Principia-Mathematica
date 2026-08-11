@@ -1,7 +1,7 @@
 # Audit Q220 — PM I, ✱2·82–✱2·86 selected sequence
 
 Verdict: **A — accepted mixed strict/documented-relaxed reconstruction,
-integrated and awaiting repository CI**.
+integrated and kernel-checked**.
 
 Source: first edition, vol. I, p. 113, leaf 135; derivative SHA-256
 `0015ae56c8a9c1eedab541d07e06d683c499319b60fa021d088077535f93f2f0`.
@@ -51,6 +51,8 @@ these are supporting metatheoretic evidence, not imported axioms or canonical
 PM proofs.
 
 The accepted bodies, full PM verbatim demonstrations, readings, and dependency
-metadata are integrated with status `awaiting-ci`. Promotion to
-`kernel-checked` requires a successful full repository CI run on the exact
-integration commit.
+metadata were kernel-checked with the full edition at exact commit
+`f7620f005e853910042932bdbc95b603df05e8ab`, GitHub run
+[`31448777861`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31448777861),
+conclusion `success`. The run also compiled every isolated Aristotle context
+and passed the placeholder/unsafe rejection step.
