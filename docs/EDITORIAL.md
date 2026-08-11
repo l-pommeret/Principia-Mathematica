@@ -64,6 +64,11 @@ rejected strict reconstruction was accepted. Add a manual record as part of
 every new reconstruction/source audit before any Aristotle continuation is
 considered.
 
+Provider transport/status failures are retained separately as
+`infrastructure_incidents`. They carry project and task identifiers, the raw
+observed sequence, and an authoritative-status gate; they are explicitly not
+PM or reconstruction anomalies and never justify a duplicate submission.
+
 Witness sigla initially used by the project are:
 
 - `PM1-1910-SCAN`: facsimile of volume I, first edition (canonical witness);

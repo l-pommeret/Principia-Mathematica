@@ -2616,5 +2616,29 @@
       ],
       "resolution_status": "strict-rejected-awaiting-authorized-relaxed-continuation"
     }
+  ],
+  "infrastructure_incidents": [
+    {
+      "id": "PM1-INFRA-Q226-ARISTOTLE-HTTP500",
+      "batch": "Q226",
+      "service": "Aristotle",
+      "project_id": "fdbc74ae-1841-4f2d-9870-eb8c3052934f",
+      "task_id": "a47ef946-ee37-41ee-a964-93ec4133b813",
+      "observed_sequence": [
+        "task entered IN_PROGRESS",
+        "status response was HTML containing </body></html>",
+        "subsequent status request returned HTTP 500",
+        "two status requests were suspended"
+      ],
+      "authoritative_status": "indeterminate",
+      "duplicate_submission": "prohibited pending authoritative active-task confirmation",
+      "classification": "infrastructure-transport-failure",
+      "pm_or_reconstruction_impact": "none established; this is neither a PM source anomaly nor a reconstruction finding",
+      "kernel_impact": "unknown; no archive, Lean result, or CI claim is inferred from the failed transport/status responses",
+      "provenance": [
+        "Aristotle status observations for project fdbc74ae-1841-4f2d-9870-eb8c3052934f"
+      ],
+      "resolution_status": "open-awaiting-authoritative-status"
+    }
   ]
 }

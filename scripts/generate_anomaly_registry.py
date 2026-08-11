@@ -87,14 +87,18 @@ def build(root: Path = ROOT) -> dict:
     manual = root / MANUAL.relative_to(ROOT)
     errata = load_json(root / ERRATA.relative_to(ROOT))
     entries: list[dict] = []
+    infrastructure_incidents: list[dict] = []
     for path in sorted(apparatus.glob("*.json")):
         record = load_json(path)
         if record.get("classification") == "digital-witness-error":
             record["_filename"] = path.name
             entries.append(digital_entry(record))
     for path in sorted(manual.glob("*.json")):
-        entries.extend(load_json(path)["entries"])
+        record = load_json(path)
+        entries.extend(record.get("entries", []))
+        infrastructure_incidents.extend(record.get("infrastructure_incidents", []))
     entries.sort(key=lambda entry: entry["id"])
+    infrastructure_incidents.sort(key=lambda incident: incident["id"])
     return {
         "schema_version": 1,
         "id": "PM1-ANOMALY-REGISTER",
@@ -105,6 +109,7 @@ def build(root: Path = ROOT) -> dict:
             "policy": "Official Errata are linked here and never duplicated as anomaly entries.",
         },
         "entries": entries,
+        "infrastructure_incidents": infrastructure_incidents,
     }
 
 

@@ -41,6 +41,11 @@ class AnomalyRegistryTests(unittest.TestCase):
         self.assertFalse(q223["strict"])
         self.assertEqual([use["target"] for use in q223["relaxation_use"]], ["PM1:✱3·27", "PM1:✱3·31"])
         self.assertGreaterEqual(sum(entry["category"] == "digital-witness-error" for entry in entries.values()), 1)
+        incidents = {incident["id"]: incident for incident in payload["infrastructure_incidents"]}
+        q226 = incidents["PM1-INFRA-Q226-ARISTOTLE-HTTP500"]
+        self.assertEqual(q226["authoritative_status"], "indeterminate")
+        self.assertEqual(q226["classification"], "infrastructure-transport-failure")
+        self.assertIn("neither a PM source anomaly", q226["pm_or_reconstruction_impact"])
 
     def test_registry_cannot_drop_an_attested_digital_witness_error(self):
         with tempfile.TemporaryDirectory() as directory:

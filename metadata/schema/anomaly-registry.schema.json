@@ -4,7 +4,7 @@
   "title": "Principia Mathematica anomaly register",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "id", "official_errata_registry", "entries"],
+  "required": ["schema_version", "id", "official_errata_registry", "entries", "infrastructure_incidents"],
   "properties": {
     "schema_version": {"const": 1},
     "id": {"type": "string"},
@@ -45,6 +45,33 @@
           "resolves": {"type": "array", "items": {"type": "string"}},
           "apparatus_id": {"type": "string"},
           "linked_official_errata_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "infrastructure_incidents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id", "batch", "service", "project_id", "task_id", "observed_sequence",
+          "authoritative_status", "duplicate_submission", "classification",
+          "pm_or_reconstruction_impact", "kernel_impact", "provenance", "resolution_status"
+        ],
+        "properties": {
+          "id": {"type": "string"},
+          "batch": {"type": "string"},
+          "service": {"type": "string"},
+          "project_id": {"type": "string"},
+          "task_id": {"type": "string"},
+          "observed_sequence": {"type": "array", "items": {"type": "string"}},
+          "authoritative_status": {"type": "string"},
+          "duplicate_submission": {"type": "string"},
+          "classification": {"const": "infrastructure-transport-failure"},
+          "pm_or_reconstruction_impact": {"const": "none established; this is neither a PM source anomaly nor a reconstruction finding"},
+          "kernel_impact": {"type": "string"},
+          "provenance": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "resolution_status": {"type": "string"}
         }
       }
     }

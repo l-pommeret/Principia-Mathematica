@@ -47,3 +47,7 @@ reconstruction gaps. The reviewed apparatus is backfilled deterministically
 for every `digital-witness-error`; `anomalies/manual/` holds source-audited
 reconstruction records. Run `scripts/generate_anomaly_registry.py` after a new
 apparatus or manual audit, and `scripts/verify_anomaly_registry.py` in CI.
+
+Transport/status faults from the solver are held in the generated
+`infrastructure_incidents` list, separately from PM anomalies; an indeterminate
+status blocks duplicate submission until an authoritative check resolves it.

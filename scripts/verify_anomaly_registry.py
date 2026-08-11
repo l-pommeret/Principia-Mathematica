@@ -33,6 +33,11 @@ REQUIRED_MANUAL = {
     "PM1-ANOM-Q222-RETRY03-AUDITED-RELAXED-OUTPUT",
     "PM1-ANOM-Q223-IMPLICIT-COMPOSITION-GAP",
 }
+REQUIRED_INFRASTRUCTURE_INCIDENT = {
+    "id", "batch", "service", "project_id", "task_id", "observed_sequence",
+    "authoritative_status", "duplicate_submission", "classification",
+    "pm_or_reconstruction_impact", "kernel_impact", "provenance", "resolution_status",
+}
 
 
 def fail(message: str) -> None:
@@ -61,6 +66,20 @@ def verify_registry(root: Path = ROOT) -> dict:
     entries = actual.get("entries")
     if not isinstance(entries, list) or not entries:
         fail("entries must be a non-empty list")
+    incidents = actual.get("infrastructure_incidents")
+    if not isinstance(incidents, list):
+        fail("infrastructure incidents must be a list")
+    incident_ids = [incident.get("id") for incident in incidents]
+    if len(set(incident_ids)) != len(incident_ids) or any(not identifier for identifier in incident_ids):
+        fail("infrastructure incident IDs must be unique and present")
+    for incident in incidents:
+        missing = REQUIRED_INFRASTRUCTURE_INCIDENT - incident.keys()
+        if missing:
+            fail(f"infrastructure incident {incident.get('id', '<missing>')} lacks {sorted(missing)}")
+        if incident["classification"] != "infrastructure-transport-failure":
+            fail(f"infrastructure incident {incident['id']} has an unknown classification")
+        if incident["pm_or_reconstruction_impact"] != "none established; this is neither a PM source anomaly nor a reconstruction finding":
+            fail(f"infrastructure incident {incident['id']} must not be classified as a PM/reconstruction anomaly")
     identifiers = [entry.get("id") for entry in entries]
     if len(set(identifiers)) != len(identifiers) or any(not identifier for identifier in identifiers):
         fail("anomaly IDs must be unique and present")
