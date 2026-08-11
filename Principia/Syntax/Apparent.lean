@@ -305,6 +305,13 @@ def disjElementaryLeft : Elementary Γ → FirstOrder Γ Δ → FirstOrder Γ Δ
   | proposition, Quantified.sometimes body =>
       sometimes (Apparent.ofElementary proposition ∨ₐ body)
 
+/-- The printed mixed-order implication `p ⊃ P` at an assigned first order.
+It is only the PM abbreviation `∼p ∨ P`; no elementary proposition is
+silently coerced into a first-order proposition. -/
+def impElementaryToFirst (proposition : Elementary Γ) :
+    FirstOrder Γ Δ → FirstOrder Γ Δ :=
+  disjElementaryLeft (Elementary.neg proposition)
+
 /-- ✱9·03 as a kernel reduction. -/
 @[simp] theorem star_9_03_reduction
     (body : Apparent Γ (.elementaryProposition :: Δ))

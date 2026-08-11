@@ -34,6 +34,13 @@ FOUNDATION_PROFILES = {
         "Principia/Deduction/Formation.lean",
         "Principia/Deduction/Formed.lean",
     ),
+    "ordered-first-order-pm1": (
+        "Principia/Syntax/Formula.lean",
+        "Principia/Syntax/Apparent.lean",
+        "Principia/Syntax/Ordered.lean",
+        "Principia/Deduction/System.lean",
+        "Principia/Deduction/Ordered.lean",
+    ),
 }
 
 
