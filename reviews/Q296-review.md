@@ -25,3 +25,21 @@ Required before a subsequent ✱14 item batch:
 Until then, ✱14 is `blocked-architecture-incomplete-symbols-and-scope`; this
 is not a claim of canonical formalization or a reason to relax the printed
 scope notation.
+
+## Reading index beyond the gate
+
+The source has been collated far enough to establish that the boundary is not
+local to ✱14·01:
+
+| Leaves | Printed pages | Loci witnessed | Architectural consequence |
+| --- | --- | --- | --- |
+| 203–204 | 181–182 | Df ✱14·01–·04; ✱14·18, ·21 | Description scope and existence are defined-in-use. |
+| 205 | 183 | ✱14·202, ·204, ·205, ·28, ·13, ·131 | Later identity laws still contain the incomplete description symbol. |
+
+Leaf 204 SHA-256 is
+`23427375b6f708a53ed91a28fb43eed247d732ff4047ee7e88fd779e2a50ad28`;
+leaf 205 SHA-256 is
+`1a8f4bf7870135c6f7047f5f5b6a6ac1fe416f327c28b59766fce3711c3e1a7c`.
+Thus later loci are indexed for future collation but deliberately not
+catalogued as formal PM items while the incomplete-symbol scope gate remains
+unresolved.
