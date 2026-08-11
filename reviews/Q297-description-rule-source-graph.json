@@ -1,0 +1,95 @@
+{
+  "kind": "pm-source-to-kernel-signature-graph",
+  "batch": "Q297",
+  "status": "blocked-no-description-judgement-or-licensed-rule-family",
+  "policy": {
+    "read_only_source_audit": true,
+    "canonical_integration_forbidden": true,
+    "no_oracle_axiom_or_new_primitive": true,
+    "no_lean_or_ci_was_run": true
+  },
+  "sources": [
+    {"id": "PM1:14.02", "path": "aristotle/demonstrations/PM1-star-14-02.txt", "sha256": "4acbeed4e95d42ca186c15ebc9a5a09dc4447b8612a1446f36652319ccebf261", "kind": "definition"},
+    {"id": "PM1:14.03", "path": "aristotle/demonstrations/PM1-star-14-03.txt", "sha256": "2a4c1c8bd991ed1883036637d926ee222354809a4fb18b83ce76bb9cfdee0508", "kind": "definition"},
+    {"id": "PM1:14.04", "path": "aristotle/demonstrations/PM1-star-14-04.txt", "sha256": "0cea9e64d91879175d3cb4314d9930729177f81c85419253df5379f5752df0e6", "kind": "definition"},
+    {"id": "PM1:14.18", "path": "aristotle/demonstrations/PM1-star-14-18.txt", "sha256": "4dac94a39a31d7f959938ba116a8834054713e6d4bdb473913a3de2dc1b0ecab", "kind": "asserted-proposition", "printed_citations": []},
+    {"id": "PM1:14.21", "path": "aristotle/demonstrations/PM1-star-14-21.txt", "sha256": "dc014aa24b7908018360a465cd66a37afe71017d3d71664d914ccdb2afb490b2", "kind": "asserted-proposition", "printed_citations": []}
+  ],
+  "kernel_candidates": [
+    {
+      "declaration": "PM.DescriptionSyntax.Formula.descriptionExists",
+      "signature": "def descriptionExists\n    (vocabulary : DescriptionVocabulary signature sort order)\n    (condition : Formula signature realContext (sort :: apparentContext) order) :\n    Formula signature realContext apparentContext order\n",
+      "signature_sha256": "d0b31d26c6fdf0c8773497990a30a60c52f6ff8969620027a79c23935862aba0",
+      "role": "reductional syntax only"
+    },
+    {
+      "declaration": "PM.DescriptionSyntax.Formula.descriptionScopePair",
+      "signature_sha256": "52810d88c19b1ced9ad8db9b5e5f76b67223602d70f2b25d99c60748ed511e34",
+      "role": "reductional nested scope only"
+    },
+    {
+      "declaration": "PM.DescriptionSyntax.Formula.laterDescriptionOuterScope",
+      "signature_sha256": "29dcdf17823c7de6a95c524f8e67598352b28311c948b814f623da2c7476aee4",
+      "role": "reductional scope order only"
+    },
+    {
+      "declaration": "PM.DescriptionSyntax.Formula.substitute",
+      "signature_sha256": "ea70d4d3e11a7533d0279d35c854f8607cbfff6d5a53518b73d8359bb1f98fed",
+      "role": "capture-safe syntax substitution; no judgement congruence"
+    },
+    {
+      "declaration": "PM.DescriptionSyntax.Formula.weaken",
+      "signature_sha256": "f8e011713db0973e61ff20013298dedf32c17b49ae191021a769638cba86db51",
+      "role": "capture-safe syntax weakening; no quantification rule"
+    },
+    {
+      "declaration": "PM.Derivation.detach",
+      "signature": "theorem detach {Γ : PM.RealContext} {φ ψ : PM.Elementary Γ}\n    (hφ : PM.Derivation φ) (hφψ : PM.Derivation (φ ⊃ₚ ψ)) :\n    PM.Derivation ψ\n",
+      "signature_sha256": "3e4c1e59f685b55e14379f346571c0144316aca4abb82df2ad3b57e3f753a5a9",
+      "role": "kernel-checked detachment, incompatible carrier: Elementary is not DescriptionSyntax.Formula"
+    },
+    {
+      "declaration": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_12",
+      "role": "kernel-checked assigned-order detachment, incompatible carrier: OrderedFormula/Apparent is not DescriptionSyntax.Formula"
+    }
+  ],
+  "edges": [
+    {"source": "PM1:14.02", "operation": "definition-reduction", "kernel": "PM.DescriptionSyntax.Formula.descriptionExists", "result": "available-exact-rfl"},
+    {"source": "PM1:14.03", "operation": "definition-reduction", "kernel": "PM.DescriptionSyntax.Formula.descriptionScopePair", "result": "available-exact-rfl"},
+    {"source": "PM1:14.04", "operation": "definition-reduction", "kernel": "PM.DescriptionSyntax.Formula.laterDescriptionOuterScope", "result": "available-exact-rfl"},
+    {"source": "PM1:14.18", "operation": "detachment", "kernel": "PM.Derivation.detach", "result": "rejected-carrier-mismatch"},
+    {"source": "PM1:14.18", "operation": "universal-instantiation-under-description-scope", "kernel": "PM.DescriptionSyntax.Formula.substitute", "result": "syntax-only-no-derivation-rule"},
+    {"source": "PM1:14.21", "operation": "description-scope-implies-existence", "kernel": "PM.DescriptionSyntax.Formula.descriptionExists", "result": "definition-only-no-derivation-rule"}
+  ],
+  "minimal_missing_rules": [
+    {
+      "id": "description-detachment",
+      "required_by": ["PM1:14.18", "PM1:14.21"],
+      "required_shape": "A detachment theorem whose premises and conclusion are indexed by the same DescriptionSyntax.Formula real/apparent contexts and assigned order.",
+      "not_derivable_from": ["PM.Derivation.detach", "OrderedAssertion.star_9_12"],
+      "reason": "Both existing rules certify different syntax carriers; coercing Formula into either would erase the scoped incomplete symbol.",
+      "source_locus_to_collate": "PM I (1910), printed p. 182 / scan leaf 204: the exact lines ✱14·18 and ✱14·21 have no bracketed citation in the transcribed source."
+    },
+    {
+      "id": "description-universal-instantiation",
+      "required_by": ["PM1:14.18"],
+      "required_shape": "A rule connecting an asserted Formula.always body to the candidate-bound continuation of Formula.descriptionScope, with the de Bruijn lifting/substitution side condition explicit.",
+      "not_derivable_from": ["Formula.substitute", "Formula.weaken"],
+      "reason": "The available operations transform trees only; they provide neither assertion evidence nor an instantiation inference.",
+      "source_locus_to_collate": "PM I (1910), printed p. 182 / scan leaf 204, especially the uncited ✱14·18 assertion and surrounding assertion conventions; no rule number is present in the transcription."
+    },
+    {
+      "id": "description-existence-elimination",
+      "required_by": ["PM1:14.18", "PM1:14.21"],
+      "required_shape": "Rules for the object-language existential and uniqueness matrix produced by descriptionExists, sufficient to introduce/eliminate the scoped description formula without treating a description as Term.",
+      "not_derivable_from": ["descriptionExists", "uniqueMatrix", "Formula.sometimes", "Formula.always"],
+      "reason": "These are syntax constructors/definitions and do not inhabit an assertion judgement.",
+      "source_locus_to_collate": "PM I (1910), printed p. 182 / scan leaf 204 for ✱14·18/·21, plus the precise earlier PM assertion rules cited by a source-critical apparatus if one exists."
+    }
+  ],
+  "conclusion": {
+    "q297_reductional_targets": ["14.02", "14.03", "14.04"],
+    "q297_still_blocked_targets": ["14.18", "14.21"],
+    "safe_next_action": "Collate a source that fixes the three missing rule signatures before naming or declaring any DescriptionDerivation carrier or constructor."
+  }
+}
