@@ -6,19 +6,19 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 696,
-    "object_language_ast_parsed": 323,
+    "catalogued_items": 703,
+    "object_language_ast_parsed": 325,
     "metalinguistic_routes": 8,
-    "architecture_gated_source_routes": 365,
+    "architecture_gated_source_routes": 370,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
-    "catalogued_items_missing_proof_skeleton": 638,
+    "catalogued_items_missing_proof_skeleton": 645,
     "constrained_batches": 16,
     "complete_batch_artifact_sets": 15,
     "planned_campaign_questions": 65,
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
-    "catalogued_items_without_campaign_question": 473,
+    "catalogued_items_without_campaign_question": 480,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
@@ -59,9 +59,9 @@
       "PM2:✱102": 28,
       "PM2:✱103": 20,
       "PM2:✱104": 5,
-      "PM2:✱105": 14,
+      "PM2:✱105": 16,
       "PM3:✱250": 70,
-      "PM3:✱251": 31
+      "PM3:✱251": 36
     },
     "planned": {
       "PM1:✱1": 3,
@@ -91,9 +91,9 @@
       "PM2:✱102": 28,
       "PM2:✱103": 20,
       "PM2:✱104": 5,
-      "PM2:✱105": 14,
+      "PM2:✱105": 16,
       "PM3:✱250": 70,
-      "PM3:✱251": 31
+      "PM3:✱251": 36
     }
   },
   "local_scheduler_candidates": [],
@@ -9093,6 +9093,34 @@
       }
     },
     {
+      "id": "PM2:✱105·1",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "e1e26ba20989d824cc70ee11ff673f92f9684624f4f11aab862f8a3554a87214"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM2:✱105·101",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "cd22573852ece6c553b0999924d49df2651f04fe9996305d49b49a17b1ca2bb9"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
       "id": "PM2:✱105·25",
       "kind": "derived-proposition",
       "source_catalogue": true,
@@ -10488,6 +10516,71 @@
       }
     },
     {
+      "id": "PM3:✱251·33",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·34",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·35",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·351",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱251·36",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
       "id": "PM3:✱251·61",
       "kind": "summary-enunciation",
       "source_catalogue": true,
@@ -10892,6 +10985,8 @@
     "PM2:✱105·021",
     "PM2:✱105·03",
     "PM2:✱105·031",
+    "PM2:✱105·1",
+    "PM2:✱105·101",
     "PM2:✱105·25",
     "PM2:✱105·251",
     "PM2:✱105·26",
@@ -10998,6 +11093,11 @@
     "PM3:✱251·3",
     "PM3:✱251·31",
     "PM3:✱251·32",
+    "PM3:✱251·33",
+    "PM3:✱251·34",
+    "PM3:✱251·35",
+    "PM3:✱251·351",
+    "PM3:✱251·36",
     "PM3:✱251·61",
     "PM3:✱251·621",
     "PM3:✱251·65"
