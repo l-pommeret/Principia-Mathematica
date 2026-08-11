@@ -19,12 +19,16 @@
     "declaration": "PM.FirstEdition.Volume1.Star5.star_5_1",
     "formal_scope": "(p·q)⊃(p≡q), over an elementary real-variable context",
     "source_status": "scan-hash-recorded-and-WS-collated",
-    "formal_status": "awaiting-ci",
-    "integration_status":"canonical-kernel-candidate",
+    "formal_status": "kernel-checked",
+    "integration_status":"canonical-kernel-checked-relaxed-printed-gap",
     "printed_dependencies": ["PM1:✱3·4·22"],
     "lean_dependencies":["PM.Derivation.star_1_1","PM.Derivation.star_1_11","PM.FirstEdition.Volume1.Star2.star_2_05","PM.FirstEdition.Volume1.Star2.star_2_43","PM.FirstEdition.Volume1.Star3.star_3_2","PM.FirstEdition.Volume1.Star3.star_3_3","PM.FirstEdition.Volume1.Star3.star_3_26","PM.FirstEdition.Volume1.Star3.star_3_27","PM.FirstEdition.Volume1.Star3.star_3_47"],
-    "normalized_dependencies":["PM1:✱1·1","PM1:✱1·11","PM1:✱2·05","PM1:✱2·43","PM1:✱3·2","PM1:✱3·3","PM1:✱3·26","PM1:✱3·27","PM1:✱3·47"],
-    "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":["PM1:✱1·1","PM1:✱1·11","PM1:✱2·05","PM1:✱2·43","PM1:✱3·2","PM1:✱3·3","PM1:✱3·26","PM1:✱3·27","PM1:✱3·47"],"printed_but_unused":["PM1:✱3·4","PM1:✱3·22"],"strict_attempt_evidence":"reviews/Q242-star5-1-kernel-gate.md","editorial_note":"The scan prints the abbreviated citation ✱3·4·22. The accepted body reconstructs both directions by simplification, currying, conjunction lifting, and explicit primitive-inference branches; ✱2·43 contracts the duplicated antecedent. It does not claim the printed abbreviations are literal Lean declarations."}
+    "normalized_dependencies":["PM1:✱1·1","PM1:✱1·11","PM1:✱2·05","PM1:✱2·43","PM1:✱3·2","PM1:✱3·26","PM1:✱3·27","PM1:✱3·3","PM1:✱3·47"],
+    "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":["PM1:✱1·1","PM1:✱1·11","PM1:✱2·05","PM1:✱2·43","PM1:✱3·2","PM1:✱3·26","PM1:✱3·27","PM1:✱3·3","PM1:✱3·47"],"printed_but_unused":["PM1:✱3·4·22"],"strict_attempt_evidence":"reviews/Q242-star5-1-kernel-gate.md","editorial_note":"The scan prints the abbreviated citation ✱3·4·22. The accepted body reconstructs both directions by simplification, currying, conjunction lifting, and explicit primitive-inference branches; ✱2·43 contracts the duplicated antecedent. It does not claim the printed abbreviation is a literal Lean declaration."}
   }],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "6d4e3e19f69a626ce4d0ef930d20041f006da8aa",
+    "run": "31548208005",
+    "conclusion": "success"
+  }
 }
