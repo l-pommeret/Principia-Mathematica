@@ -29,3 +29,23 @@ PM-VERBATIM-SUMMARY-END PM1:✱21·3 -/
 /- PM-VERBATIM-SUMMARY-BEGIN PM1:✱21·151
 ✱21·151. ⊢ . (∃φ) . ẑxẑyψ(x,y) = ẑxẑyφ!(x,y)
 PM-VERBATIM-SUMMARY-END PM1:✱21·151 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱21·07
+✱21·07. (R). fR .= . (φ). f{ẑxẑyφ!(x,y)}  Df
+PM-VERBATIM-END PM1:✱21·07 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱21·071
+✱21·071. (∃R). fR .= . (∃φ). f{ẑxẑyφ!(x,y)}  Df
+PM-VERBATIM-END PM1:✱21·071 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱21·072
+✱21·072. [(℩R)(φR)]. f(℩R)(φR) .=: (∃S) : φR .≡ᴿ. R = S : fS  Df
+PM-VERBATIM-END PM1:✱21·072 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱21·08
+✱21·08. f{ẑRẑSψ(R,S)} .=: (∃φ) : ψ(R,S) .≡₍R,S₎. φ!(R,S) : f{φ!(ẑR,ẑS)}  Df
+PM-VERBATIM-END PM1:✱21·08 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱21·081
+✱21·081. P{φ!(ẑR,ẑS)}Q .= . φ!(P,Q)  Df
+PM-VERBATIM-END PM1:✱21·081 -/
