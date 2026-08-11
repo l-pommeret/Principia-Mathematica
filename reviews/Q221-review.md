@@ -1,7 +1,11 @@
 # Audit Q221 — PM I, ✱3·1–✱3·14
 
-Verdict: **CORRIGÉ APRÈS AUDIT INDÉPENDANT — contexte exact à revalider en
-CI**. L'audit Terra a restauré le premier point de portée imprimé de ✱3·12 et
+Verdict: **A — contexte exact kernel-checké, éligible à une tâche Aristotle**.
+La CI Lean
+[`31452200404`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31452200404)
+a réussi sur le commit `85865c7a46df398f2f44ebc6a8c867f756dc7ad9`, y compris
+le contexte isolé Q221. L'audit Terra a restauré le premier point de portée
+imprimé de ✱3·12 et
 montré que le nom historique `Transp` couvre ✱2·15, ·16 et ·17. La whitelist
 de ✱3·13 autorise donc ✱2·15 avec le détachement ✱1·11; celle de ✱3·14 rend
 explicites la double négation ✱2·12, la composition ✱2·06 et le détachement

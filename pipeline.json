@@ -764,7 +764,7 @@
       "source": "PM volume I, first edition, pp. 116–117",
       "prompt_path": "aristotle/Q221.md",
       "audit_path": "reviews/Q221-review.md",
-      "audit_status": "corrected-after-independent-audit-awaiting-ci",
+      "audit_status": "A",
       "lean_scope": "exact PM1 ✱3·1 through ✱3·14 selected sequence",
       "depends_on": [
         "PM1:✱2·11",
@@ -776,9 +776,9 @@
       "constraint_manifest_path": "aristotle/manifests/Q221.json",
       "isolated_context_path": "aristotle/contexts/Q221.lean",
       "context_ci_evidence": {
-        "commit": "pending",
-        "run": "pending",
-        "conclusion": "pending"
+        "commit": "85865c7a46df398f2f44ebc6a8c867f756dc7ad9",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31452200404",
+        "conclusion": "success"
       }
     },
     "Q222": {
