@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+from urllib.error import HTTPError, URLError
 import urllib.request
 
 
@@ -17,8 +18,21 @@ PM_ITEM = re.compile(r"[✱*]\s*(\d+)\s*[·.]\s*(\d+)")
 
 
 def candidates(url: str, volume: int) -> dict:
-    with urllib.request.urlopen(url, timeout=30) as response:
-        text = response.read().decode("utf-8", errors="replace")
+    request = urllib.request.Request(
+        url, headers={"User-Agent": "PrincipiaMathematicaSourceIndexer/1.0"}
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            text = response.read().decode("utf-8", errors="replace")
+    except (HTTPError, URLError) as error:
+        return {
+            "kind": "pm-source-harvest-candidates",
+            "volume": volume,
+            "source_url": url,
+            "candidate_ids": [],
+            "status": "source-unavailable-needs-facsimile-route",
+            "error": str(error),
+        }
     numbers = sorted({f"PM{volume}:✱{star}·{suffix}"
                       for star, suffix in PM_ITEM.findall(text)})
     return {
