@@ -155,3 +155,12 @@ PM-VERBATIM-END PM1:✱20·01 -/
 /- PM-VERBATIM-BEGIN PM1:✱20·02
 ✱20·02. x ε (φ!ẑ) .= . φ!x  Df
 PM-VERBATIM-END PM1:✱20·02 -/
+/- PM-VERBATIM-BEGIN PM1:✱20·03
+✱20·03. Cls = ẑ((∃φ). α = ẑ(φ!z))  Df
+PM-VERBATIM-END PM1:✱20·03 -/
+/- PM-VERBATIM-BEGIN PM1:✱20·15
+✱20·15. ⊢ : ψx .≡ₓ. χx : ≡ : ẑ(ψz) = ẑ(χz)
+PM-VERBATIM-END PM1:✱20·15 -/
+/- PM-VERBATIM-BEGIN PM1:✱20·31
+✱20·31. ⊢ : ẑ(ψz) = ẑ(χz) .≡ : x ε ẑ(ψz) .≡ₓ. x ε ẑ(χz)
+PM-VERBATIM-END PM1:✱20·31 -/
