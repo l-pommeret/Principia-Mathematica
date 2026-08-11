@@ -123,6 +123,21 @@ PM-VERBATIM-END PM3:✱253·471 -/
 /- PM-VERBATIM-BEGIN PM3:✱253·5
 ✱253·5.  ⊢ : P ∈ Ω .⊃ . P₁;P = P ⌞ DʻP
 PM-VERBATIM-END PM3:✱253·5 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·501
+✱253·501.  ⊢ : P ∈ Ω .⊃ . P₁;P = P ⌞ CʻP₁
+PM-VERBATIM-END PM3:✱253·501 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·502
+✱253·502.  ⊢ : P ∈ Ω .⊃ . P ⌞ CʻP₁ smor P ⌞ DʻP
+PM-VERBATIM-END PM3:✱253·502 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·503
+✱253·503.  ⊢ : P ∈ Ω . CʻP₁ = CʻP .⊃ . P ⌞ CʻP smor P ⌞ DʻP  [✱253·502]
+PM-VERBATIM-END PM3:✱253·503 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·51
+✱253·51.  ⊢ : P ∈ Ω . CʻP₁ = CʻP . E! BʻP .⊃ . NrʻPₛ = NrʻP
+PM-VERBATIM-END PM3:✱253·51 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·511
+✱253·511.  ⊢ : P ∈ Ω . CʻP₁ = CʻP . ∼E! BʻP .⊃ . NrʻPₛ = NrʻP + i . NrʻP ⌞ CʻP = NrʻP
+PM-VERBATIM-END PM3:✱253·511 -/
 /- PM-VERBATIM-BEGIN PM3:✱253·17
 ✱253·17.  ⊢ : P ∈ Ω .⊃ . Pₛ ⌞ DʻPₛ = P ⌞ P⃗;P ⌞ CʻP
 PM-VERBATIM-END PM3:✱253·17 -/
