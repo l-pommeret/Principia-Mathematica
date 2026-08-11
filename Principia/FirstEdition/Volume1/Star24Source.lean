@@ -99,3 +99,48 @@ PM-VERBATIM-END PM1:✱24·36 -/
 /- PM-VERBATIM-BEGIN PM1:✱24·37
 ✱24·37. ⊢ : α ∩ β = Λ .≡ : x ε α . y ε β .⊃ₓ,ᵧ . x ≠ y
 PM-VERBATIM-END PM1:✱24·37 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·38
+✱24·38. ⊢ : α ∩ β = Λ .⊃ : α ≠ β .∨ . α = Λ . β = Λ
+PM-VERBATIM-END PM1:✱24·38 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·39
+✱24·39. ⊢ : α ∩ β = Λ .≡ : x ε α .⊃ₓ . x ∼ε β  [✱24·311.*22·35]
+PM-VERBATIM-END PM1:✱24·39 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·4
+✱24·4. ⊢ : α ∩ β = Λ .≡ . (α ∪ β) − α = β .≡ . (α ∪ β) − β = α
+PM-VERBATIM-END PM1:✱24·4 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·401
+✱24·401. ⊢ : β ⊂ α .⊃ . (β ∪ γ) − α = γ − α
+PM-VERBATIM-END PM1:✱24·401 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·402
+✱24·402. ⊢ : α ∩ β = Λ . ξ ⊂ α . η ⊂ β .⊃ . ξ ∩ η = Λ
+PM-VERBATIM-END PM1:✱24·402 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·41
+✱24·41. ⊢ . α = (α ∩ β) ∪ (α − β)
+PM-VERBATIM-END PM1:✱24·41 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·411
+✱24·411. ⊢ : β ⊂ α .⊃ . α = β ∪ (α − β)
+PM-VERBATIM-END PM1:✱24·411 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·412
+✱24·412. ⊢ : β ⊂ α . γ ⊂ β .⊃ . (α − β) ∪ (β − γ) = α − γ
+PM-VERBATIM-END PM1:✱24·412 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·42
+✱24·42. ⊢ : α ∩ β ⊂ γ . α − β ⊂ γ .≡ . α ⊂ γ
+PM-VERBATIM-END PM1:✱24·42 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·43
+✱24·43. ⊢ : α − β ⊂ γ .≡ . α ⊂ β ∪ γ
+PM-VERBATIM-END PM1:✱24·43 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·431
+✱24·431. ⊢ . (α ∪ γ) ∩ (β ∪ −γ) = (α ∩ γ) ∪ (α − γ) ∪ (β ∩ γ)
+PM-VERBATIM-END PM1:✱24·431 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·432
+✱24·432. ⊢ . (α − γ) ∪ (β ∩ γ) = (α ∩ β) ∪ (α − γ) ∪ (β ∩ γ)
+PM-VERBATIM-END PM1:✱24·432 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·44
+✱24·44. ⊢ . (α ∪ γ) ∩ (β ∪ −γ) = (α ∩ −γ) ∪ (β ∩ γ)  [✱24·431·432]
+PM-VERBATIM-END PM1:✱24·44 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·45
+✱24·45. ⊢ : (α ∩ γ) ∪ (β − γ) = Λ .≡ . β ⊂ γ . γ ⊂ −α
+PM-VERBATIM-END PM1:✱24·45 -/
+/- PM-VERBATIM-BEGIN PM1:✱24·46
+✱24·46. ⊢ : (α ∩ γ) ∪ (β − γ) = Λ .⊃ . α ∩ β = Λ
+PM-VERBATIM-END PM1:✱24·46 -/
