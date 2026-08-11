@@ -95,3 +95,19 @@ PM-VERBATIM-END PM3:✱251·171 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·2
 ✱251·2.  ⊢ : P ∈ Rel² excl ∩ Bord . CʻP ⊂ Bord .⊃ . ΣʻP ∈ Bord
 PM-VERBATIM-END PM3:✱251·2 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·21
+✱251·21.  ⊢ : P ∈ Rel² excl ∩ Ω . CʻP ⊂ Ω .⊃ . ΣʻP ∈ Ω  [✱204·52 . ✱251·2]
+PM-VERBATIM-END PM3:✱251·21 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·211
+✱251·211.  ⊢ : NrʻP ∈ NO . NrʻʻCʻP ⊂ NO .⊃ . Σ NrʻP ∈ NO
+PM-VERBATIM-END PM3:✱251·211 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·22
+✱251·22.  ⊢ : P, Q ∈ Bord . CʻP ∩ CʻQ = Λ .⊃ . P ↥ Q ∈ Bord
+PM-VERBATIM-END PM3:✱251·22 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·23
+✱251·23.  ⊢ : P, Q ∈ Ω . CʻP ∩ CʻQ = Λ .⊃ . P ↥ Q ∈ Ω  [✱204·5 . ✱251·22]
+PM-VERBATIM-END PM3:✱251·23 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·24
+✱251·24.  ⊢ : α, β ∈ NO .⊃ . α + β ∈ NO
+PM-VERBATIM-END PM3:✱251·24 -/
