@@ -166,3 +166,60 @@ Dem. (continues on printed p. 7)
   ⊢ . ✱250·1 . ✱71·1 .⊃ ⊢ :: P ∈ Bord . minₚ ∈ 1 → Cls .⊃ :: x, y ∈ CʻP .⊃ :
     (ιʻx ∪ ιʻy) − P⁎ʻʻ(ιʻx ∪ ιʻy) ∈ 1  [✱54·4]  (1)
 PM-VERBATIM-END PM3:✱250·111 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·112
+✱250·112.  ⊢ : P ∈ connex ∩ Bord .≡ . E!! minₚʻʻCl exʻCʻP
+PM-VERBATIM-END PM3:✱250·112 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·113
+✱250·113.  ⊢ . connex ∩ Bord = Ω
+PM-VERBATIM-END PM3:✱250·113 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·12
+✱250·12.  ⊢ : P ∈ Ω .≡ . P ∈ Ser ∩ Bord  [(*250·02)]
+PM-VERBATIM-END PM3:✱250·12 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·121
+✱250·121.  ⊢ :: P ∈ Ω .≡ : P ∈ Ser : α ⊂ CʻP . ∃! α .⊃ₐ . E! minₚʻα :
+  ≡ : P ∈ Ser : ∃! α ∩ CʻP .⊃ₐ . E! minₚʻα  [✱250·12·111]
+PM-VERBATIM-END PM3:✱250·121 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·122
+✱250·122.  ⊢ :: P ∈ Ω .≡ : P ∈ Ser : ∃! CʻP ∩ pʻPʻʻ(α ∩ CʻP) .⊃ₐ . E! seqₚʻα
+PM-VERBATIM-END PM3:✱250·122 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·123
+✱250·123.  ⊢ :: P ∈ Ω − ιʻΛ .≡ : P ∈ Ser : ∃! pʻPʻʻ(α ∩ CʻP) .⊃ₐ . E! seqₚʻα
+PM-VERBATIM-END PM3:✱250·123 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·124
+✱250·124.  ⊢ : P ∈ Ω .≡ . P ∈ Ser . sectʻP − ιʻCʻP ⊂ ∃ʻseqₚ
+PM-VERBATIM-END PM3:✱250·124 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·125
+✱250·125.  ⊢ : P ∈ Ω .≡ . E!! minₚʻʻCl exʻCʻP  [✱250·112·113]
+PM-VERBATIM-END PM3:✱250·125 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·126
+✱250·126.  ⊢ : P ∈ Ω . E! maxₚʻα .∼ E! seqₚʻα .⊃ . BʻP ∈ α . BʻP = maxₚʻα
+PM-VERBATIM-END PM3:✱250·126 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·13
+✱250·13.  ⊢ : P ∈ Ω − ιʻΛ .⊃ . E! BʻP
+PM-VERBATIM-END PM3:✱250·13 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·131
+✱250·131.  ⊢ :: P ∈ Ω .⊃ : ∃! P .≡ . E! BʻP
+PM-VERBATIM-END PM3:✱250·131 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·14
+✱250·14.  ⊢ : P ∈ Bord .⊃ . RlʻP ⊂ Bord
+PM-VERBATIM-END PM3:✱250·14 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·141
+✱250·141.  ⊢ : P ∈ Ω .⊃ . P ▷ α ∈ Ω  [✱250·14 . ✱204·4]
+PM-VERBATIM-END PM3:✱250·141 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·142
+✱250·142.  ⊢ : P ∈ Bord .⊃ . RlʻP ∩ connex ⊂ Ω
+PM-VERBATIM-END PM3:✱250·142 -/
