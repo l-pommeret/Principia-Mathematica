@@ -34,7 +34,7 @@ def audit(source: str) -> None:
         raise ValueError("incomplete elementary-formation toy: " + ", ".join(missing))
 
     constructors = re.findall(r"^\s*\|\s+(\w+)", _formation_block(code), re.MULTILINE)
-    if constructors != ["constant", "real", "star_1_7", "star_1_71", "star_1_72"]:
+    if constructors != ["constant", "realVar", "star_1_7", "star_1_71", "star_1_72"]:
         raise ValueError(f"unexpected Formation constructors: {constructors}")
 
     forbidden = {

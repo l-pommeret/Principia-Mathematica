@@ -32,7 +32,7 @@ inductive Formation : {Γ : PM.RealContext} → PM.Elementary Γ → Prop where
   | constant (name : String) : Formation (.constant name)
   /-- A real propositional variable is admitted by the primitive idea of an
   elementary propositional function. -/
-  | real (variable : PM.RealVar Γ .elementaryProposition) : Formation (.var variable)
+  | realVar (x : PM.RealVar Γ .elementaryProposition) : Formation (.var x)
   /-- ✱1·7. Negation preserves elementary formation. -/
   | star_1_7 (hp : Formation p) : Formation (∼ₚ p)
   /-- ✱1·71. Disjunction of two definite elementary propositions. -/
