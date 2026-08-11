@@ -23,3 +23,23 @@ PM-VERBATIM-END PM3:STAR251-SUMMARY-P18 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·61
 ✱251·61.  ⊢ :: P, Q ∈ Rel² excl . CʻP ⊂ Ω .⊃ : ∃! (P smor Q) ∩ Rlʻsmor .≡ . P smor smor Q
 PM-VERBATIM-END PM3:✱251·61 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·621
+✱251·621.  ⊢ : CʻP ⊂ Ω . ∃! (P smor Q) ∩ Rlʻsmor .⊃ . Σ NrʻP = Σ NrʻQ . Π NrʻP = Π NrʻQ
+PM-VERBATIM-END PM3:✱251·621 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·65
+✱251·65.  ⊢ : α ∈ NO − ιʻΛ . β ∈ NR . P ∈ β . CʻP ⊂ α .⊃ . Σ NrʻP = β × α . Π NrʻP = α expᵣ β
+PM-VERBATIM-END PM3:✱251·65 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·01
+✱251·01.  NO = NrʻʻΩ  Df
+PM-VERBATIM-END PM3:✱251·01 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·1
+✱251·1.  ⊢ : α ∈ NO .≡ . (∃P) . P ∈ Ω . α = NrʻP  [(*251·01)]
+PM-VERBATIM-END PM3:✱251·1 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·11
+✱251·11.  ⊢ : P ∈ Bord . P smor Q .⊃ . Q ∈ Bord
+PM-VERBATIM-END PM3:✱251·11 -/
