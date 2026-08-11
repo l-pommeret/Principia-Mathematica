@@ -29,3 +29,18 @@ PM-VERBATIM-END PM1:✱14·28 -/
 /- PM-VERBATIM-BEGIN PM1:✱14·13
 ✱14·13. ⊢ : a = (℩x)(φx) .≡ . (℩x)(φx) = a
 PM-VERBATIM-END PM1:✱14·13 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·1
+✱14·1. ⊢ : [(℩x)(φx)] . ψ(℩x)(φx) .≡ : (∃b) : φx .≡ₓ. x = b : ψb  [✱4·2.(*14·01)]
+PM-VERBATIM-END PM1:✱14·1 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·101
+✱14·101. ⊢ : ψ(℩x)(φx) .≡ : (∃b) : φx .≡ₓ. x = b : ψb  [✱14·1]
+PM-VERBATIM-END PM1:✱14·101 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·11
+✱14·11. ⊢ : E!(℩x)(φx) .≡ : (∃b) : φx .≡ₓ. x = b  [✱4·2.(*14·02)]
+PM-VERBATIM-END PM1:✱14·11 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·111
+✱14·111. ⊢ : [(℩x)(ψx)] . f{(℩x)(φx), (℩x)(ψx)} .≡ : (∃b,c) : φx .≡ₓ. x = b : ψx .≡ₓ. x = c : f(b,c)
+PM-VERBATIM-END PM1:✱14·111 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·112
+✱14·112. ⊢ : f{(℩x)(φx), (℩x)(ψx)} .≡ : (∃b,c) : φx .≡ₓ. x = b : ψx .≡ₓ. x = c : f(b,c)
+PM-VERBATIM-END PM1:✱14·112 -/
