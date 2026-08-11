@@ -26,3 +26,19 @@ PM-VERBATIM-END PM3:✱252·372 -/
 /- PM-VERBATIM-BEGIN PM3:✱252·4
 ✱252·4.  ⊢ : P ∈ Ω . λ ⊂ sectʻP . ∃! λ .⊃ . pʻλ ∈ λ
 PM-VERBATIM-END PM3:✱252·4 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱252·1
+✱252·1.  ⊢ : P ∈ Ω . α ∈ sectʻP − ιʻCʻP .⊃ . E! seqₚʻα  [✱250·124]
+PM-VERBATIM-END PM3:✱252·1 -/
+/- PM-VERBATIM-BEGIN PM3:✱252·11
+✱252·11.  ⊢ : P ∈ Ω .⊃ . sectʻP − ιʻCʻP = sectʻP ∩ ∃ʻseqₚ
+PM-VERBATIM-END PM3:✱252·11 -/
+/- PM-VERBATIM-BEGIN PM3:✱252·12
+✱252·12.  ⊢ : P ∈ Ω .⊃ . sectʻP − ιʻCʻP = DʻPₑ − ιʻCʻP = P⃗ʻʻCʻP . sectʻP = P⃗ʻʻCʻP ∪ ιʻCʻP
+PM-VERBATIM-END PM3:✱252·12 -/
+/- PM-VERBATIM-BEGIN PM3:✱252·13
+✱252·13.  ⊢ : P ∈ Ω . E! BʻP .⊃ . sectʻP − ιʻCʻP = DʻPₑ = P⃗ʻʻCʻP . sectʻP = DʻPₑ ∪ ιʻCʻP
+PM-VERBATIM-END PM3:✱252·13 -/
+/- PM-VERBATIM-BEGIN PM3:✱252·14
+✱252·14.  ⊢ : P ∈ Ω . ∼E! BʻP .⊃ . sectʻP = DʻPₑ = P⃗ʻʻCʻP ∪ ιʻCʻP  [✱250·21 . ✱211·361 . ✱252·12]
+PM-VERBATIM-END PM3:✱252·14 -/
