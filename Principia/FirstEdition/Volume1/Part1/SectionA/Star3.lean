@@ -235,7 +235,7 @@ theorem star_3_27 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ∧ₚ q) ⊃ₚ q) :=
   PM.Derivation.detach (star_3_22 p q)
     (PM.Derivation.detach (star_3_26 q p)
-      (PM.FirstEdition.Volume1.Star1.star_1_6 (∼ₚ (p ∧ₚ q)) (q ∧ₚ p) q))
+      (PM.Derivation.star_1_6 (∼ₚ (p ∧ₚ q)) (q ∧ₚ p) q))
 
 theorem star_3_3 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r))) := by
@@ -260,7 +260,7 @@ theorem star_3_31 {Γ} (p q r : PM.Elementary Γ) :
     (PM.FirstEdition.Volume1.Star2.star_2_31 (∼ₚ p) (∼ₚ q) r)
     (PM.Derivation.detach
       (PM.FirstEdition.Volume1.Star2.star_2_53 ((∼ₚ p) ∨ₚ (∼ₚ q)) r)
-      (PM.FirstEdition.Volume1.Star1.star_1_6 (∼ₚ (p ⊃ₚ (q ⊃ₚ r)))
+      (PM.Derivation.star_1_6 (∼ₚ (p ⊃ₚ (q ⊃ₚ r)))
         (((∼ₚ p) ∨ₚ (∼ₚ q)) ∨ₚ r) ((p ∧ₚ q) ⊃ₚ r)))
 
 /- PM-VERBATIM-BEGIN PM1:✱3·26
