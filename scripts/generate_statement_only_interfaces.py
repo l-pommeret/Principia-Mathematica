@@ -10,6 +10,7 @@ used for a repository promotion before a PM-VERBATIM demonstration backfill.
 from __future__ import annotations
 
 import json
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -17,7 +18,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FENCE = re.compile(r"```lean\n(.*?)```", re.S)
-SCAN = re.compile(r"SHA-256[^`]*`([0-9a-f]{64})`", re.S)
+SCAN = re.compile(r"\b[0-9a-f]{64}\b")
+
+
+def sha256_text(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
 def generate(batch: str) -> None:
@@ -37,6 +42,8 @@ def generate(batch: str) -> None:
         "batch": batch,
         "source_backfill_required": True,
         "integration_blocked": True,
+        "audit_status": "A-interface-only",
+        "audit_basis": "reviewed exact prompt targets, citations, and scan hashes; no PM-VERBATIM proof skeleton",
         "promotion_prohibited": "PM-VERBATIM plus parsed demonstration audit required",
         "canonical_ids": question["canonical_ids"],
         "prompt_path": question["prompt_path"],
@@ -45,6 +52,9 @@ def generate(batch: str) -> None:
         "opaque_dependency_stubs": question.get("depends_on", []),
         "citation_comments": citations,
         "exact_lean_targets": targets,
+        "prompt_sha256": sha256_text(prompt),
+        "review_sha256": sha256_text(review),
+        "exact_lean_target_sha256": [sha256_text(target) for target in targets],
     }
     manifest_dir = ROOT / "aristotle/manifests"
     context_dir = ROOT / "aristotle/contexts"
@@ -68,6 +78,9 @@ def generate(batch: str) -> None:
         "source_backfill_required": True,
         "integration_blocked": True,
         "opaque_dependency_stubs": payload["opaque_dependency_stubs"],
+        "manifest_sha256": sha256_text(
+            json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        ),
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 

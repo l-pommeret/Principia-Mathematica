@@ -1,0 +1,51 @@
+{
+  "kind": "pm-statement-only-interface-manifest",
+  "batch": "Q248",
+  "source_backfill_required": false,
+  "integration_blocked": true,
+  "audit_status": "A-interface-only",
+  "audit_basis": "canonical PM-VERBATIM backfill on scan leaves 152–153; diplomatic citation skeletons parsed per target",
+  "promotion_prohibited": "formal dependency/remote-kernel audit still required",
+  "canonical_ids": [
+    "PM1:✱5·4",
+    "PM1:✱5·41",
+    "PM1:✱5·42",
+    "PM1:✱5·44"
+  ],
+  "prompt_path": "aristotle/Q248.md",
+  "review_path": "reviews/Q248-review.md",
+  "scan_hashes": [
+    "c91b873037f45daeac9ca2a94f88cbb60dbe0134338c53292f859712a17fb497"
+  ],
+  "opaque_dependency_stubs": [
+    "PM1:✱2·43",
+    "PM1:✱2·77",
+    "PM1:✱2·86",
+    "PM1:✱3·26",
+    "PM1:✱3·27",
+    "PM1:✱4·76",
+    "PM1:✱4·87",
+    "PM1:✱5·3",
+    "PM1:✱5·32"
+  ],
+  "citation_comments": [
+    "Simp.✱2·43",
+    "✱2·77·86",
+    "✱5·3.✱4·87",
+    "✱4·76.✱5·3·32"
+  ],
+  "exact_lean_targets": [
+    "namespace PM.FirstEdition.Volume1.Star5\ntheorem star_5_4 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ (p ⊃ₚ q)) ≡ₚ (p ⊃ₚ q)) := by\n  -- [Simp.✱2·43]\ntheorem star_5_41 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)) ≡ₚ (p ⊃ₚ (q ⊃ₚ r))) := by\n  -- [✱2·77·86]\ntheorem star_5_42 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ≡ₚ (p ⊃ₚ (q ⊃ₚ (p ∧ₚ r)))) := by\n  -- [✱5·3.✱4·87]\ntheorem star_5_44 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((p ⊃ₚ r) ≡ₚ (p ⊃ₚ (q ∧ₚ r)))) := by\n  -- [✱4·76.✱5·3·32]\nend PM.FirstEdition.Volume1.Star5\n"
+  ],
+  "prompt_sha256": "1fe2abdaf518e5aecc1f58c34c4473d692dd34386c5839a82585b9b92718744d",
+  "review_sha256": "cd568419a59b34a01eae88df2b69ae1e4a04b2c72f1dcc656270cc3806c01361",
+  "exact_lean_target_sha256": [
+    "0e545ac472b101c26245a5f2300ea00ae374544f6c88dcb7857297dd9d91bdd6"
+  ],
+  "canonical_backfill_audit": {
+    "verbatim": true,
+    "item_metadata": true,
+    "parsed_demonstrations": true,
+    "integration_still_blocked": true
+  }
+}

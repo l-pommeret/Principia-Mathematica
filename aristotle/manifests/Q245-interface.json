@@ -1,0 +1,52 @@
+{
+  "kind": "pm-statement-only-interface-manifest",
+  "batch": "Q245",
+  "source_backfill_required": false,
+  "integration_blocked": true,
+  "audit_status": "A-interface-only",
+  "audit_basis": "canonical PM-VERBATIM backfill on scan leaves 152–153; diplomatic citation skeletons parsed per target",
+  "promotion_prohibited": "formal dependency/remote-kernel audit still required",
+  "canonical_ids": [
+    "PM1:✱5·18",
+    "PM1:✱5·19",
+    "PM1:✱5·21",
+    "PM1:✱5·22"
+  ],
+  "prompt_path": "aristotle/Q245.md",
+  "review_path": "reviews/Q245-review.md",
+  "scan_hashes": [
+    "8ad683eab8e99f0aab97f8a6b1e0179c28e354a9f678c4df2cd1e2fb2d510f4a",
+    "c91b873037f45daeac9ca2a94f88cbb60dbe0134338c53292f859712a17fb497"
+  ],
+  "opaque_dependency_stubs": [
+    "PM1:✱4·2",
+    "PM1:✱4·11",
+    "PM1:✱4·39",
+    "PM1:✱4·51",
+    "PM1:✱4·61",
+    "PM1:✱5·1",
+    "PM1:✱5·15",
+    "PM1:✱5·16",
+    "PM1:✱5·17"
+  ],
+  "citation_comments": [
+    "✱5·15·16.✱5·17 (p≡q,p≡∼q)/(p,q)",
+    "✱5·18 p/q.✱4·2",
+    "✱5·1.✱4·11",
+    "✱4·61·51·39"
+  ],
+  "exact_lean_targets": [
+    "namespace PM.FirstEdition.Volume1.Star5\ntheorem star_5_18 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ≡ₚ q) ≡ₚ ∼ₚ (p ≡ₚ ∼ₚ q)) := by\n  -- [✱5·15·16.✱5·17 (p≡q,p≡∼q)/(p,q)]\ntheorem star_5_19 {Γ} (p : PM.Elementary Γ) :\n    ⊢ₚ ∼ₚ (p ≡ₚ ∼ₚ p) := by\n  -- [✱5·18 p/q.✱4·2]\ntheorem star_5_21 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((∼ₚ p ∧ₚ ∼ₚ q) ⊃ₚ (p ≡ₚ q)) := by\n  -- [✱5·1.✱4·11]\ntheorem star_5_22 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (∼ₚ (p ≡ₚ q) ≡ₚ ((p ∧ₚ ∼ₚ q) ∨ₚ (q ∧ₚ ∼ₚ p))) := by\n  -- [✱4·61·51·39]\nend PM.FirstEdition.Volume1.Star5\n"
+  ],
+  "prompt_sha256": "fcfabe546601365611c7702de6f7aecae62961b6e0e4388cc55190258bf2b53c",
+  "review_sha256": "535d6fa1aed945c47d684044a04a9b0835af90db8dbd16d3d303b7e028334a49",
+  "exact_lean_target_sha256": [
+    "646416483d968c60f85cba33cff936833833bae2baf4d409c7a21b0bd2dc41bb"
+  ],
+  "canonical_backfill_audit": {
+    "verbatim": true,
+    "item_metadata": true,
+    "parsed_demonstrations": true,
+    "integration_still_blocked": true
+  }
+}

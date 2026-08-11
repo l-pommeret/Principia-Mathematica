@@ -1,0 +1,52 @@
+{
+  "kind": "pm-statement-only-interface-manifest",
+  "batch": "Q249",
+  "source_backfill_required": false,
+  "integration_blocked": true,
+  "audit_status": "A-interface-only",
+  "audit_basis": "canonical PM-VERBATIM backfill on scan leaves 152–153; diplomatic citation skeletons parsed per target",
+  "promotion_prohibited": "formal dependency/remote-kernel audit still required",
+  "canonical_ids": [
+    "PM1:✱5·5",
+    "PM1:✱5·501",
+    "PM1:✱5·53",
+    "PM1:✱5·54"
+  ],
+  "prompt_path": "aristotle/Q249.md",
+  "review_path": "reviews/Q249-review.md",
+  "scan_hashes": [
+    "c91b873037f45daeac9ca2a94f88cbb60dbe0134338c53292f859712a17fb497"
+  ],
+  "opaque_dependency_stubs": [
+    "PM1:✱2·16",
+    "PM1:✱2·17",
+    "PM1:✱3·3",
+    "PM1:✱3·26",
+    "PM1:✱3·27",
+    "PM1:✱3·35",
+    "PM1:✱4·44",
+    "PM1:✱4·73",
+    "PM1:✱4·77",
+    "PM1:✱5·1"
+  ],
+  "citation_comments": [
+    "Ass.Exp.Simp",
+    "✱5·1.Exp.Ass",
+    "✱4·77",
+    "✱4·73.✱4·44.Transp.✱5·1"
+  ],
+  "exact_lean_targets": [
+    "namespace PM.FirstEdition.Volume1.Star5\ntheorem star_5_5 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (p ⊃ₚ ((p ⊃ₚ q) ≡ₚ q)) := by\n  -- [Ass.Exp.Simp]\ntheorem star_5_501 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (p ⊃ₚ (q ≡ₚ (p ≡ₚ q))) := by\n  -- [✱5·1.Exp.Ass]\ntheorem star_5_53 {Γ} (p q r s : PM.Elementary Γ) :\n    ⊢ₚ ((((p ∨ₚ q) ∨ₚ r) ⊃ₚ s) ≡ₚ\n      (((p ⊃ₚ s) ∧ₚ (q ⊃ₚ s)) ∧ₚ (r ⊃ₚ s))) := by\n  -- [✱4·77]\ntheorem star_5_54 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (((p ∧ₚ q) ≡ₚ p) ∨ₚ ((p ∧ₚ q) ≡ₚ q)) := by\n  -- [✱4·73.✱4·44.Transp.✱5·1]\nend PM.FirstEdition.Volume1.Star5\n"
+  ],
+  "prompt_sha256": "748e1126a255d386966c2b62c1739080cac3414988910fd2614471688445d61f",
+  "review_sha256": "a67bf33a6253e0da4b717c5ba4e31924b55cc09267f7e90b6b56e59c9f3a4516",
+  "exact_lean_target_sha256": [
+    "66eb20febfc5238371014de761b325a77d33cd8ae8ebf72e7fc0ceb793f7d047"
+  ],
+  "canonical_backfill_audit": {
+    "verbatim": true,
+    "item_metadata": true,
+    "parsed_demonstrations": true,
+    "integration_still_blocked": true
+  }
+}

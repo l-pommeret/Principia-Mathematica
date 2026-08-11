@@ -1,0 +1,110 @@
+{
+  "batch": "PM1-STAR5-Q245",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "130",
+    "scan_leaves": [
+      152
+    ],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "scan_sha256": {
+      "152": "c91b873037f45daeac9ca2a94f88cbb60dbe0134338c53292f859712a17fb497"
+    }
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "WS-PM1"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱5·18",
+      "kind": "derived-proposition",
+      "printed": "⊢ : p ≡ q . ≡ . ∼(p ≡ ∼q)",
+      "printed_page": 130,
+      "scan_leaf": 152,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star5.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star5.star_5_18",
+      "formal_scope": "(p≡q)≡∼(p≡∼q), over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱5·15·16",
+        "PM1:✱5·17"
+      ],
+      "normalized_dependencies": [],
+      "blocked_dependencies": [
+        "PM1:✱5·15",
+        "PM1:✱5·16",
+        "PM1:✱5·17"
+      ]
+    },
+    {
+      "id": "PM1:✱5·19",
+      "kind": "derived-proposition",
+      "printed": "⊢ . ∼(p ≡ ∼p)",
+      "printed_page": 130,
+      "scan_leaf": 152,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star5.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star5.star_5_19",
+      "formal_scope": "∼(p≡∼p), over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱5·18",
+        "PM1:✱4·2"
+      ],
+      "normalized_dependencies": [],
+      "blocked_dependencies": [
+        "PM1:✱5·18"
+      ]
+    },
+    {
+      "id": "PM1:✱5·21",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∼p . ∼q . ⊃ . p ≡ q",
+      "printed_page": 130,
+      "scan_leaf": 152,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star5.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star5.star_5_21",
+      "formal_scope": "(∼p·∼q)⊃(p≡q), over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱5·1",
+        "PM1:✱4·11"
+      ],
+      "normalized_dependencies": [],
+      "blocked_dependencies": [
+        "PM1:✱5·1",
+        "PM1:✱4·11"
+      ]
+    },
+    {
+      "id": "PM1:✱5·22",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∼(p ≡ q) . ≡ : p . ∼q . ∨ . q . ∼p",
+      "printed_page": 130,
+      "scan_leaf": 152,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star5.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star5.star_5_22",
+      "formal_scope": "∼(p≡q)≡((p·∼q)∨(q·∼p)), over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱4·61·51·39"
+      ],
+      "normalized_dependencies": [],
+      "blocked_dependencies": [
+        "PM1:✱4·61",
+        "PM1:✱4·51",
+        "PM1:✱4·39"
+      ]
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

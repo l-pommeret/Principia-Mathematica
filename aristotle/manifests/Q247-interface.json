@@ -1,0 +1,56 @@
+{
+  "kind": "pm-statement-only-interface-manifest",
+  "batch": "Q247",
+  "source_backfill_required": false,
+  "integration_blocked": true,
+  "audit_status": "A-interface-only",
+  "audit_basis": "canonical PM-VERBATIM backfill on scan leaves 152–153; diplomatic citation skeletons parsed per target",
+  "promotion_prohibited": "formal dependency/remote-kernel audit still required",
+  "canonical_ids": [
+    "PM1:✱5·31",
+    "PM1:✱5·32",
+    "PM1:✱5·33",
+    "PM1:✱5·35",
+    "PM1:✱5·36"
+  ],
+  "prompt_path": "aristotle/Q247.md",
+  "review_path": "reviews/Q247-review.md",
+  "scan_hashes": [
+    "c91b873037f45daeac9ca2a94f88cbb60dbe0134338c53292f859712a17fb497"
+  ],
+  "opaque_dependency_stubs": [
+    "PM1:✱3·3",
+    "PM1:✱3·26",
+    "PM1:✱3·27",
+    "PM1:✱3·31",
+    "PM1:✱3·35",
+    "PM1:✱3·43",
+    "PM1:✱4·38",
+    "PM1:✱4·73",
+    "PM1:✱4·76",
+    "PM1:✱4·84",
+    "PM1:✱5·1",
+    "PM1:✱5·3"
+  ],
+  "citation_comments": [
+    "Simp.Comp",
+    "✱4·76.✱3·3·31.✱5·3",
+    "✱4·73·84.✱5·32",
+    "Comp.✱5·1",
+    "Ass.✱4·38"
+  ],
+  "exact_lean_targets": [
+    "namespace PM.FirstEdition.Volume1.Star5\ntheorem star_5_31 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((r ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ (q ∧ₚ r))) := by\n  -- [Simp.Comp]\ntheorem star_5_32 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ (q ≡ₚ r)) ≡ₚ ((p ∧ₚ q) ≡ₚ (p ∧ₚ r))) := by\n  -- [✱4·76.✱3·3·31.✱5·3]\ntheorem star_5_33 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ (q ⊃ₚ r)) ≡ₚ (p ∧ₚ ((p ∧ₚ q) ⊃ₚ r))) := by\n  -- [✱4·73·84.✱5·32]\ntheorem star_5_35 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ⊃ₚ q) ∧ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ≡ₚ r))) := by\n  -- [Comp.✱5·1]\ntheorem star_5_36 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ (p ≡ₚ q)) ≡ₚ (q ∧ₚ (p ≡ₚ q))) := by\n  -- [Ass.✱4·38]\nend PM.FirstEdition.Volume1.Star5\n"
+  ],
+  "prompt_sha256": "10cde9be38cc2fdabe542aff57c9ea8da34ea49de72970ed092eb9fba14b37b0",
+  "review_sha256": "5efbdb7133cfc91f82adfa8effaf884c2dec594547df52300f35c925742566f5",
+  "exact_lean_target_sha256": [
+    "dd964d943d779f210e4aa99a5c61138fc6bbefd390e5bfa7cea01a957a0720d7"
+  ],
+  "canonical_backfill_audit": {
+    "verbatim": true,
+    "item_metadata": true,
+    "parsed_demonstrations": true,
+    "integration_still_blocked": true
+  }
+}

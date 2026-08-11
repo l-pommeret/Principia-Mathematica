@@ -1,0 +1,53 @@
+{
+  "kind": "pm-statement-only-interface-manifest",
+  "batch": "Q246",
+  "source_backfill_required": false,
+  "integration_blocked": true,
+  "audit_status": "A-interface-only",
+  "audit_basis": "canonical PM-VERBATIM backfill on scan leaves 152–153; diplomatic citation skeletons parsed per target",
+  "promotion_prohibited": "formal dependency/remote-kernel audit still required",
+  "canonical_ids": [
+    "PM1:✱5·23",
+    "PM1:✱5·24",
+    "PM1:✱5·25",
+    "PM1:✱5·3"
+  ],
+  "prompt_path": "aristotle/Q246.md",
+  "review_path": "reviews/Q246-review.md",
+  "scan_hashes": [
+    "c91b873037f45daeac9ca2a94f88cbb60dbe0134338c53292f859712a17fb497"
+  ],
+  "opaque_dependency_stubs": [
+    "PM1:✱2·62",
+    "PM1:✱2·68",
+    "PM1:✱3·26",
+    "PM1:✱3·27",
+    "PM1:✱3·33",
+    "PM1:✱3·34",
+    "PM1:✱3·43",
+    "PM1:✱4·13",
+    "PM1:✱4·36",
+    "PM1:✱5·18",
+    "PM1:✱5·22"
+  ],
+  "citation_comments": [
+    "✱5·18.✱5·22 ∼q/q.✱4·13·36",
+    "✱5·22·23",
+    "✱2·62·68",
+    "Simp.Comp.Syll"
+  ],
+  "exact_lean_targets": [
+    "namespace PM.FirstEdition.Volume1.Star5\ntheorem star_5_23 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ≡ₚ q) ≡ₚ ((p ∧ₚ q) ∨ₚ (∼ₚ p ∧ₚ ∼ₚ q))) := by\n  -- [✱5·18.✱5·22 ∼q/q.✱4·13·36]\ntheorem star_5_24 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (∼ₚ ((p ∧ₚ q) ∨ₚ (∼ₚ p ∧ₚ ∼ₚ q)) ≡ₚ\n      ((p ∧ₚ ∼ₚ q) ∨ₚ (q ∧ₚ ∼ₚ p))) := by\n  -- [✱5·22·23]\ntheorem star_5_25 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∨ₚ q) ≡ₚ ((p ⊃ₚ q) ⊃ₚ q)) := by\n  -- [✱2·62·68]\ntheorem star_5_3 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ≡ₚ ((p ∧ₚ q) ⊃ₚ (p ∧ₚ r))) := by\n  -- [Simp.Comp.Syll]\nend PM.FirstEdition.Volume1.Star5\n"
+  ],
+  "prompt_sha256": "ed6c51d82bc3f2be83a4d73cbd9134351e163368b40ccc52bd4004446e616f11",
+  "review_sha256": "2af19bc8f52047d0d56071cd0b78785d4780676ee29aa762fb53b17cff29ae99",
+  "exact_lean_target_sha256": [
+    "e5490cc62eeaed9878bf74dc004a80af54a88f45ad20de83a60ab8ce9f381ff8"
+  ],
+  "canonical_backfill_audit": {
+    "verbatim": true,
+    "item_metadata": true,
+    "parsed_demonstrations": true,
+    "integration_still_blocked": true
+  }
+}
