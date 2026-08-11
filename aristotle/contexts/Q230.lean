@@ -972,7 +972,7 @@ end PM.Elementary
 namespace PM.FirstEdition.Volume1.Star4
 
 axiom star_4_11 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ ((p ≡ₚ q) ≡ₚ (∼ₚ p ≡ₚ ∼ₚ q))
+    ⊢ₚ ((p ≡ₚ q) ≡ₚ ((∼ₚ p) ≡ₚ (∼ₚ q)))
 
 
 end PM.FirstEdition.Volume1.Star4
