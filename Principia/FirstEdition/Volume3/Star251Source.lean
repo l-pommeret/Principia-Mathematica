@@ -171,3 +171,19 @@ PM-VERBATIM-END PM3:✱251·43 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·44
 ✱251·44.  ⊢ : α ∈ NO − ιʻ0ᵣ . β ∈ NO − ιʻ0ᵣ .⊃ . α expᵣ β ≠ 0ᵣ
 PM-VERBATIM-END PM3:✱251·44 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·5
+✱251·5.  ⊢ : ∃! P . Q ∈ Bord .⊃ . P ↓; Q ∈ Bord  [✱165·25 . ✱251·11]
+PM-VERBATIM-END PM3:✱251·5 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·51
+✱251·51.  ⊢ : ∃! P . Q ∈ Ω .⊃ . P ↓; Q ∈ Ω  [✱165·25 . ✱204·21 . ✱251·5]
+PM-VERBATIM-END PM3:✱251·51 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·52
+✱251·52.  ⊢ : P ∈ Bord .⊃ . CʻP ↓; Q ⊂ Bord  [✱165·26 . ✱251·12]
+PM-VERBATIM-END PM3:✱251·52 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·53
+✱251·53.  ⊢ : P ∈ Ω .⊃ . CʻP ↓; Q ∈ Ω  [✱165·26 . ✱204·22 . ✱251·52]
+PM-VERBATIM-END PM3:✱251·53 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·54
+✱251·54.  ⊢ : P, Q ∈ Bord .⊃ . P × Q ∈ Bord
+PM-VERBATIM-END PM3:✱251·54 -/
