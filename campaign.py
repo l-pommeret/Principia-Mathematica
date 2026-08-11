@@ -19,6 +19,12 @@ from urllib.parse import urlsplit
 import browser_sync
 import aristotle_scheduler as scheduler
 
+SCRIPTS = Path(__file__).resolve().parent / "scripts"
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+
+from pm_constraint_manifest import load_item_registry
+
 
 ROOT = Path(__file__).resolve().parent
 MANIFEST = ROOT / "pipeline.json"
@@ -593,7 +599,18 @@ def aristotle_schedule(*, dry_run: bool, cap: int) -> None:
         fcntl.flock(lock, fcntl.LOCK_EX)
         current = manifest()
         active, active_projects = scheduler.reconcile(current, list_tasks)
-        queue = scheduler.candidates(current, ROOT, active_projects)
+        # ``pipeline.json`` deliberately records campaign state, while the
+        # canonical formal status of individual PM items lives in the audited
+        # metadata registry.  Supply that registry only to the scheduler's
+        # eligibility predicate; do not persist this derived cache back into
+        # the campaign manifest.
+        eligibility_data = dict(current)
+        registry = load_item_registry(ROOT / "metadata/items")
+        eligibility_data["items"] = {
+            identifier: {"status": item.get("formal_status")}
+            for identifier, item in registry.items()
+        }
+        queue = scheduler.candidates(eligibility_data, ROOT, active_projects)
         slots = max(0, cap - active)
         selected = queue[:slots]
         plan = [{"qid": c.qid, "kind": c.kind, "path": str(c.path.relative_to(ROOT))} for c in selected]
