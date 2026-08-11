@@ -3,7 +3,7 @@
   "batch": "Q235",
   "manifest_path": "aristotle/manifests/Q235-interface.json",
   "context_path": "aristotle/contexts/Q235-interface.lean",
-  "source_backfill_required": true,
+  "source_backfill_required": false,
   "integration_blocked": true,
   "opaque_dependency_stubs": [
     "PM1:✱1·01",
@@ -12,5 +12,6 @@
     "PM1:✱4·12",
     "PM1:✱4·13",
     "PM1:✱4·54"
-  ]
+  ],
+  "manifest_sha256": "f2963900795f8dc6fef062ddbe17e401c253c8a582bed9bf1fad3d8a6117a257"
 }

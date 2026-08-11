@@ -248,6 +248,50 @@ PM-VERBATIM-END PM1:✱4·53 -/
 ✱4·54.  ⊢ : ∼∼p . q . ≡ . ∼(p ∨ ∼q)   [✱4·5 ∼p/p . ✱4·13]
 PM-VERBATIM-END PM1:✱4·54 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱4·55
+✱4·55.  ⊢ : ∼∼(∼p . q) . ≡ . p ∨ ∼q   [✱4·54·12]
+PM-VERBATIM-END PM1:✱4·55 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·56
+✱4·56.  ⊢ : ∼∼∼(∼p . ∼q) . ≡ . ∼(p ∨ q)   [✱4·54 ∼q/q . ✱4·13]
+PM-VERBATIM-END PM1:✱4·56 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·57
+✱4·57.  ⊢ : ∼∼(p ∨ q) . ≡ . ∼p . ∼q   [✱4·56·13]
+PM-VERBATIM-END PM1:✱4·57 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·6
+✱4·6.  ⊢ : ∼p ⊃ q . ≡ . ∼p ∨ q   [✱4·2 . (✱1·01)]
+PM-VERBATIM-END PM1:✱4·6 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·61
+✱4·61.  ⊢ : ∼(p ⊃ q) . ≡ . p . ∼q   [✱4·6·11·52]
+PM-VERBATIM-END PM1:✱4·61 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·62
+✱4·62.  ⊢ : ∼∼p ⊃ ∼q . ≡ . ∼p ∨ ∼q   [✱4·6 ∼q/q]
+PM-VERBATIM-END PM1:✱4·62 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·63
+✱4·63.  ⊢ : ∼∼∼(p ⊃ ∼q) . ≡ . p . q   [✱4·62·11·5]
+PM-VERBATIM-END PM1:✱4·63 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·64
+✱4·64.  ⊢ : ∼∼∼p ⊃ q . ≡ . p ∨ q   [✱2·53·54]
+PM-VERBATIM-END PM1:✱4·64 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·65
+✱4·65.  ⊢ : ∼∼∼(∼p ⊃ q) . ≡ . ∼p . ∼q   [✱4·64·11·56]
+PM-VERBATIM-END PM1:✱4·65 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·66
+✱4·66.  ⊢ : ∼p ⊃ ∼q . ≡ . p ∨ ∼q   [✱4·64 ∼q/q]
+PM-VERBATIM-END PM1:✱4·66 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·67
+✱4·67.  ⊢ : ∼(∼p ⊃ ∼q) . ≡ . ∼p . q   [✱4·66·11·54]
+PM-VERBATIM-END PM1:✱4·67 -/
+
 namespace PM.Elementary
 
 /-- PM I (1910), p. 120, ✱4·01: equivalence is an object-language

@@ -1,8 +1,10 @@
 {
   "kind": "pm-statement-only-interface-manifest",
   "batch": "Q237",
-  "source_backfill_required": true,
+  "source_backfill_required": false,
   "integration_blocked": true,
+  "audit_status": "A-interface-only",
+  "audit_basis": "reviewed exact prompt targets, citations, and scan hashes; no PM-VERBATIM proof skeleton",
   "promotion_prohibited": "PM-VERBATIM plus parsed demonstration audit required",
   "canonical_ids": [
     "PM1:✱4·65",
@@ -28,5 +30,10 @@
   ],
   "exact_lean_targets": [
     "namespace PM.FirstEdition.Volume1.Star4\ntheorem star_4_65 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (∼ₚ (∼ₚ p ⊃ₚ q) ≡ₚ (∼ₚ p ∧ₚ ∼ₚ q)) := by\n  -- [✱4·64·11·56]\ntheorem star_4_66 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((∼ₚ p ⊃ₚ ∼ₚ q) ≡ₚ (p ∨ₚ ∼ₚ q)) := by\n  -- [✱4·64 (∼q/q)]\ntheorem star_4_67 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (∼ₚ (∼ₚ p ⊃ₚ ∼ₚ q) ≡ₚ (∼ₚ p ∧ₚ q)) := by\n  -- [✱4·66·11·54]\nend PM.FirstEdition.Volume1.Star4\n"
+  ],
+  "prompt_sha256": "0de0e4bec52cebaa3dec91ec8b0167419c865545468aad45f348b96014b74fdb",
+  "review_sha256": "22288638dfa2fb0cf07995c74ca1e4473ed20972b655cf46b0be382b4333a087",
+  "exact_lean_target_sha256": [
+    "ddd4779e65cc208233ba98ad70c39c0ced0f1f418fa14f192f7e30cb6536f5fc"
   ]
 }
