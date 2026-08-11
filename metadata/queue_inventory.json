@@ -6,40 +6,41 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 131,
-    "object_language_ast_parsed": 125,
+    "catalogued_items": 134,
+    "object_language_ast_parsed": 128,
     "metalinguistic_routes": 6,
-    "catalogued_items_with_proof_skeleton": 51,
-    "all_proof_skeleton_targets": 51,
+    "catalogued_items_with_proof_skeleton": 54,
+    "all_proof_skeleton_targets": 54,
     "catalogued_items_missing_proof_skeleton": 80,
-    "constrained_batches": 13,
-    "complete_batch_artifact_sets": 8,
+    "constrained_batches": 14,
+    "complete_batch_artifact_sets": 9,
     "planned_campaign_questions": 59,
-    "planned_uncatalogued_pm_ids": 96,
+    "planned_uncatalogued_pm_ids": 93,
     "planned_uncatalogued_non_pm_ids": 1,
     "catalogued_items_without_campaign_question": 9,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
     "audit": {
-      "A": 27,
+      "A": 28,
       "A-kernel-checked": 1,
       "blocked-missing-first-order-assertion": 1,
       "blocked-needs-functions-significance-and-higher-order-derivation": 1,
-      "prepared-needs-kernel-context": 29
+      "prepared-needs-kernel-context": 28
     },
     "aristotle": {
-      "complete": 26,
+      "complete": 25,
       "complete-relaxed-printed-gaps": 1,
       "complete-relaxed-result-not-integrated": 1,
-      "not-submitted": 31
+      "not-submitted": 31,
+      "submitted": 1
     }
   },
   "pm_section_coverage": {
     "catalogued": {
       "PM1:✱1": 11,
       "PM1:✱2": 68,
-      "PM1:✱3": 25,
+      "PM1:✱3": 28,
       "PM1:✱4": 17,
       "PM1:✱9": 10
     },
@@ -52,7 +53,6 @@
       "PM1:✱9": 23
     },
     "planned_but_uncatalogued": {
-      "PM1:✱3": 3,
       "PM1:✱4": 44,
       "PM1:✱5": 36,
       "PM1:✱9": 13
@@ -146,6 +146,18 @@
         "PM1:✱3·27",
         "PM1:✱3·3",
         "PM1:✱3·31"
+      ],
+      "manifest": true,
+      "context": true,
+      "context_metadata": true,
+      "prompt": true
+    },
+    "Q224": {
+      "generation_status": "ready",
+      "targets": [
+        "PM1:✱3·33",
+        "PM1:✱3·34",
+        "PM1:✱3·35"
       ],
       "manifest": true,
       "context": true,
@@ -1906,6 +1918,75 @@
       }
     },
     {
+      "id": "PM1:✱3·33",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q224"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "34000be116439561fd49e259f82b1514f02c18209461867d66d5078ff5c89bc4"
+      },
+      "proof_skeleton": {
+        "batch": "Q224",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-33.txt",
+        "demonstration_sha256": "dcf30d6c74fb2cbb313b4e0267a4970d25ea2734080ce10862f98f6190620b74",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·34",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q224"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "b7bb40cef359dcc908d2d86b8f29e3cd858143146a2bca3fbb31442b49477b54"
+      },
+      "proof_skeleton": {
+        "batch": "Q224",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-34.txt",
+        "demonstration_sha256": "e44045caa598a654a29d37a2ea96aef49f33c3bfa6e3b60b25f9621f17ef3858",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·35",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q224"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "1e0dc32f3600974fc1e44d35452692f00c8f62c9574c622ccf134fc0a75026d7"
+      },
+      "proof_skeleton": {
+        "batch": "Q224",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-35.txt",
+        "demonstration_sha256": "5cd3f365e2c3314a6cd212a60a7126ca101afbf7c31c4c0d40e323509f23762a",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
       "id": "PM1:✱3·37",
       "kind": "derived-proposition",
       "source_catalogue": true,
@@ -2676,15 +2757,6 @@
     "PM1:✱2·33"
   ],
   "planned_but_uncatalogued": {
-    "PM1:✱3·33": [
-      "Q224"
-    ],
-    "PM1:✱3·34": [
-      "Q224"
-    ],
-    "PM1:✱3·35": [
-      "Q224"
-    ],
     "PM1:✱4·34": [
       "Q231"
     ],

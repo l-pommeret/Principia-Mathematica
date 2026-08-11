@@ -1,6 +1,7 @@
 # Audit Q224 — PM I, ✱3·33–✱3·35
 
-Verdict: **PREPARED — contexte noyau requis**. Source: first edition, vol. I,
+Verdict: **A — lot strict parser-généré; contrôle noyau Aristotle distant en
+attente**. Source: first edition, vol. I,
 p. 118, leaf 140; SHA-256
 `20db12e87b5e387660bb8d9fd44527b82fe2b63f0c1ea8211e89b8be1dd64ebe`.
 
