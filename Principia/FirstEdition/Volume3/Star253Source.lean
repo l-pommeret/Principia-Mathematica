@@ -44,6 +44,38 @@ PM-VERBATIM-END PM3:✱253·21 -/
 /- PM-VERBATIM-BEGIN PM3:✱253·22
 ✱253·22.  ⊢ : P ∈ Ω .⊃ . Pₛ ⌞ DʻPₛ smor P ⌞ CʻP
 PM-VERBATIM-END PM3:✱253·22 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱253·23
+✱253·23.  ⊢ :: P ∈ Ω .⊃ : NrʻP = NrʻQ .≡ . NrʻPₛ = NrʻQₛ : P smor Q .≡ . Pₛ smor Qₛ
+PM-VERBATIM-END PM3:✱253·23 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·24
+✱253·24.  ⊢ : P ∈ Ω .⊃ . Pₛ ∈ Ω
+PM-VERBATIM-END PM3:✱253·24 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·25
+✱253·25.  ⊢ :: P, Q ∈ Ω − ιʻΛ .⊃ : Pₛ ⌞ DʻPₛ smor Qₛ ⌞ DʻQₛ .≡ . Pₛ smor Q
+PM-VERBATIM-END PM3:✱253·25 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·3
+✱253·3.  ⊢ : P ∈ Ω .⊃ . P⃗ₛʻP = P ⌞ P⃗ʻʻCʻP = DʻPₛ
+PM-VERBATIM-END PM3:✱253·3 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·31
+✱253·31.  ⊢ :: P ∈ Ω .⊃ : QPₛR .≡ . R ∈ P ⌞ P⃗ʻʻCʻP ∪ ιʻP . Q ∈ R ⌞ R⃗ʻʻCʻR
+PM-VERBATIM-END PM3:✱253·31 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱253·32
+✱253·32.  ⊢ : P ∈ Ω . R ∈ CʻPₛ .⊃ . P⃗ₛʻR = R ⌞ R⃗ʻʻCʻR = DʻRₛ
+PM-VERBATIM-END PM3:✱253·32 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·33
+✱253·33.  ⊢ :: P ∈ Ω .⊃ : Q(Pₛ ⌞ DʻPₛ)R .≡ . R ∈ P ⌞ P⃗ʻʻCʻP . Q ∈ R ⌞ R⃗ʻʻCʻR
+PM-VERBATIM-END PM3:✱253·33 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·4
+✱253·4.  ⊢ : P ∈ Ω − ιʻΛ .⊃ . CʻPₛ = Q̂ {(∃R) . P = Q ✦ R .∨ . (∃x) . P = Q ↦ x}  [✱213·41 . ✱250·13]
+PM-VERBATIM-END PM3:✱253·4 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·401
+✱253·401.  ⊢ : P ∈ Ω .⊃ . P ⌞ P⃗ʻʻCʻP ∪ ιʻP = Q̂ {(∃R) . P = Q ✦ R .∨ . (∃x) . P = Q ↦ x}
+PM-VERBATIM-END PM3:✱253·401 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·402
+✱253·402.  ⊢ : P ∈ Ω − ιʻΛ .⊃ . DʻPₛ = Q̂ {(∃R) . R ≠ Λ . P = Q ✦ R .∨ . (∃x) . P = Q ↦ x}
+PM-VERBATIM-END PM3:✱253·402 -/
 /- PM-VERBATIM-BEGIN PM3:✱253·17
 ✱253·17.  ⊢ : P ∈ Ω .⊃ . Pₛ ⌞ DʻPₛ = P ⌞ P⃗;P ⌞ CʻP
 PM-VERBATIM-END PM3:✱253·17 -/
