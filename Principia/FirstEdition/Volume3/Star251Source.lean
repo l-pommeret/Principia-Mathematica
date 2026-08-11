@@ -127,3 +127,20 @@ PM-VERBATIM-END PM3:✱251·31 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·32
 ✱251·32.  ⊢ : E!! BʻʻCʻP . ∃! P .⊃ . B ▷ CʻP = BʻΠʻP
 PM-VERBATIM-END PM3:✱251·32 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·33
+✱251·33.  ⊢ : CʻP ⊂ Ω − ιʻΛ . ∃! P .⊃ . ∃! ΠʻP . B ▷ CʻP = BʻΠʻP  [✱250·13 . ✱251·32]
+PM-VERBATIM-END PM3:✱251·33 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·34
+✱251·34.  ⊢ : P ∈ Rel² excl . CʻP ⊂ Ω − ιʻΛ .⊃ . ∃! εₐʻCʻʻCʻP
+PM-VERBATIM-END PM3:✱251·34 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·35
+✱251·35.  ⊢ :: P ∈ Ω .⊃ :: α Pcl β .≡ : α, β ∈ ClʻCʻP : (∃z) . z ∈ α − β . α ∩ P⃗ʻz = β ∩ P⃗ʻz
+PM-VERBATIM-END PM3:✱251·35 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·351
+✱251·351.  ⊢ :: P ∈ Ω .⊃ :: α Pcl β .≡ : α, β ∈ ClʻCʻP : (∃z) . z ∈ β − α . α ∩ P⃗ʻz = β ∩ P⃗ʻz
+  [✱251·35 . ✱170·101]
+PM-VERBATIM-END PM3:✱251·351 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·36
+✱251·36.  ⊢ : P ∈ Ω .⊃ . Pcl ∈ Ser
+PM-VERBATIM-END PM3:✱251·36 -/
