@@ -565,7 +565,7 @@
         "PM1:✱2·32"
       ],
       "parallel_group": "STAR3-FOUNDATIONS",
-      "aristotle_status": "not-submitted",
+      "aristotle_status": "submitted",
       "formation_architecture_evidence": {
         "module": "Principia/Experimental/ElementaryFormationToy.lean",
         "commit": "01d3ef23bc5ec7b427a4cbdf76f66682fd19e36a",
@@ -573,13 +573,20 @@
         "conclusion": "success"
       },
       "canonical_formation_evidence": {
-        "items": ["PM1:✱1·7", "PM1:✱1·71", "PM1:✱1·72"],
+        "items": [
+          "PM1:✱1·7",
+          "PM1:✱1·71",
+          "PM1:✱1·72"
+        ],
         "commit": "202999d6591b90acadfaff986fa23bd3ab6e0376",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31450038845",
         "conclusion": "success"
       },
       "superseded_star3_definition_evidence": {
-        "items": ["PM1:✱3·01", "PM1:✱3·02"],
+        "items": [
+          "PM1:✱3·01",
+          "PM1:✱3·02"
+        ],
         "commit": "77d350c54fd1159b75a38f9419d685496728f034",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31450432060",
         "conclusion": "success",
@@ -589,7 +596,16 @@
         "commit": "be2669eda2a262ebb6c07637787f2bc12b0732b3",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31450728523",
         "conclusion": "success"
-      }
+      },
+      "aristotle_project_id": "52eb1d93-8500-416d-9407-541f11b978ba",
+      "aristotle_task_id": "65efdf75-14b8-4efa-9c99-cdda3b0742ee",
+      "aristotle_latest_task_id": "65efdf75-14b8-4efa-9c99-cdda3b0742ee",
+      "aristotle_latest_task_status": "QUEUED",
+      "aristotle_remote_status": "QUEUED",
+      "aristotle_request_path": "aristotle/Q217.md",
+      "aristotle_request_sha256": "18cdf9bd93e06331333079df61e803c19b7356cd71c3e8c69bc4b9a27ad159fc",
+      "aristotle_latest_task_name": "Formalize Q217.md",
+      "aristotle_latest_task_created": "5 secs ago"
     },
     "Q218": {
       "canonical_ids": [
