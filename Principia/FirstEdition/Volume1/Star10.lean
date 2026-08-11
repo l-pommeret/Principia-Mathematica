@@ -102,3 +102,23 @@ PM-VERBATIM-END PM1:✱10·252 -/
 Alternative method: by ✱10·1, ✱2·12, ✱10·11·21, Transp, ✱2·14, and ✱10·01,
 ⊢ . Prop.
 PM-VERBATIM-END PM1:✱10·253 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·29
+✱10·29.  ⊢ : .(x).φx⊃ψx : (x).φx⊃χx : ⊃ .(x).φx⊃χx
+Dem.  By ✱10·22, ✱4·76, ✱10·11, and ✱10·271, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·29 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·3
+✱10·3.  ⊢ : .(x).φx⊃ψx : (x).ψx⊃χx : ⊃ .(x).φx⊃χx
+Dem.  By ✱10·22·221, Syll., and ✱10·27, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·3 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·301
+✱10·301.  ⊢ : .(x).φx≡ψx : (x).ψx≡χx : ⊃ .(x).φx≡χx
+Dem.  By ✱10·22·221, ✱4·22, and ✱10·271, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·301 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·31
+✱10·31.  ⊢ : .(x).φx⊃ψx .⊃ : (x) : φx .χx .⊃ .ψx .χx
+Dem.  By Fact, ✱10·11, and ✱10·27, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·31 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·311
+✱10·311.  ⊢ : .(x).φx≡ψx .⊃ : (x) : φx .χx .≡ .ψx .χx
+Dem.  By ✱4·36, ✱10·11, and ✱10·27, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·311 -/
