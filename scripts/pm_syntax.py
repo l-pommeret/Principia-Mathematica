@@ -296,6 +296,15 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("postfix_type_index", char, index))
             index += 1
             continue
+        superscript_indexed = re.match(
+            r"([A-Za-zΑ-Ωα-ω]+)([⁰¹²³⁴-⁹]|⁽[⁰¹²³⁴-⁹]+⁾)([A-Za-zΑ-Ωα-ω]*)",
+            source[index:],
+        )
+        if superscript_indexed:
+            text = superscript_indexed.group(0)
+            result.append(Token("superscript_indexed", text, index))
+            index += len(text)
+            continue
         if char.isascii() and char.isdigit():
             match = re.match(r"[0-9]+", source[index:])
             assert match is not None
@@ -578,6 +587,17 @@ class Parser:
         token = self.take()
         if token.kind == "atom":
             left = AST("atom", value=token.text)
+        elif token.kind == "superscript_indexed":
+            indexed = re.fullmatch(
+                r"(?P<head>[A-Za-zΑ-Ωα-ω]+)(?P<index>[⁰¹²³⁴-⁹]|⁽[⁰¹²³⁴-⁹]+⁾)(?P<tail>[A-Za-zΑ-Ωα-ω]*)",
+                token.text,
+            )
+            assert indexed is not None
+            left = AST(
+                "superscript_indexed",
+                (AST("atom", value=indexed.group("head") + indexed.group("tail")),),
+                indexed.group("index"),
+            )
         elif token.kind == "type_index":
             indexed = re.fullmatch(
                 r"(?P<head>[A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*)"
@@ -595,9 +615,12 @@ class Parser:
             left = self.application(token)
         elif token.kind == "existence_predicate":
             value = self.expression(1700)
-            if value.tag != "of":
-                raise PMSyntaxError("E! requires a PM `of` application")
-            left = AST("exists_value", (value,))
+            if value.tag == "of":
+                left = AST("exists_value", (value,))
+            elif value.tag == "description":
+                left = AST("description_exists", value.children, value.value)
+            else:
+                raise PMSyntaxError("E! requires a PM `of` application or description")
         elif token.kind == "unique_existence_predicate":
             value = self.expression(1500)
             left = AST(
@@ -607,6 +630,18 @@ class Parser:
         elif token.kind == "description_binder":
             condition = self.parenthesized_argument()
             left = AST("description", (condition,), description_variable(token.text))
+        elif token.kind == "of":
+            # A leading value stroke is PM's unit-class notation.  Multiple
+            # strokes retain their printed nesting rather than being folded
+            # into a generic application node.
+            value = self.expression(1701)
+            if is_class_surface(value):
+                value = seal_class_surface(value)
+            elif is_relation_surface(value):
+                value = seal_relation_surface(value)
+            left = value
+            for _ in token.text:
+                left = AST("unit_class", (left,))
         elif token.kind == "class_binder":
             condition = (
                 self.parenthesized_argument()
@@ -690,6 +725,12 @@ class Parser:
                     break
                 index = self.take()
                 left = AST("type_indexed", (left,), index.text)
+                continue
+            if next_token.kind == "superscript_indexed":
+                if 1800 < minimum:
+                    break
+                index = self.take()
+                left = AST("superscript_indexed", (left,), index.text)
                 continue
             if (next_token.kind == "lparen" and next_token.text == "(" and
                     left.tag in {"atom", "type_indexed", "apply_named"}):

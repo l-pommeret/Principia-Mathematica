@@ -297,6 +297,18 @@ class PMDotSyntaxTests(unittest.TestCase):
         )
         self.assertIn("type_indexed", tags(parsed))
 
+    def test_q104_superscript_indices_are_explicit(self):
+        for statement in ("✱104·01. ⊢ . N¹c = N²c", "✱104·03. ⊢ . μ⁽¹⁾ = N¹c", "✱104·12. ⊢ . N²c = μ⁽¹⁾", "✱104·2. ⊢ . ʻʻα ∈ N¹cʻα"):
+            self.assertIn("superscript_indexed", tags(statement_shape(statement)))
+
+    def test_q104_leading_value_strokes_are_explicit_unit_classes(self):
+        parsed = statement_shape("✱104·2. ⊢ . ʻʻα ∈ N¹cʻα")
+        self.assertEqual(tags(parsed).count("unit_class"), 2)
+
+    def test_star_14_02_accepts_description_as_existence_argument(self):
+        parsed = statement_shape("✱14·02. E!(℩x)(φx) .=: (∃b) : φx .≡ₓ. x = b Df")
+        self.assertIn("description_exists", tags(parsed))
+
     def test_q102_87_preserves_nested_diplomatic_xi_similarity_index(self):
         parsed = statement_shape(
             "✱102·87. ⊢ : μ = Nc(β)ʻδ . ∃!Nc(ξ)ʻδ .⊃ . "
