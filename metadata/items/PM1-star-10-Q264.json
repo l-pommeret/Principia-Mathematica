@@ -1,7 +1,101 @@
-{"batch":"PM1-STAR10-Q264","edition":"first","volume":1,"source_range":{"printed_pages":"144","scan_leaves":[166],"canonical_scan":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page166-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","scan_sha256":"cb853daaa9b0c1a85b08bef6429f4e1b11f5463273fc84127c662db3f77bf02b","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱10·01","kind":"definition","printed":"(∃x).φx .=. ∼(x).∼φx  Df","printed_page":144,"scan_leaf":166,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_01","formal_scope":"alternative existential definition; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":[],"normalized_dependencies":[]},
-{"id":"PM1:✱10·02","kind":"definition","printed":"φx ⊃ₓ ψx .=. (x).φx ⊃ ψx  Df","printed_page":144,"scan_leaf":166,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_02","formal_scope":"formal implication notation; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":[],"normalized_dependencies":[]},
-{"id":"PM1:✱10·03","kind":"definition","printed":"φx ≡ₓ ψx .=. (x).φx ≡ ψx  Df","printed_page":144,"scan_leaf":166,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_03","formal_scope":"formal equivalence notation; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":[],"normalized_dependencies":[]},
-{"id":"PM1:✱10·1","kind":"primitive-proposition","printed":"⊢ : (x).φx .⊃ .φy","printed_page":144,"scan_leaf":166,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_1","formal_scope":"first-order general-to-particular; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":[],"normalized_dependencies":[]},
-{"id":"PM1:✱10·11","kind":"primitive-proposition","printed":"If φy is true whatever possible argument y may be, then (x).φx is true.","printed_page":144,"scan_leaf":166,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_11","formal_scope":"first-order assertion rule; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":[],"normalized_dependencies":[]}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR10-Q264",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "144",
+    "scan_leaves": [
+      166
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [{"scan_leaf": 166, "printed_page": 144, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page166-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg", "sha256": "cb853daaa9b0c1a85b08bef6429f4e1b11f5463273fc84127c662db3f77bf02b"}],
+    "scan_sha256": "cb853daaa9b0c1a85b08bef6429f4e1b11f5463273fc84127c662db3f77bf02b",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱10·01",
+      "kind": "definition",
+      "printed": "(∃x).φx .=. ∼(x).∼φx  Df",
+      "printed_page": 144,
+      "scan_leaf": 166,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_01",
+      "formal_scope": "alternative existential definition; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·02",
+      "kind": "definition",
+      "printed": "φx ⊃ₓ ψx .=. (x).φx ⊃ ψx  Df",
+      "printed_page": 144,
+      "scan_leaf": 166,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_02",
+      "formal_scope": "formal implication notation; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·03",
+      "kind": "definition",
+      "printed": "φx ≡ₓ ψx .=. (x).φx ≡ ψx  Df",
+      "printed_page": 144,
+      "scan_leaf": 166,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_03",
+      "formal_scope": "formal equivalence notation; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·1",
+      "kind": "primitive-proposition",
+      "printed": "⊢ : (x).φx .⊃ .φy",
+      "printed_page": 144,
+      "scan_leaf": 166,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_1",
+      "formal_scope": "first-order general-to-particular; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·11",
+      "kind": "primitive-proposition",
+      "printed": "If φy is true whatever possible argument y may be, then (x).φx is true.",
+      "printed_page": 144,
+      "scan_leaf": 166,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_11",
+      "formal_scope": "first-order assertion rule; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

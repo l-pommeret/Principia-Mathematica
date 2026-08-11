@@ -1,7 +1,122 @@
-{"batch":"PM1-STAR10-Q269","edition":"first","volume":1,"source_range":{"printed_pages":"149","scan_leaves":[171],"canonical_scan":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page171-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","scan_sha256":"5c4b9bf2adf5e719f65e76b612f794c635d76b88482835b38cca2cf051c2532c","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱10·24","kind":"derived-proposition","printed":"⊢ : φy .⊃ .(∃x).φx","printed_page":149,"scan_leaf":171,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_24","formal_scope":"existential introduction; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":["PM1:✱9·1","PM1:✱10·1","PM1:✱10·01"],"normalized_dependencies":[]},
-{"id":"PM1:✱10·25","kind":"derived-proposition","printed":"⊢ : (x).φx .⊃ .(∃x).φx  [✱10·1·24]","printed_page":149,"scan_leaf":171,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_25","formal_scope":"universal-to-existential assertion; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":["PM1:✱10·1·24"],"normalized_dependencies":[]},
-{"id":"PM1:✱10·251","kind":"derived-proposition","printed":"⊢ : (x).∼φx .⊃ .∼{(x).φx}  [✱10·25 . Transp]","printed_page":149,"scan_leaf":171,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_251","formal_scope":"universal negation implication; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":["PM1:✱10·25"],"normalized_dependencies":[]},
-{"id":"PM1:✱10·252","kind":"derived-proposition","printed":"⊢ : ∼{(∃x).φx} .≡ .(x).∼φx  [✱4·2 . (✱9·02)]","printed_page":149,"scan_leaf":171,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_252","formal_scope":"quantified negation equivalence; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":["PM1:✱4·2","PM1:✱9·02","PM1:✱4·13","PM1:✱10·01"],"normalized_dependencies":[]},
-{"id":"PM1:✱10·253","kind":"derived-proposition","printed":"⊢ : ∼{(x).φx} .≡ .(∃x).∼φx  [✱4·2 . (✱9·01)]","printed_page":149,"scan_leaf":171,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_253","formal_scope":"quantified negation equivalence; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":["PM1:✱4·2","PM1:✱9·01","PM1:✱10·1","PM1:✱2·12","PM1:✱10·11·21","PM1:✱2·14","PM1:✱10·01"],"normalized_dependencies":[]}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR10-Q269",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "149",
+    "scan_leaves": [
+      171
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [{"scan_leaf": 171, "printed_page": 149, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page171-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg", "sha256": "5c4b9bf2adf5e719f65e76b612f794c635d76b88482835b38cca2cf051c2532c"}],
+    "scan_sha256": "5c4b9bf2adf5e719f65e76b612f794c635d76b88482835b38cca2cf051c2532c",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱10·24",
+      "kind": "derived-proposition",
+      "printed": "⊢ : φy .⊃ .(∃x).φx",
+      "printed_page": 149,
+      "scan_leaf": 171,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_24",
+      "formal_scope": "existential introduction; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [
+        "PM1:✱9·1",
+        "PM1:✱10·1",
+        "PM1:✱10·01"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·25",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (x).φx .⊃ .(∃x).φx  [✱10·1·24]",
+      "printed_page": 149,
+      "scan_leaf": 171,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_25",
+      "formal_scope": "universal-to-existential assertion; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [
+        "PM1:✱10·1·24"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·251",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (x).∼φx .⊃ .∼{(x).φx}  [✱10·25 . Transp]",
+      "printed_page": 149,
+      "scan_leaf": 171,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_251",
+      "formal_scope": "universal negation implication; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [
+        "PM1:✱10·25"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·252",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∼{(∃x).φx} .≡ .(x).∼φx  [✱4·2 . (✱9·02)]",
+      "printed_page": 149,
+      "scan_leaf": 171,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_252",
+      "formal_scope": "quantified negation equivalence; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱9·02",
+        "PM1:✱4·13",
+        "PM1:✱10·01"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·253",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∼{(x).φx} .≡ .(∃x).∼φx  [✱4·2 . (✱9·01)]",
+      "printed_page": 149,
+      "scan_leaf": 171,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_253",
+      "formal_scope": "quantified negation equivalence; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱9·01",
+        "PM1:✱10·1",
+        "PM1:✱2·12",
+        "PM1:✱10·11·21",
+        "PM1:✱2·14",
+        "PM1:✱10·01"
+      ],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

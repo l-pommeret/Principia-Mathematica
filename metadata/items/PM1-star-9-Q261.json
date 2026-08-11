@@ -1,7 +1,119 @@
-{"batch":"PM1-STAR9-Q261","edition":"first","volume":1,"source_range":{"printed_pages":"141","scan_leaves":[163]},"witnesses":["PM1-1910-SCAN","PG78050","WS-PM1"],"items":[
-{"id":"PM1:✱9·4","kind":"derived-proposition","printed":"⊢ : : p : ∨ : q .∨. (x).φx : .⊃ : .q : ∨ : p .∨. (x).φx","printed_page":141,"scan_leaf":163,"lean_path":"Principia/FirstEdition/Volume1/Star9.lean","declaration":"PM.FirstEdition.Volume1.Star9.star_9_4","formal_scope":"universal permutation; blocked architecture","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-missing-first-order-assertion","printed_dependencies":["PM1:✱1·5","PM1:✱9·21","PM1:✱9·04"],"normalized_dependencies":[]},
-{"id":"PM1:✱9·401","kind":"derived-proposition","printed":"⊢ : : p : ∨ : q .∨. (∃x).φx : .⊃ : .q : ∨ : p .∨. (∃x).φx","printed_page":141,"scan_leaf":163,"lean_path":"Principia/FirstEdition/Volume1/Star9.lean","declaration":"PM.FirstEdition.Volume1.Star9.star_9_401","formal_scope":"existential permutation; blocked architecture","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-missing-first-order-assertion","printed_dependencies":["As Above"],"normalized_dependencies":[]},
-{"id":"PM1:✱9·41","kind":"derived-proposition","printed":"⊢ : : p : ∨ : (x).φx .∨. r : .⊃ : .(x).φx : ∨ : p ∨ r","printed_page":141,"scan_leaf":163,"lean_path":"Principia/FirstEdition/Volume1/Star9.lean","declaration":"PM.FirstEdition.Volume1.Star9.star_9_41","formal_scope":"universal permutation; blocked architecture","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-missing-first-order-assertion","printed_dependencies":["As Above"],"normalized_dependencies":[]},
-{"id":"PM1:✱9·411","kind":"derived-proposition","printed":"⊢ : : p : ∨ : (∃x).φx .∨. r : .⊃ : .(∃x).φx : ∨ : p ∨ r","printed_page":141,"scan_leaf":163,"lean_path":"Principia/FirstEdition/Volume1/Star9.lean","declaration":"PM.FirstEdition.Volume1.Star9.star_9_411","formal_scope":"existential permutation; blocked architecture","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-missing-first-order-assertion","printed_dependencies":["As Above"],"normalized_dependencies":[]},
-{"id":"PM1:✱9·42","kind":"derived-proposition","printed":"⊢ : : (x).φx : ∨ : q ∨ r : .⊃ : .q : ∨ : (x).φx .∨. r","printed_page":141,"scan_leaf":163,"lean_path":"Principia/FirstEdition/Volume1/Star9.lean","declaration":"PM.FirstEdition.Volume1.Star9.star_9_42","formal_scope":"universal permutation; blocked architecture","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-missing-first-order-assertion","printed_dependencies":["As Above"],"normalized_dependencies":[]}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR9-Q261",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "141",
+    "scan_leaves": [
+      163
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 163,
+        "printed_page": 141,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page163-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "cc5234bf61c16024eed7a0c95a03f96fa47ae8fab9a23470739bad39c0965b97"
+      }
+    ]
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050",
+    "WS-PM1"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱9·4",
+      "kind": "derived-proposition",
+      "printed": "⊢ : : p : ∨ : q .∨. (x).φx : .⊃ : .q : ∨ : p .∨. (x).φx",
+      "printed_page": 141,
+      "scan_leaf": 163,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_4",
+      "formal_scope": "universal permutation; blocked architecture",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "printed_dependencies": [
+        "PM1:✱1·5",
+        "PM1:✱9·21",
+        "PM1:✱9·04"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱9·401",
+      "kind": "derived-proposition",
+      "printed": "⊢ : : p : ∨ : q .∨. (∃x).φx : .⊃ : .q : ∨ : p .∨. (∃x).φx",
+      "printed_page": 141,
+      "scan_leaf": 163,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_401",
+      "formal_scope": "existential permutation; blocked architecture",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "printed_dependencies": [
+        "As Above"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱9·41",
+      "kind": "derived-proposition",
+      "printed": "⊢ : : p : ∨ : (x).φx .∨. r : .⊃ : .(x).φx : ∨ : p ∨ r",
+      "printed_page": 141,
+      "scan_leaf": 163,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_41",
+      "formal_scope": "universal permutation; blocked architecture",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "printed_dependencies": [
+        "As Above"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱9·411",
+      "kind": "derived-proposition",
+      "printed": "⊢ : : p : ∨ : (∃x).φx .∨. r : .⊃ : .(∃x).φx : ∨ : p ∨ r",
+      "printed_page": 141,
+      "scan_leaf": 163,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_411",
+      "formal_scope": "existential permutation; blocked architecture",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "printed_dependencies": [
+        "As Above"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱9·42",
+      "kind": "derived-proposition",
+      "printed": "⊢ : : (x).φx : ∨ : q ∨ r : .⊃ : .q : ∨ : (x).φx .∨. r",
+      "printed_page": 141,
+      "scan_leaf": 163,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_42",
+      "formal_scope": "universal permutation; blocked architecture",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "printed_dependencies": [
+        "As Above"
+      ],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

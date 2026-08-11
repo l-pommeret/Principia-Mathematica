@@ -1,7 +1,121 @@
-{"batch":"PM1-STAR10-Q266","edition":"first","volume":1,"source_range":{"printed_pages":"146","scan_leaves":[168],"canonical_scan":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page168-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","scan_sha256":"0b416ff85b3cfb865eb3cfab5c6a4c04cfff65f0ac21a68f7e64d80caf30736f","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱10·12","kind":"derived-proposition","printed":"⊢ : .(x).p ∨ φx .⊃ : p .∨ .(x).φx  [✱9·25]","printed_page":146,"scan_leaf":168,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_12","formal_scope":"quantified disjunction assertion; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":["PM1:✱9·25"],"normalized_dependencies":[]},
-{"id":"PM1:✱10·121","kind":"primitive-proposition","printed":"If “φx” is significant, then if a is of the same type as x, “φa” is significant, and vice versa.  [✱9·14]","printed_page":146,"scan_leaf":168,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_121","formal_scope":"same-type significance principle; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-functions-significance","printed_dependencies":["PM1:✱9·14"],"normalized_dependencies":[]},
-{"id":"PM1:✱10·122","kind":"primitive-proposition","printed":"If, for some a, there is a proposition φa, then there is a function φx̂, and vice versa.  [✱9·15]","printed_page":146,"scan_leaf":168,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_122","formal_scope":"function existence and significance principle; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-functions-significance","printed_dependencies":["PM1:✱9·15"],"normalized_dependencies":[]},
-{"id":"PM1:✱10·13","kind":"derived-proposition","printed":"If φx̂ and ψx̂ take arguments of the same type, and we have “⊢.φx” and “⊢.ψx,” we shall have “⊢.φx.ψx.”","printed_page":146,"scan_leaf":168,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_13","formal_scope":"conjunction under function/type conditions; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-functions-significance","printed_dependencies":["PM1:✱9·61","PM1:✱9·62","PM1:✱9·63","PM1:✱9·131","PM1:✱2·11","PM1:✱3·01","PM1:✱2·32","PM1:✱1·01","PM1:✱9·12"],"normalized_dependencies":[]},
-{"id":"PM1:✱10·14","kind":"derived-proposition","printed":"⊢ : .(x).φx : (x).ψx : ⊃ .φy .ψy","printed_page":146,"scan_leaf":168,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_14","formal_scope":"simultaneous universal instantiation; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-assertion","printed_dependencies":["PM1:✱10·1","PM1:✱10·13","PM1:✱3·47"],"normalized_dependencies":[]}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR10-Q266",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "146",
+    "scan_leaves": [
+      168
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [{"scan_leaf": 168, "printed_page": 146, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page168-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg", "sha256": "0b416ff85b3cfb865eb3cfab5c6a4c04cfff65f0ac21a68f7e64d80caf30736f"}],
+    "scan_sha256": "0b416ff85b3cfb865eb3cfab5c6a4c04cfff65f0ac21a68f7e64d80caf30736f",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱10·12",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .(x).p ∨ φx .⊃ : p .∨ .(x).φx  [✱9·25]",
+      "printed_page": 146,
+      "scan_leaf": 168,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_12",
+      "formal_scope": "quantified disjunction assertion; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [
+        "PM1:✱9·25"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·121",
+      "kind": "primitive-proposition",
+      "printed": "If “φx” is significant, then if a is of the same type as x, “φa” is significant, and vice versa.  [✱9·14]",
+      "printed_page": 146,
+      "scan_leaf": 168,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_121",
+      "formal_scope": "same-type significance principle; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-functions-significance",
+      "printed_dependencies": [
+        "PM1:✱9·14"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·122",
+      "kind": "primitive-proposition",
+      "printed": "If, for some a, there is a proposition φa, then there is a function φx̂, and vice versa.  [✱9·15]",
+      "printed_page": 146,
+      "scan_leaf": 168,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_122",
+      "formal_scope": "function existence and significance principle; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-functions-significance",
+      "printed_dependencies": [
+        "PM1:✱9·15"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·13",
+      "kind": "derived-proposition",
+      "printed": "If φx̂ and ψx̂ take arguments of the same type, and we have “⊢.φx” and “⊢.ψx,” we shall have “⊢.φx.ψx.”",
+      "printed_page": 146,
+      "scan_leaf": 168,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_13",
+      "formal_scope": "conjunction under function/type conditions; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-functions-significance",
+      "printed_dependencies": [
+        "PM1:✱9·61",
+        "PM1:✱9·62",
+        "PM1:✱9·63",
+        "PM1:✱9·131",
+        "PM1:✱2·11",
+        "PM1:✱3·01",
+        "PM1:✱2·32",
+        "PM1:✱1·01",
+        "PM1:✱9·12"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·14",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .(x).φx : (x).ψx : ⊃ .φy .ψy",
+      "printed_page": 146,
+      "scan_leaf": 168,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_14",
+      "formal_scope": "simultaneous universal instantiation; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-first-order-assertion",
+      "printed_dependencies": [
+        "PM1:✱10·1",
+        "PM1:✱10·13",
+        "PM1:✱3·47"
+      ],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

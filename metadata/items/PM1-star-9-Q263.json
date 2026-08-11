@@ -1,6 +1,96 @@
-{"batch":"PM1-STAR9-Q263","edition":"first","volume":1,"source_range":{"printed_pages":"142","scan_leaves":[164],"canonical_scan":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page164-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","scan_sha256":"78e2d89c9dabeeade09f4f22793dd4758e06a3397dbe6899faee3e1ff1b5facc","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱9·6","kind":"type-proposition","printed":"(x).φx, ∼(x).φx, (∃x).φx and ∼(∃x).φx are of the same type.","printed_page":142,"scan_leaf":164,"lean_path":"Principia/FirstEdition/Volume1/Star9.lean","declaration":"PM.FirstEdition.Volume1.Star9.star_9_6","formal_scope":"same-type proposition; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-functions-significance","printed_dependencies":["PM1:✱9·131"],"normalized_dependencies":[]},
-{"id":"PM1:✱9·61","kind":"function-existence","printed":"If φx̂ and ψx̂ are elementary functions of the same type, there is a function φx̂ ∨ ψx̂.","printed_page":142,"scan_leaf":164,"lean_path":"Principia/FirstEdition/Volume1/Star9.lean","declaration":"PM.FirstEdition.Volume1.Star9.star_9_61","formal_scope":"function existence/significance; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-functions-significance","printed_dependencies":["PM1:✱9·14·15"],"normalized_dependencies":[]},
-{"id":"PM1:✱9·62","kind":"function-existence","printed":"If φ(x̂, ŷ) and ψẑ are elementary functions, and the x-argument to φ is of the same type as the argument to ψ, there are functions (y).φ(x̂,y).∨.ψx̂, (∃y).φ(x̂,y).∨.ψx̂.","printed_page":142,"scan_leaf":164,"lean_path":"Principia/FirstEdition/Volume1/Star9.lean","declaration":"PM.FirstEdition.Volume1.Star9.star_9_62","formal_scope":"bound function formation/significance; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-functions-significance","printed_dependencies":["PM1:✱9·15","PM1:✱9·14","PM1:✱9·03"],"normalized_dependencies":[]},
-{"id":"PM1:✱9·63","kind":"function-existence","printed":"If φ(x̂, ŷ), ψ(x̂, ŷ) are elementary functions of the same type, there are functions (y).φ(x̂,y).∨.(z).ψ(x̂,z), etc.","printed_page":142,"scan_leaf":164,"lean_path":"Principia/FirstEdition/Volume1/Star9.lean","declaration":"PM.FirstEdition.Volume1.Star9.star_9_63","formal_scope":"two-bound-variable function formation; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-functions-significance","printed_dependencies":["Proof as above"],"normalized_dependencies":[]}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR9-Q263",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "142",
+    "scan_leaves": [
+      164
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [{"scan_leaf": 164, "printed_page": 142, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page164-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg", "sha256": "78e2d89c9dabeeade09f4f22793dd4758e06a3397dbe6899faee3e1ff1b5facc"}],
+    "scan_sha256": "78e2d89c9dabeeade09f4f22793dd4758e06a3397dbe6899faee3e1ff1b5facc",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱9·6",
+      "kind": "type-proposition",
+      "printed": "(x).φx, ∼(x).φx, (∃x).φx and ∼(∃x).φx are of the same type.",
+      "printed_page": 142,
+      "scan_leaf": 164,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_6",
+      "formal_scope": "same-type proposition; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-functions-significance",
+      "printed_dependencies": [
+        "PM1:✱9·131"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱9·61",
+      "kind": "function-existence",
+      "printed": "If φx̂ and ψx̂ are elementary functions of the same type, there is a function φx̂ ∨ ψx̂.",
+      "printed_page": 142,
+      "scan_leaf": 164,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_61",
+      "formal_scope": "function existence/significance; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-functions-significance",
+      "printed_dependencies": [
+        "PM1:✱9·14·15"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱9·62",
+      "kind": "function-existence",
+      "printed": "If φ(x̂, ŷ) and ψẑ are elementary functions, and the x-argument to φ is of the same type as the argument to ψ, there are functions (y).φ(x̂,y).∨.ψx̂, (∃y).φ(x̂,y).∨.ψx̂.",
+      "printed_page": 142,
+      "scan_leaf": 164,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_62",
+      "formal_scope": "bound function formation/significance; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-functions-significance",
+      "printed_dependencies": [
+        "PM1:✱9·15",
+        "PM1:✱9·14",
+        "PM1:✱9·03"
+      ],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱9·63",
+      "kind": "function-existence",
+      "printed": "If φ(x̂, ŷ), ψ(x̂, ŷ) are elementary functions of the same type, there are functions (y).φ(x̂,y).∨.(z).ψ(x̂,z), etc.",
+      "printed_page": 142,
+      "scan_leaf": 164,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_63",
+      "formal_scope": "two-bound-variable function formation; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-functions-significance",
+      "printed_dependencies": [
+        "Proof as above"
+      ],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}
