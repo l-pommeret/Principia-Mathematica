@@ -111,3 +111,18 @@ PM-VERBATIM-END PM1:✱21·23 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·24
 ✱21·24. ⊢ : ẑxẑyψ(x,y) = ẑxẑyφ(x,y) . ẑxẑyχ(x,y) = ẑxẑyφ(x,y) .⊃ . ẑxẑyψ(x,y) = ẑxẑyχ(x,y)
 PM-VERBATIM-END PM1:✱21·24 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·32
+✱21·32. ⊢ . ẑxẑy[x{ẑxẑyφ(x,y)}y] = ẑxẑyφ(x,y)
+PM-VERBATIM-END PM1:✱21·32 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·33
+✱21·33. ⊢ : R = ẑxẑyφ(x,y) .≡ : xRy .≡₍x,y₎. φ(x,y)
+PM-VERBATIM-END PM1:✱21·33 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·4
+✱21·4. ⊢ : R ε Rel .≡ . (∃φ). R = ẑxẑyφ!(x,y)
+PM-VERBATIM-END PM1:✱21·4 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·41
+✱21·41. ⊢ . ẑxẑyφ(x,y) ε Rel
+PM-VERBATIM-END PM1:✱21·41 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·42
+✱21·42. ⊢ . ẑxẑy(xRy) = R
+PM-VERBATIM-END PM1:✱21·42 -/
