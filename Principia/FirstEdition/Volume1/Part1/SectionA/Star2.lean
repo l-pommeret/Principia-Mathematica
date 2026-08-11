@@ -2002,4 +2002,99 @@ theorem star_2_76 {Γ} (p q r : PM.Elementary Γ) :
   exact PM.Derivation.detach (star_2_75 p q r)
     (star_2_04 (p ∨ₚ q) (p ∨ₚ (q ⊃ₚ r)) (p ∨ₚ r))
 
+/- PM-VERBATIM-BEGIN PM1:✱2·77
+✱2·77.  ⊢ : p . ⊃ . q ⊃ r : ⊃ : p ⊃ q . ⊃ . p ⊃ r    [✱2·76 ∼p/p]
+PM-VERBATIM-END PM1:✱2·77 -/
+
+def star_2_77_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . ⊃ . q ⊃ r : ⊃ : p ⊃ q . ⊃ . p ⊃ r"
+  parsed := (p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))
+  scopeReading := "The printed instance substitutes ∼p for p in ✱2·76."
+
+def star_2_77_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·76 ∼p/p]"
+
+theorem star_2_77 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) := by
+  exact star_2_76 (∼ₚ p) q r
+
+/- PM-VERBATIM-BEGIN PM1:✱2·8
+✱2·8.  ⊢ : q ∨ r . ⊃ : ∼r ∨ s . ⊃ . q ∨ s
+
+Dem.
+
+⊢ . ✱2·53 . Perm . ⊃ ⊢ : q ∨ r . ⊃ : ∼r ⊃ q :
+[✱2·38]                 ⊃ : ∼r ∨ s . ⊃ . q ∨ s : ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱2·8 -/
+
+def star_2_8_reading (q r s : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : q ∨ r . ⊃ : ∼r ∨ s . ⊃ . q ∨ s"
+  parsed := (q ∨ₚ r) ⊃ₚ ((∼ₚ r ∨ₚ s) ⊃ₚ (q ∨ₚ s))
+  scopeReading := "The two displayed antecedents are nested to the right."
+
+def star_2_8_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·53 . Perm] then [✱2·38]"
+
+theorem star_2_8 {Γ} (q r s : PM.Elementary Γ) :
+    ⊢ₚ ((q ∨ₚ r) ⊃ₚ ((∼ₚ r ∨ₚ s) ⊃ₚ (q ∨ₚ s))) := by
+  have perm : ⊢ₚ ((q ∨ₚ r) ⊃ₚ (r ∨ₚ q)) :=
+    PM.FirstEdition.Volume1.Star1.star_1_4 q r
+  have permFlipped : ⊢ₚ ((r ∨ₚ q) ∨ₚ ∼ₚ (q ∨ₚ r)) :=
+    PM.Derivation.detach perm
+      (PM.FirstEdition.Volume1.Star1.star_1_4 (∼ₚ (q ∨ₚ r)) (r ∨ₚ q))
+  have fiftyThree : ⊢ₚ ((r ∨ₚ q) ⊃ₚ (∼ₚ r ⊃ₚ q)) := star_2_53 r q
+  have sumFiftyThree :
+      ⊢ₚ (((r ∨ₚ q) ∨ₚ ∼ₚ (q ∨ₚ r)) ⊃ₚ ((∼ₚ r ⊃ₚ q) ∨ₚ ∼ₚ (q ∨ₚ r))) :=
+    PM.Derivation.detach fiftyThree
+      (star_2_38 (∼ₚ (q ∨ₚ r)) (r ∨ₚ q) (∼ₚ r ⊃ₚ q))
+  have line1 : ⊢ₚ ((∼ₚ r ⊃ₚ q) ∨ₚ ∼ₚ (q ∨ₚ r)) :=
+    PM.Derivation.detach permFlipped sumFiftyThree
+  have line2 : ⊢ₚ ((∼ₚ r ⊃ₚ q) ⊃ₚ ((∼ₚ r ∨ₚ s) ⊃ₚ (q ∨ₚ s))) :=
+    star_2_38 s (∼ₚ r) q
+  have sumLine2 :
+      ⊢ₚ (((∼ₚ r ⊃ₚ q) ∨ₚ ∼ₚ (q ∨ₚ r)) ⊃ₚ
+        (((∼ₚ r ∨ₚ s) ⊃ₚ (q ∨ₚ s)) ∨ₚ ∼ₚ (q ∨ₚ r))) :=
+    PM.Derivation.detach line2
+      (star_2_38 (∼ₚ (q ∨ₚ r)) (∼ₚ r ⊃ₚ q) ((∼ₚ r ∨ₚ s) ⊃ₚ (q ∨ₚ s)))
+  have line3 : ⊢ₚ (((∼ₚ r ∨ₚ s) ⊃ₚ (q ∨ₚ s)) ∨ₚ ∼ₚ (q ∨ₚ r)) :=
+    PM.Derivation.detach line1 sumLine2
+  exact PM.Derivation.detach line3
+    (PM.FirstEdition.Volume1.Star1.star_1_4
+      ((∼ₚ r ∨ₚ s) ⊃ₚ (q ∨ₚ s)) (∼ₚ (q ∨ₚ r)))
+
+/- PM-VERBATIM-BEGIN PM1:✱2·81
+✱2·81.  ⊢ :: q . ⊃ . r ⊃ s : ⊃ :. p ∨ q . ⊃ : p ∨ r . ⊃ . p ∨ s
+
+Dem.
+
+⊢ . Sum .       ⊃ ⊢ :: q . ⊃ . r ⊃ s : ⊃ :. p ∨ q . ⊃ : p . ∨ . r ⊃ s    (1)
+⊢ . ✱2·76 . Syll . ⊃ ⊢ :: p ∨ q . ⊃ : p . ∨ . r ⊃ s : ⊃ :.
+                           p ∨ q . ⊃ : p ∨ r . ⊃ . p ∨ s                    (2)
+⊢ . (1) . (2) . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱2·81 -/
+
+def star_2_81_reading (p q r s : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ :: q . ⊃ . r ⊃ s : ⊃ :. p ∨ q . ⊃ : p ∨ r . ⊃ . p ∨ s"
+  parsed := (q ⊃ₚ (r ⊃ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ ((p ∨ₚ r) ⊃ₚ (p ∨ₚ s)))
+  scopeReading := "The two numbered intermediate implications are composed syllogistically."
+
+def star_2_81_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Sum] (1); [✱2·76 . Syll] (2); [(1) . (2)]"
+
+theorem star_2_81 {Γ} (p q r s : PM.Elementary Γ) :
+    ⊢ₚ ((q ⊃ₚ (r ⊃ₚ s)) ⊃ₚ
+      ((p ∨ₚ q) ⊃ₚ ((p ∨ₚ r) ⊃ₚ (p ∨ₚ s)))) := by
+  have line1 :
+      ⊢ₚ ((q ⊃ₚ (r ⊃ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ (r ⊃ₚ s)))) :=
+    PM.FirstEdition.Volume1.Star1.star_1_6 p q (r ⊃ₚ s)
+  have line2 :
+      ⊢ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ (r ⊃ₚ s))) ⊃ₚ
+        ((p ∨ₚ q) ⊃ₚ ((p ∨ₚ r) ⊃ₚ (p ∨ₚ s)))) :=
+    PM.Derivation.detach (star_2_76 p r s)
+      (star_2_05 (p ∨ₚ q) (p ∨ₚ (r ⊃ₚ s)) ((p ∨ₚ r) ⊃ₚ (p ∨ₚ s)))
+  exact PM.Derivation.detach line2
+    (PM.Derivation.detach line1
+      (star_2_06 (q ⊃ₚ (r ⊃ₚ s)) ((p ∨ₚ q) ⊃ₚ (p ∨ₚ (r ⊃ₚ s)))
+        ((p ∨ₚ q) ⊃ₚ ((p ∨ₚ r) ⊃ₚ (p ∨ₚ s)))))
+
 end PM.FirstEdition.Volume1.Star2

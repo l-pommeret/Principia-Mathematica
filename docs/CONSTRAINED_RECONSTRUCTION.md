@@ -93,3 +93,7 @@ A future batch may be source-collated before its dependencies are available by
 setting a reviewed `generation_status` beginning with `blocked-on-`. The
 reproducer then requires no manifest/context/prompt yet. Removing that gate
 causes all generated artifacts to become mandatory immediately.
+
+Context reproducibility is checked on the exact extracted declaration slice.
+The recorded whole-container hash remains provenance, but appending a later
+declaration to that Lean file does not invalidate an unchanged earlier bundle.

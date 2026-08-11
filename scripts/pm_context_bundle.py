@@ -36,6 +36,15 @@ def sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def preserve_historical_container_hashes(recorded: dict, rebuilt: dict) -> None:
+    """Ignore append-only container drift when exact declaration slices agree."""
+    for old, new in zip(recorded.get("sources", []), rebuilt.get("sources", []),
+                        strict=True):
+        if (old.get("kind") == new.get("kind") == "item-declaration"
+                and old.get("slice_sha256") == new.get("slice_sha256")):
+            new["source_sha256"] = old.get("source_sha256")
+
+
 def clean_foundation(source: str) -> str:
     clean = strip_lean_comments(source)
     clean = re.sub(r"(?m)^import\s+[^\n]+\n", "", clean)

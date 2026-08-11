@@ -9,7 +9,7 @@ import sys
 
 from pm_aristotle_prompt import render_batch_prompt
 from pm_constraint_manifest import compile_batch_manifest, load_item_registry
-from pm_context_bundle import ROOT, build_bundle
+from pm_context_bundle import ROOT, build_bundle, preserve_historical_container_hashes
 from pm_proof_skeleton import parse_demonstration
 
 
@@ -58,6 +58,12 @@ def verify(root: Path = ROOT) -> int:
         metadata_path = root / "metadata/context_bundles" / f"{stem}.json"
         metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
         metadata.pop("ci_evidence", None)
+        # A context bundle embeds declaration slices, not the whole container
+        # file. Later propositions may therefore change `source_sha256` while
+        # every included byte and `slice_sha256` remains identical. Preserve
+        # the historical whole-file digest as provenance, but do not treat
+        # such an append-only container change as context drift.
+        preserve_historical_container_hashes(metadata, bundle)
         if metadata != bundle:
             raise BatchVerificationError(f"context metadata drift for {stem}")
         prompt = render_batch_prompt(

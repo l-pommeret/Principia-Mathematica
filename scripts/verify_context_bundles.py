@@ -9,7 +9,7 @@ import re
 import sys
 
 from pm_constraint_manifest import load_item_registry
-from pm_context_bundle import ROOT, build_bundle
+from pm_context_bundle import ROOT, build_bundle, preserve_historical_container_hashes
 
 
 class ContextBundleVerificationError(ValueError):
@@ -54,6 +54,7 @@ def verify(root: Path = ROOT) -> int:
         expected_source = expected.pop("lean_source")
         if actual_source != expected_source:
             raise ContextBundleVerificationError(f"generated Lean context drift for {stem}")
+        preserve_historical_container_hashes(actual_metadata, expected)
         if actual_metadata != expected:
             raise ContextBundleVerificationError(f"context metadata drift for {stem}")
         if not actual_metadata["policy"]["grants_no_additional_proof_permission"]:

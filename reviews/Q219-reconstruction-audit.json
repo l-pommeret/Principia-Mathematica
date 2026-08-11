@@ -1,0 +1,10 @@
+{
+  "all_targets_strict": true,
+  "kind": "pm-constrained-batch-reconstruction-audit",
+  "target_audits": [
+    {"added_beyond_print": [], "allowed_but_unused": ["PM1:✱1·11"], "classification": "strict-closure", "current_item": "PM1:✱2·77", "faithful_by_printed_dependency_constraint": true, "global_conventions": ["PM1:✱1·11"], "kind": "pm-constrained-reconstruction-audit", "printed_event_coverage": [{"covered": true, "event": 1, "printed": "✱2·76", "step": 1, "used_candidates": ["PM1:✱2·76"]}], "uncovered_printed_events": [], "used_pm_items": ["PM1:✱2·76"]},
+    {"added_beyond_print": [], "allowed_but_unused": [], "classification": "strict-closure", "current_item": "PM1:✱2·8", "faithful_by_printed_dependency_constraint": true, "global_conventions": ["PM1:✱1·11"], "kind": "pm-constrained-reconstruction-audit", "printed_event_coverage": [{"covered": true, "event": 1, "printed": "✱2·53", "step": 1, "used_candidates": ["PM1:✱2·53"]}, {"covered": true, "event": 2, "printed": "Perm", "step": 1, "used_candidates": ["PM1:✱1·4"]}, {"covered": true, "event": 3, "printed": "✱2·38", "step": 1, "used_candidates": ["PM1:✱2·38"]}], "uncovered_printed_events": [], "used_pm_items": ["PM1:✱1·11", "PM1:✱1·4", "PM1:✱2·38", "PM1:✱2·53"]},
+    {"added_beyond_print": [], "allowed_but_unused": [], "classification": "strict-closure", "current_item": "PM1:✱2·81", "faithful_by_printed_dependency_constraint": true, "global_conventions": ["PM1:✱1·11"], "kind": "pm-constrained-reconstruction-audit", "printed_event_coverage": [{"covered": true, "event": 1, "printed": "Sum", "step": 1, "used_candidates": ["PM1:✱1·6"]}, {"covered": true, "event": 1, "printed": "✱2·76", "step": 2, "used_candidates": ["PM1:✱2·76"]}, {"covered": true, "event": 2, "printed": "Syll", "step": 2, "used_candidates": ["PM1:✱2·05", "PM1:✱2·06"]}], "uncovered_printed_events": [], "used_pm_items": ["PM1:✱1·11", "PM1:✱1·6", "PM1:✱2·05", "PM1:✱2·06", "PM1:✱2·76"]}
+  ],
+  "target_order": ["PM1:✱2·77", "PM1:✱2·8", "PM1:✱2·81"]
+}
