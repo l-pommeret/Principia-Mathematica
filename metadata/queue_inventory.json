@@ -6,17 +6,17 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 352,
-    "object_language_ast_parsed": 208,
-    "metalinguistic_routes": 6,
+    "catalogued_items": 362,
+    "object_language_ast_parsed": 216,
+    "metalinguistic_routes": 8,
     "architecture_gated_source_routes": 138,
     "catalogued_items_with_proof_skeleton": 54,
     "all_proof_skeleton_targets": 54,
-    "catalogued_items_missing_proof_skeleton": 298,
+    "catalogued_items_missing_proof_skeleton": 308,
     "constrained_batches": 14,
     "complete_batch_artifact_sets": 13,
     "planned_campaign_questions": 61,
-    "planned_uncatalogued_pm_ids": 13,
+    "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
     "catalogued_items_without_campaign_question": 147,
     "locally_scheduler_eligible": 2
@@ -47,7 +47,7 @@
       "PM1:✱3": 28,
       "PM1:✱4": 61,
       "PM1:✱5": 36,
-      "PM1:✱9": 36
+      "PM1:✱9": 46
     },
     "planned": {
       "PM1:✱1": 3,
@@ -58,7 +58,7 @@
       "PM1:✱9": 23
     },
     "planned_but_uncatalogued": {
-      "PM1:✱9": 13
+      "PM1:✱9": 3
     },
     "catalogued_without_campaign_question": {
       "PM1:✱1": 8,
@@ -5499,6 +5499,164 @@
       }
     },
     {
+      "id": "PM1:✱9·1",
+      "kind": "primitive-proposition",
+      "source_catalogue": true,
+      "formal_status": "awaiting-ci",
+      "campaign_questions": [
+        "Q258"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "af99f6ae205f68b99fd42c64cd33c3fd11463d1480a3e55b8220537896ec380f"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·11",
+      "kind": "primitive-proposition",
+      "source_catalogue": true,
+      "formal_status": "awaiting-ci",
+      "campaign_questions": [
+        "Q258"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "7821b7e88473afefb652ac698f1816d1d6cf5897301f359f1e55f7b5c9ba763e"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·12",
+      "kind": "primitive-inference-rule",
+      "source_catalogue": true,
+      "formal_status": "awaiting-ci",
+      "campaign_questions": [
+        "Q255"
+      ],
+      "ast": {
+        "status": "metalinguistic-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·13",
+      "kind": "primitive-inference-rule",
+      "source_catalogue": true,
+      "formal_status": "awaiting-ci",
+      "campaign_questions": [
+        "Q255"
+      ],
+      "ast": {
+        "status": "metalinguistic-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·2",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q256"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "8764fc4136cff00ad091c3b7873703ee10cbc89415ab76512579e65155bead38"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·21",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q256"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "b4ae27d6a19ca7cd257ed4ee9c0cd49972cd52325cbbf8e2333c46b4d6107ded"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·22",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q256"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "8055b301b22fc122261353320ae739f30186bd31bf5392759bc9fa653c61e6b6"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·23",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q257"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "2238a09a80b7141defecd1c97e0bdaad1eab9798dcb1e2f64a865789e7027f60"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·24",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q257"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "d30c0fa22de3e1376d4bf05bc7d38d8f6d45291f4821e2aca7101e1304b09519"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱9·25",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q257"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "a47b70442386ab692b0194445eed4ca3026fd6c69181aaa97990d206e437c0e8"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
       "id": "PM1:✱9·3",
       "kind": "derived-proposition",
       "source_catalogue": true,
@@ -5987,18 +6145,6 @@
     "PM1:✱9·63"
   ],
   "planned_but_uncatalogued": {
-    "PM1:✱9·1": [
-      "Q258"
-    ],
-    "PM1:✱9·11": [
-      "Q258"
-    ],
-    "PM1:✱9·12": [
-      "Q255"
-    ],
-    "PM1:✱9·13": [
-      "Q255"
-    ],
     "PM1:✱9·131": [
       "Q255"
     ],
@@ -6007,24 +6153,6 @@
     ],
     "PM1:✱9·15": [
       "Q255"
-    ],
-    "PM1:✱9·2": [
-      "Q256"
-    ],
-    "PM1:✱9·21": [
-      "Q256"
-    ],
-    "PM1:✱9·22": [
-      "Q256"
-    ],
-    "PM1:✱9·23": [
-      "Q257"
-    ],
-    "PM1:✱9·24": [
-      "Q257"
-    ],
-    "PM1:✱9·25": [
-      "Q257"
     ]
   },
   "planned_non_pm_but_uncatalogued": {
