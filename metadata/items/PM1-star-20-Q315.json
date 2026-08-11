@@ -1,1 +1,62 @@
-{"batch":"PM1-STAR20-Q315","edition":"first","volume":1,"source_range":{"printed_pages":"198","scan_leaves":[220],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":220,"printed_page":198,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page220-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg","sha256":"00e5a8494d0ae3847d5fa3746b33ca015f83c7515d19dd352f44f9ffee4b802d"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱20·03","kind":"definition","printed":"Cls = ẑ((∃φ). α = ẑ(φ!z))","printed_page":198,"scan_leaf":220,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_20_03","formal_scope":"type-relative class symbol; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":[],"normalized_dependencies":[]},{"id":"PM1:✱20·15","kind":"derived-proposition","printed":"⊢ : ψx .≡ₓ. χx : ≡ : ẑ(ψz) = ẑ(χz)","printed_page":198,"scan_leaf":220,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_20_15","formal_scope":"class extensional identity; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":[],"normalized_dependencies":[]},{"id":"PM1:✱20·31","kind":"derived-proposition","printed":"⊢ : ẑ(ψz) = ẑ(χz) .≡ : x ε ẑ(ψz) .≡ₓ. x ε ẑ(χz)","printed_page":198,"scan_leaf":220,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_20_31","formal_scope":"class membership extensionality; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":[],"normalized_dependencies":[]}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR20-Q315",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "198",
+    "scan_leaves": [
+      220
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 220,
+        "printed_page": 198,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page220-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg",
+        "sha256": "00e5a8494d0ae3847d5fa3746b33ca015f83c7515d19dd352f44f9ffee4b802d"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱20·03",
+      "kind": "definition",
+      "printed": "Cls = ẑ((∃φ). α = ẑ(φ!z))",
+      "printed_page": 198,
+      "scan_leaf": 220,
+      "lean_path": "Principia/FirstEdition/Volume1/Star20Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star20Source.star_20_03",
+      "formal_scope": "type-relative class symbol; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-classes-predicativity-reducibility",
+      "printed_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱20·31",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑ(ψz) = ẑ(χz) .≡ : x ε ẑ(ψz) .≡ₓ. x ε ẑ(χz)",
+      "printed_page": 198,
+      "scan_leaf": 220,
+      "lean_path": "Principia/FirstEdition/Volume1/Star20Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star20Source.star_20_31",
+      "formal_scope": "class membership extensionality; architecture blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-classes-predicativity-reducibility",
+      "printed_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}
