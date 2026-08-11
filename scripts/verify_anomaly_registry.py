@@ -30,6 +30,7 @@ REQUIRED_MANUAL = {
     "PM1-ANOM-Q222-RELAXED-ARCHIVE-UNCOVERED-CITATIONS",
     "PM1-ANOM-Q222-CHAIN-COMPOSITION-GAP",
     "PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT",
+    "PM1-ANOM-Q222-RETRY03-AUDITED-RELAXED-OUTPUT",
 }
 
 
@@ -101,6 +102,15 @@ def verify_registry(root: Path = ROOT) -> dict:
     forbidden = by_id["PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT"]
     if forbidden["lean_impact"].get("kind") != "forbidden-output":
         fail("Q222 retry-02 must remain a separate forbidden-output reconstruction gap")
+    retry03 = by_id["PM1-ANOM-Q222-RETRY03-AUDITED-RELAXED-OUTPUT"]
+    if (retry03.get("strict") is not False
+            or retry03["resolution_status"] != "audited-clean-output-pending-integration"
+            or retry03.get("resolves") != [
+                "PM1-ANOM-Q222-ASSOCIATION-GAP",
+                "PM1-ANOM-Q222-CHAIN-COMPOSITION-GAP",
+                "PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT",
+            ]):
+        fail("Q222 retry-03 must preserve its audited-but-not-integrated status")
     digital = [entry for entry in entries if entry["category"] == "digital-witness-error"]
     if not digital:
         fail("attested digital witness errors were not backfilled")

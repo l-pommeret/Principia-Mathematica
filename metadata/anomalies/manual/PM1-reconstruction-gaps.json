@@ -98,6 +98,25 @@
       "lean_impact": {"kind": "forbidden-output", "status": "rejected-not-integrated", "archive": "aristotle/results/Q222-repair-3-22-citations-final.tar.gz", "archive_sha256": "98db29f6adebc8bb531127e9247d69ba09501ad3a07ca8d634ce920a67ee9232"},
       "review_provenance": ["reviews/Q222-chain-composition-audit.json", "aristotle/results/Q222-repair-3-22-citations-final.tar.gz"],
       "resolution_status": "blocked-awaiting-clean-continuation"
+    },
+    {
+      "id": "PM1-ANOM-Q222-RETRY03-AUDITED-RELAXED-OUTPUT",
+      "category": "reconstruction-gap",
+      "pm_locus": {"volume": 1, "printed_pages": [116, 117], "scan_leaves": [138, 139], "items": ["PM1:✱3·2", "PM1:✱3·21", "PM1:✱3·22", "PM1:✱3·24"]},
+      "printed_reading": "The Q222 targets retain their printed readings and all printed citations; the record closes prior reconstruction/output audit findings only.",
+      "printed_citations": ["PM1:✱3·12", "PM1:✱3·2", "Comm/PM1:✱2·04", "PM1:✱3·13", "Perm/PM1:✱1·4", "PM1:✱3·14", "Transp/PM1:✱2·17", "PM1:✱2·11"],
+      "corrected_or_added_reading": "Retry-03 is source-audited clean: ✱3·2 uses only the declared ✱2·32 association relaxation; ✱3·22 uses every printed event plus declared ✱2·06 twice; no target proof contains forbidden output.",
+      "canonical_witness_evidence": {"canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/138", "scan_leaf": 138, "sha256": "c18eb6890dc92335e8df8773cbd46b8e98c2e550cdcb01f91a397bed27e9958b", "hash_kind": "audited leaf derivative"},
+      "digital_witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+      "affected_ast_items_batches": {"items": ["PM1:✱3·2", "PM1:✱3·21", "PM1:✱3·22", "PM1:✱3·24"], "batches": ["Q222"], "ast_effect": "None; both relaxed proof terms preserve the reviewed ASTs."},
+      "strict_audit_status": "false: source audit covers every printed event, but Q222 remains a documented relaxed reconstruction pending repository integration and remote kernel evidence.",
+      "minimal_relaxation": ["PM1:✱2·32", "PM1:✱2·06"],
+      "strict": false,
+      "relaxation_use": [{"id": "PM1:✱2·32", "uses": 1, "target": "PM1:✱3·2"}, {"id": "PM1:✱2·06", "uses": 2, "target": "PM1:✱3·22"}],
+      "lean_impact": {"kind": "source-audited-relaxed-output", "status": "not-integrated", "archive": "aristotle/results/Q222-repair-forbidden-output-final.tar.gz", "archive_sha256": "30f5f28fce7457d6dfb27f277f0304af1cb60e114f91fcacf2948be2a378f349"},
+      "review_provenance": ["reviews/Q222-chain-composition-audit.json", "aristotle/results/Q222-repair-forbidden-output-final.tar.gz"],
+      "resolves": ["PM1-ANOM-Q222-ASSOCIATION-GAP", "PM1-ANOM-Q222-CHAIN-COMPOSITION-GAP", "PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT"],
+      "resolution_status": "audited-clean-output-pending-integration"
     }
   ]
 }

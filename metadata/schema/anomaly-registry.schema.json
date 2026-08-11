@@ -42,6 +42,7 @@
           "resolution_status": {"type": "string"},
           "strict": {"type": "boolean"},
           "relaxation_use": {"type": "array"},
+          "resolves": {"type": "array", "items": {"type": "string"}},
           "apparatus_id": {"type": "string"},
           "linked_official_errata_ids": {"type": "array", "items": {"type": "string"}}
         }
