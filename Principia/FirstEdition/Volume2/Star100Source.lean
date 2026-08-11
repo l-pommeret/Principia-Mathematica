@@ -123,7 +123,7 @@ type as α. We shall then put
 
 μ = Nc(αᵦ)ʻδ,
 γ ∈ Nc(αᵦ)ʻδ,
-γ sm_(α,β) δ,
+γ sm₍ₐ,ᵦ₎ δ,
 
 and the class of all such numbers as μ for a given α and β we shall call
 NCᵝ(α), so that NCᵝ(α) = DʻNc(αᵦ).
@@ -153,3 +153,39 @@ PM-VERBATIM-END PM2:✱102·13 -/
 /- PM-VERBATIM-BEGIN PM2:✱102·2
 ✱102·2.  ⊢ : γ sm₍ₐ,ᵦ₎ δ .≡ . γ sm δ . γ ∈ tʻα . δ ∈ tʻβ  [✱35·102 . (✱65·1)]
 PM-VERBATIM-END PM2:✱102·2 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·22
+✱102·22.  ⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . γ sm δ . γ ⊂ tʻx . δ ⊂ tʻy  [✱63·5 . (✱65·12)]
+PM-VERBATIM-END PM2:✱102·22 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·23
+✱102·23.  ⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . (∃R). R ∈ 1→1 . DʻR ⊂ tʻx . ᗡʻR ⊂ tʻy . DʻR = γ . ᗡʻR = δ  [✱102·22 . ✱73·1]
+PM-VERBATIM-END PM2:✱102·23 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·24
+✱102·24.  ⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . (∃R). R ∈ 1(x)→1(y) . DʻR = γ . ᗡʻR = δ
+PM-VERBATIM-END PM2:✱102·24 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·36
+✱102·36.  ⊢ . E!Nc(αᵦ)ʻδ  [✱102·31 . ✱14·21]
+PM-VERBATIM-END PM2:✱102·36 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·361
+✱102·361.  ⊢ . E!Nc(α,β)ʻδ  [✱102·34 . ✱14·21]
+PM-VERBATIM-END PM2:✱102·361 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·37
+✱102·37.  ⊢ . ᗡʻNc(αᵦ) = tʻβ
+PM-VERBATIM-END PM2:✱102·37 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·45
+✱102·45.  ⊢ : γ ∈ Nc(αᵦ)ʻδ .⊃ . γ ∈ Nc(αₐ)ʻγ
+PM-VERBATIM-END PM2:✱102·45 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·46
+✱102·46.  ⊢ : γ ∈ Nc(αᵦ)ʻδ .≡ . δ ∈ Nc(βₐ)ʻγ .≡ . γ sm δ . γ ∈ tʻα . δ ∈ tʻβ  [✱102·2·3 . ✱73·31]
+PM-VERBATIM-END PM2:✱102·46 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·5
+✱102·5.  ⊢ : μ ∈ NCᵝ(α) .≡ . (∃δ). μ = Nc(αᵦ)ʻδ  [✱100·22 . ✱71·41 . (✱102·01)]
+PM-VERBATIM-END PM2:✱102·5 -/

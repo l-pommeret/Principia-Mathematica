@@ -135,7 +135,7 @@ def raw_tokens(source: str) -> list[Token]:
             continue
         type_index = re.match(
             r"([A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*)"
-            r"(ᵝ|ᵦ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
+            r"(ᵝ|ᵦ|ₐ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
             source[index:],
         )
         if type_index:
@@ -163,7 +163,9 @@ def raw_tokens(source: str) -> list[Token]:
                 result.append(Token("description_binder", text, index))
                 index += len(text)
                 continue
-            binder = (None if result and result[-1].kind == "description_binder" else re.match(
+            binder = (None if result and result[-1].kind in {
+                "description_binder", "atom", "type_index", "rparen"
+            } else re.match(
                 r"\(\s*(∃)?\s*([A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′']*"
                 r"(?:\s*,\s*[A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′']*)*)\s*\)"
                 r"(?=\s*[\.:])",
@@ -514,7 +516,7 @@ class Parser:
         elif token.kind == "type_index":
             indexed = re.fullmatch(
                 r"(?P<head>[A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*)"
-                r"(?P<index>ᵝ|ᵦ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
+                r"(?P<index>ᵝ|ᵦ|ₐ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
                 token.text,
             )
             assert indexed is not None
@@ -623,6 +625,8 @@ class Parser:
                 right = self.expression(1701)
                 if is_class_surface(right):
                     right = seal_class_surface(right)
+                elif is_relation_surface(right):
+                    right = seal_relation_surface(right)
                 left = AST(
                     "of", (left, right),
                     operator.text if len(operator.text) > 1 else None,
@@ -698,10 +702,11 @@ class Parser:
                     value,
                 )
             elif tag == "class_inclusion":
-                if not is_class_surface(left) or not is_class_surface(right):
+                if (not is_class_context_candidate(left) or
+                        not is_class_context_candidate(right)):
                     raise PMSyntaxError("class inclusion requires two class expressions")
                 left = AST(
-                    "class_inclusion", (seal_class_surface(left), seal_class_surface(right))
+                    "class_inclusion", (seal_as_class(left), seal_as_class(right))
                 )
             elif tag == "relation_inclusion":
                 if not is_relation_surface(left) or not is_relation_surface(right):

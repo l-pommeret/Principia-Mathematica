@@ -217,6 +217,32 @@ class PMDotSyntaxTests(unittest.TestCase):
         ]
         self.assertEqual(similarities[0]["value"], "₍ₐ,ᵦ₎")
 
+    def test_q102_22_seals_class_operands_of_inclusion(self):
+        parsed = statement_shape(
+            "✱102·22. ⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . γ sm δ . γ ⊂ tʻx . δ ⊂ tʻy"
+        )
+        self.assertIn("class_inclusion", tags(parsed))
+
+    def test_q102_23_seals_relations_used_as_of_arguments(self):
+        parsed = statement_shape(
+            "✱102·23. ⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . (∃R). R ∈ 1→1 . "
+            "DʻR ⊂ tʻx . ᗡʻR ⊂ tʻy . DʻR = γ . ᗡʻR = δ"
+        )
+        self.assertIn("relation_reference", tags(parsed))
+
+    def test_q102_24_keeps_one_y_as_a_named_application(self):
+        parsed = statement_shape(
+            "✱102·24. ⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . (∃R). R ∈ 1(x)→1(y) . "
+            "DʻR = γ . ᗡʻR = δ"
+        )
+        self.assertGreaterEqual(tags(parsed).count("apply_named"), 2)
+
+    def test_q102_45_preserves_alpha_subscript_as_a_type_index(self):
+        parsed = statement_shape(
+            "✱102·45. ⊢ : γ ∈ Nc(αᵦ)ʻδ .⊃ . γ ∈ Nc(αₐ)ʻγ"
+        )
+        self.assertIn("type_indexed", tags(parsed))
+
     def test_nested_of_application_preserves_left_nesting(self):
         parsed = shape("E!Ncʻα")
         value = parsed["children"][0]
