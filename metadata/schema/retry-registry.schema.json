@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PM operational retry registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kind", "schema_version", "policy", "retries"],
+  "properties": {
+    "kind": {"const": "pm-operational-retry-registry"},
+    "schema_version": {"const": 1},
+    "policy": {"type": "object"},
+    "retries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["qid", "retry_of", "followup", "state", "promotion_key"],
+        "properties": {
+          "qid": {"pattern": "^Q9[0-9]{3,}$"},
+          "retry_of": {"pattern": "^Q[0-9]{3,}$"},
+          "followup": {"type": "string"},
+          "state": {"enum": ["ready-for-daemon", "submitted", "terminal", "blocked"]},
+          "promotion_key": {"pattern": "^Q[0-9]{3,}$"}
+        }
+      }
+    }
+  }
+}

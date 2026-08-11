@@ -1,0 +1,15 @@
+{
+  "kind": "pm-operational-retry-registry",
+  "schema_version": 1,
+  "policy": {
+    "retry_qid_prefix": "Q9",
+    "retry_qid_minimum": 9001,
+    "retry_is_not_a_new_item": true,
+    "retry_promotes_only_its_canonical_batch": true,
+    "one_open_retry_per_canonical_batch": true
+  },
+  "retries": [
+    {"qid": "Q9001", "retry_of": "Q234", "followup": "aristotle/followups/Q234-kernel-hygiene-retry.md", "state": "ready-for-daemon", "promotion_key": "Q234"},
+    {"qid": "Q9002", "retry_of": "Q238", "followup": "aristotle/followups/Q238-kernel-hygiene-retry.md", "state": "ready-for-daemon", "promotion_key": "Q238"}
+  ]
+}

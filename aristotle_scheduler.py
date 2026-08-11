@@ -31,7 +31,7 @@ class SchedulerError(RuntimeError):
 @dataclass(frozen=True)
 class Candidate:
     qid: str
-    kind: str                 # continuation before new project
+    kind: str                 # continuation/retry before new project
     path: Path
     project_id: str | None = None
     manifest_path: str = ""
@@ -85,11 +85,45 @@ def continuation_spec(qid: str, item: dict, root: Path) -> Candidate | None:
     return Candidate(qid, "continuation", root / path, pid, path)
 
 
+def retry_spec(qid: str, item: dict, data: dict, root: Path) -> Candidate | None:
+    """Return an operational retry sharing a canonical project's identity.
+
+    A Q9001+ retry is deliberately not a new formal item or Aristotle project.
+    It continues the canonical project's conversation, while retaining its own
+    bookkeeping record so it cannot be promoted independently.
+    """
+    canonical = item.get("retry_of")
+    if canonical is None:
+        return None
+    if (not isinstance(canonical, str) or not re.fullmatch(r"Q\d+", canonical)
+            or not re.fullmatch(r"Q9\d{3,}", qid) or int(canonical[1:]) >= 9001):
+        raise SchedulerError(f"{qid}: invalid operational retry identity")
+    if item.get("canonical_promotion_forbidden") is not True:
+        raise SchedulerError(f"{qid}: retry must forbid independent canonical promotion")
+    if item.get("promotion_key") != canonical:
+        raise SchedulerError(f"{qid}: retry promotion_key must equal retry_of")
+    if item.get("aristotle_retry_status") != "not-submitted":
+        return None
+    path = item.get("aristotle_retry_path")
+    original = data.get("questions", {}).get(canonical)
+    pid = original.get("aristotle_project_id") if isinstance(original, dict) else None
+    if not isinstance(path, str) or not path or not isinstance(pid, str) or not UUID_RE.fullmatch(pid):
+        raise SchedulerError(f"{qid}: retry needs a followup path and canonical project ID")
+    return Candidate(qid, "retry", root / path, pid, path)
+
+
 def candidates(data: dict, root: Path, active_projects: set[str]) -> list[Candidate]:
     result: list[Candidate] = []
     items = data.get("items", {})
     for qid, item in data.get("questions", {}).items():
-        if not isinstance(item, dict) or item.get("audit_status") != "A":
+        if not isinstance(item, dict):
+            continue
+        retry = retry_spec(qid, item, data, root)
+        if retry is not None:
+            if retry.project_id not in active_projects:
+                result.append(retry)
+            continue
+        if item.get("audit_status") != "A":
             continue
         if not dependencies_checked(item, items):
             continue
@@ -109,7 +143,7 @@ def candidates(data: dict, root: Path, active_projects: set[str]) -> list[Candid
         if not isinstance(prompt, str) or not prompt:
             raise SchedulerError(f"{qid}: eligible question has no prompt_path")
         result.append(Candidate(qid, "project", root / prompt, None, prompt))
-    return sorted(result, key=lambda c: (c.kind != "continuation", c.qid))
+    return sorted(result, key=lambda c: (c.kind == "project", c.qid))
 
 
 def reconcile(data: dict, list_tasks: Callable[[str], list[dict[str, str]]]) -> tuple[int, set[str]]:
@@ -159,6 +193,8 @@ def mark_intent(data: dict, candidate: Candidate) -> None:
     item = data["questions"][candidate.qid]
     if candidate.kind == "project":
         item["aristotle_status"] = "submitting"
+    elif candidate.kind == "retry":
+        item["aristotle_retry_status"] = "submitting"
     else:
         item["aristotle_continuation_status"] = "submitting"
 
@@ -166,6 +202,16 @@ def mark_intent(data: dict, candidate: Candidate) -> None:
 def record_submission(data: dict, candidate: Candidate, result: dict, content: str) -> None:
     item = data["questions"][candidate.qid]
     task = result["task"]
+    if candidate.kind == "retry":
+        item.update({
+            "aristotle_retry_status": "submitted",
+            "aristotle_retry_project_id": result["project_id"],
+            "aristotle_retry_task_id": task["task_id"],
+            "aristotle_retry_remote_status": task["status"],
+            "aristotle_retry_prompt": candidate.manifest_path,
+            "aristotle_retry_prompt_sha256": hashlib.sha256(content.encode()).hexdigest(),
+        })
+        return
     fields = {
         "aristotle_status": "submitted",
         "aristotle_task_id": task["task_id"],
