@@ -1,0 +1,54 @@
+{
+  "kind": "pm-precompiled-kernel-link-audit",
+  "batches": [
+    {
+      "batch": "Q228",
+      "archive_sha256": "e31ae76268ec83e0fd0126bc3262a8ac9a800f1e0b31fd68c1c52946ffa03774",
+      "targets": ["PM1:✱4·11", "PM1:✱4·14", "PM1:✱4·15", "PM1:✱4·2"],
+      "link_status": "not-linkable",
+      "exact_body_findings": ["✱4·11 and ✱4·2 call local `adjoin` (an implicit ✱3·2 plus detachment construction)", "✱4·14 uses local `syll`, `imp_pre`, `imp_post`, and `conj_mono_right`", "✱4·15 bypasses its printed ✱4·13/✱4·14 route through a private rotation theorem and ✱3·37"],
+      "decision": "No transplant: the archive's `Q228/Derived.lean` and local Rules are not one-to-one links to approved kernel declarations."
+    },
+    {
+      "batch": "Q229",
+      "archive_sha256": "19edd0e7253154cd9907b08ab65e4ed64d2b1b04c1ce93e755477e53380cd374",
+      "targets": ["PM1:✱4·21", "PM1:✱4·22", "PM1:✱4·24", "PM1:✱4·25"],
+      "link_status": "not-linkable",
+      "exact_body_findings": ["The returned Principia/Star4.lean redefines `equiv`/`equivChain` after describing the requested interface as opaque.", "✱4·21/22/25 construct local `adjoin` through primitive star_1_2 through star_1_6 and detach.", "✱4·24 directly uses archive-local ✱3·2 and ✱2·43."],
+      "decision": "No transplant: local primitive derivations and redefined equivalence are not kernel-linked proof permissions."
+    },
+    {
+      "batch": "Q230",
+      "archive_sha256": "a02a62d98e2805f732250d547feab729ba2eed0f901237dc7223103bb5fc99bf",
+      "targets": ["PM1:✱4·3", "PM1:✱4·31", "PM1:✱4·32", "PM1:✱4·33"],
+      "link_status": "not-linkable",
+      "exact_body_findings": ["The target file says the requested opaque ✱4·01 interface makes its targets underivable, then proves them after importing an archive-local printed definition.", "Bodies depend on archive-local `equivIntro`, `equivImp`, and `adj`.", "✱4·32 additionally uses the local ✱4·11/12/14/15/22 closure rather than a verified remap."],
+      "decision": "No transplant: the archive documents an intentional interface escape, so it cannot serve as kernel evidence."
+    },
+    {
+      "batch": "Q231",
+      "archive_sha256": "a2f39ad6e6b36c07402778d3cd1d9fb5321c6674f57731eba132a48061b83e43",
+      "targets": ["PM1:✱4·34", "PM1:✱4·36", "PM1:✱4·37", "PM1:✱4·38", "PM1:✱4·39"],
+      "link_status": "not-linkable",
+      "exact_body_findings": ["The archive creates a local `Prf`/`Ent` sequent calculus, its axioms, weakening, deduction, and conjunction/disjunction rules.", "Every target is discharged through that local calculus rather than the opaque-stub declarations in the submitted interface."],
+      "decision": "No transplant: this is a different local proof system, not a dependency remap."
+    },
+    {
+      "batch": "Q232",
+      "archive_sha256": "e39c9996533c8a712e85e7cacafcd18821cd54faeb21dfdbf5767e839e4d39ed",
+      "targets": ["PM1:✱4·4", "PM1:✱4·41", "PM1:✱4·42"],
+      "link_status": "not-linkable",
+      "exact_body_findings": ["Bodies call archive-local `adj`, `Prf.mp`, `Syll`, `Sum`, and `compUnder`.", "The returned Star3.lean supplies these helpers and local ✱3 declarations instead of linking their repository constants."],
+      "decision": "No transplant until each helper has a one-to-one kernel declaration remap and the exact bodies are re-audited."
+    },
+    {
+      "batch": "Q233",
+      "archive_sha256": "91e67888e514b41ec867c8527b38d118ffcded089b2644a9f24fd5d3138057a4",
+      "targets": ["PM1:✱4·43", "PM1:✱4·44", "PM1:✱4·45"],
+      "link_status": "not-linkable",
+      "exact_body_findings": ["Bodies use archive-local `Proof.mp`, `adj`, and `syll` together with the returned Star2/Star3 modules.", "The archive therefore does not establish that its helper calls resolve to the repository kernel constants."],
+      "decision": "No transplant: retain integration_blocked pending a clean kernel-linked continuation."
+    }
+  ],
+  "summary": {"linkable_batches": [], "blocked_batches": ["Q228", "Q229", "Q230", "Q231", "Q232", "Q233"], "remote_ci_started": false}
+}
