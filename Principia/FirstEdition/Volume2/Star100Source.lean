@@ -601,3 +601,6 @@ PM-VERBATIM-END PM2:✱105·355 -/
 /- PM-VERBATIM-BEGIN PM2:✱105·356
 ✱105·356. ⊢ : μ ∈ NC . ∃!μ⁽¹⁾ .⊃ . {μ⁽¹⁾}⁽¹⁾ = μ  [✱105·352]
 PM-VERBATIM-END PM2:✱105·356 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·357
+✱105·357. ⊢ : μ ∈ NC . ∃!μ⁽²⁾ .⊃ . {μ⁽²⁾}⁽²⁾ = μ
+PM-VERBATIM-END PM2:✱105·357 -/
