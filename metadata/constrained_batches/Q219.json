@@ -1,0 +1,28 @@
+{
+  "kind": "pm-constrained-batch-spec",
+  "volume": 1,
+  "prompt_path": "aristotle/Q219.md",
+  "items": [
+    {
+      "id": "PM1:✱2·77",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-2-77.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_77",
+      "lean_target": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_77 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+      "global_conventions": ["PM1:✱1·11"]
+    },
+    {
+      "id": "PM1:✱2·8",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-2-8.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_8",
+      "lean_target": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_8 {Γ} (q r s : PM.Elementary Γ) :\n    ⊢ₚ ((q ∨ₚ r) ⊃ₚ ((∼ₚ r ∨ₚ s) ⊃ₚ (q ∨ₚ s))) := by\n  -- fill exactly from the whitelist and preserve the printed line\n\nend PM.FirstEdition.Volume1.Star2",
+      "global_conventions": ["PM1:✱1·11"]
+    },
+    {
+      "id": "PM1:✱2·81",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-2-81.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_81",
+      "lean_target": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_81 {Γ} (p q r s : PM.Elementary Γ) :\n    ⊢ₚ ((q ⊃ₚ (r ⊃ₚ s)) ⊃ₚ\n      ((p ∨ₚ q) ⊃ₚ ((p ∨ₚ r) ⊃ₚ (p ∨ₚ s)))) := by\n  -- preserve printed lines (1), (2), then their composition\n\nend PM.FirstEdition.Volume1.Star2",
+      "global_conventions": ["PM1:✱1·11"]
+    }
+  ]
+}
