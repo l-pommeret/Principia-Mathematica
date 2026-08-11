@@ -52,7 +52,7 @@ PM proofs.
 
 The accepted bodies, full PM verbatim demonstrations, readings, and dependency
 metadata were kernel-checked with the full edition at exact commit
-`f7620f005e853910042932bdbc95b603df05e8ab`, GitHub run
-[`31448777861`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31448777861),
+`e70ba1149ac9e4453e0567afb318edc5168e5595`, GitHub run
+[`31448989766`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31448989766),
 conclusion `success`. The run also compiled every isolated Aristotle context
 and passed the placeholder/unsafe rejection step.
