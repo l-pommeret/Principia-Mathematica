@@ -1,0 +1,11 @@
+{
+  "batch": "PM1-STAR4-KERNEL-Q228",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {"printed_pages":"121","scan_leaves":[143],"canonical_scan":"https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","scan_sha256":{"143":"95d6946a9ca568061123df63f32b694ac0440528ed74db45bce6478d45bf39e2"}},
+  "witnesses": ["PM1-1910-SCAN", "WS-PM1"],
+  "items": [
+    {"id":"PM1:✱4·11","kind":"derived-proposition","printed":"⊢ : p ≡ q . ≡ . ∼p ≡ ∼q","printed_page":121,"scan_leaf":143,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean","declaration":"PM.FirstEdition.Volume1.Star4.star_4_11","formal_scope":"(p≡q)≡(∼p≡∼q), over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"kernel-checked","printed_dependencies":["PM1:✱1·11","PM1:✱2·16","PM1:✱2·17","PM1:✱3·47","PM1:✱3·22"],"lean_dependencies":["PM.Derivation.detach","PM.FirstEdition.Volume1.Star2.star_2_05","PM.FirstEdition.Volume1.Star2.star_2_16","PM.FirstEdition.Volume1.Star2.star_2_17","PM.FirstEdition.Volume1.Star3.star_3_2","PM.FirstEdition.Volume1.Star3.star_3_22","PM.FirstEdition.Volume1.Star3.star_3_47"],"normalized_dependencies":["PM1:✱1·11","PM1:✱2·05","PM1:✱2·16","PM1:✱2·17","PM1:✱3·2","PM1:✱3·22","PM1:✱3·47"],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":["PM1:✱2·05","PM1:✱3·2"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q227-Q228-kernel-promotion-audit.md","editorial_note":"The explicit kernel term uses ✱3·2 packaging and ✱2·05 to transport the component permutation while retaining every printed citation and the implicit inference convention."}}
+  ],
+  "ci_evidence": {"commit":"be26037f8ccd8d283ab35657d4d810809b65dcb9","run":"https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31542913579","conclusion":"success"}
+}

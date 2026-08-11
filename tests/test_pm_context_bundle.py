@@ -60,9 +60,14 @@ class ContextBundleTests(unittest.TestCase):
         source = build_bundle(
             manifest, load_item_registry(ROOT / "metadata/items"), ROOT
         )["lean_source"]
+        target = (
+            "axiom star_4_13"
+            if "axiom star_4_13" in source
+            else "theorem star_4_13"
+        )
         self.assertLess(
             source.index('infix:53 " ≡ₚ "'),
-            source.index("axiom star_4_13"),
+            source.index(target),
         )
 
     def test_q230_interface_closure_contains_equiv_chain(self):

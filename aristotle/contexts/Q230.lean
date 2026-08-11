@@ -971,27 +971,107 @@ end PM.Elementary
 -- PM-CONTEXT-ITEM PM1:✱4·11 PM.FirstEdition.Volume1.Star4.star_4_11
 namespace PM.FirstEdition.Volume1.Star4
 
-axiom star_4_11 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ ((p ≡ₚ q) ≡ₚ ((∼ₚ p) ≡ₚ (∼ₚ q)))
-
+theorem star_4_11 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ≡ₚ q) ≡ₚ ((∼ₚ p) ≡ₚ (∼ₚ q))) := by
+  have forwardLinks : ⊢ₚ (((p ⊃ₚ q) ⊃ₚ (∼ₚ q ⊃ₚ ∼ₚ p)) ∧ₚ
+      ((q ⊃ₚ p) ⊃ₚ (∼ₚ p ⊃ₚ ∼ₚ q))) :=
+    PM.Derivation.detach (PM.FirstEdition.Volume1.Star2.star_2_16 q p)
+      (PM.Derivation.detach (PM.FirstEdition.Volume1.Star2.star_2_16 p q)
+        (PM.FirstEdition.Volume1.Star3.star_3_2
+          ((p ⊃ₚ q) ⊃ₚ (∼ₚ q ⊃ₚ ∼ₚ p))
+          ((q ⊃ₚ p) ⊃ₚ (∼ₚ p ⊃ₚ ∼ₚ q))))
+  have forwardRaw : ⊢ₚ ((p ≡ₚ q) ⊃ₚ ((∼ₚ q ⊃ₚ ∼ₚ p) ∧ₚ (∼ₚ p ⊃ₚ ∼ₚ q))) :=
+    PM.Derivation.detach forwardLinks
+      (PM.FirstEdition.Volume1.Star3.star_3_47
+        (p ⊃ₚ q) (q ⊃ₚ p) (∼ₚ q ⊃ₚ ∼ₚ p) (∼ₚ p ⊃ₚ ∼ₚ q))
+  have forward : ⊢ₚ ((p ≡ₚ q) ⊃ₚ ((∼ₚ p) ≡ₚ (∼ₚ q))) :=
+    PM.Derivation.detach forwardRaw
+      (PM.Derivation.detach
+        (PM.FirstEdition.Volume1.Star3.star_3_22
+          (∼ₚ q ⊃ₚ ∼ₚ p) (∼ₚ p ⊃ₚ ∼ₚ q))
+        (PM.FirstEdition.Volume1.Star2.star_2_05
+          (p ≡ₚ q) ((∼ₚ q ⊃ₚ ∼ₚ p) ∧ₚ (∼ₚ p ⊃ₚ ∼ₚ q))
+          ((∼ₚ p ⊃ₚ ∼ₚ q) ∧ₚ (∼ₚ q ⊃ₚ ∼ₚ p))))
+  have backwardLinks : ⊢ₚ (((∼ₚ p ⊃ₚ ∼ₚ q) ⊃ₚ (q ⊃ₚ p)) ∧ₚ
+      ((∼ₚ q ⊃ₚ ∼ₚ p) ⊃ₚ (p ⊃ₚ q))) :=
+    PM.Derivation.detach (PM.FirstEdition.Volume1.Star2.star_2_17 p q)
+      (PM.Derivation.detach (PM.FirstEdition.Volume1.Star2.star_2_17 q p)
+        (PM.FirstEdition.Volume1.Star3.star_3_2
+          ((∼ₚ p ⊃ₚ ∼ₚ q) ⊃ₚ (q ⊃ₚ p))
+          ((∼ₚ q ⊃ₚ ∼ₚ p) ⊃ₚ (p ⊃ₚ q))))
+  have backwardRaw : ⊢ₚ (((∼ₚ p) ≡ₚ (∼ₚ q)) ⊃ₚ ((q ⊃ₚ p) ∧ₚ (p ⊃ₚ q))) :=
+    PM.Derivation.detach backwardLinks
+      (PM.FirstEdition.Volume1.Star3.star_3_47
+        (∼ₚ p ⊃ₚ ∼ₚ q) (∼ₚ q ⊃ₚ ∼ₚ p) (q ⊃ₚ p) (p ⊃ₚ q))
+  have backward : ⊢ₚ (((∼ₚ p) ≡ₚ (∼ₚ q)) ⊃ₚ (p ≡ₚ q)) :=
+    PM.Derivation.detach backwardRaw
+      (PM.Derivation.detach
+        (PM.FirstEdition.Volume1.Star3.star_3_22 (q ⊃ₚ p) (p ⊃ₚ q))
+        (PM.FirstEdition.Volume1.Star2.star_2_05
+          ((∼ₚ p) ≡ₚ (∼ₚ q)) ((q ⊃ₚ p) ∧ₚ (p ⊃ₚ q))
+          ((p ⊃ₚ q) ∧ₚ (q ⊃ₚ p))))
+  exact PM.Derivation.detach backward
+    (PM.Derivation.detach forward
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        ((p ≡ₚ q) ⊃ₚ ((∼ₚ p) ≡ₚ (∼ₚ q)))
+        (((∼ₚ p) ≡ₚ (∼ₚ q)) ⊃ₚ (p ≡ₚ q))))
 
 end PM.FirstEdition.Volume1.Star4
 
 -- PM-CONTEXT-ITEM PM1:✱4·12 PM.FirstEdition.Volume1.Star4.star_4_12
 namespace PM.FirstEdition.Volume1.Star4
 
-axiom star_4_12 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ ((p ≡ₚ (∼ₚ q)) ≡ₚ (q ≡ₚ (∼ₚ p)))
-
+theorem star_4_12 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ≡ₚ (∼ₚ q)) ≡ₚ (q ≡ₚ (∼ₚ p))) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have a₁ := PM.FirstEdition.Volume1.Star2.star_2_03 p q
+  have a₂ := PM.FirstEdition.Volume1.Star2.star_2_15 q p
+  have haPair :=
+    infer a₂ (infer a₁
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        ((p ⊃ₚ ∼ₚ q) ⊃ₚ (q ⊃ₚ ∼ₚ p)) ((∼ₚ q ⊃ₚ p) ⊃ₚ (∼ₚ p ⊃ₚ q))))
+  have hFwd :=
+    infer haPair
+      (PM.FirstEdition.Volume1.Star3.star_3_47
+        (p ⊃ₚ ∼ₚ q) (∼ₚ q ⊃ₚ p) (q ⊃ₚ ∼ₚ p) (∼ₚ p ⊃ₚ q))
+  have b₁ := PM.FirstEdition.Volume1.Star2.star_2_03 q p
+  have b₂ := PM.FirstEdition.Volume1.Star2.star_2_15 p q
+  have hbPair :=
+    infer b₂ (infer b₁
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        ((q ⊃ₚ ∼ₚ p) ⊃ₚ (p ⊃ₚ ∼ₚ q)) ((∼ₚ p ⊃ₚ q) ⊃ₚ (∼ₚ q ⊃ₚ p))))
+  have hBwd :=
+    infer hbPair
+      (PM.FirstEdition.Volume1.Star3.star_3_47
+        (q ⊃ₚ ∼ₚ p) (∼ₚ p ⊃ₚ q) (p ⊃ₚ ∼ₚ q) (∼ₚ q ⊃ₚ p))
+  exact infer hBwd (infer hFwd
+    (PM.FirstEdition.Volume1.Star3.star_3_2
+      ((p ≡ₚ (∼ₚ q)) ⊃ₚ (q ≡ₚ (∼ₚ p))) ((q ≡ₚ (∼ₚ p)) ⊃ₚ (p ≡ₚ (∼ₚ q)))))
 
 end PM.FirstEdition.Volume1.Star4
 
 -- PM-CONTEXT-ITEM PM1:✱4·13 PM.FirstEdition.Volume1.Star4.star_4_13
 namespace PM.FirstEdition.Volume1.Star4
 
-axiom star_4_13 {Γ} (p : PM.Elementary Γ) :
-    ⊢ₚ (p ≡ₚ (∼ₚ (∼ₚ p)))
-
+theorem star_4_13 {Γ} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ≡ₚ (∼ₚ (∼ₚ p))) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer
+    (PM.FirstEdition.Volume1.Star2.star_2_14 p)
+    (infer
+      (PM.FirstEdition.Volume1.Star2.star_2_12 p)
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        (p ⊃ₚ ∼ₚ (∼ₚ p)) (∼ₚ (∼ₚ p) ⊃ₚ p)))
 
 end PM.FirstEdition.Volume1.Star4
 

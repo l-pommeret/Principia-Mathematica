@@ -963,8 +963,19 @@ infix:53 " ≡ₚ " => PM.Elementary.equiv
 -- PM-CONTEXT-ITEM PM1:✱4·13 PM.FirstEdition.Volume1.Star4.star_4_13
 namespace PM.FirstEdition.Volume1.Star4
 
-axiom star_4_13 {Γ} (p : PM.Elementary Γ) :
-    ⊢ₚ (p ≡ₚ (∼ₚ (∼ₚ p)))
-
+theorem star_4_13 {Γ} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ≡ₚ (∼ₚ (∼ₚ p))) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer
+    (PM.FirstEdition.Volume1.Star2.star_2_14 p)
+    (infer
+      (PM.FirstEdition.Volume1.Star2.star_2_12 p)
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        (p ⊃ₚ ∼ₚ (∼ₚ p)) (∼ₚ (∼ₚ p) ⊃ₚ p)))
 
 end PM.FirstEdition.Volume1.Star4
