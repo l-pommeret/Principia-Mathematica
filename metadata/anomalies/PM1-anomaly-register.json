@@ -2305,6 +2305,81 @@
         "PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT"
       ],
       "resolution_status": "resolved-clean-output-kernel-checked"
+    },
+    {
+      "id": "PM1-ANOM-Q223-IMPLICIT-COMPOSITION-GAP",
+      "category": "incomplete-printed-citation",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          117
+        ],
+        "scan_leaves": [
+          139
+        ],
+        "items": [
+          "PM1:✱3·27",
+          "PM1:✱3·31"
+        ]
+      },
+      "printed_reading": "✱3·27 and ✱3·31 each terminate a visibly two-link asserted chain with `⊃ ⊢ . Prop`, without naming a composition proposition.",
+      "printed_citations": [
+        "PM1:✱3·22",
+        "PM1:✱3·26",
+        "PM1:✱2·31",
+        "PM1:✱2·53",
+        "Prop"
+      ],
+      "corrected_or_added_reading": "No correction to PM: the reconstruction supplies exactly one primitive Sum/✱1·6 composition at each locus, while retaining the cited propositions and substitutions.",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/139",
+        "scan_leaf": 139,
+        "sha256": "1b819017782765dda67ae70a26b49055f1a636edbc04ed5aa52985fd018f047c",
+        "hash_kind": "audited leaf derivative"
+      },
+      "digital_witnesses": [
+        "PM1-1910-SCAN",
+        "WS-PM1"
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:✱3·27",
+          "PM1:✱3·31"
+        ],
+        "batches": [
+          "Q223"
+        ],
+        "ast_effect": "None; the gap concerns the unlicensed primitive composition needed to close the printed chains, not their parsed formulas."
+      },
+      "strict_audit_status": "strict impossibility certified: the terminal Prop labels do not grant a proof permission, and the strict archive d1c27a…2487 was rejected for the unlicensed ✱1·6 uses.",
+      "minimal_relaxation": [
+        "PM1:✱1·6"
+      ],
+      "strict": false,
+      "relaxation_use": [
+        {
+          "id": "PM1:✱1·6",
+          "uses": 1,
+          "target": "PM1:✱3·27"
+        },
+        {
+          "id": "PM1:✱1·6",
+          "uses": 1,
+          "target": "PM1:✱3·31"
+        }
+      ],
+      "lean_impact": {
+        "kind": "kernel-checked-relaxed-printed-gaps",
+        "status": "kernel-checked",
+        "strict_rejected_archive_sha256_prefix": "d1c27a…2487",
+        "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31461909552"
+      },
+      "review_provenance": [
+        "reviews/Q223-review.md",
+        "aristotle/followups/Q223-retry-01.md",
+        "aristotle/followups/Q223-relax-implicit-composition.md"
+      ],
+      "resolution_status": "resolved-documented-relaxation-kernel-checked"
     }
   ]
 }

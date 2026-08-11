@@ -2,11 +2,13 @@
   "kind": "pm-isolated-context-bundle",
   "profile": "elementary-pm1",
   "current_item": null,
-  "manifest_sha256": "ce7ea271690a08aebd31971218fb4d6262dd6757ebe29b4729f0fcd296e7e2fc",
+  "manifest_sha256": "f9ab67e5d533bd1241c8510c71c09887d224dc1435270d0976c4da321f3dddbe",
   "source_sha256": "87798ce2a157054a301f3823a7b7aab8623ad10ef695d8bb0f5dc93ef9eb4cb1",
   "source_bytes": 16102,
   "proof_permissions": [
     "PM1:✱1·01",
+    "PM1:✱1·11",
+    "PM1:✱1·6",
     "PM1:✱2·02",
     "PM1:✱2·04",
     "PM1:✱2·05",
@@ -353,8 +355,8 @@
     "PM1:✱3·31"
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "2af0252ddcd92a53a2493a788cb64426e262a0b2",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31461909552",
+    "conclusion": "success"
   }
 }

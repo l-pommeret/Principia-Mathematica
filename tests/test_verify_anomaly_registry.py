@@ -36,6 +36,10 @@ class AnomalyRegistryTests(unittest.TestCase):
             entries["PM1-ANOM-Q222-RETRY03-AUDITED-RELAXED-OUTPUT"]["resolution_status"],
             "resolved-clean-output-kernel-checked",
         )
+        q223 = entries["PM1-ANOM-Q223-IMPLICIT-COMPOSITION-GAP"]
+        self.assertEqual(q223["category"], "incomplete-printed-citation")
+        self.assertFalse(q223["strict"])
+        self.assertEqual([use["target"] for use in q223["relaxation_use"]], ["PM1:✱3·27", "PM1:✱3·31"])
         self.assertGreaterEqual(sum(entry["category"] == "digital-witness-error" for entry in entries.values()), 1)
 
     def test_registry_cannot_drop_an_attested_digital_witness_error(self):

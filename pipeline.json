@@ -889,11 +889,53 @@
         "PM1:✱3·22"
       ],
       "parallel_group": "STAR3-WAVE-1C",
-      "aristotle_status": "not-submitted",
+      "aristotle_status": "complete",
       "constraint_manifest_path": "aristotle/manifests/Q223.json",
       "isolated_context_path": "aristotle/contexts/Q223.lean",
-      "context_validation": "deterministic-static-verifiers-passed",
-      "reconstruction_classification": "strict-parser-generated-pending-remote-kernel-check"
+      "context_validation": "remote-kernel-checked",
+      "context_ci_evidence": {
+        "commit": "2af0252ddcd92a53a2493a788cb64426e262a0b2",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31461909552",
+        "conclusion": "success"
+      },
+      "reconstruction_audit_path": "reviews/Q223-reconstruction-audit.json",
+      "reconstruction_classification": "kernel-checked-relaxed-printed-gaps",
+      "strict": false,
+      "historical_gaps": {
+        "implicit_composition": {
+          "items": [
+            "PM1:✱3·27",
+            "PM1:✱3·31"
+          ],
+          "added": "PM1:✱1·6",
+          "uses_per_item": 1,
+          "status": "documented-relaxation"
+        }
+      },
+      "rejected_archives": [
+        {
+          "sha256_prefix": "d1c27a…2487",
+          "reason": "strict-impossibility-unlicensed-implicit-composition",
+          "promoted": false
+        }
+      ],
+      "aristotle_task_id": "850948bc-9db3-4079-a479-927476dce828",
+      "aristotle_latest_task_id": "850948bc-9db3-4079-a479-927476dce828",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
+      "aristotle_project_id": "681e5335-f8f5-4bd4-84e1-8fcea83bfbeb",
+      "aristotle_request_path": "aristotle/Q223.md",
+      "aristotle_request_sha256": "73824fd5f83729026a257a5aaa31cf8ebe289c1376ed35734c7bec89fa0e8eb6",
+      "aristotle_latest_task_name": "# Q223 authorized minimal-r...",
+      "aristotle_latest_task_created": "19 mins ago",
+      "aristotle_followup_prompt": "aristotle/followups/Q223-relax-implicit-composition.md",
+      "aristotle_followup_prompt_sha256": "655a4a85dc3df398d83da8eb03d746a8800f9aebf1271240e6c2a599318b8bf6",
+      "integration_status": "kernel-checked-relaxed-printed-gaps",
+      "integration_ci_evidence": {
+        "commit": "2af0252ddcd92a53a2493a788cb64426e262a0b2",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31461909552",
+        "conclusion": "success"
+      }
     },
     "Q224": {
       "canonical_ids": [

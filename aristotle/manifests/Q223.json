@@ -4,7 +4,7 @@
     "proof_permissions_are_exact_per_target": true,
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
-    "strict": true
+    "strict": false
   },
   "batch_items": [
     {
@@ -12,7 +12,7 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": false
       },
       "current_item": "PM1:✱3·26",
       "proof_permissions": [
@@ -67,9 +67,12 @@
           ]
         }
       ],
-      "global_conventions": [],
+      "global_conventions": [
+        "PM1:✱1·11"
+      ],
       "allowed_pm_items": [
         "PM1:✱1·01",
+        "PM1:✱1·11",
         "PM1:✱2·02",
         "PM1:✱2·31",
         "PM1:✱2·53",
@@ -77,6 +80,7 @@
       ],
       "allowed_lean_declarations": {
         "PM1:✱1·01": "PM.Elementary.imp",
+        "PM1:✱1·11": "PM.Derivation.star_1_11",
         "PM1:✱2·02": "PM.FirstEdition.Volume1.Star2.star_2_02",
         "PM1:✱2·31": "PM.FirstEdition.Volume1.Star2.star_2_31",
         "PM1:✱2·53": "PM.FirstEdition.Volume1.Star2.star_2_53",
@@ -157,7 +161,7 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": false
       },
       "current_item": "PM1:✱3·27",
       "proof_permissions": [
@@ -182,12 +186,19 @@
           ]
         }
       ],
-      "global_conventions": [],
+      "global_conventions": [
+        "PM1:✱1·11",
+        "PM1:✱1·6"
+      ],
       "allowed_pm_items": [
+        "PM1:✱1·11",
+        "PM1:✱1·6",
         "PM1:✱3·22",
         "PM1:✱3·26"
       ],
       "allowed_lean_declarations": {
+        "PM1:✱1·11": "PM.Derivation.star_1_11",
+        "PM1:✱1·6": "PM.FirstEdition.Volume1.Star1.star_1_6",
         "PM1:✱3·22": "PM.FirstEdition.Volume1.Star3.star_3_22",
         "PM1:✱3·26": "PM.FirstEdition.Volume1.Star3.star_3_26"
       },
@@ -269,6 +280,9 @@
           "step": 1,
           "printed": "(q,p)/(p,q)"
         }
+      ],
+      "documented_relaxations": [
+        "PM1:✱1·6"
       ]
     },
     {
@@ -276,7 +290,7 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": false
       },
       "current_item": "PM1:✱3·3",
       "proof_permissions": [
@@ -366,9 +380,12 @@
           ]
         }
       ],
-      "global_conventions": [],
+      "global_conventions": [
+        "PM1:✱1·11"
+      ],
       "allowed_pm_items": [
         "PM1:✱1·01",
+        "PM1:✱1·11",
         "PM1:✱2·04",
         "PM1:✱2·05",
         "PM1:✱2·06",
@@ -380,6 +397,7 @@
       ],
       "allowed_lean_declarations": {
         "PM1:✱1·01": "PM.Elementary.imp",
+        "PM1:✱1·11": "PM.Derivation.star_1_11",
         "PM1:✱2·04": "PM.FirstEdition.Volume1.Star2.star_2_04",
         "PM1:✱2·05": "PM.FirstEdition.Volume1.Star2.star_2_05",
         "PM1:✱2·06": "PM.FirstEdition.Volume1.Star2.star_2_06",
@@ -457,7 +475,7 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": false
       },
       "current_item": "PM1:✱3·31",
       "proof_permissions": [
@@ -522,9 +540,14 @@
           ]
         }
       ],
-      "global_conventions": [],
+      "global_conventions": [
+        "PM1:✱1·11",
+        "PM1:✱1·6"
+      ],
       "allowed_pm_items": [
         "PM1:✱1·01",
+        "PM1:✱1·11",
+        "PM1:✱1·6",
         "PM1:✱2·08",
         "PM1:✱2·31",
         "PM1:✱2·53",
@@ -532,6 +555,8 @@
       ],
       "allowed_lean_declarations": {
         "PM1:✱1·01": "PM.Elementary.imp",
+        "PM1:✱1·11": "PM.Derivation.star_1_11",
+        "PM1:✱1·6": "PM.FirstEdition.Volume1.Star1.star_1_6",
         "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08",
         "PM1:✱2·31": "PM.FirstEdition.Volume1.Star2.star_2_31",
         "PM1:✱2·53": "PM.FirstEdition.Volume1.Star2.star_2_53",
@@ -599,6 +624,9 @@
           "step": 1,
           "printed": "(∼p ∨ ∼q,r)/(p,q)"
         }
+      ],
+      "documented_relaxations": [
+        "PM1:✱1·6"
       ]
     }
   ],
@@ -691,6 +719,8 @@
   ],
   "proof_permissions": [
     "PM1:✱1·01",
+    "PM1:✱1·11",
+    "PM1:✱1·6",
     "PM1:✱2·02",
     "PM1:✱2·04",
     "PM1:✱2·05",

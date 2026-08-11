@@ -31,6 +31,7 @@ REQUIRED_MANUAL = {
     "PM1-ANOM-Q222-CHAIN-COMPOSITION-GAP",
     "PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT",
     "PM1-ANOM-Q222-RETRY03-AUDITED-RELAXED-OUTPUT",
+    "PM1-ANOM-Q223-IMPLICIT-COMPOSITION-GAP",
 }
 
 
@@ -86,7 +87,7 @@ def verify_registry(root: Path = ROOT) -> dict:
             fail(f"{entry['id']} digital witness entry lacks apparatus link")
     by_id = {entry["id"]: entry for entry in entries}
     if not REQUIRED_MANUAL <= by_id.keys():
-        fail("Q220, Q221, and Q222 reconstruction gaps must be backfilled")
+        fail("Q220 through Q223 reconstruction gaps must be backfilled")
     if by_id["PM1-ANOM-Q222-ASSOCIATION-GAP"]["minimal_relaxation"] != ["PM1:✱2·32"]:
         fail("Q222 must record only the approved minimal ✱2·32 relaxation")
     if by_id["PM1-ANOM-Q221-FIRST-ARCHIVE-FIDELITY-GAP"]["resolution_status"] != "resolved-strict-retry":
@@ -111,6 +112,12 @@ def verify_registry(root: Path = ROOT) -> dict:
                 "PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT",
             ]):
         fail("Q222 retry-03 must preserve its kernel-checked documented relaxation")
+    q223 = by_id["PM1-ANOM-Q223-IMPLICIT-COMPOSITION-GAP"]
+    if (q223["category"] != "incomplete-printed-citation" or q223.get("strict") is not False
+            or q223["minimal_relaxation"] != ["PM1:✱1·6"]
+            or [entry.get("target") for entry in q223.get("relaxation_use", [])]
+            != ["PM1:✱3·27", "PM1:✱3·31"]):
+        fail("Q223 must record the exact two-locus non-strict ✱1·6 relaxation")
     digital = [entry for entry in entries if entry["category"] == "digital-witness-error"]
     if not digital:
         fail("attested digital witness errors were not backfilled")
