@@ -77,3 +77,12 @@ PM-VERBATIM-END PM1:✱14·144 -/
 /- PM-VERBATIM-BEGIN PM1:✱14·145
 ✱14·145. ⊢ : a = (℩x)(φx) . a = (℩x)(ψx) .⊃ . (℩x)(φx) = (℩x)(ψx)
 PM-VERBATIM-END PM1:✱14·145 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·15
+✱14·15. ⊢ : (℩x)(φx) = b .⊃ : ψ{(℩x)(φx)} .≡ . ψb
+PM-VERBATIM-END PM1:✱14·15 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·16
+✱14·16. ⊢ : (℩x)(φx) = (℩x)(ψx) .⊃ : χ{(℩x)(φx)} .≡ . χ{(℩x)(ψx)}
+PM-VERBATIM-END PM1:✱14·16 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·17
+✱14·17. ⊢ : (℩x)(φx) = b .≡ : ψ!(℩x)(φx) .≡_ψ . ψ!b
+PM-VERBATIM-END PM1:✱14·17 -/
