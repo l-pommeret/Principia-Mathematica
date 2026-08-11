@@ -1,0 +1,12 @@
+{
+  "batch": "PM1-STAR9-Q258",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {"printed_pages": "136–137", "scan_leaves": [158, 159], "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},
+  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "items": [
+    {"id": "PM1:✱9·1", "kind": "primitive-proposition", "printed": "⊢:φx.⊃.(∃z).φz  Pp", "printed_page": 136, "scan_leaf": 158, "lean_path": "Principia/Architecture/FirstOrderPrerequisites.lean", "declaration": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_1", "formal_scope": "closed first-order primitive assertion schema from an elementary value to the same matrix's sometimes form", "source_status": "source-catalogued", "formal_status": "awaiting-ci", "integration_status": "awaiting-first-order-kernel-check", "printed_dependencies": [], "normalized_dependencies": []},
+    {"id": "PM1:✱9·11", "kind": "primitive-proposition", "printed": "⊢:φx∨φy.⊃.(∃z).φz  Pp", "printed_page": 136, "scan_leaf": 158, "lean_path": "Principia/Architecture/FirstOrderPrerequisites.lean", "declaration": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_11", "formal_scope": "closed primitive assertion schema with two distinct real values and one existential conclusion", "source_status": "source-catalogued", "formal_status": "awaiting-ci", "integration_status": "awaiting-first-order-kernel-check", "printed_dependencies": [], "normalized_dependencies": []}
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

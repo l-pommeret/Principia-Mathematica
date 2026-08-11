@@ -1,0 +1,12 @@
+{
+  "batch": "PM1-STAR9-Q255",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {"printed_pages": "137–138", "scan_leaves": [159, 160], "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},
+  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "items": [
+    {"id": "PM1:✱9·12", "kind": "primitive-inference-rule", "printed": "What is implied by a true premiss is true. Pp.", "printed_page": 137, "scan_leaf": 159, "lean_path": "Principia/Architecture/FirstOrderPrerequisites.lean", "declaration": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_12", "formal_scope": "assigned first-order detachment plus its separately named certified elementary-to-first-order instance", "source_status": "source-catalogued", "formal_status": "awaiting-ci", "integration_status": "awaiting-first-order-kernel-check", "printed_dependencies": [], "normalized_dependencies": []},
+    {"id": "PM1:✱9·13", "kind": "primitive-inference-rule", "printed": "In any assertion containing a real variable, this real variable may be turned into an apparent variable of which all possible values are asserted to satisfy the function in question. Pp.", "printed_page": 137, "scan_leaf": 159, "lean_path": "Principia/Architecture/FirstOrderPrerequisites.lean", "declaration": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_13", "formal_scope": "capture-safe leading real-variable to apparent-variable generalization for elementary matrices", "source_status": "source-catalogued", "formal_status": "awaiting-ci", "integration_status": "awaiting-first-order-kernel-check", "printed_dependencies": [], "normalized_dependencies": []}
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

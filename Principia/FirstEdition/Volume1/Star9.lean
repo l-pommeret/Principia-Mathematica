@@ -383,9 +383,59 @@ PM-VERBATIM-END PM1:✱9·62 -/
 ✱9·63.  If φ(x̂, ŷ), ψ(x̂, ŷ) are elementary functions of the same type, there are functions (y).φ(x̂,y).∨.(z).ψ(x̂,z), etc.  [Proof as above]
 PM-VERBATIM-END PM1:✱9·63 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱9·1
+✱9·1.   ⊢:φx.⊃.(∃z).φz  Pp
+
+This states that if φx is true, then there is a value of φẑ which is true;
+i.e. if we can find an instance of a function which is true, then the
+function is “sometimes true.”
+PM-VERBATIM-END PM1:✱9·1 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·11
+✱9·11.  ⊢:φx∨φy.⊃.(∃z).φz  Pp
+
+This primitive proposition is only used once, in proving
+(∃z).φz.∨.(∃z).φz:⊃.(∃z).φz. Its effect is to emphasize the ambiguity of the
+z required in order to secure (∃z).φz.
+PM-VERBATIM-END PM1:✱9·11 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·12
+✱9·12. What is implied by a true premiss is true. Pp.
+PM-VERBATIM-END PM1:✱9·12 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·13
+✱9·13. In any assertion containing a real variable, this real variable may
+be turned into an apparent variable of which all possible values are asserted
+to satisfy the function in question. Pp.
+PM-VERBATIM-END PM1:✱9·13 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·2
+✱9·2.   ⊢:(x).φx.⊃.φy
+PM-VERBATIM-END PM1:✱9·2 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·21
+✱9·21.  ⊢:.(x).φx⊃ψx.⊃:.(x).φx.⊃.(x).ψx
+PM-VERBATIM-END PM1:✱9·21 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·22
+✱9·22.  ⊢:.(x).φx⊃ψx.⊃:.(∃x).φx.⊃.(∃x).ψx
+PM-VERBATIM-END PM1:✱9·22 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·23
+✱9·23.  ⊢:(x).φx.⊃.(x).φx       [Id.✱9·13·21]
+PM-VERBATIM-END PM1:✱9·23 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·24
+✱9·24.  ⊢:(∃x).φx.⊃.(∃x).φx     [Id.✱9·13·22]
+PM-VERBATIM-END PM1:✱9·24 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱9·25
+✱9·25.  ⊢:.(x).p∨φx.⊃:p.∨.(x).φx   [Id.✱9·23.(✱9·04)]
+PM-VERBATIM-END PM1:✱9·25 -/
+
 /- PM-EDITORIAL
 Source: Principia Mathematica, first edition, volume I (1910), printed
-pp. 132–135, scan leaves 154–157. The diplomatic transcription above was
+pp. 132–140, scan leaves 154–162. The diplomatic transcription above was
 collated against the canonical scan, Project Gutenberg 78050, and
 Wikisource. The digital `shell`/`shall` and missing-parenthesis defects
 described in `reviews/Q252-review.md` are witness defects, not PM errata.

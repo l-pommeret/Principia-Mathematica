@@ -35,6 +35,26 @@ namespace Apparent
 prefix:max "∼ₐ" => neg
 infixl:55 " ∨ₐ " => disj
 
+/-- Capture-free renamings of PM real variables.  These are deliberately
+separate from `Renaming`: the latter changes apparent-variable binders,
+whereas this operation changes only the ambient real-variable context. -/
+abbrev RealRenaming (Γ Ξ : RealContext) :=
+  {τ : RealType} → RealVar Γ τ → RealVar Ξ τ
+
+/-- Simultaneous renaming of the ambient real variables, leaving all apparent
+binders untouched. -/
+def renameReal (ρ : RealRenaming Γ Ξ) : Apparent Γ Δ → Apparent Ξ Δ
+  | .constant name => .constant name
+  | .real v => .real (ρ v)
+  | .bound v => .bound v
+  | .neg proposition => .neg (renameReal ρ proposition)
+  | .disj left right => .disj (renameReal ρ left) (renameReal ρ right)
+
+/-- Weakening by one newly available real variable.  It never introduces an
+apparent binder. -/
+def weakenReal (proposition : Apparent Γ Δ) : Apparent (τ :: Γ) Δ :=
+  renameReal (fun v => .succ v) proposition
+
 /-- Regard a variable of the currently available PM real type as an atomic
 formula. This match is intentionally exhaustive over `RealType`: adding a new
 argument type later will force an audited account of its atomic formulae. -/
@@ -58,6 +78,16 @@ def toElementary? : Apparent Γ Δ → Option (Elementary Γ)
       let p ← toElementary? left
       let q ← toElementary? right
       pure (.disj p q)
+
+/-- An apparent matrix with no apparent variables is syntactically an
+elementary proposition.  This total erasure is used for the displayed
+instances `φx` in ✱9·1 and ✱9·11. -/
+def closedToElementary : Apparent Γ [] → Elementary Γ
+  | .constant name => .constant name
+  | .real v => .var v
+  | .bound v => nomatch v
+  | .neg proposition => .neg (closedToElementary proposition)
+  | .disj left right => .disj (closedToElementary left) (closedToElementary right)
 
 /-- Capture-free renamings of apparent variables. -/
 abbrev Renaming (Δ Ξ : BoundContext) :=
@@ -126,6 +156,36 @@ def instantiateSubstitution (argument : Apparent Γ Δ) :
 def instantiate (body : Apparent Γ (.elementaryProposition :: Δ))
     (argument : Apparent Γ Δ) : Apparent Γ Δ :=
   substitute (instantiateSubstitution argument) body
+
+/-- The displayed elementary value of a one-place elementary function at a
+specified real variable.  The result has no apparent variables; this is an
+object-syntactic operation, not semantic application. -/
+def atReal (body : Apparent Γ [.elementaryProposition])
+    (x : RealVar Γ .elementaryProposition) : Elementary Γ :=
+  closedToElementary (instantiate body (.real x))
+
+/-- Abstract the leading real variable into the one apparent-variable matrix.
+This is the precise context change needed by ✱9·13.  Other real variables
+remain real and retain their de Bruijn positions. -/
+def abstractHead : Elementary (.elementaryProposition :: Γ) →
+    Apparent Γ [.elementaryProposition]
+  | .constant name => .constant name
+  | .var .zero => .bound .zero
+  | .var (.succ v) => .real v
+  | .neg proposition => .neg (abstractHead proposition)
+  | .disj left right => .disj (abstractHead left) (abstractHead right)
+
+/-- Open a one-place apparent matrix at the newly leading real variable.
+Together with `abstractHead`, this provides the scope-certified real/apparent
+bridge without treating a real-variable context as hypotheses. -/
+def openHead : Apparent Γ [.elementaryProposition] →
+    Elementary (.elementaryProposition :: Γ)
+  | .constant name => .constant name
+  | .real v => .var (.succ v)
+  | .bound .zero => .var .zero
+  | .bound (.succ v) => nomatch v
+  | .neg proposition => .neg (openHead proposition)
+  | .disj left right => .disj (openHead left) (openHead right)
 
 /-- Decidable structural occurrence of a free apparent variable. -/
 def significant (v : BoundVar Δ .elementaryProposition) : Apparent Γ Δ → Bool
@@ -247,6 +307,14 @@ abbrev always (body : Apparent Γ (.elementaryProposition :: Δ)) :
 /-- PM's primitive idea `(∃x).φx`. -/
 abbrev sometimes (body : Apparent Γ (.elementaryProposition :: Δ)) :
     FirstOrder Γ Δ := Quantified.sometimes body
+
+/-- Weakening of the ambient real-variable context beneath either primitive
+binder.  This is required when the displayed instance `φx` remains free while
+the existential conclusion `(∃z).φz` no longer depends on that real variable.
+It is not a substitution rule and does not alter apparent-variable scope. -/
+def weakenReal : FirstOrder Γ Δ → FirstOrder (τ :: Γ) Δ
+  | Quantified.always body => Quantified.always (Apparent.weakenReal body)
+  | Quantified.sometimes body => Quantified.sometimes (Apparent.weakenReal body)
 
 /-- Capture-free renaming beneath either primitive binder. -/
 def rename (ρ : Apparent.Renaming Δ Ξ) : FirstOrder Γ Δ → FirstOrder Γ Ξ
