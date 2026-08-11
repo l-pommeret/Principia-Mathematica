@@ -168,3 +168,18 @@ PM-VERBATIM-END PM1:✱21·633 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·64
 ✱21·64. ⊢ : (R). fR : (R). gR .⊃ . fS . gS  [Proof as in ✱20·64]
 PM-VERBATIM-END PM1:✱21·64 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·7
+✱21·7. ⊢ : (∃g) : fR .≡ᴿ. g!R  [Proof as in ✱20·7]
+PM-VERBATIM-END PM1:✱21·7 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·701
+✱21·701. ⊢ : (∃g) : f(R,x) .≡₍R,x₎. g!(R,x)  [Proof as in ✱20·701]
+PM-VERBATIM-END PM1:✱21·701 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·702
+✱21·702. ⊢ : (∃g) : f(x,R) .≡₍R,x₎. g!(R,x)  [Proof as in ✱20·702]
+PM-VERBATIM-END PM1:✱21·702 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·703
+✱21·703. ⊢ : (∃g) : f(R,S) .≡₍R,S₎. g!(R,S)  [Proof as in ✱20·703]
+PM-VERBATIM-END PM1:✱21·703 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·704
+✱21·704. ⊢ : (∃g) : f(R,α) .≡₍R,α₎. g!(R,α)  [Proof as in ✱20·703]
+PM-VERBATIM-END PM1:✱21·704 -/
