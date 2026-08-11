@@ -96,10 +96,20 @@ def verify(site: Path) -> None:
             src = image.get("src") or ""
             if urlsplit(src).scheme != "https":
                 fail(f"facsimile image in {path} does not use an HTTPS src")
-            if urlsplit(src).hostname != "upload.wikimedia.org":
-                fail(f"facsimile image in {path} is not served by Wikimedia")
-            if not re.search(r"/page\d+-1280px-.*\.(?:djvu|pdf)\.jpg$", urlsplit(src).path, re.I):
-                fail(f"facsimile image in {path} is not an exact scan-page derivative")
+            image_url = urlsplit(src)
+            if image_url.hostname == "upload.wikimedia.org":
+                if not re.search(
+                    r"/page\d+-1280px-.*\.(?:djvu|pdf)\.jpg$", image_url.path, re.I
+                ):
+                    fail(f"facsimile image in {path} is not an exact Wikimedia scan-page derivative")
+            elif image_url.hostname == "archive.org":
+                if not re.fullmatch(
+                    r"/download/[A-Za-z0-9][A-Za-z0-9._-]*/page/n[1-9][0-9]*_w1400\.jpg",
+                    image_url.path,
+                ):
+                    fail(f"facsimile image in {path} is not an exact Internet Archive scan-page derivative")
+            else:
+                fail(f"facsimile image in {path} is not served by an approved scan host")
             if image.get("loading") != "lazy" or not image.get("alt"):
                 fail(f"facsimile image in {path} lacks lazy loading or alternative text")
         for link in parser.links:

@@ -128,7 +128,7 @@ def external_link(uri: str, label: str) -> str:
 
 
 def scan_urls(canonical_scan: str, leaf: int | str) -> dict[str, str]:
-    """Return deterministic Wikimedia URLs for a page in a multipage scan.
+    """Return deterministic URLs for a page in an approved multipage scan.
 
     MediaWiki's ``Special:Redirect/file`` currently renders page 1 even when a
     ``page`` query parameter is supplied.  Wikimedia's documented thumbnail
@@ -137,15 +137,37 @@ def scan_urls(canonical_scan: str, leaf: int | str) -> dict[str, str]:
     path here keeps the static build reproducible and network-free.
     """
     parts = urlsplit(canonical_scan)
+    page_number = int(leaf)
+    if page_number < 1:
+        raise ValueError(f"invalid scan leaf: {leaf}")
+
+    # The DLI copy of PM III is canonically hosted by Internet Archive, not
+    # Wikimedia.  Archive's page-image route is stable and fully determined by
+    # the safe identifier and leaf number; do not accept arbitrary archive.org
+    # paths, query strings, or identifiers that could escape that route.
+    archive = re.fullmatch(r"/details/([A-Za-z0-9][A-Za-z0-9._-]*)", parts.path)
+    if (
+        parts.scheme == "https"
+        and parts.netloc == "archive.org"
+        and not parts.query
+        and not parts.fragment
+        and archive
+    ):
+        identifier = archive.group(1)
+        image = f"https://archive.org/download/{identifier}/page/n{page_number}_w1400.jpg"
+        return {
+            "display": image,
+            "zoom": image,
+            "page": f"https://archive.org/details/{identifier}/page/n{page_number}/mode/1up",
+            "file": f"https://archive.org/details/{identifier}",
+        }
+
     marker = "/wiki/File:"
     if parts.scheme != "https" or marker not in parts.path:
         raise ValueError(f"unsupported canonical scan URL: {canonical_scan}")
     filename = unquote(parts.path.split(marker, 1)[1]).replace(" ", "_")
     if not filename.lower().endswith((".djvu", ".pdf")):
         raise ValueError(f"canonical scan is not multipage: {canonical_scan}")
-    page_number = int(leaf)
-    if page_number < 1:
-        raise ValueError(f"invalid scan leaf: {leaf}")
     digest = hashlib.md5(filename.encode("utf-8")).hexdigest()
     encoded = quote(filename, safe="_,.-()")
     base = (
