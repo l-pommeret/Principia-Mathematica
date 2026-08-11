@@ -503,3 +503,19 @@ PM-VERBATIM-END PM2:✱105·281 -/
 /- PM-VERBATIM-BEGIN PM2:✱105·29
 ✱105·29. ⊢ . NC ⊂ N₁C . NC ⊂ N₂C  [✱105·281 . ✱103·34]
 PM-VERBATIM-END PM2:✱105·29 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·301
+✱105·301. ⊢ : μ = N₀cʻα .⊃ . μ⁽²⁾ = N₂cʻα
+PM-VERBATIM-END PM2:✱105·301 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·31
+✱105·31. ⊢ : μ ∈ N₀C .⊃ . μ⁽¹⁾ ∈ N₁C  [✱105·3·15 . ✱103·2]
+PM-VERBATIM-END PM2:✱105·31 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·311
+✱105·311. ⊢ : μ ∈ N₀C .⊃ . μ⁽²⁾ ∈ N₂C
+PM-VERBATIM-END PM2:✱105·311 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·312
+✱105·312. ⊢ : γ ∈ N₁cʻα .⊃ . α ∈ N¹cʻγ . N¹cʻγ = N₀cʻα  [✱105·12 . ✱103·26]
+PM-VERBATIM-END PM2:✱105·312 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·313
+✱105·313. ⊢ : γ ∈ N₂cʻα .⊃ . α ∈ N²cʻγ . N²cʻγ = N₀cʻα
+PM-VERBATIM-END PM2:✱105·313 -/
