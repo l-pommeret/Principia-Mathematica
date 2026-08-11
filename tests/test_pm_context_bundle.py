@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from pm_context_bundle import build_bundle, preserve_historical_container_hashes
+from pm_context_bundle import build_bundle, interface_stub, preserve_historical_container_hashes
 
 
 class ContextBundleTests(unittest.TestCase):
@@ -42,6 +42,15 @@ class ContextBundleTests(unittest.TestCase):
         }
         with self.assertRaisesRegex(ValueError, "unknown context items"):
             build_bundle(manifest, {}, ROOT)
+
+    def test_interface_stub_is_an_axiom_for_a_proof_target(self):
+        from pm_constraint_manifest import load_item_registry
+
+        stub, signature = interface_stub(
+            load_item_registry(ROOT / "metadata/items")["PM1:✱3·37"], ROOT
+        )
+        self.assertTrue(stub.lstrip().startswith("axiom star_3_37"))
+        self.assertTrue(signature.lstrip().startswith("theorem star_3_37"))
 
     def test_formation_profile_contains_separate_judgement(self):
         manifest = {

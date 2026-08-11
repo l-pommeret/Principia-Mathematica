@@ -817,7 +817,7 @@ end PM.FirstEdition.Volume1.Star3
 -- PM-CONTEXT-ITEM PM1:✱3·43 PM.FirstEdition.Volume1.Star3.star_3_43
 namespace PM.FirstEdition.Volume1.Star3
 
-opaque star_3_43 {Γ} (p q r : PM.Elementary Γ) :
+axiom star_3_43 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (((p ⊃ₚ q) ∧ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ∧ₚ r)))
 
 
@@ -826,7 +826,7 @@ end PM.FirstEdition.Volume1.Star3
 -- PM-CONTEXT-ITEM PM1:✱4·01 PM.Elementary.equiv
 namespace PM.Elementary
 
-opaque equiv (p q : PM.Elementary Γ) : PM.Elementary Γ
+axiom equiv (p q : PM.Elementary Γ) : PM.Elementary Γ
 
 
 end PM.Elementary
@@ -834,7 +834,7 @@ end PM.Elementary
 -- PM-CONTEXT-ITEM PM1:✱4·02 PM.Elementary.equivChain
 namespace PM.Elementary
 
-opaque equivChain (p q r : PM.Elementary Γ) : PM.Elementary Γ
+axiom equivChain (p q r : PM.Elementary Γ) : PM.Elementary Γ
 
 
 end PM.Elementary

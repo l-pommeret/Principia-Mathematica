@@ -93,12 +93,14 @@ def clean_declaration(item: dict, root: Path) -> str:
 
 
 def interface_stub(item: dict, root: Path) -> tuple[str, str]:
-    """Return an opaque, signature-only interface for a non-kernel item.
+    """Return a signature-only interface axiom for a non-kernel item.
 
     This deliberately derives the type binder/header from the declared Lean
-    source and emits no reconstructed proof body.  `opaque` is permitted only
-    in a context whose manifest records the corresponding PM ID and source
-    hashes; it is rejected by the canonical-integration gate.
+    source and emits no reconstructed proof body.  Lean's bodyless `opaque`
+    declarations require a `Nonempty` target, which proof and syntax targets
+    intentionally lack.  The generated context therefore uses an `axiom`;
+    it is permitted only in a manifest-recorded, integration-blocked context
+    and is rejected from canonical Lean sources.
     """
     try:
         body = clean_declaration(item, root)
@@ -141,12 +143,12 @@ def interface_stub(item: dict, root: Path) -> tuple[str, str]:
     if ":=" not in body:
         raise BundleError(f"cannot derive interface signature for {item['id']}")
     header = body.split(":=", 1)[0].rstrip()
-    opaque, replacements = re.subn(
-        r"(?m)^(\s*)(?:theorem|def|abbrev)\b", r"\1opaque", header, count=1
+    interface, replacements = re.subn(
+        r"(?m)^(\s*)(?:theorem|def|abbrev)\b", r"\1axiom", header, count=1
     )
     if replacements != 1:
         raise BundleError(f"unsupported declaration header for {item['id']}")
-    return opaque + "\n", header + "\n"
+    return interface + "\n", header + "\n"
 
 
 def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -> dict:

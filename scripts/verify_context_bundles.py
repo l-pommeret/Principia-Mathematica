@@ -41,15 +41,14 @@ def verify_one(metadata_path: Path, registry: dict[str, dict], root: Path) -> No
             f"CI evidence must be fully pending or successful for {stem}"
         )
     actual_source = source_path.read_text(encoding="utf-8")
-    forbidden = re.search(
-        r"(?m)(?:\bsorry\b|\badmit\b|^\s*axiom\b|^\s*unsafe\b|\bClassical\b)",
-        actual_source,
-    )
+    forbidden = re.search(r"(?m)(?:\bsorry\b|\badmit\b|^\s*unsafe\b|\bClassical\b)", actual_source)
     if forbidden:
         raise ContextBundleVerificationError(
             f"forbidden construct {forbidden.group(0)!r} in {stem}"
         )
     interface_gated = bool(actual_metadata.get("policy", {}).get("interface_gated", False))
+    if re.search(r"(?m)^\s*axiom\b", actual_source) and not interface_gated:
+        raise ContextBundleVerificationError(f"interface axiom outside interface gate for {stem}")
     opaque_stubs = [
         source for source in actual_metadata.get("sources", [])
         if source.get("kind") == "opaque-interface-stub"

@@ -859,7 +859,7 @@ end PM.FirstEdition.Volume1.Star3
 -- PM-CONTEXT-ITEM PM1:✱3·37 PM.FirstEdition.Volume1.Star3.star_3_37
 namespace PM.FirstEdition.Volume1.Star3
 
-opaque star_3_37 {Γ} (p q r : PM.Elementary Γ) :
+axiom star_3_37 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ⊃ₚ ((p ∧ₚ (∼ₚ r)) ⊃ₚ (∼ₚ q)))
 
 
@@ -952,7 +952,7 @@ end PM.FirstEdition.Volume1.Star3
 -- PM-CONTEXT-ITEM PM1:✱4·01 PM.Elementary.equiv
 namespace PM.Elementary
 
-opaque equiv (p q : PM.Elementary Γ) : PM.Elementary Γ
+axiom equiv (p q : PM.Elementary Γ) : PM.Elementary Γ
 
 
 end PM.Elementary
@@ -960,7 +960,7 @@ end PM.Elementary
 -- PM-CONTEXT-ITEM PM1:✱4·11 PM.FirstEdition.Volume1.Star4.star_4_11
 namespace PM.FirstEdition.Volume1.Star4
 
-opaque star_4_11 {Γ} (p q : PM.Elementary Γ) :
+axiom star_4_11 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ≡ₚ q) ≡ₚ (∼ₚ p ≡ₚ ∼ₚ q))
 
 
@@ -969,7 +969,7 @@ end PM.FirstEdition.Volume1.Star4
 -- PM-CONTEXT-ITEM PM1:✱4·12 PM.FirstEdition.Volume1.Star4.star_4_12
 namespace PM.FirstEdition.Volume1.Star4
 
-opaque star_4_12 {Γ} (p q : PM.Elementary Γ) :
+axiom star_4_12 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ≡ₚ (∼ₚ q)) ≡ₚ (q ≡ₚ (∼ₚ p)))
 
 
@@ -978,7 +978,7 @@ end PM.FirstEdition.Volume1.Star4
 -- PM-CONTEXT-ITEM PM1:✱4·13 PM.FirstEdition.Volume1.Star4.star_4_13
 namespace PM.FirstEdition.Volume1.Star4
 
-opaque star_4_13 {Γ} (p : PM.Elementary Γ) :
+axiom star_4_13 {Γ} (p : PM.Elementary Γ) :
     ⊢ₚ (p ≡ₚ (∼ₚ (∼ₚ p)))
 
 
@@ -987,7 +987,7 @@ end PM.FirstEdition.Volume1.Star4
 -- PM-CONTEXT-ITEM PM1:✱4·14 PM.FirstEdition.Volume1.Star4.star_4_14
 namespace PM.FirstEdition.Volume1.Star4
 
-opaque star_4_14 {Γ} (p q r : PM.Elementary Γ) :
+axiom star_4_14 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ≡ₚ ((p ∧ₚ ∼ₚ r) ⊃ₚ ∼ₚ q))
 
 
@@ -996,7 +996,7 @@ end PM.FirstEdition.Volume1.Star4
 -- PM-CONTEXT-ITEM PM1:✱4·15 PM.FirstEdition.Volume1.Star4.star_4_15
 namespace PM.FirstEdition.Volume1.Star4
 
-opaque star_4_15 {Γ} (p q r : PM.Elementary Γ) :
+axiom star_4_15 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (((p ∧ₚ q) ⊃ₚ ∼ₚ r) ≡ₚ ((q ∧ₚ r) ⊃ₚ ∼ₚ p))
 
 
@@ -1005,7 +1005,7 @@ end PM.FirstEdition.Volume1.Star4
 -- PM-CONTEXT-ITEM PM1:✱4·22 PM.FirstEdition.Volume1.Star4.star_4_22
 namespace PM.FirstEdition.Volume1.Star4
 
-opaque star_4_22 {Γ} (p q r : PM.Elementary Γ) :
+axiom star_4_22 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (PM.Elementary.equivChain p q r ⊃ₚ (p ≡ₚ r))
 
 
