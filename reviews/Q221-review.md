@@ -18,3 +18,9 @@ Scopes: `p·q→¬(¬p∨¬q)`, its converse,
 `(¬p∨¬q)∨(p·q)`, `¬(p·q)→(¬p∨¬q)`, and its converse. The first
 three-place disjunction is left-associated under ✱2·33. No print defect is
 established in these five items. Confidence high.
+
+Queue state: the sole permitted Aristotle request was submitted after that
+kernel gate, as project `2aa01a68-f240-40cf-9642-17ef17d264c5`, task
+`10f781a5-9c34-4aa4-9608-f0934778ac3f`. No theorem in this Q221 batch is yet
+claimed proved or promoted; the next state transition requires a terminal
+archive plus independent reconstruction audit.
