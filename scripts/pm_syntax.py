@@ -296,6 +296,12 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("postfix_type_index", char, index))
             index += 1
             continue
+        postfix_superscript = re.match(r"(?:[⁰¹²³⁴-⁹]|⁽[⁰¹²³⁴-⁹]+⁾)", source[index:])
+        if postfix_superscript:
+            text = postfix_superscript.group(0)
+            result.append(Token("postfix_superscript_index", text, index))
+            index += len(text)
+            continue
         superscript_indexed = re.match(
             r"([A-Za-zΑ-Ωα-ω]+)([⁰¹²³⁴-⁹]|⁽[⁰¹²³⁴-⁹]+⁾)([A-Za-zΑ-Ωα-ω]*)",
             source[index:],
@@ -761,6 +767,12 @@ class Parser:
                     break
                 index = self.take()
                 left = AST("type_indexed", (left,), index.text)
+                continue
+            if next_token.kind == "postfix_superscript_index":
+                if 1800 < minimum:
+                    break
+                index = self.take()
+                left = AST("superscript_indexed", (left,), index.text)
                 continue
             if next_token.kind == "superscript_indexed":
                 if 1800 < minimum:

@@ -305,6 +305,10 @@ class PMDotSyntaxTests(unittest.TestCase):
         parsed = statement_shape("✱104·2. ⊢ . ʻʻα ∈ N¹cʻα")
         self.assertEqual(tags(parsed).count("unit_class"), 2)
 
+    def test_q105_38_preserves_postfix_superscript_on_braced_class(self):
+        parsed = statement_shape("✱105·38. ⊢ . {μ⁽¹⁾}⁽¹⁾ = μ⁽²⁾")
+        self.assertGreaterEqual(tags(parsed).count("superscript_indexed"), 3)
+
     def test_star_14_02_accepts_description_as_existence_argument(self):
         parsed = statement_shape("✱14·02. E!(℩x)(φx) .=: (∃b) : φx .≡ₓ. x = b Df")
         self.assertIn("description_exists", tags(parsed))
