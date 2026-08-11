@@ -21,7 +21,7 @@ class PMQueueInventoryTests(unittest.TestCase):
         self.assertGreaterEqual(counts["all_proof_skeleton_targets"], 17)
         self.assertGreater(counts["planned_uncatalogued_pm_ids"], 0)
         self.assertGreater(counts["catalogued_items_without_campaign_question"], 0)
-        self.assertIn("PM1:✱3·2", result["planned_but_uncatalogued"])
+        self.assertIn("PM1:✱3·26", result["planned_but_uncatalogued"])
         self.assertNotIn("PM2:✱1", result["pm_section_coverage"]["planned"])
 
     def test_catalogued_skeleton_record_keeps_artifact_boundary_explicit(self):

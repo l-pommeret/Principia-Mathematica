@@ -154,6 +154,41 @@ theorem star_3_14 {Γ} (p q : PM.Elementary Γ) :
       (PM.FirstEdition.Volume1.Star2.star_2_06 ((∼ₚ p) ∨ₚ (∼ₚ q))
         (∼ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))) (∼ₚ (p ∧ₚ q))))
 
+/- PM-VERBATIM-BEGIN PM1:✱3·2
+✱3·2.  ⊢ : p . ⊃ : q . ⊃ . p . q   [✱3·12]
+PM-VERBATIM-END PM1:✱3·2 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·21
+✱3·21.  ⊢ : q . ⊃ : p . ⊃ . p . q   [✱3·2 . Comm]
+PM-VERBATIM-END PM1:✱3·21 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·22
+✱3·22.  ⊢ : p . q . ⊃ . q . p
+
+This is one form of the commutative law for logical multiplication. A more
+complete form is given in ✱4·3.
+
+Dem.
+
+[✱3·13 (q,p)/(p,q)] ⊢ : ∼(q . p) . ⊃ . ∼q ∨ ∼p :
+[Perm] ⊃ : ∼p ∨ ∼q :
+[✱3·14] ⊃ : ∼(p . q)   (1)
+⊢ . (1) . Transp . ⊃ ⊢ . Prop
+
+Note. In the above proof, (1) stands for ∼(q . p) . ⊃ . ∼(p . q).
+PM-VERBATIM-END PM1:✱3·22 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·24
+✱3·24.  ⊢ . ∼(p . ∼p)
+
+Dem.
+
+[✱2·11 ∼p/p] ⊢ . ∼p ∨ ∼(∼p) . ⊃
+[✱3·14 ∼p/q] ⊢ . ∼(p . ∼p)
+
+The above is the law of contradiction.
+PM-VERBATIM-END PM1:✱3·24 -/
+
 /- PM-VERBATIM-BEGIN PM1:✱3·37
 ✱3·37.  ⊢ : p . q . ⊃ . r : ⊃ : p . ∼r . ⊃ . ∼q
 

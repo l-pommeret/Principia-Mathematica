@@ -6,16 +6,16 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 118,
-    "object_language_ast_parsed": 112,
+    "catalogued_items": 127,
+    "object_language_ast_parsed": 121,
     "metalinguistic_routes": 6,
-    "catalogued_items_with_proof_skeleton": 38,
-    "all_proof_skeleton_targets": 43,
+    "catalogued_items_with_proof_skeleton": 47,
+    "all_proof_skeleton_targets": 47,
     "catalogued_items_missing_proof_skeleton": 80,
-    "constrained_batches": 11,
-    "complete_batch_artifact_sets": 6,
+    "constrained_batches": 12,
+    "complete_batch_artifact_sets": 7,
     "planned_campaign_questions": 59,
-    "planned_uncatalogued_pm_ids": 109,
+    "planned_uncatalogued_pm_ids": 100,
     "planned_uncatalogued_non_pm_ids": 1,
     "catalogued_items_without_campaign_question": 9,
     "locally_scheduler_eligible": 0
@@ -29,17 +29,16 @@
       "prepared-needs-kernel-context": 32
     },
     "aristotle": {
-      "complete": 23,
+      "complete": 24,
       "complete-relaxed-result-not-integrated": 1,
-      "not-submitted": 34,
-      "submitted": 1
+      "not-submitted": 34
     }
   },
   "pm_section_coverage": {
     "catalogued": {
       "PM1:✱1": 11,
       "PM1:✱2": 68,
-      "PM1:✱3": 12,
+      "PM1:✱3": 21,
       "PM1:✱4": 17,
       "PM1:✱9": 10
     },
@@ -52,7 +51,7 @@
       "PM1:✱9": 23
     },
     "planned_but_uncatalogued": {
-      "PM1:✱3": 16,
+      "PM1:✱3": 7,
       "PM1:✱4": 44,
       "PM1:✱5": 36,
       "PM1:✱9": 13
@@ -120,6 +119,19 @@
         "PM1:✱3·12",
         "PM1:✱3·13",
         "PM1:✱3·14"
+      ],
+      "manifest": true,
+      "context": true,
+      "context_metadata": true,
+      "prompt": true
+    },
+    "Q222": {
+      "generation_status": "ready",
+      "targets": [
+        "PM1:✱3·2",
+        "PM1:✱3·21",
+        "PM1:✱3·22",
+        "PM1:✱3·24"
       ],
       "manifest": true,
       "context": true,
@@ -1581,6 +1593,213 @@
       }
     },
     {
+      "id": "PM1:✱3·1",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "kernel-checked",
+      "campaign_questions": [
+        "Q221"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "4d26659b6145c5446783f7feeec12451f15c4a3d3e94eaf795a508ae594b36f9"
+      },
+      "proof_skeleton": {
+        "batch": "Q221",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-1.txt",
+        "demonstration_sha256": "085c0133b394a460a70b43edb6cd6f13c41d638f82ac2cb97b3a11d2ae760f39",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·11",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "kernel-checked",
+      "campaign_questions": [
+        "Q221"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "be3e48d33342ac5fbefa5786fcb1b82374a5b4a45934828f604a00b6bc23a470"
+      },
+      "proof_skeleton": {
+        "batch": "Q221",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-11.txt",
+        "demonstration_sha256": "3fd6dfbe46064ba5ba5ffe8ef5b7d14620c18820b9d22dea94e57a7e5db8faca",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·12",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "kernel-checked",
+      "campaign_questions": [
+        "Q221"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "fe24790b71e1c461f504aa3e0ff1e69582175b2abee62f207b67b030ae532dd5"
+      },
+      "proof_skeleton": {
+        "batch": "Q221",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-12.txt",
+        "demonstration_sha256": "c1bd3292c5f38a04355a242f833c11213e47c57c633c8df531b616734b12a2be",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·13",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "kernel-checked",
+      "campaign_questions": [
+        "Q221"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "2b3777a4bb540df899d967d6f0a881f945494d3019f5fba4ef52abb4dd6d059a"
+      },
+      "proof_skeleton": {
+        "batch": "Q221",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-13.txt",
+        "demonstration_sha256": "c18edf94d61806fb5bb25a6b84d79c06fbf7ef3ff2c787dcb765ed4b98f78fa4",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·14",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "kernel-checked",
+      "campaign_questions": [
+        "Q221"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "0aec402e9edb1956867e7ef3c9b32f1e3bc2dd390171e1cbfaa704e914d1ea80"
+      },
+      "proof_skeleton": {
+        "batch": "Q221",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-14.txt",
+        "demonstration_sha256": "4758252f2a956f364dbba780090ee159c6873f5fba965f3794fe545ed15c613a",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·2",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q222"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "25a79e6ca7c1a07edaae11955ef18b33988cf9567b8958d31d86d298ccf38bf1"
+      },
+      "proof_skeleton": {
+        "batch": "Q222",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-2.txt",
+        "demonstration_sha256": "3c063a1ea01a0cb7aecac16b13fdf7dba8481ffc9fa272f9cc855177a0f5e250",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·21",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q222"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "ec9fff2f51955823c600bec3112e621e4a1a7577256b6b1f6390ac2cb7c133a0"
+      },
+      "proof_skeleton": {
+        "batch": "Q222",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-21.txt",
+        "demonstration_sha256": "7ffbe9f8c78d6ed1a07cf035d0dd2dec4a5b53f5b6dcff0682fbe8a2eaffe5cd",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·22",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q222"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "89049a998121bcd593b3320d46779b4ca5ced66782044a9e9d6200972a871251"
+      },
+      "proof_skeleton": {
+        "batch": "Q222",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-22.txt",
+        "demonstration_sha256": "b3a9b0d4a6bb6ada2aa97d062a586b428e4ef83426d2dc61a8496953ff4566ec",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·24",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q222"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "b611197b73c80afba7bb9a972952a9fbe135421df74bc62e88378f8e5420a0dd"
+      },
+      "proof_skeleton": {
+        "batch": "Q222",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-24.txt",
+        "demonstration_sha256": "fde77214e80c94fd624d95c292fb536c98c00dbc74a5ab7bb846049a35cc4ea3",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
       "id": "PM1:✱3·37",
       "kind": "derived-proposition",
       "source_catalogue": true,
@@ -2351,33 +2570,6 @@
     "PM1:✱2·33"
   ],
   "planned_but_uncatalogued": {
-    "PM1:✱3·1": [
-      "Q221"
-    ],
-    "PM1:✱3·11": [
-      "Q221"
-    ],
-    "PM1:✱3·12": [
-      "Q221"
-    ],
-    "PM1:✱3·13": [
-      "Q221"
-    ],
-    "PM1:✱3·14": [
-      "Q221"
-    ],
-    "PM1:✱3·2": [
-      "Q222"
-    ],
-    "PM1:✱3·21": [
-      "Q222"
-    ],
-    "PM1:✱3·22": [
-      "Q222"
-    ],
-    "PM1:✱3·24": [
-      "Q222"
-    ],
     "PM1:✱3·26": [
       "Q223"
     ],
