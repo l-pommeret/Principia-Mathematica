@@ -28,7 +28,7 @@ class Star5KernelGateTests(unittest.TestCase):
             ["PM1:✱1·1", "PM1:✱1·11", "PM1:✱2·54"],
         )
 
-    def test_star_5_25_is_the_single_awaiting_ci_kernel_candidate(self):
+    def test_star_5_25_explicit_inference_candidate_awaits_fresh_ci(self):
         metadata = json.loads(
             (ROOT / "metadata/items/PM1-star-5-kernel-Q246-25.json").read_text(
                 encoding="utf-8"

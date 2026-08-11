@@ -33,9 +33,15 @@ two directions; ✱3·2 packages them according to the definitional reading of
 equivalence. -/
 theorem star_5_25 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ∨ₚ q) ≡ₚ ((p ⊃ₚ q) ⊃ₚ q)) := by
-  exact PM.Derivation.detach
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer
     (PM.FirstEdition.Volume1.Star2.star_2_68 p q)
-    (PM.Derivation.detach
+    (infer
       (PM.FirstEdition.Volume1.Star2.star_2_62 p q)
       (PM.FirstEdition.Volume1.Star3.star_3_2
         ((p ∨ₚ q) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ q))
