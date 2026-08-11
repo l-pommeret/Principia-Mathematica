@@ -220,6 +220,49 @@ theorem star_3_24 {Γ} (p : PM.Elementary Γ) :
     (PM.FirstEdition.Volume1.Star2.star_2_11 (∼ₚ p))
     (star_3_14 p (∼ₚ p))
 
+/-- PM I (1910), p. 117, ✱3·26. -/
+theorem star_3_26 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∧ₚ q) ⊃ₚ p) :=
+  PM.Derivation.detach
+    (PM.Derivation.detach
+      (PM.FirstEdition.Volume1.Star2.star_2_02 q p)
+      (PM.FirstEdition.Volume1.Star2.star_2_31 (∼ₚ p) (∼ₚ q) p))
+    (PM.FirstEdition.Volume1.Star2.star_2_53 ((∼ₚ p) ∨ₚ (∼ₚ q)) p)
+
+/-- PM I (1910), p. 117, ✱3·27. The printed chain leaves its one
+composition step implicit; see the documented ✱1·6 relaxation. -/
+theorem star_3_27 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∧ₚ q) ⊃ₚ q) :=
+  PM.Derivation.detach (star_3_22 p q)
+    (PM.Derivation.detach (star_3_26 q p)
+      (PM.FirstEdition.Volume1.Star1.star_1_6 (∼ₚ (p ∧ₚ q)) (q ∧ₚ p) q))
+
+theorem star_3_3 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r))) := by
+  have a := PM.FirstEdition.Volume1.Star2.star_2_15 ((∼ₚ p) ∨ₚ (∼ₚ q)) r
+  have b := PM.FirstEdition.Volume1.Star2.star_2_04 (∼ₚ r) p (∼ₚ q)
+  have c := PM.Derivation.detach
+    (PM.FirstEdition.Volume1.Star2.star_2_17 q r)
+    (PM.FirstEdition.Volume1.Star2.star_2_05 p ((∼ₚ r) ⊃ₚ (∼ₚ q)) (q ⊃ₚ r))
+  have ab := PM.Derivation.detach b
+    (PM.Derivation.detach a (PM.FirstEdition.Volume1.Star2.star_2_06
+      ((p ∧ₚ q) ⊃ₚ r) ((∼ₚ r) ⊃ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))
+      (p ⊃ₚ ((∼ₚ r) ⊃ₚ (∼ₚ q)))))
+  exact PM.Derivation.detach c (PM.Derivation.detach ab
+    (PM.FirstEdition.Volume1.Star2.star_2_06 ((p ∧ₚ q) ⊃ₚ r)
+      (p ⊃ₚ ((∼ₚ r) ⊃ₚ (∼ₚ q))) (p ⊃ₚ (q ⊃ₚ r))))
+
+/-- PM I (1910), p. 117, ✱3·31. The printed chain leaves its one
+composition step implicit; see the documented ✱1·6 relaxation. -/
+theorem star_3_31 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)) :=
+  PM.Derivation.detach
+    (PM.FirstEdition.Volume1.Star2.star_2_31 (∼ₚ p) (∼ₚ q) r)
+    (PM.Derivation.detach
+      (PM.FirstEdition.Volume1.Star2.star_2_53 ((∼ₚ p) ∨ₚ (∼ₚ q)) r)
+      (PM.FirstEdition.Volume1.Star1.star_1_6 (∼ₚ (p ⊃ₚ (q ⊃ₚ r)))
+        (((∼ₚ p) ∨ₚ (∼ₚ q)) ∨ₚ r) ((p ∧ₚ q) ⊃ₚ r)))
+
 /- PM-VERBATIM-BEGIN PM1:✱3·26
 ✱3·26.  ⊢ : p . q . ⊃ . p
 
