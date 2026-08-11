@@ -88,3 +88,43 @@ PM-VERBATIM-END PM2:✱101·241 -/
 /- PM-VERBATIM-BEGIN PM2:✱101·25
 ✱101·25.  ⊢ : α ∈ 1 . β ⊂ α . β ≠ α .⊃ . β ∈ 0
 PM-VERBATIM-END PM2:✱101·25 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱101·3
+✱101·3.  ⊢ : x ≠ y .⊃ . 2 = Ncʻ(ιʻx ∪ ιʻy)
+PM-VERBATIM-END PM2:✱101·3 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱101·301
+✱101·301.  ⊢ . 2 = α̂{(∃x). x ∈ α . α − ιʻx ∈ 1}  [✱54·3]
+PM-VERBATIM-END PM2:✱101·301 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱101·31
+✱101·31.  ⊢ . 2 = Ncʻ(ιʻιʻx ∪ ιʻΛ)
+PM-VERBATIM-END PM2:✱101·31 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱101·37
+✱101·37.  ⊢ . sʻClʻʻ2 ⊂ 0 ∪ 1 ∪ 2  [✱54·411]
+PM-VERBATIM-END PM2:✱101·37 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱101·38
+✱101·38.  ⊢ : ∃!2 .⊃ . sʻClʻʻ2 = 0 ∪ 1 ∪ 2
+PM-VERBATIM-END PM2:✱101·38 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱101·4
+✱101·4.  ⊢ : (∃x,y). x ≠ y .≡ . ∃!2
+PM-VERBATIM-END PM2:✱101·4 -/
+
+/- PM-VERBATIM-BEGIN PM2:STAR102-SUMMARY-OPENING-P24
+Summary of ✱102.
+
+In this number, we shall consider a typically definite relation “Nc,” i.e. we
+shall consider the relation, to a class δ which is given as of the same type as
+β, of the class μ of those classes γ which are similar to δ and of the same
+type as α. We shall then put
+
+μ = Nc(α_β)ʻδ,
+γ ∈ Nc(α_β)ʻδ,
+γ sm_(α,β) δ,
+
+and the class of all such numbers as μ for a given α and β we shall call
+NC^β(α), so that NC^β(α) = DʻNc(α_β).
+PM-VERBATIM-END PM2:STAR102-SUMMARY-OPENING-P24 -/
