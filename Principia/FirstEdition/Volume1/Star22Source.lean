@@ -80,3 +80,18 @@ PM-VERBATIM-END PM1:✱22·31 -/
 /- PM-VERBATIM-BEGIN PM1:✱22·32
 ✱22·32. ⊢ . α − β = ẑx(x ε α . x ∼ε β)  [✱20·2.(✱22·05).*22·2.*20·32]
 PM-VERBATIM-END PM1:✱22·32 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·33
+✱22·33. ⊢ : x ε α ∩ β .≡ . x ε α . x ε β  [✱20·3.*22·2]
+PM-VERBATIM-END PM1:✱22·33 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·34
+✱22·34. ⊢ : x ε α ∪ β .≡ : x ε α .∨. x ε β  [✱20·3.*22·3]
+PM-VERBATIM-END PM1:✱22·34 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·35
+✱22·35. ⊢ : x ε −α .≡ . x ∼ε α  [✱20·3.*22·31]
+PM-VERBATIM-END PM1:✱22·35 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·351
+✱22·351. ⊢ . −α ≠ α
+PM-VERBATIM-END PM1:✱22·351 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·36
+✱22·36. ⊢ . α ∩ β ε Cls  [✱20·41]
+PM-VERBATIM-END PM1:✱22·36 -/
