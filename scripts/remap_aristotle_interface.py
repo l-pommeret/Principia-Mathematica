@@ -412,6 +412,53 @@ def archive_sources(path: Path) -> tuple[
     return archive_digest, files, declarations, failures, imports
 
 
+def audited_context_members(root: Path, batch: str,
+                            files: list[dict[str, Any]]) -> tuple[set[str], list[dict[str, Any]], list[str]]:
+    """Recognize only a byte-identical, batch-audited interface context.
+
+    A context is not a remappable declaration and never grants a proof rule.
+    This narrow exception exists so a strict target archive may import its
+    already audited isolated interface rather than copy it locally.
+    """
+    if batch != "Q310":
+        return set(), [], []
+    candidates = [record for record in files
+                  if record["path"].endswith("/RequestProject/DescriptionContext.lean")]
+    if not candidates:
+        # Synthetic unit fixtures need no supplied interface context.  A real
+        # archive that includes one is checked below and may not drift.
+        return set(), [], []
+    metadata_path = root / "metadata/context_bundles/Q310.json"
+    if not metadata_path.is_file():
+        return set(), [], ["Q310 audited context metadata unavailable"]
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    expected_hash = metadata.get("source_sha256")
+    expected_bytes = metadata.get("source_bytes")
+    if not isinstance(expected_hash, str) or not isinstance(expected_bytes, int):
+        return set(), [], ["Q310 audited context metadata is malformed"]
+    if len(candidates) != 1:
+        return set(), [], ["Q310 requires exactly one audited DescriptionContext.lean member"]
+    context = candidates[0]
+    if context["sha256"] != expected_hash or context["bytes"] != expected_bytes:
+        return set(), [], ["Q310 DescriptionContext.lean differs from the audited context bundle"]
+    return {context["path"]}, [{
+        "path": context["path"], "sha256": context["sha256"], "bytes": context["bytes"],
+        "bundle": "metadata/context_bundles/Q310.json",
+        "status": "byte-identical-audited-interface-context",
+    }], []
+
+
+def permitted_context_imports(batch: str, context_paths: set[str], imports: list[str]) -> list[str]:
+    """Remove only audited Q310 interface/bootstrap imports."""
+    if batch != "Q310":
+        return imports
+    allowed_suffix = ": import RequestProject.DescriptionContext"
+    bootstrap_suffix = "/RequestProject/Main.lean: import Mathlib"
+    return [entry for entry in imports if not (
+        (context_paths and entry.endswith(allowed_suffix)) or entry.endswith(bootstrap_suffix)
+    )]
+
+
 def is_rfl_only_body(body: str) -> bool:
     """Accept only a reductional ``rfl`` proof and enclosing namespace ends."""
     clean = blank_comments(body)
@@ -456,7 +503,12 @@ def emit_transplant(path: Path, report: dict[str, Any],
         canonical_namespace, _ = target["canonical"].rsplit(".", 1)
         lines.append(f"namespace {canonical_namespace}")
         lines.append("")
-        lines.append(replace_references(declaration["body"], mappings).rstrip())
+        body = replace_references(declaration["body"], mappings).rstrip()
+        # `scan_declarations` retains the source file's final namespace end
+        # in its last declaration body.  The transplant supplies its own
+        # canonical namespace, so retaining that end would close it twice.
+        body = re.sub(r"\nend(?:\s+[A-Za-z_][A-Za-z0-9_.']*)?\s*$", "", body)
+        lines.append(body)
         lines.append("")
         lines.append(f"end {canonical_namespace}")
         lines.append("")
@@ -541,13 +593,17 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
         report["reasons"].append("no audited immutable archive SHA-256 is registered")
     elif not audited_records and digest != plan["archive_sha256"]:
         report["reasons"].append("archive SHA-256 mismatch")
+    context_paths, audited_contexts, context_reasons = audited_context_members(root, batch, files)
+    report["audited_contexts"] = audited_contexts
+    report["reasons"].extend(context_reasons)
     report["forbidden_constructs"] = forbidden
     report["reasons"].extend(forbidden)
     if batch in RFL_ONLY_INSERTION_BATCHES:
-        report["archive_dependencies"] = imports
-        if imports:
+        effective_imports = permitted_context_imports(batch, context_paths, imports)
+        report["archive_dependencies"] = effective_imports
+        if effective_imports:
             report["reasons"].append(
-                f"{batch} forbids archive dependencies/imports: " + "; ".join(imports)
+                f"{batch} forbids archive dependencies/imports: " + "; ".join(effective_imports)
             )
     mapped = {record["source"]: record["canonical"] for record in mappings}
     # The audited targets always have a mandatory mapping, even when their
@@ -556,8 +612,9 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
         mapped.setdefault(target["source"], target["canonical"])
     if len(set(mapped.values())) != len(mapped):
         report["reasons"].append("mapping is not one-to-one after target mappings")
-    source_by_name = {record["qualified"]: record for record in declarations}
-    if len(source_by_name) != len(declarations):
+    remappable_declarations = [record for record in declarations if record["path"] not in context_paths]
+    source_by_name = {record["qualified"]: record for record in remappable_declarations}
+    if len(source_by_name) != len(remappable_declarations):
         report["reasons"].append("duplicate local declaration names in archive")
     unmapped = sorted(set(source_by_name) - set(mapped))
     if unmapped:

@@ -172,6 +172,33 @@ end PM.Local
         self.assertTrue(all(record["role"] == "target-insertion"
                             for record in report["canonical_declarations"]))
 
+    def test_q310_retry_uses_only_byte_identical_audited_context(self):
+        archive = ROOT / "aristotle/results/Q310-retry-01-final.tar.gz"
+        with tempfile.TemporaryDirectory() as directory:
+            transplant = Path(directory) / "Q310-interface.lean"
+            report = run_remap(ROOT, "Q310", archive, transplant=transplant)
+            self.assertEqual(report["status"], "transplantable-interface-only")
+            self.assertEqual(report["archive"]["artifact"]["retry"], 1)
+            self.assertEqual(report["archive_dependencies"], [])
+            self.assertEqual(report["audited_contexts"][0]["status"],
+                             "byte-identical-audited-interface-context")
+            self.assertTrue(transplant.is_file())
+            self.assertEqual(transplant.read_text(encoding="utf-8").count(
+                "end PM.FirstEdition.Volume1.Star14Source"
+            ), 3)
+
+    def test_q310_context_hash_drift_is_fail_closed(self):
+        files = [{
+            "path": "output-final_aristotle/RequestProject/DescriptionContext.lean",
+            "bytes": 18718,
+            "sha256": "0" * 64,
+        }]
+        from remap_aristotle_interface import audited_context_members
+        paths, records, reasons = audited_context_members(ROOT, "Q310", files)
+        self.assertEqual(paths, set())
+        self.assertEqual(records, [])
+        self.assertIn("differs from the audited context bundle", "\n".join(reasons))
+
     def test_q228_plan_is_exact_and_non_promotional(self):
         plan = batch_plan(ROOT, "Q228")
         self.assertEqual([target["id"] for target in plan["targets"]], [

@@ -1,0 +1,192 @@
+{
+  "archive": {
+    "artifact": {
+      "batch": "Q310",
+      "path": "aristotle/results/Q310-retry-01-final.tar.gz",
+      "retry": 1,
+      "sha256": "e0b85df9919ddad3146ea439617eb8b032f9e027da525ee81cabe294b23b161f",
+      "task_id": "bb48b947-dc6e-42f8-9363-34818e2828e8"
+    },
+    "expected_sha256": "37029fa7f745e13359077ee47c72f62cecd3d68690c2d5e5d58688eb90ab8a40",
+    "lean_files": [
+      {
+        "bytes": 18718,
+        "path": "output-final_aristotle/RequestProject/DescriptionContext.lean",
+        "sha256": "bed2425794bf6b50b9e0a905054cc51c776df03e879e2c0f83bb52a2d2674c74"
+      },
+      {
+        "bytes": 1942,
+        "path": "output-final_aristotle/RequestProject/Q310.lean",
+        "sha256": "a02a4563a62db3303fea1fd7eb1951b110e75551d1719eba18f1b555849fdc29"
+      },
+      {
+        "bytes": 541,
+        "path": "output-final_aristotle/RequestProject/Main.lean",
+        "sha256": "f8057e41265167f3489ae24f8319b5f7765afe011d69d0262154312b64737ca6"
+      }
+    ],
+    "path": "aristotle/results/Q310-retry-01-final.tar.gz",
+    "present": true,
+    "sha256": "e0b85df9919ddad3146ea439617eb8b032f9e027da525ee81cabe294b23b161f"
+  },
+  "archive_dependencies": [],
+  "audited_contexts": [
+    {
+      "bundle": "metadata/context_bundles/Q310.json",
+      "bytes": 18718,
+      "path": "output-final_aristotle/RequestProject/DescriptionContext.lean",
+      "sha256": "bed2425794bf6b50b9e0a905054cc51c776df03e879e2c0f83bb52a2d2674c74",
+      "status": "byte-identical-audited-interface-context"
+    }
+  ],
+  "batch": "Q310",
+  "canonical_declarations": [
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star14Source.star_14_02",
+      "exists": false,
+      "expected_signature_sha256": "ce501a3e71cdeb3dbc34d0e698fbab652b5a3a2939ef635290dcdae08eaea18c",
+      "role": "target-insertion"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star14Source.star_14_03",
+      "exists": false,
+      "expected_signature_sha256": "e683a528308e08f387a6ac6057eb81e1bcfef32015b60d3b2bc782ee6cdfaf45",
+      "role": "target-insertion"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star14Source.star_14_04",
+      "exists": false,
+      "expected_signature_sha256": "5c8e1eb739c58c9fcfe14ef50381507b378db97cd67ae06314c167865ebba0c1",
+      "role": "target-insertion"
+    }
+  ],
+  "declaration_mappings": [
+    {
+      "canonical": "PM.FirstEdition.Volume1.Star14Source.star_14_02",
+      "canonical_present": false,
+      "role": "target-insertion",
+      "source": "PM.FirstEdition.Volume1.Star14Source.star_14_02",
+      "source_present": true,
+      "source_signature_sha256": "ce501a3e71cdeb3dbc34d0e698fbab652b5a3a2939ef635290dcdae08eaea18c"
+    },
+    {
+      "canonical": "PM.FirstEdition.Volume1.Star14Source.star_14_03",
+      "canonical_present": false,
+      "role": "target-insertion",
+      "source": "PM.FirstEdition.Volume1.Star14Source.star_14_03",
+      "source_present": true,
+      "source_signature_sha256": "e683a528308e08f387a6ac6057eb81e1bcfef32015b60d3b2bc782ee6cdfaf45"
+    },
+    {
+      "canonical": "PM.FirstEdition.Volume1.Star14Source.star_14_04",
+      "canonical_present": false,
+      "role": "target-insertion",
+      "source": "PM.FirstEdition.Volume1.Star14Source.star_14_04",
+      "source_present": true,
+      "source_signature_sha256": "5c8e1eb739c58c9fcfe14ef50381507b378db97cd67ae06314c167865ebba0c1"
+    }
+  ],
+  "forbidden_constructs": [],
+  "kind": "pm-interface-kernel-remap-report",
+  "plan": {
+    "archive_sha256": "37029fa7f745e13359077ee47c72f62cecd3d68690c2d5e5d58688eb90ab8a40",
+    "artifact_audit_records": [
+      {
+        "batch": "Q310",
+        "path": "aristotle/results/Q310-final.tar.gz",
+        "retry": 0,
+        "sha256": "37029fa7f745e13359077ee47c72f62cecd3d68690c2d5e5d58688eb90ab8a40",
+        "task_id": "96a862af-ecfa-4539-addd-89999bea1075"
+      },
+      {
+        "batch": "Q310",
+        "path": "aristotle/results/Q310-retry-01-final.tar.gz",
+        "retry": 1,
+        "sha256": "e0b85df9919ddad3146ea439617eb8b032f9e027da525ee81cabe294b23b161f",
+        "task_id": "bb48b947-dc6e-42f8-9363-34818e2828e8"
+      }
+    ],
+    "batch": "Q310",
+    "canonical_integration_forbidden": true,
+    "kind": "pm-interface-kernel-remap-plan",
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true,
+    "targets": [
+      {
+        "body_policy": "rfl-only",
+        "canonical": "PM.FirstEdition.Volume1.Star14Source.star_14_02",
+        "id": "PM1:✱14·02",
+        "insertion_target": true,
+        "signature": "theorem star_14_02\n    (vocabulary : DescriptionVocabulary signature sort order)\n    (condition : Formula signature realContext (sort :: apparentContext) order) :\n    descriptionExists vocabulary condition =\n      .sometimes vocabulary.existential (uniqueMatrix vocabulary condition)\n",
+        "signature_sha256": "ce501a3e71cdeb3dbc34d0e698fbab652b5a3a2939ef635290dcdae08eaea18c",
+        "source": "PM.FirstEdition.Volume1.Star14Source.star_14_02"
+      },
+      {
+        "body_policy": "rfl-only",
+        "canonical": "PM.FirstEdition.Volume1.Star14Source.star_14_03",
+        "id": "PM1:✱14·03",
+        "insertion_target": true,
+        "signature": "theorem star_14_03\n    (outerVocabulary : DescriptionVocabulary signature outerSort order)\n    (innerVocabulary : DescriptionVocabulary signature innerSort order)\n    (outerCondition : Formula signature realContext (outerSort :: apparentContext) order)\n    (innerCondition : Formula signature realContext (innerSort :: apparentContext) order)\n    (continuation : Formula signature realContext\n      (innerSort :: outerSort :: apparentContext) order) :\n    descriptionScopePair outerVocabulary innerVocabulary outerCondition\n        innerCondition continuation =\n      .descriptionScope outerVocabulary outerCondition\n        (.descriptionScope innerVocabulary\n          (conditionUnderOuter innerCondition)\n          continuation)\n",
+        "signature_sha256": "e683a528308e08f387a6ac6057eb81e1bcfef32015b60d3b2bc782ee6cdfaf45",
+        "source": "PM.FirstEdition.Volume1.Star14Source.star_14_03"
+      },
+      {
+        "body_policy": "rfl-only",
+        "canonical": "PM.FirstEdition.Volume1.Star14Source.star_14_04",
+        "id": "PM1:✱14·04",
+        "insertion_target": true,
+        "signature": "theorem star_14_04\n    (laterVocabulary : DescriptionVocabulary signature laterSort order)\n    (earlierVocabulary : DescriptionVocabulary signature earlierSort order)\n    (laterCondition : Formula signature realContext (laterSort :: apparentContext) order)\n    (earlierCondition : Formula signature realContext (earlierSort :: apparentContext) order)\n    (continuation : Formula signature realContext\n      (earlierSort :: laterSort :: apparentContext) order) :\n    laterDescriptionOuterScope laterVocabulary earlierVocabulary laterCondition\n        earlierCondition continuation =\n      descriptionScopePair laterVocabulary earlierVocabulary laterCondition\n        earlierCondition continuation\n",
+        "signature_sha256": "5c8e1eb739c58c9fcfe14ef50381507b378db97cd67ae06314c167865ebba0c1",
+        "source": "PM.FirstEdition.Volume1.Star14Source.star_14_04"
+      }
+    ]
+  },
+  "policy": {
+    "canonical_integration_forbidden": true,
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true
+  },
+  "reasons": [],
+  "status": "transplantable-interface-only",
+  "targets": [
+    {
+      "actual_signature_sha256": "ce501a3e71cdeb3dbc34d0e698fbab652b5a3a2939ef635290dcdae08eaea18c",
+      "body_policy": "rfl-only",
+      "canonical": "PM.FirstEdition.Volume1.Star14Source.star_14_02",
+      "exact_signature": true,
+      "expected_signature_sha256": "ce501a3e71cdeb3dbc34d0e698fbab652b5a3a2939ef635290dcdae08eaea18c",
+      "id": "PM1:✱14·02",
+      "role": "target-insertion",
+      "source": "PM.FirstEdition.Volume1.Star14Source.star_14_02"
+    },
+    {
+      "actual_signature_sha256": "e683a528308e08f387a6ac6057eb81e1bcfef32015b60d3b2bc782ee6cdfaf45",
+      "body_policy": "rfl-only",
+      "canonical": "PM.FirstEdition.Volume1.Star14Source.star_14_03",
+      "exact_signature": true,
+      "expected_signature_sha256": "e683a528308e08f387a6ac6057eb81e1bcfef32015b60d3b2bc782ee6cdfaf45",
+      "id": "PM1:✱14·03",
+      "role": "target-insertion",
+      "source": "PM.FirstEdition.Volume1.Star14Source.star_14_03"
+    },
+    {
+      "actual_signature_sha256": "5c8e1eb739c58c9fcfe14ef50381507b378db97cd67ae06314c167865ebba0c1",
+      "body_policy": "rfl-only",
+      "canonical": "PM.FirstEdition.Volume1.Star14Source.star_14_04",
+      "exact_signature": true,
+      "expected_signature_sha256": "5c8e1eb739c58c9fcfe14ef50381507b378db97cd67ae06314c167865ebba0c1",
+      "id": "PM1:✱14·04",
+      "role": "target-insertion",
+      "source": "PM.FirstEdition.Volume1.Star14Source.star_14_04"
+    }
+  ],
+  "transplant": {
+    "allowed": true,
+    "path": "aristotle/candidates/Q310-retry-01-interface.lean",
+    "promotion": "forbidden",
+    "requires_independent_remote_kernel_check": true
+  }
+}
