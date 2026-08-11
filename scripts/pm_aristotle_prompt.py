@@ -96,9 +96,10 @@ def render_batch_prompt(manifest: dict, *, printed_targets: dict[str, str],
         if identifier not in printed_targets or identifier not in lean_targets:
             raise PromptError(f"missing printed or Lean target for {identifier}")
         diagnostics = item_manifest.get("diagnostics", {})
-        if any(diagnostics.get(key) for key in (
-            "missing_items", "non_kernel_checked_items", "unresolved_aliases"
-        )):
+        forbidden_diagnostics = ("missing_items", "unresolved_aliases")
+        if (any(diagnostics.get(key) for key in forbidden_diagnostics) or
+                (diagnostics.get("non_kernel_checked_items") and not
+                 manifest.get("policy", {}).get("interface_gated", False))):
             raise PromptError(f"unresolved strict-mode diagnostics for {identifier}")
         whitelist = "\n".join(
             f"- `{pm_id}` → `{declaration}`"
@@ -152,6 +153,19 @@ Printed substitutions:
         "\nThe whitelist includes individually reviewed non-printed additions; use no other PM item."
         if mode == "Documented-relaxed" else ""
     )
+    interface_gated = bool(manifest.get("policy", {}).get("interface_gated", False))
+    interfaces = manifest.get("interface_dependencies", [])
+    interface_note = (
+        "\n## Provisional statement-only interfaces\n\n"
+        "This is an interface-gated sandbox, not canonical edition integration. "
+        "The following earlier PM declarations are opaque signature-only stubs: "
+        + (", ".join(f"`{item}`" for item in interfaces) or "none")
+        + ". Their bodies are unavailable in this context. A result may cite them only "
+        "when already in that declaration's exact whitelist; it is blocked from canonical "
+        "CI/promotion until every stub is remapped one-to-one to an accepted kernel body. "
+        "Do not attempt to prove, redefine, unfold, or replace an interface.\n"
+        if interface_gated else ""
+    )
     return f"""# {mode} ordered PM reconstruction batch
 
 Produce the following declarations in exactly this order. A target may use an
@@ -159,6 +173,7 @@ earlier target only where that earlier PM number occurs in its own whitelist.
 No later/forward target is available. Each proof is audited independently.{relaxation_note}
 
 {chr(10).join(sections)}
+{interface_note}
 
 ## Reviewed isolated Lean context
 

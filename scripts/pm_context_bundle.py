@@ -18,6 +18,7 @@ from pathlib import Path
 import re
 
 from pm_constraint_manifest import load_item_registry
+from pm_lean_target import LeanTargetError, render_elementary_assertion
 from verify_dependencies import declaration_body, pm_order, strip_lean_comments
 
 
@@ -84,6 +85,63 @@ def clean_declaration(item: dict, root: Path) -> str:
     return re.sub(r"\n{3,}", "\n\n", strip_lean_comments(body)).strip()
 
 
+def interface_stub(item: dict, root: Path) -> tuple[str, str]:
+    """Return an opaque, signature-only interface for a non-kernel item.
+
+    This deliberately derives the type binder/header from the declared Lean
+    source and emits no reconstructed proof body.  `opaque` is permitted only
+    in a context whose manifest records the corresponding PM ID and source
+    hashes; it is rejected by the canonical-integration gate.
+    """
+    try:
+        body = clean_declaration(item, root)
+    except ValueError:
+        # Prepared items often have an audited demonstration but deliberately
+        # no Lean body in the edition yet.  For elementary assertions the
+        # audited PM AST is the authoritative source of the exact signature.
+        match = re.fullmatch(r"PM(\d+):✱(\d+)·(\d+)", item["id"])
+        if match is None:
+            raise BundleError(f"no declaration or elementary AST route for {item['id']}")
+        volume, section, number = match.groups()
+        # First prefer a previously audited exact Lean target.  This is needed
+        # for object-language abbreviations such as ✱4 equivalence, which are
+        # not reducible to the elementary AST renderer.
+        rendered = None
+        for manifest_path in sorted((root / "aristotle" / "manifests").glob("*.json")):
+            payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+            candidate = payload.get("interface_signature_targets", {}).get(item["id"])
+            if isinstance(candidate, str):
+                rendered = candidate
+                break
+        demo = root / "aristotle" / "demonstrations" / (
+            f"PM{volume}-star-{section}-{number}.txt"
+        )
+        if rendered is None and not demo.is_file():
+            raise BundleError(f"no audited AST or Lean target for {item['id']}")
+        try:
+            if rendered is None:
+                rendered = render_elementary_assertion(
+                    demo.read_text(encoding="utf-8"), item["declaration"]
+                )
+            lines = rendered.splitlines()
+            if len(lines) < 5 or not lines[0].startswith("namespace ") or not lines[-1].startswith("end "):
+                raise BundleError(f"malformed generated AST signature for {item['id']}")
+            body = "\n".join(lines[2:-2]).strip()
+        except LeanTargetError as error:
+            raise BundleError(
+                f"no exact interface signature route for {item['id']}: {error}"
+            ) from error
+    if ":=" not in body:
+        raise BundleError(f"cannot derive interface signature for {item['id']}")
+    header = body.split(":=", 1)[0].rstrip()
+    opaque, replacements = re.subn(
+        r"(?m)^(\s*)(?:theorem|def|abbrev)\b", r"\1opaque", header, count=1
+    )
+    if replacements != 1:
+        raise BundleError(f"unsupported declaration header for {item['id']}")
+    return opaque + "\n", header + "\n"
+
+
 def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -> dict:
     if manifest.get("kind") not in {
         "pm-constrained-prover-manifest", "pm-constrained-prover-batch-manifest"
@@ -121,18 +179,33 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
 
     # Constructors and `detach` live inside the complete System foundation;
     # ✱1·01 lives inside Formula. Do not duplicate those declarations.
+    interface_gated = bool(manifest.get("policy", {}).get("interface_gated", False))
+    non_kernel = sorted(
+        identifier for identifier in closure
+        if registry[identifier].get("formal_status") != "kernel-checked"
+    )
+    if non_kernel and not interface_gated:
+        raise BundleError(
+            "non-kernel context requires explicit interface-gated policy: "
+            + ", ".join(non_kernel)
+        )
     sliced = [registry[identifier] for identifier in closure
               if registry[identifier]["lean_path"] not in foundation_paths]
     sliced.sort(key=lambda item: pm_order(item["id"]))
     for item in sliced:
-        clean = clean_declaration(item, root)
+        is_interface = item["id"] in non_kernel
+        if is_interface:
+            clean, signature = interface_stub(item, root)
+        else:
+            clean = clean_declaration(item, root)
+            signature = None
         namespace = declaration_namespace(item["declaration"])
         wrapped = f"namespace {namespace}\n\n{clean}\n\nend {namespace}\n"
         chunks.append(
             f"-- PM-CONTEXT-ITEM {item['id']} {item['declaration']}\n{wrapped}"
         )
         sources.append({
-            "kind": "item-declaration",
+            "kind": "opaque-interface-stub" if is_interface else "item-declaration",
             "id": item["id"],
             "path": item["lean_path"],
             "declaration": item["declaration"],
@@ -141,7 +214,33 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
             ),
             "slice_sha256": sha256_text(clean),
             "bytes": len(clean.encode("utf-8")),
+            **({
+                "signature_sha256": sha256_text(signature),
+                "signature": signature,
+                "remap_required": True,
+            } if is_interface else {}),
         })
+
+    syntax = manifest.get("interface_syntax", [])
+    if syntax:
+        if not interface_gated or not isinstance(syntax, list) or not all(
+            isinstance(entry, dict) and set(entry) == {"id", "lean"}
+            and isinstance(entry["id"], str) and isinstance(entry["lean"], str)
+            for entry in syntax
+        ):
+            raise BundleError("invalid interface syntax declaration")
+        for entry in syntax:
+            if entry["id"] not in non_kernel:
+                raise BundleError(f"interface syntax must belong to a stub: {entry['id']}")
+            clean = entry["lean"].strip() + "\n"
+            chunks.append(f"-- PM-CONTEXT-INTERFACE-SYNTAX {entry['id']}\n{clean}")
+            sources.append({
+                "kind": "interface-syntax",
+                "id": entry["id"],
+                "lean": clean,
+                "slice_sha256": sha256_text(clean),
+                "bytes": len(clean.encode("utf-8")),
+            })
 
     source = "\n".join(chunks).rstrip() + "\n"
     canonical_manifest = json.dumps(
@@ -164,7 +263,13 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
             "standalone_context_only": True,
             "grants_no_additional_proof_permission": True,
             "requires_remote_kernel_check": True,
+            "interface_gated": interface_gated,
+            "canonical_integration_forbidden": interface_gated,
+            "requires_one_to_one_kernel_remap": interface_gated,
         },
+        "interface_dependencies": non_kernel,
+        "source_backfill_required": interface_gated,
+        "integration_blocked": interface_gated,
     }
     if "target_order" in manifest:
         result["target_order"] = list(manifest["target_order"])

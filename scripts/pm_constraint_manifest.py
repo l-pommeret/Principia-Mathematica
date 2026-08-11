@@ -86,7 +86,8 @@ def context_closure(roots: set[str], registry: dict[str, dict]) -> list[str]:
 
 def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool = True,
                      global_conventions: list[str] | None = None,
-                     local_declarations: dict[str, str] | None = None) -> dict:
+                     local_declarations: dict[str, str] | None = None,
+                     interface_gated: bool = False) -> dict:
     permissions = event_permissions(skeleton)
     conventions = list(global_conventions or [])
     if len(conventions) != len(set(conventions)):
@@ -116,7 +117,11 @@ def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool 
         permission for permission in permissions
         if permission["resolution_status"] == "locus-required"
     ]
-    if strict and (missing or non_kernel or unresolved):
+    # An interface-gated batch is a sandbox request, never a claim that its
+    # prerequisite theorem bodies are integrated.  It may expose exact
+    # *signatures* for non-kernel items, but retains them as diagnostics and
+    # marks each one for a mandatory one-to-one remap before canonical CI.
+    if strict and (missing or (non_kernel and not interface_gated) or unresolved):
         details = []
         if missing:
             details.append(f"missing metadata: {missing}")
@@ -126,7 +131,7 @@ def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool 
             details.append("aliases require a current PM locus")
         raise ConstraintError("; ".join(details))
 
-    available = all_candidates - set(missing) - set(non_kernel)
+    available = all_candidates - set(missing)
     external_available = available - set(local)
     closure = context_closure(external_available, registry)
     declarations = {
@@ -144,6 +149,9 @@ def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool 
             "proof_permissions_are_exact": True,
             "context_closure_grants_proof_permission": False,
             "strict": strict,
+            "interface_gated": interface_gated,
+            "canonical_integration_forbidden": interface_gated,
+            "requires_one_to_one_kernel_remap": interface_gated,
         },
         "current_item": skeleton.get("current_item"),
         "proof_permissions": permissions,
@@ -159,6 +167,7 @@ def compile_manifest(skeleton: dict, registry: dict[str, dict], *, strict: bool 
             "non_kernel_checked_items": non_kernel,
             "unresolved_aliases": unresolved,
         },
+        "interface_dependencies": non_kernel if interface_gated else [],
         "substitutions": [
             {"step": index, "printed": substitution}
             for index, step in enumerate(skeleton["steps"], start=1)
@@ -176,6 +185,7 @@ def compile_batch_manifest(
     global_conventions: dict[str, list[str]] | None = None,
     context_dependencies: dict[str, list[str]] | None = None,
     documented_relaxations: dict[str, list[str]] | None = None,
+    interface_gated: bool = False,
 ) -> dict:
     """Compile an ordered batch whose later targets may cite earlier targets.
 
@@ -200,6 +210,7 @@ def compile_batch_manifest(
             strict=strict,
             global_conventions=conventions.get(identifier, []),
             local_declarations=seen,
+            interface_gated=interface_gated,
         )
         documented = relaxations.get(identifier, [])
         if (not isinstance(documented, list) or
@@ -223,14 +234,14 @@ def compile_batch_manifest(
             item for item in set(extra_context)
             if item in registry and registry[item].get("formal_status") != "kernel-checked"
         )
-        if strict and (unknown or non_kernel):
+        if strict and (unknown or (non_kernel and not interface_gated)):
             details = []
             if unknown:
                 details.append(f"missing context-only metadata: {unknown}")
             if non_kernel:
                 details.append(f"context-only items not kernel-checked: {non_kernel}")
             raise ConstraintError("; ".join(details))
-        available_context = set(extra_context) - set(unknown) - set(non_kernel)
+        available_context = set(extra_context) - set(unknown)
         if available_context:
             closure = context_closure(
                 set(manifest["context_closure"]) | available_context, registry
@@ -262,6 +273,9 @@ def compile_batch_manifest(
             "local_targets_must_precede_use": True,
             "context_closure_grants_proof_permission": False,
             "strict": strict,
+            "interface_gated": interface_gated,
+            "canonical_integration_forbidden": interface_gated,
+            "requires_one_to_one_kernel_remap": interface_gated,
         },
         "batch_items": manifests,
         "target_order": declared,
@@ -274,6 +288,15 @@ def compile_batch_manifest(
         "proof_permissions": sorted({
             item for manifest in manifests for item in manifest["allowed_pm_items"]
         }),
+        "direct_interface_dependencies": sorted({
+            item for manifest in manifests for item in manifest.get("interface_dependencies", [])
+        }),
+        "interface_dependencies": sorted(
+            item for item in closure
+            if registry[item].get("formal_status") != "kernel-checked"
+        ) if interface_gated else [],
+        "source_backfill_required": interface_gated,
+        "integration_blocked": interface_gated,
     }
 
 

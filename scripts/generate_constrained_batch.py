@@ -50,11 +50,18 @@ def generate(batch: str, root: Path = ROOT) -> None:
             entry["id"]: entry.get("documented_relaxations", [])
             for entry in spec["items"]
         },
+        interface_gated=spec.get("interface_gated", False),
     )
     if "foundation_profile" in spec:
         manifest["foundation_profile"] = spec["foundation_profile"]
     if "context_whitespace_policy" in spec:
         manifest["context_whitespace_policy"] = spec["context_whitespace_policy"]
+    if "interface_syntax" in spec:
+        manifest["interface_syntax"] = spec["interface_syntax"]
+    # Exact audited declaration texts are retained solely to derive future
+    # statement-only interfaces when a later batch depends on this prepared
+    # target before canonical integration.
+    manifest["interface_signature_targets"] = lean
     manifest_path = root / "aristotle/manifests" / f"{batch}.json"
     manifest_path.write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"

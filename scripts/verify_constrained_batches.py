@@ -61,11 +61,15 @@ def verify(root: Path = ROOT) -> int:
                 entry["id"]: entry.get("documented_relaxations", [])
                 for entry in spec["items"]
             },
+            interface_gated=spec.get("interface_gated", False),
         )
         if "foundation_profile" in spec:
             manifest["foundation_profile"] = spec["foundation_profile"]
         if "context_whitespace_policy" in spec:
             manifest["context_whitespace_policy"] = spec["context_whitespace_policy"]
+        if "interface_syntax" in spec:
+            manifest["interface_syntax"] = spec["interface_syntax"]
+        manifest["interface_signature_targets"] = lean
         manifest_path = root / "aristotle/manifests" / f"{stem}.json"
         actual_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         if actual_manifest != manifest:

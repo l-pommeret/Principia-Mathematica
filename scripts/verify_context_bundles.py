@@ -51,6 +51,35 @@ def verify(root: Path = ROOT) -> int:
             raise ContextBundleVerificationError(
                 f"forbidden construct {forbidden.group(0)!r} in {stem}"
             )
+        interface_gated = bool(actual_metadata.get("policy", {}).get("interface_gated", False))
+        opaque_stubs = [
+            source for source in actual_metadata.get("sources", [])
+            if source.get("kind") == "opaque-interface-stub"
+        ]
+        if opaque_stubs and not interface_gated:
+            raise ContextBundleVerificationError(f"opaque stub outside interface gate for {stem}")
+        if interface_gated:
+            if (actual_metadata.get("source_backfill_required") is not True or
+                    actual_metadata.get("integration_blocked") is not True):
+                raise ContextBundleVerificationError(
+                    f"interface-gated bundle {stem} lacks promotion blocks"
+                )
+            if successful:
+                raise ContextBundleVerificationError(
+                    f"interface-gated bundle {stem} cannot carry canonical CI success"
+                )
+            expected_ids = sorted(actual_metadata.get("interface_dependencies", []))
+            stub_ids = sorted(source.get("id") for source in opaque_stubs)
+            if expected_ids != stub_ids:
+                raise ContextBundleVerificationError(
+                    f"interface stub/remap set drift for {stem}: {stub_ids} != {expected_ids}"
+                )
+            for source in opaque_stubs:
+                if (not source.get("signature_sha256") or not source.get("signature") or
+                        source.get("remap_required") is not True):
+                    raise ContextBundleVerificationError(
+                        f"incomplete opaque interface provenance for {stem}:{source.get('id')}"
+                    )
         expected_source = expected.pop("lean_source")
         if actual_source != expected_source:
             raise ContextBundleVerificationError(f"generated Lean context drift for {stem}")

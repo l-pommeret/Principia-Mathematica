@@ -1,148 +1,3 @@
-# Strict ordered PM reconstruction batch
-
-Produce the following declarations in exactly this order. A target may use an
-earlier target only where that earlier PM number occurs in its own whitelist.
-No later/forward target is available. Each proof is audited independently.
-
-### 1. PM1:✱4·11
-
-Printed target:
-
-```text
-✱4·11.  ⊢ : p ≡ q . ≡ . ∼p ≡ ∼q   [✱2·16·17 . ✱3·47·22]
-```
-
-Required Lean declaration:
-
-```lean
-namespace PM.FirstEdition.Volume1.Star4
-
-theorem star_4_11 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ ((p ≡ₚ q) ≡ₚ (∼ₚ p ≡ₚ ∼ₚ q)) := by
-  -- [✱2·16·17.✱3·47·22]
-
-end PM.FirstEdition.Volume1.Star4
-```
-
-Exact whitelist for this declaration:
-
-- `PM1:✱2·16` → `PM.FirstEdition.Volume1.Star2.star_2_16`
-- `PM1:✱2·17` → `PM.FirstEdition.Volume1.Star2.star_2_17`
-- `PM1:✱3·22` → `PM.FirstEdition.Volume1.Star3.star_3_22`
-- `PM1:✱3·47` → `PM.FirstEdition.Volume1.Star3.star_3_47`
-
-Earlier local targets licensed here: none.
-
-Printed substitutions:
-
-- none
-
-### 2. PM1:✱4·14
-
-Printed target:
-
-```text
-✱4·14.  ⊢ : p . q . ⊃ . r : ≡ : p . ∼r . ⊃ . ∼q   [✱3·37 . ✱4·13]
-```
-
-Required Lean declaration:
-
-```lean
-namespace PM.FirstEdition.Volume1.Star4
-
-theorem star_4_14 {Γ} (p q r : PM.Elementary Γ) :
-    ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ≡ₚ ((p ∧ₚ ∼ₚ r) ⊃ₚ ∼ₚ q)) := by
-  -- [✱3·37.✱4·13]
-
-end PM.FirstEdition.Volume1.Star4
-```
-
-Exact whitelist for this declaration:
-
-- `PM1:✱3·37` → `PM.FirstEdition.Volume1.Star3.star_3_37`
-- `PM1:✱4·13` → `PM.FirstEdition.Volume1.Star4.star_4_13`
-
-Earlier local targets licensed here: none.
-
-Printed substitutions:
-
-- none
-
-### 3. PM1:✱4·15
-
-Printed target:
-
-```text
-✱4·15.  ⊢ : p . q . ⊃ . ∼r : ≡ : q . r . ⊃ . ∼p   [✱3·22 . ✱4·13·14]
-```
-
-Required Lean declaration:
-
-```lean
-namespace PM.FirstEdition.Volume1.Star4
-
-theorem star_4_15 {Γ} (p q r : PM.Elementary Γ) :
-    ⊢ₚ (((p ∧ₚ q) ⊃ₚ ∼ₚ r) ≡ₚ ((q ∧ₚ r) ⊃ₚ ∼ₚ p)) := by
-  -- [✱3·22.✱4·13·14]
-
-end PM.FirstEdition.Volume1.Star4
-```
-
-Exact whitelist for this declaration:
-
-- `PM1:✱3·22` → `PM.FirstEdition.Volume1.Star3.star_3_22`
-- `PM1:✱4·13` → `PM.FirstEdition.Volume1.Star4.star_4_13`
-- `PM1:✱4·14` → `PM.FirstEdition.Volume1.Star4.star_4_14`
-
-Earlier local targets licensed here: PM1:✱4·14.
-
-Printed substitutions:
-
-- none
-
-### 4. PM1:✱4·2
-
-Printed target:
-
-```text
-✱4·2.  ⊢ . p ≡ p   [Id . ✱3·2]
-```
-
-Required Lean declaration:
-
-```lean
-namespace PM.FirstEdition.Volume1.Star4
-
-theorem star_4_2 {Γ} (p : PM.Elementary Γ) :
-    ⊢ₚ (p ≡ₚ p) := by
-  -- [Id.✱3·2]
-
-end PM.FirstEdition.Volume1.Star4
-```
-
-Exact whitelist for this declaration:
-
-- `PM1:✱2·08` → `PM.FirstEdition.Volume1.Star2.star_2_08`
-- `PM1:✱3·2` → `PM.FirstEdition.Volume1.Star3.star_3_2`
-
-Earlier local targets licensed here: none.
-
-Printed substitutions:
-
-- none
-
-
-## Provisional statement-only interfaces
-
-This is an interface-gated sandbox, not canonical edition integration. The following earlier PM declarations are opaque signature-only stubs: `PM1:✱3·37`, `PM1:✱3·45`, `PM1:✱4·01`, `PM1:✱4·13`. Their bodies are unavailable in this context. A result may cite them only when already in that declaration's exact whitelist; it is blocked from canonical CI/promotion until every stub is remapped one-to-one to an accepted kernel body. Do not attempt to prove, redefine, unfold, or replace an interface.
-
-
-## Reviewed isolated Lean context
-
-The declarations below are compilation scaffolding. They grant no proof
-permission unless separately listed in the target's whitelist.
-
-```lean
 -- PM-CONTEXT-FOUNDATION Principia/Syntax/Formula.lean
 namespace PM
 
@@ -534,6 +389,39 @@ theorem star_2_38 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
 
 end PM.FirstEdition.Volume1.Star2
 
+-- PM-CONTEXT-ITEM PM1:✱2·4 PM.FirstEdition.Volume1.Star2.star_2_4
+namespace PM.FirstEdition.Volume1.Star2
+
+theorem star_2_4 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ (p ∨ₚ q)) ⊃ₚ (p ∨ₚ q)) := by
+  have assoc : ⊢ₚ ((p ∨ₚ (p ∨ₚ q)) ⊃ₚ ((p ∨ₚ p) ∨ₚ q)) := star_2_31 p p q
+  have taut : ⊢ₚ ((p ∨ₚ p) ⊃ₚ p) := PM.Derivation.star_1_2 p
+  have lifted : ⊢ₚ (((p ∨ₚ p) ∨ₚ q) ⊃ₚ (p ∨ₚ q)) :=
+    PM.Derivation.detach taut (star_2_38 q (p ∨ₚ p) p)
+  exact PM.Derivation.detach assoc
+    (PM.Derivation.detach lifted
+      (star_2_05 (p ∨ₚ (p ∨ₚ q)) ((p ∨ₚ p) ∨ₚ q) (p ∨ₚ q)))
+
+end PM.FirstEdition.Volume1.Star2
+
+-- PM-CONTEXT-ITEM PM1:✱2·42 PM.FirstEdition.Volume1.Star2.star_2_42
+namespace PM.FirstEdition.Volume1.Star2
+
+theorem star_2_42 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((∼ₚ p ∨ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ q)) :=
+  star_2_4 (∼ₚ p) q
+
+end PM.FirstEdition.Volume1.Star2
+
+-- PM-CONTEXT-ITEM PM1:✱2·43 PM.FirstEdition.Volume1.Star2.star_2_43
+namespace PM.FirstEdition.Volume1.Star2
+
+theorem star_2_43 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ q)) :=
+  star_2_42 p q
+
+end PM.FirstEdition.Volume1.Star2
+
 -- PM-CONTEXT-ITEM PM1:✱2·53 PM.FirstEdition.Volume1.Star2.star_2_53
 namespace PM.FirstEdition.Volume1.Star2
 
@@ -814,29 +702,6 @@ infixl:56 " ∧ₚ " => conj
 
 end PM.Elementary
 
--- PM-CONTEXT-ITEM PM1:✱3·03 PM.FirstEdition.Volume1.Star3.star_3_03
-namespace PM.FirstEdition.Volume1.Star3
-
-theorem star_3_03 {Γ : PM.RealContext} (hasRealVariable : Γ ≠ [])
-    {φ ψ : PM.Elementary Γ}
-    (hφ : PM.FormedDerivation φ) (hψ : PM.FormedDerivation ψ) :
-    PM.FormedDerivation (PM.Elementary.conj φ ψ) := by
-  refine ⟨?_, ?_⟩
-  · exact PM.Formation.star_1_7
-      (PM.Formation.star_1_72 hasRealVariable
-        (PM.Formation.star_1_7 hφ.formation)
-        (PM.Formation.star_1_7 hψ.formation))
-  · have h1 : ⊢ₚ ((∼ₚ φ ∨ₚ ∼ₚ ψ) ∨ₚ ∼ₚ (∼ₚ φ ∨ₚ ∼ₚ ψ)) :=
-      PM.FirstEdition.Volume1.Star2.star_2_11 (∼ₚ φ ∨ₚ ∼ₚ ψ)
-    have h2 : ⊢ₚ (φ ⊃ₚ (ψ ⊃ₚ PM.Elementary.conj φ ψ)) :=
-      PM.Derivation.star_1_11 hasRealVariable h1
-        (PM.FirstEdition.Volume1.Star2.star_2_32 (∼ₚ φ) (∼ₚ ψ)
-          (∼ₚ (∼ₚ φ ∨ₚ ∼ₚ ψ)))
-    exact PM.Derivation.star_1_11 hasRealVariable hψ.derivation
-      (PM.Derivation.star_1_11 hasRealVariable hφ.derivation h2)
-
-end PM.FirstEdition.Volume1.Star3
-
 -- PM-CONTEXT-ITEM PM1:✱3·1 PM.FirstEdition.Volume1.Star3.star_3_1
 namespace PM.FirstEdition.Volume1.Star3
 
@@ -949,134 +814,12 @@ theorem star_3_27 {Γ} (p q : PM.Elementary Γ) :
 
 end PM.FirstEdition.Volume1.Star3
 
--- PM-CONTEXT-ITEM PM1:✱3·31 PM.FirstEdition.Volume1.Star3.star_3_31
+-- PM-CONTEXT-ITEM PM1:✱3·43 PM.FirstEdition.Volume1.Star3.star_3_43
 namespace PM.FirstEdition.Volume1.Star3
 
-theorem star_3_31 {Γ} (p q r : PM.Elementary Γ) :
-    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)) :=
-  PM.Derivation.detach
-    (PM.FirstEdition.Volume1.Star2.star_2_31 (∼ₚ p) (∼ₚ q) r)
-    (PM.Derivation.detach
-      (PM.FirstEdition.Volume1.Star2.star_2_53 ((∼ₚ p) ∨ₚ (∼ₚ q)) r)
-      (PM.Derivation.star_1_6 (∼ₚ (p ⊃ₚ (q ⊃ₚ r)))
-        (((∼ₚ p) ∨ₚ (∼ₚ q)) ∨ₚ r) ((p ∧ₚ q) ⊃ₚ r)))
+opaque star_3_43 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ⊃ₚ q) ∧ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ∧ₚ r)))
 
-end PM.FirstEdition.Volume1.Star3
-
--- PM-CONTEXT-ITEM PM1:✱3·33 PM.FirstEdition.Volume1.Star3.star_3_33
-namespace PM.FirstEdition.Volume1.Star3
-
-theorem star_3_33 {Γ} (p q r : PM.Elementary Γ) :
-    ⊢ₚ (((p ⊃ₚ q) ∧ₚ (q ⊃ₚ r)) ⊃ₚ (p ⊃ₚ r)) := by
-  have minor : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r))) :=
-    PM.FirstEdition.Volume1.Star2.star_2_06 p q r
-  have major :
-      ⊢ₚ (((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r))) ⊃ₚ
-            (((p ⊃ₚ q) ∧ₚ (q ⊃ₚ r)) ⊃ₚ (p ⊃ₚ r))) :=
-    star_3_31 (p ⊃ₚ q) (q ⊃ₚ r) (p ⊃ₚ r)
-  match Γ, p, q, r, minor, major with
-  | [], _, _, _, minor, major => exact PM.Derivation.star_1_1 minor major
-  | (τ :: Δ), _, _, _, minor, major =>
-      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) minor major
-
-end PM.FirstEdition.Volume1.Star3
-
--- PM-CONTEXT-ITEM PM1:✱3·34 PM.FirstEdition.Volume1.Star3.star_3_34
-namespace PM.FirstEdition.Volume1.Star3
-
-theorem star_3_34 {Γ} (p q r : PM.Elementary Γ) :
-    ⊢ₚ (((q ⊃ₚ r) ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ r)) := by
-  have minor : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
-    PM.FirstEdition.Volume1.Star2.star_2_05 p q r
-  have major :
-      ⊢ₚ (((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) ⊃ₚ
-            (((q ⊃ₚ r) ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ r))) :=
-    star_3_31 (q ⊃ₚ r) (p ⊃ₚ q) (p ⊃ₚ r)
-  match Γ, p, q, r, minor, major with
-  | [], _, _, _, minor, major => exact PM.Derivation.star_1_1 minor major
-  | (τ :: Δ), _, _, _, minor, major =>
-      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) minor major
-
-end PM.FirstEdition.Volume1.Star3
-
--- PM-CONTEXT-ITEM PM1:✱3·37 PM.FirstEdition.Volume1.Star3.star_3_37
-namespace PM.FirstEdition.Volume1.Star3
-
-opaque star_3_37 {Γ} (p q r : PM.Elementary Γ) :
-    ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ⊃ₚ ((p ∧ₚ (∼ₚ r)) ⊃ₚ (∼ₚ q)))
-
-
-end PM.FirstEdition.Volume1.Star3
-
--- PM-CONTEXT-ITEM PM1:✱3·45 PM.FirstEdition.Volume1.Star3.star_3_45
-namespace PM.FirstEdition.Volume1.Star3
-
-opaque star_3_45 {Γ} (p q r : PM.Elementary Γ) :
-    ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((p ∧ₚ r) ⊃ₚ (q ∧ₚ r)))
-
-
-end PM.FirstEdition.Volume1.Star3
-
--- PM-CONTEXT-ITEM PM1:✱3·47 PM.FirstEdition.Volume1.Star3.star_3_47
-namespace PM.FirstEdition.Volume1.Star3
-
-theorem star_3_47 {Γ} (p q r s : PM.Elementary Γ) :
-    ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (r ∧ₚ s))) := by
-  have syllOf :
-      (∀ A B : PM.Elementary Γ, (⊢ₚ A) → (⊢ₚ B) → (⊢ₚ (A ∧ₚ B))) →
-      ∀ A B C : PM.Elementary Γ, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
-    intro adjoin A B C h₁ h₂
-    have k₁ : ⊢ₚ ((((A ⊃ₚ B) ∧ₚ (B ⊃ₚ C))) ⊃ₚ (A ⊃ₚ B)) := star_3_26 (A ⊃ₚ B) (B ⊃ₚ C)
-    have k₂ : ⊢ₚ ((((A ⊃ₚ B) ∧ₚ (B ⊃ₚ C))) ⊃ₚ (B ⊃ₚ C)) := star_3_27 (A ⊃ₚ B) (B ⊃ₚ C)
-    have k₃ : ⊢ₚ ((((A ⊃ₚ B) ∧ₚ (B ⊃ₚ C))) ⊃ₚ (A ⊃ₚ C)) :=
-      PM.Derivation.detach k₂ (PM.Derivation.detach k₁
-        (PM.FirstEdition.Volume1.Star2.star_2_83 ((A ⊃ₚ B) ∧ₚ (B ⊃ₚ C)) A B C))
-    exact PM.Derivation.detach (adjoin _ _ h₁ h₂) k₃
-  have printed :
-      (∀ A B : PM.Elementary Γ, (⊢ₚ A) → (⊢ₚ B) → (⊢ₚ (A ∧ₚ B))) →
-      (∀ W M : PM.Elementary Γ, (⊢ₚ M) → (⊢ₚ (W ⊃ₚ M))) →
-      ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (r ∧ₚ s))) := by
-    intro adjoin carry
-    have syll := syllOf adjoin
-    have first : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ (p ⊃ₚ r)) := star_3_26 (p ⊃ₚ r) (q ⊃ₚ s)
-    have fact₁ : ⊢ₚ ((p ⊃ₚ r) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (r ∧ₚ q))) := star_3_45 p r q
-    have firstFact : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (r ∧ₚ q))) :=
-      syll _ _ _ first fact₁
-    have perm₁ : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((r ∧ₚ q) ⊃ₚ (q ∧ₚ r))) :=
-      carry _ _ (star_3_22 r q)
-    have line1 : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (q ∧ₚ r))) :=
-      PM.Derivation.detach perm₁ (PM.Derivation.detach firstFact
-        (PM.FirstEdition.Volume1.Star2.star_2_83 ((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) (p ∧ₚ q) (r ∧ₚ q) (q ∧ₚ r)))
-    have second : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ (q ⊃ₚ s)) := star_3_27 (p ⊃ₚ r) (q ⊃ₚ s)
-    have fact₂ : ⊢ₚ ((q ⊃ₚ s) ⊃ₚ ((q ∧ₚ r) ⊃ₚ (s ∧ₚ r))) := star_3_45 q s r
-    have secondFact : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((q ∧ₚ r) ⊃ₚ (s ∧ₚ r))) :=
-      syll _ _ _ second fact₂
-    have perm₂ : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((s ∧ₚ r) ⊃ₚ (r ∧ₚ s))) :=
-      carry _ _ (star_3_22 s r)
-    have line2 : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((q ∧ₚ r) ⊃ₚ (r ∧ₚ s))) :=
-      PM.Derivation.detach perm₂ (PM.Derivation.detach secondFact
-        (PM.FirstEdition.Volume1.Star2.star_2_83 ((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) (q ∧ₚ r) (s ∧ₚ r) (r ∧ₚ s)))
-    have joined := adjoin _ _ line1 line2
-    have readBack₁ := PM.Derivation.detach joined
-      (star_3_26 (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (q ∧ₚ r)))
-        (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((q ∧ₚ r) ⊃ₚ (r ∧ₚ s))))
-    have readBack₂ := PM.Derivation.detach joined
-      (star_3_27 (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (q ∧ₚ r)))
-        (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((q ∧ₚ r) ⊃ₚ (r ∧ₚ s))))
-    exact PM.Derivation.detach readBack₂ (PM.Derivation.detach readBack₁
-      (PM.FirstEdition.Volume1.Star2.star_2_83 ((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) (p ∧ₚ q) (q ∧ₚ r) (r ∧ₚ s)))
-  cases Γ with
-  | nil =>
-      have adjoin : ∀ A B : PM.Elementary [], (⊢ₚ A) → (⊢ₚ B) → (⊢ₚ (A ∧ₚ B)) :=
-        fun A B hA hB => PM.Derivation.detach hB (PM.Derivation.detach hA (star_3_2 A B))
-      exact printed adjoin fun W M hM => syllOf adjoin _ _ _
-        (PM.Derivation.detach hM (star_3_2 M W)) (star_3_26 M W)
-  | cons τ Δ =>
-      have adjoin : ∀ A B : PM.Elementary (τ :: Δ), (⊢ₚ A) → (⊢ₚ B) → (⊢ₚ (A ∧ₚ B)) :=
-        fun A B hA hB => (star_3_03 (List.cons_ne_nil τ Δ)
-          ⟨PM.Formation.ofElementary A, hA⟩ ⟨PM.Formation.ofElementary B, hB⟩).derivation
-      exact printed adjoin fun W M hM => syllOf adjoin _ _ _
-        (PM.Derivation.detach hM (star_3_2 M W)) (star_3_26 M W)
 
 end PM.FirstEdition.Volume1.Star3
 
@@ -1088,22 +831,13 @@ opaque equiv (p q : PM.Elementary Γ) : PM.Elementary Γ
 
 end PM.Elementary
 
--- PM-CONTEXT-ITEM PM1:✱4·13 PM.FirstEdition.Volume1.Star4.star_4_13
-namespace PM.FirstEdition.Volume1.Star4
+-- PM-CONTEXT-ITEM PM1:✱4·02 PM.Elementary.equivChain
+namespace PM.Elementary
 
-opaque star_4_13 {Γ} (p : PM.Elementary Γ) :
-    ⊢ₚ (p ≡ₚ (∼ₚ (∼ₚ p)))
+opaque equivChain (p q r : PM.Elementary Γ) : PM.Elementary Γ
 
 
-end PM.FirstEdition.Volume1.Star4
+end PM.Elementary
 
 -- PM-CONTEXT-INTERFACE-SYNTAX PM1:✱4·01
 infix:53 " ≡ₚ " => PM.Elementary.equiv
-```
-
-## Output contract
-
-Return only the requested Lean declarations, in order. Do not add an axiom,
-instance, notation, alternate syntax, `Classical`, `unsafe`, `sorry`, `admit`,
-semantic truth-table shortcut, or any theorem outside each target's whitelist.
-The repository will extract dependencies from every returned theorem separately.
