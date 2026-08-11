@@ -558,7 +558,7 @@
       "source": "PM volume I, first edition, pp. 114 and 116",
       "prompt_path": "aristotle/Q217.md",
       "audit_path": "reviews/Q217-review.md",
-      "audit_status": "formation-kernel-checked-needs-star3-context",
+      "audit_status": "exact-star3-context-awaiting-ci",
       "lean_scope": "exact PM1 ✱1·7·71·72 formation Pp, ✱3·01·02 definitions, and ✱3·03 metalinguistic derivation theorem",
       "depends_on": [
         "PM1:✱2·11",
@@ -577,6 +577,13 @@
         "commit": "202999d6591b90acadfaff986fa23bd3ab6e0376",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31450038845",
         "conclusion": "success"
+      },
+      "superseded_star3_definition_evidence": {
+        "items": ["PM1:✱3·01", "PM1:✱3·02"],
+        "commit": "77d350c54fd1159b75a38f9419d685496728f034",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31450432060",
+        "conclusion": "success",
+        "superseded_reason": "impChain was changed to cite conj explicitly so dependency extraction can certify ✱3·02 → ✱3·01"
       }
     },
     "Q218": {

@@ -78,6 +78,22 @@ Dem.
                       if event["kind"] == "printed-reference"]
         self.assertEqual(references, ["✱3·26", "✱2·43"])
 
+    def test_reviewed_reference_override_preserves_diplomatic_reading(self):
+        parsed = skeleton.parse_demonstration(
+            "⊢ . (2) . (✱3·03) . ⊃ ⊢ . Prop",
+            current_item="PM1:✱3·03",
+        )
+        corrected = skeleton.apply_reference_overrides(parsed, [{
+            "printed": "✱3·03",
+            "replacement": "PM1:✱3·01",
+            "reason": "printed circular reference; definition required",
+        }])
+        event = corrected["steps"][0]["events"][1]
+        self.assertEqual(event["printed"], "✱3·03")
+        self.assertEqual(event["diplomatic_candidates"], ["PM1:✱3·03"])
+        self.assertEqual(event["normalized_candidates"], ["PM1:✱3·01"])
+        self.assertEqual(event["resolution_status"], "reviewed-source-correction")
+
 
 if __name__ == "__main__":
     unittest.main()

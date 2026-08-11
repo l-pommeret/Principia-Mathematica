@@ -43,6 +43,18 @@ class ContextBundleTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unknown context items"):
             build_bundle(manifest, {}, ROOT)
 
+    def test_formation_profile_contains_separate_judgement(self):
+        manifest = {
+            "kind": "pm-constrained-prover-manifest",
+            "foundation_profile": "elementary-formation-pm1",
+            "context_closure": [],
+            "allowed_pm_items": [],
+        }
+        bundle = build_bundle(manifest, {}, ROOT)
+        self.assertEqual(bundle["profile"], "elementary-formation-pm1")
+        self.assertIn("inductive Formation", bundle["lean_source"])
+        self.assertIn("structure FormedDerivation", bundle["lean_source"])
+
     def test_batch_bundle_contains_external_closure_but_not_local_targets(self):
         from pm_constraint_manifest import compile_batch_manifest, load_item_registry
         from pm_proof_skeleton import parse_demonstration

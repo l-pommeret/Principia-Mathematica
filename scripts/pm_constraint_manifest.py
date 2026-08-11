@@ -54,6 +54,10 @@ def event_permissions(skeleton: dict) -> list[dict]:
                 "kind": event["kind"],
                 "resolution_status": event.get("resolution_status", "exact"),
                 "candidates": list(event["normalized_candidates"]),
+                **({"diplomatic_candidates": list(event["diplomatic_candidates"])}
+                   if "diplomatic_candidates" in event else {}),
+                **({"editorial_reason": event["editorial_reason"]}
+                   if "editorial_reason" in event else {}),
             })
     return result
 

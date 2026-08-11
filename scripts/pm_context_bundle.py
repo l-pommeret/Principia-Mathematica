@@ -22,10 +22,18 @@ from verify_dependencies import declaration_body, pm_order, strip_lean_comments
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ELEMENTARY_FOUNDATION = (
-    "Principia/Syntax/Formula.lean",
-    "Principia/Deduction/System.lean",
-)
+FOUNDATION_PROFILES = {
+    "elementary-pm1": (
+        "Principia/Syntax/Formula.lean",
+        "Principia/Deduction/System.lean",
+    ),
+    "elementary-formation-pm1": (
+        "Principia/Syntax/Formula.lean",
+        "Principia/Deduction/System.lean",
+        "Principia/Deduction/Formation.lean",
+        "Principia/Deduction/Formed.lean",
+    ),
+}
 
 
 class BundleError(ValueError):
@@ -74,8 +82,12 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
 
     chunks: list[str] = []
     sources: list[dict] = []
-    foundation_paths = {str(path) for path in ELEMENTARY_FOUNDATION}
-    for relative in ELEMENTARY_FOUNDATION:
+    profile = manifest.get("foundation_profile", "elementary-pm1")
+    if profile not in FOUNDATION_PROFILES:
+        raise BundleError(f"unknown foundation profile {profile}")
+    foundation = FOUNDATION_PROFILES[profile]
+    foundation_paths = set(foundation)
+    for relative in foundation:
         path = root / relative
         raw = path.read_text(encoding="utf-8")
         clean = clean_foundation(raw)
@@ -118,7 +130,7 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
     )
     result = {
         "kind": "pm-isolated-context-bundle",
-        "profile": "elementary-pm1",
+        "profile": profile,
         "current_item": manifest.get("current_item"),
         "manifest_sha256": sha256_text(canonical_manifest),
         "source_sha256": sha256_text(source),

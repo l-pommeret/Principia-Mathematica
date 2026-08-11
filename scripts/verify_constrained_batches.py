@@ -10,7 +10,7 @@ import sys
 from pm_aristotle_prompt import render_batch_prompt
 from pm_constraint_manifest import compile_batch_manifest, load_item_registry
 from pm_context_bundle import ROOT, build_bundle, preserve_historical_container_hashes
-from pm_proof_skeleton import parse_demonstration
+from pm_proof_skeleton import apply_reference_overrides, parse_demonstration
 
 
 class BatchVerificationError(ValueError):
@@ -38,7 +38,10 @@ def verify(root: Path = ROOT) -> int:
         for entry in spec["items"]:
             identifier = entry["id"]
             source = (root / entry["demonstration_path"]).read_text(encoding="utf-8")
-            skeletons.append(parse_demonstration(source, spec.get("volume", 1), identifier))
+            skeleton = parse_demonstration(source, spec.get("volume", 1), identifier)
+            skeletons.append(apply_reference_overrides(
+                skeleton, entry.get("reference_overrides", [])
+            ))
             targets[identifier] = entry["declaration"]
             printed[identifier] = source
             lean[identifier] = entry["lean_target"]
@@ -46,6 +49,8 @@ def verify(root: Path = ROOT) -> int:
         manifest = compile_batch_manifest(
             skeletons, registry, targets, global_conventions=conventions
         )
+        if "foundation_profile" in spec:
+            manifest["foundation_profile"] = spec["foundation_profile"]
         manifest_path = root / "aristotle/manifests" / f"{stem}.json"
         actual_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         if actual_manifest != manifest:

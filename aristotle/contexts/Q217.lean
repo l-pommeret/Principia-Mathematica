@@ -1,68 +1,3 @@
-# Strict ordered PM reconstruction batch
-
-Produce the following declarations in exactly this order. A target may use an
-earlier target only where that earlier PM number occurs in its own whitelist.
-No later/forward target is available. Each proof is audited independently.
-
-### 1. PM1:✱3·03
-
-Printed target:
-
-```text
-✱3·03. Given two asserted elementary propositional functions “⊢ . φp” and
-“⊢ . ψp” whose arguments are elementary propositions, we have ⊢ . φp . ψp.
-
-Dem.
-
-⊢ . ✱1·7·72 . ✱2·11 . ⊃ ⊢ : ∼φp ∨ ∼ψp . ∨ . ∼(∼φp ∨ ∼ψp)              (1)
-⊢ . (1) . ✱2·32 . (✱1·01) . ⊃ ⊢ : φp . ⊃ : ψp . ⊃ . ∼(∼φp ∨ ∼ψp)      (2)
-⊢ . (2) . (✱3·03) . ⊃ ⊢ : φp . ⊃ : ψp . ⊃ . φp . ψp                   (3)
-⊢ . (3) . ✱1·11 . ⊃ ⊢ . Prop
-```
-
-Required Lean declaration:
-
-```lean
-namespace PM.FirstEdition.Volume1.Star3
-
-theorem star_3_03 {Γ : PM.RealContext} (hasRealVariable : Γ ≠ [])
-    {φ ψ : PM.Elementary Γ}
-    (hφ : PM.FormedDerivation φ) (hψ : PM.FormedDerivation ψ) :
-    PM.FormedDerivation (PM.Elementary.conj φ ψ) := by
-  -- reconstruct the printed formation-aware derivation from the whitelist
-
-end PM.FirstEdition.Volume1.Star3
-```
-
-Exact whitelist for this declaration:
-
-- `PM1:✱1·01` → `PM.Elementary.imp`
-- `PM1:✱1·11` → `PM.Derivation.star_1_11`
-- `PM1:✱1·7` → `PM.Formation.star_1_7`
-- `PM1:✱1·72` → `PM.Formation.star_1_72`
-- `PM1:✱2·11` → `PM.FirstEdition.Volume1.Star2.star_2_11`
-- `PM1:✱2·32` → `PM.FirstEdition.Volume1.Star2.star_2_32`
-- `PM1:✱3·01` → `PM.Elementary.conj`
-
-Earlier local targets licensed here: none.
-
-Printed substitutions:
-
-- none
-
-Reviewed source-critical normalizations (the diplomatic text above is not
-silently altered):
-
-- printed `✱3·03` → licensed `PM1:✱3·01`: The first-edition proof prints a circular self-reference; its displayed conversion invokes the definition of logical product at ✱3·01. The diplomatic source remains unchanged.
-
-
-
-## Reviewed isolated Lean context
-
-The declarations below are compilation scaffolding. They grant no proof
-permission unless separately listed in the target's whitelist.
-
-```lean
 -- PM-CONTEXT-FOUNDATION Principia/Syntax/Formula.lean
 namespace PM
 
@@ -101,26 +36,26 @@ end PM
 namespace PM
 
 inductive Derivation : {Γ : RealContext} → Elementary Γ → Prop where
-
+  
   | star_1_1 {p q : Elementary []} :
       Derivation p → Derivation (p ⊃ₚ q) → Derivation q
-
+  
   | star_1_11 {Γ : RealContext} {φ ψ : Elementary Γ}
       (hasRealVariable : Γ ≠ []) :
       Derivation φ → Derivation (φ ⊃ₚ ψ) → Derivation ψ
-
+  
   | star_1_2 {Γ : RealContext} (p : Elementary Γ) :
       Derivation ((p ∨ₚ p) ⊃ₚ p)
-
+  
   | star_1_3 {Γ : RealContext} (p q : Elementary Γ) :
       Derivation (q ⊃ₚ (p ∨ₚ q))
-
+  
   | star_1_4 {Γ : RealContext} (p q : Elementary Γ) :
       Derivation ((p ∨ₚ q) ⊃ₚ (q ∨ₚ p))
-
+  
   | star_1_5 {Γ : RealContext} (p q r : Elementary Γ) :
       Derivation ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ (q ∨ₚ (p ∨ₚ r)))
-
+  
   | star_1_6 {Γ : RealContext} (p q r : Elementary Γ) :
       Derivation ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)))
 
@@ -144,16 +79,16 @@ end PM
 namespace PM
 
 inductive Formation : {Γ : RealContext} → Elementary Γ → Prop where
-
+  
   | constant (name : String) : Formation (.constant name)
-
+  
   | realVar (x : RealVar Γ .elementaryProposition) : Formation (.var x)
-
+  
   | star_1_7 (hp : Formation p) : Formation (Elementary.neg p)
-
+  
   | star_1_71 (hp : Formation (Γ := []) p) (hq : Formation (Γ := []) q) :
       Formation (Elementary.disj p q)
-
+  
   | star_1_72 (hasRealVariable : Γ ≠ [])
       (hφ : Formation (Γ := Γ) φ) (hψ : Formation (Γ := Γ) ψ) :
       Formation (Elementary.disj φ ψ)
@@ -308,11 +243,3 @@ def conj (p q : PM.Elementary Γ) : PM.Elementary Γ :=
 infixl:56 " ∧ₚ " => conj
 
 end PM.Elementary
-```
-
-## Output contract
-
-Return only the requested Lean declarations, in order. Do not add an axiom,
-instance, notation, alternate syntax, `Classical`, `unsafe`, `sorry`, `admit`,
-semantic truth-table shortcut, or any theorem outside each target's whitelist.
-The repository will extract dependencies from every returned theorem separately.

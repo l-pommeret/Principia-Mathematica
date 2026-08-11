@@ -107,6 +107,19 @@ def render_batch_prompt(manifest: dict, *, printed_targets: dict[str, str],
             f"- step {entry['step']}: `{entry['printed']}`"
             for entry in item_manifest.get("substitutions", [])
         ) or "- none"
+        corrections = "\n".join(
+            f"- printed `{permission['printed']}` → licensed "
+            f"`{', '.join(permission['candidates'])}`: {permission['editorial_reason']}"
+            for permission in item_manifest.get("proof_permissions", [])
+            if permission.get("resolution_status") == "reviewed-source-correction"
+        )
+        correction_section = (f"""
+
+Reviewed source-critical normalizations (the diplomatic text above is not
+silently altered):
+
+{corrections}
+""" if corrections else "")
         local = ", ".join(item_manifest.get("local_proof_items", [])) or "none"
         sections.append(f"""### {index}. {identifier}
 
@@ -130,7 +143,7 @@ Earlier local targets licensed here: {local}.
 
 Printed substitutions:
 
-{substitutions}
+{substitutions}{correction_section}
 """)
     clean_context = "\n".join(line.rstrip() for line in context.rstrip().splitlines())
     return f"""# Strict ordered PM reconstruction batch

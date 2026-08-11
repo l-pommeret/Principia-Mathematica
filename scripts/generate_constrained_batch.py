@@ -10,7 +10,7 @@ from pathlib import Path
 from pm_aristotle_prompt import render_batch_prompt
 from pm_constraint_manifest import compile_batch_manifest, load_item_registry
 from pm_context_bundle import ROOT, build_bundle
-from pm_proof_skeleton import parse_demonstration
+from pm_proof_skeleton import apply_reference_overrides, parse_demonstration
 
 
 def generate(batch: str, root: Path = ROOT) -> None:
@@ -27,7 +27,10 @@ def generate(batch: str, root: Path = ROOT) -> None:
     for entry in spec["items"]:
         identifier = entry["id"]
         source = (root / entry["demonstration_path"]).read_text(encoding="utf-8")
-        skeletons.append(parse_demonstration(source, spec.get("volume", 1), identifier))
+        skeleton = parse_demonstration(source, spec.get("volume", 1), identifier)
+        skeletons.append(apply_reference_overrides(
+            skeleton, entry.get("reference_overrides", [])
+        ))
         targets[identifier] = entry["declaration"]
         printed[identifier] = source
         lean[identifier] = entry["lean_target"]
@@ -35,6 +38,8 @@ def generate(batch: str, root: Path = ROOT) -> None:
     manifest = compile_batch_manifest(
         skeletons, registry, targets, global_conventions=conventions
     )
+    if "foundation_profile" in spec:
+        manifest["foundation_profile"] = spec["foundation_profile"]
     manifest_path = root / "aristotle/manifests" / f"{batch}.json"
     manifest_path.write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"

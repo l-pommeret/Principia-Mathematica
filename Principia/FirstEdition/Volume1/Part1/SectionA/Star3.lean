@@ -13,7 +13,7 @@ infixl:56 " ∧ₚ " => conj
 /-- ✱3·02. The printed chain is the product of its two adjacent implications;
 it is not parsed as a right-associated implication chain. -/
 def impChain (p q r : PM.Elementary Γ) : PM.Elementary Γ :=
-  (p ⊃ₚ q) ∧ₚ (q ⊃ₚ r)
+  conj (p ⊃ₚ q) (q ⊃ₚ r)
 
 end PM.Elementary
 

@@ -1,0 +1,23 @@
+{
+  "kind": "pm-constrained-batch-spec",
+  "generation_status": "blocked-on-exact-star3-context-ci",
+  "volume": 1,
+  "foundation_profile": "elementary-formation-pm1",
+  "prompt_path": "aristotle/Q217.md",
+  "items": [
+    {
+      "id": "PM1:✱3·03",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-3-03.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_03",
+      "lean_target": "namespace PM.FirstEdition.Volume1.Star3\n\ntheorem star_3_03 {Γ : PM.RealContext} (hasRealVariable : Γ ≠ [])\n    {φ ψ : PM.Elementary Γ}\n    (hφ : PM.FormedDerivation φ) (hψ : PM.FormedDerivation ψ) :\n    PM.FormedDerivation (PM.Elementary.conj φ ψ) := by\n  -- reconstruct the printed formation-aware derivation from the whitelist\n\nend PM.FirstEdition.Volume1.Star3",
+      "global_conventions": [],
+      "reference_overrides": [
+        {
+          "printed": "✱3·03",
+          "replacement": "PM1:✱3·01",
+          "reason": "The first-edition proof prints a circular self-reference; its displayed conversion invokes the definition of logical product at ✱3·01. The diplomatic source remains unchanged."
+        }
+      ]
+    }
+  ]
+}

@@ -151,6 +151,38 @@ def parse_demonstration(source: str, volume: int = 1,
     }
 
 
+def apply_reference_overrides(skeleton: dict, overrides: list[dict]) -> dict:
+    """Apply reviewed source-critical corrections without altering diplomatic text.
+
+    Each correction must match exactly one parsed printed-reference event.  The
+    original candidates remain recorded on that event, so a constrained proof
+    manifest can distinguish the facsimile reading from the licensed correction.
+    """
+    result = json.loads(json.dumps(skeleton, ensure_ascii=False))
+    for override in overrides:
+        required = {"printed", "replacement", "reason"}
+        missing = required - override.keys()
+        if missing:
+            raise ValueError(f"reference override lacks {sorted(missing)}")
+        matches = []
+        for step in result["steps"]:
+            for event in step["events"]:
+                if event["kind"] == "printed-reference" and event["printed"] == override["printed"]:
+                    matches.append(event)
+        occurrence = int(override.get("occurrence", 1))
+        if occurrence < 1 or occurrence > len(matches):
+            raise ValueError(
+                f"reference override {override['printed']} occurrence {occurrence} "
+                f"does not select one of {len(matches)} events"
+            )
+        event = matches[occurrence - 1]
+        event["diplomatic_candidates"] = list(event["normalized_candidates"])
+        event["normalized_candidates"] = [override["replacement"]]
+        event["resolution_status"] = "reviewed-source-correction"
+        event["editorial_reason"] = override["reason"]
+    return result
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("source", type=Path)
