@@ -86,4 +86,18 @@ theorem star_5_1 {Γ} (p q : PM.Elementary Γ) :
       (PM.FirstEdition.Volume1.Star2.star_2_43 h (h ∧ₚ h))
   exact compose hDuplicate hLift
 
+/-- PM I (1910), p. 130, ✱5·21.  Apply ✱5·1 to the two negations and take
+the reverse component of the accepted transposition equivalence ✱4·11. -/
+theorem star_5_21 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (((∼ₚ p) ∧ₚ (∼ₚ q)) ⊃ₚ (p ≡ₚ q)) := by
+  have backward : ⊢ₚ (((∼ₚ p) ≡ₚ (∼ₚ q)) ⊃ₚ (p ≡ₚ q)) :=
+    PM.Derivation.detach (PM.FirstEdition.Volume1.Star4.star_4_11 p q)
+      (PM.FirstEdition.Volume1.Star3.star_3_27
+        ((p ≡ₚ q) ⊃ₚ ((∼ₚ p) ≡ₚ (∼ₚ q)))
+        (((∼ₚ p) ≡ₚ (∼ₚ q)) ⊃ₚ (p ≡ₚ q)))
+  exact PM.Derivation.detach backward
+    (PM.Derivation.detach (star_5_1 (∼ₚ p) (∼ₚ q))
+      (PM.FirstEdition.Volume1.Star2.star_2_05
+        ((∼ₚ p) ∧ₚ (∼ₚ q)) ((∼ₚ p) ≡ₚ (∼ₚ q)) (p ≡ₚ q)))
+
 end PM.FirstEdition.Volume1.Star5
