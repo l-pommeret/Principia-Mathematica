@@ -2,10 +2,11 @@
   "kind": "pm-isolated-context-bundle",
   "profile": "elementary-pm1",
   "current_item": null,
-  "manifest_sha256": "261914dc8cd58d5e2f6bfe2e08876042bf7be062ff60bed42227e35ce3a4f2a3",
-  "source_sha256": "b8108868051d848d5e116c5521c018d31648d7f2177658b70b6014c70c65c8a6",
-  "source_bytes": 10888,
+  "manifest_sha256": "7be40e2c7afcdc4c0bc549b7ad9a06956c881bb5fb31b8a73851b46a84265537",
+  "source_sha256": "a7938e9bac725a18c00c2ccf008decc1eba9b531667614fd5abcac06af91a398",
+  "source_bytes": 11106,
   "proof_permissions": [
+    "PM1:✱1·01",
     "PM1:✱1·11",
     "PM1:✱2·05",
     "PM1:✱2·06",
@@ -35,6 +36,7 @@
     "PM1:✱2·31",
     "PM1:✱2·38",
     "PM1:✱2·53",
+    "PM1:✱3·01",
     "PM1:✱3·31"
   ],
   "sources": [
@@ -234,10 +236,19 @@
     },
     {
       "kind": "item-declaration",
+      "id": "PM1:✱3·01",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.Elementary.conj",
+      "source_sha256": "102a78a2b840d40f1cc5c4186bbca33946af7b55b996a759c41f85f337db0ecd",
+      "slice_sha256": "9f842b8cb0417941e64418af7bccc7b936f84b1a8c73c9605eeb8961554c7d2c",
+      "bytes": 121
+    },
+    {
+      "kind": "item-declaration",
       "id": "PM1:✱3·31",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_31",
-      "source_sha256": "d931b945e34a2d2addd6596796c6429f9c1de048e96932113dbd2f7e68b433eb",
+      "source_sha256": "102a78a2b840d40f1cc5c4186bbca33946af7b55b996a759c41f85f337db0ecd",
       "slice_sha256": "61fc05402e29f87c58da185dd2cbe5c8ebdaa439dad1023f2b10506b6501efed",
       "bytes": 461
     }

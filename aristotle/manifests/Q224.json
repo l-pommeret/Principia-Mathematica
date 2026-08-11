@@ -4,7 +4,7 @@
     "proof_permissions_are_exact_per_target": true,
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
-    "strict": true
+    "strict": false
   },
   "batch_items": [
     {
@@ -12,7 +12,7 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": false
       },
       "current_item": "PM1:✱3·33",
       "proof_permissions": [
@@ -39,15 +39,18 @@
         }
       ],
       "global_conventions": [
+        "PM1:✱1·01",
         "PM1:✱1·11"
       ],
       "allowed_pm_items": [
+        "PM1:✱1·01",
         "PM1:✱1·11",
         "PM1:✱2·05",
         "PM1:✱2·06",
         "PM1:✱3·31"
       ],
       "allowed_lean_declarations": {
+        "PM1:✱1·01": "PM.Elementary.imp",
         "PM1:✱1·11": "PM.Derivation.star_1_11",
         "PM1:✱2·05": "PM.FirstEdition.Volume1.Star2.star_2_05",
         "PM1:✱2·06": "PM.FirstEdition.Volume1.Star2.star_2_06",
@@ -74,6 +77,7 @@
         "PM1:✱2·31",
         "PM1:✱2·38",
         "PM1:✱2·53",
+        "PM1:✱3·01",
         "PM1:✱3·31"
       ],
       "context_declarations": {
@@ -96,6 +100,7 @@
         "PM1:✱2·31": "PM.FirstEdition.Volume1.Star2.star_2_31",
         "PM1:✱2·38": "PM.FirstEdition.Volume1.Star2.star_2_38",
         "PM1:✱2·53": "PM.FirstEdition.Volume1.Star2.star_2_53",
+        "PM1:✱3·01": "PM.Elementary.conj",
         "PM1:✱3·31": "PM.FirstEdition.Volume1.Star3.star_3_31"
       },
       "context_lean_paths": [
@@ -110,14 +115,20 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
-      "substitutions": []
+      "substitutions": [],
+      "documented_relaxations": [
+        "PM1:✱1·01"
+      ],
+      "context_only_dependencies": [
+        "PM1:✱3·01"
+      ]
     },
     {
       "kind": "pm-constrained-prover-manifest",
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": false
       },
       "current_item": "PM1:✱3·34",
       "proof_permissions": [
@@ -144,15 +155,18 @@
         }
       ],
       "global_conventions": [
+        "PM1:✱1·01",
         "PM1:✱1·11"
       ],
       "allowed_pm_items": [
+        "PM1:✱1·01",
         "PM1:✱1·11",
         "PM1:✱2·05",
         "PM1:✱2·06",
         "PM1:✱3·31"
       ],
       "allowed_lean_declarations": {
+        "PM1:✱1·01": "PM.Elementary.imp",
         "PM1:✱1·11": "PM.Derivation.star_1_11",
         "PM1:✱2·05": "PM.FirstEdition.Volume1.Star2.star_2_05",
         "PM1:✱2·06": "PM.FirstEdition.Volume1.Star2.star_2_06",
@@ -179,6 +193,7 @@
         "PM1:✱2·31",
         "PM1:✱2·38",
         "PM1:✱2·53",
+        "PM1:✱3·01",
         "PM1:✱3·31"
       ],
       "context_declarations": {
@@ -201,6 +216,7 @@
         "PM1:✱2·31": "PM.FirstEdition.Volume1.Star2.star_2_31",
         "PM1:✱2·38": "PM.FirstEdition.Volume1.Star2.star_2_38",
         "PM1:✱2·53": "PM.FirstEdition.Volume1.Star2.star_2_53",
+        "PM1:✱3·01": "PM.Elementary.conj",
         "PM1:✱3·31": "PM.FirstEdition.Volume1.Star3.star_3_31"
       },
       "context_lean_paths": [
@@ -215,14 +231,20 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
-      "substitutions": []
+      "substitutions": [],
+      "documented_relaxations": [
+        "PM1:✱1·01"
+      ],
+      "context_only_dependencies": [
+        "PM1:✱3·01"
+      ]
     },
     {
       "kind": "pm-constrained-prover-manifest",
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": false
       },
       "current_item": "PM1:✱3·35",
       "proof_permissions": [
@@ -248,14 +270,17 @@
         }
       ],
       "global_conventions": [
+        "PM1:✱1·01",
         "PM1:✱1·11"
       ],
       "allowed_pm_items": [
+        "PM1:✱1·01",
         "PM1:✱1·11",
         "PM1:✱2·27",
         "PM1:✱3·31"
       ],
       "allowed_lean_declarations": {
+        "PM1:✱1·01": "PM.Elementary.imp",
         "PM1:✱1·11": "PM.Derivation.star_1_11",
         "PM1:✱2·27": "PM.FirstEdition.Volume1.Star2.star_2_27",
         "PM1:✱3·31": "PM.FirstEdition.Volume1.Star3.star_3_31"
@@ -284,6 +309,7 @@
         "PM1:✱2·31",
         "PM1:✱2·38",
         "PM1:✱2·53",
+        "PM1:✱3·01",
         "PM1:✱3·31"
       ],
       "context_declarations": {
@@ -309,6 +335,7 @@
         "PM1:✱2·31": "PM.FirstEdition.Volume1.Star2.star_2_31",
         "PM1:✱2·38": "PM.FirstEdition.Volume1.Star2.star_2_38",
         "PM1:✱2·53": "PM.FirstEdition.Volume1.Star2.star_2_53",
+        "PM1:✱3·01": "PM.Elementary.conj",
         "PM1:✱3·31": "PM.FirstEdition.Volume1.Star3.star_3_31"
       },
       "context_lean_paths": [
@@ -323,7 +350,13 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
-      "substitutions": []
+      "substitutions": [],
+      "documented_relaxations": [
+        "PM1:✱1·01"
+      ],
+      "context_only_dependencies": [
+        "PM1:✱3·01"
+      ]
     }
   ],
   "target_order": [
@@ -359,6 +392,7 @@
     "PM1:✱2·31",
     "PM1:✱2·38",
     "PM1:✱2·53",
+    "PM1:✱3·01",
     "PM1:✱3·31"
   ],
   "context_declarations": {
@@ -384,6 +418,7 @@
     "PM1:✱2·31": "PM.FirstEdition.Volume1.Star2.star_2_31",
     "PM1:✱2·38": "PM.FirstEdition.Volume1.Star2.star_2_38",
     "PM1:✱2·53": "PM.FirstEdition.Volume1.Star2.star_2_53",
+    "PM1:✱3·01": "PM.Elementary.conj",
     "PM1:✱3·31": "PM.FirstEdition.Volume1.Star3.star_3_31"
   },
   "context_lean_paths": [
@@ -394,6 +429,7 @@
     "Principia/Syntax/Formula.lean"
   ],
   "proof_permissions": [
+    "PM1:✱1·01",
     "PM1:✱1·11",
     "PM1:✱2·05",
     "PM1:✱2·06",

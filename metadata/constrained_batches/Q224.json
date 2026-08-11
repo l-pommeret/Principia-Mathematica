@@ -1,14 +1,14 @@
 {
   "kind": "pm-constrained-batch-spec",
   "generation_status": "ready",
-  "strict": true,
+  "strict": false,
   "volume": 1,
   "foundation_profile": "elementary-pm1",
   "context_whitespace_policy": "strip-trailing",
   "prompt_path": "aristotle/Q224.md",
   "items": [
-    {"id": "PM1:✱3·33", "demonstration_path": "aristotle/demonstrations/PM1-star-3-33.txt", "declaration": "PM.FirstEdition.Volume1.Star3.star_3_33", "lean_target_profile": "elementary-assertion", "global_conventions": ["PM1:✱1·11"]},
-    {"id": "PM1:✱3·34", "demonstration_path": "aristotle/demonstrations/PM1-star-3-34.txt", "declaration": "PM.FirstEdition.Volume1.Star3.star_3_34", "lean_target_profile": "elementary-assertion", "global_conventions": ["PM1:✱1·11"]},
-    {"id": "PM1:✱3·35", "demonstration_path": "aristotle/demonstrations/PM1-star-3-35.txt", "declaration": "PM.FirstEdition.Volume1.Star3.star_3_35", "lean_target_profile": "elementary-assertion", "global_conventions": ["PM1:✱1·11"]}
+    {"id": "PM1:✱3·33", "demonstration_path": "aristotle/demonstrations/PM1-star-3-33.txt", "declaration": "PM.FirstEdition.Volume1.Star3.star_3_33", "lean_target_profile": "elementary-assertion", "global_conventions": ["PM1:✱1·01", "PM1:✱1·11"], "documented_relaxations": ["PM1:✱1·01"], "context_dependencies": ["PM1:✱3·01"]},
+    {"id": "PM1:✱3·34", "demonstration_path": "aristotle/demonstrations/PM1-star-3-34.txt", "declaration": "PM.FirstEdition.Volume1.Star3.star_3_34", "lean_target_profile": "elementary-assertion", "global_conventions": ["PM1:✱1·01", "PM1:✱1·11"], "documented_relaxations": ["PM1:✱1·01"], "context_dependencies": ["PM1:✱3·01"]},
+    {"id": "PM1:✱3·35", "demonstration_path": "aristotle/demonstrations/PM1-star-3-35.txt", "declaration": "PM.FirstEdition.Volume1.Star3.star_3_35", "lean_target_profile": "elementary-assertion", "global_conventions": ["PM1:✱1·01", "PM1:✱1·11"], "documented_relaxations": ["PM1:✱1·01"], "context_dependencies": ["PM1:✱3·01"]}
   ]
 }

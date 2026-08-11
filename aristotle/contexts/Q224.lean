@@ -283,6 +283,16 @@ theorem star_2_53 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
 
 end PM.FirstEdition.Volume1.Star2
 
+-- PM-CONTEXT-ITEM PM1:✱3·01 PM.Elementary.conj
+namespace PM.Elementary
+
+def conj (p q : PM.Elementary Γ) : PM.Elementary Γ :=
+  ∼ₚ (∼ₚ p ∨ₚ ∼ₚ q)
+
+infixl:56 " ∧ₚ " => conj
+
+end PM.Elementary
+
 -- PM-CONTEXT-ITEM PM1:✱3·31 PM.FirstEdition.Volume1.Star3.star_3_31
 namespace PM.FirstEdition.Volume1.Star3
 
