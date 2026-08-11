@@ -27,6 +27,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE_AUDIT = ROOT / "reviews/Q228-Q244-aristotle-archive-audit.json"
+ARTIFACT_AUDIT_INDEX = ROOT / "reviews/aristotle-kernel-remap-artifact-index.json"
 SUPPORTED_BATCHES = ("Q228", "Q229", "Q230", "Q259", "Q296", "Q300")
 STRICT_INSERTION_BATCHES = {"Q259", "Q300"}
 RFL_ONLY_INSERTION_BATCHES = {"Q296"}
@@ -165,14 +166,49 @@ def prompt_signatures(path: Path) -> list[dict[str, str]]:
     return result
 
 
+def artifact_audit_records(root: Path, batch: str) -> list[dict[str, Any]]:
+    """Load immutable archive identities; an initial artifact is never mutable."""
+    index_path = (ARTIFACT_AUDIT_INDEX if root == ROOT
+                  else root / "reviews/aristotle-kernel-remap-artifact-index.json")
+    if not index_path.is_file():
+        return []
+    payload = json.loads(index_path.read_text(encoding="utf-8"))
+    records = payload.get("artifacts")
+    if not isinstance(records, list):
+        raise RemapError("artifact audit index has no artifact list")
+    selected: list[dict[str, Any]] = []
+    for record in records:
+        required = {"batch", "task_id", "retry", "path", "sha256"}
+        if not isinstance(record, dict) or set(record) != required:
+            raise RemapError("artifact audit record schema is not exact")
+        if (not isinstance(record["batch"], str) or not isinstance(record["path"], str)
+                or not isinstance(record["retry"], int) or record["retry"] < 0
+                or (record["task_id"] is not None and not isinstance(record["task_id"], str))
+                or not re.fullmatch(r"[0-9a-f]{64}", record["sha256"])):
+            raise RemapError("artifact audit record has an invalid identity")
+        if record["batch"] == batch:
+            selected.append(record)
+    keys = {(record["task_id"], record["retry"], record["path"])
+            for record in selected}
+    if len(keys) != len(selected) or len({record["path"] for record in selected}) != len(selected):
+        raise RemapError(f"artifact audit index duplicates an identity for {batch}")
+    return selected
+
+
+def archive_identity(root: Path, path: Path) -> str:
+    try:
+        return path.resolve().relative_to(root.resolve()).as_posix()
+    except ValueError:
+        return str(path)
+
+
 def expected_archive_hash(root: Path, batch: str) -> str | None:
-    # Q300's terminal archive is deliberately retained only as negative
-    # evidence.  Its immutable digest still belongs in the plan so a later
-    # replacement cannot masquerade as this reviewed failure.
-    if batch == "Q300":
-        return "15b9639c4cbff8d2e2066999f33c0fd06b572cc84fdbaa0eac2f03ef269ba065"
-    if batch == "Q259":
-        return "71fca398baa073201f5975ff632c75de1d8659b504de0c858ae90c2b7d0e0b6e"
+    records = artifact_audit_records(root, batch)
+    initial = [record for record in records if record["retry"] == 0]
+    if len(initial) > 1:
+        raise RemapError(f"artifact audit index has multiple initial archives for {batch}")
+    if initial:
+        return initial[0]["sha256"]
     if not ARCHIVE_AUDIT.is_file() or root != ROOT:
         audit_path = root / "reviews/Q228-Q244-aristotle-archive-audit.json"
     else:
@@ -286,6 +322,7 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
         "kind": "pm-interface-kernel-remap-plan",
         "batch": batch,
         "archive_sha256": expected_archive_hash(root, batch),
+        "artifact_audit_records": artifact_audit_records(root, batch),
         "targets": targets,
         "canonical_integration_forbidden": True,
         "requires_one_to_one_kernel_remap": True,
@@ -478,9 +515,22 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
         return report
     report["archive"] = {"path": str(archive), "present": True, "sha256": digest,
                          "expected_sha256": plan["archive_sha256"], "lean_files": files}
-    if plan["archive_sha256"] is None:
+    artifact_path = archive_identity(root, archive)
+    audited_records = plan.get("artifact_audit_records", [])
+    matching_artifacts = [record for record in audited_records
+                          if record["path"] == artifact_path]
+    if audited_records and not matching_artifacts:
+        report["reasons"].append(f"unregistered archive artifact: {artifact_path}")
+    if len(matching_artifacts) > 1:
+        report["reasons"].append(f"ambiguous audited archive artifact: {artifact_path}")
+    artifact = matching_artifacts[0] if len(matching_artifacts) == 1 else None
+    if artifact is not None:
+        report["archive"]["artifact"] = artifact
+        if digest != artifact["sha256"]:
+            report["reasons"].append("archive SHA-256 mismatch")
+    elif plan["archive_sha256"] is None:
         report["reasons"].append("no audited immutable archive SHA-256 is registered")
-    elif digest != plan["archive_sha256"]:
+    elif not audited_records and digest != plan["archive_sha256"]:
         report["reasons"].append("archive SHA-256 mismatch")
     report["forbidden_constructs"] = forbidden
     report["reasons"].extend(forbidden)

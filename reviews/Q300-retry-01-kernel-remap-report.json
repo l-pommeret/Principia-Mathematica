@@ -1,0 +1,99 @@
+{
+  "archive": {
+    "artifact": {
+      "batch": "Q300",
+      "path": "aristotle/results/Q300-retry-01-final.tar.gz",
+      "retry": 1,
+      "sha256": "986be5de8374d3ee5bb59d133dfe804eb27028b945df02db091f8985f7efd3a2",
+      "task_id": "d4a8a41c-f9ab-4006-a39c-878c5c6caf69"
+    },
+    "expected_sha256": "15b9639c4cbff8d2e2066999f33c0fd06b572cc84fdbaa0eac2f03ef269ba065",
+    "lean_files": [
+      {
+        "bytes": 541,
+        "path": "output-final_aristotle/RequestProject/Main.lean",
+        "sha256": "f8057e41265167f3489ae24f8319b5f7765afe011d69d0262154312b64737ca6"
+      }
+    ],
+    "path": "aristotle/results/Q300-retry-01-final.tar.gz",
+    "present": true,
+    "sha256": "986be5de8374d3ee5bb59d133dfe804eb27028b945df02db091f8985f7efd3a2"
+  },
+  "batch": "Q300",
+  "canonical_declarations": [
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
+      "exists": false,
+      "expected_signature_sha256": "cc950b29ae81b530a7f6176c8670b61a178a6165859092224fbff53f59f6116e",
+      "role": "target-insertion"
+    }
+  ],
+  "declaration_mappings": [
+    {
+      "canonical": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
+      "canonical_present": false,
+      "role": "target-insertion",
+      "source": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
+      "source_present": false
+    }
+  ],
+  "forbidden_constructs": [],
+  "kind": "pm-interface-kernel-remap-report",
+  "plan": {
+    "archive_sha256": "15b9639c4cbff8d2e2066999f33c0fd06b572cc84fdbaa0eac2f03ef269ba065",
+    "artifact_audit_records": [
+      {
+        "batch": "Q300",
+        "path": "aristotle/results/Q300-final.tar.gz",
+        "retry": 0,
+        "sha256": "15b9639c4cbff8d2e2066999f33c0fd06b572cc84fdbaa0eac2f03ef269ba065",
+        "task_id": "437e8780-f159-474f-a74f-6164daa353a2"
+      },
+      {
+        "batch": "Q300",
+        "path": "aristotle/results/Q300-retry-01-final.tar.gz",
+        "retry": 1,
+        "sha256": "986be5de8374d3ee5bb59d133dfe804eb27028b945df02db091f8985f7efd3a2",
+        "task_id": "d4a8a41c-f9ab-4006-a39c-878c5c6caf69"
+      }
+    ],
+    "batch": "Q300",
+    "canonical_integration_forbidden": true,
+    "kind": "pm-interface-kernel-remap-plan",
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true,
+    "targets": [
+      {
+        "canonical": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
+        "id": "PM1:✱9·21",
+        "insertion_target": true,
+        "signature": "theorem star_9_21\n    (φ ψ : Apparent Γ [.elementaryProposition]) :\n    Star_9_21Derivation φ ψ\n",
+        "signature_sha256": "cc950b29ae81b530a7f6176c8670b61a178a6165859092224fbff53f59f6116e",
+        "source": "PM.Architecture.FirstOrderPrerequisites.star_9_21"
+      }
+    ]
+  },
+  "policy": {
+    "canonical_integration_forbidden": true,
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true
+  },
+  "reasons": [
+    "mapped source declaration absent: PM.Architecture.FirstOrderPrerequisites.star_9_21",
+    "target signature mismatch or absent: PM.Architecture.FirstOrderPrerequisites.star_9_21"
+  ],
+  "status": "blocked",
+  "targets": [
+    {
+      "actual_signature_sha256": null,
+      "body_policy": null,
+      "canonical": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
+      "exact_signature": false,
+      "expected_signature_sha256": "cc950b29ae81b530a7f6176c8670b61a178a6165859092224fbff53f59f6116e",
+      "id": "PM1:✱9·21",
+      "role": "target-insertion",
+      "source": "PM.Architecture.FirstOrderPrerequisites.star_9_21"
+    }
+  ]
+}

@@ -122,6 +122,79 @@ end PM.Local
         self.assertTrue(all(target["insertion_target"] for target in plan["targets"]))
         self.assertEqual(plan["archive_sha256"],
                          "71fca398baa073201f5975ff632c75de1d8659b504de0c858ae90c2b7d0e0b6e")
+        self.assertEqual(plan["artifact_audit_records"][1]["sha256"],
+                         "758995b36565a04fdd29d999f2fd03ae1bef78c4df465f8771c00f307fda4b73")
+
+    def test_q300_retry_identity_is_registered_separately_from_initial(self):
+        plan = batch_plan(ROOT, "Q300")
+        initial, retry = plan["artifact_audit_records"]
+        self.assertEqual(initial["retry"], 0)
+        self.assertEqual(retry["retry"], 1)
+        self.assertNotEqual(initial["sha256"], retry["sha256"])
+        self.assertEqual(retry["task_id"], "d4a8a41c-f9ab-4006-a39c-878c5c6caf69")
+
+    def test_registered_retry_uses_its_own_immutable_digest(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "Principia").mkdir()
+            archive = root / "aristotle/results/Q300-retry-01-final.tar.gz"
+            archive.parent.mkdir(parents=True)
+            write_archive(archive, {"Target.lean": """namespace PM.Local
+theorem target : True := by trivial
+end PM.Local
+"""})
+            signature = "theorem target : True\n"
+            initial_sha = "0" * 64
+            retry_sha = sha256_bytes(archive.read_bytes())
+            records = [
+                {"batch": "Q300", "task_id": "initial", "retry": 0,
+                 "path": "aristotle/results/Q300-final.tar.gz", "sha256": initial_sha},
+                {"batch": "Q300", "task_id": "retry", "retry": 1,
+                 "path": "aristotle/results/Q300-retry-01-final.tar.gz", "sha256": retry_sha},
+            ]
+            plan = {
+                "kind": "pm-interface-kernel-remap-plan", "batch": "Q300",
+                "archive_sha256": initial_sha, "artifact_audit_records": records,
+                "targets": [{"id": "fixture", "source": "PM.Local.target",
+                             "canonical": "PM.Canonical.target", "signature": signature,
+                             "signature_sha256": __import__("hashlib").sha256(
+                                 signature.encode("utf-8")).hexdigest(),
+                             "insertion_target": True}],
+            }
+            with patch("remap_aristotle_interface.batch_plan", return_value=plan):
+                report = run_remap(root, "Q300", archive)
+            self.assertEqual(report["status"], "transplantable-interface-only")
+            self.assertEqual(report["archive"]["artifact"]["retry"], 1)
+            self.assertNotIn("archive SHA-256 mismatch", report["reasons"])
+
+    def test_unregistered_retry_is_fail_closed_even_when_its_digest_is_valid(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "Principia").mkdir()
+            archive = root / "aristotle/results/Q300-retry-02-final.tar.gz"
+            archive.parent.mkdir(parents=True)
+            write_archive(archive, {"Target.lean": """namespace PM.Local
+theorem target : True := by trivial
+end PM.Local
+"""})
+            signature = "theorem target : True\n"
+            plan = {
+                "kind": "pm-interface-kernel-remap-plan", "batch": "Q300",
+                "archive_sha256": "0" * 64,
+                "artifact_audit_records": [{
+                    "batch": "Q300", "task_id": "initial", "retry": 0,
+                    "path": "aristotle/results/Q300-final.tar.gz", "sha256": "0" * 64,
+                }],
+                "targets": [{"id": "fixture", "source": "PM.Local.target",
+                             "canonical": "PM.Canonical.target", "signature": signature,
+                             "signature_sha256": __import__("hashlib").sha256(
+                                 signature.encode("utf-8")).hexdigest(),
+                             "insertion_target": True}],
+            }
+            with patch("remap_aristotle_interface.batch_plan", return_value=plan):
+                report = run_remap(root, "Q300", archive)
+            self.assertEqual(report["status"], "blocked")
+            self.assertIn("unregistered archive artifact", "\n".join(report["reasons"]))
 
     def test_q259_clean_four_target_fixture_is_transplantable_at_canonical_names(self):
         with tempfile.TemporaryDirectory() as directory:

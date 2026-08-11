@@ -1,0 +1,216 @@
+{
+  "archive": {
+    "artifact": {
+      "batch": "Q259",
+      "path": "aristotle/results/Q259-retry-01-final.tar.gz",
+      "retry": 1,
+      "sha256": "758995b36565a04fdd29d999f2fd03ae1bef78c4df465f8771c00f307fda4b73",
+      "task_id": "1b03d6b5-5879-4445-9db2-10c0ec8b4c43"
+    },
+    "expected_sha256": "71fca398baa073201f5975ff632c75de1d8659b504de0c858ae90c2b7d0e0b6e",
+    "lean_files": [
+      {
+        "bytes": 563,
+        "path": "output-final_aristotle/RequestProject/Main.lean",
+        "sha256": "929b0bddef0b781f3fb42c7a99f252dc0bda7331f698104f7075e12ff637c52d"
+      },
+      {
+        "bytes": 22657,
+        "path": "output-final_aristotle/RequestProject/Q259Context.lean",
+        "sha256": "98b36580598cdc4c6b45827445b7f2108a38e8eaedaa9a7a2d7ca2ba1022b2c8"
+      },
+      {
+        "bytes": 8559,
+        "path": "output-final_aristotle/RequestProject/Q259.lean",
+        "sha256": "9b87c6ff2e9404f8c12af3e5b9c18f360d914607940149821a59c9a124252eba"
+      }
+    ],
+    "path": "aristotle/results/Q259-retry-01-final.tar.gz",
+    "present": true,
+    "sha256": "758995b36565a04fdd29d999f2fd03ae1bef78c4df465f8771c00f307fda4b73"
+  },
+  "batch": "Q259",
+  "canonical_declarations": [
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_3",
+      "exists": false,
+      "expected_signature_sha256": "cc6ca147a934c15492219e0fc2a33ff48221c3ba5301b8ef950e959d6c66973a",
+      "role": "target-insertion"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_31",
+      "exists": false,
+      "expected_signature_sha256": "43e8971f27bd694282bc824ddb7538874ba78f705c9c85194ae15a8367b85310",
+      "role": "target-insertion"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_32",
+      "exists": false,
+      "expected_signature_sha256": "4d40ec734a3240781cda43071f0d9ea93fcb019957ed55f45605fa88af425f07",
+      "role": "target-insertion"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_33",
+      "exists": false,
+      "expected_signature_sha256": "de64bd53da410c6c601a9a278d343856c82b4166d16375699bfdddb4898effc1",
+      "role": "target-insertion"
+    }
+  ],
+  "declaration_mappings": [
+    {
+      "canonical": "PM.FirstEdition.Volume1.Star9.star_9_3",
+      "canonical_present": false,
+      "role": "target-insertion",
+      "source": "PM.Architecture.Q259ClosedRuleBook.star_9_3",
+      "source_present": true,
+      "source_signature_sha256": "ae3940bfea8835672a74a2c5f38bca0107d274f5bbd4b62f5347100a0fa2e445"
+    },
+    {
+      "canonical": "PM.FirstEdition.Volume1.Star9.star_9_31",
+      "canonical_present": false,
+      "role": "target-insertion",
+      "source": "PM.Architecture.Q259ClosedRuleBook.star_9_31",
+      "source_present": true,
+      "source_signature_sha256": "a1a1f7fa7fcda85762ffa5ead8f10a6d29d03c94f19776c5669a9d3ea1449624"
+    },
+    {
+      "canonical": "PM.FirstEdition.Volume1.Star9.star_9_32",
+      "canonical_present": false,
+      "role": "target-insertion",
+      "source": "PM.Architecture.Q259ClosedRuleBook.star_9_32",
+      "source_present": true,
+      "source_signature_sha256": "017ee360899c17875172be76ddb7223d06efcd552a798bd0f277405b61e780dc"
+    },
+    {
+      "canonical": "PM.FirstEdition.Volume1.Star9.star_9_33",
+      "canonical_present": false,
+      "role": "target-insertion",
+      "source": "PM.Architecture.Q259ClosedRuleBook.star_9_33",
+      "source_present": true,
+      "source_signature_sha256": "18eba0ce6a4cd724b751f279bd5d3e0b8e409f2d2642a7d91700b10164dee3cd"
+    }
+  ],
+  "forbidden_constructs": [
+    "output-final_aristotle/RequestProject/Main.lean: forbidden Classical"
+  ],
+  "kind": "pm-interface-kernel-remap-report",
+  "plan": {
+    "archive_sha256": "71fca398baa073201f5975ff632c75de1d8659b504de0c858ae90c2b7d0e0b6e",
+    "artifact_audit_records": [
+      {
+        "batch": "Q259",
+        "path": "aristotle/results/Q259-final.tar.gz",
+        "retry": 0,
+        "sha256": "71fca398baa073201f5975ff632c75de1d8659b504de0c858ae90c2b7d0e0b6e",
+        "task_id": "ddd28117-2104-4158-bb41-1ca45f9ba8cc"
+      },
+      {
+        "batch": "Q259",
+        "path": "aristotle/results/Q259-retry-01-final.tar.gz",
+        "retry": 1,
+        "sha256": "758995b36565a04fdd29d999f2fd03ae1bef78c4df465f8771c00f307fda4b73",
+        "task_id": "1b03d6b5-5879-4445-9db2-10c0ec8b4c43"
+      }
+    ],
+    "batch": "Q259",
+    "canonical_integration_forbidden": true,
+    "kind": "pm-interface-kernel-remap-plan",
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true,
+    "targets": [
+      {
+        "canonical": "PM.FirstEdition.Volume1.Star9.star_9_3",
+        "id": "PM1:✱9·3",
+        "insertion_target": true,
+        "signature": "theorem star_9_3 (rules : Q259ClosedRuleBook)\n    (φ : Apparent Γ [.elementaryProposition]) :\n    Star_9_3Derivation φ\n",
+        "signature_sha256": "cc6ca147a934c15492219e0fc2a33ff48221c3ba5301b8ef950e959d6c66973a",
+        "source": "PM.Architecture.Q259ClosedRuleBook.star_9_3"
+      },
+      {
+        "canonical": "PM.FirstEdition.Volume1.Star9.star_9_31",
+        "id": "PM1:✱9·31",
+        "insertion_target": true,
+        "signature": "theorem star_9_31 (rules : Q259ClosedRuleBook)\n    (φ : Apparent Γ [.elementaryProposition]) :\n    Star_9_31Derivation φ\n",
+        "signature_sha256": "43e8971f27bd694282bc824ddb7538874ba78f705c9c85194ae15a8367b85310",
+        "source": "PM.Architecture.Q259ClosedRuleBook.star_9_31"
+      },
+      {
+        "canonical": "PM.FirstEdition.Volume1.Star9.star_9_32",
+        "id": "PM1:✱9·32",
+        "insertion_target": true,
+        "signature": "theorem star_9_32 (rules : Q259ClosedRuleBook) (q : Elementary Γ)\n    (φ : Apparent Γ [.elementaryProposition]) :\n    Star_9_32Derivation q φ\n",
+        "signature_sha256": "4d40ec734a3240781cda43071f0d9ea93fcb019957ed55f45605fa88af425f07",
+        "source": "PM.Architecture.Q259ClosedRuleBook.star_9_32"
+      },
+      {
+        "canonical": "PM.FirstEdition.Volume1.Star9.star_9_33",
+        "id": "PM1:✱9·33",
+        "insertion_target": true,
+        "signature": "theorem star_9_33 (rules : Q259ClosedRuleBook) (q : Elementary Γ)\n    (φ : Apparent Γ [.elementaryProposition]) :\n    Star_9_33Derivation q φ\n",
+        "signature_sha256": "de64bd53da410c6c601a9a278d343856c82b4166d16375699bfdddb4898effc1",
+        "source": "PM.Architecture.Q259ClosedRuleBook.star_9_33"
+      }
+    ]
+  },
+  "policy": {
+    "canonical_integration_forbidden": true,
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true
+  },
+  "reasons": [
+    "Q259 forbids archive-local declarations: PM.Architecture.Apparent, PM.Architecture.ApparentSort, PM.Architecture.Elementary, PM.Architecture.Elementary.Occurs, PM.Architecture.Elementary.abstract, PM.Architecture.Elementary.abstract_eq_lift_of_fresh, PM.Architecture.Elementary.abstract_inst_real, PM.Architecture.Elementary.fresh_of_nameBound_le, PM.Architecture.Elementary.impl, PM.Architecture.Elementary.inst, PM.Architecture.Elementary.lift, PM.Architecture.Elementary.lt_nameBound, PM.Architecture.Elementary.nameBound, PM.Architecture.Elementary.rename, PM.Architecture.Elementary.rename_congr, PM.Architecture.Elementary.rename_eq_of_agree, PM.Architecture.ElementaryAssertion, PM.Architecture.FO, PM.Architecture.FO.abstract, PM.Architecture.FO.depth, PM.Architecture.FO.depth_rename, PM.Architecture.FO.disj, PM.Architecture.FO.impl, PM.Architecture.FO.lift, PM.Architecture.FO.neg, PM.Architecture.FO.rename, PM.Architecture.Ind, PM.Architecture.Ind.absMap, PM.Architecture.Ind.instMap, PM.Architecture.Ind.lift, PM.Architecture.Ind.up, PM.Architecture.OrderedAssertion, PM.Architecture.Q259ClosedRuleBook, PM.Architecture.Star_9_31Derivation, PM.Architecture.Star_9_32Derivation, PM.Architecture.Star_9_33Derivation, PM.Architecture.Star_9_3Derivation",
+    "output-final_aristotle/RequestProject/Main.lean: forbidden Classical",
+    "target signature mismatch or absent: PM.Architecture.Q259ClosedRuleBook.star_9_3",
+    "target signature mismatch or absent: PM.Architecture.Q259ClosedRuleBook.star_9_31",
+    "target signature mismatch or absent: PM.Architecture.Q259ClosedRuleBook.star_9_32",
+    "target signature mismatch or absent: PM.Architecture.Q259ClosedRuleBook.star_9_33",
+    "unmapped local declarations: PM.Architecture.Apparent, PM.Architecture.ApparentSort, PM.Architecture.Elementary, PM.Architecture.Elementary.Occurs, PM.Architecture.Elementary.abstract, PM.Architecture.Elementary.abstract_eq_lift_of_fresh, PM.Architecture.Elementary.abstract_inst_real, PM.Architecture.Elementary.fresh_of_nameBound_le, PM.Architecture.Elementary.impl, PM.Architecture.Elementary.inst, PM.Architecture.Elementary.lift, PM.Architecture.Elementary.lt_nameBound, PM.Architecture.Elementary.nameBound, PM.Architecture.Elementary.rename, PM.Architecture.Elementary.rename_congr, PM.Architecture.Elementary.rename_eq_of_agree, PM.Architecture.ElementaryAssertion, PM.Architecture.FO, PM.Architecture.FO.abstract, PM.Architecture.FO.depth, PM.Architecture.FO.depth_rename, PM.Architecture.FO.disj, PM.Architecture.FO.impl, PM.Architecture.FO.lift, PM.Architecture.FO.neg, PM.Architecture.FO.rename, PM.Architecture.Ind, PM.Architecture.Ind.absMap, PM.Architecture.Ind.instMap, PM.Architecture.Ind.lift, PM.Architecture.Ind.up, PM.Architecture.OrderedAssertion, PM.Architecture.Q259ClosedRuleBook, PM.Architecture.Star_9_31Derivation, PM.Architecture.Star_9_32Derivation, PM.Architecture.Star_9_33Derivation, PM.Architecture.Star_9_3Derivation"
+  ],
+  "status": "blocked",
+  "targets": [
+    {
+      "actual_signature_sha256": "ae3940bfea8835672a74a2c5f38bca0107d274f5bbd4b62f5347100a0fa2e445",
+      "body_policy": null,
+      "canonical": "PM.FirstEdition.Volume1.Star9.star_9_3",
+      "exact_signature": false,
+      "expected_signature_sha256": "cc6ca147a934c15492219e0fc2a33ff48221c3ba5301b8ef950e959d6c66973a",
+      "id": "PM1:✱9·3",
+      "role": "target-insertion",
+      "source": "PM.Architecture.Q259ClosedRuleBook.star_9_3"
+    },
+    {
+      "actual_signature_sha256": "a1a1f7fa7fcda85762ffa5ead8f10a6d29d03c94f19776c5669a9d3ea1449624",
+      "body_policy": null,
+      "canonical": "PM.FirstEdition.Volume1.Star9.star_9_31",
+      "exact_signature": false,
+      "expected_signature_sha256": "43e8971f27bd694282bc824ddb7538874ba78f705c9c85194ae15a8367b85310",
+      "id": "PM1:✱9·31",
+      "role": "target-insertion",
+      "source": "PM.Architecture.Q259ClosedRuleBook.star_9_31"
+    },
+    {
+      "actual_signature_sha256": "017ee360899c17875172be76ddb7223d06efcd552a798bd0f277405b61e780dc",
+      "body_policy": null,
+      "canonical": "PM.FirstEdition.Volume1.Star9.star_9_32",
+      "exact_signature": false,
+      "expected_signature_sha256": "4d40ec734a3240781cda43071f0d9ea93fcb019957ed55f45605fa88af425f07",
+      "id": "PM1:✱9·32",
+      "role": "target-insertion",
+      "source": "PM.Architecture.Q259ClosedRuleBook.star_9_32"
+    },
+    {
+      "actual_signature_sha256": "18eba0ce6a4cd724b751f279bd5d3e0b8e409f2d2642a7d91700b10164dee3cd",
+      "body_policy": null,
+      "canonical": "PM.FirstEdition.Volume1.Star9.star_9_33",
+      "exact_signature": false,
+      "expected_signature_sha256": "de64bd53da410c6c601a9a278d343856c82b4166d16375699bfdddb4898effc1",
+      "id": "PM1:✱9·33",
+      "role": "target-insertion",
+      "source": "PM.Architecture.Q259ClosedRuleBook.star_9_33"
+    }
+  ]
+}
