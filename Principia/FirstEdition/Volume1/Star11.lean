@@ -121,3 +121,26 @@ PM-VERBATIM-END PM1:✱11·34 -/
 ✱11·341.  ⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : ⊃ :
 (∃x, y).φ(x, y) .≡ .(∃x, y).ψ(x, y)  [✱10·271·281]
 PM-VERBATIM-END PM1:✱11·341 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·35
+✱11·35.  ⊢ : .(x, y) : φ(x, y) .⊃ .p : ≡ :
+(∃x, y).φ(x, y) .⊃ .p  [✱10·23·271]
+PM-VERBATIM-END PM1:✱11·35 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·36
+✱11·36.  ⊢ : φ(z, w) .⊃ .(∃x, y).φ(x, y)
+Dem.  ⊢ . ✱11·1 . ⊃ ⊢ : (x, y).∼φ(x, y) .⊃ .∼φ(z, w);
+then (1).Transp, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱11·36 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·37
+✱11·37.  ⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : .(x, y) :
+ψ(x, y) .⊃ .χ(x, y) :. ⊃ : (x, y) : φ(x, y) .⊃ .χ(x, y)
+Dem.  By ✱11·31, Syll. ✱11·11, ✱11·32, and ⊢ . Prop.
+PM-VERBATIM-END PM1:✱11·37 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·371
+✱11·371.  ⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : .(x, y) :
+ψ(x, y) .≡ .χ(x, y) :. ⊃ : (x, y) : φ(x, y) .≡ .χ(x, y)
+[✱11·31·11·33]
+PM-VERBATIM-END PM1:✱11·371 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·38
+✱11·38.  ⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) :. ⊃ :
+(x, y) : φ(x, y).χ(x, y) .⊃ .ψ(x, y).χ(x, y)  [Fact. ✱11·11·32]
+PM-VERBATIM-END PM1:✱11·38 -/
