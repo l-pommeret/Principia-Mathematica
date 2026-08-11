@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/principia/anomaly-registry.schema.json",
+  "title": "Principia Mathematica anomaly register",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "official_errata_registry", "entries"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string"},
+    "official_errata_registry": {"type": "object"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id", "category", "pm_locus", "printed_reading", "printed_citations",
+          "corrected_or_added_reading", "canonical_witness_evidence", "digital_witnesses",
+          "affected_ast_items_batches", "strict_audit_status", "minimal_relaxation",
+          "lean_impact", "review_provenance", "resolution_status"
+        ],
+        "properties": {
+          "id": {"type": "string"},
+          "category": {
+            "enum": [
+              "printed-error-unofficial", "incomplete-printed-citation",
+              "notation-ambiguity", "digital-witness-error", "reconstruction-gap"
+            ]
+          },
+          "pm_locus": {"type": "object"},
+          "printed_reading": {"type": "string"},
+          "printed_citations": {"type": "array", "items": {"type": "string"}},
+          "corrected_or_added_reading": {"type": "string"},
+          "canonical_witness_evidence": {"type": "object"},
+          "digital_witnesses": {"type": "array"},
+          "affected_ast_items_batches": {"type": "object"},
+          "strict_audit_status": {"type": "string"},
+          "minimal_relaxation": {"type": "array"},
+          "lean_impact": {"type": "object"},
+          "review_provenance": {"type": "array", "minItems": 1},
+          "resolution_status": {"type": "string"},
+          "apparatus_id": {"type": "string"},
+          "linked_official_errata_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

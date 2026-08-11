@@ -1,0 +1,54 @@
+import importlib.util
+import json
+import shutil
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+SPEC = importlib.util.spec_from_file_location(
+    "verify_anomaly_registry", ROOT / "scripts/verify_anomaly_registry.py")
+anomalies = importlib.util.module_from_spec(SPEC)
+assert SPEC.loader is not None
+SPEC.loader.exec_module(anomalies)
+
+
+class AnomalyRegistryTests(unittest.TestCase):
+    def test_registry_is_generated_and_backfills_required_cases(self):
+        payload = anomalies.verify_registry()
+        entries = {entry["id"]: entry for entry in payload["entries"]}
+        self.assertIn("PM1-ANOM-Q220-ASSOCIATION-GAP", entries)
+        self.assertIn("PM1-ANOM-Q221-FIRST-ARCHIVE-FIDELITY-GAP", entries)
+        self.assertEqual(entries["PM1-ANOM-Q222-ASSOCIATION-GAP"]["minimal_relaxation"], ["PM1:✱2·32"])
+        self.assertGreaterEqual(sum(entry["category"] == "digital-witness-error" for entry in entries.values()), 1)
+
+    def test_registry_cannot_drop_an_attested_digital_witness_error(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for relative in ("metadata/anomalies", "metadata/apparatus", "metadata/errata", "metadata/schema"):
+                shutil.copytree(ROOT / relative, root / relative)
+            path = root / "metadata/anomalies/PM1-anomaly-register.json"
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            payload["entries"] = [entry for entry in payload["entries"] if entry["category"] != "digital-witness-error"]
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            with self.assertRaises(SystemExit):
+                anomalies.verify_registry(root)
+
+    def test_q222_cannot_claim_a_strict_reconstruction(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for relative in ("metadata/anomalies", "metadata/apparatus", "metadata/errata", "metadata/schema"):
+                shutil.copytree(ROOT / relative, root / relative)
+            path = root / "metadata/anomalies/manual/PM1-reconstruction-gaps.json"
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            payload["entries"][2]["minimal_relaxation"] = []
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            with self.assertRaises(SystemExit):
+                anomalies.verify_registry(root)
+
+
+if __name__ == "__main__":
+    unittest.main()

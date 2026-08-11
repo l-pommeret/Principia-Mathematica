@@ -1,0 +1,2025 @@
+{
+  "schema_version": 1,
+  "id": "PM1-ANOMALY-REGISTER",
+  "official_errata_registry": {
+    "id": "PM1-1910-ERRATA",
+    "path": "metadata/errata/PM1-1910-errata.json",
+    "entry_ids": [
+      "PM1-ERRATA-P14-L2-STATES",
+      "PM1-ERRATA-P14-L7-REFERENCES",
+      "PM1-ERRATA-P15-PENULTIMATE-FUNCTION-OF",
+      "PM1-ERRATA-P34-L15-X-R",
+      "PM1-ERRATA-P68-L20-CLASSES",
+      "PM1-ERRATA-P86-L2-MUST",
+      "PM1-ERRATA-P91-L8-AND-3-03",
+      "PM1-ERRATA-P103-L7-ASSUMPTION",
+      "PM1-ERRATA-P103-L25-Q-R",
+      "PM1-ERRATA-P218-PENULTIMATE-DELTA-LAMBDA",
+      "PM1-ERRATA-P382-PENULTIMATE-SELECTIONS",
+      "PM1-ERRATA-P487-L13-STAR95",
+      "PM1-ERRATA-P503-L14-STAR88-38"
+    ],
+    "policy": "Official Errata are linked here and never duplicated as anomaly entries."
+  },
+  "entries": [
+    {
+      "id": "PM1-ANOM-APP-PM1-1.4-PG78050-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          100
+        ],
+        "scan_leaves": [
+          122
+        ],
+        "items": [
+          "PM1:✱1·4"
+        ],
+        "line_or_formula": "consequent of the displayed primitive proposition"
+      },
+      "printed_reading": "⊢ : p ∨ q . ⊃ . q ∨ p     Pp.",
+      "printed_citations": [],
+      "corrected_or_added_reading": "⊢ : p ∨ q . ⊃ . p ∨ p     Pp.",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/122",
+        "scan_leaf": 122,
+        "sha256": "3b43a0ae7e18e0431b432256110d71c917deb94b43aaf1f07465f99743349206",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "⊢ : p ∨ q . ⊃ . p ∨ p     Pp.",
+          "uri": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "⊢ : p ∨ q . ⊃ . q ∨ p     Pp.",
+          "uri": "https://en.wikisource.org/wiki/Russell_%26_Whitehead%27s_Principia_Mathematica/Part_1/Section_A"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:✱1·4"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-star-1-4-pg78050.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-1.4-PG78050-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P10-PG-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          10
+        ],
+        "scan_leaves": [
+          32
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH1-PP4-10"
+        ],
+        "line_or_formula": "first Group II example continued from p. 9"
+      },
+      "printed_reading": "(∃x, y)",
+      "printed_citations": [],
+      "corrected_or_added_reading": "(∃x, ∼y)",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/32",
+        "scan_leaf": 32,
+        "sha256": "aeea4fc70ca7db28a47311cd241c05978c11b514743d2fc1d7e46fc2970b8636",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "(∃x, ∼y)",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "(∃x, y)",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/32&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH1-PP4-10"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p10-pg-neg-y.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P10-PG-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P10-WS-002",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          10
+        ],
+        "scan_leaves": [
+          32
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH1-PP4-10"
+        ],
+        "line_or_formula": "sentence introducing dot examples"
+      },
+      "printed_reading": "illustrate the use of dots",
+      "printed_citations": [],
+      "corrected_or_added_reading": "illustrate the use.of dots",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/32",
+        "scan_leaf": 32,
+        "sha256": "e406ea19fb7be46fff2e94dd6e90aa6c2691ebb3f2cb56ced2585f0c7a5efdbb",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "illustrate the use of dots",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "illustrate the use.of dots",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/32&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH1-PP4-10"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p10-ws-use-of.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P10-WS-002",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P12-WS-PRODUCT-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          12
+        ],
+        "scan_leaves": [
+          34
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH1-DEFINITIONS-PP11-12"
+        ],
+        "line_or_formula": "first formula under ‘Three definitions have been introduced’"
+      },
+      "printed_reading": "p · q .=. ∼(∼p ∨ ∼q) Df",
+      "printed_citations": [],
+      "corrected_or_added_reading": "p ∨ q .=. ∼(∼p ∨ ∼q) Df",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/34",
+        "scan_leaf": 34,
+        "sha256": "6989ac95cf01b5d3368b8fa4dfaed979a91e8bfc8b8f0105132560012d7a59fb",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "WS-PM1",
+          "reading": "p ∨ q .=. ∼(∼p ∨ ∼q) Df",
+          "uri": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/34"
+        },
+        {
+          "siglum": "PG78050",
+          "reading": "p · q .=. ∼(∼p ∨ ∼q) Df",
+          "uri": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH1-DEFINITIONS-PP11-12"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p12-wikisource-product.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P12-WS-PRODUCT-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P28-PG-002",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          28
+        ],
+        "scan_leaves": [
+          50
+        ],
+        "items": [
+          "PM1:INTRO-CH1-CLASSES-RELATIONS-CONT"
+        ],
+        "line_or_formula": "definition recalled for equivalence"
+      },
+      "printed_reading": "p ⊃ q . q ⊃ p",
+      "printed_citations": [],
+      "corrected_or_added_reading": "p ⊃ q . q ⊂ p",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/50",
+        "scan_leaf": 50,
+        "sha256": "a593e123f571b0b3c6b46fd9f938a52993208951c49a8932bd055b3ba38612d2",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "p ⊃ q . q ⊂ p",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "p ⊃ q . q ⊃ p",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/50&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRO-CH1-CLASSES-RELATIONS-CONT"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/app-pm1-intro-p28-pg-002.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P28-PG-002",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P28-WS-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          28
+        ],
+        "scan_leaves": [
+          50
+        ],
+        "items": [
+          "PM1:INTRO-CH1-CLASSES-RELATIONS-CONT"
+        ],
+        "line_or_formula": "list of propositional formulae"
+      },
+      "printed_reading": "p . q, p ∨ q, ∼p, p ⊃ q",
+      "printed_citations": [],
+      "corrected_or_added_reading": "p . q, p ∨ q, p ⊃ q",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/50",
+        "scan_leaf": 50,
+        "sha256": "5545eb12589332daefeda8ae2e5c244b852b9f94945b1a9a5423e97a2655e84a",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "p . q, p ∨ q, ∼p, p ⊃ q",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "p . q, p ∨ q, p ⊃ q",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/50&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRO-CH1-CLASSES-RELATIONS-CONT"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/app-pm1-intro-p28-ws-001.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P28-WS-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P3-WS-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          3
+        ],
+        "scan_leaves": [
+          25
+        ],
+        "items": [
+          "PM1:INTRODUCTION-OPENING"
+        ],
+        "line_or_formula": "opening word of paragraph (α)"
+      },
+      "printed_reading": "Most mathematical investigation",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Most Mathematical investigation",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/25",
+        "scan_leaf": 25,
+        "sha256": "9fb28cd2c28a216bd51318e3b94a1dfcd90003e4cad3ea35ad9e97af4849f2bd",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "Most mathematical investigation",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "Most Mathematical investigation",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/25&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-OPENING"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p3-ws-capitalization.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P3-WS-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P32-WS-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          32
+        ],
+        "scan_leaves": [
+          54
+        ],
+        "items": [
+          "PM1:INTRO-CH1-DESCRIPTIONS"
+        ],
+        "line_or_formula": "reading of Rʻy for the son relation"
+      },
+      "printed_reading": "the son of y",
+      "printed_citations": [],
+      "corrected_or_added_reading": "the the son of y",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/54",
+        "scan_leaf": 54,
+        "sha256": "c51b9737f345de0ca10f62e1f35d1af10ac3e8f66abef74eab808987dbe343c7",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "the son of y",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "the the son of y",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/54&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRO-CH1-DESCRIPTIONS"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/app-pm1-intro-p32-ws-001.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P32-WS-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P34-PG-003",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          34
+        ],
+        "scan_leaves": [
+          56
+        ],
+        "items": [
+          "PM1:INTRO-CH1-DESCRIPTIVE-RELATION-FUNCTIONS"
+        ],
+        "line_or_formula": "neither symmetrical nor asymmetrical"
+      },
+      "printed_reading": "A relation may be neither",
+      "printed_citations": [],
+      "corrected_or_added_reading": "A relation maybe neither",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/56",
+        "scan_leaf": 56,
+        "sha256": "540d5ace0eefa5af372eaec0cbef7be517089c6638b13d71191cb8a21565b8fe",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "A relation maybe neither",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "A relation may be neither",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/56&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRO-CH1-DESCRIPTIVE-RELATION-FUNCTIONS"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/app-pm1-intro-p34-pg-003.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P34-PG-003",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P38-PG-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          38
+        ],
+        "scan_leaves": [
+          60
+        ],
+        "items": [
+          "PM1:INTRO-CH1-UNIT-CLASSES"
+        ],
+        "line_or_formula": "two later mentions of converse iota"
+      },
+      "printed_reading": "ι̌ʻα",
+      "printed_citations": [],
+      "corrected_or_added_reading": "ιʻα",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/60",
+        "scan_leaf": 60,
+        "sha256": "1c8f144aa2b9b46abbb25735c1d62a04ce33b1fac3a473236ea9baa891cabb58",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "ι̌ʻα, then ιʻα twice",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "ι̌ʻα (all three occurrences)",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/60&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRO-CH1-UNIT-CLASSES"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/app-pm1-intro-p38-pg-001.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P38-PG-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P44-PG-FUNCTION-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          44
+        ],
+        "scan_leaves": [
+          66
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH2-NATURE-FUNCTIONS-PP41-44A"
+        ],
+        "line_or_formula": "paragraph beginning “That the words true and false”"
+      },
+      "printed_reading": "Let us take any function φx̂",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Let us take any function x̂",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/66",
+        "scan_leaf": 66,
+        "sha256": "8c9396d62548fe5032a8c1b8f9599650cbd2a9a3c7fb202274ba6da6ac181375",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "Let us take any function x̂",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "Let us take any function φx̂",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/66&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH2-NATURE-FUNCTIONS-PP41-44A"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p44-pg-function.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P44-PG-FUNCTION-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P49-PG-NEGATION-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          49
+        ],
+        "scan_leaves": [
+          71
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH2-SYSTEMATIC-AMBIGUITY-PP49-50A"
+        ],
+        "line_or_formula": "definition of the negation of (x).φx"
+      },
+      "printed_reading": "(∃x).∼φx",
+      "printed_citations": [],
+      "corrected_or_added_reading": "(∃x).φx",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/71",
+        "scan_leaf": 71,
+        "sha256": "f89c8986fd63e193492586919babb26d8a5c9c9aff3847918b5521f74423cc17",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "(∃x).φx",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "(∃x).∼φx",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/71&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH2-SYSTEMATIC-AMBIGUITY-PP49-50A"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p49-pg-negation.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P49-PG-NEGATION-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P5-PG-002",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          5
+        ],
+        "scan_leaves": [
+          27
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH1-PP4-10"
+        ],
+        "line_or_formula": "list of small Greek letters assigned constant meanings"
+      },
+      "printed_reading": "ε, ι, π and (at a later stage) to η, θ and ω",
+      "printed_citations": [],
+      "corrected_or_added_reading": "ε, ι and (at a later stage) to η, θ and ω",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/27",
+        "scan_leaf": 27,
+        "sha256": "7715af59db94d5d1569181ace69908f85746f13070190c8fdde0182442fe4063",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "ε, ι and (at a later stage) to η, θ and ω",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "ε, ι, π and (at a later stage) to η, θ and ω",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/27&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH1-PP4-10"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p5-pg-omitted-pi.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P5-PG-002",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P5-WS-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          5
+        ],
+        "scan_leaves": [
+          27
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH1-PP4-10"
+        ],
+        "line_or_formula": "summary of the range of two variables"
+      },
+      "printed_reading": "two variables may be the same",
+      "printed_citations": [],
+      "corrected_or_added_reading": "two variables my be the same",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/27",
+        "scan_leaf": 27,
+        "sha256": "a6fb8f109c77f3ddeedbf776ee104d5d9df8f71a2dc17fdb4954c6f6644d1f5a",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "two variables may be the same",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "two variables my be the same",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/27&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH1-PP4-10"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p5-ws-my.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P5-WS-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P54-PG-COMMA-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          54
+        ],
+        "scan_leaves": [
+          76
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH2-MATRICES-FIRST-ORDER-PP53-54"
+        ],
+        "line_or_formula": "list of first-order functions"
+      },
+      "printed_reading": "(∃y).ψ(x, y)",
+      "printed_citations": [],
+      "corrected_or_added_reading": "(∃y).ψ(x y)",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/76",
+        "scan_leaf": 76,
+        "sha256": "3830c92fd1348ec4054870d6eb01b28e29482f241043e7690007d2e28cdef743",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "(∃y).ψ(x y)",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "(∃y).ψ(x, y)",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/76&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH2-MATRICES-FIRST-ORDER-PP53-54"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p54-pg-comma.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P54-PG-COMMA-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P54-PG-VALUE-HAT-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          54
+        ],
+        "scan_leaves": [
+          76
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH2-MATRICES-FIRST-ORDER-PP53-54"
+        ],
+        "line_or_formula": "notation for a value of a first-order function"
+      },
+      "printed_reading": "φ!x",
+      "printed_citations": [],
+      "corrected_or_added_reading": "φ!x̂",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/76",
+        "scan_leaf": 76,
+        "sha256": "a4eec83ef64c50cc061d005c8084686cdbd7e3a7a8c25387a881628ac8f16514",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "φ!x̂",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "φ!x",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/76&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH2-MATRICES-FIRST-ORDER-PP53-54"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p54-pg-value-hat.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P54-PG-VALUE-HAT-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P56-PG-PARENTHESIS-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          56
+        ],
+        "scan_leaves": [
+          78
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH2-HIGHER-ORDER-PREDICATIVE-PP55-56"
+        ],
+        "line_or_formula": "quantified predicative-function expression"
+      },
+      "printed_reading": "(φ, ψ).f!(φ!ẑ, ψ!ẑ, x)",
+      "printed_citations": [],
+      "corrected_or_added_reading": "(φ, ψ).f!(φ!ẑ, ψ!ẑ, x))",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/78",
+        "scan_leaf": 78,
+        "sha256": "075783298bee3cc045f88caeca7745195011f8a492c52e7bcc5321560bea401e",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "(φ, ψ).f!(φ!ẑ, ψ!ẑ, x))",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "(φ, ψ).f!(φ!ẑ, ψ!ẑ, x)",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/78&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH2-HIGHER-ORDER-PREDICATIVE-PP55-56"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p56-pg-parenthesis.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P56-PG-PARENTHESIS-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P59-WS-BOLD-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          59
+        ],
+        "scan_leaves": [
+          81
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH2-REDUCIBILITY-PP58B-60"
+        ],
+        "line_or_formula": "identity illustration"
+      },
+      "printed_reading": "the statement must hold for any function",
+      "printed_citations": [],
+      "corrected_or_added_reading": "the statement must bold for any function",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/81",
+        "scan_leaf": 81,
+        "sha256": "eccedaf48e40ce7f9102d42aacd5b516ed6464eaa3172b7c8a4303a811ddb9e8",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "the statement must hold for any function",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "the statement must bold for any function",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/81&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH2-REDUCIBILITY-PP58B-60"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p59-ws-bold.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P59-WS-BOLD-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P61-PG-DUPLICATION-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          61
+        ],
+        "scan_leaves": [
+          83
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH2-REDUCIBILITY-ALTERNATIVES-PP61-62"
+        ],
+        "line_or_formula": "relative order of a function"
+      },
+      "printed_reading": "relative to the arguments to φx̂",
+      "printed_citations": [],
+      "corrected_or_added_reading": "relative to the arguments to φx̂φx̂",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/83",
+        "scan_leaf": 83,
+        "sha256": "8ace7c59eef065dfea208acd63d39d9b451641325f1625aaa47159dd979cef9e",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "relative to the arguments to φx̂φx̂",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        },
+        {
+          "siglum": "WS-PM1",
+          "reading": "relative to the arguments to φx̂",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/83&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH2-REDUCIBILITY-ALTERNATIVES-PP61-62"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p61-pg-duplication.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P61-PG-DUPLICATION-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P70-PG-PAREN-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          70
+        ],
+        "scan_leaves": [
+          92
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-DESCRIPTIONS-PP69-71"
+        ],
+        "line_or_formula": "description-symbol discussion"
+      },
+      "printed_reading": "balanced parentheses around (℩x)(φx)",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Project Gutenberg source has unbalanced TeX parentheses",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/92",
+        "scan_leaf": 92,
+        "sha256": "3df577b994a33244e2f07401219feaf225b8e57acf91f9dbec8a16af62bbee59",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "unbalanced TeX delimiters",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-DESCRIPTIONS-PP69-71"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p70-pg-parentheses.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P70-PG-PAREN-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P73-PG-NEG-PSI-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          73
+        ],
+        "scan_leaves": [
+          95
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-SCOPE-TWO-DESCRIPTIONS-PP72-75A"
+        ],
+        "line_or_formula": "expanded negated scope formula"
+      },
+      "printed_reading": "ψc",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Project Gutenberg has ~ψc",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/95",
+        "scan_leaf": 95,
+        "sha256": "e41a4517c21101aa3e5db217fe52346e791a17a2d65a78de51612f55c53ca12f",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "~ψc",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-SCOPE-TWO-DESCRIPTIONS-PP72-75A"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p73-pg-neg-psi.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P73-PG-NEG-PSI-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P73-WS-DUPLICATION-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          73
+        ],
+        "scan_leaves": [
+          95
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-SCOPE-TWO-DESCRIPTIONS-PP72-75A"
+        ],
+        "line_or_formula": "second displayed scope formula"
+      },
+      "printed_reading": "single occurrence of (℩x)(φx) after ψ",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Wikisource duplicates (φx) in the second scope expression",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/95",
+        "scan_leaf": 95,
+        "sha256": "524bb06b83f2a80d4d48bc350890f6b26e4d835bf091380f5d36a5ec95bfc11f",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "WS-PM1",
+          "reading": "duplicated (φx)",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/95&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-SCOPE-TWO-DESCRIPTIONS-PP72-75A"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p73-ws-duplicated-description.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P73-WS-DUPLICATION-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P73-WS-NEGATION-002",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          73
+        ],
+        "scan_leaves": [
+          95
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-SCOPE-TWO-DESCRIPTIONS-PP72-75A"
+        ],
+        "line_or_formula": "negated displayed scope formula"
+      },
+      "printed_reading": "~{[(℩x)(φx)] . ψ(℩x)(φx)}",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Wikisource adds a second ~ before ψ",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/95",
+        "scan_leaf": 95,
+        "sha256": "4ffd6918ce25cb6dab4494a46256b3a273daab47fd6565abacfac2f4fcba7e42",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "WS-PM1",
+          "reading": "extra internal negation",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/95&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-SCOPE-TWO-DESCRIPTIONS-PP72-75A"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p73-ws-extra-negation.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P73-WS-NEGATION-002",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P74-WS-PAREN-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          74
+        ],
+        "scan_leaves": [
+          96
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-SCOPE-TWO-DESCRIPTIONS-PP72-75A"
+        ],
+        "line_or_formula": "formula (5), existential quantifier"
+      },
+      "printed_reading": "(∃d)",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Wikisource has ∃d) without the opening parenthesis",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/96",
+        "scan_leaf": 96,
+        "sha256": "e5a0f91115491b462c526e5240638a5c865150de5d9a6d69e6fc71c7e9efb76f",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "WS-PM1",
+          "reading": "∃d)",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/96&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-SCOPE-TWO-DESCRIPTIONS-PP72-75A"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p74-ws-missing-paren.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P74-WS-PAREN-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P77-WS-COL1ECTION-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          77
+        ],
+        "scan_leaves": [
+          99
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-CLASSES-PP75B-78"
+        ],
+        "line_or_formula": "twelve Apostles paragraph"
+      },
+      "printed_reading": "collection",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Wikisource col1ection",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/99",
+        "scan_leaf": 99,
+        "sha256": "fa7496e4ae840306df41bd658800392e24db8ac4767159d6bdf8a23b28c44ea0",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "WS-PM1",
+          "reading": "col1ection",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/99&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-CLASSES-PP75B-78"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p77-ws-col1ection.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P77-WS-COL1ECTION-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P78-PG-BANG-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          78
+        ],
+        "scan_leaves": [
+          100
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-CLASSES-PP75B-78"
+        ],
+        "line_or_formula": "significance condition for f(ψ!ẑ)"
+      },
+      "printed_reading": "f(ψ!ẑ)",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Project Gutenberg omits ! in one occurrence",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/100",
+        "scan_leaf": 100,
+        "sha256": "3db9a6fdb91572d4a0b29cfe79aed30a703fd101e3387365e5bbbd0f1ed34ec2",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "PG78050",
+          "reading": "f(ψẑ)",
+          "uri": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-CLASSES-PP75B-78"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p78-pg-missing-bang.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P78-PG-BANG-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P83-WS-EXTRA-Z-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          83
+        ],
+        "scan_leaves": [
+          105
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-CLASS-CONSEQUENCES-PP81B-84"
+        ],
+        "line_or_formula": "scope convention paragraph, before the class symbol"
+      },
+      "printed_reading": "whatever scope we may give to \\(\\hat{z}(\\phi z)\\)",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Wikisource inserts a stray z immediately before the class symbol",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/105",
+        "scan_leaf": 105,
+        "sha256": "bc7d6873c1ca344f350ee4222a8e2da139045ef470ba5eb8af17d93b0bff0283",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "WS-PM1",
+          "reading": "give to z ẑ(φz)",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/105&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-CLASS-CONSEQUENCES-PP81B-84"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p83-ws-extra-z.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P83-WS-EXTRA-Z-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P84-WS-XHAT-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          84
+        ],
+        "scan_leaves": [
+          106
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-CLASS-CONSEQUENCES-PP81B-84"
+        ],
+        "line_or_formula": "display explaining f α-hat"
+      },
+      "printed_reading": "\\(f\\{\\psi !\\hat{z}\\}\\)",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Wikisource has f{ψ!x̂}",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/106",
+        "scan_leaf": 106,
+        "sha256": "b02e632d85c9677096a1c71ba6eeb8fd5c9c533d4122a0ab9b6d85a12ae777a0",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "WS-PM1",
+          "reading": "f{ψ!x̂}",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/106&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-CLASS-CONSEQUENCES-PP81B-84"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p84-ws-xhat-for-zhat.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P84-WS-XHAT-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P86-WS-DUPLICATED-RELATION-002",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          86
+        ],
+        "scan_leaves": [
+          108
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-INCOMPLETE-SYMBOLS-SUMMARY-PP86B-88"
+        ],
+        "line_or_formula": "second theorem in the relation group"
+      },
+      "printed_reading": "\\(\\hat{x}\\hat{y}\\phi(x,y)=\\hat{x}\\hat{y}\\psi(x,y)\\)",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Wikisource duplicates “x̂ŷφ(x,y)=” before the right-hand relation",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/108",
+        "scan_leaf": 108,
+        "sha256": "006db9aca64a339be0a1dd1bf4a0bd1ec4f091d8d01786df3fbf5ae373e6a704",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "WS-PM1",
+          "reading": "x̂ŷφ(x,y)=x̂ŷφ(x,y)=x̂ŷψ(x,y)",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/108&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-INCOMPLETE-SYMBOLS-SUMMARY-PP86B-88"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p86-ws-duplicated-relation.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P86-WS-DUPLICATED-RELATION-002",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P87-WS-BRACKET-003",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          87
+        ],
+        "scan_leaves": [
+          109
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-INCOMPLETE-SYMBOLS-SUMMARY-PP86B-88"
+        ],
+        "line_or_formula": "display beginning Thus we shall have"
+      },
+      "printed_reading": "\\(\\phi x\\equiv_x\\psi!x.\\phi x\\equiv_x\\chi!x\\)",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Wikisource inserts “,]phi x” between the two conjuncts",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/109",
+        "scan_leaf": 109,
+        "sha256": "e05c51a8c2633283e7cfbf26cdd53e217d63165ddc77644aa7ec7bced616cfd3",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "WS-PM1",
+          "reading": "φx ≡ₓ ψ!x . φx,]phi x ≡ₓ χ!x",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/109&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-INCOMPLETE-SYMBOLS-SUMMARY-PP86B-88"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p87-ws-bracket-corruption.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P87-WS-BRACKET-003",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P87-WS-CONJUNCTION-004",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          87
+        ],
+        "scan_leaves": [
+          109
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-INCOMPLETE-SYMBOLS-SUMMARY-PP86B-88"
+        ],
+        "line_or_formula": "first display in class incompleteness discussion"
+      },
+      "printed_reading": "\\(\\hat{z}(\\phi z)=\\psi!\\hat{z}.\\hat{z}(\\phi z)=\\chi!\\hat{z}\\)",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Wikisource agglutinates the two conjuncts as ẑ(φz)=ψ!ẑ(φz)=χ!ẑ",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/109",
+        "scan_leaf": 109,
+        "sha256": "7695781e0b9b026a890ddecb3a1d5330bbd8b7d33a36a226900a15471d268c3a",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "WS-PM1",
+          "reading": "no product dot and no repeated class term boundary",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/109&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-INCOMPLETE-SYMBOLS-SUMMARY-PP86B-88"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p87-ws-missing-conjunction.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P87-WS-CONJUNCTION-004",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P87-WS-HE-002",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          87
+        ],
+        "scan_leaves": [
+          109
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-INCOMPLETE-SYMBOLS-SUMMARY-PP86B-88"
+        ],
+        "line_or_formula": "class incompleteness paragraph"
+      },
+      "printed_reading": "It may be illustrated",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Wikisource has “It may he illustrated”",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/109",
+        "scan_leaf": 109,
+        "sha256": "91a79e585d49aa5cd8a921810ba2213f5afcbc8a9ca775a8ed1c14c538a43233",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "WS-PM1",
+          "reading": "may he illustrated",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/109&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-INCOMPLETE-SYMBOLS-SUMMARY-PP86B-88"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p87-ws-he-for-be.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P87-WS-HE-002",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-APP-PM1-INTRO-P87-WS-PERIOD-001",
+      "category": "digital-witness-error",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          87
+        ],
+        "scan_leaves": [
+          109
+        ],
+        "items": [
+          "PM1:INTRODUCTION-CH3-INCOMPLETE-SYMBOLS-SUMMARY-PP86B-88"
+        ],
+        "line_or_formula": "limitations paragraph opening"
+      },
+      "printed_reading": "In the case of",
+      "printed_citations": [],
+      "corrected_or_added_reading": "Wikisource has “In the. case of”",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/109",
+        "scan_leaf": 109,
+        "sha256": "f64f06dea9441c164d8e59265519d1387a3b1811fd0dea45c6b48fb9dd1bfb11",
+        "hash_kind": "UTF-8 canonical diplomatic reading"
+      },
+      "digital_witnesses": [
+        {
+          "siglum": "WS-PM1",
+          "reading": "In the. case of",
+          "uri": "https://en.wikisource.org/w/index.php?title=Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/109&action=raw"
+        }
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:INTRODUCTION-CH3-INCOMPLETE-SYMBOLS-SUMMARY-PP86B-88"
+        ],
+        "batches": [],
+        "ast_effect": "None unless a separately reviewed item audit says otherwise."
+      },
+      "strict_audit_status": "not-applicable: witness collation only",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "canonical-source-preserved",
+        "status": "no-PM-emendation"
+      },
+      "review_provenance": [
+        "metadata/apparatus/PM1-introduction-p87-ws-extra-period.json"
+      ],
+      "resolution_status": "recorded-in-apparatus",
+      "apparatus_id": "APP-PM1-INTRO-P87-WS-PERIOD-001",
+      "linked_official_errata_ids": []
+    },
+    {
+      "id": "PM1-ANOM-Q220-ASSOCIATION-GAP",
+      "category": "reconstruction-gap",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          113
+        ],
+        "scan_leaves": [
+          135
+        ],
+        "items": [
+          "PM1:✱2·82",
+          "PM1:✱2·83"
+        ]
+      },
+      "printed_reading": "The printed citations ✱2·8 and ✱2·81 supply right-associated triple sums while the displayed targets are left-associated under ✱2·33.",
+      "printed_citations": [
+        "PM1:✱2·8",
+        "PM1:✱2·81",
+        "PM1:✱2·33"
+      ],
+      "corrected_or_added_reading": "No correction to PM: the reconstruction explicitly inserts the already proved associative conversions ✱2·31 and ✱2·32.",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/135",
+        "scan_leaf": 135,
+        "sha256": "0015ae56c8a9c1eedab541d07e06d683c499319b60fa021d088077535f93f2f0",
+        "hash_kind": "audited leaf derivative"
+      },
+      "digital_witnesses": [
+        "PM1-1910-SCAN",
+        "PG78050",
+        "WS-PM1"
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:✱2·82",
+          "PM1:✱2·83"
+        ],
+        "batches": [
+          "Q220"
+        ],
+        "ast_effect": "Preserve the left-associated displayed AST; do not normalize it silently to the right-associated cited form."
+      },
+      "strict_audit_status": "strict proof-permission audit failed for ✱2·82 and ✱2·83; the accepted reconstruction is mixed strict/documented-relaxed.",
+      "minimal_relaxation": [
+        "PM1:✱2·31",
+        "PM1:✱2·32",
+        "their verified implementation closure"
+      ],
+      "lean_impact": {
+        "kind": "documented-relaxed-closure",
+        "status": "kernel-checked",
+        "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31448989766"
+      },
+      "review_provenance": [
+        "reviews/Q220-review.md",
+        "reviews/Q220-reconstruction-audit.json"
+      ],
+      "resolution_status": "resolved-documented-relaxation"
+    },
+    {
+      "id": "PM1-ANOM-Q221-FIRST-ARCHIVE-FIDELITY-GAP",
+      "category": "reconstruction-gap",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          116,
+          117
+        ],
+        "scan_leaves": [
+          138,
+          139
+        ],
+        "items": [
+          "PM1:✱3·1",
+          "PM1:✱3·11",
+          "PM1:✱3·14"
+        ]
+      },
+      "printed_reading": "✱3·1 and ✱3·11 cite Id with ✱3·01; ✱3·14 cites ✱3·1 and Transp.",
+      "printed_citations": [
+        "Id",
+        "PM1:✱3·01",
+        "PM1:✱3·1",
+        "Transp"
+      ],
+      "corrected_or_added_reading": "No correction to PM: the first Aristotle archive omitted or bypassed printed dependencies; the continuation restored the cited definitions and Transp chain.",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/138",
+        "scan_leaf": 138,
+        "sha256": "c18eb6890dc92335e8df8773cbd46b8e98c2e550cdcb01f91a397bed27e9958b",
+        "hash_kind": "audited leaf derivative"
+      },
+      "digital_witnesses": [
+        "PM1-1910-SCAN",
+        "PG78050"
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:✱3·1",
+          "PM1:✱3·11",
+          "PM1:✱3·14"
+        ],
+        "batches": [
+          "Q221"
+        ],
+        "ast_effect": "None; the fault was proof provenance, not a printed reading or parsed AST."
+      },
+      "strict_audit_status": "first immutable archive rejected: printed ✱3·01 or the ✱3·1/Transp chain was uncovered; retry audit is strict for all five targets.",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "fidelity-only-continuation",
+        "status": "kernel-checked",
+        "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31453889043",
+        "rejected_archive_sha256": "db4dfb80d6c00c81d5f22e5075705002c0b1c91868b22f5e8ceebd08d373c339"
+      },
+      "review_provenance": [
+        "reviews/Q221-review.md",
+        "reviews/Q221-reconstruction-audit.json"
+      ],
+      "resolution_status": "resolved-strict-retry"
+    },
+    {
+      "id": "PM1-ANOM-Q222-ASSOCIATION-GAP",
+      "category": "reconstruction-gap",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          110,
+          116
+        ],
+        "scan_leaves": [
+          132,
+          138
+        ],
+        "items": [
+          "PM1:✱2·33",
+          "PM1:✱3·12",
+          "PM1:✱3·2"
+        ]
+      },
+      "printed_reading": "✱3·12 prints ((∼p ∨ ∼q) ∨ p.q) under equal marked sums; ✱3·2 prints p ⊃ (q ⊃ p.q) and cites only ✱3·12.",
+      "printed_citations": [
+        "PM1:✱2·33",
+        "PM1:✱3·12"
+      ],
+      "corrected_or_added_reading": "No correction to PM: ✱2·33 is only a bare-chain convention. A reconstruction needs the explicit left-to-right reassociation ✱2·32.",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/138",
+        "scan_leaf": 138,
+        "sha256": "c18eb6890dc92335e8df8773cbd46b8e98c2e550cdcb01f91a397bed27e9958b",
+        "hash_kind": "audited leaf derivative",
+        "control_leaf": 132
+      },
+      "digital_witnesses": [
+        "PM1-1910-SCAN",
+        "PG78050",
+        "WS-PM1"
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:✱3·2",
+          "PM1:✱3·21",
+          "PM1:✱3·22",
+          "PM1:✱3·24"
+        ],
+        "batches": [
+          "Q222"
+        ],
+        "ast_effect": "Keep ✱3·12 left-associated and ✱3·2 right-nested; they must not be made definitionally equal."
+      },
+      "strict_audit_status": "rejected before integration: the sole printed citation cannot establish the differently associated target under the strict permission policy.",
+      "minimal_relaxation": [
+        "PM1:✱2·32"
+      ],
+      "lean_impact": {
+        "kind": "pending-documented-relaxation",
+        "status": "not-integrated",
+        "rejected_archive_sha256": "9af547b4f74b"
+      },
+      "review_provenance": [
+        "reviews/Q222-review.md",
+        "reviews/Q222-association-audit.md",
+        "aristotle/manifests/Q222.json"
+      ],
+      "resolution_status": "blocked-awaiting-approved-relaxed-reconstruction"
+    }
+  ]
+}

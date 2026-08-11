@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "PM1-ANOM-Q220-ASSOCIATION-GAP",
+      "category": "reconstruction-gap",
+      "pm_locus": {"volume": 1, "printed_pages": [113], "scan_leaves": [135], "items": ["PM1:✱2·82", "PM1:✱2·83"]},
+      "printed_reading": "The printed citations ✱2·8 and ✱2·81 supply right-associated triple sums while the displayed targets are left-associated under ✱2·33.",
+      "printed_citations": ["PM1:✱2·8", "PM1:✱2·81", "PM1:✱2·33"],
+      "corrected_or_added_reading": "No correction to PM: the reconstruction explicitly inserts the already proved associative conversions ✱2·31 and ✱2·32.",
+      "canonical_witness_evidence": {"canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/135", "scan_leaf": 135, "sha256": "0015ae56c8a9c1eedab541d07e06d683c499319b60fa021d088077535f93f2f0", "hash_kind": "audited leaf derivative"},
+      "digital_witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+      "affected_ast_items_batches": {"items": ["PM1:✱2·82", "PM1:✱2·83"], "batches": ["Q220"], "ast_effect": "Preserve the left-associated displayed AST; do not normalize it silently to the right-associated cited form."},
+      "strict_audit_status": "strict proof-permission audit failed for ✱2·82 and ✱2·83; the accepted reconstruction is mixed strict/documented-relaxed.",
+      "minimal_relaxation": ["PM1:✱2·31", "PM1:✱2·32", "their verified implementation closure"],
+      "lean_impact": {"kind": "documented-relaxed-closure", "status": "kernel-checked", "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31448989766"},
+      "review_provenance": ["reviews/Q220-review.md", "reviews/Q220-reconstruction-audit.json"],
+      "resolution_status": "resolved-documented-relaxation"
+    },
+    {
+      "id": "PM1-ANOM-Q221-FIRST-ARCHIVE-FIDELITY-GAP",
+      "category": "reconstruction-gap",
+      "pm_locus": {"volume": 1, "printed_pages": [116, 117], "scan_leaves": [138, 139], "items": ["PM1:✱3·1", "PM1:✱3·11", "PM1:✱3·14"]},
+      "printed_reading": "✱3·1 and ✱3·11 cite Id with ✱3·01; ✱3·14 cites ✱3·1 and Transp.",
+      "printed_citations": ["Id", "PM1:✱3·01", "PM1:✱3·1", "Transp"],
+      "corrected_or_added_reading": "No correction to PM: the first Aristotle archive omitted or bypassed printed dependencies; the continuation restored the cited definitions and Transp chain.",
+      "canonical_witness_evidence": {"canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/138", "scan_leaf": 138, "sha256": "c18eb6890dc92335e8df8773cbd46b8e98c2e550cdcb01f91a397bed27e9958b", "hash_kind": "audited leaf derivative"},
+      "digital_witnesses": ["PM1-1910-SCAN", "PG78050"],
+      "affected_ast_items_batches": {"items": ["PM1:✱3·1", "PM1:✱3·11", "PM1:✱3·14"], "batches": ["Q221"], "ast_effect": "None; the fault was proof provenance, not a printed reading or parsed AST."},
+      "strict_audit_status": "first immutable archive rejected: printed ✱3·01 or the ✱3·1/Transp chain was uncovered; retry audit is strict for all five targets.",
+      "minimal_relaxation": [],
+      "lean_impact": {"kind": "fidelity-only-continuation", "status": "kernel-checked", "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31453889043", "rejected_archive_sha256": "db4dfb80d6c00c81d5f22e5075705002c0b1c91868b22f5e8ceebd08d373c339"},
+      "review_provenance": ["reviews/Q221-review.md", "reviews/Q221-reconstruction-audit.json"],
+      "resolution_status": "resolved-strict-retry"
+    },
+    {
+      "id": "PM1-ANOM-Q222-ASSOCIATION-GAP",
+      "category": "reconstruction-gap",
+      "pm_locus": {"volume": 1, "printed_pages": [110, 116], "scan_leaves": [132, 138], "items": ["PM1:✱2·33", "PM1:✱3·12", "PM1:✱3·2"]},
+      "printed_reading": "✱3·12 prints ((∼p ∨ ∼q) ∨ p.q) under equal marked sums; ✱3·2 prints p ⊃ (q ⊃ p.q) and cites only ✱3·12.",
+      "printed_citations": ["PM1:✱2·33", "PM1:✱3·12"],
+      "corrected_or_added_reading": "No correction to PM: ✱2·33 is only a bare-chain convention. A reconstruction needs the explicit left-to-right reassociation ✱2·32.",
+      "canonical_witness_evidence": {"canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/138", "scan_leaf": 138, "sha256": "c18eb6890dc92335e8df8773cbd46b8e98c2e550cdcb01f91a397bed27e9958b", "hash_kind": "audited leaf derivative", "control_leaf": 132},
+      "digital_witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+      "affected_ast_items_batches": {"items": ["PM1:✱3·2", "PM1:✱3·21", "PM1:✱3·22", "PM1:✱3·24"], "batches": ["Q222"], "ast_effect": "Keep ✱3·12 left-associated and ✱3·2 right-nested; they must not be made definitionally equal."},
+      "strict_audit_status": "rejected before integration: the sole printed citation cannot establish the differently associated target under the strict permission policy.",
+      "minimal_relaxation": ["PM1:✱2·32"],
+      "lean_impact": {"kind": "pending-documented-relaxation", "status": "not-integrated", "rejected_archive_sha256": "9af547b4f74b"},
+      "review_provenance": ["reviews/Q222-review.md", "reviews/Q222-association-audit.md", "aristotle/manifests/Q222.json"],
+      "resolution_status": "blocked-awaiting-approved-relaxed-reconstruction"
+    }
+  ]
+}

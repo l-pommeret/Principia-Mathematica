@@ -46,6 +46,24 @@ It may be assigned only after checking the scan and at least one independent
 witness or second physical copy. A suspicious OCR string alone can never justify
 `sic`.
 
+## Anomaly register
+
+`metadata/anomalies/PM1-anomaly-register.json` is distinct from the official
+Errata register. It captures provenance failures found while editing or
+formalizing: unconfirmed printed errors, incomplete printed citations, notation
+ambiguities, digital-witness errors, and reconstruction gaps. Each record pins
+the printed and added reading, canonical leaf/reading hash, affected AST and
+batch, strict-audit result, any minimal relaxation, Lean impact, and review.
+
+The register is deterministic: every apparatus entry classified
+`digital-witness-error` is imported with a link back to that apparatus notice;
+the remaining source-audited cases live in `metadata/anomalies/manual/`.
+`scripts/verify_anomaly_registry.py` rejects a stale generated register, an
+unlinked digital witness error, an official Errata duplicate, or a claim that a
+rejected strict reconstruction was accepted. Add a manual record as part of
+every new reconstruction/source audit before any Aristotle continuation is
+considered.
+
 Witness sigla initially used by the project are:
 
 - `PM1-1910-SCAN`: facsimile of volume I, first edition (canonical witness);

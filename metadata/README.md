@@ -38,3 +38,12 @@ thirteen corrections printed on volume I leaf 15. Integrated loci link exactly
 one apparatus notice; corrections on not-yet-transcribed pages remain explicit
 `pending` obligations. `scripts/verify_errata_registry.py` checks both coverage
 directions so a source locus cannot silently lose its printed correction.
+
+`anomalies/PM1-anomaly-register.json` is a separate, generated critical-work
+register. It never copies the thirteen official Errata entries: it links their
+stable IDs and records other classes separately—unofficial printed questions,
+incomplete citations, notation ambiguities, derived-witness defects, and
+reconstruction gaps. The reviewed apparatus is backfilled deterministically
+for every `digital-witness-error`; `anomalies/manual/` holds source-audited
+reconstruction records. Run `scripts/generate_anomaly_registry.py` after a new
+apparatus or manual audit, and `scripts/verify_anomaly_registry.py` in CI.
