@@ -10,12 +10,14 @@ rule is introduced here. -/
 def star_9_3_target (φ : Apparent Γ [.elementaryProposition]) :
     OrderedFormula Γ 1 :=
   let p := OrderedFormula.always φ
-  (p ∨ₒ p) ⊃ₒ p
+  OrderedFormula.firstImp
+    (OrderedFormula.scopedFirstOrderDisj .sameAssignedOrder p p) p
 
 def star_9_31_target (φ : Apparent Γ [.elementaryProposition]) :
     OrderedFormula Γ 1 :=
   let p := OrderedFormula.sometimes φ
-  (p ∨ₒ p) ⊃ₒ p
+  OrderedFormula.firstImp
+    (OrderedFormula.scopedFirstOrderDisj .sameAssignedOrder p p) p
 
 def star_9_32_target (q : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : OrderedFormula Γ 1 :=

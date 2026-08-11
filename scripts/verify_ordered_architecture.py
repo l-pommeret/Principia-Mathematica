@@ -21,6 +21,7 @@ def main() -> None:
     apparent = code_without_comments_or_strings(APPARENT.read_text(encoding="utf-8"))
     required = (
         "inductive OrderedFormula", "| elementary", "| firstOrder", "| neg", "| disj",
+        "inductive FirstOrderDisjunctionScope", "def scopedFirstOrderDisj", "def firstImp",
         "def eraseElementary?", "theorem erase_embedElementary",
         "structure OrderedRuleBook", "Primitive : OrderedFormula",
         "inductive OrderedDerivation", "| primitive", "| detach", "| elementary",
@@ -38,6 +39,8 @@ def main() -> None:
     system = (ROOT / "Principia/Deduction/System.lean").read_text(encoding="utf-8")
     if "OrderedFormula" in formula or "OrderedDerivation" in system:
         raise SystemExit("ordered core leaked into the elementary kernel")
+    if "scopedFirstOrderDisj .sameAssignedOrder" not in targets:
+        raise SystemExit("Q259 order-one disjunction bypasses its scope certificate")
     print("Ordered first-order architecture checks passed")
 
 

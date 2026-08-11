@@ -27,6 +27,27 @@ def imp (p q : OrderedFormula Γ order) : OrderedFormula Γ order :=
 
 infixr:54 " ⊃ₒ " => imp
 
+/-- The six printed scope cases of ✱9·03–·08, plus same assigned first order
+for the analogues of ✱1.  A caller must choose one; there is no unindexed
+cross-order connective. -/
+inductive FirstOrderDisjunctionScope where
+  | sameAssignedOrder
+  | universalRightElementary
+  | elementaryLeftUniversal
+  | existentialRightElementary
+  | elementaryLeftExistential
+  | universalLeftExistential
+  | existentialLeftUniversal
+
+/-- Scope-labelled first-order disjunction.  The label is the audit hook to
+the relevant one of ✱9·03–·08 (or to a proved same-order analogue). -/
+def scopedFirstOrderDisj (scope : FirstOrderDisjunctionScope)
+    (left right : OrderedFormula Γ 1) : OrderedFormula Γ 1 :=
+  .disj left right
+
+def firstImp (left right : OrderedFormula Γ 1) : OrderedFormula Γ 1 :=
+  scopedFirstOrderDisj .sameAssignedOrder (∼ₒ left) right
+
 def always (body : Apparent Γ [.elementaryProposition]) : OrderedFormula Γ 1 :=
   .firstOrder (FirstOrder.always body)
 
