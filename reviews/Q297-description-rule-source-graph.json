@@ -12,8 +12,8 @@
     {"id": "PM1:14.02", "path": "aristotle/demonstrations/PM1-star-14-02.txt", "sha256": "4acbeed4e95d42ca186c15ebc9a5a09dc4447b8612a1446f36652319ccebf261", "kind": "definition"},
     {"id": "PM1:14.03", "path": "aristotle/demonstrations/PM1-star-14-03.txt", "sha256": "2a4c1c8bd991ed1883036637d926ee222354809a4fb18b83ce76bb9cfdee0508", "kind": "definition"},
     {"id": "PM1:14.04", "path": "aristotle/demonstrations/PM1-star-14-04.txt", "sha256": "0cea9e64d91879175d3cb4314d9930729177f81c85419253df5379f5752df0e6", "kind": "definition"},
-    {"id": "PM1:14.18", "path": "aristotle/demonstrations/PM1-star-14-18.txt", "sha256": "4dac94a39a31d7f959938ba116a8834054713e6d4bdb473913a3de2dc1b0ecab", "kind": "asserted-proposition", "printed_citations": []},
-    {"id": "PM1:14.21", "path": "aristotle/demonstrations/PM1-star-14-21.txt", "sha256": "dc014aa24b7908018360a465cd66a37afe71017d3d71664d914ccdb2afb490b2", "kind": "asserted-proposition", "printed_citations": []}
+    {"id": "PM1:14.18", "path": "aristotle/demonstrations/PM1-star-14-18.txt", "sha256": "d60d2566f6177c50419f24f9cc113b2d15677fc9d2f7092589ad9d50d6343422", "kind": "asserted-proposition", "printed_citations": ["PM1:10.1", "Fact", "PM1:10.11", "PM1:10.28", "PM1:10.35", "PM1:14.1", "PM1:14.11"], "printed_substitutions": []},
+    {"id": "PM1:14.21", "path": "aristotle/demonstrations/PM1-star-14-21.txt", "sha256": "a6cbe8b14b37b428f47deaa46b9b385284fd5dc3cf22f37789ec9e503e570cae", "kind": "asserted-proposition", "printed_citations": ["PM1:14.1", "PM1:10.5", "PM1:14.11"], "printed_substitutions": []}
   ],
   "kernel_candidates": [
     {
@@ -60,6 +60,64 @@
     {"source": "PM1:14.18", "operation": "detachment", "kernel": "PM.Derivation.detach", "result": "rejected-carrier-mismatch"},
     {"source": "PM1:14.18", "operation": "universal-instantiation-under-description-scope", "kernel": "PM.DescriptionSyntax.Formula.substitute", "result": "syntax-only-no-derivation-rule"},
     {"source": "PM1:14.21", "operation": "description-scope-implies-existence", "kernel": "PM.DescriptionSyntax.Formula.descriptionExists", "result": "definition-only-no-derivation-rule"}
+  ],
+  "judgement_rules_exactly_needed": [
+    {
+      "id": "universal-instantiation",
+      "source_citation": "PM1:10.1",
+      "required_by": ["PM1:14.18"],
+      "source_shape": "⊢ (x).ψx ⊃ ψb",
+      "kernel_status": "no DescriptionSyntax.Formula judgement signature available"
+    },
+    {
+      "id": "fact-frame",
+      "source_citation": "Fact",
+      "required_by": ["PM1:14.18"],
+      "source_shape": "frame φx ≡ₓ x = b around an implication and its consequent",
+      "kernel_status": "citation is printed but no canonical rule signature is authorized"
+    },
+    {
+      "id": "generalization",
+      "source_citation": "PM1:10.11",
+      "required_by": ["PM1:14.18"],
+      "source_shape": "from a formula true for every possible argument to its universal form",
+      "kernel_status": "no DescriptionSyntax.Formula judgement signature available"
+    },
+    {
+      "id": "existential-monotonicity",
+      "source_citation": "PM1:10.28",
+      "required_by": ["PM1:14.18"],
+      "source_shape": "⊢ (x).φx ⊃ ψx ⊃ ((∃x).φx ⊃ (∃x).ψx)",
+      "kernel_status": "no DescriptionSyntax.Formula judgement signature available"
+    },
+    {
+      "id": "existential-product-scope",
+      "source_citation": "PM1:10.35",
+      "required_by": ["PM1:14.18"],
+      "source_shape": "the cited existential/product transformation used before the ✱14·1/·11 definitional rewrite",
+      "kernel_status": "source proof is exact; canonical judgement signature remains unprovided"
+    },
+    {
+      "id": "existential-product-projection",
+      "source_citation": "PM1:10.5",
+      "required_by": ["PM1:14.21"],
+      "source_shape": "⊢ ((∃x).φx . ψx) ⊃ ((∃x).φx : (∃x).ψx)",
+      "kernel_status": "no DescriptionSyntax.Formula judgement signature available"
+    },
+    {
+      "id": "description-definitional-rewrite",
+      "source_citations": ["PM1:14.1", "PM1:14.11"],
+      "required_by": ["PM1:14.18", "PM1:14.21"],
+      "source_shape": "asserted use of the two definition lines to rewrite E! and the description scope",
+      "kernel_status": "syntax reductions exist; no asserted-formula congruence signature is authorized"
+    },
+    {
+      "id": "judgement-composition",
+      "source_citation": "printed ⊃ ⊢ . Prop chain",
+      "required_by": ["PM1:14.18", "PM1:14.21"],
+      "source_shape": "detachment/chaining on one common description-formula carrier",
+      "kernel_status": "PM.Derivation.detach and OrderedAssertion.star_9_12 have incompatible carriers"
+    }
   ],
   "minimal_missing_rules": [
     {
@@ -131,27 +189,30 @@
     }
   ],
   "pp_189_190_proof_reprise": {
-    "scan_witness": {
-      "path": "metadata/items/PM1-star-14-Q306.json",
-      "printed_pages": "189-190",
-      "scan_leaf": 211,
-      "image_sha256": "5952e2001787b3189a8841512fa83166905115300b0972944480e93c25f260a7"
-    },
+    "scan_witnesses": [
+      {"path": "metadata/items/PM1-star-14-Q306.json", "printed_page": 189, "scan_leaf": 211, "image_sha256": "5952e2001787b3189a8841512fa83166905115300b0972944480e93c25f260a7"},
+      {"path": "metadata/items/PM1-star-14-Q307.json", "printed_page": 190, "scan_leaf": 212, "image_sha256": "fd6e3e463dd9d347c1ebad1d5ddc3bf54298377f6fa94120a3d584cf23cc63c6"}
+    ],
+    "pg_control": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm",
     "findings": [
       {
         "item": "PM1:14.18",
-        "printed_reprise": "p. 189 gives a Dem. line followed by the explanatory statement that an existing description has the logical properties of an ordinary argument.",
-        "available_transcription": "aristotle/demonstrations/PM1-star-14-18.txt contains the asserted formula but not the image-only proof line.",
-        "citation_status": "not recoverable as a machine-readable citation from the currently committed transcription"
+        "demonstration_path": "aristotle/demonstrations/PM1-star-14-18.txt",
+        "diplomatic_lines": ["⊢ . ✱10·1 . ⊃ ⊢ : (x).ψx .⊃ . ψb :", "[Fact] ⊃ ⊢ :: φx .≡ₓ. x = b : (x).ψx .⊃ : φx .≡ₓ. x = b : ψb :", "[✱10·11·28] ⊃ ⊢ :: (∃b) : φx .≡ₓ. x = b : (x).ψx .⊃ : (∃b) : φx .≡ₓ. x = b : ψb ::", "[✱10·35] ⊃ ⊢ :: E!(℩x)(φx) : (x).ψx .⊃ : ψ(℩x)(φx) ::", "[✱14·1·11] ⊃ ⊢ . Prop"],
+        "citations": ["PM1:10.1", "Fact", "PM1:10.11", "PM1:10.28", "PM1:10.35", "PM1:14.1", "PM1:14.11"],
+        "substitutions": [],
+        "citation_status": "verified from facsimile; bracketed fused citations are decomposed only at their printed middle dots"
       },
       {
         "item": "PM1:14.21",
-        "printed_reprise": "p. 190 gives a Dem. line and states that any true statement about the description entails its existence.",
-        "available_transcription": "aristotle/demonstrations/PM1-star-14-21.txt contains the asserted formula but not the image-only proof line.",
-        "citation_status": "not recoverable as a machine-readable citation from the currently committed transcription"
+        "demonstration_path": "aristotle/demonstrations/PM1-star-14-21.txt",
+        "diplomatic_lines": ["⊢ . ✱14·1 . ⊃", "⊢ : ψ{(℩x)(φx)} .⊃ : (∃b) : φx .≡ₓ. x = b : ψb :", "[✱10·5] ⊃ : (∃b) : φx .≡ₓ. x = b :", "[✱14·11] ⊃ : E!(℩x)(φx) :: ⊃ ⊢ . Prop"],
+        "citations": ["PM1:14.1", "PM1:10.5", "PM1:14.11"],
+        "substitutions": [],
+        "citation_status": "verified from facsimile; no printed substitution annotation"
       }
     ],
-    "result": "The page evidence reinforces the analytic-translation reading but does not provide a source-audited constructor list for a new derivation type."
+    "result": "The facsimile now fixes each printed proof line, citation, and the absence of a substitution annotation. It authorizes the listed PM rule families, but neither a new derivation type nor a canonical Lean signature for any of them."
   },
   "expanded_ast_audit": {
     "parameters": {
@@ -200,6 +261,6 @@
   "conclusion": {
     "q297_reductional_targets": ["14.02", "14.03", "14.04"],
     "q297_still_blocked_targets": ["14.18", "14.21"],
-    "safe_next_action": "The expanded ASTs isolate a first-order proof obligation, not a new DescriptionDerivation primitive. A bridge to OrderedAssertion is not conservative. The next admissible work is an OCR/transcription audit of the image-only Dem. lines on pp. 189-190 and, separately, a source-authorized first-order judgement for CoreFormula; neither may be fabricated from Formula.expand."
+    "safe_next_action": "The pp. 189-190 proof lines are now collated. The next admissible work is to collate a canonical first-order judgement signature for each exact PM rule family above; no DescriptionDerivation, bridge, oracle, or primitive may be fabricated from Formula.expand."
   }
 }
