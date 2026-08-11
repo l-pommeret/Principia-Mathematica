@@ -5,6 +5,7 @@ import Principia.Deduction.System
 import Principia.Experimental.RamifiedToy
 import Principia.Experimental.TypicalAmbiguityToy
 import Principia.Experimental.DescriptionScopeToy
+import Principia.Experimental.ElementaryFormationToy
 import Principia.Experimental.PredicativeGateToy
 import Principia.FirstEdition.Volume1.Introduction
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star1
