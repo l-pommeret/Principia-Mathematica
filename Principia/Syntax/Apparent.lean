@@ -195,8 +195,8 @@ def abstractRealHead : Apparent (.elementaryProposition :: Γ) Δ →
     Apparent Γ (.elementaryProposition :: Δ)
   | .constant name => .constant name
   | .real .zero => .bound .zero
-  | .real (.succ variable) => .real variable
-  | .bound variable => .bound (.succ variable)
+  | .real (.succ predecessor) => .real predecessor
+  | .bound boundVariable => .bound (.succ boundVariable)
   | .neg proposition => .neg (abstractRealHead proposition)
   | .disj left right => .disj (abstractRealHead left) (abstractRealHead right)
 
@@ -206,9 +206,9 @@ variables retain their indices.  This is not a general substitution rule. -/
 def openRealHead : Apparent Γ (.elementaryProposition :: Δ) →
     Apparent (.elementaryProposition :: Γ) Δ
   | .constant name => .constant name
-  | .real variable => .real (.succ variable)
+  | .real realVariable => .real (.succ realVariable)
   | .bound .zero => .real .zero
-  | .bound (.succ variable) => .bound variable
+  | .bound (.succ predecessor) => .bound predecessor
   | .neg proposition => .neg (openRealHead proposition)
   | .disj left right => .disj (openRealHead left) (openRealHead right)
 
@@ -219,11 +219,15 @@ assigned 1→2 instance of ✱9·13.  It is structural and capture-free. -/
     openRealHead (abstractRealHead proposition) = proposition := by
   induction proposition with
   | constant name => rfl
-  | real variable => cases variable <;> rfl
-  | bound variable => rfl
-  | neg proposition ih => simp [abstractRealHead, openRealHead, ih]
+  | real realVariable => cases realVariable <;> rfl
+  | bound boundVariable => rfl
+  | neg proposition ih =>
+      change .neg (openRealHead (abstractRealHead proposition)) = .neg proposition
+      rw [ih]
   | disj left right ihLeft ihRight =>
-      simp [abstractRealHead, openRealHead, ihLeft, ihRight]
+      change .disj (openRealHead (abstractRealHead left))
+        (openRealHead (abstractRealHead right)) = .disj left right
+      rw [ihLeft, ihRight]
 
 /-- Decidable structural occurrence of a free apparent variable. -/
 def significant (v : BoundVar Δ .elementaryProposition) : Apparent Γ Δ → Bool
@@ -380,7 +384,17 @@ def openRealHead : FirstOrder Γ (.elementaryProposition :: Δ) →
 @[simp] theorem openRealHead_abstractRealHead
     (proposition : FirstOrder (.elementaryProposition :: Γ) Δ) :
     openRealHead (abstractRealHead proposition) = proposition := by
-  cases proposition <;> simp [abstractRealHead, openRealHead]
+  cases proposition with
+  | always body =>
+      change Quantified.always
+        (Apparent.openRealHead (Apparent.abstractRealHead body)) =
+          Quantified.always body
+      rw [Apparent.openRealHead_abstractRealHead]
+  | sometimes body =>
+      change Quantified.sometimes
+        (Apparent.openRealHead (Apparent.abstractRealHead body)) =
+          Quantified.sometimes body
+      rw [Apparent.openRealHead_abstractRealHead]
 
 /-- Capture-free renaming beneath either primitive binder. -/
 def rename (ρ : Apparent.Renaming Δ Ξ) : FirstOrder Γ Δ → FirstOrder Γ Ξ

@@ -59,12 +59,31 @@ def firstOrderToSecondAll (body : FirstOrder Γ [.elementaryProposition]) :
 variable to alter.  The empty renaming is explicit so later uses of the
 printed `y` and `z` binders cannot silently invoke substitution. -/
 def closedFirstOrderAlphaRenaming : Apparent.Renaming [] [] :=
-  fun variable => nomatch variable
+  fun emptyVariable => nomatch emptyVariable
 
 @[simp] theorem closedFirstOrder_alpha
     (body : Apparent Γ [.elementaryProposition]) :
     FirstOrder.rename closedFirstOrderAlphaRenaming (FirstOrder.always body) =
-      FirstOrder.always body := rfl
+      FirstOrder.always body := by
+  change Quantified.always
+    (Apparent.rename (Apparent.liftRenaming closedFirstOrderAlphaRenaming) body) =
+      Quantified.always body
+  congr 1
+  induction body with
+  | constant name => rfl
+  | real realVariable => rfl
+  | bound boundVariable => cases boundVariable <;> rfl
+  | neg proposition ih =>
+      change Apparent.neg
+        (Apparent.rename (Apparent.liftRenaming closedFirstOrderAlphaRenaming) proposition) =
+          Apparent.neg proposition
+      rw [ih]
+  | disj left right ihLeft ihRight =>
+      change Apparent.disj
+        (Apparent.rename (Apparent.liftRenaming closedFirstOrderAlphaRenaming) left)
+        (Apparent.rename (Apparent.liftRenaming closedFirstOrderAlphaRenaming) right) =
+          Apparent.disj left right
+      rw [ihLeft, ihRight]
 
 /-- Elementary implication in a one-place matrix.  It is only the printed
 ✱1·01 abbreviation at matrix level, never Lean implication. -/
