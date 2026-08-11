@@ -306,6 +306,29 @@ PM-VERBATIM-END PM1:✱9·37 -/
 ✱9·371.  ⊢ : .(∃x).φx .∨. p : ⊃ : p .∨. (∃x).φx   [Similar Proof]
 PM-VERBATIM-END PM1:✱9·371 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱9·4
+✱9·4.  ⊢ : : p : ∨ : q .∨. (x).φx : .⊃ : .q : ∨ : p .∨. (x).φx
+
+Dem.
+⊢ . ✱1·5 . ✱9·21 . ⊃ ⊢ : .(x) : p .∨. q ∨ φx : ⊃ : (x) : q .∨. p ∨ φx   (1)
+⊢ . (1) . (✱9·04) . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱9·4 -/
+/- PM-VERBATIM-BEGIN PM1:✱9·401
+✱9·401.  ⊢ : : p : ∨ : q .∨. (∃x).φx : .⊃ : .q : ∨ : p .∨. (∃x).φx   [As Above]
+PM-VERBATIM-END PM1:✱9·401 -/
+/- PM-VERBATIM-BEGIN PM1:✱9·41
+✱9·41.  ⊢ : : p : ∨ : (x).φx .∨. r : .⊃ : .(x).φx : ∨ : p ∨ r   [As Above]
+PM-VERBATIM-END PM1:✱9·41 -/
+/- PM-VERBATIM-BEGIN PM1:✱9·411
+✱9·411.  ⊢ : : p : ∨ : (∃x).φx .∨. r : .⊃ : .(∃x).φx : ∨ : p ∨ r   [As Above]
+PM-VERBATIM-END PM1:✱9·411 -/
+/- PM-VERBATIM-BEGIN PM1:✱9·42
+✱9·42.  ⊢ : : (x).φx : ∨ : q ∨ r : .⊃ : .q : ∨ : (x).φx .∨. r   [As Above]
+PM-VERBATIM-END PM1:✱9·42 -/
+/- PM-VERBATIM-BEGIN PM1:✱9·421
+✱9·421.  ⊢ : : (∃x).φx : ∨ : q ∨ r : .⊃ : .q : ∨ : (∃x).φx .∨. r   [As Above]
+PM-VERBATIM-END PM1:✱9·421 -/
+
 /- PM-EDITORIAL
 Source: Principia Mathematica, first edition, volume I (1910), printed
 pp. 132–135, scan leaves 154–157. The diplomatic transcription above was
