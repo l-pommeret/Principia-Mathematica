@@ -15,14 +15,16 @@
     "printed": "⊢ : p . q . ⊃ . p ≡ q",
     "printed_page": 129,
     "scan_leaf": 151,
-    "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star5.lean",
+    "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star5Kernel.lean",
     "declaration": "PM.FirstEdition.Volume1.Star5.star_5_1",
     "formal_scope": "(p·q)⊃(p≡q), over an elementary real-variable context",
     "source_status": "scan-hash-recorded-and-WS-collated",
-    "formal_status": "prepared",
+    "formal_status": "awaiting-ci",
+    "integration_status":"canonical-kernel-candidate",
     "printed_dependencies": ["PM1:✱3·4·22"],
-    "normalized_dependencies": [],
-    "blocked_dependencies": ["PM1:✱3·4", "PM1:✱3·22"]
+    "lean_dependencies":["PM.Derivation.detach","PM.FirstEdition.Volume1.Star2.star_2_05","PM.FirstEdition.Volume1.Star2.star_2_08","PM.FirstEdition.Volume1.Star3.star_3_2","PM.FirstEdition.Volume1.Star3.star_3_3","PM.FirstEdition.Volume1.Star3.star_3_26","PM.FirstEdition.Volume1.Star3.star_3_27","PM.FirstEdition.Volume1.Star3.star_3_47"],
+    "normalized_dependencies":["PM1:✱1·1","PM1:✱1·11","PM1:✱2·05","PM1:✱2·08","PM1:✱3·2","PM1:✱3·3","PM1:✱3·26","PM1:✱3·27","PM1:✱3·47"],
+    "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":["PM1:✱1·1","PM1:✱1·11","PM1:✱2·05","PM1:✱2·08","PM1:✱3·2","PM1:✱3·3","PM1:✱3·26","PM1:✱3·27","PM1:✱3·47"],"printed_but_unused":["PM1:✱3·4","PM1:✱3·22"],"strict_attempt_evidence":"reviews/Q242-star5-1-kernel-gate.md","editorial_note":"The scan prints the abbreviated citation ✱3·4·22. The accepted body reconstructs both directions by simplification, currying, conjunction lifting, and explicitly branches every detachment; it does not claim those abbreviations are literal Lean declarations."}
   }],
   "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
 }
