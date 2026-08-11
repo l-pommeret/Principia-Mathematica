@@ -6,6 +6,7 @@ from __future__ import annotations
 import subprocess
 import sys
 import tempfile
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 
@@ -34,26 +35,47 @@ GATES = (
 def main() -> None:
     failures = []
 
-    def run_gate(name: str, command: list[str]) -> None:
+    def run_gate(name: str, command: list[str]) -> tuple[str, int, str] | None:
         result = subprocess.run(
             command, cwd=ROOT, text=True, capture_output=True, check=False,
         )
         if result.returncode:
-            failures.append((name, result.returncode, result.stderr.strip() or result.stdout.strip()))
+            return name, result.returncode, result.stderr.strip() or result.stdout.strip()
+        return None
 
-    for name, command in GATES:
-        run_gate(
+    independent = [
+        (
             name,
             [sys.executable, str(ROOT / "scripts" / command[0]), *command[1:]],
         )
-    run_gate("unit-tests", [sys.executable, "-m", "unittest", "discover", "-s", "tests"])
+        for name, command in GATES
+    ]
+    independent.append(
+        ("unit-tests", [sys.executable, "-m", "unittest", "discover", "-s", "tests"])
+    )
+    # These gates only read repository state and are independent.  Keep the
+    # worker count modest so CI remains deterministic on the two-core runner.
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        results = list(executor.map(lambda gate: run_gate(*gate), independent))
+    failures.extend(result for result in results if result is not None)
     with tempfile.TemporaryDirectory(prefix="pm-preflight-site-") as directory:
         site = Path(directory) / "site"
-        run_gate("build-edition", [sys.executable, str(ROOT / "scripts/build_edition.py"),
-                                    "--output", str(site)])
-        run_gate("verify-site", [sys.executable, str(ROOT / "scripts/verify_site.py"),
-                                   "--site", str(site)])
-    run_gate("diff-check", ["git", "diff", "--check"])
+        build_failure = run_gate(
+            "build-edition",
+            [sys.executable, str(ROOT / "scripts/build_edition.py"), "--output", str(site)],
+        )
+        if build_failure is not None:
+            failures.append(build_failure)
+        else:
+            site_failure = run_gate(
+                "verify-site",
+                [sys.executable, str(ROOT / "scripts/verify_site.py"), "--site", str(site)],
+            )
+            if site_failure is not None:
+                failures.append(site_failure)
+    diff_failure = run_gate("diff-check", ["git", "diff", "--check"])
+    if diff_failure is not None:
+        failures.append(diff_failure)
     if failures:
         for name, exit_code, output in failures:
             print(f"preflight {name} (exit {exit_code}):\n{output}", file=sys.stderr)
