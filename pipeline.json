@@ -880,7 +880,7 @@
       "source": "PM volume I, first edition, p. 117",
       "prompt_path": "aristotle/Q223.md",
       "audit_path": "reviews/Q223-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "A",
       "lean_scope": "exact PM1 ✱3·26, ✱3·27, ✱3·3 and ✱3·31",
       "depends_on": [
         "PM1:✱2·31",
@@ -889,7 +889,11 @@
         "PM1:✱3·22"
       ],
       "parallel_group": "STAR3-WAVE-1C",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "not-submitted",
+      "constraint_manifest_path": "aristotle/manifests/Q223.json",
+      "isolated_context_path": "aristotle/contexts/Q223.lean",
+      "context_validation": "deterministic-static-verifiers-passed",
+      "reconstruction_classification": "strict-parser-generated-pending-remote-kernel-check"
     },
     "Q224": {
       "canonical_ids": [

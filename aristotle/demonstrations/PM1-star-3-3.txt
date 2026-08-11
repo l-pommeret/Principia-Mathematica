@@ -1,0 +1,9 @@
+✱3·3.  ⊢ : p . q . ⊃ . r : ⊃ : p . ⊃ . q ⊃ r
+
+Dem.
+
+[Id . (✱3·01)] ⊢ : .p . q . ⊃ . r : ⊃ : ∼(∼p ∨ ∼q) . ⊃ . r :
+[Transp] ⊃ : ∼r . ⊃ . ∼p ∨ ∼q :
+[Id . (✱1·01)] ⊃ : ∼r . ⊃ . p ⊃ ∼q :
+[Comm] ⊃ : p . ⊃ . ∼r ⊃ ∼q :
+[Transp . Syll] ⊃ : p . ⊃ . q ⊃ r : . ⊃ ⊢ . Prop

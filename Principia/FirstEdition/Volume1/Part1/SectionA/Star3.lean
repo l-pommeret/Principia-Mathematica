@@ -220,6 +220,53 @@ theorem star_3_24 {Γ} (p : PM.Elementary Γ) :
     (PM.FirstEdition.Volume1.Star2.star_2_11 (∼ₚ p))
     (star_3_14 p (∼ₚ p))
 
+/- PM-VERBATIM-BEGIN PM1:✱3·26
+✱3·26.  ⊢ : p . q . ⊃ . p
+
+Dem.
+
+[✱2·02 (q,p)/(p,q)] ⊢ : p . ⊃ . q ⊃ p   (1)
+⊢ . (1) . (✱1·01) . ⊃ ⊢ : ∼p . ∨ . ∼q ∨ p :
+[✱2·31] ⊃ ⊢ : ∼p ∨ ∼q . ∨ . p :
+[✱2·53 (∼p ∨ ∼q,p)/(p,q)] ⊃ ⊢ : ∼(∼p ∨ ∼q) . ⊃ . p   (2)
+⊢ . (2) . (✱3·01) . ⊃ ⊢ : p . q . ⊃ . p
+PM-VERBATIM-END PM1:✱3·26 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·27
+✱3·27.  ⊢ : p . q . ⊃ . q
+
+Dem.
+
+[✱3·22] ⊢ : p . q . ⊃ . q . p :
+[✱3·26 (q,p)/(p,q)] ⊃ : q . ⊃ ⊢ . Prop
+
+✱3·26·27 will both be called the "principle of simplification," like ✱2·02,
+from which they are deduced. They will be referred to as "Simp."
+PM-VERBATIM-END PM1:✱3·27 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·3
+✱3·3.  ⊢ : p . q . ⊃ . r : ⊃ : p . ⊃ . q ⊃ r
+
+Dem.
+
+[Id . (✱3·01)] ⊢ : .p . q . ⊃ . r : ⊃ : ∼(∼p ∨ ∼q) . ⊃ . r :
+[Transp] ⊃ : ∼r . ⊃ . ∼p ∨ ∼q :
+[Id . (✱1·01)] ⊃ : ∼r . ⊃ . p ⊃ ∼q :
+[Comm] ⊃ : p . ⊃ . ∼r ⊃ ∼q :
+[Transp . Syll] ⊃ : p . ⊃ . q ⊃ r : . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱3·3 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·31
+✱3·31.  ⊢ : p . ⊃ . q ⊃ r : ⊃ : p . q . ⊃ . r
+
+Dem.
+
+[Id . (✱1·01)] ⊢ : .p . ⊃ . q ⊃ r : ⊃ : ∼p . ∨ . ∼q ∨ r :
+[✱2·31] ⊃ : ∼p ∨ ∼q . ∨ . r :
+[✱2·53 (∼p ∨ ∼q,r)/(p,q)] ⊃ : ∼(∼p ∨ ∼q) . ⊃ . r :
+[Id . (✱3·01)] ⊃ : p . q . ⊃ . r : . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱3·31 -/
+
 /- PM-VERBATIM-BEGIN PM1:✱3·37
 ✱3·37.  ⊢ : p . q . ⊃ . r : ⊃ : p . ∼r . ⊃ . ∼q
 
