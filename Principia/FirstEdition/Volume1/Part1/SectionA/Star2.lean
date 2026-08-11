@@ -2097,4 +2097,166 @@ theorem star_2_81 {Γ} (p q r s : PM.Elementary Γ) :
       (star_2_06 (q ⊃ₚ (r ⊃ₚ s)) ((p ∨ₚ q) ⊃ₚ (p ∨ₚ (r ⊃ₚ s)))
         ((p ∨ₚ q) ⊃ₚ ((p ∨ₚ r) ⊃ₚ (p ∨ₚ s)))))
 
+/- PM-VERBATIM-BEGIN PM1:✱2·82
+✱2·82.  ⊢ : p ∨ q ∨ r . ⊃ : p ∨ ∼r ∨ s . ⊃ . p ∨ q ∨ s
+    [✱2·8 . ✱2·81 (q∨r,∼r∨s,q∨s)/(q,r,s)]
+PM-VERBATIM-END PM1:✱2·82 -/
+
+def star_2_82_reading (p q r s : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ q ∨ r . ⊃ : p ∨ ∼r ∨ s . ⊃ . p ∨ q ∨ s"
+  parsed := ((p ∨ₚ q) ∨ₚ r) ⊃ₚ (((p ∨ₚ ∼ₚ r) ∨ₚ s) ⊃ₚ ((p ∨ₚ q) ∨ₚ s))
+  scopeReading :=
+    "By ✱2·33 each triple sum is left-associated; the printed proof tacitly uses ✱2·31·32 to pass through the right-associated instances supplied by ✱2·8·81."
+
+def star_2_82_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·8 . ✱2·81 (q∨r,∼r∨s,q∨s)/(q,r,s)]"
+
+/-- Syllogistic composition through ✱2·06 and the primitive rule ✱1·11. -/
+private theorem syllRuleQ220 {Γ : PM.RealContext} {x y z : PM.Elementary Γ}
+    (hxy : ⊢ₚ (x ⊃ₚ y)) (hyz : ⊢ₚ (y ⊃ₚ z)) : ⊢ₚ (x ⊃ₚ z) :=
+  PM.Derivation.detach hyz (PM.Derivation.detach hxy (star_2_06 x y z))
+
+/-- The right-associated instance produced literally by the printed citations
+of ✱2·82, before applying PM's tacit associativity conversions. -/
+private theorem star_2_82_rightAssociated {Γ} (p q r s : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ
+      ((p ∨ₚ (∼ₚ r ∨ₚ s)) ⊃ₚ (p ∨ₚ (q ∨ₚ s)))) :=
+  PM.Derivation.detach (star_2_8 q r s)
+    (star_2_81 p (q ∨ₚ r) (∼ₚ r ∨ₚ s) (q ∨ₚ s))
+
+theorem star_2_82 {Γ} (p q r s : PM.Elementary Γ) :
+    ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (((p ∨ₚ ∼ₚ r) ∨ₚ s) ⊃ₚ ((p ∨ₚ q) ∨ₚ s))) := by
+  have printed :
+      ⊢ₚ ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ
+        ((p ∨ₚ (∼ₚ r ∨ₚ s)) ⊃ₚ (p ∨ₚ (q ∨ₚ s)))) :=
+    star_2_82_rightAssociated p q r s
+  have antecedent : ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ (q ∨ₚ r))) :=
+    star_2_32 p q r
+  have innerAntecedent :
+      ⊢ₚ (((p ∨ₚ ∼ₚ r) ∨ₚ s) ⊃ₚ (p ∨ₚ (∼ₚ r ∨ₚ s))) :=
+    star_2_32 p (∼ₚ r) s
+  have conclusion : ⊢ₚ ((p ∨ₚ (q ∨ₚ s)) ⊃ₚ ((p ∨ₚ q) ∨ₚ s)) :=
+    star_2_31 p q s
+  have inner :
+      ⊢ₚ (((p ∨ₚ (∼ₚ r ∨ₚ s)) ⊃ₚ (p ∨ₚ (q ∨ₚ s))) ⊃ₚ
+        (((p ∨ₚ ∼ₚ r) ∨ₚ s) ⊃ₚ ((p ∨ₚ q) ∨ₚ s))) :=
+    syllRuleQ220
+      (PM.Derivation.detach innerAntecedent
+        (star_2_06 ((p ∨ₚ ∼ₚ r) ∨ₚ s) (p ∨ₚ (∼ₚ r ∨ₚ s)) (p ∨ₚ (q ∨ₚ s))))
+      (PM.Derivation.detach conclusion
+        (star_2_05 ((p ∨ₚ ∼ₚ r) ∨ₚ s) (p ∨ₚ (q ∨ₚ s)) ((p ∨ₚ q) ∨ₚ s)))
+  exact syllRuleQ220 (syllRuleQ220 antecedent printed) inner
+
+/- PM-VERBATIM-BEGIN PM1:✱2·83
+✱2·83.  ⊢ :: p . ⊃ . q ⊃ r : ⊃ :. p . ⊃ . r ⊃ s : ⊃ : p . ⊃ . q ⊃ s
+    [✱2·82 (∼p,∼q)/(p,q)]
+PM-VERBATIM-END PM1:✱2·83 -/
+
+def star_2_83_reading (p q r s : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted
+    "⊢ :: p . ⊃ . q ⊃ r : ⊃ :. p . ⊃ . r ⊃ s : ⊃ : p . ⊃ . q ⊃ s"
+  parsed := (p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ⊃ₚ (r ⊃ₚ s)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ s)))
+  scopeReading :=
+    "The printed substitution is applied to left-associated ✱2·82; ✱2·31·32 then expose the right-associated disjunctions used to read the implications."
+
+def star_2_83_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·82 (∼p,∼q)/(p,q)]"
+
+theorem star_2_83 {Γ} (p q r s : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ
+      ((p ⊃ₚ (r ⊃ₚ s)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ s)))) := by
+  have printed :
+      ⊢ₚ (((∼ₚ p ∨ₚ ∼ₚ q) ∨ₚ r) ⊃ₚ
+        (((∼ₚ p ∨ₚ ∼ₚ r) ∨ₚ s) ⊃ₚ ((∼ₚ p ∨ₚ ∼ₚ q) ∨ₚ s))) :=
+    star_2_82 (∼ₚ p) (∼ₚ q) r s
+  have antecedent :
+      ⊢ₚ ((∼ₚ p ∨ₚ (∼ₚ q ∨ₚ r)) ⊃ₚ ((∼ₚ p ∨ₚ ∼ₚ q) ∨ₚ r)) :=
+    star_2_31 (∼ₚ p) (∼ₚ q) r
+  have innerAntecedent :
+      ⊢ₚ ((∼ₚ p ∨ₚ (∼ₚ r ∨ₚ s)) ⊃ₚ ((∼ₚ p ∨ₚ ∼ₚ r) ∨ₚ s)) :=
+    star_2_31 (∼ₚ p) (∼ₚ r) s
+  have conclusion :
+      ⊢ₚ (((∼ₚ p ∨ₚ ∼ₚ q) ∨ₚ s) ⊃ₚ (∼ₚ p ∨ₚ (∼ₚ q ∨ₚ s))) :=
+    star_2_32 (∼ₚ p) (∼ₚ q) s
+  have inner :
+      ⊢ₚ ((((∼ₚ p ∨ₚ ∼ₚ r) ∨ₚ s) ⊃ₚ ((∼ₚ p ∨ₚ ∼ₚ q) ∨ₚ s)) ⊃ₚ
+        ((∼ₚ p ∨ₚ (∼ₚ r ∨ₚ s)) ⊃ₚ (∼ₚ p ∨ₚ (∼ₚ q ∨ₚ s)))) :=
+    syllRuleQ220
+      (PM.Derivation.detach innerAntecedent
+        (star_2_06 (∼ₚ p ∨ₚ (∼ₚ r ∨ₚ s)) ((∼ₚ p ∨ₚ ∼ₚ r) ∨ₚ s)
+          ((∼ₚ p ∨ₚ ∼ₚ q) ∨ₚ s)))
+      (PM.Derivation.detach conclusion
+        (star_2_05 (∼ₚ p ∨ₚ (∼ₚ r ∨ₚ s)) ((∼ₚ p ∨ₚ ∼ₚ q) ∨ₚ s)
+          (∼ₚ p ∨ₚ (∼ₚ q ∨ₚ s))))
+  exact syllRuleQ220 (syllRuleQ220 antecedent printed) inner
+
+/- PM-VERBATIM-BEGIN PM1:✱2·85
+✱2·85.  ⊢ : p ∨ q . ⊃ . p ∨ r : ⊃ : p . ∨ . q ⊃ r
+
+Dem.
+
+[Add . Syll]  ⊢ : p ∨ q . ⊃ . r : ⊃ . q ⊃ r                                  (1)
+⊢ . ✱2·55 . ⊃ ⊢ :: ∼p . ⊃ : p ∨ r . ⊃ . r :
+[Syll]          ⊃ : p ∨ q . ⊃ . p ∨ r : ⊃ : p ∨ q . ⊃ . r :
+[(1) . ✱2·83]   ⊃ : p ∨ q . ⊃ . p ∨ r : ⊃ : q ⊃ r                             (2)
+⊢ . (2) . Comm . ⊃ ⊢ : p ∨ q . ⊃ . p ∨ r : ⊃ : ∼p . ⊃ . q ⊃ r :
+[✱2·54]           ⊃ : p . ∨ . q ⊃ r : ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱2·85 -/
+
+def star_2_85_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ q . ⊃ . p ∨ r : ⊃ : p . ∨ . q ⊃ r"
+  parsed := ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ (p ∨ₚ (q ⊃ₚ r))
+  scopeReading := "The numbered lines are retained; Comm acts on line (2), followed by ✱2·54."
+
+def star_2_85_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[Add . Syll] (1); [✱2·55 . Syll . (1) . ✱2·83] (2); [(2) . Comm . ✱2·54]"
+
+theorem star_2_85 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ (p ∨ₚ (q ⊃ₚ r))) := by
+  have line1 : ⊢ₚ (((p ∨ₚ q) ⊃ₚ r) ⊃ₚ (q ⊃ₚ r)) :=
+    PM.Derivation.detach (PM.Derivation.star_1_3 p q) (star_2_06 q (p ∨ₚ q) r)
+  have fiftyFive : ⊢ₚ (∼ₚ p ⊃ₚ ((p ∨ₚ r) ⊃ₚ r)) := star_2_55 p r
+  have syll :
+      ⊢ₚ (((p ∨ₚ r) ⊃ₚ r) ⊃ₚ
+        (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ r))) :=
+    star_2_05 (p ∨ₚ q) (p ∨ₚ r) r
+  have half :
+      ⊢ₚ (∼ₚ p ⊃ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ r))) :=
+    PM.Derivation.detach syll
+      (PM.Derivation.detach fiftyFive
+        (star_2_06 (∼ₚ p) ((p ∨ₚ r) ⊃ₚ r)
+          (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ r))))
+  have line1' : ⊢ₚ (∼ₚ p ⊃ₚ (((p ∨ₚ q) ⊃ₚ r) ⊃ₚ (q ⊃ₚ r))) :=
+    PM.Derivation.detach line1
+      (PM.Derivation.star_1_3 (∼ₚ (∼ₚ p)) (((p ∨ₚ q) ⊃ₚ r) ⊃ₚ (q ⊃ₚ r)))
+  have line2 :
+      ⊢ₚ (∼ₚ p ⊃ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ (q ⊃ₚ r))) :=
+    PM.Derivation.detach line1'
+      (PM.Derivation.detach half
+        (star_2_83 (∼ₚ p) ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ((p ∨ₚ q) ⊃ₚ r) (q ⊃ₚ r)))
+  have commuted :
+      ⊢ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ (∼ₚ p ⊃ₚ (q ⊃ₚ r))) :=
+    PM.Derivation.detach line2
+      (star_2_04 (∼ₚ p) ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) (q ⊃ₚ r))
+  exact PM.Derivation.detach (star_2_54 p (q ⊃ₚ r))
+    (PM.Derivation.detach commuted
+      (star_2_06 ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) (∼ₚ p ⊃ₚ (q ⊃ₚ r))
+        (p ∨ₚ (q ⊃ₚ r))))
+
+/- PM-VERBATIM-BEGIN PM1:✱2·86
+✱2·86.  ⊢ : p ⊃ q . ⊃ . p ⊃ r : ⊃ : p . ⊃ . q ⊃ r    [✱2·85 ∼p/p]
+PM-VERBATIM-END PM1:✱2·86 -/
+
+def star_2_86_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ q . ⊃ . p ⊃ r : ⊃ : p . ⊃ . q ⊃ r"
+  parsed := ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r))
+  scopeReading := "This is the displayed ∼p/p instance of ✱2·85."
+
+def star_2_86_demonstration_printed : PM.PrintedFormula :=
+  PM.pmPrinted "[✱2·85 ∼p/p]"
+
+theorem star_2_86 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r))) :=
+  star_2_85 (∼ₚ p) q r
+
 end PM.FirstEdition.Volume1.Star2

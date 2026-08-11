@@ -665,7 +665,7 @@
       "source": "PM volume I, first edition, p. 113",
       "prompt_path": "aristotle/Q220.md",
       "audit_path": "reviews/Q220-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "A",
       "lean_scope": "exact PM1 ✱2·82 through ✱2·86 selected sequence",
       "depends_on": [
         "PM1:✱2·54",
@@ -674,7 +674,7 @@
         "PM1:✱2·81"
       ],
       "parallel_group": "STAR2-WAVE-4C",
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "constraint_manifest_path": "aristotle/manifests/Q220.json",
       "isolated_context_path": "aristotle/contexts/Q220.lean",
       "context_ci_evidence": {
@@ -685,14 +685,24 @@
       "aristotle_project_id": "e0043584-c2b5-47fa-99a1-abc5339329c4",
       "aristotle_task_id": "0f7ff4c9-53c3-4ba1-b636-3936f39edb5b",
       "aristotle_latest_task_id": "0f7ff4c9-53c3-4ba1-b636-3936f39edb5b",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_request_path": "aristotle/Q220.md",
       "aristotle_request_sha256": "d9b2290ddab688706608cf20f283a1e64fcd03408af1c40acfa9d8cd11494456",
-      "aristotle_latest_task_name": "Formalize Q220.md",
-      "aristotle_latest_task_created": "19 mins ago",
+      "aristotle_latest_task_name": "# Q220 follow-up — make ✱2·...",
+      "aristotle_latest_task_created": "7 mins ago",
       "aristotle_followup_prompt": "aristotle/followups/Q220-use-printed-82.md",
-      "aristotle_followup_prompt_sha256": "24b0c19b1fa12d21963428c4013490c5064df15a67dd3ed9209378d2699f1742"
+      "aristotle_followup_prompt_sha256": "24b0c19b1fa12d21963428c4013490c5064df15a67dd3ed9209378d2699f1742",
+      "archive_path": "aristotle/results/Q220-followup-final.tar.gz",
+      "archive_sha256": "7a32207ec69edaa558bf0a3f07925c74111946af8961d44663d37b230697c61a",
+      "reconstruction_audit_path": "reviews/Q220-reconstruction-audit.json",
+      "reconstruction_classification": "mixed-strict-and-documented-relaxed-closure",
+      "integration_status": "awaiting-ci",
+      "integration_ci_evidence": {
+        "commit": "pending",
+        "run": "pending",
+        "conclusion": "pending"
+      }
     },
     "Q221": {
       "canonical_ids": [
