@@ -497,6 +497,16 @@ theorem star_4_13 {Γ} (p : PM.Elementary Γ) :
       (PM.FirstEdition.Volume1.Star3.star_3_2
         (p ⊃ₚ ∼ₚ (∼ₚ p)) (∼ₚ (∼ₚ p) ⊃ₚ p)))
 
+/-- PM I (1910), p. 121, ✱4·2.  Both components of the defined equivalence
+are Id; ✱3·2 supplies their logical product. -/
+theorem star_4_2 {Γ} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ≡ₚ p) := by
+  exact PM.Derivation.detach
+    (PM.FirstEdition.Volume1.Star2.star_2_08 p)
+    (PM.Derivation.detach
+      (PM.FirstEdition.Volume1.Star2.star_2_08 p)
+      (PM.FirstEdition.Volume1.Star3.star_3_2 (p ⊃ₚ p) (p ⊃ₚ p)))
+
 /-- PM I (1910), p. 120, ✱4·11.  Equivalence is the ✱4·01 abbreviation;
 the proof transports its two implication components by ✱2·16/·17, uses
 ✱3·47 to adjoin them, and ✱3·22 only to restore the printed component order. -/
