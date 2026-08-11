@@ -223,3 +223,70 @@ PM-VERBATIM-END PM3:✱250·141 -/
 /- PM-VERBATIM-BEGIN PM3:✱250·142
 ✱250·142.  ⊢ : P ∈ Bord .⊃ . RlʻP ∩ connex ⊂ Ω
 PM-VERBATIM-END PM3:✱250·142 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·15
+✱250·15.  ⊢ : P ∈ Ω . E! BʻP .⊃ . P ∈ Ded
+PM-VERBATIM-END PM3:✱250·15 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·151
+✱250·151.  ⊢ : P ∈ Ω . x ∈ CʻP .⊃ . P ▷ P⁎ʻx ∈ Ded
+PM-VERBATIM-END PM3:✱250·151 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·152
+✱250·152.  ⊢ . Ω ⊂ semi Ded  [✱214·7 . ✱250·124]
+PM-VERBATIM-END PM3:✱250·152 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·16
+✱250·16.  ⊢ : P ∈ Ω . ∃! α ∩ CʻP .⊃ . P⃗ʻminₚʻα = pʻPʻʻ(α ∩ CʻP)
+  [✱205·65 . ✱250·121]
+PM-VERBATIM-END PM3:✱250·16 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·17
+✱250·17.  ⊢ :: P, Q ∈ Ω − ιʻΛ .⊃ : P smor Q .≡ . P ▷ ∃ʻP smor Q ▷ ∃ʻQ
+  [✱204·47 . ✱250·13]
+PM-VERBATIM-END PM3:✱250·17 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·2
+✱250·2.  ⊢ : P ∈ Bord .⊃ . DʻP = Dʻ(P − P²)
+PM-VERBATIM-END PM3:✱250·2 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·21
+✱250·21.  ⊢ : P ∈ Ω .⊃ . DʻP = DʻP₁  [✱201·63 . ✱250·2]
+PM-VERBATIM-END PM3:✱250·21 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·22
+✱250·22.  ⊢ : P ∈ Ser ∩ Ded . DʻP = DʻP₁ .⊃ . P ∈ Ω − ιʻΛ
+PM-VERBATIM-END PM3:✱250·22 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·23
+✱250·23.  ⊢ : P ∈ Ω . E! BʻP .≡ . P ∈ Ser ∩ Ded . DʻP = DʻP₁
+PM-VERBATIM-END PM3:✱250·23 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·24
+✱250·24.  ⊢ : P ∈ Ω .⊃ . P² | P₁ = P ▷ DʻP
+PM-VERBATIM-END PM3:✱250·24 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·241
+✱250·241.  ⊢ : P ∈ Ω .⊃ . P₁ | P² = (CʻP₁) 1 P  [Proof as in ✱250·24]
+PM-VERBATIM-END PM3:✱250·241 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·242
+✱250·242.  ⊢ : P ∈ Ω .⊃ . P = P₁ ∪ P₁ | P
+PM-VERBATIM-END PM3:✱250·242 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·243
+✱250·243.  ⊢ : P ∈ Ω .⊃ . P ▷ (CʻP₁) = (CʻP₁) 1 (P₁ ∪ P | P₁)
+  [Proof as in ✱250·242]
+PM-VERBATIM-END PM3:✱250·243 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·3
+✱250·3.  ⊢ :: P ∈ Bord : α ⊂ CʻP ∩ σ .⊃ₐ . seqₚʻα ⊂ σ : ⊃ₐ . CʻP ⊂ σ
+PM-VERBATIM-END PM3:✱250·3 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·301
+✱250·301.  ⊢ : P ∈ connex . ∼∃! minₚʻτ . σ = CʻP − P⃗ʻτ . α ⊂ σ .⊃ . seqₚʻα ⊂ σ
+PM-VERBATIM-END PM3:✱250·301 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·31
+✱250·31.  ⊢ :: P ∈ connex :: α ⊂ CʻP ∩ σ .⊃ₐ . seqₚʻα ⊂ σ : ⊃ₐ . CʻP ⊂ σ :: ⊃ . P ∈ Ω
+PM-VERBATIM-END PM3:✱250·31 -/
