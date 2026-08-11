@@ -111,3 +111,19 @@ PM-VERBATIM-END PM3:✱251·23 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·24
 ✱251·24.  ⊢ : α, β ∈ NO .⊃ . α + β ∈ NO
 PM-VERBATIM-END PM3:✱251·24 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·25
+✱251·25.  ⊢ : P ↥ Q ∈ Ω .≡ . P, Q ∈ Ω . CʻP ∩ CʻQ = Λ
+PM-VERBATIM-END PM3:✱251·25 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·26
+✱251·26.  ⊢ : α, β ∈ NO − ιʻΛ .≡ . α + β ∈ NO − ιʻΛ  [✱251·25]
+PM-VERBATIM-END PM3:✱251·26 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·3
+✱251·3.  ⊢ : P ∈ Ω . CʻP ⊂ Ser .⊃ . ΠʻP ∈ Ser  [✱204·57 . ✱250·1]
+PM-VERBATIM-END PM3:✱251·3 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·31
+✱251·31.  ⊢ : E!! BʻʻCʻP .⊃ . B ▷ CʻP ∈ FₐʻCʻP
+PM-VERBATIM-END PM3:✱251·31 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·32
+✱251·32.  ⊢ : E!! BʻʻCʻP . ∃! P .⊃ . B ▷ CʻP = BʻΠʻP
+PM-VERBATIM-END PM3:✱251·32 -/
