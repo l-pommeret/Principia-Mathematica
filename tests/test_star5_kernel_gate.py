@@ -60,6 +60,22 @@ class Star5KernelGateTests(unittest.TestCase):
         for forbidden in ("axiom", "sorry", "admit", "unsafe", "Classical"):
             self.assertNotIn(forbidden, kernel)
 
+    def test_star_5_1_candidate_has_explicit_inference_branches(self):
+        metadata = json.loads(
+            (ROOT / "metadata/items/PM1-star-5-Q242.json").read_text(encoding="utf-8")
+        )
+        item = metadata["items"][0]
+        self.assertEqual(item["id"], "PM1:✱5·1")
+        self.assertEqual(item["formal_status"], "awaiting-ci")
+        self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
+        self.assertIn("PM.Derivation.star_1_1", item["lean_dependencies"])
+        self.assertIn("PM.Derivation.star_1_11", item["lean_dependencies"])
+        kernel = (
+            ROOT / "Principia/FirstEdition/Volume1/Part1/SectionA/Star5Kernel.lean"
+        ).read_text(encoding="utf-8")
+        body = kernel[kernel.index("theorem star_5_1") :]
+        self.assertNotIn("PM.Derivation.detach", body)
+
 
 if __name__ == "__main__":
     unittest.main()
