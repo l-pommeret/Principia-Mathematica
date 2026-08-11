@@ -81,3 +81,18 @@ PM-VERBATIM-END PM1:✱21·12 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·13
 ✱21·13. ⊢ : ψ(x,y) .≡₍x,y₎. χ(x,y) .⊃ . ẑxẑyψ(x,y) = ẑxẑyχ(x,y)  [✱21·1.*12·11.*13·195]
 PM-VERBATIM-END PM1:✱21·13 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·14
+✱21·14. ⊢ : ẑxẑyψ(x,y) = ẑxẑyχ(x,y) .⊃ : ψ(x,y) .≡₍x,y₎. χ(x,y)
+PM-VERBATIM-END PM1:✱21·14 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·15
+✱21·15. ⊢ : ψ(x,y) .≡₍x,y₎. χ(x,y) : ≡ . ẑxẑyψ(x,y) = ẑxẑyχ(x,y)
+PM-VERBATIM-END PM1:✱21·15 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·151
+✱21·151. ⊢ . (∃φ) . ẑxẑyψ(x,y) = ẑxẑyφ!(x,y)
+PM-VERBATIM-END PM1:✱21·151 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·16
+✱21·16. ⊢ : (∃φ) : f{ẑxẑyψ(x,y)} .≡ . f{ẑxẑyφ!(x,y)}
+PM-VERBATIM-END PM1:✱21·16 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·17
+✱21·17. ⊢ : (φ). f{ẑxẑyφ!(x,y)} .⊃ . f{ẑxẑyψ(x,y)}
+PM-VERBATIM-END PM1:✱21·17 -/
