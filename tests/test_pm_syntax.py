@@ -198,6 +198,35 @@ class PMDotSyntaxTests(unittest.TestCase):
         parsed = statement_shape("✱101·301. ⊢ . 2 = α̂{(∃x). x ∈ α . α − ιʻx ∈ 1}")
         self.assertIn("class_comprehension_spec", tags(parsed))
 
+    def test_q600_star_250_01_preserves_relation_hat_binder(self):
+        parsed = statement_shape(
+            "✱250·01. Bord = P̂ (Cl exʻCʻP ⊂ ∃ʻminₚ) Df"
+        )
+        self.assertEqual(parsed["tag"], "relation_defined_equal")
+        abstraction = parsed["children"][1]
+        self.assertEqual(abstraction["tag"], "relation_comprehension_spec")
+        self.assertEqual(abstraction["value"], "P")
+        self.assertEqual(abstraction["children"][0]["tag"], "class_inclusion")
+        self.assertNotIn("class_comprehension_spec", tags(parsed))
+
+    def test_q600_relation_hat_cannot_escape_its_context(self):
+        with self.assertRaisesRegex(
+            pm_syntax.PMSyntaxError, "without an explicit context"
+        ):
+            shape("P̂ (Cl exʻCʻP ⊂ ∃ʻminₚ)")
+
+    def test_q603_preserves_the_p_po_relation_index(self):
+        parsed = statement_shape(
+            "✱250·103. ⊢ : P ∈ Bord .≡ . Pₚₒ ∈ Bord [✱250·102 . ✱211·17]"
+        )
+        self.assertIn("relation_type_indexed", tags(parsed))
+
+    def test_q603_preserves_undotted_relation_inclusion(self):
+        parsed = statement_shape(
+            "✱250·105. ⊢ : P ∈ Bord .⊃ . Pₚₒ ⊂ J [✱250·103·104]"
+        )
+        self.assertIn("relation_inclusion", tags(parsed))
+
     def test_q102_01_preserves_explicit_type_indices(self):
         parsed = statement_shape("✱102·01. NCᵝ(α) = DʻNc(αᵦ) Df")
         self.assertIn("type_indexed", tags(parsed))

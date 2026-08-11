@@ -59,6 +59,7 @@ OPERATORS = {
 }
 GREEK_FUNCTION_SYMBOLS = "φψχθ"
 CLASS_SYMBOLS = "αβγκ"
+RELATION_SYMBOLS = "RSPQJ"
 OF = "ʻ"
 
 
@@ -82,6 +83,17 @@ def raw_tokens(source: str) -> list[Token]:
         if source.startswith("x̂ŷ", index):
             result.append(Token("relation_binder", "x̂ŷ", index))
             index += len("x̂ŷ")
+            continue
+        # PM also uses a single relation variable with a circumflex as an
+        # abstraction binder, e.g. `P̂(condition)` in ✱250·01.  This is not
+        # the class abstraction `α̂(condition)`: retain the printed bound
+        # relation symbol so its eventual contextual owner can distinguish
+        # the two incomplete symbols.
+        relation_abstraction = re.match(r"([RSPQJ])̂(?=\s*[\({])", source[index:])
+        if relation_abstraction:
+            text = relation_abstraction.group(0)
+            result.append(Token("relation_binder", text, index))
+            index += len(text)
             continue
         if source.startswith("E!", index):
             result.append(Token("existence_predicate", "E!", index))
@@ -148,9 +160,16 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("class_binder", char, index))
             index += 1
             continue
+        # `Cl ex` is a printed two-word class operator.  Keeping it as one
+        # lexical atom prevents the space from being mistaken for an omitted
+        # logical product in the ✱250 definition.
+        if source.startswith("Cl ex", index):
+            result.append(Token("atom", "Cl ex", index))
+            index += len("Cl ex")
+            continue
         type_index = re.match(
             r"([A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*)"
-            r"(ᵗʻ[Α-Ωα-ω]|ᵅ|ᵝ|ᵦ|ᵟ|ₐ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
+            r"(ᵗʻ[Α-Ωα-ω]|ᵅ|ᵝ|ᵦ|ᵟ|ₐ|ₚₒ|ₚ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
             source[index:],
         )
         if type_index:
@@ -245,7 +264,7 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("relation_value", text, index))
             index += len(text)
             continue
-        if char in "RSPQ" and (index + 1 == len(source) or not source[index + 1].isalpha()):
+        if char in RELATION_SYMBOLS and (index + 1 == len(source) or not source[index + 1].isalpha()):
             result.append(Token("relation_symbol", char, index))
             index += 1
             continue
@@ -261,6 +280,12 @@ def raw_tokens(source: str) -> list[Token]:
             char in "fg" and index + 1 < len(source) and source[index + 1] in "!({"
         ):
             result.append(Token("function", char, index))
+            index += 1
+            continue
+        # Bare `∃` is a printed class operator in the ✱250·01 matrix; it is
+        # distinct from the already-tokenised `∃!` existence predicate.
+        if char == "∃":
+            result.append(Token("atom", char, index))
             index += 1
             continue
         if char == "!":
@@ -420,7 +445,11 @@ def contains_incomplete_symbol(node: AST) -> bool:
 
 
 def relation_binder_variables(text: str) -> str:
-    return "x,y" if text == "x̂ŷ" else text
+    if text == "x̂ŷ":
+        return "x,y"
+    if text.endswith("̂"):
+        return text[:-1]
+    return text
 
 
 def is_class_surface(node: AST) -> bool:
@@ -552,14 +581,14 @@ class Parser:
         elif token.kind == "type_index":
             indexed = re.fullmatch(
                 r"(?P<head>[A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*)"
-                r"(?P<index>ᵗʻ[Α-Ωα-ω]|ᵅ|ᵝ|ᵦ|ᵟ|ₐ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
+                r"(?P<index>ᵗʻ[Α-Ωα-ω]|ᵅ|ᵝ|ᵦ|ᵟ|ₐ|ₚₒ|ₚ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
                 token.text,
             )
             assert indexed is not None
             head = indexed.group("head")
             left = AST(
                 "type_indexed",
-                (AST("relation_symbol" if head in "RSPQ" else "atom", value=head),),
+                (AST("relation_symbol" if head in RELATION_SYMBOLS else "atom", value=head),),
                 indexed.group("index"),
             )
         elif token.kind == "function":
@@ -761,6 +790,16 @@ class Parser:
                     value,
                 )
             elif tag == "class_inclusion":
+                # In the volume-III facsimile, the inclusion glyph in
+                # `Pₚₒ ⊂ J` carries no separate relation dot.  Its operands
+                # nonetheless determine a relation inclusion; do not coerce
+                # either relation into a class to accommodate typography.
+                if is_relation_surface(left) and is_relation_surface(right):
+                    left = AST(
+                        "relation_inclusion",
+                        (seal_relation_surface(left), seal_relation_surface(right)),
+                    )
+                    continue
                 if (not is_class_context_candidate(left) or
                         not is_class_context_candidate(right)):
                     raise PMSyntaxError("class inclusion requires two class expressions")
