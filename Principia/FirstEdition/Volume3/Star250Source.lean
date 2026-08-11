@@ -368,3 +368,52 @@ PM-VERBATIM-END PM3:✱250·53 -/
 /- PM-VERBATIM-BEGIN PM3:✱250·54
 ✱250·54.  ⊢ : CʻʻΩ ∪ 1 = Cls .⊃ . Mult ax
 PM-VERBATIM-END PM3:✱250·54 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·6
+✱250·6.  ⊢ : P, Q ∈ Ω . P smor Q .⊃ . P smor Q ∈ 1  [✱208·41 . ✱250·12·1]
+PM-VERBATIM-END PM3:✱250·6 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·61
+✱250·61.  ⊢ : P ∈ Ω .⊃ . P smor P = ιʻ(I | CʻP)  [✱208·42]
+PM-VERBATIM-END PM3:✱250·61 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·62
+✱250·62.  ⊢ : P ∈ Bord . S ∈ crorʻP .⊃ . ∼(∃x) . (Sʻx) P x  [✱208·43]
+PM-VERBATIM-END PM3:✱250·62 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·63
+✱250·63.  ⊢ : P ∈ Ω ∩ CnvʻʻΩ .⊃ . RlʻP ∩ NrʻP = ιʻP  [✱208·45]
+PM-VERBATIM-END PM3:✱250·63 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·64
+✱250·64.  ⊢ : P ∈ Bord . S ∈ crorʻP .⊃ . CʻP ∩ pʻP⃗ʻDʻS = Λ  [✱208·46]
+PM-VERBATIM-END PM3:✱250·64 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·65
+✱250·65.  ⊢ : P ∈ Ω . α ∈ sectʻP − ιʻCʻP . β ⊂ α .⊃ . ∼(P smor P ▷ β)
+PM-VERBATIM-END PM3:✱250·65 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·651
+✱250·651.  ⊢ : P ∈ Ω .⊃ . NrʻP ∩ P ▷ ʻʻ(sectʻP − ιʻCʻP) = Λ  [✱250·65]
+PM-VERBATIM-END PM3:✱250·651 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·652
+✱250·652.  ⊢ : P ∈ Bord . Q ⊂ P . ∃! CʻP ∩ pʻP⃗ʻʻCʻQ .⊃ . ∼(P smor Q)
+  [✱208·47]
+PM-VERBATIM-END PM3:✱250·652 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·653
+✱250·653.  ⊢ : P ∈ Bord . ∃! CʻP ∩ pʻP⃗ʻʻ(α ∩ CʻP) .⊃ . ∼(P smor P ▷ α)
+PM-VERBATIM-END PM3:✱250·653 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·66
+✱250·66.  ⊢ : P ∈ Ω . α ∈ sectʻP . P smor (P ▷ α) .⊃ . α = CʻP  [✱250·65 . Transp]
+PM-VERBATIM-END PM3:✱250·66 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·67
+✱250·67.  ⊢ : P ∈ Ω . x ∈ CʻP .⊃ . ∼(P smor (P ▷ P⃗ʻx))
+PM-VERBATIM-END PM3:✱250·67 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱250·7
+✱250·7.  ⊢ :: P ∈ Ω .≡ : x ∈ CʻP .⊃ₓ . P ▷ P⁎ʻx ∈ Ω : P ∈ Ser
+PM-VERBATIM-END PM3:✱250·7 -/
