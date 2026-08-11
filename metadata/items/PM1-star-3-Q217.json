@@ -19,7 +19,7 @@
       "declaration": "PM.Elementary.conj",
       "formal_scope": "definitional abbreviation of logical product as ∼(∼p ∨ ∼q)",
       "source_status": "scan-and-PG-checked",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -35,12 +35,16 @@
       "declaration": "PM.Elementary.impChain",
       "formal_scope": "definitional abbreviation as the logical product of p⊃q and q⊃r",
       "source_status": "scan-and-PG-checked",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "printed_dependencies": ["PM1:✱3·01"],
       "lean_dependencies": ["PM.Elementary.conj"],
       "normalized_dependencies": ["PM1:✱3·01"],
       "substitutions": []
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "be2669eda2a262ebb6c07637787f2bc12b0732b3",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31450728523",
+    "conclusion": "success"
+  }
 }
