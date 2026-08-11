@@ -128,14 +128,17 @@ def candidates(data: dict, root: Path, active_projects: set[str]) -> list[Candid
             if retry.project_id not in active_projects:
                 result.append(retry)
             continue
-        if item.get("audit_status") != "A":
-            continue
-        if not dependencies_checked(item, items):
-            continue
+        # A continuation is an explicitly audited instruction for an existing
+        # remote project.  It cannot create a second project, so it may repair
+        # or kernel-link a result whose canonical batch is still gated.
         continuation = continuation_spec(qid, item, root)
         if continuation is not None:
             if continuation.project_id not in active_projects:
                 result.append(continuation)
+            continue
+        if item.get("audit_status") != "A":
+            continue
+        if not dependencies_checked(item, items):
             continue
         # A project identity always wins over a stale local status.  This is
         # the central no-duplicate-project invariant.
@@ -159,6 +162,11 @@ def reconcile(data: dict, list_tasks: Callable[[str], list[dict[str, str]]]) -> 
     seen_tasks: dict[str, str] = {}
     for qid, item in data.get("questions", {}).items():
         if not isinstance(item, dict):
+            continue
+        # Operational Q9000+ retries are continuations of their canonical
+        # project, never an additional capacity owner.  The canonical record
+        # is the sole source for remote reconciliation.
+        if item.get("retry_of") is not None:
             continue
         pid = item.get("aristotle_project_id")
         if not isinstance(pid, str) or not UUID_RE.fullmatch(pid):

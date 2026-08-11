@@ -99,6 +99,30 @@ class SchedulerTests(unittest.TestCase):
         candidate = scheduler.candidates(data, Path("/repo"), set())[0]
         self.assertEqual(candidate.project_id, pid)
 
+    def test_explicit_continuation_does_not_require_new_project_eligibility(self):
+        pid = "10000000-0000-0000-0000-000000000001"
+        data = {"items": {}, "questions": {"Q229": {
+            "audit_status": "prepared-needs-kernel-context",
+            "aristotle_project_id": pid,
+            "aristotle_continuation_path": "aristotle/followups/Q229.md",
+            "aristotle_continuation_status": "not-submitted",
+        }}}
+        candidate = scheduler.candidates(data, Path("/repo"), set())[0]
+        self.assertEqual((candidate.qid, candidate.kind, candidate.project_id),
+                         ("Q229", "continuation", pid))
+
+    def test_operational_retry_does_not_consume_a_second_capacity_slot(self):
+        pid = "10000000-0000-0000-0000-000000000001"
+        data = {"questions": {
+            "Q234": {"aristotle_project_id": pid},
+            "Q9001": {"retry_of": "Q234", "canonical_project_id": pid},
+        }}
+        active, projects = scheduler.reconcile(data, lambda _: [{
+            "task_id": "20000000-0000-0000-0000-000000000001", "status": "QUEUED"
+        }])
+        self.assertEqual(active, 1)
+        self.assertEqual(projects, {pid})
+
     def test_retry_cannot_promote_itself(self):
         data = {"items": {}, "questions": {
             "Q234": {"aristotle_project_id": "10000000-0000-0000-0000-000000000001"},
