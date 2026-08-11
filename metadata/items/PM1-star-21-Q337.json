@@ -1,0 +1,26 @@
+{
+  "batch": "PM1-STAR21-Q337",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "215",
+    "scan_leaves": [237],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [{
+      "scan_leaf": 237,
+      "printed_page": 215,
+      "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page237-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I%2C_1910.djvu.jpg",
+      "sha256": "3124660487bd0c3198c6eb364bba34b6ed62fb6a5946966dd6aae03932b50d0c"
+    }],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "items": [
+    {"id":"PM1:✱21·58","kind":"derived-proposition","printed":"⊢ . ẑxẑyφ(x,y) = (℩R){R = ẑxẑyφ(x,y)}","printed_page":215,"scan_leaf":237,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations","printed_dependencies":["✱4·2","✱10·11","✱21·54","✱14·1"],"normalized_dependencies":[]},
+    {"id":"PM1:✱21·6","kind":"derived-proposition","printed":"⊢ : (∃R). fR .≡ . ∼{(R). ∼fR}","printed_page":215,"scan_leaf":237,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations","printed_dependencies":["✱20·6"],"normalized_dependencies":[]},
+    {"id":"PM1:✱21·61","kind":"derived-proposition","printed":"⊢ : (R). fR .⊃ . fS","printed_page":215,"scan_leaf":237,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations","printed_dependencies":["✱20·61"],"normalized_dependencies":[]},
+    {"id":"PM1:✱21·62","kind":"analogue-proposition","printed":"When fR is true, whatever possible argument of the form ẑxẑyφ!(x,y) R may be, (R). fR is true.","printed_page":215,"scan_leaf":237,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations","printed_dependencies":["✱20·62"],"normalized_dependencies":[]},
+    {"id":"PM1:✱21·63","kind":"derived-proposition","printed":"⊢ : (R). p ∨ fR .⊃ : p .∨ . (R). fR","printed_page":215,"scan_leaf":237,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations","printed_dependencies":["✱20·63"],"normalized_dependencies":[]}
+  ],
+  "ci_evidence": {"commit":"pending","run":"pending","conclusion":"pending"}
+}

@@ -141,3 +141,18 @@ PM-VERBATIM-END PM1:✱21·56 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·57
 ✱21·57. ⊢ : ẑxẑyφ(x,y) = (℩R)(fR) .⊃ : g{ẑxẑyφ(x,y)} .≡ . g{(℩R)(fR)}
 PM-VERBATIM-END PM1:✱21·57 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·58
+✱21·58. ⊢ . ẑxẑyφ(x,y) = (℩R){R = ẑxẑyφ(x,y)}  [✱4·2.*10·11.*21·54.*14·1]
+PM-VERBATIM-END PM1:✱21·58 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·6
+✱21·6. ⊢ : (∃R). fR .≡ . ∼{(R). ∼fR}  [Proof as in ✱20·6]
+PM-VERBATIM-END PM1:✱21·6 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·61
+✱21·61. ⊢ : (R). fR .⊃ . fS  [Proof as in ✱20·61]
+PM-VERBATIM-END PM1:✱21·61 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·62
+✱21·62. When fR is true, whatever possible argument of the form ẑxẑyφ!(x,y) R may be, (R). fR is true.  [Proof as in ✱20·62]
+PM-VERBATIM-END PM1:✱21·62 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·63
+✱21·63. ⊢ : (R). p ∨ fR .⊃ : p .∨ . (R). fR  [Proof as in ✱20·63]
+PM-VERBATIM-END PM1:✱21·63 -/
