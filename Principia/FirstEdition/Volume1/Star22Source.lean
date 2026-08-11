@@ -125,3 +125,18 @@ PM-VERBATIM-END PM1:✱22·43 -/
 /- PM-VERBATIM-BEGIN PM1:✱22·45
 ✱22·45. ⊢ : α ⊂ β . α ⊂ γ .≡ . α ⊂ β ∩ γ
 PM-VERBATIM-END PM1:✱22·45 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·46
+✱22·46. ⊢ : x ε α . α ⊂ β .⊃ . x ε β  [✱22·441.Perm]
+PM-VERBATIM-END PM1:✱22·46 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·47
+✱22·47. ⊢ : α ⊂ γ .⊃ . α ∩ β ⊂ γ  [✱22·43·44]
+PM-VERBATIM-END PM1:✱22·47 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·48
+✱22·48. ⊢ : α ⊂ β .⊃ . α ∩ γ ⊂ β ∩ γ  [✱10·31]
+PM-VERBATIM-END PM1:✱22·48 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·481
+✱22·481. ⊢ : α = β .⊃ . α ∩ γ = β ∩ γ
+PM-VERBATIM-END PM1:✱22·481 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·49
+✱22·49. ⊢ : α ⊂ β . γ ⊂ δ .⊃ . α ∩ γ ⊂ β ∩ δ  [✱10·39]
+PM-VERBATIM-END PM1:✱22·49 -/
