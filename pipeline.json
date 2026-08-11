@@ -772,7 +772,7 @@
         "PM1:✱3·03"
       ],
       "parallel_group": "STAR3-WAVE-1A",
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "constraint_manifest_path": "aristotle/manifests/Q221.json",
       "isolated_context_path": "aristotle/contexts/Q221.lean",
       "context_ci_evidence": {
@@ -780,15 +780,22 @@
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31452200404",
         "conclusion": "success"
       },
-      "aristotle_task_id": "10f781a5-9c34-4aa4-9608-f0934778ac3f",
-      "aristotle_latest_task_id": "10f781a5-9c34-4aa4-9608-f0934778ac3f",
-      "aristotle_latest_task_status": "QUEUED",
-      "aristotle_remote_status": "QUEUED",
+      "aristotle_task_id": "80b9650e-4ee8-4b4a-8523-c75a04a2a58a",
+      "aristotle_latest_task_id": "80b9650e-4ee8-4b4a-8523-c75a04a2a58a",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_project_id": "2aa01a68-f240-40cf-9642-17ef17d264c5",
       "aristotle_request_path": "aristotle/Q221.md",
       "aristotle_request_sha256": "f9f9c47fa07d6a0d66f294a72aeaadbc569151d56a7b680252906887ae0820d9",
-      "aristotle_latest_task_name": "Formalize Q221.md",
-      "aristotle_latest_task_created": "9 secs ago"
+      "aristotle_latest_task_name": "# Q221 follow-up — repair t...",
+      "aristotle_latest_task_created": "completed",
+      "aristotle_followup_prompt": "aristotle/followups/Q221-repair-fidelity.md",
+      "aristotle_followup_prompt_sha256": "d264570f279ea3f4e3724db0a7aac94745cef58fbaaa995ac206245b51edac03",
+      "archive_path": "aristotle/results/Q221-retry-01-final.tar.gz",
+      "archive_sha256": "aa7a9bca9bceadd9b58fda40b04207a19dff54b25c5a674c055c4de5afb0c8b8",
+      "reconstruction_audit_path": "reviews/Q221-reconstruction-audit.json",
+      "reconstruction_classification": "strict-closure",
+      "integration_status": "awaiting-ci"
     },
     "Q222": {
       "canonical_ids": [

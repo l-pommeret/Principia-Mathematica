@@ -352,7 +352,7 @@ def remote_status(qid: str, pid: str) -> dict:
         return {"qid": qid, "project_id": pid, "status": "ERROR", "error": str(exc)}
 
 
-def aristotle_status(qid_args: list[str]) -> None:
+def aristotle_status(qid_args: list[str], *, record: bool = True) -> None:
     require_api_key()
     data = manifest()
     qids = [canonical_qid(value) for value in qid_args] if qid_args else list(data["questions"])
@@ -370,36 +370,37 @@ def aristotle_status(qid_args: list[str]) -> None:
         futures = {pool.submit(remote_status, qid, pid): index for index, qid, pid in work}
         for future in concurrent.futures.as_completed(futures):
             items[futures[future]] = future.result()
-    lock_path = MANIFEST.with_suffix(".lock")
-    with lock_path.open("w") as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX)
-        current = manifest()
-        changed = False
-        for remote in items:
-            if not remote or remote.get("status") in {"ERROR", "NO_PROJECT"}:
-                continue
-            item = current["questions"].get(remote["qid"])
-            if not isinstance(item, dict):
-                continue
-            task = remote.get("task")
-            fields = {"aristotle_remote_status": remote["status"]}
-            if task:
-                fields.update({
-                    "aristotle_latest_task_id": task["task_id"],
-                    "aristotle_latest_task_status": task["status"],
-                    "aristotle_latest_task_name": task["name"],
-                    "aristotle_latest_task_created": task["created"],
-                })
-            if remote["status"] in ACTIVE_TASKS:
-                fields["aristotle_status"] = "submitted"
+    if record:
+        lock_path = MANIFEST.with_suffix(".lock")
+        with lock_path.open("w") as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            current = manifest()
+            changed = False
+            for remote in items:
+                if not remote or remote.get("status") in {"ERROR", "NO_PROJECT"}:
+                    continue
+                item = current["questions"].get(remote["qid"])
+                if not isinstance(item, dict):
+                    continue
+                task = remote.get("task")
+                fields = {"aristotle_remote_status": remote["status"]}
                 if task:
-                    fields["aristotle_task_id"] = task["task_id"]
-            for key, value in fields.items():
-                if item.get(key) != value:
-                    item[key] = value
-                    changed = True
-        if changed:
-            atomic_write(MANIFEST, json.dumps(current, ensure_ascii=False, indent=2) + "\n")
+                    fields.update({
+                        "aristotle_latest_task_id": task["task_id"],
+                        "aristotle_latest_task_status": task["status"],
+                        "aristotle_latest_task_name": task["name"],
+                        "aristotle_latest_task_created": task["created"],
+                    })
+                if remote["status"] in ACTIVE_TASKS:
+                    fields["aristotle_status"] = "submitted"
+                    if task:
+                        fields["aristotle_task_id"] = task["task_id"]
+                for key, value in fields.items():
+                    if item.get(key) != value:
+                        item[key] = value
+                        changed = True
+            if changed:
+                atomic_write(MANIFEST, json.dumps(current, ensure_ascii=False, indent=2) + "\n")
     emit({"projects": items})
 
 
@@ -650,6 +651,8 @@ def parser() -> argparse.ArgumentParser:
     aristotle_commands = aristotle.add_subparsers(dest="command", required=True)
     status = aristotle_commands.add_parser("status")
     status.add_argument("qids", nargs="*")
+    status.add_argument("--readonly", action="store_true",
+                        help="query remote task state without rewriting pipeline.json")
     submitted = aristotle_commands.add_parser("submit")
     submitted.add_argument("qid")
     submitted.add_argument("request_file", type=Path)
@@ -692,7 +695,7 @@ def main(argv: list[str] | None = None) -> int:
         elif (args.group, args.command) == ("browser", "submit"):
             browser_submit(args.prompt, args.cap)
         elif (args.group, args.command) == ("aristotle", "status"):
-            aristotle_status(args.qids)
+            aristotle_status(args.qids, record=not args.readonly)
         elif (args.group, args.command) == ("aristotle", "submit"):
             aristotle_submit(args.qid, args.request_file)
         elif (args.group, args.command) == ("aristotle", "continue"):

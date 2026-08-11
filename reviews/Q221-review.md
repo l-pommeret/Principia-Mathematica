@@ -1,6 +1,6 @@
 # Audit Q221 — PM I, ✱3·1–✱3·14
 
-Verdict: **CONTINUATION ACTIVE — première archive rejetée par l’audit strict**.
+Verdict: **ARCHIVE DE CONTINUATION ACCEPTÉE — intégration en attente de CI Lean distante**.
 La CI Lean
 [`31452200404`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31452200404)
 a réussi sur le commit `85865c7a46df398f2f44ebc6a8c867f756dc7ad9`, y compris
@@ -27,7 +27,16 @@ reported `Classical` harness exception), but its reconstruction audit rejected
 ✱3·1, ✱3·11 and ✱3·14: the former two leave printed ✱3·01 uncovered and the
 last bypasses both printed citations ✱3·1 and `Transp` through direct ✱2·12.
 
-The same project therefore has one fidelity-only continuation, task
-`80b9650e-4ee8-4b4a-8523-c75a04a2a58a`, instructed to make ✱3·01 explicit in
-✱3·1/·11 and to reconstruct ✱3·14 through ✱3·1, ✱2·16, ✱2·12, ✱2·06 and
-✱1·11. No theorem in this Q221 batch is yet claimed proved or promoted.
+The same project’s fidelity-only continuation, task
+`80b9650e-4ee8-4b4a-8523-c75a04a2a58a`, returned the immutable archive
+`aristotle/results/Q221-retry-01-final.tar.gz`, SHA-256
+`aa7a9bca9bceadd9b58fda40b04207a19dff54b25c5a674c055c4de5afb0c8b8`.
+It contains neither `sorry`, `admit`, axioms nor unsafe escape hatches; the
+sole `Classical` occurrence is in Aristotle’s generated harness, outside the
+five returned declarations. The constrained reconstruction audit
+[`Q221-reconstruction-audit.json`](Q221-reconstruction-audit.json) is strict
+for all five targets. In particular, ✱3·1 and ✱3·11 unfold ✱3·01 explicitly;
+✱3·13 uses ✱3·11 then the ✱2·15 `Transp` form; and ✱3·14 follows ✱3·1,
+✱2·16, ✱2·12, ✱2·06 and detach/✱1·11 in that order. No excess permission or
+uncovered printed citation remains. The imported source remains **awaiting
+remote kernel CI**; no Q221 theorem is promoted until that CI succeeds.

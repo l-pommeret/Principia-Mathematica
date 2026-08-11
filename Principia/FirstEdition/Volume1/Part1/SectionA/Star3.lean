@@ -92,6 +92,68 @@ theorem star_3_03 {Γ : PM.RealContext} (hasRealVariable : Γ ≠ [])
     exact PM.Derivation.star_1_11 hasRealVariable hψ.derivation
       (PM.Derivation.star_1_11 hasRealVariable hφ.derivation h2)
 
+/- PM-VERBATIM-BEGIN PM1:✱3·1
+✱3·1.  ⊢ : p . q . ⊃ . ∼(∼p ∨ ∼q)     [Id . (✱3·01)]
+PM-VERBATIM-END PM1:✱3·1 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·11
+✱3·11.  ⊢ : ∼(∼p ∨ ∼q) . ⊃ . p . q     [Id . (✱3·01)]
+PM-VERBATIM-END PM1:✱3·11 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·12
+✱3·12.  ⊢ : ∼p . ∨ . ∼q . ∨ . p . q     [✱2·11 (∼p ∨ ∼q)/p]
+PM-VERBATIM-END PM1:✱3·12 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·13
+✱3·13.  ⊢ : ∼(p . q) . ⊃ . ∼p ∨ ∼q     [✱3·11 . Transp]
+PM-VERBATIM-END PM1:✱3·13 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·14
+✱3·14.  ⊢ : ∼p ∨ ∼q . ⊃ . ∼(p . q)     [✱3·1 . Transp]
+PM-VERBATIM-END PM1:✱3·14 -/
+
+/-- ✱3·1. Id applied to the product, with ✱3·01 made explicit by unfolding
+its definitional abbreviation. -/
+theorem star_3_1 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∧ₚ q) ⊃ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))) := by
+  simpa only [PM.Elementary.conj] using
+    PM.FirstEdition.Volume1.Star2.star_2_08 (p ∧ₚ q)
+
+/-- ✱3·11. The converse reading of the same definitional product. -/
+theorem star_3_11 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) ⊃ₚ (p ∧ₚ q)) := by
+  simpa only [PM.Elementary.conj] using
+    PM.FirstEdition.Volume1.Star2.star_2_08 (p ∧ₚ q)
+
+/-- ✱3·12. ✱2·11 under the printed substitution `(∼p ∨ ∼q)/p`; the two
+successive Group-I sum marks are left-associated. -/
+theorem star_3_12 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (((∼ₚ p) ∨ₚ (∼ₚ q)) ∨ₚ (p ∧ₚ q)) :=
+  PM.FirstEdition.Volume1.Star2.star_2_11 ((∼ₚ p) ∨ₚ (∼ₚ q))
+
+/-- ✱3·13. The printed ✱3·11 followed by the `Transp` form ✱2·15. -/
+theorem star_3_13 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((∼ₚ (p ∧ₚ q)) ⊃ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) :=
+  PM.Derivation.detach (star_3_11 p q)
+    (PM.FirstEdition.Volume1.Star2.star_2_15 ((∼ₚ p) ∨ₚ (∼ₚ q)) (p ∧ₚ q))
+
+/-- ✱3·14. The printed ✱3·1 followed by `Transp` (✱2·16), with the
+double-negation and syllogism steps that the historical alias suppresses. -/
+theorem star_3_14 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (((∼ₚ p) ∨ₚ (∼ₚ q)) ⊃ₚ (∼ₚ (p ∧ₚ q))) := by
+  have hImp : ⊢ₚ ((p ∧ₚ q) ⊃ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))) := star_3_1 p q
+  have hTransp :
+      ⊢ₚ ((∼ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))) ⊃ₚ (∼ₚ (p ∧ₚ q))) :=
+    PM.Derivation.detach hImp
+      (PM.FirstEdition.Volume1.Star2.star_2_16 (p ∧ₚ q)
+        (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))))
+  have hDN : ⊢ₚ (((∼ₚ p) ∨ₚ (∼ₚ q)) ⊃ₚ (∼ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))))) :=
+    PM.FirstEdition.Volume1.Star2.star_2_12 ((∼ₚ p) ∨ₚ (∼ₚ q))
+  exact PM.Derivation.detach hTransp
+    (PM.Derivation.detach hDN
+      (PM.FirstEdition.Volume1.Star2.star_2_06 ((∼ₚ p) ∨ₚ (∼ₚ q))
+        (∼ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))) (∼ₚ (p ∧ₚ q))))
+
 /- PM-VERBATIM-BEGIN PM1:✱3·37
 ✱3·37.  ⊢ : p . q . ⊃ . r : ⊃ : p . ∼r . ⊃ . ∼q
 
