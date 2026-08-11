@@ -2824,6 +2824,206 @@
         "aristotle/results/Q227-retry-01-final.tar.gz"
       ],
       "resolution_status": "strict-rejected-awaiting-authorized-relaxed-continuation"
+    },
+    {
+      "id": "PM1-ANOM-Q234-FORBIDDEN-ARCHIVE-CONTEXT",
+      "category": "reconstruction-gap",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          125
+        ],
+        "scan_leaves": [
+          147
+        ],
+        "items": [
+          "PM1:✱4·5",
+          "PM1:✱4·51",
+          "PM1:✱4·52",
+          "PM1:✱4·53",
+          "PM1:✱4·54"
+        ]
+      },
+      "printed_reading": "No PM reading is at fault; this record concerns the terminal Q234 Lean archive.",
+      "printed_citations": [
+        "PM1:✱3·01",
+        "PM1:✱4·01",
+        "PM1:✱4·2",
+        "PM1:✱4·12",
+        "PM1:✱4·13"
+      ],
+      "corrected_or_added_reading": "Reject immutable archive 74818dbb…: its supplied PM/Star2.lean declares a new axiom. A retry must use only the audited opaque interface or imported kernel constants, with no new axiom.",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/147",
+        "scan_leaf": 147,
+        "sha256": "6d4b78636c9be9fcfb708786adbdca26e4f16fdcb0b78ac66c7936e9f3fd2b9f",
+        "hash_kind": "audited leaf derivative"
+      },
+      "digital_witnesses": [
+        "PM1-1910-SCAN",
+        "WS-PM1"
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:✱4·5",
+          "PM1:✱4·51",
+          "PM1:✱4·52",
+          "PM1:✱4·53",
+          "PM1:✱4·54"
+        ],
+        "batches": [
+          "Q234"
+        ],
+        "ast_effect": "None; this is an archive-context hygiene rejection."
+      },
+      "strict_audit_status": "rejected-retry-needed: audit_aristotle_archive.py found a new axiom in Q234_aristotle/RequestProject/PM/Star2.lean.",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "forbidden-output",
+        "status": "rejected-not-integrated",
+        "archive_sha256": "74818dbb0870a8375f6875d54480d21bca26ad79b91461964a1609f98b61034a"
+      },
+      "review_provenance": [
+        "reviews/Q234-review.md",
+        "reviews/Q228-Q244-aristotle-archive-audit.json"
+      ],
+      "resolution_status": "blocked-awaiting-clean-interface-retry"
+    },
+    {
+      "id": "PM1-ANOM-Q238-FORBIDDEN-ARCHIVE-CLASSICAL",
+      "category": "reconstruction-gap",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          126
+        ],
+        "scan_leaves": [
+          148
+        ],
+        "items": [
+          "PM1:✱4·7",
+          "PM1:✱4·71",
+          "PM1:✱4·72"
+        ]
+      },
+      "printed_reading": "No PM reading is at fault; this record concerns the terminal Q238 Lean archive.",
+      "printed_citations": [
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱2·08",
+        "PM1:✱3·21",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·3",
+        "PM1:✱3·43",
+        "PM1:✱4·01",
+        "PM1:✱4·1",
+        "PM1:✱4·12",
+        "PM1:✱4·22",
+        "PM1:✱4·31",
+        "PM1:✱4·57"
+      ],
+      "corrected_or_added_reading": "Reject immutable archive c1b5e695…: PM/Star2.lean opens a Classical namespace outside the generated Main compilation harness. A retry must remain constructive outside that harness.",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/148",
+        "scan_leaf": 148,
+        "sha256": "68d19fd7fa6a795612229fc0d4508ed2abe44edb1206be37d5d8cb1ddee4fbc1",
+        "hash_kind": "audited leaf derivative"
+      },
+      "digital_witnesses": [
+        "PM1-1910-SCAN",
+        "WS-PM1"
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:✱4·7",
+          "PM1:✱4·71",
+          "PM1:✱4·72"
+        ],
+        "batches": [
+          "Q238"
+        ],
+        "ast_effect": "None; this is an archive-context hygiene rejection."
+      },
+      "strict_audit_status": "rejected-retry-needed: audit_aristotle_archive.py found Classical namespace in Q238_aristotle/RequestProject/PM/Star2.lean, outside the sole allowed Main.lean harness scope.",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "forbidden-output",
+        "status": "rejected-not-integrated",
+        "archive_sha256": "c1b5e695e6adabf2a5ea6a1598ce652ab2b5ee9295e84132ea748ad8232ddc92"
+      },
+      "review_provenance": [
+        "reviews/Q238-review.md",
+        "reviews/Q228-Q244-aristotle-archive-audit.json"
+      ],
+      "resolution_status": "blocked-awaiting-clean-interface-retry"
+    },
+    {
+      "id": "PM1-ANOM-Q241-FORBIDDEN-ARCHIVE-PLACEHOLDER",
+      "category": "reconstruction-gap",
+      "pm_locus": {
+        "volume": 1,
+        "printed_pages": [
+          127
+        ],
+        "scan_leaves": [
+          149
+        ],
+        "items": [
+          "PM1:✱4·82",
+          "PM1:✱4·83",
+          "PM1:✱4·84",
+          "PM1:✱4·85"
+        ]
+      },
+      "printed_reading": "No PM reading is at fault; this record concerns the terminal Q241 Lean archive.",
+      "printed_citations": [
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱2·21",
+        "PM1:✱2·61",
+        "PM1:✱2·65",
+        "PM1:✱3·26",
+        "PM1:✱3·31",
+        "PM1:✱3·43",
+        "PM1:✱3·47",
+        "PM1:✱4·01"
+      ],
+      "corrected_or_added_reading": "Reject immutable archive 57e593d6…: Q241.lean contains `sorry`. A retry must replace every placeholder by a proof against the audited interface/kernel declarations.",
+      "canonical_witness_evidence": {
+        "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/149",
+        "scan_leaf": 149,
+        "sha256": "afdca6640d248e94fc93bd1144afa53935688c80c995072602ab9493b3cae767",
+        "hash_kind": "audited leaf derivative"
+      },
+      "digital_witnesses": [
+        "PM1-1910-SCAN",
+        "WS-PM1"
+      ],
+      "affected_ast_items_batches": {
+        "items": [
+          "PM1:✱4·82",
+          "PM1:✱4·83",
+          "PM1:✱4·84",
+          "PM1:✱4·85"
+        ],
+        "batches": [
+          "Q241"
+        ],
+        "ast_effect": "None; this is an output placeholder rejection."
+      },
+      "strict_audit_status": "rejected-retry-needed: audit_aristotle_archive.py found `sorry` in RequestProject/Q241.lean.",
+      "minimal_relaxation": [],
+      "lean_impact": {
+        "kind": "forbidden-output",
+        "status": "rejected-not-integrated",
+        "archive_sha256": "57e593d645fd99bf55f2c7fd9c514c7fd4d4fed1c070a09cf62e19f02802ff16"
+      },
+      "review_provenance": [
+        "reviews/Q241-review.md",
+        "reviews/Q228-Q244-aristotle-archive-audit.json"
+      ],
+      "resolution_status": "blocked-awaiting-clean-interface-retry"
     }
   ],
   "infrastructure_incidents": [
