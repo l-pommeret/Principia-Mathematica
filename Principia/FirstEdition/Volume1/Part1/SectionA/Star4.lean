@@ -151,6 +151,55 @@ PM-VERBATIM-END PM1:✱4·38 -/
 ✱4·39.  ⊢ : p ≡ r . q ≡ s . ⊃ : p ∨ q . ≡ . r ∨ s   [✱3·48 . ✱4·32 . ✱3·22]
 PM-VERBATIM-END PM1:✱4·39 -/
 
+/- PM-VERBATIM-BEGIN PM1:✱4·4
+✱4·4.  ⊢ : p . q ∨ r . ≡ : p . q . ∨ . p . r
+
+This is the first form of the distributive law.
+
+Dem.
+
+⊢ . ✱3·2 . ⊃ ⊢ :: p . ⊃ : q . ⊃ . p . q : p . ⊃ : r . ⊃ . p . r ::
+[Comp] ⊃ ⊢ :: p . ⊃ :. q . ⊃ . p . q : r . ⊃ . p . r :.
+[✱3·48] ⊃ : q ∨ r . ⊃ : p . q . ∨ . p . r   (1)
+⊢ . (1) . Imp . ⊃ ⊢ : p . q ∨ r . ⊃ : p . q . ∨ . p . r   (2)
+⊢ . ✱3·26 . ⊃ ⊢ : p . q . ⊃ . p : p . r . ⊃ . p :
+[✱3·44] ⊃ ⊢ : p . q . ∨ . p . r . ⊃ . p   (3)
+⊢ . ✱3·27 . ⊃ ⊢ : p . q . ⊃ . q : p . r . ⊃ . r :
+[✱3·48] ⊃ ⊢ : p . q . ∨ . p . r . ⊃ . q ∨ r   (4)
+⊢ . (3) . (4) . Comp . ⊃ ⊢ : p . q . ∨ . p . r . ⊃ . p . q ∨ r   (5)
+⊢ . (2) . (5) . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱4·4 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·41
+✱4·41.  ⊢ : p . ∨ . q . r . ≡ . p ∨ q . p ∨ r
+
+This is the second form of the distributive law—a form to which there is
+nothing analogous in ordinary algebra. By the conventions as to dots,
+"p . ∨ . q . r" means "p ∨ (q . r)."
+
+Dem.
+
+⊢ . ✱3·26 . Sum . ⊃ ⊢ : p . ∨ . q . r . ⊃ . p ∨ q   (1)
+⊢ . ✱3·27 . Sum . ⊃ ⊢ : p . ∨ . q . r . ⊃ . p ∨ r   (2)
+⊢ . (1) . (2) . Comp . ⊃ ⊢ : p . ∨ . q . r . ⊃ . p ∨ q . p ∨ r   (3)
+⊢ . ✱2·53 . ✱3·47 . ⊃ ⊢ : p ∨ q . p ∨ r . ⊃ : ∼p ⊃ q . ∼p ⊃ r :
+[Comp] ⊃ : ∼p . ⊃ . q . r
+[✱2·54] ⊃ : p . ∨ . q . r   (4)
+⊢ . (3) . (4) . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱4·41 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱4·42
+✱4·42.  ⊢ : p . ≡ : p . q . ∨ . p . ∼q
+
+Dem.
+
+⊢ . ✱3·21 . ⊃ ⊢ :. q ∨ ∼q . ⊃ : p . ⊃ . p . q ∨ ∼q :
+[✱2·11] ⊃ ⊢ : p . ⊃ . p . q ∨ ∼q   (1)
+⊢ . ✱3·26 . ⊃ ⊢ : p . q ∨ ∼q . ⊃ . p   (2)
+⊢ . (1) . (2) . ⊃ ⊢ : p . ≡ : p . q ∨ ∼q :
+[✱4·4] ⊃ ⊢ : p . ≡ : p . q . ∨ . p . ∼q . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱4·42 -/
+
 namespace PM.Elementary
 
 /-- PM I (1910), p. 120, ✱4·01: equivalence is an object-language

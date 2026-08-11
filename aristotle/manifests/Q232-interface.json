@@ -1,9 +1,11 @@
 {
   "kind": "pm-statement-only-interface-manifest",
   "batch": "Q232",
-  "source_backfill_required": true,
+  "source_backfill_required": false,
   "integration_blocked": true,
-  "promotion_prohibited": "PM-VERBATIM plus parsed demonstration audit required",
+  "audit_status": "A-interface-only",
+  "audit_basis": "canonical PM-VERBATIM backfill on scan leaf 146, including the printed demonstrations",
+  "promotion_prohibited": "formal dependency/remote-kernel audit still required",
   "canonical_ids": [
     "PM1:✱4·4",
     "PM1:✱4·41",
@@ -33,5 +35,10 @@
   "citation_comments": [],
   "exact_lean_targets": [
     "namespace PM.FirstEdition.Volume1.Star4\ntheorem star_4_4 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ (q ∨ₚ r)) ≡ₚ ((p ∧ₚ q) ∨ₚ (p ∧ₚ r))) := by\n  -- preserve the printed proof (1)–(5): ✱3·2, Comp, ✱3·48, Imp,\n  -- ✱3·26, ✱3·44, ✱3·27\ntheorem star_4_41 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ∨ₚ (q ∧ₚ r)) ≡ₚ ((p ∨ₚ q) ∧ₚ (p ∨ₚ r))) := by\n  -- preserve (1)–(4): ✱3·26/·27.Sum, Comp, ✱2·53, ✱3·47, ✱2·54\ntheorem star_4_42 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ (p ≡ₚ ((p ∧ₚ q) ∨ₚ (p ∧ₚ ∼ₚ q))) := by\n  -- preserve (1),(2): ✱3·21, ✱2·11, ✱3·26, then ✱4·4\nend PM.FirstEdition.Volume1.Star4\n"
+  ],
+  "prompt_sha256": "8dc65f737fa6e0f1a2ae21905d828ef3cb36381738dbf490b3a97d083892adcc",
+  "review_sha256": "1567c4624cc74484a3c4be6ba881214133c5f0c0c8e29bdcb2a4d64855459e20",
+  "exact_lean_target_sha256": [
+    "dd36356f5b0c881a13c9749ca1dd0b6b1d316bfc8e94559120942d096f380500"
   ]
 }
