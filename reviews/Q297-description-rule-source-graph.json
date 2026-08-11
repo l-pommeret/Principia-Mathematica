@@ -87,9 +87,52 @@
       "source_locus_to_collate": "PM I (1910), printed p. 182 / scan leaf 204 for ✱14·18/·21, plus the precise earlier PM assertion rules cited by a source-critical apparatus if one exists."
     }
   ],
+  "primary_source_collation": {
+    "edition": "PM I (1910)",
+    "printed_page": 182,
+    "scan_leaf": 204,
+    "text_witness": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm",
+    "locators": ["[Pg 182], immediately after ✱14.02", "immediately after ✱14.03", "✱14.18", "✱14.21"],
+    "findings": [
+      {
+        "locus": "after ✱14.02",
+        "finding": "The text calls existence a definition and says it holds iff the condition has one value and no other; it does not state an assertion constructor."
+      },
+      {
+        "locus": "after ✱14.03",
+        "finding": "The convention fixes only which printed description has larger scope (normally first typographically); it explicitly defers truth-value invariance to ✱14.113. It is not a substitution, quantification, or detachment rule."
+      },
+      {
+        "locus": "✱14.18 explanatory paragraph",
+        "finding": "PM says an existing description behaves formally like an ordinary argument and presents ✱14.18 as the embodiment of that fact. No bracketed prior-rule citation is printed."
+      },
+      {
+        "locus": "✱14.21 explanatory paragraph",
+        "finding": "PM calls the proposition obvious because description-existence is part of the definiens of a proposition containing the description. This is an analytic translation convention, not a named primitive inference."
+      }
+    ],
+    "result": "The page authorizes reductional translation of scoped descriptions, but does not fix a reusable DescriptionDerivation carrier, constructor names, premise order, or a proof calculus."
+  },
+  "comparison_with_existing_pm_layers": [
+    {
+      "layer": "✱9",
+      "available": ["OrderedAssertion.star_9_12", "OrderedAssertion.star_9_13", "OrderedAssertion.star_9_13_first"],
+      "finding": "These are deliberately closed constructors over OrderedFormula/Apparent and assigned first-order cases. They demonstrate that PM detachment/generalization must preserve a particular syntax carrier, but supply no polymorphic rule for DescriptionSyntax.Formula."
+    },
+    {
+      "layer": "✱10",
+      "available": ["diplomatic records of ✱10.1 (universal instantiation)", "✱10.11 (generalization)", "✱10.13 (product)", "✱10.22 (quantified product)"],
+      "finding": "Star10.lean records these as source text only; no kernel declaration supplies their signatures. They cannot close the Q297 carrier gap."
+    },
+    {
+      "layer": "elementary deduction",
+      "available": ["PM.Derivation.detach"],
+      "finding": "This is a kernel theorem, but its exact Elementary-only type prevents treating it as an implicit polymorphic convention."
+    }
+  ],
   "conclusion": {
     "q297_reductional_targets": ["14.02", "14.03", "14.04"],
     "q297_still_blocked_targets": ["14.18", "14.21"],
-    "safe_next_action": "Collate a source that fixes the three missing rule signatures before naming or declaring any DescriptionDerivation carrier or constructor."
+    "safe_next_action": "Treat ✱14.18/✱14.21 as source-authorized analytic translation consequences, not new primitives. A closed DescriptionDerivation signature remains blocked until an independently source-audited assertion calculus connects Formula expansion/translation to PM assertion; the next locus is the exact proof image for their later repeated statements (pp. 189–190), not a new Lean rule."
   }
 }
