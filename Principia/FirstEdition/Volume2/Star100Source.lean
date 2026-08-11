@@ -354,7 +354,7 @@ PM-VERBATIM-END PM2:✱105·3 -/
 ✱105·322. ⊢ :: ∃!N₁cʻα .⊃ : N₁cʻα = N₁cʻβ .≡ . N₀cʻα = N₀cʻβ
 PM-VERBATIM-END PM2:✱105·322 -/
 /- PM-VERBATIM-BEGIN PM2:✱105·34
-✱105·34. ⊢ :: μ ∈ NC . ∃!μ⁽¹⁾ .⊃ : μ⁽¹⁾ = N₁cʻα .≡ . μ = N₀cʻα
+✱105·34. ⊢ :: μ ∈ NC . ∃!μ⁽¹⁾ .⊃ : μ⁽¹⁾ = N₁cʻα .≡ . μ = N₀cʻα  [✱105·33·3]
 PM-VERBATIM-END PM2:✱105·34 -/
 /- PM-VERBATIM-BEGIN PM2:✱105·35
 ✱105·35. ⊢ :: μ ∈ NC . ν ∈ N₀C .⊃ : μ = ν⁽¹⁾ .≡ . μ⁽¹⁾ = ν
@@ -553,3 +553,45 @@ PM-VERBATIM-END PM2:✱105·326 -/
 /- PM-VERBATIM-BEGIN PM2:✱105·327
 ✱105·327. ⊢ : μ ∈ NC . μ⁽²⁾ = N₀cʻγ .⊃ . μ = N²cʻγ
 PM-VERBATIM-END PM2:✱105·327 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·33
+✱105·33. ⊢ : μ ∈ NC . ∃!μ⁽¹⁾ . μ⁽¹⁾ = N₁cʻα .⊃ . μ = N₀cʻα
+PM-VERBATIM-END PM2:✱105·33 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·331
+✱105·331. ⊢ : μ ∈ NC . ∃!μ⁽²⁾ . μ⁽²⁾ = N₂cʻα .⊃ . μ = N₀cʻα
+PM-VERBATIM-END PM2:✱105·331 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·341
+✱105·341. ⊢ :: μ ∈ NC . ∃!μ⁽²⁾ .⊃ : μ⁽²⁾ = N₂cʻα .≡ . μ = N₀cʻα
+PM-VERBATIM-END PM2:✱105·341 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·342
+✱105·342. ⊢ . μ ∈ NC .⊃ . μ⁽¹⁾ ∈ N₁C
+PM-VERBATIM-END PM2:✱105·342 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·343
+✱105·343. ⊢ : μ ∈ NC .⊃ . μ⁽²⁾ ∈ N₂C
+PM-VERBATIM-END PM2:✱105·343 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·344
+✱105·344. ⊢ : μ = N¹cʻγ .⊃ . μ⁽¹⁾ = N₀cʻγ
+PM-VERBATIM-END PM2:✱105·344 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·345
+✱105·345. ⊢ : μ = N²cʻγ .⊃ . μ⁽²⁾ = N₀cʻγ
+PM-VERBATIM-END PM2:✱105·345 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·351
+✱105·351. ⊢ :: μ ∈ NC . ν ∈ N₀C .⊃ : μ = ν⁽²⁾ .≡ . μ⁽²⁾ = ν
+PM-VERBATIM-END PM2:✱105·351 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·352
+✱105·352. ⊢ :: μ , ν ∈ NC . ∃!ν .⊃ : μ = ν⁽¹⁾ .≡ . μ⁽¹⁾ = ν  [✱105·35 . ✱103·34]
+PM-VERBATIM-END PM2:✱105·352 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·353
+✱105·353. ⊢ :: μ , ν ∈ NC . ∃!ν .⊃ : μ = ν⁽²⁾ .≡ . μ⁽²⁾ = ν
+PM-VERBATIM-END PM2:✱105·353 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·354
+✱105·354. ⊢ : ν ∈ NC . ∃!ν .⊃ . {ν⁽¹⁾}⁽¹⁾ = ν  [✱105·352]
+PM-VERBATIM-END PM2:✱105·354 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·355
+✱105·355. ⊢ : ν ∈ NC . ∃!ν .⊃ . {ν⁽²⁾}⁽²⁾ = ν
+PM-VERBATIM-END PM2:✱105·355 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·356
+✱105·356. ⊢ : μ ∈ NC . ∃!μ⁽¹⁾ .⊃ . {μ⁽¹⁾}⁽¹⁾ = μ  [✱105·352]
+PM-VERBATIM-END PM2:✱105·356 -/
