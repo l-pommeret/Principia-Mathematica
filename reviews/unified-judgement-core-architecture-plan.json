@@ -1,0 +1,119 @@
+{
+  "kind": "pm-unified-judgement-core-architecture-plan",
+  "status": "design-only-conservativity-unproved",
+  "scope": ["PM.Elementary", "PM.OrderedFormula", "PM.DescriptionSyntax.Formula", "PM1:10.1", "PM1:14.18", "PM1:14.21"],
+  "policy": {
+    "no_lean_declaration_created": true,
+    "no_primitive_or_open_rulebook": true,
+    "no_axiom_opaque_or_semantic_oracle": true,
+    "no_pipeline_or_ci_was_run": true,
+    "no_lean_was_run": true
+  },
+  "design_decision": {
+    "name": "UnifiedJudgementCore",
+    "kind": "proposed sealed, citation-indexed inductive judgement over a tagged syntax family",
+    "not_a_bridge": "The core owns the carrier tag, formula indices, citations, and rule constructors. Existing calculi enter only through separately proved conservative injections; there is no coercion between their raw formula types.",
+    "not_yet_authorized": true
+  },
+  "proposed_signatures_not_lean": {
+    "syntax_family": "SyntaxFamily : {objectSort : Type} -> Signature objectSort -> RealContext -> BoundContext -> Nat -> Type",
+    "constructors": [
+      "elementary : Elementary Γ -> SyntaxFamily elementarySignature Γ [] 0",
+      "ordered : OrderedFormula Γ order -> SyntaxFamily orderedSignature Γ [] order",
+      "description : DescriptionSyntax.Formula signature Γ Δ order -> SyntaxFamily signature Γ Δ order"
+    ],
+    "judgement": "CitedJudgement : SyntaxFamily signature Γ Δ order -> Prop",
+    "closed_constructor_discipline": "Every constructor is named by one printed PM citation and carries only its printed formula parameters, structural context witness, and already-derived premises. There is no constructor named Primitive, Assumption, Oracle, SemanticValid, Classical, or arbitrary Rule.",
+    "detachment_distinct": [
+      "star_1_1 : CitedJudgement (elementary p) -> CitedJudgement (elementary (p ⊃ₚ q)) -> CitedJudgement (elementary q)",
+      "star_1_11 : Γ ≠ [] -> CitedJudgement (elementary φ) -> CitedJudgement (elementary (φ ⊃ₚ ψ)) -> CitedJudgement (elementary ψ)"
+    ],
+    "first_order_rule_schemas": [
+      {
+        "citation": "PM1:10.1",
+        "printed_schema": "⊢ : (x).φx .⊃ .φy",
+        "proposed_shape": "CitedJudgement (description (always universal body)) -> CitedJudgement (description (instantiateFresh body y))",
+        "binding_invariant": "y must be represented by a source-audited typed real/apparent variable operation, never by an untyped or capture-unsafe substitution."
+      },
+      {
+        "citation": "PM1:10.11",
+        "printed_schema": "If φy is true whatever possible argument y may be, then (x).φx is true.",
+        "proposed_shape": "CitedJudgement (description (uniformAtFreshVariable body y)) -> CitedJudgement (description (always universal body))",
+        "binding_invariant": "The exact PM side condition for ‘whatever possible argument’ must be collated before any Lean constructor is written."
+      },
+      {
+        "citation": "PM1:10.28",
+        "printed_schema": "⊢ : .(x).φx ⊃ ψx .⊃ : (∃x).φx .⊃ .(∃x).ψx",
+        "proposed_shape": "a closed constructor over the exact object implication/existential Formula nodes, with the same sort, real context, apparent context and assigned order on both matrices",
+        "binding_invariant": "No existential monotonicity is admitted as a polymorphic host-language theorem."
+      },
+      {
+        "citation": "PM1:10.5",
+        "printed_schema": "⊢ : .(∃x).φx .ψx .⊃ : (∃x).φx : (∃x).ψx",
+        "proposed_shape": "a closed constructor over the exact existential-product Formula nodes",
+        "binding_invariant": "The product and both existentials remain object syntax; the rule does not project a Lean conjunction."
+      }
+    ]
+  },
+  "nonnegotiable_indices": [
+    "object sort and signature",
+    "real variable context Γ",
+    "apparent/bound context Δ",
+    "assigned PM order",
+    "formula family tag",
+    "each quantifier's bound sort",
+    "citation of every derivation constructor"
+  ],
+  "invariants": [
+    "Descriptions are Formula.descriptionScope only; no DescriptionTerm or HOAS function is introduced.",
+    "Formula.substitute/liftSubstitution/weaken remain the only capture-sensitive syntax operations; judgement rules must state their compatibility rather than reimplement substitution.",
+    "An injection preserves formula shape, Γ, Δ and order exactly, or states the audited index translation explicitly; it may not erase a description scope.",
+    "An injection preserves and reflects derivability for its source calculus; preservation alone is insufficient for the conservativity claim.",
+    "PM1:1.1 and PM1:1.11 remain separate constructors. A convenience detachment lemma may pattern-match on context only after both have been installed.",
+    "OrderedFormula cannot acquire all-order or cross-order detachment through the unified core; its existing assigned-order limitation is preserved.",
+    "No existing theorem is silently retagged: every existing-calculus injection needs a formula embedding and an induction proof over the source derivation."
+  ],
+  "required_conservativity_certificates": [
+    {
+      "source": "PM.Derivation / Elementary",
+      "injection": "injectElementary",
+      "must_prove": ["formula embedding is injective", "derivation preservation by induction on PM.Derivation", "derivation reflection on the image", "star_1_1 and star_1_11 map to distinct core constructors"],
+      "current_state": "blocked: no common syntax tag realization or certified image predicate"
+    },
+    {
+      "source": "OrderedAssertion / OrderedFormula",
+      "injection": "injectOrdered",
+      "must_prove": ["formula embedding preserves Γ and assigned order", "preservation for elementary, star_9_1, star_9_11, star_9_12, star_9_12_elementary_to_first and star_9_13", "reflection on the image", "no new cross-order detachment becomes derivable on the image"],
+      "current_state": "blocked: no relation between OrderedFormula and the proposed family is currently certified"
+    },
+    {
+      "source": "DescriptionSyntax.Formula",
+      "injection": "injectDescription",
+      "must_prove": ["identity-on-tree embedding preserves signature, Γ, Δ, order and descriptionScope", "commutes with substitute, liftSubstitution and weaken", "reductional 14.01-14.04 are preserved as syntax equalities", "only subsequently source-authorized cited judgement constructors can inhabit its image"],
+      "current_state": "partially syntax-ready but no judgement exists to preserve or reflect"
+    }
+  ],
+  "vertical_acceptance_test": {
+    "name": "PM1:10.1-to-PM1:14.18-and-14.21",
+    "target_chain_14_18": ["PM1:10.1", "PM1:3.45/Fact", "PM1:10.11", "PM1:10.28", "PM1:10.35", "PM1:14.1", "PM1:14.11"],
+    "target_chain_14_21": ["PM1:14.1", "PM1:10.5", "PM1:14.11"],
+    "acceptance_conditions": [
+      "Every link is a CitedJudgement constructor/theorem with precisely the cited PM locus.",
+      "The PM1:10.1 instantiation uses only an audited capture-safe operation and preserves the candidate's sort/context.",
+      "The Fact link is a conservatively injected PM1:3.45 rule, not a generic frame axiom.",
+      "PM1:14.1 and PM1:14.11 are asserted object-equivalences, not Lean rfl substituted for a judgement.",
+      "The completed derivations contain no constructor outside the printed chains plus their recursively cited, certified dependencies."
+    ],
+    "current_result": "not runnable: all three conservativity certificates and the exact first-order carrier/rule signatures are incomplete",
+    "forbidden_shortcuts": ["Formula.expand semantic bridge", "coercion to PM.Elementary", "coercion to OrderedFormula", "Classical", "axiom", "opaque helper", "host Prop encoding"]
+  },
+  "gated_work_order": [
+    {"step": 1, "action": "collate exact PM1:1.1/1.11 and first-order judgement carrier/rule signatures", "gate": "source evidence"},
+    {"step": 2, "action": "specify a tagged syntax family with no hidden index erasure", "gate": "step 1"},
+    {"step": 3, "action": "prove the three formula injection and derivation conservativity certificates", "gate": "step 2"},
+    {"step": 4, "action": "install only PM1:10.1 and PM1:10.11, then validate their binding invariants", "gate": "steps 1-3"},
+    {"step": 5, "action": "install cited dependencies through PM1:10.5/10.28/10.35 and asserted PM1:14.1/14.11", "gate": "step 4 plus each printed transitive dependency"},
+    {"step": 6, "action": "run the vertical acceptance proof for PM1:14.18 and PM1:14.21", "gate": "step 5"}
+  ],
+  "verdict": "NO-IMPLEMENTATION-YET: the architecture can be specified as a closed citation-indexed core, but no actual unified carrier or injection is conservative until its certificates are proved."
+}
