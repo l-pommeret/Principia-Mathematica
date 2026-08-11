@@ -361,6 +361,44 @@ def normalize(item: dict, lean_dependencies: list[str], declaration_to_id: dict[
     return sorted(set(normalized))
 
 
+def verify_dependency_alignment(item: dict, normalized: list[str], root: Path = ROOT) -> None:
+    """Require exact printed closure, or an exact reviewed relaxation record."""
+    printed = set(item["printed_dependencies"])
+    normalized_set = set(normalized)
+    relaxation = item.get("historical_dependency_relaxation")
+    if relaxation is None:
+        if printed != normalized_set:
+            raise DependencyError(
+                f"{item['id']}: printed dependencies {item['printed_dependencies']} "
+                f"!= normalized Lean dependencies {normalized}"
+            )
+        return
+    if not isinstance(relaxation, dict):
+        raise DependencyError(f"{item['id']}: invalid historical dependency relaxation")
+    required = {
+        "classification", "added_beyond_print", "printed_but_unused",
+        "strict_attempt_evidence", "editorial_note",
+    }
+    if not required <= relaxation.keys() or relaxation["classification"] != "relaxed-closure":
+        raise DependencyError(f"{item['id']}: incomplete historical dependency relaxation")
+    added = sorted(normalized_set - printed)
+    unused = sorted(printed - normalized_set)
+    if relaxation["added_beyond_print"] != added:
+        raise DependencyError(
+            f"{item['id']}: declared added dependencies "
+            f"{relaxation['added_beyond_print']} != {added}"
+        )
+    if relaxation["printed_but_unused"] != unused:
+        raise DependencyError(
+            f"{item['id']}: declared unused printed dependencies "
+            f"{relaxation['printed_but_unused']} != {unused}"
+        )
+    evidence = root / relaxation["strict_attempt_evidence"]
+    if (not relaxation["editorial_note"] or not evidence.is_file() or
+            not relaxation["strict_attempt_evidence"].startswith("reviews/")):
+        raise DependencyError(f"{item['id']}: invalid relaxation evidence")
+
+
 def audit(root: Path = ROOT) -> dict:
     items = load_items(root)
     assumptions = load_assumptions(root)
@@ -421,10 +459,7 @@ def audit(root: Path = ROOT) -> dict:
         normalized = normalize(item, actual, declarations, root)
         if sorted(set(item["normalized_dependencies"])) != normalized:
             raise DependencyError(f"{item['id']}: normalized metadata {item['normalized_dependencies']} != {normalized}")
-        if sorted(set(item["printed_dependencies"])) != normalized:
-            raise DependencyError(
-                f"{item['id']}: printed dependencies {item['printed_dependencies']} != normalized Lean dependencies {normalized}"
-            )
+        verify_dependency_alignment(item, normalized, root)
         for dependency in normalized:
             if dependency not in order:
                 raise DependencyError(f"{item['id']}: unknown PM dependency {dependency}")

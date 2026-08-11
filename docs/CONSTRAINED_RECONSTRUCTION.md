@@ -81,3 +81,10 @@ Aristotle request are reproduced by `scripts/verify_constrained_batches.py`.
 Returned declarations are then classified independently by
 `scripts/pm_batch_audit.py`; one relaxed target cannot make its neighbours look
 strict, and every additional PM item is retained as explicit audit data.
+
+If a relaxed proof is eventually admitted to the edition, its item metadata
+must contain `historical_dependency_relaxation`. The verifier recomputes both
+set differences—dependencies added beyond print and printed citations left
+unused—and requires a tracked strict-attempt audit plus an editorial note.
+Without that record, the longstanding equality between printed and normalized
+Lean dependencies remains mandatory.

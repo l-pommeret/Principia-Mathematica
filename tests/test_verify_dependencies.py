@@ -1,5 +1,6 @@
 import copy
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -48,6 +49,32 @@ class DependencyAuditTests(unittest.TestCase):
             dependencies.reject_unindexed_references(
                 item, "theorem test : True := Classical.choice h", set()
             )
+
+    def test_relaxed_dependency_alignment_requires_exact_differences_and_evidence(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "reviews").mkdir()
+            (root / "reviews/attempt.json").write_text("{}", encoding="utf-8")
+            item = {
+                "id": "PM1:✱2·73",
+                "printed_dependencies": ["PM1:✱2·38", "PM1:✱2·621"],
+                "historical_dependency_relaxation": {
+                    "classification": "relaxed-closure",
+                    "added_beyond_print": ["PM1:✱1·6"],
+                    "printed_but_unused": [],
+                    "strict_attempt_evidence": "reviews/attempt.json",
+                    "editorial_note": "A constrained attempt required Syll.",
+                },
+            }
+            dependencies.verify_dependency_alignment(
+                item, ["PM1:✱1·6", "PM1:✱2·38", "PM1:✱2·621"], root
+            )
+            bad = copy.deepcopy(item)
+            bad["historical_dependency_relaxation"]["added_beyond_print"] = []
+            with self.assertRaises(dependencies.DependencyError):
+                dependencies.verify_dependency_alignment(
+                    bad, ["PM1:✱1·6", "PM1:✱2·38", "PM1:✱2·621"], root
+                )
 
     def test_nonlogical_assumption_registry_is_separate_and_known(self):
         graph = dependencies.audit(ROOT)
