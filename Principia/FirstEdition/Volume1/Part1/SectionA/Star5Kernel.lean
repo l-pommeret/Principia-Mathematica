@@ -28,4 +28,16 @@ theorem star_5_13 {Γ} (p q : PM.Elementary Γ) :
     (PM.FirstEdition.Volume1.Star2.star_2_521 p q)
     (PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) (q ⊃ₚ p))
 
+/-- PM I (1910), p. 130, ✱5·25.  The printed pair ✱2·62·68 supplies the
+two directions; ✱3·2 packages them according to the definitional reading of
+equivalence. -/
+theorem star_5_25 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ q) ≡ₚ ((p ⊃ₚ q) ⊃ₚ q)) := by
+  exact PM.Derivation.detach
+    (PM.FirstEdition.Volume1.Star2.star_2_62 p q)
+    (PM.Derivation.detach
+      (PM.FirstEdition.Volume1.Star2.star_2_68 p q)
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        (p ∨ₚ q) ((p ⊃ₚ q) ⊃ₚ q)))
+
 end PM.FirstEdition.Volume1.Star5
