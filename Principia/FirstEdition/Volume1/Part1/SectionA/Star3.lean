@@ -189,6 +189,37 @@ Dem.
 The above is the law of contradiction.
 PM-VERBATIM-END PM1:✱3·24 -/
 
+/-- ✱3·2. The printed citation omits the required ✱2·32 reassociation. -/
+theorem star_3_2 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ (q ⊃ₚ (p ∧ₚ q))) :=
+  PM.Derivation.detach (star_3_12 p q)
+    (PM.FirstEdition.Volume1.Star2.star_2_32 (∼ₚ p) (∼ₚ q) (p ∧ₚ q))
+
+theorem star_3_21 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (q ⊃ₚ (p ⊃ₚ (p ∧ₚ q))) :=
+  PM.Derivation.detach (star_3_2 p q)
+    (PM.FirstEdition.Volume1.Star2.star_2_04 p q (p ∧ₚ q))
+
+theorem star_3_22 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∧ₚ q) ⊃ₚ (q ∧ₚ p)) :=
+  PM.Derivation.detach
+    (PM.Derivation.detach (star_3_14 p q)
+      (PM.Derivation.detach
+        (PM.Derivation.detach
+          (PM.FirstEdition.Volume1.Star1.star_1_4 (∼ₚ q) (∼ₚ p))
+          (PM.Derivation.detach (star_3_13 q p)
+            (PM.FirstEdition.Volume1.Star2.star_2_06 (∼ₚ (q ∧ₚ p))
+              ((∼ₚ q) ∨ₚ (∼ₚ p)) ((∼ₚ p) ∨ₚ (∼ₚ q)))))
+        (PM.FirstEdition.Volume1.Star2.star_2_06 (∼ₚ (q ∧ₚ p))
+          ((∼ₚ p) ∨ₚ (∼ₚ q)) (∼ₚ (p ∧ₚ q)))))
+    (PM.FirstEdition.Volume1.Star2.star_2_17 (p ∧ₚ q) (q ∧ₚ p))
+
+theorem star_3_24 {Γ} (p : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ (p ∧ₚ (∼ₚ p))) :=
+  PM.Derivation.detach
+    (PM.FirstEdition.Volume1.Star2.star_2_11 (∼ₚ p))
+    (star_3_14 p (∼ₚ p))
+
 /- PM-VERBATIM-BEGIN PM1:✱3·37
 ✱3·37.  ⊢ : p . q . ⊃ . r : ⊃ : p . ∼r . ⊃ . ∼q
 
