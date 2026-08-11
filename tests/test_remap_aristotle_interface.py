@@ -11,7 +11,14 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from remap_aristotle_interface import batch_plan, run_remap, scan_declarations, sha256_bytes
+from remap_aristotle_interface import (
+    RemapError,
+    artifact_audit_records,
+    batch_plan,
+    run_remap,
+    scan_declarations,
+    sha256_bytes,
+)
 
 
 def write_archive(path: Path, members: dict[str, str]) -> None:
@@ -186,11 +193,42 @@ end PM.Local
 
     def test_q300_retry_identity_is_registered_separately_from_initial(self):
         plan = batch_plan(ROOT, "Q300")
-        initial, retry = plan["artifact_audit_records"]
+        records = plan["artifact_audit_records"]
+        by_retry = {record["retry"]: record for record in records}
+        self.assertEqual(len(by_retry), len(records))
+        self.assertTrue({0, 1, 3}.issubset(by_retry))
+        initial = by_retry[0]
+        retry_01 = by_retry[1]
+        retry_03 = by_retry[3]
         self.assertEqual(initial["retry"], 0)
-        self.assertEqual(retry["retry"], 1)
-        self.assertNotEqual(initial["sha256"], retry["sha256"])
-        self.assertEqual(retry["task_id"], "d4a8a41c-f9ab-4006-a39c-878c5c6caf69")
+        self.assertEqual(retry_01["task_id"], "d4a8a41c-f9ab-4006-a39c-878c5c6caf69")
+        self.assertEqual(retry_01["path"], "aristotle/results/Q300-retry-01-final.tar.gz")
+        self.assertEqual(retry_03["task_id"], "c7757d23-f633-47ab-a269-a5f01f72bdc4")
+        self.assertEqual(retry_03["path"], "aristotle/results/Q300-retry-03-final.tar.gz")
+        self.assertEqual(retry_03["sha256"],
+                         "0d38572678f3fb0ba61aaa5d861cf3b643163489d95641d608a49bf84de38b77")
+        self.assertNotEqual(initial["sha256"], retry_01["sha256"])
+        self.assertNotEqual(initial["sha256"], retry_03["sha256"])
+
+    def test_duplicate_registered_archive_path_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            reviews = root / "reviews"
+            reviews.mkdir()
+            payload = {
+                "kind": "pm-aristotle-kernel-remap-artifact-audit-index",
+                "artifacts": [
+                    {"batch": "Q300", "task_id": "initial", "retry": 0,
+                     "path": "aristotle/results/Q300-final.tar.gz", "sha256": "0" * 64},
+                    {"batch": "Q300", "task_id": "duplicate-path", "retry": 3,
+                     "path": "aristotle/results/Q300-final.tar.gz", "sha256": "1" * 64},
+                ],
+            }
+            (reviews / "aristotle-kernel-remap-artifact-index.json").write_text(
+                json.dumps(payload), encoding="utf-8"
+            )
+            with self.assertRaises(RemapError):
+                artifact_audit_records(root, "Q300")
 
     def test_registered_retry_uses_its_own_immutable_digest(self):
         with tempfile.TemporaryDirectory() as directory:
