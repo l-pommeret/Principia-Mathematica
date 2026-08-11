@@ -325,6 +325,51 @@ usually more convenient than either ✱2·05 or ✱2·06.
 ✱3·35.  ⊢ : p . p ⊃ q . ⊃ . q     [✱2·27.Imp]
 PM-VERBATIM-END PM1:✱3·35 -/
 
+/-- PM I (1910), p. 118, ✱3·33.  The printed `Syll.Imp` step is one
+detachment.  In a nonempty real-variable context this is the printed ✱1·11;
+the empty-context branch is the documented ✱1·1 relaxation. -/
+theorem star_3_33 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ⊃ₚ q) ∧ₚ (q ⊃ₚ r)) ⊃ₚ (p ⊃ₚ r)) := by
+  have minor : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r))) :=
+    PM.FirstEdition.Volume1.Star2.star_2_06 p q r
+  have major :
+      ⊢ₚ (((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r))) ⊃ₚ
+            (((p ⊃ₚ q) ∧ₚ (q ⊃ₚ r)) ⊃ₚ (p ⊃ₚ r))) :=
+    star_3_31 (p ⊃ₚ q) (q ⊃ₚ r) (p ⊃ₚ r)
+  match Γ, p, q, r, minor, major with
+  | [], _, _, _, minor, major => exact PM.Derivation.star_1_1 minor major
+  | (τ :: Δ), _, _, _, minor, major =>
+      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) minor major
+
+/-- PM I (1910), p. 118, ✱3·34.  Its one detachment has the same documented
+empty-context ✱1·1 relaxation as ✱3·33. -/
+theorem star_3_34 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((q ⊃ₚ r) ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ r)) := by
+  have minor : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
+    PM.FirstEdition.Volume1.Star2.star_2_05 p q r
+  have major :
+      ⊢ₚ (((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) ⊃ₚ
+            (((q ⊃ₚ r) ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ r))) :=
+    star_3_31 (q ⊃ₚ r) (p ⊃ₚ q) (p ⊃ₚ r)
+  match Γ, p, q, r, minor, major with
+  | [], _, _, _, minor, major => exact PM.Derivation.star_1_1 minor major
+  | (τ :: Δ), _, _, _, minor, major =>
+      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) minor major
+
+/-- PM I (1910), p. 118, ✱3·35.  Its one detachment has the same documented
+empty-context ✱1·1 relaxation as ✱3·33. -/
+theorem star_3_35 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∧ₚ (p ⊃ₚ q)) ⊃ₚ q) := by
+  have minor : ⊢ₚ (p ⊃ₚ ((p ⊃ₚ q) ⊃ₚ q)) :=
+    PM.FirstEdition.Volume1.Star2.star_2_27 p q
+  have major :
+      ⊢ₚ ((p ⊃ₚ ((p ⊃ₚ q) ⊃ₚ q)) ⊃ₚ ((p ∧ₚ (p ⊃ₚ q)) ⊃ₚ q)) :=
+    star_3_31 p (p ⊃ₚ q) q
+  match Γ, p, q, minor, major with
+  | [], _, _, minor, major => exact PM.Derivation.star_1_1 minor major
+  | (τ :: Δ), _, _, minor, major =>
+      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) minor major
+
 /- PM-VERBATIM-BEGIN PM1:✱3·37
 ✱3·37.  ⊢ : p . q . ⊃ . r : ⊃ : p . ∼r . ⊃ . ∼q
 
