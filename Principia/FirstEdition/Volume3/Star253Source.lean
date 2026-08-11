@@ -28,3 +28,6 @@ PM-VERBATIM-END PM3:✱253·15 -/
 /- PM-VERBATIM-BEGIN PM3:✱253·16
 ✱253·16.  ⊢ : P ∈ Ω − ιʻΛ .⊃ . BʻPₛ = Λ . BʻPₛ = P  [✱213·155·158 . ✱250·13]
 PM-VERBATIM-END PM3:✱253·16 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·17
+✱253·17.  ⊢ : P ∈ Ω .⊃ . Pₛ ⌞ DʻPₛ = P ⌞ P⃗;P ⌞ CʻP
+PM-VERBATIM-END PM3:✱253·17 -/
