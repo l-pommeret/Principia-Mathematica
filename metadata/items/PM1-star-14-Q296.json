@@ -1,0 +1,45 @@
+{
+  "batch": "PM1-STAR14-Q296",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "181",
+    "scan_leaves": [203],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 203,
+        "printed_page": 181,
+        "uri": "https://commons.wikimedia.org/w/index.php?title=File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu&page=203",
+        "sha256": "12a57b46d16f08df1de909a28f2cc91553861a1ea5d191922791e050fc0ebabc"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "blocked-interface-only",
+  "items": [
+    {
+      "id": "PM1:✱14·01",
+      "kind": "contextual-definition",
+      "printed": "✱14·01.  [(℩x)(φx)] . ψ(℩x)(φx) .=: (∃b) : φx .≡ₓ. x = b : ψb  Df",
+      "printed_page": 181,
+      "scan_leaf": 203,
+      "lean_path": "Principia/FirstEdition/Volume1/Star14.lean",
+      "declaration": "PM.DescriptionSyntax.Formula.star_14_01",
+      "formal_scope": "Exact contextual reduction target; description is not a term and the target is absent pending Aristotle.",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-awaiting-aristotle-body-and-one-to-one-remap",
+      "printed_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

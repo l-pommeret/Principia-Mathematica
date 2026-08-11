@@ -41,6 +41,9 @@ FOUNDATION_PROFILES = {
         "Principia/Deduction/System.lean",
         "Principia/Deduction/Ordered.lean",
     ),
+    "description-scope-pm1": (
+        "Principia/Syntax/Description.lean",
+    ),
 }
 
 

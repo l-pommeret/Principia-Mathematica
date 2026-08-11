@@ -1,45 +1,52 @@
-# Q296 architecture/source audit — PM I ✱14, descriptions
+# Q296 review — PM I ✱14·01
 
-**Verdict: source route paused at a genuine architecture boundary.** The
-formal locus changes from the ✱13 identity propositions to an incomplete
-symbol: a description is introduced by defining every proposition in which it
-occurs, with an explicitly marked scope. Commons leaf 203 (printed p. 181),
-SHA-256 `12a57b46d16f08df1de909a28f2cc91553861a1ea5d191922791e050fc0ebabc`,
-and PG 78050 agree on the opening definition ✱14·01.
+**Verdict: A — interface-only reduction task.** The exact definition-in-use
+has been collated from first-edition volume I, printed p. 181, scan leaf 203.
+The canonical Commons derivative has SHA-256
+`12a57b46d16f08df1de909a28f2cc91553861a1ea5d191922791e050fc0ebabc`;
+Project Gutenberg 78050 independently witnesses the same wording and
+definition. The PM-VERBATIM block and
+`aristotle/demonstrations/PM1-star-14-01.txt` agree exactly.
 
-No source-only batch is created merely to count ✱14·01. Its exact diplomatic
-transcription must first distinguish the displayed description phrase, its
-scope brackets/dots, and the surrounding proposition in a syntax layer for
-incomplete symbols. Encoding it as a Lean term, native equality/existence, or
-a total description operator would silently change PM's definition-in-use
-discipline.
+## Exact formal scope
 
-Required before a subsequent ✱14 item batch:
+The sole target is the reduction
 
-- an audited scope-carrying description syntax, separate from `Prop`;
-- a representation of the proposition-in-use rather than a term-level choice
-  operator;
-- an exact leaf-203/next-leaf collation of the full ✱14·01 definiens and its
-  bracketed scope.
+`[(℩x)(φx)]. ψ((℩x)(φx))`
 
-Until then, ✱14 is `blocked-architecture-incomplete-symbols-and-scope`; this
-is not a claim of canonical formalization or a reason to relax the printed
-scope notation.
+to
 
-## Reading index beyond the gate
+`(∃b) : (x) : φx ≡ x=b : ψb`.
 
-The source has been collated far enough to establish that the boundary is not
-local to ✱14·01:
+It is represented by
+`PM.DescriptionSyntax.Formula.star_14_01`. The description is never a
+`Term`; the printed bracket is `Formula.descriptionScope`; its condition and
+continuation share an intrinsically typed de Bruijn candidate; and the result
+is `CoreFormula`, in which no description constructor exists. There is no
+additional `φb` conjunct: the target preserves PM's printed definiens rather
+than a merely equivalent modern uniqueness formulation.
 
-| Leaves | Printed pages | Loci witnessed | Architectural consequence |
-| --- | --- | --- | --- |
-| 203–204 | 181–182 | Df ✱14·01–·04; ✱14·18, ·21 | Description scope and existence are defined-in-use. |
-| 205 | 183 | ✱14·202, ·204, ·205, ·28, ·13, ·131 | Later identity laws still contain the incomplete description symbol. |
+The definition is reductional. The accepted Aristotle body must be `rfl` (or
+an auditably identical definitional reduction) and may not cite the existing
+architecture regression lemma `expand_descriptionScope`. The separately
+audited Boolean `DescriptionScopeToy` supplies only a countermodel separating
+narrow and wide non-denoting readings; it is not a proof of ✱14·01 and is not
+present in the Q296 context.
 
-Leaf 204 SHA-256 is
-`23427375b6f708a53ed91a28fb43eed247d732ff4047ee7e88fd779e2a50ad28`;
-leaf 205 SHA-256 is
-`1a8f4bf7870135c6f7047f5f5b6a6ac1fe416f327c28b59766fce3711c3e1a7c`.
-Thus later loci are indexed for future collation but deliberately not
-catalogued as formal PM items while the incomplete-symbol scope gate remains
-unresolved.
+## Interface and promotion boundary
+
+- Canonical architecture CI
+  [31513533839](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31513533839)
+  at commit `94a49e0` kernel-checked `Principia.Syntax.Description`.
+- Q296's generated standalone context is provenance-hashed in
+  `metadata/context_bundles/Q296.json`. Its own isolated CI evidence remains
+  pending until the next consolidated run.
+- The whitelist is empty: only definitional reduction is licensed. No PM
+  theorem, semantic truth table, choice operator, `Classical`, axiom, unsafe
+  declaration, placeholder, or countermodel theorem may occur in the body.
+- A successful remote body remains interface-only. Canonical promotion is
+  blocked until the returned declaration is audited and remapped one-to-one
+  to `PM.DescriptionSyntax.Formula.star_14_01`, followed by online Lean CI.
+
+Thus the former architecture blocker is resolved, but ✱14·01 itself is not
+yet claimed as a canonical theorem.

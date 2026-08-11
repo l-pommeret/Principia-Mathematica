@@ -86,6 +86,22 @@ class ContextBundleTests(unittest.TestCase):
         self.assertIn("inductive Formation", bundle["lean_source"])
         self.assertIn("structure FormedDerivation", bundle["lean_source"])
 
+    def test_description_profile_contains_de_bruijn_scope_without_term_description(self):
+        manifest = {
+            "kind": "pm-constrained-prover-manifest",
+            "foundation_profile": "description-scope-pm1",
+            "context_closure": [],
+            "allowed_pm_items": [],
+        }
+        bundle = build_bundle(manifest, {}, ROOT)
+        self.assertEqual(bundle["profile"], "description-scope-pm1")
+        self.assertIn("inductive Var", bundle["lean_source"])
+        self.assertIn("| descriptionScope :", bundle["lean_source"])
+        term_region = bundle["lean_source"].split("inductive Term", 1)[1].split(
+            "inductive Arguments", 1
+        )[0]
+        self.assertNotIn("description", term_region.lower())
+
     def test_local_architecture_context_is_hashed_without_proof_permission(self):
         manifest = {
             "kind": "pm-constrained-prover-manifest",

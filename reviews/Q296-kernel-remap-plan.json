@@ -1,0 +1,18 @@
+{
+  "kind": "pm-interface-kernel-remap-plan",
+  "batch": "Q296",
+  "archive_sha256": null,
+  "targets": [
+    {
+      "id": "PM1:✱14·01",
+      "source": "PM.DescriptionSyntax.Formula.star_14_01",
+      "canonical": "PM.DescriptionSyntax.Formula.star_14_01",
+      "signature": "theorem star_14_01\n    (vocabulary : DescriptionVocabulary signature sort order)\n    (condition continuation :\n      Formula signature realContext (sort :: apparentContext) order) :\n    expand (.descriptionScope vocabulary condition continuation) =\n      .sometimes vocabulary.existential\n        (CoreFormula.conj vocabulary\n          (CoreFormula.uniquely vocabulary condition.expand)\n          continuation.expand)\n",
+      "insertion_target": true,
+      "signature_sha256": "43a7c86fa106937309f6776f58cef08e05c172334617fc66fa29b5fdba08864c"
+    }
+  ],
+  "canonical_integration_forbidden": true,
+  "requires_one_to_one_kernel_remap": true,
+  "no_local_lean_or_ci_was_run": true
+}

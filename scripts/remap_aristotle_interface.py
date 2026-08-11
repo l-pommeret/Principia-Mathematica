@@ -27,7 +27,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE_AUDIT = ROOT / "reviews/Q228-Q244-aristotle-archive-audit.json"
-SUPPORTED_BATCHES = ("Q228", "Q229", "Q230", "Q259", "Q300")
+SUPPORTED_BATCHES = ("Q228", "Q229", "Q230", "Q259", "Q296", "Q300")
 FORBIDDEN = {
     "sorry": re.compile(r"\bsorry\b"),
     "admit": re.compile(r"\badmit\b"),
@@ -206,10 +206,29 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
         # prompt is nevertheless the exact interface authority for the
         # source header, while metadata gives the intended edition locus.
         prompt_targets = prompt_signatures(root / "aristotle" / f"{batch}.md")
-        item_file = root / "metadata/items/PM1-star-9-Q259.json"
+        declared_targets = set(manifest.get("target_declarations", {}).values())
+        if declared_targets:
+            # The reviewed context may itself contain regression theorems.
+            # They are scaffolding, never remap targets; retain only the exact
+            # declarations named by the manifest's target order.
+            prompt_targets = [
+                target for target in prompt_targets
+                if target["source"] in declared_targets
+            ]
+            if {target["source"] for target in prompt_targets} != declared_targets:
+                raise RemapError(f"prompt/manifest target mismatch for {batch}")
+        item_file = (
+            root / "metadata/items/PM1-star-14-Q296.json"
+            if batch == "Q296"
+            else root / "metadata/items/PM1-star-9-Q259.json"
+        )
         # Q300 is a prerequisite proof rather than a source-backfill batch,
         # so it deliberately has no separate item-registry file yet.
-        item_payload = json.loads(item_file.read_text(encoding="utf-8")) if batch == "Q259" else []
+        item_payload = (
+            json.loads(item_file.read_text(encoding="utf-8"))
+            if batch in {"Q259", "Q296"}
+            else []
+        )
         items = item_payload.get("items", []) if isinstance(item_payload, dict) else item_payload
         if not isinstance(items, list):
             raise RemapError("Q259 item registry has no item list")
@@ -239,7 +258,7 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
                 # This theorem is the artifact to insert.  It is not a
                 # pre-existing dependency, so its present absence cannot be
                 # used to reject a body which otherwise remaps exactly.
-                "insertion_target": batch == "Q300",
+                "insertion_target": batch in {"Q296", "Q300"},
             })
     for target in targets:
         target["signature_sha256"] = sha256_text(target["signature"])
@@ -437,12 +456,12 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
     unmapped = sorted(set(source_by_name) - set(mapped))
     if unmapped:
         report["reasons"].append("unmapped local declarations: " + ", ".join(unmapped))
-    if batch == "Q300":
+    if batch in {"Q296", "Q300"}:
         target_sources = {target["source"] for target in plan["targets"]}
         local_declarations = sorted(set(source_by_name) - target_sources)
         if local_declarations:
             report["reasons"].append(
-                "Q300 forbids archive-local declarations: " + ", ".join(local_declarations)
+                f"{batch} forbids archive-local declarations: " + ", ".join(local_declarations)
             )
         forbidden_kinds = sorted(
             declaration["qualified"] for declaration in declarations
@@ -450,7 +469,7 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
         )
         if forbidden_kinds:
             report["reasons"].append(
-                "Q300 forbids axiom/opaque declarations: " + ", ".join(forbidden_kinds)
+                f"{batch} forbids axiom/opaque declarations: " + ", ".join(forbidden_kinds)
             )
     mapped_records: list[dict[str, Any]] = []
     for source_name, canonical_name in sorted(mapped.items()):

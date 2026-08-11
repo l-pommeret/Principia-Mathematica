@@ -60,6 +60,10 @@ def generate(batch: str, root: Path = ROOT) -> None:
         manifest["interface_syntax"] = spec["interface_syntax"]
     if "local_context_paths" in spec:
         manifest["local_context_paths"] = spec["local_context_paths"]
+    if "source_backfill_required" in spec:
+        manifest["source_backfill_required"] = spec["source_backfill_required"]
+    if "source_backfill_audit" in spec:
+        manifest["source_backfill_audit"] = spec["source_backfill_audit"]
     # Exact audited declaration texts are retained solely to derive future
     # statement-only interfaces when a later batch depends on this prepared
     # target before canonical integration.

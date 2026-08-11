@@ -24,6 +24,19 @@ def write_archive(path: Path, members: dict[str, str]) -> None:
 
 
 class AristotleInterfaceRemapTests(unittest.TestCase):
+    def test_q296_has_exact_one_to_one_insertion_plan(self):
+        plan = batch_plan(ROOT, "Q296")
+        self.assertTrue(plan["requires_one_to_one_kernel_remap"])
+        self.assertTrue(plan["canonical_integration_forbidden"])
+        self.assertEqual(len(plan["targets"]), 1)
+        target = plan["targets"][0]
+        self.assertEqual(target["id"], "PM1:✱14·01")
+        self.assertEqual(
+            target["source"], "PM.DescriptionSyntax.Formula.star_14_01"
+        )
+        self.assertEqual(target["canonical"], target["source"])
+        self.assertTrue(target["insertion_target"])
+
     def test_q228_plan_is_exact_and_non_promotional(self):
         plan = batch_plan(ROOT, "Q228")
         self.assertEqual([target["id"] for target in plan["targets"]], [

@@ -1,0 +1,70 @@
+{
+  "kind": "pm-constrained-prover-batch-manifest",
+  "policy": {
+    "proof_permissions_are_exact_per_target": true,
+    "local_targets_must_precede_use": true,
+    "context_closure_grants_proof_permission": false,
+    "strict": true,
+    "interface_gated": true,
+    "canonical_integration_forbidden": true,
+    "requires_one_to_one_kernel_remap": true
+  },
+  "batch_items": [
+    {
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true,
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
+      },
+      "current_item": "PM1:✱14·01",
+      "proof_permissions": [],
+      "global_conventions": [],
+      "allowed_pm_items": [],
+      "allowed_lean_declarations": {},
+      "local_proof_items": [],
+      "context_closure": [],
+      "context_declarations": {},
+      "context_lean_paths": [],
+      "diagnostics": {
+        "missing_items": [],
+        "non_kernel_checked_items": [],
+        "unresolved_aliases": []
+      },
+      "interface_dependencies": [],
+      "substitutions": []
+    }
+  ],
+  "target_order": [
+    "PM1:✱14·01"
+  ],
+  "target_declarations": {
+    "PM1:✱14·01": "PM.DescriptionSyntax.Formula.star_14_01"
+  },
+  "context_closure": [],
+  "context_declarations": {},
+  "context_lean_paths": [],
+  "proof_permissions": [],
+  "direct_interface_dependencies": [],
+  "interface_dependencies": [],
+  "source_backfill_required": false,
+  "integration_blocked": true,
+  "foundation_profile": "description-scope-pm1",
+  "context_whitespace_policy": "strip-trailing",
+  "source_backfill_audit": {
+    "status": "complete",
+    "basis": "PM-VERBATIM, leaf-203 scan collation, PG78050 witness, and exact reductional definition",
+    "item_ids": [
+      "PM1:✱14·01"
+    ],
+    "demonstration_paths": [
+      "aristotle/demonstrations/PM1-star-14-01.txt"
+    ]
+  },
+  "interface_signature_targets": {
+    "PM1:✱14·01": "namespace PM.DescriptionSyntax.Formula\n\ntheorem star_14_01\n    (vocabulary : DescriptionVocabulary signature sort order)\n    (condition continuation :\n      Formula signature realContext (sort :: apparentContext) order) :\n    expand (.descriptionScope vocabulary condition continuation) =\n      .sometimes vocabulary.existential\n        (CoreFormula.conj vocabulary\n          (CoreFormula.uniquely vocabulary condition.expand)\n          continuation.expand) := by\n  -- The accepted body must be reductional (`rfl`); citing\n  -- `expand_descriptionScope` or any semantic theorem fails the audit.\n\nend PM.DescriptionSyntax.Formula"
+  }
+}

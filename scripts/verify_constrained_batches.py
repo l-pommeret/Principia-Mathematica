@@ -71,6 +71,10 @@ def verify(root: Path = ROOT) -> int:
             manifest["interface_syntax"] = spec["interface_syntax"]
         if "local_context_paths" in spec:
             manifest["local_context_paths"] = spec["local_context_paths"]
+        if "source_backfill_required" in spec:
+            manifest["source_backfill_required"] = spec["source_backfill_required"]
+        if "source_backfill_audit" in spec:
+            manifest["source_backfill_audit"] = spec["source_backfill_audit"]
         manifest["interface_signature_targets"] = lean
         manifest_path = root / "aristotle/manifests" / f"{stem}.json"
         actual_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))

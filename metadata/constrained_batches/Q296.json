@@ -1,0 +1,30 @@
+{
+  "kind": "pm-constrained-batch-spec",
+  "batch": "Q296",
+  "edition": "first",
+  "volume": 1,
+  "strict": true,
+  "interface_gated": true,
+  "foundation_profile": "description-scope-pm1",
+  "context_whitespace_policy": "strip-trailing",
+  "source_backfill_required": false,
+  "source_backfill_audit": {
+    "status": "complete",
+    "basis": "PM-VERBATIM, leaf-203 scan collation, PG78050 witness, and exact reductional definition",
+    "item_ids": ["PM1:✱14·01"],
+    "demonstration_paths": ["aristotle/demonstrations/PM1-star-14-01.txt"]
+  },
+  "prompt_path": "aristotle/Q296.md",
+  "generation_status": "ready",
+  "items": [
+    {
+      "id": "PM1:✱14·01",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-14-01.txt",
+      "declaration": "PM.DescriptionSyntax.Formula.star_14_01",
+      "lean_target": "namespace PM.DescriptionSyntax.Formula\n\ntheorem star_14_01\n    (vocabulary : DescriptionVocabulary signature sort order)\n    (condition continuation :\n      Formula signature realContext (sort :: apparentContext) order) :\n    expand (.descriptionScope vocabulary condition continuation) =\n      .sometimes vocabulary.existential\n        (CoreFormula.conj vocabulary\n          (CoreFormula.uniquely vocabulary condition.expand)\n          continuation.expand) := by\n  -- The accepted body must be reductional (`rfl`); citing\n  -- `expand_descriptionScope` or any semantic theorem fails the audit.\n\nend PM.DescriptionSyntax.Formula",
+      "global_conventions": [],
+      "context_dependencies": [],
+      "documented_relaxations": []
+    }
+  ]
+}

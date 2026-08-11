@@ -2276,6 +2276,36 @@
       "aristotle_request_path": "aristotle/Q259.md",
       "aristotle_request_sha256": "680b7915bb54dc99f906a3ad277a4083daddd655d5f976fb7bf1e3b092c51572"
     },
+    "Q296": {
+      "canonical_ids": [
+        "PM1:✱14·01"
+      ],
+      "source": "PM volume I, first edition, p. 181, leaf 203",
+      "prompt_path": "aristotle/Q296.md",
+      "audit_path": "reviews/Q296-review.md",
+      "audit_status": "A",
+      "audit_label": "A-interface-only",
+      "lean_scope": "exact contextual reduction PM1 ✱14·01 in the typed de Bruijn description interface",
+      "depends_on": [],
+      "interface_only": true,
+      "source_backfill_required": false,
+      "integration_status": "blocked-awaiting-aristotle-body-and-one-to-one-canonical-remap",
+      "canonical_integration_forbidden": true,
+      "requires_one_to_one_kernel_remap": true,
+      "parallel_group": "STAR14-INTERFACE",
+      "aristotle_status": "not-submitted",
+      "architecture_evidence": {
+        "commit": "94a49e0",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31513533839",
+        "conclusion": "success",
+        "scope": "canonical description architecture; Q296 isolated context CI pending"
+      },
+      "context_sha256": "9e8aaa9bba962c719dbfb0452c87ec8c323c6be41bbdb7eaa906f72228025f46",
+      "manifest_sha256": "a8197801228dd330024ed9a0ddef6becad0819af5d1db56c75855d66b6242cc7",
+      "submission_gate": "pending isolated-context CI; source collation and exact target complete",
+      "aristotle_request_path": "aristotle/Q296.md",
+      "aristotle_request_sha256": "25518e16e629e16cf89048a75604854e06ed5590f350f5d1332183f458ce482f"
+    },
     "Q300": {
       "canonical_ids": [
         "PM1:✱9·21"
