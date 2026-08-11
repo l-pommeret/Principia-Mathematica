@@ -72,7 +72,10 @@ def closedFirstOrderAlphaRenaming : Apparent.Renaming [] [] :=
   induction body with
   | constant name => rfl
   | real realVariable => rfl
-  | bound boundVariable => cases boundVariable <;> rfl
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => rfl
+      | succ emptyBoundVariable => exact nomatch emptyBoundVariable
   | neg proposition ih =>
       change Apparent.neg
         (Apparent.rename (Apparent.liftRenaming closedFirstOrderAlphaRenaming) proposition) =

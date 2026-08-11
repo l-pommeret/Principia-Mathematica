@@ -196,11 +196,12 @@ def openRealHead : Apparent Γ (.elementaryProposition :: Δ) →
   | real realVariable => cases realVariable <;> rfl
   | bound boundVariable => rfl
   | neg proposition ih =>
-      change .neg (openRealHead (abstractRealHead proposition)) = .neg proposition
+      change Apparent.neg (openRealHead (abstractRealHead proposition)) =
+        Apparent.neg proposition
       rw [ih]
   | disj left right ihLeft ihRight =>
-      change .disj (openRealHead (abstractRealHead left))
-        (openRealHead (abstractRealHead right)) = .disj left right
+      change Apparent.disj (openRealHead (abstractRealHead left))
+        (openRealHead (abstractRealHead right)) = Apparent.disj left right
       rw [ihLeft, ihRight]
 
 def significant (v : BoundVar Δ .elementaryProposition) : Apparent Γ Δ → Bool
@@ -620,7 +621,10 @@ def closedFirstOrderAlphaRenaming : Apparent.Renaming [] [] :=
   induction body with
   | constant name => rfl
   | real realVariable => rfl
-  | bound boundVariable => cases boundVariable <;> rfl
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => rfl
+      | succ emptyBoundVariable => exact nomatch emptyBoundVariable
   | neg proposition ih =>
       change Apparent.neg
         (Apparent.rename (Apparent.liftRenaming closedFirstOrderAlphaRenaming) proposition) =

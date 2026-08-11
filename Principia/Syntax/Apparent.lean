@@ -222,11 +222,12 @@ assigned 1→2 instance of ✱9·13.  It is structural and capture-free. -/
   | real realVariable => cases realVariable <;> rfl
   | bound boundVariable => rfl
   | neg proposition ih =>
-      change .neg (openRealHead (abstractRealHead proposition)) = .neg proposition
+      change Apparent.neg (openRealHead (abstractRealHead proposition)) =
+        Apparent.neg proposition
       rw [ih]
   | disj left right ihLeft ihRight =>
-      change .disj (openRealHead (abstractRealHead left))
-        (openRealHead (abstractRealHead right)) = .disj left right
+      change Apparent.disj (openRealHead (abstractRealHead left))
+        (openRealHead (abstractRealHead right)) = Apparent.disj left right
       rw [ihLeft, ihRight]
 
 /-- Decidable structural occurrence of a free apparent variable. -/
