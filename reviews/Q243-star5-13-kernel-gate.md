@@ -1,6 +1,6 @@
 # Gate kernel ✱5·13 — PM I, p. 129
 
-Verdict: **un seul candidat minimal, prêt pour CI distante** :
+Verdict: **un seul candidat minimal, kernel-checké dans l'édition canonique** :
 `PM1:✱5·13`. Le corps de
 `Principia/FirstEdition/Volume1/Part1/SectionA/Star5Kernel.lean` applique
 ✱2·521 à `p,q`, puis ✱2·54 à `(p ⊃ q),(q ⊃ p)`. Il n'emploie aucun axiome,
@@ -23,7 +23,7 @@ incompatibilité de citations imprimées, non une simple omission d'inférence.
 ✱5·14 reste hors de ce lot minimal : sa chaîne `Simp . Transp . ✱2·21`
 requiert une reconstruction séparée de ces alias.
 
-Ce statut est volontairement `awaiting-ci` : aucune commande Lean locale n'a
-été exécutée. La prochaine action autorisée est le build/kernel-check distant
-du seul module `Star5Kernel`; après succès immuable, mettre uniquement
-✱5·13 à `kernel-checked` avec le run CI.
+Le module a été compilé dans le build canonique distant au commit
+`9cc9628f02f0efc06138463480c66c04c8d455d9`, run CI `31545695849`, conclusion
+`success`. Aucune commande Lean locale n'a été exécutée. Seul ✱5·13 est donc
+promu `kernel-checked`; les autres propositions de Q243 restent préparées.

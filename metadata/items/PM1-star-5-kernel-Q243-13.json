@@ -20,8 +20,8 @@
       "declaration": "PM.FirstEdition.Volume1.Star5.star_5_13",
       "formal_scope": "(p⊃q)∨(q⊃p), over an elementary real-variable context",
       "source_status": "scan-hash-recorded-and-WS-citation-corrected",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-remote-kernel-check",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked-relaxed-printed-gap",
       "printed_dependencies": ["PM1:✱2·521"],
       "lean_dependencies": [
         "PM.Derivation.star_1_1",
@@ -39,5 +39,9 @@
       }
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "9cc9628f02f0efc06138463480c66c04c8d455d9",
+    "run": "31545695849",
+    "conclusion": "success"
+  }
 }
