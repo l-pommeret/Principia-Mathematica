@@ -560,6 +560,29 @@ def aristotle_continue(qid_arg: str, prompt_file: Path) -> None:
     emit({"ok": True, "qid": qid, "project_id": pid, "prompt_file": str(prompt_file), "latest": after})
 
 
+def aristotle_continue_ephemeral(qid_arg: str, prompt_file: Path) -> None:
+    """Continue one known terminal project without mutating the manifest."""
+    require_api_key()
+    qid = canonical_qid(qid_arg)
+    pid = project_id(qid)
+    if not prompt_file.is_file():
+        raise CampaignError(f"prompt file not found: {prompt_file}")
+    content = prompt_file.read_text(encoding="utf-8").strip()
+    if not content:
+        raise CampaignError(f"prompt file is empty: {prompt_file}")
+    before = remote_status(qid, pid)
+    if before.get("status") in ACTIVE_TASKS:
+        raise CampaignError(f"refusing duplicate continuation: {qid} is already active")
+    if before.get("status") in {"ERROR", "NO_PROJECT", "NO_TASKS"}:
+        raise CampaignError(f"cannot establish terminal state for {qid}: {before.get('status')}")
+    run([*ARISTOTLE, "continue", pid, content, "--mode", "instruct"])
+    after = remote_status(qid, pid)
+    if after.get("status") not in ACTIVE_TASKS:
+        raise CampaignError(f"Aristotle created no active continuation for {qid}")
+    emit({"ok": True, "ephemeral": True, "qid": qid, "project_id": pid,
+          "prompt_file": str(prompt_file), "latest": after})
+
+
 def aristotle_download(qid_arg: str, destination: Path) -> None:
     require_api_key()
     qid = canonical_qid(qid_arg)
@@ -676,12 +699,14 @@ def ci_latest() -> None:
     emit(latest_ci())
 
 
-def ci_run(ref: str) -> None:
-    """Dispatch the repository's manual Lean checkpoint through the wrapper."""
+def ci_run(ref: str, workflow: str = "lean.yml") -> None:
+    """Dispatch an allow-listed manual workflow through the campaign wrapper."""
     if ref != "main":
         raise CampaignError("CI dispatch is restricted to main")
-    completed = run(["gh", "workflow", "run", "lean.yml", "--ref", ref])
-    emit({"ok": True, "workflow": "lean.yml", "ref": ref,
+    if workflow not in {"lean.yml", "edition-preview.yml"}:
+        raise CampaignError(f"unsupported workflow: {workflow}")
+    completed = run(["gh", "workflow", "run", workflow, "--ref", ref])
+    emit({"ok": True, "workflow": workflow, "ref": ref,
           "dispatch": completed.stdout.strip()})
 
 
@@ -755,6 +780,9 @@ def parser() -> argparse.ArgumentParser:
     continued = aristotle_commands.add_parser("continue")
     continued.add_argument("qid")
     continued.add_argument("prompt_file", type=Path)
+    ephemeral = aristotle_commands.add_parser("continue-ephemeral")
+    ephemeral.add_argument("qid")
+    ephemeral.add_argument("prompt_file", type=Path)
     downloaded = aristotle_commands.add_parser("download")
     downloaded.add_argument("qid")
     downloaded.add_argument("destination", type=Path)
@@ -767,6 +795,7 @@ def parser() -> argparse.ArgumentParser:
     ci_commands.add_parser("latest")
     ci_run_parser = ci_commands.add_parser("run")
     ci_run_parser.add_argument("--ref", default="main")
+    ci_run_parser.add_argument("--workflow", default="lean.yml")
     ci_cancel_parser = ci_commands.add_parser("cancel")
     ci_cancel_parser.add_argument("run_id")
     view = ci_commands.add_parser("view")
@@ -802,6 +831,8 @@ def main(argv: list[str] | None = None) -> int:
             aristotle_submit(args.qid, args.request_file)
         elif (args.group, args.command) == ("aristotle", "continue"):
             aristotle_continue(args.qid, args.prompt_file)
+        elif (args.group, args.command) == ("aristotle", "continue-ephemeral"):
+            aristotle_continue_ephemeral(args.qid, args.prompt_file)
         elif (args.group, args.command) == ("aristotle", "download"):
             aristotle_download(args.qid, args.destination)
         elif (args.group, args.command) == ("aristotle", "schedule"):
@@ -809,7 +840,7 @@ def main(argv: list[str] | None = None) -> int:
         elif (args.group, args.command) == ("ci", "latest"):
             ci_latest()
         elif (args.group, args.command) == ("ci", "run"):
-            ci_run(args.ref)
+            ci_run(args.ref, args.workflow)
         elif (args.group, args.command) == ("ci", "cancel"):
             ci_cancel(args.run_id)
         elif (args.group, args.command) == ("ci", "view"):
