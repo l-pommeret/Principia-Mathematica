@@ -9,7 +9,7 @@ from pathlib import Path
 
 from pm_aristotle_prompt import render_batch_prompt
 from pm_constraint_manifest import compile_batch_manifest, load_item_registry
-from pm_context_bundle import ROOT, build_bundle
+from pm_context_bundle import ROOT, build_bundle, preserve_historical_container_hashes
 from pm_lean_target import render_elementary_assertion
 from pm_proof_skeleton import apply_reference_overrides, parse_demonstration
 
@@ -48,15 +48,21 @@ def generate(batch: str, root: Path = ROOT) -> None:
     )
     if "foundation_profile" in spec:
         manifest["foundation_profile"] = spec["foundation_profile"]
+    if "context_whitespace_policy" in spec:
+        manifest["context_whitespace_policy"] = spec["context_whitespace_policy"]
     manifest_path = root / "aristotle/manifests" / f"{batch}.json"
     manifest_path.write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     bundle = build_bundle(manifest, registry, root)
+    metadata_path = root / "metadata/context_bundles" / f"{batch}.json"
+    if metadata_path.is_file():
+        recorded = json.loads(metadata_path.read_text(encoding="utf-8"))
+        preserve_historical_container_hashes(recorded, bundle)
     source = bundle.pop("lean_source")
     (root / "aristotle/contexts" / f"{batch}.lean").write_text(source, encoding="utf-8")
     bundle["ci_evidence"] = {"commit": "pending", "run": "pending", "conclusion": "pending"}
-    (root / "metadata/context_bundles" / f"{batch}.json").write_text(
+    metadata_path.write_text(
         json.dumps(bundle, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     prompt = render_batch_prompt(

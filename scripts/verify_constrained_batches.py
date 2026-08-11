@@ -59,6 +59,8 @@ def verify(root: Path = ROOT) -> int:
         )
         if "foundation_profile" in spec:
             manifest["foundation_profile"] = spec["foundation_profile"]
+        if "context_whitespace_policy" in spec:
+            manifest["context_whitespace_policy"] = spec["context_whitespace_policy"]
         manifest_path = root / "aristotle/manifests" / f"{stem}.json"
         actual_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         if actual_manifest != manifest:

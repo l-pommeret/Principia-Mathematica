@@ -53,9 +53,14 @@ def preserve_historical_container_hashes(recorded: dict, rebuilt: dict) -> None:
             new["source_sha256"] = old.get("source_sha256")
 
 
-def clean_foundation(source: str) -> str:
+def clean_foundation(source: str, *, strip_trailing_whitespace: bool = False) -> str:
     clean = strip_lean_comments(source)
     clean = re.sub(r"(?m)^import\s+[^\n]+\n", "", clean)
+    if strip_trailing_whitespace:
+        # Removing an indented doc comment can leave its indentation behind on
+        # an otherwise blank line.  A manifest may opt into this canonical
+        # representation without rewriting historical context bundles.
+        clean = "\n".join(line.rstrip() for line in clean.splitlines())
     return re.sub(r"\n{3,}", "\n\n", clean).strip() + "\n"
 
 
@@ -86,11 +91,16 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
     if profile not in FOUNDATION_PROFILES:
         raise BundleError(f"unknown foundation profile {profile}")
     foundation = FOUNDATION_PROFILES[profile]
+    whitespace_policy = manifest.get("context_whitespace_policy", "preserve")
+    if whitespace_policy not in {"preserve", "strip-trailing"}:
+        raise BundleError(f"unknown context whitespace policy {whitespace_policy!r}")
     foundation_paths = set(foundation)
     for relative in foundation:
         path = root / relative
         raw = path.read_text(encoding="utf-8")
-        clean = clean_foundation(raw)
+        clean = clean_foundation(
+            raw, strip_trailing_whitespace=whitespace_policy == "strip-trailing"
+        )
         chunks.append(f"-- PM-CONTEXT-FOUNDATION {relative}\n{clean}")
         sources.append({
             "kind": "foundation",

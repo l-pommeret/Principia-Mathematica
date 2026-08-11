@@ -3,6 +3,7 @@
   "generation_status": "ready",
   "volume": 1,
   "foundation_profile": "elementary-pm1",
+  "context_whitespace_policy": "strip-trailing",
   "prompt_path": "aristotle/Q227.md",
   "items": [
     {"id":"PM1:✱4·01","demonstration_path":"aristotle/demonstrations/PM1-star-4-01.txt","declaration":"PM.Elementary.equiv","context_dependencies":["PM1:✱3·01"],"lean_target":"namespace PM.Elementary\n\n/-- PM I (1910), p. 120, ✱4·01: equivalence is an object-language abbreviation. -/\ndef equiv (p q : PM.Elementary Γ) : PM.Elementary Γ :=\n  (p ⊃ₚ q) ∧ₚ (q ⊃ₚ p)\ninfix:53 \" ≡ₚ \" => equiv\n\nend PM.Elementary"},
