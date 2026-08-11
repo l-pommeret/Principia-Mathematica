@@ -1044,8 +1044,8 @@
       "lean_scope": "exact PM1 ✱3·44 through ✱3·48 selected sequence",
       "constraint_manifest_path": "aristotle/manifests/Q226.json",
       "isolated_context_path": "aristotle/contexts/Q226.lean",
-      "context_validation": "deterministic-static-verifiers-passed",
-      "reconstruction_classification": "kernel-checked-relaxed-printed-gaps-awaiting-ci",
+      "context_validation": "remote-kernel-checked",
+      "reconstruction_classification": "kernel-checked-relaxed-printed-gaps",
       "strict": false,
       "depends_on": [
         "PM1:✱1·01",
@@ -1067,8 +1067,8 @@
         "PM1:✱3·34"
       ],
       "parallel_group": "STAR3-WAVE-2A",
-      "aristotle_status": "complete-awaiting-ci",
-      "aristotle_task_id": "5452ea11-fb0d-4967-a7ea-fe6e4a8e52f7",
+      "aristotle_status": "submitted",
+      "aristotle_task_id": "2d3f6600-9090-4c88-98d9-eda492778b0f",
       "aristotle_latest_task_id": "2d3f6600-9090-4c88-98d9-eda492778b0f",
       "aristotle_latest_task_status": "IN_PROGRESS",
       "aristotle_remote_status": "IN_PROGRESS",
@@ -1076,15 +1076,37 @@
       "aristotle_request_path": "aristotle/Q226.md",
       "aristotle_request_sha256": "c27fd6bea401f0804a915ade90cbfdb01292a53e741c9fdace67eedd2f2428a2",
       "aristotle_latest_task_name": "# Q226 authorized final cor...",
-      "aristotle_latest_task_created": "in progress",
+      "aristotle_latest_task_created": "18 mins ago",
       "aristotle_followup_prompt": "aristotle/followups/Q226-retry-06.md",
       "aristotle_followup_prompt_sha256": "61ec6885d8a5daf3062c193fb1c475db7a6c55cb71da72946d3fb5458b69075e",
       "aristotle_archive_path": "aristotle/results/Q226-retry-05-final.tar.gz",
       "aristotle_archive_sha256": "fb6d15ca745a031b7c9f95b7285c609acd694da0f618357e4ce64435661259a6",
-      "integration_status": "awaiting-remote-kernel-check",
+      "integration_status": "kernel-checked-relaxed-printed-gaps",
+      "context_ci_evidence": {
+        "commit": "fcfe6f5285732f672241281f1ff73f15477b9184",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31487053480",
+        "conclusion": "success"
+      },
+      "integration_ci_evidence": {
+        "commit": "fcfe6f5285732f672241281f1ff73f15477b9184",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31487053480",
+        "conclusion": "success"
+      },
       "historical_gaps": {
-        "implicit_exportation": {"item":"PM1:✱3·45","added":"PM1:✱3·3","status":"documented-relaxation"},
-        "equivalence_packaging": {"item":"PM1:✱3·47","added":"PM1:✱3·2","branches":["Γ=[]","Γ≠[]"],"status":"documented-relaxation"}
+        "implicit_exportation": {
+          "item": "PM1:✱3·45",
+          "added": "PM1:✱3·3",
+          "status": "documented-relaxation"
+        },
+        "equivalence_packaging": {
+          "item": "PM1:✱3·47",
+          "added": "PM1:✱3·2",
+          "branches": [
+            "Γ=[]",
+            "Γ≠[]"
+          ],
+          "status": "documented-relaxation"
+        }
       }
     },
     "Q227": {

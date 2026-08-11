@@ -2521,7 +2521,7 @@
     },
     {
       "id": "PM1-ANOM-Q226-CONTEXT-POLYMORPHISM-GAP",
-      "category": "context-polymorphism-gap",
+      "category": "incomplete-printed-citation/equivalence-packaging-gap",
       "pm_locus": {
         "volume": 1,
         "printed_pages": [
@@ -2543,7 +2543,7 @@
         "PM1:✱3·03",
         "PM1:✱2·83"
       ],
-      "corrected_or_added_reading": "No correction to PM: the polymorphic Lean declaration also quantifies over Γ = []. Add exactly ✱3·2 only in that empty-context branch; do not replace the printed ✱3·03 real-variable branch.",
+      "corrected_or_added_reading": "No correction to PM: the generic Lean packaging needs exactly ✱3·2 in both Γ branches. Preserve ✱3·03 in the printed real-variable branch; do not add any other permission.",
       "canonical_witness_evidence": {
         "canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/141",
         "scan_leaf": 141,
@@ -2561,38 +2561,40 @@
         "batches": [
           "Q226"
         ],
-        "ast_effect": "None; the printed AST and its ✱3·03 citation are unchanged. The relaxation concerns only the extra empty-context branch introduced by the generic Lean scope."
+        "ast_effect": "None; the printed AST and its ✱3·03 citation are unchanged. The relaxation concerns only generic equivalence packaging in the Lean reconstruction."
       },
       "strict_audit_status": "retry-01 archive `aristotle/results/Q226-retry-01-final.tar.gz` (SHA-256 prefix b7c0a27f) is rejected and unintegrated: ✱3·47 lacks the Fact/✱3·45 result while ✱3·03 is unavailable at Γ = []; the delivered PMContext.lean also retains inherited ✱1·5/✱1·6 usages, so literal prompt-source policy fails despite clean target Q226.lean/obstruction files.",
       "minimal_relaxation": [
-        "PM1:✱3·2 (Γ = [] branch only)"
+        "PM1:✱3·2 (both Γ = [] and Γ ≠ [] packaging branches)"
       ],
       "strict": false,
       "relaxation_use": [
         {
           "id": "PM1:✱3·2",
-          "uses": 1,
+          "uses": 3,
           "target": "PM1:✱3·47",
-          "purpose": "empty-context branch only; ✱3·03 remains required for the printed real-variable branch"
+          "purpose": "equivalence packaging in both Γ branches; ✱3·03 remains required for the printed real-variable branch"
         }
       ],
       "lean_impact": {
-        "kind": "terminal-strict-audit-rejected",
-        "status": "not-integrated",
-        "archive": "aristotle/results/Q226-retry-01-final.tar.gz",
-        "archive_sha256_prefix": "b7c0a27f",
-        "hygiene": "target Q226.lean and obstruction are clean; delivered PMContext.lean inherits PM.Derivation.star_1_5/_1_6, so literal prompt-source policy fails"
+        "kind": "documented-relaxed-equivalence-packaging",
+        "status": "integrated-kernel-checked",
+        "archive": "aristotle/results/Q226-retry-05-final.tar.gz",
+        "archive_sha256": "fb6d15ca745a031b7c9f95b7285c609acd694da0f618357e4ce64435661259a6",
+        "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31487053480",
+        "hygiene": "retry-05 delivered sources contain no direct PM.Derivation.star_1_5/_1_6, syllRuleQ220, sorry, admit, unsafe, or axiom declaration"
       },
       "review_provenance": [
         "reviews/Q226-review.md",
         "aristotle/manifests/Q226.json",
-        "aristotle/results/Q226-retry-01-final.tar.gz"
+        "aristotle/results/Q226-retry-01-final.tar.gz",
+        "aristotle/results/Q226-retry-05-final.tar.gz"
       ],
-      "resolution_status": "strict-rejected-awaiting-scope-limited-relaxed-continuation"
+      "resolution_status": "resolved-documented-relaxation-kernel-checked"
     },
     {
       "id": "PM1-ANOM-Q226-IMPLICIT-EXPORTATION-GAP",
-      "category": "incomplete-printed-citation",
+      "category": "incomplete-printed-inference/implicit-exportation-gap",
       "pm_locus": {
         "volume": 1,
         "printed_pages": [
@@ -2649,13 +2651,16 @@
       ],
       "lean_impact": {
         "kind": "documented-relaxed-exportation",
-        "status": "not-integrated"
+        "status": "integrated-kernel-checked",
+        "archive": "aristotle/results/Q226-retry-05-final.tar.gz",
+        "archive_sha256": "fb6d15ca745a031b7c9f95b7285c609acd694da0f618357e4ce64435661259a6",
+        "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31487053480"
       },
       "review_provenance": [
         "reviews/Q226-review.md",
         "aristotle/manifests/Q226.json"
       ],
-      "resolution_status": "authorized-for-scope-limited-clean-retry"
+      "resolution_status": "resolved-documented-relaxation-kernel-checked"
     },
     {
       "id": "PM1-ANOM-Q226-RETRY02-FORBIDDEN-OUTPUT",
