@@ -63,3 +63,19 @@ PM-VERBATIM-END PM3:✱251·122 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·13
 ✱251·13.  ⊢ : P ∈ Bord . z ∼ ε CʻP .≡ . P ↦ z ∈ Bord
 PM-VERBATIM-END PM3:✱251·13 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·131
+✱251·131.  ⊢ : P ∈ Ω . z ∼ ε CʻP .≡ . P ↦ z ∈ Ω  [✱204·51 . ✱251·13]
+PM-VERBATIM-END PM3:✱251·131 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·132
+✱251·132.  ⊢ : α ∈ NO .≡ . α + i ∈ NO
+PM-VERBATIM-END PM3:✱251·132 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·14
+✱251·14.  ⊢ : P ∈ Bord . z ∼ ε CʻP .≡ . z ↤ P ∈ Bord
+PM-VERBATIM-END PM3:✱251·14 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·141
+✱251·141.  ⊢ : P ∈ Ω . z ∼ ε CʻP .≡ . z ↤ P ∈ Ω  [✱204·51 . ✱251·14]
+PM-VERBATIM-END PM3:✱251·141 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·142
+✱251·142.  ⊢ : α ∈ NO .≡ . i + α ∈ NO  [Proof as in ✱251·132]
+PM-VERBATIM-END PM3:✱251·142 -/
