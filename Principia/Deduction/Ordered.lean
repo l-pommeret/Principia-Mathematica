@@ -21,8 +21,8 @@ inductive OrderedDerivation (rules : OrderedRuleBook Γ order) :
     OrderedFormula Γ order → Prop where
   | primitive {p : OrderedFormula Γ order} : rules.Primitive p →
       OrderedDerivation rules p
-  | detach {p q : OrderedFormula Γ order} :
-      OrderedDerivation rules p → OrderedDerivation rules (p ⊃ₒ q) →
+  | detach {p q : OrderedFormula Γ order} (scope : OrderedDisjunctionScope order) :
+      OrderedDerivation rules p → OrderedDerivation rules (OrderedFormula.scopedImp scope p q) →
         OrderedDerivation rules q
   | elementary {p : Elementary Γ} : Derivation p →
       OrderedDerivation rules (.elementary p)

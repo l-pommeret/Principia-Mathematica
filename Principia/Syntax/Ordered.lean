@@ -11,21 +11,7 @@ no object proposition is a Lean `Prop`.  The order-zero embedding is
 conservative and has a partial eraser back to `Elementary`.
 -/
 
-inductive OrderedFormula (Γ : RealContext) : Nat → Type where
-  | elementary : Elementary Γ → OrderedFormula Γ 0
-  | firstOrder : FirstOrder Γ [] → OrderedFormula Γ 1
-  | neg : OrderedFormula Γ order → OrderedFormula Γ order
-  | disj : OrderedFormula Γ order → OrderedFormula Γ order → OrderedFormula Γ order
-
 namespace OrderedFormula
-
-prefix:max "∼ₒ" => neg
-infixl:55 " ∨ₒ " => disj
-
-def imp (p q : OrderedFormula Γ order) : OrderedFormula Γ order :=
-  (∼ₒ p) ∨ₒ q
-
-infixr:54 " ⊃ₒ " => imp
 
 /-- The six printed scope cases of ✱9·03–·08, plus same assigned first order
 for the analogues of ✱1.  A caller must choose one; there is no unindexed
@@ -39,14 +25,44 @@ inductive FirstOrderDisjunctionScope where
   | universalLeftExistential
   | existentialLeftUniversal
 
+end OrderedFormula
+
+/-- A disjunction at an assigned order is available only through its audited
+scope witness. The elementary and first-order cases are separate on purpose:
+there is no default cross-order connective. -/
+inductive OrderedDisjunctionScope : Nat → Type where
+  | elementary : OrderedDisjunctionScope 0
+  | firstOrder : OrderedFormula.FirstOrderDisjunctionScope →
+      OrderedDisjunctionScope 1
+
+inductive OrderedFormula (Γ : RealContext) : Nat → Type where
+  | elementary : Elementary Γ → OrderedFormula Γ 0
+  | firstOrder : FirstOrder Γ [] → OrderedFormula Γ 1
+  | neg : OrderedFormula Γ order → OrderedFormula Γ order
+  | disj : OrderedDisjunctionScope order → OrderedFormula Γ order →
+      OrderedFormula Γ order → OrderedFormula Γ order
+
+namespace OrderedFormula
+
+prefix:max "∼ₒ" => neg
+
+/-- Scope-certified disjunction at an assigned order. -/
+def scopedDisj (scope : OrderedDisjunctionScope order)
+    (left right : OrderedFormula Γ order) : OrderedFormula Γ order :=
+  .disj scope left right
+
+def scopedImp (scope : OrderedDisjunctionScope order)
+    (p q : OrderedFormula Γ order) : OrderedFormula Γ order :=
+  scopedDisj scope (∼ₒ p) q
+
 /-- Scope-labelled first-order disjunction.  The label is the audit hook to
 the relevant one of ✱9·03–·08 (or to a proved same-order analogue). -/
 def scopedFirstOrderDisj (scope : FirstOrderDisjunctionScope)
     (left right : OrderedFormula Γ 1) : OrderedFormula Γ 1 :=
-  .disj left right
+  scopedDisj (.firstOrder scope) left right
 
 def firstImp (left right : OrderedFormula Γ 1) : OrderedFormula Γ 1 :=
-  scopedFirstOrderDisj .sameAssignedOrder (∼ₒ left) right
+  scopedImp (.firstOrder .sameAssignedOrder) left right
 
 def always (body : Apparent Γ [.elementaryProposition]) : OrderedFormula Γ 1 :=
   .firstOrder (FirstOrder.always body)
@@ -60,10 +76,11 @@ def eraseElementary? : OrderedFormula Γ order → Option (Elementary Γ)
   | .elementary p => some p
   | .firstOrder _ => none
   | .neg p => (eraseElementary? p).map .neg
-  | .disj p q => do
+  | .disj .elementary p q => do
       let p ← eraseElementary? p
       let q ← eraseElementary? q
       pure (.disj p q)
+  | .disj (.firstOrder _) _ _ => none
 
 @[simp] theorem erase_embedElementary (p : Elementary Γ) :
     eraseElementary? (embedElementary p) = some p := rfl
