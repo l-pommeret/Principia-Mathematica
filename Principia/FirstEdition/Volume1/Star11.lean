@@ -30,3 +30,21 @@ PM-VERBATIM-END PM1:✱11·2 -/
 /- PM-VERBATIM-BEGIN PM1:✱11·3
 ✱11·3.  ⊢ : .p .⊃ .(x, y).φ(x, y) .≡ : (x, y) : p .⊃ .φ(x, y)
 PM-VERBATIM-END PM1:✱11·3 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·07
+✱11·07.  “Whatever possible argument x may be, φ(x, y) is true whatever
+possible argument y may be” implies the corresponding statement with x and y
+interchanged.  Pp.
+PM-VERBATIM-END PM1:✱11·07 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·12
+✱11·12.  ⊢ : .(x, y).p∨φ(x, y) .⊃ : p .∨ .(x, y).φ(x, y)
+Dem.  By ✱10·12, ✱10·11·27, and ✱10·12, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱11·12 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·13
+✱11·13.  If φ(x̂, ŷ), ψ(x̂, ŷ) take their first and second arguments respectively
+of the same type, and we have “⊢.φ(x, y)” and “⊢.ψ(x, y),” we shall have
+“⊢.φ(x, y).ψ(x, y).”  [Proof as in ✱10·13]
+PM-VERBATIM-END PM1:✱11·13 -/
+/- PM-VERBATIM-BEGIN PM1:✱11·14
+✱11·14.  ⊢ : .(x, y).φ(x, y) : (x, y).ψ(x, y) .⊃ .φ(z, w).ψ(z, w)
+Dem.  By two uses of ✱10·14, ⊢ . Prop.
+PM-VERBATIM-END PM1:✱11·14 -/
