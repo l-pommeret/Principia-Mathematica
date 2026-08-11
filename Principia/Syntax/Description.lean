@@ -8,7 +8,7 @@ constructor of `Formula`, and binds the candidate used by both the condition
 and the continuation.  Consequently an occurrence of `(℩x)(φx)` cannot escape
 its printed propositional scope as a denoting object.
 
-`Sort` remains a parameter: this file does not collapse PM's typical
+`ObjectSort` remains a parameter: this file does not collapse PM's typical
 ambiguity to one concrete individual type.  `order` is an explicit assigned
 order, and every logical sign carries its meaning at that order.  Lean `Prop`
 is used only below for metatheorems about these syntax trees, never as the
@@ -24,24 +24,24 @@ p. 182, SHA-256
 universe u
 
 /-- Intrinsically typed de Bruijn variables. -/
-inductive Var {Sort : Type u} : List Sort → Sort → Type u where
+inductive Var {ObjectSort : Type u} : List ObjectSort → ObjectSort → Type u where
   | zero : Var (sort :: context) sort
   | succ : Var context sort → Var (other :: context) sort
 
 /-- The nonlogical and logical vocabulary at explicitly assigned orders. -/
-structure Signature (Sort : Type u) where
-  Symbol : Sort → Type u
-  Predicate : List Sort → Nat → Type u
-  EqualityMeaning : Sort → Nat → Type u
+structure Signature (ObjectSort : Type u) where
+  Symbol : ObjectSort → Type u
+  Predicate : List ObjectSort → Nat → Type u
+  EqualityMeaning : ObjectSort → Nat → Type u
   NegationMeaning : Nat → Type u
   DisjunctionMeaning : Nat → Type u
-  UniversalMeaning : Sort → Nat → Type u
-  ExistentialMeaning : Sort → Nat → Type u
+  UniversalMeaning : ObjectSort → Nat → Type u
+  ExistentialMeaning : ObjectSort → Nat → Type u
 
 /-- Genuine object-language terms.  There is intentionally no description
 constructor: descriptions are incomplete symbols, not names. -/
-inductive Term {Sort : Type u} (signature : Signature Sort)
-    (realContext apparentContext : List Sort) : Sort → Type u where
+inductive Term {ObjectSort : Type u} (signature : Signature ObjectSort)
+    (realContext apparentContext : List ObjectSort) : ObjectSort → Type u where
   | real : Var realContext sort → Term signature realContext apparentContext sort
   | apparent : Var apparentContext sort →
       Term signature realContext apparentContext sort
@@ -49,16 +49,16 @@ inductive Term {Sort : Type u} (signature : Signature Sort)
       Term signature realContext apparentContext sort
 
 /-- A typed argument vector for an atomic propositional function. -/
-inductive Arguments {Sort : Type u} (signature : Signature Sort)
-    (realContext apparentContext : List Sort) : List Sort → Type u where
+inductive Arguments {ObjectSort : Type u} (signature : Signature ObjectSort)
+    (realContext apparentContext : List ObjectSort) : List ObjectSort → Type u where
   | nil : Arguments signature realContext apparentContext []
   | cons : Term signature realContext apparentContext sort →
       Arguments signature realContext apparentContext sorts →
       Arguments signature realContext apparentContext (sort :: sorts)
 
 /-- Description-free formulae.  This is the codomain of ✱14·01 expansion. -/
-inductive CoreFormula {Sort : Type u} (signature : Signature Sort)
-    (realContext apparentContext : List Sort) (order : Nat) : Type u where
+inductive CoreFormula {ObjectSort : Type u} (signature : Signature ObjectSort)
+    (realContext apparentContext : List ObjectSort) (order : Nat) : Type u where
   | atom : signature.Predicate sorts order →
       Arguments signature realContext apparentContext sorts →
       CoreFormula signature realContext apparentContext order
@@ -83,8 +83,8 @@ inductive CoreFormula {Sort : Type u} (signature : Signature Sort)
 /-- The exact logical meanings needed by the contextual definition of one
 description at one argument sort and assigned order.  Carrying this record is
 local evidence, not a global axiom identifying logical signs across orders. -/
-structure DescriptionVocabulary {Sort : Type u} (signature : Signature Sort)
-    (sort : Sort) (order : Nat) where
+structure DescriptionVocabulary {ObjectSort : Type u} (signature : Signature ObjectSort)
+    (sort : ObjectSort) (order : Nat) where
   equality : signature.EqualityMeaning sort order
   negation : signature.NegationMeaning order
   disjunction : signature.DisjunctionMeaning order
@@ -95,8 +95,8 @@ structure DescriptionVocabulary {Sort : Type u} (signature : Signature Sort)
 `descriptionScope` constructor is the object-syntactic citizen corresponding
 to PM's printed bracket `[(℩x)(φx)]`.  Both children live under the same fresh,
 typed candidate binder. -/
-inductive Formula {Sort : Type u} (signature : Signature Sort)
-    (realContext apparentContext : List Sort) (order : Nat) : Type u where
+inductive Formula {ObjectSort : Type u} (signature : Signature ObjectSort)
+    (realContext apparentContext : List ObjectSort) (order : Nat) : Type u where
   | atom : signature.Predicate sorts order →
       Arguments signature realContext apparentContext sorts →
       Formula signature realContext apparentContext order
@@ -122,23 +122,23 @@ inductive Formula {Sort : Type u} (signature : Signature Sort)
       (continuation : Formula signature realContext (sort :: apparentContext) order) →
       Formula signature realContext apparentContext order
 
-abbrev Substitution {Sort : Type u} (signature : Signature Sort)
-    (realContext source target : List Sort) :=
-  {sort : Sort} → Var source sort → Term signature realContext target sort
+abbrev Substitution {ObjectSort : Type u} (signature : Signature ObjectSort)
+    (realContext source target : List ObjectSort) :=
+  {sort : ObjectSort} → Var source sort → Term signature realContext target sort
 
 def liftSubstitution (substitution : Substitution signature realContext source target) :
     Substitution signature realContext (sort :: source) (sort :: target)
   | _, .zero => .apparent .zero
   | _, .succ entry =>
       match substitution entry with
-      | .real variable => .real variable
-      | .apparent variable => .apparent (.succ variable)
+      | .real entry => .real entry
+      | .apparent entry => .apparent (.succ entry)
       | .symbol symbol => .symbol symbol
 
 def Term.substitute (substitution : Substitution signature realContext source target) :
     Term signature realContext source sort → Term signature realContext target sort
-  | .real variable => .real variable
-  | .apparent variable => substitution variable
+  | .real entry => .real entry
+  | .apparent entry => substitution entry
   | .symbol symbol => .symbol symbol
 
 def Arguments.substitute
@@ -183,10 +183,10 @@ def Formula.substitute
         (condition.substitute (liftSubstitution substitution))
         (continuation.substitute (liftSubstitution substitution))
 
-/-- Shift every existing apparent variable across one fresh binder. -/
+/-- Shift every existing apparent entry across one fresh binder. -/
 def weakeningSubstitution :
     Substitution signature realContext apparentContext (fresh :: apparentContext)
-  | _, variable => .apparent (.succ variable)
+  | _, entry => .apparent (.succ entry)
 
 def Formula.weaken
     (formula : Formula signature realContext apparentContext order) :
@@ -212,14 +212,14 @@ def iff (vocabulary : DescriptionVocabulary signature sort order)
     CoreFormula signature realContext apparentContext order :=
   conj vocabulary (imp vocabulary left right) (imp vocabulary right left)
 
-/-- Substitute the fresh inner variable for the argument of a one-variable
+/-- Substitute the fresh inner entry for the argument of a one-entry
 matrix.  Tail variables cross both the retained candidate and the fresh
-variable, so capture is impossible by construction. -/
+entry, so capture is impossible by construction. -/
 def conditionAtFreshSubstitution :
     Substitution signature realContext (sort :: apparentContext)
       (sort :: sort :: apparentContext)
   | _, .zero => .apparent .zero
-  | _, .succ variable => .apparent (.succ (.succ variable))
+  | _, .succ entry => .apparent (.succ (.succ entry))
 
 /-- The uniqueness matrix `(x) : φx ≡ x=b` in the candidate context.  There
 is no extra `φb` conjunct: this preserves the printed ✱14·01 definiens rather
