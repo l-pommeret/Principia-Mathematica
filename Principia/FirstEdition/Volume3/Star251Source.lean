@@ -43,3 +43,23 @@ PM-VERBATIM-END PM3:✱251·1 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·11
 ✱251·11.  ⊢ : P ∈ Bord . P smor Q .⊃ . Q ∈ Bord
 PM-VERBATIM-END PM3:✱251·11 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·111
+✱251·111.  ⊢ : P ∈ Ω . P smor Q .⊃ . Q ∈ Ω  [✱251·11 . ✱204·21]
+PM-VERBATIM-END PM3:✱251·111 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·12
+✱251·12.  ⊢ : P ∈ Bord .⊃ . NrʻP ⊂ Bord  [✱251·11]
+PM-VERBATIM-END PM3:✱251·12 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·121
+✱251·121.  ⊢ : P ∈ Ω .⊃ . NrʻP ⊂ Ω  [✱251·111]
+PM-VERBATIM-END PM3:✱251·121 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·122
+✱251·122.  ⊢ : α ∈ NO .⊃ . α ⊂ Ω  [✱251·121·1]
+PM-VERBATIM-END PM3:✱251·122 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·13
+✱251·13.  ⊢ : P ∈ Bord . z ∼ ε CʻP .≡ . P ↦ z ∈ Bord
+PM-VERBATIM-END PM3:✱251·13 -/
