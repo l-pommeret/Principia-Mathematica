@@ -685,6 +685,14 @@ def ci_run(ref: str) -> None:
           "dispatch": completed.stdout.strip()})
 
 
+def ci_cancel(run_id: str) -> None:
+    """Cancel one explicitly identified remote CI run through the wrapper."""
+    if not run_id.isdigit():
+        raise CampaignError("CI run ID must be numeric")
+    run(["gh", "run", "cancel", run_id])
+    emit({"ok": True, "cancelled_run": run_id})
+
+
 def ci_view(run_id: str | None) -> None:
     selected = run_id or str(latest_ci()["databaseId"])
     fields = GH_FIELDS + ",jobs"
@@ -759,6 +767,8 @@ def parser() -> argparse.ArgumentParser:
     ci_commands.add_parser("latest")
     ci_run_parser = ci_commands.add_parser("run")
     ci_run_parser.add_argument("--ref", default="main")
+    ci_cancel_parser = ci_commands.add_parser("cancel")
+    ci_cancel_parser.add_argument("run_id")
     view = ci_commands.add_parser("view")
     view.add_argument("run_id", nargs="?")
     logs = ci_commands.add_parser("logs")
@@ -800,6 +810,8 @@ def main(argv: list[str] | None = None) -> int:
             ci_latest()
         elif (args.group, args.command) == ("ci", "run"):
             ci_run(args.ref)
+        elif (args.group, args.command) == ("ci", "cancel"):
+            ci_cancel(args.run_id)
         elif (args.group, args.command) == ("ci", "view"):
             ci_view(args.run_id)
         elif (args.group, args.command) == ("ci", "logs"):

@@ -152,6 +152,17 @@ class SchedulerTests(unittest.TestCase):
         with self.assertRaisesRegex(campaign.CampaignError, "restricted to main"):
             campaign.ci_run("feature")
 
+    def test_ci_cancel_requires_an_explicit_numeric_run_id(self):
+        emitted = []
+        completed = subprocess.CompletedProcess([], 0, "", "")
+        with mock.patch.object(campaign, "run", return_value=completed) as run, \
+             mock.patch.object(campaign, "emit", side_effect=emitted.append):
+            campaign.ci_cancel("123")
+        run.assert_called_once_with(["gh", "run", "cancel", "123"])
+        self.assertEqual(emitted[-1]["cancelled_run"], "123")
+        with self.assertRaisesRegex(campaign.CampaignError, "numeric"):
+            campaign.ci_cancel("bad")
+
     def test_record_preserves_nested_manifest_path(self):
         pid = "10000000-0000-0000-0000-000000000001"
         data = {"questions": {"Q1": {}}}
