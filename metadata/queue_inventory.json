@@ -6,16 +6,16 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 92,
-    "object_language_ast_parsed": 86,
+    "catalogued_items": 118,
+    "object_language_ast_parsed": 112,
     "metalinguistic_routes": 6,
-    "catalogued_items_with_proof_skeleton": 12,
-    "all_proof_skeleton_targets": 17,
+    "catalogued_items_with_proof_skeleton": 38,
+    "all_proof_skeleton_targets": 43,
     "catalogued_items_missing_proof_skeleton": 80,
-    "constrained_batches": 5,
-    "complete_batch_artifact_sets": 5,
+    "constrained_batches": 11,
+    "complete_batch_artifact_sets": 6,
     "planned_campaign_questions": 59,
-    "planned_uncatalogued_pm_ids": 135,
+    "planned_uncatalogued_pm_ids": 109,
     "planned_uncatalogued_non_pm_ids": 1,
     "catalogued_items_without_campaign_question": 9,
     "locally_scheduler_eligible": 0
@@ -39,7 +39,8 @@
     "catalogued": {
       "PM1:✱1": 11,
       "PM1:✱2": 68,
-      "PM1:✱3": 3,
+      "PM1:✱3": 12,
+      "PM1:✱4": 17,
       "PM1:✱9": 10
     },
     "planned": {
@@ -51,8 +52,8 @@
       "PM1:✱9": 23
     },
     "planned_but_uncatalogued": {
-      "PM1:✱3": 25,
-      "PM1:✱4": 61,
+      "PM1:✱3": 16,
+      "PM1:✱4": 44,
       "PM1:✱5": 36,
       "PM1:✱9": 13
     },
@@ -123,6 +124,86 @@
       "manifest": true,
       "context": true,
       "context_metadata": true,
+      "prompt": true
+    },
+    "Q225": {
+      "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+      "targets": [
+        "PM1:✱3·37",
+        "PM1:✱3·4",
+        "PM1:✱3·41",
+        "PM1:✱3·42",
+        "PM1:✱3·43"
+      ],
+      "manifest": false,
+      "context": false,
+      "context_metadata": false,
+      "prompt": true
+    },
+    "Q226": {
+      "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+      "targets": [
+        "PM1:✱3·44",
+        "PM1:✱3·45",
+        "PM1:✱3·47",
+        "PM1:✱3·48"
+      ],
+      "manifest": false,
+      "context": false,
+      "context_metadata": false,
+      "prompt": true
+    },
+    "Q227": {
+      "generation_status": "ready",
+      "targets": [
+        "PM1:✱4·01",
+        "PM1:✱4·02",
+        "PM1:✱4·1",
+        "PM1:✱4·12",
+        "PM1:✱4·13"
+      ],
+      "manifest": true,
+      "context": true,
+      "context_metadata": true,
+      "prompt": true
+    },
+    "Q228": {
+      "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+      "targets": [
+        "PM1:✱4·11",
+        "PM1:✱4·14",
+        "PM1:✱4·15",
+        "PM1:✱4·2"
+      ],
+      "manifest": false,
+      "context": false,
+      "context_metadata": false,
+      "prompt": true
+    },
+    "Q229": {
+      "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+      "targets": [
+        "PM1:✱4·21",
+        "PM1:✱4·22",
+        "PM1:✱4·24",
+        "PM1:✱4·25"
+      ],
+      "manifest": false,
+      "context": false,
+      "context_metadata": false,
+      "prompt": true
+    },
+    "Q230": {
+      "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+      "targets": [
+        "PM1:✱4·3",
+        "PM1:✱4·31",
+        "PM1:✱4·32",
+        "PM1:✱4·33"
+      ],
+      "manifest": false,
+      "context": false,
+      "context_metadata": false,
       "prompt": true
     }
   },
@@ -1500,6 +1581,604 @@
       }
     },
     {
+      "id": "PM1:✱3·37",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q225"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "613b9b745abf1cd083bfa8d3c046c60261f00f7e4dfb1c04e7e90d30d990c359"
+      },
+      "proof_skeleton": {
+        "batch": "Q225",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-37.txt",
+        "demonstration_sha256": "323d57327c425be7f92ed778d4f390827b88bc53d0f6a2736a0b448966d394f2",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·4",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q225"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "bd9e84af083e0e23f012ec679de0a44ae00936b0649d8f5d42f480b8a10d84f0"
+      },
+      "proof_skeleton": {
+        "batch": "Q225",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-4.txt",
+        "demonstration_sha256": "9693c5a5669554858689a1294b879a9eb83b2721a1b0769ac349b6c121f9b70f",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·41",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q225"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "2176eb4cc04c5b047749732248cf16a54725ddb645564e13bdc31adae4ed7ecc"
+      },
+      "proof_skeleton": {
+        "batch": "Q225",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-41.txt",
+        "demonstration_sha256": "dc74c35e9a88aafcb7ba0bcedf84a280c287f4f6ef5480b89f66979fae66e59d",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·42",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q225"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "9b4c0b10b79b4f746bd012cdb689678e3cfb499575cbe28063790dd6a1a36fda"
+      },
+      "proof_skeleton": {
+        "batch": "Q225",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-42.txt",
+        "demonstration_sha256": "d4558522477f65c8861cd44f200ca4ed8de06d205d7d875aa2827484823461a9",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·43",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q225"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "29af56faaa2bce1985c099a7c1c8643c3ade56311e1fb3ae343ccab58a39ecce"
+      },
+      "proof_skeleton": {
+        "batch": "Q225",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-43.txt",
+        "demonstration_sha256": "627db8e599b84ab2700d9b9b8b1a58be946f6cd3416c10a8e9fa12d049c1c962",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·44",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q226"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "a140555a52d4c1dc0d585d483c5f128830a3e343c509c42d167824ad144441a1"
+      },
+      "proof_skeleton": {
+        "batch": "Q226",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-44.txt",
+        "demonstration_sha256": "82d061d1520303b6b20657eba3e8fd8bdaae2e62bae516fb7e740169a289e77d",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·45",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q226"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "130b6b50e9da8ec8af289186667dc560bcf6d2f1d5b2341069362a6ce7b6bc3f"
+      },
+      "proof_skeleton": {
+        "batch": "Q226",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-45.txt",
+        "demonstration_sha256": "556e0e3d4d7d38049b58e2192d0b4bdd0a8b0bb8d64922f4fac682bba7b4f6f5",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·47",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q226"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "f27be1d0fa9a4a364fe0462902e8a91b93b0c315cae6eb068463a1c6e031c9f8"
+      },
+      "proof_skeleton": {
+        "batch": "Q226",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-47.txt",
+        "demonstration_sha256": "fb5fc9e22194b0e4f17b630e982bc842e2cc1d04f23000e1b3dffb45bbda830d",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱3·48",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q226"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "1700c439a5426eca6305ee0e0312593b5c2fa3fae87aa1de628957d5eee4607e"
+      },
+      "proof_skeleton": {
+        "batch": "Q226",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-3-48.txt",
+        "demonstration_sha256": "78a5b8f6185190796099e06aa2be04874584f310bbe8dcc5898172d2ee60206e",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·01",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q227"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "d64e1efcc54875616f83cb299a029d3bc61998f4363a11ae934c4fe10a658c4d"
+      },
+      "proof_skeleton": {
+        "batch": "Q227",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-01.txt",
+        "demonstration_sha256": "09074acf4b77a171399469936e833d5fbe11b27e5207ffefe45747bd078c4316",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·02",
+      "kind": "definition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q227"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "971f748b4565f413e9e649688d2bcfb6227b09a7ec1e9ec8242055ee81fe7512"
+      },
+      "proof_skeleton": {
+        "batch": "Q227",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-02.txt",
+        "demonstration_sha256": "b9fae5a1a5307ed1d143d21fa02c881cb213f40c52c50725dc7af27097a4f96d",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·1",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q227"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "02ca4e82658649cfe45da657fe7626761ba361bad963ab2480cc519cbb49297f"
+      },
+      "proof_skeleton": {
+        "batch": "Q227",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-1.txt",
+        "demonstration_sha256": "066dcfc3b5d37206a4beb070955642acf3c57ce7afeba29f247c6e3e42b2ef60",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·11",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q228"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "d320a6540387b942fe8192acc198ae55e1b2b83f9e93b20a13185a78ce86c3cc"
+      },
+      "proof_skeleton": {
+        "batch": "Q228",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-11.txt",
+        "demonstration_sha256": "f7866ab4fdd8e3e9bbae2a512a8e76e9fea3433c21000db9e8120615ede89cb7",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·12",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q227"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "1b27e73bbb812df7b7c86449cd08bc1619ae3b70329af3df6ced4c45647a1238"
+      },
+      "proof_skeleton": {
+        "batch": "Q227",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-12.txt",
+        "demonstration_sha256": "fc1d260032377bdb2acd6e27705d0448cfae5593f0fcd04a8cb7025e33c18298",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·13",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q227"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "2a9c0c731786a80554e39eb9438cc0d6e87ff63118cceb0f439b2680780bb88b"
+      },
+      "proof_skeleton": {
+        "batch": "Q227",
+        "generation_status": "ready",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-13.txt",
+        "demonstration_sha256": "5504e0f2b9ca39bca1383a039bfa07f68bf6598d8986267e6e4bbbf87101696c",
+        "manifest": true,
+        "context": true,
+        "context_metadata": true,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·14",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q228"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "6918f5be786cb1543d8113d885050ef3943e44860c5675d2468839dc33702b70"
+      },
+      "proof_skeleton": {
+        "batch": "Q228",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-14.txt",
+        "demonstration_sha256": "8b39064e5ab75b36a8da415b364461ba37f4986a9463615d9aaf7ef9c25c204e",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·15",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q228"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "0203dd020a2cbeccc22b39516a3e5ff11d80e6c657504a67994d72c8a5856a7d"
+      },
+      "proof_skeleton": {
+        "batch": "Q228",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-15.txt",
+        "demonstration_sha256": "54d47720dcad30b65c290ce87273fdc3d8d79877d5b9d8320c14971ca1efa1e2",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·2",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q228"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "5b8524b49c7433d34c2c48b56d378c91ef8e2b70492b12ac9f69b724551e3a80"
+      },
+      "proof_skeleton": {
+        "batch": "Q228",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-2.txt",
+        "demonstration_sha256": "1f7b4ad4f3a148bdc7a557ef360b948088f4bfbb12af77ecf027e81e92007e56",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·21",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q229"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "67b950ca717209cf7017558e20d99b62c2e07e0852d5635840299f1749622185"
+      },
+      "proof_skeleton": {
+        "batch": "Q229",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-21.txt",
+        "demonstration_sha256": "197ffa48bca002efc20b4662a3bafdb98e91e356481e2bfecd1dd1e00b7deb74",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·22",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q229"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "2fb889dc6097ff398fd8bcadc8f04904d2aa5ad1e1323a88049177b7d494aa26"
+      },
+      "proof_skeleton": {
+        "batch": "Q229",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-22.txt",
+        "demonstration_sha256": "8d6da62e672f95ac71e194053fc8f30dea0ff6c1985788309ab70f016b8d0157",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·24",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q229"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "5242e806d72aec12f4a55dd667ea2907f022a790c69a5dc0b260a2ca4dc63214"
+      },
+      "proof_skeleton": {
+        "batch": "Q229",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-24.txt",
+        "demonstration_sha256": "cbac6690660ad59ad35a61a8909c667a605f95e7642ce6142fb8445410474d2d",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·25",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q229"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "98e87b4d6d0c4c366dd68bf76341995131b2e7cf3a7b66ca5be43bca252c9185"
+      },
+      "proof_skeleton": {
+        "batch": "Q229",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-25.txt",
+        "demonstration_sha256": "b99df3d9f68c9d0d7d6d90b0b512bb2440d5ea2b8c35cfe062ade30d797957a1",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·3",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q230"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "5a39880442a4d48d6d7610a6874e6b3554e87b1788d9e421c1eb53dad6669259"
+      },
+      "proof_skeleton": {
+        "batch": "Q230",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-3.txt",
+        "demonstration_sha256": "b131950fb411a910735513d45dd4e30b8de59827cf0c9fa13dd89b552d1cea04",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·31",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q230"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "ad1688c77f9163628cf8e0786867df9fac8ed6ae0dc70559a725223f565ac123"
+      },
+      "proof_skeleton": {
+        "batch": "Q230",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-31.txt",
+        "demonstration_sha256": "4746185389168ca5efa5ac476117e0e3202a28730b599a55cd7ab8831db4102c",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·32",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q230"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "07f683d461dd098a56f0577a60967e06cce7d1a39b506bb7b765a4148a9a76d6"
+      },
+      "proof_skeleton": {
+        "batch": "Q230",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-32.txt",
+        "demonstration_sha256": "0623302b5f7a9503b1aaa14b76a18c4991406533c4ffa62df9a737828b2e07eb",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
+      "id": "PM1:✱4·33",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [
+        "Q230"
+      ],
+      "ast": {
+        "status": "parsed",
+        "sha256": "52f65fb1de63b39632dd94b79e1f45d3d46c35871da37101419f9111415a3741"
+      },
+      "proof_skeleton": {
+        "batch": "Q230",
+        "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+        "demonstration_path": "aristotle/demonstrations/PM1-star-4-33.txt",
+        "demonstration_sha256": "7363e8c35e5094fbd607cff7f991db278f4895b44de893ec24cbbbd7f6ce8641",
+        "manifest": false,
+        "context": false,
+        "context_metadata": false,
+        "prompt": true
+      }
+    },
+    {
       "id": "PM1:✱9·01",
       "kind": "definition",
       "source_catalogue": true,
@@ -1719,84 +2398,6 @@
     ],
     "PM1:✱3·35": [
       "Q224"
-    ],
-    "PM1:✱3·37": [
-      "Q225"
-    ],
-    "PM1:✱3·4": [
-      "Q225"
-    ],
-    "PM1:✱3·41": [
-      "Q225"
-    ],
-    "PM1:✱3·42": [
-      "Q225"
-    ],
-    "PM1:✱3·43": [
-      "Q225"
-    ],
-    "PM1:✱3·44": [
-      "Q226"
-    ],
-    "PM1:✱3·45": [
-      "Q226"
-    ],
-    "PM1:✱3·47": [
-      "Q226"
-    ],
-    "PM1:✱3·48": [
-      "Q226"
-    ],
-    "PM1:✱4·01": [
-      "Q227"
-    ],
-    "PM1:✱4·02": [
-      "Q227"
-    ],
-    "PM1:✱4·1": [
-      "Q227"
-    ],
-    "PM1:✱4·11": [
-      "Q228"
-    ],
-    "PM1:✱4·12": [
-      "Q227"
-    ],
-    "PM1:✱4·13": [
-      "Q227"
-    ],
-    "PM1:✱4·14": [
-      "Q228"
-    ],
-    "PM1:✱4·15": [
-      "Q228"
-    ],
-    "PM1:✱4·2": [
-      "Q228"
-    ],
-    "PM1:✱4·21": [
-      "Q229"
-    ],
-    "PM1:✱4·22": [
-      "Q229"
-    ],
-    "PM1:✱4·24": [
-      "Q229"
-    ],
-    "PM1:✱4·25": [
-      "Q229"
-    ],
-    "PM1:✱4·3": [
-      "Q230"
-    ],
-    "PM1:✱4·31": [
-      "Q230"
-    ],
-    "PM1:✱4·32": [
-      "Q230"
-    ],
-    "PM1:✱4·33": [
-      "Q230"
     ],
     "PM1:✱4·34": [
       "Q231"

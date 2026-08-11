@@ -1,0 +1,10 @@
+✱3·44.  ⊢ : q ⊃ p . r ⊃ p . ⊃ : q ∨ r . ⊃ . p
+
+Dem.
+
+⊢ . Syll . ⊃ ⊢ : ∼q ⊃ r . r ⊃ p . ⊃ : ∼q ⊃ p :
+[✱2·6] ⊃ : q ⊃ p . ⊃ . p   (1)
+⊢ . (1) . Exp . ⊃ ⊢ :: ∼q ⊃ r . ⊃ : r ⊃ p . ⊃ : q ⊃ p . ⊃ . p :
+[Comm . Imp] ⊃ : q ⊃ p . r ⊃ p . ⊃ . p   (2)
+⊢ . (2) . Comm . ⊃ ⊢ : q ⊃ p . r ⊃ p . ⊃ : ∼q ⊃ r . ⊃ . p :
+[✱2·53 . Syll] ⊃ ⊢ . Prop

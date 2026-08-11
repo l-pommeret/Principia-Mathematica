@@ -109,6 +109,21 @@ class ConstraintManifestTests(unittest.TestCase):
         self.assertEqual(batch["batch_items"][1]["local_proof_items"], ["PM1:✱2·18"])
         self.assertNotIn("PM1:✱2·18", batch["context_closure"])
 
+    def test_context_only_dependency_is_available_but_not_a_proof_permission(self):
+        definition = parse_demonstration(
+            "✱4·01. p ≡ q .=. p ⊃ q . q ⊃ p Df",
+            current_item="PM1:✱4·01",
+        )
+        batch = compile_batch_manifest(
+            [definition], self.registry,
+            {"PM1:✱4·01": "PM.Elementary.equiv"},
+            context_dependencies={"PM1:✱4·01": ["PM1:✱1·2"]},
+        )
+        manifest = batch["batch_items"][0]
+        self.assertEqual(manifest["allowed_pm_items"], [])
+        self.assertEqual(manifest["context_only_dependencies"], ["PM1:✱1·2"])
+        self.assertEqual(manifest["context_closure"], ["PM1:✱1·2"])
+
     def test_batch_rejects_forward_local_reference(self):
         first = parse_demonstration(
             "✱2·18. ⊢ : p [✱2·19]", current_item="PM1:✱2·18"

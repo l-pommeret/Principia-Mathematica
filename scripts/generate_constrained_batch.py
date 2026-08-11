@@ -40,7 +40,11 @@ def generate(batch: str, root: Path = ROOT) -> None:
             lean[identifier] = entry["lean_target"]
         conventions[identifier] = entry.get("global_conventions", [])
     manifest = compile_batch_manifest(
-        skeletons, registry, targets, global_conventions=conventions
+        skeletons, registry, targets, global_conventions=conventions,
+        context_dependencies={
+            entry["id"]: entry.get("context_dependencies", [])
+            for entry in spec["items"]
+        },
     )
     if "foundation_profile" in spec:
         manifest["foundation_profile"] = spec["foundation_profile"]

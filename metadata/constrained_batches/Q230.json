@@ -1,0 +1,13 @@
+{
+  "kind": "pm-constrained-batch-spec",
+  "generation_status": "blocked-on-kernel-checked-earlier-dependencies",
+  "volume": 1,
+  "prompt_path": "aristotle/Q230.md",
+  "blockers": ["PM1:✱3·22", "PM1:✱4·01", "PM1:✱4·11", "PM1:✱4·12", "PM1:✱4·15", "PM1:✱4·22"],
+  "items": [
+    {"id":"PM1:✱4·3","demonstration_path":"aristotle/demonstrations/PM1-star-4-3.txt","declaration":"PM.FirstEdition.Volume1.Star4.star_4_3"},
+    {"id":"PM1:✱4·31","demonstration_path":"aristotle/demonstrations/PM1-star-4-31.txt","declaration":"PM.FirstEdition.Volume1.Star4.star_4_31"},
+    {"id":"PM1:✱4·32","demonstration_path":"aristotle/demonstrations/PM1-star-4-32.txt","declaration":"PM.FirstEdition.Volume1.Star4.star_4_32"},
+    {"id":"PM1:✱4·33","demonstration_path":"aristotle/demonstrations/PM1-star-4-33.txt","declaration":"PM.FirstEdition.Volume1.Star4.star_4_33"}
+  ]
+}

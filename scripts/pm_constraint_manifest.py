@@ -174,6 +174,7 @@ def compile_batch_manifest(
     *,
     strict: bool = True,
     global_conventions: dict[str, list[str]] | None = None,
+    context_dependencies: dict[str, list[str]] | None = None,
 ) -> dict:
     """Compile an ordered batch whose later targets may cite earlier targets.
 
@@ -184,6 +185,7 @@ def compile_batch_manifest(
     if not skeletons:
         raise ConstraintError("a constrained batch must contain at least one target")
     conventions = global_conventions or {}
+    context_only = context_dependencies or {}
     seen: dict[str, str] = {}
     manifests: list[dict] = []
     for skeleton in skeletons:
@@ -197,6 +199,37 @@ def compile_batch_manifest(
             global_conventions=conventions.get(identifier, []),
             local_declarations=seen,
         )
+        extra_context = context_only.get(identifier, [])
+        if not isinstance(extra_context, list) or not all(
+            isinstance(item, str) for item in extra_context
+        ):
+            raise ConstraintError(f"invalid context-only dependencies for {identifier}")
+        unknown = sorted(set(extra_context) - registry.keys())
+        non_kernel = sorted(
+            item for item in set(extra_context)
+            if item in registry and registry[item].get("formal_status") != "kernel-checked"
+        )
+        if strict and (unknown or non_kernel):
+            details = []
+            if unknown:
+                details.append(f"missing context-only metadata: {unknown}")
+            if non_kernel:
+                details.append(f"context-only items not kernel-checked: {non_kernel}")
+            raise ConstraintError("; ".join(details))
+        available_context = set(extra_context) - set(unknown) - set(non_kernel)
+        if available_context:
+            closure = context_closure(
+                set(manifest["context_closure"]) | available_context, registry
+            )
+            manifest["context_closure"] = closure
+            manifest["context_declarations"] = {
+                item: registry[item]["declaration"] for item in closure
+            }
+            manifest["context_lean_paths"] = sorted(
+                {registry[item]["lean_path"] for item in closure}
+            )
+        if available_context:
+            manifest["context_only_dependencies"] = sorted(available_context)
         manifests.append(manifest)
         seen[identifier] = target_declarations[identifier]
 

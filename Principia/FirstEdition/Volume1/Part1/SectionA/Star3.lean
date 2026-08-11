@@ -92,4 +92,108 @@ theorem star_3_03 {Γ : PM.RealContext} (hasRealVariable : Γ ≠ [])
     exact PM.Derivation.star_1_11 hasRealVariable hψ.derivation
       (PM.Derivation.star_1_11 hasRealVariable hφ.derivation h2)
 
+/- PM-VERBATIM-BEGIN PM1:✱3·37
+✱3·37.  ⊢ : p . q . ⊃ . r : ⊃ : p . ∼r . ⊃ . ∼q
+
+Dem.
+
+⊢ . Transp . ⊃ ⊢ : q ⊃ r . ⊃ . ∼r ⊃ ∼q :
+[Syll] ⊃ ⊢ : p . ⊃ . q ⊃ r : ⊃ : p . ⊃ . ∼r ⊃ ∼q   (1)
+⊢ . Exp . ⊃ ⊢ : p . q . ⊃ . r : ⊃ : p . ⊃ . q ⊃ r   (2)
+⊢ . Imp . ⊃ ⊢ : p . ⊃ . ∼r ⊃ ∼q : ⊃ : p . ∼r . ⊃ . ∼q   (3)
+⊢ . (2) . (1) . (3) . Syll . ⊃ ⊢ . Prop
+
+This is another form of transposition.
+PM-VERBATIM-END PM1:✱3·37 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·4
+✱3·4.  ⊢ : p . q . ⊃ . p ⊃ q   [✱2·51 . Transp . (✱1·01 . ✱3·01)]
+PM-VERBATIM-END PM1:✱3·4 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·41
+✱3·41.  ⊢ : p ⊃ r . ⊃ : p . q . ⊃ . r   [✱3·26 . Syll]
+PM-VERBATIM-END PM1:✱3·41 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·42
+✱3·42.  ⊢ : q ⊃ r . ⊃ : p . q . ⊃ . r   [✱3·27 . Syll]
+PM-VERBATIM-END PM1:✱3·42 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·43
+✱3·43.  ⊢ : p ⊃ q . p ⊃ r . ⊃ : p . ⊃ . q . r
+
+Dem.
+
+⊢ . ✱3·2 . ⊃ ⊢ : q . ⊃ : r . ⊃ . q . r   (1)
+⊢ . (1) . Syll . ⊃ ⊢ :: p ⊃ q . ⊃ : p . ⊃ : r . ⊃ . q . r :
+[✱2·77] ⊃ : p ⊃ r . ⊃ : p . ⊃ . q . r   (2)
+⊢ . (2) . Imp . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱3·43 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·44
+✱3·44.  ⊢ : q ⊃ p . r ⊃ p . ⊃ : q ∨ r . ⊃ . p
+
+This principle is analogous to ✱3·43. The analogy between ✱3·43 and ✱3·44
+is of a sort which generally subsists between formulae concerning products and
+formulae concerning sums.
+
+Dem.
+
+⊢ . Syll . ⊃ ⊢ : ∼q ⊃ r . r ⊃ p . ⊃ : ∼q ⊃ p :
+[✱2·6] ⊃ : q ⊃ p . ⊃ . p   (1)
+⊢ . (1) . Exp . ⊃ ⊢ :: ∼q ⊃ r . ⊃ : r ⊃ p . ⊃ : q ⊃ p . ⊃ . p :
+[Comm . Imp] ⊃ : q ⊃ p . r ⊃ p . ⊃ . p   (2)
+⊢ . (2) . Comm . ⊃ ⊢ : q ⊃ p . r ⊃ p . ⊃ : ∼q ⊃ r . ⊃ . p :
+[✱2·53 . Syll] ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱3·44 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·45
+✱3·45.  ⊢ : p ⊃ q . ⊃ : p . r . ⊃ . q . r
+
+This principle shows that we may multiply both sides of an implication by a
+common factor; hence it is called by Peano the "principle of the factor." We
+shall refer to it as "Fact." It is the analogue, for multiplication, of the
+primitive proposition ✱1·6.
+
+Dem.
+
+⊢ . Syll ∼r/r . ⊃ ⊢ : p ⊃ q . ⊃ : q ⊃ ∼r . ⊃ . p ⊃ ∼r :
+[Transp] ⊃ : ∼(p ⊃ ∼r) . ⊃ . ∼(q ⊃ ∼r) :
+[Id . (✱1·01 . ✱3·01)] ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱3·45 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·47
+✱3·47.  ⊢ : p ⊃ r . q ⊃ s . ⊃ : p . q . ⊃ . r . s
+
+This proposition, or rather its analogue for classes, was proved by Leibniz,
+and evidently pleased him, since he calls it "præclarum theorema*."
+
+Dem.
+
+⊢ . ✱3·26 . ⊃ ⊢ : p ⊃ r . q ⊃ s . ⊃ : p ⊃ r :
+[Fact] ⊃ : p . q . ⊃ . r . q:
+[✱3·22] ⊃ : p . q . ⊃ . q . r   (1)
+⊢ . ✱3·27 . ⊃ ⊢ : p ⊃ r . q ⊃ s . ⊃ : q ⊃ s:
+[Fact] ⊃ : q . r . ⊃ . s . r:
+[✱3·22] ⊃ : q . r . ⊃ . r . s   (2)
+⊢ . (1) . (2) . ✱3·03 . ✱2·83 . ⊃ ⊢ . Prop
+
+* Philosophical works, Gerhardt's edition, Vol. vii. p. 223.
+PM-VERBATIM-END PM1:✱3·47 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱3·48
+✱3·48.  ⊢ : p ⊃ r . q ⊃ s . ⊃ : p ∨ q . ⊃ . r ∨ s
+
+This theorem is the analogue of ✱3·47.
+
+Dem.
+
+⊢ . ✱3·26 . ⊃ ⊢ : p ⊃ r . q ⊃ s . ⊃ : p ⊃ r:
+[Sum] ⊃ : p ∨ q . ⊃ . r ∨ q:
+[Perm] ⊃ : p ∨ q . ⊃ . q ∨ r   (1)
+⊢ . ✱3·27 . ⊃ ⊢ : p ⊃ r . q ⊃ s . ⊃ : q ⊃ s:
+[Sum] ⊃ : q ∨ r . ⊃ . s ∨ r:
+[Perm] ⊃ : q ∨ r . ⊃ . r ∨ s   (2)
+⊢ . (1) . (2) . ✱2·83 . ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱3·48 -/
+
 end PM.FirstEdition.Volume1.Star3
