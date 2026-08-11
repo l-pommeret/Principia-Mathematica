@@ -168,6 +168,12 @@ PM-VERBATIM-END PM3:✱253·571 -/
 /- PM-VERBATIM-BEGIN PM3:✱253·572
 ✱253·572. ⊢ : P ∈ Ω − ιʻΛ . ∼(CʻP₁ = CʻP . E! BʻP) .⊃ . i + NrʻP ≠ NrʻP + i
 PM-VERBATIM-END PM3:✱253·572 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·573
+✱253·573. ⊢ :: P ∈ Ω .⊃ : CʻP₁ = CʻP . E! BʻP .≡ . i + NrʻP ≠ NrʻP  [✱253·57·571]
+PM-VERBATIM-END PM3:✱253·573 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·574
+✱253·574. ⊢ :: P ∈ Ω − ιʻΛ .⊃ : (CʻP₁ = CʻP . E! BʻP) .≡ . i + NrʻP = NrʻP + i  [✱253·57·572]
+PM-VERBATIM-END PM3:✱253·574 -/
 /- PM-VERBATIM-BEGIN PM3:✱253·17
 ✱253·17.  ⊢ : P ∈ Ω .⊃ . Pₛ ⌞ DʻPₛ = P ⌞ P⃗;P ⌞ CʻP
 PM-VERBATIM-END PM3:✱253·17 -/
