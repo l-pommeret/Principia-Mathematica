@@ -408,3 +408,19 @@ PM-VERBATIM-END PM2:✱105·13 -/
 /- PM-VERBATIM-BEGIN PM2:✱105·131
 ✱105·131. ⊢ . N₂cʻα = Nc(t₂ʻα)ʻα = Nc{(t₂ʻα)ₐ}ʻα  [✱102·6 . (✱105·011)]
 PM-VERBATIM-END PM2:✱105·131 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·14
+✱105·14. ⊢ : α ∈ t₀ʻβ .⊃ . N₁cʻβ = Nc(α)ʻβ = Nc(αᵦ)ʻβ
+PM-VERBATIM-END PM2:✱105·14 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·141
+✱105·141. ⊢ : α ∈ t₁ʻβ .⊃ . N₂cʻβ = Nc(α)ʻβ = Nc(αᵦ)ʻβ  [Proof as in ✱105·14]
+PM-VERBATIM-END PM2:✱105·141 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·142
+✱105·142. ⊢ : β ⊂ tʻα .⊃ . N₁cʻβ = Nc(α)ʻβ = Nc(αᵦ)ʻβ  [✱105·14 . ✱63·51]
+PM-VERBATIM-END PM2:✱105·142 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·143
+✱105·143. ⊢ : β ⊂ t²ʻα .⊃ . N₂cʻβ = Nc(α)ʻβ = Nc(αᵦ)ʻβ  [✱105·141 . ✱63·52]
+PM-VERBATIM-END PM2:✱105·143 -/
