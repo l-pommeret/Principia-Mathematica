@@ -17,3 +17,8 @@ The deterministic proof parser resolves independent per-target whitelists:
 ✱2·86={earlier local ✱2·85}, plus reviewed ✱1·11 where licensed. The generated
 20.3 kB context contains only the external transitive implementation closure;
 local targets occur only in order inside the request. Context CI is pending.
+
+GitHub CI kernel-checked the generated standalone context and the full edition
+at commit `67663311e24ddd1ca3bdb267d36436ae674ca3bf`, run
+[`31446802971`](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31446802971),
+conclusion `success`. The single constrained request is eligible.
