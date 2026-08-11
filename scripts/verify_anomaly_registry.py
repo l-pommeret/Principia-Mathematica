@@ -16,6 +16,8 @@ SCHEMA = ROOT / "metadata/schema/anomaly-registry.schema.json"
 CATEGORIES = {
     "printed-error-unofficial", "incomplete-printed-citation", "notation-ambiguity",
     "digital-witness-error", "reconstruction-gap", "context-polymorphism-gap",
+    "incomplete-printed-citation/equivalence-packaging-gap",
+    "incomplete-printed-inference/implicit-exportation-gap",
 }
 REQUIRED = {
     "id", "category", "pm_locus", "printed_reading", "printed_citations",
@@ -139,10 +141,12 @@ def verify_registry(root: Path = ROOT) -> dict:
             != ["PM1:✱3·27", "PM1:✱3·31"]):
         fail("Q223 must record the exact two-locus non-strict ✱1·6 relaxation")
     q226 = by_id["PM1-ANOM-Q226-CONTEXT-POLYMORPHISM-GAP"]
-    if (q226["category"] != "context-polymorphism-gap" or q226.get("strict") is not False
-            or q226["minimal_relaxation"] != ["PM1:✱3·2 (Γ = [] branch only)"]
+    if (q226["category"] != "incomplete-printed-citation/equivalence-packaging-gap"
+            or q226.get("strict") is not False
+            or q226["minimal_relaxation"]
+                != ["PM1:✱3·2 (both Γ = [] and Γ ≠ [] packaging branches)"]
             or q226.get("relaxation_use", [{}])[0].get("target") != "PM1:✱3·47"):
-        fail("Q226 must preserve the scope-limited empty-context ✱3·2 relaxation")
+        fail("Q226 must preserve the approved two-branch ✱3·2 packaging relaxation")
     digital = [entry for entry in entries if entry["category"] == "digital-witness-error"]
     if not digital:
         fail("attested digital witness errors were not backfilled")
