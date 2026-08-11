@@ -1,8 +1,8 @@
 /- Source-only opening of PM III ✱253; archival transcription only. -/
 
-/- PM-VERBATIM-BEGIN PM3:✱253·574
+/- PM-VERBATIM-SUMMARY-BEGIN PM3:STAR253-SUMMARY-253-574
 ✱253·574.  ⊢ :: P ∈ Ω − ιʻΛ .⊃ : CʻP₁ = CʻP . E! BʻP .≡ . i + NrʻP = NrʻP + i
-PM-VERBATIM-END PM3:✱253·574 -/
+PM-VERBATIM-SUMMARY-END PM3:STAR253-SUMMARY-253-574 -/
 /- PM-VERBATIM-BEGIN PM3:✱253·1
 ✱253·1.  ⊢ :: P ∈ Ω .⊃ : QPₛR .≡ . (∃α, β) . α, β ∈ P⃗ʻʻ(CʻP ∪ ιʻCʻP) . ∃! β − α . Q = P ⌞ α . R = P ⌞ β
 PM-VERBATIM-END PM3:✱253·1 -/
