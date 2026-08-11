@@ -440,3 +440,23 @@ PM-VERBATIM-END PM2:✱105·16 -/
 /- PM-VERBATIM-BEGIN PM2:✱105·161
 ✱105·161. ⊢ : δ ∈ μ⁽²⁾ .≡ . (∃γ). γ ∈ μ . δ sm γ . δ ∈ t₂ʻμ .≡ . (∃γ). γ ∈ μ . δ sm γ . δ ∈ t₁ʻγ .≡ . (∃γ). γ ∈ μ . δ sm γ . γ ⊂ t²ʻδ  [✱37·1 . ✱63·52·55]
 PM-VERBATIM-END PM2:✱105·161 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·2
+✱105·2. ⊢ . N₀cʻα = N₁cʻιʻʻα
+PM-VERBATIM-END PM2:✱105·2 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·201
+✱105·201. ⊢ . N₀cʻα = N₂cʻιʻʻιʻʻα
+PM-VERBATIM-END PM2:✱105·201 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·21
+✱105·21. ⊢ . N₀C ⊂ N₁C  [✱105·2·15]
+PM-VERBATIM-END PM2:✱105·21 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·211
+✱105·211. ⊢ . N₀C ⊂ N₂C
+PM-VERBATIM-END PM2:✱105·211 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱105·22
+✱105·22. ⊢ : γ ∈ N₁cʻδ .⊃ . N₁cʻδ = N₀cʻγ  [✱103·26]
+PM-VERBATIM-END PM2:✱105·22 -/
