@@ -19,7 +19,7 @@
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
     "catalogued_items_without_campaign_question": 147,
-    "locally_scheduler_eligible": 0
+    "locally_scheduler_eligible": 1
   },
   "question_statuses": {
     "audit": {
@@ -71,7 +71,13 @@
       "PM1:✱9": 26
     }
   },
-  "local_scheduler_candidates": [],
+  "local_scheduler_candidates": [
+    {
+      "question": "Q251",
+      "kind": "continuation",
+      "prompt_path": "aristotle/followups/Q251-kernel-link-retry.md"
+    }
+  ],
   "batches": {
     "Q217": {
       "generation_status": "ready",

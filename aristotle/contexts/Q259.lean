@@ -174,17 +174,17 @@ def abstractRealHead : Apparent (.elementaryProposition :: Γ) Δ →
     Apparent Γ (.elementaryProposition :: Δ)
   | .constant name => .constant name
   | .real .zero => .bound .zero
-  | .real (.succ variable) => .real variable
-  | .bound variable => .bound (.succ variable)
+  | .real (.succ predecessor) => .real predecessor
+  | .bound boundVariable => .bound (.succ boundVariable)
   | .neg proposition => .neg (abstractRealHead proposition)
   | .disj left right => .disj (abstractRealHead left) (abstractRealHead right)
 
 def openRealHead : Apparent Γ (.elementaryProposition :: Δ) →
     Apparent (.elementaryProposition :: Γ) Δ
   | .constant name => .constant name
-  | .real variable => .real (.succ variable)
+  | .real realVariable => .real (.succ realVariable)
   | .bound .zero => .real .zero
-  | .bound (.succ variable) => .bound variable
+  | .bound (.succ predecessor) => .bound predecessor
   | .neg proposition => .neg (openRealHead proposition)
   | .disj left right => .disj (openRealHead left) (openRealHead right)
 
@@ -193,11 +193,15 @@ def openRealHead : Apparent Γ (.elementaryProposition :: Δ) →
     openRealHead (abstractRealHead proposition) = proposition := by
   induction proposition with
   | constant name => rfl
-  | real variable => cases variable <;> rfl
-  | bound variable => rfl
-  | neg proposition ih => simp [abstractRealHead, openRealHead, ih]
+  | real realVariable => cases realVariable <;> rfl
+  | bound boundVariable => rfl
+  | neg proposition ih =>
+      change .neg (openRealHead (abstractRealHead proposition)) = .neg proposition
+      rw [ih]
   | disj left right ihLeft ihRight =>
-      simp [abstractRealHead, openRealHead, ihLeft, ihRight]
+      change .disj (openRealHead (abstractRealHead left))
+        (openRealHead (abstractRealHead right)) = .disj left right
+      rw [ihLeft, ihRight]
 
 def significant (v : BoundVar Δ .elementaryProposition) : Apparent Γ Δ → Bool
   | .constant _ => false
@@ -322,7 +326,17 @@ def openRealHead : FirstOrder Γ (.elementaryProposition :: Δ) →
 @[simp] theorem openRealHead_abstractRealHead
     (proposition : FirstOrder (.elementaryProposition :: Γ) Δ) :
     openRealHead (abstractRealHead proposition) = proposition := by
-  cases proposition <;> simp [abstractRealHead, openRealHead]
+  cases proposition with
+  | always body =>
+      change Quantified.always
+        (Apparent.openRealHead (Apparent.abstractRealHead body)) =
+          Quantified.always body
+      rw [Apparent.openRealHead_abstractRealHead]
+  | sometimes body =>
+      change Quantified.sometimes
+        (Apparent.openRealHead (Apparent.abstractRealHead body)) =
+          Quantified.sometimes body
+      rw [Apparent.openRealHead_abstractRealHead]
 
 def rename (ρ : Apparent.Renaming Δ Ξ) : FirstOrder Γ Δ → FirstOrder Γ Ξ
   | Quantified.always body =>
@@ -593,12 +607,31 @@ def firstOrderToSecondAll (body : FirstOrder Γ [.elementaryProposition]) :
     firstOrderToSecondAll body = OrderedFormula.alwaysFirstOrder body := rfl
 
 def closedFirstOrderAlphaRenaming : Apparent.Renaming [] [] :=
-  fun variable => nomatch variable
+  fun emptyVariable => nomatch emptyVariable
 
 @[simp] theorem closedFirstOrder_alpha
     (body : Apparent Γ [.elementaryProposition]) :
     FirstOrder.rename closedFirstOrderAlphaRenaming (FirstOrder.always body) =
-      FirstOrder.always body := rfl
+      FirstOrder.always body := by
+  change Quantified.always
+    (Apparent.rename (Apparent.liftRenaming closedFirstOrderAlphaRenaming) body) =
+      Quantified.always body
+  congr 1
+  induction body with
+  | constant name => rfl
+  | real realVariable => rfl
+  | bound boundVariable => cases boundVariable <;> rfl
+  | neg proposition ih =>
+      change Apparent.neg
+        (Apparent.rename (Apparent.liftRenaming closedFirstOrderAlphaRenaming) proposition) =
+          Apparent.neg proposition
+      rw [ih]
+  | disj left right ihLeft ihRight =>
+      change Apparent.disj
+        (Apparent.rename (Apparent.liftRenaming closedFirstOrderAlphaRenaming) left)
+        (Apparent.rename (Apparent.liftRenaming closedFirstOrderAlphaRenaming) right) =
+          Apparent.disj left right
+      rw [ihLeft, ihRight]
 
 def matrixImp (φ ψ : Apparent Γ Δ) : Apparent Γ Δ :=
   Apparent.disj (Apparent.neg φ) ψ
