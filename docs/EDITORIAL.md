@@ -74,6 +74,9 @@ Witness sigla initially used by the project are:
 - `PM1-1910-SCAN`: facsimile of volume I, first edition (canonical witness);
 - `PG78050`: Project Gutenberg HTML/TeX transcription (derived witness);
 - `WS-PM1`: Wikisource transcription and page facsimile (derived witness).
+- `PM2-1912-SCAN`: facsimile of volume II, first edition (canonical witness);
+- `PG78255`: Project Gutenberg HTML/TeX transcription of volume II (derived
+  witness).
 
 The apparatus is cumulative and immutable: a superseded judgment remains in
 history and is replaced by a new reviewed record rather than silently rewritten.
