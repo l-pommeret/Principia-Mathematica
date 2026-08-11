@@ -262,6 +262,19 @@ class PMDotSyntaxTests(unittest.TestCase):
         parsed = statement_shape("✱102·75. ⊢ . NCᵗʻα(α) = NCᵅ(α) ∪ ιʻΛ")
         self.assertIn("class_named_application", tags(parsed))
 
+    def test_q102_86_preserves_diplomatic_xi_similarity_index(self):
+        parsed = statement_shape(
+            "✱102·86. ⊢ : μ = Nc(α)ʻδ . ∃!μ .⊃ . smᵟʻʻμ = Nc(ξ)ʻδ"
+        )
+        self.assertIn("type_indexed", tags(parsed))
+
+    def test_q102_87_preserves_nested_diplomatic_xi_similarity_index(self):
+        parsed = statement_shape(
+            "✱102·87. ⊢ : μ = Nc(β)ʻδ . ∃!Nc(ξ)ʻδ .⊃ . "
+            "smₐʻʻμ = smₐʻʻsmᵟʻʻμ"
+        )
+        self.assertGreaterEqual(tags(parsed).count("type_indexed"), 2)
+
     def test_nested_of_application_preserves_left_nesting(self):
         parsed = shape("E!Ncʻα")
         value = parsed["children"][0]

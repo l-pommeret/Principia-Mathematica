@@ -105,7 +105,17 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("of", source[index:end], index))
             index = end
             continue
-        similar = re.match(r"sm(₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθᵝᵦ,]+₎)?", source[index:])
+        # U+1D5F `ᵟ` records the raised type-index printed as ξ in the
+        # facsimile.  It is a diplomatic transcription marker, not a claim
+        # that Unicode supplies a distinct subscript xi character.
+        similar = re.match(r"sm(?:ᵟ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθᵝᵦ,]+₎)?", source[index:])
+        if (similar and similar.group(0) != "sm" and
+                index + len(similar.group(0)) < len(source) and
+                source[index + len(similar.group(0))] == OF):
+            text = similar.group(0)
+            result.append(Token("type_index", text, index))
+            index += len(text)
+            continue
         if similar and (
                 index + len(similar.group(0)) == len(source) or
                 source[index + len(similar.group(0))].isspace()):
@@ -140,7 +150,7 @@ def raw_tokens(source: str) -> list[Token]:
             continue
         type_index = re.match(
             r"([A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*)"
-            r"(ᵗʻ[Α-Ωα-ω]|ᵅ|ᵝ|ᵦ|ₐ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
+            r"(ᵗʻ[Α-Ωα-ω]|ᵅ|ᵝ|ᵦ|ᵟ|ₐ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
             source[index:],
         )
         if type_index:
@@ -257,7 +267,7 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("bang", char, index))
             index += 1
             continue
-        if char.isdigit():
+        if char.isascii() and char.isdigit():
             match = re.match(r"[0-9]+", source[index:])
             assert match is not None
             text = match.group(0)
@@ -265,7 +275,7 @@ def raw_tokens(source: str) -> list[Token]:
             index += len(text)
             continue
         match = re.match(
-            r"[A-Za-zΑ-Ωα-ωᗡ][A-Za-z0-9_Α-Ωα-ωᗡ′'\u0300-\u036f]*",
+            r"[A-Za-zΑ-Ωα-ωᗡ][A-Za-z0-9_Α-Ωα-ωᗡ₀-₉′'\u0300-\u036f]*",
             source[index:],
         )
         if match:
@@ -537,7 +547,7 @@ class Parser:
         elif token.kind == "type_index":
             indexed = re.fullmatch(
                 r"(?P<head>[A-Za-zΑ-Ωα-ω][A-Za-z0-9_Α-Ωα-ω′'\u0300-\u036f]*)"
-                r"(?P<index>ᵗʻ[Α-Ωα-ω]|ᵅ|ᵝ|ᵦ|ₐ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
+                r"(?P<index>ᵗʻ[Α-Ωα-ω]|ᵅ|ᵝ|ᵦ|ᵟ|ₐ|ₓ|₍[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ,]+₎)",
                 token.text,
             )
             assert indexed is not None

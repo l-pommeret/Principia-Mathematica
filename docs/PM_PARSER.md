@@ -19,6 +19,9 @@ The currently audited grammar covers:
 - the turned comma `ʻ` as PM's high-binding `of` application, e.g.
   `Ncʻα` as `of(Nc, α)` and `E!Ncʻα` as an existence assertion of that
   application.
+- the diplomatic similarity index `ᵟ` in forms such as `smᵟʻʻμ`: U+1D5F
+  records the printed type-index ξ, without claiming a separate Unicode
+  subscript-xi identity.
 
 The discriminating source tests include the exact shapes of ✱12·1, ✱13·01,
 and ✱14·01. In the resulting ✱14 AST, a description is never retained as a
