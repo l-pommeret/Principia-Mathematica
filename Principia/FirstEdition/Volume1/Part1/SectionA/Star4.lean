@@ -501,9 +501,15 @@ theorem star_4_13 {Γ} (p : PM.Elementary Γ) :
 are Id; ✱3·2 supplies their logical product. -/
 theorem star_4_2 {Γ} (p : PM.Elementary Γ) :
     ⊢ₚ (p ≡ₚ p) := by
-  exact PM.Derivation.detach
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer
     (PM.FirstEdition.Volume1.Star2.star_2_08 p)
-    (PM.Derivation.detach
+    (infer
       (PM.FirstEdition.Volume1.Star2.star_2_08 p)
       (PM.FirstEdition.Volume1.Star3.star_3_2 (p ⊃ₚ p) (p ⊃ₚ p)))
 
