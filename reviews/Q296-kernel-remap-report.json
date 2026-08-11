@@ -1,0 +1,46 @@
+{
+  "archive": {
+    "expected_sha256": null,
+    "path": "/Users/user/principia_mathematica/aristotle/results/Q296-final.tar.gz",
+    "present": false
+  },
+  "batch": "Q296",
+  "canonical_declarations": [
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.DescriptionSyntax.Formula.star_14_01",
+      "exists": false,
+      "expected_signature_sha256": "43a7c86fa106937309f6776f58cef08e05c172334617fc66fa29b5fdba08864c",
+      "role": "target-insertion"
+    }
+  ],
+  "kind": "pm-interface-kernel-remap-report",
+  "plan": {
+    "archive_sha256": null,
+    "batch": "Q296",
+    "canonical_integration_forbidden": true,
+    "kind": "pm-interface-kernel-remap-plan",
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true,
+    "targets": [
+      {
+        "body_policy": "rfl-only",
+        "canonical": "PM.DescriptionSyntax.Formula.star_14_01",
+        "id": "PM1:✱14·01",
+        "insertion_target": true,
+        "signature": "theorem star_14_01\n    (vocabulary : DescriptionVocabulary signature sort order)\n    (condition continuation :\n      Formula signature realContext (sort :: apparentContext) order) :\n    expand (.descriptionScope vocabulary condition continuation) =\n      .sometimes vocabulary.existential\n        (CoreFormula.conj vocabulary\n          (CoreFormula.uniquely vocabulary condition.expand)\n          continuation.expand)\n",
+        "signature_sha256": "43a7c86fa106937309f6776f58cef08e05c172334617fc66fa29b5fdba08864c",
+        "source": "PM.DescriptionSyntax.Formula.star_14_01"
+      }
+    ]
+  },
+  "policy": {
+    "canonical_integration_forbidden": true,
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true
+  },
+  "reasons": [
+    "terminal archive unavailable"
+  ],
+  "status": "blocked"
+}

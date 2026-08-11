@@ -29,6 +29,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE_AUDIT = ROOT / "reviews/Q228-Q244-aristotle-archive-audit.json"
 SUPPORTED_BATCHES = ("Q228", "Q229", "Q230", "Q259", "Q296", "Q300")
 STRICT_INSERTION_BATCHES = {"Q259", "Q300"}
+RFL_ONLY_INSERTION_BATCHES = {"Q296"}
 FORBIDDEN = {
     "sorry": re.compile(r"\bsorry\b"),
     "admit": re.compile(r"\badmit\b"),
@@ -208,7 +209,21 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
         # Architecture targets have no canonical theorem body yet.  The
         # prompt is nevertheless the exact interface authority for the
         # source header, while metadata gives the intended edition locus.
-        prompt_targets = prompt_signatures(root / "aristotle" / f"{batch}.md")
+        # Q296's signature is authoritative in its strict manifest, not in a
+        # prose prompt copy.  This makes the recorded hash a direct manifest
+        # derivative and avoids accepting a later prompt drift.
+        if batch == "Q296":
+            prompt_targets = [
+                {
+                    "source": manifest["target_declarations"][identifier],
+                    "signature": signature_from_snippet(
+                        manifest["interface_signature_targets"][identifier]
+                    ),
+                }
+                for identifier in manifest["target_order"]
+            ]
+        else:
+            prompt_targets = prompt_signatures(root / "aristotle" / f"{batch}.md")
         declared_targets = set(manifest.get("target_declarations", {}).values())
         if declared_targets:
             # The reviewed context may itself contain regression theorems.
@@ -263,6 +278,8 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
                 # used to reject a body which otherwise remaps exactly.
                 "insertion_target": batch in {"Q296", *STRICT_INSERTION_BATCHES},
             })
+            if batch in RFL_ONLY_INSERTION_BATCHES:
+                targets[-1]["body_policy"] = "rfl-only"
     for target in targets:
         target["signature_sha256"] = sha256_text(target["signature"])
     return {
@@ -309,13 +326,15 @@ def load_mapping(path: Path | None) -> list[dict[str, str]]:
     return clean
 
 
-def archive_sources(path: Path) -> tuple[str, list[dict[str, Any]], list[dict[str, Any]], list[str]]:
+def archive_sources(path: Path) -> tuple[
+        str, list[dict[str, Any]], list[dict[str, Any]], list[str], list[str]]:
     if not path.is_file():
         raise RemapError(f"archive not found: {path}")
     archive_digest = sha256_bytes(path.read_bytes())
     files: list[dict[str, Any]] = []
     declarations: list[dict[str, Any]] = []
     failures: list[str] = []
+    imports: list[str] = []
     with tarfile.open(path, "r:*") as archive:
         for member in archive.getmembers():
             if not safe_member_name(member.name):
@@ -333,13 +352,30 @@ def archive_sources(path: Path) -> tuple[str, list[dict[str, Any]], list[dict[st
             except UnicodeDecodeError as error:
                 raise RemapError(f"non-UTF-8 Lean member {member.name!r}") from error
             files.append({"path": member.name, "bytes": len(raw), "sha256": sha256_bytes(raw)})
+            clean = blank_comments(source)
             for label, pattern in FORBIDDEN.items():
-                if pattern.search(blank_comments(source)):
+                if pattern.search(clean):
                     failures.append(f"{member.name}: forbidden {label}")
+            imports.extend(
+                f"{member.name}: {match.group(0).strip()}"
+                for match in re.finditer(r"(?m)^\s*import\s+.+$", clean)
+            )
             declarations.extend(scan_declarations(source, member.name))
     if not files:
         raise RemapError("archive contains no Lean source")
-    return archive_digest, files, declarations, failures
+    return archive_digest, files, declarations, failures, imports
+
+
+def is_rfl_only_body(body: str) -> bool:
+    """Accept only a reductional ``rfl`` proof and enclosing namespace ends."""
+    clean = blank_comments(body)
+    assignment = clean.find(":=")
+    if assignment < 0:
+        return False
+    return re.fullmatch(
+        r"\s*:=\s*(?:by\s+)?rfl\s*(?:end(?:\s+[A-Za-z_][A-Za-z0-9_.']*)?\s*)*",
+        clean[assignment:],
+    ) is not None
 
 
 def replace_references(body: str, mappings: list[dict[str, str]]) -> str:
@@ -402,6 +438,8 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
     except (OSError, json.JSONDecodeError, RemapError) as error:
         mappings = []
         report["reasons"].append(f"invalid mapping: {error}")
+    if batch in RFL_ONLY_INSERTION_BATCHES and mappings:
+        report["reasons"].append(f"{batch} forbids dependency mappings")
     # A target marked for insertion is intentionally absent from the edition;
     # only mapped dependencies and non-insertion targets must already resolve.
     canonical_names = {target["canonical"] for target in plan["targets"]
@@ -432,7 +470,7 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
         report["reasons"].append("terminal archive unavailable")
         return report
     try:
-        digest, files, declarations, forbidden = archive_sources(archive)
+        digest, files, declarations, forbidden, imports = archive_sources(archive)
     except (OSError, tarfile.TarError, RemapError) as error:
         report["archive"] = {"path": str(archive), "present": False,
                              "expected_sha256": plan["archive_sha256"]}
@@ -446,6 +484,12 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
         report["reasons"].append("archive SHA-256 mismatch")
     report["forbidden_constructs"] = forbidden
     report["reasons"].extend(forbidden)
+    if batch in RFL_ONLY_INSERTION_BATCHES:
+        report["archive_dependencies"] = imports
+        if imports:
+            report["reasons"].append(
+                f"{batch} forbids archive dependencies/imports: " + "; ".join(imports)
+            )
     mapped = {record["source"]: record["canonical"] for record in mappings}
     # The audited targets always have a mandatory mapping, even when their
     # archive namespace happens to equal the canonical namespace.
@@ -511,9 +555,13 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
             "actual_signature_sha256": source.get("signature_sha256") if source else None,
             "exact_signature": exact,
             "role": "target-insertion" if target.get("insertion_target") else "existing-target",
+            "body_policy": target.get("body_policy"),
         })
         if not exact:
             report["reasons"].append(f"target signature mismatch or absent: {target['source']}")
+        if target.get("body_policy") == "rfl-only" and (
+                source is None or not is_rfl_only_body(source["body"])):
+            report["reasons"].append(f"target body is not rfl-only: {target['source']}")
     report["targets"] = targets_found
     report["reasons"] = sorted(set(report["reasons"]))
     if not report["reasons"]:

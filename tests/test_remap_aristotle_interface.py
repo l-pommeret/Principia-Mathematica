@@ -36,6 +36,75 @@ class AristotleInterfaceRemapTests(unittest.TestCase):
         )
         self.assertEqual(target["canonical"], target["source"])
         self.assertTrue(target["insertion_target"])
+        self.assertEqual(target["body_policy"], "rfl-only")
+        self.assertEqual(target["signature_sha256"],
+                         "43a7c86fa106937309f6776f58cef08e05c172334617fc66fa29b5fdba08864c")
+
+    def test_q296_clean_rfl_fixture_is_transplantable_without_dependencies(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "Principia").mkdir()
+            archive = root / "result.tar.gz"
+            write_archive(archive, {"Target.lean": """namespace PM.Local
+theorem star_14_01 : True := by rfl
+end PM.Local
+"""})
+            signature = "theorem star_14_01 : True\n"
+            plan = {
+                "kind": "pm-interface-kernel-remap-plan", "batch": "Q296",
+                "archive_sha256": sha256_bytes(archive.read_bytes()),
+                "targets": [{"id": "PM1:✱14·01", "source": "PM.Local.star_14_01",
+                             "canonical": "PM.Canonical.star_14_01", "signature": signature,
+                             "signature_sha256": __import__("hashlib").sha256(
+                                 signature.encode("utf-8")).hexdigest(),
+                             "insertion_target": True, "body_policy": "rfl-only"}],
+            }
+            transplant = root / "candidate.lean"
+            with patch("remap_aristotle_interface.batch_plan", return_value=plan):
+                report = run_remap(root, "Q296", archive, transplant=transplant)
+            self.assertEqual(report["status"], "transplantable-interface-only")
+            self.assertEqual(report["archive_dependencies"], [])
+            self.assertIn("namespace PM.Canonical", transplant.read_text(encoding="utf-8"))
+
+    def test_q296_rejects_non_rfl_imports_and_local_declarations(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "Principia").mkdir()
+            archive = root / "result.tar.gz"
+            write_archive(archive, {"Target.lean": """import Mathlib
+open Classical
+namespace PM.Local
+axiom forbidden : True
+def helper : True := True.intro
+theorem star_14_01 : True := by exact True.intro
+end PM.Local
+"""})
+            signature = "theorem star_14_01 : True\n"
+            plan = {
+                "kind": "pm-interface-kernel-remap-plan", "batch": "Q296",
+                "archive_sha256": sha256_bytes(archive.read_bytes()),
+                "targets": [{"id": "PM1:✱14·01", "source": "PM.Local.star_14_01",
+                             "canonical": "PM.Canonical.star_14_01", "signature": signature,
+                             "signature_sha256": __import__("hashlib").sha256(
+                                 signature.encode("utf-8")).hexdigest(),
+                             "insertion_target": True, "body_policy": "rfl-only"}],
+            }
+            with patch("remap_aristotle_interface.batch_plan", return_value=plan):
+                report = run_remap(root, "Q296", archive)
+            reasons = "\n".join(report["reasons"])
+            self.assertEqual(report["status"], "blocked")
+            self.assertIn("Q296 forbids archive dependencies/imports", reasons)
+            self.assertIn("Q296 forbids archive-local declarations", reasons)
+            self.assertIn("Q296 forbids axiom/opaque declarations", reasons)
+            self.assertIn("forbidden Classical", reasons)
+            self.assertIn("target body is not rfl-only", reasons)
+
+    def test_q296_unavailable_archive_does_not_require_inserted_target(self):
+        report = run_remap(ROOT, "Q296")
+        self.assertEqual(report["status"], "blocked")
+        self.assertIn("terminal archive unavailable", report["reasons"])
+        self.assertEqual(report["canonical_declarations"][0]["role"], "target-insertion")
+        self.assertNotIn("missing canonical declaration", "\n".join(report["reasons"]))
 
     def test_q228_plan_is_exact_and_non_promotional(self):
         plan = batch_plan(ROOT, "Q228")
