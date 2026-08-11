@@ -4,7 +4,7 @@
     "proof_permissions_are_exact_per_target": true,
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
-    "strict": true
+    "strict": false
   },
   "batch_items": [
     {
@@ -12,7 +12,7 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": false
       },
       "current_item": "PM1:✱3·44",
       "proof_permissions": [
@@ -206,7 +206,7 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": false
       },
       "current_item": "PM1:✱3·45",
       "proof_permissions": [
@@ -378,7 +378,7 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": false
       },
       "current_item": "PM1:✱3·47",
       "proof_permissions": [
@@ -464,12 +464,14 @@
         }
       ],
       "global_conventions": [
-        "PM1:✱1·11"
+        "PM1:✱1·11",
+        "PM1:✱3·2"
       ],
       "allowed_pm_items": [
         "PM1:✱1·11",
         "PM1:✱2·83",
         "PM1:✱3·03",
+        "PM1:✱3·2",
         "PM1:✱3·22",
         "PM1:✱3·26",
         "PM1:✱3·27",
@@ -479,6 +481,7 @@
         "PM1:✱1·11": "PM.Derivation.star_1_11",
         "PM1:✱2·83": "PM.FirstEdition.Volume1.Star2.star_2_83",
         "PM1:✱3·03": "PM.FirstEdition.Volume1.Star3.star_3_03",
+        "PM1:✱3·2": "PM.FirstEdition.Volume1.Star3.star_3_2",
         "PM1:✱3·22": "PM.FirstEdition.Volume1.Star3.star_3_22",
         "PM1:✱3·26": "PM.FirstEdition.Volume1.Star3.star_3_26",
         "PM1:✱3·27": "PM.FirstEdition.Volume1.Star3.star_3_27",
@@ -532,8 +535,10 @@
         "PM1:✱3·03",
         "PM1:✱3·1",
         "PM1:✱3·11",
+        "PM1:✱3·12",
         "PM1:✱3·13",
         "PM1:✱3·14",
+        "PM1:✱3·2",
         "PM1:✱3·22",
         "PM1:✱3·26",
         "PM1:✱3·27"
@@ -583,8 +588,10 @@
         "PM1:✱3·03": "PM.FirstEdition.Volume1.Star3.star_3_03",
         "PM1:✱3·1": "PM.FirstEdition.Volume1.Star3.star_3_1",
         "PM1:✱3·11": "PM.FirstEdition.Volume1.Star3.star_3_11",
+        "PM1:✱3·12": "PM.FirstEdition.Volume1.Star3.star_3_12",
         "PM1:✱3·13": "PM.FirstEdition.Volume1.Star3.star_3_13",
         "PM1:✱3·14": "PM.FirstEdition.Volume1.Star3.star_3_14",
+        "PM1:✱3·2": "PM.FirstEdition.Volume1.Star3.star_3_2",
         "PM1:✱3·22": "PM.FirstEdition.Volume1.Star3.star_3_22",
         "PM1:✱3·26": "PM.FirstEdition.Volume1.Star3.star_3_26",
         "PM1:✱3·27": "PM.FirstEdition.Volume1.Star3.star_3_27"
@@ -602,14 +609,17 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
-      "substitutions": []
+      "substitutions": [],
+      "documented_relaxations": [
+        "PM1:✱3·2"
+      ]
     },
     {
       "kind": "pm-constrained-prover-manifest",
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": false
       },
       "current_item": "PM1:✱3·48",
       "proof_permissions": [
@@ -873,8 +883,10 @@
     "PM1:✱3·03",
     "PM1:✱3·1",
     "PM1:✱3·11",
+    "PM1:✱3·12",
     "PM1:✱3·13",
     "PM1:✱3·14",
+    "PM1:✱3·2",
     "PM1:✱3·22",
     "PM1:✱3·26",
     "PM1:✱3·27",
@@ -929,8 +941,10 @@
     "PM1:✱3·03": "PM.FirstEdition.Volume1.Star3.star_3_03",
     "PM1:✱3·1": "PM.FirstEdition.Volume1.Star3.star_3_1",
     "PM1:✱3·11": "PM.FirstEdition.Volume1.Star3.star_3_11",
+    "PM1:✱3·12": "PM.FirstEdition.Volume1.Star3.star_3_12",
     "PM1:✱3·13": "PM.FirstEdition.Volume1.Star3.star_3_13",
     "PM1:✱3·14": "PM.FirstEdition.Volume1.Star3.star_3_14",
+    "PM1:✱3·2": "PM.FirstEdition.Volume1.Star3.star_3_2",
     "PM1:✱3·22": "PM.FirstEdition.Volume1.Star3.star_3_22",
     "PM1:✱3·26": "PM.FirstEdition.Volume1.Star3.star_3_26",
     "PM1:✱3·27": "PM.FirstEdition.Volume1.Star3.star_3_27",
@@ -962,6 +976,7 @@
     "PM1:✱2·83",
     "PM1:✱3·01",
     "PM1:✱3·03",
+    "PM1:✱3·2",
     "PM1:✱3·22",
     "PM1:✱3·26",
     "PM1:✱3·27",

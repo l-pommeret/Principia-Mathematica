@@ -2,9 +2,9 @@
   "kind": "pm-isolated-context-bundle",
   "profile": "elementary-formation-pm1",
   "current_item": null,
-  "manifest_sha256": "89d957db6ab922b83184cf672e8e5a84333a06a995832cee6788e34f6af05dce",
-  "source_sha256": "8f24bf59eaa60f39ce9384ce656c9ad48a7c591f5806e0489dfb6e6e6db245d5",
-  "source_bytes": 35926,
+  "manifest_sha256": "61eb0dfbbd8617552774bdfb9bae215dc82bf9691ad2e3796fe4de056096fce8",
+  "source_sha256": "7b4236748885329ba76eaa414a4f6a54e964940685a5592a8097a4882686f3ed",
+  "source_bytes": 36630,
   "proof_permissions": [
     "PM1:✱1·01",
     "PM1:✱1·11",
@@ -20,6 +20,7 @@
     "PM1:✱2·83",
     "PM1:✱3·01",
     "PM1:✱3·03",
+    "PM1:✱3·2",
     "PM1:✱3·22",
     "PM1:✱3·26",
     "PM1:✱3·27",
@@ -75,8 +76,10 @@
     "PM1:✱3·03",
     "PM1:✱3·1",
     "PM1:✱3·11",
+    "PM1:✱3·12",
     "PM1:✱3·13",
     "PM1:✱3·14",
+    "PM1:✱3·2",
     "PM1:✱3·22",
     "PM1:✱3·26",
     "PM1:✱3·27",
@@ -476,6 +479,15 @@
     },
     {
       "kind": "item-declaration",
+      "id": "PM1:✱3·12",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_12",
+      "source_sha256": "102a78a2b840d40f1cc5c4186bbca33946af7b55b996a759c41f85f337db0ecd",
+      "slice_sha256": "e6815858c0b7c3eeae031781f8ed43aa4dc9dfe9f97b6ec93c6758535e6ebe6b",
+      "bytes": 189
+    },
+    {
+      "kind": "item-declaration",
       "id": "PM1:✱3·13",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_13",
@@ -491,6 +503,15 @@
       "source_sha256": "102a78a2b840d40f1cc5c4186bbca33946af7b55b996a759c41f85f337db0ecd",
       "slice_sha256": "a902e908f0f3309ed9098ec1101545117c2076973a6e79447f71d7580b75f105",
       "bytes": 892
+    },
+    {
+      "kind": "item-declaration",
+      "id": "PM1:✱3·2",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_2",
+      "source_sha256": "102a78a2b840d40f1cc5c4186bbca33946af7b55b996a759c41f85f337db0ecd",
+      "slice_sha256": "ab8d873a14915e033a66b2f9fb3b9fac77665fdaca7b81278146501c3fc90db0",
+      "bytes": 217
     },
     {
       "kind": "item-declaration",

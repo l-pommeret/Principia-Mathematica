@@ -15,7 +15,7 @@ REGISTRY = ROOT / "metadata/anomalies/PM1-anomaly-register.json"
 SCHEMA = ROOT / "metadata/schema/anomaly-registry.schema.json"
 CATEGORIES = {
     "printed-error-unofficial", "incomplete-printed-citation", "notation-ambiguity",
-    "digital-witness-error", "reconstruction-gap",
+    "digital-witness-error", "reconstruction-gap", "context-polymorphism-gap",
 }
 REQUIRED = {
     "id", "category", "pm_locus", "printed_reading", "printed_citations",
@@ -32,6 +32,7 @@ REQUIRED_MANUAL = {
     "PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT",
     "PM1-ANOM-Q222-RETRY03-AUDITED-RELAXED-OUTPUT",
     "PM1-ANOM-Q223-IMPLICIT-COMPOSITION-GAP",
+    "PM1-ANOM-Q226-CONTEXT-POLYMORPHISM-GAP",
 }
 REQUIRED_INFRASTRUCTURE_INCIDENT = {
     "id", "batch", "service", "project_id", "task_id", "observed_sequence",
@@ -137,6 +138,11 @@ def verify_registry(root: Path = ROOT) -> dict:
             or [entry.get("target") for entry in q223.get("relaxation_use", [])]
             != ["PM1:✱3·27", "PM1:✱3·31"]):
         fail("Q223 must record the exact two-locus non-strict ✱1·6 relaxation")
+    q226 = by_id["PM1-ANOM-Q226-CONTEXT-POLYMORPHISM-GAP"]
+    if (q226["category"] != "context-polymorphism-gap" or q226.get("strict") is not False
+            or q226["minimal_relaxation"] != ["PM1:✱3·2 (Γ = [] branch only)"]
+            or q226.get("relaxation_use", [{}])[0].get("target") != "PM1:✱3·47"):
+        fail("Q226 must preserve the scope-limited empty-context ✱3·2 relaxation")
     digital = [entry for entry in entries if entry["category"] == "digital-witness-error"]
     if not digital:
         fail("attested digital witness errors were not backfilled")

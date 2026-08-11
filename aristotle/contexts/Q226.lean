@@ -702,6 +702,15 @@ theorem star_3_11 {Γ} (p q : PM.Elementary Γ) :
 
 end PM.FirstEdition.Volume1.Star3
 
+-- PM-CONTEXT-ITEM PM1:✱3·12 PM.FirstEdition.Volume1.Star3.star_3_12
+namespace PM.FirstEdition.Volume1.Star3
+
+theorem star_3_12 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (((∼ₚ p) ∨ₚ (∼ₚ q)) ∨ₚ (p ∧ₚ q)) :=
+  PM.FirstEdition.Volume1.Star2.star_2_11 ((∼ₚ p) ∨ₚ (∼ₚ q))
+
+end PM.FirstEdition.Volume1.Star3
+
 -- PM-CONTEXT-ITEM PM1:✱3·13 PM.FirstEdition.Volume1.Star3.star_3_13
 namespace PM.FirstEdition.Volume1.Star3
 
@@ -729,6 +738,16 @@ theorem star_3_14 {Γ} (p q : PM.Elementary Γ) :
     (PM.Derivation.detach hDN
       (PM.FirstEdition.Volume1.Star2.star_2_06 ((∼ₚ p) ∨ₚ (∼ₚ q))
         (∼ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))) (∼ₚ (p ∧ₚ q))))
+
+end PM.FirstEdition.Volume1.Star3
+
+-- PM-CONTEXT-ITEM PM1:✱3·2 PM.FirstEdition.Volume1.Star3.star_3_2
+namespace PM.FirstEdition.Volume1.Star3
+
+theorem star_3_2 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ (q ⊃ₚ (p ∧ₚ q))) :=
+  PM.Derivation.detach (star_3_12 p q)
+    (PM.FirstEdition.Volume1.Star2.star_2_32 (∼ₚ p) (∼ₚ q) (p ∧ₚ q))
 
 end PM.FirstEdition.Volume1.Star3
 

@@ -155,6 +155,24 @@
       "resolution_status": "resolved-documented-relaxation-kernel-checked"
     },
     {
+      "id": "PM1-ANOM-Q226-CONTEXT-POLYMORPHISM-GAP",
+      "category": "context-polymorphism-gap",
+      "pm_locus": {"volume": 1, "printed_pages": [119], "scan_leaves": [141], "items": ["PM1:✱3·47"]},
+      "printed_reading": "✱3·47 ends its two real-variable lines by cited ✱3·03 and ✱2·83; ✱3·03 is retained as the printed real-variable branch.",
+      "printed_citations": ["PM1:✱3·26", "Fact/PM1:✱3·45", "PM1:✱3·22", "PM1:✱3·27", "PM1:✱3·03", "PM1:✱2·83"],
+      "corrected_or_added_reading": "No correction to PM: the polymorphic Lean declaration also quantifies over Γ = []. Add exactly ✱3·2 only in that empty-context branch; do not replace the printed ✱3·03 real-variable branch.",
+      "canonical_witness_evidence": {"canonical_scan": "https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/141", "scan_leaf": 141, "sha256": "8d1f60a3cdcc48bada28c4a505c20529ee4e94f4c8a03da3f633132015a6f837", "hash_kind": "audited leaf derivative"},
+      "digital_witnesses": ["PM1-1910-SCAN", "WS-PM1"],
+      "affected_ast_items_batches": {"items": ["PM1:✱3·47"], "batches": ["Q226"], "ast_effect": "None; the printed AST and its ✱3·03 citation are unchanged. The relaxation concerns only the extra empty-context branch introduced by the generic Lean scope."},
+      "strict_audit_status": "retry-01 archive `aristotle/results/Q226-retry-01-final.tar.gz` (SHA-256 prefix b7c0a27f) is rejected and unintegrated: ✱3·47 lacks the Fact/✱3·45 result while ✱3·03 is unavailable at Γ = []; the delivered PMContext.lean also retains inherited ✱1·5/✱1·6 usages, so literal prompt-source policy fails despite clean target Q226.lean/obstruction files.",
+      "minimal_relaxation": ["PM1:✱3·2 (Γ = [] branch only)"],
+      "strict": false,
+      "relaxation_use": [{"id": "PM1:✱3·2", "uses": 1, "target": "PM1:✱3·47", "purpose": "empty-context branch only; ✱3·03 remains required for the printed real-variable branch"}],
+      "lean_impact": {"kind": "terminal-strict-audit-rejected", "status": "not-integrated", "archive": "aristotle/results/Q226-retry-01-final.tar.gz", "archive_sha256_prefix": "b7c0a27f", "hygiene": "target Q226.lean and obstruction are clean; delivered PMContext.lean inherits PM.Derivation.star_1_5/_1_6, so literal prompt-source policy fails"},
+      "review_provenance": ["reviews/Q226-review.md", "aristotle/manifests/Q226.json", "aristotle/results/Q226-retry-01-final.tar.gz"],
+      "resolution_status": "strict-rejected-awaiting-scope-limited-relaxed-continuation"
+    },
+    {
       "id": "PM1-ANOM-Q227-EQUIVALENCE-PACKAGING-GAP",
       "category": "incomplete-printed-citation",
       "pm_locus": {"volume": 1, "printed_pages": [120, 121, 122], "scan_leaves": [142, 143, 144], "items": ["PM1:✱4·1", "PM1:✱4·12", "PM1:✱4·13"]},
