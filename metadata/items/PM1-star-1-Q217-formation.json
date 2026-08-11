@@ -19,7 +19,7 @@
       "declaration": "PM.Formation.star_1_7",
       "formal_scope": "formation of negation in the same elementary real-variable context",
       "source_status": "scan-and-PG-checked",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -35,7 +35,7 @@
       "declaration": "PM.Formation.star_1_71",
       "formal_scope": "formation of disjunction in the empty real-variable context",
       "source_status": "scan-and-PG-checked",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -51,12 +51,16 @@
       "declaration": "PM.Formation.star_1_72",
       "formal_scope": "formation of disjunction after identifying the same nonempty real-variable context for both elementary functions",
       "source_status": "scan-and-PG-checked",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "substitutions": []
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "202999d6591b90acadfaff986fa23bd3ab6e0376",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31450038845",
+    "conclusion": "success"
+  }
 }

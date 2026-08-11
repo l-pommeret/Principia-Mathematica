@@ -1,0 +1,30 @@
+{
+  "batch": "PM1-STAR3-Q217-RULE",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "116",
+    "scan_leaves": [138],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "items": [
+    {
+      "id": "PM1:✱3·03",
+      "kind": "derived-metalinguistic-rule",
+      "printed": "Given two asserted elementary propositional functions “⊢ . φp” and “⊢ . ψp” whose arguments are elementary propositions, we have ⊢ . φp . ψp.",
+      "printed_page": 116,
+      "scan_leaf": 138,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_03",
+      "formal_scope": "formation-aware product of two asserted elementary propositional functions in the same nonempty real-variable context",
+      "source_status": "scan-collated-critical-reference-retained",
+      "formal_status": "prepared",
+      "printed_dependencies": ["PM1:✱1·7", "PM1:✱1·72", "PM1:✱2·11", "PM1:✱2·32", "PM1:✱1·01", "PM1:✱3·01", "PM1:✱1·11"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "substitutions": []
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

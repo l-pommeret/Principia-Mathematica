@@ -141,10 +141,10 @@ def check_item_metadata() -> None:
         evidence_values = {
             evidence.get("commit"), evidence.get("run"), evidence.get("conclusion")
         }
-        if formal_statuses == {"awaiting-ci"}:
+        if formal_statuses in ({"prepared"}, {"awaiting-ci"}):
             if evidence_values != {"pending"}:
                 fail(
-                    f"{path} awaiting-ci batch must have entirely pending "
+                    f"{path} prepared/awaiting-ci batch must have entirely pending "
                     "CI evidence"
                 )
         elif formal_statuses == {"kernel-checked"}:
@@ -154,8 +154,8 @@ def check_item_metadata() -> None:
                 fail(f"{path} lacks successful immutable CI evidence")
         else:
             fail(
-                f"{path} must contain only awaiting-ci items or only "
-                "kernel-checked items"
+                f"{path} must contain only prepared items, only awaiting-ci "
+                "items, or only kernel-checked items"
             )
     numbered = {item_id for item_id in blocks if "✱" in item_id}
     missing = numbered - metadata_ids

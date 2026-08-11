@@ -16,7 +16,10 @@ class ParserCoverageTests(unittest.TestCase):
         self.assertGreaterEqual(result["counts"]["object_language"], 73)
         self.assertEqual(
             result["metalinguistic_rules"],
-            ["PM1:✱1·1", "PM1:✱1·11", "PM1:✱1·7", "PM1:✱1·71", "PM1:✱1·72"],
+            [
+                "PM1:✱1·1", "PM1:✱1·11", "PM1:✱1·7", "PM1:✱1·71",
+                "PM1:✱1·72", "PM1:✱3·03",
+            ],
         )
         self.assertEqual(
             result["counts"]["total"],

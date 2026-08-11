@@ -1,0 +1,46 @@
+{
+  "batch": "PM1-STAR3-Q217-DEFINITIONS",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "114, 116",
+    "scan_leaves": [136, 138],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "items": [
+    {
+      "id": "PM1:✱3·01",
+      "kind": "definition",
+      "printed": "p . q .=. ∼(∼p ∨ ∼q)     Df",
+      "printed_page": 114,
+      "scan_leaf": 136,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.Elementary.conj",
+      "formal_scope": "definitional abbreviation of logical product as ∼(∼p ∨ ∼q)",
+      "source_status": "scan-and-PG-checked",
+      "formal_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "substitutions": []
+    },
+    {
+      "id": "PM1:✱3·02",
+      "kind": "definition",
+      "printed": "p ⊃ q ⊃ r .=. p ⊃ q . q ⊃ r     Df",
+      "printed_page": 114,
+      "scan_leaf": 136,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.Elementary.impChain",
+      "formal_scope": "definitional abbreviation as the logical product of p⊃q and q⊃r",
+      "source_status": "scan-and-PG-checked",
+      "formal_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱3·01"],
+      "lean_dependencies": ["PM.Elementary.conj"],
+      "normalized_dependencies": ["PM1:✱3·01"],
+      "substitutions": []
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

@@ -14,6 +14,7 @@ from verify_dependencies import load_items
 
 ROOT = Path(__file__).resolve().parents[1]
 METALINGUISTIC_KINDS = {
+    "derived-metalinguistic-rule",
     "primitive-inference-rule",
     "primitive-function-inference-rule",
     "primitive-formation-rule",
