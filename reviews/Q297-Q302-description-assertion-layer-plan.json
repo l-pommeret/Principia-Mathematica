@@ -1,0 +1,111 @@
+{
+  "kind": "pm-description-assertion-layer-audit-plan",
+  "status": "blocked-exact-constructor-signatures-not-yet-source-audited",
+  "scope": {
+    "batches": ["Q297", "Q298", "Q299", "Q302"],
+    "canonical_integration_forbidden": true,
+    "no_lean_or_ci_was_run": true,
+    "no_oracle_axiom_semantics_or_term_description_is_authorized": true,
+    "closed_skeleton": {
+      "status": "not-created",
+      "reason": "The carrier's exact constructor and rule signatures are not licensed; a Lean skeleton would itself choose an assertion calculus."
+    }
+  },
+  "audited_sources": [
+    {
+      "path": "Principia/Syntax/Description.lean",
+      "sha256": "d4223a5f818de6a15ac62eabed917a6925d7a2a7a06b87e4baa5ba3b346d86e9",
+      "established_boundary": "Formula is typed de Bruijn syntax; a description occurs only as Formula.descriptionScope and never as Term."
+    },
+    {
+      "path": "Principia/Syntax/DescriptionDefinitions.lean",
+      "sha256": "8e4ad50e931391056f51b08734eb37be4ddfaa5d6df01f648f79a04cfe46822f",
+      "established_boundary": "descriptionExists, descriptionScopePair and laterDescriptionOuterScope are reductional syntax definitions, not assertions."
+    },
+    {
+      "path": "Principia/Deduction/System.lean",
+      "sha256": "d245ec933fc304e3f9acd04a8f9efaadab6a991e5f76bbdd91f021f08c32ba82",
+      "established_boundary": "PM.Derivation is indexed by Elementary only, so it cannot carry DescriptionSyntax.Formula."
+    },
+    {
+      "path": "Principia/Architecture/FirstOrderPrerequisites.lean",
+      "sha256": "6d30b66359623391b78a727b2fc0a7b3cc4e25f1dadb6b11a51d9f7c1ee9efae",
+      "established_boundary": "OrderedAssertion is for the Star 9 Apparent syntax, not DescriptionSyntax.Formula."
+    }
+  ],
+  "minimal_carrier_contract": {
+    "outer_shape": "DescriptionDerivation (formula : Formula signature realContext apparentContext order) : Prop",
+    "outer_shape_status": "required-by-Q298-Q302-audits; identifier is descriptive, not a licensed Lean declaration name",
+    "required_indices": ["signature", "realContext", "apparentContext", "order"],
+    "nonnegotiable_invariants": [
+      "The judgement is evidence of an object-language Formula, never Lean equality or a semantic truth predicate.",
+      "A description remains scoped Formula.descriptionScope; no Term.description constructor is permitted.",
+      "The real and apparent contexts remain explicit so weakening/substitution are capture-safe.",
+      "Assigned order remains an index; no global quantification over all PM types is permitted.",
+      "Derivation rules must be constructors or theorems proved from constructors, never axioms or opaque oracle constants."
+    ],
+    "exact_lean_signature": null,
+    "blocker": "The printed dependency chains do not yet fix the carrier namespace, whether judgement is directly over Formula or a separately audited expansion bridge, nor the exact rule argument order."
+  },
+  "minimal_rule_families": [
+    {
+      "family": "object_implication_and_equivalence",
+      "needed_by": ["Q297:14.18", "Q297:14.21", "Q299", "Q302"],
+      "must_preserve": ["Formula.imp scope", "Formula.iff scope", "narrow-versus-wide description scope"],
+      "exact_lean_signature": null
+    },
+    {
+      "family": "description_existence_and_unique_witness",
+      "needed_by": ["Q297:14.18", "Q297:14.21", "Q298:14.202", "Q298:14.204", "Q298:14.28", "Q299:14.11", "Q302:14.12", "Q302:14.121"],
+      "must_preserve": ["descriptionExists", "uniqueMatrix", "typed equality under the candidate binder"],
+      "exact_lean_signature": null
+    },
+    {
+      "family": "description_elimination_and_scoped_equivalence",
+      "needed_by": ["Q298:14.205", "Q299:14.1", "Q299:14.101"],
+      "must_preserve": ["descriptionScope", "expand only as an audited bridge, not as an assertion oracle"],
+      "exact_lean_signature": null
+    },
+    {
+      "family": "two_description_scope_and_congruence",
+      "needed_by": ["Q299:14.111", "Q299:14.112", "Q302:14.113"],
+      "must_preserve": ["descriptionScopePair", "laterDescriptionOuterScope", "binder order innerSort :: outerSort :: apparentContext"],
+      "exact_lean_signature": null
+    },
+    {
+      "family": "typed_identity_and_one_or_two_variable_substitution",
+      "needed_by": ["Q298:14.13", "Q302:14.12", "Q302:14.121", "Q302:14.122", "Q302:14.123"],
+      "must_preserve": ["Formula.equal accepts genuine Term only", "Formula.substitute and Formula.weaken indices"],
+      "exact_lean_signature": null
+    }
+  ],
+  "batch_gates": [
+    {
+      "batch": "Q297",
+      "already_reductional": ["14.02", "14.03", "14.04"],
+      "blocked_targets": ["14.18", "14.21"],
+      "minimum_rule_families": ["object_implication_and_equivalence", "description_existence_and_unique_witness"]
+    },
+    {
+      "batch": "Q298",
+      "blocked_targets": ["14.202", "14.204", "14.205", "14.28", "14.13"],
+      "minimum_rule_families": ["description_existence_and_unique_witness", "description_elimination_and_scoped_equivalence", "typed_identity_and_one_or_two_variable_substitution"]
+    },
+    {
+      "batch": "Q299",
+      "blocked_targets": ["14.1", "14.101", "14.11", "14.111", "14.112"],
+      "minimum_rule_families": ["object_implication_and_equivalence", "description_existence_and_unique_witness", "description_elimination_and_scoped_equivalence", "two_description_scope_and_congruence"]
+    },
+    {
+      "batch": "Q302",
+      "blocked_targets": ["14.113", "14.12", "14.121", "14.122", "14.123"],
+      "minimum_rule_families": ["object_implication_and_equivalence", "description_existence_and_unique_witness", "two_description_scope_and_congruence", "typed_identity_and_one_or_two_variable_substitution"]
+    }
+  ],
+  "unblock_evidence_required": [
+    "A source-audited declaration list fixes the carrier namespace, all indices, and every constructor argument order.",
+    "Each constructor has a printed-rule or previously kernel-checked provenance; no semantic completeness bridge is introduced.",
+    "A separate audit demonstrates that the carrier cannot encode a description as a term or collapse object propositions into Lean Prop.",
+    "Only after those signatures are fixed may a closed Lean skeleton be proposed and sent through the interface remapper."
+  ]
+}
