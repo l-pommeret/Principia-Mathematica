@@ -34,10 +34,11 @@ equivalence. -/
 theorem star_5_25 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ∨ₚ q) ≡ₚ ((p ⊃ₚ q) ⊃ₚ q)) := by
   exact PM.Derivation.detach
-    (PM.FirstEdition.Volume1.Star2.star_2_62 p q)
+    (PM.FirstEdition.Volume1.Star2.star_2_68 p q)
     (PM.Derivation.detach
-      (PM.FirstEdition.Volume1.Star2.star_2_68 p q)
+      (PM.FirstEdition.Volume1.Star2.star_2_62 p q)
       (PM.FirstEdition.Volume1.Star3.star_3_2
-        (p ∨ₚ q) ((p ⊃ₚ q) ⊃ₚ q)))
+        ((p ∨ₚ q) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ q))
+        (((p ⊃ₚ q) ⊃ₚ q) ⊃ₚ (p ∨ₚ q))))
 
 end PM.FirstEdition.Volume1.Star5
