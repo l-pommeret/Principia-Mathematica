@@ -42,10 +42,13 @@ def audit_batch(manifest: dict, source_path: Path, registry: dict[str, dict],
     declarations = {identifier: item["declaration"] for identifier, item in registry.items()}
     declarations.update(manifest["target_declarations"])
     realization_to_id = dict(aliases.get("lean_realizations", {}))
+    notation_to_id = dict(aliases.get("lean_notation_realizations", {}))
     declaration_to_id = {declaration: identifier for identifier, declaration in declarations.items()}
     declaration_to_id.update(realization_to_id)
     declaration_to_id["PM.Derivation.detach"] = None
     local_names = set(LOCAL_DECLARATION.findall(source_path.read_text(encoding="utf-8")))
+    indexed_short_names = {name.rsplit(".", 1)[-1] for name in declaration_to_id}
+    helper_names = local_names - indexed_short_names
     target_short_to_id = {
         declaration.rsplit(".", 1)[-1]: identifier
         for identifier, declaration in manifest["target_declarations"].items()
@@ -76,6 +79,10 @@ def audit_batch(manifest: dict, source_path: Path, registry: dict[str, dict],
             if pm_id is not None and pm_id != identifier
             and occurs_qualified(proof, declaration)
         }
+        used.update(
+            pm_id for notation, pm_id in notation_to_id.items()
+            if notation in proof
+        )
         if occurs_qualified(proof, "PM.Derivation.detach"):
             licensed = set(conventions) | set(allowed_items)
             if "PM1:✱1·11" in licensed:
@@ -86,7 +93,7 @@ def audit_batch(manifest: dict, source_path: Path, registry: dict[str, dict],
                 raise BatchAuditError(
                     f"{identifier}: detach lacks an explicit or reviewed PM rule"
                 )
-        for local in sorted(local_names):
+        for local in sorted(helper_names):
             if local in visited_helpers or not occurs_qualified(proof, local):
                 continue
             if local in target_short_to_id:

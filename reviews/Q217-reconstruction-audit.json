@@ -1,0 +1,85 @@
+{
+  "all_targets_strict": true,
+  "kind": "pm-constrained-batch-reconstruction-audit",
+  "target_audits": [
+    {
+      "added_beyond_print": [],
+      "allowed_but_unused": [],
+      "classification": "strict-closure",
+      "current_item": "PM1:✱3·03",
+      "faithful_by_printed_dependency_constraint": true,
+      "global_conventions": [],
+      "kind": "pm-constrained-reconstruction-audit",
+      "printed_event_coverage": [
+        {
+          "covered": true,
+          "event": 1,
+          "printed": "✱1·7·72",
+          "step": 1,
+          "used_candidates": [
+            "PM1:✱1·7",
+            "PM1:✱1·72"
+          ]
+        },
+        {
+          "covered": true,
+          "event": 2,
+          "printed": "✱2·11",
+          "step": 1,
+          "used_candidates": [
+            "PM1:✱2·11"
+          ]
+        },
+        {
+          "covered": true,
+          "event": 2,
+          "printed": "✱2·32",
+          "step": 2,
+          "used_candidates": [
+            "PM1:✱2·32"
+          ]
+        },
+        {
+          "covered": true,
+          "event": 3,
+          "printed": "✱1·01",
+          "step": 2,
+          "used_candidates": [
+            "PM1:✱1·01"
+          ]
+        },
+        {
+          "covered": true,
+          "event": 2,
+          "printed": "✱3·03",
+          "step": 3,
+          "used_candidates": [
+            "PM1:✱3·01"
+          ]
+        },
+        {
+          "covered": true,
+          "event": 2,
+          "printed": "✱1·11",
+          "step": 4,
+          "used_candidates": [
+            "PM1:✱1·11"
+          ]
+        }
+      ],
+      "uncovered_printed_events": [],
+      "used_pm_items": [
+        "PM1:✱1·01",
+        "PM1:✱1·11",
+        "PM1:✱1·7",
+        "PM1:✱1·72",
+        "PM1:✱2·11",
+        "PM1:✱2·32",
+        "PM1:✱3·01"
+      ]
+    }
+  ],
+  "target_order": [
+    "PM1:✱3·03"
+  ]
+}

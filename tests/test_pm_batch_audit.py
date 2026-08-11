@@ -95,6 +95,40 @@ end PM.Batch
         self.assertEqual(audit["classification"], "strict-closure")
         self.assertEqual(audit["used_pm_items"], ["PM1:✱1·11"])
 
+    def test_notation_realization_and_indexed_context_are_not_helper_expanded(self):
+        registry = {
+            "PM1:✱1·01": item("PM1:✱1·01", "PM.Elementary.imp"),
+            "PM1:✱2·1": item("PM1:✱2·1", "PM.Base.star_2_1"),
+            "PM1:✱1·2": item("PM1:✱1·2", "PM.Base.star_1_2"),
+        }
+        registry["PM1:✱2·1"]["normalized_dependencies"] = ["PM1:✱1·2"]
+        target = parse_demonstration(
+            "✱8·1. ⊢ . p [✱1·01 . ✱2·1]", current_item="PM1:✱8·1"
+        )
+        batch = compile_batch_manifest(
+            [target], registry, {"PM1:✱8·1": "PM.Batch.star_8_1"}
+        )
+        source = """namespace PM.Base
+theorem star_1_2 : True := by trivial
+theorem star_2_1 : True := by exact star_1_2
+end PM.Base
+namespace PM.Batch
+theorem star_8_1 : True := by
+  have annotation := \"p ⊃ₚ q\"
+  exact PM.Base.star_2_1
+end PM.Batch
+"""
+        aliases = {"lean_realizations": {}, "lean_notation_realizations": {
+            "⊃ₚ": "PM1:✱1·01"
+        }}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "Result.lean"
+            path.write_text(source, encoding="utf-8")
+            result = audit_batch(batch, path, registry, aliases)
+        audit = result["target_audits"][0]
+        self.assertEqual(audit["classification"], "strict-closure")
+        self.assertEqual(audit["used_pm_items"], ["PM1:✱1·01", "PM1:✱2·1"])
+
 
 if __name__ == "__main__":
     unittest.main()

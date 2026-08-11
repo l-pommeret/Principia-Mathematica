@@ -19,11 +19,16 @@
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_03",
       "formal_scope": "formation-aware product of two asserted elementary propositional functions in the same nonempty real-variable context",
       "source_status": "scan-collated-critical-reference-retained",
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "printed_dependencies": ["PM1:✱1·7", "PM1:✱1·72", "PM1:✱2·11", "PM1:✱2·32", "PM1:✱1·01", "PM1:✱3·01", "PM1:✱1·11"],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "substitutions": []
+      "lean_dependencies": ["PM.Derivation.star_1_11", "PM.Formation.star_1_7", "PM.Formation.star_1_72", "PM.FirstEdition.Volume1.Star2.star_2_11", "PM.FirstEdition.Volume1.Star2.star_2_32", "PM.Elementary.conj"],
+      "normalized_dependencies": ["PM1:✱1·01", "PM1:✱1·11", "PM1:✱1·7", "PM1:✱1·72", "PM1:✱2·11", "PM1:✱2·32", "PM1:✱3·01"],
+      "substitutions": [],
+      "dependency_justifications": [{
+        "kind": "definitional-reading",
+        "pm_dependency": "PM1:✱1·01",
+        "evidence": "Printed line (2) cites (✱1·01); the Lean term changes the disjunctive instance of ✱2·32 into the displayed implication form by definitional reduction of implication."
+      }]
     }
   ],
   "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}

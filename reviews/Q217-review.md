@@ -1,7 +1,17 @@
 # Audit Q217 — PM I, ✱3·01–✱3·03 foundations
 
-Verdict: **ARCHITECTURE PROTOTYPE KERNEL-CHECKED — canonical integration and
-generated context still required before Aristotle submission**. Sources: first edition, vol. I,
+Verdict: **A — Aristotle result integrated; exact printed closure confirmed,
+awaiting repository CI**. The immutable final archive is
+`aristotle/results/Q217-final.tar.gz`, SHA-256
+`b2ac2d081c5d61b2bfb0f116656fd0c4c6f573b25ed110dcd49be002f60cfec0`.
+Its target uses exactly ✱1·01, ✱1·11, ✱1·7, ✱1·72, ✱2·11, ✱2·32 and the
+reviewed correction ✱3·01; it adds nothing and leaves no printed event
+uncovered. Mechanical evidence is in `Q217-reconstruction-audit.json`.
+No `sorry`, `admit`, new axiom or unsafe declaration occurs in the returned
+source; the only `Classical` occurrence is in Aristotle's generated harness,
+outside the integrated target.
+
+Sources: first edition, vol. I,
 pp. 114 and 116, leaves 136 and 138. SHA-256 of the Wikimedia 1920 px JPEGs:
 leaf 136 `2d592ee0372fd62e7d41c0260e3da50cea813616a91ba89dfd27453875792b1b`;
 leaf 138 `c18eb6890dc92335e8df8773cbd46b8e98c2e550cdcb01f91a397bed27e9958b`.

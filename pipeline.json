@@ -558,14 +558,14 @@
       "source": "PM volume I, first edition, pp. 114 and 116",
       "prompt_path": "aristotle/Q217.md",
       "audit_path": "reviews/Q217-review.md",
-      "audit_status": "A-generated-context-kernel-checked",
+      "audit_status": "A-integrated-awaiting-ci",
       "lean_scope": "exact PM1 ✱1·7·71·72 formation Pp, ✱3·01·02 definitions, and ✱3·03 metalinguistic derivation theorem",
       "depends_on": [
         "PM1:✱2·11",
         "PM1:✱2·32"
       ],
       "parallel_group": "STAR3-FOUNDATIONS",
-      "aristotle_status": "submitted",
+      "aristotle_status": "complete",
       "formation_architecture_evidence": {
         "module": "Principia/Experimental/ElementaryFormationToy.lean",
         "commit": "01d3ef23bc5ec7b427a4cbdf76f66682fd19e36a",
@@ -600,12 +600,15 @@
       "aristotle_project_id": "52eb1d93-8500-416d-9407-541f11b978ba",
       "aristotle_task_id": "65efdf75-14b8-4efa-9c99-cdda3b0742ee",
       "aristotle_latest_task_id": "65efdf75-14b8-4efa-9c99-cdda3b0742ee",
-      "aristotle_latest_task_status": "IN_PROGRESS",
-      "aristotle_remote_status": "IN_PROGRESS",
+      "aristotle_latest_task_status": "COMPLETE",
+      "aristotle_remote_status": "COMPLETE",
       "aristotle_request_path": "aristotle/Q217.md",
       "aristotle_request_sha256": "18cdf9bd93e06331333079df61e803c19b7356cd71c3e8c69bc4b9a27ad159fc",
       "aristotle_latest_task_name": "Formalize Q217.md",
-      "aristotle_latest_task_created": "1 min ago"
+      "aristotle_latest_task_created": "5 mins ago"
+      ,"aristotle_archive_path": "aristotle/results/Q217-final.tar.gz"
+      ,"aristotle_archive_sha256": "b2ac2d081c5d61b2bfb0f116656fd0c4c6f573b25ed110dcd49be002f60cfec0"
+      ,"integration_status": "awaiting-ci"
     },
     "Q218": {
       "canonical_ids": [

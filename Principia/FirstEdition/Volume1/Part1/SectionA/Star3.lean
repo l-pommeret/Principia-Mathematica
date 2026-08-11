@@ -68,4 +68,28 @@ https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_
 https://en.wikisource.org/wiki/Page:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/138
 -/
 
+/-- ✱3·03. Formation-aware product of two asserted elementary propositional
+functions with the same nonempty real-variable context.
+
+The returned object makes the printed formation Pp ✱1·7/✱1·72 operational;
+its derivation component follows the displayed ✱2·11, ✱2·32, ✱1·01 and
+✱1·11 route. -/
+theorem star_3_03 {Γ : PM.RealContext} (hasRealVariable : Γ ≠ [])
+    {φ ψ : PM.Elementary Γ}
+    (hφ : PM.FormedDerivation φ) (hψ : PM.FormedDerivation ψ) :
+    PM.FormedDerivation (PM.Elementary.conj φ ψ) := by
+  refine ⟨?_, ?_⟩
+  · exact PM.Formation.star_1_7
+      (PM.Formation.star_1_72 hasRealVariable
+        (PM.Formation.star_1_7 hφ.formation)
+        (PM.Formation.star_1_7 hψ.formation))
+  · have h1 : ⊢ₚ ((∼ₚ φ ∨ₚ ∼ₚ ψ) ∨ₚ ∼ₚ (∼ₚ φ ∨ₚ ∼ₚ ψ)) :=
+      PM.FirstEdition.Volume1.Star2.star_2_11 (∼ₚ φ ∨ₚ ∼ₚ ψ)
+    have h2 : ⊢ₚ (φ ⊃ₚ (ψ ⊃ₚ PM.Elementary.conj φ ψ)) :=
+      PM.Derivation.star_1_11 hasRealVariable h1
+        (PM.FirstEdition.Volume1.Star2.star_2_32 (∼ₚ φ) (∼ₚ ψ)
+          (∼ₚ (∼ₚ φ ∨ₚ ∼ₚ ψ)))
+    exact PM.Derivation.star_1_11 hasRealVariable hψ.derivation
+      (PM.Derivation.star_1_11 hasRealVariable hφ.derivation h2)
+
 end PM.FirstEdition.Volume1.Star3

@@ -10,6 +10,7 @@ import sys
 from pm_aristotle_prompt import render_batch_prompt
 from pm_constraint_manifest import compile_batch_manifest, load_item_registry
 from pm_context_bundle import ROOT, build_bundle, preserve_historical_container_hashes
+from pm_lean_target import render_elementary_assertion
 from pm_proof_skeleton import apply_reference_overrides, parse_demonstration
 
 
@@ -44,7 +45,10 @@ def verify(root: Path = ROOT) -> int:
             ))
             targets[identifier] = entry["declaration"]
             printed[identifier] = source
-            lean[identifier] = entry["lean_target"]
+            if entry.get("lean_target_profile") == "elementary-assertion":
+                lean[identifier] = render_elementary_assertion(source, entry["declaration"])
+            else:
+                lean[identifier] = entry["lean_target"]
             conventions[identifier] = entry.get("global_conventions", [])
         manifest = compile_batch_manifest(
             skeletons, registry, targets, global_conventions=conventions
