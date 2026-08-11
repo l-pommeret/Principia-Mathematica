@@ -1,4 +1,6 @@
-/- Source-only continuation of ✱14; no DescriptionSyntax target is claimed. -/
+import Principia.Syntax.DescriptionDefinitions
+
+/- Source continuation of ✱14; reductional insertions await remote CI. -/
 /- PM-VERBATIM-BEGIN PM1:✱14·02
 ✱14·02. E!(℩x)(φx) .=: (∃b) : φx .≡ₓ. x = b  Df
 PM-VERBATIM-END PM1:✱14·02 -/
@@ -8,6 +10,49 @@ PM-VERBATIM-END PM1:✱14·03 -/
 /- PM-VERBATIM-BEGIN PM1:✱14·04
 ✱14·04. [(℩x)(ψx)] . f{(℩x)(φx), (℩x)(ψx)} .=. [(℩x)(ψx), (℩x)(φx)] . f{(℩x)(φx), (℩x)(ψx)}  Df
 PM-VERBATIM-END PM1:✱14·04 -/
+
+open PM.DescriptionSyntax
+open PM.DescriptionSyntax.Formula
+
+namespace PM.FirstEdition.Volume1.Star14Source
+
+theorem star_14_02
+    (vocabulary : DescriptionVocabulary signature sort order)
+    (condition : Formula signature realContext (sort :: apparentContext) order) :
+    descriptionExists vocabulary condition =
+      .sometimes vocabulary.existential (uniqueMatrix vocabulary condition) := by
+  rfl
+
+theorem star_14_03
+    (outerVocabulary : DescriptionVocabulary signature outerSort order)
+    (innerVocabulary : DescriptionVocabulary signature innerSort order)
+    (outerCondition : Formula signature realContext (outerSort :: apparentContext) order)
+    (innerCondition : Formula signature realContext (innerSort :: apparentContext) order)
+    (continuation : Formula signature realContext
+      (innerSort :: outerSort :: apparentContext) order) :
+    descriptionScopePair outerVocabulary innerVocabulary outerCondition
+        innerCondition continuation =
+      .descriptionScope outerVocabulary outerCondition
+        (.descriptionScope innerVocabulary
+          (conditionUnderOuter innerCondition)
+          continuation) := by
+  rfl
+
+theorem star_14_04
+    (laterVocabulary : DescriptionVocabulary signature laterSort order)
+    (earlierVocabulary : DescriptionVocabulary signature earlierSort order)
+    (laterCondition : Formula signature realContext (laterSort :: apparentContext) order)
+    (earlierCondition : Formula signature realContext (earlierSort :: apparentContext) order)
+    (continuation : Formula signature realContext
+      (earlierSort :: laterSort :: apparentContext) order) :
+    laterDescriptionOuterScope laterVocabulary earlierVocabulary laterCondition
+        earlierCondition continuation =
+      descriptionScopePair laterVocabulary earlierVocabulary laterCondition
+        earlierCondition continuation := by
+  rfl
+
+end PM.FirstEdition.Volume1.Star14Source
+
 /- PM-VERBATIM-BEGIN PM1:✱14·18
 ✱14·18. ⊢ :: E!(℩x)(φx) .⊃ : (x) . ψx .⊃ . ψ(℩x)(φx)
 PM-VERBATIM-END PM1:✱14·18 -/

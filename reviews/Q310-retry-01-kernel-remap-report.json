@@ -150,7 +150,7 @@
     "requires_one_to_one_kernel_remap": true
   },
   "reasons": [],
-  "status": "transplantable-interface-only",
+  "status": "awaiting-ci",
   "targets": [
     {
       "actual_signature_sha256": "ce501a3e71cdeb3dbc34d0e698fbab652b5a3a2939ef635290dcdae08eaea18c",
@@ -185,6 +185,8 @@
   ],
   "transplant": {
     "allowed": true,
+    "canonical_transplant": "inserted",
+    "ci_status": "pending-independent-remote-kernel-check",
     "path": "aristotle/candidates/Q310-retry-01-interface.lean",
     "promotion": "forbidden",
     "requires_independent_remote_kernel_check": true
