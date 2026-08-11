@@ -550,3 +550,6 @@ PM-VERBATIM-END PM2:✱105·325 -/
 /- PM-VERBATIM-BEGIN PM2:✱105·326
 ✱105·326. ⊢ : μ ∈ NC . μ⁽¹⁾ = N₀cʻγ .⊃ . μ = N¹cʻγ
 PM-VERBATIM-END PM2:✱105·326 -/
+/- PM-VERBATIM-BEGIN PM2:✱105·327
+✱105·327. ⊢ : μ ∈ NC . μ⁽²⁾ = N₀cʻγ .⊃ . μ = N²cʻγ
+PM-VERBATIM-END PM2:✱105·327 -/
