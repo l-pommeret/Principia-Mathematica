@@ -1,0 +1,19 @@
+{
+  "kind": "pm-interface-kernel-remap-report",
+  "batch": "Q300",
+  "status": "blocked",
+  "policy": {"requires_one_to_one_kernel_remap": true, "canonical_integration_forbidden": true, "no_local_lean_or_ci_was_run": true},
+  "archive": {
+    "artifact": {"batch": "Q300", "task_id": "c7757d23-f633-47ab-a269-a5f01f72bdc4", "retry": 3, "path": "aristotle/results/Q300-retry-03-final.tar.gz", "sha256": "0d38572678f3fb0ba61aaa5d861cf3b643163489d95641d608a49bf84de38b77"},
+    "present": true,
+    "sha256_verified": true,
+    "target_file": "output-final_aristotle/RequestProject/Q300Star921.lean"
+  },
+  "target": {"canonical": "PM.Architecture.FirstOrderPrerequisites.star_9_21", "role": "target-insertion", "expected_signature_sha256": "cc950b29ae81b530a7f6176c8670b61a178a6165859092224fbff53f59f6116e"},
+  "forbidden_constructs": [
+    {"path": "output-final_aristotle/RequestProject/Q300Star921.lean", "match": "target held in block comment", "policy": "the exact target must be live and canonically named"},
+    {"path": "output-final_aristotle/RequestProject/Q300Star921.lean", "match": "local Q300Star921 archive slot", "policy": "no local target alias/file-specific substitute"}
+  ],
+  "reasons": ["the canonical target PM.Architecture.FirstOrderPrerequisites.star_9_21 is absent as a live declaration", "Q300Star921.lean is an archive-local obstruction document, not the exact canonical target", "the archive supplies no remappable body"],
+  "next_retry": "aristotle/followups/Q300-retry-04-canonical-target.md"
+}

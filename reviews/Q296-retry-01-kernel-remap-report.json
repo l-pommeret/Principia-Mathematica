@@ -1,0 +1,20 @@
+{
+  "kind": "pm-interface-kernel-remap-report",
+  "batch": "Q296",
+  "status": "blocked",
+  "policy": {"requires_one_to_one_kernel_remap": true, "canonical_integration_forbidden": true, "no_local_lean_or_ci_was_run": true},
+  "archive": {
+    "artifact": {"batch": "Q296", "task_id": "197d01a9-5ee3-4b48-b33e-88bcaabc46fa", "retry": 1, "path": "aristotle/results/Q296-retry-01-final.tar.gz", "sha256": "e92fcd83f4987ba82cc74403cf9494def6802443f3f232c3ae8e6b91ae161910"},
+    "present": true,
+    "sha256_verified": true,
+    "target_file": "output-final_aristotle/RequestProject/Q296.lean"
+  },
+  "target": {"canonical": "PM.DescriptionSyntax.Formula.star_14_01", "role": "target-insertion", "expected_signature_sha256": "43a7c86fa106937309f6776f58cef08e05c172334617fc66fa29b5fdba08864c", "body_policy": "rfl-only"},
+  "forbidden_constructs": [
+    {"path": "output-final_aristotle/RequestProject/Q296.lean", "match": "expand_descriptionScope", "policy": "forbidden anywhere in archive-local target/context"},
+    {"path": "output-final_aristotle/RequestProject/Main.lean", "match": "open scoped Classical", "policy": "Classical forbidden anywhere in archive"},
+    {"path": "output-final_aristotle/RequestProject/Q296.lean", "match": "archive-local syntax/context declarations", "policy": "exact-target-only; no local helper or copied context"}
+  ],
+  "reasons": ["retry SHA is registered immutably but the archive is fail-closed: it contains forbidden expand_descriptionScope", "the archive contains Classical in Main.lean", "Q296.lean copies a local description context instead of containing only the exact target"],
+  "next_retry": "aristotle/followups/Q296-retry-02-exact-target.md"
+}

@@ -1,8 +1,10 @@
 {
   "archive": {
-    "expected_sha256": null,
-    "path": "/Users/user/principia_mathematica/aristotle/results/Q310-final.tar.gz",
-    "present": false
+    "artifact": {"batch": "Q310", "task_id": "96a862af-ecfa-4539-addd-89999bea1075", "retry": 0, "path": "aristotle/results/Q310-final.tar.gz", "sha256": "37029fa7f745e13359077ee47c72f62cecd3d68690c2d5e5d58688eb90ab8a40"},
+    "expected_sha256": "37029fa7f745e13359077ee47c72f62cecd3d68690c2d5e5d58688eb90ab8a40",
+    "path": "aristotle/results/Q310-final.tar.gz",
+    "present": true,
+    "sha256_verified": true
   },
   "batch": "Q310",
   "canonical_declarations": [
@@ -73,7 +75,14 @@
     "requires_one_to_one_kernel_remap": true
   },
   "reasons": [
-    "terminal archive unavailable"
+    "archive-wide forbidden Classical: Q310_aristotle/RequestProject/Main.lean contains open scoped Classical",
+    "archive-wide local copied DescriptionContext.lean is not an exact target insertion",
+    "although the three bodies are rfl-only, the archive fails closed before remapping"
   ],
-  "status": "blocked"
+  "status": "blocked",
+  "forbidden_constructs": [
+    {"path": "Q310_aristotle/RequestProject/Main.lean", "match": "open scoped Classical", "policy": "Classical forbidden anywhere in archive"},
+    {"path": "Q310_aristotle/RequestProject/DescriptionContext.lean", "match": "archive-local copied context/helpers", "policy": "exact-target-only"}
+  ],
+  "next_retry": "aristotle/followups/Q310-retry-01-exact-target.md"
 }
