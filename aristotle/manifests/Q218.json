@@ -1,16 +1,53 @@
 {
+  "kind": "pm-constrained-prover-batch-manifest",
+  "policy": {
+    "proof_permissions_are_exact_per_target": true,
+    "local_targets_must_precede_use": true,
+    "context_closure_grants_proof_permission": false,
+    "strict": true,
+    "interface_gated": false,
+    "canonical_integration_forbidden": false,
+    "requires_one_to_one_kernel_remap": false
+  },
   "batch_items": [
     {
-      "allowed_lean_declarations": {
-        "PM1:✱1·11": "PM.Derivation.star_1_11",
-        "PM1:✱2·38": "PM.FirstEdition.Volume1.Star2.star_2_38",
-        "PM1:✱2·621": "PM.FirstEdition.Volume1.Star2.star_2_621"
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
+      "current_item": "PM1:✱2·73",
+      "proof_permissions": [
+        {
+          "step": 1,
+          "event": 1,
+          "printed": "✱2·621·38",
+          "kind": "printed-reference",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱2·621",
+            "PM1:✱2·38"
+          ]
+        }
+      ],
+      "global_conventions": [
+        "PM1:✱1·11"
+      ],
       "allowed_pm_items": [
         "PM1:✱1·11",
         "PM1:✱2·38",
         "PM1:✱2·621"
       ],
+      "allowed_lean_declarations": {
+        "PM1:✱1·11": "PM.Derivation.star_1_11",
+        "PM1:✱2·38": "PM.FirstEdition.Volume1.Star2.star_2_38",
+        "PM1:✱2·621": "PM.FirstEdition.Volume1.Star2.star_2_621"
+      },
+      "local_proof_items": [],
       "context_closure": [
         "PM1:✱1·01",
         "PM1:✱1·11",
@@ -61,38 +98,68 @@
         "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
         "Principia/Syntax/Formula.lean"
       ],
-      "current_item": "PM1:✱2·73",
       "diagnostics": {
         "missing_items": [],
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
-      "global_conventions": [
-        "PM1:✱1·11"
-      ],
-      "kind": "pm-constrained-prover-manifest",
-      "local_proof_items": [],
-      "policy": {
-        "context_closure_grants_proof_permission": false,
-        "proof_permissions_are_exact": true,
-        "strict": true
-      },
-      "proof_permissions": [
-        {
-          "candidates": [
-            "PM1:✱2·621",
-            "PM1:✱2·38"
-          ],
-          "event": 1,
-          "kind": "printed-reference",
-          "printed": "✱2·621·38",
-          "resolution_status": "exact",
-          "step": 1
-        }
-      ],
+      "interface_dependencies": [],
       "substitutions": []
     },
     {
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
+      },
+      "current_item": "PM1:✱2·74",
+      "proof_permissions": [
+        {
+          "step": 1,
+          "event": 1,
+          "printed": "✱2·73",
+          "kind": "printed-reference",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱2·73"
+          ]
+        },
+        {
+          "step": 1,
+          "event": 2,
+          "printed": "Assoc",
+          "kind": "printed-alias",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱1·5"
+          ]
+        },
+        {
+          "step": 1,
+          "event": 3,
+          "printed": "Syll",
+          "kind": "printed-alias",
+          "resolution_status": "historically-scoped-family",
+          "candidates": [
+            "PM1:✱2·05",
+            "PM1:✱2·06"
+          ]
+        }
+      ],
+      "global_conventions": [
+        "PM1:✱1·11"
+      ],
+      "allowed_pm_items": [
+        "PM1:✱1·11",
+        "PM1:✱1·5",
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱2·73"
+      ],
       "allowed_lean_declarations": {
         "PM1:✱1·11": "PM.Derivation.star_1_11",
         "PM1:✱1·5": "PM.FirstEdition.Volume1.Star1.star_1_5",
@@ -100,11 +167,7 @@
         "PM1:✱2·06": "PM.FirstEdition.Volume1.Star2.star_2_06",
         "PM1:✱2·73": "PM.FirstEdition.Volume1.Star2.star_2_73"
       },
-      "allowed_pm_items": [
-        "PM1:✱1·11",
-        "PM1:✱1·5",
-        "PM1:✱2·05",
-        "PM1:✱2·06",
+      "local_proof_items": [
         "PM1:✱2·73"
       ],
       "context_closure": [
@@ -131,75 +194,69 @@
         "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
         "Principia/Syntax/Formula.lean"
       ],
-      "current_item": "PM1:✱2·74",
       "diagnostics": {
         "missing_items": [],
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
-      "global_conventions": [
-        "PM1:✱1·11"
-      ],
-      "kind": "pm-constrained-prover-manifest",
-      "local_proof_items": [
-        "PM1:✱2·73"
-      ],
-      "policy": {
-        "context_closure_grants_proof_permission": false,
-        "proof_permissions_are_exact": true,
-        "strict": true
-      },
-      "proof_permissions": [
-        {
-          "candidates": [
-            "PM1:✱2·73"
-          ],
-          "event": 1,
-          "kind": "printed-reference",
-          "printed": "✱2·73",
-          "resolution_status": "exact",
-          "step": 1
-        },
-        {
-          "candidates": [
-            "PM1:✱1·5"
-          ],
-          "event": 2,
-          "kind": "printed-alias",
-          "printed": "Assoc",
-          "resolution_status": "exact",
-          "step": 1
-        },
-        {
-          "candidates": [
-            "PM1:✱2·05",
-            "PM1:✱2·06"
-          ],
-          "event": 3,
-          "kind": "printed-alias",
-          "printed": "Syll",
-          "resolution_status": "historically-scoped-family",
-          "step": 1
-        }
-      ],
+      "interface_dependencies": [],
       "substitutions": [
         {
-          "printed": "(q,p)/(p,q)",
-          "step": 1
+          "step": 1,
+          "printed": "(q,p)/(p,q)"
         }
       ]
     },
     {
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
+      },
+      "current_item": "PM1:✱2·75",
+      "proof_permissions": [
+        {
+          "step": 1,
+          "event": 1,
+          "printed": "✱2·74",
+          "kind": "printed-reference",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱2·74"
+          ]
+        },
+        {
+          "step": 1,
+          "event": 2,
+          "printed": "✱2·53·31",
+          "kind": "printed-reference",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱2·53",
+            "PM1:✱2·31"
+          ]
+        }
+      ],
+      "global_conventions": [
+        "PM1:✱1·11"
+      ],
+      "allowed_pm_items": [
+        "PM1:✱1·11",
+        "PM1:✱2·31",
+        "PM1:✱2·53",
+        "PM1:✱2·74"
+      ],
       "allowed_lean_declarations": {
         "PM1:✱1·11": "PM.Derivation.star_1_11",
         "PM1:✱2·31": "PM.FirstEdition.Volume1.Star2.star_2_31",
         "PM1:✱2·53": "PM.FirstEdition.Volume1.Star2.star_2_53",
         "PM1:✱2·74": "PM.FirstEdition.Volume1.Star2.star_2_74"
       },
-      "allowed_pm_items": [
-        "PM1:✱1·11",
-        "PM1:✱2·31",
-        "PM1:✱2·53",
+      "local_proof_items": [
         "PM1:✱2·74"
       ],
       "context_closure": [
@@ -250,63 +307,66 @@
         "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
         "Principia/Syntax/Formula.lean"
       ],
-      "current_item": "PM1:✱2·75",
       "diagnostics": {
         "missing_items": [],
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
-      "global_conventions": [
-        "PM1:✱1·11"
-      ],
-      "kind": "pm-constrained-prover-manifest",
-      "local_proof_items": [
-        "PM1:✱2·74"
-      ],
-      "policy": {
-        "context_closure_grants_proof_permission": false,
-        "proof_permissions_are_exact": true,
-        "strict": true
-      },
-      "proof_permissions": [
-        {
-          "candidates": [
-            "PM1:✱2·74"
-          ],
-          "event": 1,
-          "kind": "printed-reference",
-          "printed": "✱2·74",
-          "resolution_status": "exact",
-          "step": 1
-        },
-        {
-          "candidates": [
-            "PM1:✱2·53",
-            "PM1:✱2·31"
-          ],
-          "event": 2,
-          "kind": "printed-reference",
-          "printed": "✱2·53·31",
-          "resolution_status": "exact",
-          "step": 1
-        }
-      ],
+      "interface_dependencies": [],
       "substitutions": [
         {
-          "printed": "∼q/q",
-          "step": 1
+          "step": 1,
+          "printed": "∼q/q"
         }
       ]
     },
     {
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
+      },
+      "current_item": "PM1:✱2·76",
+      "proof_permissions": [
+        {
+          "step": 1,
+          "event": 1,
+          "printed": "✱2·75",
+          "kind": "printed-reference",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱2·75"
+          ]
+        },
+        {
+          "step": 1,
+          "event": 2,
+          "printed": "Comm",
+          "kind": "printed-alias",
+          "resolution_status": "exact",
+          "candidates": [
+            "PM1:✱2·04"
+          ]
+        }
+      ],
+      "global_conventions": [
+        "PM1:✱1·11"
+      ],
+      "allowed_pm_items": [
+        "PM1:✱1·11",
+        "PM1:✱2·04",
+        "PM1:✱2·75"
+      ],
       "allowed_lean_declarations": {
         "PM1:✱1·11": "PM.Derivation.star_1_11",
         "PM1:✱2·04": "PM.FirstEdition.Volume1.Star2.star_2_04",
         "PM1:✱2·75": "PM.FirstEdition.Volume1.Star2.star_2_75"
       },
-      "allowed_pm_items": [
-        "PM1:✱1·11",
-        "PM1:✱2·04",
+      "local_proof_items": [
         "PM1:✱2·75"
       ],
       "context_closure": [
@@ -327,49 +387,27 @@
         "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
         "Principia/Syntax/Formula.lean"
       ],
-      "current_item": "PM1:✱2·76",
       "diagnostics": {
         "missing_items": [],
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
-      "global_conventions": [
-        "PM1:✱1·11"
-      ],
-      "kind": "pm-constrained-prover-manifest",
-      "local_proof_items": [
-        "PM1:✱2·75"
-      ],
-      "policy": {
-        "context_closure_grants_proof_permission": false,
-        "proof_permissions_are_exact": true,
-        "strict": true
-      },
-      "proof_permissions": [
-        {
-          "candidates": [
-            "PM1:✱2·75"
-          ],
-          "event": 1,
-          "kind": "printed-reference",
-          "printed": "✱2·75",
-          "resolution_status": "exact",
-          "step": 1
-        },
-        {
-          "candidates": [
-            "PM1:✱2·04"
-          ],
-          "event": 2,
-          "kind": "printed-alias",
-          "printed": "Comm",
-          "resolution_status": "exact",
-          "step": 1
-        }
-      ],
+      "interface_dependencies": [],
       "substitutions": []
     }
   ],
+  "target_order": [
+    "PM1:✱2·73",
+    "PM1:✱2·74",
+    "PM1:✱2·75",
+    "PM1:✱2·76"
+  ],
+  "target_declarations": {
+    "PM1:✱2·73": "PM.FirstEdition.Volume1.Star2.star_2_73",
+    "PM1:✱2·74": "PM.FirstEdition.Volume1.Star2.star_2_74",
+    "PM1:✱2·75": "PM.FirstEdition.Volume1.Star2.star_2_75",
+    "PM1:✱2·76": "PM.FirstEdition.Volume1.Star2.star_2_76"
+  },
   "context_closure": [
     "PM1:✱1·01",
     "PM1:✱1·11",
@@ -424,13 +462,6 @@
     "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
     "Principia/Syntax/Formula.lean"
   ],
-  "kind": "pm-constrained-prover-batch-manifest",
-  "policy": {
-    "context_closure_grants_proof_permission": false,
-    "local_targets_must_precede_use": true,
-    "proof_permissions_are_exact_per_target": true,
-    "strict": true
-  },
   "proof_permissions": [
     "PM1:✱1·11",
     "PM1:✱1·5",
@@ -445,16 +476,14 @@
     "PM1:✱2·74",
     "PM1:✱2·75"
   ],
-  "target_declarations": {
-    "PM1:✱2·73": "PM.FirstEdition.Volume1.Star2.star_2_73",
-    "PM1:✱2·74": "PM.FirstEdition.Volume1.Star2.star_2_74",
-    "PM1:✱2·75": "PM.FirstEdition.Volume1.Star2.star_2_75",
-    "PM1:✱2·76": "PM.FirstEdition.Volume1.Star2.star_2_76"
-  },
-  "target_order": [
-    "PM1:✱2·73",
-    "PM1:✱2·74",
-    "PM1:✱2·75",
-    "PM1:✱2·76"
-  ]
+  "direct_interface_dependencies": [],
+  "interface_dependencies": [],
+  "source_backfill_required": false,
+  "integration_blocked": false,
+  "interface_signature_targets": {
+    "PM1:✱2·73": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_73 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ q) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (q ∨ₚ r))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+    "PM1:✱2·74": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_74 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+    "PM1:✱2·75": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_75 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ∨ₚ q) ⊃ₚ ((p ∨ₚ (q ⊃ₚ r)) ⊃ₚ (p ∨ₚ r))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+    "PM1:✱2·76": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_76 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ∨ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2"
+  }
 }

@@ -4,7 +4,10 @@
     "proof_permissions_are_exact_per_target": true,
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
-    "strict": false
+    "strict": false,
+    "interface_gated": false,
+    "canonical_integration_forbidden": false,
+    "requires_one_to_one_kernel_remap": false
   },
   "batch_items": [
     {
@@ -12,7 +15,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱3·44",
       "proof_permissions": [
@@ -199,6 +205,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": []
     },
     {
@@ -206,7 +213,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱3·45",
       "proof_permissions": [
@@ -371,6 +381,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [
         {
           "step": 1,
@@ -386,7 +397,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱3·47",
       "proof_permissions": [
@@ -617,6 +631,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [],
       "documented_relaxations": [
         "PM1:✱3·2"
@@ -627,7 +642,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱3·48",
       "proof_permissions": [
@@ -830,6 +848,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": []
     }
   ],
@@ -994,6 +1013,16 @@
     "PM1:✱3·34",
     "PM1:✱3·45"
   ],
+  "direct_interface_dependencies": [],
+  "interface_dependencies": [],
+  "source_backfill_required": false,
+  "integration_blocked": false,
   "foundation_profile": "elementary-formation-pm1",
-  "context_whitespace_policy": "strip-trailing"
+  "context_whitespace_policy": "strip-trailing",
+  "interface_signature_targets": {
+    "PM1:✱3·44": "namespace PM.FirstEdition.Volume1.Star3\n\ntheorem star_3_44 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)) ⊃ₚ ((q ∨ₚ r) ⊃ₚ p)) := by\n  -- fill exactly from the generated whitelist\n\nend PM.FirstEdition.Volume1.Star3",
+    "PM1:✱3·45": "namespace PM.FirstEdition.Volume1.Star3\n\ntheorem star_3_45 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((p ∧ₚ r) ⊃ₚ (q ∧ₚ r))) := by\n  -- fill exactly from the generated whitelist\n\nend PM.FirstEdition.Volume1.Star3",
+    "PM1:✱3·47": "namespace PM.FirstEdition.Volume1.Star3\n\ntheorem star_3_47 {Γ} (p q r s : PM.Elementary Γ) :\n    ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (r ∧ₚ s))) := by\n  -- fill exactly from the generated whitelist\n\nend PM.FirstEdition.Volume1.Star3",
+    "PM1:✱3·48": "namespace PM.FirstEdition.Volume1.Star3\n\ntheorem star_3_48 {Γ} (p q r s : PM.Elementary Γ) :\n    ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (r ∨ₚ s))) := by\n  -- fill exactly from the generated whitelist\n\nend PM.FirstEdition.Volume1.Star3"
+  }
 }

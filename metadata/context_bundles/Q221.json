@@ -1,9 +1,23 @@
 {
-  "ci_evidence": {
-    "commit": "85865c7a46df398f2f44ebc6a8c867f756dc7ad9",
-    "conclusion": "success",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31452200404"
-  },
+  "kind": "pm-isolated-context-bundle",
+  "profile": "elementary-pm1",
+  "current_item": null,
+  "manifest_sha256": "a05601d777fa81e8b9355e67170f18c665884cb6149ab3dc0841fce01a20bacd",
+  "source_sha256": "c830a331acff664e7dfa13f43fcf9c78306d332aa14a987b3fbddf80976c778f",
+  "source_bytes": 9819,
+  "proof_permissions": [
+    "PM1:✱1·11",
+    "PM1:✱2·06",
+    "PM1:✱2·08",
+    "PM1:✱2·11",
+    "PM1:✱2·12",
+    "PM1:✱2·15",
+    "PM1:✱2·16",
+    "PM1:✱2·17",
+    "PM1:✱3·01",
+    "PM1:✱3·1",
+    "PM1:✱3·11"
+  ],
   "context_closure": [
     "PM1:✱1·01",
     "PM1:✱1·11",
@@ -28,237 +42,223 @@
     "PM1:✱2·17",
     "PM1:✱3·01"
   ],
-  "current_item": null,
-  "integration_blocked": false,
-  "interface_dependencies": [],
-  "kind": "pm-isolated-context-bundle",
-  "manifest_sha256": "6c6aecf74b212184590078a34635ee9772f00a00f89a71db0d192dbfeda3a448",
-  "policy": {
-    "canonical_integration_forbidden": false,
-    "grants_no_additional_proof_permission": true,
-    "interface_gated": false,
-    "requires_one_to_one_kernel_remap": false,
-    "requires_remote_kernel_check": true,
-    "standalone_context_only": true
-  },
-  "profile": "elementary-pm1",
-  "proof_permissions": [
-    "PM1:✱1·11",
-    "PM1:✱2·06",
-    "PM1:✱2·08",
-    "PM1:✱2·11",
-    "PM1:✱2·12",
-    "PM1:✱2·15",
-    "PM1:✱2·16",
-    "PM1:✱2·17",
-    "PM1:✱3·01",
-    "PM1:✱3·1",
-    "PM1:✱3·11"
-  ],
-  "source_backfill_required": false,
-  "source_bytes": 9819,
-  "source_sha256": "c830a331acff664e7dfa13f43fcf9c78306d332aa14a987b3fbddf80976c778f",
   "sources": [
     {
-      "bytes": 805,
       "kind": "foundation",
       "path": "Principia/Syntax/Formula.lean",
+      "source_sha256": "4ae57f04fe68659b5afc75e7edf065a229ca1b68ef7ada719797c5011240bb8d",
       "slice_sha256": "84d2f44d722352633ec63757d0e431294f39e400aab5f2268bad06df5c8b889f",
-      "source_sha256": "4ae57f04fe68659b5afc75e7edf065a229ca1b68ef7ada719797c5011240bb8d"
+      "bytes": 805
     },
     {
-      "bytes": 1401,
       "kind": "foundation",
       "path": "Principia/Deduction/System.lean",
+      "source_sha256": "d245ec933fc304e3f9acd04a8f9efaadab6a991e5f76bbdd91f021f08c32ba82",
       "slice_sha256": "ad9a24dc5cb24f303e4da377b36a2b3b7111ded291456dbdbe03313ba345cea1",
-      "source_sha256": "d245ec933fc304e3f9acd04a8f9efaadab6a991e5f76bbdd91f021f08c32ba82"
+      "bytes": 1401
     },
     {
-      "bytes": 102,
-      "declaration": "PM.FirstEdition.Volume1.Star1.star_1_2",
+      "kind": "item-declaration",
       "id": "PM1:✱1·2",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star1.star_1_2",
+      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3",
       "slice_sha256": "f9b9e4925652ab89c5a6147b7b5c0b08b4ade0aade79f434b73b5a998e822b85",
-      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3"
+      "bytes": 102
     },
     {
-      "bytes": 106,
-      "declaration": "PM.FirstEdition.Volume1.Star1.star_1_3",
+      "kind": "item-declaration",
       "id": "PM1:✱1·3",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star1.star_1_3",
+      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3",
       "slice_sha256": "7c5b46d1fc873982b09fe32e11bcc720acec95c4bbf6db7ed0334a925ddfd36f",
-      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3"
+      "bytes": 106
     },
     {
-      "bytes": 117,
-      "declaration": "PM.FirstEdition.Volume1.Star1.star_1_4",
+      "kind": "item-declaration",
       "id": "PM1:✱1·4",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star1.star_1_4",
+      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3",
       "slice_sha256": "88c51a159a23c0effbd5f581418c18969aa358ce8218284ffd45896db67635c5",
-      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3"
+      "bytes": 117
     },
     {
-      "bytes": 147,
-      "declaration": "PM.FirstEdition.Volume1.Star1.star_1_5",
+      "kind": "item-declaration",
       "id": "PM1:✱1·5",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star1.star_1_5",
+      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3",
       "slice_sha256": "9a044a470aa52406bda039f6b1c0f5cb69319d6960721a6cdea9ebf8df899d54",
-      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3"
+      "bytes": 147
     },
     {
-      "bytes": 147,
-      "declaration": "PM.FirstEdition.Volume1.Star1.star_1_6",
+      "kind": "item-declaration",
       "id": "PM1:✱1·6",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star1.star_1_6",
+      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3",
       "slice_sha256": "d8e5dda8d246bd80a61e16fc8a9dc96af6679fbdba7accfedc2c1ab118b324fe",
-      "source_sha256": "6c2f05035d9c4f60ecd3b3b23f161e3e38d518bc349562da35a6172c190e80d3"
+      "bytes": 147
     },
     {
-      "bytes": 176,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_03",
+      "kind": "item-declaration",
       "id": "PM1:✱2·03",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_03",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "8a338e91bb54e4ed622dbb2b7b927cf885bf562dbc196d58f2186b7d6476873d",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 176
     },
     {
-      "bytes": 188,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_04",
+      "kind": "item-declaration",
       "id": "PM1:✱2·04",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_04",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "6e0b9ed6cb91d771a9ca78d346c809df9adde05942d5ae9b3ca194374a5ee29e",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 188
     },
     {
-      "bytes": 179,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_05",
+      "kind": "item-declaration",
       "id": "PM1:✱2·05",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_05",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "7710bc5a169e21b9fb6082d67ea08d7c9f95f442de84dbfb8ddf531b0c5bc11a",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 179
     },
     {
-      "bytes": 235,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_06",
+      "kind": "item-declaration",
       "id": "PM1:✱2·06",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_06",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "b0102b02632be2cdca03271fad48a771de5152c7c702ad9965dd1da03241d93d",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 235
     },
     {
-      "bytes": 131,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_07",
+      "kind": "item-declaration",
       "id": "PM1:✱2·07",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_07",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "ac4881c13cba3cabb8fc305b50f4367f008204643a7266f80eaf92cc1e1d5324",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 131
     },
     {
-      "bytes": 217,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_08",
+      "kind": "item-declaration",
       "id": "PM1:✱2·08",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_08",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "f4a2e56aeaadc61e857e2f8722ab3c3e9bfbfe70d64cc9988f4812515df996cd",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 217
     },
     {
-      "bytes": 111,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_1",
+      "kind": "item-declaration",
       "id": "PM1:✱2·1",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_1",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "0c6ebf8600b2271862ab8894ab1ee35e1ed5221be0c5b0064d4085fb13eadcab",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 111
     },
     {
-      "bytes": 201,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_11",
+      "kind": "item-declaration",
       "id": "PM1:✱2·11",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_11",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "f6904e4d493f9c1e2d512a1e87e1169f0b194b79dfd8caa9a46170a0f88b9bce",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 201
     },
     {
-      "bytes": 139,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_12",
+      "kind": "item-declaration",
       "id": "PM1:✱2·12",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_12",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "61a294a08c5353381d592f31228cf289c05fd937eed0495a591e864c9e3e37ac",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 139
     },
     {
-      "bytes": 313,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_13",
+      "kind": "item-declaration",
       "id": "PM1:✱2·13",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_13",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "c664e2b5ba2da4bdd1abb30761fd507e72b6b3b40218a7e1ef48c3360b144544",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 313
     },
     {
-      "bytes": 229,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_14",
+      "kind": "item-declaration",
       "id": "PM1:✱2·14",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_14",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "964b35b1571d2d720621732d1f78c43a245361ab7437744212582da1169a7550",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 229
     },
     {
-      "bytes": 848,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_15",
+      "kind": "item-declaration",
       "id": "PM1:✱2·15",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_15",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "2754d002941e1283de11b8f4e1e6c68a51a957efbc26e6d5019307abf38daa98",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 848
     },
     {
-      "bytes": 429,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_16",
+      "kind": "item-declaration",
       "id": "PM1:✱2·16",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_16",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "b055e3cbaf1497a49d65d031bd339ff08e96a8f6ddfcb5e0951b353b4077a6c7",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 429
     },
     {
-      "bytes": 429,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_17",
+      "kind": "item-declaration",
       "id": "PM1:✱2·17",
-      "kind": "item-declaration",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_17",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045",
       "slice_sha256": "e39a5559e3ec117a6c872a7e129706c0922fb46bb2d5af2f296a0af3928e07f0",
-      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+      "bytes": 429
     },
     {
-      "bytes": 121,
-      "declaration": "PM.Elementary.conj",
-      "id": "PM1:✱3·01",
       "kind": "item-declaration",
+      "id": "PM1:✱3·01",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.Elementary.conj",
+      "source_sha256": "406c8e764571564224776171b5f811d84f2598f7e1fa9166273ec2a178c4744e",
       "slice_sha256": "9f842b8cb0417941e64418af7bccc7b936f84b1a8c73c9605eeb8961554c7d2c",
-      "source_sha256": "406c8e764571564224776171b5f811d84f2598f7e1fa9166273ec2a178c4744e"
+      "bytes": 121
     }
   ],
+  "policy": {
+    "standalone_context_only": true,
+    "grants_no_additional_proof_permission": true,
+    "requires_remote_kernel_check": true,
+    "interface_gated": false,
+    "canonical_integration_forbidden": false,
+    "requires_one_to_one_kernel_remap": false
+  },
+  "interface_dependencies": [],
+  "source_backfill_required": false,
+  "integration_blocked": false,
   "target_order": [
     "PM1:✱3·1",
     "PM1:✱3·11",
     "PM1:✱3·12",
     "PM1:✱3·13",
     "PM1:✱3·14"
-  ]
+  ],
+  "ci_evidence": {
+    "commit": "85865c7a46df398f2f44ebc6a8c867f756dc7ad9",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31452200404",
+    "conclusion": "success"
+  }
 }

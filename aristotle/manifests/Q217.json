@@ -4,7 +4,10 @@
     "proof_permissions_are_exact_per_target": true,
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
-    "strict": true
+    "strict": true,
+    "interface_gated": false,
+    "canonical_integration_forbidden": false,
+    "requires_one_to_one_kernel_remap": false
   },
   "batch_items": [
     {
@@ -12,7 +15,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": true,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱3·03",
       "proof_permissions": [
@@ -153,6 +159,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": []
     }
   ],
@@ -217,5 +224,12 @@
     "PM1:✱2·32",
     "PM1:✱3·01"
   ],
-  "foundation_profile": "elementary-formation-pm1"
+  "direct_interface_dependencies": [],
+  "interface_dependencies": [],
+  "source_backfill_required": false,
+  "integration_blocked": false,
+  "foundation_profile": "elementary-formation-pm1",
+  "interface_signature_targets": {
+    "PM1:✱3·03": "namespace PM.FirstEdition.Volume1.Star3\n\ntheorem star_3_03 {Γ : PM.RealContext} (hasRealVariable : Γ ≠ [])\n    {φ ψ : PM.Elementary Γ}\n    (hφ : PM.FormedDerivation φ) (hψ : PM.FormedDerivation ψ) :\n    PM.FormedDerivation (PM.Elementary.conj φ ψ) := by\n  -- reconstruct the printed formation-aware derivation from the whitelist\n\nend PM.FirstEdition.Volume1.Star3"
+  }
 }

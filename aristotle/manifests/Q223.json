@@ -4,7 +4,10 @@
     "proof_permissions_are_exact_per_target": true,
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
-    "strict": false
+    "strict": false,
+    "interface_gated": false,
+    "canonical_integration_forbidden": false,
+    "requires_one_to_one_kernel_remap": false
   },
   "batch_items": [
     {
@@ -12,7 +15,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱3·26",
       "proof_permissions": [
@@ -145,6 +151,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [
         {
           "step": 1,
@@ -161,7 +168,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱3·27",
       "proof_permissions": [
@@ -275,6 +285,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [
         {
           "step": 1,
@@ -290,7 +301,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱3·3",
       "proof_permissions": [
@@ -468,6 +482,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": []
     },
     {
@@ -475,7 +490,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱3·31",
       "proof_permissions": [
@@ -619,6 +637,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [
         {
           "step": 1,
@@ -735,6 +754,16 @@
     "PM1:✱3·22",
     "PM1:✱3·26"
   ],
+  "direct_interface_dependencies": [],
+  "interface_dependencies": [],
+  "source_backfill_required": false,
+  "integration_blocked": false,
   "foundation_profile": "elementary-pm1",
-  "context_whitespace_policy": "strip-trailing"
+  "context_whitespace_policy": "strip-trailing",
+  "interface_signature_targets": {
+    "PM1:✱3·26": "namespace PM.FirstEdition.Volume1.Star3\n\ntheorem star_3_26 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ q) ⊃ₚ p) := by\n  -- fill exactly from the generated whitelist\n\nend PM.FirstEdition.Volume1.Star3",
+    "PM1:✱3·27": "namespace PM.FirstEdition.Volume1.Star3\n\ntheorem star_3_27 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ q) ⊃ₚ q) := by\n  -- fill exactly from the generated whitelist\n\nend PM.FirstEdition.Volume1.Star3",
+    "PM1:✱3·3": "namespace PM.FirstEdition.Volume1.Star3\n\ntheorem star_3_3 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r))) := by\n  -- fill exactly from the generated whitelist\n\nend PM.FirstEdition.Volume1.Star3",
+    "PM1:✱3·31": "namespace PM.FirstEdition.Volume1.Star3\n\ntheorem star_3_31 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)) := by\n  -- fill exactly from the generated whitelist\n\nend PM.FirstEdition.Volume1.Star3"
+  }
 }

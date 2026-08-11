@@ -4,7 +4,10 @@
     "proof_permissions_are_exact_per_target": true,
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
-    "strict": true
+    "strict": true,
+    "interface_gated": false,
+    "canonical_integration_forbidden": false,
+    "requires_one_to_one_kernel_remap": false
   },
   "batch_items": [
     {
@@ -12,7 +15,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": true,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱2·82",
       "proof_permissions": [
@@ -122,6 +128,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [
         {
           "step": 1,
@@ -134,7 +141,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": true,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱2·83",
       "proof_permissions": [
@@ -177,6 +187,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [
         {
           "step": 1,
@@ -189,7 +200,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": true,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱2·85",
       "proof_permissions": [
@@ -349,6 +363,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": []
     },
     {
@@ -356,7 +371,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": true
+        "strict": true,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱2·86",
       "proof_permissions": [
@@ -399,6 +417,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [
         {
           "step": 1,
@@ -506,5 +525,15 @@
     "PM1:✱2·82",
     "PM1:✱2·83",
     "PM1:✱2·85"
-  ]
+  ],
+  "direct_interface_dependencies": [],
+  "interface_dependencies": [],
+  "source_backfill_required": false,
+  "integration_blocked": false,
+  "interface_signature_targets": {
+    "PM1:✱2·82": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_82 {Γ} (p q r s : PM.Elementary Γ) :\n    ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (((p ∨ₚ ∼ₚ r) ∨ₚ s) ⊃ₚ ((p ∨ₚ q) ∨ₚ s))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+    "PM1:✱2·83": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_83 {Γ} (p q r s : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ\n      ((p ⊃ₚ (r ⊃ₚ s)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ s)))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
+    "PM1:✱2·85": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_85 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ⊃ₚ (p ∨ₚ (q ⊃ₚ r))) := by\n  -- preserve printed lines (1), (2), Comm and final ✱2·54\n\nend PM.FirstEdition.Volume1.Star2",
+    "PM1:✱2·86": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_86 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2"
+  }
 }

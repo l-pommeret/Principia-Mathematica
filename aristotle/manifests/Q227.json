@@ -4,7 +4,10 @@
     "proof_permissions_are_exact_per_target": true,
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
-    "strict": false
+    "strict": false,
+    "interface_gated": false,
+    "canonical_integration_forbidden": false,
+    "requires_one_to_one_kernel_remap": false
   },
   "batch_items": [
     {
@@ -12,7 +15,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱4·01",
       "proof_permissions": [],
@@ -34,6 +40,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [],
       "context_only_dependencies": [
         "PM1:✱3·01"
@@ -44,7 +51,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱4·02",
       "proof_permissions": [],
@@ -66,6 +76,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [],
       "context_only_dependencies": [
         "PM1:✱3·01"
@@ -76,7 +87,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱4·1",
       "proof_permissions": [
@@ -178,6 +192,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [],
       "documented_relaxations": [
         "PM1:✱1·1",
@@ -190,7 +205,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱4·12",
       "proof_permissions": [
@@ -285,7 +303,6 @@
         "PM1:✱3·3",
         "PM1:✱3·31",
         "PM1:✱3·33",
-        "PM1:✱3·34",
         "PM1:✱3·45",
         "PM1:✱3·47"
       ],
@@ -345,7 +362,6 @@
         "PM1:✱3·3": "PM.FirstEdition.Volume1.Star3.star_3_3",
         "PM1:✱3·31": "PM.FirstEdition.Volume1.Star3.star_3_31",
         "PM1:✱3·33": "PM.FirstEdition.Volume1.Star3.star_3_33",
-        "PM1:✱3·34": "PM.FirstEdition.Volume1.Star3.star_3_34",
         "PM1:✱3·45": "PM.FirstEdition.Volume1.Star3.star_3_45",
         "PM1:✱3·47": "PM.FirstEdition.Volume1.Star3.star_3_47"
       },
@@ -362,6 +378,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [],
       "documented_relaxations": [
         "PM1:✱1·1",
@@ -378,7 +395,10 @@
       "policy": {
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
-        "strict": false
+        "strict": false,
+        "interface_gated": false,
+        "canonical_integration_forbidden": false,
+        "requires_one_to_one_kernel_remap": false
       },
       "current_item": "PM1:✱4·13",
       "proof_permissions": [
@@ -470,6 +490,7 @@
         "non_kernel_checked_items": [],
         "unresolved_aliases": []
       },
+      "interface_dependencies": [],
       "substitutions": [],
       "documented_relaxations": [
         "PM1:✱1·1",
@@ -548,7 +569,6 @@
     "PM1:✱3·3",
     "PM1:✱3·31",
     "PM1:✱3·33",
-    "PM1:✱3·34",
     "PM1:✱3·45",
     "PM1:✱3·47"
   ],
@@ -608,7 +628,6 @@
     "PM1:✱3·3": "PM.FirstEdition.Volume1.Star3.star_3_3",
     "PM1:✱3·31": "PM.FirstEdition.Volume1.Star3.star_3_31",
     "PM1:✱3·33": "PM.FirstEdition.Volume1.Star3.star_3_33",
-    "PM1:✱3·34": "PM.FirstEdition.Volume1.Star3.star_3_34",
     "PM1:✱3·45": "PM.FirstEdition.Volume1.Star3.star_3_45",
     "PM1:✱3·47": "PM.FirstEdition.Volume1.Star3.star_3_47"
   },
@@ -632,6 +651,17 @@
     "PM1:✱3·2",
     "PM1:✱3·47"
   ],
+  "direct_interface_dependencies": [],
+  "interface_dependencies": [],
+  "source_backfill_required": false,
+  "integration_blocked": false,
   "foundation_profile": "elementary-formation-pm1",
-  "context_whitespace_policy": "strip-trailing"
+  "context_whitespace_policy": "strip-trailing",
+  "interface_signature_targets": {
+    "PM1:✱4·01": "namespace PM.Elementary\n\n/-- PM I (1910), p. 120, ✱4·01: equivalence is an object-language abbreviation. -/\ndef equiv (p q : PM.Elementary Γ) : PM.Elementary Γ :=\n  (p ⊃ₚ q) ∧ₚ (q ⊃ₚ p)\ninfix:53 \" ≡ₚ \" => equiv\n\nend PM.Elementary",
+    "PM1:✱4·02": "namespace PM.Elementary\n\n/-- PM I (1910), p. 122, ✱4·02: a special three-place chain abbreviation. -/\ndef equivChain (p q r : PM.Elementary Γ) : PM.Elementary Γ :=\n  (p ≡ₚ q) ∧ₚ (q ≡ₚ r)\n\nend PM.Elementary",
+    "PM1:✱4·1": "namespace PM.FirstEdition.Volume1.Star4\n\ntheorem star_4_1 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ q) ≡ₚ (∼ₚ q ⊃ₚ ∼ₚ p)) := by\n  -- reconstruct exactly from ✱2·16·17\n\nend PM.FirstEdition.Volume1.Star4",
+    "PM1:✱4·12": "namespace PM.FirstEdition.Volume1.Star4\n\ntheorem star_4_12 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ≡ₚ (∼ₚ q)) ≡ₚ (q ≡ₚ (∼ₚ p))) := by\n  -- reconstruct exactly from ✱2·03·15\n\nend PM.FirstEdition.Volume1.Star4",
+    "PM1:✱4·13": "namespace PM.FirstEdition.Volume1.Star4\n\ntheorem star_4_13 {Γ} (p : PM.Elementary Γ) :\n    ⊢ₚ (p ≡ₚ (∼ₚ (∼ₚ p))) := by\n  -- reconstruct exactly from ✱2·12·14\n\nend PM.FirstEdition.Volume1.Star4"
+  }
 }
