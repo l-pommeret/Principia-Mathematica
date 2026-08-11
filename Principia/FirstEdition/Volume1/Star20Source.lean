@@ -73,6 +73,21 @@ PM-VERBATIM-END PM1:✱20·42 -/
 /- PM-VERBATIM-BEGIN PM1:✱20·5
 ✱20·5. ⊢ : (℩x)(φx) ε ẑ(ψz) .≡ . ψ{(℩x)(φx)}
 PM-VERBATIM-END PM1:✱20·5 -/
+/- PM-VERBATIM-BEGIN PM1:✱20·54
+✱20·54. ⊢ : (∃β) . β = α . φβ .≡ . φα
+PM-VERBATIM-END PM1:✱20·54 -/
+/- PM-VERBATIM-BEGIN PM1:✱20·55
+✱20·55. ⊢ . ẑ(φz) = (ια)(x ε α .≡ₓ. φx)
+PM-VERBATIM-END PM1:✱20·55 -/
+/- PM-VERBATIM-BEGIN PM1:✱20·56
+✱20·56. ⊢ . E!(ια)(x ε α .≡ₓ. φx)
+PM-VERBATIM-END PM1:✱20·56 -/
+/- PM-VERBATIM-BEGIN PM1:✱20·57
+✱20·57. ⊢ : ẑ(φz) = (ια)(fα) .⊃ : g{ẑ(φz)} .≡ . g{(ια)(fα)}
+PM-VERBATIM-END PM1:✱20·57 -/
+/- PM-VERBATIM-BEGIN PM1:✱20·58
+✱20·58. ⊢ . ẑ(φz) = (ια){α = ẑ(φz)}
+PM-VERBATIM-END PM1:✱20·58 -/
 /- PM-VERBATIM-BEGIN PM1:✱20·01
 ✱20·01. f{ẑ(ψz)} .=: (∃φ) : φ!x .≡ₓ. ψx : f{φ!ẑ}  Df
 PM-VERBATIM-END PM1:✱20·01 -/
