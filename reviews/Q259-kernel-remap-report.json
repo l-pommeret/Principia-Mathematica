@@ -1,0 +1,86 @@
+{
+  "archive": {
+    "expected_sha256": null,
+    "path": "/Users/user/principia_mathematica/aristotle/results/Q259-final.tar.gz",
+    "present": false
+  },
+  "batch": "Q259",
+  "canonical_declarations": [
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_3",
+      "exists": false,
+      "expected_signature_sha256": "cc6ca147a934c15492219e0fc2a33ff48221c3ba5301b8ef950e959d6c66973a"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_31",
+      "exists": false,
+      "expected_signature_sha256": "43e8971f27bd694282bc824ddb7538874ba78f705c9c85194ae15a8367b85310"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_32",
+      "exists": false,
+      "expected_signature_sha256": "4d40ec734a3240781cda43071f0d9ea93fcb019957ed55f45605fa88af425f07"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_33",
+      "exists": false,
+      "expected_signature_sha256": "de64bd53da410c6c601a9a278d343856c82b4166d16375699bfdddb4898effc1"
+    }
+  ],
+  "kind": "pm-interface-kernel-remap-report",
+  "plan": {
+    "archive_sha256": null,
+    "batch": "Q259",
+    "canonical_integration_forbidden": true,
+    "kind": "pm-interface-kernel-remap-plan",
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true,
+    "targets": [
+      {
+        "canonical": "PM.FirstEdition.Volume1.Star9.star_9_3",
+        "id": "PM1:✱9·3",
+        "signature": "theorem star_9_3 (rules : Q259ClosedRuleBook)\n    (φ : Apparent Γ [.elementaryProposition]) :\n    Star_9_3Derivation φ\n",
+        "signature_sha256": "cc6ca147a934c15492219e0fc2a33ff48221c3ba5301b8ef950e959d6c66973a",
+        "source": "PM.Architecture.Q259ClosedRuleBook.star_9_3"
+      },
+      {
+        "canonical": "PM.FirstEdition.Volume1.Star9.star_9_31",
+        "id": "PM1:✱9·31",
+        "signature": "theorem star_9_31 (rules : Q259ClosedRuleBook)\n    (φ : Apparent Γ [.elementaryProposition]) :\n    Star_9_31Derivation φ\n",
+        "signature_sha256": "43e8971f27bd694282bc824ddb7538874ba78f705c9c85194ae15a8367b85310",
+        "source": "PM.Architecture.Q259ClosedRuleBook.star_9_31"
+      },
+      {
+        "canonical": "PM.FirstEdition.Volume1.Star9.star_9_32",
+        "id": "PM1:✱9·32",
+        "signature": "theorem star_9_32 (rules : Q259ClosedRuleBook) (q : Elementary Γ)\n    (φ : Apparent Γ [.elementaryProposition]) :\n    Star_9_32Derivation q φ\n",
+        "signature_sha256": "4d40ec734a3240781cda43071f0d9ea93fcb019957ed55f45605fa88af425f07",
+        "source": "PM.Architecture.Q259ClosedRuleBook.star_9_32"
+      },
+      {
+        "canonical": "PM.FirstEdition.Volume1.Star9.star_9_33",
+        "id": "PM1:✱9·33",
+        "signature": "theorem star_9_33 (rules : Q259ClosedRuleBook) (q : Elementary Γ)\n    (φ : Apparent Γ [.elementaryProposition]) :\n    Star_9_33Derivation q φ\n",
+        "signature_sha256": "de64bd53da410c6c601a9a278d343856c82b4166d16375699bfdddb4898effc1",
+        "source": "PM.Architecture.Q259ClosedRuleBook.star_9_33"
+      }
+    ]
+  },
+  "policy": {
+    "canonical_integration_forbidden": true,
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true
+  },
+  "reasons": [
+    "missing canonical declaration PM.FirstEdition.Volume1.Star9.star_9_3",
+    "missing canonical declaration PM.FirstEdition.Volume1.Star9.star_9_31",
+    "missing canonical declaration PM.FirstEdition.Volume1.Star9.star_9_32",
+    "missing canonical declaration PM.FirstEdition.Volume1.Star9.star_9_33",
+    "terminal archive unavailable"
+  ],
+  "status": "blocked"
+}

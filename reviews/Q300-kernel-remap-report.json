@@ -1,0 +1,44 @@
+{
+  "archive": {
+    "expected_sha256": null,
+    "path": "/Users/user/principia_mathematica/aristotle/results/Q300-final.tar.gz",
+    "present": false
+  },
+  "batch": "Q300",
+  "canonical_declarations": [
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
+      "exists": false,
+      "expected_signature_sha256": "cc950b29ae81b530a7f6176c8670b61a178a6165859092224fbff53f59f6116e"
+    }
+  ],
+  "kind": "pm-interface-kernel-remap-report",
+  "plan": {
+    "archive_sha256": null,
+    "batch": "Q300",
+    "canonical_integration_forbidden": true,
+    "kind": "pm-interface-kernel-remap-plan",
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true,
+    "targets": [
+      {
+        "canonical": "PM.Architecture.FirstOrderPrerequisites.star_9_21",
+        "id": "PM1:✱9·21",
+        "signature": "theorem star_9_21\n    (φ ψ : Apparent Γ [.elementaryProposition]) :\n    Star_9_21Derivation φ ψ\n",
+        "signature_sha256": "cc950b29ae81b530a7f6176c8670b61a178a6165859092224fbff53f59f6116e",
+        "source": "PM.Architecture.FirstOrderPrerequisites.star_9_21"
+      }
+    ]
+  },
+  "policy": {
+    "canonical_integration_forbidden": true,
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true
+  },
+  "reasons": [
+    "missing canonical declaration PM.Architecture.FirstOrderPrerequisites.star_9_21",
+    "terminal archive unavailable"
+  ],
+  "status": "blocked"
+}

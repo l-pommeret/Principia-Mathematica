@@ -1,0 +1,86 @@
+{
+  "archive": {
+    "expected_sha256": "a02a62d98e2805f732250d547feab729ba2eed0f901237dc7223103bb5fc99bf",
+    "path": "/Users/user/principia_mathematica/aristotle/results/Q230-final.tar.gz",
+    "present": false
+  },
+  "batch": "Q230",
+  "canonical_declarations": [
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star4.star_4_3",
+      "exists": false,
+      "expected_signature_sha256": "a82a1d38348c6b92144b65f09f4b47369a606c19a5ca36d244480cdaa9427f2f"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star4.star_4_31",
+      "exists": false,
+      "expected_signature_sha256": "8a7af75c05da35606b5da074234ffefda437dbc8935f6c71a36c6084dd7d8cb8"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star4.star_4_32",
+      "exists": false,
+      "expected_signature_sha256": "f9d77211ec92dcd7439bd4aa1dc653bf8419c2bcc3050846f2aed19ae3af13ec"
+    },
+    {
+      "actual_signature_sha256": null,
+      "declaration": "PM.FirstEdition.Volume1.Star4.star_4_33",
+      "exists": false,
+      "expected_signature_sha256": "258aeb07cae22f8df163971890a6cee06409f1b38a8c237e8f6a0aa96920550b"
+    }
+  ],
+  "kind": "pm-interface-kernel-remap-report",
+  "plan": {
+    "archive_sha256": "a02a62d98e2805f732250d547feab729ba2eed0f901237dc7223103bb5fc99bf",
+    "batch": "Q230",
+    "canonical_integration_forbidden": true,
+    "kind": "pm-interface-kernel-remap-plan",
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true,
+    "targets": [
+      {
+        "canonical": "PM.FirstEdition.Volume1.Star4.star_4_3",
+        "id": "PM1:✱4·3",
+        "signature": "theorem star_4_3 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ q) ≡ₚ (q ∧ₚ p))\n",
+        "signature_sha256": "a82a1d38348c6b92144b65f09f4b47369a606c19a5ca36d244480cdaa9427f2f",
+        "source": "PM.FirstEdition.Volume1.Star4.star_4_3"
+      },
+      {
+        "canonical": "PM.FirstEdition.Volume1.Star4.star_4_31",
+        "id": "PM1:✱4·31",
+        "signature": "theorem star_4_31 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∨ₚ q) ≡ₚ (q ∨ₚ p))\n",
+        "signature_sha256": "8a7af75c05da35606b5da074234ffefda437dbc8935f6c71a36c6084dd7d8cb8",
+        "source": "PM.FirstEdition.Volume1.Star4.star_4_31"
+      },
+      {
+        "canonical": "PM.FirstEdition.Volume1.Star4.star_4_32",
+        "id": "PM1:✱4·32",
+        "signature": "theorem star_4_32 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ∧ₚ q) ∧ₚ r) ≡ₚ (p ∧ₚ (q ∧ₚ r)))\n",
+        "signature_sha256": "f9d77211ec92dcd7439bd4aa1dc653bf8419c2bcc3050846f2aed19ae3af13ec",
+        "source": "PM.FirstEdition.Volume1.Star4.star_4_32"
+      },
+      {
+        "canonical": "PM.FirstEdition.Volume1.Star4.star_4_33",
+        "id": "PM1:✱4·33",
+        "signature": "theorem star_4_33 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ≡ₚ (p ∨ₚ (q ∨ₚ r)))\n",
+        "signature_sha256": "258aeb07cae22f8df163971890a6cee06409f1b38a8c237e8f6a0aa96920550b",
+        "source": "PM.FirstEdition.Volume1.Star4.star_4_33"
+      }
+    ]
+  },
+  "policy": {
+    "canonical_integration_forbidden": true,
+    "no_local_lean_or_ci_was_run": true,
+    "requires_one_to_one_kernel_remap": true
+  },
+  "reasons": [
+    "missing canonical declaration PM.FirstEdition.Volume1.Star4.star_4_3",
+    "missing canonical declaration PM.FirstEdition.Volume1.Star4.star_4_31",
+    "missing canonical declaration PM.FirstEdition.Volume1.Star4.star_4_32",
+    "missing canonical declaration PM.FirstEdition.Volume1.Star4.star_4_33",
+    "terminal archive unavailable"
+  ],
+  "status": "blocked"
+}
