@@ -225,3 +225,39 @@ PM-VERBATIM-END PM2:✱102·74 -/
 /- PM-VERBATIM-BEGIN PM2:✱102·75
 ✱102·75.  ⊢ . NCᵗʻα(α) = NCᵅ(α) ∪ ιʻΛ
 PM-VERBATIM-END PM2:✱102·75 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·84
+✱102·84.  ⊢ : (∃γ). γ sm α . γ ∈ tʻα . δ sm γ .≡ . δ sm α
+PM-VERBATIM-END PM2:✱102·84 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·85
+✱102·85.  ⊢ . smᵦʻʻμ ∩ tʻβ = smᵦʻʻμ  [✱65·3]
+PM-VERBATIM-END PM2:✱102·85 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·86
+✱102·86.  ⊢ : μ = Nc(α)ʻδ . ∃!μ .⊃ . smᵟʻʻμ = Nc(ξ)ʻδ
+PM-VERBATIM-END PM2:✱102·86 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·863
+✱102·863.  ⊢ : μ = Nc(β)ʻδ . ∃!Nc(ξ)ʻδ .⊃ : η ∈ μ .⊃η . ∃!Nc(ξ)ʻη
+PM-VERBATIM-END PM2:✱102·863 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·87
+✱102·87.  ⊢ : μ = Nc(β)ʻδ . ∃!Nc(ξ)ʻδ .⊃ . smₐʻʻμ = smₐʻʻsmᵟʻʻμ  [✱102·862·863]
+PM-VERBATIM-END PM2:✱102·87 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·88
+✱102·88.  ⊢ : μ = Nc(β)ʻδ . ∃!smᵟʻʻμ .⊃ . smᵟʻʻμ = Nc(ξ)ʻδ . smₐʻʻμ = Nc(α)ʻδ . smₐʻʻμ = smₐʻʻsmᵟʻʻμ = smₐʻʻNc(ξ)ʻδ
+PM-VERBATIM-END PM2:✱102·88 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱103·12
+✱103·12.  ⊢ . α ∈ N₀cʻα
+PM-VERBATIM-END PM2:✱103·12 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱103·2
+✱103·2.  ⊢ : μ ∈ N₀C .≡ . (∃α). μ = Ncʻα ∩ tʻα .≡ . (∃α). μ = N₀cʻα
+PM-VERBATIM-END PM2:✱103·2 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱103·26
+✱103·26.  ⊢ :: μ ∈ NC .⊃ : α ∈ μ .≡ . N₀cʻα = μ
+PM-VERBATIM-END PM2:✱103·26 -/
