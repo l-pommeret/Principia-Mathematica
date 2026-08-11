@@ -952,8 +952,10 @@ end PM.FirstEdition.Volume1.Star3
 -- PM-CONTEXT-ITEM PM1:✱4·01 PM.Elementary.equiv
 namespace PM.Elementary
 
-axiom equiv (p q : PM.Elementary Γ) : PM.Elementary Γ
+def equiv (p q : PM.Elementary Γ) : PM.Elementary Γ :=
+  (p ⊃ₚ q) ∧ₚ (q ⊃ₚ p)
 
+infix:53 " ≡ₚ " => equiv
 
 end PM.Elementary
 
@@ -963,8 +965,8 @@ infix:53 " ≡ₚ " => PM.Elementary.equiv
 -- PM-CONTEXT-ITEM PM1:✱4·02 PM.Elementary.equivChain
 namespace PM.Elementary
 
-axiom equivChain (p q r : PM.Elementary Γ) : PM.Elementary Γ
-
+def equivChain (p q r : PM.Elementary Γ) : PM.Elementary Γ :=
+  (p ≡ₚ q) ∧ₚ (q ≡ₚ r)
 
 end PM.Elementary
 

@@ -263,8 +263,10 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
         if len(syntax_by_id) != len(syntax):
             raise BundleError("duplicate interface syntax declaration")
         for identifier in syntax_by_id:
-            if identifier not in non_kernel:
-                raise BundleError(f"interface syntax must belong to a stub: {identifier}")
+            if identifier not in closure:
+                raise BundleError(
+                    f"interface syntax must belong to a context declaration: {identifier}"
+                )
     else:
         syntax_by_id = {}
 
@@ -299,8 +301,10 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
                 "remap_required": True,
             } if is_interface else {}),
         })
-        # Syntax which names an interface declaration must immediately follow
-        # that declaration: later interface headers may use the notation.
+        # Syntax which names a context declaration must immediately follow it:
+        # later declarations may use the notation.  This applies both to an
+        # interface stub and to a promoted kernel definition whose notation is
+        # a separate Lean command rather than part of the extracted slice.
         entry = syntax_by_id.get(item["id"])
         if entry is not None:
             clean = entry["lean"].strip() + "\n"

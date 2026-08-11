@@ -70,6 +70,14 @@ class ContextBundleTests(unittest.TestCase):
             source.index(target),
         )
 
+    def test_interface_syntax_may_follow_a_kernel_definition(self):
+        from pm_constraint_manifest import load_item_registry
+
+        registry = load_item_registry(ROOT / "metadata/items")
+        manifest = json.loads((ROOT / "aristotle/manifests/Q228.json").read_text())
+        source = build_bundle(manifest, registry, ROOT)["lean_source"]
+        self.assertLess(source.index("def equiv"), source.index('infix:53 " ≡ₚ "'))
+
     def test_q230_interface_closure_contains_equiv_chain(self):
         from pm_constraint_manifest import load_item_registry
 
@@ -77,7 +85,12 @@ class ContextBundleTests(unittest.TestCase):
         source = build_bundle(
             manifest, load_item_registry(ROOT / "metadata/items"), ROOT
         )["lean_source"]
-        self.assertLess(source.index("axiom equivChain"), source.index("axiom star_4_22"))
+        equiv_chain = (
+            "axiom equivChain"
+            if "axiom equivChain" in source
+            else "def equivChain"
+        )
+        self.assertLess(source.index(equiv_chain), source.index("axiom star_4_22"))
 
     def test_formation_profile_contains_separate_judgement(self):
         manifest = {

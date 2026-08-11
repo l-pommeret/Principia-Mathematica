@@ -2,9 +2,9 @@
   "kind": "pm-isolated-context-bundle",
   "profile": "elementary-formation-pm1",
   "current_item": null,
-  "manifest_sha256": "eaed27e97ed5245c38aefa503fc893a2c22449d4d4cf660c492cb86fc006a237",
-  "source_sha256": "20af6b7630cb0fad7771edfb2ee76f64e264b61b4b6c68e833d2d17abd9ef722",
-  "source_bytes": 43474,
+  "manifest_sha256": "6e4a582fdc57dad240a8ccff1eedc6f52ad85f1b1d4390c42601b004e4ebc4cf",
+  "source_sha256": "13cdee3fafd4171ac959ebb37f5d5380300bbb463c86981bca00f67b70d40041",
+  "source_bytes": 43539,
   "proof_permissions": [
     "PM1:✱2·08",
     "PM1:✱2·16",
@@ -588,16 +588,13 @@
       "bytes": 4361
     },
     {
-      "kind": "opaque-interface-stub",
+      "kind": "item-declaration",
       "id": "PM1:✱4·01",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
       "declaration": "PM.Elementary.equiv",
       "source_sha256": "35a1747a9a98697e3a97d9cdc8c4e0cfc47319a49a720ac3410071ca5d0fbc8c",
-      "slice_sha256": "522679c3964f126619d33f01f9ffa5fded73a9af93dad1cf9bc81269b7b59a6d",
-      "bytes": 56,
-      "signature_sha256": "7e86e217d00f268fe9d04954698cd1178adcc74ff3a5c3e041d8777dabf90694",
-      "signature": "def equiv (p q : PM.Elementary Γ) : PM.Elementary Γ\n",
-      "remap_required": true
+      "slice_sha256": "74efd160ca2ae8fa2bb0a435a217e2a4d078a0d8110b703836fd8ca3264e9bf2",
+      "bytes": 121
     },
     {
       "kind": "interface-syntax",
@@ -625,8 +622,7 @@
     "requires_one_to_one_kernel_remap": true
   },
   "interface_dependencies": [
-    "PM1:✱3·37",
-    "PM1:✱4·01"
+    "PM1:✱3·37"
   ],
   "source_backfill_required": true,
   "integration_blocked": true,

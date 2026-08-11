@@ -473,7 +473,6 @@
         "PM1:✱2·42",
         "PM1:✱2·43",
         "PM1:✱2·53",
-        "PM1:✱3·01",
         "PM1:✱3·12",
         "PM1:✱3·2",
         "PM1:✱3·26",
@@ -504,7 +503,6 @@
         "PM1:✱2·42": "PM.FirstEdition.Volume1.Star2.star_2_42",
         "PM1:✱2·43": "PM.FirstEdition.Volume1.Star2.star_2_43",
         "PM1:✱2·53": "PM.FirstEdition.Volume1.Star2.star_2_53",
-        "PM1:✱3·01": "PM.Elementary.conj",
         "PM1:✱3·12": "PM.FirstEdition.Volume1.Star3.star_3_12",
         "PM1:✱3·2": "PM.FirstEdition.Volume1.Star3.star_3_2",
         "PM1:✱3·26": "PM.FirstEdition.Volume1.Star3.star_3_26",
@@ -573,24 +571,18 @@
       },
       "local_proof_items": [],
       "context_closure": [
-        "PM1:✱1·01",
         "PM1:✱1·2",
         "PM1:✱1·3",
-        "PM1:✱3·01",
         "PM1:✱4·01"
       ],
       "context_declarations": {
-        "PM1:✱1·01": "PM.Elementary.imp",
         "PM1:✱1·2": "PM.FirstEdition.Volume1.Star1.star_1_2",
         "PM1:✱1·3": "PM.FirstEdition.Volume1.Star1.star_1_3",
-        "PM1:✱3·01": "PM.Elementary.conj",
         "PM1:✱4·01": "PM.Elementary.equiv"
       },
       "context_lean_paths": [
         "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
-        "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
-        "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
-        "Principia/Syntax/Formula.lean"
+        "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean"
       ],
       "diagnostics": {
         "missing_items": [],
@@ -756,9 +748,7 @@
     "PM1:✱3·43"
   ],
   "interface_dependencies": [
-    "PM1:✱3·43",
-    "PM1:✱4·01",
-    "PM1:✱4·02"
+    "PM1:✱3·43"
   ],
   "source_backfill_required": true,
   "integration_blocked": true,
