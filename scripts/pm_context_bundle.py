@@ -44,6 +44,10 @@ FOUNDATION_PROFILES = {
     "description-scope-pm1": (
         "Principia/Syntax/Description.lean",
     ),
+    "description-definitions-pm1": (
+        "Principia/Syntax/Description.lean",
+        "Principia/Syntax/DescriptionDefinitions.lean",
+    ),
 }
 
 

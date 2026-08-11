@@ -1,0 +1,46 @@
+{
+  "kind": "pm-constrained-batch-spec",
+  "batch": "Q310",
+  "edition": "first",
+  "volume": 1,
+  "strict": true,
+  "interface_gated": true,
+  "foundation_profile": "description-definitions-pm1",
+  "context_whitespace_policy": "strip-trailing",
+  "source_backfill_required": false,
+  "source_backfill_audit": {
+    "status": "complete",
+    "basis": "PM-VERBATIM, leaf-204 scan collation, PG78050 witness, and exact reductional definitions",
+    "item_ids": ["PM1:✱14·02", "PM1:✱14·03", "PM1:✱14·04"],
+    "demonstration_paths": [
+      "aristotle/demonstrations/PM1-star-14-02.txt",
+      "aristotle/demonstrations/PM1-star-14-03.txt",
+      "aristotle/demonstrations/PM1-star-14-04.txt"
+    ]
+  },
+  "prompt_path": "aristotle/Q310.md",
+  "generation_status": "ready",
+  "items": [
+    {
+      "id": "PM1:✱14·02",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-14-02.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star14Source.star_14_02",
+      "lean_target": "open PM.DescriptionSyntax\nopen PM.DescriptionSyntax.Formula\n\nnamespace PM.FirstEdition.Volume1.Star14Source\n\ntheorem star_14_02\n    (vocabulary : DescriptionVocabulary signature sort order)\n    (condition : Formula signature realContext (sort :: apparentContext) order) :\n    descriptionExists vocabulary condition =\n      .sometimes vocabulary.existential (uniqueMatrix vocabulary condition) := by\n  -- Reductional body only; do not cite star_14_02_reduction.\n\nend PM.FirstEdition.Volume1.Star14Source",
+      "global_conventions": [], "context_dependencies": [], "documented_relaxations": []
+    },
+    {
+      "id": "PM1:✱14·03",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-14-03.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star14Source.star_14_03",
+      "lean_target": "open PM.DescriptionSyntax\nopen PM.DescriptionSyntax.Formula\n\nnamespace PM.FirstEdition.Volume1.Star14Source\n\ntheorem star_14_03\n    (outerVocabulary : DescriptionVocabulary signature outerSort order)\n    (innerVocabulary : DescriptionVocabulary signature innerSort order)\n    (outerCondition : Formula signature realContext (outerSort :: apparentContext) order)\n    (innerCondition : Formula signature realContext (innerSort :: apparentContext) order)\n    (continuation : Formula signature realContext\n      (innerSort :: outerSort :: apparentContext) order) :\n    descriptionScopePair outerVocabulary innerVocabulary outerCondition\n        innerCondition continuation =\n      .descriptionScope outerVocabulary outerCondition\n        (.descriptionScope innerVocabulary\n          (conditionUnderOuter innerCondition)\n          continuation) := by\n  -- Reductional body only; do not cite star_14_03_reduction.\n\nend PM.FirstEdition.Volume1.Star14Source",
+      "global_conventions": [], "context_dependencies": [], "documented_relaxations": []
+    },
+    {
+      "id": "PM1:✱14·04",
+      "demonstration_path": "aristotle/demonstrations/PM1-star-14-04.txt",
+      "declaration": "PM.FirstEdition.Volume1.Star14Source.star_14_04",
+      "lean_target": "open PM.DescriptionSyntax\nopen PM.DescriptionSyntax.Formula\n\nnamespace PM.FirstEdition.Volume1.Star14Source\n\ntheorem star_14_04\n    (laterVocabulary : DescriptionVocabulary signature laterSort order)\n    (earlierVocabulary : DescriptionVocabulary signature earlierSort order)\n    (laterCondition : Formula signature realContext (laterSort :: apparentContext) order)\n    (earlierCondition : Formula signature realContext (earlierSort :: apparentContext) order)\n    (continuation : Formula signature realContext\n      (earlierSort :: laterSort :: apparentContext) order) :\n    laterDescriptionOuterScope laterVocabulary earlierVocabulary laterCondition\n        earlierCondition continuation =\n      descriptionScopePair laterVocabulary earlierVocabulary laterCondition\n        earlierCondition continuation := by\n  -- Reductional body only; do not cite star_14_04_reduction.\n\nend PM.FirstEdition.Volume1.Star14Source",
+      "global_conventions": [], "context_dependencies": [], "documented_relaxations": []
+    }
+  ]
+}

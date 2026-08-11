@@ -40,6 +40,18 @@ class AristotleInterfaceRemapTests(unittest.TestCase):
         self.assertEqual(target["signature_sha256"],
                          "43a7c86fa106937309f6776f58cef08e05c172334617fc66fa29b5fdba08864c")
 
+    def test_q310_has_three_rfl_only_one_to_one_insertion_targets(self):
+        plan = batch_plan(ROOT, "Q310")
+        self.assertEqual(
+            [target["id"] for target in plan["targets"]],
+            ["PM1:✱14·02", "PM1:✱14·03", "PM1:✱14·04"],
+        )
+        self.assertTrue(all(target["source"] == target["canonical"]
+                            for target in plan["targets"]))
+        self.assertTrue(all(target["insertion_target"]
+                            and target["body_policy"] == "rfl-only"
+                            for target in plan["targets"]))
+
     def test_q296_clean_rfl_fixture_is_transplantable_without_dependencies(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

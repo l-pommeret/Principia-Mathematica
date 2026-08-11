@@ -102,6 +102,20 @@ class ContextBundleTests(unittest.TestCase):
         )[0]
         self.assertNotIn("description", term_region.lower())
 
+    def test_description_definitions_profile_adds_only_reductional_scope_forms(self):
+        manifest = {
+            "kind": "pm-constrained-prover-manifest",
+            "foundation_profile": "description-definitions-pm1",
+            "context_closure": [],
+            "allowed_pm_items": [],
+        }
+        bundle = build_bundle(manifest, {}, ROOT)
+        source = bundle["lean_source"]
+        self.assertIn("def descriptionExists", source)
+        self.assertIn("def descriptionScopePair", source)
+        self.assertIn("def laterDescriptionOuterScope", source)
+        self.assertNotIn("namespace PM.Experimental", source)
+
     def test_local_architecture_context_is_hashed_without_proof_permission(self):
         manifest = {
             "kind": "pm-constrained-prover-manifest",

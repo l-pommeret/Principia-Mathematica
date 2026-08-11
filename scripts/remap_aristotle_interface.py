@@ -28,9 +28,9 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE_AUDIT = ROOT / "reviews/Q228-Q244-aristotle-archive-audit.json"
 ARTIFACT_AUDIT_INDEX = ROOT / "reviews/aristotle-kernel-remap-artifact-index.json"
-SUPPORTED_BATCHES = ("Q228", "Q229", "Q230", "Q259", "Q296", "Q300")
+SUPPORTED_BATCHES = ("Q228", "Q229", "Q230", "Q259", "Q296", "Q300", "Q310")
 STRICT_INSERTION_BATCHES = {"Q259", "Q300"}
-RFL_ONLY_INSERTION_BATCHES = {"Q296"}
+RFL_ONLY_INSERTION_BATCHES = {"Q296", "Q310"}
 FORBIDDEN = {
     "sorry": re.compile(r"\bsorry\b"),
     "admit": re.compile(r"\badmit\b"),
@@ -248,7 +248,7 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
         # Q296's signature is authoritative in its strict manifest, not in a
         # prose prompt copy.  This makes the recorded hash a direct manifest
         # derivative and avoids accepting a later prompt drift.
-        if batch == "Q296":
+        if batch in RFL_ONLY_INSERTION_BATCHES:
             prompt_targets = [
                 {
                     "source": manifest["target_declarations"][identifier],
@@ -271,16 +271,15 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
             ]
             if {target["source"] for target in prompt_targets} != declared_targets:
                 raise RemapError(f"prompt/manifest target mismatch for {batch}")
-        item_file = (
-            root / "metadata/items/PM1-star-14-Q296.json"
-            if batch == "Q296"
-            else root / "metadata/items/PM1-star-9-Q259.json"
-        )
+        item_file = {
+            "Q296": root / "metadata/items/PM1-star-14-Q296.json",
+            "Q310": root / "metadata/items/PM1-star-14-Q297.json",
+        }.get(batch, root / "metadata/items/PM1-star-9-Q259.json")
         # Q300 is a prerequisite proof rather than a source-backfill batch,
         # so it deliberately has no separate item-registry file yet.
         item_payload = (
             json.loads(item_file.read_text(encoding="utf-8"))
-            if batch in {"Q259", "Q296"}
+            if batch in {"Q259", *RFL_ONLY_INSERTION_BATCHES}
             else []
         )
         items = item_payload.get("items", []) if isinstance(item_payload, dict) else item_payload
@@ -312,7 +311,8 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
                 # This theorem is the artifact to insert.  It is not a
                 # pre-existing dependency, so its present absence cannot be
                 # used to reject a body which otherwise remaps exactly.
-                "insertion_target": batch in {"Q296", *STRICT_INSERTION_BATCHES},
+                "insertion_target": batch in {*RFL_ONLY_INSERTION_BATCHES,
+                                                *STRICT_INSERTION_BATCHES},
             })
             if batch in RFL_ONLY_INSERTION_BATCHES:
                 targets[-1]["body_policy"] = "rfl-only"
@@ -553,7 +553,7 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
     unmapped = sorted(set(source_by_name) - set(mapped))
     if unmapped:
         report["reasons"].append("unmapped local declarations: " + ", ".join(unmapped))
-    if batch in {"Q296", *STRICT_INSERTION_BATCHES}:
+    if batch in {*RFL_ONLY_INSERTION_BATCHES, *STRICT_INSERTION_BATCHES}:
         target_sources = {target["source"] for target in plan["targets"]}
         local_declarations = sorted(set(source_by_name) - target_sources)
         if local_declarations:

@@ -8,6 +8,7 @@ from verify_lean_policy import code_without_comments_or_strings
 
 ROOT = Path(__file__).resolve().parents[1]
 CANONICAL = ROOT / "Principia/Syntax/Description.lean"
+DEFINITIONS = ROOT / "Principia/Syntax/DescriptionDefinitions.lean"
 TOY = ROOT / "Principia/Experimental/DescriptionScopeToy.lean"
 
 
@@ -65,6 +66,35 @@ def main() -> None:
     absent = [fragment for fragment in semantic_witnesses if fragment not in toy]
     if absent:
         raise SystemExit("missing narrow/wide non-denoting witness: " + ", ".join(absent))
+
+    definitions = DEFINITIONS.read_text(encoding="utf-8")
+    definition_code = code_without_comments_or_strings(definitions)
+    definition_requirements = (
+        "def uniqueMatrix",
+        "def descriptionExists",
+        "theorem star_14_02_reduction",
+        "def conditionUnderOuter",
+        "def descriptionScopePair",
+        "theorem star_14_03_reduction",
+        "def laterDescriptionOuterScope",
+        "theorem star_14_04_reduction",
+        "insertAfterHeadSubstitution",
+    )
+    absent = [fragment for fragment in definition_requirements
+              if fragment not in definitions]
+    if absent:
+        raise SystemExit("incomplete ✱14·02–·04 reductions: " + ", ".join(absent))
+    definition_forbidden = {
+        "description term": r"(?:inductive|structure|def|abbrev)\s+DescriptionTerm\b",
+        "HOAS": r"(?:condition|continuation)\s*:\s*[^)\n]*→",
+        "object Prop": r"(?:abbrev|def)\s+\w*Formula[^:=]*:=\s*Prop\b",
+        "axiom": r"\baxiom\b",
+        "experimental dependency": r"import\s+Principia\.Experimental",
+    }
+    failures = [label for label, pattern in definition_forbidden.items()
+                if re.search(pattern, definition_code, flags=re.MULTILINE)]
+    if failures:
+        raise SystemExit("✱14 definition policy violation: " + ", ".join(failures))
 
     print("Canonical ✱14 description architecture checks passed")
 

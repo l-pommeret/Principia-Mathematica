@@ -1,0 +1,134 @@
+{
+  "kind": "pm-constrained-prover-batch-manifest",
+  "policy": {
+    "proof_permissions_are_exact_per_target": true,
+    "local_targets_must_precede_use": true,
+    "context_closure_grants_proof_permission": false,
+    "strict": true,
+    "interface_gated": true,
+    "canonical_integration_forbidden": true,
+    "requires_one_to_one_kernel_remap": true
+  },
+  "batch_items": [
+    {
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true,
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
+      },
+      "current_item": "PM1:✱14·02",
+      "proof_permissions": [],
+      "global_conventions": [],
+      "allowed_pm_items": [],
+      "allowed_lean_declarations": {},
+      "local_proof_items": [],
+      "context_closure": [],
+      "context_declarations": {},
+      "context_lean_paths": [],
+      "diagnostics": {
+        "missing_items": [],
+        "non_kernel_checked_items": [],
+        "unresolved_aliases": []
+      },
+      "interface_dependencies": [],
+      "substitutions": []
+    },
+    {
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true,
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
+      },
+      "current_item": "PM1:✱14·03",
+      "proof_permissions": [],
+      "global_conventions": [],
+      "allowed_pm_items": [],
+      "allowed_lean_declarations": {},
+      "local_proof_items": [],
+      "context_closure": [],
+      "context_declarations": {},
+      "context_lean_paths": [],
+      "diagnostics": {
+        "missing_items": [],
+        "non_kernel_checked_items": [],
+        "unresolved_aliases": []
+      },
+      "interface_dependencies": [],
+      "substitutions": []
+    },
+    {
+      "kind": "pm-constrained-prover-manifest",
+      "policy": {
+        "proof_permissions_are_exact": true,
+        "context_closure_grants_proof_permission": false,
+        "strict": true,
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
+      },
+      "current_item": "PM1:✱14·04",
+      "proof_permissions": [],
+      "global_conventions": [],
+      "allowed_pm_items": [],
+      "allowed_lean_declarations": {},
+      "local_proof_items": [],
+      "context_closure": [],
+      "context_declarations": {},
+      "context_lean_paths": [],
+      "diagnostics": {
+        "missing_items": [],
+        "non_kernel_checked_items": [],
+        "unresolved_aliases": []
+      },
+      "interface_dependencies": [],
+      "substitutions": []
+    }
+  ],
+  "target_order": [
+    "PM1:✱14·02",
+    "PM1:✱14·03",
+    "PM1:✱14·04"
+  ],
+  "target_declarations": {
+    "PM1:✱14·02": "PM.FirstEdition.Volume1.Star14Source.star_14_02",
+    "PM1:✱14·03": "PM.FirstEdition.Volume1.Star14Source.star_14_03",
+    "PM1:✱14·04": "PM.FirstEdition.Volume1.Star14Source.star_14_04"
+  },
+  "context_closure": [],
+  "context_declarations": {},
+  "context_lean_paths": [],
+  "proof_permissions": [],
+  "direct_interface_dependencies": [],
+  "interface_dependencies": [],
+  "source_backfill_required": false,
+  "integration_blocked": true,
+  "foundation_profile": "description-definitions-pm1",
+  "context_whitespace_policy": "strip-trailing",
+  "source_backfill_audit": {
+    "status": "complete",
+    "basis": "PM-VERBATIM, leaf-204 scan collation, PG78050 witness, and exact reductional definitions",
+    "item_ids": [
+      "PM1:✱14·02",
+      "PM1:✱14·03",
+      "PM1:✱14·04"
+    ],
+    "demonstration_paths": [
+      "aristotle/demonstrations/PM1-star-14-02.txt",
+      "aristotle/demonstrations/PM1-star-14-03.txt",
+      "aristotle/demonstrations/PM1-star-14-04.txt"
+    ]
+  },
+  "interface_signature_targets": {
+    "PM1:✱14·02": "open PM.DescriptionSyntax\nopen PM.DescriptionSyntax.Formula\n\nnamespace PM.FirstEdition.Volume1.Star14Source\n\ntheorem star_14_02\n    (vocabulary : DescriptionVocabulary signature sort order)\n    (condition : Formula signature realContext (sort :: apparentContext) order) :\n    descriptionExists vocabulary condition =\n      .sometimes vocabulary.existential (uniqueMatrix vocabulary condition) := by\n  -- Reductional body only; do not cite star_14_02_reduction.\n\nend PM.FirstEdition.Volume1.Star14Source",
+    "PM1:✱14·03": "open PM.DescriptionSyntax\nopen PM.DescriptionSyntax.Formula\n\nnamespace PM.FirstEdition.Volume1.Star14Source\n\ntheorem star_14_03\n    (outerVocabulary : DescriptionVocabulary signature outerSort order)\n    (innerVocabulary : DescriptionVocabulary signature innerSort order)\n    (outerCondition : Formula signature realContext (outerSort :: apparentContext) order)\n    (innerCondition : Formula signature realContext (innerSort :: apparentContext) order)\n    (continuation : Formula signature realContext\n      (innerSort :: outerSort :: apparentContext) order) :\n    descriptionScopePair outerVocabulary innerVocabulary outerCondition\n        innerCondition continuation =\n      .descriptionScope outerVocabulary outerCondition\n        (.descriptionScope innerVocabulary\n          (conditionUnderOuter innerCondition)\n          continuation) := by\n  -- Reductional body only; do not cite star_14_03_reduction.\n\nend PM.FirstEdition.Volume1.Star14Source",
+    "PM1:✱14·04": "open PM.DescriptionSyntax\nopen PM.DescriptionSyntax.Formula\n\nnamespace PM.FirstEdition.Volume1.Star14Source\n\ntheorem star_14_04\n    (laterVocabulary : DescriptionVocabulary signature laterSort order)\n    (earlierVocabulary : DescriptionVocabulary signature earlierSort order)\n    (laterCondition : Formula signature realContext (laterSort :: apparentContext) order)\n    (earlierCondition : Formula signature realContext (earlierSort :: apparentContext) order)\n    (continuation : Formula signature realContext\n      (earlierSort :: laterSort :: apparentContext) order) :\n    laterDescriptionOuterScope laterVocabulary earlierVocabulary laterCondition\n        earlierCondition continuation =\n      descriptionScopePair laterVocabulary earlierVocabulary laterCondition\n        earlierCondition continuation := by\n  -- Reductional body only; do not cite star_14_04_reduction.\n\nend PM.FirstEdition.Volume1.Star14Source"
+  }
+}
