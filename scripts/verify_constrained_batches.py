@@ -51,9 +51,14 @@ def verify(root: Path = ROOT) -> int:
                 lean[identifier] = entry["lean_target"]
             conventions[identifier] = entry.get("global_conventions", [])
         manifest = compile_batch_manifest(
-            skeletons, registry, targets, global_conventions=conventions,
+            skeletons, registry, targets,
+            strict=spec.get("strict", True), global_conventions=conventions,
             context_dependencies={
                 entry["id"]: entry.get("context_dependencies", [])
+                for entry in spec["items"]
+            },
+            documented_relaxations={
+                entry["id"]: entry.get("documented_relaxations", [])
                 for entry in spec["items"]
             },
         )

@@ -48,6 +48,18 @@ class ConstraintAuditTests(unittest.TestCase):
         audit = classify_reconstruction(manifest, ["PM1:✱2·17"])
         self.assertEqual(audit["classification"], "strict-closure")
 
+    def test_documented_relaxation_is_never_reported_as_strict(self):
+        manifest = dict(MANIFEST)
+        manifest["policy"] = {"strict": False}
+        manifest["allowed_pm_items"] = ["PM1:✱2·04", "PM1:✱2·6", "PM1:✱2·05"]
+        manifest["documented_relaxations"] = ["PM1:✱2·05"]
+        audit = classify_reconstruction(
+            manifest, ["PM1:✱2·6", "PM1:✱2·04", "PM1:✱2·05"]
+        )
+        self.assertEqual(audit["classification"], "documented-relaxed-closure")
+        self.assertEqual(audit["approved_relaxations_used"], ["PM1:✱2·05"])
+        self.assertFalse(audit["faithful_by_printed_dependency_constraint"])
+
     def test_duplicate_used_item_is_rejected(self):
         with self.assertRaisesRegex(ReconstructionAuditError, "unique"):
             classify_reconstruction(MANIFEST, ["PM1:✱2·6", "PM1:✱2·6"])

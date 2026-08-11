@@ -175,6 +175,7 @@ def compile_batch_manifest(
     strict: bool = True,
     global_conventions: dict[str, list[str]] | None = None,
     context_dependencies: dict[str, list[str]] | None = None,
+    documented_relaxations: dict[str, list[str]] | None = None,
 ) -> dict:
     """Compile an ordered batch whose later targets may cite earlier targets.
 
@@ -186,6 +187,7 @@ def compile_batch_manifest(
         raise ConstraintError("a constrained batch must contain at least one target")
     conventions = global_conventions or {}
     context_only = context_dependencies or {}
+    relaxations = documented_relaxations or {}
     seen: dict[str, str] = {}
     manifests: list[dict] = []
     for skeleton in skeletons:
@@ -199,6 +201,18 @@ def compile_batch_manifest(
             global_conventions=conventions.get(identifier, []),
             local_declarations=seen,
         )
+        documented = relaxations.get(identifier, [])
+        if (not isinstance(documented, list) or
+                not all(isinstance(item, str) for item in documented)):
+            raise ConstraintError(f"invalid documented relaxation for {identifier}")
+        unlicensed_relaxations = sorted(set(documented) - set(manifest["allowed_pm_items"]))
+        if unlicensed_relaxations:
+            raise ConstraintError(
+                f"documented relaxations are not licensed for {identifier}: "
+                f"{unlicensed_relaxations}"
+            )
+        if documented:
+            manifest["documented_relaxations"] = sorted(set(documented))
         extra_context = context_only.get(identifier, [])
         if not isinstance(extra_context, list) or not all(
             isinstance(item, str) for item in extra_context

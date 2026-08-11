@@ -19,5 +19,15 @@
     "reported_forbidden_material": ["sorry", "admit", "Classical"],
     "separate_from_source_gap": true
   },
-  "resolution_status": "awaiting-clean-continuation"
+  "resolution_status": "resolved-clean-retry-kernel-checked",
+  "resolution": {
+    "accepted_archive": "aristotle/results/Q222-repair-forbidden-output-final.tar.gz",
+    "accepted_archive_sha256": "30f5f28fce7457d6dfb27f277f0304af1cb60e114f91fcacf2948be2a378f349",
+    "integration_status": "kernel-checked-relaxed-printed-gaps",
+    "ci_evidence": {
+      "commit": "e9707ed15b2359170ba135973dd0948558136b8b",
+      "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31458071367",
+      "conclusion": "success"
+    }
+  }
 }

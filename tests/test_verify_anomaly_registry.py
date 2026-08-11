@@ -34,7 +34,7 @@ class AnomalyRegistryTests(unittest.TestCase):
         self.assertEqual(chain["relaxation_use"][0]["uses"], 2)
         self.assertEqual(
             entries["PM1-ANOM-Q222-RETRY03-AUDITED-RELAXED-OUTPUT"]["resolution_status"],
-            "audited-clean-output-pending-integration",
+            "resolved-clean-output-kernel-checked",
         )
         self.assertGreaterEqual(sum(entry["category"] == "digital-witness-error" for entry in entries.values()), 1)
 

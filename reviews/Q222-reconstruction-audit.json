@@ -1,0 +1,185 @@
+{
+  "all_targets_strict": false,
+  "kind": "pm-constrained-batch-reconstruction-audit",
+  "target_audits": [
+    {
+      "added_beyond_print": [],
+      "allowed_but_unused": [],
+      "approved_relaxations_used": [
+        "PM1:✱2·32"
+      ],
+      "classification": "documented-relaxed-closure",
+      "current_item": "PM1:✱3·2",
+      "faithful_by_printed_dependency_constraint": false,
+      "global_conventions": [
+        "PM1:✱1·11",
+        "PM1:✱2·32"
+      ],
+      "kind": "pm-constrained-reconstruction-audit",
+      "printed_event_coverage": [
+        {
+          "covered": true,
+          "event": 1,
+          "printed": "✱3·12",
+          "step": 1,
+          "used_candidates": [
+            "PM1:✱3·12"
+          ]
+        }
+      ],
+      "uncovered_printed_events": [],
+      "used_pm_items": [
+        "PM1:✱1·11",
+        "PM1:✱2·32",
+        "PM1:✱3·12"
+      ]
+    },
+    {
+      "added_beyond_print": [],
+      "allowed_but_unused": [],
+      "approved_relaxations_used": [],
+      "classification": "documented-relaxed-closure",
+      "current_item": "PM1:✱3·21",
+      "faithful_by_printed_dependency_constraint": false,
+      "global_conventions": [
+        "PM1:✱1·11"
+      ],
+      "kind": "pm-constrained-reconstruction-audit",
+      "printed_event_coverage": [
+        {
+          "covered": true,
+          "event": 1,
+          "printed": "✱3·2",
+          "step": 1,
+          "used_candidates": [
+            "PM1:✱3·2"
+          ]
+        },
+        {
+          "covered": true,
+          "event": 2,
+          "printed": "Comm",
+          "step": 1,
+          "used_candidates": [
+            "PM1:✱2·04"
+          ]
+        }
+      ],
+      "uncovered_printed_events": [],
+      "used_pm_items": [
+        "PM1:✱1·11",
+        "PM1:✱2·04",
+        "PM1:✱3·2"
+      ]
+    },
+    {
+      "added_beyond_print": [],
+      "allowed_but_unused": [
+        "PM1:✱2·15",
+        "PM1:✱2·16"
+      ],
+      "approved_relaxations_used": [
+        "PM1:✱2·06"
+      ],
+      "classification": "documented-relaxed-closure",
+      "current_item": "PM1:✱3·22",
+      "faithful_by_printed_dependency_constraint": false,
+      "global_conventions": [
+        "PM1:✱1·11",
+        "PM1:✱2·06"
+      ],
+      "kind": "pm-constrained-reconstruction-audit",
+      "printed_event_coverage": [
+        {
+          "covered": true,
+          "event": 1,
+          "printed": "✱3·13",
+          "step": 1,
+          "used_candidates": [
+            "PM1:✱3·13"
+          ]
+        },
+        {
+          "covered": true,
+          "event": 2,
+          "printed": "Perm",
+          "step": 1,
+          "used_candidates": [
+            "PM1:✱1·4"
+          ]
+        },
+        {
+          "covered": true,
+          "event": 3,
+          "printed": "✱3·14",
+          "step": 1,
+          "used_candidates": [
+            "PM1:✱3·14"
+          ]
+        },
+        {
+          "covered": true,
+          "event": 2,
+          "printed": "Transp",
+          "step": 2,
+          "used_candidates": [
+            "PM1:✱2·17"
+          ]
+        }
+      ],
+      "uncovered_printed_events": [],
+      "used_pm_items": [
+        "PM1:✱1·11",
+        "PM1:✱1·4",
+        "PM1:✱2·06",
+        "PM1:✱2·17",
+        "PM1:✱3·13",
+        "PM1:✱3·14"
+      ]
+    },
+    {
+      "added_beyond_print": [],
+      "allowed_but_unused": [],
+      "approved_relaxations_used": [],
+      "classification": "documented-relaxed-closure",
+      "current_item": "PM1:✱3·24",
+      "faithful_by_printed_dependency_constraint": false,
+      "global_conventions": [
+        "PM1:✱1·11"
+      ],
+      "kind": "pm-constrained-reconstruction-audit",
+      "printed_event_coverage": [
+        {
+          "covered": true,
+          "event": 1,
+          "printed": "✱2·11",
+          "step": 1,
+          "used_candidates": [
+            "PM1:✱2·11"
+          ]
+        },
+        {
+          "covered": true,
+          "event": 2,
+          "printed": "✱3·14",
+          "step": 1,
+          "used_candidates": [
+            "PM1:✱3·14"
+          ]
+        }
+      ],
+      "uncovered_printed_events": [],
+      "used_pm_items": [
+        "PM1:✱1·11",
+        "PM1:✱2·11",
+        "PM1:✱3·14"
+      ]
+    }
+  ],
+  "target_order": [
+    "PM1:✱3·2",
+    "PM1:✱3·21",
+    "PM1:✱3·22",
+    "PM1:✱3·24"
+  ]
+}

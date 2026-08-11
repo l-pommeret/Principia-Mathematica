@@ -48,7 +48,8 @@ def render_prompt(
         f"```lean\n{context.rstrip()}\n```\n"
         if context.strip() else ""
     )
-    return f"""# Strict PM reconstruction — {item}
+    mode = "Strict" if manifest.get("policy", {}).get("strict", True) else "Documented-relaxed"
+    return f"""# {mode} PM reconstruction — {item}
 
 ## Printed target
 
@@ -146,11 +147,16 @@ Printed substitutions:
 {substitutions}{correction_section}
 """)
     clean_context = "\n".join(line.rstrip() for line in context.rstrip().splitlines())
-    return f"""# Strict ordered PM reconstruction batch
+    mode = "Strict" if manifest.get("policy", {}).get("strict", True) else "Documented-relaxed"
+    relaxation_note = (
+        "\nThe whitelist includes individually reviewed non-printed additions; use no other PM item."
+        if mode == "Documented-relaxed" else ""
+    )
+    return f"""# {mode} ordered PM reconstruction batch
 
 Produce the following declarations in exactly this order. A target may use an
 earlier target only where that earlier PM number occurs in its own whitelist.
-No later/forward target is available. Each proof is audited independently.
+No later/forward target is available. Each proof is audited independently.{relaxation_note}
 
 {chr(10).join(sections)}
 

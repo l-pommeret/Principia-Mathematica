@@ -2010,8 +2010,10 @@
         "PM1:✱2·32"
       ],
       "lean_impact": {
-        "kind": "pending-documented-relaxation",
-        "status": "not-integrated",
+        "kind": "documented-relaxed-associativity",
+        "status": "kernel-checked",
+        "accepted_archive_sha256": "30f5f28fce7457d6dfb27f277f0304af1cb60e114f91fcacf2948be2a378f349",
+        "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31458071367",
         "rejected_archive_sha256": "9af547b4f74b"
       },
       "review_provenance": [
@@ -2019,7 +2021,7 @@
         "reviews/Q222-association-audit.md",
         "aristotle/manifests/Q222.json"
       ],
-      "resolution_status": "blocked-awaiting-approved-relaxed-reconstruction"
+      "resolution_status": "resolved-documented-relaxation-kernel-checked"
     },
     {
       "id": "PM1-ANOM-Q222-CHAIN-COMPOSITION-GAP",
@@ -2079,10 +2081,13 @@
         }
       ],
       "lean_impact": {
-        "kind": "pending-second-documented-relaxation",
-        "status": "not-integrated",
-        "archive": "aristotle/results/Q222-repair-3-22-citations-final.tar.gz",
-        "archive_sha256": "98db29f6adebc8bb531127e9247d69ba09501ad3a07ca8d634ce920a67ee9232"
+        "kind": "documented-relaxed-composition",
+        "status": "kernel-checked",
+        "rejected_archive": "aristotle/results/Q222-repair-3-22-citations-final.tar.gz",
+        "rejected_archive_sha256": "98db29f6adebc8bb531127e9247d69ba09501ad3a07ca8d634ce920a67ee9232",
+        "accepted_archive": "aristotle/results/Q222-repair-forbidden-output-final.tar.gz",
+        "accepted_archive_sha256": "30f5f28fce7457d6dfb27f277f0304af1cb60e114f91fcacf2948be2a378f349",
+        "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31458071367"
       },
       "review_provenance": [
         "reviews/Q222-chain-composition-audit.json",
@@ -2090,7 +2095,7 @@
         "aristotle/manifests/Q222.json",
         "aristotle/followups/Q222-repair-3-22-citations.md"
       ],
-      "resolution_status": "approved-relaxation-pending-clean-output"
+      "resolution_status": "resolved-documented-relaxation-kernel-checked"
     },
     {
       "id": "PM1-ANOM-Q222-RELAXED-ARCHIVE-UNCOVERED-CITATIONS",
@@ -2285,9 +2290,10 @@
       ],
       "lean_impact": {
         "kind": "source-audited-relaxed-output",
-        "status": "not-integrated",
+        "status": "kernel-checked-relaxed-printed-gaps",
         "archive": "aristotle/results/Q222-repair-forbidden-output-final.tar.gz",
-        "archive_sha256": "30f5f28fce7457d6dfb27f277f0304af1cb60e114f91fcacf2948be2a378f349"
+        "archive_sha256": "30f5f28fce7457d6dfb27f277f0304af1cb60e114f91fcacf2948be2a378f349",
+        "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31458071367"
       },
       "review_provenance": [
         "reviews/Q222-chain-composition-audit.json",
@@ -2298,7 +2304,7 @@
         "PM1-ANOM-Q222-CHAIN-COMPOSITION-GAP",
         "PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT"
       ],
-      "resolution_status": "audited-clean-output-pending-integration"
+      "resolution_status": "resolved-clean-output-kernel-checked"
     }
   ]
 }

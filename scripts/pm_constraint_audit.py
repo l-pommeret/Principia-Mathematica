@@ -20,6 +20,14 @@ def classify_reconstruction(manifest: dict, used_pm_items: list[str]) -> dict:
 
     used = set(used_pm_items)
     allowed = set(manifest["allowed_pm_items"])
+    strict = manifest.get("policy", {}).get("strict", True)
+    printed_candidates = {
+        candidate
+        for permission in manifest["proof_permissions"]
+        for candidate in permission["candidates"]
+    }
+    conventions = set(manifest.get("global_conventions", []))
+    documented_relaxations = set(manifest.get("documented_relaxations", []))
     extra = sorted(used - allowed)
     unused_allowed = sorted(allowed - used)
     event_coverage = []
@@ -42,6 +50,8 @@ def classify_reconstruction(manifest: dict, used_pm_items: list[str]) -> dict:
         classification = "relaxed-closure"
     elif uncovered:
         classification = "strict-subset-with-unused-printed-citations"
+    elif not strict:
+        classification = "documented-relaxed-closure"
     else:
         classification = "strict-closure"
     return {
@@ -53,6 +63,7 @@ def classify_reconstruction(manifest: dict, used_pm_items: list[str]) -> dict:
         "added_beyond_print": extra,
         "allowed_but_unused": unused_allowed,
         "global_conventions": list(manifest.get("global_conventions", [])),
+        "approved_relaxations_used": sorted(used & documented_relaxations),
         "printed_event_coverage": event_coverage,
         "uncovered_printed_events": uncovered,
     }

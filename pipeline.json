@@ -812,7 +812,7 @@
       "source": "PM volume I, first edition, pp. 116–117",
       "prompt_path": "aristotle/Q222.md",
       "audit_path": "reviews/Q222-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "A",
       "lean_scope": "exact PM1 ✱3·2, ✱3·21, ✱3·22 and ✱3·24",
       "depends_on": [
         "PM1:✱3·12",
@@ -820,7 +820,55 @@
         "PM1:✱3·14"
       ],
       "parallel_group": "STAR3-WAVE-1B",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "complete-relaxed-printed-gaps",
+      "constraint_manifest_path": "aristotle/manifests/Q222.json",
+      "isolated_context_path": "aristotle/contexts/Q222.lean",
+      "context_ci_evidence": {
+        "commit": "e9707ed15b2359170ba135973dd0948558136b8b",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31458071367",
+        "conclusion": "success"
+      },
+      "aristotle_project_id": "3b0dc337-df1c-4889-82b5-e462c0673bfc",
+      "aristotle_task_id": "b29da4c1-8d71-465f-bde8-4a86c0b9148b",
+      "aristotle_latest_task_id": "b29da4c1-8d71-465f-bde8-4a86c0b9148b",
+      "aristotle_latest_task_status": "COMPLETE_WITH_ERRORS",
+      "aristotle_remote_status": "COMPLETE_WITH_ERRORS",
+      "aristotle_request_path": "aristotle/Q222.md",
+      "aristotle_request_sha256": "48d0c0021d83770512d9e67292744fdfa4afc9cf2383d594d1bbfff99dfade16",
+      "aristotle_followup_prompt": "aristotle/followups/Q222-repair-forbidden-output.md",
+      "aristotle_followup_prompt_sha256": "979c8c46325338a989130a61c874510f4860f8283c5065b8d10d0f130fb2e713",
+      "aristotle_latest_task_name": "# Q222 continuation — repla...",
+      "aristotle_latest_task_created": "completed",
+      "aristotle_archive_path": "aristotle/results/Q222-repair-forbidden-output-final.tar.gz",
+      "aristotle_archive_sha256": "30f5f28fce7457d6dfb27f277f0304af1cb60e114f91fcacf2948be2a378f349",
+      "reconstruction_audit_path": "reviews/Q222-reconstruction-audit.json",
+      "reconstruction_classification": "kernel-checked-relaxed-printed-gaps",
+      "strict": false,
+      "historical_gaps": {
+        "association": {
+          "item": "PM1:✱3·2",
+          "added": "PM1:✱2·32",
+          "uses": 1,
+          "status": "documented-relaxation"
+        },
+        "implicit_composition": {
+          "item": "PM1:✱3·22",
+          "added": "PM1:✱2·06",
+          "uses": 2,
+          "status": "documented-relaxation"
+        }
+      },
+      "rejected_archives": [{
+        "sha256": "98db29f6adebc8bb531127e9247d69ba09501ad3a07ca8d634ce920a67ee9232",
+        "reason": "forbidden-output",
+        "promoted": false
+      }],
+      "integration_status": "kernel-checked-relaxed-printed-gaps",
+      "integration_ci_evidence": {
+        "commit": "e9707ed15b2359170ba135973dd0948558136b8b",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31458071367",
+        "conclusion": "success"
+      }
     },
     "Q223": {
       "canonical_ids": [

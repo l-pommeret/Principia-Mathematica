@@ -45,9 +45,9 @@
       "affected_ast_items_batches": {"items": ["PM1:✱3·2", "PM1:✱3·21", "PM1:✱3·22", "PM1:✱3·24"], "batches": ["Q222"], "ast_effect": "Keep ✱3·12 left-associated and ✱3·2 right-nested; they must not be made definitionally equal."},
       "strict_audit_status": "rejected before integration: the sole printed citation cannot establish the differently associated target under the strict permission policy.",
       "minimal_relaxation": ["PM1:✱2·32"],
-      "lean_impact": {"kind": "pending-documented-relaxation", "status": "not-integrated", "rejected_archive_sha256": "9af547b4f74b"},
+      "lean_impact": {"kind": "documented-relaxed-associativity", "status": "kernel-checked", "accepted_archive_sha256": "30f5f28fce7457d6dfb27f277f0304af1cb60e114f91fcacf2948be2a378f349", "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31458071367", "rejected_archive_sha256": "9af547b4f74b"},
       "review_provenance": ["reviews/Q222-review.md", "reviews/Q222-association-audit.md", "aristotle/manifests/Q222.json"],
-      "resolution_status": "blocked-awaiting-approved-relaxed-reconstruction"
+      "resolution_status": "resolved-documented-relaxation-kernel-checked"
     },
     {
       "id": "PM1-ANOM-Q222-RELAXED-ARCHIVE-UNCOVERED-CITATIONS",
@@ -79,9 +79,9 @@
       "minimal_relaxation": ["PM1:✱2·06"],
       "strict": false,
       "relaxation_use": [{"id": "PM1:✱2·06", "uses": 2, "purpose": "join the first two links, then join their result to the third printed link"}],
-      "lean_impact": {"kind": "pending-second-documented-relaxation", "status": "not-integrated", "archive": "aristotle/results/Q222-repair-3-22-citations-final.tar.gz", "archive_sha256": "98db29f6adebc8bb531127e9247d69ba09501ad3a07ca8d634ce920a67ee9232"},
+      "lean_impact": {"kind": "documented-relaxed-composition", "status": "kernel-checked", "rejected_archive": "aristotle/results/Q222-repair-3-22-citations-final.tar.gz", "rejected_archive_sha256": "98db29f6adebc8bb531127e9247d69ba09501ad3a07ca8d634ce920a67ee9232", "accepted_archive": "aristotle/results/Q222-repair-forbidden-output-final.tar.gz", "accepted_archive_sha256": "30f5f28fce7457d6dfb27f277f0304af1cb60e114f91fcacf2948be2a378f349", "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31458071367"},
       "review_provenance": ["reviews/Q222-chain-composition-audit.json", "aristotle/results/Q222-repair-3-22-citations-final.tar.gz", "aristotle/manifests/Q222.json", "aristotle/followups/Q222-repair-3-22-citations.md"],
-      "resolution_status": "approved-relaxation-pending-clean-output"
+      "resolution_status": "resolved-documented-relaxation-kernel-checked"
     },
     {
       "id": "PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT",
@@ -113,10 +113,10 @@
       "minimal_relaxation": ["PM1:✱2·32", "PM1:✱2·06"],
       "strict": false,
       "relaxation_use": [{"id": "PM1:✱2·32", "uses": 1, "target": "PM1:✱3·2"}, {"id": "PM1:✱2·06", "uses": 2, "target": "PM1:✱3·22"}],
-      "lean_impact": {"kind": "source-audited-relaxed-output", "status": "not-integrated", "archive": "aristotle/results/Q222-repair-forbidden-output-final.tar.gz", "archive_sha256": "30f5f28fce7457d6dfb27f277f0304af1cb60e114f91fcacf2948be2a378f349"},
+      "lean_impact": {"kind": "source-audited-relaxed-output", "status": "kernel-checked-relaxed-printed-gaps", "archive": "aristotle/results/Q222-repair-forbidden-output-final.tar.gz", "archive_sha256": "30f5f28fce7457d6dfb27f277f0304af1cb60e114f91fcacf2948be2a378f349", "ci_run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31458071367"},
       "review_provenance": ["reviews/Q222-chain-composition-audit.json", "aristotle/results/Q222-repair-forbidden-output-final.tar.gz"],
       "resolves": ["PM1-ANOM-Q222-ASSOCIATION-GAP", "PM1-ANOM-Q222-CHAIN-COMPOSITION-GAP", "PM1-ANOM-Q222-RETRY02-FORBIDDEN-OUTPUT"],
-      "resolution_status": "audited-clean-output-pending-integration"
+      "resolution_status": "resolved-clean-output-kernel-checked"
     }
   ]
 }

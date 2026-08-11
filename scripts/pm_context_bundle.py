@@ -46,8 +46,17 @@ def sha256_text(text: str) -> str:
 
 def preserve_historical_container_hashes(recorded: dict, rebuilt: dict) -> None:
     """Ignore append-only container drift when exact declaration slices agree."""
-    for old, new in zip(recorded.get("sources", []), rebuilt.get("sources", []),
-                        strict=True):
+    def source_key(source: dict) -> tuple[str | None, str | None, str | None]:
+        return (source.get("kind"), source.get("id"), source.get("path"))
+
+    # A reviewed relaxation may add a declaration to a bundle.  Such an
+    # expansion is not historical container drift, so retain provenance only
+    # for source slices which occur in both versions.
+    previous = {source_key(source): source for source in recorded.get("sources", [])}
+    for new in rebuilt.get("sources", []):
+        old = previous.get(source_key(new))
+        if old is None:
+            continue
         if (old.get("kind") == new.get("kind") == "item-declaration"
                 and old.get("slice_sha256") == new.get("slice_sha256")):
             new["source_sha256"] = old.get("source_sha256")

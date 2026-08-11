@@ -272,6 +272,34 @@ theorem star_2_17 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
 
 end PM.FirstEdition.Volume1.Star2
 
+-- PM-CONTEXT-ITEM PM1:✱2·3 PM.FirstEdition.Volume1.Star2.star_2_3
+namespace PM.FirstEdition.Volume1.Star2
+
+theorem star_2_3 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ (p ∨ₚ (r ∨ₚ q))) :=
+  PM.Derivation.detach
+    (PM.Derivation.star_1_4 q r)
+    (PM.Derivation.star_1_6 p (q ∨ₚ r) (r ∨ₚ q))
+
+end PM.FirstEdition.Volume1.Star2
+
+-- PM-CONTEXT-ITEM PM1:✱2·32 PM.FirstEdition.Volume1.Star2.star_2_32
+namespace PM.FirstEdition.Volume1.Star2
+
+theorem star_2_32 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ (q ∨ₚ r))) :=
+  PM.Derivation.detach
+    (PM.Derivation.detach
+      (PM.Derivation.star_1_4 (p ∨ₚ q) r)
+      (PM.Derivation.detach
+        (PM.Derivation.star_1_5 r p q)
+        (star_2_05 ((p ∨ₚ q) ∨ₚ r) (r ∨ₚ (p ∨ₚ q)) (p ∨ₚ (r ∨ₚ q)))))
+    (PM.Derivation.detach
+      (star_2_3 p r q)
+      (star_2_05 ((p ∨ₚ q) ∨ₚ r) (p ∨ₚ (r ∨ₚ q)) (p ∨ₚ (q ∨ₚ r))))
+
+end PM.FirstEdition.Volume1.Star2
+
 -- PM-CONTEXT-ITEM PM1:✱3·01 PM.Elementary.conj
 namespace PM.Elementary
 

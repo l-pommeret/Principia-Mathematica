@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from pm_context_bundle import build_bundle
+from pm_context_bundle import build_bundle, preserve_historical_container_hashes
 
 
 class ContextBundleTests(unittest.TestCase):
@@ -79,6 +79,21 @@ class ContextBundleTests(unittest.TestCase):
         self.assertIn("theorem star_2_2", bundle["lean_source"])
         self.assertNotIn("star_8_91", bundle["lean_source"])
         self.assertEqual(bundle["target_order"], ["PM1:✱8·91", "PM1:✱8·92"])
+
+    def test_preserved_hashes_tolerate_a_reviewed_bundle_expansion(self):
+        recorded = {"sources": [
+            {"kind": "item-declaration", "id": "PM1:✱2·1", "path": "Star2.lean",
+             "slice_sha256": "same", "source_sha256": "historic"},
+        ]}
+        rebuilt = {"sources": [
+            {"kind": "item-declaration", "id": "PM1:✱2·1", "path": "Star2.lean",
+             "slice_sha256": "same", "source_sha256": "current"},
+            {"kind": "item-declaration", "id": "PM1:✱2·2", "path": "Star2.lean",
+             "slice_sha256": "new", "source_sha256": "current"},
+        ]}
+        preserve_historical_container_hashes(recorded, rebuilt)
+        self.assertEqual(rebuilt["sources"][0]["source_sha256"], "historic")
+        self.assertEqual(rebuilt["sources"][1]["source_sha256"], "current")
 
 
 if __name__ == "__main__":
