@@ -83,3 +83,22 @@ Dem.  By ✱4·2, ✱9·03, ✱9·02, and ✱1·01, ⊢ . Prop.
 In the alternative method, by Transp, ✱10·01, ✱10·21, ✱10·1,
 ✱10·11, and ✱10·11·21, ⊢ . Prop.
 PM-VERBATIM-END PM1:✱10·23 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·24
+✱10·24.  ⊢ : φy .⊃ .(∃x).φx
+Dem.  In the alternative method: ✱10·1, Transp, and ✱10·01, yielding ⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·24 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·25
+✱10·25.  ⊢ : (x).φx .⊃ .(∃x).φx  [✱10·1·24]
+PM-VERBATIM-END PM1:✱10·25 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·251
+✱10·251.  ⊢ : (x).∼φx .⊃ .∼{(x).φx}  [✱10·25 . Transp]
+PM-VERBATIM-END PM1:✱10·251 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·252
+✱10·252.  ⊢ : ∼{(∃x).φx} .≡ .(x).∼φx  [✱4·2 . (✱9·02)]
+Alternative method: [✱4·13 . (✱10·01)].
+PM-VERBATIM-END PM1:✱10·252 -/
+/- PM-VERBATIM-BEGIN PM1:✱10·253
+✱10·253.  ⊢ : ∼{(x).φx} .≡ .(∃x).∼φx  [✱4·2 . (✱9·01)]
+Alternative method: by ✱10·1, ✱2·12, ✱10·11·21, Transp, ✱2·14, and ✱10·01,
+⊢ . Prop.
+PM-VERBATIM-END PM1:✱10·253 -/
