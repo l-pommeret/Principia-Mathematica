@@ -50,7 +50,16 @@
       "opaque_declaration_sha256": "87a9e33a37f38a81a8bf90bef70b8c06d970c4e4f8c4c19f565089ae5f63173c"
     }
   ],
-  "foundation_imports": [
-    "Principia.Syntax.Apparent"
+  "foundation_sources": [
+    {
+      "path": "Principia/Syntax/Formula.lean",
+      "source_sha256": "4ae57f04fe68659b5afc75e7edf065a229ca1b68ef7ada719797c5011240bb8d",
+      "slice_sha256": "84d2f44d722352633ec63757d0e431294f39e400aab5f2268bad06df5c8b889f"
+    },
+    {
+      "path": "Principia/Syntax/Apparent.lean",
+      "source_sha256": "6fcb430767029efc441380496002f6bafb374746ec59b5a4aeec1dca3fcf8ab6",
+      "slice_sha256": "1163140edb784846c156c6c21e73817ad8d5325d775c9ff00146e0a21052708f"
+    }
   ]
 }

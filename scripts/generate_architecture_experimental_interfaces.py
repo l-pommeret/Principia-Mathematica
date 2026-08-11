@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 from pm_constraint_manifest import load_item_registry
-from pm_context_bundle import declaration_namespace, interface_stub
+from pm_context_bundle import clean_foundation, declaration_namespace, interface_stub
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,10 +24,12 @@ FENCE = re.compile(r"```lean\n(.*?)```", re.S)
 SCAN = re.compile(r"\b[0-9a-f]{64}\b")
 
 # Q253/254 contain declaration slices whose opaque signatures use the ✱9
-# syntax foundation. Q252 declares that foundation itself, so it has no import.
-FOUNDATION_IMPORTS = {
-    "Q253": ("Principia.Syntax.Apparent",),
-    "Q254": ("Principia.Syntax.Apparent",),
+# syntax foundation. Isolated contexts are compiled before repository modules,
+# so imports would look for unavailable `.olean` files; embed these exact
+# foundation sources instead. Q252 declares the same foundation itself.
+FOUNDATION_SOURCES = {
+    "Q253": ("Principia/Syntax/Formula.lean", "Principia/Syntax/Apparent.lean"),
+    "Q254": ("Principia/Syntax/Formula.lean", "Principia/Syntax/Apparent.lean"),
 }
 
 
@@ -58,14 +60,30 @@ def dependency_stubs(question: dict, registry: dict[str, dict]) -> list[dict]:
     return stubs
 
 
-def render_context(stubs: list[dict], imports: tuple[str, ...]) -> str:
+def foundation_sources(paths: tuple[str, ...]) -> tuple[list[str], list[dict]]:
+    chunks: list[str] = []
+    provenance: list[dict] = []
+    for relative in paths:
+        path = ROOT / relative
+        raw = path.read_text(encoding="utf-8")
+        clean = clean_foundation(raw)
+        chunks.append(f"-- PM-CONTEXT-FOUNDATION {relative}\n{clean}")
+        provenance.append({
+            "path": relative,
+            "source_sha256": sha256_text(raw),
+            "slice_sha256": sha256_text(clean),
+        })
+    return chunks, provenance
+
+
+def render_context(stubs: list[dict], foundations: list[str]) -> str:
     chunks = [
         "/- Architecture-experimental opaque interface. This file is not a repository import,",
         "   does not establish canonical PM coverage, and cannot be promoted. -/",
         "",
     ]
-    chunks.extend(f"import {module}" for module in imports)
-    if imports:
+    chunks.extend(foundations)
+    if foundations:
         chunks.append("")
     for stub in stubs:
         chunks.extend([
@@ -91,7 +109,8 @@ def generate(batch: str) -> None:
     if question.get("audit_status") != "A":
         raise ValueError(f"{batch}: audit is not A; architecture task stays blocked")
     stubs = dependency_stubs(question, load_item_registry(ROOT / "metadata" / "items"))
-    imports = FOUNDATION_IMPORTS.get(batch, ())
+    foundation_paths = FOUNDATION_SOURCES.get(batch, ())
+    foundations, foundation_provenance = foundation_sources(foundation_paths)
     payload = {
         "kind": "pm-architecture-experimental-interface-manifest",
         "batch": batch,
@@ -114,9 +133,9 @@ def generate(batch: str) -> None:
         "prompt_sha256": sha256_text(prompt),
         "review_sha256": sha256_text(review),
         "opaque_dependency_stubs": stubs,
-        **({"foundation_imports": list(imports)} if imports else {}),
+        **({"foundation_sources": foundation_provenance} if foundation_provenance else {}),
     }
-    context = render_context(stubs, imports)
+    context = render_context(stubs, foundations)
     manifest_path = ROOT / "aristotle" / "manifests" / f"{batch}-architecture-interface.json"
     context_path = ROOT / "aristotle" / "contexts" / f"{batch}-architecture-interface.lean"
     bundle_path = ROOT / "metadata" / "architecture_interface_bundles" / f"{batch}.json"
