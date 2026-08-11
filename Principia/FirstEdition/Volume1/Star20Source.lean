@@ -141,3 +141,23 @@ PM-VERBATIM-END PM1:✱20·632 -/
 /- PM-VERBATIM-BEGIN PM1:✱20·633
 ✱20·633. "Whatever possible class α may be, f(α,β) is true whatever possible class β may be" implies the corresponding statement with α and β interchanged except in "f(α,β)".
 PM-VERBATIM-END PM1:✱20·633 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·64
+✱20·64. ⊢ : (α). fα : (α). gα .⊃ . fβ . gβ
+PM-VERBATIM-END PM1:✱20·64 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·7
+✱20·7. ⊢ : (∃g) : fα .≡ₐ. g!α  [✱20·112]
+PM-VERBATIM-END PM1:✱20·7 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·701
+✱20·701. ⊢ : (∃g) : f{ẑ(φ!z), x} .≡_{φ,x}. g!{ẑ(φ!z), x}
+PM-VERBATIM-END PM1:✱20·701 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·702
+✱20·702. ⊢ : (∃g) : f{x, ẑ(φ!z)} .≡_{φ,x}. g!{x, ẑ(φ!z)}
+PM-VERBATIM-END PM1:✱20·702 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·703
+✱20·703. ⊢ : (∃g) : f{ẑ(φ!z), ẑ(ψ!z)} .≡_{φ,ψ}. g!{ẑ(φ!z), ẑ(ψ!z)}
+PM-VERBATIM-END PM1:✱20·703 -/
