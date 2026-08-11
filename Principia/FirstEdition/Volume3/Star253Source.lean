@@ -76,6 +76,22 @@ PM-VERBATIM-END PM3:✱253·401 -/
 /- PM-VERBATIM-BEGIN PM3:✱253·402
 ✱253·402.  ⊢ : P ∈ Ω − ιʻΛ .⊃ . DʻPₛ = Q̂ {(∃R) . R ≠ Λ . P = Q ✦ R .∨ . (∃x) . P = Q ↦ x}
 PM-VERBATIM-END PM3:✱253·402 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱253·41
+✱253·41.  ⊢ :: P ∈ Ω . Q ∈ CʻPₛ .⊃ : (∃α) . α ∈ NO . NrʻP = NrʻQ + α .∨ . NrʻP = NrʻQ + i
+PM-VERBATIM-END PM3:✱253·41 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·42
+✱253·42.  ⊢ : P ∈ Ω .⊃ . NrʻP ∩ DʻPₛ = Λ  [✱250·651 . ✱213·141]
+PM-VERBATIM-END PM3:✱253·42 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·421
+✱253·421.  ⊢ : P ∈ Ω . Q ∈ DʻPₛ .⊃ . ∼(Q smor P)  [✱253·42]
+PM-VERBATIM-END PM3:✱253·421 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·43
+✱253·43.  ⊢ :: P ∈ Ω . x, y ∈ CʻP .⊃ : P ⌞ P⃗ʻx smor P ⌞ P⃗ʻy .≡ . x = y
+PM-VERBATIM-END PM3:✱253·43 -/
+/- PM-VERBATIM-BEGIN PM3:✱253·431
+✱253·431.  ⊢ : P ✦ Q ∈ Ω . ∃! Q .⊃ . NrʻP ≠ Nrʻ(P ✦ Q)
+PM-VERBATIM-END PM3:✱253·431 -/
 /- PM-VERBATIM-BEGIN PM3:✱253·17
 ✱253·17.  ⊢ : P ∈ Ω .⊃ . Pₛ ⌞ DʻPₛ = P ⌞ P⃗;P ⌞ CʻP
 PM-VERBATIM-END PM3:✱253·17 -/
