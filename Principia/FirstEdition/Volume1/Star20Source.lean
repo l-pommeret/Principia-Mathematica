@@ -161,3 +161,15 @@ PM-VERBATIM-END PM1:✱20·702 -/
 /- PM-VERBATIM-BEGIN PM1:✱20·703
 ✱20·703. ⊢ : (∃g) : f{ẑ(φ!z), ẑ(ψ!z)} .≡_{φ,ψ}. g!{ẑ(φ!z), ẑ(ψ!z)}
 PM-VERBATIM-END PM1:✱20·703 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·71
+✱20·71. ⊢ : α = β .≡ : g!α .⊃₍g₎. g!β  [✱20·19]
+PM-VERBATIM-END PM1:✱20·71 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·8
+✱20·8. ⊢ : φa ∨ ∼φa .⊃ . ẑ(φx ∨ ∼φx) = ẑ(x = a ∨ x ≠ a)
+PM-VERBATIM-END PM1:✱20·8 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·81
+✱20·81. ⊢ : φa ∨ ∼φa . ψa ∨ ∼ψa .⊃ . ẑ(φx ∨ ∼φx) = ẑ(ψx ∨ ∼ψx)
+PM-VERBATIM-END PM1:✱20·81 -/
