@@ -121,3 +121,23 @@ PM-VERBATIM-SUMMARY-END PM1:✱20·18 -/
 /- PM-VERBATIM-SUMMARY-BEGIN PM1:✱20·3
 ✱20·3. ⊢ : x ε ẑ(ψz) .≡ . ψx
 PM-VERBATIM-SUMMARY-END PM1:✱20·3 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·62
+✱20·62. When fβ is true, whatever possible argument of the form ẑ(φ!z) β may be, then (α). fα is true.
+PM-VERBATIM-END PM1:✱20·62 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·63
+✱20·63. ⊢ : (α). p ∨ fα .⊃ : p .∨ . (α). fα  [analogue of ✱10·12]
+PM-VERBATIM-END PM1:✱20·63 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·631
+✱20·631. If "fα" is significant, then if β is of the same type as α, "fβ" is significant, and vice versa.
+PM-VERBATIM-END PM1:✱20·631 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·632
+✱20·632. If, for some α, there is a proposition fα, then there is a function fα̂, and vice versa.
+PM-VERBATIM-END PM1:✱20·632 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱20·633
+✱20·633. "Whatever possible class α may be, f(α,β) is true whatever possible class β may be" implies the corresponding statement with α and β interchanged except in "f(α,β)".
+PM-VERBATIM-END PM1:✱20·633 -/
