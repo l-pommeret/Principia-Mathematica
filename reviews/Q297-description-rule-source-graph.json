@@ -130,9 +130,76 @@
       "finding": "This is a kernel theorem, but its exact Elementary-only type prevents treating it as an implicit polymorphic convention."
     }
   ],
+  "pp_189_190_proof_reprise": {
+    "scan_witness": {
+      "path": "metadata/items/PM1-star-14-Q306.json",
+      "printed_pages": "189-190",
+      "scan_leaf": 211,
+      "image_sha256": "5952e2001787b3189a8841512fa83166905115300b0972944480e93c25f260a7"
+    },
+    "findings": [
+      {
+        "item": "PM1:14.18",
+        "printed_reprise": "p. 189 gives a Dem. line followed by the explanatory statement that an existing description has the logical properties of an ordinary argument.",
+        "available_transcription": "aristotle/demonstrations/PM1-star-14-18.txt contains the asserted formula but not the image-only proof line.",
+        "citation_status": "not recoverable as a machine-readable citation from the currently committed transcription"
+      },
+      {
+        "item": "PM1:14.21",
+        "printed_reprise": "p. 190 gives a Dem. line and states that any true statement about the description entails its existence.",
+        "available_transcription": "aristotle/demonstrations/PM1-star-14-21.txt contains the asserted formula but not the image-only proof line.",
+        "citation_status": "not recoverable as a machine-readable citation from the currently committed transcription"
+      }
+    ],
+    "result": "The page evidence reinforces the analytic-translation reading but does not provide a source-audited constructor list for a new derivation type."
+  },
+  "expanded_ast_audit": {
+    "parameters": {
+      "C": "Formula signature realContext (sort :: apparentContext) order",
+      "P": "Formula signature realContext (sort :: apparentContext) order",
+      "V": "DescriptionVocabulary signature sort order"
+    },
+    "formula_ast": {
+      "exists_unique": "E := Formula.descriptionExists V C",
+      "universal_property": "U := Formula.always V.universal P",
+      "described_property": "S := Formula.descriptionScope V C P",
+      "star_14_18": "Formula.imp V E (Formula.imp V U S)",
+      "star_14_21": "Formula.imp V S E"
+    },
+    "expanded_core_ast": {
+      "E": "CoreFormula.sometimes V.existential (Formula.uniqueMatrix V C).expand",
+      "U": "CoreFormula.always V.universal P.expand",
+      "S": "CoreFormula.sometimes V.existential (CoreFormula.conj V (CoreFormula.uniquely V C.expand) P.expand)",
+      "star_14_18": "CoreFormula.imp V E (CoreFormula.imp V U S)",
+      "star_14_21": "CoreFormula.imp V S E"
+    },
+    "dependency_classification": [
+      {
+        "target": "star_14_18",
+        "needed": "existential witness elimination plus universal instantiation and conjunction introduction under the same typed candidate binder",
+        "not_just": "propositional detachment"
+      },
+      {
+        "target": "star_14_21",
+        "needed": "existential weakening from exists(uniqueMatrix ∧ P) to exists(uniqueMatrix)",
+        "not_just": "a reduction equality or propositional tautology"
+      }
+    ]
+  },
+  "ordered_assertion_bridge_verdict": {
+    "status": "not-conservative-and-not-authorized",
+    "carrier_mismatch": {
+      "source": "CoreFormula signature realContext apparentContext order",
+      "target": "OrderedFormula Γ order",
+      "missing": ["a total type/order/context preserving translation", "proof that Formula.expand preserves implication, existential and universal operations into OrderedFormula", "a kernel judgement for the translated CoreFormula"]
+    },
+    "semantic_gap": "Even a hypothetical syntax conversion would still need first-order existential weakening and witness-sensitive universal instantiation; OrderedAssertion has only its closed Star 9 constructors over Apparent.",
+    "conservative_bridge_candidate": null,
+    "reason": "Defining a conversion or asserting its soundness would add precisely the unaudited assertion calculus/oracle that this audit forbids."
+  },
   "conclusion": {
     "q297_reductional_targets": ["14.02", "14.03", "14.04"],
     "q297_still_blocked_targets": ["14.18", "14.21"],
-    "safe_next_action": "Treat ✱14.18/✱14.21 as source-authorized analytic translation consequences, not new primitives. A closed DescriptionDerivation signature remains blocked until an independently source-audited assertion calculus connects Formula expansion/translation to PM assertion; the next locus is the exact proof image for their later repeated statements (pp. 189–190), not a new Lean rule."
+    "safe_next_action": "The expanded ASTs isolate a first-order proof obligation, not a new DescriptionDerivation primitive. A bridge to OrderedAssertion is not conservative. The next admissible work is an OCR/transcription audit of the image-only Dem. lines on pp. 189-190 and, separately, a source-authorized first-order judgement for CoreFormula; neither may be fabricated from Formula.expand."
   }
 }
