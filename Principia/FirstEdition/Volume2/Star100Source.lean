@@ -128,3 +128,28 @@ type as α. We shall then put
 and the class of all such numbers as μ for a given α and β we shall call
 NC^β(α), so that NC^β(α) = DʻNc(α_β).
 PM-VERBATIM-END PM2:STAR102-SUMMARY-OPENING-P24 -/
+
+/- PM-VERBATIM-BEGIN PM2:STAR102-TYPICAL-DEFINITENESS-P25
+It is chiefly for this reason that it is worth while to introduce the definition
+of R(x_y).
+
+We have, in virtue of the above, as will be proved in ✱102·46,
+
+⊢ : γ ∈ tʻα . δ ∈ tʻβ . γ sm δ .≡ . γ ∈ Nc(α_β)ʻδ.
+PM-VERBATIM-END PM2:STAR102-TYPICAL-DEFINITENESS-P25 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·01
+✱102·01.  NC^β(α) = DʻNc(α_β)  Df
+PM-VERBATIM-END PM2:✱102·01 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·11
+✱102·11.  ⊢ : R ∈ 1→1 .⊃ . R_(x,y) ∈ 1(x)→1(y)
+PM-VERBATIM-END PM2:✱102·11 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·13
+✱102·13.  ⊢ : R ∈ 1→1 .⊃ . R_x ∈ 1(x)→1  [Proof as in ✱102·11]
+PM-VERBATIM-END PM2:✱102·13 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱102·2
+✱102·2.  ⊢ : γ sm_(α,β) δ .≡ . γ sm δ . γ ∈ tʻα . δ ∈ tʻβ  [✱35·102 . (✱65·1)]
+PM-VERBATIM-END PM2:✱102·2 -/
