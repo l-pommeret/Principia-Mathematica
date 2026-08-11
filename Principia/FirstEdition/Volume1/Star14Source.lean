@@ -98,3 +98,15 @@ PM-VERBATIM-END PM1:✱14·201 -/
 /- PM-VERBATIM-BEGIN PM1:✱14·203
 ✱14·203. ⊢ : E!(℩x)(φx) .≡ : (∃x). φx : φx . φy .⊃ₓ,ᵧ. x = y
 PM-VERBATIM-END PM1:✱14·203 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·22
+✱14·22. ⊢ : E!(℩x)(φx) .≡ . φ(℩x)(φx)
+PM-VERBATIM-END PM1:✱14·22 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·23
+✱14·23. ⊢ : E!(℩x)(φx . ψx) .≡ . φ{(℩x)(φx . ψx)}
+PM-VERBATIM-END PM1:✱14·23 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·24
+✱14·24. ⊢ : E!(℩x)(φx) .≡ : [(℩x)(φx)] : φy .≡ᵧ. y = (℩x)(φx)
+PM-VERBATIM-END PM1:✱14·24 -/
+/- PM-VERBATIM-BEGIN PM1:✱14·241
+✱14·241. ⊢ : E!(℩x)(φx) .⊃ : φy .≡ᵧ. y = (℩x)(φx)
+PM-VERBATIM-END PM1:✱14·241 -/
