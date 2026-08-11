@@ -56,9 +56,11 @@ inductive Arguments {ObjectSort : Type u} (signature : Signature ObjectSort)
       Arguments signature realContext apparentContext sorts →
       Arguments signature realContext apparentContext (sort :: sorts)
 
-/-- Description-free formulae.  This is the codomain of ✱14·01 expansion. -/
-inductive CoreFormula {ObjectSort : Type u} (signature : Signature ObjectSort)
-    (realContext apparentContext : List ObjectSort) (order : Nat) : Type u where
+/-- Description-free formulae.  This is the codomain of ✱14·01 expansion.
+The real context, apparent context, and assigned order are indices rather than
+fixed parameters: binders change the apparent-context index intrinsically. -/
+inductive CoreFormula {ObjectSort : Type u} (signature : Signature ObjectSort) :
+    (realContext apparentContext : List ObjectSort) → Nat → Type u where
   | atom : signature.Predicate sorts order →
       Arguments signature realContext apparentContext sorts →
       CoreFormula signature realContext apparentContext order
@@ -95,8 +97,8 @@ structure DescriptionVocabulary {ObjectSort : Type u} (signature : Signature Obj
 `descriptionScope` constructor is the object-syntactic citizen corresponding
 to PM's printed bracket `[(℩x)(φx)]`.  Both children live under the same fresh,
 typed candidate binder. -/
-inductive Formula {ObjectSort : Type u} (signature : Signature ObjectSort)
-    (realContext apparentContext : List ObjectSort) (order : Nat) : Type u where
+inductive Formula {ObjectSort : Type u} (signature : Signature ObjectSort) :
+    (realContext apparentContext : List ObjectSort) → Nat → Type u where
   | atom : signature.Predicate sorts order →
       Arguments signature realContext apparentContext sorts →
       Formula signature realContext apparentContext order
@@ -133,13 +135,13 @@ def liftSubstitution (substitution : Substitution signature realContext source t
       match substitution entry with
       | .real entry => .real entry
       | .apparent entry => .apparent (.succ entry)
-      | .symbol symbol => .symbol symbol
+      | .symbol (sort := _) symbol => .symbol symbol
 
 def Term.substitute (substitution : Substitution signature realContext source target) :
     Term signature realContext source sort → Term signature realContext target sort
   | .real entry => .real entry
   | .apparent entry => substitution entry
-  | .symbol symbol => .symbol symbol
+  | .symbol (sort := _) symbol => .symbol symbol
 
 def Arguments.substitute
     (substitution : Substitution signature realContext source target) :
