@@ -45,6 +45,43 @@ class AristotleInterfaceRemapTests(unittest.TestCase):
         self.assertTrue(plan["canonical_integration_forbidden"])
         self.assertTrue(all(len(target["signature_sha256"]) == 64 for target in plan["targets"]))
 
+    def test_q259_targets_are_insertions_with_exact_signatures(self):
+        plan = batch_plan(ROOT, "Q259")
+        self.assertEqual([target["id"] for target in plan["targets"]], [
+            "PM1:✱9·3", "PM1:✱9·31", "PM1:✱9·32", "PM1:✱9·33",
+        ])
+        self.assertTrue(all(target["insertion_target"] for target in plan["targets"]))
+        self.assertEqual(plan["archive_sha256"],
+                         "71fca398baa073201f5975ff632c75de1d8659b504de0c858ae90c2b7d0e0b6e")
+
+    def test_q259_clean_four_target_fixture_is_transplantable_at_canonical_names(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "Principia").mkdir()
+            archive = root / "result.tar.gz"
+            source = "\n".join([
+                "namespace PM.Local",
+                *[f"theorem target_{index} : True := by trivial" for index in range(4)],
+                "end PM.Local", "",
+            ])
+            write_archive(archive, {"Targets.lean": source})
+            targets = []
+            for index in range(4):
+                signature = f"theorem target_{index} : True\n"
+                targets.append({
+                    "id": f"fixture-{index}", "source": f"PM.Local.target_{index}",
+                    "canonical": f"PM.Canonical.target_{index}", "signature": signature,
+                    "signature_sha256": __import__("hashlib").sha256(
+                        signature.encode("utf-8")).hexdigest(), "insertion_target": True,
+                })
+            plan = {"kind": "pm-interface-kernel-remap-plan", "batch": "Q259",
+                    "archive_sha256": sha256_bytes(archive.read_bytes()), "targets": targets}
+            transplant = root / "candidate.lean"
+            with patch("remap_aristotle_interface.batch_plan", return_value=plan):
+                report = run_remap(root, "Q259", archive, transplant=transplant)
+            self.assertEqual(report["status"], "transplantable-interface-only")
+            self.assertEqual(transplant.read_text(encoding="utf-8").count("namespace PM.Canonical"), 4)
+
     def test_unavailable_archive_produces_machine_readable_block(self):
         report = run_remap(ROOT, "Q229")
         self.assertEqual(report["status"], "blocked")
@@ -160,6 +197,18 @@ end PM
         self.assertNotIn("missing canonical declaration", "\n".join(report["reasons"]))
         self.assertIn("forbidden Classical", "\n".join(report["reasons"]))
         self.assertIn("Q300 forbids archive-local declarations", "\n".join(report["reasons"]))
+
+    def test_q259_terminal_archive_is_rejected_without_missing_target_blocker(self):
+        report = run_remap(ROOT, "Q259", ROOT / "aristotle/results/Q259-final.tar.gz")
+        self.assertEqual(report["status"], "blocked")
+        self.assertEqual(report["archive"]["sha256"],
+                         "71fca398baa073201f5975ff632c75de1d8659b504de0c858ae90c2b7d0e0b6e")
+        self.assertTrue(all(record["role"] == "target-insertion"
+                            for record in report["canonical_declarations"]))
+        reasons = "\n".join(report["reasons"])
+        self.assertNotIn("missing canonical declaration", reasons)
+        self.assertIn("forbidden Classical", reasons)
+        self.assertIn("Q259 forbids archive-local declarations", reasons)
 
     def test_bad_mapping_schema_is_fail_closed(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -28,6 +28,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE_AUDIT = ROOT / "reviews/Q228-Q244-aristotle-archive-audit.json"
 SUPPORTED_BATCHES = ("Q228", "Q229", "Q230", "Q259", "Q296", "Q300")
+STRICT_INSERTION_BATCHES = {"Q259", "Q300"}
 FORBIDDEN = {
     "sorry": re.compile(r"\bsorry\b"),
     "admit": re.compile(r"\badmit\b"),
@@ -169,6 +170,8 @@ def expected_archive_hash(root: Path, batch: str) -> str | None:
     # replacement cannot masquerade as this reviewed failure.
     if batch == "Q300":
         return "15b9639c4cbff8d2e2066999f33c0fd06b572cc84fdbaa0eac2f03ef269ba065"
+    if batch == "Q259":
+        return "71fca398baa073201f5975ff632c75de1d8659b504de0c858ae90c2b7d0e0b6e"
     if not ARCHIVE_AUDIT.is_file() or root != ROOT:
         audit_path = root / "reviews/Q228-Q244-aristotle-archive-audit.json"
     else:
@@ -258,7 +261,7 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
                 # This theorem is the artifact to insert.  It is not a
                 # pre-existing dependency, so its present absence cannot be
                 # used to reject a body which otherwise remaps exactly.
-                "insertion_target": batch in {"Q296", "Q300"},
+                "insertion_target": batch in {"Q296", *STRICT_INSERTION_BATCHES},
             })
     for target in targets:
         target["signature_sha256"] = sha256_text(target["signature"])
@@ -456,7 +459,7 @@ def run_remap(root: Path, batch: str, archive: Path | None = None,
     unmapped = sorted(set(source_by_name) - set(mapped))
     if unmapped:
         report["reasons"].append("unmapped local declarations: " + ", ".join(unmapped))
-    if batch in {"Q296", "Q300"}:
+    if batch in {"Q296", *STRICT_INSERTION_BATCHES}:
         target_sources = {target["source"] for target in plan["targets"]}
         local_declarations = sorted(set(source_by_name) - target_sources)
         if local_declarations:
