@@ -20,3 +20,18 @@ PM-VERBATIM-END PM1:✱22·04 -/
 /- PM-VERBATIM-BEGIN PM1:✱22·05
 ✱22·05. α − β = α ∩ −β  Df
 PM-VERBATIM-END PM1:✱22·05 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·51
+✱22·51. ⊢ . α ∩ β = β ∩ α
+PM-VERBATIM-END PM1:✱22·51 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·57
+✱22·57. ⊢ . α ∪ β = β ∪ α
+PM-VERBATIM-END PM1:✱22·57 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·52
+✱22·52. ⊢ . (α ∩ β) ∩ γ = α ∩ (β ∩ γ)
+PM-VERBATIM-END PM1:✱22·52 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·7
+✱22·7. ⊢ . (α ∪ β) ∪ γ = α ∪ (β ∪ γ)
+PM-VERBATIM-END PM1:✱22·7 -/
+/- PM-VERBATIM-BEGIN PM1:✱22·5
+✱22·5. ⊢ . α ∩ α = α
+PM-VERBATIM-END PM1:✱22·5 -/
