@@ -160,3 +160,14 @@ PM-VERBATIM-END PM3:✱251·4 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·41
 ✱251·41.  ⊢ : P ∈ Rel³ arithm ∩ Ω . CʻP ⊂ Ω . CʻΣʻP ⊂ Ω .⊃ . ΣʻΣʻP ∈ Ω  [✱204·54 . ✱251·4]
 PM-VERBATIM-END PM3:✱251·41 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·42
+✱251·42.  ⊢ : P ∈ Ser . Q ∈ Ω .⊃ . P^Q, (P exp Q) ∈ Ser  [✱204·59 . ✱250·1]
+PM-VERBATIM-END PM3:✱251·42 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·43
+✱251·43.  ⊢ : α ∈ NR . α ⊂ Ser . β ∈ NO .⊃ . (α expᵣ β) ∈ NR . (α expᵣ β) ⊂ Ser
+  [✱186·13 . ✱251·42]
+PM-VERBATIM-END PM3:✱251·43 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·44
+✱251·44.  ⊢ : α ∈ NO − ιʻ0ᵣ . β ∈ NO − ιʻ0ᵣ .⊃ . α expᵣ β ≠ 0ᵣ
+PM-VERBATIM-END PM3:✱251·44 -/
