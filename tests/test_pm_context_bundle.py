@@ -55,6 +55,35 @@ class ContextBundleTests(unittest.TestCase):
         self.assertIn("inductive Formation", bundle["lean_source"])
         self.assertIn("structure FormedDerivation", bundle["lean_source"])
 
+    def test_local_architecture_context_is_hashed_without_proof_permission(self):
+        manifest = {
+            "kind": "pm-constrained-prover-manifest",
+            "foundation_profile": "ordered-first-order-pm1",
+            "context_closure": [],
+            "allowed_pm_items": [],
+            "local_context_paths": ["Principia/Architecture/FirstOrderQ259.lean"],
+        }
+        bundle = build_bundle(manifest, {}, ROOT)
+        local = [
+            source for source in bundle["sources"]
+            if source["kind"] == "local-architecture-context"
+        ]
+        self.assertEqual(len(local), 1)
+        self.assertEqual(local[0]["path"], "Principia/Architecture/FirstOrderQ259.lean")
+        self.assertEqual(len(local[0]["source_sha256"]), 64)
+        self.assertFalse(local[0]["grants_proof_permission"])
+        self.assertIn("def star_9_3_target", bundle["lean_source"])
+
+    def test_parent_traversal_is_rejected_for_local_architecture_context(self):
+        manifest = {
+            "kind": "pm-constrained-prover-manifest",
+            "context_closure": [],
+            "allowed_pm_items": [],
+            "local_context_paths": ["../outside.lean"],
+        }
+        with self.assertRaisesRegex(ValueError, "invalid local context path"):
+            build_bundle(manifest, {}, ROOT)
+
     def test_batch_bundle_contains_external_closure_but_not_local_targets(self):
         from pm_constraint_manifest import compile_batch_manifest, load_item_registry
         from pm_proof_skeleton import parse_demonstration
