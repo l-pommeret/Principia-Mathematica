@@ -2038,10 +2038,10 @@ def star_2_8_demonstration_printed : PM.PrintedFormula :=
 theorem star_2_8 {Γ} (q r s : PM.Elementary Γ) :
     ⊢ₚ ((q ∨ₚ r) ⊃ₚ ((∼ₚ r ∨ₚ s) ⊃ₚ (q ∨ₚ s))) := by
   have perm : ⊢ₚ ((q ∨ₚ r) ⊃ₚ (r ∨ₚ q)) :=
-    PM.FirstEdition.Volume1.Star1.star_1_4 q r
+    PM.Derivation.star_1_4 q r
   have permFlipped : ⊢ₚ ((r ∨ₚ q) ∨ₚ ∼ₚ (q ∨ₚ r)) :=
     PM.Derivation.detach perm
-      (PM.FirstEdition.Volume1.Star1.star_1_4 (∼ₚ (q ∨ₚ r)) (r ∨ₚ q))
+      (PM.Derivation.star_1_4 (∼ₚ (q ∨ₚ r)) (r ∨ₚ q))
   have fiftyThree : ⊢ₚ ((r ∨ₚ q) ⊃ₚ (∼ₚ r ⊃ₚ q)) := star_2_53 r q
   have sumFiftyThree :
       ⊢ₚ (((r ∨ₚ q) ∨ₚ ∼ₚ (q ∨ₚ r)) ⊃ₚ ((∼ₚ r ⊃ₚ q) ∨ₚ ∼ₚ (q ∨ₚ r))) :=
@@ -2059,7 +2059,7 @@ theorem star_2_8 {Γ} (q r s : PM.Elementary Γ) :
   have line3 : ⊢ₚ (((∼ₚ r ∨ₚ s) ⊃ₚ (q ∨ₚ s)) ∨ₚ ∼ₚ (q ∨ₚ r)) :=
     PM.Derivation.detach line1 sumLine2
   exact PM.Derivation.detach line3
-    (PM.FirstEdition.Volume1.Star1.star_1_4
+    (PM.Derivation.star_1_4
       ((∼ₚ r ∨ₚ s) ⊃ₚ (q ∨ₚ s)) (∼ₚ (q ∨ₚ r)))
 
 /- PM-VERBATIM-BEGIN PM1:✱2·81
@@ -2086,7 +2086,7 @@ theorem star_2_81 {Γ} (p q r s : PM.Elementary Γ) :
       ((p ∨ₚ q) ⊃ₚ ((p ∨ₚ r) ⊃ₚ (p ∨ₚ s)))) := by
   have line1 :
       ⊢ₚ ((q ⊃ₚ (r ⊃ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ (r ⊃ₚ s)))) :=
-    PM.FirstEdition.Volume1.Star1.star_1_6 p q (r ⊃ₚ s)
+    PM.Derivation.star_1_6 p q (r ⊃ₚ s)
   have line2 :
       ⊢ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ (r ⊃ₚ s))) ⊃ₚ
         ((p ∨ₚ q) ⊃ₚ ((p ∨ₚ r) ⊃ₚ (p ∨ₚ s)))) :=
