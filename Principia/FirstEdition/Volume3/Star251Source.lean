@@ -79,3 +79,19 @@ PM-VERBATIM-END PM3:✱251·141 -/
 /- PM-VERBATIM-BEGIN PM3:✱251·142
 ✱251·142.  ⊢ : α ∈ NO .≡ . i + α ∈ NO  [Proof as in ✱251·132]
 PM-VERBATIM-END PM3:✱251·142 -/
+
+/- PM-VERBATIM-BEGIN PM3:✱251·15
+✱251·15.  ⊢ . 0ᵣ ∈ NO  [✱250·4 . ✱153·11]
+PM-VERBATIM-END PM3:✱251·15 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·16
+✱251·16.  ⊢ . 2ᵣ ∈ NO  [✱250·41 . ✱153·211]
+PM-VERBATIM-END PM3:✱251·16 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·17
+✱251·17.  ⊢ : x ≠ y . x ≠ z . y ≠ z .⊃ . x ↓ y ↦ z ∈ Ω  [✱251·131 . ✱250·41]
+PM-VERBATIM-END PM3:✱251·17 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·171
+✱251·171.  ⊢ . 2ᵣ + i ∈ NO  [✱251·16·132]
+PM-VERBATIM-END PM3:✱251·171 -/
+/- PM-VERBATIM-BEGIN PM3:✱251·2
+✱251·2.  ⊢ : P ∈ Rel² excl ∩ Bord . CʻP ⊂ Bord .⊃ . ΣʻP ∈ Bord
+PM-VERBATIM-END PM3:✱251·2 -/
