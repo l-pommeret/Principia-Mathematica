@@ -95,6 +95,25 @@ inductive NormalizesScopedAt : Nat → Raw Γ → Raw Γ → Prop where
         (.quantified .always (.quantified .sometimes
           (.disj (shiftBoundAt (depth + 1) p)
             (shiftBoundAt (depth + 1) q))))
+  /-- ✱9·03·02: a universal closure of an implication becomes an
+  implication from the corresponding existential antecedent.  The
+  consequent is explicitly weakened in the redex, certifying that it does
+  not depend on the binder being moved. -/
+  | alwaysImpToSometimesAntecedent (depth) (p q) :
+      NormalizesScopedAt depth
+        (.quantified .always
+          (.disj (.neg p) (shiftBoundAt depth q)))
+        (.disj (.neg (.quantified .sometimes p)) q)
+  /-- ✱9·05·06 in its two-binder displayed form: existential closure of a
+  disjunction separates into the disjunction of the two existential
+  closures.  Both inputs are shifted explicitly beneath the opposite binder
+  in the redex, so no occurrence is captured. -/
+  | sometimesDisjToDisjSometimes (depth) (p q) :
+      NormalizesScopedAt depth
+        (.quantified .sometimes (.quantified .sometimes
+          (.disj (shiftBoundAt (depth + 1) p)
+            (shiftBoundAt (depth + 1) q))))
+        (.disj (.quantified .sometimes p) (.quantified .sometimes q))
   | quantifiedCongr (depth) (q) : NormalizesScopedAt (depth + 1) p r →
       NormalizesScopedAt depth (.quantified q p) (.quantified q r)
   /-- A completed local normalization may subsequently be packaged by a
