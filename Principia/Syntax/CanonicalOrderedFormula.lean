@@ -164,6 +164,36 @@ theorem freshBelowAt_shift (depth count : Nat) (p : Raw Γ) :
       simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
       exact ⟨ihLeft depth count fresh.1, ihRight depth count fresh.2⟩
 
+/-- On a term fresh for `count` external binders, shifting at the external
+cutoff `depth + count` is the same operation as lifting at the local cutoff
+`depth`. -/
+theorem shiftBoundAt_freshBelowAt (depth count : Nat) (p : Raw Γ)
+    (fresh : FreshBelowAt depth count p) :
+    shiftBoundAt (depth + count) p = shiftBoundAt depth p := by
+  induction p generalizing depth count with
+  | elementary proposition => rfl
+  | bound index =>
+      simp only [FreshBelowAt] at fresh
+      simp only [shiftBoundAt]
+      rcases fresh with inner | external
+      · have leftNo : ¬ depth + count ≤ index := by omega
+        have rightNo : ¬ depth ≤ index := by omega
+        simp [shiftIndex, leftNo, rightNo]
+      · have leftYes : depth + count ≤ index := external
+        have rightYes : depth ≤ index := by omega
+        simp [shiftIndex, leftYes, rightYes]
+  | quantified quantifier body ih =>
+      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      congr 1
+      simpa [Nat.add_assoc, Nat.add_left_comm, Nat.add_comm] using
+        ih (depth + 1) count fresh
+  | neg proposition ih =>
+      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      exact congrArg Raw.neg (ih depth count fresh)
+  | disj left right ihLeft ihRight =>
+      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      rw [ihLeft depth count fresh.1, ihRight depth count fresh.2]
+
 /-- A Raw term does not use the binder located at `cutoff`.  This is the
 precise side condition needed to remove that binder without capture. -/
 def UnusedBoundAt (cutoff : Nat) : Raw Γ → Prop
@@ -276,6 +306,14 @@ theorem substitution_liftN_fresh (σ : Substitution Γ Ξ)
       change FreshBelowAt 0 (count + 1)
         (shiftBoundAt 0 (Substitution.liftN count σ proposition))
       exact freshBelowAt_shift 0 count _ ih
+
+theorem substitution_liftN_succ_as_shift (σ : Substitution Γ Ξ)
+    (count : Nat) (proposition : Elementary Γ) :
+    Substitution.liftN (count + 1) σ proposition =
+      shiftBoundAt count (Substitution.liftN count σ proposition) := by
+  change shiftBoundAt 0 (Substitution.liftN count σ proposition) = _
+  simpa using (shiftBoundAt_freshBelowAt 0 count _
+    (substitution_liftN_fresh σ count proposition)).symm
 
 def smartNeg : Raw Γ → Raw Γ
   | .quantified .always body => .quantified .sometimes (smartNeg body)
