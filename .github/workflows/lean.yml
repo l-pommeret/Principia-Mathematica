@@ -26,6 +26,10 @@ jobs:
       - name: Kernel-check every isolated elementary context
         shell: bash
         run: |
+          # Resolve elan/Lake's toolchain metadata once before parallel worker
+          # processes start.  A cold concurrent first lookup can race inside
+          # elan and fail with its transient "missing key: version" error.
+          lake env lean --version
           find aristotle/contexts -maxdepth 1 -name '*.lean' -print0 \
             | xargs -0 -n 1 -P 4 bash -c '
                 context="$1"
