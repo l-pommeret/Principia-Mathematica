@@ -108,6 +108,69 @@ def closedLine3DisplayRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :
     (ofFirstOrderMatrixRedex
       (FirstOrderMatrix.abstractRealOuter (line2Formula φ))))
 
+theorem closedMatrixRedex_shape
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofFirstOrderMatrixRedex
+        (FirstOrderMatrix.abstractRealOuter (line2Formula φ)) =
+      .disj
+        (.neg (ofFirstOrder
+          (FirstOrder.abstractRealOuter (line2Antecedent φ))))
+        (ofFirstOrder
+          (FirstOrder.abstractRealOuter (line2Consequent φ))) := by
+  rfl
+
+def closedConsequentOutside (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofFirstOrder (FirstOrder.sometimes φ)
+
+theorem ofApparent_abstract_inner_weakenReal
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofApparent (Apparent.abstractRealOuter
+      (Apparent.rename Apparent.innerVariableRenaming
+        (Apparent.weakenReal (τ := .elementaryProposition) φ))) =
+      shiftBoundAt 1 (ofApparent φ) := by
+  induction φ with
+  | constant name => rfl
+  | real v => rfl
+  | bound v =>
+      cases v with
+      | zero => rfl
+      | succ v => exact nomatch v
+  | neg p ih => exact congrArg Raw.neg ih
+  | disj p q ihp ihq =>
+      change Raw.disj _ _ = Raw.disj _ _
+      simp only [Apparent.weakenReal] at ihp ihq
+      rw [ihp, ihq]
+
+theorem closedConsequent_is_weakened
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofFirstOrder (FirstOrder.abstractRealOuter (line2Consequent φ)) =
+      shiftBoundAt 0 (closedConsequentOutside φ) := by
+  change Raw.quantified .sometimes
+      (ofApparent (Apparent.abstractRealOuter
+        (Apparent.abstractRealOuter
+          (Apparent.weakenReal (Apparent.weakenReal φ))))) = _
+  rw [Apparent.abstractRealOuter_weakenReal]
+  exact congrArg (Raw.quantified .sometimes)
+    (ofApparent_abstract_inner_weakenReal φ)
+
+def closedLine4DisplayRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always
+    (.disj
+      (.neg (.quantified .sometimes
+        (ofFirstOrder (FirstOrder.abstractRealOuter (line2Antecedent φ)))))
+      (closedConsequentOutside φ))
+
+theorem closedLine3_to_line4
+    (φ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (closedLine3DisplayRaw φ)
+      (closedLine4DisplayRaw φ) := by
+  rw [closedLine3DisplayRaw, closedMatrixRedex_shape,
+    closedConsequent_is_weakened]
+  exact .quantifiedClosedCongr .always
+    (.alwaysImpToSometimesAntecedent 0
+      (ofFirstOrder (FirstOrder.abstractRealOuter (line2Antecedent φ)))
+      (closedConsequentOutside φ))
+
 def closedLine3NormalizedRaw
     (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
   .quantified .always (.quantified .always
