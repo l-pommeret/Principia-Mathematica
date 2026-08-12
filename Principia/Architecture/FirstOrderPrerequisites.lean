@@ -229,14 +229,14 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
       OrderedAssertion (Γ := .elementaryProposition :: Γ)
         (.elementary (Apparent.openHead φ)) →
       OrderedAssertion (.firstOrder (FirstOrder.always φ))
-  /-- The one assigned next-order instance of ✱9·13 required by line (4) of
-  the printed proof of ✱9·21.  Its premise opens exactly one leading
-  apparent-variable slot as a leading real variable, and its conclusion
-  immediately closes that same slot.  There is deliberately no constructor
-  quantified over arbitrary proposition orders or arbitrary matrix APIs. -/
+  /-- The one assigned next-order instance of ✱9·13 required by line (3) of
+  the printed proof of ✱9·3.  Its premise opens the *outer* apparent slot as
+  a leading real variable while preserving the already-open inner binder;
+  its conclusion immediately closes that same slot.  There is deliberately
+  no constructor quantified over arbitrary proposition orders or matrix APIs. -/
   | star_9_13_first (φ : FirstOrder Γ [.elementaryProposition]) :
       OrderedAssertion (Γ := .elementaryProposition :: Γ)
-        (.firstOrder (FirstOrder.openRealHead φ)) →
+        (.firstOrder (FirstOrder.openRealOuter φ)) →
       OrderedAssertion (firstOrderToSecondAll φ)
 
 /-- Line (2) of the printed demonstration of ✱9·3.  The diagonal elementary
@@ -268,7 +268,7 @@ the leading real slot expresses the printed outer `(x)` and changes no
 apparent binder. -/
 def star_9_3_line3_matrix (φ : Apparent Γ [.elementaryProposition]) :
     FirstOrder Γ [.elementaryProposition] :=
-  FirstOrder.abstractRealHead
+  FirstOrder.abstractRealOuter
     (FirstOrder.sometimes
       (matrixImp (Apparent.openHeadOrBound φ)
         (Apparent.ofElementary (Apparent.openHead φ))))
@@ -278,16 +278,37 @@ def star_9_3_line3_target (φ : Apparent Γ [.elementaryProposition]) :
     OrderedFormula Γ 2 :=
   firstOrderToSecondAll (star_9_3_line3_matrix φ)
 
+/-- The printed normalization `(3).(✱9·05·01·04)` is structural in the
+certified syntax: it moves the existential disjunction outward, exchanges
+its negation for the universal form, and then puts the fixed left matrix back
+under that universal binder. -/
+theorem star_9_3_line3_to_line4 (φ : Apparent Γ [.elementaryProposition]) :
+    star_9_3_line3_matrix φ = star_9_3_line4_matrix φ := by
+  simp only [star_9_3_line3_matrix, star_9_3_line4_matrix,
+    FirstOrder.abstractRealOuter, FirstOrder.impFirstToMatrix,
+    FirstOrder.disjMatrixLeft, FirstOrder.disjRightMatrix, FirstOrder.neg,
+    Quantified.neg, matrixImp, Apparent.openHeadOrBound,
+    Apparent.abstractRealOuter, Apparent.abstractRealOuter_ofElementary_openHead]
+  rw [← Apparent.abstractRealOuter_weakenReal φ]
+
 /-- Line (3) follows from line (2) by the fixed first-to-second-order instance
 of ✱9·13; the reduction of `openRealHead` is structural. -/
 def derive_star_9_3_line3 (φ : Apparent Γ [.elementaryProposition]) :
     OrderedAssertion (star_9_3_line3_target φ) := by
   have line2 : OrderedAssertion
-      (.firstOrder (FirstOrder.openRealHead (star_9_3_line3_matrix φ))) := by
+      (.firstOrder (FirstOrder.openRealOuter (star_9_3_line3_matrix φ))) := by
     simpa [star_9_3_line2_target, star_9_3_line3_matrix] using
       derive_star_9_3_line2 φ
   simpa [star_9_3_line3_target] using
     OrderedAssertion.star_9_13_first (star_9_3_line3_matrix φ) line2
+
+/-- Line (4) of ✱9·3, retaining the printed definition chain as the explicit
+syntax normalization established by `star_9_3_line3_to_line4`. -/
+def derive_star_9_3_line4 (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion (star_9_3_line4_target φ) := by
+  change OrderedAssertion (firstOrderToSecondAll (star_9_3_line4_matrix φ))
+  rw [← star_9_3_line3_to_line4 φ]
+  exact derive_star_9_3_line3 φ
 
 
 /-- The exact judgement sought for ✱9·21.  It is a target contract, not an

@@ -29,6 +29,8 @@ def main() -> None:
     require(apparent, (
         "def abstractRealHead", "def openRealHead",
         "theorem openRealHead_abstractRealHead",
+        "def abstractRealOuter", "def openRealOuter",
+        "theorem openRealOuter_abstractRealOuter",
         "namespace FirstOrder", "def renameReal", "def disjRightMatrix",
         "def disjMatrixLeft", "def impFirstToMatrix",
         "theorem star_9_03_matrix_reduction", "theorem star_9_04_matrix_reduction",
@@ -43,7 +45,7 @@ def main() -> None:
         "private structure MatrixSyntaxAt", "private def firstOrderMatrixSyntaxAt : MatrixSyntaxAt 1",
         "def firstOrderToSecondAll", "theorem firstOrderToSecondAll_reduction",
         "closedFirstOrderAlphaRenaming", "theorem closedFirstOrder_alpha",
-        "| star_9_13_first", "FirstOrder.openRealHead φ", "| star_9_12_second",
+        "| star_9_13_first", "FirstOrder.openRealOuter φ", "| star_9_12_second",
         "def star_9_3_line4_matrix", "def star_9_3_line4_target",
     ), "sealed assigned 1→2 generalization")
 

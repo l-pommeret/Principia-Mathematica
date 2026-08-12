@@ -304,6 +304,101 @@ assigned 1→2 instance of ✱9·13.  It is structural and capture-free. -/
         (openRealHead (abstractRealHead right)) = Apparent.disj left right
       rw [ihLeft, ihRight]
 
+/-- Abstract a newly leading real variable when an apparent binder is already
+open.  The existing inner binder remains index zero, while the abstracted
+real becomes its outer neighbour at index one.  This is the capture-safe
+scope change required by the `(x)(∃y)` step in ✱9·3. -/
+def abstractRealOuter : Apparent (.elementaryProposition :: Γ)
+    (.elementaryProposition :: Δ) →
+    Apparent Γ (.elementaryProposition :: .elementaryProposition :: Δ)
+  | .constant name => .constant name
+  | .real .zero => .bound (.succ .zero)
+  | .real (.succ predecessor) => .real predecessor
+  | .bound .zero => .bound .zero
+  | .bound (.succ predecessor) => .bound (.succ (.succ predecessor))
+  | .neg proposition => .neg (abstractRealOuter proposition)
+  | .disj left right => .disj (abstractRealOuter left) (abstractRealOuter right)
+
+/-- Inverse of `abstractRealOuter`.  It opens the outer apparent variable as
+a leading real variable and deliberately leaves the pre-existing inner
+binder at index zero. -/
+def openRealOuter : Apparent Γ
+    (.elementaryProposition :: .elementaryProposition :: Δ) →
+    Apparent (.elementaryProposition :: Γ) (.elementaryProposition :: Δ)
+  | .constant name => .constant name
+  | .real realVariable => .real (.succ realVariable)
+  | .bound .zero => .bound .zero
+  | .bound (.succ .zero) => .real .zero
+  | .bound (.succ (.succ predecessor)) => .bound (.succ predecessor)
+  | .neg proposition => .neg (openRealOuter proposition)
+  | .disj left right => .disj (openRealOuter left) (openRealOuter right)
+
+@[simp] theorem openRealOuter_abstractRealOuter
+    (proposition : Apparent (.elementaryProposition :: Γ)
+      (.elementaryProposition :: Δ)) :
+    openRealOuter (abstractRealOuter proposition) = proposition := by
+  induction proposition with
+  | constant name => rfl
+  | real realVariable => cases realVariable <;> rfl
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => rfl
+      | succ predecessor => rfl
+  | neg proposition ih =>
+      change Apparent.neg (openRealOuter (abstractRealOuter proposition)) =
+        Apparent.neg proposition
+      rw [ih]
+  | disj left right ihLeft ihRight =>
+      change Apparent.disj (openRealOuter (abstractRealOuter left))
+        (openRealOuter (abstractRealOuter right)) = Apparent.disj left right
+      rw [ihLeft, ihRight]
+
+/-- Opening a one-place matrix at a real variable and then placing that real
+outside an existing binder is precisely apparent-variable weakening. -/
+@[simp] theorem abstractRealOuter_ofElementary_openHead
+    (φ : Apparent Γ [.elementaryProposition]) :
+    abstractRealOuter (ofElementary (openHead φ)) = weaken φ := by
+  induction φ with
+  | constant name => rfl
+  | real realVariable => rfl
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => rfl
+      | succ emptyBoundVariable => exact nomatch emptyBoundVariable
+  | neg proposition ih =>
+      change Apparent.neg (abstractRealOuter (ofElementary (openHead proposition))) =
+        Apparent.neg (weaken proposition)
+      rw [ih]
+  | disj left right ihLeft ihRight =>
+      change Apparent.disj
+        (abstractRealOuter (ofElementary (openHead left)))
+        (abstractRealOuter (ofElementary (openHead right))) =
+        Apparent.disj (weaken left) (weaken right)
+      rw [ihLeft, ihRight]
+
+/-- A real-context weakening becomes the inner-variable embedding after that
+new real is abstracted outside the already present apparent binder. -/
+@[simp] theorem abstractRealOuter_weakenReal
+    (φ : Apparent Γ [.elementaryProposition]) :
+    abstractRealOuter (weakenReal φ) = rename innerVariableRenaming φ := by
+  induction φ with
+  | constant name => rfl
+  | real realVariable => rfl
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => rfl
+      | succ emptyBoundVariable => exact nomatch emptyBoundVariable
+  | neg proposition ih =>
+      change Apparent.neg (abstractRealOuter (weakenReal proposition)) =
+        Apparent.neg (rename innerVariableRenaming proposition)
+      rw [ih]
+  | disj left right ihLeft ihRight =>
+      change Apparent.disj (abstractRealOuter (weakenReal left))
+        (abstractRealOuter (weakenReal right)) =
+        Apparent.disj (rename innerVariableRenaming left)
+          (rename innerVariableRenaming right)
+      rw [ihLeft, ihRight]
+
 /-- Decidable structural occurrence of a free apparent variable. -/
 def significant (v : BoundVar Δ .elementaryProposition) : Apparent Γ Δ → Bool
   | .constant _ => false
@@ -487,6 +582,36 @@ def openRealHead : FirstOrder Γ (.elementaryProposition :: Δ) →
         (Apparent.openRealHead (Apparent.abstractRealHead body)) =
           Quantified.sometimes body
       rw [Apparent.openRealHead_abstractRealHead]
+
+/-- Abstract a leading real variable *outside* an already-open apparent
+binder.  Each first-order constructor preserves its inner binder; the new
+outer variable is inserted behind it by `Apparent.abstractRealOuter`. -/
+def abstractRealOuter : FirstOrder (.elementaryProposition :: Γ) Δ →
+    FirstOrder Γ (.elementaryProposition :: Δ)
+  | Quantified.always body => Quantified.always (Apparent.abstractRealOuter body)
+  | Quantified.sometimes body => Quantified.sometimes (Apparent.abstractRealOuter body)
+
+/-- Inverse of `abstractRealOuter`, opening only the outer apparent variable
+while retaining every inner first-order binder. -/
+def openRealOuter : FirstOrder Γ (.elementaryProposition :: Δ) →
+    FirstOrder (.elementaryProposition :: Γ) Δ
+  | Quantified.always body => Quantified.always (Apparent.openRealOuter body)
+  | Quantified.sometimes body => Quantified.sometimes (Apparent.openRealOuter body)
+
+@[simp] theorem openRealOuter_abstractRealOuter
+    (proposition : FirstOrder (.elementaryProposition :: Γ) Δ) :
+    openRealOuter (abstractRealOuter proposition) = proposition := by
+  cases proposition with
+  | always body =>
+      change Quantified.always
+        (Apparent.openRealOuter (Apparent.abstractRealOuter body)) =
+          Quantified.always body
+      rw [Apparent.openRealOuter_abstractRealOuter]
+  | sometimes body =>
+      change Quantified.sometimes
+        (Apparent.openRealOuter (Apparent.abstractRealOuter body)) =
+          Quantified.sometimes body
+      rw [Apparent.openRealOuter_abstractRealOuter]
 
 /-- Capture-free renaming beneath either primitive binder. -/
 def rename (ρ : Apparent.Renaming Δ Ξ) : FirstOrder Γ Δ → FirstOrder Γ Ξ
