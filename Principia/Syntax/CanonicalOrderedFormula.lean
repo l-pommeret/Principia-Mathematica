@@ -116,6 +116,29 @@ theorem shiftBoundAt_comm (i j : Nat) (p : Raw Γ) (h : i ≤ j) :
       simp only [shiftBoundAt]
       rw [ihLeft i j h, ihRight i j h]
 
+/-- `FreshBelowAt depth count` records the binder-sensitive freshness
+invariant for `count` outer lifts: local binders below `depth` remain valid,
+whereas every external index lies at or beyond `depth + count`. -/
+def FreshBelowAt (depth count : Nat) : Raw Γ → Prop
+  | .elementary _ => True
+  | .bound index => index < depth ∨ depth + count ≤ index
+  | .quantified _ body => FreshBelowAt (depth + 1) count body
+  | .neg p => FreshBelowAt depth count p
+  | .disj p q => FreshBelowAt depth count p ∧ FreshBelowAt depth count q
+
+def FreshBelow (count : Nat) (p : Raw Γ) : Prop := FreshBelowAt 0 count p
+
+theorem freshBelowAt_zero (depth : Nat) (p : Raw Γ) : FreshBelowAt depth 0 p := by
+  induction p generalizing depth with
+  | elementary proposition => trivial
+  | bound index =>
+      by_cases below : index < depth
+      · exact Or.inl below
+      · exact Or.inr (by omega)
+  | quantified quantifier body ih => exact ih (depth + 1)
+  | neg proposition ih => exact ih depth
+  | disj left right ihLeft ihRight => exact ⟨ihLeft depth, ihRight depth⟩
+
 /-- A Raw term does not use the binder located at `cutoff`.  This is the
 precise side condition needed to remove that binder without capture. -/
 def UnusedBoundAt (cutoff : Nat) : Raw Γ → Prop
