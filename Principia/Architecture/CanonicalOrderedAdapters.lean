@@ -37,6 +37,22 @@ def ofThirdOrder : FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofSecondMatrix body)
   | .sometimes body => .quantified .sometimes (ofSecondMatrix body)
 
+def ofThirdOrderFormula : FirstOrderMatrix.ThirdOrderFormula Γ Δ → Raw Γ
+  | .quantified p => ofThirdOrder p
+  | .neg p => .neg (ofThirdOrderFormula p)
+  | .disj p q => .disj (ofThirdOrderFormula p) (ofThirdOrderFormula q)
+
+def ofOrdered : OrderedFormula Γ order → Raw Γ
+  | .elementary p => .elementary p
+  | .firstOrder p => ofFirstOrder p
+  | .firstOrderMatrix p => ofFirstOrderMatrix p
+  | .secondOrder p => ofSecondOrder p
+  | .secondOrderMatrix p => ofSecondMatrix p
+  | .thirdOrderMatrix p => ofThirdOrder p
+  | .thirdOrderFormula p => ofThirdOrderFormula p
+  | .neg p => .neg (ofOrdered p)
+  | .disj _ p q => .disj (ofOrdered p) (ofOrdered q)
+
 /-- The four named matrix occurrences in the printed lines (3)–(7) of
 ✱9·21.  Their de Bruijn positions are obtained directly from the concrete
 `star_9_21_line3_matrix` construction: `x = 1`, `y = 0`, and `z` remains a
