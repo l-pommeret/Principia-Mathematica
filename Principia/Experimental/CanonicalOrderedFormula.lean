@@ -681,6 +681,39 @@ def normalizeFirstOrderMatrixScoped : FirstOrderMatrix Γ Δ → Raw Γ
       (normalizeFirstOrderMatrixScoped left)
       (normalizeFirstOrderMatrixScoped right)
 
+@[simp] theorem instantiateHeadRaw_normalizeFirstOrderMatrixScoped_atReal
+    (value : RealVar Γ .elementaryProposition)
+    (matrix : FirstOrderMatrix Γ [.elementaryProposition]) :
+    instantiateHeadRaw (.var value)
+        (normalizeFirstOrderMatrixScoped matrix) =
+      normalizeFirstOrderMatrixScoped (FirstOrderMatrix.atReal matrix value) := by
+  induction matrix with
+  | quantified proposition =>
+      change instantiateHeadRaw (.var value) (ofFirstOrder proposition) =
+        ofFirstOrder (FirstOrder.atReal proposition value)
+      exact instantiateHeadRaw_ofFirstOrder_atReal value proposition
+  | neg matrix ih =>
+      change instantiateHeadRaw (.var value)
+          (smartNeg (normalizeFirstOrderMatrixScoped matrix)) =
+        smartNeg (normalizeFirstOrderMatrixScoped
+          (FirstOrderMatrix.atReal matrix value))
+      rw [show instantiateHeadRaw (.var value)
+          (smartNeg (normalizeFirstOrderMatrixScoped matrix)) =
+        smartNeg (instantiateHeadRaw (.var value)
+          (normalizeFirstOrderMatrixScoped matrix)) by
+            exact instantiateBoundAt_smartNeg 0 (.var value) _]
+      exact congrArg smartNeg ih
+  | disj left right ihLeft ihRight =>
+      change instantiateHeadRaw (.var value)
+          (smartDisjScoped (normalizeFirstOrderMatrixScoped left)
+            (normalizeFirstOrderMatrixScoped right)) =
+        smartDisjScoped
+          (normalizeFirstOrderMatrixScoped
+            (FirstOrderMatrix.atReal left value))
+          (normalizeFirstOrderMatrixScoped
+            (FirstOrderMatrix.atReal right value))
+      rw [instantiateHeadRaw_smartDisjScoped_var, ihLeft, ihRight]
+
 structure ScopedCertifiedFirstOrderMatrix
     (Δ : BoundContext) (raw : Raw Γ) where
   formula : FirstOrderMatrix Γ Δ
