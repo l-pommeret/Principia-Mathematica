@@ -8,6 +8,7 @@ import Principia.Architecture.Star935Kernel
 import Principia.Architecture.Star936Kernel
 import Principia.Architecture.Star9361Kernel
 import Principia.Architecture.Star937Kernel
+import Principia.Architecture.Star9371Kernel
 import Principia.Architecture.Star936Kernel
 
 namespace PM.Architecture.Q259ClosedRuleBook
@@ -110,6 +111,18 @@ abbrev Star_9_37Derivation (p : Elementary Γ)
 theorem star_9_37 (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Star_9_37Derivation p φ :=
   Star937Kernel.derive p φ
+
+/-- Exact closed kernel contract for the existential reverse permutation
+theorem ✱9·371. -/
+abbrev Star_9_371Derivation (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop :=
+  Star9371Kernel.Star9371KernelAssertion p φ
+
+/-- PM I ✱9·371 through the fixed similar-proof chain
+`✱1·4; ✱9·22; (✱9·05)`. -/
+theorem star_9_371 (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Star_9_371Derivation p φ :=
+  Star9371Kernel.derive p φ
 
 /-- Exact closed kernel contract for the universal permutation theorem
 ✱9·36.  Its ✱9·21 stage remains the audited canonical Raw witness, rather
