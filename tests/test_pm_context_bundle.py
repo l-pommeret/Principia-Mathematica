@@ -224,6 +224,18 @@ class ContextBundleTests(unittest.TestCase):
         self.assertEqual(rebuilt["sources"][0]["source_sha256"], "historic")
         self.assertEqual(rebuilt["sources"][1]["source_sha256"], "current")
 
+    def test_preserved_hashes_tolerate_unrelated_interface_container_drift(self):
+        recorded = {"sources": [
+            {"kind": "opaque-interface-stub", "id": "PM1:✱4·31", "path": "Star4.lean",
+             "slice_sha256": "same", "source_sha256": "historic"},
+        ]}
+        rebuilt = {"sources": [
+            {"kind": "opaque-interface-stub", "id": "PM1:✱4·31", "path": "Star4.lean",
+             "slice_sha256": "same", "source_sha256": "current"},
+        ]}
+        preserve_historical_container_hashes(recorded, rebuilt)
+        self.assertEqual(rebuilt["sources"][0]["source_sha256"], "historic")
+
 
 if __name__ == "__main__":
     unittest.main()

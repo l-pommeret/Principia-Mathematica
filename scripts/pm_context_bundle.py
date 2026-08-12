@@ -72,7 +72,8 @@ def preserve_historical_container_hashes(recorded: dict, rebuilt: dict) -> None:
         old = previous.get(source_key(new))
         if old is None:
             continue
-        if (old.get("kind") == new.get("kind") == "item-declaration"
+        if (old.get("kind") == new.get("kind")
+                and new.get("kind") in {"item-declaration", "opaque-interface-stub"}
                 and old.get("slice_sha256") == new.get("slice_sha256")):
             new["source_sha256"] = old.get("source_sha256")
 
