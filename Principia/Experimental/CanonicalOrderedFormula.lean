@@ -139,6 +139,30 @@ def openBoundAt (cutoff : Nat) : Raw Γ → Raw (.elementaryProposition :: Γ)
 def openHeadRaw (p : Raw Γ) : Raw (.elementaryProposition :: Γ) :=
   openBoundAt 0 p
 
+def ofElementaryRaw : Elementary Γ → Raw Γ
+  | .constant name => .elementary (.constant name)
+  | .var v => .elementary (.var v)
+  | .neg p => .neg (ofElementaryRaw p)
+  | .disj p q => .disj (ofElementaryRaw p) (ofElementaryRaw q)
+
+/-- Instantiate an apparent variable with an elementary value already living
+in the same real context.  Unlike `openBoundAt`, this operation does not add
+or rename any real variable. -/
+def instantiateBoundAt (cutoff : Nat) (value : Elementary Γ) :
+    Raw Γ → Raw Γ
+  | .elementary p => .elementary p
+  | .bound index =>
+      if index = cutoff then ofElementaryRaw value
+      else if cutoff < index then .bound (index - 1) else .bound index
+  | .quantified quantifier body =>
+      .quantified quantifier (instantiateBoundAt (cutoff + 1) value body)
+  | .neg p => .neg (instantiateBoundAt cutoff value p)
+  | .disj p q => .disj (instantiateBoundAt cutoff value p)
+      (instantiateBoundAt cutoff value q)
+
+def instantiateHeadRaw (value : Elementary Γ) (p : Raw Γ) : Raw Γ :=
+  instantiateBoundAt 0 value p
+
 @[simp] theorem openBoundAt_smartNeg (cutoff : Nat) (p : Raw Γ) :
     openBoundAt cutoff (smartNeg p) =
       smartNeg (openBoundAt cutoff p) := by
@@ -219,6 +243,37 @@ def ofApparent : Apparent Γ Δ → Raw Γ
   | .bound v => .bound (boundIndex v)
   | .neg p => .neg (ofApparent p)
   | .disj p q => .disj (ofApparent p) (ofApparent q)
+
+@[simp] theorem ofApparent_ofElementary (p : Elementary Γ) :
+    ofApparent (Apparent.ofElementary p : Apparent Γ Δ) =
+      ofElementaryRaw p := by
+  induction p <;> simp [Apparent.ofElementary, ofApparent, ofElementaryRaw, *]
+
+@[simp] theorem instantiateHeadRaw_ofApparent
+    (value : Elementary Γ)
+    (p : Apparent Γ (.elementaryProposition :: Δ)) :
+    instantiateHeadRaw value (ofApparent p) =
+      ofApparent (Apparent.instantiate p
+        (Apparent.ofElementary value : Apparent Γ Δ)) := by
+  induction p with
+  | constant name => rfl
+  | real v => rfl
+  | bound v =>
+      cases v with
+      | zero =>
+          change ofElementaryRaw value =
+            ofApparent (Apparent.ofElementary value : Apparent Γ Δ)
+          rw [ofApparent_ofElementary]
+      | succ predecessor => rfl
+  | neg p ih =>
+      change Raw.neg (instantiateHeadRaw value (ofApparent p)) = _
+      rw [ih]
+      rfl
+  | disj p q ihp ihq =>
+      change Raw.disj (instantiateHeadRaw value (ofApparent p))
+        (instantiateHeadRaw value (ofApparent q)) = _
+      rw [ihp, ihq]
+      rfl
 
 @[simp] theorem openHeadRaw_ofApparent
     (p : Apparent Γ [.elementaryProposition]) :
