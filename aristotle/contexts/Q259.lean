@@ -2443,6 +2443,11 @@ inductive NormalizesScoped : Raw Γ → Raw Γ → Prop where
         (.disj (.neg (weakenBound p)) q))
         (.disj (.neg p) (.quantified .sometimes q))
 
+  | star_9_05_disj_independent_right (p q) :
+      NormalizesScoped
+        (.quantified .sometimes (.disj p (weakenBound q)))
+        (.disj (.quantified .sometimes p) q)
+
   | star_9_21_line5_line6 (φ ψ : Apparent Γ [.elementaryProposition]) :
       NormalizesScoped
         (CanonicalOrderedAdapters.star_9_21_line5_raw φ ψ)
@@ -2708,6 +2713,12 @@ theorem NormalizesScoped.substitute
         CanonicalOrderedFormula.substitute_lift_weakenBound] using
         NormalizesScoped.star_9_06_imp (CanonicalOrderedFormula.substitute σ p)
           (CanonicalOrderedFormula.substitute (Substitution.lift σ) q)
+  | star_9_05_disj_independent_right p q =>
+      simpa [CanonicalOrderedFormula.substitute,
+        CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.star_9_05_disj_independent_right
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
+          (CanonicalOrderedFormula.substitute σ q)
   | star_9_21_line5_line6 φ ψ => exact stable921 σ φ ψ
   | disjRight quantifier p r =>
       simpa [CanonicalOrderedFormula.substitute,
@@ -3936,6 +3947,68 @@ theorem derive (φ ψ : Apparent Γ [.elementaryProposition]) :
 
 end PM.Architecture.Star922Kernel
 
+-- PM-CONTEXT-LOCAL Principia/Architecture/Star92Kernel.lean
+namespace PM.Architecture.Star92Kernel
+
+open PM.Architecture.CanonicalOrderedAdapters
+open PM.Architecture.CanonicalNormalization
+open PM.CanonicalOrderedFormula
+
+def valueRaw (φ : Apparent Γ [.elementaryProposition])
+    (y : RealVar Γ .elementaryProposition) : Raw Γ :=
+  .elementary (Apparent.atReal φ y)
+
+def targetRaw (φ : Apparent Γ [.elementaryProposition])
+    (y : RealVar Γ .elementaryProposition) : Raw Γ :=
+  .disj (.neg (.quantified .always (ofApparent φ))) (valueRaw φ y)
+
+inductive Star92KernelAssertion
+    (φ : Apparent Γ [.elementaryProposition])
+    (y : RealVar Γ .elementaryProposition) : Prop where
+
+  | printed_chain
+      (line1 : PM.Derivation
+        (∼ₚ (Apparent.atReal φ y) ∨ₚ (Apparent.atReal φ y)))
+      (line2 : FirstOrderPrerequisites.OrderedAssertion
+        (FirstOrderPrerequisites.star_9_1_instance_target
+          (∼ₐ φ ∨ₐ Apparent.ofElementary (Apparent.atReal φ y))
+          (Apparent.atReal φ y)))
+      (line3 : Raw Γ)
+      (line3_eq : line3 =
+        .quantified .sometimes
+          (.disj (.neg (ofApparent φ)) (weakenBound (valueRaw φ y))))
+      (line4 : Raw Γ)
+      (star905 : NormalizesScoped line3 line4)
+      (line4_eq : line4 =
+        .disj (.quantified .sometimes (.neg (ofApparent φ))) (valueRaw φ y))
+      (star901 : NormalizesScoped line4 (targetRaw φ y)) :
+      Star92KernelAssertion φ y
+
+def line3Raw (φ : Apparent Γ [.elementaryProposition])
+    (y : RealVar Γ .elementaryProposition) : Raw Γ :=
+  .quantified .sometimes
+    (.disj (.neg (ofApparent φ)) (weakenBound (valueRaw φ y)))
+
+def line4Raw (φ : Apparent Γ [.elementaryProposition])
+    (y : RealVar Γ .elementaryProposition) : Raw Γ :=
+  .disj (.quantified .sometimes (.neg (ofApparent φ))) (valueRaw φ y)
+
+theorem derive (φ : Apparent Γ [.elementaryProposition])
+    (y : RealVar Γ .elementaryProposition) : Star92KernelAssertion φ y := by
+  apply Star92KernelAssertion.printed_chain
+    (PM.FirstEdition.Volume1.Star2.star_2_08 (Apparent.atReal φ y))
+    (FirstOrderPrerequisites.OrderedAssertion.star_9_1_instance
+      (∼ₐ φ ∨ₐ Apparent.ofElementary (Apparent.atReal φ y))
+      (Apparent.atReal φ y))
+    (line3Raw φ y) rfl (line4Raw φ y)
+  · exact NormalizesScoped.star_9_05_disj_independent_right _ _
+  · rfl
+  · apply NormalizesScoped.disjCongr
+    · exact .negAlwaysReverse _
+    · exact .refl _
+
+end PM.Architecture.Star92Kernel
+
 -- PM-CONTEXT-LOCAL Principia/Architecture/Q259ClosedRuleBook.lean
 namespace PM.Architecture.Q259ClosedRuleBook
 
@@ -3974,6 +4047,14 @@ abbrev Star_9_22Derivation (φ ψ : Apparent Γ [.elementaryProposition]) : Prop
 theorem star_9_22 (φ ψ : Apparent Γ [.elementaryProposition]) :
     Star_9_22Derivation φ ψ :=
   Star922Kernel.derive φ ψ
+
+abbrev Star_9_2Derivation (φ : Apparent Γ [.elementaryProposition])
+    (y : RealVar Γ .elementaryProposition) : Prop :=
+  Star92Kernel.Star92KernelAssertion φ y
+
+theorem star_9_2 (φ : Apparent Γ [.elementaryProposition])
+    (y : RealVar Γ .elementaryProposition) : Star_9_2Derivation φ y :=
+  Star92Kernel.derive φ y
 
 abbrev Star_9_32Derivation (q : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Prop :=

@@ -60,7 +60,7 @@ def line4Raw (φ : Apparent Γ [.elementaryProposition])
 theorem derive (φ : Apparent Γ [.elementaryProposition])
     (y : RealVar Γ .elementaryProposition) : Star92KernelAssertion φ y := by
   apply Star92KernelAssertion.printed_chain
-    (PM.FirstEdition.Volume1.Star2.star_2_1 (Apparent.atReal φ y))
+    (PM.FirstEdition.Volume1.Star2.star_2_08 (Apparent.atReal φ y))
     (FirstOrderPrerequisites.OrderedAssertion.star_9_1_instance
       (∼ₐ φ ∨ₐ Apparent.ofElementary (Apparent.atReal φ y))
       (Apparent.atReal φ y))

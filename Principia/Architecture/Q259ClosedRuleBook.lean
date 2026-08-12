@@ -3,6 +3,7 @@ import Principia.Architecture.FirstOrderQ259
 import Principia.Architecture.Star921MatrixKernel
 import Principia.Architecture.Star931Kernel
 import Principia.Architecture.Star922Kernel
+import Principia.Architecture.Star92Kernel
 
 namespace PM.Architecture.Q259ClosedRuleBook
 
@@ -72,6 +73,14 @@ abbrev Star_9_22Derivation (φ ψ : Apparent Γ [.elementaryProposition]) : Prop
 theorem star_9_22 (φ ψ : Apparent Γ [.elementaryProposition]) :
     Star_9_22Derivation φ ψ :=
   Star922Kernel.derive φ ψ
+
+abbrev Star_9_2Derivation (φ : Apparent Γ [.elementaryProposition])
+    (y : RealVar Γ .elementaryProposition) : Prop :=
+  Star92Kernel.Star92KernelAssertion φ y
+
+theorem star_9_2 (φ : Apparent Γ [.elementaryProposition])
+    (y : RealVar Γ .elementaryProposition) : Star_9_2Derivation φ y :=
+  Star92Kernel.derive φ y
 
 /-- The exact assertion contract for the universal right-injection analogue
 of ✱1·3. It is a target, never a `Q259ClosedRuleBook` field. -/
