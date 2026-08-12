@@ -654,4 +654,27 @@ theorem star_4_36 {Γ} (p q r : PM.Elementary Γ) :
   have b := compose (lift (PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ q) (q ⊃ₚ p)) er) (PM.FirstEdition.Volume1.Star3.star_3_47 q r p r)
   exact lift f b
 
+/-- PM I (1910), p. 126, ✱4·7.  The forward direction is the exact
+✱2·77 lifting of ✱3·2; the reverse direction projects `q` from the
+conjunctive consequent and composes conditionals. -/
+theorem star_4_7 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ q) ≡ₚ (p ⊃ₚ (p ∧ₚ q))) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have forward : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ (p ∧ₚ q))) :=
+    infer (PM.FirstEdition.Volume1.Star3.star_3_2 p q)
+      (PM.FirstEdition.Volume1.Star2.star_2_77 p q (p ∧ₚ q))
+  have backward : ⊢ₚ ((p ⊃ₚ (p ∧ₚ q)) ⊃ₚ (p ⊃ₚ q)) :=
+    infer (PM.FirstEdition.Volume1.Star3.star_3_27 p q)
+      (PM.FirstEdition.Volume1.Star2.star_2_05 p (p ∧ₚ q) q)
+  exact infer backward
+    (infer forward
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ (p ∧ₚ q)))
+        ((p ⊃ₚ (p ∧ₚ q)) ⊃ₚ (p ⊃ₚ q))))
+
 end PM.FirstEdition.Volume1.Star4
