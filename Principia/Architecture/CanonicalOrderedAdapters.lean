@@ -65,14 +65,28 @@ def ofSecondMatrix : FirstOrderMatrix.Quantified Γ Δ → Raw Γ
   | .always body => .quantified .always (ofFirstOrderMatrix body)
   | .sometimes body => .quantified .sometimes (ofFirstOrderMatrix body)
 
+def ofSecondMatrixScoped : FirstOrderMatrix.Quantified Γ Δ → Raw Γ
+  | .always body => .quantified .always (ofFirstOrderMatrixScoped body)
+  | .sometimes body => .quantified .sometimes (ofFirstOrderMatrixScoped body)
+
 def ofThirdOrder : FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofSecondMatrix body)
   | .sometimes body => .quantified .sometimes (ofSecondMatrix body)
+
+def ofThirdOrderScoped : FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
+  | .always body => .quantified .always (ofSecondMatrixScoped body)
+  | .sometimes body => .quantified .sometimes (ofSecondMatrixScoped body)
 
 def ofThirdOrderFormula : FirstOrderMatrix.ThirdOrderFormula Γ Δ → Raw Γ
   | .quantified p => ofThirdOrder p
   | .neg p => .neg (ofThirdOrderFormula p)
   | .disj p q => .disj (ofThirdOrderFormula p) (ofThirdOrderFormula q)
+
+def ofThirdOrderFormulaScoped : FirstOrderMatrix.ThirdOrderFormula Γ Δ → Raw Γ
+  | .quantified p => ofThirdOrderScoped p
+  | .neg p => .neg (ofThirdOrderFormulaScoped p)
+  | .disj p q =>
+      .disj (ofThirdOrderFormulaScoped p) (ofThirdOrderFormulaScoped q)
 
 def ofOrdered : OrderedFormula Γ order → Raw Γ
   | .elementary p => .elementary p
