@@ -18,6 +18,8 @@ METALINGUISTIC_KINDS = {
     "primitive-inference-rule",
     "primitive-function-inference-rule",
     "primitive-formation-rule",
+    "type-proposition",
+    "function-existence",
 }
 
 
@@ -29,6 +31,7 @@ def audit(root: Path = ROOT) -> dict:
     parsed = []
     metalinguistic = []
     architecture_gated = []
+    reviewed_parser_gaps = []
     for item in load_items(root):
         identifier = item["id"]
         if str(item.get("integration_status", "")).startswith("blocked-architecture"):
@@ -36,6 +39,12 @@ def audit(root: Path = ROOT) -> dict:
             continue
         if item["kind"] in METALINGUISTIC_KINDS:
             metalinguistic.append(identifier)
+            continue
+        if item.get("parser_status") == "reviewed-gap":
+            evidence = root / str(item.get("parser_evidence", ""))
+            if not evidence.is_file() or not str(item.get("parser_evidence", "")).startswith("reviews/"):
+                raise ParserCoverageError(f"{identifier}: reviewed parser gap lacks review evidence")
+            reviewed_parser_gaps.append(identifier)
             continue
         try:
             ast = parse_statement(item["printed"])
@@ -55,11 +64,13 @@ def audit(root: Path = ROOT) -> dict:
         "object_language": parsed,
         "metalinguistic_rules": sorted(metalinguistic),
         "architecture_gated": sorted(architecture_gated),
+        "reviewed_parser_gaps": sorted(reviewed_parser_gaps),
         "counts": {
             "object_language": len(parsed),
             "metalinguistic_rules": len(metalinguistic),
             "architecture_gated": len(architecture_gated),
-            "total": len(parsed) + len(metalinguistic) + len(architecture_gated),
+            "reviewed_parser_gaps": len(reviewed_parser_gaps),
+            "total": len(parsed) + len(metalinguistic) + len(architecture_gated) + len(reviewed_parser_gaps),
         },
     }
 

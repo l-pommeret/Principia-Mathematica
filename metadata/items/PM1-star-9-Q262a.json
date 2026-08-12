@@ -37,12 +37,16 @@
       "printed": "⊢ : : p ⊃ q .⊃ : .p .∨. (x).φx : ⊃ : q .∨. (x).φx",
       "printed_page": 141,
       "scan_leaf": 163,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_5",
-      "formal_scope": "universal first-order monotonicity; architecture target blocked",
+      "lean_path": "Principia/Architecture/Q262MonotonicityKernel.lean",
+      "declaration": "PM.Architecture.Q262MonotonicityKernel.star_9_5",
+      "formal_scope": "exact closed universal first-order monotonicity target",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
       "printed_dependencies": [
         "PM1:✱1·6",
         "PM1:✱9·1",
@@ -53,10 +57,9 @@
         "PM1:✱9·01"
       ],
       "normalized_dependencies": [],
-      "blocked_dependencies": [
-        "PM1:✱9·1",
-        "PM1:✱9·13"
-      ]
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·6","PM1:✱9·01","PM1:✱9·04","PM1:✱9·06","PM1:✱9·08","PM1:✱9·1","PM1:✱9·13"],"strict_attempt_evidence":"reviews/Q262-monotonicity-audit.md","editorial_note":"The closed kernel packages the same pointwise ✱1·6 step through already-audited monotonicity and permutation bridges; no generic first-order detachment is introduced."},
+      "blocked_dependencies": []
     },
     {
       "id": "PM1:✱9·501",
@@ -64,20 +67,23 @@
       "printed": "⊢ : : p ⊃ q .⊃ : .p .∨. (∃x).φx : ⊃ : q .∨. (∃x).φx",
       "printed_page": 141,
       "scan_leaf": 163,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_501",
-      "formal_scope": "existential monotonicity; architecture target blocked",
+      "lean_path": "Principia/Architecture/Q262MonotonicityKernel.lean",
+      "declaration": "PM.Architecture.Q262MonotonicityKernel.star_9_501",
+      "formal_scope": "exact closed existential monotonicity target",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
       "printed_dependencies": [
-        "As Above"
+        "PM1:✱1·6", "PM1:✱9·1", "PM1:✱9·06", "PM1:✱9·13", "PM1:✱9·05", "PM1:✱9·01"
       ],
       "normalized_dependencies": [],
-      "blocked_dependencies": [
-        "PM1:✱9·1",
-        "PM1:✱9·13"
-      ]
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·6","PM1:✱9·01","PM1:✱9·05","PM1:✱9·06","PM1:✱9·1","PM1:✱9·13"],"strict_attempt_evidence":"reviews/Q262-monotonicity-audit.md","editorial_note":"‘As Above’ is resolved as the existential analogue; the kernel uses the previously audited closed ✱9·22 bridge."},
+      "blocked_dependencies": []
     },
     {
       "id": "PM1:✱9·51",
@@ -85,17 +91,21 @@
       "printed": "⊢ : : p .⊃. (x).φx : ⊃ : .p ∨ r .⊃ .⊃ : (x).φx .∨. r",
       "printed_page": 141,
       "scan_leaf": 163,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_51",
-      "formal_scope": "universal monotonicity under left disjunction; architecture target blocked",
+      "lean_path": "Principia/Architecture/Q262MonotonicityKernel.lean",
+      "declaration": "PM.Architecture.Q262MonotonicityKernel.star_9_51",
+      "formal_scope": "exact closed universal monotonicity under disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "blocked_dependencies": [
-        "PM1:✱9·21"
-      ]
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q262-monotonicity-audit.md","editorial_note":"The source prints no demonstration; the minimal closed witness uses the adjacent associativity bridge and universal monotonicity."},
+      "blocked_dependencies": []
     },
     {
       "id": "PM1:✱9·511",
@@ -103,19 +113,23 @@
       "printed": "⊢ : : p .⊃. (∃x).φx : ⊃ : .p ∨ r .⊃ .⊃ : (∃x).φx .∨. r",
       "printed_page": 142,
       "scan_leaf": 164,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_511",
-      "formal_scope": "existential counterpart; architecture target blocked",
+      "lean_path": "Principia/Architecture/Q262MonotonicityKernel.lean",
+      "declaration": "PM.Architecture.Q262MonotonicityKernel.star_9_511",
+      "formal_scope": "exact closed existential monotonicity under disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
       "printed_dependencies": [
-        "As above"
+        "PM1:✱1·6", "PM1:✱9·411", "PM1:✱9·22"
       ],
       "normalized_dependencies": [],
-      "blocked_dependencies": [
-        "PM1:✱9·22"
-      ]
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·6","PM1:✱9·22","PM1:✱9·411"],"strict_attempt_evidence":"reviews/Q262-monotonicity-audit.md","editorial_note":"‘As above’ is resolved to the immediately preceding existential analogue."},
+      "blocked_dependencies": []
     },
     {
       "id": "PM1:✱9·52",
@@ -123,12 +137,16 @@
       "printed": "⊢ : : (x).φx .⊃. q : ⊃ : .(x).φx .∨. r .⊃ . q ∨ r",
       "printed_page": 142,
       "scan_leaf": 164,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_52",
-      "formal_scope": "universal monotonicity under right disjunction; architecture target blocked",
+      "lean_path": "Principia/Architecture/Q262MonotonicityKernel.lean",
+      "declaration": "PM.Architecture.Q262MonotonicityKernel.star_9_52",
+      "formal_scope": "exact closed universal monotonicity under right disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
       "printed_dependencies": [
         "PM1:✱1·6",
         "PM1:✱9·13·22",
@@ -136,10 +154,9 @@
         "PM1:✱9·03"
       ],
       "normalized_dependencies": [],
-      "blocked_dependencies": [
-        "PM1:✱9·13",
-        "PM1:✱9·22"
-      ]
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·6","PM1:✱9·03","PM1:✱9·05·01","PM1:✱9·13·22"],"strict_attempt_evidence":"reviews/Q262-monotonicity-audit.md","editorial_note":"The exact endpoint is retained through closed Q261 permutation and universal monotonicity witnesses."},
+      "blocked_dependencies": []
     }
   ],
   "ci_evidence": {

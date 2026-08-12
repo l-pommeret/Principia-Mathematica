@@ -7,9 +7,9 @@
   },
   "counts": {
     "catalogued_items": 1136,
-    "object_language_ast_parsed": 403,
+    "object_language_ast_parsed": 411,
     "metalinguistic_routes": 12,
-    "architecture_gated_source_routes": 721,
+    "architecture_gated_source_routes": 713,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
     "catalogued_items_missing_proof_skeleton": 1078,
@@ -322,10 +322,11 @@
       "id": "PM1:✱10·01",
       "kind": "definition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "a518ecfb42ea9113c00693d52f1cf674c3593f94a9212b9c9f08d0cfee60a08a"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -335,10 +336,11 @@
       "id": "PM1:✱10·02",
       "kind": "definition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "cf8e37b744c25c422f917a6cb11f71507061c1497c00569be7019a39a07a7358"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -348,10 +350,11 @@
       "id": "PM1:✱10·03",
       "kind": "definition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "fe3834b4ecfbc76bfd4895ff87412e227d7f16dd10cd35cea19771a307726aac"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -585,7 +588,8 @@
       "formal_status": "prepared",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "6387993ad48aecff0c788ef708b44e8c91b3b8583ba122dfdfabcc2db86dc6e6"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -598,7 +602,8 @@
       "formal_status": "prepared",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "f2c69ea5eb12774d96148b22c2072ee4fb52af193446285615d369f3770fc61c"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -611,7 +616,8 @@
       "formal_status": "prepared",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "5ca842b0305e4c2de653bd50c3b249fcf0c6e49d576629a33b0e301ae7208b46"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -624,7 +630,8 @@
       "formal_status": "prepared",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "1e4978ef118a665251147f52f573bb18bd47dd7580a18eb1244050bb465d6255"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -728,7 +735,8 @@
       "formal_status": "prepared",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "c122c0e71507a07dfcdb8d69fcb80c63a7a986bd4a9ee3650f9ff1b7b5859060"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -9937,8 +9945,8 @@
       "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "parser-gap",
-        "detail": "expected proposition at offset 30"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q261-architecture-reconciliation.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -9951,8 +9959,8 @@
       "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "parser-gap",
-        "detail": "expected proposition at offset 31"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q261-architecture-reconciliation.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -9965,8 +9973,8 @@
       "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "parser-gap",
-        "detail": "expected proposition at offset 30"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q261-architecture-reconciliation.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -9979,8 +9987,8 @@
       "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "parser-gap",
-        "detail": "expected proposition at offset 31"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q261-architecture-reconciliation.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -9993,8 +10001,8 @@
       "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "parser-gap",
-        "detail": "expected proposition at offset 28"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q261-architecture-reconciliation.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -10007,8 +10015,8 @@
       "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "parser-gap",
-        "detail": "expected proposition at offset 29"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q261-architecture-reconciliation.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -10018,10 +10026,11 @@
       "id": "PM1:✱9·5",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q262-monotonicity-audit.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -10031,10 +10040,11 @@
       "id": "PM1:✱9·501",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q262-monotonicity-audit.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -10044,10 +10054,11 @@
       "id": "PM1:✱9·51",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q262-monotonicity-audit.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -10057,10 +10068,11 @@
       "id": "PM1:✱9·511",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q262-monotonicity-audit.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -10070,10 +10082,11 @@
       "id": "PM1:✱9·52",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q262-monotonicity-audit.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -10083,10 +10096,11 @@
       "id": "PM1:✱9·521",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q262-monotonicity-audit.md"
       },
       "proof_skeleton": {
         "status": "missing"

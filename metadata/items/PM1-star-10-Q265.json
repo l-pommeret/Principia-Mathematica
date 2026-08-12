@@ -9,7 +9,26 @@
       172
     ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
-    "leaf_derivatives": [{"scan_leaf": 167, "printed_page": 145, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page167-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg", "sha256": "e204c02965c2035296c2ff272e7f6f45f2a1fca6917781c2aa7576840b05d159"}, {"scan_leaf": 172, "printed_page": 150, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page172-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg", "sha256": "2a50239974ad6686032ac4c3940075e17beaa139539be2e8f0909c89d3859f97"}, {"scan_leaf": 174, "printed_page": 152, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page174-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg", "sha256": "5d9a8a28d24cf5fd94f92f3f289c7dd3cabcde3fc4efe68caf4bdccbffe17e87"}],
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 167,
+        "printed_page": 145,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page167-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "e204c02965c2035296c2ff272e7f6f45f2a1fca6917781c2aa7576840b05d159"
+      },
+      {
+        "scan_leaf": 172,
+        "printed_page": 150,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page172-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "2a50239974ad6686032ac4c3940075e17beaa139539be2e8f0909c89d3859f97"
+      },
+      {
+        "scan_leaf": 174,
+        "printed_page": 152,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page174-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "5d9a8a28d24cf5fd94f92f3f289c7dd3cabcde3fc4efe68caf4bdccbffe17e87"
+      }
+    ],
     "scan_sha256": "e204c02965c2035296c2ff272e7f6f45f2a1fca6917781c2aa7576840b05d159",
     "supplemental_scan_sha256": {
       "172": "2a50239974ad6686032ac4c3940075e17beaa139539be2e8f0909c89d3859f97"
@@ -27,12 +46,12 @@
       "printed": "⊢ : .(z).φz ⊃ ψz .⊃ : (z).φz .⊃ .(z).ψz",
       "printed_page": 145,
       "scan_leaf": 167,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_27",
-      "formal_scope": "formal implication lifting; architecture blocked",
+      "lean_path": "Principia/Architecture/Star10Q265Targets.lean",
+      "declaration": "PM.Architecture.Star10Q265Targets.star_10_27_target",
+      "formal_scope": "formal implication lifting; exact canonical Raw target, proof pending",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "integration_status": "canonical-exact-target-prepared",
       "printed_dependencies": [
         "PM1:✱9·21",
         "PM1:✱10·14",
@@ -47,12 +66,12 @@
       "printed": "⊢ : .(z).φz ≡ ψz .⊃ : (z).φz .≡.(z).ψz",
       "printed_page": 145,
       "scan_leaf": 167,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_271",
-      "formal_scope": "formal equivalence lifting; blocked",
+      "lean_path": "Principia/Architecture/Star10Q265Targets.lean",
+      "declaration": "PM.Architecture.Star10Q265Targets.star_10_271_target",
+      "formal_scope": "formal equivalence lifting; exact canonical Raw target, proof pending",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "integration_status": "canonical-exact-target-prepared",
       "printed_dependencies": [
         "PM1:✱10·22",
         "PM1:✱10·27"
@@ -65,12 +84,12 @@
       "printed": "⊢ : .(x).φx ⊃ ψx .⊃ : (∃x).φx .⊃ .(∃x).ψx",
       "printed_page": 145,
       "scan_leaf": 167,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_28",
-      "formal_scope": "existential lifting; blocked",
+      "lean_path": "Principia/Architecture/Star10Q265Targets.lean",
+      "declaration": "PM.Architecture.Star10Q265Targets.star_10_28_target",
+      "formal_scope": "existential lifting; exact canonical Raw target, proof pending",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "integration_status": "canonical-exact-target-prepared",
       "printed_dependencies": [
         "PM1:✱9·22",
         "PM1:✱10·1",
@@ -85,12 +104,12 @@
       "printed": "⊢ : .(x).φx ≡ ψx .⊃ : (∃x).φx .≡.(∃x).ψx",
       "printed_page": 145,
       "scan_leaf": 167,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_281",
-      "formal_scope": "existential equivalence lifting; blocked",
+      "lean_path": "Principia/Architecture/Star10Q265Targets.lean",
+      "declaration": "PM.Architecture.Star10Q265Targets.star_10_281_target",
+      "formal_scope": "existential equivalence lifting; exact canonical Raw target, proof pending",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "integration_status": "canonical-exact-target-prepared",
       "printed_dependencies": [
         "PM1:✱10·22",
         "PM1:✱10·28"
@@ -103,12 +122,12 @@
       "printed": "⊢ : .(∃x).p .φx .≡ : p : (∃x).φx",
       "printed_page": 145,
       "scan_leaf": 167,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_35",
-      "formal_scope": "existential distribution; blocked",
+      "lean_path": "Principia/Architecture/Star10Q265Targets.lean",
+      "declaration": "PM.Architecture.Star10Q265Targets.star_10_35_target",
+      "formal_scope": "existential distribution; exact canonical Raw target, proof pending",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "integration_status": "canonical-exact-target-prepared",
       "printed_dependencies": [],
       "normalized_dependencies": []
     }

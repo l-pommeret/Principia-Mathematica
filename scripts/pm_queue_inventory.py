@@ -164,6 +164,12 @@ def inventory(root: Path = ROOT) -> dict:
         elif item["kind"] in METALINGUISTIC_KINDS:
             record["ast"] = {"status": "metalinguistic-route"}
             metalinguistic += 1
+        elif item.get("parser_status") == "reviewed-gap":
+            record["ast"] = {
+                "status": "reviewed-parser-gap",
+                "evidence": item.get("parser_evidence"),
+            }
+            architecture_gated += 1
         else:
             try:
                 ast = parse_statement(item["printed"])
