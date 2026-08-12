@@ -238,6 +238,24 @@ def closedFinalDisplayRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :
         (.quantified .sometimes (closedAntecedentRightBody φ))))
       (closedConsequentOutside φ))
 
+/-- Source-faithful endpoint of printed ✱9·31.  It remains a canonical Raw
+formula because the printed derivation reaches it through the order-three
+carrier introduced by the second ✱9·13; collapsing it to the historical
+order-one target would erase that assigned-order binder. -/
+def exactTargetRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always
+    (.disj
+      (.neg (.disj
+        (.quantified .sometimes
+          (dropUnusedBound (closedAntecedentLeftUnder φ)))
+        (.quantified .sometimes (closedAntecedentRightBody φ))))
+      (closedConsequentOutside φ))
+
+theorem closedFinalDisplayRaw_eq_exactTargetRaw
+    (φ : Apparent Γ [.elementaryProposition]) :
+    closedFinalDisplayRaw φ = exactTargetRaw φ := by
+  rfl
+
 theorem closedLine4_to_final
     (φ : Apparent Γ [.elementaryProposition]) :
     NormalizesScopedAt 0 (closedLine4DisplayRaw φ)
@@ -404,8 +422,12 @@ inductive Star931ClosedStage
 /-- Closed evidence retaining the original indexed proof and its exact
 source-labelled normalization endpoint. -/
 structure Star931KernelAssertion
-    (φ : Apparent Γ [.elementaryProposition]) : Prop where
+    (φ : Apparent Γ [.elementaryProposition]) where
   chain : Star931ClosedStage φ 5
+  endpoint : Raw Γ
+  endpointExact : endpoint = exactTargetRaw φ
+  normalization : NormalizesScopedAt 0
+    (closedLine3DisplayRaw φ) endpoint
 
 def deriveLine2
     (φ : Apparent Γ [.elementaryProposition]) :
@@ -419,5 +441,8 @@ def derive
   chain := .star_9_05_06 (.star_9_03_02
     (.second_9_13 (.line2 (deriveLine2 φ)) (line3Carrier φ) rfl rfl)
     (closedLine3_to_line4 φ)) (closedLine4_to_final φ)
+  endpoint := closedFinalDisplayRaw φ
+  endpointExact := closedFinalDisplayRaw_eq_exactTargetRaw φ
+  normalization := closedLine3_to_final φ
 
 end PM.Architecture.Star931Kernel

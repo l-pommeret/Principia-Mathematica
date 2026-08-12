@@ -26,7 +26,21 @@ The canonical implementation must keep the following distinctions:
   and `.quantified` nodes;
 - ✱9·03·02 and ✱9·05·06 are syntax-normalization certificates, not new
   `OrderedAssertion` constructors;
-- the final target is the existing `FirstOrderQ259.star_9_31_target`.
+- the initially proposed final target was
+  `FirstOrderQ259.star_9_31_target`; the correction below supersedes it.
+
+## Assigned-order correction
+
+That last identification was rejected by local Lean checking.  The second
+application of ✱9·13 retains an assigned-order universal carrier, so the
+source-faithful endpoint begins with an outer `always`; the historical
+`FirstOrderQ259.star_9_31_target` is an order-one formula and omits it.
+Moreover, replacing the two displayed occurrences by the original apparent
+matrix is not alpha/beta conversion when that matrix contains its bound
+argument.  `Star931Kernel.exactTargetRaw` therefore records the literal
+closed endpoint produced by the scan's line (3), ✱9·03·02 and ✱9·05·06.
+The old order-one target remains available for compatibility but is not used
+as the endpoint certificate for the canonical proof.
 
 Current integration status: the line-2 scoped carrier and its second-✱9·13
 carrier are kernel-checked.  The remaining gate is an exact canonical
