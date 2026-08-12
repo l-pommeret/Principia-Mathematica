@@ -26,6 +26,18 @@ def shiftBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
 
 def weakenBound (p : Raw Γ) : Raw Γ := shiftBoundAt 0 p
 
+/-- Capture-safe renaming of apparent binder indices.  Under a quantifier the
+newly bound index remains zero and every older index is renamed through the
+lifted map. -/
+def renameBound (ρ : Nat → Nat) : Raw Γ → Raw Γ
+  | .elementary p => .elementary p
+  | .bound index => .bound (ρ index)
+  | .quantified q body =>
+      .quantified q (renameBound (fun index =>
+        match index with | 0 => 0 | n + 1 => ρ n + 1) body)
+  | .neg p => .neg (renameBound ρ p)
+  | .disj p q => .disj (renameBound ρ p) (renameBound ρ q)
+
 def smartNeg : Raw Γ → Raw Γ
   | .quantified .always body => .quantified .sometimes (smartNeg body)
   | .quantified .sometimes body => .quantified .always (smartNeg body)
