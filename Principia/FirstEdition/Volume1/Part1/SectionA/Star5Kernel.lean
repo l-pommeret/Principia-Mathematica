@@ -12,6 +12,75 @@ namespace PM.FirstEdition.Volume1.Star5
 
 open PM
 open PM.Elementary
+open PM.FirstEdition.Volume1.Star2 PM.FirstEdition.Volume1.Star3
+  PM.FirstEdition.Volume1.Star4
+
+private theorem q244_infer {Γ} {a b : PM.Elementary Γ} :
+    (⊢ₚ a) → (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ b) := by
+  intro ha hab
+  match Γ, a, b, ha, hab with
+  | [], _, _, ha, hab => exact PM.Derivation.star_1_1 ha hab
+  | (τ :: Δ), _, _, ha, hab =>
+      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) ha hab
+
+private theorem mp' {Γ} {a b : PM.Elementary Γ}
+    (hab : ⊢ₚ (a ⊃ₚ b)) (ha : ⊢ₚ a) : ⊢ₚ b := q244_infer ha hab
+
+private theorem syll {Γ} {a b c : PM.Elementary Γ}
+    (hab : ⊢ₚ (a ⊃ₚ b)) (hbc : ⊢ₚ (b ⊃ₚ c)) : ⊢ₚ (a ⊃ₚ c) :=
+  q244_infer hab (q244_infer hbc (star_2_05 a b c))
+
+private theorem conj_intro {Γ} {a b : PM.Elementary Γ}
+    (ha : ⊢ₚ a) (hb : ⊢ₚ b) : ⊢ₚ (a ∧ₚ b) :=
+  q244_infer hb (q244_infer ha (star_3_2 a b))
+
+private theorem equiv_left {Γ} {a b : PM.Elementary Γ}
+    (h : ⊢ₚ (a ≡ₚ b)) : ⊢ₚ (a ⊃ₚ b) := q244_infer h (star_3_26 _ _)
+private theorem equiv_right {Γ} {a b : PM.Elementary Γ}
+    (h : ⊢ₚ (a ≡ₚ b)) : ⊢ₚ (b ⊃ₚ a) := q244_infer h (star_3_27 _ _)
+
+private theorem conj_intro_hyp {Γ} {a b c : PM.Elementary Γ}
+    (hab : ⊢ₚ (a ⊃ₚ b)) (hac : ⊢ₚ (a ⊃ₚ c)) : ⊢ₚ (a ⊃ₚ (b ∧ₚ c)) :=
+  q244_infer (conj_intro hab hac) (star_3_43 a b c)
+
+private theorem comp_rule {Γ} {a b c : PM.Elementary Γ}
+    (hab : ⊢ₚ (a ⊃ₚ b)) (hac : ⊢ₚ (a ⊃ₚ c)) : ⊢ₚ (a ⊃ₚ (b ∧ₚ c)) :=
+  conj_intro_hyp hab hac
+
+private theorem syll_under {Γ} {a b c d : PM.Elementary Γ}
+    (hbc : ⊢ₚ (a ⊃ₚ (b ⊃ₚ c))) (hcd : ⊢ₚ (a ⊃ₚ (c ⊃ₚ d))) :
+    ⊢ₚ (a ⊃ₚ (b ⊃ₚ d)) :=
+  q244_infer hcd (q244_infer hbc (star_2_83 a b c d))
+
+private theorem exp_rule {Γ} {a b c : PM.Elementary Γ}
+    (h : ⊢ₚ ((a ∧ₚ b) ⊃ₚ c)) : ⊢ₚ (a ⊃ₚ (b ⊃ₚ c)) :=
+  q244_infer h (star_3_3 a b c)
+
+private theorem perm_rule {Γ} {a b : PM.Elementary Γ}
+    (h : ⊢ₚ (a ∨ₚ b)) : ⊢ₚ (b ∨ₚ a) :=
+  q244_infer h (PM.FirstEdition.Volume1.Star1.star_1_4 a b)
+
+private theorem equiv_symm {Γ} {a b : PM.Elementary Γ}
+    (h : ⊢ₚ (a ≡ₚ b)) : ⊢ₚ (b ≡ₚ a) :=
+  q244_infer h (equiv_left (star_4_21 a b))
+
+private theorem equiv_trans {Γ} {a b c : PM.Elementary Γ}
+    (hab : ⊢ₚ (a ≡ₚ b)) (hbc : ⊢ₚ (b ≡ₚ c)) : ⊢ₚ (a ≡ₚ c) :=
+  conj_intro (syll (equiv_left hab) (equiv_left hbc))
+    (syll (equiv_right hbc) (equiv_right hab))
+
+private theorem neg_congr {Γ} {a b : PM.Elementary Γ}
+    (h : ⊢ₚ (a ≡ₚ b)) : ⊢ₚ ((∼ₚ a) ≡ₚ (∼ₚ b)) :=
+  q244_infer h (equiv_left (star_4_11 a b))
+
+private theorem star_4_31_q244 {Γ} (a b : PM.Elementary Γ) :
+    ⊢ₚ ((a ∨ₚ b) ≡ₚ (b ∨ₚ a)) :=
+  conj_intro (PM.FirstEdition.Volume1.Star1.star_1_4 a b)
+    (PM.FirstEdition.Volume1.Star1.star_1_4 b a)
+
+private theorem star_4_64_q244 {Γ} (a b : PM.Elementary Γ) :
+    ⊢ₚ (((∼ₚ a) ⊃ₚ b) ≡ₚ (a ∨ₚ b)) :=
+  equiv_symm (q244_infer (star_4_13 a) (star_4_37 a (∼ₚ (∼ₚ a)) b))
 
 /-- PM I (1910), p. 129, ✱5·13.  The scan cites ✱2·521.  The displayed
 disjunction needs one unprinted use of ✱2·54; the two primitive inference
@@ -976,5 +1045,119 @@ theorem star_5_75 {Γ} (p q r : PM.Elementary Γ) :
     exact comp paired forward
   have aEq : ⊢ₚ (a ⊃ₚ (x ≡ₚ r)) := join xToR rToX
   exact infer aEq (PM.FirstEdition.Volume1.Star3.star_3_3 h e (x ≡ₚ r))
+
+/-- ✱5·15.  `⊢ : . p ≡ q . ∨ . p ≡ ∼q`.
+
+Dem.
+```text
+⊢ . ✱4·61 .  ⊃ ⊢ : ∼(p ⊃ q) .  ⊃ . p . ∼q .
+   [✱5·1]                      ⊃ . p ≡ ∼q :
+   [✱2·54]   ⊃ ⊢ : p ⊃ q . ∨ . p ≡ ∼q                             (1)
+⊢ . ✱4·61 .  ⊃ ⊢ : ∼(q ⊃ p) .  ⊃ . q . ∼p .
+   [✱5·1]                      ⊃ . q ≡ ∼p .
+   [✱4·12]                     ⊃ . p ≡ ∼q :
+   [✱2·54]   ⊃ ⊢ : q ⊃ p . ∨ . p ≡ ∼q                             (2)
+⊢ . (1) . (2) . ✱4·41 . ⊃ ⊢ . Prop
+```
+-/
+theorem star_5_15 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ≡ₚ q) ∨ₚ (p ≡ₚ ∼ₚ q)) := by
+  -- ✱4·61 . ⊃ ⊢ : ∼(p ⊃ q) . ⊃ . p . ∼q :  [✱5·1]  ⊃ . p ≡ ∼q
+  have a1 : ⊢ₚ ∼ₚ(p ⊃ₚ q) ⊃ₚ (p ≡ₚ ∼ₚq) :=
+    syll (equiv_left (star_4_61 p q)) (star_5_1 p (∼ₚq))
+  -- (1)  [✱2·54]  ⊃ ⊢ : p ⊃ q . ∨ . p ≡ ∼q
+  have h1 : ⊢ₚ (p ⊃ₚ q) ∨ₚ (p ≡ₚ ∼ₚq) :=
+    mp' (star_2_54 (p ⊃ₚ q) (p ≡ₚ ∼ₚq)) a1
+  -- ✱4·61 [q, p / p, q] . ⊃ ⊢ : ∼(q ⊃ p) . ⊃ . q . ∼p :
+  --   [✱5·1]  ⊃ . q ≡ ∼p :  [✱4·12]  ⊃ . p ≡ ∼q
+  have a2 : ⊢ₚ ∼ₚ(q ⊃ₚ p) ⊃ₚ (p ≡ₚ ∼ₚq) :=
+    syll (equiv_left (star_4_61 q p))
+      (syll (star_5_1 q (∼ₚp)) (equiv_right (star_4_12 p q)))
+  -- (2)  [✱2·54]  ⊃ ⊢ : q ⊃ p . ∨ . p ≡ ∼q
+  have h2 : ⊢ₚ (q ⊃ₚ p) ∨ₚ (p ≡ₚ ∼ₚq) :=
+    mp' (star_2_54 (q ⊃ₚ p) (p ≡ₚ ∼ₚq)) a2
+  -- (1) . (2) . ✱4·41 : `p ∨ (q . r) . ≡ . (p ∨ q) . (p ∨ r)`,
+  -- the two sums being permuted by ✱1·4 Perm
+  have h3 : ⊢ₚ (p ≡ₚ ∼ₚq) ∨ₚ ((p ⊃ₚ q) ∧ₚ (q ⊃ₚ p)) :=
+    mp' (equiv_right (star_4_41 (p ≡ₚ ∼ₚq) (p ⊃ₚ q) (q ⊃ₚ p)))
+      (conj_intro (perm_rule h1) (perm_rule h2))
+  exact perm_rule h3
+
+/-- ✱5·16.  `⊢ . ∼{(p ≡ q) . (p ≡ ∼q)}`.
+
+Dem.
+```text
+⊢ . ✱3·26 . ⊃ ⊢ : p ≡ q . p ⊃ ∼q .   ⊃ . p ⊃ q . p ⊃ ∼q .
+   [✱4·82]                           ⊃ . ∼p                      (1)
+⊢ . ✱3·27 . ⊃ ⊢ : p ≡ q . p ⊃ ∼q .   ⊃ . q ⊃ p . p ⊃ ∼q .
+   [Syll]                            ⊃ . q ⊃ ∼q .
+   [Abs]                             ⊃ . ∼q                      (2)
+⊢ . (1) . (2) . Comp . ⊃ ⊢ : p ≡ q . p ⊃ ∼q . ⊃ . ∼p . ∼q .
+   [✱4·65 (q, p / p, q)]                                ⊃ . ∼(∼q ⊃ p)   (3)
+⊢ . (3) . Exp . ⊃ ⊢ : . p ≡ q . ⊃ : p ⊃ ∼q . ⊃ . ∼(∼q ⊃ p) :
+   [Id . (✱1·01)]              ⊃ : ∼(p ⊃ ∼q) . ∨ . ∼(∼q ⊃ p) :
+   [✱4·51 . (✱4·01)]           ⊃ : ∼(p ≡ ∼q) : . ⊃ ⊢ . Prop
+```
+-/
+theorem star_5_16 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ∼ₚ ((p ≡ₚ q) ∧ₚ (p ≡ₚ ∼ₚ q)) := by
+  -- ✱3·26 . ⊃ ⊢ : p ≡ q . p ⊃ ∼q . ⊃ . p ⊃ q . p ⊃ ∼q
+  have a1 : ⊢ₚ ((p ≡ₚ q) ∧ₚ (p ⊃ₚ ∼ₚq)) ⊃ₚ ((p ⊃ₚ q) ∧ₚ (p ⊃ₚ ∼ₚq)) :=
+    conj_intro_hyp
+      (syll (star_3_26 (p ≡ₚ q) (p ⊃ₚ ∼ₚq)) (star_3_26 (p ⊃ₚ q) (q ⊃ₚ p)))
+      (star_3_27 (p ≡ₚ q) (p ⊃ₚ ∼ₚq))
+  -- (1)  [✱4·82]  ⊃ . ∼p
+  have h1 : ⊢ₚ ((p ≡ₚ q) ∧ₚ (p ⊃ₚ ∼ₚq)) ⊃ₚ ∼ₚp :=
+    syll a1 (equiv_left (star_4_82 p q))
+  -- ✱3·27 . ⊃ ⊢ : p ≡ q . p ⊃ ∼q . ⊃ . q ⊃ p . p ⊃ ∼q
+  have a2 : ⊢ₚ ((p ≡ₚ q) ∧ₚ (p ⊃ₚ ∼ₚq)) ⊃ₚ ((q ⊃ₚ p) ∧ₚ (p ⊃ₚ ∼ₚq)) :=
+    conj_intro_hyp
+      (syll (star_3_26 (p ≡ₚ q) (p ⊃ₚ ∼ₚq)) (star_3_27 (p ⊃ₚ q) (q ⊃ₚ p)))
+      (star_3_27 (p ≡ₚ q) (p ⊃ₚ ∼ₚq))
+  -- [Syll]  ⊃ . q ⊃ ∼q
+  have a3 : ⊢ₚ ((q ⊃ₚ p) ∧ₚ (p ⊃ₚ ∼ₚq)) ⊃ₚ (q ⊃ₚ ∼ₚq) :=
+    syll_under (star_3_26 (q ⊃ₚ p) (p ⊃ₚ ∼ₚq)) (star_3_27 (q ⊃ₚ p) (p ⊃ₚ ∼ₚq))
+  -- (2)  [Abs, i.e. ✱2·01]  ⊃ . ∼q
+  have h2 : ⊢ₚ ((p ≡ₚ q) ∧ₚ (p ⊃ₚ ∼ₚq)) ⊃ₚ ∼ₚq :=
+    syll a2 (syll a3 (star_2_01 q))
+  -- (1) . (2) . Comp (✱3·43) . ⊃ ⊢ : p ≡ q . p ⊃ ∼q . ⊃ . ∼p . ∼q
+  have a4 : ⊢ₚ ((p ≡ₚ q) ∧ₚ (p ⊃ₚ ∼ₚq)) ⊃ₚ (∼ₚp ∧ₚ ∼ₚq) := comp_rule h1 h2
+  -- (3)  [✱4·65 (q, p / p, q)]  ⊃ . ∼(∼q ⊃ p),
+  -- the logical product being permuted by ✱3·22
+  have h3 : ⊢ₚ ((p ≡ₚ q) ∧ₚ (p ⊃ₚ ∼ₚq)) ⊃ₚ ∼ₚ(∼ₚq ⊃ₚ p) :=
+    syll a4 (syll (star_3_22 (∼ₚp) (∼ₚq)) (equiv_right (star_4_65 q p)))
+  -- (3) . Exp (✱3·3) . ⊃ ⊢ : . p ≡ q . ⊃ : p ⊃ ∼q . ⊃ . ∼(∼q ⊃ p) :
+  -- [Id . (✱1·01)] the consequent *is* `∼(p ⊃ ∼q) . ∨ . ∼(∼q ⊃ p)`
+  have a5 : ⊢ₚ (p ≡ₚ q) ⊃ₚ (∼ₚ(p ⊃ₚ ∼ₚq) ∨ₚ ∼ₚ(∼ₚq ⊃ₚ p)) := exp_rule h3
+  -- [✱4·51 . (✱4·01)]  ⊃ : ∼(p ≡ ∼q)
+  have a6 : ⊢ₚ (p ≡ₚ q) ⊃ₚ ∼ₚ(p ≡ₚ ∼ₚq) :=
+    syll a5 (equiv_right (star_4_51 (p ⊃ₚ ∼ₚq) (∼ₚq ⊃ₚ p)))
+  -- ⊃ ⊢ . Prop, again by ✱4·51 . (✱4·01) : the implication just asserted
+  -- is `∼(p ≡ q) . ∨ . ∼(p ≡ ∼q)`
+  exact mp' (equiv_right (star_4_51 (p ≡ₚ q) (p ≡ₚ ∼ₚq))) a6
+
+/-- ✱5·17.  `⊢ : . p ∨ q . ∼(p . q) : ≡ . p ≡ ∼q`.
+
+Dem.
+```text
+⊢ . ✱4·64·21 .            ⊃ ⊢ : p ∨ q . ≡ . ∼q ⊃ p              (1)
+⊢ . ✱4·63 . Transp .      ⊃ ⊢ : ∼(p . q) . ≡ . p ⊃ ∼q           (2)
+⊢ . (1) . (2) . ✱4·38·21 . ⊃ ⊢ . Prop
+```
+-/
+theorem star_5_17 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (((p ∨ₚ q) ∧ₚ ∼ₚ (p ∧ₚ q)) ≡ₚ (p ≡ₚ ∼ₚ q)) := by
+  -- (1)  ✱4·64 [q, p / p, q] : `∼q ⊃ p . ≡ . q ∨ p`, whence by ✱4·21
+  -- (symmetry of `≡`) and ✱4·31 (permutation of the sum) the intermediate
+  have h1 : ⊢ₚ (p ∨ₚ q) ≡ₚ (∼ₚq ⊃ₚ p) :=
+    equiv_trans (star_4_31_q244 p q) (equiv_symm (star_4_64_q244 q p))
+  -- (2)  ✱4·63 . Transp : from `∼(p ⊃ ∼q) . ≡ . p . q` by transposition
+  have h2 : ⊢ₚ ∼ₚ(p ∧ₚ q) ≡ₚ (p ⊃ₚ ∼ₚq) :=
+    equiv_symm (equiv_trans (star_4_13 (p ⊃ₚ ∼ₚq)) (neg_congr (star_4_63 p q)))
+  -- (1) . (2) . ✱4·38 : `p ≡ r . q ≡ s . ⊃ : p . q . ≡ . r . s`
+  have h3 : ⊢ₚ ((p ∨ₚ q) ∧ₚ ∼ₚ(p ∧ₚ q)) ≡ₚ ((∼ₚq ⊃ₚ p) ∧ₚ (p ⊃ₚ ∼ₚq)) :=
+    mp' (star_4_38 (p ∨ₚ q) (∼ₚ(p ∧ₚ q)) (∼ₚq ⊃ₚ p) (p ⊃ₚ ∼ₚq)) (conj_intro h1 h2)
+  -- ✱4·21 turns `∼q ⊃ p . p ⊃ ∼q` into `p ≡ ∼q`
+  exact equiv_trans h3 (star_4_21 (∼ₚq) p)
 
 end PM.FirstEdition.Volume1.Star5
