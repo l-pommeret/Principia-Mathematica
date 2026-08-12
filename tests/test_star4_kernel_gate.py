@@ -23,15 +23,27 @@ class Star4KernelGateTests(unittest.TestCase):
         })
         self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
 
-    def test_star_4_8_candidate_has_no_generic_detach(self):
-        metadata = json.loads(
-            (ROOT / "metadata/items/PM1-star-4-kernel-Q240-8.json").read_text(
-                encoding="utf-8"
-            )
+    def test_third_group_is_kernel_checked_together(self):
+        cases = (
+            ("Q240-8", "PM1:✱4·8"),
+            ("Q240-81", "PM1:✱4·81"),
+            ("Q231-36", "PM1:✱4·36"),
         )
-        item = metadata["items"][0]
-        self.assertEqual(item["id"], "PM1:✱4·8")
-        self.assertEqual(item["formal_status"], "awaiting-ci")
+        for suffix, item_id in cases:
+            metadata = json.loads(
+                (ROOT / f"metadata/items/PM1-star-4-kernel-{suffix}.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            item = metadata["items"][0]
+            self.assertEqual(item["id"], item_id)
+            self.assertEqual(item["formal_status"], "kernel-checked")
+            self.assertEqual(metadata["ci_evidence"], {
+                "commit": "8da5d1fdec9a8c765fdcbc8c38fb46d042944f34",
+                "run": "31552231965",
+                "conclusion": "success",
+            })
+            self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
         source = (
             ROOT / "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean"
         ).read_text(encoding="utf-8")
