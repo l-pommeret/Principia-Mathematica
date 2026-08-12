@@ -898,4 +898,34 @@ theorem star_4_38 {Γ} (p q r s : PM.Elementary Γ) :
   have backward := comp (join hrp hsq) (PM.FirstEdition.Volume1.Star3.star_3_47 r s p q)
   exact join forward backward
 
+/-- PM I (1910), p. 127, ✱4·76. -/
+theorem star_4_76 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ⊃ₚ q) ∧ₚ (p ⊃ₚ r)) ≡ₚ (p ⊃ₚ (q ∧ₚ r))) := by
+  let a := (p ⊃ₚ q) ∧ₚ (p ⊃ₚ r); let b := p ⊃ₚ (q ∧ₚ r)
+  have infer : ∀ {x y : PM.Elementary Γ}, (⊢ₚ x) → (⊢ₚ (x ⊃ₚ y)) → (⊢ₚ y) := by
+    intro x y hx hxy; match Γ, x, y, hx, hxy with
+    | [], _, _, hx, hxy => exact PM.Derivation.star_1_1 hx hxy
+    | (τ :: Δ), _, _, hx, hxy => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hx hxy
+  have comp : ∀ {x y z : PM.Elementary Γ}, (⊢ₚ (x ⊃ₚ y)) → (⊢ₚ (y ⊃ₚ z)) → (⊢ₚ (x ⊃ₚ z)) := by
+    intro x y z hxy hyz; exact infer hxy (infer hyz (PM.FirstEdition.Volume1.Star2.star_2_05 x y z))
+  have forward : ⊢ₚ (a ⊃ₚ b) := by
+    have duplicate := infer (PM.FirstEdition.Volume1.Star3.star_3_2 p p)
+      (PM.FirstEdition.Volume1.Star2.star_2_43 p (p ∧ₚ p))
+    have underA := infer duplicate (PM.FirstEdition.Volume1.Star2.star_2_02 a (p ⊃ₚ (p ∧ₚ p)))
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_47 p p q r)
+      (infer underA (PM.FirstEdition.Volume1.Star2.star_2_83 a p (p ∧ₚ p) (q ∧ₚ r)))
+  have backward : ⊢ₚ (b ⊃ₚ a) := by
+    have bb : ⊢ₚ (b ⊃ₚ b) := PM.FirstEdition.Volume1.Star2.star_2_08 b
+    have qpart : ⊢ₚ (b ⊃ₚ (p ⊃ₚ q)) :=
+      infer (infer (PM.FirstEdition.Volume1.Star3.star_3_26 q r) (PM.FirstEdition.Volume1.Star2.star_2_02 b ((q ∧ₚ r) ⊃ₚ q)))
+        (infer bb (PM.FirstEdition.Volume1.Star2.star_2_83 b p (q ∧ₚ r) q))
+    have rpart : ⊢ₚ (b ⊃ₚ (p ⊃ₚ r)) :=
+      infer (infer (PM.FirstEdition.Volume1.Star3.star_3_27 q r) (PM.FirstEdition.Volume1.Star2.star_2_02 b ((q ∧ₚ r) ⊃ₚ r)))
+        (infer bb (PM.FirstEdition.Volume1.Star2.star_2_83 b p (q ∧ₚ r) r))
+    have pair := infer rpart (infer qpart (PM.FirstEdition.Volume1.Star3.star_3_2 (b ⊃ₚ (p ⊃ₚ q)) (b ⊃ₚ (p ⊃ₚ r))))
+    have lift := infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 b b (p ⊃ₚ q) (p ⊃ₚ r))
+    have dupb := infer (PM.FirstEdition.Volume1.Star3.star_3_2 b b) (PM.FirstEdition.Volume1.Star2.star_2_43 b (b ∧ₚ b))
+    exact comp dupb lift
+  exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
+
 end PM.FirstEdition.Volume1.Star4
