@@ -6,19 +6,19 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 1076,
+    "catalogued_items": 1079,
     "object_language_ast_parsed": 391,
     "metalinguistic_routes": 8,
-    "architecture_gated_source_routes": 677,
+    "architecture_gated_source_routes": 680,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
-    "catalogued_items_missing_proof_skeleton": 1018,
+    "catalogued_items_missing_proof_skeleton": 1021,
     "constrained_batches": 16,
     "complete_batch_artifact_sets": 15,
     "planned_campaign_questions": 65,
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
-    "catalogued_items_without_campaign_question": 853,
+    "catalogued_items_without_campaign_question": 856,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
@@ -66,7 +66,7 @@
       "PM3:✱251": 56,
       "PM3:✱252": 25,
       "PM3:✱253": 56,
-      "PM3:✱254": 39
+      "PM3:✱254": 42
     },
     "planned": {
       "PM1:✱1": 3,
@@ -103,7 +103,7 @@
       "PM3:✱251": 56,
       "PM3:✱252": 25,
       "PM3:✱253": 56,
-      "PM3:✱254": 39
+      "PM3:✱254": 42
     }
   },
   "local_scheduler_candidates": [],
@@ -9181,7 +9181,7 @@
       "id": "PM1:✱5·4",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [
         "Q248"
       ],
@@ -9197,7 +9197,7 @@
       "id": "PM1:✱5·41",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [
         "Q248"
       ],
@@ -15543,6 +15543,45 @@
       "proof_skeleton": {
         "status": "missing"
       }
+    },
+    {
+      "id": "PM3:✱254·26",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱254·261",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM3:✱254·27",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "prepared",
+      "campaign_questions": [],
+      "ast": {
+        "status": "architecture-gated-source-route"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
     }
   ],
   "catalogued_not_yet_in_campaign": [
@@ -16398,7 +16437,10 @@
     "PM3:✱254·243",
     "PM3:✱254·244",
     "PM3:✱254·245",
-    "PM3:✱254·25"
+    "PM3:✱254·25",
+    "PM3:✱254·26",
+    "PM3:✱254·261",
+    "PM3:✱254·27"
   ],
   "planned_but_uncatalogued": {
     "PM1:✱9·131": [
