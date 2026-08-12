@@ -17,7 +17,9 @@ from fractions import Fraction
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DECL_START = re.compile(r"^\s*(?:theorem|def|abbrev)\s+([A-Za-z0-9_']+)\b")
+DECL_START = re.compile(
+    r"^\s*(?:theorem|def|abbrev|inductive|structure)\s+([A-Za-z0-9_']+)\b"
+)
 KNOWN_BRIDGES = {"PM.Derivation.detach"}
 PRIMITIVE_DECLARATION_KINDS = {
     "primitive-inference-rule",
@@ -26,11 +28,16 @@ PRIMITIVE_DECLARATION_KINDS = {
 }
 KNOWN_SYNTAX_INFRASTRUCTURE = {
     "List.cons_ne_nil",
+    "Bool.or_eq_true",
     "PM.Elementary",
     "PM.Formation.ofElementary",
     "Elementary.schemaInstance",
     "NormalizesScoped.disjCongr",
+    "NormalizesScoped.disjLeftReverse",
+    "NormalizesScoped.disjRightReverse",
     "NormalizesScoped.negCongr",
+    "NormalizesScoped.negAlways",
+    "NormalizesScoped.negSometimes",
     "NormalizesScoped.star_9_05_disj_independent_left",
     "NormalizesScoped.star_9_05_disj_independent_right",
     "PM.FirstOrder.neg",
@@ -42,6 +49,14 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "PM.FirstOrder.disjSometimesAlways",
     "PM.Apparent.openHead",
     "PM.Apparent.elementaryValue",
+    # Capture-safe real/apparent scope operations and syntactic occurrence
+    # predicates.  These form and inspect indexed syntax; they are not PM
+    # theorem dependencies.
+    "Apparent.Significant",
+    "Apparent.significant",
+    "Apparent.abstractRealHead",
+    "Apparent.openRealHead",
+    "Apparent.openRealHead_abstractRealHead",
     "NormalizesScopedAt.disjCongr",
     "OrderedAssertion.elementary",
     # A fixed assigned-order target is a carrier spelling, not a historical

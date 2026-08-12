@@ -22,3 +22,15 @@ inventing a separately numbered proposition.  With these, ✱10·35 is closed
 over the exact printed ✱3·26/✱10·11/✱10·23/✱3·27/✱10·28/✱3·2/✱10·11·21
 chain.  The homogeneous batch is now `awaiting-ci`; no
 duplicate prerequisite metadata IDs were introduced.
+
+## Strict promotion audit
+
+A temporary five-item `kernel-checked` simulation passes both dependency and
+editorial gates, then restores the batch to `awaiting-ci`.  ✱10·27 and ✱10·28
+are reviewed relaxed closures: their exact targets reuse the completed ✱9·21
+and ✱9·22 normalizations, while the longer printed scope-manipulation chains
+are not replayed in the public wrappers.  ✱10·271 and ✱10·281 retain exact
+dependencies on ✱10·22 and their respective lifting theorem.  ✱10·35 indexes
+every directly called ✱3 simplification/product theorem, ✱10·23, ✱10·28, and
+the ✱10·11 component of the composed `✱10·11·21` rule use; the composite label
+itself is explicitly recorded as printed but not an independent proposition.
