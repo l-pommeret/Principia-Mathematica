@@ -228,4 +228,31 @@ theorem star_5_5 {Γ} (p q : PM.Elementary Γ) :
   have dup := infer (PM.FirstEdition.Volume1.Star3.star_3_2 p p) (PM.FirstEdition.Volume1.Star2.star_2_43 p (p ∧ₚ p))
   exact compose dup lift
 
+/-- PM I (1910), p. 130, ✱5·501. -/
+theorem star_5_501 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ (q ≡ₚ (p ≡ₚ q))) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have forward : ⊢ₚ (p ⊃ₚ (q ⊃ₚ (p ≡ₚ q))) :=
+    infer (star_5_1 p q) (PM.FirstEdition.Volume1.Star3.star_3_3 p q (p ≡ₚ q))
+  have backwardBase : ⊢ₚ ((p ∧ₚ (p ≡ₚ q)) ⊃ₚ q) := by
+    have hp : ⊢ₚ ((p ∧ₚ (p ≡ₚ q)) ⊃ₚ p) := PM.FirstEdition.Volume1.Star3.star_3_26 p (p ≡ₚ q)
+    have he : ⊢ₚ ((p ∧ₚ (p ≡ₚ q)) ⊃ₚ (p ⊃ₚ q)) :=
+      compose (PM.FirstEdition.Volume1.Star3.star_3_27 p (p ≡ₚ q)) (PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ q) (q ⊃ₚ p))
+    have pair := infer hp (infer he (PM.FirstEdition.Volume1.Star3.star_3_2 ((p ∧ₚ (p ≡ₚ q)) ⊃ₚ p) ((p ∧ₚ (p ≡ₚ q)) ⊃ₚ (p ⊃ₚ q))))
+    have lift := infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 (p ∧ₚ (p ≡ₚ q)) (p ∧ₚ (p ≡ₚ q)) p (p ⊃ₚ q))
+    have dup := infer (PM.FirstEdition.Volume1.Star3.star_3_2 (p ∧ₚ (p ≡ₚ q)) (p ∧ₚ (p ≡ₚ q))) (PM.FirstEdition.Volume1.Star2.star_2_43 (p ∧ₚ (p ≡ₚ q)) ((p ∧ₚ (p ≡ₚ q)) ∧ₚ (p ∧ₚ (p ≡ₚ q))))
+    exact compose (compose dup lift) (PM.FirstEdition.Volume1.Star3.star_3_35 p q)
+  have backward := infer backwardBase (PM.FirstEdition.Volume1.Star3.star_3_3 p (p ≡ₚ q) q)
+  have pair := infer forward (infer backward (PM.FirstEdition.Volume1.Star3.star_3_2 (p ⊃ₚ (q ⊃ₚ (p ≡ₚ q))) (p ⊃ₚ ((p ≡ₚ q) ⊃ₚ q)))
+  have lift := infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 p p (q ⊃ₚ (p ≡ₚ q)) ((p ≡ₚ q) ⊃ₚ q))
+  have dup := infer (PM.FirstEdition.Volume1.Star3.star_3_2 p p) (PM.FirstEdition.Volume1.Star2.star_2_43 p (p ∧ₚ p))
+  exact compose dup lift
+
 end PM.FirstEdition.Volume1.Star5
