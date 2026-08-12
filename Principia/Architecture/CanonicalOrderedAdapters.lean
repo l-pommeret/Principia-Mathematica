@@ -40,4 +40,13 @@ def ofThirdOrder : FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
 @[simp] theorem ofApparent_neg (p : Apparent Γ Δ) :
     ofApparent (∼ₐ p) = .neg (ofApparent p) := rfl
 
+/-- Canonical Raw embedding of printed line (4) of ✱9·21.  The subsequent
+definitions ✱9·06, ✱1·01 and ✱9·08 are represented by `smartNeg` and
+`smartDisj`; this declaration itself makes no assertion or normalization
+claim. -/
+def star_9_21_line4_raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofThirdOrder (FirstOrderMatrix.abstractThirdOuter
+    (PM.Quantified.sometimes
+      (PM.Architecture.FirstOrderPrerequisites.star_9_21_line3_matrix φ ψ)))
+
 end PM.Architecture.CanonicalOrderedAdapters
