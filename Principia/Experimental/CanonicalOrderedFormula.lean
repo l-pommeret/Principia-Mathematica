@@ -44,10 +44,12 @@ def MatrixRaw.toRaw : MatrixRaw Γ → Raw Γ
 def MatrixRaw.smartNeg : MatrixRaw Γ → MatrixRaw Γ
   | matrix => .neg matrix
 
+/- Repeated apparent variables of the same elementary type remain at the same
+first assigned order. Binder depth is not proposition type order. -/
 def assignedOrder : Raw Γ → Nat
   | .elementary _ => 0
   | .bound _ => 0
-  | .quantified _ body => assignedOrder body + 1
+  | .quantified _ body => max 1 (assignedOrder body)
   | .neg proposition => assignedOrder proposition
   | .disj left right => max (assignedOrder left) (assignedOrder right)
 
@@ -319,5 +321,29 @@ theorem star_9_31_line2_canonical (φ : Apparent Γ [.elementaryProposition]) :
   apply assertion_star_9_03_02
   exact Assertion.convert (star_9_31_line1_identification φ)
     (star_9_31_line1_canonical φ)
+
+theorem assignedOrder_matrix_toRaw (matrix : MatrixRaw Γ) :
+    assignedOrder matrix.toRaw = 0 := by
+  induction matrix <;> simp [MatrixRaw.toRaw, assignedOrder, *]
+
+theorem assignedOrder_ofApparent (matrix : Apparent Γ Δ) :
+    assignedOrder (ofApparent matrix) = 0 := by
+  induction matrix <;> simp [ofApparent, assignedOrder, *]
+
+/-- The normalized line (2) of ✱9·31 is first-order even though its canonical
+AST contains two apparent binders.  This is the bridge needed before the
+second printed application of ✱9·13. -/
+theorem star_9_31_line2_assignedOrder
+    (φ : Apparent Γ [.elementaryProposition]) :
+    assignedOrder (line2Normal (star_9_31_canonical_matrix φ)
+      (star_9_31_canonical_conclusion φ)) = 1 := by
+  rw [← star_9_03_02_line1_line2]
+  rw [← star_9_31_line1_identification]
+  rw [firstOrderToSecondAll_reduction]
+  simp [OrderedFormula.alwaysFirstOrder, ofOrdered, ofSecondOrder, ofFirstOrder,
+    assignedOrder, assignedOrder_ofApparent, star_9_31_line1_matrix,
+    star_9_31_primitive_payload, FirstOrder.abstractRealOuter,
+    FirstOrder.impElementaryToFirst, FirstOrder.disjElementaryLeft,
+    FirstOrder.weakenReal]
 
 end PM.Experimental.CanonicalOrderedFormula
