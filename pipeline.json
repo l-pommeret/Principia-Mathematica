@@ -2318,18 +2318,22 @@
         "PM1:✱9·32",
         "PM1:✱9·33",
         "PM1:✱9·34",
-        "PM1:✱9·35"
+        "PM1:✱9·35",
+        "PM1:✱9·36",
+        "PM1:✱9·361",
+        "PM1:✱9·37",
+        "PM1:✱9·371"
       ],
       "source": "PM volume I, first edition, pp. 140–141, leaves 162–163",
       "prompt_path": "aristotle/Q259.md",
       "audit_path": "reviews/Q259-review.md",
       "audit_status": "A",
       "audit_label": "A-interface-only",
-      "lean_scope": "exact PM1 ✱9·3, ✱9·31, ✱9·32, ✱9·33, ✱9·34 and ✱9·35 in the audited assigned-first-order interface",
+      "lean_scope": "exact PM1 ✱9·3, ✱9·31, ✱9·32, ✱9·33, ✱9·34–·371 in the audited assigned-first-order interface",
       "depends_on": [],
       "interface_only": true,
       "source_backfill_required": false,
-      "integration_status": "kernel-checked-narrow-judgements-9-3-34-35; remaining-Q259-items-await-remap",
+      "integration_status": "kernel-checked-narrow-judgements-9-3-34-371; remaining-Q259-items-await-remap",
       "canonical_integration_forbidden": true,
       "requires_one_to_one_kernel_remap": true,
       "parallel_group": "STAR9-INTERFACE",
@@ -2346,10 +2350,14 @@
         "conclusion": "success",
         "scope": "canonical narrow Star9KernelAssertion for PM1:✱9·3; not OrderedAssertion"
       },
-      "kernel_checked_items": ["PM1:✱9·3", "PM1:✱9·34", "PM1:✱9·35"],
+      "kernel_checked_items": ["PM1:✱9·3", "PM1:✱9·34", "PM1:✱9·35", "PM1:✱9·36", "PM1:✱9·361", "PM1:✱9·37", "PM1:✱9·371"],
       "kernel_checked_evidence": {
         "PM1:✱9·34": {"commit": "d9fe80c3d20bd5aef361b729f9f422ba17591da5", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31578445311", "conclusion": "success", "scope": "exact narrow Star934KernelAssertion"},
-        "PM1:✱9·35": {"commit": "d9fe80c3d20bd5aef361b729f9f422ba17591da5", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31578445311", "conclusion": "success", "scope": "exact narrow Star935KernelAssertion"}
+        "PM1:✱9·35": {"commit": "d9fe80c3d20bd5aef361b729f9f422ba17591da5", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31578445311", "conclusion": "success", "scope": "exact narrow Star935KernelAssertion"},
+        "PM1:✱9·36": {"commit": "e322d45b5fadd0091b652d0a751a10b737abdbae", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31581077931", "conclusion": "success", "scope": "exact narrow Star936KernelAssertion"},
+        "PM1:✱9·361": {"commit": "e322d45b5fadd0091b652d0a751a10b737abdbae", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31581077931", "conclusion": "success", "scope": "exact narrow Star9361KernelAssertion"},
+        "PM1:✱9·37": {"commit": "e322d45b5fadd0091b652d0a751a10b737abdbae", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31581077931", "conclusion": "success", "scope": "exact narrow Star937KernelAssertion"},
+        "PM1:✱9·371": {"commit": "e322d45b5fadd0091b652d0a751a10b737abdbae", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31581077931", "conclusion": "success", "scope": "exact narrow Star9371KernelAssertion"}
       },
       "submission_gate": "satisfied for isolated interface only; PM source collation complete, canonical remap pending",
       "aristotle_project_id": "41bd2b28-f8ba-46d4-bfa4-b4317ade2525",

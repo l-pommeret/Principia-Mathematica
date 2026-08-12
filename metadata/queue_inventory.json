@@ -18,7 +18,7 @@
     "planned_campaign_questions": 65,
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
-    "catalogued_items_without_campaign_question": 911,
+    "catalogued_items_without_campaign_question": 907,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
@@ -79,7 +79,7 @@
       "PM1:✱3": 28,
       "PM1:✱4": 61,
       "PM1:✱5": 36,
-      "PM1:✱9": 29
+      "PM1:✱9": 33
     },
     "planned_but_uncatalogued": {
       "PM1:✱9": 3
@@ -97,7 +97,7 @@
       "PM1:✱22": 79,
       "PM1:✱24": 48,
       "PM1:✱5": 2,
-      "PM1:✱9": 20,
+      "PM1:✱9": 16,
       "PM2:✱100": 12,
       "PM2:✱101": 15,
       "PM2:✱102": 28,
@@ -9870,8 +9870,10 @@
       "id": "PM1:✱9·36",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "awaiting-ci",
-      "campaign_questions": [],
+      "formal_status": "kernel-checked",
+      "campaign_questions": [
+        "Q259"
+      ],
       "ast": {
         "status": "parsed",
         "sha256": "efbaef93720b364dbeff39ea870c0ba5ad567f457288ecde4cbad415bcdecc11"
@@ -9884,8 +9886,10 @@
       "id": "PM1:✱9·361",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "awaiting-ci",
-      "campaign_questions": [],
+      "formal_status": "kernel-checked",
+      "campaign_questions": [
+        "Q259"
+      ],
       "ast": {
         "status": "parsed",
         "sha256": "d89b6a4ceaf7f697bcd8873d107ccbaba1fb12a450688b6d9311b7bc56a98cff"
@@ -9898,8 +9902,10 @@
       "id": "PM1:✱9·37",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "awaiting-ci",
-      "campaign_questions": [],
+      "formal_status": "kernel-checked",
+      "campaign_questions": [
+        "Q259"
+      ],
       "ast": {
         "status": "parsed",
         "sha256": "f470879e9b6ad779e000c078904a9e33e6bc6a7b8d245f984621c0828b1a99fa"
@@ -9912,8 +9918,10 @@
       "id": "PM1:✱9·371",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "awaiting-ci",
-      "campaign_questions": [],
+      "formal_status": "kernel-checked",
+      "campaign_questions": [
+        "Q259"
+      ],
       "ast": {
         "status": "parsed",
         "sha256": "4220ad07009aab1ba6cce72a021bea144d8cd0f7e5cc2f2b73fff56370a8e9bb"
@@ -16774,10 +16782,6 @@
     "PM1:✱2·33",
     "PM1:✱5·74",
     "PM1:✱5·75",
-    "PM1:✱9·36",
-    "PM1:✱9·361",
-    "PM1:✱9·37",
-    "PM1:✱9·371",
     "PM1:✱9·4",
     "PM1:✱9·401",
     "PM1:✱9·41",

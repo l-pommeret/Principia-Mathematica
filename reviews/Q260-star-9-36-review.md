@@ -11,4 +11,6 @@ one fixed canonical-raw ✱9·21 witness.  Its endpoint is a source-labelled
 reading equality only: no generic canonical conversion, Raw detachment, or
 fictional `OrderedAssertion` reification is introduced.
 
-Status: awaiting CI.
+GitHub Actions run `31581077931` succeeded at immutable commit
+`e322d45b5fadd0091b652d0a751a10b737abdbae`, certifying this exact narrow
+judgement only.

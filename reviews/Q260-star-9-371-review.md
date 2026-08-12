@@ -9,4 +9,6 @@ scope-directed ✱9·05 readings.
 ✱9·22 witness, and both normalization certificates.  It introduces neither a
 generic Raw detachment nor an `OrderedAssertion` reification.
 
-Status: awaiting CI.
+GitHub Actions run `31581077931` succeeded at immutable commit
+`e322d45b5fadd0091b652d0a751a10b737abdbae`, certifying this exact narrow
+judgement only.

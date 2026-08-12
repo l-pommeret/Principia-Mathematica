@@ -6,4 +6,6 @@ independent operands. `Star9361KernelAssertion` retains the actual elementary
 derivation, the narrow ✱9·21 witness, and separate scope certificates.
 
 No `OrderedAssertion` surrogate, oracle, generic detachment, or classical
-reasoning is used. Status: awaiting CI.
+reasoning is used. GitHub Actions run `31581077931` succeeded at immutable
+commit `e322d45b5fadd0091b652d0a751a10b737abdbae`, certifying this exact
+narrow judgement only.
