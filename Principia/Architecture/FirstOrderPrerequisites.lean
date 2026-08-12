@@ -368,6 +368,55 @@ def derive_star_9_21_line2 (φ ψ : Apparent Γ [.elementaryProposition]) :
       OrderedAssertion.star_9_1_instance χ (.var .zero)
   exact OrderedAssertion.star_9_12_elementary_to_first line1 lineOneInstance
 
+/-- The matrix `χ(x)` in line (3) of ✱9·21, with the standing real `z`
+retained in the ambient context and `y` the inner apparent binder. -/
+def star_9_21_line3_matrix (φ ψ : Apparent Γ [.elementaryProposition]) :
+    FirstOrderMatrix (.elementaryProposition :: Γ)
+      [.elementaryProposition] :=
+  let φx := Apparent.rename (fun _ => .succ .zero) (Apparent.weakenReal φ)
+  let ψx := Apparent.rename (fun _ => .succ .zero) (Apparent.weakenReal ψ)
+  let φy := Apparent.rename (fun _ => .zero) (Apparent.weakenReal φ)
+  let ψz : Apparent (.elementaryProposition :: Γ)
+      (.elementaryProposition :: .elementaryProposition :: []) :=
+    Apparent.ofElementary (Apparent.openHead ψ)
+  .quantified (FirstOrder.sometimes (matrixImp (matrixImp φx ψx)
+    (matrixImp φy ψz)))
+
+@[simp] theorem star_9_21_line3_matrix_beta
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    FirstOrderMatrix.atReal (star_9_21_line3_matrix φ ψ) .zero =
+      .quantified (FirstOrder.sometimes
+        (matrixImp
+          (Apparent.ofElementary ((Apparent.openHead φ) ⊃ₚ Apparent.openHead ψ))
+          (matrixImp (Apparent.weakenReal φ)
+            (Apparent.ofElementary (Apparent.openHead ψ))))) := by
+  simp only [FirstOrderMatrix.atReal, FirstOrderMatrix.instantiate,
+    FirstOrderMatrix.substitute, FirstOrder.substitute, star_9_21_line3_matrix]
+  change FirstOrderMatrix.quantified (FirstOrder.sometimes
+    (Apparent.substitute _ (matrixImp (matrixImp _ _) (matrixImp _ _)))) =
+    FirstOrderMatrix.quantified (FirstOrder.sometimes _)
+  simp only [matrixImp, Apparent.substitute]
+  rw [Apparent.substitute_liftInstantiate_renameOuter_weakenReal,
+    Apparent.substitute_liftInstantiate_renameOuter_weakenReal,
+    Apparent.substitute_liftInstantiate_renameInner_weakenReal,
+    Apparent.substitute_liftInstantiate_ofElementary]
+  rfl
+
+/-- Printed line (3) of ✱9·21: the closed higher ✱9·1 instance is detached
+from line (2) by its one audited mixed ✱9·12 specialization. -/
+def derive_star_9_21_line3 (φ ψ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion (.secondOrderMatrix
+      (PM.Quantified.sometimes (star_9_21_line3_matrix φ ψ))) := by
+  apply OrderedAssertion.star_9_12_higher (star_9_21_line3_matrix φ ψ) .zero
+    (FirstOrder.sometimes
+      (matrixImp
+        (Apparent.ofElementary ((Apparent.openHead φ) ⊃ₚ Apparent.openHead ψ))
+        (matrixImp (Apparent.weakenReal φ)
+          (Apparent.ofElementary (Apparent.openHead ψ)))))
+  · exact star_9_21_line3_matrix_beta φ ψ
+  · exact derive_star_9_21_line2 φ ψ
+  · exact OrderedAssertion.star_9_1_higher (star_9_21_line3_matrix φ ψ) .zero
+
 
 /-- The exact judgement sought for ✱9·21.  It is a target contract, not an
 invented primitive: it becomes inhabited only by a derivation from the
