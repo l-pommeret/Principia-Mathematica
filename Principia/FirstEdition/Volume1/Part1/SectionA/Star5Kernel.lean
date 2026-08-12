@@ -512,4 +512,63 @@ theorem star_5_36 {Γ} (p q : PM.Elementary Γ) :
   exact infer backward
     (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
 
+/-- PM I (1910), p. 129, ✱5·11. -/
+theorem star_5_11 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ q) ∨ₚ ((∼ₚ p) ⊃ₚ q)) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer (PM.FirstEdition.Volume1.Star2.star_2_5 p q)
+    (PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) ((∼ₚ p) ⊃ₚ q))
+
+/-- PM I (1910), p. 129, ✱5·12. -/
+theorem star_5_12 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ q) ∨ₚ (p ⊃ₚ (∼ₚ q))) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer (PM.FirstEdition.Volume1.Star2.star_2_51 p q)
+    (PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) (p ⊃ₚ (∼ₚ q)))
+
+/-- PM I (1910), p. 130, ✱5·61.  Under `∼q`, ✱2·55 eliminates
+the `q` branch of `p ∨ q`; the converse adds that branch by ✱2·2. -/
+theorem star_5_61 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (((p ∨ₚ q) ∧ₚ (∼ₚ q)) ≡ₚ (p ∧ₚ (∼ₚ q))) := by
+  let a := (p ∨ₚ q) ∧ₚ (∼ₚ q)
+  let b := p ∧ₚ (∼ₚ q)
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have duplicate : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
+    intro t
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t) (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
+  have join : ∀ {u v w : PM.Elementary Γ}, (⊢ₚ (u ⊃ₚ v)) → (⊢ₚ (u ⊃ₚ w)) → (⊢ₚ (u ⊃ₚ (v ∧ₚ w))) := by
+    intro u v w huv huw
+    have pair : ⊢ₚ ((u ⊃ₚ v) ∧ₚ (u ⊃ₚ w)) := infer huw (infer huv (PM.FirstEdition.Volume1.Star3.star_3_2 (u ⊃ₚ v) (u ⊃ₚ w)))
+    exact compose (duplicate u) (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 u u v w))
+  have forward : ⊢ₚ (a ⊃ₚ b) := by
+    have haDisj : ⊢ₚ (a ⊃ₚ (p ∨ₚ q)) := PM.FirstEdition.Volume1.Star3.star_3_26 (p ∨ₚ q) (∼ₚ q)
+    have haNotQ : ⊢ₚ (a ⊃ₚ (∼ₚ q)) := PM.FirstEdition.Volume1.Star3.star_3_27 (p ∨ₚ q) (∼ₚ q)
+    have haElim : ⊢ₚ (a ⊃ₚ ((q ∨ₚ p) ⊃ₚ p)) := compose haNotQ (PM.FirstEdition.Volume1.Star2.star_2_55 q p)
+    have haSwap : ⊢ₚ (a ⊃ₚ (q ∨ₚ p)) := compose haDisj (PM.Derivation.star_1_4 p q)
+    have haP : ⊢ₚ (a ⊃ₚ p) := compose (join haSwap haElim) (PM.FirstEdition.Volume1.Star3.star_3_35 (q ∨ₚ p) p)
+    exact join haP haNotQ
+  have backward : ⊢ₚ (b ⊃ₚ a) := by
+    have hbP : ⊢ₚ (b ⊃ₚ p) := PM.FirstEdition.Volume1.Star3.star_3_26 p (∼ₚ q)
+    have hbNotQ : ⊢ₚ (b ⊃ₚ (∼ₚ q)) := PM.FirstEdition.Volume1.Star3.star_3_27 p (∼ₚ q)
+    have hbDisj : ⊢ₚ (b ⊃ₚ (p ∨ₚ q)) := compose hbP (PM.FirstEdition.Volume1.Star2.star_2_2 p q)
+    exact join hbDisj hbNotQ
+  exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
+
 end PM.FirstEdition.Volume1.Star5
