@@ -114,6 +114,52 @@ def sourceLine5Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
     (.quantified .sometimes
       (.disj (.neg (weakenBound (phiYOuterRaw φ))) (psiZBodyRaw ψ)))
 
+/-- The actual ✱9·06 operands in printed line (4).  They are stated in the
+scope outside `z`: the antecedent already lies below the retained `y,x`
+binders, while the consequent is shifted past both of them. -/
+def line4AntecedentRaw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  dropUnusedBound (rawImp (star_9_21_phi_x_closed_raw φ)
+    (star_9_21_psi_x_closed_raw ψ))
+
+def line4ConsequentRaw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  rawImp (star_9_21_phi_y_closed_raw φ) (star_9_21_psi_z_closed_raw ψ)
+
+def sourceLine4Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always (.quantified .sometimes (.quantified .sometimes
+    (.disj (.neg (weakenBound (line4AntecedentRaw φ ψ)))
+      (line4ConsequentRaw φ ψ))))
+
+def sourceLine5From906Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always (.quantified .sometimes
+    (.disj (.neg (line4AntecedentRaw φ ψ))
+      (.quantified .sometimes (line4ConsequentRaw φ ψ))))
+
+theorem sourceLine4_to_line5
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScoped (sourceLine4Raw φ ψ) (sourceLine5From906Raw φ ψ) := by
+  apply NormalizesScoped.alwaysCongr
+  apply NormalizesScoped.sometimesCongr
+  exact NormalizesScoped.star_9_06_imp
+    (line4AntecedentRaw φ ψ) (line4ConsequentRaw φ ψ)
+
+theorem line4Carrier_eq_sourceLine4
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    line4Carrier φ ψ = sourceLine4Raw φ ψ := by
+  change star_9_21_line4_raw φ ψ = sourceLine4Raw φ ψ
+  rw [star_9_21_line4_raw_named]
+  have unused : UnusedBoundAt 0
+      (rawImp (star_9_21_phi_x_closed_raw φ)
+        (star_9_21_psi_x_closed_raw ψ)) :=
+    ⟨star_9_21_phi_x_closed_unused_zero φ,
+      star_9_21_psi_x_closed_unused_zero ψ⟩
+  have reinsert := weakenBound_dropUnusedBound
+    (rawImp (star_9_21_phi_x_closed_raw φ)
+      (star_9_21_psi_x_closed_raw ψ)) unused
+  simp only [star_9_21_line4_named_raw, sourceLine4Raw,
+    line4AntecedentRaw, line4ConsequentRaw]
+  rw [reinsert]
+  rfl
+
 def sourceLine6Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
   line5Redex (.neg (implicationOuterRaw φ ψ))
     (.quantified .sometimes
