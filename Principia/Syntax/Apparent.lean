@@ -248,6 +248,34 @@ proof of ✱9·3. -/
     elementaryValue (renameReal (fun v => .succ v) φ) (.var .zero) = openHead φ := by
   simpa [weakenReal] using elementaryValue_weakenReal_zero φ
 
+/-- Instantiating the outer apparent slot at the leading real after embedding
+a one-place matrix as the outer of two slots recovers its displayed elementary
+value.  This is the capture-safe beta law used for the `φx` branch of the
+higher ✱9·1 instance. -/
+@[simp] theorem substitute_liftInstantiate_renameOuter_weakenReal
+    (φ : Apparent Γ [.elementaryProposition]) :
+    substitute (liftSubstitution
+      (instantiateSubstitution (.real (.zero : RealVar
+        (.elementaryProposition :: Γ) .elementaryProposition))))
+      (rename (fun _ => .succ .zero) (weakenReal φ)) =
+      (ofElementary (openHead φ) : Apparent (.elementaryProposition :: Γ)
+        [.elementaryProposition]) := by
+  induction φ with
+  | constant name => rfl
+  | real realVariable => rfl
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => rfl
+      | succ emptyVariable => exact nomatch emptyVariable
+  | neg proposition ih =>
+      simpa [substitute, rename, weakenReal, renameReal, ofElementary, openHead]
+        using congrArg neg ih
+  | disj left right ihLeft ihRight =>
+      change disj (substitute _ (rename _ (weakenReal left)))
+        (substitute _ (rename _ (weakenReal right))) =
+        disj (ofElementary (openHead left)) (ofElementary (openHead right))
+      rw [ihLeft, ihRight]
+
 /-- The bivariate matrix `φx ∨ φy` used in the first application of ✱9·1
 in the proof of ✱9·3.  The left occurrence opens the sole binder as the new
 real variable `x`; the right occurrence retains it as the apparent variable
