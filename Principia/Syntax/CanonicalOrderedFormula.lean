@@ -145,11 +145,31 @@ When crossing an apparent binder, every replacement is weakened explicitly;
 bound indices themselves remain bound indices. -/
 abbrev Substitution (Γ Ξ : RealContext) := Elementary Γ → Raw Ξ
 
+namespace Substitution
+
+/-- Lift a Raw substitution through one apparent binder. -/
+def lift (σ : Substitution Γ Ξ) : Substitution Γ Ξ :=
+  fun proposition => weakenBound (σ proposition)
+
+def liftN : Nat → Substitution Γ Ξ → Substitution Γ Ξ
+  | 0, σ => σ
+  | n + 1, σ => lift (liftN n σ)
+
+@[simp] theorem lift_apply (σ : Substitution Γ Ξ) (proposition : Elementary Γ) :
+    lift σ proposition = weakenBound (σ proposition) := rfl
+
+@[simp] theorem liftN_zero (σ : Substitution Γ Ξ) : liftN 0 σ = σ := rfl
+
+@[simp] theorem liftN_succ (n : Nat) (σ : Substitution Γ Ξ) :
+    liftN (n + 1) σ = lift (liftN n σ) := rfl
+
+end Substitution
+
 def substitute (σ : Substitution Γ Ξ) : Raw Γ → Raw Ξ
   | .elementary proposition => σ proposition
   | .bound index => .bound index
   | .quantified quantifier body =>
-      .quantified quantifier (substitute (fun proposition => weakenBound (σ proposition)) body)
+      .quantified quantifier (substitute (Substitution.lift σ) body)
   | .neg proposition => .neg (substitute σ proposition)
   | .disj left right => .disj (substitute σ left) (substitute σ right)
 
