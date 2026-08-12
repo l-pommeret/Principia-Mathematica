@@ -51,4 +51,23 @@ abbrev Star_9_33Derivation (q : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Prop :=
   OrderedAssertion (FirstOrderQ259.star_9_33_target q φ)
 
+/-- PM I ✱9·32, following the printed `✱1·3; ✱9·13; ✱9·25` chain.
+The matrix passed to ✱9·13 is exactly `q ⊃ (φx ∨ q)`; the final conversion
+is solely the certified ✱9·03 reduction built into the target. -/
+theorem star_9_32 (rules : Q259ClosedRuleBook) (q : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star_9_32Derivation q φ := by
+  let body := Apparent.ofElementary (∼ₚ q) ∨ₐ (φ ∨ₐ Apparent.ofElementary q)
+  have elementaryLine : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+      (.elementary (Apparent.openHead body)) := by
+    exact OrderedAssertion.elementary
+      (PM.Derivation.star_1_3
+        (Apparent.openHead φ)
+        (Apparent.openHead (Apparent.ofElementary q)))
+  have universalLine : OrderedAssertion
+      (.firstOrder (FirstOrder.always body)) :=
+    OrderedAssertion.star_9_13 body elementaryLine
+  exact OrderedAssertion.star_9_12 universalLine
+    (rules.star_9_25 (∼ₚ q) (φ ∨ₐ Apparent.ofElementary q))
+
 end PM.Architecture.Q259ClosedRuleBook
