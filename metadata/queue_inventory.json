@@ -25,18 +25,19 @@
     "audit": {
       "A": 34,
       "A-kernel-checked": 1,
-      "kernel-checked": 1,
+      "kernel-checked": 2,
+      "kernel-checked-exact-narrow-judgements": 1,
       "partial-kernel-checked-first-order-9-12-13": 1,
       "partial-kernel-checked-star-9-21-22": 1,
-      "prepared-needs-kernel-context": 27
+      "prepared-needs-kernel-context": 25
     },
     "aristotle": {
-      "complete": 32,
+      "complete": 33,
       "complete-relaxed-printed-gaps": 1,
       "complete-relaxed-result-not-integrated": 1,
       "missing": 2,
       "needs-review": 8,
-      "not-submitted": 4,
+      "not-submitted": 3,
       "partial": 2,
       "submitted": 15
     }
@@ -9676,7 +9677,7 @@
       "id": "PM1:✱9·2",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "campaign_questions": [
         "Q256"
       ],
@@ -9757,7 +9758,7 @@
       "id": "PM1:✱9·25",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "campaign_questions": [
         "Q257"
       ],

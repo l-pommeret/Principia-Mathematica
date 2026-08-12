@@ -1137,7 +1137,7 @@
       "source": "PM volume I, first edition, pp. 120–122",
       "prompt_path": "aristotle/Q227.md",
       "audit_path": "reviews/Q227-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "kernel-checked",
       "lean_scope": "exact PM1 ✱4·01–✱4·02 definitions and ✱4·1, ✱4·12, ✱4·13",
       "depends_on": [
         "PM1:✱1·01",
@@ -1171,7 +1171,7 @@
       "source": "PM volume I, first edition, pp. 121–122",
       "prompt_path": "aristotle/Q228.md",
       "audit_path": "reviews/Q228-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "kernel-checked-exact-narrow-judgements",
       "lean_scope": "exact PM1 ✱4·11, ✱4·14, ✱4·15 and ✱4·2",
       "depends_on": [
         "PM1:✱2·1",
@@ -2249,7 +2249,14 @@
         "PM1:✱9·13"
       ],
       "parallel_group": "STAR9-WAVE-2",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "not-submitted",
+      "integration_status": "kernel-checked-closed-star925-kernel-assertion",
+      "integration_ci_evidence": {
+        "commit": "125839b146e32632b67146cbe46d71528b0798d4",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31577423330",
+        "conclusion": "success",
+        "scope": "exact closed Id.✱9·23.(✱9·04) Star925Kernel judgement for PM1:✱9·25"
+      }
     },
     "Q257": {
       "canonical_ids": [
@@ -2271,7 +2278,13 @@
         "PM1:✱9·23"
       ],
       "parallel_group": "STAR9-WAVE-3",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "complete",
+      "integration_ci_evidence": {
+        "commit": "125839b146e32632b67146cbe46d71528b0798d4",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31577423330",
+        "conclusion": "success",
+        "scope": "exact Star92KernelAssertion for PM1:✱9·2; adjacent items retain their own exact narrow judgements"
+      }
     },
     "Q258": {
       "canonical_ids": [

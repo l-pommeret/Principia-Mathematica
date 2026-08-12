@@ -14,13 +14,13 @@
     "declaration": "PM.Architecture.Q259ClosedRuleBook.star_9_2",
     "formal_scope": "exact mixed-order Raw judgement Star92KernelAssertion, parameterized by the displayed real value y; not OrderedAssertion",
     "source_status": "source-catalogued",
-    "formal_status": "awaiting-ci",
-    "integration_status": "awaiting-ci-star92-kernel-assertion",
+    "formal_status": "kernel-checked",
+    "integration_status": "kernel-checked-star92-kernel-assertion",
     "printed_dependencies": ["PM1:✱2·1", "PM1:✱9·1", "PM1:✱1·11", "PM1:✱9·05", "PM1:✱9·01", "PM1:✱1·01"],
     "lean_dependencies": ["Star92Kernel.derive"],
     "normalized_dependencies": [],
     "historical_dependency_relaxation": {"classification": "exact-kernel-chain", "added_beyond_print": [], "printed_but_unused": [], "strict_attempt_evidence": "reviews/Q256-star-9-2-review.md", "editorial_note": "The result remains a theorem-specific mixed-order assertion because the canonical homogeneous ordered syntax has no first-order-to-elementary implication."},
     "blocked_dependencies": ["homogeneous OrderedAssertion representation intentionally inapplicable"]
   }],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {"commit": "125839b146e32632b67146cbe46d71528b0798d4", "run": "31577423330", "conclusion": "success"}
 }
