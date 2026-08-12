@@ -139,6 +139,31 @@ theorem freshBelowAt_zero (depth : Nat) (p : Raw Γ) : FreshBelowAt depth 0 p :=
   | neg proposition ih => exact ih depth
   | disj left right ihLeft ihRight => exact ⟨ihLeft depth, ihRight depth⟩
 
+theorem freshBelowAt_shift (depth count : Nat) (p : Raw Γ) :
+    FreshBelowAt depth count p →
+      FreshBelowAt depth (count + 1) (shiftBoundAt depth p) := by
+  intro fresh
+  induction p generalizing depth count with
+  | elementary proposition => trivial
+  | bound index =>
+      simp only [FreshBelowAt, shiftBoundAt]
+      rcases fresh with inner | external
+      · have noShift : ¬ depth ≤ index := by omega
+        simp [shiftIndex, noShift]
+        exact Or.inl inner
+      · have doShift : depth ≤ index := by omega
+        simp [shiftIndex, doShift]
+        exact Or.inr (by omega)
+  | quantified quantifier body ih =>
+      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      exact ih (depth + 1) count fresh
+  | neg proposition ih =>
+      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      exact ih depth count fresh
+  | disj left right ihLeft ihRight =>
+      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      exact ⟨ihLeft depth count fresh.1, ihRight depth count fresh.2⟩
+
 /-- A Raw term does not use the binder located at `cutoff`.  This is the
 precise side condition needed to remove that binder without capture. -/
 def UnusedBoundAt (cutoff : Nat) : Raw Γ → Prop
@@ -241,6 +266,16 @@ def substitute (σ : Substitution Γ Ξ) : Raw Γ → Raw Ξ
 
 @[simp] theorem substitute_bound (σ : Substitution Γ Ξ) (index : Nat) :
     substitute σ (.bound index) = .bound index := rfl
+
+theorem substitution_liftN_fresh (σ : Substitution Γ Ξ)
+    (count : Nat) (proposition : Elementary Γ) :
+    FreshBelow count (Substitution.liftN count σ proposition) := by
+  induction count with
+  | zero => exact freshBelowAt_zero 0 _
+  | succ count ih =>
+      change FreshBelowAt 0 (count + 1)
+        (shiftBoundAt 0 (Substitution.liftN count σ proposition))
+      exact freshBelowAt_shift 0 count _ ih
 
 def smartNeg : Raw Γ → Raw Γ
   | .quantified .always body => .quantified .sometimes (smartNeg body)
