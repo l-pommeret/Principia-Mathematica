@@ -139,6 +139,25 @@ def openBoundAt (cutoff : Nat) : Raw Γ → Raw (.elementaryProposition :: Γ)
 def openHeadRaw (p : Raw Γ) : Raw (.elementaryProposition :: Γ) :=
   openBoundAt 0 p
 
+@[simp] theorem openBoundAt_smartNeg (cutoff : Nat) (p : Raw Γ) :
+    openBoundAt cutoff (smartNeg p) =
+      smartNeg (openBoundAt cutoff p) := by
+  induction p generalizing cutoff with
+  | elementary p => rfl
+  | bound index =>
+      by_cases hEq : index = cutoff <;>
+        simp [smartNeg, openBoundAt, hEq]
+      by_cases hLt : cutoff < index <;>
+        simp [smartNeg, openBoundAt, hEq, hLt]
+  | quantified quantifier body ih =>
+      cases quantifier <;> simp [smartNeg, openBoundAt, ih]
+  | neg p => rfl
+  | disj p q => rfl
+
+@[simp] theorem openHeadRaw_smartNeg (p : Raw Γ) :
+    openHeadRaw (smartNeg p) = smartNeg (openHeadRaw p) :=
+  openBoundAt_smartNeg 0 p
+
 def smartDisjScopedAux : Nat → Raw Γ → Raw Γ → Raw Γ
   | 0, left, right => .disj left right
   | fuel + 1, .quantified .always left, .quantified .sometimes right =>
@@ -157,6 +176,19 @@ def rawSize : Raw Γ → Nat
   | .elementary _ | .bound _ => 1
   | .quantified _ body | .neg body => rawSize body + 1
   | .disj left right => rawSize left + rawSize right + 1
+
+@[simp] theorem rawSize_openBoundAt (cutoff : Nat) (p : Raw Γ) :
+    rawSize (openBoundAt cutoff p) = rawSize p := by
+  induction p generalizing cutoff with
+  | elementary p => rfl
+  | bound index =>
+      by_cases hEq : index = cutoff <;>
+        simp [openBoundAt, rawSize, hEq]
+      by_cases hLt : cutoff < index <;>
+        simp [openBoundAt, rawSize, hEq, hLt]
+  | quantified quantifier body ih => simp [openBoundAt, rawSize, ih]
+  | neg p ih => simp [openBoundAt, rawSize, ih]
+  | disj p q ihp ihq => simp [openBoundAt, rawSize, ihp, ihq]
 
 def smartDisjScoped (left right : Raw Γ) : Raw Γ :=
   smartDisjScopedAux (rawSize left + rawSize right) left right
