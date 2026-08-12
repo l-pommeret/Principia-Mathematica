@@ -5,6 +5,7 @@ import Principia.Architecture.Star931Kernel
 import Principia.Architecture.Star922Kernel
 import Principia.Architecture.Star92Kernel
 import Principia.Architecture.Star935Kernel
+import Principia.Architecture.Star936Kernel
 
 namespace PM.Architecture.Q259ClosedRuleBook
 
@@ -90,6 +91,19 @@ abbrev Star_9_35Derivation (p : Elementary Γ)
 theorem star_9_35 (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Star_9_35Derivation p φ :=
   Star935Kernel.derive p φ
+
+/-- Exact closed kernel contract for the universal permutation theorem
+✱9·36.  Its ✱9·21 stage remains the audited canonical Raw witness, rather
+than an unprinted reification into `OrderedAssertion`. -/
+abbrev Star_9_36Derivation (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop :=
+  Star936Kernel.Star936KernelAssertion p φ
+
+/-- PM I ✱9·36 through the source-fixed
+`✱1·4; ✱9·13·21; (✱9·03·04)` chain. -/
+theorem star_9_36 (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Star_9_36Derivation p φ :=
+  Star936Kernel.derive p φ
 
 /-- The exact assertion contract for the universal right-injection analogue
 of ✱1·3. It is a target, never a `Q259ClosedRuleBook` field. -/
