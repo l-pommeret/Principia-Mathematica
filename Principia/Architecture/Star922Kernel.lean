@@ -16,6 +16,21 @@ def line4Carrier (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
   ofOrdered (star_9_13_higher_target
     (.always (star_9_21_line3_matrix φ ψ)))
 
+/-- Literal ✱9·08 redex in printed line (5). -/
+def line5Redex (existentialBody universalBody : Raw Γ) : Raw Γ :=
+  .disj (.quantified .sometimes existentialBody)
+    (.quantified .always universalBody)
+
+def line6From908 (existentialBody universalBody : Raw Γ) : Raw Γ :=
+  .quantified .always (.quantified .sometimes
+    (.disj (shiftBoundAt 1 existentialBody)
+      (shiftBoundAt 1 universalBody)))
+
+theorem line5_to_line6 (existentialBody universalBody : Raw Γ) :
+    NormalizesScopedAt 0 (line5Redex existentialBody universalBody)
+      (line6From908 existentialBody universalBody) := by
+  exact star_9_08_at 0 existentialBody universalBody
+
 /-- Exact ✱9·07 redex used in printed line (6)→(7). -/
 def line6Redex (antecedent consequent : Raw Γ) : Raw Γ :=
   .disj (.quantified .always antecedent)
@@ -37,9 +52,18 @@ structure Star922KernelAssertion
     (φ ψ : Apparent Γ [.elementaryProposition]) where
   line4 : OrderedAssertion (star_9_13_higher_target
     (.always (star_9_21_line3_matrix φ ψ)))
+  line5ExistentialBody : Raw Γ
+  line5UniversalBody : Raw Γ
+  line5 : Raw Γ
+  line5Shape : line5 = line5Redex line5ExistentialBody line5UniversalBody
+  line6FromLine5 : Raw Γ
+  line6FromLine5Shape : line6FromLine5 =
+    line6From908 line5ExistentialBody line5UniversalBody
+  star908 : NormalizesScopedAt 0 line5 line6FromLine5
   antecedent : Raw Γ
   consequent : Raw Γ
   line6Exact : Raw Γ
+  line6CarrierExact : line6Exact = line6FromLine5
   line6Shape : line6Exact = line6Redex antecedent consequent
   line7 : Raw Γ
   line7Shape : line7 = line7Raw antecedent consequent
