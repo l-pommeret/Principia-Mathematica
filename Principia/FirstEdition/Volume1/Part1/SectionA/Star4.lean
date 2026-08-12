@@ -808,4 +808,42 @@ theorem star_4_64 {Γ} (p q : PM.Elementary Γ) :
     exact infer liftT liftCompose
   exact infer bToA (infer aToB (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
 
+/-- PM I (1910), p. 127, ✱4·85.  The two directions are obtained by
+lifting the corresponding component of `p ≡ q` below the common antecedent
+`r`; `✱3·47` then packages them under the equivalence hypothesis. -/
+theorem star_4_85 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ≡ₚ q) ⊃ₚ ((r ⊃ₚ p) ≡ₚ (r ⊃ₚ q))) := by
+  let e := p ≡ₚ q
+  let a := r ⊃ₚ p
+  let b := r ⊃ₚ q
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have duplicate : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
+    intro t
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t)
+      (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
+  have join : ∀ {u v w : PM.Elementary Γ}, (⊢ₚ (u ⊃ₚ v)) → (⊢ₚ (u ⊃ₚ w)) → (⊢ₚ (u ⊃ₚ (v ∧ₚ w))) := by
+    intro u v w huv huw
+    have pair := infer huw (infer huv (PM.FirstEdition.Volume1.Star3.star_3_2 (u ⊃ₚ v) (u ⊃ₚ w)))
+    exact compose (duplicate u) (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 u u v w))
+  have epq : ⊢ₚ (e ⊃ₚ (p ⊃ₚ q)) :=
+    PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ q) (q ⊃ₚ p)
+  have eqp : ⊢ₚ (e ⊃ₚ (q ⊃ₚ p)) :=
+    PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ q) (q ⊃ₚ p)
+  have liftForward : ⊢ₚ (e ⊃ₚ (r ⊃ₚ (p ⊃ₚ q))) :=
+    compose epq (PM.FirstEdition.Volume1.Star2.star_2_02 r (p ⊃ₚ q))
+  have liftBackward : ⊢ₚ (e ⊃ₚ (r ⊃ₚ (q ⊃ₚ p))) :=
+    compose eqp (PM.FirstEdition.Volume1.Star2.star_2_02 r (q ⊃ₚ p))
+  have forward : ⊢ₚ (e ⊃ₚ (a ⊃ₚ b)) :=
+    compose liftForward (PM.FirstEdition.Volume1.Star2.star_2_77 r p q)
+  have backward : ⊢ₚ (e ⊃ₚ (b ⊃ₚ a)) :=
+    compose liftBackward (PM.FirstEdition.Volume1.Star2.star_2_77 r q p)
+  exact join forward backward
+
 end PM.FirstEdition.Volume1.Star4
