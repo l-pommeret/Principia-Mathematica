@@ -56,6 +56,9 @@ inductive OrderedFormula (Γ : RealContext) : Nat → Type where
   It remains distinct from the historical `secondOrder` carrier; the explicit
   embedding is provided by `FirstOrderMatrix.ofSecondOrder`. -/
   | secondOrderMatrix : FirstOrderMatrix.Quantified Γ [] → OrderedFormula Γ 2
+  /-- One audited order-three carrier, used solely by the higher ✱9·13 scope
+  closure in the printed proof of ✱9·21. -/
+  | thirdOrderMatrix : FirstOrderMatrix.ThirdOrder Γ [] → OrderedFormula Γ 3
   | neg : OrderedFormula Γ order → OrderedFormula Γ order
   | disj : OrderedDisjunctionScope order → OrderedFormula Γ order →
       OrderedFormula Γ order → OrderedFormula Γ order
@@ -113,6 +116,7 @@ def renameReal (ρ : Apparent.RealRenaming Γ Ξ) :
         cases p with
         | always body => exact .always (FirstOrderMatrix.renameReal ρ body)
         | sometimes body => exact .sometimes (FirstOrderMatrix.renameReal ρ body))
+  | .thirdOrderMatrix p => .thirdOrderMatrix (FirstOrderMatrix.renameThirdReal ρ p)
   | .neg p => .neg (renameReal ρ p)
   | .disj scope p q => .disj scope (renameReal ρ p) (renameReal ρ q)
 
@@ -125,6 +129,7 @@ def eraseElementary? : OrderedFormula Γ order → Option (Elementary Γ)
   | .firstOrderMatrix _ => none
   | .secondOrder _ => none
   | .secondOrderMatrix _ => none
+  | .thirdOrderMatrix _ => none
   | .neg p => (eraseElementary? p).map .neg
   | .disj .elementary p q => do
       let p ← eraseElementary? p

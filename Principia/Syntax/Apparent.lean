@@ -959,6 +959,23 @@ def star_9_1_higher_target
     (value : RealVar Γ .elementaryProposition) : Quantified Γ [] :=
   impToQuantified (atReal body value) (PM.Quantified.sometimes body)
 
+/-- The sole third assigned-order carrier needed when ✱9·13 closes a real
+variable in an enriched order-two matrix. -/
+abbrev ThirdOrder (Γ : RealContext) (Δ : BoundContext) :=
+  PM.Quantified (Quantified Γ) Δ
+
+def renameQuantifiedReal (ρ : Apparent.RealRenaming Γ Ξ) :
+    Quantified Γ Δ → Quantified Ξ Δ
+  | PM.Quantified.always body => PM.Quantified.always (renameReal ρ body)
+  | PM.Quantified.sometimes body => PM.Quantified.sometimes (renameReal ρ body)
+
+def renameThirdReal (ρ : Apparent.RealRenaming Γ Ξ) :
+    ThirdOrder Γ Δ → ThirdOrder Ξ Δ
+  | PM.Quantified.always body =>
+      PM.Quantified.always (renameQuantifiedReal ρ body)
+  | PM.Quantified.sometimes body =>
+      PM.Quantified.sometimes (renameQuantifiedReal ρ body)
+
 @[simp] theorem impToQuantified_sometimes
     (premise : FirstOrderMatrix Γ Δ)
     (body : FirstOrderMatrix Γ (.elementaryProposition :: Δ)) :
