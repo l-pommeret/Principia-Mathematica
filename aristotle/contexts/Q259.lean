@@ -186,6 +186,23 @@ def openHead : Apparent Γ [.elementaryProposition] →
   | .neg proposition => .neg (openHead proposition)
   | .disj left right => .disj (openHead left) (openHead right)
 
+def elementaryValue : Apparent Γ [.elementaryProposition] →
+    Elementary Γ → Elementary Γ
+  | .constant name, _ => .constant name
+  | .real v, _ => .var v
+  | .bound .zero, argument => argument
+  | .neg proposition, argument => .neg (elementaryValue proposition argument)
+  | .disj left right, argument => .disj
+      (elementaryValue left argument) (elementaryValue right argument)
+
+@[simp] theorem elementaryValue_ofElementary (p argument : Elementary Γ) :
+    elementaryValue (ofElementary p : Apparent Γ [.elementaryProposition]) argument = p := by
+  induction p with
+  | constant name => rfl
+  | var v => rfl
+  | neg p ih => simp [ofElementary, elementaryValue, ih]
+  | disj p q ihp ihq => simp [ofElementary, elementaryValue, ihp, ihq]
+
 def openHeadOrBound (φ : Apparent Γ [.elementaryProposition]) :
     Apparent (.elementaryProposition :: Γ) [.elementaryProposition] :=
   Apparent.ofElementary (openHead φ) ∨ₐ Apparent.weakenReal φ
@@ -321,6 +338,21 @@ abbrev FirstOrder (Γ : RealContext) : BoundContext → Type :=
 
 abbrev SecondOrder (Γ : RealContext) : BoundContext → Type :=
   Quantified (FirstOrder Γ)
+
+namespace SecondOrder
+
+def renameReal (ρ : Apparent.RealRenaming Γ Ξ) :
+    SecondOrder Γ Δ → SecondOrder Ξ Δ
+  | Quantified.always (Quantified.always body) =>
+      Quantified.always (Quantified.always (Apparent.renameReal ρ body))
+  | Quantified.always (Quantified.sometimes body) =>
+      Quantified.always (Quantified.sometimes (Apparent.renameReal ρ body))
+  | Quantified.sometimes (Quantified.always body) =>
+      Quantified.sometimes (Quantified.always (Apparent.renameReal ρ body))
+  | Quantified.sometimes (Quantified.sometimes body) =>
+      Quantified.sometimes (Quantified.sometimes (Apparent.renameReal ρ body))
+
+end SecondOrder
 
 namespace FirstOrder
 
@@ -556,6 +588,14 @@ def alwaysFirstOrder (body : FirstOrder Γ [.elementaryProposition]) :
     OrderedFormula Γ 2 :=
   .secondOrder (Quantified.always body)
 
+def renameReal (ρ : Apparent.RealRenaming Γ Ξ) :
+    OrderedFormula Γ order → OrderedFormula Ξ order
+  | .elementary p => .elementary (Elementary.schemaInstance (fun v => .var (ρ v)) p)
+  | .firstOrder p => .firstOrder (FirstOrder.renameReal ρ p)
+  | .secondOrder p => .secondOrder (SecondOrder.renameReal ρ p)
+  | .neg p => .neg (renameReal ρ p)
+  | .disj scope p q => .disj scope (renameReal ρ p) (renameReal ρ q)
+
 def embedElementary (p : Elementary Γ) : OrderedFormula Γ 0 := .elementary p
 
 def eraseElementary? : OrderedFormula Γ order → Option (Elementary Γ)
@@ -737,6 +777,13 @@ def star_9_1_target (φ : Apparent Γ [.elementaryProposition]) :
     (FirstOrder.impElementaryToFirst (Apparent.openHead φ)
       (FirstOrder.weakenReal (FirstOrder.sometimes φ)))
 
+def star_9_1_instance_target (φ : Apparent Γ [.elementaryProposition])
+    (value : Elementary Γ) : OrderedFormula Γ 1 :=
+  .firstOrder
+    (FirstOrder.impElementaryToFirst
+      (Apparent.elementaryValue φ value)
+      (FirstOrder.sometimes φ))
+
 def star_9_11_target (φ : Apparent Γ [.elementaryProposition]) :
     OrderedFormula (.elementaryProposition :: .elementaryProposition :: Γ) 1 :=
   let lifted := Apparent.weakenReal (Apparent.weakenReal φ)
@@ -786,6 +833,10 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
 
   | star_9_1 (φ : Apparent Γ [.elementaryProposition]) :
       OrderedAssertion (star_9_1_target φ)
+
+  | star_9_1_instance (φ : Apparent Γ [.elementaryProposition])
+      (value : Elementary Γ) :
+      OrderedAssertion (star_9_1_instance_target φ value)
 
   | star_9_11 (φ : Apparent Γ [.elementaryProposition]) :
       OrderedAssertion (star_9_11_target φ)
@@ -911,5 +962,18 @@ theorem star_9_32 (rules : Q259ClosedRuleBook) (q : Elementary Γ)
     OrderedAssertion.star_9_13 body elementaryLine
   exact OrderedAssertion.star_9_12 universalLine
     (rules.star_9_25 (∼ₚ q) (φ ∨ₐ Apparent.ofElementary q))
+
+theorem star_9_33 (_rules : Q259ClosedRuleBook) (q : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star_9_33Derivation q φ := by
+  let body := matrixImp (Apparent.ofElementary q)
+    (φ ∨ₐ Apparent.ofElementary q)
+  have elementaryLine : OrderedAssertion
+      (.elementary (Apparent.elementaryValue body q)) := by
+    simpa [body, matrixImp, Apparent.elementaryValue, Elementary.imp] using
+      OrderedAssertion.elementary (PM.Derivation.star_1_3
+        (Apparent.elementaryValue φ q) q)
+  exact OrderedAssertion.star_9_12_elementary_to_first elementaryLine
+    (OrderedAssertion.star_9_1_instance body q)
 
 end PM.Architecture.Q259ClosedRuleBook

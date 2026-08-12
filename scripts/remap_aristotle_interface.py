@@ -271,15 +271,21 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
             ]
             if {target["source"] for target in prompt_targets} != declared_targets:
                 raise RemapError(f"prompt/manifest target mismatch for {batch}")
-        item_file = root / "metadata/items/PM1-star-9-Q259.json"
         # Q300 is a prerequisite proof rather than a source-backfill batch,
         # so it deliberately has no separate item-registry file yet.
-        item_payload = (
-            json.loads(item_file.read_text(encoding="utf-8"))
-            if batch == "Q259"
-            else []
-        )
-        items = item_payload.get("items", []) if isinstance(item_payload, dict) else item_payload
+        items = []
+        if batch == "Q259":
+            # Kernel promotion splits items out of the original source batch.
+            # Resolve every Q259 registry fragment so the strict remapper keeps
+            # following the authoritative declaration instead of a stale
+            # monolithic file.
+            for item_file in sorted((root / "metadata/items").glob("PM1-star-9-Q259*.json")):
+                item_payload = json.loads(item_file.read_text(encoding="utf-8"))
+                fragment = (item_payload.get("items", [])
+                            if isinstance(item_payload, dict) else item_payload)
+                if not isinstance(fragment, list):
+                    raise RemapError(f"Q259 item registry fragment malformed: {item_file.name}")
+                items.extend(fragment)
         if not isinstance(items, list):
             raise RemapError("Q259 item registry has no item list")
         canonical_by_short_name = {
