@@ -66,6 +66,19 @@ def line2Reification (φ : Apparent Γ [.elementaryProposition]) :
   (reifyFirstOrderScoped (line2Antecedent φ)).neg.disj
     (reifyFirstOrderScoped (line2Consequent φ))
 
+def line2Formula (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrderMatrix (.elementaryProposition :: Γ) [.elementaryProposition] :=
+  (line2Reification φ).formula
+
+/-- Exact quantified carrier consumed by the second printed ✱9·13. -/
+def line3Carrier (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrderMatrix.Quantified (.elementaryProposition :: Γ) [] :=
+  .always (line2Formula φ)
+
+def line3Target (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula Γ 3 :=
+  star_9_13_higher_target (line3Carrier φ)
+
 /-- Narrow matrix judgement: it retains the preceding indexed derivation and
 the independently checked scope-aware reification. -/
 structure Star931MatrixAssertion
@@ -80,7 +93,13 @@ to the exact ✱9·31 matrix and cannot normalize arbitrary Raw assertions. -/
 inductive Star931ClosedStage
     (φ : Apparent Γ [.elementaryProposition]) : Nat → Prop where
   | line2 (proof : Star931MatrixAssertion φ) : Star931ClosedStage φ 2
-  | second_9_13 : Star931ClosedStage φ 2 → Star931ClosedStage φ 3
+  | second_9_13
+      (line2Proof : Star931ClosedStage φ 2)
+      (carrier : FirstOrderMatrix.Quantified
+        (.elementaryProposition :: Γ) [])
+      (carrierExact : carrier = line3Carrier φ)
+      (targetExact : star_9_13_higher_target carrier = line3Target φ) :
+      Star931ClosedStage φ 3
   | star_9_03_02 : Star931ClosedStage φ 3 → Star931ClosedStage φ 4
   | star_9_05_06 : Star931ClosedStage φ 4 → Star931ClosedStage φ 5
 
@@ -99,6 +118,7 @@ def deriveLine2
 def derive
     (φ : Apparent Γ [.elementaryProposition]) :
     Star931KernelAssertion φ where
-  chain := .star_9_05_06 (.star_9_03_02 (.second_9_13 (.line2 (deriveLine2 φ))))
+  chain := .star_9_05_06 (.star_9_03_02
+    (.second_9_13 (.line2 (deriveLine2 φ)) (line3Carrier φ) rfl rfl))
 
 end PM.Architecture.Star931Kernel
