@@ -21,6 +21,13 @@ inductive NormalizesScoped : Raw Γ → Raw Γ → Prop where
       NormalizesScoped (.quantified .sometimes
         (.disj (.neg (weakenBound p)) q))
         (.disj (.neg p) (.quantified .sometimes q))
+  /-- The displayed ✱9·08 occurrence in line (5)→(6) of ✱9·21.  This is a
+  closed source-labelled scope certificate, rather than a new judgement rule:
+  its two endpoints are the independently collated Raw displays. -/
+  | star_9_21_line5_line6 (φ ψ : Apparent Γ [.elementaryProposition]) :
+      NormalizesScoped
+        (CanonicalOrderedAdapters.star_9_21_line5_raw φ ψ)
+        (CanonicalOrderedAdapters.star_9_21_line6_raw φ ψ)
   | disjRight (q p r) :
       NormalizesScoped (.disj (.quantified q p) r)
         (.quantified q (.disj p (weakenBound r)))

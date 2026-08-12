@@ -49,4 +49,45 @@ def normalize {source target : Raw Γ}
   subst source
   exact ⟨order, formula, proof, certificate⟩
 
+/-- The explicitly weakened ✱9·06 redex is present beneath the two retained
+binders of line (4); this is the source-labelled line-(4)→line-(5)
+normalization of ✱9·21. -/
+theorem star_9_21_line4_line5_certificate
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScoped (star_9_21_line4_raw φ ψ) (star_9_21_line5_raw φ ψ) := by
+  rw [star_9_21_line4_raw_named]
+  apply NormalizesScoped.alwaysCongr
+  apply NormalizesScoped.sometimesCongr
+  let antecedent := rawImp (star_9_21_phi_x_closed_raw φ)
+    (star_9_21_psi_x_closed_raw ψ)
+  let consequent := rawImp (star_9_21_phi_y_closed_raw φ)
+    (star_9_21_psi_z_closed_raw ψ)
+  have unused : UnusedBoundAt 0 antecedent := by
+    exact ⟨star_9_21_phi_x_closed_unused_zero φ,
+      star_9_21_psi_x_closed_unused_zero ψ⟩
+  change NormalizesScoped (.quantified .sometimes (.disj (.neg antecedent) consequent))
+    (.disj (.neg (dropUnusedBound antecedent)) (.quantified .sometimes consequent))
+  have reduction := NormalizesScoped.star_9_06_imp
+    (dropUnusedBound antecedent) consequent
+  have reinsert : weakenBound (dropUnusedBound antecedent) = antecedent :=
+    weakenBound_dropUnusedBound antecedent unused
+  rw [reinsert] at reduction
+  exact reduction
+
+theorem star_9_21_line4_line7_certificate
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScoped (star_9_21_line4_raw φ ψ) (star_9_21_line7_raw φ ψ) := by
+  apply NormalizesScoped.trans (star_9_21_line4_line5_certificate φ ψ)
+  apply NormalizesScoped.trans (NormalizesScoped.star_9_21_line5_line6 φ ψ)
+  exact NormalizesScoped.refl _
+
+/-- The existing line-(4) derivation, with the full audited normalization
+certificate through the displayed line (7).  Its proof payload is unchanged:
+only its canonical Raw presentation is normalized. -/
+def derive_star_9_21_line7_normalized
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizedCanonicalAssertion (star_9_21_line7_raw φ ψ) := by
+  apply normalize (star_9_21_line4_line7_certificate φ ψ)
+  exact image_of_ordered (derive_star_9_21_line4 φ ψ)
+
 end PM.Architecture.CanonicalOrderedJudgement

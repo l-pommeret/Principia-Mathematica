@@ -183,6 +183,48 @@ theorem openOuter_star_9_21_psi_z_closed_raw
     openOuter (star_9_21_psi_z_closed_raw ψ) = star_9_21_psi_z_raw ψ :=
   openOuter_abstractOuter_ofApparent _
 
+/-- The `x` occurrence has no use of the innermost `y` slot after its leading
+real variable is closed. -/
+theorem star_9_21_phi_x_closed_unused_zero
+    (φ : Apparent Γ [.elementaryProposition]) :
+    UnusedBoundAt 0 (star_9_21_phi_x_closed_raw φ) := by
+  induction φ with
+  | constant name => trivial
+  | real realVariable =>
+      change True
+      trivial
+  | bound boundVariable =>
+      cases boundVariable
+      simp [star_9_21_phi_x_closed_raw, closeLeadingRaw,
+        star_9_21_phi_x_raw, ofApparent, abstractOuter, abstractOuterAt,
+        Apparent.weakenReal, Apparent.renameReal,
+        UnusedBoundAt, boundIndex]
+      rename_i impossible
+      exact nomatch impossible
+  | neg proposition ih =>
+      exact ih
+  | disj left right ihLeft ihRight =>
+      exact ⟨ihLeft, ihRight⟩
+
+theorem star_9_21_psi_x_closed_unused_zero
+    (ψ : Apparent Γ [.elementaryProposition]) :
+    UnusedBoundAt 0 (star_9_21_psi_x_closed_raw ψ) := by
+  induction ψ with
+  | constant name => trivial
+  | real realVariable =>
+      change True
+      trivial
+  | bound boundVariable =>
+      cases boundVariable
+      simp [star_9_21_psi_x_closed_raw, closeLeadingRaw,
+        star_9_21_psi_x_raw, ofApparent, abstractOuter, abstractOuterAt,
+        Apparent.weakenReal, Apparent.renameReal,
+        UnusedBoundAt, boundIndex]
+      rename_i impossible
+      exact nomatch impossible
+  | neg proposition ih => exact ih
+  | disj left right ihLeft ihRight => exact ⟨ihLeft, ihRight⟩
+
 theorem smartNeg_abstractOuter_ofApparent
     (p : Apparent (.elementaryProposition :: Γ)
       (.elementaryProposition :: Δ)) :
@@ -233,7 +275,8 @@ existential is transferred from the implication's antecedent scope into the
 consequent. -/
 def star_9_21_line5_raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
   .quantified .always (.quantified .sometimes
-    (rawImp (rawImp (star_9_21_phi_x_closed_raw φ) (star_9_21_psi_x_closed_raw ψ))
+    (rawImp (dropUnusedBound
+      (rawImp (star_9_21_phi_x_closed_raw φ) (star_9_21_psi_x_closed_raw ψ)))
       (.quantified .sometimes
         (rawImp (star_9_21_phi_y_closed_raw φ) (star_9_21_psi_z_closed_raw ψ)))))
 
