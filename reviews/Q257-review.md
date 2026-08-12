@@ -8,8 +8,13 @@ formulae normalize reflexively in Lean, their historical derivations must be
 retained so the dependency graph remains PM's. No print or digital-witness
 defect is established for these items. Confidence high.
 
-Follow-up: ✱9·24 now has the exact constructor-level derivation
-`derive_star_9_24`.  It retains the elementary identity and ✱9·22 as explicit
-premises, applies only the fixed first-order ✱9·13 and ✱9·12 rules, and
-concludes `OrderedAssertion (star_9_24_target φ)`.  This item is awaiting CI;
-✱9·23 and ✱9·25 retain their independent statuses.
+## ✱9·24 closed existential self-instance
+
+`Star924Kernel.derive` specializes the completed source-audited
+`Star922KernelAssertion` only at `φ = φ`.  This is exactly the printed
+`Id.✱9·13·22` route: the elementary identity and fixed ✱9·13 are retained in
+the certified ✱9·22 chain, rather than reintroduced as a generic rule.  Its
+result remains the narrow closed `Star922KernelAssertion φ φ`, not an
+`OrderedAssertion` reification; it adds neither generic Raw detachment nor a
+new Pp.  The split Q257-24 metadata is awaiting CI.  ✱9·23 and ✱9·25 retain
+their independent statuses.
