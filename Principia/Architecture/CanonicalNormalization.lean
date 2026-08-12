@@ -67,6 +67,33 @@ theorem normalizesSmartNeg (p : Raw Γ) :
       · exact .trans (.negSometimes body) (.alwaysCongr ih)
   | _ => exact .refl _
 
+/-- Depth-indexed companion used by capture-safe smart constructors.  The
+historical `NormalizesScoped` relation remains unchanged. -/
+inductive NormalizesScopedAt : Nat → Raw Γ → Raw Γ → Prop where
+  | refl (depth) (p) : NormalizesScopedAt depth p p
+  | disjRight (depth) (q) (p r) :
+      NormalizesScopedAt depth (.disj (.quantified q p) r)
+        (.quantified q (.disj p (shiftBoundAt depth r)))
+  | disjLeft (depth) (q) (p r) :
+      NormalizesScopedAt depth (.disj r (.quantified q p))
+        (.quantified q (.disj (shiftBoundAt depth r) p))
+  | disjAlwaysSometimes (depth) (p q) :
+      NormalizesScopedAt depth
+        (.disj (.quantified .always p) (.quantified .sometimes q))
+        (.quantified .always (.quantified .sometimes
+          (.disj (shiftBoundAt (depth + 1) p)
+            (shiftBoundAt (depth + 1) q))))
+  | disjSometimesAlways (depth) (p q) :
+      NormalizesScopedAt depth
+        (.disj (.quantified .sometimes p) (.quantified .always q))
+        (.quantified .always (.quantified .sometimes
+          (.disj (shiftBoundAt (depth + 1) p)
+            (shiftBoundAt (depth + 1) q))))
+  | quantifiedCongr (depth) (q) : NormalizesScopedAt (depth + 1) p r →
+      NormalizesScopedAt depth (.quantified q p) (.quantified q r)
+  | trans : NormalizesScopedAt depth p q → NormalizesScopedAt depth q r →
+      NormalizesScopedAt depth p r
+
 
 /-- Stability witness for the one closed, source-labelled line-(5)→line-(6)
 certificate of ✱9·21.  It stays an explicit parameter: substitution must not
