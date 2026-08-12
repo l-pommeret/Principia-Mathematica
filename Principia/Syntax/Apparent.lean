@@ -871,5 +871,36 @@ def atReal (body : FirstOrderMatrix Γ [.elementaryProposition])
     instantiate (.quantified body) argument =
       .quantified (FirstOrder.instantiate body argument) := rfl
 
+/-- The mixed implication from an assigned first-order matrix to a quantified
+next-order matrix, in its printed `∼P ∨ Q` normal form.  Since the outer
+quantifier belongs to `Q`, the left matrix is weakened beneath precisely that
+binder; no cross-order coercion is used. -/
+def impToQuantified (premise : FirstOrderMatrix Γ Δ) :
+    Quantified Γ Δ → Quantified Γ Δ
+  | PM.Quantified.always body =>
+      PM.Quantified.always (imp (weaken premise) body)
+  | PM.Quantified.sometimes body =>
+      PM.Quantified.sometimes (imp (weaken premise) body)
+
+/-- The exact higher-order shape of ✱9·1 needed by line (3) of ✱9·21:
+the displayed value of a first-order matrix implies its existential closure.
+This is a syntax target only; it grants no assertion or inference rule. -/
+def star_9_1_higher_target
+    (body : FirstOrderMatrix Γ [.elementaryProposition])
+    (value : RealVar Γ .elementaryProposition) : Quantified Γ [] :=
+  impToQuantified (atReal body value) (PM.Quantified.sometimes body)
+
+@[simp] theorem impToQuantified_sometimes
+    (premise : FirstOrderMatrix Γ Δ)
+    (body : FirstOrderMatrix Γ (.elementaryProposition :: Δ)) :
+    impToQuantified premise (PM.Quantified.sometimes body) =
+      PM.Quantified.sometimes (imp (weaken premise) body) := rfl
+
+@[simp] theorem star_9_1_higher_target_reduction
+    (body : FirstOrderMatrix Γ [.elementaryProposition])
+    (value : RealVar Γ .elementaryProposition) :
+    star_9_1_higher_target body value =
+      PM.Quantified.sometimes (imp (weaken (atReal body value)) body) := rfl
+
 end FirstOrderMatrix
 end PM
