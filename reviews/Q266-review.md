@@ -15,7 +15,17 @@ generic substitution rule.
 matrix from a value at a fresh same-typed argument, while `openRealHead`
 supplies a value; both structural round trips are proved.
 
-✱10·13 remains blocked on ✱9·61–·63 and an assertion-level adjunction rule;
-✱10·14 additionally depends on unavailable ✱10·1.  There is no Q266 Aristotle
-project/archive.  The next dependency now closed is ✱10·122; the next
-theorem-level gate is ✱10·13.
+The syntax/function layer required by ✱10·13 is now present: ✱9·61–·63 form
+the same-indexed matrices, and ✱10·122 connects a value with its abstract
+one-place matrix.  The theorem nevertheless remains blocked at the judgement
+layer.  `OrderedAssertion` has elementary derivations and the fixed ✱9
+schemas/detachment cases, but no constructor deriving the conjunction of two
+arbitrary asserted open values.  Moreover, the cited ✱9·131 has no canonical
+declaration.  Adding a generic conjunction constructor here would introduce
+an unaudited inference rule rather than prove ✱10·13.
+
+✱10·14 can now reuse the canonical ✱10·1 general-to-particular schema, but its
+simultaneous conclusion still requires the blocked ✱10·13 assertion-level
+adjunction.  Thus neither target is declared, and both metadata items correctly
+remain `prepared`; the next theorem-level gate is a source-faithful ✱9·131 (or
+an independently audited assertion-adjunction derivation at this exact order).

@@ -23,18 +23,19 @@
       "printed": "⊢ : φy .⊃ .(∃x).φx",
       "printed_page": 149,
       "scan_leaf": 171,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_24",
-      "formal_scope": "existential introduction; architecture blocked",
+      "lean_path": "Principia/Architecture/Star10Q269Kernel.lean",
+      "declaration": "PM.Architecture.Star10Q269Kernel.star_10_24",
+      "formal_scope": "exact closed existential-introduction instance",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱9·1",
         "PM1:✱10·1",
         "PM1:✱10·01"
       ],
-      "normalized_dependencies": []
+      "lean_dependencies": [], "normalized_dependencies": [],
+      "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·01","PM1:✱10·1","PM1:✱9·1"],"strict_attempt_evidence":"reviews/Q269-star-10-audit.md","editorial_note":"The exact endpoint is inhabited by the existing explicit ✱9·1 schema instance."}
     },
     {
       "id": "PM1:✱10·25",
@@ -42,16 +43,16 @@
       "printed": "⊢ : (x).φx .⊃ .(∃x).φx  [✱10·1·24]",
       "printed_page": 149,
       "scan_leaf": 171,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_25",
-      "formal_scope": "universal-to-existential assertion; architecture blocked",
+      "lean_path": "Principia/Architecture/Star10Q269Kernel.lean",
+      "declaration": "PM.Architecture.Star10Q269Kernel.star_10_25",
+      "formal_scope": "exact closed universal-to-existential target",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "formal_status": "awaiting-ci", "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱10·1·24"
       ],
-      "normalized_dependencies": []
+      "lean_dependencies": [], "normalized_dependencies": [],
+      "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·1·24"],"strict_attempt_evidence":"reviews/Q269-star-10-audit.md","editorial_note":"The theorem-specific certificate retains the two exact component witnesses behind its wrapper."}
     },
     {
       "id": "PM1:✱10·251",
@@ -59,16 +60,16 @@
       "printed": "⊢ : (x).∼φx .⊃ .∼{(x).φx}  [✱10·25 . Transp]",
       "printed_page": 149,
       "scan_leaf": 171,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_251",
-      "formal_scope": "universal negation implication; architecture blocked",
+      "lean_path": "Principia/Architecture/Star10Q269Kernel.lean",
+      "declaration": "PM.Architecture.Star10Q269Kernel.star_10_251",
+      "formal_scope": "exact universal-negation implication target",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "formal_status": "awaiting-ci", "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱10·25"
       ],
-      "normalized_dependencies": []
+      "lean_dependencies": [], "normalized_dependencies": [],
+      "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·25"],"strict_attempt_evidence":"reviews/Q269-star-10-audit.md","editorial_note":"The closed witness packages ✱10·25 and the exact negated-existential normalization."}
     },
     {
       "id": "PM1:✱10·252",
@@ -76,19 +77,19 @@
       "printed": "⊢ : ∼{(∃x).φx} .≡ .(x).∼φx  [✱4·2 . (✱9·02)]",
       "printed_page": 149,
       "scan_leaf": 171,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_252",
-      "formal_scope": "quantified negation equivalence; architecture blocked",
+      "lean_path": "Principia/Architecture/Star10Q269Kernel.lean",
+      "declaration": "PM.Architecture.Star10Q269Kernel.star_10_252",
+      "formal_scope": "exact closed negated-existential normalization equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "formal_status": "awaiting-ci", "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱4·2",
         "PM1:✱9·02",
         "PM1:✱4·13",
         "PM1:✱10·01"
       ],
-      "normalized_dependencies": []
+      "lean_dependencies": [], "normalized_dependencies": [],
+      "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·01","PM1:✱4·13","PM1:✱4·2","PM1:✱9·02"],"strict_attempt_evidence":"reviews/Q269-star-10-audit.md","editorial_note":"Both displayed members are connected by the existing closed negated-existential normalization."}
     },
     {
       "id": "PM1:✱10·253",
@@ -96,12 +97,11 @@
       "printed": "⊢ : ∼{(x).φx} .≡ .(∃x).∼φx  [✱4·2 . (✱9·01)]",
       "printed_page": 149,
       "scan_leaf": 171,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_253",
-      "formal_scope": "quantified negation equivalence; architecture blocked",
+      "lean_path": "Principia/Architecture/Star10Q269Kernel.lean",
+      "declaration": "PM.Architecture.Star10Q269Kernel.star_10_253",
+      "formal_scope": "exact closed negated-universal normalization equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "formal_status": "awaiting-ci", "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱4·2",
         "PM1:✱9·01",
@@ -111,7 +111,8 @@
         "PM1:✱2·14",
         "PM1:✱10·01"
       ],
-      "normalized_dependencies": []
+      "lean_dependencies": [], "normalized_dependencies": [],
+      "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·01","PM1:✱10·1","PM1:✱10·11·21","PM1:✱2·12","PM1:✱2·14","PM1:✱4·2","PM1:✱9·01"],"strict_attempt_evidence":"reviews/Q269-star-10-audit.md","editorial_note":"Both displayed members are connected by the existing closed negated-universal normalization."}
     }
   ],
   "ci_evidence": {
