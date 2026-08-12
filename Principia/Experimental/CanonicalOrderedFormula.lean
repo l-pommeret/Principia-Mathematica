@@ -112,9 +112,12 @@ recursive calls consume a leading quantifier and therefore need no unsafe or
 opaque termination argument.
 -/
 
+def shiftIndex (cutoff index : Nat) : Nat :=
+  if cutoff ≤ index then index + 1 else index
+
 def shiftBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
   | .elementary p => .elementary p
-  | .bound index => if cutoff ≤ index then .bound (index + 1) else .bound index
+  | .bound index => .bound (shiftIndex cutoff index)
   | .quantified quantifier body =>
       .quantified quantifier (shiftBoundAt (cutoff + 1) body)
   | .neg p => .neg (shiftBoundAt cutoff p)
@@ -145,6 +148,11 @@ def ofElementaryRaw : Elementary Γ → Raw Γ
   | .neg p => .neg (ofElementaryRaw p)
   | .disj p q => .disj (ofElementaryRaw p) (ofElementaryRaw q)
 
+def instantiateIndexVar (cutoff index : Nat)
+    (value : RealVar Γ .elementaryProposition) : Raw Γ :=
+  if index = cutoff then .elementary (.var value)
+  else if cutoff < index then .bound (index - 1) else .bound index
+
 /-- Instantiate an apparent variable with an elementary value already living
 in the same real context.  Unlike `openBoundAt`, this operation does not add
 or rename any real variable. -/
@@ -162,6 +170,12 @@ def instantiateBoundAt (cutoff : Nat) (value : Elementary Γ) :
 
 def instantiateHeadRaw (value : Elementary Γ) (p : Raw Γ) : Raw Γ :=
   instantiateBoundAt 0 value p
+
+@[simp] theorem instantiateBoundAt_bound_var
+    (cutoff index : Nat) (value : RealVar Γ .elementaryProposition) :
+    instantiateBoundAt cutoff (.var value) (.bound index) =
+      instantiateIndexVar cutoff index value := by
+  simp [instantiateBoundAt, instantiateIndexVar, ofElementaryRaw]
 
 @[simp] theorem smartNeg_ofElementaryRaw (value : Elementary Γ) :
     smartNeg (ofElementaryRaw value) = .neg (ofElementaryRaw value) := by
