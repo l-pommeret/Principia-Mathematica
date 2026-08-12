@@ -422,6 +422,11 @@ infix:53 " ≡ₚ " => equiv
 def equivChain (p q r : PM.Elementary Γ) : PM.Elementary Γ :=
   (p ≡ₚ q) ∧ₚ (q ≡ₚ r)
 
+/-- PM I, ✱4·87: the printed four-term chain is the left-associated product
+of its three adjacent equivalences. -/
+def equivChain4 (a b c d : PM.Elementary Γ) : PM.Elementary Γ :=
+  ((a ≡ₚ b) ∧ₚ (b ≡ₚ c)) ∧ₚ (c ≡ₚ d)
+
 end PM.Elementary
 
 namespace PM.FirstEdition.Volume1.Star4
@@ -676,5 +681,69 @@ theorem star_4_7 {Γ} (p q : PM.Elementary Γ) :
       (PM.FirstEdition.Volume1.Star3.star_3_2
         ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ (p ∧ₚ q)))
         ((p ⊃ₚ (p ∧ₚ q)) ⊃ₚ (p ⊃ₚ q))))
+
+/-- PM I (1910), p. 128, ✱4·87. -/
+theorem star_4_87 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (equivChain4 ((p ∧ₚ q) ⊃ₚ r) (p ⊃ₚ (q ⊃ₚ r))
+      (q ⊃ₚ (p ⊃ₚ r)) ((q ∧ₚ p) ⊃ₚ r)) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have comp : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have pair : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ B) → (⊢ₚ (A ∧ₚ B)) := by
+    intro A B hA hB
+    exact infer hB (infer hA (PM.FirstEdition.Volume1.Star3.star_3_2 A B))
+  have e1 : ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ≡ₚ (p ⊃ₚ (q ⊃ₚ r))) :=
+    infer (PM.FirstEdition.Volume1.Star3.star_3_31 p q r)
+      (infer (PM.FirstEdition.Volume1.Star3.star_3_3 p q r)
+        (PM.FirstEdition.Volume1.Star3.star_3_2
+          (((p ∧ₚ q) ⊃ₚ r) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r)))
+          ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r))))
+  have e2 : ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ≡ₚ (q ⊃ₚ (p ⊃ₚ r))) :=
+    infer (PM.FirstEdition.Volume1.Star2.star_2_04 q p r)
+      (infer (PM.FirstEdition.Volume1.Star2.star_2_04 p q r)
+        (PM.FirstEdition.Volume1.Star3.star_3_2
+          ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ (q ⊃ₚ (p ⊃ₚ r)))
+          ((q ⊃ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r)))))
+  have e3 : ⊢ₚ ((q ⊃ₚ (p ⊃ₚ r)) ≡ₚ ((q ∧ₚ p) ⊃ₚ r)) :=
+    infer (PM.FirstEdition.Volume1.Star3.star_3_3 q p r)
+      (infer (PM.FirstEdition.Volume1.Star3.star_3_31 q p r)
+        (PM.FirstEdition.Volume1.Star3.star_3_2
+          ((q ⊃ₚ (p ⊃ₚ r)) ⊃ₚ ((q ∧ₚ p) ⊃ₚ r))
+          (((q ∧ₚ p) ⊃ₚ r) ⊃ₚ (q ⊃ₚ (p ⊃ₚ r)))))
+  exact pair (pair e1 e2) e3
+
+/-- PM I (1910), p. 124, ✱4·37. -/
+theorem star_4_37 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ≡ₚ q) ⊃ₚ ((p ∨ₚ r) ≡ₚ (q ∨ₚ r))) := by
+  let e := p ≡ₚ q
+  let a := p ∨ₚ r
+  let b := q ∨ₚ r
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have duplicate : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
+    intro t
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t) (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
+  have join : ∀ {u v w : PM.Elementary Γ}, (⊢ₚ (u ⊃ₚ v)) → (⊢ₚ (u ⊃ₚ w)) → (⊢ₚ (u ⊃ₚ (v ∧ₚ w))) := by
+    intro u v w huv huw
+    have pair := infer huw (infer huv (PM.FirstEdition.Volume1.Star3.star_3_2 (u ⊃ₚ v) (u ⊃ₚ w)))
+    exact compose (duplicate u) (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 u u v w))
+  have idr : ⊢ₚ (r ⊃ₚ r) := PM.FirstEdition.Volume1.Star2.star_2_08 r
+  have er : ⊢ₚ (e ⊃ₚ (r ⊃ₚ r)) := infer idr (PM.FirstEdition.Volume1.Star2.star_2_02 e (r ⊃ₚ r))
+  have forward := compose (join (PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ q) (q ⊃ₚ p)) er)
+    (PM.FirstEdition.Volume1.Star3.star_3_48 p r q r)
+  have backward := compose (join (PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ q) (q ⊃ₚ p)) er)
+    (PM.FirstEdition.Volume1.Star3.star_3_48 q r p r)
+  exact join forward backward
 
 end PM.FirstEdition.Volume1.Star4
