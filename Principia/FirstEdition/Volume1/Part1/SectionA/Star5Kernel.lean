@@ -345,9 +345,9 @@ theorem star_5_44 {Γ} (p q r : PM.Elementary Γ) :
   have xa : ⊢ₚ (x ⊃ₚ a) := compose xha (PM.FirstEdition.Volume1.Star3.star_3_27 h a)
   have xp : ⊢ₚ (x ⊃ₚ p) := PM.FirstEdition.Volume1.Star3.star_3_27 (h ∧ₚ a) p
   have xq : ⊢ₚ (x ⊃ₚ q) :=
-    compose (join xh xp) (PM.FirstEdition.Volume1.Star3.star_3_35 p q)
+    compose (join xp xh) (PM.FirstEdition.Volume1.Star3.star_3_35 p q)
   have xr : ⊢ₚ (x ⊃ₚ r) :=
-    compose (join xa xp) (PM.FirstEdition.Volume1.Star3.star_3_35 p r)
+    compose (join xp xa) (PM.FirstEdition.Volume1.Star3.star_3_35 p r)
   have xqr : ⊢ₚ (x ⊃ₚ (q ∧ₚ r)) := join xq xr
   have forwardBase : ⊢ₚ ((h ∧ₚ a) ⊃ₚ b) :=
     infer xqr (PM.FirstEdition.Volume1.Star3.star_3_3 (h ∧ₚ a) p (q ∧ₚ r))
@@ -418,6 +418,6 @@ theorem star_5_42 {Γ} (p q r : PM.Elementary Γ) :
     infer (infer backwardBase (PM.FirstEdition.Volume1.Star3.star_3_3 (b ∧ₚ p) q r))
       (PM.FirstEdition.Volume1.Star3.star_3_3 b p (q ⊃ₚ r))
   exact infer forward
-    (infer backward (PM.FirstEdition.Volume1.Star3.star_3_2 (b ⊃ₚ a) (a ⊃ₚ b)))
+    (infer backward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
 
 end PM.FirstEdition.Volume1.Star5
