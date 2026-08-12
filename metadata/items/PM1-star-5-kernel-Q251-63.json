@@ -1,1 +1,89 @@
-{"batch":"PM1-STAR5-KERNEL-Q251-63","edition":"first","volume":1,"source_range":{"printed_pages":"131","scan_leaves":[153],"canonical_scan":"https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","scan_sha256":{"153":"49c01ccbe167cac172b8725c9d508bbd39ec474039bab23e00cd05d359c133c5"}},"witnesses":["PM1-1910-SCAN","WS-PM1"],"items":[{"id":"PM1:✱5·63","kind":"derived-proposition","printed":"⊢ : p ∨ q . ≡ : p . ∨ . ∼p . q","printed_page":131,"scan_leaf":153,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star5Kernel.lean","declaration":"PM.FirstEdition.Volume1.Star5.star_5_63","formal_scope":"(p∨q)≡(p∨(∼p·q)), over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"awaiting-ci","integration_status":"canonical-kernel-candidate","printed_dependencies":["PM1:✱5·62"],"lean_dependencies":["PM.Derivation.star_1_1","PM.Derivation.star_1_11","PM.Derivation.star_1_4","PM.Derivation.star_1_6","PM.FirstEdition.Volume1.Star2.star_2_05","PM.FirstEdition.Volume1.Star2.star_2_12","PM.FirstEdition.Volume1.Star2.star_2_14","PM.FirstEdition.Volume1.Star3.star_3_2","PM.FirstEdition.Volume1.Star3.star_3_22","PM.FirstEdition.Volume1.Star3.star_3_26","PM.FirstEdition.Volume1.Star3.star_3_27","PM.FirstEdition.Volume1.Star5.star_5_62"],"normalized_dependencies":["PM1:✱1·1","PM1:✱1·11","PM1:✱1·4","PM1:✱1·6","PM1:✱2·05","PM1:✱2·12","PM1:✱2·14","PM1:✱3·2","PM1:✱3·22","PM1:✱3·26","PM1:✱3·27","PM1:✱5·62"]}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR5-KERNEL-Q251-63",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "131",
+    "scan_leaves": [
+      153
+    ],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "scan_sha256": {
+      "153": "49c01ccbe167cac172b8725c9d508bbd39ec474039bab23e00cd05d359c133c5"
+    }
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "WS-PM1"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱5·63",
+      "kind": "derived-proposition",
+      "printed": "⊢ : p ∨ q . ≡ : p . ∨ . ∼p . q",
+      "printed_page": 131,
+      "scan_leaf": 153,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star5Kernel.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star5.star_5_63",
+      "formal_scope": "(p∨q)≡(p∨(∼p·q)), over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱5·62"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.star_1_1",
+        "PM.Derivation.star_1_11",
+        "PM.Derivation.star_1_4",
+        "PM.Derivation.star_1_6",
+        "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM.FirstEdition.Volume1.Star2.star_2_12",
+        "PM.FirstEdition.Volume1.Star2.star_2_14",
+        "PM.FirstEdition.Volume1.Star3.star_3_2",
+        "PM.FirstEdition.Volume1.Star3.star_3_22",
+        "PM.FirstEdition.Volume1.Star3.star_3_26",
+        "PM.FirstEdition.Volume1.Star3.star_3_27",
+        "PM.FirstEdition.Volume1.Star5.star_5_62"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·1",
+        "PM1:✱1·11",
+        "PM1:✱1·4",
+        "PM1:✱1·6",
+        "PM1:✱2·05",
+        "PM1:✱2·12",
+        "PM1:✱2·14",
+        "PM1:✱3·2",
+        "PM1:✱3·22",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱5·62"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱1·1",
+          "PM1:✱1·11",
+          "PM1:✱1·4",
+          "PM1:✱1·6",
+          "PM1:✱2·05",
+          "PM1:✱2·12",
+          "PM1:✱2·14",
+          "PM1:✱3·2",
+          "PM1:✱3·22",
+          "PM1:✱3·26",
+          "PM1:✱3·27"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Q251-star5-63-kernel-gate.md",
+        "editorial_note": "The exact printed ✱5·62 substitution is retained; only its implicit double-negation transports and connective commutations are made explicit."
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "ee51622396085f2949ff755fd2f90649554ffb07",
+    "run": "31555945042",
+    "conclusion": "success"
+  }
+}
