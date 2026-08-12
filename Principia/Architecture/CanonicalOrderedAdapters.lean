@@ -33,6 +33,14 @@ def ofFirstOrderMatrixScoped : FirstOrderMatrix Γ Δ → Raw Γ
   | .disj p q =>
       smartDisjScoped (ofFirstOrderMatrixScoped p) (ofFirstOrderMatrixScoped q)
 
+/-- Literal display embedding: unlike the normalizing embeddings, this keeps
+matrix negation and disjunction as explicit Raw redex nodes. -/
+def ofFirstOrderMatrixRedex : FirstOrderMatrix Γ Δ → Raw Γ
+  | .quantified p => ofFirstOrder p
+  | .neg p => .neg (ofFirstOrderMatrixRedex p)
+  | .disj p q =>
+      .disj (ofFirstOrderMatrixRedex p) (ofFirstOrderMatrixRedex q)
+
 structure ScopedFirstOrderMatrixReification
     (Δ : BoundContext) (raw : Raw Γ) where
   formula : FirstOrderMatrix Γ Δ
