@@ -99,6 +99,57 @@ theorem substituteSchema_star_9_21_schema_raw_scoped
   rw [weakenBound_weakenBound_eq_shiftBoundAt_one,
     weakenBound_weakenBound_eq_shiftBoundAt_one]
 
+/-- Four-slot function-schema display of ✱9·21.  A two-slot Raw template is
+insufficient because the printed values `φx`, `φy`, `ψx`, and `ψz` occur at
+different binder positions.  The slots are therefore values, not bare
+formula variables. -/
+def star_9_21_four_slot_template : Raw Γ :=
+  .disj
+    (.quantified .sometimes (.neg (.disj (.neg (.schema 0)) (.schema 1))))
+    (.quantified .always (.quantified .sometimes
+      (.disj (.neg (.schema 2)) (.schema 3))))
+
+/-- Exact occurrence-level evaluation of the four-slot template.  Arguments
+are already expressed at their printed de Bruijn positions, so this function
+does not apply an implicit binder lift. -/
+def evaluateStar921Slots (phiX psiX phiY psiZ : Raw Γ) : Raw Γ :=
+  .disj
+    (.quantified .sometimes (.neg (.disj (.neg phiX) psiX)))
+    (.quantified .always (.quantified .sometimes
+      (.disj (.neg phiY) psiZ)))
+
+/-- Coherence evidence for four concrete values of the two PM function
+letters.  The equations are intentionally caller-supplied: Raw syntax does
+not identify distinct de Bruijn occurrences by itself. -/
+structure CoherentStar921Slots
+    (φ ψ : Apparent Γ [.elementaryProposition]) where
+  phiX : Raw Γ
+  psiX : Raw Γ
+  phiY : Raw Γ
+  psiZ : Raw Γ
+  phiXValue : phiX = star_9_21_phi_x_closed_raw φ
+  psiXValue : psiX = star_9_21_psi_x_closed_raw ψ
+  phiYValue : phiY = star_9_21_phi_y_closed_raw φ
+  psiZValue : psiZ = star_9_21_psi_z_closed_raw ψ
+
+def apparentStar921Slots (φ ψ : Apparent Γ [.elementaryProposition]) :
+    CoherentStar921Slots φ ψ where
+  phiX := star_9_21_phi_x_closed_raw φ
+  psiX := star_9_21_psi_x_closed_raw ψ
+  phiY := star_9_21_phi_y_closed_raw φ
+  psiZ := star_9_21_psi_z_closed_raw ψ
+  phiXValue := rfl
+  psiXValue := rfl
+  phiYValue := rfl
+  psiZValue := rfl
+
+theorem evaluateStar921Slots_apparent
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    evaluateStar921Slots
+      (star_9_21_phi_x_closed_raw φ) (star_9_21_psi_x_closed_raw ψ)
+      (star_9_21_phi_y_closed_raw φ) (star_9_21_psi_z_closed_raw ψ) =
+      star_9_21_line7_raw φ ψ := rfl
+
 def normalize {source target : Raw Γ}
     (certificate : NormalizesScoped source target)
     (assertion : CanonicalOrderedAssertion source) :
