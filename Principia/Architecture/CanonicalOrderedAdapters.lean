@@ -92,6 +92,19 @@ theorem ofApparent_abstractRealOuter
       simp [ofApparent, Apparent.abstractRealOuter, abstractOuter,
         abstractOuterAt, ihLeft, ihRight]
 
+theorem smartNeg_abstractOuter_ofApparent
+    (p : Apparent (.elementaryProposition :: Γ)
+      (.elementaryProposition :: Δ)) :
+    smartNeg (abstractOuter (ofApparent p)) =
+      abstractOuter (smartNeg (ofApparent p)) := by
+  induction p with
+  | constant name => rfl
+  | real realVariable => cases realVariable <;> rfl
+  | bound boundVariable => cases boundVariable <;> rfl
+  | neg proposition ih => simp [ofApparent, smartNeg, abstractOuter, abstractOuterAt]
+  | disj left right ihLeft ihRight =>
+      simp [ofApparent, smartNeg, abstractOuter, abstractOuterAt]
+
 /-- Canonical Raw embedding of printed line (4) of ✱9·21.  The subsequent
 definitions ✱9·06, ✱1·01 and ✱9·08 are represented by `smartNeg` and
 `smartDisj`; this declaration itself makes no assertion or normalization
