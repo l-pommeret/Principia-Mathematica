@@ -682,6 +682,75 @@ theorem star_4_7 {Γ} (p q : PM.Elementary Γ) :
         ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ (p ∧ₚ q)))
         ((p ⊃ₚ (p ∧ₚ q)) ⊃ₚ (p ⊃ₚ q))))
 
+/-- PM I (1910), p. 127, ✱4·86.  Under `p ≡ q`, composition transports
+both implication components of `p ≡ r` to those of `q ≡ r`, and conversely.
+The two transported directions are then packaged by the definition ✱4·01. -/
+theorem star_4_86 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ≡ₚ q) ⊃ₚ ((p ≡ₚ r) ≡ₚ (q ≡ₚ r))) := by
+  let e := p ≡ₚ q
+  let a := p ≡ₚ r
+  let b := q ≡ₚ r
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ},
+      (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have duplicate : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
+    intro t
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t)
+      (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
+  have join : ∀ {u v w : PM.Elementary Γ}, (⊢ₚ (u ⊃ₚ v)) →
+      (⊢ₚ (u ⊃ₚ w)) → (⊢ₚ (u ⊃ₚ (v ∧ₚ w))) := by
+    intro u v w huv huw
+    have pair := infer huw
+      (infer huv (PM.FirstEdition.Volume1.Star3.star_3_2 (u ⊃ₚ v) (u ⊃ₚ w)))
+    exact compose (duplicate u)
+      (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 u u v w))
+  have underCompose : ∀ {u v w x : PM.Elementary Γ},
+      (⊢ₚ (u ⊃ₚ (v ⊃ₚ w))) → (⊢ₚ (u ⊃ₚ (w ⊃ₚ x))) →
+      (⊢ₚ (u ⊃ₚ (v ⊃ₚ x))) := by
+    intro u v w x hvw hwx
+    exact infer hwx
+      (infer hvw (PM.FirstEdition.Volume1.Star2.star_2_83 u v w x))
+  have forward : ⊢ₚ (e ⊃ₚ (a ⊃ₚ b)) := by
+    let x := e ∧ₚ a
+    have xe : ⊢ₚ (x ⊃ₚ e) := PM.FirstEdition.Volume1.Star3.star_3_26 e a
+    have xa : ⊢ₚ (x ⊃ₚ a) := PM.FirstEdition.Volume1.Star3.star_3_27 e a
+    have xqp := compose xe
+      (PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ q) (q ⊃ₚ p))
+    have xpq := compose xe
+      (PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ q) (q ⊃ₚ p))
+    have xpr := compose xa
+      (PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ r) (r ⊃ₚ p))
+    have xrp := compose xa
+      (PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ r) (r ⊃ₚ p))
+    have xqr : ⊢ₚ (x ⊃ₚ (q ⊃ₚ r)) := underCompose xqp xpr
+    have xrq : ⊢ₚ (x ⊃ₚ (r ⊃ₚ q)) := underCompose xrp xpq
+    exact infer (join xqr xrq)
+      (PM.FirstEdition.Volume1.Star3.star_3_3 e a b)
+  have backward : ⊢ₚ (e ⊃ₚ (b ⊃ₚ a)) := by
+    let x := e ∧ₚ b
+    have xe : ⊢ₚ (x ⊃ₚ e) := PM.FirstEdition.Volume1.Star3.star_3_26 e b
+    have xb : ⊢ₚ (x ⊃ₚ b) := PM.FirstEdition.Volume1.Star3.star_3_27 e b
+    have xpq := compose xe
+      (PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ q) (q ⊃ₚ p))
+    have xqp := compose xe
+      (PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ q) (q ⊃ₚ p))
+    have xqr := compose xb
+      (PM.FirstEdition.Volume1.Star3.star_3_26 (q ⊃ₚ r) (r ⊃ₚ q))
+    have xrq := compose xb
+      (PM.FirstEdition.Volume1.Star3.star_3_27 (q ⊃ₚ r) (r ⊃ₚ q))
+    have xpr : ⊢ₚ (x ⊃ₚ (p ⊃ₚ r)) := underCompose xpq xqr
+    have xrp : ⊢ₚ (x ⊃ₚ (r ⊃ₚ p)) := underCompose xrq xqp
+    exact infer (join xpr xrp)
+      (PM.FirstEdition.Volume1.Star3.star_3_3 e b a)
+  exact join forward backward
+
 /-- PM I (1910), p. 128, ✱4·87. -/
 theorem star_4_87 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (equivChain4 ((p ∧ₚ q) ⊃ₚ r) (p ⊃ₚ (q ⊃ₚ r))
@@ -807,6 +876,121 @@ theorem star_4_64 {Γ} (p q : PM.Elementary Γ) :
     have liftCompose := infer bToCompose (PM.FirstEdition.Volume1.Star2.star_2_77 b (t ⊃ₚ (∼ₚ p)) (t ⊃ₚ q))
     exact infer liftT liftCompose
   exact infer bToA (infer aToB (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
+
+/-- PM I (1910), p. 127, ✱4·82.  The forward direction is the printed
+`✱2·65 . Imp` route; the converse applies ✱2·21 twice and packages the
+two consequences exactly as the product required by `Comp`.
+
+✱4·82 and ✱4·83 are virtually other forms of ✱4·43. -/
+theorem star_4_82 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (((p ⊃ₚ q) ∧ₚ (p ⊃ₚ (∼ₚ q))) ≡ₚ (∼ₚ p)) := by
+  let e := (p ⊃ₚ q) ∧ₚ (p ⊃ₚ (∼ₚ q))
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) →
+      (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have duplicate : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
+    intro t
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t)
+      (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
+  have join : ∀ {u v w : PM.Elementary Γ}, (⊢ₚ (u ⊃ₚ v)) →
+      (⊢ₚ (u ⊃ₚ w)) → (⊢ₚ (u ⊃ₚ (v ∧ₚ w))) := by
+    intro u v w huv huw
+    have pair := infer huw
+      (infer huv (PM.FirstEdition.Volume1.Star3.star_3_2 (u ⊃ₚ v) (u ⊃ₚ w)))
+    exact compose (duplicate u)
+      (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 u u v w))
+  have forward : ⊢ₚ (e ⊃ₚ (∼ₚ p)) :=
+    infer (PM.FirstEdition.Volume1.Star2.star_2_65 p q)
+      (PM.FirstEdition.Volume1.Star3.star_3_31 (p ⊃ₚ q) (p ⊃ₚ (∼ₚ q)) (∼ₚ p))
+  have backward : ⊢ₚ ((∼ₚ p) ⊃ₚ e) :=
+    join (PM.FirstEdition.Volume1.Star2.star_2_21 p q)
+      (PM.FirstEdition.Volume1.Star2.star_2_21 p (∼ₚ q))
+  exact infer backward
+    (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2
+      (e ⊃ₚ (∼ₚ p)) ((∼ₚ p) ⊃ₚ e)))
+
+/-- PM I (1910), p. 127, ✱4·83.  `Imp` applies ✱2·61 to the
+product of its two premises; the converse is the two constant implications
+from `q`, packaged by the same canonical `Comp` closure as ✱4·82.
+
+✱4·82 and ✱4·83 are virtually other forms of ✱4·43. -/
+theorem star_4_83 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (((p ⊃ₚ q) ∧ₚ ((∼ₚ p) ⊃ₚ q)) ≡ₚ q) := by
+  let e := (p ⊃ₚ q) ∧ₚ ((∼ₚ p) ⊃ₚ q)
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) →
+      (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have duplicate : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
+    intro t
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t)
+      (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
+  have join : ∀ {u v w : PM.Elementary Γ}, (⊢ₚ (u ⊃ₚ v)) →
+      (⊢ₚ (u ⊃ₚ w)) → (⊢ₚ (u ⊃ₚ (v ∧ₚ w))) := by
+    intro u v w huv huw
+    have pair := infer huw
+      (infer huv (PM.FirstEdition.Volume1.Star3.star_3_2 (u ⊃ₚ v) (u ⊃ₚ w)))
+    exact compose (duplicate u)
+      (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 u u v w))
+  have forward : ⊢ₚ (e ⊃ₚ q) :=
+    infer (PM.FirstEdition.Volume1.Star2.star_2_61 p q)
+      (PM.FirstEdition.Volume1.Star3.star_3_31 (p ⊃ₚ q) ((∼ₚ p) ⊃ₚ q) q)
+  have backward : ⊢ₚ (q ⊃ₚ e) :=
+    join (PM.FirstEdition.Volume1.Star2.star_2_02 p q)
+      (PM.FirstEdition.Volume1.Star2.star_2_02 (∼ₚ p) q)
+  exact infer backward
+    (infer forward
+      (PM.FirstEdition.Volume1.Star3.star_3_2 (e ⊃ₚ q) (q ⊃ₚ e)))
+
+/-- PM I (1910), p. 127, ✱4·84.  The two instances of ✱2·06 transport
+the consequent along the corresponding components of `p ≡ q`; ✱3·47
+packages those implications under their exact common hypothesis. -/
+theorem star_4_84 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ≡ₚ q) ⊃ₚ ((p ⊃ₚ r) ≡ₚ (q ⊃ₚ r))) := by
+  let e := p ≡ₚ q
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) →
+      (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have duplicate : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
+    intro t
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t)
+      (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
+  have join : ∀ {u v w : PM.Elementary Γ}, (⊢ₚ (u ⊃ₚ v)) →
+      (⊢ₚ (u ⊃ₚ w)) → (⊢ₚ (u ⊃ₚ (v ∧ₚ w))) := by
+    intro u v w huv huw
+    have pair := infer huw
+      (infer huv (PM.FirstEdition.Volume1.Star3.star_3_2 (u ⊃ₚ v) (u ⊃ₚ w)))
+    exact compose (duplicate u)
+      (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 u u v w))
+  have pToQ : ⊢ₚ (e ⊃ₚ (p ⊃ₚ q)) :=
+    PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ q) (q ⊃ₚ p)
+  have qToP : ⊢ₚ (e ⊃ₚ (q ⊃ₚ p)) :=
+    PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ q) (q ⊃ₚ p)
+  have forward : ⊢ₚ (e ⊃ₚ ((p ⊃ₚ r) ⊃ₚ (q ⊃ₚ r))) :=
+    compose qToP (PM.FirstEdition.Volume1.Star2.star_2_06 q p r)
+  have backward : ⊢ₚ (e ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r))) :=
+    compose pToQ (PM.FirstEdition.Volume1.Star2.star_2_06 p q r)
+  exact join forward backward
 
 /-- PM I (1910), p. 127, ✱4·85.  The two directions are obtained by
 lifting the corresponding component of `p ≡ q` below the common antecedent

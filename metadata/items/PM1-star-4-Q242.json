@@ -23,11 +23,56 @@
       "declaration": "PM.FirstEdition.Volume1.Star4.star_4_86",
       "formal_scope": "(p≡q)⊃((p≡r)≡(q≡r)), over an elementary real-variable context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-integrated-locally-awaiting-ci",
       "printed_dependencies": ["PM1:✱4·21·22"],
-      "normalized_dependencies": [],
-      "blocked_dependencies": ["PM1:✱4·21", "PM1:✱4·22"]
+      "lean_dependencies": [
+        "PM.Derivation.star_1_1",
+        "PM.Derivation.star_1_11",
+        "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM.FirstEdition.Volume1.Star2.star_2_43",
+        "PM.FirstEdition.Volume1.Star2.star_2_83",
+        "PM.FirstEdition.Volume1.Star3.star_3_2",
+        "PM.FirstEdition.Volume1.Star3.star_3_3",
+        "PM.FirstEdition.Volume1.Star3.star_3_26",
+        "PM.FirstEdition.Volume1.Star3.star_3_27",
+        "PM.FirstEdition.Volume1.Star3.star_3_47"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·1",
+        "PM1:✱1·11",
+        "PM1:✱2·05",
+        "PM1:✱2·43",
+        "PM1:✱2·83",
+        "PM1:✱3·2",
+        "PM1:✱3·3",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·47"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱1·1",
+          "PM1:✱1·11",
+          "PM1:✱2·05",
+          "PM1:✱2·43",
+          "PM1:✱2·83",
+          "PM1:✱3·2",
+          "PM1:✱3·3",
+          "PM1:✱3·26",
+          "PM1:✱3·27",
+          "PM1:✱3·47"
+        ],
+        "printed_but_unused": ["PM1:✱4·21·22"],
+        "strict_attempt_evidence": "reviews/Q242-review.md",
+        "editorial_note": "The archive proof used archive-local copies of ✱4·21 and ✱4·22. Canonical integration instead expands their symmetry/transitivity content through the already kernel-checked implication projections, composition, exportation, and conjunction lifting; no parallel library is imported."
+      }
     }
   ],
+  "local_evidence": {
+    "lean": "/Users/user/.local/lean-4.30.0/bin/lake env lean Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
+    "conclusion": "success"
+  },
   "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
 }

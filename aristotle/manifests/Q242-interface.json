@@ -2,10 +2,10 @@
   "kind": "pm-statement-only-interface-manifest",
   "batch": "Q242",
   "source_backfill_required": false,
-  "integration_blocked": true,
-  "audit_status": "A-interface-only",
+  "integration_blocked": false,
+  "audit_status": "A-canonical-kernel-integrated",
   "audit_basis": "canonical PM-VERBATIM backfill linked to the reviewed scan hashes; diplomatic citation skeletons parsed per target",
-  "promotion_prohibited": "formal dependency/remote-kernel audit still required",
+  "promotion_status": "local kernel audit complete; remote CI pending",
   "canonical_ids": [
     "PM1:✱4·86",
     "PM1:✱4·87",
@@ -47,6 +47,6 @@
     "verbatim": true,
     "item_metadata": true,
     "parsed_demonstrations": true,
-    "integration_still_blocked": true
+    "integration_still_blocked": false
   }
 }

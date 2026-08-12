@@ -1,5 +1,5 @@
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star5
-import Principia.FirstEdition.Volume1.Part1.SectionA.Star4
+import Principia.FirstEdition.Volume1.Part1.SectionA.Star4Q240
 
 /-!
 # PM I, first edition, ✱5 — kernel candidates
@@ -535,6 +535,27 @@ theorem star_5_12 {Γ} (p q : PM.Elementary Γ) :
         exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
   exact infer (PM.FirstEdition.Volume1.Star2.star_2_51 p q)
     (PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) (p ⊃ₚ (∼ₚ q)))
+
+/-- PM I (1910), p. 129, ✱5·14.  The printed `Simp . Transp . ✱2·21`
+chain is expanded using primitive Add for the simplification instance,
+✱2·16 for transposition, ✱1·6 for composition, and ✱2·54 for the final
+disjunctive packaging. -/
+theorem star_5_14 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ q) ∨ₚ (q ⊃ₚ r)) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer
+    (infer
+      (infer (PM.Derivation.star_1_3 (∼ₚ p) q)
+        (PM.FirstEdition.Volume1.Star2.star_2_16 q (p ⊃ₚ q)))
+      (infer (PM.FirstEdition.Volume1.Star2.star_2_21 q r)
+        (PM.Derivation.star_1_6
+          (∼ₚ (∼ₚ (p ⊃ₚ q))) (∼ₚ q) (q ⊃ₚ r))))
+    (PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) (q ⊃ₚ r))
 
 /-- PM I (1910), p. 130, ✱5·61.  Under `∼q`, ✱2·55 eliminates
 the `q` branch of `p ∨ q`; the converse adds that branch by ✱2·2. -/
