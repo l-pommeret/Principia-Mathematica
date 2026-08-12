@@ -846,4 +846,30 @@ theorem star_4_85 {Γ} (p q r : PM.Elementary Γ) :
     compose liftBackward (PM.FirstEdition.Volume1.Star2.star_2_77 r q p)
   exact join forward backward
 
+/-- PM I (1910), p. 127, ✱4·73.  Under the true factor `q`, ✱3·21
+adjoins it to `p`, while the lifted first projection removes it again. -/
+theorem star_4_73 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (q ⊃ₚ (p ≡ₚ (p ∧ₚ q))) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have duplicate : ⊢ₚ (q ⊃ₚ (q ∧ₚ q)) :=
+    infer (PM.FirstEdition.Volume1.Star3.star_3_2 q q)
+      (PM.FirstEdition.Volume1.Star2.star_2_43 q (q ∧ₚ q))
+  have join : ∀ {v w : PM.Elementary Γ}, (⊢ₚ (q ⊃ₚ v)) → (⊢ₚ (q ⊃ₚ w)) → (⊢ₚ (q ⊃ₚ (v ∧ₚ w))) := by
+    intro v w hqv hqw
+    have pair := infer hqw (infer hqv (PM.FirstEdition.Volume1.Star3.star_3_2 (q ⊃ₚ v) (q ⊃ₚ w)))
+    exact compose duplicate (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 q q v w))
+  have forward : ⊢ₚ (q ⊃ₚ (p ⊃ₚ (p ∧ₚ q))) :=
+    PM.FirstEdition.Volume1.Star3.star_3_21 p q
+  have backward : ⊢ₚ (q ⊃ₚ ((p ∧ₚ q) ⊃ₚ p)) :=
+    infer (PM.FirstEdition.Volume1.Star3.star_3_26 p q)
+      (PM.FirstEdition.Volume1.Star2.star_2_02 q ((p ∧ₚ q) ⊃ₚ p))
+  exact join forward backward
+
 end PM.FirstEdition.Volume1.Star4
