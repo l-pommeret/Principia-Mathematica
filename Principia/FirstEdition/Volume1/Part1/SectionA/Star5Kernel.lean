@@ -263,4 +263,51 @@ theorem star_5_501 {Γ} (p q : PM.Elementary Γ) :
   have dup := infer (PM.FirstEdition.Volume1.Star3.star_3_2 p p) (PM.FirstEdition.Volume1.Star2.star_2_43 p (p ∧ₚ p))
   exact compose dup lift
 
+/-- PM I (1910), p. 130, ✱5·53.  Instantiate ✱4·77 first at `p,q` and
+then at `p ∨ q,r`; ✱4·36 transports the first equivalence beneath the
+remaining conditional before the two explicit directions are recomposed. -/
+theorem star_5_53 {Γ} (p q r s : PM.Elementary Γ) :
+    ⊢ₚ ((((p ∨ₚ q) ∨ₚ r) ⊃ₚ s) ≡ₚ (((p ⊃ₚ s) ∧ₚ (q ⊃ₚ s)) ∧ₚ (r ⊃ₚ s))) := by
+  let a := (p ⊃ₚ s) ∧ₚ (q ⊃ₚ s)
+  let b := (p ∨ₚ q) ⊃ₚ s
+  let c := r ⊃ₚ s
+  let d := ((p ∨ₚ q) ∨ₚ r) ⊃ₚ s
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ},
+      (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have first : ⊢ₚ (a ≡ₚ b) := PM.FirstEdition.Volume1.Star4.star_4_77 s p q
+  have second : ⊢ₚ ((b ∧ₚ c) ≡ₚ d) :=
+    PM.FirstEdition.Volume1.Star4.star_4_77 s (p ∨ₚ q) r
+  have transported : ⊢ₚ ((a ∧ₚ c) ≡ₚ (b ∧ₚ c)) :=
+    infer first (PM.FirstEdition.Volume1.Star4.star_4_36 a b c)
+  have forward1 : ⊢ₚ ((a ∧ₚ c) ⊃ₚ (b ∧ₚ c)) :=
+    infer transported
+      (PM.FirstEdition.Volume1.Star3.star_3_26
+        ((a ∧ₚ c) ⊃ₚ (b ∧ₚ c)) ((b ∧ₚ c) ⊃ₚ (a ∧ₚ c)))
+  have backward1 : ⊢ₚ ((b ∧ₚ c) ⊃ₚ (a ∧ₚ c)) :=
+    infer transported
+      (PM.FirstEdition.Volume1.Star3.star_3_27
+        ((a ∧ₚ c) ⊃ₚ (b ∧ₚ c)) ((b ∧ₚ c) ⊃ₚ (a ∧ₚ c)))
+  have forward2 : ⊢ₚ ((b ∧ₚ c) ⊃ₚ d) :=
+    infer second
+      (PM.FirstEdition.Volume1.Star3.star_3_26
+        ((b ∧ₚ c) ⊃ₚ d) (d ⊃ₚ (b ∧ₚ c)))
+  have backward2 : ⊢ₚ (d ⊃ₚ (b ∧ₚ c)) :=
+    infer second
+      (PM.FirstEdition.Volume1.Star3.star_3_27
+        ((b ∧ₚ c) ⊃ₚ d) (d ⊃ₚ (b ∧ₚ c)))
+  have forward : ⊢ₚ ((a ∧ₚ c) ⊃ₚ d) := compose forward1 forward2
+  have backward : ⊢ₚ (d ⊃ₚ (a ∧ₚ c)) := compose backward2 backward1
+  exact infer forward
+    (infer backward
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        (d ⊃ₚ (a ∧ₚ c)) ((a ∧ₚ c) ⊃ₚ d)))
+
 end PM.FirstEdition.Volume1.Star5
