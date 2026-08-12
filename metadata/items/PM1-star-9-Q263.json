@@ -8,7 +8,14 @@
       164
     ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
-    "leaf_derivatives": [{"scan_leaf": 164, "printed_page": 142, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page164-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg", "sha256": "78e2d89c9dabeeade09f4f22793dd4758e06a3397dbe6899faee3e1ff1b5facc"}],
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 164,
+        "printed_page": 142,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page164-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "78e2d89c9dabeeade09f4f22793dd4758e06a3397dbe6899faee3e1ff1b5facc"
+      }
+    ],
     "scan_sha256": "78e2d89c9dabeeade09f4f22793dd4758e06a3397dbe6899faee3e1ff1b5facc",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
@@ -27,7 +34,7 @@
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_6",
       "formal_scope": "typed certificate that the four displayed expressions inhabit one assigned FirstOrder carrier",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "integration_status": "canonical-awaiting-ci",
       "printed_dependencies": [
         "PM1:✱9·131"
@@ -37,10 +44,13 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱9·131"],
+        "printed_but_unused": [
+          "PM1:✱9·131"
+        ],
         "strict_attempt_evidence": "reviews/Q263-review.md",
         "editorial_note": "The shared Lean carrier directly realizes the printed same-type conclusion; ✱9·131 motivates that typing historically but is not a theorem call in the carrier witness."
-      }
+      },
+      "blocked_dependencies": []
     },
     {
       "id": "PM1:✱9·61",
@@ -48,16 +58,17 @@
       "printed": "If φx̂ and ψx̂ are elementary functions of the same type, there is a function φx̂ ∨ ψx̂.",
       "printed_page": 142,
       "scan_leaf": 164,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "lean_path": "Principia/Architecture/Star961FunctionFormation.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_61",
-      "formal_scope": "function existence/significance; architecture blocked",
+      "formal_scope": "capture-safe pointwise disjunction of same-indexed elementary function matrices",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-functions-significance",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
       "printed_dependencies": [
         "PM1:✱9·14·15"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "blocked_dependencies": []
     },
     {
       "id": "PM1:✱9·62",
@@ -65,18 +76,19 @@
       "printed": "If φ(x̂, ŷ) and ψẑ are elementary functions, and the x-argument to φ is of the same type as the argument to ψ, there are functions (y).φ(x̂,y).∨.ψx̂, (∃y).φ(x̂,y).∨.ψx̂.",
       "printed_page": 142,
       "scan_leaf": 164,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "lean_path": "Principia/Architecture/Star961FunctionFormation.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_62",
-      "formal_scope": "bound function formation/significance; architecture blocked",
+      "formal_scope": "the printed universal and existential y-closures, disjoined with ψx while retaining x",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-functions-significance",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
       "printed_dependencies": [
         "PM1:✱9·15",
         "PM1:✱9·14",
         "PM1:✱9·03"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "blocked_dependencies": []
     },
     {
       "id": "PM1:✱9·63",
@@ -84,16 +96,17 @@
       "printed": "If φ(x̂, ŷ), ψ(x̂, ŷ) are elementary functions of the same type, there are functions (y).φ(x̂,y).∨.(z).ψ(x̂,z), etc.",
       "printed_page": 142,
       "scan_leaf": 164,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "lean_path": "Principia/Architecture/Star961FunctionFormation.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_63",
-      "formal_scope": "two-bound-variable function formation; architecture blocked",
+      "formal_scope": "all four independently bound always/sometimes combinations covered by etc.",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-functions-significance",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
       "printed_dependencies": [
         "Proof as above"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "blocked_dependencies": []
     }
   ],
   "ci_evidence": {

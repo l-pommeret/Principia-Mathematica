@@ -21,4 +21,6 @@ import Principia.FirstEdition.Volume1.Part1.SectionA.Star3
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star4
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star5Kernel
 import Principia.FirstEdition.Volume1.Star9
+import Principia.Architecture.Q262MonotonicityKernel
+import Principia.Architecture.Star961FunctionFormation
 import Principia.FirstEdition.Volume1.Star14
