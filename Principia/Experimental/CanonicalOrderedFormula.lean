@@ -92,13 +92,13 @@ def ofOrdered : OrderedFormula Γ order → Raw Γ
 
 /- The canonical ✱9·03·02 redex used between lines (1) and (2) of ✱9·31. -/
 def line1Redex (matrix conclusion : Raw Γ) : Raw Γ :=
-  smartDisjRight (smartNeg (.quantified .always matrix)) conclusion
+  .quantified .always (smartDisjRight (smartNeg matrix) conclusion)
 
 def line2Normal (matrix conclusion : Raw Γ) : Raw Γ :=
-  .quantified .sometimes (smartDisjRight (smartNeg matrix) conclusion)
+  smartDisjRight (smartNeg (.quantified .sometimes matrix)) conclusion
 
-/- Exact experimental witness: ✱9·02 turns the negated universal into an
-existential, and ✱9·03 pushes the remaining disjunction below that binder.
+/- Exact experimental witness: ✱9·02 turns the negated existential antecedent
+into a universal, and ✱9·03 pushes the remaining disjunction below that binder.
 Both printed lines therefore package the same raw canonical AST. -/
 theorem star_9_03_02_line1_line2 (matrix conclusion : Raw Γ) :
     line1Redex matrix conclusion = line2Normal matrix conclusion := by
