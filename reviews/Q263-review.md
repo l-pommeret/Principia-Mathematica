@@ -22,3 +22,18 @@ semantic Lean function, truth predicate, axiom, or assertion rule is added.
 
 Aristotle reconciliation reports `unknown question ID: Q263`; there is no
 project or terminal archive to audit.
+
+## Promotion dependency audit
+
+A kernel-status simulation extracts an empty indexed theorem closure for
+✱9·6 and ✱9·63. Their complete printed citations are consequently recorded as
+reviewed `printed_but_unused` relaxations. The same direct-syntax reading
+applies to ✱9·61 and ✱9·62.
+
+Promotion of ✱9·61 and ✱9·62 remains blocked by the verifier before metadata
+comparison: it classifies `PM.Apparent.disj` and
+`PM.FirstOrder.disjRightMatrix` as unindexed qualified references. These are
+capture-safe syntax constructors from `Principia/Syntax/Apparent.lean`, not
+historical theorem dependencies. They need reviewed syntax-infrastructure
+classification in the verifier before the complete batch can pass. This audit
+does not promote any status.

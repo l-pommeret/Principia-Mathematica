@@ -35,9 +35,9 @@
         "PM1:✱10·11",
         "PM1:✱10·12"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·6","PM1:✱10·1","PM1:✱10·11","PM1:✱10·12"],"strict_attempt_evidence":"reviews/Q267-star-10-audit.md","editorial_note":"The theorem-specific certificate retains ✱10·1/·11 as closed fields and the exact binder normalization; wrapper dependency extraction is intentionally empty."}
+      "lean_dependencies": ["PM.Architecture.Star10Q264Kernel.star_10_1", "PM.Architecture.Star10Q264Kernel.star_10_11"],
+      "normalized_dependencies": ["PM1:✱10·1", "PM1:✱10·11"],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·12","PM1:✱1·6"],"strict_attempt_evidence":"reviews/Q267-star-10-audit.md","editorial_note":"The theorem-specific certificate directly retains ✱10·1/·11 as closed fields and the exact binder normalization; ✱1·6 and ✱10·12 are not direct calls in the indexed body."}
     },
     {
       "id": "PM1:✱10·21",
@@ -54,9 +54,8 @@
       "printed_dependencies": [
         "PM1:✱10·2"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·2"],"strict_attempt_evidence":"reviews/Q267-star-10-audit.md","editorial_note":"The declaration is definitionally the printed ∼p/p schema instance of the closed ✱10·2 certificate."}
+      "lean_dependencies": ["PM.Architecture.Star10Q267Kernel.star_10_2"],
+      "normalized_dependencies": ["PM1:✱10·2"]
     }
   ],
   "ci_evidence": {

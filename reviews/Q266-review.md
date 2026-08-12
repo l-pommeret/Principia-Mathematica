@@ -29,3 +29,17 @@ simultaneous conclusion still requires the blocked ✱10·13 assertion-level
 adjunction.  Thus neither target is declared, and both metadata items correctly
 remain `prepared`; the next theorem-level gate is a source-faithful ✱9·131 (or
 an independently audited assertion-adjunction derivation at this exact order).
+
+## Promotion dependency audit
+
+A `kernel-checked` simulation passes all three integrated declarations.
+✱10·12 extracts exactly `PM.Architecture.Star925Kernel.derive`, normalized to
+the sole printed dependency ✱9·25. ✱10·121 and ✱10·122 both extract an empty
+historical theorem closure, exactly matching their reviewed relaxations of
+✱9·14 and ✱9·15.
+
+The verifier's syntax-infrastructure catalogue now records only the structural
+operations actually exposed by these proofs: syntactic significance,
+capture-safe real/apparent abstraction and opening, their structural round
+trip, and Lean's Boolean disjunction simplification lemma. None is an assertion
+rule or an indexed PM theorem. No item status is promoted by this audit.

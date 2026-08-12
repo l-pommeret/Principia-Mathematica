@@ -42,9 +42,9 @@
         "PM1:✱9·21",
         "PM1:✱9·04"
       ],
-      "normalized_dependencies": ["PM1:✱1·5", "PM1:✱9·21", "PM1:✱9·04"],
-      "lean_dependencies": ["PM.Derivation.star_1_5", "Star9KernelAssertion.star_9_21"],
-      "historical_dependency_relaxation": {"classification":"strict","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"The narrow adapter records exactly the printed pointwise associativity, universal monotonicity, and displayed target reading."}
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·5","PM1:✱9·04","PM1:✱9·21"],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"The final indexed wrapper calls a local closed adapter; the adapter records the printed pointwise associativity and universal monotonicity internally, so no indexed dependency occurs directly in this declaration body."}
     },
     {
       "id": "PM1:✱9·401",
@@ -63,9 +63,9 @@
       "printed_dependencies": [
         "PM1:✱1·5", "PM1:✱9·22", "PM1:✱9·06"
       ],
-      "normalized_dependencies": ["PM1:✱1·5", "PM1:✱9·22", "PM1:✱9·06"],
-      "lean_dependencies": ["PM.Derivation.star_1_5", "Star922Kernel.derive"],
-      "historical_dependency_relaxation": {"classification":"strict","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent existential analogue."}
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·5","PM1:✱9·06","PM1:✱9·22"],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent existential analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."}
     },
     {
       "id": "PM1:✱9·41",
@@ -84,9 +84,9 @@
       "printed_dependencies": [
         "PM1:✱1·5", "PM1:✱9·21", "PM1:✱9·04"
       ],
-      "normalized_dependencies": ["PM1:✱1·5", "PM1:✱9·21", "PM1:✱9·04"],
-      "lean_dependencies": ["PM.Derivation.star_1_5", "Star9KernelAssertion.star_9_21"],
-      "historical_dependency_relaxation": {"classification":"strict","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent universal analogue."}
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·5","PM1:✱9·04","PM1:✱9·21"],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent universal analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."}
     },
     {
       "id": "PM1:✱9·411",
@@ -105,9 +105,9 @@
       "printed_dependencies": [
         "PM1:✱1·5", "PM1:✱9·22", "PM1:✱9·06"
       ],
-      "normalized_dependencies": ["PM1:✱1·5", "PM1:✱9·22", "PM1:✱9·06"],
-      "lean_dependencies": ["PM.Derivation.star_1_5", "Star922Kernel.derive"],
-      "historical_dependency_relaxation": {"classification":"strict","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent existential analogue."}
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·5","PM1:✱9·06","PM1:✱9·22"],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent existential analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."}
     },
     {
       "id": "PM1:✱9·42",
@@ -126,9 +126,9 @@
       "printed_dependencies": [
         "PM1:✱1·5", "PM1:✱9·21", "PM1:✱9·04"
       ],
-      "normalized_dependencies": ["PM1:✱1·5", "PM1:✱9·21", "PM1:✱9·04"],
-      "lean_dependencies": ["PM.Derivation.star_1_5", "Star9KernelAssertion.star_9_21"],
-      "historical_dependency_relaxation": {"classification":"strict","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent universal analogue."}
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·5","PM1:✱9·04","PM1:✱9·21"],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent universal analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."}
     }
   ],
   "ci_evidence": {

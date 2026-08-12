@@ -40,9 +40,9 @@
         "PM1:✱10·11",
         "PM1:✱10·11·21"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·01","PM1:✱10·01","PM1:✱10·1","PM1:✱10·11","PM1:✱10·11·21","PM1:✱10·21","PM1:✱4·2","PM1:✱9·02","PM1:✱9·03"],"strict_attempt_evidence":"reviews/Q268-star-10-23-audit.md","editorial_note":"The theorem-specific certificate closes both printed members to one canonical Raw form and retains the alternative ✱10·21/·1 witnesses internally; the public wrapper has no catalogued direct dependency."}
+      "lean_dependencies": ["PM.Architecture.Star10Q264Kernel.star_10_1", "PM.Architecture.Star10Q265FinalPrerequisites.star_10_23", "PM.Architecture.Star10Q267Kernel.star_10_21"],
+      "normalized_dependencies": ["PM1:✱10·1", "PM1:✱10·21"],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·01","PM1:✱10·11","PM1:✱10·11·21","PM1:✱1·01","PM1:✱4·2","PM1:✱9·02","PM1:✱9·03"],"strict_attempt_evidence":"reviews/Q268-star-10-23-audit.md","editorial_note":"The theorem-specific certificate directly retains ✱10·21/·1. Its same-item prerequisite helper creates no historical self-edge; the remaining printed steps are not direct calls in the indexed body."}
     }
   ],
   "ci_evidence": {

@@ -67,7 +67,15 @@
       "printed_dependencies": [
         "PM1:✱9·14·15"
       ],
+      "lean_dependencies": [],
       "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱9·14·15"],
+        "strict_attempt_evidence": "reviews/Q263-review.md",
+        "editorial_note": "The indexed formation witness is a direct use of capture-safe syntax infrastructure; the printed compound citation motivates formation but is not a theorem call in the witness body."
+      },
       "blocked_dependencies": []
     },
     {
@@ -87,7 +95,15 @@
         "PM1:✱9·14",
         "PM1:✱9·03"
       ],
+      "lean_dependencies": [],
       "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱9·03", "PM1:✱9·14", "PM1:✱9·15"],
+        "strict_attempt_evidence": "reviews/Q263-review.md",
+        "editorial_note": "The two indexed formation witnesses are direct uses of typed binder and disjunction syntax; the printed citations motivate formation but are not theorem calls in the witness body."
+      },
       "blocked_dependencies": []
     },
     {
@@ -105,7 +121,15 @@
       "printed_dependencies": [
         "Proof as above"
       ],
+      "lean_dependencies": [],
       "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["Proof as above"],
+        "strict_attempt_evidence": "reviews/Q263-review.md",
+        "editorial_note": "The four independently bound combinations are constructed directly by typed syntax; the prose cross-reference is preserved as printed evidence but creates no direct Lean theorem edge."
+      },
       "blocked_dependencies": []
     }
   ],

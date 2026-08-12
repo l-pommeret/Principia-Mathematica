@@ -4,23 +4,130 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "177",
-    "scan_leaves": [199],
+    "scan_leaves": [
+      199
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
-    "leaf_derivatives": [{
-      "scan_leaf": 199,
-      "printed_page": 177,
-      "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page199-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
-      "sha256": "377a277639f9d194f712cf5d0a88d5979b7243b26088b04133d0be91464b4960"
-    }],
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 199,
+        "printed_page": 177,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page199-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "377a277639f9d194f712cf5d0a88d5979b7243b26088b04133d0be91464b4960"
+      }
+    ],
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
-  "items": [
-    {"id":"PM1:✱13·01","kind":"definition","printed":"x = y .=: (φ) : φ!x .⊃ . φ!y Df","printed_page":177,"scan_leaf":199,"lean_path":"Principia/FirstEdition/Volume1/Star13.lean","declaration":"PM.FirstEdition.Volume1.Star13.star_13_01","formal_scope":"identity definition over predicative functions; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-identity-and-predicativity","printed_dependencies":[],"normalized_dependencies":[]},
-    {"id":"PM1:✱13·02","kind":"definition","printed":"x ≠ y .=. ∼(x = y) Df","printed_page":177,"scan_leaf":199,"lean_path":"Principia/FirstEdition/Volume1/Star13.lean","declaration":"PM.FirstEdition.Volume1.Star13.star_13_02","formal_scope":"identity-negation abbreviation; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-identity-and-predicativity","printed_dependencies":["PM1:✱13·01"],"normalized_dependencies":[]},
-    {"id":"PM1:✱13·03","kind":"definition","printed":"x = y = z .=. x = y . y = z Df","printed_page":177,"scan_leaf":199,"lean_path":"Principia/FirstEdition/Volume1/Star13.lean","declaration":"PM.FirstEdition.Volume1.Star13.star_13_03","formal_scope":"chained identity abbreviation; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-identity-and-predicativity","printed_dependencies":["PM1:✱13·01"],"normalized_dependencies":[]},
-    {"id":"PM1:✱13·1","kind":"derived-proposition","printed":"⊢ :: x = y .≡ : φ!x .⊃φ . φ!y","printed_page":177,"scan_leaf":199,"lean_path":"Principia/FirstEdition/Volume1/Star13.lean","declaration":"PM.FirstEdition.Volume1.Star13.star_13_1","formal_scope":"predicative identity equivalence; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-identity-and-predicativity","printed_dependencies":["PM1:✱4·2","PM1:✱13·01","PM1:✱10·02"],"normalized_dependencies":[]},
-    {"id":"PM1:✱13·101","kind":"derived-proposition","printed":"⊢ : x = y .⊃ . ψx .⊃ . ψy","printed_page":177,"scan_leaf":199,"lean_path":"Principia/FirstEdition/Volume1/Star13.lean","declaration":"PM.FirstEdition.Volume1.Star13.star_13_101","formal_scope":"identity substitution for arbitrary functions; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-identity-predicativity-and-reducibility","printed_dependencies":["PM1:✱12·1","PM1:✱13·1","PM1:✱4·84·85","PM1:✱10·27","PM1:✱10·23"],"normalized_dependencies":[]}
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
   ],
-  "ci_evidence": {"commit":"pending","run":"pending","conclusion":"pending"}
+  "items": [
+    {
+      "id": "PM1:✱13·01",
+      "kind": "definition",
+      "printed": "x = y .=: (φ) : φ!x .⊃ . φ!y Df",
+      "printed_page": 177,
+      "scan_leaf": 199,
+      "lean_path": "Principia/Architecture/Star13Q290Kernel.lean",
+      "declaration": "PM.Architecture.Star13Q290Kernel.star_13_01",
+      "formal_scope": "exact predicative indiscernibility definition with explicit predicative basis",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱13·02",
+      "kind": "definition",
+      "printed": "x ≠ y .=. ∼(x = y) Df",
+      "printed_page": 177,
+      "scan_leaf": 199,
+      "lean_path": "Principia/Architecture/Star13Q290Kernel.lean",
+      "declaration": "PM.Architecture.Star13Q290Kernel.star_13_02",
+      "formal_scope": "exact negation abbreviation over PM identity",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱13·01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱13·01"
+      ]
+    },
+    {
+      "id": "PM1:✱13·03",
+      "kind": "definition",
+      "printed": "x = y = z .=. x = y . y = z Df",
+      "printed_page": 177,
+      "scan_leaf": 199,
+      "lean_path": "Principia/Architecture/Star13Q290Kernel.lean",
+      "declaration": "PM.Architecture.Star13Q290Kernel.star_13_03",
+      "formal_scope": "exact adjacent-identity conjunction abbreviation",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱13·01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱13·01"
+      ]
+    },
+    {
+      "id": "PM1:✱13·1",
+      "kind": "derived-proposition",
+      "printed": "⊢ :: x = y .≡ : φ!x .⊃φ . φ!y",
+      "printed_page": 177,
+      "scan_leaf": 199,
+      "lean_path": "Principia/Architecture/Star13Q290Kernel.lean",
+      "declaration": "PM.Architecture.Star13Q290Kernel.star_13_1",
+      "formal_scope": "exact predicative identity/formal-implication equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱13·01",
+        "PM1:✱10·02"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱13·01",
+        "PM1:✱10·02"
+      ]
+    },
+    {
+      "id": "PM1:✱13·101",
+      "kind": "derived-proposition",
+      "printed": "⊢ : x = y .⊃ . ψx .⊃ . ψy",
+      "printed_page": 177,
+      "scan_leaf": 199,
+      "lean_path": "Principia/Architecture/Star13Q290Kernel.lean",
+      "declaration": "PM.Architecture.Star13Q290Kernel.star_13_101",
+      "formal_scope": "exact arbitrary-function substitution using explicit reducibility model data",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱12·1",
+        "PM1:✱13·1",
+        "PM1:✱4·84·85",
+        "PM1:✱10·27",
+        "PM1:✱10·23"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱12·1",
+        "PM1:✱13·1",
+        "PM1:✱10·27",
+        "PM1:✱10·23"
+      ]
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

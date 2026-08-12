@@ -1,6 +1,166 @@
-{"batch":"PM1-STAR14-Q304","edition":"first","volume":1,"source_range":{"printed_pages":"187","scan_leaves":[209],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":209,"printed_page":187,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page209-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg","sha256":"3552ec42e14752a0382472bed9c1908e7b6b929a0b36dfa6362886f93ca1608a"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱14·14","kind":"derived-proposition","printed":"⊢ : a = b . b = (℩x)(φx) .⊃ . a = (℩x)(φx)","printed_page":187,"scan_leaf":209,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_14","formal_scope":"identity transit with contextual description; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-incomplete-symbols-and-scope","printed_dependencies":["✱13·13"],"normalized_dependencies":[]},
-{"id":"PM1:✱14·142","kind":"derived-proposition","printed":"⊢ : a = (℩x)(φx) . (℩x)(φx) = (℩x)(ψx) .⊃ . a = (℩x)(ψx)","printed_page":187,"scan_leaf":209,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_142","formal_scope":"description identity transit; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-incomplete-symbols-and-scope","printed_dependencies":["✱14·1","✱13·195","✱10·35","✱14·121","✱3·27"],"normalized_dependencies":[]},
-{"id":"PM1:✱14·144","kind":"derived-proposition","printed":"⊢ : (℩x)(φx) = (℩x)(ψx) . (℩x)(ψx) = (℩x)(χx) .⊃ . (℩x)(φx) = (℩x)(χx)","printed_page":187,"scan_leaf":209,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_144","formal_scope":"description identity transitivity; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-incomplete-symbols-and-scope","printed_dependencies":["✱14·111","✱13·195","✱11·54","✱14·121","✱11·42"],"normalized_dependencies":[]},
-{"id":"PM1:✱14·145","kind":"derived-proposition","printed":"⊢ : a = (℩x)(φx) . a = (℩x)(ψx) .⊃ . (℩x)(φx) = (℩x)(ψx)","printed_page":187,"scan_leaf":209,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_145","formal_scope":"shared-witness description identity; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-incomplete-symbols-and-scope","printed_dependencies":["✱14·1","✱13·195","✱10·35","✱14·111"],"normalized_dependencies":[]}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR14-Q304",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "187",
+    "scan_leaves": [
+      209
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 209,
+        "printed_page": 187,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page209-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg",
+        "sha256": "3552ec42e14752a0382472bed9c1908e7b6b929a0b36dfa6362886f93ca1608a"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱14·14",
+      "kind": "derived-proposition",
+      "printed": "⊢ : a = b . b = (℩x)(φx) .⊃ . a = (℩x)(φx)",
+      "printed_page": 187,
+      "scan_leaf": 209,
+      "lean_path": "Principia/Architecture/Star14Q304Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q304Kernel.star_14_14",
+      "formal_scope": "exact contextual-description identity composition after ✱14·01 expansion",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱13·13"
+      ],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱13·13"
+        ],
+        "strict_attempt_evidence": "reviews/Q304-canonical-integration.md",
+        "editorial_note": "Direct ✱14·01 expansion compresses the printed identity chain."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q304-review.md"
+    },
+    {
+      "id": "PM1:✱14·142",
+      "kind": "derived-proposition",
+      "printed": "⊢ : a = (℩x)(φx) . (℩x)(φx) = (℩x)(ψx) .⊃ . a = (℩x)(ψx)",
+      "printed_page": 187,
+      "scan_leaf": 209,
+      "lean_path": "Principia/Architecture/Star14Q304Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q304Kernel.star_14_142",
+      "formal_scope": "exact object-to-description identity transitivity after contextual expansion",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱14·1",
+        "PM1:✱13·195",
+        "PM1:✱10·35",
+        "PM1:✱14·121",
+        "PM1:✱3·27"
+      ],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱10·35",
+          "PM1:✱13·195",
+          "PM1:✱14·1",
+          "PM1:✱14·121",
+          "PM1:✱3·27"
+        ],
+        "strict_attempt_evidence": "reviews/Q304-canonical-integration.md",
+        "editorial_note": "Direct ✱14·01 expansion compresses the printed derivation chain."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q304-review.md"
+    },
+    {
+      "id": "PM1:✱14·144",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (℩x)(φx) = (℩x)(ψx) . (℩x)(ψx) = (℩x)(χx) .⊃ . (℩x)(φx) = (℩x)(χx)",
+      "printed_page": 187,
+      "scan_leaf": 209,
+      "lean_path": "Principia/Architecture/Star14Q304Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q304Kernel.star_14_144",
+      "formal_scope": "exact contextual identity transitivity for three descriptions",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱14·111",
+        "PM1:✱13·195",
+        "PM1:✱11·54",
+        "PM1:✱14·121",
+        "PM1:✱11·42"
+      ],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱11·42",
+          "PM1:✱11·54",
+          "PM1:✱13·195",
+          "PM1:✱14·111",
+          "PM1:✱14·121"
+        ],
+        "strict_attempt_evidence": "reviews/Q304-canonical-integration.md",
+        "editorial_note": "Direct nested ✱14·01 expansion compresses the printed derivation chain."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q304-review.md"
+    },
+    {
+      "id": "PM1:✱14·145",
+      "kind": "derived-proposition",
+      "printed": "⊢ : a = (℩x)(φx) . a = (℩x)(ψx) .⊃ . (℩x)(φx) = (℩x)(ψx)",
+      "printed_page": 187,
+      "scan_leaf": 209,
+      "lean_path": "Principia/Architecture/Star14Q304Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q304Kernel.star_14_145",
+      "formal_scope": "exact shared-object contextual description identity",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱14·1",
+        "PM1:✱13·195",
+        "PM1:✱10·35",
+        "PM1:✱14·111"
+      ],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱10·35",
+          "PM1:✱13·195",
+          "PM1:✱14·1",
+          "PM1:✱14·111"
+        ],
+        "strict_attempt_evidence": "reviews/Q304-canonical-integration.md",
+        "editorial_note": "Direct nested ✱14·01 expansion compresses the printed derivation chain."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q304-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

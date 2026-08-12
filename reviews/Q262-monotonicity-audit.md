@@ -12,3 +12,9 @@ dropped and no new assertion constructor is introduced.
 The current PM parser does not yet accept these compact nested colon/dot
 scopes.  Each transcription was therefore checked against scan leaves
 163–164 and PG 78050; this is a reviewed parser gap, not parser evidence.
+
+Promotion simulation re-extracts an empty direct indexed closure for all six
+final declarations, matching their declared empty `lean_dependencies` and
+`normalized_dependencies`. Every printed omission is exactly represented in
+the reviewed relaxation records, and all six items pass dependency audit when
+simulated as `kernel-checked`.

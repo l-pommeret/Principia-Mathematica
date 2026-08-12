@@ -1,7 +1,165 @@
-{"batch":"PM1-STAR14-Q299","edition":"first","volume":1,"source_range":{"printed_pages":"184","scan_leaves":[206],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":206,"printed_page":184,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page206-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg","sha256":"d82a452d1485876e6962c1ff219a9304404d429a85cd20e1bdebfdc1db47b3f8"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱14·1","kind":"derived-proposition","printed":"⊢ : [(℩x)(φx)] . ψ(℩x)(φx) .≡ : (∃b) : φx .≡ₓ. x = b : ψb","printed_page":184,"scan_leaf":206,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_1","formal_scope":"scoped description elimination; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-incomplete-symbols-and-scope","printed_dependencies":["✱4·2.(*14·01)"],"normalized_dependencies":[]},
-{"id":"PM1:✱14·101","kind":"derived-proposition","printed":"⊢ : ψ(℩x)(φx) .≡ : (∃b) : φx .≡ₓ. x = b : ψb","printed_page":184,"scan_leaf":206,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_101","formal_scope":"default-scope description elimination; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-incomplete-symbols-and-scope","printed_dependencies":["✱14·1"],"normalized_dependencies":[]},
-{"id":"PM1:✱14·11","kind":"derived-proposition","printed":"⊢ : E!(℩x)(φx) .≡ : (∃b) : φx .≡ₓ. x = b","printed_page":184,"scan_leaf":206,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_11","formal_scope":"description existence equivalence; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-incomplete-symbols-and-scope","printed_dependencies":["✱4·2.(*14·02)"],"normalized_dependencies":[]},
-{"id":"PM1:✱14·111","kind":"derived-proposition","printed":"⊢ : [(℩x)(ψx)] . f{(℩x)(φx), (℩x)(ψx)} .≡ : (∃b,c) : φx .≡ₓ. x = b : ψx .≡ₓ. x = c : f(b,c)","printed_page":184,"scan_leaf":206,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_111","formal_scope":"two-description scoped function elimination; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-incomplete-symbols-and-scope","printed_dependencies":["✱4·2.(*14·04·03)","✱14·1","✱11·55"],"normalized_dependencies":[]},
-{"id":"PM1:✱14·112","kind":"derived-proposition","printed":"⊢ : f{(℩x)(φx), (℩x)(ψx)} .≡ : (∃b,c) : φx .≡ₓ. x = b : ψx .≡ₓ. x = c : f(b,c)","printed_page":184,"scan_leaf":206,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_112","formal_scope":"two-description default-scope function elimination; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-incomplete-symbols-and-scope","printed_dependencies":["✱14·111"],"normalized_dependencies":[]}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR14-Q299",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "184",
+    "scan_leaves": [
+      206
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 206,
+        "printed_page": 184,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page206-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg",
+        "sha256": "d82a452d1485876e6962c1ff219a9304404d429a85cd20e1bdebfdc1db47b3f8"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱14·1",
+      "kind": "derived-proposition",
+      "printed": "⊢ : [(℩x)(φx)] . ψ(℩x)(φx) .≡ : (∃b) : φx .≡ₓ. x = b : ψb",
+      "printed_page": 184,
+      "scan_leaf": 206,
+      "lean_path": "Principia/Architecture/Star14Q299Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q299Kernel.star_14_1",
+      "formal_scope": "exact polymorphic contextual description-elimination equivalence, without a description term",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "✱4·2.(*14·01)"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱4·2.(*14·01)"
+        ],
+        "strict_attempt_evidence": "reviews/Q299-review.md",
+        "editorial_note": "The exact contextual definiens closes by reduction; the printed composite conversion citation is retained as historical evidence."
+      }
+    },
+    {
+      "id": "PM1:✱14·101",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ψ(℩x)(φx) .≡ : (∃b) : φx .≡ₓ. x = b : ψb",
+      "printed_page": 184,
+      "scan_leaf": 206,
+      "lean_path": "Principia/Architecture/Star14Q299Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q299Kernel.star_14_101",
+      "formal_scope": "exact polymorphic default contextual description-elimination equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱14·1"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star14Q299Kernel.star_14_1"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱14·1"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q299-review.md"
+    },
+    {
+      "id": "PM1:✱14·11",
+      "kind": "derived-proposition",
+      "printed": "⊢ : E!(℩x)(φx) .≡ : (∃b) : φx .≡ₓ. x = b",
+      "printed_page": 184,
+      "scan_leaf": 206,
+      "lean_path": "Principia/Architecture/Star14Q299Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q299Kernel.star_14_11",
+      "formal_scope": "exact polymorphic contextual description-existence equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "✱4·2.(*14·02)"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱4·2.(*14·02)"
+        ],
+        "strict_attempt_evidence": "reviews/Q299-review.md",
+        "editorial_note": "The exact existence definiens closes by reduction; the printed composite conversion citation is retained as historical evidence."
+      }
+    },
+    {
+      "id": "PM1:✱14·111",
+      "kind": "derived-proposition",
+      "printed": "⊢ : [(℩x)(ψx)] . f{(℩x)(φx), (℩x)(ψx)} .≡ : (∃b,c) : φx .≡ₓ. x = b : ψx .≡ₓ. x = c : f(b,c)",
+      "printed_page": 184,
+      "scan_leaf": 206,
+      "lean_path": "Principia/Architecture/Star14Q299Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q299Kernel.star_14_111",
+      "formal_scope": "exact polymorphic nested two-description contextual elimination equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "✱4·2.(*14·04·03)",
+        "✱14·1",
+        "✱11·55"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱11·55",
+          "✱14·1",
+          "✱4·2.(*14·04·03)"
+        ],
+        "strict_attempt_evidence": "reviews/Q299-review.md",
+        "editorial_note": "The complete two-candidate contextual definiens closes by reduction; all printed historical citations remain recorded."
+      }
+    },
+    {
+      "id": "PM1:✱14·112",
+      "kind": "derived-proposition",
+      "printed": "⊢ : f{(℩x)(φx), (℩x)(ψx)} .≡ : (∃b,c) : φx .≡ₓ. x = b : ψx .≡ₓ. x = c : f(b,c)",
+      "printed_page": 184,
+      "scan_leaf": 206,
+      "lean_path": "Principia/Architecture/Star14Q299Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q299Kernel.star_14_112",
+      "formal_scope": "exact polymorphic default two-description contextual elimination equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱14·111"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star14Q299Kernel.star_14_111"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱14·111"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q299-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

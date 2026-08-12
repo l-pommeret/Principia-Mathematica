@@ -34,8 +34,8 @@
         "PM1:✱10·1",
         "PM1:✱10·01"
       ],
-      "lean_dependencies": [], "normalized_dependencies": [],
-      "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·01","PM1:✱10·1","PM1:✱9·1"],"strict_attempt_evidence":"reviews/Q269-star-10-audit.md","editorial_note":"The exact endpoint is inhabited by the existing explicit ✱9·1 schema instance."}
+      "lean_dependencies": ["PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_1_instance"], "normalized_dependencies": ["PM1:✱9·1"],
+      "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·01","PM1:✱10·1"],"strict_attempt_evidence":"reviews/Q269-star-10-audit.md","editorial_note":"The exact endpoint directly uses the explicit ✱9·1 schema instance; the two ✱10 citations are not direct calls in the indexed body."}
     },
     {
       "id": "PM1:✱10·25",
@@ -51,8 +51,8 @@
       "printed_dependencies": [
         "PM1:✱10·1·24"
       ],
-      "lean_dependencies": [], "normalized_dependencies": [],
-      "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·1·24"],"strict_attempt_evidence":"reviews/Q269-star-10-audit.md","editorial_note":"The theorem-specific certificate retains the two exact component witnesses behind its wrapper."}
+      "lean_dependencies": ["PM.Architecture.Star10Q264Kernel.star_10_1", "PM.Architecture.Star10Q269Kernel.star_10_24"], "normalized_dependencies": ["PM1:✱10·1", "PM1:✱10·24"],
+      "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":["PM1:✱10·1","PM1:✱10·24"],"printed_but_unused":["PM1:✱10·1·24"],"strict_attempt_evidence":"reviews/Q269-star-10-audit.md","editorial_note":"The printed compact citation ✱10·1·24 is resolved by the two directly retained component witnesses ✱10·1 and ✱10·24."}
     },
     {
       "id": "PM1:✱10·251",
@@ -68,8 +68,7 @@
       "printed_dependencies": [
         "PM1:✱10·25"
       ],
-      "lean_dependencies": [], "normalized_dependencies": [],
-      "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·25"],"strict_attempt_evidence":"reviews/Q269-star-10-audit.md","editorial_note":"The closed witness packages ✱10·25 and the exact negated-existential normalization."}
+      "lean_dependencies": ["PM.Architecture.Star10Q269Kernel.star_10_25"], "normalized_dependencies": ["PM1:✱10·25"]
     },
     {
       "id": "PM1:✱10·252",

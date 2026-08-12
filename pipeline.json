@@ -2426,6 +2426,13 @@
       "requires_one_to_one_kernel_remap": true,
       "parallel_group": "STAR14-INTERFACE",
       "aristotle_status": "needs-review",
+      "local_integration": {
+        "status": "awaiting-ci",
+        "metadata_path": "metadata/items/PM1-star-14-Q296.json",
+        "lean_path": "Principia/Architecture/Star14Q296Kernel.lean",
+        "declaration": "PM.DescriptionSyntax.Formula.star_14_01",
+        "review_path": "reviews/Q296-canonical-integration.md"
+      },
       "architecture_evidence": {
         "commit": "94a49e0",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31513533839",

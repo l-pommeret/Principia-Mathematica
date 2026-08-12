@@ -1,5 +1,118 @@
-{"batch":"PM1-STAR14-Q305","edition":"first","volume":1,"source_range":{"printed_pages":"188","scan_leaves":[210],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":210,"printed_page":188,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page210-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg","sha256":"3a57a1711260a67eaa44abbd1750b7e551a5afa9e0d32a3cb9d11d194c3866cc"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱14·15","kind":"derived-proposition","printed":"⊢ : (℩x)(φx) = b .⊃ : ψ{(℩x)(φx)} .≡ . ψb","printed_page":188,"scan_leaf":210,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_15","formal_scope":"description substitution under identity; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-incomplete-symbols-and-scope","printed_dependencies":["✱14·1","✱13·195","✱13·192"],"normalized_dependencies":[]},
-{"id":"PM1:✱14·16","kind":"derived-proposition","printed":"⊢ : (℩x)(φx) = (℩x)(ψx) .⊃ : χ{(℩x)(φx)} .≡ . χ{(℩x)(ψx)}","printed_page":188,"scan_leaf":210,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_16","formal_scope":"description substitution across equality; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-incomplete-symbols-and-scope","printed_dependencies":["✱14·1","✱13·192","✱14·13·15","✱10·1·23"],"normalized_dependencies":[]},
-{"id":"PM1:✱14·17","kind":"derived-proposition","printed":"⊢ : (℩x)(φx) = b .≡ : ψ!(℩x)(φx) .≡_ψ . ψ!b","printed_page":188,"scan_leaf":210,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_17","formal_scope":"description identity under value-range context; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-incomplete-symbols-and-scope","printed_dependencies":["✱14·15","✱10·11·21","✱10·1","✱4·22","✱13·15","✱12·1"],"normalized_dependencies":[]}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR14-Q305",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "188",
+    "scan_leaves": [
+      210
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 210,
+        "printed_page": 188,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page210-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg",
+        "sha256": "3a57a1711260a67eaa44abbd1750b7e551a5afa9e0d32a3cb9d11d194c3866cc"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱14·15",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (℩x)(φx) = b .⊃ : ψ{(℩x)(φx)} .≡ . ψb",
+      "printed_page": 188,
+      "scan_leaf": 210,
+      "lean_path": "Principia/Architecture/Star14Q305Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q305Kernel.star_14_15",
+      "formal_scope": "exact contextual description substitution equivalence under identity",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱14·1",
+        "PM1:✱13·195",
+        "PM1:✱13·192"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star14Q299Kernel.DescriptionScope",
+        "PM.Architecture.Star14Q299Kernel.Characterizes"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱14·1"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q305-review.md"
+    },
+    {
+      "id": "PM1:✱14·16",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (℩x)(φx) = (℩x)(ψx) .⊃ : χ{(℩x)(φx)} .≡ . χ{(℩x)(ψx)}",
+      "printed_page": 188,
+      "scan_leaf": 210,
+      "lean_path": "Principia/Architecture/Star14Q305Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q305Kernel.star_14_16",
+      "formal_scope": "exact contextual substitution equivalence across two-description identity",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱14·1",
+        "PM1:✱13·192",
+        "PM1:✱14·13",
+        "PM1:✱14·15",
+        "PM1:✱10·1",
+        "PM1:✱10·23"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star14Q305Kernel.star_14_15"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱14·15"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q305-review.md"
+    },
+    {
+      "id": "PM1:✱14·17",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (℩x)(φx) = b .≡ : ψ!(℩x)(φx) .≡_ψ . ψ!b",
+      "printed_page": 188,
+      "scan_leaf": 210,
+      "lean_path": "Principia/Architecture/Star14Q305Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q305Kernel.star_14_17",
+      "formal_scope": "exact description identity equivalence quantified over every predicative one-place context",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱14·15",
+        "PM1:✱10·11",
+        "PM1:✱10·21",
+        "PM1:✱10·1",
+        "PM1:✱4·22",
+        "PM1:✱13·15",
+        "PM1:✱12·1"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star14Q305Kernel.star_14_15"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱14·15"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q305-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}
