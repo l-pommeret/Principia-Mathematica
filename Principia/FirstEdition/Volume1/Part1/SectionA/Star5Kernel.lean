@@ -360,4 +360,64 @@ theorem star_5_44 {Γ} (p q r : PM.Elementary Γ) :
     infer backwardBase (PM.FirstEdition.Volume1.Star2.star_2_02 h (b ⊃ₚ a))
   exact join forward backward
 
+/-- PM I (1910), p. 130, ✱5·42.  Each direction is reduced to an explicit
+proof under `p` and `q`: the forward direction adjoins the available `p` to
+`r`, and the reverse direction projects that same conjunction. -/
+theorem star_5_42 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ≡ₚ (p ⊃ₚ (q ⊃ₚ (p ∧ₚ r)))) := by
+  let a := p ⊃ₚ (q ⊃ₚ r)
+  let b := p ⊃ₚ (q ⊃ₚ (p ∧ₚ r))
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ},
+      (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have duplicate : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
+    intro t
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t)
+      (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
+  have join : ∀ {u v w : PM.Elementary Γ},
+      (⊢ₚ (u ⊃ₚ v)) → (⊢ₚ (u ⊃ₚ w)) → (⊢ₚ (u ⊃ₚ (v ∧ₚ w))) := by
+    intro u v w huv huw
+    have pair : ⊢ₚ ((u ⊃ₚ v) ∧ₚ (u ⊃ₚ w)) :=
+      infer huw (infer huv (PM.FirstEdition.Volume1.Star3.star_3_2 (u ⊃ₚ v) (u ⊃ₚ w)))
+    exact compose (duplicate u)
+      (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 u u v w))
+  let xf := (a ∧ₚ p) ∧ₚ q
+  have xfap : ⊢ₚ (xf ⊃ₚ (a ∧ₚ p)) := PM.FirstEdition.Volume1.Star3.star_3_26 (a ∧ₚ p) q
+  have xfa : ⊢ₚ (xf ⊃ₚ a) := compose xfap (PM.FirstEdition.Volume1.Star3.star_3_26 a p)
+  have xfp : ⊢ₚ (xf ⊃ₚ p) := compose xfap (PM.FirstEdition.Volume1.Star3.star_3_27 a p)
+  have xfq : ⊢ₚ (xf ⊃ₚ q) := PM.FirstEdition.Volume1.Star3.star_3_27 (a ∧ₚ p) q
+  have xfpq : ⊢ₚ (xf ⊃ₚ (p ∧ₚ q)) := join xfp xfq
+  have xfh : ⊢ₚ (xf ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)) :=
+    compose xfa (PM.FirstEdition.Volume1.Star3.star_3_31 p q r)
+  have xfpr : ⊢ₚ (xf ⊃ₚ r) :=
+    compose (join xfpq xfh) (PM.FirstEdition.Volume1.Star3.star_3_35 (p ∧ₚ q) r)
+  have forwardBase : ⊢ₚ (xf ⊃ₚ (p ∧ₚ r)) := join xfp xfpr
+  have forward : ⊢ₚ (a ⊃ₚ b) :=
+    infer (infer forwardBase (PM.FirstEdition.Volume1.Star3.star_3_3 (a ∧ₚ p) q (p ∧ₚ r)))
+      (PM.FirstEdition.Volume1.Star3.star_3_3 a p (q ⊃ₚ (p ∧ₚ r)))
+  let xb := (b ∧ₚ p) ∧ₚ q
+  have xbap : ⊢ₚ (xb ⊃ₚ (b ∧ₚ p)) := PM.FirstEdition.Volume1.Star3.star_3_26 (b ∧ₚ p) q
+  have xbb : ⊢ₚ (xb ⊃ₚ b) := compose xbap (PM.FirstEdition.Volume1.Star3.star_3_26 b p)
+  have xbp : ⊢ₚ (xb ⊃ₚ p) := compose xbap (PM.FirstEdition.Volume1.Star3.star_3_27 b p)
+  have xbq : ⊢ₚ (xb ⊃ₚ q) := PM.FirstEdition.Volume1.Star3.star_3_27 (b ∧ₚ p) q
+  have xbpq : ⊢ₚ (xb ⊃ₚ (p ∧ₚ q)) := join xbp xbq
+  have xbh : ⊢ₚ (xb ⊃ₚ ((p ∧ₚ q) ⊃ₚ (p ∧ₚ r))) :=
+    compose xbb (PM.FirstEdition.Volume1.Star3.star_3_31 p q (p ∧ₚ r))
+  have xbpr : ⊢ₚ (xb ⊃ₚ (p ∧ₚ r)) :=
+    compose (join xbpq xbh) (PM.FirstEdition.Volume1.Star3.star_3_35 (p ∧ₚ q) (p ∧ₚ r))
+  have backwardBase : ⊢ₚ (xb ⊃ₚ r) :=
+    compose xbpr (PM.FirstEdition.Volume1.Star3.star_3_27 p r)
+  have backward : ⊢ₚ (b ⊃ₚ a) :=
+    infer (infer backwardBase (PM.FirstEdition.Volume1.Star3.star_3_3 (b ∧ₚ p) q r))
+      (PM.FirstEdition.Volume1.Star3.star_3_3 b p (q ⊃ₚ r))
+  exact infer forward
+    (infer backward (PM.FirstEdition.Volume1.Star3.star_3_2 (b ⊃ₚ a) (a ⊃ₚ b)))
+
 end PM.FirstEdition.Volume1.Star5

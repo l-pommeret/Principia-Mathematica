@@ -17,27 +17,6 @@
     "WS-PM1"
   ],
   "items": [
-    {
-      "id": "PM1:✱5·42",
-      "kind": "derived-proposition",
-      "printed": "⊢ : :p . ⊃ . q ⊃ r : ≡ : p . ⊃ : q . ⊃ . p . r",
-      "printed_page": 130,
-      "scan_leaf": 152,
-      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star5.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star5.star_5_42",
-      "formal_scope": "(p⊃(q⊃r))≡(p⊃(q⊃(p·r))), over an elementary real-variable context",
-      "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "prepared",
-      "printed_dependencies": [
-        "PM1:✱5·3",
-        "PM1:✱4·87"
-      ],
-      "normalized_dependencies": [],
-      "blocked_dependencies": [
-        "PM1:✱5·3",
-        "PM1:✱4·87"
-      ]
-    }
   ],
   "ci_evidence": {
     "commit": "pending",
