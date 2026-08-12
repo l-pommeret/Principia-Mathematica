@@ -445,6 +445,14 @@ def disjRightElementary : FirstOrder Γ Δ → Elementary Γ → FirstOrder Γ �
   | Quantified.sometimes body, proposition =>
       sometimes (body ∨ₐ Apparent.ofElementary proposition)
 
+/-- Matrix-level ✱9·03/05.  Unlike the displayed elementary specialization,
+the right operand may retain the surrounding apparent-variable context. -/
+def disjRightMatrix : FirstOrder Γ Δ → Apparent Γ Δ → FirstOrder Γ Δ
+  | Quantified.always body, proposition =>
+      always (body ∨ₐ Apparent.weaken proposition)
+  | Quantified.sometimes body, proposition =>
+      sometimes (body ∨ₐ Apparent.weaken proposition)
+
 /-- Disjunction of an elementary proposition with a first-order proposition.
 Operand order is retained in the matrix; the two branches are precisely
 ✱9·04 and ✱9·06. -/
@@ -454,12 +462,39 @@ def disjElementaryLeft : Elementary Γ → FirstOrder Γ Δ → FirstOrder Γ Δ
   | proposition, Quantified.sometimes body =>
       sometimes (Apparent.ofElementary proposition ∨ₐ body)
 
+/-- Matrix-level ✱9·04/06, preserving the left-to-right operand order under
+the already-present binder. -/
+def disjMatrixLeft : Apparent Γ Δ → FirstOrder Γ Δ → FirstOrder Γ Δ
+  | proposition, Quantified.always body =>
+      always (Apparent.weaken proposition ∨ₐ body)
+  | proposition, Quantified.sometimes body =>
+      sometimes (Apparent.weaken proposition ∨ₐ body)
+
 /-- The printed mixed-order implication `p ⊃ P` at an assigned first order.
 It is only the PM abbreviation `∼p ∨ P`; no elementary proposition is
 silently coerced into a first-order proposition. -/
 def impElementaryToFirst (proposition : Elementary Γ) :
     FirstOrder Γ Δ → FirstOrder Γ Δ :=
   disjElementaryLeft (Elementary.neg proposition)
+
+/-- The exact normalized matrix form of a first-order-to-elementary
+implication: `P ⊃ q` is `∼P ∨ q`.  It is syntax only; no inference rule is
+claimed. -/
+def impFirstToMatrix (proposition : FirstOrder Γ Δ)
+    (conclusion : Apparent Γ Δ) : FirstOrder Γ Δ :=
+  disjRightMatrix (neg proposition) conclusion
+
+@[simp] theorem star_9_03_matrix_reduction
+    (body : Apparent Γ (.elementaryProposition :: Δ))
+    (proposition : Apparent Γ Δ) :
+    disjRightMatrix (always body) proposition =
+      always (body ∨ₐ Apparent.weaken proposition) := rfl
+
+@[simp] theorem star_9_04_matrix_reduction
+    (proposition : Apparent Γ Δ)
+    (body : Apparent Γ (.elementaryProposition :: Δ)) :
+    disjMatrixLeft proposition (always body) =
+      always (Apparent.weaken proposition ∨ₐ body) := rfl
 
 /-- ✱9·03 as a kernel reduction. -/
 @[simp] theorem star_9_03_reduction

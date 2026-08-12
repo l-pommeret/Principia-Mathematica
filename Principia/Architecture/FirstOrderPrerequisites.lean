@@ -126,6 +126,22 @@ def star_9_21_target (φ ψ : Apparent Γ [.elementaryProposition]) :
     (OrderedFormula.always (matrixImp φ ψ))
     (firstImp (OrderedFormula.always φ) (OrderedFormula.always ψ))
 
+/-- The exact normalized matrix in line (4) of the printed proof of ✱9·3.
+The outer `x` is the remaining matrix variable; the inner `y` is introduced
+by `always`.  The implication is the syntax reduction `∼P ∨ q` via
+✱9·05·01·04, not a new first-order connective or assertion. -/
+def star_9_3_line4_matrix (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrder Γ [.elementaryProposition] :=
+  let inner : FirstOrder Γ [.elementaryProposition] :=
+    FirstOrder.always (Apparent.rename Apparent.innerVariableRenaming φ)
+  FirstOrder.impFirstToMatrix (FirstOrder.disjMatrixLeft φ inner) φ
+
+/-- The outer `x` generalization of line (4), at the sole represented second
+assigned order. -/
+def star_9_3_line4_target (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula Γ 2 :=
+  firstOrderToSecondAll (star_9_3_line4_matrix φ)
+
 /-- The first-order identity cited by ✱9·25.  It is kept separate rather than
 collapsed to Lean reflexivity: its printed proof is `Id.✱9·13·21`. -/
 def star_9_23_target (φ : Apparent Γ [.elementaryProposition]) :
