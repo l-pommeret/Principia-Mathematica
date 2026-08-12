@@ -630,6 +630,34 @@ def substitute (σ : Apparent.Substitution Γ Δ Ξ) :
       Quantified.sometimes
         (Apparent.substitute (Apparent.liftSubstitution σ) body)
 
+/-- Instantiate the nearest apparent slot of a first-order matrix.  The
+substitution is lifted through its existing quantifier, so its bound variable
+remains capture-safe.  This is syntax only, not a quantifier inference. -/
+def instantiate (body : FirstOrder Γ (.elementaryProposition :: Δ))
+    (argument : Apparent Γ Δ) : FirstOrder Γ Δ :=
+  substitute (Apparent.instantiateSubstitution argument) body
+
+/-- The displayed real-value specialization of `FirstOrder.instantiate`.
+It is the syntax needed to state an instance of ✱9·1 whose matrix already
+contains one first-order quantifier. -/
+def atReal (body : FirstOrder Γ [.elementaryProposition])
+    (x : RealVar Γ .elementaryProposition) : FirstOrder Γ [] :=
+  instantiate body (.real x)
+
+@[simp] theorem instantiate_always
+    (body : Apparent Γ (.elementaryProposition :: .elementaryProposition :: Δ))
+    (argument : Apparent Γ Δ) :
+    instantiate (always body) argument =
+      always (Apparent.substitute
+        (Apparent.liftSubstitution (Apparent.instantiateSubstitution argument)) body) := rfl
+
+@[simp] theorem instantiate_sometimes
+    (body : Apparent Γ (.elementaryProposition :: .elementaryProposition :: Δ))
+    (argument : Apparent Γ Δ) :
+    instantiate (sometimes body) argument =
+      sometimes (Apparent.substitute
+        (Apparent.liftSubstitution (Apparent.instantiateSubstitution argument)) body) := rfl
+
 /-- A free apparent variable is significant in a quantified proposition when
 its shifted occurrence is significant in the matrix. -/
 def Significant (v : BoundVar Δ .elementaryProposition) :
