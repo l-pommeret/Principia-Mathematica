@@ -103,6 +103,40 @@ theorem closedLine3ScopedRaw_unfold
           (FirstOrderMatrix.abstractRealOuter (line2Formula φ)))) := by
   rfl
 
+def closedLine3DisplayRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always (.quantified .always
+    (ofFirstOrderMatrixRedex
+      (FirstOrderMatrix.abstractRealOuter (line2Formula φ))))
+
+def closedLine3NormalizedRaw
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always (.quantified .always
+    (normalizeFirstOrderMatrixAfterAbstract 0 (line2Formula φ)))
+
+structure ClosedLine3NormalizationCertificate
+    (φ : Apparent Γ [.elementaryProposition]) where
+  matrix : FirstOrderMatrix Γ
+    [.elementaryProposition, .elementaryProposition]
+  matrixExact : matrix = FirstOrderMatrix.abstractRealOuter (line2Formula φ)
+  sourceExact : closedLine3DisplayRaw φ =
+    .quantified .always (.quantified .always
+      (ofFirstOrderMatrixRedex matrix))
+  targetExact : closedLine3NormalizedRaw φ =
+    .quantified .always (.quantified .always
+      (ofFirstOrderMatrixScoped matrix))
+  normalization : NormalizesScopedAt 0
+    (closedLine3DisplayRaw φ) (closedLine3NormalizedRaw φ)
+
+def closedLine3NormalizationCertificate
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ClosedLine3NormalizationCertificate φ := by
+  let matrix := FirstOrderMatrix.abstractRealOuter (line2Formula φ)
+  refine ⟨matrix, rfl, rfl, ?_, ?_⟩
+  · rfl
+  · exact .quantifiedClosedCongr .always
+      (.quantifiedClosedCongr .always
+        (normalizesFirstOrderMatrixRedexScoped matrix))
+
 def line2DisplayRaw (φ : Apparent Γ [.elementaryProposition]) :
     Raw (.elementaryProposition :: Γ) :=
   ofFirstOrderMatrixRedex (line2Formula φ)

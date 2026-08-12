@@ -57,6 +57,14 @@ def ofFirstOrderMatrixScopedAt (depth : Nat) :
       (ofFirstOrderMatrixScopedAt depth p)
       (ofFirstOrderMatrixScopedAt depth q)
 
+def normalizeFirstOrderMatrixAfterAbstract (depth : Nat)
+    (matrix : FirstOrderMatrix (.elementaryProposition :: Γ) Δ) : Raw Γ :=
+  if depth = 0 then
+    ofFirstOrderMatrixScoped (FirstOrderMatrix.abstractRealOuter matrix)
+  else
+    ofFirstOrderMatrixScopedAt depth
+      (FirstOrderMatrix.abstractRealOuter matrix)
+
 /-- Literal display embedding: unlike the normalizing embeddings, this keeps
 matrix negation and disjunction as explicit Raw redex nodes. -/
 def ofFirstOrderMatrixRedex : FirstOrderMatrix Γ Δ → Raw Γ
