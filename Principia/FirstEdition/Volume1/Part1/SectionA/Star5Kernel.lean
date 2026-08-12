@@ -865,4 +865,34 @@ theorem star_5_7 {Γ} (p q r : PM.Elementary Γ) :
     exact infer pair bridge
   exact infer fE (infer eF (PM.FirstEdition.Volume1.Star3.star_3_2 (E ⊃ₚ F) (F ⊃ₚ E)))
 
+/-- PM I (1910), p. 131, ✱5·74. -/
+theorem star_5_74 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ (q ≡ₚ r)) ≡ₚ ((p ⊃ₚ q) ≡ₚ (p ⊃ₚ r))) := by
+  let a := p ⊃ₚ (q ≡ₚ r)
+  let x := (p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)
+  let y := (p ⊃ₚ r) ⊃ₚ (p ⊃ₚ q)
+  let u := p ⊃ₚ (q ⊃ₚ r)
+  let v := p ⊃ₚ (r ⊃ₚ q)
+  let b := x ∧ₚ y
+  let c := u ∧ₚ v
+  have infer : ∀ {m n : PM.Elementary Γ}, (⊢ₚ m) → (⊢ₚ (m ⊃ₚ n)) → (⊢ₚ n) := by
+    intro m n hm hmn; match Γ, m, n, hm, hmn with
+    | [], _, _, hm, hmn => exact PM.Derivation.star_1_1 hm hmn
+    | (τ :: Δ), _, _, hm, hmn => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hm hmn
+  have comp : ∀ {m n o : PM.Elementary Γ}, (⊢ₚ (m ⊃ₚ n)) → (⊢ₚ (n ⊃ₚ o)) → (⊢ₚ (m ⊃ₚ o)) := by
+    intro m n o hmn hno; exact infer hmn (infer hno (PM.FirstEdition.Volume1.Star2.star_2_05 m n o))
+  have e1 := star_5_41 p q r
+  have e2 := star_5_41 p r q
+  have pairE : ⊢ₚ ((x ≡ₚ u) ∧ₚ (y ≡ₚ v)) :=
+    infer e2 (infer e1 (PM.FirstEdition.Volume1.Star3.star_3_2 (x ≡ₚ u) (y ≡ₚ v)))
+  have bc : ⊢ₚ (b ≡ₚ c) := infer pairE (PM.FirstEdition.Volume1.Star4.star_4_38 x y u v)
+  have ca : ⊢ₚ (c ≡ₚ a) := PM.FirstEdition.Volume1.Star4.star_4_76 p (q ⊃ₚ r) (r ⊃ₚ q)
+  have bToC := infer bc (PM.FirstEdition.Volume1.Star3.star_3_26 (b ⊃ₚ c) (c ⊃ₚ b))
+  have cToB := infer bc (PM.FirstEdition.Volume1.Star3.star_3_27 (b ⊃ₚ c) (c ⊃ₚ b))
+  have cToA := infer ca (PM.FirstEdition.Volume1.Star3.star_3_26 (c ⊃ₚ a) (a ⊃ₚ c))
+  have aToC := infer ca (PM.FirstEdition.Volume1.Star3.star_3_27 (c ⊃ₚ a) (a ⊃ₚ c))
+  have aToB := comp aToC cToB
+  have bToA := comp bToC cToA
+  exact infer bToA (infer aToB (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
+
 end PM.FirstEdition.Volume1.Star5
