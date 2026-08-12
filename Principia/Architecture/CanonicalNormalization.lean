@@ -31,6 +31,14 @@ order after the scope normalization. -/
       NormalizesScoped (.disj (.quantified .sometimes p) (.quantified .always q))
         (.quantified .always (.quantified .sometimes
           (.disj (weakenBound q) p)))
+  | alwaysCongr : NormalizesScoped p q →
+      NormalizesScoped (.quantified .always p) (.quantified .always q)
+  | sometimesCongr : NormalizesScoped p q →
+      NormalizesScoped (.quantified .sometimes p) (.quantified .sometimes q)
+  | negCongr : NormalizesScoped p q →
+      NormalizesScoped (.neg p) (.neg q)
+  | disjCongr : NormalizesScoped p q → NormalizesScoped r s →
+      NormalizesScoped (.disj p r) (.disj q s)
   | trans : NormalizesScoped p q → NormalizesScoped q r → NormalizesScoped p r
 
 end PM.Architecture.CanonicalNormalization
