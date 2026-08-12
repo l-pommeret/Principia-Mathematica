@@ -5,6 +5,7 @@ namespace PM.Architecture.Star931Kernel
 
 open PM.Architecture.FirstOrderPrerequisites
 open PM.Architecture.CanonicalOrderedAdapters
+open PM.Architecture.CanonicalNormalization
 open PM.CanonicalOrderedFormula
 
 /-! A closed theorem-schema boundary for the printed proof of ✱9·31.
@@ -90,6 +91,16 @@ def line3DisplayRaw (φ : Apparent Γ [.elementaryProposition]) :
 theorem line2ScopedRaw_roundTrip (φ : Apparent Γ [.elementaryProposition]) :
     ofFirstOrderMatrixScoped (line2Formula φ) = line2ScopedRaw φ :=
   (line2Reification φ).roundTrip
+
+def line3ScopedRaw (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  .quantified .always (line2ScopedRaw φ)
+
+theorem line3Display_to_scoped
+    (φ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (line3DisplayRaw φ) (line3ScopedRaw φ) := by
+  exact .quantifiedClosedCongr .always
+    (normalizesFirstOrderMatrixRedexScoped (line2Formula φ))
 
 /-- Narrow matrix judgement: it retains the preceding indexed derivation and
 the independently checked scope-aware reification. -/

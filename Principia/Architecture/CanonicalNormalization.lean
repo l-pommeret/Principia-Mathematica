@@ -97,6 +97,11 @@ inductive NormalizesScopedAt : Nat → Raw Γ → Raw Γ → Prop where
             (shiftBoundAt (depth + 1) q))))
   | quantifiedCongr (depth) (q) : NormalizesScopedAt (depth + 1) p r →
       NormalizesScopedAt depth (.quantified q p) (.quantified q r)
+  /-- A completed local normalization may subsequently be packaged by a
+  binder; its local cutoff remains zero because the normalization has already
+  been performed before packaging. -/
+  | quantifiedClosedCongr (q) : NormalizesScopedAt 0 p r →
+      NormalizesScopedAt 0 (.quantified q p) (.quantified q r)
   | negCongr (depth) : NormalizesScopedAt depth p q →
       NormalizesScopedAt depth (.neg p) (.neg q)
   | disjCongr (depth) : NormalizesScopedAt depth p q →
