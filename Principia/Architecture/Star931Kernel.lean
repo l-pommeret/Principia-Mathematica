@@ -79,15 +79,17 @@ def line3Target (φ : Apparent Γ [.elementaryProposition]) :
     OrderedFormula Γ 3 :=
   star_9_13_higher_target (line3Carrier φ)
 
-def line3Raw (φ : Apparent Γ [.elementaryProposition]) :
+def line2DisplayRaw (φ : Apparent Γ [.elementaryProposition]) :
     Raw (.elementaryProposition :: Γ) :=
-  ofSecondMatrixScoped (line3Carrier φ)
+  ofFirstOrderMatrixRedex (line2Formula φ)
 
-theorem line3Raw_exact (φ : Apparent Γ [.elementaryProposition]) :
-    line3Raw φ = .quantified .always (line2ScopedRaw φ) := by
-  change Raw.quantified .always
-      (ofFirstOrderMatrixScoped (line2Reification φ).formula) = _
-  rw [(line2Reification φ).roundTrip]
+def line3DisplayRaw (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  .quantified .always (line2DisplayRaw φ)
+
+theorem line2ScopedRaw_roundTrip (φ : Apparent Γ [.elementaryProposition]) :
+    ofFirstOrderMatrixScoped (line2Formula φ) = line2ScopedRaw φ :=
+  (line2Reification φ).roundTrip
 
 /-- Narrow matrix judgement: it retains the preceding indexed derivation and
 the independently checked scope-aware reification. -/
