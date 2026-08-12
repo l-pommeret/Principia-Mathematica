@@ -154,6 +154,28 @@ inductive NormalizesScopedAt : Nat → Raw Γ → Raw Γ → Prop where
   | trans : NormalizesScopedAt depth p q → NormalizesScopedAt depth q r →
       NormalizesScopedAt depth p r
 
+/-- Source-labelled ✱9·07 at an arbitrary surrounding binder depth.  This
+is the universal-left/existential-right branch already checked by the
+depth-aware smart-disjunction relation. -/
+theorem star_9_07_at (depth : Nat) (p q : Raw Γ) :
+    NormalizesScopedAt depth
+      (.disj (.quantified .always p) (.quantified .sometimes q))
+      (.quantified .always (.quantified .sometimes
+        (.disj (shiftBoundAt (depth + 1) p)
+          (shiftBoundAt (depth + 1) q)))) :=
+  .disjAlwaysSometimes depth p q
+
+/-- Source-labelled ✱9·08 at an arbitrary surrounding binder depth.  The
+operand order is the one printed in the definition: existential first,
+universal second. -/
+theorem star_9_08_at (depth : Nat) (p q : Raw Γ) :
+    NormalizesScopedAt depth
+      (.disj (.quantified .sometimes p) (.quantified .always q))
+      (.quantified .always (.quantified .sometimes
+        (.disj (shiftBoundAt (depth + 1) p)
+          (shiftBoundAt (depth + 1) q)))) :=
+  .disjSometimesAlways depth p q
+
 def smartDisjScopedCertifiedAux (depth : Nat) :
     (fuel : Nat) → (p q : Raw Γ) →
       { r : Raw Γ // NormalizesScopedAt depth (.disj p q) r }
