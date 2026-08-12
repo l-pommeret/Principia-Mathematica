@@ -20,5 +20,16 @@ inductive NormalizesScoped : Raw Γ → Raw Γ → Prop where
   | disjLeft (q p r) :
       NormalizesScoped (.disj r (.quantified q p))
         (.quantified q (.disj (weakenBound r) p))
+  /-- ✱9·07: universal-left/existential-right, retaining `x` outside `y`. -/
+  | disjAlwaysSometimes (p q) :
+      NormalizesScoped (.disj (.quantified .always p) (.quantified .sometimes q))
+        (.quantified .always (.quantified .sometimes
+          (.disj (weakenBound p) q)))
+  /-- ✱9·08: existential-left/universal-right, with the same printed binder
+order after the scope normalization. -/
+  | disjSometimesAlways (p q) :
+      NormalizesScoped (.disj (.quantified .sometimes p) (.quantified .always q))
+        (.quantified .always (.quantified .sometimes
+          (.disj (weakenBound q) p)))
 
 end PM.Architecture.CanonicalNormalization
