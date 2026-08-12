@@ -54,6 +54,17 @@ this interface only; it is not canonical CI evidence. PM-VERBATIM, metadata,
 scan collation, and all four parsed demonstrations are complete. The only
 remaining promotion gate is the explicit one-to-one canonical remap.
 
+## Canonical narrow-judgement check — ✱9·3
+
+CI [31567832588](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31567832588)
+at immutable commit `17d08b6ec4966777273aada00452fc8c12767338` accepted the
+regenerated Q259 context and the canonical architecture build.  Accordingly
+✱9·3 is kernel-checked as
+`PM.Architecture.Q259ClosedRuleBook.star_9_3`, whose result is the deliberately
+narrow `Star9KernelAssertion` judgment.  This is evidence for exactly the
+printed ✱9·3 matrix-schema chain; it does not promote the result to
+`OrderedAssertion`, and it leaves ✱9·31 unpromoted.
+
 No native logical semantics, `Classical`, axioms, placeholders, generic
 substitution/inference rule, target-as-primitive constructor, or unscoped
 first-order disjunction is permitted.

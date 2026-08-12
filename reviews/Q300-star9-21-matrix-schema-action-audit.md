@@ -37,5 +37,12 @@ Raw target, plus an equality identifying that Raw target with the fixed
 assigned-order target.  It is a narrow derived judgement for ✱9·3, not a
 generic Raw-to-`OrderedAssertion` conversion or a new primitive proposition.
 
+CI [31567832588](https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31567832588)
+at immutable commit `17d08b6ec4966777273aada00452fc8c12767338` kernel-checked
+the exact Q300/Q259 isolated contexts and the canonical build containing this
+closed bridge.  The certification applies to the narrow
+`Star9KernelAssertion` result only, not to a hypothetical `OrderedAssertion`
+reification.
+
 Witnesses: first edition (1910), p. 140, leaf 162; proofread Wikisource page
 162; `aristotle/demonstrations/PM1-star-9-3.txt`.

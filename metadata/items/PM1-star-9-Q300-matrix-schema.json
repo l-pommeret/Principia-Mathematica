@@ -16,14 +16,22 @@
       "scan_leaf": 162,
       "lean_path": "Principia/Architecture/Q259ClosedRuleBook.lean",
       "declaration": "PM.Architecture.Q259ClosedRuleBook.star_9_3",
-      "formal_scope": "typed mixed first-order theorem-schema evidence through the printed ✱9·21 and ✱9·03 steps, concluded in the narrow Star9KernelAssertion judgement rather than a generic OrderedAssertion conversion",
+      "formal_scope": "first-order universal idempotence certified by the exact closed Star9KernelAssertion matrix-schema judgement; it is not an OrderedAssertion and supplies no generic Raw-to-assertion conversion",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-matrix-schema-kernel-check",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-narrow-schema-kernel-checked",
       "printed_dependencies": ["PM1:✱1·2", "PM1:✱9·1", "PM1:✱9·13", "PM1:✱9·21", "PM1:✱9·03"],
-      "normalized_dependencies": ["PM1:✱9·21"],
-      "blocked_dependencies": []
+      "lean_dependencies": ["PM.Architecture.Star921MatrixKernel.derive_star_9_3"],
+      "normalized_dependencies": [],
+      "blocked_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱1·2", "PM1:✱9·03", "PM1:✱9·1", "PM1:✱9·13", "PM1:✱9·21"],
+        "strict_attempt_evidence": "reviews/Q300-star9-21-matrix-schema-action-audit.md",
+        "editorial_note": "The closed Star9KernelAssertion packages the complete source-audited matrix-schema chain; its public wrapper has only that single self-realizing kernel dependency rather than duplicating the chain's internal references."
+      }
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {"commit": "17d08b6ec4966777273aada00452fc8c12767338", "run": "31567832588", "conclusion": "success"}
 }

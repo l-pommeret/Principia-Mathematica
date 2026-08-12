@@ -33,6 +33,11 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "PM.Apparent.openHead",
     "PM.Apparent.elementaryValue",
     "OrderedAssertion.elementary",
+    # A fixed assigned-order target is a carrier spelling, not a historical
+    # theorem dependency.  ✱9·3's actual proof dependency is the separately
+    # indexed closed matrix-schema judgement below.
+    "FirstOrderQ259.star_9_3_target",
+    "Star921MatrixKernel.star_9_3_ordered_target",
 }
 
 
