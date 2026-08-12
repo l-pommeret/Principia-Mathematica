@@ -601,4 +601,18 @@ theorem star_4_77 {Γ} (p q r : PM.Elementary Γ) :
         (((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)) ⊃ₚ g)
         (g ⊃ₚ ((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)))))
 
+/-- PM I (1910), p. 127, ✱4·8. -/
+theorem star_4_8 {Γ} (p : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ (∼ₚ p)) ≡ₚ (∼ₚ p)) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer (PM.FirstEdition.Volume1.Star2.star_2_02 p (∼ₚ p))
+    (infer (PM.FirstEdition.Volume1.Star2.star_2_01 p)
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        ((p ⊃ₚ (∼ₚ p)) ⊃ₚ (∼ₚ p))
+        ((∼ₚ p) ⊃ₚ (p ⊃ₚ (∼ₚ p)))))
+
 end PM.FirstEdition.Volume1.Star4
