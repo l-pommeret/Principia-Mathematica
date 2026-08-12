@@ -406,6 +406,29 @@ def smartDisjAux : Nat → Raw Γ → Raw Γ → Raw Γ
 def smartDisj (p q : Raw Γ) : Raw Γ :=
   smartDisjAux (rawSize p + rawSize q) p q
 
+/-- Capture-safe smart disjunction.  `depth` is the number of surrounding
+apparent binders already retained by the normalization. -/
+def smartDisjScopedAux : Nat → Nat → Raw Γ → Raw Γ → Raw Γ
+  | _, 0, p, q => .disj p q
+  | depth, fuel + 1, .quantified .always p, .quantified .sometimes q =>
+      .quantified .always (.quantified .sometimes
+        (smartDisjScopedAux (depth + 2) fuel
+          (shiftBoundAt (depth + 1) p) (shiftBoundAt (depth + 1) q)))
+  | depth, fuel + 1, .quantified .sometimes p, .quantified .always q =>
+      .quantified .always (.quantified .sometimes
+        (smartDisjScopedAux (depth + 2) fuel
+          (shiftBoundAt (depth + 1) p) (shiftBoundAt (depth + 1) q)))
+  | depth, fuel + 1, .quantified quantifier p, q =>
+      .quantified quantifier
+        (smartDisjScopedAux (depth + 1) fuel p (shiftBoundAt depth q))
+  | depth, fuel + 1, p, .quantified quantifier q =>
+      .quantified quantifier
+        (smartDisjScopedAux (depth + 1) fuel (shiftBoundAt depth p) q)
+  | _, _ + 1, p, q => .disj p q
+
+def smartDisjScoped (p q : Raw Γ) : Raw Γ :=
+  smartDisjScopedAux 0 (rawSize p + rawSize q) p q
+
 def smartImp (p q : Raw Γ) : Raw Γ := smartDisj (smartNeg p) q
 
 @[simp] theorem shiftBoundAt_elementary (p : Elementary Γ) :
