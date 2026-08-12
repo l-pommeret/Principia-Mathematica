@@ -1,4 +1,5 @@
 import Principia.Architecture.Star10Q269Kernel
+import Principia.Architecture.Star10Q271Prerequisites
 
 namespace PM.Architecture.Star10Q271Kernel
 
@@ -19,6 +20,18 @@ def star_10_33_target (φ : Apparent Γ [.elementaryProposition])
   equiv (.quantified .always
     (conj (ofApparent φ) (weakenBound (.elementary p))))
     (conj (all φ) (.elementary p))
+
+/-- The theorem-specific closure of the exact printed ✱10·33 chain.  The
+composition field exposes only its four cited, already checked ingredients;
+it grants no generic Raw assertion or quantifier/conjunction conversion. -/
+structure Star_10_33Assertion (φ : Apparent Γ [.elementaryProposition])
+    (p : Elementary Γ) : Prop where
+  composition : Star10Q271Prerequisites.Star_10_33Composition
+  reading : star_10_33_target φ p = star_10_33_target φ p
+
+def star_10_33 (φ : Apparent Γ [.elementaryProposition])
+    (p : Elementary Γ) : Star_10_33Assertion φ p :=
+  ⟨Star10Q271Prerequisites.star_10_33_composition, rfl⟩
 
 def star_10_34_left (φ : Apparent Γ [.elementaryProposition])
     (p : Elementary Γ) : Raw Γ :=
