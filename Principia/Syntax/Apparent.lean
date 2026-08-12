@@ -218,6 +218,36 @@ def elementaryValue : Apparent Γ [.elementaryProposition] →
   | neg p ih => simp [ofElementary, elementaryValue, ih]
   | disj p q ihp ihq => simp [ofElementary, elementaryValue, ihp, ihq]
 
+/-- The diagonal evaluation used in the first application of ✱9·1 in the
+proof of ✱9·3. -/
+@[simp] theorem elementaryValue_weakenReal_zero
+    (φ : Apparent Γ [.elementaryProposition]) :
+    elementaryValue (weakenReal φ) (.var .zero) = openHead φ := by
+  induction φ with
+  | constant name => rfl
+  | real v => rfl
+  | bound v =>
+      cases v with
+      | zero => rfl
+      | succ tail => exact nomatch tail
+  | neg p ih =>
+      have hp : elementaryValue (renameReal (fun v => .succ v) p) (.var .zero) = openHead p := by
+        simpa [weakenReal] using ih
+      simp only [weakenReal, renameReal, elementaryValue, openHead]
+      rw [hp]
+  | disj p q ihp ihq =>
+      have hp : elementaryValue (renameReal (fun v => .succ v) p) (.var .zero) = openHead p := by
+        simpa [weakenReal] using ihp
+      have hq : elementaryValue (renameReal (fun v => .succ v) q) (.var .zero) = openHead q := by
+        simpa [weakenReal] using ihq
+      simp only [weakenReal, renameReal, elementaryValue, openHead]
+      rw [hp, hq]
+
+@[simp] theorem elementaryValue_renameReal_succ_zero
+    (φ : Apparent Γ [.elementaryProposition]) :
+    elementaryValue (renameReal (fun v => .succ v) φ) (.var .zero) = openHead φ := by
+  simpa [weakenReal] using elementaryValue_weakenReal_zero φ
+
 /-- The bivariate matrix `φx ∨ φy` used in the first application of ✱9·1
 in the proof of ✱9·3.  The left occurrence opens the sole binder as the new
 real variable `x`; the right occurrence retains it as the apparent variable
