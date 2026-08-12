@@ -58,6 +58,16 @@ the added outer universal while preserving its own inner binder. -/
       NormalizesScoped (.disj p r) (.disj q s)
   | trans : NormalizesScoped p q → NormalizesScoped q r → NormalizesScoped p r
 
+theorem normalizesSmartNeg (p : Raw Γ) :
+    NormalizesScoped (.neg p) (smartNeg p) := by
+  induction p with
+  | quantified quantifier body ih =>
+      cases quantifier
+      · exact .trans (.negAlways body) (.sometimesCongr ih)
+      · exact .trans (.negSometimes body) (.alwaysCongr ih)
+  | _ => exact .refl _
+
+
 /-- Stability witness for the one closed, source-labelled line-(5)→line-(6)
 certificate of ✱9·21.  It stays an explicit parameter: substitution must not
 turn this source-specific certificate into a generic logical rule. -/
