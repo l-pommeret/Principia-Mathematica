@@ -78,6 +78,56 @@ def shiftBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
 
 def weakenBound (p : Raw Γ) : Raw Γ := shiftBoundAt 0 p
 
+/-- A Raw term does not use the binder located at `cutoff`.  This is the
+precise side condition needed to remove that binder without capture. -/
+def UnusedBoundAt (cutoff : Nat) : Raw Γ → Prop
+  | .elementary _ => True
+  | .bound index => index ≠ cutoff
+  | .quantified _ body => UnusedBoundAt (cutoff + 1) body
+  | .neg p => UnusedBoundAt cutoff p
+  | .disj p q => UnusedBoundAt cutoff p ∧ UnusedBoundAt cutoff q
+
+/-- Remove an unused binder at `cutoff`.  Bound indices above the removed
+slot are lowered; terms satisfying `UnusedBoundAt` never take the fallback
+zero case at that slot. -/
+def dropUnusedBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
+  | .elementary p => .elementary p
+  | .bound index =>
+      if index < cutoff then .bound index else .bound (index - 1)
+  | .quantified q body => .quantified q (dropUnusedBoundAt (cutoff + 1) body)
+  | .neg p => .neg (dropUnusedBoundAt cutoff p)
+  | .disj p q => .disj (dropUnusedBoundAt cutoff p) (dropUnusedBoundAt cutoff q)
+
+def dropUnusedBound (p : Raw Γ) : Raw Γ := dropUnusedBoundAt 0 p
+
+theorem shiftBoundAt_dropUnusedBoundAt
+    (p : Raw Γ) (h : UnusedBoundAt cutoff p) :
+    shiftBoundAt cutoff (dropUnusedBoundAt cutoff p) = p := by
+  induction p generalizing cutoff with
+  | elementary proposition => rfl
+  | bound index =>
+      simp only [UnusedBoundAt] at h
+      by_cases below : index < cutoff
+      · simp [dropUnusedBoundAt, shiftBoundAt, below]
+      · have above : cutoff < index := by omega
+        have shifted : cutoff ≤ index - 1 := by omega
+        simp [dropUnusedBoundAt, shiftBoundAt, below, shifted]
+        omega
+  | quantified quantifier body ih =>
+      simp only [dropUnusedBoundAt, shiftBoundAt]
+      exact congrArg (Raw.quantified quantifier) (ih h)
+  | neg proposition ih =>
+      simp only [dropUnusedBoundAt, shiftBoundAt]
+      exact congrArg Raw.neg (ih h)
+  | disj left right ihLeft ihRight =>
+      simp only [dropUnusedBoundAt, shiftBoundAt] at h ⊢
+      rw [ihLeft h.1, ihRight h.2]
+
+theorem weakenBound_dropUnusedBound
+    (p : Raw Γ) (h : UnusedBoundAt 0 p) :
+    weakenBound (dropUnusedBound p) = p :=
+  shiftBoundAt_dropUnusedBoundAt p h
+
 /-- Capture-safe renaming of apparent binder indices.  Under a quantifier the
 newly bound index remains zero and every older index is renamed through the
 lifted map. -/
