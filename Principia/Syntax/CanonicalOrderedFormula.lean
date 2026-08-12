@@ -124,6 +124,12 @@ theorem shiftBoundAt_comm (i j : Nat) (p : Raw Γ) (h : i ≤ j) :
       simp only [shiftBoundAt]
       rw [ihLeft i j h, ihRight i j h]
 
+/-- Two successive outer lifts equal the scope-aware shift of the first
+lifted term at cutoff one. -/
+theorem weakenBound_weakenBound_eq_shiftBoundAt_one (p : Raw Γ) :
+    weakenBound (weakenBound p) = shiftBoundAt 1 (weakenBound p) := by
+  simpa [weakenBound] using (shiftBoundAt_comm 0 0 p (by omega)).symm
+
 /-- `FreshBelowAt depth count` records the binder-sensitive freshness
 invariant for `count` outer lifts: local binders below `depth` remain valid,
 whereas every external index lies at or beyond `depth + count`. -/

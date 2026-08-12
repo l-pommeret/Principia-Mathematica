@@ -86,6 +86,19 @@ def star_9_21_schema_raw : Raw Γ :=
           (.disj (.neg (weakenBound (weakenBound (σ 0))))
             (weakenBound (weakenBound (σ 1)))))) := rfl
 
+theorem substituteSchema_star_9_21_schema_raw_scoped
+    (σ : SchemaSubstitution Γ) :
+    substituteSchema σ star_9_21_schema_raw =
+      .disj
+        (.quantified .sometimes
+          (.neg (.disj (.neg (weakenBound (σ 0))) (weakenBound (σ 1)))))
+        (.quantified .always (.quantified .sometimes
+          (.disj (.neg (shiftBoundAt 1 (weakenBound (σ 0))))
+            (shiftBoundAt 1 (weakenBound (σ 1)))))) := by
+  rw [substituteSchema_star_9_21_schema_raw]
+  rw [weakenBound_weakenBound_eq_shiftBoundAt_one,
+    weakenBound_weakenBound_eq_shiftBoundAt_one]
+
 def normalize {source target : Raw Γ}
     (certificate : NormalizesScoped source target)
     (assertion : CanonicalOrderedAssertion source) :
