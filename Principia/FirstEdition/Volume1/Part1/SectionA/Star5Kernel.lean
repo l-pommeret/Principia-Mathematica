@@ -615,46 +615,4 @@ theorem star_5_71 {Γ} (p q r : PM.Elementary Γ) :
   have lifted := infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 h h (a ⊃ₚ b) (b ⊃ₚ a))
   exact compose (duplicate h) lifted
 
-/-- PM I (1910), p. 130, ✱5·55. -/
-theorem star_5_55 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ (((p ∨ₚ q) ≡ₚ p) ∨ₚ ((p ∨ₚ q) ≡ₚ q)) := by
-  let u := p ∨ₚ q
-  let ep := u ≡ₚ p
-  let eq := u ≡ₚ q
-  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
-    intro A B hA hAB
-    match Γ, A, B, hA, hAB with
-    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
-    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
-  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
-    intro A B C hAB hBC
-    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
-  have duplicate : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
-    intro t
-    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t) (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
-  have join : ∀ {a b c : PM.Elementary Γ}, (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ (a ⊃ₚ c)) → (⊢ₚ (a ⊃ₚ (b ∧ₚ c))) := by
-    intro a b c hab hac
-    have pair := infer hac (infer hab (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (a ⊃ₚ c)))
-    exact compose (duplicate a) (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 a a b c))
-  have orMap : ∀ {a b x y : PM.Elementary Γ}, (⊢ₚ (a ⊃ₚ x)) → (⊢ₚ (b ⊃ₚ y)) → (⊢ₚ ((a ∨ₚ b) ⊃ₚ (x ∨ₚ y))) := by
-    intro a b x y hax hby
-    have left : ⊢ₚ ((b ∨ₚ a) ⊃ₚ (x ∨ₚ b)) := infer hax (PM.FirstEdition.Volume1.Star2.star_2_36 b a x)
-    have right0 : ⊢ₚ ((x ∨ₚ b) ⊃ₚ (y ∨ₚ x)) := infer hby (PM.FirstEdition.Volume1.Star2.star_2_36 x b y)
-    have right : ⊢ₚ ((x ∨ₚ b) ⊃ₚ (x ∨ₚ y)) := compose right0 (PM.Derivation.star_1_4 y x)
-    exact compose (PM.Derivation.star_1_4 a b) (compose left right)
-  have toEq : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ eq) := by
-    have forward : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ (u ⊃ₚ q)) := PM.FirstEdition.Volume1.Star2.star_2_621 p q
-    have backward0 : ⊢ₚ (q ⊃ₚ u) := PM.FirstEdition.Volume1.Star2.star_2_2 q p
-    have backward : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ (q ⊃ₚ u)) := infer backward0 (PM.FirstEdition.Volume1.Star2.star_2_02 (p ⊃ₚ q) (q ⊃ₚ u))
-    exact join forward backward
-  have toEp : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ ep) := by
-    have raw : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ ((q ∨ₚ p) ⊃ₚ p)) := PM.FirstEdition.Volume1.Star2.star_2_621 q p
-    have perm : ⊢ₚ (u ⊃ₚ (q ∨ₚ p)) := PM.Derivation.star_1_4 p q
-    have lifted : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (u ⊃ₚ (q ∨ₚ p))) := infer perm (PM.FirstEdition.Volume1.Star2.star_2_02 (q ⊃ₚ p) (u ⊃ₚ (q ∨ₚ p)))
-    have forward : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (u ⊃ₚ p)) := infer lifted (infer raw (PM.FirstEdition.Volume1.Star2.star_2_05 (q ⊃ₚ p) (u ⊃ₚ (q ∨ₚ p)) (u ⊃ₚ p)))
-    have backward0 : ⊢ₚ (p ⊃ₚ u) := PM.FirstEdition.Volume1.Star2.star_2_2 p q
-    have backward : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (p ⊃ₚ u)) := infer backward0 (PM.FirstEdition.Volume1.Star2.star_2_02 (q ⊃ₚ p) (p ⊃ₚ u))
-    exact join forward backward
-  exact infer (star_5_13 p q) (orMap toEq toEp)
-
 end PM.FirstEdition.Volume1.Star5
