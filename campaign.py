@@ -734,12 +734,26 @@ def ci_logs(run_id: str | None, failed: bool) -> None:
 
 
 def book_build() -> None:
-    rendered = run([sys.executable, str(ROOT / "proof_pipeline.py"), "render"])
-    run(["latexmk", "-lualatex", "-interaction=nonstopmode", "-halt-on-error", "main.tex"], cwd=ROOT / "publication")
-    pdf = ROOT / "publication/main.pdf"
-    if not pdf.is_file():
-        raise CampaignError("latexmk succeeded but publication/main.pdf is missing")
-    emit({"ok": True, "render": rendered.stdout.strip(), "pdf": str(pdf.relative_to(ROOT)), "bytes": pdf.stat().st_size})
+    """Build and verify this campaign's reader-facing static edition."""
+    output = ROOT / "site"
+    rendered = run(
+        [sys.executable, str(ROOT / "scripts/build_edition.py"), "--output", str(output)]
+    )
+    verified = run(
+        [sys.executable, str(ROOT / "scripts/verify_site.py"), "--site", str(output)]
+    )
+    manifest_path = output / "edition-manifest.json"
+    if not manifest_path.is_file():
+        raise CampaignError("edition build succeeded but site/edition-manifest.json is missing")
+    edition = json.loads(manifest_path.read_text(encoding="utf-8"))
+    emit({
+        "ok": True,
+        "render": rendered.stdout.strip(),
+        "verify": verified.stdout.strip(),
+        "site": str(output.relative_to(ROOT)),
+        "items": edition.get("items"),
+        "source_blocks": edition.get("source_blocks"),
+    })
 
 
 def parser() -> argparse.ArgumentParser:
