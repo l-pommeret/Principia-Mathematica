@@ -14,7 +14,7 @@ normalizations.  This module adds no `OrderedAssertion` constructor. -/
 
 def line4Carrier (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
   ofOrdered (star_9_13_higher_target
-    (.always (star_9_21_line3_matrix φ ψ)))
+    (.sometimes (star_9_21_line3_matrix φ ψ)))
 
 /-- Literal ✱9·08 redex in printed line (5). -/
 def line5Redex (existentialBody universalBody : Raw Γ) : Raw Γ :=
@@ -51,7 +51,7 @@ line-(6) operands before this structure can be inhabited. -/
 structure Star922KernelAssertion
     (φ ψ : Apparent Γ [.elementaryProposition]) where
   line4 : OrderedAssertion (star_9_13_higher_target
-    (.always (star_9_21_line3_matrix φ ψ)))
+    (.sometimes (star_9_21_line3_matrix φ ψ)))
   line5ExistentialBody : Raw Γ
   line5UniversalBody : Raw Γ
   line5 : Raw Γ
@@ -68,5 +68,11 @@ structure Star922KernelAssertion
   line7 : Raw Γ
   line7Shape : line7 = line7Raw antecedent consequent
   star907 : NormalizesScopedAt 0 line6Exact line7
+
+/-- The source-authorized indexed proof of printed line (4). -/
+def line4Ordered (φ ψ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion (star_9_13_higher_target
+      (.sometimes (star_9_21_line3_matrix φ ψ))) :=
+  derive_star_9_21_line4 φ ψ
 
 end PM.Architecture.Star922Kernel
