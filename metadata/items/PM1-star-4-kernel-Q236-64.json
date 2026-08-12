@@ -24,8 +24,8 @@
       "declaration": "PM.FirstEdition.Volume1.Star4.star_4_64",
       "formal_scope": "(∼∼∼p⊃q)≡(p∨q), over an elementary real-variable context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-kernel-candidate",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱2·53·54"
       ],
@@ -37,7 +37,6 @@
         "PM.FirstEdition.Volume1.Star2.star_2_05",
         "PM.FirstEdition.Volume1.Star2.star_2_12",
         "PM.FirstEdition.Volume1.Star2.star_2_14",
-        "PM.FirstEdition.Volume1.Star2.star_2_43",
         "PM.FirstEdition.Volume1.Star2.star_2_53",
         "PM.FirstEdition.Volume1.Star2.star_2_54",
         "PM.FirstEdition.Volume1.Star2.star_2_77",
@@ -51,17 +50,27 @@
         "PM1:✱2·05",
         "PM1:✱2·12",
         "PM1:✱2·14",
-        "PM1:✱2·43",
         "PM1:✱2·53",
         "PM1:✱2·54",
         "PM1:✱2·77",
         "PM1:✱3·2"
-      ]
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱1·1", "PM1:✱1·11", "PM1:✱2·02", "PM1:✱2·04",
+          "PM1:✱2·05", "PM1:✱2·12", "PM1:✱2·14", "PM1:✱2·53",
+          "PM1:✱2·54", "PM1:✱2·77", "PM1:✱3·2"
+        ],
+        "printed_but_unused": ["PM1:✱2·53·54"],
+        "strict_attempt_evidence": "reviews/Q236-star4-64-kernel-gate.md",
+        "editorial_note": "The compressed joint citation is expanded into the two exact theorems ✱2·53 and ✱2·54, with explicit triple-negation transport and equivalence packaging."
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "29e1e07e0fc59af853d279209e57ed607e09e4bb",
+    "run": "31557231437",
+    "conclusion": "success"
   }
 }
