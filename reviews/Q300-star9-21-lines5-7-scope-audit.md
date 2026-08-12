@@ -19,6 +19,25 @@ The final ✱1·01 is an implication abbreviation only. The closing sentence
 identifies `y`/`z` with the schematic binder name `x` by explicit
 capture-avoiding alpha-renaming, not by a semantic equality.
 
+## Diplomatic transcription of the three displayed lines
+
+The page witness renders the relevant tail of the demonstration as follows
+(dots and colons retained as scope punctuation):
+
+```text
+[(4).(✱9·06)]             ⊢ ::(z)::(∃x):. φx ⊃ ψx .⊃ :(∃y). φy ⊃ ψz     (5)
+[(5).(✱1·01.✱9·08)]      ⊢ :.(∃x).∼(φx ⊃ ψx) :∨: (z):(∃y).∼φy ∨ ψz       (6)
+[(6).(✱9·08)]            ⊢ :.(∃x).∼(φx ⊃ ψx) :∨: (z):(∃y).∼φy ∨ ψz       (7)
+[(7).(✱1·01)]            ⊢ :.(x).φx ⊃ ψx .⊃ :(y).φy .⊃ .(z).ψz
+```
+
+This transcription was collated against the first-edition scan leaf 161,
+printed p. 139, and the proofread page witness.  In particular, line (6)
+has the existential `x` outside the disjunction, while its right disjunct
+retains the universal `z` followed by existential `y`; line (7) is printed
+with the same visible scope pattern and is the subsequent ✱9·08
+normalization before the final implication abbreviation.
+
 ## Encoding boundary
 
 The `Raw` target must retain the binder sequence shown above.  It may use the

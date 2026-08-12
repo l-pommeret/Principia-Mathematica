@@ -217,4 +217,37 @@ theorem star_9_21_line4_raw_explicit
     (φ ψ : Apparent Γ [.elementaryProposition]) :
     star_9_21_line4_raw φ ψ = star_9_21_line4_explicit_raw φ ψ := rfl
 
+/-- Raw implication, used only to spell out the source-labelled displayed
+lines of ✱9·21. -/
+def rawImp (p q : Raw Γ) : Raw Γ := .disj (.neg p) q
+
+/-- Matrix-level spelling of line (4), with the binders `z`, `x`, and `y`
+made explicit in their printed order. -/
+def star_9_21_line4_named_raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always (.quantified .sometimes (.quantified .sometimes
+    (rawImp (rawImp (star_9_21_phi_x_closed_raw φ) (star_9_21_psi_x_closed_raw ψ))
+      (rawImp (star_9_21_phi_y_closed_raw φ) (star_9_21_psi_z_closed_raw ψ)))))
+
+theorem star_9_21_line4_raw_named
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    star_9_21_line4_raw φ ψ = star_9_21_line4_named_raw φ ψ := by
+  change Raw.quantified .always (Raw.quantified .sometimes (Raw.quantified .sometimes
+    (ofApparent (Apparent.abstractRealOuter
+      (PM.Architecture.FirstOrderPrerequisites.matrixImp
+        (PM.Architecture.FirstOrderPrerequisites.matrixImp _ _)
+        (PM.Architecture.FirstOrderPrerequisites.matrixImp _ _)))))) = _
+  simp only [PM.Architecture.FirstOrderPrerequisites.matrixImp,
+    Apparent.abstractRealOuter, ofApparent]
+  simp only [star_9_21_line4_named_raw, rawImp,
+    star_9_21_phi_x_closed_raw, star_9_21_psi_x_closed_raw,
+    star_9_21_phi_y_closed_raw, star_9_21_psi_z_closed_raw,
+    closeLeadingRaw, star_9_21_phi_x_raw, star_9_21_psi_x_raw,
+    star_9_21_phi_y_raw, star_9_21_psi_z_raw]
+  rw [ofApparent_abstractRealOuter,
+    ofApparent_abstractRealOuter,
+    ofApparent_abstractRealOuter,
+    ofApparent_abstractRealOuter]
+
+
+
 end PM.Architecture.CanonicalOrderedAdapters
