@@ -654,4 +654,36 @@ theorem star_5_55 {Γ} (p q : PM.Elementary Γ) :
   have mapped : ⊢ₚ (((p ∨ₚ q) ≡ₚ q) ∨ₚ ((p ∨ₚ q) ≡ₚ p)) := infer (star_5_13 p q) (mapOr eQ eP)
   exact infer mapped (PM.Derivation.star_1_4 ((p ∨ₚ q) ≡ₚ q) ((p ∨ₚ q) ≡ₚ p))
 
+/-- PM I (1910), p. 130, ✱5·62.  Exact printed substitution
+`(q,p)/(p,q)` in ✱4·7, using implication's definitional disjunction. -/
+theorem star_5_62 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (((p ∧ₚ q) ∨ₚ (∼ₚ q)) ≡ₚ (p ∨ₚ (∼ₚ q))) := by
+  let a := (∼ₚ q) ∨ₚ p
+  let b := (∼ₚ q) ∨ₚ (q ∧ₚ p)
+  let c := (p ∧ₚ q) ∨ₚ (∼ₚ q)
+  let d := p ∨ₚ (∼ₚ q)
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have e := PM.FirstEdition.Volume1.Star4.star_4_7 q p
+  have eForward : ⊢ₚ (a ⊃ₚ b) := infer e (PM.FirstEdition.Volume1.Star3.star_3_26 (a ⊃ₚ b) (b ⊃ₚ a))
+  have eBackward : ⊢ₚ (b ⊃ₚ a) := infer e (PM.FirstEdition.Volume1.Star3.star_3_27 (a ⊃ₚ b) (b ⊃ₚ a))
+  have cToB : ⊢ₚ (c ⊃ₚ b) := by
+    have swapOuter : ⊢ₚ (c ⊃ₚ ((∼ₚ q) ∨ₚ (p ∧ₚ q))) := PM.Derivation.star_1_4 (p ∧ₚ q) (∼ₚ q)
+    have liftInner : ⊢ₚ (((∼ₚ q) ∨ₚ (p ∧ₚ q)) ⊃ₚ b) :=
+      infer (PM.FirstEdition.Volume1.Star3.star_3_22 p q) (PM.Derivation.star_1_6 (∼ₚ q) (p ∧ₚ q) (q ∧ₚ p))
+    exact compose swapOuter liftInner
+  have bToC : ⊢ₚ (b ⊃ₚ c) := by
+    have liftInner : ⊢ₚ (b ⊃ₚ ((∼ₚ q) ∨ₚ (p ∧ₚ q))) :=
+      infer (PM.FirstEdition.Volume1.Star3.star_3_22 q p) (PM.Derivation.star_1_6 (∼ₚ q) (q ∧ₚ p) (p ∧ₚ q))
+    exact compose liftInner (PM.Derivation.star_1_4 (∼ₚ q) (p ∧ₚ q))
+  have forward : ⊢ₚ (c ⊃ₚ d) := compose cToB (compose eBackward (PM.Derivation.star_1_4 (∼ₚ q) p))
+  have backward : ⊢ₚ (d ⊃ₚ c) := compose (PM.Derivation.star_1_4 p (∼ₚ q)) (compose eForward bToC)
+  exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (c ⊃ₚ d) (d ⊃ₚ c)))
+
 end PM.FirstEdition.Volume1.Star5
