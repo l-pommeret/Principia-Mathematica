@@ -6,19 +6,19 @@
     "batch_spec_directory": "metadata/constrained_batches"
   },
   "counts": {
-    "catalogued_items": 1135,
-    "object_language_ast_parsed": 392,
+    "catalogued_items": 1136,
+    "object_language_ast_parsed": 393,
     "metalinguistic_routes": 8,
     "architecture_gated_source_routes": 735,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
-    "catalogued_items_missing_proof_skeleton": 1077,
+    "catalogued_items_missing_proof_skeleton": 1078,
     "constrained_batches": 16,
     "complete_batch_artifact_sets": 15,
     "planned_campaign_questions": 65,
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
-    "catalogued_items_without_campaign_question": 912,
+    "catalogued_items_without_campaign_question": 913,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
@@ -54,7 +54,7 @@
       "PM1:✱24": 48,
       "PM1:✱3": 28,
       "PM1:✱4": 61,
-      "PM1:✱5": 37,
+      "PM1:✱5": 38,
       "PM1:✱9": 46,
       "PM2:✱100": 12,
       "PM2:✱101": 15,
@@ -93,7 +93,7 @@
       "PM1:✱21": 52,
       "PM1:✱22": 79,
       "PM1:✱24": 48,
-      "PM1:✱5": 1,
+      "PM1:✱5": 2,
       "PM1:✱9": 22,
       "PM2:✱100": 12,
       "PM2:✱101": 15,
@@ -8656,7 +8656,7 @@
       "id": "PM1:✱4·76",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [
         "Q239"
       ],
@@ -9415,6 +9415,20 @@
       "ast": {
         "status": "parsed",
         "sha256": "c58ae22bc89e422e4740c8747d951c3168dbb85576460b90950c1a54d4f4f7e0"
+      },
+      "proof_skeleton": {
+        "status": "missing"
+      }
+    },
+    {
+      "id": "PM1:✱5·74",
+      "kind": "derived-proposition",
+      "source_catalogue": true,
+      "formal_status": "awaiting-ci",
+      "campaign_questions": [],
+      "ast": {
+        "status": "parsed",
+        "sha256": "cd4580a9bc826ee136d15e74555f480a7ccec0604a6d5c6040801ec4de479a67"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -16741,6 +16755,7 @@
     "PM1:✱24·45",
     "PM1:✱24·46",
     "PM1:✱2·33",
+    "PM1:✱5·74",
     "PM1:✱5·75",
     "PM1:✱9·34",
     "PM1:✱9·35",
