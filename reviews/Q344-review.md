@@ -1,6 +1,16 @@
-# Q344 review
+# Q344 exact inclusion audit
 
-PM I p. 219, scan leaf 241, SHA-256
-`b5b35b1cc45089a30e8970307349350009e4b19d03cf155212a95079c0df9312`, is
-canonical; PG 78050 agrees.  The five statements are printed in the section
-summary with no citations.  No apparatus or `[sic]` is required.
+Q344 contains ✱22·44 and ✱22·441 from PM I p. 221, scan leaf 243; the first
+edition scan is collated with PG78050. The earlier review text referred to a
+different p. 219 five-item batch and has therefore been corrected rather than
+retained as false evidence.
+
+`Star22Q344Kernel.lean` uses the explicit simple-type interpretation of a
+class extension as `α → Prop`. Inclusion is exactly the pointwise implication
+printed at ✱22·01. ✱22·44 is its fully polymorphic transitivity theorem, and
+✱22·441 specializes inclusion at the displayed member `x`.
+
+Both are complete proofs of the canonical endpoints, not target records.
+There is no inhabitance assumption, decidability, classical reasoning, new
+axiom, placeholder, or unsafe declaration. The batch awaits CI after targeted
+Lean 4.30.0 compilation.

@@ -1,1 +1,49 @@
-{"batch":"PM1-STAR22-Q344","edition":"first","volume":1,"source_range":{"printed_pages":"221","scan_leaves":[243],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱22·44","kind":"derived-proposition","printed":"⊢ : α ⊂ β . β ⊂ γ .⊃ . α ⊂ γ","printed_page":221,"scan_leaf":243,"lean_path":"Principia/FirstEdition/Volume1/Star22Source.lean","declaration":"source-only","formal_scope":"classes; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":["✱10·3"],"normalized_dependencies":[]},{"id":"PM1:✱22·441","kind":"derived-proposition","printed":"⊢ : α ⊂ β . x ε α .⊃ . x ε β","printed_page":221,"scan_leaf":243,"lean_path":"Principia/FirstEdition/Volume1/Star22Source.lean","declaration":"source-only","formal_scope":"classes; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":["✱10·1","Imp"],"normalized_dependencies":[]}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR22-Q344",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "221",
+    "scan_leaves": [243],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "items": [
+    {
+      "id": "PM1:✱22·44",
+      "kind": "derived-proposition",
+      "printed": "⊢ : α ⊂ β . β ⊂ γ .⊃ . α ⊂ γ",
+      "printed_page": 221,
+      "scan_leaf": 243,
+      "lean_path": "Principia/Architecture/Star22Q344Kernel.lean",
+      "declaration": "PM.Architecture.Star22Q344Kernel.star_22_44",
+      "formal_scope": "exact polymorphic transitivity of class inclusion",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱10·3"],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱22·441",
+      "kind": "derived-proposition",
+      "printed": "⊢ : α ⊂ β . x ε α .⊃ . x ε β",
+      "printed_page": 221,
+      "scan_leaf": 243,
+      "lean_path": "Principia/Architecture/Star22Q344Kernel.lean",
+      "declaration": "PM.Architecture.Star22Q344Kernel.star_22_441",
+      "formal_scope": "exact polymorphic elimination of class inclusion at a member",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q344-review.md",
+      "printed_dependencies": ["PM1:✱10·1", "PM1:Imp"],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}
