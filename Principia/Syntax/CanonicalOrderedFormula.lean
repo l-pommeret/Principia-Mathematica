@@ -431,6 +431,25 @@ def smartDisjScoped (p q : Raw Γ) : Raw Γ :=
 
 def smartImp (p q : Raw Γ) : Raw Γ := smartDisj (smartNeg p) q
 
+theorem abstractOuterAt_smartNeg
+    (cutoff : Nat) (p : Raw (.elementaryProposition :: Γ)) :
+    abstractOuterAt cutoff (smartNeg p) =
+      smartNeg (abstractOuterAt cutoff p) := by
+  induction p generalizing cutoff with
+  | quantified quantifier body ih =>
+      cases quantifier <;>
+        simp [smartNeg, abstractOuterAt, ih]
+  | elementary proposition =>
+      cases proposition with
+      | constant name => rfl
+      | var v => cases v <;> rfl
+      | neg p => rfl
+      | disj p q => rfl
+  | bound index =>
+      by_cases h : index ≤ cutoff <;>
+        simp [smartNeg, abstractOuterAt, h]
+  | _ => rfl
+
 @[simp] theorem shiftBoundAt_elementary (p : Elementary Γ) :
     shiftBoundAt cutoff (.elementary p) = .elementary p := rfl
 
