@@ -561,4 +561,44 @@ theorem star_4_11 {Γ} (p q : PM.Elementary Γ) :
         ((p ≡ₚ q) ⊃ₚ ((∼ₚ p) ≡ₚ (∼ₚ q)))
         (((∼ₚ p) ≡ₚ (∼ₚ q)) ⊃ₚ (p ≡ₚ q))))
 
+/-- PM I (1910), p. 127, ✱4·77. -/
+theorem star_4_77 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)) ≡ₚ ((q ∨ₚ r) ⊃ₚ p)) := by
+  let d := q ∨ₚ r
+  let g := d ⊃ₚ p
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have hq : ⊢ₚ (q ⊃ₚ d) := PM.FirstEdition.Volume1.Star2.star_2_2 q r
+  have hr : ⊢ₚ (r ⊃ₚ d) := compose
+    (PM.FirstEdition.Volume1.Star2.star_2_2 r q)
+    (PM.Derivation.star_1_4 r q)
+  have liftUnder : ∀ {a b : PM.Elementary Γ}, (⊢ₚ a) →
+      (⊢ₚ (g ⊃ₚ (a ⊃ₚ b))) → (⊢ₚ (g ⊃ₚ b)) := by
+    intro a b ha hgab
+    have hga : ⊢ₚ (g ⊃ₚ a) := infer ha (PM.FirstEdition.Volume1.Star2.star_2_02 g a)
+    have lifted : ⊢ₚ ((g ⊃ₚ a) ⊃ₚ (g ⊃ₚ b)) :=
+      infer hgab (PM.FirstEdition.Volume1.Star2.star_2_77 g a b)
+    exact infer hga lifted
+  have qBranch : ⊢ₚ (g ⊃ₚ (q ⊃ₚ p)) :=
+    liftUnder hq (PM.FirstEdition.Volume1.Star2.star_2_05 q d p)
+  have rBranch : ⊢ₚ (g ⊃ₚ (r ⊃ₚ p)) :=
+    liftUnder hr (PM.FirstEdition.Volume1.Star2.star_2_05 r d p)
+  have pair := infer rBranch (infer qBranch
+    (PM.FirstEdition.Volume1.Star3.star_3_2
+      (g ⊃ₚ (q ⊃ₚ p)) (g ⊃ₚ (r ⊃ₚ p))))
+  have lift := infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 g g (q ⊃ₚ p) (r ⊃ₚ p))
+  have dup := infer (PM.FirstEdition.Volume1.Star3.star_3_2 g g) (PM.FirstEdition.Volume1.Star2.star_2_43 g (g ∧ₚ g))
+  have reverse : ⊢ₚ (g ⊃ₚ ((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p))) := compose dup lift
+  exact infer reverse
+    (infer (PM.FirstEdition.Volume1.Star3.star_3_44 q r p)
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        (((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)) ⊃ₚ g)
+        (g ⊃ₚ ((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)))))
+
 end PM.FirstEdition.Volume1.Star4
