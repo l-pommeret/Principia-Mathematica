@@ -177,4 +177,33 @@ theorem star_5_31 {Γ} (p q r : PM.Elementary Γ) :
   have hxR : ⊢ₚ (x ⊃ₚ r) := compose hxH (PM.FirstEdition.Volume1.Star3.star_3_26 r (p ⊃ₚ q))
   exact infer (join hxQ hxR) (PM.FirstEdition.Volume1.Star3.star_3_3 h p (q ∧ₚ r))
 
+/-- PM I (1910), p. 130, ✱5·35.  Under the two displayed implications, the
+antecedent `p` yields both `q` and `r`; ✱5·1 then supplies their equivalence. -/
+theorem star_5_35 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ⊃ₚ q) ∧ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ≡ₚ r))) := by
+  let h := (p ⊃ₚ q) ∧ₚ (p ⊃ₚ r)
+  let x := h ∧ₚ p
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have duplicate : ∀ a : PM.Elementary Γ, ⊢ₚ (a ⊃ₚ (a ∧ₚ a)) := by
+    intro a
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 a a) (PM.FirstEdition.Volume1.Star2.star_2_43 a (a ∧ₚ a))
+  have join : ∀ {a b c : PM.Elementary Γ}, (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ (a ⊃ₚ c)) → (⊢ₚ (a ⊃ₚ (b ∧ₚ c))) := by
+    intro a b c hab hac
+    have pair : ⊢ₚ ((a ⊃ₚ b) ∧ₚ (a ⊃ₚ c)) := infer hab (infer hac (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (a ⊃ₚ c)))
+    exact compose (duplicate a) (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 a a b c))
+  have hxH : ⊢ₚ (x ⊃ₚ h) := PM.FirstEdition.Volume1.Star3.star_3_26 h p
+  have hxP : ⊢ₚ (x ⊃ₚ p) := PM.FirstEdition.Volume1.Star3.star_3_27 h p
+  have hxQ : ⊢ₚ (x ⊃ₚ q) :=
+    compose (join hxP (compose hxH (PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ q) (p ⊃ₚ r)))) (PM.FirstEdition.Volume1.Star3.star_3_35 p q)
+  have hxR : ⊢ₚ (x ⊃ₚ r) :=
+    compose (join hxP (compose hxH (PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ q) (p ⊃ₚ r)))) (PM.FirstEdition.Volume1.Star3.star_3_35 p r)
+  exact infer (compose (join hxQ hxR) (star_5_1 q r)) (PM.FirstEdition.Volume1.Star3.star_3_3 h p (q ≡ₚ r))
+
 end PM.FirstEdition.Volume1.Star5
