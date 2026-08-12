@@ -107,6 +107,23 @@ theorem post906Line5_to_post908Line6
     NormalizesScopedAt 0 (post906Line5Raw φ ψ) (post908Line6Raw φ ψ) :=
   line5_to_line6 _ _
 
+/-- Correct source orientation of printed line (5)→(6): the line-(5)
+quantifiers are eliminated into the separated disjunction of line (6). -/
+def sourceLine5Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  line6From908 (.neg (implicationOuterRaw φ ψ))
+    (.quantified .sometimes
+      (.disj (.neg (weakenBound (phiYOuterRaw φ))) (psiZBodyRaw ψ)))
+
+def sourceLine6Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  line5Redex (.neg (implicationOuterRaw φ ψ))
+    (.quantified .sometimes
+      (.disj (.neg (weakenBound (phiYOuterRaw φ))) (psiZBodyRaw ψ)))
+
+theorem sourceLine5_to_line6
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (sourceLine5Raw φ ψ) (sourceLine6Raw φ ψ) :=
+  .disjSometimesAlwaysReverse 0 _ _
+
 /-- Closed evidence for the printed chain.  The source line and every later
 endpoint remain explicit; a future bridge must identify the audited concrete
 line-(6) operands before this structure can be inhabited. -/
