@@ -721,4 +721,47 @@ theorem star_5_63 {Γ} (p q : PM.Elementary Γ) :
   have backward := comp bToX (comp exy yToA)
   exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
 
+/-- PM I (1910), p. 130, ✱5·54. -/
+theorem star_5_54 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (((p ∧ₚ q) ≡ₚ p) ∨ₚ ((p ∧ₚ q) ≡ₚ q)) := by
+  let h := p ∧ₚ q
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have comp : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have dup : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
+    intro t
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t) (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
+  have join : ∀ {a b c : PM.Elementary Γ}, (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ (a ⊃ₚ c)) → (⊢ₚ (a ⊃ₚ (b ∧ₚ c))) := by
+    intro a b c hab hac
+    have pair := infer hac (infer hab (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (a ⊃ₚ c)))
+    exact comp (dup a) (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 a a b c))
+  have mapOr : ∀ {a b x y : PM.Elementary Γ}, (⊢ₚ (a ⊃ₚ x)) → (⊢ₚ (b ⊃ₚ y)) → (⊢ₚ ((a ∨ₚ b) ⊃ₚ (x ∨ₚ y))) := by
+    intro a b x y hax hby
+    have l := infer hax (PM.FirstEdition.Volume1.Star2.star_2_36 b a x)
+    have r0 := infer hby (PM.FirstEdition.Volume1.Star2.star_2_36 x b y)
+    exact comp (PM.Derivation.star_1_4 a b) (comp l (comp r0 (PM.Derivation.star_1_4 y x)))
+  have toP : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ (h ≡ₚ p)) := by
+    have e := PM.FirstEdition.Volume1.Star4.star_4_7 p q
+    have reverse : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ h)) :=
+      infer e (PM.FirstEdition.Volume1.Star3.star_3_26 ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ h)) ((p ⊃ₚ h) ⊃ₚ (p ⊃ₚ q)))
+    have forward : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ (h ⊃ₚ p)) := infer (PM.FirstEdition.Volume1.Star3.star_3_26 p q) (PM.FirstEdition.Volume1.Star2.star_2_02 (p ⊃ₚ q) (h ⊃ₚ p))
+    exact join forward reverse
+  have toQ : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (h ≡ₚ q)) := by
+    have e := PM.FirstEdition.Volume1.Star4.star_4_7 q p
+    have raw : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (q ⊃ₚ (q ∧ₚ p))) :=
+      infer e (PM.FirstEdition.Volume1.Star3.star_3_26 ((q ⊃ₚ p) ⊃ₚ (q ⊃ₚ (q ∧ₚ p))) ((q ⊃ₚ (q ∧ₚ p)) ⊃ₚ (q ⊃ₚ p)))
+    have swap : ⊢ₚ ((q ∧ₚ p) ⊃ₚ h) := PM.FirstEdition.Volume1.Star3.star_3_22 q p
+    have liftedSwap : ⊢ₚ ((q ⊃ₚ (q ∧ₚ p)) ⊃ₚ (q ⊃ₚ h)) :=
+      infer (infer swap (PM.FirstEdition.Volume1.Star2.star_2_02 q ((q ∧ₚ p) ⊃ₚ h)))
+        (PM.FirstEdition.Volume1.Star2.star_2_77 q (q ∧ₚ p) h)
+    have reverse : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (q ⊃ₚ h)) := comp raw liftedSwap
+    have forward : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (h ⊃ₚ q)) := infer (PM.FirstEdition.Volume1.Star3.star_3_27 p q) (PM.FirstEdition.Volume1.Star2.star_2_02 (q ⊃ₚ p) (h ⊃ₚ q))
+    exact join forward reverse
+  exact infer (star_5_13 p q) (mapOr toP toQ)
+
 end PM.FirstEdition.Volume1.Star5
