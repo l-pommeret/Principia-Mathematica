@@ -35,7 +35,21 @@
       "integration_blocked": false,
       "integration_status": "integrated-local",
       "printed_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.Elementary.conj"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱3·01"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱3·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Q296-canonical-integration.md",
+        "editorial_note": "The contextual definiens uses the canonical conjunction constructor realizing ✱3·01; the definition prints no proof citation."
+      }
     }
   ],
   "ci_evidence": {

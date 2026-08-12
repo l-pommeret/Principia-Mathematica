@@ -1,7 +1,177 @@
-{"batch":"PM1-STAR21-Q339","edition":"first","volume":1,"source_range":{"printed_pages":"216","scan_leaves":[238],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":238,"printed_page":216,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page238-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I%2C_1910.djvu.jpg","sha256":"bf0ff41a2c61faff2e7d55b655b572aa0fbe16a56f915355ab7d34ad40019067"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱21·7","kind":"derived-proposition","printed":"⊢ : (∃g) : fR .≡ᴿ. g!R","printed_page":216,"scan_leaf":238,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations","printed_dependencies":["✱20·7"],"normalized_dependencies":[]},
-{"id":"PM1:✱21·701","kind":"derived-proposition","printed":"⊢ : (∃g) : f(R,x) .≡₍R,x₎. g!(R,x)","printed_page":216,"scan_leaf":238,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations","printed_dependencies":["✱20·701"],"normalized_dependencies":[]},
-{"id":"PM1:✱21·702","kind":"derived-proposition","printed":"⊢ : (∃g) : f(x,R) .≡₍R,x₎. g!(R,x)","printed_page":216,"scan_leaf":238,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations","printed_dependencies":["✱20·702"],"normalized_dependencies":[]},
-{"id":"PM1:✱21·703","kind":"derived-proposition","printed":"⊢ : (∃g) : f(R,S) .≡₍R,S₎. g!(R,S)","printed_page":216,"scan_leaf":238,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations","printed_dependencies":["✱20·703"],"normalized_dependencies":[]},
-{"id":"PM1:✱21·704","kind":"derived-proposition","printed":"⊢ : (∃g) : f(R,α) .≡₍R,α₎. g!(R,α)","printed_page":216,"scan_leaf":238,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations","printed_dependencies":["✱20·703"],"normalized_dependencies":[]}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR21-Q339",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "216",
+    "scan_leaves": [
+      238
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 238,
+        "printed_page": 216,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page238-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "bf0ff41a2c61faff2e7d55b655b572aa0fbe16a56f915355ab7d34ad40019067"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱21·7",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (∃g) : fR .≡ᴿ. g!R",
+      "printed_page": 216,
+      "scan_leaf": 238,
+      "lean_path": "Principia/Architecture/Star21Q339Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q339Kernel.star_21_7",
+      "formal_scope": "exact typed relation-function representative in the simple-type embedding",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q339-canonical-integration.md",
+      "printed_dependencies": [
+        "PM1:✱20·7"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·7"
+        ],
+        "strict_attempt_evidence": "reviews/Q339-canonical-integration.md",
+        "editorial_note": "The audited simple-type embedding makes the representative definitional."
+      }
+    },
+    {
+      "id": "PM1:✱21·701",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (∃g) : f(R,x) .≡₍R,x₎. g!(R,x)",
+      "printed_page": 216,
+      "scan_leaf": 238,
+      "lean_path": "Principia/Architecture/Star21Q339Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q339Kernel.star_21_701",
+      "formal_scope": "exact typed relation/object function representative",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q339-canonical-integration.md",
+      "printed_dependencies": [
+        "PM1:✱20·701"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·701"
+        ],
+        "strict_attempt_evidence": "reviews/Q339-canonical-integration.md",
+        "editorial_note": "The audited simple-type embedding makes the representative definitional."
+      }
+    },
+    {
+      "id": "PM1:✱21·702",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (∃g) : f(x,R) .≡₍R,x₎. g!(R,x)",
+      "printed_page": 216,
+      "scan_leaf": 238,
+      "lean_path": "Principia/Architecture/Star21Q339Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q339Kernel.star_21_702",
+      "formal_scope": "exact typed object/relation representative with printed argument reordering",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q339-canonical-integration.md",
+      "printed_dependencies": [
+        "PM1:✱20·702"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·702"
+        ],
+        "strict_attempt_evidence": "reviews/Q339-canonical-integration.md",
+        "editorial_note": "The audited simple-type embedding makes the reordered representative definitional."
+      }
+    },
+    {
+      "id": "PM1:✱21·703",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (∃g) : f(R,S) .≡₍R,S₎. g!(R,S)",
+      "printed_page": 216,
+      "scan_leaf": 238,
+      "lean_path": "Principia/Architecture/Star21Q339Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q339Kernel.star_21_703",
+      "formal_scope": "exact typed two-relation function representative",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q339-canonical-integration.md",
+      "printed_dependencies": [
+        "PM1:✱20·703"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·703"
+        ],
+        "strict_attempt_evidence": "reviews/Q339-canonical-integration.md",
+        "editorial_note": "The audited simple-type embedding makes the representative definitional."
+      }
+    },
+    {
+      "id": "PM1:✱21·704",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (∃g) : f(R,α) .≡₍R,α₎. g!(R,α)",
+      "printed_page": 216,
+      "scan_leaf": 238,
+      "lean_path": "Principia/Architecture/Star21Q339Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q339Kernel.star_21_704",
+      "formal_scope": "exact typed relation/class function representative",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q339-canonical-integration.md",
+      "printed_dependencies": [
+        "PM1:✱20·703"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·703"
+        ],
+        "strict_attempt_evidence": "reviews/Q339-canonical-integration.md",
+        "editorial_note": "The audited simple-type embedding makes the mixed representative definitional."
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -16,3 +16,9 @@ remain untouched.
 This removes the former one-to-one remap blocker locally. Promotion remains
 `awaiting-ci` until the canonical module is checked by an immutable online
 run. No axiom, `sorry`, `admit`, `unsafe`, or classical principle occurs.
+
+Dependency promotion simulation extracts `PM.Elementary.conj`, the canonical
+syntax realization of ✱3·01 used inside the unfolded contextual definition.
+Because ✱14·01 prints no proof citation, this is recorded explicitly as an
+added definitional dependency rather than hidden. The simulated item passes;
+its status remains `awaiting-ci`.

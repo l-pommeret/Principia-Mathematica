@@ -15,3 +15,8 @@ Targeted Lean 4.30.0 check:
 ```text
 lake env lean Principia/Architecture/Star14Q307Kernel.lean
 ```
+
+Promotion simulation passes all four declarations. Their final indexed bodies
+have empty direct theorem closures, with every compact or ordinary printed
+citation represented exactly as reviewed historical evidence. No status is
+changed by this audit.

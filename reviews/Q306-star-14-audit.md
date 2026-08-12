@@ -11,3 +11,8 @@ uses the identity matrix itself, ✱14·201 extracts the unique witness, and
 ✱14·203 proves both directions of the displayed existence-and-uniqueness
 characterization. No choice operator, description term, classical axiom,
 placeholder, unsafe feature, or semantic stub is used.
+
+Promotion simulation passes all four declarations. Their final indexed bodies
+have empty direct theorem closures; compact citations and the printed identity
+convention are preserved exactly in reviewed relaxation records. No status is
+changed by this audit.

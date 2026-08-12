@@ -40,13 +40,9 @@
         "PM1:✱13·195",
         "PM1:✱13·192"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star14Q299Kernel.DescriptionScope",
-        "PM.Architecture.Star14Q299Kernel.Characterizes"
-      ],
-      "normalized_dependencies": [
-        "PM1:✱14·1"
-      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱13·192","PM1:✱13·195","PM1:✱14·1"],"strict_attempt_evidence":"reviews/Q305-review.md","editorial_note":"The theorem-specific witness closes constructively from explicit inputs; the printed derivation chain creates no direct indexed call in the final declaration body."},
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q305-review.md"
     },
@@ -76,6 +72,7 @@
       "normalized_dependencies": [
         "PM1:✱14·15"
       ],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·1","PM1:✱10·23","PM1:✱13·192","PM1:✱14·1","PM1:✱14·13"],"strict_attempt_evidence":"reviews/Q305-review.md","editorial_note":"The final declaration directly reuses ✱14·15; the remaining printed proof steps are retained as historical but unused citations."},
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q305-review.md"
     },
@@ -106,6 +103,7 @@
       "normalized_dependencies": [
         "PM1:✱14·15"
       ],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·1","PM1:✱10·11","PM1:✱10·21","PM1:✱12·1","PM1:✱13·15","PM1:✱4·22"],"strict_attempt_evidence":"reviews/Q305-review.md","editorial_note":"The final declaration directly reuses ✱14·15; the remaining printed proof steps are retained as historical but unused citations."},
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q305-review.md"
     }

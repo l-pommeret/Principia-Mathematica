@@ -13,3 +13,7 @@ formal uniqueness implication with the displayed instance, not bare
 implications. All proofs are constructive and polymorphic, with no
 inhabitedness, choice, axiom, `sorry`, `admit`, semantic stub, or weakened
 target. Historical citations remain recorded in metadata.
+
+Promotion simulation passes all five declarations. Their final indexed bodies
+have empty direct theorem closures; every printed citation is retained exactly
+as a reviewed unused dependency. No status is changed by this audit.
