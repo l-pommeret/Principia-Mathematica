@@ -19,6 +19,7 @@ inductive Quantifier where
 
 inductive Raw : RealContext → Type where
   | elementary : Elementary Γ → Raw Γ
+  | bound : Nat → Raw Γ
   | quantified : Quantifier → Raw Γ → Raw Γ
   | neg : Raw Γ → Raw Γ
   | disj : Raw Γ → Raw Γ → Raw Γ
@@ -26,6 +27,7 @@ inductive Raw : RealContext → Type where
 
 def assignedOrder : Raw Γ → Nat
   | .elementary _ => 0
+  | .bound _ => 0
   | .quantified _ body => assignedOrder body + 1
   | .neg proposition => assignedOrder proposition
   | .disj left right => max (assignedOrder left) (assignedOrder right)
@@ -68,12 +70,31 @@ def smartImp (left right : Raw Γ) : Raw Γ := smartDisj (smartNeg left) right
 /- Conservative raw embeddings of the three constructors represented by the
 current indexed syntax.  Connective nodes retain their existing structure;
 only the explicit order index is forgotten. -/
+def boundIndex : BoundVar Δ .elementaryProposition → Nat
+  | .zero => 0
+  | .succ v => boundIndex v + 1
+
 def ofApparent : Apparent Γ Δ → Raw Γ
   | .constant name => .elementary (.constant name)
   | .real v => .elementary (.var v)
-  | .bound _ => .elementary (.constant "<apparent-bound>")
+  | .bound v => .bound (boundIndex v)
   | .neg p => .neg (ofApparent p)
   | .disj p q => .disj (ofApparent p) (ofApparent q)
+
+@[simp] theorem ofApparent_bound_zero {Γ} :
+    ofApparent (Apparent.bound (.zero : BoundVar
+      (.elementaryProposition :: Δ) .elementaryProposition) :
+        Apparent Γ (.elementaryProposition :: Δ)) = .bound 0 := rfl
+
+@[simp] theorem ofApparent_bound_succ {Γ}
+    (v : BoundVar Δ .elementaryProposition) :
+    ofApparent (Apparent.bound (.succ v) :
+      Apparent Γ (.elementaryProposition :: Δ)) = .bound (boundIndex v + 1) := rfl
+
+theorem raw_bound_injective {left right : Nat} :
+    (Raw.bound left : Raw Γ) = .bound right → left = right := by
+  intro equality
+  injection equality
 
 def ofFirstOrder : FirstOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofApparent body)
