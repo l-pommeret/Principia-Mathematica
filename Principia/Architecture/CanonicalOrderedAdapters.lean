@@ -84,6 +84,24 @@ def star_9_21_psi_z_raw (ψ : Apparent Γ [.elementaryProposition]) : Raw
     Apparent (.elementaryProposition :: Γ)
       (.elementaryProposition :: .elementaryProposition :: []))
 
+/-- Close the displayed leading real variable in a source-labelled Raw
+matrix.  Repetition is explicit at each printed binder; no implicit context
+coercion is involved. -/
+def closeLeadingRaw (p : Raw (.elementaryProposition :: Γ)) : Raw Γ :=
+  abstractOuter p
+
+def star_9_21_phi_x_closed_raw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  closeLeadingRaw (star_9_21_phi_x_raw φ)
+
+def star_9_21_psi_x_closed_raw (ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  closeLeadingRaw (star_9_21_psi_x_raw ψ)
+
+def star_9_21_phi_y_closed_raw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  closeLeadingRaw (star_9_21_phi_y_raw φ)
+
+def star_9_21_psi_z_closed_raw (ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  closeLeadingRaw (star_9_21_psi_z_raw ψ)
+
 @[simp] theorem ofApparent_neg (p : Apparent Γ Δ) :
     ofApparent (∼ₐ p) = .neg (ofApparent p) := rfl
 
