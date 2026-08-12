@@ -1877,6 +1877,54 @@ def rawSize : Raw Γ → Nat
   | .quantified _ p | .neg p => rawSize p + 1
   | .disj p q => rawSize p + rawSize q + 1
 
+def elementaryExpandedSize : Elementary Γ → Nat
+  | .constant _ | .var _ => 1
+  | .neg p => elementaryExpandedSize p + 1
+  | .disj p q => elementaryExpandedSize p + elementaryExpandedSize q + 1
+
+def expandedSize : Raw Γ → Nat
+  | .elementary p => elementaryExpandedSize p
+  | .schema _ | .bound _ => 1
+  | .quantified _ p | .neg p => expandedSize p + 1
+  | .disj p q => expandedSize p + expandedSize q + 1
+
+@[simp] theorem expandedSize_shiftBoundAt (cutoff : Nat) (p : Raw Γ) :
+    expandedSize (shiftBoundAt cutoff p) = expandedSize p := by
+  induction p generalizing cutoff with
+  | elementary proposition => rfl
+  | schema slot => rfl
+  | bound index => by_cases h : cutoff ≤ index <;>
+      simp [shiftBoundAt, expandedSize, h]
+  | quantified quantifier body ih => simp [shiftBoundAt, expandedSize, ih]
+  | neg proposition ih => simp [shiftBoundAt, expandedSize, ih]
+  | disj left right ihLeft ihRight =>
+      simp [shiftBoundAt, expandedSize, ihLeft, ihRight]
+
+@[simp] theorem expandedSize_abstractElementaryAt
+    (cutoff : Nat) (p : Elementary (.elementaryProposition :: Γ)) :
+    expandedSize (abstractElementaryAt cutoff p) = elementaryExpandedSize p := by
+  induction p generalizing cutoff with
+  | constant name => rfl
+  | var v => cases v <;> rfl
+  | neg proposition ih => simp [abstractElementaryAt, expandedSize,
+      elementaryExpandedSize, ih]
+  | disj left right ihLeft ihRight =>
+      simp [abstractElementaryAt, expandedSize, elementaryExpandedSize,
+        ihLeft, ihRight]
+
+@[simp] theorem expandedSize_abstractOuterAt
+    (cutoff : Nat) (p : Raw (.elementaryProposition :: Γ)) :
+    expandedSize (abstractOuterAt cutoff p) = expandedSize p := by
+  induction p generalizing cutoff with
+  | elementary proposition => simp [abstractOuterAt, expandedSize]
+  | schema slot => rfl
+  | bound index => by_cases h : index ≤ cutoff <;>
+      simp [abstractOuterAt, expandedSize, h]
+  | quantified quantifier body ih => simp [abstractOuterAt, expandedSize, ih]
+  | neg proposition ih => simp [abstractOuterAt, expandedSize, ih]
+  | disj left right ihLeft ihRight =>
+      simp [abstractOuterAt, expandedSize, ihLeft, ihRight]
+
 def smartDisjAux : Nat → Raw Γ → Raw Γ → Raw Γ
   | 0, p, q => .disj p q
   | fuel + 1, .quantified .always p, .quantified .sometimes q =>
@@ -1894,7 +1942,47 @@ def smartDisjAux : Nat → Raw Γ → Raw Γ → Raw Γ
 def smartDisj (p q : Raw Γ) : Raw Γ :=
   smartDisjAux (rawSize p + rawSize q) p q
 
+def smartDisjScopedAux : Nat → Nat → Raw Γ → Raw Γ → Raw Γ
+  | _, 0, p, q => .disj p q
+  | depth, fuel + 1, .quantified .always p, .quantified .sometimes q =>
+      .quantified .always (.quantified .sometimes
+        (smartDisjScopedAux (depth + 2) fuel
+          (shiftBoundAt (depth + 1) p) (shiftBoundAt (depth + 1) q)))
+  | depth, fuel + 1, .quantified .sometimes p, .quantified .always q =>
+      .quantified .always (.quantified .sometimes
+        (smartDisjScopedAux (depth + 2) fuel
+          (shiftBoundAt (depth + 1) p) (shiftBoundAt (depth + 1) q)))
+  | depth, fuel + 1, .quantified quantifier p, q =>
+      .quantified quantifier
+        (smartDisjScopedAux (depth + 1) fuel p (shiftBoundAt depth q))
+  | depth, fuel + 1, p, .quantified quantifier q =>
+      .quantified quantifier
+        (smartDisjScopedAux (depth + 1) fuel (shiftBoundAt depth p) q)
+  | _, _ + 1, p, q => .disj p q
+
+def smartDisjScoped (p q : Raw Γ) : Raw Γ :=
+  smartDisjScopedAux 0 (expandedSize p + expandedSize q + 1) p q
+
 def smartImp (p q : Raw Γ) : Raw Γ := smartDisj (smartNeg p) q
+
+theorem abstractOuterAt_smartNeg
+    (cutoff : Nat) (p : Raw (.elementaryProposition :: Γ)) :
+    abstractOuterAt cutoff (smartNeg p) =
+      smartNeg (abstractOuterAt cutoff p) := by
+  induction p generalizing cutoff with
+  | quantified quantifier body ih =>
+      cases quantifier <;>
+        simp [smartNeg, abstractOuterAt, ih]
+  | elementary proposition =>
+      cases proposition with
+      | constant name => rfl
+      | var v => cases v <;> rfl
+      | neg p => rfl
+      | disj p q => rfl
+  | bound index =>
+      by_cases h : index ≤ cutoff <;>
+        simp [smartNeg, abstractOuterAt, h]
+  | _ => rfl
 
 @[simp] theorem shiftBoundAt_elementary (p : Elementary Γ) :
     shiftBoundAt cutoff (.elementary p) = .elementary p := rfl
@@ -1920,6 +2008,17 @@ def ofApparent : Apparent Γ Δ → Raw Γ
   | .neg p => .neg (ofApparent p)
   | .disj p q => .disj (ofApparent p) (ofApparent q)
 
+def ofApparentAt (depth : Nat) : Apparent Γ Δ → Raw Γ
+  | .constant name => .elementary (.constant name)
+  | .real v => .elementary (.var v)
+  | .bound v => .bound (boundIndex v + depth)
+  | .neg p => .neg (ofApparentAt depth p)
+  | .disj p q => .disj (ofApparentAt depth p) (ofApparentAt depth q)
+
+def ofFirstOrderAt (depth : Nat) : FirstOrder Γ Δ → Raw Γ
+  | .always body => .quantified .always (ofApparentAt (depth + 1) body)
+  | .sometimes body => .quantified .sometimes (ofApparentAt (depth + 1) body)
+
 def ofFirstOrder : FirstOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofApparent body)
   | .sometimes body => .quantified .sometimes (ofApparent body)
@@ -1929,6 +2028,61 @@ def ofFirstOrderMatrix : FirstOrderMatrix Γ Δ → Raw Γ
   | .neg p => smartNeg (ofFirstOrderMatrix p)
   | .disj p q => smartDisj (ofFirstOrderMatrix p) (ofFirstOrderMatrix q)
 
+def ofFirstOrderMatrixScoped : FirstOrderMatrix Γ Δ → Raw Γ
+  | .quantified p => ofFirstOrder p
+  | .neg p => smartNeg (ofFirstOrderMatrixScoped p)
+  | .disj p q =>
+      smartDisjScoped (ofFirstOrderMatrixScoped p) (ofFirstOrderMatrixScoped q)
+
+def smartDisjScopedAt (depth : Nat) (p q : Raw Γ) : Raw Γ :=
+  smartDisjScopedAux depth (expandedSize p + expandedSize q + 1) p q
+
+def ofFirstOrderMatrixScopedAt (depth : Nat) :
+    FirstOrderMatrix Γ Δ → Raw Γ
+  | .quantified p => ofFirstOrderAt depth p
+  | .neg p => smartNeg (ofFirstOrderMatrixScopedAt depth p)
+  | .disj p q => smartDisjScopedAt depth
+      (ofFirstOrderMatrixScopedAt depth p)
+      (ofFirstOrderMatrixScopedAt depth q)
+
+def normalizeFirstOrderMatrixAfterAbstract (depth : Nat)
+    (matrix : FirstOrderMatrix (.elementaryProposition :: Γ) Δ) : Raw Γ :=
+  if depth = 0 then
+    ofFirstOrderMatrixScoped (FirstOrderMatrix.abstractRealOuter matrix)
+  else
+    ofFirstOrderMatrixScopedAt depth
+      (FirstOrderMatrix.abstractRealOuter matrix)
+
+def ofFirstOrderMatrixRedex : FirstOrderMatrix Γ Δ → Raw Γ
+  | .quantified p => ofFirstOrder p
+  | .neg p => .neg (ofFirstOrderMatrixRedex p)
+  | .disj p q =>
+      .disj (ofFirstOrderMatrixRedex p) (ofFirstOrderMatrixRedex q)
+
+structure ScopedFirstOrderMatrixReification
+    (Δ : BoundContext) (raw : Raw Γ) where
+  formula : FirstOrderMatrix Γ Δ
+  roundTrip : ofFirstOrderMatrixScoped formula = raw
+
+def reifyFirstOrderScoped (p : FirstOrder Γ Δ) :
+    ScopedFirstOrderMatrixReification Δ (ofFirstOrder p) where
+  formula := .quantified p
+  roundTrip := rfl
+
+def ScopedFirstOrderMatrixReification.neg
+    (certificate : ScopedFirstOrderMatrixReification Δ raw) :
+    ScopedFirstOrderMatrixReification Δ (smartNeg raw) where
+  formula := .neg certificate.formula
+  roundTrip := by simp [ofFirstOrderMatrixScoped, certificate.roundTrip]
+
+def ScopedFirstOrderMatrixReification.disj
+    (left : ScopedFirstOrderMatrixReification Δ p)
+    (right : ScopedFirstOrderMatrixReification Δ q) :
+    ScopedFirstOrderMatrixReification Δ (smartDisjScoped p q) where
+  formula := .disj left.formula right.formula
+  roundTrip := by
+    simp [ofFirstOrderMatrixScoped, left.roundTrip, right.roundTrip]
+
 def ofSecondOrder : SecondOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofFirstOrder body)
   | .sometimes body => .quantified .sometimes (ofFirstOrder body)
@@ -1937,14 +2091,41 @@ def ofSecondMatrix : FirstOrderMatrix.Quantified Γ Δ → Raw Γ
   | .always body => .quantified .always (ofFirstOrderMatrix body)
   | .sometimes body => .quantified .sometimes (ofFirstOrderMatrix body)
 
+def ofSecondMatrixScoped : FirstOrderMatrix.Quantified Γ Δ → Raw Γ
+  | .always body => .quantified .always (ofFirstOrderMatrixScoped body)
+  | .sometimes body => .quantified .sometimes (ofFirstOrderMatrixScoped body)
+
+def ofSecondMatrixScopedAt (depth : Nat) :
+    FirstOrderMatrix.Quantified Γ Δ → Raw Γ
+  | .always body => .quantified .always
+      (ofFirstOrderMatrixScopedAt (depth + 1) body)
+  | .sometimes body => .quantified .sometimes
+      (ofFirstOrderMatrixScopedAt (depth + 1) body)
+
 def ofThirdOrder : FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofSecondMatrix body)
   | .sometimes body => .quantified .sometimes (ofSecondMatrix body)
+
+def ofThirdOrderScoped : FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
+  | .always body => .quantified .always (ofSecondMatrixScoped body)
+  | .sometimes body => .quantified .sometimes (ofSecondMatrixScoped body)
+
+def ofThirdOrderScopedAt (depth : Nat) :
+    FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
+  | .always body => .quantified .always (ofSecondMatrixScopedAt (depth + 1) body)
+  | .sometimes body =>
+      .quantified .sometimes (ofSecondMatrixScopedAt (depth + 1) body)
 
 def ofThirdOrderFormula : FirstOrderMatrix.ThirdOrderFormula Γ Δ → Raw Γ
   | .quantified p => ofThirdOrder p
   | .neg p => .neg (ofThirdOrderFormula p)
   | .disj p q => .disj (ofThirdOrderFormula p) (ofThirdOrderFormula q)
+
+def ofThirdOrderFormulaScoped : FirstOrderMatrix.ThirdOrderFormula Γ Δ → Raw Γ
+  | .quantified p => ofThirdOrderScoped p
+  | .neg p => .neg (ofThirdOrderFormulaScoped p)
+  | .disj p q =>
+      .disj (ofThirdOrderFormulaScoped p) (ofThirdOrderFormulaScoped q)
 
 def ofOrdered : OrderedFormula Γ order → Raw Γ
   | .elementary p => .elementary p
@@ -2020,6 +2201,40 @@ theorem ofApparent_abstractRealOuter
   | disj left right ihLeft ihRight =>
       simp [ofApparent, Apparent.abstractRealOuter, abstractOuter,
         abstractOuterAt, ihLeft, ihRight]
+
+theorem ofApparentAt_abstractRealOuter
+    (depth : Nat)
+    (p : Apparent (.elementaryProposition :: Γ)
+      (.elementaryProposition :: Δ)) :
+    ofApparentAt depth (Apparent.abstractRealOuter p) =
+      abstractOuterAt depth (ofApparentAt depth p) := by
+  induction p with
+  | constant name => rfl
+  | real realVariable => cases realVariable <;> simp [ofApparentAt,
+      Apparent.abstractRealOuter, abstractOuterAt, abstractElementaryAt,
+      boundIndex] <;> omega
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => simp [ofApparentAt, Apparent.abstractRealOuter,
+          abstractOuterAt, boundIndex]
+      | succ predecessor =>
+          have above : ¬ boundIndex predecessor + 1 + depth ≤ depth := by omega
+          simp [ofApparentAt, Apparent.abstractRealOuter,
+            abstractOuterAt, boundIndex, above]
+          omega
+  | neg proposition ih =>
+      simp [ofApparentAt, Apparent.abstractRealOuter, abstractOuterAt, ih]
+  | disj left right ihLeft ihRight =>
+      simp [ofApparentAt, Apparent.abstractRealOuter, abstractOuterAt,
+        ihLeft, ihRight]
+
+theorem ofFirstOrderAt_abstractRealOuter
+    (depth : Nat) (p : FirstOrder (.elementaryProposition :: Γ) Δ) :
+    ofFirstOrderAt depth (FirstOrder.abstractRealOuter p) =
+      abstractOuterAt depth (ofFirstOrderAt depth p) := by
+  cases p <;>
+    simp [FirstOrder.abstractRealOuter, ofFirstOrderAt, abstractOuterAt,
+      ofApparentAt_abstractRealOuter]
 
 theorem openOuter_ofApparent
     (p : Apparent Γ (.elementaryProposition :: .elementaryProposition :: Δ)) :
@@ -2233,6 +2448,171 @@ inductive NormalizesScoped : Raw Γ → Raw Γ → Prop where
   | disjCongr : NormalizesScoped p q → NormalizesScoped r s →
       NormalizesScoped (.disj p r) (.disj q s)
   | trans : NormalizesScoped p q → NormalizesScoped q r → NormalizesScoped p r
+
+theorem normalizesSmartNeg (p : Raw Γ) :
+    NormalizesScoped (.neg p) (smartNeg p) := by
+  induction p with
+  | quantified quantifier body ih =>
+      cases quantifier
+      · exact .trans (.negAlways body) (.sometimesCongr ih)
+      · exact .trans (.negSometimes body) (.alwaysCongr ih)
+  | _ => exact .refl _
+
+inductive NormalizesScopedAt : Nat → Raw Γ → Raw Γ → Prop where
+  | refl (depth) (p) : NormalizesScopedAt depth p p
+  | negAlways (depth) (p) :
+      NormalizesScopedAt depth (.neg (.quantified .always p))
+        (.quantified .sometimes (.neg p))
+  | negSometimes (depth) (p) :
+      NormalizesScopedAt depth (.neg (.quantified .sometimes p))
+        (.quantified .always (.neg p))
+  | disjRight (depth) (q) (p r) :
+      NormalizesScopedAt depth (.disj (.quantified q p) r)
+        (.quantified q (.disj p (shiftBoundAt depth r)))
+  | disjLeft (depth) (q) (p r) :
+      NormalizesScopedAt depth (.disj r (.quantified q p))
+        (.quantified q (.disj (shiftBoundAt depth r) p))
+  | disjAlwaysSometimes (depth) (p q) :
+      NormalizesScopedAt depth
+        (.disj (.quantified .always p) (.quantified .sometimes q))
+        (.quantified .always (.quantified .sometimes
+          (.disj (shiftBoundAt (depth + 1) p)
+            (shiftBoundAt (depth + 1) q))))
+  | disjSometimesAlways (depth) (p q) :
+      NormalizesScopedAt depth
+        (.disj (.quantified .sometimes p) (.quantified .always q))
+        (.quantified .always (.quantified .sometimes
+          (.disj (shiftBoundAt (depth + 1) p)
+            (shiftBoundAt (depth + 1) q))))
+
+  | alwaysImpToSometimesAntecedent (depth) (p q) :
+      NormalizesScopedAt depth
+        (.quantified .always
+          (.disj (.neg p) (shiftBoundAt depth q)))
+        (.disj (.neg (.quantified .sometimes p)) q)
+
+  | sometimesDisjToDisjSometimes (depth) (p q) :
+      NormalizesScopedAt depth
+        (.quantified .sometimes (.quantified .sometimes
+          (.disj (shiftBoundAt (depth + 1) p)
+            (shiftBoundAt (depth + 1) q))))
+        (.disj (.quantified .sometimes p) (.quantified .sometimes q))
+
+  | sometimesDisjIndependentLeft (depth) (p q) :
+      NormalizesScopedAt depth
+        (.quantified .sometimes
+          (.disj (shiftBoundAt depth p) q))
+        (.disj p (.quantified .sometimes q))
+
+  | sometimesDisjIndependentLeftWitness (depth) (p q)
+      (unused : UnusedBoundAt depth p) :
+      NormalizesScopedAt depth
+        (.quantified .sometimes (.disj p q))
+        (.disj (dropUnusedBoundAt depth p) (.quantified .sometimes q))
+
+  | sometimesSometimesDisjWitness (depth) (p q)
+      (unused : UnusedBoundAt depth p) :
+      NormalizesScopedAt depth
+        (.quantified .sometimes (.quantified .sometimes (.disj p q)))
+        (.disj
+          (.quantified .sometimes (dropUnusedBoundAt depth p))
+          (.quantified .sometimes q))
+  | quantifiedCongr (depth) (q) : NormalizesScopedAt (depth + 1) p r →
+      NormalizesScopedAt depth (.quantified q p) (.quantified q r)
+
+  | quantifiedClosedCongr (q) : NormalizesScopedAt 0 p r →
+      NormalizesScopedAt 0 (.quantified q p) (.quantified q r)
+  | negCongr (depth) : NormalizesScopedAt depth p q →
+      NormalizesScopedAt depth (.neg p) (.neg q)
+  | disjCongr (depth) : NormalizesScopedAt depth p q →
+      NormalizesScopedAt depth r s →
+      NormalizesScopedAt depth (.disj p r) (.disj q s)
+  | trans : NormalizesScopedAt depth p q → NormalizesScopedAt depth q r →
+      NormalizesScopedAt depth p r
+
+def smartDisjScopedCertifiedAux (depth : Nat) :
+    (fuel : Nat) → (p q : Raw Γ) →
+      { r : Raw Γ // NormalizesScopedAt depth (.disj p q) r }
+  | 0, p, q => ⟨.disj p q, .refl _ _⟩
+  | fuel + 1, .quantified .always p, .quantified .sometimes q =>
+      let recursive := smartDisjScopedCertifiedAux (depth + 2) fuel
+        (shiftBoundAt (depth + 1) p) (shiftBoundAt (depth + 1) q)
+      ⟨.quantified .always (.quantified .sometimes recursive.1),
+        .trans (.disjAlwaysSometimes depth p q)
+          (.quantifiedCongr depth .always
+            (.quantifiedCongr (depth + 1) .sometimes recursive.2))⟩
+  | fuel + 1, .quantified .sometimes p, .quantified .always q =>
+      let recursive := smartDisjScopedCertifiedAux (depth + 2) fuel
+        (shiftBoundAt (depth + 1) p) (shiftBoundAt (depth + 1) q)
+      ⟨.quantified .always (.quantified .sometimes recursive.1),
+        .trans (.disjSometimesAlways depth p q)
+          (.quantifiedCongr depth .always
+            (.quantifiedCongr (depth + 1) .sometimes recursive.2))⟩
+  | fuel + 1, .quantified quantifier p, q =>
+      let recursive := smartDisjScopedCertifiedAux (depth + 1) fuel p
+        (shiftBoundAt depth q)
+      ⟨.quantified quantifier recursive.1,
+        .trans (.disjRight depth quantifier p q)
+          (.quantifiedCongr depth quantifier recursive.2)⟩
+  | fuel + 1, p, .quantified quantifier q =>
+      let recursive := smartDisjScopedCertifiedAux (depth + 1) fuel
+        (shiftBoundAt depth p) q
+      ⟨.quantified quantifier recursive.1,
+        .trans (.disjLeft depth quantifier q p)
+          (.quantifiedCongr depth quantifier recursive.2)⟩
+  | _ + 1, p, q => ⟨.disj p q, .refl _ _⟩
+
+theorem smartDisjScopedCertifiedAux_value
+    (depth fuel : Nat) (p q : Raw Γ) :
+    (smartDisjScopedCertifiedAux depth fuel p q).1 =
+      smartDisjScopedAux depth fuel p q := by
+  induction fuel generalizing depth p q with
+  | zero => rfl
+  | succ fuel ih =>
+      cases p <;> cases q <;> try rfl
+      all_goals try { cases ‹Quantifier› }
+      all_goals try { cases ‹Quantifier› }
+      all_goals try { simp [smartDisjScopedCertifiedAux, smartDisjScopedAux, ih] }
+      case quantified.quantified qp p qq q =>
+        cases qp <;> cases qq <;>
+          simp [smartDisjScopedCertifiedAux, smartDisjScopedAux, ih]
+
+theorem normalizesSmartDisjScopedAux
+    (depth fuel : Nat) (p q : Raw Γ) :
+    NormalizesScopedAt depth (.disj p q)
+      (smartDisjScopedAux depth fuel p q) := by
+  rw [← smartDisjScopedCertifiedAux_value depth fuel p q]
+  exact (smartDisjScopedCertifiedAux depth fuel p q).property
+
+theorem normalizesSmartDisjScoped (p q : Raw Γ) :
+    NormalizesScopedAt 0 (.disj p q) (smartDisjScoped p q) := by
+  exact normalizesSmartDisjScopedAux 0
+    (expandedSize p + expandedSize q + 1) p q
+
+theorem normalizesSmartNegAt (depth : Nat) (p : Raw Γ) :
+    NormalizesScopedAt depth (.neg p) (smartNeg p) := by
+  induction p generalizing depth with
+  | quantified quantifier body ih =>
+      cases quantifier
+      · exact .trans (.negAlways depth body)
+          (.quantifiedCongr depth .sometimes (ih (depth + 1)))
+      · exact .trans (.negSometimes depth body)
+          (.quantifiedCongr depth .always (ih (depth + 1)))
+  | _ => exact .refl _ _
+
+theorem normalizesFirstOrderMatrixRedexScoped
+    (matrix : FirstOrderMatrix Γ Δ) :
+    NormalizesScopedAt 0
+      (CanonicalOrderedAdapters.ofFirstOrderMatrixRedex matrix)
+      (CanonicalOrderedAdapters.ofFirstOrderMatrixScoped matrix) := by
+  induction matrix with
+  | quantified proposition => exact .refl _ _
+  | neg matrix ih =>
+      exact .trans (.negCongr 0 ih)
+        (normalizesSmartNegAt 0 _)
+  | disj left right ihLeft ihRight =>
+      exact .trans (.disjCongr 0 ihLeft ihRight)
+        (normalizesSmartDisjScoped _ _)
 
 def Star921Line5Line6Stable : Prop :=
   ∀ {Γ Ξ} (σ : Substitution Γ Ξ)
@@ -2638,6 +3018,437 @@ def star_9_33_target (q : Elementary Γ)
       (FirstOrder.disjRightElementary (FirstOrder.sometimes φ) q))
 
 end PM.Architecture.FirstOrderQ259
+
+-- PM-CONTEXT-LOCAL Principia/Architecture/Star931Kernel.lean
+namespace PM.Architecture.Star931Kernel
+
+open PM.Architecture.FirstOrderPrerequisites
+open PM.Architecture.CanonicalOrderedAdapters
+open PM.Architecture.CanonicalNormalization
+open PM.CanonicalOrderedFormula
+
+def primitivePayload (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrder (.elementaryProposition :: .elementaryProposition :: Γ) [] :=
+  let lifted := Apparent.weakenReal (Apparent.weakenReal φ)
+  FirstOrder.impElementaryToFirst
+    (Apparent.atReal lifted .zero ∨ₚ Apparent.atReal lifted (.succ .zero))
+    (FirstOrder.weakenReal (FirstOrder.weakenReal (FirstOrder.sometimes φ)))
+
+def line1Matrix (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrder (.elementaryProposition :: Γ) [.elementaryProposition] :=
+  FirstOrder.abstractRealOuter (primitivePayload φ)
+
+def line1Formula (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula (.elementaryProposition :: Γ) 2 :=
+  FirstOrderPrerequisites.firstOrderToSecondAll (line1Matrix φ)
+
+theorem line1Ordered (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion (line1Formula φ) := by
+  apply OrderedAssertion.star_9_13_first (line1Matrix φ)
+  simpa [line1Formula, line1Matrix, primitivePayload, star_9_11_target] using
+    OrderedAssertion.star_9_11 φ
+
+def line1Raw (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  ofOrdered (line1Formula φ)
+
+def targetRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofOrdered (FirstOrderQ259.star_9_31_target φ)
+
+abbrev Line2Matrix (φ : Apparent Γ [.elementaryProposition]) :=
+  FirstOrderMatrix (.elementaryProposition :: Γ) [.elementaryProposition]
+
+def line2Antecedent (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrder (.elementaryProposition :: Γ) [.elementaryProposition] :=
+  FirstOrder.sometimes (Apparent.abstractRealOuter
+    (Apparent.ofElementary
+      (let lifted := Apparent.weakenReal (Apparent.weakenReal φ)
+       Apparent.atReal lifted .zero ∨ₚ Apparent.atReal lifted (.succ .zero))))
+
+def line2Consequent (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrder (.elementaryProposition :: Γ) [.elementaryProposition] :=
+  FirstOrder.sometimes
+    (Apparent.abstractRealOuter (Apparent.weakenReal (Apparent.weakenReal φ)))
+
+def line2ScopedRaw (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  smartDisjScoped (smartNeg (ofFirstOrder (line2Antecedent φ)))
+    (ofFirstOrder (line2Consequent φ))
+
+def line2Reification (φ : Apparent Γ [.elementaryProposition]) :
+    ScopedFirstOrderMatrixReification [.elementaryProposition]
+      (line2ScopedRaw φ) :=
+  (reifyFirstOrderScoped (line2Antecedent φ)).neg.disj
+    (reifyFirstOrderScoped (line2Consequent φ))
+
+def line2Formula (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrderMatrix (.elementaryProposition :: Γ) [.elementaryProposition] :=
+  (line2Reification φ).formula
+
+def line3Carrier (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrderMatrix.Quantified (.elementaryProposition :: Γ) [] :=
+  .always (line2Formula φ)
+
+def line3Target (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula Γ 3 :=
+  star_9_13_higher_target (line3Carrier φ)
+
+def closedLine3Raw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofOrdered (line3Target φ)
+
+def closedLine3ScopedRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofThirdOrderScoped
+    (FirstOrderMatrix.abstractThirdOuter (line3Carrier φ))
+
+theorem closedLine3Raw_unfold
+    (φ : Apparent Γ [.elementaryProposition]) :
+    closedLine3Raw φ =
+      .quantified .always (.quantified .always
+        (ofFirstOrderMatrix
+          (FirstOrderMatrix.abstractRealOuter (line2Formula φ)))) := by
+  rfl
+
+theorem closedLine3ScopedRaw_unfold
+    (φ : Apparent Γ [.elementaryProposition]) :
+    closedLine3ScopedRaw φ =
+      .quantified .always (.quantified .always
+        (ofFirstOrderMatrixScoped
+          (FirstOrderMatrix.abstractRealOuter (line2Formula φ)))) := by
+  rfl
+
+def closedLine3DisplayRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always (.quantified .always
+    (ofFirstOrderMatrixRedex
+      (FirstOrderMatrix.abstractRealOuter (line2Formula φ))))
+
+theorem closedMatrixRedex_shape
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofFirstOrderMatrixRedex
+        (FirstOrderMatrix.abstractRealOuter (line2Formula φ)) =
+      .disj
+        (.neg (ofFirstOrder
+          (FirstOrder.abstractRealOuter (line2Antecedent φ))))
+        (ofFirstOrder
+          (FirstOrder.abstractRealOuter (line2Consequent φ))) := by
+  rfl
+
+def closedConsequentOutside (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofFirstOrder (FirstOrder.sometimes φ)
+
+theorem ofApparent_abstract_inner_weakenReal
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofApparent (Apparent.abstractRealOuter
+      (Apparent.rename Apparent.innerVariableRenaming
+        (Apparent.weakenReal (τ := .elementaryProposition) φ))) =
+      shiftBoundAt 1 (ofApparent φ) := by
+  induction φ with
+  | constant name => rfl
+  | real v => rfl
+  | bound v =>
+      cases v with
+      | zero => rfl
+      | succ v => exact nomatch v
+  | neg p ih => exact congrArg Raw.neg ih
+  | disj p q ihp ihq =>
+      change Raw.disj _ _ = Raw.disj _ _
+      simp only [Apparent.weakenReal] at ihp ihq
+      rw [ihp, ihq]
+
+theorem closedConsequent_is_weakened
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofFirstOrder (FirstOrder.abstractRealOuter (line2Consequent φ)) =
+      shiftBoundAt 0 (closedConsequentOutside φ) := by
+  change Raw.quantified .sometimes
+      (ofApparent (Apparent.abstractRealOuter
+        (Apparent.abstractRealOuter
+          (Apparent.weakenReal (Apparent.weakenReal φ))))) = _
+  rw [Apparent.abstractRealOuter_weakenReal]
+  exact congrArg (Raw.quantified .sometimes)
+    (ofApparent_abstract_inner_weakenReal φ)
+
+def closedLine4DisplayRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always
+    (.disj
+      (.neg (.quantified .sometimes
+        (ofFirstOrder (FirstOrder.abstractRealOuter (line2Antecedent φ)))))
+      (closedConsequentOutside φ))
+
+theorem closedLine3_to_line4
+    (φ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (closedLine3DisplayRaw φ)
+      (closedLine4DisplayRaw φ) := by
+  rw [closedLine3DisplayRaw, closedMatrixRedex_shape,
+    closedConsequent_is_weakened]
+  exact .quantifiedClosedCongr .always
+    (.alwaysImpToSometimesAntecedent 0
+      (ofFirstOrder (FirstOrder.abstractRealOuter (line2Antecedent φ)))
+      (closedConsequentOutside φ))
+
+def closedAntecedentLeftUnder (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofApparent (Apparent.abstractRealOuter (Apparent.abstractRealOuter
+    ((Apparent.ofElementary
+      (Apparent.atReal (Apparent.weakenReal (Apparent.weakenReal φ)) .zero)) :
+        Apparent (.elementaryProposition :: .elementaryProposition :: Γ)
+          [.elementaryProposition])))
+
+def closedAntecedentRightBody (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofApparent (Apparent.abstractRealOuter (Apparent.abstractRealOuter
+    ((Apparent.ofElementary
+      (Apparent.atReal (Apparent.weakenReal (Apparent.weakenReal φ))
+        (.succ .zero))) :
+          Apparent (.elementaryProposition :: .elementaryProposition :: Γ)
+            [.elementaryProposition])))
+
+theorem closedAntecedentRedex_shape
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofFirstOrder (FirstOrder.abstractRealOuter (line2Antecedent φ)) =
+      .quantified .sometimes
+        (.disj (closedAntecedentLeftUnder φ)
+          (closedAntecedentRightBody φ)) := by
+  rfl
+
+theorem closedAntecedentLeft_unused
+    (φ : Apparent Γ [.elementaryProposition]) :
+    UnusedBoundAt 0 (closedAntecedentLeftUnder φ) := by
+  induction φ with
+  | constant name => simp [closedAntecedentLeftUnder, UnusedBoundAt,
+      Apparent.ofElementary, Apparent.atReal, Apparent.instantiate,
+      Apparent.substitute, Apparent.instantiateSubstitution,
+      Apparent.closedToElementary, Apparent.weakenReal, Apparent.renameReal,
+      Apparent.rename, Apparent.abstractRealOuter, ofApparent]
+  | real v => simp [closedAntecedentLeftUnder, UnusedBoundAt,
+      Apparent.ofElementary, Apparent.atReal, Apparent.instantiate,
+      Apparent.substitute, Apparent.instantiateSubstitution,
+      Apparent.closedToElementary, Apparent.weakenReal, Apparent.renameReal,
+      Apparent.rename, Apparent.abstractRealOuter, ofApparent]
+  | bound v =>
+      cases v with
+      | zero => simp [closedAntecedentLeftUnder, UnusedBoundAt,
+          Apparent.ofElementary, Apparent.atReal, Apparent.instantiate,
+          Apparent.substitute, Apparent.instantiateSubstitution,
+          Apparent.closedToElementary, Apparent.weakenReal, Apparent.renameReal,
+          Apparent.rename, Apparent.abstractRealOuter, ofApparent, boundIndex]
+      | succ v => exact nomatch v
+  | neg p ih =>
+      simpa [closedAntecedentLeftUnder, UnusedBoundAt,
+        Apparent.ofElementary, Apparent.atReal, Apparent.instantiate,
+        Apparent.substitute, Apparent.instantiateSubstitution,
+        Apparent.closedToElementary, Apparent.weakenReal, Apparent.renameReal,
+        Apparent.rename, Apparent.abstractRealOuter, ofApparent] using ih
+  | disj p q ihp ihq =>
+      simpa [closedAntecedentLeftUnder, UnusedBoundAt,
+        Apparent.ofElementary, Apparent.atReal, Apparent.instantiate,
+        Apparent.substitute, Apparent.instantiateSubstitution,
+        Apparent.closedToElementary, Apparent.weakenReal, Apparent.renameReal,
+        Apparent.rename, Apparent.abstractRealOuter, ofApparent] using And.intro ihp ihq
+
+def closedFinalDisplayRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always
+    (.disj
+      (.neg (.disj
+        (.quantified .sometimes
+          (dropUnusedBound (closedAntecedentLeftUnder φ)))
+        (.quantified .sometimes (closedAntecedentRightBody φ))))
+      (closedConsequentOutside φ))
+
+def exactTargetRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always
+    (.disj
+      (.neg (.disj
+        (.quantified .sometimes
+          (dropUnusedBound (closedAntecedentLeftUnder φ)))
+        (.quantified .sometimes (closedAntecedentRightBody φ))))
+      (closedConsequentOutside φ))
+
+theorem closedFinalDisplayRaw_eq_exactTargetRaw
+    (φ : Apparent Γ [.elementaryProposition]) :
+    closedFinalDisplayRaw φ = exactTargetRaw φ := by
+  rfl
+
+theorem closedLine4_to_final
+    (φ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (closedLine4DisplayRaw φ)
+      (closedFinalDisplayRaw φ) := by
+  rw [closedLine4DisplayRaw, closedAntecedentRedex_shape]
+  exact .quantifiedClosedCongr .always
+    (.disjCongr 0
+      (.negCongr 0
+        (.sometimesSometimesDisjWitness 0
+          (closedAntecedentLeftUnder φ) (closedAntecedentRightBody φ)
+          (closedAntecedentLeft_unused φ)))
+      (.refl 0 (closedConsequentOutside φ)))
+
+theorem closedLine3_to_final
+    (φ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (closedLine3DisplayRaw φ)
+      (closedFinalDisplayRaw φ) :=
+  .trans (closedLine3_to_line4 φ) (closedLine4_to_final φ)
+
+def closedLine3NormalizedRaw
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always (.quantified .always
+    (normalizeFirstOrderMatrixAfterAbstract 0 (line2Formula φ)))
+
+structure ClosedLine3NormalizationCertificate
+    (φ : Apparent Γ [.elementaryProposition]) where
+  matrix : FirstOrderMatrix Γ
+    [.elementaryProposition, .elementaryProposition]
+  matrixExact : matrix = FirstOrderMatrix.abstractRealOuter (line2Formula φ)
+  sourceExact : closedLine3DisplayRaw φ =
+    .quantified .always (.quantified .always
+      (ofFirstOrderMatrixRedex matrix))
+  targetExact : closedLine3NormalizedRaw φ =
+    .quantified .always (.quantified .always
+      (ofFirstOrderMatrixScoped matrix))
+  normalization : NormalizesScopedAt 0
+    (closedLine3DisplayRaw φ) (closedLine3NormalizedRaw φ)
+
+def closedLine3NormalizationCertificate
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ClosedLine3NormalizationCertificate φ := by
+  let matrix := FirstOrderMatrix.abstractRealOuter (line2Formula φ)
+  refine ⟨matrix, rfl, rfl, ?_, ?_⟩
+  · rfl
+  · exact .quantifiedClosedCongr .always
+      (.quantifiedClosedCongr .always
+        (normalizesFirstOrderMatrixRedexScoped matrix))
+
+def line2DisplayRaw (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  ofFirstOrderMatrixRedex (line2Formula φ)
+
+def line3DisplayRaw (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  .quantified .always (line2DisplayRaw φ)
+
+theorem line2DisplayRaw_unfold
+    (φ : Apparent Γ [.elementaryProposition]) :
+    line2DisplayRaw φ =
+      .disj (.neg (ofFirstOrder (line2Antecedent φ)))
+        (ofFirstOrder (line2Consequent φ)) := by
+  rfl
+
+theorem line3DisplayRaw_unfold
+    (φ : Apparent Γ [.elementaryProposition]) :
+    line3DisplayRaw φ =
+      .quantified .always
+        (.disj (.neg (ofFirstOrder (line2Antecedent φ)))
+          (ofFirstOrder (line2Consequent φ))) := by
+  rw [line3DisplayRaw, line2DisplayRaw_unfold]
+
+def line3ConsequentOutside (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  ofFirstOrder (FirstOrder.weakenReal (FirstOrder.sometimes φ))
+
+theorem ofApparent_inner_weakenReal
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofApparent (Apparent.rename Apparent.innerVariableRenaming
+      (Apparent.weakenReal (τ := .elementaryProposition) φ)) =
+      shiftBoundAt 1 (ofApparent
+        (Apparent.weakenReal (τ := .elementaryProposition) φ)) := by
+  induction φ with
+  | constant name => rfl
+  | real v => rfl
+  | bound v => cases v <;> rfl
+  | neg p ih => exact congrArg Raw.neg ih
+  | disj p q ihp ihq =>
+      change Raw.disj _ _ = Raw.disj _ _
+      have hp := ihp
+      have hq := ihq
+      simp only [Apparent.weakenReal] at hp hq
+      rw [hp, hq]
+
+theorem line2Consequent_is_weakened
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofFirstOrder (line2Consequent φ) =
+      weakenBound (line3ConsequentOutside φ) := by
+  change Raw.quantified .sometimes
+      (ofApparent (Apparent.abstractRealOuter
+        (Apparent.weakenReal (Apparent.weakenReal φ)))) = _
+  rw [Apparent.abstractRealOuter_weakenReal]
+  exact congrArg (Raw.quantified .sometimes)
+    (ofApparent_inner_weakenReal φ)
+
+def line4DisplayRaw (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  .disj
+    (.neg (.quantified .sometimes (ofFirstOrder (line2Antecedent φ))))
+    (line3ConsequentOutside φ)
+
+theorem line3_to_line4
+    (φ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (line3DisplayRaw φ) (line4DisplayRaw φ) := by
+  rw [line3DisplayRaw_unfold, line2Consequent_is_weakened]
+  exact .alwaysImpToSometimesAntecedent 0
+    (ofFirstOrder (line2Antecedent φ)) (line3ConsequentOutside φ)
+
+theorem line2ScopedRaw_roundTrip (φ : Apparent Γ [.elementaryProposition]) :
+    ofFirstOrderMatrixScoped (line2Formula φ) = line2ScopedRaw φ :=
+  (line2Reification φ).roundTrip
+
+def line3ScopedRaw (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  .quantified .always (line2ScopedRaw φ)
+
+theorem line3Display_to_scoped
+    (φ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (line3DisplayRaw φ) (line3ScopedRaw φ) := by
+  exact .quantifiedClosedCongr .always
+    (normalizesFirstOrderMatrixRedexScoped (line2Formula φ))
+
+structure Star931MatrixAssertion
+    (φ : Apparent Γ [.elementaryProposition]) where
+  source : OrderedAssertion (line1Formula φ)
+  matrixCertificate :
+    ScopedFirstOrderMatrixReification [.elementaryProposition]
+      (line2ScopedRaw φ)
+
+inductive Star931ClosedStage
+    (φ : Apparent Γ [.elementaryProposition]) : Nat → Prop where
+  | line2 (proof : Star931MatrixAssertion φ) : Star931ClosedStage φ 2
+  | second_9_13
+      (line2Proof : Star931ClosedStage φ 2)
+      (carrier : FirstOrderMatrix.Quantified
+        (.elementaryProposition :: Γ) [])
+      (carrierExact : carrier = line3Carrier φ)
+      (targetExact : star_9_13_higher_target carrier = line3Target φ) :
+      Star931ClosedStage φ 3
+  | star_9_03_02
+      (line3Proof : Star931ClosedStage φ 3)
+      (certificate : NormalizesScopedAt 0
+        (closedLine3DisplayRaw φ) (closedLine4DisplayRaw φ)) :
+      Star931ClosedStage φ 4
+  | star_9_05_06
+      (line4Proof : Star931ClosedStage φ 4)
+      (certificate : NormalizesScopedAt 0
+        (closedLine4DisplayRaw φ) (closedFinalDisplayRaw φ)) :
+      Star931ClosedStage φ 5
+
+structure Star931KernelAssertion
+    (φ : Apparent Γ [.elementaryProposition]) where
+  chain : Star931ClosedStage φ 5
+  endpoint : Raw Γ
+  endpointExact : endpoint = exactTargetRaw φ
+  normalization : NormalizesScopedAt 0
+    (closedLine3DisplayRaw φ) endpoint
+
+def deriveLine2
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star931MatrixAssertion φ where
+  source := line1Ordered φ
+  matrixCertificate := line2Reification φ
+
+def derive
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star931KernelAssertion φ where
+  chain := .star_9_05_06 (.star_9_03_02
+    (.second_9_13 (.line2 (deriveLine2 φ)) (line3Carrier φ) rfl rfl)
+    (closedLine3_to_line4 φ)) (closedLine4_to_final φ)
+  endpoint := closedFinalDisplayRaw φ
+  endpointExact := closedFinalDisplayRaw_eq_exactTargetRaw φ
+  normalization := closedLine3_to_final φ
+
+end PM.Architecture.Star931Kernel
 
 -- PM-CONTEXT-LOCAL Principia/Architecture/Q259ClosedRuleBook.lean
 namespace PM.Architecture.Q259ClosedRuleBook
