@@ -17,15 +17,19 @@ inductive Raw : RealContext → Type where
   | disj : Raw Γ → Raw Γ → Raw Γ
   deriving DecidableEq, Repr
 
-def openOuter : Raw Γ → Raw (.elementaryProposition :: Γ)
+def openOuterAt (cutoff : Nat) : Raw Γ → Raw (.elementaryProposition :: Γ)
   | .elementary p => .elementary
       (Elementary.schemaInstance (fun v => .var (.succ v)) p)
-  | .bound 0 => .bound 0
-  | .bound 1 => .elementary (.var .zero)
-  | .bound (index + 2) => .bound (index + 1)
-  | .quantified q body => .quantified q (openOuter body)
-  | .neg p => .neg (openOuter p)
-  | .disj p q => .disj (openOuter p) (openOuter q)
+  | .bound index =>
+      if index < cutoff + 1 then .bound index
+      else if index = cutoff + 1 then .elementary (.var .zero)
+      else .bound (index - 1)
+  | .quantified q body => .quantified q (openOuterAt (cutoff + 1) body)
+  | .neg p => .neg (openOuterAt cutoff p)
+  | .disj p q => .disj (openOuterAt cutoff p) (openOuterAt cutoff q)
+
+def openOuter (p : Raw Γ) : Raw (.elementaryProposition :: Γ) :=
+  openOuterAt 0 p
 
 /-- Reify an elementary formula over a leading real variable as Raw syntax
 under one additional outer binder. -/
