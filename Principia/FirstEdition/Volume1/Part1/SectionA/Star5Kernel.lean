@@ -764,4 +764,40 @@ theorem star_5_54 {Γ} (p q : PM.Elementary Γ) :
     exact join forward reverse
   exact infer (star_5_13 p q) (mapOr toP toQ)
 
+/-- PM I (1910), p. 130, ✱5·6.  The exportation component of ✱4·87 is
+followed by the explicitly packaged equivalence `∼q ⊃ r ≡ q ∨ r` under `p`. -/
+theorem star_5_6 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ∧ₚ (∼ₚ q)) ⊃ₚ r) ≡ₚ (p ⊃ₚ (q ∨ₚ r))) := by
+  let a := (p ∧ₚ (∼ₚ q)) ⊃ₚ r
+  let b := p ⊃ₚ ((∼ₚ q) ⊃ₚ r)
+  let c := p ⊃ₚ (q ∨ₚ r)
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have comp : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have exportation : ⊢ₚ (a ≡ₚ b) := by
+    have chain := PM.FirstEdition.Volume1.Star4.star_4_87 p (∼ₚ q) r
+    have firstPair := infer chain (PM.FirstEdition.Volume1.Star3.star_3_26
+      ((a ≡ₚ b) ∧ₚ ((b) ≡ₚ ((∼ₚ q) ⊃ₚ (p ⊃ₚ r))))
+      (((∼ₚ q) ⊃ₚ (p ⊃ₚ r)) ≡ₚ ((∼ₚ q ∧ₚ p) ⊃ₚ r)))
+    exact infer firstPair (PM.FirstEdition.Volume1.Star3.star_3_26
+      (a ≡ₚ b) ((b) ≡ₚ ((∼ₚ q) ⊃ₚ (p ⊃ₚ r))))
+  have midForward : ⊢ₚ (((∼ₚ q) ⊃ₚ r) ⊃ₚ (q ∨ₚ r)) := PM.FirstEdition.Volume1.Star2.star_2_54 q r
+  have midBackward : ⊢ₚ ((q ∨ₚ r) ⊃ₚ ((∼ₚ q) ⊃ₚ r)) := PM.FirstEdition.Volume1.Star2.star_2_53 q r
+  have bToC : ⊢ₚ (b ⊃ₚ c) :=
+    infer (infer midForward (PM.FirstEdition.Volume1.Star2.star_2_02 p (((∼ₚ q) ⊃ₚ r) ⊃ₚ (q ∨ₚ r))))
+      (PM.FirstEdition.Volume1.Star2.star_2_77 p ((∼ₚ q) ⊃ₚ r) (q ∨ₚ r))
+  have cToB : ⊢ₚ (c ⊃ₚ b) :=
+    infer (infer midBackward (PM.FirstEdition.Volume1.Star2.star_2_02 p ((q ∨ₚ r) ⊃ₚ ((∼ₚ q) ⊃ₚ r))))
+      (PM.FirstEdition.Volume1.Star2.star_2_77 p (q ∨ₚ r) ((∼ₚ q) ⊃ₚ r))
+  have aToB : ⊢ₚ (a ⊃ₚ b) := infer exportation (PM.FirstEdition.Volume1.Star3.star_3_26 (a ⊃ₚ b) (b ⊃ₚ a))
+  have bToA : ⊢ₚ (b ⊃ₚ a) := infer exportation (PM.FirstEdition.Volume1.Star3.star_3_27 (a ⊃ₚ b) (b ⊃ₚ a))
+  have forward : ⊢ₚ (a ⊃ₚ c) := comp aToB bToC
+  have backward : ⊢ₚ (c ⊃ₚ a) := comp cToB bToA
+  exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ c) (c ⊃ₚ a)))
+
 end PM.FirstEdition.Volume1.Star5
