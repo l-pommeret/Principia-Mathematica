@@ -117,12 +117,12 @@ theorem star_5_41 {Γ} (p q r : PM.Elementary Γ) :
     | (τ :: Δ), _, _, hA, hAB =>
         exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
   exact infer
-    (PM.FirstEdition.Volume1.Star2.star_2_86 p q r)
+    (PM.FirstEdition.Volume1.Star2.star_2_77 p q r)
     (infer
-      (PM.FirstEdition.Volume1.Star2.star_2_77 p q r)
+      (PM.FirstEdition.Volume1.Star2.star_2_86 p q r)
       (PM.FirstEdition.Volume1.Star3.star_3_2
-        ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))
-        (p ⊃ₚ (q ⊃ₚ r))))
+        (((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r)))
+        ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)))))
 
 /-- PM I (1910), p. 130, ✱5·4.  ✱2·43 contracts the repeated antecedent,
 while ✱2·02 supplies its converse instance. -/
@@ -135,10 +135,11 @@ theorem star_5_4 {Γ} (p q : PM.Elementary Γ) :
     | (τ :: Δ), _, _, hA, hAB =>
         exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
   exact infer
-    (PM.FirstEdition.Volume1.Star2.star_2_02 (p ⊃ₚ q) p)
+    (PM.FirstEdition.Volume1.Star2.star_2_02 p (p ⊃ₚ q))
     (infer
       (PM.FirstEdition.Volume1.Star2.star_2_43 p q)
       (PM.FirstEdition.Volume1.Star3.star_3_2
-        (p ⊃ₚ (p ⊃ₚ q)) (p ⊃ₚ q)))
+        ((p ⊃ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ q))
+        ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ (p ⊃ₚ q)))))
 
 end PM.FirstEdition.Volume1.Star5
