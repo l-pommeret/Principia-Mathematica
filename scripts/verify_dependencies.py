@@ -19,6 +19,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DECL_START = re.compile(r"^\s*(?:theorem|def|abbrev)\s+([A-Za-z0-9_']+)\b")
 KNOWN_BRIDGES = {"PM.Derivation.detach"}
+PRIMITIVE_DECLARATION_KINDS = {
+    "primitive-inference-rule",
+    "primitive-function-inference-rule",
+    "primitive-formation-rule",
+}
 KNOWN_SYNTAX_INFRASTRUCTURE = {
     "List.cons_ne_nil",
     "PM.Elementary",
@@ -330,13 +335,10 @@ def reject_unindexed_references(item: dict, body: str, candidates: set[str]) -> 
 
 
 def extract_lean_dependencies(item: dict, declarations: dict[str, str], root: Path = ROOT) -> list[str]:
-    if item["kind"] in {
-        "primitive-inference-rule",
-        "primitive-function-inference-rule",
-        "primitive-formation-rule",
-    }:
-        # These are constructors of the Derivation inductive, hence have no
-        # proof body and no prior dependencies to extract.
+    if (item["kind"] in PRIMITIVE_DECLARATION_KINDS or
+            ".OrderedAssertion." in item["declaration"]):
+        # These are inductive constructors, hence have no declaration body
+        # and no prior dependencies to extract.
         return []
     body = strip_lean_comments(
         declaration_body(root / item["lean_path"], item["declaration"])
@@ -447,7 +449,9 @@ def audit_item(
         if field not in item or not isinstance(item[field], list):
             raise DependencyError(f"{item['id']}: missing dependency field {field}")
     body = (declaration_body(root / item["lean_path"], item["declaration"])
-            if assumption_usage[item["id"]]["effective"] else "")
+            if (assumption_usage[item["id"]]["effective"] and
+                item["kind"] not in PRIMITIVE_DECLARATION_KINDS and
+                ".OrderedAssertion." not in item["declaration"]) else "")
     verified_parameters = verify_assumption_parameters(
         item, assumption_usage[item["id"]], assumptions, body
     )

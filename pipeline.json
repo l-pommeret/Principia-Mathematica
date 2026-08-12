@@ -2206,14 +2206,21 @@
       "source": "PM volume I, first edition, pp. 137–138",
       "prompt_path": "aristotle/Q255.md",
       "audit_path": "reviews/Q255-review.md",
-      "audit_status": "blocked-needs-functions-significance-and-higher-order-derivation",
+      "audit_status": "partial-kernel-checked-first-order-9-12-13",
       "lean_scope": "exact PM1 metarules ✱9·12/13, eight-clause ✱9·131, and Pp ✱9·14/15",
       "depends_on": [
         "PM1:✱9·01",
         "PM1:✱9·02"
       ],
       "parallel_group": "STAR9-WAVE-1",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "partial",
+      "integration_status": "partial-kernel-checked-first-order-9-12-13",
+      "integration_ci_evidence": {
+        "commit": "a773a806b9759f571ce5ddaaa781d28553fc11b5",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31575922684",
+        "conclusion": "success",
+        "scope": "assigned-first-order primitive inference constructors ✱9·12 and ✱9·13 only"
+      }
     },
     "Q256": {
       "canonical_ids": [
@@ -2275,7 +2282,7 @@
       "source": "PM volume I, first edition, pp. 136–137",
       "prompt_path": "aristotle/Q258.md",
       "audit_path": "reviews/Q258-review.md",
-      "audit_status": "blocked-missing-first-order-assertion",
+      "audit_status": "kernel-checked",
       "lean_scope": "exact PM1 primitive propositions ✱9·1 and ✱9·11",
       "depends_on": [
         "PM1:✱1·01",
@@ -2283,6 +2290,13 @@
       ],
       "parallel_group": "STAR9-WAVE-1-ASSERTION",
       "aristotle_status": "not-submitted",
+      "integration_status": "kernel-checked-first-order-primitive-propositions",
+      "integration_ci_evidence": {
+        "commit": "a773a806b9759f571ce5ddaaa781d28553fc11b5",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31575922684",
+        "conclusion": "success",
+        "scope": "exact assigned-first-order primitive Pp constructors ✱9·1 and ✱9·11"
+      },
       "architecture_evidence": {
         "commit": "aff113e94058397d3b84a8319a0ef0f37ce58d3f",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31428730300",
