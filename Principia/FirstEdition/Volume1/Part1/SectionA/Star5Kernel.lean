@@ -420,4 +420,28 @@ theorem star_5_42 {Γ} (p q r : PM.Elementary Γ) :
   exact infer forward
     (infer backward (PM.FirstEdition.Volume1.Star3.star_3_2 (b ⊃ₚ a) (a ⊃ₚ b)))
 
+/-- PM I (1910), p. 129, ✱5·11. -/
+theorem star_5_11 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ q) ∨ₚ ((∼ₚ p) ⊃ₚ q)) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer (PM.FirstEdition.Volume1.Star2.star_2_51 p q)
+    (PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) ((∼ₚ p) ⊃ₚ q))
+
+/-- PM I (1910), p. 129, ✱5·12. -/
+theorem star_5_12 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ q) ∨ₚ (p ⊃ₚ (∼ₚ q))) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer (PM.FirstEdition.Volume1.Star2.star_2_52 p q)
+    (PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) (p ⊃ₚ (∼ₚ q)))
+
 end PM.FirstEdition.Volume1.Star5
