@@ -1,0 +1,10 @@
+{
+  "batch":"PM1-STAR10-Q267-BLOCKED","edition":"first","volume":1,
+  "source_range":{"printed_pages":"147","scan_leaves":[169],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","scan_sha256":"fe8529ed5c77f8edd4ab73c2da95bb0bb9afa82b3d2c90f842e07d19cf6a11d0"},
+  "witnesses":["PM1-1910-SCAN","PG78050"],
+  "items":[
+    {"id":"PM1:✱10·22","kind":"derived-proposition","printed":"⊢ : .(x).φx .ψx .≡ : (x).φx : (x).ψx","printed_page":147,"scan_leaf":169,"lean_path":"Principia/Architecture/Star10Q267Kernel.lean","declaration":"PM.Architecture.Star10Q267Kernel.star_10_22_target","formal_scope":"exact Raw target; proof composition unavailable","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-first-order-composition","printed_dependencies":["PM1:✱10·1","PM1:✱3·26","PM1:✱10·11","PM1:✱10·21","PM1:✱3·27","PM1:✱10·14·11"],"normalized_dependencies":[]},
+    {"id":"PM1:✱10·221","kind":"metatheoretic-principle","printed":"If φx contains a constituent χ(x, y, z, ...) and ψx contains a constituent χ(x, u, v, ...), where χ is an elementary function and y, z, ..., u, v, ... are either constants or apparent variables, then φx̂ and ψx̂ take arguments of the same type.","printed_page":147,"scan_leaf":169,"lean_path":"Principia/FirstEdition/Volume1/Star10.lean","declaration":"PM.FirstEdition.Volume1.Star10.star_10_221","formal_scope":"function/type formation principle; architecture blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-functions-significance","printed_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Q267-star-10-audit.md"}
+  ],
+  "ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+}

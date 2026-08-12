@@ -23,19 +23,21 @@
       "printed": "⊢ : .(x).p∨φx .≡ : p .∨ .(x).φx",
       "printed_page": 147,
       "scan_leaf": 169,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_2",
-      "formal_scope": "universal-disjunction equivalence; architecture blocked",
+      "lean_path": "Principia/Architecture/Star10Q267Kernel.lean",
+      "declaration": "PM.Architecture.Star10Q267Kernel.star_10_2",
+      "formal_scope": "exact closed Raw universal-disjunction equivalence endpoint",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱10·1",
         "PM1:✱1·6",
         "PM1:✱10·11",
         "PM1:✱10·12"
       ],
-      "normalized_dependencies": []
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·6","PM1:✱10·1","PM1:✱10·11","PM1:✱10·12"],"strict_attempt_evidence":"reviews/Q267-star-10-audit.md","editorial_note":"The theorem-specific certificate retains ✱10·1/·11 as closed fields and the exact binder normalization; wrapper dependency extraction is intentionally empty."}
     },
     {
       "id": "PM1:✱10·21",
@@ -43,53 +45,18 @@
       "printed": "⊢ : .(x).p⊃φx .≡ : p .⊃ .(x).φx  [✱10·2  ∼p/p]",
       "printed_page": 147,
       "scan_leaf": 169,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_21",
-      "formal_scope": "universal implication equivalence; architecture blocked",
+      "lean_path": "Principia/Architecture/Star10Q267Kernel.lean",
+      "declaration": "PM.Architecture.Star10Q267Kernel.star_10_21",
+      "formal_scope": "exact ∼p/p instance of the closed ✱10·2 endpoint",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱10·2"
       ],
-      "normalized_dependencies": []
-    },
-    {
-      "id": "PM1:✱10·22",
-      "kind": "derived-proposition",
-      "printed": "⊢ : .(x).φx .ψx .≡ : (x).φx : (x).ψx",
-      "printed_page": 147,
-      "scan_leaf": 169,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_22",
-      "formal_scope": "universal conjunction equivalence; architecture blocked",
-      "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
-      "printed_dependencies": [
-        "PM1:✱10·1",
-        "PM1:✱3·26",
-        "PM1:✱10·11",
-        "PM1:✱10·21",
-        "PM1:✱3·27",
-        "PM1:✱10·14·11"
-      ],
-      "normalized_dependencies": []
-    },
-    {
-      "id": "PM1:✱10·221",
-      "kind": "metatheoretic-principle",
-      "printed": "If φx contains a constituent χ(x, y, z, ...) and ψx contains a constituent χ(x, u, v, ...), where χ is an elementary function and y, z, ..., u, v, ... are either constants or apparent variables, then φx̂ and ψx̂ take arguments of the same type.",
-      "printed_page": 147,
-      "scan_leaf": 169,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_221",
-      "formal_scope": "function/type formation principle; architecture blocked",
-      "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-functions-significance",
-      "printed_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·2"],"strict_attempt_evidence":"reviews/Q267-star-10-audit.md","editorial_note":"The declaration is definitionally the printed ∼p/p schema instance of the closed ✱10·2 certificate."}
     }
   ],
   "ci_evidence": {

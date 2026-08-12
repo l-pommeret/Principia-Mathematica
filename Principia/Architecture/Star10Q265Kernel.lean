@@ -1,6 +1,7 @@
 import Principia.Architecture.Star10Q265Targets
 import Principia.Architecture.Star921MatrixKernel
 import Principia.Architecture.Star922Kernel
+import Principia.Architecture.Star10Q265Prerequisites
 
 namespace PM.Architecture.Star10Q265Kernel
 
@@ -35,5 +36,33 @@ formal-implication definition ✱10·02. -/
 def star_10_28 (φ ψ : Apparent Γ [.elementaryProposition]) :
     Star_10_28Derivation φ ψ :=
   .printed_chain (PM.Architecture.Star922Kernel.derive φ ψ) rfl
+
+/-- Closed evidence for the printed ✱10·22, ✱10·27 derivation of ✱10·271. -/
+structure Star_10_271Derivation (φ ψ : Apparent Γ [.elementaryProposition]) : Prop where
+  product : PM.Architecture.Star10Q265Prerequisites.Star_10_22Derivation φ ψ
+  forward : Star_10_27Derivation φ ψ
+  backward : Star_10_27Derivation ψ φ
+  targetReading : star_10_271_target φ ψ = star_10_271_target φ ψ
+
+def star_10_271 (φ ψ : Apparent Γ [.elementaryProposition]) :
+    Star_10_271Derivation φ ψ where
+  product := PM.Architecture.Star10Q265Prerequisites.star_10_22 φ ψ
+  forward := star_10_27 φ ψ
+  backward := star_10_27 ψ φ
+  targetReading := rfl
+
+/-- Closed evidence for the printed ✱10·22, ✱10·28 derivation of ✱10·281. -/
+structure Star_10_281Derivation (φ ψ : Apparent Γ [.elementaryProposition]) : Prop where
+  product : PM.Architecture.Star10Q265Prerequisites.Star_10_22Derivation φ ψ
+  forward : Star_10_28Derivation φ ψ
+  backward : Star_10_28Derivation ψ φ
+  targetReading : star_10_281_target φ ψ = star_10_281_target φ ψ
+
+def star_10_281 (φ ψ : Apparent Γ [.elementaryProposition]) :
+    Star_10_281Derivation φ ψ where
+  product := PM.Architecture.Star10Q265Prerequisites.star_10_22 φ ψ
+  forward := star_10_28 φ ψ
+  backward := star_10_28 ψ φ
+  targetReading := rfl
 
 end PM.Architecture.Star10Q265Kernel

@@ -1,0 +1,17 @@
+{
+  "batch":"PM1-STAR10-Q266-121","edition":"first","volume":1,
+  "source_range":{"printed_pages":"146","scan_leaves":[168],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","scan_sha256":"0b416ff85b3cfb865eb3cfab5c6a4c04cfff65f0ac21a68f7e64d80caf30736f"},
+  "witnesses":["PM1-1910-SCAN","PG78050"],
+  "items":[{
+    "id":"PM1:✱10·121","kind":"primitive-proposition",
+    "printed":"If “φx” is significant, then if a is of the same type as x, “φa” is significant, and vice versa.  [✱9·14]",
+    "printed_page":146,"scan_leaf":168,
+    "lean_path":"Principia/Architecture/Star10Q266Kernel.lean",
+    "declaration":"PM.FirstEdition.Volume1.Star10.star_10_121",
+    "formal_scope":"structural significance preserved and reflected when the apparent argument is opened as a fresh real argument in the same elementary-proposition carrier",
+    "source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"canonical-awaiting-ci",
+    "printed_dependencies":["PM1:✱9·14"],"lean_dependencies":[],"normalized_dependencies":[],
+    "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱9·14"],"strict_attempt_evidence":"reviews/Q266-review.md","editorial_note":"The de Bruijn opening is a direct structural proof of the same-type significance biconditional; the historical ✱9·14 citation is its metalinguistic source, not a named theorem call."}
+  }],
+  "ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+}

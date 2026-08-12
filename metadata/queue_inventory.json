@@ -7,9 +7,9 @@
   },
   "counts": {
     "catalogued_items": 1136,
-    "object_language_ast_parsed": 413,
+    "object_language_ast_parsed": 415,
     "metalinguistic_routes": 12,
-    "architecture_gated_source_routes": 711,
+    "architecture_gated_source_routes": 709,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
     "catalogued_items_missing_proof_skeleton": 1078,
@@ -406,10 +406,11 @@
       "id": "PM1:✱10·121",
       "kind": "primitive-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parser-gap",
+        "detail": "unexpected character '“' at offset 3"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -458,10 +459,11 @@
       "id": "PM1:✱10·2",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "4e37b7aa1026a41c44c13b990018a2615a02b344b8c82f883de68616531daddc"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -471,10 +473,11 @@
       "id": "PM1:✱10·21",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "7bce577b92b84925b0dec69a60ac40b553618ce7037ad81bb074dcc03203161c"
       },
       "proof_skeleton": {
         "status": "missing"

@@ -10,8 +10,12 @@ complete closed ✱9·21 normalization and records only the fixed ✱10·02 targ
 ✱10·28 analogously reuses the closed ✱9·22 existential monotonicity proof.
 Neither wrapper exports detachment or Raw reification.
 
-✱10·271 and ✱10·281 still require the printed ✱10·22 equivalence-product
-bridge, and ✱10·35 additionally requires closed ✱10·23 and ✱10·11·21.
-Those prerequisites do not yet exist canonically, so these three remain
-targets only. The homogeneous batch remains `prepared` until it can be split
-without duplicating IDs or completed as a whole.
+`Star10Q265Prerequisites.lean` now closes the exact ✱10·22 contract over its
+printed ingredients ✱10·1, ✱3·26, ✱10·11, ✱10·21, and ✱3·27.  On that fixed
+bridge, ✱10·271 uses the two orientations of ✱10·27 and ✱10·281 the two
+orientations of ✱10·28.  The wrappers export neither generic Raw detachment
+nor conversion.
+
+✱10·35 still requires closed ✱10·23 and ✱10·11·21 and therefore remains an
+exact target only. The homogeneous batch remains `prepared` pending that last
+item; no duplicate metadata item for ✱10·22 was introduced.
