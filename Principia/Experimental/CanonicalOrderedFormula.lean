@@ -247,12 +247,23 @@ def ofSecondOrderMatrix : FirstOrderMatrix.Quantified Γ [] → Raw Γ
   | .always body => .quantified .always (normalizeFirstOrderMatrix body)
   | .sometimes body => .quantified .sometimes (normalizeFirstOrderMatrix body)
 
+def ofThirdOrderMatrix : FirstOrderMatrix.ThirdOrder Γ [] → Raw Γ
+  | .always (.always body) =>
+      .quantified .always (.quantified .always (normalizeFirstOrderMatrix body))
+  | .always (.sometimes body) =>
+      .quantified .always (.quantified .sometimes (normalizeFirstOrderMatrix body))
+  | .sometimes (.always body) =>
+      .quantified .sometimes (.quantified .always (normalizeFirstOrderMatrix body))
+  | .sometimes (.sometimes body) =>
+      .quantified .sometimes (.quantified .sometimes (normalizeFirstOrderMatrix body))
+
 def ofOrdered : OrderedFormula Γ order → Raw Γ
   | .elementary p => .elementary p
   | .firstOrder p => ofFirstOrder p
   | .firstOrderMatrix p => normalizeFirstOrderMatrix p
   | .secondOrder p => ofSecondOrder p
   | .secondOrderMatrix p => ofSecondOrderMatrix p
+  | .thirdOrderMatrix p => ofThirdOrderMatrix p
   | .neg p => .neg (ofOrdered p)
   | .disj _ p q => .disj (ofOrdered p) (ofOrdered q)
 
