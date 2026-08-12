@@ -4,6 +4,11 @@ namespace PM.Architecture.Star22Q352Kernel
 
 open PM.Architecture.Star22Q341Definitions
 
+/-- PM I ✱22·59: membership in a union is disjunctive membership. -/
+theorem star_22_59 (x : Object) (alpha beta : Class Object) :
+    Union alpha beta x ↔ alpha x ∨ beta x :=
+  Iff.rfl
+
 /-- PM I ✱22·6: membership in `α ∪ β` is equivalent to belonging to every
 common superclass of `α` and `β`. -/
 theorem star_22_6 (x : Object) (alpha beta : Class Object) :

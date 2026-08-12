@@ -22,8 +22,8 @@
       "printed_page": 222,
       "scan_leaf": 244,
       "lean_path": "Principia/Architecture/Star22Q352Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q352Kernel.star_22_6",
-      "formal_scope": "exact extensional class theorem over one typed object carrier",
+      "declaration": "PM.Architecture.Star22Q352Kernel.star_22_59",
+      "formal_scope": "exact extensional union-membership theorem",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "integrated-local",
@@ -49,7 +49,7 @@
           "✱10·413"
         ],
         "strict_attempt_evidence": "reviews/Q352-review.md",
-        "editorial_note": "The exact extensional theorem closes directly from the definitions of union and inclusion; the printed derivation chain is not replayed."
+        "editorial_note": "The exact union-membership equivalence is definitional in the audited class-extension layer."
       }
     },
     {
@@ -59,8 +59,8 @@
       "printed_page": 222,
       "scan_leaf": 244,
       "lean_path": "Principia/Architecture/Star22Q352Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q352Kernel.star_22_61",
-      "formal_scope": "exact extensional class inclusion theorem",
+      "declaration": "PM.Architecture.Star22Q352Kernel.star_22_6",
+      "formal_scope": "exact extensional universal property of class union",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "integrated-local",
@@ -84,7 +84,7 @@
           "✱22·58"
         ],
         "strict_attempt_evidence": "reviews/Q352-review.md",
-        "editorial_note": "The exact inclusion theorem closes directly by the left union injection."
+        "editorial_note": "The exact universal property closes directly from the definitions of union and inclusion."
       }
     },
     {
@@ -94,8 +94,8 @@
       "printed_page": 222,
       "scan_leaf": 244,
       "lean_path": "Principia/Architecture/Star22Q352Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q352Kernel.star_22_62",
-      "formal_scope": "exact extensional union characterization of inclusion",
+      "declaration": "PM.Architecture.Star22Q352Kernel.star_22_61",
+      "formal_scope": "exact extensional class inclusion theorem",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "integrated-local",
@@ -113,7 +113,7 @@
           "✱22·58"
         ],
         "strict_attempt_evidence": "reviews/Q352-review.md",
-        "editorial_note": "The exact equivalence closes directly by class extensionality."
+        "editorial_note": "The exact inclusion theorem closes directly by the left union injection."
       }
     },
     {
@@ -123,8 +123,8 @@
       "printed_page": 222,
       "scan_leaf": 244,
       "lean_path": "Principia/Architecture/Star22Q352Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q352Kernel.star_22_621",
-      "formal_scope": "exact extensional intersection characterization of inclusion",
+      "declaration": "PM.Architecture.Star22Q352Kernel.star_22_62",
+      "formal_scope": "exact extensional union characterization of inclusion",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "integrated-local",
@@ -145,16 +145,26 @@
       "printed": "⊢ : α ⊂ β .≡ . α ∩ β = α",
       "printed_page": 222,
       "scan_leaf": 244,
-      "lean_path": "Principia/FirstEdition/Volume1/Star22Source.lean",
-      "declaration": "source-only",
-      "formal_scope": "classes; blocked",
+      "lean_path": "Principia/Architecture/Star22Q352Kernel.lean",
+      "declaration": "PM.Architecture.Star22Q352Kernel.star_22_621",
+      "formal_scope": "exact extensional intersection characterization of inclusion",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-classes-predicativity-reducibility",
+      "formal_status": "awaiting-ci",
+      "integration_status": "integrated-local",
       "printed_dependencies": [
         "✱4·71"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱4·71"
+        ],
+        "strict_attempt_evidence": "reviews/Q352-review.md",
+        "editorial_note": "The exact equivalence closes directly by class extensionality."
+      }
     }
   ],
   "ci_evidence": {
