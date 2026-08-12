@@ -27,8 +27,17 @@ PRIMITIVE_DECLARATION_KINDS = {
     "primitive-formation-rule",
 }
 KNOWN_SYNTAX_INFRASTRUCTURE = {
+    # Lean's proof constructors for the ambient logic are carrier
+    # infrastructure, not historical PM theorem citations.
+    "Classical.choice",
+    "Classical.byContradiction",
+    "False.elim",
+    "Iff.rfl",
+    "Or.inl",
+    "Or.inr",
     "List.cons_ne_nil",
     "Bool.or_eq_true",
+    "Iff.rfl",
     "PM.Elementary",
     "PM.Formation.ofElementary",
     "Elementary.schemaInstance",
