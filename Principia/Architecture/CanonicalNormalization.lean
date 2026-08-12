@@ -185,7 +185,8 @@ theorem normalizesSmartDisjScopedAux
 
 theorem normalizesSmartDisjScoped (p q : Raw Γ) :
     NormalizesScopedAt 0 (.disj p q) (smartDisjScoped p q) := by
-  exact normalizesSmartDisjScopedAux 0 (rawSize p + rawSize q) p q
+  exact normalizesSmartDisjScopedAux 0
+    (expandedSize p + expandedSize q + 1) p q
 
 theorem normalizesSmartNegAt (depth : Nat) (p : Raw Γ) :
     NormalizesScopedAt depth (.neg p) (smartNeg p) := by

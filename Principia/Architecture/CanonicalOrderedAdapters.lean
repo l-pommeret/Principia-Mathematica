@@ -47,7 +47,7 @@ def ofFirstOrderMatrixScoped : FirstOrderMatrix Γ Δ → Raw Γ
       smartDisjScoped (ofFirstOrderMatrixScoped p) (ofFirstOrderMatrixScoped q)
 
 def smartDisjScopedAt (depth : Nat) (p q : Raw Γ) : Raw Γ :=
-  smartDisjScopedAux depth (rawSize p + rawSize q) p q
+  smartDisjScopedAux depth (expandedSize p + expandedSize q + 1) p q
 
 def ofFirstOrderMatrixScopedAt (depth : Nat) :
     FirstOrderMatrix Γ Δ → Raw Γ

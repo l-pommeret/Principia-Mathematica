@@ -389,6 +389,54 @@ def rawSize : Raw Γ → Nat
   | .quantified _ p | .neg p => rawSize p + 1
   | .disj p q => rawSize p + rawSize q + 1
 
+def elementaryExpandedSize : Elementary Γ → Nat
+  | .constant _ | .var _ => 1
+  | .neg p => elementaryExpandedSize p + 1
+  | .disj p q => elementaryExpandedSize p + elementaryExpandedSize q + 1
+
+def expandedSize : Raw Γ → Nat
+  | .elementary p => elementaryExpandedSize p
+  | .schema _ | .bound _ => 1
+  | .quantified _ p | .neg p => expandedSize p + 1
+  | .disj p q => expandedSize p + expandedSize q + 1
+
+@[simp] theorem expandedSize_shiftBoundAt (cutoff : Nat) (p : Raw Γ) :
+    expandedSize (shiftBoundAt cutoff p) = expandedSize p := by
+  induction p generalizing cutoff with
+  | elementary proposition => rfl
+  | schema slot => rfl
+  | bound index => by_cases h : cutoff ≤ index <;>
+      simp [shiftBoundAt, expandedSize, h]
+  | quantified quantifier body ih => simp [shiftBoundAt, expandedSize, ih]
+  | neg proposition ih => simp [shiftBoundAt, expandedSize, ih]
+  | disj left right ihLeft ihRight =>
+      simp [shiftBoundAt, expandedSize, ihLeft, ihRight]
+
+@[simp] theorem expandedSize_abstractElementaryAt
+    (cutoff : Nat) (p : Elementary (.elementaryProposition :: Γ)) :
+    expandedSize (abstractElementaryAt cutoff p) = elementaryExpandedSize p := by
+  induction p generalizing cutoff with
+  | constant name => rfl
+  | var v => cases v <;> rfl
+  | neg proposition ih => simp [abstractElementaryAt, expandedSize,
+      elementaryExpandedSize, ih]
+  | disj left right ihLeft ihRight =>
+      simp [abstractElementaryAt, expandedSize, elementaryExpandedSize,
+        ihLeft, ihRight]
+
+@[simp] theorem expandedSize_abstractOuterAt
+    (cutoff : Nat) (p : Raw (.elementaryProposition :: Γ)) :
+    expandedSize (abstractOuterAt cutoff p) = expandedSize p := by
+  induction p generalizing cutoff with
+  | elementary proposition => simp [abstractOuterAt, expandedSize]
+  | schema slot => rfl
+  | bound index => by_cases h : index ≤ cutoff <;>
+      simp [abstractOuterAt, expandedSize, h]
+  | quantified quantifier body ih => simp [abstractOuterAt, expandedSize, ih]
+  | neg proposition ih => simp [abstractOuterAt, expandedSize, ih]
+  | disj left right ihLeft ihRight =>
+      simp [abstractOuterAt, expandedSize, ihLeft, ihRight]
+
 def smartDisjAux : Nat → Raw Γ → Raw Γ → Raw Γ
   | 0, p, q => .disj p q
   | fuel + 1, .quantified .always p, .quantified .sometimes q =>
@@ -427,7 +475,7 @@ def smartDisjScopedAux : Nat → Nat → Raw Γ → Raw Γ → Raw Γ
   | _, _ + 1, p, q => .disj p q
 
 def smartDisjScoped (p q : Raw Γ) : Raw Γ :=
-  smartDisjScopedAux 0 (rawSize p + rawSize q) p q
+  smartDisjScopedAux 0 (expandedSize p + expandedSize q + 1) p q
 
 def smartImp (p q : Raw Γ) : Raw Γ := smartDisj (smartNeg p) q
 
