@@ -1,0 +1,27 @@
+# Audit Q300 — PM I ✱9·21, lignes (5)–(7)
+
+## Witnesses
+
+- First edition, volume I, printed pp. 138–139, canonical scan leaf 161;
+  derivative checksum recorded in `reviews/Q300-review.md`.
+- Diplomatic source block: `Principia/FirstEdition/Volume1/Star9.lean`.
+- Parsed proof witness: `aristotle/demonstrations/PM1-star-9-21.txt`.
+
+## Collated scope readings
+
+| line | printed transformation | canonical scope reading |
+| --- | --- | --- |
+| (5) | `(4).(✱9·06)` | The existential `x` remains inside the outer universal `z`; the negated antecedent is moved beneath that existential, while `(∃y).φy⊃ψz` stays on the right of the implication. |
+| (6) | `(5).(✱1·01.✱9·08)` | ✱1·01 expands the displayed implication as negation/disjunction. ✱9·08 then gives outer universal `z`, inner existential `y`, with the left existential negation retained as the left disjunct. |
+| (7) | `(6).(✱9·08)` | The right-hand universal on `ψz` is moved under the existing existential `y`; no binder is discarded and the left existential negation remains outside that right scope. |
+
+The final ✱1·01 is an implication abbreviation only. The closing sentence
+identifies `y`/`z` with the schematic binder name `x` by explicit
+capture-avoiding alpha-renaming, not by a semantic equality.
+
+## Encoding boundary
+
+The `Raw` target must retain the binder sequence shown above.  It may use the
+canonical `smartNeg`/`smartDisj` calculations only after the corresponding
+explicit source-labelled target is declared; the normalizer is not evidence
+for choosing that target.
