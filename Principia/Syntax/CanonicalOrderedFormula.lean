@@ -40,6 +40,25 @@ def abstractElementary : Elementary (.elementaryProposition :: Γ) → Raw Γ
   | .neg p => .neg (abstractElementary p)
   | .disj p q => .disj (abstractElementary p) (abstractElementary q)
 
+def abstractElementaryAt (cutoff : Nat) :
+    Elementary (.elementaryProposition :: Γ) → Raw Γ
+  | .constant name => .elementary (.constant name)
+  | .var .zero => .bound (cutoff + 1)
+  | .var (.succ v) => .elementary (.var v)
+  | .neg p => .neg (abstractElementaryAt cutoff p)
+  | .disj p q => .disj (abstractElementaryAt cutoff p) (abstractElementaryAt cutoff q)
+
+def abstractOuterAt (cutoff : Nat) : Raw (.elementaryProposition :: Γ) → Raw Γ
+  | .elementary p => abstractElementaryAt cutoff p
+  | .bound index =>
+      if index ≤ cutoff then .bound index else .bound (index + 1)
+  | .quantified q body => .quantified q (abstractOuterAt (cutoff + 1) body)
+  | .neg p => .neg (abstractOuterAt cutoff p)
+  | .disj p q => .disj (abstractOuterAt cutoff p) (abstractOuterAt cutoff q)
+
+def abstractOuter (p : Raw (.elementaryProposition :: Γ)) : Raw Γ :=
+  abstractOuterAt 0 p
+
 def shiftBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
   | .elementary p => .elementary p
   | .bound index => if cutoff ≤ index then .bound (index + 1) else .bound index
