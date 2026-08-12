@@ -228,6 +228,18 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
   | star_9_12_second {p q : OrderedFormula Γ 2} :
       OrderedAssertion p → OrderedAssertion (secondImp p q) →
       OrderedAssertion q
+  /-- The closed mixed-order detachment used only for the audited second
+  occurrence of ✱9·1 in ✱9·21.  The equality witness is an explicit syntax
+  check that the order-one premise is the displayed value of the higher
+  matrix; it is not a promotion of arbitrary first-order assertions. -/
+  | star_9_12_higher
+      (body : FirstOrderMatrix Γ [.elementaryProposition])
+      (value : RealVar Γ .elementaryProposition)
+      (premise : FirstOrder Γ []) :
+      FirstOrderMatrix.atReal body value = .quantified premise →
+      OrderedAssertion (.firstOrder premise) →
+      OrderedAssertion (star_9_1_higher_ordered_target body value) →
+      OrderedAssertion (.secondOrderMatrix (PM.Quantified.sometimes body))
   /-- The mixed elementary/first-order instance of ✱9·12.  Its implication
   shape is exactly the ✱9·06-certified definition `∼p ∨ (∃x).φx`; this is
   the branch used immediately after ✱9·1 in the printed demonstration of
