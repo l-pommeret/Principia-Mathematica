@@ -239,6 +239,56 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
         (.firstOrder (FirstOrder.openRealHead φ)) →
       OrderedAssertion (firstOrderToSecondAll φ)
 
+/-- Line (2) of the printed demonstration of ✱9·3.  The diagonal elementary
+instance of ✱1·2 is the antecedent; the supplied instance of ✱9·1 has the
+audited existential scope over the complete matrix implication, and the mixed
+form of ✱9·12 performs exactly the displayed detachment. -/
+def derive_star_9_3_line2 (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion (star_9_3_line2_target φ) := by
+  let χ : Apparent (.elementaryProposition :: Γ) [.elementaryProposition] :=
+    matrixImp (Apparent.openHeadOrBound φ)
+      (Apparent.ofElementary (Apparent.openHead φ))
+  have line1 : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+      (.elementary ((Apparent.openHead φ ∨ₚ Apparent.openHead φ) ⊃ₚ
+        Apparent.openHead φ)) :=
+    .elementary (PM.Derivation.star_1_2 (Apparent.openHead φ))
+  have lineOneInstance : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+      (.firstOrder
+        (FirstOrder.impElementaryToFirst
+          ((Apparent.openHead φ ∨ₚ Apparent.openHead φ) ⊃ₚ Apparent.openHead φ)
+          (FirstOrder.sometimes χ))) := by
+    simpa [star_9_1_instance_target, χ, matrixImp, Apparent.openHeadOrBound,
+      Apparent.elementaryValue, Apparent.weakenReal, Apparent.renameReal,
+      Apparent.rename] using
+      OrderedAssertion.star_9_1_instance χ (.var .zero)
+  exact OrderedAssertion.star_9_12_elementary_to_first line1 lineOneInstance
+
+/-- The matrix whose universal closure is line (3) of ✱9·3.  Closing exactly
+the leading real slot expresses the printed outer `(x)` and changes no
+apparent binder. -/
+def star_9_3_line3_matrix (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrder Γ [.elementaryProposition] :=
+  FirstOrder.abstractRealHead
+    (FirstOrder.sometimes
+      (matrixImp (Apparent.openHeadOrBound φ)
+        (Apparent.ofElementary (Apparent.openHead φ))))
+
+/-- The assigned second-order reading of line (3) of ✱9·3. -/
+def star_9_3_line3_target (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula Γ 2 :=
+  firstOrderToSecondAll (star_9_3_line3_matrix φ)
+
+/-- Line (3) follows from line (2) by the fixed first-to-second-order instance
+of ✱9·13; the reduction of `openRealHead` is structural. -/
+def derive_star_9_3_line3 (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion (star_9_3_line3_target φ) := by
+  have line2 : OrderedAssertion
+      (.firstOrder (FirstOrder.openRealHead (star_9_3_line3_matrix φ))) := by
+    simpa [star_9_3_line2_target, star_9_3_line3_matrix] using
+      derive_star_9_3_line2 φ
+  simpa [star_9_3_line3_target] using
+    OrderedAssertion.star_9_13_first (star_9_3_line3_matrix φ) line2
+
 
 /-- The exact judgement sought for ✱9·21.  It is a target contract, not an
 invented primitive: it becomes inhabited only by a derivation from the
