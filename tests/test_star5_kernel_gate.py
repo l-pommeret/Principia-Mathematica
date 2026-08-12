@@ -89,7 +89,8 @@ class Star5KernelGateTests(unittest.TestCase):
         )
         item = metadata["items"][0]
         self.assertEqual(item["id"], "PM1:✱5·21")
-        self.assertEqual(item["formal_status"], "awaiting-ci")
+        self.assertEqual(item["formal_status"], "kernel-checked")
+        self.assertEqual(metadata["ci_evidence"]["run"], "31548602155")
         self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
         kernel = (
             ROOT / "Principia/FirstEdition/Volume1/Part1/SectionA/Star5Kernel.lean"
