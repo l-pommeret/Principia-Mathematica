@@ -161,6 +161,28 @@ theorem openOuter_abstractOuter_ofApparent
   rw [openOuter_ofApparent]
   simp
 
+/-- Each source-labelled occurrence has an explicit beta law for the leading
+real slot closed by `closeLeadingRaw`. -/
+theorem openOuter_star_9_21_phi_x_closed_raw
+    (φ : Apparent Γ [.elementaryProposition]) :
+    openOuter (star_9_21_phi_x_closed_raw φ) = star_9_21_phi_x_raw φ :=
+  openOuter_abstractOuter_ofApparent _
+
+theorem openOuter_star_9_21_psi_x_closed_raw
+    (ψ : Apparent Γ [.elementaryProposition]) :
+    openOuter (star_9_21_psi_x_closed_raw ψ) = star_9_21_psi_x_raw ψ :=
+  openOuter_abstractOuter_ofApparent _
+
+theorem openOuter_star_9_21_phi_y_closed_raw
+    (φ : Apparent Γ [.elementaryProposition]) :
+    openOuter (star_9_21_phi_y_closed_raw φ) = star_9_21_phi_y_raw φ :=
+  openOuter_abstractOuter_ofApparent _
+
+theorem openOuter_star_9_21_psi_z_closed_raw
+    (ψ : Apparent Γ [.elementaryProposition]) :
+    openOuter (star_9_21_psi_z_closed_raw ψ) = star_9_21_psi_z_raw ψ :=
+  openOuter_abstractOuter_ofApparent _
+
 theorem smartNeg_abstractOuter_ofApparent
     (p : Apparent (.elementaryProposition :: Γ)
       (.elementaryProposition :: Δ)) :
