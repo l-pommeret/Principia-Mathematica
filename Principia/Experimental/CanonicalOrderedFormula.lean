@@ -250,6 +250,7 @@ def ofSecondOrderMatrix : FirstOrderMatrix.Quantified Γ [] → Raw Γ
 def ofOrdered : OrderedFormula Γ order → Raw Γ
   | .elementary p => .elementary p
   | .firstOrder p => ofFirstOrder p
+  | .firstOrderMatrix p => normalizeFirstOrderMatrix p
   | .secondOrder p => ofSecondOrder p
   | .secondOrderMatrix p => ofSecondOrderMatrix p
   | .neg p => .neg (ofOrdered p)

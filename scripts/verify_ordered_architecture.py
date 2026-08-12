@@ -24,7 +24,8 @@ def main() -> None:
     closed_rulebook = code_without_comments_or_strings(CLOSED_RULEBOOK.read_text(encoding="utf-8"))
     apparent = code_without_comments_or_strings(APPARENT.read_text(encoding="utf-8"))
     required = (
-        "inductive OrderedFormula", "| elementary", "| firstOrder", "| neg", "| disj",
+        "inductive OrderedFormula", "| elementary", "| firstOrder",
+        "| firstOrderMatrix", "| neg", "| disj",
         "inductive FirstOrderDisjunctionScope", "inductive OrderedDisjunctionScope",
         "def scopedDisj", "def scopedImp", "def scopedFirstOrderDisj", "def firstImp", "def secondImp",
         "def eraseElementary?", "theorem erase_embedElementary",
@@ -73,6 +74,8 @@ def main() -> None:
         raise SystemExit("order-two implication bypasses its scope certificate")
     if "| .disj .secondOrder _ _ => none" not in ordered:
         raise SystemExit("elementary erasure must reject order-two disjunctions")
+    if "| .firstOrderMatrix _ => none" not in ordered:
+        raise SystemExit("elementary erasure must reject first-order matrices")
     if not re.search(
         r"\|\s+star_9_12_second\s*\{p q : OrderedFormula Γ 2\}\s*:\s*"
         r"OrderedAssertion p\s*→\s*OrderedAssertion \(secondImp p q\)\s*→\s*"

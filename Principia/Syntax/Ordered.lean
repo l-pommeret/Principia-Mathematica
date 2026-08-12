@@ -43,6 +43,10 @@ inductive OrderedDisjunctionScope : Nat → Type where
 inductive OrderedFormula (Γ : RealContext) : Nat → Type where
   | elementary : Elementary Γ → OrderedFormula Γ 0
   | firstOrder : FirstOrder Γ [] → OrderedFormula Γ 1
+  /-- Same-assigned-order first-order matrices.  This conservative carrier
+  exposes negation and disjunction between quantified first-order atoms; it
+  carries syntax only and adds no assertion or detachment principle. -/
+  | firstOrderMatrix : FirstOrderMatrix Γ [] → OrderedFormula Γ 1
   /-- One explicit next assigned order.  This is not an all-orders binder:
   values are exactly `Quantified (FirstOrder Γ) []`, i.e. one further PM
   apparent-variable step above the first-order matrix. -/
@@ -102,6 +106,7 @@ def renameReal (ρ : Apparent.RealRenaming Γ Ξ) :
     OrderedFormula Γ order → OrderedFormula Ξ order
   | .elementary p => .elementary (Elementary.schemaInstance (fun v => .var (ρ v)) p)
   | .firstOrder p => .firstOrder (FirstOrder.renameReal ρ p)
+  | .firstOrderMatrix p => .firstOrderMatrix (FirstOrderMatrix.renameReal ρ p)
   | .secondOrder p => .secondOrder (SecondOrder.renameReal ρ p)
   | .secondOrderMatrix p =>
       .secondOrderMatrix (by
@@ -117,6 +122,7 @@ def embedElementary (p : Elementary Γ) : OrderedFormula Γ 0 := .elementary p
 def eraseElementary? : OrderedFormula Γ order → Option (Elementary Γ)
   | .elementary p => some p
   | .firstOrder _ => none
+  | .firstOrderMatrix _ => none
   | .secondOrder _ => none
   | .secondOrderMatrix _ => none
   | .neg p => (eraseElementary? p).map .neg

@@ -36,6 +36,7 @@ def main() -> None:
         "theorem star_9_03_matrix_reduction", "theorem star_9_04_matrix_reduction",
     ), "capture-safe first-order scope bridge")
     require(ordered, (
+        "| firstOrderMatrix : FirstOrderMatrix Γ [] → OrderedFormula Γ 1",
         "| secondOrder : SecondOrder Γ [] → OrderedFormula Γ 2",
         "def alwaysFirstOrder", "| .secondOrder _ => none",
         "| secondOrder : OrderedDisjunctionScope 2", "def secondImp",
