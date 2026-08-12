@@ -16,6 +16,19 @@ def ofApparent : Apparent Γ Δ → Raw Γ
   | .neg p => .neg (ofApparent p)
   | .disj p q => .disj (ofApparent p) (ofApparent q)
 
+/-- Depth-indexed embedding used when an apparent matrix is already beneath
+canonical Raw binders. -/
+def ofApparentAt (depth : Nat) : Apparent Γ Δ → Raw Γ
+  | .constant name => .elementary (.constant name)
+  | .real v => .elementary (.var v)
+  | .bound v => .bound (boundIndex v + depth)
+  | .neg p => .neg (ofApparentAt depth p)
+  | .disj p q => .disj (ofApparentAt depth p) (ofApparentAt depth q)
+
+def ofFirstOrderAt (depth : Nat) : FirstOrder Γ Δ → Raw Γ
+  | .always body => .quantified .always (ofApparentAt (depth + 1) body)
+  | .sometimes body => .quantified .sometimes (ofApparentAt (depth + 1) body)
+
 def ofFirstOrder : FirstOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofApparent body)
   | .sometimes body => .quantified .sometimes (ofApparent body)
@@ -179,6 +192,40 @@ theorem ofApparent_abstractRealOuter
   | disj left right ihLeft ihRight =>
       simp [ofApparent, Apparent.abstractRealOuter, abstractOuter,
         abstractOuterAt, ihLeft, ihRight]
+
+theorem ofApparentAt_abstractRealOuter
+    (depth : Nat)
+    (p : Apparent (.elementaryProposition :: Γ)
+      (.elementaryProposition :: Δ)) :
+    ofApparentAt depth (Apparent.abstractRealOuter p) =
+      abstractOuterAt depth (ofApparentAt depth p) := by
+  induction p with
+  | constant name => rfl
+  | real realVariable => cases realVariable <;> simp [ofApparentAt,
+      Apparent.abstractRealOuter, abstractOuterAt, abstractElementaryAt,
+      boundIndex] <;> omega
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => simp [ofApparentAt, Apparent.abstractRealOuter,
+          abstractOuterAt, boundIndex]
+      | succ predecessor =>
+          have above : ¬ boundIndex predecessor + 1 + depth ≤ depth := by omega
+          simp [ofApparentAt, Apparent.abstractRealOuter,
+            abstractOuterAt, boundIndex, above]
+          omega
+  | neg proposition ih =>
+      simp [ofApparentAt, Apparent.abstractRealOuter, abstractOuterAt, ih]
+  | disj left right ihLeft ihRight =>
+      simp [ofApparentAt, Apparent.abstractRealOuter, abstractOuterAt,
+        ihLeft, ihRight]
+
+theorem ofFirstOrderAt_abstractRealOuter
+    (depth : Nat) (p : FirstOrder (.elementaryProposition :: Γ) Δ) :
+    ofFirstOrderAt depth (FirstOrder.abstractRealOuter p) =
+      abstractOuterAt depth (ofFirstOrderAt depth p) := by
+  cases p <;>
+    simp [FirstOrder.abstractRealOuter, ofFirstOrderAt, abstractOuterAt,
+      ofApparentAt_abstractRealOuter]
 
 /-- Canonical Raw opening is the exact image of `Apparent.openRealOuter`.
 The apparent context has an inner binder plus the outer slot being opened. -/
