@@ -7,3 +7,9 @@ distribution from ✱9·23 plus definitional ✱9·04. Even if the first two
 formulae normalize reflexively in Lean, their historical derivations must be
 retained so the dependency graph remains PM's. No print or digital-witness
 defect is established for these items. Confidence high.
+
+Follow-up: ✱9·24 now has the exact constructor-level derivation
+`derive_star_9_24`.  It retains the elementary identity and ✱9·22 as explicit
+premises, applies only the fixed first-order ✱9·13 and ✱9·12 rules, and
+concludes `OrderedAssertion (star_9_24_target φ)`.  This item is awaiting CI;
+✱9·23 and ✱9·25 retain their independent statuses.

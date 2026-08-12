@@ -186,6 +186,17 @@ def star_9_23_target (φ : Apparent Γ [.elementaryProposition]) :
     OrderedFormula Γ 1 :=
   firstImp (OrderedFormula.always φ) (OrderedFormula.always φ)
 
+/-- Existential monotonicity, the exact printed target of ✱9·22. -/
+def star_9_22_target (φ ψ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula Γ 1 :=
+  firstImp (OrderedFormula.always (matrixImp φ ψ))
+    (firstImp (OrderedFormula.sometimes φ) (OrderedFormula.sometimes ψ))
+
+/-- Existential identity, retaining the printed `Id.✱9·13·22` route. -/
+def star_9_24_target (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula Γ 1 :=
+  firstImp (OrderedFormula.sometimes φ) (OrderedFormula.sometimes φ)
+
 /-- The exact target of ✱9·25.  Its right side uses the certified ✱9·04
 normalization `p ∨ (x).φx := (x).p ∨ φx`; the left side is the displayed
 universal scope of that same matrix. -/
@@ -458,6 +469,17 @@ def derive_star_9_23 (φ : Apparent Γ [.elementaryProposition])
   OrderedAssertion.star_9_12
     (OrderedAssertion.star_9_13 (matrixImp φ φ) elementaryId)
     monotonicity
+
+/-- `Id.✱9·13·22` in the exact existential identity form printed at ✱9·24.
+Both the elementary identity and ✱9·22 remain explicit premises. -/
+def derive_star_9_24 (φ : Apparent Γ [.elementaryProposition])
+    (elementaryId : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+      (.elementary (Apparent.openHead (matrixImp φ φ))))
+    (existentialMonotonicity : OrderedAssertion (star_9_22_target φ φ)) :
+    OrderedAssertion (star_9_24_target φ) :=
+  OrderedAssertion.star_9_12
+    (OrderedAssertion.star_9_13 (matrixImp φ φ) elementaryId)
+    existentialMonotonicity
 
 /-- The exact judgement sought for ✱9·25. -/
 abbrev Star_9_25Derivation (p : Elementary Γ)
