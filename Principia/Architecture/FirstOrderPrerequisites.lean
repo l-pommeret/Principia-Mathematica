@@ -1,5 +1,6 @@
 import Principia.Deduction.Ordered
 import Principia.FirstEdition.Volume1.Star9
+import Principia.FirstEdition.Volume1.Part1.SectionA.Star2
 
 namespace PM.Architecture.FirstOrderPrerequisites
 
@@ -309,6 +310,37 @@ def derive_star_9_3_line4 (φ : Apparent Γ [.elementaryProposition]) :
   change OrderedAssertion (firstOrderToSecondAll (star_9_3_line4_matrix φ))
   rw [← star_9_3_line3_to_line4 φ]
   exact derive_star_9_3_line3 φ
+
+/-- Line (2) of the printed demonstration of ✱9·21.  With `z` the leading
+real variable, `χ(y)` is `(φz ⊃ ψz) ⊃ (φy ⊃ ψz)`.  Its displayed instance at
+`y = z` is the ✱2·08 identity from line (1), so the conclusion follows from
+the exact ✱9·1 instance and mixed ✱9·12. -/
+def derive_star_9_21_line2 (φ ψ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion (Γ := .elementaryProposition :: Γ)
+      (.firstOrder (FirstOrder.sometimes
+        (matrixImp
+          (Apparent.ofElementary ((Apparent.openHead φ) ⊃ₚ Apparent.openHead ψ))
+          (matrixImp (Apparent.weakenReal φ)
+            (Apparent.ofElementary (Apparent.openHead ψ)))))) := by
+  let χ : Apparent (.elementaryProposition :: Γ) [.elementaryProposition] :=
+    matrixImp
+      (Apparent.ofElementary ((Apparent.openHead φ) ⊃ₚ Apparent.openHead ψ))
+      (matrixImp (Apparent.weakenReal φ)
+        (Apparent.ofElementary (Apparent.openHead ψ)))
+  have line1 : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+      (.elementary (((Apparent.openHead φ) ⊃ₚ Apparent.openHead ψ) ⊃ₚ
+        ((Apparent.openHead φ) ⊃ₚ Apparent.openHead ψ))) :=
+    .elementary (PM.FirstEdition.Volume1.Star2.star_2_08
+      ((Apparent.openHead φ) ⊃ₚ Apparent.openHead ψ))
+  have lineOneInstance : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+      (.firstOrder (FirstOrder.impElementaryToFirst
+        (((Apparent.openHead φ) ⊃ₚ Apparent.openHead ψ) ⊃ₚ
+          ((Apparent.openHead φ) ⊃ₚ Apparent.openHead ψ))
+        (FirstOrder.sometimes χ))) := by
+    simpa [star_9_1_instance_target, χ, matrixImp, Apparent.elementaryValue,
+      Apparent.weakenReal, Apparent.renameReal, Apparent.rename] using
+      OrderedAssertion.star_9_1_instance χ (.var .zero)
+  exact OrderedAssertion.star_9_12_elementary_to_first line1 lineOneInstance
 
 
 /-- The exact judgement sought for ✱9·21.  It is a target contract, not an
