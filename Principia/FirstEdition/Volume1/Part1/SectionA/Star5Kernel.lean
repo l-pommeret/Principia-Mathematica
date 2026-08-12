@@ -800,4 +800,69 @@ theorem star_5_6 {Γ} (p q r : PM.Elementary Γ) :
   have backward : ⊢ₚ (c ⊃ₚ a) := comp cToB bToA
   exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ c) (c ⊃ₚ a)))
 
+/-- PM I (1910), p. 131, ✱5·7. -/
+theorem star_5_7 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((((p ∨ₚ r) ≡ₚ (q ∨ₚ r)) ≡ₚ (r ∨ₚ (p ≡ₚ q)))) := by
+  let A := p ∨ₚ r; let B := q ∨ₚ r; let E := A ≡ₚ B
+  let P := p ≡ₚ q; let F := r ∨ₚ P; let n := ∼ₚ r; let x := n ∧ₚ E
+  have infer : ∀ {a b : PM.Elementary Γ}, (⊢ₚ a) → (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ b) := by
+    intro a b ha hab; match Γ, a, b, ha, hab with
+    | [], _, _, ha, hab => exact PM.Derivation.star_1_1 ha hab
+    | (τ :: Δ), _, _, ha, hab => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) ha hab
+  have comp : ∀ {a b c : PM.Elementary Γ}, (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ (b ⊃ₚ c)) → (⊢ₚ (a ⊃ₚ c)) := by
+    intro a b c hab hbc; exact infer hab (infer hbc (PM.FirstEdition.Volume1.Star2.star_2_05 a b c))
+  have dup : ∀ a : PM.Elementary Γ, ⊢ₚ (a ⊃ₚ (a ∧ₚ a)) := by
+    intro a; exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 a a) (PM.FirstEdition.Volume1.Star2.star_2_43 a (a ∧ₚ a))
+  have join : ∀ {a b c : PM.Elementary Γ}, (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ (a ⊃ₚ c)) → (⊢ₚ (a ⊃ₚ (b ∧ₚ c))) := by
+    intro a b c hab hac
+    have pair := infer hac (infer hab (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (a ⊃ₚ c)))
+    exact comp (dup a) (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 a a b c))
+  have xN := PM.FirstEdition.Volume1.Star3.star_3_26 n E
+  have xE := PM.FirstEdition.Volume1.Star3.star_3_27 n E
+  have eliminate : ∀ z : PM.Elementary Γ, ⊢ₚ (x ⊃ₚ ((z ∨ₚ r) ⊃ₚ z)) := by
+    intro z
+    have base : ⊢ₚ (n ⊃ₚ ((r ∨ₚ z) ⊃ₚ z)) := PM.FirstEdition.Volume1.Star2.star_2_55 r z
+    have cvt : ⊢ₚ (((r ∨ₚ z) ⊃ₚ z) ⊃ₚ ((z ∨ₚ r) ⊃ₚ z)) :=
+      infer (PM.Derivation.star_1_4 z r) (PM.FirstEdition.Volume1.Star2.star_2_06 (z ∨ₚ r) (r ∨ₚ z) z)
+    exact comp xN (comp base cvt)
+  have xPQ : ⊢ₚ (x ⊃ₚ (p ⊃ₚ q)) := by
+    let y := x ∧ₚ p
+    have yX := PM.FirstEdition.Volume1.Star3.star_3_26 x p
+    have yP := PM.FirstEdition.Volume1.Star3.star_3_27 x p
+    have yA := comp yP (PM.FirstEdition.Volume1.Star2.star_2_2 p r)
+    have yEF := comp yX (comp xE (PM.FirstEdition.Volume1.Star3.star_3_26 (A ⊃ₚ B) (B ⊃ₚ A)))
+    have yB := comp (join yA yEF) (PM.FirstEdition.Volume1.Star3.star_3_35 A B)
+    have yElim := comp yX (eliminate q)
+    have yQ := comp (join yB yElim) (PM.FirstEdition.Volume1.Star3.star_3_35 B q)
+    exact infer yQ (PM.FirstEdition.Volume1.Star3.star_3_3 x p q)
+  have xQP : ⊢ₚ (x ⊃ₚ (q ⊃ₚ p)) := by
+    let y := x ∧ₚ q
+    have yX := PM.FirstEdition.Volume1.Star3.star_3_26 x q
+    have yQ := PM.FirstEdition.Volume1.Star3.star_3_27 x q
+    have yB := comp yQ (PM.FirstEdition.Volume1.Star2.star_2_2 q r)
+    have yEB := comp yX (comp xE (PM.FirstEdition.Volume1.Star3.star_3_27 (A ⊃ₚ B) (B ⊃ₚ A)))
+    have yA := comp (join yB yEB) (PM.FirstEdition.Volume1.Star3.star_3_35 B A)
+    have yElim := comp yX (eliminate p)
+    have yP := comp (join yA yElim) (PM.FirstEdition.Volume1.Star3.star_3_35 A p)
+    exact infer yP (PM.FirstEdition.Volume1.Star3.star_3_3 x q p)
+  have xP : ⊢ₚ (x ⊃ₚ P) := join xPQ xQP
+  have nEP : ⊢ₚ (n ⊃ₚ (E ⊃ₚ P)) := infer xP (PM.FirstEdition.Volume1.Star3.star_3_3 n E P)
+  have eNP : ⊢ₚ (E ⊃ₚ (n ⊃ₚ P)) := infer nEP (PM.FirstEdition.Volume1.Star2.star_2_04 n E P)
+  have eF : ⊢ₚ (E ⊃ₚ F) := comp eNP (PM.FirstEdition.Volume1.Star2.star_2_54 r P)
+  have rE : ⊢ₚ (r ⊃ₚ E) := by
+    have ra := comp (PM.FirstEdition.Volume1.Star2.star_2_2 r p) (PM.Derivation.star_1_4 r p)
+    have rb := comp (PM.FirstEdition.Volume1.Star2.star_2_2 r q) (PM.Derivation.star_1_4 r q)
+    exact comp (join ra rb) (star_5_1 A B)
+  have pE : ⊢ₚ (P ⊃ₚ E) := PM.FirstEdition.Volume1.Star4.star_4_37 p q r
+  have fE : ⊢ₚ (F ⊃ₚ E) := by
+    have pair : ⊢ₚ ((r ⊃ₚ E) ∧ₚ (P ⊃ₚ E)) :=
+      infer pE (infer rE (PM.FirstEdition.Volume1.Star3.star_3_2 (r ⊃ₚ E) (P ⊃ₚ E)))
+    have eqv := PM.FirstEdition.Volume1.Star4.star_4_77 E r P
+    have bridge : ⊢ₚ (((r ⊃ₚ E) ∧ₚ (P ⊃ₚ E)) ⊃ₚ (F ⊃ₚ E)) :=
+      infer eqv (PM.FirstEdition.Volume1.Star3.star_3_26
+        (((r ⊃ₚ E) ∧ₚ (P ⊃ₚ E)) ⊃ₚ (F ⊃ₚ E))
+        ((F ⊃ₚ E) ⊃ₚ ((r ⊃ₚ E) ∧ₚ (P ⊃ₚ E))))
+    exact infer pair bridge
+  exact infer fE (infer eF (PM.FirstEdition.Volume1.Star3.star_3_2 (E ⊃ₚ F) (F ⊃ₚ E)))
+
 end PM.FirstEdition.Volume1.Star5
