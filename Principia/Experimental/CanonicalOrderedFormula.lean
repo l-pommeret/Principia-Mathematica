@@ -310,6 +310,30 @@ def rawSize : Raw Γ → Nat
   | .quantified _ body | .neg body => rawSize body + 1
   | .disj left right => rawSize left + rawSize right + 1
 
+def leadingQuantifier? : Raw Γ → Option (Quantifier × Raw Γ)
+  | .quantified quantifier body => some (quantifier, body)
+  | _ => none
+
+theorem smartDisjScopedAux_nonQuantified
+    (depth fuel : Nat) (left right : Raw Γ)
+    (hLeft : leadingQuantifier? left = none)
+    (hRight : leadingQuantifier? right = none) :
+    smartDisjScopedAux depth (fuel + 1) left right = .disj left right := by
+  cases left <;> cases right <;>
+    simp_all [leadingQuantifier?, smartDisjScopedAux]
+
+@[simp] theorem leadingQuantifier?_instantiateBoundAt_var_none
+    (depth : Nat) (value : RealVar Γ .elementaryProposition) (p : Raw Γ)
+    (h : leadingQuantifier? p = none) :
+    leadingQuantifier? (instantiateBoundAt depth (.var value) p) = none := by
+  cases p with
+  | bound index =>
+      by_cases hEq : index = depth
+      · simp [leadingQuantifier?, instantiateBoundAt, ofElementaryRaw, hEq]
+      · by_cases hLt : depth < index <;>
+          simp [leadingQuantifier?, instantiateBoundAt, ofElementaryRaw, hEq, hLt]
+  | _ => simp_all [leadingQuantifier?, instantiateBoundAt]
+
 @[simp] theorem rawSize_openBoundAt (cutoff : Nat) (p : Raw Γ) :
     rawSize (openBoundAt cutoff p) = rawSize p := by
   induction p generalizing cutoff with
