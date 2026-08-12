@@ -160,6 +160,82 @@ theorem line4Carrier_eq_sourceLine4
   rw [reinsert]
   rfl
 
+theorem phiXClosed_slot
+    (φ : Apparent Γ [.elementaryProposition]) :
+    star_9_21_phi_x_closed_raw φ = weakenBound (weakenBound (ofApparent φ)) := by
+  induction φ with
+  | constant name => rfl
+  | real v => cases v <;> rfl
+  | bound v => cases v with
+    | zero => rfl
+    | succ v => exact nomatch v
+  | neg p ih =>
+      change Raw.neg (star_9_21_phi_x_closed_raw p) =
+        Raw.neg (weakenBound (weakenBound (ofApparent p)))
+      exact congrArg Raw.neg ih
+  | disj p q ihp ihq =>
+      change Raw.disj (star_9_21_phi_x_closed_raw p)
+          (star_9_21_phi_x_closed_raw q) =
+        Raw.disj (weakenBound (weakenBound (ofApparent p)))
+          (weakenBound (weakenBound (ofApparent q)))
+      rw [ihp, ihq]
+
+theorem psiXClosed_slot
+    (ψ : Apparent Γ [.elementaryProposition]) :
+    star_9_21_psi_x_closed_raw ψ = weakenBound (weakenBound (ofApparent ψ)) := by
+  induction ψ with
+  | constant name => rfl
+  | real v => cases v <;> rfl
+  | bound v => cases v with
+    | zero => rfl
+    | succ v => exact nomatch v
+  | neg p ih =>
+      change Raw.neg (star_9_21_psi_x_closed_raw p) =
+        Raw.neg (weakenBound (weakenBound (ofApparent p)))
+      exact congrArg Raw.neg ih
+  | disj p q ihp ihq =>
+      change Raw.disj (star_9_21_psi_x_closed_raw p)
+          (star_9_21_psi_x_closed_raw q) =
+        Raw.disj (weakenBound (weakenBound (ofApparent p)))
+          (weakenBound (weakenBound (ofApparent q)))
+      rw [ihp, ihq]
+
+theorem phiYClosed_slot
+    (φ : Apparent Γ [.elementaryProposition]) :
+    star_9_21_phi_y_closed_raw φ = ofApparent φ := by
+  induction φ with
+  | constant name => rfl
+  | real v => cases v <;> rfl
+  | bound v => cases v with
+    | zero => rfl
+    | succ v => exact nomatch v
+  | neg p ih =>
+      change Raw.neg (star_9_21_phi_y_closed_raw p) = Raw.neg (ofApparent p)
+      exact congrArg Raw.neg ih
+  | disj p q ihp ihq =>
+      change Raw.disj (star_9_21_phi_y_closed_raw p)
+          (star_9_21_phi_y_closed_raw q) = Raw.disj (ofApparent p) (ofApparent q)
+      rw [ihp, ihq]
+
+theorem psiZClosed_slot
+    (ψ : Apparent Γ [.elementaryProposition]) :
+    star_9_21_psi_z_closed_raw ψ = weakenBound (ofApparent ψ) := by
+  induction ψ with
+  | constant name => rfl
+  | real v => cases v <;> rfl
+  | bound v => cases v with
+    | zero => rfl
+    | succ v => exact nomatch v
+  | neg p ih =>
+      change Raw.neg (star_9_21_psi_z_closed_raw p) =
+        Raw.neg (weakenBound (ofApparent p))
+      exact congrArg Raw.neg ih
+  | disj p q ihp ihq =>
+      change Raw.disj (star_9_21_psi_z_closed_raw p)
+          (star_9_21_psi_z_closed_raw q) =
+        Raw.disj (weakenBound (ofApparent p)) (weakenBound (ofApparent q))
+      rw [ihp, ihq]
+
 def sourceLine6Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
   line5Redex (.neg (implicationOuterRaw φ ψ))
     (.quantified .sometimes
