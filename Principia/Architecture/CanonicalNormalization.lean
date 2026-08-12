@@ -94,6 +94,63 @@ inductive NormalizesScopedAt : Nat → Raw Γ → Raw Γ → Prop where
   | trans : NormalizesScopedAt depth p q → NormalizesScopedAt depth q r →
       NormalizesScopedAt depth p r
 
+def smartDisjScopedCertifiedAux (depth : Nat) :
+    (fuel : Nat) → (p q : Raw Γ) →
+      { r : Raw Γ // NormalizesScopedAt depth (.disj p q) r }
+  | 0, p, q => ⟨.disj p q, .refl _ _⟩
+  | fuel + 1, .quantified .always p, .quantified .sometimes q =>
+      let recursive := smartDisjScopedCertifiedAux (depth + 2) fuel
+        (shiftBoundAt (depth + 1) p) (shiftBoundAt (depth + 1) q)
+      ⟨.quantified .always (.quantified .sometimes recursive.1),
+        .trans (.disjAlwaysSometimes depth p q)
+          (.quantifiedCongr depth .always
+            (.quantifiedCongr (depth + 1) .sometimes recursive.2))⟩
+  | fuel + 1, .quantified .sometimes p, .quantified .always q =>
+      let recursive := smartDisjScopedCertifiedAux (depth + 2) fuel
+        (shiftBoundAt (depth + 1) p) (shiftBoundAt (depth + 1) q)
+      ⟨.quantified .always (.quantified .sometimes recursive.1),
+        .trans (.disjSometimesAlways depth p q)
+          (.quantifiedCongr depth .always
+            (.quantifiedCongr (depth + 1) .sometimes recursive.2))⟩
+  | fuel + 1, .quantified quantifier p, q =>
+      let recursive := smartDisjScopedCertifiedAux (depth + 1) fuel p
+        (shiftBoundAt depth q)
+      ⟨.quantified quantifier recursive.1,
+        .trans (.disjRight depth quantifier p q)
+          (.quantifiedCongr depth quantifier recursive.2)⟩
+  | fuel + 1, p, .quantified quantifier q =>
+      let recursive := smartDisjScopedCertifiedAux (depth + 1) fuel
+        (shiftBoundAt depth p) q
+      ⟨.quantified quantifier recursive.1,
+        .trans (.disjLeft depth quantifier q p)
+          (.quantifiedCongr depth quantifier recursive.2)⟩
+  | _ + 1, p, q => ⟨.disj p q, .refl _ _⟩
+
+theorem smartDisjScopedCertifiedAux_value
+    (depth fuel : Nat) (p q : Raw Γ) :
+    (smartDisjScopedCertifiedAux depth fuel p q).1 =
+      smartDisjScopedAux depth fuel p q := by
+  induction fuel generalizing depth p q with
+  | zero => rfl
+  | succ fuel ih =>
+      cases p <;> cases q <;> try rfl
+      all_goals try { cases ‹Quantifier› }
+      all_goals try { cases ‹Quantifier› }
+      all_goals try { simp [smartDisjScopedCertifiedAux, smartDisjScopedAux, ih] }
+      case quantified.quantified qp p qq q =>
+        cases qp <;> cases qq <;>
+          simp [smartDisjScopedCertifiedAux, smartDisjScopedAux, ih]
+
+theorem normalizesSmartDisjScopedAux
+    (depth fuel : Nat) (p q : Raw Γ) :
+    NormalizesScopedAt depth (.disj p q)
+      (smartDisjScopedAux depth fuel p q) := by
+  rw [← smartDisjScopedCertifiedAux_value depth fuel p q]
+  exact (smartDisjScopedCertifiedAux depth fuel p q).property
+
+theorem normalizesSmartDisjScoped (p q : Raw Γ) :
+    NormalizesScopedAt 0 (.disj p q) (smartDisjScoped p q) := by
+  exact normalizesSmartDisjScopedAux 0 (rawSize p + rawSize q) p q
 
 /-- Stability witness for the one closed, source-labelled line-(5)→line-(6)
 certificate of ✱9·21.  It stays an explicit parameter: substitution must not
