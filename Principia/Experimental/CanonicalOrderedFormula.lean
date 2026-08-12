@@ -170,6 +170,29 @@ def instantiateIndexVar (cutoff index : Nat)
     (value : RealVar Γ .elementaryProposition) : Raw Γ :=
   (instantiateIndex cutoff index).toRaw value
 
+theorem instantiateIndex_shiftIndex (depth index : Nat) :
+    instantiateIndex (depth + 1) (shiftIndex depth index) =
+      (instantiateIndex depth index).shift depth := by
+  rcases Nat.lt_trichotomy index depth with hLt | hEq | hGt
+  · have hNe : index ≠ depth := by omega
+    have hNeSucc : index ≠ depth + 1 := by omega
+    have hNotGt : ¬depth < index := by omega
+    have hNotGtSucc : ¬depth + 1 < index := by omega
+    simp [instantiateIndex, IndexAction.shift, shiftIndex, hLt, hNe,
+      hNeSucc, hNotGt, hNotGtSucc, Nat.not_le_of_lt hLt]
+  · subst index
+    simp [instantiateIndex, IndexAction.shift, shiftIndex]
+  · by_cases hNext : index = depth + 1
+    · subst index
+      simp [instantiateIndex, IndexAction.shift, shiftIndex]
+    · have hLe : depth ≤ index := Nat.le_of_lt hGt
+      have hFar : depth + 1 < index := by omega
+      have hNe : index ≠ depth := by omega
+      have hSub : depth ≤ index - 1 := by omega
+      simp [instantiateIndex, IndexAction.shift, shiftIndex, hGt, hLe,
+        hNext, hFar, hNe, hSub]
+      omega
+
 /-- Instantiate an apparent variable with an elementary value already living
 in the same real context.  Unlike `openBoundAt`, this operation does not add
 or rename any real variable. -/
