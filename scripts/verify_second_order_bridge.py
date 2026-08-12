@@ -34,6 +34,8 @@ def main() -> None:
     require(ordered, (
         "| secondOrder : SecondOrder Γ [] → OrderedFormula Γ 2",
         "def alwaysFirstOrder", "| .secondOrder _ => none",
+        "| secondOrder : OrderedDisjunctionScope 2", "def secondImp",
+        "| .disj .secondOrder _ _ => none",
     ), "exact order-two formula constructor")
     require(prerequisites, (
         "private structure MatrixSyntaxAt", "private def firstOrderMatrixSyntaxAt : MatrixSyntaxAt 1",

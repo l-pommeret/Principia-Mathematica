@@ -26,7 +26,7 @@ def main() -> None:
     required = (
         "inductive OrderedFormula", "| elementary", "| firstOrder", "| neg", "| disj",
         "inductive FirstOrderDisjunctionScope", "inductive OrderedDisjunctionScope",
-        "def scopedDisj", "def scopedImp", "def scopedFirstOrderDisj", "def firstImp",
+        "def scopedDisj", "def scopedImp", "def scopedFirstOrderDisj", "def firstImp", "def secondImp",
         "def eraseElementary?", "theorem erase_embedElementary",
         "structure OrderedRuleBook", "Primitive : OrderedFormula",
         "inductive OrderedDerivation", "| primitive", "| detach",
@@ -64,6 +64,15 @@ def main() -> None:
         raise SystemExit("Q259 ✱9·33 target differs from the printed existential formula")
     if "OrderedDisjunctionScope order" not in derivation:
         raise SystemExit("ordered detachment omits its disjunction scope certificate")
+    if "| secondOrder : OrderedDisjunctionScope 2" not in ordered:
+        raise SystemExit("order-two syntax lacks its explicit same-order scope certificate")
+    if not re.search(
+        r"def secondImp[\s\S]*?scopedImp \.secondOrder left right",
+        ordered,
+    ):
+        raise SystemExit("order-two implication bypasses its scope certificate")
+    if "| .disj .secondOrder _ _ => none" not in ordered:
+        raise SystemExit("elementary erasure must reject order-two disjunctions")
     if re.search(r"(?m)^\s+star_9_(?:3|31|32|33)\s*:", closed_rulebook):
         raise SystemExit("Q259 target appears as a closed-rulebook primitive")
     print("Ordered first-order architecture checks passed")

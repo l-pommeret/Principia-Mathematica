@@ -34,6 +34,11 @@ inductive OrderedDisjunctionScope : Nat → Type where
   | elementary : OrderedDisjunctionScope 0
   | firstOrder : OrderedFormula.FirstOrderDisjunctionScope →
       OrderedDisjunctionScope 1
+  /-- The same-assigned-order connective at the one explicit next order
+  already represented by `OrderedFormula.secondOrder`.  This is syntax and a
+  scope certificate only: it introduces neither a primitive assertion nor a
+  detachment rule. -/
+  | secondOrder : OrderedDisjunctionScope 2
 
 inductive OrderedFormula (Γ : RealContext) : Nat → Type where
   | elementary : Elementary Γ → OrderedFormula Γ 0
@@ -68,6 +73,12 @@ def scopedFirstOrderDisj (scope : FirstOrderDisjunctionScope)
 def firstImp (left right : OrderedFormula Γ 1) : OrderedFormula Γ 1 :=
   scopedImp (.firstOrder .sameAssignedOrder) left right
 
+/-- The PM abbreviation `∼P ∨ Q` at the single explicitly represented second
+assigned order.  The constructor carries only the matching-order scope
+certificate; derivability remains entirely separate. -/
+def secondImp (left right : OrderedFormula Γ 2) : OrderedFormula Γ 2 :=
+  scopedImp .secondOrder left right
+
 def always (body : Apparent Γ [.elementaryProposition]) : OrderedFormula Γ 1 :=
   .firstOrder (FirstOrder.always body)
 
@@ -92,6 +103,7 @@ def eraseElementary? : OrderedFormula Γ order → Option (Elementary Γ)
       let q ← eraseElementary? q
       pure (.disj p q)
   | .disj (.firstOrder _) _ _ => none
+  | .disj .secondOrder _ _ => none
 
 @[simp] theorem erase_embedElementary (p : Elementary Γ) :
     eraseElementary? (embedElementary p) = some p := rfl
