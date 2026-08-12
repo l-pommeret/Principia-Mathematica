@@ -187,6 +187,19 @@ def openHead : Apparent Γ [.elementaryProposition] →
   | .neg proposition => .neg (openHead proposition)
   | .disj left right => .disj (openHead left) (openHead right)
 
+/-- The bivariate matrix `φx ∨ φy` used in the first application of ✱9·1
+in the proof of ✱9·3.  The left occurrence opens the sole binder as the new
+real variable `x`; the right occurrence retains it as the apparent variable
+`y`.  Thus no substitution or identification of the two variables occurs. -/
+def openHeadOrBound (φ : Apparent Γ [.elementaryProposition]) :
+    Apparent (.elementaryProposition :: Γ) [.elementaryProposition] :=
+  Apparent.ofElementary (openHead φ) ∨ₐ Apparent.weakenReal φ
+
+@[simp] theorem openHeadOrBound_left
+    (φ : Apparent Γ [.elementaryProposition]) :
+    openHeadOrBound φ =
+      Apparent.ofElementary (openHead φ) ∨ₐ Apparent.weakenReal φ := rfl
+
 /-- Move one newly leading *real* variable into the leading apparent-variable
 slot.  Unlike `abstractHead`, this operation works underneath an already
 present apparent-variable context.  It is the scope-preserving bridge needed
