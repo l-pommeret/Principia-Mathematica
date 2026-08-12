@@ -80,6 +80,29 @@ def line3Target (φ : Apparent Γ [.elementaryProposition]) :
     OrderedFormula Γ 3 :=
   star_9_13_higher_target (line3Carrier φ)
 
+def closedLine3Raw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofOrdered (line3Target φ)
+
+def closedLine3ScopedRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofThirdOrderScoped
+    (FirstOrderMatrix.abstractThirdOuter (line3Carrier φ))
+
+theorem closedLine3Raw_unfold
+    (φ : Apparent Γ [.elementaryProposition]) :
+    closedLine3Raw φ =
+      .quantified .always (.quantified .always
+        (ofFirstOrderMatrix
+          (FirstOrderMatrix.abstractRealOuter (line2Formula φ)))) := by
+  rfl
+
+theorem closedLine3ScopedRaw_unfold
+    (φ : Apparent Γ [.elementaryProposition]) :
+    closedLine3ScopedRaw φ =
+      .quantified .always (.quantified .always
+        (ofFirstOrderMatrixScoped
+          (FirstOrderMatrix.abstractRealOuter (line2Formula φ)))) := by
+  rfl
+
 def line2DisplayRaw (φ : Apparent Γ [.elementaryProposition]) :
     Raw (.elementaryProposition :: Γ) :=
   ofFirstOrderMatrixRedex (line2Formula φ)
