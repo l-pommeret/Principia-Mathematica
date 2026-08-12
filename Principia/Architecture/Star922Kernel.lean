@@ -124,6 +124,17 @@ theorem sourceLine5_to_line6
     NormalizesScopedAt 0 (sourceLine5Raw φ ψ) (sourceLine6Raw φ ψ) :=
   .disjSometimesAlwaysReverse 0 _ _
 
+theorem sourceLine6_eq_concreteLine6
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    sourceLine6Raw φ ψ = concreteLine6Raw φ ψ := by
+  rfl
+
+theorem sourceLine6_to_concreteLine7
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScoped (sourceLine6Raw φ ψ) (concreteLine7Raw φ ψ) := by
+  rw [sourceLine6_eq_concreteLine6]
+  exact concreteLine6_to_line7 φ ψ
+
 /-- Closed evidence for the printed chain.  The source line and every later
 endpoint remain explicit; a future bridge must identify the audited concrete
 line-(6) operands before this structure can be inhabited. -/
