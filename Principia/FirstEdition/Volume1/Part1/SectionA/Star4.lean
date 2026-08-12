@@ -615,4 +615,18 @@ theorem star_4_8 {Γ} (p : PM.Elementary Γ) :
         ((p ⊃ₚ (∼ₚ p)) ⊃ₚ (∼ₚ p))
         ((∼ₚ p) ⊃ₚ (p ⊃ₚ (∼ₚ p)))))
 
+/-- PM I (1910), p. 127, ✱4·81. -/
+theorem star_4_81 {Γ} (p : PM.Elementary Γ) :
+    ⊢ₚ (((∼ₚ p) ⊃ₚ p) ≡ₚ p) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer (PM.FirstEdition.Volume1.Star2.star_2_02 (∼ₚ p) p)
+    (infer (PM.FirstEdition.Volume1.Star2.star_2_18 p)
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        (((∼ₚ p) ⊃ₚ p) ⊃ₚ p)
+        (p ⊃ₚ ((∼ₚ p) ⊃ₚ p))))
+
 end PM.FirstEdition.Volume1.Star4
