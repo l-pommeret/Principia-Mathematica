@@ -190,6 +190,51 @@ def ofFirstOrder : FirstOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofApparent body)
   | .sometimes body => .quantified .sometimes (ofApparent body)
 
+/-- Canonical normalization of the explicit same-order first-order matrix
+language.  It applies exactly the already-audited smart negation and
+disjunction reductions; no assertion is introduced. -/
+def normalizeFirstOrderMatrix : FirstOrderMatrix Γ Δ → Raw Γ
+  | .quantified proposition => ofFirstOrder proposition
+  | .neg matrix => smartNeg (normalizeFirstOrderMatrix matrix)
+  | .disj left right => smartDisj
+      (normalizeFirstOrderMatrix left) (normalizeFirstOrderMatrix right)
+
+/-- A range certificate for conservative reification.  There is deliberately
+no total `Raw → FirstOrderMatrix`: callers must exhibit syntax whose canonical
+normalization is the requested raw formula. -/
+structure CertifiedFirstOrderMatrix (Δ : BoundContext) (raw : Raw Γ) where
+  formula : FirstOrderMatrix Γ Δ
+  roundTrip : normalizeFirstOrderMatrix formula = raw
+
+def certifyFirstOrder (proposition : FirstOrder Γ Δ) :
+    CertifiedFirstOrderMatrix Δ (ofFirstOrder proposition) where
+  formula := .quantified proposition
+  roundTrip := rfl
+
+def CertifiedFirstOrderMatrix.neg
+    (certificate : CertifiedFirstOrderMatrix Δ raw) :
+    CertifiedFirstOrderMatrix Δ (smartNeg raw) where
+  formula := .neg certificate.formula
+  roundTrip := by simp [normalizeFirstOrderMatrix, certificate.roundTrip]
+
+def CertifiedFirstOrderMatrix.disj
+    (left : CertifiedFirstOrderMatrix Δ p)
+    (right : CertifiedFirstOrderMatrix Δ q) :
+    CertifiedFirstOrderMatrix Δ (smartDisj p q) where
+  formula := .disj left.formula right.formula
+  roundTrip := by simp [normalizeFirstOrderMatrix, left.roundTrip, right.roundTrip]
+
+def CertifiedFirstOrderMatrix.imp
+    (left : CertifiedFirstOrderMatrix Δ p)
+    (right : CertifiedFirstOrderMatrix Δ q) :
+    CertifiedFirstOrderMatrix Δ (smartImp p q) :=
+  left.neg.disj right
+
+theorem certified_roundTrip
+    (certificate : CertifiedFirstOrderMatrix Δ raw) :
+    normalizeFirstOrderMatrix certificate.formula = raw :=
+  certificate.roundTrip
+
 def ofSecondOrder : SecondOrder Γ [] → Raw Γ
   | .always body => .quantified .always (ofFirstOrder body)
   | .sometimes body => .quantified .sometimes (ofFirstOrder body)
