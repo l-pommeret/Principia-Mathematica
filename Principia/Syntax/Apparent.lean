@@ -1050,6 +1050,26 @@ def renameReal (ρ : Apparent.RealRenaming Γ Ξ) :
   | .neg proposition => .neg (renameReal ρ proposition)
   | .disj left right => .disj (renameReal ρ left) (renameReal ρ right)
 
+def rename (ρ : Apparent.Renaming Δ Ξ) :
+    ThirdOrderFormula Γ Δ → ThirdOrderFormula Γ Ξ
+  | .quantified proposition => .quantified (renameThird ρ proposition)
+  | .neg proposition => .neg (rename ρ proposition)
+  | .disj left right => .disj (rename ρ left) (rename ρ right)
+
+def weaken (proposition : ThirdOrderFormula Γ Δ) :
+    ThirdOrderFormula Γ (.elementaryProposition :: Δ) :=
+  rename (fun v => .succ v) proposition
+
+def substitute (σ : Apparent.Substitution Γ Δ Ξ) :
+    ThirdOrderFormula Γ Δ → ThirdOrderFormula Γ Ξ
+  | .quantified proposition => .quantified (substituteThird σ proposition)
+  | .neg proposition => .neg (substitute σ proposition)
+  | .disj left right => .disj (substitute σ left) (substitute σ right)
+
+def instantiate (body : ThirdOrderFormula Γ (.elementaryProposition :: Δ))
+    (argument : Apparent Γ Δ) : ThirdOrderFormula Γ Δ :=
+  substitute (Apparent.instantiateSubstitution argument) body
+
 end ThirdOrderFormula
 
 def abstractQuantifiedOuter : Quantified (.elementaryProposition :: Γ) Δ →
