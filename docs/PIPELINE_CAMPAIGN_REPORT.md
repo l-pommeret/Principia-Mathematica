@@ -91,3 +91,26 @@ targets—and subsequently the Volume II and III architecture-dependent
 targets—reach honest terminal states.  Architecture-blocked items remain
 visible as source transcriptions with explicit blockers rather than fabricated
 proofs.
+
+## Progress through ✱10 (12 August 2026)
+
+The campaign subsequently closed the late ✱4 and ✱5 prerequisites, the
+structural ✱9 quantifier/function layer, and a first substantial ✱10 wave.
+The canonical catalogue now contains 184 remotely certified items and 54
+additional locally kernel-checked items awaiting metadata dependency audit and
+CI promotion: 238 of 1,136 items have Lean bodies (20.95%).  The distinction is
+intentional: a green build certifies code, while promotion additionally
+requires complete `lean_dependencies`, normalized historical citations, and
+immutable CI evidence for every metadata batch.
+
+Notable ✱10 closures include definitions ✱10·01–03; propositions ✱10·1,
+✱10·11–12, ✱10·121–122, ✱10·2, ✱10·21–29, ✱10·3, ✱10·301, ✱10·31,
+✱10·311, ✱10·33–41, ✱10·411–412, and selected ✱10·52/541/542 instances.
+Targets that still require an unaudited assertion rule, type/significance
+bridge, substitution rule, or witness-combination principle remain explicitly
+`prepared`; target syntax alone is never counted as a proof.
+
+Commit `fb0ad88` passed all 21 aggregate preflight gates, 235 unit tests and 62
+Lean build jobs, and was certified by Lean CI run `31618145905`.  Later commit
+`bef97d6` adds the exact ✱10·33 conjunction-composition certificate plus the
+next audited targets/proofs and awaits its own CI before any promotion.
