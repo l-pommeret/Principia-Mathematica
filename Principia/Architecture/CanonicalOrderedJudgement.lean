@@ -41,14 +41,30 @@ def NormalizedCanonicalAssertion (raw : Raw Γ) : Prop :=
   ∃ (order : Nat) (formula : OrderedFormula Γ order),
     OrderedAssertion formula ∧ NormalizesScoped (ofOrdered formula) raw
 
-/-- A theorem schema is deliberately outside `OrderedAssertion`: it records
-the canonical Raw presentation of a derived theorem and the substitutions
-for which a separate derivational naturality proof has been supplied.  The
-structure introduces neither a Pp nor a detachment rule. -/
+/-- A Raw substitution whose elementary images have each been reified by an
+existing indexed assertion.  This makes explicit the evidence missing from
+an arbitrary syntax substitution. -/
+structure ReifiedSubstitution (σ : Substitution Γ Ξ) where
+  order : Elementary Γ → Nat
+  formula : ∀ proposition : Elementary Γ, OrderedFormula Ξ (order proposition)
+  proof : ∀ proposition : Elementary Γ, OrderedAssertion (formula proposition)
+  roundTrip : ∀ proposition : Elementary Γ,
+    ofOrdered (formula proposition) = σ proposition
+
+/-- A theorem schema is deliberately outside `OrderedAssertion`.  Its
+instantiation action is supplied as a derivational builder over *reified*
+substitutions, so Raw syntax alone cannot manufacture a new judgement. -/
 structure CanonicalTheoremSchema (template : Raw Γ) where
   derivation : NormalizedCanonicalAssertion template
-  naturalAt : ∀ {Ξ} (σ : Substitution Γ Ξ),
-    NormalizedCanonicalAssertion (substitute σ template)
+  instantiate : ∀ {Ξ} (σ : Substitution Γ Ξ),
+    ReifiedSubstitution σ → NormalizedCanonicalAssertion (substitute σ template)
+
+def CanonicalTheoremSchema.instantiateAt
+    {Γ Ξ : RealContext} {template : Raw Γ}
+    (schema : CanonicalTheoremSchema template) (σ : Substitution Γ Ξ)
+    (reified : ReifiedSubstitution σ) :
+    NormalizedCanonicalAssertion (substitute σ template) :=
+  schema.instantiate σ reified
 
 def normalize {source target : Raw Γ}
     (certificate : NormalizesScoped source target)
