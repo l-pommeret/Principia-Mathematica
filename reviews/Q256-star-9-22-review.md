@@ -10,5 +10,7 @@ scope variants are separate constructors; historical normalization rules
 were not silently changed. No oracle, axiom, `sorry`, generic detachment, or
 classical reasoning is present.
 
-Status: awaiting CI. Context and bundle regeneration is intentionally deferred
-until the concurrent ✱9·24 integration is complete.
+Status: kernel-checked by immutable CI evidence at commit
+`a773a806b9759f571ce5ddaaa781d28553fc11b5`, run `31575922684` (success).
+The checked judgement remains exactly `Star922KernelAssertion`; this evidence
+does not promote it to `OrderedAssertion`.

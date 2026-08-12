@@ -14,10 +14,10 @@
     "declaration": "PM.Architecture.Q259ClosedRuleBook.star_9_22",
     "formal_scope": "complete source-audited closed Raw normalization chain in Star922KernelAssertion; deliberately not claimed as OrderedAssertion",
     "source_status": "source-catalogued",
-    "formal_status": "awaiting-ci",
-    "integration_status": "awaiting-ci-star922-kernel-assertion",
+    "formal_status": "kernel-checked",
+    "integration_status": "kernel-checked-star922-kernel-assertion",
     "printed_dependencies": ["PM1:✱2·08", "PM1:✱9·1", "PM1:✱9·12", "PM1:✱9·13", "PM1:✱9·06", "PM1:✱1·01", "PM1:✱9·08", "PM1:✱9·07", "PM1:✱9·01", "PM1:✱9·02"],
-    "lean_dependencies": ["PM.Architecture.Star922Kernel.derive"],
+    "lean_dependencies": ["Star922Kernel.derive"],
     "normalized_dependencies": [],
     "historical_dependency_relaxation": {
       "classification": "exact-kernel-chain",
@@ -28,5 +28,5 @@
     },
     "blocked_dependencies": ["assigned-order OrderedAssertion reification intentionally absent"]
   }],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {"commit": "a773a806b9759f571ce5ddaaa781d28553fc11b5", "run": "31575922684", "conclusion": "success"}
 }

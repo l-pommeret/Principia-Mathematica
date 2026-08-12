@@ -1018,7 +1018,7 @@
       "source": "PM volume I, first edition, p. 118",
       "prompt_path": "aristotle/Q225.md",
       "audit_path": "reviews/Q225-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "partial-kernel-checked-star-9-21-22",
       "lean_scope": "exact PM1 ✱3·37 through ✱3·43 selected sequence",
       "depends_on": [
         "PM1:✱1·01",
@@ -1036,7 +1036,13 @@
         "PM1:✱3·34"
       ],
       "parallel_group": "STAR3-WAVE-2A",
-      "aristotle_status": "not-submitted"
+      "aristotle_status": "partial",
+      "architecture_evidence": {
+        "commit": "a773a806b9759f571ce5ddaaa781d28553fc11b5",
+        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31575922684",
+        "conclusion": "success",
+        "exact_judgement": "PM.Architecture.Star922Kernel.Star922KernelAssertion"
+      }
     },
     "Q226": {
       "canonical_ids": [
