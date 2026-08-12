@@ -122,6 +122,23 @@ def shiftBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
 
 def weakenBound (p : Raw Γ) : Raw Γ := shiftBoundAt 0 p
 
+/-- Open the apparent variable at `cutoff` as the newly leading real
+variable.  Variables below the cutoff belong to inner quantifiers; variables
+above it cross the removed slot and are decremented. -/
+def openBoundAt (cutoff : Nat) : Raw Γ → Raw (.elementaryProposition :: Γ)
+  | .elementary p => .elementary
+      (Elementary.schemaInstance (fun v => .var (.succ v)) p)
+  | .bound index =>
+      if index = cutoff then .elementary (.var .zero)
+      else if cutoff < index then .bound (index - 1) else .bound index
+  | .quantified quantifier body =>
+      .quantified quantifier (openBoundAt (cutoff + 1) body)
+  | .neg p => .neg (openBoundAt cutoff p)
+  | .disj p q => .disj (openBoundAt cutoff p) (openBoundAt cutoff q)
+
+def openHeadRaw (p : Raw Γ) : Raw (.elementaryProposition :: Γ) :=
+  openBoundAt 0 p
+
 def smartDisjScopedAux : Nat → Raw Γ → Raw Γ → Raw Γ
   | 0, left, right => .disj left right
   | fuel + 1, .quantified .always left, .quantified .sometimes right =>
@@ -170,6 +187,28 @@ def ofApparent : Apparent Γ Δ → Raw Γ
   | .bound v => .bound (boundIndex v)
   | .neg p => .neg (ofApparent p)
   | .disj p q => .disj (ofApparent p) (ofApparent q)
+
+@[simp] theorem openHeadRaw_ofApparent
+    (p : Apparent Γ [.elementaryProposition]) :
+    openHeadRaw (ofApparent p) =
+      ofApparent (Apparent.ofElementary (Apparent.openHead p) :
+        Apparent (.elementaryProposition :: Γ) []) := by
+  induction p with
+  | constant name => rfl
+  | real v => rfl
+  | bound v =>
+      cases v with
+      | zero => rfl
+      | succ tail => exact nomatch tail
+  | neg p ih =>
+      change Raw.neg (openHeadRaw (ofApparent p)) = _
+      rw [ih]
+      rfl
+  | disj p q ihp ihq =>
+      change Raw.disj (openHeadRaw (ofApparent p))
+        (openHeadRaw (ofApparent q)) = _
+      rw [ihp, ihq]
+      rfl
 
 @[simp] theorem boundIndex_succ (v : BoundVar Δ .elementaryProposition) :
     boundIndex (BoundVar.succ (σ := .elementaryProposition) v) =
