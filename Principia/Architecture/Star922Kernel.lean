@@ -275,6 +275,23 @@ theorem line4Consequent_slot
   rw [line4ConsequentRaw, phiYClosed_slot, psiZClosed_slot]
   rfl
 
+def computedLine6From906Raw
+    (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj
+    (.quantified .sometimes (.neg (implicationOuterRaw φ ψ)))
+    (.quantified .always (.quantified .sometimes
+      (.disj (.neg (phiYOuterRaw φ)) (weakenBound (psiZBodyRaw ψ)))))
+
+theorem sourceLine5From906_to_computedLine6
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (sourceLine5From906Raw φ ψ)
+      (computedLine6From906Raw φ ψ) := by
+  rw [sourceLine5From906Raw, line4Antecedent_slot, line4Consequent_slot]
+  exact .disjSometimesAlwaysReverseLocalRight 0
+    (.neg (implicationOuterRaw φ ψ))
+    (.quantified .sometimes
+      (.disj (.neg (phiYOuterRaw φ)) (weakenBound (psiZBodyRaw ψ))))
+
 def sourceLine6Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
   line5Redex (.neg (implicationOuterRaw φ ψ))
     (.quantified .sometimes

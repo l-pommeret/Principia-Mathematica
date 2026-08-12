@@ -121,6 +121,16 @@ inductive NormalizesScopedAt : Nat → Raw Γ → Raw Γ → Prop where
           (.disj (shiftBoundAt (depth + 1) p)
             (shiftBoundAt (depth + 1) q))))
         (.disj (.quantified .sometimes p) (.quantified .always q))
+  /-- Scope-aware ✱9·08 orientation used by ✱9·22.  The left operand is
+  moved beneath the retained universal and is therefore shifted at `depth`;
+  the right operand already contains its local existential scope and must not
+  be shifted a second time.  This is deliberately distinct from the earlier
+  symmetric presentation. -/
+  | disjSometimesAlwaysReverseLocalRight (depth) (p q) :
+      NormalizesScopedAt depth
+        (.quantified .always (.quantified .sometimes
+          (.disj (shiftBoundAt depth p) q)))
+        (.disj (.quantified .sometimes p) (.quantified .always q))
   /-- ✱9·03·02: a universal closure of an implication becomes an
   implication from the corresponding existential antecedent.  The
   consequent is explicitly weakened in the redex, certifying that it does
