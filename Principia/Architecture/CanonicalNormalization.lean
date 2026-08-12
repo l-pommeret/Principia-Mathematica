@@ -27,6 +27,12 @@ inductive NormalizesScoped : Raw Γ → Raw Γ → Prop where
       NormalizesScoped (.quantified .sometimes
         (.disj (.neg (weakenBound p)) q))
         (.disj (.neg p) (.quantified .sometimes q))
+  /-- ✱9·05 in the orientation used at line (3)→(4) of ✱9·2.  The
+  independent right operand is explicitly weakened below the existential. -/
+  | star_9_05_disj_independent_right (p q) :
+      NormalizesScoped
+        (.quantified .sometimes (.disj p (weakenBound q)))
+        (.disj (.quantified .sometimes p) q)
   /-- The displayed ✱9·08 occurrence in line (5)→(6) of ✱9·21.  This is a
   closed source-labelled scope certificate, rather than a new judgement rule:
   its two endpoints are the independently collated Raw displays. -/
@@ -331,6 +337,12 @@ theorem NormalizesScoped.substitute
         CanonicalOrderedFormula.substitute_lift_weakenBound] using
         NormalizesScoped.star_9_06_imp (CanonicalOrderedFormula.substitute σ p)
           (CanonicalOrderedFormula.substitute (Substitution.lift σ) q)
+  | star_9_05_disj_independent_right p q =>
+      simpa [CanonicalOrderedFormula.substitute,
+        CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.star_9_05_disj_independent_right
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
+          (CanonicalOrderedFormula.substitute σ q)
   | star_9_21_line5_line6 φ ψ => exact stable921 σ φ ψ
   | disjRight quantifier p r =>
       simpa [CanonicalOrderedFormula.substitute,
