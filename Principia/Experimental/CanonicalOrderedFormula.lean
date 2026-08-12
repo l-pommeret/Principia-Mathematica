@@ -148,4 +148,37 @@ theorem assertion_conservative {p : Raw Γ} (proof : Assertion p) :
       OrderedAssertion q ∧ ofOrdered q = p :=
   proof
 
+/-!
+## The first closure in ✱9·31
+
+This is the exact kernel witness obtained by applying the first-order instance
+of ✱9·13 to primitive ✱9·11.  It closes one of the two displayed real values;
+no normalization or new assertion principle occurs here.
+-/
+
+def star_9_31_primitive_payload (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrder (.elementaryProposition :: .elementaryProposition :: Γ) [] :=
+  let lifted := Apparent.weakenReal (Apparent.weakenReal φ)
+  let φx := Apparent.atReal lifted .zero
+  let φy := Apparent.atReal lifted (.succ .zero)
+  let conclusion := FirstOrder.weakenReal
+    (FirstOrder.weakenReal (FirstOrder.sometimes φ))
+  FirstOrder.impElementaryToFirst (φx ∨ₚ φy) conclusion
+
+def star_9_31_line1_matrix (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrder (.elementaryProposition :: Γ) [.elementaryProposition] :=
+  FirstOrder.abstractRealHead (star_9_31_primitive_payload φ)
+
+theorem star_9_31_line1_ordered (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion
+      (firstOrderToSecondAll (star_9_31_line1_matrix φ)) := by
+  apply OrderedAssertion.star_9_13_first (star_9_31_line1_matrix φ)
+  simpa [star_9_31_line1_matrix, star_9_31_primitive_payload,
+    star_9_11_target] using OrderedAssertion.star_9_11 φ
+
+theorem star_9_31_line1_canonical (φ : Apparent Γ [.elementaryProposition]) :
+    Assertion (ofOrdered
+      (firstOrderToSecondAll (star_9_31_line1_matrix φ))) :=
+  assertion_of_ordered (star_9_31_line1_ordered φ)
+
 end PM.Experimental.CanonicalOrderedFormula
