@@ -717,6 +717,7 @@ theorem star_4_87 {Γ} (p q r : PM.Elementary Γ) :
           (((q ∧ₚ p) ⊃ₚ r) ⊃ₚ (q ⊃ₚ (p ⊃ₚ r)))))
   exact pair (pair e1 e2) e3
 
+
 /-- PM I (1910), p. 124, ✱4·37. -/
 theorem star_4_37 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ ((p ≡ₚ q) ⊃ₚ ((p ∨ₚ r) ≡ₚ (q ∨ₚ r))) := by
@@ -771,5 +772,40 @@ theorem star_4_74 {Γ} (p q : PM.Elementary Γ) :
   have forward : ⊢ₚ (h ⊃ₚ a) := infer forward0 (PM.FirstEdition.Volume1.Star2.star_2_02 h a)
   have backward : ⊢ₚ (h ⊃ₚ b) := PM.FirstEdition.Volume1.Star2.star_2_55 p q
   exact join forward backward
+
+/-- PM I (1910), p. 126, ✱4·64. -/
+theorem star_4_64 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (((∼ₚ (∼ₚ (∼ₚ p))) ⊃ₚ q) ≡ₚ (p ∨ₚ q)) := by
+  let t := ∼ₚ (∼ₚ (∼ₚ p))
+  let a := t ⊃ₚ q
+  let b := p ∨ₚ q
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have comp : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have aToNot : ⊢ₚ (a ⊃ₚ ((∼ₚ p) ⊃ₚ q)) := by
+    have base := PM.FirstEdition.Volume1.Star2.star_2_05 (∼ₚ p) t q
+    have reorder := infer base (PM.FirstEdition.Volume1.Star2.star_2_04 a ((∼ₚ p) ⊃ₚ t) ((∼ₚ p) ⊃ₚ q))
+    exact infer (PM.FirstEdition.Volume1.Star2.star_2_12 (∼ₚ p)) reorder
+  have aToB : ⊢ₚ (a ⊃ₚ b) := comp aToNot (PM.FirstEdition.Volume1.Star2.star_2_54 p q)
+  have bToNot : ⊢ₚ (b ⊃ₚ ((∼ₚ p) ⊃ₚ q)) := PM.FirstEdition.Volume1.Star2.star_2_53 p q
+  have liftT : ⊢ₚ (b ⊃ₚ (t ⊃ₚ (∼ₚ p))) :=
+    infer (PM.FirstEdition.Volume1.Star2.star_2_14 (∼ₚ p))
+      (PM.FirstEdition.Volume1.Star2.star_2_02 b (t ⊃ₚ (∼ₚ p)))
+  have bToCompose : ⊢ₚ (b ⊃ₚ ((t ⊃ₚ (∼ₚ p)) ⊃ₚ (t ⊃ₚ q))) := by
+    have base := PM.FirstEdition.Volume1.Star2.star_2_77 t (∼ₚ p) q
+    have pre : ⊢ₚ (((∼ₚ p) ⊃ₚ q) ⊃ₚ (t ⊃ₚ ((∼ₚ p) ⊃ₚ q))) := PM.FirstEdition.Volume1.Star2.star_2_02 t ((∼ₚ p) ⊃ₚ q)
+    have base' := comp pre base
+    have addBase : ⊢ₚ (b ⊃ₚ (((∼ₚ p) ⊃ₚ q) ⊃ₚ ((t ⊃ₚ (∼ₚ p)) ⊃ₚ (t ⊃ₚ q)))) :=
+      infer base' (PM.FirstEdition.Volume1.Star2.star_2_02 b (((∼ₚ p) ⊃ₚ q) ⊃ₚ ((t ⊃ₚ (∼ₚ p)) ⊃ₚ (t ⊃ₚ q))))
+    exact infer bToNot (infer addBase (PM.FirstEdition.Volume1.Star2.star_2_77 b ((∼ₚ p) ⊃ₚ q) ((t ⊃ₚ (∼ₚ p)) ⊃ₚ (t ⊃ₚ q))))
+  have bToA : ⊢ₚ (b ⊃ₚ a) := by
+    have liftCompose := infer bToCompose (PM.FirstEdition.Volume1.Star2.star_2_77 b (t ⊃ₚ (∼ₚ p)) (t ⊃ₚ q))
+    exact infer liftT liftCompose
+  exact infer bToA (infer aToB (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
 
 end PM.FirstEdition.Volume1.Star4
