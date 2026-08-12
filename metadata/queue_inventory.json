@@ -8,8 +8,8 @@
   "counts": {
     "catalogued_items": 1136,
     "object_language_ast_parsed": 403,
-    "metalinguistic_routes": 8,
-    "architecture_gated_source_routes": 725,
+    "metalinguistic_routes": 9,
+    "architecture_gated_source_routes": 724,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
     "catalogued_items_missing_proof_skeleton": 1078,
@@ -9934,10 +9934,11 @@
       "id": "PM1:✱9·4",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parser-gap",
+        "detail": "expected proposition at offset 30"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -9947,10 +9948,11 @@
       "id": "PM1:✱9·401",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parser-gap",
+        "detail": "expected proposition at offset 31"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -9960,10 +9962,11 @@
       "id": "PM1:✱9·41",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parser-gap",
+        "detail": "expected proposition at offset 30"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -9973,10 +9976,11 @@
       "id": "PM1:✱9·411",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parser-gap",
+        "detail": "expected proposition at offset 31"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -9986,10 +9990,11 @@
       "id": "PM1:✱9·42",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parser-gap",
+        "detail": "expected proposition at offset 28"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -9999,10 +10004,11 @@
       "id": "PM1:✱9·421",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parser-gap",
+        "detail": "expected proposition at offset 29"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -10093,7 +10099,7 @@
       "formal_status": "prepared",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "metalinguistic-route"
       },
       "proof_skeleton": {
         "status": "missing"

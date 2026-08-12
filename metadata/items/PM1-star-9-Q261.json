@@ -29,18 +29,20 @@
       "printed": "⊢ : : p : ∨ : q .∨. (x).φx : .⊃ : .q : ∨ : p .∨. (x).φx",
       "printed_page": 141,
       "scan_leaf": 163,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_4",
-      "formal_scope": "universal permutation; blocked architecture",
+      "lean_path": "Principia/Architecture/Q261DisjunctionKernel.lean",
+      "declaration": "PM.Architecture.Q261DisjunctionKernel.star_9_4",
+      "formal_scope": "exact closed universal disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱1·5",
         "PM1:✱9·21",
         "PM1:✱9·04"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": ["PM1:✱1·5", "PM1:✱9·21", "PM1:✱9·04"],
+      "lean_dependencies": ["PM.Derivation.star_1_5", "Star9KernelAssertion.star_9_21"],
+      "historical_dependency_relaxation": {"classification":"strict","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"The narrow adapter records exactly the printed pointwise associativity, universal monotonicity, and displayed target reading."}
     },
     {
       "id": "PM1:✱9·401",
@@ -48,16 +50,18 @@
       "printed": "⊢ : : p : ∨ : q .∨. (∃x).φx : .⊃ : .q : ∨ : p .∨. (∃x).φx",
       "printed_page": 141,
       "scan_leaf": 163,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_401",
-      "formal_scope": "existential permutation; blocked architecture",
+      "lean_path": "Principia/Architecture/Q261DisjunctionKernel.lean",
+      "declaration": "PM.Architecture.Q261DisjunctionKernel.star_9_401",
+      "formal_scope": "exact closed existential disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
-        "As Above"
+        "PM1:✱1·5", "PM1:✱9·22", "PM1:✱9·06"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": ["PM1:✱1·5", "PM1:✱9·22", "PM1:✱9·06"],
+      "lean_dependencies": ["PM.Derivation.star_1_5", "Star922Kernel.derive"],
+      "historical_dependency_relaxation": {"classification":"strict","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent existential analogue."}
     },
     {
       "id": "PM1:✱9·41",
@@ -65,16 +69,18 @@
       "printed": "⊢ : : p : ∨ : (x).φx .∨. r : .⊃ : .(x).φx : ∨ : p ∨ r",
       "printed_page": 141,
       "scan_leaf": 163,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_41",
-      "formal_scope": "universal permutation; blocked architecture",
+      "lean_path": "Principia/Architecture/Q261DisjunctionKernel.lean",
+      "declaration": "PM.Architecture.Q261DisjunctionKernel.star_9_41",
+      "formal_scope": "exact closed universal disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
-        "As Above"
+        "PM1:✱1·5", "PM1:✱9·21", "PM1:✱9·04"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": ["PM1:✱1·5", "PM1:✱9·21", "PM1:✱9·04"],
+      "lean_dependencies": ["PM.Derivation.star_1_5", "Star9KernelAssertion.star_9_21"],
+      "historical_dependency_relaxation": {"classification":"strict","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent universal analogue."}
     },
     {
       "id": "PM1:✱9·411",
@@ -82,16 +88,18 @@
       "printed": "⊢ : : p : ∨ : (∃x).φx .∨. r : .⊃ : .(∃x).φx : ∨ : p ∨ r",
       "printed_page": 141,
       "scan_leaf": 163,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_411",
-      "formal_scope": "existential permutation; blocked architecture",
+      "lean_path": "Principia/Architecture/Q261DisjunctionKernel.lean",
+      "declaration": "PM.Architecture.Q261DisjunctionKernel.star_9_411",
+      "formal_scope": "exact closed existential disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
-        "As Above"
+        "PM1:✱1·5", "PM1:✱9·22", "PM1:✱9·06"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": ["PM1:✱1·5", "PM1:✱9·22", "PM1:✱9·06"],
+      "lean_dependencies": ["PM.Derivation.star_1_5", "Star922Kernel.derive"],
+      "historical_dependency_relaxation": {"classification":"strict","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent existential analogue."}
     },
     {
       "id": "PM1:✱9·42",
@@ -99,16 +107,18 @@
       "printed": "⊢ : : (x).φx : ∨ : q ∨ r : .⊃ : .q : ∨ : (x).φx .∨. r",
       "printed_page": 141,
       "scan_leaf": 163,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_42",
-      "formal_scope": "universal permutation; blocked architecture",
+      "lean_path": "Principia/Architecture/Q261DisjunctionKernel.lean",
+      "declaration": "PM.Architecture.Q261DisjunctionKernel.star_9_42",
+      "formal_scope": "exact closed universal disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-missing-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
-        "As Above"
+        "PM1:✱1·5", "PM1:✱9·21", "PM1:✱9·04"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": ["PM1:✱1·5", "PM1:✱9·21", "PM1:✱9·04"],
+      "lean_dependencies": ["PM.Derivation.star_1_5", "Star9KernelAssertion.star_9_21"],
+      "historical_dependency_relaxation": {"classification":"strict","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent universal analogue."}
     }
   ],
   "ci_evidence": {

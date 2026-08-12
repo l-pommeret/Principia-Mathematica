@@ -13,6 +13,7 @@ import Principia.Experimental.UnifiedSyntaxEnvelope
 import Principia.Architecture.FirstOrderPrerequisites
 import Principia.Architecture.FirstOrderQ259
 import Principia.Architecture.Q259ClosedRuleBook
+import Principia.Architecture.Star96SameType
 import Principia.FirstEdition.Volume1.Introduction
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star1
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star2

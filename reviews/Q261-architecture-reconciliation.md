@@ -1,9 +1,10 @@
 # Q261 architecture reconciliation
 
-Q261 has no Aristotle project or terminal archive. All six items ✱9·4,
-✱9·401, ✱9·41, ✱9·411, ✱9·42 and ✱9·421 remain honestly `prepared`.
-Although the repository now has several narrow first-order kernel judgements,
-it still has no exact canonical target declarations for these mixed nested
-universal/existential disjunctions and no licensed rule set deriving them.
-Promoting them would require inventing an interface or weakening the printed
-scope, both forbidden. No declaration or metadata status was changed.
+Q261 has no Aristotle project or terminal archive.  The former obstruction
+was removed by `Q261DisjunctionKernel`: one closed adapter enumerates exactly
+the three printed ✱1·5 shapes and the universal/existential choice.  Every
+witness contains the pointwise ✱1·5 derivation and respectively the existing
+closed ✱9·21 or ✱9·22 witness; its Raw target is the literal displayed mixed
+disjunction.  No `OrderedAssertion` constructor, axiom, generic detachment,
+or target-specific primitive was added.  All six items are kernel-checked
+locally and remain `awaiting-ci` until remote CI supplies a commit and run.

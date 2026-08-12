@@ -33,6 +33,8 @@ METALINGUISTIC_KINDS = {
     "primitive-inference-rule",
     "primitive-function-inference-rule",
     "primitive-formation-rule",
+    "type-proposition",
+    "function-existence",
 }
 PM_SECTION_RE = re.compile(r"^(PM\d+):✱(\d+)·")
 
@@ -163,15 +165,20 @@ def inventory(root: Path = ROOT) -> dict:
             record["ast"] = {"status": "metalinguistic-route"}
             metalinguistic += 1
         else:
-            ast = parse_statement(item["printed"])
-            canonical = json.dumps(
-                ast.to_dict(), ensure_ascii=False, sort_keys=True, separators=(",", ":")
-            )
-            record["ast"] = {
-                "status": "parsed",
-                "sha256": hashlib.sha256(canonical.encode("utf-8")).hexdigest(),
-            }
-            object_language += 1
+            try:
+                ast = parse_statement(item["printed"])
+            except ValueError as error:
+                record["ast"] = {"status": "parser-gap", "detail": str(error)}
+                architecture_gated += 1
+            else:
+                canonical = json.dumps(
+                    ast.to_dict(), ensure_ascii=False, sort_keys=True, separators=(",", ":")
+                )
+                record["ast"] = {
+                    "status": "parsed",
+                    "sha256": hashlib.sha256(canonical.encode("utf-8")).hexdigest(),
+                }
+                object_language += 1
         skeleton = by_batch_item.get(identifier)
         record["proof_skeleton"] = skeleton or {"status": "missing"}
         records.append(record)
