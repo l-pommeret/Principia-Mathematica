@@ -460,6 +460,8 @@ inductive OrderedDisjunctionScope : Nat → Type where
   | firstOrder : OrderedFormula.FirstOrderDisjunctionScope →
       OrderedDisjunctionScope 1
 
+  | secondOrder : OrderedDisjunctionScope 2
+
 inductive OrderedFormula (Γ : RealContext) : Nat → Type where
   | elementary : Elementary Γ → OrderedFormula Γ 0
   | firstOrder : FirstOrder Γ [] → OrderedFormula Γ 1
@@ -488,6 +490,9 @@ def scopedFirstOrderDisj (scope : FirstOrderDisjunctionScope)
 def firstImp (left right : OrderedFormula Γ 1) : OrderedFormula Γ 1 :=
   scopedImp (.firstOrder .sameAssignedOrder) left right
 
+def secondImp (left right : OrderedFormula Γ 2) : OrderedFormula Γ 2 :=
+  scopedImp .secondOrder left right
+
 def always (body : Apparent Γ [.elementaryProposition]) : OrderedFormula Γ 1 :=
   .firstOrder (FirstOrder.always body)
 
@@ -510,6 +515,7 @@ def eraseElementary? : OrderedFormula Γ order → Option (Elementary Γ)
       let q ← eraseElementary? q
       pure (.disj p q)
   | .disj (.firstOrder _) _ _ => none
+  | .disj .secondOrder _ _ => none
 
 @[simp] theorem erase_embedElementary (p : Elementary Γ) :
     eraseElementary? (embedElementary p) = some p := rfl
@@ -686,6 +692,10 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
       OrderedAssertion p → OrderedAssertion (firstImp p q) →
       OrderedAssertion q
 
+  | star_9_12_second {p q : OrderedFormula Γ 2} :
+      OrderedAssertion p → OrderedAssertion (secondImp p q) →
+      OrderedAssertion q
+
   | star_9_12_elementary_to_first {p : Elementary Γ} {q : FirstOrder Γ []} :
       OrderedAssertion (.elementary p) →
       OrderedAssertion (.firstOrder (FirstOrder.impElementaryToFirst p q)) →
@@ -783,5 +793,21 @@ abbrev Star_9_32Derivation (q : Elementary Γ)
 abbrev Star_9_33Derivation (q : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Prop :=
   OrderedAssertion (FirstOrderQ259.star_9_33_target q φ)
+
+theorem star_9_32 (rules : Q259ClosedRuleBook) (q : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star_9_32Derivation q φ := by
+  let body := Apparent.ofElementary (∼ₚ q) ∨ₐ (φ ∨ₐ Apparent.ofElementary q)
+  have elementaryLine : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+      (.elementary (Apparent.openHead body)) := by
+    exact OrderedAssertion.elementary
+      (PM.Derivation.star_1_3
+        (Apparent.openHead φ)
+        (Apparent.openHead (Apparent.ofElementary q)))
+  have universalLine : OrderedAssertion
+      (.firstOrder (FirstOrder.always body)) :=
+    OrderedAssertion.star_9_13 body elementaryLine
+  exact OrderedAssertion.star_9_12 universalLine
+    (rules.star_9_25 (∼ₚ q) (φ ∨ₐ Apparent.ofElementary q))
 
 end PM.Architecture.Q259ClosedRuleBook

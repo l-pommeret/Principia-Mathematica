@@ -39,8 +39,8 @@
     "status": "complete"
   },
   "source_backfill_required": false,
-  "source_bytes": 28926,
-  "source_sha256": "b5ca1ce5e16a4de3b3bf87f9994cbc52d0e9ef926f12177b7690eb99f2cf71a9",
+  "source_bytes": 29260,
+  "source_sha256": "aa49b405a9e97465657e5df335035fad43733ff1f1eaba92af04cdaed17ba8fd",
   "sources": [
     {
       "bytes": 805,
@@ -57,11 +57,11 @@
       "source_sha256": "184c5d56a84a1d18671277e90154eb1f2f97c3132867afbd848aa9311bbeb3ce"
     },
     {
-      "bytes": 2566,
+      "bytes": 2757,
       "kind": "foundation",
       "path": "Principia/Syntax/Ordered.lean",
-      "slice_sha256": "78f5bb811c12c0990fd4530d1981210897a5ef278835318e334e1e7a101c600f",
-      "source_sha256": "1216031b3fb51e71456c72385e4fe4b147ff87c6ce3c521253bf4416ad2426db"
+      "slice_sha256": "e7bcc888ba675b17226b8903c77f8853ff114ce0384ae58034c9b536f9ff03ad",
+      "source_sha256": "49d637a814c20a37b8743bb4b5db01164d4fdef55d31ff1b4e2f602ac1643817"
     },
     {
       "bytes": 1387,
@@ -78,12 +78,12 @@
       "source_sha256": "3e6792db484aa9a6eb87c04adc663b9df0ffbceb0b748af125e39eac7e96f77f"
     },
     {
-      "bytes": 6075,
+      "bytes": 6218,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/FirstOrderPrerequisites.lean",
-      "slice_sha256": "cc2ec849b9f2a6b97001c5c0727233beea734970910432a5378a277947cd0906",
-      "source_sha256": "6d30b66359623391b78a727b2fc0a7b3cc4e25f1dadb6b11a51d9f7c1ee9efae"
+      "slice_sha256": "6185799ad419369105c8125937f4e6e6f51123d32e8fd77ee825cae89ecba5d6",
+      "source_sha256": "ed8f49d3a027b7bcfbd10bd6bcd79847b74ef346702ef50117c1e033b774dd91"
     },
     {
       "bytes": 179,
@@ -114,11 +114,8 @@
     }
   ],
   "ci_evidence": {
-    "commit": "6518732a70f6c7e794abaf459e08543531dee0ef",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31509710050",
-    "conclusion": "success",
-    "scope": "isolated-interface",
-    "canonical_integration": "forbidden",
-    "one_to_one_remap": "pending"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }
