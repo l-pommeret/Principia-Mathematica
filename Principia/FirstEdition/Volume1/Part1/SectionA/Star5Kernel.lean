@@ -221,9 +221,11 @@ theorem star_5_5 {Γ} (p q : PM.Elementary Γ) :
   have forward : ⊢ₚ (p ⊃ₚ (a ⊃ₚ q)) :=
     infer (PM.FirstEdition.Volume1.Star3.star_3_35 p q) (PM.FirstEdition.Volume1.Star3.star_3_3 p a q)
   have backward : ⊢ₚ (p ⊃ₚ (q ⊃ₚ a)) :=
-    infer (compose (PM.FirstEdition.Volume1.Star3.star_3_27 p q) (PM.FirstEdition.Volume1.Star2.star_2_02 q p))
-      (PM.FirstEdition.Volume1.Star3.star_3_3 p q a)
-  have pair := infer forward (infer backward (PM.FirstEdition.Volume1.Star3.star_3_2 (p ⊃ₚ (a ⊃ₚ q)) (p ⊃ₚ (q ⊃ₚ a))))
+    infer (PM.FirstEdition.Volume1.Star2.star_2_02 p q)
+      (PM.FirstEdition.Volume1.Star2.star_2_02 p (q ⊃ₚ a))
+  have pair := infer backward (infer forward
+    (PM.FirstEdition.Volume1.Star3.star_3_2
+      (p ⊃ₚ (a ⊃ₚ q)) (p ⊃ₚ (q ⊃ₚ a))))
   have lift := infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 p p (a ⊃ₚ q) (q ⊃ₚ a))
   have dup := infer (PM.FirstEdition.Volume1.Star3.star_3_2 p p) (PM.FirstEdition.Volume1.Star2.star_2_43 p (p ∧ₚ p))
   exact compose dup lift
@@ -245,12 +247,18 @@ theorem star_5_501 {Γ} (p q : PM.Elementary Γ) :
     have hp : ⊢ₚ ((p ∧ₚ (p ≡ₚ q)) ⊃ₚ p) := PM.FirstEdition.Volume1.Star3.star_3_26 p (p ≡ₚ q)
     have he : ⊢ₚ ((p ∧ₚ (p ≡ₚ q)) ⊃ₚ (p ⊃ₚ q)) :=
       compose (PM.FirstEdition.Volume1.Star3.star_3_27 p (p ≡ₚ q)) (PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ q) (q ⊃ₚ p))
-    have pair := infer hp (infer he (PM.FirstEdition.Volume1.Star3.star_3_2 ((p ∧ₚ (p ≡ₚ q)) ⊃ₚ p) ((p ∧ₚ (p ≡ₚ q)) ⊃ₚ (p ⊃ₚ q))))
+    have pair := infer he (infer hp
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        ((p ∧ₚ (p ≡ₚ q)) ⊃ₚ p)
+        ((p ∧ₚ (p ≡ₚ q)) ⊃ₚ (p ⊃ₚ q))))
     have lift := infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 (p ∧ₚ (p ≡ₚ q)) (p ∧ₚ (p ≡ₚ q)) p (p ⊃ₚ q))
     have dup := infer (PM.FirstEdition.Volume1.Star3.star_3_2 (p ∧ₚ (p ≡ₚ q)) (p ∧ₚ (p ≡ₚ q))) (PM.FirstEdition.Volume1.Star2.star_2_43 (p ∧ₚ (p ≡ₚ q)) ((p ∧ₚ (p ≡ₚ q)) ∧ₚ (p ∧ₚ (p ≡ₚ q))))
     exact compose (compose dup lift) (PM.FirstEdition.Volume1.Star3.star_3_35 p q)
   have backward := infer backwardBase (PM.FirstEdition.Volume1.Star3.star_3_3 p (p ≡ₚ q) q)
-  have pair := infer forward (infer backward (PM.FirstEdition.Volume1.Star3.star_3_2 (p ⊃ₚ (q ⊃ₚ (p ≡ₚ q))) (p ⊃ₚ ((p ≡ₚ q) ⊃ₚ q)))
+  have pair := infer backward (infer forward
+    (PM.FirstEdition.Volume1.Star3.star_3_2
+      (p ⊃ₚ (q ⊃ₚ (p ≡ₚ q)))
+      (p ⊃ₚ ((p ≡ₚ q) ⊃ₚ q))))
   have lift := infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 p p (q ⊃ₚ (p ≡ₚ q)) ((p ≡ₚ q) ⊃ₚ q))
   have dup := infer (PM.FirstEdition.Volume1.Star3.star_3_2 p p) (PM.FirstEdition.Volume1.Star2.star_2_43 p (p ∧ₚ p))
   exact compose dup lift
