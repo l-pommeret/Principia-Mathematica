@@ -14,6 +14,12 @@ inductive NormalizesScoped : Raw Γ → Raw Γ → Prop where
   | negSometimes (p) :
       NormalizesScoped (.neg (.quantified .sometimes p))
         (.quantified .always (.neg p))
+  | negAlwaysReverse (p) :
+      NormalizesScoped (.quantified .sometimes (.neg p))
+        (.neg (.quantified .always p))
+  | negSometimesReverse (p) :
+      NormalizesScoped (.quantified .always (.neg p))
+        (.neg (.quantified .sometimes p))
   /-- ✱9·06 in the orientation used in line (4)→(5) of ✱9·21.  The
   antecedent is explicitly weakened below the existential binder before that
   binder is moved into the consequent. -/
@@ -34,6 +40,11 @@ inductive NormalizesScoped : Raw Γ → Raw Γ → Prop where
   | disjLeft (q p r) :
       NormalizesScoped (.disj r (.quantified q p))
         (.quantified q (.disj (weakenBound r) p))
+  /-- Reverse binder extraction with the independent right operand displayed
+  as an explicit weakening in the source. -/
+  | disjRightReverse (q p r) :
+      NormalizesScoped (.quantified q (.disj p (weakenBound r)))
+        (.disj (.quantified q p) r)
   /-- ✱9·07: universal-left/existential-right, retaining `x` outside `y`.
   The existential body already binds `y`, so it is shifted at cutoff one
   rather than weakened at cutoff zero. -/
@@ -294,6 +305,8 @@ theorem NormalizesScoped.substitute
   | refl p => exact .refl _
   | negAlways p => exact .negAlways _
   | negSometimes p => exact .negSometimes _
+  | negAlwaysReverse p => exact .negAlwaysReverse _
+  | negSometimesReverse p => exact .negSometimesReverse _
   | star_9_06_imp p q =>
       simpa [CanonicalOrderedFormula.substitute,
         CanonicalOrderedFormula.substitute_lift_weakenBound] using
@@ -310,6 +323,12 @@ theorem NormalizesScoped.substitute
       simpa [CanonicalOrderedFormula.substitute,
         CanonicalOrderedFormula.substitute_lift_weakenBound] using
         NormalizesScoped.disjLeft quantifier
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
+          (CanonicalOrderedFormula.substitute σ r)
+  | disjRightReverse quantifier p r =>
+      simpa [CanonicalOrderedFormula.substitute,
+        CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.disjRightReverse quantifier
           (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
           (CanonicalOrderedFormula.substitute σ r)
   | disjAlwaysSometimes p q =>
