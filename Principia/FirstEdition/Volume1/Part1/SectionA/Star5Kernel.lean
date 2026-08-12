@@ -124,4 +124,21 @@ theorem star_5_41 {Γ} (p q r : PM.Elementary Γ) :
         ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))
         (p ⊃ₚ (q ⊃ₚ r))))
 
+/-- PM I (1910), p. 130, ✱5·4.  ✱2·43 contracts the repeated antecedent,
+while ✱2·02 supplies its converse instance. -/
+theorem star_5_4 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ (p ⊃ₚ q)) ≡ₚ (p ⊃ₚ q)) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  exact infer
+    (PM.FirstEdition.Volume1.Star2.star_2_02 (p ⊃ₚ q) p)
+    (infer
+      (PM.FirstEdition.Volume1.Star2.star_2_43 p q)
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        (p ⊃ₚ (p ⊃ₚ q)) (p ⊃ₚ q)))
+
 end PM.FirstEdition.Volume1.Star5
