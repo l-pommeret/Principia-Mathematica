@@ -1,34 +1,81 @@
 {
   "schema_version": 1,
   "aliases": {
-    "Taut": ["PM1:✱1·2"],
-    "Add": ["PM1:✱1·3"],
-    "Perm": ["PM1:✱1·4"],
-    "Assoc": ["PM1:✱1·5"],
-    "Sum": ["PM1:✱1·6"],
-    "Comm": ["PM1:✱2·04"],
-    "Syll": ["PM1:✱2·05", "PM1:✱2·06", "PM1:✱3·33", "PM1:✱3·34"],
-    "Abs": ["PM1:✱2·01"],
-    "Id": ["PM1:✱2·08"],
-    "Transp": ["PM1:✱2·15", "PM1:✱2·16", "PM1:✱2·17"],
-    "Fact": ["PM1:✱3·45"],
-    "Comp": ["PM1:✱3·43"],
-    "Exp": ["PM1:✱3·3"],
-    "Imp": ["PM1:✱3·31"],
-    "Simp": ["PM1:✱3·26", "PM1:✱3·27"],
-    "Ass": ["PM1:✱3·35"],
-    "detach": ["PM1:✱1·1", "PM1:✱1·11"]
+    "Taut": [
+      "PM1:✱1·2"
+    ],
+    "Add": [
+      "PM1:✱1·3"
+    ],
+    "Perm": [
+      "PM1:✱1·4"
+    ],
+    "Assoc": [
+      "PM1:✱1·5"
+    ],
+    "Sum": [
+      "PM1:✱1·6"
+    ],
+    "Comm": [
+      "PM1:✱2·04"
+    ],
+    "Syll": [
+      "PM1:✱2·05",
+      "PM1:✱2·06",
+      "PM1:✱3·33",
+      "PM1:✱3·34"
+    ],
+    "Abs": [
+      "PM1:✱2·01"
+    ],
+    "Id": [
+      "PM1:✱2·08"
+    ],
+    "Transp": [
+      "PM1:✱2·15",
+      "PM1:✱2·16",
+      "PM1:✱2·17"
+    ],
+    "Fact": [
+      "PM1:✱3·45"
+    ],
+    "Comp": [
+      "PM1:✱3·43"
+    ],
+    "Exp": [
+      "PM1:✱3·3"
+    ],
+    "Imp": [
+      "PM1:✱3·31"
+    ],
+    "Simp": [
+      "PM1:✱3·26",
+      "PM1:✱3·27"
+    ],
+    "Ass": [
+      "PM1:✱3·35"
+    ],
+    "detach": [
+      "PM1:✱1·1",
+      "PM1:✱1·11"
+    ]
   },
   "historical_scopes": {
     "Syll": [
       {
         "before": "PM1:✱3·35",
-        "candidates": ["PM1:✱2·05", "PM1:✱2·06"],
+        "candidates": [
+          "PM1:✱2·05",
+          "PM1:✱2·06"
+        ],
         "evidence": "Before ✱3·33–·34 are named Syll, PM uses the earlier syllogistic family."
       },
       {
         "from": "PM1:✱3·35",
-        "candidates": ["PM1:✱3·33", "PM1:✱3·34"],
+        "candidates": [
+          "PM1:✱3·33",
+          "PM1:✱3·34"
+        ],
         "evidence": "PM announces after ✱3·33–·34 that these forms will henceforth be called Syll."
       }
     ]
@@ -36,12 +83,17 @@
   "bridges": {
     "PM.Derivation.detach": {
       "kind": "metalinguistic-rule-selection",
-      "resolves_to": ["PM1:✱1·1", "PM1:✱1·11"],
+      "resolves_to": [
+        "PM1:✱1·1",
+        "PM1:✱1·11"
+      ],
       "note": "The real-variable context selects ✱1·1 for Γ = [] and ✱1·11 for Γ nonempty; an item records the rule printed by PM."
     },
     "PM.Elementary.imp": {
       "kind": "definitional-reading",
-      "resolves_to": ["PM1:✱1·01"],
+      "resolves_to": [
+        "PM1:✱1·01"
+      ],
       "note": "Implication is definitionally negation followed by disjunction, so kernel reduction need not retain a theorem reference."
     }
   },
@@ -52,7 +104,12 @@
     "PM.Derivation.star_1_3": "PM1:✱1·3",
     "PM.Derivation.star_1_4": "PM1:✱1·4",
     "PM.Derivation.star_1_5": "PM1:✱1·5",
-    "PM.Derivation.star_1_6": "PM1:✱1·6"
+    "PM.Derivation.star_1_6": "PM1:✱1·6",
+    "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_13": "PM1:✱9·13",
+    "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_12": "PM1:✱9·12",
+    "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_12_elementary_to_first": "PM1:✱9·12",
+    "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_1_instance": "PM1:✱9·1",
+    "PM.Architecture.Q259ClosedRuleBook.Q259ClosedRuleBook.star_9_25": "PM1:✱9·25"
   },
   "lean_notation_realizations": {
     "⊃ₚ": "PM1:✱1·01"

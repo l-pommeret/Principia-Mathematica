@@ -30,6 +30,9 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "PM.FirstOrder.disjElementaryLeft",
     "PM.FirstOrder.disjAlwaysSometimes",
     "PM.FirstOrder.disjSometimesAlways",
+    "PM.Apparent.openHead",
+    "PM.Apparent.elementaryValue",
+    "OrderedAssertion.elementary",
 }
 
 
@@ -333,7 +336,26 @@ def extract_lean_dependencies(item: dict, declarations: dict[str, str], root: Pa
     candidates = set(declarations) | set(aliases["lean_realizations"]) | KNOWN_BRIDGES
     reject_unindexed_references(item, body, candidates | KNOWN_SYNTAX_INFRASTRUCTURE)
     # Longest first avoids treating one fully qualified name as a prefix.
-    return sorted(name for name in candidates if name != item["declaration"] and _occurs(body, name))
+    found = {
+        name for name in candidates
+        if name != item["declaration"] and _occurs(body, name)
+    }
+    # Resolve shortened qualified projections/constructors only when their
+    # final component identifies a unique reviewed candidate. Fully qualified
+    # tokens are already handled above and must not spuriously select another
+    # declaration with the same short name (for example the Star1 wrapper and
+    # the primitive Derivation constructor).
+    qualified_tokens = set(re.findall(
+        r"\b[A-Za-z_][A-Za-z0-9_']*(?:\.[A-Za-z0-9_']+)+", body
+    ))
+    for token in qualified_tokens:
+        if token in candidates:
+            continue
+        short = token.rsplit(".", 1)[-1]
+        matches = [name for name in candidates if name.rsplit(".", 1)[-1] == short]
+        if len(matches) == 1 and matches[0] != item["declaration"]:
+            found.add(matches[0])
+    return sorted(found)
 
 
 def normalize(item: dict, lean_dependencies: list[str], declaration_to_id: dict[str, str], root: Path = ROOT) -> list[str]:
