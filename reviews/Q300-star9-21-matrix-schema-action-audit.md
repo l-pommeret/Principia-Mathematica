@@ -28,8 +28,14 @@ reading, still outside `OrderedAssertion`.  The existing indexed derivation
 of the printed line (4) is reflected only by `indexedLine4`, whose equality
 forces the source schema to be `star_9_3_matrix_schema`; applying the narrow
 ✱9·21 transition therefore yields the exact line-(5) Raw target.  This
-remains theorem-schema evidence and is not yet a reified final
-`OrderedAssertion` of ✱9·3.
+remains theorem-schema evidence and is not reified as an `OrderedAssertion`.
+
+The final bridge is therefore the closed `Star9KernelAssertion` constructor
+`star_9_3_from_schema`.  Its only admissible input is the indexed
+`Star921MatrixSchemaDerivation` for the exact `star_9_3_matrix_schema` line-6
+Raw target, plus an equality identifying that Raw target with the fixed
+assigned-order target.  It is a narrow derived judgement for ✱9·3, not a
+generic Raw-to-`OrderedAssertion` conversion or a new primitive proposition.
 
 Witnesses: first edition (1910), p. 140, leaf 162; proofread Wikisource page
 162; `aristotle/demonstrations/PM1-star-9-3.txt`.

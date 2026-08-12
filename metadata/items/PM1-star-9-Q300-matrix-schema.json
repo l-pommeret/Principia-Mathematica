@@ -9,20 +9,20 @@
   },
   "items": [
     {
-      "id": "PM1:✱9·3-matrix-schema",
-      "kind": "theorem-schema-evidence",
-      "printed": "(4).✱9·21 ⊃ :(x): φx∨(y).φy ⊃ (x).φx",
+      "id": "PM1:✱9·3",
+      "kind": "derived-proposition",
+      "printed": "✱9·3.  ⊢ : .(x).φx .∨. (x).φx : ⊃ . (x).φx",
       "printed_page": 140,
       "scan_leaf": 162,
-      "lean_path": "Principia/Architecture/Star921MatrixKernel.lean",
-      "declaration": "PM.Architecture.Star921MatrixKernel.star_9_3_schema",
-      "formal_scope": "typed mixed first-order theorem-schema evidence through the printed ✱9·21 and ✱9·03 steps; it is not reified as an OrderedAssertion",
+      "lean_path": "Principia/Architecture/Q259ClosedRuleBook.lean",
+      "declaration": "PM.Architecture.Q259ClosedRuleBook.star_9_3",
+      "formal_scope": "typed mixed first-order theorem-schema evidence through the printed ✱9·21 and ✱9·03 steps, concluded in the narrow Star9KernelAssertion judgement rather than a generic OrderedAssertion conversion",
       "source_status": "source-collated",
       "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-carrier-reification",
+      "integration_status": "awaiting-matrix-schema-kernel-check",
       "printed_dependencies": ["PM1:✱1·2", "PM1:✱9·1", "PM1:✱9·13", "PM1:✱9·21", "PM1:✱9·03"],
       "normalized_dependencies": ["PM1:✱9·21"],
-      "blocked_dependencies": ["assigned-first-order OrderedAssertion reification"]
+      "blocked_dependencies": []
     }
   ],
   "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}

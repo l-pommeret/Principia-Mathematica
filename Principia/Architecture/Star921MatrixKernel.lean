@@ -1,6 +1,5 @@
 import Principia.Architecture.FirstOrderPrerequisites
 import Principia.Architecture.CanonicalOrderedAdapters
-import Principia.Architecture.FirstOrderQ259
 
 namespace PM.Architecture.Star921MatrixKernel
 
@@ -72,11 +71,19 @@ def star_9_21_matrix_line5_raw (schema : MatrixFunctionSchema Γ) : Raw Γ :=
     (.neg (.quantified .always (ofFirstOrder schema.left)))
     (.quantified .always (ofApparent schema.right))
 
+/-- Assigned-order-one target of ✱9·3, kept locally so this theorem-schema
+module remains below the Q259 packaging layer. -/
+def star_9_3_ordered_target (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula Γ 1 :=
+  let p := OrderedFormula.always φ
+  OrderedFormula.firstImp
+    (OrderedFormula.scopedFirstOrderDisj .sameAssignedOrder p p) p
+
 /-- The final displayed Raw target of ✱9·3 after its cited ✱9·03
 normalization.  It is the Raw image of the existing assigned-order-one
 target, so no alternate object-language target is introduced. -/
 def star_9_3_line6_raw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
-  ofOrdered (PM.Architecture.FirstOrderQ259.star_9_3_target φ)
+  ofOrdered (star_9_3_ordered_target φ)
 
 /-- A narrowly scoped theorem-schema action licensed by the printed use of
 ✱9·21 in line (5) of ✱9·3.  It is intentionally not an `OrderedAssertion`
@@ -155,5 +162,24 @@ def star_9_3_schema
     Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
       (star_9_3_line6_raw φ) :=
   .star_9_3_normalize φ (derive_star_9_3_line5_schema φ)
+
+/-- Conservative derived judgement for the source-audited ✱9 theorem-schema
+chain.  It embeds existing `OrderedAssertion`s, but its additional constructor
+is closed to the exact ✱9·3 schema bridge and therefore is not a generic
+canonical conversion principle. -/
+inductive Star9KernelAssertion (formula : OrderedFormula Γ order) : Prop where
+  | indexed (proof : OrderedAssertion formula) : Star9KernelAssertion formula
+  | star_9_3_from_schema
+      (φ : Apparent Γ [.elementaryProposition])
+      (schemaProof : Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
+        (star_9_3_line6_raw φ))
+      (targetRaw : star_9_3_line6_raw φ = ofOrdered formula) :
+      Star9KernelAssertion formula
+
+/-- Source-audited derived judgement for PM I ✱9·3. -/
+def derive_star_9_3
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star9KernelAssertion (star_9_3_ordered_target φ) :=
+  .star_9_3_from_schema φ (star_9_3_schema φ) rfl
 
 end PM.Architecture.Star921MatrixKernel
