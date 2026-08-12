@@ -10,9 +10,7 @@ open PM.CanonicalOrderedFormula
 
 /-! A closed theorem-schema boundary for the printed proof of ✱9·31.
 
-This module does not add an `OrderedAssertion` constructor.  It records the
-existing indexed line-(1) proof and the single source-labelled normalization
-chain whose endpoint is the already-declared ✱9·31 target. -/
+This module does not add an `OrderedAssertion` constructor. -/
 
 def line1Formula (φ : Apparent Γ [.elementaryProposition]) :
     OrderedFormula (.elementaryProposition :: Γ) 2 :=
@@ -26,24 +24,45 @@ def line1Raw (φ : Apparent Γ [.elementaryProposition]) :
 def targetRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
   ofOrdered (FirstOrderQ259.star_9_31_target φ)
 
-/-- The closed printed normalization from the twice-closed existential
-matrix to `(∃x).φx ∨ (∃x).φx ⊃ (∃x).φx`.  Its endpoints are fixed by `φ`;
-it is not a generic Raw conversion. -/
-inductive Star931Normalization
-    (φ : Apparent Γ [.elementaryProposition]) : Prop where
-  | printed_9_13_9_03_02_9_05_06 : Star931Normalization φ
+/-- The exact scope-aware first-order matrix obtained at printed line (2). -/
+abbrev Line2Matrix (φ : Apparent Γ [.elementaryProposition]) :=
+  (PM.Experimental.CanonicalOrderedFormula.star_9_31_line2_scoped_reification φ).formula
+
+/-- Narrow matrix judgement: it retains the preceding indexed derivation and
+the independently checked scope-aware reification. -/
+structure Star931MatrixAssertion
+    (φ : Apparent Γ [.elementaryProposition]) where
+  source : OrderedAssertion (line1Formula φ)
+  matrixCertificate :
+    PM.Experimental.CanonicalOrderedFormula.ScopedCertifiedFirstOrderMatrix
+      [.elementaryProposition]
+      (PM.Experimental.CanonicalOrderedFormula.star_9_31_line2_scoped_raw φ)
+
+/-- Typed stages of the remaining printed chain.  Each constructor is closed
+to the exact ✱9·31 matrix and cannot normalize arbitrary Raw assertions. -/
+inductive Star931ClosedStage
+    (φ : Apparent Γ [.elementaryProposition]) : Nat → Prop where
+  | line2 (proof : Star931MatrixAssertion φ) : Star931ClosedStage φ 2
+  | second_9_13 : Star931ClosedStage φ 2 → Star931ClosedStage φ 3
+  | star_9_03_02 : Star931ClosedStage φ 3 → Star931ClosedStage φ 4
+  | star_9_05_06 : Star931ClosedStage φ 4 → Star931ClosedStage φ 5
 
 /-- Closed evidence retaining the original indexed proof and its exact
 source-labelled normalization endpoint. -/
 structure Star931KernelAssertion
     (φ : Apparent Γ [.elementaryProposition]) : Prop where
-  line1 : OrderedAssertion (line1Formula φ)
-  normalization : Star931Normalization φ
+  chain : Star931ClosedStage φ 5
+
+def deriveLine2
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star931MatrixAssertion φ where
+  source := PM.Experimental.CanonicalOrderedFormula.star_9_31_line1_ordered φ
+  matrixCertificate :=
+    PM.Experimental.CanonicalOrderedFormula.star_9_31_line2_scoped_reification φ
 
 def derive
     (φ : Apparent Γ [.elementaryProposition]) :
     Star931KernelAssertion φ where
-  line1 := PM.Experimental.CanonicalOrderedFormula.star_9_31_line1_ordered φ
-  normalization := .printed_9_13_9_03_02_9_05_06
+  chain := .star_9_05_06 (.star_9_03_02 (.second_9_13 (.line2 (deriveLine2 φ))))
 
 end PM.Architecture.Star931Kernel
