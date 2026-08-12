@@ -186,6 +186,10 @@ def matrixOfApparent : Apparent Γ Δ → MatrixRaw Γ
 @[simp] theorem ofApparent_neg (p : Apparent Γ Δ) :
     ofApparent (∼ₐ p) = .neg (ofApparent p) := rfl
 
+@[simp] theorem smartNeg_ofApparent (p : Apparent Γ Δ) :
+    smartNeg (ofApparent p) = .neg (ofApparent p) := by
+  cases p <;> rfl
+
 def ofFirstOrder : FirstOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofApparent body)
   | .sometimes body => .quantified .sometimes (ofApparent body)
@@ -239,10 +243,15 @@ def ofSecondOrder : SecondOrder Γ [] → Raw Γ
   | .always body => .quantified .always (ofFirstOrder body)
   | .sometimes body => .quantified .sometimes (ofFirstOrder body)
 
+def ofSecondOrderMatrix : FirstOrderMatrix.Quantified Γ [] → Raw Γ
+  | .always body => .quantified .always (normalizeFirstOrderMatrix body)
+  | .sometimes body => .quantified .sometimes (normalizeFirstOrderMatrix body)
+
 def ofOrdered : OrderedFormula Γ order → Raw Γ
   | .elementary p => .elementary p
   | .firstOrder p => ofFirstOrder p
   | .secondOrder p => ofSecondOrder p
+  | .secondOrderMatrix p => ofSecondOrderMatrix p
   | .neg p => .neg (ofOrdered p)
   | .disj _ p q => .disj (ofOrdered p) (ofOrdered q)
 
@@ -432,5 +441,33 @@ theorem star_9_31_line2_assignedOrder
     star_9_31_primitive_payload, FirstOrder.abstractRealOuter,
     FirstOrder.impElementaryToFirst, FirstOrder.disjElementaryLeft,
     FirstOrder.weakenReal]
+
+def star_9_31_line2_antecedent (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrder (.elementaryProposition :: Γ) [.elementaryProposition] :=
+  FirstOrder.sometimes (Apparent.abstractRealOuter
+    (Apparent.ofElementary (star_9_31_antecedent φ) : Apparent
+      (.elementaryProposition :: .elementaryProposition :: Γ)
+        [.elementaryProposition]))
+
+def star_9_31_line2_consequent (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrder (.elementaryProposition :: Γ) [.elementaryProposition] :=
+  FirstOrder.sometimes (Apparent.abstractRealOuter
+    (Apparent.weakenReal (Apparent.weakenReal φ)))
+
+/-- Certified reification of normalized line (2) into the explicit
+same-first-order matrix language.  The certificate retains its round-trip
+proof; it does not assert the formula. -/
+def star_9_31_line2_reification (φ : Apparent Γ [.elementaryProposition]) :
+    CertifiedFirstOrderMatrix [.elementaryProposition]
+      (line2Normal (star_9_31_canonical_matrix φ)
+        (star_9_31_canonical_conclusion φ)) := by
+  let certificate := (certifyFirstOrder (star_9_31_line2_antecedent φ)).imp
+    (certifyFirstOrder (star_9_31_line2_consequent φ))
+  refine ⟨certificate.formula, ?_⟩
+  rw [certificate.roundTrip]
+  simp [star_9_31_line2_antecedent, star_9_31_line2_consequent,
+    star_9_31_canonical_matrix, star_9_31_canonical_conclusion,
+    line2Normal, smartImp, smartNeg, MatrixRaw.smartNeg, MatrixRaw.toRaw,
+    matrixOfApparent_toRaw, ofFirstOrder, star_9_31_antecedent]
 
 end PM.Experimental.CanonicalOrderedFormula
