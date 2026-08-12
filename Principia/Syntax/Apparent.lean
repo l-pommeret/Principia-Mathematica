@@ -510,6 +510,37 @@ abbrev FirstOrder (Γ : RealContext) : BoundContext → Type :=
 abbrev SecondOrder (Γ : RealContext) : BoundContext → Type :=
   Quantified (FirstOrder Γ)
 
+/-- First-order formulae when they occur as matrices for one further assigned
+quantifier.  The existing `FirstOrder` syntax represents only a quantified
+atom; this separate, scoped layer supplies the same-order negation and
+disjunction required to express mixed first-to-second-order formulae without
+coercing them into `Apparent` or adding a judgement constructor. -/
+inductive FirstOrderMatrix (Γ : RealContext) (Δ : BoundContext) where
+  | quantified : FirstOrder Γ Δ → FirstOrderMatrix Γ Δ
+  | neg : FirstOrderMatrix Γ Δ → FirstOrderMatrix Γ Δ
+  | disj : FirstOrderMatrix Γ Δ → FirstOrderMatrix Γ Δ → FirstOrderMatrix Γ Δ
+
+namespace FirstOrderMatrix
+
+prefix:max "∼₁ₘ" => neg
+infixl:55 " ∨₁ₘ " => disj
+
+/-- Conservative embedding of the already established first-order AST. -/
+def ofFirstOrder (proposition : FirstOrder Γ Δ) : FirstOrderMatrix Γ Δ :=
+  .quantified proposition
+
+/-- The same-assigned-order matrix implication abbreviation. -/
+def imp (p q : FirstOrderMatrix Γ Δ) : FirstOrderMatrix Γ Δ :=
+  ∼₁ₘ p ∨₁ₘ q
+
+infixr:54 " ⊃₁ₘ " => imp
+
+/-- A single next-order quantifier over the explicit matrix language. -/
+abbrev Quantified (Γ : RealContext) (Δ : BoundContext) :=
+  PM.Quantified (FirstOrderMatrix Γ) Δ
+
+end FirstOrderMatrix
+
 namespace SecondOrder
 
 /-- Capture-free renaming of ambient real variables below one explicit
