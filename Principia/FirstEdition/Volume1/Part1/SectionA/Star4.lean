@@ -1112,4 +1112,74 @@ theorem star_4_76 {Γ} (p q r : PM.Elementary Γ) :
     exact comp dupb lift
   exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
 
+/-- PM I (1910), p. 121, ✱4·21.  This is exactly the commutation of the
+two implication factors supplied by ✱3·22, in both directions. -/
+theorem star_4_21 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ≡ₚ q) ≡ₚ (q ≡ₚ p)) := by
+  have infer : ∀ {a b : PM.Elementary Γ}, (⊢ₚ a) → (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ b) := by
+    intro a b ha hab
+    match Γ, a, b, ha, hab with
+    | [], _, _, ha, hab => exact PM.Derivation.star_1_1 ha hab
+    | (τ :: Δ), _, _, ha, hab =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) ha hab
+  exact infer
+    (PM.FirstEdition.Volume1.Star3.star_3_22 (q ⊃ₚ p) (p ⊃ₚ q))
+    (infer
+      (PM.FirstEdition.Volume1.Star3.star_3_22 (p ⊃ₚ q) (q ⊃ₚ p))
+      (PM.FirstEdition.Volume1.Star3.star_3_2
+        ((p ≡ₚ q) ⊃ₚ (q ≡ₚ p)) ((q ≡ₚ p) ⊃ₚ (p ≡ₚ q))))
+
+/-- PM I (1910), p. 126, ✱4·63.  Both sides unfold to the same elementary
+proposition, so ✱4·2 supplies the required reflexive equivalence. -/
+theorem star_4_63 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((∼ₚ (p ⊃ₚ (∼ₚ q))) ≡ₚ (p ∧ₚ q)) :=
+  star_4_2 (p ∧ₚ q)
+
+/-- PM I (1910), p. 126, ✱4·65.  Double negation transports the first
+disjunct by ✱4·37; ✱4·11 then transports that equivalence through negation. -/
+theorem star_4_65 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((∼ₚ ((∼ₚ p) ⊃ₚ q)) ≡ₚ ((∼ₚ p) ∧ₚ (∼ₚ q))) := by
+  have infer : ∀ {a b : PM.Elementary Γ}, (⊢ₚ a) → (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ b) := by
+    intro a b ha hab
+    match Γ, a, b, ha, hab with
+    | [], _, _, ha, hab => exact PM.Derivation.star_1_1 ha hab
+    | (τ :: Δ), _, _, ha, hab =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) ha hab
+  have qForward : ⊢ₚ (q ⊃ₚ (∼ₚ (∼ₚ q))) :=
+    infer (star_4_13 q)
+      (PM.FirstEdition.Volume1.Star3.star_3_26
+        (q ⊃ₚ (∼ₚ (∼ₚ q))) ((∼ₚ (∼ₚ q)) ⊃ₚ q))
+  have qBackward : ⊢ₚ ((∼ₚ (∼ₚ q)) ⊃ₚ q) :=
+    infer (star_4_13 q)
+      (PM.FirstEdition.Volume1.Star3.star_3_27
+        (q ⊃ₚ (∼ₚ (∼ₚ q))) ((∼ₚ (∼ₚ q)) ⊃ₚ q))
+  have idp : ⊢ₚ ((∼ₚ (∼ₚ p)) ⊃ₚ (∼ₚ (∼ₚ p))) :=
+    PM.FirstEdition.Volume1.Star2.star_2_08 (∼ₚ (∼ₚ p))
+  have pairForward := infer qForward
+    (infer idp (PM.FirstEdition.Volume1.Star3.star_3_2
+      ((∼ₚ (∼ₚ p)) ⊃ₚ (∼ₚ (∼ₚ p))) (q ⊃ₚ (∼ₚ (∼ₚ q)))))
+  have pairBackward := infer qBackward
+    (infer idp (PM.FirstEdition.Volume1.Star3.star_3_2
+      ((∼ₚ (∼ₚ p)) ⊃ₚ (∼ₚ (∼ₚ p))) ((∼ₚ (∼ₚ q)) ⊃ₚ q)))
+  have forward := infer pairForward
+    (PM.FirstEdition.Volume1.Star3.star_3_48
+      (∼ₚ (∼ₚ p)) q (∼ₚ (∼ₚ p)) (∼ₚ (∼ₚ q)))
+  have backward := infer pairBackward
+    (PM.FirstEdition.Volume1.Star3.star_3_48
+      (∼ₚ (∼ₚ p)) (∼ₚ (∼ₚ q)) (∼ₚ (∼ₚ p)) q)
+  have disjEq := infer backward (infer forward
+    (PM.FirstEdition.Volume1.Star3.star_3_2
+      (((∼ₚ (∼ₚ p)) ∨ₚ q) ⊃ₚ ((∼ₚ (∼ₚ p)) ∨ₚ (∼ₚ (∼ₚ q))))
+      (((∼ₚ (∼ₚ p)) ∨ₚ (∼ₚ (∼ₚ q))) ⊃ₚ ((∼ₚ (∼ₚ p)) ∨ₚ q))))
+  have negForward := infer (star_4_11
+      ((∼ₚ (∼ₚ p)) ∨ₚ q) ((∼ₚ (∼ₚ p)) ∨ₚ (∼ₚ (∼ₚ q))))
+      (PM.FirstEdition.Volume1.Star3.star_3_26
+        ((((∼ₚ (∼ₚ p)) ∨ₚ q) ≡ₚ ((∼ₚ (∼ₚ p)) ∨ₚ (∼ₚ (∼ₚ q)))) ⊃ₚ
+          ((∼ₚ ((∼ₚ (∼ₚ p)) ∨ₚ q)) ≡ₚ
+            (∼ₚ ((∼ₚ (∼ₚ p)) ∨ₚ (∼ₚ (∼ₚ q))))))
+        (((∼ₚ ((∼ₚ (∼ₚ p)) ∨ₚ q)) ≡ₚ
+            (∼ₚ ((∼ₚ (∼ₚ p)) ∨ₚ (∼ₚ (∼ₚ q))))) ⊃ₚ
+          (((∼ₚ (∼ₚ p)) ∨ₚ q) ≡ₚ ((∼ₚ (∼ₚ p)) ∨ₚ (∼ₚ (∼ₚ q))))))
+  exact infer disjEq negForward
+
 end PM.FirstEdition.Volume1.Star4

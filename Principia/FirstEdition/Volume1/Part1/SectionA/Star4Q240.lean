@@ -29,10 +29,15 @@ open PM
 open PM.Elementary
 open PM.FirstEdition.Volume1.Star1 PM.FirstEdition.Volume1.Star2 PM.FirstEdition.Volume1.Star3
 
-/-- ✱4·21. `⊢ : p ≡ q . ≡ . q ≡ p`.  [✱3·22 . ✱3·2 . (✱4·01)] -/
-theorem star_4_21 (p q : PM.Elementary Γ) : ⊢ₚ ((p ≡ₚ q) ≡ₚ (q ≡ₚ p)) :=
-  PM.Derivation.detach (star_3_22 (q ⊃ₚ p) (p ⊃ₚ q)) (PM.Derivation.detach (star_3_22 (p ⊃ₚ q) (q ⊃ₚ p))
-    (star_3_2 ((p ≡ₚ q) ⊃ₚ (q ≡ₚ p)) ((q ≡ₚ p) ⊃ₚ (p ≡ₚ q))))
+/-- PM I (1910), p. 125, ✱4·51.  With conjunction unfolded according to
+✱3·01, the target is the reverse of the double-negation equivalence ✱4·13;
+✱3·22 exchanges its two implication components. -/
+theorem star_4_51 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ (p ∧ₚ q) ≡ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) := by
+  let x := (∼ₚ p) ∨ₚ (∼ₚ q)
+  exact PM.Derivation.detach (PM.FirstEdition.Volume1.Star4.star_4_13 x)
+    (PM.FirstEdition.Volume1.Star3.star_3_22
+      (x ⊃ₚ (∼ₚ (∼ₚ x))) ((∼ₚ (∼ₚ x)) ⊃ₚ x))
 
 /-- ✱4·22. `⊢ : p ≡ q . q ≡ r . ⊃ . p ≡ r`.
   [✱3·26 . ✱3·27 . ✱3·2 . ✱3·47 . ✱3·33 . ✱3·22 . ✱2·06 . ✱3·43 . (✱4·01)] -/
