@@ -88,6 +88,54 @@ def line3DisplayRaw (φ : Apparent Γ [.elementaryProposition]) :
     Raw (.elementaryProposition :: Γ) :=
   .quantified .always (line2DisplayRaw φ)
 
+theorem line2DisplayRaw_unfold
+    (φ : Apparent Γ [.elementaryProposition]) :
+    line2DisplayRaw φ =
+      .disj (.neg (ofFirstOrder (line2Antecedent φ)))
+        (ofFirstOrder (line2Consequent φ)) := by
+  rfl
+
+theorem line3DisplayRaw_unfold
+    (φ : Apparent Γ [.elementaryProposition]) :
+    line3DisplayRaw φ =
+      .quantified .always
+        (.disj (.neg (ofFirstOrder (line2Antecedent φ)))
+          (ofFirstOrder (line2Consequent φ))) := by
+  rw [line3DisplayRaw, line2DisplayRaw_unfold]
+
+def line3ConsequentOutside (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  ofFirstOrder (FirstOrder.weakenReal (FirstOrder.sometimes φ))
+
+theorem ofApparent_inner_weakenReal
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofApparent (Apparent.rename Apparent.innerVariableRenaming
+      (Apparent.weakenReal (τ := .elementaryProposition) φ)) =
+      shiftBoundAt 1 (ofApparent
+        (Apparent.weakenReal (τ := .elementaryProposition) φ)) := by
+  induction φ with
+  | constant name => rfl
+  | real v => rfl
+  | bound v => cases v <;> rfl
+  | neg p ih => exact congrArg Raw.neg ih
+  | disj p q ihp ihq =>
+      change Raw.disj _ _ = Raw.disj _ _
+      have hp := ihp
+      have hq := ihq
+      simp only [Apparent.weakenReal] at hp hq
+      rw [hp, hq]
+
+theorem line2Consequent_is_weakened
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofFirstOrder (line2Consequent φ) =
+      weakenBound (line3ConsequentOutside φ) := by
+  change Raw.quantified .sometimes
+      (ofApparent (Apparent.abstractRealOuter
+        (Apparent.weakenReal (Apparent.weakenReal φ)))) = _
+  rw [Apparent.abstractRealOuter_weakenReal]
+  exact congrArg (Raw.quantified .sometimes)
+    (ofApparent_inner_weakenReal φ)
+
 theorem line2ScopedRaw_roundTrip (φ : Apparent Γ [.elementaryProposition]) :
     ofFirstOrderMatrixScoped (line2Formula φ) = line2ScopedRaw φ :=
   (line2Reification φ).roundTrip
