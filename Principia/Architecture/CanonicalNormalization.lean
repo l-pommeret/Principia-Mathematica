@@ -34,17 +34,20 @@ inductive NormalizesScoped : Raw Γ → Raw Γ → Prop where
   | disjLeft (q p r) :
       NormalizesScoped (.disj r (.quantified q p))
         (.quantified q (.disj (weakenBound r) p))
-  /-- ✱9·07: universal-left/existential-right, retaining `x` outside `y`. -/
+  /-- ✱9·07: universal-left/existential-right, retaining `x` outside `y`.
+  The existential body already binds `y`, so it is shifted at cutoff one
+  rather than weakened at cutoff zero. -/
   | disjAlwaysSometimes (p q) :
       NormalizesScoped (.disj (.quantified .always p) (.quantified .sometimes q))
         (.quantified .always (.quantified .sometimes
-          (.disj (weakenBound p) q)))
+          (.disj (weakenBound p) (shiftBoundAt 1 q))))
   /-- ✱9·08: existential-left/universal-right, with the same printed binder
-order after the scope normalization. -/
+order after the scope normalization.  The existential body is shifted past
+the added outer universal while preserving its own inner binder. -/
   | disjSometimesAlways (p q) :
       NormalizesScoped (.disj (.quantified .sometimes p) (.quantified .always q))
         (.quantified .always (.quantified .sometimes
-          (.disj (weakenBound q) p)))
+          (.disj (weakenBound q) (shiftBoundAt 1 p))))
   | alwaysCongr : NormalizesScoped p q →
       NormalizesScoped (.quantified .always p) (.quantified .always q)
   | sometimesCongr : NormalizesScoped p q →
@@ -54,5 +57,70 @@ order after the scope normalization. -/
   | disjCongr : NormalizesScoped p q → NormalizesScoped r s →
       NormalizesScoped (.disj p r) (.disj q s)
   | trans : NormalizesScoped p q → NormalizesScoped q r → NormalizesScoped p r
+
+/-- Stability witness for the one closed, source-labelled line-(5)→line-(6)
+certificate of ✱9·21.  It stays an explicit parameter: substitution must not
+turn this source-specific certificate into a generic logical rule. -/
+def Star921Line5Line6Stable : Prop :=
+  ∀ {Γ Ξ} (σ : Substitution Γ Ξ)
+    (φ ψ : Apparent Γ [.elementaryProposition]),
+    NormalizesScoped
+      (substitute σ (CanonicalOrderedAdapters.star_9_21_line5_raw φ ψ))
+      (substitute σ (CanonicalOrderedAdapters.star_9_21_line6_raw φ ψ))
+
+theorem NormalizesScoped.substitute
+    (stable921 : Star921Line5Line6Stable)
+    {p q : Raw Γ} (certificate : NormalizesScoped p q) (σ : Substitution Γ Ξ) :
+    NormalizesScoped (CanonicalOrderedFormula.substitute σ p)
+      (CanonicalOrderedFormula.substitute σ q) := by
+  induction certificate generalizing Ξ with
+  | refl p => exact .refl _
+  | negAlways p => exact .negAlways _
+  | negSometimes p => exact .negSometimes _
+  | star_9_06_imp p q =>
+      simpa [CanonicalOrderedFormula.substitute,
+        CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.star_9_06_imp (CanonicalOrderedFormula.substitute σ p)
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) q)
+  | star_9_21_line5_line6 φ ψ => exact stable921 σ φ ψ
+  | disjRight quantifier p r =>
+      simpa [CanonicalOrderedFormula.substitute,
+        CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.disjRight quantifier
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
+          (CanonicalOrderedFormula.substitute σ r)
+  | disjLeft quantifier p r =>
+      simpa [CanonicalOrderedFormula.substitute,
+        CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.disjLeft quantifier
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
+          (CanonicalOrderedFormula.substitute σ r)
+  | disjAlwaysSometimes p q =>
+      have commute := CanonicalOrderedFormula.substitute_liftN_shiftBoundAt σ 1 q
+      simp only [Substitution.liftN_succ, Substitution.liftN_zero] at commute
+      simp only [CanonicalOrderedFormula.substitute]
+      rw [commute]
+      simpa [CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.disjAlwaysSometimes
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) q)
+  | disjSometimesAlways p q =>
+      have commute := CanonicalOrderedFormula.substitute_liftN_shiftBoundAt σ 1 p
+      simp only [Substitution.liftN_succ, Substitution.liftN_zero] at commute
+      simp only [CanonicalOrderedFormula.substitute]
+      rw [commute]
+      simpa [CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.disjSometimesAlways
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) q)
+  | alwaysCongr certificate ih =>
+      simpa [CanonicalOrderedFormula.substitute] using
+        NormalizesScoped.alwaysCongr (ih (Substitution.lift σ))
+  | sometimesCongr certificate ih =>
+      simpa [CanonicalOrderedFormula.substitute] using
+        NormalizesScoped.sometimesCongr (ih (Substitution.lift σ))
+  | negCongr certificate ih => exact .negCongr (ih σ)
+  | disjCongr left right ihLeft ihRight => exact .disjCongr (ihLeft σ) (ihRight σ)
+  | trans first second ihFirst ihSecond => exact .trans (ihFirst σ) (ihSecond σ)
 
 end PM.Architecture.CanonicalNormalization
