@@ -45,6 +45,50 @@ theorem line6_to_line7 (antecedent consequent : Raw Γ) :
       (line7Raw antecedent consequent) := by
   exact star_9_07_at 0 antecedent consequent
 
+/-- Dedicated ✱9·22 slots, constructed before the inner `z` binder is
+introduced.  In particular `φy` is an outer operand and is weakened only
+when placed under `z`; this differs essentially from the already-closed
+✱9·21 slots. -/
+def phiYOuterRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofApparent φ
+
+def psiZBodyRaw (ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofApparent ψ
+
+def rightLine6Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always (.quantified .sometimes
+    (.disj (.neg (weakenBound (phiYOuterRaw φ))) (psiZBodyRaw ψ)))
+
+def rightLine7Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always
+    (.disj (.neg (phiYOuterRaw φ))
+      (.quantified .sometimes (psiZBodyRaw ψ)))
+
+/-- The concrete inner ✱9·07 occurrence in line (6)→(7).  Its left operand
+is weakened explicitly beneath `z`, so capture-freedom is syntactic rather
+than an untrue post-hoc unused-binder claim. -/
+theorem rightLine6_to_line7
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScoped (rightLine6Raw φ ψ) (rightLine7Raw φ ψ) := by
+  apply NormalizesScoped.alwaysCongr
+  exact NormalizesScoped.star_9_06_imp
+    (phiYOuterRaw φ) (psiZBodyRaw ψ)
+
+def leftLine6Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .sometimes
+    (.neg (.disj (.neg (phiYOuterRaw φ)) (psiZBodyRaw ψ)))
+
+def concreteLine6Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj (leftLine6Raw φ ψ) (rightLine6Raw φ ψ)
+
+def concreteLine7Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj (leftLine6Raw φ ψ) (rightLine7Raw φ ψ)
+
+theorem concreteLine6_to_line7
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScoped (concreteLine6Raw φ ψ) (concreteLine7Raw φ ψ) :=
+  .disjCongr (.refl _) (rightLine6_to_line7 φ ψ)
+
 /-- Closed evidence for the printed chain.  The source line and every later
 endpoint remain explicit; a future bridge must identify the audited concrete
 line-(6) operands before this structure can be inhabited. -/
