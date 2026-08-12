@@ -1,5 +1,6 @@
 import Principia.Architecture.FirstOrderPrerequisites
 import Principia.Architecture.CanonicalOrderedAdapters
+import Principia.Architecture.FirstOrderQ259
 
 namespace PM.Architecture.Star921MatrixKernel
 
@@ -71,12 +72,18 @@ def star_9_21_matrix_line5_raw (schema : MatrixFunctionSchema Γ) : Raw Γ :=
     (.neg (.quantified .always (ofFirstOrder schema.left)))
     (.quantified .always (ofApparent schema.right))
 
+/-- The final displayed Raw target of ✱9·3 after its cited ✱9·03
+normalization.  It is the Raw image of the existing assigned-order-one
+target, so no alternate object-language target is introduced. -/
+def star_9_3_line6_raw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofOrdered (PM.Architecture.FirstOrderQ259.star_9_3_target φ)
+
 /-- A narrowly scoped theorem-schema action licensed by the printed use of
 ✱9·21 in line (5) of ✱9·3.  It is intentionally not an `OrderedAssertion`
 constructor: the latter would be a new Pp.  The sole constructor records the
 exact mixed schema target and requires the preceding line-(4) derivation. -/
-inductive Star921MatrixSchemaDerivation (schema : MatrixFunctionSchema Γ) :
-    Raw Γ → Prop where
+inductive Star921MatrixSchemaDerivation :
+    (schema : MatrixFunctionSchema Γ) → Raw Γ → Prop where
   /-- The ✱2·08 identity at the assigned first-order matrix carrier.  The
   source line (1) of the ✱9·3 proof applies the identity to the mixed matrix
   implication; this is theorem-schema evidence, not an `OrderedAssertion`
@@ -92,6 +99,12 @@ inductive Star921MatrixSchemaDerivation (schema : MatrixFunctionSchema Γ) :
   | star_9_21_firstOrder_instance :
       Star921MatrixSchemaDerivation schema (matrixSchemaImpRaw schema) →
       Star921MatrixSchemaDerivation schema (star_9_21_matrix_line5_raw schema)
+  /-- The closed ✱9·03 normalization for the exact mixed schema of ✱9·3. -/
+  | star_9_3_normalize (φ : Apparent Γ [.elementaryProposition]) :
+      Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
+        (star_9_21_matrix_line5_raw (star_9_3_matrix_schema φ)) →
+      Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
+        (star_9_3_line6_raw φ)
 
 /-- The exact theorem-level transition corresponding to the printed
 `(4).✱9·21` line.  It remains unusable until its line-(4) Raw derivation is
@@ -102,6 +115,16 @@ def star_9_21_firstOrder_instance
     (line4 : Star921MatrixSchemaDerivation schema (matrixSchemaImpRaw schema)) :
     Star921MatrixSchemaDerivation schema (star_9_21_matrix_line5_raw schema) :=
   .star_9_21_firstOrder_instance line4
+
+/-- The closed line-(5)→final-line normalization in the printed proof of
+✱9·3.  This constructor is scoped to its exact source schema and target;
+it is neither a generic Raw conversion nor an `OrderedAssertion` rule. -/
+inductive Star93Normalization
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ → Raw Γ → Prop where
+  | star_9_03 : Star93Normalization φ
+      (star_9_21_matrix_line5_raw (star_9_3_matrix_schema φ))
+      (star_9_3_line6_raw φ)
+
 
 theorem star_9_3_matrix_line4_raw
     (φ : Apparent Γ [.elementaryProposition]) :
@@ -122,5 +145,15 @@ def derive_star_9_3_line5_schema
     Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
       (star_9_21_matrix_line5_raw (star_9_3_matrix_schema φ)) :=
   star_9_21_firstOrder_instance _ (derive_star_9_3_line4_schema φ)
+
+/-- Complete theorem-schema evidence for the printed ✱9·3 derivation.  The
+final target is definitionally the canonical Raw image of the repository's
+assigned-order-one target; reification into `OrderedAssertion` remains a
+separate carrier bridge. -/
+def star_9_3_schema
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
+      (star_9_3_line6_raw φ) :=
+  .star_9_3_normalize φ (derive_star_9_3_line5_schema φ)
 
 end PM.Architecture.Star921MatrixKernel
