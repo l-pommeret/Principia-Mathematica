@@ -5,6 +5,7 @@ namespace PM.Architecture.CanonicalOrderedJudgement
 open PM.CanonicalOrderedFormula
 open PM.Architecture.CanonicalOrderedAdapters
 open PM.Architecture.FirstOrderPrerequisites
+open PM.Architecture.CanonicalNormalization
 
 /-- Conservative image of the indexed assertion judgement in canonical Raw
 syntax.  It has no constructors beyond an existing `OrderedAssertion`. -/
@@ -32,5 +33,20 @@ theorem image_convert {p q : Raw Γ} (equality : p = q) :
   intro proof
   cases equality
   exact proof
+
+/-- Conservative canonical assertion after a source-labelled scope
+normalization.  Its sole proof payload remains an indexed `OrderedAssertion`;
+the second field records how its Raw embedding reaches the displayed target. -/
+def NormalizedCanonicalAssertion (raw : Raw Γ) : Prop :=
+  ∃ (order : Nat) (formula : OrderedFormula Γ order),
+    OrderedAssertion formula ∧ NormalizesScoped (ofOrdered formula) raw
+
+def normalize {source target : Raw Γ}
+    (certificate : NormalizesScoped source target)
+    (assertion : CanonicalOrderedAssertion source) :
+    NormalizedCanonicalAssertion target := by
+  rcases assertion with ⟨order, formula, proof, equation⟩
+  subst source
+  exact ⟨order, formula, proof, certificate⟩
 
 end PM.Architecture.CanonicalOrderedJudgement
