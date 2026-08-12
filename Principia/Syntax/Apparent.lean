@@ -1010,6 +1010,20 @@ def renameThirdReal (ρ : Apparent.RealRenaming Γ Ξ) :
   | PM.Quantified.sometimes body =>
       PM.Quantified.sometimes (renameQuantifiedReal ρ body)
 
+def renameThird (ρ : Apparent.Renaming Δ Ξ) :
+    ThirdOrder Γ Δ → ThirdOrder Γ Ξ
+  | PM.Quantified.always body =>
+      PM.Quantified.always (renameQuantified (Apparent.liftRenaming ρ) body)
+  | PM.Quantified.sometimes body =>
+      PM.Quantified.sometimes (renameQuantified (Apparent.liftRenaming ρ) body)
+
+def substituteThird (σ : Apparent.Substitution Γ Δ Ξ) :
+    ThirdOrder Γ Δ → ThirdOrder Γ Ξ
+  | PM.Quantified.always body =>
+      PM.Quantified.always (substituteQuantified (Apparent.liftSubstitution σ) body)
+  | PM.Quantified.sometimes body =>
+      PM.Quantified.sometimes (substituteQuantified (Apparent.liftSubstitution σ) body)
+
 /-- Same-assigned-order formula syntax above the minimal third-order
 quantified carrier.  It is deliberately separate from `ThirdOrder`: the
 wrapper records the negation/disjunction required by the printed ✱9·06,
