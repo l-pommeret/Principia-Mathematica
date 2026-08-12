@@ -1,0 +1,35 @@
+{
+  "batch": "PM1-STAR9-Q260-36",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "141",
+    "scan_leaves": [163],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [{
+      "scan_leaf": 163,
+      "printed_page": 141,
+      "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page163-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+      "sha256": "cc5234bf61c16024eed7a0c95a03f96fa47ae8fab9a23470739bad39c0965b97"
+    }]
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "items": [{
+    "id": "PM1:✱9·36",
+    "kind": "derived-proposition",
+    "printed": "⊢ : .p .∨. (x).φx : ⊃ : (x).φx .∨. p",
+    "printed_page": 141,
+    "scan_leaf": 163,
+    "lean_path": "Principia/Architecture/Star936Kernel.lean",
+    "declaration": "PM.Architecture.Star936Kernel.derive",
+    "formal_scope": "closed exact ✱1·4;✱9·13·21;(✱9·03·04) chain: lines (1) and (2) are assigned first-order assertions, the printed ✱9·21 application is the fixed canonical Raw witness for p∨φ and φ∨p, and the endpoint retains the displayed ✱9·03·04 reading; deliberately not an OrderedAssertion reification or generic Raw detachment",
+    "source_status": "source-catalogued",
+    "formal_status": "awaiting-ci",
+    "integration_status": "awaiting-closed-star936-kernel-check",
+    "printed_dependencies": ["PM1:✱1·4", "PM1:✱9·13·21", "PM1:✱9·03·04"],
+    "lean_dependencies": ["PM.Derivation.star_1_4", "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_13", "PM.Architecture.Star921MatrixKernel.Star9KernelAssertion.star_9_21", "PM.FirstEdition.Volume1.Star9.star_9_03", "PM.FirstEdition.Volume1.Star9.star_9_04"],
+    "normalized_dependencies": ["PM1:✱1·4", "PM1:✱9·03", "PM1:✱9·04", "PM1:✱9·13", "PM1:✱9·21"],
+    "blocked_dependencies": []
+  }],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}
