@@ -895,4 +895,65 @@ theorem star_5_74 {Γ} (p q r : PM.Elementary Γ) :
   have bToA := comp bToC cToA
   exact infer bToA (infer aToB (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
 
+/-- PM I (1910), p. 131, ✱5·75. -/
+theorem star_5_75 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((r ⊃ₚ (∼ₚ q)) ⊃ₚ ((p ≡ₚ (q ∨ₚ r)) ⊃ₚ (((p ∧ₚ (∼ₚ q)) ≡ₚ r)))) := by
+  let h := r ⊃ₚ (∼ₚ q)
+  let e := p ≡ₚ (q ∨ₚ r)
+  let a := h ∧ₚ e
+  let x := p ∧ₚ (∼ₚ q)
+  have infer : ∀ {m n : PM.Elementary Γ}, (⊢ₚ m) → (⊢ₚ (m ⊃ₚ n)) → (⊢ₚ n) := by
+    intro m n hm hmn; match Γ, m, n, hm, hmn with
+    | [], _, _, hm, hmn => exact PM.Derivation.star_1_1 hm hmn
+    | (τ :: Δ), _, _, hm, hmn => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hm hmn
+  have comp : ∀ {m n o : PM.Elementary Γ}, (⊢ₚ (m ⊃ₚ n)) → (⊢ₚ (n ⊃ₚ o)) → (⊢ₚ (m ⊃ₚ o)) := by
+    intro m n o hmn hno; exact infer hmn (infer hno (PM.FirstEdition.Volume1.Star2.star_2_05 m n o))
+  have join : ∀ {m n o : PM.Elementary Γ}, (⊢ₚ (m ⊃ₚ n)) → (⊢ₚ (m ⊃ₚ o)) →
+      (⊢ₚ (m ⊃ₚ (n ∧ₚ o))) := by
+    intro m n o hmn hmo
+    have doubled : ⊢ₚ (m ⊃ₚ (m ∧ₚ m)) := by
+      exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 m m)
+        (PM.FirstEdition.Volume1.Star2.star_2_43 m (m ∧ₚ m))
+    have paired := infer hmo (infer hmn
+      (PM.FirstEdition.Volume1.Star3.star_3_2 (m ⊃ₚ n) (m ⊃ₚ o)))
+    exact comp doubled (infer paired (PM.FirstEdition.Volume1.Star3.star_3_47 m m n o))
+  have aH : ⊢ₚ (a ⊃ₚ h) := PM.FirstEdition.Volume1.Star3.star_3_26 h e
+  have aE : ⊢ₚ (a ⊃ₚ e) := PM.FirstEdition.Volume1.Star3.star_3_27 h e
+  have eForward : ⊢ₚ (a ⊃ₚ (p ⊃ₚ (q ∨ₚ r))) :=
+    comp aE (PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ (q ∨ₚ r)) ((q ∨ₚ r) ⊃ₚ p))
+  have xToR : ⊢ₚ (a ⊃ₚ (x ⊃ₚ r)) := by
+    have equivalence := star_5_6 p q r
+    have bridge : ⊢ₚ ((p ⊃ₚ (q ∨ₚ r)) ⊃ₚ (x ⊃ₚ r)) :=
+      infer equivalence (PM.FirstEdition.Volume1.Star3.star_3_27
+          ((x ⊃ₚ r) ⊃ₚ (p ⊃ₚ (q ∨ₚ r)))
+          ((p ⊃ₚ (q ∨ₚ r)) ⊃ₚ (x ⊃ₚ r)))
+    exact comp (m := a) (n := p ⊃ₚ (q ∨ₚ r)) (o := x ⊃ₚ r) eForward bridge
+  have rToP : ⊢ₚ (a ⊃ₚ (r ⊃ₚ p)) := by
+    let y := a ∧ₚ r
+    have yA : ⊢ₚ (y ⊃ₚ a) := PM.FirstEdition.Volume1.Star3.star_3_26 a r
+    have yR : ⊢ₚ (y ⊃ₚ r) := PM.FirstEdition.Volume1.Star3.star_3_27 a r
+    have yE := comp yA aE
+    have yQR := comp yR (PM.Derivation.star_1_3 q r)
+    have eBackward : ⊢ₚ (e ⊃ₚ ((q ∨ₚ r) ⊃ₚ p)) :=
+      PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ (q ∨ₚ r)) ((q ∨ₚ r) ⊃ₚ p)
+    have yBackward := comp yE eBackward
+    have yP := comp (join yQR yBackward) (PM.FirstEdition.Volume1.Star3.star_3_35 (q ∨ₚ r) p)
+    exact infer yP (PM.FirstEdition.Volume1.Star3.star_3_3 a r p)
+  have rToNq : ⊢ₚ (a ⊃ₚ (r ⊃ₚ (∼ₚ q))) := by
+    let y := a ∧ₚ r
+    have yA : ⊢ₚ (y ⊃ₚ a) := PM.FirstEdition.Volume1.Star3.star_3_26 a r
+    have yR : ⊢ₚ (y ⊃ₚ r) := PM.FirstEdition.Volume1.Star3.star_3_27 a r
+    have yH := comp yA aH
+    have yNq := comp (join yR yH) (PM.FirstEdition.Volume1.Star3.star_3_35 r (∼ₚ q))
+    exact infer yNq (PM.FirstEdition.Volume1.Star3.star_3_3 a r (∼ₚ q))
+  have rToX : ⊢ₚ (a ⊃ₚ (r ⊃ₚ x)) := by
+    have paired := join rToP rToNq
+    have equivalence := PM.FirstEdition.Volume1.Star4.star_4_76 r p (∼ₚ q)
+    have forward := infer equivalence (PM.FirstEdition.Volume1.Star3.star_3_26
+      (((r ⊃ₚ p) ∧ₚ (r ⊃ₚ (∼ₚ q))) ⊃ₚ (r ⊃ₚ x))
+      ((r ⊃ₚ x) ⊃ₚ ((r ⊃ₚ p) ∧ₚ (r ⊃ₚ (∼ₚ q)))))
+    exact comp paired forward
+  have aEq : ⊢ₚ (a ⊃ₚ (x ≡ₚ r)) := join xToR rToX
+  exact infer aEq (PM.FirstEdition.Volume1.Star3.star_3_3 h e (x ≡ₚ r))
+
 end PM.FirstEdition.Volume1.Star5
