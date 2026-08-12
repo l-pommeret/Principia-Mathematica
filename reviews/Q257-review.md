@@ -19,4 +19,7 @@ result remains the narrow closed `Star922KernelAssertion φ φ`, not an
 new Pp.  GitHub Actions run `31575922684` succeeded at immutable commit
 `a773a806b9759f571ce5ddaaa781d28553fc11b5`; it certifies both narrow
 judgements ✱9·23 and ✱9·24, not an `OrderedAssertion` reification.  ✱9·25
-retains its independent prepared status.
+is now the exact closed `Star925Kernel.derive` judgement: it uses only the
+fixed ✱9·23 self-instance at `p∨φ` and the explicit definitional ✱9·04
+spelling.  It is awaiting a separate kernel check and does not add a generic
+conversion rule.
