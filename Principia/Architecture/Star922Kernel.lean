@@ -176,6 +176,12 @@ theorem concreteLine7_to_final
     exact .trans extraction
       (NormalizesScoped.disjCongr (.negSometimesReverse _) (.refl _))
 
+theorem line4Raw_is_adjacent_line4
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    line4Carrier φ ψ = star_9_21_line4_raw φ ψ := by
+  rfl
+
+
 /-- Closed evidence for the printed chain.  The source line and every later
 endpoint remain explicit; a future bridge must identify the audited concrete
 line-(6) operands before this structure can be inhabited. -/
