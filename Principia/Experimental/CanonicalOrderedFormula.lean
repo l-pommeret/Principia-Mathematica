@@ -193,6 +193,14 @@ theorem instantiateIndex_shiftIndex (depth index : Nat) :
         hNext, hFar, hNe, hSub]
       omega
 
+@[simp] theorem IndexAction.toRaw_shift (action : IndexAction)
+    (depth : Nat) (value : RealVar Γ .elementaryProposition) :
+    (action.shift depth).toRaw value =
+      shiftBoundAt depth (action.toRaw value) := by
+  cases action with
+  | inserted => rfl
+  | retained index => rfl
+
 /-- Instantiate an apparent variable with an elementary value already living
 in the same real context.  Unlike `openBoundAt`, this operation does not add
 or rename any real variable. -/
@@ -221,6 +229,24 @@ def instantiateHeadRaw (value : Elementary Γ) (p : Raw Γ) : Raw Γ :=
   · by_cases hLt : cutoff < index <;>
       simp [instantiateBoundAt, instantiateIndexVar, instantiateIndex,
         IndexAction.toRaw, ofElementaryRaw, hEq, hLt]
+
+theorem instantiateBoundAt_shiftBoundAt_var
+    (depth : Nat) (value : RealVar Γ .elementaryProposition) (p : Raw Γ) :
+    instantiateBoundAt (depth + 1) (.var value) (shiftBoundAt depth p) =
+      shiftBoundAt depth (instantiateBoundAt depth (.var value) p) := by
+  induction p generalizing depth with
+  | elementary p => rfl
+  | bound index =>
+      rw [show shiftBoundAt depth (.bound index) =
+        .bound (shiftIndex depth index) by rfl]
+      rw [instantiateBoundAt_bound_var, instantiateBoundAt_bound_var]
+      unfold instantiateIndexVar
+      rw [instantiateIndex_shiftIndex]
+      exact IndexAction.toRaw_shift _ _ _
+  | quantified quantifier body ih =>
+      simp [shiftBoundAt, instantiateBoundAt, ih, Nat.add_assoc]
+  | neg p ih => simp [shiftBoundAt, instantiateBoundAt, ih]
+  | disj p q ihp ihq => simp [shiftBoundAt, instantiateBoundAt, ihp, ihq]
 
 @[simp] theorem smartNeg_ofElementaryRaw (value : Elementary Γ) :
     smartNeg (ofElementaryRaw value) = .neg (ofElementaryRaw value) := by
