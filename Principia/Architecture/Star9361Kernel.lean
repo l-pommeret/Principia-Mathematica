@@ -18,6 +18,20 @@ def targetRaw (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
   .disj (.neg (leftRaw p φ)) (rightRaw p φ)
 
+def line2Raw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj
+    (.neg (.quantified .always
+      (.disj (ofApparent φ) (shiftBoundAt 0 (.elementary p)))))
+    (.quantified .always
+      (.disj (shiftBoundAt 0 (.elementary p)) (ofApparent φ)))
+
+def after903Raw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj (.neg (leftRaw p φ))
+    (.quantified .always
+      (.disj (shiftBoundAt 0 (.elementary p)) (ofApparent φ)))
+
 def leftFunction (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) :
     Apparent Γ [.elementaryProposition] :=
@@ -35,7 +49,10 @@ structure Star9361KernelAssertion (p : Elementary Γ)
       (Elementary.schemaInstance (fun v => .var (.succ v)) p ∨ₚ Apparent.openHead φ))
   monotonicity : Star921MatrixKernel.Star9CanonicalAssertion
     (star_9_21_line7_raw (leftFunction p φ) (rightFunction p φ))
-  endpoint : targetRaw p φ = targetRaw p φ
+  /-- Closed line (2) after the copied ✱9·13·21 step. -/
+  line2 : line2Raw p φ = line2Raw p φ
+  star903 : NormalizesScoped (line2Raw p φ) (after903Raw p φ)
+  star904 : NormalizesScoped (after903Raw p φ) (targetRaw p φ)
 
 theorem derive (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) :
@@ -44,6 +61,15 @@ theorem derive (p : Elementary Γ)
     (Apparent.openHead φ) (Elementary.schemaInstance (fun v => .var (.succ v)) p)
   monotonicity := Star921MatrixKernel.Star9KernelAssertion.star_9_21
     (leftFunction p φ) (rightFunction p φ)
-  endpoint := rfl
+  line2 := rfl
+  star903 := by
+    apply NormalizesScoped.disjCongr
+    · apply NormalizesScoped.negCongr
+      exact NormalizesScoped.disjRightReverse .always
+        (ofApparent φ) (.elementary p)
+    · exact .refl _
+  star904 := by
+    apply NormalizesScoped.disjCongr (.refl _)
+    exact NormalizesScoped.disjLeftReverse .always (ofApparent φ) (.elementary p)
 
 end PM.Architecture.Star9361Kernel

@@ -51,6 +51,9 @@ inductive NormalizesScoped : Raw Γ → Raw Γ → Prop where
   | disjRightReverse (q p r) :
       NormalizesScoped (.quantified q (.disj p (weakenBound r)))
         (.disj (.quantified q p) r)
+  | disjLeftReverse (q p r) :
+      NormalizesScoped (.quantified q (.disj (weakenBound r) p))
+        (.disj r (.quantified q p))
   /-- ✱9·07: universal-left/existential-right, retaining `x` outside `y`.
   The existential body already binds `y`, so it is shifted at cutoff one
   rather than weakened at cutoff zero. -/
@@ -360,6 +363,12 @@ theorem NormalizesScoped.substitute
       simpa [CanonicalOrderedFormula.substitute,
         CanonicalOrderedFormula.substitute_lift_weakenBound] using
         NormalizesScoped.disjRightReverse quantifier
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
+          (CanonicalOrderedFormula.substitute σ r)
+  | disjLeftReverse quantifier p r =>
+      simpa [CanonicalOrderedFormula.substitute,
+        CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.disjLeftReverse quantifier
           (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
           (CanonicalOrderedFormula.substitute σ r)
   | disjAlwaysSometimes p q =>
