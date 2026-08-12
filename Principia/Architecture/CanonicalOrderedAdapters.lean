@@ -126,6 +126,41 @@ theorem ofApparent_abstractRealOuter
       simp [ofApparent, Apparent.abstractRealOuter, abstractOuter,
         abstractOuterAt, ihLeft, ihRight]
 
+/-- Canonical Raw opening is the exact image of `Apparent.openRealOuter`.
+The apparent context has an inner binder plus the outer slot being opened. -/
+theorem openOuter_ofApparent
+    (p : Apparent Γ (.elementaryProposition :: .elementaryProposition :: Δ)) :
+    openOuter (ofApparent p) = ofApparent (Apparent.openRealOuter p) := by
+  induction p with
+  | constant name => rfl
+  | real realVariable => rfl
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => rfl
+      | succ predecessor =>
+          cases predecessor with
+          | zero => rfl
+          | succ tail => rfl
+  | neg proposition ih =>
+      change Raw.neg (openOuter (ofApparent proposition)) =
+        Raw.neg (ofApparent (Apparent.openRealOuter proposition))
+      exact congrArg Raw.neg ih
+  | disj left right ihLeft ihRight =>
+      change Raw.disj (openOuter (ofApparent left)) (openOuter (ofApparent right)) =
+        Raw.disj (ofApparent (Apparent.openRealOuter left))
+          (ofApparent (Apparent.openRealOuter right))
+      rw [ihLeft, ihRight]
+
+/-- The canonical outer abstraction is beta-correct on the image of
+`Apparent`: opening after abstraction recovers the original apparent term. -/
+theorem openOuter_abstractOuter_ofApparent
+    (p : Apparent (.elementaryProposition :: Γ)
+      (.elementaryProposition :: Δ)) :
+    openOuter (abstractOuter (ofApparent p)) = ofApparent p := by
+  rw [← ofApparent_abstractRealOuter]
+  rw [openOuter_ofApparent]
+  simp
+
 theorem smartNeg_abstractOuter_ofApparent
     (p : Apparent (.elementaryProposition :: Γ)
       (.elementaryProposition :: Δ)) :
