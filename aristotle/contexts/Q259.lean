@@ -743,11 +743,15 @@ def star_9_31_target (φ : Apparent Γ [.elementaryProposition]) :
 
 def star_9_32_target (q : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : OrderedFormula Γ 1 :=
-  .firstOrder (FirstOrder.impElementaryToFirst q (FirstOrder.always φ))
+  .firstOrder
+    (FirstOrder.impElementaryToFirst q
+      (FirstOrder.disjRightElementary (FirstOrder.always φ) q))
 
 def star_9_33_target (q : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : OrderedFormula Γ 1 :=
-  .firstOrder (FirstOrder.impElementaryToFirst q (FirstOrder.sometimes φ))
+  .firstOrder
+    (FirstOrder.impElementaryToFirst q
+      (FirstOrder.disjRightElementary (FirstOrder.sometimes φ) q))
 
 end PM.Architecture.FirstOrderQ259
 

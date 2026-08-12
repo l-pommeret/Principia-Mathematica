@@ -47,8 +47,8 @@
     "status": "complete"
   },
   "source_backfill_required": false,
-  "source_bytes": 30022,
-  "source_sha256": "83df825e18d63ba073807a0129d7e0fb0281ddcd6450e7444c1a3382f897e9d5",
+  "source_bytes": 30112,
+  "source_sha256": "b58d82182f026e0807310dff21150bf8fcebee06c11a4d5ab59dba960ff98972",
   "sources": [
     {
       "bytes": 805,
@@ -94,12 +94,12 @@
       "source_sha256": "6d30b66359623391b78a727b2fc0a7b3cc4e25f1dadb6b11a51d9f7c1ee9efae"
     },
     {
-      "bytes": 906,
+      "bytes": 996,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/FirstOrderQ259.lean",
-      "slice_sha256": "1c80be099338d7d2c304fb7b0fe66dc1369d079b7a2ab84c531a8d2e823a02f2",
-      "source_sha256": "2f2b7a3e177c54f6f12af2348eb572ee8d9396935bfce1b7503304d9c8905881"
+      "slice_sha256": "9901702b8c726ba2068cc400f52976ad2747be09a0de53fda45d56628240e62a",
+      "source_sha256": "b97f8023ea87cd359be6b1a34903c58c5762421f30dd84fd01b03cceb5eedfc6"
     },
     {
       "bytes": 1035,
@@ -111,11 +111,8 @@
     }
   ],
   "ci_evidence": {
-    "commit": "6518732a70f6c7e794abaf459e08543531dee0ef",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31509710050",
-    "conclusion": "success",
-    "scope": "isolated-interface",
-    "canonical_integration": "forbidden",
-    "one_to_one_remap": "pending"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

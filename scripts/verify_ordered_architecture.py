@@ -48,6 +48,20 @@ def main() -> None:
         raise SystemExit("ordered core leaked into the elementary kernel")
     if "scopedFirstOrderDisj .sameAssignedOrder" not in targets:
         raise SystemExit("Q259 order-one disjunction bypasses its scope certificate")
+    if targets.count("FirstOrder.disjRightElementary") != 2:
+        raise SystemExit("Q259 ✱9·32/33 must retain their printed final disjunction with q")
+    if not re.search(
+        r"star_9_32_target[\s\S]*?impElementaryToFirst q[\s\S]*?"
+        r"disjRightElementary \(FirstOrder\.always φ\) q",
+        targets,
+    ):
+        raise SystemExit("Q259 ✱9·32 target differs from the printed universal formula")
+    if not re.search(
+        r"star_9_33_target[\s\S]*?impElementaryToFirst q[\s\S]*?"
+        r"disjRightElementary \(FirstOrder\.sometimes φ\) q",
+        targets,
+    ):
+        raise SystemExit("Q259 ✱9·33 target differs from the printed existential formula")
     if "OrderedDisjunctionScope order" not in derivation:
         raise SystemExit("ordered detachment omits its disjunction scope certificate")
     if re.search(r"(?m)^\s+star_9_(?:3|31|32|33)\s*:", closed_rulebook):
