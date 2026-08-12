@@ -1,0 +1,21 @@
+{
+  "batch": "PM1-STAR10-Q266-12",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {"printed_pages":"146","scan_leaves":[168],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","scan_sha256":"0b416ff85b3cfb865eb3cfab5c6a4c04cfff65f0ac21a68f7e64d80caf30736f"},
+  "witnesses": ["PM1-1910-SCAN","PG78050"],
+  "items": [{
+    "id":"PM1:✱10·12","kind":"derived-proposition",
+    "printed":"⊢ : .(x).p ∨ φx .⊃ : p .∨ .(x).φx  [✱9·25]",
+    "printed_page":146,"scan_leaf":168,
+    "lean_path":"Principia/Architecture/Star10Q266Kernel.lean",
+    "declaration":"PM.FirstEdition.Volume1.Star10.star_10_12",
+    "formal_scope":"exact closed ordered target shared with the explicitly cited ✱9·25",
+    "source_status":"source-catalogued","formal_status":"awaiting-ci",
+    "integration_status":"canonical-awaiting-ci",
+    "printed_dependencies":["PM1:✱9·25"],
+    "lean_dependencies":["PM.Architecture.Star925Kernel.derive"],
+    "normalized_dependencies":["PM1:✱9·25"]
+  }],
+  "ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+}

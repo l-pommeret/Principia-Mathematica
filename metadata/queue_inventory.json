@@ -7,9 +7,9 @@
   },
   "counts": {
     "catalogued_items": 1136,
-    "object_language_ast_parsed": 411,
+    "object_language_ast_parsed": 413,
     "metalinguistic_routes": 12,
-    "architecture_gated_source_routes": 713,
+    "architecture_gated_source_routes": 711,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
     "catalogued_items_missing_proof_skeleton": 1078,
@@ -364,10 +364,11 @@
       "id": "PM1:✱10·1",
       "kind": "primitive-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "8764fc4136cff00ad091c3b7873703ee10cbc89415ab76512579e65155bead38"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -377,10 +378,11 @@
       "id": "PM1:✱10·11",
       "kind": "primitive-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q264-star-10-primitive-audit.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -390,10 +392,11 @@
       "id": "PM1:✱10·12",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "a47b70442386ab692b0194445eed4ca3026fd6c69181aaa97990d206e437c0e8"
       },
       "proof_skeleton": {
         "status": "missing"

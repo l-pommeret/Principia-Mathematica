@@ -23,14 +23,16 @@
       "printed": "⊢ : (x).φx .⊃ .φy",
       "printed_page": 144,
       "scan_leaf": 166,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_1",
-      "formal_scope": "first-order general-to-particular; architecture blocked",
+      "lean_path": "Principia/Architecture/Star10Q264Kernel.lean",
+      "declaration": "PM.Architecture.Star10Q264Kernel.star_10_1",
+      "formal_scope": "exact mixed Raw general-to-particular endpoint",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"strict","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q264-star-10-primitive-audit.md","editorial_note":"The exact primitive endpoint is already inhabited by the earlier source-audited ✱9·2 kernel derivation; no new primitive assertion is introduced."}
     },
     {
       "id": "PM1:✱10·11",
@@ -38,14 +40,18 @@
       "printed": "If φy is true whatever possible argument y may be, then (x).φx is true.",
       "printed_page": 144,
       "scan_leaf": 166,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_11",
-      "formal_scope": "first-order assertion rule; architecture blocked",
+      "lean_path": "Principia/Architecture/Star10Q264Kernel.lean",
+      "declaration": "PM.Architecture.Star10Q264Kernel.star_10_11",
+      "formal_scope": "exact arbitrary-leading-variable premise to universal assertion rule",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q264-star-10-primitive-audit.md",
       "printed_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"strict","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q264-star-10-primitive-audit.md","editorial_note":"The metalinguistic premise is represented by an assertion in a context with an arbitrary leading real variable and discharged by the existing audited generalization constructor."}
     }
   ],
   "ci_evidence": {
