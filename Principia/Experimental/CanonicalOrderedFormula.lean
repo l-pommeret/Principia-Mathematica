@@ -292,11 +292,11 @@ def smartDisjScopedAux : Nat → Nat → Raw Γ → Raw Γ → Raw Γ
   | depth, fuel + 1, .quantified .always left, .quantified .sometimes right =>
       .quantified .always (.quantified .sometimes
         (smartDisjScopedAux (depth + 2) fuel
-          (shiftBoundAt (depth + 1) left) right))
+          (shiftBoundAt (depth + 1) left) (shiftBoundAt (depth + 1) right)))
   | depth, fuel + 1, .quantified .sometimes left, .quantified .always right =>
       .quantified .always (.quantified .sometimes
         (smartDisjScopedAux (depth + 2) fuel
-          (shiftBoundAt (depth + 1) left) right))
+          (shiftBoundAt (depth + 1) left) (shiftBoundAt (depth + 1) right)))
   | depth, fuel + 1, .quantified quantifier left, right =>
       .quantified quantifier (smartDisjScopedAux (depth + 1) fuel left
         (shiftBoundAt depth right))
@@ -328,6 +328,22 @@ theorem smartDisjScopedAux_nonQuantified
   cases left <;> cases right <;>
     simp_all [leadingQuantifier?, smartDisjScopedAux]
 
+theorem smartDisjScopedAux_left_nonQuantified
+    (depth fuel : Nat) (left body : Raw Γ) (quantifier : Quantifier)
+    (hLeft : leadingQuantifier? left = none) :
+    smartDisjScopedAux depth (fuel + 1) left (.quantified quantifier body) =
+      .quantified quantifier
+        (smartDisjScopedAux (depth + 1) fuel (shiftBoundAt depth left) body) := by
+  cases left <;> simp_all [leadingQuantifier?, smartDisjScopedAux]
+
+theorem smartDisjScopedAux_right_nonQuantified
+    (depth fuel : Nat) (body right : Raw Γ) (quantifier : Quantifier)
+    (hRight : leadingQuantifier? right = none) :
+    smartDisjScopedAux depth (fuel + 1) (.quantified quantifier body) right =
+      .quantified quantifier
+        (smartDisjScopedAux (depth + 1) fuel body (shiftBoundAt depth right)) := by
+  cases right <;> simp_all [leadingQuantifier?, smartDisjScopedAux]
+
 @[simp] theorem leadingQuantifier?_instantiateBoundAt_var_none
     (depth : Nat) (value : RealVar Γ .elementaryProposition) (p : Raw Γ)
     (h : leadingQuantifier? p = none) :
@@ -339,6 +355,53 @@ theorem smartDisjScopedAux_nonQuantified
       · by_cases hLt : depth < index <;>
           simp [leadingQuantifier?, instantiateBoundAt, ofElementaryRaw, hEq, hLt]
   | _ => simp_all [leadingQuantifier?, instantiateBoundAt]
+
+theorem instantiateBoundAt_smartDisjScopedAux_var
+    (depth fuel : Nat) (value : RealVar Γ .elementaryProposition)
+    (left right : Raw Γ) :
+    instantiateBoundAt depth (.var value)
+        (smartDisjScopedAux depth fuel left right) =
+      smartDisjScopedAux depth fuel
+        (instantiateBoundAt depth (.var value) left)
+        (instantiateBoundAt depth (.var value) right) := by
+  induction fuel generalizing depth left right with
+  | zero => rfl
+  | succ fuel ih =>
+      cases hLeft : leadingQuantifier? left with
+      | none =>
+          cases hRight : leadingQuantifier? right with
+          | none =>
+              rw [smartDisjScopedAux_nonQuantified depth fuel left right hLeft hRight]
+              rw [smartDisjScopedAux_nonQuantified]
+              · rfl
+              · exact leadingQuantifier?_instantiateBoundAt_var_none depth value left hLeft
+              · exact leadingQuantifier?_instantiateBoundAt_var_none depth value right hRight
+          | some rightView =>
+              rcases rightView with ⟨rightQuantifier, rightBody⟩
+              rw [eq_quantified_of_leadingQuantifier?_eq_some hRight]
+              rw [smartDisjScopedAux_left_nonQuantified depth fuel left rightBody
+                rightQuantifier hLeft]
+              simp only [instantiateBoundAt]
+              rw [smartDisjScopedAux_left_nonQuantified]
+              · simp [instantiateBoundAt, ih, instantiateBoundAt_shiftBoundAt_var]
+              · exact leadingQuantifier?_instantiateBoundAt_var_none depth value left hLeft
+      | some leftView =>
+          rcases leftView with ⟨leftQuantifier, leftBody⟩
+          rw [eq_quantified_of_leadingQuantifier?_eq_some hLeft]
+          cases hRight : leadingQuantifier? right with
+          | none =>
+              rw [smartDisjScopedAux_right_nonQuantified depth fuel leftBody right
+                leftQuantifier hRight]
+              simp only [instantiateBoundAt]
+              rw [smartDisjScopedAux_right_nonQuantified]
+              · simp [instantiateBoundAt, ih, instantiateBoundAt_shiftBoundAt_var]
+              · exact leadingQuantifier?_instantiateBoundAt_var_none depth value right hRight
+          | some rightView =>
+              rcases rightView with ⟨rightQuantifier, rightBody⟩
+              rw [eq_quantified_of_leadingQuantifier?_eq_some hRight]
+              cases leftQuantifier <;> cases rightQuantifier <;>
+                simp [smartDisjScopedAux, instantiateBoundAt, ih,
+                  instantiateBoundAt_shiftBoundAt_var, Nat.add_assoc]
 
 @[simp] theorem rawSize_openBoundAt (cutoff : Nat) (p : Raw Γ) :
     rawSize (openBoundAt cutoff p) = rawSize p := by
