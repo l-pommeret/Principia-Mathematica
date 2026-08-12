@@ -51,8 +51,8 @@
     "status": "complete"
   },
   "source_backfill_required": false,
-  "source_bytes": 112819,
-  "source_sha256": "961772ae5456d07e5debbfb5e421fd5bbadfbca47c38ec561488f92e22a465a8",
+  "source_bytes": 113490,
+  "source_sha256": "7990db036abed79589c90c0e93ba7311e9c446c5a261b7b47d9a7369471cbfdd",
   "sources": [
     {
       "bytes": 1191,
@@ -157,12 +157,12 @@
       "source_sha256": "396e3b00b0460f4c0fcd553beed86b1690d7d1b3493f3c8f8bfc70bbdaa0da89"
     },
     {
-      "bytes": 5128,
+      "bytes": 5799,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/Star921MatrixKernel.lean",
-      "slice_sha256": "6c312c4eb47a99ee41c00bbc8ff2be12d18b412722e2254ab5b48231ef51eb8c",
-      "source_sha256": "635519ac0730a75a8f3412e074934b78c524adabc6b4cd17866c4475d9de2e59"
+      "slice_sha256": "7e0492e24af028dfb9261f038a424f5323dc6f9679ec7e5dc90684f3a7a24d03",
+      "source_sha256": "d20a67961337f627b7628f9f4cfda5b26a654277ba136b96d38f96096d0d3158"
     },
     {
       "bytes": 996,
@@ -182,11 +182,8 @@
     }
   ],
   "ci_evidence": {
-    "commit": "17d08b6ec4966777273aada00452fc8c12767338",
-    "run": "31567832588",
-    "conclusion": "success",
-    "scope": "isolated-interface",
-    "canonical_integration": "forbidden",
-    "one_to_one_remap": "pending"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

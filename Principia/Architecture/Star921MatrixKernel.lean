@@ -1,5 +1,6 @@
 import Principia.Architecture.FirstOrderPrerequisites
 import Principia.Architecture.CanonicalOrderedAdapters
+import Principia.Architecture.CanonicalOrderedJudgement
 
 namespace PM.Architecture.Star921MatrixKernel
 
@@ -175,11 +176,36 @@ inductive Star9KernelAssertion (formula : OrderedFormula Γ order) : Prop where
         (star_9_3_line6_raw φ))
       (targetRaw : star_9_3_line6_raw φ = ofOrdered formula) :
       Star9KernelAssertion formula
+  | star_9_21_from_normalized
+      (φ ψ : Apparent Γ [.elementaryProposition])
+      (normalized : CanonicalOrderedJudgement.NormalizedCanonicalAssertion
+        (star_9_21_line7_raw φ ψ))
+      (targetRaw : star_9_21_line7_raw φ ψ = ofOrdered formula) :
+      Star9KernelAssertion formula
 
 /-- Source-audited derived judgement for PM I ✱9·3. -/
 def derive_star_9_3
     (φ : Apparent Γ [.elementaryProposition]) :
     Star9KernelAssertion (star_9_3_ordered_target φ) :=
   .star_9_3_from_schema φ (star_9_3_schema φ) rfl
+
+/-- Closed canonical counterpart of `Star9KernelAssertion` for a source
+target which has not been reified into an `OrderedFormula` carrier.  It is an
+abbreviation for an existing normalized assertion witness, not a new rule. -/
+abbrev Star9CanonicalAssertion (target : Raw Γ) : Prop :=
+  CanonicalOrderedJudgement.NormalizedCanonicalAssertion target
+
+namespace Star9KernelAssertion
+
+/-- PM I ✱9·21 through its complete source-audited line-(7) normalization.
+The exact target is the canonical Raw rendering of the printed apparent
+formula.  Unlike ✱9·3, no equality to `ofOrdered (star_9_21_target φ ψ)` is
+available, so this deliberately remains in the closed canonical judgement
+rather than falsely claiming an `OrderedAssertion`. -/
+def star_9_21 (φ ψ : Apparent Γ [.elementaryProposition]) :
+    Star9CanonicalAssertion (star_9_21_line7_raw φ ψ) :=
+  CanonicalOrderedJudgement.derive_star_9_21_line7_normalized φ ψ
+
+end Star9KernelAssertion
 
 end PM.Architecture.Star921MatrixKernel

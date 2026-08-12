@@ -2585,11 +2585,28 @@ inductive Star9KernelAssertion (formula : OrderedFormula Γ order) : Prop where
         (star_9_3_line6_raw φ))
       (targetRaw : star_9_3_line6_raw φ = ofOrdered formula) :
       Star9KernelAssertion formula
+  | star_9_21_from_normalized
+      (φ ψ : Apparent Γ [.elementaryProposition])
+      (normalized : CanonicalOrderedJudgement.NormalizedCanonicalAssertion
+        (star_9_21_line7_raw φ ψ))
+      (targetRaw : star_9_21_line7_raw φ ψ = ofOrdered formula) :
+      Star9KernelAssertion formula
 
 def derive_star_9_3
     (φ : Apparent Γ [.elementaryProposition]) :
     Star9KernelAssertion (star_9_3_ordered_target φ) :=
   .star_9_3_from_schema φ (star_9_3_schema φ) rfl
+
+abbrev Star9CanonicalAssertion (target : Raw Γ) : Prop :=
+  CanonicalOrderedJudgement.NormalizedCanonicalAssertion target
+
+namespace Star9KernelAssertion
+
+def star_9_21 (φ ψ : Apparent Γ [.elementaryProposition]) :
+    Star9CanonicalAssertion (star_9_21_line7_raw φ ψ) :=
+  CanonicalOrderedJudgement.derive_star_9_21_line7_normalized φ ψ
+
+end Star9KernelAssertion
 
 end PM.Architecture.Star921MatrixKernel
 
