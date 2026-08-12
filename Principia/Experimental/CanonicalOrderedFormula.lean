@@ -25,6 +25,25 @@ inductive Raw : RealContext → Type where
   | disj : Raw Γ → Raw Γ → Raw Γ
   deriving DecidableEq, Repr
 
+/-- Elementary matrices contain real and apparent-variable atoms but no
+quantifier.  Keeping this fragment separate makes the ✱9·03–·08 smart
+reductions total rather than guarded by a run-time order test. -/
+inductive MatrixRaw : RealContext → Type where
+  | elementary : Elementary Γ → MatrixRaw Γ
+  | bound : Nat → MatrixRaw Γ
+  | neg : MatrixRaw Γ → MatrixRaw Γ
+  | disj : MatrixRaw Γ → MatrixRaw Γ → MatrixRaw Γ
+  deriving DecidableEq, Repr
+
+def MatrixRaw.toRaw : MatrixRaw Γ → Raw Γ
+  | .elementary p => .elementary p
+  | .bound index => .bound index
+  | .neg p => .neg p.toRaw
+  | .disj p q => .disj p.toRaw q.toRaw
+
+def MatrixRaw.smartNeg : MatrixRaw Γ → MatrixRaw Γ
+  | matrix => .neg matrix
+
 def assignedOrder : Raw Γ → Nat
   | .elementary _ => 0
   | .bound _ => 0
@@ -57,12 +76,14 @@ def smartDisjLeft : Raw Γ → Raw Γ → Raw Γ
 /- ✱9·07/·08: when both sides already carry a leading quantifier, retain the
 printed outer binder and reduce the inner disjunction recursively. -/
 def smartDisj : Raw Γ → Raw Γ → Raw Γ
-  | left@(.quantified .always _), right@(.quantified .sometimes _) =>
-      smartDisjRight left right
-  | left@(.quantified .sometimes _), right@(.quantified .always _) =>
-      smartDisjLeft left right
-  | left@(.quantified _ _), right => smartDisjRight left right
-  | left, right@(.quantified _ _) => smartDisjLeft left right
+  | .quantified .always left, .quantified .sometimes right =>
+      .quantified .always (.quantified .sometimes (smartDisj left right))
+  | .quantified .sometimes left, .quantified .always right =>
+      .quantified .always (.quantified .sometimes (smartDisj left right))
+  | .quantified quantifier left, right =>
+      .quantified quantifier (smartDisj left right)
+  | left, .quantified quantifier right =>
+      .quantified quantifier (smartDisj left right)
   | left, right => .disj left right
 
 def smartImp (left right : Raw Γ) : Raw Γ := smartDisj (smartNeg left) right
@@ -96,6 +117,17 @@ theorem raw_bound_injective {left right : Nat} :
   intro equality
   injection equality
 
+def matrixOfApparent : Apparent Γ Δ → MatrixRaw Γ
+  | .constant name => .elementary (.constant name)
+  | .real v => .elementary (.var v)
+  | .bound v => .bound (boundIndex v)
+  | .neg p => .neg (matrixOfApparent p)
+  | .disj p q => .disj (matrixOfApparent p) (matrixOfApparent q)
+
+@[simp] theorem matrixOfApparent_toRaw (p : Apparent Γ Δ) :
+    (matrixOfApparent p).toRaw = ofApparent p := by
+  induction p <;> simp [matrixOfApparent, MatrixRaw.toRaw, ofApparent, *]
+
 def ofFirstOrder : FirstOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofApparent body)
   | .sometimes body => .quantified .sometimes (ofApparent body)
@@ -112,20 +144,27 @@ def ofOrdered : OrderedFormula Γ order → Raw Γ
   | .disj _ p q => .disj (ofOrdered p) (ofOrdered q)
 
 /- The canonical ✱9·03·02 redex used between lines (1) and (2) of ✱9·31. -/
-def line1Redex (matrix conclusion : Raw Γ) : Raw Γ :=
-  .quantified .always (smartDisjRight (smartNeg matrix) conclusion)
+def line1Redex (matrix : MatrixRaw Γ) (conclusion : Raw Γ) : Raw Γ :=
+  .quantified .always (smartDisj matrix.smartNeg.toRaw conclusion)
 
-def line2Normal (matrix conclusion : Raw Γ) : Raw Γ :=
-  smartDisjRight (smartNeg (.quantified .sometimes matrix)) conclusion
+def line2Normal (matrix : MatrixRaw Γ) (conclusion : Raw Γ) : Raw Γ :=
+  smartDisj (.quantified .always matrix.smartNeg.toRaw) conclusion
 
 /- Exact experimental witness: ✱9·02 turns the negated existential antecedent
 into a universal, and ✱9·03 pushes the remaining disjunction below that binder.
 Both printed lines therefore package the same raw canonical AST. -/
-theorem star_9_03_02_line1_line2 (matrix conclusion : Raw Γ) :
+theorem star_9_03_02_line1_line2 (matrix : MatrixRaw Γ) (conclusion : Raw Γ) :
     line1Redex matrix conclusion = line2Normal matrix conclusion := by
-  rfl
+  cases conclusion with
+  | quantified quantifier body =>
+      cases quantifier <;>
+        simp [line1Redex, line2Normal, MatrixRaw.smartNeg, MatrixRaw.toRaw, smartDisj]
+  | elementary p => simp [line1Redex, line2Normal, MatrixRaw.smartNeg, MatrixRaw.toRaw, smartDisj]
+  | bound index => simp [line1Redex, line2Normal, MatrixRaw.smartNeg, MatrixRaw.toRaw, smartDisj]
+  | neg p => simp [line1Redex, line2Normal, MatrixRaw.smartNeg, MatrixRaw.toRaw, smartDisj]
+  | disj p q => simp [line1Redex, line2Normal, MatrixRaw.smartNeg, MatrixRaw.toRaw, smartDisj]
 
-theorem packed_star_9_03_02 (matrix conclusion : Raw Γ) :
+theorem packed_star_9_03_02 (matrix : MatrixRaw Γ) (conclusion : Raw Γ) :
     pack (line1Redex matrix conclusion) = pack (line2Normal matrix conclusion) := by
   rw [star_9_03_02_line1_line2]
 
@@ -157,7 +196,7 @@ theorem Assertion.convert {p q : Raw Γ} (equality : p = q) :
 /-- Judgement-level ✱9·03·02 transport, conservative by construction: the
 underlying indexed proof witness is unchanged and only its canonical raw
 presentation is rewritten. -/
-theorem assertion_star_9_03_02 {matrix conclusion : Raw Γ} :
+theorem assertion_star_9_03_02 {matrix : MatrixRaw Γ} {conclusion : Raw Γ} :
     Assertion (line1Redex matrix conclusion) →
       Assertion (line2Normal matrix conclusion) :=
   Assertion.convert (star_9_03_02_line1_line2 matrix conclusion)
@@ -188,7 +227,7 @@ def star_9_31_primitive_payload (φ : Apparent Γ [.elementaryProposition]) :
 
 def star_9_31_line1_matrix (φ : Apparent Γ [.elementaryProposition]) :
     FirstOrder (.elementaryProposition :: Γ) [.elementaryProposition] :=
-  FirstOrder.abstractRealHead (star_9_31_primitive_payload φ)
+  FirstOrder.abstractRealOuter (star_9_31_primitive_payload φ)
 
 theorem star_9_31_line1_ordered (φ : Apparent Γ [.elementaryProposition]) :
     OrderedAssertion
