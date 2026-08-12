@@ -919,6 +919,20 @@ def substitute (σ : Apparent.Substitution Γ Δ Ξ) :
   | .neg proposition => .neg (substitute σ proposition)
   | .disj left right => .disj (substitute σ left) (substitute σ right)
 
+def renameQuantified (ρ : Apparent.Renaming Δ Ξ) :
+    Quantified Γ Δ → Quantified Γ Ξ
+  | PM.Quantified.always body =>
+      PM.Quantified.always (rename (Apparent.liftRenaming ρ) body)
+  | PM.Quantified.sometimes body =>
+      PM.Quantified.sometimes (rename (Apparent.liftRenaming ρ) body)
+
+def substituteQuantified (σ : Apparent.Substitution Γ Δ Ξ) :
+    Quantified Γ Δ → Quantified Γ Ξ
+  | PM.Quantified.always body =>
+      PM.Quantified.always (substitute (Apparent.liftSubstitution σ) body)
+  | PM.Quantified.sometimes body =>
+      PM.Quantified.sometimes (substitute (Apparent.liftSubstitution σ) body)
+
 def instantiate (body : FirstOrderMatrix Γ (.elementaryProposition :: Δ))
     (argument : Apparent Γ Δ) : FirstOrderMatrix Γ Δ :=
   substitute (Apparent.instantiateSubstitution argument) body
