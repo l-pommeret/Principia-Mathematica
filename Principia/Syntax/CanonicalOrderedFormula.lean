@@ -140,6 +140,26 @@ def renameBound (ρ : Nat → Nat) : Raw Γ → Raw Γ
   | .neg p => .neg (renameBound ρ p)
   | .disj p q => .disj (renameBound ρ p) (renameBound ρ q)
 
+/-- A capture-safe replacement of elementary leaves by canonical Raw syntax.
+When crossing an apparent binder, every replacement is weakened explicitly;
+bound indices themselves remain bound indices. -/
+abbrev Substitution (Γ Ξ : RealContext) := Elementary Γ → Raw Ξ
+
+def substitute (σ : Substitution Γ Ξ) : Raw Γ → Raw Ξ
+  | .elementary proposition => σ proposition
+  | .bound index => .bound index
+  | .quantified quantifier body =>
+      .quantified quantifier (substitute (fun proposition => weakenBound (σ proposition)) body)
+  | .neg proposition => .neg (substitute σ proposition)
+  | .disj left right => .disj (substitute σ left) (substitute σ right)
+
+@[simp] theorem substitute_elementary (σ : Substitution Γ Ξ)
+    (proposition : Elementary Γ) :
+    substitute σ (.elementary proposition) = σ proposition := rfl
+
+@[simp] theorem substitute_bound (σ : Substitution Γ Ξ) (index : Nat) :
+    substitute σ (.bound index) = .bound index := rfl
+
 def smartNeg : Raw Γ → Raw Γ
   | .quantified .always body => .quantified .sometimes (smartNeg body)
   | .quantified .sometimes body => .quantified .always (smartNeg body)

@@ -41,6 +41,15 @@ def NormalizedCanonicalAssertion (raw : Raw Γ) : Prop :=
   ∃ (order : Nat) (formula : OrderedFormula Γ order),
     OrderedAssertion formula ∧ NormalizesScoped (ofOrdered formula) raw
 
+/-- A theorem schema is deliberately outside `OrderedAssertion`: it records
+the canonical Raw presentation of a derived theorem and the substitutions
+for which a separate derivational naturality proof has been supplied.  The
+structure introduces neither a Pp nor a detachment rule. -/
+structure CanonicalTheoremSchema (template : Raw Γ) where
+  derivation : NormalizedCanonicalAssertion template
+  naturalAt : ∀ {Ξ} (σ : Substitution Γ Ξ),
+    NormalizedCanonicalAssertion (substitute σ template)
+
 def normalize {source target : Raw Γ}
     (certificate : NormalizesScoped source target)
     (assertion : CanonicalOrderedAssertion source) :
