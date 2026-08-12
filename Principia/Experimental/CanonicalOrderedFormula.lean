@@ -241,4 +241,21 @@ theorem star_9_31_line1_canonical (φ : Apparent Γ [.elementaryProposition]) :
       (firstOrderToSecondAll (star_9_31_line1_matrix φ))) :=
   assertion_of_ordered (star_9_31_line1_ordered φ)
 
+def star_9_31_antecedent (φ : Apparent Γ [.elementaryProposition]) :
+    Elementary (.elementaryProposition :: .elementaryProposition :: Γ) :=
+  let lifted := Apparent.weakenReal (Apparent.weakenReal φ)
+  Apparent.atReal lifted .zero ∨ₚ Apparent.atReal lifted (.succ .zero)
+
+def star_9_31_canonical_matrix (φ : Apparent Γ [.elementaryProposition]) :
+    MatrixRaw (.elementaryProposition :: Γ) :=
+  matrixOfApparent (Apparent.abstractRealOuter
+    (Apparent.ofElementary (star_9_31_antecedent φ) :
+      Apparent (.elementaryProposition :: .elementaryProposition :: Γ)
+        [.elementaryProposition]))
+
+def star_9_31_canonical_conclusion (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  .quantified .sometimes (ofApparent (Apparent.abstractRealOuter
+    (Apparent.weakenReal (Apparent.weakenReal φ))))
+
 end PM.Experimental.CanonicalOrderedFormula
