@@ -135,6 +135,47 @@ theorem sourceLine6_to_concreteLine7
   rw [sourceLine6_eq_concreteLine6]
   exact concreteLine6_to_line7 φ ψ
 
+def existentialPsiRaw (ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .sometimes (psiZBodyRaw ψ)
+
+theorem existentialPsi_unused_outer
+    (ψ : Apparent Γ [.elementaryProposition]) :
+    UnusedBoundAt 0 (existentialPsiRaw ψ) := by
+  induction ψ with
+  | constant name => trivial
+  | real v => trivial
+  | bound v =>
+      cases v with
+      | zero => simp [existentialPsiRaw, psiZBodyRaw, UnusedBoundAt,
+          ofApparent, boundIndex]
+      | succ v => exact nomatch v
+  | neg p ih => exact ih
+  | disj p q ihp ihq => exact ⟨ihp, ihq⟩
+
+def finalRaw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj
+    (.neg (.quantified .always (implicationOuterRaw φ ψ)))
+    (.disj
+      (.neg (.quantified .sometimes (phiYOuterRaw φ)))
+      (dropUnusedBound (existentialPsiRaw ψ)))
+
+theorem concreteLine7_to_final
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScoped (concreteLine7Raw φ ψ) (finalRaw φ ψ) := by
+  apply NormalizesScoped.disjCongr
+  · exact .negAlwaysReverse _
+  · have unused := existentialPsi_unused_outer ψ
+    have reinsert := weakenBound_dropUnusedBound (existentialPsiRaw ψ) unused
+    rw [rightLine7Raw]
+    change NormalizesScoped
+      (.quantified .always
+        (.disj (.neg (phiYOuterRaw φ)) (existentialPsiRaw ψ))) _
+    have extraction := NormalizesScoped.disjRightReverse .always
+      (.neg (phiYOuterRaw φ)) (dropUnusedBound (existentialPsiRaw ψ))
+    rw [reinsert] at extraction
+    exact .trans extraction
+      (NormalizesScoped.disjCongr (.negSometimesReverse _) (.refl _))
+
 /-- Closed evidence for the printed chain.  The source line and every later
 endpoint remain explicit; a future bridge must identify the audited concrete
 line-(6) operands before this structure can be inhabited. -/
