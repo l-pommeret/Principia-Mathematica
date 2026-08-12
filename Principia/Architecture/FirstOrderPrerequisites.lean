@@ -125,6 +125,13 @@ def star_9_1_higher_ordered_target
     (value : RealVar Γ .elementaryProposition) : OrderedFormula Γ 2 :=
   .secondOrderMatrix (FirstOrderMatrix.star_9_1_higher_target body value)
 
+/-- The sole order-three target of ✱9·13: close the leading real variable of
+an enriched order-two matrix by the explicit outer abstraction. -/
+def star_9_13_higher_target
+    (body : FirstOrderMatrix.Quantified (.elementaryProposition :: Γ) []) :
+    OrderedFormula Γ 3 :=
+  .thirdOrderMatrix (FirstOrderMatrix.abstractThirdOuter body)
+
 /-- The exact second Pp of ✱9.  The two values `φx` and `φy` use two distinct
 leading real variables; their common existential conclusion has neither as a
 significant free variable.  This is why it is a separate closed constructor,
@@ -209,6 +216,12 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
   | star_9_1_higher (body : FirstOrderMatrix Γ [.elementaryProposition])
       (value : RealVar Γ .elementaryProposition) :
       OrderedAssertion (star_9_1_higher_ordered_target body value)
+  /-- The fixed higher-carrier specialization of the metalinguistic ✱9·13.
+  It only closes the leading real slot of an enriched order-two matrix. -/
+  | star_9_13_higher
+      (body : FirstOrderMatrix.Quantified (.elementaryProposition :: Γ) []) :
+      OrderedAssertion (.secondOrderMatrix body) →
+      OrderedAssertion (star_9_13_higher_target body)
   /-- ✱9·11, deliberately independent of ✱9·1 as required by the printed
   circularity warning concerning the first-order Taut analogue. -/
   | star_9_11 (φ : Apparent Γ [.elementaryProposition]) :
@@ -416,6 +429,15 @@ def derive_star_9_21_line3 (φ ψ : Apparent Γ [.elementaryProposition]) :
   · exact star_9_21_line3_matrix_beta φ ψ
   · exact derive_star_9_21_line2 φ ψ
   · exact OrderedAssertion.star_9_1_higher (star_9_21_line3_matrix φ ψ) .zero
+
+/-- Printed line (4) of ✱9·21, obtained by the fixed higher-carrier reading
+of ✱9·13 applied to line (3). -/
+def derive_star_9_21_line4 (φ ψ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion (star_9_13_higher_target
+      (PM.Quantified.sometimes (star_9_21_line3_matrix φ ψ))) :=
+  OrderedAssertion.star_9_13_higher
+    (PM.Quantified.sometimes (star_9_21_line3_matrix φ ψ))
+    (derive_star_9_21_line3 φ ψ)
 
 
 /-- The exact judgement sought for ✱9·21.  It is a target contract, not an
