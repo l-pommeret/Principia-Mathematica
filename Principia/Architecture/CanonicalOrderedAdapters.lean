@@ -37,6 +37,37 @@ def ofThirdOrder : FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofSecondMatrix body)
   | .sometimes body => .quantified .sometimes (ofSecondMatrix body)
 
+/-- The four named matrix occurrences in the printed lines (3)–(7) of
+✱9·21.  Their de Bruijn positions are obtained directly from the concrete
+`star_9_21_line3_matrix` construction: `x = 1`, `y = 0`, and `z` remains a
+real variable in the ambient context. -/
+def star_9_21_phi_x_raw (φ : Apparent Γ [.elementaryProposition]) : Raw
+    (.elementaryProposition :: Γ) :=
+  ofApparent (Apparent.rename
+    (fun _ => (.succ .zero : BoundVar
+      (.elementaryProposition :: .elementaryProposition :: []) .elementaryProposition))
+    (Apparent.weakenReal φ))
+
+def star_9_21_psi_x_raw (ψ : Apparent Γ [.elementaryProposition]) : Raw
+    (.elementaryProposition :: Γ) :=
+  ofApparent (Apparent.rename
+    (fun _ => (.succ .zero : BoundVar
+      (.elementaryProposition :: .elementaryProposition :: []) .elementaryProposition))
+    (Apparent.weakenReal ψ))
+
+def star_9_21_phi_y_raw (φ : Apparent Γ [.elementaryProposition]) : Raw
+    (.elementaryProposition :: Γ) :=
+  ofApparent (Apparent.rename
+    (fun _ => (.zero : BoundVar
+      (.elementaryProposition :: .elementaryProposition :: []) .elementaryProposition))
+    (Apparent.weakenReal φ))
+
+def star_9_21_psi_z_raw (ψ : Apparent Γ [.elementaryProposition]) : Raw
+    (.elementaryProposition :: Γ) :=
+  ofApparent (Apparent.ofElementary (Apparent.openHead ψ) :
+    Apparent (.elementaryProposition :: Γ)
+      (.elementaryProposition :: .elementaryProposition :: []))
+
 @[simp] theorem ofApparent_neg (p : Apparent Γ Δ) :
     ofApparent (∼ₐ p) = .neg (ofApparent p) := rfl
 
