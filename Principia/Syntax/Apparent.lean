@@ -996,6 +996,34 @@ def renameThirdReal (ρ : Apparent.RealRenaming Γ Ξ) :
   | PM.Quantified.sometimes body =>
       PM.Quantified.sometimes (renameQuantifiedReal ρ body)
 
+/-- Same-assigned-order formula syntax above the minimal third-order
+quantified carrier.  It is deliberately separate from `ThirdOrder`: the
+wrapper records the negation/disjunction required by the printed ✱9·06,
+✱1·01 and ✱9·08 normalization chain without changing existing carriers. -/
+inductive ThirdOrderFormula (Γ : RealContext) (Δ : BoundContext) where
+  | quantified : ThirdOrder Γ Δ → ThirdOrderFormula Γ Δ
+  | neg : ThirdOrderFormula Γ Δ → ThirdOrderFormula Γ Δ
+  | disj : ThirdOrderFormula Γ Δ → ThirdOrderFormula Γ Δ → ThirdOrderFormula Γ Δ
+
+namespace ThirdOrderFormula
+
+prefix:max "∼₃" => neg
+infixl:55 " ∨₃ " => disj
+
+def imp (p q : ThirdOrderFormula Γ Δ) : ThirdOrderFormula Γ Δ := ∼₃ p ∨₃ q
+infixr:54 " ⊃₃ " => imp
+
+def ofThirdOrder (proposition : ThirdOrder Γ Δ) : ThirdOrderFormula Γ Δ :=
+  .quantified proposition
+
+def renameReal (ρ : Apparent.RealRenaming Γ Ξ) :
+    ThirdOrderFormula Γ Δ → ThirdOrderFormula Ξ Δ
+  | .quantified proposition => .quantified (renameThirdReal ρ proposition)
+  | .neg proposition => .neg (renameReal ρ proposition)
+  | .disj left right => .disj (renameReal ρ left) (renameReal ρ right)
+
+end ThirdOrderFormula
+
 def abstractQuantifiedOuter : Quantified (.elementaryProposition :: Γ) Δ →
     Quantified Γ (.elementaryProposition :: Δ)
   | PM.Quantified.always body =>
