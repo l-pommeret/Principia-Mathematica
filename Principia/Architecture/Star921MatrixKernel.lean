@@ -1,8 +1,11 @@
 import Principia.Architecture.FirstOrderPrerequisites
+import Principia.Architecture.CanonicalOrderedAdapters
 
 namespace PM.Architecture.Star921MatrixKernel
 
 open PM.Architecture.FirstOrderPrerequisites
+open PM.CanonicalOrderedFormula
+open PM.Architecture.CanonicalOrderedAdapters
 
 /-! Typed function-schema boundary for the use of ✱9·21 in ✱9·3.
 
@@ -41,5 +44,56 @@ theorem star_9_3_matrix_schema_line4
     (φ : Apparent Γ [.elementaryProposition]) :
     FirstOrder.impFirstToMatrix (star_9_3_matrix_schema φ).left
       (star_9_3_matrix_schema φ).right = star_9_3_line4_matrix φ := rfl
+
+/-- Canonical Raw spelling of the first-order matrix implication at a mixed
+schema value. -/
+def matrixSchemaImpRaw (schema : MatrixFunctionSchema Γ) : Raw Γ :=
+  ofFirstOrder (FirstOrder.impFirstToMatrix schema.left schema.right)
+
+/-- The identity form used as printed line (1) when ✱9·21 is instantiated at
+the mixed schema.  It is syntax only: ✱2·08 has not yet been lifted to this
+first-order carrier. -/
+def star_9_21_matrix_line1_raw (schema : MatrixFunctionSchema Γ) : Raw Γ :=
+  .disj (.neg (matrixSchemaImpRaw schema)) (matrixSchemaImpRaw schema)
+
+/-- The first ✱9·1 source shape for a mixed first-order matrix: its
+existential binder scopes the complete implication. -/
+def star_9_21_matrix_line2_raw (schema : MatrixFunctionSchema Γ) : Raw Γ :=
+  .quantified .sometimes
+    (.disj (.neg (weakenBound (matrixSchemaImpRaw schema)))
+      (weakenBound (matrixSchemaImpRaw schema)))
+
+/-- The source line-(5) conclusion after the theorem-level instance of
+✱9·21: `∀x αx ⊃ ∀x βx`.  Its two sides retain their distinct assigned
+carriers in Raw syntax. -/
+def star_9_21_matrix_line5_raw (schema : MatrixFunctionSchema Γ) : Raw Γ :=
+  .disj
+    (.neg (.quantified .always (ofFirstOrder schema.left)))
+    (.quantified .always (ofApparent schema.right))
+
+/-- A narrowly scoped theorem-schema action licensed by the printed use of
+✱9·21 in line (5) of ✱9·3.  It is intentionally not an `OrderedAssertion`
+constructor: the latter would be a new Pp.  The sole constructor records the
+exact mixed schema target and requires the preceding line-(4) derivation. -/
+inductive Star921MatrixSchemaDerivation (schema : MatrixFunctionSchema Γ) :
+    Raw Γ → Prop where
+  | star_9_21_firstOrder_instance :
+      Star921MatrixSchemaDerivation schema (matrixSchemaImpRaw schema) →
+      Star921MatrixSchemaDerivation schema (star_9_21_matrix_line5_raw schema)
+
+/-- The exact theorem-level transition corresponding to the printed
+`(4).✱9·21` line.  It remains unusable until its line-(4) Raw derivation is
+constructed from the existing indexed assertion; no logical assertion is
+manufactured here. -/
+def star_9_21_firstOrder_instance
+    (schema : MatrixFunctionSchema Γ)
+    (line4 : Star921MatrixSchemaDerivation schema (matrixSchemaImpRaw schema)) :
+    Star921MatrixSchemaDerivation schema (star_9_21_matrix_line5_raw schema) :=
+  .star_9_21_firstOrder_instance line4
+
+theorem star_9_3_matrix_line4_raw
+    (φ : Apparent Γ [.elementaryProposition]) :
+    matrixSchemaImpRaw (star_9_3_matrix_schema φ) =
+      ofFirstOrder (star_9_3_line4_matrix φ) := rfl
 
 end PM.Architecture.Star921MatrixKernel
