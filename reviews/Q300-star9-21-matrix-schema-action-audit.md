@@ -23,9 +23,13 @@ It does not produce an indexed `OrderedAssertion`, and it does not provide
 generic detachment, substitution, or a polymorphic inference rule.
 
 The preceding source line (1) is the identity of the mixed matrix
-implication; constructing its derivational bridge from ✱2·08 at the assigned
-first-order carrier remains a separate task.  The module records its Raw
-source target but does not claim it is derived.
+implication. `matrixIdentity` records this exact ✱2·08 theorem-schema
+reading, still outside `OrderedAssertion`.  The existing indexed derivation
+of the printed line (4) is reflected only by `indexedLine4`, whose equality
+forces the source schema to be `star_9_3_matrix_schema`; applying the narrow
+✱9·21 transition therefore yields the exact line-(5) Raw target.  This
+remains theorem-schema evidence and is not yet a reified final
+`OrderedAssertion` of ✱9·3.
 
 Witnesses: first edition (1910), p. 140, leaf 162; proofread Wikisource page
 162; `aristotle/demonstrations/PM1-star-9-3.txt`.

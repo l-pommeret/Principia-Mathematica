@@ -77,6 +77,18 @@ constructor: the latter would be a new Pp.  The sole constructor records the
 exact mixed schema target and requires the preceding line-(4) derivation. -/
 inductive Star921MatrixSchemaDerivation (schema : MatrixFunctionSchema Γ) :
     Raw Γ → Prop where
+  /-- The ✱2·08 identity at the assigned first-order matrix carrier.  The
+  source line (1) of the ✱9·3 proof applies the identity to the mixed matrix
+  implication; this is theorem-schema evidence, not an `OrderedAssertion`
+  constructor. -/
+  | matrixIdentity :
+      Star921MatrixSchemaDerivation schema (star_9_21_matrix_line1_raw schema)
+  /-- Reify the already-derived indexed line (4) as theorem-schema evidence.
+  The equality is explicit so this cannot transport arbitrary assertions. -/
+  | indexedLine4
+      (proof : OrderedAssertion (star_9_3_line4_target φ))
+      (h : schema = star_9_3_matrix_schema φ) :
+      Star921MatrixSchemaDerivation schema (matrixSchemaImpRaw schema)
   | star_9_21_firstOrder_instance :
       Star921MatrixSchemaDerivation schema (matrixSchemaImpRaw schema) →
       Star921MatrixSchemaDerivation schema (star_9_21_matrix_line5_raw schema)
@@ -95,5 +107,20 @@ theorem star_9_3_matrix_line4_raw
     (φ : Apparent Γ [.elementaryProposition]) :
     matrixSchemaImpRaw (star_9_3_matrix_schema φ) =
       ofFirstOrder (star_9_3_line4_matrix φ) := rfl
+
+/-- The existing indexed proof of line (4), reflected into the narrowly
+scoped theorem-schema evidence used by its printed ✱9·21 application. -/
+def derive_star_9_3_line4_schema
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
+      (matrixSchemaImpRaw (star_9_3_matrix_schema φ)) :=
+  .indexedLine4 (derive_star_9_3_line4 φ) rfl
+
+/-- The exact source line (5) of ✱9·3. -/
+def derive_star_9_3_line5_schema
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
+      (star_9_21_matrix_line5_raw (star_9_3_matrix_schema φ)) :=
+  star_9_21_firstOrder_instance _ (derive_star_9_3_line4_schema φ)
 
 end PM.Architecture.Star921MatrixKernel
