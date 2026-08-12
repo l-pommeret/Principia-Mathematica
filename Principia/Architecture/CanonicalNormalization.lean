@@ -71,6 +71,12 @@ theorem normalizesSmartNeg (p : Raw Γ) :
 historical `NormalizesScoped` relation remains unchanged. -/
 inductive NormalizesScopedAt : Nat → Raw Γ → Raw Γ → Prop where
   | refl (depth) (p) : NormalizesScopedAt depth p p
+  | negAlways (depth) (p) :
+      NormalizesScopedAt depth (.neg (.quantified .always p))
+        (.quantified .sometimes (.neg p))
+  | negSometimes (depth) (p) :
+      NormalizesScopedAt depth (.neg (.quantified .sometimes p))
+        (.quantified .always (.neg p))
   | disjRight (depth) (q) (p r) :
       NormalizesScopedAt depth (.disj (.quantified q p) r)
         (.quantified q (.disj p (shiftBoundAt depth r)))
@@ -91,6 +97,11 @@ inductive NormalizesScopedAt : Nat → Raw Γ → Raw Γ → Prop where
             (shiftBoundAt (depth + 1) q))))
   | quantifiedCongr (depth) (q) : NormalizesScopedAt (depth + 1) p r →
       NormalizesScopedAt depth (.quantified q p) (.quantified q r)
+  | negCongr (depth) : NormalizesScopedAt depth p q →
+      NormalizesScopedAt depth (.neg p) (.neg q)
+  | disjCongr (depth) : NormalizesScopedAt depth p q →
+      NormalizesScopedAt depth r s →
+      NormalizesScopedAt depth (.disj p r) (.disj q s)
   | trans : NormalizesScopedAt depth p q → NormalizesScopedAt depth q r →
       NormalizesScopedAt depth p r
 
@@ -151,6 +162,31 @@ theorem normalizesSmartDisjScopedAux
 theorem normalizesSmartDisjScoped (p q : Raw Γ) :
     NormalizesScopedAt 0 (.disj p q) (smartDisjScoped p q) := by
   exact normalizesSmartDisjScopedAux 0 (rawSize p + rawSize q) p q
+
+theorem normalizesSmartNegAt (depth : Nat) (p : Raw Γ) :
+    NormalizesScopedAt depth (.neg p) (smartNeg p) := by
+  induction p generalizing depth with
+  | quantified quantifier body ih =>
+      cases quantifier
+      · exact .trans (.negAlways depth body)
+          (.quantifiedCongr depth .sometimes (ih (depth + 1)))
+      · exact .trans (.negSometimes depth body)
+          (.quantifiedCongr depth .always (ih (depth + 1)))
+  | _ => exact .refl _ _
+
+theorem normalizesFirstOrderMatrixRedexScoped
+    (matrix : FirstOrderMatrix Γ Δ) :
+    NormalizesScopedAt 0
+      (CanonicalOrderedAdapters.ofFirstOrderMatrixRedex matrix)
+      (CanonicalOrderedAdapters.ofFirstOrderMatrixScoped matrix) := by
+  induction matrix with
+  | quantified proposition => exact .refl _ _
+  | neg matrix ih =>
+      exact .trans (.negCongr 0 ih)
+        (normalizesSmartNegAt 0 _)
+  | disj left right ihLeft ihRight =>
+      exact .trans (.disjCongr 0 ihLeft ihRight)
+        (normalizesSmartDisjScoped _ _)
 
 /-- Stability witness for the one closed, source-labelled line-(5)→line-(6)
 certificate of ✱9·21.  It stays an explicit parameter: substitution must not
