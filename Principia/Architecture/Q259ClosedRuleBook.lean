@@ -1,6 +1,7 @@
 import Principia.Architecture.FirstOrderPrerequisites
 import Principia.Architecture.FirstOrderQ259
 import Principia.Architecture.Star921MatrixKernel
+import Principia.Architecture.Star931Kernel
 
 namespace PM.Architecture.Q259ClosedRuleBook
 
@@ -50,7 +51,16 @@ theorem star_9_3 (φ : Apparent Γ [.elementaryProposition]) :
 /-- The exact assertion contract for the analogue of ✱1·2 on existentials.
 It is a target, never a `Q259ClosedRuleBook` field. -/
 abbrev Star_9_31Derivation (φ : Apparent Γ [.elementaryProposition]) : Prop :=
-  OrderedAssertion (FirstOrderQ259.star_9_31_target φ)
+  Nonempty (Star931Kernel.Star931KernelAssertion φ)
+
+/-- PM I ✱9·31 through its source-faithful closed Raw normalization chain.
+The rule-book argument is retained for the uniform Q259 public signature;
+the proof itself uses only the primitive and definitional citations audited
+in `Star931Kernel`. -/
+theorem star_9_31 (_rules : Q259ClosedRuleBook)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star_9_31Derivation φ :=
+  ⟨Star931Kernel.derive φ⟩
 
 /-- The exact assertion contract for the universal right-injection analogue
 of ✱1·3. It is a target, never a `Q259ClosedRuleBook` field. -/

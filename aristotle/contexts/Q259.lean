@@ -3475,7 +3475,12 @@ theorem star_9_3 (φ : Apparent Γ [.elementaryProposition]) :
     Star921MatrixKernel.derive_star_9_3 φ
 
 abbrev Star_9_31Derivation (φ : Apparent Γ [.elementaryProposition]) : Prop :=
-  OrderedAssertion (FirstOrderQ259.star_9_31_target φ)
+  Nonempty (Star931Kernel.Star931KernelAssertion φ)
+
+theorem star_9_31 (_rules : Q259ClosedRuleBook)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star_9_31Derivation φ :=
+  ⟨Star931Kernel.derive φ⟩
 
 abbrev Star_9_32Derivation (q : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Prop :=
