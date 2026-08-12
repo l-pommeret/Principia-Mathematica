@@ -16,5 +16,7 @@ defect is established for these items. Confidence high.
 the certified ✱9·22 chain, rather than reintroduced as a generic rule.  Its
 result remains the narrow closed `Star922KernelAssertion φ φ`, not an
 `OrderedAssertion` reification; it adds neither generic Raw detachment nor a
-new Pp.  The split Q257-24 metadata is awaiting CI.  ✱9·23 and ✱9·25 retain
-their independent statuses.
+new Pp.  GitHub Actions run `31575922684` succeeded at immutable commit
+`a773a806b9759f571ce5ddaaa781d28553fc11b5`; it certifies both narrow
+judgements ✱9·23 and ✱9·24, not an `OrderedAssertion` reification.  ✱9·25
+retains its independent prepared status.

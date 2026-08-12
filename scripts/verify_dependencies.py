@@ -302,7 +302,11 @@ def verify_assumption_parameters(
 
 
 def _occurs(body: str, name: str) -> bool:
-    variants = (name, name.rsplit(".", 1)[-1])
+    # Generic helper names such as ``derive`` are not stable dependency
+    # identities.  Their fully-qualified or explicitly registered short alias
+    # must occur exactly; otherwise unrelated closed-kernel witnesses sharing
+    # the helper name are spuriously recorded as dependencies.
+    variants = (name,) if name.endswith(".derive") else (name, name.rsplit(".", 1)[-1])
     return any(re.search(rf"(?<![A-Za-z0-9_'.]){re.escape(variant)}(?![A-Za-z0-9_'])", body)
                for variant in variants)
 
