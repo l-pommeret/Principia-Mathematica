@@ -27,7 +27,7 @@
       "declaration": "PM.FirstEdition.Volume1.Star5.star_5_23",
       "formal_scope": "(p≡q)≡((p·q)∨(∼p·∼q)), over an elementary real-variable context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "printed_dependencies": [
         "PM1:✱5·18",
         "PM1:✱5·22",
@@ -64,7 +64,7 @@
       "declaration": "PM.FirstEdition.Volume1.Star5.star_5_24",
       "formal_scope": "∼((p·q)∨(∼p·∼q))≡((p·∼q)∨(q·∼p)), over an elementary real-variable context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "printed_dependencies": [
         "PM1:✱5·22·23"
       ],
@@ -82,9 +82,5 @@
       "integration_status": "canonical-awaiting-ci"
     }
   ],
-  "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
-  }
+  "ci_evidence": {"commit": "fa3916424f65033ca5fc3d1758f35dc31f475786", "run": "31612459151", "conclusion": "success"}
 }
