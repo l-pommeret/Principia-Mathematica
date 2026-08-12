@@ -202,19 +202,23 @@ def instantiateHeadRaw (value : Elementary Γ) (p : Raw Γ) : Raw Γ :=
     openHeadRaw (smartNeg p) = smartNeg (openHeadRaw p) :=
   openBoundAt_smartNeg 0 p
 
-def smartDisjScopedAux : Nat → Raw Γ → Raw Γ → Raw Γ
-  | 0, left, right => .disj left right
-  | fuel + 1, .quantified .always left, .quantified .sometimes right =>
+def smartDisjScopedAux : Nat → Nat → Raw Γ → Raw Γ → Raw Γ
+  | _, 0, left, right => .disj left right
+  | depth, fuel + 1, .quantified .always left, .quantified .sometimes right =>
       .quantified .always (.quantified .sometimes
-        (smartDisjScopedAux fuel (weakenBound left) right))
-  | fuel + 1, .quantified .sometimes left, .quantified .always right =>
+        (smartDisjScopedAux (depth + 2) fuel
+          (shiftBoundAt (depth + 1) left) right))
+  | depth, fuel + 1, .quantified .sometimes left, .quantified .always right =>
       .quantified .always (.quantified .sometimes
-        (smartDisjScopedAux fuel (weakenBound left) right))
-  | fuel + 1, .quantified quantifier left, right =>
-      .quantified quantifier (smartDisjScopedAux fuel left (weakenBound right))
-  | fuel + 1, left, .quantified quantifier right =>
-      .quantified quantifier (smartDisjScopedAux fuel (weakenBound left) right)
-  | _ + 1, left, right => .disj left right
+        (smartDisjScopedAux (depth + 2) fuel
+          (shiftBoundAt (depth + 1) left) right))
+  | depth, fuel + 1, .quantified quantifier left, right =>
+      .quantified quantifier (smartDisjScopedAux (depth + 1) fuel left
+        (shiftBoundAt depth right))
+  | depth, fuel + 1, left, .quantified quantifier right =>
+      .quantified quantifier (smartDisjScopedAux (depth + 1) fuel
+        (shiftBoundAt depth left) right)
+  | _, _ + 1, left, right => .disj left right
 
 def rawSize : Raw Γ → Nat
   | .elementary _ | .bound _ => 1
@@ -235,7 +239,7 @@ def rawSize : Raw Γ → Nat
   | disj p q ihp ihq => simp [openBoundAt, rawSize, ihp, ihq]
 
 def smartDisjScoped (left right : Raw Γ) : Raw Γ :=
-  smartDisjScopedAux (rawSize left + rawSize right) left right
+  smartDisjScopedAux 0 (rawSize left + rawSize right) left right
 
 @[simp] theorem shiftBoundAt_elementary (p : Elementary Γ) :
     shiftBoundAt cutoff (.elementary p) = .elementary p := rfl
