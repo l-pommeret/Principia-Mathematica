@@ -37,15 +37,15 @@ namespace Elementary
 an elementary formula over `Ξ`.  Since ✱1–✱5 contain only the single real
 type `elementaryProposition`, this is the exact metalinguistic substitution
 discipline used by their printed instances. -/
-abbrev RealSubstitution (Γ Ξ : RealContext) :=
+abbrev SchemaAssignment (Γ Ξ : RealContext) :=
   RealVar Γ .elementaryProposition → Elementary Ξ
 
 /-- Simultaneous schematic substitution of real propositional variables. -/
-def substitute (σ : RealSubstitution Γ Ξ) : Elementary Γ → Elementary Ξ
+def schemaInstance (σ : SchemaAssignment Γ Ξ) : Elementary Γ → Elementary Ξ
   | .constant name => .constant name
   | .var v => σ v
-  | .neg proposition => .neg (substitute σ proposition)
-  | .disj left right => .disj (substitute σ left) (substitute σ right)
+  | .neg proposition => .neg (schemaInstance σ proposition)
+  | .disj left right => .disj (schemaInstance σ left) (schemaInstance σ right)
 
 prefix:max "∼ₚ" => neg
 /-- PM's unbracketed iterated disjunction, introduced at ✱2·33, associates

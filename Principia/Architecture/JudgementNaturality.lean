@@ -17,26 +17,26 @@ def substituteElementaryHead (replacement : Elementary Γ) :
       (substituteElementaryHead replacement left)
       (substituteElementaryHead replacement right)
 
-def headSubstitution (replacement : Elementary Γ) :
-    Elementary.RealSubstitution (.elementaryProposition :: Γ) Γ
+def headSchemaAssignment (replacement : Elementary Γ) :
+    Elementary.SchemaAssignment (.elementaryProposition :: Γ) Γ
   | .zero => replacement
   | .succ v => .var v
 
-@[simp] theorem substitute_headSubstitution (replacement : Elementary Γ)
+@[simp] theorem schemaInstance_headAssignment (replacement : Elementary Γ)
     (p : Elementary (.elementaryProposition :: Γ)) :
-    Elementary.substitute (headSubstitution replacement) p =
+    Elementary.schemaInstance (headSchemaAssignment replacement) p =
       substituteElementaryHead replacement p := by
   induction p with
   | constant name => rfl
   | var v => cases v <;> rfl
-  | neg p ih => simp [Elementary.substitute, substituteElementaryHead, ih]
-  | disj p q ihp ihq => simp [Elementary.substitute, substituteElementaryHead, ihp, ihq]
+  | neg p ih => simp [Elementary.schemaInstance, substituteElementaryHead, ih]
+  | disj p q ihp ihq => simp [Elementary.schemaInstance, substituteElementaryHead, ihp, ihq]
 
 theorem derivation_substituteHead (replacement : Elementary Γ) {p}
     (proof : Derivation (Γ := .elementaryProposition :: Γ) p) :
     Derivation (substituteElementaryHead replacement p) := by
-  rw [← substitute_headSubstitution]
-  exact Derivation.substitute (headSubstitution replacement) proof
+  rw [← schemaInstance_headAssignment]
+  exact Derivation.instantiateSchema (headSchemaAssignment replacement) proof
 
 def substituteApparentHead (replacement : Elementary Γ) :
     Apparent (.elementaryProposition :: Γ) Δ → Apparent Γ Δ

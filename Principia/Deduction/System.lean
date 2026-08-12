@@ -50,10 +50,10 @@ This is proved by structural recursion over the six printed primitive
 propositions/rules.  It adds no logical constructor: the only context-sensitive
 case is detachment, where the already distinct ✱1·1 and ✱1·11 constructors are
 selected according to the target real-variable context. -/
-theorem substitute {Γ Ξ : PM.RealContext}
-    (σ : PM.Elementary.RealSubstitution Γ Ξ) {p : PM.Elementary Γ}
+theorem instantiateSchema {Γ Ξ : PM.RealContext}
+    (σ : PM.Elementary.SchemaAssignment Γ Ξ) {p : PM.Elementary Γ}
     (proof : PM.Derivation p) :
-    PM.Derivation (PM.Elementary.substitute σ p) := by
+    PM.Derivation (PM.Elementary.schemaInstance σ p) := by
   induction proof with
   | star_1_1 hp hpq ihp ihpq =>
       cases Ξ with
@@ -65,22 +65,22 @@ theorem substitute {Γ Ξ : PM.RealContext}
       | nil => exact PM.Derivation.star_1_1 (ihp σ) (ihpq σ)
       | cons τ Δ =>
           exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) (ihp σ) (ihpq σ)
-  | star_1_2 p => simpa [PM.Elementary.imp, PM.Elementary.substitute] using
-      (PM.Derivation.star_1_2 (Γ := Ξ) (PM.Elementary.substitute σ p))
-  | star_1_3 p q => simpa [PM.Elementary.imp, PM.Elementary.substitute] using
+  | star_1_2 p => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
+      (PM.Derivation.star_1_2 (Γ := Ξ) (PM.Elementary.schemaInstance σ p))
+  | star_1_3 p q => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
       (PM.Derivation.star_1_3 (Γ := Ξ)
-        (PM.Elementary.substitute σ p) (PM.Elementary.substitute σ q))
-  | star_1_4 p q => simpa [PM.Elementary.imp, PM.Elementary.substitute] using
+        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q))
+  | star_1_4 p q => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
       (PM.Derivation.star_1_4 (Γ := Ξ)
-        (PM.Elementary.substitute σ p) (PM.Elementary.substitute σ q))
-  | star_1_5 p q r => simpa [PM.Elementary.imp, PM.Elementary.substitute] using
+        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q))
+  | star_1_5 p q r => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
       (PM.Derivation.star_1_5 (Γ := Ξ)
-        (PM.Elementary.substitute σ p) (PM.Elementary.substitute σ q)
-        (PM.Elementary.substitute σ r))
-  | star_1_6 p q r => simpa [PM.Elementary.imp, PM.Elementary.substitute] using
+        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
+        (PM.Elementary.schemaInstance σ r))
+  | star_1_6 p q r => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
       (PM.Derivation.star_1_6 (Γ := Ξ)
-        (PM.Elementary.substitute σ p) (PM.Elementary.substitute σ q)
-        (PM.Elementary.substitute σ r))
+        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
+        (PM.Elementary.schemaInstance σ r))
 
 /-! ## Uniform metalinguistic detachment
 

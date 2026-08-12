@@ -17,7 +17,11 @@ represent PM's schematic letters. A printed instruction such as
 displayed formulae. Thus Lean's universal parameter instantiation is the
 editorial representation of a printed *instance of a schema*. It is not an
 object-language constructor, and the elementary calculus contains no generic
-`substitute` rule.
+object-syntactic `substitute` rule. `Elementary.schemaInstance` and the proved
+admissibility theorem `Derivation.instantiateSchema` merely make this same
+metalinguistic parameter instantiation explicit when a whole derivation must
+be transported between real-variable contexts; their names and types keep
+them separate from the binder-sensitive machinery of §3.
 
 This choice records faithfully which instance PM prints, but it does not settle
 the historical question whether PM possessed an additional tacit substitution
@@ -64,7 +68,8 @@ The repository's substitution guard checks that:
 1. ✱1·1 and ✱1·11 remain separate `Derivation` constructors with their distinct
    context restrictions;
 2. uniform `detach` still invokes both historical constructors;
-3. `Elementary` does not acquire a generic syntax-substitution operation;
+3. `Elementary` has only explicitly named metalinguistic schema instantiation,
+   and does not acquire a generic object-syntactic substitution operation;
 4. the apparent-variable layer retains explicit capture-free `rename`,
    `substitute`, `instantiateSubstitution`, and `instantiate` operations.
 
