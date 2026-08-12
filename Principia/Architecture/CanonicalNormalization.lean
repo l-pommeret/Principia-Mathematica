@@ -14,6 +14,13 @@ inductive NormalizesScoped : Raw Γ → Raw Γ → Prop where
   | negSometimes (p) :
       NormalizesScoped (.neg (.quantified .sometimes p))
         (.quantified .always (.neg p))
+  /-- ✱9·06 in the orientation used in line (4)→(5) of ✱9·21.  The
+  antecedent is explicitly weakened below the existential binder before that
+  binder is moved into the consequent. -/
+  | star_9_06_imp (p q) :
+      NormalizesScoped (.quantified .sometimes
+        (.disj (.neg (weakenBound p)) q))
+        (.disj (.neg p) (.quantified .sometimes q))
   | disjRight (q p r) :
       NormalizesScoped (.disj (.quantified q p) r)
         (.quantified q (.disj p (weakenBound r)))

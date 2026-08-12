@@ -228,6 +228,29 @@ def star_9_21_line4_named_raw (φ ψ : Apparent Γ [.elementaryProposition]) : R
     (rawImp (rawImp (star_9_21_phi_x_closed_raw φ) (star_9_21_psi_x_closed_raw ψ))
       (rawImp (star_9_21_phi_y_closed_raw φ) (star_9_21_psi_z_closed_raw ψ)))))
 
+/-- Printed line (5) of ✱9·21.  Its source operation is ✱9·06: the final
+existential is transferred from the implication's antecedent scope into the
+consequent. -/
+def star_9_21_line5_raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always (.quantified .sometimes
+    (rawImp (rawImp (star_9_21_phi_x_closed_raw φ) (star_9_21_psi_x_closed_raw ψ))
+      (.quantified .sometimes
+        (rawImp (star_9_21_phi_y_closed_raw φ) (star_9_21_psi_z_closed_raw ψ)))))
+
+/-- Printed line (6) of ✱9·21, after the displayed implication abbreviation
+and ✱9·08 scope transformation. -/
+def star_9_21_line6_raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj
+    (.quantified .sometimes
+      (.neg (rawImp (star_9_21_phi_x_closed_raw φ) (star_9_21_psi_x_closed_raw ψ))))
+    (.quantified .always (.quantified .sometimes
+      (.disj (.neg (star_9_21_phi_y_closed_raw φ)) (star_9_21_psi_z_closed_raw ψ))))
+
+/-- Printed line (7) retains the same visible binder pattern as line (6);
+the cited second ✱9·08 records the final scope normalization before ✱1·01. -/
+def star_9_21_line7_raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  star_9_21_line6_raw φ ψ
+
 theorem star_9_21_line4_raw_named
     (φ ψ : Apparent Γ [.elementaryProposition]) :
     star_9_21_line4_raw φ ψ = star_9_21_line4_named_raw φ ψ := by
