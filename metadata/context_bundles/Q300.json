@@ -39,16 +39,8 @@
     "status": "complete"
   },
   "source_backfill_required": false,
-  "source_bytes": 64352,
-  "source_sha256": "6ccb6a908de268b4ea39bbfd296236f189136fdead18306393e8a03038b3194e",
-  "ci_evidence": {
-    "commit": "eda99d1ed844362805f3f05805d4fc8e72e7c4a9",
-    "run": "31572372279",
-    "conclusion": "success",
-    "scope": "isolated-interface",
-    "canonical_integration": "forbidden",
-    "one_to_one_remap": "pending"
-  },
+  "source_bytes": 65186,
+  "source_sha256": "4c01f04bd0eb177f2aad96dd9297fcd1f4250d6df5a5ae197c8f1c881e23c9c5",
   "sources": [
     {
       "bytes": 1191,
@@ -113,12 +105,17 @@
       "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
-      "bytes": 15745,
+      "bytes": 16579,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/FirstOrderPrerequisites.lean",
-      "slice_sha256": "f3d8d82c88b6dee53112058e91494fde612061ce583a8872f3c46e70365f236d",
-      "source_sha256": "4132bf73898914e3bd331efb7963206c26c701a9073744913807bdb3880049f9"
+      "slice_sha256": "e92b60d5ad5c9995f015b40378331d7c383e7f1fe82065b463892d36ae6da0af",
+      "source_sha256": "5b1eb5806bba8ab32ee9de51e859900364a4c4cd34b75c9955576aeeb428852a"
     }
-  ]
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

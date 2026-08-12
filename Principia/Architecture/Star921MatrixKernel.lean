@@ -164,10 +164,16 @@ def star_9_3_schema
       (star_9_3_line6_raw φ) :=
   .star_9_3_normalize φ (derive_star_9_3_line5_schema φ)
 
+/-- Closed canonical counterpart of `Star9KernelAssertion` for a source
+target which has not been reified into an `OrderedFormula` carrier.  It is an
+abbreviation for an existing normalized assertion witness, not a new rule. -/
+abbrev Star9CanonicalAssertion (target : Raw Γ) : Prop :=
+  CanonicalOrderedJudgement.NormalizedCanonicalAssertion target
+
 /-- Conservative derived judgement for the source-audited ✱9 theorem-schema
 chain.  It embeds existing `OrderedAssertion`s, but its additional constructor
-is closed to the exact ✱9·3 schema bridge and therefore is not a generic
-canonical conversion principle. -/
+is closed to exact printed bridges and therefore is not a generic canonical
+conversion principle. -/
 inductive Star9KernelAssertion (formula : OrderedFormula Γ order) : Prop where
   | indexed (proof : OrderedAssertion formula) : Star9KernelAssertion formula
   | star_9_3_from_schema
@@ -182,18 +188,19 @@ inductive Star9KernelAssertion (formula : OrderedFormula Γ order) : Prop where
         (star_9_21_line7_raw φ ψ))
       (targetRaw : star_9_21_line7_raw φ ψ = ofOrdered formula) :
       Star9KernelAssertion formula
+  | star_9_23_from_closed
+      (φ : Apparent Γ [.elementaryProposition])
+      (identity : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+        (.elementary (Apparent.openHead (matrixImp φ φ))))
+      (monotonicity : Star9CanonicalAssertion (star_9_21_line7_raw φ φ))
+      (targetRaw : ofOrdered formula = ofOrdered (star_9_23_target φ)) :
+      Star9KernelAssertion formula
 
 /-- Source-audited derived judgement for PM I ✱9·3. -/
 def derive_star_9_3
     (φ : Apparent Γ [.elementaryProposition]) :
     Star9KernelAssertion (star_9_3_ordered_target φ) :=
   .star_9_3_from_schema φ (star_9_3_schema φ) rfl
-
-/-- Closed canonical counterpart of `Star9KernelAssertion` for a source
-target which has not been reified into an `OrderedFormula` carrier.  It is an
-abbreviation for an existing normalized assertion witness, not a new rule. -/
-abbrev Star9CanonicalAssertion (target : Raw Γ) : Prop :=
-  CanonicalOrderedJudgement.NormalizedCanonicalAssertion target
 
 namespace Star9KernelAssertion
 
@@ -205,6 +212,17 @@ rather than falsely claiming an `OrderedAssertion`. -/
 def star_9_21 (φ ψ : Apparent Γ [.elementaryProposition]) :
     Star9CanonicalAssertion (star_9_21_line7_raw φ ψ) :=
   CanonicalOrderedJudgement.derive_star_9_21_line7_normalized φ ψ
+
+/-- PM I ✱9·23 (`Id.✱9·13·21`) in the same closed judgement.  The
+constructor is limited to the exact identity matrix and the closed canonical
+✱9·21 self-instance; it is not detachment for arbitrary canonical Raw
+assertions. -/
+def star_9_23 (φ : Apparent Γ [.elementaryProposition]) :
+    Star9KernelAssertion (star_9_23_target φ) :=
+  .star_9_23_from_closed φ
+    (.elementary (PM.FirstEdition.Volume1.Star2.star_2_08
+      (Apparent.openHead φ)))
+    (star_9_21 φ φ) rfl
 
 end Star9KernelAssertion
 

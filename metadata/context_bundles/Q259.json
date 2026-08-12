@@ -51,16 +51,8 @@
     "status": "complete"
   },
   "source_backfill_required": false,
-  "source_bytes": 147870,
-  "source_sha256": "9db05059a8049fb1627902779d2b430ecb7cb3442b33ec0f044d62287e381e8e",
-  "ci_evidence": {
-    "commit": "eda99d1ed844362805f3f05805d4fc8e72e7c4a9",
-    "run": "31572372279",
-    "conclusion": "success",
-    "scope": "isolated-interface",
-    "canonical_integration": "forbidden",
-    "one_to_one_remap": "pending"
-  },
+  "source_bytes": 149991,
+  "source_sha256": "4a30e0791f3504a30e7639171b2c479f56573e5f439435568edd4dbd7b5f3db4",
   "sources": [
     {
       "bytes": 1191,
@@ -125,12 +117,12 @@
       "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     },
     {
-      "bytes": 15745,
+      "bytes": 16579,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/FirstOrderPrerequisites.lean",
-      "slice_sha256": "f3d8d82c88b6dee53112058e91494fde612061ce583a8872f3c46e70365f236d",
-      "source_sha256": "4132bf73898914e3bd331efb7963206c26c701a9073744913807bdb3880049f9"
+      "slice_sha256": "e92b60d5ad5c9995f015b40378331d7c383e7f1fe82065b463892d36ae6da0af",
+      "source_sha256": "5b1eb5806bba8ab32ee9de51e859900364a4c4cd34b75c9955576aeeb428852a"
     },
     {
       "bytes": 19176,
@@ -149,12 +141,12 @@
       "source_sha256": "a44e0a753bc50d92da133e9679efa4965b29b289a0d42756b51117691f2c6926"
     },
     {
-      "bytes": 12641,
+      "bytes": 13281,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/CanonicalNormalization.lean",
-      "slice_sha256": "17fe05770c635752cf01daba4a0927411227f6554fe6a17291bcefcd5cd9ff87",
-      "source_sha256": "9fa8881bc7bff652b0dda6544bef099456072581638c92f7cfbda07c02462d02"
+      "slice_sha256": "314364a45658475a202e71ca6777520be0b229c664f4140c84a92ebc309d34d3",
+      "source_sha256": "192b7fefec3fc4c9427dd3b235850348ba3961395b1e94a20a4537d43bb0394c"
     },
     {
       "bytes": 6833,
@@ -165,12 +157,12 @@
       "source_sha256": "396e3b00b0460f4c0fcd553beed86b1690d7d1b3493f3c8f8bfc70bbdaa0da89"
     },
     {
-      "bytes": 5799,
+      "bytes": 6446,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/Star921MatrixKernel.lean",
-      "slice_sha256": "7e0492e24af028dfb9261f038a424f5323dc6f9679ec7e5dc90684f3a7a24d03",
-      "source_sha256": "d20a67961337f627b7628f9f4cfda5b26a654277ba136b96d38f96096d0d3158"
+      "slice_sha256": "7abbe430a39b610519de9d6cc57eec71dfb515384e94de2bc84f36073ef21277",
+      "source_sha256": "ed3808640c8a5e378332bdc70383f4db4a5670e548f9bf67a029f9274632a6ff"
     },
     {
       "bytes": 996,
@@ -196,5 +188,10 @@
       "slice_sha256": "2617cf1ca928d7060bd6505f01469f50b8a317019da14d135d3b423b2c3bc9ec",
       "source_sha256": "665b8dc01eb1f9a790203fef59ce1f7056482330a73374fc09d0903457c56c1b"
     }
-  ]
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

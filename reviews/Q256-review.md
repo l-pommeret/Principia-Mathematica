@@ -17,3 +17,11 @@ does not assert the target as an `OrderedAssertion`: no certified equality
 reifies that full binder-sensitive Raw target into the older assigned-order
 carrier. The split Q256-21 metadata records an awaiting-CI closed canonical
 judgement, not a new Pp or generic conversion rule.
+
+## Consequence ✱9·23
+
+The next direct consequence is ✱9·23, printed as `Id.✱9·13·21` on leaf 162.
+`Star9KernelAssertion.star_9_23` takes exactly `✱2·08` at the elementary
+value of `φ`, the fixed self-instance of the closed ✱9·21 judgement, and the
+fixed assigned-order target. Its constructor cannot detach arbitrary Raw
+normalizations. The Q257-23 candidate awaits a grouped kernel check.

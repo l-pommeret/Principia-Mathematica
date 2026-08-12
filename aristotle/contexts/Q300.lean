@@ -1305,6 +1305,15 @@ def star_9_23_target (φ : Apparent Γ [.elementaryProposition]) :
     OrderedFormula Γ 1 :=
   firstImp (OrderedFormula.always φ) (OrderedFormula.always φ)
 
+def star_9_22_target (φ ψ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula Γ 1 :=
+  firstImp (OrderedFormula.always (matrixImp φ ψ))
+    (firstImp (OrderedFormula.sometimes φ) (OrderedFormula.sometimes ψ))
+
+def star_9_24_target (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula Γ 1 :=
+  firstImp (OrderedFormula.sometimes φ) (OrderedFormula.sometimes φ)
+
 def star_9_25_target (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : OrderedFormula Γ 1 :=
   firstImp
@@ -1512,6 +1521,15 @@ def derive_star_9_23 (φ : Apparent Γ [.elementaryProposition])
   OrderedAssertion.star_9_12
     (OrderedAssertion.star_9_13 (matrixImp φ φ) elementaryId)
     monotonicity
+
+def derive_star_9_24 (φ : Apparent Γ [.elementaryProposition])
+    (elementaryId : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+      (.elementary (Apparent.openHead (matrixImp φ φ))))
+    (existentialMonotonicity : OrderedAssertion (star_9_22_target φ φ)) :
+    OrderedAssertion (star_9_24_target φ) :=
+  OrderedAssertion.star_9_12
+    (OrderedAssertion.star_9_13 (matrixImp φ φ) elementaryId)
+    existentialMonotonicity
 
 abbrev Star_9_25Derivation (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Prop :=

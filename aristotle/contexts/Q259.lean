@@ -1305,6 +1305,15 @@ def star_9_23_target (φ : Apparent Γ [.elementaryProposition]) :
     OrderedFormula Γ 1 :=
   firstImp (OrderedFormula.always φ) (OrderedFormula.always φ)
 
+def star_9_22_target (φ ψ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula Γ 1 :=
+  firstImp (OrderedFormula.always (matrixImp φ ψ))
+    (firstImp (OrderedFormula.sometimes φ) (OrderedFormula.sometimes ψ))
+
+def star_9_24_target (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula Γ 1 :=
+  firstImp (OrderedFormula.sometimes φ) (OrderedFormula.sometimes φ)
+
 def star_9_25_target (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : OrderedFormula Γ 1 :=
   firstImp
@@ -1512,6 +1521,15 @@ def derive_star_9_23 (φ : Apparent Γ [.elementaryProposition])
   OrderedAssertion.star_9_12
     (OrderedAssertion.star_9_13 (matrixImp φ φ) elementaryId)
     monotonicity
+
+def derive_star_9_24 (φ : Apparent Γ [.elementaryProposition])
+    (elementaryId : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+      (.elementary (Apparent.openHead (matrixImp φ φ))))
+    (existentialMonotonicity : OrderedAssertion (star_9_22_target φ φ)) :
+    OrderedAssertion (star_9_24_target φ) :=
+  OrderedAssertion.star_9_12
+    (OrderedAssertion.star_9_13 (matrixImp φ φ) elementaryId)
+    existentialMonotonicity
 
 abbrev Star_9_25Derivation (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Prop :=
@@ -2530,6 +2548,22 @@ inductive NormalizesScopedAt : Nat → Raw Γ → Raw Γ → Prop where
   | trans : NormalizesScopedAt depth p q → NormalizesScopedAt depth q r →
       NormalizesScopedAt depth p r
 
+theorem star_9_07_at (depth : Nat) (p q : Raw Γ) :
+    NormalizesScopedAt depth
+      (.disj (.quantified .always p) (.quantified .sometimes q))
+      (.quantified .always (.quantified .sometimes
+        (.disj (shiftBoundAt (depth + 1) p)
+          (shiftBoundAt (depth + 1) q)))) :=
+  .disjAlwaysSometimes depth p q
+
+theorem star_9_08_at (depth : Nat) (p q : Raw Γ) :
+    NormalizesScopedAt depth
+      (.disj (.quantified .sometimes p) (.quantified .always q))
+      (.quantified .always (.quantified .sometimes
+        (.disj (shiftBoundAt (depth + 1) p)
+          (shiftBoundAt (depth + 1) q)))) :=
+  .disjSometimesAlways depth p q
+
 def smartDisjScopedCertifiedAux (depth : Nat) :
     (fuel : Nat) → (p q : Raw Γ) →
       { r : Raw Γ // NormalizesScopedAt depth (.disj p q) r }
@@ -2957,6 +2991,9 @@ def star_9_3_schema
       (star_9_3_line6_raw φ) :=
   .star_9_3_normalize φ (derive_star_9_3_line5_schema φ)
 
+abbrev Star9CanonicalAssertion (target : Raw Γ) : Prop :=
+  CanonicalOrderedJudgement.NormalizedCanonicalAssertion target
+
 inductive Star9KernelAssertion (formula : OrderedFormula Γ order) : Prop where
   | indexed (proof : OrderedAssertion formula) : Star9KernelAssertion formula
   | star_9_3_from_schema
@@ -2971,20 +3008,31 @@ inductive Star9KernelAssertion (formula : OrderedFormula Γ order) : Prop where
         (star_9_21_line7_raw φ ψ))
       (targetRaw : star_9_21_line7_raw φ ψ = ofOrdered formula) :
       Star9KernelAssertion formula
+  | star_9_23_from_closed
+      (φ : Apparent Γ [.elementaryProposition])
+      (identity : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+        (.elementary (Apparent.openHead (matrixImp φ φ))))
+      (monotonicity : Star9CanonicalAssertion (star_9_21_line7_raw φ φ))
+      (targetRaw : ofOrdered formula = ofOrdered (star_9_23_target φ)) :
+      Star9KernelAssertion formula
 
 def derive_star_9_3
     (φ : Apparent Γ [.elementaryProposition]) :
     Star9KernelAssertion (star_9_3_ordered_target φ) :=
   .star_9_3_from_schema φ (star_9_3_schema φ) rfl
 
-abbrev Star9CanonicalAssertion (target : Raw Γ) : Prop :=
-  CanonicalOrderedJudgement.NormalizedCanonicalAssertion target
-
 namespace Star9KernelAssertion
 
 def star_9_21 (φ ψ : Apparent Γ [.elementaryProposition]) :
     Star9CanonicalAssertion (star_9_21_line7_raw φ ψ) :=
   CanonicalOrderedJudgement.derive_star_9_21_line7_normalized φ ψ
+
+def star_9_23 (φ : Apparent Γ [.elementaryProposition]) :
+    Star9KernelAssertion (star_9_23_target φ) :=
+  .star_9_23_from_closed φ
+    (.elementary (PM.FirstEdition.Volume1.Star2.star_2_08
+      (Apparent.openHead φ)))
+    (star_9_21 φ φ) rfl
 
 end Star9KernelAssertion
 
