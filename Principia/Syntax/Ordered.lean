@@ -91,6 +91,17 @@ def alwaysFirstOrder (body : FirstOrder Γ [.elementaryProposition]) :
     OrderedFormula Γ 2 :=
   .secondOrder (Quantified.always body)
 
+/-- Capture-free renaming of ambient real variables at every represented
+assigned order.  It is syntax transport only. -/
+def renameReal (ρ : Apparent.RealRenaming Γ Ξ) :
+    OrderedFormula Γ order → OrderedFormula Ξ order
+  | .elementary p => .elementary (Elementary.schemaInstance (fun v => .var (ρ v)) p)
+  | .firstOrder p => .firstOrder (FirstOrder.renameReal ρ p)
+  | .secondOrder p => .secondOrder (SecondOrder.renameReal ρ p)
+  | .neg p => .neg (renameReal ρ p)
+  | .disj scope p q => .disj scope (renameReal ρ p) (renameReal ρ q)
+
+
 def embedElementary (p : Elementary Γ) : OrderedFormula Γ 0 := .elementary p
 
 def eraseElementary? : OrderedFormula Γ order → Option (Elementary Γ)
