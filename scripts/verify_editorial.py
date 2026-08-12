@@ -116,6 +116,10 @@ def check_apparatus() -> None:
 def check_item_metadata() -> None:
     blocks = collect_verbatim()
     metadata_ids: set[str] = set()
+    required_item_fields = {
+        "id", "kind", "printed", "lean_path", "declaration", "formal_scope",
+        "source_status", "formal_status",
+    }
     for path in sorted((ROOT / "metadata" / "items").glob("*.json")):
         try:
             batch = json.loads(path.read_text(encoding="utf-8"))
@@ -127,6 +131,12 @@ def check_item_metadata() -> None:
         if len(items) > 5:
             fail(f"{path} exceeds the campaign batch cap of five items")
         for item in items:
+            missing_fields = required_item_fields - item.keys()
+            if missing_fields:
+                fail(
+                    f"{path} item {item.get('id')!r} lacks required fields: "
+                    f"{sorted(missing_fields)}"
+                )
             item_id = item.get("id")
             if not item_id or item_id in metadata_ids:
                 fail(f"missing or duplicate item ID {item_id!r} in {path}")
