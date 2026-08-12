@@ -70,4 +70,21 @@ theorem star_9_32 (rules : Q259ClosedRuleBook) (q : Elementary Γ)
   exact OrderedAssertion.star_9_12 universalLine
     (rules.star_9_25 (∼ₚ q) (φ ∨ₐ Apparent.ofElementary q))
 
+/-- PM I ✱9·33.  As indicated by “Proof as above”, ✱1·3 asserts the
+elementary value `q ⊃ (φx ∨ q)`.  The corresponding explicit schema instance
+of ✱9·1 existentially closes that same matrix, and the mixed ✱9·12 rule
+detaches it.  The result is definitionally the printed ✱9·06/·03 reading. -/
+theorem star_9_33 (_rules : Q259ClosedRuleBook) (q : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star_9_33Derivation q φ := by
+  let body := matrixImp (Apparent.ofElementary q)
+    (φ ∨ₐ Apparent.ofElementary q)
+  have elementaryLine : OrderedAssertion
+      (.elementary (Apparent.elementaryValue body q)) := by
+    simpa [body, matrixImp, Apparent.elementaryValue, Elementary.imp] using
+      OrderedAssertion.elementary (PM.Derivation.star_1_3
+        (Apparent.elementaryValue φ q) q)
+  exact OrderedAssertion.star_9_12_elementary_to_first elementaryLine
+    (OrderedAssertion.star_9_1_instance body q)
+
 end PM.Architecture.Q259ClosedRuleBook

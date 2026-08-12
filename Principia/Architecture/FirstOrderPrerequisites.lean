@@ -104,6 +104,18 @@ def star_9_1_target (φ : Apparent Γ [.elementaryProposition]) :
     (FirstOrder.impElementaryToFirst (Apparent.openHead φ)
       (FirstOrder.weakenReal (FirstOrder.sometimes φ)))
 
+/-- A metalinguistic schema instance of ✱9·1 at an explicitly supplied real
+value.  This is the same primitive proposition schema as `star_9_1_target`,
+not an object-syntactic substitution rule: `Apparent.instantiate` records the
+displayed value `φx`, while the existential consequent retains the function
+`φ` itself. -/
+def star_9_1_instance_target (φ : Apparent Γ [.elementaryProposition])
+    (value : Elementary Γ) : OrderedFormula Γ 1 :=
+  .firstOrder
+    (FirstOrder.impElementaryToFirst
+      (Apparent.elementaryValue φ value)
+      (FirstOrder.sometimes φ))
+
 /-- The exact second Pp of ✱9.  The two values `φx` and `φy` use two distinct
 leading real variables; their common existential conclusion has neither as a
 significant free variable.  This is why it is a separate closed constructor,
@@ -176,6 +188,12 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
   /-- ✱9·1, a closed Pp constructor at its exact formula schema. -/
   | star_9_1 (φ : Apparent Γ [.elementaryProposition]) :
       OrderedAssertion (star_9_1_target φ)
+  /-- The explicit metalinguistic instance form of the same ✱9·1 Pp schema.
+  Its value parameter corresponds to PM's schematic instantiation convention;
+  it introduces neither a new inference rule nor a target-specific oracle. -/
+  | star_9_1_instance (φ : Apparent Γ [.elementaryProposition])
+      (value : Elementary Γ) :
+      OrderedAssertion (star_9_1_instance_target φ value)
   /-- ✱9·11, deliberately independent of ✱9·1 as required by the printed
   circularity warning concerning the first-order Taut analogue. -/
   | star_9_11 (φ : Apparent Γ [.elementaryProposition]) :
@@ -220,6 +238,7 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
       OrderedAssertion (Γ := .elementaryProposition :: Γ)
         (.firstOrder (FirstOrder.openRealHead φ)) →
       OrderedAssertion (firstOrderToSecondAll φ)
+
 
 /-- The exact judgement sought for ✱9·21.  It is a target contract, not an
 invented primitive: it becomes inhabited only by a derivation from the

@@ -197,6 +197,27 @@ def openHead : Apparent Γ [.elementaryProposition] →
   | .neg proposition => .neg (openHead proposition)
   | .disj left right => .disj (openHead left) (openHead right)
 
+/-- Metalinguistic value of a one-place elementary matrix at an explicitly
+given elementary argument.  Unlike `Apparent.substitute`, this operation has
+no remaining apparent binder and returns the conservative `Elementary`
+syntax used by ✱1–✱5. -/
+def elementaryValue : Apparent Γ [.elementaryProposition] →
+    Elementary Γ → Elementary Γ
+  | .constant name, _ => .constant name
+  | .real v, _ => .var v
+  | .bound .zero, argument => argument
+  | .neg proposition, argument => .neg (elementaryValue proposition argument)
+  | .disj left right, argument => .disj
+      (elementaryValue left argument) (elementaryValue right argument)
+
+@[simp] theorem elementaryValue_ofElementary (p argument : Elementary Γ) :
+    elementaryValue (ofElementary p : Apparent Γ [.elementaryProposition]) argument = p := by
+  induction p with
+  | constant name => rfl
+  | var v => rfl
+  | neg p ih => simp [ofElementary, elementaryValue, ih]
+  | disj p q ihp ihq => simp [ofElementary, elementaryValue, ihp, ihq]
+
 /-- The bivariate matrix `φx ∨ φy` used in the first application of ✱9·1
 in the proof of ✱9·3.  The left occurrence opens the sole binder as the new
 real variable `x`; the right occurrence retains it as the apparent variable
