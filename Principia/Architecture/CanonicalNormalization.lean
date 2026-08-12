@@ -131,6 +131,15 @@ inductive NormalizesScopedAt : Nat → Raw Γ → Raw Γ → Prop where
         (.quantified .always (.quantified .sometimes
           (.disj (shiftBoundAt depth p) q)))
         (.disj (.quantified .sometimes p) (.quantified .always q))
+  /-- Local-scope ✱9·07 used inside ✱9·22: its left disjunct is already at
+  the retained universal's depth, while the existential consequent is
+  explicitly weakened beneath that binder. -/
+  | disjUnderAlwaysSometimesLocal (depth) (p q) :
+      NormalizesScopedAt depth
+        (.quantified .always (.quantified .sometimes
+          (.disj p (shiftBoundAt depth q))))
+        (.quantified .always
+          (.disj p (.quantified .sometimes q)))
   /-- ✱9·03·02: a universal closure of an implication becomes an
   implication from the corresponding existential antecedent.  The
   consequent is explicitly weakened in the redex, certifying that it does

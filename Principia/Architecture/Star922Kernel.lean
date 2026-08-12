@@ -292,6 +292,27 @@ theorem sourceLine5From906_to_computedLine6
     (.quantified .sometimes
       (.disj (.neg (phiYOuterRaw φ)) (weakenBound (psiZBodyRaw ψ))))
 
+def computedLine7From906Raw
+    (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj
+    (.quantified .sometimes (.neg (implicationOuterRaw φ ψ)))
+    (.quantified .always
+      (.disj (.neg (phiYOuterRaw φ))
+        (.quantified .sometimes (psiZBodyRaw ψ))))
+
+theorem computedLine6From906_to_line7
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (computedLine6From906Raw φ ψ)
+      (computedLine7From906Raw φ ψ) := by
+  apply NormalizesScopedAt.disjCongr 0 (.refl 0 _)
+  exact .disjUnderAlwaysSometimesLocal 0
+    (.neg (phiYOuterRaw φ)) (psiZBodyRaw ψ)
+
+theorem computedLine7From906_eq_concreteLine7
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    computedLine7From906Raw φ ψ = concreteLine7Raw φ ψ := by
+  rfl
+
 def sourceLine6Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
   line5Redex (.neg (implicationOuterRaw φ ψ))
     (.quantified .sometimes
@@ -364,30 +385,33 @@ theorem line4Raw_is_adjacent_line4
 endpoint remain explicit; a future bridge must identify the audited concrete
 line-(6) operands before this structure can be inhabited. -/
 structure Star922KernelAssertion
-    (φ ψ : Apparent Γ [.elementaryProposition]) where
+    (φ ψ : Apparent Γ [.elementaryProposition]) : Prop where
   line4 : OrderedAssertion (star_9_13_higher_target
     (.sometimes (star_9_21_line3_matrix φ ψ)))
-  line5ExistentialBody : Raw Γ
-  line5UniversalBody : Raw Γ
-  line5 : Raw Γ
-  line5Shape : line5 = line5Redex line5ExistentialBody line5UniversalBody
-  line6FromLine5 : Raw Γ
-  line6FromLine5Shape : line6FromLine5 =
-    line6From908 line5ExistentialBody line5UniversalBody
-  star908 : NormalizesScopedAt 0 line5 line6FromLine5
-  antecedent : Raw Γ
-  consequent : Raw Γ
-  line6Exact : Raw Γ
-  line6CarrierExact : line6Exact = line6FromLine5
-  line6Shape : line6Exact = line6Redex antecedent consequent
-  line7 : Raw Γ
-  line7Shape : line7 = line7Raw antecedent consequent
-  star907 : NormalizesScopedAt 0 line6Exact line7
+  line4Shape : line4Carrier φ ψ = sourceLine4Raw φ ψ
+  star906 : NormalizesScoped (sourceLine4Raw φ ψ)
+    (sourceLine5From906Raw φ ψ)
+  star908 : NormalizesScopedAt 0 (sourceLine5From906Raw φ ψ)
+    (computedLine6From906Raw φ ψ)
+  star907 : NormalizesScopedAt 0 (computedLine6From906Raw φ ψ)
+    (computedLine7From906Raw φ ψ)
+  line7Shape : computedLine7From906Raw φ ψ = concreteLine7Raw φ ψ
+  finalReduction : NormalizesScoped (concreteLine7Raw φ ψ) (finalRaw φ ψ)
 
 /-- The source-authorized indexed proof of printed line (4). -/
 def line4Ordered (φ ψ : Apparent Γ [.elementaryProposition]) :
     OrderedAssertion (star_9_13_higher_target
       (.sometimes (star_9_21_line3_matrix φ ψ))) :=
   derive_star_9_21_line4 φ ψ
+
+theorem derive (φ ψ : Apparent Γ [.elementaryProposition]) :
+    Star922KernelAssertion φ ψ where
+  line4 := line4Ordered φ ψ
+  line4Shape := line4Carrier_eq_sourceLine4 φ ψ
+  star906 := sourceLine4_to_line5 φ ψ
+  star908 := sourceLine5From906_to_computedLine6 φ ψ
+  star907 := computedLine6From906_to_line7 φ ψ
+  line7Shape := computedLine7From906_eq_concreteLine7 φ ψ
+  finalReduction := concreteLine7_to_final φ ψ
 
 end PM.Architecture.Star922Kernel
