@@ -136,6 +136,16 @@ def star_9_3_line4_matrix (φ : Apparent Γ [.elementaryProposition]) :
     FirstOrder.always (Apparent.rename Apparent.innerVariableRenaming φ)
   FirstOrder.impFirstToMatrix (FirstOrder.disjMatrixLeft φ inner) φ
 
+/-- The normalized line (2) of the proof of ✱9·3: from the existential
+instance of `φx ∨ φy` infer `φx`.  The displayed implication is represented
+definitionally as `∼(∃y).(φx∨φy) ∨ φx`. -/
+def star_9_3_line2_target (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula (.elementaryProposition :: Γ) 1 :=
+  .firstOrder
+    (FirstOrder.impFirstToMatrix
+      (FirstOrder.sometimes (Apparent.openHeadOrBound φ))
+      (Apparent.ofElementary (Apparent.openHead φ)))
+
 /-- The outer `x` generalization of line (4), at the sole represented second
 assigned order. -/
 def star_9_3_line4_target (φ : Apparent Γ [.elementaryProposition]) :
