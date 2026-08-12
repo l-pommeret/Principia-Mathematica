@@ -171,6 +171,92 @@ theorem closedLine3_to_line4
       (ofFirstOrder (FirstOrder.abstractRealOuter (line2Antecedent φ)))
       (closedConsequentOutside φ))
 
+def closedAntecedentLeftUnder (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofApparent (Apparent.abstractRealOuter (Apparent.abstractRealOuter
+    ((Apparent.ofElementary
+      (Apparent.atReal (Apparent.weakenReal (Apparent.weakenReal φ)) .zero)) :
+        Apparent (.elementaryProposition :: .elementaryProposition :: Γ)
+          [.elementaryProposition])))
+
+def closedAntecedentRightBody (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofApparent (Apparent.abstractRealOuter (Apparent.abstractRealOuter
+    ((Apparent.ofElementary
+      (Apparent.atReal (Apparent.weakenReal (Apparent.weakenReal φ))
+        (.succ .zero))) :
+          Apparent (.elementaryProposition :: .elementaryProposition :: Γ)
+            [.elementaryProposition])))
+
+theorem closedAntecedentRedex_shape
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofFirstOrder (FirstOrder.abstractRealOuter (line2Antecedent φ)) =
+      .quantified .sometimes
+        (.disj (closedAntecedentLeftUnder φ)
+          (closedAntecedentRightBody φ)) := by
+  rfl
+
+theorem closedAntecedentLeft_unused
+    (φ : Apparent Γ [.elementaryProposition]) :
+    UnusedBoundAt 0 (closedAntecedentLeftUnder φ) := by
+  induction φ with
+  | constant name => simp [closedAntecedentLeftUnder, UnusedBoundAt,
+      Apparent.ofElementary, Apparent.atReal, Apparent.instantiate,
+      Apparent.substitute, Apparent.instantiateSubstitution,
+      Apparent.closedToElementary, Apparent.weakenReal, Apparent.renameReal,
+      Apparent.rename, Apparent.abstractRealOuter, ofApparent]
+  | real v => simp [closedAntecedentLeftUnder, UnusedBoundAt,
+      Apparent.ofElementary, Apparent.atReal, Apparent.instantiate,
+      Apparent.substitute, Apparent.instantiateSubstitution,
+      Apparent.closedToElementary, Apparent.weakenReal, Apparent.renameReal,
+      Apparent.rename, Apparent.abstractRealOuter, ofApparent]
+  | bound v =>
+      cases v with
+      | zero => simp [closedAntecedentLeftUnder, UnusedBoundAt,
+          Apparent.ofElementary, Apparent.atReal, Apparent.instantiate,
+          Apparent.substitute, Apparent.instantiateSubstitution,
+          Apparent.closedToElementary, Apparent.weakenReal, Apparent.renameReal,
+          Apparent.rename, Apparent.abstractRealOuter, ofApparent, boundIndex]
+      | succ v => exact nomatch v
+  | neg p ih =>
+      simpa [closedAntecedentLeftUnder, UnusedBoundAt,
+        Apparent.ofElementary, Apparent.atReal, Apparent.instantiate,
+        Apparent.substitute, Apparent.instantiateSubstitution,
+        Apparent.closedToElementary, Apparent.weakenReal, Apparent.renameReal,
+        Apparent.rename, Apparent.abstractRealOuter, ofApparent] using ih
+  | disj p q ihp ihq =>
+      simpa [closedAntecedentLeftUnder, UnusedBoundAt,
+        Apparent.ofElementary, Apparent.atReal, Apparent.instantiate,
+        Apparent.substitute, Apparent.instantiateSubstitution,
+        Apparent.closedToElementary, Apparent.weakenReal, Apparent.renameReal,
+        Apparent.rename, Apparent.abstractRealOuter, ofApparent] using And.intro ihp ihq
+
+def closedFinalDisplayRaw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always
+    (.disj
+      (.neg (.disj
+        (.quantified .sometimes
+          (dropUnusedBound (closedAntecedentLeftUnder φ)))
+        (.quantified .sometimes (closedAntecedentRightBody φ))))
+      (closedConsequentOutside φ))
+
+theorem closedLine4_to_final
+    (φ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (closedLine4DisplayRaw φ)
+      (closedFinalDisplayRaw φ) := by
+  rw [closedLine4DisplayRaw, closedAntecedentRedex_shape]
+  exact .quantifiedClosedCongr .always
+    (.disjCongr 0
+      (.negCongr 0
+        (.sometimesSometimesDisjWitness 0
+          (closedAntecedentLeftUnder φ) (closedAntecedentRightBody φ)
+          (closedAntecedentLeft_unused φ)))
+      (.refl 0 (closedConsequentOutside φ)))
+
+theorem closedLine3_to_final
+    (φ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (closedLine3DisplayRaw φ)
+      (closedFinalDisplayRaw φ) :=
+  .trans (closedLine3_to_line4 φ) (closedLine4_to_final φ)
+
 def closedLine3NormalizedRaw
     (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
   .quantified .always (.quantified .always
@@ -304,8 +390,16 @@ inductive Star931ClosedStage
       (carrierExact : carrier = line3Carrier φ)
       (targetExact : star_9_13_higher_target carrier = line3Target φ) :
       Star931ClosedStage φ 3
-  | star_9_03_02 : Star931ClosedStage φ 3 → Star931ClosedStage φ 4
-  | star_9_05_06 : Star931ClosedStage φ 4 → Star931ClosedStage φ 5
+  | star_9_03_02
+      (line3Proof : Star931ClosedStage φ 3)
+      (certificate : NormalizesScopedAt 0
+        (closedLine3DisplayRaw φ) (closedLine4DisplayRaw φ)) :
+      Star931ClosedStage φ 4
+  | star_9_05_06
+      (line4Proof : Star931ClosedStage φ 4)
+      (certificate : NormalizesScopedAt 0
+        (closedLine4DisplayRaw φ) (closedFinalDisplayRaw φ)) :
+      Star931ClosedStage φ 5
 
 /-- Closed evidence retaining the original indexed proof and its exact
 source-labelled normalization endpoint. -/
@@ -323,6 +417,7 @@ def derive
     (φ : Apparent Γ [.elementaryProposition]) :
     Star931KernelAssertion φ where
   chain := .star_9_05_06 (.star_9_03_02
-    (.second_9_13 (.line2 (deriveLine2 φ)) (line3Carrier φ) rfl rfl))
+    (.second_9_13 (.line2 (deriveLine2 φ)) (line3Carrier φ) rfl rfl)
+    (closedLine3_to_line4 φ)) (closedLine4_to_final φ)
 
 end PM.Architecture.Star931Kernel

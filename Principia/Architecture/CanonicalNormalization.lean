@@ -114,6 +114,31 @@ inductive NormalizesScopedAt : Nat → Raw Γ → Raw Γ → Prop where
           (.disj (shiftBoundAt (depth + 1) p)
             (shiftBoundAt (depth + 1) q))))
         (.disj (.quantified .sometimes p) (.quantified .sometimes q))
+  /-- ✱9·05·06 with its two operands represented at their actual scopes.
+  The left operand is explicitly weakened beneath the right existential
+  binder; the right operand is already its binder body. -/
+  | sometimesDisjIndependentLeft (depth) (p q) :
+      NormalizesScopedAt depth
+        (.quantified .sometimes
+          (.disj (shiftBoundAt depth p) q))
+        (.disj p (.quantified .sometimes q))
+  /-- Witness form of the same rule, useful when the printed left operand is
+  already under the binder.  `UnusedBoundAt` is the capture-freedom
+  certificate which makes `dropUnusedBoundAt` its unique outer form. -/
+  | sometimesDisjIndependentLeftWitness (depth) (p q)
+      (unused : UnusedBoundAt depth p) :
+      NormalizesScopedAt depth
+        (.quantified .sometimes (.disj p q))
+        (.disj (dropUnusedBoundAt depth p) (.quantified .sometimes q))
+  /-- Printed two-binder form of ✱9·05·06.  The left occurrence is
+  independent of the inner binder, witnessed structurally. -/
+  | sometimesSometimesDisjWitness (depth) (p q)
+      (unused : UnusedBoundAt depth p) :
+      NormalizesScopedAt depth
+        (.quantified .sometimes (.quantified .sometimes (.disj p q)))
+        (.disj
+          (.quantified .sometimes (dropUnusedBoundAt depth p))
+          (.quantified .sometimes q))
   | quantifiedCongr (depth) (q) : NormalizesScopedAt (depth + 1) p r →
       NormalizesScopedAt depth (.quantified q p) (.quantified q r)
   /-- A completed local normalization may subsequently be packaged by a
