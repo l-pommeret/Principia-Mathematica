@@ -236,6 +236,45 @@ theorem psiZClosed_slot
         Raw.disj (weakenBound (ofApparent p)) (weakenBound (ofApparent q))
       rw [ihp, ihq]
 
+private theorem dropUnusedBoundAt_shiftBoundAt (cutoff : Nat) (p : Raw Γ) :
+    dropUnusedBoundAt cutoff (shiftBoundAt cutoff p) = p := by
+  induction p generalizing cutoff with
+  | elementary proposition => rfl
+  | schema slot => rfl
+  | bound index =>
+      by_cases h : cutoff ≤ index
+      · simp [dropUnusedBoundAt, shiftBoundAt, shiftIndex, h]
+        omega
+      · have below : index < cutoff := by omega
+        simp [dropUnusedBoundAt, shiftBoundAt, shiftIndex, h, below]
+  | quantified quantifier body ih =>
+      simp [dropUnusedBoundAt, shiftBoundAt, ih]
+  | neg proposition ih =>
+      simp [dropUnusedBoundAt, shiftBoundAt, ih]
+  | disj left right ihLeft ihRight =>
+      simp [dropUnusedBoundAt, shiftBoundAt, ihLeft, ihRight]
+
+private theorem dropUnusedBound_weakenBound (p : Raw Γ) :
+    dropUnusedBound (weakenBound p) = p :=
+  dropUnusedBoundAt_shiftBoundAt 0 p
+
+theorem line4Antecedent_slot
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    line4AntecedentRaw φ ψ = weakenBound (implicationOuterRaw φ ψ) := by
+  rw [line4AntecedentRaw, phiXClosed_slot, psiXClosed_slot]
+  change dropUnusedBound
+      (weakenBound (rawImp (weakenBound (ofApparent φ))
+        (weakenBound (ofApparent ψ)))) = _
+  rw [dropUnusedBound_weakenBound]
+  rfl
+
+theorem line4Consequent_slot
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    line4ConsequentRaw φ ψ =
+      .disj (.neg (phiYOuterRaw φ)) (weakenBound (psiZBodyRaw ψ)) := by
+  rw [line4ConsequentRaw, phiYClosed_slot, psiZClosed_slot]
+  rfl
+
 def sourceLine6Raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
   line5Redex (.neg (implicationOuterRaw φ ψ))
     (.quantified .sometimes
