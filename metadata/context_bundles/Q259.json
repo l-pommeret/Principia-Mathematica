@@ -1,10 +1,14 @@
 {
-  "context_closure": [],
+  "context_closure": [
+    "PM1:✱2·05",
+    "PM1:✱2·07",
+    "PM1:✱2·08"
+  ],
   "current_item": "PM1:✱9·3–·33",
   "integration_blocked": true,
   "interface_dependencies": [],
   "kind": "pm-isolated-context-bundle",
-  "manifest_sha256": "83fe012bc75a99018fbfabdc5b860665b7d4471858d18eb97fec3893adfd4c28",
+  "manifest_sha256": "562460e1e808ba291e6bc48094934f984734a42ef934b7ac6daadb8bb69a5ba1",
   "policy": {
     "canonical_integration_forbidden": true,
     "grants_no_additional_proof_permission": true,
@@ -47,8 +51,8 @@
     "status": "complete"
   },
   "source_backfill_required": false,
-  "source_bytes": 67190,
-  "source_sha256": "ab7ce4be283804e7e7a4a35c2f511fe104e51c2f6651a650d5d4b449ba7c1493",
+  "source_bytes": 112819,
+  "source_sha256": "961772ae5456d07e5debbfb5e421fd5bbadfbca47c38ec561488f92e22a465a8",
   "sources": [
     {
       "bytes": 1191,
@@ -86,12 +90,79 @@
       "source_sha256": "3e6792db484aa9a6eb87c04adc663b9df0ffbceb0b748af125e39eac7e96f77f"
     },
     {
+      "bytes": 179,
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_05",
+      "id": "PM1:✱2·05",
+      "kind": "item-declaration",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "slice_sha256": "7710bc5a169e21b9fb6082d67ea08d7c9f95f442de84dbfb8ddf531b0c5bc11a",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+    },
+    {
+      "bytes": 131,
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_07",
+      "id": "PM1:✱2·07",
+      "kind": "item-declaration",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "slice_sha256": "ac4881c13cba3cabb8fc305b50f4367f008204643a7266f80eaf92cc1e1d5324",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+    },
+    {
+      "bytes": 217,
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_08",
+      "id": "PM1:✱2·08",
+      "kind": "item-declaration",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "slice_sha256": "f4a2e56aeaadc61e857e2f8722ab3c3e9bfbfe70d64cc9988f4812515df996cd",
+      "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+    },
+    {
       "bytes": 15745,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/FirstOrderPrerequisites.lean",
       "slice_sha256": "f3d8d82c88b6dee53112058e91494fde612061ce583a8872f3c46e70365f236d",
       "source_sha256": "4132bf73898914e3bd331efb7963206c26c701a9073744913807bdb3880049f9"
+    },
+    {
+      "bytes": 15384,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Syntax/CanonicalOrderedFormula.lean",
+      "slice_sha256": "b69b8ee7c9cd22301d893e999d6bb444a751b03d47dbae33ab09db45be7a1234",
+      "source_sha256": "ba7e69b2fe41c02c8925bea1f82dec3a7bcc8970127599bae19f6e62c02a400f"
+    },
+    {
+      "bytes": 11550,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/CanonicalOrderedAdapters.lean",
+      "slice_sha256": "6a2c614a77e41c0401d63956253595c4eacec85063bb2e5e28813caa5b84e036",
+      "source_sha256": "e64fac103a137cc6de69032596316509f57415c676df3e8d9760cffb8bb10c96"
+    },
+    {
+      "bytes": 5370,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/CanonicalNormalization.lean",
+      "slice_sha256": "5323127677c78740e4df9ad98b8fa27ad6c4b246d122a71e5d4c732462a36054",
+      "source_sha256": "95902701a46626106d3218b7cb693c80b7bcec47149c40027d6d972d31e6031e"
+    },
+    {
+      "bytes": 6833,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/CanonicalOrderedJudgement.lean",
+      "slice_sha256": "5eff9a7287749f009e0b5bdc91d0b73e29561637e98152972477e56eee46e7a7",
+      "source_sha256": "396e3b00b0460f4c0fcd553beed86b1690d7d1b3493f3c8f8bfc70bbdaa0da89"
+    },
+    {
+      "bytes": 5128,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star921MatrixKernel.lean",
+      "slice_sha256": "6c312c4eb47a99ee41c00bbc8ff2be12d18b412722e2254ab5b48231ef51eb8c",
+      "source_sha256": "635519ac0730a75a8f3412e074934b78c524adabc6b4cd17866c4475d9de2e59"
     },
     {
       "bytes": 996,

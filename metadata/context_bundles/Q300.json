@@ -8,7 +8,7 @@
   "integration_blocked": true,
   "interface_dependencies": [],
   "kind": "pm-isolated-context-bundle",
-  "manifest_sha256": "da76e2b2c038ff3e24bdb5e8e5fbd3dfef8899b407b48b9dcb07e86e1924083d",
+  "manifest_sha256": "5c7be25c5b9c6ca01bda6b19dfbd20e863de9a5fd2e4a371a0c40fc6df1d25dc",
   "policy": {
     "canonical_integration_forbidden": true,
     "grants_no_additional_proof_permission": true,
@@ -39,8 +39,8 @@
     "status": "complete"
   },
   "source_backfill_required": false,
-  "source_bytes": 64322,
-  "source_sha256": "ef3af0959177e27b12fbdc0f92c4b2a472729e28cc40c5e3d9a1c04979939498",
+  "source_bytes": 64352,
+  "source_sha256": "6ccb6a908de268b4ea39bbfd296236f189136fdead18306393e8a03038b3194e",
   "sources": [
     {
       "bytes": 1191,
@@ -78,14 +78,6 @@
       "source_sha256": "3e6792db484aa9a6eb87c04adc663b9df0ffbceb0b748af125e39eac7e96f77f"
     },
     {
-      "bytes": 15745,
-      "grants_proof_permission": false,
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/FirstOrderPrerequisites.lean",
-      "slice_sha256": "f3d8d82c88b6dee53112058e91494fde612061ce583a8872f3c46e70365f236d",
-      "source_sha256": "4132bf73898914e3bd331efb7963206c26c701a9073744913807bdb3880049f9"
-    },
-    {
       "bytes": 179,
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_05",
       "id": "PM1:✱2·05",
@@ -111,6 +103,14 @@
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "slice_sha256": "f4a2e56aeaadc61e857e2f8722ab3c3e9bfbfe70d64cc9988f4812515df996cd",
       "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
+    },
+    {
+      "bytes": 15745,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/FirstOrderPrerequisites.lean",
+      "slice_sha256": "f3d8d82c88b6dee53112058e91494fde612061ce583a8872f3c46e70365f236d",
+      "source_sha256": "4132bf73898914e3bd331efb7963206c26c701a9073744913807bdb3880049f9"
     }
   ],
   "ci_evidence": {

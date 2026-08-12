@@ -216,6 +216,39 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
             raise BundleError(
                 "completed source backfill requires an explicit source_backfill_audit"
             )
+
+    # Some local architecture adapters depend on a small kernel-checked
+    # declaration slice.  Emit those slices before the local source (rather
+    # than after it with the ordinary closure) so the isolated context has the
+    # same declaration order as the canonical import graph.
+    predeclare_ids = manifest.get("context_predeclarations", [])
+    if (not isinstance(predeclare_ids, list) or
+            not all(isinstance(identifier, str) for identifier in predeclare_ids) or
+            len(predeclare_ids) != len(set(predeclare_ids))):
+        raise BundleError("context_predeclarations must be a unique string list")
+    if not set(predeclare_ids) <= set(closure):
+        raise BundleError("context_predeclarations must belong to context_closure")
+    for identifier in sorted(predeclare_ids, key=pm_order):
+        item = registry[identifier]
+        if item.get("formal_status") != "kernel-checked":
+            raise BundleError("context_predeclaration must be kernel-checked: " + identifier)
+        clean = clean_declaration(item, root)
+        namespace = declaration_namespace(item["declaration"])
+        wrapped = f"namespace {namespace}\n\n{clean}\n\nend {namespace}\n"
+        chunks.append(
+            f"-- PM-CONTEXT-PREDECLARATION {item['id']} {item['declaration']}\n{wrapped}"
+        )
+        sources.append({
+            "kind": "item-declaration",
+            "id": item["id"],
+            "path": item["lean_path"],
+            "declaration": item["declaration"],
+            "source_sha256": sha256_text(
+                (root / item["lean_path"]).read_text(encoding="utf-8")
+            ),
+            "slice_sha256": sha256_text(clean),
+            "bytes": len(clean.encode("utf-8")),
+        })
     if local_context_paths and not interface_gated:
         raise BundleError("local architecture context requires interface-gated policy")
     for relative in local_context_paths:
@@ -270,7 +303,8 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
         syntax_by_id = {}
 
     sliced = [registry[identifier] for identifier in closure
-              if registry[identifier]["lean_path"] not in foundation_paths]
+              if (identifier not in predeclare_ids and
+                  registry[identifier]["lean_path"] not in foundation_paths)]
     sliced.sort(key=lambda item: pm_order(item["id"]))
     for item in sliced:
         is_interface = item["id"] in non_kernel

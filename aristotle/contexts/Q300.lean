@@ -1155,6 +1155,35 @@ inductive OrderedDerivation (rules : OrderedRuleBook Γ order) :
 
 end PM
 
+-- PM-CONTEXT-PREDECLARATION PM1:✱2·05 PM.FirstEdition.Volume1.Star2.star_2_05
+namespace PM.FirstEdition.Volume1.Star2
+
+theorem star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
+  PM.Derivation.star_1_6 (∼ₚ p) q r
+
+end PM.FirstEdition.Volume1.Star2
+
+-- PM-CONTEXT-PREDECLARATION PM1:✱2·07 PM.FirstEdition.Volume1.Star2.star_2_07
+namespace PM.FirstEdition.Volume1.Star2
+
+theorem star_2_07 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ (p ∨ₚ p)) :=
+  PM.Derivation.star_1_3 p p
+
+end PM.FirstEdition.Volume1.Star2
+
+-- PM-CONTEXT-PREDECLARATION PM1:✱2·08 PM.FirstEdition.Volume1.Star2.star_2_08
+namespace PM.FirstEdition.Volume1.Star2
+
+theorem star_2_08 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ p) :=
+  PM.Derivation.detach (star_2_07 p)
+    (PM.Derivation.detach (PM.Derivation.star_1_2 p)
+      (star_2_05 p (p ∨ₚ p) p))
+
+end PM.FirstEdition.Volume1.Star2
+
 -- PM-CONTEXT-LOCAL Principia/Architecture/FirstOrderPrerequisites.lean
 namespace PM.Architecture.FirstOrderPrerequisites
 
@@ -1496,32 +1525,3 @@ def derive_star_9_25 (p : Elementary Γ)
   identity
 
 end PM.Architecture.FirstOrderPrerequisites
-
--- PM-CONTEXT-ITEM PM1:✱2·05 PM.FirstEdition.Volume1.Star2.star_2_05
-namespace PM.FirstEdition.Volume1.Star2
-
-theorem star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
-    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
-  PM.Derivation.star_1_6 (∼ₚ p) q r
-
-end PM.FirstEdition.Volume1.Star2
-
--- PM-CONTEXT-ITEM PM1:✱2·07 PM.FirstEdition.Volume1.Star2.star_2_07
-namespace PM.FirstEdition.Volume1.Star2
-
-theorem star_2_07 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
-    ⊢ₚ (p ⊃ₚ (p ∨ₚ p)) :=
-  PM.Derivation.star_1_3 p p
-
-end PM.FirstEdition.Volume1.Star2
-
--- PM-CONTEXT-ITEM PM1:✱2·08 PM.FirstEdition.Volume1.Star2.star_2_08
-namespace PM.FirstEdition.Volume1.Star2
-
-theorem star_2_08 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
-    ⊢ₚ (p ⊃ₚ p) :=
-  PM.Derivation.detach (star_2_07 p)
-    (PM.Derivation.detach (PM.Derivation.star_1_2 p)
-      (star_2_05 p (p ∨ₚ p) p))
-
-end PM.FirstEdition.Volume1.Star2

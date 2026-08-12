@@ -1155,6 +1155,35 @@ inductive OrderedDerivation (rules : OrderedRuleBook Γ order) :
 
 end PM
 
+-- PM-CONTEXT-PREDECLARATION PM1:✱2·05 PM.FirstEdition.Volume1.Star2.star_2_05
+namespace PM.FirstEdition.Volume1.Star2
+
+theorem star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
+  PM.Derivation.star_1_6 (∼ₚ p) q r
+
+end PM.FirstEdition.Volume1.Star2
+
+-- PM-CONTEXT-PREDECLARATION PM1:✱2·07 PM.FirstEdition.Volume1.Star2.star_2_07
+namespace PM.FirstEdition.Volume1.Star2
+
+theorem star_2_07 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ (p ∨ₚ p)) :=
+  PM.Derivation.star_1_3 p p
+
+end PM.FirstEdition.Volume1.Star2
+
+-- PM-CONTEXT-PREDECLARATION PM1:✱2·08 PM.FirstEdition.Volume1.Star2.star_2_08
+namespace PM.FirstEdition.Volume1.Star2
+
+theorem star_2_08 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ p) :=
+  PM.Derivation.detach (star_2_07 p)
+    (PM.Derivation.detach (PM.Derivation.star_1_2 p)
+      (star_2_05 p (p ∨ₚ p) p))
+
+end PM.FirstEdition.Volume1.Star2
+
 -- PM-CONTEXT-LOCAL Principia/Architecture/FirstOrderPrerequisites.lean
 namespace PM.Architecture.FirstOrderPrerequisites
 
@@ -1496,6 +1525,1073 @@ def derive_star_9_25 (p : Elementary Γ)
   identity
 
 end PM.Architecture.FirstOrderPrerequisites
+
+-- PM-CONTEXT-LOCAL Principia/Syntax/CanonicalOrderedFormula.lean
+namespace PM.CanonicalOrderedFormula
+
+inductive Quantifier where
+  | always | sometimes
+  deriving DecidableEq, Repr
+
+inductive Raw : RealContext → Type where
+  | elementary : Elementary Γ → Raw Γ
+
+  | schema : Nat → Raw Γ
+  | bound : Nat → Raw Γ
+  | quantified : Quantifier → Raw Γ → Raw Γ
+  | neg : Raw Γ → Raw Γ
+  | disj : Raw Γ → Raw Γ → Raw Γ
+  deriving DecidableEq, Repr
+
+def openOuterAt (cutoff : Nat) : Raw Γ → Raw (.elementaryProposition :: Γ)
+  | .elementary p => .elementary
+      (Elementary.schemaInstance (fun v => .var (.succ v)) p)
+  | .schema slot => .schema slot
+  | .bound index =>
+      if index < cutoff + 1 then .bound index
+      else if index = cutoff + 1 then .elementary (.var .zero)
+      else .bound (index - 1)
+  | .quantified q body => .quantified q (openOuterAt (cutoff + 1) body)
+  | .neg p => .neg (openOuterAt cutoff p)
+  | .disj p q => .disj (openOuterAt cutoff p) (openOuterAt cutoff q)
+
+def openOuter (p : Raw Γ) : Raw (.elementaryProposition :: Γ) :=
+  openOuterAt 0 p
+
+def abstractElementary : Elementary (.elementaryProposition :: Γ) → Raw Γ
+  | .constant name => .elementary (.constant name)
+  | .var .zero => .bound 1
+  | .var (.succ v) => .elementary (.var v)
+  | .neg p => .neg (abstractElementary p)
+  | .disj p q => .disj (abstractElementary p) (abstractElementary q)
+
+def abstractElementaryAt (cutoff : Nat) :
+    Elementary (.elementaryProposition :: Γ) → Raw Γ
+  | .constant name => .elementary (.constant name)
+  | .var .zero => .bound (cutoff + 1)
+  | .var (.succ v) => .elementary (.var v)
+  | .neg p => .neg (abstractElementaryAt cutoff p)
+  | .disj p q => .disj (abstractElementaryAt cutoff p) (abstractElementaryAt cutoff q)
+
+def abstractOuterAt (cutoff : Nat) : Raw (.elementaryProposition :: Γ) → Raw Γ
+  | .elementary p => abstractElementaryAt cutoff p
+  | .schema slot => .schema slot
+  | .bound index =>
+      if index ≤ cutoff then .bound index else .bound (index + 1)
+  | .quantified q body => .quantified q (abstractOuterAt (cutoff + 1) body)
+  | .neg p => .neg (abstractOuterAt cutoff p)
+  | .disj p q => .disj (abstractOuterAt cutoff p) (abstractOuterAt cutoff q)
+
+def abstractOuter (p : Raw (.elementaryProposition :: Γ)) : Raw Γ :=
+  abstractOuterAt 0 p
+
+def Admissible (cutoff : Nat) : Raw Γ → Prop
+  | .elementary _ => True
+  | .schema _ => True
+  | .bound index => index ≠ cutoff + 1
+  | .quantified _ body => Admissible (cutoff + 1) body
+  | .neg p => Admissible cutoff p
+  | .disj p q => Admissible cutoff p ∧ Admissible cutoff q
+
+def shiftIndex (cutoff index : Nat) : Nat :=
+  if cutoff ≤ index then index + 1 else index
+
+theorem shiftIndex_comm (i j index : Nat) (h : i ≤ j) :
+    shiftIndex (j + 1) (shiftIndex i index) =
+      shiftIndex i (shiftIndex j index) := by
+  by_cases hi : i ≤ index
+  · by_cases hj : j ≤ index
+    · have hleft : j + 1 ≤ index + 1 := by omega
+      have hright : i ≤ index + 1 := by omega
+      simp [shiftIndex, hi, hj, hleft, hright]
+    · have hleft : ¬ j + 1 ≤ index + 1 := by omega
+      simp [shiftIndex, hi, hj, hleft]
+  · have hj : ¬ j ≤ index := by omega
+    have hleft : ¬ j + 1 ≤ index := by omega
+    simp [shiftIndex, hi, hj, hleft]
+
+def shiftBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
+  | .elementary p => .elementary p
+  | .schema slot => .schema slot
+  | .bound index => .bound (shiftIndex cutoff index)
+  | .quantified q body => .quantified q (shiftBoundAt (cutoff + 1) body)
+  | .neg p => .neg (shiftBoundAt cutoff p)
+  | .disj p q => .disj (shiftBoundAt cutoff p) (shiftBoundAt cutoff q)
+
+def weakenBound (p : Raw Γ) : Raw Γ := shiftBoundAt 0 p
+
+theorem shiftBoundAt_comm (i j : Nat) (p : Raw Γ) (h : i ≤ j) :
+    shiftBoundAt (j + 1) (shiftBoundAt i p) =
+      shiftBoundAt i (shiftBoundAt j p) := by
+  induction p generalizing i j with
+  | elementary proposition => rfl
+  | schema slot => rfl
+  | bound index => exact congrArg Raw.bound (shiftIndex_comm i j index h)
+  | quantified quantifier body ih =>
+      simp only [shiftBoundAt]
+      exact congrArg (Raw.quantified quantifier) (ih (i + 1) (j + 1) (by omega))
+  | neg proposition ih =>
+      simp only [shiftBoundAt]
+      exact congrArg Raw.neg (ih i j h)
+  | disj left right ihLeft ihRight =>
+      simp only [shiftBoundAt]
+      rw [ihLeft i j h, ihRight i j h]
+
+theorem weakenBound_weakenBound_eq_shiftBoundAt_one (p : Raw Γ) :
+    weakenBound (weakenBound p) = shiftBoundAt 1 (weakenBound p) := by
+  simpa [weakenBound] using (shiftBoundAt_comm 0 0 p (by omega)).symm
+
+def FreshBelowAt (depth count : Nat) : Raw Γ → Prop
+  | .elementary _ => True
+  | .schema _ => True
+  | .bound index => index < depth ∨ depth + count ≤ index
+  | .quantified _ body => FreshBelowAt (depth + 1) count body
+  | .neg p => FreshBelowAt depth count p
+  | .disj p q => FreshBelowAt depth count p ∧ FreshBelowAt depth count q
+
+def FreshBelow (count : Nat) (p : Raw Γ) : Prop := FreshBelowAt 0 count p
+
+theorem freshBelowAt_zero (depth : Nat) (p : Raw Γ) : FreshBelowAt depth 0 p := by
+  induction p generalizing depth with
+  | elementary proposition => trivial
+  | schema slot => trivial
+  | bound index =>
+      by_cases below : index < depth
+      · exact Or.inl below
+      · exact Or.inr (by omega)
+  | quantified quantifier body ih => exact ih (depth + 1)
+  | neg proposition ih => exact ih depth
+  | disj left right ihLeft ihRight => exact ⟨ihLeft depth, ihRight depth⟩
+
+theorem freshBelowAt_shift (depth count : Nat) (p : Raw Γ) :
+    FreshBelowAt depth count p →
+      FreshBelowAt depth (count + 1) (shiftBoundAt depth p) := by
+  intro fresh
+  induction p generalizing depth count with
+  | elementary proposition => trivial
+  | schema slot => trivial
+  | bound index =>
+      simp only [FreshBelowAt, shiftBoundAt]
+      rcases fresh with inner | external
+      · have noShift : ¬ depth ≤ index := by omega
+        simp [shiftIndex, noShift]
+        exact Or.inl inner
+      · have doShift : depth ≤ index := by omega
+        simp [shiftIndex, doShift]
+        exact Or.inr (by omega)
+  | quantified quantifier body ih =>
+      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      exact ih (depth + 1) count fresh
+  | neg proposition ih =>
+      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      exact ih depth count fresh
+  | disj left right ihLeft ihRight =>
+      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      exact ⟨ihLeft depth count fresh.1, ihRight depth count fresh.2⟩
+
+theorem shiftBoundAt_freshBelowAt (depth count : Nat) (p : Raw Γ)
+    (fresh : FreshBelowAt depth count p) :
+    shiftBoundAt (depth + count) p = shiftBoundAt depth p := by
+  induction p generalizing depth count with
+  | elementary proposition => rfl
+  | schema slot => rfl
+  | bound index =>
+      simp only [FreshBelowAt] at fresh
+      simp only [shiftBoundAt]
+      rcases fresh with inner | external
+      · have leftNo : ¬ depth + count ≤ index := by omega
+        have rightNo : ¬ depth ≤ index := by omega
+        simp [shiftIndex, leftNo, rightNo]
+      · have leftYes : depth + count ≤ index := external
+        have rightYes : depth ≤ index := by omega
+        simp [shiftIndex, leftYes, rightYes]
+  | quantified quantifier body ih =>
+      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      congr 1
+      simpa [Nat.add_assoc, Nat.add_left_comm, Nat.add_comm] using
+        ih (depth + 1) count fresh
+  | neg proposition ih =>
+      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      exact congrArg Raw.neg (ih depth count fresh)
+  | disj left right ihLeft ihRight =>
+      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      rw [ihLeft depth count fresh.1, ihRight depth count fresh.2]
+
+def UnusedBoundAt (cutoff : Nat) : Raw Γ → Prop
+  | .elementary _ => True
+  | .schema _ => True
+  | .bound index => index ≠ cutoff
+  | .quantified _ body => UnusedBoundAt (cutoff + 1) body
+  | .neg p => UnusedBoundAt cutoff p
+  | .disj p q => UnusedBoundAt cutoff p ∧ UnusedBoundAt cutoff q
+
+def dropUnusedBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
+  | .elementary p => .elementary p
+  | .schema slot => .schema slot
+  | .bound index =>
+      if index < cutoff then .bound index else .bound (index - 1)
+  | .quantified q body => .quantified q (dropUnusedBoundAt (cutoff + 1) body)
+  | .neg p => .neg (dropUnusedBoundAt cutoff p)
+  | .disj p q => .disj (dropUnusedBoundAt cutoff p) (dropUnusedBoundAt cutoff q)
+
+def dropUnusedBound (p : Raw Γ) : Raw Γ := dropUnusedBoundAt 0 p
+
+theorem shiftBoundAt_dropUnusedBoundAt
+    (p : Raw Γ) (h : UnusedBoundAt cutoff p) :
+    shiftBoundAt cutoff (dropUnusedBoundAt cutoff p) = p := by
+  induction p generalizing cutoff with
+  | elementary proposition => rfl
+  | schema slot => rfl
+  | bound index =>
+      simp only [UnusedBoundAt] at h
+      by_cases below : index < cutoff
+      · have noShift : ¬ cutoff ≤ index := by omega
+        simp [dropUnusedBoundAt, shiftBoundAt, shiftIndex, below, noShift]
+      · have above : cutoff < index := by omega
+        have shifted : cutoff ≤ index - 1 := by omega
+        simp [dropUnusedBoundAt, shiftBoundAt, shiftIndex, below, shifted]
+        omega
+  | quantified quantifier body ih =>
+      simp only [dropUnusedBoundAt, shiftBoundAt]
+      exact congrArg (Raw.quantified quantifier) (ih h)
+  | neg proposition ih =>
+      simp only [dropUnusedBoundAt, shiftBoundAt]
+      exact congrArg Raw.neg (ih h)
+  | disj left right ihLeft ihRight =>
+      simp only [dropUnusedBoundAt, shiftBoundAt] at h ⊢
+      rw [ihLeft h.1, ihRight h.2]
+
+theorem weakenBound_dropUnusedBound
+    (p : Raw Γ) (h : UnusedBoundAt 0 p) :
+    weakenBound (dropUnusedBound p) = p :=
+  shiftBoundAt_dropUnusedBoundAt p h
+
+def renameBound (ρ : Nat → Nat) : Raw Γ → Raw Γ
+  | .elementary p => .elementary p
+  | .schema slot => .schema slot
+  | .bound index => .bound (ρ index)
+  | .quantified q body =>
+      .quantified q (renameBound (fun index =>
+        match index with | 0 => 0 | n + 1 => ρ n + 1) body)
+  | .neg p => .neg (renameBound ρ p)
+  | .disj p q => .disj (renameBound ρ p) (renameBound ρ q)
+
+abbrev Substitution (Γ Ξ : RealContext) := Elementary Γ → Raw Ξ
+
+namespace Substitution
+
+def lift (σ : Substitution Γ Ξ) : Substitution Γ Ξ :=
+  fun proposition => weakenBound (σ proposition)
+
+def liftN : Nat → Substitution Γ Ξ → Substitution Γ Ξ
+  | 0, σ => σ
+  | n + 1, σ => lift (liftN n σ)
+
+@[simp] theorem lift_apply (σ : Substitution Γ Ξ) (proposition : Elementary Γ) :
+    lift σ proposition = weakenBound (σ proposition) := rfl
+
+@[simp] theorem liftN_zero (σ : Substitution Γ Ξ) : liftN 0 σ = σ := rfl
+
+@[simp] theorem liftN_succ (n : Nat) (σ : Substitution Γ Ξ) :
+    liftN (n + 1) σ = lift (liftN n σ) := rfl
+
+end Substitution
+
+def substitute (σ : Substitution Γ Ξ) : Raw Γ → Raw Ξ
+  | .elementary proposition => σ proposition
+  | .schema slot => .schema slot
+  | .bound index => .bound index
+  | .quantified quantifier body =>
+      .quantified quantifier (substitute (Substitution.lift σ) body)
+  | .neg proposition => .neg (substitute σ proposition)
+  | .disj left right => .disj (substitute σ left) (substitute σ right)
+
+@[simp] theorem substitute_elementary (σ : Substitution Γ Ξ)
+    (proposition : Elementary Γ) :
+    substitute σ (.elementary proposition) = σ proposition := rfl
+
+@[simp] theorem substitute_bound (σ : Substitution Γ Ξ) (index : Nat) :
+    substitute σ (.bound index) = .bound index := rfl
+
+theorem substitution_liftN_fresh (σ : Substitution Γ Ξ)
+    (count : Nat) (proposition : Elementary Γ) :
+    FreshBelow count (Substitution.liftN count σ proposition) := by
+  induction count with
+  | zero => exact freshBelowAt_zero 0 _
+  | succ count ih =>
+      change FreshBelowAt 0 (count + 1)
+        (shiftBoundAt 0 (Substitution.liftN count σ proposition))
+      exact freshBelowAt_shift 0 count _ ih
+
+theorem substitution_liftN_succ_as_shift (σ : Substitution Γ Ξ)
+    (count : Nat) (proposition : Elementary Γ) :
+    Substitution.liftN (count + 1) σ proposition =
+      shiftBoundAt count (Substitution.liftN count σ proposition) := by
+  change shiftBoundAt 0 (Substitution.liftN count σ proposition) = _
+  simpa using (shiftBoundAt_freshBelowAt 0 count _
+    (substitution_liftN_fresh σ count proposition)).symm
+
+theorem substitute_liftN_shiftBoundAt (σ : Substitution Γ Ξ)
+    (count : Nat) (p : Raw Γ) :
+    substitute (Substitution.liftN (count + 1) σ) (shiftBoundAt count p) =
+      shiftBoundAt count (substitute (Substitution.liftN count σ) p) := by
+  induction p generalizing count with
+  | elementary proposition =>
+      exact substitution_liftN_succ_as_shift σ count proposition
+  | schema slot => rfl
+  | bound index => rfl
+  | quantified quantifier body ih =>
+      simp only [shiftBoundAt, substitute, Substitution.liftN_succ]
+      exact congrArg (Raw.quantified quantifier) (ih (count + 1))
+  | neg proposition ih =>
+      simp only [shiftBoundAt, substitute]
+      exact congrArg Raw.neg (ih count)
+  | disj left right ihLeft ihRight =>
+      simp only [shiftBoundAt, substitute]
+      rw [ihLeft count, ihRight count]
+
+theorem substitute_lift_weakenBound (σ : Substitution Γ Ξ) (p : Raw Γ) :
+    substitute (Substitution.lift σ) (weakenBound p) =
+      weakenBound (substitute σ p) := by
+  simpa [weakenBound] using substitute_liftN_shiftBoundAt σ 0 p
+
+abbrev SchemaSubstitution (Γ : RealContext) := Nat → Raw Γ
+
+def substituteSchema (σ : SchemaSubstitution Γ) : Raw Γ → Raw Γ
+  | .elementary proposition => .elementary proposition
+  | .schema slot => σ slot
+  | .bound index => .bound index
+  | .quantified quantifier body =>
+      .quantified quantifier
+        (substituteSchema (fun slot => weakenBound (σ slot)) body)
+  | .neg proposition => .neg (substituteSchema σ proposition)
+  | .disj left right => .disj (substituteSchema σ left) (substituteSchema σ right)
+
+def smartNeg : Raw Γ → Raw Γ
+  | .quantified .always body => .quantified .sometimes (smartNeg body)
+  | .quantified .sometimes body => .quantified .always (smartNeg body)
+  | proposition => .neg proposition
+
+def rawSize : Raw Γ → Nat
+  | .elementary _ | .schema _ | .bound _ => 1
+  | .quantified _ p | .neg p => rawSize p + 1
+  | .disj p q => rawSize p + rawSize q + 1
+
+def smartDisjAux : Nat → Raw Γ → Raw Γ → Raw Γ
+  | 0, p, q => .disj p q
+  | fuel + 1, .quantified .always p, .quantified .sometimes q =>
+      .quantified .always (.quantified .sometimes
+        (smartDisjAux fuel (weakenBound p) q))
+  | fuel + 1, .quantified .sometimes p, .quantified .always q =>
+      .quantified .always (.quantified .sometimes
+        (smartDisjAux fuel (weakenBound p) q))
+  | fuel + 1, .quantified q p, r =>
+      .quantified q (smartDisjAux fuel p (weakenBound r))
+  | fuel + 1, p, .quantified q r =>
+      .quantified q (smartDisjAux fuel (weakenBound p) r)
+  | _ + 1, p, q => .disj p q
+
+def smartDisj (p q : Raw Γ) : Raw Γ :=
+  smartDisjAux (rawSize p + rawSize q) p q
+
+def smartImp (p q : Raw Γ) : Raw Γ := smartDisj (smartNeg p) q
+
+@[simp] theorem shiftBoundAt_elementary (p : Elementary Γ) :
+    shiftBoundAt cutoff (.elementary p) = .elementary p := rfl
+
+@[simp] theorem smartNeg_always (p : Raw Γ) :
+    smartNeg (.quantified .always p) = .quantified .sometimes (smartNeg p) := rfl
+
+end PM.CanonicalOrderedFormula
+
+-- PM-CONTEXT-LOCAL Principia/Architecture/CanonicalOrderedAdapters.lean
+namespace PM.Architecture.CanonicalOrderedAdapters
+
+open PM.CanonicalOrderedFormula
+
+def boundIndex : BoundVar Δ .elementaryProposition → Nat
+  | .zero => 0
+  | .succ v => boundIndex v + 1
+
+def ofApparent : Apparent Γ Δ → Raw Γ
+  | .constant name => .elementary (.constant name)
+  | .real v => .elementary (.var v)
+  | .bound v => .bound (boundIndex v)
+  | .neg p => .neg (ofApparent p)
+  | .disj p q => .disj (ofApparent p) (ofApparent q)
+
+def ofFirstOrder : FirstOrder Γ Δ → Raw Γ
+  | .always body => .quantified .always (ofApparent body)
+  | .sometimes body => .quantified .sometimes (ofApparent body)
+
+def ofFirstOrderMatrix : FirstOrderMatrix Γ Δ → Raw Γ
+  | .quantified p => ofFirstOrder p
+  | .neg p => smartNeg (ofFirstOrderMatrix p)
+  | .disj p q => smartDisj (ofFirstOrderMatrix p) (ofFirstOrderMatrix q)
+
+def ofSecondOrder : SecondOrder Γ Δ → Raw Γ
+  | .always body => .quantified .always (ofFirstOrder body)
+  | .sometimes body => .quantified .sometimes (ofFirstOrder body)
+
+def ofSecondMatrix : FirstOrderMatrix.Quantified Γ Δ → Raw Γ
+  | .always body => .quantified .always (ofFirstOrderMatrix body)
+  | .sometimes body => .quantified .sometimes (ofFirstOrderMatrix body)
+
+def ofThirdOrder : FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
+  | .always body => .quantified .always (ofSecondMatrix body)
+  | .sometimes body => .quantified .sometimes (ofSecondMatrix body)
+
+def ofThirdOrderFormula : FirstOrderMatrix.ThirdOrderFormula Γ Δ → Raw Γ
+  | .quantified p => ofThirdOrder p
+  | .neg p => .neg (ofThirdOrderFormula p)
+  | .disj p q => .disj (ofThirdOrderFormula p) (ofThirdOrderFormula q)
+
+def ofOrdered : OrderedFormula Γ order → Raw Γ
+  | .elementary p => .elementary p
+  | .firstOrder p => ofFirstOrder p
+  | .firstOrderMatrix p => ofFirstOrderMatrix p
+  | .secondOrder p => ofSecondOrder p
+  | .secondOrderMatrix p => ofSecondMatrix p
+  | .thirdOrderMatrix p => ofThirdOrder p
+  | .thirdOrderFormula p => ofThirdOrderFormula p
+  | .neg p => .neg (ofOrdered p)
+  | .disj _ p q => .disj (ofOrdered p) (ofOrdered q)
+
+def star_9_21_phi_x_raw (φ : Apparent Γ [.elementaryProposition]) : Raw
+    (.elementaryProposition :: Γ) :=
+  ofApparent (Apparent.rename
+    (fun _ => (.succ .zero : BoundVar
+      (.elementaryProposition :: .elementaryProposition :: []) .elementaryProposition))
+    (Apparent.weakenReal φ))
+
+def star_9_21_psi_x_raw (ψ : Apparent Γ [.elementaryProposition]) : Raw
+    (.elementaryProposition :: Γ) :=
+  ofApparent (Apparent.rename
+    (fun _ => (.succ .zero : BoundVar
+      (.elementaryProposition :: .elementaryProposition :: []) .elementaryProposition))
+    (Apparent.weakenReal ψ))
+
+def star_9_21_phi_y_raw (φ : Apparent Γ [.elementaryProposition]) : Raw
+    (.elementaryProposition :: Γ) :=
+  ofApparent (Apparent.rename
+    (fun _ => (.zero : BoundVar
+      (.elementaryProposition :: .elementaryProposition :: []) .elementaryProposition))
+    (Apparent.weakenReal φ))
+
+def star_9_21_psi_z_raw (ψ : Apparent Γ [.elementaryProposition]) : Raw
+    (.elementaryProposition :: Γ) :=
+  ofApparent (Apparent.ofElementary (Apparent.openHead ψ) :
+    Apparent (.elementaryProposition :: Γ)
+      (.elementaryProposition :: .elementaryProposition :: []))
+
+def closeLeadingRaw (p : Raw (.elementaryProposition :: Γ)) : Raw Γ :=
+  abstractOuter p
+
+def star_9_21_phi_x_closed_raw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  closeLeadingRaw (star_9_21_phi_x_raw φ)
+
+def star_9_21_psi_x_closed_raw (ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  closeLeadingRaw (star_9_21_psi_x_raw ψ)
+
+def star_9_21_phi_y_closed_raw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  closeLeadingRaw (star_9_21_phi_y_raw φ)
+
+def star_9_21_psi_z_closed_raw (ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  closeLeadingRaw (star_9_21_psi_z_raw ψ)
+
+@[simp] theorem ofApparent_neg (p : Apparent Γ Δ) :
+    ofApparent (∼ₐ p) = .neg (ofApparent p) := rfl
+
+theorem ofApparent_abstractRealOuter
+    (p : Apparent (.elementaryProposition :: Γ)
+      (.elementaryProposition :: Δ)) :
+    ofApparent (Apparent.abstractRealOuter p) =
+      abstractOuter (ofApparent p) := by
+  induction p with
+  | constant name => rfl
+  | real realVariable => cases realVariable <;> rfl
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => rfl
+      | succ predecessor => rfl
+  | neg proposition ih =>
+      simp [ofApparent, Apparent.abstractRealOuter, abstractOuter,
+        abstractOuterAt, ih]
+  | disj left right ihLeft ihRight =>
+      simp [ofApparent, Apparent.abstractRealOuter, abstractOuter,
+        abstractOuterAt, ihLeft, ihRight]
+
+theorem openOuter_ofApparent
+    (p : Apparent Γ (.elementaryProposition :: .elementaryProposition :: Δ)) :
+    openOuter (ofApparent p) = ofApparent (Apparent.openRealOuter p) := by
+  induction p with
+  | constant name => rfl
+  | real realVariable => rfl
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => rfl
+      | succ predecessor =>
+          cases predecessor with
+          | zero => rfl
+          | succ tail => rfl
+  | neg proposition ih =>
+      change Raw.neg (openOuter (ofApparent proposition)) =
+        Raw.neg (ofApparent (Apparent.openRealOuter proposition))
+      exact congrArg Raw.neg ih
+  | disj left right ihLeft ihRight =>
+      change Raw.disj (openOuter (ofApparent left)) (openOuter (ofApparent right)) =
+        Raw.disj (ofApparent (Apparent.openRealOuter left))
+          (ofApparent (Apparent.openRealOuter right))
+      rw [ihLeft, ihRight]
+
+theorem openOuter_abstractOuter_ofApparent
+    (p : Apparent (.elementaryProposition :: Γ)
+      (.elementaryProposition :: Δ)) :
+    openOuter (abstractOuter (ofApparent p)) = ofApparent p := by
+  rw [← ofApparent_abstractRealOuter]
+  rw [openOuter_ofApparent]
+  simp
+
+theorem openOuter_star_9_21_phi_x_closed_raw
+    (φ : Apparent Γ [.elementaryProposition]) :
+    openOuter (star_9_21_phi_x_closed_raw φ) = star_9_21_phi_x_raw φ :=
+  openOuter_abstractOuter_ofApparent _
+
+theorem openOuter_star_9_21_psi_x_closed_raw
+    (ψ : Apparent Γ [.elementaryProposition]) :
+    openOuter (star_9_21_psi_x_closed_raw ψ) = star_9_21_psi_x_raw ψ :=
+  openOuter_abstractOuter_ofApparent _
+
+theorem openOuter_star_9_21_phi_y_closed_raw
+    (φ : Apparent Γ [.elementaryProposition]) :
+    openOuter (star_9_21_phi_y_closed_raw φ) = star_9_21_phi_y_raw φ :=
+  openOuter_abstractOuter_ofApparent _
+
+theorem openOuter_star_9_21_psi_z_closed_raw
+    (ψ : Apparent Γ [.elementaryProposition]) :
+    openOuter (star_9_21_psi_z_closed_raw ψ) = star_9_21_psi_z_raw ψ :=
+  openOuter_abstractOuter_ofApparent _
+
+theorem star_9_21_phi_x_closed_unused_zero
+    (φ : Apparent Γ [.elementaryProposition]) :
+    UnusedBoundAt 0 (star_9_21_phi_x_closed_raw φ) := by
+  induction φ with
+  | constant name => trivial
+  | real realVariable =>
+      change True
+      trivial
+  | bound boundVariable =>
+      cases boundVariable
+      simp [star_9_21_phi_x_closed_raw, closeLeadingRaw,
+        star_9_21_phi_x_raw, ofApparent, abstractOuter, abstractOuterAt,
+        Apparent.weakenReal, Apparent.renameReal,
+        UnusedBoundAt, boundIndex]
+      rename_i impossible
+      exact nomatch impossible
+  | neg proposition ih =>
+      exact ih
+  | disj left right ihLeft ihRight =>
+      exact ⟨ihLeft, ihRight⟩
+
+theorem star_9_21_psi_x_closed_unused_zero
+    (ψ : Apparent Γ [.elementaryProposition]) :
+    UnusedBoundAt 0 (star_9_21_psi_x_closed_raw ψ) := by
+  induction ψ with
+  | constant name => trivial
+  | real realVariable =>
+      change True
+      trivial
+  | bound boundVariable =>
+      cases boundVariable
+      simp [star_9_21_psi_x_closed_raw, closeLeadingRaw,
+        star_9_21_psi_x_raw, ofApparent, abstractOuter, abstractOuterAt,
+        Apparent.weakenReal, Apparent.renameReal,
+        UnusedBoundAt, boundIndex]
+      rename_i impossible
+      exact nomatch impossible
+  | neg proposition ih => exact ih
+  | disj left right ihLeft ihRight => exact ⟨ihLeft, ihRight⟩
+
+theorem smartNeg_abstractOuter_ofApparent
+    (p : Apparent (.elementaryProposition :: Γ)
+      (.elementaryProposition :: Δ)) :
+    smartNeg (abstractOuter (ofApparent p)) =
+      abstractOuter (smartNeg (ofApparent p)) := by
+  induction p with
+  | constant name => rfl
+  | real realVariable => cases realVariable <;> rfl
+  | bound boundVariable => cases boundVariable <;> rfl
+  | neg proposition ih => simp [ofApparent, smartNeg, abstractOuter, abstractOuterAt]
+  | disj left right ihLeft ihRight =>
+      simp [ofApparent, smartNeg, abstractOuter, abstractOuterAt]
+
+def star_9_21_line4_raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofThirdOrder (FirstOrderMatrix.abstractThirdOuter
+    (PM.Quantified.sometimes
+      (PM.Architecture.FirstOrderPrerequisites.star_9_21_line3_matrix φ ψ)))
+
+def star_9_21_line4_explicit_raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always (.quantified .sometimes
+    (ofFirstOrderMatrix (FirstOrderMatrix.abstractRealOuter
+      (PM.Architecture.FirstOrderPrerequisites.star_9_21_line3_matrix φ ψ))))
+
+theorem star_9_21_line4_raw_explicit
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    star_9_21_line4_raw φ ψ = star_9_21_line4_explicit_raw φ ψ := rfl
+
+def rawImp (p q : Raw Γ) : Raw Γ := .disj (.neg p) q
+
+def star_9_21_line4_named_raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always (.quantified .sometimes (.quantified .sometimes
+    (rawImp (rawImp (star_9_21_phi_x_closed_raw φ) (star_9_21_psi_x_closed_raw ψ))
+      (rawImp (star_9_21_phi_y_closed_raw φ) (star_9_21_psi_z_closed_raw ψ)))))
+
+def star_9_21_line5_raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .quantified .always (.quantified .sometimes
+    (rawImp (dropUnusedBound
+      (rawImp (star_9_21_phi_x_closed_raw φ) (star_9_21_psi_x_closed_raw ψ)))
+      (.quantified .sometimes
+        (rawImp (star_9_21_phi_y_closed_raw φ) (star_9_21_psi_z_closed_raw ψ)))))
+
+def star_9_21_line6_raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj
+    (.quantified .sometimes
+      (.neg (rawImp (star_9_21_phi_x_closed_raw φ) (star_9_21_psi_x_closed_raw ψ))))
+    (.quantified .always (.quantified .sometimes
+      (.disj (.neg (star_9_21_phi_y_closed_raw φ)) (star_9_21_psi_z_closed_raw ψ))))
+
+def star_9_21_line7_raw (φ ψ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  star_9_21_line6_raw φ ψ
+
+theorem star_9_21_line4_raw_named
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    star_9_21_line4_raw φ ψ = star_9_21_line4_named_raw φ ψ := by
+  change Raw.quantified .always (Raw.quantified .sometimes (Raw.quantified .sometimes
+    (ofApparent (Apparent.abstractRealOuter
+      (PM.Architecture.FirstOrderPrerequisites.matrixImp
+        (PM.Architecture.FirstOrderPrerequisites.matrixImp _ _)
+        (PM.Architecture.FirstOrderPrerequisites.matrixImp _ _)))))) = _
+  simp only [PM.Architecture.FirstOrderPrerequisites.matrixImp,
+    Apparent.abstractRealOuter, ofApparent]
+  simp only [star_9_21_line4_named_raw, rawImp,
+    star_9_21_phi_x_closed_raw, star_9_21_psi_x_closed_raw,
+    star_9_21_phi_y_closed_raw, star_9_21_psi_z_closed_raw,
+    closeLeadingRaw, star_9_21_phi_x_raw, star_9_21_psi_x_raw,
+    star_9_21_phi_y_raw, star_9_21_psi_z_raw]
+  rw [ofApparent_abstractRealOuter,
+    ofApparent_abstractRealOuter,
+    ofApparent_abstractRealOuter,
+    ofApparent_abstractRealOuter]
+
+end PM.Architecture.CanonicalOrderedAdapters
+
+-- PM-CONTEXT-LOCAL Principia/Architecture/CanonicalNormalization.lean
+namespace PM.Architecture.CanonicalNormalization
+
+open PM.CanonicalOrderedFormula
+
+inductive NormalizesScoped : Raw Γ → Raw Γ → Prop where
+  | refl (p) : NormalizesScoped p p
+  | negAlways (p) :
+      NormalizesScoped (.neg (.quantified .always p))
+        (.quantified .sometimes (.neg p))
+  | negSometimes (p) :
+      NormalizesScoped (.neg (.quantified .sometimes p))
+        (.quantified .always (.neg p))
+
+  | star_9_06_imp (p q) :
+      NormalizesScoped (.quantified .sometimes
+        (.disj (.neg (weakenBound p)) q))
+        (.disj (.neg p) (.quantified .sometimes q))
+
+  | star_9_21_line5_line6 (φ ψ : Apparent Γ [.elementaryProposition]) :
+      NormalizesScoped
+        (CanonicalOrderedAdapters.star_9_21_line5_raw φ ψ)
+        (CanonicalOrderedAdapters.star_9_21_line6_raw φ ψ)
+  | disjRight (q p r) :
+      NormalizesScoped (.disj (.quantified q p) r)
+        (.quantified q (.disj p (weakenBound r)))
+  | disjLeft (q p r) :
+      NormalizesScoped (.disj r (.quantified q p))
+        (.quantified q (.disj (weakenBound r) p))
+
+  | disjAlwaysSometimes (p q) :
+      NormalizesScoped (.disj (.quantified .always p) (.quantified .sometimes q))
+        (.quantified .always (.quantified .sometimes
+          (.disj (weakenBound p) (shiftBoundAt 1 q))))
+
+  | disjSometimesAlways (p q) :
+      NormalizesScoped (.disj (.quantified .sometimes p) (.quantified .always q))
+        (.quantified .always (.quantified .sometimes
+          (.disj (weakenBound q) (shiftBoundAt 1 p))))
+  | alwaysCongr : NormalizesScoped p q →
+      NormalizesScoped (.quantified .always p) (.quantified .always q)
+  | sometimesCongr : NormalizesScoped p q →
+      NormalizesScoped (.quantified .sometimes p) (.quantified .sometimes q)
+  | negCongr : NormalizesScoped p q →
+      NormalizesScoped (.neg p) (.neg q)
+  | disjCongr : NormalizesScoped p q → NormalizesScoped r s →
+      NormalizesScoped (.disj p r) (.disj q s)
+  | trans : NormalizesScoped p q → NormalizesScoped q r → NormalizesScoped p r
+
+def Star921Line5Line6Stable : Prop :=
+  ∀ {Γ Ξ} (σ : Substitution Γ Ξ)
+    (φ ψ : Apparent Γ [.elementaryProposition]),
+    NormalizesScoped
+      (substitute σ (CanonicalOrderedAdapters.star_9_21_line5_raw φ ψ))
+      (substitute σ (CanonicalOrderedAdapters.star_9_21_line6_raw φ ψ))
+
+theorem NormalizesScoped.substitute
+    (stable921 : Star921Line5Line6Stable)
+    {p q : Raw Γ} (certificate : NormalizesScoped p q) (σ : Substitution Γ Ξ) :
+    NormalizesScoped (CanonicalOrderedFormula.substitute σ p)
+      (CanonicalOrderedFormula.substitute σ q) := by
+  induction certificate generalizing Ξ with
+  | refl p => exact .refl _
+  | negAlways p => exact .negAlways _
+  | negSometimes p => exact .negSometimes _
+  | star_9_06_imp p q =>
+      simpa [CanonicalOrderedFormula.substitute,
+        CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.star_9_06_imp (CanonicalOrderedFormula.substitute σ p)
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) q)
+  | star_9_21_line5_line6 φ ψ => exact stable921 σ φ ψ
+  | disjRight quantifier p r =>
+      simpa [CanonicalOrderedFormula.substitute,
+        CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.disjRight quantifier
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
+          (CanonicalOrderedFormula.substitute σ r)
+  | disjLeft quantifier p r =>
+      simpa [CanonicalOrderedFormula.substitute,
+        CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.disjLeft quantifier
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
+          (CanonicalOrderedFormula.substitute σ r)
+  | disjAlwaysSometimes p q =>
+      have commute := CanonicalOrderedFormula.substitute_liftN_shiftBoundAt σ 1 q
+      simp only [Substitution.liftN_succ, Substitution.liftN_zero] at commute
+      simp only [CanonicalOrderedFormula.substitute]
+      rw [commute]
+      simpa [CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.disjAlwaysSometimes
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) q)
+  | disjSometimesAlways p q =>
+      have commute := CanonicalOrderedFormula.substitute_liftN_shiftBoundAt σ 1 p
+      simp only [Substitution.liftN_succ, Substitution.liftN_zero] at commute
+      simp only [CanonicalOrderedFormula.substitute]
+      rw [commute]
+      simpa [CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.disjSometimesAlways
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) q)
+  | alwaysCongr certificate ih =>
+      simpa [CanonicalOrderedFormula.substitute] using
+        NormalizesScoped.alwaysCongr (ih (Substitution.lift σ))
+  | sometimesCongr certificate ih =>
+      simpa [CanonicalOrderedFormula.substitute] using
+        NormalizesScoped.sometimesCongr (ih (Substitution.lift σ))
+  | negCongr certificate ih => exact .negCongr (ih σ)
+  | disjCongr left right ihLeft ihRight => exact .disjCongr (ihLeft σ) (ihRight σ)
+  | trans first second ihFirst ihSecond => exact .trans (ihFirst σ) (ihSecond σ)
+
+end PM.Architecture.CanonicalNormalization
+
+-- PM-CONTEXT-LOCAL Principia/Architecture/CanonicalOrderedJudgement.lean
+namespace PM.Architecture.CanonicalOrderedJudgement
+
+open PM.CanonicalOrderedFormula
+open PM.Architecture.CanonicalOrderedAdapters
+open PM.Architecture.FirstOrderPrerequisites
+open PM.Architecture.CanonicalNormalization
+
+def CanonicalOrderedAssertion (raw : Raw Γ) : Prop :=
+  ∃ (order : Nat) (formula : OrderedFormula Γ order),
+    OrderedAssertion formula ∧ ofOrdered formula = raw
+
+structure Reified (raw : Raw Γ) where
+  order : Nat
+  formula : OrderedFormula Γ order
+  roundTrip : ofOrdered formula = raw
+
+theorem image_of_ordered {formula : OrderedFormula Γ order}
+    (proof : OrderedAssertion formula) :
+    CanonicalOrderedAssertion (ofOrdered formula) :=
+  ⟨order, formula, proof, rfl⟩
+
+def reified_of_ordered (formula : OrderedFormula Γ order) :
+    Reified (ofOrdered formula) :=
+  ⟨order, formula, rfl⟩
+
+theorem image_convert {p q : Raw Γ} (equality : p = q) :
+    CanonicalOrderedAssertion p → CanonicalOrderedAssertion q := by
+  intro proof
+  cases equality
+  exact proof
+
+def NormalizedCanonicalAssertion (raw : Raw Γ) : Prop :=
+  ∃ (order : Nat) (formula : OrderedFormula Γ order),
+    OrderedAssertion formula ∧ NormalizesScoped (ofOrdered formula) raw
+
+structure ReifiedSubstitution (σ : Substitution Γ Ξ) where
+  order : Elementary Γ → Nat
+  formula : ∀ proposition : Elementary Γ, OrderedFormula Ξ (order proposition)
+  proof : ∀ proposition : Elementary Γ, OrderedAssertion (formula proposition)
+  roundTrip : ∀ proposition : Elementary Γ,
+    ofOrdered (formula proposition) = σ proposition
+
+structure CanonicalTheoremSchema (template : Raw Γ) where
+  derivation : NormalizedCanonicalAssertion template
+  instantiate : ∀ {Ξ} (σ : Substitution Γ Ξ),
+    ReifiedSubstitution σ → NormalizedCanonicalAssertion (substitute σ template)
+
+def CanonicalTheoremSchema.instantiateAt
+    {Γ Ξ : RealContext} {template : Raw Γ}
+    (schema : CanonicalTheoremSchema template) (σ : Substitution Γ Ξ)
+    (reified : ReifiedSubstitution σ) :
+    NormalizedCanonicalAssertion (substitute σ template) :=
+  schema.instantiate σ reified
+
+def star_9_21_schema_raw : Raw Γ :=
+  .disj
+    (.quantified .sometimes (.neg (.disj (.neg (.schema 0)) (.schema 1))))
+    (.quantified .always (.quantified .sometimes
+      (.disj (.neg (.schema 0)) (.schema 1))))
+
+@[simp] theorem substituteSchema_star_9_21_schema_raw
+    (σ : SchemaSubstitution Γ) :
+    substituteSchema σ star_9_21_schema_raw =
+      .disj
+        (.quantified .sometimes
+          (.neg (.disj (.neg (weakenBound (σ 0))) (weakenBound (σ 1)))))
+        (.quantified .always (.quantified .sometimes
+          (.disj (.neg (weakenBound (weakenBound (σ 0))))
+            (weakenBound (weakenBound (σ 1)))))) := rfl
+
+theorem substituteSchema_star_9_21_schema_raw_scoped
+    (σ : SchemaSubstitution Γ) :
+    substituteSchema σ star_9_21_schema_raw =
+      .disj
+        (.quantified .sometimes
+          (.neg (.disj (.neg (weakenBound (σ 0))) (weakenBound (σ 1)))))
+        (.quantified .always (.quantified .sometimes
+          (.disj (.neg (shiftBoundAt 1 (weakenBound (σ 0))))
+            (shiftBoundAt 1 (weakenBound (σ 1)))))) := by
+  rw [substituteSchema_star_9_21_schema_raw]
+  rw [weakenBound_weakenBound_eq_shiftBoundAt_one,
+    weakenBound_weakenBound_eq_shiftBoundAt_one]
+
+def star_9_21_four_slot_template : Raw Γ :=
+  .disj
+    (.quantified .sometimes (.neg (.disj (.neg (.schema 0)) (.schema 1))))
+    (.quantified .always (.quantified .sometimes
+      (.disj (.neg (.schema 2)) (.schema 3))))
+
+def evaluateStar921Slots (phiX psiX phiY psiZ : Raw Γ) : Raw Γ :=
+  .disj
+    (.quantified .sometimes (.neg (.disj (.neg phiX) psiX)))
+    (.quantified .always (.quantified .sometimes
+      (.disj (.neg phiY) psiZ)))
+
+structure CoherentStar921Slots
+    (φ ψ : Apparent Γ [.elementaryProposition]) where
+  phiX : Raw Γ
+  psiX : Raw Γ
+  phiY : Raw Γ
+  psiZ : Raw Γ
+  phiXValue : phiX = star_9_21_phi_x_closed_raw φ
+  psiXValue : psiX = star_9_21_psi_x_closed_raw ψ
+  phiYValue : phiY = star_9_21_phi_y_closed_raw φ
+  psiZValue : psiZ = star_9_21_psi_z_closed_raw ψ
+
+def apparentStar921Slots (φ ψ : Apparent Γ [.elementaryProposition]) :
+    CoherentStar921Slots φ ψ where
+  phiX := star_9_21_phi_x_closed_raw φ
+  psiX := star_9_21_psi_x_closed_raw ψ
+  phiY := star_9_21_phi_y_closed_raw φ
+  psiZ := star_9_21_psi_z_closed_raw ψ
+  phiXValue := rfl
+  psiXValue := rfl
+  phiYValue := rfl
+  psiZValue := rfl
+
+theorem evaluateStar921Slots_apparent
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    evaluateStar921Slots
+      (star_9_21_phi_x_closed_raw φ) (star_9_21_psi_x_closed_raw ψ)
+      (star_9_21_phi_y_closed_raw φ) (star_9_21_psi_z_closed_raw ψ) =
+      star_9_21_line7_raw φ ψ := rfl
+
+def normalize {source target : Raw Γ}
+    (certificate : NormalizesScoped source target)
+    (assertion : CanonicalOrderedAssertion source) :
+    NormalizedCanonicalAssertion target := by
+  rcases assertion with ⟨order, formula, proof, equation⟩
+  subst source
+  exact ⟨order, formula, proof, certificate⟩
+
+theorem star_9_21_line4_line5_certificate
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScoped (star_9_21_line4_raw φ ψ) (star_9_21_line5_raw φ ψ) := by
+  rw [star_9_21_line4_raw_named]
+  apply NormalizesScoped.alwaysCongr
+  apply NormalizesScoped.sometimesCongr
+  let antecedent := rawImp (star_9_21_phi_x_closed_raw φ)
+    (star_9_21_psi_x_closed_raw ψ)
+  let consequent := rawImp (star_9_21_phi_y_closed_raw φ)
+    (star_9_21_psi_z_closed_raw ψ)
+  have unused : UnusedBoundAt 0 antecedent := by
+    exact ⟨star_9_21_phi_x_closed_unused_zero φ,
+      star_9_21_psi_x_closed_unused_zero ψ⟩
+  change NormalizesScoped (.quantified .sometimes (.disj (.neg antecedent) consequent))
+    (.disj (.neg (dropUnusedBound antecedent)) (.quantified .sometimes consequent))
+  have reduction := NormalizesScoped.star_9_06_imp
+    (dropUnusedBound antecedent) consequent
+  have reinsert : weakenBound (dropUnusedBound antecedent) = antecedent :=
+    weakenBound_dropUnusedBound antecedent unused
+  rw [reinsert] at reduction
+  exact reduction
+
+theorem star_9_21_line4_line7_certificate
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScoped (star_9_21_line4_raw φ ψ) (star_9_21_line7_raw φ ψ) := by
+  apply NormalizesScoped.trans (star_9_21_line4_line5_certificate φ ψ)
+  apply NormalizesScoped.trans (NormalizesScoped.star_9_21_line5_line6 φ ψ)
+  exact NormalizesScoped.refl _
+
+def derive_star_9_21_line7_normalized
+    (φ ψ : Apparent Γ [.elementaryProposition]) :
+    NormalizedCanonicalAssertion (star_9_21_line7_raw φ ψ) := by
+  apply normalize (star_9_21_line4_line7_certificate φ ψ)
+  exact image_of_ordered (derive_star_9_21_line4 φ ψ)
+
+end PM.Architecture.CanonicalOrderedJudgement
+
+-- PM-CONTEXT-LOCAL Principia/Architecture/Star921MatrixKernel.lean
+namespace PM.Architecture.Star921MatrixKernel
+
+open PM.Architecture.FirstOrderPrerequisites
+open PM.CanonicalOrderedFormula
+open PM.Architecture.CanonicalOrderedAdapters
+
+structure MatrixFunctionSchema (Γ : RealContext) where
+  left : FirstOrder Γ [.elementaryProposition]
+  right : Apparent Γ [.elementaryProposition]
+
+def star_9_3_alpha (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrder Γ [.elementaryProposition] :=
+  FirstOrder.disjMatrixLeft φ
+    (FirstOrder.always (Apparent.rename Apparent.innerVariableRenaming φ))
+
+def star_9_3_beta (φ : Apparent Γ [.elementaryProposition]) :
+    Apparent Γ [.elementaryProposition] := φ
+
+def star_9_3_matrix_schema (φ : Apparent Γ [.elementaryProposition]) :
+    MatrixFunctionSchema Γ where
+  left := star_9_3_alpha φ
+  right := star_9_3_beta φ
+
+theorem star_9_3_matrix_schema_line4
+    (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrder.impFirstToMatrix (star_9_3_matrix_schema φ).left
+      (star_9_3_matrix_schema φ).right = star_9_3_line4_matrix φ := rfl
+
+def matrixSchemaImpRaw (schema : MatrixFunctionSchema Γ) : Raw Γ :=
+  ofFirstOrder (FirstOrder.impFirstToMatrix schema.left schema.right)
+
+def star_9_21_matrix_line1_raw (schema : MatrixFunctionSchema Γ) : Raw Γ :=
+  .disj (.neg (matrixSchemaImpRaw schema)) (matrixSchemaImpRaw schema)
+
+def star_9_21_matrix_line2_raw (schema : MatrixFunctionSchema Γ) : Raw Γ :=
+  .quantified .sometimes
+    (.disj (.neg (weakenBound (matrixSchemaImpRaw schema)))
+      (weakenBound (matrixSchemaImpRaw schema)))
+
+def star_9_21_matrix_line5_raw (schema : MatrixFunctionSchema Γ) : Raw Γ :=
+  .disj
+    (.neg (.quantified .always (ofFirstOrder schema.left)))
+    (.quantified .always (ofApparent schema.right))
+
+def star_9_3_ordered_target (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedFormula Γ 1 :=
+  let p := OrderedFormula.always φ
+  OrderedFormula.firstImp
+    (OrderedFormula.scopedFirstOrderDisj .sameAssignedOrder p p) p
+
+def star_9_3_line6_raw (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  ofOrdered (star_9_3_ordered_target φ)
+
+inductive Star921MatrixSchemaDerivation :
+    (schema : MatrixFunctionSchema Γ) → Raw Γ → Prop where
+
+  | matrixIdentity :
+      Star921MatrixSchemaDerivation schema (star_9_21_matrix_line1_raw schema)
+
+  | indexedLine4
+      (proof : OrderedAssertion (star_9_3_line4_target φ))
+      (h : schema = star_9_3_matrix_schema φ) :
+      Star921MatrixSchemaDerivation schema (matrixSchemaImpRaw schema)
+  | star_9_21_firstOrder_instance :
+      Star921MatrixSchemaDerivation schema (matrixSchemaImpRaw schema) →
+      Star921MatrixSchemaDerivation schema (star_9_21_matrix_line5_raw schema)
+
+  | star_9_3_normalize (φ : Apparent Γ [.elementaryProposition]) :
+      Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
+        (star_9_21_matrix_line5_raw (star_9_3_matrix_schema φ)) →
+      Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
+        (star_9_3_line6_raw φ)
+
+def star_9_21_firstOrder_instance
+    (schema : MatrixFunctionSchema Γ)
+    (line4 : Star921MatrixSchemaDerivation schema (matrixSchemaImpRaw schema)) :
+    Star921MatrixSchemaDerivation schema (star_9_21_matrix_line5_raw schema) :=
+  .star_9_21_firstOrder_instance line4
+
+inductive Star93Normalization
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ → Raw Γ → Prop where
+  | star_9_03 : Star93Normalization φ
+      (star_9_21_matrix_line5_raw (star_9_3_matrix_schema φ))
+      (star_9_3_line6_raw φ)
+
+theorem star_9_3_matrix_line4_raw
+    (φ : Apparent Γ [.elementaryProposition]) :
+    matrixSchemaImpRaw (star_9_3_matrix_schema φ) =
+      ofFirstOrder (star_9_3_line4_matrix φ) := rfl
+
+def derive_star_9_3_line4_schema
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
+      (matrixSchemaImpRaw (star_9_3_matrix_schema φ)) :=
+  .indexedLine4 (derive_star_9_3_line4 φ) rfl
+
+def derive_star_9_3_line5_schema
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
+      (star_9_21_matrix_line5_raw (star_9_3_matrix_schema φ)) :=
+  star_9_21_firstOrder_instance _ (derive_star_9_3_line4_schema φ)
+
+def star_9_3_schema
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
+      (star_9_3_line6_raw φ) :=
+  .star_9_3_normalize φ (derive_star_9_3_line5_schema φ)
+
+inductive Star9KernelAssertion (formula : OrderedFormula Γ order) : Prop where
+  | indexed (proof : OrderedAssertion formula) : Star9KernelAssertion formula
+  | star_9_3_from_schema
+      (φ : Apparent Γ [.elementaryProposition])
+      (schemaProof : Star921MatrixSchemaDerivation (star_9_3_matrix_schema φ)
+        (star_9_3_line6_raw φ))
+      (targetRaw : star_9_3_line6_raw φ = ofOrdered formula) :
+      Star9KernelAssertion formula
+
+def derive_star_9_3
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star9KernelAssertion (star_9_3_ordered_target φ) :=
+  .star_9_3_from_schema φ (star_9_3_schema φ) rfl
+
+end PM.Architecture.Star921MatrixKernel
 
 -- PM-CONTEXT-LOCAL Principia/Architecture/FirstOrderQ259.lean
 namespace PM.Architecture.FirstOrderQ259
