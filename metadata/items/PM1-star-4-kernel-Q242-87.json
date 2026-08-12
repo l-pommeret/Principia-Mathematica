@@ -29,8 +29,8 @@
       "declaration": "PM.FirstEdition.Volume1.Star4.star_4_87",
       "formal_scope": "equivChain4(((p·q)⊃r),(p⊃(q⊃r)),(q⊃(p⊃r)),((q·p)⊃r)), over an elementary real-variable context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-kernel-candidate",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "Exp",
         "Comm",
@@ -41,22 +41,18 @@
         "PM.Derivation.star_1_11",
         "PM.FirstEdition.Volume1.Star2.star_2_04",
         "PM.FirstEdition.Volume1.Star2.star_2_05",
-        "PM.FirstEdition.Volume1.Star2.star_2_43",
         "PM.FirstEdition.Volume1.Star3.star_3_2",
         "PM.FirstEdition.Volume1.Star3.star_3_3",
-        "PM.FirstEdition.Volume1.Star3.star_3_31",
-        "PM.FirstEdition.Volume1.Star3.star_3_47"
+        "PM.FirstEdition.Volume1.Star3.star_3_31"
       ],
       "normalized_dependencies": [
         "PM1:✱1·1",
         "PM1:✱1·11",
         "PM1:✱2·04",
         "PM1:✱2·05",
-        "PM1:✱2·43",
         "PM1:✱3·2",
         "PM1:✱3·3",
-        "PM1:✱3·31",
-        "PM1:✱3·47"
+        "PM1:✱3·31"
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -65,15 +61,13 @@
           "PM1:✱1·11",
           "PM1:✱2·04",
           "PM1:✱2·05",
-          "PM1:✱2·43",
           "PM1:✱3·2",
           "PM1:✱3·3",
-          "PM1:✱3·31",
-          "PM1:✱3·47"
+          "PM1:✱3·31"
         ],
         "printed_but_unused": [
-          "Exp",
           "Comm",
+          "Exp",
           "Imp"
         ],
         "strict_attempt_evidence": "reviews/Q242-star4-87-kernel-gate.md",
@@ -82,8 +76,8 @@
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "2ac468894be6ecb8e80c4e1263c5011fbae6547a",
+    "run": "31556514413",
+    "conclusion": "success"
   }
 }
