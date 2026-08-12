@@ -927,6 +927,26 @@ def atReal (body : FirstOrderMatrix Γ [.elementaryProposition])
     (x : RealVar Γ .elementaryProposition) : FirstOrderMatrix Γ [] :=
   instantiate body (.real x)
 
+def abstractRealOuter : FirstOrderMatrix (.elementaryProposition :: Γ) Δ →
+    FirstOrderMatrix Γ (.elementaryProposition :: Δ)
+  | .quantified proposition => .quantified (FirstOrder.abstractRealOuter proposition)
+  | .neg proposition => .neg (abstractRealOuter proposition)
+  | .disj left right => .disj (abstractRealOuter left) (abstractRealOuter right)
+
+def openRealOuter : FirstOrderMatrix Γ (.elementaryProposition :: Δ) →
+    FirstOrderMatrix (.elementaryProposition :: Γ) Δ
+  | .quantified proposition => .quantified (FirstOrder.openRealOuter proposition)
+  | .neg proposition => .neg (openRealOuter proposition)
+  | .disj left right => .disj (openRealOuter left) (openRealOuter right)
+
+@[simp] theorem openRealOuter_abstractRealOuter
+    (proposition : FirstOrderMatrix (.elementaryProposition :: Γ) Δ) :
+    openRealOuter (abstractRealOuter proposition) = proposition := by
+  induction proposition with
+  | quantified proposition => simp [abstractRealOuter, openRealOuter]
+  | neg proposition ih => simp [abstractRealOuter, openRealOuter, ih]
+  | disj left right ihLeft ihRight => simp [abstractRealOuter, openRealOuter, ihLeft, ihRight]
+
 /-- Explicit embedding of the pre-existing second-order carrier into the
 enriched matrix carrier.  It is structural and preserves each quantified
 first-order atom verbatim. -/
@@ -975,6 +995,17 @@ def renameThirdReal (ρ : Apparent.RealRenaming Γ Ξ) :
       PM.Quantified.always (renameQuantifiedReal ρ body)
   | PM.Quantified.sometimes body =>
       PM.Quantified.sometimes (renameQuantifiedReal ρ body)
+
+def abstractQuantifiedOuter : Quantified (.elementaryProposition :: Γ) Δ →
+    Quantified Γ (.elementaryProposition :: Δ)
+  | PM.Quantified.always body =>
+      PM.Quantified.always (abstractRealOuter body)
+  | PM.Quantified.sometimes body =>
+      PM.Quantified.sometimes (abstractRealOuter body)
+
+def abstractThirdOuter : Quantified (.elementaryProposition :: Γ) Δ →
+    ThirdOrder Γ Δ :=
+  PM.Quantified.always ∘ abstractQuantifiedOuter
 
 @[simp] theorem impToQuantified_sometimes
     (premise : FirstOrderMatrix Γ Δ)
