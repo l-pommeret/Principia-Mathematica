@@ -21,5 +21,6 @@ new Pp.  GitHub Actions run `31575922684` succeeded at immutable commit
 judgements ✱9·23 and ✱9·24, not an `OrderedAssertion` reification.  ✱9·25
 is now the exact closed `Star925Kernel.derive` judgement: it uses only the
 fixed ✱9·23 self-instance at `p∨φ` and the explicit definitional ✱9·04
-spelling.  It is awaiting a separate kernel check and does not add a generic
-conversion rule.
+spelling. GitHub Actions run `31577423330` succeeded at immutable commit
+`125839b146e32632b67146cbe46d71528b0798d4`; it certifies this narrow
+Star925Kernel judgement only, with no generic conversion rule.

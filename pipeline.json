@@ -2249,14 +2249,7 @@
         "PM1:✱9·13"
       ],
       "parallel_group": "STAR9-WAVE-2",
-      "aristotle_status": "not-submitted",
-      "integration_status": "kernel-checked-closed-star925-kernel-assertion",
-      "integration_ci_evidence": {
-        "commit": "125839b146e32632b67146cbe46d71528b0798d4",
-        "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31577423330",
-        "conclusion": "success",
-        "scope": "exact closed Id.✱9·23.(✱9·04) Star925Kernel judgement for PM1:✱9·25"
-      }
+      "aristotle_status": "not-submitted"
     },
     "Q257": {
       "canonical_ids": [
@@ -2267,7 +2260,7 @@
       "source": "PM volume I, first edition, p. 140",
       "prompt_path": "aristotle/Q257.md",
       "audit_path": "reviews/Q257-review.md",
-      "audit_status": "prepared-needs-kernel-context",
+      "audit_status": "kernel-checked",
       "lean_scope": "exact PM1 ✱9·23, ✱9·24 and ✱9·25",
       "depends_on": [
         "PM1:Id",
@@ -2279,11 +2272,12 @@
       ],
       "parallel_group": "STAR9-WAVE-3",
       "aristotle_status": "complete",
+      "integration_status": "kernel-checked-closed-star925-kernel-assertion",
       "integration_ci_evidence": {
         "commit": "125839b146e32632b67146cbe46d71528b0798d4",
         "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31577423330",
         "conclusion": "success",
-        "scope": "exact Star92KernelAssertion for PM1:✱9·2; adjacent items retain their own exact narrow judgements"
+        "scope": "exact closed Id.✱9·23.(✱9·04) Star925Kernel judgement for PM1:✱9·25"
       }
     },
     "Q258": {
