@@ -1,1 +1,73 @@
-{"batch":"PM1-STAR4-KERNEL-Q231-38","edition":"first","volume":1,"source_range":{"printed_pages":"124","scan_leaves":[146],"canonical_scan":"https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},"witnesses":["PM1-1910-SCAN"],"items":[{"id":"PM1:✱4·38","kind":"derived-proposition","printed":"✱4·38.  ⊢ : p ≡ r . q ≡ s . ⊃ : p . q . ≡ . r . s","printed_page":124,"scan_leaf":146,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean","declaration":"PM.FirstEdition.Volume1.Star4.star_4_38","formal_scope":"((p≡r)·(q≡s))⊃((p·q)≡(r·s)), over an elementary real-variable context","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"canonical-kernel-candidate","printed_dependencies":["PM1:✱3·47"],"lean_dependencies":["PM.Derivation.star_1_1","PM.Derivation.star_1_11","PM.FirstEdition.Volume1.Star2.star_2_05","PM.FirstEdition.Volume1.Star2.star_2_43","PM.FirstEdition.Volume1.Star3.star_3_2","PM.FirstEdition.Volume1.Star3.star_3_26","PM.FirstEdition.Volume1.Star3.star_3_27","PM.FirstEdition.Volume1.Star3.star_3_47"],"normalized_dependencies":["PM1:✱1·1","PM1:✱1·11","PM1:✱2·05","PM1:✱2·43","PM1:✱3·2","PM1:✱3·26","PM1:✱3·27","PM1:✱3·47"]}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR4-KERNEL-Q231-38",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "124",
+    "scan_leaves": [
+      146
+    ],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱4·38",
+      "kind": "derived-proposition",
+      "printed": "✱4·38.  ⊢ : p ≡ r . q ≡ s . ⊃ : p . q . ≡ . r . s",
+      "printed_page": 124,
+      "scan_leaf": 146,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star4.star_4_38",
+      "formal_scope": "((p≡r)·(q≡s))⊃((p·q)≡(r·s)), over an elementary real-variable context",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱3·47"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.star_1_1",
+        "PM.Derivation.star_1_11",
+        "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM.FirstEdition.Volume1.Star2.star_2_43",
+        "PM.FirstEdition.Volume1.Star3.star_3_2",
+        "PM.FirstEdition.Volume1.Star3.star_3_26",
+        "PM.FirstEdition.Volume1.Star3.star_3_27",
+        "PM.FirstEdition.Volume1.Star3.star_3_47"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·1",
+        "PM1:✱1·11",
+        "PM1:✱2·05",
+        "PM1:✱2·43",
+        "PM1:✱3·2",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·47"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱1·1",
+          "PM1:✱1·11",
+          "PM1:✱2·05",
+          "PM1:✱2·43",
+          "PM1:✱3·2",
+          "PM1:✱3·26",
+          "PM1:✱3·27"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Q231-star4-38-kernel-gate.md",
+        "editorial_note": "The printed compressed route is preserved in the source record; the Lean body expands every implicit inference and equivalence-packaging step needed by the canonical kernel."
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "495b76cb90a0f79667f5afff11c6c85af7cce653",
+    "run": "31558455470",
+    "conclusion": "success"
+  }
+}
