@@ -71,6 +71,27 @@ def star_9_21_psi_z_raw (ψ : Apparent Γ [.elementaryProposition]) : Raw
 @[simp] theorem ofApparent_neg (p : Apparent Γ Δ) :
     ofApparent (∼ₐ p) = .neg (ofApparent p) := rfl
 
+/-- Canonical embedding commutes with the capture-safe outer real abstraction
+when an apparent binder is already open. -/
+theorem ofApparent_abstractRealOuter
+    (p : Apparent (.elementaryProposition :: Γ)
+      (.elementaryProposition :: Δ)) :
+    ofApparent (Apparent.abstractRealOuter p) =
+      abstractOuter (ofApparent p) := by
+  induction p with
+  | constant name => rfl
+  | real realVariable => cases realVariable <;> rfl
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => rfl
+      | succ predecessor => rfl
+  | neg proposition ih =>
+      simp [ofApparent, Apparent.abstractRealOuter, abstractOuter,
+        abstractOuterAt, ih]
+  | disj left right ihLeft ihRight =>
+      simp [ofApparent, Apparent.abstractRealOuter, abstractOuter,
+        abstractOuterAt, ihLeft, ihRight]
+
 /-- Canonical Raw embedding of printed line (4) of ✱9·21.  The subsequent
 definitions ✱9·06, ✱1·01 and ✱9·08 are represented by `smartNeg` and
 `smartDisj`; this declaration itself makes no assertion or normalization
