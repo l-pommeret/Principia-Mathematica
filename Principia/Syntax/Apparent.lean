@@ -829,4 +829,47 @@ def disjSometimesAlways
             Apparent.rename Apparent.outerVariableRenaming φ)) := rfl
 
 end FirstOrder
+
+namespace FirstOrderMatrix
+
+/-- Real-context renaming preserves the assigned matrix order. -/
+def renameReal (ρ : Apparent.RealRenaming Γ Ξ) :
+    FirstOrderMatrix Γ Δ → FirstOrderMatrix Ξ Δ
+  | .quantified proposition => .quantified (FirstOrder.renameReal ρ proposition)
+  | .neg proposition => .neg (renameReal ρ proposition)
+  | .disj left right => .disj (renameReal ρ left) (renameReal ρ right)
+
+/-- Capture-free apparent-variable renaming through same-order connectives. -/
+def rename (ρ : Apparent.Renaming Δ Ξ) :
+    FirstOrderMatrix Γ Δ → FirstOrderMatrix Γ Ξ
+  | .quantified proposition => .quantified (FirstOrder.rename ρ proposition)
+  | .neg proposition => .neg (rename ρ proposition)
+  | .disj left right => .disj (rename ρ left) (rename ρ right)
+
+def weaken (proposition : FirstOrderMatrix Γ Δ) :
+    FirstOrderMatrix Γ (.elementaryProposition :: Δ) :=
+  rename (fun v => .succ v) proposition
+
+/-- Capture-free apparent-variable substitution through matrix connectives. -/
+def substitute (σ : Apparent.Substitution Γ Δ Ξ) :
+    FirstOrderMatrix Γ Δ → FirstOrderMatrix Γ Ξ
+  | .quantified proposition => .quantified (FirstOrder.substitute σ proposition)
+  | .neg proposition => .neg (substitute σ proposition)
+  | .disj left right => .disj (substitute σ left) (substitute σ right)
+
+def instantiate (body : FirstOrderMatrix Γ (.elementaryProposition :: Δ))
+    (argument : Apparent Γ Δ) : FirstOrderMatrix Γ Δ :=
+  substitute (Apparent.instantiateSubstitution argument) body
+
+def atReal (body : FirstOrderMatrix Γ [.elementaryProposition])
+    (x : RealVar Γ .elementaryProposition) : FirstOrderMatrix Γ [] :=
+  instantiate body (.real x)
+
+@[simp] theorem instantiate_quantified
+    (body : FirstOrder Γ (.elementaryProposition :: Δ))
+    (argument : Apparent Γ Δ) :
+    instantiate (.quantified body) argument =
+      .quantified (FirstOrder.instantiate body argument) := rfl
+
+end FirstOrderMatrix
 end PM
