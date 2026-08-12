@@ -103,6 +103,60 @@ def smartDisj : Raw Γ → Raw Γ → Raw Γ
 
 def smartImp (left right : Raw Γ) : Raw Γ := smartDisj (smartNeg left) right
 
+/-!
+## Scope-aware successor normalizer
+
+This second normalizer is kept separate while the earlier experimental
+certificates are migrated.  Its explicit fuel is bounded by the syntax size;
+recursive calls consume a leading quantifier and therefore need no unsafe or
+opaque termination argument.
+-/
+
+def shiftBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
+  | .elementary p => .elementary p
+  | .bound index => if cutoff ≤ index then .bound (index + 1) else .bound index
+  | .quantified quantifier body =>
+      .quantified quantifier (shiftBoundAt (cutoff + 1) body)
+  | .neg p => .neg (shiftBoundAt cutoff p)
+  | .disj p q => .disj (shiftBoundAt cutoff p) (shiftBoundAt cutoff q)
+
+def weakenBound (p : Raw Γ) : Raw Γ := shiftBoundAt 0 p
+
+def smartDisjScopedAux : Nat → Raw Γ → Raw Γ → Raw Γ
+  | 0, left, right => .disj left right
+  | fuel + 1, .quantified .always left, .quantified .sometimes right =>
+      .quantified .always (.quantified .sometimes
+        (smartDisjScopedAux fuel (weakenBound left) right))
+  | fuel + 1, .quantified .sometimes left, .quantified .always right =>
+      .quantified .always (.quantified .sometimes
+        (smartDisjScopedAux fuel (weakenBound left) right))
+  | fuel + 1, .quantified quantifier left, right =>
+      .quantified quantifier (smartDisjScopedAux fuel left (weakenBound right))
+  | fuel + 1, left, .quantified quantifier right =>
+      .quantified quantifier (smartDisjScopedAux fuel (weakenBound left) right)
+  | _ + 1, left, right => .disj left right
+
+def rawSize : Raw Γ → Nat
+  | .elementary _ | .bound _ => 1
+  | .quantified _ body | .neg body => rawSize body + 1
+  | .disj left right => rawSize left + rawSize right + 1
+
+def smartDisjScoped (left right : Raw Γ) : Raw Γ :=
+  smartDisjScopedAux (rawSize left + rawSize right) left right
+
+@[simp] theorem shiftBoundAt_elementary (p : Elementary Γ) :
+    shiftBoundAt cutoff (.elementary p) = .elementary p := rfl
+
+@[simp] theorem shiftBoundAt_quantified (quantifier) (body : Raw Γ) :
+    shiftBoundAt cutoff (.quantified quantifier body) =
+      .quantified quantifier (shiftBoundAt (cutoff + 1) body) := rfl
+
+@[simp] theorem smartDisjScoped_matrix
+    (left right : MatrixRaw Γ) :
+    smartDisjScoped left.toRaw right.toRaw = .disj left.toRaw right.toRaw := by
+  cases left <;> cases right <;>
+    rfl
+
 /- Conservative raw embeddings of the three constructors represented by the
 current indexed syntax.  Connective nodes retain their existing structure;
 only the explicit order index is forgotten. -/
