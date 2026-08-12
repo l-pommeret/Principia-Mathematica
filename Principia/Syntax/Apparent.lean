@@ -865,6 +865,13 @@ def atReal (body : FirstOrderMatrix Γ [.elementaryProposition])
     (x : RealVar Γ .elementaryProposition) : FirstOrderMatrix Γ [] :=
   instantiate body (.real x)
 
+/-- Explicit embedding of the pre-existing second-order carrier into the
+enriched matrix carrier.  It is structural and preserves each quantified
+first-order atom verbatim. -/
+def ofSecondOrder : SecondOrder Γ Δ → Quantified Γ Δ
+  | PM.Quantified.always body => PM.Quantified.always (.quantified body)
+  | PM.Quantified.sometimes body => PM.Quantified.sometimes (.quantified body)
+
 @[simp] theorem instantiate_quantified
     (body : FirstOrder Γ (.elementaryProposition :: Δ))
     (argument : Apparent Γ Δ) :

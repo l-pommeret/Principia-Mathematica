@@ -117,6 +117,14 @@ def star_9_1_instance_target (φ : Apparent Γ [.elementaryProposition])
       (Apparent.elementaryValue φ value)
       (FirstOrder.sometimes φ))
 
+/-- The single audited higher target of ✱9·1 used at line (3) of its printed
+proof of ✱9·21.  Its enriched order-two carrier is explicit, so this does not
+silently identify first-order matrices with `SecondOrder`. -/
+def star_9_1_higher_ordered_target
+    (body : FirstOrderMatrix Γ [.elementaryProposition])
+    (value : RealVar Γ .elementaryProposition) : OrderedFormula Γ 2 :=
+  .secondOrderMatrix (FirstOrderMatrix.star_9_1_higher_target body value)
+
 /-- The exact second Pp of ✱9.  The two values `φx` and `φy` use two distinct
 leading real variables; their common existential conclusion has neither as a
 significant free variable.  This is why it is a separate closed constructor,
@@ -195,6 +203,12 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
   | star_9_1_instance (φ : Apparent Γ [.elementaryProposition])
       (value : Elementary Γ) :
       OrderedAssertion (star_9_1_instance_target φ value)
+  /-- The only higher instance of ✱9·1 admitted by the leaf-161 audit.  Its
+  target is the fixed enriched matrix shape, not an order-polymorphic schema
+  or a promotion rule. -/
+  | star_9_1_higher (body : FirstOrderMatrix Γ [.elementaryProposition])
+      (value : RealVar Γ .elementaryProposition) :
+      OrderedAssertion (star_9_1_higher_ordered_target body value)
   /-- ✱9·11, deliberately independent of ✱9·1 as required by the printed
   circularity warning concerning the first-order Taut analogue. -/
   | star_9_11 (φ : Apparent Γ [.elementaryProposition]) :

@@ -47,6 +47,11 @@ inductive OrderedFormula (Γ : RealContext) : Nat → Type where
   values are exactly `Quantified (FirstOrder Γ) []`, i.e. one further PM
   apparent-variable step above the first-order matrix. -/
   | secondOrder : SecondOrder Γ [] → OrderedFormula Γ 2
+  /-- The audited enriched carrier for the sole mixed first-to-second-order
+  implication shape required by the printed second application of ✱9·1.
+  It remains distinct from the historical `secondOrder` carrier; the explicit
+  embedding is provided by `FirstOrderMatrix.ofSecondOrder`. -/
+  | secondOrderMatrix : FirstOrderMatrix.Quantified Γ [] → OrderedFormula Γ 2
   | neg : OrderedFormula Γ order → OrderedFormula Γ order
   | disj : OrderedDisjunctionScope order → OrderedFormula Γ order →
       OrderedFormula Γ order → OrderedFormula Γ order
@@ -98,6 +103,11 @@ def renameReal (ρ : Apparent.RealRenaming Γ Ξ) :
   | .elementary p => .elementary (Elementary.schemaInstance (fun v => .var (ρ v)) p)
   | .firstOrder p => .firstOrder (FirstOrder.renameReal ρ p)
   | .secondOrder p => .secondOrder (SecondOrder.renameReal ρ p)
+  | .secondOrderMatrix p =>
+      .secondOrderMatrix (by
+        cases p with
+        | always body => exact .always (FirstOrderMatrix.renameReal ρ body)
+        | sometimes body => exact .sometimes (FirstOrderMatrix.renameReal ρ body))
   | .neg p => .neg (renameReal ρ p)
   | .disj scope p q => .disj scope (renameReal ρ p) (renameReal ρ q)
 
@@ -108,6 +118,7 @@ def eraseElementary? : OrderedFormula Γ order → Option (Elementary Γ)
   | .elementary p => some p
   | .firstOrder _ => none
   | .secondOrder _ => none
+  | .secondOrderMatrix _ => none
   | .neg p => (eraseElementary? p).map .neg
   | .disj .elementary p q => do
       let p ← eraseElementary? p
