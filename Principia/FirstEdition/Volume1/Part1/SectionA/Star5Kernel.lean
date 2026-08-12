@@ -13,37 +13,6 @@ namespace PM.FirstEdition.Volume1.Star5
 open PM
 open PM.Elementary
 
-/-- PM I (1910), p. 129, ✱5·11.  Instantiate ✱2·54 with the first
-disjunct `p ⊃ q`; its antecedent is exactly the transposition theorem ✱2·5.
-The printed compressed citation `✱2·51·54` is thereby expanded without an
-extra logical principle. -/
-theorem star_5_11 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ ((p ⊃ₚ q) ∨ₚ ((∼ₚ p) ⊃ₚ q)) := by
-  have premise : ⊢ₚ (∼ₚ (p ⊃ₚ q) ⊃ₚ ((∼ₚ p) ⊃ₚ q)) :=
-    PM.FirstEdition.Volume1.Star2.star_2_5 p q
-  have lift : ⊢ₚ ((∼ₚ (p ⊃ₚ q) ⊃ₚ ((∼ₚ p) ⊃ₚ q)) ⊃ₚ
-      ((p ⊃ₚ q) ∨ₚ ((∼ₚ p) ⊃ₚ q))) :=
-    PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) ((∼ₚ p) ⊃ₚ q)
-  match Γ, premise, lift with
-  | [], premise, lift => exact PM.Derivation.star_1_1 premise lift
-  | (τ :: Δ), premise, lift =>
-      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) premise lift
-
-/-- PM I (1910), p. 129, ✱5·12.  The transposition instance ✱2·51
-is the antecedent required by ✱2·54 when its first argument is `p ⊃ q`;
-the final detachment is split over empty and nonempty real contexts. -/
-theorem star_5_12 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ ((p ⊃ₚ q) ∨ₚ (p ⊃ₚ (∼ₚ q))) := by
-  have premise : ⊢ₚ (∼ₚ (p ⊃ₚ q) ⊃ₚ (p ⊃ₚ (∼ₚ q))) :=
-    PM.FirstEdition.Volume1.Star2.star_2_51 p q
-  have lift : ⊢ₚ ((∼ₚ (p ⊃ₚ q) ⊃ₚ (p ⊃ₚ (∼ₚ q))) ⊃ₚ
-      ((p ⊃ₚ q) ∨ₚ (p ⊃ₚ (∼ₚ q)))) :=
-    PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) (p ⊃ₚ (∼ₚ q))
-  match Γ, premise, lift with
-  | [], premise, lift => exact PM.Derivation.star_1_1 premise lift
-  | (τ :: Δ), premise, lift =>
-      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) premise lift
-
 /-- PM I (1910), p. 129, ✱5·13.  The scan cites ✱2·521.  The displayed
 disjunction needs one unprinted use of ✱2·54; the two primitive inference
 branches make the generic real-variable context explicit. -/
@@ -485,13 +454,61 @@ theorem star_5_3 {Γ} (p q r : PM.Elementary Γ) :
     have hh : ⊢ₚ ((a ∧ₚ h) ⊃ₚ h) := PM.FirstEdition.Volume1.Star3.star_3_27 a h
     have hp : ⊢ₚ ((a ∧ₚ h) ⊃ₚ p) := compose hh (PM.FirstEdition.Volume1.Star3.star_3_26 p q)
     have hr : ⊢ₚ ((a ∧ₚ h) ⊃ₚ r) :=
-      compose (join ha hh) (PM.FirstEdition.Volume1.Star3.star_3_35 h r)
+    compose (join hh ha) (PM.FirstEdition.Volume1.Star3.star_3_35 h r)
     exact join hp hr
   have forward : ⊢ₚ (a ⊃ₚ b) :=
     infer forwardBase (PM.FirstEdition.Volume1.Star3.star_3_3 a h (p ∧ₚ r))
   have backward : ⊢ₚ (b ⊃ₚ a) :=
     infer (PM.FirstEdition.Volume1.Star3.star_3_27 p r)
       (PM.FirstEdition.Volume1.Star2.star_2_05 h (p ∧ₚ r) r)
+  exact infer backward
+    (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
+
+/-- PM I (1910), p. 130, ✱5·36.  The printed `Ass . ✱4·38` is
+expanded by projecting the two directions of `p ≡ q`, applying each under
+the corresponding conjunction, and retaining the common equivalence factor. -/
+theorem star_5_36 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∧ₚ (p ≡ₚ q)) ≡ₚ (q ∧ₚ (p ≡ₚ q))) := by
+  let e := p ≡ₚ q
+  let a := p ∧ₚ e
+  let b := q ∧ₚ e
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ},
+      (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have duplicate : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
+    intro t
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t)
+      (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
+  have join : ∀ {u v w : PM.Elementary Γ},
+      (⊢ₚ (u ⊃ₚ v)) → (⊢ₚ (u ⊃ₚ w)) → (⊢ₚ (u ⊃ₚ (v ∧ₚ w))) := by
+    intro u v w huv huw
+    have pair : ⊢ₚ ((u ⊃ₚ v) ∧ₚ (u ⊃ₚ w)) :=
+      infer huw (infer huv (PM.FirstEdition.Volume1.Star3.star_3_2 (u ⊃ₚ v) (u ⊃ₚ w)))
+    exact compose (duplicate u)
+      (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 u u v w))
+  have forward : ⊢ₚ (a ⊃ₚ b) := by
+    have haP : ⊢ₚ (a ⊃ₚ p) := PM.FirstEdition.Volume1.Star3.star_3_26 p e
+    have haE : ⊢ₚ (a ⊃ₚ e) := PM.FirstEdition.Volume1.Star3.star_3_27 p e
+    have haPQ : ⊢ₚ (a ⊃ₚ (p ⊃ₚ q)) :=
+      compose haE (PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ q) (q ⊃ₚ p))
+    have haQ : ⊢ₚ (a ⊃ₚ q) :=
+      compose (join haP haPQ) (PM.FirstEdition.Volume1.Star3.star_3_35 p q)
+    exact join haQ haE
+  have backward : ⊢ₚ (b ⊃ₚ a) := by
+    have hbQ : ⊢ₚ (b ⊃ₚ q) := PM.FirstEdition.Volume1.Star3.star_3_26 q e
+    have hbE : ⊢ₚ (b ⊃ₚ e) := PM.FirstEdition.Volume1.Star3.star_3_27 q e
+    have hbQP : ⊢ₚ (b ⊃ₚ (q ⊃ₚ p)) :=
+      compose hbE (PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ q) (q ⊃ₚ p))
+    have hbP : ⊢ₚ (b ⊃ₚ p) :=
+      compose (join hbQ hbQP) (PM.FirstEdition.Volume1.Star3.star_3_35 q p)
+    exact join hbP hbE
   exact infer backward
     (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
 
