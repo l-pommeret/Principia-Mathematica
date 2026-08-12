@@ -136,6 +136,19 @@ theorem line2Consequent_is_weakened
   exact congrArg (Raw.quantified .sometimes)
     (ofApparent_inner_weakenReal φ)
 
+def line4DisplayRaw (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  .disj
+    (.neg (.quantified .sometimes (ofFirstOrder (line2Antecedent φ))))
+    (line3ConsequentOutside φ)
+
+theorem line3_to_line4
+    (φ : Apparent Γ [.elementaryProposition]) :
+    NormalizesScopedAt 0 (line3DisplayRaw φ) (line4DisplayRaw φ) := by
+  rw [line3DisplayRaw_unfold, line2Consequent_is_weakened]
+  exact .alwaysImpToSometimesAntecedent 0
+    (ofFirstOrder (line2Antecedent φ)) (line3ConsequentOutside φ)
+
 theorem line2ScopedRaw_roundTrip (φ : Apparent Γ [.elementaryProposition]) :
     ofFirstOrderMatrixScoped (line2Formula φ) = line2ScopedRaw φ :=
   (line2Reification φ).roundTrip
