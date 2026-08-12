@@ -148,10 +148,27 @@ def ofElementaryRaw : Elementary Γ → Raw Γ
   | .neg p => .neg (ofElementaryRaw p)
   | .disj p q => .disj (ofElementaryRaw p) (ofElementaryRaw q)
 
+inductive IndexAction where
+  | inserted
+  | retained (index : Nat)
+  deriving DecidableEq, Repr
+
+def instantiateIndex (cutoff index : Nat) : IndexAction :=
+  if index = cutoff then .inserted
+  else if cutoff < index then .retained (index - 1) else .retained index
+
+def IndexAction.shift (cutoff : Nat) : IndexAction → IndexAction
+  | .inserted => .inserted
+  | .retained index => .retained (shiftIndex cutoff index)
+
+def IndexAction.toRaw (value : RealVar Γ .elementaryProposition) :
+    IndexAction → Raw Γ
+  | .inserted => .elementary (.var value)
+  | .retained index => .bound index
+
 def instantiateIndexVar (cutoff index : Nat)
     (value : RealVar Γ .elementaryProposition) : Raw Γ :=
-  if index = cutoff then .elementary (.var value)
-  else if cutoff < index then .bound (index - 1) else .bound index
+  (instantiateIndex cutoff index).toRaw value
 
 /-- Instantiate an apparent variable with an elementary value already living
 in the same real context.  Unlike `openBoundAt`, this operation does not add
@@ -175,7 +192,12 @@ def instantiateHeadRaw (value : Elementary Γ) (p : Raw Γ) : Raw Γ :=
     (cutoff index : Nat) (value : RealVar Γ .elementaryProposition) :
     instantiateBoundAt cutoff (.var value) (.bound index) =
       instantiateIndexVar cutoff index value := by
-  simp [instantiateBoundAt, instantiateIndexVar, ofElementaryRaw]
+  by_cases hEq : index = cutoff
+  · simp [instantiateBoundAt, instantiateIndexVar, instantiateIndex,
+      IndexAction.toRaw, ofElementaryRaw, hEq]
+  · by_cases hLt : cutoff < index <;>
+      simp [instantiateBoundAt, instantiateIndexVar, instantiateIndex,
+        IndexAction.toRaw, ofElementaryRaw, hEq, hLt]
 
 @[simp] theorem smartNeg_ofElementaryRaw (value : Elementary Γ) :
     smartNeg (ofElementaryRaw value) = .neg (ofElementaryRaw value) := by
