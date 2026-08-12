@@ -1,1 +1,87 @@
-{"batch":"PM3-STAR255-Q671","edition":"first","volume":3,"source_range":{"printed_pages":"62","scan_leaves":[70],"canonical_scan":"https://archive.org/details/in.ernet.dli.2015.449496","leaf_derivatives":[{"scan_leaf":70,"printed_page":62,"uri":"https://archive.org/download/in.ernet.dli.2015.449496/page/n70_w1400.jpg","sha256":"2eee7213f44da1156d8d17e9045a3f85d1fc7abab8dce2012db8d843f394104b"}]},"witnesses":["PM3-1913-IA-DLI-SCAN"],"source_status":"source-catalogued-PM-VERBATIM","integration_status":"source-only-no-formal-target","items":[{"id":"PM3:✱255·113","kind":"derived-proposition","printed":"✱255·113. ⊢ :: P, Q ∈ Ω .⊃ : NrʻP < NrʻQ .∨ . NrʻP = NrʻQ .∨ . NrʻQ < NrʻP","printed_page":62,"scan_leaf":70,"lean_path":"Principia/FirstEdition/Volume3/Star255P62Source.lean","declaration":"source-only (no Lean declaration)","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-ordinal-series-syntax","printed_dependencies":["PM3:✱255·112·106","PM1:✱155·4·16"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-255-p62-Q671-skeletons.txt"},{"id":"PM3:✱255·114","kind":"derived-proposition","printed":"✱255·114. ⊢ :: μ, ν ∈ N₀O .⊃ : μ ≤ ν .∨ . ν < μ : μ ≥ ν .∨ . ν > μ","printed_page":62,"scan_leaf":70,"lean_path":"Principia/FirstEdition/Volume3/Star255P62Source.lean","declaration":"source-only (no Lean declaration)","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-ordinal-series-syntax","printed_dependencies":["PM3:✱255·112·104·105·103"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-255-p62-Q671-skeletons.txt"},{"id":"PM3:✱255·115","kind":"derived-proposition","printed":"✱255·115. ⊢ :: P, Q ∈ Ω .⊃ : NrʻP ≤ NrʻQ .∨ . NrʻQ < NrʻP : NrʻP ≥ NrʻQ .∨ . NrʻQ > NrʻP","printed_page":62,"scan_leaf":70,"lean_path":"Principia/FirstEdition/Volume3/Star255P62Source.lean","declaration":"source-only (no Lean declaration)","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-ordinal-series-syntax","printed_dependencies":["PM3:✱255·113·108"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-255-p62-Q671-skeletons.txt"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM3-STAR255-Q671",
+  "edition": "first",
+  "volume": 3,
+  "source_range": {
+    "printed_pages": "62",
+    "scan_leaves": [
+      70
+    ],
+    "canonical_scan": "https://archive.org/details/in.ernet.dli.2015.449496",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 70,
+        "printed_page": 62,
+        "uri": "https://archive.org/download/in.ernet.dli.2015.449496/page/n70_w1400.jpg",
+        "sha256": "2eee7213f44da1156d8d17e9045a3f85d1fc7abab8dce2012db8d843f394104b"
+      }
+    ]
+  },
+  "witnesses": [
+    "PM3-1913-IA-DLI-SCAN"
+  ],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "source-only-no-formal-target",
+  "items": [
+    {
+      "id": "PM3:✱255·113",
+      "kind": "derived-proposition",
+      "printed": "✱255·113. ⊢ :: P, Q ∈ Ω .⊃ : NrʻP < NrʻQ .∨ . NrʻP = NrʻQ .∨ . NrʻQ < NrʻP",
+      "printed_page": 62,
+      "scan_leaf": 70,
+      "lean_path": "Principia/FirstEdition/Volume3/Star255P62Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-ordinal-series-syntax",
+      "printed_dependencies": [
+        "PM3:✱255·112·106",
+        "PM1:✱155·4·16"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-255-p62-Q671-skeletons.txt"
+    },
+    {
+      "id": "PM3:✱255·114",
+      "kind": "derived-proposition",
+      "printed": "✱255·114. ⊢ :: μ, ν ∈ N₀O .⊃ : μ ≤ ν .∨ . ν < μ : μ ≥ ν .∨ . ν > μ",
+      "printed_page": 62,
+      "scan_leaf": 70,
+      "lean_path": "Principia/FirstEdition/Volume3/Star255P62Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-ordinal-series-syntax",
+      "printed_dependencies": [
+        "PM3:✱255·112·104·105·103"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-255-p62-Q671-skeletons.txt"
+    },
+    {
+      "id": "PM3:✱255·115",
+      "kind": "derived-proposition",
+      "printed": "✱255·115. ⊢ :: P, Q ∈ Ω .⊃ : NrʻP ≤ NrʻQ .∨ . NrʻQ < NrʻP : NrʻP ≥ NrʻQ .∨ . NrʻQ > NrʻP",
+      "printed_page": 62,
+      "scan_leaf": 70,
+      "lean_path": "Principia/FirstEdition/Volume3/Star255P62Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-ordinal-series-syntax",
+      "printed_dependencies": [
+        "PM3:✱255·113·108"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-255-p62-Q671-skeletons.txt"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}
