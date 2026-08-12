@@ -59,6 +59,16 @@ def abstractOuterAt (cutoff : Nat) : Raw (.elementaryProposition :: Γ) → Raw 
 def abstractOuter (p : Raw (.elementaryProposition :: Γ)) : Raw Γ :=
   abstractOuterAt 0 p
 
+/-- Raw terms admissible for an outer real abstraction at a given binder
+depth.  The reserved index `cutoff + 1` is excluded because it is introduced
+only by `abstractOuterAt`; this is the exact image invariant for its beta law. -/
+def Admissible (cutoff : Nat) : Raw Γ → Prop
+  | .elementary _ => True
+  | .bound index => index ≠ cutoff + 1
+  | .quantified _ body => Admissible (cutoff + 1) body
+  | .neg p => Admissible cutoff p
+  | .disj p q => Admissible cutoff p ∧ Admissible cutoff q
+
 def shiftBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
   | .elementary p => .elementary p
   | .bound index => if cutoff ≤ index then .bound (index + 1) else .bound index
