@@ -37,6 +37,7 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "PM.FirstOrder.disjSometimesAlways",
     "PM.Apparent.openHead",
     "PM.Apparent.elementaryValue",
+    "NormalizesScopedAt.disjCongr",
     "OrderedAssertion.elementary",
     # A fixed assigned-order target is a carrier spelling, not a historical
     # theorem dependency.  ✱9·3's actual proof dependency is the separately

@@ -18,7 +18,7 @@
     "planned_campaign_questions": 65,
     "planned_uncatalogued_pm_ids": 3,
     "planned_uncatalogued_non_pm_ids": 1,
-    "catalogued_items_without_campaign_question": 913,
+    "catalogued_items_without_campaign_question": 911,
     "locally_scheduler_eligible": 0
   },
   "question_statuses": {
@@ -79,7 +79,7 @@
       "PM1:✱3": 28,
       "PM1:✱4": 61,
       "PM1:✱5": 36,
-      "PM1:✱9": 27
+      "PM1:✱9": 29
     },
     "planned_but_uncatalogued": {
       "PM1:✱9": 3
@@ -97,7 +97,7 @@
       "PM1:✱22": 79,
       "PM1:✱24": 48,
       "PM1:✱5": 2,
-      "PM1:✱9": 22,
+      "PM1:✱9": 20,
       "PM2:✱100": 12,
       "PM2:✱101": 15,
       "PM2:✱102": 28,
@@ -9838,8 +9838,10 @@
       "id": "PM1:✱9·34",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "awaiting-ci",
-      "campaign_questions": [],
+      "formal_status": "kernel-checked",
+      "campaign_questions": [
+        "Q259"
+      ],
       "ast": {
         "status": "parsed",
         "sha256": "6f6deadc537fc1477854813348fcbc651eff4f38f37d7b15f172b231667afb40"
@@ -9852,8 +9854,10 @@
       "id": "PM1:✱9·35",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "awaiting-ci",
-      "campaign_questions": [],
+      "formal_status": "kernel-checked",
+      "campaign_questions": [
+        "Q259"
+      ],
       "ast": {
         "status": "parsed",
         "sha256": "fc6c2bcad50b7c0adca3a4011807bbce911b4e89b4c6095b4e5e39b8925cdd2c"
@@ -16768,8 +16772,6 @@
     "PM1:✱2·33",
     "PM1:✱5·74",
     "PM1:✱5·75",
-    "PM1:✱9·34",
-    "PM1:✱9·35",
     "PM1:✱9·36",
     "PM1:✱9·361",
     "PM1:✱9·37",

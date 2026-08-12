@@ -9,4 +9,6 @@ The public result is the exact narrow `Star935KernelAssertion`, not an
 scope-normalization certificate for the final ✱9·05 step. No oracle,
 classical reasoning, generic detachment, or target constructor was added.
 
-Status: awaiting CI.
+GitHub Actions run `31578445311` succeeded at immutable commit
+`d9fe80c3d20bd5aef361b729f9f422ba17591da5`. This certifies only the narrow
+`Star935KernelAssertion`, including its explicit ✱9·22 and ✱9·05 inputs.
