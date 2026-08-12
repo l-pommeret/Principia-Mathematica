@@ -604,4 +604,21 @@ def star_9_31_line2_reification (φ : Apparent Γ [.elementaryProposition]) :
     line2Normal, smartImp, smartNeg, MatrixRaw.smartNeg, MatrixRaw.toRaw,
     matrixOfApparent_toRaw, ofFirstOrder, star_9_31_antecedent]
 
+/-- The displayed value of normalized line (2), with its remaining apparent
+slot instantiated at the leading real variable.  Instantiation is performed
+by the existing capture-safe matrix operation before normalization. -/
+def star_9_31_line2_open_formula (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrderMatrix (.elementaryProposition :: Γ) [] :=
+  FirstOrderMatrix.atReal (star_9_31_line2_reification φ).formula .zero
+
+/-- Scope-aware range certificate for the opened line (2).  Its target is
+definitionally the normalization of the exact instantiated syntax; no
+judgement transport or assertion is bundled into this witness. -/
+def star_9_31_line2_open_reification
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ScopedCertifiedFirstOrderMatrix []
+      (normalizeFirstOrderMatrixScoped (star_9_31_line2_open_formula φ)) where
+  formula := star_9_31_line2_open_formula φ
+  roundTrip := rfl
+
 end PM.Experimental.CanonicalOrderedFormula
