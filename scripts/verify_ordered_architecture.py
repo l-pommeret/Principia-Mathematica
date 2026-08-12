@@ -31,7 +31,7 @@ def main() -> None:
         "structure OrderedRuleBook", "Primitive : OrderedFormula",
         "inductive OrderedDerivation", "| primitive", "| detach",
         "def impElementaryToFirst",
-        "inductive OrderedAssertion", "star_9_12_elementary_to_first",
+        "inductive OrderedAssertion", "star_9_12_elementary_to_first", "star_9_12_second",
         "structure Q259ClosedRuleBook", "star_9_21", "star_9_25",
         "star_9_3_target", "star_9_31_target", "star_9_32_target", "star_9_33_target",
     )
@@ -73,6 +73,15 @@ def main() -> None:
         raise SystemExit("order-two implication bypasses its scope certificate")
     if "| .disj .secondOrder _ _ => none" not in ordered:
         raise SystemExit("elementary erasure must reject order-two disjunctions")
+    if not re.search(
+        r"\|\s+star_9_12_second\s*\{p q : OrderedFormula Γ 2\}\s*:\s*"
+        r"OrderedAssertion p\s*→\s*OrderedAssertion \(secondImp p q\)\s*→\s*"
+        r"OrderedAssertion q",
+        prerequisites,
+    ):
+        raise SystemExit("✱9·12 order-two specialization is absent or not scope-certified")
+    if re.search(r"\|\s+star_9_12\w*\s*\{[^}]*order", prerequisites):
+        raise SystemExit("✱9·12 must not become an order-polymorphic inference rule")
     if re.search(r"(?m)^\s+star_9_(?:3|31|32|33)\s*:", closed_rulebook):
         raise SystemExit("Q259 target appears as a closed-rulebook primitive")
     print("Ordered first-order architecture checks passed")

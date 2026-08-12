@@ -160,6 +160,15 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
   | star_9_12 {p q : OrderedFormula Γ 1} :
       OrderedAssertion p → OrderedAssertion (firstImp p q) →
       OrderedAssertion q
+  /-- The unique order-two specialization of the metalinguistic rule ✱9·12.
+  On p. 137 PM says that the rule applies even when `p` and `q` are not
+  elementary, and immediately states the corresponding case for functions
+  that are not necessarily elementary.  This constructor is therefore a
+  fixed inference specialization, not a new object-language Pp and not an
+  order-polymorphic detachment rule. -/
+  | star_9_12_second {p q : OrderedFormula Γ 2} :
+      OrderedAssertion p → OrderedAssertion (secondImp p q) →
+      OrderedAssertion q
   /-- The mixed elementary/first-order instance of ✱9·12.  Its implication
   shape is exactly the ✱9·06-certified definition `∼p ∨ (∃x).φx`; this is
   the branch used immediately after ✱9·1 in the printed demonstration of

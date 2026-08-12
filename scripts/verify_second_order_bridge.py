@@ -41,7 +41,7 @@ def main() -> None:
         "private structure MatrixSyntaxAt", "private def firstOrderMatrixSyntaxAt : MatrixSyntaxAt 1",
         "def firstOrderToSecondAll", "theorem firstOrderToSecondAll_reduction",
         "closedFirstOrderAlphaRenaming", "theorem closedFirstOrder_alpha",
-        "| star_9_13_first", "FirstOrder.openRealHead φ",
+        "| star_9_13_first", "FirstOrder.openRealHead φ", "| star_9_12_second",
     ), "sealed assigned 1→2 generalization")
 
     forbidden = {
@@ -49,6 +49,7 @@ def main() -> None:
         "extra MatrixSyntaxAt instance": r"(?m)^\s*(?:private\s+)?def\s+\w+\s*:\s*MatrixSyntaxAt\s+(?!1\b)",
         "semantic/object escape": r"\b(?:Classical|axiom|sorry|admit|unsafe|Forall|Exists)\b|[∀∃]",
         "generic order-two assertion rule": r"\|\s+star_9_13\w*\s*\{[^}]*order",
+        "generic order-polymorphic detachment": r"\|\s+star_9_12\w*\s*\{[^}]*order",
     }
     corpus = "\n".join((apparent, ordered, prerequisites))
     failures = [label for label, pattern in forbidden.items()
