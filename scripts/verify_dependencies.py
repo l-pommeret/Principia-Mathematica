@@ -31,7 +31,10 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     # infrastructure, not historical PM theorem citations.
     "Classical.choice",
     "Classical.byContradiction",
+    "Classical.byCases",
+    "Classical.em",
     "False.elim",
+    "Eq.symm",
     "Iff.rfl",
     "Or.inl",
     "Or.inr",

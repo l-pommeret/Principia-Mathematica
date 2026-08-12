@@ -1,1 +1,118 @@
-{"batch":"PM1-STAR21-Q333","edition":"first","volume":1,"source_range":{"printed_pages":"217","scan_leaves":[239],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱21·14","kind":"derived-proposition","printed":"⊢ : ẑxẑyψ(x,y) = ẑxẑyχ(x,y) .⊃ : ψ(x,y) .≡₍x,y₎. χ(x,y)","printed_page":217,"scan_leaf":239,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"},{"id":"PM1:✱21·15","kind":"derived-proposition","printed":"⊢ : ψ(x,y) .≡₍x,y₎. χ(x,y) : ≡ . ẑxẑyψ(x,y) = ẑxẑyχ(x,y)","printed_page":217,"scan_leaf":239,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"},{"id":"PM1:✱21·151","kind":"derived-proposition","printed":"⊢ . (∃φ) . ẑxẑyψ(x,y) = ẑxẑyφ!(x,y)","printed_page":217,"scan_leaf":239,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"},{"id":"PM1:✱21·16","kind":"derived-proposition","printed":"⊢ : (∃φ) : f{ẑxẑyψ(x,y)} .≡ . f{ẑxẑyφ!(x,y)}","printed_page":217,"scan_leaf":239,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"},{"id":"PM1:✱21·17","kind":"derived-proposition","printed":"⊢ : (φ). f{ẑxẑyφ!(x,y)} .⊃ . f{ẑxẑyψ(x,y)}","printed_page":217,"scan_leaf":239,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR21-Q333",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "217",
+    "scan_leaves": [
+      239
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱21·14",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑxẑyψ(x,y) = ẑxẑyχ(x,y) .⊃ : ψ(x,y) .≡₍x,y₎. χ(x,y)",
+      "printed_page": 217,
+      "scan_leaf": 239,
+      "lean_path": "Principia/Architecture/Star21Q333Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q333Kernel.star_21_14",
+      "formal_scope": "exact typed elimination of relation identity to pointwise formal equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "dependency_fidelity": "strict-closure",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q333-review.md"
+    },
+    {
+      "id": "PM1:✱21·15",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ψ(x,y) .≡₍x,y₎. χ(x,y) : ≡ . ẑxẑyψ(x,y) = ẑxẑyχ(x,y)",
+      "printed_page": 217,
+      "scan_leaf": 239,
+      "lean_path": "Principia/Architecture/Star21Q333Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q333Kernel.star_21_15",
+      "formal_scope": "exact typed equivalence between pointwise formal equivalence and relation identity",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "dependency_fidelity": "strict-closure",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q333-review.md"
+    },
+    {
+      "id": "PM1:✱21·151",
+      "kind": "derived-proposition",
+      "printed": "⊢ . (∃φ) . ẑxẑyψ(x,y) = ẑxẑyφ!(x,y)",
+      "printed_page": 217,
+      "scan_leaf": 239,
+      "lean_path": "Principia/Architecture/Star21Q333Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q333Kernel.star_21_151",
+      "formal_scope": "exact typed existence of a predicative binary representative in the documented simple-type embedding",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "dependency_fidelity": "strict-closure",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q333-review.md"
+    },
+    {
+      "id": "PM1:✱21·16",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (∃φ) : f{ẑxẑyψ(x,y)} .≡ . f{ẑxẑyφ!(x,y)}",
+      "printed_page": 217,
+      "scan_leaf": 239,
+      "lean_path": "Principia/Architecture/Star21Q333Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q333Kernel.star_21_16",
+      "formal_scope": "exact typed contextual equivalence with an existentially scoped predicative representative",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "dependency_fidelity": "strict-closure",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q333-review.md"
+    },
+    {
+      "id": "PM1:✱21·17",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (φ). f{ẑxẑyφ!(x,y)} .⊃ . f{ẑxẑyψ(x,y)}",
+      "printed_page": 217,
+      "scan_leaf": 239,
+      "lean_path": "Principia/Architecture/Star21Q333Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q333Kernel.star_21_17",
+      "formal_scope": "exact typed universal-to-contextual relation application implication",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "dependency_fidelity": "strict-closure",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q333-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

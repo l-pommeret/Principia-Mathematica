@@ -1,1 +1,113 @@
-{"batch":"PM1-STAR21-Q336","edition":"first","volume":1,"source_range":{"printed_pages":"220","scan_leaves":[242],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱21·53","kind":"derived-proposition","printed":"⊢ : S = R .⊃ₛ. φS : ≡ . φR","printed_page":220,"scan_leaf":242,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"},{"id":"PM1:✱21·54","kind":"derived-proposition","printed":"⊢ : (∃S). S = R . φS .≡ . φR","printed_page":220,"scan_leaf":242,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"},{"id":"PM1:✱21·55","kind":"derived-proposition","printed":"⊢ . ẑxẑyφ(x,y) = (℩R){xRy .≡₍x,y₎. φ(x,y)}","printed_page":220,"scan_leaf":242,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"},{"id":"PM1:✱21·56","kind":"derived-proposition","printed":"⊢ . E!(℩R){xRy .≡₍x,y₎. φ(x,y)}","printed_page":220,"scan_leaf":242,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"},{"id":"PM1:✱21·57","kind":"derived-proposition","printed":"⊢ : ẑxẑyφ(x,y) = (℩R)(fR) .⊃ : g{ẑxẑyφ(x,y)} .≡ . g{(℩R)(fR)}","printed_page":220,"scan_leaf":242,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR21-Q336",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "220",
+    "scan_leaves": [
+      242
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱21·53",
+      "kind": "derived-proposition",
+      "printed": "⊢ : S = R .⊃ₛ. φS : ≡ . φR",
+      "printed_page": 220,
+      "scan_leaf": 242,
+      "lean_path": "Principia/Architecture/Star21Q336Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q336Kernel.star_21_53",
+      "formal_scope": "exact polymorphic formal implication over relation extensions",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q336-review.md"
+    },
+    {
+      "id": "PM1:✱21·54",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (∃S). S = R . φS .≡ . φR",
+      "printed_page": 220,
+      "scan_leaf": 242,
+      "lean_path": "Principia/Architecture/Star21Q336Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q336Kernel.star_21_54",
+      "formal_scope": "exact polymorphic existential identity-elimination equivalence for relations",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q336-review.md"
+    },
+    {
+      "id": "PM1:✱21·55",
+      "kind": "derived-proposition",
+      "printed": "⊢ . ẑxẑyφ(x,y) = (℩R){xRy .≡₍x,y₎. φ(x,y)}",
+      "printed_page": 220,
+      "scan_leaf": 242,
+      "lean_path": "Principia/Architecture/Star21Q336Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q336Kernel.star_21_55",
+      "formal_scope": "exact choice-free contextual relation-description identity",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q336-review.md"
+    },
+    {
+      "id": "PM1:✱21·56",
+      "kind": "derived-proposition",
+      "printed": "⊢ . E!(℩R){xRy .≡₍x,y₎. φ(x,y)}",
+      "printed_page": 220,
+      "scan_leaf": 242,
+      "lean_path": "Principia/Architecture/Star21Q336Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q336Kernel.star_21_56",
+      "formal_scope": "exact unique existence of the contextual relation description",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q336-review.md"
+    },
+    {
+      "id": "PM1:✱21·57",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑxẑyφ(x,y) = (℩R)(fR) .⊃ : g{ẑxẑyφ(x,y)} .≡ . g{(℩R)(fR)}",
+      "printed_page": 220,
+      "scan_leaf": 242,
+      "lean_path": "Principia/Architecture/Star21Q336Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q336Kernel.star_21_57",
+      "formal_scope": "exact polymorphic congruence under relation-description identity",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q336-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

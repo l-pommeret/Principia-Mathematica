@@ -1,1 +1,113 @@
-{"batch":"PM1-STAR21-Q334","edition":"first","volume":1,"source_range":{"printed_pages":"218","scan_leaves":[240],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱21·2","kind":"derived-proposition","printed":"⊢ . ẑxẑyφ(x,y) = ẑxẑyφ(x,y)","printed_page":218,"scan_leaf":240,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"},{"id":"PM1:✱21·21","kind":"derived-proposition","printed":"⊢ : ẑxẑyφ(x,y) = ẑxẑyψ(x,y) .≡ . ẑxẑyψ(x,y) = ẑxẑyφ(x,y)","printed_page":218,"scan_leaf":240,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"},{"id":"PM1:✱21·22","kind":"derived-proposition","printed":"⊢ : ẑxẑyφ(x,y) = ẑxẑyψ(x,y) . ẑxẑyψ(x,y) = ẑxẑyχ(x,y) .⊃ . ẑxẑyφ(x,y) = ẑxẑyχ(x,y)","printed_page":218,"scan_leaf":240,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"},{"id":"PM1:✱21·23","kind":"derived-proposition","printed":"⊢ : ẑxẑyφ(x,y) = ẑxẑyψ(x,y) . ẑxẑyφ(x,y) = ẑxẑyχ(x,y) .⊃ . ẑxẑyψ(x,y) = ẑxẑyχ(x,y)","printed_page":218,"scan_leaf":240,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"},{"id":"PM1:✱21·24","kind":"derived-proposition","printed":"⊢ : ẑxẑyψ(x,y) = ẑxẑyφ(x,y) . ẑxẑyχ(x,y) = ẑxẑyφ(x,y) .⊃ . ẑxẑyψ(x,y) = ẑxẑyχ(x,y)","printed_page":218,"scan_leaf":240,"lean_path":"Principia/FirstEdition/Volume1/Star21Source.lean","declaration":"source-only","formal_scope":"relations; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-binary-relations"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR21-Q334",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "218",
+    "scan_leaves": [
+      240
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱21·2",
+      "kind": "derived-proposition",
+      "printed": "⊢ . ẑxẑyφ(x,y) = ẑxẑyφ(x,y)",
+      "printed_page": 218,
+      "scan_leaf": 240,
+      "lean_path": "Principia/Architecture/Star21Q334Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q334Kernel.star_21_2",
+      "formal_scope": "exact reflexivity of a typed binary relation extension",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q334-review.md"
+    },
+    {
+      "id": "PM1:✱21·21",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑxẑyφ(x,y) = ẑxẑyψ(x,y) .≡ . ẑxẑyψ(x,y) = ẑxẑyφ(x,y)",
+      "printed_page": 218,
+      "scan_leaf": 240,
+      "lean_path": "Principia/Architecture/Star21Q334Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q334Kernel.star_21_21",
+      "formal_scope": "exact symmetry equivalence for typed binary relation identity",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q334-review.md"
+    },
+    {
+      "id": "PM1:✱21·22",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑxẑyφ(x,y) = ẑxẑyψ(x,y) . ẑxẑyψ(x,y) = ẑxẑyχ(x,y) .⊃ . ẑxẑyφ(x,y) = ẑxẑyχ(x,y)",
+      "printed_page": 218,
+      "scan_leaf": 240,
+      "lean_path": "Principia/Architecture/Star21Q334Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q334Kernel.star_21_22",
+      "formal_scope": "exact transitivity of typed binary relation identity",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q334-review.md"
+    },
+    {
+      "id": "PM1:✱21·23",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑxẑyφ(x,y) = ẑxẑyψ(x,y) . ẑxẑyφ(x,y) = ẑxẑyχ(x,y) .⊃ . ẑxẑyψ(x,y) = ẑxẑyχ(x,y)",
+      "printed_page": 218,
+      "scan_leaf": 240,
+      "lean_path": "Principia/Architecture/Star21Q334Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q334Kernel.star_21_23",
+      "formal_scope": "exact common-left identity law for typed binary relations",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q334-review.md"
+    },
+    {
+      "id": "PM1:✱21·24",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑxẑyψ(x,y) = ẑxẑyφ(x,y) . ẑxẑyχ(x,y) = ẑxẑyφ(x,y) .⊃ . ẑxẑyψ(x,y) = ẑxẑyχ(x,y)",
+      "printed_page": 218,
+      "scan_leaf": 240,
+      "lean_path": "Principia/Architecture/Star21Q334Kernel.lean",
+      "declaration": "PM.Architecture.Star21Q334Kernel.star_21_24",
+      "formal_scope": "exact common-right identity law for typed binary relations",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q334-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}
