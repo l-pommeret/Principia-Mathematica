@@ -1054,6 +1054,35 @@ theorem star_9_31_line2_scoped_roundTrip
       star_9_31_line2_scoped_raw φ :=
   (star_9_31_line2_scoped_reification φ).roundTrip
 
+/-- Closed prototype for the source-labelled ✱9·03·02 step in ✱9·31.
+It deliberately keeps the kernel judgement on the already-derived printed
+line (1) separate from the scope-correct range certificate for line (2).
+An adapter may consume both fields, but this structure itself adds no
+judgement transport or logical constructor. -/
+structure Star931ClosedNormalizationWitness
+    (φ : Apparent Γ [.elementaryProposition]) where
+  sourceProof : OrderedAssertion
+    (firstOrderToSecondAll (star_9_31_line1_matrix φ))
+  sourceIdentification :
+    ofOrdered (firstOrderToSecondAll (star_9_31_line1_matrix φ)) =
+      line1Redex (star_9_31_canonical_matrix φ)
+        (star_9_31_canonical_conclusion φ)
+  printedReduction :
+    line1Redex (star_9_31_canonical_matrix φ)
+        (star_9_31_canonical_conclusion φ) =
+      line2Normal (star_9_31_canonical_matrix φ)
+        (star_9_31_canonical_conclusion φ)
+  scopedTarget : ScopedCertifiedFirstOrderMatrix [.elementaryProposition]
+    (star_9_31_line2_scoped_raw φ)
+
+def star_9_31_closed_normalization_witness
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star931ClosedNormalizationWitness φ where
+  sourceProof := star_9_31_line1_ordered φ
+  sourceIdentification := star_9_31_line1_identification φ
+  printedReduction := star_9_03_02_line1_line2 _ _
+  scopedTarget := star_9_31_line2_scoped_reification φ
+
 /-- The displayed value of normalized line (2), with its remaining apparent
 slot instantiated at the leading real variable.  Instantiation is performed
 by the existing capture-safe matrix operation before normalization. -/
