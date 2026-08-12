@@ -2,6 +2,7 @@ import Principia.Architecture.FirstOrderPrerequisites
 import Principia.Architecture.FirstOrderQ259
 import Principia.Architecture.Star921MatrixKernel
 import Principia.Architecture.Star931Kernel
+import Principia.Architecture.Star922Kernel
 
 namespace PM.Architecture.Q259ClosedRuleBook
 
@@ -61,6 +62,16 @@ theorem star_9_31 (_rules : Q259ClosedRuleBook)
     (φ : Apparent Γ [.elementaryProposition]) :
     Star_9_31Derivation φ :=
   ⟨Star931Kernel.derive φ⟩
+
+/-- Exact closed kernel contract for existential monotonicity ✱9·22.  The
+result is the source-audited normalization chain, deliberately not an
+`OrderedAssertion` produced by an unprinted conversion rule. -/
+abbrev Star_9_22Derivation (φ ψ : Apparent Γ [.elementaryProposition]) : Prop :=
+  Star922Kernel.Star922KernelAssertion φ ψ
+
+theorem star_9_22 (φ ψ : Apparent Γ [.elementaryProposition]) :
+    Star_9_22Derivation φ ψ :=
+  Star922Kernel.derive φ ψ
 
 /-- The exact assertion contract for the universal right-injection analogue
 of ✱1·3. It is a target, never a `Q259ClosedRuleBook` field. -/
