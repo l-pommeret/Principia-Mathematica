@@ -69,14 +69,52 @@ def Admissible (cutoff : Nat) : Raw Γ → Prop
   | .neg p => Admissible cutoff p
   | .disj p q => Admissible cutoff p ∧ Admissible cutoff q
 
+def shiftIndex (cutoff index : Nat) : Nat :=
+  if cutoff ≤ index then index + 1 else index
+
+/-- The elementary de Bruijn arithmetic underlying capture-safe shift
+commutation.  Inserting at `i` first moves the later insertion point `j` to
+`j + 1`. -/
+theorem shiftIndex_comm (i j index : Nat) (h : i ≤ j) :
+    shiftIndex (j + 1) (shiftIndex i index) =
+      shiftIndex i (shiftIndex j index) := by
+  by_cases hi : i ≤ index
+  · by_cases hj : j ≤ index
+    · have hleft : j + 1 ≤ index + 1 := by omega
+      have hright : i ≤ index + 1 := by omega
+      simp [shiftIndex, hi, hj, hleft, hright]
+    · have hleft : ¬ j + 1 ≤ index + 1 := by omega
+      simp [shiftIndex, hi, hj, hleft]
+  · have hj : ¬ j ≤ index := by omega
+    have hleft : ¬ j + 1 ≤ index := by omega
+    simp [shiftIndex, hi, hj, hleft]
+
 def shiftBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
   | .elementary p => .elementary p
-  | .bound index => if cutoff ≤ index then .bound (index + 1) else .bound index
+  | .bound index => .bound (shiftIndex cutoff index)
   | .quantified q body => .quantified q (shiftBoundAt (cutoff + 1) body)
   | .neg p => .neg (shiftBoundAt cutoff p)
   | .disj p q => .disj (shiftBoundAt cutoff p) (shiftBoundAt cutoff q)
 
 def weakenBound (p : Raw Γ) : Raw Γ := shiftBoundAt 0 p
+
+/-- Capture-safe shifts commute when the later insertion point is adjusted
+after the first insertion. -/
+theorem shiftBoundAt_comm (i j : Nat) (p : Raw Γ) (h : i ≤ j) :
+    shiftBoundAt (j + 1) (shiftBoundAt i p) =
+      shiftBoundAt i (shiftBoundAt j p) := by
+  induction p generalizing i j with
+  | elementary proposition => rfl
+  | bound index => exact congrArg Raw.bound (shiftIndex_comm i j index h)
+  | quantified quantifier body ih =>
+      simp only [shiftBoundAt]
+      exact congrArg (Raw.quantified quantifier) (ih (i + 1) (j + 1) (by omega))
+  | neg proposition ih =>
+      simp only [shiftBoundAt]
+      exact congrArg Raw.neg (ih i j h)
+  | disj left right ihLeft ihRight =>
+      simp only [shiftBoundAt]
+      rw [ihLeft i j h, ihRight i j h]
 
 /-- A Raw term does not use the binder located at `cutoff`.  This is the
 precise side condition needed to remove that binder without capture. -/
@@ -108,10 +146,11 @@ theorem shiftBoundAt_dropUnusedBoundAt
   | bound index =>
       simp only [UnusedBoundAt] at h
       by_cases below : index < cutoff
-      · simp [dropUnusedBoundAt, shiftBoundAt, below]
+      · have noShift : ¬ cutoff ≤ index := by omega
+        simp [dropUnusedBoundAt, shiftBoundAt, shiftIndex, below, noShift]
       · have above : cutoff < index := by omega
         have shifted : cutoff ≤ index - 1 := by omega
-        simp [dropUnusedBoundAt, shiftBoundAt, below, shifted]
+        simp [dropUnusedBoundAt, shiftBoundAt, shiftIndex, below, shifted]
         omega
   | quantified quantifier body ih =>
       simp only [dropUnusedBoundAt, shiftBoundAt]
