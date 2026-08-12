@@ -180,3 +180,16 @@ Dem.
 [✱4·74] ⊃ : p . r . ∨ . q . r . ≡ : p . r   (2)
 ⊢ . (1) . (2) . ✱4·22 . ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱5·71 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱5·75
+✱5·75.  ⊢ : r ⊃ ∼q . ⊃ : p ≡ q ∨ r . ⊃ : p . ∼q . ≡ . r
+
+Dem.
+⊢ . ✱5·6 . ⊃ ⊢ : Hp . ⊃ : p . ∼q . ⊃ . r   (1)
+⊢ . ✱3·27 . ⊃ ⊢ : Hp . ⊃ : q ∨ r . ⊃ . p :
+[✱4·77] ⊃ : r ⊃ p   (2)
+⊢ . ✱3·26 . ⊃ ⊢ : Hp . ⊃ : r ⊃ ∼q   (3)
+⊢ . (2) . (3) . Comp . ⊃ ⊢ : Hp . ⊃ : r ⊃ p . r ⊃ ∼q :
+[Comp] ⊃ : r . ⊃ . p . ∼q   (4)
+⊢ . (1) . (4) . Comp . ⊃ ⊢ : Hp . ⊃ : p . ∼q . ≡ . r : ⊃ ⊢ . Prop
+PM-VERBATIM-END PM1:✱5·75 -/
