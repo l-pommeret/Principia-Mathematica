@@ -128,6 +128,20 @@ def matrixOfApparent : Apparent Γ Δ → MatrixRaw Γ
     (matrixOfApparent p).toRaw = ofApparent p := by
   induction p <;> simp [matrixOfApparent, MatrixRaw.toRaw, ofApparent, *]
 
+@[simp] theorem smartDisj_ofApparent (p : Apparent Γ Δ)
+    (q : Apparent Γ Ξ) :
+    smartDisj (ofApparent p) (ofApparent q) =
+      .disj (ofApparent p) (ofApparent q) := by
+  cases p <;> cases q <;> simp [ofApparent, smartDisj]
+
+@[simp] theorem ofApparent_disj_smart (p : Apparent Γ Δ)
+    (q : Apparent Γ Δ) :
+    ofApparent (p ∨ₐ q) = smartDisj (ofApparent p) (ofApparent q) := by
+  simp [ofApparent]
+
+@[simp] theorem ofApparent_neg (p : Apparent Γ Δ) :
+    ofApparent (∼ₐ p) = .neg (ofApparent p) := rfl
+
 def ofFirstOrder : FirstOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofApparent body)
   | .sometimes body => .quantified .sometimes (ofApparent body)
@@ -257,5 +271,53 @@ def star_9_31_canonical_conclusion (φ : Apparent Γ [.elementaryProposition]) :
     Raw (.elementaryProposition :: Γ) :=
   .quantified .sometimes (ofApparent (Apparent.abstractRealOuter
     (Apparent.weakenReal (Apparent.weakenReal φ))))
+
+theorem ofApparent_abstractRealOuter_weaken_twice
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofApparent (Apparent.abstractRealOuter
+      (Apparent.weakenReal
+        (Apparent.weakenReal φ : Apparent
+          (.elementaryProposition :: Γ) [.elementaryProposition]))) =
+    ofApparent (Apparent.rename Apparent.innerVariableRenaming
+      (Apparent.weakenReal φ : Apparent
+        (.elementaryProposition :: Γ) [.elementaryProposition])) := by
+  exact congrArg ofApparent
+    (Apparent.abstractRealOuter_weakenReal
+      (φ := (Apparent.weakenReal φ : Apparent
+        (.elementaryProposition :: Γ) [.elementaryProposition])))
+
+@[simp] theorem ofApparent_abstractRealOuter_ofElementary_neg
+    (p : Elementary (.elementaryProposition :: Γ)) :
+    ofApparent (Apparent.abstractRealOuter
+      (Apparent.ofElementary (∼ₚ p) : Apparent
+        (.elementaryProposition :: Γ) [.elementaryProposition])) =
+    .neg (ofApparent (Apparent.abstractRealOuter
+      (Apparent.ofElementary p : Apparent
+        (.elementaryProposition :: Γ) [.elementaryProposition]))) := by
+  rfl
+
+theorem star_9_31_line1_identification
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ofOrdered (firstOrderToSecondAll (star_9_31_line1_matrix φ)) =
+      line1Redex (star_9_31_canonical_matrix φ)
+        (star_9_31_canonical_conclusion φ) := by
+  rw [firstOrderToSecondAll_reduction]
+  simp [star_9_31_line1_matrix, star_9_31_primitive_payload,
+    star_9_31_antecedent, star_9_31_canonical_matrix,
+    star_9_31_canonical_conclusion, OrderedFormula.alwaysFirstOrder,
+    FirstOrder.abstractRealOuter, FirstOrder.impElementaryToFirst,
+    FirstOrder.disjElementaryLeft, FirstOrder.weakenReal, Apparent.weakenReal,
+    ofOrdered, ofSecondOrder, ofFirstOrder,
+    line1Redex, smartDisj, MatrixRaw.smartNeg, MatrixRaw.toRaw,
+    matrixOfApparent_toRaw, Apparent.abstractRealOuter, Apparent.ofElementary,
+    ofApparent_abstractRealOuter_weaken_twice,
+    ofApparent_abstractRealOuter_ofElementary_neg, smartDisj_ofApparent]
+
+theorem star_9_31_line2_canonical (φ : Apparent Γ [.elementaryProposition]) :
+    Assertion (line2Normal (star_9_31_canonical_matrix φ)
+      (star_9_31_canonical_conclusion φ)) := by
+  apply assertion_star_9_03_02
+  exact Assertion.convert (star_9_31_line1_identification φ)
+    (star_9_31_line1_canonical φ)
 
 end PM.Experimental.CanonicalOrderedFormula
