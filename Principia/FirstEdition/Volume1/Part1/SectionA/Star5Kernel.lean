@@ -615,4 +615,43 @@ theorem star_5_71 {Γ} (p q r : PM.Elementary Γ) :
   have lifted := infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 h h (a ⊃ₚ b) (b ⊃ₚ a))
   exact compose (duplicate h) lifted
 
+/-- PM I (1910), p. 130, ✱5·55. -/
+theorem star_5_55 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ (((p ∨ₚ q) ≡ₚ p) ∨ₚ ((p ∨ₚ q) ≡ₚ q)) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have comp : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have dup : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
+    intro t
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t) (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
+  have join : ∀ {a b c : PM.Elementary Γ}, (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ (a ⊃ₚ c)) → (⊢ₚ (a ⊃ₚ (b ∧ₚ c))) := by
+    intro a b c hab hac
+    have pair := infer hac (infer hab (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (a ⊃ₚ c)))
+    exact comp (dup a) (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 a a b c))
+  have mapOr : ∀ {a b x y : PM.Elementary Γ}, (⊢ₚ (a ⊃ₚ x)) → (⊢ₚ (b ⊃ₚ y)) → (⊢ₚ ((a ∨ₚ b) ⊃ₚ (x ∨ₚ y))) := by
+    intro a b x y hax hby
+    have l := infer hax (PM.FirstEdition.Volume1.Star2.star_2_36 b a x)
+    have r0 := infer hby (PM.FirstEdition.Volume1.Star2.star_2_36 x b y)
+    exact comp (PM.Derivation.star_1_4 a b) (comp l (comp r0 (PM.Derivation.star_1_4 y x)))
+  have eQ : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((p ∨ₚ q) ≡ₚ q)) := by
+    have f := PM.FirstEdition.Volume1.Star2.star_2_621 p q
+    have g : ⊢ₚ (q ⊃ₚ (p ∨ₚ q)) := comp (PM.FirstEdition.Volume1.Star2.star_2_2 q p) (PM.Derivation.star_1_4 q p)
+    exact join f (infer g (PM.FirstEdition.Volume1.Star2.star_2_02 (p ⊃ₚ q) (q ⊃ₚ (p ∨ₚ q))))
+  have eP : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ ((p ∨ₚ q) ≡ₚ p)) := by
+    have raw := PM.FirstEdition.Volume1.Star2.star_2_621 q p
+    have perm : ⊢ₚ ((p ∨ₚ q) ⊃ₚ (q ∨ₚ p)) := PM.Derivation.star_1_4 p q
+    have syll := PM.FirstEdition.Volume1.Star2.star_2_05 (p ∨ₚ q) (q ∨ₚ p) p
+    have reorder := infer syll (PM.FirstEdition.Volume1.Star2.star_2_04 ((q ∨ₚ p) ⊃ₚ p) ((p ∨ₚ q) ⊃ₚ (q ∨ₚ p)) ((p ∨ₚ q) ⊃ₚ p))
+    have cvt : ⊢ₚ (((q ∨ₚ p) ⊃ₚ p) ⊃ₚ ((p ∨ₚ q) ⊃ₚ p)) := infer perm reorder
+    have f := comp raw cvt
+    have g : ⊢ₚ (p ⊃ₚ (p ∨ₚ q)) := PM.FirstEdition.Volume1.Star2.star_2_2 p q
+    exact join f (infer g (PM.FirstEdition.Volume1.Star2.star_2_02 (q ⊃ₚ p) (p ⊃ₚ (p ∨ₚ q))))
+  have mapped : ⊢ₚ (((p ∨ₚ q) ≡ₚ q) ∨ₚ ((p ∨ₚ q) ≡ₚ p)) := infer (star_5_13 p q) (mapOr eQ eP)
+  exact infer mapped (PM.Derivation.star_1_4 ((p ∨ₚ q) ≡ₚ q) ((p ∨ₚ q) ≡ₚ p))
+
 end PM.FirstEdition.Volume1.Star5
