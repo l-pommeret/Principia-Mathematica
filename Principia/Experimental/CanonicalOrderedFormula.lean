@@ -1,4 +1,4 @@
-import Principia.Syntax.Ordered
+import Principia.Architecture.FirstOrderPrerequisites
 
 namespace PM.Experimental.CanonicalOrderedFormula
 
@@ -107,5 +107,45 @@ theorem star_9_03_02_line1_line2 (matrix conclusion : Raw Γ) :
 theorem packed_star_9_03_02 (matrix conclusion : Raw Γ) :
     pack (line1Redex matrix conclusion) = pack (line2Normal matrix conclusion) := by
   rw [star_9_03_02_line1_line2]
+
+/-!
+## Conservative judgement image
+
+An experimental canonical assertion is inhabited only when an assertion in
+the current indexed kernel maps to that exact raw AST.  This definition adds
+no primitive proposition and no inference constructor; it is merely the image
+of the existing judgement under `ofOrdered`.
+-/
+
+open PM.Architecture.FirstOrderPrerequisites
+
+def Assertion (p : Raw Γ) : Prop :=
+  ∃ (order : Nat) (q : OrderedFormula Γ order),
+    OrderedAssertion q ∧ ofOrdered q = p
+
+theorem assertion_of_ordered {q : OrderedFormula Γ order}
+    (proof : OrderedAssertion q) : Assertion (ofOrdered q) :=
+  ⟨order, q, proof, rfl⟩
+
+theorem Assertion.convert {p q : Raw Γ} (equality : p = q) :
+    Assertion p → Assertion q := by
+  intro proof
+  cases equality
+  exact proof
+
+/-- Judgement-level ✱9·03·02 transport, conservative by construction: the
+underlying indexed proof witness is unchanged and only its canonical raw
+presentation is rewritten. -/
+theorem assertion_star_9_03_02 {matrix conclusion : Raw Γ} :
+    Assertion (line1Redex matrix conclusion) →
+      Assertion (line2Normal matrix conclusion) :=
+  Assertion.convert (star_9_03_02_line1_line2 matrix conclusion)
+
+/-- Conservation theorem: every canonical assertion exposes the precise
+indexed kernel assertion from which it originated. -/
+theorem assertion_conservative {p : Raw Γ} (proof : Assertion p) :
+    ∃ (order : Nat) (q : OrderedFormula Γ order),
+      OrderedAssertion q ∧ ofOrdered q = p :=
+  proof
 
 end PM.Experimental.CanonicalOrderedFormula
