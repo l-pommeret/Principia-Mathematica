@@ -596,7 +596,7 @@ theorem star_4_77 {Γ} (p q r : PM.Elementary Γ) :
   have dup := infer (PM.FirstEdition.Volume1.Star3.star_3_2 g g) (PM.FirstEdition.Volume1.Star2.star_2_43 g (g ∧ₚ g))
   have reverse : ⊢ₚ (g ⊃ₚ ((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p))) := compose dup lift
   exact infer reverse
-    (infer (PM.FirstEdition.Volume1.Star3.star_3_44 q r p)
+    (infer (PM.FirstEdition.Volume1.Star3.star_3_44 p q r)
       (PM.FirstEdition.Volume1.Star3.star_3_2
         (((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)) ⊃ₚ g)
         (g ⊃ₚ ((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)))))
