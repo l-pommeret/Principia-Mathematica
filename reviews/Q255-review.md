@@ -28,3 +28,24 @@ The assigned-first-order constructors `OrderedAssertion.star_9_12` and
 `31575922684`. This certifies only their fixed first-order scopes and their
 explicit capture-safe carrier operations; it does not certify the separate
 higher-order/function/significance items ✱9·131, ✱9·14, or ✱9·15.
+
+## ✱9·131 architecture audit for ✱10·13
+
+The printed ✱9·131 is a stepwise **definition of “being of the same type”**,
+not an assertion rule.  Its clause (2) classifies elementary functions by the
+types of their argument places, and clause (4) classifies disjunctions of
+such functions.  In the canonical syntax these clauses are already enforced
+by the indices of `Apparent Γ Δ`: two matrices accepted at the same `Γ, Δ`,
+and their `Apparent.disj`, cannot differ in argument-place type.
+
+This yields no inhabitant of the judgement required by ✱10·13.  Concretely,
+`SameAssignedType φ ψ` (or the stronger fact that `φ` and `ψ` share the exact
+Lean carrier) has no eliminator into `OrderedAssertion`; nor should it have
+one, because ✱9·131 says nothing about asserted truth.  The existing
+`OrderedAssertion` constructors likewise contain no adjunction case for two
+arbitrary asserted open values.  Therefore a dedicated ✱9·131 constructor
+returning the conjunction assertion would not formalize the printed
+definition: it would silently add the missing inference rule.  Q266 ✱10·13
+must instead derive that adjunction from its cited propositional proofs at the
+correct assigned order, or await a separately source-audited fixed-order
+transport of those proofs.

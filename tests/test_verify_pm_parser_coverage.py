@@ -19,12 +19,14 @@ class ParserCoverageTests(unittest.TestCase):
             [
                 "PM1:✱1·1", "PM1:✱1·11", "PM1:✱1·7", "PM1:✱1·71",
                 "PM1:✱1·72", "PM1:✱3·03", "PM1:✱9·12", "PM1:✱9·13",
+                "PM1:✱9·6", "PM1:✱9·61", "PM1:✱9·62", "PM1:✱9·63",
             ],
         )
         self.assertEqual(
             result["counts"]["total"],
             result["counts"]["object_language"] + len(result["metalinguistic_rules"]) +
-            result["counts"]["architecture_gated"],
+            result["counts"]["architecture_gated"] +
+            result["counts"]["reviewed_parser_gaps"],
         )
 
     def test_unparsed_object_item_fails_the_gate(self):
