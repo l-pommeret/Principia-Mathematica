@@ -286,6 +286,17 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
                 if not isinstance(fragment, list):
                     raise RemapError(f"Q259 item registry fragment malformed: {item_file.name}")
                 items.extend(fragment)
+            # ✱9·3 was promoted into the homogeneous awaiting-CI Q300
+            # fragment with its closed `Star9KernelAssertion` target.  Keep
+            # this strict Q259 remap pointed at that authoritative target,
+            # rather than inventing an `OrderedAssertion` stand-in.
+            item_file = root / "metadata/items/PM1-star-9-Q300-matrix-schema.json"
+            item_payload = json.loads(item_file.read_text(encoding="utf-8"))
+            fragment = (item_payload.get("items", [])
+                        if isinstance(item_payload, dict) else item_payload)
+            if not isinstance(fragment, list):
+                raise RemapError("Q300 matrix-schema item registry malformed")
+            items.extend(fragment)
         if not isinstance(items, list):
             raise RemapError("Q259 item registry has no item list")
         canonical_by_short_name = {
