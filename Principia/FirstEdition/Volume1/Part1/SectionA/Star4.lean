@@ -872,4 +872,30 @@ theorem star_4_73 {Γ} (p q : PM.Elementary Γ) :
       (PM.FirstEdition.Volume1.Star2.star_2_02 q ((p ∧ₚ q) ⊃ₚ p))
   exact join forward backward
 
+/-- PM I (1910), p. 124, ✱4·38. -/
+theorem star_4_38 {Γ} (p q r s : PM.Elementary Γ) :
+    ⊢ₚ (((p ≡ₚ r) ∧ₚ (q ≡ₚ s)) ⊃ₚ ((p ∧ₚ q) ≡ₚ (r ∧ₚ s))) := by
+  let h := (p ≡ₚ r) ∧ₚ (q ≡ₚ s)
+  have infer : ∀ {a b : PM.Elementary Γ}, (⊢ₚ a) → (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ b) := by
+    intro a b ha hab; match Γ, a, b, ha, hab with
+    | [], _, _, ha, hab => exact PM.Derivation.star_1_1 ha hab
+    | (τ :: Δ), _, _, ha, hab => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) ha hab
+  have comp : ∀ {a b c : PM.Elementary Γ}, (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ (b ⊃ₚ c)) → (⊢ₚ (a ⊃ₚ c)) := by
+    intro a b c hab hbc; exact infer hab (infer hbc (PM.FirstEdition.Volume1.Star2.star_2_05 a b c))
+  have dup : ∀ a : PM.Elementary Γ, ⊢ₚ (a ⊃ₚ (a ∧ₚ a)) := by
+    intro a; exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 a a) (PM.FirstEdition.Volume1.Star2.star_2_43 a (a ∧ₚ a))
+  have join : ∀ {a b c : PM.Elementary Γ}, (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ (a ⊃ₚ c)) → (⊢ₚ (a ⊃ₚ (b ∧ₚ c))) := by
+    intro a b c hab hac
+    have pair := infer hac (infer hab (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (a ⊃ₚ c)))
+    exact comp (dup a) (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 a a b c))
+  have hp := PM.FirstEdition.Volume1.Star3.star_3_26 (p ≡ₚ r) (q ≡ₚ s)
+  have hq := PM.FirstEdition.Volume1.Star3.star_3_27 (p ≡ₚ r) (q ≡ₚ s)
+  have hpr := comp hp (PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ r) (r ⊃ₚ p))
+  have hrp := comp hp (PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ r) (r ⊃ₚ p))
+  have hqs := comp hq (PM.FirstEdition.Volume1.Star3.star_3_26 (q ⊃ₚ s) (s ⊃ₚ q))
+  have hsq := comp hq (PM.FirstEdition.Volume1.Star3.star_3_27 (q ⊃ₚ s) (s ⊃ₚ q))
+  have forward := comp (join hpr hqs) (PM.FirstEdition.Volume1.Star3.star_3_47 p q r s)
+  have backward := comp (join hrp hsq) (PM.FirstEdition.Volume1.Star3.star_3_47 r s p q)
+  exact join forward backward
+
 end PM.FirstEdition.Volume1.Star4
