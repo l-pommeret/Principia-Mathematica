@@ -436,6 +436,14 @@ def smartDisjScoped (left right : Raw Γ) : Raw Γ :=
   | neg p ih => simp [instantiateBoundAt, rawSize, ih]
   | disj p q ihp ihq => simp [instantiateBoundAt, rawSize, ihp, ihq]
 
+@[simp] theorem instantiateHeadRaw_smartDisjScoped_var
+    (value : RealVar Γ .elementaryProposition) (left right : Raw Γ) :
+    instantiateHeadRaw (.var value) (smartDisjScoped left right) =
+      smartDisjScoped (instantiateHeadRaw (.var value) left)
+        (instantiateHeadRaw (.var value) right) := by
+  simp [instantiateHeadRaw, smartDisjScoped,
+    instantiateBoundAt_smartDisjScopedAux_var]
+
 @[simp] theorem shiftBoundAt_elementary (p : Elementary Γ) :
     shiftBoundAt cutoff (.elementary p) = .elementary p := rfl
 
