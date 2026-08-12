@@ -4009,6 +4009,49 @@ theorem derive (φ : Apparent Γ [.elementaryProposition])
 
 end PM.Architecture.Star92Kernel
 
+-- PM-CONTEXT-LOCAL Principia/Architecture/Star935Kernel.lean
+namespace PM.Architecture.Star935Kernel
+
+open PM.Architecture.CanonicalOrderedAdapters
+open PM.Architecture.CanonicalNormalization
+open PM.CanonicalOrderedFormula
+
+def targetRaw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj
+    (.neg (.quantified .sometimes (ofApparent φ)))
+    (.disj (.elementary p) (.quantified .sometimes (ofApparent φ)))
+
+def liftedFunction (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Apparent Γ [.elementaryProposition] :=
+  Apparent.ofElementary p ∨ₐ φ
+
+def line3Raw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj
+    (.neg (.quantified .sometimes (ofApparent φ)))
+    (.quantified .sometimes
+      (.disj (shiftBoundAt 0 (.elementary p)) (ofApparent φ)))
+
+structure Star935KernelAssertion (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop where
+  monotonicity : Star922Kernel.Star922KernelAssertion φ (liftedFunction p φ)
+
+  line3 : line3Raw p φ = line3Raw p φ
+  star905 : NormalizesScopedAt 0 (line3Raw p φ) (targetRaw p φ)
+
+theorem derive (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star935KernelAssertion p φ where
+  monotonicity := Star922Kernel.derive φ (liftedFunction p φ)
+  line3 := rfl
+  star905 := by
+    apply NormalizesScopedAt.disjCongr 0 (.refl 0 _)
+    exact .sometimesDisjIndependentLeft 0 (.elementary p) (ofApparent φ)
+
+end PM.Architecture.Star935Kernel
+
 -- PM-CONTEXT-LOCAL Principia/Architecture/Q259ClosedRuleBook.lean
 namespace PM.Architecture.Q259ClosedRuleBook
 
@@ -4055,6 +4098,14 @@ abbrev Star_9_2Derivation (φ : Apparent Γ [.elementaryProposition])
 theorem star_9_2 (φ : Apparent Γ [.elementaryProposition])
     (y : RealVar Γ .elementaryProposition) : Star_9_2Derivation φ y :=
   Star92Kernel.derive φ y
+
+abbrev Star_9_35Derivation (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop :=
+  Star935Kernel.Star935KernelAssertion p φ
+
+theorem star_9_35 (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Star_9_35Derivation p φ :=
+  Star935Kernel.derive p φ
 
 abbrev Star_9_32Derivation (q : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Prop :=

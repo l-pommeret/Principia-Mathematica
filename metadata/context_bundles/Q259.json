@@ -8,7 +8,7 @@
   "integration_blocked": true,
   "interface_dependencies": [],
   "kind": "pm-isolated-context-bundle",
-  "manifest_sha256": "bbb24a766eb15d34c97e1e83fd771c6ee3a221e6e0a94b9233f4ce4dff75e1c2",
+  "manifest_sha256": "02dd1bd281f0042a662d9ebd50d1478ee6808c09ff4dddd24119951a11fecc56",
   "policy": {
     "canonical_integration_forbidden": true,
     "grants_no_additional_proof_permission": true,
@@ -51,9 +51,9 @@
     "status": "complete"
   },
   "source_backfill_required": false,
-  "source_bytes": 171064,
-  "source_sha256": "45b90bb70bfc0aa19b08e4064b26ec50ef735ee057dd096f3f619267a3bdd960",
-  "ci_evidence": {"commit": "125839b146e32632b67146cbe46d71528b0798d4", "run": "31577423330", "conclusion": "success", "scope": "isolated-interface", "canonical_integration": "forbidden", "one_to_one_remap": "pending"},
+  "source_bytes": 172907,
+  "source_sha256": "f94c73fdd031621d41942afe2a89082ead9aad90419615318e21d998bf3a1c7a",
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"},
   "sources": [
     {
       "bytes": 1191,
@@ -198,12 +198,20 @@
       "source_sha256": "b9284a9efa5246ac842a690e0ce00994bd538d11627c22999f9ed84d9ae64196"
     },
     {
-      "bytes": 3464,
+      "bytes": 1485,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star935Kernel.lean",
+      "slice_sha256": "a19076440ab08ae2e39d8c246bba3cb0146c69a7136341e07f674bfe5e424fe3",
+      "source_sha256": "818c2af607aff118dbe6c6a557ddc51eb2bdaedc068d1ebf7ecb32cc3529aba5"
+    },
+    {
+      "bytes": 3759,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/Q259ClosedRuleBook.lean",
-      "slice_sha256": "ddb109ae53a24bae4257c4fb38328a8e1c141697a4d2bab688a20a48caa00981",
-      "source_sha256": "7b545131bc8a7e43e94eee0374f7408b360bdee039d38e5b93cbd3f0331379c1"
+      "slice_sha256": "c7826c98a4ade6ad6c6fd381c0586ec95deea60875c2fa02dca3bf57627a811a",
+      "source_sha256": "4a692211ce28f582c2cda458f42907158ca2c6fc7a36c46d533f394d4f7dbab7"
     }
   ]
 }
