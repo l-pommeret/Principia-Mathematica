@@ -622,6 +622,46 @@ def ofFirstOrder : FirstOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofApparent body)
   | .sometimes body => .quantified .sometimes (ofApparent body)
 
+theorem instantiateBoundAt_one_ofApparent_atReal
+    (value : RealVar Γ .elementaryProposition)
+    (p : Apparent Γ
+      [.elementaryProposition, .elementaryProposition]) :
+    instantiateBoundAt 1 (.var value) (ofApparent p) =
+      ofApparent (Apparent.substitute
+        (Apparent.liftSubstitution
+          (Apparent.instantiateSubstitution
+            (.real value : Apparent Γ []))) p) := by
+  induction p with
+  | constant name => simp [instantiateBoundAt, ofApparent, Apparent.substitute]
+  | real v => rfl
+  | bound v =>
+      cases v with
+      | zero => simp [instantiateBoundAt_bound_var, instantiateIndexVar,
+          instantiateIndex, IndexAction.toRaw, boundIndex, ofApparent,
+          Apparent.substitute, Apparent.liftSubstitution,
+          Apparent.boundFormula]
+      | succ predecessor =>
+          cases predecessor with
+          | zero => simp [instantiateBoundAt_bound_var, instantiateIndexVar,
+              instantiateIndex, IndexAction.toRaw, boundIndex, ofApparent,
+              Apparent.substitute, Apparent.liftSubstitution,
+              Apparent.instantiateSubstitution, Apparent.weaken,
+              Apparent.rename, ofElementaryRaw]
+          | succ tail => exact nomatch tail
+  | neg p ih => simp [instantiateBoundAt, ofApparent, Apparent.substitute, ih]
+  | disj p q ihp ihq =>
+      simp [instantiateBoundAt, ofApparent, Apparent.substitute, ihp, ihq]
+
+@[simp] theorem instantiateHeadRaw_ofFirstOrder_atReal
+    (value : RealVar Γ .elementaryProposition)
+    (p : FirstOrder Γ [.elementaryProposition]) :
+    instantiateHeadRaw (.var value) (ofFirstOrder p) =
+      ofFirstOrder (FirstOrder.atReal p value) := by
+  cases p <;>
+    simp [instantiateHeadRaw, instantiateBoundAt, ofFirstOrder,
+      FirstOrder.atReal, FirstOrder.instantiate, FirstOrder.substitute,
+      instantiateBoundAt_one_ofApparent_atReal]
+
 /-- Canonical normalization of the explicit same-order first-order matrix
 language.  It applies exactly the already-audited smart negation and
 disjunction reductions; no assertion is introduced. -/
