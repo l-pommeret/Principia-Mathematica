@@ -43,27 +43,22 @@
     "PM1:✱2·2"
   ],
   "source_backfill_required": false,
-  "source_bytes": 9142,
-  "source_sha256": "fe8a9d6a26aa29b355d62899b3d24902c19169efdb218ac624cae7cecf9fe99b",
-  "ci_evidence": {
-    "commit": "79c2320158fd0a81ed93ed5ed28c6d441c40aa95",
-    "conclusion": "success",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31441352226"
-  },
+  "source_bytes": 11277,
+  "source_sha256": "1fe7bb3c8237cef377b98a6d2d6006222f4558c7b684e48a29b5c788db496a17",
   "sources": [
     {
-      "bytes": 805,
+      "bytes": 1191,
       "kind": "foundation",
       "path": "Principia/Syntax/Formula.lean",
-      "slice_sha256": "84d2f44d722352633ec63757d0e431294f39e400aab5f2268bad06df5c8b889f",
-      "source_sha256": "4ae57f04fe68659b5afc75e7edf065a229ca1b68ef7ada719797c5011240bb8d"
+      "slice_sha256": "753e6e7bccce1c9a73b50f79611685ed31ca90529ea0f4c767e69177c98f3955",
+      "source_sha256": "c21ac8e6599ffcbd05870819c284e8d48c2f20c09728a95a1ae85a02915d7217"
     },
     {
-      "bytes": 1401,
+      "bytes": 3150,
       "kind": "foundation",
       "path": "Principia/Deduction/System.lean",
-      "slice_sha256": "ad9a24dc5cb24f303e4da377b36a2b3b7111ded291456dbdbe03313ba345cea1",
-      "source_sha256": "d245ec933fc304e3f9acd04a8f9efaadab6a991e5f76bbdd91f021f08c32ba82"
+      "slice_sha256": "969f26ad2059c7cc0f30b9f48aafb86c9137539fed5388edaa11b2b63f7d65c1",
+      "source_sha256": "2b369b6b5da99e7ee33acfa1ffb8821e7fe75b61b1c9729d2545294a8ab59efc"
     },
     {
       "bytes": 102,
@@ -236,5 +231,10 @@
       "slice_sha256": "e3950a000bc2d6dab1395aceedf0a7554977023430315982f0ba6fcc15467e1d",
       "source_sha256": "1c9fd6fcd74f74d945b4ac20c67ccdbdf9693238a206949f5988aa7bba21e045"
     }
-  ]
+  ],
+  "ci_evidence": {
+    "commit": "79c2320158fd0a81ed93ed5ed28c6d441c40aa95",
+    "conclusion": "success",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31441352226"
+  }
 }

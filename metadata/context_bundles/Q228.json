@@ -3,8 +3,8 @@
   "profile": "elementary-formation-pm1",
   "current_item": null,
   "manifest_sha256": "f9e10421183090c38ede7487170b244c3aa0a7eed6e73625f151cdfc3488e53c",
-  "source_sha256": "6553812b53ddb3c093a3d54f80d1b012c01a324fe53873e435e723dc59624369",
-  "source_bytes": 43451,
+  "source_sha256": "a7b42dda9289ecb7cee878c59dec628799616372adcb42acb27dff4e9350eeec",
+  "source_bytes": 45586,
   "proof_permissions": [
     "PM1:✱2·08",
     "PM1:✱2·16",
@@ -82,16 +82,16 @@
     {
       "kind": "foundation",
       "path": "Principia/Syntax/Formula.lean",
-      "source_sha256": "4ae57f04fe68659b5afc75e7edf065a229ca1b68ef7ada719797c5011240bb8d",
-      "slice_sha256": "84d2f44d722352633ec63757d0e431294f39e400aab5f2268bad06df5c8b889f",
-      "bytes": 805
+      "source_sha256": "c21ac8e6599ffcbd05870819c284e8d48c2f20c09728a95a1ae85a02915d7217",
+      "slice_sha256": "753e6e7bccce1c9a73b50f79611685ed31ca90529ea0f4c767e69177c98f3955",
+      "bytes": 1191
     },
     {
       "kind": "foundation",
       "path": "Principia/Deduction/System.lean",
-      "source_sha256": "d245ec933fc304e3f9acd04a8f9efaadab6a991e5f76bbdd91f021f08c32ba82",
-      "slice_sha256": "c59624099204ba6efc543229391b6a8b4e3901c89c08d4a6cadf403dbf629d55",
-      "bytes": 1387
+      "source_sha256": "2b369b6b5da99e7ee33acfa1ffb8821e7fe75b61b1c9729d2545294a8ab59efc",
+      "slice_sha256": "cf0fbc35d97bd671ec620a31a58badb3e6ce06af236cafc29b18b3d64729a78b",
+      "bytes": 3136
     },
     {
       "kind": "foundation",
@@ -592,7 +592,7 @@
       "id": "PM1:✱4·01",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
       "declaration": "PM.Elementary.equiv",
-      "source_sha256": "35a1747a9a98697e3a97d9cdc8c4e0cfc47319a49a720ac3410071ca5d0fbc8c",
+      "source_sha256": "578cdf445f8fa23061c456e85f0a33581241895674d643edde45942cbe0ef112",
       "slice_sha256": "74efd160ca2ae8fa2bb0a435a217e2a4d078a0d8110b703836fd8ca3264e9bf2",
       "bytes": 121
     },
@@ -601,7 +601,7 @@
       "id": "PM1:✱4·13",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
       "declaration": "PM.FirstEdition.Volume1.Star4.star_4_13",
-      "source_sha256": "35a1747a9a98697e3a97d9cdc8c4e0cfc47319a49a720ac3410071ca5d0fbc8c",
+      "source_sha256": "578cdf445f8fa23061c456e85f0a33581241895674d643edde45942cbe0ef112",
       "slice_sha256": "ccb712ccba0964e64356ebf28e68a4d42a540f2d3adbf3d2503f6919ddfc5c95",
       "bytes": 657
     }
@@ -626,11 +626,8 @@
     "PM1:✱4·2"
   ],
   "ci_evidence": {
-    "commit": "466b97a7eff4b4cc83fd722e4a039c5999d97f8e",
-    "run": "31544529619",
-    "conclusion": "success",
-    "scope": "isolated-interface",
-    "canonical_integration": "forbidden",
-    "one_to_one_remap": "pending"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }
