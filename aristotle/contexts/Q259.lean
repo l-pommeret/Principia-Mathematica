@@ -2447,6 +2447,10 @@ inductive NormalizesScoped : Raw Γ → Raw Γ → Prop where
       NormalizesScoped
         (.quantified .sometimes (.disj p (weakenBound q)))
         (.disj (.quantified .sometimes p) q)
+  | star_9_05_disj_independent_left (p q) :
+      NormalizesScoped
+        (.quantified .sometimes (.disj (weakenBound p) q))
+        (.disj p (.quantified .sometimes q))
 
   | star_9_21_line5_line6 (φ ψ : Apparent Γ [.elementaryProposition]) :
       NormalizesScoped
@@ -2722,6 +2726,12 @@ theorem NormalizesScoped.substitute
         NormalizesScoped.star_9_05_disj_independent_right
           (CanonicalOrderedFormula.substitute (Substitution.lift σ) p)
           (CanonicalOrderedFormula.substitute σ q)
+  | star_9_05_disj_independent_left p q =>
+      simpa [CanonicalOrderedFormula.substitute,
+        CanonicalOrderedFormula.substitute_lift_weakenBound] using
+        NormalizesScoped.star_9_05_disj_independent_left
+          (CanonicalOrderedFormula.substitute σ p)
+          (CanonicalOrderedFormula.substitute (Substitution.lift σ) q)
   | star_9_21_line5_line6 φ ψ => exact stable921 σ φ ψ
   | disjRight quantifier p r =>
       simpa [CanonicalOrderedFormula.substitute,
@@ -4196,6 +4206,160 @@ theorem derive (p : Elementary Γ)
 
 end PM.Architecture.Star9361Kernel
 
+-- PM-CONTEXT-LOCAL Principia/Architecture/Star937Kernel.lean
+namespace PM.Architecture.Star937Kernel
+
+open PM.Architecture.CanonicalOrderedAdapters
+open PM.Architecture.CanonicalNormalization
+open PM.CanonicalOrderedFormula
+
+def leftRaw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj (.elementary p) (.quantified .sometimes (ofApparent φ))
+
+def rightRaw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj (.quantified .sometimes (ofApparent φ)) (.elementary p)
+
+def targetRaw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj (.neg (leftRaw p φ)) (rightRaw p φ)
+
+def leftFunction (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Apparent Γ [.elementaryProposition] :=
+  Apparent.ofElementary p ∨ₐ φ
+
+def rightFunction (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Apparent Γ [.elementaryProposition] :=
+  φ ∨ₐ Apparent.ofElementary p
+
+def line2Raw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj
+    (.neg (.quantified .sometimes
+      (.disj (shiftBoundAt 0 (.elementary p)) (ofApparent φ))))
+    (.quantified .sometimes
+      (.disj (ofApparent φ) (shiftBoundAt 0 (.elementary p))))
+
+def afterLeft905Raw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj (.neg (leftRaw p φ))
+    (.quantified .sometimes
+      (.disj (ofApparent φ) (shiftBoundAt 0 (.elementary p))))
+
+structure Star937KernelAssertion (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop where
+  line1 : PM.Derivation
+    ((Elementary.schemaInstance (fun v => .var (.succ v)) p ∨ₚ
+      Apparent.openHead φ) ⊃ₚ
+      (Apparent.openHead φ ∨ₚ
+        Elementary.schemaInstance (fun v => .var (.succ v)) p))
+  monotonicity : Star922Kernel.Star922KernelAssertion
+    (leftFunction p φ) (rightFunction p φ)
+  line2 : line2Raw p φ = line2Raw p φ
+  left905 : NormalizesScoped (line2Raw p φ) (afterLeft905Raw p φ)
+  right905 : NormalizesScoped (afterLeft905Raw p φ) (targetRaw p φ)
+
+theorem derive (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star937KernelAssertion p φ where
+  line1 := PM.Derivation.star_1_4
+    (Elementary.schemaInstance (fun v => .var (.succ v)) p)
+    (Apparent.openHead φ)
+  monotonicity := Star922Kernel.derive (leftFunction p φ) (rightFunction p φ)
+  line2 := rfl
+  left905 := by
+    apply NormalizesScoped.disjCongr
+    · apply NormalizesScoped.negCongr
+      exact NormalizesScoped.star_9_05_disj_independent_left
+        (.elementary p) (ofApparent φ)
+    · exact .refl _
+  right905 := by
+    apply NormalizesScoped.disjCongr (.refl _)
+    exact NormalizesScoped.star_9_05_disj_independent_right
+      (ofApparent φ) (.elementary p)
+
+end PM.Architecture.Star937Kernel
+
+-- PM-CONTEXT-LOCAL Principia/Architecture/Star9371Kernel.lean
+namespace PM.Architecture.Star9371Kernel
+
+open PM.Architecture.CanonicalOrderedAdapters
+open PM.Architecture.CanonicalNormalization
+open PM.CanonicalOrderedFormula
+
+def leftRaw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj (.quantified .sometimes (ofApparent φ)) (.elementary p)
+
+def rightRaw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj (.elementary p) (.quantified .sometimes (ofApparent φ))
+
+def targetRaw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj (.neg (leftRaw p φ)) (rightRaw p φ)
+
+def leftFunction (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Apparent Γ [.elementaryProposition] :=
+  φ ∨ₐ Apparent.ofElementary p
+
+def rightFunction (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Apparent Γ [.elementaryProposition] :=
+  Apparent.ofElementary p ∨ₐ φ
+
+def line2Raw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj
+    (.neg (.quantified .sometimes
+      (.disj (ofApparent φ) (shiftBoundAt 0 (.elementary p)))))
+    (.quantified .sometimes
+      (.disj (shiftBoundAt 0 (.elementary p)) (ofApparent φ)))
+
+def afterLeft905Raw (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Raw Γ :=
+  .disj (.neg (leftRaw p φ))
+    (.quantified .sometimes
+      (.disj (shiftBoundAt 0 (.elementary p)) (ofApparent φ)))
+
+structure Star9371KernelAssertion (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop where
+  line1 : PM.Derivation
+    ((Apparent.openHead φ ∨ₚ
+      Elementary.schemaInstance (fun v => .var (.succ v)) p) ⊃ₚ
+      (Elementary.schemaInstance (fun v => .var (.succ v)) p ∨ₚ
+        Apparent.openHead φ))
+  monotonicity : Star922Kernel.Star922KernelAssertion
+    (leftFunction p φ) (rightFunction p φ)
+  line2 : line2Raw p φ = line2Raw p φ
+  left905 : NormalizesScoped (line2Raw p φ) (afterLeft905Raw p φ)
+  right905 : NormalizesScoped (afterLeft905Raw p φ) (targetRaw p φ)
+
+theorem derive (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Star9371KernelAssertion p φ where
+  line1 := PM.Derivation.star_1_4
+    (Apparent.openHead φ)
+    (Elementary.schemaInstance (fun v => .var (.succ v)) p)
+  monotonicity := Star922Kernel.derive (leftFunction p φ) (rightFunction p φ)
+  line2 := rfl
+  left905 := by
+    apply NormalizesScoped.disjCongr
+    · apply NormalizesScoped.negCongr
+      exact NormalizesScoped.star_9_05_disj_independent_right
+        (ofApparent φ) (.elementary p)
+    · exact .refl _
+  right905 := by
+    apply NormalizesScoped.disjCongr (.refl _)
+    exact NormalizesScoped.star_9_05_disj_independent_left
+      (.elementary p) (ofApparent φ)
+
+end PM.Architecture.Star9371Kernel
+
 -- PM-CONTEXT-LOCAL Principia/Architecture/Q259ClosedRuleBook.lean
 namespace PM.Architecture.Q259ClosedRuleBook
 
@@ -4258,6 +4422,22 @@ abbrev Star_9_361Derivation (p : Elementary Γ)
 theorem star_9_361 (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Star_9_361Derivation p φ :=
   Star9361Kernel.derive p φ
+
+abbrev Star_9_37Derivation (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop :=
+  Star937Kernel.Star937KernelAssertion p φ
+
+theorem star_9_37 (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Star_9_37Derivation p φ :=
+  Star937Kernel.derive p φ
+
+abbrev Star_9_371Derivation (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop :=
+  Star9371Kernel.Star9371KernelAssertion p φ
+
+theorem star_9_371 (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Star_9_371Derivation p φ :=
+  Star9371Kernel.derive p φ
 
 abbrev Star_9_36Derivation (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Prop :=

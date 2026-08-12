@@ -7,9 +7,9 @@
   },
   "counts": {
     "catalogued_items": 1136,
-    "object_language_ast_parsed": 401,
+    "object_language_ast_parsed": 403,
     "metalinguistic_routes": 8,
-    "architecture_gated_source_routes": 727,
+    "architecture_gated_source_routes": 725,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
     "catalogued_items_missing_proof_skeleton": 1078,
@@ -9898,10 +9898,11 @@
       "id": "PM1:✱9·37",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "f470879e9b6ad779e000c078904a9e33e6bc6a7b8d245f984621c0828b1a99fa"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -9911,10 +9912,11 @@
       "id": "PM1:✱9·371",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "4220ad07009aab1ba6cce72a021bea144d8cd0f7e5cc2f2b73fff56370a8e9bb"
       },
       "proof_skeleton": {
         "status": "missing"
