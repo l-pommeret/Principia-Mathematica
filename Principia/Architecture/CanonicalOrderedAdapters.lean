@@ -25,6 +25,38 @@ def ofFirstOrderMatrix : FirstOrderMatrix Γ Δ → Raw Γ
   | .neg p => smartNeg (ofFirstOrderMatrix p)
   | .disj p q => smartDisj (ofFirstOrderMatrix p) (ofFirstOrderMatrix q)
 
+/-- Scope-aware presentation kept distinct from the historical canonical
+embedding while binder-sensitive ✱9 derivations are migrated. -/
+def ofFirstOrderMatrixScoped : FirstOrderMatrix Γ Δ → Raw Γ
+  | .quantified p => ofFirstOrder p
+  | .neg p => smartNeg (ofFirstOrderMatrixScoped p)
+  | .disj p q =>
+      smartDisjScoped (ofFirstOrderMatrixScoped p) (ofFirstOrderMatrixScoped q)
+
+structure ScopedFirstOrderMatrixReification
+    (Δ : BoundContext) (raw : Raw Γ) where
+  formula : FirstOrderMatrix Γ Δ
+  roundTrip : ofFirstOrderMatrixScoped formula = raw
+
+def reifyFirstOrderScoped (p : FirstOrder Γ Δ) :
+    ScopedFirstOrderMatrixReification Δ (ofFirstOrder p) where
+  formula := .quantified p
+  roundTrip := rfl
+
+def ScopedFirstOrderMatrixReification.neg
+    (certificate : ScopedFirstOrderMatrixReification Δ raw) :
+    ScopedFirstOrderMatrixReification Δ (smartNeg raw) where
+  formula := .neg certificate.formula
+  roundTrip := by simp [ofFirstOrderMatrixScoped, certificate.roundTrip]
+
+def ScopedFirstOrderMatrixReification.disj
+    (left : ScopedFirstOrderMatrixReification Δ p)
+    (right : ScopedFirstOrderMatrixReification Δ q) :
+    ScopedFirstOrderMatrixReification Δ (smartDisjScoped p q) where
+  formula := .disj left.formula right.formula
+  roundTrip := by
+    simp [ofFirstOrderMatrixScoped, left.roundTrip, right.roundTrip]
+
 def ofSecondOrder : SecondOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofFirstOrder body)
   | .sometimes body => .quantified .sometimes (ofFirstOrder body)
