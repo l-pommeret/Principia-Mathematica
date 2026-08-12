@@ -746,4 +746,30 @@ theorem star_4_37 {Γ} (p q r : PM.Elementary Γ) :
     (PM.FirstEdition.Volume1.Star3.star_3_48 q r p r)
   exact join forward backward
 
+/-- PM I (1910), p. 127, ✱4·74.  This expands the printed
+`✱2·21 . ✱4·72` chain at its exact hypothesis `∼p`: addition supplies
+one direction and ✱2·55 supplies the other. -/
+theorem star_4_74 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((∼ₚ p) ⊃ₚ (q ≡ₚ (p ∨ₚ q))) := by
+  let h := ∼ₚ p
+  let a := q ⊃ₚ (p ∨ₚ q)
+  let b := (p ∨ₚ q) ⊃ₚ q
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC; exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have duplicate : ∀ t : PM.Elementary Γ, ⊢ₚ (t ⊃ₚ (t ∧ₚ t)) := by
+    intro t; exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 t t) (PM.FirstEdition.Volume1.Star2.star_2_43 t (t ∧ₚ t))
+  have join : ∀ {u v w : PM.Elementary Γ}, (⊢ₚ (u ⊃ₚ v)) → (⊢ₚ (u ⊃ₚ w)) → (⊢ₚ (u ⊃ₚ (v ∧ₚ w))) := by
+    intro u v w huv huw
+    have pair := infer huw (infer huv (PM.FirstEdition.Volume1.Star3.star_3_2 (u ⊃ₚ v) (u ⊃ₚ w)))
+    exact compose (duplicate u) (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 u u v w))
+  have forward0 : ⊢ₚ a := compose (PM.FirstEdition.Volume1.Star2.star_2_2 q p) (PM.Derivation.star_1_4 q p)
+  have forward : ⊢ₚ (h ⊃ₚ a) := infer forward0 (PM.FirstEdition.Volume1.Star2.star_2_02 h a)
+  have backward : ⊢ₚ (h ⊃ₚ b) := PM.FirstEdition.Volume1.Star2.star_2_55 p q
+  exact join forward backward
+
 end PM.FirstEdition.Volume1.Star4
