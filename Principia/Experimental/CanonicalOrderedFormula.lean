@@ -163,6 +163,26 @@ def instantiateBoundAt (cutoff : Nat) (value : Elementary Γ) :
 def instantiateHeadRaw (value : Elementary Γ) (p : Raw Γ) : Raw Γ :=
   instantiateBoundAt 0 value p
 
+@[simp] theorem smartNeg_ofElementaryRaw (value : Elementary Γ) :
+    smartNeg (ofElementaryRaw value) = .neg (ofElementaryRaw value) := by
+  cases value <;> rfl
+
+@[simp] theorem instantiateBoundAt_smartNeg
+    (cutoff : Nat) (value : Elementary Γ) (p : Raw Γ) :
+    instantiateBoundAt cutoff value (smartNeg p) =
+      smartNeg (instantiateBoundAt cutoff value p) := by
+  induction p generalizing cutoff with
+  | elementary p => rfl
+  | bound index =>
+      by_cases hEq : index = cutoff
+      · simp [smartNeg, instantiateBoundAt, hEq]
+      · by_cases hLt : cutoff < index <;>
+          simp [smartNeg, instantiateBoundAt, hEq, hLt]
+  | quantified quantifier body ih =>
+      cases quantifier <;> simp [smartNeg, instantiateBoundAt, ih]
+  | neg p => rfl
+  | disj p q => rfl
+
 @[simp] theorem openBoundAt_smartNeg (cutoff : Nat) (p : Raw Γ) :
     openBoundAt cutoff (smartNeg p) =
       smartNeg (openBoundAt cutoff p) := by
