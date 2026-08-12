@@ -10,3 +10,8 @@ four fields are exactly ✱10·1, the ✱3·26 and ✱3·27 conjunction projecti
 and the already audited composed action ✱10·11·21.  The record is tied to the
 literal `star_10_33_target`; it exports neither a generic Raw assertion rule
 nor a quantifier/conjunction conversion.
+
+A strict temporary promotion of ✱10·34, ✱10·36, and ✱10·37 passes both
+dependency and editorial gates.  Their empty Lean dependency closures and
+reviewed `printed_but_unused` lists are therefore intentional consequences of
+direct canonical normalization, not missing metadata.
