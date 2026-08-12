@@ -1,0 +1,22 @@
+{
+  "batch": "PM1-STAR9-Q260-361",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {"printed_pages": "141", "scan_leaves": [163], "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},
+  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "items": [{
+    "id": "PM1:✱9·361", "kind": "derived-proposition",
+    "printed": "⊢ : .(x).φx .∨. p : ⊃ : p .∨. (x).φx",
+    "printed_page": 141, "scan_leaf": 163,
+    "lean_path": "Principia/Architecture/Q259ClosedRuleBook.lean",
+    "declaration": "PM.Architecture.Q259ClosedRuleBook.star_9_361",
+    "formal_scope": "exact narrow Raw judgement Star9361KernelAssertion following the printed Similar Proof",
+    "source_status": "source-catalogued", "formal_status": "awaiting-ci",
+    "integration_status": "awaiting-ci-star9361-kernel-assertion",
+    "printed_dependencies": ["PM1:✱1·4", "PM1:✱9·13", "PM1:✱9·21", "PM1:✱9·03", "PM1:✱9·04"],
+    "lean_dependencies": ["Star9361Kernel.derive"], "normalized_dependencies": [],
+    "historical_dependency_relaxation": {"classification": "exact-kernel-chain", "added_beyond_print": [], "printed_but_unused": ["PM1:✱9·13"], "strict_attempt_evidence": "reviews/Q260-star-9-361-review.md", "editorial_note": "The copied line-(2) closure is theorem-specific; ✱9·21 and both scope normalizations are explicit."},
+    "blocked_dependencies": ["generic cross-judgement detachment intentionally absent"]
+  }],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

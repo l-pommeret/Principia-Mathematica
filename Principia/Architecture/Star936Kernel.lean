@@ -20,8 +20,8 @@ Raw judgement instead of being falsely reified as an `OrderedAssertion`.
 def target (p : Elementary Γ) (φ : Apparent Γ [.elementaryProposition]) :
     OrderedFormula Γ 1 :=
   firstImp
-    (.firstOrder (PM.FirstEdition.Volume1.Star9.star_9_04 p φ))
-    (.firstOrder (PM.FirstEdition.Volume1.Star9.star_9_03 φ p))
+    (.firstOrder (FirstOrder.disjElementaryLeft p (FirstOrder.always φ)))
+    (.firstOrder (FirstOrder.disjRightElementary (FirstOrder.always φ) p))
 
 /-- Closed evidence for exactly the three printed stages of ✱9·36. -/
 inductive Star936KernelAssertion (p : Elementary Γ)
@@ -40,8 +40,8 @@ inductive Star936KernelAssertion (p : Elementary Γ)
           (φ ∨ₐ Apparent.ofElementary p)))
       (line3Reading :
         firstImp
-          (.firstOrder (PM.FirstEdition.Volume1.Star9.star_9_04 p φ))
-          (.firstOrder (PM.FirstEdition.Volume1.Star9.star_9_03 φ p)) =
+          (.firstOrder (FirstOrder.disjElementaryLeft p (FirstOrder.always φ)))
+          (.firstOrder (FirstOrder.disjRightElementary (FirstOrder.always φ) p)) =
           target p φ) :
       Star936KernelAssertion p φ
 
@@ -50,8 +50,8 @@ def derive (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Star936KernelAssertion p φ := by
   have line3Reading :
       firstImp
-        (.firstOrder (PM.FirstEdition.Volume1.Star9.star_9_04 p φ))
-        (.firstOrder (PM.FirstEdition.Volume1.Star9.star_9_03 φ p)) =
+        (.firstOrder (FirstOrder.disjElementaryLeft p (FirstOrder.always φ)))
+        (.firstOrder (FirstOrder.disjRightElementary (FirstOrder.always φ) p)) =
         target p φ := rfl
   exact .printed_chain
     (.elementary (PM.Derivation.star_1_4

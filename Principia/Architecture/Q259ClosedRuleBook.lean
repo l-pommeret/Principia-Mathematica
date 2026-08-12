@@ -6,6 +6,8 @@ import Principia.Architecture.Star922Kernel
 import Principia.Architecture.Star92Kernel
 import Principia.Architecture.Star935Kernel
 import Principia.Architecture.Star936Kernel
+import Principia.Architecture.Star9361Kernel
+import Principia.Architecture.Star936Kernel
 
 namespace PM.Architecture.Q259ClosedRuleBook
 
@@ -91,6 +93,14 @@ abbrev Star_9_35Derivation (p : Elementary Γ)
 theorem star_9_35 (p : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) : Star_9_35Derivation p φ :=
   Star935Kernel.derive p φ
+
+abbrev Star_9_361Derivation (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop :=
+  Star9361Kernel.Star9361KernelAssertion p φ
+
+theorem star_9_361 (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Star_9_361Derivation p φ :=
+  Star9361Kernel.derive p φ
 
 /-- Exact closed kernel contract for the universal permutation theorem
 ✱9·36.  Its ✱9·21 stage remains the audited canonical Raw witness, rather

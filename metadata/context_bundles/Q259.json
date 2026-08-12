@@ -8,7 +8,7 @@
   "integration_blocked": true,
   "interface_dependencies": [],
   "kind": "pm-isolated-context-bundle",
-  "manifest_sha256": "02dd1bd281f0042a662d9ebd50d1478ee6808c09ff4dddd24119951a11fecc56",
+  "manifest_sha256": "fdbdab4c11eb75e22fcd9669015fd0dcd2cd5b71b271a5c2593f7fbac03ad4f0",
   "policy": {
     "canonical_integration_forbidden": true,
     "grants_no_additional_proof_permission": true,
@@ -51,8 +51,8 @@
     "status": "complete"
   },
   "source_backfill_required": false,
-  "source_bytes": 172907,
-  "source_sha256": "f94c73fdd031621d41942afe2a89082ead9aad90419615318e21d998bf3a1c7a",
+  "source_bytes": 179319,
+  "source_sha256": "9fce126522ece8d4abccb4bea87c986dcdcbcc4da62f8e3c2be8fb902e9b51b9",
   "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"},
   "sources": [
     {
@@ -142,12 +142,12 @@
       "source_sha256": "a44e0a753bc50d92da133e9679efa4965b29b289a0d42756b51117691f2c6926"
     },
     {
-      "bytes": 15709,
+      "bytes": 16170,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/CanonicalNormalization.lean",
-      "slice_sha256": "e557ccc409d62fb9133a6503fd36cd40630f4adbb89a7bf6372a176f205c7897",
-      "source_sha256": "8b39bb6ab7a0311ef768ba01a71eee38932b3f977bcb98c4b513dc0f66d5b75b"
+      "slice_sha256": "def3e1f9a92c4abcc3d7c3fb5e11f9fcb864359efd89cb74eb5097f3c70706fd",
+      "source_sha256": "8d22500cb5132f4815cb78c1c0add3064df507e4568c51895159261f017c1f89"
     },
     {
       "bytes": 6833,
@@ -206,12 +206,28 @@
       "source_sha256": "818c2af607aff118dbe6c6a557ddc51eb2bdaedc068d1ebf7ecb32cc3529aba5"
     },
     {
-      "bytes": 3759,
+      "bytes": 2387,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star936Kernel.lean",
+      "slice_sha256": "3bec2b589c4404e3bdb96ffb903f724ad553d324d768f28a233a3a7e87015a4a",
+      "source_sha256": "77467b6fc1460c25882cc2d7f770a8193855fe990d4fff1171e88b6acef85f5b"
+    },
+    {
+      "bytes": 2841,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star9361Kernel.lean",
+      "slice_sha256": "ccb85d029caac58929ecc5ab3586de96f68d41ef15476e8d0dcb5e2a6a107552",
+      "source_sha256": "80f28aaba85203418ad223e0dd322b103130252ad2d510943c2d3e9bc3af6162"
+    },
+    {
+      "bytes": 4355,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
       "path": "Principia/Architecture/Q259ClosedRuleBook.lean",
-      "slice_sha256": "c7826c98a4ade6ad6c6fd381c0586ec95deea60875c2fa02dca3bf57627a811a",
-      "source_sha256": "4a692211ce28f582c2cda458f42907158ca2c6fc7a36c46d533f394d4f7dbab7"
+      "slice_sha256": "6fd0266ef4ee2e09b4891b7b7025555ed4881f2889b97bcec5a675e2a22beb47",
+      "source_sha256": "daca983dbbf5009c0920f081f2a7df419b2b8bc9a5b72a153e472f781b37287e"
     }
   ]
 }
