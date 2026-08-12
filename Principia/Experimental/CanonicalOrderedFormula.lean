@@ -41,6 +41,19 @@ def MatrixRaw.toRaw : MatrixRaw Γ → Raw Γ
   | .neg p => .neg p.toRaw
   | .disj p q => .disj p.toRaw q.toRaw
 
+/-- Open the outer one of two apparent variables as a newly leading real
+variable. Bound zero is the pre-existing inner variable; bound one is opened;
+deeper indices lose exactly that outer slot. -/
+def openOuter : Raw Γ → Raw (.elementaryProposition :: Γ)
+  | .elementary p => .elementary
+      (Elementary.schemaInstance (fun v => .var (.succ v)) p)
+  | .bound 0 => .bound 0
+  | .bound 1 => .elementary (.var .zero)
+  | .bound (index + 2) => .bound (index + 1)
+  | .quantified quantifier body => .quantified quantifier (openOuter body)
+  | .neg p => .neg (openOuter p)
+  | .disj p q => .disj (openOuter p) (openOuter q)
+
 def MatrixRaw.smartNeg : MatrixRaw Γ → MatrixRaw Γ
   | matrix => .neg matrix
 
@@ -118,6 +131,35 @@ theorem raw_bound_injective {left right : Nat} :
     (Raw.bound left : Raw Γ) = .bound right → left = right := by
   intro equality
   injection equality
+
+theorem boundIndex_openRealOuter
+    (v : BoundVar (.elementaryProposition :: .elementaryProposition :: Δ)
+      .elementaryProposition) :
+    openOuter (.bound (boundIndex v) : Raw Γ) =
+      ofApparent (Apparent.openRealOuter (Apparent.bound v) :
+        Apparent (.elementaryProposition :: Γ)
+          (.elementaryProposition :: Δ)) := by
+  cases v with
+  | zero => rfl
+  | succ v =>
+      cases v with
+      | zero => rfl
+      | succ predecessor => rfl
+
+/-- The raw scope operation is exactly the embedding of the canonical
+`Apparent.openRealOuter`; no semantic interpretation or assertion transport
+is involved. -/
+theorem openOuter_ofApparent
+    (p : Apparent Γ
+      (.elementaryProposition :: .elementaryProposition :: Δ)) :
+    openOuter (ofApparent p) = ofApparent (Apparent.openRealOuter p) := by
+  induction p with
+  | constant name => rfl
+  | real v => rfl
+  | bound v => exact boundIndex_openRealOuter v
+  | neg p ih => simp [ofApparent, openOuter, Apparent.openRealOuter, ih]
+  | disj p q ihp ihq =>
+      simp [ofApparent, openOuter, Apparent.openRealOuter, ihp, ihq]
 
 def matrixOfApparent : Apparent Γ Δ → MatrixRaw Γ
   | .constant name => .elementary (.constant name)
