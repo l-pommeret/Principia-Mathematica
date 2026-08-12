@@ -11,6 +11,9 @@ inductive Quantifier where
 
 inductive Raw : RealContext → Type where
   | elementary : Elementary Γ → Raw Γ
+  /-- Dedicated theorem-schema placeholder, distinct from an elementary PM
+  formula and therefore never acted on by elementary schema instantiation. -/
+  | schema : Nat → Raw Γ
   | bound : Nat → Raw Γ
   | quantified : Quantifier → Raw Γ → Raw Γ
   | neg : Raw Γ → Raw Γ
@@ -20,6 +23,7 @@ inductive Raw : RealContext → Type where
 def openOuterAt (cutoff : Nat) : Raw Γ → Raw (.elementaryProposition :: Γ)
   | .elementary p => .elementary
       (Elementary.schemaInstance (fun v => .var (.succ v)) p)
+  | .schema slot => .schema slot
   | .bound index =>
       if index < cutoff + 1 then .bound index
       else if index = cutoff + 1 then .elementary (.var .zero)
@@ -50,6 +54,7 @@ def abstractElementaryAt (cutoff : Nat) :
 
 def abstractOuterAt (cutoff : Nat) : Raw (.elementaryProposition :: Γ) → Raw Γ
   | .elementary p => abstractElementaryAt cutoff p
+  | .schema slot => .schema slot
   | .bound index =>
       if index ≤ cutoff then .bound index else .bound (index + 1)
   | .quantified q body => .quantified q (abstractOuterAt (cutoff + 1) body)
@@ -64,6 +69,7 @@ depth.  The reserved index `cutoff + 1` is excluded because it is introduced
 only by `abstractOuterAt`; this is the exact image invariant for its beta law. -/
 def Admissible (cutoff : Nat) : Raw Γ → Prop
   | .elementary _ => True
+  | .schema _ => True
   | .bound index => index ≠ cutoff + 1
   | .quantified _ body => Admissible (cutoff + 1) body
   | .neg p => Admissible cutoff p
@@ -91,6 +97,7 @@ theorem shiftIndex_comm (i j index : Nat) (h : i ≤ j) :
 
 def shiftBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
   | .elementary p => .elementary p
+  | .schema slot => .schema slot
   | .bound index => .bound (shiftIndex cutoff index)
   | .quantified q body => .quantified q (shiftBoundAt (cutoff + 1) body)
   | .neg p => .neg (shiftBoundAt cutoff p)
@@ -105,6 +112,7 @@ theorem shiftBoundAt_comm (i j : Nat) (p : Raw Γ) (h : i ≤ j) :
       shiftBoundAt i (shiftBoundAt j p) := by
   induction p generalizing i j with
   | elementary proposition => rfl
+  | schema slot => rfl
   | bound index => exact congrArg Raw.bound (shiftIndex_comm i j index h)
   | quantified quantifier body ih =>
       simp only [shiftBoundAt]
@@ -121,6 +129,7 @@ invariant for `count` outer lifts: local binders below `depth` remain valid,
 whereas every external index lies at or beyond `depth + count`. -/
 def FreshBelowAt (depth count : Nat) : Raw Γ → Prop
   | .elementary _ => True
+  | .schema _ => True
   | .bound index => index < depth ∨ depth + count ≤ index
   | .quantified _ body => FreshBelowAt (depth + 1) count body
   | .neg p => FreshBelowAt depth count p
@@ -131,6 +140,7 @@ def FreshBelow (count : Nat) (p : Raw Γ) : Prop := FreshBelowAt 0 count p
 theorem freshBelowAt_zero (depth : Nat) (p : Raw Γ) : FreshBelowAt depth 0 p := by
   induction p generalizing depth with
   | elementary proposition => trivial
+  | schema slot => trivial
   | bound index =>
       by_cases below : index < depth
       · exact Or.inl below
@@ -145,6 +155,7 @@ theorem freshBelowAt_shift (depth count : Nat) (p : Raw Γ) :
   intro fresh
   induction p generalizing depth count with
   | elementary proposition => trivial
+  | schema slot => trivial
   | bound index =>
       simp only [FreshBelowAt, shiftBoundAt]
       rcases fresh with inner | external
@@ -172,6 +183,7 @@ theorem shiftBoundAt_freshBelowAt (depth count : Nat) (p : Raw Γ)
     shiftBoundAt (depth + count) p = shiftBoundAt depth p := by
   induction p generalizing depth count with
   | elementary proposition => rfl
+  | schema slot => rfl
   | bound index =>
       simp only [FreshBelowAt] at fresh
       simp only [shiftBoundAt]
@@ -198,6 +210,7 @@ theorem shiftBoundAt_freshBelowAt (depth count : Nat) (p : Raw Γ)
 precise side condition needed to remove that binder without capture. -/
 def UnusedBoundAt (cutoff : Nat) : Raw Γ → Prop
   | .elementary _ => True
+  | .schema _ => True
   | .bound index => index ≠ cutoff
   | .quantified _ body => UnusedBoundAt (cutoff + 1) body
   | .neg p => UnusedBoundAt cutoff p
@@ -208,6 +221,7 @@ slot are lowered; terms satisfying `UnusedBoundAt` never take the fallback
 zero case at that slot. -/
 def dropUnusedBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
   | .elementary p => .elementary p
+  | .schema slot => .schema slot
   | .bound index =>
       if index < cutoff then .bound index else .bound (index - 1)
   | .quantified q body => .quantified q (dropUnusedBoundAt (cutoff + 1) body)
@@ -221,6 +235,7 @@ theorem shiftBoundAt_dropUnusedBoundAt
     shiftBoundAt cutoff (dropUnusedBoundAt cutoff p) = p := by
   induction p generalizing cutoff with
   | elementary proposition => rfl
+  | schema slot => rfl
   | bound index =>
       simp only [UnusedBoundAt] at h
       by_cases below : index < cutoff
@@ -250,6 +265,7 @@ newly bound index remains zero and every older index is renamed through the
 lifted map. -/
 def renameBound (ρ : Nat → Nat) : Raw Γ → Raw Γ
   | .elementary p => .elementary p
+  | .schema slot => .schema slot
   | .bound index => .bound (ρ index)
   | .quantified q body =>
       .quantified q (renameBound (fun index =>
@@ -284,6 +300,7 @@ end Substitution
 
 def substitute (σ : Substitution Γ Ξ) : Raw Γ → Raw Ξ
   | .elementary proposition => σ proposition
+  | .schema slot => .schema slot
   | .bound index => .bound index
   | .quantified quantifier body =>
       .quantified quantifier (substitute (Substitution.lift σ) body)
@@ -325,6 +342,7 @@ theorem substitute_liftN_shiftBoundAt (σ : Substitution Γ Ξ)
   induction p generalizing count with
   | elementary proposition =>
       exact substitution_liftN_succ_as_shift σ count proposition
+  | schema slot => rfl
   | bound index => rfl
   | quantified quantifier body ih =>
       simp only [shiftBoundAt, substitute, Substitution.liftN_succ]
@@ -341,13 +359,27 @@ theorem substitute_lift_weakenBound (σ : Substitution Γ Ξ) (p : Raw Γ) :
       weakenBound (substitute σ p) := by
   simpa [weakenBound] using substitute_liftN_shiftBoundAt σ 0 p
 
+/-- Dedicated placeholder substitution for theorem schemas.  Unlike
+`Substitution`, this can replace whole canonical Raw matrices. -/
+abbrev SchemaSubstitution (Γ : RealContext) := Nat → Raw Γ
+
+def substituteSchema (σ : SchemaSubstitution Γ) : Raw Γ → Raw Γ
+  | .elementary proposition => .elementary proposition
+  | .schema slot => σ slot
+  | .bound index => .bound index
+  | .quantified quantifier body =>
+      .quantified quantifier
+        (substituteSchema (fun slot => weakenBound (σ slot)) body)
+  | .neg proposition => .neg (substituteSchema σ proposition)
+  | .disj left right => .disj (substituteSchema σ left) (substituteSchema σ right)
+
 def smartNeg : Raw Γ → Raw Γ
   | .quantified .always body => .quantified .sometimes (smartNeg body)
   | .quantified .sometimes body => .quantified .always (smartNeg body)
   | proposition => .neg proposition
 
 def rawSize : Raw Γ → Nat
-  | .elementary _ | .bound _ => 1
+  | .elementary _ | .schema _ | .bound _ => 1
   | .quantified _ p | .neg p => rawSize p + 1
   | .disj p q => rawSize p + rawSize q + 1
 

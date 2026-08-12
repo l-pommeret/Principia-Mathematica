@@ -66,6 +66,26 @@ def CanonicalTheoremSchema.instantiateAt
     NormalizedCanonicalAssertion (substitute σ template) :=
   schema.instantiate σ reified
 
+/-- The canonical Raw theorem-schema display of ✱9·21.  Slots zero and one
+stand for its two matrix arguments; their occurrences are lifted by
+`substituteSchema` exactly according to the printed `x`, `y`, and `z`
+binder scopes. -/
+def star_9_21_schema_raw : Raw Γ :=
+  .disj
+    (.quantified .sometimes (.neg (.disj (.neg (.schema 0)) (.schema 1))))
+    (.quantified .always (.quantified .sometimes
+      (.disj (.neg (.schema 0)) (.schema 1))))
+
+@[simp] theorem substituteSchema_star_9_21_schema_raw
+    (σ : SchemaSubstitution Γ) :
+    substituteSchema σ star_9_21_schema_raw =
+      .disj
+        (.quantified .sometimes
+          (.neg (.disj (.neg (weakenBound (σ 0))) (weakenBound (σ 1)))))
+        (.quantified .always (.quantified .sometimes
+          (.disj (.neg (weakenBound (weakenBound (σ 0))))
+            (weakenBound (weakenBound (σ 1)))))) := rfl
+
 def normalize {source target : Raw Γ}
     (certificate : NormalizesScoped source target)
     (assertion : CanonicalOrderedAssertion source) :
