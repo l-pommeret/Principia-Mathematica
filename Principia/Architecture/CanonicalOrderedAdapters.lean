@@ -46,6 +46,17 @@ def ofFirstOrderMatrixScoped : FirstOrderMatrix Γ Δ → Raw Γ
   | .disj p q =>
       smartDisjScoped (ofFirstOrderMatrixScoped p) (ofFirstOrderMatrixScoped q)
 
+def smartDisjScopedAt (depth : Nat) (p q : Raw Γ) : Raw Γ :=
+  smartDisjScopedAux depth (rawSize p + rawSize q) p q
+
+def ofFirstOrderMatrixScopedAt (depth : Nat) :
+    FirstOrderMatrix Γ Δ → Raw Γ
+  | .quantified p => ofFirstOrderAt depth p
+  | .neg p => smartNeg (ofFirstOrderMatrixScopedAt depth p)
+  | .disj p q => smartDisjScopedAt depth
+      (ofFirstOrderMatrixScopedAt depth p)
+      (ofFirstOrderMatrixScopedAt depth q)
+
 /-- Literal display embedding: unlike the normalizing embeddings, this keeps
 matrix negation and disjunction as explicit Raw redex nodes. -/
 def ofFirstOrderMatrixRedex : FirstOrderMatrix Γ Δ → Raw Γ
@@ -90,6 +101,13 @@ def ofSecondMatrixScoped : FirstOrderMatrix.Quantified Γ Δ → Raw Γ
   | .always body => .quantified .always (ofFirstOrderMatrixScoped body)
   | .sometimes body => .quantified .sometimes (ofFirstOrderMatrixScoped body)
 
+def ofSecondMatrixScopedAt (depth : Nat) :
+    FirstOrderMatrix.Quantified Γ Δ → Raw Γ
+  | .always body => .quantified .always
+      (ofFirstOrderMatrixScopedAt (depth + 1) body)
+  | .sometimes body => .quantified .sometimes
+      (ofFirstOrderMatrixScopedAt (depth + 1) body)
+
 def ofThirdOrder : FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofSecondMatrix body)
   | .sometimes body => .quantified .sometimes (ofSecondMatrix body)
@@ -97,6 +115,12 @@ def ofThirdOrder : FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
 def ofThirdOrderScoped : FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
   | .always body => .quantified .always (ofSecondMatrixScoped body)
   | .sometimes body => .quantified .sometimes (ofSecondMatrixScoped body)
+
+def ofThirdOrderScopedAt (depth : Nat) :
+    FirstOrderMatrix.ThirdOrder Γ Δ → Raw Γ
+  | .always body => .quantified .always (ofSecondMatrixScopedAt (depth + 1) body)
+  | .sometimes body =>
+      .quantified .sometimes (ofSecondMatrixScopedAt (depth + 1) body)
 
 def ofThirdOrderFormula : FirstOrderMatrix.ThirdOrderFormula Γ Δ → Raw Γ
   | .quantified p => ofThirdOrder p
