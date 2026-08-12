@@ -14,11 +14,19 @@
     "declaration": "PM.Architecture.Star921MatrixKernel.Star9KernelAssertion.star_9_21",
     "formal_scope": "complete printed line-(7) universal-monotonicity chain in the closed Star9CanonicalAssertion/NormalizedCanonicalAssertion judgement; deliberately not claimed as an OrderedAssertion reification",
     "source_status": "source-catalogued",
-    "formal_status": "awaiting-ci",
-    "integration_status": "awaiting-canonical-raw-kernel-check",
+    "formal_status": "kernel-checked",
+    "integration_status": "kernel-checked-normalized-canonical-assertion",
     "printed_dependencies": ["PM1:✱2·08", "PM1:✱9·1", "PM1:✱9·12", "PM1:✱9·13", "PM1:✱9·06", "PM1:✱1·01", "PM1:✱9·08"],
+    "lean_dependencies": ["PM.Architecture.CanonicalOrderedJudgement.derive_star_9_21_line7_normalized"],
     "normalized_dependencies": [],
+    "historical_dependency_relaxation": {
+      "classification": "relaxed-closure",
+      "added_beyond_print": [],
+      "printed_but_unused": ["PM1:✱1·01", "PM1:✱2·08", "PM1:✱9·06", "PM1:✱9·08", "PM1:✱9·1", "PM1:✱9·12", "PM1:✱9·13"],
+      "strict_attempt_evidence": "reviews/Q256-star-9-21-ci-promotion.md",
+      "editorial_note": "The public declaration is a narrow wrapper over the already closed normalized-canonical derivation; its source citations are retained in the audited inner certificate rather than repeated as direct wrapper constants."
+    },
     "blocked_dependencies": ["assigned-order OrderedAssertion reification intentionally absent"]
   }],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {"commit": "eda99d1ed844362805f3f05805d4fc8e72e7c4a9", "run": "31572372279", "conclusion": "success"}
 }

@@ -42,8 +42,9 @@ closed endpoint produced by the scan's line (3), ✱9·03·02 and ✱9·05·06.
 The old order-one target remains available for compatibility but is not used
 as the endpoint certificate for the canonical proof.
 
-Current integration status: the line-2 scoped carrier and its second-✱9·13
-carrier are kernel-checked.  The remaining gate is an exact canonical
-embedding of the unnormalized line-3 carrier; using the already-normalized
-`line2ScopedRaw` as its body would collapse a printed proof step and is not
-accepted by this audit.
+Final integration status: `Q259ClosedRuleBook.star_9_31` exposes exactly
+`Nonempty (Star931KernelAssertion φ)`.  Its literal line-3 carrier, the
+✱9·03·02 and ✱9·05·06 certificates, and the source-faithful Raw endpoint were
+kernel-checked at immutable commit
+`eda99d1ed844362805f3f05805d4fc8e72e7c4a9` by GitHub Actions run
+`31572372279` (`success`).  This evidence does not claim an `OrderedAssertion`.

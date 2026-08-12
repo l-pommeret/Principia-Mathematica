@@ -41,6 +41,14 @@
   "source_backfill_required": false,
   "source_bytes": 64352,
   "source_sha256": "6ccb6a908de268b4ea39bbfd296236f189136fdead18306393e8a03038b3194e",
+  "ci_evidence": {
+    "commit": "eda99d1ed844362805f3f05805d4fc8e72e7c4a9",
+    "run": "31572372279",
+    "conclusion": "success",
+    "scope": "isolated-interface",
+    "canonical_integration": "forbidden",
+    "one_to_one_remap": "pending"
+  },
   "sources": [
     {
       "bytes": 1191,
@@ -112,13 +120,5 @@
       "slice_sha256": "f3d8d82c88b6dee53112058e91494fde612061ce583a8872f3c46e70365f236d",
       "source_sha256": "4132bf73898914e3bd331efb7963206c26c701a9073744913807bdb3880049f9"
     }
-  ],
-  "ci_evidence": {
-    "commit": "17d08b6ec4966777273aada00452fc8c12767338",
-    "run": "31567832588",
-    "conclusion": "success",
-    "scope": "isolated-interface",
-    "canonical_integration": "forbidden",
-    "one_to_one_remap": "pending"
-  }
+  ]
 }

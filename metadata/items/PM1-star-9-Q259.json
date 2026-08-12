@@ -34,26 +34,29 @@
       "declaration": "PM.Architecture.Q259ClosedRuleBook.star_9_31",
       "formal_scope": "source-faithful closed Raw endpoint retaining the assigned-order carrier and explicit scope-normalization certificates",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-first-order-kernel-check",
+      "formal_status": "kernel-checked",
+      "integration_status": "kernel-checked-nonempty-star931-kernel-assertion",
       "printed_dependencies": [
         "PM1:✱9·11·13",
         "PM1:✱9·03",
         "PM1:✱9·05"
       ],
-      "normalized_dependencies": [
-        "PM1:✱9·11",
-        "PM1:✱9·13",
-        "PM1:✱9·03",
-        "PM1:✱9·05"
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": ["PM.Architecture.Star931Kernel.derive"],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱9·03", "PM1:✱9·05", "PM1:✱9·11·13"],
+        "strict_attempt_evidence": "reviews/Q259-star-9-31-scope-audit.md",
+        "editorial_note": "The public theorem packages the complete source-audited Star931Kernel certificate; printed citations occur inside that closed witness rather than as direct constants in the Nonempty wrapper."
+      },
       "blocked_dependencies": [
       ]
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "eda99d1ed844362805f3f05805d4fc8e72e7c4a9",
+    "run": "31572372279",
+    "conclusion": "success"
   }
 }
