@@ -276,6 +276,40 @@ higher ✱9·1 instance. -/
         disj (ofElementary (openHead left)) (ofElementary (openHead right))
       rw [ihLeft, ihRight]
 
+@[simp] theorem substitute_liftInstantiate_renameInner_weakenReal
+    (φ : Apparent Γ [.elementaryProposition]) :
+    substitute (liftSubstitution
+      (instantiateSubstitution (.real (.zero : RealVar
+        (.elementaryProposition :: Γ) .elementaryProposition))))
+      (rename (fun _ => .zero) (weakenReal φ)) = weakenReal φ := by
+  induction φ with
+  | constant name => rfl
+  | real realVariable => rfl
+  | bound boundVariable =>
+      cases boundVariable with
+      | zero => rfl
+      | succ emptyVariable => exact nomatch emptyVariable
+  | neg proposition ih =>
+      simpa [substitute, rename, weakenReal, renameReal] using congrArg neg ih
+  | disj left right ihLeft ihRight =>
+      change disj (substitute _ (rename _ (weakenReal left)))
+        (substitute _ (rename _ (weakenReal right))) =
+        disj (weakenReal left) (weakenReal right)
+      rw [ihLeft, ihRight]
+
+@[simp] theorem substitute_liftInstantiate_ofElementary
+    (p : Elementary (.elementaryProposition :: Γ)) :
+    substitute (liftSubstitution
+      (instantiateSubstitution (.real (.zero : RealVar
+        (.elementaryProposition :: Γ) .elementaryProposition))))
+      (ofElementary p : Apparent (.elementaryProposition :: Γ)
+        (.elementaryProposition :: .elementaryProposition :: [])) = ofElementary p := by
+  induction p with
+  | constant name => rfl
+  | var realVariable => rfl
+  | neg proposition ih => simpa [substitute, ofElementary] using congrArg neg ih
+  | disj left right ihLeft ihRight => simp [substitute, ofElementary, ihLeft, ihRight]
+
 /-- The bivariate matrix `φx ∨ φy` used in the first application of ✱9·1
 in the proof of ✱9·3.  The left occurrence opens the sole binder as the new
 real variable `x`; the right occurrence retains it as the apparent variable
