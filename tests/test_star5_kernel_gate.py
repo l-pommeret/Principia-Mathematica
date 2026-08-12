@@ -81,6 +81,22 @@ class Star5KernelGateTests(unittest.TestCase):
         body = kernel[kernel.index("theorem star_5_1") :]
         self.assertNotIn("PM.Derivation.detach", body)
 
+    def test_star_5_21_candidate_has_explicit_inference_branches(self):
+        metadata = json.loads(
+            (ROOT / "metadata/items/PM1-star-5-kernel-Q245-21.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        item = metadata["items"][0]
+        self.assertEqual(item["id"], "PM1:✱5·21")
+        self.assertEqual(item["formal_status"], "awaiting-ci")
+        self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
+        kernel = (
+            ROOT / "Principia/FirstEdition/Volume1/Part1/SectionA/Star5Kernel.lean"
+        ).read_text(encoding="utf-8")
+        body = kernel[kernel.index("theorem star_5_21") :]
+        self.assertNotIn("PM.Derivation.detach", body)
+
 
 if __name__ == "__main__":
     unittest.main()

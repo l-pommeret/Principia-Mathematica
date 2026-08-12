@@ -90,13 +90,19 @@ theorem star_5_1 {Γ} (p q : PM.Elementary Γ) :
 the reverse component of the accepted transposition equivalence ✱4·11. -/
 theorem star_5_21 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ (((∼ₚ p) ∧ₚ (∼ₚ q)) ⊃ₚ (p ≡ₚ q)) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB =>
+        exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
   have backward : ⊢ₚ (((∼ₚ p) ≡ₚ (∼ₚ q)) ⊃ₚ (p ≡ₚ q)) :=
-    PM.Derivation.detach (PM.FirstEdition.Volume1.Star4.star_4_11 p q)
+    infer (PM.FirstEdition.Volume1.Star4.star_4_11 p q)
       (PM.FirstEdition.Volume1.Star3.star_3_27
         ((p ≡ₚ q) ⊃ₚ ((∼ₚ p) ≡ₚ (∼ₚ q)))
         (((∼ₚ p) ≡ₚ (∼ₚ q)) ⊃ₚ (p ≡ₚ q)))
-  exact PM.Derivation.detach backward
-    (PM.Derivation.detach (star_5_1 (∼ₚ p) (∼ₚ q))
+  exact infer (star_5_1 (∼ₚ p) (∼ₚ q))
+    (infer backward
       (PM.FirstEdition.Volume1.Star2.star_2_05
         ((∼ₚ p) ∧ₚ (∼ₚ q)) ((∼ₚ p) ≡ₚ (∼ₚ q)) (p ≡ₚ q)))
 
