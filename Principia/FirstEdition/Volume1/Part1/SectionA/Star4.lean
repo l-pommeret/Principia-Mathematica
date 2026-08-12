@@ -629,4 +629,29 @@ theorem star_4_81 {Γ} (p : PM.Elementary Γ) :
         (((∼ₚ p) ⊃ₚ p) ⊃ₚ p)
         (p ⊃ₚ ((∼ₚ p) ⊃ₚ p))))
 
+/-- PM I (1910), p. 124, ✱4·36. -/
+theorem star_4_36 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ≡ₚ q) ⊃ₚ ((p ∧ₚ r) ≡ₚ (q ∧ₚ r))) := by
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have dup : ∀ a : PM.Elementary Γ, ⊢ₚ (a ⊃ₚ (a ∧ₚ a)) := by
+    intro a
+    exact infer (PM.FirstEdition.Volume1.Star3.star_3_2 a a) (PM.FirstEdition.Volume1.Star2.star_2_43 a (a ∧ₚ a))
+  have lift : ∀ {a b c : PM.Elementary Γ}, (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ (a ⊃ₚ c)) → (⊢ₚ (a ⊃ₚ (b ∧ₚ c))) := by
+    intro a b c hab hac
+    have pair := infer hab (infer hac (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (a ⊃ₚ c)))
+    exact compose (dup a) (infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 a a b c))
+  let e := p ≡ₚ q
+  have idr : ⊢ₚ (r ⊃ₚ r) := PM.FirstEdition.Volume1.Star2.star_2_08 r
+  have er : ⊢ₚ (e ⊃ₚ (r ⊃ₚ r)) := infer idr (PM.FirstEdition.Volume1.Star2.star_2_02 e (r ⊃ₚ r))
+  have f := compose (lift (PM.FirstEdition.Volume1.Star3.star_3_26 (p ⊃ₚ q) (q ⊃ₚ p)) er) (PM.FirstEdition.Volume1.Star3.star_3_47 (p ⊃ₚ q) (r ⊃ₚ r) (q ⊃ₚ p) (r ⊃ₚ r))
+  have b := compose (lift (PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ q) (q ⊃ₚ p)) er) (PM.FirstEdition.Volume1.Star3.star_3_47 (q ⊃ₚ p) (r ⊃ₚ r) (p ⊃ₚ q) (r ⊃ₚ r))
+  exact lift f b
+
 end PM.FirstEdition.Volume1.Star4
