@@ -315,6 +315,32 @@ theorem substitution_liftN_succ_as_shift (σ : Substitution Γ Ξ)
   simpa using (shiftBoundAt_freshBelowAt 0 count _
     (substitution_liftN_fresh σ count proposition)).symm
 
+/-- Fusion of substitution lifting with a binder shift.  The substitution on
+the left is lifted one additional time because the shifted term has crossed
+one additional apparent binder. -/
+theorem substitute_liftN_shiftBoundAt (σ : Substitution Γ Ξ)
+    (count : Nat) (p : Raw Γ) :
+    substitute (Substitution.liftN (count + 1) σ) (shiftBoundAt count p) =
+      shiftBoundAt count (substitute (Substitution.liftN count σ) p) := by
+  induction p generalizing count with
+  | elementary proposition =>
+      exact substitution_liftN_succ_as_shift σ count proposition
+  | bound index => rfl
+  | quantified quantifier body ih =>
+      simp only [shiftBoundAt, substitute, Substitution.liftN_succ]
+      exact congrArg (Raw.quantified quantifier) (ih (count + 1))
+  | neg proposition ih =>
+      simp only [shiftBoundAt, substitute]
+      exact congrArg Raw.neg (ih count)
+  | disj left right ihLeft ihRight =>
+      simp only [shiftBoundAt, substitute]
+      rw [ihLeft count, ihRight count]
+
+theorem substitute_lift_weakenBound (σ : Substitution Γ Ξ) (p : Raw Γ) :
+    substitute (Substitution.lift σ) (weakenBound p) =
+      weakenBound (substitute σ p) := by
+  simpa [weakenBound] using substitute_liftN_shiftBoundAt σ 0 p
+
 def smartNeg : Raw Γ → Raw Γ
   | .quantified .always body => .quantified .sometimes (smartNeg body)
   | .quantified .sometimes body => .quantified .always (smartNeg body)
