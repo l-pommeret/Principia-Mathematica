@@ -41,6 +41,16 @@ whereas this operation changes only the ambient real-variable context. -/
 abbrev RealRenaming (Γ Ξ : RealContext) :=
   {τ : RealType} → RealVar Γ τ → RealVar Ξ τ
 
+/-- The audited diagonal instance used in the first application of ✱9·1 in
+the proof of ✱9·3: the newly introduced real `y` and the displayed real `x`
+are both read as `x`; older variables are shifted once. -/
+def diagonalRealRenaming :
+    RealRenaming (.elementaryProposition :: .elementaryProposition :: Γ)
+      (.elementaryProposition :: Γ)
+  | _, .zero => .zero
+  | _, .succ .zero => .zero
+  | _, .succ (.succ predecessor) => .succ predecessor
+
 /-- Simultaneous renaming of the ambient real variables, leaving all apparent
 binders untouched. -/
 def renameReal (ρ : RealRenaming Γ Ξ) : Apparent Γ Δ → Apparent Ξ Δ
