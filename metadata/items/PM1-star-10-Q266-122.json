@@ -1,0 +1,17 @@
+{
+  "batch":"PM1-STAR10-Q266-122","edition":"first","volume":1,
+  "source_range":{"printed_pages":"146","scan_leaves":[168],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","scan_sha256":"0b416ff85b3cfb865eb3cfab5c6a4c04cfff65f0ac21a68f7e64d80caf30736f"},
+  "witnesses":["PM1-1910-SCAN","PG78050"],
+  "items":[{
+    "id":"PM1:✱10·122","kind":"primitive-proposition",
+    "printed":"If, for some a, there is a proposition φa, then there is a function φx̂, and vice versa.  [✱9·15]",
+    "printed_page":146,"scan_leaf":168,
+    "lean_path":"Principia/Architecture/Star10Q266Kernel.lean",
+    "declaration":"PM.FirstEdition.Volume1.Star10.star_10_122",
+    "formal_scope":"constructive correspondence between a value at a fresh same-typed real argument and its capture-free abstract one-place function matrix",
+    "source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"canonical-awaiting-ci",
+    "printed_dependencies":["PM1:✱9·15"],"lean_dependencies":[],"normalized_dependencies":[],
+    "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱9·15"],"strict_attempt_evidence":"reviews/Q266-review.md","editorial_note":"The canonical abstraction/opening maps construct both existence directions directly; ✱9·15 is the historical metalinguistic source rather than a named theorem call."}
+  }],
+  "ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+}

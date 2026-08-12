@@ -50,7 +50,7 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_27",
       "formal_scope": "formal implication lifting; exact canonical Raw target, proof pending",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "integration_status": "canonical-kernel-proved-awaiting-batch-ci",
       "printed_dependencies": [
         "PM1:✱9·21",
@@ -75,7 +75,7 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_271",
       "formal_scope": "formal equivalence lifting; exact closed canonical proof contract",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "integration_status": "canonical-kernel-proved-awaiting-batch-ci",
       "printed_dependencies": [
         "PM1:✱10·22",
@@ -100,7 +100,7 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_28",
       "formal_scope": "existential lifting; exact canonical Raw target, proof pending",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "integration_status": "canonical-kernel-proved-awaiting-batch-ci",
       "printed_dependencies": [
         "PM1:✱9·22",
@@ -125,7 +125,7 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_281",
       "formal_scope": "existential equivalence lifting; exact closed canonical proof contract",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "integration_status": "canonical-kernel-proved-awaiting-batch-ci",
       "printed_dependencies": [
         "PM1:✱10·22",
@@ -146,14 +146,30 @@
       "printed": "⊢ : .(∃x).p .φx .≡ : p : (∃x).φx",
       "printed_page": 145,
       "scan_leaf": 167,
-      "lean_path": "Principia/Architecture/Star10Q265Targets.lean",
-      "declaration": "PM.Architecture.Star10Q265Targets.star_10_35_target",
-      "formal_scope": "existential distribution; exact canonical Raw target, proof pending",
+      "lean_path": "Principia/Architecture/Star10Q265Kernel.lean",
+      "declaration": "PM.Architecture.Star10Q265Kernel.star_10_35",
+      "formal_scope": "existential distribution; exact closed canonical proof contract",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "canonical-exact-target-prepared",
-      "printed_dependencies": [],
-      "normalized_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-proved-awaiting-batch-ci",
+      "printed_dependencies": [
+        "PM1:✱3·26",
+        "PM1:✱10·11",
+        "PM1:✱10·23",
+        "PM1:✱3·27",
+        "PM1:✱10·28",
+        "PM1:✱3·2",
+        "PM1:✱10·11·21"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱10·23",
+        "PM1:✱10·28"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star10Q265FinalPrerequisites.star_10_23",
+        "PM.Architecture.Star10Q265Kernel.star_10_28",
+        "PM.Architecture.Star10Q265FinalPrerequisites.star_10_11_21"
+      ]
     }
   ],
   "ci_evidence": {

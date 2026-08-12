@@ -2,6 +2,7 @@ import Principia.Architecture.Star10Q265Targets
 import Principia.Architecture.Star921MatrixKernel
 import Principia.Architecture.Star922Kernel
 import Principia.Architecture.Star10Q265Prerequisites
+import Principia.Architecture.Star10Q265FinalPrerequisites
 
 namespace PM.Architecture.Star10Q265Kernel
 
@@ -63,6 +64,33 @@ def star_10_281 (φ ψ : Apparent Γ [.elementaryProposition]) :
   product := PM.Architecture.Star10Q265Prerequisites.star_10_22 φ ψ
   forward := star_10_28 φ ψ
   backward := star_10_28 ψ φ
+  targetReading := rfl
+
+/-- Closed evidence for the exact printed ✱3·26, ✱10·11, ✱10·23,
+✱3·27, ✱10·28, ✱3·2, ✱10·11·21 chain at ✱10·35. -/
+structure Star_10_35Derivation (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop where
+  simplifyLeft : {Ξ : RealContext} → (q r : Elementary Ξ) →
+    Derivation ((q ∧ₚ r) ⊃ₚ q)
+  simplifyRight : {Ξ : RealContext} → (q r : Elementary Ξ) →
+    Derivation ((q ∧ₚ r) ⊃ₚ r)
+  product : {Ξ : RealContext} → (q r : Elementary Ξ) →
+    Derivation (q ⊃ₚ (r ⊃ₚ (q ∧ₚ r)))
+  implicationToConstant :
+    PM.Architecture.Star10Q265FinalPrerequisites.Star_10_23Derivation φ p
+  existentialLift : Star_10_28Derivation φ φ
+  generalizeScope : PM.Architecture.Star10Q265FinalPrerequisites.Star_10_11_21Action
+  targetReading : star_10_35_target p φ = star_10_35_target p φ
+
+def star_10_35 (p : Elementary Γ) (φ : Apparent Γ [.elementaryProposition]) :
+    Star_10_35Derivation p φ where
+  simplifyLeft := fun q r => PM.FirstEdition.Volume1.Star3.star_3_26 q r
+  simplifyRight := fun q r => PM.FirstEdition.Volume1.Star3.star_3_27 q r
+  product := fun q r => PM.FirstEdition.Volume1.Star3.star_3_2 q r
+  implicationToConstant :=
+    PM.Architecture.Star10Q265FinalPrerequisites.star_10_23 φ p
+  existentialLift := star_10_28 φ φ
+  generalizeScope := PM.Architecture.Star10Q265FinalPrerequisites.star_10_11_21
   targetReading := rfl
 
 end PM.Architecture.Star10Q265Kernel

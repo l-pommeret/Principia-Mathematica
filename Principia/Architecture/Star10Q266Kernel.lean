@@ -55,4 +55,44 @@ theorem star_10_121
           significantRealHead (Apparent.openRealHead right)) = true
       simpa only [Bool.or_eq_true, ihLeft, ihRight]
 
+/-- The minimal constructive content of PM's function-existence convention:
+values and their one-place function matrices are connected by the canonical
+capture-free abstraction/opening maps. -/
+structure FunctionValueCorrespondence (Γ : RealContext) (Δ : BoundContext) : Prop where
+  functionOfValue : ∀ value : Apparent (.elementaryProposition :: Γ) Δ,
+    ∃ functionMatrix : Apparent Γ (.elementaryProposition :: Δ),
+      Apparent.openRealHead functionMatrix = value
+  valueOfFunction : ∀ functionMatrix : Apparent Γ (.elementaryProposition :: Δ),
+    ∃ value : Apparent (.elementaryProposition :: Γ) Δ,
+      Apparent.abstractRealHead value = functionMatrix
+
+private theorem abstractRealHead_openRealHead
+    (φ : Apparent Γ (.elementaryProposition :: Δ)) :
+    Apparent.abstractRealHead (Apparent.openRealHead φ) = φ := by
+  induction φ with
+  | constant name => rfl
+  | real v => rfl
+  | bound v => cases v <;> rfl
+  | neg proposition ih =>
+      change Apparent.neg (Apparent.abstractRealHead
+        (Apparent.openRealHead proposition)) = Apparent.neg proposition
+      rw [ih]
+  | disj left right ihLeft ihRight =>
+      change Apparent.disj
+        (Apparent.abstractRealHead (Apparent.openRealHead left))
+        (Apparent.abstractRealHead (Apparent.openRealHead right)) =
+        Apparent.disj left right
+      rw [ihLeft, ihRight]
+
+/-- PM I (1910), p. 146, ✱10·122.  A proposition value at a fresh argument
+constructively determines its abstract one-place function matrix, and opening
+any such matrix supplies a value; both round trips are structural. -/
+theorem star_10_122 {Γ Δ} : FunctionValueCorrespondence Γ Δ where
+  functionOfValue value :=
+    ⟨Apparent.abstractRealHead value,
+      Apparent.openRealHead_abstractRealHead value⟩
+  valueOfFunction functionMatrix :=
+    ⟨Apparent.openRealHead functionMatrix,
+      abstractRealHead_openRealHead functionMatrix⟩
+
 end PM.FirstEdition.Volume1.Star10

@@ -7,9 +7,9 @@
   },
   "counts": {
     "catalogued_items": 1136,
-    "object_language_ast_parsed": 415,
+    "object_language_ast_parsed": 416,
     "metalinguistic_routes": 12,
-    "architecture_gated_source_routes": 709,
+    "architecture_gated_source_routes": 708,
     "catalogued_items_with_proof_skeleton": 58,
     "all_proof_skeleton_targets": 58,
     "catalogued_items_missing_proof_skeleton": 1078,
@@ -409,8 +409,8 @@
       "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "parser-gap",
-        "detail": "unexpected character '“' at offset 3"
+        "status": "reviewed-parser-gap",
+        "evidence": "reviews/Q266-review.md"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -420,10 +420,11 @@
       "id": "PM1:✱10·122",
       "kind": "primitive-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parser-gap",
+        "detail": "unconsumed token ',' at offset 2"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -513,10 +514,11 @@
       "id": "PM1:✱10·23",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
-        "status": "architecture-gated-source-route"
+        "status": "parsed",
+        "sha256": "6dc31bf36fd1b5557cc2a0502690ec79104e8b55bb7d8133d0d2350c4b510ad8"
       },
       "proof_skeleton": {
         "status": "missing"
@@ -591,7 +593,7 @@
       "id": "PM1:✱10·27",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
         "status": "parsed",
@@ -605,7 +607,7 @@
       "id": "PM1:✱10·271",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
         "status": "parsed",
@@ -619,7 +621,7 @@
       "id": "PM1:✱10·28",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
         "status": "parsed",
@@ -633,7 +635,7 @@
       "id": "PM1:✱10·281",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
         "status": "parsed",
@@ -738,7 +740,7 @@
       "id": "PM1:✱10·35",
       "kind": "derived-proposition",
       "source_catalogue": true,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "campaign_questions": [],
       "ast": {
         "status": "parsed",

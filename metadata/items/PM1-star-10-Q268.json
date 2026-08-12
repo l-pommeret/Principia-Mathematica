@@ -23,12 +23,12 @@
       "printed": "⊢ : .(x).φx⊃p .≡ : (∃x).φx .⊃ .p",
       "printed_page": 148,
       "scan_leaf": 170,
-      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star10.star_10_23",
-      "formal_scope": "universal/existential implication equivalence; architecture blocked",
+      "lean_path": "Principia/Architecture/Star10Q268Kernel.lean",
+      "declaration": "PM.Architecture.Star10Q268Kernel.star_10_23",
+      "formal_scope": "exact closed Raw universal/existential implication equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "blocked-architecture-first-order-assertion",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱4·2",
         "PM1:✱9·03",
@@ -40,7 +40,9 @@
         "PM1:✱10·11",
         "PM1:✱10·11·21"
       ],
-      "normalized_dependencies": []
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·01","PM1:✱10·01","PM1:✱10·1","PM1:✱10·11","PM1:✱10·11·21","PM1:✱10·21","PM1:✱4·2","PM1:✱9·02","PM1:✱9·03"],"strict_attempt_evidence":"reviews/Q268-star-10-23-audit.md","editorial_note":"The theorem-specific certificate closes both printed members to one canonical Raw form and retains the alternative ✱10·21/·1 witnesses internally; the public wrapper has no catalogued direct dependency."}
     }
   ],
   "ci_evidence": {

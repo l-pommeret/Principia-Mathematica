@@ -16,6 +16,9 @@ bridge, ✱10·271 uses the two orientations of ✱10·27 and ✱10·281 the two
 orientations of ✱10·28.  The wrappers export neither generic Raw detachment
 nor conversion.
 
-✱10·35 still requires closed ✱10·23 and ✱10·11·21 and therefore remains an
-exact target only. The homogeneous batch remains `prepared` pending that last
-item; no duplicate metadata item for ✱10·22 was introduced.
+`Star10Q265FinalPrerequisites.lean` reuses the independently closed canonical
+✱10·23 normalization and represents `✱10·11·21` correctly as a composed rule use rather than
+inventing a separately numbered proposition.  With these, ✱10·35 is closed
+over the exact printed ✱3·26/✱10·11/✱10·23/✱3·27/✱10·28/✱3·2/✱10·11·21
+chain.  The homogeneous batch is now `awaiting-ci`; no
+duplicate prerequisite metadata IDs were introduced.
