@@ -686,4 +686,39 @@ theorem star_5_62 {Γ} (p q : PM.Elementary Γ) :
   have backward : ⊢ₚ (d ⊃ₚ c) := compose (PM.Derivation.star_1_4 p (∼ₚ q)) (compose eForward bToC)
   exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (c ⊃ₚ d) (d ⊃ₚ c)))
 
+/-- PM I (1910), p. 131, ✱5·63. -/
+theorem star_5_63 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ q) ≡ₚ (p ∨ₚ ((∼ₚ p) ∧ₚ q))) := by
+  let x := (q ∧ₚ (∼ₚ p)) ∨ₚ (∼ₚ (∼ₚ p))
+  let y := q ∨ₚ (∼ₚ (∼ₚ p))
+  let a := p ∨ₚ q
+  let b := p ∨ₚ ((∼ₚ p) ∧ₚ q)
+  have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
+    intro A B hA hAB
+    match Γ, A, B, hA, hAB with
+    | [], _, _, hA, hAB => exact PM.Derivation.star_1_1 hA hAB
+    | (τ :: Δ), _, _, hA, hAB => exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
+  have comp : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC; exact infer hAB (infer hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have lift : ∀ (r : PM.Elementary Γ) {u v}, (⊢ₚ (u ⊃ₚ v)) → (⊢ₚ ((r ∨ₚ u) ⊃ₚ (r ∨ₚ v))) := by
+    intro r u v huv; exact infer huv (PM.Derivation.star_1_6 r u v)
+  have e := star_5_62 q (∼ₚ p)
+  have exy : ⊢ₚ (x ⊃ₚ y) := infer e (PM.FirstEdition.Volume1.Star3.star_3_26 (x ⊃ₚ y) (y ⊃ₚ x))
+  have eyx : ⊢ₚ (y ⊃ₚ x) := infer e (PM.FirstEdition.Volume1.Star3.star_3_27 (x ⊃ₚ y) (y ⊃ₚ x))
+  have aToY : ⊢ₚ (a ⊃ₚ y) := comp (PM.Derivation.star_1_4 p q) (lift q (PM.FirstEdition.Volume1.Star2.star_2_12 p))
+  have yToA : ⊢ₚ (y ⊃ₚ a) := comp (lift q (PM.FirstEdition.Volume1.Star2.star_2_14 p)) (PM.Derivation.star_1_4 q p)
+  have bToX : ⊢ₚ (b ⊃ₚ x) := by
+    have s1 := PM.Derivation.star_1_4 p ((∼ₚ p) ∧ₚ q)
+    have s2 := lift ((∼ₚ p) ∧ₚ q) (PM.FirstEdition.Volume1.Star2.star_2_12 p)
+    have s3 := lift (∼ₚ (∼ₚ p)) (PM.FirstEdition.Volume1.Star3.star_3_22 (∼ₚ p) q)
+    exact comp s1 (comp s2 (comp (PM.Derivation.star_1_4 ((∼ₚ p) ∧ₚ q) (∼ₚ (∼ₚ p))) (comp s3 (PM.Derivation.star_1_4 (∼ₚ (∼ₚ p)) (q ∧ₚ (∼ₚ p))))))
+  have xToB : ⊢ₚ (x ⊃ₚ b) := by
+    have s1 := PM.Derivation.star_1_4 (q ∧ₚ (∼ₚ p)) (∼ₚ (∼ₚ p))
+    have s2 := lift (∼ₚ (∼ₚ p)) (PM.FirstEdition.Volume1.Star3.star_3_22 q (∼ₚ p))
+    have s3 := lift ((∼ₚ p) ∧ₚ q) (PM.FirstEdition.Volume1.Star2.star_2_14 p)
+    exact comp s1 (comp s2 (comp (PM.Derivation.star_1_4 (∼ₚ (∼ₚ p)) ((∼ₚ p) ∧ₚ q)) (comp s3 (PM.Derivation.star_1_4 ((∼ₚ p) ∧ₚ q) p))))
+  have forward := comp aToY (comp eyx xToB)
+  have backward := comp bToX (comp exy yToA)
+  exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
+
 end PM.FirstEdition.Volume1.Star5
