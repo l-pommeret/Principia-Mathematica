@@ -171,6 +171,27 @@ def ofApparent : Apparent Γ Δ → Raw Γ
   | .neg p => .neg (ofApparent p)
   | .disj p q => .disj (ofApparent p) (ofApparent q)
 
+@[simp] theorem boundIndex_succ (v : BoundVar Δ .elementaryProposition) :
+    boundIndex (BoundVar.succ (σ := .elementaryProposition) v) =
+      boundIndex v + 1 := rfl
+
+/-- Raw weakening agrees exactly with capture-free apparent-variable
+weakening.  This is the scope law used whenever normalization moves a matrix
+beneath a quantifier introduced by the other disjunct. -/
+@[simp] theorem weakenBound_ofApparent (p : Apparent Γ Δ) :
+    weakenBound (ofApparent p) =
+      ofApparent (Apparent.weaken (τ := .elementaryProposition) p) := by
+  induction p with
+  | constant name => rfl
+  | real v => rfl
+  | bound v => rfl
+  | neg p ih => exact congrArg Raw.neg ih
+  | disj p q ihp ihq =>
+      change Raw.disj (weakenBound (ofApparent p))
+        (weakenBound (ofApparent q)) = _
+      rw [ihp, ihq]
+      rfl
+
 @[simp] theorem ofApparent_bound_zero {Γ} :
     ofApparent (Apparent.bound (.zero : BoundVar
       (.elementaryProposition :: Δ) .elementaryProposition) :
@@ -257,6 +278,47 @@ def normalizeFirstOrderMatrix : FirstOrderMatrix Γ Δ → Raw Γ
   | .disj left right => smartDisj
       (normalizeFirstOrderMatrix left) (normalizeFirstOrderMatrix right)
 
+/-- Capture-safe successor normalizer.  Unlike the historical experimental
+normalizer above, this version shifts the opposite disjunct whenever a
+quantifier is crossed. -/
+def normalizeFirstOrderMatrixScoped : FirstOrderMatrix Γ Δ → Raw Γ
+  | .quantified proposition => ofFirstOrder proposition
+  | .neg matrix => smartNeg (normalizeFirstOrderMatrixScoped matrix)
+  | .disj left right => smartDisjScoped
+      (normalizeFirstOrderMatrixScoped left)
+      (normalizeFirstOrderMatrixScoped right)
+
+structure ScopedCertifiedFirstOrderMatrix
+    (Δ : BoundContext) (raw : Raw Γ) where
+  formula : FirstOrderMatrix Γ Δ
+  roundTrip : normalizeFirstOrderMatrixScoped formula = raw
+
+def certifyFirstOrderScoped (proposition : FirstOrder Γ Δ) :
+    ScopedCertifiedFirstOrderMatrix Δ (ofFirstOrder proposition) where
+  formula := .quantified proposition
+  roundTrip := rfl
+
+def ScopedCertifiedFirstOrderMatrix.neg
+    (certificate : ScopedCertifiedFirstOrderMatrix Δ raw) :
+    ScopedCertifiedFirstOrderMatrix Δ (smartNeg raw) where
+  formula := .neg certificate.formula
+  roundTrip := by simp [normalizeFirstOrderMatrixScoped, certificate.roundTrip]
+
+def ScopedCertifiedFirstOrderMatrix.disj
+    (left : ScopedCertifiedFirstOrderMatrix Δ p)
+    (right : ScopedCertifiedFirstOrderMatrix Δ q) :
+    ScopedCertifiedFirstOrderMatrix Δ (smartDisjScoped p q) where
+  formula := .disj left.formula right.formula
+  roundTrip := by
+    simp [normalizeFirstOrderMatrixScoped, left.roundTrip, right.roundTrip]
+
+def ScopedCertifiedFirstOrderMatrix.imp
+    (left : ScopedCertifiedFirstOrderMatrix Δ p)
+    (right : ScopedCertifiedFirstOrderMatrix Δ q) :
+    ScopedCertifiedFirstOrderMatrix Δ
+      (smartDisjScoped (smartNeg p) q) :=
+  left.neg.disj right
+
 /-- A range certificate for conservative reification.  There is deliberately
 no total `Raw → FirstOrderMatrix`: callers must exhibit syntax whose canonical
 normalization is the requested raw formula. -/
@@ -311,6 +373,11 @@ def ofThirdOrderMatrix : FirstOrderMatrix.ThirdOrder Γ [] → Raw Γ
   | .sometimes (.sometimes body) =>
       .quantified .sometimes (.quantified .sometimes (normalizeFirstOrderMatrix body))
 
+def ofThirdOrderFormula : FirstOrderMatrix.ThirdOrderFormula Γ [] → Raw Γ
+  | .quantified p => ofThirdOrderMatrix p
+  | .neg p => .neg (ofThirdOrderFormula p)
+  | .disj p q => .disj (ofThirdOrderFormula p) (ofThirdOrderFormula q)
+
 def ofOrdered : OrderedFormula Γ order → Raw Γ
   | .elementary p => .elementary p
   | .firstOrder p => ofFirstOrder p
@@ -318,6 +385,7 @@ def ofOrdered : OrderedFormula Γ order → Raw Γ
   | .secondOrder p => ofSecondOrder p
   | .secondOrderMatrix p => ofSecondOrderMatrix p
   | .thirdOrderMatrix p => ofThirdOrderMatrix p
+  | .thirdOrderFormula p => ofThirdOrderFormula p
   | .neg p => .neg (ofOrdered p)
   | .disj _ p q => .disj (ofOrdered p) (ofOrdered q)
 
