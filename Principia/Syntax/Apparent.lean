@@ -364,6 +364,23 @@ abbrev FirstOrder (Γ : RealContext) : BoundContext → Type :=
 abbrev SecondOrder (Γ : RealContext) : BoundContext → Type :=
   Quantified (FirstOrder Γ)
 
+namespace SecondOrder
+
+/-- Capture-free renaming of ambient real variables below one explicit
+second-order binder.  Apparent binders are preserved unchanged. -/
+def renameReal (ρ : Apparent.RealRenaming Γ Ξ) :
+    SecondOrder Γ Δ → SecondOrder Ξ Δ
+  | Quantified.always (Quantified.always body) =>
+      Quantified.always (Quantified.always (Apparent.renameReal ρ body))
+  | Quantified.always (Quantified.sometimes body) =>
+      Quantified.always (Quantified.sometimes (Apparent.renameReal ρ body))
+  | Quantified.sometimes (Quantified.always body) =>
+      Quantified.sometimes (Quantified.always (Apparent.renameReal ρ body))
+  | Quantified.sometimes (Quantified.sometimes body) =>
+      Quantified.sometimes (Quantified.sometimes (Apparent.renameReal ρ body))
+
+end SecondOrder
+
 namespace FirstOrder
 
 /-- PM's primitive idea `(x).φx`. -/
