@@ -1030,6 +1030,30 @@ def star_9_31_line2_reification (φ : Apparent Γ [.elementaryProposition]) :
     line2Normal, smartImp, smartNeg, MatrixRaw.smartNeg, MatrixRaw.toRaw,
     matrixOfApparent_toRaw, ofFirstOrder, star_9_31_antecedent]
 
+/-- Scope-correct raw presentation of line (2).  This presentation records
+the shifts forced by moving each quantified disjunct beneath the other. -/
+def star_9_31_line2_scoped_raw
+    (φ : Apparent Γ [.elementaryProposition]) :
+    Raw (.elementaryProposition :: Γ) :=
+  smartDisjScoped
+    (smartNeg (ofFirstOrder (star_9_31_line2_antecedent φ)))
+    (ofFirstOrder (star_9_31_line2_consequent φ))
+
+/-- Conservative range certificate for the scope-correct presentation. -/
+def star_9_31_line2_scoped_reification
+    (φ : Apparent Γ [.elementaryProposition]) :
+    ScopedCertifiedFirstOrderMatrix [.elementaryProposition]
+      (star_9_31_line2_scoped_raw φ) :=
+  (certifyFirstOrderScoped (star_9_31_line2_antecedent φ)).imp
+    (certifyFirstOrderScoped (star_9_31_line2_consequent φ))
+
+theorem star_9_31_line2_scoped_roundTrip
+    (φ : Apparent Γ [.elementaryProposition]) :
+    normalizeFirstOrderMatrixScoped
+        (star_9_31_line2_scoped_reification φ).formula =
+      star_9_31_line2_scoped_raw φ :=
+  (star_9_31_line2_scoped_reification φ).roundTrip
+
 /-- The displayed value of normalized line (2), with its remaining apparent
 slot instantiated at the leading real variable.  Instantiation is performed
 by the existing capture-safe matrix operation before normalization. -/
@@ -1046,5 +1070,23 @@ def star_9_31_line2_open_reification
       (normalizeFirstOrderMatrixScoped (star_9_31_line2_open_formula φ)) where
   formula := star_9_31_line2_open_formula φ
   roundTrip := rfl
+
+def star_9_31_line2_scoped_open_formula
+    (φ : Apparent Γ [.elementaryProposition]) :
+    FirstOrderMatrix (.elementaryProposition :: Γ) [] :=
+  FirstOrderMatrix.atReal
+    (star_9_31_line2_scoped_reification φ).formula .zero
+
+/-- Opening the certified scoped formula commutes exactly with normalization. -/
+theorem star_9_31_line2_scoped_open_roundTrip
+    (φ : Apparent Γ [.elementaryProposition]) :
+    normalizeFirstOrderMatrixScoped
+        (star_9_31_line2_scoped_open_formula φ) =
+      instantiateHeadRaw (.var (.zero : RealVar
+        (.elementaryProposition :: Γ) .elementaryProposition))
+        (star_9_31_line2_scoped_raw φ) := by
+  unfold star_9_31_line2_scoped_open_formula
+  rw [← instantiateHeadRaw_normalizeFirstOrderMatrixScoped_atReal]
+  rw [star_9_31_line2_scoped_roundTrip]
 
 end PM.Experimental.CanonicalOrderedFormula
