@@ -314,6 +314,12 @@ def leadingQuantifier? : Raw Γ → Option (Quantifier × Raw Γ)
   | .quantified quantifier body => some (quantifier, body)
   | _ => none
 
+theorem eq_quantified_of_leadingQuantifier?_eq_some
+    {p : Raw Γ} {quantifier body}
+    (h : leadingQuantifier? p = some (quantifier, body)) :
+    p = .quantified quantifier body := by
+  cases p <;> simp_all [leadingQuantifier?]
+
 theorem smartDisjScopedAux_nonQuantified
     (depth fuel : Nat) (left right : Raw Γ)
     (hLeft : leadingQuantifier? left = none)
