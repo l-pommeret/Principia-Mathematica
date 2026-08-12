@@ -115,6 +115,29 @@ class Star5KernelGateTests(unittest.TestCase):
             })
             self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
 
+    def test_second_group_is_kernel_checked_together(self):
+        cases = (
+            ("Q247-31", "PM1:✱5·31"),
+            ("Q247-35", "PM1:✱5·35"),
+            ("Q249-5", "PM1:✱5·5"),
+            ("Q249-501", "PM1:✱5·501"),
+        )
+        for suffix, item_id in cases:
+            metadata = json.loads(
+                (ROOT / f"metadata/items/PM1-star-5-kernel-{suffix}.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            item = metadata["items"][0]
+            self.assertEqual(item["id"], item_id)
+            self.assertEqual(item["formal_status"], "kernel-checked")
+            self.assertEqual(metadata["ci_evidence"], {
+                "commit": "36a065210e92dd463dc6b1298cc7c13042692b63",
+                "run": "31550205447",
+                "conclusion": "success",
+            })
+            self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,1 +1,82 @@
-{"batch":"PM1-STAR5-KERNEL-Q247-31","edition":"first","volume":1,"source_range":{"printed_pages":"130","scan_leaves":[152],"canonical_scan":"https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},"witnesses":["PM1-1910-SCAN","WS-PM1"],"items":[{"id":"PM1:✱5·31","kind":"derived-proposition","printed":"⊢ : r . p ⊃ q . ⊃ : p . ⊃ . q . r","printed_page":130,"scan_leaf":152,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star5Kernel.lean","declaration":"PM.FirstEdition.Volume1.Star5.star_5_31","formal_scope":"(r·(p⊃q))⊃(p⊃(q·r)), over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"awaiting-ci","integration_status":"canonical-kernel-candidate","printed_dependencies":["Simp","Comp"],"lean_dependencies":["PM.Derivation.star_1_1","PM.Derivation.star_1_11","PM.FirstEdition.Volume1.Star2.star_2_05","PM.FirstEdition.Volume1.Star2.star_2_43","PM.FirstEdition.Volume1.Star3.star_3_2","PM.FirstEdition.Volume1.Star3.star_3_3","PM.FirstEdition.Volume1.Star3.star_3_26","PM.FirstEdition.Volume1.Star3.star_3_27","PM.FirstEdition.Volume1.Star3.star_3_35","PM.FirstEdition.Volume1.Star3.star_3_47"],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":["explicit primitive inference branches and the listed accepted reconstruction lemmas"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q247-star5-31-kernel-gate.md","editorial_note":"Simp and Comp are expanded transparently; no new inference rule is postulated."}}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR5-KERNEL-Q247-31",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "130",
+    "scan_leaves": [
+      152
+    ],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "WS-PM1"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱5·31",
+      "kind": "derived-proposition",
+      "printed": "⊢ : r . p ⊃ q . ⊃ : p . ⊃ . q . r",
+      "printed_page": 130,
+      "scan_leaf": 152,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star5Kernel.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star5.star_5_31",
+      "formal_scope": "(r·(p⊃q))⊃(p⊃(q·r)), over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked-relaxed-printed-gap",
+      "printed_dependencies": [
+        "Simp",
+        "Comp"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.star_1_1",
+        "PM.Derivation.star_1_11",
+        "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM.FirstEdition.Volume1.Star2.star_2_43",
+        "PM.FirstEdition.Volume1.Star3.star_3_2",
+        "PM.FirstEdition.Volume1.Star3.star_3_3",
+        "PM.FirstEdition.Volume1.Star3.star_3_26",
+        "PM.FirstEdition.Volume1.Star3.star_3_27",
+        "PM.FirstEdition.Volume1.Star3.star_3_35",
+        "PM.FirstEdition.Volume1.Star3.star_3_47"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·1",
+        "PM1:✱1·11",
+        "PM1:✱2·05",
+        "PM1:✱2·43",
+        "PM1:✱3·2",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·3",
+        "PM1:✱3·35",
+        "PM1:✱3·47"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱1·1",
+          "PM1:✱1·11",
+          "PM1:✱2·05",
+          "PM1:✱2·43",
+          "PM1:✱3·2",
+          "PM1:✱3·26",
+          "PM1:✱3·27",
+          "PM1:✱3·3",
+          "PM1:✱3·35",
+          "PM1:✱3·47"
+        ],
+        "printed_but_unused": ["Comp", "Simp"],
+        "strict_attempt_evidence": "reviews/Q247-star5-31-kernel-gate.md",
+        "editorial_note": "Simp and Comp are expanded transparently; no new inference rule is postulated."
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "36a065210e92dd463dc6b1298cc7c13042692b63",
+    "run": "31550205447",
+    "conclusion": "success"
+  }
+}
