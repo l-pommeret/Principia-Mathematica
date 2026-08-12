@@ -350,6 +350,23 @@ theorem smartDisjScopedAux_nonQuantified
 def smartDisjScoped (left right : Raw Γ) : Raw Γ :=
   smartDisjScopedAux 0 (rawSize left + rawSize right) left right
 
+@[simp] theorem rawSize_IndexAction_toRaw
+    (action : IndexAction) (value : RealVar Γ .elementaryProposition) :
+    rawSize (action.toRaw value) = 1 := by
+  cases action <;> rfl
+
+@[simp] theorem rawSize_instantiateBoundAt_var
+    (cutoff : Nat) (value : RealVar Γ .elementaryProposition) (p : Raw Γ) :
+    rawSize (instantiateBoundAt cutoff (.var value) p) = rawSize p := by
+  induction p generalizing cutoff with
+  | elementary p => rfl
+  | bound index =>
+      rw [instantiateBoundAt_bound_var]
+      exact rawSize_IndexAction_toRaw _ _
+  | quantified quantifier body ih => simp [instantiateBoundAt, rawSize, ih]
+  | neg p ih => simp [instantiateBoundAt, rawSize, ih]
+  | disj p q ihp ihq => simp [instantiateBoundAt, rawSize, ihp, ihq]
+
 @[simp] theorem shiftBoundAt_elementary (p : Elementary Γ) :
     shiftBoundAt cutoff (.elementary p) = .elementary p := rfl
 
