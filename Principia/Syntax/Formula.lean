@@ -33,6 +33,20 @@ inductive Elementary : RealContext → Type where
 
 namespace Elementary
 
+/-- A schematic assignment of every real propositional variable in `Γ` to
+an elementary formula over `Ξ`.  Since ✱1–✱5 contain only the single real
+type `elementaryProposition`, this is the exact metalinguistic substitution
+discipline used by their printed instances. -/
+abbrev RealSubstitution (Γ Ξ : RealContext) :=
+  RealVar Γ .elementaryProposition → Elementary Ξ
+
+/-- Simultaneous schematic substitution of real propositional variables. -/
+def substitute (σ : RealSubstitution Γ Ξ) : Elementary Γ → Elementary Ξ
+  | .constant name => .constant name
+  | .var v => σ v
+  | .neg proposition => .neg (substitute σ proposition)
+  | .disj left right => .disj (substitute σ left) (substitute σ right)
+
 prefix:max "∼ₚ" => neg
 /-- PM's unbracketed iterated disjunction, introduced at ✱2·33, associates
 to the left: `p ∨ q ∨ r` abbreviates `(p ∨ q) ∨ r`.  Formulae printed
