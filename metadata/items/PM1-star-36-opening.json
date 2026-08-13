@@ -20,7 +20,9 @@
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "awaiting-ci",
-      "lean_dependencies": []
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM1:✱36·11",
@@ -32,9 +34,22 @@
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
       "lean_dependencies": [
-        "star_36_01"
-      ]
+        "PM.Architecture.Star36RestrictionKernel.star_36_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱36·01"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱36·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star36-parser-gaps.md",
+        "editorial_note": "The asserted form reuses the immediately preceding defining equation; the displayed source carries no bracketed citation."
+      }
     },
     {
       "id": "PM1:✱36·13",
@@ -46,9 +61,9 @@
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "awaiting-ci",
-      "lean_dependencies": [
-        "star_36_01"
-      ]
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM1:✱36·2",
@@ -60,9 +75,9 @@
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "awaiting-ci",
-      "lean_dependencies": [
-        "star_36_13"
-      ]
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM1:✱36·201",
@@ -74,9 +89,9 @@
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "awaiting-ci",
-      "lean_dependencies": [
-        "star_36_2"
-      ]
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
     }
   ],
   "ci_evidence": {

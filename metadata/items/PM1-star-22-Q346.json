@@ -1,15 +1,192 @@
 {
-  "batch":"PM1-STAR22-Q346",
-  "edition":"first",
-  "volume":1,
-  "source_range":{"printed_pages":"220","scan_leaves":[242],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},
-  "witnesses":["PM1-1910-SCAN","PG78050"],
-  "items":[
-    {"id":"PM1:✱22·33","kind":"derived-proposition","printed":"⊢ : x ε α ∩ β .≡ . x ε α . x ε β","printed_page":220,"scan_leaf":242,"lean_path":"Principia/Architecture/Star22Q346Kernel.lean","declaration":"PM.Architecture.Star22Q346Kernel.star_22_33","formal_scope":"exact polymorphic typed-class intersection membership equivalence","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Q346-review.md","printed_dependencies":["PM1:✱20·3","PM1:✱22·2"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱20·3","PM1:✱22·2"],"strict_attempt_evidence":"reviews/Q346-review.md","editorial_note":"The exact endpoint reduces definitionally from the kernel-checked typed intersection definition."}},
-    {"id":"PM1:✱22·34","kind":"derived-proposition","printed":"⊢ : x ε α ∪ β .≡ : x ε α .∨. x ε β","printed_page":220,"scan_leaf":242,"lean_path":"Principia/Architecture/Star22Q346Kernel.lean","declaration":"PM.Architecture.Star22Q346Kernel.star_22_34","formal_scope":"exact polymorphic typed-class union membership equivalence","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Q346-review.md","printed_dependencies":["PM1:✱20·3","PM1:✱22·3"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱20·3","PM1:✱22·3"],"strict_attempt_evidence":"reviews/Q346-review.md","editorial_note":"The exact endpoint reduces definitionally from the kernel-checked typed union definition."}},
-    {"id":"PM1:✱22·35","kind":"derived-proposition","printed":"⊢ : x ε −α .≡ . x ∼ε α","printed_page":220,"scan_leaf":242,"lean_path":"Principia/Architecture/Star22Q346Kernel.lean","declaration":"PM.Architecture.Star22Q346Kernel.star_22_35","formal_scope":"exact polymorphic typed-class complement membership equivalence","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Q346-review.md","printed_dependencies":["PM1:✱20·3","PM1:✱22·31"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱20·3","PM1:✱22·31"],"strict_attempt_evidence":"reviews/Q346-review.md","editorial_note":"The exact endpoint reduces definitionally from the typed complement definition."}},
-    {"id":"PM1:✱22·351","kind":"derived-proposition","printed":"⊢ . −α ≠ α","printed_page":220,"scan_leaf":242,"lean_path":"Principia/Architecture/Star22Q346Kernel.lean","declaration":"PM.Architecture.Star22Q346Kernel.star_22_351","formal_scope":"exact polymorphic complement inequality with PM possible-argument nonempty-type convention explicit","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","printed_dependencies":["PM1:✱22·35","PM1:✱5·19","PM1:✱10·11","PM1:✱10·251","PM1:✱20·43"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱22·35","PM1:✱5·19","PM1:✱10·11","PM1:✱10·251","PM1:✱20·43"],"strict_attempt_evidence":"reviews/Q346-review.md","editorial_note":"The exact theorem is proved pointwise; Nonempty exposes PM's possible-argument convention."}},
-    {"id":"PM1:✱22·36","kind":"derived-proposition","printed":"⊢ . α ∩ β ε Cls","printed_page":220,"scan_leaf":242,"lean_path":"Principia/Architecture/Star22Q346Kernel.lean","declaration":"PM.Architecture.Star22Q346Kernel.star_22_36","formal_scope":"exact type-relative classhood of intersection with characteristic functions as explicit predicative codes","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Q346-review.md","printed_dependencies":["PM1:✱20·41"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱20·41"],"strict_attempt_evidence":"reviews/Q346-review.md","editorial_note":"The typed intersection itself is the predicative characteristic-function code witnessing membership in the type-relative Cls."}}
+  "batch": "PM1-STAR22-Q346",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "220",
+    "scan_leaves": [
+      242
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
   ],
-  "ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+  "items": [
+    {
+      "id": "PM1:✱22·33",
+      "kind": "derived-proposition",
+      "printed": "⊢ : x ε α ∩ β .≡ . x ε α . x ε β",
+      "printed_page": 220,
+      "scan_leaf": 242,
+      "lean_path": "Principia/Architecture/Star22Q346Kernel.lean",
+      "declaration": "PM.Architecture.Star22Q346Kernel.star_22_33",
+      "formal_scope": "exact polymorphic typed-class intersection membership equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q346-review.md",
+      "printed_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱22·2"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·3",
+          "PM1:✱22·2"
+        ],
+        "strict_attempt_evidence": "reviews/Q346-review.md",
+        "editorial_note": "The exact endpoint reduces definitionally from the kernel-checked typed intersection definition."
+      }
+    },
+    {
+      "id": "PM1:✱22·34",
+      "kind": "derived-proposition",
+      "printed": "⊢ : x ε α ∪ β .≡ : x ε α .∨. x ε β",
+      "printed_page": 220,
+      "scan_leaf": 242,
+      "lean_path": "Principia/Architecture/Star22Q346Kernel.lean",
+      "declaration": "PM.Architecture.Star22Q346Kernel.star_22_34",
+      "formal_scope": "exact polymorphic typed-class union membership equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q346-review.md",
+      "printed_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱22·3"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·3",
+          "PM1:✱22·3"
+        ],
+        "strict_attempt_evidence": "reviews/Q346-review.md",
+        "editorial_note": "The exact endpoint reduces definitionally from the kernel-checked typed union definition."
+      }
+    },
+    {
+      "id": "PM1:✱22·35",
+      "kind": "derived-proposition",
+      "printed": "⊢ : x ε −α .≡ . x ∼ε α",
+      "printed_page": 220,
+      "scan_leaf": 242,
+      "lean_path": "Principia/Architecture/Star22Q346Kernel.lean",
+      "declaration": "PM.Architecture.Star22Q346Kernel.star_22_35",
+      "formal_scope": "exact polymorphic typed-class complement membership equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q346-review.md",
+      "printed_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱22·31"
+      ],
+      "lean_dependencies": [
+        "Star22Q341Definitions.Complement"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱22·04"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱22·04"
+        ],
+        "printed_but_unused": [
+          "PM1:✱20·3",
+          "PM1:✱22·31"
+        ],
+        "strict_attempt_evidence": "reviews/Q346-review.md",
+        "editorial_note": "The exact endpoint reduces definitionally from the typed complement definition."
+      }
+    },
+    {
+      "id": "PM1:✱22·351",
+      "kind": "derived-proposition",
+      "printed": "⊢ . −α ≠ α",
+      "printed_page": 220,
+      "scan_leaf": 242,
+      "lean_path": "Principia/Architecture/Star22Q346Kernel.lean",
+      "declaration": "PM.Architecture.Star22Q346Kernel.star_22_351",
+      "formal_scope": "exact polymorphic complement inequality with PM possible-argument nonempty-type convention explicit",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱22·35",
+        "PM1:✱5·19",
+        "PM1:✱10·11",
+        "PM1:✱10·251",
+        "PM1:✱20·43"
+      ],
+      "lean_dependencies": [
+        "Star22Q341Definitions.Complement"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱22·04"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱22·04"
+        ],
+        "printed_but_unused": [
+          "PM1:✱10·11",
+          "PM1:✱10·251",
+          "PM1:✱20·43",
+          "PM1:✱22·35",
+          "PM1:✱5·19"
+        ],
+        "strict_attempt_evidence": "reviews/Q346-review.md",
+        "editorial_note": "The exact theorem is proved pointwise; Nonempty exposes PM's possible-argument convention."
+      }
+    },
+    {
+      "id": "PM1:✱22·36",
+      "kind": "derived-proposition",
+      "printed": "⊢ . α ∩ β ε Cls",
+      "printed_page": 220,
+      "scan_leaf": 242,
+      "lean_path": "Principia/Architecture/Star22Q346Kernel.lean",
+      "declaration": "PM.Architecture.Star22Q346Kernel.star_22_36",
+      "formal_scope": "exact type-relative classhood of intersection with characteristic functions as explicit predicative codes",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q346-review.md",
+      "printed_dependencies": [
+        "PM1:✱20·41"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·41"
+        ],
+        "strict_attempt_evidence": "reviews/Q346-review.md",
+        "editorial_note": "The typed intersection itself is the predicative characteristic-function code witnessing membership in the type-relative Cls."
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

@@ -1,6 +1,110 @@
-{"batch":"PM2-STAR205-AWAITING-01","edition":"first","volume":2,"items":[
-{"id":"PM2:✱205·15","kind":"derived-proposition","printed":"✱205·15. ⊢ min⃗_Pʻ(α∩CʻP)=min⃗_Pʻα","source_status":"source-catalogued-PM-VERBATIM","formal_scope":"audited typed minima endpoint","lean_path":"Principia/Architecture/Star205OpeningKernel.lean","declaration":"PM.Architecture.Star205OpeningKernel.star_205_15","formal_status":"awaiting-ci","integration_status":"awaiting-ci","integration_blocked":false,"parser_status":"reviewed-gap","parser_evidence":"reviews/Star205-catalogue-review.md"},
-{"id":"PM2:✱205·16","kind":"derived-proposition","printed":"✱205·16. ⊢ min⃗_PʻΛ=Λ","source_status":"source-catalogued-PM-VERBATIM","formal_scope":"audited typed minima endpoint","lean_path":"Principia/Architecture/Star205OpeningKernel.lean","declaration":"PM.Architecture.Star205OpeningKernel.star_205_16","formal_status":"awaiting-ci","integration_status":"awaiting-ci","integration_blocked":false,"parser_status":"reviewed-gap","parser_evidence":"reviews/Star205-catalogue-review.md"},
-{"id":"PM2:✱205·161","kind":"derived-proposition","printed":"✱205·161. ⊢ max⃗_PʻΛ=Λ","source_status":"source-catalogued-PM-VERBATIM","formal_scope":"audited typed maxima endpoint","lean_path":"Principia/Architecture/Star205OpeningKernel.lean","declaration":"PM.Architecture.Star205OpeningKernel.star_205_161","formal_status":"awaiting-ci","integration_status":"awaiting-ci","integration_blocked":false,"parser_status":"reviewed-gap","parser_evidence":"reviews/Star205-catalogue-review.md"},
-{"id":"PM2:✱205·181","kind":"derived-proposition","printed":"✱205·181. ⊢ : xPy . ~(xPx) . ~(yPx) .⊃. min_Pʻ(ιʻx∪ιʻy)=x","source_status":"source-catalogued-PM-VERBATIM","formal_scope":"audited typed two-point minimum endpoint","lean_path":"Principia/Architecture/Star205OpeningKernel.lean","declaration":"PM.Architecture.Star205OpeningKernel.star_205_181","formal_status":"awaiting-ci","integration_status":"awaiting-ci","integration_blocked":false,"parser_status":"reviewed-gap","parser_evidence":"reviews/Star205-catalogue-review.md"},
-{"id":"PM2:✱205·182","kind":"derived-proposition","printed":"✱205·182. ⊢ : P²⊂̇J . xPy .⊃. min_Pʻ(ιʻx∪ιʻy)=x","source_status":"source-catalogued-PM-VERBATIM","formal_scope":"audited typed two-point minimum endpoint","lean_path":"Principia/Architecture/Star205OpeningKernel.lean","declaration":"PM.Architecture.Star205OpeningKernel.star_205_182","formal_status":"awaiting-ci","integration_status":"awaiting-ci","integration_blocked":false,"parser_status":"reviewed-gap","parser_evidence":"reviews/Star205-catalogue-review.md"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM2-STAR205-AWAITING-01",
+  "edition": "first",
+  "volume": 2,
+  "items": [
+    {
+      "id": "PM2:✱205·15",
+      "kind": "derived-proposition",
+      "printed": "✱205·15. ⊢ min⃗_Pʻ(α∩CʻP)=min⃗_Pʻα",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_scope": "audited typed minima endpoint",
+      "lean_path": "Principia/Architecture/Star205OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star205OpeningKernel.star_205_15",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "integration_blocked": false,
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star205-catalogue-review.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱205·16",
+      "kind": "derived-proposition",
+      "printed": "✱205·16. ⊢ min⃗_PʻΛ=Λ",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_scope": "audited typed minima endpoint",
+      "lean_path": "Principia/Architecture/Star205OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star205OpeningKernel.star_205_16",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "integration_blocked": false,
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star205-catalogue-review.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱205·161",
+      "kind": "derived-proposition",
+      "printed": "✱205·161. ⊢ max⃗_PʻΛ=Λ",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_scope": "audited typed maxima endpoint",
+      "lean_path": "Principia/Architecture/Star205OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star205OpeningKernel.star_205_161",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "integration_blocked": false,
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star205-catalogue-review.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱205·181",
+      "kind": "derived-proposition",
+      "printed": "✱205·181. ⊢ : xPy . ~(xPx) . ~(yPx) .⊃. min_Pʻ(ιʻx∪ιʻy)=x",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_scope": "audited typed two-point minimum endpoint",
+      "lean_path": "Principia/Architecture/Star205OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star205OpeningKernel.star_205_181",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "integration_blocked": false,
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star205-catalogue-review.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱205·182",
+      "kind": "derived-proposition",
+      "printed": "✱205·182. ⊢ : P²⊂̇J . xPy .⊃. min_Pʻ(ιʻx∪ιʻy)=x",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_scope": "audited typed two-point minimum endpoint",
+      "lean_path": "Principia/Architecture/Star205OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star205OpeningKernel.star_205_182",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "integration_blocked": false,
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star205-catalogue-review.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star205OpeningKernel.star_205_181"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱205·181"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM2:✱205·181"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star205-catalogue-review.md",
+        "editorial_note": "The Lean proof reuses the immediately preceding two-point minimum result; the transitive irreflexivity hypotheses discharge its stronger premises, while the displayed PM line carries no explicit citation."
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

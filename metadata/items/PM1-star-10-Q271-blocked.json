@@ -28,7 +28,8 @@
         "PM.FirstEdition.Volume1.Star3.star_3_26",
         "PM.Architecture.Star10Q265FinalPrerequisites.star_10_11_21"
       ],
-      "normalized_dependencies": ["PM1:✱10·1", "PM1:✱3·27", "PM1:✱3·26", "PM1:✱10·11", "PM1:✱10·21"]
+      "normalized_dependencies": ["PM1:✱10·1", "PM1:✱3·27", "PM1:✱3·26", "PM1:✱10·11"],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱10·11"],"printed_but_unused":["PM1:✱10·11·21"],"strict_attempt_evidence":"reviews/Q271-star-10-audit.md","editorial_note":"The printed combined citation ✱10·11·21 is represented by its existing Lean realization indexed at ✱10·11; it has no separate combined graph node."}
     }
   ],
   "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}

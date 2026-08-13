@@ -24,7 +24,7 @@ theorem star_24_31 (a b : Class Object) :
     apply class_ext
     intro x
     constructor
-    · exact fun _ => True.intro
+    · exact fun _ => by trivial
     · intro _
       by_cases ha : a x
       · exact Or.inr (h x ha)
@@ -33,7 +33,7 @@ theorem star_24_31 (a b : Class Object) :
     have hx : Compl a x ∨ b x := by
       have := congrFun h x
       rw [Union, Universal] at this
-      exact this.symm.mp True.intro
+      exact this.symm.mp (by trivial)
     exact hx.resolve_left (fun hna => hna ha)
 
 /-- ✱24·311. Inclusion in a complement iff the intersection is null. -/
@@ -61,7 +61,7 @@ theorem star_24_312 (a b : Class Object) :
     apply class_ext
     intro x
     constructor
-    · exact fun _ => True.intro
+    · exact fun _ => by trivial
     · intro _
       by_cases ha : a x
       · exact Or.inl ha
@@ -70,7 +70,7 @@ theorem star_24_312 (a b : Class Object) :
     have hx : a x ∨ b x := by
       have := congrFun h x
       rw [Union, Universal] at this
-      exact this.symm.mp True.intro
+      exact this.symm.mp (by trivial)
     exact hx.resolve_left hna
 
 /-- ✱24·313. Disjointness iff subtracting `b` leaves `a`. -/

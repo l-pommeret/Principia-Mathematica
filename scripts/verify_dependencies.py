@@ -36,6 +36,11 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "False.elim",
     "Eq.symm",
     "Eq.mp",
+    # Kernel arithmetic reassociation used internally by the typed finite
+    # relation-power infrastructure (✱91), not a historical PM citation.
+    "Nat.add_assoc",
+    "RightGenerated.base",
+    "RightGenerated.step",
     "And.left",
     "Iff.rfl",
     "Or.inl",
@@ -63,6 +68,10 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "PM.FirstOrder.disjSometimesAlways",
     "PM.Apparent.openHead",
     "PM.Apparent.elementaryValue",
+    # Typed constructors used by the function-formation results ✱9·61–·62.
+    # They build indexed syntax and carry no historical theorem edge.
+    "PM.Apparent.disj",
+    "PM.FirstOrder.disjRightMatrix",
     # Capture-safe real/apparent scope operations and syntactic occurrence
     # predicates.  These form and inspect indexed syntax; they are not PM
     # theorem dependencies.

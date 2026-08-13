@@ -16,7 +16,7 @@ theorem star_24_102 (φ : Class Object) :
   constructor
   · intro h
     funext x
-    exact propext ⟨fun _ => True.intro, fun _ => h x⟩
+    exact propext ⟨fun _ => by trivial, fun _ => h x⟩
   · rintro rfl x
     trivial
 
@@ -31,8 +31,8 @@ theorem star_24_103 (φ : Class Object) :
     exact id
 
 /-- PM I ✱24·104. -/
-theorem star_24_104 (x : Object) : Universal Object x :=
-  True.intro
+theorem star_24_104 (x : Object) : Universal Object x := by
+  trivial
 
 /-- PM I ✱24·105. -/
 theorem star_24_105 (x : Object) : ¬ Null Object x :=

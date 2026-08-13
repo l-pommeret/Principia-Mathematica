@@ -21,7 +21,9 @@
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "awaiting-ci",
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱214·02",
@@ -33,7 +35,9 @@
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "awaiting-ci",
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱214·1",
@@ -45,9 +49,9 @@
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "awaiting-ci",
-      "lean_dependencies": [
-        "star_214_01"
-      ]
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱214·101",
@@ -60,8 +64,21 @@
       "formal_status": "awaiting-ci",
       "integration_status": "awaiting-ci",
       "lean_dependencies": [
-        "star_214_1"
-      ]
+        "Star22Q341Definitions.Complement"
+      ],
+      "printed_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱22·04"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱22·04"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star214-opening-review.md",
+        "editorial_note": "The Lean normalization expands the already established complement constructor; the displayed PM line has no explicit citation."
+      }
     },
     {
       "id": "PM2:✱214·141",
@@ -73,9 +90,9 @@
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "integration_status": "awaiting-ci",
-      "lean_dependencies": [
-        "star_214_02"
-      ]
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
