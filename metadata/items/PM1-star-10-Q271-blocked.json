@@ -4,10 +4,15 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "152",
-    "scan_leaves": [174],
+    "scan_leaves": [
+      174
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
   "items": [
     {
       "id": "PM1:✱10·33",
@@ -19,18 +24,42 @@
       "declaration": "PM.Architecture.Star10Q271Kernel.star_10_33",
       "formal_scope": "exact theorem-specific composition of the four printed ingredients over the literal Raw endpoint",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱10·1", "PM1:✱3·27", "PM1:✱3·26", "PM1:✱10·11·21"],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱10·1",
+        "PM1:✱3·27",
+        "PM1:✱3·26",
+        "PM1:✱10·11·21"
+      ],
       "lean_dependencies": [
         "PM.Architecture.Star10Q264Kernel.star_10_1",
         "PM.FirstEdition.Volume1.Star3.star_3_27",
         "PM.FirstEdition.Volume1.Star3.star_3_26",
         "PM.Architecture.Star10Q265FinalPrerequisites.star_10_11_21"
       ],
-      "normalized_dependencies": ["PM1:✱10·1", "PM1:✱3·27", "PM1:✱3·26", "PM1:✱10·11"],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱10·11"],"printed_but_unused":["PM1:✱10·11·21"],"strict_attempt_evidence":"reviews/Q271-star-10-audit.md","editorial_note":"The printed combined citation ✱10·11·21 is represented by its existing Lean realization indexed at ✱10·11; it has no separate combined graph node."}
+      "normalized_dependencies": [
+        "PM1:✱10·1",
+        "PM1:✱3·27",
+        "PM1:✱3·26",
+        "PM1:✱10·11"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱10·11"
+        ],
+        "printed_but_unused": [
+          "PM1:✱10·11·21"
+        ],
+        "strict_attempt_evidence": "reviews/Q271-star-10-audit.md",
+        "editorial_note": "The printed combined citation ✱10·11·21 is represented by its existing Lean realization indexed at ✱10·11; it has no separate combined graph node."
+      }
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
+    "conclusion": "success"
+  }
 }

@@ -18,8 +18,8 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_01",
       "formal_scope": "exact extensional definition of common field restriction",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -32,8 +32,8 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_11",
       "formal_scope": "exact asserted form of the defining equation",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star36RestrictionKernel.star_36_01"
@@ -59,8 +59,8 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_13",
       "formal_scope": "exact pointwise membership characterization",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -73,8 +73,8 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_2",
       "formal_scope": "exact intersection law for independently restricted relations",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -87,17 +87,17 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_201",
       "formal_scope": "exact equal-relation instance of the intersection law",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
+    "conclusion": "success"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star36-parser-gaps.md"

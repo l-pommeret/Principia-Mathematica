@@ -2,17 +2,53 @@
   "batch": "PM1-STAR10-Q266-14",
   "edition": "first",
   "volume": 1,
-  "source_range": {"printed_pages":"146","scan_leaves":[168],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
-  "items": [{
-    "id": "PM1:✱10·14", "kind": "derived-proposition",
-    "printed": "⊢ : .(x).φx : (x).ψx : ⊃ .φy .ψy", "printed_page": 146, "scan_leaf": 168,
-    "lean_path": "Principia/Architecture/Star9Star10MissingKernel.lean",
-    "declaration": "PM.Architecture.Star9Star10MissingKernel.star_10_14",
-    "formal_scope": "exact typed simultaneous universal instantiation",
-    "source_status": "source-catalogued", "formal_status": "awaiting-ci", "integration_status": "awaiting-ci",
-    "printed_dependencies": ["PM1:✱10·1", "PM1:✱10·13", "PM1:✱3·47"], "lean_dependencies": [], "normalized_dependencies": [],
-    "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·1","PM1:✱10·13","PM1:✱3·47"],"strict_attempt_evidence":"reviews/Q266-review.md","editorial_note":"The direct typed proof has no theorem-call edge; printed citations remain recorded."}
-  }],
-  "ci_evidence": {"commit":"pending","run":"pending","conclusion":"pending"}
+  "source_range": {
+    "printed_pages": "146",
+    "scan_leaves": [
+      168
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱10·14",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .(x).φx : (x).ψx : ⊃ .φy .ψy",
+      "printed_page": 146,
+      "scan_leaf": 168,
+      "lean_path": "Principia/Architecture/Star9Star10MissingKernel.lean",
+      "declaration": "PM.Architecture.Star9Star10MissingKernel.star_10_14",
+      "formal_scope": "exact typed simultaneous universal instantiation",
+      "source_status": "source-catalogued",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱10·1",
+        "PM1:✱10·13",
+        "PM1:✱3·47"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱10·1",
+          "PM1:✱10·13",
+          "PM1:✱3·47"
+        ],
+        "strict_attempt_evidence": "reviews/Q266-review.md",
+        "editorial_note": "The direct typed proof has no theorem-call edge; printed citations remain recorded."
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
+    "conclusion": "success"
+  }
 }
