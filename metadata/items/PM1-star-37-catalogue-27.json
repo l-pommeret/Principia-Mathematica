@@ -1,0 +1,72 @@
+{
+  "batch": "PM1-STAR37-CATALOGUE-27",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "310–310",
+    "scan_leaves": [
+      332
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱37·8",
+      "kind": "derived-proposition",
+      "printed": "✱37·8. \\vdash. (\\alpha\\uparrow \\beta)\\mid S=\\alpha\\uparrow \\breve{S}ʻʻ\\beta",
+      "printed_page": 310,
+      "scan_leaf": 332,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·81",
+      "kind": "derived-proposition",
+      "printed": "✱37·81. \\vdash.R\\mid (\\alpha\\uparrow \\beta)=(Rʻʻ\\alpha)\\uparrow \\beta \\quad[\\text{Proof as in *37·8}]",
+      "printed_page": 310,
+      "scan_leaf": 332,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·82",
+      "kind": "derived-proposition",
+      "printed": "✱37·82. \\vdash.R\\mid (\\alpha\\uparrow \\beta)\\mid S=(Rʻʻ\\alpha)\\uparrow (\\breve{S}ʻʻ\\beta) \\quad[\\text{*37·8·81}]",
+      "printed_page": 310,
+      "scan_leaf": 332,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

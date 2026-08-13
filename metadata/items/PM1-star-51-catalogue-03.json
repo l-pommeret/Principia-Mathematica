@@ -1,0 +1,107 @@
+{
+  "batch": "PM1-STAR51-CATALOGUE-03",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "357–358",
+    "scan_leaves": [
+      379,
+      380
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱51·161",
+      "kind": "derived-proposition",
+      "printed": "✱51·161. ⊢ . ∃!ιʻx",
+      "printed_page": 357,
+      "scan_leaf": 379,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel2.star_51_161",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·17",
+      "kind": "derived-proposition",
+      "printed": "✱51·17. ⊢ . ᗡʻι = V",
+      "printed_page": 357,
+      "scan_leaf": 379,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel2.star_51_17",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·2",
+      "kind": "derived-proposition",
+      "printed": "✱51·2. ⊢ : x ε α .≡ . ιʻx ⊂ α",
+      "printed_page": 358,
+      "scan_leaf": 380,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel2.star_51_2",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·21",
+      "kind": "derived-proposition",
+      "printed": "✱51·21. ⊢ . x ∼ε α − ιʻx",
+      "printed_page": 358,
+      "scan_leaf": 380,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel2.star_51_21",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·211",
+      "kind": "derived-proposition",
+      "printed": "✱51·211. ⊢ : x ∼ε α .≡ . ιʻx ∩ α = Λ",
+      "printed_page": 358,
+      "scan_leaf": 380,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel2.star_51_211",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star51-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

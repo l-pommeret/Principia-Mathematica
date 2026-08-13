@@ -1,0 +1,111 @@
+{
+  "batch": "PM1-STAR60-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "406–411",
+    "scan_leaves": [
+      428,
+      429,
+      430,
+      431,
+      432,
+      433
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱60·01",
+      "kind": "definition",
+      "printed": "✱60·01. Cl = κ̂α̂{κ = β̂(β ⊂ α)} Df",
+      "printed_page": 406,
+      "scan_leaf": 428,
+      "formal_status": "awaiting-ci",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
+      "declaration": "PM.Architecture.Star60MissingKernel.star_60_01",
+      "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star60-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱60·321",
+      "kind": "derived-proposition",
+      "printed": "✱60·321. ⊢ : α = Λ .≡. Clʻα = ιʻα",
+      "printed_page": 407,
+      "scan_leaf": 429,
+      "formal_status": "awaiting-ci",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
+      "declaration": "PM.Architecture.Star60MissingKernel.star_60_321",
+      "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
+      "integration_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱60·33",
+      "kind": "derived-proposition",
+      "printed": "✱60·33. ⊢ . Cl exʻΛ = Λ ∩ Cls",
+      "printed_page": 408,
+      "scan_leaf": 430,
+      "formal_status": "awaiting-ci",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
+      "declaration": "PM.Architecture.Star60MissingKernel.star_60_33",
+      "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
+      "integration_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱60·36",
+      "kind": "derived-proposition",
+      "printed": "✱60·36. ⊢ : ∃!α .⊃. ∃!Cl exʻα",
+      "printed_page": 408,
+      "scan_leaf": 430,
+      "formal_status": "awaiting-ci",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
+      "declaration": "PM.Architecture.Star60MissingKernel.star_60_36",
+      "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
+      "integration_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱60·361",
+      "kind": "derived-proposition",
+      "printed": "✱60·361. ⊢ : ∃!α .≡. ∃!Cl exʻα",
+      "printed_page": 408,
+      "scan_leaf": 430,
+      "formal_status": "awaiting-ci",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
+      "declaration": "PM.Architecture.Star60MissingKernel.star_60_361",
+      "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
+      "integration_status": "awaiting-ci"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

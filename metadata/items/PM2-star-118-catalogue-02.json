@@ -1,0 +1,116 @@
+{
+  "batch": "PM2-STAR118-CATALOGUE-02",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "196–198",
+    "scan_leaves": [
+      236,
+      237,
+      238
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱118·201",
+      "kind": "derived-proposition",
+      "printed": "✱118·201. ⊢ : ∃!(μ+cν) .⊃. smξʻʻ(μ+cν)=(μ+cν)ξ",
+      "printed_page": 198,
+      "scan_leaf": 238,
+      "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star118OpeningKernel.star_118_201",
+      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱118·21",
+      "kind": "derived-proposition",
+      "printed": "✱118·21. ⊢ : ∃!(μ+cν)ξ .⊃. ∃!smξʻʻμ . ∃!smξʻʻν",
+      "printed_page": 196,
+      "scan_leaf": 236,
+      "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star118OpeningKernel.star_118_21",
+      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱118·22",
+      "kind": "derived-proposition",
+      "printed": "✱118·22. ⊢ : μ,ν∈NC .⊃: ∃!(μ+cν)ξ .≡. ∃!(smξʻʻμ+csmξʻʻν)ξ",
+      "printed_page": 196,
+      "scan_leaf": 236,
+      "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star118OpeningKernel.star_118_22",
+      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱118·23",
+      "kind": "derived-proposition",
+      "printed": "✱118·23. ⊢ : μ,ν∈NC .⊃. (μ+cν)ξ=(smξʻʻμ+csmξʻʻν)ξ",
+      "printed_page": 196,
+      "scan_leaf": 236,
+      "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star118OpeningKernel.star_118_23",
+      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱118·24",
+      "kind": "derived-proposition",
+      "printed": "✱118·24. ⊢ : ν∈NC .⊃. (μ+cν)ξ=(μ+csmξʻʻν)ξ",
+      "printed_page": 197,
+      "scan_leaf": 237,
+      "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star118OpeningKernel.star_118_24",
+      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

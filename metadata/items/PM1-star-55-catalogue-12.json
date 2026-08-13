@@ -1,0 +1,116 @@
+{
+  "batch": "PM1-STAR55-CATALOGUE-12",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "390–392",
+    "scan_leaves": [
+      412,
+      413,
+      414
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱55·431",
+      "kind": "derived-proposition",
+      "printed": "✱55·431. ⊢ : x↓y⊍z↓w=a↓b⊍c↓d .⊃: x=a.y=b .∨. x=c.y=d",
+      "printed_page": 390,
+      "scan_leaf": 412,
+      "lean_path": "Principia/Architecture/Star55FiniteKernel.lean",
+      "declaration": "PM.Architecture.Star55FiniteKernel.star_55_431",
+      "formal_scope": "typed ordinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱55·44",
+      "kind": "derived-proposition",
+      "printed": "✱55·44. ⊢ : x↓y⊍z↓w=a↓b⊍c↓d . x↓y≠z↓w .⊃: x=a.y=b.z=c.w=d .∨. x=c.y=d.z=a.w=b",
+      "printed_page": 391,
+      "scan_leaf": 413,
+      "lean_path": "Principia/Architecture/Star55FiniteKernel.lean",
+      "declaration": "PM.Architecture.Star55FiniteKernel.star_55_44",
+      "formal_scope": "typed ordinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱55·5",
+      "kind": "derived-proposition",
+      "printed": "✱55·5. ⊢ : R⊂̇x↓y⊍z↓w .⊃: R=Λ̇ .∨. R=x↓y .∨. R=z↓w .∨. R=x↓y⊍z↓w",
+      "printed_page": 391,
+      "scan_leaf": 413,
+      "lean_path": "Principia/Architecture/Star55FiniteKernel.lean",
+      "declaration": "PM.Architecture.Star55FiniteKernel.star_55_5",
+      "formal_scope": "typed ordinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱55·52",
+      "kind": "derived-proposition",
+      "printed": "✱55·52. ⊢ : x=y .≡. x↓y⊂̇I",
+      "printed_page": 392,
+      "scan_leaf": 414,
+      "lean_path": "Principia/Architecture/Star55FiniteKernel.lean",
+      "declaration": "PM.Architecture.Star55FiniteKernel.star_55_52",
+      "formal_scope": "typed ordinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱55·521",
+      "kind": "derived-proposition",
+      "printed": "✱55·521. ⊢ : x≠y .≡. x↓y⊂̇J",
+      "printed_page": 392,
+      "scan_leaf": 414,
+      "lean_path": "Principia/Architecture/Star55FiniteKernel.lean",
+      "declaration": "PM.Architecture.Star55FiniteKernel.star_55_521",
+      "formal_scope": "typed ordinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

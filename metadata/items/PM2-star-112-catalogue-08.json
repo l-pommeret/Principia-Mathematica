@@ -1,0 +1,113 @@
+{
+  "batch": "PM2-STAR112-CATALOGUE-08",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "103–104",
+    "scan_leaves": [
+      143,
+      144
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱112·35",
+      "kind": "derived-proposition",
+      "printed": "✱112·35. ⊢ : α≠β . α≠γ . β≠γ .⊃. ΣNcʻ(ιʻα∪ιʻβ∪ιʻγ)=Ncʻα+cNcʻβ+cNcʻγ",
+      "printed_page": 103,
+      "scan_leaf": 143,
+      "lean_path": "Principia/Architecture/Star112ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star112ClosingKernel.star_112_35",
+      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star112-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱112·4",
+      "kind": "derived-proposition",
+      "printed": "✱112·4. ⊢ : sʻκ,sʻʻκ∈Cls² excl .⊃. ΣNcʻsʻκ=ΣNcʻsʻʻκ",
+      "printed_page": 104,
+      "scan_leaf": 144,
+      "lean_path": "Principia/Architecture/Star112ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star112ClosingKernel.star_112_4",
+      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star112-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱112·41",
+      "kind": "derived-proposition",
+      "printed": "✱112·41. ⊢ . sʻΣʻʻλ=Σʻsʻλ",
+      "printed_page": 104,
+      "scan_leaf": 144,
+      "lean_path": "Principia/Architecture/Star112ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star112ClosingKernel.star_112_41",
+      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱112·42",
+      "kind": "derived-proposition",
+      "printed": "✱112·42. ⊢ : λ∈Cls² excl .⊃. Σʻʻλ∈Cls² excl",
+      "printed_page": 104,
+      "scan_leaf": 144,
+      "lean_path": "Principia/Architecture/Star112ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star112ClosingKernel.star_112_42",
+      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star112-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱112·43",
+      "kind": "derived-proposition",
+      "printed": "✱112·43. ⊢ : λ∈Cls² excl .⊃. NcʻΣʻΣʻʻλ=NcʻΣʻsʻλ",
+      "printed_page": 104,
+      "scan_leaf": 144,
+      "lean_path": "Principia/Architecture/Star112ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star112ClosingKernel.star_112_43",
+      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star112-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

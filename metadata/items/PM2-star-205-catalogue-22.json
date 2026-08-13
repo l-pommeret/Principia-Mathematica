@@ -1,0 +1,63 @@
+{
+  "batch": "PM2-STAR205-CATALOGUE-22",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "575–576",
+    "scan_leaves": [
+      615,
+      616
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱205·9",
+      "kind": "derived-proposition",
+      "printed": "✱205·9. ⊢ : P∈connex . κ⊂CʻP . κ∉1 .⊃. min⃗_(Pʔκ)ʻα=min⃗_Pʻ(α∩κ)",
+      "printed_page": 575,
+      "scan_leaf": 615,
+      "lean_path": "Principia/FirstEdition/Volume2/Star205Source.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star205-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱205·91",
+      "kind": "derived-proposition",
+      "printed": "✱205·91. ⊢ : P̆ʻʻα⊂α . Ppoʔα∈connex .⊃. min⃗_Pʻα∈0∪1",
+      "printed_page": 576,
+      "scan_leaf": 616,
+      "lean_path": "Principia/Architecture/Star205OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star205OpeningKernel.star_205_91",
+      "formal_scope": "typed order-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star205-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "batch": "PM1-STAR54-CATALOGUE-05",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "380",
+    "scan_leaves": [
+      402
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱54·45",
+      "kind": "derived-proposition",
+      "printed": "✱54·45.  ⊢ : (z,w). z,w ε ιʻx ∪ ιʻy .⊃ . φ(z,w) .≡ . φ(x,x) . φ(x,y) . φ(y,x) . φ(y,y)",
+      "printed_page": 380,
+      "scan_leaf": 402,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_45",
+      "formal_scope": "exact universal expansion over the two-member class",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star54-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱54·451",
+      "kind": "derived-proposition",
+      "printed": "✱54·451.  ⊢ : φ(x,x) . φ(y,y) . φ(x,y) ≡ φ(y,x) .⊃ : (z,w). z,w ε ιʻx ∪ ιʻy .⊃ . φ(z,w) .≡ . φ(x,y) .∨. φ(y,x)",
+      "printed_page": 380,
+      "scan_leaf": 402,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_451",
+      "formal_scope": "exact reduction of the universal binary condition under diagonal and cross equivalence hypotheses",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star54-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱54·452",
+      "kind": "derived-proposition",
+      "printed": "✱54·452.  ⊢ : φ(x,x) . φ(y,y) . φ(x,y) ≡ φ(y,x) .⊃ : (z,w). z,w ε ιʻx ∪ ιʻy .⊃ . φ(z,w) .≡ . φ(x,y)",
+      "printed_page": 380,
+      "scan_leaf": 402,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_452",
+      "formal_scope": "exact reduction of the universal binary condition to one cross instance",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star54-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱54·46",
+      "kind": "derived-proposition",
+      "printed": "✱54·46.  ⊢ : (z,w). z,w ε ιʻx ∪ ιʻy . z ≠ w .⊃ . x ≠ y",
+      "printed_page": 380,
+      "scan_leaf": 402,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_46",
+      "formal_scope": "exact distinct-member implication for a two-member class",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "batch": "PM1-STAR37-CATALOGUE-07",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "296–297",
+    "scan_leaves": [
+      318,
+      319
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱37·11",
+      "kind": "derived-proposition",
+      "printed": "✱37·11. \\vdash.R_{\\in}ʻ\\beta=Rʻʻ\\beta \\quad[\\text{*37·101.*30·3}]",
+      "printed_page": 296,
+      "scan_leaf": 318,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·111",
+      "kind": "derived-proposition",
+      "printed": "✱37·111. \\vdash.\\text{E}!R_{\\in}ʻ\\beta \\quad[\\text{*37·11.*14·21}]",
+      "printed_page": 296,
+      "scan_leaf": 318,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·12",
+      "kind": "derived-proposition",
+      "printed": "✱37·12. \\vdash:(\\beta).Rʻʻ\\beta=Qʻ\\beta.\\equiv.R_{\\in}=Q \\quad[\\text{*30·42.*37·111·11}]",
+      "printed_page": 297,
+      "scan_leaf": 319,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·13",
+      "kind": "derived-proposition",
+      "printed": "✱37·13. \\vdash:P=Q.\\supset.Pʻʻ\\beta=Qʻʻ\\beta",
+      "printed_page": 297,
+      "scan_leaf": 319,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·131",
+      "kind": "derived-proposition",
+      "printed": "✱37·131. \\vdash:P=Q.\\supset.P_{\\in}=Q_{\\in}",
+      "printed_page": 297,
+      "scan_leaf": 319,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

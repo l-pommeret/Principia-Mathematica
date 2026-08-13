@@ -1,0 +1,114 @@
+{
+  "batch": "PM1-STAR64-CATALOGUE-04",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "431",
+    "scan_leaves": [
+      453
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱64·13",
+      "kind": "derived-proposition",
+      "printed": "✱64·13. ⊢. tʻ(t₀ʻα ↑ t₀ʻβ) = tʻ(α ↑ β)",
+      "printed_page": 431,
+      "scan_leaf": 453,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_13",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star64-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱64·14",
+      "kind": "derived-proposition",
+      "printed": "✱64·14. ⊢. (x,y). x(t₀ʻα ↑ t₀ʻβ)y",
+      "printed_page": 431,
+      "scan_leaf": 453,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_14",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star64-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱64·15",
+      "kind": "derived-proposition",
+      "printed": "✱64·15. ⊢. (R). R ⊂ t₀ʻα ↑ t₀ʻβ",
+      "printed_page": 431,
+      "scan_leaf": 453,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_15",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star64-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱64·16",
+      "kind": "derived-proposition",
+      "printed": "✱64·16. ⊢ : R ⊂ t₀ʻα ↑ t₀ʻβ .≡. R ∈ tʻ(t₀ʻα ↑ t₀ʻβ)",
+      "printed_page": 431,
+      "scan_leaf": 453,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_16",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star64-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱64·2",
+      "kind": "derived-proposition",
+      "printed": "✱64·2. ⊢. ∃!R ∩ S .⊃. S ∈ tʻR . tʻR = tʻS",
+      "printed_page": 431,
+      "scan_leaf": 453,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_2",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star64-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

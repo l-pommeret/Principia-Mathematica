@@ -1,0 +1,56 @@
+{
+  "batch": "PM2-STAR105-CATALOGUE-02",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "59",
+    "scan_leaves": [
+      99
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱105·43",
+      "kind": "derived-proposition",
+      "printed": "✱105·43. ⊢ : μ_(1)=N₁cʻα .⊃. μ_(2)=N₂cʻα",
+      "printed_page": 59,
+      "scan_leaf": 99,
+      "lean_path": "Principia/Architecture/Star105FinalKernel.lean",
+      "declaration": "PM.Architecture.Star105FinalKernel.star_105_43",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱105·44",
+      "kind": "derived-proposition",
+      "printed": "✱105·44. ⊢. N₂cʻt²ʻα=Λ",
+      "printed_page": 59,
+      "scan_leaf": 99,
+      "lean_path": "Principia/Architecture/Star105FinalKernel.lean",
+      "declaration": "PM.Architecture.Star105FinalKernel.star_105_44",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

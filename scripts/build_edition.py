@@ -230,9 +230,10 @@ def dependency_list(values: list[str], *, code: bool = False) -> str:
 
 
 def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]) -> str:
-    scan = batch["source_range"]["canonical_scan"]
+    scan = batch.get("source_range", {}).get("canonical_scan")
     leaf = item.get("scan_leaf")
-    scan_media = scan_urls(scan, leaf)
+    printed_page = item.get("printed_page", "not yet recorded")
+    scan_media = scan_urls(scan, leaf) if scan and leaf is not None else None
     printed = printed_formula_markup(item["printed"])
     source = html.escape(block.text)
     lean = html.escape(lean_excerpt(item))
@@ -242,18 +243,22 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
                 if urlsplit(run).scheme in {"http", "https"} else "Pending CI evidence")
     direct_assumptions = item.get("direct_assumptions", [])
     inherited_assumptions = item.get("inherited_assumptions", [])
+    if scan_media:
+        facsimile = f"""<p>Canonical witness: first edition scan, leaf {leaf}.</p>
+<figure class="scan-figure"><a class="scan-image-link" href="{html.escape(scan_media['zoom'], quote=True)}" target="_blank" rel="noreferrer" aria-label="Open a larger image of scan leaf {leaf}"><img src="{html.escape(scan_media['display'], quote=True)}" loading="lazy" decoding="async" width="1280" alt="Principia Mathematica, volume {batch['volume']}, first edition: scan leaf {leaf}, printed page {printed_page}"></a>
+<figcaption><a href="{html.escape(scan_media['page'], quote=True)}" rel="noreferrer">Page and transcription on Wikisource</a> · <a href="{html.escape(scan_media['file'], quote=True)}" rel="noreferrer">Original scan and provenance</a> · <a href="{html.escape(scan_media['zoom'], quote=True)}" target="_blank" rel="noreferrer">Larger image</a></figcaption></figure>"""
+    else:
+        facsimile = '<p class="quiet">No item-level scan leaf has yet been recorded. The diplomatic transcription remains available alongside its source-file provenance.</p>'
     body = f"""
 <nav aria-label="Breadcrumb"><a href="../index.html">Contents</a> / Volume {item['volume'] if 'volume' in item else batch['volume']} / {html.escape(item['id'])}</nav>
 <article class="edition-item">
-<header class="item-header"><p class="eyebrow">Volume {batch['volume']} · printed page {item['printed_page']}</p>
+<header class="item-header"><p class="eyebrow">Volume {batch['volume']} · printed page {printed_page}</p>
 <h1>{html.escape(item['id'].split(':', 1)[1])}</h1><p class="formula" data-pm-formula>{printed}</p>
 <p><span class="badge">{html.escape(item['kind'])}</span> <span class="badge">{html.escape(item['source_status'])}</span></p></header>
 <div class="scope-box"><h2>Scope reading</h2><p>{scope}</p>
 <button type="button" class="scope-toggle" aria-pressed="false">Show printed scope marks</button></div>
 <div class="parallel" aria-label="Source and formal edition">
-<section class="panel scan"><h2>Facsimile</h2><p>Canonical witness: first edition scan, leaf {leaf}.</p>
-<figure class="scan-figure"><a class="scan-image-link" href="{html.escape(scan_media['zoom'], quote=True)}" target="_blank" rel="noreferrer" aria-label="Open a larger image of scan leaf {leaf}"><img src="{html.escape(scan_media['display'], quote=True)}" loading="lazy" decoding="async" width="1280" alt="Principia Mathematica, volume {batch['volume']}, first edition: scan leaf {leaf}, printed page {item['printed_page']}"></a>
-<figcaption><a href="{html.escape(scan_media['page'], quote=True)}" rel="noreferrer">Page and transcription on Wikisource</a> · <a href="{html.escape(scan_media['file'], quote=True)}" rel="noreferrer">Original scan and provenance on Wikimedia Commons</a> · <a href="{html.escape(scan_media['zoom'], quote=True)}" target="_blank" rel="noreferrer">Larger image</a></figcaption></figure></section>
+<section class="panel scan"><h2>Facsimile</h2>{facsimile}</section>
 <section class="panel transcription"><h2>Diplomatic transcription</h2><pre class="source-text">{source}</pre></section>
 <section class="panel lean"><h2>Lean reconstruction</h2><pre><code>{lean}</code></pre>
 <dl><dt>Declaration</dt><dd><code>{html.escape(item['declaration'])}</code></dd><dt>Formal scope</dt><dd>{html.escape(item['formal_scope'])}</dd></dl></section>
@@ -369,8 +374,9 @@ def build(output: Path) -> None:
         linked = [record for record in apparatus if record["item"] == item["id"]]
         target = output / "items" / f"{slug(item['id'])}.html"
         target.write_text(item_page(item, batch, blocks[item["id"]], linked), encoding="utf-8")
+        printed_page = item.get("printed_page", "not yet recorded")
         cards.append(f"""<li data-item-id="{html.escape(item['id'])}"><a href="items/{target.name}"><b>{html.escape(item['id'].split(':', 1)[1])}</b>
-<span>{html.escape(item['kind'])}</span><small>p. {item['printed_page']} · {html.escape(item['printed'])}</small></a></li>""")
+<span>{html.escape(item['kind'])}</span><small>p. {printed_page} · {html.escape(item['printed'])}</small></a></li>""")
     source_cards = []
     source_ids = {record["id"] for record in source_records}
     for record in source_records:

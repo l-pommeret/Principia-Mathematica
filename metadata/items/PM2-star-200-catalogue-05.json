@@ -1,0 +1,120 @@
+{
+  "batch": "PM2-STAR200-CATALOGUE-05",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "521–522",
+    "scan_leaves": [
+      561,
+      562
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm#*200"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱200·41",
+      "kind": "derived-proposition",
+      "printed": "✱200·41. ⊢ : P⇸x⊂̇J .≡. x⇷P⊂̇J .≡. P⊂̇J . x∉CʻP",
+      "printed_page": 521,
+      "scan_leaf": 561,
+      "lean_path": "Principia/Architecture/Star200ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star200ClosingKernel.star_200_41",
+      "formal_scope": "typed relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star200-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱200·42",
+      "kind": "derived-proposition",
+      "printed": "✱200·42. ⊢ : ΣʻP⊂̇J .≡. CʻP⊂RlʻJ . F;P⊂̇J",
+      "printed_page": 521,
+      "scan_leaf": 561,
+      "lean_path": "Principia/FirstEdition/Volume2/Star200Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source transcription only; no Lean declaration exists",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-formal-target",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star200-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱200·421",
+      "kind": "derived-proposition",
+      "printed": "✱200·421. ⊢ : P∈Rel²excl . P⊂̇J . Q∈CʻP .⊃. Q=(ΣʻP)ʔCʻQ",
+      "printed_page": 522,
+      "scan_leaf": 562,
+      "lean_path": "Principia/FirstEdition/Volume2/Star200Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source transcription only; no Lean declaration exists",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-formal-target",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star200-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱200·422",
+      "kind": "derived-proposition",
+      "printed": "✱200·422. ⊢ : ΣʻP⊂̇J .⊃. Pʔ(-ιʻΛ̇)⊂̇J",
+      "printed_page": 522,
+      "scan_leaf": 562,
+      "lean_path": "Principia/FirstEdition/Volume2/Star200Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source transcription only; no Lean declaration exists",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-formal-target",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star200-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱200·423",
+      "kind": "derived-proposition",
+      "printed": "✱200·423. ⊢ :: P∈Rel²excl . Λ∉CʻP .⊃ : ΣʻP⊂̇J .≡. P⊂̇J . CʻP⊂RlʻJ",
+      "printed_page": 522,
+      "scan_leaf": 562,
+      "lean_path": "Principia/FirstEdition/Volume2/Star200Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source transcription only; no Lean declaration exists",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-formal-target",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star200-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

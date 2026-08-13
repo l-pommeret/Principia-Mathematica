@@ -1,0 +1,105 @@
+{
+  "batch": "PM1-STAR37-CATALOGUE-08",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "297–298",
+    "scan_leaves": [
+      319,
+      320
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱37·14",
+      "kind": "derived-proposition",
+      "printed": "✱37·14. \\vdash:P=Q.\\equiv.P_{\\in}=Q_{\\in}",
+      "printed_page": 297,
+      "scan_leaf": 319,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·17",
+      "kind": "derived-proposition",
+      "printed": "✱37·17. \\vdash\\colon\\ldotp Rʻʻ\\beta\\subset \\alpha.\\equiv:y\\in \\beta.xRy.\\supset_{x,y}.x\\in \\alpha",
+      "printed_page": 297,
+      "scan_leaf": 319,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·171",
+      "kind": "derived-proposition",
+      "printed": "✱37·171. \\vdash\\colon\\ldotp \\breve{R}ʻʻ\\alpha\\subset \\beta.\\equiv:x\\in \\alpha.xRy.\\supset_{x,y}.y\\in \\beta",
+      "printed_page": 298,
+      "scan_leaf": 320,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·18",
+      "kind": "derived-proposition",
+      "printed": "✱37·18. \\vdash:y\\in \\beta.\\supset.\\overrightarrow{R}ʻy\\subset Rʻʻ\\beta",
+      "printed_page": 298,
+      "scan_leaf": 320,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·181",
+      "kind": "derived-proposition",
+      "printed": "✱37·181. \\vdash:x\\in \\alpha.\\supset.\\overleftarrow{R}ʻx\\subset \\breve{R}ʻʻ\\alpha \\quad[\\text{Proof as in *37·18}]",
+      "printed_page": 298,
+      "scan_leaf": 320,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

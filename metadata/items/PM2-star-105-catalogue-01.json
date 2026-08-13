@@ -1,0 +1,107 @@
+{
+  "batch": "PM2-STAR105-CATALOGUE-01",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "55–59",
+    "scan_leaves": [
+      95,
+      96,
+      98,
+      99
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱105·3",
+      "kind": "derived-proposition",
+      "printed": "✱105·3. ⊢ : μ=N₀cʻα .⊃. μ_(1)=N₁cʻα",
+      "printed_page": 55,
+      "scan_leaf": 95,
+      "lean_path": "Principia/Architecture/Star105ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star105ThirdKernel.star_105_3",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱105·322",
+      "kind": "derived-proposition",
+      "printed": "✱105·322. ⊢ : ∃!N₁cʻα .⊃: N₁cʻα=N₁cʻβ .≡. N₀cʻα=N₀cʻβ",
+      "printed_page": 56,
+      "scan_leaf": 96,
+      "lean_path": "Principia/Architecture/Star105ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star105ThirdKernel.star_105_322",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱105·4",
+      "kind": "derived-proposition",
+      "printed": "✱105·4. ⊢ : γ∈N₂cʻα .⊃. ιʻʻγ∈N₁cʻα",
+      "printed_page": 58,
+      "scan_leaf": 98,
+      "lean_path": "Principia/Architecture/Star105FinalKernel.lean",
+      "declaration": "PM.Architecture.Star105FinalKernel.star_105_4",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱105·41",
+      "kind": "derived-proposition",
+      "printed": "✱105·41. ⊢ : ∃!N₂cʻα .⊃. ∃!N₁cʻα",
+      "printed_page": 58,
+      "scan_leaf": 98,
+      "lean_path": "Principia/Architecture/Star105FinalKernel.lean",
+      "declaration": "PM.Architecture.Star105FinalKernel.star_105_41",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱105·42",
+      "kind": "derived-proposition",
+      "printed": "✱105·42. ⊢ : N₁cʻα=Λ .⊃. N₂cʻα=Λ",
+      "printed_page": 59,
+      "scan_leaf": 99,
+      "lean_path": "Principia/Architecture/Star105FinalKernel.lean",
+      "declaration": "PM.Architecture.Star105FinalKernel.star_105_42",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

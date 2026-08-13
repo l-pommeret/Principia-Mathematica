@@ -1,0 +1,70 @@
+{
+  "batch": "PM1-STAR31-CATALOGUE-04",
+  "edition": "first",
+  "volume": 1,
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱31·33",
+      "kind": "derived-proposition",
+      "printed": "⊢ . CnvʻCnvʻP = P",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel2.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel2.star_31_33",
+      "formal_scope": "candidate converse involution; strict audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·34",
+      "kind": "derived-proposition",
+      "printed": "⊢ : P = Q̌ ≡ . Q = P̌",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel2.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel2.star_31_34",
+      "formal_scope": "candidate converse symmetry; strict audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·4",
+      "kind": "derived-proposition",
+      "printed": "⊢ : P ⪽ Q ≡ . P̌ ⪽ Q̌",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel3.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel3.star_31_4",
+      "formal_scope": "candidate subrelation converse equivalence; strict audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·41",
+      "kind": "derived-proposition",
+      "printed": "⊢ : P ⪽ Q̌ ≡ . P̌ ⪽ Q",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel3.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel3.star_31_41",
+      "formal_scope": "candidate crossed converse subrelation; strict audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·5",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∃̇!P ≡ . ∃̇!P̌",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel3.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel3.star_31_5",
+      "formal_scope": "candidate relation nonemptiness equivalence; strict audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

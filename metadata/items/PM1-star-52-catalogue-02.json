@@ -1,0 +1,137 @@
+{
+  "batch": "PM1-STAR52-CATALOGUE-02",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "364",
+    "scan_leaves": [
+      386
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱52·14",
+      "kind": "derived-proposition",
+      "printed": "✱52·14.  ⊢ . 1 = ιʻʻV  [✱52·13.✱37·28]",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star52OpeningKernel.star_52_14",
+      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱52·13",
+        "✱37·28"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱52·13"
+      ]
+    },
+    {
+      "id": "PM1:✱52·15",
+      "kind": "derived-proposition",
+      "printed": "✱52·15.  ⊢ : α ∈ 1 .≡. E! ι̌ʻα  [✱51·54.✱52·1]",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star52OpeningKernel.star_52_15",
+      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱51·54",
+        "✱52·1"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱51·54",
+        "PM1:✱52·1"
+      ]
+    },
+    {
+      "id": "PM1:✱52·16",
+      "kind": "derived-proposition",
+      "printed": "✱52·16.  ⊢ :: α ∈ 1 .≡ : ∃!α : x,y ∈ α .⊃ₓ,ᵧ. x = y\n[✱52·15.✱51·55.✱14·203]",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star52OpeningKernel.star_52_16",
+      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱52·15",
+        "✱51·55",
+        "✱14·203"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱52·15",
+        "PM1:✱51·55",
+        "PM1:✱14·203"
+      ]
+    },
+    {
+      "id": "PM1:✱52·17",
+      "kind": "derived-proposition",
+      "printed": "✱52·17.  ⊢ : α ∈ 1 .≡. ι̌ʻα = (℩x)(x ∈ α)  [✱51·58.✱52·15]",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "lean_path": "Principia/Architecture/Star52NextKernel.lean",
+      "declaration": "PM.Architecture.Star52NextKernel.star_52_17",
+      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱51·58",
+        "✱52·15"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱51·58",
+        "PM1:✱52·15"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star52-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱52·171",
+      "kind": "derived-proposition",
+      "printed": "✱52·171.  ⊢ : α ∈ 1 .≡. E!(℩x)(x ∈ α)  [✱51·55.✱52·15]",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "lean_path": "Principia/Architecture/Star52NextKernel.lean",
+      "declaration": "PM.Architecture.Star52NextKernel.star_52_171",
+      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱51·55",
+        "✱52·15"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱51·55",
+        "PM1:✱52·15"
+      ]
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

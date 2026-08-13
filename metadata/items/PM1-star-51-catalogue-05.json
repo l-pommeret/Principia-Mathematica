@@ -1,0 +1,104 @@
+{
+  "batch": "PM1-STAR51-CATALOGUE-05",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "359",
+    "scan_leaves": [
+      381
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱51·232",
+      "kind": "derived-proposition",
+      "printed": "✱51·232. ⊢ : z ε (ιʻx ∪ ιʻy) .≡ : z = x .∨. z = y",
+      "printed_page": 359,
+      "scan_leaf": 381,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_232",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·233",
+      "kind": "derived-proposition",
+      "printed": "✱51·233. ⊢ :: α = ιʻx ∪ ιʻy .⊃ :: (z) :: z ε α .≡ : z = x .∨. z = y",
+      "printed_page": 359,
+      "scan_leaf": 381,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_233",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·234",
+      "kind": "derived-proposition",
+      "printed": "✱51·234. ⊢ :: α = ιʻx ∪ ιʻy .⊃ :: z ε α .⊃z. φz : ≡ . φx . φy",
+      "printed_page": 359,
+      "scan_leaf": 381,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_234",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·235",
+      "kind": "derived-proposition",
+      "printed": "✱51·235. ⊢ :: α = ιʻx ∪ ιʻy .⊃ :: (∃z) . z ε α . φz : ≡ : φx .∨. φy",
+      "printed_page": 359,
+      "scan_leaf": 381,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_235",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·236",
+      "kind": "derived-proposition",
+      "printed": "✱51·236. ⊢ : z ε ιʻx ∪ β .≡ : z = x .∨. z ε β",
+      "printed_page": 359,
+      "scan_leaf": 381,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_236",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

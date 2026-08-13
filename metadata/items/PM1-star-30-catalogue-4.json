@@ -1,0 +1,99 @@
+{
+  "batch": "PM1-STAR30-CATALOGUE-4",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "249",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱30·32",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\text{E}!Rʻy.\\equiv.(Rʻy)Ry \\quad[\\text{*14·22}]\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
+      "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_32",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱30·33",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash\\colon\\colon\\text{E}!Rʻy.\\supset\\colon\\ldotp \\psi(Rʻy):\\equiv:(\\exists x).xRy.\\psi x:\\equiv:xRy.\\supset_{x}.\\psi x\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
+      "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_33",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱30·34",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash\\colon\\ldotp xRy.\\equiv_{x}.xSy:\\supset:\\text{E}!Rʻy.\\equiv.\\text{E}!Sʻy\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
+      "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_34",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱30·341",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash\\colon\\ldotp xRy.\\equiv_{x}.xSy:\\supset:\\text{E}!Rʻy.\\equiv.Rʻy=Sʻy\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
+      "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_341",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱30·35",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash\\colon\\ldotp R=S.\\supset:\\text{E}!Rʻy.\\equiv.\\text{E}!Sʻy\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
+      "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_35",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

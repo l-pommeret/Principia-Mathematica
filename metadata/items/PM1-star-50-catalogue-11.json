@@ -1,0 +1,78 @@
+{
+  "batch": "PM1-STAR50-CATALOGUE-11",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "355",
+    "scan_leaves": [
+      377
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱50·75",
+      "kind": "derived-proposition",
+      "printed": "✱50·75. ⊢ . I ∥ R = |R",
+      "printed_page": 355,
+      "scan_leaf": 377,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel5.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_75",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star50-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱50·76",
+      "kind": "derived-proposition",
+      "printed": "✱50·76. ⊢ : P | = R | .≡. P = R",
+      "printed_page": 355,
+      "scan_leaf": 377,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel5.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_76",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star50-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱50·761",
+      "kind": "derived-proposition",
+      "printed": "✱50·761. ⊢ : |P = |R .≡. P = R",
+      "printed_page": 355,
+      "scan_leaf": 377,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel5.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_761",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star50-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

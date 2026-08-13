@@ -1,0 +1,107 @@
+{
+  "batch": "PM1-STAR51-CATALOGUE-06",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "359–360",
+    "scan_leaves": [
+      381,
+      382
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱51·237",
+      "kind": "derived-proposition",
+      "printed": "✱51·237. ⊢ :: α = ιʻx ∪ β .⊃ :: (z) :: z ε α .≡ : z = x .∨. z ε β",
+      "printed_page": 359,
+      "scan_leaf": 381,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_237",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·238",
+      "kind": "derived-proposition",
+      "printed": "✱51·238. ⊢ :: α = ιʻx ∪ β .⊃ :: z ε α .⊃z. φz : ≡ : φx : z ε β .⊃z. φz",
+      "printed_page": 360,
+      "scan_leaf": 382,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_238",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·239",
+      "kind": "derived-proposition",
+      "printed": "✱51·239. ⊢ :: α = ιʻx ∪ β .⊃ :: (∃z) . z ε α . φz : ≡ : φx .∨. (∃z) . z ε β . φz",
+      "printed_page": 360,
+      "scan_leaf": 382,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_239",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·24",
+      "kind": "derived-proposition",
+      "printed": "✱51·24. ⊢ : ιʻy ⊂ ιʻx ∪ β .≡ : y = x .∨. y ε β",
+      "printed_page": 360,
+      "scan_leaf": 382,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_24",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·25",
+      "kind": "derived-proposition",
+      "printed": "✱51·25. ⊢ : α ⊂ ιʻx ∪ β . x ∼ε α .⊃ . α ⊂ β",
+      "printed_page": 360,
+      "scan_leaf": 382,
+      "lean_path": "Principia/Architecture/Star51OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_25",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star51-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

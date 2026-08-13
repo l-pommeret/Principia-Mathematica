@@ -1,0 +1,135 @@
+{
+  "batch": "PM1-STAR30-CATALOGUE-2",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "248–249",
+    "scan_leaves": [
+      270,
+      271
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱30·15",
+      "kind": "derived-proposition",
+      "printed": "✱30·15. \\(\\vdash\\colon\\ldotp p:[Rʻy].\\chi(Rʻy):\\equiv:[Rʻy].p.\\chi(Rʻy) \\quad[\\text{*14·34}]\\)",
+      "printed_page": 248,
+      "scan_leaf": 270,
+      "lean_path": "Principia/Architecture/Star30ScopedDescriptionKernel.lean",
+      "declaration": "PM.Architecture.Star30ScopedDescriptionKernel.star_30_15",
+      "formal_scope": "contextual definite-description reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "printed_dependencies": [
+        "✱14·34"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱14·34"
+      ]
+    },
+    {
+      "id": "PM1:✱30·16",
+      "kind": "derived-proposition",
+      "printed": "✱30·16. \\(\\vdash\\colon [Rʻy].f(Rʻy,Sʻz).\\equiv.[Sʻz].f(Rʻy,Sʻz) \\quad[\\text{*14·113}]\\)",
+      "printed_page": 248,
+      "scan_leaf": 270,
+      "lean_path": "Principia/Architecture/Star30ScopedDescriptionKernel.lean",
+      "declaration": "PM.Architecture.Star30ScopedDescriptionKernel.star_30_16",
+      "formal_scope": "contextual definite-description reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "printed_dependencies": [
+        "✱14·113"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱14·113"
+      ]
+    },
+    {
+      "id": "PM1:✱30·17",
+      "kind": "derived-proposition",
+      "printed": "✱30·17. \\(\\vdash\\colon\\ldotp[Rʻy].f(Rʻy,Sʻz).\\equiv:(\\exists b,c):xRy.\\equiv_{x}.x=b:xSz.\\equiv_{x}.x=c:f(b,c) \\quad[\\text{*14·112}]\\)",
+      "printed_page": 248,
+      "scan_leaf": 270,
+      "lean_path": "Principia/Architecture/Star30ScopedDescriptionKernel.lean",
+      "declaration": "PM.Architecture.Star30ScopedDescriptionKernel.star_30_17",
+      "formal_scope": "contextual definite-description reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "printed_dependencies": [
+        "✱14·112"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱14·112"
+      ]
+    },
+    {
+      "id": "PM1:✱30·18",
+      "kind": "derived-proposition",
+      "printed": "✱30·18. \\(\\vdash\\colon\\ldotp\\exists!Rʻy:(z).\\phi z:\\supset.\\phi(Rʻy) \\quad[\\text{*14·18}]\\)",
+      "printed_page": 248,
+      "scan_leaf": 270,
+      "lean_path": "Principia/Architecture/Star30ScopedDescriptionKernel.lean",
+      "declaration": "PM.Architecture.Star30ScopedDescriptionKernel.star_30_18",
+      "formal_scope": "contextual definite-description reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "printed_dependencies": [
+        "✱14·18"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱14·18"
+      ]
+    },
+    {
+      "id": "PM1:✱30·19",
+      "kind": "derived-proposition",
+      "printed": "✱30·19. \\(\\vdash\\colon\\ldotp Rʻy=b.\\supset:\\psi(Rʻy).\\equiv.\\psi b \\quad[\\text{*14·15}]\\)",
+      "printed_page": 249,
+      "scan_leaf": 271,
+      "lean_path": "Principia/Architecture/Star30ScopedDescriptionKernel.lean",
+      "declaration": "PM.Architecture.Star30ScopedDescriptionKernel.star_30_19",
+      "formal_scope": "contextual definite-description reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "printed_dependencies": [
+        "✱14·15"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱14·15"
+      ]
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

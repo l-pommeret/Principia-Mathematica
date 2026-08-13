@@ -1,0 +1,105 @@
+{
+  "batch": "PM2-STAR106-CATALOGUE-07",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "63–64",
+    "scan_leaves": [
+      103,
+      104
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱106·31",
+      "kind": "derived-proposition",
+      "printed": "✱106·31. ⊢ : x,y∈t₀ʻα . t₀ʻα=t₀ʻβ . x≠y .⊃. (∃γ,δ). γ∈N₀₀cʻα . δ∈N₀₀cʻβ",
+      "printed_page": 63,
+      "scan_leaf": 103,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_31",
+      "formal_scope": "typed descending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱106·311",
+      "kind": "derived-proposition",
+      "printed": "✱106·311. ⊢ : x∈t₀ʻα . t₀ʻα=t₀ʻβ : α=Λ .∨. β=Λ :⊃. (∃γ,δ). γ∈N₀₀cʻα . δ∈N₀₀cʻβ",
+      "printed_page": 63,
+      "scan_leaf": 103,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_311",
+      "formal_scope": "typed descending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱106·312",
+      "kind": "derived-proposition",
+      "printed": "✱106·312. ⊢ : t₀ʻα=ιʻx . α=β=ιʻx .⊃. (∃γ,δ). γ∈N₀₀cʻα . δ∈N₀₀cʻβ",
+      "printed_page": 63,
+      "scan_leaf": 103,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_312",
+      "formal_scope": "typed descending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱106·32",
+      "kind": "derived-proposition",
+      "printed": "✱106·32. ⊢ : t₀ʻα=t₀ʻβ .⊃. (∃γ,δ). γ∈N₀₀cʻα . δ∈N₀₀cʻβ",
+      "printed_page": 64,
+      "scan_leaf": 104,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_32",
+      "formal_scope": "typed descending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱106·4",
+      "kind": "derived-proposition",
+      "printed": "✱106·4. ⊢ : μ=N₀cʻα .⊃. μ₍₀₀₎=N₀₀cʻα",
+      "printed_page": 64,
+      "scan_leaf": 104,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_4",
+      "formal_scope": "typed descending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

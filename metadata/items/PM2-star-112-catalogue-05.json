@@ -1,0 +1,111 @@
+{
+  "batch": "PM2-STAR112-CATALOGUE-05",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "101–102",
+    "scan_leaves": [
+      141,
+      142
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱112·23",
+      "kind": "derived-proposition",
+      "printed": "✱112·23. ⊢ : Mult ax .⊃: κ,λ∈Cls² excl . ∃!κ sm̄ λ∩Rlʻsm .⊃. sʻκ,sʻλ∈ΣNcʻκ . ΣNcʻκ=ΣNcʻλ",
+      "printed_page": 101,
+      "scan_leaf": 141,
+      "lean_path": "Principia/Architecture/Star112MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star112MiddleKernel.star_112_23",
+      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star112-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱112·231",
+      "kind": "derived-proposition",
+      "printed": "✱112·231. ⊢ : S∈κ sm̄ λ∩ᗡʻʻʻsm .⊃. ∈↧|S|Cnvʻ∈↧∈(∈↧ʻʻκ) sm̄ (∈↧ʻʻλ)∩Rlʻsm",
+      "printed_page": 101,
+      "scan_leaf": 141,
+      "lean_path": "Principia/Architecture/Star112MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star112MiddleKernel.star_112_231",
+      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star112-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱112·24",
+      "kind": "derived-proposition",
+      "printed": "✱112·24. ⊢ : Mult ax .⊃: μ,ν∈NC . κ,λ∈μ∩Clʻν .⊃. ΣNcʻκ=ΣNcʻλ",
+      "printed_page": 102,
+      "scan_leaf": 142,
+      "lean_path": "Principia/Architecture/Star112MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star112MiddleKernel.star_112_24",
+      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star112-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱112·3",
+      "kind": "derived-proposition",
+      "printed": "✱112·3. ⊢ . ΣʻΛ=Λ",
+      "printed_page": 102,
+      "scan_leaf": 142,
+      "lean_path": "Principia/Architecture/Star112MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star112MiddleKernel.star_112_3",
+      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱112·301",
+      "kind": "derived-proposition",
+      "printed": "✱112·301. ⊢ . ΣʻιʻΛ=Λ",
+      "printed_page": 102,
+      "scan_leaf": 142,
+      "lean_path": "Principia/Architecture/Star112MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star112MiddleKernel.star_112_301",
+      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

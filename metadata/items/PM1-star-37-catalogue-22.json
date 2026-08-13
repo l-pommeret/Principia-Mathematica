@@ -1,0 +1,104 @@
+{
+  "batch": "PM1-STAR37-CATALOGUE-22",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "309–309",
+    "scan_leaves": [
+      331
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱37·705",
+      "kind": "derived-proposition",
+      "printed": "✱37·705. \\vdash:x\\in \\alpha.\\supset.\\overleftarrow{R}ʻx\\in \\overleftarrow{R}ʻʻ\\alpha \\quad[\\text{*37·62.*32·121}]",
+      "printed_page": 309,
+      "scan_leaf": 331,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·706",
+      "kind": "derived-proposition",
+      "printed": "✱37·706. \\vdash\\colon\\ldotp \\alpha\\in \\overrightarrow{R}ʻʻ\\beta.\\supset_{\\alpha}.\\psi\\alpha:\\equiv:y\\in \\beta.\\supset_{y}.\\psi(\\overrightarrow{R}ʻy) \\quad[\\text{*37·63}]",
+      "printed_page": 309,
+      "scan_leaf": 331,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·707",
+      "kind": "derived-proposition",
+      "printed": "✱37·707. \\vdash\\colon\\ldotp \\beta\\in \\overleftarrow{R}ʻʻ\\alpha.\\supset_{\\beta}.\\psi\\beta:\\equiv:x\\in \\alpha.\\supset_{x}.\\psi(\\overleftarrow{R}ʻx) \\quad[\\text{*37·63}]",
+      "printed_page": 309,
+      "scan_leaf": 331,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·708",
+      "kind": "derived-proposition",
+      "printed": "✱37·708. \\vdash\\colon\\ldotp (\\exists \\alpha).\\alpha\\in \\overrightarrow{R}ʻʻ\\beta.\\psi\\alpha.\\equiv.(\\exists y).y\\in \\beta.\\psi(\\overrightarrow{R}ʻy) \\quad[\\text{*37·64}]",
+      "printed_page": 309,
+      "scan_leaf": 331,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·709",
+      "kind": "derived-proposition",
+      "printed": "✱37·709. \\vdash\\colon\\ldotp (\\exists \\alpha).\\alpha\\in \\overleftarrow{R}ʻʻ\\beta.\\psi\\alpha.\\equiv.(\\exists x).x\\in \\beta.\\psi(\\overleftarrow{R}ʻx) \\quad[\\text{*37·64}]",
+      "printed_page": 309,
+      "scan_leaf": 331,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

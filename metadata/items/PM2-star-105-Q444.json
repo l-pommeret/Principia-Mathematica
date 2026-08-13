@@ -1,1 +1,56 @@
-{"batch":"PM2-STAR105-Q444","edition":"first","volume":2,"source_range":{"printed_pages":"56","scan_leaves":[96],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu","leaf_derivatives":[{"scan_leaf":96,"printed_page":56,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page96-1920px-Russell%2C_1912.djvu.jpg","sha256":"5bb149a982fce0550e1783ea655b3f92584f543ebaae2598d52d61e3156df597"}],"project_gutenberg":"https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},"witnesses":["PM2-1912-SCAN","PG78255"],"source_status":"source-catalogued-PM-VERBATIM","integration_status":"source-only-no-formal-target","items":[{"id":"PM2:✱105·327","kind":"derived-proposition","printed":"✱105·327. ⊢ : μ ∈ NC . μ⁽²⁾ = N₀cʻγ .⊃ . μ = N²cʻγ","printed_page":56,"scan_leaf":96,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only","formal_scope":"Source only.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-descending-cardinal-syntax-or-derivation-layer","printed_dependencies":[],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM2-star-105-327.txt"}],"review":{"apparatus_required":false,"sic_required":false,"note":"Canonical scan and PG78255 agree; no authorial print error detected."},"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM2-STAR105-Q444",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "56",
+    "scan_leaves": [
+      96
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 96,
+        "printed_page": 56,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page96-1920px-Russell%2C_1912.djvu.jpg",
+        "sha256": "5bb149a982fce0550e1783ea655b3f92584f543ebaae2598d52d61e3156df597"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "prepared",
+  "items": [
+    {
+      "id": "PM2:✱105·327",
+      "kind": "derived-proposition",
+      "printed": "✱105·327. ⊢ : μ∈NC.μ_(2)=N₀cʻγ .⊃. μ=N²cʻγ",
+      "printed_page": 56,
+      "scan_leaf": 96,
+      "lean_path": "Principia/Architecture/Star105FourthKernel.lean",
+      "declaration": "PM.Architecture.Star105FourthKernel.star_105_327",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-105-327.txt"
+    }
+  ],
+  "review": {
+    "apparatus_required": false,
+    "sic_required": false,
+    "note": "Canonical scan and PG78255 agree; no authorial print error detected."
+  },
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

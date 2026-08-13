@@ -1,0 +1,130 @@
+{
+  "batch": "PM1-STAR50-CATALOGUE-02",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "350",
+    "scan_leaves": [
+      372
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱50·13",
+      "kind": "derived-proposition",
+      "printed": "✱50·13. ⊢ . ∃̇!I  [✱13·19.✱10·24·281.✱50·1]",
+      "printed_page": 350,
+      "scan_leaf": 372,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel.star_50_13",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱13·19",
+        "✱10·24",
+        "✱50·1"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱13·19",
+        "PM1:✱10·24",
+        "PM1:✱50·1"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star50-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱50·14",
+      "kind": "derived-proposition",
+      "printed": "✱50·14. ⊢ . Iʻy = y  [✱30·3.✱50·1.✱10·11]",
+      "printed_page": 350,
+      "scan_leaf": 372,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel.star_50_14",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱30·3",
+        "✱50·1",
+        "✱10·11"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱30·3",
+        "PM1:✱50·1",
+        "PM1:✱10·11"
+      ]
+    },
+    {
+      "id": "PM1:✱50·15",
+      "kind": "derived-proposition",
+      "printed": "✱50·15. ⊢ . (y).∃!Iʻy  [✱50·14.✱14·21.✱10·11]",
+      "printed_page": 350,
+      "scan_leaf": 372,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel.star_50_15",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱50·14",
+        "✱14·21",
+        "✱10·11"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱50·14",
+        "PM1:✱14·21",
+        "PM1:✱10·11"
+      ]
+    },
+    {
+      "id": "PM1:✱50·16",
+      "kind": "derived-proposition",
+      "printed": "✱50·16. ⊢ . Iʻʻα = α",
+      "printed_page": 350,
+      "scan_leaf": 372,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel.star_50_16",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱50·17",
+      "kind": "derived-proposition",
+      "printed": "✱50·17. ⊢ : x ∈ α .⊃ₓ. Rʻx = x : ⊃ . Rʻʻα = α",
+      "printed_page": 350,
+      "scan_leaf": 372,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel.star_50_17",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

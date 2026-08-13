@@ -1,0 +1,43 @@
+{
+  "batch": "PM2-STAR200-CATALOGUE-07",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "524",
+    "scan_leaves": [
+      564
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm#*200"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱200·54",
+      "kind": "derived-proposition",
+      "printed": "✱200·54. ⊢ : P⊂̇J . ∃̇!P .⊃. pʻP→ʻʻ{CʻP∩pʻP←ʻʻα}=pʻP→ʻʻpʻP←ʻʻα",
+      "printed_page": 524,
+      "scan_leaf": 564,
+      "lean_path": "Principia/Architecture/Star200ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star200ClosingKernel.star_200_54",
+      "formal_scope": "typed relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star200-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

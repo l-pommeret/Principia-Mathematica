@@ -1,0 +1,120 @@
+{
+  "batch": "PM2-STAR205-CATALOGUE-10",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "566–567",
+    "scan_leaves": [
+      606,
+      607
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱205·26",
+      "kind": "derived-proposition",
+      "printed": "✱205·26. ⊢ : Q⊑P .⊃. min_P↾ClʻCʻQ⊑min_Q",
+      "printed_page": 566,
+      "scan_leaf": 606,
+      "lean_path": "Principia/Architecture/Star205OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star205OpeningKernel.star_205_26",
+      "formal_scope": "typed order-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star205-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱205·261",
+      "kind": "derived-proposition",
+      "printed": "✱205·261. ⊢ : P↿β∈connex . β∩CʻP∉1 .⊃. min⃗_(P↿β)ʻα=min⃗_Pʻ(α∩β)",
+      "printed_page": 566,
+      "scan_leaf": 606,
+      "lean_path": "Principia/Architecture/Star205OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star205OpeningKernel.star_205_261",
+      "formal_scope": "typed order-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star205-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱205·262",
+      "kind": "derived-proposition",
+      "printed": "✱205·262. ⊢ : P∈trans∩connex . x∈α∩CʻP . β=P⃗ʻx∪ιʻx .⊃. min⃗_Pʻα=min⃗_Pʻ(α∩β)",
+      "printed_page": 567,
+      "scan_leaf": 607,
+      "lean_path": "Principia/FirstEdition/Volume2/Star205Source.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star205-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱205·27",
+      "kind": "derived-proposition",
+      "printed": "✱205·27. ⊢ : P∈trans∩connex . x∈α∩D̆ʻP . β=P⃗ʻx∪℩ʻx .⊃. min⃗_Pʻα=min⃗_(P↿β)ʻα=min⃗_Pʻ(α∩β)",
+      "printed_page": 567,
+      "scan_leaf": 607,
+      "lean_path": "Principia/Architecture/Star205OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star205OpeningKernel.star_205_27",
+      "formal_scope": "typed order-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star205-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱205·3",
+      "kind": "derived-proposition",
+      "printed": "✱205·3. ⊢ : P∈connex .⊃. min⃗_Pʻα,max⃗_Pʻα∈0∪1",
+      "printed_page": 567,
+      "scan_leaf": 607,
+      "lean_path": "Principia/Architecture/Star205OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star205OpeningKernel.star_205_3",
+      "formal_scope": "typed order-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star205-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

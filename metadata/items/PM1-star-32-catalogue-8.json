@@ -1,0 +1,66 @@
+{
+  "batch": "PM1-STAR32-CATALOGUE-8",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱32·4",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash\\colon\\ldotp \\text{E}!Rʻz.\\equiv:\\exists !\\overrightarrow{R}ʻz:x,y\\in \\overrightarrow{R}ʻz.\\supset_{x,y}.x=y \\quad[\\text{*30·21.*32·18}]\\)",
+      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition",
+      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel4.lean",
+      "declaration": "PM.Architecture.Star32ConsecutiveKernel4.star_32_4",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star32-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱32·41",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash\\colon\\ldotp \\text{E}!Sʻy.\\supset:\\overrightarrow{R}ʻy=\\overrightarrow{S}ʻy.\\equiv.Rʻy=Sʻy\\)",
+      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition",
+      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel4.lean",
+      "declaration": "PM.Architecture.Star32ConsecutiveKernel4.star_32_41",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star32-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱32·42",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash\\colon\\ldotp \\overrightarrow{R}ʻy=\\overrightarrow{S}ʻy.\\supset:\\text{E}!Rʻy.\\equiv.\\text{E}!Sʻy \\quad[\\text{*30·34.*32·18}]\\)",
+      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition",
+      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel5.lean",
+      "declaration": "PM.Architecture.Star32ConsecutiveKernel5.star_32_42",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star32-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

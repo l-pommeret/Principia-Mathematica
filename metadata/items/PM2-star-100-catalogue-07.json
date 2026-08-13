@@ -1,0 +1,73 @@
+{
+  "batch": "PM2-STAR100-CATALOGUE-07",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "17–18",
+    "scan_leaves": [
+      57,
+      58
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱100·521",
+      "kind": "derived-proposition",
+      "printed": "✱100·521. ⊢ : μ∈NC . ∃!smʻʻμ .⊃. smʻʻsmʻʻμ=μ",
+      "printed_page": 17,
+      "scan_leaf": 57,
+      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
+      "declaration": "PM.Architecture.Star100SecondKernel.star_100_521",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱100·53",
+      "kind": "derived-proposition",
+      "printed": "✱100·53. ⊢ :: ∃!μ . ∃!ν .⊃ : μ∈NC . ν=smʻʻμ .≡. ν∈NC . μ=smʻʻν",
+      "printed_page": 17,
+      "scan_leaf": 57,
+      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
+      "declaration": "PM.Architecture.Star100SecondKernel.star_100_53",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱100·61",
+      "kind": "derived-proposition",
+      "printed": "✱100·61. ⊢ . β̂{(∃y). y∈α . β=ιʻx∪ιʻy} ∈ Ncʻα",
+      "printed_page": 18,
+      "scan_leaf": 58,
+      "lean_path": "Principia/Architecture/Star100FinalKernel.lean",
+      "declaration": "PM.Architecture.Star100FinalKernel.star_100_61",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

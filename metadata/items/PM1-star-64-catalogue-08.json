@@ -1,0 +1,112 @@
+{
+  "batch": "PM1-STAR64-CATALOGUE-08",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "433",
+    "scan_leaves": [
+      455
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱64·51",
+      "kind": "derived-proposition",
+      "printed": "✱64·51. ⊢. x↓y ∈ tʻ(tʻx ↑ tʻy)",
+      "printed_page": 433,
+      "scan_leaf": 455,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_51",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star64-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱64·52",
+      "kind": "derived-proposition",
+      "printed": "✱64·52. ⊢ : x∈t₀ʻα . y∈t₀ʻβ .⊃. x↓y∈tʻ(t₀ʻα ↑ t₀ʻβ)",
+      "printed_page": 433,
+      "scan_leaf": 455,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_52",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star64-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱64·53",
+      "kind": "derived-proposition",
+      "printed": "✱64·53. ⊢ : x∈t₀ʻα . δ⊂t₀ʻβ .⊃. (ιʻx)↓δ∈tʻ(tʻα ↑ tʻβ)",
+      "printed_page": 433,
+      "scan_leaf": 455,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_53",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star64-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱64·54",
+      "kind": "derived-proposition",
+      "printed": "✱64·54. ⊢. Rlʻ(t₀ʻα ↑ t₀ʻα)=t₀₀ʻα=tʻ(α ↑ α)=t₀ʻRlʻ(α ↑ α)",
+      "printed_page": 433,
+      "scan_leaf": 455,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_54",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star64-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱64·55",
+      "kind": "derived-proposition",
+      "printed": "✱64·55. ⊢ : CʻP ⊂ t₀ʻα .≡. P ∈ t₀₀ʻα",
+      "printed_page": 433,
+      "scan_leaf": 455,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_55",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

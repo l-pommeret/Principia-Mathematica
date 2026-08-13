@@ -1,0 +1,75 @@
+{
+  "batch": "PM1-STAR53-CATALOGUE-07",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "372–373",
+    "scan_leaves": [
+      394,
+      395
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱53·35",
+      "kind": "derived-proposition",
+      "printed": "✱53·35. ⊢ . sʻsʻʻ(ιʻκ ∪ ιʻλ) = sʻκ ∪ sʻλ = sʻ(κ ∪ λ)",
+      "printed_page": 372,
+      "scan_leaf": 394,
+      "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
+      "declaration": "PM.Architecture.Star53FinalKernel.star_53_35",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱53·4",
+      "kind": "derived-proposition",
+      "printed": "✱53·4. ⊢ : x = Rʻy .≡. R⃗ʻy ∈ 1 . x ∈ R⃗ʻy .≡. ιʻx = R⃗ʻy .≡. x = ῐʻR⃗ʻy",
+      "printed_page": 373,
+      "scan_leaf": 395,
+      "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
+      "declaration": "PM.Architecture.Star53FinalKernel.star_53_4",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star53-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱53·5",
+      "kind": "derived-proposition",
+      "printed": "✱53·5. ⊢ : ∃!α .≡. α ∈ Cls − ιʻΛ",
+      "printed_page": 373,
+      "scan_leaf": 395,
+      "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
+      "declaration": "PM.Architecture.Star53FinalKernel.star_53_5",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

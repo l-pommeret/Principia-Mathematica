@@ -1,0 +1,120 @@
+{
+  "batch": "PM1-STAR41-CATALOGUE-07",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "331–335",
+    "scan_leaves": [
+      353,
+      357
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱41·34",
+      "kind": "derived-proposition",
+      "printed": "✱41·34. \\(\\vdash.\\dot{s}\\alpha\\upharpoonleft ʻʻ\\lambda=\\alpha\\upharpoonleft \\dot{s}ʻ\\lambda\\)",
+      "printed_page": 332,
+      "scan_leaf": 354,
+      "lean_path": "Principia/Architecture/Star41RestrictionKernel.lean",
+      "declaration": "PM.Architecture.Star41RestrictionKernel.star_41_34",
+      "formal_scope": "typed relation-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star41-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱41·341",
+      "kind": "derived-proposition",
+      "printed": "✱41·341. \\(\\vdash. \\dot{s}ʻ\\upharpoonright  \\alphaʻʻ\\lambda = (\\dot{s}ʻ\\lambda)\\upharpoonright \\alpha   \\quad[\\text{Proof as in *41·34}]\\)",
+      "printed_page": 333,
+      "scan_leaf": 355,
+      "lean_path": "Principia/Architecture/Star41RestrictionKernel.lean",
+      "declaration": "PM.Architecture.Star41RestrictionKernel.star_41_341",
+      "formal_scope": "typed relation-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star41-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱41·342",
+      "kind": "derived-proposition",
+      "printed": "✱41·342. \\(\\vdash. \\dot{s}ʻ\\unicode{x0294f} \\alphaʻʻ\\lambda = (\\dot{s}ʻ\\lambda)\\unicode{x0294f}\\alpha\\)",
+      "printed_page": 333,
+      "scan_leaf": 355,
+      "lean_path": "Principia/Architecture/Star41RestrictionKernel.lean",
+      "declaration": "PM.Architecture.Star41RestrictionKernel.star_41_342",
+      "formal_scope": "typed relation-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star41-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱41·35",
+      "kind": "derived-proposition",
+      "printed": "✱41·35. \\(\\vdash. \\dot{s}ʻM\\upharpoonright ʻʻ\\kappa = M\\upharpoonright sʻ\\kappa\\)",
+      "printed_page": 333,
+      "scan_leaf": 355,
+      "lean_path": "Principia/Architecture/Star41RestrictionKernel.lean",
+      "declaration": "PM.Architecture.Star41RestrictionKernel.star_41_35",
+      "formal_scope": "typed relation-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star41-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱41·351",
+      "kind": "derived-proposition",
+      "printed": "✱41·351. \\(\\vdash. \\dot{s}ʻ\\upharpoonleft Mʻʻ\\kappa = (sʻ\\kappa)\\upharpoonleft M     \\quad[\\text{Proof as in *41·35}]\\)",
+      "printed_page": 333,
+      "scan_leaf": 355,
+      "lean_path": "Principia/Architecture/Star41RestrictionKernel.lean",
+      "declaration": "PM.Architecture.Star41RestrictionKernel.star_41_351",
+      "formal_scope": "typed relation-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star41-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

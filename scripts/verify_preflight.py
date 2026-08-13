@@ -12,6 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 GATES = (
+    ("lean-source-coverage", ["report_lean_source_coverage.py", "--verify-pipeline"]),
     ("editorial", ["verify_editorial.py", "--report-all"]),
     ("dependencies", ["verify_dependencies.py", "--report-all"]),
     ("contexts", ["verify_context_bundles.py", "--report-all"]),

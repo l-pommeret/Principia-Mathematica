@@ -1,0 +1,115 @@
+{
+  "batch": "PM1-STAR80-CATALOGUE-14",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "516–517",
+    "scan_leaves": [
+      538,
+      539
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱80·78",
+      "kind": "derived-proposition",
+      "printed": "✱80·78. ⊢ : M∈P_Δʻμ.xMy .⊃. M−x↓y∈P_Δʻ(μ−ιʻy)",
+      "printed_page": 516,
+      "scan_leaf": 538,
+      "lean_path": "Principia/Architecture/Star80FinalKernel.lean",
+      "declaration": "PM.Architecture.Star80FinalKernel.star_80_78",
+      "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star80-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱80·8",
+      "kind": "derived-proposition",
+      "printed": "✱80·8. ⊢ : ∃!P_Δʻκ .⊃. ᗡʻṡʻP_Δʻκ=κ",
+      "printed_page": 516,
+      "scan_leaf": 538,
+      "lean_path": "Principia/Architecture/Star80FinalKernel.lean",
+      "declaration": "PM.Architecture.Star80FinalKernel.star_80_8",
+      "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star80-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱80·81",
+      "kind": "derived-proposition",
+      "printed": "✱80·81. ⊢ : ∃!P_Δʻα.P_Δʻα=P_Δʻβ .⊃. α=β",
+      "printed_page": 516,
+      "scan_leaf": 538,
+      "lean_path": "Principia/Architecture/Star80FinalKernel.lean",
+      "declaration": "PM.Architecture.Star80FinalKernel.star_80_81",
+      "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star80-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱80·82",
+      "kind": "derived-proposition",
+      "printed": "✱80·82. ⊢ : α≠β .⊃. P_Δʻα∩P_Δʻβ=Λ",
+      "printed_page": 516,
+      "scan_leaf": 538,
+      "lean_path": "Principia/Architecture/Star80FinalKernel.lean",
+      "declaration": "PM.Architecture.Star80FinalKernel.star_80_82",
+      "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star80-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱80·83",
+      "kind": "derived-proposition",
+      "printed": "✱80·83. ⊢. (−ιʻΛ)↿P_Δ∈1→1",
+      "printed_page": 517,
+      "scan_leaf": 539,
+      "lean_path": "Principia/Architecture/Star80FinalKernel.lean",
+      "declaration": "PM.Architecture.Star80FinalKernel.star_80_83",
+      "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star80-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

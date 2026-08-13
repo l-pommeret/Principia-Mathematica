@@ -1,0 +1,114 @@
+{
+  "batch": "PM1-STAR92-CATALOGUE-02",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "602",
+    "scan_leaves": [
+      624
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱92·113",
+      "kind": "derived-proposition",
+      "printed": "✱92·113. ⊢ : R∈Cls→1 .⊃. CnvʻR|Rpo|R=(ᗡʻR)◁Rpo",
+      "printed_page": 602,
+      "scan_leaf": 624,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_113",
+      "formal_scope": "typed one-many/many-one power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star92-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱92·12",
+      "kind": "derived-proposition",
+      "printed": "✱92·12. ⊢ : R∈1→Cls . ᗡʻR⊂DʻR .⊃. Rpo|CnvʻR=R∗",
+      "printed_page": 602,
+      "scan_leaf": 624,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_12",
+      "formal_scope": "typed one-many/many-one power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star92-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱92·121",
+      "kind": "derived-proposition",
+      "printed": "✱92·121. ⊢ : R∈Cls→1 . DʻR⊂ᗡʻR .⊃. CnvʻR|Rpo=R∗",
+      "printed_page": 602,
+      "scan_leaf": 624,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_121",
+      "formal_scope": "typed one-many/many-one power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star92-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱92·13",
+      "kind": "derived-proposition",
+      "printed": "✱92·13. ⊢ : R∈1→Cls . Q,T∈PotidʻR .⊃. T|Q|CnvʻQ=T↾DʻQ",
+      "printed_page": 602,
+      "scan_leaf": 624,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_13",
+      "formal_scope": "typed one-many/many-one power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star92-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱92·131",
+      "kind": "derived-proposition",
+      "printed": "✱92·131. ⊢ : R∈Cls→1 . Q,T∈PotidʻR .⊃. CnvʻQ|Q|T=(ᗡʻQ)◁T",
+      "printed_page": 602,
+      "scan_leaf": 624,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_131",
+      "formal_scope": "typed one-many/many-one power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star92-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

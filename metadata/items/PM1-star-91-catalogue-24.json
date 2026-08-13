@@ -1,0 +1,60 @@
+{
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "587",
+    "scan_leaves": [
+      609
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "batch": "PM1-STAR91-CATALOGUE-24",
+  "items": [
+    {
+      "id": "PM1:✱91·74",
+      "kind": "derived-proposition",
+      "printed": "✱91·74. ⊢ . Řʻʻ←R_*ʻx=←R_poʻx . Rʻʻ→R_*ʻx=→R_poʻx",
+      "printed_page": 600,
+      "scan_leaf": 622,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel6.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel6.star_91_74",
+      "formal_scope": "typed relation-power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star91-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱91·75",
+      "kind": "derived-proposition",
+      "printed": "✱91·75. ⊢ . R_*⊍Ř_*=R_*⊍Ř_po=R_po⊍Ř_*=R_po⊍I↾CʻR⊍Ř_po",
+      "printed_page": 600,
+      "scan_leaf": 622,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel6.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel6.star_91_75",
+      "formal_scope": "typed relation-power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star91-catalogue-review.md"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "batch": "PM1-STAR50-CATALOGUE-04",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "351–352",
+    "scan_leaves": [
+      373,
+      374
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱50·3",
+      "kind": "derived-proposition",
+      "printed": "✱50·3. ⊢ . (x).xIx",
+      "printed_page": 351,
+      "scan_leaf": 373,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel2.star_50_3",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱50·31",
+      "kind": "derived-proposition",
+      "printed": "✱50·31. ⊢ . DʻI = V . ᗡʻI = V",
+      "printed_page": 351,
+      "scan_leaf": 373,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel2.star_50_31",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱50·32",
+      "kind": "derived-proposition",
+      "printed": "✱50·32. ⊢ . CʻI = V",
+      "printed_page": 351,
+      "scan_leaf": 373,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel2.star_50_32",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱50·33",
+      "kind": "derived-proposition",
+      "printed": "✱50·33. ⊢ : ∃̇!J .⊃. DʻJ = V . ᗡʻJ = V . CʻJ = V",
+      "printed_page": 351,
+      "scan_leaf": 373,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel2.star_50_33",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star50-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱50·34",
+      "kind": "derived-proposition",
+      "printed": "✱50·34. ⊢ . ∃̇!(J ↾ Cls)",
+      "printed_page": 352,
+      "scan_leaf": 374,
+      "lean_path": "Principia/Architecture/Star50OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star50OpeningKernel2.star_50_34",
+      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star50-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

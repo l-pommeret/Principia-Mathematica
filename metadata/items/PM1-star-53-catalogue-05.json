@@ -1,0 +1,109 @@
+{
+  "batch": "PM1-STAR53-CATALOGUE-05",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "371–372",
+    "scan_leaves": [
+      393,
+      394
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱53·231",
+      "kind": "derived-proposition",
+      "printed": "✱53·231. ⊢ : x ∈ α .⊃ₓ. x = y : ≡ : α = Λ .∨. α = ιʻy",
+      "printed_page": 371,
+      "scan_leaf": 393,
+      "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
+      "declaration": "PM.Architecture.Star53FinalKernel.star_53_231",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱53·24",
+      "kind": "derived-proposition",
+      "printed": "✱53·24. ⊢ : sʻκ = Λ .≡ : κ = Λ ∩ Cls .∨. κ = ιʻΛ",
+      "printed_page": 371,
+      "scan_leaf": 393,
+      "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
+      "declaration": "PM.Architecture.Star53FinalKernel.star_53_24",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱53·25",
+      "kind": "derived-proposition",
+      "printed": "✱53·25. ⊢ : sʻκ ∩ sʻλ = Λ .⊃ : κ ∩ λ = Λ ∩ Cls .∨. κ ∩ λ = ιʻΛ",
+      "printed_page": 371,
+      "scan_leaf": 393,
+      "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
+      "declaration": "PM.Architecture.Star53FinalKernel.star_53_25",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱53·3",
+      "kind": "derived-proposition",
+      "printed": "✱53·3. ⊢ : E!Rʻx .≡. R⃗ʻx ∈ 1",
+      "printed_page": 372,
+      "scan_leaf": 394,
+      "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
+      "declaration": "PM.Architecture.Star53FinalKernel.star_53_3",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star53-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱53·301",
+      "kind": "derived-proposition",
+      "printed": "✱53·301. ⊢ . Rʻʻιʻx = R⃗ʻx",
+      "printed_page": 372,
+      "scan_leaf": 394,
+      "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
+      "declaration": "PM.Architecture.Star53FinalKernel.star_53_301",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star53-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

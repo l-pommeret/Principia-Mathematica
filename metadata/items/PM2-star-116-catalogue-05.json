@@ -1,0 +1,114 @@
+{
+  "batch": "PM2-STAR116-CATALOGUE-05",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "148",
+    "scan_leaves": [
+      188
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱116·183",
+      "kind": "derived-proposition",
+      "printed": "✱116·183. ⊢ . sʻ(α exp β) = β×α",
+      "printed_page": 148,
+      "scan_leaf": 188,
+      "lean_path": "Principia/Architecture/Star116SecondKernel.lean",
+      "declaration": "PM.Architecture.Star116SecondKernel.star_116_183",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·19",
+      "kind": "derived-proposition",
+      "printed": "✱116·19. ⊢ : α sm γ . β sm δ .⊃. (α exp β) sm sm (γ exp δ)",
+      "printed_page": 148,
+      "scan_leaf": 188,
+      "lean_path": "Principia/Architecture/Star116SecondKernel.lean",
+      "declaration": "PM.Architecture.Star116SecondKernel.star_116_19",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·191",
+      "kind": "derived-proposition",
+      "printed": "✱116·191. Exponential correspondence under similarities.",
+      "printed_page": 148,
+      "scan_leaf": 188,
+      "lean_path": "Principia/Architecture/Star116SecondKernel.lean",
+      "declaration": "PM.Architecture.Star116SecondKernel.star_116_191",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·192",
+      "kind": "derived-proposition",
+      "printed": "✱116·192. Restricted converse correspondence between exponentials.",
+      "printed_page": 148,
+      "scan_leaf": 188,
+      "lean_path": "Principia/Architecture/Star116SecondKernel.lean",
+      "declaration": "PM.Architecture.Star116SecondKernel.star_116_192",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·194",
+      "kind": "derived-proposition",
+      "printed": "✱116·194. Exponential similarity is invariant under similar bases and exponents.",
+      "printed_page": 148,
+      "scan_leaf": 188,
+      "lean_path": "Principia/Architecture/Star116SecondKernel.lean",
+      "declaration": "PM.Architecture.Star116SecondKernel.star_116_194",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

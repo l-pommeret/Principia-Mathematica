@@ -1,0 +1,106 @@
+{
+  "batch": "PM1-STAR31-OPENING-Q678",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "PM I ✱31",
+    "scan_leaves": [],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱31·11",
+      "kind": "derived-proposition",
+      "printed": "⊢ : xP̌y ≡ . yPx",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel.star_31_11",
+      "formal_scope": "exact homogeneous typed converse evaluation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱21·3",
+        "PM1:✱31·02"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q678-star31-opening-strict-audit.md"
+    },
+    {
+      "id": "PM1:✱31·111",
+      "kind": "derived-proposition",
+      "printed": "⊢ . P̌ Cnv P",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel.star_31_111",
+      "formal_scope": "exact homogeneous typed converse relation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱31·1",
+        "PM1:✱31·11"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q678-star31-opening-strict-audit.md"
+    },
+    {
+      "id": "PM1:✱31·12",
+      "kind": "derived-proposition",
+      "printed": "⊢ . P̌ = CnvʻP",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel.star_31_12",
+      "formal_scope": "exact homogeneous typed equality of converse presentations",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q678-star31-opening-strict-audit.md"
+    },
+    {
+      "id": "PM1:✱31·14",
+      "kind": "derived-proposition",
+      "printed": "⊢ . Cnvʻ(P ∩̇ Q) = CnvʻP ∩̇ CnvʻQ",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel.star_31_14",
+      "formal_scope": "exact homogeneous typed converse/intersection distribution",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q678-star31-opening-strict-audit.md"
+    },
+    {
+      "id": "PM1:✱31·15",
+      "kind": "derived-proposition",
+      "printed": "⊢ . Cnvʻ(P ⊍ Q) = CnvʻP ⊍ CnvʻQ",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel.star_31_15",
+      "formal_scope": "exact homogeneous typed converse/union distribution",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q678-star31-opening-strict-audit.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

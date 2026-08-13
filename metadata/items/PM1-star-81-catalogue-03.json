@@ -1,0 +1,113 @@
+{
+  "batch": "PM1-STAR81-CATALOGUE-03",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "522–523",
+    "scan_leaves": [
+      544,
+      545
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱81·22",
+      "kind": "derived-proposition",
+      "printed": "✱81·22. ⊢ : P↾κ∈Cls→1 .⊃. DʻʻPΔʻκ = μ̂{y∈κ .⊃ᵧ. μ∩P⃗ʻy∈1 : μ⊂Pʻʻκ}",
+      "printed_page": 522,
+      "scan_leaf": 544,
+      "lean_path": "Principia/Architecture/Star81OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star81OpeningKernel.star_81_22",
+      "formal_scope": "typed many-one-selection reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star81-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱81·221",
+      "kind": "derived-proposition",
+      "printed": "✱81·221. ⊢ : P↾κ∈Cls→1 .⊃. PΔʻκ = ↾(P↾κ)ʻʻDʻʻPΔʻκ",
+      "printed_page": 522,
+      "scan_leaf": 544,
+      "lean_path": "Principia/Architecture/Star81OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star81OpeningKernel.star_81_221",
+      "formal_scope": "typed many-one-selection reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star81-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱81·23",
+      "kind": "derived-proposition",
+      "printed": "✱81·23. ⊢ : P↾κ∈Cls→1 . R∈PΔʻκ . y∈κ .⊃. DʻR−P⃗ʻy=DʻR−ιʻR⃗ʻy",
+      "printed_page": 522,
+      "scan_leaf": 544,
+      "lean_path": "Principia/Architecture/Star81OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star81OpeningKernel.star_81_23",
+      "formal_scope": "typed many-one-selection reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star81-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱81·24",
+      "kind": "derived-proposition",
+      "printed": "✱81·24. ⊢ : μ∈DʻʻPΔʻκ . y∈κ .⊃. μ−P⃗ʻy∈DʻʻPΔʻ(κ−ιʻy)",
+      "printed_page": 522,
+      "scan_leaf": 544,
+      "lean_path": "Principia/Architecture/Star81OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star81OpeningKernel.star_81_24",
+      "formal_scope": "typed many-one-selection reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star81-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱81·25",
+      "kind": "derived-proposition",
+      "printed": "✱81·25. ⊢ : y∈κ . xPy . μ∈DʻʻPΔʻ(κ−ιʻy) .⊃. μ∪ιʻx∈DʻʻPΔʻκ",
+      "printed_page": 523,
+      "scan_leaf": 545,
+      "lean_path": "Principia/Architecture/Star81OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star81OpeningKernel.star_81_25",
+      "formal_scope": "typed many-one-selection reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

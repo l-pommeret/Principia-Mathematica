@@ -1,0 +1,109 @@
+{
+  "batch": "PM1-STAR93-CATALOGUE-02",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "609–610",
+    "scan_leaves": [
+      631,
+      632
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱93·101",
+      "kind": "derived-proposition",
+      "printed": "✱93·101. ⊢ . B→ʻP=DʻP−ᗡʻP",
+      "printed_page": 609,
+      "scan_leaf": 631,
+      "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star93OpeningKernel.star_93_101",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱93·102",
+      "kind": "derived-proposition",
+      "printed": "✱93·102. ⊢ : x=BʻP .≡. x=ι̌ʻ(DʻP−ᗡʻP) .≡. DʻP−ᗡʻP∈1 . x∈DʻP−ᗡʻP",
+      "printed_page": 609,
+      "scan_leaf": 631,
+      "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star93OpeningKernel.star_93_102",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱93·103",
+      "kind": "derived-proposition",
+      "printed": "✱93·103. ⊢ . B→ʻP=CʻP−ᗡʻP",
+      "printed_page": 609,
+      "scan_leaf": 631,
+      "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star93OpeningKernel.star_93_103",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱93·104",
+      "kind": "derived-proposition",
+      "printed": "✱93·104. ⊢ : xBR .⊃. R_*→ʻx=ιʻx . R_po→ʻx=Λ",
+      "printed_page": 610,
+      "scan_leaf": 632,
+      "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star93OpeningKernel.star_93_104",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star93-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱93·11",
+      "kind": "derived-proposition",
+      "printed": "✱93·11. ⊢ : x min_P α .≡. x∈α∩CʻP−P̌ʻʻα",
+      "printed_page": 610,
+      "scan_leaf": 632,
+      "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star93OpeningKernel.star_93_11",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star93-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

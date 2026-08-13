@@ -1,0 +1,105 @@
+{
+  "batch": "PM1-STAR37-CATALOGUE-10",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "299–300",
+    "scan_leaves": [
+      321,
+      322
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱37·24",
+      "kind": "derived-proposition",
+      "printed": "✱37·24. \\vdash:\\alpha\\in \\text{D}ʻR_{\\in}.\\supset.\\alpha\\subset \\text{D}ʻR",
+      "printed_page": 299,
+      "scan_leaf": 321,
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_24",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·261",
+      "kind": "derived-proposition",
+      "printed": "✱37·261. \\vdash.\\breve{R}ʻʻ\\beta=\\breve{R}ʻʻ(\\beta\\cap \\text{D}ʻR) \\quad[\\text{*37·26.*33·21}]",
+      "printed_page": 300,
+      "scan_leaf": 322,
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_261",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·262",
+      "kind": "derived-proposition",
+      "printed": "✱37·262. \\vdash:\\alpha\\cap \\text{ᗡ}ʻR=\\beta\\cap \\text{ᗡ}ʻR.\\supset.Rʻʻ\\alpha=Rʻʻ\\beta \\quad[\\text{*37·26}]",
+      "printed_page": 300,
+      "scan_leaf": 322,
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_262",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·263",
+      "kind": "derived-proposition",
+      "printed": "✱37·263. \\vdash:\\alpha\\cap \\text{D}ʻR=\\beta\\cap \\text{D}ʻR.\\supset.\\breve{R}ʻʻ\\alpha=\\breve{R}ʻʻ\\beta \\quad[\\text{*37·261}]",
+      "printed_page": 300,
+      "scan_leaf": 322,
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_263",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·264",
+      "kind": "derived-proposition",
+      "printed": "✱37·264. \\vdash:\\exists !\\alpha\\cap Rʻʻ\\beta.\\equiv.(\\exists x,y).x\\in \\alpha.y\\in \\beta.xRy.\\equiv.\\exists !\\beta\\cap \\breve{R}ʻʻ\\alpha",
+      "printed_page": 300,
+      "scan_leaf": 322,
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_264",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

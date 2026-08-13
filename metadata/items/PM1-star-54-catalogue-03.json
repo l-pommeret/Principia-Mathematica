@@ -1,0 +1,105 @@
+{
+  "batch": "PM1-STAR54-CATALOGUE-03",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "377–378",
+    "scan_leaves": [
+      399,
+      400
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱54·271",
+      "kind": "derived-proposition",
+      "printed": "✱54·271.  ⊢ . 1 ∪ 2 = α̂{(∃x,y). α = ιʻx ∪ ιʻy}",
+      "printed_page": 377,
+      "scan_leaf": 399,
+      "lean_path": "Principia/Architecture/Star54MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star54MiddleKernel.star_54_271",
+      "formal_scope": "typed cardinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱54·3",
+      "kind": "derived-proposition",
+      "printed": "✱54·3.  ⊢ . 2 = α̂{(∃x). x ε α . α − ιʻx ε 1}",
+      "printed_page": 378,
+      "scan_leaf": 400,
+      "lean_path": "Principia/Architecture/Star54MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star54MiddleKernel.star_54_3",
+      "formal_scope": "typed cardinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱54·4",
+      "kind": "derived-proposition",
+      "printed": "✱54·4.  ⊢ : β ⊂ ιʻx ∪ ιʻy .≡ : β = Λ .∨. β = ιʻx .∨. β = ιʻy .∨. β = ιʻx ∪ ιʻy",
+      "printed_page": 378,
+      "scan_leaf": 400,
+      "lean_path": "Principia/Architecture/Star54MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star54MiddleKernel.star_54_4",
+      "formal_scope": "typed cardinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱54·41",
+      "kind": "derived-proposition",
+      "printed": "✱54·41.  ⊢ : α ε 2 .⊃ : β ⊂ α .⊃ : β = Λ .∨. β ε 1 .∨. β ε 2",
+      "printed_page": 378,
+      "scan_leaf": 400,
+      "lean_path": "Principia/Architecture/Star54MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star54MiddleKernel.star_54_41",
+      "formal_scope": "typed cardinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱54·411",
+      "kind": "derived-proposition",
+      "printed": "✱54·411.  ⊢ : α ε 2 . β ⊂ α .⊃ . β ε 0 ∪ 1 ∪ 2",
+      "printed_page": 378,
+      "scan_leaf": 400,
+      "lean_path": "Principia/Architecture/Star54MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star54MiddleKernel.star_54_411",
+      "formal_scope": "typed cardinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "batch": "PM1-STAR54-CATALOGUE-06",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "380–381",
+    "scan_leaves": [
+      402,
+      403
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱54·5",
+      "kind": "derived-proposition",
+      "printed": "✱54·5.  ⊢ : α ε 2 .⊃ : α ⊂ ιʻz ∪ ιʻw .≡ . α = ιʻz ∪ ιʻw",
+      "printed_page": 380,
+      "scan_leaf": 402,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_5",
+      "formal_scope": "exact inclusion/equality characterization for a cardinal couple",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱54·51",
+      "kind": "derived-proposition",
+      "printed": "✱54·51.  ⊢ : α ε 2 . β ε 1 ∪ 2 .⊃ : α ⊂ β .≡ . α = β",
+      "printed_page": 380,
+      "scan_leaf": 402,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_51",
+      "formal_scope": "exact inclusion/equality characterization against cardinal one or two",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱54·52",
+      "kind": "derived-proposition",
+      "printed": "✱54·52.  ⊢ : α,β ε 2 .⊃ : α ⊂ β .≡ . α = β .≡ . β ⊂ α",
+      "printed_page": 380,
+      "scan_leaf": 402,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_52",
+      "formal_scope": "exact mutual inclusion/equality characterization for cardinal couples",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star54-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱54·53",
+      "kind": "derived-proposition",
+      "printed": "✱54·53.  ⊢ : α ε 2 . z,y ε α . z ≠ y .⊃ . α = ιʻz ∪ ιʻy",
+      "printed_page": 380,
+      "scan_leaf": 402,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_53",
+      "formal_scope": "exact reconstruction of a cardinal couple from two distinct members",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱54·531",
+      "kind": "derived-proposition",
+      "printed": "✱54·531.  ⊢ : α ε 2 .⊃ : z,y ε α . z ≠ y .⊃ . α = ιʻz ∪ ιʻy",
+      "printed_page": 381,
+      "scan_leaf": 403,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_531",
+      "formal_scope": "exact universally scoped reconstruction of a cardinal couple from two distinct members",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

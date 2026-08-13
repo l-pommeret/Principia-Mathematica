@@ -1,0 +1,104 @@
+{
+  "batch": "PM1-STAR37-CATALOGUE-17",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "304–304",
+    "scan_leaves": [
+      326
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱37·43",
+      "kind": "derived-proposition",
+      "printed": "✱37·43. \\vdash\\colon\\ldotp \\beta\\subset \\text{ᗡ}ʻR.\\supset:\\exists !Rʻʻ\\beta.\\equiv.\\exists !\\beta",
+      "printed_page": 304,
+      "scan_leaf": 326,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·431",
+      "kind": "derived-proposition",
+      "printed": "✱37·431. \\vdash\\colon\\ldotp \\alpha\\subset \\text{D}ʻR.\\supset:\\exists !\\breve{R}ʻʻ\\alpha.\\equiv.\\exists !\\alpha \\quad[\\text{Proof as in *37·43}]",
+      "printed_page": 304,
+      "scan_leaf": 326,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·44",
+      "kind": "derived-proposition",
+      "printed": "✱37·44. \\vdash\\colon\\ldotp \\text{ᗡ}ʻR=V.\\supset:\\exists !Rʻʻ\\beta.\\equiv.\\exists !\\beta \\quad[\\text{*37·43.*24·11}]",
+      "printed_page": 304,
+      "scan_leaf": 326,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·441",
+      "kind": "derived-proposition",
+      "printed": "✱37·441. \\vdash\\colon\\ldotp \\text{D}ʻR=V.\\supset:\\exists !\\breve{R}ʻʻ\\alpha.\\equiv.\\exists !\\alpha \\quad[\\text{Proof as in *37·44}]",
+      "printed_page": 304,
+      "scan_leaf": 326,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·451",
+      "kind": "derived-proposition",
+      "printed": "✱37·451. \\vdash\\colon\\ldotp (x).\\text{E}!\\breve{R}ʻx.\\supset:\\exists !\\breve{R}ʻʻ\\alpha.\\equiv.\\exists !\\alpha \\quad[\\text{Proof as in *37·45}]",
+      "printed_page": 304,
+      "scan_leaf": 326,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

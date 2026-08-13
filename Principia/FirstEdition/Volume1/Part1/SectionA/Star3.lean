@@ -593,17 +593,17 @@ theorem star_3_48 {Γ} (p q r s : PM.Elementary Γ) :
     exact PM.Derivation.detach h₁ (PM.Derivation.detach h₂
       (PM.FirstEdition.Volume1.Star1.star_1_6 (∼ₚ A) B C))
   have second : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ (q ⊃ₚ s)) := star_3_27 (p ⊃ₚ r) (q ⊃ₚ s)
-  have sum₁ : ⊢ₚ ((q ⊃ₚ s) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ s))) :=
+  have propagation₁ : ⊢ₚ ((q ⊃ₚ s) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ s))) :=
     PM.FirstEdition.Volume1.Star1.star_1_6 p q s
-  have secondSum : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ s))) := syll _ _ _ second sum₁
+  have secondSum : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ s))) := syll _ _ _ second propagation₁
   have perm₁ : ⊢ₚ (((p ∨ₚ q) ⊃ₚ (p ∨ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (s ∨ₚ p))) :=
     PM.Derivation.detach (PM.FirstEdition.Volume1.Star1.star_1_4 p s)
       (PM.FirstEdition.Volume1.Star1.star_1_6 (∼ₚ (p ∨ₚ q)) (p ∨ₚ s) (s ∨ₚ p))
   have line1 : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (s ∨ₚ p))) := syll _ _ _ secondSum perm₁
   have first : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ (p ⊃ₚ r)) := star_3_26 (p ⊃ₚ r) (q ⊃ₚ s)
-  have sum₂ : ⊢ₚ ((p ⊃ₚ r) ⊃ₚ ((s ∨ₚ p) ⊃ₚ (s ∨ₚ r))) :=
+  have propagation₂ : ⊢ₚ ((p ⊃ₚ r) ⊃ₚ ((s ∨ₚ p) ⊃ₚ (s ∨ₚ r))) :=
     PM.FirstEdition.Volume1.Star1.star_1_6 s p r
-  have firstSum : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((s ∨ₚ p) ⊃ₚ (s ∨ₚ r))) := syll _ _ _ first sum₂
+  have firstSum : ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((s ∨ₚ p) ⊃ₚ (s ∨ₚ r))) := syll _ _ _ first propagation₂
   have perm₂ : ⊢ₚ (((s ∨ₚ p) ⊃ₚ (s ∨ₚ r)) ⊃ₚ ((s ∨ₚ p) ⊃ₚ (r ∨ₚ s))) :=
     PM.Derivation.detach (PM.FirstEdition.Volume1.Star1.star_1_4 s r)
       (PM.FirstEdition.Volume1.Star1.star_1_6 (∼ₚ (s ∨ₚ p)) (s ∨ₚ r) (r ∨ₚ s))

@@ -1,0 +1,108 @@
+{
+  "batch": "PM1-STAR51-CATALOGUE-10",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "362",
+    "scan_leaves": [
+      384
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱51·53",
+      "kind": "derived-proposition",
+      "printed": "✱51·53. ⊢ : E!ι̌ʻα .≡ . ι̌ʻα ε α",
+      "printed_page": 362,
+      "scan_leaf": 384,
+      "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
+      "declaration": "PM.Architecture.Star51RemainingKernel.star_51_53",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·54",
+      "kind": "derived-proposition",
+      "printed": "✱51·54. ⊢ : E!ι̌ʻα .≡ . (∃x) . α = ιʻx",
+      "printed_page": 362,
+      "scan_leaf": 384,
+      "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
+      "declaration": "PM.Architecture.Star51RemainingKernel.star_51_54",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·55",
+      "kind": "derived-proposition",
+      "printed": "✱51·55. ⊢ : E!ι̌ʻα .≡ . E!(℩x)(x ε α)",
+      "printed_page": 362,
+      "scan_leaf": 384,
+      "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
+      "declaration": "PM.Architecture.Star51RemainingKernel.star_51_55",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·56",
+      "kind": "derived-proposition",
+      "printed": "✱51·56. ⊢ : b = ι̌ʻŷ(φy) .≡ . ŷ(φy) = ιʻb .≡ . b = (℩x)(φx)",
+      "printed_page": 362,
+      "scan_leaf": 384,
+      "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
+      "declaration": "PM.Architecture.Star51RemainingKernel.star_51_56",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star51-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱51·57",
+      "kind": "derived-proposition",
+      "printed": "✱51·57. ⊢ : E!ι̌ʻŷ(φy) .≡ . ι̌ʻŷ(φy) = (℩x)(φx) .≡ . E!(℩x)(φx)",
+      "printed_page": 362,
+      "scan_leaf": 384,
+      "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
+      "declaration": "PM.Architecture.Star51RemainingKernel.star_51_57",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star51-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

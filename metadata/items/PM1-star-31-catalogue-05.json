@@ -1,0 +1,37 @@
+{
+  "batch": "PM1-STAR31-CATALOGUE-05",
+  "edition": "first",
+  "volume": 1,
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱31·51",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (P).fP̌ ≡ . (P).fP",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel3.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel3.star_31_51",
+      "formal_scope": "candidate universal relation quantifier invariance; strict audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·52",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (∃P).fP̌ ≡ . (∃P).fP",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel3.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel3.star_31_52",
+      "formal_scope": "candidate existential relation quantifier invariance; strict audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "batch": "PM1-STAR35-CATALOGUE-18",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "278-286",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱35·87",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\dot{\\exists}!(\\alpha\\uparrow \\beta).\\equiv.\\exists !\\alpha.\\exists !\\beta\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star35ClosingKernel.star_35_87",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·88",
+      "kind": "derived-proposition",
+      "printed": "\\[\\begin{align}&\\vdash\\colon\\ldotp \\alpha\\uparrow \\beta=\\dot{\\Lambda}.\\equiv:\\alpha=\\Lambda.\\lor.\\beta=\\Lambda\\\\ &\\quad[\\text{*35·87.Transp.*24·51.*25·51}]\\end{align}\\]",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star35ClosingKernel.star_35_88",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·881",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\text{ᗡ}ʻR\\subset\\alpha.\\supset.R\\mid (\\alpha\\uparrow \\beta)=\\text{D}ʻR\\uparrow \\beta\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star35ClosingKernel.star_35_881",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·882",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\text{D}ʻR\\subset\\beta.\\supset.(\\alpha\\uparrow \\beta)\\mid R=\\alpha\\uparrow \\text{ᗡ}ʻR \\quad[\\text{Similar proof}]\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star35ClosingKernel.star_35_882",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·89",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\exists !\\beta.\\supset.(\\alpha\\uparrow \\beta)\\mid (\\beta\\uparrow \\gamma)=(\\alpha\\uparrow \\gamma):{\\sim}\\exists !\\beta.\\supset.(\\alpha\\uparrow \\beta)\\mid (\\beta\\uparrow \\gamma)=\\dot{\\Lambda}\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star35ClosingKernel.star_35_89",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

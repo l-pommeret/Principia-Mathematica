@@ -1,0 +1,70 @@
+{
+  "batch": "PM1-STAR31-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱31·01",
+      "kind": "definition",
+      "printed": "Cnv = Q̂P̂{xQy ≡ₓ,ᵧ yPx} Df",
+      "lean_path": "Principia/FirstEdition/Volume1/Star31Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source catalogued; formal definition pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·02",
+      "kind": "definition",
+      "printed": "P̌ = x̂ŷ(yPx) Df",
+      "lean_path": "Principia/FirstEdition/Volume1/Star31Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source catalogued; formal definition pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·1",
+      "kind": "derived-proposition",
+      "printed": "⊢ : Q Cnv P ≡ : xQy ≡ₓ,ᵧ yPx",
+      "lean_path": "Principia/FirstEdition/Volume1/Star31Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source catalogued; exact proof pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·101",
+      "kind": "derived-proposition",
+      "printed": "⊢ : Q Cnv P . R Cnv P ⊃ . Q = R",
+      "lean_path": "Principia/FirstEdition/Volume1/Star31Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source catalogued; exact proof pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·13",
+      "kind": "derived-proposition",
+      "printed": "⊢ . E! CnvʻP",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel.star_31_13",
+      "formal_scope": "prepared mismatch: Lean relation existence is not PM descriptive existence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

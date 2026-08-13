@@ -1,0 +1,114 @@
+{
+  "batch": "PM1-STAR43-CATALOGUE-02",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "341",
+    "scan_leaves": [
+      363
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱43·111",
+      "kind": "derived-proposition",
+      "printed": "✱43·111. ⊢ . (| R)ʻQ = Q | R",
+      "printed_page": 341,
+      "scan_leaf": 363,
+      "lean_path": "Principia/Architecture/Star43OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star43OpeningKernel.star_43_111",
+      "formal_scope": "typed relative-product reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star43-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱43·112",
+      "kind": "derived-proposition",
+      "printed": "✱43·112. ⊢ . (R ∥ S)ʻQ = R | Q | S",
+      "printed_page": 341,
+      "scan_leaf": 363,
+      "lean_path": "Principia/Architecture/Star43OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star43OpeningKernel.star_43_112",
+      "formal_scope": "typed relative-product reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star43-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱43·12",
+      "kind": "derived-proposition",
+      "printed": "✱43·12. ⊢ . E!(R |)ʻQ",
+      "printed_page": 341,
+      "scan_leaf": 363,
+      "lean_path": "Principia/Architecture/Star43OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star43OpeningKernel.star_43_12",
+      "formal_scope": "typed relative-product reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star43-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱43·121",
+      "kind": "derived-proposition",
+      "printed": "✱43·121. ⊢ . E!(| R)ʻQ",
+      "printed_page": 341,
+      "scan_leaf": 363,
+      "lean_path": "Principia/Architecture/Star43OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star43OpeningKernel.star_43_121",
+      "formal_scope": "typed relative-product reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star43-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱43·122",
+      "kind": "derived-proposition",
+      "printed": "✱43·122. ⊢ . E!(R ∥ S)ʻQ",
+      "printed_page": 341,
+      "scan_leaf": 363,
+      "lean_path": "Principia/Architecture/Star43OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star43OpeningKernel.star_43_122",
+      "formal_scope": "typed relative-product reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star43-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

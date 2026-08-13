@@ -1,0 +1,115 @@
+{
+  "batch": "PM1-STAR80-CATALOGUE-15",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "517–518",
+    "scan_leaves": [
+      539,
+      540
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱80·84",
+      "kind": "derived-proposition",
+      "printed": "✱80·84. ⊢ : Λ∼∈P_Δʻʻκ .⊃. P_Δʻʻκ sm κ",
+      "printed_page": 517,
+      "scan_leaf": 539,
+      "lean_path": "Principia/Architecture/Star80FinalKernel.lean",
+      "declaration": "PM.Architecture.Star80FinalKernel.star_80_84",
+      "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star80-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱80·9",
+      "kind": "derived-proposition",
+      "printed": "✱80·9. ⊢ : y≠z .⊃: M∈P_Δʻ(ιʻy∪ιʻz) .≡. (∃u,v).uPy.vPz.M=u↓y⊍v↓z",
+      "printed_page": 517,
+      "scan_leaf": 539,
+      "lean_path": "Principia/Architecture/Star80FinalKernel.lean",
+      "declaration": "PM.Architecture.Star80FinalKernel.star_80_9",
+      "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star80-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱80·91",
+      "kind": "derived-proposition",
+      "printed": "✱80·91. ⊢ : M∈P_Δʻ(ιʻy∪ιʻz) .⊃. M=(Mʻy)↓y⊍(Mʻz)↓z",
+      "printed_page": 517,
+      "scan_leaf": 539,
+      "lean_path": "Principia/Architecture/Star80FinalKernel.lean",
+      "declaration": "PM.Architecture.Star80FinalKernel.star_80_91",
+      "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star80-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱80·92",
+      "kind": "derived-proposition",
+      "printed": "✱80·92. ⊢ : y≠z .⊃. DʻʻP_Δʻ(ιʻy∪ιʻz)=ξ̂{(∃u,v).uPy.vPz.ξ=ιʻu∪ιʻv}",
+      "printed_page": 518,
+      "scan_leaf": 540,
+      "lean_path": "Principia/Architecture/Star80FinalKernel.lean",
+      "declaration": "PM.Architecture.Star80FinalKernel.star_80_92",
+      "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star80-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱80·93",
+      "kind": "derived-proposition",
+      "printed": "✱80·93. ⊢ : ∃!P_Δʻ(ιʻy∪ιʻz) .≡. y,z∈ᗡʻP",
+      "printed_page": 518,
+      "scan_leaf": 540,
+      "lean_path": "Principia/Architecture/Star80FinalKernel.lean",
+      "declaration": "PM.Architecture.Star80FinalKernel.star_80_93",
+      "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star80-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

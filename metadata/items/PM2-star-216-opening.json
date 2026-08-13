@@ -1,0 +1,15 @@
+{
+  "batch": "PM2-STAR216-OPENING",
+  "edition": "second",
+  "volume": 2,
+  "source_range": {"canonical_source": "Principia/SecondEdition/Volume2/Star216Source.lean"},
+  "witnesses": ["PG78255", "PM2-SECOND-EDITION-LOCAL-TRANSCRIPTION"],
+  "items": [
+    {"id":"PM2:✱216·01","kind":"definition","printed":"δₚʻα=ltₚʻʻCl exʻ(α∩CʻP) Df","lean_path":"Principia/Architecture/Star216OpeningKernel.lean","declaration":"PM.Architecture.Star216OpeningKernel.star_216_01","formal_scope":"exact derivative definition after abstracting Cl exʻ(α∩CʻP) as the class argument A and ltₚ as limit","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","lean_dependencies":[]},
+    {"id":"PM2:✱216·02","kind":"definition","printed":"denseʻP=α̂(α−→minₚʻα⊂δₚʻα) Df","lean_path":"Principia/Architecture/Star216OpeningKernel.lean","declaration":"PM.Architecture.Star216OpeningKernel.star_216_02","formal_scope":"exact pointwise definition of dense after abstracting the minimum class and derivative operator","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","lean_dependencies":[]},
+    {"id":"PM2:✱216·03","kind":"definition","printed":"closedʻP=α̂{Cl exʻ(α∩CʻP)⊂ᗡʻlimaxₚ.δₚʻα⊂α} Df","lean_path":"Principia/Architecture/Star216OpeningKernel.lean","declaration":"PM.Architecture.Star216OpeningKernel.star_216_03","formal_scope":"exact conjunctive definition of closed after abstracting the limax eligibility condition and derivative operator","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","lean_dependencies":[]},
+    {"id":"PM2:✱216·04","kind":"definition","printed":"perfʻP=denseʻP∩closedʻP Df","lean_path":"Principia/Architecture/Star216OpeningKernel.lean","declaration":"PM.Architecture.Star216OpeningKernel.star_216_04","formal_scope":"exact pointwise intersection definition of perfect","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","lean_dependencies":[]},
+    {"id":"PM2:✱216·05","kind":"definition","printed":"∇ʻP=P↏Dʻltₚ Df","lean_path":"Principia/Architecture/Star216OpeningKernel.lean","declaration":"PM.Architecture.Star216OpeningKernel.star_216_05","formal_scope":"exact definition of nabla as restriction of P to the abstracted domain Dʻltₚ","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","lean_dependencies":[]}
+  ],
+  "ci_evidence": {"commit":"pending","run":"pending","conclusion":"pending"}
+}

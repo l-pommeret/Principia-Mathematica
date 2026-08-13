@@ -1,0 +1,114 @@
+{
+  "batch": "PM1-STAR92-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "602",
+    "scan_leaves": [
+      624
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱92·1",
+      "kind": "derived-proposition",
+      "printed": "✱92·1. ⊢ : R∈1→Cls .⊃. PotidʻR⊂1→Cls",
+      "printed_page": 602,
+      "scan_leaf": 624,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_1",
+      "formal_scope": "not strictly equivalent: Lean Potid is defined as domain/codomain equality and proves only Dom Q = Dom R, whereas PM quantifies preservation of one-many functionality over every power",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star92-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱92·101",
+      "kind": "derived-proposition",
+      "printed": "✱92·101. ⊢ : R∈Cls→1 .⊃. PotidʻR⊂Cls→1",
+      "printed_page": 602,
+      "scan_leaf": 624,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_101",
+      "formal_scope": "not strictly equivalent: Lean Potid is defined as domain/codomain equality and proves only Cod Q = Cod R, whereas PM quantifies preservation of many-one functionality over every power",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star92-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱92·102",
+      "kind": "derived-proposition",
+      "printed": "✱92·102. ⊢ : R∈1→1 .⊃. PotidʻR⊂1→1",
+      "printed_page": 602,
+      "scan_leaf": 624,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_102",
+      "formal_scope": "not strictly equivalent: Lean restates the defining domain/codomain equalities of Potid, whereas PM asserts preservation of bijective functionality throughout PotidʻR",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star92-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱92·11",
+      "kind": "derived-proposition",
+      "printed": "✱92·11. ⊢ : R∈1→Cls .⊃. Rpo|CnvʻR⊂̇R∗ . Rpo|CnvʻR=R∗↾DʻR",
+      "printed_page": 602,
+      "scan_leaf": 624,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_11",
+      "formal_scope": "not strictly equivalent: Lean derives only Cod Q ⊆ Dom R from assumed equal fields; PM asserts an inclusion and exact restriction identity involving Rpo, CnvʻR, and R∗",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star92-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱92·112",
+      "kind": "derived-proposition",
+      "printed": "✱92·112. ⊢ : R∈1→Cls .⊃. R|Rpo|CnvʻR=Rpo↾DʻR",
+      "printed_page": 602,
+      "scan_leaf": 624,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_112",
+      "formal_scope": "not strictly equivalent: Lean proves equality of two domain restrictions of arbitrary Q using Dom Q = Dom R; PM asserts the composition/restriction identity R|Rpo|CnvʻR = Rpo↾DʻR",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star92-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

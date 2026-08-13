@@ -1,0 +1,11 @@
+{
+  "batch":"PM3-STAR215-CANONICAL-01","edition":"first","volume":3,
+  "source_range":{"printed_pages":"691-692","canonical_scan":"https://archive.org/details/principiamathema03whit/page/691"},
+  "witnesses":["PM3-1913-SCAN"],
+  "items":[
+    {"id":"PM3:✱215·01","kind":"definition","printed":"strʻP=α̂(α⊂CʻP.P̆ʻα∩Pʻα⊂α)","lean_path":"Principia/Architecture/Star215Kernel.lean","declaration":"PM.Architecture.Star215Kernel.star_215_01","formal_scope":"exact typed definition of a P-convex stretch","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Star215-canonical-review.md"},
+    {"id":"PM3:✱215·1","kind":"derived-proposition","printed":"α∈strʻP ≡ α⊂CʻP.P̆ʻα∩Pʻα⊂α","lean_path":"Principia/Architecture/Star215Kernel.lean","declaration":"PM.Architecture.Star215Kernel.star_215_1","formal_scope":"exact membership expansion of the stretch definition","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Star215-canonical-review.md"},
+    {"id":"PM3:✱215·11","kind":"derived-proposition","printed":"strʻP=strʻP","lean_path":"Principia/Architecture/Star215Kernel.lean","declaration":"PM.Architecture.Star215Kernel.star_215_11","formal_scope":"exact reflexive identity of the stretch class","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Star215-canonical-review.md"},
+    {"id":"PM3:✱215·14","kind":"derived-proposition","printed":"α∈sectʻP.β∈sect̆ʻP ⊃ α∩β∈strʻP","lean_path":"Principia/Architecture/Star215Kernel.lean","declaration":"PM.Architecture.Star215Kernel.star_215_14","formal_scope":"exact typed core: intersection of a lower and upper section is a stretch","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Star215-canonical-review.md"}
+  ],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+}

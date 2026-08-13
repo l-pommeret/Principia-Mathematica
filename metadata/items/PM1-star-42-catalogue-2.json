@@ -1,0 +1,96 @@
+{
+  "batch": "PM1-STAR42-CATALOGUE-2",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "339",
+    "scan_leaves": [
+      361
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱42·21",
+      "kind": "derived-proposition",
+      "printed": "✱42·21. ⊢ . sʻCʻʻʻCʻʻCʻP = CʻʻsʻCʻʻCʻP = CʻʻCʻṡʻCʻP = CʻʻFʻʻCʻP = CʻʻF⃗²ʻP",
+      "printed_page": 339,
+      "scan_leaf": 361,
+      "lean_path": "Principia/Architecture/Star42OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star42OpeningKernel.star_42_21",
+      "formal_scope": "typed miscellaneous class/relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star42-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱42·22",
+      "kind": "derived-proposition",
+      "printed": "✱42·22. ⊢ . sʻsʻCʻʻʻCʻʻCʻP = sʻCʻʻsʻCʻʻCʻP = sʻCʻʻCʻṡʻCʻP = CʻṡʻCʻṡʻCʻP = sʻCʻʻFʻʻCʻP = FʻʻFʻʻCʻP = FʻʻF⃗²ʻP = F⃗³ʻP",
+      "printed_page": 339,
+      "scan_leaf": 361,
+      "lean_path": "Principia/Architecture/Star42OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star42OpeningKernel.star_42_22",
+      "formal_scope": "typed miscellaneous class/relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star42-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱42·3",
+      "kind": "derived-proposition",
+      "printed": "✱42·3. ⊢ . sʻsʻʻR⃗ʻʻα = sʻRʻʻα",
+      "printed_page": 339,
+      "scan_leaf": 361,
+      "lean_path": "Principia/Architecture/Star42OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star42OpeningKernel.star_42_3",
+      "formal_scope": "typed miscellaneous class/relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star42-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱42·31",
+      "kind": "derived-proposition",
+      "printed": "✱42·31. ⊢ . sʻsʻʻR⃖ʻʻα = sʻR̆ʻʻα",
+      "printed_page": 339,
+      "scan_leaf": 361,
+      "lean_path": "Principia/Architecture/Star42OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star42OpeningKernel.star_42_31",
+      "formal_scope": "typed miscellaneous class/relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star42-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

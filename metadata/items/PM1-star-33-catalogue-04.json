@@ -1,0 +1,135 @@
+{
+  "batch": "PM1-STAR33-CATALOGUE-04",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "232–240",
+    "scan_leaves": [
+      254,
+      262
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm#*33"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱33·26",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel3.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel3.star_33_26",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "printed": "✱33·26.  \\(\\vdash.\\text{D}ʻ(R\\unicode{x228d}S)=\\text{D}ʻR\\cup \\text{D}ʻS\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    },
+    {
+      "id": "PM1:✱33·27",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel3.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel3.star_33_27",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "printed": "✱33·27.  \\(\\vdash.CʻR=\\text{D}ʻ(R\\unicode{x228d}\\breve{R})\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    },
+    {
+      "id": "PM1:✱33·28",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel4.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel4.star_33_28",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "printed": "✱33·28.  \\(\\vdash.\\text{D}ʻ\\text{V}=\\text{ᗡ}ʻ\\dot{\\text{V}}=Cʻ\\text{V}=\\text{V}\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    },
+    {
+      "id": "PM1:✱33·29",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel4.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel4.star_33_29",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "printed": "✱33·29.  \\(\\vdash.\\text{D}ʻ\\Lambda=\\text{ᗡ}ʻ\\Lambda=Cʻ\\dot{\\Lambda}=\\Lambda \\quad[\\text{*33·241.*21·2}]\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    },
+    {
+      "id": "PM1:✱33·31",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel4.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel4.star_33_31",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "printed": "✱33·31.  \\(\\vdash\\colon\\ldotp \\beta\\subset\\text{ᗡ}ʻR.\\equiv:y\\in \\beta.\\supset_{y}.\\exists !\\overrightarrow{R}ʻy \\quad[\\text{Proof as in *33·3}]\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

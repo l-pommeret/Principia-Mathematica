@@ -1,0 +1,115 @@
+{
+  "batch": "PM1-STAR93-CATALOGUE-09",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "614–615",
+    "scan_leaves": [
+      636,
+      637
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱93·37",
+      "kind": "derived-proposition",
+      "printed": "✱93·37. ⊢ : P∈1→Cls .⊃. CʻP=P̌_*ʻʻB→ʻP∪pʻᗡʻʻPotʻP",
+      "printed_page": 614,
+      "scan_leaf": 636,
+      "lean_path": "Principia/Architecture/Star93ClosureKernel.lean",
+      "declaration": "PM.Architecture.Star93ClosureKernel.star_93_37",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star93-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱93·38",
+      "kind": "derived-proposition",
+      "printed": "✱93·38. ⊢ : P∈1→Cls .⊃: x∈pʻᗡʻʻPotʻP .≡. P_*→ʻx⊂ᗡʻP . x∈CʻP",
+      "printed_page": 614,
+      "scan_leaf": 636,
+      "lean_path": "Principia/Architecture/Star93ClosureKernel.lean",
+      "declaration": "PM.Architecture.Star93ClosureKernel.star_93_38",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star93-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱93·381",
+      "kind": "derived-proposition",
+      "printed": "✱93·381. ⊢ : P∈Cls→1 .⊃: x∈pʻᗡʻʻPotʻP̌ .≡. P_*←ʻx⊂DʻP . x∈CʻP",
+      "printed_page": 615,
+      "scan_leaf": 637,
+      "lean_path": "Principia/Architecture/Star93ClosureKernel.lean",
+      "declaration": "PM.Architecture.Star93ClosureKernel.star_93_381",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star93-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱93·382",
+      "kind": "derived-proposition",
+      "printed": "✱93·382. ⊢ : P∈1→1 .⊃: x∈pʻᗡʻʻPotʻP∩pʻᗡʻʻPotʻP̌ .≡. P_*→ʻx⊂ᗡʻP . P_*←ʻx⊂DʻP",
+      "printed_page": 615,
+      "scan_leaf": 637,
+      "lean_path": "Principia/Architecture/Star93ClosureKernel.lean",
+      "declaration": "PM.Architecture.Star93ClosureKernel.star_93_382",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star93-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱93·4",
+      "kind": "derived-proposition",
+      "printed": "✱93·4. ⊢ : P∈1→Cls .⊃. CʻP=P̌_*ʻʻB→ʻP∪pʻᗡʻʻPotʻP",
+      "printed_page": 615,
+      "scan_leaf": 637,
+      "lean_path": "Principia/Architecture/Star93ClosureKernel.lean",
+      "declaration": "PM.Architecture.Star93ClosureKernel.star_93_4",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star93-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

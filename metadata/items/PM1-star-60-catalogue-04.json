@@ -1,0 +1,117 @@
+{
+  "batch": "PM1-STAR60-CATALOGUE-04",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "406–411",
+    "scan_leaves": [
+      428,
+      429,
+      430,
+      431,
+      432,
+      433
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱60·02",
+      "kind": "definition",
+      "printed": "✱60·02. Cl ex = κ̂α̂{κ = β̂(β ⊂ α . ∃!β)} Df",
+      "printed_page": 406,
+      "scan_leaf": 428,
+      "formal_status": "prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60Kernel.lean",
+      "declaration": "PM.Architecture.Star60Kernel.ClEx",
+      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star60-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱60·03",
+      "kind": "definition",
+      "printed": "✱60·03. Cls² = ClʻCls Df",
+      "printed_page": 406,
+      "scan_leaf": 428,
+      "formal_status": "prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/FirstEdition/Volume1/Star60Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source transcription only; iterated class-type architecture is not yet represented",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-iterated-class-types"
+    },
+    {
+      "id": "PM1:✱60·04",
+      "kind": "definition",
+      "printed": "✱60·04. Cls³ = ClʻCls² Df",
+      "printed_page": 406,
+      "scan_leaf": 428,
+      "formal_status": "prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/FirstEdition/Volume1/Star60Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source transcription only; iterated class-type architecture is not yet represented",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-iterated-class-types"
+    },
+    {
+      "id": "PM1:✱60·1",
+      "kind": "derived-proposition",
+      "printed": "✱60·1. ⊢ : κ Cl α .≡. κ = β̂(β ⊂ α)",
+      "printed_page": 407,
+      "scan_leaf": 429,
+      "formal_status": "prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60Kernel.lean",
+      "declaration": "PM.Architecture.Star60Kernel.star_60_1",
+      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star60-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱60·11",
+      "kind": "derived-proposition",
+      "printed": "✱60·11. ⊢ : κ Cl ex α .≡. κ = β̂(β ⊂ α . ∃!β)",
+      "printed_page": 407,
+      "scan_leaf": 429,
+      "formal_status": "prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60Kernel.lean",
+      "declaration": "PM.Architecture.Star60Kernel.star_60_11",
+      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star60-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

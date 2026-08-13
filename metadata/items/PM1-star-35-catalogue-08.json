@@ -1,0 +1,130 @@
+{
+  "batch": "PM1-STAR35-CATALOGUE-08",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "278-286",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱35·43",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\alpha\\subset\\beta.\\supset.\\alpha\\upharpoonleft R\\unicode{x2abd}\\beta\\upharpoonleft R\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35MonotonicityKernel.lean",
+      "declaration": "PM.Architecture.Star35MonotonicityKernel.star_35_43",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·431",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\beta\\subset\\gamma.\\supset.R\\upharpoonright \\beta\\unicode{x2abd}R\\upharpoonright \\gamma \\quad[\\text{Proof similar to that of *35·43}]\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35MonotonicityKernel.lean",
+      "declaration": "PM.Architecture.Star35MonotonicityKernel.star_35_431",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·432",
+      "kind": "derived-proposition",
+      "printed": "\\[\\begin{align}\\vdash:\\alpha\\subset\\gamma.\\beta\\subset\\delta.\\supset.\\alpha\\upharpoonleft R\\upharpoonright \\beta&\\unicode{x2abd}\\gamma\\upharpoonleft R\\upharpoonright \\delta\\\\ &[\\text{Proof similar to that of *35·43}]\\end{align}\\]",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35MonotonicityKernel.lean",
+      "declaration": "PM.Architecture.Star35MonotonicityKernel.star_35_432",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·44",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.\\alpha\\upharpoonleft R\\unicode{x2abd}R\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35MonotonicityKernel.lean",
+      "declaration": "PM.Architecture.Star35MonotonicityKernel.star_35_44",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·441",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.R\\upharpoonright \\beta\\unicode{x2abd}R \\quad[\\text{Proof similar to that of *35·44}]\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35MonotonicityKernel.lean",
+      "declaration": "PM.Architecture.Star35MonotonicityKernel.star_35_441",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

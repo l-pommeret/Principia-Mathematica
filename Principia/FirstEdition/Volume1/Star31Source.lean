@@ -1,0 +1,83 @@
+/-! PM I ✱31, Project Gutenberg 78050 diplomatic proposition lines. -/
+
+/- PM-VERBATIM-BEGIN PM1:✱31·01
+✱31·01. Cnv = Q̂P̂{xQy ≡ₓ,ᵧ yPx} Df
+PM-VERBATIM-END PM1:✱31·01 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·02
+✱31·02. P̌ = x̂ŷ(yPx) Df
+PM-VERBATIM-END PM1:✱31·02 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·1
+✱31·1. ⊢ : Q Cnv P ≡ : xQy ≡ₓ,ᵧ yPx [✱21·3.(✱31·01)]
+PM-VERBATIM-END PM1:✱31·1 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·101
+✱31·101. ⊢ : Q Cnv P . R Cnv P ⊃ . Q = R
+PM-VERBATIM-END PM1:✱31·101 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·11
+✱31·11. ⊢ : xP̌y ≡ . yPx [✱21·3.(✱31·02)]
+PM-VERBATIM-END PM1:✱31·11 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·111
+✱31·111. ⊢ . P̌ Cnv P [✱31·1·11]
+PM-VERBATIM-END PM1:✱31·111 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·12
+✱31·12. ⊢ . P̌ = CnvʻP
+PM-VERBATIM-END PM1:✱31·12 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·13
+✱31·13. ⊢ . E! CnvʻP [✱14·21.✱31·12]
+PM-VERBATIM-END PM1:✱31·13 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·131
+✱31·131. ⊢ : x(CnvʻP)y ≡ . yPx [✱31·11·12.✱21·43]
+PM-VERBATIM-END PM1:✱31·131 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·132
+✱31·132. ⊢ : Q Cnv P ≡ . Q = CnvʻP ≡ . Q = P̌ [✱30·4.✱31·13·12]
+PM-VERBATIM-END PM1:✱31·132 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·14
+✱31·14. ⊢ . Cnvʻ(P ∩̇ Q) = CnvʻP ∩̇ CnvʻQ
+PM-VERBATIM-END PM1:✱31·14 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·15
+✱31·15. ⊢ . Cnvʻ(P ⊍ Q) = CnvʻP ⊍ CnvʻQ [Similar proof]
+PM-VERBATIM-END PM1:✱31·15 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·16
+✱31·16. ⊢ . Cnvʻ−̇P = −̇(CnvʻP)
+PM-VERBATIM-END PM1:✱31·16 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·17
+✱31·17. ⊢ : y = P̌ʻx ≡ : xPz ≡_z z = y [✱30·3.✱31·11]
+PM-VERBATIM-END PM1:✱31·17 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·18
+✱31·18. ⊢ : E! P̌ʻx ≡ : (∃y) : xPz ≡_z z = y [✱30·2.✱31·11]
+PM-VERBATIM-END PM1:✱31·18 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·21
+✱31·21. ⊢ . CnvʻΛ̇ = Λ̇
+PM-VERBATIM-END PM1:✱31·21 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·22
+✱31·22. ⊢ . CnvʻV̇ = V̇ [Similar proof]
+PM-VERBATIM-END PM1:✱31·22 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·23
+✱31·23. ⊢ : P̌ = V̇ ≡ . P = V̇
+PM-VERBATIM-END PM1:✱31·23 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·24
+✱31·24. ⊢ : P̌ = Λ̇ ≡ . P = Λ̇ [Similar proof]
+PM-VERBATIM-END PM1:✱31·24 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·32
+✱31·32. ⊢ : P = Q ≡ . P̌ = Q̌
+PM-VERBATIM-END PM1:✱31·32 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·33
+✱31·33. ⊢ . CnvʻCnvʻP = P
+PM-VERBATIM-END PM1:✱31·33 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·34
+✱31·34. ⊢ : P = Q̌ ≡ . Q = P̌
+PM-VERBATIM-END PM1:✱31·34 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·4
+✱31·4. ⊢ : P ⪽ Q ≡ . P̌ ⪽ Q̌ [✱31·11.✱11·33]
+PM-VERBATIM-END PM1:✱31·4 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·41
+✱31·41. ⊢ : P ⪽ Q̌ ≡ . P̌ ⪽ Q [✱31·4·33·12]
+PM-VERBATIM-END PM1:✱31·41 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·5
+✱31·5. ⊢ : ∃̇!P ≡ . ∃̇!P̌ [✱31·24.Transp.✱25·54]
+PM-VERBATIM-END PM1:✱31·5 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·51
+✱31·51. ⊢ : (P).fP̌ ≡ . (P).fP
+PM-VERBATIM-END PM1:✱31·51 -/
+/- PM-VERBATIM-BEGIN PM1:✱31·52
+✱31·52. ⊢ : (∃P).fP̌ ≡ . (∃P).fP [✱31·51.Transp]
+PM-VERBATIM-END PM1:✱31·52 -/

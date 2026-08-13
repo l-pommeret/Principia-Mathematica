@@ -1,0 +1,114 @@
+{
+  "batch": "PM1-STAR55-CATALOGUE-04",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "386",
+    "scan_leaves": [
+      408
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱55·201",
+      "kind": "derived-proposition",
+      "printed": "✱55·201. ⊢ : x↓z = y↓z .≡. x = y",
+      "printed_page": 386,
+      "scan_leaf": 408,
+      "lean_path": "Principia/Architecture/Star55OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star55OpeningKernel.star_55_201",
+      "formal_scope": "typed ordinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱55·202",
+      "kind": "derived-proposition",
+      "printed": "✱55·202. ⊢ : x↓y = z↓w .≡. x=z . y=w .≡. y↓x = w↓z",
+      "printed_page": 386,
+      "scan_leaf": 408,
+      "lean_path": "Principia/Architecture/Star55NextKernel.lean",
+      "declaration": "PM.Architecture.Star55NextKernel.star_55_202",
+      "formal_scope": "typed ordinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱55·21",
+      "kind": "derived-proposition",
+      "printed": "✱55·21. ⊢ . ᗡʻx↓ = V . ᗡʻ↓x = V",
+      "printed_page": 386,
+      "scan_leaf": 408,
+      "lean_path": "Principia/Architecture/Star55NextKernel.lean",
+      "declaration": "PM.Architecture.Star55NextKernel.star_55_21",
+      "formal_scope": "typed ordinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱55·22",
+      "kind": "derived-proposition",
+      "printed": "✱55·22. ⊢ . Dʻx↓ = Ř{(∃y).R=x↓y}",
+      "printed_page": 386,
+      "scan_leaf": 408,
+      "lean_path": "Principia/Architecture/Star55NextKernel.lean",
+      "declaration": "PM.Architecture.Star55NextKernel.star_55_22",
+      "formal_scope": "typed ordinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱55·221",
+      "kind": "derived-proposition",
+      "printed": "✱55·221. ⊢ . Dʻ↓x = Ř{(∃y).R=y↓x}",
+      "printed_page": 386,
+      "scan_leaf": 408,
+      "lean_path": "Principia/Architecture/Star55NextKernel.lean",
+      "declaration": "PM.Architecture.Star55NextKernel.star_55_221",
+      "formal_scope": "typed ordinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

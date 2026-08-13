@@ -1,0 +1,115 @@
+{
+  "batch": "PM1-STAR63-CATALOGUE-10",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "424–425",
+    "scan_leaves": [
+      446,
+      447
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱63·3",
+      "kind": "derived-proposition",
+      "printed": "✱63·3. \\(\\vdash:(\\alpha).\\alpha\\in \\kappa.\\supset.(x).x\\in sʻ\\kappa\\)",
+      "printed_page": 424,
+      "scan_leaf": 446,
+      "lean_path": "Principia/Architecture/Star63TypeKernel5.lean",
+      "declaration": "PM.Architecture.Star63TypeKernel5.star_63_3",
+      "formal_scope": "typed relative-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star63-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱63·31",
+      "kind": "derived-proposition",
+      "printed": "✱63·31. \\(\\vdash.sʻ(\\kappa\\cup -\\kappa)=sʻ\\kappa\\cup -sʻ\\kappa\\)",
+      "printed_page": 424,
+      "scan_leaf": 446,
+      "lean_path": "Principia/Architecture/Star63TypeKernel3.lean",
+      "declaration": "PM.Architecture.Star63TypeKernel3.star_63_31",
+      "formal_scope": "typed relative-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star63-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱63·321",
+      "kind": "derived-proposition",
+      "printed": "✱63·321. \\(\\vdash.t_{1}ʻ\\kappa=t_{1}ʻt_{0}ʻ\\kappa=t_{0}ʻt_{1}ʻ\\kappa\\)",
+      "printed_page": 425,
+      "scan_leaf": 447,
+      "lean_path": "Principia/Architecture/Star63TypeKernel3.lean",
+      "declaration": "PM.Architecture.Star63TypeKernel3.star_63_321",
+      "formal_scope": "typed relative-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star63-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱63·33",
+      "kind": "derived-proposition",
+      "printed": "✱63·33. \\(\\vdash:t_{0}ʻ\\kappa=t_{0}ʻ\\lambda.\\supset.t_{1}ʻ\\kappa=t_{1}ʻ\\lambda \\quad[\\text{*30·37.*63·32}]\\)",
+      "printed_page": 425,
+      "scan_leaf": 447,
+      "lean_path": "Principia/Architecture/Star63TypeKernel2.lean",
+      "declaration": "PM.Architecture.Star63TypeKernel2.star_63_33",
+      "formal_scope": "typed relative-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star63-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱63·34",
+      "kind": "derived-proposition",
+      "printed": "✱63·34. \\(\\vdash.t_{1}ʻtʻ\\alpha=t_{0}ʻ\\alpha=sʻtʻ\\alpha\\)",
+      "printed_page": 425,
+      "scan_leaf": 447,
+      "lean_path": "Principia/Architecture/Star63TypeKernel3.lean",
+      "declaration": "PM.Architecture.Star63TypeKernel3.star_63_34",
+      "formal_scope": "typed relative-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star63-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

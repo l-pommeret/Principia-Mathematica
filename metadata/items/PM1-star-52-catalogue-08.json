@@ -1,0 +1,40 @@
+{
+  "batch": "PM1-STAR52-CATALOGUE-08",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "367",
+    "scan_leaves": [
+      389
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱52·7",
+      "kind": "derived-proposition",
+      "printed": "✱52·7.  ⊢ :: β − α ∈ 1 . α ⊂ ξ . ξ ⊂ β .⊃ : ξ = α .∨. ξ = β",
+      "printed_page": 367,
+      "scan_leaf": 389,
+      "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
+      "declaration": "PM.Architecture.Star52CompletionKernel.star_52_7",
+      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

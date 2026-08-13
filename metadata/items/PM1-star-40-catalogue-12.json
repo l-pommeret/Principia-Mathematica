@@ -1,0 +1,115 @@
+{
+  "batch": "PM1-STAR40-CATALOGUE-12",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "329–330",
+    "scan_leaves": [
+      351,
+      352
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱40·682",
+      "kind": "derived-proposition",
+      "printed": "✱40·682. ⊢ : ∃!α ∩ pʻP⃖ʻʻβ .⊃. β ⊂ Pʻʻα",
+      "printed_page": 329,
+      "scan_leaf": 351,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_682",
+      "formal_scope": "typed products-and-sums reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱40·69",
+      "kind": "derived-proposition",
+      "printed": "✱40·69. ⊢ : ∃!CʻP⃗ ∩ pʻP⃗ʻʻα .≡. ∃!P . ∃!pʻP⃗ʻʻα",
+      "printed_page": 329,
+      "scan_leaf": 351,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_69",
+      "formal_scope": "typed products-and-sums reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱40·7",
+      "kind": "derived-proposition",
+      "printed": "✱40·7. ⊢. sʻα♀_{,,}ʻʻβ = ẑ{(∃x,y). x ∈ α . y ∈ β . z = x ♀ y}",
+      "printed_page": 329,
+      "scan_leaf": 351,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_7",
+      "formal_scope": "typed products-and-sums reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱40·71",
+      "kind": "derived-proposition",
+      "printed": "✱40·71. ⊢. sʻ♀_{,,}yʻʻκ = (sʻκ)♀_{,,}y = ♀ʻʻsʻκ",
+      "printed_page": 330,
+      "scan_leaf": 352,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_71",
+      "formal_scope": "typed products-and-sums reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱40·8",
+      "kind": "derived-proposition",
+      "printed": "✱40·8. ⊢ :. α ∈ κ .⊃_α. Řʻʻα ⊂ α :⊃. Řʻʻsʻκ ⊂ sʻκ",
+      "printed_page": 330,
+      "scan_leaf": 352,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_8",
+      "formal_scope": "typed products-and-sums reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "batch": "PM1-STAR30-CATALOGUE-5",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "249–250",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱30·36",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\text{E}!Rʻy.R=S.\\supset.Rʻy=Sʻy\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star30CompositionKernel.star_30_36",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱30·37",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\text{E}!Rʻy.y=z.\\supset.Rʻy=Rʻz\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star30CompositionKernel.star_30_37",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱30·4",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash\\colon\\ldotp\\text{E}!Rʻy.\\supset:a=Rʻy.\\equiv.aRy\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star30CompositionKernel.star_30_4",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱30·41",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash\\colon\\ldotp (y).Rʻy=Sʻy.\\equiv:(y).\\text{E}!Rʻy:R=S\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star30CompositionKernel.star_30_41",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱30·42",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash\\colon\\ldotp (y).\\text{E}!Rʻy.\\supset:(y).Rʻy=Sʻy.\\equiv.R=S\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star30CompositionKernel.star_30_42",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

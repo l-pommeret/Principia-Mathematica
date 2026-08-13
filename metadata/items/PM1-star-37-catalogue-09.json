@@ -1,0 +1,105 @@
+{
+  "batch": "PM1-STAR37-CATALOGUE-09",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "298–299",
+    "scan_leaves": [
+      320,
+      321
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱37·212",
+      "kind": "derived-proposition",
+      "printed": "✱37·212. \\vdash.(P\\dot{\\cap}Q)ʻʻ(\\alpha\\cap \\beta)\\subset Pʻʻ\\alpha\\cap Pʻʻ\\beta\\cap Qʻʻ\\alpha\\cap Qʻʻ\\beta \\quad[\\text{*37·21·211}]",
+      "printed_page": 298,
+      "scan_leaf": 320,
+      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_212",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·221",
+      "kind": "derived-proposition",
+      "printed": "✱37·221. \\vdash.(P\\unicode{x228d}Q)ʻʻ\\alpha=Pʻʻ\\alpha\\cup Qʻʻ\\alpha \\quad[\\text{Similar proof}]",
+      "printed_page": 299,
+      "scan_leaf": 321,
+      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_221",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·222",
+      "kind": "derived-proposition",
+      "printed": "✱37·222. \\vdash.(P\\unicode{x228d}Q)ʻʻ(\\alpha\\cup \\beta)=Pʻʻ\\alpha\\cup Pʻʻ\\beta\\cup Qʻʻ\\alpha\\cup Qʻʻ\\beta \\quad[\\text{*37·22·221}]",
+      "printed_page": 299,
+      "scan_leaf": 321,
+      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_222",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·23",
+      "kind": "derived-proposition",
+      "printed": "✱37·23. \\vdash.DʻR_{\\in}=\\hat{\\alpha}\\{(\\exists \\beta).\\alpha=Rʻʻ\\beta\\} \\quad[\\text{*37·101.*33·11}]",
+      "printed_page": 299,
+      "scan_leaf": 321,
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_23",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·231",
+      "kind": "derived-proposition",
+      "printed": "✱37·231. \\vdash.\\text{ᗡ}ʻR_{\\in}=\\text{Cls}",
+      "printed_page": 299,
+      "scan_leaf": 321,
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_231",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

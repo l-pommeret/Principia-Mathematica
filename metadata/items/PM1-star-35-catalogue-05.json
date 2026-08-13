@@ -1,0 +1,130 @@
+{
+  "batch": "PM1-STAR35-CATALOGUE-05",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "278-286",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱35·25",
+      "kind": "derived-proposition",
+      "printed": "\\(S\\mid R\\upharpoonright \\beta=(S\\mid R)\\upharpoonright \\beta \\quad\\text{Df}\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star35CompositionKernel.star_35_25",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·26",
+      "kind": "derived-proposition",
+      "printed": "\\[\\begin{align}\\vdash.(\\alpha\\upharpoonleft R)\\mid (S\\upharpoonright \\beta)&=\\alpha\\upharpoonleft (R\\mid S)\\upharpoonright \\beta=\\{\\alpha\\upharpoonleft (R\\mid S)\\}\\upharpoonright \\beta=\\alpha\\upharpoonleft \\{(R\\mid S)\\upharpoonright \\beta\\}\\\\ &=\\{(\\alpha\\upharpoonleft R)\\mid S)\\}\\upharpoonright \\beta=\\alpha\\upharpoonleft \\{R\\mid (S\\upharpoonright \\beta)\\}\\\\ &=(\\alpha\\upharpoonleft R\\mid S)\\upharpoonright \\beta=\\alpha\\upharpoonleft (R\\mid S\\upharpoonright \\beta)\\end{align}\\]",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star35CompositionKernel.star_35_26",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·27",
+      "kind": "derived-proposition",
+      "printed": "\\(\\alpha\\upharpoonleft R\\mid S\\upharpoonright \\beta=(\\alpha\\upharpoonleft R\\mid S)\\upharpoonright \\beta \\quad\\text{Df}\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star35CompositionKernel.star_35_27",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·33",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.(\\alpha\\upharpoonleft R\\upharpoonright \\beta)\\upharpoonright \\gamma=\\{\\alpha\\upharpoonleft R\\upharpoonright (\\beta\\cap \\gamma)\\} \\quad[\\text{Proof similar to that of *35·31}]\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
+      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_33",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·34",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.\\alpha\\upharpoonleft (\\beta\\upharpoonleft R\\upharpoonright \\gamma)=\\{(\\alpha\\cap \\beta)\\upharpoonleft R\\upharpoonright \\gamma\\} \\quad[\\text{Proof similar to that of *35·31}]\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
+      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_34",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

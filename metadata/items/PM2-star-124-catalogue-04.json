@@ -1,0 +1,114 @@
+{
+  "batch": "PM2-STAR124-CATALOGUE-04",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "282",
+    "scan_leaves": [
+      322
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱124·181",
+      "kind": "derived-proposition",
+      "printed": "✱124·181. ⊢ : ρ∈Cls refl .⊃. ρ−ιʻx∈Cls refl.ρ−ιʻx sm ρ",
+      "printed_page": 282,
+      "scan_leaf": 322,
+      "lean_path": "Principia/Architecture/Star124OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star124OpeningKernel.star_124_181",
+      "formal_scope": "typed infinite-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star124-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱124·182",
+      "kind": "derived-proposition",
+      "printed": "✱124·182. ⊢ : ρ∈Cls refl.σ∈Cls induct .⊃. ρ−σ∈Cls refl.ρ−σ sm ρ",
+      "printed_page": 282,
+      "scan_leaf": 322,
+      "lean_path": "Principia/Architecture/Star124OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star124OpeningKernel.star_124_182",
+      "formal_scope": "typed infinite-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star124-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱124·2",
+      "kind": "derived-proposition",
+      "printed": "✱124·2. ⊢ : μ∈NC refl .≡. (∃ρ).ρ∈Cls refl.μ=N₀cʻρ",
+      "printed_page": 282,
+      "scan_leaf": 322,
+      "lean_path": "Principia/Architecture/Star124OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star124OpeningKernel.star_124_2",
+      "formal_scope": "typed infinite-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star124-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱124·21",
+      "kind": "derived-proposition",
+      "printed": "✱124·21. ⊢ : μ∈NC refl .≡. (∃R).R∈1→1.ᗡʻR⊂DʻR.∃!→BʻR.μ=N₀cʻDʻR",
+      "printed_page": 282,
+      "scan_leaf": 322,
+      "lean_path": "Principia/Architecture/Star124OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star124OpeningKernel2.star_124_21",
+      "formal_scope": "typed infinite-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star124-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱124·23",
+      "kind": "derived-proposition",
+      "printed": "✱124·23. ⊢ : μ∈NC refl .≡. μ≥ℵ₀",
+      "printed_page": 282,
+      "scan_leaf": 322,
+      "lean_path": "Principia/Architecture/Star124OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star124OpeningKernel2.star_124_23",
+      "formal_scope": "typed infinite-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star124-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

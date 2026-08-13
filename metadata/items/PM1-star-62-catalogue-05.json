@@ -1,0 +1,115 @@
+{
+  "batch": "PM1-STAR62-CATALOGUE-05",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "417–418",
+    "scan_leaves": [
+      439,
+      440
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱62·45",
+      "kind": "derived-proposition",
+      "printed": "✱62·45. ⊢ : R ⊂ ε . E!Rʻα .≡ : α ε CʻR .⊃α. Rʻα ε α",
+      "printed_page": 417,
+      "scan_leaf": 439,
+      "lean_path": "Principia/Architecture/Star62Kernel.lean",
+      "declaration": "PM.Architecture.Star62Kernel.star_62_45",
+      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star62-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱62·5",
+      "kind": "derived-proposition",
+      "printed": "✱62·5. ⊢ . ι ⊂ ε",
+      "printed_page": 418,
+      "scan_leaf": 440,
+      "lean_path": "Principia/Architecture/Star62Kernel.lean",
+      "declaration": "PM.Architecture.Star62Kernel.star_62_5",
+      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star62-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱62·51",
+      "kind": "derived-proposition",
+      "printed": "✱62·51. ⊢ : E!ιʻα .⊃ . ιʻα = εʻα",
+      "printed_page": 418,
+      "scan_leaf": 440,
+      "lean_path": "Principia/Architecture/Star62Kernel.lean",
+      "declaration": "PM.Architecture.Star62Kernel.star_62_51",
+      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star62-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱62·52",
+      "kind": "derived-proposition",
+      "printed": "✱62·52. ⊢ : E!ιʻα .≡ . α ε 1 .≡ . E!εʻα",
+      "printed_page": 418,
+      "scan_leaf": 440,
+      "lean_path": "Principia/Architecture/Star62Kernel.lean",
+      "declaration": "PM.Architecture.Star62Kernel.star_62_52",
+      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star62-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱62·53",
+      "kind": "derived-proposition",
+      "printed": "✱62·53. ⊢ : E!εʻα .⊃ . εʻα = ιʻα",
+      "printed_page": 418,
+      "scan_leaf": 440,
+      "lean_path": "Principia/Architecture/Star62Kernel.lean",
+      "declaration": "PM.Architecture.Star62Kernel.star_62_53",
+      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star62-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

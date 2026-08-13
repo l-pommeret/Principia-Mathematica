@@ -1,0 +1,134 @@
+{
+  "batch": "PM3-STAR259-CATALOGUE-02",
+  "edition": "first",
+  "volume": 3,
+  "source_range": {
+    "printed_pages": "115–117",
+    "scan_leaves": [
+      137,
+      139
+    ],
+    "canonical_scan": "https://russell-j.com/cool/PMvol3_1913.pdf",
+    "project_gutenberg": null
+  },
+  "witnesses": [
+    "PM3-1913-SCAN"
+  ],
+  "items": [
+    {
+      "id": "PM3:✱259·111",
+      "kind": "derived-proposition",
+      "printed": "✱259·111. ⊢ W ∩ A* = Λ . S,T ∈ (A_W* ⌞ A) .⊃: S ⊂ T .∨. T ⊂ S",
+      "printed_page": 115,
+      "scan_leaf": 137,
+      "lean_path": "Principia/Architecture/Star259OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star259OpeningKernel.star_259_111",
+      "formal_scope": "typed inductive-correlation reconstruction; strict semantic audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ]
+    },
+    {
+      "id": "PM3:✱259·12",
+      "kind": "derived-proposition",
+      "printed": "✱259·12. ⊢ : S ∈ DʻA_W .≡. E! S",
+      "printed_page": 115,
+      "scan_leaf": 137,
+      "lean_path": "Principia/Architecture/Star259OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star259OpeningKernel.star_259_12",
+      "formal_scope": "typed inductive-correlation reconstruction; strict semantic audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ]
+    },
+    {
+      "id": "PM3:✱259·121",
+      "kind": "derived-proposition",
+      "printed": "✱259·121. ⊢ : W ∈ 1 → Cis .⊃. DʻA_W = CʻW",
+      "printed_page": 115,
+      "scan_leaf": 137,
+      "lean_path": "Principia/Architecture/Star259OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star259OpeningKernel.star_259_121",
+      "formal_scope": "typed inductive-correlation reconstruction; strict semantic audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ]
+    },
+    {
+      "id": "PM3:✱259·122",
+      "kind": "derived-proposition",
+      "printed": "✱259·122. ⊢ : W ∩ A* = Λ . xW_Ay . X = (A_W* ⌞ A) ∩ {- (xT̂y)} .⊃. x(WʻsʻX)y",
+      "printed_page": 115,
+      "scan_leaf": 137,
+      "lean_path": "Principia/Architecture/Star259OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star259OpeningKernel.star_259_122",
+      "formal_scope": "typed inductive-correlation reconstruction; strict semantic audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ]
+    },
+    {
+      "id": "PM3:✱259·13",
+      "kind": "derived-proposition",
+      "printed": "✱259·13. ⊢ : W ∩ A* = Λ . W ∈ 1 → Cis .⊃. W_A = sʻW“(A_W* ⌞ A)",
+      "printed_page": 115,
+      "scan_leaf": 137,
+      "lean_path": "Principia/Architecture/Star259OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star259OpeningKernel.star_259_13",
+      "formal_scope": "typed inductive-correlation reconstruction; strict semantic audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ]
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

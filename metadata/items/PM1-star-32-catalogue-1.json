@@ -1,0 +1,98 @@
+{
+  "batch": "PM1-STAR32-CATALOGUE-1",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱32·13",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.\\overrightarrow{R}ʻy=\\hat{x}(xRy) \\quad[\\text{*32·11.*20·59}]\\)",
+      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition",
+      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_13",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star32-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱32·131",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.\\overleftarrow{R}ʻx=\\hat{y}(xRy) \\quad[\\text{*32·111.*20·59}]\\)",
+      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition",
+      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_131",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star32-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱32·16",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\overrightarrow{R}=\\overrightarrow{S}.\\equiv.\\overleftarrow{R}=\\overleftarrow{S}.\\equiv.R=S \\quad[\\text{*32·14·15}]\\)",
+      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition",
+      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel2.lean",
+      "declaration": "PM.Architecture.Star32ConsecutiveKernel2.star_32_16",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star32-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱32·1",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\alpha\\overrightarrow{R}y.\\equiv.\\alpha=\\hat{x}(xRy) \\quad[\\text{*21·3.(*32·01)}]\\)",
+      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition",
+      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_1",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star32-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱32·101",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\beta\\overleftarrow{R}x.\\equiv.\\beta=\\hat{y}(xRy) \\quad[\\text{*21·3.(*32·02)}]\\)",
+      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition",
+      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_101",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star32-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "batch": "PM2-STAR207-CATALOGUE-07",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "596–603",
+    "scan_leaves": [
+      636,
+      643
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱207·47",
+      "kind": "derived-proposition",
+      "printed": "✱207·47. ⊢ : ∃!lt→_Pʻα .≡. ∃!limax→_Pʻα",
+      "printed_page": 601,
+      "scan_leaf": 641,
+      "lean_path": "Principia/Architecture/Star207ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star207ClosingKernel.star_207_47",
+      "formal_scope": "typed order-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star207-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱207·48",
+      "kind": "derived-proposition",
+      "printed": "✱207·48. ⊢ . limax→_Pʻα=limax→_Pʻ(α∩CʻP)",
+      "printed_page": 601,
+      "scan_leaf": 641,
+      "lean_path": "Principia/Architecture/Star207ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star207ClosingKernel.star_207_48",
+      "formal_scope": "typed order-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star207-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱207·481",
+      "kind": "derived-proposition",
+      "printed": "✱207·481. ⊢ : P∈trans .⊃. limax→_Pʻα⊂limax→_Pʻ(α∪β)",
+      "printed_page": 602,
+      "scan_leaf": 642,
+      "lean_path": "Principia/Architecture/Star207ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star207ClosingKernel.star_207_481",
+      "formal_scope": "typed order-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star207-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱207·482",
+      "kind": "derived-proposition",
+      "printed": "✱207·482. ⊢ : P∈Ser . α⊂CʻP . α=limax_Pʻα .⊃. α⊂P→∗ʻα",
+      "printed_page": 602,
+      "scan_leaf": 642,
+      "lean_path": "Principia/Architecture/Star207ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star207ClosingKernel.star_207_482",
+      "formal_scope": "typed order-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star207-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱207·5",
+      "kind": "derived-proposition",
+      "printed": "✱207·5. ⊢ : P∈Ser .⊃. limax→_Pʻα=seq→_PʻPʻʻα",
+      "printed_page": 602,
+      "scan_leaf": 642,
+      "lean_path": "Principia/Architecture/Star207ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star207ClosingKernel.star_207_5",
+      "formal_scope": "typed order-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star207-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "batch": "PM1-STAR40-CATALOGUE-06",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "324–325",
+    "scan_leaves": [
+      346,
+      347
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱40·27",
+      "kind": "derived-proposition",
+      "printed": "✱40·27. ⊢ :: α ∩ sʻκ = Λ .≡ : γ ∈ κ .⊃_γ. α ∩ γ = Λ",
+      "printed_page": 324,
+      "scan_leaf": 346,
+      "lean_path": "Principia/Architecture/Star40ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star40ThirdKernel.star_40_27",
+      "formal_scope": "typed products-and-sums reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱40·3",
+      "kind": "derived-proposition",
+      "printed": "✱40·3. ⊢. pʻRʻʻ(α ∪ β) = pʻRʻʻα ∩ pʻRʻʻβ  [✱37·22.✱40·18]",
+      "printed_page": 324,
+      "scan_leaf": 346,
+      "lean_path": "Principia/Architecture/Star40ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star40ThirdKernel.star_40_3",
+      "formal_scope": "typed products-and-sums reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱37·22",
+        "✱40·18"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱40·18"
+      ]
+    },
+    {
+      "id": "PM1:✱40·31",
+      "kind": "derived-proposition",
+      "printed": "✱40·31. ⊢. sʻRʻʻ(α ∪ β) = sʻRʻʻα ∪ sʻRʻʻβ  [✱37·22.✱40·171]",
+      "printed_page": 324,
+      "scan_leaf": 346,
+      "lean_path": "Principia/Architecture/Star40ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star40ThirdKernel.star_40_31",
+      "formal_scope": "typed products-and-sums reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱37·22",
+        "✱40·171"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱40·171"
+      ]
+    },
+    {
+      "id": "PM1:✱40·32",
+      "kind": "derived-proposition",
+      "printed": "✱40·32. ⊢. pʻRʻʻα ∪ pʻRʻʻβ ⊂ pʻRʻʻ(α ∩ β)",
+      "printed_page": 324,
+      "scan_leaf": 346,
+      "lean_path": "Principia/Architecture/Star40ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star40ThirdKernel.star_40_32",
+      "formal_scope": "typed products-and-sums reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱40·33",
+      "kind": "derived-proposition",
+      "printed": "✱40·33. ⊢. sʻRʻʻ(α ∩ β) ⊂ sʻRʻʻα ∩ sʻRʻʻβ  [✱37·21.✱40·161.✱40·181]",
+      "printed_page": 325,
+      "scan_leaf": 347,
+      "lean_path": "Principia/Architecture/Star40ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star40ThirdKernel.star_40_33",
+      "formal_scope": "typed products-and-sums reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱37·21",
+        "✱40·161",
+        "✱40·181"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱40·161",
+        "PM1:✱40·181"
+      ]
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

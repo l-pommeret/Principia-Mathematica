@@ -1,0 +1,166 @@
+/-! PM I, ✱93·01–✱93·115. Source: Project Gutenberg ebook 78050. -/
+/- PM-VERBATIM-BEGIN PM1:✱93·01
+✱93·01. B = x̂P̂(x∈DʻP−ᗡʻP)  Df
+PM-VERBATIM-END PM1:✱93·01 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·02
+✱93·02. min_P = min(P) = x̂α̂(x∈α∩CʻP−P̌ʻʻα)  Df
+PM-VERBATIM-END PM1:✱93·02 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·021
+✱93·021. max_P = max(P) = min(P̌)  Df
+PM-VERBATIM-END PM1:✱93·021 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·03
+✱93·03. genʻP = min_P→ʻʻᗡʻʻPotidʻP  Df
+PM-VERBATIM-END PM1:✱93·03 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·1
+✱93·1. ⊢ : xBP .≡. x∈DʻP−ᗡʻP
+PM-VERBATIM-END PM1:✱93·1 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·101
+✱93·101. ⊢ . B→ʻP=DʻP−ᗡʻP
+PM-VERBATIM-END PM1:✱93·101 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·102
+✱93·102. ⊢ : x=BʻP .≡. x=ι̌ʻ(DʻP−ᗡʻP) .≡. DʻP−ᗡʻP∈1 . x∈DʻP−ᗡʻP
+PM-VERBATIM-END PM1:✱93·102 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·103
+✱93·103. ⊢ . B→ʻP=CʻP−ᗡʻP
+PM-VERBATIM-END PM1:✱93·103 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·104
+✱93·104. ⊢ : xBR .⊃. R_*→ʻx=ιʻx . R_po→ʻx=Λ
+PM-VERBATIM-END PM1:✱93·104 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·11
+✱93·11. ⊢ : x min_P α .≡. x∈α∩CʻP−P̌ʻʻα
+PM-VERBATIM-END PM1:✱93·11 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·111
+✱93·111. ⊢ . min_P→ʻα=α∩CʻP−P̌ʻʻα
+PM-VERBATIM-END PM1:✱93·111 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·112
+✱93·112. ⊢ . B→ʻP=min_P→ʻDʻP=min_P→ʻCʻP
+PM-VERBATIM-END PM1:✱93·112 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·113
+✱93·113. ⊢ . min_P→ʻα⊂α∩CʻP
+PM-VERBATIM-END PM1:✱93·113 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·114
+✱93·114. ⊢ . max_P=min(P̌)
+PM-VERBATIM-END PM1:✱93·114 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·115
+✱93·115. ⊢ : x max_P α .≡. x∈α∩CʻP−Pʻʻα
+PM-VERBATIM-END PM1:✱93·115 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·116
+✱93·116. ⊢ . max_P→ʻα=α∩CʻP−Pʻʻα
+PM-VERBATIM-END PM1:✱93·116 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·117
+✱93·117. ⊢ . B→ʻP̌=max_P→ʻᗡʻP=max_P→ʻCʻP
+PM-VERBATIM-END PM1:✱93·117 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·118
+✱93·118. ⊢ . max_P→ʻα⊂α∩CʻP
+PM-VERBATIM-END PM1:✱93·118 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·13
+✱93·13. ⊢ . min_P→ʻᗡʻ(I↾CʻP)=B→ʻP
+PM-VERBATIM-END PM1:✱93·13 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·131
+✱93·131. ⊢ . min_P→ʻᗡʻP=ᗡʻP−ᗡʻP²
+PM-VERBATIM-END PM1:✱93·131 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·132
+✱93·132. ⊢ . min_P→ʻᗡʻT=ᗡʻT−ᗡʻ(T|P)
+PM-VERBATIM-END PM1:✱93·132 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·21
+✱93·21. ⊢ : α∈genʻP .≡. (∃T).T∈PotidʻP . α=ᗡʻT−ᗡʻ(T|P)
+PM-VERBATIM-END PM1:✱93·21 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·22
+✱93·22. ⊢ . B→ʻP∈genʻP
+PM-VERBATIM-END PM1:✱93·22 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·221
+✱93·221. ⊢ . ᗡʻP−ᗡʻP²∈genʻP
+PM-VERBATIM-END PM1:✱93·221 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·23
+✱93·23. ⊢ . genʻP=ιʻB→ʻP∪min_P→ʻʻᗡʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·23 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·231
+✱93·231. ⊢ : S,T∈PotidʻP . S≠T .⊃. ᗡʻS⊂P̌ʻʻᗡʻT .∨. ᗡʻT⊂P̌ʻʻᗡʻS
+PM-VERBATIM-END PM1:✱93·231 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·24
+✱93·24. ⊢ : S,T∈PotidʻP . S≠T .⊃. min_P→ʻᗡʻS∩min_P→ʻᗡʻT=Λ
+PM-VERBATIM-END PM1:✱93·24 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·25
+✱93·25. ⊢ . genʻP∈Cls² excl
+PM-VERBATIM-END PM1:✱93·25 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·26
+✱93·26. ⊢ : S,T∈PotidʻP . T∈|SʻʻPotʻP .⊃. min_P→ʻᗡʻS∩min_P→ʻᗡʻT=Λ
+PM-VERBATIM-END PM1:✱93·26 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·261
+✱93·261. ⊢ . pʻᗡʻʻPotʻP=pʻᗡʻʻPotidʻP . pʻᗡʻʻPotʻP⊂ᗡʻP
+PM-VERBATIM-END PM1:✱93·261 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·27
+✱93·27. ⊢ : x∈CʻP .⊃: x∼∈sʻgenʻP .≡. x∈pʻᗡʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·27 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·271
+✱93·271. ⊢ . CʻP−sʻgenʻP=pʻᗡʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·271 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·272
+✱93·272. ⊢ . sʻgenʻP⊂CʻP
+PM-VERBATIM-END PM1:✱93·272 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·274
+✱93·274. ⊢ . CʻP=sʻgenʻP∪pʻᗡʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·274 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·31
+✱93·31. ⊢ : P∈1→Cls .⊃. P̌ʻʻmin_P→ʻᗡʻT=min_P→ʻ(T|P)
+PM-VERBATIM-END PM1:✱93·31 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·32
+✱93·32. ⊢ : P∈1→Cls .⊃: α∈genʻP .≡. (∃T).T∈PotidʻP . α=ŤʻʻB→ʻP
+PM-VERBATIM-END PM1:✱93·32 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·33
+✱93·33. ⊢⊢ : P∈1→Cls . α∈genʻP .⊃. P̌ʻʻα∈genʻP
+PM-VERBATIM-END PM1:✱93·33 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·34
+✱93·34. ⊢ : P∈1→Cls .⊃. P̌ʻʻB→ʻP∈genʻP
+PM-VERBATIM-END PM1:✱93·34 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·35
+✱93·35. ⊢ : P∈1→Cls . α∈genʻP . T∈PotidʻP .⊃. Ťʻʻα∈genʻP
+PM-VERBATIM-END PM1:✱93·35 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·36
+✱93·36. ⊢ : P∈1→Cls .⊃. sʻgenʻP=P̌_*ʻʻB→ʻP
+PM-VERBATIM-END PM1:✱93·36 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·37
+✱93·37. ⊢ : P∈1→Cls .⊃. CʻP=P̌_*ʻʻB→ʻP∪pʻᗡʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·37 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·38
+✱93·38. ⊢ : P∈1→Cls .⊃: x∈pʻᗡʻʻPotʻP .≡. P_*→ʻx⊂ᗡʻP . x∈CʻP
+PM-VERBATIM-END PM1:✱93·38 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·381
+✱93·381. ⊢ : P∈Cls→1 .⊃: x∈pʻᗡʻʻPotʻP̌ .≡. P_*←ʻx⊂DʻP . x∈CʻP
+PM-VERBATIM-END PM1:✱93·381 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·382
+✱93·382. ⊢ : P∈1→1 .⊃: x∈pʻᗡʻʻPotʻP∩pʻᗡʻʻPotʻP̌ .≡. P_*→ʻx⊂ᗡʻP . P_*←ʻx⊂DʻP
+PM-VERBATIM-END PM1:✱93·382 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·4
+✱93·4. ⊢ : P∈1→Cls .⊃. CʻP=P̌_*ʻʻB→ʻP∪pʻᗡʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·4 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·412
+✱93·412. ⊢ . P̌ʻʻpʻᗡʻʻPotʻP⊂pʻᗡʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·412 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·42
+✱93·42. ⊢ : P∈1→Cls .⊃. P̌ʻʻpʻᗡʻʻPotʻP=pʻᗡʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·42 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·431
+✱93·431. ⊢ . pʻᗡʻʻPotʻP=pʻᗡʻʻ|PʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·431 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·5
+✱93·5. ⊢ : T∈PotidʻP .⊃. P_ts→ʻT=P_st→ʻT=T|ʻʻPotidʻP=|TʻʻPotidʻP
+PM-VERBATIM-END PM1:✱93·5 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·51
+✱93·51. ⊢ : T∈PotʻP .⊃. PotʻT⊂P_ts→ʻT⊂PotʻP
+PM-VERBATIM-END PM1:✱93·51 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·52
+✱93·52. ⊢ : T∈PotʻP .⊃. pʻᗡʻʻPotʻT=pʻᗡʻʻP_ts→ʻT=pʻᗡʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·52 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·53
+✱93·53. ⊢ : S,T∈PotʻP . xSx .⊃. (∃y).y(S|T)x
+PM-VERBATIM-END PM1:✱93·53 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·54
+✱93·54. ⊢ : S∈PotʻP . xSx .⊃. x∈pʻᗡʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·54 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·55
+✱93·55. ⊢ . Cʻ(P_po∩̇I)⊂pʻᗡʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·55 -/
+/- PM-VERBATIM-BEGIN PM1:✱93·56
+✱93·56. ⊢ : ∃̇!(P_po∩̇I) .⊃. ∃!pʻᗡʻʻPotʻP
+PM-VERBATIM-END PM1:✱93·56 -/

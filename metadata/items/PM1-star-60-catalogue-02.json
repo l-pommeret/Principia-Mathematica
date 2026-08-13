@@ -1,0 +1,109 @@
+{
+  "batch": "PM1-STAR60-CATALOGUE-02",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "406–411",
+    "scan_leaves": [
+      428,
+      429,
+      430,
+      431,
+      432,
+      433
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱60·362",
+      "kind": "derived-proposition",
+      "printed": "✱60·362. ⊢ . Clʻιʻx = ιʻΛ ∪ ιʻιʻx",
+      "printed_page": 406,
+      "scan_leaf": 428,
+      "formal_status": "awaiting-ci",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
+      "declaration": "PM.Architecture.Star60MissingKernel.star_60_362",
+      "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
+      "integration_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱60·371",
+      "kind": "derived-proposition",
+      "printed": "✱60·371. ⊢ : α ∈ 1 .⊃. Clʻα ⊂ 0 ∪ 1",
+      "printed_page": 406,
+      "scan_leaf": 428,
+      "formal_status": "awaiting-ci",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
+      "declaration": "PM.Architecture.Star60MissingKernel.star_60_371",
+      "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
+      "integration_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱60·38",
+      "kind": "derived-proposition",
+      "printed": "✱60·38. ⊢ . Clʻ(ιʻx ∪ ιʻy) = ιʻΛ ∪ ιʻιʻx ∪ ιʻιʻy ∪ ιʻ(ιʻx ∪ ιʻy)",
+      "printed_page": 408,
+      "scan_leaf": 430,
+      "formal_status": "awaiting-ci",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
+      "declaration": "PM.Architecture.Star60MissingKernel.star_60_38",
+      "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
+      "integration_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱60·39",
+      "kind": "derived-proposition",
+      "printed": "✱60·39. ⊢ : α ∈ 2 .⊃. Clʻα ⊂ 0 ∪ 1 ∪ 2",
+      "printed_page": 409,
+      "scan_leaf": 431,
+      "formal_status": "awaiting-ci",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
+      "declaration": "PM.Architecture.Star60MissingKernel.star_60_39",
+      "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
+      "integration_status": "awaiting-ci"
+    },
+    {
+      "id": "PM1:✱60·52",
+      "kind": "derived-proposition",
+      "printed": "✱60·52. ⊢ : β ⊂ pʻκ .≡. β ∈ pʻClʻʻκ",
+      "printed_page": 410,
+      "scan_leaf": 432,
+      "formal_status": "awaiting-ci",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
+      "declaration": "PM.Architecture.Star60MissingKernel.star_60_52",
+      "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
+      "integration_status": "awaiting-ci"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

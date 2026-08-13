@@ -1,0 +1,115 @@
+{
+  "batch": "PM1-STAR88-CATALOGUE-04",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "564–565",
+    "scan_leaves": [
+      586,
+      587
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱88·3",
+      "kind": "derived-proposition",
+      "printed": "✱88·3. ⊢ : Mult ax .≡: κ∈Cls² excl .⊃κ: (∃μ): α∈κ .⊃α. μ∩α∈1",
+      "printed_page": 564,
+      "scan_leaf": 586,
+      "lean_path": "Principia/Architecture/Star88OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star88OpeningKernel.star_88_3",
+      "formal_scope": "typed multiplicative-selection reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star88-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱88·31",
+      "kind": "derived-proposition",
+      "printed": "✱88·31. ⊢ : Mult ax .≡. Cls² excl ⊂ Cls² Mult",
+      "printed_page": 564,
+      "scan_leaf": 586,
+      "lean_path": "Principia/Architecture/Star88OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star88OpeningKernel.star_88_31",
+      "formal_scope": "typed multiplicative-selection reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star88-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱88·32",
+      "kind": "derived-proposition",
+      "printed": "✱88·32. ⊢ : Mult ax .≡: κ∈Cls² excl .⊃κ. ∃!∈Δʻκ",
+      "printed_page": 564,
+      "scan_leaf": 586,
+      "lean_path": "Principia/Architecture/Star88OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star88OpeningKernel.star_88_32",
+      "formal_scope": "typed multiplicative-selection reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star88-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱88·33",
+      "kind": "derived-proposition",
+      "printed": "✱88·33. ⊢ : Mult ax .≡. (α).∃!∈ΔʻCl exʻα",
+      "printed_page": 564,
+      "scan_leaf": 586,
+      "lean_path": "Principia/Architecture/Star88OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star88OpeningKernel.star_88_33",
+      "formal_scope": "typed multiplicative-selection reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star88-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱88·34",
+      "kind": "derived-proposition",
+      "printed": "✱88·34. ⊢ : Mult ax .≡. Cls→1 ⊂ Rel Mult",
+      "printed_page": 565,
+      "scan_leaf": 587,
+      "lean_path": "Principia/Architecture/Star88OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star88OpeningKernel.star_88_34",
+      "formal_scope": "typed multiplicative-selection reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star88-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

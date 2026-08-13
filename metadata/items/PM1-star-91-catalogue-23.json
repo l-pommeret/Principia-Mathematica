@@ -1,0 +1,114 @@
+{
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "587",
+    "scan_leaves": [
+      609
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "batch": "PM1-STAR91-CATALOGUE-23",
+  "items": [
+    {
+      "id": "PM1:✱91·72",
+      "kind": "derived-proposition",
+      "printed": "✱91·72. ⊢ . Rʻʻ(α∪R_poʻʻα)=R_poʻʻα",
+      "printed_page": 599,
+      "scan_leaf": 621,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel6.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel6.star_91_72",
+      "formal_scope": "typed relation-power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star91-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱91·721",
+      "kind": "derived-proposition",
+      "printed": "✱91·721. ⊢ . Řʻʻ(α∪Ř_poʻʻα)=Ř_poʻʻα",
+      "printed_page": 599,
+      "scan_leaf": 621,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel6.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel6.star_91_721",
+      "formal_scope": "typed relation-power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star91-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱91·73",
+      "kind": "derived-proposition",
+      "printed": "✱91·73. ⊢ : P,Q∈PotidʻR . P≠Q .⊃: (∃T): T∈PotʻR : Q=P|T .∨. P=Q|T",
+      "printed_page": 599,
+      "scan_leaf": 621,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel6.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel6.star_91_73",
+      "formal_scope": "typed relation-power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star91-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱91·731",
+      "kind": "derived-proposition",
+      "printed": "✱91·731. ⊢ : P,Q∈PotidʻR . P≠Q .⊃: (∃T): T∈PotʻR : Q=T|P .∨. P=T|Q",
+      "printed_page": 599,
+      "scan_leaf": 621,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel6.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel6.star_91_731",
+      "formal_scope": "typed relation-power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star91-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱91·732",
+      "kind": "derived-proposition",
+      "printed": "✱91·732. ⊢ : P,Q∈PotidʻR . P≠Q .⊃: (∃S): S∈PotidʻR : Q=S|R|P .∨. P=S|R|Q",
+      "printed_page": 600,
+      "scan_leaf": 622,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel6.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel6.star_91_732",
+      "formal_scope": "typed relation-power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star91-catalogue-review.md"
+    }
+  ]
+}

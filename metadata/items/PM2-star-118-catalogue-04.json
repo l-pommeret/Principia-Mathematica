@@ -1,0 +1,114 @@
+{
+  "batch": "PM2-STAR118-CATALOGUE-04",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "198",
+    "scan_leaves": [
+      238
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱118·33",
+      "kind": "derived-proposition",
+      "printed": "✱118·33. ⊢ : μ,ν∈NC−ιʻ0 .⊃. (μ×cν)ξ=(smξʻʻμ×csmξʻʻν)ξ",
+      "printed_page": 198,
+      "scan_leaf": 238,
+      "lean_path": "Principia/Architecture/Star118MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star118MiddleKernel.star_118_33",
+      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱118·34",
+      "kind": "derived-proposition",
+      "printed": "✱118·34. ⊢ : ν∈NC . μ≠0 .⊃. (μ×cν)ξ=(μ×csmξʻʻν)ξ",
+      "printed_page": 198,
+      "scan_leaf": 238,
+      "lean_path": "Principia/Architecture/Star118MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star118MiddleKernel.star_118_34",
+      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱118·341",
+      "kind": "derived-proposition",
+      "printed": "✱118·341. ⊢ : μ∈NC . ν≠0 .⊃. (μ×cν)ξ=(smξʻʻμ×cν)ξ",
+      "printed_page": 198,
+      "scan_leaf": 238,
+      "lean_path": "Principia/Architecture/Star118MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star118MiddleKernel.star_118_341",
+      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱118·35",
+      "kind": "derived-proposition",
+      "printed": "✱118·35. ⊢ : ϖ≠0 .⊃. (μ×cν×cϖ)ξ={(μ×cν)ξ×cϖ}ξ",
+      "printed_page": 198,
+      "scan_leaf": 238,
+      "lean_path": "Principia/Architecture/Star118MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star118MiddleKernel.star_118_35",
+      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱118·351",
+      "kind": "derived-proposition",
+      "printed": "✱118·351. ⊢ : μ≠0 .⊃. (μ×cν×cϖ)ξ={μ×c(ν×cϖ)ξ}ξ",
+      "printed_page": 198,
+      "scan_leaf": 238,
+      "lean_path": "Principia/Architecture/Star118MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star118MiddleKernel.star_118_351",
+      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

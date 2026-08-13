@@ -1,0 +1,116 @@
+{
+  "batch": "PM1-STAR53-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "369",
+    "scan_leaves": [
+      391
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱53·01",
+      "kind": "derived-proposition",
+      "printed": "✱53·01. ⊢ . pʻιʻα = α",
+      "printed_page": 369,
+      "scan_leaf": 391,
+      "lean_path": "Principia/Architecture/Star53OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star53OpeningKernel.star_53_01",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱53·02",
+      "kind": "derived-proposition",
+      "printed": "✱53·02. ⊢ . sʻιʻα = α",
+      "printed_page": 369,
+      "scan_leaf": 391,
+      "lean_path": "Principia/Architecture/Star53OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star53OpeningKernel.star_53_02",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱53·03",
+      "kind": "derived-proposition",
+      "printed": "✱53·03. ⊢ . ṗʻιʻR = R  [Proof as in ✱53·01]",
+      "printed_page": 369,
+      "scan_leaf": 391,
+      "lean_path": "Principia/Architecture/Star53OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star53OpeningKernel.star_53_03",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱53·01"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱53·01"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star53-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱53·04",
+      "kind": "derived-proposition",
+      "printed": "✱53·04. ⊢ . ṡʻιʻR = R ιʻ  [Proof as in ✱53·02]",
+      "printed_page": 369,
+      "scan_leaf": 391,
+      "lean_path": "Principia/Architecture/Star53OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star53OpeningKernel.star_53_04",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱53·02"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱53·02"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star53-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱53·1",
+      "kind": "derived-proposition",
+      "printed": "✱53·1. ⊢ . pʻ(ιʻα ∪ ιʻβ) = α ∩ β",
+      "printed_page": 369,
+      "scan_leaf": 391,
+      "lean_path": "Principia/Architecture/Star53OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star53OpeningKernel.star_53_1",
+      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

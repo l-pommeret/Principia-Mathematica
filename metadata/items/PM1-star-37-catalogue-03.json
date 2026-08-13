@@ -1,0 +1,106 @@
+{
+  "batch": "PM1-STAR37-CATALOGUE-03",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "297–300",
+    "scan_leaves": [
+      319,
+      320,
+      322
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱37·15",
+      "kind": "derived-proposition",
+      "printed": "✱37·15. \\vdash.Rʻʻ\\alpha\\subset \\text{D}ʻR",
+      "printed_page": 297,
+      "scan_leaf": 319,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·16",
+      "kind": "derived-proposition",
+      "printed": "✱37·16. \\vdash.\\breve{R}ʻʻ\\alpha\\subset \\text{ᗡ}ʻR \\quad\\left[\\text{*37·15}\\, \\frac{\\breve{R}}{R}.\\text{*33·2}\\right]",
+      "printed_page": 297,
+      "scan_leaf": 319,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·22",
+      "kind": "derived-proposition",
+      "printed": "✱37·22. \\vdash.Pʻʻ(\\alpha\\cup \\beta)=Pʻʻ\\alpha\\cup Pʻʻ\\beta",
+      "printed_page": 298,
+      "scan_leaf": 320,
+      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_22",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·25",
+      "kind": "derived-proposition",
+      "printed": "✱37·25. \\vdash.\\text{D}ʻR=Rʻʻ\\text{ᗡ}ʻR.\\text{ᗡ}ʻR=\\breve{R}ʻʻ\\text{D}ʻR",
+      "printed_page": 300,
+      "scan_leaf": 322,
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_25",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·26",
+      "kind": "derived-proposition",
+      "printed": "✱37·26. \\vdash.Rʻʻ\\beta=Rʻʻ(\\beta\\cap \\text{ᗡ}ʻR)",
+      "printed_page": 300,
+      "scan_leaf": 322,
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_26",
+      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

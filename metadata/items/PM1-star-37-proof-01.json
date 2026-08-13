@@ -1,0 +1,113 @@
+{
+  "batch": "PM1-STAR37-PROOF-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "298–298",
+    "scan_leaves": [
+      320
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱37·2",
+      "kind": "derived-proposition",
+      "printed": "✱37·2. \\vdash:\\alpha\\subset \\beta.\\supset.Pʻʻ\\alpha\\subset Pʻʻ\\beta",
+      "printed_page": 298,
+      "scan_leaf": 320,
+      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_2",
+      "formal_scope": "exact typed direct-image proposition, audited against the canonical transcription",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·201",
+      "kind": "derived-proposition",
+      "printed": "✱37·201. \\vdash:P\\unicode{x2abd}Q.\\supset.Pʻʻ\\alpha\\subset Qʻʻ\\alpha \\quad[\\text{Similar proof}]",
+      "printed_page": 298,
+      "scan_leaf": 320,
+      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_201",
+      "formal_scope": "exact typed direct-image proposition, audited against the canonical transcription",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·202",
+      "kind": "derived-proposition",
+      "printed": "✱37·202. \\vdash:a\\subset \\beta.P\\unicode{x2abd}Q.\\supset.Pʻʻ\\alpha\\subset Qʻʻ\\beta \\quad[\\text{*37·2·201}]",
+      "printed_page": 298,
+      "scan_leaf": 320,
+      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_202",
+      "formal_scope": "exact typed direct-image proposition, audited against the canonical transcription",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱37·2",
+        "PM1:✱37·201"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱37·2",
+        "PM1:✱37·201"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star37ConsecutiveKernel.star_37_2",
+        "PM.Architecture.Star37ConsecutiveKernel.star_37_201"
+      ]
+    },
+    {
+      "id": "PM1:✱37·21",
+      "kind": "derived-proposition",
+      "printed": "✱37·21. \\vdash.Pʻʻ(\\alpha\\cap \\beta)\\subset Pʻʻ\\alpha\\cap Pʻʻ\\beta",
+      "printed_page": 298,
+      "scan_leaf": 320,
+      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_21",
+      "formal_scope": "exact typed direct-image proposition, audited against the canonical transcription",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·211",
+      "kind": "derived-proposition",
+      "printed": "✱37·211. \\vdash.(P\\dot{\\cap}Q)ʻʻ\\alpha\\subset Pʻʻ\\alpha\\cap Qʻʻ\\alpha \\quad[\\text{Similar proof}]",
+      "printed_page": 298,
+      "scan_leaf": 320,
+      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_211",
+      "formal_scope": "exact typed direct-image proposition, audited against the canonical transcription",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

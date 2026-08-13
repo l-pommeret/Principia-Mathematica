@@ -1,0 +1,106 @@
+{
+  "batch": "PM2-STAR100-CATALOGUE-05",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "16",
+    "scan_leaves": [
+      56
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱100·4",
+      "kind": "derived-proposition",
+      "printed": "✱100·4. ⊢ : μ∈NC .≡. (∃α). μ=Ncʻα",
+      "printed_page": 16,
+      "scan_leaf": 56,
+      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
+      "declaration": "PM.Architecture.Star100SecondKernel.star_100_4",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱100·41",
+      "kind": "derived-proposition",
+      "printed": "✱100·41. ⊢ . Ncʻα∈NC",
+      "printed_page": 16,
+      "scan_leaf": 56,
+      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
+      "declaration": "PM.Architecture.Star100SecondKernel.star_100_41",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱100·42",
+      "kind": "derived-proposition",
+      "printed": "✱100·42. ⊢ : μ,ν∈NC . ∃!μ∩ν .⊃. μ=ν",
+      "printed_page": 16,
+      "scan_leaf": 56,
+      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
+      "declaration": "PM.Architecture.Star100SecondKernel.star_100_42",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱100·43",
+      "kind": "derived-proposition",
+      "printed": "✱100·43. ⊢ . NC∈Cls² excl",
+      "printed_page": 16,
+      "scan_leaf": 56,
+      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
+      "declaration": "PM.Architecture.Star100SecondKernel.star_100_43",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star100-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱100·44",
+      "kind": "derived-proposition",
+      "printed": "✱100·44. ⊢ :: μ∈NC . ∃!Ncʻα .⊃ : α∈μ .≡. Ncʻα=μ",
+      "printed_page": 16,
+      "scan_leaf": 56,
+      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
+      "declaration": "PM.Architecture.Star100SecondKernel.star_100_44",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

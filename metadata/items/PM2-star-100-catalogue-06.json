@@ -1,0 +1,59 @@
+{
+  "batch": "PM2-STAR100-CATALOGUE-06",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "16–17",
+    "scan_leaves": [
+      56,
+      57
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱100·45",
+      "kind": "derived-proposition",
+      "printed": "✱100·45. ⊢ : μ∈NC . α∈μ .⊃. Ncʻα=μ",
+      "printed_page": 16,
+      "scan_leaf": 56,
+      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
+      "declaration": "PM.Architecture.Star100SecondKernel.star_100_45",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱100·5",
+      "kind": "derived-proposition",
+      "printed": "✱100·5. ⊢ : μ∈NC . α,β∈μ .⊃. α sm β",
+      "printed_page": 16,
+      "scan_leaf": 56,
+      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
+      "declaration": "PM.Architecture.Star100SecondKernel.star_100_5",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star100-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

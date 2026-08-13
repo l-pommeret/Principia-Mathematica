@@ -1,0 +1,13 @@
+{
+  "batch": "PM2-STAR212-CANONICAL-01",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {"printed_pages": "632", "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {"id":"PM2:✱212·01","kind":"definition","printed":"ςʻP=P_lc↾DʻP_∈  Df","lean_path":"Principia/Architecture/Star212OpeningKernel.lean","declaration":"PM.Architecture.Star212OpeningKernel.star_212_01","formal_scope":"carrier-parametric strict-inclusion abstraction; P-dependent definition omitted","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"prepared","parser_status":"reviewed-gap","parser_evidence":"reviews/Star212-canonical-review.md"},
+    {"id":"PM2:✱212·02","kind":"definition","printed":"sgmʻP=P_lc↾Dʻ(P_∈∩̇I)  Df","lean_path":"Principia/Architecture/Star212OpeningKernel.lean","declaration":"PM.Architecture.Star212OpeningKernel.star_212_02","formal_scope":"carrier-parametric strict-inclusion abstraction; P-dependent definition omitted","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"prepared","parser_status":"reviewed-gap","parser_evidence":"reviews/Star212-canonical-review.md"},
+    {"id":"PM2:✱212·1","kind":"derived-proposition","printed":"⊢ : α(ςʻP)β .≡. α,β∈DʻP_∈ . ∃!β−α−Pʻʻ(α−β)","lean_path":"Principia/Architecture/Star212OpeningKernel.lean","declaration":"PM.Architecture.Star212OpeningKernel.star_212_1","formal_scope":"strict-inclusion abstraction omitting the P-image subtraction","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"prepared","parser_status":"reviewed-gap","parser_evidence":"reviews/Star212-canonical-review.md"}
+  ],
+  "ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+}

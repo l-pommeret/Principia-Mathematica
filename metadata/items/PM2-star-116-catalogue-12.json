@@ -1,0 +1,116 @@
+{
+  "batch": "PM2-STAR116-CATALOGUE-12",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "151–154",
+    "scan_leaves": [
+      191,
+      192,
+      194
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱116·353",
+      "kind": "derived-proposition",
+      "printed": "✱116·353. ⊢ : μ=0 . ν∈NC−ιʻΛ . κ∈ν∩Clʻμ .⊃. μ^ν=ΠNcʻκ",
+      "printed_page": 151,
+      "scan_leaf": 191,
+      "lean_path": "Principia/Architecture/Star116FourthKernel.lean",
+      "declaration": "PM.Architecture.Star116FourthKernel.star_116_353",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·36",
+      "kind": "derived-proposition",
+      "printed": "✱116·36. ⊢ :: Mult ax .⊃: μ,ν∈NC−ιʻΛ . κ∈ν∩Clʻμ .⊃. ΠNcʻκ=μ^ν",
+      "printed_page": 151,
+      "scan_leaf": 191,
+      "lean_path": "Principia/Architecture/Star116FourthKernel.lean",
+      "declaration": "PM.Architecture.Star116FourthKernel.star_116_36",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·361",
+      "kind": "derived-proposition",
+      "printed": "✱116·361. Product and exponential cardinal identity under the multiplicative axiom.",
+      "printed_page": 152,
+      "scan_leaf": 192,
+      "lean_path": "Principia/Architecture/Star116FourthKernel.lean",
+      "declaration": "PM.Architecture.Star116FourthKernel.star_116_361",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·4",
+      "kind": "derived-proposition",
+      "printed": "✱116·4. Construction of W from a disjoint family of one-one relations.",
+      "printed_page": 154,
+      "scan_leaf": 194,
+      "lean_path": "Principia/Architecture/Star116FourthKernel.lean",
+      "declaration": "PM.Architecture.Star116FourthKernel.star_116_4",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·401",
+      "kind": "derived-proposition",
+      "printed": "✱116·401. ⊢ : Hp ✱116·4 . T=ṡʻλ .⊃. T⃗ʻʻγ=W∈ʻʻλ↓,,ʻʻγ",
+      "printed_page": 154,
+      "scan_leaf": 194,
+      "lean_path": "Principia/Architecture/Star116FourthKernel.lean",
+      "declaration": "PM.Architecture.Star116FourthKernel.star_116_401",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

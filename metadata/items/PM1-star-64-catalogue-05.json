@@ -1,0 +1,108 @@
+{
+  "batch": "PM1-STAR64-CATALOGUE-05",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "431",
+    "scan_leaves": [
+      453
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱64·201",
+      "kind": "derived-proposition",
+      "printed": "✱64·201. ⊢ : R ⊂ S .⊃. R ∈ tʻS . tʻR = tʻS",
+      "printed_page": 431,
+      "scan_leaf": 453,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_201",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱64·21",
+      "kind": "derived-proposition",
+      "printed": "✱64·21. ⊢ : xRy .⊃. R ∈ tʻ(tʻx ↑ tʻy)",
+      "printed_page": 431,
+      "scan_leaf": 453,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_21",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star64-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱64·22",
+      "kind": "derived-proposition",
+      "printed": "✱64·22. ⊢. R ∈ tʻ(t₀ʻDʻR ↑ t₀ʻᗡʻR)",
+      "printed_page": 431,
+      "scan_leaf": 453,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_22",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star64-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱64·23",
+      "kind": "derived-proposition",
+      "printed": "✱64·23. ⊢. tʻR = tʻšʻtʻR",
+      "printed_page": 431,
+      "scan_leaf": 453,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_23",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱64·231",
+      "kind": "derived-proposition",
+      "printed": "✱64·231. ⊢ : R ∈ tʻQ .⊃. DʻR ∈ tʻDʻQ . ᗡʻR ∈ tʻᗡʻQ . CʻR ∈ tʻCʻQ",
+      "printed_page": 431,
+      "scan_leaf": 453,
+      "lean_path": "Principia/Architecture/Star64Kernel.lean",
+      "declaration": "PM.Architecture.Star64Kernel.star_64_231",
+      "formal_scope": "typed relative-relation-type reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

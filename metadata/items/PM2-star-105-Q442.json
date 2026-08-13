@@ -1,6 +1,143 @@
-{"batch":"PM2-STAR105-Q442","edition":"first","volume":2,"source_range":{"printed_pages":"55–56","scan_leaves":[95,96],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu","leaf_derivatives":[{"scan_leaf":95,"printed_page":55,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page95-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg","sha256":"6c025ed5fab99ea73a440a90b1e6e73e034fb015ba16728bd2ffb93bc6b8a4e4"},{"scan_leaf":96,"printed_page":56,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page96-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg","sha256":"5bb149a982fce0550e1783ea655b3f92584f543ebaae2598d52d61e3156df597"}],"project_gutenberg":"https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},"witnesses":["PM2-1912-SCAN","PG78255"],"source_status":"source-catalogued-PM-VERBATIM","integration_status":"source-only-no-formal-target","items":[
-{"id":"PM2:✱105·314","kind":"derived-proposition","printed":"✱105·314. ⊢ : N₁cʻα = N₀cʻγ .⊃ . N₀cʻα = N¹cʻγ [✱105·312 . ✱103·12]","printed_page":55,"scan_leaf":95,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and citation-order skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-descending-cardinal-syntax-or-derivation-layer","printed_dependencies":["PM2:✱105·312","PM2:✱103·12"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM2-star-105-314.txt"},
-{"id":"PM2:✱105·315","kind":"derived-proposition","printed":"✱105·315. ⊢ : N₂cʻα = N₀cʻγ .⊃ . N₀cʻα = N²cʻγ","printed_page":55,"scan_leaf":95,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-descending-cardinal-syntax-or-derivation-layer","printed_dependencies":[],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM2-star-105-315.txt"},
-{"id":"PM2:✱105·316","kind":"derived-proposition","printed":"✱105·316. ⊢ : ∃!N₁cʻα . N₁cʻα = N₁cʻβ .⊃ . N₀cʻα = N₀cʻβ","printed_page":55,"scan_leaf":95,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and citation-order skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-descending-cardinal-syntax-or-derivation-layer","printed_dependencies":["PM2:✱105·312","PM1:✱13·171","PM1:✱10·11·23·35"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM2-star-105-316.txt"},
-{"id":"PM2:✱105·317","kind":"derived-proposition","printed":"✱105·317. ⊢ : ∃!N₂cʻα . N₂cʻα = N₂cʻβ .⊃ . N₀cʻα = N₀cʻβ","printed_page":56,"scan_leaf":96,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-descending-cardinal-syntax-or-derivation-layer","printed_dependencies":[],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM2-star-105-317.txt"},
-{"id":"PM2:✱105·32","kind":"derived-proposition","printed":"✱105·32. ⊢ : N₀cʻα = N₀cʻβ .⊃ . N₁cʻα = N₁cʻβ","printed_page":56,"scan_leaf":96,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and citation-order skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-descending-cardinal-syntax-or-derivation-layer","printed_dependencies":["PM2:✱103·41","PM2:✱103·14","PM1:✱63·16·36","PM2:✱105·13"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM2-star-105-32.txt"}],"review":{"apparatus_required":false,"sic_required":false,"note":"The canonical leaves 95–96 and PG78255 agree on these five propositions. Demonstrations are retained only as citation-order skeletons; no proof reconstruction is claimed."},"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM2-STAR105-Q442",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "55–56",
+    "scan_leaves": [
+      95,
+      96
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 95,
+        "printed_page": 55,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page95-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg",
+        "sha256": "6c025ed5fab99ea73a440a90b1e6e73e034fb015ba16728bd2ffb93bc6b8a4e4"
+      },
+      {
+        "scan_leaf": 96,
+        "printed_page": 56,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page96-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg",
+        "sha256": "5bb149a982fce0550e1783ea655b3f92584f543ebaae2598d52d61e3156df597"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "prepared",
+  "items": [
+    {
+      "id": "PM2:✱105·314",
+      "kind": "derived-proposition",
+      "printed": "✱105·314. ⊢ : N₁cʻα=N₀cʻγ .⊃. N₀cʻα=N¹cʻγ",
+      "printed_page": 55,
+      "scan_leaf": 95,
+      "lean_path": "Principia/Architecture/Star105ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star105ThirdKernel.star_105_314",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱105·312",
+        "PM2:✱103·12"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-105-314.txt"
+    },
+    {
+      "id": "PM2:✱105·315",
+      "kind": "derived-proposition",
+      "printed": "✱105·315. ⊢ : N₂cʻα=N₀cʻγ .⊃. N₀cʻα=N²cʻγ",
+      "printed_page": 55,
+      "scan_leaf": 95,
+      "lean_path": "Principia/Architecture/Star105ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star105ThirdKernel.star_105_315",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-105-315.txt"
+    },
+    {
+      "id": "PM2:✱105·316",
+      "kind": "derived-proposition",
+      "printed": "✱105·316. ⊢ : ∃!N₁cʻα.N₁cʻα=N₁cʻβ .⊃. N₀cʻα=N₀cʻβ",
+      "printed_page": 55,
+      "scan_leaf": 95,
+      "lean_path": "Principia/Architecture/Star105ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star105ThirdKernel.star_105_316",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱105·312",
+        "PM1:✱13·171",
+        "PM1:✱10·11·23·35"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-105-316.txt"
+    },
+    {
+      "id": "PM2:✱105·317",
+      "kind": "derived-proposition",
+      "printed": "✱105·317. ⊢ : ∃!N₂cʻα.N₂cʻα=N₂cʻβ .⊃. N₀cʻα=N₀cʻβ",
+      "printed_page": 56,
+      "scan_leaf": 96,
+      "lean_path": "Principia/Architecture/Star105ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star105ThirdKernel.star_105_317",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-105-317.txt"
+    },
+    {
+      "id": "PM2:✱105·32",
+      "kind": "derived-proposition",
+      "printed": "✱105·32. ⊢ : N₀cʻα=N₀cʻβ .⊃. N₁cʻα=N₁cʻβ",
+      "printed_page": 56,
+      "scan_leaf": 96,
+      "lean_path": "Principia/Architecture/Star105ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star105ThirdKernel.star_105_32",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱103·41",
+        "PM2:✱103·14",
+        "PM1:✱63·16·36",
+        "PM2:✱105·13"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-105-32.txt"
+    }
+  ],
+  "review": {
+    "apparatus_required": false,
+    "sic_required": false,
+    "note": "The canonical leaves 95–96 and PG78255 agree on these five propositions. Demonstrations are retained only as citation-order skeletons; no proof reconstruction is claimed."
+  },
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

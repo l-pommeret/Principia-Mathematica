@@ -1,0 +1,117 @@
+{
+  "batch": "PM2-STAR120-CATALOGUE-03",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "208–215",
+    "scan_leaves": [
+      248,
+      253,
+      254,
+      255
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱120·213",
+      "kind": "derived-proposition",
+      "printed": "✱120·213. ⊢ . ιʻx∈Cls induct",
+      "printed_page": 213,
+      "scan_leaf": 253,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_213",
+      "formal_scope": "typed transfinite cardinal-arithmetic reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱120·214",
+      "kind": "derived-proposition",
+      "printed": "✱120·214. ⊢ : ρ sm σ .⊃: ρ∈Cls induct .≡. σ∈Cls induct",
+      "printed_page": 213,
+      "scan_leaf": 253,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_214",
+      "formal_scope": "typed transfinite cardinal-arithmetic reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱120·251",
+      "kind": "derived-proposition",
+      "printed": "✱120·251. ⊢ : η∈Cls induct .⊃. η∪ιʻy∈Cls induct",
+      "printed_page": 214,
+      "scan_leaf": 254,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_251",
+      "formal_scope": "typed transfinite cardinal-arithmetic reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱120·26",
+      "kind": "derived-proposition",
+      "printed": "✱120·26. ⊢ : ρ∈Cls induct : φη .⊃η,x. φ(η∪ιʻx) : φΛ :⊃. φρ",
+      "printed_page": 208,
+      "scan_leaf": 248,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_26",
+      "formal_scope": "typed transfinite cardinal-arithmetic reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱120·311",
+      "kind": "derived-proposition",
+      "printed": "✱120·311. ⊢ : ∃!α+₍c₎1 . α+₍c₎1=β+₍c₎1 .⊃. α=smʻʻβ . ∃!α",
+      "printed_page": 215,
+      "scan_leaf": 255,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_311",
+      "formal_scope": "typed transfinite cardinal-arithmetic reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

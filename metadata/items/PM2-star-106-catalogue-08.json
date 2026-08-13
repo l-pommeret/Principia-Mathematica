@@ -1,0 +1,108 @@
+{
+  "batch": "PM2-STAR106-CATALOGUE-08",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "64",
+    "scan_leaves": [
+      104
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱106·401",
+      "kind": "derived-proposition",
+      "printed": "✱106·401. ⊢ : μ=N¹cʻα .⊃. μ₍₀₀₎=N¹¹cʻα",
+      "printed_page": 64,
+      "scan_leaf": 104,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_401",
+      "formal_scope": "typed descending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star106-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱106·402",
+      "kind": "derived-proposition",
+      "printed": "✱106·402. ⊢ : μ=N₁cʻα . ∃!μ .⊃. μ₍₀₀₎=N₁₁cʻα",
+      "printed_page": 64,
+      "scan_leaf": 104,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_402",
+      "formal_scope": "typed descending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱106·41",
+      "kind": "derived-proposition",
+      "printed": "✱106·41. ⊢ : μ=N₀cʻα .⊃. μ⁽¹¹⁾=N¹¹cʻα",
+      "printed_page": 64,
+      "scan_leaf": 104,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_41",
+      "formal_scope": "typed descending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star106-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱106·411",
+      "kind": "derived-proposition",
+      "printed": "✱106·411. ⊢ : μ=N₀cʻα .⊃. μ₍₁₁₎=N₁₁cʻα",
+      "printed_page": 64,
+      "scan_leaf": 104,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_411",
+      "formal_scope": "typed descending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱106·43",
+      "kind": "derived-proposition",
+      "printed": "✱106·43. ⊢ : μ,ν∈N₀C . tʻμ=tʻν .⊃. (∃γ,δ). γ∈μ₍₀₀₎ . δ∈ν₍₀₀₎ . γ∩δ=Λ",
+      "printed_page": 64,
+      "scan_leaf": 104,
+      "lean_path": "Principia/Architecture/Star106ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star106ClosingKernel.star_106_43",
+      "formal_scope": "typed descending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

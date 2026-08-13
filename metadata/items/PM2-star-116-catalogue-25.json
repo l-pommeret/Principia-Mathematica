@@ -1,0 +1,115 @@
+{
+  "batch": "PM2-STAR116-CATALOGUE-25",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "169–170",
+    "scan_leaves": [
+      209,
+      210
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱116·715",
+      "kind": "derived-proposition",
+      "printed": "✱116·715. ⊢ : Hp ✱116·712 .⊃. DʻT=Clʻα",
+      "printed_page": 169,
+      "scan_leaf": 209,
+      "lean_path": "Principia/Architecture/Star116EighthKernel.lean",
+      "declaration": "PM.Architecture.Star116EighthKernel.star_116_715",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·72",
+      "kind": "derived-proposition",
+      "printed": "✱116·72. ⊢ . NcʻClʻα=2^(Ncʻα)",
+      "printed_page": 170,
+      "scan_leaf": 210,
+      "lean_path": "Principia/Architecture/Star116EighthKernel.lean",
+      "declaration": "PM.Architecture.Star116EighthKernel.star_116_72",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·8",
+      "kind": "derived-proposition",
+      "printed": "✱116·8. ⊢ . Rlʻ(ρ↑σ)=ṡʻʻClʻ(σ×ρ)",
+      "printed_page": 170,
+      "scan_leaf": 210,
+      "lean_path": "Principia/Architecture/Star116EighthKernel.lean",
+      "declaration": "PM.Architecture.Star116EighthKernel.star_116_8",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·81",
+      "kind": "derived-proposition",
+      "printed": "✱116·81. ⊢ . ṡ↾Clʻ(σ×ρ)∈1→1",
+      "printed_page": 170,
+      "scan_leaf": 210,
+      "lean_path": "Principia/Architecture/Star116EighthKernel.lean",
+      "declaration": "PM.Architecture.Star116EighthKernel.star_116_81",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·82",
+      "kind": "derived-proposition",
+      "printed": "✱116·82. ⊢ . Rlʻ(ρ↑σ) sm Clʻ(σ×ρ)",
+      "printed_page": 170,
+      "scan_leaf": 210,
+      "lean_path": "Principia/Architecture/Star116EighthKernel.lean",
+      "declaration": "PM.Architecture.Star116EighthKernel.star_116_82",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

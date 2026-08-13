@@ -1,4 +1,31 @@
-/- Source-only opening of PM II ✱100; no Lean declaration or target is claimed. -/
+/-! PM II ✱100, canonical Gutenberg 78255, opening macro-lot. -/
+/- PM-VERBATIM-BEGIN PM2:✱100·01
+✱100·01. Nc = sm⃗ Df
+PM-VERBATIM-END PM2:✱100·01 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·02
+✱100·02. NC = DʻNc Df
+PM-VERBATIM-END PM2:✱100·02 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·1
+✱100·1. ⊢ . Ncʻα = β̂(β sm α) = β̂(α sm β)
+PM-VERBATIM-END PM2:✱100·1 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·11
+✱100·11. ⊢ . Ncʻα = β̂{(∃R). R∈1→1 . DʻR=α . ᴃʻR=β}
+PM-VERBATIM-END PM2:✱100·11 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·12
+✱100·12. ⊢ . Ncʻα = β̂{(∃R). R∈1→1 . α⊂DʻR . β=converse Rʻʻα}
+PM-VERBATIM-END PM2:✱100·12 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·13
+✱100·13. ⊢ . Ncʻα = ᴃʻʻ(1→1∩converse Dʻα) = Dʻʻ(1→1∩converse ᴃʻα)
+PM-VERBATIM-END PM2:✱100·13 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·14
+✱100·14. ⊢ . Ncʻα = β̂{(∃R). α⊂ᴃʻR . R↾α∈1→1 . β=Rʻʻα}
+PM-VERBATIM-END PM2:✱100·14 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·15
+✱100·15. ⊢ . Ncʻα = β̂{(∃R): E!!Rʻʻα : x,y∈α . Rʻx=Rʻy .⊃x,y. x=y : β=Rʻʻα}
+PM-VERBATIM-END PM2:✱100·15 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·16
+✱100·16. ⊢ . Ncʻα = β̂{(∃R):: x,y∈α .⊃x,y: Rʻx=Rʻy .≡. x=y :. β=Rʻʻα}
+PM-VERBATIM-END PM2:✱100·16 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·2
 ✱100·2.  ⊢ . E!Ncʻα  [✱32·12.(✱100·01)]
 PM-VERBATIM-END PM2:✱100·2 -/
@@ -16,6 +43,22 @@ PM-VERBATIM-END PM2:✱100·21 -/
 ✱100·22.  ⊢ . Nc ∈ 1→Cls  [✱72·12.(✱100·01)]
 PM-VERBATIM-END PM2:✱100·22 -/
 
+/- PM-VERBATIM-BEGIN PM2:✱100·3
+✱100·3. ⊢ . α ∈ Ncʻα
+PM-VERBATIM-END PM2:✱100·3 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·31
+✱100·31. ⊢ : α∈Ncʻβ .≡. β∈Ncʻα .≡. α sm β
+PM-VERBATIM-END PM2:✱100·31 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·32
+✱100·32. ⊢ : α∈Ncʻβ . β∈Ncʻγ .⊃. α∈Ncʻγ
+PM-VERBATIM-END PM2:✱100·32 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·321
+✱100·321. ⊢ : α sm β .⊃. Ncʻα = Ncʻβ
+PM-VERBATIM-END PM2:✱100·321 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·33
+✱100·33. ⊢ : ∃!Ncʻα∩Ncʻβ .⊃. α sm β
+PM-VERBATIM-END PM2:✱100·33 -/
+
 /- PM-VERBATIM-BEGIN PM2:✱100·34
 ✱100·34.  ⊢ : ∃!Ncʻα ∩ Ncʻβ .⊃ . Ncʻα = Ncʻβ  [✱100·33·321]
 PM-VERBATIM-END PM2:✱100·34 -/
@@ -29,6 +72,28 @@ PM-VERBATIM-END PM2:✱100·35 -/
 ✱100·36.  ⊢ :. β ∈ Ncʻα .⊃ : ∃!α .≡ . ∃!β  [✱100·31 . ✱73·36]
 PM-VERBATIM-END PM2:✱100·36 -/
 
+/- PM-VERBATIM-BEGIN PM2:✱100·4
+✱100·4. ⊢ : μ∈NC .≡. (∃α). μ=Ncʻα
+PM-VERBATIM-END PM2:✱100·4 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·41
+✱100·41. ⊢ . Ncʻα∈NC
+PM-VERBATIM-END PM2:✱100·41 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·42
+✱100·42. ⊢ : μ,ν∈NC . ∃!μ∩ν .⊃. μ=ν
+PM-VERBATIM-END PM2:✱100·42 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·43
+✱100·43. ⊢ . NC∈Cls² excl
+PM-VERBATIM-END PM2:✱100·43 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·44
+✱100·44. ⊢ :: μ∈NC . ∃!Ncʻα .⊃ : α∈μ .≡. Ncʻα=μ
+PM-VERBATIM-END PM2:✱100·44 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·45
+✱100·45. ⊢ : μ∈NC . α∈μ .⊃. Ncʻα=μ
+PM-VERBATIM-END PM2:✱100·45 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·5
+✱100·5. ⊢ : μ∈NC . α,β∈μ .⊃. α sm β
+PM-VERBATIM-END PM2:✱100·5 -/
+
 /- PM-VERBATIM-BEGIN PM2:✱100·51
 ✱100·51.  ⊢ : μ ∈ NC . α ∈ μ .⊃ . smʻʻμ = Ncʻα
 PM-VERBATIM-END PM2:✱100·51 -/
@@ -40,10 +105,20 @@ PM-VERBATIM-END PM2:✱100·511 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·52
 ✱100·52.  ⊢ : μ ∈ NC . ∃!μ .⊃ . smʻʻμ ∈ NC  [✱100·51·4]
 PM-VERBATIM-END PM2:✱100·52 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·521
+✱100·521. ⊢ : μ∈NC . ∃!smʻʻμ .⊃. smʻʻsmʻʻμ=μ
+PM-VERBATIM-END PM2:✱100·521 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·53
+✱100·53. ⊢ :: ∃!μ . ∃!ν .⊃ : μ∈NC . ν=smʻʻμ .≡. ν∈NC . μ=smʻʻν
+PM-VERBATIM-END PM2:✱100·53 -/
 
 /- PM-VERBATIM-BEGIN PM2:✱100·6
 ✱100·6.  ⊢ . ιʻʻα ∈ Ncʻα  [✱73·41 . ✱100·31]
 PM-VERBATIM-END PM2:✱100·6 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱100·61
+✱100·61. ⊢ . β̂{(∃y). y∈α . β=ιʻx∪ιʻy} ∈ Ncʻα
+PM-VERBATIM-END PM2:✱100·61 -/
 
 /- PM-VERBATIM-BEGIN PM2:✱100·62
 ✱100·62.  ⊢ . x↓ʻʻα ∈ Ncʻα  [✱73·61 . ✱100·31]
@@ -52,6 +127,16 @@ PM-VERBATIM-END PM2:✱100·62 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·621
 ✱100·621.  ⊢ . ↓xʻʻα ∈ Ncʻα  [✱73·611 . ✱100·31]
 PM-VERBATIM-END PM2:✱100·621 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱100·63
+✱100·63. ⊢ . ∈Δʻιʻα ∈ Ncʻα
+PM-VERBATIM-END PM2:✱100·63 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·631
+✱100·631. ⊢ . Dʻʻ∈Δʻιʻα ∈ Ncʻα
+PM-VERBATIM-END PM2:✱100·631 -/
+/- PM-VERBATIM-BEGIN PM2:✱100·64
+✱100·64. ⊢ : κ∈Cls² excl .⊃. Dʻʻ∈Δʻκ ⊂ Ncʻκ
+PM-VERBATIM-END PM2:✱100·64 -/
 
 /- PM-VERBATIM-BEGIN PM2:✱101·1
 ✱101·1.  ⊢ . 0 = NcʻΛ  [✱73·48 . ✱100·1]
@@ -338,15 +423,6 @@ PM-VERBATIM-END PM2:✱104·12 -/
 ✱104·2. ⊢ . ʻʻα ∈ N¹cʻα
 PM-VERBATIM-END PM2:✱104·2 -/
 
-/- PM-VERBATIM-BEGIN PM2:✱105·25
-✱105·25. ⊢ . N₀C = N₁C − ιʻΛ
-PM-VERBATIM-END PM2:✱105·25 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·251
-✱105·251. ⊢ . N₀C = N₂C − ιʻΛ
-PM-VERBATIM-END PM2:✱105·251 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·26
-✱105·26. ⊢ . N₁cʻtʻα = Λ
-PM-VERBATIM-END PM2:✱105·26 -/
 /- PM-VERBATIM-SUMMARY-BEGIN PM2:STAR105-SUMMARY-105-3
 ✱105·3. ⊢ : μ = N₀cʻα .⊃ . μ⁽¹⁾ = N₁cʻα
 PM-VERBATIM-SUMMARY-END PM2:STAR105-SUMMARY-105-3 -/
@@ -362,266 +438,3 @@ PM-VERBATIM-SUMMARY-END PM2:STAR105-SUMMARY-105-35 -/
 /- PM-VERBATIM-SUMMARY-BEGIN PM2:STAR105-SUMMARY-105-38
 ✱105·38. ⊢ . {μ⁽¹⁾}⁽¹⁾ = μ⁽²⁾
 PM-VERBATIM-SUMMARY-END PM2:STAR105-SUMMARY-105-38 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·01
-✱105·01. N₁cʻα = Ncʻα ∩ tʻt₁ʻα Df
-PM-VERBATIM-END PM2:✱105·01 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·011
-✱105·011. N₂cʻα = Ncʻα ∩ tʻt₂ʻα Df
-PM-VERBATIM-END PM2:✱105·011 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·02
-✱105·02. N₁C = DʻN₁c Df
-PM-VERBATIM-END PM2:✱105·02 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·021
-✱105·021. N₂C = DʻN₂c Df
-PM-VERBATIM-END PM2:✱105·021 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·03
-✱105·03. μ⁽¹⁾ = smʻʻμ ∩ t₁ʻμ Df
-PM-VERBATIM-END PM2:✱105·03 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·031
-✱105·031. μ⁽²⁾ = smʻʻμ ∩ t₂ʻμ Df
-PM-VERBATIM-END PM2:✱105·031 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·1
-✱105·1. ⊢ . N₁cʻα = Ncʻα ∩ t₀ʻα  [✱63·383 . (✱105·01)]
-PM-VERBATIM-END PM2:✱105·1 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·101
-✱105·101. ⊢ . N₂cʻα = Ncʻα ∩ t₁ʻα  [✱63·41 . (✱105·011)]
-PM-VERBATIM-END PM2:✱105·101 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·11
-✱105·11. ⊢ : β ∈ N₁cʻα .≡ . β ∈ Ncʻα . β ∈ t₀ʻα .≡ . β sm α . β ∈ t₀ʻα .≡ . β sm α . β ⊂ t₁ʻα  [✱105·1 . ✱100·31 . ✱63·51]
-PM-VERBATIM-END PM2:✱105·11 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·111
-✱105·111. ⊢ : β ∈ N₂cʻα .≡ . β ∈ Ncʻα . β ∈ t₁ʻα .≡ . β sm α . β ∈ t₁ʻα .≡ . β sm α . β ⊂ t₂ʻα  [✱105·101 . ✱100·31 . ✱63·52]
-PM-VERBATIM-END PM2:✱105·111 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·12
-✱105·12. ⊢ : β ∈ N₁cʻα .≡ . β ∈ Ncʻα . α ⊂ tʻβ .≡ . β sm α . α ⊂ tʻβ .≡ . α ∈ N¹cʻβ  [✱105·11 . ✱63·51 . ✱104·1]
-PM-VERBATIM-END PM2:✱105·12 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·121
-✱105·121. ⊢ : β ∈ N₂cʻα .≡ . β ∈ Ncʻα . α ⊂ t²ʻβ .≡ . β sm α . α ⊂ t²ʻβ .≡ . α ∈ N²cʻβ  [✱105·111 . ✱63·52 . ✱104·11]
-PM-VERBATIM-END PM2:✱105·121 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·13
-✱105·13. ⊢ . N₁cʻα = Nc(t₁ʻα)ʻα = Nc{(t₁ʻα)ₐ}ʻα  [✱102·6 . (✱105·01)]
-PM-VERBATIM-END PM2:✱105·13 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·131
-✱105·131. ⊢ . N₂cʻα = Nc(t₂ʻα)ʻα = Nc{(t₂ʻα)ₐ}ʻα  [✱102·6 . (✱105·011)]
-PM-VERBATIM-END PM2:✱105·131 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·14
-✱105·14. ⊢ : α ∈ t₀ʻβ .⊃ . N₁cʻβ = Nc(α)ʻβ = Nc(αᵦ)ʻβ
-PM-VERBATIM-END PM2:✱105·14 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·141
-✱105·141. ⊢ : α ∈ t₁ʻβ .⊃ . N₂cʻβ = Nc(α)ʻβ = Nc(αᵦ)ʻβ  [Proof as in ✱105·14]
-PM-VERBATIM-END PM2:✱105·141 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·142
-✱105·142. ⊢ : β ⊂ tʻα .⊃ . N₁cʻβ = Nc(α)ʻβ = Nc(αᵦ)ʻβ  [✱105·14 . ✱63·51]
-PM-VERBATIM-END PM2:✱105·142 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·143
-✱105·143. ⊢ : β ⊂ t²ʻα .⊃ . N₂cʻβ = Nc(α)ʻβ = Nc(αᵦ)ʻβ  [✱105·141 . ✱63·52]
-PM-VERBATIM-END PM2:✱105·143 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·15
-✱105·15. ⊢ : μ ∈ N₁C .≡ . (∃α). μ = N₁cʻα  [✱100·22 . ✱71·41 . (✱105·02)]
-PM-VERBATIM-END PM2:✱105·15 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·151
-✱105·151. ⊢ : μ ∈ N₂C .≡ . (∃α). μ = N₂cʻα
-PM-VERBATIM-END PM2:✱105·151 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·16
-✱105·16. ⊢ : δ ∈ μ⁽¹⁾ .≡ . (∃γ). γ ∈ μ . δ sm γ . δ ∈ t₁ʻμ .≡ . (∃γ). γ ∈ μ . δ sm γ . δ ∈ t₀ʻγ .≡ . (∃γ). γ ∈ μ . δ sm γ . γ ⊂ tʻδ  [✱37·1 . ✱63·51·54]
-PM-VERBATIM-END PM2:✱105·16 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·161
-✱105·161. ⊢ : δ ∈ μ⁽²⁾ .≡ . (∃γ). γ ∈ μ . δ sm γ . δ ∈ t₂ʻμ .≡ . (∃γ). γ ∈ μ . δ sm γ . δ ∈ t₁ʻγ .≡ . (∃γ). γ ∈ μ . δ sm γ . γ ⊂ t²ʻδ  [✱37·1 . ✱63·52·55]
-PM-VERBATIM-END PM2:✱105·161 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·2
-✱105·2. ⊢ . N₀cʻα = N₁cʻιʻʻα
-PM-VERBATIM-END PM2:✱105·2 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·201
-✱105·201. ⊢ . N₀cʻα = N₂cʻιʻʻιʻʻα
-PM-VERBATIM-END PM2:✱105·201 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·21
-✱105·21. ⊢ . N₀C ⊂ N₁C  [✱105·2·15]
-PM-VERBATIM-END PM2:✱105·21 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·211
-✱105·211. ⊢ . N₀C ⊂ N₂C
-PM-VERBATIM-END PM2:✱105·211 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·22
-✱105·22. ⊢ : γ ∈ N₁cʻδ .⊃ . N₁cʻδ = N₀cʻγ  [✱103·26]
-PM-VERBATIM-END PM2:✱105·22 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·221
-✱105·221. ⊢ : γ ∈ N₂cʻδ .⊃ . N₂cʻδ = N₀cʻγ
-PM-VERBATIM-END PM2:✱105·221 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·23
-✱105·23. ⊢ : ∃!N₁cʻδ .⊃ . N₁cʻδ ∈ N₀C  [✱105·22]
-PM-VERBATIM-END PM2:✱105·23 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·231
-✱105·231. ⊢ : ∃!N₂cʻδ .⊃ . N₂cʻδ ∈ N₀C
-PM-VERBATIM-END PM2:✱105·231 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·24
-✱105·24. ⊢ . N₁C − ιʻΛ ⊂ N₀C  [✱105·23]
-PM-VERBATIM-END PM2:✱105·24 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·241
-✱105·241. ⊢ . N₂C − ιʻΛ ⊂ N₀C
-PM-VERBATIM-END PM2:✱105·241 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·252
-✱105·252. ⊢ . N₁cʻβ = N₂cʻιʻʻβ
-PM-VERBATIM-END PM2:✱105·252 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·261
-✱105·261. ⊢ . N₂cʻιʻʻtʻα = Λ  [✱105·26·252]
-PM-VERBATIM-END PM2:✱105·261 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·27
-✱105·27. ⊢ . Λ ∈ N₁C  [✱105·26]
-PM-VERBATIM-END PM2:✱105·27 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·271
-✱105·271. ⊢ . Λ ∈ N₂C
-PM-VERBATIM-END PM2:✱105·271 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·28
-✱105·28. ⊢ . N₁C = N₀C ∪ ιʻΛ  [✱105·25·27]
-PM-VERBATIM-END PM2:✱105·28 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·281
-✱105·281. ⊢ . N₂C = N₁C = N₀C ∪ ιʻΛ
-PM-VERBATIM-END PM2:✱105·281 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·29
-✱105·29. ⊢ . NC ⊂ N₁C . NC ⊂ N₂C  [✱105·281 . ✱103·34]
-PM-VERBATIM-END PM2:✱105·29 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·301
-✱105·301. ⊢ : μ = N₀cʻα .⊃ . μ⁽²⁾ = N₂cʻα
-PM-VERBATIM-END PM2:✱105·301 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·31
-✱105·31. ⊢ : μ ∈ N₀C .⊃ . μ⁽¹⁾ ∈ N₁C  [✱105·3·15 . ✱103·2]
-PM-VERBATIM-END PM2:✱105·31 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·311
-✱105·311. ⊢ : μ ∈ N₀C .⊃ . μ⁽²⁾ ∈ N₂C
-PM-VERBATIM-END PM2:✱105·311 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·312
-✱105·312. ⊢ : γ ∈ N₁cʻα .⊃ . α ∈ N¹cʻγ . N¹cʻγ = N₀cʻα  [✱105·12 . ✱103·26]
-PM-VERBATIM-END PM2:✱105·312 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·313
-✱105·313. ⊢ : γ ∈ N₂cʻα .⊃ . α ∈ N²cʻγ . N²cʻγ = N₀cʻα
-PM-VERBATIM-END PM2:✱105·313 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·314
-✱105·314. ⊢ : N₁cʻα = N₀cʻγ .⊃ . N₀cʻα = N¹cʻγ  [✱105·312 . ✱103·12]
-PM-VERBATIM-END PM2:✱105·314 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·315
-✱105·315. ⊢ : N₂cʻα = N₀cʻγ .⊃ . N₀cʻα = N²cʻγ
-PM-VERBATIM-END PM2:✱105·315 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·316
-✱105·316. ⊢ : ∃!N₁cʻα . N₁cʻα = N₁cʻβ .⊃ . N₀cʻα = N₀cʻβ
-PM-VERBATIM-END PM2:✱105·316 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·317
-✱105·317. ⊢ : ∃!N₂cʻα . N₂cʻα = N₂cʻβ .⊃ . N₀cʻα = N₀cʻβ
-PM-VERBATIM-END PM2:✱105·317 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·32
-✱105·32. ⊢ : N₀cʻα = N₀cʻβ .⊃ . N₁cʻα = N₁cʻβ
-PM-VERBATIM-END PM2:✱105·32 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·321
-✱105·321. ⊢ : N₀cʻα = N₀cʻβ .⊃ . N₂cʻα = N₂cʻβ
-PM-VERBATIM-END PM2:✱105·321 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·323
-✱105·323. ⊢ :: ∃!N₂cʻα .⊃ : N₂cʻα = N₂cʻβ .≡ . N₀cʻα = N₀cʻβ
-PM-VERBATIM-END PM2:✱105·323 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·324
-✱105·324. ⊢ : ∃!μ⁽¹⁾ .⊃ . ∃!μ  [✱37·29 . (✱105·03)]
-PM-VERBATIM-END PM2:✱105·324 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·325
-✱105·325. ⊢ : ∃!μ⁽²⁾ .⊃ . ∃!μ
-PM-VERBATIM-END PM2:✱105·325 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·326
-✱105·326. ⊢ : μ ∈ NC . μ⁽¹⁾ = N₀cʻγ .⊃ . μ = N¹cʻγ
-PM-VERBATIM-END PM2:✱105·326 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·327
-✱105·327. ⊢ : μ ∈ NC . μ⁽²⁾ = N₀cʻγ .⊃ . μ = N²cʻγ
-PM-VERBATIM-END PM2:✱105·327 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·33
-✱105·33. ⊢ : μ ∈ NC . ∃!μ⁽¹⁾ . μ⁽¹⁾ = N₁cʻα .⊃ . μ = N₀cʻα
-PM-VERBATIM-END PM2:✱105·33 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·331
-✱105·331. ⊢ : μ ∈ NC . ∃!μ⁽²⁾ . μ⁽²⁾ = N₂cʻα .⊃ . μ = N₀cʻα
-PM-VERBATIM-END PM2:✱105·331 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·34
-✱105·34. ⊢ :: μ ∈ NC . ∃!μ⁽¹⁾ .⊃ : μ⁽¹⁾ = N₁cʻα .≡ . μ = N₀cʻα  [✱105·33·3]
-PM-VERBATIM-END PM2:✱105·34 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·341
-✱105·341. ⊢ :: μ ∈ NC . ∃!μ⁽²⁾ .⊃ : μ⁽²⁾ = N₂cʻα .≡ . μ = N₀cʻα
-PM-VERBATIM-END PM2:✱105·341 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·342
-✱105·342. ⊢ . μ ∈ NC .⊃ . μ⁽¹⁾ ∈ N₁C
-PM-VERBATIM-END PM2:✱105·342 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·343
-✱105·343. ⊢ : μ ∈ NC .⊃ . μ⁽²⁾ ∈ N₂C
-PM-VERBATIM-END PM2:✱105·343 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·344
-✱105·344. ⊢ : μ = N¹cʻγ .⊃ . μ⁽¹⁾ = N₀cʻγ
-PM-VERBATIM-END PM2:✱105·344 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·345
-✱105·345. ⊢ : μ = N²cʻγ .⊃ . μ⁽²⁾ = N₀cʻγ
-PM-VERBATIM-END PM2:✱105·345 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·35
-✱105·35. ⊢ :: μ ∈ NC . ν ∈ N₀C .⊃ : μ = ν⁽¹⁾ .≡ . μ⁽¹⁾ = ν
-PM-VERBATIM-END PM2:✱105·35 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·351
-✱105·351. ⊢ :: μ ∈ NC . ν ∈ N₀C .⊃ : μ = ν⁽²⁾ .≡ . μ⁽²⁾ = ν
-PM-VERBATIM-END PM2:✱105·351 -/
-
-/- PM-VERBATIM-BEGIN PM2:✱105·352
-✱105·352. ⊢ :: μ , ν ∈ NC . ∃!ν .⊃ : μ = ν⁽¹⁾ .≡ . μ⁽¹⁾ = ν  [✱105·35 . ✱103·34]
-PM-VERBATIM-END PM2:✱105·352 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·353
-✱105·353. ⊢ :: μ , ν ∈ NC . ∃!ν .⊃ : μ = ν⁽²⁾ .≡ . μ⁽²⁾ = ν
-PM-VERBATIM-END PM2:✱105·353 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·354
-✱105·354. ⊢ : ν ∈ NC . ∃!ν .⊃ . {ν⁽¹⁾}⁽¹⁾ = ν  [✱105·352]
-PM-VERBATIM-END PM2:✱105·354 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·355
-✱105·355. ⊢ : ν ∈ NC . ∃!ν .⊃ . {ν⁽²⁾}⁽²⁾ = ν
-PM-VERBATIM-END PM2:✱105·355 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·356
-✱105·356. ⊢ : μ ∈ NC . ∃!μ⁽¹⁾ .⊃ . {μ⁽¹⁾}⁽¹⁾ = μ  [✱105·352]
-PM-VERBATIM-END PM2:✱105·356 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·357
-✱105·357. ⊢ : μ ∈ NC . ∃!μ⁽²⁾ .⊃ . {μ⁽²⁾}⁽²⁾ = μ
-PM-VERBATIM-END PM2:✱105·357 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·36
-✱105·36. ⊢ : β ∈ N₁cʻα . γ ∈ N₁cʻβ .⊃ . γ ∈ N₂cʻα
-PM-VERBATIM-END PM2:✱105·36 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·361
-✱105·361. ⊢ : β ∈ N₁cʻα . γ ∈ N₂cʻα .⊃ . γ ∈ N₁cʻβ
-PM-VERBATIM-END PM2:✱105·361 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·362
-✱105·362. ⊢ : β ∈ N₁cʻα .⊃ . N₁cʻβ = N₂cʻα  [✱105·36·361]
-PM-VERBATIM-END PM2:✱105·362 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·37
-✱105·37. ⊢ : N₀cʻβ = N₁cʻα .⊃ . N₁cʻβ = N₂cʻα  [✱105·362 . ✱103·12]
-PM-VERBATIM-END PM2:✱105·37 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·371
-✱105·371. ⊢ : ∃!μ⁽²⁾ .⊃ . ∃!μ⁽¹⁾
-PM-VERBATIM-END PM2:✱105·371 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·372
-✱105·372. ⊢ : μ⁽¹⁾ = Λ .⊃ . μ⁽²⁾ = Λ  [✱105·371 . Transp]
-PM-VERBATIM-END PM2:✱105·372 -/
-/- PM-VERBATIM-BEGIN PM2:✱105·38
-✱105·38. ⊢ . {μ⁽¹⁾}⁽¹⁾ = μ⁽²⁾
-PM-VERBATIM-END PM2:✱105·38 -/

@@ -24,6 +24,8 @@ jobs:
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Verify source-critical apparatus
         run: python3 scripts/verify_editorial.py --report-all
+      - name: Verify Lean/source coverage ledger
+        run: python3 scripts/report_lean_source_coverage.py --verify-pipeline
       - name: Verify the PM anomaly register
         run: python3 scripts/verify_anomaly_registry.py
       - name: Build and kernel-check the edition

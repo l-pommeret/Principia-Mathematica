@@ -1,0 +1,74 @@
+/-! # PM I ✱36 — Relations with limited fields (PG78050, pp. 291–292) -/
+/- The formulas below are a Unicode transcription of the canonical Gutenberg witness. -/
+/- PM-VERBATIM-BEGIN PM1:✱36·01
+✱36·01. P⟏α = α◁P▷α Df
+PM-VERBATIM-END PM1:✱36·01 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·11
+✱36·11. ⊢ . P⟏α = α◁P▷α
+PM-VERBATIM-END PM1:✱36·11 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·13
+✱36·13. ⊢ : x(P⟏α)y .≡. x∈α . y∈α . xPy
+PM-VERBATIM-END PM1:✱36·13 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·2
+✱36·2. ⊢ . (P⟏α)∩(Q⟏β) = (P∩Q)⟏(α∩β)
+PM-VERBATIM-END PM1:✱36·2 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·201
+✱36·201. ⊢ . (P⟏α)∩(P⟏β) = P⟏(α∩β)
+PM-VERBATIM-END PM1:✱36·201 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·202
+✱36·202. ⊢ . (P⟏α)∩(Q⟏α) = (P∩Q)⟏α
+PM-VERBATIM-END PM1:✱36·202 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·203
+✱36·203. ⊢ . (P⟏α)∩Q = (P∩Q)⟏α
+PM-VERBATIM-END PM1:✱36·203 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·21
+✱36·21. ⊢ . (P⟏α)⟏β = P⟏(α∩β)
+PM-VERBATIM-END PM1:✱36·21 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·22
+✱36·22. ⊢ . (P⟏α);(Q⟏α) ⊂ (P;Q)⟏α
+PM-VERBATIM-END PM1:✱36·22 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·23
+✱36·23. ⊢ . (P∪Q)⟏α = (P⟏α)∪(Q⟏α)
+PM-VERBATIM-END PM1:✱36·23 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·24
+✱36·24. ⊢ : α⊂β .⊃. P⟏α⊂P⟏β
+PM-VERBATIM-END PM1:✱36·24 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·241
+✱36·241. ⊢ : P⊂Q .⊃. P⟏α⊂Q⟏α
+PM-VERBATIM-END PM1:✱36·241 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·25
+✱36·25. ⊢ : CʻP⊂α .≡. P⟏α=P
+PM-VERBATIM-END PM1:✱36·25 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·26
+✱36·26. ⊢ : CʻP∩α=Λ .⊃. P;(Q⟏α)=Λ . (Q⟏α);P=Λ
+PM-VERBATIM-END PM1:✱36·26 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·27
+✱36·27. ⊢ . P⟏Λ=Λ
+PM-VERBATIM-END PM1:✱36·27 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·28
+✱36·28. ⊢ . P⟏V=P
+PM-VERBATIM-END PM1:✱36·28 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·29
+✱36·29. ⊢ . P⟏α=P∩(α×α)
+PM-VERBATIM-END PM1:✱36·29 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·3
+✱36·3. ⊢ . P⟏α=P⟏(α∩CʻP)
+PM-VERBATIM-END PM1:✱36·3 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·31
+✱36·31. ⊢ : α∩CʻP=Λ .⊃. P⟏α=Λ
+PM-VERBATIM-END PM1:✱36·31 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·32
+✱36·32. ⊢ : α∩CʻP=β∩CʻP .⊃. P⟏α=P⟏β
+PM-VERBATIM-END PM1:✱36·32 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·33
+✱36·33. ⊢ . P⟏CʻP=P
+PM-VERBATIM-END PM1:✱36·33 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·34
+✱36·34. ⊢ . (P⟏α)̆=P̆⟏α
+PM-VERBATIM-END PM1:✱36·34 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·35
+✱36·35. ⊢ . (P⟏α)²⊂P²⟏α
+PM-VERBATIM-END PM1:✱36·35 -/
+/- PM-VERBATIM-BEGIN PM1:✱36·4
+✱36·4. ⊢ : α∩DʻR=Λ .∨. α∩DʻR̆=Λ :⊃. (R∪S)⟏α=S⟏α
+PM-VERBATIM-END PM1:✱36·4 -/

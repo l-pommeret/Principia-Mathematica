@@ -103,6 +103,17 @@ def raw_tokens(source: str) -> list[Token]:
             result.append(Token("unique_existence_predicate", "∃!", index))
             index += len("∃!")
             continue
+        # The first edition frequently prints the lunate epsilon ``ε`` for
+        # class membership.  Normalize only the token kind; retain offsets
+        # and the diplomatic source text outside the parser unchanged.
+        if source.startswith("∼ε", index):
+            result.append(Token("operator", "∼∈", index))
+            index += len("∼ε")
+            continue
+        if char == "ε":
+            result.append(Token("operator", "∈", index))
+            index += 1
+            continue
         if source.startswith("∼∈", index):
             result.append(Token("operator", "∼∈", index))
             index += len("∼∈")
@@ -157,8 +168,10 @@ def raw_tokens(source: str) -> list[Token]:
             index += len(text)
             continue
         if char == "ẑ":
-            result.append(Token("class_binder", char, index))
-            index += 1
+            binder = re.match(r"ẑ([A-Za-zΑ-Ωα-ω])(?=\s*[({])", source[index:])
+            text = binder.group(0) if binder else char
+            result.append(Token("class_binder", text, index))
+            index += len(text)
             continue
         # `Cl ex` is a printed two-word class operator.  Keeping it as one
         # lexical atom prevents the space from being mistaken for an omitted
@@ -666,7 +679,8 @@ class Parser:
                 if token.text == "ẑ" or self.peek().text == "("
                 else self.braced_argument()
             )
-            left = AST("class_incomplete", (condition,), token.text[0])
+            variable = token.text[1:] if token.text.startswith("ẑ") and len(token.text) > 1 else token.text[0]
+            left = AST("class_incomplete", (condition,), variable)
         elif token.kind == "class_symbol":
             left = AST("class_symbol", value=token.text)
         elif token.kind == "class_neg":

@@ -1,0 +1,70 @@
+{
+  "batch": "PM1-STAR31-CATALOGUE-02",
+  "edition": "first",
+  "volume": 1,
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱31·131",
+      "kind": "derived-proposition",
+      "printed": "⊢ : x(CnvʻP)y ≡ . yPx",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel.star_31_131",
+      "formal_scope": "candidate exact converse evaluation; strict audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·132",
+      "kind": "derived-proposition",
+      "printed": "⊢ : Q Cnv P ≡ . Q = CnvʻP ≡ . Q = P̌",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel.star_31_132",
+      "formal_scope": "candidate chained characterization; strict audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·16",
+      "kind": "derived-proposition",
+      "printed": "⊢ . Cnvʻ−̇P = −̇(CnvʻP)",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel.star_31_16",
+      "formal_scope": "candidate complement distribution; strict audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·17",
+      "kind": "derived-proposition",
+      "printed": "⊢ : y = P̌ʻx ≡ : xPz ≡_z z = y",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel2.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel2.star_31_17",
+      "formal_scope": "candidate relational value characterization; strict audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    },
+    {
+      "id": "PM1:✱31·18",
+      "kind": "derived-proposition",
+      "printed": "⊢ : E! P̌ʻx ≡ : (∃y) : xPz ≡_z z = y",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel2.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel2.star_31_18",
+      "formal_scope": "candidate descriptive existence characterization; strict audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-strict-audit-pending"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

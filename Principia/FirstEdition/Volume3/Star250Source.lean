@@ -49,7 +49,7 @@ By the definition of Ω we have
 
 Applying this to CʻP we have
 
-✱250·13.  ⊢ : P ∈ Ω − ιʻΛ .⊃ . E! BʻP
+✱250·13.  ⊢ : P ∈ Ω − ιʻΛ .⊃ . E! B̌ʻP
 PM-VERBATIM-END PM3:STAR250-SUMMARY-P4 -/
 
 /- PM-VERBATIM-BEGIN PM3:STAR250-SUMMARY-P5
@@ -126,13 +126,13 @@ PM-VERBATIM-END PM3:✱250·1 -/
 PM-VERBATIM-END PM3:✱250·101 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·102
-✱250·102.  ⊢ : P ∈ Bord .≡ . sectʻP − ιʻΛ ⊂ ∃ʻminₚ
+✱250·102.  ⊢ : P ∈ Bord .≡ . sectʻP̌ − ιʻΛ ⊂ ∃ʻminₚ
 
 Dem.
-  ⊢ . ✱250·1 .⊃ ⊢ : P ∈ Bord .⊃ . sectʻP − ιʻΛ ⊂ ∃ʻminₚ  (1)
+  ⊢ . ✱250·1 .⊃ ⊢ : P ∈ Bord .⊃ . sectʻP̌ − ιʻΛ ⊂ ∃ʻminₚ  (1)
   ⊢ . ✱205·19 .⊃ ⊢ . min (Pₚₒ)ʻα = min (Pₚₒ)ʻP⁎ʻα  [✱205·68]  (2)
-  ⊢ . ✱90·331 . ✱211·13 .⊃ ⊢ : ∃! α ∩ CʻP .⊃ . P⁎ʻʻα ∈ sectʻP − ιʻΛ  (3)
-  ⊢ . (3) .⊃ ⊢ :: sectʻP − ιʻΛ ⊂ ∃ʻminₚ .⊃ : ∃! α ∩ CʻP .⊃ . ∃! minₚʻ(P⁎ʻʻα)
+  ⊢ . ✱90·331 . ✱211·13 .⊃ ⊢ : ∃! α ∩ CʻP .⊃ . P⁎ʻʻα ∈ sectʻP̌ − ιʻΛ  (3)
+  ⊢ . (3) .⊃ ⊢ :: sectʻP̌ − ιʻΛ ⊂ ∃ʻminₚ .⊃ : ∃! α ∩ CʻP .⊃ . ∃! minₚʻ(P⁎ʻʻα)
       .⊃ . ∃! min (Pₚₒ)ʻα .⊃ . ∃! minₚʻα  (4)
       [✱205·26] [✱250·101]
   ⊢ . (1) . (4) .⊃ ⊢ . Prop
@@ -185,11 +185,11 @@ PM-VERBATIM-END PM3:✱250·12 -/
 PM-VERBATIM-END PM3:✱250·121 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·122
-✱250·122.  ⊢ :: P ∈ Ω .≡ : P ∈ Ser : ∃! CʻP ∩ pʻPʻʻ(α ∩ CʻP) .⊃ₐ . E! seqₚʻα
+✱250·122.  ⊢ :: P ∈ Ω .≡ : P ∈ Ser : ∃! CʻP ∩ pʻP⃖ʻʻ(α ∩ CʻP) .⊃ₐ . E! seqₚʻα
 PM-VERBATIM-END PM3:✱250·122 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·123
-✱250·123.  ⊢ :: P ∈ Ω − ιʻΛ .≡ : P ∈ Ser : ∃! pʻPʻʻ(α ∩ CʻP) .⊃ₐ . E! seqₚʻα
+✱250·123.  ⊢ :: P ∈ Ω − ιʻΛ .≡ : P ∈ Ser : ∃! pʻP⃖ʻʻ(α ∩ CʻP) .⊃ₐ . E! seqₚʻα
 PM-VERBATIM-END PM3:✱250·123 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·124
@@ -201,15 +201,15 @@ PM-VERBATIM-END PM3:✱250·124 -/
 PM-VERBATIM-END PM3:✱250·125 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·126
-✱250·126.  ⊢ : P ∈ Ω . E! maxₚʻα .∼ E! seqₚʻα .⊃ . BʻP ∈ α . BʻP = maxₚʻα
+✱250·126.  ⊢ : P ∈ Ω . E! maxₚʻα .∼ E! seqₚʻα .⊃ . B̌ʻP ∈ α . B̌ʻP = maxₚʻα
 PM-VERBATIM-END PM3:✱250·126 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·13
-✱250·13.  ⊢ : P ∈ Ω − ιʻΛ .⊃ . E! BʻP
+✱250·13.  ⊢ : P ∈ Ω − ιʻΛ .⊃ . E! B̌ʻP
 PM-VERBATIM-END PM3:✱250·13 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·131
-✱250·131.  ⊢ :: P ∈ Ω .⊃ : ∃! P .≡ . E! BʻP
+✱250·131.  ⊢ :: P ∈ Ω .⊃ : ∃! P .≡ . E! B̌ʻP
 PM-VERBATIM-END PM3:✱250·131 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·14
@@ -225,7 +225,7 @@ PM-VERBATIM-END PM3:✱250·141 -/
 PM-VERBATIM-END PM3:✱250·142 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·15
-✱250·15.  ⊢ : P ∈ Ω . E! BʻP .⊃ . P ∈ Ded
+✱250·15.  ⊢ : P ∈ Ω . E! B̌ʻP .⊃ . P ∈ Ded
 PM-VERBATIM-END PM3:✱250·15 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·151
@@ -237,7 +237,7 @@ PM-VERBATIM-END PM3:✱250·151 -/
 PM-VERBATIM-END PM3:✱250·152 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·16
-✱250·16.  ⊢ : P ∈ Ω . ∃! α ∩ CʻP .⊃ . P⃗ʻminₚʻα = pʻPʻʻ(α ∩ CʻP)
+✱250·16.  ⊢ : P ∈ Ω . ∃! α ∩ CʻP .⊃ . P⃗ʻminₚʻα = pʻP⃖ʻʻ(α ∩ CʻP)
   [✱205·65 . ✱250·121]
 PM-VERBATIM-END PM3:✱250·16 -/
 
@@ -259,15 +259,15 @@ PM-VERBATIM-END PM3:✱250·21 -/
 PM-VERBATIM-END PM3:✱250·22 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·23
-✱250·23.  ⊢ : P ∈ Ω . E! BʻP .≡ . P ∈ Ser ∩ Ded . DʻP = DʻP₁
+✱250·23.  ⊢ : P ∈ Ω . E! B̌ʻP .≡ . P ∈ Ser ∩ Ded . DʻP = DʻP₁
 PM-VERBATIM-END PM3:✱250·23 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·24
-✱250·24.  ⊢ : P ∈ Ω .⊃ . P² | P₁ = P ▷ DʻP
+✱250·24.  ⊢ : P ∈ Ω .⊃ . P² | P̌₁ = P ▷ DʻP
 PM-VERBATIM-END PM3:✱250·24 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·241
-✱250·241.  ⊢ : P ∈ Ω .⊃ . P₁ | P² = (CʻP₁) 1 P  [Proof as in ✱250·24]
+✱250·241.  ⊢ : P ∈ Ω .⊃ . P̌₁ | P² = (CʻP₁) 1 P  [Proof as in ✱250·24]
 PM-VERBATIM-END PM3:✱250·241 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·242
@@ -284,7 +284,7 @@ PM-VERBATIM-END PM3:✱250·243 -/
 PM-VERBATIM-END PM3:✱250·3 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·301
-✱250·301.  ⊢ : P ∈ connex . ∼∃! minₚʻτ . σ = CʻP − P⃗ʻτ . α ⊂ σ .⊃ . seqₚʻα ⊂ σ
+✱250·301.  ⊢ : P ∈ connex . ∼∃! minₚʻτ . σ = CʻP − P⃖ʻʻτ . α ⊂ σ .⊃ . seqₚʻα ⊂ σ
 PM-VERBATIM-END PM3:✱250·301 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·31
@@ -319,13 +319,13 @@ PM-VERBATIM-END PM3:✱250·35 -/
 PM-VERBATIM-END PM3:✱250·36 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·361
-✱250·361.  ⊢ :: P ∈ Ω . P̈ʻσ ⊂ σ : λ ⊂ σ . ∃! (λ ∩ CʻP) .⊃ₗ . limaxₚʻλ ⊂ σ :
-  ⊃ . P̈ʻσ ⊂ σ
+✱250·361.  ⊢ :: P ∈ Ω . P̌₁ʻʻσ ⊂ σ : λ ⊂ σ . ∃! (λ ∩ CʻP) .⊃ₗ . limaxₚʻλ ⊂ σ :
+  ⊃ . P̌ʻʻσ ⊂ σ
 PM-VERBATIM-END PM3:✱250·361 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·362
-✱250·362.  ⊢ :: P ∈ Ω . P₁̈σ ⊂ σ : λ ⊂ σ . ∃! λ ∩ CʻP .⊃ₗ . liminₚʻλ ⊂ σ :
-  ⊃ . P̈ʻσ ⊂ σ  [✱250·361 / ✱121·26]
+✱250·362.  ⊢ :: P̌ ∈ Ω . P₁ʻʻσ ⊂ σ : λ ⊂ σ . ∃! λ ∩ CʻP .⊃ₗ . liminₚʻλ ⊂ σ :
+  ⊃ . Pʻʻσ ⊂ σ  [✱250·361 / ✱121·26]
 PM-VERBATIM-END PM3:✱250·362 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·4
@@ -337,7 +337,7 @@ PM-VERBATIM-END PM3:✱250·4 -/
 PM-VERBATIM-END PM3:✱250·41 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·42
-✱250·42.  ⊢ : P ∈ Ω − ιʻΛ .⊃ . E! 2ₚ . 2ₚ = P⃗₁ʻBʻP . P⃗ʻ2ₚ = ιʻBʻP . P ▷ P⃗ʻ2ₚ = Λ
+✱250·42.  ⊢ : P ∈ Ω − ιʻΛ .⊃ . E! 2ₚ . 2ₚ = P⃗₁ʻB̌ʻP . P⃗ʻ2ₚ = ιʻB̌ʻP . P ▷ P⃗ʻ2ₚ = Λ
 PM-VERBATIM-END PM3:✱250·42 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·43
@@ -370,11 +370,11 @@ PM-VERBATIM-END PM3:✱250·53 -/
 PM-VERBATIM-END PM3:✱250·54 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·6
-✱250·6.  ⊢ : P, Q ∈ Ω . P smor Q .⊃ . P smor Q ∈ 1  [✱208·41 . ✱250·12·1]
+✱250·6.  ⊢ : P, Q ∈ Ω . P smor Q .⊃ . P smor̄ Q ∈ 1  [✱208·41 . ✱250·12·1]
 PM-VERBATIM-END PM3:✱250·6 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·61
-✱250·61.  ⊢ : P ∈ Ω .⊃ . P smor P = ιʻ(I | CʻP)  [✱208·42]
+✱250·61.  ⊢ : P ∈ Ω .⊃ . P smor̄ P = ιʻ(I ↾ CʻP)  [✱208·42]
 PM-VERBATIM-END PM3:✱250·61 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·62
@@ -386,7 +386,7 @@ PM-VERBATIM-END PM3:✱250·62 -/
 PM-VERBATIM-END PM3:✱250·63 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·64
-✱250·64.  ⊢ : P ∈ Bord . S ∈ crorʻP .⊃ . CʻP ∩ pʻP⃗ʻDʻS = Λ  [✱208·46]
+✱250·64.  ⊢ : P ∈ Bord . S ∈ crorʻP .⊃ . CʻP ∩ pʻP⃖ʻʻDʻS = Λ  [✱208·46]
 PM-VERBATIM-END PM3:✱250·64 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·65
@@ -398,12 +398,12 @@ PM-VERBATIM-END PM3:✱250·65 -/
 PM-VERBATIM-END PM3:✱250·651 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·652
-✱250·652.  ⊢ : P ∈ Bord . Q ⊂ P . ∃! CʻP ∩ pʻP⃗ʻʻCʻQ .⊃ . ∼(P smor Q)
+✱250·652.  ⊢ : P ∈ Bord . Q ⊂ P . ∃! CʻP ∩ pʻP⃖ʻʻCʻQ .⊃ . ∼(P smor Q)
   [✱208·47]
 PM-VERBATIM-END PM3:✱250·652 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·653
-✱250·653.  ⊢ : P ∈ Bord . ∃! CʻP ∩ pʻP⃗ʻʻ(α ∩ CʻP) .⊃ . ∼(P smor P ▷ α)
+✱250·653.  ⊢ : P ∈ Bord . ∃! CʻP ∩ pʻP⃖ʻʻ(α ∩ CʻP) .⊃ . ∼(P smor P ▷ α)
 PM-VERBATIM-END PM3:✱250·653 -/
 
 /- PM-VERBATIM-BEGIN PM3:✱250·66

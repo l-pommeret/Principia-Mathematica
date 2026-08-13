@@ -1,0 +1,69 @@
+{
+  "batch": "PM2-STAR230-CANONICAL",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "692ff",
+    "project_gutenberg": "https://www.gutenberg.org/ebooks/78255"
+  },
+  "witnesses": ["PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱230·01", "kind": "definition",
+      "printed": "✱230·01. RQ̄_cn α=CʻQ∩ᗡʻR∩ŷ(RʻʻQ←∗ʻy⊂α) Df",
+      "lean_path": "Principia/Architecture/Star230OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star230OpeningKernel.star_230_01",
+      "formal_scope": "typed convergence-class definition using field, converse field, image and target parameters",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-normalization",
+      "integration_blocked": true,
+      "blocking_reason": "The typed Convergent abstraction has not yet been proved equivalent to the full PM relation/image expression.",
+      "printed_dependencies": [], "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱230·02", "kind": "definition",
+      "printed": "✱230·02. Q_cn=R̂α̂(∃!RQ̄_cn α) Df",
+      "lean_path": "Principia/Architecture/Star230OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star230OpeningKernel.star_230_02",
+      "formal_scope": "typed unique-existence predicate",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-normalization", "integration_blocked": true,
+      "blocking_reason": "The relation abstraction Q_cn is not represented as a PM relation object.",
+      "printed_dependencies": [], "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱230·1", "kind": "derived-proposition",
+      "printed": "✱230·1. ⊢ : y∈RQ̄_cn α .≡. y∈CʻQ∩ᗡʻR . RʻʻQ←∗ʻy⊂α",
+      "lean_path": "Principia/Architecture/Star230OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star230OpeningKernel.star_230_1",
+      "formal_scope": "membership expansion of the typed convergence-class definition",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-normalization", "integration_blocked": true,
+      "blocking_reason": "Definition expansion is kernel-checked, but the typed parameters are not linked to PM's concrete relation operators.",
+      "printed_dependencies": ["PM2:✱230·01"], "normalized_dependencies": ["PM2:✱230·01"]
+    },
+    {
+      "id": "PM2:✱230·11", "kind": "derived-proposition",
+      "printed": "✱230·11. ⊢ : RQ_cn α .≡. ∃!RQ̄_cn α",
+      "lean_path": "Principia/Architecture/Star230OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star230OpeningKernel.star_230_11",
+      "formal_scope": "reflexive reading of the typed unique-existence definition",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-pass-through-definition", "integration_blocked": true,
+      "blocking_reason": "The declaration is Iff.rfl and does not independently reconstruct the PM relational assertion.",
+      "printed_dependencies": ["PM2:✱230·02"], "normalized_dependencies": ["PM2:✱230·02"]
+    },
+    {
+      "id": "PM2:✱230·12", "kind": "derived-proposition",
+      "printed": "✱230·12. ⊢ : y∈RQ̄_cn α .⊃. Q←∗ʻy∩ᗡʻR⊂RQ̄_cn α",
+      "lean_path": "Principia/Architecture/Star230OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star230OpeningKernel.star_230_12",
+      "formal_scope": "typed inclusion introduction from a pointwise implication",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-normalization", "integration_blocked": true,
+      "blocking_reason": "The proof no longer assumes its target, but the antecedent membership-to-inclusion argument is still supplied as an abstract premise.",
+      "printed_dependencies": [], "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

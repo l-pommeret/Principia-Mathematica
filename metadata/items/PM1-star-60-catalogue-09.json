@@ -1,0 +1,109 @@
+{
+  "batch": "PM1-STAR60-CATALOGUE-09",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "406–411",
+    "scan_leaves": [
+      428,
+      429,
+      430,
+      431,
+      432,
+      433
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱60·44",
+      "kind": "derived-proposition",
+      "printed": "✱60·44. ⊢ : ρ ∈ Clʻ(α ∪ β) .≡. (∃γ,δ).γ ∈ Clʻα . δ ∈ Clʻβ . ρ = γ ∪ δ",
+      "printed_page": 409,
+      "scan_leaf": 431,
+      "formal_status": "prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60Kernel.lean",
+      "declaration": "PM.Architecture.Star60Kernel.star_60_44",
+      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
+      "integration_status": "prepared"
+    },
+    {
+      "id": "PM1:✱60·45",
+      "kind": "derived-proposition",
+      "printed": "✱60·45. ⊢ . sʻClʻα = α",
+      "printed_page": 409,
+      "scan_leaf": 431,
+      "formal_status": "prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60Kernel.lean",
+      "declaration": "PM.Architecture.Star60Kernel.star_60_45",
+      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
+      "integration_status": "prepared"
+    },
+    {
+      "id": "PM1:✱60·5",
+      "kind": "derived-proposition",
+      "printed": "✱60·5. ⊢ . sʻCl exʻα = α",
+      "printed_page": 406,
+      "scan_leaf": 428,
+      "formal_status": "prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60Kernel.lean",
+      "declaration": "PM.Architecture.Star60Kernel.star_60_5",
+      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
+      "integration_status": "prepared"
+    },
+    {
+      "id": "PM1:✱60·501",
+      "kind": "derived-proposition",
+      "printed": "✱60·501. ⊢ . pʻClʻα = Λ",
+      "printed_page": 410,
+      "scan_leaf": 432,
+      "formal_status": "prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60Kernel.lean",
+      "declaration": "PM.Architecture.Star60Kernel.star_60_501",
+      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
+      "integration_status": "prepared"
+    },
+    {
+      "id": "PM1:✱60·51",
+      "kind": "derived-proposition",
+      "printed": "✱60·51. ⊢ : sʻκ ⊂ β .≡. κ ⊂ Clʻβ",
+      "printed_page": 410,
+      "scan_leaf": 432,
+      "formal_status": "prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star60Kernel.lean",
+      "declaration": "PM.Architecture.Star60Kernel.star_60_51",
+      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
+      "integration_status": "prepared"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

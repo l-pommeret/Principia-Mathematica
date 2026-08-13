@@ -1,0 +1,136 @@
+/-! # ✱90 — Ancestral relations, first macro-lot (Gutenberg 78050). -/
+/- PM-VERBATIM-BEGIN PM1:✱90·01
+✱90·01. R∗ = x̂ŷ{x∈CʻR : Řʻʻμ⊂μ.x∈μ .⊃_μ. y∈μ} Df
+PM-VERBATIM-END PM1:✱90·01 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·02
+✱90·02. Ř∗ = CnvʻR∗ Df
+PM-VERBATIM-END PM1:✱90·02 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·1
+✱90·1. ⊢ : xR∗y .≡: x∈CʻR : Řʻʻμ⊂μ.x∈μ .⊃_μ. y∈μ
+PM-VERBATIM-END PM1:✱90·1 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·101
+✱90·101. ⊢ : Řʻʻμ⊂μ .≡. Rʻʻ−μ⊂−μ
+PM-VERBATIM-END PM1:✱90·101 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·102
+✱90·102. ⊢ : Řʻʻμ⊂μ.x∈μ .⊃_μ. y∈μ :≡: Rʻʻμ⊂μ.y∈μ .⊃_μ. x∈μ
+PM-VERBATIM-END PM1:✱90·102 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·11
+✱90·11. ⊢ : xR∗y .≡: x∈CʻR : Rʻʻμ⊂μ.y∈μ .⊃_μ. x∈μ
+PM-VERBATIM-END PM1:✱90·11 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·111
+✱90·111. ⊢ :: xR∗y .≡:. x∈CʻR:. z∈μ.zRw .⊃_{z,w}. w∈μ : x∈μ :⊃_μ. y∈μ
+PM-VERBATIM-END PM1:✱90·111 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·112
+✱90·112. ⊢ : xR∗y : φz.zRw .⊃_{z,w}. φw : φx :⊃. φy
+PM-VERBATIM-END PM1:✱90·112 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·12
+✱90·12. ⊢ : x∈CʻR .≡. xR∗x
+PM-VERBATIM-END PM1:✱90·12 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·13
+✱90·13. ⊢ : xR∗y .⊃. x,y∈CʻR . xR∗x . yR∗y
+PM-VERBATIM-END PM1:✱90·13 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·131
+✱90·131. ⊢ : xR∗y .≡: y∈CʻR : Rʻʻμ⊂μ.y∈μ .⊃_μ. x∈μ
+PM-VERBATIM-END PM1:✱90·131 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·132
+✱90·132. ⊢. (Ř)∗=Ř∗
+PM-VERBATIM-END PM1:✱90·132 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·14
+✱90·14. ⊢. DʻR∗=ᗡʻR∗=CʻR∗=CʻR
+PM-VERBATIM-END PM1:✱90·14 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·141
+✱90·141. ⊢ : ∃!R∗ .≡. ∃!R
+PM-VERBATIM-END PM1:✱90·141 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·15
+✱90·15. ⊢. I↾CʻR⊂R∗
+PM-VERBATIM-END PM1:✱90·15 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·151
+✱90·151. ⊢. R⊂R∗
+PM-VERBATIM-END PM1:✱90·151 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·16
+✱90·16. ⊢. R∗|R⊂R∗
+PM-VERBATIM-END PM1:✱90·16 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·161
+✱90·161. ⊢ : S⊂R∗ .⊃. S|R⊂R∗
+PM-VERBATIM-END PM1:✱90·161 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·162
+✱90·162. ⊢. R²⊂R∗
+PM-VERBATIM-END PM1:✱90·162 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·163
+✱90·163. ⊢. ŘʻʻR⃖∗ʻx⊂R⃖∗ʻx
+PM-VERBATIM-END PM1:✱90·163 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·164
+✱90·164. ⊢. ŘʻʻŘ∗ʻʻα⊂Ř∗ʻʻα
+PM-VERBATIM-END PM1:✱90·164 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·17
+✱90·17. ⊢. R∗²=R∗
+PM-VERBATIM-END PM1:✱90·17 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·171
+✱90·171. ⊢. Ř∗ʻʻŘ∗ʻʻα=Ř∗ʻʻα
+PM-VERBATIM-END PM1:✱90·171 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·172
+✱90·172. ⊢. R|R∗⊂R∗
+PM-VERBATIM-END PM1:✱90·172 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·18
+✱90·18. ⊢ : P⊂Q .⊃. P∗⊂Q∗
+PM-VERBATIM-END PM1:✱90·18 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·21
+✱90·21. ⊢ : α⊂CʻR .≡. α⊂Ř∗ʻʻα .≡. α⊂R∗ʻʻα
+PM-VERBATIM-END PM1:✱90·21 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·22
+✱90·22. ⊢ : Řʻʻα⊂α .≡. Ř∗ʻʻα⊂α
+PM-VERBATIM-END PM1:✱90·22 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·23
+✱90·23. ⊢ : α⊂CʻR.Řʻʻα⊂α .≡. α=Ř∗ʻʻα
+PM-VERBATIM-END PM1:✱90·23 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·24
+✱90·24. ⊢ : Řʻʻμ⊂μ.α⊂μ .⊃. Ř∗ʻʻα⊂μ
+PM-VERBATIM-END PM1:✱90·24 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·25
+✱90·25. ⊢ : α⊂CʻR.Ř∗ʻʻα⊂μ .⊃. α⊂μ
+PM-VERBATIM-END PM1:✱90·25 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·26
+✱90·26. ⊢ : α⊂CʻR.Řʻʻμ⊂μ .⊃: α⊂μ .≡. Ř∗ʻʻα⊂μ
+PM-VERBATIM-END PM1:✱90·26 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·27
+✱90·27. ⊢ : α⊂CʻR .⊃: α∪Řʻʻμ⊂μ .≡. Ř∗ʻʻα∪Řʻʻμ⊂μ
+PM-VERBATIM-END PM1:✱90·27 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·31
+✱90·31. ⊢. R∗=I↾CʻR⊍R∗|R
+PM-VERBATIM-END PM1:✱90·31 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·311
+✱90·311. ⊢. R∗=I↾CʻR⊍R|R∗
+PM-VERBATIM-END PM1:✱90·311 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·32
+✱90·32. ⊢. R|R∗=R⊍R|R∗|R=R∗|R
+PM-VERBATIM-END PM1:✱90·32 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·33
+✱90·33. ⊢. R∗ʻʻα=(α∩CʻR)∪R∗ʻʻRʻʻα=(α∩CʻR)∪RʻʻR∗ʻʻα
+PM-VERBATIM-END PM1:✱90·33 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·331
+✱90·331. ⊢. Ř∗ʻʻα=(α∩CʻR)∪Ř∗ʻʻŘʻʻα=(α∩CʻR)∪ŘʻʻŘ∗ʻʻα
+PM-VERBATIM-END PM1:✱90·331 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·34
+✱90·34. ⊢ : α⊂CʻR .⊃. R∗ʻʻα=α∪R∗ʻʻRʻʻα=α∪RʻʻR∗ʻʻα
+PM-VERBATIM-END PM1:✱90·34 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·341
+✱90·341. ⊢ : α⊂CʻR .⊃. Ř∗ʻʻα=α∪Ř∗ʻʻŘʻʻα=α∪ŘʻʻŘ∗ʻʻα
+PM-VERBATIM-END PM1:✱90·341 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·35
+✱90·35. ⊢ : xR|R∗z .⊃: Řʻʻμ⊂μ.R⃖ʻx⊂μ .⊃_μ. z∈μ
+PM-VERBATIM-END PM1:✱90·35 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·351
+✱90·351. ⊢ : Řʻʻμ⊂μ.R⃖ʻx⊂μ .⊃_μ. z∈μ :⊃. xR|R∗z
+PM-VERBATIM-END PM1:✱90·351 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·36
+✱90·36. ⊢ : xR|R∗z .≡: Řʻʻμ⊂μ.R⃖ʻx⊂μ .⊃_μ. z∈μ
+PM-VERBATIM-END PM1:✱90·36 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·4
+✱90·4. ⊢. (R∗)∗=R∗
+PM-VERBATIM-END PM1:✱90·4 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·41
+✱90·41. ⊢. CʻP∗ ʔ α=α∩CʻP
+PM-VERBATIM-END PM1:✱90·41 -/
+/- PM-VERBATIM-BEGIN PM1:✱90·42
+✱90·42. ⊢. (Q∗ ʔ α)∗=Q∗ ʔ α
+PM-VERBATIM-END PM1:✱90·42 -/

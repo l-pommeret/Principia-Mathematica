@@ -1,0 +1,134 @@
+{
+  "batch": "PM3-STAR259-CATALOGUE-03",
+  "edition": "first",
+  "volume": 3,
+  "source_range": {
+    "printed_pages": "115–117",
+    "scan_leaves": [
+      137,
+      139
+    ],
+    "canonical_scan": "https://russell-j.com/cool/PMvol3_1913.pdf",
+    "project_gutenberg": null
+  },
+  "witnesses": [
+    "PM3-1913-SCAN"
+  ],
+  "items": [
+    {
+      "id": "PM3:✱259·14",
+      "kind": "derived-proposition",
+      "printed": "✱259·14. ⊢ W ∩ A* = Λ : S ∈ (A_W* ⌞ A) ∩ 1 → Cis ∩ QʻW . WʻS ∈ 1 → Cis . QʻS ∩ QʻWʻS = Λ :⊃. W_A ∈ 1 → Cis",
+      "printed_page": 115,
+      "scan_leaf": 137,
+      "lean_path": "Principia/Architecture/Star259OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star259OpeningKernel.star_259_14",
+      "formal_scope": "typed inductive-correlation reconstruction; strict semantic audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ]
+    },
+    {
+      "id": "PM3:✱259·141",
+      "kind": "derived-proposition",
+      "printed": "✱259·141. ⊢ : W ∩ A* = Λ : S ∈ (A_W* ⌞ A) ∩ Cis → 1 ∩ CʻW . WʻS ∈ Cis → 1 . DʻS ∩ DʻWʻS = Λ :⊃. W_A ∈ Cis → 1",
+      "printed_page": 115,
+      "scan_leaf": 137,
+      "lean_path": "Principia/Architecture/Star259OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star259OpeningKernel.star_259_141",
+      "formal_scope": "typed inductive-correlation reconstruction; strict semantic audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ]
+    },
+    {
+      "id": "PM3:✱259·15",
+      "kind": "derived-proposition",
+      "printed": "✱259·15. ⊢ W ∩ A* = Λ : S ∈ (A_W* ⌞ A) ∩ 1 → 1 ∩ QʻW . WʻS ∈ 1 → 1 . DʻS ∩ DʻWʻS = Λ . QʻS ∩ QʻWʻS = Λ :⊃. W_A ∈ 1 → 1",
+      "printed_page": 115,
+      "scan_leaf": 137,
+      "lean_path": "Principia/Architecture/Star259OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star259OpeningKernel.star_259_15",
+      "formal_scope": "typed inductive-correlation reconstruction; strict semantic audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ]
+    },
+    {
+      "id": "PM3:✱259·16",
+      "kind": "derived-proposition",
+      "printed": "✱259·16. ⊢ : W ∩ A* = Λ : T ∈ (A_W* ⌞ A) . P ⌞ DʻT = TʼQ . P ⌞ (A_WʻT) = (A_WʻT)ʼQ :⊃: P ⌞ DʻW_A = W_AʼQ : T ∈ (A_W* ⌞ A) .⊃. P ⌞ DʻT = TʼQ",
+      "printed_page": 115,
+      "scan_leaf": 137,
+      "lean_path": "Principia/Architecture/Star259OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star259OpeningKernel.star_259_16",
+      "formal_scope": "typed inductive-correlation reconstruction; strict semantic audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ]
+    },
+    {
+      "id": "PM3:✱259·17",
+      "kind": "derived-proposition",
+      "printed": "✱259·17. ⊢ : W ∩ A* = Λ : S ∈ (A_W* ⌞ A) ∩ Cnv .⊃ₛ. QʻS ∩ CʻWʻS = Λ :⊃. Q ⌞ (A_W* ⌞ A) ∈ 1 → 1",
+      "printed_page": 115,
+      "scan_leaf": 137,
+      "lean_path": "Principia/Architecture/Star259OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star259OpeningKernel.star_259_17",
+      "formal_scope": "typed inductive-correlation reconstruction; strict semantic audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ]
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "batch": "PM1-STAR41-CATALOGUE-06",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "331–335",
+    "scan_leaves": [
+      353,
+      357
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱41·27",
+      "kind": "derived-proposition",
+      "printed": "✱41·27. \\(\\vdash\\colon\\ldotp P\\dot{\\cap}\\dot{s}ʻ\\lambda=\\dot{\\Lambda}.\\equiv:R\\in \\lambda.\\supset_{R}.P\\dot{\\cap}R=\\dot{\\Lambda}\\)",
+      "printed_page": 332,
+      "scan_leaf": 354,
+      "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star41ConverseKernel.star_41_27",
+      "formal_scope": "typed relation-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star41-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱41·3",
+      "kind": "derived-proposition",
+      "printed": "✱41·3. \\(\\vdash.\\text{Cnv}ʻ\\dot{p}ʻ\\lambda =\\dot{p}ʻ\\text{Cnv}ʻʻ\\lambda\\)",
+      "printed_page": 332,
+      "scan_leaf": 354,
+      "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star41ConverseKernel.star_41_3",
+      "formal_scope": "typed relation-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star41-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱41·31",
+      "kind": "derived-proposition",
+      "printed": "✱41·31. \\(\\vdash.\\text{Cnv}ʻ\\dot{s}ʻ\\lambda=\\dot{s}ʻ\\text{Cnv}ʻʻ\\lambda \\quad[\\text{Proof as in *41·3}]\\)",
+      "printed_page": 332,
+      "scan_leaf": 354,
+      "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star41ConverseKernel.star_41_31",
+      "formal_scope": "typed relation-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star41-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱41·32",
+      "kind": "derived-proposition",
+      "printed": "✱41·32. \\(\\vdash.\\text{Cnv}ʻʻ\\dot{p}ʻʻ\\kappa =\\dot{p}ʻʻ\\text{Cnv}ʻʻʻ\\kappa \\quad[\\text{*41·3.*37·354}]\\)",
+      "printed_page": 332,
+      "scan_leaf": 354,
+      "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star41ConverseKernel.star_41_32",
+      "formal_scope": "typed relation-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star41-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱41·33",
+      "kind": "derived-proposition",
+      "printed": "✱41·33. \\(\\vdash.\\text{Cnv}ʻʻ\\dot{s}ʻʻ\\kappa =\\dot{s}ʻʻ\\text{Cnv}ʻʻʻ\\kappa \\quad[\\text{*41·31.*37·354}]\\)",
+      "printed_page": 332,
+      "scan_leaf": 354,
+      "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star41ConverseKernel.star_41_33",
+      "formal_scope": "typed relation-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star41-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

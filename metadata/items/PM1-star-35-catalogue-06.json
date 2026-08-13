@@ -1,0 +1,130 @@
+{
+  "batch": "PM1-STAR35-CATALOGUE-06",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "278-286",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱35·35",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.\\alpha\\upharpoonleft R=(\\alpha\\cap \\text{D}ʻR)\\upharpoonleft R\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
+      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_35",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·351",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.R\\upharpoonright \\beta=R\\upharpoonright (\\beta\\cap \\text{ᗡ}ʻR) \\quad[\\text{Proof as in *35·35}]\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
+      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_351",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·352",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.\\alpha\\upharpoonleft R\\upharpoonright \\beta=(\\alpha\\cap \\text{D}ʻR)\\upharpoonleft R\\upharpoonright (\\beta\\cap \\text{ᗡ}ʻR) \\quad[\\text{Proof as in *35·35}]\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
+      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_352",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·354",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.(R\\upharpoonright \\alpha)\\mid S=R\\mid \\alpha\\upharpoonleft S\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
+      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_354",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    },
+    {
+      "id": "PM1:✱35·41",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.(\\alpha\\cup \\alpha')\\upharpoonleft R=\\alpha\\upharpoonleft R\\unicode{x228d}\\alpha'\\upharpoonleft R \\quad[\\text{*35·1.*22·34}]\\)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
+      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_41",
+      "formal_scope": "nominal mapping pending strict semantic audit"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

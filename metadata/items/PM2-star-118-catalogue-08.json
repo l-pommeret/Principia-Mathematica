@@ -1,0 +1,60 @@
+{
+  "batch": "PM2-STAR118-CATALOGUE-08",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "200",
+    "scan_leaves": [
+      240
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱118·472",
+      "kind": "derived-proposition",
+      "printed": "✱118·472. Analogous to ✱118·471.",
+      "printed_page": 200,
+      "scan_leaf": 240,
+      "lean_path": "Principia/Architecture/Star118ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star118ClosingKernel.star_118_472",
+      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱118·473",
+      "kind": "derived-proposition",
+      "printed": "✱118·473. Analogous to ✱118·471.",
+      "printed_page": 200,
+      "scan_leaf": 240,
+      "lean_path": "Principia/Architecture/Star118ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star118ClosingKernel.star_118_473",
+      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "batch": "PM1-STAR52-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "364",
+    "scan_leaves": [
+      386
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱52·01",
+      "kind": "definition",
+      "printed": "✱52·01.  1 = α̂{(∃x). α = ιʻx}  Df",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star52OpeningKernel.star_52_01",
+      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱52·1",
+      "kind": "derived-proposition",
+      "printed": "✱52·1.  ⊢ : α ∈ 1 .≡. (∃x). α = ιʻx  [✱20·3.(✱52·01)]",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star52OpeningKernel.star_52_1",
+      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱20·3",
+        "✱52·01"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱52·01"
+      ]
+    },
+    {
+      "id": "PM1:✱52·11",
+      "kind": "derived-proposition",
+      "printed": "✱52·11.  ⊢ :: α ∈ 1 .≡ : (∃x) : y ∈ α .≡ᵧ. y = x  [✱52·1.✱51·14]",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star52OpeningKernel.star_52_11",
+      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "✱52·1",
+        "✱51·14"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱52·1",
+        "PM1:✱51·14"
+      ]
+    },
+    {
+      "id": "PM1:✱52·12",
+      "kind": "derived-proposition",
+      "printed": "✱52·12.  ⊢ : ẑz(φz) ∈ 1 .≡. E!(℩x)(φx)",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star52OpeningKernel.star_52_12",
+      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱52·13",
+      "kind": "derived-proposition",
+      "printed": "✱52·13.  ⊢ . 1 = Dʻι",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star52OpeningKernel.star_52_13",
+      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

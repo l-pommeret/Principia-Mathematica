@@ -1,0 +1,107 @@
+{
+  "batch": "PM1-STAR92-CATALOGUE-03",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "602–603",
+    "scan_leaves": [
+      624,
+      625
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱92·132",
+      "kind": "derived-proposition",
+      "printed": "✱92·132. ⊢ : R∈1→Cls . Q,T∈PotidʻR .⊃. Q|T|CnvʻQ⊂̇T",
+      "printed_page": 602,
+      "scan_leaf": 624,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_132",
+      "formal_scope": "typed one-many/many-one power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star92-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱92·14",
+      "kind": "derived-proposition",
+      "printed": "✱92·14. ⊢ : ᗡʻR⊂DʻR . Q∈PotʻR .⊃. DʻQ=DʻR",
+      "printed_page": 603,
+      "scan_leaf": 625,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_14",
+      "formal_scope": "typed one-many/many-one power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱92·141",
+      "kind": "derived-proposition",
+      "printed": "✱92·141. ⊢ : DʻR⊂ᗡʻR . Q∈PotʻR .⊃. ᗡʻQ=ᗡʻR",
+      "printed_page": 603,
+      "scan_leaf": 625,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_141",
+      "formal_scope": "typed one-many/many-one power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱92·142",
+      "kind": "derived-proposition",
+      "printed": "✱92·142. ⊢ : ᗡʻR⊂DʻR . Q∈PotidʻR .⊃. DʻQ=DʻR",
+      "printed_page": 603,
+      "scan_leaf": 625,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_142",
+      "formal_scope": "typed one-many/many-one power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱92·143",
+      "kind": "derived-proposition",
+      "printed": "✱92·143. ⊢ : DʻR⊂ᗡʻR . Q∈PotidʻR .⊃. ᗡʻQ=ᗡʻR",
+      "printed_page": 603,
+      "scan_leaf": 625,
+      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_143",
+      "formal_scope": "typed one-many/many-one power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

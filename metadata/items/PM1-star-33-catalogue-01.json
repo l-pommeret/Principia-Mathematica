@@ -1,0 +1,105 @@
+{
+  "batch": "PM1-STAR33-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "232–240",
+    "scan_leaves": [
+      254,
+      262
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm#*33"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱33·2",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel2.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel2.star_33_2",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "printed": "✱33·2.  \\(\\vdash.\\text{ᗡ}ʻR=\\text{D}ʻ\\breve{R}\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    },
+    {
+      "id": "PM1:✱33·3",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel4.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel4.star_33_3",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "printed": "✱33·3.  \\(\\vdash\\colon\\ldotp \\alpha\\subset\\text{D}ʻR.\\equiv:x\\in \\alpha.\\supset_{x}.\\exists !\\overleftarrow{R}ʻx\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    },
+    {
+      "id": "PM1:✱33·4",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel5.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel5.star_33_4",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "printed": "✱33·4.  \\(\\vdash.\\text{D}ʻR=\\hat{x}\\{\\exists !\\overleftarrow{R}ʻx\\}\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    },
+    {
+      "id": "PM1:✱33·5",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel6.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel6.star_33_5",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "printed": "✱33·5.  \\(\\vdash.C=\\overrightarrow{F}\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    },
+    {
+      "id": "PM1:✱33·6",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel6.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel6.star_33_6",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "printed": "✱33·6.  \\(\\vdash:R\\in \\overleftarrow{\\text{D}}ʻ\\alpha.\\equiv.\\alpha=\\text{D}ʻR\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

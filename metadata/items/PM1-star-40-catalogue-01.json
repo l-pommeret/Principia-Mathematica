@@ -1,0 +1,119 @@
+{
+  "batch": "PM1-STAR40-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "320",
+    "scan_leaves": [
+      342
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "review_evidence": [
+    "reviews/Star40-catalogue-review.md"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱40·01",
+      "kind": "definition",
+      "printed": "✱40·01. pʻκ = x̂(α ∈ κ .⊃ₐ. x ∈ α)  Df",
+      "printed_page": 320,
+      "scan_leaf": 342,
+      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_01",
+      "formal_scope": "exact typed definition of the product of a class-family by universal membership",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱40·02",
+      "kind": "definition",
+      "printed": "✱40·02. sʻκ = x̂{(∃α). α ∈ κ . x ∈ α}  Df",
+      "printed_page": 320,
+      "scan_leaf": 342,
+      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_02",
+      "formal_scope": "exact typed definition of the sum of a class-family by existential membership",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱40·1",
+      "kind": "derived-proposition",
+      "printed": "✱40·1. ⊢ :: x ∈ pʻκ .≡ : α ∈ κ .⊃ₐ. x ∈ α  [✱20·3.(✱40·01)]",
+      "printed_page": 320,
+      "scan_leaf": 342,
+      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_1",
+      "formal_scope": "exact typed product membership equivalence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "✱20·3",
+        "✱40·01"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱40·01"
+      ]
+    },
+    {
+      "id": "PM1:✱40·11",
+      "kind": "derived-proposition",
+      "printed": "✱40·11. ⊢ : x ∈ sʻκ .≡. (∃α). α ∈ κ . x ∈ α  [✱20·3.(✱40·02)]",
+      "printed_page": 320,
+      "scan_leaf": 342,
+      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_11",
+      "formal_scope": "exact typed sum membership equivalence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "✱20·3",
+        "✱40·02"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱40·02"
+      ]
+    },
+    {
+      "id": "PM1:✱40·12",
+      "kind": "derived-proposition",
+      "printed": "✱40·12. ⊢ : α ∈ κ .⊃. pʻκ ⊂ α",
+      "printed_page": 320,
+      "scan_leaf": 342,
+      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_12",
+      "formal_scope": "exact typed inclusion of a product in every member class",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

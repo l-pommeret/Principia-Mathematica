@@ -1,0 +1,107 @@
+{
+  "batch": "PM1-STAR51-CATALOGUE-09",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "361–362",
+    "scan_leaves": [
+      383,
+      384
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱51·421",
+      "kind": "derived-proposition",
+      "printed": "✱51·421. ⊢ : x = z . y = w .∨. x = w . y = z .⊃ . ιʻx ∪ ιʻy = ιʻz ∪ ιʻw",
+      "printed_page": 361,
+      "scan_leaf": 383,
+      "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
+      "declaration": "PM.Architecture.Star51RemainingKernel.star_51_421",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·43",
+      "kind": "derived-proposition",
+      "printed": "✱51·43. ⊢ : ιʻx ∪ ιʻy = ιʻz ∪ ιʻw .≡ : x = z . y = w .∨. x = w . y = z",
+      "printed_page": 361,
+      "scan_leaf": 383,
+      "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
+      "declaration": "PM.Architecture.Star51RemainingKernel.star_51_43",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·51",
+      "kind": "derived-proposition",
+      "printed": "✱51·51. ⊢ : α = ιʻx .≡ . x = ι̌ʻα .≡ . x ι̌ α",
+      "printed_page": 362,
+      "scan_leaf": 384,
+      "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
+      "declaration": "PM.Architecture.Star51RemainingKernel.star_51_51",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star51-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱51·511",
+      "kind": "derived-proposition",
+      "printed": "✱51·511. ⊢ . ι̌ʻιʻx = x",
+      "printed_page": 362,
+      "scan_leaf": 384,
+      "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
+      "declaration": "PM.Architecture.Star51RemainingKernel.star_51_511",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱51·52",
+      "kind": "derived-proposition",
+      "printed": "✱51·52. ⊢ : E!ι̌ʻα .≡ . α = ιʻι̌ʻα",
+      "printed_page": 362,
+      "scan_leaf": 384,
+      "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
+      "declaration": "PM.Architecture.Star51RemainingKernel.star_51_52",
+      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "batch": "PM1-STAR90-CATALOGUE-03",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "578–579",
+    "scan_leaves": [
+      600,
+      601
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱90·131",
+      "kind": "derived-proposition",
+      "printed": "✱90·131. ⊢ : xR∗y .≡: y∈CʻR : Rʻʻμ⊂μ.y∈μ .⊃_μ. x∈μ",
+      "printed_page": 578,
+      "scan_leaf": 600,
+      "lean_path": "Principia/Architecture/Star90OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star90OpeningKernel.star_90_131",
+      "formal_scope": "typed ancestral-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star90-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱90·132",
+      "kind": "derived-proposition",
+      "printed": "✱90·132. ⊢. (Ř)∗=Ř∗",
+      "printed_page": 578,
+      "scan_leaf": 600,
+      "lean_path": "Principia/Architecture/Star90OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star90OpeningKernel.star_90_132",
+      "formal_scope": "typed ancestral-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star90-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱90·14",
+      "kind": "derived-proposition",
+      "printed": "✱90·14. ⊢. DʻR∗=ᗡʻR∗=CʻR∗=CʻR",
+      "printed_page": 579,
+      "scan_leaf": 601,
+      "lean_path": "Principia/Architecture/Star90OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star90OpeningKernel.star_90_14",
+      "formal_scope": "typed ancestral-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star90-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱90·141",
+      "kind": "derived-proposition",
+      "printed": "✱90·141. ⊢ : ∃!R∗ .≡. ∃!R",
+      "printed_page": 579,
+      "scan_leaf": 601,
+      "lean_path": "Principia/Architecture/Star90OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star90OpeningKernel.star_90_141",
+      "formal_scope": "typed ancestral-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star90-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱90·15",
+      "kind": "derived-proposition",
+      "printed": "✱90·15. ⊢. I↾CʻR⊂R∗",
+      "printed_page": 579,
+      "scan_leaf": 601,
+      "lean_path": "Principia/Architecture/Star90OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star90OpeningKernel.star_90_15",
+      "formal_scope": "typed ancestral-relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star90-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

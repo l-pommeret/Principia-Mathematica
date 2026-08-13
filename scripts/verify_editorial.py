@@ -50,6 +50,20 @@ def check_verbatim_blocks() -> None:
         fail("no PM-VERBATIM blocks found")
 
 
+def check_suspicious_diplomatic_unicode() -> None:
+    """Reject known OCR/transcription artefacts inside diplomatic blocks.
+
+    A combining diaeresis was previously used as an ad-hoc stand-in for PM's
+    breve/converse and relational-image marks (for example ``P̈``).  It is not
+    part of the project's diplomatic alphabet and silently reverses meaning.
+    """
+    suspicious = re.compile(r"[A-Za-zΑ-ω]\u0308")
+    for item_id, body in collect_verbatim().items():
+        if match := suspicious.search(body):
+            token = match.group(0)
+            fail(f"suspicious combining-diaeresis token {token!r} in {item_id}")
+
+
 def collect_verbatim() -> dict[str, str]:
     blocks: dict[str, str] = {}
     pattern = re.compile(
@@ -237,6 +251,7 @@ def report_all() -> list[str]:
     errors = []
     for check in (
         check_verbatim_blocks,
+        check_suspicious_diplomatic_unicode,
         check_excerpt_blocks,
         check_apparatus,
         check_item_metadata,
@@ -262,6 +277,7 @@ def main() -> None:
         return
     try:
         check_verbatim_blocks()
+        check_suspicious_diplomatic_unicode()
         check_excerpt_blocks()
         check_apparatus()
         check_item_metadata()

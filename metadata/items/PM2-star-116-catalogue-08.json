@@ -1,0 +1,114 @@
+{
+  "batch": "PM2-STAR116-CATALOGUE-08",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "149",
+    "scan_leaves": [
+      189
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱116·23",
+      "kind": "derived-proposition",
+      "printed": "✱116·23. ⊢ . μ^ν∈NC",
+      "printed_page": 149,
+      "scan_leaf": 189,
+      "lean_path": "Principia/Architecture/Star116SecondKernel.lean",
+      "declaration": "PM.Architecture.Star116SecondKernel.star_116_23",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·24",
+      "kind": "derived-proposition",
+      "printed": "✱116·24. ⊢ . (Ncʻγ)^(Ncʻδ) = (N₀cʻγ)^(N₀cʻδ)",
+      "printed_page": 149,
+      "scan_leaf": 189,
+      "lean_path": "Principia/Architecture/Star116ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star116ThirdKernel.star_116_24",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·25",
+      "kind": "derived-proposition",
+      "printed": "✱116·25. ⊢ . (Ncʻγ)^(Ncʻδ) = Ncʻ(γ exp δ)",
+      "printed_page": 149,
+      "scan_leaf": 189,
+      "lean_path": "Principia/Architecture/Star116ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star116ThirdKernel.star_116_25",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·251",
+      "kind": "derived-proposition",
+      "printed": "✱116·251. ⊢ . (γ exp δ)∈(Ncʻγ)^(Ncʻδ)",
+      "printed_page": 149,
+      "scan_leaf": 189,
+      "lean_path": "Principia/Architecture/Star116ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star116ThirdKernel.star_116_251",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱116·26",
+      "kind": "derived-proposition",
+      "printed": "✱116·26. ⊢ : μ,ν∈NC .⊃. μ^ν invariant under similarity images",
+      "printed_page": 149,
+      "scan_leaf": 189,
+      "lean_path": "Principia/Architecture/Star116ThirdKernel.lean",
+      "declaration": "PM.Architecture.Star116ThirdKernel.star_116_26",
+      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

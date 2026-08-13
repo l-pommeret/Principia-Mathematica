@@ -4,57 +4,76 @@
   "volume": 2,
   "source_range": {
     "printed_pages": "52",
-    "scan_leaves": [92],
+    "scan_leaves": [
+      92
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
-    "leaf_derivatives": [{
-      "scan_leaf": 92,
-      "printed_page": 52,
-      "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page92-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg",
-      "sha256": "31a7a3e26b1aa0e5529b1503c26d7f2b08abbc1cfbe4b4ea8bf4d098b5cbfaa8"
-    }],
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 92,
+        "printed_page": 52,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page92-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg",
+        "sha256": "31a7a3e26b1aa0e5529b1503c26d7f2b08abbc1cfbe4b4ea8bf4d098b5cbfaa8"
+      }
+    ],
     "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
   },
-  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
   "source_status": "source-catalogued-PM-VERBATIM",
-  "integration_status": "source-only-no-formal-target",
+  "integration_status": "prepared",
   "items": [
     {
-      "id": "PM2:✱105·25", "kind": "derived-proposition",
-      "printed": "✱105·25. ⊢ . N₀C = N₁C − ιʻΛ",
-      "printed_page": 52, "scan_leaf": 92,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source summary transcription only; no formal target or proof reconstruction is proposed.",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-descending-cardinal-syntax-or-derivation-layer",
-      "printed_dependencies": [], "normalized_dependencies": [],
+      "id": "PM2:✱105·25",
+      "kind": "derived-proposition",
+      "printed": "✱105·25. ⊢. N₀C=N₁C−ιʻΛ",
+      "printed_page": 55,
+      "scan_leaf": 95,
+      "lean_path": "Principia/Architecture/Star105SecondKernel.lean",
+      "declaration": "PM.Architecture.Star105SecondKernel.star_105_25",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-105-25.txt"
     },
     {
-      "id": "PM2:✱105·251", "kind": "derived-proposition",
-      "printed": "✱105·251. ⊢ . N₀C = N₂C − ιʻΛ",
-      "printed_page": 52, "scan_leaf": 92,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source summary transcription only; no formal target or proof reconstruction is proposed.",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-descending-cardinal-syntax-or-derivation-layer",
-      "printed_dependencies": [], "normalized_dependencies": [],
+      "id": "PM2:✱105·251",
+      "kind": "derived-proposition",
+      "printed": "✱105·251. ⊢. N₀C=N₂C−ιʻΛ",
+      "printed_page": 55,
+      "scan_leaf": 95,
+      "lean_path": "Principia/Architecture/Star105SecondKernel.lean",
+      "declaration": "PM.Architecture.Star105SecondKernel.star_105_251",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-105-251.txt"
     },
     {
-      "id": "PM2:✱105·26", "kind": "derived-proposition",
-      "printed": "✱105·26. ⊢ . N₁cʻtʻα = Λ",
-      "printed_page": 52, "scan_leaf": 92,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source summary transcription only; no formal target or proof reconstruction is proposed.",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-descending-cardinal-syntax-or-derivation-layer",
-      "printed_dependencies": [], "normalized_dependencies": [],
+      "id": "PM2:✱105·26",
+      "kind": "derived-proposition",
+      "printed": "✱105·26. ⊢. N₁cʻtʻα=Λ",
+      "printed_page": 55,
+      "scan_leaf": 95,
+      "lean_path": "Principia/Architecture/Star105SecondKernel.lean",
+      "declaration": "PM.Architecture.Star105SecondKernel.star_105_26",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-105-26.txt"
     }
   ],
@@ -63,5 +82,9 @@
     "sic_required": false,
     "note": "Opening summary of ✱105 collated against the facsimile and PG; only the three printed principal propositions on this leaf are catalogued."
   },
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

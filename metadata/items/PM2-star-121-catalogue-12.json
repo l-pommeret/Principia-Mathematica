@@ -1,0 +1,115 @@
+{
+  "batch": "PM2-STAR121-CATALOGUE-12",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "240–241",
+    "scan_leaves": [
+      280,
+      281
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱121·327",
+      "kind": "derived-proposition",
+      "printed": "✱121·327. ⊢ : ∃!P₀ .⊃. finʻP=finidʻP−ιʻP₀",
+      "printed_page": 240,
+      "scan_leaf": 280,
+      "lean_path": "Principia/Architecture/Star121FourthKernel.lean",
+      "declaration": "PM.Architecture.Star121FourthKernel.star_121_327",
+      "formal_scope": "typed interval/finite-distance reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star121-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱121·33",
+      "kind": "derived-proposition",
+      "printed": "✱121·33. ⊢ : P∈1→Cls .⊃: z∈P(x−y) .≡. z∈P(x⊣Pʻy)",
+      "printed_page": 240,
+      "scan_leaf": 280,
+      "lean_path": "Principia/Architecture/Star121FourthKernel.lean",
+      "declaration": "PM.Architecture.Star121FourthKernel.star_121_33",
+      "formal_scope": "typed interval/finite-distance reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star121-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱121·331",
+      "kind": "derived-proposition",
+      "printed": "✱121·331. ⊢ : P∈1→Cls.Ppo⊂J .⊃: xP_ν(Pʻy) .≡. xP_{ν+_c1}y",
+      "printed_page": 240,
+      "scan_leaf": 280,
+      "lean_path": "Principia/Architecture/Star121FifthKernel.lean",
+      "declaration": "PM.Architecture.Star121FifthKernel.star_121_331",
+      "formal_scope": "typed interval/finite-distance reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star121-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱121·332",
+      "kind": "derived-proposition",
+      "printed": "✱121·332. ⊢ : P∈1→Cls.Ppo⊂J .⊃. P_{ν+_c1}=P_ν|P",
+      "printed_page": 241,
+      "scan_leaf": 281,
+      "lean_path": "Principia/Architecture/Star121FifthKernel.lean",
+      "declaration": "PM.Architecture.Star121FifthKernel.star_121_332",
+      "formal_scope": "typed interval/finite-distance reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star121-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱121·333",
+      "kind": "derived-proposition",
+      "printed": "✱121·333. ⊢ : P∈Cls→1.Ppo⊂J .⊃. P_{ν+_c1}=P|P_ν",
+      "printed_page": 241,
+      "scan_leaf": 281,
+      "lean_path": "Principia/Architecture/Star121FifthKernel.lean",
+      "declaration": "PM.Architecture.Star121FifthKernel.star_121_333",
+      "formal_scope": "typed interval/finite-distance reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star121-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

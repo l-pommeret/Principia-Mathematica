@@ -1,0 +1,78 @@
+{
+  "batch": "PM1-STAR65-CATALOGUE-04",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "436",
+    "scan_leaves": [
+      458
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱65·24",
+      "kind": "derived-proposition",
+      "printed": "✱65·24. ⊢ . Rₓ = (Rₓ)ₓ",
+      "printed_page": 436,
+      "scan_leaf": 458,
+      "lean_path": "Principia/Architecture/Star65Kernel.lean",
+      "declaration": "PM.Architecture.Star65Kernel.star_65_24",
+      "formal_scope": "typed ambiguous-symbol reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star65-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱65·25",
+      "kind": "derived-proposition",
+      "printed": "✱65·25. ⊢ . R(x) = {R(x)}(x)",
+      "printed_page": 436,
+      "scan_leaf": 458,
+      "lean_path": "Principia/Architecture/Star65Kernel.lean",
+      "declaration": "PM.Architecture.Star65Kernel.star_65_25",
+      "formal_scope": "typed ambiguous-symbol reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star65-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱65·3",
+      "kind": "derived-proposition",
+      "printed": "✱65·3. ⊢ . R_βʻʻμ = (Rʻʻμ)_β = Rʻʻμ ∩ tʻβ",
+      "printed_page": 436,
+      "scan_leaf": 458,
+      "lean_path": "Principia/Architecture/Star65Kernel.lean",
+      "declaration": "PM.Architecture.Star65Kernel.star_65_3",
+      "formal_scope": "typed ambiguous-symbol reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star65-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

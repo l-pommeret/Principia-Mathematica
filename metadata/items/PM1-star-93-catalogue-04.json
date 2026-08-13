@@ -1,0 +1,108 @@
+{
+  "batch": "PM1-STAR93-CATALOGUE-04",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "610",
+    "scan_leaves": [
+      632
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱93·116",
+      "kind": "derived-proposition",
+      "printed": "✱93·116. ⊢ . max_P→ʻα=α∩CʻP−Pʻʻα",
+      "printed_page": 610,
+      "scan_leaf": 632,
+      "lean_path": "Principia/Architecture/Star93NextKernel.lean",
+      "declaration": "PM.Architecture.Star93NextKernel.star_93_116",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱93·117",
+      "kind": "derived-proposition",
+      "printed": "✱93·117. ⊢ . B→ʻP̌=max_P→ʻᗡʻP=max_P→ʻCʻP",
+      "printed_page": 610,
+      "scan_leaf": 632,
+      "lean_path": "Principia/Architecture/Star93NextKernel.lean",
+      "declaration": "PM.Architecture.Star93NextKernel.star_93_117",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱93·118",
+      "kind": "derived-proposition",
+      "printed": "✱93·118. ⊢ . max_P→ʻα⊂α∩CʻP",
+      "printed_page": 610,
+      "scan_leaf": 632,
+      "lean_path": "Principia/Architecture/Star93NextKernel.lean",
+      "declaration": "PM.Architecture.Star93NextKernel.star_93_118",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star93-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱93·13",
+      "kind": "derived-proposition",
+      "printed": "✱93·13. ⊢ . min_P→ʻᗡʻ(I↾CʻP)=B→ʻP",
+      "printed_page": 610,
+      "scan_leaf": 632,
+      "lean_path": "Principia/Architecture/Star93NextKernel.lean",
+      "declaration": "PM.Architecture.Star93NextKernel.star_93_13",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star93-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱93·131",
+      "kind": "derived-proposition",
+      "printed": "✱93·131. ⊢ . min_P→ʻᗡʻP=ᗡʻP−ᗡʻP²",
+      "printed_page": 610,
+      "scan_leaf": 632,
+      "lean_path": "Principia/Architecture/Star93NextKernel.lean",
+      "declaration": "PM.Architecture.Star93NextKernel.star_93_131",
+      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

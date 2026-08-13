@@ -7,3 +7,6 @@ leaf 25 (`be804253c37361ad780a970a71f5b859a192b125d5e427d4b6d9b71cefe5d06b`).
 
 Proof material is retained only as citation/order skeletons. No Lean declaration,
 target, proof claim, submission, or promotion is authorized.
+
+The 2026-08-13 facsimile re-audit corrected the converse-direction marks in
+✱250·652 and ✱250·653 and reassigned the ✱208/✱211 citations to PM II.

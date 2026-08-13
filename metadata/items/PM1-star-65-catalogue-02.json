@@ -1,0 +1,112 @@
+{
+  "batch": "PM1-STAR65-CATALOGUE-02",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "435",
+    "scan_leaves": [
+      457
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱65·11",
+      "kind": "definition",
+      "printed": "✱65·11. R(x_y) = (t²ʻx) ◁ R ▷ (tʻy) Df",
+      "printed_page": 435,
+      "scan_leaf": 457,
+      "lean_path": "Principia/Architecture/Star65Kernel.lean",
+      "declaration": "PM.Architecture.Star65Kernel.star_65_11",
+      "formal_scope": "typed ambiguous-symbol reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star65-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱65·12",
+      "kind": "definition",
+      "printed": "✱65·12. R(x,y) = (t²ʻx) ◁ R ▷ (t²ʻy) Df",
+      "printed_page": 435,
+      "scan_leaf": 457,
+      "lean_path": "Principia/Architecture/Star65Kernel.lean",
+      "declaration": "PM.Architecture.Star65Kernel.star_65_12",
+      "formal_scope": "typed ambiguous-symbol reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star65-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱65·13",
+      "kind": "derived-proposition",
+      "printed": "✱65·13. ⊢ : α = βₓ .≡. α = tʻx ∩ β .≡. α ⊂ tʻx . α = β",
+      "printed_page": 435,
+      "scan_leaf": 457,
+      "lean_path": "Principia/Architecture/Star65Kernel.lean",
+      "declaration": "PM.Architecture.Star65Kernel.star_65_13",
+      "formal_scope": "typed ambiguous-symbol reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱65·14",
+      "kind": "derived-proposition",
+      "printed": "✱65·14. ⊢ : x ∈ t₀ʻα .⊃. γ(x) = γ_α",
+      "printed_page": 435,
+      "scan_leaf": 457,
+      "lean_path": "Principia/Architecture/Star65Kernel.lean",
+      "declaration": "PM.Architecture.Star65Kernel.star_65_14",
+      "formal_scope": "typed ambiguous-symbol reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star65-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱65·15",
+      "kind": "derived-proposition",
+      "printed": "✱65·15. ⊢ : x ∈ t₀ʻα .⊃. R(x) = R_α . R(x_y) = R_(α,γ)",
+      "printed_page": 435,
+      "scan_leaf": 457,
+      "lean_path": "Principia/Architecture/Star65Kernel.lean",
+      "declaration": "PM.Architecture.Star65Kernel.star_65_15",
+      "formal_scope": "typed ambiguous-symbol reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star65-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

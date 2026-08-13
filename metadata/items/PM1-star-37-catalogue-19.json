@@ -1,0 +1,106 @@
+{
+  "batch": "PM1-STAR37-CATALOGUE-19",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "305–307",
+    "scan_leaves": [
+      327,
+      328,
+      329
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱37·502",
+      "kind": "derived-proposition",
+      "printed": "✱37·502. \\vdash.\\alpha\\cap \\text{D}ʻR\\subset Rʻʻ\\breve{R}ʻʻ\\alpha \\quad[\\text{Similar proof}]",
+      "printed_page": 305,
+      "scan_leaf": 327,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·51",
+      "kind": "derived-proposition",
+      "printed": "✱37·51. \\vdash:\\beta\\subset \\text{ᗡ}ʻR.\\equiv.\\beta\\subset \\breve{R}ʻʻRʻʻ\\beta",
+      "printed_page": 305,
+      "scan_leaf": 327,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·52",
+      "kind": "derived-proposition",
+      "printed": "✱37·52. \\vdash:\\alpha\\subset \\text{D}ʻR.\\equiv.\\alpha\\subset Rʻʻ\\breve{R}ʻʻ\\alpha \\quad[\\text{Similar proof}]",
+      "printed_page": 305,
+      "scan_leaf": 327,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·601",
+      "kind": "derived-proposition",
+      "printed": "✱37·601. \\vdash:(x).\\text{E}!Rʻx.\\supset.Rʻʻ\\text{V}=\\hat{x}\\{(\\exists y).x=Rʻy\\}",
+      "printed_page": 306,
+      "scan_leaf": 328,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·64",
+      "kind": "derived-proposition",
+      "printed": "✱37·64. \\vdash\\colon\\ldotp \\text{E}‼Rʻʻ\\alpha.\\supset:(\\exists y).y\\in \\alpha.\\psi(Rʻy).\\equiv.(\\exists x).x\\in Rʻʻ\\alpha.\\psi x",
+      "printed_page": 307,
+      "scan_leaf": 329,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

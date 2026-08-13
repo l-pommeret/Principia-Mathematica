@@ -1,0 +1,122 @@
+{
+  "batch": "PM1-STAR40-CATALOGUE-02",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "320–321",
+    "scan_leaves": [
+      342,
+      343
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "review_evidence": [
+    "reviews/Star40-catalogue-review.md"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱40·13",
+      "kind": "derived-proposition",
+      "printed": "✱40·13. ⊢ : α ∈ κ .⊃. α ⊂ sʻκ",
+      "printed_page": 320,
+      "scan_leaf": 342,
+      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_13",
+      "formal_scope": "exact typed inclusion of every member class in its sum",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱40·14",
+      "kind": "derived-proposition",
+      "printed": "✱40·14. ⊢ : α ∈ κ . x ∈ pʻκ .⊃. x ∈ α  [✱40·12 . Imp]",
+      "printed_page": 321,
+      "scan_leaf": 343,
+      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_14",
+      "formal_scope": "exact typed elementwise product elimination",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "✱40·12"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱40·12"
+      ]
+    },
+    {
+      "id": "PM1:✱40·141",
+      "kind": "derived-proposition",
+      "printed": "✱40·141. ⊢ : α ∈ κ . x ∈ α .⊃. x ∈ sʻκ  [✱40·11 . ✱10·24]",
+      "printed_page": 321,
+      "scan_leaf": 343,
+      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_141",
+      "formal_scope": "exact typed elementwise sum introduction",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "✱40·11",
+        "✱10·24"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱40·11",
+        "PM1:✱10·24"
+      ]
+    },
+    {
+      "id": "PM1:✱40·15",
+      "kind": "derived-proposition",
+      "printed": "✱40·15. ⊢ :: β ⊂ pʻκ .≡ : γ ∈ κ .⊃_γ. β ⊂ γ",
+      "printed_page": 321,
+      "scan_leaf": 343,
+      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_15",
+      "formal_scope": "exact typed characterization of subclasses of a product",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱40·151",
+      "kind": "derived-proposition",
+      "printed": "✱40·151. ⊢ :: sʻκ ⊂ β .≡ : γ ∈ κ .⊃_γ. γ ⊂ β",
+      "printed_page": 321,
+      "scan_leaf": 343,
+      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_151",
+      "formal_scope": "exact typed characterization of superclasses of a sum",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

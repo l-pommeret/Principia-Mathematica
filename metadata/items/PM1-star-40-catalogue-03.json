@@ -1,0 +1,108 @@
+{
+  "batch": "PM1-STAR40-CATALOGUE-03",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "321–322",
+    "scan_leaves": [
+      343,
+      344
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "review_evidence": [
+    "reviews/Star40-catalogue-review.md"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱40·16",
+      "kind": "derived-proposition",
+      "printed": "✱40·16. ⊢ : κ ⊂ λ .⊃. pʻλ ⊂ pʻκ",
+      "printed_page": 321,
+      "scan_leaf": 343,
+      "lean_path": "Principia/Architecture/Star40SecondKernel.lean",
+      "declaration": "PM.Architecture.Star40SecondKernel.star_40_16",
+      "formal_scope": "exact typed antitonicity of product under family inclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱40·161",
+      "kind": "derived-proposition",
+      "printed": "✱40·161. ⊢ : κ ⊂ λ .⊃. sʻκ ⊂ sʻλ",
+      "printed_page": 321,
+      "scan_leaf": 343,
+      "lean_path": "Principia/Architecture/Star40SecondKernel.lean",
+      "declaration": "PM.Architecture.Star40SecondKernel.star_40_161",
+      "formal_scope": "exact typed monotonicity of sum under family inclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱40·17",
+      "kind": "derived-proposition",
+      "printed": "✱40·17. ⊢. pʻκ ∪ pʻλ ⊂ pʻ(κ ∩ λ)",
+      "printed_page": 321,
+      "scan_leaf": 343,
+      "lean_path": "Principia/Architecture/Star40SecondKernel.lean",
+      "declaration": "PM.Architecture.Star40SecondKernel.star_40_17",
+      "formal_scope": "exact typed inclusion of the union of products in the product of the family intersection",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱40·171",
+      "kind": "derived-proposition",
+      "printed": "✱40·171. ⊢. sʻκ ∪ sʻλ = sʻ(κ ∪ λ)",
+      "printed_page": 322,
+      "scan_leaf": 344,
+      "lean_path": "Principia/Architecture/Star40SecondKernel.lean",
+      "declaration": "PM.Architecture.Star40SecondKernel.star_40_171",
+      "formal_scope": "exact typed equality between the union of sums and the sum of the family union",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱40·18",
+      "kind": "derived-proposition",
+      "printed": "✱40·18. ⊢. pʻ(κ ∪ λ) = pʻκ ∩ pʻλ",
+      "printed_page": 322,
+      "scan_leaf": 344,
+      "lean_path": "Principia/Architecture/Star40SecondKernel.lean",
+      "declaration": "PM.Architecture.Star40SecondKernel.star_40_18",
+      "formal_scope": "exact typed equality between the product of the family union and the intersection of products",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

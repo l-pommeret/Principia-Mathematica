@@ -1,0 +1,42 @@
+{
+  "batch": "PM1-STAR54-CATALOGUE-443",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "380",
+    "scan_leaves": [
+      402
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱54·443",
+      "kind": "derived-proposition",
+      "printed": "✱54·443.  ⊢ : x ≠ y . φ(x,y) ≠ φ(y,x) .⊃ : z,w ε ιʻx ∪ ιʻy . z ≠ w . φ(z,w) = φ(x,y)",
+      "printed_page": 380,
+      "scan_leaf": 402,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_443",
+      "formal_scope": "typed cardinal-couple reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star54-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

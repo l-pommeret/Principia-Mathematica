@@ -1,0 +1,83 @@
+{
+  "batch": "PM1-STAR30-CATALOGUE-6",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "250",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱30·5",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\text{E}!PʻQʻz.\\supset.\\text{E}!Qʻz\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star30CompositionKernel.star_30_5",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱30·501",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\phi(PʻQʻz).\\equiv.(\\exists b,c).c=Qʻz.b=Pʻc.\\phi b\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star30CompositionKernel.star_30_501",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱30·51",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:b=PʻQʻz.\\equiv.(\\exists c).b=Pʻc.c=Qʻz\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star30CompositionKernel.star_30_51",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱30·52",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash:\\text{E}!PʻQʻz.\\equiv.(\\exists b,c).b=Pʻc.c=Qʻz\\)",
+      "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star30CompositionKernel.star_30_52",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star30-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

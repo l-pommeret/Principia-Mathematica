@@ -1,0 +1,108 @@
+{
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "587",
+    "scan_leaves": [
+      609
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "batch": "PM1-STAR91-CATALOGUE-11",
+  "items": [
+    {
+      "id": "PM1:✱91·264",
+      "kind": "derived-proposition",
+      "printed": "✱91·264. ⊢ . PotʻR = ιʻR ∪ R|ʻʻPotʻR",
+      "printed_page": 593,
+      "scan_leaf": 615,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel2.star_91_264",
+      "formal_scope": "typed relation-power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star91-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱91·27",
+      "kind": "derived-proposition",
+      "printed": "✱91·27. ⊢ : P∈PotidʻR .⊃. CʻP⊂CʻR",
+      "printed_page": 590,
+      "scan_leaf": 612,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel2.star_91_27",
+      "formal_scope": "typed relation-power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱91·271",
+      "kind": "derived-proposition",
+      "printed": "✱91·271. ⊢ : P∈PotʻR .⊃. DʻP⊂DʻR . ᗡʻP⊂ᗡʻR",
+      "printed_page": 591,
+      "scan_leaf": 613,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel2.star_91_271",
+      "formal_scope": "typed relation-power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱91·28",
+      "kind": "derived-proposition",
+      "printed": "✱91·28. ⊢ : P∈PotidʻR .⊃. P|R∈PotʻR",
+      "printed_page": 591,
+      "scan_leaf": 613,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel2.star_91_28",
+      "formal_scope": "typed relation-power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱91·281",
+      "kind": "derived-proposition",
+      "printed": "✱91·281. ⊢ : PotʻR⊂PotidʻR . |RʻʻPotidʻR⊂PotidʻR",
+      "printed_page": 591,
+      "scan_leaf": 613,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel2.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel2.star_91_281",
+      "formal_scope": "typed relation-power reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star91-catalogue-review.md"
+    }
+  ]
+}

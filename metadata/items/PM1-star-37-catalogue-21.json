@@ -1,0 +1,105 @@
+{
+  "batch": "PM1-STAR37-CATALOGUE-21",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "308–309",
+    "scan_leaves": [
+      330,
+      331
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱37·7",
+      "kind": "derived-proposition",
+      "printed": "✱37·7. \\vdash. \\overrightarrow{R}ʻʻ\\beta=\\hat{\\alpha}\\{(\\exists y) . y\\in \\beta. \\alpha= \\overrightarrow{R}ʻy\\} \\quad[\\text{*37·6 . *32·12}]",
+      "printed_page": 308,
+      "scan_leaf": 330,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·701",
+      "kind": "derived-proposition",
+      "printed": "✱37·701. \\vdash. \\overleftarrow{R}ʻʻ\\alpha = \\hat{\\beta}\\{(\\exists x) . x\\in \\alpha. \\beta= \\overleftarrow{R}ʻx\\} \\quad[\\text{*37·6 . *32·121}]",
+      "printed_page": 308,
+      "scan_leaf": 330,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·702",
+      "kind": "derived-proposition",
+      "printed": "✱37·702. \\vdash\\colon\\ldotp \\overrightarrow{R}ʻʻ\\beta\\subset \\kappa.\\equiv:y\\in \\beta.\\supset_{y}.\\overrightarrow{R}ʻy\\in \\kappa \\quad[\\text{*37·61}]",
+      "printed_page": 309,
+      "scan_leaf": 331,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·703",
+      "kind": "derived-proposition",
+      "printed": "✱37·703. \\vdash\\colon\\ldotp \\overleftarrow{R}ʻʻ\\beta\\subset \\kappa.\\equiv:x\\in \\beta.\\supset_{x}.\\overleftarrow{R}ʻx\\in \\kappa \\quad[\\text{*37·61}]",
+      "printed_page": 309,
+      "scan_leaf": 331,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·704",
+      "kind": "derived-proposition",
+      "printed": "✱37·704. \\vdash:y\\in \\alpha.\\supset.\\overrightarrow{R}ʻy\\in \\overrightarrow{R}ʻʻ\\alpha \\quad[\\text{*37·62.*32·12}]",
+      "printed_page": 309,
+      "scan_leaf": 331,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

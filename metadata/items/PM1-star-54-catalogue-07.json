@@ -1,0 +1,91 @@
+{
+  "batch": "PM1-STAR54-CATALOGUE-07",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "381–382",
+    "scan_leaves": [
+      403,
+      404
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱54·54",
+      "kind": "derived-proposition",
+      "printed": "✱54·54.  ⊢ : α ε 2 .⊃ : (∃x,y). x,y ε α . x ≠ y . α = ιʻx ∪ ιʻy",
+      "printed_page": 381,
+      "scan_leaf": 403,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_54",
+      "formal_scope": "exact existence of two distinct members witnessing a cardinal couple",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱54·55",
+      "kind": "derived-proposition",
+      "printed": "✱54·55.  ⊢ . 0 ∪ 1 ∪ 2 = α̂{(∃x,y). x ≠ y . α = ιʻx ∪ ιʻy} ∪ 0 ∪ 1",
+      "printed_page": 381,
+      "scan_leaf": 403,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_55",
+      "formal_scope": "exact permutation of the zero/one/two cardinal-class union",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱54·56",
+      "kind": "derived-proposition",
+      "printed": "✱54·56.  ⊢ : α ∉ 0 ∪ 1 ∪ 2 .≡ : (∃x,y,z). x,y,z ε α . x ≠ y . x ≠ z . y ≠ z",
+      "printed_page": 382,
+      "scan_leaf": 404,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_56",
+      "formal_scope": "exact characterization of classes outside cardinal zero, one, and two by three pairwise distinct members",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star54-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱54·6",
+      "kind": "derived-proposition",
+      "printed": "✱54·6.  ⊢ : α ∩ β = Λ . x,y ε α . z,w ε β .⊃ : ιʻx ∪ ιʻz = ιʻy ∪ ιʻw .≡ . x = y . z = w",
+      "printed_page": 382,
+      "scan_leaf": 404,
+      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_6",
+      "formal_scope": "exact equality characterization for cross-pairs drawn from disjoint classes",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

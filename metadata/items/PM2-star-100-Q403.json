@@ -4,18 +4,88 @@
   "volume": 2,
   "source_range": {
     "printed_pages": "18",
-    "scan_leaves": [58],
+    "scan_leaves": [
+      58
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
-    "leaf_derivatives": [{"scan_leaf":58,"printed_page":18,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page58-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg","sha256":"f6c41d26c5e7bfe3958983a70be18f857884cc19506852ff3e79ddfc2c5e8a8c"}],
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 58,
+        "printed_page": 18,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page58-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg",
+        "sha256": "f6c41d26c5e7bfe3958983a70be18f857884cc19506852ff3e79ddfc2c5e8a8c"
+      }
+    ],
     "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
   },
-  "witnesses": ["PM2-1912-SCAN", "PG78255"],
-  "source_status": "source-catalogued-PM-VERBATIM",
-  "integration_status": "source-only-no-formal-target",
-  "items": [
-    {"id":"PM2:✱100·6","kind":"derived-proposition","printed":"✱100·6. ⊢ . ιʻʻα ∈ Ncʻα [✱73·41 . ✱100·31]","printed_page":18,"scan_leaf":58,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription only; no formal target is proposed for this type-sensitive class construction.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer","printed_dependencies":["PM1:✱73·41","PM2:✱100·31"],"normalized_dependencies":[]},
-    {"id":"PM2:✱100·62","kind":"derived-proposition","printed":"✱100·62. ⊢ . x↓ʻʻα ∈ Ncʻα [✱73·61 . ✱100·31]","printed_page":18,"scan_leaf":58,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription only; no formal target is proposed for this type-sensitive class construction.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer","printed_dependencies":["PM1:✱73·61","PM2:✱100·31"],"normalized_dependencies":[]},
-    {"id":"PM2:✱100·621","kind":"derived-proposition","printed":"✱100·621. ⊢ . ↓xʻʻα ∈ Ncʻα [✱73·611 . ✱100·31]","printed_page":18,"scan_leaf":58,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription only; no formal target is proposed for this type-sensitive class construction.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer","printed_dependencies":["PM1:✱73·611","PM2:✱100·31"],"normalized_dependencies":[]}
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
   ],
-  "ci_evidence": {"commit":"pending","run":"pending","conclusion":"pending"}
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "prepared",
+  "items": [
+    {
+      "id": "PM2:✱100·6",
+      "kind": "derived-proposition",
+      "printed": "✱100·6. ⊢ . ιʻʻα ∈ Ncʻα [✱73·41 . ✱100·31]",
+      "printed_page": 18,
+      "scan_leaf": 58,
+      "lean_path": "Principia/Architecture/Star100FinalKernel.lean",
+      "declaration": "PM.Architecture.Star100FinalKernel.star_100_6",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱73·41",
+        "PM2:✱100·31"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱100·62",
+      "kind": "derived-proposition",
+      "printed": "✱100·62. ⊢ . x↓ʻʻα ∈ Ncʻα [✱73·61 . ✱100·31]",
+      "printed_page": 18,
+      "scan_leaf": 58,
+      "lean_path": "Principia/Architecture/Star100FinalKernel.lean",
+      "declaration": "PM.Architecture.Star100FinalKernel.star_100_62",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱73·61",
+        "PM2:✱100·31"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱100·621",
+      "kind": "derived-proposition",
+      "printed": "✱100·621. ⊢ . ↓xʻʻα ∈ Ncʻα [✱73·611 . ✱100·31]",
+      "printed_page": 18,
+      "scan_leaf": 58,
+      "lean_path": "Principia/Architecture/Star100FinalKernel.lean",
+      "declaration": "PM.Architecture.Star100FinalKernel.star_100_621",
+      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱73·611",
+        "PM2:✱100·31"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

@@ -23,46 +23,46 @@
     "PG78255"
   ],
   "source_status": "source-catalogued-PM-VERBATIM",
-  "integration_status": "source-only-no-formal-target",
+  "integration_status": "prepared",
   "items": [
     {
       "id": "PM2:✱105·11",
       "kind": "derived-proposition",
-      "printed": "✱105·11. ⊢ : β ∈ N₁cʻα .≡ . β ∈ Ncʻα . β ∈ t₀ʻα .≡ . β sm α . β ∈ t₀ʻα .≡ . β sm α . β ⊂ t₁ʻα",
+      "printed": "✱105·11. ⊢ : β∈N₁cʻα .≡. β∈Ncʻα.β∈t₀ʻα",
       "printed_page": 53,
       "scan_leaf": 93,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "lean_path": "Principia/Architecture/Star105OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star105OpeningKernel.star_105_11",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-descending-cardinal-syntax-or-derivation-layer",
+      "integration_status": "prepared",
       "printed_dependencies": [
         "PM2:✱105·1",
         "PM1:✱100·31",
         "PM1:✱63·51"
       ],
+      "lean_dependencies": [],
       "normalized_dependencies": []
     },
     {
       "id": "PM2:✱105·111",
       "kind": "derived-proposition",
-      "printed": "✱105·111. ⊢ : β ∈ N₂cʻα .≡ . β ∈ Ncʻα . β ∈ t₁ʻα .≡ . β sm α . β ∈ t₁ʻα .≡ . β sm α . β ⊂ t₂ʻα",
+      "printed": "✱105·111. ⊢ : β∈N₂cʻα .≡. β∈Ncʻα.β∈t₁ʻα",
       "printed_page": 53,
       "scan_leaf": 93,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "lean_path": "Principia/Architecture/Star105OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star105OpeningKernel.star_105_111",
+      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-descending-cardinal-syntax-or-derivation-layer",
+      "integration_status": "prepared",
       "printed_dependencies": [
         "PM2:✱105·101",
         "PM1:✱100·31",
         "PM1:✱63·52"
       ],
+      "lean_dependencies": [],
       "normalized_dependencies": []
     }
   ],

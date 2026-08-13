@@ -1,0 +1,58 @@
+{
+  "batch": "PM2-STAR106-CATALOGUE-10",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "65",
+    "scan_leaves": [
+      105
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱106·54",
+      "kind": "derived-proposition",
+      "printed": "✱106·54. ⊢ . N₀cʻt₀₀ʻα∉N₀₀C",
+      "printed_page": 65,
+      "scan_leaf": 105,
+      "lean_path": "Principia/Architecture/Star106ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star106ClosingKernel.star_106_54",
+      "formal_scope": "typed descending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star106-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱106·55",
+      "kind": "derived-proposition",
+      "printed": "✱106·55. ⊢ . ∃!N₀C−N₀₀C",
+      "printed_page": 65,
+      "scan_leaf": 105,
+      "lean_path": "Principia/Architecture/Star106ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star106ClosingKernel.star_106_55",
+      "formal_scope": "typed descending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

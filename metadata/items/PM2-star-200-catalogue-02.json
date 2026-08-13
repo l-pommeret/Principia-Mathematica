@@ -1,0 +1,120 @@
+{
+  "batch": "PM2-STAR200-CATALOGUE-02",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "519–520",
+    "scan_leaves": [
+      559,
+      560
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm#*200"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱200·22",
+      "kind": "derived-proposition",
+      "printed": "✱200·22. ⊢ : P⊂̇J .≡. N₀rʻP⊂RlʻJ .≡. ∃!N₀rʻP∩RlʻJ",
+      "printed_page": 519,
+      "scan_leaf": 559,
+      "lean_path": "Principia/Architecture/Star200OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star200OpeningKernel.star_200_22",
+      "formal_scope": "typed relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star200-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱200·3",
+      "kind": "derived-proposition",
+      "printed": "✱200·3. ⊢ . Λ̇∈RlʻJ",
+      "printed_page": 520,
+      "scan_leaf": 560,
+      "lean_path": "Principia/Architecture/Star200OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star200OpeningKernel.star_200_3",
+      "formal_scope": "typed relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star200-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱200·31",
+      "kind": "derived-proposition",
+      "printed": "✱200·31. ⊢ : x≠y .≡. x↓y∈RlʻJ",
+      "printed_page": 520,
+      "scan_leaf": 560,
+      "lean_path": "Principia/Architecture/Star200OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star200OpeningKernel.star_200_31",
+      "formal_scope": "typed relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star200-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱200·32",
+      "kind": "derived-proposition",
+      "printed": "✱200·32. ⊢ : α↑β⊂̇J .≡. α∩β=Λ",
+      "printed_page": 520,
+      "scan_leaf": 560,
+      "lean_path": "Principia/Architecture/Star200OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star200OpeningKernel.star_200_32",
+      "formal_scope": "typed relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star200-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱200·33",
+      "kind": "derived-proposition",
+      "printed": "✱200·33. ⊢ : P⊂̇J .⊃. Pʔα⊂̇J",
+      "printed_page": 520,
+      "scan_leaf": 560,
+      "lean_path": "Principia/Architecture/Star200OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star200OpeningKernel.star_200_33",
+      "formal_scope": "typed relation reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star200-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "batch": "PM2-STAR216-CATALOGUE-09",
+  "edition": "second",
+  "volume": 2,
+  "source_range": {
+    "canonical_source": "Principia/SecondEdition/Volume2/Star216Source.lean"
+  },
+  "witnesses": [
+    "PG78255",
+    "PM2-SECOND-EDITION-LOCAL-TRANSCRIPTION"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱216·602",
+      "kind": "derived-proposition",
+      "printed": "✱216·602. ⊢ : P∈connex.E!BʻP .⊃. ᗡʻ∇ʻP=DʻltP−→BʻP=δPʻCʻP",
+      "lean_path": "Principia/Architecture/Star216OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star216OpeningKernel3.star_216_602",
+      "formal_scope": "typed existing kernel mapping; exactness promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM2:✱216·603",
+      "kind": "derived-proposition",
+      "printed": "✱216·603. ⊢ : P∈connex.∃̇!∇ʻP .⊃. Cʻ∇ʻP=DʻltP",
+      "lean_path": "Principia/Architecture/Star216OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star216OpeningKernel3.star_216_603",
+      "formal_scope": "typed existing kernel mapping; exactness promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM2:✱216·61",
+      "kind": "derived-proposition",
+      "printed": "✱216·61. ⊢ : P∈Ser.E!BʻP .⊃. ᗡʻ∇ʻP=ᗡʻP−ᗡʻP₁",
+      "lean_path": "Principia/Architecture/Star216OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star216OpeningKernel3.star_216_61",
+      "formal_scope": "typed existing kernel mapping; exactness promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM2:✱216·611",
+      "kind": "derived-proposition",
+      "printed": "✱216·611. ⊢ : P∈Ser.∃̇!∇ʻP .⊃. Cʻ∇ʻP=CʻP−ᗡʻP₁=δPʻCʻP∪→BʻP",
+      "lean_path": "Principia/Architecture/Star216OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star216OpeningKernel3.star_216_611",
+      "formal_scope": "typed existing kernel mapping; exactness promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM2:✱216·612",
+      "kind": "derived-proposition",
+      "printed": "✱216·612. ⊢ : P∈Ser .⊃. ᗡʻ∇ʻP⊂ᗡʻP−ᗡʻP₁",
+      "lean_path": "Principia/Architecture/Star216OpeningKernel3.lean",
+      "declaration": "PM.Architecture.Star216OpeningKernel3.star_216_612",
+      "formal_scope": "typed existing kernel mapping; exactness promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

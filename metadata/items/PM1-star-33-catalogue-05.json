@@ -1,0 +1,135 @@
+{
+  "batch": "PM1-STAR33-CATALOGUE-05",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "232–240",
+    "scan_leaves": [
+      254,
+      262
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm#*33"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱33·32",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel4.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel4.star_33_32",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "printed": "✱33·32.  \\(\\vdash:\\text{D}ʻR\\cap \\text{D}ʻS=\\Lambda.\\supset.R\\dot{\\cap}S=\\Lambda\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    },
+    {
+      "id": "PM1:✱33·33",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel4.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel4.star_33_33",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "printed": "✱33·33.  \\(\\vdash:\\text{ᗡ}ʻR\\cap \\text{ᗡ}ʻS=\\Lambda.\\supset.R\\dot{\\cap}S=\\dot{\\Lambda} \\quad[\\text{Proof as in *33·32}]\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    },
+    {
+      "id": "PM1:✱33·34",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel4.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel4.star_33_34",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "printed": "✱33·34.  \\(\\vdash:CʻR\\cap CʻS=\\Lambda.\\supset.R\\dot{\\cap}S=\\dot{\\Lambda}\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    },
+    {
+      "id": "PM1:✱33·35",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel4.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel4.star_33_35",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "printed": "✱33·35.  \\(\\vdash\\colon\\ldotp \\text{D}ʻR\\subset\\alpha.\\equiv:xRy.\\supset_{x,y}.x\\in \\alpha\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    },
+    {
+      "id": "PM1:✱33·41",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel5.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel5.star_33_41",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "printed": "✱33·41.  \\(\\vdash.\\text{ᗡ}ʻR=\\hat{y}\\{\\exists !\\overrightarrow{R}ʻy\\} \\quad[\\text{Similar proof}]\\)",
+      "printed_page": 232,
+      "scan_leaf": 254
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

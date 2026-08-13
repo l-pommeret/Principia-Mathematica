@@ -1,0 +1,107 @@
+{
+  "batch": "PM1-STAR37-CATALOGUE-02",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "302–305",
+    "scan_leaves": [
+      324,
+      325,
+      326,
+      327
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱37·33",
+      "kind": "derived-proposition",
+      "printed": "✱37·33. \\vdash.(P\\mid Q)ʻʻ\\gamma=PʻʻQʻʻ\\gamma",
+      "printed_page": 302,
+      "scan_leaf": 324,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·401",
+      "kind": "derived-proposition",
+      "printed": "✱37·401. \\vdash.\\text{D}ʻ(R\\upharpoonright \\beta)=Rʻʻ\\beta \\quad[\\text{Similar proof}]",
+      "printed_page": 303,
+      "scan_leaf": 325,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·412",
+      "kind": "derived-proposition",
+      "printed": "✱37·412. \\vdash.(R\\upharpoonright \\alpha)ʻʻ\\beta=Rʻʻ(\\alpha\\cap \\beta)",
+      "printed_page": 304,
+      "scan_leaf": 326,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·41",
+      "kind": "derived-proposition",
+      "printed": "✱37·41. \\vdash.\\text{D}ʻ(R\\unicode{x0294f}\\alpha)=\\alpha\\cap Rʻʻ\\alpha.\\text{ᗡ}ʻ(R\\unicode{x0294f}\\alpha)=\\alpha\\cap \\breve{R}ʻʻ\\alpha \\quad[\\text{*37·402.*36·11}]",
+      "printed_page": 303,
+      "scan_leaf": 325,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱37·6",
+      "kind": "derived-proposition",
+      "printed": "✱37·6. \\vdash:\\text{E}‼Rʻʻ\\beta.\\supset.Rʻʻ\\beta=\\hat{x}\\{(\\exists y).y\\in \\beta.x=Rʻy\\}",
+      "printed_page": 305,
+      "scan_leaf": 327,
+      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}
