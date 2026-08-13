@@ -233,7 +233,16 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
     scan = batch.get("source_range", {}).get("canonical_scan")
     leaf = item.get("scan_leaf")
     printed_page = item.get("printed_page", "not yet recorded")
-    scan_media = scan_urls(scan, leaf) if scan and leaf is not None else None
+    if scan and leaf is not None:
+        try:
+            scan_media = scan_urls(scan, leaf)
+        except ValueError:
+            # Some source-critical records cite stable single-file witnesses
+            # rather than one of the approved multipage hosts.  Keep the
+            # transcription renderable without fabricating a page-image URL.
+            scan_media = None
+    else:
+        scan_media = None
     printed = printed_formula_markup(item["printed"])
     source = html.escape(block.text)
     lean = html.escape(lean_excerpt(item))
