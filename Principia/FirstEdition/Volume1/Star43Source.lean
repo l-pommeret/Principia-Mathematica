@@ -1,0 +1,116 @@
+/-! # PM I ✱43 — canonical opening transcription (PG78050, pp. 340–341) -/
+
+/- PM-VERBATIM-BEGIN PM1:✱43·01
+✱43·01. R ∥ S = (R |) | (| S)  Df
+PM-VERBATIM-END PM1:✱43·01 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·1
+✱43·1. ⊢ : P(R |)Q .≡ . P = R | Q
+PM-VERBATIM-END PM1:✱43·1 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·101
+✱43·101. ⊢ : P(| R)Q .≡ . P = Q | R
+PM-VERBATIM-END PM1:✱43·101 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·102
+✱43·102. ⊢ : P(R ∥ S)Q .≡ . P = R | Q | S
+PM-VERBATIM-END PM1:✱43·102 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·11
+✱43·11. ⊢ . (R |)ʻQ = R | Q
+PM-VERBATIM-END PM1:✱43·11 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·111
+✱43·111. ⊢ . (| R)ʻQ = Q | R
+PM-VERBATIM-END PM1:✱43·111 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·112
+✱43·112. ⊢ . (R ∥ S)ʻQ = R | Q | S
+PM-VERBATIM-END PM1:✱43·112 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·12
+✱43·12. ⊢ . E!(R |)ʻQ
+PM-VERBATIM-END PM1:✱43·12 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·121
+✱43·121. ⊢ . E!(| R)ʻQ
+PM-VERBATIM-END PM1:✱43·121 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·122
+✱43·122. ⊢ . E!(R ∥ S)ʻQ
+PM-VERBATIM-END PM1:✱43·122 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·2
+✱43·2. ⊢ . (R |) | (S |) = (R | S) |
+PM-VERBATIM-END PM1:✱43·2 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·201
+✱43·201. ⊢ . (| R) | (| S) = | (S | R)
+PM-VERBATIM-END PM1:✱43·201 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·202
+✱43·202. ⊢ . (| R) | (S |) = (S |) | (| R) = S ∥ R
+PM-VERBATIM-END PM1:✱43·202 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·21
+✱43·21. ⊢ . (P | Q) | (R |) = (P | R) ∥ Q
+PM-VERBATIM-END PM1:✱43·21 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·211
+✱43·211. ⊢ . (R |) | (P ∥ Q) = (R | P) ∥ Q
+PM-VERBATIM-END PM1:✱43·211 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·212
+✱43·212. ⊢ . (P ∥ Q) | (| R) = P ∥ (R | Q)
+PM-VERBATIM-END PM1:✱43·212 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·213
+✱43·213. ⊢ . (| R) | (P ∥ Q) = P ∥ (Q | R)
+PM-VERBATIM-END PM1:✱43·213 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·22
+✱43·22. ⊢ . (P ∥ Q) | (R ∥ S) = (P | R) ∥ (S | Q)
+PM-VERBATIM-END PM1:✱43·22 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·3
+✱43·3. ⊢ . (P). P ∈ ᗡʻ(R |)
+PM-VERBATIM-END PM1:✱43·3 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·301
+✱43·301. ⊢ . (P). P ∈ ᗡʻ(| R)
+PM-VERBATIM-END PM1:✱43·301 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·302
+✱43·302. ⊢ . (P). P ∈ ᗡʻ(R ∥ S)
+PM-VERBATIM-END PM1:✱43·302 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·31
+✱43·31. ⊢ . P↾ᗡʻR| = P↾CʻR| = P
+PM-VERBATIM-END PM1:✱43·31 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·311
+✱43·311. ⊢ . P↾ᗡʻ|R = P↾Cʻ|R = P
+PM-VERBATIM-END PM1:✱43·311 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·312
+✱43·312. ⊢ . P↾ᗡʻ(R∥S) = P↾Cʻ(R∥S) = P
+PM-VERBATIM-END PM1:✱43·312 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·34
+✱43·34. ⊢ . R|ʻR = |RʻR = R²
+PM-VERBATIM-END PM1:✱43·34 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·4
+✱43·4. ⊢ . RʻʻDʻP = DʻR|ʻP
+PM-VERBATIM-END PM1:✱43·4 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·401
+✱43·401. ⊢ . ŘʻʻᗡʻP = ᗡʻ|RʻP
+PM-VERBATIM-END PM1:✱43·401 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·41
+✱43·41. ⊢ . RʻʻʻDʻʻλ = DʻʻR|ʻʻλ
+PM-VERBATIM-END PM1:✱43·41 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·411
+✱43·411. ⊢ . Řʻʻʻᗡʻʻλ = ᗡʻʻ|Rʻʻλ
+PM-VERBATIM-END PM1:✱43·411 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·42
+✱43·42. ⊢ . ṡʻR|ʻʻλ = R|ṡʻλ
+PM-VERBATIM-END PM1:✱43·42 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·421
+✱43·421. ⊢ . ṡʻ|Rʻʻλ = (ṡʻλ)|R
+PM-VERBATIM-END PM1:✱43·421 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·43
+✱43·43. ⊢ . ṡʻ(R∥S)ʻʻλ = (R∥S)ʻṡʻλ
+PM-VERBATIM-END PM1:✱43·43 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·48
+✱43·48. ⊢ : DʻP ⊂ α .⊃ . Q|ʻP = (Q↾α)|ʻP
+PM-VERBATIM-END PM1:✱43·48 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·481
+✱43·481. ⊢ : ᗡʻP ⊂ β .⊃ . |RʻP = |(β↼R)ʻP
+PM-VERBATIM-END PM1:✱43·481 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·49
+✱43·49. ⊢ : sʻDʻʻλ ⊂ α .⊃ . (Q|)↾λ = {(Q↾α)|}↾λ
+PM-VERBATIM-END PM1:✱43·49 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·491
+✱43·491. ⊢ : sʻᗡʻʻλ ⊂ β .⊃ . (|R)↾λ = {|(α↼R)}↾λ
+PM-VERBATIM-END PM1:✱43·491 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·5
+✱43·5. ⊢ : DʻP ⊂ α . ᗡʻP ⊂ β .⊃ . (Q∥R)ʻP = {(Q↾α)∥(β↼R)}ʻP
+PM-VERBATIM-END PM1:✱43·5 -/
+/- PM-VERBATIM-BEGIN PM1:✱43·51
+✱43·51. ⊢ : sʻDʻʻλ ⊂ α . sʻᗡʻʻλ ⊂ β .⊃ . (Q∥R)↾λ = {(Q↾α)∥(β↼R)}↾λ
+PM-VERBATIM-END PM1:✱43·51 -/

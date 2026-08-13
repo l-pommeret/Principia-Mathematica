@@ -1,0 +1,201 @@
+/- PM-VERBATIM-BEGIN PM1:✱50·01
+✱50·01. I = ẑxẑy(x = y)  Df
+PM-VERBATIM-END PM1:✱50·01 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·02
+✱50·02. J = −̇I  Df
+PM-VERBATIM-END PM1:✱50·02 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·1
+✱50·1. ⊢ : xIy .≡. x = y  [✱21·3.(✱50·01)]
+PM-VERBATIM-END PM1:✱50·1 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·11
+✱50·11. ⊢ : xJy .≡. x ≠ y  [✱23·35.✱50·1.(✱50·02)]
+PM-VERBATIM-END PM1:✱50·11 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·12
+✱50·12. ⊢ . J = ẑxẑy(x ≠ y)  [✱50·11.✱21·33]
+PM-VERBATIM-END PM1:✱50·12 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·13
+✱50·13. ⊢ . ∃̇!I  [✱13·19.✱10·24·281.✱50·1]
+PM-VERBATIM-END PM1:✱50·13 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·14
+✱50·14. ⊢ . Iʻy = y  [✱30·3.✱50·1.✱10·11]
+PM-VERBATIM-END PM1:✱50·14 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·15
+✱50·15. ⊢ . (y).∃!Iʻy  [✱50·14.✱14·21.✱10·11]
+PM-VERBATIM-END PM1:✱50·15 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·16
+✱50·16. ⊢ . Iʻʻα = α
+PM-VERBATIM-END PM1:✱50·16 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·17
+✱50·17. ⊢ : x ∈ α .⊃ₓ. Rʻx = x : ⊃ . Rʻʻα = α
+PM-VERBATIM-END PM1:✱50·17 -/
+
+/- Source: Project Gutenberg 78050, PM I pp. 349–350; first ten entries of
+✱50, collated in printed order. -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·2
+✱50·2. ⊢ . I = CnvʻI
+PM-VERBATIM-END PM1:✱50·2 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·21
+✱50·21. ⊢ . J = CnvʻJ
+PM-VERBATIM-END PM1:✱50·21 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·22
+✱50·22. ⊢ : R ⊂̇ I .≡. CnvʻR ⊂̇ I
+PM-VERBATIM-END PM1:✱50·22 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·23
+✱50·23. ⊢ : R ⊂̇ J .≡. CnvʻR ⊂̇ J
+PM-VERBATIM-END PM1:✱50·23 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·24
+✱50·24. ⊢ : R ⊂̇ J .≡. (x)∼(xRx)
+PM-VERBATIM-END PM1:✱50·24 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·3
+✱50·3. ⊢ . (x).xIx
+PM-VERBATIM-END PM1:✱50·3 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·31
+✱50·31. ⊢ . DʻI = V . ᗡʻI = V
+PM-VERBATIM-END PM1:✱50·31 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·32
+✱50·32. ⊢ . CʻI = V
+PM-VERBATIM-END PM1:✱50·32 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·33
+✱50·33. ⊢ : ∃̇!J .⊃. DʻJ = V . ᗡʻJ = V . CʻJ = V
+PM-VERBATIM-END PM1:✱50·33 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·34
+✱50·34. ⊢ . ∃̇!(J ↾ Cls)
+PM-VERBATIM-END PM1:✱50·34 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·35
+✱50·35. ⊢ . ∃̇!(J ↾ Rel)
+PM-VERBATIM-END PM1:✱50·35 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·4
+✱50·4. ⊢ . R | I = I | R = R
+PM-VERBATIM-END PM1:✱50·4 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·41
+✱50·41. ⊢ : R | CnvʻP ⊂̇ J .≡. CnvʻR | P ⊂̇ J .≡. R ∩̇ P = Λ̇
+PM-VERBATIM-END PM1:✱50·41 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·42
+✱50·42. ⊢ . I² = I
+PM-VERBATIM-END PM1:✱50·42 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·43
+✱50·43. ⊢ : R² ⊂̇ J .≡. R ∩̇ CnvʻR = Λ̇
+PM-VERBATIM-END PM1:✱50·43 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·44
+✱50·44. ⊢ : ∃̇!(R ∩̇ I) .⊃. ∃̇!(R² ∩̇ I)
+PM-VERBATIM-END PM1:✱50·44 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·45
+✱50·45. ⊢ : R² ⊂̇ J .⊃. R ⊂̇ J
+PM-VERBATIM-END PM1:✱50·45 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·46
+✱50·46. ⊢ : R ∩̇ CnvʻR = Λ̇ .⊃. R ⊂̇ J
+PM-VERBATIM-END PM1:✱50·46 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·47
+✱50·47. ⊢ : R² ⊂̇ R .⊃ : R ⊂̇ J .≡. R² ⊂̇ J .≡. R ∩̇ CnvʻR = Λ̇
+PM-VERBATIM-END PM1:✱50·47 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·5
+✱50·5. ⊢ . α ◁ I = I ▷ α = α ◁ I ▷ α
+PM-VERBATIM-END PM1:✱50·5 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·51
+✱50·51. ⊢ . Cnvʻ(α ◁ I) = α ◁ I
+PM-VERBATIM-END PM1:✱50·51 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·52
+✱50·52. ⊢ . Dʻ(α ◁ I) = ᗡʻ(α ◁ I) = Cʻ(α ◁ I) = α
+PM-VERBATIM-END PM1:✱50·52 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·53
+✱50·53. ⊢ . α ◁ I ▷ β = (α ∩ β) ◁ I = I ▷ (α ∩ β)
+PM-VERBATIM-END PM1:✱50·53 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·54
+✱50·54. ⊢ . (α ◁ I)² = α ◁ I
+PM-VERBATIM-END PM1:✱50·54 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·55
+✱50·55. ⊢ : α ∩ β = Λ .≡. α ↑ β ⊂̇ J
+PM-VERBATIM-END PM1:✱50·55 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·56
+✱50·56. ⊢ : ∃!(α ∩ β) .≡. ∃̇!{(α ↑ β) ∩̇ I}
+PM-VERBATIM-END PM1:✱50·56 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·57
+✱50·57. ⊢ . I ∩̇ α ◁ R = I ∩̇ R ▷ α = I ∩̇ α ◁ R ▷ α
+PM-VERBATIM-END PM1:✱50·57 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·58
+✱50·58. ⊢ : α ◁ R ⊂̇ J .≡. R ▷ α ⊂̇ J .≡. α ◁ R ▷ α ⊂̇ J
+PM-VERBATIM-END PM1:✱50·58 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·59
+✱50·59. ⊢ . (I ▷ α)ʻʻβ = α ∩ β
+PM-VERBATIM-END PM1:✱50·59 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱50·6
+✱50·6. ⊢ . R | (I ▷ α) = R ▷ α
+PM-VERBATIM-END PM1:✱50·6 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·61
+✱50·61. ⊢ . I ▷ α | R = α ◁ R
+PM-VERBATIM-END PM1:✱50·61 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·62
+✱50·62. ⊢ : ᗡʻR ⊂ α .⊃. R | (I ▷ α) = R
+PM-VERBATIM-END PM1:✱50·62 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·63
+✱50·63. ⊢ : DʻR ⊂ α .⊃. I ▷ α | R = R
+PM-VERBATIM-END PM1:✱50·63 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·64
+✱50·64. ⊢ . R | (I ▷ ᗡʻR) = R | (I ▷ CʻR) = R
+PM-VERBATIM-END PM1:✱50·64 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·65
+✱50·65. ⊢ . I ▷ (DʻR) | R = I ▷ (CʻR) | R = R
+PM-VERBATIM-END PM1:✱50·65 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·7
+✱50·7. ⊢ : ᗡʻR ⊂ α .⊃. R |ʻ(I ▷ α) = R
+PM-VERBATIM-END PM1:✱50·7 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·71
+✱50·71. ⊢ : DʻR ⊂ α .⊃. |Rʻ(I ▷ α) = R
+PM-VERBATIM-END PM1:✱50·71 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·72
+✱50·72. ⊢ . R ∥ʻ(I ▷ CʻR) = |Rʻ(I ▷ CʻR) = R
+PM-VERBATIM-END PM1:✱50·72 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·73
+✱50·73. ⊢ . R ∥ʻI = |RʻI = R
+PM-VERBATIM-END PM1:✱50·73 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·74
+✱50·74. ⊢ . R ∥ I = R |
+PM-VERBATIM-END PM1:✱50·74 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·75
+✱50·75. ⊢ . I ∥ R = |R
+PM-VERBATIM-END PM1:✱50·75 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·76
+✱50·76. ⊢ : P | = R | .≡. P = R
+PM-VERBATIM-END PM1:✱50·76 -/
+/- PM-VERBATIM-BEGIN PM1:✱50·761
+✱50·761. ⊢ : |P = |R .≡. P = R
+PM-VERBATIM-END PM1:✱50·761 -/
