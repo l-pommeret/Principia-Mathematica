@@ -23,13 +23,20 @@ private theorem classExt {A B : Class α} (h : ∀ x, A x ↔ B x) : A = B := by
 private theorem relExt {R S : Relation α} (h : ∀ x y, R x y ↔ S x y) : R = S := by
   funext x y; exact propext (h x y)
 
-/-- ✱65·01. -/ theorem star_65_01 (A T : Class α) : classSub A T = inter A T := rfl
-/-- ✱65·02. -/ theorem star_65_02 (A T2 : Class α) : classParen A T2 = inter A T2 := rfl
-/-- ✱65·03. -/ theorem star_65_03 (R : Relation α) (T : Class α) : relSub R T = left T R := rfl
-/-- ✱65·04. -/ theorem star_65_04 (R : Relation α) (T2 : Class α) : relParen R T2 = left T2 R := rfl
-/-- ✱65·1. -/ theorem star_65_1 (R : Relation α) (TX TY : Class α) : relPair R TX TY = both TX R TY := rfl
-/-- ✱65·11. -/ theorem star_65_11 (R : Relation α) (T2X TY : Class α) : relMixed R T2X TY = both T2X R TY := rfl
-/-- ✱65·12. -/ theorem star_65_12 (R : Relation α) (T2X T2Y : Class α) : relParenPair R T2X T2Y = both T2X R T2Y := rfl
+/-- ✱65·01. -/
+theorem star_65_01 (A T : Class α) : classSub A T = inter A T := rfl
+/-- ✱65·02. -/
+theorem star_65_02 (A T2 : Class α) : classParen A T2 = inter A T2 := rfl
+/-- ✱65·03. -/
+theorem star_65_03 (R : Relation α) (T : Class α) : relSub R T = left T R := rfl
+/-- ✱65·04. -/
+theorem star_65_04 (R : Relation α) (T2 : Class α) : relParen R T2 = left T2 R := rfl
+/-- ✱65·1. -/
+theorem star_65_1 (R : Relation α) (TX TY : Class α) : relPair R TX TY = both TX R TY := rfl
+/-- ✱65·11. -/
+theorem star_65_11 (R : Relation α) (T2X TY : Class α) : relMixed R T2X TY = both T2X R TY := rfl
+/-- ✱65·12. -/
+theorem star_65_12 (R : Relation α) (T2X T2Y : Class α) : relParenPair R T2X T2Y = both T2X R T2Y := rfl
 
 /-- ✱65·13. -/
 theorem star_65_13 (A B T : Class α) (hBT : Included B T) :
@@ -60,15 +67,21 @@ theorem star_65_16 (R : Relation α) (T2X TA T2Y TB : Class α) (hx : T2X = TA) 
 
 def forwardSection (R : Relation α) (TX TY : Class α) (y : α) : Class α := fun x => relPair R TX TY x y
 def singletonGeneration (R : Relation α) (TX TY : Class α) (y : α) : Class α := forwardSection R TX TY y
-/-- ✱65·2. -/ theorem star_65_2 (R : Relation α) (TX TY : Class α) (y : α) : singletonGeneration R TX TY y = forwardSection R TX TY y := rfl
+/-- ✱65·2. -/
+theorem star_65_2 (R : Relation α) (TX TY : Class α) (y : α) : singletonGeneration R TX TY y = forwardSection R TX TY y := rfl
 
-/-- ✱65·21. -/ theorem star_65_21 (R : Relation α) (TX TY : Class α) : relPair (relPair R TX TY) TX TY = relPair R TX TY := by
+/-- ✱65·21. -/
+theorem star_65_21 (R : Relation α) (TX TY : Class α) : relPair (relPair R TX TY) TX TY = relPair R TX TY := by
   apply relExt; intro x y; simp [relPair, both, left, right, and_assoc]
-/-- ✱65·22. -/ theorem star_65_22 (R : Relation α) (TX TY : Class α) : relParenPair (relParenPair R TX TY) TX TY = relParenPair R TX TY := star_65_21 R TX TY
-/-- ✱65·23. -/ theorem star_65_23 (R : Relation α) (TX TY : Class α) : relMixed (relMixed R TX TY) TX TY = relMixed R TX TY := star_65_21 R TX TY
-/-- ✱65·24. -/ theorem star_65_24 (R : Relation α) (T : Class α) : relSub (relSub R T) T = relSub R T := by
+/-- ✱65·22. -/
+theorem star_65_22 (R : Relation α) (TX TY : Class α) : relParenPair (relParenPair R TX TY) TX TY = relParenPair R TX TY := star_65_21 R TX TY
+/-- ✱65·23. -/
+theorem star_65_23 (R : Relation α) (TX TY : Class α) : relMixed (relMixed R TX TY) TX TY = relMixed R TX TY := star_65_21 R TX TY
+/-- ✱65·24. -/
+theorem star_65_24 (R : Relation α) (T : Class α) : relSub (relSub R T) T = relSub R T := by
   apply relExt; intro x y; simp [relSub, left]
-/-- ✱65·25. -/ theorem star_65_25 (R : Relation α) (T : Class α) : relParen (relParen R T) T = relParen R T := star_65_24 R T
+/-- ✱65·25. -/
+theorem star_65_25 (R : Relation α) (T : Class α) : relParen (relParen R T) T = relParen R T := star_65_24 R T
 
 /-- ✱65·3. -/
 theorem star_65_3 (R : Relation α) (T M : Class α) :

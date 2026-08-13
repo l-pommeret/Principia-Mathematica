@@ -25,8 +25,8 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_01",
       "formal_scope": "exact class-product reduction on a singleton class of classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -41,8 +41,8 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_02",
       "formal_scope": "exact class-sum reduction on a singleton class of classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -57,8 +57,8 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_03",
       "formal_scope": "exact relation-product reduction on a singleton class of relations",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "✱53·01"
       ],
@@ -86,8 +86,8 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_04",
       "formal_scope": "exact relation-sum reduction on a singleton class of relations; terminal source artifact audited as a transcription defect",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "✱53·02"
       ],
@@ -115,16 +115,16 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_1",
       "formal_scope": "exact class-product reduction over the union of two singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "0451de2d71917e28ddd43b37ef3a409da0bc276d",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31743886049",
+    "conclusion": "success"
   }
 }

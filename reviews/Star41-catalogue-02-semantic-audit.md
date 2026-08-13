@@ -1,0 +1,5 @@
+# ✱41 catalogue 02 strict semantic audit
+
+The five source blocks PM1:✱41·13, ·14, ·141, ·15, and ·151 were compared literally with their catalogue records and semantically with the corresponding declarations in `Star41InitialKernel.lean`. In the typed reconstruction, `relationalProduct collection` is pointwise universal quantification over the relations in the class, `sum collection` is pointwise existential membership, and `subrel` is PM relation inclusion.
+
+All five translations are exact. Proposition ·13 introduces a member relation into the sum; ·14 eliminates product membership at a member; ·141 introduces a point of a member into the sum; ·15 characterizes inclusion in the product by inclusion in every member; and ·151 gives the dual characterization for the sum. Their proofs unfold only these local definitions and hypotheses, so both the printed and Lean dependency graphs have no numbered-proposition edges. Each item is promoted in-place to `awaiting-ci`; CI evidence remains pending.

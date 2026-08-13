@@ -23,23 +23,21 @@
       "scan_leaf": 372,
       "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
       "declaration": "PM.Architecture.Star50OpeningKernel.star_50_13",
-      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact inhabited typed reading of nonempty identity relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
-        "✱13·19",
-        "✱10·24",
-        "✱50·1"
-      ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [
         "PM1:✱13·19",
         "PM1:✱10·24",
         "PM1:✱50·1"
       ],
+      "lean_dependencies": ["PM.Architecture.Star50OpeningKernel.I"],
+      "normalized_dependencies": ["PM1:✱50·01"],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/Star50-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱50·01"],"printed_but_unused":["PM1:✱10·24","PM1:✱13·19","PM1:✱50·1"],"strict_attempt_evidence":"reviews/Star50-catalogue-review.md","editorial_note":"The inhabited typed identity relation supplies its diagonal pair directly; PM's printed existence chain is retained as indirect."}
     },
     {
       "id": "PM1:✱50·14",
@@ -49,21 +47,19 @@
       "scan_leaf": 372,
       "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
       "declaration": "PM.Architecture.Star50OpeningKernel.star_50_14",
-      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact contextual definite-description reading of the identity fibre; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
-        "✱30·3",
-        "✱50·1",
-        "✱10·11"
-      ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [
         "PM1:✱30·3",
         "PM1:✱50·1",
         "PM1:✱10·11"
-      ]
+      ],
+      "lean_dependencies": ["PM.Architecture.Star50OpeningKernel.I"],
+      "normalized_dependencies": ["PM1:✱50·01"],
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱50·01"],"printed_but_unused":["PM1:✱10·11","PM1:✱30·3","PM1:✱50·1"],"strict_attempt_evidence":"reviews/Star50-catalogue-review.md","editorial_note":"The witness y and uniqueness of the identity fibre are definitional in Lean; printed description machinery remains indirect."}
     },
     {
       "id": "PM1:✱50·15",
@@ -73,21 +69,19 @@
       "scan_leaf": 372,
       "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
       "declaration": "PM.Architecture.Star50OpeningKernel.star_50_15",
-      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact universal unique-fibre reading of identity; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
-        "✱50·14",
-        "✱14·21",
-        "✱10·11"
-      ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [
         "PM1:✱50·14",
         "PM1:✱14·21",
         "PM1:✱10·11"
-      ]
+      ],
+      "lean_dependencies": ["PM.Architecture.Star50OpeningKernel.I"],
+      "normalized_dependencies": ["PM1:✱50·01"],
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱50·01"],"printed_but_unused":["PM1:✱10·11","PM1:✱14·21","PM1:✱50·14"],"strict_attempt_evidence":"reviews/Star50-catalogue-review.md","editorial_note":"For arbitrary y the identity fibre has witness y and uniqueness by equality; the printed generalization chain is indirect."}
     },
     {
       "id": "PM1:✱50·16",
@@ -97,13 +91,15 @@
       "scan_leaf": 372,
       "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
       "declaration": "PM.Architecture.Star50OpeningKernel.star_50_16",
-      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact image-of-identity theorem for arbitrary class extensions; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": ["PM.Architecture.Star50OpeningKernel.I"],
+      "normalized_dependencies": ["PM1:✱50·01"],
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱50·01"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Star50-catalogue-review.md","editorial_note":"The uncited printed theorem unfolds the identity relation, producing the explicit definition edge."}
     },
     {
       "id": "PM1:✱50·17",
@@ -113,13 +109,14 @@
       "scan_leaf": 372,
       "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
       "declaration": "PM.Architecture.Star50OpeningKernel.star_50_17",
-      "formal_scope": "typed identity/diversity relation reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact contextual unique-fibre image theorem; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed"
     }
   ],
   "ci_evidence": {

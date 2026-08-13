@@ -1,0 +1,43 @@
+{
+  "batch": "PM1-STAR62-CATALOGUE-02-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "414–415",
+    "scan_leaves": [
+      436,
+      437
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱62·23",
+      "kind": "derived-proposition",
+      "printed": "✱62·23. ⊢ . Cʻε = Cls − ιʻΛ",
+      "printed_page": 415,
+      "scan_leaf": 437,
+      "lean_path": "Principia/Architecture/Star62Kernel.lean",
+      "declaration": "PM.Architecture.Star62Kernel.star_62_23",
+      "formal_scope": "exact pointwise typed reconstruction of the converse-domain/class-of-nonempty-classes characterization; source and kernel audit complete",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star62-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

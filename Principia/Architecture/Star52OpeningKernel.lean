@@ -68,7 +68,7 @@ theorem star_52_14 :
   apply propext
   constructor
   · rintro ⟨x, equality⟩
-    exact ⟨x, True.intro, equality⟩
+    exact ⟨x, by trivial, equality⟩
   · rintro ⟨x, _, equality⟩
     exact ⟨x, equality⟩
 

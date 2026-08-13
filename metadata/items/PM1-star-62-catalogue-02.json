@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR62-CATALOGUE-02",
+  "batch": "PM1-STAR62-CATALOGUE-02-PREPARED",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -17,24 +17,6 @@
   ],
   "items": [
     {
-      "id": "PM1:✱62·23",
-      "kind": "derived-proposition",
-      "printed": "✱62·23. ⊢ . Cʻε = Cls − ιʻΛ",
-      "printed_page": 415,
-      "scan_leaf": 437,
-      "lean_path": "Principia/Architecture/Star62Kernel.lean",
-      "declaration": "PM.Architecture.Star62Kernel.star_62_23",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
-    },
-    {
       "id": "PM1:✱62·231",
       "kind": "derived-proposition",
       "printed": "✱62·231. ⊢ : Λ ∉ Cʻε .≡ . Λ ε ιʻΛ",
@@ -42,15 +24,16 @@
       "scan_leaf": 437,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_231",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "semantic target mismatch: kernel proves only exclusion of the empty class, omitting the printed equivalence with singleton membership",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-target-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "integration_blocked": true
     },
     {
       "id": "PM1:✱62·24",
@@ -60,15 +43,16 @@
       "scan_leaf": 437,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_24",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "semantic target mismatch: kernel assumes the universal class and derives converse-domain membership; it does not prove the printed range equality",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-target-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "integration_blocked": true
     },
     {
       "id": "PM1:✱62·25",
@@ -78,15 +62,16 @@
       "scan_leaf": 437,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_25",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "semantic target mismatch: kernel characterizes nonemptiness pointwise; it does not reconstruct the printed image-of-range class equality",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-target-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "integration_blocked": true
     },
     {
       "id": "PM1:✱62·26",
@@ -96,15 +81,16 @@
       "scan_leaf": 436,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_26",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "semantic target mismatch: kernel restricts an arbitrary relation by the universal class; it does not reconstruct restriction of membership by R",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-target-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "integration_blocked": true
     }
   ],
   "ci_evidence": {

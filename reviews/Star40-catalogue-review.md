@@ -28,3 +28,8 @@ printed constructs not yet in its grammar: explicit scope subscripts,
 relation-image arrows, the `‼` product operator, and the printed `♀`
 construction.  Those items carry an explicit `reviewed-gap`; their diplomatic
 source bytes are not normalized away.
+
+Catalogue-03 strict re-audit confirms ✱40·16, ·161, ·17, ·171 and ·18 as
+exact typed family-inclusion/product/sum endpoints. Their proofs are direct
+from definitions and introduce no historical theorem dependency. These five
+records were already `kernel-checked`, so no status mutation was appropriate.

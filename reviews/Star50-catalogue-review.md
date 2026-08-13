@@ -16,6 +16,15 @@ metadata records the definitions actually unfolded; printed abstraction,
 complement, and extensionality citations that elaborate definitionally are
 retained explicitly as reviewed indirect/unused steps rather than erased.
 
+The second batch (·13–·17) has also passed strict audit and is `awaiting-ci`.
+The assigned type is explicitly inhabited for ·13, matching PM's existential
+use of identity. The theorem ·14 represents the descriptive value equation by
+an explicit witness `y` plus existence and uniqueness; ·15 universally gives
+the same unique fibre. The image definition has PM's argument orientation, so
+·16 is exactly `Iʻʻα = α`. Finally ·17 assumes, for every member of `α`, both
+the self-pair and uniqueness expressed by `Rʻx = x`, and proves exactly the
+image equality. No implication is weakened and no premise is hidden.
+
 Forty-one formulas use relation abstraction/complement, converse, restriction
 (`◁/▷`), product (`∥`), or dotted relation operators beyond the current parser
 grammar.  Those items carry `reviewed-gap`; no diplomatic reading is weakened

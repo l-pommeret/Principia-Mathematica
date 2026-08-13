@@ -1,0 +1,60 @@
+{
+  "batch": "PM1-STAR81-CATALOGUE-02-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "520–521",
+    "scan_leaves": [
+      542,
+      543
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱81·2",
+      "kind": "derived-proposition",
+      "printed": "✱81·2. ⊢ : P↾κ∈Cls→1 . R,S∈PΔʻκ .⊃: DʻR=DʻS .≡. R=S",
+      "printed_page": 521,
+      "scan_leaf": 543,
+      "lean_path": "Principia/Architecture/Star81OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star81OpeningKernel.star_81_2",
+      "formal_scope": "exact typed extensional reconstruction of domain equality iff equality for selections from a many-one relation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star81OpeningKernel.star_81_1"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱81·1"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star81-catalogue-review.md",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱81·1"
+        ],
+        "printed_but_unused": [
+
+        ],
+        "strict_attempt_evidence": "reviews/Star81-catalogue-review.md",
+        "editorial_note": "The exact reverse implication is congruence of Domain; the forward implication reuses the immediately preceding uniqueness theorem ✱81·1, made explicit because the diplomatic proposition line carries no printed proof citation."
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}
