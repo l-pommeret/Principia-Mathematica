@@ -423,8 +423,9 @@ theorem star_2_38 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
     PM.Derivation.detach line2
       (PM.Derivation.detach line1
         (star_2_06 ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ((q ∨ₚ p) ⊃ₚ (p ∨ₚ r)) ((q ∨ₚ p) ⊃ₚ (r ∨ₚ p))))
-  have sum : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) := PM.Derivation.star_1_6 p q r
-  exact PM.Derivation.detach sum
+  have sumStep : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) :=
+    PM.Derivation.star_1_6 p q r
+  exact PM.Derivation.detach sumStep
     (PM.Derivation.detach line3
       (star_2_05 (q ⊃ₚ r) ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ((q ∨ₚ p) ⊃ₚ (r ∨ₚ p))))
 
@@ -535,14 +536,14 @@ namespace PM.FirstEdition.Volume1.Star2
 theorem star_2_74 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))) := by
   have perm : ⊢ₚ ((p ∨ₚ q) ⊃ₚ (q ∨ₚ p)) := PM.Derivation.star_1_4 p q
-  have sum : ⊢ₚ ((r ∨ₚ (p ∨ₚ q)) ⊃ₚ (r ∨ₚ (q ∨ₚ p))) :=
+  have sumStep : ⊢ₚ ((r ∨ₚ (p ∨ₚ q)) ⊃ₚ (r ∨ₚ (q ∨ₚ p))) :=
     PM.Derivation.detach perm (PM.Derivation.star_1_6 r (p ∨ₚ q) (q ∨ₚ p))
   have rotateIn : ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (r ∨ₚ (p ∨ₚ q))) :=
     PM.Derivation.star_1_4 (p ∨ₚ q) r
   have rotateOut : ⊢ₚ ((r ∨ₚ (q ∨ₚ p)) ⊃ₚ ((q ∨ₚ p) ∨ₚ r)) :=
     PM.Derivation.star_1_4 r (q ∨ₚ p)
   have half : ⊢ₚ ((r ∨ₚ (p ∨ₚ q)) ⊃ₚ ((q ∨ₚ p) ∨ₚ r)) :=
-    PM.Derivation.detach sum
+    PM.Derivation.detach sumStep
       (PM.Derivation.detach rotateOut
         (star_2_05 (r ∨ₚ (p ∨ₚ q)) (r ∨ₚ (q ∨ₚ p)) ((q ∨ₚ p) ∨ₚ r)))
   have swap : ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ ((q ∨ₚ p) ∨ₚ r)) :=

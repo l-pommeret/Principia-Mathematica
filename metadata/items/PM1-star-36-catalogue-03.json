@@ -1,1 +1,81 @@
-{"batch":"PM1-STAR36-CATALOGUE-03","edition":"first","volume":1,"source_range":{"printed_pages":"292","canonical_source":"Principia/FirstEdition/Volume1/Star36Source.lean"},"witnesses":["PG78050"],"items":[{"id":"PM1:✱36·24","kind":"derived-proposition","printed":"✱36·24. ⊢ : α⊂β .⊃. P⟏α⊂P⟏β","lean_path":"Principia/Architecture/Star36RestrictionKernel2.lean","declaration":"PM.Architecture.Star36RestrictionKernel2.star_36_24","formal_scope":"source-mapped kernel target; semantic audit pending","source_status":"source-catalogued","formal_status":"prepared","integration_status":"pending","lean_dependencies":[]},{"id":"PM1:✱36·241","kind":"derived-proposition","printed":"✱36·241. ⊢ : P⊂Q .⊃. P⟏α⊂Q⟏α","lean_path":"Principia/Architecture/Star36RestrictionKernel2.lean","declaration":"PM.Architecture.Star36RestrictionKernel2.star_36_241","formal_scope":"source-mapped kernel target; semantic audit pending","source_status":"source-catalogued","formal_status":"prepared","integration_status":"pending","lean_dependencies":[]},{"id":"PM1:✱36·25","kind":"derived-proposition","printed":"✱36·25. ⊢ : CʻP⊂α .≡. P⟏α=P","lean_path":"Principia/Architecture/Star36RestrictionKernel2.lean","declaration":"PM.Architecture.Star36RestrictionKernel2.star_36_25","formal_scope":"source-mapped kernel target; semantic audit pending","source_status":"source-catalogued","formal_status":"prepared","integration_status":"pending","lean_dependencies":[]},{"id":"PM1:✱36·26","kind":"derived-proposition","printed":"✱36·26. ⊢ : CʻP∩α=Λ .⊃. P;(Q⟏α)=Λ . (Q⟏α);P=Λ","lean_path":"Principia/Architecture/Star36RestrictionKernel2.lean","declaration":"PM.Architecture.Star36RestrictionKernel2.star_36_26","formal_scope":"source-mapped kernel target; semantic audit pending","source_status":"source-catalogued","formal_status":"prepared","integration_status":"pending","lean_dependencies":[]},{"id":"PM1:✱36·27","kind":"derived-proposition","printed":"P⟏Λ=Λ","lean_path":"Principia/Architecture/Star36RestrictionKernel2.lean","declaration":"PM.Architecture.Star36RestrictionKernel2.star_36_27","formal_scope":"source-mapped kernel target; semantic audit pending","source_status":"source-catalogued","formal_status":"prepared","integration_status":"pending","lean_dependencies":[]}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR36-CATALOGUE-03",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "292",
+    "canonical_source": "Principia/FirstEdition/Volume1/Star36Source.lean"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱36·24",
+      "kind": "derived-proposition",
+      "printed": "✱36·24. ⊢ : α⊂β .⊃. P⟏α⊂P⟏β",
+      "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
+      "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_24",
+      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱36·241",
+      "kind": "derived-proposition",
+      "printed": "✱36·241. ⊢ : P⊂Q .⊃. P⟏α⊂Q⟏α",
+      "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
+      "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_241",
+      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱36·25",
+      "kind": "derived-proposition",
+      "printed": "✱36·25. ⊢ : CʻP⊂α .≡. P⟏α=P",
+      "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
+      "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_25",
+      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱36·26",
+      "kind": "derived-proposition",
+      "printed": "✱36·26. ⊢ : CʻP∩α=Λ .⊃. P;(Q⟏α)=Λ . (Q⟏α);P=Λ",
+      "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
+      "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_26",
+      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM1:✱36·27",
+      "kind": "derived-proposition",
+      "printed": "P⟏Λ=Λ",
+      "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
+      "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_27",
+      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "parser_status": "reviewed-gap",
+  "parser_evidence": "reviews/Star36-parser-gaps.md"
+}

@@ -128,6 +128,9 @@ def load_items(root: Path = ROOT) -> list[dict]:
         batch = json.loads(path.read_text(encoding="utf-8"))
         for item in batch["items"]:
             record = dict(item)
+            for inherited in ("parser_status", "parser_evidence"):
+                if inherited not in record and inherited in batch:
+                    record[inherited] = batch[inherited]
             record["_metadata_path"] = str(path.relative_to(root))
             result.append(record)
     return result

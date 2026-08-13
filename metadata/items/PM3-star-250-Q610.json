@@ -1,6 +1,149 @@
-{"batch":"PM3-STAR250-Q610","edition":"first","volume":3,"source_range":{"printed_pages":"11–12","scan_leaves":[19,20],"canonical_scan":"https://archive.org/details/in.ernet.dli.2015.449496","leaf_derivatives":[{"scan_leaf":19,"printed_page":11,"uri":"https://archive.org/download/in.ernet.dli.2015.449496/page/n19_w1400.jpg","sha256":"9d9f17a9bad5c3d4eefed09a722ca531bdb8534557d6629c20be4f9667cf4862"},{"scan_leaf":20,"printed_page":12,"uri":"https://archive.org/download/in.ernet.dli.2015.449496/page/n20_w1400.jpg","sha256":"bbb3900a6365b8870e0d315d591dc59725589f448e87a81d2d44d911996d66cc"}]},"witnesses":["PM3-1913-IA-DLI-SCAN"],"source_status":"source-catalogued-PM-VERBATIM","integration_status":"source-only-no-formal-target","items":[
-{"id":"PM3:✱250·241","kind":"derived-proposition","printed":"✱250·241. ⊢ : P ∈ Ω .⊃ . P̌₁ | P² = (CʻP₁) 1 P [Proof as in ✱250·24]","printed_page":11,"scan_leaf":19,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and printed proof reference only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM3:✱250·24"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-250-p11-skeletons.txt"},
-{"id":"PM3:✱250·242","kind":"derived-proposition","printed":"✱250·242. ⊢ : P ∈ Ω .⊃ . P = P₁ ∪ P₁ | P","printed_page":11,"scan_leaf":19,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and citation-order skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM2:✱201·63","PM3:✱250·21","PM3:✱250·241"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-250-p11-skeletons.txt"},
-{"id":"PM3:✱250·243","kind":"derived-proposition","printed":"✱250·243. ⊢ : P ∈ Ω .⊃ . P ▷ (CʻP₁) = (CʻP₁) 1 (P₁ ∪ P | P₁) [Proof as in ✱250·242]","printed_page":12,"scan_leaf":20,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and printed proof reference only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM3:✱250·242"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-250-p12-skeletons.txt"},
-{"id":"PM3:✱250·3","kind":"derived-proposition","printed":"✱250·3. ⊢ :: P ∈ Bord : α ⊂ CʻP ∩ σ .⊃ₐ . seqₚʻα ⊂ σ : ⊃ₐ . CʻP ⊂ σ","printed_page":12,"scan_leaf":20,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and citation-order skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM3:✱250·101","PM2:✱205·14","PM2:✱206·4","PM3:✱250·104","PM1:✱13·195","PM1:✱10·24"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-250-p12-skeletons.txt"},
-{"id":"PM3:✱250·301","kind":"derived-proposition","printed":"✱250·301. ⊢ : P ∈ connex . ∼∃! minₚʻτ . σ = CʻP − P⃖ʻʻτ . α ⊂ σ .⊃ . seqₚʻα ⊂ σ","printed_page":12,"scan_leaf":20,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and citation-order skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM2:✱205·122","PM2:✱202·501","PM1:✱40·67","PM2:✱206·134","PM1:✱40·16","PM1:✱37·462","PM2:✱206·18"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-250-p12-skeletons.txt"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM3-STAR250-Q610",
+  "edition": "first",
+  "volume": 3,
+  "source_range": {
+    "printed_pages": "11–12",
+    "scan_leaves": [
+      19,
+      20
+    ],
+    "canonical_scan": "https://archive.org/details/in.ernet.dli.2015.449496",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 19,
+        "printed_page": 11,
+        "uri": "https://archive.org/download/in.ernet.dli.2015.449496/page/n19_w1400.jpg",
+        "sha256": "9d9f17a9bad5c3d4eefed09a722ca531bdb8534557d6629c20be4f9667cf4862"
+      },
+      {
+        "scan_leaf": 20,
+        "printed_page": 12,
+        "uri": "https://archive.org/download/in.ernet.dli.2015.449496/page/n20_w1400.jpg",
+        "sha256": "bbb3900a6365b8870e0d315d591dc59725589f448e87a81d2d44d911996d66cc"
+      }
+    ]
+  },
+  "witnesses": [
+    "PM3-1913-IA-DLI-SCAN"
+  ],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "source-only-no-formal-target",
+  "items": [
+    {
+      "id": "PM3:✱250·241",
+      "kind": "derived-proposition",
+      "printed": "✱250·241. ⊢ : P ∈ Ω .⊃ . P̌₁ | P² = (CʻP₁) 1 P [Proof as in ✱250·24]",
+      "printed_page": 11,
+      "scan_leaf": 19,
+      "lean_path": "Principia/FirstEdition/Volume3/Star250Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and printed proof reference only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM3:✱250·24"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-250-p11-skeletons.txt"
+    },
+    {
+      "id": "PM3:✱250·242",
+      "kind": "derived-proposition",
+      "printed": "✱250·242. ⊢ : P ∈ Ω .⊃ . P = P₁ ∪ P₁ | P",
+      "printed_page": 11,
+      "scan_leaf": 19,
+      "lean_path": "Principia/FirstEdition/Volume3/Star250Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and citation-order skeleton only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM2:✱201·63",
+        "PM3:✱250·21",
+        "PM3:✱250·241"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-250-p11-skeletons.txt"
+    },
+    {
+      "id": "PM3:✱250·243",
+      "kind": "derived-proposition",
+      "printed": "✱250·243. ⊢ : P ∈ Ω .⊃ . P ▷ (CʻP₁) = (CʻP₁) 1 (P₁ ∪ P | P₁) [Proof as in ✱250·242]",
+      "printed_page": 12,
+      "scan_leaf": 20,
+      "lean_path": "Principia/FirstEdition/Volume3/Star250Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and printed proof reference only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM3:✱250·242"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-250-p12-skeletons.txt"
+    },
+    {
+      "id": "PM3:✱250·3",
+      "kind": "derived-proposition",
+      "printed": "✱250·3. ⊢ :: P ∈ Bord : α ⊂ CʻP ∩ σ .⊃ₐ . seqₚʻα ⊂ σ : ⊃ₐ . CʻP ⊂ σ",
+      "printed_page": 12,
+      "scan_leaf": 20,
+      "lean_path": "Principia/FirstEdition/Volume3/Star250Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and citation-order skeleton only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM3:✱250·101",
+        "PM2:✱205·14",
+        "PM2:✱206·4",
+        "PM3:✱250·104",
+        "PM1:✱13·195",
+        "PM1:✱10·24"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-250-p12-skeletons.txt"
+    },
+    {
+      "id": "PM3:✱250·301",
+      "kind": "derived-proposition",
+      "printed": "✱250·301. ⊢ : P ∈ connex . ∼∃! minₚʻτ . σ = CʻP − P⃖ʻʻτ . α ⊂ σ .⊃ . seqₚʻα ⊂ σ",
+      "printed_page": 12,
+      "scan_leaf": 20,
+      "lean_path": "Principia/FirstEdition/Volume3/Star250Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and citation-order skeleton only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM2:✱205·122",
+        "PM2:✱202·501",
+        "PM1:✱40·67",
+        "PM2:✱206·134",
+        "PM1:✱40·16",
+        "PM1:✱37·462",
+        "PM2:✱206·18"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-250-p12-skeletons.txt"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "parser_status": "reviewed-gap",
+  "parser_evidence": "reviews/Star250-parser-gaps.md"
+}

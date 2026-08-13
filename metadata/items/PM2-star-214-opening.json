@@ -2,14 +2,87 @@
   "batch": "PM2-STAR214-OPENING",
   "edition": "first",
   "volume": 2,
-  "source_range": {"printed_pages": "571–572", "canonical_source": "Principia/FirstEdition/Volume2/Star214Source.lean"},
-  "witnesses": ["PM2-1912-LOCAL-TRANSCRIPTION", "PG78255"],
-  "items": [
-    {"id":"PM2:✱214·01","kind":"definition","printed":"Ded=P̂{(α). α∈ᗡʻmax_P∪ᗡʻseq_P} Df","lean_path":"Principia/Architecture/Star214OpeningKernel.lean","declaration":"PM.Architecture.Star214OpeningKernel.star_214_01","formal_scope":"exact extensional definition of Ded after abstracting the maximum and sequent domains","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","lean_dependencies":[]},
-    {"id":"PM2:✱214·02","kind":"definition","printed":"semi Ded=P̂(sectʻP−ιʻCʻP⊂ᗡʻmax_P∪ᗡʻseq_P) Df","lean_path":"Principia/Architecture/Star214OpeningKernel.lean","declaration":"PM.Architecture.Star214OpeningKernel.star_214_02","formal_scope":"exact pointwise definition of semi-Dedekind after abstracting section, proper-section, maximum and sequent predicates","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","lean_dependencies":[]},
-    {"id":"PM2:✱214·1","kind":"derived-proposition","printed":"⊢ : P∈Ded .≡. (α). α∈ᗡʻmax_P∪ᗡʻseq_P","lean_path":"Principia/Architecture/Star214OpeningKernel.lean","declaration":"PM.Architecture.Star214OpeningKernel.star_214_1","formal_scope":"exact definitional expansion of Ded","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","lean_dependencies":["star_214_01"]},
-    {"id":"PM2:✱214·101","kind":"derived-proposition","printed":"⊢ : P∈Ded .≡. −ᗡʻmax_P⊂ᗡʻseq_P","lean_path":"Principia/Architecture/Star214OpeningKernel.lean","declaration":"PM.Architecture.Star214OpeningKernel.star_214_101","formal_scope":"exact classical complement/inclusion characterization of Ded","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","lean_dependencies":["star_214_1"]},
-    {"id":"PM2:✱214·141","kind":"derived-proposition","printed":"⊢ : P∈semi Ded .≡. sectʻP−ιʻCʻP⊂ᗡʻmax_P∪ᗡʻseq_P","lean_path":"Principia/Architecture/Star214OpeningKernel.lean","declaration":"PM.Architecture.Star214OpeningKernel.star_214_141","formal_scope":"exact definitional expansion of semi-Dedekind","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci","lean_dependencies":["star_214_02"]}
+  "source_range": {
+    "printed_pages": "571–572",
+    "canonical_source": "Principia/FirstEdition/Volume2/Star214Source.lean"
+  },
+  "witnesses": [
+    "PM2-1912-LOCAL-TRANSCRIPTION",
+    "PG78255"
   ],
-  "ci_evidence": {"commit":"pending","run":"pending","conclusion":"pending"}
+  "items": [
+    {
+      "id": "PM2:✱214·01",
+      "kind": "definition",
+      "printed": "Ded=P̂{(α). α∈ᗡʻmax_P∪ᗡʻseq_P} Df",
+      "lean_path": "Principia/Architecture/Star214OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star214OpeningKernel.star_214_01",
+      "formal_scope": "exact extensional definition of Ded after abstracting the maximum and sequent domains",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM2:✱214·02",
+      "kind": "definition",
+      "printed": "semi Ded=P̂(sectʻP−ιʻCʻP⊂ᗡʻmax_P∪ᗡʻseq_P) Df",
+      "lean_path": "Principia/Architecture/Star214OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star214OpeningKernel.star_214_02",
+      "formal_scope": "exact pointwise definition of semi-Dedekind after abstracting section, proper-section, maximum and sequent predicates",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM2:✱214·1",
+      "kind": "derived-proposition",
+      "printed": "⊢ : P∈Ded .≡. (α). α∈ᗡʻmax_P∪ᗡʻseq_P",
+      "lean_path": "Principia/Architecture/Star214OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star214OpeningKernel.star_214_1",
+      "formal_scope": "exact definitional expansion of Ded",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [
+        "star_214_01"
+      ]
+    },
+    {
+      "id": "PM2:✱214·101",
+      "kind": "derived-proposition",
+      "printed": "⊢ : P∈Ded .≡. −ᗡʻmax_P⊂ᗡʻseq_P",
+      "lean_path": "Principia/Architecture/Star214OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star214OpeningKernel.star_214_101",
+      "formal_scope": "exact classical complement/inclusion characterization of Ded",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [
+        "star_214_1"
+      ]
+    },
+    {
+      "id": "PM2:✱214·141",
+      "kind": "derived-proposition",
+      "printed": "⊢ : P∈semi Ded .≡. sectʻP−ιʻCʻP⊂ᗡʻmax_P∪ᗡʻseq_P",
+      "lean_path": "Principia/Architecture/Star214OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star214OpeningKernel.star_214_141",
+      "formal_scope": "exact definitional expansion of semi-Dedekind",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [
+        "star_214_02"
+      ]
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "parser_status": "reviewed-gap",
+  "parser_evidence": "reviews/Star214-parser-gaps.md"
 }

@@ -277,8 +277,9 @@ theorem star_2_38 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
     PM.Derivation.detach line2
       (PM.Derivation.detach line1
         (star_2_06 ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ((q ∨ₚ p) ⊃ₚ (p ∨ₚ r)) ((q ∨ₚ p) ⊃ₚ (r ∨ₚ p))))
-  have sum : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) := PM.Derivation.star_1_6 p q r
-  exact PM.Derivation.detach sum
+  have sumStep : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))) :=
+    PM.Derivation.star_1_6 p q r
+  exact PM.Derivation.detach sumStep
     (PM.Derivation.detach line3
       (star_2_05 (q ⊃ₚ r) ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r)) ((q ∨ₚ p) ⊃ₚ (r ∨ₚ p))))
 

@@ -1,6 +1,144 @@
-{"batch":"PM3-STAR250-Q606","edition":"first","volume":3,"source_range":{"printed_pages":"9","scan_leaves":[17],"canonical_scan":"https://archive.org/details/in.ernet.dli.2015.449496","leaf_derivatives":[{"scan_leaf":17,"printed_page":9,"uri":"https://archive.org/download/in.ernet.dli.2015.449496/page/n17_w1400.jpg","sha256":"e33b6cd965f3e29d62acb5a6ba29db4923f0dc9fbebda57b0d52d8e7a1f84190"}]},"witnesses":["PM3-1913-IA-DLI-SCAN"],"source_status":"source-catalogued-PM-VERBATIM","integration_status":"source-only-no-formal-target","items":[
-{"id":"PM3:✱250·126","kind":"derived-proposition","printed":"✱250·126. ⊢ : P ∈ Ω . E! maxₚʻα .∼ E! seqₚʻα .⊃ . B̌ʻP ∈ α . B̌ʻP = maxₚʻα","printed_page":9,"scan_leaf":17,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and citation-order skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM3:✱250·123","Transp","PM2:✱205·65","PM1:✱33·4","PM1:✱93·103","PM2:✱202·52"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-250-p9-skeletons.txt"},
-{"id":"PM3:✱250·13","kind":"derived-proposition","printed":"✱250·13. ⊢ : P ∈ Ω − ιʻΛ .⊃ . E! B̌ʻP","printed_page":9,"scan_leaf":17,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and citation-order skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM1:✱33·24","PM3:✱250·121","PM2:✱205·12"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-250-p9-skeletons.txt"},
-{"id":"PM3:✱250·131","kind":"derived-proposition","printed":"✱250·131. ⊢ :: P ∈ Ω .⊃ : ∃! P .≡ . E! B̌ʻP","printed_page":9,"scan_leaf":17,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and citation-order skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM1:✱93·102","PM1:✱33·24","PM3:✱250·13"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-250-p9-skeletons.txt"},
-{"id":"PM3:✱250·14","kind":"derived-proposition","printed":"✱250·14. ⊢ : P ∈ Bord .⊃ . RlʻP ⊂ Bord","printed_page":9,"scan_leaf":17,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and citation-order skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM3:✱250·1","PM2:✱205·26","PM1:✱60·42","PM1:✱3·64","PM1:✱22·44","PM3:✱250·1"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-250-p9-skeletons.txt"},
-{"id":"PM3:✱250·141","kind":"derived-proposition","printed":"✱250·141. ⊢ : P ∈ Ω .⊃ . P ▷ α ∈ Ω [✱250·14 . ✱204·4]","printed_page":9,"scan_leaf":17,"lean_path":"Principia/FirstEdition/Volume3/Star250Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and printed citation only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM3:✱250·14","PM2:✱204·4"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-250-p9-skeletons.txt"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM3-STAR250-Q606",
+  "edition": "first",
+  "volume": 3,
+  "source_range": {
+    "printed_pages": "9",
+    "scan_leaves": [
+      17
+    ],
+    "canonical_scan": "https://archive.org/details/in.ernet.dli.2015.449496",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 17,
+        "printed_page": 9,
+        "uri": "https://archive.org/download/in.ernet.dli.2015.449496/page/n17_w1400.jpg",
+        "sha256": "e33b6cd965f3e29d62acb5a6ba29db4923f0dc9fbebda57b0d52d8e7a1f84190"
+      }
+    ]
+  },
+  "witnesses": [
+    "PM3-1913-IA-DLI-SCAN"
+  ],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "source-only-no-formal-target",
+  "items": [
+    {
+      "id": "PM3:✱250·126",
+      "kind": "derived-proposition",
+      "printed": "✱250·126. ⊢ : P ∈ Ω . E! maxₚʻα .∼ E! seqₚʻα .⊃ . B̌ʻP ∈ α . B̌ʻP = maxₚʻα",
+      "printed_page": 9,
+      "scan_leaf": 17,
+      "lean_path": "Principia/FirstEdition/Volume3/Star250Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and citation-order skeleton only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM3:✱250·123",
+        "Transp",
+        "PM2:✱205·65",
+        "PM1:✱33·4",
+        "PM1:✱93·103",
+        "PM2:✱202·52"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-250-p9-skeletons.txt"
+    },
+    {
+      "id": "PM3:✱250·13",
+      "kind": "derived-proposition",
+      "printed": "✱250·13. ⊢ : P ∈ Ω − ιʻΛ .⊃ . E! B̌ʻP",
+      "printed_page": 9,
+      "scan_leaf": 17,
+      "lean_path": "Principia/FirstEdition/Volume3/Star250Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and citation-order skeleton only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM1:✱33·24",
+        "PM3:✱250·121",
+        "PM2:✱205·12"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-250-p9-skeletons.txt"
+    },
+    {
+      "id": "PM3:✱250·131",
+      "kind": "derived-proposition",
+      "printed": "✱250·131. ⊢ :: P ∈ Ω .⊃ : ∃! P .≡ . E! B̌ʻP",
+      "printed_page": 9,
+      "scan_leaf": 17,
+      "lean_path": "Principia/FirstEdition/Volume3/Star250Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and citation-order skeleton only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM1:✱93·102",
+        "PM1:✱33·24",
+        "PM3:✱250·13"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-250-p9-skeletons.txt"
+    },
+    {
+      "id": "PM3:✱250·14",
+      "kind": "derived-proposition",
+      "printed": "✱250·14. ⊢ : P ∈ Bord .⊃ . RlʻP ⊂ Bord",
+      "printed_page": 9,
+      "scan_leaf": 17,
+      "lean_path": "Principia/FirstEdition/Volume3/Star250Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and citation-order skeleton only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM3:✱250·1",
+        "PM2:✱205·26",
+        "PM1:✱60·42",
+        "PM1:✱3·64",
+        "PM1:✱22·44",
+        "PM3:✱250·1"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-250-p9-skeletons.txt"
+    },
+    {
+      "id": "PM3:✱250·141",
+      "kind": "derived-proposition",
+      "printed": "✱250·141. ⊢ : P ∈ Ω .⊃ . P ▷ α ∈ Ω [✱250·14 . ✱204·4]",
+      "printed_page": 9,
+      "scan_leaf": 17,
+      "lean_path": "Principia/FirstEdition/Volume3/Star250Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and printed citation only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM3:✱250·14",
+        "PM2:✱204·4"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-250-p9-skeletons.txt"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "parser_status": "reviewed-gap",
+  "parser_evidence": "reviews/Star250-parser-gaps.md"
+}
