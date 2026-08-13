@@ -4,6 +4,15 @@ The fifty-two items are checked against Project Gutenberg 78050 on printed
 pages 357–362 (scan leaves 379–384) and resolve uniquely to existing numbered
 Lean declarations.  They remain `prepared` pending semantic promotion.
 
+## Opening semantic audit
+
+The five opening items ✱51·01, ·1, ·11, ·12, and ·13 were checked
+individually against their typed Lean declarations. The relation `ι`, its
+descriptive value, and the displayed singleton abstraction agree extensionally.
+The former ·12 declaration incorrectly read PM's `E!ιʻx` as inhabitation of the
+unit class; it now asserts existence of the class-valued descriptive-function
+value itself. All five statements are exact and are promoted to `awaiting-ci`.
+
 The Gutenberg heading `*51.161` uses a full stop where the numbered series and
 printed scan require the ordinary middle dot; the canonical ID is therefore
 ✱51·161 while the formula itself is unchanged.

@@ -37,83 +37,43 @@
       ],
       "lean_dependencies": [
         "PM.Derivation.detach",
-        "PM.FirstEdition.Volume1.Star1.star_1_2",
-        "PM.FirstEdition.Volume1.Star1.star_1_4",
-        "PM.FirstEdition.Volume1.Star2.star_2_06",
-        "PM.FirstEdition.Volume1.Star2.star_2_07",
-        "PM.FirstEdition.Volume1.Star2.star_2_31",
-        "PM.FirstEdition.Volume1.Star2.star_2_32",
-        "PM.FirstEdition.Volume1.Star2.star_2_38",
         "PM.FirstEdition.Volume1.Star3.star_3_2",
-        "PM.FirstEdition.Volume1.Star3.star_3_22",
         "PM.FirstEdition.Volume1.Star3.star_3_26",
-        "PM.FirstEdition.Volume1.Star3.star_3_27",
-        "PM.FirstEdition.Volume1.Star3.star_3_33",
-        "PM.FirstEdition.Volume1.Star3.star_3_43",
-        "PM.FirstEdition.Volume1.Star3.star_3_47",
-        "PM.FirstEdition.Volume1.Star3.star_3_48",
         "PM.FirstEdition.Volume1.Star4.star_4_2",
         "PM.FirstEdition.Volume1.Star4.star_4_21",
         "PM.FirstEdition.Volume1.Star4.star_4_22",
         "PM.FirstEdition.Volume1.Star4.star_4_25",
         "PM.FirstEdition.Volume1.Star4.star_4_31",
         "PM.FirstEdition.Volume1.Star4.star_4_33",
-        "PM.FirstEdition.Volume1.Star4.star_4_37",
-        "PM.FirstEdition.Volume1.Star4.star_4_39"
+        "PM.FirstEdition.Volume1.Star4.star_4_37"
       ],
+      "dependency_justifications": [{
+        "kind": "metalinguistic-rule-selection",
+        "lean_dependency": "PM.Derivation.detach",
+        "pm_dependency": "PM1:✱1·11",
+        "evidence": "reviews/Q240-star4-78-79-kernel-gate.md"
+      }],
       "normalized_dependencies": [
-        "PM1:✱1·1",
         "PM1:✱1·11",
-        "PM1:✱1·2",
-        "PM1:✱1·4",
-        "PM1:✱2·06",
-        "PM1:✱2·07",
-        "PM1:✱2·31",
-        "PM1:✱2·32",
-        "PM1:✱2·38",
         "PM1:✱3·2",
-        "PM1:✱3·22",
         "PM1:✱3·26",
-        "PM1:✱3·27",
-        "PM1:✱3·33",
-        "PM1:✱3·43",
-        "PM1:✱3·47",
-        "PM1:✱3·48",
         "PM1:✱4·2",
         "PM1:✱4·21",
         "PM1:✱4·22",
         "PM1:✱4·25",
         "PM1:✱4·31",
         "PM1:✱4·33",
-        "PM1:✱4·37",
-        "PM1:✱4·39"
+        "PM1:✱4·37"
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
-          "PM1:✱1·1",
           "PM1:✱1·11",
-          "PM1:✱1·2",
-          "PM1:✱1·4",
-          "PM1:✱2·06",
-          "PM1:✱2·07",
-          "PM1:✱2·31",
-          "PM1:✱2·32",
-          "PM1:✱2·38",
           "PM1:✱3·2",
-          "PM1:✱3·22",
           "PM1:✱3·26",
-          "PM1:✱3·27",
-          "PM1:✱3·33",
-          "PM1:✱3·43",
-          "PM1:✱3·47",
-          "PM1:✱3·48",
-          "PM1:✱4·21",
-          "PM1:✱4·39"
+          "PM1:✱4·21"
         ],
-        "printed_but_unused": [
-          "PM1:✱1·01"
-        ],
+        "printed_but_unused": ["PM1:✱1·01"],
         "strict_attempt_evidence": "reviews/Q240-star4-78-79-kernel-gate.md",
         "editorial_note": "Definitions unfold judgmentally; explicit detachment, equivalence packaging, congruence and transitivity expose the kernel closure of the complete printed chain."
       }
@@ -143,32 +103,24 @@
         "PM.Derivation.detach",
         "PM.FirstEdition.Volume1.Star2.star_2_15",
         "PM.FirstEdition.Volume1.Star3.star_3_2",
-        "PM.FirstEdition.Volume1.Star3.star_3_26",
-        "PM.FirstEdition.Volume1.Star3.star_3_27",
-        "PM.FirstEdition.Volume1.Star3.star_3_43",
-        "PM.FirstEdition.Volume1.Star3.star_3_47",
-        "PM.FirstEdition.Volume1.Star3.star_3_48",
         "PM.FirstEdition.Volume1.Star4.star_4_1",
         "PM.FirstEdition.Volume1.Star4.star_4_2",
-        "PM.FirstEdition.Volume1.Star4.star_4_21",
         "PM.FirstEdition.Volume1.Star4.star_4_22",
         "PM.FirstEdition.Volume1.Star4.star_4_39",
         "PM.FirstEdition.Volume1.Star4.star_4_78"
       ],
+      "dependency_justifications": [{
+        "kind": "metalinguistic-rule-selection",
+        "lean_dependency": "PM.Derivation.detach",
+        "pm_dependency": "PM1:✱1·11",
+        "evidence": "reviews/Q240-star4-78-79-kernel-gate.md"
+      }],
       "normalized_dependencies": [
-        "PM1:✱1·1",
-        "PM1:✱1·11",
         "PM1:✱2·15",
         "PM1:✱3·2",
-        "PM1:✱3·01",
-        "PM1:✱3·26",
-        "PM1:✱3·27",
-        "PM1:✱3·43",
-        "PM1:✱3·47",
-        "PM1:✱3·48",
+        "PM1:✱1·11",
         "PM1:✱4·1",
         "PM1:✱4·2",
-        "PM1:✱4·21",
         "PM1:✱4·22",
         "PM1:✱4·39",
         "PM1:✱4·78"
@@ -176,20 +128,10 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
-          "PM1:✱1·1",
           "PM1:✱1·11",
-          "PM1:✱3·2",
-          "PM1:✱3·26",
-          "PM1:✱3·27",
-          "PM1:✱3·43",
-          "PM1:✱3·47",
-          "PM1:✱3·48",
-          "PM1:✱4·21",
-          "PM1:✱4·22"
+          "PM1:✱3·2"
         ],
-        "printed_but_unused": [
-          "PM1:✱3·01"
-        ],
+        "printed_but_unused": ["PM1:✱3·01"],
         "strict_attempt_evidence": "reviews/Q240-star4-78-79-kernel-gate.md",
         "editorial_note": "The citation ✱4·1·39 is preserved as two references; explicit packaging and transitivity expose the kernel closure."
       }

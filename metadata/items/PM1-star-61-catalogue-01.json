@@ -100,10 +100,17 @@
       "printed_dependencies": [
         "PM1:✱61·01"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star61Kernel.star_61_01"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱61·01"
+        ],
+        "strict_attempt_evidence": "reviews/Star61-catalogue-review.md",
+        "editorial_note": "The Lean proposition unfolds Rl definitionally, so its Iff.rfl proof has no theorem call; the printed definition citation is retained as historical evidence but creates no extracted Lean edge."
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star61-catalogue-review.md"
     }

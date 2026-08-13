@@ -47,12 +47,28 @@
       "formal_status": "kernel-checked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.star_60_3",
+        "PM.Architecture.Star60Kernel.star_60_32"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·3",
+        "PM1:✱60·32"
+      ],
       "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
       "declaration": "PM.Architecture.Star60MissingKernel.star_60_321",
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
-      "integration_status": "canonical-kernel-integrated"
+      "integration_status": "canonical-kernel-integrated",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱60·3",
+          "PM1:✱60·32"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star60-exact-a.md",
+        "editorial_note": "The typed constructive proof exposes the empty-subclass and empty-characterization lemmas used by the exact equivalence."
+      }
     },
     {
       "id": "PM1:✱60·33",
@@ -62,9 +78,15 @@
       "scan_leaf": 430,
       "formal_status": "kernel-checked",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱60·02"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.ClEx"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·02"
+      ],
       "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
       "declaration": "PM.Architecture.Star60MissingKernel.star_60_33",
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
@@ -78,9 +100,18 @@
       "scan_leaf": 430,
       "formal_status": "kernel-checked",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱60·02",
+        "PM1:✱60·35"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.ClEx",
+        "PM.Architecture.Star60Kernel.star_60_35"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·02",
+        "PM1:✱60·35"
+      ],
       "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
       "declaration": "PM.Architecture.Star60MissingKernel.star_60_36",
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
@@ -94,9 +125,18 @@
       "scan_leaf": 430,
       "formal_status": "kernel-checked",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱60·02",
+        "PM1:✱60·36"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.ClEx",
+        "PM.Architecture.Star60MissingKernel.star_60_36"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·02",
+        "PM1:✱60·36"
+      ],
       "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
       "declaration": "PM.Architecture.Star60MissingKernel.star_60_361",
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",

@@ -1,0 +1,43 @@
+{
+  "batch": "PM1-STAR81-CATALOGUE-01-AWAITING",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "519–520",
+    "scan_leaves": [
+      541,
+      542
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱81·13",
+      "kind": "derived-proposition",
+      "printed": "✱81·13. ⊢ : P↾κ ∈ Cls→1 . R ∈ PΔʻκ .⊃ : xRy .≡. x∈DʻR . xPy . y∈κ",
+      "printed_page": 520,
+      "scan_leaf": 542,
+      "lean_path": "Principia/Architecture/Star81OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star81OpeningKernel.star_81_13",
+      "formal_scope": "exact pointwise expansion of a selection relation: domain membership, ambient relation, and membership in κ",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star81-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

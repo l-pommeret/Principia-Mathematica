@@ -23,9 +23,9 @@ theorem star_51_1 (A : Class α) (x : α) :
 theorem star_51_11 (x : α) : singleton x = (fun y => y = x) := by
   rfl
 
-/-- ✱51·12: every unit class exists, i.e. has a member. -/
-theorem star_51_12 (x : α) : ClassExists (singleton x) := by
-  exact ⟨x, rfl⟩
+/-- ✱51·12: the unit-class descriptive-function value exists. -/
+theorem star_51_12 (x : α) : ∃ A : Class α, A = singleton x := by
+  exact ⟨singleton x, rfl⟩
 
 /-- ✱51·13: equality to `ιʻx` has the displayed abstraction reading. -/
 theorem star_51_13 (A : Class α) (x : α) :

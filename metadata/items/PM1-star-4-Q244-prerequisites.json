@@ -50,6 +50,7 @@
       ],
       "normalized_dependencies": [
         "PM1:✱1·1",
+        "PM1:✱1·1",
         "PM1:✱1·11",
         "PM1:✱1·6",
         "PM1:✱2·05",
@@ -98,15 +99,22 @@
       "lean_dependencies": [
         "PM.Derivation.detach",
         "PM.FirstEdition.Volume1.Star3.star_3_2",
+        "PM.FirstEdition.Volume1.Star3.star_3_26",
         "PM.FirstEdition.Volume1.Star4.star_4_2",
         "PM.FirstEdition.Volume1.Star4.star_4_11",
         "PM.FirstEdition.Volume1.Star4.star_4_13",
         "PM.FirstEdition.Volume1.Star4.star_4_39"
       ],
+      "dependency_justifications": [{
+        "kind": "metalinguistic-rule-selection",
+        "lean_dependency": "PM.Derivation.detach",
+        "pm_dependency": "PM1:✱1·11",
+        "evidence": "reviews/Q244-star4-prerequisites-kernel-gate.md"
+      }],
       "normalized_dependencies": [
-        "PM1:✱1·1",
         "PM1:✱1·11",
         "PM1:✱3·2",
+        "PM1:✱3·26",
         "PM1:✱4·2",
         "PM1:✱4·11",
         "PM1:✱4·13",
@@ -115,16 +123,16 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
-          "PM1:✱1·1",
           "PM1:✱1·11",
           "PM1:✱3·2",
-          "PM1:✱4·2",
+          "PM1:✱3·26",
           "PM1:✱4·13",
+          "PM1:✱4·2",
           "PM1:✱4·39"
         ],
         "printed_but_unused": [
-          "PM1:✱4·6",
-          "PM1:✱4·52"
+        "PM1:✱4·52",
+        "PM1:✱4·6"
         ],
         "strict_attempt_evidence": "reviews/Q244-star4-prerequisites-kernel-gate.md",
         "editorial_note": "Double negation, disjunction congruence and transposition expose the kernel closure."

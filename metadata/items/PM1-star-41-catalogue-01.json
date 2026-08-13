@@ -23,7 +23,7 @@
       "printed_page": 331,
       "scan_leaf": 353,
       "lean_path": "Principia/Architecture/Star41InitialKernel.lean",
-      "declaration": "PM.Architecture.Star41InitialKernel.product",
+      "declaration": "PM.Architecture.Star41InitialKernel.star_41_01",
       "formal_scope": "exact typed relation-class reconstruction; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
@@ -43,7 +43,7 @@
       "printed_page": 331,
       "scan_leaf": 353,
       "lean_path": "Principia/Architecture/Star41InitialKernel.lean",
-      "declaration": "PM.Architecture.Star41InitialKernel.sum",
+      "declaration": "PM.Architecture.Star41InitialKernel.star_41_02",
       "formal_scope": "exact typed relation-class reconstruction; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
@@ -70,24 +70,11 @@
       "integration_blocked": false,
       "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star41InitialKernel.product"
-      ],
-      "normalized_dependencies": [
-        "PM1:✱41·01"
-      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star41-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-passed",
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [
-          "PM1:✱41·01"
-        ],
-        "printed_but_unused": [],
-        "strict_attempt_evidence": "reviews/Star41-catalogue-review.md",
-        "editorial_note": "The exact typed certificate unfolds the canonical product/sum definition directly; printed derived citations are discharged by that definitional reduction."
-      }
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱41·11",
@@ -103,24 +90,11 @@
       "integration_blocked": false,
       "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star41InitialKernel.sum"
-      ],
-      "normalized_dependencies": [
-        "PM1:✱41·02"
-      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star41-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-passed",
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [
-          "PM1:✱41·02"
-        ],
-        "printed_but_unused": [],
-        "strict_attempt_evidence": "reviews/Star41-catalogue-review.md",
-        "editorial_note": "The exact typed certificate unfolds the canonical product/sum definition directly; printed derived citations are discharged by that definitional reduction."
-      }
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱41·12",
@@ -136,24 +110,11 @@
       "integration_blocked": false,
       "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star41InitialKernel.product"
-      ],
-      "normalized_dependencies": [
-        "PM1:✱41·01"
-      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star41-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-passed",
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [
-          "PM1:✱41·01"
-        ],
-        "printed_but_unused": [],
-        "strict_attempt_evidence": "reviews/Star41-catalogue-review.md",
-        "editorial_note": "The exact typed certificate unfolds the canonical product/sum definition directly; printed derived citations are discharged by that definitional reduction."
-      }
+      "semantic_audit_status": "strict-equivalence-passed"
     }
   ],
   "ci_evidence": {

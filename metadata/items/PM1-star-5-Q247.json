@@ -33,14 +33,14 @@
         "PM1:✱4·76",
         "PM1:✱3·3",
         "PM1:✱3·31",
-        "PM1:✱5·3"
+        "PM1:✱5·3",
+        "PM1:✱1·11"
       ],
       "lean_dependencies": [
         "PM.Derivation.detach",
-        "PM.FirstEdition.Volume1.Star3.star_3_2",
-        "PM.FirstEdition.Volume1.Star3.star_3_3",
         "PM.FirstEdition.Volume1.Star3.star_3_26",
         "PM.FirstEdition.Volume1.Star3.star_3_27",
+        "PM.FirstEdition.Volume1.Star3.star_3_3",
         "PM.FirstEdition.Volume1.Star3.star_3_31",
         "PM.FirstEdition.Volume1.Star3.star_3_43",
         "PM.FirstEdition.Volume1.Star4.star_4_73",
@@ -49,12 +49,10 @@
         "PM.FirstEdition.Volume1.Star5.star_5_3"
       ],
       "normalized_dependencies": [
-        "PM1:✱1·1",
         "PM1:✱1·11",
-        "PM1:✱3·2",
-        "PM1:✱3·3",
         "PM1:✱3·26",
         "PM1:✱3·27",
+        "PM1:✱3·3",
         "PM1:✱3·31",
         "PM1:✱3·43",
         "PM1:✱4·73",
@@ -65,9 +63,6 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
-          "PM1:✱1·1",
-          "PM1:✱1·11",
-          "PM1:✱3·2",
           "PM1:✱3·26",
           "PM1:✱3·27",
           "PM1:✱3·43",
@@ -77,7 +72,15 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Q247-kernel-gate.md",
         "editorial_note": "Structural PM steps are exposed explicitly around the printed chain."
-      }
+      },
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·11",
+          "evidence": "PM detachment is recorded as ✱1·11 for the real-variable context; the shared Lean detach implementation realizes that printed rule."
+        }
+      ]
     },
     {
       "id": "PM1:✱5·33",
@@ -94,14 +97,14 @@
       "printed_dependencies": [
         "PM1:✱4·73",
         "PM1:✱4·84",
-        "PM1:✱5·32"
+        "PM1:✱5·32",
+        "PM1:✱1·11"
       ],
       "lean_dependencies": [
         "PM.Derivation.detach",
-        "PM.FirstEdition.Volume1.Star3.star_3_2",
-        "PM.FirstEdition.Volume1.Star3.star_3_3",
         "PM.FirstEdition.Volume1.Star3.star_3_26",
         "PM.FirstEdition.Volume1.Star3.star_3_27",
+        "PM.FirstEdition.Volume1.Star3.star_3_3",
         "PM.FirstEdition.Volume1.Star3.star_3_31",
         "PM.FirstEdition.Volume1.Star3.star_3_43",
         "PM.FirstEdition.Volume1.Star4.star_4_73",
@@ -109,12 +112,10 @@
         "PM.FirstEdition.Volume1.Star5.star_5_32"
       ],
       "normalized_dependencies": [
-        "PM1:✱1·1",
         "PM1:✱1·11",
-        "PM1:✱3·2",
-        "PM1:✱3·3",
         "PM1:✱3·26",
         "PM1:✱3·27",
+        "PM1:✱3·3",
         "PM1:✱3·31",
         "PM1:✱3·43",
         "PM1:✱4·73",
@@ -124,19 +125,24 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
-          "PM1:✱1·1",
-          "PM1:✱1·11",
-          "PM1:✱3·2",
-          "PM1:✱3·3",
           "PM1:✱3·26",
           "PM1:✱3·27",
+          "PM1:✱3·3",
           "PM1:✱3·31",
           "PM1:✱3·43"
         ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Q247-kernel-gate.md",
         "editorial_note": "Structural PM steps are exposed explicitly around the exact scope reading."
-      }
+      },
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·11",
+          "evidence": "PM detachment is recorded as ✱1·11 for the real-variable context; the shared Lean detach implementation realizes that printed rule."
+        }
+      ]
     }
   ],
   "ci_evidence": {

@@ -4,6 +4,15 @@ namespace PM.Architecture.Star63TypeKernel2
 
 abbrev Class (U : Type u) := U → Prop
 
+/- Architectural catalogue labels for source loci whose generic models below
+   failed strict semantic audit.  Keeping these names separate prevents the
+   rejected reconstruction theorems from entering the PM dependency graph. -/
+def catalogueLabel_63_01 : String := "PM1:✱63·01"
+def catalogueLabel_63_011 : String := "PM1:✱63·011"
+def catalogueLabel_63_02 : String := "PM1:✱63·02"
+def catalogueLabel_63_03 : String := "PM1:✱63·03"
+def catalogueLabel_63_04 : String := "PM1:✱63·04"
+
 /-- ✱63·01: relative type of an individual. -/
 def t (same : U → U → Prop) (x : U) : Class U := fun y => same y x
 /-- ✱63·011. -/

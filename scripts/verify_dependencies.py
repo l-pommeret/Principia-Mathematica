@@ -49,6 +49,10 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "Bool.or_eq_true",
     "Iff.rfl",
     "PM.Elementary",
+    # Extensional empty-class constant used as carrier infrastructure by the
+    # typed ✱60 reconstruction; it is not a historical theorem dependency.
+    "PM.Architecture.Star60Kernel.Empty",
+    "PM.Architecture.Star60Kernel.Singleton",
     "PM.Formation.ofElementary",
     "Elementary.schemaInstance",
     "NormalizesScoped.disjCongr",
@@ -418,16 +422,25 @@ def extract_lean_dependencies(item: dict, declarations: dict[str, str], root: Pa
                 declaration_body(root / path, declaration)
             )
     aliases = json.loads((root / "metadata/dependency_aliases.json").read_text(encoding="utf-8"))
-    candidates = set(declarations) | set(aliases["lean_realizations"]) | KNOWN_BRIDGES
+    realizations = aliases["lean_realizations"]
+    candidates = set(declarations) | set(realizations) | KNOWN_BRIDGES
     reject_unindexed_references(
         item, body,
         candidates | KNOWN_SYNTAX_INFRASTRUCTURE |
         set(TRANSPARENT_DEPENDENCY_WRAPPERS),
     )
     # Longest first avoids treating one fully qualified name as a prefix.
+    # A realization alias denotes the exact spelling registered in metadata.
+    # Do not also match its final component: doing so makes a scoped alias such
+    # as `Star22Q341Definitions.Complement` spuriously fire on every unqualified
+    # `Complement`, and multiple aliases for one node become duplicate edges.
     found = {
         name for name in candidates
-        if name != item["declaration"] and _occurs(body, name)
+        if name != item["declaration"] and
+        (((re.search(rf"(?<![A-Za-z0-9_']){re.escape(name)}(?![A-Za-z0-9_'])", body)
+           is not None) or
+          (name in item.get("lean_dependencies", []) and _occurs(body, name)))
+         if name in realizations else _occurs(body, name))
     }
     # Resolve shortened qualified projections/constructors only when their
     # final component identifies a unique reviewed candidate. Fully qualified
@@ -448,7 +461,19 @@ def extract_lean_dependencies(item: dict, declarations: dict[str, str], root: Pa
         matches = [name for name in candidates if name.rsplit(".", 1)[-1] == short]
         if len(matches) == 1 and matches[0] != item["declaration"]:
             found.add(matches[0])
-    return sorted(found)
+    # Alias tables may deliberately contain both a namespace-relative spelling
+    # and its fully qualified spelling for the same reviewed realization.  A
+    # single occurrence must yield one graph edge, preferring the exact,
+    # longest spelling that occurs in the declaration body.
+    realizations = aliases["lean_realizations"]
+    canonical: dict[tuple[str, str], str] = {}
+    for name in found:
+        resolution = declarations.get(name, realizations.get(name, name))
+        key = (name.rsplit(".", 1)[-1], resolution)
+        current = canonical.get(key)
+        if current is None or (name in body, len(name)) > (current in body, len(current)):
+            canonical[key] = name
+    return sorted(canonical.values())
 
 
 def normalize(item: dict, lean_dependencies: list[str], declaration_to_id: dict[str, str], root: Path = ROOT) -> list[str]:
@@ -458,7 +483,12 @@ def normalize(item: dict, lean_dependencies: list[str], declaration_to_id: dict[
     for name in lean_dependencies:
         if name == "PM.Derivation.detach":
             choices = set(aliases["bridges"][name]["resolves_to"])
-            selected = [dep for dep in item.get("printed_dependencies", []) if dep in choices]
+            justified = [bridge.get("pm_dependency")
+                for bridge in item.get("dependency_justifications", [])
+                if bridge.get("kind") == "metalinguistic-rule-selection"
+                and bridge.get("lean_dependency") == name
+                and bridge.get("pm_dependency") in choices]
+            selected = justified or [dep for dep in item.get("printed_dependencies", []) if dep in choices]
             if len(selected) != 1:
                 raise DependencyError(f"{item['id']}: detach must resolve to exactly one printed primitive rule")
             normalized.extend(selected)

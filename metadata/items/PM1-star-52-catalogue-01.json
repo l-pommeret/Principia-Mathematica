@@ -23,10 +23,10 @@
       "scan_leaf": 386,
       "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_01",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed definition of the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -39,19 +39,23 @@
       "scan_leaf": 386,
       "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_1",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed membership reduction for the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "✱20·3",
         "✱52·01"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱20·3",
-        "PM1:✱52·01"
-      ]
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["✱20·3", "✱52·01"],
+        "strict_attempt_evidence": "reviews/Star52-opening-review.md",
+        "editorial_note": "The exact membership equivalence unfolds the typed definition directly; PM's printed propositional-function and definition citations remain historical evidence."
+      }
     },
     {
       "id": "PM1:✱52·11",
@@ -61,19 +65,23 @@
       "scan_leaf": 386,
       "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_11",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed extensional characterization of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "✱52·1",
         "✱51·14"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱52·1",
-        "PM1:✱51·14"
-      ]
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["✱51·14", "✱52·1"],
+        "strict_attempt_evidence": "reviews/Star52-opening-review.md",
+        "editorial_note": "The exact extensional equivalence is proved directly in the typed embedding; PM's printed singleton and class-extensionality route remains historical evidence."
+      }
     },
     {
       "id": "PM1:✱52·12",
@@ -83,10 +91,10 @@
       "scan_leaf": 386,
       "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_12",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed equivalence between singleton extension and unique description existence",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -99,10 +107,10 @@
       "scan_leaf": 386,
       "lean_path": "Principia/Architecture/Star52OpeningKernel.lean",
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_13",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed identity of unit classes with the domain of the singleton relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []

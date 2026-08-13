@@ -28,9 +28,15 @@
       "scan_leaf": 428,
       "formal_status": "kernel-checked",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱60·3"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.star_60_3"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·3"
+      ],
       "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
       "declaration": "PM.Architecture.Star60MissingKernel.star_60_362",
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
@@ -44,9 +50,15 @@
       "scan_leaf": 428,
       "formal_status": "kernel-checked",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱60·362"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star60MissingKernel.star_60_362"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·362"
+      ],
       "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
       "declaration": "PM.Architecture.Star60MissingKernel.star_60_371",
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
@@ -60,13 +72,32 @@
       "scan_leaf": 430,
       "formal_status": "kernel-checked",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱60·02",
+        "PM1:✱60·37",
+        "PM1:✱60·57"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.ClEx",
+        "PM.Architecture.Star60Kernel.star_60_37"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·02",
+        "PM1:✱60·37"
+      ],
       "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
       "declaration": "PM.Architecture.Star60MissingKernel.star_60_38",
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
-      "integration_status": "canonical-kernel-integrated"
+      "integration_status": "canonical-kernel-integrated",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱60·57"
+        ],
+        "strict_attempt_evidence": "reviews/Star60-exact-b.md",
+        "editorial_note": "The typed proof expands the elementary singleton-subclass witness directly, eliminating the later packaged lemma while preserving its printed citation."
+      }
     },
     {
       "id": "PM1:✱60·39",

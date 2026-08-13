@@ -33,6 +33,16 @@ def t1one (x : α) := t x
 def tone0 (x : α) := t x
 def tone1 (x : α) := t x
 
+-- Architecture-only catalogue labels.  These deliberately do not use the
+-- historical `t00`/`t11`/... names as dependency indices: the one-carrier
+-- model below is not a faithful realization of PM's distinct relative types.
+def architectureOnly_64_01 (x : α) := t00 x
+def architectureOnly_64_011 (x : α) := t11 x
+def architectureOnly_64_012 (x : α) := t12 x
+def architectureOnly_64_013 (x : α) := t21 x
+def architectureOnly_64_014 (x : α) := t22 x
+def architectureOnly_64_022 (x : α) := t11 x
+
 theorem star_64_1 (x : α) : t00 x x := same_refl x
 theorem star_64_11 (x : α) : t00 x = t x := rfl
 theorem star_64_12 (x : α) : t x x := same_refl x

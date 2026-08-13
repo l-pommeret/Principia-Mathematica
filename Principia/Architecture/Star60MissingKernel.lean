@@ -47,7 +47,8 @@ theorem star_60_38 (a : Class α) :
   · intro h
     have haa : ClEx a a := by rw [h]; exact rfl
     rcases haa.2 with ⟨x,hx⟩
-    have hs := star_60_57 a x hx
+    have hs : ClEx a (PM.Architecture.Star60Kernel.Singleton x) :=
+      ⟨fun y hy => hy ▸ hx, x, rfl⟩
     rw [h] at hs
     exact ⟨x,hs.symm⟩
 /-- ✱60·39, every subset of a two-point class is one of the four displayed classes. -/
