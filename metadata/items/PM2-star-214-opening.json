@@ -19,8 +19,8 @@
       "declaration": "PM.Architecture.Star214OpeningKernel.star_214_01",
       "formal_scope": "exact extensional definition of Ded after abstracting the maximum and sequent domains",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
@@ -33,8 +33,8 @@
       "declaration": "PM.Architecture.Star214OpeningKernel.star_214_02",
       "formal_scope": "exact pointwise definition of semi-Dedekind after abstracting section, proper-section, maximum and sequent predicates",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
@@ -47,8 +47,8 @@
       "declaration": "PM.Architecture.Star214OpeningKernel.star_214_1",
       "formal_scope": "exact definitional expansion of Ded",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
@@ -61,24 +61,11 @@
       "declaration": "PM.Architecture.Star214OpeningKernel.star_214_101",
       "formal_scope": "exact classical complement/inclusion characterization of Ded",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "lean_dependencies": [
-        "Star22Q341Definitions.Complement"
-      ],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "lean_dependencies": [],
       "printed_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱22·04"
-      ],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [
-          "PM1:✱22·04"
-        ],
-        "printed_but_unused": [],
-        "strict_attempt_evidence": "reviews/Star214-opening-review.md",
-        "editorial_note": "The Lean normalization expands the already established complement constructor; the displayed PM line has no explicit citation."
-      }
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱214·141",
@@ -88,17 +75,17 @@
       "declaration": "PM.Architecture.Star214OpeningKernel.star_214_141",
       "formal_scope": "exact definitional expansion of semi-Dedekind",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
+    "conclusion": "success"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star214-parser-gaps.md"

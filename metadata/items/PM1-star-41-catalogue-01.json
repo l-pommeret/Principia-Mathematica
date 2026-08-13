@@ -26,9 +26,9 @@
       "declaration": "PM.Architecture.Star41InitialKernel.product",
       "formal_scope": "exact typed relation-class reconstruction; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_blocked": false,
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -46,9 +46,9 @@
       "declaration": "PM.Architecture.Star41InitialKernel.sum",
       "formal_scope": "exact typed relation-class reconstruction; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_blocked": false,
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -66,15 +66,28 @@
       "declaration": "PM.Architecture.Star41InitialKernel.star_41_1",
       "formal_scope": "exact typed relation-class reconstruction; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_blocked": false,
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star41InitialKernel.product"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱41·01"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star41-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱41·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star41-catalogue-review.md",
+        "editorial_note": "The exact typed certificate unfolds the canonical product/sum definition directly; printed derived citations are discharged by that definitional reduction."
+      }
     },
     {
       "id": "PM1:✱41·11",
@@ -86,15 +99,28 @@
       "declaration": "PM.Architecture.Star41InitialKernel.star_41_11",
       "formal_scope": "exact typed relation-class reconstruction; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_blocked": false,
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star41InitialKernel.sum"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱41·02"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star41-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱41·02"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star41-catalogue-review.md",
+        "editorial_note": "The exact typed certificate unfolds the canonical product/sum definition directly; printed derived citations are discharged by that definitional reduction."
+      }
     },
     {
       "id": "PM1:✱41·12",
@@ -106,20 +132,33 @@
       "declaration": "PM.Architecture.Star41InitialKernel.star_41_12",
       "formal_scope": "exact typed relation-class reconstruction; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_blocked": false,
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star41InitialKernel.product"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱41·01"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star41-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱41·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star41-catalogue-review.md",
+        "editorial_note": "The exact typed certificate unfolds the canonical product/sum definition directly; printed derived citations are discharged by that definitional reduction."
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
+    "conclusion": "success"
   }
 }

@@ -20,17 +20,11 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_11",
       "formal_scope": "exact typed elimination: membership of the specified witness T in κ sm sm λ projects bijectivity of that same T",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ]
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱111·112",
@@ -40,17 +34,11 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_112",
       "formal_scope": "exact typed elimination: membership of the specified T in κ sm sm λ projects the class-mapping component of that same T",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ]
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱111·13",
@@ -60,17 +48,11 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_13",
       "formal_scope": "exact typed symmetry of similarity via inverse bijection",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ]
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱111·131",
@@ -80,17 +62,24 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_131",
       "formal_scope": "exact typed biconditional symmetry of similarity",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [
-
-      ],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star111Kernel.star_111_13"
       ],
       "normalized_dependencies": [
         "PM2:✱111·13"
-      ]
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM2:✱111·13"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star111-canonical-a.md",
+        "editorial_note": "The closed biconditional reuses the already proved symmetry constructor at ✱111·13; the printed line has no explicit bracketed citation."
+      }
     },
     {
       "id": "PM2:✱111·14",
@@ -100,23 +89,17 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_14",
       "formal_scope": "exact typed identity-bijection witness for reflexive similarity",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ]
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
+    "conclusion": "success"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star111-parser-gaps.md"

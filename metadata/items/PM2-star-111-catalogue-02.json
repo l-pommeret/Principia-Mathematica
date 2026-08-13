@@ -20,17 +20,11 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_21",
       "formal_scope": "exact typed elimination from correspondence to similarity",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ]
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱111·221",
@@ -40,17 +34,11 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_221",
       "formal_scope": "exact typed introduction of correspondence from similarity",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ]
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱111·23",
@@ -60,17 +48,24 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_23",
       "formal_scope": "exact typed converse characterization of correspondence",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [
-
-      ],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star111Kernel.star_111_13"
       ],
       "normalized_dependencies": [
         "PM2:✱111·13"
-      ]
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM2:✱111·13"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star111-canonical-b.md",
+        "editorial_note": "The converse characterization invokes the previously established similarity symmetry theorem ✱111·13; the printed line has no explicit bracketed citation."
+      }
     },
     {
       "id": "PM2:✱111·451",
@@ -80,17 +75,11 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_451",
       "formal_scope": "exact typed symmetry of double similarity via inverse bijection",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ]
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱111·452",
@@ -100,23 +89,17 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_452",
       "formal_scope": "exact typed transitivity of double similarity via composed bijections",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ]
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
+    "conclusion": "success"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star111-parser-gaps.md"

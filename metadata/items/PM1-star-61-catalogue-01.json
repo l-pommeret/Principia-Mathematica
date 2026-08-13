@@ -4,11 +4,16 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "412",
-    "scan_leaves": [434],
+    "scan_leaves": [
+      434
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
   "items": [
     {
       "id": "PM1:✱61·01",
@@ -20,8 +25,8 @@
       "declaration": "PM.Architecture.Star61Kernel.star_61_01",
       "formal_scope": "typed sub-relation-class reconstruction; exact item-level source and kernel audit complete",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -36,8 +41,8 @@
       "declaration": "PM.Architecture.Star61Kernel.star_61_02",
       "formal_scope": "typed nonempty sub-relation-class reconstruction; exact item-level source and kernel audit complete",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -54,8 +59,8 @@
       "declaration": "PM.Architecture.Star61Kernel.star_61_03",
       "formal_scope": "typed second-order relation-class reconstruction; exact item-level source and kernel audit complete",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -72,8 +77,8 @@
       "declaration": "PM.Architecture.Star61Kernel.star_61_04",
       "formal_scope": "typed third-order relation-class reconstruction; exact item-level source and kernel audit complete",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -90,14 +95,22 @@
       "declaration": "PM.Architecture.Star61Kernel.star_61_1",
       "formal_scope": "typed sub-relation-class reconstruction; exact item-level source and kernel audit complete",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱61·01"],
-      "lean_dependencies": ["PM.Architecture.Star61Kernel.star_61_01"],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱61·01"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star61Kernel.star_61_01"
+      ],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star61-catalogue-review.md"
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
+    "conclusion": "success"
+  }
 }

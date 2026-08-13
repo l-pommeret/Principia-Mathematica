@@ -29,11 +29,24 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_13",
       "formal_scope": "exact typed inclusion of every member class in its sum",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.Architecture.Star40OpeningKernel.Sum"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱40·02"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱40·02"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
+        "editorial_note": "The exact typed certificate unfolds the canonical product/sum definition directly; printed derived citations are discharged by that definitional reduction."
+      }
     },
     {
       "id": "PM1:✱40·14",
@@ -45,15 +58,28 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_14",
       "formal_scope": "exact typed elementwise product elimination",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "✱40·12"
       ],
-      "lean_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star40OpeningKernel.Product"
+      ],
       "normalized_dependencies": [
-        "PM1:✱40·12"
-      ]
+        "PM1:✱40·01"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱40·01"
+        ],
+        "printed_but_unused": [
+          "PM1:✱40·12"
+        ],
+        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
+        "editorial_note": "The exact typed certificate unfolds the canonical product/sum definition directly; printed derived citations are discharged by that definitional reduction."
+      }
     },
     {
       "id": "PM1:✱40·141",
@@ -65,17 +91,30 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_141",
       "formal_scope": "exact typed elementwise sum introduction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "✱40·11",
         "✱10·24"
       ],
-      "lean_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star40OpeningKernel.Sum"
+      ],
       "normalized_dependencies": [
-        "PM1:✱40·11",
-        "PM1:✱10·24"
-      ]
+        "PM1:✱40·02"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱40·02"
+        ],
+        "printed_but_unused": [
+          "PM1:✱40·11",
+          "PM1:✱10·24"
+        ],
+        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
+        "editorial_note": "The direct typed introduction uses the canonical sum definition; the printed derived citations are thereby discharged by definitional reduction."
+      }
     },
     {
       "id": "PM1:✱40·15",
@@ -87,13 +126,26 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_15",
       "formal_scope": "exact typed characterization of subclasses of a product",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star40OpeningKernel.Product"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱40·01"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star40-catalogue-review.md"
+      "parser_evidence": "reviews/Star40-catalogue-review.md",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱40·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
+        "editorial_note": "The exact typed certificate unfolds the canonical product/sum definition directly; printed derived citations are discharged by that definitional reduction."
+      }
     },
     {
       "id": "PM1:✱40·151",
@@ -105,18 +157,31 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_151",
       "formal_scope": "exact typed characterization of superclasses of a sum",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star40OpeningKernel.Sum"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱40·02"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star40-catalogue-review.md"
+      "parser_evidence": "reviews/Star40-catalogue-review.md",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱40·02"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
+        "editorial_note": "The exact typed certificate unfolds the canonical product/sum definition directly; printed derived citations are discharged by that definitional reduction."
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
+    "conclusion": "success"
   }
 }

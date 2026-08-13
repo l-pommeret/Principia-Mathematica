@@ -440,6 +440,10 @@ def extract_lean_dependencies(item: dict, declarations: dict[str, str], root: Pa
     for token in qualified_tokens:
         if token in candidates:
             continue
+        suffix_matches = [name for name in candidates if name.endswith("." + token)]
+        if len(suffix_matches) == 1 and suffix_matches[0] != item["declaration"]:
+            found.add(suffix_matches[0])
+            continue
         short = token.rsplit(".", 1)[-1]
         matches = [name for name in candidates if name.rsplit(".", 1)[-1] == short]
         if len(matches) == 1 and matches[0] != item["declaration"]:

@@ -25,11 +25,11 @@
       "printed_page": 320,
       "scan_leaf": 342,
       "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_01",
+      "declaration": "PM.Architecture.Star40OpeningKernel.Product",
       "formal_scope": "exact typed definition of the product of a class-family by universal membership",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -41,11 +41,11 @@
       "printed_page": 320,
       "scan_leaf": 342,
       "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_02",
+      "declaration": "PM.Architecture.Star40OpeningKernel.Sum",
       "formal_scope": "exact typed definition of the sum of a class-family by existential membership",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -60,17 +60,27 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_1",
       "formal_scope": "exact typed product membership equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "✱20·3",
         "✱40·01"
       ],
-      "lean_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star40OpeningKernel.Product"
+      ],
       "normalized_dependencies": [
-        "PM1:✱20·3",
         "PM1:✱40·01"
-      ]
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·3"
+        ],
+        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
+        "editorial_note": "The typed membership theorem unfolds the reviewed product definition directly; ✱20·3 is internal to the historical definitional reduction."
+      }
     },
     {
       "id": "PM1:✱40·11",
@@ -82,17 +92,27 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_11",
       "formal_scope": "exact typed sum membership equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "✱20·3",
         "✱40·02"
       ],
-      "lean_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star40OpeningKernel.Sum"
+      ],
       "normalized_dependencies": [
-        "PM1:✱20·3",
         "PM1:✱40·02"
-      ]
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·3"
+        ],
+        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
+        "editorial_note": "The typed membership theorem unfolds the reviewed sum definition directly; ✱20·3 is internal to the historical definitional reduction."
+      }
     },
     {
       "id": "PM1:✱40·12",
@@ -104,16 +124,29 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_12",
       "formal_scope": "exact typed inclusion of a product in every member class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.Architecture.Star40OpeningKernel.Product"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱40·01"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱40·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
+        "editorial_note": "The exact typed certificate unfolds the canonical product/sum definition directly; printed derived citations are discharged by that definitional reduction."
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
+    "conclusion": "success"
   }
 }
