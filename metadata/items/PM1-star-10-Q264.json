@@ -27,8 +27,8 @@
       "declaration": "PM.Architecture.Star10Q264Kernel.star_10_1",
       "formal_scope": "exact mixed Raw general-to-particular endpoint",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": ["Star92Kernel.derive"],
       "normalized_dependencies": ["PM1:✱9·2"],
@@ -44,8 +44,8 @@
       "declaration": "PM.Architecture.Star10Q264Kernel.star_10_11",
       "formal_scope": "exact arbitrary-leading-variable premise to universal assertion rule",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q264-star-10-primitive-audit.md",
       "printed_dependencies": [],
@@ -55,8 +55,8 @@
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
   }
 }

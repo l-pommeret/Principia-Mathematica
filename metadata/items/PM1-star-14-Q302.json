@@ -40,7 +40,7 @@
       "declaration": "PM.Architecture.Star14Q302Kernel.star_14_113",
       "formal_scope": "exact contextual two-description scope invariance",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_status": "integrated-local",
       "printed_dependencies": [
         "✱14·111·112"
@@ -61,7 +61,7 @@
       "declaration": "PM.Architecture.Star14Q302Kernel.star_14_12",
       "formal_scope": "exact contextual-description uniqueness assertion",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_status": "integrated-local",
       "printed_dependencies": [
         "✱14·11",
@@ -81,7 +81,7 @@
       "declaration": "PM.Architecture.Star14Q302Kernel.star_14_121",
       "formal_scope": "exact unique witness identity",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_status": "integrated-local",
       "printed_dependencies": [
         "✱10·1",
@@ -101,7 +101,7 @@
       "declaration": "PM.Architecture.Star14Q302Kernel.star_14_122",
       "formal_scope": "exact one-variable unique-characterization equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_status": "integrated-local",
       "printed_dependencies": [
         "✱10·22",
@@ -126,7 +126,7 @@
       "declaration": "PM.Architecture.Star14Q302Kernel.star_14_123",
       "formal_scope": "exact two-variable unique-characterization equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_status": "integrated-local",
       "printed_dependencies": [
         "✱11·31",
@@ -145,8 +145,8 @@
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
   }
 }

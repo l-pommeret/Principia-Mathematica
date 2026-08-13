@@ -5,34 +5,34 @@
   "items": [
     {
       "id":"PM1:✱22·1","kind":"derived-proposition","printed":"⊢ : α ⊂ β .≡ : x ε α .⊃ₓ. x ε β","printed_page":220,"scan_leaf":242,
-      "lean_path":"Principia/Architecture/Star22Q345Kernel.lean","declaration":"PM.Architecture.Star22Q345Kernel.star_22_1","formal_scope":"exact typed pointwise reduction of class inclusion","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci",
+      "lean_path":"Principia/Architecture/Star22Q345Kernel.lean","declaration":"PM.Architecture.Star22Q345Kernel.star_22_1","formal_scope":"exact typed pointwise reduction of class inclusion","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated",
       "parser_status":"reviewed-gap","parser_evidence":"reviews/Q345-canonical-integration.md","printed_dependencies":["PM1:✱4·2","PM1:✱22·01"],"lean_dependencies":["PM.Architecture.Star22Q341Definitions.star_22_01"],"normalized_dependencies":["PM1:✱22·01"],
       "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱4·2"],"strict_attempt_evidence":"reviews/Q345-canonical-integration.md","editorial_note":"The exact defining equality directly supplies the derived reduction."}
     },
     {
       "id":"PM1:✱22·2","kind":"derived-proposition","printed":"⊢ . α ∩ β = ẑx(x ε α . x ε β)","printed_page":220,"scan_leaf":242,
-      "lean_path":"Principia/Architecture/Star22Q345Kernel.lean","declaration":"PM.Architecture.Star22Q345Kernel.star_22_2","formal_scope":"exact typed class-intersection reduction","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci",
+      "lean_path":"Principia/Architecture/Star22Q345Kernel.lean","declaration":"PM.Architecture.Star22Q345Kernel.star_22_2","formal_scope":"exact typed class-intersection reduction","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated",
       "parser_status":"reviewed-gap","parser_evidence":"reviews/Q345-canonical-integration.md","printed_dependencies":["PM1:✱20·2","PM1:✱22·02"],"lean_dependencies":["PM.Architecture.Star22Q341Definitions.star_22_02"],"normalized_dependencies":["PM1:✱22·02"],
       "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱20·2"],"strict_attempt_evidence":"reviews/Q345-canonical-integration.md","editorial_note":"The exact defining equality directly supplies the derived reduction."}
     },
     {
       "id":"PM1:✱22·3","kind":"derived-proposition","printed":"⊢ . α ∪ β = ẑx(x ε α .∨. x ε β)","printed_page":220,"scan_leaf":242,
-      "lean_path":"Principia/Architecture/Star22Q345Kernel.lean","declaration":"PM.Architecture.Star22Q345Kernel.star_22_3","formal_scope":"exact typed class-union reduction","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci",
+      "lean_path":"Principia/Architecture/Star22Q345Kernel.lean","declaration":"PM.Architecture.Star22Q345Kernel.star_22_3","formal_scope":"exact typed class-union reduction","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated",
       "parser_status":"reviewed-gap","parser_evidence":"reviews/Q345-canonical-integration.md","printed_dependencies":["PM1:✱20·2","PM1:✱22·03"],"lean_dependencies":["PM.Architecture.Star22Q341Definitions.star_22_03"],"normalized_dependencies":["PM1:✱22·03"],
       "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱20·2"],"strict_attempt_evidence":"reviews/Q345-canonical-integration.md","editorial_note":"The exact defining equality directly supplies the derived reduction."}
     },
     {
       "id":"PM1:✱22·31","kind":"derived-proposition","printed":"⊢ . −α = ẑx(x ∼ε α)","printed_page":220,"scan_leaf":242,
-      "lean_path":"Principia/Architecture/Star22Q345Kernel.lean","declaration":"PM.Architecture.Star22Q345Kernel.star_22_31","formal_scope":"exact typed class-complement reduction","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci",
+      "lean_path":"Principia/Architecture/Star22Q345Kernel.lean","declaration":"PM.Architecture.Star22Q345Kernel.star_22_31","formal_scope":"exact typed class-complement reduction","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated",
       "parser_status":"reviewed-gap","parser_evidence":"reviews/Q345-canonical-integration.md","printed_dependencies":["PM1:✱20·2","PM1:✱22·04"],"lean_dependencies":["PM.Architecture.Star22Q341Definitions.star_22_04"],"normalized_dependencies":["PM1:✱22·04"],
       "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱20·2"],"strict_attempt_evidence":"reviews/Q345-canonical-integration.md","editorial_note":"The exact defining equality directly supplies the derived reduction."}
     },
     {
       "id":"PM1:✱22·32","kind":"derived-proposition","printed":"⊢ . α − β = ẑx(x ε α . x ∼ε β)","printed_page":220,"scan_leaf":242,
-      "lean_path":"Principia/Architecture/Star22Q345Kernel.lean","declaration":"PM.Architecture.Star22Q345Kernel.star_22_32","formal_scope":"exact typed class-difference reduction","source_status":"source-catalogued","formal_status":"awaiting-ci","integration_status":"awaiting-ci",
+      "lean_path":"Principia/Architecture/Star22Q345Kernel.lean","declaration":"PM.Architecture.Star22Q345Kernel.star_22_32","formal_scope":"exact typed class-difference reduction","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated",
       "parser_status":"reviewed-gap","parser_evidence":"reviews/Q345-canonical-integration.md","printed_dependencies":["PM1:✱20·2","PM1:✱22·05","PM1:✱22·2","PM1:✱20·32"],"lean_dependencies":[],"normalized_dependencies":[],
       "historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱20·2","PM1:✱20·32","PM1:✱22·05","PM1:✱22·2"],"strict_attempt_evidence":"reviews/Q345-canonical-integration.md","editorial_note":"Definitional normalization of difference, intersection, and complement compresses the printed route."}
     }
   ],
-  "ci_evidence": {"commit":"pending","run":"pending","conclusion":"pending"}
+  "ci_evidence": {"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}
 }

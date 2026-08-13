@@ -29,8 +29,8 @@
       "declaration": "PM.Architecture.Star40SecondKernel.star_40_16",
       "formal_scope": "exact typed antitonicity of product under family inclusion",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -45,8 +45,8 @@
       "declaration": "PM.Architecture.Star40SecondKernel.star_40_161",
       "formal_scope": "exact typed monotonicity of sum under family inclusion",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -61,8 +61,8 @@
       "declaration": "PM.Architecture.Star40SecondKernel.star_40_17",
       "formal_scope": "exact typed inclusion of the union of products in the product of the family intersection",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -77,8 +77,8 @@
       "declaration": "PM.Architecture.Star40SecondKernel.star_40_171",
       "formal_scope": "exact typed equality between the union of sums and the sum of the family union",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -93,16 +93,16 @@
       "declaration": "PM.Architecture.Star40SecondKernel.star_40_18",
       "formal_scope": "exact typed equality between the product of the family union and the intersection of products",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
   }
 }
