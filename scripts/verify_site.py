@@ -90,28 +90,33 @@ def verify(site: Path) -> None:
         if path not in {site / "index.html", site / "dependencies.html"}:
             if "scan-placeholder" in source:
                 fail(f"facsimile placeholder remains in {path}")
-            if len(parser.images) != 1:
-                fail(f"{path} must contain exactly one facsimile image")
-            image = parser.images[0]
-            src = image.get("src") or ""
-            if urlsplit(src).scheme != "https":
-                fail(f"facsimile image in {path} does not use an HTTPS src")
-            image_url = urlsplit(src)
-            if image_url.hostname == "upload.wikimedia.org":
-                if not re.search(
-                    r"/page\d+-1280px-.*\.(?:djvu|pdf)\.jpg$", image_url.path, re.I
-                ):
-                    fail(f"facsimile image in {path} is not an exact Wikimedia scan-page derivative")
-            elif image_url.hostname == "archive.org":
-                if not re.fullmatch(
-                    r"/download/[A-Za-z0-9][A-Za-z0-9._-]*/page/n[1-9][0-9]*_w1400\.jpg",
-                    image_url.path,
-                ):
-                    fail(f"facsimile image in {path} is not an exact Internet Archive scan-page derivative")
+            pending_facsimile = "No item-level scan leaf has yet been recorded." in source
+            if pending_facsimile:
+                if parser.images:
+                    fail(f"{path} declares pending facsimile pagination but renders an image")
             else:
-                fail(f"facsimile image in {path} is not served by an approved scan host")
-            if image.get("loading") != "lazy" or not image.get("alt"):
-                fail(f"facsimile image in {path} lacks lazy loading or alternative text")
+                if len(parser.images) != 1:
+                    fail(f"{path} must contain exactly one facsimile image")
+                image = parser.images[0]
+                src = image.get("src") or ""
+                if urlsplit(src).scheme != "https":
+                    fail(f"facsimile image in {path} does not use an HTTPS src")
+                image_url = urlsplit(src)
+                if image_url.hostname == "upload.wikimedia.org":
+                    if not re.search(
+                        r"/page\d+-1280px-.*\.(?:djvu|pdf)\.jpg$", image_url.path, re.I
+                    ):
+                        fail(f"facsimile image in {path} is not an exact Wikimedia scan-page derivative")
+                elif image_url.hostname == "archive.org":
+                    if not re.fullmatch(
+                        r"/download/[A-Za-z0-9][A-Za-z0-9._-]*/page/n[1-9][0-9]*_w1400\.jpg",
+                        image_url.path,
+                    ):
+                        fail(f"facsimile image in {path} is not an exact Internet Archive scan-page derivative")
+                else:
+                    fail(f"facsimile image in {path} is not served by an approved scan host")
+                if image.get("loading") != "lazy" or not image.get("alt"):
+                    fail(f"facsimile image in {path} lacks lazy loading or alternative text")
         for link in parser.links:
             parts = urlsplit(link)
             if parts.scheme or link.startswith("//") or not parts.path:
