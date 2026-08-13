@@ -26,8 +26,8 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_5",
       "formal_scope": "exact inclusion/equality characterization for a cardinal couple",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -42,11 +42,17 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_51",
       "formal_scope": "exact inclusion/equality characterization against cardinal one or two",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱54·5"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star54ClosingKernel.star_54_5"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·5"
+      ]
     },
     {
       "id": "PM1:✱54·52",
@@ -58,11 +64,17 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_52",
       "formal_scope": "exact mutual inclusion/equality characterization for cardinal couples",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱54·51"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star54ClosingKernel.star_54_51"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·51"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star54-catalogue-review.md"
     },
@@ -76,11 +88,17 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_53",
       "formal_scope": "exact reconstruction of a cardinal couple from two distinct members",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱54·44"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star54MiddleKernel.star_54_44"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·44"
+      ]
     },
     {
       "id": "PM1:✱54·531",
@@ -92,16 +110,22 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_531",
       "formal_scope": "exact universally scoped reconstruction of a cardinal couple from two distinct members",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱54·44"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star54MiddleKernel.star_54_44"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·44"
+      ]
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4830bce2d5a0385d2ecb78e034170a5fce54f88a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31724447099",
+    "conclusion": "success"
   }
 }

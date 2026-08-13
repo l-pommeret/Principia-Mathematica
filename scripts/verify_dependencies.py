@@ -35,6 +35,8 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "Classical.em",
     "False.elim",
     "Eq.symm",
+    "Eq.mp",
+    "And.left",
     "Iff.rfl",
     "Or.inl",
     "Or.inr",
@@ -76,6 +78,21 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     # indexed closed matrix-schema judgement below.
     "FirstOrderQ259.star_9_3_target",
     "Star921MatrixKernel.star_9_3_ordered_target",
+}
+
+# Theorem-specific records may name fields after mathematical operations
+# (`product`, `sum`, ...).  A field label in a structure literal is syntax,
+# not a reference to an unrelated declaration sharing that short name.
+STRUCTURE_FIELD_ASSIGNMENT = re.compile(r"\b([A-Za-z_][A-Za-z0-9_']*)\s*:=")
+
+# Closed, theorem-specific packaging definitions are transparent nodes in the
+# historical graph.  Expand their bodies rather than treating the package as
+# an extra PM proposition.
+TRANSPARENT_DEPENDENCY_WRAPPERS = {
+    "Star10Q271Prerequisites.star_10_33_composition": (
+        "Principia/Architecture/Star10Q271Prerequisites.lean",
+        "PM.Architecture.Star10Q271Prerequisites.star_10_33_composition",
+    ),
 }
 
 
@@ -348,7 +365,14 @@ def _occurs(body: str, name: str) -> bool:
     # must occur exactly; otherwise unrelated closed-kernel witnesses sharing
     # the helper name are spuriously recorded as dependencies.
     variants = (name,) if name.endswith(".derive") else (name, name.rsplit(".", 1)[-1])
+    short = name.rsplit(".", 1)[-1]
+    body_without_field_labels = re.sub(
+        rf"\b{re.escape(short)}\s*:=", "", body
+    )
     return any(re.search(rf"(?<![A-Za-z0-9_'.]){re.escape(variant)}(?![A-Za-z0-9_'])", body)
+               if "." in variant else
+               re.search(rf"(?<![A-Za-z0-9_'.]){re.escape(variant)}(?![A-Za-z0-9_'])",
+                         body_without_field_labels)
                for variant in variants)
 
 
@@ -379,9 +403,18 @@ def extract_lean_dependencies(item: dict, declarations: dict[str, str], root: Pa
     body = strip_lean_comments(
         declaration_body(root / item["lean_path"], item["declaration"])
     )
+    for token, (path, declaration) in TRANSPARENT_DEPENDENCY_WRAPPERS.items():
+        if token in body:
+            body += "\n" + strip_lean_comments(
+                declaration_body(root / path, declaration)
+            )
     aliases = json.loads((root / "metadata/dependency_aliases.json").read_text(encoding="utf-8"))
     candidates = set(declarations) | set(aliases["lean_realizations"]) | KNOWN_BRIDGES
-    reject_unindexed_references(item, body, candidates | KNOWN_SYNTAX_INFRASTRUCTURE)
+    reject_unindexed_references(
+        item, body,
+        candidates | KNOWN_SYNTAX_INFRASTRUCTURE |
+        set(TRANSPARENT_DEPENDENCY_WRAPPERS),
+    )
     # Longest first avoids treating one fully qualified name as a prefix.
     found = {
         name for name in candidates

@@ -18,9 +18,11 @@
       "declaration": "PM.Architecture.Star216OpeningKernel.star_216_01",
       "formal_scope": "exact derivative definition after abstracting Cl exʻ(α∩CʻP) as the class argument A and ltₚ as limit",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "lean_dependencies": []
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱216·02",
@@ -30,9 +32,11 @@
       "declaration": "PM.Architecture.Star216OpeningKernel.star_216_02",
       "formal_scope": "exact pointwise definition of dense after abstracting the minimum class and derivative operator",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "lean_dependencies": []
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱216·03",
@@ -42,9 +46,11 @@
       "declaration": "PM.Architecture.Star216OpeningKernel.star_216_03",
       "formal_scope": "exact conjunctive definition of closed after abstracting the limax eligibility condition and derivative operator",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "lean_dependencies": []
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱216·04",
@@ -54,9 +60,11 @@
       "declaration": "PM.Architecture.Star216OpeningKernel.star_216_04",
       "formal_scope": "exact pointwise intersection definition of perfect",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "lean_dependencies": []
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM2:✱216·05",
@@ -66,15 +74,17 @@
       "declaration": "PM.Architecture.Star216OpeningKernel.star_216_05",
       "formal_scope": "exact definition of nabla as restriction of P to the abstracted domain Dʻltₚ",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "lean_dependencies": []
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4830bce2d5a0385d2ecb78e034170a5fce54f88a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31724447099",
+    "conclusion": "success"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star216-parser-gaps.md"

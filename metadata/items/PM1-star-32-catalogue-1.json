@@ -17,8 +17,8 @@
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_13",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -33,8 +33,8 @@
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_131",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -49,11 +49,20 @@
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel2.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel2.star_32_16",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱32·14",
+        "PM1:✱32·15"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star32ConsecutiveKernel2.star_32_14",
+        "PM.Architecture.Star32ConsecutiveKernel2.star_32_15"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱32·14",
+        "PM1:✱32·15"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star32-catalogue-review.md"
     },
@@ -65,8 +74,8 @@
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_1",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -81,8 +90,8 @@
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_101",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -91,8 +100,8 @@
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4830bce2d5a0385d2ecb78e034170a5fce54f88a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31724447099",
+    "conclusion": "success"
   }
 }

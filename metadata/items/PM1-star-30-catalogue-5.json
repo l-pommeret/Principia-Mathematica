@@ -21,8 +21,8 @@
       "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
       "declaration": "PM.Architecture.Star30CompositionKernel.star_30_36",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star30-catalogue-review.md"
     },
@@ -37,8 +37,8 @@
       "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
       "declaration": "PM.Architecture.Star30CompositionKernel.star_30_37",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star30-catalogue-review.md"
     },
@@ -53,8 +53,8 @@
       "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
       "declaration": "PM.Architecture.Star30CompositionKernel.star_30_4",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star30-catalogue-review.md"
     },
@@ -69,8 +69,8 @@
       "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
       "declaration": "PM.Architecture.Star30CompositionKernel.star_30_41",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star30-catalogue-review.md"
     },
@@ -80,20 +80,33 @@
       "printed": "\\(\\vdash\\colon\\ldotp (y).\\text{E}!Rʻy.\\supset:(y).Rʻy=Sʻy.\\equiv.R=S\\)",
       "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star30CompositionKernel.star_30_41"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱30·41"
+      ],
       "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
       "declaration": "PM.Architecture.Star30CompositionKernel.star_30_42",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md"
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱30·41"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star30-catalogue-review.md",
+        "editorial_note": "The direct Lean proof reuses the immediately preceding extensional characterization; the printed proposition displays no citation."
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4830bce2d5a0385d2ecb78e034170a5fce54f88a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31724447099",
+    "conclusion": "success"
   }
 }

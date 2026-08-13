@@ -1,10 +1,52 @@
 {
-  "batch":"PM2-STAR212-CANONICAL-02","edition":"first","volume":2,
-  "source_range":{"printed_pages":"632","project_gutenberg":"https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},
-  "witnesses":["PM2-1912-SCAN","PG78255"],
-  "items":[
-    {"id":"PM2:✱212·11","kind":"derived-proposition","printed":"⊢ : α(sgmʻP)β .≡. α,β∈Dʻ(P_∈∩̇I).∃!β−α","lean_path":"Principia/Architecture/Star212OpeningKernel.lean","declaration":"PM.Architecture.Star212OpeningKernel.star_212_11","formal_scope":"exact typed set semantics: membership in the carrier and proper inclusion","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Star212-canonical-review.md"},
-    {"id":"PM2:✱212·12","kind":"derived-proposition","printed":"⊢ : α(sgmʻP_*)β .≡. α,β∈sectʻP.∃!β−α","lean_path":"Principia/Architecture/Star212OpeningKernel.lean","declaration":"PM.Architecture.Star212OpeningKernel.star_212_12","formal_scope":"exact typed section-carrier semantics: membership and proper inclusion","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Star212-canonical-review.md"}
+  "batch": "PM2-STAR212-CANONICAL-02",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "632",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
   ],
-  "ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+  "items": [
+    {
+      "id": "PM2:✱212·11",
+      "kind": "derived-proposition",
+      "printed": "⊢ : α(sgmʻP)β .≡. α,β∈Dʻ(P_∈∩̇I).∃!β−α",
+      "lean_path": "Principia/Architecture/Star212OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star212OpeningKernel.star_212_11",
+      "formal_scope": "exact typed set semantics: membership in the carrier and proper inclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star212-canonical-review.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱212·12",
+      "kind": "derived-proposition",
+      "printed": "⊢ : α(sgmʻP_*)β .≡. α,β∈sectʻP.∃!β−α",
+      "lean_path": "Principia/Architecture/Star212OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star212OpeningKernel.star_212_12",
+      "formal_scope": "exact typed section-carrier semantics: membership and proper inclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star212-canonical-review.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "4830bce2d5a0385d2ecb78e034170a5fce54f88a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31724447099",
+    "conclusion": "success"
+  }
 }

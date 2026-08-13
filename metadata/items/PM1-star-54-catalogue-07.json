@@ -26,8 +26,8 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_54",
       "formal_scope": "exact existence of two distinct members witnessing a cardinal couple",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -42,8 +42,8 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_55",
       "formal_scope": "exact permutation of the zero/one/two cardinal-class union",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -58,11 +58,17 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_56",
       "formal_scope": "exact characterization of classes outside cardinal zero, one, and two by three pairwise distinct members",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱54·44"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star54MiddleKernel.star_54_44"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·44"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star54-catalogue-review.md"
     },
@@ -76,16 +82,22 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_6",
       "formal_scope": "exact equality characterization for cross-pairs drawn from disjoint classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱54·22"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star54OpeningKernel.star_54_22"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·22"
+      ]
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4830bce2d5a0385d2ecb78e034170a5fce54f88a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31724447099",
+    "conclusion": "success"
   }
 }

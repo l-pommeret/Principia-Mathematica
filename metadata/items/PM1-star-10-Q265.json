@@ -50,8 +50,8 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_27",
       "formal_scope": "formal implication lifting; exact canonical Raw target, proof pending",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-kernel-proved-awaiting-batch-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱9·21",
         "PM1:✱10·14",
@@ -67,7 +67,11 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱10·1", "PM1:✱10·14", "PM1:✱10·21"],
+        "printed_but_unused": [
+          "PM1:✱10·1",
+          "PM1:✱10·14",
+          "PM1:✱10·21"
+        ],
         "strict_attempt_evidence": "reviews/Q265-canonical-target-gate.md",
         "editorial_note": "The exact ✱10·27 endpoint is the already closed ✱9·21 normalization; the wrapper records the formal-implication reading without replaying the printed primitive-rule chain."
       }
@@ -82,8 +86,8 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_271",
       "formal_scope": "formal equivalence lifting; exact closed canonical proof contract",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-kernel-proved-awaiting-batch-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·22",
         "PM1:✱10·27"
@@ -107,8 +111,8 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_28",
       "formal_scope": "existential lifting; exact canonical Raw target, proof pending",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-kernel-proved-awaiting-batch-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱9·22",
         "PM1:✱10·1",
@@ -124,7 +128,11 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱10·1", "PM1:✱10·11·21", "PM1:✱10·27"],
+        "printed_but_unused": [
+          "PM1:✱10·1",
+          "PM1:✱10·11·21",
+          "PM1:✱10·27"
+        ],
         "strict_attempt_evidence": "reviews/Q265-canonical-target-gate.md",
         "editorial_note": "The exact ✱10·28 endpoint is the already closed ✱9·22 existential-monotonicity normalization; the wrapper does not replay the printed scope-manipulation chain."
       }
@@ -139,8 +147,8 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_281",
       "formal_scope": "existential equivalence lifting; exact closed canonical proof contract",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-kernel-proved-awaiting-batch-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·22",
         "PM1:✱10·28"
@@ -164,8 +172,8 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_35",
       "formal_scope": "existential distribution; exact closed canonical proof contract",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-kernel-proved-awaiting-batch-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱3·26",
         "PM1:✱10·11",
@@ -194,15 +202,17 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱10·11·21"],
+        "printed_but_unused": [
+          "PM1:✱10·11·21"
+        ],
         "strict_attempt_evidence": "reviews/Q265-canonical-target-gate.md",
         "editorial_note": "The printed ✱10·11·21 is a composed rule use rather than a numbered proposition; its indexed ✱10·11 component is retained alongside every directly called propositional ingredient."
       }
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4830bce2d5a0385d2ecb78e034170a5fce54f88a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31724447099",
+    "conclusion": "success"
   }
 }

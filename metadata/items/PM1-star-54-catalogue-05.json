@@ -25,8 +25,8 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_45",
       "formal_scope": "exact universal expansion over the two-member class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -43,11 +43,17 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_451",
       "formal_scope": "exact reduction of the universal binary condition under diagonal and cross equivalence hypotheses",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱54·45"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star54ClosingKernel.star_54_45"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·45"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star54-catalogue-review.md"
     },
@@ -61,11 +67,17 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_452",
       "formal_scope": "exact reduction of the universal binary condition to one cross instance",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱54·451"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star54ClosingKernel.star_54_451"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·451"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star54-catalogue-review.md"
     },
@@ -79,16 +91,16 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_46",
       "formal_scope": "exact distinct-member implication for a two-member class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4830bce2d5a0385d2ecb78e034170a5fce54f88a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31724447099",
+    "conclusion": "success"
   }
 }

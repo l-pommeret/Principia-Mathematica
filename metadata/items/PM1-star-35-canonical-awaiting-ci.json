@@ -1,10 +1,68 @@
 {
-  "batch":"PM1-STAR35-CANONICAL-01","edition":"first","volume":1,
-  "source_range":{"printed_pages":"278-279","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},
-  "witnesses":["PM1-1910-SCAN","PG78050"],
-  "items":[
-    {"id":"PM1:✱35·21","kind":"derived-proposition","printed":"\\(\\vdash.\\alpha\\upharpoonleft R\\upharpoonright \\beta=(\\alpha\\upharpoonleft R)\\upharpoonright \\beta=\\alpha\\upharpoonleft (R\\upharpoonright \\beta)\\)","lean_path":"Principia/Architecture/Star35CompositionKernel.lean","declaration":"PM.Architecture.Star35CompositionKernel.star_35_21","formal_scope":"exact two-sided restriction associativity, retaining both printed equalities","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Star35-canonical-review.md"},
-    {"id":"PM1:✱35·31","kind":"derived-proposition","printed":"\\(\\vdash.(R\\upharpoonright \\alpha)\\upharpoonright \\beta=R\\upharpoonright (\\alpha\\cap \\beta)\\)","lean_path":"Principia/Architecture/Star35CompositionKernel.lean","declaration":"PM.Architecture.Star35CompositionKernel.star_35_31","formal_scope":"exact repeated converse-domain restriction as intersection","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Star35-canonical-review.md"},
-    {"id":"PM1:✱35·32","kind":"derived-proposition","printed":"\\(\\vdash.\\alpha\\upharpoonleft (\\beta\\upharpoonleft R)=(\\alpha\\cap \\beta)\\upharpoonleft R \\quad[\\text{Proof similar to that of *35·31}]\\)","lean_path":"Principia/Architecture/Star35DomainUnionKernel.lean","declaration":"PM.Architecture.Star35DomainUnionKernel.star_35_32","formal_scope":"exact repeated domain restriction as intersection","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","parser_status":"reviewed-gap","parser_evidence":"reviews/Star35-canonical-review.md"}
-  ],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+  "batch": "PM1-STAR35-CANONICAL-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "278-279",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱35·21",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.\\alpha\\upharpoonleft R\\upharpoonright \\beta=(\\alpha\\upharpoonleft R)\\upharpoonright \\beta=\\alpha\\upharpoonleft (R\\upharpoonright \\beta)\\)",
+      "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star35CompositionKernel.star_35_21",
+      "formal_scope": "exact two-sided restriction associativity, retaining both printed equalities",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱35·31",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.(R\\upharpoonright \\alpha)\\upharpoonright \\beta=R\\upharpoonright (\\alpha\\cap \\beta)\\)",
+      "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
+      "declaration": "PM.Architecture.Star35CompositionKernel.star_35_31",
+      "formal_scope": "exact repeated converse-domain restriction as intersection",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱35·32",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.\\alpha\\upharpoonleft (\\beta\\upharpoonleft R)=(\\alpha\\cap \\beta)\\upharpoonleft R \\quad[\\text{Proof similar to that of *35·31}]\\)",
+      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
+      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_32",
+      "formal_scope": "exact repeated domain restriction as intersection",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    }
+  ],
+  "ci_evidence": {
+    "commit": "4830bce2d5a0385d2ecb78e034170a5fce54f88a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31724447099",
+    "conclusion": "success"
+  }
 }
