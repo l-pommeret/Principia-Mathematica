@@ -15,8 +15,8 @@ private theorem star4_detach
     (p q : Formula signature real [] order) :
     (⊢ᵣ p) → (⊢ᵣ implication negation disjunction p q) → (⊢ᵣ q) := by
   cases real with
-  | nil => exact Derivation.star_1_1 negation disjunction
-  | cons head tail => exact Derivation.star_1_11 negation disjunction
+  | nil => exact Derivation.star_1_1_same negation disjunction
+  | cons head tail => exact Derivation.star_1_11_same negation disjunction
 
 /-- ✱4·01 (Df): mutual implication is equivalence. -/
 def star_4_01
@@ -232,7 +232,7 @@ theorem star_4_25
     (p : Formula signature real [] order) :
     ⊢ᵣ star_4_01 negation disjunction p (sameDisjunction disjunction p p) :=
   star4_join negation disjunction _ _
-    (Derivation.star_1_3 negation disjunction p p)
+    (Derivation.star_1_3_same negation disjunction p p)
     (Derivation.star_1_2 negation disjunction p)
 
 /-- ✱4·22, transitivity of equivalence, following PM's cited chain. -/
@@ -329,8 +329,8 @@ theorem star_4_31
     ⊢ᵣ star_4_01 negation disjunction
       (sameDisjunction disjunction p q)
       (sameDisjunction disjunction q p) := by
-  have line1 := Derivation.star_1_4 negation disjunction p q
-  have line2 := Derivation.star_1_4 negation disjunction q p
+  have line1 := Derivation.star_1_4_same negation disjunction p q
+  have line2 := Derivation.star_1_4_same negation disjunction q p
   exact star4_join negation disjunction _ _ line1 line2
 
 /-- ✱4·71, following PM's numbered implication/equivalence chain. -/
@@ -733,7 +733,7 @@ theorem star_4_72
   let a := p ⊃ᵣ q
   have line1 : ⊢ᵣ (a ⊃ᵣ (q ⊃ᵣ (p ∨ᵣ q))) :=
     star4_detach negation disjunction _ _
-      (Derivation.star_1_3 negation disjunction p q)
+      (Derivation.star_1_3_same negation disjunction p q)
       (star_2_02 negation disjunction a (q ⊃ᵣ (p ∨ᵣ q)))
   have line2 : ⊢ᵣ (a ⊃ᵣ ((p ∨ᵣ q) ⊃ᵣ q)) :=
     star4_compose negation disjunction _ _ _
@@ -847,7 +847,7 @@ theorem star_4_4 (p q r : Formula signature real [] order) :
         (star4_compose negation disjunction _ _ _ (star_3_27 negation disjunction p q)
           (star_2_2 negation disjunction q r))
         (star4_compose negation disjunction _ _ _ (star_3_27 negation disjunction p r)
-          (Derivation.star_1_3 negation disjunction q r)))
+          (Derivation.star_1_3_same negation disjunction q r)))
       (star_3_44 negation disjunction (q ∨ᵣ r) (p ∧ᵣ q) (p ∧ᵣ r))
   have line5 := star4_joinUnder negation disjunction ((p ∧ᵣ q) ∨ᵣ (p ∧ᵣ r)) _ _ line3 line4
   exact star4_join negation disjunction _ _ line2 line5
@@ -861,9 +861,9 @@ theorem star_4_41 (p q r : Formula signature real [] order) :
     ⊢ᵣ ((p ∨ᵣ (q ∧ᵣ r)) ≡ᵣ ((p ∨ᵣ q) ∧ᵣ (p ∨ᵣ r))) := by
   let a := (p ∨ᵣ q) ∧ᵣ (p ∨ᵣ r)
   have line1 := star4_detach negation disjunction _ _ (star_3_26 negation disjunction q r)
-    (Derivation.star_1_6 negation disjunction p (q ∧ᵣ r) q)
+    (Derivation.star_1_6_same negation disjunction p (q ∧ᵣ r) q)
   have line2 := star4_detach negation disjunction _ _ (star_3_27 negation disjunction q r)
-    (Derivation.star_1_6 negation disjunction p (q ∧ᵣ r) r)
+    (Derivation.star_1_6_same negation disjunction p (q ∧ᵣ r) r)
   have line3 := star4_joinUnder negation disjunction (p ∨ᵣ (q ∧ᵣ r)) _ _ line1 line2
   have toQ := star4_compose negation disjunction _ _ _ (star_3_26 negation disjunction (p ∨ᵣ q) (p ∨ᵣ r))
     (star_2_53 negation disjunction p q)
@@ -912,7 +912,7 @@ theorem star_4_77 (p q r : Formula signature real [] order) :
   have line1 := star_3_44 negation disjunction p q r
   have qadd := star_2_2 negation disjunction q r
   have radd := star4_compose negation disjunction _ _ _ (star_2_2 negation disjunction r q)
-    (Derivation.star_1_4 negation disjunction r q)
+    (Derivation.star_1_4_same negation disjunction r q)
   have qbranch := star4_detach negation disjunction _ _ qadd
     (star_2_06 negation disjunction q (q ∨ᵣ r) p)
   have rbranch := star4_detach negation disjunction _ _ radd

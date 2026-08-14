@@ -10,8 +10,8 @@ private theorem detach
     (line2 : ⊢ᵣ implication negation disjunction p q) :
     ⊢ᵣ q := by
   cases real with
-  | nil => exact Derivation.star_1_1 negation disjunction line1 line2
-  | cons head tail => exact Derivation.star_1_11 negation disjunction line1 line2
+  | nil => exact Derivation.star_1_1_same negation disjunction line1 line2
+  | cons head tail => exact Derivation.star_1_11_same negation disjunction line1 line2
 
 private theorem conjoin
     (negation : signature.Negation order)

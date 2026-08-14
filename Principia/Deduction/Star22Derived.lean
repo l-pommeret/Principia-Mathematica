@@ -1,4 +1,5 @@
 import Principia.Deduction.Star4Ramified
+import Principia.Deduction.Star10Derived
 import Principia.FirstEdition.Volume1.Star22Source
 
 namespace PM.RamifiedSyntax
@@ -162,8 +163,104 @@ theorem star_22_42
     (implication negation disjunction body body) line1
   exact line2
 
+/-- Binding an individual does not raise an already positive matrix order. -/
+private theorem bindOrder_succ_individual (order : Nat) :
+    bindOrder (Nat.succ order) .individual = Nat.succ order := by
+  cases order with
+  | zero => rfl
+  | succ order => rfl
+
+/-- Inclusion at a positive order, with the computed binder order exposed. -/
+private def star_22_01_successor
+    (universal : signature.Universal .individual (Nat.succ order))
+    (negation : signature.Negation (Nat.succ order))
+    (disjunction : signature.Disjunction (Nat.succ order))
+    (alpha beta : Term signature real [] (classSort (Nat.succ order) 0)) :
+    Formula signature real [] (Nat.succ order) :=
+  Eq.mp
+    (congrArg (Formula signature real []) (bindOrder_succ_individual order))
+    (star_22_01 universal negation disjunction alpha beta)
+
+/-- Audited scope reading of ✱22·441. -/
+def star_22_441_reading
+    (universal : signature.Universal .individual (Nat.succ order))
+    (negation : signature.Negation (Nat.succ order))
+    (disjunction : signature.Disjunction (Nat.succ order))
+    (alpha beta : Term signature real [] (classSort (Nat.succ order) 0))
+    (x : Term signature real [] .individual) :
+    ClaimReading signature real where
+  printed := "⊢ : α ⊂ β . x ε α .⊃ . x ε β"
+  parsed := .assertion
+    (implication negation disjunction
+      (conjunction negation disjunction
+        (star_22_01_successor universal negation disjunction alpha beta)
+        (star_20_02 alpha x))
+      (star_20_02 beta x))
+
+/-- Transport a derivation along the computed equality of two ramified
+formula orders.  This is only dependent transport in Lean's metalanguage. -/
+private theorem castAssertionOrder
+    (equality : sourceOrder = targetOrder)
+    (formula : Formula signature real [] sourceOrder) :
+    Derivation (.assertion formula) →
+      Derivation (.assertion
+        (Eq.mp (congrArg (Formula signature real []) equality) formula)) := by
+  cases equality
+  exact fun derivation => derivation
+
+/-- Instantiating the displayed membership matrix restores its closed class
+argument and replaces exactly the displayed individual variable. -/
+private theorem star_20_02_weaken_instantiate
+    (predicate : Term signature real [] (classSort resultOrder 0))
+    (x : Term signature real [] .individual) :
+    (star_20_02 predicate.weaken
+      (.apparent (.zero : Var [.individual] .individual))).substitute
+        (instantiateSubstitution x) = star_20_02 predicate x := by
+  cases predicate <;> rfl
+
+/-- ✱22·441, following PM's printed `[✱10·1.Imp]` route.
+`demonstration_provenance: follows-printed`. -/
+theorem star_22_441
+    (universal : signature.Universal .individual (Nat.succ order))
+    (negation : signature.Negation (Nat.succ order))
+    (disjunction : signature.Disjunction (Nat.succ order))
+    (alpha beta : Term signature real [] (classSort (Nat.succ order) 0))
+    (x : Term signature real [] .individual) :
+    Derivation (star_22_441_reading universal negation disjunction
+      alpha beta x).parsed := by
+  let body : Formula signature real [.individual] (Nat.succ order) :=
+    implication negation disjunction
+      (star_20_02 alpha.weaken (.apparent .zero))
+      (star_20_02 beta.weaken (.apparent .zero))
+  have bindEq : bindOrder (Nat.succ order) .individual = Nat.succ order := by
+    exact bindOrder_succ_individual order
+  have resultEq :
+      max (bindOrder (Nat.succ order) .individual) (Nat.succ order) =
+        Nat.succ order :=
+    natMaxCongr bindEq rfl
+  have line1Raw := star_10_1 universal
+    (Eq.mp (congrArg signature.Negation bindEq.symm) negation)
+    (Eq.mp (congrArg signature.Disjunction resultEq.symm) disjunction) body x
+  have line1Cast := castAssertionOrder resultEq _ line1Raw
+  have line1 : ⊢ᵣ implication negation disjunction
+      (star_22_01_successor universal negation disjunction alpha beta)
+      (body.instantiate x) :=
+    Derivation.castAssertion
+      (mixedImplication_normalizeSameOrder bindEq rfl negation disjunction
+        (.always universal body) (body.instantiate x)).symm
+      line1Cast
+  rw [Formula.instantiate, implication_substitute] at line1
+  rw [star_20_02_weaken_instantiate alpha x,
+    star_20_02_weaken_instantiate beta x] at line1
+  have line2 := star_3_31 negation disjunction
+    (star_22_01_successor universal negation disjunction alpha beta)
+    (star_20_02 alpha x) (star_20_02 beta x)
+  have line3 := Derivation.star_9_12_same negation disjunction line1 line2
+  exact line3
+
 end PM.RamifiedSyntax
 
+#print axioms PM.RamifiedSyntax.star_22_441
 #print axioms PM.RamifiedSyntax.star_22_42
 #print axioms PM.RamifiedSyntax.star_22_1
 #print axioms PM.RamifiedSyntax.star_22_01_unfold

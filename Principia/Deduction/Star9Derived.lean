@@ -25,7 +25,7 @@ private theorem lift_star_1_3_left
         (sameDisjunction disjunction
           (phi.weakenReal.instantiate (.real (.zero : Var (argument :: real) argument)))
           q.weakenReal) :=
-    Derivation.star_1_3 negation disjunction
+    Derivation.star_1_3_same negation disjunction
       (phi.weakenReal.instantiate (.real (.zero : Var (argument :: real) argument)))
       q.weakenReal
   let value : Term signature (argument :: real) [] argument :=
@@ -97,7 +97,7 @@ private theorem lift_star_1_4
         (sameDisjunction disjunction
           (phi.weakenReal.instantiate (.real (.zero : Var (argument :: real) argument)))
           p.weakenReal) :=
-    Derivation.star_1_4 negation disjunction p.weakenReal
+    Derivation.star_1_4_same negation disjunction p.weakenReal
       (phi.weakenReal.instantiate (.real (.zero : Var (argument :: real) argument)))
   let value : Term signature (argument :: real) [] argument :=
     .real (.zero : Var (argument :: real) argument)
@@ -139,7 +139,7 @@ private theorem lift_star_1_5
         (sameDisjunction disjunction q.weakenReal
           (sameDisjunction disjunction p.weakenReal
             (phi.weakenReal.instantiate (.real (.zero : Var (argument :: real) argument))))) :=
-    Derivation.star_1_5 negation disjunction p.weakenReal q.weakenReal
+    Derivation.star_1_5_same negation disjunction p.weakenReal q.weakenReal
       (phi.weakenReal.instantiate (.real (.zero : Var (argument :: real) argument)))
   let value : Term signature (argument :: real) [] argument :=
     .real (.zero : Var (argument :: real) argument)
@@ -187,7 +187,7 @@ private theorem lift_star_1_4_reverse
       ⊢ᵣ implication negation disjunction
         (sameDisjunction disjunction (phi.weakenReal.instantiate value) p.weakenReal)
         (sameDisjunction disjunction p.weakenReal (phi.weakenReal.instantiate value)) :=
-    Derivation.star_1_4 negation disjunction
+    Derivation.star_1_4_same negation disjunction
       (phi.weakenReal.instantiate value) p.weakenReal
   have matrixEq :
       (implication negation disjunction
@@ -417,7 +417,7 @@ theorem star_9_41 (universal : signature.Universal argument 0)
           (sameDisjunction disjunction (phi.weakenReal.instantiate value) r.weakenReal))
         (sameDisjunction disjunction (phi.weakenReal.instantiate value)
           (sameDisjunction disjunction p.weakenReal r.weakenReal)) :=
-    Derivation.star_1_5 negation disjunction p.weakenReal
+    Derivation.star_1_5_same negation disjunction p.weakenReal
       (phi.weakenReal.instantiate value) r.weakenReal
   have matrixEq :
       (implication negation disjunction
@@ -479,7 +479,7 @@ theorem star_9_42 (universal : signature.Universal argument 0)
           (sameDisjunction disjunction q.weakenReal r.weakenReal))
         (sameDisjunction disjunction q.weakenReal
           (sameDisjunction disjunction (phi.weakenReal.instantiate value) r.weakenReal)) :=
-    Derivation.star_1_5 negation disjunction
+    Derivation.star_1_5_same negation disjunction
       (phi.weakenReal.instantiate value) q.weakenReal r.weakenReal
   have matrixEq :
       (implication negation disjunction

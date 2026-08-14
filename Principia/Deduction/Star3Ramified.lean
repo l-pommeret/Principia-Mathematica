@@ -42,8 +42,8 @@ def star_3_02_printed : String := "p ⊃ q ⊃ r .=. p ⊃ q . q ⊃ r     Df"
 private theorem detach (p q : RFormula signature real order) :
     (⊢ᵣ p) → (⊢ᵣ p ⊃ᵣ q) → (⊢ᵣ q) := by
   cases real with
-  | nil => exact Derivation.star_1_1 negation disjunction
-  | cons head tail => exact Derivation.star_1_11 negation disjunction
+  | nil => exact Derivation.star_1_1_same negation disjunction
+  | cons head tail => exact Derivation.star_1_11_same negation disjunction
 
 theorem star_3_1 (p q : RFormula signature real order) :
     ⊢ᵣ (p ∧ᵣ q) ⊃ᵣ (∼ᵣ ((∼ᵣ p) ∨ᵣ (∼ᵣ q))) := by
@@ -86,7 +86,7 @@ theorem star_3_21 (p q : RFormula signature real order) :
 theorem star_3_22 (p q : RFormula signature real order) :
     ⊢ᵣ (p ∧ᵣ q) ⊃ᵣ (q ∧ᵣ p) := by
   have line1 := detach negation disjunction _ _
-    (Derivation.star_1_4 negation disjunction (∼ᵣ q) (∼ᵣ p))
+    (Derivation.star_1_4_same negation disjunction (∼ᵣ q) (∼ᵣ p))
     (detach negation disjunction _ _ (star_3_13 negation disjunction q p)
       (star_2_06 negation disjunction (∼ᵣ (q ∧ᵣ p)) ((∼ᵣ q) ∨ᵣ (∼ᵣ p))
         ((∼ᵣ p) ∨ᵣ (∼ᵣ q))))
@@ -110,7 +110,7 @@ theorem star_3_26 (p q : RFormula signature real order) : ⊢ᵣ (p ∧ᵣ q) �
 theorem star_3_27 (p q : RFormula signature real order) : ⊢ᵣ (p ∧ᵣ q) ⊃ᵣ q :=
   detach negation disjunction _ _ (star_3_22 negation disjunction p q)
     (detach negation disjunction _ _ (star_3_26 negation disjunction q p)
-      (Derivation.star_1_6 negation disjunction (∼ᵣ (p ∧ᵣ q)) (q ∧ᵣ p) q))
+      (Derivation.star_1_6_same negation disjunction (∼ᵣ (p ∧ᵣ q)) (q ∧ᵣ p) q))
 
 /-- ✱3·03, the adjunction rule obtained from ✱3·2 by two detachments. -/
 theorem star_3_03 (p q : RFormula signature real order) :
@@ -302,17 +302,17 @@ theorem star_3_48 (p q r s : RFormula signature real order) :
     exact detach negation disjunction _ _ hAB
       (detach negation disjunction _ _ hBC (star_2_05 negation disjunction A B C))
   have second := star_3_27 negation disjunction (p ⊃ᵣ r) (q ⊃ᵣ s)
-  have propagation1 := Derivation.star_1_6 negation disjunction p q s
+  have propagation1 := Derivation.star_1_6_same negation disjunction p q s
   have secondSum := syll _ _ _ second propagation1
   have permute1 := detach negation disjunction _ _
-    (Derivation.star_1_4 negation disjunction p s)
+    (Derivation.star_1_4_same negation disjunction p s)
     (star_2_05 negation disjunction (p ∨ᵣ q) (p ∨ᵣ s) (s ∨ᵣ p))
   have line1 := syll _ _ _ secondSum permute1
   have first := star_3_26 negation disjunction (p ⊃ᵣ r) (q ⊃ᵣ s)
-  have propagation2 := Derivation.star_1_6 negation disjunction s p r
+  have propagation2 := Derivation.star_1_6_same negation disjunction s p r
   have firstSum := syll _ _ _ first propagation2
   have permute2 := detach negation disjunction _ _
-    (Derivation.star_1_4 negation disjunction s r)
+    (Derivation.star_1_4_same negation disjunction s r)
     (star_2_05 negation disjunction (s ∨ᵣ p) (s ∨ᵣ r) (r ∨ᵣ s))
   have line2 := syll _ _ _ firstSum permute2
   exact detach negation disjunction _ _ line2

@@ -36,17 +36,17 @@ private theorem transport {Γ : PM.RealContext}
   induction proof with
   | star_1_1 hp hpq ihp ihpq =>
       cases real with
-      | nil => exact Derivation.star_1_1 negation disjunction (ihp valuation) (ihpq valuation)
-      | cons head tail => exact Derivation.star_1_11 negation disjunction (ihp valuation) (ihpq valuation)
+      | nil => exact Derivation.star_1_1_same negation disjunction (ihp valuation) (ihpq valuation)
+      | cons head tail => exact Derivation.star_1_11_same negation disjunction (ihp valuation) (ihpq valuation)
   | star_1_11 _ hp hpq ihp ihpq =>
       cases real with
-      | nil => exact Derivation.star_1_1 negation disjunction (ihp valuation) (ihpq valuation)
-      | cons head tail => exact Derivation.star_1_11 negation disjunction (ihp valuation) (ihpq valuation)
+      | nil => exact Derivation.star_1_1_same negation disjunction (ihp valuation) (ihpq valuation)
+      | cons head tail => exact Derivation.star_1_11_same negation disjunction (ihp valuation) (ihpq valuation)
   | star_1_2 p => exact Derivation.star_1_2 negation disjunction _
-  | star_1_3 p q => exact Derivation.star_1_3 negation disjunction _ _
-  | star_1_4 p q => exact Derivation.star_1_4 negation disjunction _ _
-  | star_1_5 p q r => exact Derivation.star_1_5 negation disjunction _ _ _
-  | star_1_6 p q r => exact Derivation.star_1_6 negation disjunction _ _ _
+  | star_1_3 p q => exact Derivation.star_1_3_same negation disjunction _ _
+  | star_1_4 p q => exact Derivation.star_1_4_same negation disjunction _ _
+  | star_1_5 p q r => exact Derivation.star_1_5_same negation disjunction _ _ _
+  | star_1_6 p q r => exact Derivation.star_1_6_same negation disjunction _ _ _
 
 private def atoms (p q r s : RF signature real order) : String → RF signature real order
   | "p" => p

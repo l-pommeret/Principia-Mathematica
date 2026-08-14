@@ -8,6 +8,18 @@ theorem natMaxSelf (order : Nat) : max order order = order := by
   change (if order ≤ order then order else order) = order
   rw [if_pos (Nat.le_refl order)]
 
+/-- If both inputs to `max` are identified with one order, its result is
+identified with that order too.  This equality is assembled solely from the
+given identifications and the kernel-only `natMaxSelf` proof. -/
+theorem natMaxCongr
+    {leftOrder rightOrder order : Nat}
+    (leftEq : leftOrder = order)
+    (rightEq : rightOrder = order) :
+    max leftOrder rightOrder = order := by
+  cases leftEq
+  cases rightEq
+  exact natMaxSelf _
+
 /-!
 # Pure ramified object syntax
 
@@ -1302,6 +1314,54 @@ def sameDisjunction (disjunction : signature.Disjunction order)
         disjunction)
       left right)
 
+/-- A heterogeneous disjunction whose two member orders are identified with
+one common order normalizes to the established mono-order abbreviation.  The
+equalities are explicit, so this lemma cannot transport a formula between
+unrelated ramified orders. -/
+theorem Formula.disj_normalizeSameOrder
+    {leftOrder rightOrder order : Nat}
+    (leftEq : leftOrder = order)
+    (rightEq : rightOrder = order)
+    (disjunction : signature.Disjunction order)
+    (left : Formula signature real apparent leftOrder)
+    (right : Formula signature real apparent rightOrder) :
+    let resultEq := natMaxCongr leftEq rightEq
+    Eq.mp (congrArg (Formula signature real apparent) resultEq)
+        (.disj
+          (Eq.mp (congrArg signature.Disjunction resultEq.symm) disjunction)
+          left right) =
+      sameDisjunction disjunction
+        (Eq.mp (congrArg (Formula signature real apparent) leftEq) left)
+        (Eq.mp (congrArg (Formula signature real apparent) rightEq) right) := by
+  cases leftEq
+  cases rightEq
+  rfl
+
+/-- A heterogeneous implication whose two member orders are identified with
+one common order normalizes to the established mono-order abbreviation.  It
+only commutes the casts forced by those equalities through the printed
+negation/disjunction tree; it is not an inter-order formula cast. -/
+theorem mixedImplication_normalizeSameOrder
+    {leftOrder rightOrder order : Nat}
+    (leftEq : leftOrder = order)
+    (rightEq : rightOrder = order)
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left : Formula signature real apparent leftOrder)
+    (right : Formula signature real apparent rightOrder) :
+    let resultEq := natMaxCongr leftEq rightEq
+    Eq.mp (congrArg (Formula signature real apparent) resultEq)
+        (mixedImplication
+          (Eq.mp (congrArg signature.Negation leftEq.symm) negation)
+          (Eq.mp (congrArg signature.Disjunction resultEq.symm) disjunction)
+          left right) =
+      implication negation disjunction
+        (Eq.mp (congrArg (Formula signature real apparent) leftEq) left)
+        (Eq.mp (congrArg (Formula signature real apparent) rightEq) right) := by
+  cases leftEq
+  cases rightEq
+  rfl
+
 def Term.weakenReal
     (term : Term signature realCtx appCtx sort) :
     Term signature (fresh :: realCtx) appCtx sort :=
@@ -1371,52 +1431,86 @@ predicative function, and a separate premise derives its pointwise
 equivalence before the existential assertion may be introduced. -/
 inductive Derivation {signature : Signature} :
     {real : Context} → Claim signature real → Prop where
-  | star_1_1 {order : Nat}
-      {p q : Formula signature [] [] order}
-      (negation : signature.Negation order)
-      (disjunction : signature.Disjunction order) :
+  | star_1_1 {pOrder qOrder : Nat}
+      {p : Formula signature [] [] pOrder}
+      {q : Formula signature [] [] qOrder}
+      (negation : signature.Negation pOrder)
+      (disjunction : signature.Disjunction (max pOrder qOrder)) :
       Derivation (.assertion p) →
-      Derivation (.assertion (implication negation disjunction p q)) →
+      Derivation (.assertion (mixedImplication negation disjunction p q)) →
       Derivation (.assertion q)
-  | star_1_11 {real : Context} {realSort : RSort} {order : Nat}
-      {p q : Formula signature (realSort :: real) [] order}
-      (negation : signature.Negation order)
-      (disjunction : signature.Disjunction order) :
+  | star_1_11 {real : Context} {realSort : RSort} {pOrder qOrder : Nat}
+      {p : Formula signature (realSort :: real) [] pOrder}
+      {q : Formula signature (realSort :: real) [] qOrder}
+      (negation : signature.Negation pOrder)
+      (disjunction : signature.Disjunction (max pOrder qOrder)) :
       Derivation (.assertion p) →
-      Derivation (.assertion (implication negation disjunction p q)) →
+      Derivation (.assertion (mixedImplication negation disjunction p q)) →
       Derivation (.assertion q)
   | star_1_2 {order : Nat} (negation : signature.Negation order)
       (disjunction : signature.Disjunction order)
       (p : Formula signature real [] order) :
       Derivation (.assertion
         (implication negation disjunction (sameDisjunction disjunction p p) p))
-  | star_1_3 {order : Nat}
-      (negation : signature.Negation order)
-      (disjunction : signature.Disjunction order)
-      (p q : Formula signature real [] order) :
-      Derivation (.assertion (implication negation disjunction q
-        (sameDisjunction disjunction p q)))
-  | star_1_4 {order : Nat}
-      (negation : signature.Negation order)
-      (disjunction : signature.Disjunction order)
-      (p q : Formula signature real [] order) :
-      Derivation (.assertion (implication negation disjunction
-        (sameDisjunction disjunction p q) (sameDisjunction disjunction q p)))
-  | star_1_5 {order : Nat}
-      (negation : signature.Negation order)
-      (disjunction : signature.Disjunction order)
-      (p q r : Formula signature real [] order) :
-      Derivation (.assertion (implication negation disjunction
-        (sameDisjunction disjunction p (sameDisjunction disjunction q r))
-        (sameDisjunction disjunction q (sameDisjunction disjunction p r))))
-  | star_1_6 {order : Nat}
-      (negation : signature.Negation order)
-      (disjunction : signature.Disjunction order)
-      (p q r : Formula signature real [] order) :
-      Derivation (.assertion (implication negation disjunction
-        (implication negation disjunction q r)
-        (implication negation disjunction
-          (sameDisjunction disjunction p q) (sameDisjunction disjunction p r))))
+  | star_1_3 {pOrder qOrder : Nat}
+      (qNegation : signature.Negation qOrder)
+      (innerDisjunction : signature.Disjunction (max pOrder qOrder))
+      (outerDisjunction : signature.Disjunction
+        (max qOrder (max pOrder qOrder)))
+      (p : Formula signature real [] pOrder)
+      (q : Formula signature real [] qOrder) :
+      Derivation (.assertion (mixedImplication qNegation outerDisjunction q
+        (.disj innerDisjunction p q)))
+  | star_1_4 {pOrder qOrder : Nat}
+      (antecedentNegation : signature.Negation (max pOrder qOrder))
+      (leftDisjunction : signature.Disjunction (max pOrder qOrder))
+      (rightDisjunction : signature.Disjunction (max qOrder pOrder))
+      (outerDisjunction : signature.Disjunction
+        (max (max pOrder qOrder) (max qOrder pOrder)))
+      (p : Formula signature real [] pOrder)
+      (q : Formula signature real [] qOrder) :
+      Derivation (.assertion
+        (mixedImplication antecedentNegation outerDisjunction
+          (.disj leftDisjunction p q) (.disj rightDisjunction q p)))
+  | star_1_5 {pOrder qOrder rOrder : Nat}
+      (antecedentNegation : signature.Negation
+        (max pOrder (max qOrder rOrder)))
+      (qrDisjunction : signature.Disjunction (max qOrder rOrder))
+      (leftDisjunction : signature.Disjunction
+        (max pOrder (max qOrder rOrder)))
+      (prDisjunction : signature.Disjunction (max pOrder rOrder))
+      (rightDisjunction : signature.Disjunction
+        (max qOrder (max pOrder rOrder)))
+      (outerDisjunction : signature.Disjunction
+        (max (max pOrder (max qOrder rOrder))
+          (max qOrder (max pOrder rOrder))))
+      (p : Formula signature real [] pOrder)
+      (q : Formula signature real [] qOrder)
+      (r : Formula signature real [] rOrder) :
+      Derivation (.assertion
+        (mixedImplication antecedentNegation outerDisjunction
+          (.disj leftDisjunction p (.disj qrDisjunction q r))
+          (.disj rightDisjunction q (.disj prDisjunction p r))))
+  | star_1_6 {pOrder qOrder rOrder : Nat}
+      (qNegation : signature.Negation qOrder)
+      (qrDisjunction : signature.Disjunction (max qOrder rOrder))
+      (outerNegation : signature.Negation (max qOrder rOrder))
+      (pqNegation : signature.Negation (max pOrder qOrder))
+      (pqDisjunction : signature.Disjunction (max pOrder qOrder))
+      (prDisjunction : signature.Disjunction (max pOrder rOrder))
+      (innerDisjunction : signature.Disjunction
+        (max (max pOrder qOrder) (max pOrder rOrder)))
+      (outerDisjunction : signature.Disjunction
+        (max (max qOrder rOrder)
+          (max (max pOrder qOrder) (max pOrder rOrder))))
+      (p : Formula signature real [] pOrder)
+      (q : Formula signature real [] qOrder)
+      (r : Formula signature real [] rOrder) :
+      Derivation (.assertion
+        (mixedImplication outerNegation outerDisjunction
+          (mixedImplication qNegation qrDisjunction q r)
+          (mixedImplication pqNegation innerDisjunction
+            (.disj pqDisjunction p q) (.disj prDisjunction p r))))
   | star_9_1 {argument : RSort} {matrixOrder : Nat}
       (existential : ExistentialVocabulary signature argument matrixOrder)
       (negation : signature.Negation matrixOrder)
@@ -1553,6 +1647,376 @@ private theorem Derivation.uncastAssertionOrder
       Derivation (.assertion formula) := by
   cases equality
   exact fun derivation => derivation
+
+/-- Transport a derivation only along a proved equality of its formula order.
+Unlike a formula cast between arbitrary indices, this preserves the ramified
+order and merely exposes the `Eq.mp` already forced by that equality. -/
+private theorem Derivation.castAssertionOrder
+    (equality : sourceOrder = targetOrder)
+    (formula : Formula signature real [] sourceOrder) :
+    Derivation (.assertion formula) →
+      Derivation (.assertion
+        (Eq.mp (congrArg (Formula signature real []) equality) formula)) := by
+  cases equality
+  exact fun derivation => derivation
+
+/-- The mono-order specialization of primitive ✱1·1.  It is retained for the
+existing propositional corpus while the constructor itself remains typically
+ambiguous in the orders of `p` and `q`. -/
+theorem Derivation.star_1_1_same
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    {p q : Formula signature [] [] order}
+    (line1 : Derivation (.assertion p))
+    (line2 : Derivation (.assertion
+      (implication negation disjunction p q))) :
+    Derivation (.assertion q) := by
+  let equality := natMaxSelf order
+  apply Derivation.star_1_1 negation
+    (Eq.mp (congrArg signature.Disjunction equality.symm) disjunction)
+    line1
+  exact Derivation.uncastAssertionOrder equality
+    (mixedImplication negation
+      (Eq.mp (congrArg signature.Disjunction equality.symm) disjunction) p q)
+    (Derivation.castAssertion
+      (mixedImplication_normalizeSameOrder rfl rfl
+        negation disjunction p q)
+      line2)
+
+/-- The mono-order specialization of primitive ✱1·11 at a nonempty real
+context.  Its proof is the same equality-controlled normalization as ✱1·1. -/
+theorem Derivation.star_1_11_same
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    {p q : Formula signature (realSort :: real) [] order}
+    (line1 : Derivation (.assertion p))
+    (line2 : Derivation (.assertion
+      (implication negation disjunction p q))) :
+    Derivation (.assertion q) := by
+  let equality := natMaxSelf order
+  apply Derivation.star_1_11 negation
+    (Eq.mp (congrArg signature.Disjunction equality.symm) disjunction)
+    line1
+  exact Derivation.uncastAssertionOrder equality
+    (mixedImplication negation
+      (Eq.mp (congrArg signature.Disjunction equality.symm) disjunction) p q)
+    (Derivation.castAssertion
+      (mixedImplication_normalizeSameOrder rfl rfl
+        negation disjunction p q)
+      line2)
+
+/-- Equality-controlled normalization of the heterogeneous syntax of ✱1·3
+when its two propositional variables happen to have the same order.  The
+transport removes only the `max` indices proved equal by `natMaxSelf`; it is
+not a cast between arbitrary ramified orders. -/
+theorem star_1_3_normalizeSameOrder
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q : Formula signature real [] order) :
+    let pairEq := natMaxSelf order
+    let resultEq := natMaxCongr rfl pairEq
+    Eq.mp (congrArg (Formula signature real []) resultEq)
+        (mixedImplication negation
+          (Eq.mp (congrArg signature.Disjunction resultEq.symm) disjunction)
+          q
+          (.disj
+            (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction)
+            p q)) =
+      implication negation disjunction q
+        (sameDisjunction disjunction p q) := by
+  exact mixedImplication_normalizeSameOrder rfl (natMaxSelf order)
+    negation disjunction q
+    (.disj
+      (Eq.mp (congrArg signature.Disjunction
+        (natMaxSelf order).symm) disjunction)
+      p q)
+
+/-- The mono-order specialization of the typically ambiguous primitive
+✱1·3.  Existing derived propositions use this theorem, while the constructor
+retains independent orders for `p` and `q`. -/
+theorem Derivation.star_1_3_same
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q : Formula signature real [] order) :
+    Derivation (.assertion (implication negation disjunction q
+      (sameDisjunction disjunction p q))) := by
+  let pairEq := natMaxSelf order
+  let resultEq := natMaxCongr rfl pairEq
+  let innerDisjunction :=
+    Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction
+  let outerDisjunction :=
+    Eq.mp (congrArg signature.Disjunction resultEq.symm) disjunction
+  let rawFormula := mixedImplication negation outerDisjunction q
+    (.disj innerDisjunction p q)
+  have rawLine : Derivation (.assertion rawFormula) :=
+    Derivation.star_1_3 negation innerDisjunction outerDisjunction p q
+  have castLine : Derivation (.assertion
+      (Eq.mp (congrArg (Formula signature real []) resultEq) rawFormula)) :=
+    Derivation.castAssertionOrder resultEq rawFormula rawLine
+  exact Derivation.castAssertion
+    (star_1_3_normalizeSameOrder negation disjunction p q).symm castLine
+
+/-- Equality-controlled normalization of heterogeneous ✱1·4 at one common
+order.  Each disjunction is normalized separately before the outer
+implication; every transport is justified by a `max` equality. -/
+theorem star_1_4_normalizeSameOrder
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q : Formula signature real [] order) :
+    let pairEq := natMaxSelf order
+    let resultEq := natMaxCongr pairEq pairEq
+    Eq.mp (congrArg (Formula signature real []) resultEq)
+        (mixedImplication
+          (Eq.mp (congrArg signature.Negation pairEq.symm) negation)
+          (Eq.mp (congrArg signature.Disjunction resultEq.symm) disjunction)
+          (.disj
+            (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction)
+            p q)
+          (.disj
+            (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction)
+            q p)) =
+      implication negation disjunction
+        (sameDisjunction disjunction p q)
+        (sameDisjunction disjunction q p) := by
+  let pairEq := natMaxSelf order
+  let left := Formula.disj
+    (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction) p q
+  let right := Formula.disj
+    (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction) q p
+  exact Eq.trans
+    (mixedImplication_normalizeSameOrder pairEq pairEq
+      negation disjunction left right)
+    (Eq.trans
+      (congrArg (fun formula => implication negation disjunction formula
+          (Eq.mp (congrArg (Formula signature real []) pairEq) right))
+        (Formula.disj_normalizeSameOrder rfl rfl disjunction p q))
+      (congrArg (implication negation disjunction
+          (sameDisjunction disjunction p q))
+        (Formula.disj_normalizeSameOrder rfl rfl disjunction q p)))
+
+/-- The mono-order specialization of the typically ambiguous primitive
+✱1·4.  It preserves the established API without restricting the primitive
+constructor itself. -/
+theorem Derivation.star_1_4_same
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q : Formula signature real [] order) :
+    Derivation (.assertion (implication negation disjunction
+      (sameDisjunction disjunction p q)
+      (sameDisjunction disjunction q p))) := by
+  let pairEq := natMaxSelf order
+  let resultEq := natMaxCongr pairEq pairEq
+  let pairDisjunction :=
+    Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction
+  let pairNegation :=
+    Eq.mp (congrArg signature.Negation pairEq.symm) negation
+  let outerDisjunction :=
+    Eq.mp (congrArg signature.Disjunction resultEq.symm) disjunction
+  let rawFormula := mixedImplication pairNegation outerDisjunction
+    (.disj pairDisjunction p q) (.disj pairDisjunction q p)
+  have rawLine : Derivation (.assertion rawFormula) :=
+    Derivation.star_1_4 pairNegation pairDisjunction pairDisjunction
+      outerDisjunction p q
+  have castLine : Derivation (.assertion
+      (Eq.mp (congrArg (Formula signature real []) resultEq) rawFormula)) :=
+    Derivation.castAssertionOrder resultEq rawFormula rawLine
+  exact Derivation.castAssertion
+    (star_1_4_normalizeSameOrder negation disjunction p q).symm castLine
+
+/-- Equality-controlled normalization of heterogeneous ✱1·5 at one common
+order.  The proof follows the syntax tree from the two inner disjunctions to
+their parents and finally to the outer implication, using only proved `max`
+equalities. -/
+theorem star_1_5_normalizeSameOrder
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q r : Formula signature real [] order) :
+    let pairEq := natMaxSelf order
+    let nestedEq := natMaxCongr rfl pairEq
+    let resultEq := natMaxCongr nestedEq nestedEq
+    Eq.mp (congrArg (Formula signature real []) resultEq)
+        (mixedImplication
+          (Eq.mp (congrArg signature.Negation nestedEq.symm) negation)
+          (Eq.mp (congrArg signature.Disjunction resultEq.symm) disjunction)
+          (.disj
+            (Eq.mp (congrArg signature.Disjunction nestedEq.symm) disjunction)
+            p
+            (.disj
+              (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction)
+              q r))
+          (.disj
+            (Eq.mp (congrArg signature.Disjunction nestedEq.symm) disjunction)
+            q
+            (.disj
+              (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction)
+              p r))) =
+      implication negation disjunction
+        (sameDisjunction disjunction p (sameDisjunction disjunction q r))
+        (sameDisjunction disjunction q (sameDisjunction disjunction p r)) := by
+  let pairEq := natMaxSelf order
+  let nestedEq := natMaxCongr rfl pairEq
+  let qr := Formula.disj
+    (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction) q r
+  let pr := Formula.disj
+    (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction) p r
+  let left := Formula.disj
+    (Eq.mp (congrArg signature.Disjunction nestedEq.symm) disjunction) p qr
+  let right := Formula.disj
+    (Eq.mp (congrArg signature.Disjunction nestedEq.symm) disjunction) q pr
+  have qrEq := Formula.disj_normalizeSameOrder rfl rfl disjunction q r
+  have prEq := Formula.disj_normalizeSameOrder rfl rfl disjunction p r
+  have leftStep := Formula.disj_normalizeSameOrder
+    rfl pairEq disjunction p qr
+  have rightStep := Formula.disj_normalizeSameOrder
+    rfl pairEq disjunction q pr
+  have leftEq := Eq.trans leftStep
+    (congrArg (sameDisjunction disjunction p) qrEq)
+  have rightEq := Eq.trans rightStep
+    (congrArg (sameDisjunction disjunction q) prEq)
+  exact Eq.trans
+    (mixedImplication_normalizeSameOrder nestedEq nestedEq
+      negation disjunction left right)
+    (Eq.trans
+      (congrArg (fun formula => implication negation disjunction formula
+          (Eq.mp (congrArg (Formula signature real []) nestedEq) right)) leftEq)
+      (congrArg (implication negation disjunction
+          (sameDisjunction disjunction p (sameDisjunction disjunction q r)))
+        rightEq))
+
+/-- The mono-order specialization of the typically ambiguous primitive
+✱1·5, obtained by the targeted tree normalization above. -/
+theorem Derivation.star_1_5_same
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q r : Formula signature real [] order) :
+    Derivation (.assertion (implication negation disjunction
+      (sameDisjunction disjunction p (sameDisjunction disjunction q r))
+      (sameDisjunction disjunction q (sameDisjunction disjunction p r)))) := by
+  let pairEq := natMaxSelf order
+  let nestedEq := natMaxCongr rfl pairEq
+  let resultEq := natMaxCongr nestedEq nestedEq
+  let pairDisjunction :=
+    Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction
+  let nestedDisjunction :=
+    Eq.mp (congrArg signature.Disjunction nestedEq.symm) disjunction
+  let nestedNegation :=
+    Eq.mp (congrArg signature.Negation nestedEq.symm) negation
+  let outerDisjunction :=
+    Eq.mp (congrArg signature.Disjunction resultEq.symm) disjunction
+  let rawFormula := mixedImplication nestedNegation outerDisjunction
+    (.disj nestedDisjunction p (.disj pairDisjunction q r))
+    (.disj nestedDisjunction q (.disj pairDisjunction p r))
+  have rawLine : Derivation (.assertion rawFormula) :=
+    Derivation.star_1_5 nestedNegation pairDisjunction nestedDisjunction
+      pairDisjunction nestedDisjunction outerDisjunction p q r
+  have castLine : Derivation (.assertion
+      (Eq.mp (congrArg (Formula signature real []) resultEq) rawFormula)) :=
+    Derivation.castAssertionOrder resultEq rawFormula rawLine
+  exact Derivation.castAssertion
+    (star_1_5_normalizeSameOrder negation disjunction p q r).symm castLine
+
+/-- Equality-controlled normalization of heterogeneous ✱1·6 at one common
+order.  It normalizes the antecedent implication, the two disjunctions, the
+consequent implication, and finally the outer implication in that order. -/
+theorem star_1_6_normalizeSameOrder
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q r : Formula signature real [] order) :
+    let pairEq := natMaxSelf order
+    let consequentEq := natMaxCongr pairEq pairEq
+    let resultEq := natMaxCongr pairEq consequentEq
+    Eq.mp (congrArg (Formula signature real []) resultEq)
+        (mixedImplication
+          (Eq.mp (congrArg signature.Negation pairEq.symm) negation)
+          (Eq.mp (congrArg signature.Disjunction resultEq.symm) disjunction)
+          (mixedImplication negation
+            (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction)
+            q r)
+          (mixedImplication
+            (Eq.mp (congrArg signature.Negation pairEq.symm) negation)
+            (Eq.mp (congrArg signature.Disjunction consequentEq.symm)
+              disjunction)
+            (.disj
+              (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction)
+              p q)
+            (.disj
+              (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction)
+              p r))) =
+      implication negation disjunction
+        (implication negation disjunction q r)
+        (implication negation disjunction
+          (sameDisjunction disjunction p q)
+          (sameDisjunction disjunction p r)) := by
+  let pairEq := natMaxSelf order
+  let consequentEq := natMaxCongr pairEq pairEq
+  let antecedent := mixedImplication negation
+    (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction) q r
+  let pq := Formula.disj
+    (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction) p q
+  let pr := Formula.disj
+    (Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction) p r
+  let consequent := mixedImplication
+    (Eq.mp (congrArg signature.Negation pairEq.symm) negation)
+    (Eq.mp (congrArg signature.Disjunction consequentEq.symm) disjunction)
+    pq pr
+  have antecedentEq := mixedImplication_normalizeSameOrder
+    rfl rfl negation disjunction q r
+  have pqEq := Formula.disj_normalizeSameOrder rfl rfl disjunction p q
+  have prEq := Formula.disj_normalizeSameOrder rfl rfl disjunction p r
+  have consequentStep := mixedImplication_normalizeSameOrder
+    pairEq pairEq negation disjunction pq pr
+  have consequentEq' := Eq.trans consequentStep
+    (Eq.trans
+      (congrArg (fun formula => implication negation disjunction formula
+          (Eq.mp (congrArg (Formula signature real []) pairEq) pr)) pqEq)
+      (congrArg (implication negation disjunction
+          (sameDisjunction disjunction p q)) prEq))
+  exact Eq.trans
+    (mixedImplication_normalizeSameOrder pairEq consequentEq
+      negation disjunction antecedent consequent)
+    (Eq.trans
+      (congrArg (fun formula => implication negation disjunction formula
+          (Eq.mp (congrArg (Formula signature real []) consequentEq) consequent))
+        antecedentEq)
+      (congrArg (implication negation disjunction
+          (implication negation disjunction q r)) consequentEq'))
+
+/-- The mono-order specialization of the typically ambiguous primitive
+✱1·6, obtained without any generic conversion between formula orders. -/
+theorem Derivation.star_1_6_same
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q r : Formula signature real [] order) :
+    Derivation (.assertion (implication negation disjunction
+      (implication negation disjunction q r)
+      (implication negation disjunction
+        (sameDisjunction disjunction p q)
+        (sameDisjunction disjunction p r)))) := by
+  let pairEq := natMaxSelf order
+  let consequentEq := natMaxCongr pairEq pairEq
+  let resultEq := natMaxCongr pairEq consequentEq
+  let pairDisjunction :=
+    Eq.mp (congrArg signature.Disjunction pairEq.symm) disjunction
+  let pairNegation :=
+    Eq.mp (congrArg signature.Negation pairEq.symm) negation
+  let consequentDisjunction :=
+    Eq.mp (congrArg signature.Disjunction consequentEq.symm) disjunction
+  let outerDisjunction :=
+    Eq.mp (congrArg signature.Disjunction resultEq.symm) disjunction
+  let antecedent := mixedImplication negation pairDisjunction q r
+  let consequent := mixedImplication pairNegation consequentDisjunction
+    (.disj pairDisjunction p q) (.disj pairDisjunction p r)
+  let rawFormula := mixedImplication pairNegation outerDisjunction
+    antecedent consequent
+  have rawLine : Derivation (.assertion rawFormula) :=
+    Derivation.star_1_6 negation pairDisjunction pairNegation pairNegation
+      pairDisjunction pairDisjunction consequentDisjunction outerDisjunction
+      p q r
+  have castLine : Derivation (.assertion
+      (Eq.mp (congrArg (Formula signature real []) resultEq) rawFormula)) :=
+    Derivation.castAssertionOrder resultEq rawFormula rawLine
+  exact Derivation.castAssertion
+    (star_1_6_normalizeSameOrder negation disjunction p q r).symm castLine
 
 /-- The same-order instance retained for existing printed uses of ✱9·12. -/
 theorem Derivation.star_9_12_same
@@ -1831,7 +2295,7 @@ theorem star_9_34
     ⊢ᵣ star_9_34_formula universal negation disjunction p phi :=
   let value : Term signature (argument :: real) [] argument :=
     .real (.zero : Var (argument :: real) argument)
-  let rawLine := Derivation.star_1_3 negation disjunction p.weakenReal
+  let rawLine := Derivation.star_1_3_same negation disjunction p.weakenReal
     (phi.weakenReal.substitute (instantiateSubstitution value))
   let line1 :
       ⊢ᵣ implication negation disjunction
