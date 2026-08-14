@@ -1,6 +1,8 @@
 import Principia.FirstEdition.Volume1.Star21Source
 import Principia.Deduction.Star4Ramified
 import Principia.Deduction.Star10Derived
+import Principia.Deduction.Star11Derived
+import Principia.Deduction.Star12Derived
 import Principia.Syntax.Ramified
 
 namespace PM.RamifiedSyntax
@@ -40,6 +42,18 @@ theorem star_21_071_unfold
     (body : Formula signature real
       (relationSort resultOrder 0 :: apparent) scopeOrder) :
     star_21_071 existential body = .sometimes existential body := rfl
+
+/-- ✱21·02: application of a predicative binary relation function. -/
+def star_21_02
+    (relation : Term signature real apparent (relationSort resultOrder 0))
+    (left right : Term signature real apparent .individual) :
+    Formula signature real apparent resultOrder :=
+  applyBinary relation left right
+
+theorem star_21_02_unfold
+    (relation : Term signature real apparent (relationSort resultOrder 0))
+    (left right : Term signature real apparent .individual) :
+    star_21_02 relation left right = applyBinary relation left right := rfl
 
 /-- Audited catalogue reading of ✱21·1.  The apparent relation on the left
 is eliminated by ✱21·01, so both sides parse as its existential expansion. -/
@@ -130,6 +144,274 @@ theorem star_21_1
       conjunctionDisjunction matrix continuation)
   rw [line1] at line2
   exact line2
+
+/-! ## The eliminative theorem ✱21·3 -/
+
+/-- The predicative relation matrix used by the two-argument specialization
+of ✱10·43. -/
+def star_21_3_relationMatrix
+    (_matrix : Formula signature real [.individual, .individual] resultOrder) :
+    Formula signature (relationSort resultOrder 0 :: real)
+      [.individual, .individual] resultOrder :=
+  star_21_02
+    (.real (.zero : Var (relationSort resultOrder 0 :: real)
+      (relationSort resultOrder 0)))
+    (.apparent .zero) (.apparent (.succ .zero))
+
+/-- The exact two-argument specialization used on PM's ✱10·43 line.  The
+ramified API exposes this multiple generalization as ✱11·1. -/
+def star_21_3_transportFormula
+    (leftUniversal : signature.Universal .individual resultOrder)
+    (rightUniversal : signature.Universal .individual
+      (bindOrder resultOrder .individual))
+    (equivalenceNegation : signature.Negation resultOrder)
+    (equivalenceDisjunction : signature.Disjunction resultOrder)
+    (outerNegation : signature.Negation
+      (bindOrder (bindOrder resultOrder .individual) .individual))
+    (outerDisjunction : signature.Disjunction
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        resultOrder))
+    (matrix : Formula signature real [.individual, .individual] resultOrder)
+    (x y : Term signature real [] .individual) :
+    Formula signature (relationSort resultOrder 0 :: real) []
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        resultOrder) :=
+  star_11_1_formula leftUniversal rightUniversal outerNegation
+    outerDisjunction
+    (equivalence equivalenceNegation equivalenceDisjunction
+      (star_21_3_relationMatrix matrix) matrix.weakenReal)
+    x.weakenReal y.weakenReal
+
+/-- The two-place instance of PM's ✱10·43 specialization.  The primitive
+ramified representation of simultaneous two-variable specialization is
+✱11·1, so this theorem is the exact binary instance used at ✱21·3. -/
+theorem star_21_3_star_10_43
+    (leftUniversal : signature.Universal .individual resultOrder)
+    (rightUniversal : signature.Universal .individual
+      (bindOrder resultOrder .individual))
+    (equivalenceNegation : signature.Negation resultOrder)
+    (equivalenceDisjunction : signature.Disjunction resultOrder)
+    (outerNegation : signature.Negation
+      (bindOrder (bindOrder resultOrder .individual) .individual))
+    (outerDisjunction : signature.Disjunction
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        resultOrder))
+    (matrix : Formula signature real [.individual, .individual] resultOrder)
+    (x y : Term signature real [] .individual) :
+    ⊢ᵣ star_21_3_transportFormula leftUniversal rightUniversal
+      equivalenceNegation equivalenceDisjunction outerNegation
+      outerDisjunction matrix x y := by
+  have line1 := star_11_1 leftUniversal rightUniversal outerNegation
+    outerDisjunction
+    (equivalence equivalenceNegation equivalenceDisjunction
+      (star_21_3_relationMatrix matrix) matrix.weakenReal)
+    x.weakenReal y.weakenReal
+  exact line1
+
+/-- The continuation obtained from the eliminable application definition
+✱21·02. -/
+def star_21_3_continuation
+    (equivalenceNegation : signature.Negation resultOrder)
+    (equivalenceDisjunction : signature.Disjunction resultOrder)
+    (matrix : Formula signature real [.individual, .individual] resultOrder)
+    (x y : Term signature real [] .individual) :
+    Formula signature real [relationSort resultOrder 0] resultOrder :=
+  equivalence equivalenceNegation equivalenceDisjunction
+    (star_21_02 (.apparent .zero) x.weaken y.weaken)
+    ((matrix.instantiate₂ x y).rename
+      (emptyRenaming (target := [relationSort resultOrder 0])))
+
+/-- Object formula of ✱21·3 after contextual expansion by ✱21·01. -/
+def star_21_3_formula
+    (existential : ExistentialVocabulary signature (relationSort resultOrder 0)
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        resultOrder))
+    (leftUniversal : signature.Universal .individual resultOrder)
+    (rightUniversal : signature.Universal .individual
+      (bindOrder resultOrder .individual))
+    (equivalenceNegation : signature.Negation resultOrder)
+    (equivalenceDisjunction : signature.Disjunction resultOrder)
+    (leftNegation : signature.Negation
+      (bindOrder (bindOrder resultOrder .individual) .individual))
+    (rightNegation : signature.Negation resultOrder)
+    (outerNegation : signature.Negation
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        resultOrder))
+    (conjunctionDisjunction : signature.Disjunction
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        resultOrder))
+    (matrix : Formula signature real [.individual, .individual] resultOrder)
+    (x y : Term signature real [] .individual) :
+    Formula signature real []
+      (bindOrder
+        (max (bindOrder (bindOrder resultOrder .individual) .individual)
+          resultOrder)
+        (relationSort resultOrder 0)) :=
+  star_21_01 existential leftUniversal rightUniversal equivalenceNegation
+    equivalenceDisjunction leftNegation rightNegation outerNegation
+    conjunctionDisjunction matrix
+    (star_21_3_continuation equivalenceNegation equivalenceDisjunction
+      matrix x y)
+
+/-- Audited catalogue reading of ✱21·3. -/
+def star_21_3_reading
+    (existential : ExistentialVocabulary signature (relationSort resultOrder 0)
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        resultOrder))
+    (leftUniversal : signature.Universal .individual resultOrder)
+    (rightUniversal : signature.Universal .individual
+      (bindOrder resultOrder .individual))
+    (equivalenceNegation : signature.Negation resultOrder)
+    (equivalenceDisjunction : signature.Disjunction resultOrder)
+    (leftNegation : signature.Negation
+      (bindOrder (bindOrder resultOrder .individual) .individual))
+    (rightNegation : signature.Negation resultOrder)
+    (outerNegation : signature.Negation
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        resultOrder))
+    (conjunctionDisjunction : signature.Disjunction
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        resultOrder))
+    (matrix : Formula signature real [.individual, .individual] resultOrder)
+    (x y : Term signature real [] .individual) :
+    ClaimReading signature real where
+  printed := "✱21·3. ⊢:xx̂ŷψ(x,y)y.≡.ψ(x,y) [*21·1·02.*10·43·35.*12·11]"
+  parsed := .assertion (star_21_3_formula existential leftUniversal
+    rightUniversal equivalenceNegation equivalenceDisjunction leftNegation
+    rightNegation outerNegation conjunctionDisjunction matrix x y)
+
+/-- ✱21·3 modulo the same missing ✱10·35 instance as ✱20·3.
+
+`direct_assumptions: PM1:REDUCIBILITY` records the non-logical assumption
+reached through ✱12·11.  `demonstration_provenance: follows-printed`. -/
+theorem star_21_3
+    (abstractionExistential : ExistentialVocabulary signature
+      (relationSort resultOrder 0)
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        resultOrder))
+    (reducibilityExistential : ExistentialVocabulary signature
+      (relationSort resultOrder 0)
+      (bindOrder (bindOrder resultOrder .individual) .individual))
+    (leftUniversal : signature.Universal .individual resultOrder)
+    (rightUniversal : signature.Universal .individual
+      (bindOrder resultOrder .individual))
+    (equivalenceNegation : signature.Negation resultOrder)
+    (equivalenceDisjunction : signature.Disjunction resultOrder)
+    (leftNegation : signature.Negation
+      (bindOrder (bindOrder resultOrder .individual) .individual))
+    (rightNegation : signature.Negation resultOrder)
+    (outerNegation : signature.Negation
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        resultOrder))
+    (conjunctionDisjunction : signature.Disjunction
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        resultOrder))
+    (reducibilityOuterNegation : signature.Negation
+      (bindOrder
+        (bindOrder (bindOrder resultOrder .individual) .individual)
+        (relationSort resultOrder 0)))
+    (bridgeDisjunction : signature.Disjunction
+      (max
+        (bindOrder
+          (bindOrder (bindOrder resultOrder .individual) .individual)
+          (relationSort resultOrder 0))
+        (bindOrder
+          (max (bindOrder (bindOrder resultOrder .individual) .individual)
+            resultOrder)
+          (relationSort resultOrder 0))))
+    (finalNegation : signature.Negation
+      (bindOrder
+        (max (bindOrder (bindOrder resultOrder .individual) .individual)
+          resultOrder)
+        (relationSort resultOrder 0)))
+    (finalDisjunction : signature.Disjunction
+      (bindOrder
+        (max (bindOrder (bindOrder resultOrder .individual) .individual)
+          resultOrder)
+        (relationSort resultOrder 0)))
+    (matrix : Formula signature real [.individual, .individual] resultOrder)
+    (x y : Term signature real [] .individual)
+    (star_10_35_hypothesis :
+      (⊢ᵣ star_21_3_transportFormula leftUniversal rightUniversal
+        equivalenceNegation equivalenceDisjunction leftNegation
+        conjunctionDisjunction matrix x y) →
+      ⊢ᵣ mixedImplication reducibilityOuterNegation bridgeDisjunction
+        (star_12_11_formula reducibilityExistential leftUniversal
+          rightUniversal equivalenceNegation equivalenceDisjunction matrix)
+        (star_21_3_formula abstractionExistential leftUniversal
+          rightUniversal equivalenceNegation equivalenceDisjunction
+          leftNegation rightNegation outerNegation conjunctionDisjunction
+          matrix x y)) :
+    Derivation (star_21_3_reading abstractionExistential leftUniversal
+      rightUniversal equivalenceNegation equivalenceDisjunction leftNegation
+      rightNegation outerNegation conjunctionDisjunction matrix x y).parsed := by
+  have definitionUnfold := star_21_01_unfold abstractionExistential leftUniversal
+    rightUniversal equivalenceNegation equivalenceDisjunction leftNegation
+    rightNegation outerNegation conjunctionDisjunction matrix
+    (star_21_3_continuation equivalenceNegation equivalenceDisjunction
+      matrix x y)
+  have line1 := star_21_1 abstractionExistential leftUniversal
+    rightUniversal equivalenceNegation equivalenceDisjunction leftNegation
+    rightNegation outerNegation conjunctionDisjunction finalNegation
+    finalDisjunction matrix
+    (star_21_3_continuation equivalenceNegation equivalenceDisjunction
+      matrix x y)
+  have line2 := star_21_02_unfold
+    (.apparent (.zero : Var [relationSort resultOrder 0]
+      (relationSort resultOrder 0))) x.weaken y.weaken
+  have line3 := star_21_3_star_10_43 leftUniversal rightUniversal
+    equivalenceNegation equivalenceDisjunction leftNegation
+    conjunctionDisjunction matrix x y
+  have line4 := star_10_35_hypothesis line3
+  have line5 := star_12_11 reducibilityExistential leftUniversal
+    rightUniversal equivalenceNegation equivalenceDisjunction matrix
+  have line6 := Derivation.star_9_12 reducibilityOuterNegation
+    bridgeDisjunction line5 line4
+  change ⊢ᵣ star_21_3_formula abstractionExistential leftUniversal
+    rightUniversal equivalenceNegation equivalenceDisjunction leftNegation
+    rightNegation outerNegation conjunctionDisjunction matrix x y at line6 ⊢
+  change ⊢ᵣ star_4_01 finalNegation finalDisjunction
+    (star_21_3_formula abstractionExistential leftUniversal rightUniversal
+      equivalenceNegation equivalenceDisjunction leftNegation rightNegation
+      outerNegation conjunctionDisjunction matrix x y)
+    (star_21_3_formula abstractionExistential leftUniversal rightUniversal
+      equivalenceNegation equivalenceDisjunction leftNegation rightNegation
+      outerNegation conjunctionDisjunction matrix x y) at line1
+  unfold star_21_3_formula at line1 line6 ⊢
+  rw [definitionUnfold] at line1 line6 ⊢
+  unfold star_21_3_continuation at line1 line6 ⊢
+  rw [line2] at line1 line6 ⊢
+  let target := Formula.sometimes abstractionExistential
+    (mixedConjunction leftNegation rightNegation outerNegation
+      conjunctionDisjunction
+      ((equivalence equivalenceNegation equivalenceDisjunction
+        (applyBinary (.apparent (.succ (.succ .zero))) (.apparent .zero)
+          (.apparent (.succ .zero)))
+        (matrix.rename (liftRenamingN [.individual, .individual]
+          (fun v => .succ v)))).always₂ leftUniversal rightUniversal)
+      (equivalence equivalenceNegation equivalenceDisjunction
+        (applyBinary (.apparent .zero) x.weaken y.weaken)
+        ((matrix.instantiate₂ x y).rename
+          (emptyRenaming (target := [relationSort resultOrder 0])))))
+  change ⊢ᵣ target at line6 ⊢
+  change ⊢ᵣ star_4_01 finalNegation finalDisjunction target target at line1
+  have line7 : ⊢ᵣ implication finalNegation finalDisjunction
+      (star_4_01 finalNegation finalDisjunction target target)
+      (implication finalNegation finalDisjunction target
+        (conjunction finalNegation finalDisjunction
+          (star_4_01 finalNegation finalDisjunction target target) target)) :=
+    star_3_2 finalNegation finalDisjunction
+      (star_4_01 finalNegation finalDisjunction target target) target
+  have line8 : ⊢ᵣ implication finalNegation finalDisjunction target
+      (conjunction finalNegation finalDisjunction
+        (star_4_01 finalNegation finalDisjunction target target) target) :=
+    Derivation.star_9_12_same finalNegation finalDisjunction line1 line7
+  have line9 : ⊢ᵣ conjunction finalNegation finalDisjunction
+      (star_4_01 finalNegation finalDisjunction target target) target :=
+    Derivation.star_9_12_same finalNegation finalDisjunction line6 line8
+  exact Derivation.star_9_12_same finalNegation finalDisjunction line9
+    (star_3_27 finalNegation finalDisjunction
+      (star_4_01 finalNegation finalDisjunction target target) target)
 
 /-- Audited catalogue reading of ✱21·6. -/
 def star_21_6_reading
@@ -351,6 +633,9 @@ end PM.RamifiedSyntax
 #print axioms PM.RamifiedSyntax.star_21_632
 #print axioms PM.RamifiedSyntax.star_21_633
 #print axioms PM.RamifiedSyntax.star_21_1
+#print axioms PM.RamifiedSyntax.star_21_3
+#print axioms PM.RamifiedSyntax.star_21_3_star_10_43
 #print axioms PM.RamifiedSyntax.star_21_6
+#print axioms PM.RamifiedSyntax.star_21_02_unfold
 #print axioms PM.RamifiedSyntax.star_21_07_unfold
 #print axioms PM.RamifiedSyntax.star_21_071_unfold
