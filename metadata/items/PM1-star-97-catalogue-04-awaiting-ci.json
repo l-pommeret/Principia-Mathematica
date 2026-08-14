@@ -1,7 +1,58 @@
 {
-  "batch":"PM1-STAR97-CATALOGUE-04-AWAITING-CI","edition":"first","volume":1,
-  "source_range":{"printed_pages":"658","scan_leaves":[680],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm#Page_658"},
-  "witnesses":["PM1-1910-SCAN","PG78050"],
-  "items":[{"id":"PM1:✱97·23","kind":"derived-proposition","printed":"✱97·23. ⊢ :: R⃡ʻʻCʻR∈0∪1 .≡: x,y∈CʻR .⊃_x,y: x=y .∨. xRy .∨. yRx","printed_page":658,"scan_leaf":680,"lean_path":"Principia/Architecture/Star97Kernel.lean","declaration":"PM.Architecture.Star97Kernel.star_97_23","formal_scope":"exact typed extensional reconstruction: the at-most-one-family condition is normalized pointwise to every two field elements lying in one immediate symmetric neighbourhood, equivalent to PM's comparability disjunction","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","printed_dependencies":["PM1:✱97·111"],"lean_dependencies":["PM1:✱97·111"],"normalized_dependencies":["PM1:✱97·111"],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star97-catalogues-03-04-semantic-audit.md"}],
-  "ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+  "batch": "PM1-STAR97-CATALOGUE-04-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "658",
+    "scan_leaves": [
+      680
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm#Page_658"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱97·23",
+      "kind": "derived-proposition",
+      "printed": "✱97·23. ⊢:: R⃡ʻʻCʻR∈ 0∪ 1.≡:. x, y∈ CʻR.⊃ₓ,y:x=y.∨.xRy.∨.yRx",
+      "printed_page": 658,
+      "scan_leaf": 680,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_23",
+      "formal_scope": "exact typed extensional reconstruction: the at-most-one-family condition is normalized pointwise to every two field elements lying in one immediate symmetric neighbourhood, equivalent to PM's comparability disjunction",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱97·111"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star97Kernel.star_97_111"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱97·111"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

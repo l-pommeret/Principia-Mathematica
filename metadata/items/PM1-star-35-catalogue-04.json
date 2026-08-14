@@ -10,121 +10,165 @@
     "PM1-1910-SCAN",
     "PG78050"
   ],
+  "integration_status": "blocked-star2-t1-t9-no-object-derivation",
   "items": [
     {
       "id": "PM1:✱35·17",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.(R\\upharpoonright \\beta)\\dot{\\cap}S=(R\\dot{\\cap}S)\\upharpoonright \\beta=R\\dot{\\cap}S\\upharpoonright \\beta \\quad[\\text{Similar proof to *35·13}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.(R↾ β)∩̇S=(R∩̇S)↾ β=R∩̇S↾ β [Similar proof to *35·13]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
+      "blocking_reason": "The semantic chained equality is closed by funext/propext/simp, not by a PM judgement derivation consuming ·13.",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱35·13"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_17",
-      "formal_scope": "exact typed reconstruction of both printed equalities moving a common right restriction across relation intersection; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_17 (secondary extensional theorem only)",
+      "formal_scope": "axiom-free semantic reconstruction only; refused by T1–T9",
+      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "printed_latex_witness": "\\(\\vdash.(R\\upharpoonright \\beta)\\dot{\\cap}S=(R\\dot{\\cap}S)\\upharpoonright \\beta=R\\dot{\\cap}S\\upharpoonright \\beta \\quad[\\text{Similar proof to *35·13}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·18",
       "kind": "derived-proposition",
-      "printed": "\\[\\begin{align}\\vdash.(\\alpha\\upharpoonleft R\\upharpoonright \\beta)\\dot{\\cap}S=\\alpha\\upharpoonleft (R\\dot{\\cap}S)\\upharpoonright \\beta=R\\dot{\\cap}\\alpha&\\upharpoonleft S\\upharpoonright \\beta\\\\ &\\qquad\\qquad\\qquad[\\text{Similar proof to *35·15}]\\end{align}\\]",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.(α↿ R↾ β)∩̇S=α↿ (R∩̇S)↾ β=R∩̇α ↿ S↾ β [Similar proof to *35·15]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
+      "blocking_reason": "The proof is semantic simp and does not inhabit the printed chained-equality judgement or consume ·15 as a derivation.",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱35·15"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_18",
-      "formal_scope": "exact typed reconstruction of both printed equalities moving simultaneous restrictions across relation intersection; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_18 (secondary extensional theorem only)",
+      "formal_scope": "axiom-free semantic reconstruction only; refused by T1–T9",
+      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "printed_latex_witness": "\\[\\begin{align}\\vdash.(\\alpha\\upharpoonleft R\\upharpoonright \\beta)\\dot{\\cap}S=\\alpha\\upharpoonleft (R\\dot{\\cap}S)\\upharpoonright \\beta=R\\dot{\\cap}\\alpha&\\upharpoonleft S\\upharpoonright \\beta\\\\ &\\qquad\\qquad\\qquad[\\text{Similar proof to *35·15}]\\end{align}\\]",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·22",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.(\\alpha\\upharpoonleft R)\\mid S=\\alpha\\upharpoonleft (R\\mid S)\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.(α↿ R)| S=α↿ (R| S)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
+      "blocking_reason": "The existential relation equality is proved semantically by funext/propext; no object AST, reading, or inductive derivation exists.",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱34·1",
+        "PM1:✱35·1",
+        "PM1:✱10·35"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
-      "declaration": "PM.Architecture.Star35CompositionKernel.star_35_22",
-      "formal_scope": "exact typed equality commuting left restriction with relational composition; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "declaration": "PM.Architecture.Star35CompositionKernel.star_35_22 (secondary extensional theorem only)",
+      "formal_scope": "axiom-free semantic reconstruction only; refused by T1–T9",
+      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "printed_latex_witness": "\\(\\vdash.(\\alpha\\upharpoonleft R)\\mid S=\\alpha\\upharpoonleft (R\\mid S)\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·23",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.S\\mid (R\\upharpoonright \\beta)=(S\\mid R)\\upharpoonright \\beta \\quad[\\text{Similar proof to *35·22}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.S| (R↾ β)=(S| R)↾ β [Similar proof to *35·22]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
+      "blocking_reason": "Lean reproves the semantic equality directly and does not consume a PM derivation of ·22.",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱35·22"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
-      "declaration": "PM.Architecture.Star35CompositionKernel.star_35_23",
-      "formal_scope": "exact typed equality commuting right restriction with relational composition; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "declaration": "PM.Architecture.Star35CompositionKernel.star_35_23 (secondary extensional theorem only)",
+      "formal_scope": "axiom-free semantic reconstruction only; refused by T1–T9",
+      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "printed_latex_witness": "\\(\\vdash.S\\mid (R\\upharpoonright \\beta)=(S\\mid R)\\upharpoonright \\beta \\quad[\\text{Similar proof to *35·22}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·24",
-      "kind": "derived-proposition",
-      "printed": "\\(\\alpha\\upharpoonleft R\\mid S=(\\alpha\\upharpoonleft R)\\mid S \\quad\\text{Df}\\)",
+      "kind": "definition",
+      "printed": "α↿ R| S=(α↿ R)| S Df",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
+      "blocking_reason": "A host-level def followed by rfl is not an exact PM definition AST plus definitional judgement and derivation.",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
       "declaration": "PM.Architecture.Star35CompositionKernel.star_35_24",
-      "formal_scope": "exact typed definitional equality for PM's bracket convention on left-restricted composition; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "formal_scope": "typed host definition only; refused by T1–T9",
+      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "printed_latex_witness": "\\(\\alpha\\upharpoonleft R\\mid S=(\\alpha\\upharpoonleft R)\\mid S \\quad\\text{Df}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

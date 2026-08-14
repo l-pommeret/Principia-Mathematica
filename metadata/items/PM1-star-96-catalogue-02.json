@@ -19,15 +19,15 @@
     {
       "id": "PM1:✱96·103",
       "kind": "derived-proposition",
-      "printed": "✱96·103. ⊢ . (J_Rʻx)↼hR_po ⊂ J",
+      "printed": "✱96·103. ⊢.(J_Rʻx)↿ Rₚₒ⪽J",
       "printed_page": 640,
       "scan_leaf": 662,
       "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
       "declaration": "PM.Architecture.Star96OpeningKernel.star_96_103",
       "formal_scope": "exact typed inclusion of the transitive ancestral restricted to J_Rʻx in diversity",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱96·101",
         "PM1:✱13·14"
@@ -37,25 +37,37 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱13·14", "PM1:✱96·101"],
+        "printed_but_unused": [
+          "PM1:✱13·14",
+          "PM1:✱96·101"
+        ],
         "strict_attempt_evidence": "reviews/Star96-catalogue-02-semantic-audit.md",
         "editorial_note": "The closed typed proof derives irreflexivity directly from the definition of Jpart; PM's displayed citations remain historical edges."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star96-catalogue-02-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱96·11",
       "kind": "derived-proposition",
-      "printed": "✱96·11. ⊢ . (α↼hR)_po ⊂ α↼hR_po",
+      "printed": "✱96·11. ⊢.(α↿ R)ₚₒ⪽α↿ Rₚₒ",
       "printed_page": 640,
       "scan_leaf": 662,
       "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
       "declaration": "PM.Architecture.Star96OpeningKernel.star_96_11",
       "formal_scope": "exact typed inclusion of the transitive closure of a domain restriction in the corresponding restriction of the transitive closure",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱91·502",
         "PM1:✱35·46",
@@ -70,25 +82,42 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱34·1", "PM1:✱35·1", "PM1:✱35·46", "PM1:✱41·151", "PM1:✱91·171", "PM1:✱91·502", "PM1:✱91·511"],
+        "printed_but_unused": [
+          "PM1:✱34·1",
+          "PM1:✱35·1",
+          "PM1:✱35·46",
+          "PM1:✱41·151",
+          "PM1:✱91·171",
+          "PM1:✱91·502",
+          "PM1:✱91·511"
+        ],
         "strict_attempt_evidence": "reviews/Star96-catalogue-02-semantic-audit.md",
         "editorial_note": "The typed proof is a direct induction on transitive closure; PM's relation-power derivation citations remain historical edges."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star96-catalogue-02-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱96·14",
       "kind": "derived-proposition",
-      "printed": "✱96·14. ⊢ : x ∈ CʻR .⊃. R_*⃖ʻx = ιʻx ∪ R_po⃖ʻx",
+      "printed": "✱96·14. ⊢:x∈ CʻR.⊃.R⃖_∗ʻx=ιʻx∪ R⃖ₚₒʻx [✱91·54.✱32·33]",
       "printed_page": 641,
       "scan_leaf": 663,
       "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
       "declaration": "PM.Architecture.Star96OpeningKernel.star_96_14",
       "formal_scope": "exact typed decomposition of a field element's reflexive posterity into its singleton and proper posterity",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱91·54",
         "PM1:✱32·33"
@@ -98,12 +127,24 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱32·33", "PM1:✱91·54"],
+        "printed_but_unused": [
+          "PM1:✱32·33",
+          "PM1:✱91·54"
+        ],
         "strict_attempt_evidence": "reviews/Star96-catalogue-02-semantic-audit.md",
         "editorial_note": "The field-restricted reflexive-closure decomposition is normalized directly in Lean; PM's citations remain historical edges."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star96-catalogue-02-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

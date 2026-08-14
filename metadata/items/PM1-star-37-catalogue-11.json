@@ -18,7 +18,7 @@
     {
       "id": "PM1:✱37·27",
       "kind": "derived-proposition",
-      "printed": "✱37·27. \\vdash:\\text{ᗡ}ʻR\\subset \\beta.\\supset.\\text{D}ʻR=Rʻʻ\\beta \\quad[\\text{*22·621.*37·25·26}]",
+      "printed": "✱37·27. ⊢:ᗡʻR⊂ β.⊃.DʻR=Rʻʻβ [*22·621.*37·25·26]",
       "printed_page": 301,
       "scan_leaf": 323,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -27,14 +27,28 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱22·621",
+        "PM1:✱37·25",
+        "PM1:✱37·26"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·27. \\vdash:\\text{ᗡ}ʻR\\subset \\beta.\\supset.\\text{D}ʻR=Rʻʻ\\beta \\quad[\\text{*22·621.*37·25·26}]",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·271",
       "kind": "derived-proposition",
-      "printed": "✱37·271. \\vdash:\\text{D}ʻR\\subset \\alpha.\\supset.\\text{ᗡ}ʻR=\\breve{R}ʻʻ\\alpha \\quad[\\text{*22·621.*37·25·261}]",
+      "printed": "✱37·271. ⊢:DʻR⊂ α.⊃.ᗡʻR=Řʻʻα [*22·621.*37·25·261]",
       "printed_page": 301,
       "scan_leaf": 323,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -43,14 +57,30 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱22·621",
+        "PM1:✱37·25",
+        "PM1:✱37·261"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·271. \\vdash:\\text{D}ʻR\\subset \\alpha.\\supset.\\text{ᗡ}ʻR=\\breve{R}ʻʻ\\alpha \\quad[\\text{*22·621.*37·25·261}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·28",
       "kind": "derived-proposition",
-      "printed": "✱37·28. \\vdash.Rʻʻ\\text{V}=\\text{D}ʻR.\\breve{R}ʻʻ\\text{V}=\\text{ᗡ}ʻR \\quad[\\text{*37·27·271.*24·11}]",
+      "printed": "✱37·28. ⊢.RʻʻV=DʻR.ŘʻʻV=ᗡʻR [*37·27·271.*24·11]",
       "printed_page": 301,
       "scan_leaf": 323,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -59,14 +89,30 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱37·27",
+        "PM1:✱37·271",
+        "PM1:✱24·11"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·28. \\vdash.Rʻʻ\\text{V}=\\text{D}ʻR.\\breve{R}ʻʻ\\text{V}=\\text{ᗡ}ʻR \\quad[\\text{*37·27·271.*24·11}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·3",
       "kind": "derived-proposition",
-      "printed": "✱37·3. \\vdash.\\{\\text{sg}ʻ(P\\mid Q)\\}ʻz=Pʻʻ\\overrightarrow{Q}ʻz",
+      "printed": "✱37·3. ⊢.{sgʻ(P| Q)}ʻz=PʻʻQ⃗ʻz",
       "printed_page": 301,
       "scan_leaf": 323,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -75,14 +121,30 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱34·1",
+        "PM1:✱32·18",
+        "PM1:✱37·01"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·3. \\vdash.\\{\\text{sg}ʻ(P\\mid Q)\\}ʻz=Pʻʻ\\overrightarrow{Q}ʻz",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·301",
       "kind": "derived-proposition",
-      "printed": "✱37·301. \\vdash.\\{\\text{gs}ʻ(P\\mid Q)\\}ʻx=\\breve{Q}ʻʻ\\overleftarrow{P}ʻx \\quad[\\text{Similar proof}]",
+      "printed": "✱37·301. ⊢.{gsʻ(P| Q)}ʻx=Q̌ʻʻP⃖ʻx [Similar proof]",
       "printed_page": 301,
       "scan_leaf": 323,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -93,7 +155,19 @@
       "integration_status": "blocked-no-lean-declaration",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·301. \\vdash.\\{\\text{gs}ʻ(P\\mid Q)\\}ʻx=\\breve{Q}ʻʻ\\overleftarrow{P}ʻx \\quad[\\text{Similar proof}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

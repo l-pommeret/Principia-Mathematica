@@ -1,0 +1,164 @@
+{
+  "batch": "PM1-STAR25-CATALOGUE-COMPLETE-FIRST-EDITION-PART-09",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "241–244",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱25·44",
+      "kind": "derived-proposition",
+      "printed": "✱25·44. ⊢.(P⊍R)∩̇(Q⊍-̇R)=(P∩̇-̇R)⊍(Q∩̇R)",
+      "pm_verbatim": "*25·44. \\(\\vdash.(P\\unicode{x228d}R)\\dot{\\cap}(Q\\unicode{x228d}\\dot{-}R)=(P\\dot{\\cap}\\dot{-}R)\\unicode{x228d}(Q\\dot{\\cap}R)\\) ",
+      "printed_latex_witness": "*25·44. \\(\\vdash.(P\\unicode{x228d}R)\\dot{\\cap}(Q\\unicode{x228d}\\dot{-}R)=(P\\dot{\\cap}\\dot{-}R)\\unicode{x228d}(Q\\dot{\\cap}R)\\) ",
+      "printed_page": 242,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star25Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star25.star_25_44",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱25·45",
+      "kind": "derived-proposition",
+      "printed": "✱25·45. ⊢:(P∩̇R)⊍(Q-̇R)=Λ̇.≡.Q⪽R.R⪽-̇P",
+      "pm_verbatim": "*25·45. \\(\\vdash:(P\\dot{\\cap}R)\\unicode{x228d}(Q\\dot{-}R)=\\dot{\\Lambda}.\\equiv.Q\\unicode{x2abd}R.R\\unicode{x2abd}\\dot{-}P\\) ",
+      "printed_latex_witness": "*25·45. \\(\\vdash:(P\\dot{\\cap}R)\\unicode{x228d}(Q\\dot{-}R)=\\dot{\\Lambda}.\\equiv.Q\\unicode{x2abd}R.R\\unicode{x2abd}\\dot{-}P\\) ",
+      "printed_page": 243,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star25Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star25.star_25_45",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱25·46",
+      "kind": "derived-proposition",
+      "printed": "✱25·46. ⊢:(P∩̇R)⊍(Q-̇R)=Λ̇.⊃.P∩̇Q=Λ̇",
+      "pm_verbatim": "*25·46. \\(\\vdash:(P\\dot{\\cap}R)\\unicode{x228d}(Q\\dot{-}R)=\\dot{\\Lambda}.\\supset.P\\dot{\\cap}Q=\\dot{\\Lambda}\\) ",
+      "printed_latex_witness": "*25·46. \\(\\vdash:(P\\dot{\\cap}R)\\unicode{x228d}(Q\\dot{-}R)=\\dot{\\Lambda}.\\supset.P\\dot{\\cap}Q=\\dot{\\Lambda}\\) ",
+      "printed_page": 243,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star25Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star25.star_25_46",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱25·47",
+      "kind": "derived-proposition",
+      "printed": "✱25·47. ⊢:(P∩̇Q)=Λ̇.P⊍Q=R.≡.P⪽R.Q=R-̇P",
+      "pm_verbatim": "*25·47. \\(\\vdash:(P\\dot{\\cap}Q)=\\dot{\\Lambda}.P\\unicode{x228d}Q=R.\\equiv.P\\unicode{x2abd}R.Q=R\\dot{-}P\\) ",
+      "printed_latex_witness": "*25·47. \\(\\vdash:(P\\dot{\\cap}Q)=\\dot{\\Lambda}.P\\unicode{x228d}Q=R.\\equiv.P\\unicode{x2abd}R.Q=R\\dot{-}P\\) ",
+      "printed_page": 243,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star25Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star25.star_25_47",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱25·48",
+      "kind": "derived-proposition",
+      "printed": "✱25·48. ⊢:. R⪽P.R'⪽P.S⪽Q.S'⪽Q. P∩̇Q=Λ̇.⊃: R⊍S=R'⊍S'.≡.R=R'.S=S'",
+      "pm_verbatim": "*25·48. \\[\\begin{align}\\vdash\\colon\\ldotp R\\unicode{x2abd}P.R'\\unicode{x2abd}P.S\\unicode{x2abd}Q.S'\\unicode{x2abd}Q.&P\\dot{\\cap}Q=\\dot{\\Lambda}.\\supset:\\\\ &R\\unicode{x228d}S=R'\\unicode{x228d}S'.\\equiv.R=R'.S=S'\\end{align}\\] ",
+      "printed_latex_witness": "*25·48. \\[\\begin{align}\\vdash\\colon\\ldotp R\\unicode{x2abd}P.R'\\unicode{x2abd}P.S\\unicode{x2abd}Q.S'\\unicode{x2abd}Q.&P\\dot{\\cap}Q=\\dot{\\Lambda}.\\supset:\\\\ &R\\unicode{x228d}S=R'\\unicode{x228d}S'.\\equiv.R=R'.S=S'\\end{align}\\] ",
+      "printed_page": 243,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star25Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star25.star_25_48",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "batch": "PM1-STAR74-CATALOGUE-13",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "496–497",
+    "scan_leaves": [
+      518,
+      519
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "items": [
+    {
+      "id": "PM1:✱74·75",
+      "kind": "derived-proposition",
+      "printed": "✱74·75. ⊢:α↿ Q∈ 1 → Cls.α⊂ DʻQ.sʻᗡʻʻλ⊂ α.⊃.(| Q)↾ λ∈ (| Qʻʻλ) sm̅λ",
+      "printed_page": 496,
+      "scan_leaf": 518,
+      "lean_path": "Principia/Architecture/Star74Kernel.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱40·43",
+        "PM1:✱43·481",
+        "PM1:✱37·69",
+        "PM1:✱43·491",
+        "PM1:✱74·73",
+        "PM1:✱35·62"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\vdash:\\alpha\\upharpoonleft Q\\in 1\\rightarrow \\text{Cls}.\\alpha\\subset \\text{D}ʻQ.sʻ\\text{ᗡ}ʻʻ\\lambda\\subset \\alpha.\\supset.(\\mid Q)\\upharpoonright \\lambda\\in (\\mid Qʻʻ\\lambda)\\overline{\\text{ sm }}\\lambda",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱74·751",
+      "kind": "derived-proposition",
+      "printed": "✱74·751. ⊢:Q↾ α∈ Cls → 1.α⊂ ᗡʻQ.sʻDʻʻλ⊂ α.⊃.(Q| )↾ λ∈ (Q| ʻʻλ) sm̅λ [Proof as in *74·75, using *74·731, *43·48·49]",
+      "printed_page": 496,
+      "scan_leaf": 518,
+      "lean_path": "Principia/Architecture/Star74Kernel.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱74·75",
+        "PM1:✱74·731",
+        "PM1:✱43·48",
+        "PM1:✱43·49"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\begin{align}&\\vdash:Q\\upharpoonright \\alpha\\in \\text{Cls}\\rightarrow 1.\\alpha\\subset \\text{ᗡ}ʻQ.sʻ\\text{D}ʻʻ\\lambda\\subset \\alpha.\\supset.(Q\\mid )\\upharpoonright \\lambda\\in (Q\\mid ʻʻ\\lambda)\\overline{\\text{ sm }}\\lambda\\\\ &[\\text{Proof as in *74·75, using *74·731, *43·48·49}]\\end{align}",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱74·76",
+      "kind": "derived-proposition",
+      "printed": "✱74·76. ⊢: Q ∈ Cls → 1.R∈ 1 → Cls. Q | P | R = Q | P'| R. ⊃. (ᗡʻQ)↿ P↾ DʻR = (ᗡʻQ)↿ P'↾ DʻR [*74·7·701]",
+      "printed_page": 497,
+      "scan_leaf": 519,
+      "lean_path": "Principia/Architecture/Star74Kernel.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱74·7",
+        "PM1:✱74·701"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\begin{align}\\vdash: Q \\in \\text{Cls} &\\rightarrow 1.R\\in 1 \\rightarrow \\text{Cls}. Q \\mid P \\mid R = Q \\mid P'\\mid R. \\supset .\\\\ &(\\text{ᗡ}ʻQ)\\upharpoonleft P\\upharpoonright \\text{D}ʻR = (\\text{ᗡ}ʻQ)\\upharpoonleft P'\\upharpoonright \\text{D}ʻR \\quad[\\text{*74·7·701}]\\end{align}",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱74·761",
+      "kind": "derived-proposition",
+      "printed": "✱74·761. ⊢:. Hp *74·76.DʻP ⊂ ᗡʻQ.ᗡʻP ⊂ DʻR. DʻP' ⊂ ᗡʻQ.ᗡʻP'⊂ DʻR.⊃: Q| P| R = Q| P'| R.≡. P = P' [*74·71·711]",
+      "printed_page": 497,
+      "scan_leaf": 519,
+      "lean_path": "Principia/Architecture/Star74Kernel.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱74·71",
+        "PM1:✱74·711"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\begin{align}\\vdash\\colon\\ldotp \\text{Hp} *74·76.\\text{D}ʻP \\subset & \\text{ᗡ}ʻQ.\\text{ᗡ}ʻP \\subset \\text{D}ʻR. \\text{D}ʻP' \\subset \\text{ᗡ}ʻQ.\\text{ᗡ}ʻP'\\subset \\text{D}ʻR.\\supset:\\\\ & Q\\mid P\\mid R = Q\\mid P'\\mid R.\\equiv. P = P' [\\text{*74·71·711}]\\end{align}",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱74·77",
+      "kind": "derived-proposition",
+      "printed": "✱74·77. ⊢: Q, R ∈ 1 → Cls. sʻDʻʻλ ⊂ DʻQ. sʻᗡʻʻλ ⊂ DʻR. ⊃. (Q̌ ∥ R)↾ λ∈ 1 → 1.(Q̌ ∥ R)↾ λ ∈ {(Q̌∥ R)ʻʻλ} sm̅ λ",
+      "printed_page": 497,
+      "scan_leaf": 519,
+      "lean_path": "Principia/Architecture/Star74Kernel.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱74·761",
+        "PM1:✱40·43",
+        "PM1:✱43·112",
+        "PM1:✱73·28"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\begin{align}\\vdash: Q,\\,R \\in 1 \\rightarrow \\text{Cls}. sʻ\\text{D}ʻʻ\\lambda &\\subset \\text{D}ʻQ. sʻ\\text{ᗡ}ʻʻ\\lambda \\subset \\text{D}ʻR. \\supset .\\\\ &(\\breve{Q} \\Arrowvert R)\\upharpoonright \\lambda\\in 1 \\rightarrow 1.(\\breve{Q} \\Arrowvert R)\\upharpoonright \\lambda \\in \\{(\\breve{Q}\\Arrowvert R)ʻʻ\\lambda\\} \\overline{\\text{ sm }} \\lambda\\end{align}",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ]
+}

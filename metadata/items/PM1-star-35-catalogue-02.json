@@ -10,17 +10,20 @@
     "PM1-1910-SCAN",
     "PG78050"
   ],
+  "integration_status": "blocked-star2-t1-t9-no-object-derivation",
   "items": [
     {
       "id": "PM1:✱35·1",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:x(\\alpha\\upharpoonleft R)y.\\equiv.x\\in \\alpha.xRy \\quad[\\text{*21·3.(*35·01)}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:x(α↿ R)y.≡.x∈ α.xRy [*21·3.(*35·01)]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
+      "blocking_reason": "Iff.rfl unfolds a meta-level predicate definition; it is not an AST judgement or a derivation using ✱21·3 and ✱35·01.",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-catalogue-02-semantic-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "PM1:✱21·3",
         "PM1:✱35·01"
@@ -28,96 +31,150 @@
       "normalized_dependencies": [],
       "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_1",
-      "formal_scope": "exact typed pointwise reconstruction of left restriction evaluation; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed",
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": [
-          "PM1:✱21·3",
-          "PM1:✱35·01"
+      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_1 (secondary Prop theorem only)",
+      "formal_scope": "axiom-free typed Prop reconstruction only; refused as a v1 object derivation",
+      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "printed_latex_witness": "\\(\\vdash:x(\\alpha\\upharpoonleft R)y.\\equiv.x\\in \\alpha.xRy \\quad[\\text{*21·3.(*35·01)}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
         ],
-        "strict_attempt_evidence": "reviews/Star35-catalogue-02-semantic-audit.md",
-        "editorial_note": "The typed left-restriction definition directly normalizes the equivalence; PM's substitution and definition citations therefore leave no theorem constants in the Lean body."
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱35·101",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:x(R\\upharpoonright \\beta)y.\\equiv.xRy.y\\in \\beta\\)",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed": "⊢:x(R↾ β)y.≡.xRy.y∈ β",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
+      "blocking_reason": "Iff.rfl unfolds rightRestriction but supplies no printed-formula AST, assertion judgement, or derivation.",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-catalogue-02-semantic-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_101",
-      "formal_scope": "exact typed pointwise reconstruction of right restriction evaluation; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_101 (secondary Prop theorem only)",
+      "formal_scope": "axiom-free typed Prop reconstruction only; refused as a v1 object derivation",
+      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "printed_latex_witness": "\\(\\vdash:x(R\\upharpoonright \\beta)y.\\equiv.xRy.y\\in \\beta\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·102",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:x(\\alpha\\upharpoonleft R\\upharpoonright \\beta)y.\\equiv.x\\in \\alpha.xRy.y\\in \\beta\\)",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed": "⊢:x(α↿ R↾ β)y.≡.x∈ α.xRy.y∈ β",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
+      "blocking_reason": "Iff.rfl unfolds bothRestrictions but supplies no printed-formula AST, assertion judgement, or derivation.",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-catalogue-02-semantic-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_102",
-      "formal_scope": "exact typed pointwise reconstruction of simultaneous left and right restriction evaluation; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_102 (secondary Prop theorem only)",
+      "formal_scope": "axiom-free typed Prop reconstruction only; refused as a v1 object derivation",
+      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "printed_latex_witness": "\\(\\vdash:x(\\alpha\\upharpoonleft R\\upharpoonright \\beta)y.\\equiv.x\\in \\alpha.xRy.y\\in \\beta\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·103",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:x(\\alpha\\uparrow \\beta)y.\\equiv.x\\in \\alpha.y\\in \\beta\\)",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed": "⊢:x(α↑ β)y.≡.x∈ α.y∈ β",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
+      "blocking_reason": "The theorem is the reflexive Prop `a x ∧ b y ↔ a x ∧ b y`; it has no cross-product AST judgement or PM derivation.",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-catalogue-02-semantic-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_103",
-      "formal_scope": "exact typed pointwise reconstruction of the Cartesian relation between two classes; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_103 (secondary Prop theorem only)",
+      "formal_scope": "axiom-free typed Prop reconstruction only; refused as a v1 object derivation",
+      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "printed_latex_witness": "\\(\\vdash:x(\\alpha\\uparrow \\beta)y.\\equiv.x\\in \\alpha.y\\in \\beta\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·11",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\alpha\\upharpoonleft R\\upharpoonright \\beta=(\\alpha\\upharpoonleft R)\\dot{\\cap}(R\\upharpoonright \\beta)\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.α↿ R↾ β=(α↿ R)∩̇(R↾ β)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
+      "blocking_reason": "Function extensionality and propext establish a semantic relation equality, not the printed equality AST under a PM assertion judgement and derivation.",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-catalogue-02-semantic-audit.md",
-      "printed_dependencies": [],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱35·102",
+        "PM1:✱4·24",
+        "PM1:✱35·1",
+        "PM1:✱35·101",
+        "PM1:✱23·33"
+      ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_11",
-      "formal_scope": "exact typed relation equality between simultaneous restriction and the intersection of its one-sided restrictions; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_11 (secondary Prop/extensional theorem only)",
+      "formal_scope": "axiom-free typed extensional reconstruction only; refused as a v1 object derivation",
+      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "printed_latex_witness": "\\(\\vdash.\\alpha\\upharpoonleft R\\upharpoonright \\beta=(\\alpha\\upharpoonleft R)\\dot{\\cap}(R\\upharpoonright \\beta)\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

@@ -1,1 +1,119 @@
-{"batch":"PM3-STAR254-Q666","edition":"first","volume":3,"source_range":{"printed_pages":"57","scan_leaves":[65],"canonical_scan":"https://archive.org/details/in.ernet.dli.2015.449496","leaf_derivatives":[{"scan_leaf":65,"printed_page":57,"uri":"https://archive.org/download/in.ernet.dli.2015.449496/page/n65_w1400.jpg","sha256":"80e56b8567ea61e03a74d84a3494e1dfa8e442e0263bd2f64a9ad0ef2ab0df5d"}]},"witnesses":["PM3-1913-IA-DLI-SCAN"],"source_status":"source-catalogued-PM-VERBATIM","integration_status":"source-only-no-formal-target","items":[{"id":"PM3:✱254·53","kind":"derived-proposition","printed":"✱254·53. ⊢ : P, Q ∈ Ω . Q ⊂ P . ∃! CʻP ∩ pʻP⃗ʻʻCʻQ .⊃ . Q less P","printed_page":57,"scan_leaf":65,"lean_path":"Principia/FirstEdition/Volume3/Star254P57Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription only.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM3:✱250·652","PM3:✱254·101"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-254-p57-Q666-skeletons.txt"},{"id":"PM3:✱254·54","kind":"derived-proposition","printed":"✱254·54. ⊢ : P, Q ∈ Ω . R smor Q . R ⊂ P . ∃! CʻP ∩ pʻP⃗ʻʻCʻR .⊃ . Q less P [✱254·53·13]","printed_page":57,"scan_leaf":65,"lean_path":"Principia/FirstEdition/Volume3/Star254P57Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription only.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM3:✱254·53·13"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-254-p57-Q666-skeletons.txt"},{"id":"PM3:✱254·55","kind":"derived-proposition","printed":"✱254·55. ⊢ :: Q less P .≡ : P, Q ∈ Ω : (∃R) . R smor Q . R ⊂ P . ∃! CʻP ∩ pʻP⃗ʻʻCʻR","printed_page":57,"scan_leaf":65,"lean_path":"Principia/FirstEdition/Volume3/Star254P57Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription only.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-architecture-volume-III-series-relation-syntax","printed_dependencies":["PM3:✱254·41","PM1:✱213·18","PM3:✱254·54"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM3-star-254-p57-Q666-skeletons.txt"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM3-STAR254-Q666",
+  "edition": "first",
+  "volume": 3,
+  "source_range": {
+    "printed_pages": "57",
+    "scan_leaves": [
+      65
+    ],
+    "canonical_scan": "https://archive.org/details/in.ernet.dli.2015.449496",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 65,
+        "printed_page": 57,
+        "uri": "https://archive.org/download/in.ernet.dli.2015.449496/page/n65_w1400.jpg",
+        "sha256": "80e56b8567ea61e03a74d84a3494e1dfa8e442e0263bd2f64a9ad0ef2ab0df5d"
+      }
+    ]
+  },
+  "witnesses": [
+    "PM3-1913-IA-DLI-SCAN"
+  ],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "source-only-no-formal-target",
+  "items": [
+    {
+      "id": "PM3:✱254·53",
+      "kind": "derived-proposition",
+      "printed": "✱254·53. ⊢ : P, Q ∈ Ω . Q ⊂ P . ∃! CʻP ∩ pʻP⃗ʻʻCʻQ .⊃ . Q less P",
+      "printed_page": 57,
+      "scan_leaf": 65,
+      "lean_path": "Principia/FirstEdition/Volume3/Star254P57Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM3:✱250·652",
+        "PM3:✱254·101"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-254-p57-Q666-skeletons.txt",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM3:✱254·54",
+      "kind": "derived-proposition",
+      "printed": "✱254·54. ⊢ : P, Q ∈ Ω . R smor Q . R ⊂ P . ∃! CʻP ∩ pʻP⃗ʻʻCʻR .⊃ . Q less P [✱254·53·13]",
+      "printed_page": 57,
+      "scan_leaf": 65,
+      "lean_path": "Principia/FirstEdition/Volume3/Star254P57Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM3:✱254·53·13"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-254-p57-Q666-skeletons.txt",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM3:✱254·55",
+      "kind": "derived-proposition",
+      "printed": "✱254·55. ⊢ :: Q less P .≡ : P, Q ∈ Ω : (∃R) . R smor Q . R ⊂ P . ∃! CʻP ∩ pʻP⃗ʻʻCʻR",
+      "printed_page": 57,
+      "scan_leaf": 65,
+      "lean_path": "Principia/FirstEdition/Volume3/Star254P57Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-architecture-volume-III-series-relation-syntax",
+      "printed_dependencies": [
+        "PM3:✱254·41",
+        "PM1:✱213·18",
+        "PM3:✱254·54"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-254-p57-Q666-skeletons.txt",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

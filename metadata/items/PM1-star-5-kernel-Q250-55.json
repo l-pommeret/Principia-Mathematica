@@ -27,7 +27,8 @@
       "declaration": "PM.FirstEdition.Volume1.Star5.star_5_55",
       "formal_scope": "((p∨q)≡p)∨((p∨q)≡q), over an elementary real-variable context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
       "printed_dependencies": [
         "PM1:✱1·3",
         "PM1:✱5·1",
@@ -36,16 +37,19 @@
       "normalized_dependencies": [
         "PM1:✱1·1",
         "PM1:✱1·11",
+        "PM1:✱1·3",
         "PM1:✱1·4",
         "PM1:✱2·02",
         "PM1:✱2·04",
         "PM1:✱2·05",
         "PM1:✱2·2",
-        "PM1:✱2·43",
         "PM1:✱2·36",
+        "PM1:✱2·43",
         "PM1:✱2·621",
         "PM1:✱3·2",
         "PM1:✱3·47",
+        "PM1:✱4·74",
+        "PM1:✱5·1",
         "PM1:✱5·13"
       ],
       "blocked_dependencies": [
@@ -53,20 +57,23 @@
         "PM1:✱5·1",
         "PM1:✱4·74"
       ],
-      "integration_status": "canonical-kernel-integrated",
+      "integration_status": "provisional-kernel-integrated",
       "lean_dependencies": [
         "PM.Derivation.star_1_1",
         "PM.Derivation.star_1_11",
+        "PM.Derivation.star_1_3",
         "PM.Derivation.star_1_4",
         "PM.FirstEdition.Volume1.Star2.star_2_02",
         "PM.FirstEdition.Volume1.Star2.star_2_04",
         "PM.FirstEdition.Volume1.Star2.star_2_05",
         "PM.FirstEdition.Volume1.Star2.star_2_2",
-        "PM.FirstEdition.Volume1.Star2.star_2_43",
         "PM.FirstEdition.Volume1.Star2.star_2_36",
+        "PM.FirstEdition.Volume1.Star2.star_2_43",
         "PM.FirstEdition.Volume1.Star2.star_2_621",
         "PM.FirstEdition.Volume1.Star3.star_3_2",
         "PM.FirstEdition.Volume1.Star3.star_3_47",
+        "PM.FirstEdition.Volume1.Star4.star_4_74",
+        "PM.FirstEdition.Volume1.Star5.star_5_1",
         "PM.FirstEdition.Volume1.Star5.star_5_13"
       ],
       "historical_dependency_relaxation": {
@@ -93,12 +100,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q250-star5-55-kernel-gate.md",
         "editorial_note": "The alternative is mapped explicitly from ✱5·13 to the two equivalences."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "59d741a9b3824e160abfe8e9333d0f73053e4fc7",
-    "run": "31555568712",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

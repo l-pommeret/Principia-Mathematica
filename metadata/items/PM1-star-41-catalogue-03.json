@@ -19,102 +19,152 @@
     {
       "id": "PM1:✱41·16",
       "kind": "derived-proposition",
-      "printed": "✱41·16. \\(\\vdash:\\lambda\\subset \\mu.\\supset.\\dot{p}ʻ\\mu\\unicode{x2abd}\\dot{p}ʻ\\lambda\\)",
+      "printed": "✱41·16. ⊢:λ⊂ μ.⊃.ṗʻμ⪽ṗʻλ",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41InitialKernel.lean",
       "declaration": "PM.Architecture.Star41InitialKernel.star_41_16",
       "formal_scope": "exact typed antitonicity of relational product under relation-class inclusion; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-03-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·16. \\(\\vdash:\\lambda\\subset \\mu.\\supset.\\dot{p}ʻ\\mu\\unicode{x2abd}\\dot{p}ʻ\\lambda\\)"
     },
     {
       "id": "PM1:✱41·161",
       "kind": "derived-proposition",
-      "printed": "✱41·161. \\(\\vdash:\\lambda\\subset \\mu.\\supset.\\dot{s}ʻ\\lambda\\unicode{x2abd}\\dot{s}ʻ\\mu\\)",
+      "printed": "✱41·161. ⊢:λ⊂ μ.⊃.ṡʻλ⪽ṡʻμ",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41InitialKernel.lean",
       "declaration": "PM.Architecture.Star41InitialKernel.star_41_161",
       "formal_scope": "exact typed monotonicity of relational sum under relation-class inclusion; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-03-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·161. \\(\\vdash:\\lambda\\subset \\mu.\\supset.\\dot{s}ʻ\\lambda\\unicode{x2abd}\\dot{s}ʻ\\mu\\)"
     },
     {
       "id": "PM1:✱41·17",
       "kind": "derived-proposition",
-      "printed": "✱41·17. \\(\\vdash.\\dot{p}ʻ\\lambda\\unicode{x228d}\\dot{p}ʻ\\mu\\unicode{x2abd}\\dot{p}ʻ(\\lambda\\cap \\mu)\\)",
+      "printed": "✱41·17. ⊢.ṗʻλ⊍ṗʻμ⪽ṗʻ(λ∩ μ)",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41MiddleKernel.lean",
       "declaration": "PM.Architecture.Star41MiddleKernel.star_41_17",
       "formal_scope": "exact typed inclusion of the union of two relational products in the product of the class intersection; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-03-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·17. \\(\\vdash.\\dot{p}ʻ\\lambda\\unicode{x228d}\\dot{p}ʻ\\mu\\unicode{x2abd}\\dot{p}ʻ(\\lambda\\cap \\mu)\\)"
     },
     {
       "id": "PM1:✱41·171",
       "kind": "derived-proposition",
-      "printed": "✱41·171. \\(\\vdash.\\dot{s}ʻ\\lambda\\unicode{x228d}\\dot{s}ʻ\\mu=\\dot{s}ʻ(\\lambda\\cup \\mu)\\)",
+      "printed": "✱41·171. ⊢.ṡʻλ⊍ṡʻμ=ṡʻ(λ∪ μ)",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41MiddleKernel.lean",
       "declaration": "PM.Architecture.Star41MiddleKernel.star_41_171",
       "formal_scope": "exact typed equality of the union of two relational sums with the sum of the class union; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-03-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·171. \\(\\vdash.\\dot{s}ʻ\\lambda\\unicode{x228d}\\dot{s}ʻ\\mu=\\dot{s}ʻ(\\lambda\\cup \\mu)\\)"
     },
     {
       "id": "PM1:✱41·18",
       "kind": "derived-proposition",
-      "printed": "✱41·18. \\(\\vdash.\\dot{p}ʻ(\\lambda\\cup \\mu)=\\dot{p}ʻ\\lambda\\dot{\\cap}\\dot{p}ʻ\\mu\\)",
+      "printed": "✱41·18. ⊢.ṗʻ(λ∪ μ)=ṗʻλ∩̇ṗʻμ",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41MiddleKernel.lean",
       "declaration": "PM.Architecture.Star41MiddleKernel.star_41_18",
       "formal_scope": "exact typed equality of the product of the class union with the intersection of the two products; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-03-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·18. \\(\\vdash.\\dot{p}ʻ(\\lambda\\cup \\mu)=\\dot{p}ʻ\\lambda\\dot{\\cap}\\dot{p}ʻ\\mu\\)"
     }
   ],
   "ci_evidence": {

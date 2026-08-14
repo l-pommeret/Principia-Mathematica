@@ -1,0 +1,116 @@
+{
+  "batch": "PM1-STAR9-FINAL-CATALOGUE-GAP-CLOSURE",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "138",
+    "scan_leaves": [
+      160
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱9·131",
+      "kind": "definition",
+      "printed": "✱9·131. Definition of \"being of the same type.\" The following is a step-by-step definition, the definition for higher types presupposing that for lower types. We say that u and v \"are of the same type\" if (1) both are individuals, (2) both are elementary functions taking arguments of the same type, (3) u is a function and v is its negation, (4) u is φ x̂ or ψx̂ and v is φ x̂ ∨ ψ x̂ , where φ x̂ and ψ x̂ are elementary functions, (5) u is (y). φ (x̂,y) and v is ( z). ψ (x̂,z) , where φ (x̂, ŷ) , ψ (x̂, ŷ) are of the same type, (6) both are elementary propositions, (7) u is a proposition and v is ∼u , or (8) u is ( x).φ x and v is ( y).ψ y , where φ x̂ and ψ x̂ are of the same type.",
+      "printed_page": 138,
+      "scan_leaf": 160,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "pm_verbatim": "*9·131. Definition of \"being of the same type.\" The\nfollowing is a step-by-step definition, the definition for higher types\npresupposing that for lower types. We say that \\(u\\) and \\(v\\) \"are of\nthe same type\" if (1) both are individuals, (2) both are elementary\nfunctions taking arguments of the same type, (3) \\(u\\) is a function\nand \\(v\\) is its negation, (4) \\(u\\) is \\(\\phi \\hat{x}\\) or \\(\\psi\\hat{x}\\) \nand \\(v\\) is \\(\\phi \\hat{x} \\lor \\psi \\hat{x}\\) , where \\(\\phi \\hat{x}\\) \nand \\(\\psi \\hat{x}\\) are elementary functions, (5) \\(u\\) \nis \\((y). \\phi (\\hat{x},y)\\) and \\(v\\) is ( \\(z). \\psi (\\hat{x},z)\\) ,\nwhere \\(\\phi (\\hat{x}, \\hat{y})\\) , \\(\\psi (\\hat{x}, \\hat{y})\\) are\nof the same type, (6) both are elementary propositions, (7) \\(u\\) is\na proposition and \\(v\\) is \\({\\sim}u\\) , or (8) \\(u\\) is ( \\(x).\\phi x\\) \nand \\(v\\) is ( \\(y).\\psi y\\) , where \\(\\phi \\hat{x}\\) and \\(\\psi \\hat{x}\\) \nare of the same type.",
+      "printed_latex_witness": "✱9·131. Definition of \"being of the same type.\" The following is a step-by-step definition, the definition for higher types presupposing that for lower types. We say that \\(u\\) and \\(v\\) \"are of the same type\" if (1) both are individuals, (2) both are elementary functions taking arguments of the same type, (3) \\(u\\) is a function and \\(v\\) is its negation, (4) \\(u\\) is \\(\\phi \\hat{x}\\) or \\(\\psi\\hat{x}\\) and \\(v\\) is \\(\\phi \\hat{x} \\lor \\psi \\hat{x}\\) , where \\(\\phi \\hat{x}\\) and \\(\\psi \\hat{x}\\) are elementary functions, (5) \\(u\\) is \\((y). \\phi (\\hat{x},y)\\) and \\(v\\) is ( \\(z). \\psi (\\hat{x},z)\\) , where \\(\\phi (\\hat{x}, \\hat{y})\\) , \\(\\psi (\\hat{x}, \\hat{y})\\) are of the same type, (6) both are elementary propositions, (7) \\(u\\) is a proposition and \\(v\\) is \\({\\sim}u\\) , or (8) \\(u\\) is ( \\(x).\\phi x\\) and \\(v\\) is ( \\(y).\\psi y\\) , where \\(\\phi \\hat{x}\\) and \\(\\psi \\hat{x}\\) are of the same type.",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱9·14",
+      "kind": "primitive-proposition",
+      "printed": "✱9·14. If \" φ x \" is significant, then if x is of the same type as a , \" φ a \" is significant, and vice versa. Pp. (Cf. note on *10·121, p. 146.)",
+      "printed_page": 138,
+      "scan_leaf": 160,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱10·121"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "pm_verbatim": "*9·14. If \" \\(\\phi x\\) \" is significant, then if \\(x\\) is of the\nsame type as \\(a\\) , \" \\(\\phi a\\) \" is significant, and vice versa. Pp.\n(Cf. note on *10·121, p. 146.)",
+      "printed_latex_witness": "✱9·14. If \" \\(\\phi x\\) \" is significant, then if \\(x\\) is of the same type as \\(a\\) , \" \\(\\phi a\\) \" is significant, and vice versa. Pp. (Cf. note on *10·121, p. 146.)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱9·15",
+      "kind": "primitive-proposition",
+      "printed": "✱9·15. If, for some a , there is a proposition φ a , then there is a function φ x̂ , and vice versa. Pp.",
+      "printed_page": 138,
+      "scan_leaf": 160,
+      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "pm_verbatim": "*9·15. If, for some \\(a\\) , there is a proposition \\(\\phi a\\) ,\nthen there is a function \\(\\phi \\hat{x}\\) , and vice versa. Pp.",
+      "printed_latex_witness": "✱9·15. If, for some \\(a\\) , there is a proposition \\(\\phi a\\) , then there is a function \\(\\phi \\hat{x}\\) , and vice versa. Pp.",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

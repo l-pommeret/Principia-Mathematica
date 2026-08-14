@@ -34,7 +34,15 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star43-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱43·1",
@@ -51,10 +59,24 @@
       "integration_blocked": true,
       "blocking_reason": "The theorem is Iff.rfl over the local definition; the PM relation semantics remain unbridged.",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star43OpeningKernel.product"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱43·01"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star43-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱43·101",
@@ -71,10 +93,24 @@
       "integration_blocked": true,
       "blocking_reason": "The theorem is Iff.rfl over the local definition; the PM relation semantics remain unbridged.",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star43OpeningKernel.product"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱43·01"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star43-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱43·102",
@@ -91,10 +127,24 @@
       "integration_blocked": true,
       "blocking_reason": "The theorem is Iff.rfl over the local definition; the PM relation semantics remain unbridged.",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star43OpeningKernel.product"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱43·01"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star43-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱43·11",
@@ -111,10 +161,25 @@
       "integration_blocked": true,
       "blocking_reason": "The declaration proves a reflexive equality and does not reconstruct the printed descriptive-function application.",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star43OpeningKernel.product"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱43·01"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star43-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T6",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -25,8 +25,8 @@
       "declaration": "PM.Architecture.Star55OpeningKernel.star_55_121",
       "formal_scope": "exact typed unique existence of the right pair-constructor value",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star55OpeningKernel.star_55_12"
@@ -35,13 +35,24 @@
         "PM1:✱55·12"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star55-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱55·12"],
+        "added_beyond_print": [
+          "PM1:✱55·12"
+        ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star55-catalogue-review.md",
         "editorial_note": "The printed proposition carries no bracketed citation; Lean reuses the immediately preceding exact existence theorem for the extensionally identical right pair-constructor value."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -54,13 +65,22 @@
       "declaration": "PM.Architecture.Star55OpeningKernel.star_55_123",
       "formal_scope": "exact typed section-value characterization of an ordinal couple",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star55-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱55·132",
@@ -72,13 +92,22 @@
       "declaration": "PM.Architecture.Star55OpeningKernel.star_55_132",
       "formal_scope": "exact typed incidence of an ordinal couple on its constituents",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star55-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱55·134",
@@ -90,13 +119,22 @@
       "declaration": "PM.Architecture.Star55OpeningKernel.star_55_134",
       "formal_scope": "exact typed inhabitedness of every ordinal couple",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star55-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱55·14",
@@ -108,13 +146,22 @@
       "declaration": "PM.Architecture.Star55OpeningKernel.star_55_14",
       "formal_scope": "exact typed converse law for ordinal couples",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star55-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

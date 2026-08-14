@@ -31,12 +31,12 @@
       "scan_leaf": 163,
       "lean_path": "Principia/Architecture/Q261DisjunctionKernel.lean",
       "declaration": "PM.Architecture.Q261DisjunctionKernel.star_9_4",
-      "formal_scope": "exact closed universal disjunction target",
+      "formal_scope": "withdrawn: the universal case no longer contains the rejected ✱9·21 theorem-specific witness",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "withdrawn-editorial-t10-refusal",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q261-architecture-reconciliation.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "PM1:✱1·5",
         "PM1:✱9·21",
@@ -44,7 +44,27 @@
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·5","PM1:✱9·04","PM1:✱9·21"],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"The final indexed wrapper calls a local closed adapter; the adapter records the printed pointwise associativity and universal monotonicity internally, so no indexed dependency occurs directly in this declaration body."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱1·5",
+          "PM1:✱9·04",
+          "PM1:✱9·21"
+        ],
+        "strict_attempt_evidence": "reviews/Q261-architecture-reconciliation.md",
+        "editorial_note": "The final indexed wrapper calls a local closed adapter; the adapter records the printed pointwise associativity and universal monotonicity internally, so no indexed dependency occurs directly in this declaration body."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱9·401",
@@ -56,16 +76,38 @@
       "declaration": "PM.Architecture.Q261DisjunctionKernel.star_9_401",
       "formal_scope": "exact closed existential disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q261-architecture-reconciliation.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-        "PM1:✱1·5", "PM1:✱9·22", "PM1:✱9·06"
+        "PM1:✱1·5",
+        "PM1:✱9·22",
+        "PM1:✱9·06"
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·5","PM1:✱9·06","PM1:✱9·22"],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent existential analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱1·5",
+          "PM1:✱9·06",
+          "PM1:✱9·22"
+        ],
+        "strict_attempt_evidence": "reviews/Q261-architecture-reconciliation.md",
+        "editorial_note": "‘As Above’ is resolved to the adjacent existential analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱9·41",
@@ -75,18 +117,40 @@
       "scan_leaf": 163,
       "lean_path": "Principia/Architecture/Q261DisjunctionKernel.lean",
       "declaration": "PM.Architecture.Q261DisjunctionKernel.star_9_41",
-      "formal_scope": "exact closed universal disjunction target",
+      "formal_scope": "withdrawn: the universal case no longer contains the rejected ✱9·21 theorem-specific witness",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "withdrawn-editorial-t10-refusal",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q261-architecture-reconciliation.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-        "PM1:✱1·5", "PM1:✱9·21", "PM1:✱9·04"
+        "PM1:✱1·5",
+        "PM1:✱9·21",
+        "PM1:✱9·04"
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·5","PM1:✱9·04","PM1:✱9·21"],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent universal analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱1·5",
+          "PM1:✱9·04",
+          "PM1:✱9·21"
+        ],
+        "strict_attempt_evidence": "reviews/Q261-architecture-reconciliation.md",
+        "editorial_note": "‘As Above’ is resolved to the adjacent universal analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱9·411",
@@ -98,16 +162,38 @@
       "declaration": "PM.Architecture.Q261DisjunctionKernel.star_9_411",
       "formal_scope": "exact closed existential disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q261-architecture-reconciliation.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-        "PM1:✱1·5", "PM1:✱9·22", "PM1:✱9·06"
+        "PM1:✱1·5",
+        "PM1:✱9·22",
+        "PM1:✱9·06"
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·5","PM1:✱9·06","PM1:✱9·22"],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent existential analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱1·5",
+          "PM1:✱9·06",
+          "PM1:✱9·22"
+        ],
+        "strict_attempt_evidence": "reviews/Q261-architecture-reconciliation.md",
+        "editorial_note": "‘As Above’ is resolved to the adjacent existential analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱9·42",
@@ -117,18 +203,40 @@
       "scan_leaf": 163,
       "lean_path": "Principia/Architecture/Q261DisjunctionKernel.lean",
       "declaration": "PM.Architecture.Q261DisjunctionKernel.star_9_42",
-      "formal_scope": "exact closed universal disjunction target",
+      "formal_scope": "withdrawn: the universal case no longer contains the rejected ✱9·21 theorem-specific witness",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "withdrawn-editorial-t10-refusal",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q261-architecture-reconciliation.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-        "PM1:✱1·5", "PM1:✱9·21", "PM1:✱9·04"
+        "PM1:✱1·5",
+        "PM1:✱9·21",
+        "PM1:✱9·04"
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·5","PM1:✱9·04","PM1:✱9·21"],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent universal analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱1·5",
+          "PM1:✱9·04",
+          "PM1:✱9·21"
+        ],
+        "strict_attempt_evidence": "reviews/Q261-architecture-reconciliation.md",
+        "editorial_note": "‘As Above’ is resolved to the adjacent universal analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

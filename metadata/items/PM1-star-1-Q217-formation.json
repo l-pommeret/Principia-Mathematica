@@ -4,10 +4,16 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "101",
-    "scan_leaves": [123],
+    "scan_leaves": [
+      123
+    ],
     "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050",
+    "WS-PM1"
+  ],
   "items": [
     {
       "id": "PM1:✱1·7",
@@ -18,12 +24,15 @@
       "lean_path": "Principia/Deduction/Formation.lean",
       "declaration": "PM.Formation.star_1_7",
       "formal_scope": "formation of negation in the same elementary real-variable context",
-      "source_status": "scan-and-PG-checked",
+      "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "substitutions": []
+      "substitutions": [],
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱1·71",
@@ -34,12 +43,15 @@
       "lean_path": "Principia/Deduction/Formation.lean",
       "declaration": "PM.Formation.star_1_71",
       "formal_scope": "formation of disjunction in the empty real-variable context",
-      "source_status": "scan-and-PG-checked",
+      "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "substitutions": []
+      "substitutions": [],
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱1·72",
@@ -50,17 +62,20 @@
       "lean_path": "Principia/Deduction/Formation.lean",
       "declaration": "PM.Formation.star_1_72",
       "formal_scope": "formation of disjunction after identifying the same nonempty real-variable context for both elementary functions",
-      "source_status": "scan-and-PG-checked",
+      "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "substitutions": []
+      "substitutions": [],
+      "formalization_level": "pm-derivation-v1"
     }
   ],
   "ci_evidence": {
-    "commit": "202999d6591b90acadfaff986fa23bd3ab6e0376",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31450038845",
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
     "conclusion": "success"
   }
 }

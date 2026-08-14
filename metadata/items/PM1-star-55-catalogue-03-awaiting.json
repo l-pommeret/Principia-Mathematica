@@ -31,13 +31,22 @@
       "declaration": "PM.Architecture.Star55OpeningKernel.star_55_15",
       "formal_scope": "exact typed domain, converse-domain, and field equations for an ordinal couple",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star55-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱55·2",
@@ -49,13 +58,29 @@
       "declaration": "PM.Architecture.Star55OpeningKernel.star_55_2",
       "formal_scope": "exact typed right-cancellation equivalence for ordinal couples",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱30·37",
+        "PM1:✱55·11",
+        "PM1:✱55·12",
+        "PM1:✱33·121",
+        "PM1:✱55·15",
+        "PM1:✱51·23"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star55-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ]
 }

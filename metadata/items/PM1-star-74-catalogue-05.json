@@ -1,0 +1,190 @@
+{
+  "batch": "PM1-STAR74-CATALOGUE-05",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "492",
+    "scan_leaves": [
+      514
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "items": [
+    {
+      "id": "PM1:✱74·231",
+      "kind": "derived-proposition",
+      "printed": "✱74·231. ⊢:β=Q̌ʻʻQʻʻβ.⊃.Q↾ β=(Qʻʻβ)↿ Q=(Qʻʻβ)↿ Q↾ β [*74·21·211]",
+      "printed_page": 492,
+      "scan_leaf": 514,
+      "lean_path": "Principia/Architecture/Star74Kernel.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱74·21",
+        "PM1:✱74·211"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\vdash:\\beta=\\breve{Q}ʻʻQʻʻ\\beta.\\supset.Q\\upharpoonright \\beta=(Qʻʻ\\beta)\\upharpoonleft Q=(Qʻʻ\\beta)\\upharpoonleft Q\\upharpoonright \\beta \\quad[\\text{*74·21·211}]",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱74·24",
+      "kind": "derived-proposition",
+      "printed": "✱74·24. ⊢:α=Qʻʻβ.β=Q̌ʻʻα.⊃.α↿ Q=Q↾ β=α↿ Q↾ β [*74·23]",
+      "printed_page": 492,
+      "scan_leaf": 514,
+      "lean_path": "Principia/Architecture/Star74Kernel.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱74·23"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\vdash:\\alpha=Qʻʻ\\beta.\\beta=\\breve{Q}ʻʻ\\alpha.\\supset.\\alpha\\upharpoonleft Q=Q\\upharpoonright \\beta=\\alpha\\upharpoonleft Q\\upharpoonright \\beta \\quad[\\text{*74·23}]",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱74·25",
+      "kind": "derived-proposition",
+      "printed": "✱74·25. ⊢:Q↾ β∈ 1 → Cls.α⊂ DʻQ.β=Q̌ʻʻα.⊃.α↿ Q=Q↾ β=α↿ Q↾ β [*74·16·24]",
+      "printed_page": 492,
+      "scan_leaf": 514,
+      "lean_path": "Principia/Architecture/Star74Kernel.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱74·16",
+        "PM1:✱74·24"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\begin{align}&\\vdash:Q\\upharpoonright \\beta\\in 1\\rightarrow \\text{Cls}.\\alpha\\subset \\text{D}ʻQ.\\beta=\\breve{Q}ʻʻ\\alpha.\\supset.\\alpha\\upharpoonleft Q=Q\\upharpoonright \\beta=\\alpha\\upharpoonleft Q\\upharpoonright \\beta\\\\ &[\\text{*74·16·24}]\\end{align}",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱74·251",
+      "kind": "derived-proposition",
+      "printed": "✱74·251. ⊢:α↿ Q∈ Cls → 1.β⊂ ᗡʻQ.α=Qʻʻβ.⊃.α↿ Q=Q↾ β=α↿ Q↾ β [**74·161·24]",
+      "printed_page": 492,
+      "scan_leaf": 514,
+      "lean_path": "Principia/Architecture/Star74Kernel.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱74·161",
+        "PM1:✱74·24"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\begin{align}&\\vdash:\\alpha\\upharpoonleft Q\\in \\text{Cls}\\rightarrow 1.\\beta\\subset \\text{ᗡ}ʻQ.\\alpha=Qʻʻ\\beta.\\supset.\\alpha\\upharpoonleft Q=Q\\upharpoonright \\beta=\\alpha\\upharpoonleft Q\\upharpoonright \\beta\\\\ &[\\text{**74·161·24}]\\end{align}",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱74·26",
+      "kind": "derived-proposition",
+      "printed": "✱74·26. ⊢:Q↾ β∈ 1 → 1.α⊂ DʻQ.β=Q̌ʻʻα.≡.α↿ Q∈ 1 → 1.β⊂ ᗡʻQ.α=Qʻʻβ",
+      "printed_page": 492,
+      "scan_leaf": 514,
+      "lean_path": "Principia/Architecture/Star74Kernel.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱74·25",
+        "PM1:✱13·12",
+        "PM1:✱37·16",
+        "PM1:✱74·16"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\vdash:Q\\upharpoonright \\beta\\in 1\\rightarrow 1.\\alpha\\subset \\text{D}ʻQ.\\beta=\\breve{Q}ʻʻ\\alpha.\\equiv.\\alpha\\upharpoonleft Q\\in 1\\rightarrow 1.\\beta\\subset \\text{ᗡ}ʻQ.\\alpha=Qʻʻ\\beta",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ]
+}

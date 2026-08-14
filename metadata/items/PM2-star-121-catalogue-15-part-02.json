@@ -1,0 +1,55 @@
+{
+  "batch": "PM2-STAR121-CATALOGUE-15-PART-02",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "242–244",
+    "scan_leaves": [
+      282,
+      284
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱121·39",
+      "kind": "derived-proposition",
+      "printed": "✱121·39. ⊢ :. R∈Cls→1.⊃ :R(x⊢⊣y)⊂R(x⊢⊣z).∨.R(x⊢⊣z)⊂R(x⊢⊣y)",
+      "printed_page": 243,
+      "scan_leaf": 283,
+      "lean_path": "Principia/FirstEdition/Volume2/Star121Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "source-only-no-formal-target",
+      "printed_dependencies": [
+        "PM1:✱24·12"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -4,10 +4,17 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "108–109",
-    "scan_leaves": [130, 131],
+    "scan_leaves": [
+      130,
+      131
+    ],
     "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050",
+    "WS-PM1"
+  ],
   "aristotle_evidence": {
     "project_id": "bfb67779-55fc-46b6-acf9-71b88077080a",
     "task_id": "a67c6b39-8b4a-4fe4-aa2f-a5fd603c681d",
@@ -25,12 +32,43 @@
       "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_2",
       "formal_scope": "p ⊃ (p ∨ q), over an elementary real-variable context",
-      "printed_dependencies": ["PM1:✱1·3", "PM1:✱1·4", "PM1:✱2·05", "PM1:✱1·11"],
-      "lean_dependencies": ["PM.Derivation.star_1_3", "PM.Derivation.star_1_4", "PM.FirstEdition.Volume1.Star2.star_2_05", "PM.Derivation.detach"],
-      "normalized_dependencies": ["PM1:✱1·3", "PM1:✱1·4", "PM1:✱2·05", "PM1:✱1·11"],
-      "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The printed Syll. stage composes asserted implications in the elementary real-variable context; the Lean proof expands it through ✱2·05 and detachment."}],
+      "printed_dependencies": [
+        "PM1:✱1·3",
+        "PM1:✱1·4",
+        "PM1:✱2·05",
+        "PM1:✱1·11"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.Derivation.star_1_3",
+        "PM.Derivation.star_1_4",
+        "PM.FirstEdition.Volume1.Star2.star_2_05"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱1·3",
+        "PM1:✱1·4",
+        "PM1:✱2·05"
+      ],
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·11",
+          "evidence": "The printed Syll. stage composes asserted implications in the elementary real-variable context; the Lean proof expands it through ✱2·05 and detachment."
+        }
+      ],
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱2·21",
@@ -41,11 +79,26 @@
       "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_21",
       "formal_scope": "∼p ⊃ (p ⊃ q), over an elementary real-variable context",
-      "printed_dependencies": ["PM1:✱2·2"],
-      "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_2"],
-      "normalized_dependencies": ["PM1:✱2·2"],
+      "printed_dependencies": [
+        "PM1:✱2·2"
+      ],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume1.Star2.star_2_2"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱2·2"
+      ],
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱2·24",
@@ -56,17 +109,45 @@
       "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_24",
       "formal_scope": "p ⊃ (∼p ⊃ q), over an elementary real-variable context",
-      "printed_dependencies": ["PM1:✱2·21", "PM1:✱2·04", "PM1:✱1·11"],
-      "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_21", "PM.FirstEdition.Volume1.Star2.star_2_04", "PM.Derivation.detach"],
-      "normalized_dependencies": ["PM1:✱2·21", "PM1:✱2·04", "PM1:✱1·11"],
-      "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The compact printed construction ✱2·21.Comm applies the asserted Comm implication to asserted ✱2·21 in the real-variable context."}],
+      "printed_dependencies": [
+        "PM1:✱2·21",
+        "PM1:✱2·04",
+        "PM1:✱1·11"
+      ],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume1.Star2.star_2_21",
+        "PM.FirstEdition.Volume1.Star2.star_2_04",
+        "PM.Derivation.detach"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·04",
+        "PM1:✱2·21"
+      ],
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·11",
+          "evidence": "The compact printed construction ✱2·21.Comm applies the asserted Comm implication to asserted ✱2·21 in the real-variable context."
+        }
+      ],
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked"
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "67240793223f6e73effdaf8064ad09b974a88395",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31418809547",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

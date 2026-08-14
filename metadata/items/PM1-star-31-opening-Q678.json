@@ -19,8 +19,8 @@
       "declaration": "PM.Architecture.Star31ConverseKernel.star_31_11",
       "formal_scope": "exact homogeneous typed converse evaluation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱21·3",
         "PM1:✱31·02"
@@ -38,6 +38,15 @@
         ],
         "strict_attempt_evidence": "reviews/Q678-star31-opening-strict-audit.md",
         "editorial_note": "The typed converse definition directly normalizes the statement; printed citations are internal to that reviewed definition."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -48,8 +57,8 @@
       "declaration": "PM.Architecture.Star31ConverseKernel.star_31_111",
       "formal_scope": "exact homogeneous typed converse relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱31·1",
         "PM1:✱31·11"
@@ -57,7 +66,7 @@
       "normalized_dependencies": [],
       "lean_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q678-star31-opening-strict-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
@@ -67,6 +76,15 @@
         ],
         "strict_attempt_evidence": "reviews/Q678-star31-opening-strict-audit.md",
         "editorial_note": "The typed converse relation is discharged by definitional normalization; printed citations remain recorded but unused directly."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -77,13 +95,22 @@
       "declaration": "PM.Architecture.Star31ConverseKernel.star_31_12",
       "formal_scope": "exact homogeneous typed equality of converse presentations",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q678-star31-opening-strict-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱31·14",
@@ -93,13 +120,22 @@
       "declaration": "PM.Architecture.Star31ConverseKernel.star_31_14",
       "formal_scope": "exact homogeneous typed converse/intersection distribution",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q678-star31-opening-strict-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱31·15",
@@ -109,13 +145,22 @@
       "declaration": "PM.Architecture.Star31ConverseKernel.star_31_15",
       "formal_scope": "exact homogeneous typed converse/union distribution",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q678-star31-opening-strict-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

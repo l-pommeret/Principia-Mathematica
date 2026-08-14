@@ -3,31 +3,54 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "588",
-    "scan_leaves": [610],
+    "scan_leaves": [
+      610
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"},
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
   "batch": "PM1-STAR91-CATALOGUE-06-AWAITING-CI",
   "items": [
     {
       "id": "PM1:✱91·16",
       "kind": "derived-proposition",
-      "printed": "✱91·16. ⊢ :: x R_po y .≡:. (∃P): P∈PotʻR . xPy",
+      "printed": "✱91·16. ⊢:: xRₚₒy.≡:. (∃ P):. S∈ μ.⊃_S.S| R∈ μ:R∈ μ:⊃_μ.P∈ μ:. xPy [✱41·11.(✱91·05).✱91·13]",
       "printed_page": 588,
       "scan_leaf": 610,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
       "declaration": "PM.Architecture.Star91OpeningKernel.star_91_16",
       "formal_scope": "audited typed characterization of positive closure as membership in some positive power",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱41·11",
+        "PM1:✱91·05",
+        "PM1:✱91·13"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ]
 }

@@ -42,7 +42,16 @@
       "integration_blocked": true,
       "integration_status": "blocked-no-volume-III-series-relation-syntax-or-derivation-layer",
       "printed_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM3:✱250·02",
@@ -58,7 +67,16 @@
       "integration_blocked": true,
       "integration_status": "blocked-no-volume-III-series-relation-syntax-or-derivation-layer",
       "printed_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM3:✱250·1",
@@ -76,7 +94,16 @@
       "printed_dependencies": [
         "PM3:✱250·01"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM3:✱250·101",
@@ -95,7 +122,16 @@
         "PM3:✱250·1",
         "PM2:✱205·15"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM3:✱250·102",
@@ -120,7 +156,18 @@
         "PM3:✱250·101"
       ],
       "normalized_dependencies": [],
-      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-250-102.txt"
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-250-102.txt",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

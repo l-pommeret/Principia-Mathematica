@@ -2,11 +2,82 @@
   "batch": "PM1-STAR9-Q258",
   "edition": "first",
   "volume": 1,
-  "source_range": {"printed_pages": "136–137", "scan_leaves": [158, 159], "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},
-  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
-  "items": [
-    {"id": "PM1:✱9·1", "kind": "primitive-proposition", "printed": "⊢:φx.⊃.(∃z).φz  Pp", "printed_page": 136, "scan_leaf": 158, "lean_path": "Principia/Architecture/FirstOrderPrerequisites.lean", "declaration": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_1", "formal_scope": "closed first-order primitive assertion schema from an elementary value to the same matrix's sometimes form", "source_status": "source-catalogued", "formal_status": "kernel-checked", "integration_status": "kernel-checked-first-order-primitive-proposition", "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": []},
-    {"id": "PM1:✱9·11", "kind": "primitive-proposition", "printed": "⊢:φx∨φy.⊃.(∃z).φz  Pp", "printed_page": 136, "scan_leaf": 158, "lean_path": "Principia/Architecture/FirstOrderPrerequisites.lean", "declaration": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_11", "formal_scope": "closed primitive assertion schema with two distinct real values and one existential conclusion", "source_status": "source-catalogued", "formal_status": "kernel-checked", "integration_status": "kernel-checked-first-order-primitive-proposition", "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": []}
+  "source_range": {
+    "printed_pages": "136–137",
+    "scan_leaves": [
+      158,
+      159
+    ],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050",
+    "WS-PM1"
   ],
-  "ci_evidence": {"commit": "a773a806b9759f571ce5ddaaa781d28553fc11b5", "run": "31575922684", "conclusion": "success"}
+  "items": [
+    {
+      "id": "PM1:✱9·1",
+      "kind": "primitive-proposition",
+      "printed": "⊢:φx.⊃.(∃z).φz  Pp",
+      "printed_page": 136,
+      "scan_leaf": 158,
+      "lean_path": "Principia/Architecture/FirstOrderPrerequisites.lean",
+      "declaration": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_1",
+      "formal_scope": "closed first-order primitive assertion schema from an elementary value to the same matrix's sometimes form",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "kernel-checked-first-order-primitive-proposition",
+      "formalization_level": "pm-derivation-v1",
+      "pm_ast": "FirstOrderPrerequisites.star_9_1_target over Apparent, FirstOrder and OrderedFormula",
+      "pm_judgement": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion",
+      "pm_certificate": "primitive constructor OrderedAssertion.star_9_1 at the exact assigned first order",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱9·11",
+      "kind": "primitive-proposition",
+      "printed": "⊢:φx∨φy.⊃.(∃z).φz  Pp",
+      "printed_page": 136,
+      "scan_leaf": 158,
+      "lean_path": "Principia/Architecture/FirstOrderPrerequisites.lean",
+      "declaration": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_11",
+      "formal_scope": "closed primitive assertion schema with two distinct real values and one existential conclusion",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "kernel-checked-first-order-primitive-proposition",
+      "formalization_level": "pm-derivation-v1",
+      "pm_ast": "FirstOrderPrerequisites.star_9_11_target with two distinct RealVar occurrences and one Apparent existential binder",
+      "pm_judgement": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion",
+      "pm_certificate": "independent primitive constructor OrderedAssertion.star_9_11 preserving anti-circularity",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

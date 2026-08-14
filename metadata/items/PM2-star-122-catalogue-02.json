@@ -4,11 +4,16 @@
   "volume": 2,
   "source_range": {
     "printed_pages": "257",
-    "scan_leaves": [297],
+    "scan_leaves": [
+      297
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
   },
-  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
   "items": [
     {
       "id": "PM2:✱122·141",
@@ -22,11 +27,26 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-field-equality-omits-converse-domain-inclusion",
-      "printed_dependencies": ["PM2:✱122·1", "PM1:✱37·25", "PM1:✱90·163", "PM1:✱33·181"],
+      "printed_dependencies": [
+        "PM2:✱122·1",
+        "PM1:✱37·25",
+        "PM1:✱90·163",
+        "PM1:✱33·181"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star122-catalogue-02-semantic-audit.md"
+      "parser_evidence": "reviews/Star122-catalogue-02-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱122·142",
@@ -40,11 +60,28 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-pointwise-field-projection-for-power-domain-equality",
-      "printed_dependencies": ["PM2:✱122·141", "PM1:✱92·14"],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM2:✱122·141",
+        "PM1:✱92·14"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star122Kernel.star_122_141"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱122·141"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star122-catalogue-02-semantic-audit.md"
+      "parser_evidence": "reviews/Star122-catalogue-02-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱122·143",
@@ -58,11 +95,25 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-tautological-range-field-inclusion-for-power-theorem",
-      "printed_dependencies": ["PM2:✱122·142", "PM2:✱122·141", "PM1:✱91·271"],
+      "printed_dependencies": [
+        "PM2:✱122·142",
+        "PM2:✱122·141",
+        "PM1:✱91·271"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star122-catalogue-02-semantic-audit.md"
+      "parser_evidence": "reviews/Star122-catalogue-02-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱122·15",
@@ -76,11 +127,26 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-edge-field-membership-for-four-restriction-equalities",
-      "printed_dependencies": ["PM2:✱122·1", "PM1:✱35·63", "PM1:✱96·2", "PM1:✱96·21"],
+      "printed_dependencies": [
+        "PM2:✱122·1",
+        "PM1:✱35·63",
+        "PM1:✱96·2",
+        "PM1:✱96·21"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star122-catalogue-02-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱122·151",
@@ -94,12 +160,32 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-reachability-reflexivity-for-restriction-equalities",
-      "printed_dependencies": ["PM1:✱35·63", "PM1:✱35·66", "PM1:✱90·14", "PM2:✱122·141", "PM2:✱122·1"],
+      "printed_dependencies": [
+        "PM1:✱35·63",
+        "PM1:✱35·66",
+        "PM1:✱90·14",
+        "PM2:✱122·141",
+        "PM2:✱122·1"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star122-catalogue-02-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

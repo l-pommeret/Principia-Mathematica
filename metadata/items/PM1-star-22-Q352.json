@@ -17,6 +17,7 @@
   "items": [
     {
       "id": "PM1:✱22·59",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α ⊂ γ . β ⊂ γ .≡ . α ∪ β ⊂ γ",
       "printed_page": 222,
@@ -25,8 +26,8 @@
       "declaration": "PM.Architecture.Star22Q352Kernel.star_22_59",
       "formal_scope": "exact extensional union-membership theorem",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱22·1",
         "✱10·22",
@@ -50,10 +51,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q352-review.md",
         "editorial_note": "The exact union-membership equivalence is definitional in the audited class-extension layer."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·6",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : x ε α ∪ β .≡ : α ⊂ γ . β ⊂ γ .⊃ᵧ. x ε γ",
       "printed_page": 222,
@@ -62,8 +73,8 @@
       "declaration": "PM.Architecture.Star22Q352Kernel.star_22_6",
       "formal_scope": "exact extensional universal property of class union",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱22·59",
         "Comm",
@@ -85,10 +96,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q352-review.md",
         "editorial_note": "The exact universal property closes directly from the definitions of union and inclusion."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·61",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α ⊂ β .⊃ . α ⊂ β ∪ γ",
       "printed_page": 222,
@@ -97,8 +118,8 @@
       "declaration": "PM.Architecture.Star22Q352Kernel.star_22_61",
       "formal_scope": "exact extensional class inclusion theorem",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱22·44",
         "✱22·58"
@@ -114,10 +135,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q352-review.md",
         "editorial_note": "The exact inclusion theorem closes directly by the left union injection."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·62",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α ⊂ β .≡ . α ∪ β = β",
       "printed_page": 222,
@@ -126,9 +157,14 @@
       "declaration": "PM.Architecture.Star22Q352Kernel.star_22_62",
       "formal_scope": "exact extensional union characterization of inclusion",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "✱4·72",
+        "✱22·34",
+        "✱10·271",
+        "✱20·43"
+      ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
       "historical_dependency_relaxation": {
@@ -137,10 +173,20 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Q352-review.md",
         "editorial_note": "The exact equivalence closes directly by class extensionality."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·621",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α ⊂ β .≡ . α ∩ β = α",
       "printed_page": 222,
@@ -149,8 +195,8 @@
       "declaration": "PM.Architecture.Star22Q352Kernel.star_22_621",
       "formal_scope": "exact extensional intersection characterization of inclusion",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱4·71"
       ],
@@ -164,6 +210,15 @@
         ],
         "strict_attempt_evidence": "reviews/Q352-review.md",
         "editorial_note": "The exact equivalence closes directly by class extensionality."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

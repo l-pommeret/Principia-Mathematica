@@ -31,9 +31,11 @@
       "declaration": "PM.Architecture.Star116FifthKernel.star_116_51",
       "formal_scope": "exact typed exponential-sum law: pairs of functions on β and γ are bijective with functions on their disjoint sum",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
+        "PM2:✱113·13",
+        "PM1:✱110·11",
         "PM2:✱116·5"
       ],
       "lean_dependencies": [
@@ -43,7 +45,16 @@
         "PM2:✱116·5"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star116-catalogue-15-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T11",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱116·52",
@@ -55,18 +66,16 @@
       "declaration": "PM.Architecture.Star116FifthKernel.star_116_52",
       "formal_scope": "exact typed cardinal lift of the exponential-sum bijection: product of two powers with common base equals the power over the disjoint-sum exponent",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [
-        "PM2:✱116·51"
-      ],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star116FifthKernel.star_116_51",
         "PM.Architecture.Star116FourthKernel.star_116_361"
       ],
       "normalized_dependencies": [
-        "PM2:✱116·51",
-        "PM2:✱116·361"
+        "PM2:✱116·361",
+        "PM2:✱116·51"
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -78,7 +87,16 @@
         "editorial_note": "The typed cardinal equality uses the local cardinal-class invariance theorem ·361 in addition to the printed exponential similarity ·51."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star116-catalogue-15-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T11",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ]
 }

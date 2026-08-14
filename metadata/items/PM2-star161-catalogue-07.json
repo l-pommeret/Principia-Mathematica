@@ -1,0 +1,164 @@
+{
+  "batch": "PM2-STAR161-CATALOGUE-07",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "361"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱161·31",
+      "kind": "derived-proposition",
+      "printed": "⊢ : P smor Q. x∼∈ CʻP. y∼∈ CʻQ. ⊃ . P ⇸ x smor Q ⇸ y. x ⇷ P smor y ⇷ Q",
+      "printed_page": 361,
+      "lean_path": "Principia/FirstEdition/Volume2/Star161Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱161·3",
+        "PM2:✱161·301",
+        "PM2:✱151·12",
+        "PM2:✱151·32",
+        "PM2:✱161·2",
+        "PM2:✱161·201",
+        "PM2:✱153·101"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash : P \\,\\text{smor} \\,Q. x{\\sim}\\in CʻP. &y{\\sim}\\in CʻQ. \\supset .\\\\ &P \\unicode{x21f8} x \\,\\text{smor}\\, Q \\unicode{x21f8} y. x \\unicode{x21f7} P \\,\\text{smor}\\, y \\unicode{x21f7} Q\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱161·32",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∃̇ !Q. x∼∈ CʻP. y∼∈ CʻQ. S∈ (P ⇸ x) smor̅ (Q ⇸ y). ⊃ . S↾ (-ι ʻy)∈ P smor̅ Q. xSy",
+      "printed_page": 361,
+      "lean_path": "Principia/FirstEdition/Volume2/Star161Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱151·5",
+        "PM2:✱150·1",
+        "PM2:✱151·11",
+        "PM2:✱161·11",
+        "PM2:✱161·14",
+        "PM2:✱161·2"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash : \\dot{\\exists} !Q. x{\\sim}\\in CʻP. y{\\sim}\\in CʻQ. &S\\in (P \\unicode{x21f8} x) \\overline{\\text{smor}} (Q \\unicode{x21f8} y). \\supset .\\\\ &S\\upharpoonright (-\\iota ʻy)\\in P \\overline{\\text{smor}} Q. xSy\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱161·321",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∃̇ !Q. x∼∈ CʻP. y∼∈ CʻQ. S∈ (x ⇷ P) smor̅ (y ⇷ Q). ⊃ . S↾ (-ι ʻy)∈ P smor̅ Q. xSy",
+      "printed_page": 361,
+      "lean_path": "Principia/FirstEdition/Volume2/Star161Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash : \\dot{\\exists} !Q. x{\\sim}\\in CʻP. y{\\sim}\\in CʻQ. &S\\in (x \\unicode{x21f7} P) \\overline{\\text{smor}} (y \\unicode{x21f7} Q). \\supset .\\\\ &S\\upharpoonright (-\\iota ʻy)\\in P \\overline{\\text{smor}} Q. xSy\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱161·33",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. x ∼∈ CʻP. y∼∈ CʻQ. ⊃ : P smor Q. ≡ . (P ⇸ x) smor (Q ⇸ y). ≡ . (x ⇷ P) smor (y ⇷ Q) [*161·31·32·321·2·201. *153·101]",
+      "printed_page": 361,
+      "lean_path": "Principia/FirstEdition/Volume2/Star161Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱161·31",
+        "PM2:✱161·32",
+        "PM2:✱161·321",
+        "PM2:✱161·2",
+        "PM2:✱161·201",
+        "PM2:✱153·101"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\ldotp x&{\\sim}\\in CʻP. y{\\sim}\\in CʻQ. \\supset :\\\\ &P \\,\\text{smor} \\,Q. \\equiv . (P \\unicode{x21f8} x) \\text{smor} (Q \\unicode{x21f8} y). \\equiv . (x \\unicode{x21f7} P) \\text{smor} (y \\unicode{x21f7} Q)\\\\ &[*161·31·32·321·2·201. *153·101]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱161·4",
+      "kind": "derived-proposition",
+      "printed": "⊢ : CʻQ ⊂ ᗡʻS. x∈ ᗡʻS. S∈ 1 arrow Cls. ⊃ . S^;(Q ⇸ x) = S^;Q ⇸ Sʻx",
+      "printed_page": 361,
+      "lean_path": "Principia/FirstEdition/Volume2/Star161Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱161·1",
+        "PM2:✱150·3",
+        "PM2:✱150·73"
+      ],
+      "printed_latex_witness": "\\(\\vdash : CʻQ \\subset \\text{ᗡ}ʻS. x\\in \\text{ᗡ}ʻS. S\\in 1\\rightarrow \\text{Cls}. \\supset . S^{;}(Q \\unicode{x21f8} x) = S^{;}Q \\unicode{x21f8} Sʻx\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

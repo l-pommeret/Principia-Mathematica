@@ -8,7 +8,14 @@
       166
     ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
-    "leaf_derivatives": [{"scan_leaf": 166, "printed_page": 144, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page166-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg", "sha256": "cb853daaa9b0c1a85b08bef6429f4e1b11f5463273fc84127c662db3f77bf02b"}],
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 166,
+        "printed_page": 144,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page166-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "cb853daaa9b0c1a85b08bef6429f4e1b11f5463273fc84127c662db3f77bf02b"
+      }
+    ],
     "scan_sha256": "cb853daaa9b0c1a85b08bef6429f4e1b11f5463273fc84127c662db3f77bf02b",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
@@ -23,16 +30,39 @@
       "printed": "⊢ : (x).φx .⊃ .φy",
       "printed_page": 144,
       "scan_leaf": 166,
-      "lean_path": "Principia/Architecture/Star10Q264Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q264Kernel.star_10_1",
+      "lean_path": "Principia/Deduction/Star10Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_10_1",
       "formal_scope": "exact mixed Raw general-to-particular endpoint",
+      "formalization_level": "pm-derivation-v1",
+      "migration_audit": "reviews/Q264-pm-v1-migration-audit.md",
+      "axiom_report_status": "axiom-free",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": ["Star92Kernel.derive"],
-      "normalized_dependencies": ["PM1:✱9·2"],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱9·2"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q264-star-10-primitive-audit.md","editorial_note":"The printed item is primitive and cites no earlier proposition; the canonical implementation deliberately reuses the exact already audited ✱9·2 endpoint instead of introducing a duplicate primitive assertion."}
+      "lean_dependencies": [
+        "Star92Kernel.derive"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱9·2"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱9·2"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Q264-star-10-primitive-audit.md",
+        "editorial_note": "The printed item is primitive and cites no earlier proposition; the canonical implementation deliberately reuses the exact already audited ✱9·2 endpoint instead of introducing a duplicate primitive assertion."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱10·11",
@@ -40,18 +70,41 @@
       "printed": "If φy is true whatever possible argument y may be, then (x).φx is true.",
       "printed_page": 144,
       "scan_leaf": 166,
-      "lean_path": "Principia/Architecture/Star10Q264Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q264Kernel.star_10_11",
+      "lean_path": "Principia/Deduction/Star10Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_10_11",
       "formal_scope": "exact arbitrary-leading-variable premise to universal assertion rule",
+      "formalization_level": "pm-derivation-v1",
+      "migration_audit": "reviews/Q264-pm-v1-migration-audit.md",
+      "axiom_report_status": "axiom-free",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q264-star-10-primitive-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
-      "lean_dependencies": ["PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_13"],
-      "normalized_dependencies": ["PM1:✱9·13"],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱9·13"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q264-star-10-primitive-audit.md","editorial_note":"The printed item is primitive and cites no earlier proposition; its metalinguistic premise is discharged by the already audited, exact ✱9·13 leading-real-variable generalization constructor rather than by a new rule."}
+      "lean_dependencies": [
+        "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_13"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱9·13"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱9·13"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Q264-star-10-primitive-audit.md",
+        "editorial_note": "The printed item is primitive and cites no earlier proposition; its metalinguistic premise is discharged by the already audited, exact ✱9·13 leading-real-variable generalization constructor rather than by a new rule."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

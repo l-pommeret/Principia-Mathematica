@@ -2,7 +2,9 @@
   "batch": "PM1-STAR31-CATALOGUE-05",
   "edition": "first",
   "volume": 1,
-  "witnesses": ["PG78050"],
+  "witnesses": [
+    "PG78050"
+  ],
   "integration_status": "awaiting-ci",
   "items": [
     {
@@ -13,7 +15,7 @@
       "declaration": "PM.Architecture.Star31ConverseKernel3.star_31_51",
       "formal_scope": "exact homogeneous typed invariance of universal relation quantification under converse",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
@@ -22,7 +24,17 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "semantic_audit_evidence": "reviews/Star31-catalogue-05-semantic-audit.md",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/star31-catalogue-parser-gate.md"
+      "parser_evidence": "reviews/star31-catalogue-parser-gate.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱31·52",
@@ -32,10 +44,13 @@
       "declaration": "PM.Architecture.Star31ConverseKernel3.star_31_52",
       "formal_scope": "exact homogeneous typed invariance of existential relation quantification under converse",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱31·51", "Transp"],
+      "printed_dependencies": [
+        "PM1:✱31·51",
+        "Transp"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
@@ -45,11 +60,28 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱31·51", "Transp"],
+        "printed_but_unused": [
+          "PM1:✱31·51",
+          "Transp"
+        ],
         "strict_attempt_evidence": "reviews/Star31-catalogue-05-semantic-audit.md",
         "editorial_note": "The existential equivalence follows directly by replacing a witness with its converse; the printed ·51 and Transp steps remain historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],
-  "ci_evidence": {"commit":"pending","run":"pending","conclusion":"pending"}
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

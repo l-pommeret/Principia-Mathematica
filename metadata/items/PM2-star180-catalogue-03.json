@@ -1,0 +1,161 @@
+{
+  "batch": "PM2-STAR180-CATALOGUE-03",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "478, 479"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱180·14",
+      "kind": "derived-proposition",
+      "printed": "⊢ : CʻP ∩ CʻQ = Λ . ⊃ . P ⤉ Q smor P + Q [*180·13 . *151·13]",
+      "printed_page": 478,
+      "lean_path": "Principia/FirstEdition/Volume2/Star180Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱180·13",
+        "PM2:✱151·13"
+      ],
+      "printed_latex_witness": "\\(\\vdash : CʻP \\cap CʻQ = \\Lambda . \\supset . P \\unicode{x2909} Q \\,\\text{smor}\\, P + Q \\quad[*180·13 . *151·13]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱180·15",
+      "kind": "derived-proposition",
+      "printed": "⊢ : R smor P . S smor Q . ⊃ . R + S smor P + Q",
+      "printed_page": 478,
+      "lean_path": "Principia/FirstEdition/Volume2/Star180Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱180·12",
+        "PM2:✱180·13",
+        "PM2:✱180·01"
+      ],
+      "printed_latex_witness": "\\(\\vdash : R \\,\\text{smor}\\, P . S \\,\\text{smor}\\, Q . \\supset . R + S \\,\\text{smor}\\, P + Q\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱180·151",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. CʻP∩ C⊃ Q=Λ .⊃ :Z smor (P⤉Q).≡ . (∃ R,S).R smor P.S smor Q.CʻR∩ CʻS=Λ .Z=R⤉S",
+      "printed_page": 479,
+      "lean_path": "Principia/FirstEdition/Volume2/Star180Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱160·48",
+        "PM2:✱160·44",
+        "PM2:✱160·14",
+        "PM2:✱151·11",
+        "PM2:✱151·21",
+        "PM1:✱72·411",
+        "PM2:✱150·22",
+        "PM2:✱151·12"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\ldotp &CʻP\\cap C\\supset Q=\\Lambda .\\supset :Z\\,\\text{smor}\\,(P\\unicode{x2909}Q).\\equiv .\\\\ &(\\exists R,S).R\\,\\,\\text{smor}\\,\\,P.S\\,\\text{smor}\\,Q.CʻR\\cap CʻS=\\Lambda .Z=R\\unicode{x2909}S\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱180·152",
+      "kind": "derived-proposition",
+      "printed": "⊢ :Z smor (P+Q).≡ . (∃ R,S).R smor P.S smor Q.CʻR∩ CʻS=Λ .Z=R⤉S [*180·151·11·12]",
+      "printed_page": 479,
+      "lean_path": "Principia/FirstEdition/Volume2/Star180Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱180·151",
+        "PM2:✱180·11",
+        "PM2:✱180·12"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash :Z\\,\\text{smor}\\,&(P+Q).\\equiv .\\\\ &(\\exists R,S).R\\,\\,\\text{smor}\\,\\,P.S\\,\\text{smor}\\,Q.CʻR\\cap CʻS=\\Lambda .Z=R\\unicode{x2909}S\\\\ &[*180·151·11·12]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱180·16",
+      "kind": "derived-proposition",
+      "printed": "⊢ .Nrʻ (P+Q)= Ẑ {(∃ R,S).R∈ NrʻP.S∈ NrʻQ.CʻR∩ CʻS=Λ .Z=R⤉S} [*180·152.*152·11]",
+      "printed_page": 479,
+      "lean_path": "Principia/FirstEdition/Volume2/Star180Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱180·152",
+        "PM2:✱152·11"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash .\\text{Nr}ʻ&(P+Q)=\\\\ &\\hat{Z} \\{(\\exists R,S).R\\in \\text{Nr}ʻP.S\\in \\text{Nr}ʻQ.CʻR\\cap CʻS=\\Lambda .Z=R\\unicode{x2909}S\\}\\\\ &[*180·152.*152·11]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

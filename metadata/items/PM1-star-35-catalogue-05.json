@@ -13,41 +13,54 @@
   "items": [
     {
       "id": "PM1:✱35·25",
-      "kind": "derived-proposition",
-      "printed": "\\(S\\mid R\\upharpoonright \\beta=(S\\mid R)\\upharpoonright \\beta \\quad\\text{Df}\\)",
+      "kind": "definition",
+      "printed": "S| R↾ β=(S| R)↾ β Df",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
       "declaration": "PM.Architecture.Star35CompositionKernel.star_35_25",
       "formal_scope": "exact typed definitional equality for PM's bracket convention on right-restricted composition; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(S\\mid R\\upharpoonright \\beta=(S\\mid R)\\upharpoonright \\beta \\quad\\text{Df}\\)"
     },
     {
       "id": "PM1:✱35·26",
       "kind": "derived-proposition",
-      "printed": "\\[\\begin{align}\\vdash.(\\alpha\\upharpoonleft R)\\mid (S\\upharpoonright \\beta)&=\\alpha\\upharpoonleft (R\\mid S)\\upharpoonright \\beta=\\{\\alpha\\upharpoonleft (R\\mid S)\\}\\upharpoonright \\beta=\\alpha\\upharpoonleft \\{(R\\mid S)\\upharpoonright \\beta\\}\\\\ &=\\{(\\alpha\\upharpoonleft R)\\mid S)\\}\\upharpoonright \\beta=\\alpha\\upharpoonleft \\{R\\mid (S\\upharpoonright \\beta)\\}\\\\ &=(\\alpha\\upharpoonleft R\\mid S)\\upharpoonright \\beta=\\alpha\\upharpoonleft (R\\mid S\\upharpoonright \\beta)\\end{align}\\]",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.(α↿ R)| (S↾ β) =α↿ (R| S)↾ β={α↿ (R| S)}↾ β=α↿ {(R| S)↾ β} ={(α↿ R)| S)}↾ β=α↿ {R| (S↾ β)} =(α↿ R| S)↾ β=α↿ (R| S↾ β)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱34·1",
+        "PM1:✱35·1",
+        "PM1:✱35·101",
+        "PM1:✱10·35",
+        "PM1:✱35·102",
+        "PM1:✱35·21",
+        "PM1:✱35·22",
+        "PM1:✱35·23",
+        "PM1:✱35·24",
+        "PM1:✱35·25"
       ],
       "normalized_dependencies": [
-
+        "PM1:✱35·21"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star35CompositionKernel.star_35_21",
@@ -57,76 +70,102 @@
       "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
       "declaration": "PM.Architecture.Star35CompositionKernel.star_35_26",
       "formal_scope": "exact typed reconstruction of all eight printed forms as the seven successive equalities of restricted composition; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\[\\begin{align}\\vdash.(\\alpha\\upharpoonleft R)\\mid (S\\upharpoonright \\beta)&=\\alpha\\upharpoonleft (R\\mid S)\\upharpoonright \\beta=\\{\\alpha\\upharpoonleft (R\\mid S)\\}\\upharpoonright \\beta=\\alpha\\upharpoonleft \\{(R\\mid S)\\upharpoonright \\beta\\}\\\\ &=\\{(\\alpha\\upharpoonleft R)\\mid S)\\}\\upharpoonright \\beta=\\alpha\\upharpoonleft \\{R\\mid (S\\upharpoonright \\beta)\\}\\\\ &=(\\alpha\\upharpoonleft R\\mid S)\\upharpoonright \\beta=\\alpha\\upharpoonleft (R\\mid S\\upharpoonright \\beta)\\end{align}\\]"
     },
     {
       "id": "PM1:✱35·27",
-      "kind": "derived-proposition",
-      "printed": "\\(\\alpha\\upharpoonleft R\\mid S\\upharpoonright \\beta=(\\alpha\\upharpoonleft R\\mid S)\\upharpoonright \\beta \\quad\\text{Df}\\)",
+      "kind": "definition",
+      "printed": "α↿ R| S↾ β=(α↿ R| S)↾ β Df",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
       "declaration": "PM.Architecture.Star35CompositionKernel.star_35_27",
       "formal_scope": "exact typed definitional equality for the fully restricted composition bracket convention; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\alpha\\upharpoonleft R\\mid S\\upharpoonright \\beta=(\\alpha\\upharpoonleft R\\mid S)\\upharpoonright \\beta \\quad\\text{Df}\\)"
     },
     {
       "id": "PM1:✱35·33",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.(\\alpha\\upharpoonleft R\\upharpoonright \\beta)\\upharpoonright \\gamma=\\{\\alpha\\upharpoonleft R\\upharpoonright (\\beta\\cap \\gamma)\\} \\quad[\\text{Proof similar to that of *35·31}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.(α↿ R↾ β)↾ γ={α↿ R↾ (β∩ γ)} [Proof similar to that of *35·31]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
       "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_33",
       "formal_scope": "exact typed equality merging consecutive right restrictions into intersection of their endpoint classes; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.(\\alpha\\upharpoonleft R\\upharpoonright \\beta)\\upharpoonright \\gamma=\\{\\alpha\\upharpoonleft R\\upharpoonright (\\beta\\cap \\gamma)\\} \\quad[\\text{Proof similar to that of *35·31}]\\)"
     },
     {
       "id": "PM1:✱35·34",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\alpha\\upharpoonleft (\\beta\\upharpoonleft R\\upharpoonright \\gamma)=\\{(\\alpha\\cap \\beta)\\upharpoonleft R\\upharpoonright \\gamma\\} \\quad[\\text{Proof similar to that of *35·31}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.α↿ (β↿ R↾ γ)={(α∩ β)↿ R↾ γ} [Proof similar to that of *35·31]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
       "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_34",
       "formal_scope": "exact typed equality merging nested left and simultaneous restrictions into intersection of their source classes; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\alpha\\upharpoonleft (\\beta\\upharpoonleft R\\upharpoonright \\gamma)=\\{(\\alpha\\cap \\beta)\\upharpoonleft R\\upharpoonright \\gamma\\} \\quad[\\text{Proof similar to that of *35·31}]\\)"
     }
   ],
   "ci_evidence": {

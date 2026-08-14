@@ -48,10 +48,10 @@
       "scan_leaf": 167,
       "lean_path": "Principia/Architecture/Star10Q265Kernel.lean",
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_27",
-      "formal_scope": "formal implication lifting; exact canonical Raw target, proof pending",
+      "formal_scope": "withdrawn: the former wrapper reused the rejected theorem-specific ✱9·21 judgement",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "withdrawn-editorial-t10-refusal",
       "printed_dependencies": [
         "PM1:✱9·21",
         "PM1:✱10·14",
@@ -74,6 +74,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q265-canonical-target-gate.md",
         "editorial_note": "The exact ✱10·27 endpoint is the already closed ✱9·21 normalization; the wrapper records the formal-implication reading without replaying the printed primitive-rule chain."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -86,8 +96,8 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_271",
       "formal_scope": "formal equivalence lifting; exact closed canonical proof contract",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·22",
         "PM1:✱10·27"
@@ -97,9 +107,19 @@
         "PM1:✱10·27"
       ],
       "lean_dependencies": [
-        "PM.Architecture.Star10Q265Prerequisites.star_10_22",
-        "PM.Architecture.Star10Q265Kernel.star_10_27"
-      ]
+        "PM.Architecture.Star10Q265Kernel.star_10_27",
+        "PM.Architecture.Star10Q265Prerequisites.star_10_22"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱10·28",
@@ -111,8 +131,8 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_28",
       "formal_scope": "existential lifting; exact canonical Raw target, proof pending",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱9·22",
         "PM1:✱10·1",
@@ -135,6 +155,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q265-canonical-target-gate.md",
         "editorial_note": "The exact ✱10·28 endpoint is the already closed ✱9·22 existential-monotonicity normalization; the wrapper does not replay the printed scope-manipulation chain."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -147,8 +177,8 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_281",
       "formal_scope": "existential equivalence lifting; exact closed canonical proof contract",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·22",
         "PM1:✱10·28"
@@ -158,9 +188,19 @@
         "PM1:✱10·28"
       ],
       "lean_dependencies": [
-        "PM.Architecture.Star10Q265Prerequisites.star_10_22",
-        "PM.Architecture.Star10Q265Kernel.star_10_28"
-      ]
+        "PM.Architecture.Star10Q265Kernel.star_10_28",
+        "PM.Architecture.Star10Q265Prerequisites.star_10_22"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱10·35",
@@ -172,8 +212,8 @@
       "declaration": "PM.Architecture.Star10Q265Kernel.star_10_35",
       "formal_scope": "existential distribution; exact closed canonical proof contract",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱3·26",
         "PM1:✱10·11",
@@ -184,17 +224,17 @@
         "PM1:✱10·11·21"
       ],
       "normalized_dependencies": [
-        "PM1:✱3·2",
-        "PM1:✱3·26",
-        "PM1:✱3·27",
         "PM1:✱10·11",
         "PM1:✱10·23",
-        "PM1:✱10·28"
+        "PM1:✱10·28",
+        "PM1:✱3·2",
+        "PM1:✱3·26",
+        "PM1:✱3·27"
       ],
       "lean_dependencies": [
+        "PM.Architecture.Star10Q265FinalPrerequisites.star_10_11_21",
         "PM.Architecture.Star10Q265FinalPrerequisites.star_10_23",
         "PM.Architecture.Star10Q265Kernel.star_10_28",
-        "PM.Architecture.Star10Q265FinalPrerequisites.star_10_11_21",
         "PM.FirstEdition.Volume1.Star3.star_3_2",
         "PM.FirstEdition.Volume1.Star3.star_3_26",
         "PM.FirstEdition.Volume1.Star3.star_3_27"
@@ -207,6 +247,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q265-canonical-target-gate.md",
         "editorial_note": "The printed ✱10·11·21 is a composed rule use rather than a numbered proposition; its indexed ✱10·11 component is retained alongside every directly called propositional ingredient."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

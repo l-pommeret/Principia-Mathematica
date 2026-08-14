@@ -18,51 +18,67 @@
     {
       "id": "PM1:✱96·01",
       "kind": "definition",
-      "printed": "✱96·01. I_Rʻx = R_*⃖ʻx ∩ ẑz(z R_po z) Dft [✱96]",
+      "printed": "✱96·01. I_Rʻx=R⃖_∗ʻx∩ ẑ(zRₚₒz) Dft [✱96]",
       "printed_page": 640,
       "scan_leaf": 662,
       "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
       "declaration": "PM.Architecture.Star96OpeningKernel.star_96_01",
       "formal_scope": "exact typed extensional definition of the cyclic part of x's R-posterity",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star96-catalogue-01-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱96·02",
       "kind": "definition",
-      "printed": "✱96·02. J_Rʻx = R_*⃖ʻx − I_Rʻx Dft [✱96]",
+      "printed": "✱96·02. J_Rʻx=R⃖_∗ʻx-I_Rʻx Dft [✱96]",
       "printed_page": 640,
       "scan_leaf": 662,
       "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
       "declaration": "PM.Architecture.Star96OpeningKernel.star_96_02",
       "formal_scope": "exact typed extensional definition of the acyclic remainder of x's R-posterity",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star96-catalogue-01-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱96·1",
       "kind": "derived-proposition",
-      "printed": "✱96·1. ⊢ : z ∈ I_Rʻx .≡. x R_* z . z R_po z",
+      "printed": "✱96·1. ⊢:z∈ I_Rʻx.≡.xR_∗z.zRₚₒz [✱20·3.✱32·181.(✱96·01)]",
       "printed_page": 640,
       "scan_leaf": 662,
       "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
       "declaration": "PM.Architecture.Star96OpeningKernel.star_96_1",
       "formal_scope": "exact typed membership characterization of I_Rʻx",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱20·3",
         "PM1:✱32·181",
@@ -82,20 +98,29 @@
         "editorial_note": "The definitional membership theorem is checked directly; PM's printed derivation citations remain recorded as historical edges."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star96-catalogue-01-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱96·101",
       "kind": "derived-proposition",
-      "printed": "✱96·101. ⊢ : z ∈ J_Rʻx .≡. x R_* z . ∼(z R_po z)",
+      "printed": "✱96·101. ⊢:z∈ J_Rʻx.≡.xR_∗z.∼(zRₚₒz) [✱96·1.✱22·93.(✱96·02)]",
       "printed_page": 640,
       "scan_leaf": 662,
       "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
       "declaration": "PM.Architecture.Star96OpeningKernel.star_96_101",
       "formal_scope": "exact typed membership characterization of J_Rʻx",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱96·1",
         "PM1:✱22·93",
@@ -115,20 +140,29 @@
         "editorial_note": "Lean proves the classical set-difference normalization directly; PM's displayed derivation citations remain historical edges."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star96-catalogue-01-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱96·102",
       "kind": "derived-proposition",
-      "printed": "✱96·102. ⊢ . R_*⃖ʻx = J_Rʻx ∪ I_Rʻx . J_Rʻx ∩ I_Rʻx = Λ",
+      "printed": "✱96·102. ⊢.R⃖_∗ʻx=J_Rʻx∪ I_Rʻx.J_Rʻx∩ I_Rʻx=Λ [✱24·41·21.(✱96·01·02)]",
       "printed_page": 640,
       "scan_leaf": 662,
       "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
       "declaration": "PM.Architecture.Star96OpeningKernel.star_96_102",
       "formal_scope": "exact typed conjunction of the posterity partition and disjointness equations",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱24·41",
         "PM1:✱24·21",
@@ -150,7 +184,16 @@
         "editorial_note": "The canonical wrapper reuses chapter-local partition helpers rather than canonical PM item declarations; printed citations remain historical edges."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star96-catalogue-01-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

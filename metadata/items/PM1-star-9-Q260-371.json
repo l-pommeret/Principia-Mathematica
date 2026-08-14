@@ -2,25 +2,69 @@
   "batch": "PM1-STAR9-Q260-371",
   "edition": "first",
   "volume": 1,
-  "source_range": {"printed_pages": "141", "scan_leaves": [163], "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},
-  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
-  "items": [{
-    "id": "PM1:✱9·371",
-    "kind": "derived-proposition",
-    "printed": "⊢ : .(∃x).φx .∨. p : ⊃ : p .∨. (∃x).φx",
-    "printed_page": 141,
-    "scan_leaf": 163,
-    "lean_path": "Principia/Architecture/Star9371Kernel.lean",
-    "declaration": "PM.Architecture.Star9371Kernel.derive",
-    "formal_scope": "closed exact Similar Proof chain: ✱1·4 permutes φx and p, the fixed ✱9·22 witness applies to φ∨p and p∨φ, and two explicit ✱9·05 scope certificates give the displayed existential operands; deliberately not an OrderedAssertion reification or generic Raw detachment",
-    "source_status": "source-catalogued",
-    "formal_status": "kernel-checked",
-    "integration_status": "kernel-checked-closed-star9371-kernel-assertion",
-    "printed_dependencies": ["PM1:✱1·4", "PM1:✱9·22", "PM1:✱9·05"],
-    "lean_dependencies": ["PM.Derivation.star_1_4", "Star922Kernel.derive"],
-    "normalized_dependencies": ["PM1:✱1·4", "PM1:✱9·22"],
-    "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱9·05"], "strict_attempt_evidence": "reviews/Q260-star-9-371-review.md", "editorial_note": "The two ✱9·05 readings are explicit constructor-local normalization certificates. The dependency extractor records the closed ✱9·22 witness and pointwise ✱1·4 term, while the scope certificates remain inside the theorem-specific judgement."},
-    "blocked_dependencies": []
-  }],
-  "ci_evidence": {"commit": "e322d45b5fadd0091b652d0a751a10b737abdbae", "run": "31581077931", "conclusion": "success"}
+  "source_range": {
+    "printed_pages": "141",
+    "scan_leaves": [
+      163
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050",
+    "WS-PM1"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱9·371",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .(∃x).φx .∨. p : ⊃ : p .∨. (∃x).φx",
+      "printed_page": 141,
+      "scan_leaf": 163,
+      "lean_path": "Principia/Architecture/Star9371Kernel.lean",
+      "declaration": "PM.Architecture.Star9371Kernel.derive",
+      "formal_scope": "closed exact Similar Proof chain: ✱1·4 permutes φx and p, the fixed ✱9·22 witness applies to φ∨p and p∨φ, and two explicit ✱9·05 scope certificates give the displayed existential operands; deliberately not an OrderedAssertion reification or generic Raw detachment",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "kernel-checked-closed-star9371-kernel-assertion",
+      "printed_dependencies": [
+        "PM1:✱1·4",
+        "PM1:✱9·22",
+        "PM1:✱9·05"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.star_1_4",
+        "Star922Kernel.derive"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·4",
+        "PM1:✱9·22"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱9·05"
+        ],
+        "strict_attempt_evidence": "reviews/Q260-star-9-371-review.md",
+        "editorial_note": "The two ✱9·05 readings are explicit constructor-local normalization certificates. The dependency extractor records the closed ✱9·22 witness and pointwise ✱1·4 term, while the scope certificates remain inside the theorem-specific judgement."
+      },
+      "blocked_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

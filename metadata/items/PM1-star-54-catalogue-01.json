@@ -25,11 +25,23 @@
       "declaration": "PM.Architecture.Star54OpeningKernel.star_54_01",
       "formal_scope": "exact typed characteristic-function reading of cardinal zero",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume2.Star103Source.CardinalClass"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱103·02"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱54·02",
@@ -41,11 +53,23 @@
       "declaration": "PM.Architecture.Star54OpeningKernel.star_54_02",
       "formal_scope": "exact typed characteristic-function reading of cardinal two",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume2.Star103Source.CardinalClass"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱103·02"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱54·1",
@@ -57,8 +81,8 @@
       "declaration": "PM.Architecture.Star54OpeningKernel.star_54_1",
       "formal_scope": "exact typed defining identity for cardinal zero",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·01"
       ],
@@ -67,9 +91,20 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱54·01"],
+        "printed_but_unused": [
+          "PM1:✱54·01"
+        ],
         "strict_attempt_evidence": "reviews/star54-catalogue-01-definitional-dependencies.md",
         "editorial_note": "The printed parenthesized definition unfolds judgmentally in the exact Lean statement, so the proof term is `rfl` and has no theorem dependency."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -82,8 +117,8 @@
       "declaration": "PM.Architecture.Star54OpeningKernel.star_54_101",
       "formal_scope": "exact typed membership characterization of cardinal two",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·02"
       ],
@@ -92,9 +127,20 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱54·02"],
+        "printed_but_unused": [
+          "PM1:✱54·02"
+        ],
         "strict_attempt_evidence": "reviews/star54-catalogue-01-definitional-dependencies.md",
         "editorial_note": "The printed parenthesized definition unfolds judgmentally in the exact Lean statement, so the proof term is `Iff.rfl` and has no theorem dependency."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -107,8 +153,8 @@
       "declaration": "PM.Architecture.Star54OpeningKernel.star_54_102",
       "formal_scope": "exact typed membership characterization of cardinal zero",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·1"
       ],
@@ -117,9 +163,20 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱54·1"],
+        "printed_but_unused": [
+          "PM1:✱54·1"
+        ],
         "strict_attempt_evidence": "reviews/star54-catalogue-01-definitional-dependencies.md",
         "editorial_note": "The cited defining identity is judgmentally present in `Zero`; `Iff.rfl` therefore carries no theorem dependency."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

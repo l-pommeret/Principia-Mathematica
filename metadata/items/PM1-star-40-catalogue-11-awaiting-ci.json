@@ -1,6 +1,160 @@
-{"batch":"PM1-STAR40-CATALOGUE-11-AWAITING-CI","edition":"first","volume":1,"source_range":{"printed_pages":"328","scan_leaves":[350],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
- {"id":"PM1:✱40·65","kind":"derived-proposition","printed":"✱40·65. ⊢ : ∃!β − CʻR .⊃. pʻR⃗ʻʻβ = Λ . pʻR⃖ʻʻβ = Λ","printed_page":328,"scan_leaf":350,"lean_path":"Principia/Architecture/Star40FinalKernel.lean","declaration":"PM.Architecture.Star40FinalKernel.star_40_65","formal_scope":"exact typed conjunction: a member of β outside both relation domains forces both fibre products empty","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star40-catalogue-review.md","semantic_audit":"reviews/Star40-catalogue-review.md"},
- {"id":"PM1:✱40·66","kind":"derived-proposition","printed":"✱40·66. ⊢. α ⊂ pʻR⃗ʻʻβ .≡: x ∈ α . y ∈ β .⊃_{x,y}. x R y","printed_page":328,"scan_leaf":350,"lean_path":"Principia/Architecture/Star40FinalKernel.lean","declaration":"PM.Architecture.Star40FinalKernel.star_40_66","formal_scope":"exact typed equivalence between inclusion in the forward-fibre product and the doubly restricted relation condition","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star40-catalogue-review.md","semantic_audit":"reviews/Star40-catalogue-review.md"},
- {"id":"PM1:✱40·68","kind":"derived-proposition","printed":"✱40·68. ⊢ : α ⊂ pʻP⃗ʻʻβ .⊃. α ∩ β ⊂ Pʻʻβ","printed_page":328,"scan_leaf":350,"lean_path":"Principia/Architecture/Star40FinalKernel.lean","declaration":"PM.Architecture.Star40FinalKernel.star_40_68","formal_scope":"exact typed implication from forward-product inclusion to image inclusion of α ∩ β","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star40-catalogue-review.md","semantic_audit":"reviews/Star40-catalogue-review.md"},
- {"id":"PM1:✱40·681","kind":"derived-proposition","printed":"✱40·681. ⊢. α ∩ pʻP⃗ʻʻα ⊂ PʻʻpʻP⃗ʻʻα","printed_page":328,"scan_leaf":350,"lean_path":"Principia/Architecture/Star40FinalKernel.lean","declaration":"PM.Architecture.Star40FinalKernel.star_40_681","formal_scope":"exact typed self-specialization of the forward-product/image inclusion","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star40-catalogue-review.md","semantic_audit":"reviews/Star40-catalogue-review.md"}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR40-CATALOGUE-11-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "328",
+    "scan_leaves": [
+      350
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱40·65",
+      "kind": "derived-proposition",
+      "printed": "✱40·65. ⊢ : ∃!β − CʻR .⊃. pʻR⃗ʻʻβ = Λ . pʻR⃖ʻʻβ = Λ",
+      "printed_page": 328,
+      "scan_leaf": 350,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_65",
+      "formal_scope": "exact typed conjunction: a member of β outside both relation domains forces both fibre products empty",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱40·63",
+        "PM1:✱40·64",
+        "PM1:✱33·16"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star40FinalKernel.star_40_63",
+        "PM.Architecture.Star40FinalKernel.star_40_64"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱40·63",
+        "PM1:✱40·64"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱40·66",
+      "kind": "derived-proposition",
+      "printed": "✱40·66. ⊢. α ⊂ pʻR⃗ʻʻβ .≡: x ∈ α . y ∈ β .⊃_{x,y}. x R y",
+      "printed_page": 328,
+      "scan_leaf": 350,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_66",
+      "formal_scope": "exact typed equivalence between inclusion in the forward-fibre product and the doubly restricted relation condition",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱11·62"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱40·68",
+      "kind": "derived-proposition",
+      "printed": "✱40·68. ⊢ : α ⊂ pʻP⃗ʻʻβ .⊃. α ∩ β ⊂ Pʻʻβ",
+      "printed_page": 328,
+      "scan_leaf": 350,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_68",
+      "formal_scope": "exact typed implication from forward-product inclusion to image inclusion of α ∩ β",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱10·26",
+        "PM1:✱10·24",
+        "PM1:✱40·53",
+        "PM1:✱37·105"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱40·681",
+      "kind": "derived-proposition",
+      "printed": "✱40·681. ⊢. α ∩ pʻP⃗ʻʻα ⊂ PʻʻpʻP⃗ʻʻα",
+      "printed_page": 328,
+      "scan_leaf": 350,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_681",
+      "formal_scope": "exact typed self-specialization of the forward-product/image inclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱40·68"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

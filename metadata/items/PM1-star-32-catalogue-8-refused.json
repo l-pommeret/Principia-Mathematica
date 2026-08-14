@@ -2,27 +2,48 @@
   "batch": "PM1-STAR32-CATALOGUE-8-REFUSED",
   "edition": "first",
   "volume": 1,
-  "source_range": {"project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},
-  "witnesses": ["PG78050"],
+  "source_range": {
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
   "integration_status": "blocked-non-equivalent-lean-target",
-  "items": [{
-    "id": "PM1:✱32·41",
-    "kind": "derived-proposition",
-    "printed": "\\(\\vdash\\colon\\ldotp \\text{E}!Sʻy.\\supset:\\overrightarrow{R}ʻy=\\overrightarrow{S}ʻy.\\equiv.Rʻy=Sʻy\\)",
-    "formal_scope": "refused: Lean assumes contextual values for both R and S globally, whereas print assumes only existence of the S-value",
-    "lean_path": "Principia/Architecture/Star32ConsecutiveKernel4.lean",
-    "declaration": "PM.Architecture.Star32ConsecutiveKernel4.star_32_41",
-    "source_status": "source-catalogued-PM-VERBATIM",
-    "formal_status": "prepared",
-    "integration_status": "blocked-non-equivalent-lean-target",
-    "integration_blocked": true,
-    "blocking_reason": "The Lean declaration takes both r : FiberValue R y and s : FiberValue S y before the biconditional. PM's antecedent supplies only E!Sʻy; existence of the R-value must follow contextually from the relevant side rather than be added as a global premise.",
-    "printed_dependencies": [],
-    "lean_dependencies": [],
-    "normalized_dependencies": [],
-    "parser_status": "reviewed-gap",
-    "parser_evidence": "reviews/Star32-catalogue-08-semantic-audit.md",
-    "semantic_audit_status": "strict-equivalence-refused"
-  }],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "items": [
+    {
+      "id": "PM1:✱32·41",
+      "kind": "derived-proposition",
+      "printed": "⊢:. E!Sʻy.⊃:R⃗ʻy=S⃗ʻy.≡.Rʻy=Sʻy",
+      "formal_scope": "refused: Lean assumes contextual values for both R and S globally, whereas print assumes only existence of the S-value",
+      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel4.lean",
+      "declaration": "PM.Architecture.Star32ConsecutiveKernel4.star_32_41",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-non-equivalent-lean-target",
+      "integration_blocked": true,
+      "blocking_reason": "The Lean declaration takes both r : FiberValue R y and s : FiberValue S y before the biconditional. PM's antecedent supplies only E!Sʻy; existence of the R-value must follow contextually from the relevant side rather than be added as a global premise.",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "printed_latex_witness": "\\(\\vdash\\colon\\ldotp \\text{E}!Sʻy.\\supset:\\overrightarrow{R}ʻy=\\overrightarrow{S}ʻy.\\equiv.Rʻy=Sʻy\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

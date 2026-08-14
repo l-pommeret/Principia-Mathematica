@@ -1,12 +1,161 @@
 {
-  "batch": "PM2-STAR111-CATALOGUE-06-REFUSED", "edition": "first", "volume": 2,
-  "source_range": {"printed_pages": "91", "canonical_scan": "https://archive.org/details/PrincipiaMathematicaVol2/page/n111", "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},
-  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "batch": "PM2-STAR111-CATALOGUE-06-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "91",
+    "canonical_scan": "https://archive.org/details/PrincipiaMathematicaVol2/page/n111",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
   "items": [
-    {"id":"PM2:✱111·34","kind":"derived-proposition","printed":"✱111·34. ⊢:Mult ax.⊃:κ sm sm λ.≡.λ sm sm κ","lean_path":"Principia/Architecture/Star111Kernel.lean","declaration":"PM.Architecture.Star111Kernel.star_111_34 (refused candidate)","formal_scope":"refused: bijection extraction omits Mult ax and symmetry of double similarity","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star111-parser-gaps.md","semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star111-catalogues-05-06-semantic-audit.md"},
-    {"id":"PM2:✱111·4","kind":"derived-proposition","printed":"✱111·4. ⊢:κ sm sm λ.≡.(∃T).T∈1→1.Sʻλ⊂αʻT.κ=T̆ʻλ.≡.E!κ sm sm λ","lean_path":"Principia/Architecture/Star111Kernel.lean","declaration":"PM.Architecture.Star111Kernel.star_111_4 (refused candidate)","formal_scope":"refused: self-equivalence omits both witness existence and contextual existence","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star111-parser-gaps.md","semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star111-catalogues-05-06-semantic-audit.md"},
-    {"id":"PM2:✱111·401","kind":"derived-proposition","printed":"✱111·401. ⊢:κ sm sm λ.≡.(αT).T∈1→1.Sʻλ⊂αʻT.κ=T̆ʻλ","lean_path":"Principia/Architecture/Star111Kernel.lean","declaration":"PM.Architecture.Star111Kernel.star_111_401 (refused candidate)","formal_scope":"refused: extracted bijection omits PM's definite-description equivalence and defining clauses","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star111-parser-gaps.md","semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star111-catalogues-05-06-semantic-audit.md"},
-    {"id":"PM2:✱111·402","kind":"derived-proposition","printed":"✱111·402. ⊢:κ sm sm λ.≡.(αT).T↾sʻλ∈1→1.Sʻλ⊂αʻT.κ=T̆ʻλ","lean_path":"Principia/Architecture/Star111Kernel.lean","declaration":"PM.Architecture.Star111Kernel.star_111_402 (refused candidate)","formal_scope":"refused: membership-map extraction omits restriction and all definite witness clauses","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star111-parser-gaps.md","semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star111-catalogues-05-06-semantic-audit.md"},
-    {"id":"PM2:✱111·43","kind":"derived-proposition","printed":"✱111·43. ⊢:κ sm sm λ.⊃.(∃S).S∈1→1.S⊂sm.DʻS=κ.GʻS=λ","lean_path":"Principia/Architecture/Star111Kernel.lean","declaration":"PM.Architecture.Star111Kernel.star_111_43 (refused candidate)","formal_scope":"refused: extracted function omits PM's existential relation and prescribed domain equations","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star111-parser-gaps.md","semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star111-catalogues-05-06-semantic-audit.md"}
-  ], "ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+    {
+      "id": "PM2:✱111·34",
+      "kind": "derived-proposition",
+      "printed": "✱111·34. ⊢:Mult ax.⊃:κ sm sm λ.≡.λ sm sm κ",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_34 (refused candidate)",
+      "formal_scope": "refused: bijection extraction omits Mult ax and symmetry of double similarity",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogues-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱111·4",
+      "kind": "derived-proposition",
+      "printed": "✱111·4. ⊢:κ sm sm λ.≡.(∃T).T∈1→1.Sʻλ⊂αʻT.κ=T̆ʻλ.≡.E!κ sm sm λ",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_4 (refused candidate)",
+      "formal_scope": "refused: self-equivalence omits both witness existence and contextual existence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogues-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱111·401",
+      "kind": "derived-proposition",
+      "printed": "✱111·401. ⊢:κ sm sm λ.≡.(αT).T∈1→1.Sʻλ⊂αʻT.κ=T̆ʻλ",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_401 (refused candidate)",
+      "formal_scope": "refused: extracted bijection omits PM's definite-description equivalence and defining clauses",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogues-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱111·402",
+      "kind": "derived-proposition",
+      "printed": "✱111·402. ⊢:κ sm sm λ.≡.(αT).T↾sʻλ∈1→1.Sʻλ⊂αʻT.κ=T̆ʻλ",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_402 (refused candidate)",
+      "formal_scope": "refused: membership-map extraction omits restriction and all definite witness clauses",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogues-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱111·43",
+      "kind": "derived-proposition",
+      "printed": "✱111·43. ⊢:κ sm sm λ.⊃.(∃S).S∈1→1.S⊂sm.DʻS=κ.GʻS=λ",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_43 (refused candidate)",
+      "formal_scope": "refused: extracted function omits PM's existential relation and prescribed domain equations",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogues-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

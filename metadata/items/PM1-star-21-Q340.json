@@ -33,30 +33,34 @@
       "declaration": "PM.Architecture.Star21Q340Kernel.star_21_705",
       "formal_scope": "exact polymorphic mixed class/binary-relation reducibility proposition",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱20·703"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star12Q289Reducibility.star_12_11"
-      ],
-      "normalized_dependencies": [
-        "PM1:✱12·11"
-      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": [
-          "PM1:✱12·11"
-        ],
+        "added_beyond_print": [],
         "printed_but_unused": [
           "✱20·703"
         ],
         "strict_attempt_evidence": "reviews/Q340-review.md",
-        "editorial_note": "The printed analogue batch is not yet formalized; its exact binary reducibility ingredient is used directly."
+        "editorial_note": "The body calls the secondary Prop reading of ✱12·11, not its primary PM derivation; no primary dependency edge is claimed."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q340-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8",
+          "T9"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱21·71",
@@ -68,8 +72,8 @@
       "declaration": "PM.Architecture.Star21Q340Kernel.star_21_71",
       "formal_scope": "exact polymorphic relation identity/indiscernibility equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱20·71"
       ],
@@ -85,7 +89,16 @@
         "editorial_note": "The exact relation identity theorem closes directly; the printed analogue citation remains recorded."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q340-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -25,14 +25,23 @@
       "declaration": "PM.Architecture.Star115OpeningKernel.star_115_01",
       "formal_scope": "exact typed dependent-function reconstruction of PM's multiplicative class: an element selects one value from every indexed factor",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star115-catalogue-01-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱115·1",
@@ -44,8 +53,8 @@
       "declaration": "PM.Architecture.Star115OpeningKernel.star_115_1",
       "formal_scope": "exact typed restatement of the multiplicative-class defining identity",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱115·01"
       ],
@@ -61,13 +70,23 @@
         "editorial_note": "Lean checks the same defining equality directly by reduction; PM cites its immediately preceding definition."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star115-catalogue-01-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

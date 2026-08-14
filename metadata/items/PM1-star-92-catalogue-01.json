@@ -18,7 +18,7 @@
     {
       "id": "PM1:✱92·1",
       "kind": "derived-proposition",
-      "printed": "✱92·1. ⊢ : R∈1→Cls .⊃. PotidʻR⊂1→Cls",
+      "printed": "✱92·1. ⊢:R∈ 1→Cls.⊃.PotidʻR⊂ 1→Cls",
       "printed_page": 602,
       "scan_leaf": 624,
       "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
@@ -31,12 +31,22 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱92·101",
       "kind": "derived-proposition",
-      "printed": "✱92·101. ⊢ : R∈Cls→1 .⊃. PotidʻR⊂Cls→1",
+      "printed": "✱92·101. ⊢:R∈ Cls→1.⊃.PotidʻR⊂ Cls→1 [Proof as in ✱92·1]",
       "printed_page": 602,
       "scan_leaf": 624,
       "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
@@ -49,12 +59,22 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱92·102",
       "kind": "derived-proposition",
-      "printed": "✱92·102. ⊢ : R∈1→1 .⊃. PotidʻR⊂1→1",
+      "printed": "✱92·102. ⊢:R∈ 1→1.⊃.PotidʻR⊂ 1→1 [Proof as in ✱92·1]",
       "printed_page": 602,
       "scan_leaf": 624,
       "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
@@ -67,12 +87,22 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱92·11",
       "kind": "derived-proposition",
-      "printed": "✱92·11. ⊢ : R∈1→Cls .⊃. Rpo|CnvʻR⊂̇R∗ . Rpo|CnvʻR=R∗↾DʻR",
+      "printed": "✱92·11. ⊢:R∈ 1→Cls.⊃.Rₚₒ| Ř⪽R_∗.Rₚₒ| Ř = R_∗↾ DʻR",
       "printed_page": 602,
       "scan_leaf": 624,
       "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
@@ -85,12 +115,22 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱92·112",
       "kind": "derived-proposition",
-      "printed": "✱92·112. ⊢ : R∈1→Cls .⊃. R|Rpo|CnvʻR=Rpo↾DʻR",
+      "printed": "✱92·112. ⊢:R∈ 1→Cls.⊃.R| Rₚₒ| Ř = Rₚₒ↾ DʻR [✱92·11.✱91·52]",
       "printed_page": 602,
       "scan_leaf": 624,
       "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
@@ -103,7 +143,17 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

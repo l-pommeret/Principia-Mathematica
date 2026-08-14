@@ -26,14 +26,23 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_54",
       "formal_scope": "exact existence of two distinct members witnessing a cardinal couple",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star54-closing-07-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱54·55",
@@ -45,14 +54,23 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_55",
       "formal_scope": "exact permutation of the zero/one/two cardinal-class union",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star54-closing-07-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱54·56",
@@ -64,8 +82,8 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_56",
       "formal_scope": "exact characterization of classes outside cardinal zero, one, and two by three pairwise distinct members",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·44"
       ],
@@ -76,8 +94,17 @@
         "PM1:✱54·44"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star54-closing-07-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱54·6",
@@ -89,8 +116,8 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_6",
       "formal_scope": "exact equality characterization for cross-pairs drawn from disjoint classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·22"
       ],
@@ -102,7 +129,16 @@
       ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star54-closing-07-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

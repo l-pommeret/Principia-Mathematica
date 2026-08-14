@@ -1,1 +1,222 @@
-{"batch":"PM1-STAR20-Q319","edition":"first","volume":1,"source_range":{"printed_pages":"202","scan_leaves":[224],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":224,"printed_page":202,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page224-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg","sha256":"d4e12a13802b589d02d794a2a2f655ea33be55294e5b7746d69495bc0b88cb58"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱20·16","kind":"derived-proposition","printed":"⊢ : (∃φ) : φ!x .≡ₓ. ψx : f{ẑ(ψz)} .≡ . f{ẑ(φ!z)}","printed_page":202,"scan_leaf":224,"lean_path":"Principia/Architecture/Star20Q319Kernel.lean","declaration":"PM.Architecture.Star20Q319Kernel.star_20_16","formal_scope":"exact polymorphic class-extension endpoint in the documented simple-type embedding","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q319-review.md","printed_dependencies":["PM1:✱20·12"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱20·12"],"strict_attempt_evidence":"reviews/Q319-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱20·17","kind":"derived-proposition","printed":"⊢ : (φ). f{ẑ(φ!z)} .⊃ . f{ẑ(ψz)}","printed_page":202,"scan_leaf":224,"lean_path":"Principia/Architecture/Star20Q319Kernel.lean","declaration":"PM.Architecture.Star20Q319Kernel.star_20_17","formal_scope":"exact polymorphic universal class-function specialization","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q319-review.md","printed_dependencies":["PM1:✱20·16","PM1:✱10·11"],"lean_dependencies":["PM.Architecture.Star20Q319Kernel.star_20_16"],"normalized_dependencies":["PM1:✱20·16"],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·11"],"strict_attempt_evidence":"reviews/Q319-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱20·18","kind":"derived-proposition","printed":"⊢ : ẑ(φz) = ẑ(ψz) .⊃ : f{ẑ(φz)} .≡ . f{ẑ(ψz)}","printed_page":202,"scan_leaf":224,"lean_path":"Principia/Architecture/Star20Q319Kernel.lean","declaration":"PM.Architecture.Star20Q319Kernel.star_20_18","formal_scope":"exact polymorphic class-identity congruence","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q319-review.md","printed_dependencies":["PM1:✱20·11","PM1:✱20·15"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱20·11","PM1:✱20·15"],"strict_attempt_evidence":"reviews/Q319-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱20·19","kind":"derived-proposition","printed":"⊢ : ẑ(ψz) = ẑ(χz) .≡ : (f) : f!ẑ(ψz) .⊃ . f!ẑ(χz)","printed_page":202,"scan_leaf":224,"lean_path":"Principia/Architecture/Star20Q319Kernel.lean","declaration":"PM.Architecture.Star20Q319Kernel.star_20_19","formal_scope":"exact polymorphic Leibniz identity for class extensions, implication form","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q319-review.md","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[]},{"id":"PM1:✱20·191","kind":"derived-proposition","printed":"⊢ : ẑ(ψz) = ẑ(χz) .≡ : (f) : f!ẑ(ψz) .≡ . f!ẑ(χz)","printed_page":202,"scan_leaf":224,"lean_path":"Principia/Architecture/Star20Q319Kernel.lean","declaration":"PM.Architecture.Star20Q319Kernel.star_20_191","formal_scope":"exact polymorphic Leibniz identity for class extensions, equivalence form","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q319-review.md","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[]}],"ci_evidence":{"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}}
+{
+  "batch": "PM1-STAR20-Q319",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "202",
+    "scan_leaves": [
+      224
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 224,
+        "printed_page": 202,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page224-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg",
+        "sha256": "d4e12a13802b589d02d794a2a2f655ea33be55294e5b7746d69495bc0b88cb58"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱20·16",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (∃φ) : φ!x .≡ₓ. ψx : f{ẑ(ψz)} .≡ . f{ẑ(φ!z)}",
+      "printed_page": 202,
+      "scan_leaf": 224,
+      "lean_path": "Principia/Architecture/Star20Q319Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q319Kernel.star_20_16",
+      "formal_scope": "exact polymorphic class-extension endpoint in the documented simple-type embedding",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q319-review.md",
+      "printed_dependencies": [
+        "PM1:✱20·12"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·12"
+        ],
+        "strict_attempt_evidence": "reviews/Q319-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·17",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (φ). f{ẑ(φ!z)} .⊃ . f{ẑ(ψz)}",
+      "printed_page": 202,
+      "scan_leaf": 224,
+      "lean_path": "Principia/Architecture/Star20Q319Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q319Kernel.star_20_17",
+      "formal_scope": "exact polymorphic universal class-function specialization",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q319-review.md",
+      "printed_dependencies": [
+        "PM1:✱20·16",
+        "PM1:✱10·11"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star20Q319Kernel.star_20_16"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱20·16"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱10·11"
+        ],
+        "strict_attempt_evidence": "reviews/Q319-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·18",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑ(φz) = ẑ(ψz) .⊃ : f{ẑ(φz)} .≡ . f{ẑ(ψz)}",
+      "printed_page": 202,
+      "scan_leaf": 224,
+      "lean_path": "Principia/Architecture/Star20Q319Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q319Kernel.star_20_18",
+      "formal_scope": "exact polymorphic class-identity congruence",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱20·11",
+        "PM1:✱20·15"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·11",
+          "PM1:✱20·15"
+        ],
+        "strict_attempt_evidence": "reviews/Q319-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·19",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑ(ψz) = ẑ(χz) .≡ : (f) : f!ẑ(ψz) .⊃ . f!ẑ(χz)",
+      "printed_page": 202,
+      "scan_leaf": 224,
+      "lean_path": "Principia/Architecture/Star20Q319Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q319Kernel.star_20_19",
+      "formal_scope": "exact polymorphic Leibniz identity for class extensions, implication form",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱20·18",
+        "PM1:✱10·11",
+        "PM1:✱10·21",
+        "PM1:✱20·15",
+        "PM1:✱10·27",
+        "PM1:✱10·33",
+        "PM1:✱20·112",
+        "PM1:✱10·1",
+        "PM1:✱4·2",
+        "PM1:✱10·301",
+        "PM1:✱10·32",
+        "PM1:✱10·23",
+        "PM1:✱10·35",
+        "PM1:✱12·1"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·191",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑ(ψz) = ẑ(χz) .≡ : (f) : f!ẑ(ψz) .≡ . f!ẑ(χz)",
+      "printed_page": 202,
+      "scan_leaf": 224,
+      "lean_path": "Principia/Architecture/Star20Q319Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q319Kernel.star_20_191",
+      "formal_scope": "exact polymorphic Leibniz identity for class extensions, equivalence form",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
+  }
+}

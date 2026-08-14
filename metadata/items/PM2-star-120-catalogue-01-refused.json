@@ -4,11 +4,16 @@
   "volume": 2,
   "source_range": {
     "printed_pages": "212",
-    "scan_leaves": [252],
+    "scan_leaves": [
+      252
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
   },
-  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
   "items": [
     {
       "id": "PM2:✱120·15",
@@ -24,13 +29,38 @@
       "integration_status": "blocked-semantic-mismatch-successor-for-type-lift",
       "integration_blocked": true,
       "blocking_reason": "The declaration replaces PM's smʻʻα (the similar cardinal at another type) with successor n. It also has no representation of the displayed existence antecedent, so it does not prove the printed proposition.",
-      "printed_dependencies": ["PM1:✱2·2", "PM1:✱3·48", "PM1:✱4·6", "PM2:✱101·15", "PM2:✱110·4", "PM2:✱118·201", "PM2:✱118·241", "PM2:✱120·11", "PM2:✱120·12", "PM2:✱120·121"],
+      "printed_dependencies": [
+        "PM2:✱101·15",
+        "PM2:✱120·12",
+        "PM2:✱110·4",
+        "PM2:✱118·201",
+        "PM2:✱118·241",
+        "PM2:✱120·121",
+        "PM1:✱2·2",
+        "PM1:✱3·48",
+        "PM2:✱120·11",
+        "PM1:✱4·6"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star120-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

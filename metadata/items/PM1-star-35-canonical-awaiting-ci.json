@@ -14,50 +14,90 @@
     {
       "id": "PM1:✱35·21",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\alpha\\upharpoonleft R\\upharpoonright \\beta=(\\alpha\\upharpoonleft R)\\upharpoonright \\beta=\\alpha\\upharpoonleft (R\\upharpoonright \\beta)\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.α↿ R↾ β=(α↿ R)↾ β=α↿ (R↾ β)",
       "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
       "declaration": "PM.Architecture.Star35CompositionKernel.star_35_21",
       "formal_scope": "exact two-sided restriction associativity, retaining both printed equalities",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱35·102",
+        "PM1:✱35·1",
+        "PM1:✱35·101"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\alpha\\upharpoonleft R\\upharpoonright \\beta=(\\alpha\\upharpoonleft R)\\upharpoonright \\beta=\\alpha\\upharpoonleft (R\\upharpoonright \\beta)\\)"
     },
     {
       "id": "PM1:✱35·31",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.(R\\upharpoonright \\alpha)\\upharpoonright \\beta=R\\upharpoonright (\\alpha\\cap \\beta)\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.(R↾ α)↾ β=R↾ (α∩ β)",
       "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
       "declaration": "PM.Architecture.Star35CompositionKernel.star_35_31",
       "formal_scope": "exact repeated converse-domain restriction as intersection",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱35·101",
+        "PM1:✱22·33"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.(R\\upharpoonright \\alpha)\\upharpoonright \\beta=R\\upharpoonright (\\alpha\\cap \\beta)\\)"
     },
     {
       "id": "PM1:✱35·32",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\alpha\\upharpoonleft (\\beta\\upharpoonleft R)=(\\alpha\\cap \\beta)\\upharpoonleft R \\quad[\\text{Proof similar to that of *35·31}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.α↿ (β↿ R)=(α∩ β)↿ R [Proof similar to that of *35·31]",
       "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
       "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_32",
       "formal_scope": "exact repeated domain restriction as intersection",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\alpha\\upharpoonleft (\\beta\\upharpoonleft R)=(\\alpha\\cap \\beta)\\upharpoonleft R \\quad[\\text{Proof similar to that of *35·31}]\\)"
     }
   ],
   "ci_evidence": {

@@ -1,4 +1,122 @@
-{"batch":"PM1-STAR12-Q289","edition":"first","volume":1,"source_range":{"printed_pages":"174","scan_leaves":[196],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":196,"printed_page":174,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page196-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"56e8d8644f7db3d93d3a29d208fd75a5fc346a11c11fff337211ec9194f4cb79"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱12·1","kind":"primitive-proposition","printed":"⊢ : (∃f) : φx .≡ₓ .f!x  Pp","printed_page":174,"scan_leaf":196,"lean_path":"Principia/Architecture/Star12Q289Reducibility.lean","declaration":"PM.Architecture.Star12Q289Reducibility.star_12_1","formal_scope":"exact unary reducibility proposition in the documented unramified Lean embedding","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[]},
-{"id":"PM1:✱12·11","kind":"primitive-proposition","printed":"⊢ : (∃f) : φ(x, y) .≡ₓ,ᵧ .f!(x, y)  Pp","printed_page":174,"scan_leaf":196,"lean_path":"Principia/Architecture/Star12Q289Reducibility.lean","declaration":"PM.Architecture.Star12Q289Reducibility.star_12_11","formal_scope":"exact binary reducibility proposition in the documented unramified Lean embedding","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q289-star-12-reducibility-audit.md","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[]}
-],"ci_evidence":{"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}}
+{
+  "batch": "PM1-STAR12-Q289",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "174",
+    "scan_leaves": [
+      196
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 196,
+        "printed_page": 174,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page196-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "56e8d8644f7db3d93d3a29d208fd75a5fc346a11c11fff337211ec9194f4cb79"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱12·1",
+      "kind": "primitive-proposition",
+      "printed": "⊢ : (∃f) : φx .≡ₓ .f!x  Pp",
+      "printed_page": 174,
+      "scan_leaf": 196,
+      "lean_path": "Principia/Deduction/Star12Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_12_1",
+      "formal_scope": "exact unary reducibility AST, conditional on a UnaryReducibility certificate and a separately derived pointwise equivalence premise",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "certificate, pointwiseEquivalence",
+          "lean_type": "PM.RamifiedSyntax.UnaryReducibility phi plus the pointwise PM derivation premise"
+        }
+      },
+      "statement_lean_path": "Principia/Architecture/Star12Q289Reducibility.lean",
+      "statement_declaration": "PM.Architecture.Star12Q289Reducibility.star_12_1",
+      "integration_blocked": false,
+      "formalization_level": "pm-derivation-v1",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star12-pm-derivation-v1-audit.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱12·11",
+      "kind": "primitive-proposition",
+      "printed": "⊢ : (∃f) : φ(x, y) .≡ₓ,ᵧ .f!(x, y)  Pp",
+      "printed_page": 174,
+      "scan_leaf": 196,
+      "lean_path": "Principia/Deduction/Star12Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_12_11",
+      "formal_scope": "exact binary reducibility AST, conditional on a BinaryReducibility certificate and a separately derived pointwise equivalence premise",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "awaiting-ci",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "certificate, pointwiseEquivalence",
+          "lean_type": "PM.RamifiedSyntax.BinaryReducibility phi plus the pointwise PM derivation premise"
+        }
+      },
+      "statement_lean_path": "Principia/Architecture/Star12Q289Reducibility.lean",
+      "statement_declaration": "PM.Architecture.Star12Q289Reducibility.star_12_11",
+      "integration_blocked": false,
+      "formalization_level": "pm-derivation-v1",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star12-pm-derivation-v1-audit.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "integration_status": "awaiting-ci",
+  "review_evidence": [
+    "reviews/Star12-pm-derivation-v1-audit.md"
+  ]
+}

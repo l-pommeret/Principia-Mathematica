@@ -1,0 +1,151 @@
+{
+  "batch": "PM1-STAR23-OPENING-DERIVATION-V1-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "226",
+    "scan_leaves": [
+      248
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm#*23"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱23·1",
+      "kind": "derived-proposition",
+      "printed": "✱23·1. ⊢ :. R ⪽ S .≡: xRy .⊃ₓ,y. xSy",
+      "printed_page": 226,
+      "scan_leaf": 248,
+      "lean_path": "Principia/Deduction/Star23Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_23_1",
+      "formal_scope": "source-only transcription; PM object syntax, definitional unfolding, and kernel derivation are not yet implemented",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formalization_level": "source-only",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-pm-derivation-refused",
+      "semantic_audit_evidence": "reviews/Star23-opening-derivation-v1-review.md",
+      "pm_verbatim": "*23·1. \\(\\vdash \\colon\\ldotp R \\unicode{x2abd} S .\\equiv: xRy .\\supset_{x,y}. xSy\\) ",
+      "printed_latex_witness": "*23·1. \\(\\vdash \\colon\\ldotp R \\unicode{x2abd} S .\\equiv: xRy .\\supset_{x,y}. xSy\\) ",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱23·2",
+      "kind": "derived-proposition",
+      "printed": "✱23·2. ⊢ . R ∩̇ S = x̂ŷ(xRy . xSy)",
+      "printed_page": 226,
+      "scan_leaf": 248,
+      "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star23Source.source_only_star_23_2",
+      "formal_scope": "source-only transcription; PM object syntax, definitional unfolding, and kernel derivation are not yet implemented",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formalization_level": "source-only",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-pm-derivation-refused",
+      "semantic_audit_evidence": "reviews/Star23-opening-derivation-v1-review.md",
+      "pm_verbatim": "*23·2. \\(\\vdash . R \\dot{\\cap} S = \\hat{x}\\hat{y}(xRy . xSy)\\) ",
+      "printed_latex_witness": "*23·2. \\(\\vdash . R \\dot{\\cap} S = \\hat{x}\\hat{y}(xRy . xSy)\\) ",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱23·3",
+      "kind": "derived-proposition",
+      "printed": "✱23·3. ⊢ . R ⊍ S = x̂ŷ(xRy .∨. xSy)",
+      "printed_page": 226,
+      "scan_leaf": 248,
+      "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star23Source.source_only_star_23_3",
+      "formal_scope": "source-only transcription; PM object syntax, definitional unfolding, and kernel derivation are not yet implemented",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formalization_level": "source-only",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-pm-derivation-refused",
+      "semantic_audit_evidence": "reviews/Star23-opening-derivation-v1-review.md",
+      "pm_verbatim": "*23·3. \\(\\vdash . R \\unicode{x228d} S = \\hat{x}\\hat{y}(xRy .\\lor. xSy)\\) ",
+      "printed_latex_witness": "*23·3. \\(\\vdash . R \\unicode{x228d} S = \\hat{x}\\hat{y}(xRy .\\lor. xSy)\\) ",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱23·31",
+      "kind": "derived-proposition",
+      "printed": "✱23·31. ⊢ . ∸R = x̂ŷ{∼(xRy)}",
+      "printed_page": 226,
+      "scan_leaf": 248,
+      "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star23Source.source_only_star_23_31",
+      "formal_scope": "source-only transcription; PM object syntax, definitional unfolding, and kernel derivation are not yet implemented",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "formalization_level": "source-only",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-pm-derivation-refused",
+      "semantic_audit_evidence": "reviews/Star23-opening-derivation-v1-review.md",
+      "pm_verbatim": "*23·31. \\(\\vdash . \\unicode{x2238}R = \\hat{x}\\hat{y}\\{{\\sim}(xRy)\\}\\) ",
+      "printed_latex_witness": "*23·31. \\(\\vdash . \\unicode{x2238}R = \\hat{x}\\hat{y}\\{{\\sim}(xRy)\\}\\) ",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

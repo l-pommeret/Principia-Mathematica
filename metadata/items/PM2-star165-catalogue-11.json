@@ -1,0 +1,158 @@
+{
+  "batch": "PM2-STAR165-CATALOGUE-11",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "393, 394"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱165·321",
+      "kind": "derived-proposition",
+      "printed": "⊢ :E!Sʻz.⊃ .P↓_., (Sʻz)=| Š ^;P↓_., z [*165·32·01]",
+      "printed_page": 393,
+      "lean_path": "Principia/FirstEdition/Volume2/Star165Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱165·32",
+        "PM2:✱165·01"
+      ],
+      "printed_latex_witness": "\\(\\vdash :\\text{E}!Sʻz.\\supset .P\\downarrow_{.,} (Sʻz)=\\mid \\breve{S} ^{;}P\\downarrow_{.,} z \\quad[*165·32·01]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱165·33",
+      "kind": "derived-proposition",
+      "printed": "⊢ :E!!SʻʻCʻQ.⊃ .P↓_., ^;S^;Q=(| Š )† ^;P↓_., ^;Q",
+      "printed_page": 393,
+      "lean_path": "Principia/FirstEdition/Volume2/Star165Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱165·321",
+        "PM1:✱38·11",
+        "PM2:✱150·1",
+        "PM2:✱150·35"
+      ],
+      "printed_latex_witness": "\\(\\vdash :\\text{E}!!SʻʻCʻQ.\\supset .P\\downarrow_{.,} ^{;}S^{;}Q=(\\mid \\breve{S} )\\dagger ^{;}P\\downarrow_{.,} ^{;}Q\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱165·331",
+      "kind": "derived-proposition",
+      "printed": "⊢ :S↾ CʻQ∈ 1 arrow Cls.CʻQ⊂ ᗡʻS.⊃ .P↓_., ^;S^;Q=(| Š )† ^;P↓_., ^;Q [*165·33.*71·571]",
+      "printed_page": 393,
+      "lean_path": "Principia/FirstEdition/Volume2/Star165Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱165·33",
+        "PM1:✱71·571"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}&\\vdash :S\\upharpoonright CʻQ\\in 1\\rightarrow \\text{Cls}.CʻQ\\subset \\text{ᗡ}ʻS.\\supset .P\\downarrow_{.,} ^{;}S^{;}Q=(\\mid \\breve{S} )\\dagger ^{;}P\\downarrow_{.,} ^{;}Q\\\\ &[*165·33.*71·571]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱165·34",
+      "kind": "derived-proposition",
+      "printed": "⊢ :E!!RʻʻCʻP.E!!SʻʻCʻQ.⊃ .(R^;P)↓_., ^;(S^;Q)=(R∥ Š )† ^;(P↓_., ^;Q)",
+      "printed_page": 393,
+      "lean_path": "Principia/FirstEdition/Volume2/Star165Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱165·31",
+        "PM2:✱165·33",
+        "PM2:✱150·13",
+        "PM2:✱150·14",
+        "PM1:✱43·01"
+      ],
+      "printed_latex_witness": "\\(\\vdash :\\text{E}!!RʻʻCʻP.\\text{E}!!SʻʻCʻQ.\\supset .(R^{;}P)\\downarrow_{.,} ^{;}(S^{;}Q)=(R\\parallel \\breve{S} )\\dagger ^{;}(P\\downarrow_{.,} ^{;}Q)\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱165·341",
+      "kind": "derived-proposition",
+      "printed": "⊢ :R ↾ CʻP,S ↾ CʻQ ∈ 1 arrow Cls.CʻP ⊂ ᗡʻR.CʻQ ⊂ ᗡʻS.⊃ . (R^;P) ↓_., ^;(S^;Q) = (R ∥ Š )† ^;P↓_., ^;Q [*165·34.*71·571]",
+      "printed_page": 394,
+      "lean_path": "Principia/FirstEdition/Volume2/Star165Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱165·34",
+        "PM1:✱71·571"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash :R \\upharpoonright CʻP,S &\\upharpoonright CʻQ \\in 1 \\rightarrow \\text{Cls}.CʻP \\subset \\text{ᗡ}ʻR.CʻQ \\subset \\text{ᗡ}ʻS.\\supset .\\\\ &(R^{;}P) \\downarrow_{.,} ^{;}(S^{;}Q) = (R \\parallel \\breve{S} )\\dagger ^{;}P\\downarrow_{.,} ^{;}Q \\quad[*165·34.*71·571]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

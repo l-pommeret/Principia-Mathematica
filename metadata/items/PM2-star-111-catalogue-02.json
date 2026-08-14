@@ -20,11 +20,23 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_21",
       "formal_scope": "exact typed elimination from correspondence to similarity",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM2:✱111·221",
@@ -34,11 +46,23 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_221",
       "formal_scope": "exact typed introduction of correspondence from similarity",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM2:✱111·23",
@@ -48,8 +72,8 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_23",
       "formal_scope": "exact typed converse characterization of correspondence",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star111Kernel.star_111_13"
@@ -65,7 +89,19 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/star111-canonical-b.md",
         "editorial_note": "The converse characterization invokes the previously established similarity symmetry theorem ✱111·13; the printed line has no explicit bracketed citation."
-      }
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM2:✱111·451",
@@ -75,11 +111,23 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_451",
       "formal_scope": "exact typed symmetry of double similarity via inverse bijection",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM2:✱111·452",
@@ -89,17 +137,29 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_452",
       "formal_scope": "exact typed transitivity of double similarity via composed bijections",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     }
   ],
   "ci_evidence": {
-    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star111-parser-gaps.md"

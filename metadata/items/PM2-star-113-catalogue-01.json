@@ -26,8 +26,8 @@
       "declaration": "PM.Architecture.Star113OpeningKernel.star_113_101",
       "formal_scope": "exact typed membership characterization of the class product by ordered-pair relations with first coordinate in alpha and second coordinate in beta",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱40·7",
         "PM2:✱113·1"
@@ -35,7 +35,7 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star113-catalogue-01-semantic-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
@@ -45,6 +45,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star113-catalogue-01-semantic-audit.md",
         "editorial_note": "The two printed citations motivate the direct representation; the typed theorem unfolds the audited class-product representation definitionally."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -57,15 +66,15 @@
       "declaration": "PM.Architecture.Star113OpeningKernel.star_113_104",
       "formal_scope": "exact typed existence of the fixed-second-coordinate class of ordered-pair relations",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱38·12"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star113-catalogue-01-semantic-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
@@ -74,6 +83,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star113-catalogue-01-semantic-audit.md",
         "editorial_note": "Lean's predicate-class universe makes the displayed class directly available; the historical existence theorem remains recorded."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

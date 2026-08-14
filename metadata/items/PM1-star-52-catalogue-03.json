@@ -18,6 +18,7 @@
     {
       "id": "PM1:✱52·172",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "✱52·172.  ⊢ : α ∈ 1 .≡. ιʻι̌ʻα = α  [✱51·52.✱52·15]",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -25,8 +26,8 @@
       "declaration": "PM.Architecture.Star52NextKernel.star_52_172",
       "formal_scope": "exact contextual singleton reconstruction from the converse-iota value",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱51·52",
         "✱52·15"
@@ -42,11 +43,21 @@
         ],
         "strict_attempt_evidence": "reviews/Star52-catalogue-03-review.md",
         "editorial_note": "The contextual singleton reconstruction closes directly without totalizing the incomplete description; printed citations remain historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱52·173",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "✱52·173.  ⊢ : α ∈ 1 .≡. ι̌ʻα ∈ α  [✱51·53.✱52·5]",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -54,8 +65,8 @@
       "declaration": "PM.Architecture.Star52NextKernel.star_52_173",
       "formal_scope": "exact contextual assertion that the converse-iota value belongs to the class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱51·53",
         "✱52·5"
@@ -71,11 +82,21 @@
         ],
         "strict_attempt_evidence": "reviews/Star52-catalogue-03-review.md",
         "editorial_note": "The contextual membership assertion closes directly from existence and uniqueness; both printed citations remain historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱52·18",
       "kind": "derived-proposition",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed": "✱52·18.  ⊢ :: α ∈ 1 .≡ : (∃x) : x ∈ α : y ∈ α .⊃ᵧ. y = x",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -83,15 +104,25 @@
       "declaration": "PM.Architecture.Star52NextKernel.star_52_18",
       "formal_scope": "exact witness-first existence-and-uniqueness characterization of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱52·181",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "✱52·181.  ⊢ :: α ∼∈ 1 .≡ : x ∈ α .⊃ₓ. (∃y). y ∈ α . y ≠ x\n[✱52·18.✱10·51]",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -99,8 +130,8 @@
       "declaration": "PM.Architecture.Star52NextKernel.star_52_181",
       "formal_scope": "exact classical characterization of non-singleton classes by a distinct companion for every member",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱52·18",
         "✱10·51"
@@ -124,11 +155,21 @@
         "editorial_note": "The exact classical contrapositive uses the already audited equivalent uniqueness characterization ✱52·16; PM's printed route through ✱52·18 and ✱10·51 remains historical evidence."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star52-catalogue-review.md"
+      "parser_evidence": "reviews/Star52-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱52·2",
       "kind": "derived-proposition",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed": "✱52·2.  ⊢ . 1 ⊂ Cls",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -136,11 +177,20 @@
       "declaration": "PM.Architecture.Star52NextKernel.star_52_2",
       "formal_scope": "exact type-relative inclusion of singleton classes in the class of all classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

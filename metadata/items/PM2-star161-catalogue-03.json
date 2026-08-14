@@ -1,0 +1,150 @@
+{
+  "batch": "PM2-STAR161-CATALOGUE-03",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "358"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱161·141",
+      "kind": "derived-proposition",
+      "printed": "⊢ :∃̇ !P.⊃ .B⃗ʻ(P⇸ x)=B⃗ʻP-ι ʻx.B⃗ʻCnvʻ(P⇸ x)=ι ʻx-CʻP [*161·13·131.*93·101]",
+      "printed_page": 358,
+      "lean_path": "Principia/FirstEdition/Volume2/Star161Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱161·13",
+        "PM2:✱161·131",
+        "PM1:✱93·101"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}&\\vdash :\\dot{\\exists} !P.\\supset .\\overrightarrow{B}ʻ(P\\unicode{x21f8} x)=\\overrightarrow{B}ʻP-\\iota ʻx.\\overrightarrow{B}ʻ\\text{Cnv}ʻ(P\\unicode{x21f8} x)=\\iota ʻx-CʻP\\\\ &[*161·13·131.*93·101]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱161·15",
+      "kind": "derived-proposition",
+      "printed": "⊢ :∃̇ !P.x∼∈ CʻP.⊃ . B⃗ʻ(P⇸ x)=B⃗ʻP.B⃗ʻCnvʻ(P⇸ x)=ι ʻx.Bʻ(x⇷P̌ )=x [*161·141]",
+      "printed_page": 358,
+      "lean_path": "Principia/FirstEdition/Volume2/Star161Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱161·141"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}&\\vdash :\\dot{\\exists} !P.x{\\sim}\\in CʻP.\\supset .\\\\ &\\overrightarrow{B}ʻ(P\\unicode{x21f8} x)=\\overrightarrow{B}ʻP.\\overrightarrow{B}ʻ\\text{Cnv}ʻ(P\\unicode{x21f8} x)=\\iota ʻx.Bʻ(x\\unicode{x21f7}\\breve{P} )=x \\quad[*161·141]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱161·16",
+      "kind": "derived-proposition",
+      "printed": "⊢ :x∼∈ CʻP.⊃ .(P⇸ x)⥏CʻP=(P⇸ x)⥏(-ι ʻx)=P [*161·1]",
+      "printed_page": 358,
+      "lean_path": "Principia/FirstEdition/Volume2/Star161Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱161·1"
+      ],
+      "printed_latex_witness": "\\(\\vdash :x{\\sim}\\in CʻP.\\supset .(P\\unicode{x21f8} x)\\unicode{x0294f}CʻP=(P\\unicode{x21f8} x)\\unicode{x0294f}(-\\iota ʻx)=P \\quad[*161·1]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱161·161",
+      "kind": "derived-proposition",
+      "printed": "⊢ :x∼∈ CʻP.⊃ .(x⇷P)⥏CʻP=(x⇷P)⥏(-ι ʻx)=P",
+      "printed_page": 358,
+      "lean_path": "Principia/FirstEdition/Volume2/Star161Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(\\vdash :x{\\sim}\\in CʻP.\\supset .(x\\unicode{x21f7}P)\\unicode{x0294f}CʻP=(x\\unicode{x21f7}P)\\unicode{x0294f}(-\\iota ʻx)=P\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱161·2",
+      "kind": "derived-proposition",
+      "printed": "⊢ .Λ̇ ⇸ x=Λ̇ [*35·75·82.*161·1]",
+      "printed_page": 358,
+      "lean_path": "Principia/FirstEdition/Volume2/Star161Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱35·75",
+        "PM1:✱35·82",
+        "PM2:✱161·1"
+      ],
+      "printed_latex_witness": "\\(\\vdash .\\dot{\\Lambda} \\unicode{x21f8} x=\\dot{\\Lambda} \\quad[*35·75·82.*161·1]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

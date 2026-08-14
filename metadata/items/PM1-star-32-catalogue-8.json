@@ -13,36 +13,64 @@
     {
       "id": "PM1:✱32·4",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash\\colon\\ldotp \\text{E}!Rʻz.\\equiv:\\exists !\\overrightarrow{R}ʻz:x,y\\in \\overrightarrow{R}ʻz.\\supset_{x,y}.x=y \\quad[\\text{*30·21.*32·18}]\\)",
+      "printed": "⊢:. E!Rʻz.≡:∃ !R⃗ʻz:x,y∈ R⃗ʻz.⊃ₓ,y.x=y [*30·21.*32·18]",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel4.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel4.star_32_4",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱30·21", "PM1:✱32·18"],
+      "printed_dependencies": [
+        "PM1:✱30·21",
+        "PM1:✱32·18"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-08-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash\\colon\\ldotp \\text{E}!Rʻz.\\equiv:\\exists !\\overrightarrow{R}ʻz:x,y\\in \\overrightarrow{R}ʻz.\\supset_{x,y}.x=y \\quad[\\text{*30·21.*32·18}]\\)"
     },
     {
       "id": "PM1:✱32·42",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash\\colon\\ldotp \\overrightarrow{R}ʻy=\\overrightarrow{S}ʻy.\\supset:\\text{E}!Rʻy.\\equiv.\\text{E}!Sʻy \\quad[\\text{*30·34.*32·18}]\\)",
+      "printed": "⊢:. R⃗ʻy=S⃗ʻy.⊃:E!Rʻy.≡.E!Sʻy [*30·34.*32·18]",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel5.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel5.star_32_42",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱30·34", "PM1:✱32·18"],
+      "printed_dependencies": [
+        "PM1:✱30·34",
+        "PM1:✱32·18"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-08-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash\\colon\\ldotp \\overrightarrow{R}ʻy=\\overrightarrow{S}ʻy.\\supset:\\text{E}!Rʻy.\\equiv.\\text{E}!Sʻy \\quad[\\text{*30·34.*32·18}]\\)"
     }
   ],
   "ci_evidence": {

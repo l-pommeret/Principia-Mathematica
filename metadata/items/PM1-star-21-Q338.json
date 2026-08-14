@@ -40,8 +40,8 @@
       "declaration": "PM.Architecture.Star21Q338RelationFormation.star_21_631",
       "formal_scope": "exact bidirectional significance preservation with same relation type intrinsic",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱20·631"
       ],
@@ -57,7 +57,16 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q338-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱21·632",
@@ -69,8 +78,8 @@
       "declaration": "PM.Architecture.Star21Q338RelationFormation.star_21_632",
       "formal_scope": "exact equivalence between some formed relation value and uniform relation-function formation",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱20·632"
       ],
@@ -86,7 +95,16 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q338-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱21·633",
@@ -98,8 +116,8 @@
       "declaration": "PM.Architecture.Star21Q338RelationFormation.star_21_633",
       "formal_scope": "exact implication exchanging two universal typed-relation binders",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱20·633"
       ],
@@ -115,7 +133,16 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q338-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱21·64",
@@ -127,8 +154,8 @@
       "declaration": "PM.Architecture.Star21Q338RelationFormation.star_21_64",
       "formal_scope": "exact joint specialization of two universal relation assertions",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱20·64"
       ],
@@ -144,7 +171,16 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q338-review.md"
+      "parser_evidence": "reviews/Q338-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

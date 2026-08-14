@@ -18,14 +18,14 @@
     {
       "id": "PM1:✱93·116",
       "kind": "derived-proposition",
-      "printed": "✱93·116. ⊢ . max_P→ʻα=α∩CʻP−Pʻʻα",
+      "printed": "✱93·116. ⊢.max⃗_Pʻα=α∩ CʻP-Pʻʻα [✱93·115.✱32·18]",
       "printed_page": 610,
       "scan_leaf": 632,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
       "declaration": "PM.Architecture.Star93NextKernel.star_93_116",
       "formal_scope": "exact typed extensional reconstruction of the maximum image class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [
@@ -36,25 +36,39 @@
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱93·115"],
+        "added_beyond_print": [
+          "PM1:✱93·115"
+        ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
         "editorial_note": "The extensional class theorem reuses the exact pointwise expansion ✱93·115; this proof edge does not alter the proposition's semantic scope."
       },
       "semantic_audit_status": "strict-equivalence-passed",
-      "semantic_audit_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱93·117",
       "kind": "derived-proposition",
-      "printed": "✱93·117. ⊢ . B→ʻP̌=max_P→ʻᗡʻP=max_P→ʻCʻP",
+      "printed": "✱93·117. ⊢.B⃗ʻP̌=max⃗_PʻᗡʻP=max⃗_PʻCʻP [✱93·112·114]",
       "printed_page": 610,
       "scan_leaf": 632,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
       "declaration": "PM.Architecture.Star93NextKernel.star_93_117",
       "formal_scope": "exact typed conjunction of PM's two converse-boundary/maximum equalities; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [
@@ -65,44 +79,68 @@
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱93·112"],
+        "added_beyond_print": [
+          "PM1:✱93·112"
+        ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
         "editorial_note": "Lean transports the already exact pair of minimum equalities through converse; the added proof edge preserves the printed claim."
       },
       "semantic_audit_status": "strict-equivalence-passed",
-      "semantic_audit_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱93·118",
       "kind": "derived-proposition",
-      "printed": "✱93·118. ⊢ . max_P→ʻα⊂α∩CʻP",
+      "printed": "✱93·118. ⊢.max⃗_Pʻα⊂ α∩ CʻP [✱93·116]",
       "printed_page": 610,
       "scan_leaf": 632,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
       "declaration": "PM.Architecture.Star93NextKernel.star_93_118",
       "formal_scope": "exact typed inclusion of the maximum class in the source class intersected with the relation field; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱93·13",
       "kind": "derived-proposition",
-      "printed": "✱93·13. ⊢ . min_P→ʻᗡʻ(I↾CʻP)=B→ʻP",
+      "printed": "✱93·13. ⊢.min⃗_Pʻᗡʻ(I↾ CʻP)=B⃗ʻP [✱50·5·52.✱93·112]",
       "printed_page": 610,
       "scan_leaf": 632,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
       "declaration": "PM.Architecture.Star93NextKernel.star_93_13",
       "formal_scope": "exact typed normalization of PM's restricted-identity converse-domain to the field, giving minimum of the field equals boundary; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [
@@ -113,32 +151,59 @@
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱93·112"],
+        "added_beyond_print": [
+          "PM1:✱93·112"
+        ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
         "editorial_note": "After normalizing the restricted-identity converse-domain to the field, Lean uses the exact second equality of ✱93·112."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱93·131",
       "kind": "derived-proposition",
-      "printed": "✱93·131. ⊢ . min_P→ʻᗡʻP=ᗡʻP−ᗡʻP²",
+      "printed": "✱93·131. ⊢.min⃗_PʻᗡʻP=ᗡʻP-ᗡʻP²",
       "printed_page": 610,
       "scan_leaf": 632,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
       "declaration": "PM.Architecture.Star93NextKernel.star_93_131",
       "formal_scope": "exact typed extensional reconstruction of minimum on the converse-domain as converse-domain minus the converse-domain of P squared; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱93·111",
+        "PM1:✱37·36"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
-      "semantic_audit_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     }
   ],
   "ci_evidence": {

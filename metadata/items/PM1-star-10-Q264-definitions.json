@@ -2,12 +2,95 @@
   "batch": "PM1-STAR10-Q264-DEFINITIONS",
   "edition": "first",
   "volume": 1,
-  "source_range": {"printed_pages":"144","scan_leaves":[166],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","scan_sha256":"cb853daaa9b0c1a85b08bef6429f4e1b11f5463273fc84127c662db3f77bf02b"},
-  "witnesses": ["PM1-1910-SCAN","PG78050"],
-  "items": [
-    {"id":"PM1:✱10·01","kind":"definition","printed":"(∃x).φx .=. ∼(x).∼φx  Df","printed_page":144,"scan_leaf":166,"lean_path":"Principia/Architecture/Star10Definitions.lean","declaration":"PM.Architecture.Star10Definitions.star_10_01","formal_scope":"alternative existential definiens at one assigned first-order carrier","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[]},
-    {"id":"PM1:✱10·02","kind":"definition","printed":"φx ⊃ₓ ψx .=. (x).φx ⊃ ψx  Df","printed_page":144,"scan_leaf":166,"lean_path":"Principia/Architecture/Star10Definitions.lean","declaration":"PM.Architecture.Star10Definitions.star_10_02","formal_scope":"formal implication as an always-bound apparent implication matrix","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[]},
-    {"id":"PM1:✱10·03","kind":"definition","printed":"φx ≡ₓ ψx .=. (x).φx ≡ ψx  Df","printed_page":144,"scan_leaf":166,"lean_path":"Principia/Architecture/Star10Definitions.lean","declaration":"PM.Architecture.Star10Definitions.star_10_03","formal_scope":"formal equivalence as an always-bound apparent equivalence matrix","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[]}
+  "source_range": {
+    "printed_pages": "144",
+    "scan_leaves": [
+      166
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "scan_sha256": "cb853daaa9b0c1a85b08bef6429f4e1b11f5463273fc84127c662db3f77bf02b"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
   ],
-  "ci_evidence": {"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}
+  "items": [
+    {
+      "id": "PM1:✱10·01",
+      "kind": "definition",
+      "printed": "(∃x).φx .=. ∼(x).∼φx  Df",
+      "printed_page": 144,
+      "scan_leaf": 166,
+      "lean_path": "Principia/Architecture/Star10Definitions.lean",
+      "declaration": "PM.Architecture.Star10Definitions.star_10_01",
+      "formal_scope": "alternative existential definiens at one assigned first-order carrier",
+      "formalization_level": "pm-derivation-v1",
+      "migration_audit": "reviews/Q264-pm-v1-migration-audit.md",
+      "axiom_report_status": "axiom-free",
+      "source_status": "source-catalogued",
+      "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": []
+    },
+    {
+      "id": "PM1:✱10·02",
+      "kind": "definition",
+      "printed": "φx ⊃ₓ ψx .=. (x).φx ⊃ ψx  Df",
+      "printed_page": 144,
+      "scan_leaf": 166,
+      "lean_path": "Principia/Architecture/Star10Definitions.lean",
+      "declaration": "PM.Architecture.Star10Definitions.star_10_02",
+      "formal_scope": "formal implication as an always-bound apparent implication matrix",
+      "formalization_level": "pm-definition-v1",
+      "migration_audit": "reviews/Q264-pm-v1-migration-audit.md",
+      "axiom_report_status": "axiom-free",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱10·03",
+      "kind": "definition",
+      "printed": "φx ≡ₓ ψx .=. (x).φx ≡ ψx  Df",
+      "printed_page": 144,
+      "scan_leaf": 166,
+      "lean_path": "Principia/Architecture/Star10Definitions.lean",
+      "declaration": "PM.Architecture.Star10Definitions.star_10_03",
+      "formal_scope": "formal equivalence as an always-bound apparent equivalence matrix",
+      "formalization_level": "pm-definition-v1",
+      "migration_audit": "reviews/Q264-pm-v1-migration-audit.md",
+      "axiom_report_status": "axiom-free",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
+  }
 }

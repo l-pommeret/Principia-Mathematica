@@ -34,12 +34,14 @@
       "formal_scope": "exact typed binary-relation application definition in the documented simple-type embedding",
       "source_status": "source-catalogued",
       "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q328-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱21·03",
@@ -52,9 +54,10 @@
       "formal_scope": "exact typed relation-class definition in the documented simple-type embedding",
       "source_status": "source-catalogued",
       "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q328-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "PM1:✱20·03"
       ],
@@ -68,7 +71,8 @@
         ],
         "strict_attempt_evidence": "reviews/Q328-review.md",
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
-      }
+      },
+      "formalization_level": "pm-derivation-v1"
     }
   ],
   "ci_evidence": {

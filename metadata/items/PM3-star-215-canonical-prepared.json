@@ -1,8 +1,42 @@
 {
-  "batch":"PM3-STAR215-CANONICAL-02","edition":"first","volume":3,
-  "source_range":{"printed_pages":"691-692","canonical_scan":"https://archive.org/details/principiamathema03whit/page/691"},
-  "witnesses":["PM3-1913-SCAN"],
-  "items":[
-    {"id":"PM3:✱215·13","kind":"derived-proposition","printed":"sectʻP⊂strʻP.sect̆ʻP⊂strʻP","lean_path":"Principia/Architecture/Star215Kernel.lean","declaration":"PM.Architecture.Star215Kernel.star_215_13","formal_scope":"only one generic lower-class implication; omits the two printed section inclusions","source_status":"source-catalogued","formal_status":"prepared","integration_status":"prepared","parser_status":"reviewed-gap","parser_evidence":"reviews/Star215-canonical-review.md"}
-  ],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+  "batch": "PM3-STAR215-CANONICAL-02",
+  "edition": "first",
+  "volume": 3,
+  "source_range": {
+    "printed_pages": "691-692",
+    "canonical_scan": "https://archive.org/details/principiamathema03whit/page/691"
+  },
+  "witnesses": [
+    "PM3-1913-SCAN"
+  ],
+  "items": [
+    {
+      "id": "PM3:✱215·13",
+      "kind": "derived-proposition",
+      "printed": "sectʻP⊂strʻP.sect̆ʻP⊂strʻP",
+      "lean_path": "Principia/Architecture/Star215Kernel.lean",
+      "declaration": "PM.Architecture.Star215Kernel.star_215_13",
+      "formal_scope": "only one generic lower-class implication; omits the two printed section inclusions",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star215-canonical-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

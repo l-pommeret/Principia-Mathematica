@@ -26,12 +26,14 @@
       "formal_scope": "exact typed reconstruction: ℵ₀ is extensionally the class of domains of progressions",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star123-catalogue-01-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM2:✱123·1",
@@ -43,8 +45,8 @@
       "declaration": "PM.Architecture.Star123OpeningKernel.star_123_1",
       "formal_scope": "exact typed reconstruction of both directions of the displayed membership equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱37·1",
         "PM2:✱123·01"
@@ -54,12 +56,24 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱37·1", "PM2:✱123·01"],
+        "printed_but_unused": [
+          "PM1:✱37·1",
+          "PM2:✱123·01"
+        ],
         "strict_attempt_evidence": "reviews/Star123-catalogue-01-semantic-audit.md",
         "editorial_note": "The exact typed membership equivalence closes definitionally by unfolding AlephZero; PM's printed route through ✱37·1 and ✱123·01 remains historical evidence."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star123-catalogue-01-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱123·101",
@@ -71,8 +85,8 @@
       "declaration": "PM.Architecture.Star123OpeningKernel.star_123_101",
       "formal_scope": "exact typed reconstruction: the domain of every progression witnesses membership in ℵ₀",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱123·1"
       ],
@@ -81,12 +95,23 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM2:✱123·1"],
+        "printed_but_unused": [
+          "PM2:✱123·1"
+        ],
         "strict_attempt_evidence": "reviews/Star123-catalogue-01-semantic-audit.md",
         "editorial_note": "The exact typed implication constructs the progression witness directly; PM's printed citation ✱123·1 remains historical evidence."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star123-catalogue-01-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

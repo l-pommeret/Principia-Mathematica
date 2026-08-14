@@ -1,6 +1,193 @@
-{"batch":"PM2-STAR110-CATALOGUE-04-REFUSED","edition":"first","volume":2,"source_range":{"printed_pages":"79","scan_leaves":[119],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu","project_gutenberg":"https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},"witnesses":["PM2-1912-SCAN","PG78255"],"items":[
-{"id":"PM2:✱110·21","kind":"derived-proposition","printed":"✱110·21. ⊢ : μ,v∈NC . ⊃ : ξ∈μ+ₜv . ≡ . (∃α,β) . α∈μ . β∈v . ξ sm (α+β) [✱110·201]","printed_page":79,"scan_leaf":119,"lean_path":"Principia/FirstEdition/Volume2/Star110Kernel2.lean","declaration":"PM.FirstEdition.Volume2.Star110Kernel2.star_110_21","formal_scope":"refused: PM characterizes membership in a sum of two cardinals by representative classes and similarity; Lean proves only left-tag membership in SumClass","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch-cardinal-membership-replaced-by-left-tag","printed_dependencies":["PM2:✱110·201"],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star110-catalogue-04-semantic-audit.md"},
-{"id":"PM2:✱110·211","kind":"derived-proposition","printed":"✱110·211. ⊢ : μ,v∈NC . ⊃ : ξ∈μ+ₜv . ≡ . (∃γ,δ) . γ∈sm“μ . δ∈sm“v . γ∩δ=Λ . ξ=γ∪δ","printed_page":79,"scan_leaf":119,"lean_path":"Principia/FirstEdition/Volume2/Star110Kernel2.lean","declaration":"PM.FirstEdition.Volume2.Star110Kernel2.star_110_211","formal_scope":"refused: PM gives a disjoint-decomposition characterization using the similarity images of two cardinals; Lean proves only right-tag membership in SumClass","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch-decomposition-replaced-by-right-tag","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star110-catalogue-04-semantic-audit.md"},
-{"id":"PM2:✱110·212","kind":"derived-proposition","printed":"✱110·212. ⊢ : μ,v∈NC . ⊃ : ξ∈μ+ₜv . ≡ . (∃γ) . γ∈sm“μ . γ⊂ξ . ξ−γ∈sm“v","printed_page":79,"scan_leaf":119,"lean_path":"Principia/FirstEdition/Volume2/Star110Kernel2.lean","declaration":"PM.FirstEdition.Volume2.Star110Kernel2.star_110_212","formal_scope":"refused: PM characterizes sum membership by a subset and its relative complement; Lean proves only that a tagged sum is inhabited iff one input predicate is inhabited","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch-subset-decomposition-replaced-by-inhabitedness","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star110-catalogue-04-semantic-audit.md"},
-{"id":"PM2:✱110·22","kind":"derived-proposition","printed":"✱110·22. ⊢ . N₀c‘α+ₜN₀c‘β = Nc‘(α+β)","printed_page":79,"scan_leaf":119,"lean_path":"Principia/FirstEdition/Volume2/Star110Kernel2.lean","declaration":"PM.FirstEdition.Volume2.Star110Kernel2.star_110_22","formal_scope":"refused: PM equates the arithmetical sum of two cardinal representatives with the cardinal of the class-sum; Lean instead proves commutativity of the tagged sum up to bijection","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch-cardinal-equality-replaced-by-commutativity","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star110-catalogue-04-semantic-audit.md"},
-{"id":"PM2:✱110·221","kind":"derived-proposition","printed":"✱110·221. ⊢ : ξ∈Nc(η)‘α+ₜNc(ζ)‘β . ≡ . ∃!Nc(η)‘α . ∃!Nc(ζ)‘β . ξ∈Nc‘(α+β)","printed_page":79,"scan_leaf":119,"lean_path":"Principia/FirstEdition/Volume2/Star110Kernel2.lean","declaration":"PM.FirstEdition.Volume2.Star110Kernel2.star_110_221","formal_scope":"refused: PM relates typed cardinal-sum membership to existence of both typed cardinals and membership in the cardinal of the class-sum; Lean merely applies tagged-sum commutativity in the reverse order","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch-typed-cardinal-equivalence-replaced-by-commutativity","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star110-catalogue-04-semantic-audit.md"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM2-STAR110-CATALOGUE-04-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "79",
+    "scan_leaves": [
+      119
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱110·21",
+      "kind": "derived-proposition",
+      "printed": "✱110·21. ⊢ : μ,v∈NC . ⊃ : ξ∈μ+ₜv . ≡ . (∃α,β) . α∈μ . β∈v . ξ sm (α+β) [✱110·201]",
+      "printed_page": 79,
+      "scan_leaf": 119,
+      "lean_path": "Principia/FirstEdition/Volume2/Star110Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star110Kernel2.star_110_21",
+      "formal_scope": "refused: PM characterizes membership in a sum of two cardinals by representative classes and similarity; Lean proves only left-tag membership in SumClass",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-cardinal-membership-replaced-by-left-tag",
+      "printed_dependencies": [
+        "PM2:✱110·201"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱110·211",
+      "kind": "derived-proposition",
+      "printed": "✱110·211. ⊢ : μ,v∈NC . ⊃ : ξ∈μ+ₜv . ≡ . (∃γ,δ) . γ∈sm“μ . δ∈sm“v . γ∩δ=Λ . ξ=γ∪δ",
+      "printed_page": 79,
+      "scan_leaf": 119,
+      "lean_path": "Principia/FirstEdition/Volume2/Star110Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star110Kernel2.star_110_211",
+      "formal_scope": "refused: PM gives a disjoint-decomposition characterization using the similarity images of two cardinals; Lean proves only right-tag membership in SumClass",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-decomposition-replaced-by-right-tag",
+      "printed_dependencies": [
+        "PM2:✱110·21",
+        "PM2:✱110·152",
+        "PM1:✱37·1"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱110·212",
+      "kind": "derived-proposition",
+      "printed": "✱110·212. ⊢ : μ,v∈NC . ⊃ : ξ∈μ+ₜv . ≡ . (∃γ) . γ∈sm“μ . γ⊂ξ . ξ−γ∈sm“v",
+      "printed_page": 79,
+      "scan_leaf": 119,
+      "lean_path": "Principia/FirstEdition/Volume2/Star110Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star110Kernel2.star_110_212",
+      "formal_scope": "refused: PM characterizes sum membership by a subset and its relative complement; Lean proves only that a tagged sum is inhabited iff one input predicate is inhabited",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-subset-decomposition-replaced-by-inhabitedness",
+      "printed_dependencies": [
+        "PM2:✱110·211",
+        "PM1:✱24·47",
+        "PM1:✱13·195"
+      ],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume2.Star110Kernel.star_110_13"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱110·13"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱110·22",
+      "kind": "derived-proposition",
+      "printed": "✱110·22. ⊢ . N₀c‘α+ₜN₀c‘β = Nc‘(α+β)",
+      "printed_page": 79,
+      "scan_leaf": 119,
+      "lean_path": "Principia/FirstEdition/Volume2/Star110Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star110Kernel2.star_110_22",
+      "formal_scope": "refused: PM equates the arithmetical sum of two cardinal representatives with the cardinal of the class-sum; Lean instead proves commutativity of the tagged sum up to bijection",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-cardinal-equality-replaced-by-commutativity",
+      "printed_dependencies": [
+        "PM2:✱103·4",
+        "PM2:✱110·211",
+        "PM2:✱100·31",
+        "PM2:✱110·16"
+      ],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume2.Star110Kernel.star_110_14"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱110·14"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱110·221",
+      "kind": "derived-proposition",
+      "printed": "✱110·221. ⊢ : ξ∈Nc(η)‘α+ₜNc(ζ)‘β . ≡ . ∃!Nc(η)‘α . ∃!Nc(ζ)‘β . ξ∈Nc‘(α+β)",
+      "printed_page": 79,
+      "scan_leaf": 119,
+      "lean_path": "Principia/FirstEdition/Volume2/Star110Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star110Kernel2.star_110_221",
+      "formal_scope": "refused: PM relates typed cardinal-sum membership to existence of both typed cardinals and membership in the cardinal of the class-sum; Lean merely applies tagged-sum commutativity in the reverse order",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-typed-cardinal-equivalence-replaced-by-commutativity",
+      "printed_dependencies": [
+        "PM2:✱110·202",
+        "PM2:✱100·35",
+        "PM2:✱110·16"
+      ],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume2.Star110Kernel.star_110_14"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱110·14"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

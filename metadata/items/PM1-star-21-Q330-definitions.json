@@ -1,0 +1,120 @@
+{
+  "batch": "PM1-STAR21-Q330-DEFINITIONAL",
+  "edition": "first",
+  "volume": 1,
+  "architecture_version": "non-v1-definitional",
+  "source_range": {
+    "printed_pages": "214",
+    "scan_leaves": [
+      236
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 236,
+        "printed_page": 214,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page236-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu.jpg",
+        "sha256": "b53401d40fe6689ff7e91331cd88c16d29f900dcae13705cedfd2def034fbeae"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "review_evidence": [
+    "reviews/Q330-review.md"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱21·07",
+      "kind": "definition",
+      "printed": "(R). fR .= . (φ). f{ẑxẑyφ!(x,y)}  Df",
+      "printed_page": 214,
+      "scan_leaf": 236,
+      "lean_path": "Principia/Architecture/Star21Q330Definitions.lean",
+      "declaration": "PM.Architecture.Star21Q330Definitions.star_21_07",
+      "formal_scope": "exact axiom-free non-v1 definitional unfolding of universal relation quantification over the typed binary-predicate carrier",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Q330-review.md",
+      "formalization_level": "pm-derivation-v1"
+    },
+    {
+      "id": "PM1:✱21·071",
+      "kind": "definition",
+      "printed": "(∃R). fR .= . (∃φ). f{ẑxẑyφ!(x,y)}  Df",
+      "printed_page": 214,
+      "scan_leaf": 236,
+      "lean_path": "Principia/Architecture/Star21Q330Definitions.lean",
+      "declaration": "PM.Architecture.Star21Q330Definitions.star_21_071",
+      "formal_scope": "exact axiom-free non-v1 definitional unfolding of existential relation quantification over the typed binary-predicate carrier",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Q330-review.md",
+      "formalization_level": "pm-derivation-v1"
+    },
+    {
+      "id": "PM1:✱21·072",
+      "kind": "definition",
+      "printed": "[(℩R)(φR)]. f(℩R)(φR) .=: (∃S) : φR .≡ᴿ. R = S : fS  Df",
+      "printed_page": 214,
+      "scan_leaf": 236,
+      "lean_path": "Principia/Architecture/Star21Q330Definitions.lean",
+      "declaration": "PM.Architecture.Star21Q330Definitions.star_21_072",
+      "formal_scope": "exact axiom-free non-v1 contextual description unfolding with an existential characterized relation and no choice term",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Q330-review.md",
+      "formalization_level": "pm-derivation-v1"
+    },
+    {
+      "id": "PM1:✱21·08",
+      "kind": "definition",
+      "printed": "f{ẑRẑSψ(R,S)} .=: (∃φ) : ψ(R,S) .≡₍R,S₎. φ!(R,S) : f{φ!(ẑR,ẑS)}  Df",
+      "printed_page": 214,
+      "scan_leaf": 236,
+      "lean_path": "Principia/Architecture/Star21Q330Definitions.lean",
+      "declaration": "PM.Architecture.Star21Q330Definitions.star_21_08",
+      "formal_scope": "exact axiom-free non-v1 contextual unfolding retaining both relation arguments and their extensional representative",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Q330-review.md",
+      "formalization_level": "pm-derivation-v1"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
+  }
+}

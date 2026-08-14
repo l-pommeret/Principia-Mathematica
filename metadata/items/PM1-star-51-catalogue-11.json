@@ -25,21 +25,45 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_58",
       "formal_scope": "exact relational typed equivalence between existence of the inverse unit-class description and equality with the membership definite description; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱51·57", "PM1:✱20·3", "PM1:✱14·272"],
-      "lean_dependencies": ["PM.Architecture.Star51RemainingKernel.star_51_55"],
-      "normalized_dependencies": ["PM1:✱51·55"],
+      "printed_dependencies": [
+        "PM1:✱51·57",
+        "PM1:✱20·3",
+        "PM1:✱14·272"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star51RemainingKernel.star_51_55"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱51·55"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star51-catalogue-11-semantic-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "integration_blocked": false,
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱51·55"],
-        "printed_but_unused": ["PM1:✱14·272", "PM1:✱20·3", "PM1:✱51·57"],
+        "added_beyond_print": [
+          "PM1:✱51·55"
+        ],
+        "printed_but_unused": [
+          "PM1:✱14·272",
+          "PM1:✱20·3",
+          "PM1:✱51·57"
+        ],
         "strict_attempt_evidence": "reviews/Star51-catalogue-11-semantic-audit.md",
         "editorial_note": "Lean reuses the exact inverse-unit-class/description existence equivalence ✱51·55 instead of the printed route through ✱51·57, ✱20·3, and ✱14·272."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -52,21 +76,38 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_59",
       "formal_scope": "exact contextual relational reconstruction: applying ψ to either incomplete description has the same unique-witness condition DescriptionApplies φ ψ; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱51·56", "PM1:✱14·205"],
+      "printed_dependencies": [
+        "PM1:✱51·56",
+        "PM1:✱14·205"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star51-catalogue-11-semantic-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "integration_blocked": false,
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱14·205", "PM1:✱51·56"],
+        "printed_but_unused": [
+          "PM1:✱14·205",
+          "PM1:✱51·56"
+        ],
         "strict_attempt_evidence": "reviews/Star51-catalogue-11-semantic-audit.md",
         "editorial_note": "The common contextual interpretation is definitionally reflexive in Lean; the printed derivation through ✱51·56 and ✱14·205 is therefore not called."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T6",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

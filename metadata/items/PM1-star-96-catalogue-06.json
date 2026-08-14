@@ -1,6 +1,180 @@
-{"batch":"PM1-STAR96-CATALOGUE-06","edition":"first","volume":1,"source_range":{"printed_pages":"642–643","scan_leaves":[664,665],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱96·156","kind":"derived-proposition","printed":"✱96·156. ⊢ . Cʻ{(R_*⃖ʻx)↼hR_po} = (ιʻx ∩ DʻR) ∪ R_po⃖ʻx","printed_page":642,"scan_leaf":664,"lean_path":"Principia/FirstEdition/Volume1/Star96Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"source-only; no Lean declaration formalizes this field decomposition","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-formal-target","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star96-catalogue-05-06-semantic-audit.md"},
-{"id":"PM1:✱96·157","kind":"derived-proposition","printed":"✱96·157. ⊢ : x ∈ DʻR .⊃. Cʻ{(R_*⃖ʻx)↼hR_po} = R_*⃖ʻx","printed_page":642,"scan_leaf":664,"lean_path":"Principia/FirstEdition/Volume1/Star96Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"source-only; no Lean declaration formalizes the conditional field equality","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-formal-target","printed_dependencies":["PM1:✱96·156","PM1:✱96·14"],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star96-catalogue-05-06-semantic-audit.md"},
-{"id":"PM1:✱96·158","kind":"derived-proposition","printed":"✱96·158. ⊢ : x ∼∈ DʻR .⊃. (R_*⃖ʻx)↼hR_po = Λ̇","printed_page":642,"scan_leaf":664,"lean_path":"Principia/FirstEdition/Volume1/Star96Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"source-only; no Lean declaration formalizes the null-relation conclusion","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-formal-target","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star96-catalogue-05-06-semantic-audit.md"},
-{"id":"PM1:✱96·159","kind":"derived-proposition","printed":"✱96·159. ⊢ : ∃̇!(R_*⃖ʻx)↼hR_po .⊃. Cʻ{(R_*⃖ʻx)↼hR_po} = R_*⃖ʻx","printed_page":642,"scan_leaf":664,"lean_path":"Principia/FirstEdition/Volume1/Star96Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"source-only; no Lean declaration preserves the existence premise and field equality","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-formal-target","printed_dependencies":["PM1:✱96·157","PM1:✱96·158"],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star96-catalogue-05-06-semantic-audit.md"},
-{"id":"PM1:✱96·16","kind":"derived-proposition","printed":"✱96·16. ⊢ . (R_*⃖ʻx)↼hR = R ⧏ R_*⃖ʻx","printed_page":643,"scan_leaf":665,"lean_path":"Principia/FirstEdition/Volume1/Star96Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"source-only; no Lean declaration formalizes the restriction as a converse-domain restriction","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-formal-target","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star96-catalogue-05-06-semantic-audit.md"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR96-CATALOGUE-06",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "642–643",
+    "scan_leaves": [
+      664,
+      665
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱96·156",
+      "kind": "derived-proposition",
+      "printed": "✱96·156. ⊢.Cʻ{(R⃖_∗ʻx)↿ Rₚₒ}=(ιʻx∩ DʻR)∪ R⃖ₚₒʻx",
+      "printed_page": 642,
+      "scan_leaf": 664,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only; no Lean declaration formalizes this field decomposition",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-formal-target",
+      "printed_dependencies": [
+        "PM1:✱96·155",
+        "PM1:✱91·54",
+        "PM1:✱22·62",
+        "PM1:✱33·161"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱96·157",
+      "kind": "derived-proposition",
+      "printed": "✱96·157. ⊢:x∈ DʻR.⊃.Cʻ{(R⃖_∗ʻx)↿ Rₚₒ}=R⃖_∗ʻx [✱96·156·14]",
+      "printed_page": 642,
+      "scan_leaf": 664,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only; no Lean declaration formalizes the conditional field equality",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-formal-target",
+      "printed_dependencies": [
+        "PM1:✱96·156",
+        "PM1:✱96·14"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱96·158",
+      "kind": "derived-proposition",
+      "printed": "✱96·158. ⊢:x∼∈ DʻR.⊃.(R⃖_∗ʻx)↿ Rₚₒ=Λ̇",
+      "printed_page": 642,
+      "scan_leaf": 664,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only; no Lean declaration formalizes the null-relation conclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-formal-target",
+      "printed_dependencies": [
+        "PM1:✱91·504",
+        "PM1:✱33·4",
+        "PM1:✱96·155"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱96·159",
+      "kind": "derived-proposition",
+      "printed": "✱96·159. ⊢:∃̇!(R⃖_∗ʻx)↿ Rₚₒ.⊃.Cʻ{(R⃖_∗ʻx)↿ Rₚₒ}=R⃖_∗ʻx [✱96·157·158]",
+      "printed_page": 642,
+      "scan_leaf": 664,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only; no Lean declaration preserves the existence premise and field equality",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-formal-target",
+      "printed_dependencies": [
+        "PM1:✱96·157",
+        "PM1:✱96·158"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱96·16",
+      "kind": "derived-proposition",
+      "printed": "✱96·16. ⊢.(R⃖_∗ʻx)↿ R=R ⥏ R⃖_∗ʻx",
+      "printed_page": 643,
+      "scan_leaf": 665,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only; no Lean declaration formalizes the restriction as a converse-domain restriction",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-formal-target",
+      "printed_dependencies": [
+        "PM1:✱35·1",
+        "PM1:✱90·16",
+        "PM1:✱4·71",
+        "PM1:✱36·13"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

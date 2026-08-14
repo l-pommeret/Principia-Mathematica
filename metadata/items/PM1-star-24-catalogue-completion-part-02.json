@@ -1,0 +1,204 @@
+{
+  "batch": "PM1-STAR24-CATALOGUE-COMPLETION-PART-02",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "236–240",
+    "scan_leaves": [
+      258,
+      259,
+      260,
+      261,
+      262
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱24·481",
+      "kind": "derived-proposition",
+      "printed": "✱24·481. ⊢:. α∩β=Λ.α∩γ=Λ.⊃: α∪β=α∪γ.≡.β=γ",
+      "printed_page": 237,
+      "scan_leaf": 259,
+      "lean_path": "Principia/FirstEdition/Volume1/Star24Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "source-only-no-formal-target",
+      "printed_dependencies": [
+        "PM1:✱24·48",
+        "PM1:✱22·42",
+        "PM1:✱24·21",
+        "PM1:✱24·311",
+        "PM1:✱20·2",
+        "PM1:✱4·73",
+        "PM1:✱83·74",
+        "PM1:✱117·582"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "printed_latex_witness": "✱24·481. \\vdash\\colon\\ldotp \\alpha\\cap\\beta=\\Lambda.\\alpha\\cap\\gamma=\\Lambda.\\supset\\colon \\alpha\\cup\\beta=\\alpha\\cup\\gamma.\\equiv.\\beta=\\gamma",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱24·482",
+      "kind": "derived-proposition",
+      "printed": "✱24·482. ⊢:. ξ⊂α.η⊂β.α∩β=Λ.⊃: ξ∪η=α∪β.≡.ξ=α.η=β [✱24·48 α, β/ξ', η'.✱22·42 ]",
+      "printed_page": 237,
+      "scan_leaf": 259,
+      "lean_path": "Principia/FirstEdition/Volume1/Star24Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "source-only-no-formal-target",
+      "printed_dependencies": [
+        "PM1:✱24·48",
+        "PM1:✱22·42",
+        "PM1:✱232·34"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "printed_latex_witness": "✱24·482. \\begin{align}&\\vdash\\colon\\ldotp \\xi\\subset\\alpha.\\eta\\subset\\beta.\\alpha\\cap\\beta=\\Lambda.\\supset\\colon \\xi\\cup\\eta=\\alpha\\cup\\beta.\\equiv.\\xi=\\alpha.\\eta=\\beta\\\\ &\\quad\\left[\\text{*24·48} \\frac{\\alpha,\\,\\beta}{\\xi',\\,\\eta'}.\\text{*22·42}\\right]\\end{align}",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱24·49",
+      "kind": "derived-proposition",
+      "printed": "✱24·49. ⊢:.α∩β=Λ.⊃:α⊂β∪γ.≡.α⊂γ",
+      "printed_page": 238,
+      "scan_leaf": 260,
+      "lean_path": "Principia/FirstEdition/Volume1/Star24Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "source-only-no-formal-target",
+      "printed_dependencies": [
+        "PM1:✱22·621",
+        "PM1:✱22·68",
+        "PM1:✱24·24"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "printed_latex_witness": "✱24·49. \\vdash\\colon\\ldotp\\alpha\\cap\\beta=\\Lambda.\\supset\\colon\\alpha\\subset\\beta\\cup\\gamma.\\equiv.\\alpha\\subset\\gamma",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱24·491",
+      "kind": "derived-proposition",
+      "printed": "✱24·491. ⊢:β∩γ=Λ. α⊂β∪γ. ⊃.α - β=α∩γ.α - γ=α∩β.α=(α - β)∪(α - γ)",
+      "printed_page": 238,
+      "scan_leaf": 260,
+      "lean_path": "Principia/FirstEdition/Volume1/Star24Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "source-only-no-formal-target",
+      "printed_dependencies": [
+        "PM1:✱22·621",
+        "PM1:✱22·481",
+        "PM1:✱24·4",
+        "PM1:✱22·68",
+        "PM1:✱83·63",
+        "PM1:✱83·65",
+        "PM1:✱211·84"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "printed_latex_witness": "✱24·491. \\begin{align}\\vdash\\colon\\beta\\cap\\gamma=\\Lambda.&\\alpha\\subset\\beta\\cup\\gamma.\\\\ &\\supset.\\alpha - \\beta=\\alpha\\cap\\gamma.\\alpha - \\gamma=\\alpha\\cap\\beta.\\alpha=(\\alpha - \\beta)\\cup(\\alpha - \\gamma)\\end{align}",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱24·492",
+      "kind": "derived-proposition",
+      "printed": "✱24·492. ⊢:β⊂α.α - β=γ.⊃.α - γ=β",
+      "printed_page": 238,
+      "scan_leaf": 260,
+      "lean_path": "Principia/FirstEdition/Volume1/Star24Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "source-only-no-formal-target",
+      "printed_dependencies": [
+        "PM1:✱22·481",
+        "PM1:✱22·8",
+        "PM1:✱22·86",
+        "PM1:✱22·9",
+        "PM1:✱22·621",
+        "PM1:✱93·273"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "printed_latex_witness": "✱24·492. \\vdash\\colon\\beta\\subset\\alpha.\\alpha - \\beta=\\gamma.\\supset.\\alpha - \\gamma=\\beta",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

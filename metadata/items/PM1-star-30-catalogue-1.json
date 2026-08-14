@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR30-CATALOGUE-1-PREPARED",
+  "batch": "PM1-STAR30-CATALOGUE-1-BLOCKED-SEMANTIC-MISMATCH",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -18,24 +18,44 @@
     {
       "id": "PM1:✱30·14",
       "kind": "derived-proposition",
-      "printed": "✱30·14. \\(\\vdash\\colon\\colon\\exists!Rʻy.\\supset\\colon\\ldotp[Rʻy].p\\supset\\chi(Rʻy).\\equiv:p.\\supset.[Rʻy].\\chi(Rʻy) \\quad[\\text{*14·33}]\\)",
+      "printed": "✱30·14. ⊢::∃!Rʻy.⊃:.[Rʻy].p⊃χ(Rʻy).≡:p.⊃.[Rʻy].χ(Rʻy) [*14·33]",
       "printed_page": 248,
       "scan_leaf": 270,
       "lean_path": "Principia/Architecture/Star30ScopedDescriptionKernel.lean",
       "declaration": "PM.Architecture.Star30ScopedDescriptionKernel.star_30_14",
-      "formal_scope": "refused: PM distributes implication from constant antecedent p, while Lean replaces implication by conjunction",
+      "formal_scope": "refused and blocked: PM distributes implication from constant antecedent p, while the secondary Lean Prop theorem replaces implication by conjunction; no PM object formula or Derivation judgement exists",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "semantic-mismatch-implication-formalized-as-conjunction",
+      "integration_status": "blocked-semantic-mismatch-and-missing-object-judgement",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-        "✱14·33"
+        "PM1:✱14·33"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱14·33"
-      ]
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱14·33"
+        ],
+        "strict_attempt_evidence": "reviews/Star30-catalogue-review.md",
+        "editorial_note": "The mismatched secondary Prop theorem calls no indexed PM proposition. PM's ✱14·33 citation remains historical and cannot repair either the connective mismatch or the absent object judgement."
+      },
+      "semantic_audit_status": "strict-refused-primary-object-judgement-missing",
+      "integration_blocked": true,
+      "printed_latex_witness": "✱30·14. \\(\\vdash\\colon\\colon\\exists!Rʻy.\\supset\\colon\\ldotp[Rʻy].p\\supset\\chi(Rʻy).\\equiv:p.\\supset.[Rʻy].\\chi(Rʻy) \\quad[\\text{*14·33}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

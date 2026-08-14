@@ -27,8 +27,9 @@
       "declaration": "PM.FirstEdition.Volume1.Star4.star_4_77",
       "formal_scope": "((q⊃p)·(r⊃p))≡((q∨r)⊃p), over an elementary real-variable context",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked-relaxed-printed-gap",
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "integration_status": "provisional-kernel-checked-relaxed-printed-gap",
       "printed_dependencies": [
         "PM1:✱3·44",
         "Add",
@@ -73,15 +74,25 @@
           "PM1:✱3·2",
           "PM1:✱3·47"
         ],
-        "printed_but_unused": ["Add"],
+        "printed_but_unused": [
+          "Add"
+        ],
         "strict_attempt_evidence": "reviews/Q239-star4-77-kernel-gate.md",
         "editorial_note": "The scan citation is retained; Add, Perm, and the conditional lifting steps are expanded in the canonical body."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "9cf0db084ad6ee4baa542aab1be9080e3d395690",
-    "run": "31551057810",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

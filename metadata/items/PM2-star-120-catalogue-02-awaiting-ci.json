@@ -27,18 +27,18 @@
       "declaration": "PM.Architecture.Star120OpeningKernel.star_120_151",
       "formal_scope": "exact typed successor closure for inductive finite cardinals represented by Nat; the printed existence condition is discharged by the total typed carrier",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
-        "PM2:✱118·241",
-        "PM2:✱120·14",
         "PM2:✱120·15",
-        "PM2:✱120·121"
+        "PM2:✱120·121",
+        "PM2:✱118·241",
+        "PM2:✱120·14"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -51,6 +51,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
         "editorial_note": "The total Nat representation discharges the existence guard and successor closure directly; PM's cardinal/type-lift route remains historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -63,17 +72,17 @@
       "declaration": "PM.Architecture.Star120OpeningKernel.star_120_21",
       "formal_scope": "exact typed finite-class characterization: membership in the inductive classes is represented by a finite enumeration, the typed normalization of an inductive cardinal number",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
-        "PM1:✱13·195",
+        "PM2:✱120·14",
         "PM2:✱103·27",
-        "PM2:✱120·14"
+        "PM1:✱13·195"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -85,6 +94,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
         "editorial_note": "Finite enumeration is the typed normalization of the source's finite-cardinal criterion; the displayed historical derivation is not replayed."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -97,8 +115,8 @@
       "declaration": "PM.Architecture.Star120OpeningKernel.star_120_212",
       "formal_scope": "exact typed proof that the empty class is finite (belongs to Cls induct)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱120·12",
         "PM2:✱120·211"
@@ -106,7 +124,7 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -117,6 +135,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
         "editorial_note": "Lean supplies the empty enumeration directly instead of routing through PM's cardinal propositions."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

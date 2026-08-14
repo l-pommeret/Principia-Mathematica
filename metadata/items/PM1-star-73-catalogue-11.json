@@ -1,0 +1,189 @@
+{
+  "batch": "PM1-STAR73-CATALOGUE-11",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "485",
+    "scan_leaves": [
+      507
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "items": [
+    {
+      "id": "PM1:✱73·531",
+      "kind": "derived-proposition",
+      "printed": "✱73·531. ⊢:R∈ Cls → 1.β⊂ ClʻᗡʻR.⊃.Rʻʻʻβ sm β [*73·521.(*37·04)]",
+      "printed_page": 485,
+      "scan_leaf": 507,
+      "lean_path": "Principia/FirstEdition/Volume1/Star73Source.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱73·521",
+        "PM1:✱37·04"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\vdash:R\\in \\text{Cls}\\rightarrow 1.\\beta\\subset \\text{Cl}ʻ\\text{ᗡ}ʻR.\\supset.Rʻʻʻ\\beta\\text{ sm }\\beta \\quad[\\text{*73·521.(*37·04)}]",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱73·61",
+      "kind": "derived-proposition",
+      "printed": "✱73·61. ⊢.x↓ ʻʻα sm α.(x↓ )↾ α∈ (x↓ ʻʻα) sm̅α [*73·27.*55·2]",
+      "printed_page": 485,
+      "scan_leaf": 507,
+      "lean_path": "Principia/FirstEdition/Volume1/Star73Source.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱73·27",
+        "PM1:✱55·2"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\vdash.x\\downarrow ʻʻ\\alpha\\text{ sm }\\alpha.(x\\downarrow )\\upharpoonright \\alpha\\in (x\\downarrow ʻʻ\\alpha)\\overline{\\text{ sm }}\\alpha \\quad[\\text{*73·27.*55·2}]",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱73·611",
+      "kind": "derived-proposition",
+      "printed": "✱73·611. ⊢.↓ xʻʻα sm α.(↓ x)↾ α∈ (↓ xʻʻα) sm̅α [*73·27.*55·201]",
+      "printed_page": 485,
+      "scan_leaf": 507,
+      "lean_path": "Principia/FirstEdition/Volume1/Star73Source.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱73·27",
+        "PM1:✱55·201"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\vdash.\\downarrow xʻʻ\\alpha\\text{ sm }\\alpha.(\\downarrow x)\\upharpoonright \\alpha\\in (\\downarrow xʻʻ\\alpha)\\overline{\\text{ sm }}\\alpha \\quad[\\text{*73·27.*55·201}]",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱73·62",
+      "kind": "derived-proposition",
+      "printed": "✱73·62. ⊢:λ⊂ Dʻx↓.⊃.ᗡʻʻλ sm λ.ᗡ↾ λ∈ (ᗡʻʻλ) sm̅λ [*73·23.*72·131·8]",
+      "printed_page": 485,
+      "scan_leaf": 507,
+      "lean_path": "Principia/FirstEdition/Volume1/Star73Source.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱73·23",
+        "PM1:✱72·131",
+        "PM1:✱72·8"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\vdash:\\lambda\\subset \\text{D}ʻx\\downarrow .\\supset.\\text{ᗡ}ʻʻ\\lambda\\text{ sm }\\lambda.\\text{ᗡ}\\upharpoonright \\lambda\\in (\\text{ᗡ}ʻʻ\\lambda)\\overline{\\text{ sm }}\\lambda \\quad[\\text{*73·23.*72·131·8}]",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱73·621",
+      "kind": "derived-proposition",
+      "printed": "✱73·621. ⊢:λ⊂ Dʻ↓ x.⊃.Dʻʻλ sm λ.D↾ λ∈ (Dʻʻλ) sm̅λ [*73·23.*72·13·81]",
+      "printed_page": 485,
+      "scan_leaf": 507,
+      "lean_path": "Principia/FirstEdition/Volume1/Star73Source.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱73·23",
+        "PM1:✱72·13",
+        "PM1:✱72·81"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\vdash:\\lambda\\subset \\text{D}ʻ\\downarrow x.\\supset.\\text{D}ʻʻ\\lambda\\text{ sm }\\lambda.\\text{D}\\upharpoonright \\lambda\\in (\\text{D}ʻʻ\\lambda)\\overline{\\text{ sm }}\\lambda \\quad[\\text{*73·23.*72·13·81}]",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ]
+}

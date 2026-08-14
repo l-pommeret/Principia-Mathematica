@@ -43,7 +43,15 @@
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-01.txt",
       "lean_dependencies": [],
       "semantic_audit_status": "refused-non-equivalent-target",
-      "semantic_audit_evidence": "reviews/Star103-opening-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star103-opening-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱103·02",
@@ -63,7 +71,15 @@
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-02.txt",
       "lean_dependencies": [],
       "semantic_audit_status": "refused-non-equivalent-target",
-      "semantic_audit_evidence": "reviews/Star103-opening-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star103-opening-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱103·1",
@@ -82,11 +98,25 @@
         "PM2:✱102·6",
         "PM2:✱103·01"
       ],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM2:✱103·02"
+      ],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume2.Star103Source.CardinalClass"
+      ],
       "semantic_audit_status": "refused-non-equivalent-target",
       "semantic_audit_evidence": "reviews/Star103-second-semantic-audit.md",
-      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-1.txt"
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-1.txt",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "review": {

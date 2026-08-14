@@ -26,7 +26,7 @@
       "printed": "✱60·362. ⊢ . Clʻιʻx = ιʻΛ ∪ ιʻιʻx",
       "printed_page": 406,
       "scan_leaf": 428,
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [
         "PM1:✱60·3"
@@ -40,7 +40,17 @@
       "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
       "declaration": "PM.Architecture.Star60MissingKernel.star_60_362",
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
-      "integration_status": "canonical-kernel-integrated"
+      "integration_status": "provisional-kernel-integrated",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱60·371",
@@ -48,10 +58,16 @@
       "printed": "✱60·371. ⊢ : α ∈ 1 .⊃. Clʻα ⊂ 0 ∪ 1",
       "printed_page": 406,
       "scan_leaf": 428,
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [
-        "PM1:✱60·362"
+        "PM1:✱51·401",
+        "PM1:✱54·102",
+        "PM1:✱52·22",
+        "PM1:✱60·2",
+        "PM1:✱22·34",
+        "PM1:✱10·11·23",
+        "PM1:✱52·1"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star60MissingKernel.star_60_362"
@@ -62,7 +78,17 @@
       "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
       "declaration": "PM.Architecture.Star60MissingKernel.star_60_371",
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
-      "integration_status": "canonical-kernel-integrated"
+      "integration_status": "provisional-kernel-integrated",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱60·38",
@@ -70,12 +96,18 @@
       "printed": "✱60·38. ⊢ . Clʻ(ιʻx ∪ ιʻy) = ιʻΛ ∪ ιʻιʻx ∪ ιʻιʻy ∪ ιʻ(ιʻx ∪ ιʻy)",
       "printed_page": 408,
       "scan_leaf": 430,
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [
-        "PM1:✱60·02",
         "PM1:✱60·37",
-        "PM1:✱60·57"
+        "PM1:✱10·11·23",
+        "PM1:✱52·1",
+        "PM1:✱60·361",
+        "PM1:✱51·161",
+        "PM1:✱60·21",
+        "PM1:✱10·1",
+        "PM1:✱51·2",
+        "PM1:✱10·11·21·281"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star60Kernel.ClEx",
@@ -88,7 +120,7 @@
       "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
       "declaration": "PM.Architecture.Star60MissingKernel.star_60_38",
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
-      "integration_status": "canonical-kernel-integrated",
+      "integration_status": "provisional-kernel-integrated",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
@@ -97,6 +129,16 @@
         ],
         "strict_attempt_evidence": "reviews/Star60-exact-b.md",
         "editorial_note": "The typed proof expands the elementary singleton-subclass witness directly, eliminating the later packaged lemma while preserving its printed citation."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -105,7 +147,7 @@
       "printed": "✱60·39. ⊢ : α ∈ 2 .⊃. Clʻα ⊂ 0 ∪ 1 ∪ 2",
       "printed_page": 409,
       "scan_leaf": 431,
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -113,7 +155,17 @@
       "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
       "declaration": "PM.Architecture.Star60MissingKernel.star_60_39",
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
-      "integration_status": "canonical-kernel-integrated"
+      "integration_status": "provisional-kernel-integrated",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱60·52",
@@ -121,7 +173,7 @@
       "printed": "✱60·52. ⊢ : β ⊂ pʻκ .≡. β ∈ pʻClʻʻκ",
       "printed_page": 410,
       "scan_leaf": 432,
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -129,12 +181,22 @@
       "lean_path": "Principia/Architecture/Star60MissingKernel.lean",
       "declaration": "PM.Architecture.Star60MissingKernel.star_60_52",
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
-      "integration_status": "canonical-kernel-integrated"
+      "integration_status": "provisional-kernel-integrated",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

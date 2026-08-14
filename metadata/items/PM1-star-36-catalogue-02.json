@@ -9,6 +9,9 @@
   "witnesses": [
     "PG78050"
   ],
+  "review_evidence": [
+    "reviews/Star36-catalogue-02-t1-t9-audit.md"
+  ],
   "items": [
     {
       "id": "PM1:✱36·202",
@@ -16,13 +19,36 @@
       "printed": "✱36·202. ⊢ . (P⟏α)∩(Q⟏α) = (P∩Q)⟏α",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_202",
-      "formal_scope": "exact extensional distribution of a common field restriction over relation intersection",
+      "formal_scope": "secondary extensional Prop equality; blocked by T3/T4/T5 and absent historical proof route",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-t1-t9-object-judgment-incomplete",
       "lean_dependencies": [],
-      "printed_dependencies": [],
-      "normalized_dependencies": []
+      "printed_dependencies": [
+        "PM1:✱36·2"
+      ],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱36·2"
+        ],
+        "strict_attempt_evidence": "reviews/Star36-catalogue-02-t1-t9-audit.md",
+        "editorial_note": "The host extensional proof calls no historical theorem and does not reconstruct the printed PM derivation."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱36·203",
@@ -30,13 +56,36 @@
       "printed": "✱36·203. ⊢ . (P⟏α)∩Q = (P∩Q)⟏α",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_203",
-      "formal_scope": "exact extensional intersection law with one unrestricted relation",
+      "formal_scope": "secondary extensional Prop equality; blocked by T3/T4/T5 and absent historical proof route",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-t1-t9-object-judgment-incomplete",
       "lean_dependencies": [],
-      "printed_dependencies": [],
-      "normalized_dependencies": []
+      "printed_dependencies": [
+        "PM1:✱35·18"
+      ],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱35·18"
+        ],
+        "strict_attempt_evidence": "reviews/Star36-catalogue-02-t1-t9-audit.md",
+        "editorial_note": "The host extensional proof calls no historical theorem and does not reconstruct the printed PM derivation."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱36·21",
@@ -44,13 +93,38 @@
       "printed": "✱36·21. ⊢ . (P⟏α)⟏β = P⟏(α∩β)",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_21",
-      "formal_scope": "exact extensional law for iterated field restriction",
+      "formal_scope": "secondary extensional Prop equality; blocked by T3/T4/T5 and absent historical proof route",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-t1-t9-object-judgment-incomplete",
       "lean_dependencies": [],
-      "printed_dependencies": [],
-      "normalized_dependencies": []
+      "printed_dependencies": [
+        "PM1:✱35·33",
+        "PM1:✱35·34"
+      ],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱35·33",
+          "PM1:✱35·34"
+        ],
+        "strict_attempt_evidence": "reviews/Star36-catalogue-02-t1-t9-audit.md",
+        "editorial_note": "The host extensional proof calls neither printed predecessor and is not a PM object derivation."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱36·22",
@@ -58,13 +132,42 @@
       "printed": "✱36·22. ⊢ . (P⟏α);(Q⟏α) ⊂ (P;Q)⟏α",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_22",
-      "formal_scope": "exact pointwise inclusion of the composition of restricted relations in the restricted composition",
+      "formal_scope": "axiom-free secondary host inclusion; blocked by T3/T4 and omission of all printed historical calls",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-t1-t9-object-judgment-incomplete",
       "lean_dependencies": [],
-      "printed_dependencies": [],
-      "normalized_dependencies": []
+      "printed_dependencies": [
+        "PM1:✱10·35",
+        "PM1:✱10·5",
+        "PM1:✱34·1",
+        "PM1:✱36·13"
+      ],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱10·35",
+          "PM1:✱10·5",
+          "PM1:✱34·1",
+          "PM1:✱36·13"
+        ],
+        "strict_attempt_evidence": "reviews/Star36-catalogue-02-t1-t9-audit.md",
+        "editorial_note": "The axiom-free host proof constructs a witness directly and calls none of the four propositions used in the printed demonstration."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱36·23",
@@ -72,19 +175,42 @@
       "printed": "✱36·23. ⊢ . (P∪Q)⟏α = (P⟏α)∪(Q⟏α)",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_23",
-      "formal_scope": "exact extensional distribution of field restriction over relation union",
+      "formal_scope": "secondary extensional Prop equality; blocked by T3/T4/T5 and absent historical proof route",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-t1-t9-object-judgment-incomplete",
       "lean_dependencies": [],
-      "printed_dependencies": [],
-      "normalized_dependencies": []
+      "printed_dependencies": [
+        "PM1:✱35·422"
+      ],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱35·422"
+        ],
+        "strict_attempt_evidence": "reviews/Star36-catalogue-02-t1-t9-audit.md",
+        "editorial_note": "The host extensional proof calls no historical theorem and does not reconstruct the printed PM derivation."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star36-parser-gaps.md"

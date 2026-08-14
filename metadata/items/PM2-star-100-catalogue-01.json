@@ -27,12 +27,14 @@
       "formal_scope": "exact typed definition of the cardinal class Nc as similarity with the represented class",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star100-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM2:✱100·02",
@@ -45,10 +47,12 @@
       "formal_scope": "exact typed definition of NC as the class of values of Nc",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM2:✱100·1",
@@ -60,8 +64,8 @@
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_1",
       "formal_scope": "exact typed pointwise form of both displayed similarity-class equalities",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱32·13",
         "PM1:✱73·31",
@@ -79,6 +83,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
         "editorial_note": "The typed definition of Nc and the local symmetry lemma establish the displayed pointwise equalities directly, so PM's citations remain historical dependencies rather than Lean theorem constants."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -91,8 +104,8 @@
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_11",
       "formal_scope": "exact typed encoding of the witnessing one-to-one relation as an equivalence of class subtypes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱100·1",
         "PM1:✱73·1"
@@ -102,15 +115,24 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-      "printed_but_unused": [
-        "PM1:✱73·1",
-        "PM2:✱100·1"
+        "printed_but_unused": [
+          "PM1:✱73·1",
+          "PM2:✱100·1"
         ],
         "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
         "editorial_note": "ClassEquiv is the audited typed packaging of PM's one-to-one relation with prescribed domain and converse domain, so the declaration reduces without numbered theorem constants."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star100-catalogue-review.md"
+      "parser_evidence": "reviews/Star100-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱100·12",
@@ -122,8 +144,8 @@
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_12",
       "formal_scope": "exact typed encoding of the injective restriction-and-image characterization as an equivalence of class subtypes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱100·1",
         "PM1:✱73·11"
@@ -133,15 +155,24 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-      "printed_but_unused": [
-        "PM1:✱73·11",
-        "PM2:✱100·1"
+        "printed_but_unused": [
+          "PM1:✱73·11",
+          "PM2:✱100·1"
         ],
         "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
         "editorial_note": "The audited ClassEquiv target packages the restricted injective relation and its image directly, so the declaration reduces without numbered theorem constants."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star100-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

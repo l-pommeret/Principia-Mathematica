@@ -18,7 +18,7 @@
     {
       "id": "PM1:✱63·392",
       "kind": "derived-proposition",
-      "printed": "✱63·392. \\(\\vdash:t_{2}ʻ\\kappa=t_{2}ʻ\\lambda.\\equiv.t_{1}ʻ\\kappa=t_{1}ʻ\\lambda.\\equiv.t_{0}ʻ\\kappa=t_{0}ʻ\\lambda\\)",
+      "printed": "✱63·392. ⊢:t₂ʻκ=t₂ʻλ.≡.t₁ʻκ=t₁ʻλ.≡.t₀ʻκ=t₀ʻλ",
       "printed_page": 426,
       "scan_leaf": 448,
       "lean_path": "Principia/Architecture/Star63TypeKernel2.lean",
@@ -27,16 +27,34 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱63·39",
+        "PM1:✱63·321"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star63TypeKernel2.star_63_39"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱63·39"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·392. \\(\\vdash:t_{2}ʻ\\kappa=t_{2}ʻ\\lambda.\\equiv.t_{1}ʻ\\kappa=t_{1}ʻ\\lambda.\\equiv.t_{0}ʻ\\kappa=t_{0}ʻ\\lambda\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱63·4",
       "kind": "derived-proposition",
-      "printed": "✱63·4. \\(\\vdash:\\alpha\\in t_{0}ʻ\\kappa.\\kappa\\in t_{0}ʻ\\lambda.\\supset.t_{0}ʻ\\alpha=t_{1}ʻ\\kappa=t_{2}ʻ\\lambda\\)",
+      "printed": "✱63·4. ⊢:α∈ t₀ʻκ.κ∈ t₀ʻλ.⊃.t₀ʻα=t₁ʻκ=t₂ʻλ",
       "printed_page": 426,
       "scan_leaf": 448,
       "lean_path": "Principia/Architecture/Star63TypeKernel4.lean",
@@ -45,16 +63,33 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱63·38",
+        "PM1:✱63·18",
+        "PM1:✱30·37",
+        "PM1:✱63·05",
+        "PM1:✱63·321"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·4. \\(\\vdash:\\alpha\\in t_{0}ʻ\\kappa.\\kappa\\in t_{0}ʻ\\lambda.\\supset.t_{0}ʻ\\alpha=t_{1}ʻ\\kappa=t_{2}ʻ\\lambda\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱63·41",
       "kind": "derived-proposition",
-      "printed": "✱63·41. \\(\\vdash.tʻt_{2}ʻ\\lambda=t_{1}ʻ\\lambda\\)",
+      "printed": "✱63·41. ⊢.tʻt₂ʻλ=t₁ʻλ",
       "printed_page": 426,
       "scan_leaf": 448,
       "lean_path": "Principia/Architecture/Star63TypeKernel4.lean",
@@ -63,16 +98,35 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱63·4",
+        "PM1:✱63·18",
+        "PM1:✱10·11",
+        "PM1:✱10·23",
+        "PM1:✱10·35",
+        "PM1:✱63·383",
+        "PM1:✱63·38"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·41. \\(\\vdash.tʻt_{2}ʻ\\lambda=t_{1}ʻ\\lambda\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱63·42",
       "kind": "derived-proposition",
-      "printed": "✱63·42. \\(\\vdash.t^{2}ʻt_{2}ʻ\\lambda=t_{0}ʻ\\lambda \\quad[\\text{*30·37.*63·41·383}]\\)",
+      "printed": "✱63·42. ⊢.t²ʻt₂ʻλ=t₀ʻλ [*30·37.*63·41·383]",
       "printed_page": 426,
       "scan_leaf": 448,
       "lean_path": "Principia/Architecture/Star63TypeKernel4.lean",
@@ -85,12 +139,23 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·42. \\(\\vdash.t^{2}ʻt_{2}ʻ\\lambda=t_{0}ʻ\\lambda \\quad[\\text{*30·37.*63·41·383}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱63·43",
       "kind": "derived-proposition",
-      "printed": "✱63·43. \\(\\vdash.t_{1}ʻt^{2}ʻx=tʻx \\quad[\\text{*63·34·15}]\\)",
+      "printed": "✱63·43. ⊢.t₁ʻt²ʻx=tʻx [*63·34·15]",
       "printed_page": 426,
       "scan_leaf": 448,
       "lean_path": "Principia/Architecture/Star63TypeKernel4.lean",
@@ -103,7 +168,18 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·43. \\(\\vdash.t_{1}ʻt^{2}ʻx=tʻx \\quad[\\text{*63·34·15}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -26,11 +26,18 @@
       "printed": "✱60·21. ⊢ : β ∈ Cl exʻα .≡. β ⊂ α . ∃!β",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "printed_dependencies": ["PM1:✱60·13", "PM1:✱20·33"],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱60·13",
+        "PM1:✱20·33"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.ClEx"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·02"
+      ],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_21",
       "formal_scope": "exact typed membership characterization for Cl ex; strict semantic audit passed",
@@ -38,9 +45,22 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱20·33", "PM1:✱60·13"],
+        "printed_but_unused": [
+          "PM1:✱20·33",
+          "PM1:✱60·13"
+        ],
         "strict_attempt_evidence": "reviews/Star60-catalogue-review.md",
         "editorial_note": "The Lean definition makes the printed membership and existence expansion judgmentally true."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -49,11 +69,18 @@
       "printed": "✱60·22. ⊢ : β ∈ Cl exʻα .≡. β ∈ Clʻα . ∃!β",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "printed_dependencies": ["PM1:✱60·2", "PM1:✱60·21"],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱60·2",
+        "PM1:✱60·21"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.ClEx"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·02"
+      ],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_22",
       "formal_scope": "exact typed Cl/Cl ex membership equivalence; strict semantic audit passed",
@@ -61,9 +88,22 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱60·2", "PM1:✱60·21"],
+        "printed_but_unused": [
+          "PM1:✱60·2",
+          "PM1:✱60·21"
+        ],
         "strict_attempt_evidence": "reviews/Star60-catalogue-review.md",
         "editorial_note": "The Lean definitions expose both conjuncts directly, so the printed intermediate propositions are not invoked."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -72,11 +112,18 @@
       "printed": "✱60·23. ⊢ : β ∈ Cl exʻα .≡. β ∈ Clʻα − ιʻΛ",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "printed_dependencies": ["PM1:✱60·22", "PM1:✱53·52"],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱60·22",
+        "PM1:✱53·52"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.ClEx"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·02"
+      ],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_23",
       "formal_scope": "exact typed removal-of-the-empty-subclass characterization; strict semantic audit passed",
@@ -84,9 +131,22 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱53·52", "PM1:✱60·22"],
+        "printed_but_unused": [
+          "PM1:✱53·52",
+          "PM1:✱60·22"
+        ],
         "strict_attempt_evidence": "reviews/Star60-catalogue-review.md",
         "editorial_note": "Lean proves inhabitedness equivalent to inequality with the empty class directly by extensionality."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -95,11 +155,20 @@
       "printed": "✱60·24. ⊢ . Cl exʻα = Clʻα − ιʻΛ",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "printed_dependencies": ["PM1:✱60·23", "PM1:✱20·43"],
-      "lean_dependencies": ["PM.Architecture.Star60Kernel.star_60_23"],
-      "normalized_dependencies": ["PM1:✱60·23"],
+      "printed_dependencies": [
+        "PM1:✱60·23",
+        "PM1:✱20·43"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.ClEx",
+        "PM.Architecture.Star60Kernel.star_60_23"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·02",
+        "PM1:✱60·23"
+      ],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_24",
       "formal_scope": "exact typed class equality after removing the empty subclass; strict semantic audit passed",
@@ -107,9 +176,21 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱20·43"],
+        "printed_but_unused": [
+          "PM1:✱20·43"
+        ],
         "strict_attempt_evidence": "reviews/Star60-catalogue-review.md",
         "editorial_note": "Lean uses the exact pointwise equivalence ✱60·23 and built-in function/proposition extensionality in place of the printed extensionality rule."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -118,9 +199,12 @@
       "printed": "✱60·3. ⊢ . Λ ∈ Clʻα",
       "printed_page": 406,
       "scan_leaf": 428,
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "printed_dependencies": ["PM1:✱24·12", "PM1:✱60·2"],
+      "printed_dependencies": [
+        "PM1:✱24·12",
+        "PM1:✱60·2"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
@@ -130,9 +214,22 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱24·12", "PM1:✱60·2"],
+        "printed_but_unused": [
+          "PM1:✱24·12",
+          "PM1:✱60·2"
+        ],
         "strict_attempt_evidence": "reviews/Star60-catalogue-review.md",
         "editorial_note": "The empty subclass inclusion is discharged directly from the empty eliminator."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

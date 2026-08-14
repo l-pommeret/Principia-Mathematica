@@ -23,10 +23,10 @@
       "scan_leaf": 372,
       "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
       "declaration": "PM.Architecture.Star50OpeningKernel.star_50_13",
-      "formal_scope": "exact inhabited typed reading of nonempty identity relation; strict semantic audit passed",
+      "formal_scope": "typed inhabitedness lemma retained only as secondary semantics; blocked because its statement is an existential Prop rather than a relational Formula AST judged by an inductive PM derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation",
       "printed_dependencies": [
         "PM1:✱13·19",
         "PM1:✱10·24",
@@ -39,8 +39,9 @@
         "PM1:✱50·01"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-passed",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-pm-derivation-refused",
+      "semantic_audit": "reviews/Star50-catalogue-02-pm-derivation-audit.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
@@ -53,6 +54,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star50-catalogue-review.md",
         "editorial_note": "The inhabited typed identity relation supplies its diagonal pair directly; PM's printed existence chain is retained as indirect."
+      },
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -63,10 +73,10 @@
       "scan_leaf": 372,
       "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
       "declaration": "PM.Architecture.Star50OpeningKernel.star_50_14",
-      "formal_scope": "exact contextual definite-description reading of the identity fibre; strict semantic audit passed",
+      "formal_scope": "typed unique-fibre lemma retained only as secondary semantics; blocked because its existential/conjunctive Prop statement is not an object-language judgement or a chain of PM rule constructors",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation",
       "printed_dependencies": [
         "PM1:✱30·3",
         "PM1:✱50·1",
@@ -78,7 +88,8 @@
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
-      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_status": "strict-pm-derivation-refused",
+      "semantic_audit": "reviews/Star50-catalogue-02-pm-derivation-audit.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
@@ -91,6 +102,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star50-catalogue-review.md",
         "editorial_note": "The witness y and uniqueness of the identity fibre are definitional in Lean; printed description machinery remains indirect."
+      },
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -101,10 +121,10 @@
       "scan_leaf": 372,
       "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
       "declaration": "PM.Architecture.Star50OpeningKernel.star_50_15",
-      "formal_scope": "exact universal unique-fibre reading of identity; strict semantic audit passed",
+      "formal_scope": "typed universal unique-fibre lemma retained only as secondary semantics; blocked because it has no relational syntax reading, inductive judgement, or PM derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation",
       "printed_dependencies": [
         "PM1:✱50·14",
         "PM1:✱14·21",
@@ -116,7 +136,8 @@
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
-      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_status": "strict-pm-derivation-refused",
+      "semantic_audit": "reviews/Star50-catalogue-02-pm-derivation-audit.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
@@ -129,6 +150,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star50-catalogue-review.md",
         "editorial_note": "For arbitrary y the identity fibre has witness y and uniqueness by equality; the printed generalization chain is indirect."
+      },
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -139,18 +169,23 @@
       "scan_leaf": 372,
       "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
       "declaration": "PM.Architecture.Star50OpeningKernel.star_50_16",
-      "formal_scope": "exact image-of-identity theorem for arbitrary class extensions; strict semantic audit passed",
+      "formal_scope": "typed image-of-identity equality retained only as secondary semantics; blocked for absence of a PM object derivation and additionally fails the axiom-free gate through propext and Quot.sound",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation-and-global-axiom",
+      "printed_dependencies": [
+        "PM1:✱37·1",
+        "PM1:✱50·1",
+        "PM1:✱13·195"
+      ],
       "lean_dependencies": [
         "PM.Architecture.Star50OpeningKernel.I"
       ],
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
-      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_status": "strict-pm-derivation-refused",
+      "semantic_audit": "reviews/Star50-catalogue-02-pm-derivation-audit.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
@@ -159,6 +194,15 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star50-catalogue-review.md",
         "editorial_note": "The uncited printed theorem unfolds the identity relation, producing the explicit definition edge."
+      },
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -169,14 +213,29 @@
       "scan_leaf": 372,
       "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
       "declaration": "PM.Architecture.Star50OpeningKernel.star_50_17",
-      "formal_scope": "exact contextual unique-fibre image theorem; strict semantic audit passed",
+      "formal_scope": "typed contextual image equality retained only as secondary semantics; blocked for absence of a PM object derivation and additionally fails the axiom-free gate through propext and Quot.sound",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation-and-global-axiom",
+      "printed_dependencies": [
+        "PM1:✱14·21",
+        "PM1:✱50·14",
+        "PM1:✱37·69",
+        "PM1:✱50·16"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-pm-derivation-refused",
+      "semantic_audit": "reviews/Star50-catalogue-02-pm-derivation-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

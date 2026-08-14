@@ -8,96 +8,149 @@
   "witnesses": [
     "PG78050"
   ],
+  "review_evidence": [
+    "reviews/Star32-catalogue-02-semantic-audit.md"
+  ],
   "items": [
     {
       "id": "PM1:✱32·11",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\hat{x}(xRy)=\\overrightarrow{R}ʻy \\quad[\\text{*32·1.*30·3}]\\)",
-      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
+      "printed": "⊢.x̂(xRy)=R⃗ʻy [*32·1.*30·3]",
+      "formal_scope": "secondary axiom-free host-Prop reconstruction only; T2 and T5 pass, but T3/T4 block pm-derivation-v1",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_11",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-T3-T4-no-pm-object-judgment-or-reading",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-02-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "blocked-pm-derivation-v1-T3-T4; T2-and-T5-pass",
+      "printed_latex_witness": "\\(\\vdash.\\hat{x}(xRy)=\\overrightarrow{R}ʻy \\quad[\\text{*32·1.*30·3}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱32·111",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\hat{y}(xRy)=\\overleftarrow{R}ʻx \\quad[\\text{*32·101.*30·3}]\\)",
-      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
+      "printed": "⊢.ŷ(xRy)=R⃖ʻx [*32·101.*30·3]",
+      "formal_scope": "secondary axiom-free host-Prop reconstruction only; T2 and T5 pass, but T3/T4 block pm-derivation-v1",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_111",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-T3-T4-no-pm-object-judgment-or-reading",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-02-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "blocked-pm-derivation-v1-T3-T4; T2-and-T5-pass",
+      "printed_latex_witness": "\\(\\vdash.\\hat{y}(xRy)=\\overleftarrow{R}ʻx \\quad[\\text{*32·101.*30·3}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱32·12",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\text{E}!\\overrightarrow{R}ʻy \\quad[\\text{*32·11.*14·21}]\\)",
-      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
+      "printed": "⊢.E!R⃗ʻy [*32·11.*14·21]",
+      "formal_scope": "secondary axiom-free host-Prop reconstruction only; T2 and T5 pass, but T3/T4 block pm-derivation-v1",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_12",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-T3-T4-no-pm-object-judgment-or-reading",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-02-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "blocked-pm-derivation-v1-T3-T4; T2-and-T5-pass",
+      "printed_latex_witness": "\\(\\vdash.\\text{E}!\\overrightarrow{R}ʻy \\quad[\\text{*32·11.*14·21}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱32·121",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\text{E}!\\overleftarrow{R}ʻx \\quad[\\text{*32·111.*14·21}]\\)",
-      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
+      "printed": "⊢.E!R⃖ʻx [*32·111.*14·21]",
+      "formal_scope": "secondary axiom-free host-Prop reconstruction only; T2 and T5 pass, but T3/T4 block pm-derivation-v1",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_121",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-T3-T4-no-pm-object-judgment-or-reading",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-02-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "blocked-pm-derivation-v1-T3-T4; T2-and-T5-pass",
+      "printed_latex_witness": "\\(\\vdash.\\text{E}!\\overleftarrow{R}ʻx \\quad[\\text{*32·111.*14·21}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱32·132",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\alpha\\overrightarrow{R}y.\\equiv.\\alpha=\\overrightarrow{R}ʻy.\\equiv.\\alpha=\\hat{x}(xRy) \\quad[\\text{*32·1·13.*20·57}]\\)",
-      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
+      "printed": "⊢:αR⃗y.≡.α=R⃗ʻy.≡.α=x̂(xRy) [*32·1·13.*20·57]",
+      "formal_scope": "secondary axiom-free host-Prop reconstruction only; T2 and T5 pass, but T3/T4 block pm-derivation-v1",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_132",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-T3-T4-no-pm-object-judgment-or-reading",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-02-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "blocked-pm-derivation-v1-T3-T4; T2-and-T5-pass",
+      "printed_latex_witness": "\\(\\vdash:\\alpha\\overrightarrow{R}y.\\equiv.\\alpha=\\overrightarrow{R}ʻy.\\equiv.\\alpha=\\hat{x}(xRy) \\quad[\\text{*32·1·13.*20·57}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

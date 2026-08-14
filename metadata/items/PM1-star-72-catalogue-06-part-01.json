@@ -1,0 +1,177 @@
+{
+  "batch": "PM1-STAR72-CATALOGUE-06-PART-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "469–470",
+    "scan_leaves": [
+      491,
+      492
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱72·341",
+      "kind": "derived-proposition",
+      "printed": "✱72·341. ⊢:R∈ Cls → 1.∃ !κ.⊃.pʻRʻʻʻκ=Rʻʻpʻκ",
+      "pm_verbatim": "*72·341. \\(\\vdash:R\\in \\text{Cls}\\rightarrow 1.\\exists !\\kappa.\\supset.pʻRʻʻʻ\\kappa=Rʻʻpʻ\\kappa\\)",
+      "printed_page": 469,
+      "scan_leaf": 491,
+      "lean_path": "Principia/FirstEdition/Volume1/Star72Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source transcription; canonical PM derivation declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "prepared",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "*72·341. \\(\\vdash:R\\in \\text{Cls}\\rightarrow 1.\\exists !\\kappa.\\supset.pʻRʻʻʻ\\kappa=Rʻʻpʻ\\kappa\\)",
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱72·4",
+      "kind": "derived-proposition",
+      "printed": "✱72·4. ⊢:R∈ 1 → Cls.⊃.Řʻʻα∩ Řʻʻβ=Řʻʻ(α∩ β)",
+      "pm_verbatim": "*72·4. \\(\\vdash:R\\in 1\\rightarrow \\text{Cls}.\\supset.\\breve{R}ʻʻ\\alpha\\cap \\breve{R}ʻʻ\\beta=\\breve{R}ʻʻ(\\alpha\\cap \\beta)\\) \n\nDem.\n\n \\[ \\begin{array}{l} \\vdash.\\text{*71·37}.\\supset\\vdash\\colon\\ldotp \\text{Hp}.\\supset:y\\in \\breve{R}ʻʻ\\alpha\\cap \\breve{R}ʻʻ\\beta.&\\equiv.Rʻy\\in \\alpha.Rʻy\\in \\beta.\\\\ [\\text{*22·33}] &\\equiv. Rʻy\\in \\alpha\\cap \\beta.\\\\ [\\text{*71·37}] &\\equiv.y\\in \\breve{R}ʻʻ(\\alpha\\cap \\beta)\\colon\\ldotp \\supset\\vdash.\\text{Prop} \\end{array} \\]",
+      "printed_page": 469,
+      "scan_leaf": 491,
+      "lean_path": "Principia/FirstEdition/Volume1/Star72Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source transcription; canonical PM derivation declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱71·37",
+        "PM1:✱22·33"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "*72·4. \\(\\vdash:R\\in 1\\rightarrow \\text{Cls}.\\supset.\\breve{R}ʻʻ\\alpha\\cap \\breve{R}ʻʻ\\beta=\\breve{R}ʻʻ(\\alpha\\cap \\beta)\\)",
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱72·401",
+      "kind": "derived-proposition",
+      "printed": "✱72·401. ⊢:R∈ Cls → 1.⊃.Rʻʻα∩ Rʻʻβ=Rʻʻ(α∩ β)",
+      "pm_verbatim": "*72·401. \\(\\vdash:R\\in \\text{Cls}\\rightarrow 1.\\supset.Rʻʻ\\alpha\\cap Rʻʻ\\beta=Rʻʻ(\\alpha\\cap \\beta)\\)",
+      "printed_page": 469,
+      "scan_leaf": 491,
+      "lean_path": "Principia/FirstEdition/Volume1/Star72Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source transcription; canonical PM derivation declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "prepared",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "*72·401. \\(\\vdash:R\\in \\text{Cls}\\rightarrow 1.\\supset.Rʻʻ\\alpha\\cap Rʻʻ\\beta=Rʻʻ(\\alpha\\cap \\beta)\\)",
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱72·41",
+      "kind": "derived-proposition",
+      "printed": "✱72·41. ⊢:R∈ 1 → Cls.α∩ β=Λ.⊃.Řʻʻα∩ Řʻʻβ=Λ [*72·4.*37·29]",
+      "pm_verbatim": "*72·41. \\(\\vdash:R\\in 1\\rightarrow \\text{Cls}.\\alpha\\cap \\beta=\\Lambda.\\supset.\\breve{R}ʻʻ\\alpha\\cap \\breve{R}ʻʻ\\beta=\\Lambda \\quad[\\text{*72·4.*37·29}]\\)",
+      "printed_page": 469,
+      "scan_leaf": 491,
+      "lean_path": "Principia/FirstEdition/Volume1/Star72Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source transcription; canonical PM derivation declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱72·4",
+        "PM1:✱37·29"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "*72·41. \\(\\vdash:R\\in 1\\rightarrow \\text{Cls}.\\alpha\\cap \\beta=\\Lambda.\\supset.\\breve{R}ʻʻ\\alpha\\cap \\breve{R}ʻʻ\\beta=\\Lambda \\quad[\\text{*72·4.*37·29}]\\)",
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱72·411",
+      "kind": "derived-proposition",
+      "printed": "✱72·411. ⊢:R∈ Cls → 1.α∩ β=Λ.⊃.Rʻʻα∩ Rʻʻβ=Λ",
+      "pm_verbatim": "*72·411. \\(\\vdash:R\\in \\text{Cls}\\rightarrow 1.\\alpha\\cap \\beta=\\Lambda.\\supset.Rʻʻ\\alpha\\cap Rʻʻ\\beta=\\Lambda\\)",
+      "printed_page": 469,
+      "scan_leaf": 491,
+      "lean_path": "Principia/FirstEdition/Volume1/Star72Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source transcription; canonical PM derivation declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "prepared",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "*72·411. \\(\\vdash:R\\in \\text{Cls}\\rightarrow 1.\\alpha\\cap \\beta=\\Lambda.\\supset.Rʻʻ\\alpha\\cap Rʻʻ\\beta=\\Lambda\\)",
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

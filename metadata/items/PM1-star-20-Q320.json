@@ -1,1 +1,235 @@
-{"batch":"PM1-STAR20-Q320","edition":"first","volume":1,"source_range":{"printed_pages":"203","scan_leaves":[225],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":225,"printed_page":203,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page225-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu.jpg","sha256":"ea1ff710c6994818914e034cc0d164970475dfc015e69538b9bb827b56253ac8"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱20·23","kind":"derived-proposition","printed":"⊢ : ẑ(φz) = ẑ(ψz) . ẑ(φz) = ẑ(χz) .⊃ . ẑ(ψz) = ẑ(χz)","printed_page":203,"scan_leaf":225,"lean_path":"Principia/Architecture/Star20Q320Kernel.lean","declaration":"PM.Architecture.Star20Q320Kernel.star_20_23","formal_scope":"exact polymorphic transitivity of eliminative class-extension identity","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q320-review.md","printed_dependencies":["✱20·21·22"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱20·21·22"],"strict_attempt_evidence":"reviews/Q320-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱20·24","kind":"derived-proposition","printed":"⊢ : ẑ(ψz) = ẑ(φz) . ẑ(χz) = ẑ(φz) .⊃ . ẑ(ψz) = ẑ(χz)","printed_page":203,"scan_leaf":225,"lean_path":"Principia/Architecture/Star20Q320Kernel.lean","declaration":"PM.Architecture.Star20Q320Kernel.star_20_24","formal_scope":"exact polymorphic second transitivity arrangement for eliminative class-extension identity","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q320-review.md","printed_dependencies":["✱20·21·22"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱20·21·22"],"strict_attempt_evidence":"reviews/Q320-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱20·25","kind":"derived-proposition","printed":"⊢ : α = ẑ(φz) .≡ₐ. α = ẑ(ψz) : ≡ . ẑ(φz) = ẑ(ψz)","printed_page":203,"scan_leaf":225,"lean_path":"Principia/Architecture/Star20Q320Kernel.lean","declaration":"PM.Architecture.Star20Q320Kernel.star_20_25","formal_scope":"exact polymorphic characterization by universal comparison with every class extension","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q320-review.md","printed_dependencies":["✱20·2·24"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱20·2·24"],"strict_attempt_evidence":"reviews/Q320-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱20·3","kind":"derived-proposition","printed":"⊢ : x ε ẑ(ψz) .≡ . ψx","printed_page":203,"scan_leaf":225,"lean_path":"Principia/Architecture/Star20Q320Kernel.lean","declaration":"PM.Architecture.Star20Q320Kernel.star_20_3","formal_scope":"exact eliminative membership reduction for an arbitrary class extension","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q320-review.md","printed_dependencies":["✱20·1","Df 20·02","✱10·43","✱10·3","✱12·1"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["Df 20·02","✱10·3","✱10·43","✱12·1","✱20·1"],"strict_attempt_evidence":"reviews/Q320-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱20·31","kind":"derived-proposition","printed":"⊢ : ẑ(ψz) = ẑ(χz) .≡ : x ε ẑ(ψz) .≡ₓ. x ε ẑ(χz)","printed_page":203,"scan_leaf":225,"lean_path":"Principia/Architecture/Star20Q320Kernel.lean","declaration":"PM.Architecture.Star20Q320Kernel.star_20_31","formal_scope":"exact eliminative equivalence between class identity and pointwise membership equivalence","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q320-review.md","printed_dependencies":["✱20·15·3"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱20·15·3"],"strict_attempt_evidence":"reviews/Q320-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}}],"ci_evidence":{"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}}
+{
+  "batch": "PM1-STAR20-Q320",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "203",
+    "scan_leaves": [
+      225
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 225,
+        "printed_page": 203,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page225-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu.jpg",
+        "sha256": "ea1ff710c6994818914e034cc0d164970475dfc015e69538b9bb827b56253ac8"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱20·23",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑ(φz) = ẑ(ψz) . ẑ(φz) = ẑ(χz) .⊃ . ẑ(ψz) = ẑ(χz)",
+      "printed_page": 203,
+      "scan_leaf": 225,
+      "lean_path": "Principia/Architecture/Star20Q320Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q320Kernel.star_20_23",
+      "formal_scope": "exact polymorphic transitivity of eliminative class-extension identity",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "✱20·21·22"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱20·21·22"
+        ],
+        "strict_attempt_evidence": "reviews/Q320-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·24",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑ(ψz) = ẑ(φz) . ẑ(χz) = ẑ(φz) .⊃ . ẑ(ψz) = ẑ(χz)",
+      "printed_page": 203,
+      "scan_leaf": 225,
+      "lean_path": "Principia/Architecture/Star20Q320Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q320Kernel.star_20_24",
+      "formal_scope": "exact polymorphic second transitivity arrangement for eliminative class-extension identity",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "✱20·21·22"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱20·21·22"
+        ],
+        "strict_attempt_evidence": "reviews/Q320-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·25",
+      "kind": "derived-proposition",
+      "printed": "⊢ : α = ẑ(φz) .≡ₐ. α = ẑ(ψz) : ≡ . ẑ(φz) = ẑ(ψz)",
+      "printed_page": 203,
+      "scan_leaf": 225,
+      "lean_path": "Principia/Architecture/Star20Q320Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q320Kernel.star_20_25",
+      "formal_scope": "exact polymorphic characterization by universal comparison with every class extension",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱10·1",
+        "PM1:✱20·2",
+        "PM1:✱20·22",
+        "PM1:✱20·24",
+        "PM1:✱10·11",
+        "PM1:✱10·21"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱20·2·24"
+        ],
+        "strict_attempt_evidence": "reviews/Q320-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·3",
+      "kind": "derived-proposition",
+      "printed": "⊢ : x ε ẑ(ψz) .≡ . ψx",
+      "printed_page": 203,
+      "scan_leaf": 225,
+      "lean_path": "Principia/Architecture/Star20Q320Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q320Kernel.star_20_3",
+      "formal_scope": "exact eliminative membership reduction for an arbitrary class extension",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱20·1",
+        "PM1:✱20·02",
+        "PM1:✱10·43",
+        "PM1:✱10·35",
+        "PM1:✱12·1"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "Df 20·02",
+          "✱10·3",
+          "✱10·43",
+          "✱12·1",
+          "✱20·1"
+        ],
+        "strict_attempt_evidence": "reviews/Q320-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·31",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑ(ψz) = ẑ(χz) .≡ : x ε ẑ(ψz) .≡ₓ. x ε ẑ(χz)",
+      "printed_page": 203,
+      "scan_leaf": 225,
+      "lean_path": "Principia/Architecture/Star20Q320Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q320Kernel.star_20_31",
+      "formal_scope": "exact eliminative equivalence between class identity and pointwise membership equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "✱20·15·3"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱20·15·3"
+        ],
+        "strict_attempt_evidence": "reviews/Q320-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
+  }
+}

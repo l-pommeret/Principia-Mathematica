@@ -26,14 +26,26 @@
       "declaration": "PM.Architecture.Star50OpeningKernel3.star_50_35",
       "formal_scope": "exact existence of a diverse pair of relations on an inhabited assigned type; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱50·34"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱50·4",
@@ -45,14 +57,34 @@
       "declaration": "PM.Architecture.Star50OpeningKernel3.star_50_4",
       "formal_scope": "exact left and right identity laws for relation composition; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱34·1",
+        "PM1:✱50·1",
+        "PM1:✱13·195"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.I",
+        "PM.Architecture.Star50OpeningKernel.J"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·01",
+        "PM1:✱50·02"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱50·41",
@@ -64,14 +96,39 @@
       "declaration": "PM.Architecture.Star50OpeningKernel3.star_50_41",
       "formal_scope": "exact three-way asymmetry/disjointness equivalence; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱34·1",
+        "PM1:✱50·11",
+        "PM1:✱13·196",
+        "PM1:✱10·252",
+        "PM1:✱31·11",
+        "PM1:✱23·33",
+        "PM1:✱25·51",
+        "PM1:✱31·14",
+        "PM1:✱31·24",
+        "PM1:✱34·203"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.J"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·02"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱50·42",
@@ -83,12 +140,32 @@
       "declaration": "PM.Architecture.Star50OpeningKernel3.star_50_42",
       "formal_scope": "exact idempotence of identity under relation composition; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "printed_dependencies": [
+        "PM1:✱34·5",
+        "PM1:✱50·1",
+        "PM1:✱13·195"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.I",
+        "PM.Architecture.Star50OpeningKernel3.star_50_4"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·01",
+        "PM1:✱50·4"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱50·43",
@@ -100,14 +177,28 @@
       "declaration": "PM.Architecture.Star50OpeningKernel3.star_50_43",
       "formal_scope": "exact equivalence between square diversity and disjointness from the converse; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.J"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·02"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

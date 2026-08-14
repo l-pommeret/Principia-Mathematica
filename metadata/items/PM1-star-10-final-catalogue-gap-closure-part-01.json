@@ -1,0 +1,178 @@
+{
+  "batch": "PM1-STAR10-FINAL-CATALOGUE-GAP-CLOSURE-PART-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "149–156",
+    "scan_leaves": [
+      171,
+      173,
+      178
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱10·26",
+      "kind": "derived-proposition",
+      "printed": "✱10·26. ⊢:. (z).φ z⊃ψ z:φ x:⊃.ψ x [*10·1. Imp]",
+      "printed_page": 149,
+      "scan_leaf": 171,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱10·1"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "pm_verbatim": "*10·26. \\(\\vdash\\colon\\ldotp (z).\\phi z\\supset\\psi z:\\phi x:\\supset.\\psi x \\quad[\\text{*10·1. Imp}]\\)",
+      "printed_latex_witness": "*10·26. \\(\\vdash\\colon\\ldotp (z).\\phi z\\supset\\psi z:\\phi x:\\supset.\\psi x \\quad[\\text{*10·1. Imp}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱10·32",
+      "kind": "derived-proposition",
+      "printed": "✱10·32. ⊢:φ x≡ₓψ x.≡.ψ x≡ₓφ x",
+      "printed_page": 151,
+      "scan_leaf": 173,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "pm_verbatim": "*10·32. \\(\\vdash:\\phi x\\equiv_{x}\\psi x.\\equiv.\\psi x\\equiv_{x}\\phi x\\)",
+      "printed_latex_witness": "*10·32. \\(\\vdash:\\phi x\\equiv_{x}\\psi x.\\equiv.\\psi x\\equiv_{x}\\phi x\\)",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱10·321",
+      "kind": "derived-proposition",
+      "printed": "✱10·321. ⊢:φ x≡ₓψ x.φ x≡ₓχ x.⊃.ψ x≡ₓχ x",
+      "printed_page": 151,
+      "scan_leaf": 173,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "pm_verbatim": "*10·321. \\(\\vdash:\\phi x\\equiv_{x}\\psi x.\\phi x\\equiv_{x}\\chi x.\\supset.\\psi x\\equiv_{x}\\chi x\\)",
+      "printed_latex_witness": "*10·321. \\(\\vdash:\\phi x\\equiv_{x}\\psi x.\\phi x\\equiv_{x}\\chi x.\\supset.\\psi x\\equiv_{x}\\chi x\\)",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱10·322",
+      "kind": "derived-proposition",
+      "printed": "✱10·322. ⊢:ψ x≡ₓφ x.χ x≡ₓφ x.⊃.ψ x≡ₓχ x",
+      "printed_page": 151,
+      "scan_leaf": 173,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "pm_verbatim": "*10·322. \\(\\vdash:\\psi x\\equiv_{x}\\phi x.\\chi x\\equiv_{x}\\phi x.\\supset.\\psi x\\equiv_{x}\\chi x\\)",
+      "printed_latex_witness": "*10·322. \\(\\vdash:\\psi x\\equiv_{x}\\phi x.\\chi x\\equiv_{x}\\phi x.\\supset.\\psi x\\equiv_{x}\\chi x\\)",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱10·55",
+      "kind": "derived-proposition",
+      "printed": "✱10·55. ⊢:. (∃ x).φ x.ψ x:φ x⊃ₓψ x:≡:(∃ x).φ x:φ x⊃ₓψ x",
+      "printed_page": 156,
+      "scan_leaf": 178,
+      "lean_path": "Principia/FirstEdition/Volume1/Star10.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "pm_verbatim": "*10·55. \\(\\vdash\\colon\\ldotp (\\exists x).\\phi x.\\psi x:\\phi x\\supset_{x}\\psi x:\\equiv:(\\exists x).\\phi x:\\phi x\\supset_{x}\\psi x\\)",
+      "printed_latex_witness": "*10·55. \\(\\vdash\\colon\\ldotp (\\exists x).\\phi x.\\psi x:\\phi x\\supset_{x}\\psi x:\\equiv:(\\exists x).\\phi x:\\phi x\\supset_{x}\\psi x\\)",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

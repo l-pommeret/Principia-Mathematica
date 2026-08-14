@@ -1,12 +1,173 @@
 {
-  "batch":"PM1-STAR97-CATALOGUE-03-REFUSED","edition":"first","volume":1,
-  "source_range":{"printed_pages":"657–658","scan_leaves":[679,680],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm#Page_657"},
-  "witnesses":["PM1-1910-SCAN","PG78050"],
-  "items":[
-    {"id":"PM1:✱97·17","kind":"derived-proposition","printed":"✱97·17. ⊢ . R_*⃡ʻx=R_po⃡ʻx=R_*⃗ʻx∪R_po⃖ʻx=R_po⃗ʻx∪R_*⃖ʻx","printed_page":657,"scan_leaf":679,"lean_path":"Principia/Architecture/Star97Kernel.lean","declaration":"PM.Architecture.Star97Kernel.star_97_17","formal_scope":"refused: PM states four equal descriptions involving reflexive and positive closures; Lean only defines connected as family and proves the resulting tautological equivalence","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star97-catalogues-03-04-semantic-audit.md"},
-    {"id":"PM1:✱97·18","kind":"derived-proposition","printed":"✱97·18. ⊢ . Cʻ(RʔR⃡ʻx)=R⃡ʻx","printed_page":657,"scan_leaf":679,"lean_path":"Principia/Architecture/Star97Kernel.lean","declaration":"PM.Architecture.Star97Kernel.star_97_18","formal_scope":"refused: PM identifies the field of a relation restricted to one neighbourhood; Lean merely repeats that one family membership puts both endpoints in the field","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star97-catalogues-03-04-semantic-audit.md"},
-    {"id":"PM1:✱97·2","kind":"derived-proposition","printed":"✱97·2. ⊢ : xBR .⊃. R_*⃡ʻx=R_*⃖ʻx","printed_page":658,"scan_leaf":680,"lean_path":"Principia/Architecture/Star97Kernel.lean","declaration":"PM.Architecture.Star97Kernel.star_97_2","formal_scope":"refused: PM gives equality of a beginning's generated family and backward closure; Lean turns one base edge into one pointwise family membership","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star97-catalogues-03-04-semantic-audit.md"},
-    {"id":"PM1:✱97·21","kind":"derived-proposition","printed":"✱97·21. ⊢ : R∈1→1 .⊃. R_*⃡ʻʻsʻgenʻR=R_*⃖ʻʻB⃗ʻR","printed_page":658,"scan_leaf":680,"lean_path":"Principia/Architecture/Star97Kernel.lean","declaration":"PM.Architecture.Star97Kernel.star_97_21","formal_scope":"refused: PM equates two classes of generated families under a one-one hypothesis; Lean proves only that a converse base edge yields one family membership","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star97-catalogues-03-04-semantic-audit.md"},
-    {"id":"PM1:✱97·22","kind":"derived-proposition","printed":"✱97·22. ⊢ : R∈1→1 .⊃. R_*⃖ʻʻB⃗ʻR∪R_*⃡ʻʻpʻᗡʻʻPotʻR=R_*⃡ʻʻCʻR","printed_page":658,"scan_leaf":680,"lean_path":"Principia/Architecture/Star97Kernel.lean","declaration":"PM.Architecture.Star97Kernel.star_97_22","formal_scope":"refused: PM decomposes the complete class of generated families; Lean proves only reflexive membership of a field point in its immediate family","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star97-catalogues-03-04-semantic-audit.md"}
-  ],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+  "batch": "PM1-STAR97-CATALOGUE-03-REFUSED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "657–658",
+    "scan_leaves": [
+      679,
+      680
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm#Page_657"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱97·17",
+      "kind": "derived-proposition",
+      "printed": "✱97·17. ⊢. R⃡_∗ʻx = R⃡ₚₒʻx = R⃗_∗ʻx ∪ R⃖ₚₒʻx = R⃗ₚₒʻx ∪ R⃖_∗ʻx",
+      "printed_page": 657,
+      "scan_leaf": 679,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_17",
+      "formal_scope": "refused: PM states four equal descriptions involving reflexive and positive closures; Lean only defines connected as family and proves the resulting tautological equivalence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱97·18",
+      "kind": "derived-proposition",
+      "printed": "✱97·18. ⊢.Cʻ(R⥏R⃡ʻx)=R⃡ʻx",
+      "printed_page": 657,
+      "scan_leaf": 679,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_18",
+      "formal_scope": "refused: PM identifies the field of a relation restricted to one neighbourhood; Lean merely repeats that one family membership puts both endpoints in the field",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star97Kernel.star_97_15"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱97·15"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱97·2",
+      "kind": "derived-proposition",
+      "printed": "✱97·2. ⊢:xBR.⊃.R⃡_∗ʻx=R⃖_∗ʻx",
+      "printed_page": 658,
+      "scan_leaf": 680,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_2",
+      "formal_scope": "refused: PM gives equality of a beginning's generated family and backward closure; Lean turns one base edge into one pointwise family membership",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱97·21",
+      "kind": "derived-proposition",
+      "printed": "✱97·21. ⊢:R∈ 1→1.⊃.R⃡_∗ʻʻsʻgenʻR=R⃖_∗ʻʻB⃗ʻR",
+      "printed_page": 658,
+      "scan_leaf": 680,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_21",
+      "formal_scope": "refused: PM equates two classes of generated families under a one-one hypothesis; Lean proves only that a converse base edge yields one family membership",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱97·22",
+      "kind": "derived-proposition",
+      "printed": "✱97·22. ⊢:R∈ 1→1.⊃.R⃖_∗ʻʻB⃗ʻR∪ R⃡_∗ʻʻpʻᗡʻʻPotʻR=R⃡_∗ʻʻCʻR [✱97·21.✱93·37]",
+      "printed_page": 658,
+      "scan_leaf": 680,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_22",
+      "formal_scope": "refused: PM decomposes the complete class of generated families; Lean proves only reflexive membership of a field point in its immediate family",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star97Kernel.star_97_111"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱97·111"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

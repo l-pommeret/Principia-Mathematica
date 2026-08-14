@@ -38,10 +38,14 @@
       "scan_leaf": 175,
       "lean_path": "Principia/Architecture/Star10Q272Kernel.lean",
       "declaration": "PM.Architecture.Star10Q272Kernel.star_10_39",
-      "formal_scope": "exact closed canonical formal implication congruence",
+      "formal_scope": "exact Raw target plus kernel-checked PM component certificates; no PM assertion judgement for the endpoint",
+      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-assertion-judgement",
+      "integration_blocked": true,
+      "blocking_reason": "The declaration returns a Prop structure of component proofs and target = target, not a PM judgement asserting star_10_39_target.",
+      "migration_audit": "reviews/Q272-pm-derivation-v1-migration-audit.md",
       "printed_dependencies": [
         "PM1:✱10·22",
         "PM1:✱3·47",
@@ -49,14 +53,24 @@
       ],
       "normalized_dependencies": [
         "PM1:✱10·22",
-        "PM1:✱3·47",
-        "PM1:✱10·27"
+        "PM1:✱10·27",
+        "PM1:✱3·47"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star10Q265Kernel.star_10_27",
         "PM.Architecture.Star10Q265Prerequisites.star_10_22",
         "PM.FirstEdition.Volume1.Star3.star_3_47"
-      ]
+      ],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱10·4",
@@ -66,10 +80,14 @@
       "scan_leaf": 175,
       "lean_path": "Principia/Architecture/Star10Q272Kernel.lean",
       "declaration": "PM.Architecture.Star10Q272Kernel.star_10_4",
-      "formal_scope": "exact closed canonical formal equivalence congruence",
+      "formal_scope": "exact Raw target plus kernel-checked PM component certificates; no PM assertion judgement for the endpoint",
+      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-assertion-judgement",
+      "integration_blocked": true,
+      "blocking_reason": "The declaration packages earlier components but has no PM judgement asserting star_10_4_target.",
+      "migration_audit": "reviews/Q272-pm-derivation-v1-migration-audit.md",
       "printed_dependencies": [
         "PM1:✱10·22",
         "PM1:✱10·39"
@@ -81,7 +99,17 @@
       "lean_dependencies": [
         "PM.Architecture.Star10Q265Prerequisites.star_10_22",
         "PM.Architecture.Star10Q272Kernel.star_10_39"
-      ]
+      ],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱10·41",
@@ -91,10 +119,14 @@
       "scan_leaf": 176,
       "lean_path": "Principia/Architecture/Star10Q272Kernel.lean",
       "declaration": "PM.Architecture.Star10Q272Kernel.star_10_41",
-      "formal_scope": "exact closed canonical universal disjunction lifting",
+      "formal_scope": "exact Raw target plus kernel-checked PM component certificates; no PM assertion judgement for the endpoint",
+      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-assertion-judgement",
+      "integration_blocked": true,
+      "blocking_reason": "The declaration stores particularization/generalization actions but has no PM judgement asserting star_10_41_target.",
+      "migration_audit": "reviews/Q272-pm-derivation-v1-migration-audit.md",
       "printed_dependencies": [
         "PM1:✱10·1",
         "PM1:✱2·2",
@@ -125,6 +157,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q272-canonical-integration.md",
         "editorial_note": "The closed wrapper retains exact ✱10·1 and the ✱10·11 component of the composed generalization action; the remaining printed propositional and scope steps are internal to its theorem-specific contract."
+      },
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -135,18 +177,22 @@
       "scan_leaf": 176,
       "lean_path": "Principia/Architecture/Star10Q272Kernel.lean",
       "declaration": "PM.Architecture.Star10Q272Kernel.star_10_411",
-      "formal_scope": "exact closed canonical formal disjunction congruence",
+      "formal_scope": "exact Raw target plus kernel-checked PM component certificates; no PM assertion judgement for the endpoint",
+      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-assertion-judgement",
+      "integration_blocked": true,
+      "blocking_reason": "The declaration stores pointwise congruence/generalization components but has no PM judgement asserting star_10_411_target.",
+      "migration_audit": "reviews/Q272-pm-derivation-v1-migration-audit.md",
       "printed_dependencies": [
         "PM1:✱10·14",
         "PM1:✱4·39",
         "PM1:✱10·11·21"
       ],
       "normalized_dependencies": [
-        "PM1:✱4·39",
-        "PM1:✱10·11"
+        "PM1:✱10·11",
+        "PM1:✱4·39"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star10Q265FinalPrerequisites.star_10_11_21",
@@ -163,6 +209,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q272-canonical-integration.md",
         "editorial_note": "The closed wrapper directly retains ✱4·39 and the ✱10·11 component of the composed generalization action; the composite citation is not an independent proposition."
+      },
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -173,17 +229,21 @@
       "scan_leaf": 176,
       "lean_path": "Principia/Architecture/Star10Q272Kernel.lean",
       "declaration": "PM.Architecture.Star10Q272Kernel.star_10_412",
-      "formal_scope": "exact closed canonical formal negation equivalence",
+      "formal_scope": "exact Raw target plus kernel-checked PM component certificates; no PM assertion judgement for the endpoint",
+      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-assertion-judgement",
+      "integration_blocked": true,
+      "blocking_reason": "The declaration stores negation/lifting components but has no PM judgement asserting star_10_412_target.",
+      "migration_audit": "reviews/Q272-pm-derivation-v1-migration-audit.md",
       "printed_dependencies": [
         "PM1:✱4·11",
         "PM1:✱10·11·271"
       ],
       "normalized_dependencies": [
-        "PM1:✱4·11",
-        "PM1:✱10·271"
+        "PM1:✱10·271",
+        "PM1:✱4·11"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star10Q265Kernel.star_10_271",
@@ -199,12 +259,22 @@
         ],
         "strict_attempt_evidence": "reviews/Q272-canonical-integration.md",
         "editorial_note": "The printed compound citation ✱10·11·271 is represented by its proposition component ✱10·271; the surrounding generalization is internal to the closed wrapper."
+      },
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "4830bce2d5a0385d2ecb78e034170a5fce54f88a",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31724447099",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

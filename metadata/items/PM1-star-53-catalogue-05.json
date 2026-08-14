@@ -26,12 +26,22 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_231",
       "formal_scope": "exact classification of a class all of whose members equal y as either empty or the singleton of y",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·24",
@@ -43,7 +53,7 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_24",
       "formal_scope": "exact characterization of a class of classes with empty class sum as empty or the singleton containing the empty class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [
@@ -54,12 +64,24 @@
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱53·02"],
+        "added_beyond_print": [
+          "PM1:✱53·02"
+        ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star53-fifth-semantic-audit.md",
         "editorial_note": "The source prints no bracketed citation; Lean invokes the already checked singleton class-sum identity only in the singleton-empty branch."
       },
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·25",
@@ -71,7 +93,7 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_25",
       "formal_scope": "exact consequence that disjoint class sums force the common subfamily to be empty or the singleton empty class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [
@@ -82,12 +104,24 @@
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱53·24"],
+        "added_beyond_print": [
+          "PM1:✱53·24"
+        ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star53-fifth-semantic-audit.md",
         "editorial_note": "The source prints no bracketed citation; Lean applies the immediately preceding exact empty-sum classification to the common subfamily."
       },
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·3",
@@ -99,14 +133,24 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_3",
       "formal_scope": "exact equivalence between contextual existence of the relation value at x and its forward image being a unit class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·301",
@@ -118,14 +162,24 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_301",
       "formal_scope": "exact relational-image identity for the singleton source class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -1,1 +1,57 @@
-{"batch":"PM1-STAR62-CATALOGUE-06-AWAITING-CI","edition":"first","volume":1,"source_range":{"printed_pages":"418","scan_leaves":[440],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱62·56","kind":"derived-proposition","printed":"✱62·56. ⊢ . εʻεʻα = α","printed_page":418,"scan_leaf":440,"lean_path":"Principia/Architecture/Star62Kernel.lean","declaration":"PM.Architecture.Star62Kernel.star_62_56","formal_scope":"exact typed extensional membership-image identity","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","printed_dependencies":[],"lean_dependencies":["PM.Architecture.Star62Kernel.star_62_2"],"normalized_dependencies":["PM1:✱62·2"],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star62-catalogue-review.md","semantic_audit_status":"strict-equivalence-passed"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR62-CATALOGUE-06-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "418",
+    "scan_leaves": [
+      440
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱62·56",
+      "kind": "derived-proposition",
+      "printed": "✱62·56. ⊢ . εʻεʻα = α",
+      "printed_page": 418,
+      "scan_leaf": 440,
+      "lean_path": "Principia/Architecture/Star62Kernel.lean",
+      "declaration": "PM.Architecture.Star62Kernel.star_62_56",
+      "formal_scope": "exact typed extensional membership-image identity",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star62Kernel.star_62_2"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱62·2"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

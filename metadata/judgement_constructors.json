@@ -1,0 +1,347 @@
+{
+  "note": "Constructors of a judgement relation that carry no PM number because they are syntax rather than inference. Every entry is an exemption from criterion T10 and must be justified against the printed text. Keep this list short: an exemption that cannot be argued from PM is an assumption in disguise. See docs/CERTIFICATION_TIERS.md.\n\nREFUS ÉDITORIAL (2026-08-14). Les relations Star9KernelAssertion, Star921MatrixSchemaDerivation, Star931ClosedStage et Star934KernelAssertion ont été PROPOSÉES à l'exemption puis refusées. Chacune est une relation forgée pour asserter une proposition ✱9 précise : son constructeur EST la proposition. C'est une proposition primitive non imprimée, c'est-à-dire exactement l'axiome caché que T10 existe pour interdire. ✱9 se dérive de ✱1·3 et ✱9·11–✱9·13 par la route en deux temps que PM imprime (voir star_9_34, Principia/Syntax/Ramified.lean). Ces relations doivent être démantelées, non exemptées.",
+  "exemptions": [
+    {
+      "relation": "Formation",
+      "constructor": "constant",
+      "reason": "Base case of the intrinsically typed formation judgement: admission of an elementary constant. PM's Introduction describes elementary propositions as a primitive idea in prose; it prints no numbered formation rule for a constant, so this constructor records syntax, not an inference.",
+      "source": "PM I (1910), Introduction, ch. II"
+    },
+    {
+      "relation": "Formation",
+      "constructor": "realVar",
+      "reason": "Base case of the intrinsically typed formation judgement: admission of a real propositional variable. Same status as `constant` — the primitive idea is described in prose and carries no printed number.",
+      "source": "PM I (1910), Introduction, ch. II"
+    },
+    {
+      "relation": "KernelAssertion",
+      "constructor": "universal",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur clôt un KernelAssertion propre à une proposition-cible à partir de prémisses spécialisées; l'absence de Claim ⊢ᵣ ne rend pas cette conclusion éditoriale et ne justifie pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "KernelAssertion",
+      "constructor": "existential",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur clôt un KernelAssertion propre à une proposition-cible à partir de prémisses spécialisées; l'absence de Claim ⊢ᵣ ne rend pas cette conclusion éditoriale et ne justifie pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "refl",
+      "reason": "Relation métasyntaxique de normalisation entre représentations Raw; ce constructeur documente une transformation éditoriale et ne conclut jamais un jugement ⊢ᵣ de PM.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "negAlways",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "negSometimes",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "negAlwaysReverse",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "negSometimesReverse",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "star_9_06_imp",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "star_9_05_disj_independent_right",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "star_9_05_disj_independent_left",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "star_9_21_line5_line6",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "disjRight",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "disjLeft",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "disjRightReverse",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "disjLeftReverse",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "disjAlwaysSometimes",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "disjSometimesAlways",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur postule directement une transformation logique/de portée utilisée comme équivalence de PM; l'appeler normalisation Raw ne la dérive pas des 18 primitives et ne justifie donc pas une exemption T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "alwaysCongr",
+      "reason": "Relation métasyntaxique de normalisation entre représentations Raw; ce constructeur documente une transformation éditoriale et ne conclut jamais un jugement ⊢ᵣ de PM.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "sometimesCongr",
+      "reason": "Relation métasyntaxique de normalisation entre représentations Raw; ce constructeur documente une transformation éditoriale et ne conclut jamais un jugement ⊢ᵣ de PM.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "negCongr",
+      "reason": "Relation métasyntaxique de normalisation entre représentations Raw; ce constructeur documente une transformation éditoriale et ne conclut jamais un jugement ⊢ᵣ de PM.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "disjCongr",
+      "reason": "Relation métasyntaxique de normalisation entre représentations Raw; ce constructeur documente une transformation éditoriale et ne conclut jamais un jugement ⊢ᵣ de PM.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScoped",
+      "constructor": "trans",
+      "reason": "Relation métasyntaxique de normalisation entre représentations Raw; ce constructeur documente une transformation éditoriale et ne conclut jamais un jugement ⊢ᵣ de PM.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "refl",
+      "reason": "Relation métasyntaxique locale, indexée par profondeur, entre représentations Raw; ce constructeur ne conclut aucun Claim ramifié et n'est donc pas un axiome logique de PM.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "negAlways",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "negSometimes",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "disjRight",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "disjLeft",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "disjAlwaysSometimes",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "disjSometimesAlways",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "disjAlwaysSometimesReverse",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "disjSometimesAlwaysReverse",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "disjSometimesAlwaysReverseLocalRight",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "disjUnderAlwaysSometimesLocal",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "alwaysImpToSometimesAntecedent",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "sometimesDisjToDisjSometimes",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "sometimesDisjIndependentLeft",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "sometimesDisjIndependentLeftWitness",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "sometimesSometimesDisjWitness",
+      "reason": "ASSERTION DÉGUISÉE : l'index de profondeur ne change pas le fait que ce constructeur postule une transformation logique/de portée de PM; aucun arbre de dérivation depuis les 18 primitives n'est fourni, donc l'exemption T10 n'est pas justifiée.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "quantifiedCongr",
+      "reason": "Relation métasyntaxique locale, indexée par profondeur, entre représentations Raw; ce constructeur ne conclut aucun Claim ramifié et n'est donc pas un axiome logique de PM.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "quantifiedClosedCongr",
+      "reason": "Relation métasyntaxique locale, indexée par profondeur, entre représentations Raw; ce constructeur ne conclut aucun Claim ramifié et n'est donc pas un axiome logique de PM.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "negCongr",
+      "reason": "Relation métasyntaxique locale, indexée par profondeur, entre représentations Raw; ce constructeur ne conclut aucun Claim ramifié et n'est donc pas un axiome logique de PM.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "disjCongr",
+      "reason": "Relation métasyntaxique locale, indexée par profondeur, entre représentations Raw; ce constructeur ne conclut aucun Claim ramifié et n'est donc pas un axiome logique de PM.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "NormalizesScopedAt",
+      "constructor": "trans",
+      "reason": "Relation métasyntaxique locale, indexée par profondeur, entre représentations Raw; ce constructeur ne conclut aucun Claim ramifié et n'est donc pas un axiome logique de PM.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "OrderedAssertion",
+      "constructor": "elementary",
+      "reason": "Interface historique d'architecture pour tracer des schémas ordonnés avant leur traduction; elle ne constitue pas le calcul certifié ⊢ᵣ et n'ajoute aucun constructeur à PM.RamifiedSyntax.Derivation.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "OrderedAssertion",
+      "constructor": "star_9_1_rule",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur produit ou propage directement une assertion ordonnée selon une Pp/règle de ✱9; être une interface historique distincte de ⊢ᵣ ne transforme pas cette inférence en calcul éditorial et ne justifie pas T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "OrderedAssertion",
+      "constructor": "star_9_1_instance",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur produit ou propage directement une assertion ordonnée selon une Pp/règle de ✱9; être une interface historique distincte de ⊢ᵣ ne transforme pas cette inférence en calcul éditorial et ne justifie pas T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "OrderedAssertion",
+      "constructor": "star_9_1_higher",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur produit ou propage directement une assertion ordonnée selon une Pp/règle de ✱9; être une interface historique distincte de ⊢ᵣ ne transforme pas cette inférence en calcul éditorial et ne justifie pas T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "OrderedAssertion",
+      "constructor": "star_9_13_higher",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur produit ou propage directement une assertion ordonnée selon une Pp/règle de ✱9; être une interface historique distincte de ⊢ᵣ ne transforme pas cette inférence en calcul éditorial et ne justifie pas T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "OrderedAssertion",
+      "constructor": "star_9_11_rule",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur produit ou propage directement une assertion ordonnée selon une Pp/règle de ✱9; être une interface historique distincte de ⊢ᵣ ne transforme pas cette inférence en calcul éditorial et ne justifie pas T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "OrderedAssertion",
+      "constructor": "star_9_12_rule",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur produit ou propage directement une assertion ordonnée selon une Pp/règle de ✱9; être une interface historique distincte de ⊢ᵣ ne transforme pas cette inférence en calcul éditorial et ne justifie pas T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "OrderedAssertion",
+      "constructor": "star_9_12_second",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur produit ou propage directement une assertion ordonnée selon une Pp/règle de ✱9; être une interface historique distincte de ⊢ᵣ ne transforme pas cette inférence en calcul éditorial et ne justifie pas T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "OrderedAssertion",
+      "constructor": "star_9_12_higher",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur produit ou propage directement une assertion ordonnée selon une Pp/règle de ✱9; être une interface historique distincte de ⊢ᵣ ne transforme pas cette inférence en calcul éditorial et ne justifie pas T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "OrderedAssertion",
+      "constructor": "star_9_12_elementary_to_first",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur produit ou propage directement une assertion ordonnée selon une Pp/règle de ✱9; être une interface historique distincte de ⊢ᵣ ne transforme pas cette inférence en calcul éditorial et ne justifie pas T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "OrderedAssertion",
+      "constructor": "star_9_13_rule",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur produit ou propage directement une assertion ordonnée selon une Pp/règle de ✱9; être une interface historique distincte de ⊢ᵣ ne transforme pas cette inférence en calcul éditorial et ne justifie pas T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    },
+    {
+      "relation": "OrderedAssertion",
+      "constructor": "star_9_13_first",
+      "reason": "ASSERTION DÉGUISÉE : ce constructeur produit ou propage directement une assertion ordonnée selon une Pp/règle de ✱9; être une interface historique distincte de ⊢ᵣ ne transforme pas cette inférence en calcul éditorial et ne justifie pas T10.",
+      "source": "Architecture éditoriale interne; hors des 18 propositions primitives imprimées"
+    }
+  ]
+}

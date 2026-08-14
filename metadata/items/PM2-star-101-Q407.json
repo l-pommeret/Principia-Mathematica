@@ -1,1 +1,137 @@
-{"batch":"PM2-STAR101-Q407","edition":"first","volume":2,"source_range":{"printed_pages":"22","scan_leaves":[62],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu","leaf_derivatives":[{"scan_leaf":62,"printed_page":22,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page62-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg","sha256":"f616d46027d78389c135b9d2ff8b915ba2eeb14dd60fd33da50cb7e2362fbe84"}],"project_gutenberg":"https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},"witnesses":["PM2-1912-SCAN","PG78255"],"source_status":"source-catalogued-PM-VERBATIM","integration_status":"blocked-strict-semantic-mismatch","items":[{"id":"PM2:✱101·3","kind":"derived-proposition","printed":"✱101·3. ⊢ : x ≠ y .⊃ . 2 = Ncʻ(ιʻx ∪ ιʻy)","printed_page":22,"scan_leaf":62,"lean_path":"Principia/Architecture/Star101Kernel.lean","declaration":"PM.Architecture.Star101Kernel.star_101_3 (refused candidate)","formal_scope":"refused: Card2 membership of a pair does not state the printed cardinal-object equality involving Nc","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":["PM1:✱73·71·43","PM1:✱51·231","PM1:✱54·101","PM2:✱100·1","PM1:✱53·32","PM1:✱71·163","PM1:✱71·56","PM1:✱54·26","PM1:✱10·11·21·23","PM1:✱51·234","PM1:✱73·12"],"lean_dependencies":[],"normalized_dependencies":[],"semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star101-catalogue-04-semantic-audit.md","demonstration_skeleton":"aristotle/demonstrations/PM2-star-101-3.txt"},{"id":"PM2:✱101·301","kind":"derived-proposition","printed":"✱101·301. ⊢ . 2 = α̂{(∃x). x ∈ α . α − ιʻx ∈ 1} [✱54·3]","printed_page":22,"scan_leaf":62,"lean_path":"Principia/Architecture/Star101Kernel.lean","declaration":"PM.Architecture.Star101Kernel.star_101_301 (refused candidate)","formal_scope":"refused: the reflexive Card2 biconditional omits the class abstraction, deletion, existential member, and membership in 1","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":["PM1:✱54·3"],"lean_dependencies":[],"normalized_dependencies":[],"semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star101-catalogue-04-semantic-audit.md"},{"id":"PM2:✱101·31","kind":"derived-proposition","printed":"✱101·31. ⊢ . 2 = Ncʻ(ιʻιʻx ∪ ιʻΛ)","printed_page":22,"scan_leaf":62,"lean_path":"Principia/Architecture/Star101Kernel.lean","declaration":"PM.Architecture.Star101Kernel.star_101_31 (refused candidate)","formal_scope":"refused: a pair in Sum α Unit omits the printed iterated unit classes and the cardinal-number equality involving Nc","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":["PM1:✱51·161","PM2:✱101·3"],"lean_dependencies":[],"normalized_dependencies":[],"semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star101-catalogue-04-semantic-audit.md","demonstration_skeleton":"aristotle/demonstrations/PM2-star-101-31.txt"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM2-STAR101-Q407",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "22",
+    "scan_leaves": [
+      62
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 62,
+        "printed_page": 22,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page62-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg",
+        "sha256": "f616d46027d78389c135b9d2ff8b915ba2eeb14dd60fd33da50cb7e2362fbe84"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "blocked-strict-semantic-mismatch",
+  "items": [
+    {
+      "id": "PM2:✱101·3",
+      "kind": "derived-proposition",
+      "printed": "✱101·3. ⊢ : x ≠ y .⊃ . 2 = Ncʻ(ιʻx ∪ ιʻy)",
+      "printed_page": 22,
+      "scan_leaf": 62,
+      "lean_path": "Principia/Architecture/Star101Kernel.lean",
+      "declaration": "PM.Architecture.Star101Kernel.star_101_3 (refused candidate)",
+      "formal_scope": "refused: Card2 membership of a pair does not state the printed cardinal-object equality involving Nc",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [
+        "PM1:✱73·71·43",
+        "PM1:✱51·231",
+        "PM1:✱54·101",
+        "PM2:✱100·1",
+        "PM1:✱53·32",
+        "PM1:✱71·163",
+        "PM1:✱71·56",
+        "PM1:✱54·26",
+        "PM1:✱10·11·21·23",
+        "PM1:✱51·234",
+        "PM1:✱73·12"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star101-catalogue-04-semantic-audit.md",
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-101-3.txt",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱101·301",
+      "kind": "derived-proposition",
+      "printed": "✱101·301. ⊢ . 2 = α̂{(∃x). x ∈ α . α − ιʻx ∈ 1} [✱54·3]",
+      "printed_page": 22,
+      "scan_leaf": 62,
+      "lean_path": "Principia/Architecture/Star101Kernel.lean",
+      "declaration": "PM.Architecture.Star101Kernel.star_101_301 (refused candidate)",
+      "formal_scope": "refused: the reflexive Card2 biconditional omits the class abstraction, deletion, existential member, and membership in 1",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [
+        "PM1:✱54·3"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star101-catalogue-04-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱101·31",
+      "kind": "derived-proposition",
+      "printed": "✱101·31. ⊢ . 2 = Ncʻ(ιʻιʻx ∪ ιʻΛ)",
+      "printed_page": 22,
+      "scan_leaf": 62,
+      "lean_path": "Principia/Architecture/Star101Kernel.lean",
+      "declaration": "PM.Architecture.Star101Kernel.star_101_31 (refused candidate)",
+      "formal_scope": "refused: a pair in Sum α Unit omits the printed iterated unit classes and the cardinal-number equality involving Nc",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [
+        "PM1:✱51·161",
+        "PM2:✱101·3"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star101-catalogue-04-semantic-audit.md",
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-101-31.txt",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

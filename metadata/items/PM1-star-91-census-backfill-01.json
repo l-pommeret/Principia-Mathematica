@@ -1,0 +1,46 @@
+{
+  "batch": "PM1-STAR91-CENSUS-BACKFILL-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "597–597",
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱91·575",
+      "kind": "derived-proposition",
+      "printed": "✱91·575. ⊢.Rₚₒ²=R| Rₚₒ=Rₚₒ| R=R²| R_∗=R_∗| R²=R| R_∗| R",
+      "printed_page": 597,
+      "lean_path": "Principia/FirstEdition/Volume1/Star91Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "source-only-prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

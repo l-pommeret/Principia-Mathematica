@@ -1,0 +1,207 @@
+{
+  "batch": "PM1-STAR21-FINAL-CATALOGUE-GAP-CLOSURE-PART-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "214–215",
+    "scan_leaves": [
+      236,
+      237
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱21·18",
+      "kind": "derived-proposition",
+      "printed": "✱21·18. ⊢:. x̂ŷφ(x,y)=x̂ŷψ(x,y).⊃:f{x̂ŷφ(x,y)}. ≡.f{x̂ŷψ(x,y)} [*21·11·15]",
+      "printed_page": 214,
+      "scan_leaf": 236,
+      "lean_path": "Principia/FirstEdition/Volume1/Star21Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱21·11",
+        "PM1:✱21·15"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "pm_verbatim": "*21·18. \\[\\begin{align}\\vdash\\colon\\ldotp \\hat{x}\\hat{y}\\phi(x,y)=\\hat{x}\\hat{y}\\psi(x,y).\\supset:f\\{\\hat{x}\\hat{y}\\phi(x,y)\\}.&\\equiv.f\\{\\hat{x}\\hat{y}\\psi(x,y)\\}\\\\ &\\quad[\\text{*21·11·15}]\\end{align}\\]",
+      "printed_latex_witness": "✱21·18. \\[\\begin{align}\\vdash\\colon\\ldotp \\hat{x}\\hat{y}\\phi(x,y)=\\hat{x}\\hat{y}\\psi(x,y).\\supset:f\\{\\hat{x}\\hat{y}\\phi(x,y)\\}.&\\equiv.f\\{\\hat{x}\\hat{y}\\psi(x,y)\\}\\\\ &\\quad[\\text{*21·11·15}]\\end{align}\\]",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱21·19",
+      "kind": "derived-proposition",
+      "printed": "✱21·19. ⊢:. x̂ŷψ(x,y)=x̂ŷχ(x,y).≡:(f):f!x̂ŷψ(x,y).⊃.f!x̂ŷχ(x,y) [*21·18.*10·11·21.*21·1.*10·35.(*13·01).*21·112.*10·301]",
+      "printed_page": 214,
+      "scan_leaf": 236,
+      "lean_path": "Principia/FirstEdition/Volume1/Star21Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱21·18",
+        "PM1:✱10·11",
+        "PM1:✱10·21",
+        "PM1:✱21·1",
+        "PM1:✱10·35",
+        "PM1:✱13·01",
+        "PM1:✱21·112",
+        "PM1:✱10·301"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "pm_verbatim": "*21·19. \\[\\begin{align}&\\vdash\\colon\\ldotp \\hat{x}\\hat{y}\\psi(x,y)=\\hat{x}\\hat{y}\\chi(x,y).\\equiv:(f):f!\\hat{x}\\hat{y}\\psi(x,y).\\supset.f!\\hat{x}\\hat{y}\\chi(x,y)\\\\ &\\quad[\\text{*21·18.*10·11·21.*21·1.*10·35.(*13·01).*21·112.*10·301}]\\end{align}\\]",
+      "printed_latex_witness": "✱21·19. \\[\\begin{align}&\\vdash\\colon\\ldotp \\hat{x}\\hat{y}\\psi(x,y)=\\hat{x}\\hat{y}\\chi(x,y).\\equiv:(f):f!\\hat{x}\\hat{y}\\psi(x,y).\\supset.f!\\hat{x}\\hat{y}\\chi(x,y)\\\\ &\\quad[\\text{*21·18.*10·11·21.*21·1.*10·35.(*13·01).*21·112.*10·301}]\\end{align}\\]",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱21·191",
+      "kind": "derived-proposition",
+      "printed": "✱21·191. ⊢:. x̂ŷψ(x,y)=x̂ŷχ(x,y). ≡:(f):f!x̂ŷψ(x,y).≡.f!x̂ŷχ(x,y) [*21·18·19]",
+      "printed_page": 214,
+      "scan_leaf": 236,
+      "lean_path": "Principia/FirstEdition/Volume1/Star21Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱21·18",
+        "PM1:✱21·19"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "pm_verbatim": "*21·191. \\[\\begin{align}\\vdash\\colon\\ldotp \\hat{x}\\hat{y}\\psi(x,y)=\\hat{x}\\hat{y}\\chi(x,y).&\\equiv:(f):f!\\hat{x}\\hat{y}\\psi(x,y).\\equiv.f!\\hat{x}\\hat{y}\\chi(x,y)\\\\ &\\quad[\\text{*21·18·19}]\\end{align}\\]",
+      "printed_latex_witness": "✱21·191. \\[\\begin{align}\\vdash\\colon\\ldotp \\hat{x}\\hat{y}\\psi(x,y)=\\hat{x}\\hat{y}\\chi(x,y).&\\equiv:(f):f!\\hat{x}\\hat{y}\\psi(x,y).\\equiv.f!\\hat{x}\\hat{y}\\chi(x,y)\\\\ &\\quad[\\text{*21·18·19}]\\end{align}\\]",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱21·3",
+      "kind": "derived-proposition",
+      "printed": "✱21·3. ⊢:xx̂ŷψ(x,y)y.≡.ψ(x,y) [*21·1·02.*10·43·35.*12·11]",
+      "printed_page": 214,
+      "scan_leaf": 236,
+      "lean_path": "Principia/FirstEdition/Volume1/Star21Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱21·1",
+        "PM1:✱21·02",
+        "PM1:✱10·43",
+        "PM1:✱10·35",
+        "PM1:✱12·11"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "pm_verbatim": "*21·3. \\(\\vdash:x{\\hat{x}\\hat{y}\\psi(x,y)}y.\\equiv.\\psi(x,y) \\quad[\\text{*21·1·02.*10·43·35.*12·11}]\\)",
+      "printed_latex_witness": "✱21·3. \\(\\vdash:x{\\hat{x}\\hat{y}\\psi(x,y)}y.\\equiv.\\psi(x,y) \\quad[\\text{*21·1·02.*10·43·35.*12·11}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱21·31",
+      "kind": "derived-proposition",
+      "printed": "✱21·31. ⊢:. x̂ŷψ(x,y)=x̂ŷχ(x, y).≡:x{x̂ŷψ(x,y)}y. ≡ₓ,y.x{x̂ŷχ(x, y)}y [*21·15·3]",
+      "printed_page": 215,
+      "scan_leaf": 237,
+      "lean_path": "Principia/FirstEdition/Volume1/Star21Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱21·15",
+        "PM1:✱21·3"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "pm_verbatim": "*21·31. \\[\\begin{align}\\vdash\\colon\\ldotp \\hat{x}\\hat{y}\\psi(x,y)=\\hat{x}\\hat{y}\\chi(x, y).\\equiv:x\\{\\hat{x}\\hat{y}\\psi(x,y)\\}y.&\\equiv_{x,y}.x\\{\\hat{x}\\hat{y}\\chi(x, y)\\}y\\\\ &\\quad[\\text{*21·15·3}]\\end{align}\\]",
+      "printed_latex_witness": "✱21·31. \\[\\begin{align}\\vdash\\colon\\ldotp \\hat{x}\\hat{y}\\psi(x,y)=\\hat{x}\\hat{y}\\chi(x, y).\\equiv:x\\{\\hat{x}\\hat{y}\\psi(x,y)\\}y.&\\equiv_{x,y}.x\\{\\hat{x}\\hat{y}\\chi(x, y)\\}y\\\\ &\\quad[\\text{*21·15·3}]\\end{align}\\]",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

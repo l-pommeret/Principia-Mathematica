@@ -1,0 +1,164 @@
+{
+  "batch": "PM1-STAR56-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "396",
+    "scan_leaves": [
+      418
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱56·01",
+      "kind": "definition",
+      "printed": "✱56·01. 2̇=R̂{(∃ x,y).R=x↓ y} Df",
+      "printed_page": 396,
+      "scan_leaf": 418,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "printed_latex_witness": "*56·01. \\(\\dot{2}=\\hat{R}\\{(\\exists x,y).R=x\\downarrow y\\} \\text{Df}\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱56·02",
+      "kind": "definition",
+      "printed": "✱56·02. 2ᵣ=R̂{(∃ x,y).x ≠ y.R=x↓ y} Df",
+      "printed_page": 396,
+      "scan_leaf": 418,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "printed_latex_witness": "*56·02. \\(2_{r}=\\hat{R}\\{(\\exists x,y).x \\neq y.R=x\\downarrow y\\} \\text{Df}\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱56·03",
+      "kind": "definition",
+      "printed": "✱56·03. 0ᵣ=ιʻΛ̇ Df",
+      "printed_page": 396,
+      "scan_leaf": 418,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [],
+      "printed_latex_witness": "*56·03. \\(0_{r}=\\iotaʻ\\dot{\\Lambda} \\text{Df}\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱56·1",
+      "kind": "derived-proposition",
+      "printed": "✱56·1. ⊢:R∈ 2̇.≡.(∃ x,y).R=x↓ y [*20·3.(*56·01)]",
+      "printed_page": 396,
+      "scan_leaf": 418,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱56·01"
+      ],
+      "printed_latex_witness": "*56·1. \\(\\vdash:R\\in \\dot{2}.\\equiv.(\\exists x,y).R=x\\downarrow y \\quad[\\text{*20·3.(*56·01)}]\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱56·101",
+      "kind": "derived-proposition",
+      "printed": "✱56·101. ⊢:R∈ 2̇.≡.DʻR,ᗡʻR∈ 1",
+      "printed_page": 396,
+      "scan_leaf": 418,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱55·16",
+        "PM1:✱11·11",
+        "PM1:✱11·341",
+        "PM1:✱11·54",
+        "PM1:✱52·1",
+        "PM1:✱56·1"
+      ],
+      "printed_latex_witness": "*56·101. \\(\\vdash:R\\in \\dot{2}.\\equiv.\\text{D}ʻR,\\text{ᗡ}ʻR\\in 1\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -26,11 +26,23 @@
       "declaration": "PM.Architecture.Star51OpeningKernel2.star_51_22",
       "formal_scope": "exact typed equivalence for adjoining a disjoint unit class and recovering the remainder by difference",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱24·47",
+        "PM1:✱51·2"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·221",
@@ -42,11 +54,24 @@
       "declaration": "PM.Architecture.Star51OpeningKernel2.star_51_221",
       "formal_scope": "exact typed equivalence between membership and delete-then-restore equality",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱51·2",
+        "PM1:✱22·62",
+        "PM1:✱22·91"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·222",
@@ -58,13 +83,22 @@
       "declaration": "PM.Architecture.Star51OpeningKernel2.star_51_222",
       "formal_scope": "exact typed equivalence between non-membership and invariance under unit-class deletion",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star51-catalogue-review.md"
+      "parser_evidence": "reviews/Star51-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·23",
@@ -76,11 +110,25 @@
       "declaration": "PM.Architecture.Star51OpeningKernel2.star_51_23",
       "formal_scope": "exact typed chain of the four printed unit-class identity conditions",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱20·31",
+        "PM1:✱51·15",
+        "PM1:✱13·183",
+        "PM1:✱13·16"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·231",
@@ -92,11 +140,24 @@
       "declaration": "PM.Architecture.Star51OpeningKernel2.star_51_231",
       "formal_scope": "exact typed equivalence between disjoint unit classes and distinct generators",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱24·311",
+        "PM1:✱51·15",
+        "PM1:✱3·191"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

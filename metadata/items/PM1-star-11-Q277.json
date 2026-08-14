@@ -29,16 +29,25 @@
       "printed": "“Whatever possible argument x may be, φ(x, y) is true whatever possible argument y may be” implies the corresponding statement with x and y interchanged.  Pp.",
       "printed_page": 159,
       "scan_leaf": 181,
-      "lean_path": "Principia/Architecture/Star11Q277Targets.lean",
-      "declaration": "PM.Architecture.Star11Q277Targets.star_11_07_target",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_07",
       "formal_scope": "exact canonical target only; the binary-permutation Pp has no kernel assertion constructor",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-no-second-order-primitive-assertion-layer",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q277-star-11-target-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱11·1",
@@ -46,16 +55,27 @@
       "printed": "⊢ : (x, y).φ(x, y) .⊃ .φ(z, w)",
       "printed_page": 159,
       "scan_leaf": 181,
-      "lean_path": "Principia/Architecture/Star11Q277Targets.lean",
-      "declaration": "PM.Architecture.Star11Q277Targets.star_11_1_target",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_1",
       "formal_scope": "exact canonical target only; repeated universal instantiation is not kernel-licensed at second order",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-no-second-order-primitive-assertion-layer",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q277-star-11-target-audit.md",
-      "printed_dependencies": ["PM1:✱10·1"],
-      "normalized_dependencies": []
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱10·1"
+      ],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱11·12",
@@ -70,16 +90,27 @@
       "formal_status": "prepared",
       "integration_status": "blocked-no-second-order-primitive-assertion-layer",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q277-star-11-target-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "PM1:✱10·12",
         "PM1:✱10·11·27"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱11·13",
-      "kind": "derived-proposition",
+      "kind": "derived-metalinguistic-rule",
       "printed": "If φ(x̂, ŷ), ψ(x̂, ŷ) take their first and second arguments respectively of the same type, and we have “⊢.φ(x, y)” and “⊢.ψ(x, y),” we shall have “⊢.φ(x, y).ψ(x, y).”",
       "printed_page": 159,
       "scan_leaf": 181,
@@ -90,11 +121,22 @@
       "formal_status": "prepared",
       "integration_status": "blocked-no-second-order-primitive-assertion-layer",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q277-star-11-target-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "PM1:✱10·13"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱11·14",
@@ -109,11 +151,22 @@
       "formal_status": "prepared",
       "integration_status": "blocked-no-second-order-primitive-assertion-layer",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q277-star-11-target-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "PM1:✱10·14"
       ],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

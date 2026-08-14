@@ -1,6 +1,205 @@
-{"batch":"PM1-STAR96-CATALOGUE-07","edition":"first","volume":1,"source_range":{"printed_pages":"643–644","scan_leaves":[665,666],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱96·2","kind":"derived-proposition","printed":"✱96·2. ⊢ : R ∈ 1→Cls .⊃. (R_*⃖ʻx)↼hR = R↾R_po⃖ʻx","printed_page":643,"scan_leaf":665,"lean_path":"Principia/FirstEdition/Volume1/Star96Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"source-only; no formal target for the restriction equality","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-formal-target","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star96-catalogue-07-08-semantic-audit.md"},
-{"id":"PM1:✱96·21","kind":"derived-proposition","printed":"✱96·21. ⊢ : R ∈ 1→Cls . xBR .⊃. (R_*⃖ʻx)↼hR = R↾R_*⃖ʻx","printed_page":643,"scan_leaf":665,"lean_path":"Principia/FirstEdition/Volume1/Star96Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"source-only; no formal target preserves the B-premise and restriction equality","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-formal-target","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star96-catalogue-07-08-semantic-audit.md"},
-{"id":"PM1:✱96·22","kind":"derived-proposition","printed":"✱96·22. ⊢ : R ∈ 1→Cls . ∼(xRx) .⊃. (R_*⃖ʻx)↼hR ⊂ J","printed_page":643,"scan_leaf":665,"lean_path":"Principia/FirstEdition/Volume1/Star96Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"source-only; no formal target for the irreflexivity inclusion","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-formal-target","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star96-catalogue-07-08-semantic-audit.md"},
-{"id":"PM1:✱96·23","kind":"derived-proposition","printed":"✱96·23. ⊢ : R ∈ 1→Cls . xBR .⊃. I_Rʻx = Λ . (R_*⃖ʻx)↼hR_po ⊂ J","printed_page":643,"scan_leaf":665,"lean_path":"Principia/FirstEdition/Volume1/Star96Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"source-only; no formal target preserves both conclusions","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-formal-target","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star96-catalogue-07-08-semantic-audit.md"},
-{"id":"PM1:✱96·24","kind":"derived-proposition","printed":"✱96·24. ⊢ : R ∈ 1→Cls . CʻR = Ř_*ʻʻB⃗ʻR .⊃. R_po ⊂ J","printed_page":644,"scan_leaf":666,"lean_path":"Principia/FirstEdition/Volume1/Star96Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"source-only; no formal target preserves the field premise and diversity conclusion","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-formal-target","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star96-catalogue-07-08-semantic-audit.md"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR96-CATALOGUE-07",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "643–644",
+    "scan_leaves": [
+      665,
+      666
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱96·2",
+      "kind": "derived-proposition",
+      "printed": "✱96·2. ⊢:R∈ 1→Cls.⊃.(R⃖_∗ʻx)↿ R=R↾ R⃖ₚₒʻx",
+      "printed_page": 643,
+      "scan_leaf": 665,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only; no formal target for the restriction equality",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-formal-target",
+      "printed_dependencies": [
+        "PM1:✱72·55",
+        "PM1:✱91·74"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱96·21",
+      "kind": "derived-proposition",
+      "printed": "✱96·21. ⊢:R∈ 1→Cls.xBR.⊃.(R⃖_∗ʻx)↿ R=R↾ R⃖_∗ʻx",
+      "printed_page": 643,
+      "scan_leaf": 665,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only; no formal target preserves the B-premise and restriction equality",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-formal-target",
+      "printed_dependencies": [
+        "PM1:✱96·14",
+        "PM1:✱35·64",
+        "PM1:✱93·1",
+        "PM1:✱33·241",
+        "PM1:✱96·2"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱96·22",
+      "kind": "derived-proposition",
+      "printed": "✱96·22. ⊢:R∈ 1→Cls.∼(xRx).⊃.(R⃖_∗ʻx)↿ R⪽J",
+      "printed_page": 643,
+      "scan_leaf": 665,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only; no formal target for the irreflexivity inclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-formal-target",
+      "printed_dependencies": [
+        "PM1:✱31·11",
+        "PM1:✱10·24",
+        "PM1:✱34·1",
+        "PM1:✱92·132",
+        "PM1:✱10·11",
+        "PM1:✱10·21",
+        "PM1:✱10·23",
+        "PM1:✱10·35",
+        "PM1:✱91·55",
+        "PM1:✱13·196",
+        "PM1:✱32·181",
+        "PM1:✱35·1"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱96·23",
+      "kind": "derived-proposition",
+      "printed": "✱96·23. ⊢:R∈ 1→Cls.xBR.⊃.I_Rʻx=Λ.(R⃖_∗ʻx)↿ Rₚₒ⪽J",
+      "printed_page": 643,
+      "scan_leaf": 665,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only; no formal target preserves both conclusions",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-formal-target",
+      "printed_dependencies": [
+        "PM1:✱31·11",
+        "PM1:✱34·1",
+        "PM1:✱92·132",
+        "PM1:✱91·271",
+        "PM1:✱11·11",
+        "PM1:✱11·3",
+        "PM1:✱11·35",
+        "PM1:✱11·54",
+        "PM1:✱91·55",
+        "PM1:✱91·05",
+        "PM1:✱93·1",
+        "PM1:✱96·1",
+        "PM1:✱10·11",
+        "PM1:✱10·21",
+        "PM1:✱96·104"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱96·24",
+      "kind": "derived-proposition",
+      "printed": "✱96·24. ⊢:R∈ 1→Cls.CʻR=Ř_∗ʻʻB⃗ʻR.⊃.Rₚₒ⪽J",
+      "printed_page": 644,
+      "scan_leaf": 666,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only; no formal target preserves the field premise and diversity conclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-formal-target",
+      "printed_dependencies": [
+        "PM1:✱37·105",
+        "PM1:✱91·504",
+        "PM1:✱4·7",
+        "PM1:✱32·18",
+        "PM1:✱32·181",
+        "PM1:✱96·23"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR40-CATALOGUE-06-AWAITING-CI",
+  "batch": "PM1-STAR40-CATALOGUE-06-BLOCKED-NON-V1",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -24,16 +24,34 @@
       "scan_leaf": 346,
       "lean_path": "Principia/Architecture/Star40ThirdKernel.lean",
       "declaration": "PM.Architecture.Star40ThirdKernel.star_40_27",
-      "formal_scope": "exact typed extensional equivalence between disjointness from a family sum and disjointness from every family member",
+      "formal_scope": "blocked non-v1: a typed Prop theorem exists, but no Star2/T1–T9 object-language assertion or axiom-free PM kernel derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-axiom-free-pm-object-proof",
+      "printed_dependencies": [
+        "PM1:✱22·1",
+        "PM1:✱22·35",
+        "PM1:✱40·1",
+        "PM1:✱10·23",
+        "PM1:✱11·2",
+        "PM1:✱11·62",
+        "PM1:✱24·39"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star40-catalogue-review.md",
-      "semantic_audit": "reviews/Star40-catalogue-review.md"
+      "parser_evidence": "reviews/Star40-catalogue-06-star2-gate.md",
+      "semantic_audit": "reviews/Star40-catalogue-06-star2-gate.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱40·3",
@@ -43,13 +61,13 @@
       "scan_leaf": 346,
       "lean_path": "Principia/Architecture/Star40ThirdKernel.lean",
       "declaration": "PM.Architecture.Star40ThirdKernel.star_40_3",
-      "formal_scope": "exact typed distribution of the product over the relational image of a family union",
+      "formal_scope": "blocked non-v1: a typed Prop theorem exists, but no Star2/T1–T9 object-language assertion or axiom-free PM kernel derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-axiom-free-pm-object-proof",
       "printed_dependencies": [
-        "✱37·22",
-        "✱40·18"
+        "PM1:✱37·22",
+        "PM1:✱40·18"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star40SecondKernel.star_40_18"
@@ -57,13 +75,17 @@
       "normalized_dependencies": [
         "PM1:✱40·18"
       ],
-      "semantic_audit": "reviews/Star40-catalogue-review.md",
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": ["✱37·22"],
-        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
-        "editorial_note": "The exact endpoint retains the printed ✱40·18 edge; the relational-image distribution is proved definitionally instead of invoking ✱37·22."
+      "semantic_audit": "reviews/Star40-catalogue-06-star2-gate.md",
+      "parser_evidence": "reviews/Star40-catalogue-06-star2-gate.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -74,13 +96,13 @@
       "scan_leaf": 346,
       "lean_path": "Principia/Architecture/Star40ThirdKernel.lean",
       "declaration": "PM.Architecture.Star40ThirdKernel.star_40_31",
-      "formal_scope": "exact typed distribution of the sum over the relational image of a family union",
+      "formal_scope": "blocked non-v1: a typed Prop theorem exists, but no Star2/T1–T9 object-language assertion or axiom-free PM kernel derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-axiom-free-pm-object-proof",
       "printed_dependencies": [
-        "✱37·22",
-        "✱40·171"
+        "PM1:✱37·22",
+        "PM1:✱40·171"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star40SecondKernel.star_40_171"
@@ -88,13 +110,17 @@
       "normalized_dependencies": [
         "PM1:✱40·171"
       ],
-      "semantic_audit": "reviews/Star40-catalogue-review.md",
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": ["✱37·22"],
-        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
-        "editorial_note": "The exact endpoint retains the printed ✱40·171 edge; the relational-image distribution is proved definitionally instead of invoking ✱37·22."
+      "semantic_audit": "reviews/Star40-catalogue-06-star2-gate.md",
+      "parser_evidence": "reviews/Star40-catalogue-06-star2-gate.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -105,14 +131,27 @@
       "scan_leaf": 346,
       "lean_path": "Principia/Architecture/Star40ThirdKernel.lean",
       "declaration": "PM.Architecture.Star40ThirdKernel.star_40_32",
-      "formal_scope": "exact typed inclusion of the union of two relational-image products in the product of the family intersection image",
+      "formal_scope": "blocked non-v1: a typed Prop theorem exists, but no Star2/T1–T9 object-language assertion or axiom-free PM kernel derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-axiom-free-pm-object-proof",
+      "printed_dependencies": [
+        "PM1:✱40·16"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "semantic_audit": "reviews/Star40-catalogue-review.md"
+      "semantic_audit": "reviews/Star40-catalogue-06-star2-gate.md",
+      "parser_evidence": "reviews/Star40-catalogue-06-star2-gate.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱40·33",
@@ -122,27 +161,28 @@
       "scan_leaf": 347,
       "lean_path": "Principia/Architecture/Star40ThirdKernel.lean",
       "declaration": "PM.Architecture.Star40ThirdKernel.star_40_33",
-      "formal_scope": "exact typed inclusion of the sum of the family-intersection image in the intersection of the two image sums",
+      "formal_scope": "blocked non-v1: a typed Prop theorem exists, but no Star2/T1–T9 object-language assertion or axiom-free PM kernel derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-axiom-free-pm-object-proof",
       "printed_dependencies": [
-        "✱37·21",
-        "✱40·161",
-        "✱40·181"
-      ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [
+        "PM1:✱37·21",
         "PM1:✱40·161",
         "PM1:✱40·181"
       ],
-      "semantic_audit": "reviews/Star40-catalogue-review.md",
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": ["✱37·21", "PM1:✱40·161", "PM1:✱40·181"],
-        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
-        "editorial_note": "The exact inclusion is proved directly from the typed family-image witnesses; none of the printed derivational citations occurs in the Lean body."
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit": "reviews/Star40-catalogue-06-star2-gate.md",
+      "parser_evidence": "reviews/Star40-catalogue-06-star2-gate.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

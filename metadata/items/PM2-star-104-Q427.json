@@ -35,8 +35,8 @@
       "declaration": "PM.Architecture.Star104Kernel.star_104_12",
       "formal_scope": "exact typed reconstruction of transitivity across two successive cardinal type ascents; strict source-to-Lean audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱104·1",
         "PM2:✱100·32",
@@ -45,22 +45,31 @@
         "PM2:✱104·11"
       ],
       "normalized_dependencies": [],
-  "lean_dependencies": [],
-  "historical_dependency_relaxation": {
-    "classification": "relaxed-closure",
-    "added_beyond_print": [],
-    "printed_but_unused": [
-      "PM1:✱13·12",
-      "PM1:✱63·16",
-      "PM2:✱100·32",
-      "PM2:✱104·1",
-      "PM2:✱104·11"
-    ],
-    "strict_attempt_evidence": "reviews/Star104-Q427-semantic-audit.md",
-    "editorial_note": "The Lean body invokes the local unnumbered equivalence-composition helper equiv_trans; it is not a numbered PM dependency, while the printed citations record PM's historical derivation."
-  },
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱13·12",
+          "PM1:✱63·16",
+          "PM2:✱100·32",
+          "PM2:✱104·1",
+          "PM2:✱104·11"
+        ],
+        "strict_attempt_evidence": "reviews/Star104-Q427-semantic-audit.md",
+        "editorial_note": "The Lean body invokes the local unnumbered equivalence-composition helper equiv_trans; it is not a numbered PM dependency, while the printed citations record PM's historical derivation."
+      },
       "semantic_audit_status": "strict-equivalence-passed",
-      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-104-12.txt"
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-104-12.txt",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "review": {

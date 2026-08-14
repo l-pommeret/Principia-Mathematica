@@ -8,7 +8,14 @@
       169
     ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
-    "leaf_derivatives": [{"scan_leaf": 169, "printed_page": 147, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page169-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg", "sha256": "fe8529ed5c77f8edd4ab73c2da95bb0bb9afa82b3d2c90f842e07d19cf6a11d0"}],
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 169,
+        "printed_page": 147,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page169-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "fe8529ed5c77f8edd4ab73c2da95bb0bb9afa82b3d2c90f842e07d19cf6a11d0"
+      }
+    ],
     "scan_sha256": "fe8529ed5c77f8edd4ab73c2da95bb0bb9afa82b3d2c90f842e07d19cf6a11d0",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
@@ -25,19 +32,49 @@
       "scan_leaf": 169,
       "lean_path": "Principia/Architecture/Star10Q267Kernel.lean",
       "declaration": "PM.Architecture.Star10Q267Kernel.star_10_2",
-      "formal_scope": "exact closed Raw universal-disjunction equivalence endpoint",
+      "formal_scope": "exact Raw target plus axiom-free component certificate; no PM assertion judgement for the endpoint",
+      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-assertion-judgement",
+      "integration_blocked": true,
+      "blocking_reason": "The declaration is a def returning a Prop structure of component proofs and target = target; it has neither a theorem-level PM judgement nor a printed-formula reading.",
+      "migration_audit": "reviews/Q267-Q269-pm-derivation-v1-migration-audit.md",
+      "axiom_report_status": "axiom-free",
       "printed_dependencies": [
         "PM1:✱10·1",
         "PM1:✱1·6",
         "PM1:✱10·11",
         "PM1:✱10·12"
       ],
-      "lean_dependencies": ["PM.Architecture.Star10Q264Kernel.star_10_1", "PM.Architecture.Star10Q264Kernel.star_10_11"],
-      "normalized_dependencies": ["PM1:✱10·1", "PM1:✱10·11"],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·12","PM1:✱1·6"],"strict_attempt_evidence":"reviews/Q267-star-10-audit.md","editorial_note":"The theorem-specific certificate directly retains ✱10·1/·11 as closed fields and the exact binder normalization; ✱1·6 and ✱10·12 are not direct calls in the indexed body."}
+      "lean_dependencies": [
+        "PM.Architecture.Star10Q264Kernel.star_10_1",
+        "PM.Architecture.Star10Q264Kernel.star_10_11"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱10·1",
+        "PM1:✱10·11"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱10·12",
+          "PM1:✱1·6"
+        ],
+        "strict_attempt_evidence": "reviews/Q267-star-10-audit.md",
+        "editorial_note": "The theorem-specific certificate directly retains ✱10·1/·11 as closed fields and the exact binder normalization; ✱1·6 and ✱10·12 are not direct calls in the indexed body."
+      },
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱10·21",
@@ -47,20 +84,39 @@
       "scan_leaf": 169,
       "lean_path": "Principia/Architecture/Star10Q267Kernel.lean",
       "declaration": "PM.Architecture.Star10Q267Kernel.star_10_21",
-      "formal_scope": "exact ∼p/p instance of the closed ✱10·2 endpoint",
+      "formal_scope": "exact ∼p/p target plus inherited axiom-free component certificate; no PM assertion judgement for the endpoint",
+      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-assertion-judgement",
+      "integration_blocked": true,
+      "blocking_reason": "The declaration is a def returning the same theorem-specific structure as ✱10·2 and has no theorem-level PM judgement or printed-formula reading.",
+      "migration_audit": "reviews/Q267-Q269-pm-derivation-v1-migration-audit.md",
+      "axiom_report_status": "axiom-free",
       "printed_dependencies": [
         "PM1:✱10·2"
       ],
-      "lean_dependencies": ["PM.Architecture.Star10Q267Kernel.star_10_2"],
-      "normalized_dependencies": ["PM1:✱10·2"]
+      "lean_dependencies": [
+        "PM.Architecture.Star10Q267Kernel.star_10_2"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱10·2"
+      ],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

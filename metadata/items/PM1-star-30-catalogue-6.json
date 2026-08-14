@@ -13,7 +13,7 @@
     {
       "id": "PM1:✱30·5",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\text{E}!PʻQʻz.\\supset.\\text{E}!Qʻz\\)",
+      "printed": "⊢:E!PʻQʻz.⊃.E!Qʻz",
       "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -21,15 +21,25 @@
       "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
       "declaration": "PM.Architecture.Star30CompositionKernel.star_30_5",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md"
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash:\\text{E}!PʻQʻz.\\supset.\\text{E}!Qʻz\\)"
     },
     {
       "id": "PM1:✱30·501",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\phi(PʻQʻz).\\equiv.(\\exists b,c).c=Qʻz.b=Pʻc.\\phi b\\)",
+      "printed": "⊢:φ(PʻQʻz).≡.(∃ b,c).c=Qʻz.b=Pʻc.φ b",
       "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -37,15 +47,25 @@
       "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
       "declaration": "PM.Architecture.Star30CompositionKernel.star_30_501",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md"
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash:\\phi(PʻQʻz).\\equiv.(\\exists b,c).c=Qʻz.b=Pʻc.\\phi b\\)"
     },
     {
       "id": "PM1:✱30·51",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:b=PʻQʻz.\\equiv.(\\exists c).b=Pʻc.c=Qʻz\\)",
+      "printed": "⊢:b=PʻQʻz.≡.(∃ c).b=Pʻc.c=Qʻz",
       "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -53,15 +73,25 @@
       "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
       "declaration": "PM.Architecture.Star30CompositionKernel.star_30_51",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md"
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash:b=PʻQʻz.\\equiv.(\\exists c).b=Pʻc.c=Qʻz\\)"
     },
     {
       "id": "PM1:✱30·52",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\text{E}!PʻQʻz.\\equiv.(\\exists b,c).b=Pʻc.c=Qʻz\\)",
+      "printed": "⊢:E!PʻQʻz.≡.(∃ b,c).b=Pʻc.c=Qʻz",
       "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -69,10 +99,20 @@
       "lean_path": "Principia/Architecture/Star30CompositionKernel.lean",
       "declaration": "PM.Architecture.Star30CompositionKernel.star_30_52",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md"
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash:\\text{E}!PʻQʻz.\\equiv.(\\exists b,c).b=Pʻc.c=Qʻz\\)"
     }
   ],
   "ci_evidence": {

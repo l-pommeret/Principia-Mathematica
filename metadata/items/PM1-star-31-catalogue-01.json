@@ -1,6 +1,171 @@
-{"batch":"PM1-STAR31-CATALOGUE-01","edition":"first","volume":1,"witnesses":["PG78050"],"integration_status":"blocked-strict-semantic-audit","items":[
-{"id":"PM1:✱31·01","kind":"definition","printed":"Cnv = Q̂P̂{xQy ≡ₓ,ᵧ yPx} Df","lean_path":"Principia/FirstEdition/Volume1/Star31Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"refused: no numbered Lean declaration implements the printed Cnv class-abstract definition","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-lean-declaration","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"semantic_audit_status":"refused-no-lean-declaration","semantic_audit_evidence":"reviews/Star31-catalogue-01-semantic-audit.md","parser_status":"reviewed-gap","parser_evidence":"reviews/star31-catalogue-parser-gate.md"},
-{"id":"PM1:✱31·02","kind":"definition","printed":"P̌ = x̂ŷ(yPx) Df","lean_path":"Principia/FirstEdition/Volume1/Star31Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"refused: no numbered Lean declaration implements the printed explicit-converse class abstract","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-lean-declaration","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"semantic_audit_status":"refused-no-lean-declaration","semantic_audit_evidence":"reviews/Star31-catalogue-01-semantic-audit.md","parser_status":"reviewed-gap","parser_evidence":"reviews/star31-catalogue-parser-gate.md"},
-{"id":"PM1:✱31·1","kind":"derived-proposition","printed":"⊢ : Q Cnv P ≡ : xQy ≡ₓ,ᵧ yPx","lean_path":"Principia/FirstEdition/Volume1/Star31Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"refused: no Lean theorem declaration states the printed biconditional","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-lean-declaration","printed_dependencies":["PM1:✱21·3","PM1:✱31·01"],"lean_dependencies":[],"normalized_dependencies":[],"semantic_audit_status":"refused-no-lean-declaration","semantic_audit_evidence":"reviews/Star31-catalogue-01-semantic-audit.md","parser_status":"reviewed-gap","parser_evidence":"reviews/star31-catalogue-parser-gate.md"},
-{"id":"PM1:✱31·101","kind":"derived-proposition","printed":"⊢ : Q Cnv P . R Cnv P ⊃ . Q = R","lean_path":"Principia/FirstEdition/Volume1/Star31Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"refused: no Lean theorem declaration states uniqueness of relations bearing Cnv to P","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-lean-declaration","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"semantic_audit_status":"refused-no-lean-declaration","semantic_audit_evidence":"reviews/Star31-catalogue-01-semantic-audit.md","parser_status":"reviewed-gap","parser_evidence":"reviews/star31-catalogue-parser-gate.md"},
-{"id":"PM1:✱31·13","kind":"derived-proposition","printed":"⊢ . E! CnvʻP","lean_path":"Principia/Architecture/Star31ConverseKernel.lean","declaration":"PM.Architecture.Star31ConverseKernel.star_31_13 (refused candidate)","formal_scope":"refused: existence of a converse relation is not contextual descriptive existence of CnvʻP","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":["PM1:✱14·21","PM1:✱31·12"],"lean_dependencies":[],"normalized_dependencies":[],"semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star31-catalogue-01-semantic-audit.md","parser_status":"reviewed-gap","parser_evidence":"reviews/star31-catalogue-parser-gate.md"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR31-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "witnesses": [
+    "PG78050"
+  ],
+  "integration_status": "blocked-v1-no-pm-ast-judgement-derivation",
+  "items": [
+    {
+      "id": "PM1:✱31·01",
+      "kind": "definition",
+      "printed": "Cnv = Q̂P̂{xQy ≡ₓ,ᵧ yPx} Df",
+      "lean_path": "Principia/FirstEdition/Volume1/Star31Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "refused v1: no exact class-abstract AST, definitional judgement, or kernel derivation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-v1-no-pm-ast-judgement-derivation",
+      "blocking_reason": "The exact PM relation/class-abstract syntax and definitional judgement are absent.",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "refused-v1-incomplete",
+      "semantic_audit_evidence": "reviews/Star31-catalogue-01-semantic-audit.md",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱31·02",
+      "kind": "definition",
+      "printed": "P̌ = x̂ŷ(yPx) Df",
+      "lean_path": "Principia/FirstEdition/Volume1/Star31Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "refused v1: no exact explicit-converse AST, definitional judgement, or kernel derivation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-v1-no-pm-ast-judgement-derivation",
+      "blocking_reason": "The exact PM explicit-converse class abstract and definitional judgement are absent.",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "refused-v1-incomplete",
+      "semantic_audit_evidence": "reviews/Star31-catalogue-01-semantic-audit.md",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/star31-catalogue-parser-gate.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱31·1",
+      "kind": "derived-proposition",
+      "printed": "⊢ : Q Cnv P ≡ : xQy ≡ₓ,ᵧ yPx",
+      "lean_path": "Principia/FirstEdition/Volume1/Star31Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "refused v1: exact quantified AST and asserted derivation are absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-v1-no-pm-ast-judgement-derivation",
+      "blocking_reason": "No assertion judgement derives the exact AST from ✱21·3 and ✱31·01.",
+      "printed_dependencies": [
+        "PM1:✱21·3",
+        "PM1:✱31·01"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "refused-v1-incomplete",
+      "semantic_audit_evidence": "reviews/Star31-catalogue-01-semantic-audit.md",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱31·101",
+      "kind": "derived-proposition",
+      "printed": "⊢ : Q Cnv P . R Cnv P ⊃ . Q = R",
+      "lean_path": "Principia/FirstEdition/Volume1/Star31Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "refused v1: exact uniqueness AST and asserted derivation are absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-v1-no-pm-ast-judgement-derivation",
+      "blocking_reason": "No source-licensed kernel derivation inhabits the exact conjunction-to-equality judgement.",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "refused-v1-incomplete",
+      "semantic_audit_evidence": "reviews/Star31-catalogue-01-semantic-audit.md",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱31·13",
+      "kind": "derived-proposition",
+      "printed": "⊢ . E! CnvʻP",
+      "lean_path": "Principia/Architecture/Star31ConverseKernel.lean",
+      "declaration": "PM.Architecture.Star31ConverseKernel.star_31_13 (secondary Prop candidate only)",
+      "formal_scope": "refused v1: the Prop existence witness is not the descriptive-value AST, judgement, and derivation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-v1-no-pm-ast-judgement-derivation",
+      "blocking_reason": "The Prop theorem is secondary evidence only and does not derive the asserted E! CnvʻP AST from ✱14·21 and ✱31·12.",
+      "printed_dependencies": [
+        "PM1:✱14·21",
+        "PM1:✱31·12"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "refused-v1-incomplete",
+      "semantic_audit_evidence": "reviews/Star31-catalogue-01-semantic-audit.md",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/star31-catalogue-parser-gate.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

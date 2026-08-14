@@ -19,57 +19,95 @@
     {
       "id": "PM1:✱93·101",
       "kind": "derived-proposition",
-      "printed": "✱93·101. ⊢ . B→ʻP=DʻP−ᗡʻP",
+      "printed": "✱93·101. ⊢.B⃗ʻP=DʻP-ᗡʻP [✱93·1.✱32·18]",
       "printed_page": 609,
       "scan_leaf": 631,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_101",
       "formal_scope": "exact typed extensional reconstruction of PM's boundary image as domain minus converse-domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
-      "semantic_audit_evidence": "reviews/Star93-catalogues-02-03-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star93-catalogues-02-03-semantic-audit.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱93·103",
       "kind": "derived-proposition",
-      "printed": "✱93·103. ⊢ . B→ʻP=CʻP−ᗡʻP",
+      "printed": "✱93·103. ⊢.B⃗ʻP=CʻP-ᗡʻP",
       "printed_page": 609,
       "scan_leaf": 631,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_103",
       "formal_scope": "exact typed extensional reconstruction of PM's boundary as field minus converse-domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱22·9",
+        "PM1:✱33·16",
+        "PM1:✱93·101"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
-      "semantic_audit_evidence": "reviews/Star93-catalogues-02-03-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star93-catalogues-02-03-semantic-audit.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱93·11",
       "kind": "derived-proposition",
-      "printed": "✱93·11. ⊢ : x min_P α .≡. x∈α∩CʻP−P̌ʻʻα",
+      "printed": "✱93·11. ⊢:x min_P α.≡.x∈ α∩ CʻP-P̌ʻʻα [(✱93·02)]",
       "printed_page": 610,
       "scan_leaf": 632,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_11",
       "formal_scope": "exact typed pointwise reconstruction of minimum membership, preserving class, field, converse-image, and negation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogues-02-03-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

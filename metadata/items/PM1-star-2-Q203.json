@@ -4,10 +4,17 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "104–105",
-    "scan_leaves": [126, 127],
+    "scan_leaves": [
+      126,
+      127
+    ],
     "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050",
+    "WS-PM1"
+  ],
   "items": [
     {
       "id": "PM1:✱2·06",
@@ -19,12 +26,42 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_06",
       "formal_scope": "(p ⊃ q) ⊃ ((q ⊃ r) ⊃ (p ⊃ r)), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked",
-      "printed_dependencies": ["PM1:✱2·04", "PM1:✱2·05", "PM1:✱1·11"],
-      "lean_dependencies": ["PM.Derivation.detach", "PM.FirstEdition.Volume1.Star2.star_2_04", "PM.FirstEdition.Volume1.Star2.star_2_05"],
-      "normalized_dependencies": ["PM1:✱2·04", "PM1:✱2·05", "PM1:✱1·11"],
-      "substitutions": ["(q ⊃ r, p ⊃ q, p ⊃ r)/(p, q, r)"],
-      "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"PM explicitly prints [(1).(2).✱1·11]; detach selects that rule in a nonempty real-variable context."}]
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱2·04",
+        "PM1:✱2·05",
+        "PM1:✱1·11"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.FirstEdition.Volume1.Star2.star_2_04",
+        "PM.FirstEdition.Volume1.Star2.star_2_05"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·04",
+        "PM1:✱2·05"
+      ],
+      "substitutions": [
+        "(q ⊃ r, p ⊃ q, p ⊃ r)/(p, q, r)"
+      ],
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·11",
+          "evidence": "PM explicitly prints [(1).(2).✱1·11]; detach selects that rule in a nonempty real-variable context."
+        }
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱2·07",
@@ -36,11 +73,28 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_07",
       "formal_scope": "p ⊃ (p ∨ p), over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked",
-      "printed_dependencies": ["PM1:✱1·3"],
-      "lean_dependencies": ["PM.Derivation.star_1_3"],
-      "normalized_dependencies": ["PM1:✱1·3"],
-      "substitutions": ["p/q"]
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱1·3"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.star_1_3"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·3"
+      ],
+      "substitutions": [
+        "p/q"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱2·08",
@@ -52,12 +106,45 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_08",
       "formal_scope": "p ⊃ p, over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked",
-      "printed_dependencies": ["PM1:✱2·05", "PM1:✱1·2", "PM1:✱1·11", "PM1:✱2·07"],
-      "lean_dependencies": ["PM.Derivation.detach", "PM.Derivation.star_1_2", "PM.FirstEdition.Volume1.Star2.star_2_05", "PM.FirstEdition.Volume1.Star2.star_2_07"],
-      "normalized_dependencies": ["PM1:✱2·05", "PM1:✱1·2", "PM1:✱1·11", "PM1:✱2·07"],
-      "substitutions": ["(p ∨ p, p)/(q, r)"],
-      "dependency_justifications": [{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"Both printed detachments cite ✱1·11 by PM's stated omission convention; detach selects it for real variables."}]
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱2·05",
+        "PM1:✱1·2",
+        "PM1:✱1·11",
+        "PM1:✱2·07"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.Derivation.star_1_2",
+        "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM.FirstEdition.Volume1.Star2.star_2_07"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱1·2",
+        "PM1:✱2·05",
+        "PM1:✱2·07"
+      ],
+      "substitutions": [
+        "(p ∨ p, p)/(q, r)"
+      ],
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·11",
+          "evidence": "Both printed detachments cite ✱1·11 by PM's stated omission convention; detach selects it for real variables."
+        }
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱2·1",
@@ -69,17 +156,40 @@
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_1",
       "formal_scope": "∼p ∨ p, definitionally read from p ⊃ p over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked",
-      "printed_dependencies": ["PM1:✱2·08", "PM1:✱1·01"],
-      "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_08"],
-      "normalized_dependencies": ["PM1:✱2·08", "PM1:✱1·01"],
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱2·08",
+        "PM1:✱1·01"
+      ],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume1.Star2.star_2_08"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·01",
+        "PM1:✱2·08"
+      ],
       "substitutions": [],
-      "dependency_justifications": [{"kind":"definitional-reading","pm_dependency":"PM1:✱1·01","evidence":"Printed [Id. (✱1·01)]; implication reduces definitionally to ∼p ∨ p in Lean."}]
+      "dependency_justifications": [
+        {
+          "kind": "definitional-reading",
+          "pm_dependency": "PM1:✱1·01",
+          "evidence": "Printed [Id. (✱1·01)]; implication reduces definitionally to ∼p ∨ p in Lean."
+        }
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "22d09e88ae2cbf68bbde45bd41ca456aa6f51dfb",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31414543759",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

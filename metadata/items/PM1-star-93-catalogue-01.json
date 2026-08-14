@@ -18,7 +18,7 @@
     {
       "id": "PM1:✱93·01",
       "kind": "definition",
-      "printed": "✱93·01. B = x̂P̂(x∈DʻP−ᗡʻP) Df",
+      "printed": "✱93·01. B=x̂P̂(x∈ DʻP-ᗡʻP) Df",
       "printed_page": 609,
       "scan_leaf": 631,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
@@ -26,17 +26,21 @@
       "formal_scope": "exact typed definition of the boundary class as domain minus converse-domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
-      "semantic_audit_evidence": "reviews/Star93-catalogue-review.md"
+      "semantic_audit_evidence": "reviews/Star93-catalogue-review.md",
+      "formalization_level": "pm-derivation-v1",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱93·02",
       "kind": "definition",
-      "printed": "✱93·02. min_P = min(P) = x̂α̂(x∈α∩CʻP−P̌ʻʻα) Df",
+      "printed": "✱93·02. min_P=min(P)=x̂α̂(x∈ α∩ CʻP-P̌ʻʻα) Df",
       "printed_page": 609,
       "scan_leaf": 631,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
@@ -44,39 +48,49 @@
       "formal_scope": "exact typed definition of the minimum members of a class under P, using PM's output-first relational-image orientation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
-      "semantic_audit_evidence": "reviews/Star93-catalogue-review.md"
+      "semantic_audit_evidence": "reviews/Star93-catalogue-review.md",
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱93·021",
       "kind": "definition",
-      "printed": "✱93·021. max_P = max(P) = min(P̌) Df",
+      "printed": "✱93·021. max_P=max(P)=min(P̌) Df",
       "printed_page": 609,
       "scan_leaf": 631,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_021",
       "formal_scope": "exact typed definition of maximum under P as minimum under the converse relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
-      "semantic_audit_evidence": "reviews/Star93-catalogue-review.md"
+      "semantic_audit_evidence": "reviews/Star93-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱93·03",
       "kind": "definition",
-      "printed": "✱93·03. genʻP = min_P→ʻʻᗡʻʻPotidʻP Df",
+      "printed": "✱93·03. genʻP=min⃗_PʻʻᗡʻʻPotidʻP Df",
       "printed_page": 609,
       "scan_leaf": 631,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
@@ -84,30 +98,45 @@
       "formal_scope": "exact typed definition of the generated family as minima of members of the supplied Potid-family interpretation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
-      "semantic_audit_evidence": "reviews/Star93-catalogue-review.md"
+      "semantic_audit_evidence": "reviews/Star93-catalogue-review.md",
+      "formalization_level": "pm-derivation-v1",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱93·1",
       "kind": "derived-proposition",
-      "printed": "✱93·1. ⊢ : xBP .≡. x∈DʻP−ᗡʻP",
+      "printed": "✱93·1. ⊢:xBP.≡.x∈ DʻP-ᗡʻP [✱21·3.(✱93·01)]",
       "printed_page": 609,
       "scan_leaf": 631,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_1",
       "formal_scope": "exact pointwise expansion of boundary membership as domain membership without converse-domain membership; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
-      "semantic_audit_evidence": "reviews/Star93-catalogue-review.md"
+      "semantic_audit_evidence": "reviews/Star93-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     }
   ],
   "ci_evidence": {

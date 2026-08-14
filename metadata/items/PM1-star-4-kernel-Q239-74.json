@@ -27,8 +27,9 @@
       "declaration": "PM.FirstEdition.Volume1.Star4.star_4_74",
       "formal_scope": "∼p⊃(q≡(p∨q)), over an elementary real-variable context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱2·21",
         "PM1:✱4·72"
@@ -60,19 +61,37 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
-          "PM1:✱1·1", "PM1:✱1·11", "PM1:✱1·4", "PM1:✱2·02",
-          "PM1:✱2·05", "PM1:✱2·2", "PM1:✱2·43", "PM1:✱2·55",
-          "PM1:✱3·2", "PM1:✱3·47"
+          "PM1:✱1·1",
+          "PM1:✱1·11",
+          "PM1:✱1·4",
+          "PM1:✱2·02",
+          "PM1:✱2·05",
+          "PM1:✱2·2",
+          "PM1:✱2·43",
+          "PM1:✱2·55",
+          "PM1:✱3·2",
+          "PM1:✱3·47"
         ],
-        "printed_but_unused": ["PM1:✱2·21", "PM1:✱4·72"],
+        "printed_but_unused": [
+          "PM1:✱2·21",
+          "PM1:✱4·72"
+        ],
         "strict_attempt_evidence": "reviews/Q239-star4-74-kernel-gate.md",
         "editorial_note": "The unavailable printed chain is reconstructed directly under ∼p using addition, ✱2·55, and explicit equivalence packaging."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "2ac468894be6ecb8e80c4e1263c5011fbae6547a",
-    "run": "31556514413",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

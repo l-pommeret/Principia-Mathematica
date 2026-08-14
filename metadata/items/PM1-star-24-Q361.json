@@ -25,11 +25,26 @@
       "declaration": "PM.Architecture.Star24Q361Kernel.star_24_102",
       "formal_scope": "exact polymorphic universal-membership/universal-class equality equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "✱10·11",
+        "✱10·271",
+        "✱20·15",
+        "✱24·01"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱24·103",
@@ -41,11 +56,25 @@
       "declaration": "PM.Architecture.Star24Q361Kernel.star_24_103",
       "formal_scope": "exact polymorphic universal-nonmembership/null-class equality equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "✱22·392",
+        "✱22·831",
+        "✱24·02"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱24·104",
@@ -57,11 +86,21 @@
       "declaration": "PM.Architecture.Star24Q361Kernel.star_24_104",
       "formal_scope": "exact polymorphic universal-class membership theorem",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱24·105",
@@ -73,11 +112,26 @@
       "declaration": "PM.Architecture.Star24Q361Kernel.star_24_105",
       "formal_scope": "exact polymorphic null-class nonmembership theorem",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "✱4·12",
+        "✱10·11",
+        "✱10·271",
+        "✱24·104"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱24·11",
@@ -89,16 +143,29 @@
       "declaration": "PM.Architecture.Star24Q361Kernel.star_24_11",
       "formal_scope": "exact polymorphic inclusion of every class in the universal class",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "✱10·11",
+        "✱22·1"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

@@ -41,12 +41,10 @@
       "declaration": "PM.Architecture.Q262MonotonicityKernel.star_9_5",
       "formal_scope": "exact closed universal first-order monotonicity target",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
-      "integration_status": "canonical-kernel-integrated",
-      "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱1·6",
         "PM1:✱9·1",
@@ -58,8 +56,30 @@
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·6","PM1:✱9·01","PM1:✱9·04","PM1:✱9·06","PM1:✱9·08","PM1:✱9·1","PM1:✱9·13"],"strict_attempt_evidence":"reviews/Q262-monotonicity-audit.md","editorial_note":"The closed kernel packages the same pointwise ✱1·6 step through already-audited monotonicity and permutation bridges; no generic first-order detachment is introduced."},
-      "blocked_dependencies": []
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱1·6",
+          "PM1:✱9·01",
+          "PM1:✱9·04",
+          "PM1:✱9·06",
+          "PM1:✱9·08",
+          "PM1:✱9·1",
+          "PM1:✱9·13"
+        ],
+        "strict_attempt_evidence": "reviews/Q262-monotonicity-audit.md",
+        "editorial_note": "The closed kernel packages the same pointwise ✱1·6 step through already-audited monotonicity and permutation bridges; no generic first-order detachment is introduced."
+      },
+      "blocked_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱9·501",
@@ -71,19 +91,43 @@
       "declaration": "PM.Architecture.Q262MonotonicityKernel.star_9_501",
       "formal_scope": "exact closed existential monotonicity target",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
-      "integration_status": "canonical-kernel-integrated",
-      "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
-        "PM1:✱1·6", "PM1:✱9·1", "PM1:✱9·06", "PM1:✱9·13", "PM1:✱9·05", "PM1:✱9·01"
+        "PM1:✱1·6",
+        "PM1:✱9·1",
+        "PM1:✱9·06",
+        "PM1:✱9·13",
+        "PM1:✱9·05",
+        "PM1:✱9·01"
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·6","PM1:✱9·01","PM1:✱9·05","PM1:✱9·06","PM1:✱9·1","PM1:✱9·13"],"strict_attempt_evidence":"reviews/Q262-monotonicity-audit.md","editorial_note":"‘As Above’ is resolved as the existential analogue; the kernel uses the previously audited closed ✱9·22 bridge."},
-      "blocked_dependencies": []
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱1·6",
+          "PM1:✱9·01",
+          "PM1:✱9·05",
+          "PM1:✱9·06",
+          "PM1:✱9·1",
+          "PM1:✱9·13"
+        ],
+        "strict_attempt_evidence": "reviews/Q262-monotonicity-audit.md",
+        "editorial_note": "‘As Above’ is resolved as the existential analogue; the kernel uses the previously audited closed ✱9·22 bridge."
+      },
+      "blocked_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱9·51",
@@ -95,17 +139,29 @@
       "declaration": "PM.Architecture.Q262MonotonicityKernel.star_9_51",
       "formal_scope": "exact closed universal monotonicity under disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
-      "integration_status": "canonical-kernel-integrated",
-      "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q262-monotonicity-audit.md","editorial_note":"The source prints no demonstration; the minimal closed witness uses the adjacent associativity bridge and universal monotonicity."},
-      "blocked_dependencies": []
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Q262-monotonicity-audit.md",
+        "editorial_note": "The source prints no demonstration; the minimal closed witness uses the adjacent associativity bridge and universal monotonicity."
+      },
+      "blocked_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱9·511",
@@ -117,19 +173,37 @@
       "declaration": "PM.Architecture.Q262MonotonicityKernel.star_9_511",
       "formal_scope": "exact closed existential monotonicity under disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
-      "integration_status": "canonical-kernel-integrated",
-      "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
-        "PM1:✱1·6", "PM1:✱9·411", "PM1:✱9·22"
+        "PM1:✱1·6",
+        "PM1:✱9·411",
+        "PM1:✱9·22"
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·6","PM1:✱9·22","PM1:✱9·411"],"strict_attempt_evidence":"reviews/Q262-monotonicity-audit.md","editorial_note":"‘As above’ is resolved to the immediately preceding existential analogue."},
-      "blocked_dependencies": []
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱1·6",
+          "PM1:✱9·22",
+          "PM1:✱9·411"
+        ],
+        "strict_attempt_evidence": "reviews/Q262-monotonicity-audit.md",
+        "editorial_note": "‘As above’ is resolved to the immediately preceding existential analogue."
+      },
+      "blocked_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱9·52",
@@ -141,12 +215,10 @@
       "declaration": "PM.Architecture.Q262MonotonicityKernel.star_9_52",
       "formal_scope": "exact closed universal monotonicity under right disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
-      "integration_status": "canonical-kernel-integrated",
-      "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q262-monotonicity-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱1·6",
         "PM1:✱9·13·22",
@@ -155,8 +227,27 @@
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·6","PM1:✱9·03","PM1:✱9·05·01","PM1:✱9·13·22"],"strict_attempt_evidence":"reviews/Q262-monotonicity-audit.md","editorial_note":"The exact endpoint is retained through closed Q261 permutation and universal monotonicity witnesses."},
-      "blocked_dependencies": []
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱1·6",
+          "PM1:✱9·03",
+          "PM1:✱9·05·01",
+          "PM1:✱9·13·22"
+        ],
+        "strict_attempt_evidence": "reviews/Q262-monotonicity-audit.md",
+        "editorial_note": "The exact endpoint is retained through closed Q261 permutation and universal monotonicity witnesses."
+      },
+      "blocked_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

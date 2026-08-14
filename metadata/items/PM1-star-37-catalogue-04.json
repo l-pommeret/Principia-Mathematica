@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR37-CATALOGUE-04",
+  "batch": "PM1-STAR37-CATALOGUE-04-BLOCKED-STRUCTURAL",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -20,7 +20,7 @@
     {
       "id": "PM1:✱37·265",
       "kind": "derived-proposition",
-      "printed": "✱37·265. \\vdash.Rʻʻ\\alpha=Rʻʻ(\\alpha\\cap CʻR).\\breve{R}ʻʻ\\alpha=\\breve{R}ʻʻ(\\alpha\\cap CʻR)",
+      "printed": "✱37·265. ⊢.Rʻʻα=Rʻʻ(α∩ CʻR).Řʻʻα=Řʻʻ(α∩ CʻR)",
       "printed_page": 300,
       "scan_leaf": 322,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -28,15 +28,32 @@
       "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration for this printed relational-image proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "integration_status": "blocked-missing-object-judgement-and-real-derivation",
+      "structural_formalization_status": "blocked-non-v1-source-only-no-t1-t9-target",
+      "structural_audit_evidence": "reviews/Star37-catalogue-04-structural-audit.md",
+      "printed_dependencies": [
+        "PM1:✱22·481",
+        "PM1:✱37·262"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·265. \\vdash.Rʻʻ\\alpha=Rʻʻ(\\alpha\\cap CʻR).\\breve{R}ʻʻ\\alpha=\\breve{R}ʻʻ(\\alpha\\cap CʻR)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·29",
       "kind": "derived-proposition",
-      "printed": "✱37·29. \\vdash.Rʻʻ\\Lambda=\\Lambda.\\breve{R}ʻ\\Lambda=\\Lambda",
+      "printed": "✱37·29. ⊢.RʻʻΛ=Λ.ŘʻΛ=Λ",
       "printed_page": 301,
       "scan_leaf": 323,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -44,15 +61,32 @@
       "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration for this printed relational-image proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "integration_status": "blocked-missing-object-judgement-and-real-derivation",
+      "structural_formalization_status": "blocked-non-v1-source-only-no-t1-t9-target",
+      "structural_audit_evidence": "reviews/Star37-catalogue-04-structural-audit.md",
+      "printed_dependencies": [
+        "PM1:✱37·1",
+        "PM1:✱24·51"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·29. \\vdash.Rʻʻ\\Lambda=\\Lambda.\\breve{R}ʻ\\Lambda=\\Lambda",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·32",
       "kind": "derived-proposition",
-      "printed": "✱37·32. \\vdash.\\text{D}ʻ(P\\mid Q)=Pʻʻ\\text{D}ʻQ. \\text{ᗡ}ʻ(P\\mid Q)=\\breve{Q}ʻʻ\\text{ᗡ}ʻP",
+      "printed": "✱37·32. ⊢.Dʻ(P| Q)=PʻʻDʻQ. ᗡʻ(P| Q)=Q̌ʻʻᗡʻP",
       "printed_page": 301,
       "scan_leaf": 323,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -60,15 +94,36 @@
       "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration for this printed relational-image proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "integration_status": "blocked-missing-object-judgement-and-real-derivation",
+      "structural_formalization_status": "blocked-non-v1-source-only-no-t1-t9-target",
+      "structural_audit_evidence": "reviews/Star37-catalogue-04-structural-audit.md",
+      "printed_dependencies": [
+        "PM1:✱11·23",
+        "PM1:✱11·55",
+        "PM1:✱33·13",
+        "PM1:✱37·1",
+        "PM1:✱34·2",
+        "PM1:✱33·2"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·32. \\vdash.\\text{D}ʻ(P\\mid Q)=Pʻʻ\\text{D}ʻQ. \\text{ᗡ}ʻ(P\\mid Q)=\\breve{Q}ʻʻ\\text{ᗡ}ʻP",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·45",
       "kind": "derived-proposition",
-      "printed": "✱37·45. \\vdash\\colon\\ldotp (y).\\text{E}!Rʻy.\\supset:\\exists !Rʻʻ\\beta.\\equiv.\\exists !\\beta \\quad[\\text{*33·431.*37·43}]",
+      "printed": "✱37·45. ⊢:. (y).E!Rʻy.⊃:∃ !Rʻʻβ.≡.∃ !β [*33·431.*37·43]",
       "printed_page": 304,
       "scan_leaf": 326,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -76,15 +131,32 @@
       "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration for this printed relational-image proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "integration_status": "blocked-missing-object-judgement-and-real-derivation",
+      "structural_formalization_status": "blocked-non-v1-source-only-no-t1-t9-target",
+      "structural_audit_evidence": "reviews/Star37-catalogue-04-structural-audit.md",
+      "printed_dependencies": [
+        "PM1:✱33·431",
+        "PM1:✱37·43"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·45. \\vdash\\colon\\ldotp (y).\\text{E}!Rʻy.\\supset:\\exists !Rʻʻ\\beta.\\equiv.\\exists !\\beta \\quad[\\text{*33·431.*37·43}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·46",
       "kind": "derived-proposition",
-      "printed": "✱37·46. \\vdash:x\\in Rʻʻ\\alpha.\\equiv.\\exists !\\alpha\\cap \\overleftarrow{R}ʻx \\quad[\\text{*37·1.*32·181}]",
+      "printed": "✱37·46. ⊢:x∈ Rʻʻα.≡.∃ !α∩ R⃖ʻx [*37·1.*32·181]",
       "printed_page": 304,
       "scan_leaf": 326,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -92,10 +164,27 @@
       "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration for this printed relational-image proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "integration_status": "blocked-missing-object-judgement-and-real-derivation",
+      "structural_formalization_status": "blocked-non-v1-source-only-no-t1-t9-target",
+      "structural_audit_evidence": "reviews/Star37-catalogue-04-structural-audit.md",
+      "printed_dependencies": [
+        "PM1:✱37·1",
+        "PM1:✱32·181"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·46. \\vdash:x\\in Rʻʻ\\alpha.\\equiv.\\exists !\\alpha\\cap \\overleftarrow{R}ʻx \\quad[\\text{*37·1.*32·181}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

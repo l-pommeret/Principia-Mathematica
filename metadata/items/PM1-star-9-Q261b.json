@@ -33,17 +33,39 @@
       "declaration": "PM.Architecture.Q261DisjunctionKernel.star_9_421",
       "formal_scope": "exact closed existential disjunction target",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q261-architecture-reconciliation.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-        "PM1:✱1·5", "PM1:✱9·22", "PM1:✱9·06"
+        "PM1:✱1·5",
+        "PM1:✱9·22",
+        "PM1:✱9·06"
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·5","PM1:✱9·06","PM1:✱9·22"],"strict_attempt_evidence":"reviews/Q261-architecture-reconciliation.md","editorial_note":"‘As Above’ is resolved to the adjacent existential analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."},
-      "blocked_dependencies": []
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱1·5",
+          "PM1:✱9·06",
+          "PM1:✱9·22"
+        ],
+        "strict_attempt_evidence": "reviews/Q261-architecture-reconciliation.md",
+        "editorial_note": "‘As Above’ is resolved to the adjacent existential analogue inside the local closed adapter; the final indexed wrapper has no direct indexed dependency."
+      },
+      "blocked_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

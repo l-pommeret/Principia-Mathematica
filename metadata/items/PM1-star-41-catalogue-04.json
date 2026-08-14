@@ -19,102 +19,152 @@
     {
       "id": "PM1:✱41·181",
       "kind": "derived-proposition",
-      "printed": "✱41·181. \\(\\vdash.\\dot{s}ʻ(\\lambda\\cap \\mu)\\unicode{x2abd}\\dot{s}ʻ\\lambda\\dot{\\cap}\\dot{s}ʻ\\mu\\)",
+      "printed": "✱41·181. ⊢.ṡʻ(λ∩ μ)⪽ṡʻλ∩̇ṡʻμ",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41MiddleKernel.lean",
       "declaration": "PM.Architecture.Star41MiddleKernel.star_41_181",
       "formal_scope": "exact typed inclusion of the sum of a class intersection in the intersection of the two sums; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-04-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·181. \\(\\vdash.\\dot{s}ʻ(\\lambda\\cap \\mu)\\unicode{x2abd}\\dot{s}ʻ\\lambda\\dot{\\cap}\\dot{s}ʻ\\mu\\)"
     },
     {
       "id": "PM1:✱41·19",
       "kind": "derived-proposition",
-      "printed": "✱41·19. \\(\\vdash\\colon\\colon x(\\dot{s}ʻ\\lambda)y.\\equiv\\colon\\ldotp R\\in \\lambda.\\supset_{R}.R\\unicode{x2abd}S:\\supset_{S}.xSy\\)",
+      "printed": "✱41·19. ⊢:: x(ṡʻλ)y.≡:. R∈ λ.⊃_R.R⪽S:⊃_S.xSy",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41MiddleKernel.lean",
       "declaration": "PM.Architecture.Star41MiddleKernel.star_41_19",
       "formal_scope": "exact typed characterization of relational-sum membership by satisfaction of every common upper bound; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-04-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·19. \\(\\vdash\\colon\\colon x(\\dot{s}ʻ\\lambda)y.\\equiv\\colon\\ldotp R\\in \\lambda.\\supset_{R}.R\\unicode{x2abd}S:\\supset_{S}.xSy\\)"
     },
     {
       "id": "PM1:✱41·2",
       "kind": "derived-proposition",
-      "printed": "✱41·2. \\(\\vdash:\\lambda=\\Lambda.\\supset.\\dot{p}ʻ\\lambda=\\dot{\\text{V}}\\)",
+      "printed": "✱41·2. ⊢:λ=Λ.⊃.ṗʻλ=V̇",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41MiddleKernel.lean",
       "declaration": "PM.Architecture.Star41MiddleKernel.star_41_2",
       "formal_scope": "exact typed empty-class instance: its relational product is universal; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star41-catalogue-04-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·2. \\(\\vdash:\\lambda=\\Lambda.\\supset.\\dot{p}ʻ\\lambda=\\dot{\\text{V}}\\)"
     },
     {
       "id": "PM1:✱41·21",
       "kind": "derived-proposition",
-      "printed": "✱41·21. \\(\\vdash:\\lambda=\\Lambda.\\supset.\\dot{s}ʻ\\lambda=\\dot{\\Lambda}\\)",
+      "printed": "✱41·21. ⊢:λ=Λ.⊃.ṡʻλ=Λ̇",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41MiddleKernel.lean",
       "declaration": "PM.Architecture.Star41MiddleKernel.star_41_21",
       "formal_scope": "exact typed empty-class instance: its relational sum is empty; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star41-catalogue-04-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·21. \\(\\vdash:\\lambda=\\Lambda.\\supset.\\dot{s}ʻ\\lambda=\\dot{\\Lambda}\\)"
     },
     {
       "id": "PM1:✱41·22",
       "kind": "derived-proposition",
-      "printed": "✱41·22. \\(\\vdash:\\dot{\\Lambda}\\in \\lambda.\\supset.\\dot{p}ʻ\\lambda=\\dot{\\Lambda}\\)",
+      "printed": "✱41·22. ⊢:Λ̇∈ λ.⊃.ṗʻλ=Λ̇",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41MiddleKernel.lean",
       "declaration": "PM.Architecture.Star41MiddleKernel.star_41_22",
       "formal_scope": "exact typed statement that a class containing the empty relation has empty relational product; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star41-catalogue-04-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·22. \\(\\vdash:\\dot{\\Lambda}\\in \\lambda.\\supset.\\dot{p}ʻ\\lambda=\\dot{\\Lambda}\\)"
     }
   ],
   "ci_evidence": {

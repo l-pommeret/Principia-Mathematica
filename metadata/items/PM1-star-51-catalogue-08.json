@@ -26,12 +26,37 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_37",
       "formal_scope": "exact typed unit-class reconstruction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱51·2", "PM1:✱20·33"],
-      "lean_dependencies": ["PM.Architecture.Star51OpeningKernel2.star_51_2"],
-      "normalized_dependencies": ["PM1:✱51·2"],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱20·33"], "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md", "editorial_note": "Lean retains the substantive unit-class membership theorem ✱51·2; extensional class abstraction discharges the printed ✱20·33 step."}
+      "printed_dependencies": [
+        "PM1:✱51·2",
+        "PM1:✱20·33"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star51OpeningKernel2.star_51_2"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱51·2"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·33"
+        ],
+        "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md",
+        "editorial_note": "Lean retains the substantive unit-class membership theorem ✱51·2; extensional class abstraction discharges the printed ✱20·33 step."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·4",
@@ -43,12 +68,40 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_4",
       "formal_scope": "exact typed unit-class reconstruction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱14·122", "PM1:✱20·33", "PM1:✱24·5", "PM1:✱51·11", "PM1:✱51·15"],
+      "printed_dependencies": [
+        "PM1:✱14·122",
+        "PM1:✱20·33",
+        "PM1:✱24·5",
+        "PM1:✱51·11",
+        "PM1:✱51·15"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱14·122", "PM1:✱20·33", "PM1:✱24·5", "PM1:✱51·11", "PM1:✱51·15"], "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md", "editorial_note": "The exact existence-and-inclusion equivalence is reconstructed directly rather than through PM's descriptive and extensional lemmas."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱14·122",
+          "PM1:✱20·33",
+          "PM1:✱24·5",
+          "PM1:✱51·11",
+          "PM1:✱51·15"
+        ],
+        "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md",
+        "editorial_note": "The exact existence-and-inclusion equivalence is reconstructed directly rather than through PM's descriptive and extensional lemmas."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·401",
@@ -60,12 +113,43 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_401",
       "formal_scope": "exact typed unit-class reconstruction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱51·4", "PM1:✱5·6", "PM1:✱24·12", "PM1:✱22·42"],
-      "lean_dependencies": ["PM.Architecture.Star51RemainingKernel.star_51_4"],
-      "normalized_dependencies": ["PM1:✱51·4"],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱22·42", "PM1:✱24·12", "PM1:✱5·6"], "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md", "editorial_note": "Lean reuses exact ✱51·4 and proves the null-class branch extensionally; the remaining printed logical/class steps are direct."}
+      "printed_dependencies": [
+        "PM1:✱51·4",
+        "PM1:✱5·6",
+        "PM1:✱24·12",
+        "PM1:✱22·42"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star51OpeningKernel3.star_51_232",
+        "PM.Architecture.Star51RemainingKernel.star_51_4"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱51·232",
+        "PM1:✱51·4"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱22·42",
+          "PM1:✱24·12",
+          "PM1:✱5·6"
+        ],
+        "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md",
+        "editorial_note": "Lean reuses exact ✱51·4 and proves the null-class branch extensionally; the remaining printed logical/class steps are direct."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·41",
@@ -77,12 +161,48 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_41",
       "formal_scope": "exact typed unit-class reconstruction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱13·13", "PM1:✱13·16", "PM1:✱13·172", "PM1:✱20·2", "PM1:✱22·58", "PM1:✱2·621", "PM1:✱4·41", "PM1:✱51·16", "PM1:✱51·232"],
+      "printed_dependencies": [
+        "PM1:✱13·13",
+        "PM1:✱13·16",
+        "PM1:✱13·172",
+        "PM1:✱20·2",
+        "PM1:✱22·58",
+        "PM1:✱2·621",
+        "PM1:✱4·41",
+        "PM1:✱51·16",
+        "PM1:✱51·232"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱13·13", "PM1:✱13·16", "PM1:✱13·172", "PM1:✱20·2", "PM1:✱22·58", "PM1:✱2·621", "PM1:✱4·41", "PM1:✱51·16", "PM1:✱51·232"], "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md", "editorial_note": "The private pair-extensionality helper expands the required singleton-union reasoning; it is not a numbered dependency node."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱13·13",
+          "PM1:✱13·16",
+          "PM1:✱13·172",
+          "PM1:✱20·2",
+          "PM1:✱22·58",
+          "PM1:✱2·621",
+          "PM1:✱4·41",
+          "PM1:✱51·16",
+          "PM1:✱51·232"
+        ],
+        "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md",
+        "editorial_note": "The private pair-extensionality helper expands the required singleton-union reasoning; it is not a numbered dependency node."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·42",
@@ -94,12 +214,42 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_42",
       "formal_scope": "exact typed unit-class reconstruction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱10·1", "PM1:✱13·13", "PM1:✱13·15", "PM1:✱20·2", "PM1:✱51·232", "PM1:✱51·41"],
+      "printed_dependencies": [
+        "PM1:✱10·1",
+        "PM1:✱13·13",
+        "PM1:✱13·15",
+        "PM1:✱20·2",
+        "PM1:✱51·232",
+        "PM1:✱51·41"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱10·1", "PM1:✱13·13", "PM1:✱13·15", "PM1:✱20·2", "PM1:✱51·232", "PM1:✱51·41"], "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md", "editorial_note": "The private pair-extensionality helper proves the exact pairing alternative directly; historical propositional steps are not kernel calls."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱10·1",
+          "PM1:✱13·13",
+          "PM1:✱13·15",
+          "PM1:✱20·2",
+          "PM1:✱51·232",
+          "PM1:✱51·41"
+        ],
+        "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md",
+        "editorial_note": "The private pair-extensionality helper proves the exact pairing alternative directly; historical propositional steps are not kernel calls."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

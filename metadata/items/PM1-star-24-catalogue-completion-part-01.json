@@ -1,0 +1,202 @@
+{
+  "batch": "PM1-STAR24-CATALOGUE-COMPLETION-PART-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "236–240",
+    "scan_leaves": [
+      258,
+      259,
+      260,
+      261,
+      262
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱24·55",
+      "kind": "derived-proposition",
+      "printed": "✱24·55. ⊢:∼(α⊃β).≡.∃!α - β [✱24·3.Transp.✱24·54]",
+      "printed_page": 240,
+      "scan_leaf": 262,
+      "lean_path": "Principia/FirstEdition/Volume1/Star24Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "source-only-no-formal-target",
+      "printed_dependencies": [
+        "PM1:✱24·3",
+        "PM1:✱24·54",
+        "Transp"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "printed_latex_witness": "✱24·55. \\vdash\\colon{\\sim}(\\alpha\\supset\\beta).\\equiv.\\exists!\\alpha - \\beta \\quad[\\text{*24·3.Transp.*24·54]}",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱24·56",
+      "kind": "derived-proposition",
+      "printed": "✱24·56. ⊢:. ∃!(α∪β).≡:∃!α.∨.∃!β [✱10·42.✱22·34]",
+      "printed_page": 240,
+      "scan_leaf": 262,
+      "lean_path": "Principia/FirstEdition/Volume1/Star24Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "source-only-no-formal-target",
+      "printed_dependencies": [
+        "PM1:✱10·42",
+        "PM1:✱22·34"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "printed_latex_witness": "✱24·56. \\vdash\\colon\\ldotp \\exists!(\\alpha\\cup\\beta).\\equiv\\colon\\exists!\\alpha.\\lor.\\exists!\\beta \\quad[\\text{*10·42.*22·34}]",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱24·561",
+      "kind": "derived-proposition",
+      "printed": "✱24·561. ⊢: ∃!(α∩β).⊃.∃!α.∃!β [✱10·5.✱22·33]",
+      "printed_page": 240,
+      "scan_leaf": 262,
+      "lean_path": "Principia/FirstEdition/Volume1/Star24Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "source-only-no-formal-target",
+      "printed_dependencies": [
+        "PM1:✱10·5",
+        "PM1:✱22·33"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "printed_latex_witness": "✱24·561. \\vdash\\colon \\exists!(\\alpha\\cap\\beta).\\supset.\\exists!\\alpha.\\exists!\\beta \\quad[\\text{*10·5.*22·33}]",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱24·47",
+      "kind": "derived-proposition",
+      "printed": "✱24·47. ⊢:α∩β=Λ.α∪β=γ.≡.α⊂γ.β=γ - α",
+      "printed_page": 236,
+      "scan_leaf": 258,
+      "lean_path": "Principia/FirstEdition/Volume1/Star24Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "source-only-no-formal-target",
+      "printed_dependencies": [
+        "PM1:✱24·311",
+        "PM1:✱22·41",
+        "PM1:✱22·59",
+        "PM1:✱24·43",
+        "PM1:✱4·3",
+        "PM1:✱22·45"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "printed_latex_witness": "✱24·47. \\vdash\\colon\\alpha\\cap\\beta=\\Lambda.\\alpha\\cup\\beta=\\gamma.\\equiv.\\alpha\\subset\\gamma.\\beta=\\gamma - \\alpha",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱24·48",
+      "kind": "derived-proposition",
+      "printed": "✱24·48. ⊢:. ξ⊂α.ξ'⊂α.η⊂β.η'⊂β.α∩β =Λ.⊃: ξ∪η=ξ'∪η'.≡.ξ=ξ'.η=η'",
+      "printed_page": 236,
+      "scan_leaf": 258,
+      "lean_path": "Principia/FirstEdition/Volume1/Star24Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "source-only-no-formal-target",
+      "printed_dependencies": [
+        "PM1:✱22·73",
+        "PM1:✱22·481",
+        "PM1:✱22·68",
+        "PM1:✱22·621",
+        "PM1:✱3·47",
+        "PM1:✱22·48",
+        "PM1:✱22·55",
+        "PM1:✱24·13",
+        "PM1:✱24·24",
+        "PM1:✱54·6",
+        "PM1:✱117·632",
+        "PM1:✱170·68"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "printed_latex_witness": "✱24·48. \\begin{align}\\vdash\\colon\\ldotp \\xi\\subset\\alpha.\\xi'\\subset\\alpha.\\eta\\subset\\beta.\\eta'\\subset\\beta.\\alpha\\cap\\beta&=\\Lambda.\\supset\\colon\\\\ &\\xi\\cup\\eta=\\xi'\\cup\\eta'.\\equiv.\\xi=\\xi'.\\eta=\\eta'\\end{align}",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

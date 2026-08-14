@@ -1,0 +1,120 @@
+{
+  "batch": "PM1-STAR55-FINAL-CATALOGUE-GAP-CLOSURE",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "385–392",
+    "scan_leaves": [
+      407,
+      414
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱55·122",
+      "kind": "derived-proposition",
+      "printed": "✱55·122. ⊢:R(x↓)y.≡.R=x↓ y [*55·11]",
+      "printed_page": 385,
+      "scan_leaf": 407,
+      "lean_path": "Principia/FirstEdition/Volume1/Star55Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱55·11"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "pm_verbatim": "*55·122. \\(\\vdash:R(x\\downarrow)y.\\equiv.R=x\\downarrow y \\quad[\\text{*55·11}]\\)",
+      "printed_latex_witness": "✱55·122. \\(\\vdash:R(x\\downarrow)y.\\equiv.R=x\\downarrow y \\quad[\\text{*55·11}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱55·13",
+      "kind": "derived-proposition",
+      "printed": "✱55·13. ⊢:z(x↓ y)w.≡.z=x.w=y",
+      "printed_page": 385,
+      "scan_leaf": 407,
+      "lean_path": "Principia/FirstEdition/Volume1/Star55Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "pm_verbatim": "*55·13. \\(\\vdash:z(x\\downarrow y)w.\\equiv.z=x.w=y\\)",
+      "printed_latex_witness": "✱55·13. \\(\\vdash:z(x\\downarrow y)w.\\equiv.z=x.w=y\\)",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱55·51",
+      "kind": "derived-proposition",
+      "printed": "✱55·51. ⊢:. R ⪽ x ↓ y ⊍ S .⊃: x R y .∨. R ⪽ S",
+      "printed_page": 392,
+      "scan_leaf": 414,
+      "lean_path": "Principia/FirstEdition/Volume1/Star55Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "pm_verbatim": "*55·51. \\(\\vdash\\colon\\ldotp R \\unicode{x2abd} x \\downarrow y \\unicode{x228d} S .\\supset: x R y .\\lor. R \\unicode{x2abd} S\\)",
+      "printed_latex_witness": "✱55·51. \\(\\vdash\\colon\\ldotp R \\unicode{x2abd} x \\downarrow y \\unicode{x228d} S .\\supset: x R y .\\lor. R \\unicode{x2abd} S\\)",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

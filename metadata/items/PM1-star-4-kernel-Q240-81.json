@@ -23,8 +23,9 @@
       "declaration": "PM.FirstEdition.Volume1.Star4.star_4_81",
       "formal_scope": "elementary",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱2·18"
       ],
@@ -53,12 +54,20 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Q240-star4-81-kernel-gate.md",
         "editorial_note": "The printed implication is retained; its reciprocal, explicit inference, and equivalence packaging expose the kernel closure."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "8da5d1fdec9a8c765fdcbc8c38fb46d042944f34",
-    "run": "31552231965",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

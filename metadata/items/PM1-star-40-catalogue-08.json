@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR40-CATALOGUE-08",
+  "batch": "PM1-STAR40-CATALOGUE-08-BLOCKED-NON-V1",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -15,7 +15,9 @@
     "PM1-1910-SCAN",
     "PG78050"
   ],
-  "review_evidence": ["reviews/Star40-catalogue-08-09-review.md"],
+  "review_evidence": [
+    "reviews/Star40-catalogue-08-star2-gate.md"
+  ],
   "items": [
     {
       "id": "PM1:✱40·45",
@@ -25,15 +27,30 @@
       "scan_leaf": 348,
       "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
       "declaration": "PM.Architecture.Star40FinalKernel.star_40_45",
-      "formal_scope": "exact typed monotonicity of relation-fiber sums under pointwise fiber inclusion",
+      "formal_scope": "blocked non-v1: no PM object judgment or reading; additionally fails T5 through propext, Classical.choice, and Quot.sound",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-axiom-free-pm-object-proof",
+      "printed_dependencies": [
+        "PM1:✱37·62",
+        "PM1:✱40·13",
+        "PM1:✱40·43"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star40-catalogue-review.md"
+      "parser_evidence": "reviews/Star40-catalogue-08-star2-gate.md",
+      "semantic_audit": "reviews/Star40-catalogue-08-star2-gate.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱40·451",
@@ -43,15 +60,28 @@
       "scan_leaf": 348,
       "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
       "declaration": "PM.Architecture.Star40FinalKernel.star_40_451",
-      "formal_scope": "exact typed monotonicity of relation-fiber products under pointwise fiber inclusion",
+      "formal_scope": "blocked non-v1: no PM object judgment or reading; additionally fails T5 through propext, Classical.choice, and Quot.sound",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-axiom-free-pm-object-proof",
+      "printed_dependencies": [
+        "PM1:✱40·44"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star40-catalogue-review.md"
+      "parser_evidence": "reviews/Star40-catalogue-08-star2-gate.md",
+      "semantic_audit": "reviews/Star40-catalogue-08-star2-gate.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱40·5",
@@ -61,15 +91,29 @@
       "scan_leaf": 349,
       "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
       "declaration": "PM.Architecture.Star40FinalKernel.star_40_5",
-      "formal_scope": "exact typed identification of a sum of forward fibers with the forward relation image",
+      "formal_scope": "blocked non-v1: typed predicate semantics only; no inductive PM object judgment, concrete reading, or axiom-free T1–T9 derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-axiom-free-pm-object-proof",
+      "printed_dependencies": [
+        "PM1:✱32·18",
+        "PM1:✱37·01"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star40-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star40-catalogue-08-star2-gate.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱40·51",
@@ -79,26 +123,30 @@
       "scan_leaf": 349,
       "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
       "declaration": "PM.Architecture.Star40FinalKernel.star_40_51",
-      "formal_scope": "exact typed universal-membership characterization of a product of forward fibers",
+      "formal_scope": "blocked non-v1: typed predicate semantics only; no inductive PM object judgment, concrete reading, or axiom-free T1–T9 derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-axiom-free-pm-object-proof",
       "printed_dependencies": [
-        "✱32·12",
-        "✱40·41",
-        "✱32·18"
+        "PM1:✱32·12",
+        "PM1:✱40·41",
+        "PM1:✱32·18"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": ["✱32·12", "✱32·18", "✱40·41"],
-        "strict_attempt_evidence": "reviews/Star40-catalogue-08-09-review.md",
-        "editorial_note": "The universal fiber-membership equality is definitional in the typed kernel; all printed citations remain historical evidence."
-      },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star40-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star40-catalogue-08-star2-gate.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱40·52",
@@ -108,15 +156,28 @@
       "scan_leaf": 349,
       "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
       "declaration": "PM.Architecture.Star40FinalKernel.star_40_52",
-      "formal_scope": "exact typed identification of a sum of converse fibers with the converse relation image",
+      "formal_scope": "blocked non-v1: typed predicate semantics only; no inductive PM object judgment, concrete reading, or axiom-free T1–T9 derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-axiom-free-pm-object-proof",
+      "printed_dependencies": [
+        "PM1:✱40·5"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star40-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star40-catalogue-08-star2-gate.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

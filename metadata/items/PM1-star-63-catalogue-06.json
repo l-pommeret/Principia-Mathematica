@@ -18,7 +18,7 @@
     {
       "id": "PM1:✱63·101",
       "kind": "derived-proposition",
-      "printed": "✱63·101. \\(\\vdash . tʻx = t_{0}ʻ\\iotaʻx = \\iotaʻx \\cup - \\iotaʻx \\quad[\\text{*20·2 . (*63·01·02)}]\\)",
+      "printed": "✱63·101. ⊢ . tʻx = t₀ʻιʻx = ιʻx ∪ - ιʻx [*20·2 . (*63·01·02)]",
       "printed_page": 422,
       "scan_leaf": 444,
       "lean_path": "Principia/Architecture/Star63TypeKernel3.lean",
@@ -27,16 +27,34 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱2·11",
+        "PM1:✱10·11",
+        "PM1:✱10·13",
+        "PM1:✱10·221",
+        "PM1:✱5·1",
+        "PM1:✱2·2"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_latex_witness": "✱63·101. \\(\\vdash . tʻx = t_{0}ʻ\\iotaʻx = \\iotaʻx \\cup - \\iotaʻx \\quad[\\text{*20·2 . (*63·01·02)}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱63·102",
       "kind": "derived-proposition",
-      "printed": "✱63·102. \\(\\vdash . (y) . y \\in tʻx \\quad[\\text{*63·1·101}]\\)",
+      "printed": "✱63·102. ⊢ . (y) . y ∈ tʻx [*63·1·101]",
       "printed_page": 422,
       "scan_leaf": 444,
       "lean_path": "Principia/Architecture/Star63TypeKernel3.lean",
@@ -49,12 +67,23 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·102. \\(\\vdash . (y) . y \\in tʻx \\quad[\\text{*63·1·101}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱63·104",
       "kind": "derived-proposition",
-      "printed": "✱63·104. \\(\\vdash : \\phi x . {\\sim}\\phi y . \\supset . y \\in tʻx \\quad[\\text{*63·101 . *13·14}]\\)",
+      "printed": "✱63·104. ⊢ : φ x . ∼φ y . ⊃ . y ∈ tʻx [*63·101 . *13·14]",
       "printed_page": 422,
       "scan_leaf": 444,
       "lean_path": "Principia/Architecture/Star63TypeKernel3.lean",
@@ -67,12 +96,23 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·104. \\(\\vdash : \\phi x . {\\sim}\\phi y . \\supset . y \\in tʻx \\quad[\\text{*63·101 . *13·14}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱63·106",
       "kind": "derived-proposition",
-      "printed": "✱63·106. \\(\\vdash . t_{0}ʻ\\alpha = t_{0}ʻ - \\alpha \\quad[\\text{*22·8}]\\)",
+      "printed": "✱63·106. ⊢ . t₀ʻα = t₀ʻ - α [*22·8]",
       "printed_page": 422,
       "scan_leaf": 444,
       "lean_path": "Principia/Architecture/Star63TypeKernel3.lean",
@@ -85,12 +125,23 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_latex_witness": "✱63·106. \\(\\vdash . t_{0}ʻ\\alpha = t_{0}ʻ - \\alpha \\quad[\\text{*22·8}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱63·107",
       "kind": "derived-proposition",
-      "printed": "✱63·107. \\(\\vdash \\colon\\ldotp (x) . \\phi x : f(\\phi y) : \\supset . \\phi y\\)",
+      "printed": "✱63·107. ⊢ :. (x) . φ x : f(φ y) : ⊃ . φ y",
       "printed_page": 422,
       "scan_leaf": 444,
       "lean_path": "Principia/Architecture/Star63TypeKernel2.lean",
@@ -103,7 +154,18 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·107. \\(\\vdash \\colon\\ldotp (x) . \\phi x : f(\\phi y) : \\supset . \\phi y\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

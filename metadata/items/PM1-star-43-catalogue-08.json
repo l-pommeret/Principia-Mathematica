@@ -28,10 +28,26 @@
       "formal_status": "prepared",
       "integration_status": "prepared",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star43OpeningKernel.product",
+        "PM.Architecture.Star43OpeningKernel3.star_43_481"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱43·01",
+        "PM1:✱43·481"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star43-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱43·5",
@@ -46,10 +62,28 @@
       "formal_status": "prepared",
       "integration_status": "prepared",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star43OpeningKernel.product",
+        "PM.Architecture.Star43OpeningKernel3.star_43_48",
+        "PM.Architecture.Star43OpeningKernel3.star_43_481"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱43·01",
+        "PM1:✱43·48",
+        "PM1:✱43·481"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star43-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱43·51",
@@ -64,10 +98,26 @@
       "formal_status": "prepared",
       "integration_status": "prepared",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star43OpeningKernel.product",
+        "PM.Architecture.Star43OpeningKernel3.star_43_5"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱43·01",
+        "PM1:✱43·5"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star43-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -25,12 +25,21 @@
       "declaration": "PM.Architecture.Star24Q360Kernel.star_24_01",
       "formal_scope": "exact typed universal-class definition as the extension of self-identity",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "awaiting-ci",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "dependency_fidelity": "strict-closure"
+      "dependency_fidelity": "strict-closure",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱24·02",
@@ -42,10 +51,11 @@
       "declaration": "PM.Architecture.Star24Q360Kernel.star_24_02",
       "formal_scope": "exact typed null-class definition as complement of the universal class",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "awaiting-ci",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q360-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
       "lean_dependencies": [
         "Star22Q341Definitions.Complement"
@@ -61,7 +71,15 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Q360-review.md",
         "editorial_note": "The typed embedding realizes PM's complement notation through the earlier complement definition ✱22·04; the displayed definition has no bracketed citation."
-      }
+      },
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱24·03",
@@ -73,12 +91,21 @@
       "declaration": "PM.Architecture.Star24Q360Kernel.star_24_03",
       "formal_scope": "exact typed class-existence definition as inhabited membership",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "dependency_fidelity": "strict-closure"
+      "dependency_fidelity": "strict-closure",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱24·1",
@@ -90,8 +117,8 @@
       "declaration": "PM.Architecture.Star24Q360Kernel.star_24_1",
       "formal_scope": "exact typed null/universal inequality over PM's nonempty range of possible arguments",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱22·351",
         "✱24·02"
@@ -116,6 +143,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q360-review.md",
         "editorial_note": "The explicit nonempty carrier is audited separately as a non-logical assumption expressing PM's possible-argument convention; the direct witness proof leaves the printed class-calculus route as historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -128,10 +165,10 @@
       "declaration": "PM.Architecture.Star24Q360Kernel.star_24_101",
       "formal_scope": "exact constructive typed equality of the universal class with the complement of the null class",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q360-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "✱22·831",
         "✱24·02"
@@ -153,12 +190,22 @@
         ],
         "strict_attempt_evidence": "reviews/Q360-review.md",
         "editorial_note": "The exact complement equality closes extensionally through the typed realization of complement ✱22·04; PM's printed class-calculus citations remain historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

@@ -17,6 +17,7 @@
   "items": [
     {
       "id": "PM1:✱22·44",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α ⊂ β . β ⊂ γ .⊃ . α ⊂ γ",
       "printed_page": 221,
@@ -26,15 +27,22 @@
       "formal_scope": "exact polymorphic transitivity of class inclusion",
       "source_status": "source-catalogued",
       "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "demonstration_provenance": "follows-printed",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·3"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume1.Star3.star_3_33"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱3·33"
+      ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": [],
+        "added_beyond_print": [
+          "PM1:✱3·33"
+        ],
         "printed_but_unused": [
           "PM1:✱10·3"
         ],
@@ -44,6 +52,7 @@
     },
     {
       "id": "PM1:✱22·441",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α ⊂ β . x ε α .⊃ . x ε β",
       "printed_page": 221,
@@ -53,18 +62,42 @@
       "formal_scope": "exact polymorphic elimination of class inclusion at a member",
       "source_status": "source-catalogued",
       "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "demonstration_provenance": "follows-printed",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q344-review.md",
       "printed_dependencies": [
         "PM1:✱10·1",
         "PM1:Imp"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM.FirstEdition.Volume1.Star3.star_3_22",
+        "PM.FirstEdition.Volume1.Star3.star_3_35"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·1",
+        "PM1:✱2·05",
+        "PM1:✱3·22",
+        "PM1:✱3·35"
+      ],
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·1",
+          "evidence": "The derivation is uniform in the real-variable context; the catalogue records the general detachment rule ✱1·1."
+        }
+      ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": [],
+        "added_beyond_print": [
+          "PM1:✱1·1",
+          "PM1:✱2·05",
+          "PM1:✱3·22",
+          "PM1:✱3·35"
+        ],
         "printed_but_unused": [
           "PM1:Imp",
           "PM1:✱10·1"

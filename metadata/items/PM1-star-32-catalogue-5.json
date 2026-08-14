@@ -12,30 +12,41 @@
     {
       "id": "PM1:✱32·211",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\overleftarrow{R}=\\text{gs}ʻR \\quad[\\text{*32·201.*30·3}]\\)",
+      "printed": "⊢.R⃖=gsʻR [*32·201.*30·3]",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel3.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel3.star_32_211",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-05-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\overleftarrow{R}=\\text{gs}ʻR \\quad[\\text{*32·201.*30·3}]\\)"
     },
     {
       "id": "PM1:✱32·22",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\text{E}!\\text{sg}ʻR \\quad[\\text{*32·21.*14·21}]\\)",
+      "printed": "⊢.E!sgʻR [*32·21.*14·21]",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel3.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel3.star_32_22",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
@@ -43,17 +54,28 @@
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star32-catalogue-05-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\text{E}!\\text{sg}ʻR \\quad[\\text{*32·21.*14·21}]\\)"
     },
     {
       "id": "PM1:✱32·221",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\text{E}!gsʻR \\quad[\\text{*32·211.*14·21}]\\)",
+      "printed": "⊢.E!gsʻR [*32·211.*14·21]",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel3.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel3.star_32_221",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
@@ -61,43 +83,76 @@
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star32-catalogue-05-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\text{E}!gsʻR \\quad[\\text{*32·211.*14·21}]\\)"
     },
     {
       "id": "PM1:✱32·23",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\text{sg}ʻR=\\overrightarrow{R} \\quad[\\text{*32·21.*21·2·57}]\\)",
+      "printed": "⊢.sgʻR=R⃗ [*32·21.*21·2·57]",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel3.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel3.star_32_23",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-05-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\text{sg}ʻR=\\overrightarrow{R} \\quad[\\text{*32·21.*21·2·57}]\\)"
     },
     {
       "id": "PM1:✱32·231",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\text{gs}ʻR=\\overleftarrow{R} \\quad[\\text{*32·211.*21·2·57}]\\)",
+      "printed": "⊢.gsʻR=R⃖ [*32·211.*21·2·57]",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel3.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel3.star_32_231",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-05-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\text{gs}ʻR=\\overleftarrow{R} \\quad[\\text{*32·211.*21·2·57}]\\)"
     }
   ],
   "ci_evidence": {

@@ -19,97 +19,152 @@
     {
       "id": "PM1:✱41·221",
       "kind": "derived-proposition",
-      "printed": "✱41·221. \\(\\vdash:\\dot{\\text{V}}\\in \\lambda.\\supset.\\dot{s}ʻ\\lambda=\\dot{\\text{V}}\\)",
+      "printed": "✱41·221. ⊢:V̇∈ λ.⊃.ṡʻλ=V̇",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41MiddleKernel.lean",
       "declaration": "PM.Architecture.Star41MiddleKernel.star_41_221",
       "formal_scope": "exact typed theorem that a relation class containing the universal relation has universal relational sum; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/Star41-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·221. \\(\\vdash:\\dot{\\text{V}}\\in \\lambda.\\supset.\\dot{s}ʻ\\lambda=\\dot{\\text{V}}\\)"
     },
     {
       "id": "PM1:✱41·23",
       "kind": "derived-proposition",
-      "printed": "✱41·23. \\(\\vdash:\\exists !\\lambda.\\supset.\\dot{p}ʻ\\lambda\\unicode{x2abd}\\dot{s}ʻ\\lambda\\)",
+      "printed": "✱41·23. ⊢:∃ !λ.⊃.ṗʻλ⪽ṡʻλ",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41MiddleKernel.lean",
       "declaration": "PM.Architecture.Star41MiddleKernel.star_41_23",
       "formal_scope": "exact typed theorem that the relational product of a nonempty relation class is contained in its relational sum; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·23. \\(\\vdash:\\exists !\\lambda.\\supset.\\dot{p}ʻ\\lambda\\unicode{x2abd}\\dot{s}ʻ\\lambda\\)"
     },
     {
       "id": "PM1:✱41·24",
       "kind": "derived-proposition",
-      "printed": "✱41·24. \\(\\vdash\\colon\\ldotp \\exists !\\lambda:R\\in \\lambda.\\supset_{R}.S\\unicode{x2abd}R:\\supset.S\\unicode{x2abd}\\dot{s}ʻ\\lambda\\)",
+      "printed": "✱41·24. ⊢:. ∃ !λ:R∈ λ.⊃_R.S⪽R:⊃.S⪽ṡʻλ",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
       "declaration": "PM.Architecture.Star41ConverseKernel.star_41_24",
       "formal_scope": "exact typed lower-bound theorem for the relational sum of a nonempty relation class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·24. \\(\\vdash\\colon\\ldotp \\exists !\\lambda:R\\in \\lambda.\\supset_{R}.S\\unicode{x2abd}R:\\supset.S\\unicode{x2abd}\\dot{s}ʻ\\lambda\\)"
     },
     {
       "id": "PM1:✱41·25",
       "kind": "derived-proposition",
-      "printed": "✱41·25. \\(\\vdash:x(\\dot{s}ʻ\\lambda)y.\\equiv.\\exists !\\lambda\\cap \\hat{R}(xRy)\\)",
+      "printed": "✱41·25. ⊢:x(ṡʻλ)y.≡.∃ !λ∩ R̂(xRy)",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
       "declaration": "PM.Architecture.Star41ConverseKernel.star_41_25",
       "formal_scope": "exact typed pointwise characterization of relational-sum membership by nonempty intersection with the class of relations containing the pair; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·25. \\(\\vdash:x(\\dot{s}ʻ\\lambda)y.\\equiv.\\exists !\\lambda\\cap \\hat{R}(xRy)\\)"
     },
     {
       "id": "PM1:✱41·26",
       "kind": "derived-proposition",
-      "printed": "✱41·26. \\(\\vdash:\\dot{\\exists}!\\dot{s}ʻ\\lambda.\\equiv.(\\exists R).R\\in \\lambda.\\dot{\\exists}!R\\)",
+      "printed": "✱41·26. ⊢:∃̇!ṡʻλ.≡.(∃ R).R∈ λ.∃̇!R",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
       "declaration": "PM.Architecture.Star41ConverseKernel.star_41_26",
       "formal_scope": "exact typed equivalence between inhabitedness of a relational sum and inhabitedness of a member relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·26. \\(\\vdash:\\dot{\\exists}!\\dot{s}ʻ\\lambda.\\equiv.(\\exists R).R\\in \\lambda.\\dot{\\exists}!R\\)"
     }
   ],
   "ci_evidence": {

@@ -1,6 +1,152 @@
-{"batch":"PM1-STAR40-CATALOGUE-10-AWAITING-CI","edition":"first","volume":1,"source_range":{"printed_pages":"327–328","scan_leaves":[349,350],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
- {"id":"PM1:✱40·6","kind":"derived-proposition","printed":"✱40·6. ⊢. pʻR⃗ʻʻΛ = V . pʻR⃖ʻʻΛ = V","printed_page":327,"scan_leaf":349,"lean_path":"Principia/Architecture/Star40FinalKernel.lean","declaration":"PM.Architecture.Star40FinalKernel.star_40_6","formal_scope":"exact typed conjunction: both forward- and converse-fibre products over the empty class are universal","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star40-catalogue-review.md","semantic_audit":"reviews/Star40-catalogue-review.md"},
- {"id":"PM1:✱40·61","kind":"derived-proposition","printed":"✱40·61. ⊢ : ∃!β .⊃. pʻR⃗ʻʻβ ⊂ Rʻʻβ","printed_page":327,"scan_leaf":349,"lean_path":"Principia/Architecture/Star40FinalKernel.lean","declaration":"PM.Architecture.Star40FinalKernel.star_40_61","formal_scope":"exact typed inclusion of the forward-fibre product in the forward image for a nonempty class β","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star40-catalogue-review.md","semantic_audit":"reviews/Star40-catalogue-review.md"},
- {"id":"PM1:✱40·63","kind":"derived-proposition","printed":"✱40·63. ⊢ : ∃!β − ᗡʻR .⊃. pʻR⃗ʻʻβ = Λ","printed_page":328,"scan_leaf":350,"lean_path":"Principia/Architecture/Star40FinalKernel.lean","declaration":"PM.Architecture.Star40FinalKernel.star_40_63","formal_scope":"exact typed emptiness of the forward-fibre product when β has a member outside the converse domain","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star40-catalogue-review.md","semantic_audit":"reviews/Star40-catalogue-review.md"},
- {"id":"PM1:✱40·64","kind":"derived-proposition","printed":"✱40·64. ⊢ : ∃!β − DʻR .⊃. pʻR⃖ʻʻβ = Λ","printed_page":328,"scan_leaf":350,"lean_path":"Principia/Architecture/Star40FinalKernel.lean","declaration":"PM.Architecture.Star40FinalKernel.star_40_64","formal_scope":"exact typed emptiness of the converse-fibre product when β has a member outside the domain","source_status":"source-catalogued-PM-VERBATIM","formal_status":"awaiting-ci","integration_status":"awaiting-ci","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star40-catalogue-review.md","semantic_audit":"reviews/Star40-catalogue-review.md"}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR40-CATALOGUE-10-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "327–328",
+    "scan_leaves": [
+      349,
+      350
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱40·6",
+      "kind": "derived-proposition",
+      "printed": "✱40·6. ⊢. pʻR⃗ʻʻΛ = V . pʻR⃖ʻʻΛ = V",
+      "printed_page": 327,
+      "scan_leaf": 349,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_6",
+      "formal_scope": "exact typed conjunction: both forward- and converse-fibre products over the empty class are universal",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱37·29",
+        "PM1:✱40·2"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱40·61",
+      "kind": "derived-proposition",
+      "printed": "✱40·61. ⊢ : ∃!β .⊃. pʻR⃗ʻʻβ ⊂ Rʻʻβ",
+      "printed_page": 327,
+      "scan_leaf": 349,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_61",
+      "formal_scope": "exact typed inclusion of the forward-fibre product in the forward image for a nonempty class β",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱40·23",
+        "PM1:✱40·5"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱40·63",
+      "kind": "derived-proposition",
+      "printed": "✱40·63. ⊢ : ∃!β − ᗡʻR .⊃. pʻR⃗ʻʻβ = Λ",
+      "printed_page": 328,
+      "scan_leaf": 350,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_63",
+      "formal_scope": "exact typed emptiness of the forward-fibre product when β has a member outside the converse domain",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱20·57",
+        "PM1:✱40·22"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱40·64",
+      "kind": "derived-proposition",
+      "printed": "✱40·64. ⊢ : ∃!β − DʻR .⊃. pʻR⃖ʻʻβ = Λ",
+      "printed_page": 328,
+      "scan_leaf": 350,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_64",
+      "formal_scope": "exact typed emptiness of the converse-fibre product when β has a member outside the domain",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱40·63"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

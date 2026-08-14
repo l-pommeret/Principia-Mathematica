@@ -1,1 +1,78 @@
-{"batch":"PM1-STAR14-Q309","edition":"first","volume":1,"source_range":{"printed_pages":"193","scan_leaves":[215],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":215,"printed_page":193,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page215-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu.jpg","sha256":"c8e1dc1fee2977f528e063b20efb828d83ca2e055b4dc57aa0ce5f75f84f8c06"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱14·272","kind":"derived-proposition","printed":"⊢ : φx .≡ₓ. ψx .⊃ : χ(℩x)(φx) .≡ . χ(℩x)(ψx)","printed_page":193,"scan_leaf":215,"lean_path":"Principia/Architecture/Star14Q309Kernel.lean","declaration":"PM.Architecture.Star14Q309Kernel.star_14_272","formal_scope":"exact polymorphic extensionality of contextual description application without description-valued terms","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q309-review.md","printed_dependencies":["✱4·86","✱10·11·414","✱10·11·21","✱10·281","✱14·101"],"lean_dependencies":[],"normalized_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱10·11·21","✱10·11·414","✱10·281","✱14·101","✱4·86"],"strict_attempt_evidence":"reviews/Q309-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}}],"ci_evidence":{"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}}
+{
+  "batch": "PM1-STAR14-Q309",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "193",
+    "scan_leaves": [
+      215
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 215,
+        "printed_page": 193,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page215-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu.jpg",
+        "sha256": "c8e1dc1fee2977f528e063b20efb828d83ca2e055b4dc57aa0ce5f75f84f8c06"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱14·272",
+      "kind": "derived-proposition",
+      "printed": "⊢ : φx .≡ₓ. ψx .⊃ : χ(℩x)(φx) .≡ . χ(℩x)(ψx)",
+      "printed_page": 193,
+      "scan_leaf": 215,
+      "lean_path": "Principia/Architecture/Star14Q309Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q309Kernel.star_14_272",
+      "formal_scope": "exact polymorphic extensionality of contextual description application without description-valued terms",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱4·86",
+        "PM1:✱10·11·414",
+        "PM1:✱10·11·21",
+        "PM1:✱10·281",
+        "PM1:✱14·101"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱10·11·21",
+          "✱10·11·414",
+          "✱10·281",
+          "✱14·101",
+          "✱4·86"
+        ],
+        "strict_attempt_evidence": "reviews/Q309-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
+  }
+}

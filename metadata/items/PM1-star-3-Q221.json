@@ -4,10 +4,16 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "116–117",
-    "scan_leaves": [138, 139],
+    "scan_leaves": [
+      138,
+      139
+    ],
     "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
   "aristotle_evidence": {
     "project_id": "2aa01a68-f240-40cf-9642-17ef17d264c5",
     "task_id": "80b9650e-4ee8-4b4a-8523-c75a04a2a58a",
@@ -19,88 +25,203 @@
     {
       "id": "PM1:✱3·1",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "⊢ : p . q . ⊃ . ∼(∼p ∨ ∼q)     [Id . (✱3·01)]",
       "printed_page": 116,
       "scan_leaf": 138,
       "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_1",
       "formal_scope": "(p ∧ₚ q) ⊃ₚ ∼ₚ(∼ₚp ∨ₚ ∼ₚq), over an elementary real-variable context",
-      "printed_dependencies": ["PM1:✱2·08", "PM1:✱3·01"],
-      "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_08", "PM.Elementary.conj"],
-      "normalized_dependencies": ["PM1:✱2·08", "PM1:✱3·01"],
-      "dependency_fidelity": "strict-closure",
+      "printed_dependencies": [
+        "PM1:✱2·08",
+        "PM1:✱3·01"
+      ],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume1.Star2.star_2_08"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱2·08"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱3·01"
+        ],
+        "strict_attempt_evidence": "reviews/Q221-review.md",
+        "editorial_note": "The printed conjunction definition ✱3·01 is realized by object-language notation and therefore does not appear as a separate Lean theorem dependency."
+      },
+      "dependency_fidelity": "documented-definitional-reading",
       "source_status": "scan-collated",
-      "formal_status": "kernel-checked"
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱3·11",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "⊢ : ∼(∼p ∨ ∼q) . ⊃ . p . q     [Id . (✱3·01)]",
       "printed_page": 116,
       "scan_leaf": 138,
       "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_11",
       "formal_scope": "∼ₚ(∼ₚp ∨ₚ ∼ₚq) ⊃ₚ (p ∧ₚ q), over an elementary real-variable context",
-      "printed_dependencies": ["PM1:✱2·08", "PM1:✱3·01"],
-      "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_08", "PM.Elementary.conj"],
-      "normalized_dependencies": ["PM1:✱2·08", "PM1:✱3·01"],
-      "dependency_fidelity": "strict-closure",
+      "printed_dependencies": [
+        "PM1:✱2·08",
+        "PM1:✱3·01"
+      ],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume1.Star2.star_2_08"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱2·08"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱3·01"
+        ],
+        "strict_attempt_evidence": "reviews/Q221-review.md",
+        "editorial_note": "The printed conjunction definition ✱3·01 is realized by object-language notation and therefore does not appear as a separate Lean theorem dependency."
+      },
+      "dependency_fidelity": "documented-definitional-reading",
       "source_status": "scan-collated",
-      "formal_status": "kernel-checked"
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱3·12",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "⊢ : ∼p . ∨ . ∼q . ∨ . p . q     [✱2·11 (∼p ∨ ∼q)/p]",
       "printed_page": 116,
       "scan_leaf": 138,
       "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_12",
       "formal_scope": "((∼ₚp ∨ₚ ∼ₚq) ∨ₚ (p ∧ₚ q)), with the two successive Group-I sum marks left-associated",
-      "printed_dependencies": ["PM1:✱2·11"],
-      "lean_dependencies": ["PM.FirstEdition.Volume1.Star2.star_2_11"],
-      "normalized_dependencies": ["PM1:✱2·11"],
-      "substitutions": ["(∼p ∨ ∼q)/p"],
+      "printed_dependencies": [
+        "PM1:✱2·11"
+      ],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume1.Star2.star_2_11"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱2·11"
+      ],
+      "substitutions": [
+        "(∼p ∨ ∼q)/p"
+      ],
       "dependency_fidelity": "strict-closure",
       "source_status": "scan-collated",
-      "formal_status": "kernel-checked"
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱3·13",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "⊢ : ∼(p . q) . ⊃ . ∼p ∨ ∼q     [✱3·11 . Transp]",
       "printed_page": 116,
       "scan_leaf": 138,
       "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_13",
       "formal_scope": "∼ₚ(p ∧ₚ q) ⊃ₚ (∼ₚp ∨ₚ ∼ₚq), over an elementary real-variable context",
-      "printed_dependencies": ["PM1:✱1·11", "PM1:✱2·15", "PM1:✱3·11"],
-      "lean_dependencies": ["PM.Derivation.detach", "PM.FirstEdition.Volume1.Star2.star_2_15", "PM.FirstEdition.Volume1.Star3.star_3_11"],
-      "normalized_dependencies": ["PM1:✱1·11", "PM1:✱2·15", "PM1:✱3·11"],
+      "printed_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·15",
+        "PM1:✱3·11"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.FirstEdition.Volume1.Star2.star_2_15",
+        "PM.FirstEdition.Volume1.Star3.star_3_11"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·15",
+        "PM1:✱3·11"
+      ],
       "dependency_fidelity": "strict-closure",
       "source_status": "scan-collated",
-      "formal_status": "kernel-checked"
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱3·14",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "⊢ : ∼p ∨ ∼q . ⊃ . ∼(p . q)     [✱3·1 . Transp]",
       "printed_page": 116,
       "scan_leaf": 138,
       "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_14",
       "formal_scope": "(∼ₚp ∨ₚ ∼ₚq) ⊃ₚ ∼ₚ(p ∧ₚ q), over an elementary real-variable context",
-      "printed_dependencies": ["PM1:✱1·11", "PM1:✱2·06", "PM1:✱2·12", "PM1:✱2·16", "PM1:✱3·1"],
-      "lean_dependencies": ["PM.Derivation.detach", "PM.FirstEdition.Volume1.Star2.star_2_06", "PM.FirstEdition.Volume1.Star2.star_2_12", "PM.FirstEdition.Volume1.Star2.star_2_16", "PM.FirstEdition.Volume1.Star3.star_3_1"],
-      "normalized_dependencies": ["PM1:✱1·11", "PM1:✱2·06", "PM1:✱2·12", "PM1:✱2·16", "PM1:✱3·1"],
+      "printed_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·06",
+        "PM1:✱2·12",
+        "PM1:✱2·16",
+        "PM1:✱3·1"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.FirstEdition.Volume1.Star2.star_2_06",
+        "PM.FirstEdition.Volume1.Star2.star_2_12",
+        "PM.FirstEdition.Volume1.Star2.star_2_16",
+        "PM.FirstEdition.Volume1.Star3.star_3_1"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·06",
+        "PM1:✱2·12",
+        "PM1:✱2·16",
+        "PM1:✱3·1"
+      ],
       "dependency_fidelity": "strict-closure",
       "source_status": "scan-collated",
-      "formal_status": "kernel-checked"
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "9e65fe440ed5195e71df874091da45ba7da04442",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31453889043",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

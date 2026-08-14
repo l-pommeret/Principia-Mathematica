@@ -27,8 +27,9 @@
       "declaration": "PM.FirstEdition.Volume1.Star5.star_5_62",
       "formal_scope": "((p·q)∨∼q)≡(p∨∼q), over an elementary real-variable context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱4·7"
       ],
@@ -72,12 +73,20 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Q250-star5-62-kernel-gate.md",
         "editorial_note": "The exact ✱4·7 instance at `(q,p)` is retained; the PM-level implicit commutations of disjunction and conjunction are made explicit around it."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "59d741a9b3824e160abfe8e9333d0f73053e4fc7",
-    "run": "31555568712",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

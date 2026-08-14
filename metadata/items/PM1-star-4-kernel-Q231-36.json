@@ -19,12 +19,13 @@
       "printed": "✱4·36.  ⊢ : p ≡ q . ⊃ : p . r . ≡ . q . r",
       "printed_page": 124,
       "scan_leaf": 146,
-      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star4.star_4_36",
-      "formal_scope": "elementary",
+      "lean_path": "Principia/Deduction/Star4Ramified.lean",
+      "declaration": "PM.RamifiedSyntax.star_4_36",
+      "formal_scope": "ramified formula derivation, unconditional",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "Fact",
         "PM1:✱3·47"
@@ -71,12 +72,22 @@
         ],
         "strict_attempt_evidence": "reviews/Q231-star4-36-kernel-gate.md",
         "editorial_note": "The printed Fact convention is expanded into explicit projection, identity, composition, duplication, inference, and packaging steps; printed ✱3·47 is retained."
-      }
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "formalization_level": "pm-derivation-v1"
     }
   ],
   "ci_evidence": {
-    "commit": "8da5d1fdec9a8c765fdcbc8c38fb46d042944f34",
-    "run": "31552231965",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

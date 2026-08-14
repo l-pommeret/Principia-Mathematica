@@ -23,56 +23,80 @@
     {
       "id": "PM1:✱91·03",
       "kind": "definition",
-      "printed": "✱91·03. PotʻR = →R_tsʻR Df",
+      "printed": "✱91·03. PotʻR=R⃗ₜₛʻR Df",
       "printed_page": 587,
       "scan_leaf": 609,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
       "declaration": "PM.Architecture.Star91OpeningKernel.star_91_03",
       "formal_scope": "audited typed definition of the family of strictly positive powers of R",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱91·04",
       "kind": "definition",
-      "printed": "✱91·04. PotidʻR = →R_tsʻ(I↾CʻR) Df",
+      "printed": "✱91·04. PotidʻR=R⃗ₜₛʻ(I↾ CʻR) Df",
       "printed_page": 587,
       "scan_leaf": 609,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
       "declaration": "PM.Architecture.Star91OpeningKernel.star_91_04",
       "formal_scope": "audited typed definition of the family containing identity and every strictly positive power of R",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱91·05",
       "kind": "definition",
-      "printed": "✱91·05. R_po = ṡʻPotʻR Df",
+      "printed": "✱91·05. Rₚₒ=ṡʻPotʻR Df",
       "printed_page": 587,
       "scan_leaf": 609,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
       "declaration": "PM.Architecture.Star91OpeningKernel.star_91_05",
       "formal_scope": "audited typed definition of the positive transitive closure as the union of all strictly positive powers of R",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "formalization_level": "pm-derivation-v1"
     }
   ]
 }

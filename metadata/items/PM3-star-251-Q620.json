@@ -37,7 +37,17 @@
       "integration_blocked": true,
       "integration_status": "blocked-architecture-volume-III-ordinal-number-syntax",
       "printed_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM3:✱251·1",
@@ -56,7 +66,17 @@
         "PM3:✱251·01"
       ],
       "normalized_dependencies": [],
-      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-251-p19-skeletons.txt"
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-251-p19-skeletons.txt",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM3:✱251·11",
@@ -82,7 +102,17 @@
         "PM1:✱37·25"
       ],
       "normalized_dependencies": [],
-      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-251-p19-skeletons.txt"
+      "demonstration_skeleton": "aristotle/demonstrations/PM3-star-251-p19-skeletons.txt",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

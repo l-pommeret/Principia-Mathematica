@@ -26,8 +26,8 @@
       "declaration": "PM.Architecture.Star120OpeningKernel.star_120_11",
       "formal_scope": "exact typed natural-number reconstruction of PM's induction principle over inductive cardinals; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱120·102",
         "PM1:✱90·112"
@@ -35,7 +35,7 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -46,6 +46,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
         "editorial_note": "Lean's Nat induction closes the same typed induction principle directly; PM's definition and ancestral theorem remain historical proof-route evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -58,15 +67,15 @@
       "declaration": "PM.Architecture.Star120OpeningKernel.star_120_12",
       "formal_scope": "exact typed zero case for inductive finite cardinals represented by Nat; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱120·101"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -76,6 +85,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
         "editorial_note": "The typed Nat carrier makes zero an inductive cardinal definitionally; PM's substitution instance is retained as historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -88,8 +106,8 @@
       "declaration": "PM.Architecture.Star120OpeningKernel.star_120_121",
       "formal_scope": "exact typed closure of inductive finite cardinals under cardinal successor; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱90·172",
         "PM2:✱120·102"
@@ -97,7 +115,7 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -108,6 +126,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
         "editorial_note": "Successor closure is definitional on the typed Nat carrier; PM's ancestral and definition citations are retained as historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -120,17 +147,17 @@
       "declaration": "PM.Architecture.Star120OpeningKernel.star_120_13",
       "formal_scope": "exact typed strong-induction variant with the inductive-cardinal premise retained in the step; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
-        "PM2:✱120·11",
+        "PM2:✱120·121",
         "PM2:✱120·12",
-        "PM2:✱120·121"
+        "PM2:✱120·11"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -142,6 +169,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
         "editorial_note": "Lean proves the same restricted induction principle directly by Nat induction; PM derives it through the three cited ✱120 propositions."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

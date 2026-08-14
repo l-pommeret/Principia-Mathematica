@@ -26,7 +26,7 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_35",
       "formal_scope": "exact equality chain from the union-image of the two singleton families through the union of their sums to the sum of their union",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [
@@ -34,17 +34,30 @@
         "PM.Architecture.Star53OpeningKernel.star_53_11"
       ],
       "normalized_dependencies": [
-        "PM1:✱53·34",
-        "PM1:✱53·11"
+        "PM1:✱53·11",
+        "PM1:✱53·34"
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱53·34", "PM1:✱53·11"],
+        "added_beyond_print": [
+          "PM1:✱53·34",
+          "PM1:✱53·11"
+        ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star53-seventh-semantic-audit.md",
         "editorial_note": "The source prints no bracketed citation; Lean composes the exact two-singleton union-image identity with the exact binary class-sum law."
       },
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·4",
@@ -56,7 +69,7 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_4",
       "formal_scope": "exact typed chain of the four equivalent descriptions of the uniquely defined relation value",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [
@@ -64,19 +77,32 @@
         "PM.Architecture.Star53FinalKernel.star_53_3"
       ],
       "normalized_dependencies": [
-        "PM1:✱53·31",
-        "PM1:✱53·3"
+        "PM1:✱53·3",
+        "PM1:✱53·31"
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱53·31", "PM1:✱53·3"],
+        "added_beyond_print": [
+          "PM1:✱53·31",
+          "PM1:✱53·3"
+        ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star53-seventh-semantic-audit.md",
         "editorial_note": "The source prints no bracketed citation; Lean uses the exact singleton-image chain and unit-image characterization to prove the displayed equivalences."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·5",
@@ -88,12 +114,22 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_5",
       "formal_scope": "exact typed equivalence between contextual existence of a class and membership in the class of nonempty classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -26,14 +26,23 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_5",
       "formal_scope": "exact inclusion/equality characterization for a cardinal couple",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star54-closing-06-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱54·51",
@@ -45,8 +54,8 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_51",
       "formal_scope": "exact inclusion/equality characterization against cardinal one or two",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·5"
       ],
@@ -58,7 +67,16 @@
       ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star54-closing-06-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱54·52",
@@ -70,8 +88,8 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_52",
       "formal_scope": "exact mutual inclusion/equality characterization for cardinal couples",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·51"
       ],
@@ -82,8 +100,17 @@
         "PM1:✱54·51"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star54-closing-06-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱54·53",
@@ -95,8 +122,8 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_53",
       "formal_scope": "exact reconstruction of a cardinal couple from two distinct members",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·44"
       ],
@@ -108,7 +135,16 @@
       ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star54-closing-06-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱54·531",
@@ -120,8 +156,8 @@
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_531",
       "formal_scope": "exact universally scoped reconstruction of a cardinal couple from two distinct members",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·44"
       ],
@@ -133,7 +169,16 @@
       ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star54-closing-06-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

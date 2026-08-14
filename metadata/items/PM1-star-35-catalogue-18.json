@@ -14,112 +14,158 @@
     {
       "id": "PM1:✱35·87",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\dot{\\exists}!(\\alpha\\uparrow \\beta).\\equiv.\\exists !\\alpha.\\exists !\\beta\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:∃̇!(α↑ β).≡.∃ !α.∃ !β",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱35·103",
+        "PM1:✱11·54",
+        "PM1:✱24·5"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ClosingKernel.lean",
       "declaration": "PM.Architecture.Star35ClosingKernel.star_35_87",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "nominal mapping pending strict semantic audit",
+      "printed_latex_witness": "\\(\\vdash:\\dot{\\exists}!(\\alpha\\uparrow \\beta).\\equiv.\\exists !\\alpha.\\exists !\\beta\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·88",
       "kind": "derived-proposition",
-      "printed": "\\[\\begin{align}&\\vdash\\colon\\ldotp \\alpha\\uparrow \\beta=\\dot{\\Lambda}.\\equiv:\\alpha=\\Lambda.\\lor.\\beta=\\Lambda\\\\ &\\quad[\\text{*35·87.Transp.*24·51.*25·51}]\\end{align}\\]",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:. α↑ β=Λ̇.≡:α=Λ.∨.β=Λ [*35·87.Transp.*24·51.*25·51]",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱34·1",
+        "PM1:✱35·103",
+        "PM1:✱33·14",
+        "PM1:✱4·73",
+        "PM1:✱10·35",
+        "PM1:✱33·13"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ClosingKernel.lean",
       "declaration": "PM.Architecture.Star35ClosingKernel.star_35_88",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "nominal mapping pending strict semantic audit",
+      "printed_latex_witness": "\\[\\begin{align}&\\vdash\\colon\\ldotp \\alpha\\uparrow \\beta=\\dot{\\Lambda}.\\equiv:\\alpha=\\Lambda.\\lor.\\beta=\\Lambda\\\\ &\\quad[\\text{*35·87.Transp.*24·51.*25·51}]\\end{align}\\]",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·881",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\text{ᗡ}ʻR\\subset\\alpha.\\supset.R\\mid (\\alpha\\uparrow \\beta)=\\text{D}ʻR\\uparrow \\beta\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:ᗡʻR⊂α.⊃.R| (α↑ β)=DʻR↑ β",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱34·1",
+        "PM1:✱35·103",
+        "PM1:✱4·24",
+        "PM1:✱10·35"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ClosingKernel.lean",
       "declaration": "PM.Architecture.Star35ClosingKernel.star_35_881",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "nominal mapping pending strict semantic audit",
+      "printed_latex_witness": "\\(\\vdash:\\text{ᗡ}ʻR\\subset\\alpha.\\supset.R\\mid (\\alpha\\uparrow \\beta)=\\text{D}ʻR\\uparrow \\beta\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·882",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\text{D}ʻR\\subset\\beta.\\supset.(\\alpha\\uparrow \\beta)\\mid R=\\alpha\\uparrow \\text{ᗡ}ʻR \\quad[\\text{Similar proof}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:DʻR⊂β.⊃.(α↑ β)| R=α↑ ᗡʻR [Similar proof]",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ClosingKernel.lean",
       "declaration": "PM.Architecture.Star35ClosingKernel.star_35_882",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "nominal mapping pending strict semantic audit",
+      "printed_latex_witness": "\\(\\vdash:\\text{D}ʻR\\subset\\beta.\\supset.(\\alpha\\uparrow \\beta)\\mid R=\\alpha\\uparrow \\text{ᗡ}ʻR \\quad[\\text{Similar proof}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·89",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\exists !\\beta.\\supset.(\\alpha\\uparrow \\beta)\\mid (\\beta\\uparrow \\gamma)=(\\alpha\\uparrow \\gamma):{\\sim}\\exists !\\beta.\\supset.(\\alpha\\uparrow \\beta)\\mid (\\beta\\uparrow \\gamma)=\\dot{\\Lambda}\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:∃ !β.⊃.(α↑ β)| (β↑ γ)=(α↑ γ):∼∃ !β.⊃.(α↑ β)| (β↑ γ)=Λ̇",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ClosingKernel.lean",
       "declaration": "PM.Architecture.Star35ClosingKernel.star_35_89",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "nominal mapping pending strict semantic audit",
+      "printed_latex_witness": "\\(\\vdash:\\exists !\\beta.\\supset.(\\alpha\\uparrow \\beta)\\mid (\\beta\\uparrow \\gamma)=(\\alpha\\uparrow \\gamma):{\\sim}\\exists !\\beta.\\supset.(\\alpha\\uparrow \\beta)\\mid (\\beta\\uparrow \\gamma)=\\dot{\\Lambda}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -19,7 +19,7 @@
     {
       "id": "PM1:✱63·3",
       "kind": "derived-proposition",
-      "printed": "✱63·3. \\(\\vdash:(\\alpha).\\alpha\\in \\kappa.\\supset.(x).x\\in sʻ\\kappa\\)",
+      "printed": "✱63·3. ⊢:(α).α∈ κ.⊃.(x).x∈ sʻκ",
       "printed_page": 424,
       "scan_leaf": 446,
       "lean_path": "Principia/Architecture/Star63TypeKernel5.lean",
@@ -28,16 +28,31 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱10·1",
+        "PM1:✱40·221",
+        "PM1:✱24·14"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·3. \\(\\vdash:(\\alpha).\\alpha\\in \\kappa.\\supset.(x).x\\in sʻ\\kappa\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱63·31",
       "kind": "derived-proposition",
-      "printed": "✱63·31. \\(\\vdash.sʻ(\\kappa\\cup -\\kappa)=sʻ\\kappa\\cup -sʻ\\kappa\\)",
+      "printed": "✱63·31. ⊢.sʻ(κ∪ -κ)=sʻκ∪ -sʻκ",
       "printed_page": 424,
       "scan_leaf": 446,
       "lean_path": "Principia/Architecture/Star63TypeKernel3.lean",
@@ -46,16 +61,34 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱40·171",
+        "PM1:✱22·88",
+        "PM1:✱63·3",
+        "PM1:✱10·221",
+        "PM1:✱10·13",
+        "PM1:✱5·1"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_latex_witness": "✱63·31. \\(\\vdash.sʻ(\\kappa\\cup -\\kappa)=sʻ\\kappa\\cup -sʻ\\kappa\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱63·321",
       "kind": "derived-proposition",
-      "printed": "✱63·321. \\(\\vdash.t_{1}ʻ\\kappa=t_{1}ʻt_{0}ʻ\\kappa=t_{0}ʻt_{1}ʻ\\kappa\\)",
+      "printed": "✱63·321. ⊢.t₁ʻκ=t₁ʻt₀ʻκ=t₀ʻt₁ʻκ",
       "printed_page": 425,
       "scan_leaf": 447,
       "lean_path": "Principia/Architecture/Star63TypeKernel3.lean",
@@ -64,16 +97,36 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱20·2",
+        "PM1:✱63·03",
+        "PM1:✱63·32",
+        "PM1:✱63·151"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star63TypeKernel3.star_63_151"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱63·151"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·321. \\(\\vdash.t_{1}ʻ\\kappa=t_{1}ʻt_{0}ʻ\\kappa=t_{0}ʻt_{1}ʻ\\kappa\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱63·33",
       "kind": "derived-proposition",
-      "printed": "✱63·33. \\(\\vdash:t_{0}ʻ\\kappa=t_{0}ʻ\\lambda.\\supset.t_{1}ʻ\\kappa=t_{1}ʻ\\lambda \\quad[\\text{*30·37.*63·32}]\\)",
+      "printed": "✱63·33. ⊢:t₀ʻκ=t₀ʻλ.⊃.t₁ʻκ=t₁ʻλ [*30·37.*63·32]",
       "printed_page": 425,
       "scan_leaf": 447,
       "lean_path": "Principia/Architecture/Star63TypeKernel2.lean",
@@ -82,16 +135,34 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱63·32",
+        "PM1:✱63·15",
+        "PM1:✱63·101",
+        "PM1:✱63·31",
+        "PM1:✱53·02",
+        "PM1:✱63·02"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·33. \\(\\vdash:t_{0}ʻ\\kappa=t_{0}ʻ\\lambda.\\supset.t_{1}ʻ\\kappa=t_{1}ʻ\\lambda \\quad[\\text{*30·37.*63·32}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱63·34",
       "kind": "derived-proposition",
-      "printed": "✱63·34. \\(\\vdash.t_{1}ʻtʻ\\alpha=t_{0}ʻ\\alpha=sʻtʻ\\alpha\\)",
+      "printed": "✱63·34. ⊢.t₁ʻtʻα=t₀ʻα=sʻtʻα",
       "printed_page": 425,
       "scan_leaf": 447,
       "lean_path": "Principia/Architecture/Star63TypeKernel3.lean",
@@ -104,7 +175,18 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·34. \\(\\vdash.t_{1}ʻtʻ\\alpha=t_{0}ʻ\\alpha=sʻtʻ\\alpha\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

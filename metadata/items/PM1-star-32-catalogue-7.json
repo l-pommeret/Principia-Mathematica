@@ -12,56 +12,89 @@
     {
       "id": "PM1:✱32·32",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\{\\text{sg}ʻ(R\\unicode{x228d}S)\\}ʻy=\\overrightarrow{R}ʻy\\cup \\overrightarrow{S}ʻy\\)",
+      "printed": "⊢.{sgʻ(R⊍S)}ʻy=R⃗ʻy∪ S⃗ʻy",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel4.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel4.star_32_32",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-07-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\{\\text{sg}ʻ(R\\unicode{x228d}S)\\}ʻy=\\overrightarrow{R}ʻy\\cup \\overrightarrow{S}ʻy\\)"
     },
     {
       "id": "PM1:✱32·34",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\{\\text{sg}ʻ(\\dot{-}R)\\}ʻy=-\\overrightarrow{R}ʻy\\)",
+      "printed": "⊢.{sgʻ(-̇R)}ʻy=-R⃗ʻy",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel4.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel4.star_32_34",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-07-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\{\\text{sg}ʻ(\\dot{-}R)\\}ʻy=-\\overrightarrow{R}ʻy\\)"
     },
     {
       "id": "PM1:✱32·35",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\{\\text{gs}ʻ(\\dot{-}R)\\}ʻx=-\\overleftarrow{R}ʻx\\)",
+      "printed": "⊢.{gsʻ(-̇R)}ʻx=-R⃖ʻx",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel4.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel4.star_32_35",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-07-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\{\\text{gs}ʻ(\\dot{-}R)\\}ʻx=-\\overleftarrow{R}ʻx\\)"
     }
   ],
   "ci_evidence": {

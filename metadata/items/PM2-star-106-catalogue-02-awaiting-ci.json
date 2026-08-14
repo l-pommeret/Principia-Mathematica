@@ -26,13 +26,15 @@
       "formal_scope": "exact typed reconstruction of N₀₀C as the range of the indexed family N₀₀c",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star106-catalogue-review.md",
-      "semantic_audit": "reviews/Star106-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star106-catalogue-review.md",
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM2:✱106·1",
@@ -44,12 +46,21 @@
       "declaration": "PM.Architecture.Star106OpeningKernel.star_106_1",
       "formal_scope": "exact typed pointwise membership equivalence obtained from the defining intersection for N₀₀c",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "semantic_audit": "reviews/Star106-catalogue-review.md"
+      "semantic_audit": "reviews/Star106-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱106·101",
@@ -61,14 +72,23 @@
       "declaration": "PM.Architecture.Star106OpeningKernel.star_106_101",
       "formal_scope": "exact typed pointwise membership equivalence obtained from the defining intersection for N¹¹c",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star106-catalogue-review.md",
-      "semantic_audit": "reviews/Star106-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star106-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

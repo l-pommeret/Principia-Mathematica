@@ -26,14 +26,34 @@
       "declaration": "PM.Architecture.Star50OpeningKernel4.star_50_56",
       "formal_scope": "exact equivalence of intersection nonemptiness and a diagonal witness in the Cartesian product; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱50·55",
+        "PM1:✱24·54",
+        "PM1:✱25·55",
+        "PM1:✱23·831",
+        "PM1:✱50·02"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.I"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·01"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱50·57",
@@ -45,14 +65,35 @@
       "declaration": "PM.Architecture.Star50OpeningKernel4.star_50_57",
       "formal_scope": "exact three-member equality for identity intersected with one- and two-sided restrictions; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱35·16",
+        "PM1:✱50·5",
+        "PM1:✱35·17",
+        "PM1:✱35·21"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.I",
+        "PM.Architecture.Star50OpeningKernel.J"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·01",
+        "PM1:✱50·02"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱50·58",
@@ -64,14 +105,31 @@
       "declaration": "PM.Architecture.Star50OpeningKernel4.star_50_58",
       "formal_scope": "exact three-way equivalence of diversity for one- and two-sided restrictions; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱50·57",
+        "PM1:✱50·41"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.J"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·02"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱50·59",
@@ -83,14 +141,31 @@
       "declaration": "PM.Architecture.Star50OpeningKernel4.star_50_59",
       "formal_scope": "exact image of a class under right-restricted identity as class intersection; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱37·412",
+        "PM1:✱50·16"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.I"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·01"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱50·6",
@@ -102,14 +177,31 @@
       "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_6",
       "formal_scope": "exact composition with right-restricted identity; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱35·23",
+        "PM1:✱50·4"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.I"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·01"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

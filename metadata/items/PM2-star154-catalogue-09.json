@@ -1,0 +1,138 @@
+{
+  "batch": "PM2-STAR154-CATALOGUE-09",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "343"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱154·8",
+      "kind": "derived-proposition",
+      "printed": "⊢ :P∈ Nr(X_Y)ʻQ.P smor R.R∈ tʻS.⊃ .R∈ Nr(S_Y)ʻQ.R∈ Nr(S_X)ʻP",
+      "printed_page": 343,
+      "lean_path": "Principia/FirstEdition/Volume2/Star154Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(\\vdash :P\\in \\text{Nr}(X_{Y})ʻQ.P\\,\\text{smor}\\,R.R\\in tʻS.\\supset .R\\in \\text{Nr}(S_{Y})ʻQ.R\\in \\text{Nr}(S_{X})ʻP\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱154·81",
+      "kind": "derived-proposition",
+      "printed": "⊢ :P∈ Nr(X_Y)ʻQ.⊃ .smorʻʻNr(X_Y)ʻQ∩ tʻS=Nr(S_Y)ʻQ=Nr(S_X)ʻP",
+      "printed_page": 343,
+      "lean_path": "Principia/FirstEdition/Volume2/Star154Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(\\vdash :P\\in \\text{Nr}(X_{Y})ʻQ.\\supset .\\text{smor}ʻʻ\\text{Nr}(X_{Y})ʻQ\\cap tʻS=\\text{Nr}(S_{Y})ʻQ=\\text{Nr}(S_{X})ʻP\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱154·82",
+      "kind": "derived-proposition",
+      "printed": "⊢ :μ ∈ NR^Y(X).∃ !μ .⊃ .smorʻʻμ ∩ tʻS∈ NR^Y(S)",
+      "printed_page": 343,
+      "lean_path": "Principia/FirstEdition/Volume2/Star154Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(\\vdash :\\mu \\in \\text{NR}^{Y}(X).\\exists !\\mu .\\supset .\\text{smor}ʻʻ\\mu \\cap tʻS\\in \\text{NR}^{Y}(S)\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱154·83",
+      "kind": "derived-proposition",
+      "printed": "⊢ :μ ∈ NR^Y(X).ν = smorʻʻμ ∩ tʻS.∃ !ν .⊃ . smorʻʻμ ∩ tʻS=smorʻʻν ∩ tʻS.μ =smorʻʻν ∩ tʻX",
+      "printed_page": 343,
+      "lean_path": "Principia/FirstEdition/Volume2/Star154Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash :\\mu \\in \\text{NR}^{Y}(X).\\nu =&\\text{smor}ʻʻ\\mu \\cap tʻS.\\exists !\\nu .\\supset .\\\\ &\\text{smor}ʻʻ\\mu \\cap tʻS=\\text{smor}ʻʻ\\nu \\cap tʻS.\\mu =\\text{smor}ʻʻ\\nu \\cap tʻX\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱154·84",
+      "kind": "derived-proposition",
+      "printed": "⊢ :(∃ P).P smor X.P∈ tʻX.Q smor P.≡ .Q smor X",
+      "printed_page": 343,
+      "lean_path": "Principia/FirstEdition/Volume2/Star154Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(\\vdash :(\\exists P).P\\,\\text{smor}\\,X.P\\in tʻX.Q\\,\\text{smor}\\,P.\\equiv .Q\\,\\text{smor}\\,X\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

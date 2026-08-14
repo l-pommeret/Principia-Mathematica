@@ -8,7 +8,14 @@
       170
     ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
-    "leaf_derivatives": [{"scan_leaf": 170, "printed_page": 148, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page170-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg", "sha256": "59d588829248e1c1015dbd46daa67323af388dbe310dbd5c34c02cd2681173c9"}],
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 170,
+        "printed_page": 148,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page170-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "59d588829248e1c1015dbd46daa67323af388dbe310dbd5c34c02cd2681173c9"
+      }
+    ],
     "scan_sha256": "59d588829248e1c1015dbd46daa67323af388dbe310dbd5c34c02cd2681173c9",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
@@ -25,10 +32,15 @@
       "scan_leaf": 170,
       "lean_path": "Principia/Architecture/Star10Q268Kernel.lean",
       "declaration": "PM.Architecture.Star10Q268Kernel.star_10_23",
-      "formal_scope": "exact closed Raw universal/existential implication equivalence",
+      "formal_scope": "exact Raw target plus axiom-free component certificate; no PM assertion judgement for the endpoint",
+      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-assertion-judgement",
+      "integration_blocked": true,
+      "blocking_reason": "The declaration is a def returning a theorem-specific Prop structure whose endpoint field is target = target; it has no theorem-level PM judgement or printed-formula reading.",
+      "migration_audit": "reviews/Q267-Q269-pm-derivation-v1-migration-audit.md",
+      "axiom_report_status": "axiom-free",
       "printed_dependencies": [
         "PM1:✱4·2",
         "PM1:✱9·03",
@@ -40,14 +52,44 @@
         "PM1:✱10·11",
         "PM1:✱10·11·21"
       ],
-      "lean_dependencies": ["PM.Architecture.Star10Q264Kernel.star_10_1", "PM.Architecture.Star10Q265FinalPrerequisites.star_10_23", "PM.Architecture.Star10Q267Kernel.star_10_21"],
-      "normalized_dependencies": ["PM1:✱10·1", "PM1:✱10·21"],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·01","PM1:✱10·11","PM1:✱10·11·21","PM1:✱1·01","PM1:✱4·2","PM1:✱9·02","PM1:✱9·03"],"strict_attempt_evidence":"reviews/Q268-star-10-23-audit.md","editorial_note":"The theorem-specific certificate directly retains ✱10·21/·1. Its same-item prerequisite helper creates no historical self-edge; the remaining printed steps are not direct calls in the indexed body."}
+      "lean_dependencies": [
+        "PM.Architecture.Star10Q264Kernel.star_10_1",
+        "PM.Architecture.Star10Q267Kernel.star_10_21"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱10·1",
+        "PM1:✱10·21"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱10·01",
+          "PM1:✱10·11",
+          "PM1:✱10·11·21",
+          "PM1:✱1·01",
+          "PM1:✱4·2",
+          "PM1:✱9·02",
+          "PM1:✱9·03"
+        ],
+        "strict_attempt_evidence": "reviews/Q268-star-10-23-audit.md",
+        "editorial_note": "The theorem-specific certificate directly retains ✱10·21/·1. Its same-item prerequisite helper creates no historical self-edge; the remaining printed steps are not direct calls in the indexed body."
+      },
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

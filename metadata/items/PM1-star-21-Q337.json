@@ -37,7 +37,7 @@
       "declaration": "PM.Architecture.Star21Q337Kernel.star_21_58",
       "formal_scope": "exact contextual binary-relation description equality",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_status": "integrated-local",
       "printed_dependencies": [
         "✱4·2",
@@ -60,7 +60,16 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q337-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱21·6",
@@ -72,7 +81,7 @@
       "declaration": "PM.Architecture.Star21Q337Kernel.star_21_6",
       "formal_scope": "exact classical relation quantifier-negation equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_status": "integrated-local",
       "printed_dependencies": [
         "✱20·6"
@@ -89,7 +98,16 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q337-review.md"
+      "parser_evidence": "reviews/Q337-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱21·61",
@@ -101,7 +119,7 @@
       "declaration": "PM.Architecture.Star21Q337Kernel.star_21_61",
       "formal_scope": "exact typed universal relation instantiation",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_status": "integrated-local",
       "printed_dependencies": [
         "✱20·61"
@@ -118,7 +136,16 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q337-review.md"
+      "parser_evidence": "reviews/Q337-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱21·62",
@@ -130,7 +157,7 @@
       "declaration": "PM.Architecture.Star21Q337Kernel.star_21_62",
       "formal_scope": "exact generalization from admissible binary-relation extensions",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_status": "integrated-local",
       "printed_dependencies": [
         "✱20·62"
@@ -147,7 +174,16 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q337-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱21·63",
@@ -155,28 +191,33 @@
       "printed": "⊢ : (R). p ∨ fR .⊃ : p .∨ . (R). fR",
       "printed_page": 215,
       "scan_leaf": 237,
-      "lean_path": "Principia/Architecture/Star21Q337Kernel.lean",
-      "declaration": "PM.Architecture.Star21Q337Kernel.star_21_63",
-      "formal_scope": "exact universal relation disjunction extraction",
+      "lean_path": "Principia/Deduction/Star21Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_21_63",
+      "formal_scope": "exact universal relation disjunction extraction in the ramified PM derivation calculus",
+      "formalization_level": "pm-derivation-v1",
+      "axiom_report_status": "axiom-free",
+      "demonstration_provenance": "follows-printed",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "unbuilt",
       "integration_status": "integrated-local",
       "printed_dependencies": [
         "✱20·63"
       ],
       "normalized_dependencies": [],
-      "lean_dependencies": [],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": [
-          "✱20·63"
-        ],
-        "strict_attempt_evidence": "reviews/Q337-canonical-integration.md",
-        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
-      },
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_10_12"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q337-review.md"
+      "parser_evidence": "reviews/Q337-review.md",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -4,16 +4,22 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "624–625",
-    "scan_leaves": [646, 647],
+    "scan_leaves": [
+      646,
+      647
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
   "items": [
     {
       "id": "PM1:✱94·62",
       "kind": "derived-proposition",
-      "printed": "✱94·62. ⊢ : R|S=S|R .⊃. Rₚₒ|Sₚₒ=Sₚₒ|Rₚₒ",
+      "printed": "✱94·62. ⊢:R| S=S| R.⊃ .Rₚₒ| Sₚₒ=Sₚₒ| Rₚₒ",
       "printed_page": 624,
       "scan_leaf": 646,
       "lean_path": "Principia/Architecture/Star94Kernel.lean",
@@ -22,13 +28,26 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-conclusion-replaced-by-premise",
-      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star94-catalogue-05-semantic-audit.md"
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star94-catalogue-05-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱94·63",
       "kind": "derived-proposition",
-      "printed": "✱94·63. ⊢ : R|S=S|R .⊃. (R|S)ₚₒ ⪽ Rₚₒ|Sₚₒ",
+      "printed": "✱94·63. ⊢ : R| S = S| R. ⊃ .(R| S)ₚₒ ⪽ Rₚₒ| Sₚₒ",
       "printed_page": 625,
       "scan_leaf": 647,
       "lean_path": "Principia/Architecture/Star94Kernel.lean",
@@ -37,13 +56,26 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-conclusion-replaced-by-premise",
-      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star94-catalogue-05-semantic-audit.md"
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱94·64",
       "kind": "derived-proposition",
-      "printed": "✱94·64. ⊢ : R|S=S|R .⊃. (R|S)∗ ⪽ R∗|S∗",
+      "printed": "✱94·64. ⊢: R| S = S| R.⊃.(R| S)_∗ ⪽ R_∗| S_∗",
       "printed_page": 625,
       "scan_leaf": 647,
       "lean_path": "Principia/Architecture/Star94Kernel.lean",
@@ -52,9 +84,26 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-conclusion-replaced-by-premise",
-      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star94-catalogue-05-semantic-audit.md"
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

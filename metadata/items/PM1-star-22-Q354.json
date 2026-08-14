@@ -17,6 +17,7 @@
   "items": [
     {
       "id": "PM1:✱22·65",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α ⊂ β .∨ . α ⊂ γ .⊃ . α ⊂ β ∪ γ",
       "printed_page": 223,
@@ -25,8 +26,8 @@
       "declaration": "PM.Architecture.Star22Q354Kernel.star_22_65",
       "formal_scope": "exact constructive inclusion into a union from either inclusion premise",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱22·61",
         "✱22·57",
@@ -44,10 +45,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q354-review.md",
         "editorial_note": "The exact elementwise inclusion closes directly; printed propositional citations remain historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·66",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α ⊂ β .⊃ . α ∪ γ ⊂ β ∪ γ",
       "printed_page": 223,
@@ -56,8 +67,8 @@
       "declaration": "PM.Architecture.Star22Q354Kernel.star_22_66",
       "formal_scope": "exact constructive monotonicity of union in its first operand",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱2·38"
       ],
@@ -71,10 +82,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q354-review.md",
         "editorial_note": "The exact elementwise map closes by cases on union membership; the printed propositional citation remains historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·68",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . (α ∩ β) ∪ (α ∩ γ) = α ∩ (β ∪ γ)",
       "printed_page": 223,
@@ -83,15 +104,33 @@
       "declaration": "PM.Architecture.Star22Q354Kernel.star_22_68",
       "formal_scope": "exact typed distributivity of intersection over union",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "✱22·34",
+        "✱22·33",
+        "✱4·4",
+        "✱22·34",
+        "✱22·33",
+        "✱10·11",
+        "✱20·43"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "dependency_fidelity": "strict-closure"
+      "dependency_fidelity": "strict-closure",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱22·69",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . (α ∪ β) ∩ (α ∪ γ) = α ∪ (β ∩ γ)",
       "printed_page": 223,
@@ -100,8 +139,8 @@
       "declaration": "PM.Architecture.Star22Q354Kernel.star_22_69",
       "formal_scope": "exact typed distributivity of union over intersection",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "Similar proof",
         "✱4·41"
@@ -117,10 +156,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q354-review.md",
         "editorial_note": "The exact extensional equality closes by complete case analysis; the printed similar-proof citation remains historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·7",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . (α ∪ β) ∪ γ = α ∪ (β ∪ γ)",
       "printed_page": 223,
@@ -129,8 +178,8 @@
       "declaration": "PM.Architecture.Star22Q354Kernel.star_22_7",
       "formal_scope": "exact typed associativity of class union",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱4·33"
       ],
@@ -144,6 +193,15 @@
         ],
         "strict_attempt_evidence": "reviews/Q354-review.md",
         "editorial_note": "The exact extensional equality closes by complete case analysis; the printed propositional citation remains historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

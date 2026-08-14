@@ -1,0 +1,205 @@
+{
+  "batch": "PM2-STAR122-CATALOGUE-07",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "263–264",
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱122·41",
+      "kind": "derived-proposition",
+      "printed": "✱122·41. ⊢ :R∈ Prog.α ⊂ DʻR.y∈ α -Rₚₒʻʻα .⊃ .α ⊂ R(BʻR⊢⊣ y)",
+      "printed_page": 263,
+      "scan_leaf": 303,
+      "lean_path": "Principia/FirstEdition/Volume2/Star122Source.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star122Source.star_122_41",
+      "formal_scope": "printed demonstration transcribed; formalization not yet prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱37·1",
+        "PM1:✱10·51",
+        "PM2:✱122·21",
+        "PM2:✱122·1",
+        "PM2:✱121·103"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱122·42",
+      "kind": "derived-proposition",
+      "printed": "✱122·42. ⊢ :R∈ Prog.α ⊂ R(BʻR⊢⊣ y).y∈ α .⊃ .y= max_Rʻα",
+      "printed_page": 263,
+      "scan_leaf": 303,
+      "lean_path": "Principia/FirstEdition/Volume2/Star122Source.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star122Source.star_122_42",
+      "formal_scope": "printed demonstration transcribed; formalization not yet prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱121·103",
+        "PM1:✱91·574",
+        "PM2:✱122·16",
+        "PM1:✱37·1",
+        "PM1:✱10·51",
+        "PM1:✱96·303",
+        "PM1:✱93·115"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱122·44",
+      "kind": "derived-proposition",
+      "printed": "✱122·44. ⊢ :R∈ Prog .α ⊂ Rₚₒʻʻα .∃ !α .P=Rₚₒ⥏α .Q =P-̇ P².⊃ . Q∈ 1→ 1.Q ⪽ Rₚₒ",
+      "printed_page": 263,
+      "scan_leaf": 303,
+      "lean_path": "Principia/FirstEdition/Volume2/Star122Source.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star122Source.star_122_44",
+      "formal_scope": "printed demonstration transcribed; formalization not yet prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱23·43",
+        "PM1:✱35·442",
+        "PM1:✱36·13",
+        "PM1:✱3·47",
+        "PM2:✱122·21"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱122·441",
+      "kind": "derived-proposition",
+      "printed": "✱122·441. ⊢ :Hp*122·44.⊃ .DʻQ=α",
+      "printed_page": 263,
+      "scan_leaf": 303,
+      "lean_path": "Principia/FirstEdition/Volume2/Star122Source.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star122Source.star_122_441",
+      "formal_scope": "printed demonstration transcribed; formalization not yet prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱37·41",
+        "PM1:✱37·1",
+        "PM1:✱36·13",
+        "PM2:✱122·23",
+        "PM1:✱93·11",
+        "PM1:✱35·442",
+        "PM1:✱37·311",
+        "PM1:✱32·31",
+        "PM1:✱32·35",
+        "PM1:✱33·4"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱122·442",
+      "kind": "derived-proposition",
+      "printed": "✱122·442. ⊢ :Hp*122·44.⊃ .P=Qₚₒ",
+      "printed_page": 264,
+      "scan_leaf": 304,
+      "lean_path": "Principia/FirstEdition/Volume2/Star122Source.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star122Source.star_122_442",
+      "formal_scope": "printed demonstration transcribed; formalization not yet prepared",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱23·43",
+        "PM1:✱91·56",
+        "PM1:✱91·171",
+        "PM1:✱41·151",
+        "PM1:✱36·13",
+        "PM2:✱121·1",
+        "PM2:✱122·441",
+        "PM2:✱122·27",
+        "PM1:✱37·461",
+        "PM1:✱90·151",
+        "PM1:✱22·43",
+        "PM2:✱122·28",
+        "PM1:✱91·52"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

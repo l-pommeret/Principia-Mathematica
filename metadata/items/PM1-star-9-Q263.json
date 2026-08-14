@@ -34,8 +34,13 @@
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_6",
       "formal_scope": "typed certificate that the four displayed expressions inhabit one assigned FirstOrder carrier",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "formalization_level": "prepared",
+      "pm_migration_status": "blocked",
+      "pm_ast": "the four displayed FirstOrder expressions over one apparent matrix",
+      "pm_judgement": "SameAssignedType4 structure, not an inductive PM derivation relation",
+      "pm_certificate_blocker": "T3 fails: SameAssignedType4 is a structure assembled from unconditional SameAssignedType.witness constructors; the printed ✱9·131 citation is not consumed",
       "printed_dependencies": [
         "PM1:✱9·131"
       ],
@@ -50,7 +55,16 @@
         "strict_attempt_evidence": "reviews/Q263-review.md",
         "editorial_note": "The shared Lean carrier directly realizes the printed same-type conclusion; ✱9·131 motivates that typing historically but is not a theorem call in the carrier witness."
       },
-      "blocked_dependencies": []
+      "blocked_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱9·61",
@@ -62,8 +76,13 @@
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_61",
       "formal_scope": "capture-safe pointwise disjunction of same-indexed elementary function matrices",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "formalization_level": "prepared",
+      "pm_migration_status": "blocked",
+      "pm_ast": "Apparent.disj φ ψ at the shared indexed argument places",
+      "pm_judgement": "none: star_9_61 is a data-producing def rather than a theorem in an inductive formation judgement",
+      "pm_certificate_blocker": "T2 and T3 fail: the printed existence proposition is encoded only as a def, and its ✱9·14·15 citation is not derived",
       "printed_dependencies": [
         "PM1:✱9·14·15"
       ],
@@ -78,7 +97,17 @@
         "strict_attempt_evidence": "reviews/Q263-review.md",
         "editorial_note": "The indexed formation witness is a direct use of capture-safe syntax infrastructure; the printed compound citation motivates formation but is not a theorem call in the witness body."
       },
-      "blocked_dependencies": []
+      "blocked_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱9·62",
@@ -90,8 +119,13 @@
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_62",
       "formal_scope": "the printed universal and existential y-closures, disjoined with ψx while retaining x",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "formalization_level": "prepared",
+      "pm_migration_status": "blocked",
+      "pm_ast": "Star_9_62Functions pair of universal/existential disjunction matrices",
+      "pm_judgement": "none: star_9_62 is a structure-producing def rather than a theorem in an inductive formation judgement",
+      "pm_certificate_blocker": "T2 and T3 fail: the printed existence proposition and its ✱9·15/✱9·14/✱9·03 chain have no derivation certificate",
       "printed_dependencies": [
         "PM1:✱9·15",
         "PM1:✱9·14",
@@ -110,7 +144,17 @@
         "strict_attempt_evidence": "reviews/Q263-review.md",
         "editorial_note": "The two indexed formation witnesses are direct uses of typed binder and disjunction syntax; the printed citations motivate formation but are not theorem calls in the witness body."
       },
-      "blocked_dependencies": []
+      "blocked_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱9·63",
@@ -122,8 +166,13 @@
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_63",
       "formal_scope": "all four independently bound always/sometimes combinations covered by etc.",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "formalization_level": "prepared",
+      "pm_migration_status": "blocked",
+      "pm_ast": "Star_9_63Functions record of four independently quantified disjunction matrices",
+      "pm_judgement": "none: star_9_63 is a structure-producing def rather than a theorem in an inductive formation judgement",
+      "pm_certificate_blocker": "T2 and T3 fail: the printed existence proposition and its proof-as-above chain have no derivation certificate",
       "printed_dependencies": [
         "Proof as above"
       ],
@@ -138,12 +187,22 @@
         "strict_attempt_evidence": "reviews/Q263-review.md",
         "editorial_note": "The four independently bound combinations are constructed directly by typed syntax; the prose cross-reference is preserved as printed evidence but creates no direct Lean theorem edge."
       },
-      "blocked_dependencies": []
+      "blocked_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

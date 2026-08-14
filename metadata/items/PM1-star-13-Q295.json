@@ -40,8 +40,8 @@
       "declaration": "PM.Architecture.Star13Q295IdentityKernel.star_13_21",
       "formal_scope": "exact two-variable universally bound identity-elimination equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱11·62",
         "PM1:✱13·191"
@@ -59,7 +59,16 @@
         "editorial_note": "The exact endpoint closes directly by equality reflexivity and elimination."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q295-star-13-identity-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱13·22",
@@ -71,8 +80,8 @@
       "declaration": "PM.Architecture.Star13Q295IdentityKernel.star_13_22",
       "formal_scope": "exact two-variable existential identity-elimination equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱11·55",
         "PM1:✱13·195"
@@ -90,7 +99,16 @@
         "editorial_note": "The exact endpoint closes directly by equality reflexivity and elimination."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q295-star-13-identity-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -36,11 +36,29 @@
         "✱38·2",
         "✱37·103"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star38Kernel.RightSection",
+        "PM.Architecture.Star38Kernel.Slice"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱38·02",
+        "PM1:✱38·03"
+      ],
       "audit_refusal": {
         "evidence": "reviews/Star38-catalogue-03-04-review.md",
         "reason": "The Lean target states only one equality and omits the intermediate slice-comprehension presentation and the final triple-image presentation from PM's four-term chain."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

@@ -11,14 +11,23 @@
       "formal_scope": "audited typed irreflexivity endpoint",
       "lean_path": "Principia/Architecture/Star205OpeningKernel.lean",
       "declaration": "PM.Architecture.Star205OpeningKernel.star_205_195",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "integration_blocked": false,
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star205-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱205·21",
@@ -28,14 +37,23 @@
       "formal_scope": "audited typed connex minimum endpoint",
       "lean_path": "Principia/Architecture/Star205OpeningKernel.lean",
       "declaration": "PM.Architecture.Star205OpeningKernel.star_205_21",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "integration_blocked": false,
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star205-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

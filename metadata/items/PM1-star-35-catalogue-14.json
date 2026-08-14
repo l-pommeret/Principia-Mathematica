@@ -14,112 +14,155 @@
     {
       "id": "PM1:✱35·65",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\beta\\subset\\text{ᗡ}ʻR.\\supset.\\text{ᗡ}ʻ(R\\upharpoonright \\beta)=\\beta \\quad[\\text{*35·64.*22·621}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:β⊂ᗡʻR.⊃.ᗡʻ(R↾ β)=β [*35·64.*22·621]",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱33·13",
+        "PM1:✱34·1",
+        "PM1:✱11·23",
+        "PM1:✱10·35",
+        "PM1:✱35·101"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35LateKernel.lean",
       "declaration": "PM.Architecture.Star35LateKernel.star_35_65",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "nominal mapping pending strict semantic audit",
+      "printed_latex_witness": "\\(\\vdash:\\beta\\subset\\text{ᗡ}ʻR.\\supset.\\text{ᗡ}ʻ(R\\upharpoonright \\beta)=\\beta \\quad[\\text{*35·64.*22·621}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·66",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\text{ᗡ}ʻR\\subset\\beta.\\equiv.R\\upharpoonright \\beta=R \\quad[\\text{Proof as in *35·63}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:ᗡʻR⊂β.≡.R↾ β=R [Proof as in *35·63]",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱35·61",
+        "PM1:✱35·64",
+        "PM1:✱35·21",
+        "PM1:✱22·49",
+        "PM1:✱24·13",
+        "PM1:✱34·531"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35LateKernel.lean",
       "declaration": "PM.Architecture.Star35LateKernel.star_35_66",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "nominal mapping pending strict semantic audit",
+      "printed_latex_witness": "\\(\\vdash:\\text{ᗡ}ʻR\\subset\\beta.\\equiv.R\\upharpoonright \\beta=R \\quad[\\text{Proof as in *35·63}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·671",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\text{D}ʻ(R\\mid S)=\\text{D}ʻ(R\\upharpoonright \\text{D}ʻS)\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.Dʻ(R| S)=Dʻ(R↾ DʻS)",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35LateKernel.lean",
       "declaration": "PM.Architecture.Star35LateKernel.star_35_671",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "nominal mapping pending strict semantic audit",
+      "printed_latex_witness": "\\(\\vdash.\\text{D}ʻ(R\\mid S)=\\text{D}ʻ(R\\upharpoonright \\text{D}ʻS)\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·672",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\text{ᗡ}ʻ(R\\mid S)=\\text{ᗡ}ʻ(\\text{ᗡ}ʻR\\upharpoonleft S) \\quad[\\text{Similar proof}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.ᗡʻ(R| S)=ᗡʻ(ᗡʻR↿ S) [Similar proof]",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35LateKernel.lean",
       "declaration": "PM.Architecture.Star35LateKernel.star_35_672",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "nominal mapping pending strict semantic audit",
+      "printed_latex_witness": "\\(\\vdash.\\text{ᗡ}ʻ(R\\mid S)=\\text{ᗡ}ʻ(\\text{ᗡ}ʻR\\upharpoonleft S) \\quad[\\text{Similar proof}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱35·68",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\alpha\\cap \\beta=\\Lambda.\\supset.(\\alpha\\upharpoonleft R\\upharpoonright \\beta)^{2}=\\dot{\\Lambda}\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:α∩ β=Λ.⊃.(α↿ R↾ β)²=Λ̇",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35LateKernel.lean",
       "declaration": "PM.Architecture.Star35LateKernel.star_35_68",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "nominal mapping pending strict semantic audit",
+      "printed_latex_witness": "\\(\\vdash:\\alpha\\cap \\beta=\\Lambda.\\supset.(\\alpha\\upharpoonleft R\\upharpoonright \\beta)^{2}=\\dot{\\Lambda}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

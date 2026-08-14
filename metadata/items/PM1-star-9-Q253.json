@@ -4,10 +4,16 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "135",
-    "scan_leaves": [157],
+    "scan_leaves": [
+      157
+    ],
     "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050",
+    "WS-PM1"
+  ],
   "aristotle_evidence": {
     "project_id": "04f70730-8f11-494c-aab8-37e62216d354",
     "task_id": "2a3da878-e0aa-4702-883f-c16633b5e07d",
@@ -17,40 +23,116 @@
   },
   "items": [
     {
-      "id": "PM1:✱9·03", "kind": "definition",
-      "printed": "(x).φx.∨.p :=. (x).φx∨p  Df", "printed_page": 135, "scan_leaf": 157,
+      "id": "PM1:✱9·03",
+      "kind": "definition",
+      "printed": "(x).φx.∨.p :=. (x).φx∨p  Df",
+      "printed_page": 135,
+      "scan_leaf": 157,
       "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_03",
       "formal_scope": "universal first-order proposition disjoined on the right with an elementary proposition, pushed beneath the same binder",
-      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
-      "source_status": "double-witness-checked", "formal_status": "kernel-checked", "integration_status": "canonical-kernel-integrated"
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "source_status": "double-witness-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "formalization_level": "pm-definition-v1",
+      "pm_ast": "FirstOrder.disjRightElementary (FirstOrder.always body) proposition",
+      "pm_judgement": "definitional expansion in FirstOrder syntax; no assertion judgement is claimed",
+      "pm_certificate": "reducible definition star_9_03, certified only by kernel unfolding",
+      "certificate_kind": "definition-unfolding",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
-      "id": "PM1:✱9·04", "kind": "definition",
-      "printed": "p.∨.(x).φx :=. (x).p∨φx  Df", "printed_page": 135, "scan_leaf": 157,
+      "id": "PM1:✱9·04",
+      "kind": "definition",
+      "printed": "p.∨.(x).φx :=. (x).p∨φx  Df",
+      "printed_page": 135,
+      "scan_leaf": 157,
       "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_04",
       "formal_scope": "elementary proposition disjoined on the left with a universal first-order proposition, pushed beneath the same binder",
-      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
-      "source_status": "double-witness-checked", "formal_status": "kernel-checked", "integration_status": "canonical-kernel-integrated"
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "source_status": "double-witness-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "formalization_level": "pm-definition-v1",
+      "pm_ast": "FirstOrder.disjElementaryLeft proposition (FirstOrder.always body)",
+      "pm_judgement": "definitional expansion in FirstOrder syntax; no assertion judgement is claimed",
+      "pm_certificate": "reducible definition star_9_04, certified only by kernel unfolding",
+      "certificate_kind": "definition-unfolding",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
-      "id": "PM1:✱9·05", "kind": "definition",
-      "printed": "(∃x).φx.∨.p :=. (∃x).φx∨p  Df", "printed_page": 135, "scan_leaf": 157,
+      "id": "PM1:✱9·05",
+      "kind": "definition",
+      "printed": "(∃x).φx.∨.p :=. (∃x).φx∨p  Df",
+      "printed_page": 135,
+      "scan_leaf": 157,
       "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_05",
       "formal_scope": "existential first-order proposition disjoined on the right with an elementary proposition, pushed beneath the same binder",
-      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
-      "source_status": "double-witness-checked", "formal_status": "kernel-checked", "integration_status": "canonical-kernel-integrated"
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "source_status": "double-witness-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "formalization_level": "pm-definition-v1",
+      "pm_ast": "FirstOrder.disjRightElementary (FirstOrder.sometimes body) proposition",
+      "pm_judgement": "definitional expansion in FirstOrder syntax; no assertion judgement is claimed",
+      "pm_certificate": "reducible definition star_9_05, certified only by kernel unfolding",
+      "certificate_kind": "definition-unfolding",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
-      "id": "PM1:✱9·06", "kind": "definition",
-      "printed": "p.∨.(∃x).φx :=. (∃x).p∨φx  Df", "printed_page": 135, "scan_leaf": 157,
+      "id": "PM1:✱9·06",
+      "kind": "definition",
+      "printed": "p.∨.(∃x).φx :=. (∃x).p∨φx  Df",
+      "printed_page": 135,
+      "scan_leaf": 157,
       "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_06",
       "formal_scope": "elementary proposition disjoined on the left with an existential first-order proposition, pushed beneath the same binder",
-      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
-      "source_status": "double-witness-checked", "formal_status": "kernel-checked", "integration_status": "canonical-kernel-integrated"
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "source_status": "double-witness-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "formalization_level": "pm-definition-v1",
+      "pm_ast": "FirstOrder.disjElementaryLeft proposition (FirstOrder.sometimes body)",
+      "pm_judgement": "definitional expansion in FirstOrder syntax; no assertion judgement is claimed",
+      "pm_certificate": "reducible definition star_9_06, certified only by kernel unfolding",
+      "certificate_kind": "definition-unfolding",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T6"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

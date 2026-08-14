@@ -3,18 +3,27 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "587",
-    "scan_leaves": [609],
+    "scan_leaves": [
+      609
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"},
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
   "batch": "PM1-STAR91-CATALOGUE-04",
   "items": [
     {
       "id": "PM1:✱91·01",
       "kind": "definition",
-      "printed": "✱91·01. R_st = (R|)_* Df",
+      "printed": "✱91·01. Rₛₜ=(R|)_∗ Df",
       "printed_page": 587,
       "scan_leaf": 609,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
@@ -28,12 +37,20 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·02",
       "kind": "definition",
-      "printed": "✱91·02. R_ts = (|R)_* Df",
+      "printed": "✱91·02. Rₜₛ=(| R)_∗ Df",
       "printed_page": 587,
       "scan_leaf": 609,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
@@ -47,7 +64,15 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ]
 }

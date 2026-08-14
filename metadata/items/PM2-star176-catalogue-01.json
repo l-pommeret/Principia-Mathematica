@@ -1,0 +1,154 @@
+{
+  "batch": "PM2-STAR176-CATALOGUE-01",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "461"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱176·01",
+      "kind": "definition",
+      "printed": "P exp Q = ProdʻP↓_., ^;Q Df",
+      "printed_page": 461,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(P \\,\\text{exp}\\,\\, Q = \\text{Prod}ʻP\\downarrow_{.,} ^{;}Q \\quad\\text{Df}\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱176·02",
+      "kind": "definition",
+      "printed": "P^Q = ṡ ^;(P exp Q) Df",
+      "printed_page": 461,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(P^{Q} = \\dot{s} ^{;}(P \\,\\text{exp}\\,\\, Q) \\quad\\text{Df}\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱176·1",
+      "kind": "derived-proposition",
+      "printed": "⊢ . P exp Q = ProdʻP↓_., ^;Q = D^;Π ʻP↓_., ^;Q [(*176·01)]",
+      "printed_page": 461,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱176·01"
+      ],
+      "printed_latex_witness": "\\(\\vdash . P \\,\\text{exp}\\,\\, Q = \\text{Prod}ʻP\\downarrow_{.,} ^{;}Q = \\text{D}^{;}\\Pi ʻP\\downarrow_{.,} ^{;}Q \\quad[(*176·01)]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱176·11",
+      "kind": "derived-proposition",
+      "printed": "⊢ . P^Q = ṡ ^;(P exp Q) = ṡ ^;ProdʻP↓_., ^;Q = ṡ ^;D^;Π ʻP↓_., ^;Q [(*176·02)]",
+      "printed_page": 461,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱176·02"
+      ],
+      "printed_latex_witness": "\\(\\vdash . P^{Q} = \\dot{s} ^{;}(P \\,\\text{exp}\\,\\, Q) = \\dot{s} ^{;}\\text{Prod}ʻP\\downarrow_{.,} ^{;}Q = \\dot{s} ^{;}\\text{D}^{;}\\Pi ʻP\\downarrow_{.,} ^{;}Q \\quad[(*176·02)]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱176·12",
+      "kind": "derived-proposition",
+      "printed": "⊢ :: μ (P exp Q) ν . ≡ :. μ , ν ∈ (CʻP) exp (CʻQ) :. (∃ y, x, x') : x ↓ y ∈ μ . x' ↓ y ∈ ν . xPx' : zQy . z ≠ y . w ↓ z ∈ μ . ⊃ w, z . w ↓ z ∈ ν",
+      "printed_page": 461,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱165·21",
+        "PM2:✱165·12",
+        "PM2:✱163·12",
+        "PM1:✱85·1",
+        "PM2:✱115·1",
+        "PM1:✱33·5",
+        "PM2:✱165·14",
+        "PM2:✱116·01",
+        "PM1:✱81·5",
+        "PM2:✱150·6",
+        "PM2:✱150·55",
+        "PM2:✱116·11"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

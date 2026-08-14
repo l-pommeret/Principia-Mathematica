@@ -25,11 +25,27 @@
       "declaration": "PM.Architecture.Star24Q365Kernel.star_24_31",
       "formal_scope": "exact polymorphic inclusion/complement-union universal equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "✱10·11",
+        "✱10·271",
+        "✱22·35",
+        "✱22·34",
+        "✱24·14"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱24·311",
@@ -41,11 +57,26 @@
       "declaration": "PM.Architecture.Star24Q365Kernel.star_24_311",
       "formal_scope": "exact polymorphic complement-inclusion/null-intersection equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "✱4·51",
+        "✱4·62",
+        "✱22·33",
+        "✱24·15"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱24·312",
@@ -57,11 +88,25 @@
       "declaration": "PM.Architecture.Star24Q365Kernel.star_24_312",
       "formal_scope": "exact polymorphic complement inclusion/universal union equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "✱4·64",
+        "✱22·34",
+        "✱24·14"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱24·313",
@@ -73,8 +118,8 @@
       "declaration": "PM.Architecture.Star24Q365Kernel.star_24_313",
       "formal_scope": "exact polymorphic disjointness/class-difference equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱24·311",
         "✱22·621"
@@ -90,6 +135,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q365-review.md",
         "editorial_note": "The exact extensional proof closes directly; PM's printed class-calculus citations remain recorded as historical dependencies."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -102,16 +157,29 @@
       "declaration": "PM.Architecture.Star24Q365Kernel.star_24_32",
       "formal_scope": "exact polymorphic null-union equivalence with paired null equalities",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "✱22·59",
+        "✱24·13"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

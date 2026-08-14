@@ -1,1 +1,251 @@
-{"batch":"PM1-STAR14-Q308","edition":"first","volume":1,"source_range":{"printed_pages":"192","scan_leaves":[214],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":214,"printed_page":192,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page214-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg","sha256":"3410d00d20c202d62b9fed3020056ad8bd4b995c55e7ffc0f48d922e775c721d"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱14·242","kind":"derived-proposition","printed":"⊢ : φx .≡ₓ. x = b : ⊃ : ψb .≡ . ψ(℩x)(φx)","printed_page":192,"scan_leaf":214,"lean_path":"Principia/Architecture/Star14Q308Kernel.lean","declaration":"PM.Architecture.Star14Q308Kernel.star_14_242","formal_scope":"exact contextual description substitution equivalence","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","parser_status":"reviewed-gap","parser_evidence":"reviews/Q308-review.md","printed_dependencies":["✱14·202·15"],"normalized_dependencies":[],"lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱14·202·15"],"strict_attempt_evidence":"reviews/Q308-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱14·25","kind":"derived-proposition","printed":"⊢ : E!(℩x)(φx) .⊃ : φx ⊃ₓ ψx .≡ . ψ(℩x)(φx)","printed_page":192,"scan_leaf":214,"lean_path":"Principia/Architecture/Star14Q308Kernel.lean","declaration":"PM.Architecture.Star14Q308Kernel.star_14_25","formal_scope":"exact conditional contextual-description evaluation","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","parser_status":"reviewed-gap","parser_evidence":"reviews/Q308-review.md","printed_dependencies":["✱14·242","✱14·11"],"normalized_dependencies":[],"lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱14·11","✱14·242"],"strict_attempt_evidence":"reviews/Q308-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱14·26","kind":"derived-proposition","printed":"⊢ : E!(℩x)(φx) .⊃ : (∃x). φx . ψx .≡ . ψ{(℩x)(φx)}","printed_page":192,"scan_leaf":214,"lean_path":"Principia/Architecture/Star14Q308Kernel.lean","declaration":"PM.Architecture.Star14Q308Kernel.star_14_26","formal_scope":"exact contextual-description existential evaluation","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","parser_status":"reviewed-gap","parser_evidence":"reviews/Q308-review.md","printed_dependencies":["✱14·11","✱14·242","✱14·25"],"normalized_dependencies":[],"lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱14·11","✱14·242","✱14·25"],"strict_attempt_evidence":"reviews/Q308-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱14·27","kind":"derived-proposition","printed":"⊢ : E!(℩x)(φx) .⊃ : φx ≡ₓ ψx .≡ . (℩x)(φx) = (℩x)(ψx)","printed_page":192,"scan_leaf":214,"lean_path":"Principia/Architecture/Star14Q308Kernel.lean","declaration":"PM.Architecture.Star14Q308Kernel.star_14_27","formal_scope":"exact contextual-description extensional identity","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","parser_status":"reviewed-gap","parser_evidence":"reviews/Q308-review.md","printed_dependencies":["✱14·202","✱14·242","✱14·11"],"normalized_dependencies":[],"lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱14·11","✱14·202","✱14·242"],"strict_attempt_evidence":"reviews/Q308-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱14·271","kind":"derived-proposition","printed":"⊢ : φx .≡ₓ. ψx .⊃ : E!(℩x)(φx) .≡ . E!(℩x)(ψx)","printed_page":192,"scan_leaf":214,"lean_path":"Principia/Architecture/Star14Q308Kernel.lean","declaration":"PM.Architecture.Star14Q308Kernel.star_14_271","formal_scope":"exact contextual-description existence extensionality","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","parser_status":"reviewed-gap","parser_evidence":"reviews/Q308-review.md","printed_dependencies":["✱4·86","✱10·11·27","✱10·271","✱10·281"],"normalized_dependencies":[],"lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱10·11·27","✱10·271","✱10·281","✱4·86"],"strict_attempt_evidence":"reviews/Q308-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}}],"ci_evidence":{"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}}
+{
+  "batch": "PM1-STAR14-Q308",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "192",
+    "scan_leaves": [
+      214
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 214,
+        "printed_page": 192,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page214-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg",
+        "sha256": "3410d00d20c202d62b9fed3020056ad8bd4b995c55e7ffc0f48d922e775c721d"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱14·242",
+      "kind": "derived-proposition",
+      "printed": "⊢ : φx .≡ₓ. x = b : ⊃ : ψb .≡ . ψ(℩x)(φx)",
+      "printed_page": 192,
+      "scan_leaf": 214,
+      "lean_path": "Principia/Architecture/Star14Q308Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q308Kernel.star_14_242",
+      "formal_scope": "exact contextual description substitution equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "integrated-local",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱14·202·15"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱14·202·15"
+        ],
+        "strict_attempt_evidence": "reviews/Q308-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱14·25",
+      "kind": "derived-proposition",
+      "printed": "⊢ : E!(℩x)(φx) .⊃ : φx ⊃ₓ ψx .≡ . ψ(℩x)(φx)",
+      "printed_page": 192,
+      "scan_leaf": 214,
+      "lean_path": "Principia/Architecture/Star14Q308Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q308Kernel.star_14_25",
+      "formal_scope": "exact conditional contextual-description evaluation",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "integrated-local",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱4·84",
+        "PM1:✱10·27·271",
+        "PM1:✱13·191",
+        "PM1:✱14·242",
+        "PM1:✱10·11·23",
+        "PM1:✱14·11"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱14·11",
+          "✱14·242"
+        ],
+        "strict_attempt_evidence": "reviews/Q308-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱14·26",
+      "kind": "derived-proposition",
+      "printed": "⊢ : E!(℩x)(φx) .⊃ : (∃x). φx . ψx .≡ . ψ{(℩x)(φx)}",
+      "printed_page": 192,
+      "scan_leaf": 214,
+      "lean_path": "Principia/Architecture/Star14Q308Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q308Kernel.star_14_26",
+      "formal_scope": "exact contextual-description existential evaluation",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "integrated-local",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱14·11",
+        "PM1:✱10·311",
+        "PM1:✱10·281",
+        "PM1:✱13·195",
+        "PM1:✱14·242",
+        "PM1:✱10·11·23",
+        "PM1:✱14·25"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱14·11",
+          "✱14·242",
+          "✱14·25"
+        ],
+        "strict_attempt_evidence": "reviews/Q308-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱14·27",
+      "kind": "derived-proposition",
+      "printed": "⊢ : E!(℩x)(φx) .⊃ : φx ≡ₓ ψx .≡ . (℩x)(φx) = (℩x)(ψx)",
+      "printed_page": 192,
+      "scan_leaf": 214,
+      "lean_path": "Principia/Architecture/Star14Q308Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q308Kernel.star_14_27",
+      "formal_scope": "exact contextual-description extensional identity",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "integrated-local",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱4·86·21",
+        "PM1:✱10·11·27",
+        "PM1:✱10·271",
+        "PM1:✱14·202",
+        "PM1:✱14·242",
+        "PM1:✱10·11·23",
+        "PM1:✱14·11"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱14·11",
+          "✱14·202",
+          "✱14·242"
+        ],
+        "strict_attempt_evidence": "reviews/Q308-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱14·271",
+      "kind": "derived-proposition",
+      "printed": "⊢ : φx .≡ₓ. ψx .⊃ : E!(℩x)(φx) .≡ . E!(℩x)(ψx)",
+      "printed_page": 192,
+      "scan_leaf": 214,
+      "lean_path": "Principia/Architecture/Star14Q308Kernel.lean",
+      "declaration": "PM.Architecture.Star14Q308Kernel.star_14_271",
+      "formal_scope": "exact contextual-description existence extensionality",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "integrated-local",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q308-review.md",
+      "printed_dependencies": [
+        "PM1:✱4·86",
+        "PM1:✱10·11·27",
+        "PM1:✱10·271",
+        "PM1:✱10·11·21",
+        "PM1:✱10·281"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱10·11·27",
+          "✱10·271",
+          "✱10·281",
+          "✱4·86"
+        ],
+        "strict_attempt_evidence": "reviews/Q308-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
+  }
+}

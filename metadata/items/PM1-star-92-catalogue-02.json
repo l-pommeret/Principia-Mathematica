@@ -18,7 +18,7 @@
     {
       "id": "PM1:✱92·113",
       "kind": "derived-proposition",
-      "printed": "✱92·113. ⊢ : R∈Cls→1 .⊃. CnvʻR|Rpo|R=(ᗡʻR)◁Rpo",
+      "printed": "✱92·113. ⊢:R∈ Cls→1.⊃.Ř| Rₚₒ| R = (ᗡʻR)↿ Rₚₒ [✱92·111.✱91·52]",
       "printed_page": 602,
       "scan_leaf": 624,
       "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
@@ -31,12 +31,22 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱92·12",
       "kind": "derived-proposition",
-      "printed": "✱92·12. ⊢ : R∈1→Cls . ᗡʻR⊂DʻR .⊃. Rpo|CnvʻR=R∗",
+      "printed": "✱92·12. ⊢:R∈ 1→Cls.ᗡʻR⊂ DʻR.⊃.Rₚₒ| Ř = R_∗ [✱92·11.✱35·66]",
       "printed_page": 602,
       "scan_leaf": 624,
       "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
@@ -49,12 +59,22 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱92·121",
       "kind": "derived-proposition",
-      "printed": "✱92·121. ⊢ : R∈Cls→1 . DʻR⊂ᗡʻR .⊃. CnvʻR|Rpo=R∗",
+      "printed": "✱92·121. ⊢:R∈ Cls→1.DʻR⊂ ᗡʻR.⊃.Ř| Rₚₒ = R_∗ [✱92·111.✱35·63]",
       "printed_page": 602,
       "scan_leaf": 624,
       "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
@@ -67,12 +87,22 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱92·13",
       "kind": "derived-proposition",
-      "printed": "✱92·13. ⊢ : R∈1→Cls . Q,T∈PotidʻR .⊃. T|Q|CnvʻQ=T↾DʻQ",
+      "printed": "✱92·13. ⊢:R∈ 1→Cls.Q, T∈ PotidʻR.⊃.T| Q| Q̌ = T↾ DʻQ",
       "printed_page": 602,
       "scan_leaf": 624,
       "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
@@ -85,12 +115,22 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱92·131",
       "kind": "derived-proposition",
-      "printed": "✱92·131. ⊢ : R∈Cls→1 . Q,T∈PotidʻR .⊃. CnvʻQ|Q|T=(ᗡʻQ)◁T",
+      "printed": "✱92·131. ⊢:R∈ Cls→1.Q, T∈ PotidʻR.⊃.Q̌| Q| T= (ᗡʻQ)↿ T",
       "printed_page": 602,
       "scan_leaf": 624,
       "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
@@ -103,7 +143,17 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

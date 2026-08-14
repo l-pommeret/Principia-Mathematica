@@ -14,117 +14,155 @@
     {
       "id": "PM1:✱35·35",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\alpha\\upharpoonleft R=(\\alpha\\cap \\text{D}ʻR)\\upharpoonleft R\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.α↿ R=(α∩ DʻR)↿ R",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱35·1",
+        "PM1:✱33·14",
+        "PM1:✱22·33"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
       "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_35",
       "formal_scope": "exact typed equality restricting a relation's source class to its domain without changing the restricted relation; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\alpha\\upharpoonleft R=(\\alpha\\cap \\text{D}ʻR)\\upharpoonleft R\\)"
     },
     {
       "id": "PM1:✱35·351",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.R\\upharpoonright \\beta=R\\upharpoonright (\\beta\\cap \\text{ᗡ}ʻR) \\quad[\\text{Proof as in *35·35}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.R↾ β=R↾ (β∩ ᗡʻR) [Proof as in *35·35]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱34·1",
+        "PM1:✱35·101",
+        "PM1:✱35·1"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
       "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_351",
       "formal_scope": "exact typed equality restricting a relation's target class to its converse-domain without changing the restricted relation; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.R\\upharpoonright \\beta=R\\upharpoonright (\\beta\\cap \\text{ᗡ}ʻR) \\quad[\\text{Proof as in *35·35}]\\)"
     },
     {
       "id": "PM1:✱35·352",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\alpha\\upharpoonleft R\\upharpoonright \\beta=(\\alpha\\cap \\text{D}ʻR)\\upharpoonleft R\\upharpoonright (\\beta\\cap \\text{ᗡ}ʻR) \\quad[\\text{Proof as in *35·35}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.α↿ R↾ β=(α∩ DʻR)↿ R↾ (β∩ ᗡʻR) [Proof as in *35·35]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
       "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_352",
       "formal_scope": "exact typed equality simultaneously intersecting endpoint restrictions with domain and converse-domain; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\alpha\\upharpoonleft R\\upharpoonright \\beta=(\\alpha\\cap \\text{D}ʻR)\\upharpoonleft R\\upharpoonright (\\beta\\cap \\text{ᗡ}ʻR) \\quad[\\text{Proof as in *35·35}]\\)"
     },
     {
       "id": "PM1:✱35·354",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.(R\\upharpoonright \\alpha)\\mid S=R\\mid \\alpha\\upharpoonleft S\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.(R↾ α)| S=R| α↿ S",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
       "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_354",
       "formal_scope": "exact typed equality moving an intermediate-class restriction across relational composition; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.(R\\upharpoonright \\alpha)\\mid S=R\\mid \\alpha\\upharpoonleft S\\)"
     },
     {
       "id": "PM1:✱35·41",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.(\\alpha\\cup \\alpha')\\upharpoonleft R=\\alpha\\upharpoonleft R\\unicode{x228d}\\alpha'\\upharpoonleft R \\quad[\\text{*35·1.*22·34}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.(α∪ α')↿ R=α↿ R⊍α'↿ R [*35·1.*22·34]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
       "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_41",
       "formal_scope": "exact typed distributivity of left restriction over union of source classes; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.(\\alpha\\cup \\alpha')\\upharpoonleft R=\\alpha\\upharpoonleft R\\unicode{x228d}\\alpha'\\upharpoonleft R \\quad[\\text{*35·1.*22·34}]\\)"
     }
   ],
   "ci_evidence": {

@@ -27,8 +27,9 @@
       "declaration": "PM.FirstEdition.Volume1.Star5.star_5_6",
       "formal_scope": "((p·∼q)⊃r)≡(p⊃(q∨r)), over an elementary real-variable context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱4·87",
         "PM1:✱4·64·85"
@@ -44,6 +45,8 @@
         "PM.FirstEdition.Volume1.Star3.star_3_2",
         "PM.FirstEdition.Volume1.Star3.star_3_26",
         "PM.FirstEdition.Volume1.Star3.star_3_27",
+        "PM.FirstEdition.Volume1.Star4.star_4_64",
+        "PM.FirstEdition.Volume1.Star4.star_4_85",
         "PM.FirstEdition.Volume1.Star4.star_4_87"
       ],
       "normalized_dependencies": [
@@ -57,6 +60,8 @@
         "PM1:✱3·2",
         "PM1:✱3·26",
         "PM1:✱3·27",
+        "PM1:✱4·64",
+        "PM1:✱4·85",
         "PM1:✱4·87"
       ],
       "historical_dependency_relaxation": {
@@ -78,12 +83,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q250-star5-6-kernel-gate.md",
         "editorial_note": "The exportation component of ✱4·87 is followed directly by the explicit ✱2·53/54 equivalence ∼q⊃r ≡ q∨r."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "2ac468894be6ecb8e80c4e1263c5011fbae6547a",
-    "run": "31556514413",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

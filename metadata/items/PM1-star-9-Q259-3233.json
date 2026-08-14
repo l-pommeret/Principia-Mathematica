@@ -24,9 +24,9 @@
     "WS-PM1"
   ],
   "ci_evidence": {
-    "commit": "bbfa74c4e1c93806965ef6cafd0b382caaeefff6",
-    "run": "31560408747",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   },
   "items": [
     {
@@ -39,8 +39,13 @@
       "declaration": "PM.Architecture.Q259ClosedRuleBook.star_9_32",
       "formal_scope": "right injection into a universal first-order disjunction",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-first-order-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-first-order-kernel-integrated",
+      "formalization_level": "prepared",
+      "pm_migration_status": "blocked",
+      "pm_ast": "FirstOrderQ259.star_9_32_target q φ",
+      "pm_judgement": "OrderedAssertion (FirstOrderQ259.star_9_32_target q φ)",
+      "pm_certificate_blocker": "the final printed ✱9·25 citation is supplied by Q259ClosedRuleBook.star_9_25, an external Support-style field rather than a kernel derivation; pm-derivation-v1 is therefore refused",
       "printed_dependencies": [
         "PM1:✱1·3",
         "PM1:✱9·13",
@@ -50,14 +55,12 @@
       "normalized_dependencies": [
         "PM1:✱1·3",
         "PM1:✱9·12",
-        "PM1:✱9·13",
-        "PM1:✱9·25"
+        "PM1:✱9·13"
       ],
       "blocked_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_12",
         "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_13",
-        "PM.Architecture.Q259ClosedRuleBook.Q259ClosedRuleBook.star_9_25",
         "PM.Derivation.star_1_3"
       ],
       "historical_dependency_relaxation": {
@@ -66,10 +69,20 @@
           "PM1:✱9·12"
         ],
         "printed_but_unused": [
-          "PM1:✱9·03"
+          "PM1:✱9·03",
+          "PM1:✱9·25"
         ],
         "strict_attempt_evidence": "reviews/Q259-star9-3233-kernel-gate.md",
         "editorial_note": "The Lean body expands PM’s compressed or cross-referenced proof into explicit typed inference constructors and definitional readings."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -82,8 +95,8 @@
       "declaration": "PM.Architecture.Q259ClosedRuleBook.star_9_33",
       "formal_scope": "right injection into an existential first-order disjunction",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-first-order-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-first-order-kernel-integrated",
       "printed_dependencies": [
         "Proof as above"
       ],
@@ -113,6 +126,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q259-star9-3233-kernel-gate.md",
         "editorial_note": "The Lean body expands PM’s compressed or cross-referenced proof into explicit typed inference constructors and definitional readings."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ]

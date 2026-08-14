@@ -26,7 +26,7 @@
       "printed": "✱60·12. ⊢ . Clʻα = β̂(β ⊂ α)",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -34,7 +34,16 @@
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_12",
       "formal_scope": "exact typed value equation for Cl; strict semantic audit passed",
-      "integration_status": "canonical-kernel-checked"
+      "integration_status": "provisional-kernel-checked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱60·13",
@@ -42,16 +51,37 @@
       "printed": "✱60·13. ⊢ . Cl exʻα = β̂(β ⊂ α . ∃!β)",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "lean_dependencies": ["PM.Architecture.Star60Kernel.ClEx"],
-      "normalized_dependencies": ["PM1:✱60·02"],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.ClEx"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·02"
+      ],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_13",
       "formal_scope": "exact typed value equation for Cl ex; strict semantic audit passed",
-      "integration_status": "canonical-kernel-checked",
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱60·02"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Star60-catalogue-review.md","editorial_note":"The value equation unfolds the already printed definition ✱60·02 of Cl ex; this is a genuine definitional PM edge although no bracketed citation is printed."}
+      "integration_status": "provisional-kernel-checked",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱60·02"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star60-catalogue-review.md",
+        "editorial_note": "The value equation unfolds the already printed definition ✱60·02 of Cl ex; this is a genuine definitional PM edge although no bracketed citation is printed."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱60·14",
@@ -59,7 +89,7 @@
       "printed": "✱60·14. ⊢ . ∃!Clʻα",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -67,7 +97,16 @@
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_14",
       "formal_scope": "exact typed existence assertion for the value Clʻα; strict semantic audit passed",
-      "integration_status": "canonical-kernel-checked"
+      "integration_status": "provisional-kernel-checked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱60·15",
@@ -75,16 +114,37 @@
       "printed": "✱60·15. ⊢ . ∃!Cl exʻα",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "lean_dependencies": ["PM.Architecture.Star60Kernel.ClEx"],
-      "normalized_dependencies": ["PM1:✱60·02"],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.ClEx"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·02"
+      ],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_15",
       "formal_scope": "exact typed existence assertion for the value Cl exʻα; strict semantic audit passed",
-      "integration_status": "canonical-kernel-checked",
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱60·02"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Star60-catalogue-review.md","editorial_note":"The existence witness uses the already printed definition ✱60·02 of Cl ex; this is a genuine definitional PM edge although no bracketed citation is printed."}
+      "integration_status": "provisional-kernel-checked",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱60·02"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star60-catalogue-review.md",
+        "editorial_note": "The existence witness uses the already printed definition ✱60·02 of Cl ex; this is a genuine definitional PM edge although no bracketed citation is printed."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱60·2",
@@ -92,7 +152,7 @@
       "printed": "✱60·2. ⊢ : β ∈ Clʻα .≡. β ⊂ α",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -100,7 +160,16 @@
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_2",
       "formal_scope": "exact typed membership/subclass equivalence; strict semantic audit passed",
-      "integration_status": "canonical-kernel-checked"
+      "integration_status": "provisional-kernel-checked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

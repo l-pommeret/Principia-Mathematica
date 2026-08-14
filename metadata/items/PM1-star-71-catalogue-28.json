@@ -1,0 +1,120 @@
+{
+  "batch": "PM1-STAR71-CATALOGUE-28",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "461–461",
+    "scan_leaves": [
+      483
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱71·613",
+      "kind": "derived-proposition",
+      "printed": "✱71·613. ⊢:T∈ Cls → 1.⊃.Q̌ʻʻʻT⃖ʻʻ(DʻT∩ α)=Q⃖ʻʻŤʻʻα",
+      "printed_page": 461,
+      "scan_leaf": 483,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·613. \\vdash:T\\in \\text{Cls}\\rightarrow 1.\\supset.\\breve{Q}ʻʻʻ\\overleftarrow{T}ʻʻ(\\text{D}ʻT\\cap \\alpha)=\\overleftarrow{Q}ʻʻ\\breve{T}ʻʻ\\alpha",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·7",
+      "kind": "derived-proposition",
+      "printed": "✱71·7. ⊢:. Q∈ 1 → Cls.⊃:xP| Qz.≡.xP(Qʻz)",
+      "printed_page": 461,
+      "scan_leaf": 483,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱71·36",
+        "PM1:✱10·281",
+        "PM1:✱34·1",
+        "PM1:✱13·195",
+        "Fact"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·7. \\vdash\\colon\\ldotp Q\\in 1\\rightarrow \\text{Cls}.\\supset:xP\\mid Qz.\\equiv.xP(Qʻz)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·701",
+      "kind": "derived-proposition",
+      "printed": "✱71·701. ⊢:. Q∈ Cls → 1.⊃:xQ| Pz.≡.(Q̌ʻx)Pz",
+      "printed_page": 461,
+      "scan_leaf": 483,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·701. \\vdash\\colon\\ldotp Q\\in \\text{Cls}\\rightarrow 1.\\supset:xQ\\mid Pz.\\equiv.(\\breve{Q}ʻx)Pz",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

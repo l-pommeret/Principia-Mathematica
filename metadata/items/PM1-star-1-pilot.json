@@ -4,10 +4,18 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "98–100",
-    "scan_leaves": [120, 121, 122],
+    "scan_leaves": [
+      120,
+      121,
+      122
+    ],
     "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050",
+    "WS-PM1"
+  ],
   "items": [
     {
       "id": "PM1:✱1·01",
@@ -20,10 +28,12 @@
       "formal_scope": "definitional abbreviation from negation and disjunction",
       "source_status": "double-witness-checked",
       "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "substitutions": []
+      "substitutions": [],
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱1·1",
@@ -34,12 +44,15 @@
       "lean_path": "Principia/Deduction/System.lean",
       "declaration": "PM.Derivation.star_1_1",
       "formal_scope": "asserted definite elementary propositions only",
-      "source_status": "double-witness-checked",
+      "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
+      "integration_status": "provisional-kernel-integrated",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "substitutions": []
+      "substitutions": [],
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱1·11",
@@ -50,12 +63,15 @@
       "lean_path": "Principia/Deduction/System.lean",
       "declaration": "PM.Derivation.star_1_11",
       "formal_scope": "nonempty context of one or more real variables",
-      "source_status": "double-witness-checked",
+      "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
+      "integration_status": "provisional-kernel-integrated",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "substitutions": []
+      "substitutions": [],
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱1·2",
@@ -68,10 +84,14 @@
       "formal_scope": "ambiguous assertion over an elementary real-variable context",
       "source_status": "double-witness-checked",
       "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed_dependencies": [],
-      "lean_dependencies": ["PM.Derivation.star_1_2"],
+      "lean_dependencies": [
+        "PM.Derivation.star_1_2"
+      ],
       "normalized_dependencies": [],
-      "substitutions": []
+      "substitutions": [],
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱1·3",
@@ -84,15 +104,19 @@
       "formal_scope": "ambiguous assertion over an elementary real-variable context",
       "source_status": "double-witness-checked",
       "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed_dependencies": [],
-      "lean_dependencies": ["PM.Derivation.star_1_3"],
+      "lean_dependencies": [
+        "PM.Derivation.star_1_3"
+      ],
       "normalized_dependencies": [],
-      "substitutions": []
+      "substitutions": [],
+      "formalization_level": "pm-derivation-v1"
     }
   ],
   "ci_evidence": {
-    "commit": "ab85bcc47338b71a3f16a3109b7be3a2848c0faf",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31409695065",
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
     "conclusion": "success"
   }
 }

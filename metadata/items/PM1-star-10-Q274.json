@@ -40,8 +40,8 @@
       "declaration": "PM.Architecture.Star10Q274Kernel.star_10_51",
       "formal_scope": "exact closed canonical formal negated existential rule",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·252",
         "PM1:✱4·51·62",
@@ -63,6 +63,17 @@
         ],
         "strict_attempt_evidence": "reviews/Q274-canonical-integration.md",
         "editorial_note": "Canonical normalization discharges the propositional conversion without a distinct Lean theorem edge."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -75,20 +86,31 @@
       "declaration": "PM.Architecture.Star10Q274Kernel.star_10_52",
       "formal_scope": "exact closed canonical existential formal implication rule",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱5·5",
         "PM1:✱10·23"
       ],
       "lean_dependencies": [
-        "PM.FirstEdition.Volume1.Star5.star_5_5",
-        "PM.Architecture.Star10Q265FinalPrerequisites.star_10_23"
+        "PM.Architecture.Star10Q265FinalPrerequisites.star_10_23",
+        "PM.FirstEdition.Volume1.Star5.star_5_5"
       ],
       "normalized_dependencies": [
-        "PM1:✱5·5",
-        "PM1:✱10·23"
-      ]
+        "PM1:✱10·23",
+        "PM1:✱5·5"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱10·53",
@@ -100,8 +122,8 @@
       "declaration": "PM.Architecture.Star10Q274Kernel.star_10_53",
       "formal_scope": "exact closed canonical formal implication under nonexistence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱2·21",
         "PM1:✱10·11",
@@ -114,9 +136,9 @@
         "PM.Architecture.Star10Q269Kernel.star_10_252"
       ],
       "normalized_dependencies": [
-        "PM1:✱2·21",
+        "PM1:✱10·252",
         "PM1:✱10·27",
-        "PM1:✱10·252"
+        "PM1:✱2·21"
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -126,6 +148,17 @@
         ],
         "strict_attempt_evidence": "reviews/Q274-canonical-integration.md",
         "editorial_note": "The scoped implication is represented by the closed ✱10·27 target; ✱10·11 has no separate direct call."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -138,8 +171,8 @@
       "declaration": "PM.Architecture.Star10Q274Kernel.star_10_541",
       "formal_scope": "exact closed canonical formal implication/disjunction equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱4·2",
         "PM1:✱1·01",
@@ -151,8 +184,8 @@
         "PM.Architecture.Star10Q267Kernel.star_10_2"
       ],
       "normalized_dependencies": [
-        "PM1:✱10·271",
-        "PM1:✱10·2"
+        "PM1:✱10·2",
+        "PM1:✱10·271"
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -163,6 +196,17 @@
         ],
         "strict_attempt_evidence": "reviews/Q274-canonical-integration.md",
         "editorial_note": "The canonical target encodes the propositional rearrangement definitionally; only scoped quantifier theorems are direct calls."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -175,8 +219,8 @@
       "declaration": "PM.Architecture.Star10Q274Kernel.star_10_542",
       "formal_scope": "exact closed canonical formal implication nesting equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·541"
       ],
@@ -185,12 +229,23 @@
       ],
       "normalized_dependencies": [
         "PM1:✱10·541"
-      ]
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

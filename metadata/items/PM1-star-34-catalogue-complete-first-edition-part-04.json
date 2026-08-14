@@ -1,0 +1,191 @@
+{
+  "batch": "PM1-STAR34-CATALOGUE-COMPLETE-FIRST-EDITION-PART-04",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "270–278",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱34·31",
+      "kind": "derived-proposition",
+      "printed": "✱34·31. ⊢:∃̇!(P| Q).⊃.∃̇!P.∃̇!Q",
+      "pm_verbatim": "*34·31. \\(\\vdash:\\dot{\\exists}!(P\\mid Q).\\supset.\\dot{\\exists}!P.\\dot{\\exists}!Q\\) \n\nDem.\n\n \\[ \\begin{array}{l} \\vdash.\\text{*34·3}.\\supset\\vdash:\\text{Hp}.&\\supset.\\exists !(\\text{ᗡ}ʻP\\cap \\text{D}ʻQ).\\\\ [\\text{*24·561}] &\\supset.\\exists !\\text{ᗡ}ʻP.\\exists !\\text{D}ʻQ.\\\\ [\\text{*33·24}] &\\supset.\\dot{\\exists}!P.\\dot{\\exists}!Q:\\supset\\vdash.\\text{Prop} \\end{array} \\]",
+      "printed_latex_witness": "*34·31. \\(\\vdash:\\dot{\\exists}!(P\\mid Q).\\supset.\\dot{\\exists}!P.\\dot{\\exists}!Q\\) ",
+      "printed_page": 272,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱34·3",
+        "PM1:✱24·561",
+        "PM1:✱33·24"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star34.star_34_31",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱34·32",
+      "kind": "derived-proposition",
+      "printed": "✱34·32. ⊢:. P=Λ.∨ .Q=Λ̇:⊃.P| Q=Λ [✱34·31.Transp.✱25·51]",
+      "pm_verbatim": "*34·32. \\(\\vdash\\colon\\ldotp P=\\Lambda.\\lor .Q=\\dot{\\Lambda}:\\supset.P\\mid Q=\\Lambda \\quad[\\text{*34·31.Transp.*25·51}]\\) ",
+      "printed_latex_witness": "*34·32. \\(\\vdash\\colon\\ldotp P=\\Lambda.\\lor .Q=\\dot{\\Lambda}:\\supset.P\\mid Q=\\Lambda \\quad[\\text{*34·31.Transp.*25·51}]\\) ",
+      "printed_page": 272,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱34·31",
+        "PM1:✱25·51",
+        "Transp"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star34.star_34_32"
+    },
+    {
+      "id": "PM1:✱34·33",
+      "kind": "derived-proposition",
+      "printed": "✱34·33. ⊢ : x ∈ DʻR . ≡ .x(R| Ř)x",
+      "pm_verbatim": "*34·33. \\(\\vdash : x \\in \\text{D}ʻR . \\equiv .x(R\\mid \\breve{R})x\\) \n\nDem.\n\n \\[ \\begin{array}{l} \\vdash . \\text{*33·13} . \\supset \\vdash : x \\in \\text{D}ʻR . &\\equiv . (\\exists y) . xRy .\\\\ [\\text{*4·24}] &\\equiv . (\\exists y) . xRy . xRy .\\\\ [\\text{*31·11}] &\\equiv . (\\exists y) . xRy . y\\breve{R}x.\\\\ [\\text{*34·1}] & \\equiv . x(R\\mid \\breve{R})x : \\supset \\vdash . \\text{Prop} \\end{array} \\]",
+      "printed_latex_witness": "*34·33. \\(\\vdash : x \\in \\text{D}ʻR . \\equiv .x(R\\mid \\breve{R})x\\) ",
+      "printed_page": 273,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱33·13",
+        "PM1:✱4·24",
+        "PM1:✱31·11",
+        "PM1:✱34·1"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star34.star_34_33",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱34·34",
+      "kind": "derived-proposition",
+      "printed": "✱34·34. ⊢ : R ⪽ P . S ⪽ Q . ⊃ . R| S ⪽ P Q",
+      "pm_verbatim": "*34·34. \\(\\vdash : R \\unicode{x2abd} P . S \\unicode{x2abd} Q . \\supset . R\\mid S \\unicode{x2abd} P Q\\) \n\nDem.\n\n \\[ \\begin{array}{l} \\vdash . \\text{*23·1} . \\supset \\vdash \\colon\\ldotp \\text{Hp} . &\\supset : xRy . \\supset_{x,y} . xPy : ySz . \\supset_{y,z} . yQz :\\\\ [\\text{*11·2.*10·1·41}] &\\supset : xRy . \\supset . xPy : ySz . \\supset . yQz :\\\\ [\\text{*3·47}] &\\supset : xRy . ySz . \\supset . xPy . yQz &\\qquad \\text{(1)}\\\\ \\vdash .\\text{ (1) . *10·11·21·28} . &\\supset\\\\ \\vdash \\colon\\ldotp \\text{Hp} . &\\supset : (\\exists y) . xRy . ySz . \\supset . (\\exists y) . xPy . yQz :\\\\ [\\text{*34·1}] &\\supset : x(R S)z . \\supset . x(P Q)z &\\qquad \\text{(2)}\\\\ \\vdash . \\text{(2) . *11·11·3} . &\\supset \\vdash . \\text{Prop} \\end{array} \\]",
+      "printed_latex_witness": "*34·34. \\(\\vdash : R \\unicode{x2abd} P . S \\unicode{x2abd} Q . \\supset . R\\mid S \\unicode{x2abd} P Q\\) ",
+      "printed_page": 273,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱23·1",
+        "PM1:✱11·2",
+        "PM1:✱10·1",
+        "PM1:✱10·41",
+        "PM1:✱3·47",
+        "PM1:✱10·11",
+        "PM1:✱10·21",
+        "PM1:✱10·28",
+        "PM1:✱34·1",
+        "PM1:✱11·11",
+        "PM1:✱11·3"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star34.star_34_34",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱34·35",
+      "kind": "derived-proposition",
+      "printed": "✱34·35. ⊢ : ∃̇ ! R . ᗡʻR ⊂ DʻP . ⊃ . ∃̇ ! R| P",
+      "pm_verbatim": "*34·35. \\(\\vdash : \\dot{\\exists} ! R . \\text{ᗡ}ʻR \\subset \\text{D}ʻP . \\supset . \\dot{\\exists} ! R\\mid P\\) \n\nDem.\n\n \\[ \\begin{array}{l} \\vdash . \\text{*33·24} . \\supset \\vdash : \\text{Hp} . &\\supset . \\exists ! \\text{ᗡ}ʻR &\\qquad \\text{(1)}\\\\ \\vdash . \\text{*22·621} . \\supset \\vdash : \\text{Hp} . &\\supset . \\text{ᗡ}ʻR = \\text{ᗡ}ʻR \\cap \\text{D}ʻP &\\qquad \\text{(2)}\\\\ \\vdash . \\text{(1). (2)} . \\supset \\vdash : \\text{Hp} . &\\supset . \\exists ! \\text{ᗡ}ʻR \\cap \\text{D}ʻP.\\\\ [\\text{*34·3}] &\\supset . \\dot{\\exists} ! R\\mid P : \\supset \\vdash . \\text{Prop} \\end{array} \\]",
+      "printed_latex_witness": "*34·35. \\(\\vdash : \\dot{\\exists} ! R . \\text{ᗡ}ʻR \\subset \\text{D}ʻP . \\supset . \\dot{\\exists} ! R\\mid P\\) ",
+      "printed_page": 273,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱33·24",
+        "PM1:✱22·621",
+        "PM1:✱34·3"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star34.star_34_35",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

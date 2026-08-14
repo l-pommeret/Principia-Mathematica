@@ -1,0 +1,180 @@
+{
+  "batch": "PM1-STAR34-CATALOGUE-COMPLETE-FIRST-EDITION-PART-08",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "270–278",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱34·56",
+      "kind": "derived-proposition",
+      "printed": "✱34·56. ⊢.DʻR²⊂DʻR.ᗡʻR²⊂ᗡʻR.CʻR²⊂ CʻR [✱34·36·38]",
+      "pm_verbatim": "*34·56. \\(\\vdash.\\text{D}ʻR^{2}\\subset\\text{D}ʻR.\\text{ᗡ}ʻR{^{2}}\\subset\\text{ᗡ}ʻR.CʻR{^{2}}\\subset CʻR \\quad[\\text{*34·36·38}]\\) ",
+      "printed_latex_witness": "*34·56. \\(\\vdash.\\text{D}ʻR^{2}\\subset\\text{D}ʻR.\\text{ᗡ}ʻR{^{2}}\\subset\\text{ᗡ}ʻR.CʻR{^{2}}\\subset CʻR \\quad[\\text{*34·36·38}]\\) ",
+      "printed_page": 275,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱34·36",
+        "PM1:✱34·38"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star34.star_34_56"
+    },
+    {
+      "id": "PM1:✱34·6",
+      "kind": "derived-proposition",
+      "printed": "✱34·6. ⊢.(R∩̇S)²⪽R²∩̇S²",
+      "pm_verbatim": "*34·6. \\(\\vdash.(R\\dot{\\cap}S){^{2}}\\unicode{x2abd}R^{2}\\dot{\\cap}S^{2}\\) \n\nDem.\n\n \\[ \\begin{array}{l} \\vdash.\\text{*34·5}.\\supset\\vdash\\colon\\ldotp x(R\\dot{\\cap}S){^{2}}y.&\\equiv:(\\exists z).x(R\\dot{\\cap}S)z.z(R\\dot{\\cap}S)y:\\\\ [\\text{*23·33.*10·281}] &\\equiv:(\\exists z).xRz.xSz.zRy.zSy:\\\\ [\\text{*4·3.*10·281}] &\\equiv:(\\exists z).xRz.zRy.xSz.zSy:\\\\ [\\text{*10·5}] &\\supset:(\\exists z).xRz.zRy:(\\exists z).xSz.zSy:\\\\ [\\text{*34·5}] & \\supset:xR{^{2}}y.xS{^{2}}y:\\\\ [\\text{*23·33}] & \\supset:x(R{^{2}}\\dot{\\cap}S{^{2}})y &\\qquad \\text{(1)}\\\\ \\vdash.\\text{(1).*11·11}.\\supset\\vdash.\\text{Prop} \\end{array} \\]",
+      "printed_latex_witness": "*34·6. \\(\\vdash.(R\\dot{\\cap}S){^{2}}\\unicode{x2abd}R^{2}\\dot{\\cap}S^{2}\\) ",
+      "printed_page": 275,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱34·5",
+        "PM1:✱23·33",
+        "PM1:✱10·281",
+        "PM1:✱4·3",
+        "PM1:✱10·5",
+        "PM1:✱11·11"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star34.star_34_6",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱34·62",
+      "kind": "derived-proposition",
+      "printed": "✱34·62. ⊢.(R⊍S)²=R²⊍R| S⊍S| R⊍S²",
+      "pm_verbatim": "*34·62. \\(\\vdash.(R\\unicode{x228d}S)^{2}=R{^{2}}\\unicode{x228d}R\\mid S\\unicode{x228d}S\\mid R\\unicode{x228d}S^{2}\\) \n\nDem.\n\n \\[ \\begin{array}{l} \\vdash.\\text{*34·26}.\\supset\\vdash.(R\\unicode{x228d}S)^{2}&=R\\mid (R\\unicode{x228d}S)\\unicode{x228d}S\\mid (R\\unicode{x228d}S)\\\\ [\\text{*34·25}] & =R{^{2}}\\unicode{x228d}R\\mid S\\unicode{x228d}S\\mid R\\unicode{x228d}S^{2}.\\supset\\vdash.\\text{Prop} \\end{array} \\]",
+      "printed_latex_witness": "*34·62. \\(\\vdash.(R\\unicode{x228d}S)^{2}=R{^{2}}\\unicode{x228d}R\\mid S\\unicode{x228d}S\\mid R\\unicode{x228d}S^{2}\\) ",
+      "printed_page": 275,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱34·26",
+        "PM1:✱34·25"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star34.star_34_62",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱34·63",
+      "kind": "derived-proposition",
+      "printed": "✱34·63. ⊢.Cnvʻ(R²)=(CnvʻR)²",
+      "pm_verbatim": "*34·63. \\(\\vdash.\\text{Cnv}ʻ(R^{2})=(\\text{Cnv}ʻR)^{2}\\) \n\nDem.\n\n \\[ \\begin{array}{l} \\vdash.\\text{*31·131}.\\supset\\\\ \\vdash\\colon\\ldotp x\\{\\text{Cnv}ʻ(R^{2})\\}y.&\\equiv:yR{^{2}}x:\\\\ [\\text{*34·5}] &\\equiv:(\\exists z).yRz.zRx:\\\\ [\\text{*31·131.*10·281}]&\\equiv:(\\exists z).x\\breve{R}z.z\\breve{R}y:\\\\ [\\text{*31·131.*34·5}] &\\equiv:x(\\text{Cnv}ʻR){^{2}}y:\\supset\\vdash.\\text{Prop} \\end{array} \\]",
+      "printed_latex_witness": "*34·63. \\(\\vdash.\\text{Cnv}ʻ(R^{2})=(\\text{Cnv}ʻR)^{2}\\) ",
+      "printed_page": 275,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱31·131",
+        "PM1:✱34·5",
+        "PM1:✱10·281"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star34.star_34_63"
+    },
+    {
+      "id": "PM1:✱34·7",
+      "kind": "derived-proposition",
+      "printed": "✱34·7. ⊢.Cnv(S| Š)=S| Š",
+      "pm_verbatim": "*34·7. \\(\\vdash.\\text{Cnv}(S\\mid \\breve{S})=S\\mid \\breve{S}\\) \n\nDem.\n\n \\[ \\begin{array}{l} \\vdash.\\text{*34·2}.\\supset\\vdash.\\text{Cnv}(S\\mid \\breve{S})&=(\\text{Cnv}\\breve{S})\\mid \\breve{S}\\\\ [\\text{*34·202}] & =S\\mid \\breve{S}.\\supset\\vdash.\\text{Prop} \\end{array} \\]",
+      "printed_latex_witness": "*34·7. \\(\\vdash.\\text{Cnv}(S\\mid \\breve{S})=S\\mid \\breve{S}\\) ",
+      "printed_page": 276,
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱34·2",
+        "PM1:✱34·202"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "integration_status": "prepared",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star34.star_34_7",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -35,9 +35,9 @@
       "declaration": "PM.Architecture.Star102OpeningKernel.star_102_11",
       "formal_scope": "exact typed reconstruction of preservation of one-one functionality under assignment of both endpoint types",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱37·402",
         "PM1:✱65·1",
@@ -67,7 +67,16 @@
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-11.txt",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q412-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱102·2",
@@ -79,9 +88,9 @@
       "declaration": "PM.Architecture.Star102OpeningKernel.star_102_2",
       "formal_scope": "exact typed reconstruction of assigned-type similarity as ordinary similarity with both endpoint-type conditions internalized in the class types",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱35·102",
         "PM1:✱65·1"
@@ -101,7 +110,16 @@
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-2.txt",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q412-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

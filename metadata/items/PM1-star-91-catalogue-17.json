@@ -23,7 +23,7 @@
     {
       "id": "PM1:✱91·521",
       "kind": "derived-proposition",
-      "printed": "✱91·521. ⊢ : P∈PotidʻR .≡. P̌∈PotidʻŘ",
+      "printed": "✱91·521. ⊢ : P ∈ PotidʻR. ≡ . P̌ ∈ PotidʻŘ",
       "printed_page": 596,
       "scan_leaf": 618,
       "lean_path": "Principia/Architecture/Star91OpeningKernel5.lean",
@@ -32,14 +32,35 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱91·15",
+        "PM1:✱72·513",
+        "PM1:✱50·5",
+        "PM1:✱50·51",
+        "PM1:✱31·51",
+        "PM1:✱34·2",
+        "PM1:✱10·11",
+        "PM1:✱10·21",
+        "PM1:✱31·33"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·522",
       "kind": "derived-proposition",
-      "printed": "✱91·522. ⊢ : P∈PotʻR .≡. P̌∈PotʻŘ",
+      "printed": "✱91·522. ⊢: P ∈ PotʻR .≡. P̌ ∈ PotʻŘ [Proof as in ✱91·521]",
       "printed_page": 596,
       "scan_leaf": 618,
       "lean_path": "Principia/Architecture/Star91OpeningKernel5.lean",
@@ -48,14 +69,27 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱91·521"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·53",
       "kind": "derived-proposition",
-      "printed": "✱91·53. ⊢ . Ř_po=(Ř)_po",
+      "printed": "✱91·53. ⊢. Řₚₒ = (Ř)ₚₒ",
       "printed_page": 596,
       "scan_leaf": 618,
       "lean_path": "Principia/Architecture/Star91OpeningKernel5.lean",
@@ -64,16 +98,30 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱91·52",
+        "PM1:✱90·132"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·54",
       "kind": "derived-proposition",
-      "printed": "✱91·54. ⊢ . R_*=I↾CʻR⊍R_po",
+      "printed": "✱91·54. ⊢.R_∗=I↾ CʻR⊍Rₚₒ",
       "printed_page": 596,
       "scan_leaf": 618,
       "lean_path": "Principia/Architecture/Star91OpeningKernel5.lean",
@@ -82,16 +130,30 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱90·31",
+        "PM1:✱91·52"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·541",
       "kind": "derived-proposition",
-      "printed": "✱91·541. ⊢ . R_*∩̇J=R_po∩̇J",
+      "printed": "✱91·541. ⊢ . R_∗∩̇J=Rₚₒ∩̇J [✱25·401.(✱50·02).✱35·441. ✱91·54]",
       "printed_page": 596,
       "scan_leaf": 618,
       "lean_path": "Principia/Architecture/Star91OpeningKernel5.lean",
@@ -100,11 +162,31 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱25·401",
+        "PM1:✱50·02",
+        "PM1:✱35·441",
+        "PM1:✱91·54"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.J"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·02"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ]
 }

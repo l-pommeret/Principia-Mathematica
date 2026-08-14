@@ -18,6 +18,7 @@
   "items": [
     {
       "id": "PM1:✱22·55",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α = β .⊃ : γ ⊂ α .≡ . γ ⊂ β",
       "printed_page": 221,
@@ -26,8 +27,8 @@
       "declaration": "PM.Architecture.Star22Q351Kernel.star_22_55",
       "formal_scope": "exact polymorphic equality substitution in class inclusion",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱20·18"
       ],
@@ -41,10 +42,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q351-review.md",
         "editorial_note": "The exact statement closes directly in the typed class reconstruction; the printed citations remain recorded as historical proof evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·551",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α = β .⊃ . α ∪ γ = β ∪ γ",
       "printed_page": 221,
@@ -53,8 +64,8 @@
       "declaration": "PM.Architecture.Star22Q351Kernel.star_22_551",
       "formal_scope": "exact polymorphic equality substitution in class union",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱10·411"
       ],
@@ -68,10 +79,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q351-review.md",
         "editorial_note": "The exact statement closes directly in the typed class reconstruction; the printed citations remain recorded as historical proof evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·56",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . α ∪ α = α",
       "printed_page": 221,
@@ -80,8 +101,8 @@
       "declaration": "PM.Architecture.Star22Q351Kernel.star_22_56",
       "formal_scope": "exact polymorphic class-union idempotence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱4·25",
         "✱10·11"
@@ -97,10 +118,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q351-review.md",
         "editorial_note": "The exact statement closes directly in the typed class reconstruction; the printed citations remain recorded as historical proof evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·57",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . α ∪ β = β ∪ α",
       "printed_page": 222,
@@ -109,8 +140,8 @@
       "declaration": "PM.Architecture.Star22Q351Kernel.star_22_57",
       "formal_scope": "exact polymorphic class-union commutativity",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱4·31",
         "✱10·11"
@@ -126,10 +157,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q351-review.md",
         "editorial_note": "The exact statement closes directly in the typed class reconstruction; the printed citations remain recorded as historical proof evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·58",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . α ⊂ α ∪ β . β ⊂ α ∪ β",
       "printed_page": 222,
@@ -138,8 +179,8 @@
       "declaration": "PM.Architecture.Star22Q351Kernel.star_22_58",
       "formal_scope": "exact polymorphic paired inclusions into class union",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱1·3",
         "✱2·2"
@@ -155,6 +196,15 @@
         ],
         "strict_attempt_evidence": "reviews/Q351-review.md",
         "editorial_note": "The exact statement closes directly in the typed class reconstruction; the printed citations remain recorded as historical proof evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

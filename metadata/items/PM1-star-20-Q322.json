@@ -1,1 +1,200 @@
-{"batch":"PM1-STAR20-Q322","edition":"first","volume":1,"source_range":{"printed_pages":"205","scan_leaves":[227],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":227,"printed_page":205,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page227-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"9c5ce356cfecdac160d92cb3137eb787e445c4f37afdb46b6742dfb3de1da101"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱20·54","kind":"derived-proposition","printed":"⊢ : (∃β) . β = α . φβ .≡ . φα","printed_page":205,"scan_leaf":227,"lean_path":"Principia/Architecture/Star20Q322Kernel.lean","declaration":"PM.Architecture.Star20Q322Kernel.star_20_54","formal_scope":"exact existential class-identity substitution","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","parser_status":"reviewed-gap","parser_evidence":"reviews/Q322-review.md","printed_dependencies":[],"normalized_dependencies":[],"lean_dependencies":[]},{"id":"PM1:✱20·55","kind":"derived-proposition","printed":"⊢ . ẑ(φz) = (ια)(x ε α .≡ₓ. φx)","printed_page":205,"scan_leaf":227,"lean_path":"Principia/Architecture/Star20Q322Kernel.lean","declaration":"PM.Architecture.Star20Q322Kernel.star_20_55","formal_scope":"exact extensional-class contextual-description identity","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","parser_status":"reviewed-gap","parser_evidence":"reviews/Q322-review.md","printed_dependencies":[],"normalized_dependencies":[],"lean_dependencies":[]},{"id":"PM1:✱20·56","kind":"derived-proposition","printed":"⊢ . E!(ια)(x ε α .≡ₓ. φx)","printed_page":205,"scan_leaf":227,"lean_path":"Principia/Architecture/Star20Q322Kernel.lean","declaration":"PM.Architecture.Star20Q322Kernel.star_20_56","formal_scope":"exact contextual class-description existence","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","parser_status":"reviewed-gap","parser_evidence":"reviews/Q322-review.md","printed_dependencies":[],"normalized_dependencies":["PM1:✱20·55"],"lean_dependencies":["PM.Architecture.Star20Q322Kernel.star_20_55"],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":["PM1:✱20·55"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q322-review.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱20·57","kind":"derived-proposition","printed":"⊢ : ẑ(φz) = (ια)(fα) .⊃ : g{ẑ(φz)} .≡ . g{(ια)(fα)}","printed_page":205,"scan_leaf":227,"lean_path":"Principia/Architecture/Star20Q322Kernel.lean","declaration":"PM.Architecture.Star20Q322Kernel.star_20_57","formal_scope":"exact contextual class-description substitution","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","parser_status":"reviewed-gap","parser_evidence":"reviews/Q322-review.md","printed_dependencies":[],"normalized_dependencies":[],"lean_dependencies":[]},{"id":"PM1:✱20·58","kind":"derived-proposition","printed":"⊢ . ẑ(φz) = (ια){α = ẑ(φz)}","printed_page":205,"scan_leaf":227,"lean_path":"Principia/Architecture/Star20Q322Kernel.lean","declaration":"PM.Architecture.Star20Q322Kernel.star_20_58","formal_scope":"exact contextual self-identity class description","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","parser_status":"reviewed-gap","parser_evidence":"reviews/Q322-review.md","printed_dependencies":[],"normalized_dependencies":[],"lean_dependencies":[]}],"ci_evidence":{"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}}
+{
+  "batch": "PM1-STAR20-Q322",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "205",
+    "scan_leaves": [
+      227
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 227,
+        "printed_page": 205,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page227-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "9c5ce356cfecdac160d92cb3137eb787e445c4f37afdb46b6742dfb3de1da101"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱20·54",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (∃β) . β = α . φβ .≡ . φα",
+      "printed_page": 205,
+      "scan_leaf": 227,
+      "lean_path": "Principia/Architecture/Star20Q322Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q322Kernel.star_20_54",
+      "formal_scope": "exact existential class-identity substitution",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "integrated-local",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱20·18",
+        "PM1:✱10·11",
+        "PM1:✱10·23",
+        "PM1:✱20·2",
+        "PM1:✱3·2",
+        "PM1:✱10·24"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·55",
+      "kind": "derived-proposition",
+      "printed": "⊢ . ẑ(φz) = (ια)(x ε α .≡ₓ. φx)",
+      "printed_page": 205,
+      "scan_leaf": 227,
+      "lean_path": "Principia/Architecture/Star20Q322Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q322Kernel.star_20_55",
+      "formal_scope": "exact extensional-class contextual-description identity",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "integrated-local",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q322-review.md",
+      "printed_dependencies": [
+        "PM1:✱20·33",
+        "PM1:✱20·54",
+        "PM1:✱14·1"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·56",
+      "kind": "derived-proposition",
+      "printed": "⊢ . E!(ια)(x ε α .≡ₓ. φx)",
+      "printed_page": 205,
+      "scan_leaf": 227,
+      "lean_path": "Principia/Architecture/Star20Q322Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q322Kernel.star_20_56",
+      "formal_scope": "exact contextual class-description existence",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "integrated-local",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱20·55"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star20Q322Kernel.star_20_55"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱20·55"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Q322-review.md",
+        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·57",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑ(φz) = (ια)(fα) .⊃ : g{ẑ(φz)} .≡ . g{(ια)(fα)}",
+      "printed_page": 205,
+      "scan_leaf": 227,
+      "lean_path": "Principia/Architecture/Star20Q322Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q322Kernel.star_20_57",
+      "formal_scope": "exact contextual class-description substitution",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "integrated-local",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q322-review.md",
+      "printed_dependencies": [
+        "PM1:✱14·1",
+        "PM1:✱20·54",
+        "PM1:✱13·183"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·58",
+      "kind": "derived-proposition",
+      "printed": "⊢ . ẑ(φz) = (ια){α = ẑ(φz)}",
+      "printed_page": 205,
+      "scan_leaf": 227,
+      "lean_path": "Principia/Architecture/Star20Q322Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q322Kernel.star_20_58",
+      "formal_scope": "exact contextual self-identity class description",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "integrated-local",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q322-review.md",
+      "printed_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱10·11",
+        "PM1:✱20·54",
+        "PM1:✱14·1"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
+  }
+}

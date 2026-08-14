@@ -1,0 +1,87 @@
+{
+  "batch": "PM1-STAR63-FINAL-CATALOGUE-GAP-CLOSURE",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "427–428",
+    "scan_leaves": [
+      449,
+      450
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱63·55",
+      "kind": "derived-proposition",
+      "printed": "✱63·55. ⊢:κ∈ t₀ʻλ.≡.t₁ʻκ=t₂ʻλ.≡.t₀ʻκ=t₁ʻλ.≡.tʻκ=t₀ʻλ.≡.t²ʻκ=tʻλ [Proof as in *63·54]",
+      "printed_page": 427,
+      "scan_leaf": 449,
+      "lean_path": "Principia/FirstEdition/Volume1/Star63Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱63·54"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "pm_verbatim": "*63·55.\n \\[\\begin{align}&\\vdash:\\kappa\\in t_{0}ʻ\\lambda.\\equiv.t_{1}ʻ\\kappa=t_{2}ʻ\\lambda.\\equiv.t_{0}ʻ\\kappa=t_{1}ʻ\\lambda.\\equiv.tʻ\\kappa=t_{0}ʻ\\lambda.\\equiv.t^{2}ʻ\\kappa=tʻ\\lambda\\\\ &[\\text{Proof as in *63·54}]\\end{align}\\]",
+      "printed_latex_witness": "✱63·55. \\[\\begin{align}&\\vdash:\\kappa\\in t_{0}ʻ\\lambda.\\equiv.t_{1}ʻ\\kappa=t_{2}ʻ\\lambda.\\equiv.t_{0}ʻ\\kappa=t_{1}ʻ\\lambda.\\equiv.tʻ\\kappa=t_{0}ʻ\\lambda.\\equiv.t^{2}ʻ\\kappa=tʻ\\lambda\\\\ &[\\text{Proof as in *63·54}]\\end{align}\\]",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱63·57",
+      "kind": "derived-proposition",
+      "printed": "✱63·57. ⊢:α∈ t₁ʻλ.≡.t₀ʻα=t₂ʻλ.≡.tʻα=t₁ʻλ.≡.t²ʻα=t₀ʻλ [Proof as in *63·56]",
+      "printed_page": 428,
+      "scan_leaf": 450,
+      "lean_path": "Principia/FirstEdition/Volume1/Star63Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱63·56"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "pm_verbatim": "*63·57.\n \\[\\begin{align}&\\vdash:\\alpha\\in t_{1}ʻ\\lambda.\\equiv.t_{0}ʻ\\alpha=t_{2}ʻ\\lambda.\\equiv.tʻ\\alpha=t_{1}ʻ\\lambda.\\equiv.t^{2}ʻ\\alpha=t_{0}ʻ\\lambda\\\\ &[\\text{Proof as in *63·56}]\\end{align}\\]",
+      "printed_latex_witness": "✱63·57. \\[\\begin{align}&\\vdash:\\alpha\\in t_{1}ʻ\\lambda.\\equiv.t_{0}ʻ\\alpha=t_{2}ʻ\\lambda.\\equiv.tʻ\\alpha=t_{1}ʻ\\lambda.\\equiv.t^{2}ʻ\\alpha=t_{0}ʻ\\lambda\\\\ &[\\text{Proof as in *63·56}]\\end{align}\\]",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

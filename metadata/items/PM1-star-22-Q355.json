@@ -1,7 +1,161 @@
-{"batch":"PM1-STAR22-Q355","edition":"first","volume":1,"source_range":{"printed_pages":"223","scan_leaves":[245],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱22·71","kind":"definition","printed":"α ∪ β ∪ γ = (α ∪ β) ∪ γ Df","printed_page":223,"scan_leaf":245,"lean_path":"Principia/FirstEdition/Volume1/Star22Source.lean","declaration":"source-only","formal_scope":"classes; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":[],"normalized_dependencies":[]},
-{"id":"PM1:✱22·72","kind":"derived-proposition","printed":"⊢ : α ⊂ γ . β ⊂ δ .⊃ . α ∪ β ⊂ γ ∪ δ","printed_page":223,"scan_leaf":245,"lean_path":"Principia/FirstEdition/Volume1/Star22Source.lean","declaration":"source-only","formal_scope":"classes; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":["✱3·48"],"normalized_dependencies":[]},
-{"id":"PM1:✱22·73","kind":"derived-proposition","printed":"⊢ : α = γ . β = δ .⊃ . α ∪ β = γ ∪ δ","printed_page":223,"scan_leaf":245,"lean_path":"Principia/FirstEdition/Volume1/Star22Source.lean","declaration":"source-only","formal_scope":"classes; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":["✱10·411"],"normalized_dependencies":[]},
-{"id":"PM1:✱22·74","kind":"derived-proposition","printed":"⊢ : α ∩ β ⊂ γ . α ∩ γ ⊂ β .≡ . α ∩ β = α ∩ γ","printed_page":223,"scan_leaf":245,"lean_path":"Principia/FirstEdition/Volume1/Star22Source.lean","declaration":"source-only","formal_scope":"classes; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":[],"normalized_dependencies":[]},
-{"id":"PM1:✱22·8","kind":"derived-proposition","printed":"⊢ . −(−α) = α","printed_page":223,"scan_leaf":245,"lean_path":"Principia/FirstEdition/Volume1/Star22Source.lean","declaration":"source-only","formal_scope":"classes; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":["✱4·13"],"normalized_dependencies":[]}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR22-Q355",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "223",
+    "scan_leaves": [
+      245
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱22·71",
+      "kind": "definition",
+      "printed": "α ∪ β ∪ γ = (α ∪ β) ∪ γ Df",
+      "printed_page": 223,
+      "scan_leaf": 245,
+      "lean_path": "Principia/FirstEdition/Volume1/Star22Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "classes; blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-classes-predicativity-reducibility",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱22·72",
+      "kind": "derived-proposition",
+      "printed": "⊢ : α ⊂ γ . β ⊂ δ .⊃ . α ∪ β ⊂ γ ∪ δ",
+      "printed_page": 223,
+      "scan_leaf": 245,
+      "lean_path": "Principia/FirstEdition/Volume1/Star22Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "classes; blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-classes-predicativity-reducibility",
+      "printed_dependencies": [
+        "✱3·48"
+      ],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱22·73",
+      "kind": "derived-proposition",
+      "printed": "⊢ : α = γ . β = δ .⊃ . α ∪ β = γ ∪ δ",
+      "printed_page": 223,
+      "scan_leaf": 245,
+      "lean_path": "Principia/FirstEdition/Volume1/Star22Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "classes; blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-classes-predicativity-reducibility",
+      "printed_dependencies": [
+        "✱10·411"
+      ],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱22·74",
+      "kind": "derived-proposition",
+      "printed": "⊢ : α ∩ β ⊂ γ . α ∩ γ ⊂ β .≡ . α ∩ β = α ∩ γ",
+      "printed_page": 223,
+      "scan_leaf": 245,
+      "lean_path": "Principia/FirstEdition/Volume1/Star22Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "classes; blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-classes-predicativity-reducibility",
+      "printed_dependencies": [
+        "✱22·43",
+        "✱4·73",
+        "✱22·45",
+        "✱4·38",
+        "✱22·41"
+      ],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱22·8",
+      "kind": "derived-proposition",
+      "printed": "⊢ . −(−α) = α",
+      "printed_page": 223,
+      "scan_leaf": 245,
+      "lean_path": "Principia/FirstEdition/Volume1/Star22Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "classes; blocked",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-architecture-classes-predicativity-reducibility",
+      "printed_dependencies": [
+        "✱4·13"
+      ],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

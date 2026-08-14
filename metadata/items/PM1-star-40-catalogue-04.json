@@ -27,12 +27,25 @@
       "declaration": "PM.Architecture.Star40SecondKernel.star_40_181",
       "formal_scope": "strictly audited typed family sum/product endpoint matching the printed proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱22·33",
+        "PM1:✱10·5",
+        "PM1:✱40·11"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "integration_blocked": false
+      "integration_blocked": false,
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱40·19",
@@ -44,10 +57,12 @@
       "declaration": "PM.Architecture.Star40SecondKernel.star_40_19",
       "formal_scope": "strictly audited typed family sum/product endpoint matching the printed proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
-        "PM1:✱40·13"
+        "PM1:✱22·42",
+        "PM1:✱10·11",
+        "PM1:✱10·21"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star40OpeningKernel.star_40_13"
@@ -57,7 +72,16 @@
       ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star40-catalogue-review.md",
-      "integration_blocked": false
+      "integration_blocked": false,
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱40·2",
@@ -69,12 +93,25 @@
       "declaration": "PM.Architecture.Star40SecondKernel.star_40_2",
       "formal_scope": "strictly audited typed family sum/product endpoint matching the printed proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱10·53",
+        "PM1:✱40·1",
+        "PM1:✱24·14"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "integration_blocked": false
+      "integration_blocked": false,
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱40·21",
@@ -86,12 +123,25 @@
       "declaration": "PM.Architecture.Star40SecondKernel.star_40_21",
       "formal_scope": "strictly audited typed family sum/product endpoint matching the printed proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱10·5",
+        "PM1:✱40·11",
+        "PM1:✱24·15"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "integration_blocked": false
+      "integration_blocked": false,
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱40·22",
@@ -103,12 +153,23 @@
       "declaration": "PM.Architecture.Star40SecondKernel.star_40_22",
       "formal_scope": "strictly audited typed family sum/product endpoint matching the printed proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱24·13"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "integration_blocked": false
+      "integration_blocked": false,
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

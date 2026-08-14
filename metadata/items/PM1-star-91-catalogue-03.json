@@ -14,58 +14,82 @@
     "PG78050"
   ],
   "ci_evidence": {
-    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   },
   "batch": "PM1-STAR91-CATALOGUE-03",
   "items": [
     {
       "id": "PM1:✱91·35",
       "kind": "derived-proposition",
-      "printed": "✱91·35. ⊢ . I↾CʻR∈PotidʻR",
+      "printed": "✱91·35. ⊢.I↾ CʻR∈ PotidʻR [✱91·23]",
       "printed_page": 593,
       "scan_leaf": 615,
       "lean_path": "Principia/Architecture/Star91OpeningKernel3.lean",
       "declaration": "PM.Architecture.Star91OpeningKernel3.star_91_35",
       "formal_scope": "audited typed relation-power reconstruction matching the PM locus",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱91·23"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·351",
       "kind": "derived-proposition",
-      "printed": "✱91·351. ⊢ . R∈PotʻR",
+      "printed": "✱91·351. ⊢.R∈ PotʻR [✱91·264]",
       "printed_page": 594,
       "scan_leaf": 616,
       "lean_path": "Principia/Architecture/Star91OpeningKernel3.lean",
       "declaration": "PM.Architecture.Star91OpeningKernel3.star_91_351",
       "formal_scope": "audited typed relation-power reconstruction matching the PM locus",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱91·264"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·352",
       "kind": "derived-proposition",
-      "printed": "✱91·352. ⊢ . R²∈PotʻR",
+      "printed": "✱91·352. ⊢.R²∈ PotʻR [✱91·282·351]",
       "printed_page": 594,
       "scan_leaf": 616,
       "lean_path": "Principia/Architecture/Star91OpeningKernel3.lean",
       "declaration": "PM.Architecture.Star91OpeningKernel3.star_91_352",
       "formal_scope": "audited typed relation-power reconstruction matching the PM locus",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱91·282",
         "PM1:✱91·351"
@@ -77,23 +101,35 @@
       "normalized_dependencies": [
         "PM1:✱91·282",
         "PM1:✱91·351"
-      ]
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·37",
       "kind": "derived-proposition",
-      "printed": "✱91·37. ⊢ : PotidʻR⊂μ .≡: I↾CʻR∈μ : S∈PotidʻR.S∈μ .⊃ₛ. S|R∈μ",
+      "printed": "✱91·37. ⊢:. PotidʻR⊂ μ.≡:I↾ CʻR∈ μ:S∈ PotidʻR.S∈ μ.⊃_S.S| R∈ μ",
       "printed_page": 593,
       "scan_leaf": 615,
       "lean_path": "Principia/Architecture/Star91OpeningKernel3.lean",
       "declaration": "PM.Architecture.Star91OpeningKernel3.star_91_37",
       "formal_scope": "audited typed relation-power reconstruction matching the PM locus",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
-        "PM1:✱91·282",
-        "PM1:✱91·351"
+        "PM1:✱91·281",
+        "PM1:✱91·35",
+        "PM1:✱91·17",
+        "PM1:✱3·41"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star91OpeningKernel3.star_91_282",
@@ -104,20 +140,30 @@
         "PM1:✱91·351"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·371",
       "kind": "derived-proposition",
-      "printed": "✱91·371. ⊢ : P∈PotidʻR .⊃ₚ. φP :≡: φ(I↾CʻR) : S∈PotidʻR.φS .⊃ₛ. φ(S|R)",
+      "printed": "✱91·371. ⊢:. P∈ Potidʻ R.⊃_P.φ P:≡: φ(I↾ CʻR):S∈ PotidʻR.φ S.⊃_S.φ(S| R) [✱91·37]",
       "printed_page": 593,
       "scan_leaf": 615,
       "lean_path": "Principia/Architecture/Star91OpeningKernel3.lean",
       "declaration": "PM.Architecture.Star91OpeningKernel3.star_91_371",
       "formal_scope": "audited typed relation-power reconstruction matching the PM locus",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱91·37"
       ],
@@ -128,7 +174,17 @@
         "PM1:✱91·37"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ]
 }

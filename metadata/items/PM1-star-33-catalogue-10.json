@@ -22,15 +22,28 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel3.lean",
       "declaration": "PM.Architecture.Star33DomainKernel3.star_33_262",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
       "formal_scope": "exact typed distribution of relation field over relation union",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "printed": "✱33·262.  \\(\\vdash.Cʻ(R\\unicode{x228d}S)=CʻR\\cup CʻS \\quad[\\text{*33·26·261·16}]\\)",
+      "printed": "✱33·262. ⊢.Cʻ(R⊍S)=CʻR∪ CʻS [*33·26·261·16]",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱33·262.  \\(\\vdash.Cʻ(R\\unicode{x228d}S)=CʻR\\cup CʻS \\quad[\\text{*33·26·261·16}]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱33·263",
@@ -38,15 +51,29 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel3.lean",
       "declaration": "PM.Architecture.Star33DomainKernel3.star_33_263",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
       "formal_scope": "exact typed monotonicity of relation domain under relation inclusion",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱10·28",
+        "PM1:✱10·27"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "printed": "✱33·263.  \\(\\vdash:R\\unicode{x2abd}S.\\supset .\\text{D}ʻR\\subset\\text{D}ʻS\\)",
+      "printed": "✱33·263. ⊢:R⪽S.⊃ .DʻR⊂DʻS",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱33·263.  \\(\\vdash:R\\unicode{x2abd}S.\\supset .\\text{D}ʻR\\subset\\text{D}ʻS\\)"
     },
     {
       "id": "PM1:✱33·264",
@@ -54,15 +81,26 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel3.lean",
       "declaration": "PM.Architecture.Star33DomainKernel3.star_33_264",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
       "formal_scope": "exact typed monotonicity of converse-domain under relation inclusion",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "printed": "✱33·264.  \\(\\vdash:R\\unicode{x2abd}S.\\supset .\\text{ᗡ}ʻR\\subset\\text{ᗡ}ʻS \\quad[\\text{Similar proof}]\\)",
+      "printed": "✱33·264. ⊢:R⪽S.⊃ .ᗡʻR⊂ᗡʻS [Similar proof]",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱33·264.  \\(\\vdash:R\\unicode{x2abd}S.\\supset .\\text{ᗡ}ʻR\\subset\\text{ᗡ}ʻS \\quad[\\text{Similar proof}]\\)"
     },
     {
       "id": "PM1:✱33·265",
@@ -70,15 +108,26 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel3.lean",
       "declaration": "PM.Architecture.Star33DomainKernel3.star_33_265",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
       "formal_scope": "exact typed monotonicity of relation field under relation inclusion",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "printed": "✱33·265.  \\(\\vdash:R\\unicode{x2abd}S.\\supset .CʻR\\subset CʻS \\quad[\\text{*33·263·264·16.*22·72}]\\)",
+      "printed": "✱33·265. ⊢:R⪽S.⊃ .CʻR⊂ CʻS [*33·263·264·16.*22·72]",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱33·265.  \\(\\vdash:R\\unicode{x2abd}S.\\supset .CʻR\\subset CʻS \\quad[\\text{*33·263·264·16.*22·72}]\\)"
     },
     {
       "id": "PM1:✱33·271",
@@ -86,15 +135,28 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel3.lean",
       "declaration": "PM.Architecture.Star33DomainKernel3.star_33_271",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
       "formal_scope": "exact typed converse-domain characterization of the field through union with the converse relation",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "printed": "✱33·271.  \\(\\vdash.CʻR=\\text{ᗡ}ʻ(R\\unicode{x228d}\\breve{R}) \\quad[\\text{Similar proof}]\\)",
+      "printed": "✱33·271. ⊢.CʻR=ᗡʻ(R⊍Ř) [Similar proof]",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱33·271.  \\(\\vdash.CʻR=\\text{ᗡ}ʻ(R\\unicode{x228d}\\breve{R}) \\quad[\\text{Similar proof}]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     }
   ],
   "ci_evidence": {

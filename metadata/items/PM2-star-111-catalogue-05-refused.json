@@ -1,12 +1,161 @@
 {
-  "batch": "PM2-STAR111-CATALOGUE-05-REFUSED", "edition": "first", "volume": 2,
-  "source_range": {"printed_pages": "90–91", "canonical_scan": "https://archive.org/details/PrincipiaMathematicaVol2/page/n111", "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},
-  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "batch": "PM2-STAR111-CATALOGUE-05-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "90–91",
+    "canonical_scan": "https://archive.org/details/PrincipiaMathematicaVol2/page/n111",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
   "items": [
-    {"id":"PM2:✱111·25","kind":"derived-proposition","printed":"✱111·25. ⊢:S∈1→Cls.S⊂sm.λ⊂αʻS.⊃.Crp(S)ʻʻλ∈Cls ex² excl","lean_path":"Principia/Architecture/Star111Kernel.lean","declaration":"PM.Architecture.Star111Kernel.star_111_25 (refused candidate)","formal_scope":"refused: Lean omits PM's double-image exclusive-class conclusion","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star111-parser-gaps.md","semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star111-catalogues-05-06-semantic-audit.md"},
-    {"id":"PM2:✱111·31","kind":"derived-proposition","printed":"✱111·31. ⊢:λ,Sʻκ∈Cls² excl.S∈1→1.R∈∈ΔʻCrp(S)ʻκ.⊃.DʻR sm sʻκ","lean_path":"Principia/Architecture/Star111Kernel.lean","declaration":"PM.Architecture.Star111Kernel.star_111_31 (refused candidate)","formal_scope":"refused: bijection extraction omits all typed correspondence hypotheses and PM's DʻR similarity conclusion","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star111-parser-gaps.md","semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star111-catalogues-05-06-semantic-audit.md"},
-    {"id":"PM2:✱111·32","kind":"derived-proposition","printed":"✱111·32. ⊢:κ,Sʻλ∈Cls² excl.S∈1→1.R∈∈ΔʻCrp(S)ʻλ.M=sʻDʻR.⊃.M sm sʻλ","lean_path":"Principia/Architecture/Star111Kernel.lean","declaration":"PM.Architecture.Star111Kernel.star_111_32 (refused candidate)","formal_scope":"refused: generic similarity symmetry omits PM's correspondence premises and M conclusion","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star111-parser-gaps.md","semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star111-catalogues-05-06-semantic-audit.md"},
-    {"id":"PM2:✱111·321","kind":"derived-proposition","printed":"✱111·321. ⊢:κ,Sʻλ∈Cls² excl.S∈1→1.E!∈ΔʻCrp(S)ʻλ.⊃.E!κ sm sm λ","lean_path":"Principia/Architecture/Star111Kernel.lean","declaration":"PM.Architecture.Star111Kernel.star_111_321 (refused candidate)","formal_scope":"refused: reflexive similarity omits contextual existence and every printed hypothesis","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star111-parser-gaps.md","semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star111-catalogues-05-06-semantic-audit.md"},
-    {"id":"PM2:✱111·33","kind":"derived-proposition","printed":"✱111·33. ⊢:Mult ax.⊃:S∈1→1.S⊂sm.κ,λ∈Cls² excl.κ=Sʻλ.λ⊂αʻS.⊃.κ sm sm λ","lean_path":"Principia/Architecture/Star111Kernel.lean","declaration":"PM.Architecture.Star111Kernel.star_111_33 (refused candidate)","formal_scope":"refused: identity on assumed DoubleSimilar omits Mult ax and all construction hypotheses","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-strict-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star111-parser-gaps.md","semantic_audit_status":"refused-not-source-equivalent","semantic_audit_evidence":"reviews/Star111-catalogues-05-06-semantic-audit.md"}
-  ], "ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+    {
+      "id": "PM2:✱111·25",
+      "kind": "derived-proposition",
+      "printed": "✱111·25. ⊢:S∈1→Cls.S⊂sm.λ⊂αʻS.⊃.Crp(S)ʻʻλ∈Cls ex² excl",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_25 (refused candidate)",
+      "formal_scope": "refused: Lean omits PM's double-image exclusive-class conclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogues-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱111·31",
+      "kind": "derived-proposition",
+      "printed": "✱111·31. ⊢:λ,Sʻκ∈Cls² excl.S∈1→1.R∈∈ΔʻCrp(S)ʻκ.⊃.DʻR sm sʻκ",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_31 (refused candidate)",
+      "formal_scope": "refused: bijection extraction omits all typed correspondence hypotheses and PM's DʻR similarity conclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogues-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱111·32",
+      "kind": "derived-proposition",
+      "printed": "✱111·32. ⊢:κ,Sʻλ∈Cls² excl.S∈1→1.R∈∈ΔʻCrp(S)ʻλ.M=sʻDʻR.⊃.M sm sʻλ",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_32 (refused candidate)",
+      "formal_scope": "refused: generic similarity symmetry omits PM's correspondence premises and M conclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogues-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱111·321",
+      "kind": "derived-proposition",
+      "printed": "✱111·321. ⊢:κ,Sʻλ∈Cls² excl.S∈1→1.E!∈ΔʻCrp(S)ʻλ.⊃.E!κ sm sm λ",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_321 (refused candidate)",
+      "formal_scope": "refused: reflexive similarity omits contextual existence and every printed hypothesis",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogues-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱111·33",
+      "kind": "derived-proposition",
+      "printed": "✱111·33. ⊢:Mult ax.⊃:S∈1→1.S⊂sm.κ,λ∈Cls² excl.κ=Sʻλ.λ⊂αʻS.⊃.κ sm sm λ",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_33 (refused candidate)",
+      "formal_scope": "refused: identity on assumed DoubleSimilar omits Mult ax and all construction hypotheses",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogues-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

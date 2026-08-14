@@ -1,0 +1,163 @@
+{
+  "batch": "PM2-STAR176-CATALOGUE-06",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "465"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱176·32",
+      "kind": "derived-proposition",
+      "printed": "⊢ :∃̇ !Q.⊃ .B⃗ʻ(P^Q)=(B⃗ʻP↑ CʻQ)_Δ ʻCʻQ",
+      "printed_page": 465,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱176·31",
+        "PM2:✱176·18",
+        "PM2:✱151·5",
+        "PM2:✱116·13"
+      ],
+      "printed_latex_witness": "\\(\\vdash :\\dot{\\exists} !Q.\\supset .\\overrightarrow{B}ʻ(P^{Q})=(\\overrightarrow{B}ʻP\\uparrow CʻQ)_{\\Delta }ʻCʻQ\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱176·321",
+      "kind": "derived-proposition",
+      "printed": "⊢ :∃̇ !Q.⊃ .B⃗ʻCnvʻ(P^Q)=(B⃗ʻP̌ ↑ CʻQ)_Δ ʻCʻQ [*176·32·3]",
+      "printed_page": 465,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱176·32",
+        "PM2:✱176·3"
+      ],
+      "printed_latex_witness": "\\(\\vdash :\\dot{\\exists} !Q.\\supset .\\overrightarrow{B}ʻ\\text{Cnv}ʻ(P^{Q})=(\\overrightarrow{B}ʻ\\breve{P} \\uparrow CʻQ)_{\\Delta }ʻCʻQ \\quad[*176·32·3]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱176·33",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. ∃̇ !Q.⊃ : ∃ !B⃗ʻ(P exp Q).≡ .∃ !B⃗ʻ(P^Q).≡ .∃ !B⃗ʻP: ∃ !B⃗ʻCnvʻ(P exp Q).≡ .∃ !B⃗ʻCnvʻ(P^Q).≡ .∃ !B⃗ʻP̌ [*176·31·311·32·321.*116·18·15]",
+      "printed_page": 465,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱176·31",
+        "PM2:✱176·311",
+        "PM2:✱176·32",
+        "PM2:✱176·321",
+        "PM2:✱116·18",
+        "PM2:✱116·15"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\ldotp \\dot{\\exists} !Q.\\supset :&\\exists !\\overrightarrow{B}ʻ(P\\,\\text{exp}\\,\\,Q).\\equiv .\\exists !\\overrightarrow{B}ʻ(P^{Q}).\\equiv .\\exists !\\overrightarrow{B}ʻP:\\\\ &\\exists !\\overrightarrow{B}ʻ\\text{Cnv}ʻ(P\\,\\text{exp}\\,\\,Q).\\equiv .\\exists !\\overrightarrow{B}ʻ\\text{Cnv}ʻ(P^{Q}).\\equiv .\\exists !\\overrightarrow{B}ʻ\\breve{P}\\\\ &[*176·31·311·32·321.*116·18·15]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱176·34",
+      "kind": "derived-proposition",
+      "printed": "⊢ :∃̇ !Q.E! BʻP.⊃ . Bʻ(P exp Q)=(BʻP)↓ʻʻCʻQ.Bʻ(P^Q)=(ι ʻBʻP)↑ CʻQ",
+      "printed_page": 465,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱176·31",
+        "PM2:✱116·01",
+        "PM1:✱38·3",
+        "PM1:✱53·31",
+        "PM2:✱115·143",
+        "PM2:✱116·12",
+        "PM1:✱51·4"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash :\\dot{\\exists} !Q.\\text{E}!&BʻP.\\supset .\\\\ &Bʻ(P\\,\\text{exp}\\,\\,Q)=(BʻP)\\downarrowʻʻCʻQ.Bʻ(P^{Q})=(\\iota ʻBʻP)\\uparrow CʻQ\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱176·341",
+      "kind": "derived-proposition",
+      "printed": "⊢ :∃̇ !Q.E! BʻP̌ .⊃ . BʻCnvʻ(P exp Q)=(BʻP̌ )↓ʻʻCʻQ.BʻCnvʻ(P^Q)=(ι ʻBʻP̌ )↑ CʻQ [Proof as in *176·34]",
+      "printed_page": 465,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱176·34"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash :\\dot{\\exists} !Q.\\text{E}!&Bʻ\\breve{P} .\\supset .\\\\ &Bʻ\\text{Cnv}ʻ(P\\,\\text{exp}\\,\\,Q)=(Bʻ\\breve{P} )\\downarrowʻʻCʻQ.Bʻ\\text{Cnv}ʻ(P^{Q})=(\\iota ʻBʻ\\breve{P} )\\uparrow CʻQ\\\\ &[\\text{Proof as in *176·34}]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

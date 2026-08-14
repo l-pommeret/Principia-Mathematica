@@ -22,10 +22,15 @@
       "scan_leaf": 174,
       "lean_path": "Principia/Architecture/Star10Q271Kernel.lean",
       "declaration": "PM.Architecture.Star10Q271Kernel.star_10_33",
-      "formal_scope": "exact theorem-specific composition of the four printed ingredients over the literal Raw endpoint",
+      "formal_scope": "exact Raw target plus axiom-free four-component certificate; no PM assertion judgement for the endpoint",
+      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-assertion-judgement",
+      "integration_blocked": true,
+      "blocking_reason": "The declaration is a def returning a theorem-specific component structure whose reading field is target = target; it has no theorem-level PM judgement or printed-formula reading.",
+      "migration_audit": "reviews/Q269-Q271-pm-derivation-v1-migration-audit.md",
+      "axiom_report_status": "axiom-free",
       "printed_dependencies": [
         "PM1:✱10·1",
         "PM1:✱3·27",
@@ -34,15 +39,15 @@
       ],
       "lean_dependencies": [
         "PM.Architecture.Star10Q264Kernel.star_10_1",
-        "PM.FirstEdition.Volume1.Star3.star_3_27",
+        "PM.Architecture.Star10Q265FinalPrerequisites.star_10_11_21",
         "PM.FirstEdition.Volume1.Star3.star_3_26",
-        "PM.Architecture.Star10Q265FinalPrerequisites.star_10_11_21"
+        "PM.FirstEdition.Volume1.Star3.star_3_27"
       ],
       "normalized_dependencies": [
         "PM1:✱10·1",
-        "PM1:✱3·27",
+        "PM1:✱10·11",
         "PM1:✱3·26",
-        "PM1:✱10·11"
+        "PM1:✱3·27"
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -54,12 +59,22 @@
         ],
         "strict_attempt_evidence": "reviews/Q271-star-10-audit.md",
         "editorial_note": "The printed combined citation ✱10·11·21 is represented by its existing Lean realization indexed at ✱10·11; it has no separate combined graph node."
+      },
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

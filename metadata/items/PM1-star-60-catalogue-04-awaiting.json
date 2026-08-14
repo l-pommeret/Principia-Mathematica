@@ -32,6 +32,7 @@
       "printed_page": 406,
       "scan_leaf": 428,
       "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -39,9 +40,10 @@
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.ClEx",
       "formal_scope": "exact typed definition of the class of inhabited subclasses; strict semantic audit passed",
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star60-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "formalization_level": "pm-derivation-v1"
     },
     {
       "id": "PM1:✱60·1",
@@ -49,7 +51,7 @@
       "printed": "✱60·1. ⊢ : κ Cl α .≡. κ = β̂(β ⊂ α)",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -57,9 +59,18 @@
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_1",
       "formal_scope": "exact typed defining equivalence for Cl; strict semantic audit passed",
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star60-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱60·11",
@@ -67,18 +78,39 @@
       "printed": "✱60·11. ⊢ : κ Cl ex α .≡. κ = β̂(β ⊂ α . ∃!β)",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "lean_dependencies": ["PM.Architecture.Star60Kernel.ClEx"],
-      "normalized_dependencies": ["PM1:✱60·02"],
+      "lean_dependencies": [
+        "PM.Architecture.Star60Kernel.ClEx"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱60·02"
+      ],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_11",
       "formal_scope": "exact typed defining equivalence for Cl ex; strict semantic audit passed",
-      "integration_status": "canonical-kernel-checked",
+      "integration_status": "provisional-kernel-checked",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star60-catalogue-review.md",
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱60·02"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Star60-catalogue-review.md","editorial_note":"The theorem unfolds the already printed definition ✱60·02 of Cl ex; this is a genuine definitional PM edge although no bracketed citation is printed."}
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱60·02"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star60-catalogue-review.md",
+        "editorial_note": "The theorem unfolds the already printed definition ✱60·02 of Cl ex; this is a genuine definitional PM edge although no bracketed citation is printed."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ]
 }

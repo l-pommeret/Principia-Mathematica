@@ -1,0 +1,132 @@
+{
+  "batch": "PM2-STAR155-CATALOGUE-03",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "345"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱155·22",
+      "kind": "derived-proposition",
+      "printed": "⊢ :μ ∈ N₀R.⊃ .∃ !μ",
+      "printed_page": 345,
+      "lean_path": "Principia/FirstEdition/Volume2/Star155Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(\\vdash :\\mu \\in \\text{N}_{0}\\text{R}.\\supset .\\exists !\\mu\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱155·23",
+      "kind": "derived-proposition",
+      "printed": "⊢ .Λ ∼∈ N₀R",
+      "printed_page": 345,
+      "lean_path": "Principia/FirstEdition/Volume2/Star155Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(\\vdash .\\Lambda {\\sim}\\in \\text{N}_{0}\\text{R}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱155·24",
+      "kind": "derived-proposition",
+      "printed": "⊢ .N₀R∈ Cls ex²excl",
+      "printed_page": 345,
+      "lean_path": "Principia/FirstEdition/Volume2/Star155Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(\\vdash .\\text{N}_{0}\\text{R}\\in \\text{Cls ex}^{2}\\text{excl}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱155·25",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. μ ,ν ∈ N₀R.⊃ :∃ !μ ∩ ν .≡ .μ =ν",
+      "printed_page": 345,
+      "lean_path": "Principia/FirstEdition/Volume2/Star155Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(\\vdash \\colon\\ldotp \\mu ,\\nu \\in \\text{N}_{0}\\text{R}.\\supset :\\exists !\\mu \\cap \\nu .\\equiv .\\mu =\\nu\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱155·26",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. μ ∈ NR.⊃ :P∈ μ .≡ .N₀rʻP=μ",
+      "printed_page": 345,
+      "lean_path": "Principia/FirstEdition/Volume2/Star155Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(\\vdash \\colon\\ldotp \\mu \\in \\text{NR}.\\supset :P\\in \\mu .\\equiv .\\text{N}_{0}\\text{r}ʻP=\\mu\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR30-CATALOGUE-2",
+  "batch": "PM1-STAR30-CATALOGUE-2-BLOCKED-T1-T9",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -19,131 +19,221 @@
     {
       "id": "PM1:✱30·15",
       "kind": "derived-proposition",
-      "printed": "✱30·15. \\(\\vdash\\colon\\ldotp p:[Rʻy].\\chi(Rʻy):\\equiv:[Rʻy].p.\\chi(Rʻy) \\quad[\\text{*14·34}]\\)",
+      "printed": "✱30·15. ⊢:. p:[Rʻy].χ(Rʻy):≡:[Rʻy].p.χ(Rʻy) [*14·34]",
       "printed_page": 248,
       "scan_leaf": 270,
       "lean_path": "Principia/Architecture/Star30ScopedDescriptionKernel.lean",
       "declaration": "PM.Architecture.Star30ScopedDescriptionKernel.star_30_15",
-      "formal_scope": "exact contextual distribution of a constant conjunct",
+      "formal_scope": "blocked non-v1: exact secondary Prop equivalence only; no PM object formula, concrete reading, or axiom-free inductive derivation through the printed ✱14·34 chain",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-non-v1-no-pm-derivation",
+      "integration_blocked": true,
+      "formalization_layer": "prop-semantic-secondary",
+      "blocking_reason": "Fails T3 and T4: the theorem is a Lean Prop equivalence, not an asserted PM object formula with a concrete reading and genuine derivation.",
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-        "✱14·34"
+        "PM1:✱14·34"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "historical_dependency_relaxation": {
-        "classification": "relaxed-closure", "added_beyond_print": [],
-        "printed_but_unused": ["✱14·34"],
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱14·34"
+        ],
         "strict_attempt_evidence": "reviews/Star30-catalogue-review.md",
         "editorial_note": "The contextual Scope definition proves conjunction distribution directly; PM's citation remains historical."
+      },
+      "printed_latex_witness": "✱30·15. \\(\\vdash\\colon\\ldotp p:[Rʻy].\\chi(Rʻy):\\equiv:[Rʻy].p.\\chi(Rʻy) \\quad[\\text{*14·34}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱30·16",
       "kind": "derived-proposition",
-      "printed": "✱30·16. \\(\\vdash\\colon [Rʻy].f(Rʻy,Sʻz).\\equiv.[Sʻz].f(Rʻy,Sʻz) \\quad[\\text{*14·113}]\\)",
+      "printed": "✱30·16. ⊢: [Rʻy].f(Rʻy,Sʻz).≡.[Sʻz].f(Rʻy,Sʻz) [*14·113]",
       "printed_page": 248,
       "scan_leaf": 270,
       "lean_path": "Principia/Architecture/Star30ScopedDescriptionKernel.lean",
       "declaration": "PM.Architecture.Star30ScopedDescriptionKernel.star_30_16",
-      "formal_scope": "exact commutation of two independent contextual descriptions",
+      "formal_scope": "blocked non-v1: exact secondary Prop equivalence only; no PM object formula, concrete reading, or axiom-free inductive derivation through the printed ✱14·113 chain",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-non-v1-no-pm-derivation",
+      "integration_blocked": true,
+      "formalization_layer": "prop-semantic-secondary",
+      "blocking_reason": "Fails T3 and T4: witness reordering in Prop is not the printed object-level derivation.",
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-        "✱14·113"
+        "PM1:✱14·113"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "historical_dependency_relaxation": {
-        "classification": "relaxed-closure", "added_beyond_print": [],
-        "printed_but_unused": ["✱14·113"],
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱14·113"
+        ],
         "strict_attempt_evidence": "reviews/Star30-catalogue-review.md",
         "editorial_note": "Commutation is the direct reordering of the two scoped witnesses; PM's citation remains historical."
+      },
+      "printed_latex_witness": "✱30·16. \\(\\vdash\\colon [Rʻy].f(Rʻy,Sʻz).\\equiv.[Sʻz].f(Rʻy,Sʻz) \\quad[\\text{*14·113}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱30·17",
       "kind": "derived-proposition",
-      "printed": "✱30·17. \\(\\vdash\\colon\\ldotp[Rʻy].f(Rʻy,Sʻz).\\equiv:(\\exists b,c):xRy.\\equiv_{x}.x=b:xSz.\\equiv_{x}.x=c:f(b,c) \\quad[\\text{*14·112}]\\)",
+      "printed": "✱30·17. ⊢:.[Rʻy].f(Rʻy,Sʻz).≡:(∃ b,c):xRy.≡ₓ.x=b:xSz.≡ₓ.x=c:f(b,c) [*14·112]",
       "printed_page": 248,
       "scan_leaf": 270,
       "lean_path": "Principia/Architecture/Star30ScopedDescriptionKernel.lean",
       "declaration": "PM.Architecture.Star30ScopedDescriptionKernel.star_30_17",
-      "formal_scope": "exact two-witness expansion of the double contextual description",
+      "formal_scope": "blocked non-v1: exact secondary Prop expansion only; no PM object formula, concrete reading, or axiom-free inductive derivation through the printed ✱14·112 chain",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-non-v1-no-pm-derivation",
+      "integration_blocked": true,
+      "formalization_layer": "prop-semantic-secondary",
+      "blocking_reason": "Fails T3 and T4: unfolding existential witnesses in Prop does not reconstruct the printed assertion derivation.",
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-        "✱14·112"
+        "PM1:✱14·112"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "historical_dependency_relaxation": {
-        "classification": "relaxed-closure", "added_beyond_print": [],
-        "printed_but_unused": ["✱14·112"],
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱14·112"
+        ],
         "strict_attempt_evidence": "reviews/Star30-catalogue-review.md",
         "editorial_note": "Expanding the two Scope definitions gives exactly the two printed witnesses; PM's citation remains historical."
+      },
+      "printed_latex_witness": "✱30·17. \\(\\vdash\\colon\\ldotp[Rʻy].f(Rʻy,Sʻz).\\equiv:(\\exists b,c):xRy.\\equiv_{x}.x=b:xSz.\\equiv_{x}.x=c:f(b,c) \\quad[\\text{*14·112}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱30·18",
       "kind": "derived-proposition",
-      "printed": "✱30·18. \\(\\vdash\\colon\\ldotp\\exists!Rʻy:(z).\\phi z:\\supset.\\phi(Rʻy) \\quad[\\text{*14·18}]\\)",
+      "printed": "✱30·18. ⊢:.∃!Rʻy:(z).φ z:⊃.φ(Rʻy) [*14·18]",
       "printed_page": 248,
       "scan_leaf": 270,
       "lean_path": "Principia/Architecture/Star30ScopedDescriptionKernel.lean",
       "declaration": "PM.Architecture.Star30ScopedDescriptionKernel.star_30_18",
-      "formal_scope": "exact universal-instantiation law for an existent contextual description",
+      "formal_scope": "blocked non-v1: exact secondary Prop implication only; no PM object formula, concrete reading, or axiom-free inductive derivation through the printed ✱14·18 chain",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-non-v1-no-pm-derivation",
+      "integration_blocked": true,
+      "formalization_layer": "prop-semantic-secondary",
+      "blocking_reason": "Fails T3 and T4: Lean universal instantiation at a witness is secondary semantics, not a PM derivation.",
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star30-catalogue-review.md",
       "printed_dependencies": [
-        "✱14·18"
+        "PM1:✱14·18"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "historical_dependency_relaxation": {
-        "classification": "relaxed-closure", "added_beyond_print": [],
-        "printed_but_unused": ["✱14·18"],
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱14·18"
+        ],
         "strict_attempt_evidence": "reviews/Star30-catalogue-review.md",
         "editorial_note": "Universal instantiation at the unique contextual witness is direct; PM's citation remains historical."
+      },
+      "printed_latex_witness": "✱30·18. \\(\\vdash\\colon\\ldotp\\exists!Rʻy:(z).\\phi z:\\supset.\\phi(Rʻy) \\quad[\\text{*14·18}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱30·19",
       "kind": "derived-proposition",
-      "printed": "✱30·19. \\(\\vdash\\colon\\ldotp Rʻy=b.\\supset:\\psi(Rʻy).\\equiv.\\psi b \\quad[\\text{*14·15}]\\)",
+      "printed": "✱30·19. ⊢:. Rʻy=b.⊃:ψ(Rʻy).≡.ψ b [*14·15]",
       "printed_page": 249,
       "scan_leaf": 271,
       "lean_path": "Principia/Architecture/Star30ScopedDescriptionKernel.lean",
       "declaration": "PM.Architecture.Star30ScopedDescriptionKernel.star_30_19",
-      "formal_scope": "exact contextual substitution under identity with the described value",
+      "formal_scope": "blocked non-v1: exact secondary Prop equivalence only; no PM object formula, concrete reading, or axiom-free inductive derivation through the printed ✱14·15 chain",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-non-v1-no-pm-derivation",
+      "integration_blocked": true,
+      "formalization_layer": "prop-semantic-secondary",
+      "blocking_reason": "Fails T3 and T4: substitution via equality of Lean witnesses does not reconstruct the printed PM assertion chain.",
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star30-catalogue-review.md",
       "printed_dependencies": [
-        "✱14·15"
+        "PM1:✱14·15"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "historical_dependency_relaxation": {
-        "classification": "relaxed-closure", "added_beyond_print": [],
-        "printed_but_unused": ["✱14·15"],
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱14·15"
+        ],
         "strict_attempt_evidence": "reviews/Star30-catalogue-review.md",
         "editorial_note": "Substitution follows directly from equality of the unique contextual witnesses; PM's citation remains historical."
+      },
+      "printed_latex_witness": "✱30·19. \\(\\vdash\\colon\\ldotp Rʻy=b.\\supset:\\psi(Rʻy).\\equiv.\\psi b \\quad[\\text{*14·15}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

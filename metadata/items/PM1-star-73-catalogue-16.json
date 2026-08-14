@@ -1,0 +1,56 @@
+{
+  "batch": "PM1-STAR73-CATALOGUE-16",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "489",
+    "scan_leaves": [
+      511
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "items": [
+    {
+      "id": "PM1:✱73·88",
+      "kind": "derived-proposition",
+      "printed": "✱73·88. ⊢:α sm γ.β sm δ.γ⊂ β.δ⊂ α.⊃.α sm β",
+      "printed_page": 489,
+      "scan_leaf": 511,
+      "lean_path": "Principia/FirstEdition/Volume1/Star73Source.lean",
+      "declaration": "source-only (no faithful homonymous Lean declaration)",
+      "formal_scope": "source transcription only; no faithful homonymous Lean declaration",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-faithful-formal-target",
+      "printed_dependencies": [
+        "PM1:✱73·1",
+        "PM1:✱73·87",
+        "PM1:✱13·22"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "\\vdash:\\alpha\\text{ sm }\\gamma.\\beta\\text{ sm }\\delta.\\gamma\\subset \\beta.\\delta\\subset \\alpha.\\supset.\\alpha\\text{ sm }\\beta",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ]
+}

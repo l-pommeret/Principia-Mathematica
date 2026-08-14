@@ -25,15 +25,15 @@
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_16",
       "formal_scope": "exact relation-product reduction after adjoining a singleton relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱53·14"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
@@ -42,6 +42,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star53-third-semantic-audit.md",
         "editorial_note": "The Lean certificate directly expands the typed relation/class operators; the printed analogous-proof reference is retained historically but is not invoked."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -54,15 +63,15 @@
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_17",
       "formal_scope": "exact relation-sum reduction after adjoining a singleton relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱53·14"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
@@ -71,6 +80,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star53-third-semantic-audit.md",
         "editorial_note": "The Lean certificate directly expands the typed relation/class operators; the printed analogous-proof reference is retained historically but is not invoked."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -83,11 +101,20 @@
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_18",
       "formal_scope": "exact invariance of class sum after removing the singleton empty class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·181",
@@ -99,15 +126,15 @@
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_181",
       "formal_scope": "exact relation analogue: invariance of relation sum after removing the singleton empty relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱53·18"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
@@ -116,6 +143,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star53-third-semantic-audit.md",
         "editorial_note": "The Lean certificate directly expands the typed relation/class operators; the printed analogous-proof reference is retained historically but is not invoked."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -128,8 +164,8 @@
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_2",
       "formal_scope": "exact common value of the unique member, product, and sum of a singleton class of classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star53OpeningKernel.star_53_01",
@@ -148,6 +184,15 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star53-third-semantic-audit.md",
         "editorial_note": "The Lean proof instantiates the two immediately preceding singleton product/sum identities; the displayed source carries no bracketed citations."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR30-CATALOGUE-3",
+  "batch": "PM1-STAR30-CATALOGUE-3-BLOCKED-T1-T9",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -18,120 +18,208 @@
     {
       "id": "PM1:✱30·2",
       "kind": "derived-proposition",
-      "printed": "✱30·2. \\(\\vdash\\colon\\ldotp\\text{E}!Rʻy.\\equiv:(\\exists b):xRy.\\equiv_{x}.x=b \\quad[\\text{*4·2.*14·11.(*30·01)}]\\)",
+      "printed": "✱30·2. ⊢:.E!Rʻy.≡:(∃ b):xRy.≡ₓ.x=b [*4·2.*14·11.(*30·01)]",
       "printed_page": 249,
       "scan_leaf": 271,
-      "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
-      "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_2",
-      "formal_scope": "exact contextual existence characterization by a unique related witness",
+      "lean_path": "Principia/Deduction/Star30Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_30_2",
+      "formal_scope": "unconditional ramified PM derivation of the exact ✱14·11 instance after unfolding the eliminable definition ✱30·01",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "pm-derivation-v1-integrated",
+      "integration_blocked": false,
+      "formalization_layer": "pm-derivation-v1",
+      "semantic_audit_status": "strict-pm-derivation-complete",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star30-catalogue-review.md",
       "printed_dependencies": [
-        "✱4·2",
-        "✱14·11"
+        "PM1:✱4·2",
+        "PM1:✱14·11"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": ["✱4·2", "✱14·11"],
-        "strict_attempt_evidence": "reviews/Star30-catalogue-review.md",
-        "editorial_note": "ExistsAt is defined by the displayed contextual unique-witness characterization, so PM's citations remain historical rather than Lean theorem dependencies."
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_2_08",
+        "PM.RamifiedSyntax.star_3_2",
+        "PM.RamifiedSyntax.Derivation.star_9_12"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱14·11"
+      ],
+      "definition_dependencies": [
+        "PM1:✱30·01"
+      ],
+      "demonstration_provenance": "follows-printed",
+      "printed_latex_witness": "✱30·2. \\(\\vdash\\colon\\ldotp\\text{E}!Rʻy.\\equiv:(\\exists b):xRy.\\equiv_{x}.x=b \\quad[\\text{*4·2.*14·11.(*30·01)}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱30·21",
       "kind": "derived-proposition",
-      "printed": "✱30·21. \\(\\vdash\\colon\\colon\\text{E}!Rʻy.\\equiv\\colon\\ldotp(\\exists x).xRy:xRy.zRy.\\supset_{x,z}.x=z \\quad[\\text{*14·203.(*30·01)}]\\)",
+      "printed": "✱30·21. ⊢::E!Rʻy.≡:.(∃ x).xRy:xRy.zRy.⊃ₓ,z.x=z [*14·203.(*30·01)]",
       "printed_page": 249,
       "scan_leaf": 271,
       "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
       "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_21",
-      "formal_scope": "exact expanded existence-and-pairwise-uniqueness characterization",
+      "formal_scope": "blocked non-v1: exact secondary Prop characterization only; no object formula, concrete reading, or genuine PM derivation consuming ✱14·203 and definition ✱30·01",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-non-v1-no-pm-derivation",
+      "integration_blocked": true,
+      "formalization_layer": "prop-semantic-secondary",
+      "blocking_reason": "Fails T3 and T4: expansion of Lean witnesses is not an asserted PM formula or derivation.",
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-        "✱14·203"
+        "PM1:✱14·203"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
+      "definition_dependencies": [
+        "PM1:✱30·01"
+      ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["✱14·203"],
+        "printed_but_unused": [
+          "PM1:✱14·203"
+        ],
         "strict_attempt_evidence": "reviews/Star30-catalogue-review.md",
         "editorial_note": "The Lean proof expands Characterizes directly into existence and pairwise uniqueness; PM's citation remains historical."
+      },
+      "printed_latex_witness": "✱30·21. \\(\\vdash\\colon\\colon\\text{E}!Rʻy.\\equiv\\colon\\ldotp(\\exists x).xRy:xRy.zRy.\\supset_{x,z}.x=z \\quad[\\text{*14·203.(*30·01)}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱30·22",
       "kind": "derived-proposition",
-      "printed": "✱30·22. \\(\\vdash:\\text{E}!Rʻy.\\equiv.Rʻy=({℩}x)(xRy) \\quad[\\text{*14·28.(*30·01)}]\\)",
+      "printed": "✱30·22. ⊢:E!Rʻy.≡.Rʻy=(℩x)(xRy) [*14·28.(*30·01)]",
       "printed_page": 249,
       "scan_leaf": 271,
       "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
       "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_22",
-      "formal_scope": "exact contextual identity with the description determined by the relation matrix",
+      "formal_scope": "blocked non-v1: exact secondary Prop encoding only; no object formula, concrete reading, or genuine PM derivation consuming ✱14·28 and definition ✱30·01",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-non-v1-no-pm-derivation",
+      "integration_blocked": true,
+      "formalization_layer": "prop-semantic-secondary",
+      "blocking_reason": "Fails T3 and T4: SelfDescriptionIdentity is Prop-valued semantic encoding, not PM object syntax or a derivation.",
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-        "✱14·28"
+        "PM1:✱14·28"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
+      "definition_dependencies": [
+        "PM1:✱30·01"
+      ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["✱14·28"],
+        "printed_but_unused": [
+          "PM1:✱14·28"
+        ],
         "strict_attempt_evidence": "reviews/Star30-catalogue-review.md",
         "editorial_note": "SelfDescriptionIdentity is the direct Scope encoding of the printed contextual equality, so PM's citation remains historical."
+      },
+      "printed_latex_witness": "✱30·22. \\(\\vdash:\\text{E}!Rʻy.\\equiv.Rʻy=({℩}x)(xRy) \\quad[\\text{*14·28.(*30·01)}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱30·3",
       "kind": "derived-proposition",
-      "printed": "✱30·3. \\(\\vdash\\colon\\ldotp x=Rʻy.\\equiv:zRy.\\equiv_{z}.z=x\\)",
+      "printed": "✱30·3. ⊢:. x=Rʻy.≡:zRy.≡z.z=x",
       "printed_page": 249,
       "scan_leaf": 271,
       "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
       "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_3",
-      "formal_scope": "exact pointwise characterization of identity with the associated descriptive value",
+      "formal_scope": "blocked non-v1: secondary Prop reflexivity over Characterizes only; no object formula, concrete reading, or genuine PM derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-non-v1-no-pm-derivation",
+      "integration_blocked": true,
+      "formalization_layer": "prop-semantic-secondary",
+      "blocking_reason": "Fails T3/T4/T6: Iff.rfl on a semantic abbreviation is not the printed PM derivation.",
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star30-catalogue-review.md",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "printed_latex_witness": "✱30·3. \\(\\vdash\\colon\\ldotp x=Rʻy.\\equiv:zRy.\\equiv_{z}.z=x\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱30·31",
       "kind": "derived-proposition",
-      "printed": "✱30·31. \\(\\vdash\\colon\\ldotp x=Rʻy.\\equiv:xRy:zRy.\\supset_{z}.z=x\\)",
+      "printed": "✱30·31. ⊢:. x=Rʻy.≡:xRy:zRy.⊃z.z=x",
       "printed_page": 249,
       "scan_leaf": 271,
       "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
       "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_31",
-      "formal_scope": "exact decomposition into relation at the value and uniqueness of every related term",
+      "formal_scope": "blocked non-v1: exact secondary Prop decomposition only; no object formula, concrete reading, or genuine PM derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "prepared",
+      "integration_status": "blocked-non-v1-no-pm-derivation",
+      "integration_blocked": true,
+      "formalization_layer": "prop-semantic-secondary",
+      "blocking_reason": "Fails T3 and T4: the Lean witness proof is semantic and does not establish an object-level assertion chain.",
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star30-catalogue-review.md",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "printed_latex_witness": "✱30·31. \\(\\vdash\\colon\\ldotp x=Rʻy.\\equiv:xRy:zRy.\\supset_{z}.z=x\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

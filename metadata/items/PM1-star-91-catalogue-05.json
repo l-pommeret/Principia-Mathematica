@@ -3,18 +3,28 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "587-588",
-    "scan_leaves": [609, 610],
+    "scan_leaves": [
+      609,
+      610
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"},
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
   "batch": "PM1-STAR91-CATALOGUE-05",
   "items": [
     {
       "id": "PM1:✱91·1",
       "kind": "derived-proposition",
-      "printed": "✱91·1. ⊢ :: P R_st Q .≡:. S∈μ .⊃ₛ. R|S∈μ : Q∈μ :⊃μ. P∈μ",
+      "printed": "✱91·1. ⊢:: PRₛₜQ.≡:. S∈ μ.⊃_S.R| S∈ μ:Q∈ μ:⊃_μ.P∈ μ",
       "printed_page": 587,
       "scan_leaf": 609,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
@@ -24,16 +34,34 @@
       "formal_status": "prepared",
       "integration_status": "prepared",
       "blocking_reason": "The Lean declaration omits P, Q, R_st, the hereditary step under left multiplication, and both directions of the printed equivalence; its pointwise Pow hypothesis is irrelevant to its conclusion.",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱91·01",
+        "PM1:✱90·11",
+        "PM1:✱43·3",
+        "PM1:✱33·161",
+        "PM1:✱37·61",
+        "PM1:✱43·11"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·11",
       "kind": "derived-proposition",
-      "printed": "✱91·11. ⊢ :: P R_ts Q .≡:. S∈μ .⊃ₛ. S|R∈μ : Q∈μ :⊃μ. P∈μ",
+      "printed": "✱91·11. ⊢:: PRₜₛQ.≡:. S∈ μ.⊃_S.S| R∈ μ:Q∈ μ:⊃_μ.P∈ μ",
       "printed_page": 588,
       "scan_leaf": 610,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
@@ -44,15 +72,29 @@
       "integration_status": "prepared",
       "blocking_reason": "The Lean declaration omits P, Q, R_ts, the hereditary step under right multiplication, and both directions of the printed equivalence.",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star91OpeningKernel.star_91_1"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱91·1"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·13",
       "kind": "derived-proposition",
-      "printed": "✱91·13. ⊢ :: P∈PotʻR .≡:. S∈μ .⊃ₛ. S|R∈μ : R∈μ :⊃μ. P∈μ",
+      "printed": "✱91·13. ⊢:: P∈ PotʻR.≡:. S∈ μ.⊃_S.S| R∈ μ:R∈ μ:⊃_μ.P∈ μ [✱91·11·12]",
       "printed_page": 588,
       "scan_leaf": 610,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
@@ -62,11 +104,28 @@
       "formal_status": "prepared",
       "integration_status": "prepared",
       "blocking_reason": "The declaration omits P∈Pot R, the base case μ R, closure μ S → μ (S|R), and the reverse implication; it proves only a direct specialization of an all-powers premise.",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱91·11",
+        "PM1:✱91·12"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star91OpeningKernel.star_91_1"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱91·1"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/Star91-catalogue-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ]
 }

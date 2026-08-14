@@ -6,7 +6,7 @@
     {
       "id": "PM1:✱33·101",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\beta\\text{ᗡ}R.\\equiv.\\beta=\\hat{y}\\{(\\exists x).xRy\\}\\)",
+      "printed": "⊢:βᗡR.≡.β=ŷ{(∃ x).xRy}",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_scope": "source transcription; canonical Lean declaration absent",
       "declaration": "source-only",
@@ -18,12 +18,23 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star33-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_latex_witness": "\\(\\vdash:\\beta\\text{ᗡ}R.\\equiv.\\beta=\\hat{y}\\{(\\exists x).xRy\\}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱33·102",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\gamma CR.\\equiv.\\gamma=\\hat{x}\\{(\\exists y):xRy.\\lor .yRx\\}\\)",
+      "printed": "⊢:γ CR.≡.γ=x̂{(∃ y):xRy.∨ .yRx}",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_scope": "source transcription; canonical Lean declaration absent",
       "declaration": "source-only",
@@ -35,12 +46,23 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star33-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_latex_witness": "\\(\\vdash:\\gamma CR.\\equiv.\\gamma=\\hat{x}\\{(\\exists y):xRy.\\lor .yRx\\}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱33·103",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash\\colon\\ldotp xFR.\\equiv:(\\exists y):xRy.\\lor .yRx\\)",
+      "printed": "⊢:. xFR.≡:(∃ y):xRy.∨ .yRx",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_scope": "source transcription; canonical Lean declaration absent",
       "declaration": "source-only",
@@ -52,12 +74,23 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star33-catalogue-review.md"
+      "parser_evidence": "reviews/Star33-catalogue-review.md",
+      "printed_latex_witness": "\\(\\vdash\\colon\\ldotp xFR.\\equiv:(\\exists y):xRy.\\lor .yRx\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱33·11",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\text{D}ʻR=\\hat{x}\\{(\\exists y).xRy\\} \\quad[\\text{*33·1.*30·3.*20·59}]\\)",
+      "printed": "⊢.DʻR=x̂{(∃ y).xRy} [*33·1.*30·3.*20·59]",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_scope": "source transcription; canonical Lean declaration absent",
       "declaration": "source-only",
@@ -69,12 +102,23 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star33-catalogue-review.md"
+      "parser_evidence": "reviews/Star33-catalogue-review.md",
+      "printed_latex_witness": "\\(\\vdash.\\text{D}ʻR=\\hat{x}\\{(\\exists y).xRy\\} \\quad[\\text{*33·1.*30·3.*20·59}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱33·111",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\text{ᗡ}ʻR=\\hat{y}\\{(\\exists x).xRy\\}\\)",
+      "printed": "⊢.ᗡʻR=ŷ{(∃ x).xRy}",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_scope": "source transcription; canonical Lean declaration absent",
       "declaration": "source-only",
@@ -86,7 +130,18 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star33-catalogue-review.md"
+      "parser_evidence": "reviews/Star33-catalogue-review.md",
+      "printed_latex_witness": "\\(\\vdash.\\text{ᗡ}ʻR=\\hat{y}\\{(\\exists x).xRy\\}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

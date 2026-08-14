@@ -4,11 +4,18 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "117",
-    "scan_leaves": [139],
+    "scan_leaves": [
+      139
+    ],
     "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
-    "scan_sha256": {"139": "1b819017782765dda67ae70a26b49055f1a636edbc04ed5aa52985fd018f047c"}
+    "scan_sha256": {
+      "139": "1b819017782765dda67ae70a26b49055f1a636edbc04ed5aa52985fd018f047c"
+    }
   },
-  "witnesses": ["PM1-1910-SCAN", "WS-PM1"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "WS-PM1"
+  ],
   "aristotle_evidence": {
     "project_id": "681e5335-f8f5-4bd4-84e1-8fcea83bfbeb",
     "task_id": "850948bc-9db3-4079-a479-927476dce828",
@@ -16,10 +23,276 @@
     "audit": "kernel-checked-relaxed-printed-gaps"
   },
   "items": [
-    {"id":"PM1:✱3·26","kind":"derived-proposition","printed":"⊢ : p . q . ⊃ . p","printed_page":117,"scan_leaf":139,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean","declaration":"PM.FirstEdition.Volume1.Star3.star_3_26","formal_scope":"(p·q)⊃p, over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"kernel-checked","printed_dependencies":["PM1:✱1·01","PM1:✱1·11","PM1:✱2·02","PM1:✱2·31","PM1:✱2·53","PM1:✱3·01"],"lean_dependencies":["PM.Derivation.detach","PM.FirstEdition.Volume1.Star2.star_2_02","PM.FirstEdition.Volume1.Star2.star_2_31","PM.FirstEdition.Volume1.Star2.star_2_53"],"normalized_dependencies":["PM1:✱1·11","PM1:✱2·02","PM1:✱2·31","PM1:✱2·53"],"dependency_justifications":[{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The printed asserted chain is applied under the reviewed ✱1·11 detachment convention."}],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·01","PM1:✱3·01"],"strict_attempt_evidence":"reviews/Q223-review.md","editorial_note":"The accepted direct term realizes the two displayed definitional readings by the repository's object-language notation rather than by separate theorem calls; it adds no PM proposition beyond the detachment convention."},"dependency_fidelity":"documented-definitional-reading","substitutions":["(q,p)/(p,q)","(∼p ∨ ∼q,p)/(p,q)"]},
-    {"id":"PM1:✱3·27","kind":"derived-proposition","printed":"⊢ : p . q . ⊃ . q","printed_page":117,"scan_leaf":139,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean","declaration":"PM.FirstEdition.Volume1.Star3.star_3_27","formal_scope":"(p·q)⊃q, over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"kernel-checked","printed_dependencies":["PM1:✱1·11","PM1:✱3·22","PM1:✱3·26"],"lean_dependencies":["PM.Derivation.detach","PM.Derivation.star_1_6","PM.FirstEdition.Volume1.Star3.star_3_22","PM.FirstEdition.Volume1.Star3.star_3_26"],"normalized_dependencies":["PM1:✱1·11","PM1:✱1·6","PM1:✱3·22","PM1:✱3·26"],"dependency_justifications":[{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The two printed asserted implications are applied under the reviewed ✱1·11 detachment convention."}],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":["PM1:✱1·6"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Q223-review.md","editorial_note":"The printed terminal Prop closure joins ✱3·22 to the substituted ✱3·26 but names no composition proposition; exactly one primitive Sum/✱1·6 is the minimal explicit join."},"dependency_fidelity":"relaxed-incomplete-printed-citation","substitutions":["(q,p)/(p,q)"]},
-    {"id":"PM1:✱3·3","kind":"derived-proposition","printed":"⊢ : p . q . ⊃ . r : ⊃ : p . ⊃ . q ⊃ r","printed_page":117,"scan_leaf":139,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean","declaration":"PM.FirstEdition.Volume1.Star3.star_3_3","formal_scope":"((p·q)⊃r)⊃(p⊃(q⊃r)), over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"kernel-checked","printed_dependencies":["PM1:✱1·01","PM1:✱1·11","PM1:✱2·04","PM1:✱2·05","PM1:✱2·06","PM1:✱2·08","PM1:✱2·15","PM1:✱2·16","PM1:✱2·17","PM1:✱3·01"],"lean_dependencies":["PM.Derivation.detach","PM.FirstEdition.Volume1.Star2.star_2_04","PM.FirstEdition.Volume1.Star2.star_2_05","PM.FirstEdition.Volume1.Star2.star_2_06","PM.FirstEdition.Volume1.Star2.star_2_15","PM.FirstEdition.Volume1.Star2.star_2_17"],"normalized_dependencies":["PM1:✱1·11","PM1:✱2·04","PM1:✱2·05","PM1:✱2·06","PM1:✱2·15","PM1:✱2·17"],"dependency_justifications":[{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The printed implication chain is applied under the reviewed ✱1·11 detachment convention."}],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱1·01","PM1:✱2·08","PM1:✱2·16","PM1:✱3·01"],"strict_attempt_evidence":"reviews/Q223-review.md","editorial_note":"The accepted term expands the printed Id and connective readings definitionally while retaining the printed Transp, Comm, and Syll families; it introduces no additional PM proposition."},"dependency_fidelity":"documented-definitional-reading"},
-    {"id":"PM1:✱3·31","kind":"derived-proposition","printed":"⊢ : p . ⊃ . q ⊃ r : ⊃ : p . q . ⊃ . r","printed_page":117,"scan_leaf":139,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean","declaration":"PM.FirstEdition.Volume1.Star3.star_3_31","formal_scope":"(p⊃(q⊃r))⊃((p·q)⊃r), over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"kernel-checked","printed_dependencies":["PM1:✱1·01","PM1:✱1·11","PM1:✱2·08","PM1:✱2·31","PM1:✱2·53","PM1:✱3·01"],"lean_dependencies":["PM.Derivation.detach","PM.Derivation.star_1_6","PM.FirstEdition.Volume1.Star2.star_2_31","PM.FirstEdition.Volume1.Star2.star_2_53"],"normalized_dependencies":["PM1:✱1·11","PM1:✱1·6","PM1:✱2·31","PM1:✱2·53"],"dependency_justifications":[{"kind":"metalinguistic-rule-selection","lean_dependency":"PM.Derivation.detach","pm_dependency":"PM1:✱1·11","evidence":"The displayed asserted implications are applied under the reviewed ✱1·11 detachment convention."}],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":["PM1:✱1·6"],"printed_but_unused":["PM1:✱1·01","PM1:✱2·08","PM1:✱3·01"],"strict_attempt_evidence":"reviews/Q223-review.md","editorial_note":"The printed terminal Prop closure composes the displayed ✱2·31 and ✱2·53 links but names no composition proposition; exactly one primitive Sum/✱1·6 is the minimal explicit join. The Id/connective readings are definitional in the accepted term."},"dependency_fidelity":"relaxed-incomplete-printed-citation","substitutions":["(∼p ∨ ∼q,r)/(p,q)"]}
+    {
+      "id": "PM1:✱3·26",
+      "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢ : p . q . ⊃ . p",
+      "printed_page": 117,
+      "scan_leaf": 139,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_26",
+      "formal_scope": "(p·q)⊃p, over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "lean-typechecked",
+      "printed_dependencies": [
+        "PM1:✱1·01",
+        "PM1:✱1·11",
+        "PM1:✱2·02",
+        "PM1:✱2·31",
+        "PM1:✱2·53",
+        "PM1:✱3·01"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.FirstEdition.Volume1.Star2.star_2_02",
+        "PM.FirstEdition.Volume1.Star2.star_2_31",
+        "PM.FirstEdition.Volume1.Star2.star_2_53"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·02",
+        "PM1:✱2·31",
+        "PM1:✱2·53"
+      ],
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·11",
+          "evidence": "The printed asserted chain is applied under the reviewed ✱1·11 detachment convention."
+        }
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱1·01",
+          "PM1:✱3·01"
+        ],
+        "strict_attempt_evidence": "reviews/Q223-review.md",
+        "editorial_note": "The accepted direct term realizes the two displayed definitional readings by the repository's object-language notation rather than by separate theorem calls; it adds no PM proposition beyond the detachment convention."
+      },
+      "dependency_fidelity": "documented-definitional-reading",
+      "substitutions": [
+        "(q,p)/(p,q)",
+        "(∼p ∨ ∼q,p)/(p,q)"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱3·27",
+      "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢ : p . q . ⊃ . q",
+      "printed_page": 117,
+      "scan_leaf": 139,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_27",
+      "formal_scope": "(p·q)⊃q, over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "lean-typechecked",
+      "printed_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱3·22",
+        "PM1:✱3·26"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.Derivation.star_1_6",
+        "PM.FirstEdition.Volume1.Star3.star_3_22",
+        "PM.FirstEdition.Volume1.Star3.star_3_26"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱1·6",
+        "PM1:✱3·22",
+        "PM1:✱3·26"
+      ],
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·11",
+          "evidence": "The two printed asserted implications are applied under the reviewed ✱1·11 detachment convention."
+        }
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱1·6"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Q223-review.md",
+        "editorial_note": "The printed terminal Prop closure joins ✱3·22 to the substituted ✱3·26 but names no composition proposition; exactly one primitive Sum/✱1·6 is the minimal explicit join."
+      },
+      "dependency_fidelity": "relaxed-incomplete-printed-citation",
+      "substitutions": [
+        "(q,p)/(p,q)"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱3·3",
+      "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢ : p . q . ⊃ . r : ⊃ : p . ⊃ . q ⊃ r",
+      "printed_page": 117,
+      "scan_leaf": 139,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_3",
+      "formal_scope": "((p·q)⊃r)⊃(p⊃(q⊃r)), over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "lean-typechecked",
+      "printed_dependencies": [
+        "PM1:✱1·01",
+        "PM1:✱1·11",
+        "PM1:✱2·04",
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱2·08",
+        "PM1:✱2·15",
+        "PM1:✱2·16",
+        "PM1:✱2·17",
+        "PM1:✱3·01"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.FirstEdition.Volume1.Star2.star_2_02",
+        "PM.FirstEdition.Volume1.Star2.star_2_04",
+        "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM.FirstEdition.Volume1.Star2.star_2_06",
+        "PM.FirstEdition.Volume1.Star2.star_2_08",
+        "PM.FirstEdition.Volume1.Star2.star_2_15",
+        "PM.FirstEdition.Volume1.Star2.star_2_16",
+        "PM.FirstEdition.Volume1.Star2.star_2_17"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·02",
+        "PM1:✱2·04",
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱2·08",
+        "PM1:✱2·15",
+        "PM1:✱2·16",
+        "PM1:✱2·17"
+      ],
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·11",
+          "evidence": "The printed implication chain is applied under the reviewed ✱1·11 detachment convention."
+        }
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱2·02"
+        ],
+        "printed_but_unused": [
+          "PM1:✱1·01",
+          "PM1:✱3·01"
+        ],
+        "strict_attempt_evidence": "reviews/Q223-review.md",
+        "editorial_note": "The accepted term realizes the printed Id and conjunction readings definitionally and makes the additional ✱2·02 step explicit; the other printed proposition families are retained."
+      },
+      "dependency_fidelity": "documented-definitional-reading",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱3·31",
+      "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢ : p . ⊃ . q ⊃ r : ⊃ : p . q . ⊃ . r",
+      "printed_page": 117,
+      "scan_leaf": 139,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_31",
+      "formal_scope": "(p⊃(q⊃r))⊃((p·q)⊃r), over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "lean-typechecked",
+      "printed_dependencies": [
+        "PM1:✱1·01",
+        "PM1:✱1·11",
+        "PM1:✱2·08",
+        "PM1:✱2·31",
+        "PM1:✱2·53",
+        "PM1:✱3·01"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM.FirstEdition.Volume1.Star2.star_2_08",
+        "PM.FirstEdition.Volume1.Star2.star_2_31",
+        "PM.FirstEdition.Volume1.Star2.star_2_53"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·05",
+        "PM1:✱2·08",
+        "PM1:✱2·31",
+        "PM1:✱2·53"
+      ],
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·11",
+          "evidence": "The displayed asserted implications are applied under the reviewed ✱1·11 detachment convention."
+        }
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱2·05"
+        ],
+        "printed_but_unused": [
+          "PM1:✱1·01",
+          "PM1:✱3·01"
+        ],
+        "strict_attempt_evidence": "reviews/Q223-review.md",
+        "editorial_note": "The current term uses ✱2·05 beyond the printed list; the printed Id and conjunction readings are realized definitionally rather than as separate theorem calls."
+      },
+      "dependency_fidelity": "relaxed-incomplete-printed-citation",
+      "substitutions": [
+        "(∼p ∨ ∼q,r)/(p,q)"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
   ],
-  "ci_evidence": {"commit":"2af0252ddcd92a53a2493a788cb64426e262a0b2","run":"https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31461909552","conclusion":"success"}
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

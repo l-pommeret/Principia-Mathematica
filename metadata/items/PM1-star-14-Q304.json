@@ -33,8 +33,8 @@
       "declaration": "PM.Architecture.Star14Q304Kernel.star_14_14",
       "formal_scope": "exact contextual-description identity composition after ✱14·01 expansion",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱13·13"
       ],
@@ -50,7 +50,16 @@
         "editorial_note": "Direct ✱14·01 expansion compresses the printed identity chain."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q304-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱14·142",
@@ -62,8 +71,8 @@
       "declaration": "PM.Architecture.Star14Q304Kernel.star_14_142",
       "formal_scope": "exact object-to-description identity transitivity after contextual expansion",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱14·1",
         "PM1:✱13·195",
@@ -87,7 +96,16 @@
         "editorial_note": "Direct ✱14·01 expansion compresses the printed derivation chain."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q304-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱14·144",
@@ -99,8 +117,8 @@
       "declaration": "PM.Architecture.Star14Q304Kernel.star_14_144",
       "formal_scope": "exact contextual identity transitivity for three descriptions",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱14·111",
         "PM1:✱13·195",
@@ -124,7 +142,16 @@
         "editorial_note": "Direct nested ✱14·01 expansion compresses the printed derivation chain."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q304-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱14·145",
@@ -136,8 +163,8 @@
       "declaration": "PM.Architecture.Star14Q304Kernel.star_14_145",
       "formal_scope": "exact shared-object contextual description identity",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱14·1",
         "PM1:✱13·195",
@@ -159,7 +186,16 @@
         "editorial_note": "Direct nested ✱14·01 expansion compresses the printed derivation chain."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q304-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

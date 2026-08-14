@@ -13,7 +13,7 @@
     {
       "id": "PM1:✱30·32",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\text{E}!Rʻy.\\equiv.(Rʻy)Ry \\quad[\\text{*14·22}]\\)",
+      "printed": "⊢:E!Rʻy.≡.(Rʻy)Ry [*14·22]",
       "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -21,15 +21,25 @@
       "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
       "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_32",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash:\\text{E}!Rʻy.\\equiv.(Rʻy)Ry \\quad[\\text{*14·22}]\\)"
     },
     {
       "id": "PM1:✱30·33",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash\\colon\\colon\\text{E}!Rʻy.\\supset\\colon\\ldotp \\psi(Rʻy):\\equiv:(\\exists x).xRy.\\psi x:\\equiv:xRy.\\supset_{x}.\\psi x\\)",
+      "printed": "⊢::E!Rʻy.⊃:. ψ(Rʻy):≡:(∃ x).xRy.ψ x:≡:xRy.⊃ₓ.ψ x",
       "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -37,15 +47,25 @@
       "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
       "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_33",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md"
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash\\colon\\colon\\text{E}!Rʻy.\\supset\\colon\\ldotp \\psi(Rʻy):\\equiv:(\\exists x).xRy.\\psi x:\\equiv:xRy.\\supset_{x}.\\psi x\\)"
     },
     {
       "id": "PM1:✱30·34",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash\\colon\\ldotp xRy.\\equiv_{x}.xSy:\\supset:\\text{E}!Rʻy.\\equiv.\\text{E}!Sʻy\\)",
+      "printed": "⊢:. xRy.≡ₓ.xSy:⊃:E!Rʻy.≡.E!Sʻy",
       "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -53,15 +73,25 @@
       "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
       "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_34",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md"
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash\\colon\\ldotp xRy.\\equiv_{x}.xSy:\\supset:\\text{E}!Rʻy.\\equiv.\\text{E}!Sʻy\\)"
     },
     {
       "id": "PM1:✱30·341",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash\\colon\\ldotp xRy.\\equiv_{x}.xSy:\\supset:\\text{E}!Rʻy.\\equiv.Rʻy=Sʻy\\)",
+      "printed": "⊢:. xRy.≡ₓ.xSy:⊃:E!Rʻy.≡.Rʻy=Sʻy",
       "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -69,15 +99,25 @@
       "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
       "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_341",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md"
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash\\colon\\ldotp xRy.\\equiv_{x}.xSy:\\supset:\\text{E}!Rʻy.\\equiv.Rʻy=Sʻy\\)"
     },
     {
       "id": "PM1:✱30·35",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash\\colon\\ldotp R=S.\\supset:\\text{E}!Rʻy.\\equiv.\\text{E}!Sʻy\\)",
+      "printed": "⊢:. R=S.⊃:E!Rʻy.≡.E!Sʻy",
       "formal_scope": "exact typed reconstruction of the canonical definite-description proposition",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -85,10 +125,20 @@
       "lean_path": "Principia/Architecture/Star30ExistenceKernel.lean",
       "declaration": "PM.Architecture.Star30ExistenceKernel.star_30_35",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star30-catalogue-review.md"
+      "parser_evidence": "reviews/Star30-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash\\colon\\ldotp R=S.\\supset:\\text{E}!Rʻy.\\equiv.\\text{E}!Sʻy\\)"
     }
   ],
   "ci_evidence": {

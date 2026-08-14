@@ -1,0 +1,147 @@
+{
+  "batch": "PM1-STAR20-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "200"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱20·04",
+      "kind": "definition",
+      "printed": "x, y ∈ α .= . x ∈ α . y ∈ α",
+      "printed_page": 200,
+      "lean_path": "Principia/Deduction/Star20Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_20_04",
+      "formal_scope": "exact eliminable conjunction expansion for double membership",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_provenance": "editorial-reconstruction",
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·05",
+      "kind": "definition",
+      "printed": "x, y, z ∈ α .= . x, y ∈ α . z ∈ α",
+      "printed_page": 200,
+      "lean_path": "Principia/Deduction/Star20Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_20_05",
+      "formal_scope": "exact eliminable left-associated conjunction expansion for triple membership",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_provenance": "editorial-reconstruction",
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·06",
+      "kind": "definition",
+      "printed": "x ∼∈ α .= . ∼(x ∈ α)",
+      "printed_page": 200,
+      "lean_path": "Principia/Deduction/Star20Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_20_06",
+      "formal_scope": "exact eliminable negation expansion for non-membership",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_provenance": "editorial-reconstruction",
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·1",
+      "kind": "derived-proposition",
+      "printed": "⊢ : f{ẑ(ψz)} .≡ : (∃φ) : φ!x .≡ₓ. ψx : f{φ!ẑ}",
+      "printed_page": 200,
+      "lean_path": "Principia/Deduction/Star20Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_20_1",
+      "formal_scope": "exact ramified derivation after eliminative expansion of class abstraction",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱20·01"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_4_2",
+        "PM.RamifiedSyntax.star_20_01_unfold"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱20·01"
+      ],
+      "demonstration_provenance": "follows-printed",
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·11",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ψx .≡ₓ. χx : ⊃ : f{ẑ(ψz)} .≡ . f{ẑ(χz)}",
+      "printed_page": 200,
+      "lean_path": "Principia/FirstEdition/Volume1/Star20Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱4·86",
+        "PM1:✱4·36",
+        "PM1:✱10·281",
+        "PM1:✱20·1"
+      ],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,1 +1,212 @@
-{"batch":"PM1-STAR20-Q318","edition":"first","volume":1,"source_range":{"printed_pages":"201","scan_leaves":[223],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":223,"printed_page":201,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page223-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu.jpg","sha256":"5095961520e5549e6487f7513da6d727d72b694c1616e8a2d4e04ee06a593cd7"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱20·12","kind":"derived-proposition","printed":"⊢ : (∃φ) : φ!x .≡ₓ. ψx : f{ẑ(ψz)} .≡ . f{ẑ(φ!z)}","printed_page":201,"scan_leaf":223,"lean_path":"Principia/Architecture/Star20Q318Kernel.lean","declaration":"PM.Architecture.Star20Q318Kernel.star_20_12","formal_scope":"exact eliminative class-context equivalence with explicit extensionality and predicative witness","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q318-review.md","printed_dependencies":["PM1:✱12·1"],"lean_dependencies":["PM.Architecture.Star12Q289Reducibility.star_12_1"],"normalized_dependencies":["PM1:✱12·1"]},{"id":"PM1:✱20·13","kind":"derived-proposition","printed":"⊢ : ψx .≡ₓ. χx .⊃ . ẑ(ψz) = ẑ(χz)","printed_page":201,"scan_leaf":223,"lean_path":"Principia/Architecture/Star20Q318Kernel.lean","declaration":"PM.Architecture.Star20Q318Kernel.star_20_13","formal_scope":"exact polymorphic forward class-extensionality implication","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q318-review.md","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[]},{"id":"PM1:✱20·14","kind":"derived-proposition","printed":"⊢ : ẑ(ψz) = ẑ(χz) .⊃ : ψx .≡ₓ. χx","printed_page":201,"scan_leaf":223,"lean_path":"Principia/Architecture/Star20Q318Kernel.lean","declaration":"PM.Architecture.Star20Q318Kernel.star_20_14","formal_scope":"exact polymorphic reverse class-extensionality implication","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q318-review.md","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[]},{"id":"PM1:✱20·15","kind":"derived-proposition","printed":"⊢ : ψx .≡ₓ. χx : ≡ : ẑ(ψz) = ẑ(χz)","printed_page":201,"scan_leaf":223,"lean_path":"Principia/Architecture/Star20Q318Kernel.lean","declaration":"PM.Architecture.Star20Q318Kernel.star_20_15","formal_scope":"exact polymorphic class-extensionality equivalence","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q318-review.md","printed_dependencies":["PM1:✱20·13","PM1:✱20·14"],"lean_dependencies":["PM.Architecture.Star20Q318Kernel.star_20_13","PM.Architecture.Star20Q318Kernel.star_20_14"],"normalized_dependencies":["PM1:✱20·13","PM1:✱20·14"]},{"id":"PM1:✱20·151","kind":"derived-proposition","printed":"⊢ . (∃φ) . ẑ(ψz) = ẑ(φ!z)","printed_page":201,"scan_leaf":223,"lean_path":"Principia/Architecture/Star20Q318Kernel.lean","declaration":"PM.Architecture.Star20Q318Kernel.star_20_151","formal_scope":"exact eliminative existence of an extensionally equal predicative representative","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q318-review.md","printed_dependencies":["PM1:✱12·1"],"lean_dependencies":["PM.Architecture.Star12Q289Reducibility.star_12_1"],"normalized_dependencies":["PM1:✱12·1"]}],"ci_evidence":{"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}}
+{
+  "batch": "PM1-STAR20-Q318",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "201",
+    "scan_leaves": [
+      223
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 223,
+        "printed_page": 201,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu/page223-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I,_1910.djvu.jpg",
+        "sha256": "5095961520e5549e6487f7513da6d727d72b694c1616e8a2d4e04ee06a593cd7"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱20·12",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (∃φ) : φ!x .≡ₓ. ψx : f{ẑ(ψz)} .≡ . f{ẑ(φ!z)}",
+      "printed_page": 201,
+      "scan_leaf": 223,
+      "lean_path": "Principia/Architecture/Star20Q318Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q318Kernel.star_20_12",
+      "formal_scope": "exact eliminative class-context equivalence with explicit extensionality and predicative witness",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q318-review.md",
+      "printed_dependencies": [
+        "PM1:✱12·1"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱12·1"
+        ],
+        "strict_attempt_evidence": "reviews/Q318-review.md",
+        "editorial_note": "The Lean body calls only the secondary Prop reading of ✱12·1, not its primary PM derivation; no primary graph edge is claimed."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8",
+          "T9"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·13",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ψx .≡ₓ. χx .⊃ . ẑ(ψz) = ẑ(χz)",
+      "printed_page": 201,
+      "scan_leaf": 223,
+      "lean_path": "Principia/Architecture/Star20Q318Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q318Kernel.star_20_13",
+      "formal_scope": "exact polymorphic forward class-extensionality implication",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q318-review.md",
+      "printed_dependencies": [
+        "PM1:✱20·1",
+        "PM1:✱12·1",
+        "PM1:✱10·321",
+        "PM1:✱13·195"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·14",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑ(ψz) = ẑ(χz) .⊃ : ψx .≡ₓ. χx",
+      "printed_page": 201,
+      "scan_leaf": 223,
+      "lean_path": "Principia/Architecture/Star20Q318Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q318Kernel.star_20_14",
+      "formal_scope": "exact polymorphic reverse class-extensionality implication",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱20·1",
+        "PM1:✱13·195",
+        "PM1:✱10·322"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·15",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ψx .≡ₓ. χx : ≡ : ẑ(ψz) = ẑ(χz)",
+      "printed_page": 201,
+      "scan_leaf": 223,
+      "lean_path": "Principia/Architecture/Star20Q318Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q318Kernel.star_20_15",
+      "formal_scope": "exact polymorphic class-extensionality equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q318-review.md",
+      "printed_dependencies": [
+        "PM1:✱20·13",
+        "PM1:✱20·14"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star20Q318Kernel.star_20_13",
+        "PM.Architecture.Star20Q318Kernel.star_20_14"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱20·13",
+        "PM1:✱20·14"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·151",
+      "kind": "derived-proposition",
+      "printed": "⊢ . (∃φ) . ẑ(ψz) = ẑ(φ!z)",
+      "printed_page": 201,
+      "scan_leaf": 223,
+      "lean_path": "Principia/Architecture/Star20Q318Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q318Kernel.star_20_151",
+      "formal_scope": "exact eliminative existence of an extensionally equal predicative representative",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q318-review.md",
+      "printed_dependencies": [
+        "PM1:✱20·15",
+        "PM1:✱10·11",
+        "PM1:✱10·28",
+        "PM1:✱12·1"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱12·1"
+        ],
+        "strict_attempt_evidence": "reviews/Q318-review.md",
+        "editorial_note": "The Lean body calls only the secondary Prop reading of ✱12·1, not its primary PM derivation; no primary graph edge is claimed."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8",
+          "T9"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
+  }
+}

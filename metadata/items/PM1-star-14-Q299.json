@@ -33,21 +33,26 @@
       "declaration": "PM.Architecture.Star14Q299Kernel.star_14_1",
       "formal_scope": "exact polymorphic contextual description-elimination equivalence, without a description term",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-inductive-description-judgement",
+      "integration_blocked": true,
       "printed_dependencies": [
-        "✱4·2.(*14·01)"
+        "PM1:✱4·2"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": [
-          "✱4·2.(*14·01)"
+      "dependency_fidelity": "printed-graph-rebuilt-secondary-prop-only",
+      "formalization_level": "secondary-prop-only",
+      "semantic_audit_status": "strict-pm-judgement-refused",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q299-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4"
         ],
-        "strict_attempt_evidence": "reviews/Q299-review.md",
-        "editorial_note": "The exact contextual definiens closes by reduction; the printed composite conversion citation is retained as historical evidence."
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -60,8 +65,9 @@
       "declaration": "PM.Architecture.Star14Q299Kernel.star_14_101",
       "formal_scope": "exact polymorphic default contextual description-elimination equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-inductive-description-judgement",
+      "integration_blocked": true,
       "printed_dependencies": [
         "PM1:✱14·1"
       ],
@@ -71,8 +77,19 @@
       "normalized_dependencies": [
         "PM1:✱14·1"
       ],
+      "dependency_fidelity": "printed-and-lean-graphs-exact-secondary-prop-only",
+      "formalization_level": "secondary-prop-only",
+      "semantic_audit_status": "strict-pm-judgement-refused",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q299-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱14·11",
@@ -84,21 +101,26 @@
       "declaration": "PM.Architecture.Star14Q299Kernel.star_14_11",
       "formal_scope": "exact polymorphic contextual description-existence equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-inductive-description-judgement",
+      "integration_blocked": true,
       "printed_dependencies": [
-        "✱4·2.(*14·02)"
+        "PM1:✱4·2"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": [
-          "✱4·2.(*14·02)"
+      "dependency_fidelity": "printed-graph-rebuilt-secondary-prop-only",
+      "formalization_level": "secondary-prop-only",
+      "semantic_audit_status": "strict-pm-judgement-refused",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q299-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4"
         ],
-        "strict_attempt_evidence": "reviews/Q299-review.md",
-        "editorial_note": "The exact existence definiens closes by reduction; the printed composite conversion citation is retained as historical evidence."
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -111,25 +133,29 @@
       "declaration": "PM.Architecture.Star14Q299Kernel.star_14_111",
       "formal_scope": "exact polymorphic nested two-description contextual elimination equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-inductive-description-judgement",
+      "integration_blocked": true,
       "printed_dependencies": [
-        "✱4·2.(*14·04·03)",
-        "✱14·1",
-        "✱11·55"
+        "PM1:✱4·2",
+        "PM1:✱14·04·03",
+        "PM1:✱14·1",
+        "PM1:✱11·55"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": [
-          "✱11·55",
-          "✱14·1",
-          "✱4·2.(*14·04·03)"
+      "dependency_fidelity": "printed-graph-rebuilt-secondary-prop-only",
+      "formalization_level": "secondary-prop-only",
+      "semantic_audit_status": "strict-pm-judgement-refused",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q299-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4"
         ],
-        "strict_attempt_evidence": "reviews/Q299-review.md",
-        "editorial_note": "The complete two-candidate contextual definiens closes by reduction; all printed historical citations remain recorded."
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -142,8 +168,9 @@
       "declaration": "PM.Architecture.Star14Q299Kernel.star_14_112",
       "formal_scope": "exact polymorphic default two-description contextual elimination equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-inductive-description-judgement",
+      "integration_blocked": true,
       "printed_dependencies": [
         "PM1:✱14·111"
       ],
@@ -153,8 +180,19 @@
       "normalized_dependencies": [
         "PM1:✱14·111"
       ],
+      "dependency_fidelity": "printed-and-lean-graphs-exact-secondary-prop-only",
+      "formalization_level": "secondary-prop-only",
+      "semantic_audit_status": "strict-pm-judgement-refused",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q299-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

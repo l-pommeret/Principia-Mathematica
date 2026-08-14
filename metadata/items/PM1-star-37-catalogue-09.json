@@ -19,15 +19,15 @@
     {
       "id": "PM1:✱37·212",
       "kind": "derived-proposition",
-      "printed": "✱37·212. \\vdash.(P\\dot{\\cap}Q)ʻʻ(\\alpha\\cap \\beta)\\subset Pʻʻ\\alpha\\cap Pʻʻ\\beta\\cap Qʻʻ\\alpha\\cap Qʻʻ\\beta \\quad[\\text{*37·21·211}]",
+      "printed": "✱37·212. ⊢.(P∩̇Q)ʻʻ(α∩ β)⊂ Pʻʻα∩ Pʻʻβ∩ Qʻʻα∩ Qʻʻβ [*37·21·211]",
       "printed_page": 298,
       "scan_leaf": 320,
       "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_212",
       "formal_scope": "exact typed image-intersection inclusion with all four displayed conjuncts; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱37·21",
         "PM1:✱37·211"
@@ -44,37 +44,61 @@
         ],
         "strict_attempt_evidence": "reviews/Star37-catalogue-09-semantic-audit.md",
         "editorial_note": "The direct Lean proof reconstructs the four inclusions from a single witness instead of invoking the two printed predecessors."
-      }
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·212. \\vdash.(P\\dot{\\cap}Q)ʻʻ(\\alpha\\cap \\beta)\\subset Pʻʻ\\alpha\\cap Pʻʻ\\beta\\cap Qʻʻ\\alpha\\cap Qʻʻ\\beta \\quad[\\text{*37·21·211}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱37·221",
       "kind": "derived-proposition",
-      "printed": "✱37·221. \\vdash.(P\\unicode{x228d}Q)ʻʻ\\alpha=Pʻʻ\\alpha\\cup Qʻʻ\\alpha \\quad[\\text{Similar proof}]",
+      "printed": "✱37·221. ⊢.(P⊍Q)ʻʻα=Pʻʻα∪ Qʻʻα [Similar proof]",
       "printed_page": 299,
       "scan_leaf": 321,
       "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_221",
       "formal_scope": "exact typed distribution of relation-union image over a class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·221. \\vdash.(P\\unicode{x228d}Q)ʻʻ\\alpha=Pʻʻ\\alpha\\cup Qʻʻ\\alpha \\quad[\\text{Similar proof}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱37·222",
       "kind": "derived-proposition",
-      "printed": "✱37·222. \\vdash.(P\\unicode{x228d}Q)ʻʻ(\\alpha\\cup \\beta)=Pʻʻ\\alpha\\cup Pʻʻ\\beta\\cup Qʻʻ\\alpha\\cup Qʻʻ\\beta \\quad[\\text{*37·22·221}]",
+      "printed": "✱37·222. ⊢.(P⊍Q)ʻʻ(α∪ β)=Pʻʻα∪ Pʻʻβ∪ Qʻʻα∪ Qʻʻβ [*37·22·221]",
       "printed_page": 299,
       "scan_leaf": 321,
       "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_222",
       "formal_scope": "exact typed four-way distribution of relation-union image over class union; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱37·22",
         "PM1:✱37·221"
@@ -91,20 +115,32 @@
         ],
         "strict_attempt_evidence": "reviews/Star37-catalogue-09-semantic-audit.md",
         "editorial_note": "The direct Lean proof performs the four witness cases explicitly rather than calling the two printed distribution theorems."
-      }
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·222. \\vdash.(P\\unicode{x228d}Q)ʻʻ(\\alpha\\cup \\beta)=Pʻʻ\\alpha\\cup Pʻʻ\\beta\\cup Qʻʻ\\alpha\\cup Qʻʻ\\beta \\quad[\\text{*37·22·221}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱37·23",
       "kind": "derived-proposition",
-      "printed": "✱37·23. \\vdash.DʻR_{\\in}=\\hat{\\alpha}\\{(\\exists \\beta).\\alpha=Rʻʻ\\beta\\} \\quad[\\text{*37·101.*33·11}]",
+      "printed": "✱37·23. ⊢.DʻR_∈=α̂{(∃ β).α=Rʻʻβ} [*37·101.*33·11]",
       "printed_page": 299,
       "scan_leaf": 321,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_23",
       "formal_scope": "exact typed characterization of the domain of the image relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱37·101",
         "PM1:✱33·11"
@@ -121,24 +157,53 @@
         ],
         "strict_attempt_evidence": "reviews/Star37-catalogue-09-semantic-audit.md",
         "editorial_note": "The typed image relation and domain definitions make the printed characterization definitional, so the cited predecessors do not occur in the Lean term."
-      }
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·23. \\vdash.DʻR_{\\in}=\\hat{\\alpha}\\{(\\exists \\beta).\\alpha=Rʻʻ\\beta\\} \\quad[\\text{*37·101.*33·11}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱37·231",
       "kind": "derived-proposition",
-      "printed": "✱37·231. \\vdash.\\text{ᗡ}ʻR_{\\in}=\\text{Cls}",
+      "printed": "✱37·231. ⊢.ᗡʻR_∈=Cls",
       "printed_page": 299,
       "scan_leaf": 321,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_231",
       "formal_scope": "exact typed universality of the converse-domain of the image relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱10·11",
+        "PM1:✱10·281",
+        "PM1:✱33·131",
+        "PM1:✱10·24"
+      ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·231. \\vdash.\\text{ᗡ}ʻR_{\\in}=\\text{Cls}",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     }
   ],
   "ci_evidence": {

@@ -26,8 +26,8 @@
       "declaration": "PM.Architecture.Star81OpeningKernel.star_81_2",
       "formal_scope": "exact typed extensional reconstruction of domain equality iff equality for selections from a many-one relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star81OpeningKernel.star_81_1"
@@ -36,7 +36,7 @@
         "PM1:✱81·1"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star81-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
@@ -45,6 +45,15 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star81-catalogue-review.md",
         "editorial_note": "The exact reverse implication is congruence of Domain; the forward implication reuses the immediately preceding uniqueness theorem ✱81·1, made explicit because the diplomatic proposition line carries no printed proof citation."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

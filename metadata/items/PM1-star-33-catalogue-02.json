@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR33-CATALOGUE-02",
+  "batch": "PM1-STAR33-CATALOGUE-02-BLOCKED-STRUCTURAL",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -22,8 +22,8 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel.lean",
       "declaration": "PM.Architecture.Star33DomainKernel.star_33_13",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-ast-judgement-derivation",
       "formal_scope": "exact typed characterization of domain membership by an existential second correlate; strict semantic audit passed",
       "printed_dependencies": [
         "PM1:✱33·11",
@@ -43,13 +43,24 @@
         "strict_attempt_evidence": "reviews/Star33-catalogue-02-semantic-audit.md",
         "editorial_note": "The typed proof is direct; the printed citations provide historical derivational context but are not Lean theorem calls."
       },
-      "integration_blocked": false,
-      "semantic_audit_status": "strict-equivalence-passed",
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-equivalence-passed-secondary-prop-only",
+      "structural_formalization_status": "blocked-v1-missing-typed-pm-ast-and-kernel-derivation",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star33-catalogue-02-semantic-audit.md",
-      "printed": "✱33·13.   \\(\\vdash:x\\in \\text{D}ʻR.\\equiv.(\\exists y).xRy \\quad[\\text{*33·11.*20·3·57}]\\)",
+      "printed": "✱33·13. ⊢:x∈ DʻR.≡.(∃ y).xRy [*33·11.*20·3·57]",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "printed_latex_witness": "✱33·13.   \\(\\vdash:x\\in \\text{D}ʻR.\\equiv.(\\exists y).xRy \\quad[\\text{*33·11.*20·3·57}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱33·14",
@@ -57,19 +68,33 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel.lean",
       "declaration": "PM.Architecture.Star33DomainKernel.star_33_14",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-ast-judgement-derivation",
       "formal_scope": "exact typed implication from a relation instance to membership of its first and second correlates in the domain and converse domain; strict semantic audit passed",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱33·13",
+        "PM1:✱33·131"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "integration_blocked": false,
-      "semantic_audit_status": "strict-equivalence-passed",
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-equivalence-passed-secondary-prop-only",
+      "structural_formalization_status": "blocked-v1-missing-typed-pm-ast-and-kernel-derivation",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star33-catalogue-02-semantic-audit.md",
-      "printed": "✱33·14.  \\(\\vdash:xRy.\\supset.x\\in \\text{D}ʻR.y\\in \\text{ᗡ}ʻR\\)",
+      "printed": "✱33·14. ⊢:xRy.⊃.x∈ DʻR.y∈ ᗡʻR",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "printed_latex_witness": "✱33·14.  \\(\\vdash:xRy.\\supset.x\\in \\text{D}ʻR.y\\in \\text{ᗡ}ʻR\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱33·15",
@@ -77,19 +102,33 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel.lean",
       "declaration": "PM.Architecture.Star33DomainKernel.star_33_15",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-ast-judgement-derivation",
       "formal_scope": "exact typed inclusion of the fixed-second-coordinate section in the domain; strict semantic audit passed",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱10·24",
+        "PM1:✱33·13"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "integration_blocked": false,
-      "semantic_audit_status": "strict-equivalence-passed",
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-equivalence-passed-secondary-prop-only",
+      "structural_formalization_status": "blocked-v1-missing-typed-pm-ast-and-kernel-derivation",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star33-catalogue-02-semantic-audit.md",
-      "printed": "✱33·15.  \\(\\vdash.\\overrightarrow{R}ʻy\\subset\\text{D}ʻR\\)",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed": "✱33·15. ⊢.R⃗ʻy⊂DʻR",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "printed_latex_witness": "✱33·15.  \\(\\vdash.\\overrightarrow{R}ʻy\\subset\\text{D}ʻR\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱33·16",
@@ -97,19 +136,34 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel.lean",
       "declaration": "PM.Architecture.Star33DomainKernel.star_33_16",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-ast-judgement-derivation",
       "formal_scope": "exact typed equality of a homogeneous relation's field with the union of its domain and converse domain; strict semantic audit passed",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱33·13",
+        "PM1:✱33·131",
+        "PM1:✱22·34"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "integration_blocked": false,
-      "semantic_audit_status": "strict-equivalence-passed",
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-equivalence-passed-secondary-prop-only",
+      "structural_formalization_status": "blocked-v1-missing-typed-pm-ast-and-kernel-derivation",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star33-catalogue-02-semantic-audit.md",
-      "printed": "✱33·16.  \\(\\vdash.CʻR=\\text{D}ʻR\\cup \\text{ᗡ}ʻR\\)",
+      "printed": "✱33·16. ⊢.CʻR=DʻR∪ ᗡʻR",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "printed_latex_witness": "✱33·16.  \\(\\vdash.CʻR=\\text{D}ʻR\\cup \\text{ᗡ}ʻR\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱33·17",
@@ -117,8 +171,8 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel2.lean",
       "declaration": "PM.Architecture.Star33DomainKernel2.star_33_17",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-ast-judgement-derivation",
       "formal_scope": "exact typed implication from a homogeneous relation instance to field membership of both correlates; strict semantic audit passed",
       "printed_dependencies": [
         "PM1:✱33·14",
@@ -136,13 +190,24 @@
         "strict_attempt_evidence": "reviews/Star33-catalogue-02-semantic-audit.md",
         "editorial_note": "The Lean proof establishes the typed field-membership implication directly; the two printed citations remain historical provenance but are not calls in the proof term."
       },
-      "integration_blocked": false,
-      "semantic_audit_status": "strict-equivalence-passed",
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-equivalence-passed-secondary-prop-only",
+      "structural_formalization_status": "blocked-v1-missing-typed-pm-ast-and-kernel-derivation",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star33-catalogue-02-semantic-audit.md",
-      "printed": "✱33·17.  \\(\\vdash:xRy.\\supset.x,y\\in CʻR \\quad[\\text{*33·14·161}]\\)",
+      "printed": "✱33·17. ⊢:xRy.⊃.x,y∈ CʻR [*33·14·161]",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "printed_latex_witness": "✱33·17.  \\(\\vdash:xRy.\\supset.x,y\\in CʻR \\quad[\\text{*33·14·161}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
@@ -151,5 +216,9 @@
     "conclusion": "success"
   },
   "parser_status": "reviewed-gap",
-  "parser_evidence": "reviews/Star33-parser-gaps.md"
+  "parser_evidence": "reviews/Star33-parser-gaps.md",
+  "integration_status": "blocked-missing-pm-ast-judgement-derivation",
+  "review_evidence": [
+    "reviews/Star33-catalogue-02-semantic-audit.md"
+  ]
 }

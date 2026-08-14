@@ -19,97 +19,152 @@
     {
       "id": "PM1:✱41·34",
       "kind": "derived-proposition",
-      "printed": "✱41·34. \\(\\vdash.\\dot{s}\\alpha\\upharpoonleft ʻʻ\\lambda=\\alpha\\upharpoonleft \\dot{s}ʻ\\lambda\\)",
+      "printed": "✱41·34. ⊢.ṡα↿ ʻʻλ=α↿ ṡʻλ",
       "printed_page": 332,
       "scan_leaf": 354,
       "lean_path": "Principia/Architecture/Star41RestrictionKernel.lean",
       "declaration": "PM.Architecture.Star41RestrictionKernel.star_41_34",
       "formal_scope": "exact typed theorem that relational sum commutes with left restriction after mapping the restriction over the relation class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·34. \\(\\vdash.\\dot{s}\\alpha\\upharpoonleft ʻʻ\\lambda=\\alpha\\upharpoonleft \\dot{s}ʻ\\lambda\\)"
     },
     {
       "id": "PM1:✱41·341",
       "kind": "derived-proposition",
-      "printed": "✱41·341. \\(\\vdash. \\dot{s}ʻ\\upharpoonright  \\alphaʻʻ\\lambda = (\\dot{s}ʻ\\lambda)\\upharpoonright \\alpha   \\quad[\\text{Proof as in *41·34}]\\)",
+      "printed": "✱41·341. ⊢. ṡʻ↾ αʻʻλ = (ṡʻλ)↾ α [Proof as in *41·34]",
       "printed_page": 333,
       "scan_leaf": 355,
       "lean_path": "Principia/Architecture/Star41RestrictionKernel.lean",
       "declaration": "PM.Architecture.Star41RestrictionKernel.star_41_341",
       "formal_scope": "exact typed theorem that relational sum commutes with right restriction after mapping the restriction over the relation class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·341. \\(\\vdash. \\dot{s}ʻ\\upharpoonright  \\alphaʻʻ\\lambda = (\\dot{s}ʻ\\lambda)\\upharpoonright \\alpha   \\quad[\\text{Proof as in *41·34}]\\)"
     },
     {
       "id": "PM1:✱41·342",
       "kind": "derived-proposition",
-      "printed": "✱41·342. \\(\\vdash. \\dot{s}ʻ\\unicode{x0294f} \\alphaʻʻ\\lambda = (\\dot{s}ʻ\\lambda)\\unicode{x0294f}\\alpha\\)",
+      "printed": "✱41·342. ⊢. ṡʻ⥏ αʻʻλ = (ṡʻλ)⥏α",
       "printed_page": 333,
       "scan_leaf": 355,
       "lean_path": "Principia/Architecture/Star41RestrictionKernel.lean",
       "declaration": "PM.Architecture.Star41RestrictionKernel.star_41_342",
       "formal_scope": "exact typed theorem that relational sum commutes with simultaneous restriction at both ends; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·342. \\(\\vdash. \\dot{s}ʻ\\unicode{x0294f} \\alphaʻʻ\\lambda = (\\dot{s}ʻ\\lambda)\\unicode{x0294f}\\alpha\\)"
     },
     {
       "id": "PM1:✱41·35",
       "kind": "derived-proposition",
-      "printed": "✱41·35. \\(\\vdash. \\dot{s}ʻM\\upharpoonright ʻʻ\\kappa = M\\upharpoonright sʻ\\kappa\\)",
+      "printed": "✱41·35. ⊢. ṡʻM↾ ʻʻκ = M↾ sʻκ",
       "printed_page": 333,
       "scan_leaf": 355,
       "lean_path": "Principia/Architecture/Star41RestrictionKernel.lean",
       "declaration": "PM.Architecture.Star41RestrictionKernel.star_41_35",
       "formal_scope": "exact typed theorem that summing right restrictions of a fixed relation equals restriction by the class sum; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·35. \\(\\vdash. \\dot{s}ʻM\\upharpoonright ʻʻ\\kappa = M\\upharpoonright sʻ\\kappa\\)"
     },
     {
       "id": "PM1:✱41·351",
       "kind": "derived-proposition",
-      "printed": "✱41·351. \\(\\vdash. \\dot{s}ʻ\\upharpoonleft Mʻʻ\\kappa = (sʻ\\kappa)\\upharpoonleft M     \\quad[\\text{Proof as in *41·35}]\\)",
+      "printed": "✱41·351. ⊢. ṡʻ↿ Mʻʻκ = (sʻκ)↿ M [Proof as in *41·35]",
       "printed_page": 333,
       "scan_leaf": 355,
       "lean_path": "Principia/Architecture/Star41RestrictionKernel.lean",
       "declaration": "PM.Architecture.Star41RestrictionKernel.star_41_351",
       "formal_scope": "exact typed theorem that summing left restrictions of a fixed relation equals restriction by the class sum; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·351. \\(\\vdash. \\dot{s}ʻ\\upharpoonleft Mʻʻ\\kappa = (sʻ\\kappa)\\upharpoonleft M     \\quad[\\text{Proof as in *41·35}]\\)"
     }
   ],
   "ci_evidence": {

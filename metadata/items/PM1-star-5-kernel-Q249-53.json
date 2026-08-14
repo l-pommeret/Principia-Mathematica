@@ -27,8 +27,9 @@
       "declaration": "PM.FirstEdition.Volume1.Star5.star_5_53",
       "formal_scope": "(((p∨q)∨r)⊃s)≡(((p⊃s)·(q⊃s))·(r⊃s)), over an elementary real-variable context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "follows-printed",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱4·77"
       ],
@@ -66,12 +67,20 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Q249-star5-53-kernel-gate.md",
         "editorial_note": "The printed citation ✱4·77 is retained twice; ✱4·36 transports its first instance beneath the remaining conditional before explicit reassembly."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "8da5d1fdec9a8c765fdcbc8c38fb46d042944f34",
-    "run": "31552231965",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

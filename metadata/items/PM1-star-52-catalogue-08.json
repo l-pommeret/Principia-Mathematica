@@ -18,6 +18,7 @@
     {
       "id": "PM1:✱52·7",
       "kind": "derived-proposition",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed": "✱52·7.  ⊢ :: β − α ∈ 1 . α ⊂ ξ . ξ ⊂ β .⊃ : ξ = α .∨. ξ = β",
       "printed_page": 367,
       "scan_leaf": 389,
@@ -25,11 +26,21 @@
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_7",
       "formal_scope": "exact typed no-intermediate-class theorem when the difference of the upper and lower classes is a unit class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -19,97 +19,152 @@
     {
       "id": "PM1:✱41·45",
       "kind": "derived-proposition",
-      "printed": "✱41·45. \\(\\vdash.Cʻ\\dot{s}ʻ\\lambda=sʻCʻʻ\\lambda\\)",
+      "printed": "✱41·45. ⊢.Cʻṡʻλ=sʻCʻʻλ",
       "printed_page": 334,
       "scan_leaf": 356,
       "lean_path": "Principia/Architecture/Star41FinalKernel.lean",
       "declaration": "PM.Architecture.Star41FinalKernel.star_41_45",
       "formal_scope": "exact typed equality between the field of a relational sum and the class sum of member fields; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/Star41-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·45. \\(\\vdash.Cʻ\\dot{s}ʻ\\lambda=sʻCʻʻ\\lambda\\)"
     },
     {
       "id": "PM1:✱41·5",
       "kind": "derived-proposition",
-      "printed": "✱41·5. \\(\\vdash.\\dot{p}ʻ\\lambda\\mid \\dot{p}ʻ\\mu\\unicode{x2abd}\\dot{p}ʻ(sʻ\\lambda\\mid_{,,}ʻʻ\\mu)\\)",
+      "printed": "✱41·5. ⊢.ṗʻλ| ṗʻμ⪽ṗʻ(sʻλ|_,,ʻʻμ)",
       "printed_page": 334,
       "scan_leaf": 356,
       "lean_path": "Principia/Architecture/Star41FinalKernel.lean",
       "declaration": "PM.Architecture.Star41FinalKernel.star_41_5",
       "formal_scope": "exact typed inclusion from the relative product of two relational products into the product of all pairwise relative products; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·5. \\(\\vdash.\\dot{p}ʻ\\lambda\\mid \\dot{p}ʻ\\mu\\unicode{x2abd}\\dot{p}ʻ(sʻ\\lambda\\mid_{,,}ʻʻ\\mu)\\)"
     },
     {
       "id": "PM1:✱41·51",
       "kind": "derived-proposition",
-      "printed": "✱41·51. \\(\\vdash.\\dot{s}ʻ\\lambda\\mid \\dot{s}ʻ\\mu=\\dot{s}ʻsʻ\\lambda\\mid_{,,}ʻʻ\\mu\\)",
+      "printed": "✱41·51. ⊢.ṡʻλ| ṡʻμ=ṡʻsʻλ|_,,ʻʻμ",
       "printed_page": 334,
       "scan_leaf": 356,
       "lean_path": "Principia/Architecture/Star41FinalKernel.lean",
       "declaration": "PM.Architecture.Star41FinalKernel.star_41_51",
       "formal_scope": "exact typed equality between the relative product of two relational sums and the sum of all pairwise relative products; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·51. \\(\\vdash.\\dot{s}ʻ\\lambda\\mid \\dot{s}ʻ\\mu=\\dot{s}ʻsʻ\\lambda\\mid_{,,}ʻʻ\\mu\\)"
     },
     {
       "id": "PM1:✱41·52",
       "kind": "derived-proposition",
-      "printed": "✱41·52. \\(\\vdash\\colon\\ldotp \\alpha\\upharpoonleft \\dot{s}ʻ\\lambda\\unicode{x2abd}Q.\\equiv:P\\in \\lambda.\\supset_{P}.\\alpha\\upharpoonleft P\\unicode{x2abd}Q\\)",
+      "printed": "✱41·52. ⊢:. α↿ ṡʻλ⪽Q.≡:P∈ λ.⊃_P.α↿ P⪽Q",
       "printed_page": 335,
       "scan_leaf": 357,
       "lean_path": "Principia/Architecture/Star41FinalKernel.lean",
       "declaration": "PM.Architecture.Star41FinalKernel.star_41_52",
       "formal_scope": "exact typed equivalence between a bound on a restricted relational sum and the corresponding bound on every restricted member relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·52. \\(\\vdash\\colon\\ldotp \\alpha\\upharpoonleft \\dot{s}ʻ\\lambda\\unicode{x2abd}Q.\\equiv:P\\in \\lambda.\\supset_{P}.\\alpha\\upharpoonleft P\\unicode{x2abd}Q\\)"
     },
     {
       "id": "PM1:✱41·6",
       "kind": "derived-proposition",
-      "printed": "✱41·6. \\(\\vdash\\colon\\ldotp y\\in \\beta.\\supset_{y}.Pʻy=Qʻy\\unicode{x228d}Rʻy:\\supset.\\dot{s}ʻPʻʻ\\beta=\\dot{s}ʻQʻʻ\\beta\\unicode{x228d}\\dot{s}ʻRʻʻ\\beta\\)",
+      "printed": "✱41·6. ⊢:. y∈ β.⊃y.Pʻy=Qʻy⊍Rʻy:⊃.ṡʻPʻʻβ=ṡʻQʻʻβ⊍ṡʻRʻʻβ",
       "printed_page": 335,
       "scan_leaf": 357,
       "lean_path": "Principia/Architecture/Star41FinalKernel.lean",
       "declaration": "PM.Architecture.Star41FinalKernel.star_41_6",
       "formal_scope": "exact typed indexed distributivity of relational sum over pointwise binary union; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_blocked": false,
-      "integration_status": "canonical-awaiting-ci",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star41-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱41·6. \\(\\vdash\\colon\\ldotp y\\in \\beta.\\supset_{y}.Pʻy=Qʻy\\unicode{x228d}Rʻy:\\supset.\\dot{s}ʻPʻʻ\\beta=\\dot{s}ʻQʻʻ\\beta\\unicode{x228d}\\dot{s}ʻRʻʻ\\beta\\)"
     }
   ],
   "ci_evidence": {

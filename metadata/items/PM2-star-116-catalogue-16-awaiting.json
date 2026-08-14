@@ -26,10 +26,11 @@
       "declaration": "PM.Architecture.Star116FifthKernel.star_116_534",
       "formal_scope": "exact typed pointwise-product similarity: paired γ-indexed functions into α and β are bijective with γ-indexed functions into α × β; PM's construction hypotheses are internalized by the explicit canonical equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
-        "PM2:✱116·532"
+        "PM2:✱116·43",
+        "PM2:✱115·12"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star116FifthKernel.star_116_53"
@@ -49,7 +50,16 @@
         "editorial_note": "The canonical typed equivalence internalizes PM's relation construction and therefore reuses aggregate similarity ·53 instead of a theorem edge to the printed hypothesis ·532."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star116-catalogue-16-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T11",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

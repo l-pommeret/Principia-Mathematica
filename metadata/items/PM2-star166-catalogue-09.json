@@ -1,0 +1,122 @@
+{
+  "batch": "PM2-STAR166-CATALOGUE-09",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "402"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱166·53",
+      "kind": "derived-proposition",
+      "printed": "⊢ :∃̇ !Q.⊃ .(Q⇸ y)× P=(Q× P)⤉(P↓_., y)",
+      "printed_page": 402,
+      "lean_path": "Principia/FirstEdition/Volume2/Star166Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱162·43",
+        "PM2:✱165·243",
+        "PM2:✱166·52"
+      ],
+      "printed_latex_witness": "\\(\\vdash :\\dot{\\exists} !Q.\\supset .(Q\\unicode{x21f8} y)\\times P=(Q\\times P)\\unicode{x2909}(P\\downarrow_{.,} y)\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱166·531",
+      "kind": "derived-proposition",
+      "printed": "⊢ :∃̇ !Q.⊃ .(y⇷Q)× P=(P↓_., y)⤉(Q× P)",
+      "printed_page": 402,
+      "lean_path": "Principia/FirstEdition/Volume2/Star166Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(\\vdash :\\dot{\\exists} !Q.\\supset .(y\\unicode{x21f7}Q)\\times P=(P\\downarrow_{.,} y)\\unicode{x2909}(Q\\times P)\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱166·54",
+      "kind": "derived-proposition",
+      "printed": "⊢ .Q× (P⇸ x)=(Q× P)⊍ Q× (CʻP↑ ℩ʻx)",
+      "printed_page": 402,
+      "lean_path": "Principia/FirstEdition/Volume2/Star166Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱161·1",
+        "PM1:✱35·85",
+        "PM2:✱166·471"
+      ],
+      "printed_latex_witness": "\\(\\vdash .Q\\times (P\\unicode{x21f8} x)=(Q\\times P)\\unicode{x228d} Q\\times (CʻP\\uparrow {℩}ʻx)\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱166·541",
+      "kind": "derived-proposition",
+      "printed": "⊢ .Q× (x⇷P)=Q× (℩ʻx↑ CʻP)⊍ (Q× P)",
+      "printed_page": 402,
+      "lean_path": "Principia/FirstEdition/Volume2/Star166Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\(\\vdash .Q\\times (x\\unicode{x21f7}P)=Q\\times ({℩}ʻx\\uparrow CʻP)\\unicode{x228d} (Q\\times P)\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

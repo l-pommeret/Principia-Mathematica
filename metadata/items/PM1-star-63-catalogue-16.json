@@ -18,7 +18,7 @@
     {
       "id": "PM1:✱63·68",
       "kind": "derived-proposition",
-      "printed": "✱63·68. \\(\\vdash.\\text{Cl}ʻt_{2}ʻ\\kappa=t_{1}ʻ\\kappa \\quad[\\text{*63·52.*60·2}]\\)",
+      "printed": "✱63·68. ⊢.Clʻt₂ʻκ=t₁ʻκ [*63·52.*60·2]",
       "printed_page": 428,
       "scan_leaf": 450,
       "lean_path": "Principia/Architecture/Star63TypeKernel5.lean",
@@ -31,7 +31,18 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star63-catalogue-review.md"
+      "parser_evidence": "reviews/Star63-catalogue-review.md",
+      "printed_latex_witness": "✱63·68. \\(\\vdash.\\text{Cl}ʻt_{2}ʻ\\kappa=t_{1}ʻ\\kappa \\quad[\\text{*63·52.*60·2}]\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

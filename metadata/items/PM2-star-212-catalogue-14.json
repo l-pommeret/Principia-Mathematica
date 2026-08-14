@@ -1,1 +1,150 @@
-{"batch":"PM2-STAR212-CATALOGUE-14","edition":"first","volume":2,"source_range":{"printed_pages":"632–654","project_gutenberg":"https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},"witnesses":["PM2-1912-SCAN","PG78255"],"items":[{"id":"PM2:✱212·602","kind":"derived-proposition","printed":"✱212·602. ⊢ : P∈Ser . ∃!P . α⊂CʻP .⊃: E!max_Pʻα .≡. Pʻʻα∈P→ʻʻα","lean_path":"Principia/Architecture/Star212ExistenceKernel.lean","declaration":"PM.Architecture.Star212ExistenceKernel.star_212_602","formal_scope":"typed reconstruction; item-level semantic promotion audit pending","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"pending","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star212-canonical-review.md"},{"id":"PM2:✱212·61","kind":"derived-proposition","printed":"✱212·61. ⊢ : P∈trans∩connex . ∃!P .⊃. limax(ςʻP)ʻP→ʻʻα=Pʻʻα","lean_path":"Principia/Architecture/Star212ExistenceKernel.lean","declaration":"PM.Architecture.Star212ExistenceKernel.star_212_61","formal_scope":"typed reconstruction; item-level semantic promotion audit pending","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"pending","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star212-canonical-review.md"},{"id":"PM2:✱212·62","kind":"derived-proposition","printed":"✱212·62. ⊢ : P∈Ser . ∃!P .⊃: E!max_Pʻα .≡. E!max(ςʻP)ʻP→ʻʻα","lean_path":"Principia/Architecture/Star212ExistenceKernel.lean","declaration":"PM.Architecture.Star212ExistenceKernel.star_212_62","formal_scope":"typed reconstruction; item-level semantic promotion audit pending","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"pending","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star212-canonical-review.md"},{"id":"PM2:✱212·621","kind":"derived-proposition","printed":"✱212·621. ⊢ : P∈Ser . ∃!P .⊃: E!seq_Pʻα .≡. E!seq(ςʻP)ʻP→ʻʻα","lean_path":"Principia/Architecture/Star212ExistenceKernel.lean","declaration":"PM.Architecture.Star212ExistenceKernel.star_212_621","formal_scope":"typed reconstruction; item-level semantic promotion audit pending","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"pending","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star212-canonical-review.md"},{"id":"PM2:✱212·63","kind":"derived-proposition","printed":"✱212·63. ⊢ : P∈Ser . ∃!P . α⊂CʻP . ∼E!max_Pʻα .⊃. E!seq_Pʻα","lean_path":"Principia/Architecture/Star212ExistenceKernel.lean","declaration":"PM.Architecture.Star212ExistenceKernel.star_212_63","formal_scope":"typed reconstruction; item-level semantic promotion audit pending","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"pending","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star212-canonical-review.md"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM2-STAR212-CATALOGUE-14",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "632–654",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱212·602",
+      "kind": "derived-proposition",
+      "printed": "✱212·602. ⊢ : P∈Ser . ∃!P . α⊂CʻP .⊃: E!max_Pʻα .≡. Pʻʻα∈P→ʻʻα",
+      "lean_path": "Principia/Architecture/Star212ExistenceKernel.lean",
+      "declaration": "PM.Architecture.Star212ExistenceKernel.star_212_602",
+      "formal_scope": "typed reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱212·61",
+      "kind": "derived-proposition",
+      "printed": "✱212·61. ⊢ : P∈trans∩connex . ∃!P .⊃. limax(ςʻP)ʻP→ʻʻα=Pʻʻα",
+      "lean_path": "Principia/Architecture/Star212ExistenceKernel.lean",
+      "declaration": "PM.Architecture.Star212ExistenceKernel.star_212_61",
+      "formal_scope": "typed reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱212·62",
+      "kind": "derived-proposition",
+      "printed": "✱212·62. ⊢ : P∈Ser . ∃!P .⊃: E!max_Pʻα .≡. E!max(ςʻP)ʻP→ʻʻα",
+      "lean_path": "Principia/Architecture/Star212ExistenceKernel.lean",
+      "declaration": "PM.Architecture.Star212ExistenceKernel.star_212_62",
+      "formal_scope": "typed reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱212·621",
+      "kind": "derived-proposition",
+      "printed": "✱212·621. ⊢ : P∈Ser . ∃!P .⊃: E!seq_Pʻα .≡. E!seq(ςʻP)ʻP→ʻʻα",
+      "lean_path": "Principia/Architecture/Star212ExistenceKernel.lean",
+      "declaration": "PM.Architecture.Star212ExistenceKernel.star_212_621",
+      "formal_scope": "typed reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱212·63",
+      "kind": "derived-proposition",
+      "printed": "✱212·63. ⊢ : P∈Ser . ∃!P . α⊂CʻP . ∼E!max_Pʻα .⊃. E!seq_Pʻα",
+      "lean_path": "Principia/Architecture/Star212ExistenceKernel.lean",
+      "declaration": "PM.Architecture.Star212ExistenceKernel.star_212_63",
+      "formal_scope": "typed reconstruction; item-level semantic promotion audit pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "pending",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

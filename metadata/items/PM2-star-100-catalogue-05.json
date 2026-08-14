@@ -25,12 +25,38 @@
       "declaration": "PM.Architecture.Star100SecondKernel.star_100_4",
       "formal_scope": "exact typed range characterization of membership in NC",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
-      "printed_dependencies": ["PM1:✱37·78", "PM1:✱37·79", "PM2:✱100·02", "PM2:✱100·01"],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱37·78",
+        "PM1:✱37·79",
+        "PM2:✱100·02",
+        "PM2:✱100·01"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱37·78", "PM1:✱37·79", "PM2:✱100·01", "PM2:✱100·02"], "strict_attempt_evidence": "reviews/Star100-catalogue-review.md", "editorial_note": "NC is the typed range predicate by definition, so the printed relation-theoretic citations remain historical."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱37·78",
+          "PM1:✱37·79",
+          "PM2:✱100·01",
+          "PM2:✱100·02"
+        ],
+        "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
+        "editorial_note": "NC is the typed range predicate by definition, so the printed relation-theoretic citations remain historical."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱100·41",
@@ -42,12 +68,36 @@
       "declaration": "PM.Architecture.Star100SecondKernel.star_100_41",
       "formal_scope": "exact typed introduction of every Nc value into NC",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
-      "printed_dependencies": ["PM2:✱100·4", "PM2:✱100·2", "PM1:✱14·204"],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
+      "printed_dependencies": [
+        "PM2:✱100·4",
+        "PM2:✱100·2",
+        "PM1:✱14·204"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱14·204", "PM2:✱100·2", "PM2:✱100·4"], "strict_attempt_evidence": "reviews/Star100-catalogue-review.md", "editorial_note": "The range witness is constructed directly in the typed NC definition; PM's citations remain historical."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱14·204",
+          "PM2:✱100·2",
+          "PM2:✱100·4"
+        ],
+        "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
+        "editorial_note": "The range witness is constructed directly in the typed NC definition; PM's citations remain historical."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱100·42",
@@ -59,12 +109,39 @@
       "declaration": "PM.Architecture.Star100SecondKernel.star_100_42",
       "formal_scope": "exact typed uniqueness of two inhabited intersecting cardinal classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
-      "printed_dependencies": ["PM2:✱100·4", "PM2:✱100·34", "PM1:✱14·15"],
-      "lean_dependencies": ["PM.Architecture.Star100SecondKernel.star_100_34"],
-      "normalized_dependencies": ["PM2:✱100·34"],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱14·15", "PM2:✱100·4"], "strict_attempt_evidence": "reviews/Star100-catalogue-review.md", "editorial_note": "Lean uses the exact common-member equality lemma ·34 directly; PM's range expansion and final substitution citation are historical."}
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
+      "printed_dependencies": [
+        "PM2:✱100·4",
+        "PM2:✱100·34",
+        "PM1:✱14·15"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star100SecondKernel.star_100_34"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱100·34"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱14·15",
+          "PM2:✱100·4"
+        ],
+        "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
+        "editorial_note": "Lean uses the exact common-member equality lemma ·34 directly; PM's range expansion and final substitution citation are historical."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱100·43",
@@ -76,14 +153,39 @@
       "declaration": "PM.Architecture.Star100SecondKernel.star_100_43",
       "formal_scope": "exact typed pointwise exclusivity of the class NC",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
-      "printed_dependencies": ["PM2:✱100·42", "PM1:✱84·11"],
-      "lean_dependencies": ["PM.Architecture.Star100SecondKernel.star_100_42"],
-      "normalized_dependencies": ["PM2:✱100·42"],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱84·11"], "strict_attempt_evidence": "reviews/Star100-catalogue-review.md", "editorial_note": "The Lean target is the pointwise defining property of Cls² excl and invokes ·42 directly; the class-membership packaging citation remains historical."},
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
+      "printed_dependencies": [
+        "PM2:✱100·42",
+        "PM1:✱84·11"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star100SecondKernel.star_100_42"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱100·42"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱84·11"
+        ],
+        "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
+        "editorial_note": "The Lean target is the pointwise defining property of Cls² excl and invokes ·42 directly; the class-membership packaging citation remains historical."
+      },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star100-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱100·44",
@@ -95,12 +197,46 @@
       "declaration": "PM.Architecture.Star100SecondKernel.star_100_44",
       "formal_scope": "exact typed membership/equality equivalence for a cardinal class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
-      "printed_dependencies": ["PM2:✱100·3", "PM1:✱10·24", "PM2:✱100·4", "PM2:✱100·35", "PM1:✱14·15"],
-      "lean_dependencies": ["PM.Architecture.Star100OpeningKernel.star_100_321"],
-      "normalized_dependencies": ["PM2:✱100·321"],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": ["PM2:✱100·321"], "printed_but_unused": ["PM1:✱10·24", "PM1:✱14·15", "PM2:✱100·3", "PM2:✱100·35", "PM2:✱100·4"], "strict_attempt_evidence": "reviews/Star100-catalogue-review.md", "editorial_note": "The typed proof reduces membership in an Nc value and uses extensional invariance ·321; this replaces PM's longer existence-and-substitution route."}
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
+      "printed_dependencies": [
+        "PM2:✱100·3",
+        "PM1:✱10·24",
+        "PM2:✱100·4",
+        "PM2:✱100·35",
+        "PM1:✱14·15"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star100OpeningKernel.star_100_321"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱100·321"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM2:✱100·321"
+        ],
+        "printed_but_unused": [
+          "PM1:✱10·24",
+          "PM1:✱14·15",
+          "PM2:✱100·3",
+          "PM2:✱100·35",
+          "PM2:✱100·4"
+        ],
+        "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
+        "editorial_note": "The typed proof reduces membership in an Nc value and uses extensional invariance ·321; this replaces PM's longer existence-and-substitution route."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

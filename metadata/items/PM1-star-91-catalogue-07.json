@@ -23,7 +23,7 @@
     {
       "id": "PM1:✱91·201",
       "kind": "derived-proposition",
-      "printed": "✱91·201. ⊢ : Q R_st P .⊃. (R|Q) R_st P",
+      "printed": "✱91·201. ⊢:QRₛₜP.⊃.(R| Q)RₛₜP [Proof as in ✱91·2]",
       "printed_page": 588,
       "scan_leaf": 610,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
@@ -33,16 +33,32 @@
       "formal_status": "prepared",
       "integration_status": "prepared",
       "blocking_reason": "The declaration has path endpoints and applies the same right-edge Pow.step as ·2; it omits relation powers P,Q, R_st, and left multiplication R|Q.",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱91·2"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star91OpeningKernel.star_91_2"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱91·2"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·204",
       "kind": "derived-proposition",
-      "printed": "✱91·204. ⊢ : P{R_ts|( |R)}Q .≡. P R_ts (Q|R)",
+      "printed": "✱91·204. ⊢:P{Rₜₛ| (| R)}Q.≡.PRₜₛ(Q| R)",
       "printed_page": 588,
       "scan_leaf": 610,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
@@ -52,16 +68,31 @@
       "formal_status": "prepared",
       "integration_status": "prepared",
       "blocking_reason": "The declaration proves comp S (comp Q R) equals itself and contains neither R_ts nor the two propositions compared by the source biconditional.",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱34·1",
+        "PM1:✱43·101",
+        "PM1:✱13·195"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T6",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·205",
       "kind": "derived-proposition",
-      "printed": "✱91·205. ⊢ : P{R_st|(R|)}Q .≡. P R_st (R|Q)",
+      "printed": "✱91·205. ⊢:P{Rₛₜ| (R| )}Q.≡.PRₛₜ(R| Q)",
       "printed_page": 588,
       "scan_leaf": 610,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
@@ -75,12 +106,23 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T6",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·21",
       "kind": "derived-proposition",
-      "printed": "✱91·21. ⊢ . R_ts = I ⊍ R_ts | (|R)",
+      "printed": "✱91·21. ⊢.Rₜₛ=I⊍Rₜₛ| (| R)",
       "printed_page": 588,
       "scan_leaf": 610,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
@@ -90,16 +132,31 @@
       "formal_status": "prepared",
       "integration_status": "prepared",
       "blocking_reason": "The declaration is reflexivity and omits identity union, composition with right multiplication, and the relation-on-relations R_ts.",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱90·31",
+        "PM1:✱91·02",
+        "PM1:✱43·311"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T6",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱91·211",
       "kind": "derived-proposition",
-      "printed": "✱91·211. ⊢ . R_st = I ⊍ R_st | (R|)",
+      "printed": "✱91·211 ⊢ . Rₛₜ=I⊍ Rₛₜ| (R|)",
       "printed_page": 589,
       "scan_leaf": 611,
       "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
@@ -113,7 +170,18 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star91-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T6",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ]
 }

@@ -20,6 +20,7 @@
     {
       "id": "PM1:✱52·44",
       "kind": "derived-proposition",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed": "✱52·44.  ⊢ :: α ∈ 1 .⊃ : ∃!(α ∩ β) .≡. α ⊂ β .≡. α ∩ β = α",
       "printed_page": 366,
       "scan_leaf": 388,
@@ -27,15 +28,26 @@
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_44",
       "formal_scope": "exact typed equivalence of inhabited intersection, inclusion, and equality with the unit factor",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱52·45",
       "kind": "derived-proposition",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed": "✱52·45.  ⊢ :: α,β ∈ 1 .⊃ :: α ⊂ β ∪ γ .≡ : α = β .∨. α ⊂ γ",
       "printed_page": 366,
       "scan_leaf": 388,
@@ -43,17 +55,28 @@
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_45",
       "formal_scope": "exact typed singleton inclusion into a union characterized by equality with the singleton summand or inclusion in the other summand",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star52-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T11",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱52·46",
       "kind": "derived-proposition",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed": "✱52·46.  ⊢ :: α,β ∈ 1 .⊃ : α ⊂ β .≡. α = β .≡. ∃!(α ∩ β)",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -61,17 +84,28 @@
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_46",
       "formal_scope": "exact typed equivalence of inclusion, equality, and inhabited intersection for two unit classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star52-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱52·6",
       "kind": "derived-proposition",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed": "✱52·6.  ⊢ :: α ∈ 1 .⊃ : x ∈ α .≡. ιʻx = α .≡. x = ι̌ʻα",
       "printed_page": 367,
       "scan_leaf": 389,
@@ -79,15 +113,26 @@
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_6",
       "formal_scope": "exact contextual membership characterization by singleton equality and the unique member of a unit class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱52·601",
       "kind": "derived-proposition",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed": "✱52·601.  ⊢ :: α ∈ 1 .⊃ :: φ(ι̌ʻα) .≡ : x ∈ α .⊃ₓ. φx :≡: (∃x). x ∈ α . φx",
       "printed_page": 367,
       "scan_leaf": 389,
@@ -95,11 +140,21 @@
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_601",
       "formal_scope": "exact contextual equivalence between applying a predicate to the unique member, universal truth on the unit class, and witnessed truth on it",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

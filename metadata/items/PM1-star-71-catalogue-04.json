@@ -1,0 +1,185 @@
+{
+  "batch": "PM1-STAR71-CATALOGUE-04",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "449–450",
+    "scan_leaves": [
+      471,
+      472
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱71·131",
+      "kind": "derived-proposition",
+      "printed": "✱71·131. ⊢:. R∈ Cls → 1.≡:(x):R⃖ʻx∈ 1.∨.R⃖ʻx=Λ [*70·461]",
+      "printed_page": 449,
+      "scan_leaf": 471,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱70·461"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·131. \\vdash\\colon\\ldotp R\\in \\text{Cls}\\rightarrow 1.\\equiv:(x):\\overleftarrow{R}ʻx\\in 1.\\lor.\\overleftarrow{R}ʻx=\\Lambda \\quad[\\text{*70·461}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·132",
+      "kind": "derived-proposition",
+      "printed": "✱71·132. ⊢:: R∈ 1 → 1.≡:. (y):R⃗ʻy∈ 1.∨.R⃗ʻy=Λ:. (x):R⃖ʻx∈ 1.∨.R⃖ʻx=Λ [*70·14]",
+      "printed_page": 450,
+      "scan_leaf": 472,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱70·14"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·132. \\vdash\\colon\\colon R\\in 1\\rightarrow 1.\\equiv\\colon\\ldotp (y):\\overrightarrow{R}ʻy\\in 1.\\lor.\\overrightarrow{R}ʻy=\\Lambda\\colon\\ldotp (x):\\overleftarrow{R}ʻx\\in 1.\\lor.\\overleftarrow{R}ʻx=\\Lambda \\quad[\\text{*70·14}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·14",
+      "kind": "derived-proposition",
+      "printed": "✱71·14. ⊢:. R∈ 1 → Cls.≡:∃ !R⃗ʻy.⊃y.R⃗ʻy∈ 1 [*70·47]",
+      "printed_page": 450,
+      "scan_leaf": 472,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱70·47"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·14. \\vdash\\colon\\ldotp R\\in 1\\rightarrow \\text{Cls}.\\equiv:\\exists !\\overrightarrow{R}ʻy.\\supset_{y}.\\overrightarrow{R}ʻy\\in 1 \\quad[\\text{*70·47}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·141",
+      "kind": "derived-proposition",
+      "printed": "✱71·141. ⊢:. R∈ Cls → 1.≡:∃ !R⃖ʻx.⊃ₓ.R⃖ʻx∈ 1 [*70·471]",
+      "printed_page": 450,
+      "scan_leaf": 472,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱70·471"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·141. \\vdash\\colon\\ldotp R\\in \\text{Cls}\\rightarrow 1.\\equiv:\\exists !\\overleftarrow{R}ʻx.\\supset_{x}.\\overleftarrow{R}ʻx\\in 1 \\quad[\\text{*70·471}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·142",
+      "kind": "derived-proposition",
+      "printed": "✱71·142. ⊢:. R∈ 1 → 1.≡:∃ !R⃗ʻy.⊃y.R⃗ʻy∈ 1:∃ !R⃖ʻx.⊃ₓ.R⃖ʻx∈ 1 [*70·15]",
+      "printed_page": 450,
+      "scan_leaf": 472,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱70·15"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·142. \\vdash\\colon\\ldotp R\\in 1\\rightarrow 1.\\equiv:\\exists !\\overrightarrow{R}ʻy.\\supset_{y}.\\overrightarrow{R}ʻy\\in 1:\\exists !\\overleftarrow{R}ʻx.\\supset_{x}.\\overleftarrow{R}ʻx\\in 1 \\quad[\\text{*70·15}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

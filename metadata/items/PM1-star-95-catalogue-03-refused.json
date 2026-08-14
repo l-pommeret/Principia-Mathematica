@@ -4,77 +4,178 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "628–629",
-    "scan_leaves": [650, 651],
+    "scan_leaves": [
+      650,
+      651
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
   "items": [
     {
-      "id": "PM1:✱95·212", "kind": "derived-proposition",
-      "printed": "✱95·212. ⊢ : DʻR⊂CʻP . M∈(P∗Q)ʻR .⊃. (∃S,T) . S∈PotidʻP . T∈PotʻQ∪ιʻI . M=S|R|T [Proof as in ✱95·211]",
-      "printed_page": 628, "scan_leaf": 650,
+      "id": "PM1:✱95·212",
+      "kind": "derived-proposition",
+      "printed": "✱95·212. ⊢:DʻR ⊂ CʻP.M∈ (P ∗ Q)ʻR.⊃. (∃ S,T).S∈ PotidʻP.T∈ PotʻQ∪ ιʻI.M=S| R| T [Proof as in ✱95·211]",
+      "printed_page": 628,
+      "scan_leaf": 650,
       "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel.lean",
       "declaration": "PM.FirstEdition.Volume1.Star95Kernel.star_95_212",
       "formal_scope": "refused: Lean omits the domain hypothesis, power/potent constraints and factorization, and returns only T=M",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
-      "integration_blocked": true, "integration_status": "blocked-strict-semantic-mismatch",
-      "printed_dependencies": ["PM1:✱95·211"], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star95-catalogues-03-04-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [
+        "PM1:✱95·211"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
-      "id": "PM1:✱95·22", "kind": "derived-proposition",
-      "printed": "✱95·22. ⊢ : DʻR⊂CʻP . ᗡʻR⊂CʻQ . M∈(P∗Q)ʻR .⊃. (∃S,T) . S∈PotidʻP . T∈PotidʻQ . M=S|R|T [Proof as in ✱95·211]",
-      "printed_page": 628, "scan_leaf": 650,
+      "id": "PM1:✱95·22",
+      "kind": "derived-proposition",
+      "printed": "✱95·22. ⊢:DʻR ⊂ CʻP.ᗡʻR⊂ CʻQ.M∈ (P ∗ Q)ʻR.⊃. (∃ S,T).S∈ PotidʻP.T∈ PotidʻQ.M=S| R| T [Proof as in ✱95·211]",
+      "printed_page": 628,
+      "scan_leaf": 650,
       "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel.lean",
       "declaration": "PM.FirstEdition.Volume1.Star95Kernel.star_95_22",
       "formal_scope": "refused: Lean substitutes S=T=M and omits both range/domain hypotheses, both Potid memberships and M=S|R|T",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
-      "integration_blocked": true, "integration_status": "blocked-strict-semantic-mismatch",
-      "printed_dependencies": ["PM1:✱95·211"], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star95-catalogues-03-04-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [
+        "PM1:✱95·211"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
-      "id": "PM1:✱95·221", "kind": "derived-proposition",
-      "printed": "✱95·221. ⊢ : T∈PotʻQ .⊃. (∃S) . S∈PotʻP . S|R|T∈(P∗Q)ʻR",
-      "printed_page": 629, "scan_leaf": 651,
+      "id": "PM1:✱95·221",
+      "kind": "derived-proposition",
+      "printed": "✱95·221. ⊢:T∈ PotʻQ.⊃.(∃ S).S∈ PotʻP.S| R| T∈ (P ∗ Q)ʻR",
+      "printed_page": 629,
+      "scan_leaf": 651,
       "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel.lean",
       "declaration": "PM.FirstEdition.Volume1.Star95Kernel.star_95_221",
       "formal_scope": "refused: Lean restricts T to exponent zero and proves only existence of the identity left power, omitting factor membership",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
-      "integration_blocked": true, "integration_status": "blocked-strict-semantic-mismatch",
-      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star95-catalogues-03-04-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
-      "id": "PM1:✱95·222", "kind": "derived-proposition",
-      "printed": "✱95·222. ⊢ : S∈PotʻP .⊃. (∃T) . T∈PotʻQ . S|R|T∈(P∗Q)ʻR [Proof as in ✱95·221]",
-      "printed_page": 629, "scan_leaf": 651,
+      "id": "PM1:✱95·222",
+      "kind": "derived-proposition",
+      "printed": "✱95·222. ⊢:S∈ PotʻP.⊃.(∃ T).T∈ PotʻQ.S| R| T∈ (P ∗ Q)ʻR [Proof as in ✱95·221]",
+      "printed_page": 629,
+      "scan_leaf": 651,
       "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel.lean",
       "declaration": "PM.FirstEdition.Volume1.Star95Kernel.star_95_222",
       "formal_scope": "refused: Lean restricts S to exponent zero and returns only an identity right power, omitting factor membership",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
-      "integration_blocked": true, "integration_status": "blocked-strict-semantic-mismatch",
-      "printed_dependencies": ["PM1:✱95·221"], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star95-catalogues-03-04-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [
+        "PM1:✱95·221"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
-      "id": "PM1:✱95·23", "kind": "derived-proposition",
-      "printed": "✱95·23. ⊢ : M∈(P∗Q)ʻR .⊃. M(P_st|Q_ts)R",
-      "printed_page": 629, "scan_leaf": 651,
+      "id": "PM1:✱95·23",
+      "kind": "derived-proposition",
+      "printed": "✱95·23. ⊢:M∈ (P ∗ Q)ʻR.⊃.M(Pₛₜ| Qₜₛ)R",
+      "printed_page": 629,
+      "scan_leaf": 651,
       "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel.lean",
       "declaration": "PM.FirstEdition.Volume1.Star95Kernel.star_95_23",
       "formal_scope": "refused: Lean defines SameOrbit as Equi itself and returns the premise, rather than formalizing the printed product of similarity-transform relations",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
-      "integration_blocked": true, "integration_status": "blocked-strict-semantic-mismatch",
-      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star95-catalogues-03-04-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

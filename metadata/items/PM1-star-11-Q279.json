@@ -1,1 +1,182 @@
-{"batch":"PM1-STAR11-Q279","edition":"first","volume":1,"source_range":{"printed_pages":"160–161","scan_leaves":[182,183],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":182,"printed_page":160,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page182-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"26cf5dbcbcae3b8bad11e5e4e744e04fff8ee0050a924f26b17ebaef0e6b8470"},{"scan_leaf":183,"printed_page":161,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page183-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"fd0d74942b7e318c64a90094844bb6160b3c223d87bcafada79c1e3f4c4bc0e2"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱11·25","kind":"derived-proposition","printed":"⊢ : ∼{(∃x, y).φ(x, y)} .≡ .(x, y).∼φ(x, y)  [✱11·22.Transp]","printed_page":160,"scan_leaf":182,"lean_path":"Principia/Architecture/Star11Q279Kernel.lean","declaration":"PM.Architecture.Star11Q279Kernel.star_11_25","formal_scope":"exact constructive binary existential-negation equivalence","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q279-canonical-integration.md","printed_dependencies":["PM1:✱11·22"],"normalized_dependencies":[],"lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱11·22"],"strict_attempt_evidence":"reviews/Q279-canonical-integration.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱11·26","kind":"derived-proposition","printed":"⊢ : .(∃x) : (y).φ(x, y) .⊃ : (y) : (∃x).φ(x, y)","printed_page":161,"scan_leaf":183,"lean_path":"Principia/Architecture/Star11Q279Kernel.lean","declaration":"PM.Architecture.Star11Q279Kernel.star_11_26","formal_scope":"exact constructive quantifier-interchange implication","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q279-canonical-integration.md","printed_dependencies":["PM1:✱10·1·28","PM1:✱10·11·21"],"normalized_dependencies":[],"lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·11·21","PM1:✱10·1·28"],"strict_attempt_evidence":"reviews/Q279-canonical-integration.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱11·27","kind":"derived-proposition","printed":"⊢ : .(∃x, y) : (∃z).φ(x, y, z) .≡ : (∃x) : (∃y, z).φ(x, y, z) ≡ : (∃x, y, z).φ(x, y, z)","printed_page":161,"scan_leaf":183,"lean_path":"Principia/Architecture/Star11Q279Kernel.lean","declaration":"PM.Architecture.Star11Q279Kernel.star_11_27","formal_scope":"exact constructive three-variable existential reassociation; first adjacent equivalence is star_11_27_left","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q279-canonical-integration.md","printed_dependencies":["PM1:✱4·2","PM1:✱11·03","PM1:✱10·11·281","PM1:✱11·04"],"normalized_dependencies":[],"lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·11·281","PM1:✱11·03","PM1:✱11·04","PM1:✱4·2"],"strict_attempt_evidence":"reviews/Q279-canonical-integration.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱11·3","kind":"derived-proposition","printed":"⊢ : .p .⊃ .(x, y).φ(x, y) .≡ : (x, y) : p .⊃ .φ(x, y)","printed_page":161,"scan_leaf":183,"lean_path":"Principia/Architecture/Star11Q279Kernel.lean","declaration":"PM.Architecture.Star11Q279Kernel.star_11_3","formal_scope":"exact constructive two-variable implication distribution","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q279-canonical-integration.md","printed_dependencies":["PM1:✱10·21","PM1:✱10·21·271"],"normalized_dependencies":[],"lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·21","PM1:✱10·21·271"],"strict_attempt_evidence":"reviews/Q279-canonical-integration.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱11·31","kind":"derived-proposition","printed":"⊢ : .(x, y).φ(x, y) : (x̂, ŷ).ψ(x, y) .≡ : (x, y) φ(x, y).ψ(x, y)","printed_page":161,"scan_leaf":183,"lean_path":"Principia/Architecture/Star11Q279Kernel.lean","declaration":"PM.Architecture.Star11Q279Kernel.star_11_31","formal_scope":"exact constructive two-variable universal conjunction equivalence","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q279-canonical-integration.md","printed_dependencies":["PM1:✱10·22","PM1:✱10·22·271"],"normalized_dependencies":[],"lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·22","PM1:✱10·22·271"],"strict_attempt_evidence":"reviews/Q279-canonical-integration.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}}],"ci_evidence":{"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}}
+{
+  "batch": "PM1-STAR11-Q279",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "160–161",
+    "scan_leaves": [
+      182,
+      183
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 182,
+        "printed_page": 160,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page182-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "26cf5dbcbcae3b8bad11e5e4e744e04fff8ee0050a924f26b17ebaef0e6b8470"
+      },
+      {
+        "scan_leaf": 183,
+        "printed_page": 161,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page183-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "fd0d74942b7e318c64a90094844bb6160b3c223d87bcafada79c1e3f4c4bc0e2"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "integration_status": "blocked-no-pm-derivation",
+  "items": [
+    {
+      "id": "PM1:✱11·26",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .(∃x) : (y).φ(x, y) .⊃ : (y) : (∃x).φ(x, y)",
+      "printed_page": 161,
+      "scan_leaf": 183,
+      "lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
+      "declaration": "PM.Architecture.Star11Q279Kernel.star_11_26_prop",
+      "formal_scope": "secondary modern Prop reading only; canonical PM derivation not yet constructed",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "The current theorem directly eliminates and introduces Lean quantifiers. It does not compose the printed ✱10·1·28 and ✱10·11·21 PM assertion contracts at the binary apparent-function carrier.",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱10·1·28",
+        "PM1:✱10·11·21"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "formalization_schema": "prop-reading-only",
+      "semantic_audit_status": "pm-derivation-migration-blocked",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱11·27",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .(∃x, y) : (∃z).φ(x, y, z) .≡ : (∃x) : (∃y, z).φ(x, y, z) ≡ : (∃x, y, z).φ(x, y, z)",
+      "printed_page": 161,
+      "scan_leaf": 183,
+      "lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
+      "declaration": "PM.Architecture.Star11Q279Kernel.star_11_27_prop",
+      "formal_scope": "secondary modern Prop reading only; both adjacent printed equivalences lack a canonical PM derivation",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "Definitional equality of nested Lean existentials does not replay the printed ✱4·2, ✱11·03, ✱10·11·281, and ✱11·04 assertion chain, and no closed ternary composition contract currently connects those steps.",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱11·03",
+        "PM1:✱10·11·281",
+        "PM1:✱11·04"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "formalization_schema": "prop-reading-only",
+      "semantic_audit_status": "pm-derivation-migration-blocked",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱11·3",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .p .⊃ .(x, y).φ(x, y) .≡ : (x, y) : p .⊃ .φ(x, y)",
+      "printed_page": 161,
+      "scan_leaf": 183,
+      "lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
+      "declaration": "PM.Architecture.Star11Q279Kernel.star_11_3_prop",
+      "formal_scope": "secondary modern Prop reading only; canonical PM derivation not yet constructed",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "The Lean proof curries ordinary implications directly and does not instantiate and compose the printed ✱10·21 and ✱10·21·271 PM contracts beneath two binders.",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱10·21",
+        "PM1:✱10·21·271"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "formalization_schema": "prop-reading-only",
+      "semantic_audit_status": "pm-derivation-migration-blocked",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱11·31",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .(x, y).φ(x, y) : (x̂, ŷ).ψ(x, y) .≡ : (x, y) φ(x, y).ψ(x, y)",
+      "printed_page": 161,
+      "scan_leaf": 183,
+      "lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
+      "declaration": "PM.Architecture.Star11Q279Kernel.star_11_31_prop",
+      "formal_scope": "secondary modern Prop reading only; canonical PM derivation not yet constructed",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "The Lean proof splits and pairs conjunctions directly; it does not instantiate and compose the printed ✱10·22 and ✱10·22·271 PM derivations beneath both universal binders.",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM1:✱10·22",
+        "PM1:✱10·22·271"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "formalization_schema": "prop-reading-only",
+      "semantic_audit_status": "pm-derivation-migration-blocked",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

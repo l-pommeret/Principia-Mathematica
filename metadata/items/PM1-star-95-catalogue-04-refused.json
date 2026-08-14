@@ -1,63 +1,180 @@
 {
   "batch": "PM1-STAR95-CATALOGUE-04-REFUSED",
-  "edition": "first", "volume": 1,
+  "edition": "first",
+  "volume": 1,
   "source_range": {
-    "printed_pages": "629", "scan_leaves": [651],
+    "printed_pages": "629",
+    "scan_leaves": [
+      651
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
   "items": [
     {
-      "id": "PM1:✱95·24", "kind": "derived-proposition",
-      "printed": "✱95·24. ⊢ : M∈(P∗Q)ʻR .⊃. M(Q_ts|P_st)R [Proof as in ✱95·23]",
-      "printed_page": 629, "scan_leaf": 651,
-      "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel.lean", "declaration": "PM.FirstEdition.Volume1.Star95Kernel.star_95_24",
+      "id": "PM1:✱95·24",
+      "kind": "derived-proposition",
+      "printed": "✱95·24. ⊢:M∈ (P ∗ Q)ʻR.⊃.M(Qₜₛ| Pₛₜ)R [Proof as in ✱95·23]",
+      "printed_page": 629,
+      "scan_leaf": 651,
+      "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star95Kernel.star_95_24",
       "formal_scope": "refused: Lean again aliases the conclusion to Equi and does not represent the reversed printed similarity-transform product",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared", "integration_blocked": true, "integration_status": "blocked-strict-semantic-mismatch",
-      "printed_dependencies": ["PM1:✱95·23"], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star95-catalogues-03-04-semantic-audit.md", "semantic_audit_status": "strict-equivalence-refused"
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [
+        "PM1:✱95·23"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
-      "id": "PM1:✱95·3", "kind": "derived-proposition",
-      "printed": "✱95·3. ⊢ : ∃̇!R . ᗡʻQ⊂DʻQ . ᗡʻR⊂DʻQ .⊃: T∈PotidʻQ .⊃. ∃̇!(R|T)",
-      "printed_page": 629, "scan_leaf": 651,
-      "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel2.lean", "declaration": "PM.FirstEdition.Volume1.Star95Kernel2.star_95_3",
+      "id": "PM1:✱95·3",
+      "kind": "derived-proposition",
+      "printed": "✱95·3. ⊢:. ∃̇!R.ᗡʻQ⊂ DʻQ.ᗡʻR⊂ DʻQ.⊃:T∈ PotidʻQ.⊃.∃̇!R| T",
+      "printed_page": 629,
+      "scan_leaf": 651,
+      "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star95Kernel2.star_95_3",
       "formal_scope": "refused: Lean proves nonemptiness of a product from a pointwise totality assumption, not PM's existence theorem under uniqueness, domain and Potid hypotheses",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared", "integration_blocked": true, "integration_status": "blocked-strict-semantic-mismatch",
-      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star95-catalogues-03-04-semantic-audit.md", "semantic_audit_status": "strict-equivalence-refused"
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
-      "id": "PM1:✱95·301", "kind": "derived-proposition",
-      "printed": "✱95·301. ⊢ : ∃̇!R . DʻP⊂ᗡʻP . DʻR⊂ᗡʻP .⊃: S∈PotidʻP .⊃. ∃̇!(S|R) [Proof as in ✱95·3]",
-      "printed_page": 629, "scan_leaf": 651,
-      "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel2.lean", "declaration": "PM.FirstEdition.Volume1.Star95Kernel2.star_95_301",
+      "id": "PM1:✱95·301",
+      "kind": "derived-proposition",
+      "printed": "✱95·301. ⊢:. ∃̇!R.DʻP⊂ ᗡʻP.DʻR⊂ ᗡʻP.⊃:S∈ PotidʻP.⊃.∃̇!S| R [Proof as in ✱95·3]",
+      "printed_page": 629,
+      "scan_leaf": 651,
+      "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star95Kernel2.star_95_301",
       "formal_scope": "refused: Lean proves mere nonemptiness of a left product under a new totality premise and omits PM's uniqueness, inclusions and Potid membership",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared", "integration_blocked": true, "integration_status": "blocked-strict-semantic-mismatch",
-      "printed_dependencies": ["PM1:✱95·3"], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star95-catalogues-03-04-semantic-audit.md", "semantic_audit_status": "strict-equivalence-refused"
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [
+        "PM1:✱95·3"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
-      "id": "PM1:✱95·302", "kind": "derived-proposition",
-      "printed": "✱95·302. ⊢ : ᗡʻQ⊂DʻQ . ᗡʻR⊂DʻQ .⊃: T∈PotidʻQ .⊃. ᗡʻ(R|T)⊂DʻQ",
-      "printed_page": 629, "scan_leaf": 651,
-      "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel2.lean", "declaration": "PM.FirstEdition.Volume1.Star95Kernel2.star_95_302",
+      "id": "PM1:✱95·302",
+      "kind": "derived-proposition",
+      "printed": "✱95·302. ⊢:. ᗡʻQ⊂ DʻQ.ᗡʻR⊂ DʻQ.⊃:T∈ PotidʻQ.⊃.ᗡʻ(R| T)⊂ DʻQ",
+      "printed_page": 629,
+      "scan_leaf": 651,
+      "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star95Kernel2.star_95_302",
       "formal_scope": "refused: Lean replaces T∈PotidʻQ by an unrelated range(T)⊆domain(Q) premise and leaves two printed hypotheses unused, changing the theorem",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared", "integration_blocked": true, "integration_status": "blocked-strict-semantic-mismatch",
-      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star95-catalogues-03-04-semantic-audit.md", "semantic_audit_status": "strict-equivalence-refused"
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
-      "id": "PM1:✱95·303", "kind": "derived-proposition",
-      "printed": "✱95·303. ⊢ : DʻR⊂ᗡʻP . DʻP⊂ᗡʻP .⊃: S∈PotidʻP .⊃. Dʻ(S|R)⊂ᗡʻP [Proof as in ✱95·302]",
-      "printed_page": 629, "scan_leaf": 651,
-      "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel2.lean", "declaration": "PM.FirstEdition.Volume1.Star95Kernel2.star_95_303",
+      "id": "PM1:✱95·303",
+      "kind": "derived-proposition",
+      "printed": "✱95·303. ⊢:. DʻR⊂ ᗡʻP.DʻP⊂ ᗡʻP.⊃:S∈ PotidʻP.⊃.Dʻ(S| R)⊂ ᗡʻP [Proof as in ✱95·302]",
+      "printed_page": 629,
+      "scan_leaf": 651,
+      "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star95Kernel2.star_95_303",
       "formal_scope": "refused: Lean replaces S∈PotidʻP by an unrelated domain(S)⊆range(P) premise and leaves two printed hypotheses unused, changing the theorem",
-      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared", "integration_blocked": true, "integration_status": "blocked-strict-semantic-mismatch",
-      "printed_dependencies": ["PM1:✱95·302"], "lean_dependencies": [], "normalized_dependencies": [],
-      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star95-catalogues-03-04-semantic-audit.md", "semantic_audit_status": "strict-equivalence-refused"
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [
+        "PM1:✱95·302"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star95-catalogues-03-04-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

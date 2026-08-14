@@ -1,0 +1,44 @@
+{
+  "batch": "PM2-STAR154-CATALOGUE-11",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "343"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱154·9",
+      "kind": "derived-proposition",
+      "printed": "⊢.NC=CʻʻʻNR",
+      "printed_page": 343,
+      "lean_path": "Principia/FirstEdition/Volume2/Star154Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱37·29",
+        "PM2:✱154·241",
+        "PM2:✱102·73"
+      ],
+      "printed_latex_witness": "\\(\\vdash.\\text{NC}=Cʻʻʻ\\text{NR}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -31,16 +31,33 @@
       "scan_leaf": 204,
       "lean_path": "Principia/Architecture/Star14Q297Kernel.lean",
       "declaration": "PM.Architecture.Star14Q297Kernel.star_14_18",
-      "formal_scope": "exact contextual description-existence implication, without a total description term",
+      "formal_scope": "prepared only: the Lean theorem proves a secondary semantic Prop implication, not an assertion in an inductive PM description judgement",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-inductive-description-judgement",
+      "integration_blocked": true,
+      "blocking_reason": "DescriptionExists and DescriptionApplies are Lean Prop predicates. star_14_18 returns an ordinary implication proof and does not inhabit a source-authorized inductive judgement over DescriptionSyntax.Formula.",
+      "printed_dependencies": [
+        "PM1:✱10·1",
+        "PM1:✱10·11·28",
+        "PM1:✱10·35",
+        "PM1:✱14·1·11"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "dependency_fidelity": "strict-closure",
+      "dependency_fidelity": "printed-graph-rebuilt-no-judgement-calls",
+      "formalization_level": "secondary-prop-only",
+      "semantic_audit_status": "strict-pm-judgement-refused",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q297-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱14·21",
@@ -50,16 +67,32 @@
       "scan_leaf": 204,
       "lean_path": "Principia/Architecture/Star14Q297Kernel.lean",
       "declaration": "PM.Architecture.Star14Q297Kernel.star_14_21",
-      "formal_scope": "exact contextual application implies description existence, without a total description term",
+      "formal_scope": "prepared only: the Lean theorem proves a secondary semantic Prop projection, not an assertion in an inductive PM description judgement",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-inductive-description-judgement",
+      "integration_blocked": true,
+      "blocking_reason": "star_14_21 projects a witness between semantic Prop predicates. It neither constructs object-language syntax nor inhabits an inductive PM description assertion judgement.",
+      "printed_dependencies": [
+        "PM1:✱14·1",
+        "PM1:✱10·5",
+        "PM1:✱14·11"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "dependency_fidelity": "strict-closure",
+      "dependency_fidelity": "printed-graph-rebuilt-no-judgement-calls",
+      "formalization_level": "secondary-prop-only",
+      "semantic_audit_status": "strict-pm-judgement-refused",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q297-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

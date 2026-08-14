@@ -25,15 +25,25 @@
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_01",
       "formal_scope": "exact typed definition of the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱52·1",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "✱52·1.  ⊢ : α ∈ 1 .≡. (∃x). α = ιʻx  [✱20·3.(✱52·01)]",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -41,8 +51,8 @@
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_1",
       "formal_scope": "exact typed membership reduction for the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱20·3",
         "✱52·01"
@@ -58,11 +68,22 @@
         ],
         "strict_attempt_evidence": "reviews/Star52-opening-review.md",
         "editorial_note": "The exact membership equivalence unfolds the typed definition directly; PM's printed propositional-function and definition citations remain historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱52·11",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "✱52·11.  ⊢ :: α ∈ 1 .≡ : (∃x) : y ∈ α .≡ᵧ. y = x  [✱52·1.✱51·14]",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -70,8 +91,8 @@
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_11",
       "formal_scope": "exact typed extensional characterization of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱52·1",
         "✱51·14"
@@ -87,11 +108,22 @@
         ],
         "strict_attempt_evidence": "reviews/Star52-opening-review.md",
         "editorial_note": "The exact extensional equivalence is proved directly in the typed embedding; PM's printed singleton and class-extensionality route remains historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱52·12",
       "kind": "derived-proposition",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed": "✱52·12.  ⊢ : ẑz(φz) ∈ 1 .≡. E!(℩x)(φx)",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -99,15 +131,26 @@
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_12",
       "formal_scope": "exact typed equivalence between singleton extension and unique description existence",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱52·13",
       "kind": "derived-proposition",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed": "✱52·13.  ⊢ . 1 = Dʻι",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -115,16 +158,26 @@
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_13",
       "formal_scope": "exact typed identity of unit classes with the domain of the singleton relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "0451de2d71917e28ddd43b37ef3a409da0bc276d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31743886049",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

@@ -1,0 +1,146 @@
+{
+  "batch": "PM2-STAR172-CATALOGUE-01",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "431"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱172·01",
+      "kind": "definition",
+      "printed": "Π ʻP=M̂ N̂ {M,N∈ F_Δ ʻCʻP:. (∃ Q):(MʻQ)Q(NʻQ):RPQ.R≠ Q.⊃ _R.MʻR=NʻR} Df",
+      "printed_page": 431,
+      "lean_path": "Principia/FirstEdition/Volume2/Star172Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [],
+      "printed_latex_witness": "\\[\\begin{align}\\Pi ʻP=\\hat{M} \\hat{N} &\\{M,N\\in F_{\\Delta }ʻCʻP\\colon\\ldotp \\\\ &(\\exists Q):(MʻQ)Q(NʻQ):RPQ.R\\neq Q.\\supset _{R}.MʻR=NʻR\\} \\quad\\text{Df}\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱172·1",
+      "kind": "derived-proposition",
+      "printed": "⊢ :: M (Π ʻP)N.≡ :. M,N∈ F_Δ ʻCʻP:. (∃ Q):(MʻQ)Q(NʻQ):RPQ.R≠ Q.⊃ _R.MʻR=NʻR [(*172·01)]",
+      "printed_page": 431,
+      "lean_path": "Principia/FirstEdition/Volume2/Star172Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱172·01"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\colon M&(\\Pi ʻP)N.\\equiv \\colon\\ldotp M,N\\in F_{\\Delta }ʻCʻP\\colon\\ldotp \\\\ &(\\exists Q):(MʻQ)Q(NʻQ):RPQ.R\\neq Q.\\supset _{R}.MʻR=NʻR\\\\ [(*172·01)]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱172·11",
+      "kind": "derived-proposition",
+      "printed": "⊢ :: M(Π ʻP)N.≡ :. M,N∈ F_Δ ʻCʻP:. (∃ Q):Q∈ CʻP.(MʻQ)Q(NʻQ):RPQ.R≠ Q.⊃ _R.MʻR=NʻR",
+      "printed_page": 431,
+      "lean_path": "Principia/FirstEdition/Volume2/Star172Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱14·21",
+        "PM1:✱33·43",
+        "PM1:✱4·73"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\colon &M(\\Pi ʻP)N.\\equiv \\colon\\ldotp M,N\\in F_{\\Delta }ʻCʻP\\colon\\ldotp \\\\ &(\\exists Q):Q\\in CʻP.(MʻQ)Q(NʻQ):RPQ.R\\neq Q.\\supset _{R}.MʻR=NʻR\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱172·12",
+      "kind": "derived-proposition",
+      "printed": "⊢ .CʻΠ ʻP⊂ F_Δ ʻCʻP",
+      "printed_page": 431,
+      "lean_path": "Principia/FirstEdition/Volume2/Star172Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱172·1",
+        "PM1:✱33·352"
+      ],
+      "printed_latex_witness": "\\(\\vdash .Cʻ\\Pi ʻP\\subset F_{\\Delta }ʻCʻP\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱172·13",
+      "kind": "derived-proposition",
+      "printed": "⊢ .Π ʻΛ̇ =Λ̇",
+      "printed_page": 431,
+      "lean_path": "Principia/FirstEdition/Volume2/Star172Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱172·11",
+        "PM1:✱33·24"
+      ],
+      "printed_latex_witness": "\\(\\vdash .\\Pi ʻ\\dot{\\Lambda} =\\dot{\\Lambda}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "batch": "PM1-STAR56-CATALOGUE-05",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "398–399",
+    "scan_leaves": [
+      420,
+      421
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱56·151",
+      "kind": "derived-proposition",
+      "printed": "✱56·151. ⊢.Dʻ(↓ x)-ιʻ(x↓ x)=2ᵣ∩ ᗡ⃖ʻιʻx [Proof as in *56·15]",
+      "printed_page": 398,
+      "scan_leaf": 420,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱56·15"
+      ],
+      "printed_latex_witness": "*56·151. \\(\\vdash.\\text{D}ʻ(\\downarrow x)-\\iotaʻ(x\\downarrow x)=2_{r}\\cap \\overleftarrow{\\text{ᗡ}}ʻ\\iotaʻx \\quad[\\text{Proof as in *56·15}]\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱56·16",
+      "kind": "derived-proposition",
+      "printed": "✱56·16. ⊢.x↓ y∈ 2̇",
+      "printed_page": 398,
+      "scan_leaf": 420,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱21·2",
+        "PM1:✱11·36",
+        "PM1:✱56·1"
+      ],
+      "printed_latex_witness": "*56·16. \\(\\vdash.x\\downarrow y\\in \\dot{2}\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱56·17",
+      "kind": "derived-proposition",
+      "printed": "✱56·17. ⊢:x↓ y∈ 2ᵣ.≡.y↓ x∈ 2ᵣ.≡.x ≠ y",
+      "printed_page": 399,
+      "scan_leaf": 421,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱56·11",
+        "PM1:✱55·202",
+        "PM1:✱13·22"
+      ],
+      "printed_latex_witness": "*56·17. \\(\\vdash:x\\downarrow y\\in 2_{r}.\\equiv.y\\downarrow x\\in 2_{r}.\\equiv.x \\neq y\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱56·18",
+      "kind": "derived-proposition",
+      "printed": "✱56·18. ⊢:x∼∈ α.≡.x↓ ʻʻα⊂ 2ᵣ.≡.↓ xʻʻα⊂ 2ᵣ",
+      "printed_page": 399,
+      "scan_leaf": 421,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱13·196",
+        "PM1:✱56·17",
+        "PM1:✱37·61",
+        "PM1:✱38·12",
+        "PM1:✱38·11"
+      ],
+      "printed_latex_witness": "*56·18. \\(\\vdash:x{\\sim}\\in \\alpha.\\equiv.x\\downarrow ʻʻ\\alpha\\subset 2_{r}.\\equiv.\\downarrow xʻʻ\\alpha\\subset 2_{r}\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱56·19",
+      "kind": "derived-proposition",
+      "printed": "✱56·19. ⊢:R∈ 2ᵣ.x∈ DʻR.≡.(∃ y).x ≠ y.R=x↓ y.≡.R∈ x↓ ʻʻ-ιʻx",
+      "printed_page": 399,
+      "scan_leaf": 421,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱56·11",
+        "PM1:✱11·45",
+        "PM1:✱55·15",
+        "PM1:✱51·23",
+        "PM1:✱13·195",
+        "PM1:✱51·15",
+        "PM1:✱38·13"
+      ],
+      "printed_latex_witness": "*56·19. \\(\\vdash:R\\in 2_{r}.x\\in \\text{D}ʻR.\\equiv.(\\exists y).x \\neq y.R=x\\downarrow y.\\equiv.R\\in x\\downarrow ʻʻ-\\iotaʻx\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

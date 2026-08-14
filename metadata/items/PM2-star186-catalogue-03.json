@@ -1,0 +1,170 @@
+{
+  "batch": "PM2-STAR186-CATALOGUE-03",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "508, 509"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱186·2",
+      "kind": "derived-proposition",
+      "printed": "⊢ :μ ∈ N₀R⊃ .0r exp rμ =0r.μ exp r0r=0r [*176·151]",
+      "printed_page": 508,
+      "lean_path": "Principia/FirstEdition/Volume2/Star186Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱176·151"
+      ],
+      "printed_latex_witness": "\\(\\vdash :\\mu \\in \\text{N}_{0}\\text{R}\\supset .0_{r}\\,\\text{exp}\\,\\,_{r}\\mu =0_{r}.\\mu \\,\\text{exp}\\,\\,_{r}0_{r}=0_{r} \\quad[*176·151]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱186·21",
+      "kind": "derived-proposition",
+      "printed": "⊢ .μ exp r2r=μ ×̇ μ",
+      "printed_page": 508,
+      "lean_path": "Principia/FirstEdition/Volume2/Star186Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱186·111",
+        "PM2:✱184·111",
+        "PM2:✱186·13",
+        "PM2:✱176·1",
+        "PM2:✱150·71",
+        "PM2:✱173·24",
+        "PM2:✱165·211",
+        "PM2:✱165·251",
+        "PM2:✱166·23",
+        "PM2:✱184·13"
+      ],
+      "printed_latex_witness": "\\(\\vdash .\\mu \\,\\text{exp}\\,\\,_{r}2_{r}=\\mu \\dot{\\times} \\mu\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱186·22",
+      "kind": "derived-proposition",
+      "printed": "⊢ .α exp r(β +̇ 1̇ )=(α exp rβ )×̇ α",
+      "printed_page": 509,
+      "lean_path": "Principia/FirstEdition/Volume2/Star186Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱186·111",
+        "PM2:✱181·4",
+        "PM2:✱186·13",
+        "PM2:✱181·22",
+        "PM2:✱176·151",
+        "PM2:✱166·13",
+        "PM2:✱165·2",
+        "PM2:✱161·4",
+        "PM2:✱176·1",
+        "PM2:✱181·01",
+        "PM2:✱181·12",
+        "PM2:✱165·251",
+        "PM2:✱176·22",
+        "PM2:✱184·13"
+      ],
+      "printed_latex_witness": "\\(\\vdash .\\alpha \\,\\text{exp}\\,\\,_{r}(\\beta \\dot{+} \\dot{1} )=(\\alpha \\,\\text{exp}\\,\\,_{r}\\beta )\\dot{\\times} \\alpha\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱186·23",
+      "kind": "derived-proposition",
+      "printed": "⊢ .α exp r(1̇ +̇ β )=α ×̇ (α exp rβ ) [Proof as in *186·22]",
+      "printed_page": 509,
+      "lean_path": "Principia/FirstEdition/Volume2/Star186Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱186·22"
+      ],
+      "printed_latex_witness": "\\(\\vdash .\\alpha \\,\\text{exp}\\,\\,_{r}(\\dot{1} \\dot{+} \\beta )=\\alpha \\dot{\\times} (\\alpha \\,\\text{exp}\\,\\,_{r}\\beta ) \\quad[\\text{Proof as in *186·22}]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱186·3",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. Mult ax.⊃ :P∈ Rel²excl∩ NrʻR.CʻP⊂ NrʻS.⊃ . Π NrʻP=(NrʻP) exp r(NrʻS) [*185·29]",
+      "printed_page": 509,
+      "lean_path": "Principia/FirstEdition/Volume2/Star186Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱185·29"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\ldotp \\text{Mult ax}.\\supset :P\\in &\\text{Rel}^{2}\\text{excl}\\cap \\text{Nr}ʻR.CʻP\\subset \\text{Nr}ʻS.\\supset .\\\\ &\\Pi \\text{Nr}ʻP=(\\text{Nr}ʻP)\\,\\text{exp}\\,\\,_{r}(\\text{Nr}ʻS) \\quad[*185·29]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

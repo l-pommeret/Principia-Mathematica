@@ -1,3 +1,71 @@
-{"batch":"PM2-STAR112-CATALOGUE-09","edition":"first","volume":2,"source_range":{"printed_pages":"99","scan_leaves":[139],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu","project_gutenberg":"https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},"witnesses":["PM2-1912-SCAN","PG78255"],"items":[
-{"id":"PM2:✱112·01","kind":"definition","printed":"✱112·01. Σʻκ = sʻ∈↧ʻʻκ Df","printed_page":99,"scan_leaf":139,"lean_path":"Principia/Architecture/Star112OpeningKernel.lean","declaration":"PM.Architecture.Star112OpeningKernel.star_112_01","formal_scope":"exact typed definitional expansion of the dependent tagged sum class","source_status":"source-catalogued-PM-VERBATIM","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star112-catalogue-review.md"},
-{"id":"PM2:✱112·102","kind":"derived-proposition","printed":"✱112·102. ⊢ . Σʻκ=R̂{(∃α,x). α∈κ . x∈α . R=x↓α}","printed_page":99,"scan_leaf":139,"lean_path":"Principia/Architecture/Star112OpeningKernel.lean","declaration":"PM.Architecture.Star112OpeningKernel.star_112_102","formal_scope":"exact typed pointwise characterization of the dependent tagged sum class","source_status":"source-catalogued-PM-VERBATIM","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star112-catalogue-review.md"}],"ci_evidence":{"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}}
+{
+  "batch": "PM2-STAR112-CATALOGUE-09",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "99",
+    "scan_leaves": [
+      139
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱112·01",
+      "kind": "definition",
+      "printed": "✱112·01. Σʻκ = sʻ∈↧ʻʻκ Df",
+      "printed_page": 99,
+      "scan_leaf": 139,
+      "lean_path": "Principia/Architecture/Star112OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star112OpeningKernel.star_112_01",
+      "formal_scope": "exact typed definitional expansion of the dependent tagged sum class",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "formalization_level": "pm-derivation-v1"
+    },
+    {
+      "id": "PM2:✱112·102",
+      "kind": "derived-proposition",
+      "printed": "✱112·102. ⊢ . Σʻκ=R̂{(∃α,x). α∈κ . x∈α . R=x↓α}",
+      "printed_page": 99,
+      "scan_leaf": 139,
+      "lean_path": "Principia/Architecture/Star112OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star112OpeningKernel.star_112_102",
+      "formal_scope": "exact typed pointwise characterization of the dependent tagged sum class",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
+  }
+}

@@ -2,31 +2,79 @@
   "batch": "PM1-STAR9-Q256-21",
   "edition": "first",
   "volume": 1,
-  "source_range": {"printed_pages": "138–139", "scan_leaves": [160, 161], "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"},
-  "witnesses": ["PM1-1910-SCAN", "PG78050", "WS-PM1"],
-  "items": [{
-    "id": "PM1:✱9·21",
-    "kind": "derived-proposition",
-    "printed": "⊢:.(x).φx⊃ψx.⊃:.(x).φx.⊃.(x).ψx",
-    "printed_page": 138,
-    "scan_leaf": 160,
-    "lean_path": "Principia/Architecture/Star921MatrixKernel.lean",
-    "declaration": "PM.Architecture.Star921MatrixKernel.Star9KernelAssertion.star_9_21",
-    "formal_scope": "complete printed line-(7) universal-monotonicity chain in the closed Star9CanonicalAssertion/NormalizedCanonicalAssertion judgement; deliberately not claimed as an OrderedAssertion reification",
-    "source_status": "source-catalogued",
-    "formal_status": "kernel-checked",
-    "integration_status": "kernel-checked-normalized-canonical-assertion",
-    "printed_dependencies": ["PM1:✱2·08", "PM1:✱9·1", "PM1:✱9·12", "PM1:✱9·13", "PM1:✱9·06", "PM1:✱1·01", "PM1:✱9·08"],
-    "lean_dependencies": ["PM.Architecture.CanonicalOrderedJudgement.derive_star_9_21_line7_normalized"],
-    "normalized_dependencies": [],
-    "historical_dependency_relaxation": {
-      "classification": "relaxed-closure",
-      "added_beyond_print": [],
-      "printed_but_unused": ["PM1:✱1·01", "PM1:✱2·08", "PM1:✱9·06", "PM1:✱9·08", "PM1:✱9·1", "PM1:✱9·12", "PM1:✱9·13"],
-      "strict_attempt_evidence": "reviews/Q256-star-9-21-ci-promotion.md",
-      "editorial_note": "The public declaration is a narrow wrapper over the already closed normalized-canonical derivation; its source citations are retained in the audited inner certificate rather than repeated as direct wrapper constants."
-    },
-    "blocked_dependencies": ["assigned-order OrderedAssertion reification intentionally absent"]
-  }],
-  "ci_evidence": {"commit": "eda99d1ed844362805f3f05805d4fc8e72e7c4a9", "run": "31572372279", "conclusion": "success"}
+  "source_range": {
+    "printed_pages": "138–139",
+    "scan_leaves": [
+      160,
+      161
+    ],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050",
+    "WS-PM1"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱9·21",
+      "kind": "derived-proposition",
+      "printed": "⊢:.(x).φx⊃ψx.⊃:.(x).φx.⊃.(x).ψx",
+      "printed_page": 138,
+      "scan_leaf": 160,
+      "lean_path": "Principia/Architecture/Star921MatrixKernel.lean",
+      "declaration": "PM.Architecture.Star921MatrixKernel.Star9KernelAssertion.star_9_21",
+      "formal_scope": "withdrawn: the former closed wrapper depended on an unprinted theorem-specific judgement; the printed proposition remains to be reconstructed in PM.RamifiedSyntax.Derivation",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "withdrawn-editorial-t10-refusal",
+      "printed_dependencies": [
+        "PM1:✱2·08",
+        "PM1:✱9·1",
+        "PM1:✱9·12",
+        "PM1:✱9·13",
+        "PM1:✱9·06",
+        "PM1:✱1·01",
+        "PM1:✱9·08"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.CanonicalOrderedJudgement.derive_star_9_21_line7_normalized"
+      ],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱1·01",
+          "PM1:✱2·08",
+          "PM1:✱9·06",
+          "PM1:✱9·08",
+          "PM1:✱9·1",
+          "PM1:✱9·12",
+          "PM1:✱9·13"
+        ],
+        "strict_attempt_evidence": "reviews/Q256-star-9-21-ci-promotion.md",
+        "editorial_note": "The public declaration is a narrow wrapper over the already closed normalized-canonical derivation; its source citations are retained in the audited inner certificate rather than repeated as direct wrapper constants."
+      },
+      "blocked_dependencies": [
+        "honest PM.RamifiedSyntax.Derivation proof of the exact printed ✱9·21 formula"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

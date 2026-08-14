@@ -1,6 +1,189 @@
-{"batch":"PM2-STAR116-CATALOGUE-18-REFUSED","edition":"first","volume":2,"source_range":{"printed_pages":"161–162","scan_leaves":[201,202],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu","project_gutenberg":"https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},"witnesses":["PM2-1912-SCAN","PG78255"],"items":[
-{"id":"PM2:✱116·603","kind":"derived-proposition","printed":"✱116·603. ⊢ : Hp ✱116·602 . z∈γ .⊃. ᴃʻMʻz=α exp β","printed_page":161,"scan_leaf":201,"lean_path":"Principia/Architecture/Star116SixthKernel.lean","declaration":"PM.Architecture.Star116SixthKernel.star_116_603","formal_scope":"refused: PM identifies a fibre's converse domain; Lean proves only the right-inverse equation for currying","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch","printed_dependencies":["PM2:✱116·602"],"lean_dependencies":[],"normalized_dependencies":["PM2:✱116·602"],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star116-catalogues-17-18-semantic-audit.md"},
-{"id":"PM2:✱116·604","kind":"derived-proposition","printed":"✱116·604. ⊢ : Hp ✱116·602 . z∈γ .⊃. DʻMʻz=Prodʻα↓,,ʻʻβ↓,,z","printed_page":161,"scan_leaf":201,"lean_path":"Principia/Architecture/Star116SixthKernel.lean","declaration":"PM.Architecture.Star116SixthKernel.star_116_604","formal_scope":"refused: PM identifies the domain of a constructed fibre; Lean proves only the opposite inverse equation for currying","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch","printed_dependencies":["PM2:✱116·602"],"lean_dependencies":[],"normalized_dependencies":["PM2:✱116·602"],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star116-catalogues-17-18-semantic-audit.md"},
-{"id":"PM2:✱116·605","kind":"derived-proposition","printed":"✱116·605. ⊢ : Hp ✱116·602 . z∈γ .⊃. Mʻz∈1→1","printed_page":162,"scan_leaf":202,"lean_path":"Principia/Architecture/Star116SixthKernel.lean","declaration":"PM.Architecture.Star116SixthKernel.star_116_605","formal_scope":"refused: PM asserts each fibre is one-one; Lean states only aggregate currying similarity","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch","printed_dependencies":["PM2:✱116·602"],"lean_dependencies":[],"normalized_dependencies":["PM2:✱116·602"],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star116-catalogues-17-18-semantic-audit.md"},
-{"id":"PM2:✱116·606","kind":"derived-proposition","printed":"✱116·606. ⊢ : Hp ✱116·602 .⊃. M∈1→1 and distinct fibres have distinct domains","printed_page":162,"scan_leaf":202,"lean_path":"Principia/Architecture/Star116SixthKernel.lean","declaration":"PM.Architecture.Star116SixthKernel.star_116_606","formal_scope":"refused: PM states one-one-ness and distinct-domain properties of M; Lean instead swaps two function arguments by an equivalence","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch","printed_dependencies":["PM2:✱116·602"],"lean_dependencies":[],"normalized_dependencies":["PM2:✱116·602"],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star116-catalogues-17-18-semantic-audit.md"},
-{"id":"PM2:✱116·607","kind":"derived-proposition","printed":"✱116·607. ⊢ : Hp ✱116·602 .⊃. DʻʻMʻʻγ=Prodʻʻα↓,,ʻʻʻβ↓,,ʻγ","printed_page":162,"scan_leaf":202,"lean_path":"Principia/Architecture/Star116SixthKernel.lean","declaration":"PM.Architecture.Star116SixthKernel.star_116_607","formal_scope":"refused: PM gives equality of the image of fibre domains with a dependent product family; Lean only restates aggregate currying similarity","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch","printed_dependencies":["PM2:✱116·602"],"lean_dependencies":[],"normalized_dependencies":["PM2:✱116·602"],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star116-catalogues-17-18-semantic-audit.md"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM2-STAR116-CATALOGUE-18-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "161–162",
+    "scan_leaves": [
+      201,
+      202
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱116·603",
+      "kind": "derived-proposition",
+      "printed": "✱116·603. ⊢ : Hp ✱116·602 . z∈γ .⊃. ᴃʻMʻz=α exp β",
+      "printed_page": 161,
+      "scan_leaf": 201,
+      "lean_path": "Principia/Architecture/Star116SixthKernel.lean",
+      "declaration": "PM.Architecture.Star116SixthKernel.star_116_603",
+      "formal_scope": "refused: PM identifies a fibre's converse domain; Lean proves only the right-inverse equation for currying",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [
+        "PM2:✱116·602"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱116·604",
+      "kind": "derived-proposition",
+      "printed": "✱116·604. ⊢ : Hp ✱116·602 . z∈γ .⊃. DʻMʻz=Prodʻα↓,,ʻʻβ↓,,z",
+      "printed_page": 161,
+      "scan_leaf": 201,
+      "lean_path": "Principia/Architecture/Star116SixthKernel.lean",
+      "declaration": "PM.Architecture.Star116SixthKernel.star_116_604",
+      "formal_scope": "refused: PM identifies the domain of a constructed fibre; Lean proves only the opposite inverse equation for currying",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [
+        "PM2:✱115·4",
+        "PM2:✱113·125",
+        "PM1:✱38·2"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star116FifthKernel.star_116_601"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱116·601"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱116·605",
+      "kind": "derived-proposition",
+      "printed": "✱116·605. ⊢ : Hp ✱116·602 . z∈γ .⊃. Mʻz∈1→1",
+      "printed_page": 162,
+      "scan_leaf": 202,
+      "lean_path": "Principia/Architecture/Star116SixthKernel.lean",
+      "declaration": "PM.Architecture.Star116SixthKernel.star_116_605",
+      "formal_scope": "refused: PM asserts each fibre is one-one; Lean states only aggregate currying similarity",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [
+        "PM1:✱43·301"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T11",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱116·606",
+      "kind": "derived-proposition",
+      "printed": "✱116·606. ⊢ : Hp ✱116·602 .⊃. M∈1→1 and distinct fibres have distinct domains",
+      "printed_page": 162,
+      "scan_leaf": 202,
+      "lean_path": "Principia/Architecture/Star116SixthKernel.lean",
+      "declaration": "PM.Architecture.Star116SixthKernel.star_116_606",
+      "formal_scope": "refused: PM states one-one-ness and distinct-domain properties of M; Lean instead swaps two function arguments by an equivalence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [
+        "PM1:✱71·16",
+        "PM1:✱30·37",
+        "PM2:✱116·171",
+        "PM2:✱116·01",
+        "PM2:✱113·1",
+        "PM2:✱113·182",
+        "PM2:✱113·105"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T11",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱116·607",
+      "kind": "derived-proposition",
+      "printed": "✱116·607. ⊢ : Hp ✱116·602 .⊃. DʻʻMʻʻγ=Prodʻʻα↓,,ʻʻʻβ↓,,ʻγ",
+      "printed_page": 162,
+      "scan_leaf": 202,
+      "lean_path": "Principia/Architecture/Star116SixthKernel.lean",
+      "declaration": "PM.Architecture.Star116SixthKernel.star_116_607",
+      "formal_scope": "refused: PM gives equality of the image of fibre domains with a dependent product family; Lean only restates aggregate currying similarity",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [
+        "PM2:✱116·602"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star116FifthKernel.star_116_6"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱116·6"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T11",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

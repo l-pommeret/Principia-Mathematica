@@ -18,6 +18,7 @@
     {
       "id": "PM1:✱52·14",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "✱52·14.  ⊢ . 1 = ιʻʻV  [✱52·13.✱37·28]",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -25,8 +26,8 @@
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_14",
       "formal_scope": "exact typed image identity for the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱52·13",
         "✱37·28"
@@ -42,11 +43,21 @@
         ],
         "strict_attempt_evidence": "reviews/Star52-catalogue-02-review.md",
         "editorial_note": "The exact typed image identity closes by unfolding image and singleton relation; PM's printed relational route remains historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱52·15",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "✱52·15.  ⊢ : α ∈ 1 .≡. E! ι̌ʻα  [✱51·54.✱52·1]",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -54,8 +65,8 @@
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_15",
       "formal_scope": "exact typed existence characterization of the converse singleton image",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱51·54",
         "✱52·1"
@@ -71,11 +82,21 @@
         ],
         "strict_attempt_evidence": "reviews/Star52-catalogue-02-review.md",
         "editorial_note": "The exact existence equivalence closes directly from the typed converse-image definition; printed citations remain historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱52·16",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "✱52·16.  ⊢ :: α ∈ 1 .≡ : ∃!α : x,y ∈ α .⊃ₓ,ᵧ. x = y\n[✱52·15.✱51·55.✱14·203]",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -83,8 +104,8 @@
       "declaration": "PM.Architecture.Star52OpeningKernel.star_52_16",
       "formal_scope": "exact typed inhabited-and-at-most-one characterization of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱52·15",
         "✱51·55",
@@ -102,11 +123,21 @@
         ],
         "strict_attempt_evidence": "reviews/Star52-catalogue-02-review.md",
         "editorial_note": "The exact inhabited-and-unique characterization is proved extensionally; PM's printed description-theoretic derivation remains historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱52·17",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "✱52·17.  ⊢ : α ∈ 1 .≡. ι̌ʻα = (℩x)(x ∈ α)  [✱51·58.✱52·15]",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -114,8 +145,8 @@
       "declaration": "PM.Architecture.Star52NextKernel.star_52_17",
       "formal_scope": "exact contextual equality of the converse-iota and unique-member descriptions",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱51·58",
         "✱52·15"
@@ -133,11 +164,21 @@
         "editorial_note": "Both incomplete descriptions are compared contextually by their same existing unique value; printed citations remain historical evidence."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star52-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱52·171",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "✱52·171.  ⊢ : α ∈ 1 .≡. E!(℩x)(x ∈ α)  [✱51·55.✱52·15]",
       "printed_page": 364,
       "scan_leaf": 386,
@@ -145,8 +186,8 @@
       "declaration": "PM.Architecture.Star52NextKernel.star_52_171",
       "formal_scope": "exact typed existence of the unique member description",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱51·55",
         "✱52·15"
@@ -162,6 +203,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star52-catalogue-02-review.md",
         "editorial_note": "The exact unique-member existence assertion closes directly in the typed embedding; printed citations remain historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

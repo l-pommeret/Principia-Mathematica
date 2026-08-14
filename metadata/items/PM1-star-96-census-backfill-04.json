@@ -1,0 +1,148 @@
+{
+  "batch": "PM1-STAR96-CENSUS-BACKFILL-04",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "647–648",
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱96·42",
+      "kind": "derived-proposition",
+      "printed": "✱96·42. ⊢:R∈ Cls→1.yRw.zRw.yRₚₒz.⊃.zRₚₒz",
+      "printed_page": 647,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "source-only-prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱96·421",
+      "kind": "derived-proposition",
+      "printed": "✱96·421. ⊢:. R∈ Cls→1.y, z∈ R⃖_∗ʻx.yRw.zRw.y ≠ z.⊃:yRₚₒy.∨.zRₚₒz",
+      "printed_page": 647,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "source-only-prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱96·431",
+      "kind": "derived-proposition",
+      "printed": "✱96·431. ⊢:R∈ Cls→1.y∈ J_Rʻx.z∈ I_Rʻx.⊃.yRₚₒz",
+      "printed_page": 647,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "source-only-prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱96·432",
+      "kind": "derived-proposition",
+      "printed": "✱96·432. ⊢:R∈ Cls→1.y,z∈ I_Rʻx.yRw.zRw.⊃.y=z",
+      "printed_page": 647,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "source-only-prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱96·44",
+      "kind": "derived-proposition",
+      "printed": "✱96·44. ⊢:. R∈ Cls→1.y,z∈ R⃖_∗ʻx.yRw.zRw.y ≠ z.⊃:y∈ I_Rʻx.∨.z∈ I_Rʻx [✱96·421·1]",
+      "printed_page": 648,
+      "lean_path": "Principia/FirstEdition/Volume1/Star96Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "source-only-prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

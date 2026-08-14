@@ -1,11 +1,131 @@
 {
-  "batch": "PM2-STAR120-CATALOGUE-03-REFUSED", "edition": "first", "volume": 2,
-  "source_range": {"printed_pages": "208–215", "scan_leaves": [248,253,255], "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu", "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},
-  "witnesses": ["PM2-1912-SCAN", "PG78255"],
-  "items": [
-    {"id":"PM2:✱120·214","kind":"derived-proposition","printed":"✱120·214. ⊢ : ρ sm σ .⊃: ρ∈Cls induct .≡. σ∈Cls induct","printed_page":213,"scan_leaf":253,"lean_path":"Principia/Architecture/Star120OpeningKernel.lean","declaration":"PM.Architecture.Star120OpeningKernel.star_120_214","formal_scope":"refused: Lean assumes pointwise equivalence (extensional equality), not PM similarity by a bijection","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch-equality-for-similarity","integration_blocked":true,"blocking_reason":"Pointwise equivalence is strictly stronger than similarity and does not prove invariance of finiteness under an arbitrary bijection.","printed_dependencies":["PM2:✱120·201","PM2:✱120·21"],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star120-catalogue-review.md","semantic_audit_status":"strict-equivalence-refused"},
-    {"id":"PM2:✱120·26","kind":"derived-proposition","printed":"✱120·26. ⊢ : ρ∈Cls induct : φη .⊃η,x. φ(η∪ιʻx) : φΛ :⊃. φρ","printed_page":208,"scan_leaf":248,"lean_path":"Principia/Architecture/Star120OpeningKernel.lean","declaration":"PM.Architecture.Star120OpeningKernel.star_120_26","formal_scope":"refused: Lean takes the generalized conclusion itself as `finiteInduction` and returns it, rather than deriving finite induction from the base and step hypotheses","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-pass-through-conclusion","integration_blocked":true,"blocking_reason":"The parameter finiteInduction : ∀ B, finiteClass B → φ B already contains the requested theorem; h0 and hs are unused.","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star120-catalogue-review.md","semantic_audit_status":"strict-equivalence-refused"},
-    {"id":"PM2:✱120·311","kind":"derived-proposition","printed":"✱120·311. ⊢ : ∃!α+₍c₎1 . α+₍c₎1=β+₍c₎1 .⊃. α=smʻʻβ . ∃!α","printed_page":215,"scan_leaf":255,"lean_path":"Principia/Architecture/Star120OpeningKernel.lean","declaration":"PM.Architecture.Star120OpeningKernel.star_120_311","formal_scope":"refused: Lean concludes same-type Nat equality and trivial inductivity, not PM's type-lift equality α = smʻʻβ with existence conditions","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch-type-lift-and-existence","integration_blocked":true,"blocking_reason":"Nat successor injectivity omits both type transport by smʻʻ and the printed existence assertions.","printed_dependencies":["PM1:✱4·2","PM2:✱103·16","PM2:✱110·4","PM2:✱120·31"],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star120-catalogue-review.md","semantic_audit_status":"strict-equivalence-refused"}
+  "batch": "PM2-STAR120-CATALOGUE-03-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "208–215",
+    "scan_leaves": [
+      248,
+      253,
+      255
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
   ],
-  "ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+  "items": [
+    {
+      "id": "PM2:✱120·214",
+      "kind": "derived-proposition",
+      "printed": "✱120·214. ⊢ : ρ sm σ .⊃: ρ∈Cls induct .≡. σ∈Cls induct",
+      "printed_page": 213,
+      "scan_leaf": 253,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_214",
+      "formal_scope": "refused: Lean assumes pointwise equivalence (extensional equality), not PM similarity by a bijection",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-equality-for-similarity",
+      "integration_blocked": true,
+      "blocking_reason": "Pointwise equivalence is strictly stronger than similarity and does not prove invariance of finiteness under an arbitrary bijection.",
+      "printed_dependencies": [
+        "PM2:✱120·201",
+        "PM2:✱120·21"
+      ],
+      "lean_dependencies": [
+        "PM.Elementary.equiv"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱4·01"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱120·26",
+      "kind": "derived-proposition",
+      "printed": "✱120·26. ⊢ : ρ∈Cls induct : φη .⊃η,x. φ(η∪ιʻx) : φΛ :⊃. φρ",
+      "printed_page": 208,
+      "scan_leaf": 248,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_26",
+      "formal_scope": "refused: Lean takes the generalized conclusion itself as `finiteInduction` and returns it, rather than deriving finite induction from the base and step hypotheses",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-pass-through-conclusion",
+      "integration_blocked": true,
+      "blocking_reason": "The parameter finiteInduction : ∀ B, finiteClass B → φ B already contains the requested theorem; h0 and hs are unused.",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱120·311",
+      "kind": "derived-proposition",
+      "printed": "✱120·311. ⊢ : ∃!α+₍c₎1 . α+₍c₎1=β+₍c₎1 .⊃. α=smʻʻβ . ∃!α",
+      "printed_page": 215,
+      "scan_leaf": 255,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_311",
+      "formal_scope": "refused: Lean concludes same-type Nat equality and trivial inductivity, not PM's type-lift equality α = smʻʻβ with existence conditions",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-type-lift-and-existence",
+      "integration_blocked": true,
+      "blocking_reason": "Nat successor injectivity omits both type transport by smʻʻ and the printed existence assertions.",
+      "printed_dependencies": [
+        "PM1:✱4·2",
+        "PM2:✱103·16",
+        "PM2:✱110·4",
+        "PM2:✱120·31"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

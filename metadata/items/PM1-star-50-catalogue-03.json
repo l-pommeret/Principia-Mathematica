@@ -26,9 +26,13 @@
       "declaration": "PM.Architecture.Star50OpeningKernel2.star_50_2",
       "formal_scope": "exact typed self-converse identity theorem; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱50·1",
+        "PM1:✱13·16",
+        "PM1:✱31·11"
+      ],
       "lean_dependencies": [
         "PM.Architecture.Star50OpeningKernel.I"
       ],
@@ -44,6 +48,15 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star50-catalogue-review.md",
         "editorial_note": "The uncited theorem unfolds identity; Lean exposes the definition edge."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -56,9 +69,16 @@
       "declaration": "PM.Architecture.Star50OpeningKernel2.star_50_21",
       "formal_scope": "exact typed self-converse diversity theorem; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱21·2",
+        "PM1:✱50·02",
+        "PM1:✱50·2",
+        "PM1:✱23·83",
+        "PM1:✱31·16",
+        "PM1:✱31·32"
+      ],
       "lean_dependencies": [
         "PM.Architecture.Star50OpeningKernel.J"
       ],
@@ -66,7 +86,7 @@
         "PM1:✱50·02"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -76,6 +96,15 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star50-catalogue-review.md",
         "editorial_note": "The uncited theorem unfolds diversity; Lean exposes the definition edge."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -88,8 +117,8 @@
       "declaration": "PM.Architecture.Star50OpeningKernel2.star_50_22",
       "formal_scope": "exact converse-invariance of inclusion in identity; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star50OpeningKernel.I"
@@ -98,7 +127,7 @@
         "PM1:✱50·01"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -108,6 +137,15 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star50-catalogue-review.md",
         "editorial_note": "The uncited theorem unfolds identity to symmetry of equality."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -120,9 +158,12 @@
       "declaration": "PM.Architecture.Star50OpeningKernel2.star_50_23",
       "formal_scope": "exact converse-invariance of inclusion in diversity; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱50·11",
+        "PM1:✱13·191"
+      ],
       "lean_dependencies": [
         "PM.Architecture.Star50OpeningKernel.J"
       ],
@@ -130,7 +171,7 @@
         "PM1:✱50·02"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -140,6 +181,15 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star50-catalogue-review.md",
         "editorial_note": "The uncited theorem unfolds diversity to symmetry of inequality."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -152,8 +202,8 @@
       "declaration": "PM.Architecture.Star50OpeningKernel2.star_50_24",
       "formal_scope": "exact equivalence between diversity inclusion and irreflexivity; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star50OpeningKernel.J"
@@ -162,7 +212,7 @@
         "PM1:✱50·02"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -172,6 +222,15 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star50-catalogue-review.md",
         "editorial_note": "The uncited theorem unfolds diversity; both directions are proved without additional hypotheses."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

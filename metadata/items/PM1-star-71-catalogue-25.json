@@ -1,0 +1,186 @@
+{
+  "batch": "PM1-STAR71-CATALOGUE-25",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "458–459",
+    "scan_leaves": [
+      480,
+      481
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱71·531",
+      "kind": "derived-proposition",
+      "printed": "✱71·531. ⊢:R∈ Cls → 1.Rʻy=Rʻz.⊃.y=z",
+      "printed_page": 458,
+      "scan_leaf": 480,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·531. \\vdash:R\\in \\text{Cls}\\rightarrow 1.Rʻy=Rʻz.\\supset.y=z",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·532",
+      "kind": "derived-proposition",
+      "printed": "✱71·532. ⊢:. R∈ 1 → 1.⊃:Rʻy=Rʻz.⊃.y=z:Řʻx=Řʻy.⊃.x=y",
+      "printed_page": 458,
+      "scan_leaf": 480,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·532. \\vdash\\colon\\ldotp R\\in 1\\rightarrow 1.\\supset:Rʻy=Rʻz.\\supset.y=z:\\breve{R}ʻx=\\breve{R}ʻy.\\supset.x=y",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·54",
+      "kind": "derived-proposition",
+      "printed": "✱71·54. ⊢:: R∈ 1 → Cls.⊃:. R∈ 1 → 1.≡:Rʻy=Rʻz.⊃y,z.y=z",
+      "printed_page": 458,
+      "scan_leaf": 480,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱71·36",
+        "PM1:✱14·205",
+        "PM1:✱10·23",
+        "PM1:✱71·171",
+        "PM1:✱71·103",
+        "PM1:✱4·73"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·54. \\vdash\\colon\\colon R\\in 1\\rightarrow \\text{Cls}.\\supset\\colon\\ldotp R\\in 1\\rightarrow 1.\\equiv:Rʻy=Rʻz.\\supset_{y,z}.y=z",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·55",
+      "kind": "derived-proposition",
+      "printed": "✱71·55. ⊢:: R∈ 1 → Cls.⊃:. R↾ β∈ 1 → 1.≡:y,z∈ β.Rʻy=Rʻz.⊃y,z.y=z",
+      "printed_page": 459,
+      "scan_leaf": 481,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱71·26",
+        "PM1:✱71·54",
+        "PM1:✱35·7"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·55. \\vdash\\colon\\colon R\\in 1\\rightarrow \\text{Cls}.\\supset\\colon\\ldotp R\\upharpoonright \\beta\\in 1\\rightarrow 1.\\equiv:y,z\\in \\beta.Rʻy=Rʻz.\\supset_{y,z}.y=z",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·56",
+      "kind": "derived-proposition",
+      "printed": "✱71·56. ⊢:. R∈ 1 → 1.y∈ ᗡʻR.⊃:Rʻy=Rʻz.≡.y=z",
+      "printed_page": 459,
+      "scan_leaf": 481,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱71·532",
+        "PM1:✱71·165",
+        "PM1:✱30·37"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·56. \\vdash\\colon\\ldotp R\\in 1\\rightarrow 1.y\\in \\text{ᗡ}ʻR.\\supset:Rʻy=Rʻz.\\equiv.y=z",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

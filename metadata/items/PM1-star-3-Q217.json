@@ -4,10 +4,16 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "114, 116",
-    "scan_leaves": [136, 138],
+    "scan_leaves": [
+      136,
+      138
+    ],
     "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
   "items": [
     {
       "id": "PM1:✱3·01",
@@ -19,11 +25,20 @@
       "declaration": "PM.Elementary.conj",
       "formal_scope": "definitional abbreviation of logical product as ∼(∼p ∨ ∼q)",
       "source_status": "scan-and-PG-checked",
-      "formal_status": "kernel-checked",
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "editorial-reconstruction",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "substitutions": []
+      "substitutions": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱3·02",
@@ -35,16 +50,31 @@
       "declaration": "PM.Elementary.impChain",
       "formal_scope": "definitional abbreviation as the logical product of p⊃q and q⊃r",
       "source_status": "scan-and-PG-checked",
-      "formal_status": "kernel-checked",
-      "printed_dependencies": ["PM1:✱3·01"],
-      "lean_dependencies": ["PM.Elementary.conj"],
-      "normalized_dependencies": ["PM1:✱3·01"],
-      "substitutions": []
+      "formal_status": "lean-typechecked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed_dependencies": [
+        "PM1:✱3·01"
+      ],
+      "lean_dependencies": [
+        "PM.Elementary.conj"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱3·01"
+      ],
+      "substitutions": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "be2669eda2a262ebb6c07637787f2bc12b0732b3",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31450728523",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

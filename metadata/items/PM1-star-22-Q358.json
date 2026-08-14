@@ -17,6 +17,7 @@
   "items": [
     {
       "id": "PM1:✱22·89",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . (x) . x ∼ε (α − α)",
       "printed_page": 224,
@@ -25,8 +26,8 @@
       "declaration": "PM.Architecture.Star22Q358Kernel.star_22_89",
       "formal_scope": "exact polymorphic non-membership in self-difference",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱3·24"
       ],
@@ -40,10 +41,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q358-review.md",
         "editorial_note": "The exact statement closes directly in the typed class reconstruction; the printed citations remain recorded as historical proof evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·9",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . (α ∪ β) − β = α − β",
       "printed_page": 224,
@@ -52,8 +63,8 @@
       "declaration": "PM.Architecture.Star22Q358Kernel.star_22_9",
       "formal_scope": "exact polymorphic union-difference identity",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱5·61"
       ],
@@ -67,10 +78,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q358-review.md",
         "editorial_note": "The exact statement closes directly in the typed class reconstruction; the printed citations remain recorded as historical proof evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·91",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . α ∪ β = α ∪ (β − α)",
       "printed_page": 224,
@@ -79,14 +100,32 @@
       "declaration": "PM.Architecture.Star22Q358Kernel.star_22_91",
       "formal_scope": "exact polymorphic Boolean union decomposition",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱5·63",
+        "PM1:✱22·33",
+        "PM1:✱22·34",
+        "PM1:✱22·35",
+        "PM1:✱22·34",
+        "PM1:✱10·11",
+        "PM1:✱20·43"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱22·92",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α ⊂ β .⊃ . β = α ∪ (β − α)",
       "printed_page": 224,
@@ -95,8 +134,8 @@
       "declaration": "PM.Architecture.Star22Q358Kernel.star_22_92",
       "formal_scope": "exact polymorphic inclusion decomposition",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱22·91",
         "PM1:✱22·62"
@@ -112,10 +151,20 @@
         ],
         "strict_attempt_evidence": "reviews/Q358-review.md",
         "editorial_note": "The exact statement closes directly in the typed class reconstruction; the printed citations remain recorded as historical proof evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·93",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . α − β = α − (α ∩ β)",
       "printed_page": 224,
@@ -124,11 +173,29 @@
       "declaration": "PM.Architecture.Star22Q358Kernel.star_22_93",
       "formal_scope": "exact polymorphic intersection-difference identity",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱4·73",
+        "Transp",
+        "PM1:✱22·33",
+        "PM1:✱5·32",
+        "PM1:✱22·35",
+        "PM1:✱22·33",
+        "PM1:✱10·11",
+        "PM1:✱20·43"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

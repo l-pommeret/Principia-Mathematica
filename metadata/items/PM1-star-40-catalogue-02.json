@@ -29,11 +29,21 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_13",
       "formal_scope": "exact typed inclusion of every member class in its sum",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱40·14",
@@ -45,10 +55,10 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_14",
       "formal_scope": "exact typed elementwise product elimination",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
-        "✱40·12"
+        "PM1:✱40·12"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -60,6 +70,16 @@
         ],
         "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
         "editorial_note": "The exact typed certificate discharges the printed citations by direct definitional reduction through a non-indexed product/sum helper."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -72,11 +92,11 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_141",
       "formal_scope": "exact typed elementwise sum introduction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
-        "✱40·11",
-        "✱10·24"
+        "PM1:✱40·11",
+        "PM1:✱10·24"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -89,6 +109,16 @@
         ],
         "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
         "editorial_note": "The exact typed certificate discharges the printed citations by direct definitional reduction through a non-indexed product/sum helper."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -101,13 +131,30 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_15",
       "formal_scope": "exact typed characterization of subclasses of a product",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱11·62",
+        "PM1:✱4·3",
+        "PM1:✱4·84",
+        "PM1:✱11·33",
+        "PM1:✱11·2",
+        "PM1:✱22·1"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star40-catalogue-review.md"
+      "parser_evidence": "reviews/Star40-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱40·151",
@@ -119,18 +166,32 @@
       "declaration": "PM.Architecture.Star40OpeningKernel.star_40_151",
       "formal_scope": "exact typed characterization of superclasses of a sum",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱10·23",
+        "PM1:✱11·62",
+        "PM1:✱22·1"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star40-catalogue-review.md"
+      "parser_evidence": "reviews/Star40-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

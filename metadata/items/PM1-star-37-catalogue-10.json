@@ -19,31 +19,52 @@
     {
       "id": "PM1:✱37·24",
       "kind": "derived-proposition",
-      "printed": "✱37·24. \\vdash:\\alpha\\in \\text{D}ʻR_{\\in}.\\supset.\\alpha\\subset \\text{D}ʻR",
+      "printed": "✱37·24. ⊢:α∈ DʻR_∈.⊃.α⊂ DʻR",
       "printed_page": 299,
       "scan_leaf": 321,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_24",
       "formal_scope": "exact typed inclusion of every image-class in the domain of its relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱20·33",
+        "PM1:✱37·1",
+        "PM1:✱11·61",
+        "PM1:✱11·23",
+        "PM1:✱11·55",
+        "PM1:✱10·5",
+        "PM1:✱33·13"
+      ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·24. \\vdash:\\alpha\\in \\text{D}ʻR_{\\in}.\\supset.\\alpha\\subset \\text{D}ʻR",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱37·261",
       "kind": "derived-proposition",
-      "printed": "✱37·261. \\vdash.\\breve{R}ʻʻ\\beta=\\breve{R}ʻʻ(\\beta\\cap \\text{D}ʻR) \\quad[\\text{*37·26.*33·21}]",
+      "printed": "✱37·261. ⊢.Řʻʻβ=Řʻʻ(β∩ DʻR) [*37·26.*33·21]",
       "printed_page": 300,
       "scan_leaf": 322,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_261",
       "formal_scope": "exact typed converse-image restriction to the domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱37·26",
@@ -61,19 +82,32 @@
         ],
         "strict_attempt_evidence": "reviews/Star37-catalogue-10-semantic-audit.md",
         "editorial_note": "The converse-image equality is proved directly from witnesses, so the printed substitution and converse predecessors do not occur in the Lean term."
-      }
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·261. \\vdash.\\breve{R}ʻʻ\\beta=\\breve{R}ʻʻ(\\beta\\cap \\text{D}ʻR) \\quad[\\text{*37·26.*33·21}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱37·262",
       "kind": "derived-proposition",
-      "printed": "✱37·262. \\vdash:\\alpha\\cap \\text{ᗡ}ʻR=\\beta\\cap \\text{ᗡ}ʻR.\\supset.Rʻʻ\\alpha=Rʻʻ\\beta \\quad[\\text{*37·26}]",
+      "printed": "✱37·262. ⊢:α∩ ᗡʻR=β∩ ᗡʻR.⊃.Rʻʻα=Rʻʻβ [*37·26]",
       "printed_page": 300,
       "scan_leaf": 322,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_262",
       "formal_scope": "exact typed image equality from equality on the converse-domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱37·26"
@@ -84,19 +118,30 @@
       "lean_dependencies": [
         "PM.Architecture.Star37NextConsecutiveKernel.star_37_26"
       ],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·262. \\vdash:\\alpha\\cap \\text{ᗡ}ʻR=\\beta\\cap \\text{ᗡ}ʻR.\\supset.Rʻʻ\\alpha=Rʻʻ\\beta \\quad[\\text{*37·26}]"
     },
     {
       "id": "PM1:✱37·263",
       "kind": "derived-proposition",
-      "printed": "✱37·263. \\vdash:\\alpha\\cap \\text{D}ʻR=\\beta\\cap \\text{D}ʻR.\\supset.\\breve{R}ʻʻ\\alpha=\\breve{R}ʻʻ\\beta \\quad[\\text{*37·261}]",
+      "printed": "✱37·263. ⊢:α∩ DʻR=β∩ DʻR.⊃.Řʻʻα=Řʻʻβ [*37·261]",
       "printed_page": 300,
       "scan_leaf": 322,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_263",
       "formal_scope": "exact typed converse-image equality from equality on the domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱37·261"
@@ -107,24 +152,54 @@
       "lean_dependencies": [
         "PM.Architecture.Star37NextConsecutiveKernel.star_37_261"
       ],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·263. \\vdash:\\alpha\\cap \\text{D}ʻR=\\beta\\cap \\text{D}ʻR.\\supset.\\breve{R}ʻʻ\\alpha=\\breve{R}ʻʻ\\beta \\quad[\\text{*37·261}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱37·264",
       "kind": "derived-proposition",
-      "printed": "✱37·264. \\vdash:\\exists !\\alpha\\cap Rʻʻ\\beta.\\equiv.(\\exists x,y).x\\in \\alpha.y\\in \\beta.xRy.\\equiv.\\exists !\\beta\\cap \\breve{R}ʻʻ\\alpha",
+      "printed": "✱37·264. ⊢:∃ !α∩ Rʻʻβ.≡.(∃ x,y).x∈ α.y∈ β.xRy.≡.∃ !β∩ Řʻʻα",
       "printed_page": 300,
       "scan_leaf": 322,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_264",
       "formal_scope": "exact typed three-way equivalence between nonempty intersection and a related witness pair; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱11·55",
+        "PM1:✱37·105",
+        "PM1:✱22·33"
+      ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·264. \\vdash:\\exists !\\alpha\\cap Rʻʻ\\beta.\\equiv.(\\exists x,y).x\\in \\alpha.y\\in \\beta.xRy.\\equiv.\\exists !\\beta\\cap \\breve{R}ʻʻ\\alpha",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     }
   ],
   "ci_evidence": {

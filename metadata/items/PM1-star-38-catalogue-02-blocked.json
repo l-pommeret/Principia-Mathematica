@@ -1,0 +1,220 @@
+{
+  "batch": "PM1-STAR38-CATALOGUE-02-BLOCKED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "313",
+    "scan_leaves": [
+      335
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "review_evidence": [
+    "reviews/Star38-39-canonical-review.md",
+    "reviews/Star38-catalogue-02-review.md"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱38·11",
+      "kind": "derived-proposition",
+      "printed": "✱38·11. ⊢. x♀ʻy = ♀yʻx = x♀y  [✱38·1·101.✱30·3]",
+      "printed_page": 313,
+      "scan_leaf": 335,
+      "lean_path": "Principia/Architecture/Star38Kernel.lean",
+      "declaration": "PM.Architecture.Star38Kernel.star_38_11",
+      "formal_scope": "blocked: conjunction of meta-level equalities; no PM syntax, judgment, or derivation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-object-language-derivation",
+      "integration_blocked": true,
+      "printed_dependencies": [
+        "PM1:✱30·3",
+        "PM1:✱38·1",
+        "PM1:✱38·101"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star38Kernel.LeftSection",
+        "PM.Architecture.Star38Kernel.RightSection"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱38·01",
+        "PM1:✱38·02"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "pm-derivation-gate-blocked",
+      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_11",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱38·12",
+      "kind": "derived-proposition",
+      "printed": "✱38·12. ⊢. E!x♀ʻy . E!♀yʻx  [✱38·11.✱14·21]",
+      "printed_page": 313,
+      "scan_leaf": 335,
+      "lean_path": "Principia/Architecture/Star38Kernel.lean",
+      "declaration": "PM.Architecture.Star38Kernel.star_38_12",
+      "formal_scope": "blocked semantic mismatch: Nonempty γ ∧ Nonempty γ is not existence of the two printed descriptive-function values, and no PM derivation exists",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-and-no-pm-derivation",
+      "integration_blocked": true,
+      "printed_dependencies": [
+        "PM1:✱14·21",
+        "PM1:✱38·11"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "pm-derivation-gate-blocked",
+      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_12",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱38·13",
+      "kind": "derived-proposition",
+      "printed": "✱38·13. ⊢ : u ∈ x♀ʻʻα .≡. (∃y). y ∈ α . u = x♀y  [✱38·1.✱37·1]",
+      "printed_page": 313,
+      "scan_leaf": 335,
+      "lean_path": "Principia/Architecture/Star38Kernel.lean",
+      "declaration": "PM.Architecture.Star38Kernel.star_38_13",
+      "formal_scope": "blocked: correct secondary image Prop equivalence only; no PM syntax, judgment, or derivation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-object-language-derivation",
+      "integration_blocked": true,
+      "printed_dependencies": [
+        "PM1:✱37·1",
+        "PM1:✱38·1"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star38Kernel.LeftSection"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱38·01"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "pm-derivation-gate-blocked",
+      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_13",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱38·131",
+      "kind": "derived-proposition",
+      "printed": "✱38·131. ⊢ : u ∈ ♀yʻʻα .≡. (∃x). x ∈ α . u = x♀y  [✱38·101.✱37·1]",
+      "printed_page": 313,
+      "scan_leaf": 335,
+      "lean_path": "Principia/Architecture/Star38Kernel.lean",
+      "declaration": "PM.Architecture.Star38Kernel.star_38_131",
+      "formal_scope": "blocked: correct secondary image Prop equivalence only; no PM syntax, judgment, or derivation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-object-language-derivation",
+      "integration_blocked": true,
+      "printed_dependencies": [
+        "PM1:✱37·1",
+        "PM1:✱38·101"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star38Kernel.RightSection"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱38·02"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "pm-derivation-gate-blocked",
+      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_131",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱38·2",
+      "kind": "derived-proposition",
+      "printed": "✱38·2. ⊢. α♀_{,,}y = ♀yʻʻα  [(✱38·03)]",
+      "printed_page": 313,
+      "scan_leaf": 335,
+      "lean_path": "Principia/Architecture/Star38Kernel.lean",
+      "declaration": "PM.Architecture.Star38Kernel.star_38_2",
+      "formal_scope": "blocked: definitional meta-level equality only; no PM syntax, judgment, or derivation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-object-language-derivation",
+      "integration_blocked": true,
+      "printed_dependencies": [
+        "PM1:✱38·03"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star38Kernel.RightSection",
+        "PM.Architecture.Star38Kernel.Slice"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱38·02",
+        "PM1:✱38·03"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "pm-derivation-gate-blocked",
+      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_2",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "parser_status": "reviewed-gap",
+  "parser_evidence": "reviews/Star38-parser-gaps.md"
+}

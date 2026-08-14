@@ -32,31 +32,48 @@
       "scan_leaf": 162,
       "lean_path": "Principia/Architecture/Q259ClosedRuleBook.lean",
       "declaration": "PM.Architecture.Q259ClosedRuleBook.star_9_31",
-      "formal_scope": "source-faithful closed Raw endpoint retaining the assigned-order carrier and explicit scope-normalization certificates",
+      "formal_scope": "withdrawn as a derivation: only the matrix and Raw normalization certificates survive removal of Star931ClosedStage",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "kernel-checked-nonempty-star931-kernel-assertion",
+      "formal_status": "lean-typechecked",
+      "integration_status": "withdrawn-editorial-t10-refusal",
       "printed_dependencies": [
         "PM1:✱9·11·13",
         "PM1:✱9·03",
         "PM1:✱9·05"
       ],
       "normalized_dependencies": [],
-      "lean_dependencies": ["Star931Kernel.derive"],
+      "lean_dependencies": [
+        "Star931Kernel.derive"
+      ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱9·03", "PM1:✱9·05", "PM1:✱9·11·13"],
+        "printed_but_unused": [
+          "PM1:✱9·03",
+          "PM1:✱9·05",
+          "PM1:✱9·11·13"
+        ],
         "strict_attempt_evidence": "reviews/Q259-star-9-31-scope-audit.md",
         "editorial_note": "The public theorem packages the complete source-audited Star931Kernel certificate; printed citations occur inside that closed witness rather than as direct constants in the Nonempty wrapper."
       },
       "blocked_dependencies": [
-      ]
+        "honest PM.RamifiedSyntax.Derivation proof of ✱9·31"
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {
-    "commit": "eda99d1ed844362805f3f05805d4fc8e72e7c4a9",
-    "run": "31572372279",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

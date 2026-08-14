@@ -26,13 +26,31 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_421",
       "formal_scope": "exact typed converse implication from equality of the displayed pairs to equality of their two-unit classes; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱51·131",
+        "PM1:✱31·11",
+        "PM1:✱51·23",
+        "PM1:✱20·57·2",
+        "PM1:✱10·11",
+        "PM1:✱4·71",
+        "PM1:✱30·31"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "integration_blocked": false,
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·43",
@@ -44,22 +62,38 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_43",
       "formal_scope": "exact typed equivalence between equality of two-unit classes and equality of the displayed pairs up to exchange; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star51RemainingKernel.star_51_42",
         "PM.Architecture.Star51RemainingKernel.star_51_421"
       ],
-      "normalized_dependencies": ["PM1:✱51·42", "PM1:✱51·421"],
+      "normalized_dependencies": [
+        "PM1:✱51·42",
+        "PM1:✱51·421"
+      ],
       "integration_blocked": false,
       "semantic_audit_status": "strict-equivalence-passed",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱51·42", "PM1:✱51·421"],
+        "added_beyond_print": [
+          "PM1:✱51·42",
+          "PM1:✱51·421"
+        ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star51-catalogue-09-10-semantic-audit.md",
         "editorial_note": "The literal catalogue block has no bracketed citation, while the Lean proof composes the exact two adjacent directions ✱51·42 and ✱51·421."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -72,15 +106,33 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_51",
       "formal_scope": "exact relational typed reconstruction of the three-term equivalence defining the inverse unit-class relation and its application; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱51·131",
+        "PM1:✱31·11",
+        "PM1:✱51·23",
+        "PM1:✱20·57·2",
+        "PM1:✱10·11",
+        "PM1:✱4·71",
+        "PM1:✱30·31"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star51-catalogue-09-10-semantic-audit.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "integration_blocked": false,
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·511",
@@ -92,13 +144,23 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_511",
       "formal_scope": "exact relational typed reconstruction that the inverse unit-class relation selects the member of a singleton; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "integration_blocked": false,
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·52",
@@ -110,13 +172,23 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_52",
       "formal_scope": "exact relational typed reconstruction of existence of the inverse unit-class description and restoration of the original singleton; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "integration_blocked": false,
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

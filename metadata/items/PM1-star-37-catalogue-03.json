@@ -20,53 +20,100 @@
     {
       "id": "PM1:✱37·22",
       "kind": "derived-proposition",
-      "printed": "✱37·22. \\vdash.Pʻʻ(\\alpha\\cup \\beta)=Pʻʻ\\alpha\\cup Pʻʻ\\beta",
+      "printed": "✱37·22. ⊢.Pʻʻ(α∪ β)=Pʻʻα∪ Pʻʻβ",
       "printed_page": 298,
       "scan_leaf": 320,
       "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_22",
       "formal_scope": "exact typed distributivity of relational image over binary class union; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱22·34",
+        "PM1:✱4·4",
+        "PM1:✱10·42",
+        "PM1:✱37·1"
+      ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·22. \\vdash.Pʻʻ(\\alpha\\cup \\beta)=Pʻʻ\\alpha\\cup Pʻʻ\\beta"
     },
     {
       "id": "PM1:✱37·25",
       "kind": "derived-proposition",
-      "printed": "✱37·25. \\vdash.\\text{D}ʻR=Rʻʻ\\text{ᗡ}ʻR.\\text{ᗡ}ʻR=\\breve{R}ʻʻ\\text{D}ʻR",
+      "printed": "✱37·25. ⊢.DʻR=RʻʻᗡʻR.ᗡʻR=ŘʻʻDʻR",
       "printed_page": 300,
       "scan_leaf": 322,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_25",
       "formal_scope": "exact typed paired domain and converse-domain image identities; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱33·14",
+        "PM1:✱4·71",
+        "PM1:✱37·1",
+        "PM1:✱37·105"
+      ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·25. \\vdash.\\text{D}ʻR=Rʻʻ\\text{ᗡ}ʻR.\\text{ᗡ}ʻR=\\breve{R}ʻʻ\\text{D}ʻR",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱37·26",
       "kind": "derived-proposition",
-      "printed": "✱37·26. \\vdash.Rʻʻ\\beta=Rʻʻ(\\beta\\cap \\text{ᗡ}ʻR)",
+      "printed": "✱37·26. ⊢.Rʻʻβ=Rʻʻ(β∩ ᗡʻR)",
       "printed_page": 300,
       "scan_leaf": 322,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_26",
       "formal_scope": "exact typed invariance of relational image after intersection with the converse-domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
-      "printed_dependencies": [],
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱33·14",
+        "PM1:✱4·71",
+        "PM1:✱22·33",
+        "PM1:✱37·1"
+      ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱37·26. \\vdash.Rʻʻ\\beta=Rʻʻ(\\beta\\cap \\text{ᗡ}ʻR)"
     }
   ],
   "ci_evidence": {

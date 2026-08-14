@@ -4,16 +4,22 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "640–641",
-    "scan_leaves": [662, 663],
+    "scan_leaves": [
+      662,
+      663
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
   "items": [
     {
       "id": "PM1:✱96·104",
       "kind": "derived-proposition",
-      "printed": "✱96·104. ⊢ : I_Rʻx = Λ .≡. (R_*⃖ʻx)↼hR_po ⊂ J .≡. J_Rʻx = R_*⃖ʻx",
+      "printed": "✱96·104. ⊢:I_Rʻx=Λ.≡.(R⃖_∗ʻx)↿ Rₚₒ⪽J.≡.J_Rʻx=R⃖_∗ʻx",
       "printed_page": 640,
       "scan_leaf": 662,
       "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
@@ -22,16 +28,31 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-omits-third-equivalent",
-      "printed_dependencies": ["PM1:✱96·1", "PM1:✱13·196", "PM1:✱35·1", "PM1:✱96·102"],
+      "printed_dependencies": [
+        "PM1:✱96·1",
+        "PM1:✱13·196",
+        "PM1:✱35·1",
+        "PM1:✱96·102"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star96-catalogue-02-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱96·121",
       "kind": "derived-proposition",
-      "printed": "✱96·121. ⊢ : Rʻʻα ⊂ α .⊃. (R↾α)_po = R_po↾α",
+      "printed": "✱96·121. ⊢:Rʻʻα⊂ α.⊃.(R↾ α)ₚₒ=Rₚₒ↾ α [Proof as in ✱96·111]",
       "printed_page": 641,
       "scan_leaf": 663,
       "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
@@ -40,12 +61,28 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-reverses-closure-direction",
-      "printed_dependencies": ["PM1:✱96·111"],
+      "printed_dependencies": [
+        "PM1:✱96·111"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star96-catalogue-02-semantic-audit.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

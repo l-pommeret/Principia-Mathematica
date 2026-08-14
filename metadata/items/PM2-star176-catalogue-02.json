@@ -1,0 +1,162 @@
+{
+  "batch": "PM2-STAR176-CATALOGUE-02",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "462"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱176·13",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∃̇ ! (P exp Q) . ≡ . ∃̇ ! P^Q . ≡ . ∃̇ ! Π ʻP↓_., ^;Q [*150·25 . *176·1·11]",
+      "printed_page": 462,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱150·25",
+        "PM2:✱176·1",
+        "PM2:✱176·11"
+      ],
+      "printed_latex_witness": "\\(\\vdash : \\dot{\\exists} ! (P \\,\\text{exp}\\,\\, Q) . \\equiv . \\dot{\\exists} ! P^{Q} . \\equiv . \\dot{\\exists} ! \\Pi ʻP\\downarrow_{.,} ^{;}Q \\quad[*150·25 . *176·1·11]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱176·131",
+      "kind": "derived-proposition",
+      "printed": "⊢ : Q = Λ̇ . ⊃ . P exp Q = Λ̇ . P^Q = Λ̇ [*165·241 . *173·2 . *150·42]",
+      "printed_page": 462,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱165·241",
+        "PM2:✱173·2",
+        "PM2:✱150·42"
+      ],
+      "printed_latex_witness": "\\(\\vdash : Q = \\dot{\\Lambda} . \\supset . P \\,\\text{exp}\\,\\, Q = \\dot{\\Lambda} . P^{Q} = \\dot{\\Lambda} \\quad[*165·241 . *173·2 . *150·42]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱176·132",
+      "kind": "derived-proposition",
+      "printed": "⊢ : P = Λ̇ . ∃̇ ! Q . ⊃ . P exp Q = Λ̇ . P^Q = Λ̇ [*165·244 . *172·14 . *176·13 . *150·42]",
+      "printed_page": 462,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱165·244",
+        "PM2:✱172·14",
+        "PM2:✱176·13",
+        "PM2:✱150·42"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}&\\vdash : P = \\dot{\\Lambda} . \\dot{\\exists} ! Q . \\supset . P \\,\\text{exp}\\,\\, Q = \\dot{\\Lambda} . P^{Q} = \\dot{\\Lambda} \\\\ &[*165·244 . *172·14 . *176·13 . *150·42]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱176·133",
+      "kind": "derived-proposition",
+      "printed": "⊢ . CʻP^Q = ṡ ʻʻCʻ(P exp Q) [*176·11 . *150·22]",
+      "printed_page": 462,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱176·11",
+        "PM2:✱150·22"
+      ],
+      "printed_latex_witness": "\\(\\vdash . CʻP^{Q} = \\dot{s} ʻʻCʻ(P \\,\\text{exp}\\,\\, Q) \\quad[*176·11 . *150·22]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱176·14",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∃̇ ! Q . ⊃ . Cʻ(P exp Q) = (CʻP) exp (CʻQ) . CʻP^Q = (CʻP ↑ CʻQ)_Δ ʻCʻQ",
+      "printed_page": 462,
+      "lean_path": "Principia/FirstEdition/Volume2/Star176Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱165·243",
+        "PM2:✱173·161",
+        "PM2:✱165·21",
+        "PM2:✱176·1",
+        "PM2:✱165·14",
+        "PM2:✱116·01",
+        "PM2:✱116·13"
+      ],
+      "printed_latex_witness": "\\(\\vdash : \\dot{\\exists} ! Q . \\supset . Cʻ(P \\,\\text{exp}\\,\\, Q) = (CʻP) \\,\\text{exp}\\,\\, (CʻQ) . CʻP^{Q} = (CʻP \\uparrow CʻQ)_{\\Delta }ʻCʻQ\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "batch": "PM2-STAR183-CATALOGUE-05",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "500"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱183·331",
+      "kind": "derived-proposition",
+      "printed": "⊢ :∃̇ !P.Z∼∈ CʻP.⊃ .Σ Nrʻ(Z⇷P) = NrʻZ+̇ Σ NrʻP [Proof as in *183·33]",
+      "printed_page": 500,
+      "lean_path": "Principia/FirstEdition/Volume2/Star183Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱183·33"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}&\\vdash :\\dot{\\exists} !P.Z{\\sim}\\in CʻP.\\supset .\\Sigma \\text{Nr}ʻ(Z\\unicode{x21f7}P) = \\text{Nr}ʻZ\\dot{+} \\Sigma \\text{Nr}ʻP\\\\ &[\\text{Proof as in *183·33}]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱183·42",
+      "kind": "derived-proposition",
+      "printed": "⊢ :P∈ Rel²excl.⊃ .↓̌_,,†^;P∈ Rel³arithm",
+      "printed_page": 500,
+      "lean_path": "Principia/FirstEdition/Volume2/Star183Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱163·3",
+        "PM2:✱182·162",
+        "PM2:✱162·35",
+        "PM2:✱182·16"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱183·43",
+      "kind": "derived-proposition",
+      "printed": "⊢ :P∈ Rel²excl.⊃ .Σ NrʻΣ ^;↓̌_,,†^;P = Σ NrʻΣ ʻP",
+      "printed_page": 500,
+      "lean_path": "Principia/FirstEdition/Volume2/Star183Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱183·42",
+        "PM2:✱174·36",
+        "PM2:✱183·13",
+        "PM2:✱162·34",
+        "PM2:✱162·35",
+        "PM2:✱183·1"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱183·5",
+      "kind": "derived-proposition",
+      "printed": "⊢ :C↾ CʻP∈ 1→1.⊃ .CʻʻΣ NrʻP = Σ NcʻCʻʻCʻP",
+      "printed_page": 500,
+      "lean_path": "Principia/FirstEdition/Volume2/Star183Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱152·7",
+        "PM2:✱183·1",
+        "PM2:✱182·54"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

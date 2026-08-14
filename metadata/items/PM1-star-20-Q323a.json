@@ -1,1 +1,72 @@
-{"batch":"PM1-STAR20-Q323A","edition":"first","volume":1,"source_range":{"printed_pages":"206","scan_leaves":[228],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":228,"printed_page":206,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page228-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"00ebce3fbb811f3b3bc84aeb2e09055c8153f894986e6f0269063a0a256a2612"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱20·59","kind":"derived-proposition","printed":"⊢ : ẑ(φz) = (ια)(fα) .≡ . (ια)(fα) = ẑ(φz)","printed_page":206,"scan_leaf":228,"lean_path":"Principia/Architecture/Star20Q323Kernel.lean","declaration":"PM.Architecture.Star20Q323Kernel.star_20_59_target","formal_scope":"exact contextual typed-class-description identity-symmetry target; class-description assertion remains blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-class-description-assertion","parser_status":"reviewed-gap","parser_evidence":"reviews/Q323-review.md","printed_dependencies":[],"normalized_dependencies":[]}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR20-Q323A-BLOCKED",
+  "edition": "first",
+  "volume": 1,
+  "requested_version": "v1",
+  "completion_status": "blocked",
+  "source_range": {
+    "printed_pages": "206",
+    "scan_leaves": [
+      228
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 228,
+        "printed_page": 206,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page228-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "00ebce3fbb811f3b3bc84aeb2e09055c8153f894986e6f0269063a0a256a2612"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "review_evidence": [
+    "reviews/Q323-review.md"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱20·59",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ẑ(φz) = (ια)(fα) .≡ . (ια)(fα) = ẑ(φz)",
+      "printed_page": 206,
+      "scan_leaf": 228,
+      "lean_path": "Principia/Architecture/Star20Q323Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q323Kernel.star_20_59_target",
+      "formal_scope": "blocked v1: the existing declaration is only a secondary Lean Prop target; the repository has no PM object-language constructors for class abstraction, contextual class description, or their identity formulas, hence no parsed PM formula and no PM.Derivation judgment can yet state the printed assertion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-missing-object-syntax-and-class-description-assertion-rule",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q323-review.md",
+      "semantic_audit": "reviews/Q323-review.md",
+      "printed_dependencies": [
+        "PM1:✱20·1",
+        "PM1:✱14·13"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "dependency_audit": "The printed line has no bracketed citation or demonstration, and the secondary Prop target contains no PM.Derivation call; all three dependency graphs are therefore empty.",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

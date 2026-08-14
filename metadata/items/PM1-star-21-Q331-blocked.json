@@ -1,0 +1,61 @@
+{
+  "batch": "PM1-STAR21-Q331-BLOCKED",
+  "edition": "first",
+  "volume": 1,
+  "architecture_version": "non-v1-derived-blocked",
+  "source_range": {
+    "printed_pages": "215",
+    "scan_leaves": [
+      237
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "review_evidence": [
+    "reviews/Q331-review.md"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱21·1",
+      "kind": "derived-proposition",
+      "printed": "⊢ : f{ẑxẑyψ(x,y)} .≡ : (∃φ) : φ!(x,y) .≡₍x,y₎. ψ(x,y) : f{φ!(ẑu,ẑv)}",
+      "printed_page": 215,
+      "scan_leaf": 237,
+      "lean_path": "Principia/Architecture/Star21Q331RelationAbstraction.lean",
+      "declaration": "PM.Architecture.Star21Q331RelationAbstraction.star_21_1",
+      "formal_scope": "blocked: the Lean theorem is a host-Prop reflexive unfolding proved by rfl, not an object-level relational formula judged by an inductive PM derivation using ✱4·2 and the genuine ✱21·01 definition",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-relational-object-judgement-or-printed-derivation",
+      "printed_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱21·01"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Q331-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

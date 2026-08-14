@@ -1,0 +1,186 @@
+{
+  "batch": "PM1-STAR71-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "449–449",
+    "scan_leaves": [
+      471
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱71·01",
+      "kind": "derived-proposition",
+      "printed": "✱71·01. ⊢.1 → Cls=Ř(R⃗ʻʻᗡʻR⊂ 1) [*70·4]",
+      "printed_page": 449,
+      "scan_leaf": 471,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱70·4"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·01. \\vdash.1\\rightarrow \\text{Cls}=\\breve{R}(\\overrightarrow{R}ʻʻ\\text{ᗡ}ʻR\\subset 1) \\quad[\\text{*70·4}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·02",
+      "kind": "derived-proposition",
+      "printed": "✱71·02. ⊢.Cls → 1=Ř(R⃖ʻʻDʻR⊂ 1) [*70·41]",
+      "printed_page": 449,
+      "scan_leaf": 471,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱70·41"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·02. \\vdash.\\text{Cls}\\rightarrow 1=\\breve{R}(\\overleftarrow{R}ʻʻ\\text{D}ʻR\\subset 1) \\quad[\\text{*70·41}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·03",
+      "kind": "derived-proposition",
+      "printed": "✱71·03. ⊢.1 → 1=Ř(R⃗ʻʻᗡʻR⊂ 1.R⃖ʻʻDʻR⊂ 1) [*20·2.(*70·01)]",
+      "printed_page": 449,
+      "scan_leaf": 471,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱20·2",
+        "PM1:✱70·01"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·03. \\vdash.1\\rightarrow 1=\\breve{R}(\\overrightarrow{R}ʻʻ\\text{ᗡ}ʻR\\subset 1.\\overleftarrow{R}ʻʻ\\text{D}ʻR\\subset 1) \\quad[\\text{*20·2.(*70·01)}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·04",
+      "kind": "derived-proposition",
+      "printed": "✱71·04. ⊢.1 → 1=(1 → Cls)∩ (Cls → 1) [*70·42]",
+      "printed_page": 449,
+      "scan_leaf": 471,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱70·42"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·04. \\vdash.1\\rightarrow 1=(1\\rightarrow \\text{Cls})\\cap (\\text{Cls}\\rightarrow 1) \\quad[\\text{*70·42}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱71·1",
+      "kind": "derived-proposition",
+      "printed": "✱71·1. ⊢:R∈ 1 → Cls.≡.R⃗ʻʻᗡʻR⊂ 1 [*20·33.*71·01]",
+      "printed_page": 449,
+      "scan_leaf": 471,
+      "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-catalogued proposition; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱20·33",
+        "PM1:✱71·01"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱71·1. \\vdash:R\\in 1\\rightarrow \\text{Cls}.\\equiv.\\overrightarrow{R}ʻʻ\\text{ᗡ}ʻR\\subset 1 \\quad[\\text{*20·33.*71·01}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

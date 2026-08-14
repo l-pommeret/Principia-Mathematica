@@ -18,7 +18,7 @@
     {
       "id": "PM1:✱37·705",
       "kind": "derived-proposition",
-      "printed": "✱37·705. \\vdash:x\\in \\alpha.\\supset.\\overleftarrow{R}ʻx\\in \\overleftarrow{R}ʻʻ\\alpha \\quad[\\text{*37·62.*32·121}]",
+      "printed": "✱37·705. ⊢:x∈ α.⊃.R⃖ʻx∈ R⃖ʻʻα [*37·62.*32·121]",
       "printed_page": 309,
       "scan_leaf": 331,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -27,14 +27,29 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱37·62",
+        "PM1:✱32·121"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·705. \\vdash:x\\in \\alpha.\\supset.\\overleftarrow{R}ʻx\\in \\overleftarrow{R}ʻʻ\\alpha \\quad[\\text{*37·62.*32·121}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·706",
       "kind": "derived-proposition",
-      "printed": "✱37·706. \\vdash\\colon\\ldotp \\alpha\\in \\overrightarrow{R}ʻʻ\\beta.\\supset_{\\alpha}.\\psi\\alpha:\\equiv:y\\in \\beta.\\supset_{y}.\\psi(\\overrightarrow{R}ʻy) \\quad[\\text{*37·63}]",
+      "printed": "✱37·706. ⊢:. α∈ R⃗ʻʻβ.⊃_α.ψα:≡:y∈ β.⊃y.ψ(R⃗ʻy) [*37·63]",
       "printed_page": 309,
       "scan_leaf": 331,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -43,14 +58,28 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱37·63"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·706. \\vdash\\colon\\ldotp \\alpha\\in \\overrightarrow{R}ʻʻ\\beta.\\supset_{\\alpha}.\\psi\\alpha:\\equiv:y\\in \\beta.\\supset_{y}.\\psi(\\overrightarrow{R}ʻy) \\quad[\\text{*37·63}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·707",
       "kind": "derived-proposition",
-      "printed": "✱37·707. \\vdash\\colon\\ldotp \\beta\\in \\overleftarrow{R}ʻʻ\\alpha.\\supset_{\\beta}.\\psi\\beta:\\equiv:x\\in \\alpha.\\supset_{x}.\\psi(\\overleftarrow{R}ʻx) \\quad[\\text{*37·63}]",
+      "printed": "✱37·707. ⊢:. β∈ R⃖ʻʻα.⊃_β.ψβ:≡:x∈ α.⊃ₓ.ψ(R⃖ʻx) [*37·63]",
       "printed_page": 309,
       "scan_leaf": 331,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -59,14 +88,28 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱37·63"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·707. \\vdash\\colon\\ldotp \\beta\\in \\overleftarrow{R}ʻʻ\\alpha.\\supset_{\\beta}.\\psi\\beta:\\equiv:x\\in \\alpha.\\supset_{x}.\\psi(\\overleftarrow{R}ʻx) \\quad[\\text{*37·63}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·708",
       "kind": "derived-proposition",
-      "printed": "✱37·708. \\vdash\\colon\\ldotp (\\exists \\alpha).\\alpha\\in \\overrightarrow{R}ʻʻ\\beta.\\psi\\alpha.\\equiv.(\\exists y).y\\in \\beta.\\psi(\\overrightarrow{R}ʻy) \\quad[\\text{*37·64}]",
+      "printed": "✱37·708. ⊢:. (∃ α).α∈ R⃗ʻʻβ.ψα.≡.(∃ y).y∈ β.ψ(R⃗ʻy) [*37·64]",
       "printed_page": 309,
       "scan_leaf": 331,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -75,14 +118,28 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱37·64"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·708. \\vdash\\colon\\ldotp (\\exists \\alpha).\\alpha\\in \\overrightarrow{R}ʻʻ\\beta.\\psi\\alpha.\\equiv.(\\exists y).y\\in \\beta.\\psi(\\overrightarrow{R}ʻy) \\quad[\\text{*37·64}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·709",
       "kind": "derived-proposition",
-      "printed": "✱37·709. \\vdash\\colon\\ldotp (\\exists \\alpha).\\alpha\\in \\overleftarrow{R}ʻʻ\\beta.\\psi\\alpha.\\equiv.(\\exists x).x\\in \\beta.\\psi(\\overleftarrow{R}ʻx) \\quad[\\text{*37·64}]",
+      "printed": "✱37·709. ⊢:. (∃ α).α∈ R⃖ʻʻβ.ψα.≡.(∃ x).x∈ β.ψ(R⃖ʻx) [*37·64]",
       "printed_page": 309,
       "scan_leaf": 331,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -91,9 +148,23 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱37·64"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·709. \\vdash\\colon\\ldotp (\\exists \\alpha).\\alpha\\in \\overleftarrow{R}ʻʻ\\beta.\\psi\\alpha.\\equiv.(\\exists x).x\\in \\beta.\\psi(\\overleftarrow{R}ʻx) \\quad[\\text{*37·64}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -1,1 +1,86 @@
-{"batch":"PM1-STAR20-Q323","edition":"first","volume":1,"source_range":{"printed_pages":"206","scan_leaves":[228],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":228,"printed_page":206,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page228-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"00ebce3fbb811f3b3bc84aeb2e09055c8153f894986e6f0269063a0a256a2612"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱20·6","kind":"derived-proposition","printed":"⊢ : (∃α) . fα .≡ . ∼{(α) . ∼fα}","printed_page":206,"scan_leaf":228,"lean_path":"Principia/Architecture/Star20Q323Kernel.lean","declaration":"PM.Architecture.Star20Q323Kernel.star_20_6","formal_scope":"exact polymorphic typed-class existential/negated-universal equivalence","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q323-review.md","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[]},{"id":"PM1:✱20·61","kind":"derived-proposition","printed":"⊢ : (α) . fα .⊃ . fβ","printed_page":206,"scan_leaf":228,"lean_path":"Principia/Architecture/Star20Q323Kernel.lean","declaration":"PM.Architecture.Star20Q323Kernel.star_20_61","formal_scope":"exact polymorphic typed-class universal instantiation","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","parser_status":"reviewed-gap","parser_evidence":"reviews/Q323-review.md","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[]}],"ci_evidence":{"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}}
+{
+  "batch": "PM1-STAR20-Q323",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "206",
+    "scan_leaves": [
+      228
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 228,
+        "printed_page": 206,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page228-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "00ebce3fbb811f3b3bc84aeb2e09055c8153f894986e6f0269063a0a256a2612"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱20·6",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (∃α) . fα .≡ . ∼{(α) . ∼fα}",
+      "printed_page": 206,
+      "scan_leaf": 228,
+      "lean_path": "Principia/Architecture/Star20Q323Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q323Kernel.star_20_6",
+      "formal_scope": "exact polymorphic typed-class existential/negated-universal equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q323-review.md",
+      "printed_dependencies": ["PM1:✱4·2","PM1:✱20·071","PM1:✱10·01","PM1:✱20·07"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱20·61",
+      "kind": "derived-proposition",
+      "printed": "⊢ : (α) . fα .⊃ . fβ",
+      "printed_page": 206,
+      "scan_leaf": 228,
+      "lean_path": "Principia/Architecture/Star20Q323Kernel.lean",
+      "declaration": "PM.Architecture.Star20Q323Kernel.star_20_61",
+      "formal_scope": "exact polymorphic typed-class universal instantiation",
+      "source_status": "source-catalogued",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q323-review.md",
+      "printed_dependencies": ["PM1:✱10·1","PM1:✱20·07"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961",
+    "conclusion": "success"
+  }
+}

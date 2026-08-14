@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR37-CATALOGUE-01",
+  "batch": "PM1-STAR37-CATALOGUE-01-BLOCKED-STRUCTURAL",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -18,82 +18,145 @@
     {
       "id": "PM1:✱37·01",
       "kind": "definition",
-      "printed": "✱37·01. Rʻʻ\\beta=\\hat{x}\\{(\\exists y).y\\in \\beta.xRy\\} \\quad\\text{Df}",
+      "printed": "✱37·01. Rʻʻβ=x̂{(∃ y).y∈ β.xRy} Df",
       "printed_page": 296,
       "scan_leaf": 318,
-      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration implementing the relational-image definition",
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_01",
+      "formal_scope": "typed eliminable definition of relational image",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
+      "integration_status": "provisional-definition-integrated",
+      "structural_formalization_status": "typed-unfolding-definition",
+      "structural_audit_evidence": "reviews/Star37-catalogue-01-structural-audit.md",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·01. Rʻʻ\\beta=\\hat{x}\\{(\\exists y).y\\in \\beta.xRy\\} \\quad\\text{Df}",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·02",
       "kind": "definition",
-      "printed": "✱37·02. R_{\\in}=\\hat{\\alpha}\\hat{\\beta}(\\alpha=Rʻʻ\\beta) \\quad\\text{Df}",
+      "printed": "✱37·02. R_∈=α̂β̂(α=Rʻʻβ) Df",
       "printed_page": 296,
       "scan_leaf": 318,
-      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration implementing the image-membership relation definition",
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_02",
+      "formal_scope": "typed eliminable definition of the image-membership relation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
+      "integration_status": "provisional-definition-integrated",
+      "structural_formalization_status": "typed-unfolding-definition",
+      "structural_audit_evidence": "reviews/Star37-catalogue-01-structural-audit.md",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·02. R_{\\in}=\\hat{\\alpha}\\hat{\\beta}(\\alpha=Rʻʻ\\beta) \\quad\\text{Df}",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·03",
       "kind": "definition",
-      "printed": "✱37·03. \\breve{R}_{\\in}=\\text{Cnv}ʻR_{\\in} \\quad\\text{Df}",
+      "printed": "✱37·03. Ř_∈=CnvʻR_∈ Df",
       "printed_page": 296,
       "scan_leaf": 318,
-      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration implementing the converse image-membership relation definition",
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_03",
+      "formal_scope": "typed eliminable definition of the converse image-membership relation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
+      "integration_status": "provisional-definition-integrated",
+      "structural_formalization_status": "typed-unfolding-definition",
+      "structural_audit_evidence": "reviews/Star37-catalogue-01-structural-audit.md",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·03. \\breve{R}_{\\in}=\\text{Cnv}ʻR_{\\in} \\quad\\text{Df}",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·04",
       "kind": "definition",
-      "printed": "✱37·04. Rʻʻʻ\\kappa=R_{\\in}ʻʻ\\kappa \\quad\\text{Df}",
+      "printed": "✱37·04. Rʻʻʻκ=R_∈ʻʻκ Df",
       "printed_page": 296,
       "scan_leaf": 318,
-      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration implementing the iterated relational-image definition",
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_04",
+      "formal_scope": "typed eliminable definition of iterated relational image",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
+      "integration_status": "provisional-definition-integrated",
+      "structural_formalization_status": "typed-unfolding-definition",
+      "structural_audit_evidence": "reviews/Star37-catalogue-01-structural-audit.md",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·04. Rʻʻʻ\\kappa=R_{\\in}ʻʻ\\kappa \\quad\\text{Df}",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·05",
       "kind": "definition",
-      "printed": "✱37·05. \\text{E}‼Rʻʻ\\beta.=:y\\in \\beta.\\supset_{y}.\\text{E}!Rʻy \\quad\\text{Df}",
+      "printed": "✱37·05. E‼Rʻʻβ.=:y∈ β.⊃y.E!Rʻy Df",
       "printed_page": 296,
       "scan_leaf": 318,
-      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration implementing the uniqueness condition for the relational image",
+      "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
+      "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_05",
+      "formal_scope": "typed eliminable definition of the uniqueness condition for relational image",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
+      "integration_status": "provisional-definition-integrated",
+      "structural_formalization_status": "typed-unfolding-definition",
+      "structural_audit_evidence": "reviews/Star37-catalogue-01-structural-audit.md",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·05. \\text{E}‼Rʻʻ\\beta.=:y\\in \\beta.\\supset_{y}.\\text{E}!Rʻy \\quad\\text{Df}",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

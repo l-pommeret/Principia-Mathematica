@@ -26,14 +26,24 @@
       "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_237",
       "formal_scope": "exact typed pointwise characterization of a class equal to a unit class adjoined to another class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "integration_blocked": false,
       "semantic_audit_status": "strict-equivalence-passed",
-      "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md"
+      "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·238",
@@ -45,14 +55,29 @@
       "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_238",
       "formal_scope": "exact typed decomposition of universal truth over an adjoined class into truth at the new element and over the original class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱51·237",
+        "PM1:✱4·77",
+        "PM1:✱10·22",
+        "PM1:✱13·191"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "integration_blocked": false,
       "semantic_audit_status": "strict-equivalence-passed",
-      "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md"
+      "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·239",
@@ -64,14 +89,29 @@
       "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_239",
       "formal_scope": "exact typed decomposition of existence over an adjoined class into the displayed-element case or existence over the original class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱51·237",
+        "PM1:✱4·4",
+        "PM1:✱10·42",
+        "PM1:✱13·195"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "integration_blocked": false,
       "semantic_audit_status": "strict-equivalence-passed",
-      "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md"
+      "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·24",
@@ -83,14 +123,28 @@
       "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_24",
       "formal_scope": "exact typed equivalence for inclusion of a unit class in an adjoined class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱51·236",
+        "PM1:✱51·15",
+        "PM1:✱13·191"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "integration_blocked": false,
       "semantic_audit_status": "strict-equivalence-passed",
-      "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md"
+      "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·25",
@@ -102,7 +156,7 @@
       "declaration": "PM.Architecture.Star51OpeningKernel3.star_51_25",
       "formal_scope": "exact typed implication that a subclass of an adjoined class which omits the adjoined element is included in the original class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -110,7 +164,17 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md",
       "integration_blocked": false,
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -14,117 +14,153 @@
     {
       "id": "PM1:✱35·43",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\alpha\\subset\\beta.\\supset.\\alpha\\upharpoonleft R\\unicode{x2abd}\\beta\\upharpoonleft R\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:α⊂β.⊃.α↿ R⪽β↿ R",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱35·1",
+        "PM1:✱22·1"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35MonotonicityKernel.lean",
       "declaration": "PM.Architecture.Star35MonotonicityKernel.star_35_43",
       "formal_scope": "exact typed monotonicity of left restriction under source-class inclusion; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash:\\alpha\\subset\\beta.\\supset.\\alpha\\upharpoonleft R\\unicode{x2abd}\\beta\\upharpoonleft R\\)"
     },
     {
       "id": "PM1:✱35·431",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\beta\\subset\\gamma.\\supset.R\\upharpoonright \\beta\\unicode{x2abd}R\\upharpoonright \\gamma \\quad[\\text{Proof similar to that of *35·43}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:β⊂γ.⊃.R↾ β⪽R↾ γ [Proof similar to that of *35·43]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱35·1",
+        "PM1:✱3·27"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35MonotonicityKernel.lean",
       "declaration": "PM.Architecture.Star35MonotonicityKernel.star_35_431",
       "formal_scope": "exact typed monotonicity of right restriction under target-class inclusion; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash:\\beta\\subset\\gamma.\\supset.R\\upharpoonright \\beta\\unicode{x2abd}R\\upharpoonright \\gamma \\quad[\\text{Proof similar to that of *35·43}]\\)"
     },
     {
       "id": "PM1:✱35·432",
       "kind": "derived-proposition",
-      "printed": "\\[\\begin{align}\\vdash:\\alpha\\subset\\gamma.\\beta\\subset\\delta.\\supset.\\alpha\\upharpoonleft R\\upharpoonright \\beta&\\unicode{x2abd}\\gamma\\upharpoonleft R\\upharpoonright \\delta\\\\ &[\\text{Proof similar to that of *35·43}]\\end{align}\\]",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:α⊂γ.β⊂δ.⊃.α↿ R↾ β ⪽γ↿ R↾ δ [Proof similar to that of *35·43]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35MonotonicityKernel.lean",
       "declaration": "PM.Architecture.Star35MonotonicityKernel.star_35_432",
       "formal_scope": "exact typed monotonicity of simultaneous restriction under inclusion at both endpoints; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\[\\begin{align}\\vdash:\\alpha\\subset\\gamma.\\beta\\subset\\delta.\\supset.\\alpha\\upharpoonleft R\\upharpoonright \\beta&\\unicode{x2abd}\\gamma\\upharpoonleft R\\upharpoonright \\delta\\\\ &[\\text{Proof similar to that of *35·43}]\\end{align}\\]"
     },
     {
       "id": "PM1:✱35·44",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.\\alpha\\upharpoonleft R\\unicode{x2abd}R\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.α↿ R⪽R",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35MonotonicityKernel.lean",
       "declaration": "PM.Architecture.Star35MonotonicityKernel.star_35_44",
       "formal_scope": "exact typed inclusion of every left-restricted relation in the unrestricted relation; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.\\alpha\\upharpoonleft R\\unicode{x2abd}R\\)"
     },
     {
       "id": "PM1:✱35·441",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash.R\\upharpoonright \\beta\\unicode{x2abd}R \\quad[\\text{Proof similar to that of *35·44}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢.R↾ β⪽R [Proof similar to that of *35·44]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35MonotonicityKernel.lean",
       "declaration": "PM.Architecture.Star35MonotonicityKernel.star_35_441",
       "formal_scope": "exact typed inclusion of every right-restricted relation in the unrestricted relation; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash.R\\upharpoonright \\beta\\unicode{x2abd}R \\quad[\\text{Proof similar to that of *35·44}]\\)"
     }
   ],
   "ci_evidence": {

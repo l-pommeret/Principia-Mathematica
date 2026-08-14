@@ -25,12 +25,36 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_3",
       "formal_scope": "exact typed unit-class reconstruction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱22·33", "PM1:✱22·35", "PM1:✱51·15"],
+      "printed_dependencies": [
+        "PM1:✱22·33",
+        "PM1:✱22·35",
+        "PM1:✱51·15"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱22·33", "PM1:✱22·35", "PM1:✱51·15"], "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md", "editorial_note": "The exact typed theorem proves the displayed equivalence by definitional reduction; the printed derivation citations are not kernel dependencies."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱22·33",
+          "PM1:✱22·35",
+          "PM1:✱51·15"
+        ],
+        "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md",
+        "editorial_note": "The exact typed theorem proves the displayed equivalence by definitional reduction; the printed derivation citations are not kernel dependencies."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·31",
@@ -42,12 +66,40 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_31",
       "formal_scope": "exact typed unit-class reconstruction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱13·195", "PM1:✱22·33", "PM1:✱22·621", "PM1:✱51·15", "PM1:✱51·2"],
+      "printed_dependencies": [
+        "PM1:✱13·195",
+        "PM1:✱22·33",
+        "PM1:✱22·621",
+        "PM1:✱51·15",
+        "PM1:✱51·2"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱13·195", "PM1:✱22·33", "PM1:✱22·621", "PM1:✱51·15", "PM1:✱51·2"], "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md", "editorial_note": "The complete equivalence chain is proved directly from the typed definitions; the historical derivation chain is semantically preserved but not called."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱13·195",
+          "PM1:✱22·33",
+          "PM1:✱22·621",
+          "PM1:✱51·15",
+          "PM1:✱51·2"
+        ],
+        "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md",
+        "editorial_note": "The complete equivalence chain is proved directly from the typed definitions; the historical derivation chain is semantically preserved but not called."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·34",
@@ -59,12 +111,34 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_34",
       "formal_scope": "exact typed unit-class reconstruction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱22·81", "PM1:✱51·2"],
+      "printed_dependencies": [
+        "PM1:✱22·81",
+        "PM1:✱51·2"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱22·81", "PM1:✱51·2"], "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md", "editorial_note": "The complement inclusion equivalence is proved extensionally without invoking the printed lemmas."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱22·81",
+          "PM1:✱51·2"
+        ],
+        "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md",
+        "editorial_note": "The complement inclusion equivalence is proved extensionally without invoking the printed lemmas."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·35",
@@ -76,14 +150,36 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_35",
       "formal_scope": "exact typed unit-class reconstruction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱22·35", "PM1:✱51·2"],
+      "printed_dependencies": [
+        "PM1:✱22·35",
+        "PM1:✱51·2"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱22·35", "PM1:✱51·2"], "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md", "editorial_note": "The singleton/complement inclusion equivalence is proved directly from membership."},
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱22·35",
+          "PM1:✱51·2"
+        ],
+        "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md",
+        "editorial_note": "The singleton/complement inclusion equivalence is proved directly from membership."
+      },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star51-catalogue-review.md"
+      "parser_evidence": "reviews/Star51-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱51·36",
@@ -95,14 +191,36 @@
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_36",
       "formal_scope": "exact typed unit-class reconstruction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱22·811", "PM1:✱51·35"],
+      "printed_dependencies": [
+        "PM1:✱22·811",
+        "PM1:✱51·35"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱22·811", "PM1:✱51·35"], "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md", "editorial_note": "The class/complemented-singleton inclusion equivalence is proved directly from membership."},
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱22·811",
+          "PM1:✱51·35"
+        ],
+        "strict_attempt_evidence": "reviews/Star51-catalogue-07-08-semantic-audit.md",
+        "editorial_note": "The class/complemented-singleton inclusion equivalence is proved directly from membership."
+      },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star51-catalogue-review.md"
+      "parser_evidence": "reviews/Star51-catalogue-review.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

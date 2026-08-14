@@ -1,0 +1,180 @@
+{
+  "batch": "PM1-STAR70-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "440",
+    "scan_leaves": [
+      462
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱70·01",
+      "kind": "definition",
+      "printed": "✱70·01. α →β = Ř (R⃗ʻʻᗡʻR ⊂α. R⃖ʻʻDʻR⊂β) Df",
+      "printed_page": 440,
+      "scan_leaf": 462,
+      "lean_path": "Principia/FirstEdition/Volume1/Star70Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star70Source.star_70_01",
+      "formal_scope": "source-faithful diplomatic catalogue; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "prepared",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formal_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱70·1",
+      "kind": "derived-proposition",
+      "printed": "✱70·1. ⊢: R ∈ α →β.≡. R⃗ʻʻᗡʻR ⊂α. R⃖ʻʻDʻR⊂β [✱20·3.(✱70·01)]",
+      "printed_page": 440,
+      "scan_leaf": 462,
+      "lean_path": "Principia/FirstEdition/Volume1/Star70Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star70Source.star_70_1",
+      "formal_scope": "source-faithful diplomatic catalogue; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱70·01"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formal_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱70·11",
+      "kind": "derived-proposition",
+      "printed": "✱70·11. ⊢:. R ∈α →β.≡: y∈ᗡʻR. ⊃_y.R⃗ʻy∈α:x∈DʻR. ⊃ₓ.R⃖ʻx∈β [✱37·702·703.✱70·1]",
+      "printed_page": 440,
+      "scan_leaf": 462,
+      "lean_path": "Principia/FirstEdition/Volume1/Star70Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star70Source.star_70_11",
+      "formal_scope": "source-faithful diplomatic catalogue; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱37·702",
+        "PM1:✱37·703",
+        "PM1:✱70·1"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formal_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱70·12",
+      "kind": "derived-proposition",
+      "printed": "✱70·12. ⊢: R ∈α →β.≡. R⃗ʻʻV ⊂ α∪ιʻΛ.R⃖ʻʻV ⊂ β∪ιʻΛ [✱70·1.✱53·62·621]",
+      "printed_page": 440,
+      "scan_leaf": 462,
+      "lean_path": "Principia/FirstEdition/Volume1/Star70Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star70Source.star_70_12",
+      "formal_scope": "source-faithful diplomatic catalogue; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱70·1",
+        "PM1:✱53·62",
+        "PM1:✱53·621"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formal_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱70·13",
+      "kind": "derived-proposition",
+      "printed": "✱70·13. ⊢:. R ∈α →β.≡: (y). R⃗ʻy∈ α∪ιʻΛ : (x). R⃖ʻx∈β∪ιʻΛ",
+      "printed_page": 440,
+      "scan_leaf": 462,
+      "lean_path": "Principia/FirstEdition/Volume1/Star70Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star70Source.star_70_13",
+      "formal_scope": "source-faithful diplomatic catalogue; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "integration_status": "prepared",
+      "demonstration_provenance": "follows-printed",
+      "printed_dependencies": [
+        "PM1:✱37·702",
+        "PM1:✱24·104",
+        "PM1:✱5·5",
+        "PM1:✱70·12"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formal_status": "prepared",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

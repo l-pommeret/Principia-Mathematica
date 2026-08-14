@@ -1,0 +1,200 @@
+{
+  "batch": "PM2-STAR113-PRINTED-DEMONSTRATIONS-06",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "118–119",
+    "scan_leaves": [
+      158,
+      159
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "source-only-no-formal-target",
+  "items": [
+    {
+      "id": "PM2:✱113·3",
+      "kind": "derived-proposition",
+      "printed": "✱113·3. ⊢ :. Mult ax.⊃ :κ ∈ Ncʻβ ∩ ClʻNcʻα .⊃ .Σ ʻκ ∈ Ncʻα ×c Ncʻβ",
+      "printed_page": 118,
+      "scan_leaf": 158,
+      "lean_path": "Principia/FirstEdition/Volume2/Star113Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and printed demonstration only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer",
+      "printed_dependencies": [
+        "PM2:✱112·24",
+        "PM2:✱113·12",
+        "PM2:✱113·121",
+        "PM2:✱113·141",
+        "PM2:✱113·25",
+        "PM2:✱113·114",
+        "PM2:✱101·14",
+        "PM1:✱60·362",
+        "PM2:✱112·3",
+        "PM2:✱112·301",
+        "PM1:✱54·102"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱113·4",
+      "kind": "derived-proposition",
+      "printed": "✱113·4. ⊢ .(β ∪ γ ) × α = (β × α )∪ (γ × α )",
+      "printed_page": 118,
+      "scan_leaf": 158,
+      "lean_path": "Principia/FirstEdition/Volume2/Star113Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and printed demonstration only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer",
+      "printed_dependencies": [
+        "PM2:✱113·1",
+        "PM1:✱40·31"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱113·41",
+      "kind": "derived-proposition",
+      "printed": "✱113·41. ⊢ .Ncʻ(β + γ ) ×c Ncʻα = Ncʻ{(β + γ ) × α} = Ncʻ{(β × α ) + (γ × α )} = Ncʻ(β × α ) +c Ncʻ(γ × α )",
+      "printed_page": 118,
+      "scan_leaf": 158,
+      "lean_path": "Principia/FirstEdition/Volume2/Star113Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and printed demonstration only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer",
+      "printed_dependencies": [
+        "PM2:✱113·25",
+        "PM2:✱110·3",
+        "PM2:✱113·4",
+        "PM2:✱110·01",
+        "PM2:✱113·13",
+        "PM2:✱110·12",
+        "PM2:✱113·401",
+        "PM2:✱110·11",
+        "PM2:✱110·152"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱113·43",
+      "kind": "derived-proposition",
+      "printed": "✱113·43. ⊢ .(ν +c ϖ ) ×c μ = μ ×c (ν +c ϖ ) = (μ ×c ν ) +c (μ ×c ϖ )",
+      "printed_page": 119,
+      "scan_leaf": 159,
+      "lean_path": "Principia/FirstEdition/Volume2/Star113Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and printed demonstration only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer",
+      "printed_dependencies": [
+        "PM2:✱113·27",
+        "PM2:✱113·421",
+        "PM2:✱113·204",
+        "PM2:✱110·4"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱113·44",
+      "kind": "derived-proposition",
+      "printed": "✱113·44. ⊢ .(sʻκ ) × α = sʻ(x α )ʻʻκ",
+      "printed_page": 119,
+      "scan_leaf": 159,
+      "lean_path": "Principia/FirstEdition/Volume2/Star113Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and printed demonstration only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer",
+      "printed_dependencies": [
+        "PM2:✱113·1",
+        "PM1:✱42·1",
+        "PM1:✱40·38"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

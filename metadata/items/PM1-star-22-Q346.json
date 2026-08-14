@@ -16,6 +16,7 @@
   "items": [
     {
       "id": "PM1:✱22·33",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : x ε α ∩ β .≡ . x ε α . x ε β",
       "printed_page": 220,
@@ -24,8 +25,8 @@
       "declaration": "PM.Architecture.Star22Q346Kernel.star_22_33",
       "formal_scope": "exact polymorphic typed-class intersection membership equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q346-review.md",
       "printed_dependencies": [
@@ -43,10 +44,21 @@
         ],
         "strict_attempt_evidence": "reviews/Q346-review.md",
         "editorial_note": "The exact endpoint reduces definitionally from the kernel-checked typed intersection definition."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·34",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : x ε α ∪ β .≡ : x ε α .∨. x ε β",
       "printed_page": 220,
@@ -55,8 +67,8 @@
       "declaration": "PM.Architecture.Star22Q346Kernel.star_22_34",
       "formal_scope": "exact polymorphic typed-class union membership equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q346-review.md",
       "printed_dependencies": [
@@ -74,10 +86,21 @@
         ],
         "strict_attempt_evidence": "reviews/Q346-review.md",
         "editorial_note": "The exact endpoint reduces definitionally from the kernel-checked typed union definition."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·35",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : x ε −α .≡ . x ∼ε α",
       "printed_page": 220,
@@ -86,8 +109,8 @@
       "declaration": "PM.Architecture.Star22Q346Kernel.star_22_35",
       "formal_scope": "exact polymorphic typed-class complement membership equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q346-review.md",
       "printed_dependencies": [
@@ -111,10 +134,21 @@
         ],
         "strict_attempt_evidence": "reviews/Q346-review.md",
         "editorial_note": "The exact endpoint reduces definitionally from the typed complement definition."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·351",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . −α ≠ α",
       "printed_page": 220,
@@ -123,8 +157,8 @@
       "declaration": "PM.Architecture.Star22Q346Kernel.star_22_351",
       "formal_scope": "exact polymorphic complement inequality with PM possible-argument nonempty-type convention explicit",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱22·35",
         "PM1:✱5·19",
@@ -152,10 +186,21 @@
         ],
         "strict_attempt_evidence": "reviews/Q346-review.md",
         "editorial_note": "The exact theorem is proved pointwise; Nonempty exposes PM's possible-argument convention."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
       "id": "PM1:✱22·36",
+      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . α ∩ β ε Cls",
       "printed_page": 220,
@@ -164,8 +209,8 @@
       "declaration": "PM.Architecture.Star22Q346Kernel.star_22_36",
       "formal_scope": "exact type-relative classhood of intersection with characteristic functions as explicit predicative codes",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q346-review.md",
       "printed_dependencies": [
@@ -181,12 +226,22 @@
         ],
         "strict_attempt_evidence": "reviews/Q346-review.md",
         "editorial_note": "The typed intersection itself is the predicative characteristic-function code witnessing membership in the type-relative Cls."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

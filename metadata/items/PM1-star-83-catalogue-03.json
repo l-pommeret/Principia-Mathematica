@@ -1,0 +1,186 @@
+{
+  "batch": "PM1-STAR83-CATALOGUE-03",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "533",
+    "scan_leaves": [
+      555
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱83·23",
+      "kind": "derived-proposition",
+      "printed": "✱83·23. ⊢:R∈ ∈_Δʻκ.⊃.DʻR=x̂{(∃ α).α∈ κ.x=Rʻα} [*80·35]",
+      "printed_page": 533,
+      "scan_leaf": 555,
+      "lean_path": "Principia/FirstEdition/Volume1/Star83Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; no formal derivation claimed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱80·35"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱83·23. \\(\\vdash:R\\in {\\in}_{\\Delta}ʻ\\kappa.\\supset.\\text{D}ʻR=\\hat{x}\\{(\\exists \\alpha).\\alpha\\in \\kappa.x=Rʻ\\alpha\\} \\quad[\\text{*80·35}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱83·24",
+      "kind": "derived-proposition",
+      "printed": "✱83·24. ⊢:R∈ ∈_Δʻκ.α∈ κ.x∈ α.⊃.[{R-̇(Rʻα)↓ α}⊍x↓ α]∈ ∈_Δʻκ [*80·41]",
+      "printed_page": 533,
+      "scan_leaf": 555,
+      "lean_path": "Principia/FirstEdition/Volume1/Star83Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; no formal derivation claimed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱80·41"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱83·24. \\(\\vdash:R\\in {\\in}_{\\Delta}ʻ\\kappa.\\alpha\\in \\kappa.x\\in \\alpha.\\supset.[\\{R\\dot{-}(Rʻ\\alpha)\\downarrow \\alpha\\}\\unicode{x228d}x\\downarrow \\alpha]\\in {\\in}_{\\Delta}ʻ\\kappa \\quad[\\text{*80·41}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱83·25",
+      "kind": "derived-proposition",
+      "printed": "✱83·25. ⊢:∃ !∈_Δʻκ.⊃.ṡʻ∈_Δʻκ=∈ ↾ κ [*80·42]",
+      "printed_page": 533,
+      "scan_leaf": 555,
+      "lean_path": "Principia/FirstEdition/Volume1/Star83Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; no formal derivation claimed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱80·42"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱83·25. \\(\\vdash:\\exists !{\\in}_{\\Delta}ʻ\\kappa.\\supset.\\dot{s}ʻ{\\in}_{\\Delta}ʻ\\kappa=\\in \\upharpoonright \\kappa \\quad[\\text{*80·42}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱83·26",
+      "kind": "derived-proposition",
+      "printed": "✱83·26. ⊢:Q=∈ ↾ κ.∃ !Q_Δʻκ.⊃.ṡʻQ_Δʻκ=Q [*83·12·25]",
+      "printed_page": 533,
+      "scan_leaf": 555,
+      "lean_path": "Principia/FirstEdition/Volume1/Star83Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; no formal derivation claimed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱83·12",
+        "PM1:✱83·25"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱83·26. \\(\\vdash:Q=\\in \\upharpoonright \\kappa.\\exists !Q_{\\Delta}ʻ\\kappa.\\supset.\\dot{s}ʻQ_{\\Delta}ʻ\\kappa=Q \\quad[\\text{*83·12·25}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱83·27",
+      "kind": "derived-proposition",
+      "printed": "✱83·27. ⊢:. R⪽∈ .R∈ 1→Cls.≡:α∈ ᗡʻR.⊃_α.Rʻα∈ α [*62·45.*71·16]",
+      "printed_page": 533,
+      "scan_leaf": 555,
+      "lean_path": "Principia/FirstEdition/Volume1/Star83Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; no formal derivation claimed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱62·45",
+        "PM1:✱71·16"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱83·27. \\(\\vdash\\colon\\ldotp R\\unicode{x2abd}\\in .R\\in 1\\rightarrow \\text{Cls}.\\equiv:\\alpha\\in \\text{ᗡ}ʻR.\\supset_{\\alpha}.Rʻ\\alpha\\in \\alpha \\quad[\\text{*62·45.*71·16}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

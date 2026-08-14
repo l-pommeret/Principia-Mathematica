@@ -33,8 +33,8 @@
       "declaration": "PM.Architecture.Star14Q305Kernel.star_14_15",
       "formal_scope": "exact contextual description substitution equivalence under identity",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱14·1",
         "PM1:✱13·195",
@@ -42,9 +42,28 @@
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱13·192","PM1:✱13·195","PM1:✱14·1"],"strict_attempt_evidence":"reviews/Q305-review.md","editorial_note":"The theorem-specific witness closes constructively from explicit inputs; the printed derivation chain creates no direct indexed call in the final declaration body."},
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱13·192",
+          "PM1:✱13·195",
+          "PM1:✱14·1"
+        ],
+        "strict_attempt_evidence": "reviews/Q305-review.md",
+        "editorial_note": "The theorem-specific witness closes constructively from explicit inputs; the printed derivation chain creates no direct indexed call in the final declaration body."
+      },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q305-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱14·16",
@@ -56,15 +75,13 @@
       "declaration": "PM.Architecture.Star14Q305Kernel.star_14_16",
       "formal_scope": "exact contextual substitution equivalence across two-description identity",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱14·1",
         "PM1:✱13·192",
-        "PM1:✱14·13",
-        "PM1:✱14·15",
-        "PM1:✱10·1",
-        "PM1:✱10·23"
+        "PM1:✱14·13·15",
+        "PM1:✱10·1·23"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star14Q305Kernel.star_14_15"
@@ -72,9 +89,30 @@
       "normalized_dependencies": [
         "PM1:✱14·15"
       ],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·1","PM1:✱10·23","PM1:✱13·192","PM1:✱14·1","PM1:✱14·13"],"strict_attempt_evidence":"reviews/Q305-review.md","editorial_note":"The final declaration directly reuses ✱14·15; the remaining printed proof steps are retained as historical but unused citations."},
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱10·1",
+          "PM1:✱10·23",
+          "PM1:✱13·192",
+          "PM1:✱14·1",
+          "PM1:✱14·13"
+        ],
+        "strict_attempt_evidence": "reviews/Q305-review.md",
+        "editorial_note": "The final declaration directly reuses ✱14·15; the remaining printed proof steps are retained as historical but unused citations."
+      },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q305-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱14·17",
@@ -86,15 +124,15 @@
       "declaration": "PM.Architecture.Star14Q305Kernel.star_14_17",
       "formal_scope": "exact description identity equivalence quantified over every predicative one-place context",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱14·15",
-        "PM1:✱10·11",
-        "PM1:✱10·21",
+        "PM1:✱10·11·21",
         "PM1:✱10·1",
         "PM1:✱4·22",
         "PM1:✱13·15",
+        "PM1:✱10·11·23",
         "PM1:✱12·1"
       ],
       "lean_dependencies": [
@@ -103,9 +141,31 @@
       "normalized_dependencies": [
         "PM1:✱14·15"
       ],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·1","PM1:✱10·11","PM1:✱10·21","PM1:✱12·1","PM1:✱13·15","PM1:✱4·22"],"strict_attempt_evidence":"reviews/Q305-review.md","editorial_note":"The final declaration directly reuses ✱14·15; the remaining printed proof steps are retained as historical but unused citations."},
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱10·1",
+          "PM1:✱10·11",
+          "PM1:✱10·21",
+          "PM1:✱12·1",
+          "PM1:✱13·15",
+          "PM1:✱4·22"
+        ],
+        "strict_attempt_evidence": "reviews/Q305-review.md",
+        "editorial_note": "The final declaration directly reuses ✱14·15; the remaining printed proof steps are retained as historical but unused citations."
+      },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Q305-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -4,21 +4,233 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "177–178",
-    "scan_leaves": [199, 200],
+    "scan_leaves": [
+      199,
+      200
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
     "leaf_derivatives": [
-      {"scan_leaf":199,"printed_page":177,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page199-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"377a277639f9d194f712cf5d0a88d5979b7243b26088b04133d0be91464b4960"},
-      {"scan_leaf":200,"printed_page":178,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page200-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"4b1f6c43c8b76fff4376cf88dcc8746fff2e6a9306793f0c8359f352b324decd"}
+      {
+        "scan_leaf": 199,
+        "printed_page": 177,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page199-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "377a277639f9d194f712cf5d0a88d5979b7243b26088b04133d0be91464b4960"
+      },
+      {
+        "scan_leaf": 200,
+        "printed_page": 178,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page200-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "4b1f6c43c8b76fff4376cf88dcc8746fff2e6a9306793f0c8359f352b324decd"
+      }
     ],
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
-  "items": [
-    {"id":"PM1:✱13·11","kind":"derived-proposition","printed":"⊢ :: x = y .≡ : φ!x .≡φ . φ!y","printed_page":177,"scan_leaf":199,"lean_path":"Principia/Architecture/Star13Q291Targets.lean","declaration":"PM.Architecture.Star13Q291Targets.star_13_11_target","formal_scope":"exact canonical propositional envelope; predicative function-quantified member explicit","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-identity-and-predicativity","printed_dependencies":["PM1:✱10·22","PM1:✱13·1","PM1:✱13·101","PM1:✱1·7","PM1:✱10·11·21"],"normalized_dependencies":[]},
-    {"id":"PM1:✱13·12","kind":"derived-proposition","printed":"⊢ : x = y .⊃ . ψx .≡ . ψy","printed_page":178,"scan_leaf":200,"lean_path":"Principia/Architecture/Star13Q291Targets.lean","declaration":"PM.Architecture.Star13Q291Targets.star_13_12_target","formal_scope":"exact canonical identity-to-function-value-equivalence target","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-identity-predicativity-and-reducibility","printed_dependencies":["PM1:✱13·101"],"normalized_dependencies":[]},
-    {"id":"PM1:✱13·13","kind":"derived-proposition","printed":"⊢ : ψx . x = y .⊃ . ψy","printed_page":178,"scan_leaf":200,"lean_path":"Principia/Architecture/Star13Q291Targets.lean","declaration":"PM.Architecture.Star13Q291Targets.star_13_13_target","formal_scope":"exact canonical identity-substitution implication target","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-identity-predicativity-and-reducibility","printed_dependencies":["PM1:✱13·101"],"normalized_dependencies":[]},
-    {"id":"PM1:✱13·14","kind":"derived-proposition","printed":"⊢ : ψx . ∼ψy .⊃ . x ≠ y","printed_page":178,"scan_leaf":200,"lean_path":"Principia/Architecture/Star13Q291Targets.lean","declaration":"PM.Architecture.Star13Q291Targets.star_13_14_target","formal_scope":"exact canonical inequality-consequence target","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-identity-and-predicativity","printed_dependencies":["PM1:✱13·13","PM1:✱4·14"],"normalized_dependencies":[]},
-    {"id":"PM1:✱13·15","kind":"derived-proposition","printed":"⊢ . x = x","printed_page":178,"scan_leaf":200,"lean_path":"Principia/Architecture/Star13Q291Targets.lean","declaration":"PM.Architecture.Star13Q291Targets.star_13_15_target","formal_scope":"exact canonical reflexive-identity target; PM identity remains object language","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-identity-and-predicativity","printed_dependencies":["PM1:Id","PM1:✱10·11","PM1:✱13·1"],"normalized_dependencies":[]}
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
   ],
-  "ci_evidence": {"commit":"pending","run":"pending","conclusion":"pending"}
+  "items": [
+    {
+      "id": "PM1:✱13·11",
+      "kind": "derived-proposition",
+      "printed": "⊢ :: x = y .≡ : φ!x .≡φ . φ!y",
+      "printed_page": 177,
+      "scan_leaf": 199,
+      "lean_path": "Principia/Architecture/Star13Q291Targets.lean",
+      "declaration": "PM.Architecture.Star13Q291Targets.star_13_11_target",
+      "formal_scope": "blocked at v1: partial Raw syntax shell only; the function-quantified predicative equivalence is supplied as an opaque parameter and no PM.Derivation asserts the printed formula",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-t1-t9-object-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "Q290 leaves ✱13·1 and ✱13·101 without PM object derivations. In addition, canonical Raw has no predicative-function binder, so the right member remains opaque and cannot be the endpoint of a strict T1–T9 proof.",
+      "printed_dependencies": [
+        "PM1:✱10·22",
+        "PM1:✱13·1",
+        "PM1:✱13·101",
+        "PM1:✱1·7",
+        "PM1:✱10·11·21"
+      ],
+      "lean_dependencies": [
+        "PM.Elementary.equiv"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱4·01"
+      ],
+      "semantic_audit_status": "blocked-syntax-target-no-object-derivation",
+      "formalization_level": "pm-syntax-target",
+      "semantic_audit_evidence": "reviews/Q291-v1-kernel-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱13·12",
+      "kind": "derived-proposition",
+      "printed": "⊢ : x = y .⊃ . ψx .≡ . ψy",
+      "printed_page": 178,
+      "scan_leaf": 200,
+      "lean_path": "Principia/Architecture/Star13Q291Targets.lean",
+      "declaration": "PM.Architecture.Star13Q291Targets.star_13_12_target",
+      "formal_scope": "blocked at v1: exact outer Raw formula constructor only, with no PM identity/reducibility syntax and no PM.Derivation of the asserted equivalence",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-t1-t9-object-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "The exact outer Raw envelope is present, but blocked ✱13·101 supplies no PM judgement to feed the printed Comp/Transp chain.",
+      "printed_dependencies": [
+        "PM1:✱13·101"
+      ],
+      "lean_dependencies": [
+        "PM.Elementary.equiv",
+        "PM.Elementary.imp"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·01",
+        "PM1:✱4·01"
+      ],
+      "semantic_audit_status": "blocked-syntax-target-no-object-derivation",
+      "formalization_level": "pm-syntax-target",
+      "semantic_audit_evidence": "reviews/Q291-v1-kernel-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱13·13",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ψx . x = y .⊃ . ψy",
+      "printed_page": 178,
+      "scan_leaf": 200,
+      "lean_path": "Principia/Architecture/Star13Q291Targets.lean",
+      "declaration": "PM.Architecture.Star13Q291Targets.star_13_13_target",
+      "formal_scope": "blocked at v1: exact outer Raw implication constructor only; no PM.Derivation connects object-language identity to substitution",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-t1-t9-object-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "The exact outer Raw envelope is present, but blocked ✱13·101 supplies no PM judgement; Comm and Imp are named proof methods, not licenses for new constructors.",
+      "printed_dependencies": [
+        "PM1:✱13·101"
+      ],
+      "lean_dependencies": [
+        "PM.Elementary.conj",
+        "PM.Elementary.imp"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·01",
+        "PM1:✱3·01"
+      ],
+      "semantic_audit_status": "blocked-syntax-target-no-object-derivation",
+      "formalization_level": "pm-syntax-target",
+      "semantic_audit_evidence": "reviews/Q291-v1-kernel-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱13·14",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ψx . ∼ψy .⊃ . x ≠ y",
+      "printed_page": 178,
+      "scan_leaf": 200,
+      "lean_path": "Principia/Architecture/Star13Q291Targets.lean",
+      "declaration": "PM.Architecture.Star13Q291Targets.star_13_14_target",
+      "formal_scope": "blocked at v1: exact outer Raw implication constructor only; neither diversity as PM identity-negation nor the printed derivation is asserted",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-t1-t9-object-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "The exact outer Raw envelope is present, but ✱13·13 is blocked and no object derivation through ✱4·14 exists in this fragment.",
+      "printed_dependencies": [
+        "PM1:✱13·13",
+        "PM1:✱4·14"
+      ],
+      "lean_dependencies": [
+        "PM.Elementary.conj",
+        "PM.Elementary.imp"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·01",
+        "PM1:✱3·01"
+      ],
+      "semantic_audit_status": "blocked-syntax-target-no-object-derivation",
+      "formalization_level": "pm-syntax-target",
+      "semantic_audit_evidence": "reviews/Q291-v1-kernel-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱13·15",
+      "kind": "derived-proposition",
+      "printed": "⊢ . x = x",
+      "printed_page": 178,
+      "scan_leaf": 200,
+      "lean_path": "Principia/Deduction/Star13Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_13_15",
+      "formal_scope": "exact unconditional ramified derivation of Leibniz reflexivity",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "ramified-object-derivation",
+      "integration_blocked": false,
+      "printed_dependencies": [
+        "PM1:✱2·08",
+        "PM1:✱9·13"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "exact-ramified-object-derivation",
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "editorial-reconstruction",
+      "semantic_audit_evidence": "reviews/Q291-v1-kernel-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "integration_status": "blocked-no-t1-t9-object-derivations",
+  "review_evidence": [
+    "reviews/Q291-v1-kernel-audit.md"
+  ]
 }

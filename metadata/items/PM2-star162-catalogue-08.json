@@ -1,0 +1,77 @@
+{
+  "batch": "PM2-STAR162-CATALOGUE-08",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "367, 368"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱162·44",
+      "kind": "derived-proposition",
+      "printed": "⊢ . Σ ʻ(P⇸ Λ̇ ) = Σ ʻ(Λ̇ ⇷P) = Σ ʻP",
+      "printed_page": 367,
+      "lean_path": "Principia/FirstEdition/Volume2/Star162Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱162·43",
+        "PM2:✱160·21",
+        "PM2:✱162·4",
+        "PM1:✱25·24",
+        "PM2:✱162·26",
+        "PM2:✱161·1"
+      ],
+      "printed_latex_witness": "\\(\\vdash . \\Sigma ʻ(P\\unicode{x21f8} \\dot{\\Lambda} ) = \\Sigma ʻ(\\dot{\\Lambda} \\unicode{x21f7}P) = \\Sigma ʻP\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱162·45",
+      "kind": "derived-proposition",
+      "printed": "⊢ :∃̇ !P.Σ ʻP=Λ̇ .≡ .P=Λ̇ ↓ Λ̇",
+      "printed_page": 368,
+      "lean_path": "Principia/FirstEdition/Volume2/Star162Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱162·42",
+        "PM1:✱33·16",
+        "PM1:✱55·16"
+      ],
+      "printed_latex_witness": "\\(\\vdash :\\dot{\\exists} !P.\\Sigma ʻP=\\dot{\\Lambda} .\\equiv .P=\\dot{\\Lambda} \\downarrow \\dot{\\Lambda}\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

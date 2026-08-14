@@ -18,7 +18,7 @@
     {
       "id": "PM1:✱93·132",
       "kind": "derived-proposition",
-      "printed": "✱93·132. ⊢ . min_P→ʻᗡʻT=ᗡʻT−ᗡʻ(T|P)",
+      "printed": "✱93·132. ⊢.min⃗_PʻᗡʻT=ᗡʻT-ᗡʻ(T| P)",
       "printed_page": 611,
       "scan_leaf": 633,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
@@ -27,17 +27,30 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-extra-field-inclusion-hypothesis",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱93·111",
+        "PM1:✱37·32"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱93·21",
       "kind": "derived-proposition",
-      "printed": "✱93·21. ⊢ : α∈genʻP .≡. (∃T).T∈PotidʻP . α=ᗡʻT−ᗡʻ(T|P)",
+      "printed": "✱93·21. ⊢:α∈ genʻP.≡.(∃ T).T∈ PotidʻP.α=ᗡʻT-ᗡʻ(T| P) [✱93·2·132]",
       "printed_page": 611,
       "scan_leaf": 633,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
@@ -50,13 +63,23 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱93·22",
       "kind": "derived-proposition",
-      "printed": "✱93·22. ⊢ . B→ʻP∈genʻP",
+      "printed": "✱93·22. ⊢.B⃗ʻP∈ genʻP [✱93·2·13.✱91·35]",
       "printed_page": 611,
       "scan_leaf": 633,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
@@ -69,12 +92,24 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "semantic_audit_status": "strict-equivalence-refused",
-      "semantic_audit_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱93·221",
       "kind": "derived-proposition",
-      "printed": "✱93·221. ⊢ . ᗡʻP−ᗡʻP²∈genʻP",
+      "printed": "✱93·221. ⊢.ᗡʻP-ᗡʻP²∈ genʻP [✱93·2·131.✱91·351·23]",
       "printed_page": 611,
       "scan_leaf": 633,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
@@ -87,12 +122,24 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "semantic_audit_status": "strict-equivalence-refused",
-      "semantic_audit_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱93·23",
       "kind": "derived-proposition",
-      "printed": "✱93·23. ⊢ . genʻP=ιʻB→ʻP∪min_P→ʻʻᗡʻʻPotʻP",
+      "printed": "✱93·23. ⊢.genʻP=ιʻB⃗ʻP∪ min⃗_PʻʻᗡʻʻPotʻP",
       "printed_page": 611,
       "scan_leaf": 633,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
@@ -101,12 +148,27 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-conclusion-assumed-and-family-erased",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱91·23",
+        "PM1:✱37·22",
+        "PM1:✱53·31",
+        "PM1:✱93·13"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -4,7 +4,9 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "181",
-    "scan_leaves": [203],
+    "scan_leaves": [
+      203
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
     "leaf_derivatives": [
       {
@@ -16,10 +18,15 @@
     ],
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
   "source_status": "source-catalogued-PM-VERBATIM",
   "integration_status": "integrated-local",
-  "review_evidence": ["reviews/Q296-canonical-integration.md"],
+  "review_evidence": [
+    "reviews/Q296-canonical-integration.md"
+  ],
   "items": [
     {
       "id": "PM1:✱14·01",
@@ -32,24 +39,15 @@
       "formal_scope": "Exact contextual reduction by canonical definitional equality; description is not a term.",
       "source_status": "source-catalogued",
       "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
       "integration_blocked": false,
       "integration_status": "integrated-local",
       "printed_dependencies": [],
       "lean_dependencies": [
-        "PM.Elementary.conj"
+        "CoreFormula.uniquely"
       ],
-      "normalized_dependencies": [
-        "PM1:✱3·01"
-      ],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [
-          "PM1:✱3·01"
-        ],
-        "printed_but_unused": [],
-        "strict_attempt_evidence": "reviews/Q296-canonical-integration.md",
-        "editorial_note": "The contextual definiens uses the canonical conjunction constructor realizing ✱3·01; the definition prints no proof citation."
-      }
+      "normalized_dependencies": [],
+      "formalization_level": "pm-derivation-v1"
     }
   ],
   "ci_evidence": {

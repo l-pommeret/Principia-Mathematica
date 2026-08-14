@@ -1,0 +1,181 @@
+{
+  "batch": "PM1-STAR25-CATALOGUE-01-BLOCKED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "241",
+    "scan_leaves": [
+      263
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱25·01",
+      "kind": "definition",
+      "printed": "✱25·01. V̇ = x̂ŷ(x = x . y = y) Df",
+      "printed_page": 241,
+      "scan_leaf": 263,
+      "lean_path": "Principia/Architecture/Star25OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star25OpeningKernel.star_25_01",
+      "formal_scope": "blocked v1: the existing declaration is only a host-level equality of predicates; no PM relation-expression AST or audited definitional judgment exists",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "secondary_prop_declaration": "PM.Architecture.Star25OpeningKernel.star_25_01",
+      "semantic_audit_status": "blocked-primary-judgment-absent",
+      "pm_verbatim": "*25·01. \\(\\dot{\\text{V}} = \\hat{x}\\hat{y}(x = x . y = y) \\quad \\text{Df}\\) ",
+      "printed_latex_witness": "*25·01. \\(\\dot{\\text{V}} = \\hat{x}\\hat{y}(x = x . y = y) \\quad \\text{Df}\\) ",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱25·02",
+      "kind": "definition",
+      "printed": "✱25·02. Λ̇ = -̇V̇ Df",
+      "printed_page": 241,
+      "scan_leaf": 263,
+      "lean_path": "Principia/Architecture/Star25OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star25OpeningKernel.star_25_02",
+      "formal_scope": "blocked v1: host-level predicate complementation is available only as a secondary semantic theorem; the printed relation definition has no PM AST judgment",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "secondary_prop_declaration": "PM.Architecture.Star25OpeningKernel.star_25_02",
+      "semantic_audit_status": "blocked-primary-judgment-absent",
+      "pm_verbatim": "*25·02. \\(\\dot{\\Lambda} = \\dot{-}\\dot{\\text{V}} \\quad \\text{Df}\\) ",
+      "printed_latex_witness": "*25·02. \\(\\dot{\\Lambda} = \\dot{-}\\dot{\\text{V}} \\quad \\text{Df}\\) ",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱25·03",
+      "kind": "definition",
+      "printed": "✱25·03. ∃̇!R .=. (∃ x,y) . xRy Df",
+      "printed_page": 241,
+      "scan_leaf": 263,
+      "lean_path": "Principia/Architecture/Star25OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star25OpeningKernel.star_25_03",
+      "formal_scope": "blocked v1: Lean supplies a reflexive Prop-level unfolding, but no syntax node and definitional judgment for PM's dotted relation-existence expression",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "secondary_prop_declaration": "PM.Architecture.Star25OpeningKernel.star_25_03",
+      "semantic_audit_status": "blocked-primary-judgment-absent",
+      "pm_verbatim": "*25·03. \\(\\dot{\\exists}!R .=. (\\exists x,y) . xRy \\quad \\text{Df}\\) ",
+      "printed_latex_witness": "*25·03. \\(\\dot{\\exists}!R .=. (\\exists x,y) . xRy \\quad \\text{Df}\\) ",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱25·1",
+      "kind": "derived-proposition",
+      "printed": "✱25·1. ⊢. Λ̇ ≠ V̇",
+      "printed_page": 241,
+      "scan_leaf": 263,
+      "lean_path": "Principia/Architecture/Star25OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star25OpeningKernel.star_25_1",
+      "formal_scope": "blocked v1: the current theorem proves semantic predicate inequality under host Nonempty instances; it is not a kernel derivation of the printed PM judgment",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "secondary_prop_declaration": "PM.Architecture.Star25OpeningKernel.star_25_1",
+      "semantic_audit_status": "blocked-primary-derivation-absent",
+      "pm_verbatim": "*25·1. \\(\\vdash. \\dot{\\Lambda} \\neq \\dot{\\text{V}}\\) ",
+      "printed_latex_witness": "*25·1. \\(\\vdash. \\dot{\\Lambda} \\neq \\dot{\\text{V}}\\) ",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱25·101",
+      "kind": "derived-proposition",
+      "printed": "✱25·101. ⊢. V̇ = -̇Λ̇",
+      "printed_page": 241,
+      "scan_leaf": 263,
+      "lean_path": "Principia/Architecture/Star25OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star25OpeningKernel.star_25_101",
+      "formal_scope": "blocked v1: the current extensional Prop proof is only a semantic companion and does not inhabit a PM judgment/derivation type",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "secondary_prop_declaration": "PM.Architecture.Star25OpeningKernel.star_25_101",
+      "semantic_audit_status": "blocked-primary-derivation-absent",
+      "pm_verbatim": "*25·101. \\(\\vdash. \\dot{\\text{V}} = \\dot{-}\\dot{\\Lambda}\\) ",
+      "printed_latex_witness": "*25·101. \\(\\vdash. \\dot{\\text{V}} = \\dot{-}\\dot{\\Lambda}\\) ",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "parser_status": "reviewed-gap",
+  "parser_evidence": "reviews/Star25-v1-primary-judgment-audit.md"
+}

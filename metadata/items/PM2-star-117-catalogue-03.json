@@ -1,12 +1,193 @@
 {
-  "batch":"PM2-STAR117-CATALOGUE-03","edition":"first","volume":2,
-  "source_range":{"printed_pages":"176","scan_leaves":[216],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu","project_gutenberg":"https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},
-  "witnesses":["PM2-1912-SCAN","PG78255"],"review_evidence":["reviews/Star117-catalogue-03-semantic-audit.md"],
-  "items":[
-    {"id":"PM2:✱117·23","kind":"derived-proposition","printed":"✱117·23. ⊢ : Ncʻα ≥ Ncʻβ . Ncʻβ ≥ Ncʻα .≡. Ncʻα=Ncʻβ","printed_page":176,"scan_leaf":216,"lean_path":"Principia/Architecture/Star117OpeningKernel.lean","declaration":"PM.Architecture.Star117OpeningKernel.star_117_23","formal_scope":"refused: no same-number declaration and no Nc/cardinal-object interpretation","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-declaration-and-cardinal-interpretation","parser_status":"reviewed-gap","parser_evidence":"reviews/Star117-catalogue-03-semantic-audit.md","printed_dependencies":["PM2:✱117·211","PM2:✱117·22"],"normalized_dependencies":[],"lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM2:✱117·211","PM2:✱117·22"],"strict_attempt_evidence":"reviews/Star117-catalogue-03-semantic-audit.md","editorial_note":"Both printed citations are not yet catalogued; no normalized edges are fabricated."}},
-    {"id":"PM2:✱117·24","kind":"derived-proposition","printed":"✱117·24. ⊢ : μ ≥ ν .≡. (∃α,β). μ=N₀cʻα . ν=N₀cʻβ . Ncʻα ≥ Ncʻβ","printed_page":176,"scan_leaf":216,"lean_path":"Principia/Architecture/Star117OpeningKernel.lean","declaration":"PM.Architecture.Star117OpeningKernel.star_117_24","formal_scope":"refused: no same-number declaration and no quantified cardinal-representative theorem","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-declaration-and-cardinal-interpretation","parser_status":"reviewed-gap","parser_evidence":"reviews/Star117-catalogue-03-semantic-audit.md","printed_dependencies":[],"normalized_dependencies":[],"lean_dependencies":[]},
-    {"id":"PM2:✱117·241","kind":"derived-proposition","printed":"✱117·241. ⊢ : μ ≥ ν .≡. (∃α,β). μ=N₀cʻα . ν=N₀cʻβ . ∃!Clʻα∩Ncʻβ","printed_page":176,"scan_leaf":216,"lean_path":"Principia/Architecture/Star117OpeningKernel.lean","declaration":"PM.Architecture.Star117OpeningKernel.star_117_241","formal_scope":"refused: no same-number declaration or cardinal/class-existence interpretation","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-declaration-and-cardinal-interpretation","parser_status":"reviewed-gap","parser_evidence":"reviews/Star117-catalogue-03-semantic-audit.md","printed_dependencies":["PM2:✱117·24","PM2:✱117·22"],"normalized_dependencies":["PM2:✱117·24"],"lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM2:✱117·22"],"strict_attempt_evidence":"reviews/Star117-catalogue-03-semantic-audit.md","editorial_note":"The uncatalogued printed citation ✱117·22 creates no normalized edge."}},
-    {"id":"PM2:✱117·242","kind":"derived-proposition","printed":"✱117·242. ⊢ :: μ,ν∈NC .⊃: μ ≥ ν .≡. (∃α,β). α∈μ . β∈ν . ∃!Clʻα∩Ncʻβ","printed_page":176,"scan_leaf":216,"lean_path":"Principia/Architecture/Star117OpeningKernel.lean","declaration":"PM.Architecture.Star117OpeningKernel.star_117_242","formal_scope":"refused: no same-number declaration or NC membership/representative interpretation","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-declaration-and-cardinal-interpretation","parser_status":"reviewed-gap","parser_evidence":"reviews/Star117-catalogue-03-semantic-audit.md","printed_dependencies":["PM2:✱117·241","PM2:✱103·26"],"normalized_dependencies":["PM2:✱117·241","PM2:✱103·26"],"lean_dependencies":[]},
-    {"id":"PM2:✱117·243","kind":"derived-proposition","printed":"✱117·243. ⊢ :: μ ≥ ν .≡: (∃α,β): μ=N₀cʻα . ν=N₀cʻβ : (∃ρ). ρ⊂α . ρ sm β","printed_page":176,"scan_leaf":216,"lean_path":"Principia/Architecture/Star117OpeningKernel.lean","declaration":"PM.Architecture.Star117OpeningKernel.star_117_243","formal_scope":"refused: no same-number declaration or cardinal-representative interpretation","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-missing-declaration-and-cardinal-interpretation","parser_status":"reviewed-gap","parser_evidence":"reviews/Star117-catalogue-03-semantic-audit.md","printed_dependencies":["PM2:✱117·24","PM2:✱117·221"],"normalized_dependencies":["PM2:✱117·24","PM2:✱117·221"],"lean_dependencies":[]}
-  ],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}
+  "batch": "PM2-STAR117-CATALOGUE-03",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "176",
+    "scan_leaves": [
+      216
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "review_evidence": [
+    "reviews/Star117-catalogue-03-semantic-audit.md"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱117·23",
+      "kind": "derived-proposition",
+      "printed": "✱117·23. ⊢ : Ncʻα ≥ Ncʻβ . Ncʻβ ≥ Ncʻα .≡. Ncʻα=Ncʻβ",
+      "printed_page": 176,
+      "scan_leaf": 216,
+      "lean_path": "Principia/Architecture/Star117OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star117OpeningKernel.star_117_23",
+      "formal_scope": "refused: no same-number declaration and no Nc/cardinal-object interpretation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-declaration-and-cardinal-interpretation",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM2:✱117·211",
+        "PM2:✱117·22"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM2:✱117·211",
+          "PM2:✱117·22"
+        ],
+        "strict_attempt_evidence": "reviews/Star117-catalogue-03-semantic-audit.md",
+        "editorial_note": "Both printed citations are not yet catalogued; no normalized edges are fabricated."
+      },
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱117·24",
+      "kind": "derived-proposition",
+      "printed": "✱117·24. ⊢ : μ ≥ ν .≡. (∃α,β). μ=N₀cʻα . ν=N₀cʻβ . Ncʻα ≥ Ncʻβ",
+      "printed_page": 176,
+      "scan_leaf": 216,
+      "lean_path": "Principia/Architecture/Star117OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star117OpeningKernel.star_117_24",
+      "formal_scope": "refused: no same-number declaration and no quantified cardinal-representative theorem",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-declaration-and-cardinal-interpretation",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱117·241",
+      "kind": "derived-proposition",
+      "printed": "✱117·241. ⊢ : μ ≥ ν .≡. (∃α,β). μ=N₀cʻα . ν=N₀cʻβ . ∃!Clʻα∩Ncʻβ",
+      "printed_page": 176,
+      "scan_leaf": 216,
+      "lean_path": "Principia/Architecture/Star117OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star117OpeningKernel.star_117_241",
+      "formal_scope": "refused: no same-number declaration or cardinal/class-existence interpretation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-declaration-and-cardinal-interpretation",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM2:✱117·24",
+        "PM2:✱117·22"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM2:✱117·22"
+        ],
+        "strict_attempt_evidence": "reviews/Star117-catalogue-03-semantic-audit.md",
+        "editorial_note": "The uncatalogued printed citation ✱117·22 creates no normalized edge."
+      },
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱117·242",
+      "kind": "derived-proposition",
+      "printed": "✱117·242. ⊢ :: μ,ν∈NC .⊃: μ ≥ ν .≡. (∃α,β). α∈μ . β∈ν . ∃!Clʻα∩Ncʻβ",
+      "printed_page": 176,
+      "scan_leaf": 216,
+      "lean_path": "Principia/Architecture/Star117OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star117OpeningKernel.star_117_242",
+      "formal_scope": "refused: no same-number declaration or NC membership/representative interpretation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-declaration-and-cardinal-interpretation",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM2:✱117·241",
+        "PM2:✱103·26"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱117·243",
+      "kind": "derived-proposition",
+      "printed": "✱117·243. ⊢ :: μ ≥ ν .≡: (∃α,β): μ=N₀cʻα . ν=N₀cʻβ : (∃ρ). ρ⊂α . ρ sm β",
+      "printed_page": 176,
+      "scan_leaf": 216,
+      "lean_path": "Principia/Architecture/Star117OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star117OpeningKernel.star_117_243",
+      "formal_scope": "refused: no same-number declaration or cardinal-representative interpretation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-declaration-and-cardinal-interpretation",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [
+        "PM2:✱117·24",
+        "PM2:✱117·221"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

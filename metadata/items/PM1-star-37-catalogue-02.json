@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR37-CATALOGUE-02",
+  "batch": "PM1-STAR37-CATALOGUE-02-BLOCKED-STRUCTURAL",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -21,7 +21,7 @@
     {
       "id": "PM1:✱37·33",
       "kind": "derived-proposition",
-      "printed": "✱37·33. \\vdash.(P\\mid Q)ʻʻ\\gamma=PʻʻQʻʻ\\gamma",
+      "printed": "✱37·33. ⊢.(P| Q)ʻʻγ=PʻʻQʻʻγ",
       "printed_page": 302,
       "scan_leaf": 324,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -29,15 +29,34 @@
       "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration proving that the image under a relational product is the iterated image",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "integration_status": "blocked-missing-object-judgement-and-real-derivation",
+      "structural_formalization_status": "blocked-non-v1-source-only-no-t1-t9-target",
+      "structural_audit_evidence": "reviews/Star37-catalogue-02-structural-audit.md",
+      "printed_dependencies": [
+        "PM1:✱34·1",
+        "PM1:✱11·55",
+        "PM1:✱11·23",
+        "PM1:✱37·1"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·33. \\vdash.(P\\mid Q)ʻʻ\\gamma=PʻʻQʻʻ\\gamma",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·401",
       "kind": "derived-proposition",
-      "printed": "✱37·401. \\vdash.\\text{D}ʻ(R\\upharpoonright \\beta)=Rʻʻ\\beta \\quad[\\text{Similar proof}]",
+      "printed": "✱37·401. ⊢.Dʻ(R↾ β)=Rʻʻβ [Similar proof]",
       "printed_page": 303,
       "scan_leaf": 325,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -45,15 +64,29 @@
       "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration proving the domain characterization of the restricted relation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
+      "integration_status": "blocked-missing-object-judgement-and-real-derivation",
+      "structural_formalization_status": "blocked-non-v1-source-only-no-t1-t9-target",
+      "structural_audit_evidence": "reviews/Star37-catalogue-02-structural-audit.md",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·401. \\vdash.\\text{D}ʻ(R\\upharpoonright \\beta)=Rʻʻ\\beta \\quad[\\text{Similar proof}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·412",
       "kind": "derived-proposition",
-      "printed": "✱37·412. \\vdash.(R\\upharpoonright \\alpha)ʻʻ\\beta=Rʻʻ(\\alpha\\cap \\beta)",
+      "printed": "✱37·412. ⊢.(R↾ α)ʻʻβ=Rʻʻ(α∩ β)",
       "printed_page": 304,
       "scan_leaf": 326,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -61,15 +94,32 @@
       "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration proving the image characterization after restriction",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "integration_status": "blocked-missing-object-judgement-and-real-derivation",
+      "structural_formalization_status": "blocked-non-v1-source-only-no-t1-t9-target",
+      "structural_audit_evidence": "reviews/Star37-catalogue-02-structural-audit.md",
+      "printed_dependencies": [
+        "PM1:✱35·31",
+        "PM1:✱37·401"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·412. \\vdash.(R\\upharpoonright \\alpha)ʻʻ\\beta=Rʻʻ(\\alpha\\cap \\beta)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·41",
       "kind": "derived-proposition",
-      "printed": "✱37·41. \\vdash.\\text{D}ʻ(R\\unicode{x0294f}\\alpha)=\\alpha\\cap Rʻʻ\\alpha.\\text{ᗡ}ʻ(R\\unicode{x0294f}\\alpha)=\\alpha\\cap \\breve{R}ʻʻ\\alpha \\quad[\\text{*37·402.*36·11}]",
+      "printed": "✱37·41. ⊢.Dʻ(R⥏α)=α∩ Rʻʻα.ᗡʻ(R⥏α)=α∩ Řʻʻα [*37·402.*36·11]",
       "printed_page": 303,
       "scan_leaf": 325,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -77,15 +127,32 @@
       "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration proving the two printed domain equalities for the common restriction",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "integration_status": "blocked-missing-object-judgement-and-real-derivation",
+      "structural_formalization_status": "blocked-non-v1-source-only-no-t1-t9-target",
+      "structural_audit_evidence": "reviews/Star37-catalogue-02-structural-audit.md",
+      "printed_dependencies": [
+        "PM1:✱37·402",
+        "PM1:✱36·11"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·41. \\vdash.\\text{D}ʻ(R\\unicode{x0294f}\\alpha)=\\alpha\\cap Rʻʻ\\alpha.\\text{ᗡ}ʻ(R\\unicode{x0294f}\\alpha)=\\alpha\\cap \\breve{R}ʻʻ\\alpha \\quad[\\text{*37·402.*36·11}]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱37·6",
       "kind": "derived-proposition",
-      "printed": "✱37·6. \\vdash:\\text{E}‼Rʻʻ\\beta.\\supset.Rʻʻ\\beta=\\hat{x}\\{(\\exists y).y\\in \\beta.x=Rʻy\\}",
+      "printed": "✱37·6. ⊢:E‼Rʻʻβ.⊃.Rʻʻβ=x̂{(∃ y).y∈ β.x=Rʻy}",
       "printed_page": 305,
       "scan_leaf": 327,
       "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
@@ -93,10 +160,29 @@
       "formal_scope": "refused: the repository contains only a verbatim source block and no Lean declaration proving the functional relational-image characterization",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-lean-declaration",
-      "printed_dependencies": [],
+      "integration_status": "blocked-missing-object-judgement-and-real-derivation",
+      "structural_formalization_status": "blocked-non-v1-source-only-no-t1-t9-target",
+      "structural_audit_evidence": "reviews/Star37-catalogue-02-structural-audit.md",
+      "printed_dependencies": [
+        "PM1:✱30·4",
+        "PM1:✱5·32",
+        "PM1:✱10·281",
+        "PM1:✱37·1"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "printed_latex_witness": "✱37·6. \\vdash:\\text{E}‼Rʻʻ\\beta.\\supset.Rʻʻ\\beta=\\hat{x}\\{(\\exists y).y\\in \\beta.x=Rʻy\\}",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

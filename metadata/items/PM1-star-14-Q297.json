@@ -1,5 +1,106 @@
-{"batch":"PM1-STAR14-Q297","edition":"first","volume":1,"source_range":{"printed_pages":"182–183","scan_leaves":[204,205],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":204,"printed_page":182,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page204-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"23427375b6f708a53ed91a28fb43eed247d732ff4047ee7e88fd779e2a50ad28"},{"scan_leaf":205,"printed_page":183,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/page205-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg","sha256":"1a8f4bf7870135c6f7047f5f5b6a6ac1fe416f327c28b59766fce3711c3e1a7c"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[
-{"id":"PM1:✱14·02","kind":"definition","printed":"E!(℩x)(φx) .=: (∃b) : φx .≡ₓ. x = b Df","printed_page":182,"scan_leaf":204,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_02","formal_scope":"exact contextual description-existence reduction in the typed de Bruijn syntax","source_status":"source-catalogued","formal_status":"kernel-checked","integration_status":"kernel-checked-strict-reductional","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"dependency_fidelity":"strict-closure"},
-{"id":"PM1:✱14·03","kind":"definition","printed":"[(℩x)(φx), (℩x)(ψx)] . f{(℩x)(φx), (℩x)(ψx)}","printed_page":182,"scan_leaf":204,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_03","formal_scope":"exact nested description-scope reduction in printed order","source_status":"source-catalogued","formal_status":"kernel-checked","integration_status":"kernel-checked-strict-reductional","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"dependency_fidelity":"strict-closure"},
-{"id":"PM1:✱14·04","kind":"definition","printed":"[(℩x)(ψx)] . f{(℩x)(φx), (℩x)(ψx)}","printed_page":182,"scan_leaf":204,"lean_path":"Principia/FirstEdition/Volume1/Star14Source.lean","declaration":"PM.FirstEdition.Volume1.Star14Source.star_14_04","formal_scope":"exact outer-description scope reduction","source_status":"source-catalogued","formal_status":"kernel-checked","integration_status":"kernel-checked-strict-reductional","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"dependency_fidelity":"strict-closure"}
-],"aristotle_evidence":{"project_id":"624fc265-1042-40c3-9b8d-6e4facebc9c2","task_id":"bb48b947-dc6e-42f8-9363-34818e2828e8","archive":"aristotle/results/Q310-retry-01-final.tar.gz","sha256":"e0b85df9919ddad3146ea439617eb8b032f9e027da525ee81cabe294b23b161f","audit":"strict-rfl-only-one-to-one-remap"},"ci_evidence":{"commit":"3167dacbec913db5d4e2471de6d2a5fc6460bec8","run":"https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31529111742","conclusion":"success"}}
+{
+  "batch": "PM1-STAR14-Q297",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "182–183",
+    "scan_leaves": [
+      204,
+      205
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 204,
+        "printed_page": 182,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page204-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "23427375b6f708a53ed91a28fb43eed247d732ff4047ee7e88fd779e2a50ad28"
+      },
+      {
+        "scan_leaf": 205,
+        "printed_page": 183,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu/page205-1920px-Russell%2C_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu.jpg",
+        "sha256": "1a8f4bf7870135c6f7047f5f5b6a6ac1fe416f327c28b59766fce3711c3e1a7c"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱14·02",
+      "kind": "definition",
+      "printed": "E!(℩x)(φx) .=: (∃b) : φx .≡ₓ. x = b  Df",
+      "printed_page": 182,
+      "scan_leaf": 204,
+      "lean_path": "Principia/FirstEdition/Volume1/Star14Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star14Source.star_14_02",
+      "formal_scope": "exact contextual description-existence reduction in the typed de Bruijn syntax",
+      "formalization_level": "pm-derivation-v1",
+      "semantic_audit_status": "strict-definitional-reduction-passed",
+      "source_status": "source-catalogued",
+      "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "kernel-checked-strict-reductional",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "dependency_fidelity": "strict-closure"
+    },
+    {
+      "id": "PM1:✱14·03",
+      "kind": "definition",
+      "printed": "[(℩x)(φx), (℩x)(ψx)] . f{(℩x)(φx), (℩x)(ψx)} .=: [(℩x)(φx)] : [(℩x)(ψx)] . f{(℩x)(φx), (℩x)(ψx)}  Df",
+      "printed_page": 182,
+      "scan_leaf": 204,
+      "lean_path": "Principia/FirstEdition/Volume1/Star14Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star14Source.star_14_03",
+      "formal_scope": "exact nested description-scope reduction in printed order",
+      "formalization_level": "pm-derivation-v1",
+      "semantic_audit_status": "strict-definitional-reduction-passed",
+      "source_status": "source-catalogued",
+      "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "kernel-checked-strict-reductional",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "dependency_fidelity": "strict-closure"
+    },
+    {
+      "id": "PM1:✱14·04",
+      "kind": "definition",
+      "printed": "[(℩x)(ψx)] . f{(℩x)(φx), (℩x)(ψx)} .=. [(℩x)(ψx), (℩x)(φx)] . f{(℩x)(φx), (℩x)(ψx)}  Df",
+      "printed_page": 182,
+      "scan_leaf": 204,
+      "lean_path": "Principia/FirstEdition/Volume1/Star14Source.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star14Source.star_14_04",
+      "formal_scope": "exact outer-description scope reduction",
+      "formalization_level": "pm-derivation-v1",
+      "semantic_audit_status": "strict-definitional-reduction-passed",
+      "source_status": "source-catalogued",
+      "formal_status": "kernel-checked",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "kernel-checked-strict-reductional",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "dependency_fidelity": "strict-closure"
+    }
+  ],
+  "aristotle_evidence": {
+    "project_id": "624fc265-1042-40c3-9b8d-6e4facebc9c2",
+    "task_id": "bb48b947-dc6e-42f8-9363-34818e2828e8",
+    "archive": "aristotle/results/Q310-retry-01-final.tar.gz",
+    "sha256": "e0b85df9919ddad3146ea439617eb8b032f9e027da525ee81cabe294b23b161f",
+    "audit": "strict-rfl-only-one-to-one-remap"
+  },
+  "ci_evidence": {
+    "commit": "3167dacbec913db5d4e2471de6d2a5fc6460bec8",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31529111742",
+    "conclusion": "success"
+  }
+}

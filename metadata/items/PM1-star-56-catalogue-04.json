@@ -1,0 +1,192 @@
+{
+  "batch": "PM1-STAR56-CATALOGUE-04",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "397–398",
+    "scan_leaves": [
+      419,
+      420
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱56·122",
+      "kind": "derived-proposition",
+      "printed": "✱56·122. ⊢:R∈ 2ᵣ.⊃.∃̇!R [*56·121·103]",
+      "printed_page": 397,
+      "scan_leaf": 419,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱56·121",
+        "PM1:✱56·103"
+      ],
+      "printed_latex_witness": "*56·122. \\(\\vdash:R\\in 2_{r}.\\supset.\\dot{\\exists}!R \\quad[\\text{*56·121·103}]\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱56·13",
+      "kind": "derived-proposition",
+      "printed": "✱56·13. ⊢.2̇-2ᵣ=R̂{(∃ a).R=a↓ a}",
+      "printed_page": 397,
+      "scan_leaf": 419,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱56·11",
+        "PM1:✱11·52",
+        "PM1:✱56·1",
+        "PM1:✱11·45",
+        "PM1:✱13·193",
+        "PM1:✱55·202",
+        "PM1:✱13·21",
+        "PM1:✱13·195",
+        "Transp"
+      ],
+      "printed_latex_witness": "*56·13. \\(\\vdash.\\dot{2}-2_{r}=\\hat{R}\\{(\\exists a).R=a\\downarrow a\\}\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱56·14",
+      "kind": "derived-proposition",
+      "printed": "✱56·14. ⊢.Dʻ(x↓ )=2̇∩ D⃖ʻιʻx",
+      "printed_page": 398,
+      "scan_leaf": 420,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱33·6",
+        "PM1:✱56·1",
+        "PM1:✱55·16",
+        "PM1:✱11·45",
+        "PM1:✱13·193",
+        "PM1:✱51·23",
+        "PM1:✱13·195",
+        "PM1:✱55·22"
+      ],
+      "printed_latex_witness": "*56·14. \\(\\vdash.\\text{D}ʻ(x\\downarrow )=\\dot{2}\\cap \\overleftarrow{\\text{D}}ʻ\\iotaʻx\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱56·141",
+      "kind": "derived-proposition",
+      "printed": "✱56·141. ⊢.Dʻ↓ x=2̇∩ ᗡ⃖ʻιʻx [Proof as in *56·14]",
+      "printed_page": 398,
+      "scan_leaf": 420,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱56·14"
+      ],
+      "printed_latex_witness": "*56·141. \\(\\vdash.\\text{D}ʻ\\downarrow x=\\dot{2}\\cap \\overleftarrow{\\text{ᗡ}}ʻ\\iotaʻx \\quad[\\text{Proof as in *56·14}]\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    },
+    {
+      "id": "PM1:✱56·15",
+      "kind": "derived-proposition",
+      "printed": "✱56·15. ⊢.Dʻ(x↓ )-ιʻ(x↓ x)=2ᵣ∩ D⃖ʻιʻx",
+      "printed_page": 398,
+      "scan_leaf": 420,
+      "lean_path": "Principia/FirstEdition/Volume1/Star56Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "printed_dependencies": [
+        "PM1:✱55·22",
+        "PM1:✱55·16",
+        "PM1:✱10·35",
+        "PM1:✱4·51",
+        "PM1:✱5·61",
+        "PM1:✱13·193",
+        "PM1:✱51·23",
+        "PM1:✱13·195",
+        "PM1:✱11·45",
+        "PM1:✱33·6",
+        "PM1:✱56·11",
+        "PM1:✱22·33"
+      ],
+      "printed_latex_witness": "*56·15. \\(\\vdash.\\text{D}ʻ(x\\downarrow )-\\iotaʻ(x\\downarrow x)=2_{r}\\cap \\overleftarrow{\\text{D}}ʻ\\iotaʻx\\)",
+      "formal_status": "unbuilt",
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

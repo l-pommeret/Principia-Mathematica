@@ -1,1 +1,210 @@
-{"batch":"PM1-STAR13-Q290","edition":"first","volume":1,"source_range":{"printed_pages":"177","scan_leaves":[199],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":199,"printed_page":177,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page199-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"377a277639f9d194f712cf5d0a88d5979b7243b26088b04133d0be91464b4960"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱13·01","kind":"definition","printed":"x = y .=: (φ) : φ!x .⊃ . φ!y Df","printed_page":177,"scan_leaf":199,"lean_path":"Principia/Architecture/Star13Q290Kernel.lean","declaration":"PM.Architecture.Star13Q290Kernel.star_13_01","formal_scope":"exact predicative indiscernibility definition with explicit predicative basis","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[]},{"id":"PM1:✱13·02","kind":"definition","printed":"x ≠ y .=. ∼(x = y) Df","printed_page":177,"scan_leaf":199,"lean_path":"Principia/Architecture/Star13Q290Kernel.lean","declaration":"PM.Architecture.Star13Q290Kernel.star_13_02","formal_scope":"exact negation abbreviation over PM identity","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","printed_dependencies":["PM1:✱13·01"],"lean_dependencies":["PM.Architecture.Star13Q290Kernel.star_13_01"],"normalized_dependencies":["PM1:✱13·01"]},{"id":"PM1:✱13·03","kind":"definition","printed":"x = y = z .=. x = y . y = z Df","printed_page":177,"scan_leaf":199,"lean_path":"Principia/Architecture/Star13Q290Kernel.lean","declaration":"PM.Architecture.Star13Q290Kernel.star_13_03","formal_scope":"exact adjacent-identity conjunction abbreviation","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","printed_dependencies":["PM1:✱13·01"],"lean_dependencies":["PM.Architecture.Star13Q290Kernel.star_13_01"],"normalized_dependencies":["PM1:✱13·01"]},{"id":"PM1:✱13·1","kind":"derived-proposition","printed":"⊢ :: x = y .≡ : φ!x .⊃φ . φ!y","printed_page":177,"scan_leaf":199,"lean_path":"Principia/Architecture/Star13Q290Kernel.lean","declaration":"PM.Architecture.Star13Q290Kernel.star_13_1","formal_scope":"exact predicative identity/formal-implication equivalence","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","printed_dependencies":["PM1:✱4·2","PM1:✱13·01","PM1:✱10·02"],"lean_dependencies":["PM.Architecture.Star13Q290Kernel.star_13_01"],"normalized_dependencies":["PM1:✱13·01"],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·02","PM1:✱4·2"],"strict_attempt_evidence":"reviews/Q290-canonical-integration.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱13·101","kind":"derived-proposition","printed":"⊢ : x = y .⊃ . ψx .⊃ . ψy","printed_page":177,"scan_leaf":199,"lean_path":"Principia/Architecture/Star13Q290Kernel.lean","declaration":"PM.Architecture.Star13Q290Kernel.star_13_101","formal_scope":"exact arbitrary-function substitution using explicit reducibility model data","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status": "canonical-kernel-integrated","printed_dependencies":["PM1:✱12·1","PM1:✱13·1","PM1:✱4·84·85","PM1:✱10·27","PM1:✱10·23"],"lean_dependencies":["PM.Architecture.Star13Q290Kernel.star_13_01"],"normalized_dependencies":["PM1:✱13·01"],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":["PM1:✱13·01"],"printed_but_unused":["PM1:✱10·23","PM1:✱10·27","PM1:✱12·1","PM1:✱13·1","PM1:✱4·84·85"],"strict_attempt_evidence":"reviews/Q290-canonical-integration.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}}],"ci_evidence":{"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}}
+{
+  "batch": "PM1-STAR13-Q290",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "177",
+    "scan_leaves": [
+      199
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 199,
+        "printed_page": 177,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page199-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "377a277639f9d194f712cf5d0a88d5979b7243b26088b04133d0be91464b4960"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱13·01",
+      "kind": "definition",
+      "printed": "x = y .=: (φ) : φ!x .⊃ . φ!y Df",
+      "printed_page": 177,
+      "scan_leaf": 199,
+      "lean_path": "Principia/Syntax/Ramified.lean",
+      "declaration": "PM.RamifiedSyntax.star_13_01",
+      "reading_declaration": "PM.RamifiedSyntax.star_13_01_reading",
+      "formal_scope": "exact reducible object-language Leibniz identity definition and audited ClaimReading",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "integration_blocked": false,
+      "formalization_level": "pm-definition-v1",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star13-Q290-object-proof-reaudit.md",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱13·02",
+      "kind": "definition",
+      "printed": "x ≠ y .=. ∼(x = y) Df",
+      "printed_page": 177,
+      "scan_leaf": 199,
+      "lean_path": "Principia/Deduction/Star13Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_13_02",
+      "reading_declaration": "PM.RamifiedSyntax.star_13_02_reading",
+      "formal_scope": "exact reducible object-language negation of Leibniz identity and audited ClaimReading",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star13Q290Kernel.star_13_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱13·01"
+      ],
+      "demonstration_provenance": "follows-printed",
+      "integration_blocked": false,
+      "formalization_level": "pm-definition-v1",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star13-Q290-object-proof-reaudit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱13·03",
+      "kind": "definition",
+      "printed": "x = y = z .=. x = y . y = z Df",
+      "printed_page": 177,
+      "scan_leaf": 199,
+      "lean_path": "Principia/Deduction/Star13Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_13_03",
+      "reading_declaration": "PM.RamifiedSyntax.star_13_03_reading",
+      "formal_scope": "exact reducible object-language conjunction of adjacent Leibniz identities and audited ClaimReading",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star13Q290Kernel.star_13_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱13·01"
+      ],
+      "demonstration_provenance": "follows-printed",
+      "integration_blocked": false,
+      "formalization_level": "pm-definition-v1",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star13-Q290-object-proof-reaudit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱13·1",
+      "kind": "derived-proposition",
+      "printed": "⊢ :: x = y .≡ : φ!x .⊃φ . φ!y",
+      "printed_page": 177,
+      "scan_leaf": 199,
+      "lean_path": "Principia/Architecture/Star13Q290Kernel.lean",
+      "declaration": "PM.Architecture.Star13Q290Kernel.star_13_1",
+      "formal_scope": "blocked: current theorem is reflexivity of the semantic Prop definition, not an object-language derivation through the printed T1–T9/definition-normalization route",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-object-derivation",
+      "printed_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱13·01",
+        "PM1:✱10·02"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star13Q290Kernel.star_13_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱13·01"
+      ],
+      "integration_blocked": true,
+      "formalization_level": "semantic-prop-only",
+      "semantic_audit_status": "blocked-semantic-prop-not-object-derivation",
+      "semantic_audit_evidence": "reviews/Star13-Q290-object-proof-reaudit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱13·101",
+      "kind": "derived-proposition",
+      "printed": "⊢ : x = y .⊃ . ψx .⊃ . ψy",
+      "printed_page": 177,
+      "scan_leaf": 199,
+      "lean_path": "Principia/Architecture/Star13Q290Kernel.lean",
+      "declaration": "PM.Architecture.Star13Q290Kernel.star_13_101",
+      "formal_scope": "blocked: current theorem proves a semantic Prop from an explicit Reducibility model parameter; it does not reconstruct the printed object derivation through ✱12·1, ✱13·1, ✱4·84, ✱4·85, ✱10·27, and ✱10·23",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-object-derivation",
+      "printed_dependencies": [
+        "PM1:✱12·1",
+        "PM1:✱13·1",
+        "PM1:✱4·84",
+        "PM1:✱4·85",
+        "PM1:✱10·27",
+        "PM1:✱10·23"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star13Q290Kernel.star_13_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱13·01"
+      ],
+      "integration_blocked": true,
+      "formalization_level": "semantic-prop-only",
+      "semantic_audit_status": "blocked-semantic-prop-not-object-derivation",
+      "semantic_audit_evidence": "reviews/Star13-Q290-object-proof-reaudit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "integration_status": "blocked-no-pm-object-derivations",
+  "review_evidence": [
+    "reviews/Star13-Q290-object-proof-reaudit.md"
+  ]
+}

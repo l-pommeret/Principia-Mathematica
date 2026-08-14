@@ -19,7 +19,7 @@
     {
       "id": "PM1:✱92·17",
       "kind": "derived-proposition",
-      "printed": "✱92·17. ⊢ : R∈1→Cls . P,Q∈PotidʻR .⊃. (∃T).T∈PotidʻR . P|CnvʻQ⊂̇T∪̇CnvʻT",
+      "printed": "✱92·17. ⊢:R∈ 1→Cls.P, Q∈ PotidʻR.⊃.(∃ T).T∈ PotidʻR.P| Q̌⪽T⊍Ť",
       "printed_page": 604,
       "scan_leaf": 626,
       "lean_path": "Principia/Architecture/Star92ClosingKernel.lean",
@@ -32,12 +32,22 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱92·171",
       "kind": "derived-proposition",
-      "printed": "✱92·171. ⊢ : R∈Cls→1 . P,Q∈PotidʻR .⊃. (∃T).T∈PotidʻR . CnvʻQ|P⊂̇T∪̇CnvʻT",
+      "printed": "✱92·171. ⊢:R∈ Cls→1.P,Q∈ PotidʻR.⊃.(∃ T).T∈ PotidʻR.Q̌| P⪽T⊍Ť",
       "printed_page": 604,
       "scan_leaf": 626,
       "lean_path": "Principia/Architecture/Star92ClosingKernel.lean",
@@ -50,12 +60,22 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱92·18",
       "kind": "derived-proposition",
-      "printed": "✱92·18. ⊢ : R∈1→Cls . ᗡʻR⊂DʻR . P,Q∈PotidʻR .⊃. P|CnvʻQ∈PotidʻR∪PotidʻCnvʻR",
+      "printed": "✱92·18. ⊢:R∈ 1→Cls.ᗡʻR⊂ DʻR.P,Q∈ Potidʻ R.⊃. P| Q̌∈ PotidʻR∪ PotidʻŘ",
       "printed_page": 604,
       "scan_leaf": 626,
       "lean_path": "Principia/Architecture/Star92ClosingKernel.lean",
@@ -68,12 +88,22 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱92·181",
       "kind": "derived-proposition",
-      "printed": "✱92·181. ⊢ : R∈Cls→1 . DʻR⊂ᗡʻR . P,Q∈PotidʻR .⊃. CnvʻQ|P∈PotidʻR∪PotidʻCnvʻR",
+      "printed": "✱92·181. ⊢:R∈ Cls→1.DʻR⊂ ᗡʻR.P,Q∈ Potidʻ R.⊃. Q̌| P∈ PotidʻR∪ PotidʻŘ",
       "printed_page": 604,
       "scan_leaf": 626,
       "lean_path": "Principia/Architecture/Star92ClosingKernel.lean",
@@ -86,12 +116,22 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱92·19",
       "kind": "derived-proposition",
-      "printed": "✱92·19. ⊢ : R∈1→Cls . ᗡʻR⊂DʻR . P,Q∈PotidʻR .⊃: P|CnvʻQ∈PotidʻR .∨. Q|CnvʻP∈PotidʻR",
+      "printed": "✱92·19. ⊢:R∈ 1→Cls.ᗡʻR⊂ DʻR.P, Q∈ PotidʻR.⊃: P| Q̌∈ PotidʻR.∨.Q| P̌∈ PotidʻR",
       "printed_page": 605,
       "scan_leaf": 627,
       "lean_path": "Principia/Architecture/Star92ClosingKernel.lean",
@@ -104,7 +144,17 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star92-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

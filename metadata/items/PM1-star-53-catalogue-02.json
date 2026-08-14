@@ -26,11 +26,20 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_11",
       "formal_scope": "exact class-sum reduction over two singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·12",
@@ -42,8 +51,8 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_12",
       "formal_scope": "exact relation-product reduction over two singleton relation classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱41·18",
         "PM1:✱53·03"
@@ -51,7 +60,7 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
@@ -61,6 +70,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star53-second-semantic-audit.md",
         "editorial_note": "The extensional Lean certificate directly expands the typed class/relation operators; the printed citations or analogous-proof notice remain historical demonstration references rather than Lean calls."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -73,8 +91,8 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_13",
       "formal_scope": "exact relation-sum reduction over two singleton relation classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱41·171",
         "PM1:✱53·04"
@@ -82,7 +100,7 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
@@ -92,6 +110,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star53-second-semantic-audit.md",
         "editorial_note": "The extensional Lean certificate directly expands the typed class/relation operators; the printed citations or analogous-proof notice remain historical demonstration references rather than Lean calls."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -104,11 +131,20 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_14",
       "formal_scope": "exact class-product reduction after adjoining one singleton class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·15",
@@ -120,8 +156,8 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_15",
       "formal_scope": "exact class-sum reduction after adjoining one singleton class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱53·14"
       ],
@@ -135,6 +171,15 @@
         ],
         "strict_attempt_evidence": "reviews/Star53-second-semantic-audit.md",
         "editorial_note": "The extensional Lean certificate directly expands the typed class/relation operators; the printed citations or analogous-proof notice remain historical demonstration references rather than Lean calls."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

@@ -1,7 +1,170 @@
-{"batch":"PM2-STAR106-CATALOGUE-05-REFUSED","edition":"first","volume":2,"source_range":{"printed_pages":"62–63","scan_leaves":[102,103],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu","project_gutenberg":"https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},"witnesses":["PM2-1912-SCAN","PG78255"],"items":[
- {"id":"PM2:✱106·22","kind":"derived-proposition","printed":"✱106·22. ⊢ : λ∈N¹₀cʻα .≡. Cnvʻʻλ∈¹N₀cʻα","printed_page":62,"scan_leaf":102,"lean_path":"Principia/Architecture/Star106MiddleKernel.lean","declaration":"PM.Architecture.Star106MiddleKernel.star_106_22","formal_scope":"refused: Lean assumes the universally quantified equivalence ∀x, A x ↔ B (f x) as h and merely specializes it; it does not derive PM's converse-cardinal equivalence","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch-assumed-equivalence","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star106-catalogue-review.md","semantic_audit":"reviews/Star106-catalogue-review.md"},
- {"id":"PM2:✱106·221","kind":"derived-proposition","printed":"✱106·221. ⊢ : λ∈N²₀cʻα .≡. Cnvʻʻλ∈²N₀cʻα","printed_page":63,"scan_leaf":103,"lean_path":"Principia/Architecture/Star106MiddleKernel.lean","declaration":"PM.Architecture.Star106MiddleKernel.star_106_221","formal_scope":"refused: Lean receives the complete universal equivalence as parameter h and returns h x, rather than proving the displayed converse-cardinal equivalence","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch-assumed-equivalence","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star106-catalogue-review.md","semantic_audit":"reviews/Star106-catalogue-review.md"},
- {"id":"PM2:✱106·222","kind":"derived-proposition","printed":"✱106·222. ⊢ . Λ∉¹N₀C . ¹N₀C⊂N₀C . ¹N₀C∈N₀C","printed_page":63,"scan_leaf":103,"lean_path":"Principia/Architecture/Star106MiddleKernel.lean","declaration":"PM.Architecture.Star106MiddleKernel.star_106_222","formal_scope":"refused: Lean assumes all three displayed conclusion components separately as h₀, h₁ and h₂ and only packages them into a conjunction","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch-assumed-conjunction","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star106-catalogue-review.md","semantic_audit":"reviews/Star106-catalogue-review.md"},
- {"id":"PM2:✱106·223","kind":"derived-proposition","printed":"✱106·223. ⊢ . Λ∉²N₀C . ²N₀C⊂N₀C . ²N₀C∈N₀C","printed_page":63,"scan_leaf":103,"lean_path":"Principia/Architecture/Star106MiddleKernel.lean","declaration":"PM.Architecture.Star106MiddleKernel.star_106_223","formal_scope":"refused: Lean assumes the nonmembership, inclusion and membership conclusions as parameters and merely conjoins them","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch-assumed-conjunction","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star106-catalogue-review.md","semantic_audit":"reviews/Star106-catalogue-review.md"},
- {"id":"PM2:✱106·23","kind":"derived-proposition","printed":"✱106·23. ⊢ : β∈N¹cʻα .⊃. N¹¹cʻα=N₀₀cʻβ","printed_page":63,"scan_leaf":103,"lean_path":"Principia/Architecture/Star106MiddleKernel.lean","declaration":"PM.Architecture.Star106MiddleKernel.star_106_23","formal_scope":"refused: Lean takes the entire implication A b → C = D as parameter k and applies it to h; the printed conclusion is therefore assumed rather than derived","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch-pass-through-implication","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star106-catalogue-review.md","semantic_audit":"reviews/Star106-catalogue-review.md"}
-],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM2-STAR106-CATALOGUE-05-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "62–63",
+    "scan_leaves": [
+      102,
+      103
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱106·22",
+      "kind": "derived-proposition",
+      "printed": "✱106·22. ⊢ : λ∈N¹₀cʻα .≡. Cnvʻʻλ∈¹N₀cʻα",
+      "printed_page": 62,
+      "scan_leaf": 102,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_22",
+      "formal_scope": "refused: Lean assumes the universally quantified equivalence ∀x, A x ↔ B (f x) as h and merely specializes it; it does not derive PM's converse-cardinal equivalence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-assumed-equivalence",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star106-catalogue-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱106·221",
+      "kind": "derived-proposition",
+      "printed": "✱106·221. ⊢ : λ∈N²₀cʻα .≡. Cnvʻʻλ∈²N₀cʻα",
+      "printed_page": 63,
+      "scan_leaf": 103,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_221",
+      "formal_scope": "refused: Lean receives the complete universal equivalence as parameter h and returns h x, rather than proving the displayed converse-cardinal equivalence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-assumed-equivalence",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star106-catalogue-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱106·222",
+      "kind": "derived-proposition",
+      "printed": "✱106·222. ⊢ . Λ∉¹N₀C . ¹N₀C⊂N₀C . ¹N₀C∈N₀C",
+      "printed_page": 63,
+      "scan_leaf": 103,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_222",
+      "formal_scope": "refused: Lean assumes all three displayed conclusion components separately as h₀, h₁ and h₂ and only packages them into a conjunction",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-assumed-conjunction",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star106-catalogue-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱106·223",
+      "kind": "derived-proposition",
+      "printed": "✱106·223. ⊢ . Λ∉²N₀C . ²N₀C⊂N₀C . ²N₀C∈N₀C",
+      "printed_page": 63,
+      "scan_leaf": 103,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_223",
+      "formal_scope": "refused: Lean assumes the nonmembership, inclusion and membership conclusions as parameters and merely conjoins them",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-assumed-conjunction",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star106-catalogue-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱106·23",
+      "kind": "derived-proposition",
+      "printed": "✱106·23. ⊢ : β∈N¹cʻα .⊃. N¹¹cʻα=N₀₀cʻβ",
+      "printed_page": 63,
+      "scan_leaf": 103,
+      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_23",
+      "formal_scope": "refused: Lean takes the entire implication A b → C = D as parameter k and applies it to h; the printed conclusion is therefore assumed rather than derived",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-pass-through-implication",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit": "reviews/Star106-catalogue-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T12",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

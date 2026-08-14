@@ -8,7 +8,14 @@
       168
     ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
-    "leaf_derivatives": [{"scan_leaf": 168, "printed_page": 146, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page168-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg", "sha256": "0b416ff85b3cfb865eb3cfab5c6a4c04cfff65f0ac21a68f7e64d80caf30736f"}],
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 168,
+        "printed_page": 146,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page168-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "0b416ff85b3cfb865eb3cfab5c6a4c04cfff65f0ac21a68f7e64d80caf30736f"
+      }
+    ],
     "scan_sha256": "0b416ff85b3cfb865eb3cfab5c6a4c04cfff65f0ac21a68f7e64d80caf30736f",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
@@ -20,7 +27,7 @@
   "items": [
     {
       "id": "PM1:✱10·13",
-      "kind": "derived-proposition",
+      "kind": "derived-metalinguistic-rule",
       "printed": "If φx̂ and ψx̂ take arguments of the same type, and we have “⊢.φx” and “⊢.ψx,” we shall have “⊢.φx.ψx.”",
       "printed_page": 146,
       "scan_leaf": 168,
@@ -47,7 +54,17 @@
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q266-strict-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "semantic_audit_status": "strict-equivalence-refused",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

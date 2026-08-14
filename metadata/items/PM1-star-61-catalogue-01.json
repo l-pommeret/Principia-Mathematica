@@ -18,106 +18,130 @@
     {
       "id": "PM1:✱61·01",
       "kind": "definition",
-      "printed": "✱61·01. Rl = λ̂P̂{λ = R̂(R ⊂ P)} Df",
+      "printed": "✱61·01. Rl=λ̂P̂{λ=R̂(R⪽P)} Df",
       "printed_page": 412,
       "scan_leaf": 434,
-      "lean_path": "Principia/Architecture/Star61Kernel.lean",
-      "declaration": "PM.Architecture.Star61Kernel.star_61_01",
-      "formal_scope": "typed sub-relation-class reconstruction; exact item-level source and kernel audit complete",
+      "lean_path": "Principia/FirstEdition/Volume1/Star61Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "printed_latex_witness": "*61·01. \\(\\text{Rl}=\\hat{\\lambda}\\hat{P}\\{\\lambda=\\hat{R}(R\\unicode{x2abd}P)\\} \\quad\\text{Df}\\)",
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱61·02",
       "kind": "definition",
-      "printed": "✱61·02. Rl ex = λ̂P̂{λ = R̂(R ⊂ P . ∃!R)} Df",
+      "printed": "✱61·02. Rl ex=λ̂P̂{λ=R̂(R⪽P.∃̇!R)} Df",
       "printed_page": 412,
       "scan_leaf": 434,
-      "lean_path": "Principia/Architecture/Star61Kernel.lean",
-      "declaration": "PM.Architecture.Star61Kernel.star_61_02",
-      "formal_scope": "typed nonempty sub-relation-class reconstruction; exact item-level source and kernel audit complete",
+      "lean_path": "Principia/FirstEdition/Volume1/Star61Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_latex_witness": "*61·02. \\(\\text{Rl ex}=\\hat{\\lambda}\\hat{P}\\{\\lambda=\\hat{R}(R\\unicode{x2abd}P.\\dot{\\exists}!R)\\} \\quad\\text{Df}\\)",
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star61-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱61·03",
       "kind": "definition",
-      "printed": "✱61·03. Rel² = Rlʻ(Rel ↑ Rel) Df",
+      "printed": "✱61·03. Rel²=Rlʻ (Rel↑Rel) Df",
       "printed_page": 412,
       "scan_leaf": 434,
-      "lean_path": "Principia/Architecture/Star61Kernel.lean",
-      "declaration": "PM.Architecture.Star61Kernel.star_61_03",
-      "formal_scope": "typed second-order relation-class reconstruction; exact item-level source and kernel audit complete",
+      "lean_path": "Principia/FirstEdition/Volume1/Star61Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_latex_witness": "*61·03. \\(\\text{Rel}^{2}=\\text{Rl}ʻ (\\text{Rel}\\uparrow\\text{Rel}) \\quad\\text{Df}\\)",
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star61-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱61·04",
       "kind": "definition",
-      "printed": "✱61·04. Rel³ = Rlʻ(Rel² ↑ Rel²) Df",
+      "printed": "✱61·04. Rel³=Rlʻ (Rel²↑Rel²) Df",
       "printed_page": 412,
       "scan_leaf": 434,
-      "lean_path": "Principia/Architecture/Star61Kernel.lean",
-      "declaration": "PM.Architecture.Star61Kernel.star_61_04",
-      "formal_scope": "typed third-order relation-class reconstruction; exact item-level source and kernel audit complete",
+      "lean_path": "Principia/FirstEdition/Volume1/Star61Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_latex_witness": "*61·04. \\(\\text{Rel}^{3}=\\text{Rl}ʻ (\\text{Rel}^{2}\\uparrow\\text{Rel}^{2}) \\quad\\text{Df}\\)",
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star61-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱61·1",
       "kind": "derived-proposition",
-      "printed": "✱61·1. ⊢ : λ Rl P .≡. λ = R̂(R ⊂ P)",
+      "printed": "✱61·1. ⊢:λRl P.≡.λ=R̂(R⪽P)",
       "printed_page": 412,
       "scan_leaf": 434,
-      "lean_path": "Principia/Architecture/Star61Kernel.lean",
-      "declaration": "PM.Architecture.Star61Kernel.star_61_1",
-      "formal_scope": "typed sub-relation-class reconstruction; exact item-level source and kernel audit complete",
+      "lean_path": "Principia/FirstEdition/Volume1/Star61Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
-      "printed_dependencies": [
-        "PM1:✱61·01"
-      ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": [
-          "PM1:✱61·01"
+      "printed_dependencies": [],
+      "printed_latex_witness": "*61·1. \\(\\vdash:\\lambda\\text{Rl}\\, P.\\equiv.\\lambda=\\hat{R}(R\\unicode{x2abd}P)\\)",
+      "formal_status": "lean-typechecked",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
         ],
-        "strict_attempt_evidence": "reviews/Star61-catalogue-review.md",
-        "editorial_note": "The Lean proposition unfolds Rl definitionally, so its Iff.rfl proof has no theorem call; the printed definition citation is retained as historical evidence but creates no extracted Lean edge."
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star61-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     }
   ],
   "ci_evidence": {
-    "commit": "023264635cf468cf897027de54aca81c59ef5a0d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31731924973",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

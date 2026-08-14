@@ -25,14 +25,24 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_302",
       "formal_scope": "exact distribution of relational image over the union of two singleton source classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·31",
@@ -44,7 +54,7 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_31",
       "formal_scope": "exact equality chain for the image of a singleton when the relation value exists uniquely",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [
@@ -57,14 +67,27 @@
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱53·3", "PM1:✱53·301"],
+        "added_beyond_print": [
+          "PM1:✱53·3",
+          "PM1:✱53·301"
+        ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star53-sixth-semantic-audit.md",
         "editorial_note": "The source prints no bracketed citation; Lean combines the exact unit-image characterization and singleton relational-image identity."
       },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·32",
@@ -76,7 +99,7 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_32",
       "formal_scope": "exact two-point relational-image formula under the two displayed unique-value hypotheses",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [
@@ -89,12 +112,25 @@
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱53·302", "PM1:✱53·31"],
+        "added_beyond_print": [
+          "PM1:✱53·302",
+          "PM1:✱53·31"
+        ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star53-sixth-semantic-audit.md",
         "editorial_note": "The source prints no bracketed citation; Lean rewrites by the exact two-singleton image law and the exact unique-value singleton identities."
       },
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·33",
@@ -106,12 +142,22 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_33",
       "formal_scope": "exact image of a singleton class under class union",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱53·34",
@@ -123,12 +169,22 @@
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_34",
       "formal_scope": "exact distribution of the class-union image over a two-singleton class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -1,1 +1,56 @@
-{"batch":"PM1-STAR55-CATALOGUE-07-REFUSED","edition":"first","volume":1,"source_range":{"printed_pages":"388","scan_leaves":[410],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱55·27","kind":"derived-proposition","printed":"✱55·27. ⊢ . Cʻʻ↓x ʻʻα = Cʻʻx↓ ʻʻα = β̂{(∃y).y∈α . β=ιʻx∪ιʻy}","printed_page":388,"scan_leaf":410,"lean_path":"Principia/Architecture/Star55MiddleKernel.lean","declaration":"PM.Architecture.Star55MiddleKernel.star_55_27","formal_scope":"refused: PM's chained equality covers field images of both right and left pair families; Lean proves only the left-family equality","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_status":"blocked-semantic-mismatch","printed_dependencies":[],"lean_dependencies":[],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Star55-catalogues-07-08-semantic-audit.md"}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR55-CATALOGUE-07-REFUSED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "388",
+    "scan_leaves": [
+      410
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱55·27",
+      "kind": "derived-proposition",
+      "printed": "✱55·27. ⊢ . Cʻʻ↓x ʻʻα = Cʻʻx↓ ʻʻα = β̂{(∃y).y∈α . β=ιʻx∪ιʻy}",
+      "printed_page": 388,
+      "scan_leaf": 410,
+      "lean_path": "Principia/Architecture/Star55MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star55MiddleKernel.star_55_27",
+      "formal_scope": "refused: PM's chained equality covers field images of both right and left pair families; Lean proves only the left-family equality",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star55OpeningKernel.star_55_15"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱55·15"
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

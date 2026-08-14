@@ -40,8 +40,8 @@
       "declaration": "PM.Architecture.Star10Q270Kernel.star_10_29",
       "formal_scope": "exact closed canonical formal implication composition",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·22",
         "PM1:✱4·76",
@@ -50,8 +50,8 @@
       ],
       "normalized_dependencies": [
         "PM1:✱10·22",
-        "PM1:✱4·76",
-        "PM1:✱10·271"
+        "PM1:✱10·271",
+        "PM1:✱4·76"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star10Q265Kernel.star_10_271",
@@ -66,6 +66,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q270-canonical-integration.md",
         "editorial_note": "The closed record retains ✱10·22, ✱4·76, and ✱10·271 directly; the printed generalization step ✱10·11 is internal to the reused closed contracts."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -78,8 +88,8 @@
       "declaration": "PM.Architecture.Star10Q270Kernel.star_10_3",
       "formal_scope": "exact closed canonical formal syllogism",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·22·221",
         "PM1:✱10·27"
@@ -102,6 +112,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q270-canonical-integration.md",
         "editorial_note": "The ✱10·221 same-type side condition is discharged by the shared typed Apparent carrier and therefore has no theorem call; ✱10·22 and ✱10·27 remain explicit."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -114,8 +134,8 @@
       "declaration": "PM.Architecture.Star10Q270Kernel.star_10_301",
       "formal_scope": "exact closed canonical formal equivalence transitivity",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·22·221",
         "PM1:✱4·22",
@@ -123,8 +143,8 @@
       ],
       "normalized_dependencies": [
         "PM1:✱10·22",
-        "PM1:✱4·22",
-        "PM1:✱10·271"
+        "PM1:✱10·271",
+        "PM1:✱4·22"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star10Q265Kernel.star_10_271",
@@ -141,6 +161,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q270-canonical-integration.md",
         "editorial_note": "The ✱10·221 same-type side condition is discharged by the shared typed Apparent carrier; the three proposition dependencies remain direct."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -153,8 +183,8 @@
       "declaration": "PM.Architecture.Star10Q270Kernel.star_10_31",
       "formal_scope": "exact closed canonical formal implication factor",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·11",
         "PM1:✱10·27"
@@ -173,6 +203,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q270-canonical-integration.md",
         "editorial_note": "The theorem-specific wrapper reuses the closed ✱10·27 lift; generalization is internal to that contract."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -185,16 +225,16 @@
       "declaration": "PM.Architecture.Star10Q270Kernel.star_10_311",
       "formal_scope": "exact closed canonical formal equivalence factor",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-integrated",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱4·36",
         "PM1:✱10·11",
         "PM1:✱10·27"
       ],
       "normalized_dependencies": [
-        "PM1:✱4·36",
-        "PM1:✱10·27"
+        "PM1:✱10·27",
+        "PM1:✱4·36"
       ],
       "lean_dependencies": [
         "PM.Architecture.Star10Q265Kernel.star_10_27",
@@ -208,6 +248,16 @@
         ],
         "strict_attempt_evidence": "reviews/Q270-canonical-integration.md",
         "editorial_note": "The theorem-specific wrapper directly retains ✱4·36 and the closed ✱10·27 lift; generalization is internal to that contract."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     }
   ],

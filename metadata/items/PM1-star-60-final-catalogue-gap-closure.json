@@ -1,0 +1,86 @@
+{
+  "batch": "PM1-STAR60-FINAL-CATALOGUE-GAP-CLOSURE",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "411",
+    "scan_leaves": [
+      433
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱60·71",
+      "kind": "derived-proposition",
+      "printed": "✱60·71. ⊢.Cls²=ClʻCls [(*60·03)]",
+      "printed_page": 411,
+      "scan_leaf": 433,
+      "lean_path": "Principia/FirstEdition/Volume1/Star60Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱60·03"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "pm_verbatim": "*60·71. \\(\\vdash.\\text{Cls}^{2}=\\text{Cl}ʻ\\text{Cls} \\quad[\\text{(*60·03)}]\\)",
+      "printed_latex_witness": "✱60·71. \\(\\vdash.\\text{Cls}^{2}=\\text{Cl}ʻ\\text{Cls} \\quad[\\text{(*60·03)}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱60·72",
+      "kind": "derived-proposition",
+      "printed": "✱60·72. ⊢.Cls³=ClʻCls² [(*60·04)]",
+      "printed_page": 411,
+      "scan_leaf": 433,
+      "lean_path": "Principia/FirstEdition/Volume1/Star60Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱60·04"
+      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "pm_verbatim": "*60·72. \\(\\vdash.\\text{Cls}^{3}=\\text{Cl}ʻ\\text{Cls}^{2} \\quad[\\text{(*60·04)}]\\)",
+      "printed_latex_witness": "✱60·72. \\(\\vdash.\\text{Cls}^{3}=\\text{Cl}ʻ\\text{Cls}^{2} \\quad[\\text{(*60·04)}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

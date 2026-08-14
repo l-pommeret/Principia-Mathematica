@@ -19,7 +19,7 @@
     {
       "id": "PM1:✱93·412",
       "kind": "derived-proposition",
-      "printed": "✱93·412. ⊢ . P̌ʻʻpʻᗡʻʻPotʻP⊂pʻᗡʻʻPotʻP",
+      "printed": "✱93·412. ⊢ . P̌ʻʻpʻᗡʻʻPotʻP ⊂ pʻᗡʻʻPotʻP",
       "printed_page": 615,
       "scan_leaf": 637,
       "lean_path": "Principia/Architecture/Star93FinalKernel.lean",
@@ -28,16 +28,31 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱93·261",
+        "PM1:✱40·37",
+        "PM1:✱43·411",
+        "PM1:✱91·24"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱93·42",
       "kind": "derived-proposition",
-      "printed": "✱93·42. ⊢ : P∈1→Cls .⊃. P̌ʻʻpʻᗡʻʻPotʻP=pʻᗡʻʻPotʻP",
+      "printed": "✱93·42. ⊢ : P ∈ 1→Cls . ⊃ . P̌ʻʻpʻᗡʻʻPotʻP = pʻᗡʻʻPotʻP",
       "printed_page": 615,
       "scan_leaf": 637,
       "lean_path": "Principia/Architecture/Star93FinalKernel.lean",
@@ -46,16 +61,33 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱93·261",
+        "PM1:✱72·34",
+        "PM1:✱91·35",
+        "PM1:✱10·24",
+        "PM1:✱43·411",
+        "PM1:✱91·24"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱93·431",
       "kind": "derived-proposition",
-      "printed": "✱93·431. ⊢ . pʻᗡʻʻPotʻP=pʻᗡʻʻ|PʻʻPotʻP",
+      "printed": "✱93·431. ⊢ . pʻᗡʻʻPotʻP = pʻᗡʻʻ | PʻʻPotʻP",
       "printed_page": 615,
       "scan_leaf": 637,
       "lean_path": "Principia/Architecture/Star93FinalKernel.lean",
@@ -64,16 +96,34 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱91·264",
+        "PM1:✱91·304",
+        "PM1:✱53·14",
+        "PM1:✱91·271",
+        "PM1:✱91·283",
+        "PM1:✱40·151",
+        "PM1:✱40·23"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱93·5",
       "kind": "derived-proposition",
-      "printed": "✱93·5. ⊢ : T∈PotidʻP .⊃. P_ts→ʻT=P_st→ʻT=T|ʻʻPotidʻP=|TʻʻPotidʻP",
+      "printed": "✱93·5. ⊢:T∈ PotidʻP.⊃.P⃗ₜₛʻT=P⃗ₛₜʻT=T| ʻʻPotidʻP=| TʻʻPotidʻP",
       "printed_page": 616,
       "scan_leaf": 638,
       "lean_path": "Principia/Architecture/Star93FinalKernel.lean",
@@ -86,12 +136,23 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T11",
+          "T12",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱93·51",
       "kind": "derived-proposition",
-      "printed": "✱93·51. ⊢ : T∈PotʻP .⊃. PotʻT⊂P_ts→ʻT⊂PotʻP",
+      "printed": "✱93·51. ⊢:T∈ PotʻP.⊃.PotʻT⊂ P⃗ₜₛʻT⊂ PotʻP",
       "printed_page": 616,
       "scan_leaf": 638,
       "lean_path": "Principia/Architecture/Star93FinalKernel.lean",
@@ -104,7 +165,17 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

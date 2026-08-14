@@ -4,15 +4,23 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "118",
-    "scan_leaves": [140],
+    "scan_leaves": [
+      140
+    ],
     "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
-    "scan_sha256": {"140": "20db12e87b5e387660bb8d9fd44527b82fe2b63f0c1ea8211e89b8be1dd64ebe"}
+    "scan_sha256": {
+      "140": "20db12e87b5e387660bb8d9fd44527b82fe2b63f0c1ea8211e89b8be1dd64ebe"
+    }
   },
-  "witnesses": ["PM1-1910-SCAN", "WS-PM1"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "WS-PM1"
+  ],
   "items": [
     {
       "id": "PM1:✱3·33",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "⊢ : p ⊃ q . q ⊃ r . ⊃ . p ⊃ r",
       "printed_page": 118,
       "scan_leaf": 140,
@@ -20,16 +28,53 @@
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_33",
       "formal_scope": "((p⊃q)·(q⊃r))⊃(p⊃r), over any elementary context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "kernel-checked",
-      "printed_dependencies": ["PM1:✱1·11", "PM1:✱2·05", "PM1:✱2·06", "PM1:✱3·31"],
-      "lean_dependencies": ["PM.Derivation.star_1_1", "PM.Derivation.star_1_11", "PM.FirstEdition.Volume1.Star2.star_2_06", "PM.FirstEdition.Volume1.Star3.star_3_31"],
-      "normalized_dependencies": ["PM1:✱1·1", "PM1:✱1·11", "PM1:✱2·06", "PM1:✱3·31"],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": ["PM1:✱1·1"], "printed_but_unused": ["PM1:✱2·05"], "strict_attempt_evidence": "reviews/Q224-review.md", "editorial_note": "The generic theorem includes Γ = []; the printed Syll.Imp citation licenses the nonempty ✱1·11 branch, while exactly ✱1·1 closes the otherwise unavailable empty-context detachment branch."},
-      "dependency_fidelity": "relaxed-implicit-detachment-gap"
+      "formal_status": "lean-typechecked",
+      "printed_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱3·31"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.FirstEdition.Volume1.Star2.star_2_02",
+        "PM.FirstEdition.Volume1.Star2.star_2_04",
+        "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM.FirstEdition.Volume1.Star2.star_2_06",
+        "PM.FirstEdition.Volume1.Star3.star_3_31"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·02",
+        "PM1:✱2·04",
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱3·31"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱2·02",
+          "PM1:✱2·04"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Q224-review.md",
+        "editorial_note": "The current reconstruction retains every printed dependency and additionally makes the ✱2·02 and ✱2·04 steps explicit."
+      },
+      "dependency_fidelity": "relaxed-implicit-detachment-gap",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱3·34",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "⊢ : q ⊃ r . p ⊃ q . ⊃ . p ⊃ r",
       "printed_page": 118,
       "scan_leaf": 140,
@@ -37,16 +82,53 @@
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_34",
       "formal_scope": "((q⊃r)·(p⊃q))⊃(p⊃r), over any elementary context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "kernel-checked",
-      "printed_dependencies": ["PM1:✱1·11", "PM1:✱2·05", "PM1:✱2·06", "PM1:✱3·31"],
-      "lean_dependencies": ["PM.Derivation.star_1_1", "PM.Derivation.star_1_11", "PM.FirstEdition.Volume1.Star2.star_2_05", "PM.FirstEdition.Volume1.Star3.star_3_31"],
-      "normalized_dependencies": ["PM1:✱1·1", "PM1:✱1·11", "PM1:✱2·05", "PM1:✱3·31"],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": ["PM1:✱1·1"], "printed_but_unused": ["PM1:✱2·06"], "strict_attempt_evidence": "reviews/Q224-review.md", "editorial_note": "The generic theorem includes Γ = []; exactly ✱1·1 supplies the empty-context detachment branch, while ✱1·11 remains the printed nonempty branch."},
-      "dependency_fidelity": "relaxed-implicit-detachment-gap"
+      "formal_status": "lean-typechecked",
+      "printed_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱3·31"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.FirstEdition.Volume1.Star2.star_2_02",
+        "PM.FirstEdition.Volume1.Star2.star_2_04",
+        "PM.FirstEdition.Volume1.Star2.star_2_05",
+        "PM.FirstEdition.Volume1.Star2.star_2_06",
+        "PM.FirstEdition.Volume1.Star3.star_3_31"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·02",
+        "PM1:✱2·04",
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱3·31"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱2·02",
+          "PM1:✱2·04"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Q224-review.md",
+        "editorial_note": "The current reconstruction retains every printed dependency and additionally makes the ✱2·02 and ✱2·04 steps explicit."
+      },
+      "dependency_fidelity": "relaxed-implicit-detachment-gap",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱3·35",
       "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
       "printed": "⊢ : p . p ⊃ q . ⊃ . q",
       "printed_page": 118,
       "scan_leaf": 140,
@@ -54,14 +136,55 @@
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_35",
       "formal_scope": "(p·(p⊃q))⊃q, over any elementary context",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "kernel-checked",
-      "printed_dependencies": ["PM1:✱1·11", "PM1:✱2·27", "PM1:✱3·31"],
-      "lean_dependencies": ["PM.Derivation.star_1_1", "PM.Derivation.star_1_11", "PM.FirstEdition.Volume1.Star2.star_2_27", "PM.FirstEdition.Volume1.Star3.star_3_31"],
-      "normalized_dependencies": ["PM1:✱1·1", "PM1:✱1·11", "PM1:✱2·27", "PM1:✱3·31"],
-      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": ["PM1:✱1·1"], "printed_but_unused": [], "strict_attempt_evidence": "reviews/Q224-review.md", "editorial_note": "The generic theorem includes Γ = []; exactly ✱1·1 supplies the empty-context detachment branch, while ✱1·11 remains the printed nonempty branch."},
-      "dependency_fidelity": "relaxed-implicit-detachment-gap"
+      "formal_status": "lean-typechecked",
+      "printed_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·27",
+        "PM1:✱3·31"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.star_1_1",
+        "PM.Derivation.star_1_11",
+        "PM.FirstEdition.Volume1.Star2.star_2_27",
+        "PM.FirstEdition.Volume1.Star3.star_3_31"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·1",
+        "PM1:✱1·11",
+        "PM1:✱2·27",
+        "PM1:✱3·31"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱1·1"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Q224-review.md",
+        "editorial_note": "The generic theorem includes Γ = []; exactly ✱1·1 supplies the empty-context detachment branch, while ✱1·11 remains the printed nonempty branch."
+      },
+      "dependency_fidelity": "relaxed-implicit-detachment-gap",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
-  "aristotle_evidence": {"project_id": "fc351106-569f-461e-97c7-a4d92b0526e2", "task_id": "9bd2293f-da11-48ee-9114-5e582d2ec850", "archive": "aristotle/results/Q224-relax-implicit-detachment-final.tar.gz", "sha256": "2e6011ebad20b3e51bde4945b66ad2696468a92567b298dfd1d01de2c82d6ef5", "strict_rejected_archive_sha256": "f22814d205cad296734ebaa176311acb4dd855afe3a8102f9dedc4080105612b", "audit": "kernel-checked-relaxed-printed-gaps"},
-  "ci_evidence": {"commit": "eff84d63c362fe72e2f2ce0e655b594e579b448e", "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31465395073", "conclusion": "success"}
+  "aristotle_evidence": {
+    "project_id": "fc351106-569f-461e-97c7-a4d92b0526e2",
+    "task_id": "9bd2293f-da11-48ee-9114-5e582d2ec850",
+    "archive": "aristotle/results/Q224-relax-implicit-detachment-final.tar.gz",
+    "sha256": "2e6011ebad20b3e51bde4945b66ad2696468a92567b298dfd1d01de2c82d6ef5",
+    "strict_rejected_archive_sha256": "f22814d205cad296734ebaa176311acb4dd855afe3a8102f9dedc4080105612b",
+    "audit": "kernel-checked-relaxed-printed-gaps"
+  },
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

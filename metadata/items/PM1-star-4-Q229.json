@@ -2,13 +2,146 @@
   "batch": "PM1-STAR4-Q229",
   "edition": "first",
   "volume": 1,
-  "source_range": {"printed_pages": "121–123", "scan_leaves": [143,144,145], "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu", "scan_sha256": {"143":"95d6946a9ca568061123df63f32b694ac0440528ed74db45bce6478d45bf39e2","144":"54cd7fe266d38746d15a927a0a83c62da77742373576b596e5469f77f13cb17e","145":"93a9eb99d20908a768f24de44b4e4c2424302280b11ddf5ac2ff789b0d2a123e"}},
-  "witnesses": ["PM1-1910-SCAN", "WS-PM1"],
-  "items": [
-    {"id":"PM1:✱4·21","kind":"derived-proposition","printed":"⊢ : p ≡ q . ≡ . q ≡ p","printed_page":121,"scan_leaf":143,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean","declaration":"PM.FirstEdition.Volume1.Star4.star_4_21","formal_scope":"(p≡q)≡(q≡p), over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"prepared","printed_dependencies":["PM1:✱3·22"],"normalized_dependencies":[],"blocked_dependencies":["PM1:✱3·22"]},
-    {"id":"PM1:✱4·22","kind":"derived-proposition","printed":"⊢ : p ≡ q . q ≡ r . ⊃ . p ≡ r","printed_page":122,"scan_leaf":144,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean","declaration":"PM.FirstEdition.Volume1.Star4.star_4_22","formal_scope":"((p≡q)·(q≡r))⊃(p≡r), using the special ✱4·02 chain definition","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"prepared","printed_dependencies":["PM1:✱3·26","PM1:✱3·27","PM1:✱2·83","Comp"],"normalized_dependencies":[],"blocked_dependencies":["PM1:✱2·83","PM1:✱3·26","PM1:✱3·27","PM1:✱3·43"]},
-    {"id":"PM1:✱4·24","kind":"derived-proposition","printed":"⊢ : p . ≡ . p . p","printed_page":123,"scan_leaf":145,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean","declaration":"PM.FirstEdition.Volume1.Star4.star_4_24","formal_scope":"p≡(p·p), over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"prepared","printed_dependencies":["PM1:✱3·26","PM1:✱3·2","PM1:✱2·43"],"normalized_dependencies":["PM1:✱2·43"],"blocked_dependencies":["PM1:✱3·2","PM1:✱3·26"]},
-    {"id":"PM1:✱4·25","kind":"derived-proposition","printed":"⊢ : p . ≡ . p ∨ p","printed_page":123,"scan_leaf":145,"lean_path":"Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean","declaration":"PM.FirstEdition.Volume1.Star4.star_4_25","formal_scope":"p≡(p∨p), over an elementary real-variable context","source_status":"scan-hash-recorded-and-WS-collated","formal_status":"prepared","printed_dependencies":["Taut","Add"],"normalized_dependencies":["PM1:✱1·2","PM1:✱1·3"]}
+  "source_range": {
+    "printed_pages": "121–123",
+    "scan_leaves": [
+      143,
+      144,
+      145
+    ],
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "scan_sha256": {
+      "143": "95d6946a9ca568061123df63f32b694ac0440528ed74db45bce6478d45bf39e2",
+      "144": "54cd7fe266d38746d15a927a0a83c62da77742373576b596e5469f77f13cb17e",
+      "145": "93a9eb99d20908a768f24de44b4e4c2424302280b11ddf5ac2ff789b0d2a123e"
+    }
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "WS-PM1"
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "items": [
+    {
+      "id": "PM1:✱4·21",
+      "kind": "derived-proposition",
+      "printed": "⊢ : p ≡ q . ≡ . q ≡ p",
+      "printed_page": 121,
+      "scan_leaf": 143,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4Q240.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star4.star_4_21",
+      "formal_scope": "(p≡q)≡(q≡p), over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱3·22"
+      ],
+      "normalized_dependencies": [],
+      "blocked_dependencies": [
+        "PM1:✱3·22"
+      ],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱4·22",
+      "kind": "derived-proposition",
+      "printed": "⊢ : p ≡ q . q ≡ r . ⊃ . p ≡ r",
+      "printed_page": 122,
+      "scan_leaf": 144,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star4.star_4_22",
+      "formal_scope": "((p≡q)·(q≡r))⊃(p≡r), using the special ✱4·02 chain definition",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱2·83",
+        "Comp"
+      ],
+      "normalized_dependencies": [],
+      "blocked_dependencies": [
+        "PM1:✱2·83",
+        "PM1:✱3·26",
+        "PM1:✱3·27",
+        "PM1:✱3·43"
+      ],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱4·24",
+      "kind": "derived-proposition",
+      "printed": "⊢ : p . ≡ . p . p",
+      "printed_page": 123,
+      "scan_leaf": 145,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star4.star_4_24",
+      "formal_scope": "p≡(p·p), over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱3·26",
+        "PM1:✱3·2",
+        "PM1:✱2·43"
+      ],
+      "normalized_dependencies": [],
+      "blocked_dependencies": [
+        "PM1:✱3·2",
+        "PM1:✱3·26"
+      ],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱4·25",
+      "kind": "derived-proposition",
+      "printed": "⊢ : p . ≡ . p ∨ p",
+      "printed_page": 123,
+      "scan_leaf": 145,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star4.star_4_25",
+      "formal_scope": "p≡(p∨p), over an elementary real-variable context",
+      "source_status": "scan-hash-recorded-and-WS-collated",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "Taut",
+        "Add"
+      ],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

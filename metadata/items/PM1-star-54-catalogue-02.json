@@ -25,8 +25,8 @@
       "declaration": "PM.Architecture.Star54OpeningKernel.star_54_21",
       "formal_scope": "exact typed equality cancellation for unordered couples",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱51·41"
       ],
@@ -35,9 +35,20 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱51·41"],
+        "printed_but_unused": [
+          "PM1:✱51·41"
+        ],
         "strict_attempt_evidence": "reviews/Star54-dependency-reconciliation.md",
         "editorial_note": "Lean proves cancellation directly by extensional case analysis; PM's earlier couple-cancellation citation remains historical evidence."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -50,8 +61,8 @@
       "declaration": "PM.Architecture.Star54OpeningKernel.star_54_22",
       "formal_scope": "exact typed characterization of equality of unordered couples",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱51·43"
       ],
@@ -63,10 +74,23 @@
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱54·21"],
-        "printed_but_unused": ["PM1:✱51·43"],
+        "added_beyond_print": [
+          "PM1:✱54·21"
+        ],
+        "printed_but_unused": [
+          "PM1:✱51·43"
+        ],
         "strict_attempt_evidence": "reviews/Star54-dependency-reconciliation.md",
         "editorial_note": "The typed proof reduces general pair equality to the already checked local cancellation theorem ✱54·21 rather than importing PM's ✱51·43 route."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -79,11 +103,20 @@
       "declaration": "PM.Architecture.Star54OpeningKernel.star_54_25",
       "formal_scope": "exact typed characterization of a couple as a unit class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱54·26",
@@ -95,8 +128,8 @@
       "declaration": "PM.Architecture.Star54OpeningKernel.star_54_26",
       "formal_scope": "exact typed characterization of a cardinal couple by distinctness",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star54OpeningKernel.star_54_25"
@@ -106,10 +139,21 @@
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": ["PM1:✱54·25"],
+        "added_beyond_print": [
+          "PM1:✱54·25"
+        ],
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star54-dependency-reconciliation.md",
         "editorial_note": "Lean derives cardinal-two membership from the preceding singleton characterization ✱54·25; the printed line carries no explicit citation."
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
       }
     },
     {
@@ -122,8 +166,8 @@
       "declaration": "PM.Architecture.Star54OpeningKernel.star_54_27",
       "formal_scope": "exact typed disjunction that every couple has cardinal one or two",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
-      "integration_status": "canonical-kernel-checked",
+      "formal_status": "lean-typechecked",
+      "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱54·25",
         "PM1:✱54·26"
@@ -135,7 +179,16 @@
       "normalized_dependencies": [
         "PM1:✱54·25",
         "PM1:✱54·26"
-      ]
+      ],
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

@@ -22,15 +22,20 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel5.lean",
       "declaration": "PM.Architecture.Star33DomainKernel5.star_33_47",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed relation-extensionality theorem from equality of every active second-coordinate section; strict semantic audit passed",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱30·41",
+        "PM1:✱32·14"
+      ],
       "lean_dependencies": [
+        "PM.Architecture.Star33DomainKernel5.star_33_45"
+      ],
+      "normalized_dependencies": [
         "PM1:✱33·45"
       ],
-      "normalized_dependencies": [],
-      "printed": "✱33·47.  \\(\\vdash\\colon\\ldotp y\\in \\text{ᗡ}ʻR\\cup \\text{ᗡ}ʻS.\\supset_{y}.\\overrightarrow{R}ʻy=\\overrightarrow{S}ʻy:\\supset.R=S\\)",
+      "printed": "✱33·47. ⊢:. y∈ ᗡʻR∪ ᗡʻS.⊃y.R⃗ʻy=S⃗ʻy:⊃.R=S",
       "printed_page": 232,
       "scan_leaf": 254,
       "integration_blocked": false,
@@ -44,7 +49,20 @@
         "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star33-catalogue-07-semantic-audit.md",
         "editorial_note": "The audited Lean declaration proves the same endpoint with the recorded local proof dependency pattern; the printed proof reference remains in the historical graph."
-      }
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱33·47.  \\(\\vdash\\colon\\ldotp y\\in \\text{ᗡ}ʻR\\cup \\text{ᗡ}ʻS.\\supset_{y}.\\overrightarrow{R}ʻy=\\overrightarrow{S}ʻy:\\supset.R=S\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱33·48",
@@ -52,17 +70,15 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel6.lean",
       "declaration": "PM.Architecture.Star33DomainKernel6.star_33_48",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed relation-extensionality theorem from equality of every active first-coordinate section; strict semantic audit passed",
       "printed_dependencies": [
         "PM1:✱33·47"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱33·47"
-      ],
-      "printed": "✱33·48.  \\(\\vdash\\colon\\ldotp x\\in \\text{D}ʻR\\cup \\text{D}ʻS.\\supset_{x}.\\overleftarrow{R}ʻx=\\overleftarrow{S}ʻx:\\supset.R=S \\quad[\\text{Proof as in *33·47}]\\)",
+      "normalized_dependencies": [],
+      "printed": "✱33·48. ⊢:. x∈ DʻR∪ DʻS.⊃ₓ.R⃖ʻx=S⃖ʻx:⊃.R=S [Proof as in *33·47]",
       "printed_page": 232,
       "scan_leaf": 254,
       "integration_blocked": false,
@@ -76,7 +92,20 @@
         ],
         "strict_attempt_evidence": "reviews/Star33-catalogue-07-semantic-audit.md",
         "editorial_note": "The audited Lean declaration proves the same endpoint with the recorded local proof dependency pattern; the printed proof reference remains in the historical graph."
-      }
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱33·48.  \\(\\vdash\\colon\\ldotp x\\in \\text{D}ʻR\\cup \\text{D}ʻS.\\supset_{x}.\\overleftarrow{R}ʻx=\\overleftarrow{S}ʻx:\\supset.R=S \\quad[\\text{Proof as in *33·47}]\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
     {
       "id": "PM1:✱33·51",
@@ -84,7 +113,7 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel6.lean",
       "declaration": "PM.Architecture.Star33DomainKernel6.star_33_51",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed biconditional between field membership and PM's field relation F; strict semantic audit passed",
       "printed_dependencies": [
@@ -92,11 +121,8 @@
         "PM1:✱33·103"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱33·132",
-        "PM1:✱33·103"
-      ],
-      "printed": "✱33·51.  \\(\\vdash:x\\in CʻR.\\equiv.xFR \\quad[\\text{*33·132·103}]\\)",
+      "normalized_dependencies": [],
+      "printed": "✱33·51. ⊢:x∈ CʻR.≡.xFR [*33·132·103]",
       "printed_page": 232,
       "scan_leaf": 254,
       "integration_blocked": false,
@@ -111,7 +137,18 @@
         ],
         "strict_attempt_evidence": "reviews/Star33-catalogue-07-semantic-audit.md",
         "editorial_note": "The audited Lean declaration proves the same endpoint with the recorded local proof dependency pattern; the printed proof reference remains in the historical graph."
-      }
+      },
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "✱33·51.  \\(\\vdash:x\\in CʻR.\\equiv.xFR \\quad[\\text{*33·132·103}]\\)"
     }
   ],
   "ci_evidence": {

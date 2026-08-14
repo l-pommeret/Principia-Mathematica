@@ -1,1 +1,134 @@
-{"batch":"PM1-STAR24-Q364","edition":"first","volume":1,"source_range":{"printed_pages":"232","scan_leaves":[254],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"items":[{"id":"PM1:✱24·26","kind":"derived-proposition","printed":"⊢ . α ∩ V = α","printed_page":232,"scan_leaf":254,"lean_path":"Principia/FirstEdition/Volume1/Star24Source.lean","declaration":"source-only","formal_scope":"classes; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":["✱22·621","✱24·11"],"normalized_dependencies":[]},{"id":"PM1:✱24·27","kind":"derived-proposition","printed":"⊢ . α ∪ V = V","printed_page":232,"scan_leaf":254,"lean_path":"Principia/FirstEdition/Volume1/Star24Source.lean","declaration":"source-only","formal_scope":"classes; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":["✱22·62","✱24·11"],"normalized_dependencies":[]},{"id":"PM1:✱24·3","kind":"derived-proposition","printed":"⊢ : α ⊂ β .≡ . α − β = Λ","printed_page":232,"scan_leaf":254,"lean_path":"Principia/FirstEdition/Volume1/Star24Source.lean","declaration":"source-only","formal_scope":"classes; blocked","source_status":"source-catalogued","formal_status":"prepared","integration_status":"blocked-architecture-classes-predicativity-reducibility","printed_dependencies":[],"normalized_dependencies":[]}],"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM1-STAR24-Q364",
+  "edition": "first",
+  "volume": 1,
+  "formalization_standard": "Star2-T1-T9-object-judgment",
+  "axiom_free_required": true,
+  "source_range": {
+    "printed_pages": "232",
+    "scan_leaves": [
+      254
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱24·26",
+      "kind": "derived-proposition",
+      "printed": "⊢ . α ∩ V = α",
+      "printed_page": 232,
+      "scan_leaf": 254,
+      "lean_path": "Principia/Architecture/Star24Q364Kernel.lean",
+      "declaration": "missing (no PM object-language assertion judgment)",
+      "statement_lean_path": "Principia/Architecture/Star24Q364Kernel.lean",
+      "statement_declaration": "PM.Architecture.Star24Q364Kernel.star_24_26",
+      "formalization_layer": "prop-semantic-secondary",
+      "formal_scope": "blocked: secondary Prop equality only; no PM object judgment, and #print axioms reports propext/Quot.sound",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-object-judgment",
+      "integration_blocked": true,
+      "blocking_reason": "The Star2/T1–T9 gate requires a genuine derivation judgment; extensional class equality is only secondary semantics.",
+      "printed_dependencies": [
+        "✱22·621",
+        "✱24·11"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
+      "semantic_audit_evidence": "reviews/Q364-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱24·27",
+      "kind": "derived-proposition",
+      "printed": "⊢ . α ∪ V = V",
+      "printed_page": 232,
+      "scan_leaf": 254,
+      "lean_path": "Principia/Architecture/Star24Q364Kernel.lean",
+      "declaration": "missing (no PM object-language assertion judgment)",
+      "statement_lean_path": "Principia/Architecture/Star24Q364Kernel.lean",
+      "statement_declaration": "PM.Architecture.Star24Q364Kernel.star_24_27",
+      "formalization_layer": "prop-semantic-secondary",
+      "formal_scope": "blocked: secondary Prop equality only; no PM object judgment, and #print axioms reports propext/Quot.sound",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-object-judgment",
+      "integration_blocked": true,
+      "blocking_reason": "The Star2/T1–T9 gate requires a genuine derivation judgment; extensional class equality is only secondary semantics.",
+      "printed_dependencies": [
+        "✱22·62",
+        "✱24·11"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
+      "semantic_audit_evidence": "reviews/Q364-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱24·3",
+      "kind": "derived-proposition",
+      "printed": "⊢ : α ⊂ β .≡ . α − β = Λ",
+      "printed_page": 232,
+      "scan_leaf": 254,
+      "lean_path": "Principia/Architecture/Star24Q364Kernel.lean",
+      "declaration": "missing (no PM object-language assertion judgment)",
+      "statement_lean_path": "Principia/Architecture/Star24Q364Kernel.lean",
+      "statement_declaration": "PM.Architecture.Star24Q364Kernel.star_24_3",
+      "formalization_layer": "prop-semantic-secondary",
+      "formal_scope": "blocked: secondary classical Prop equivalence only; no PM object judgment, and #print axioms reports propext/Classical.choice/Quot.sound",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-object-judgment",
+      "integration_blocked": true,
+      "blocking_reason": "The Star2/T1–T9 gate requires a genuine derivation judgment; Classical.byContradiction proves semantics but not the printed PM derivation.",
+      "printed_dependencies": [
+        "✱22·35",
+        "✱22·33",
+        "✱24·15"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
+      "semantic_audit_evidence": "reviews/Q364-review.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "semantic_audit_status": "strict-promotion-refused-missing-pm-object-judgments",
+  "semantic_audit_evidence": "reviews/Q364-review.md",
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

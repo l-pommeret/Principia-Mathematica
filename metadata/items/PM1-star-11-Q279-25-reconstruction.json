@@ -1,0 +1,88 @@
+{
+  "batch": "PM1-STAR11-Q279-25-RECONSTRUCTION",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "160–161",
+    "scan_leaves": [
+      182,
+      183
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 182,
+        "printed_page": 160,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page182-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "26cf5dbcbcae3b8bad11e5e4e744e04fff8ee0050a924f26b17ebaef0e6b8470"
+      },
+      {
+        "scan_leaf": 183,
+        "printed_page": 161,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page183-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "fd0d74942b7e318c64a90094844bb6160b3c223d87bcafada79c1e3f4c4bc0e2"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱11·25",
+      "kind": "derived-proposition",
+      "printed": "⊢ : ∼{(∃x, y).φ(x, y)} .≡ .(x, y).∼φ(x, y)  [✱11·22.Transp]",
+      "printed_page": 160,
+      "scan_leaf": 182,
+      "lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
+      "declaration": "PM.Architecture.Star11Q279Kernel.star_11_25",
+      "formal_scope": "canonical Raw reconstruction and two-step quantifier-negation normalization; the ordinary Prop theorem is secondary; a PM assertion judgement and the printed ✱11·22.Transp derivation remain to be reconstructed",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-pm-assertion-judgement",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q279-canonical-integration.md",
+      "printed_dependencies": [
+        "PM1:✱11·22"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱10·252"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star10Q269Kernel.star_10_252"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱10·252"
+        ],
+        "printed_but_unused": [
+          "PM1:✱11·22"
+        ],
+        "strict_attempt_evidence": "reviews/Q279-canonical-integration.md",
+        "editorial_note": "The current Raw normalization reuses the unary quantifier-negation contract ✱10·252. The printed ✱11·22.Transp assertion chain is not yet represented by a Raw assertion judgement, so this item is deliberately not kernel-integrated."
+      },
+      "statement_lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
+      "statement_declaration": "PM.Architecture.Star11Q279Kernel.star_11_25_prop",
+      "formalization_level": "pm-syntax-normalization",
+      "semantic_audit_status": "strict-pm-derivation-incomplete",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

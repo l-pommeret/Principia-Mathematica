@@ -25,14 +25,30 @@
       "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_7",
       "formal_scope": "exact right-multiplication identity under converse-domain inclusion; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.I",
+        "PM.Architecture.Star50OpeningKernel5.star_50_62"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·01",
+        "PM1:✱50·62"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱50·71",
@@ -44,14 +60,30 @@
       "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_71",
       "formal_scope": "exact left-multiplication identity under domain inclusion; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.I",
+        "PM.Architecture.Star50OpeningKernel5.star_50_63"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·01",
+        "PM1:✱50·63"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱50·72",
@@ -63,14 +95,32 @@
       "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_72",
       "formal_scope": "exact right- and left-multiplication identities at the field; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.I",
+        "PM.Architecture.Star50OpeningKernel5.star_50_64",
+        "PM.Architecture.Star50OpeningKernel5.star_50_65"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·01",
+        "PM1:✱50·64",
+        "PM1:✱50·65"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱50·73",
@@ -82,14 +132,28 @@
       "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_73",
       "formal_scope": "exact right- and left-multiplication identity laws; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.I"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·01"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱50·74",
@@ -101,14 +165,35 @@
       "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_74",
       "formal_scope": "exact equality of right-multiplication operators after right identity composition; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱43·112",
+        "PM1:✱50·4",
+        "PM1:✱43·11",
+        "PM1:✱30·41"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star50OpeningKernel.I",
+        "PM.Architecture.Star50OpeningKernel5.star_50_73"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱50·01",
+        "PM1:✱50·73"
+      ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star50-catalogue-review.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

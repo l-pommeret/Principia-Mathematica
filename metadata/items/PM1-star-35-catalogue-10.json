@@ -14,117 +14,161 @@
     {
       "id": "PM1:✱35·46",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:R\\unicode{x2abd}S.\\supset.\\alpha\\upharpoonleft R\\unicode{x2abd}\\alpha\\upharpoonleft S\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:R⪽S.⊃.α↿ R⪽α↿ S",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱23·1",
+        "PM1:✱35·1"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35InclusionRecoveryKernel.lean",
       "declaration": "PM.Architecture.Star35InclusionRecoveryKernel.star_35_46",
       "formal_scope": "exact typed monotonicity of left restriction under relation inclusion; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash:R\\unicode{x2abd}S.\\supset.\\alpha\\upharpoonleft R\\unicode{x2abd}\\alpha\\upharpoonleft S\\)"
     },
     {
       "id": "PM1:✱35·461",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:R\\unicode{x2abd}S.\\supset.R\\upharpoonright \\beta\\unicode{x2abd}S\\upharpoonright \\beta \\quad[\\text{Similar proof}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:R⪽S.⊃.R↾ β⪽S↾ β [Similar proof]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35InclusionRecoveryKernel.lean",
       "declaration": "PM.Architecture.Star35InclusionRecoveryKernel.star_35_461",
       "formal_scope": "exact typed monotonicity of right restriction under relation inclusion; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash:R\\unicode{x2abd}S.\\supset.R\\upharpoonright \\beta\\unicode{x2abd}S\\upharpoonright \\beta \\quad[\\text{Similar proof}]\\)"
     },
     {
       "id": "PM1:✱35·462",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:R\\unicode{x2abd}S.\\supset.\\alpha\\upharpoonleft R\\upharpoonright \\beta\\unicode{x2abd}\\alpha\\upharpoonleft S\\upharpoonright \\beta \\quad[\\text{Similar proof}]\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:R⪽S.⊃.α↿ R↾ β⪽α↿ S↾ β [Similar proof]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35InclusionRecoveryKernel.lean",
       "declaration": "PM.Architecture.Star35InclusionRecoveryKernel.star_35_462",
       "formal_scope": "exact typed monotonicity of simultaneous restriction under relation inclusion; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash:R\\unicode{x2abd}S.\\supset.\\alpha\\upharpoonleft R\\upharpoonright \\beta\\unicode{x2abd}\\alpha\\upharpoonleft S\\upharpoonright \\beta \\quad[\\text{Similar proof}]\\)"
     },
     {
       "id": "PM1:✱35·471",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\text{ᗡ}ʻP\\cap \\alpha=\\Lambda.\\supset.P\\mid (\\alpha\\upharpoonleft R)=\\dot{\\Lambda}\\)",
+      "demonstration_provenance": "follows-printed",
+      "printed": "⊢:ᗡʻP∩ α=Λ.⊃.P| (α↿ R)=Λ̇",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
-
+        "PM1:✱34·1",
+        "PM1:✱35·1",
+        "PM1:✱33·14",
+        "PM1:✱10·5",
+        "PM1:✱22·33",
+        "PM1:✱24·5",
+        "PM1:✱24·51",
+        "PM1:✱11·11",
+        "PM1:✱11·3",
+        "PM1:✱25·15"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35LateKernel.lean",
       "declaration": "PM.Architecture.Star35LateKernel.star_35_471",
       "formal_scope": "exact typed emptiness of composition when the converse-domain of the first relation is disjoint from the intermediate restriction class; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash:\\text{ᗡ}ʻP\\cap \\alpha=\\Lambda.\\supset.P\\mid (\\alpha\\upharpoonleft R)=\\dot{\\Lambda}\\)"
     },
     {
       "id": "PM1:✱35·472",
       "kind": "derived-proposition",
-      "printed": "\\(\\vdash:\\text{D}ʻP\\cap \\alpha=\\Lambda.\\supset.(R\\upharpoonright \\alpha)\\mid P=\\dot{\\Lambda}\\)",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed": "⊢:DʻP∩ α=Λ.⊃.(R↾ α)| P=Λ̇",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star35-canonical-review.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35LateKernel.lean",
       "declaration": "PM.Architecture.Star35LateKernel.star_35_472",
       "formal_scope": "exact typed emptiness of composition when the domain of the second relation is disjoint from the intermediate restriction class; strict semantic audit passed",
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      },
+      "printed_latex_witness": "\\(\\vdash:\\text{D}ʻP\\cap \\alpha=\\Lambda.\\supset.(R\\upharpoonright \\alpha)\\mid P=\\dot{\\Lambda}\\)"
     }
   ],
   "ci_evidence": {

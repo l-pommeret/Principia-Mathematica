@@ -43,7 +43,17 @@
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-42.txt",
       "lean_dependencies": [],
       "semantic_audit_status": "refused-non-equivalent-target",
-      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱103·43",
@@ -63,7 +73,17 @@
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-43.txt",
       "lean_dependencies": [],
       "semantic_audit_status": "refused-non-equivalent-target",
-      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱103·44",
@@ -79,13 +99,27 @@
       "integration_blocked": true,
       "integration_status": "blocked-semantic-mismatch-different-hypothesis-and-conclusion",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-44.txt",
-      "lean_dependencies": [
+      "normalized_dependencies": [
+        "PM2:✱103·02",
         "PM2:✱103·301"
       ],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-44.txt",
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume2.Star103Kernel2.star_103_301",
+        "PM.FirstEdition.Volume2.Star103Source.CardinalClass"
+      ],
       "semantic_audit_status": "refused-non-equivalent-target",
-      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱103·5",
@@ -105,7 +139,16 @@
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-5.txt",
       "lean_dependencies": [],
       "semantic_audit_status": "refused-non-equivalent-target",
-      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM2:✱103·51",
@@ -127,7 +170,17 @@
         "PM2:✱103·14"
       ],
       "semantic_audit_status": "refused-non-equivalent-target",
-      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "review": {

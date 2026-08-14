@@ -2,83 +2,123 @@
   "batch": "PM1-STAR32-CATALOGUE-09-PREPARED",
   "edition": "first",
   "volume": 1,
-  "integration_status": "blocked-no-canonical-declaration",
+  "integration_status": "blocked-T2-T4-no-canonical-declaration-object-judgment-or-reading",
   "items": [
     {
       "id": "PM1:✱32·01",
       "kind": "definition",
-      "printed": "\\(\\overrightarrow{R} = \\hat{\\alpha}\\hat{y}\\{\\alpha = \\hat{x}(x R y)\\} \\quad \\text{Df}\\)",
+      "printed": "R⃗ = α̂ŷ{α = x̂(x R y)} Df",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_scope": "refused: source transcription only; no canonical Lean declaration reconstructs the printed class-valued descriptive-function definition",
-      "declaration": "source-only",
+      "formal_scope": "canonical eliminable definition of the printed right-sectional function",
+      "declaration": "PM.FirstEdition.Volume1.Star32Source.star_32_01",
       "lean_path": "Principia/FirstEdition/Volume1/Star32Source.lean",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-canonical-declaration",
+      "integration_status": "blocked-T2-T4-no-canonical-declaration-object-judgment-or-reading",
       "integration_blocked": true,
       "blocking_reason": "No numbered or bijectively mapped Lean declaration reconstructs the printed descriptive-function definition of the right-sectional function; similarly named local helpers are not a canonical source-to-Lean target.",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-09-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "blocked-pm-derivation-v1-T2-T4",
+      "printed_latex_witness": "\\(\\overrightarrow{R} = \\hat{\\alpha}\\hat{y}\\{\\alpha = \\hat{x}(x R y)\\} \\quad \\text{Df}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱32·02",
       "kind": "definition",
-      "printed": "\\(\\overleftarrow{R} = \\hat{\\beta}\\hat{x}\\{\\beta = \\hat{y}(xRy)\\} \\quad \\text{Df}\\)",
+      "printed": "R⃖ = β̂x̂{β = ŷ(xRy)} Df",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_scope": "refused: source transcription only; no canonical Lean declaration reconstructs the printed class-valued descriptive-function definition",
-      "declaration": "source-only",
+      "formal_scope": "canonical eliminable definition of the printed left-sectional function",
+      "declaration": "PM.FirstEdition.Volume1.Star32Source.star_32_02",
       "lean_path": "Principia/FirstEdition/Volume1/Star32Source.lean",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-canonical-declaration",
+      "integration_status": "blocked-T2-T4-no-canonical-declaration-object-judgment-or-reading",
       "integration_blocked": true,
       "blocking_reason": "No numbered or bijectively mapped Lean declaration reconstructs the printed descriptive-function definition of the left-sectional function; similarly named local helpers are not a canonical source-to-Lean target.",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-09-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "blocked-pm-derivation-v1-T2-T4",
+      "printed_latex_witness": "\\(\\overleftarrow{R} = \\hat{\\beta}\\hat{x}\\{\\beta = \\hat{y}(xRy)\\} \\quad \\text{Df}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱32·03",
       "kind": "definition",
-      "printed": "\\(\\text{sg}=\\hat{A}\\hat{R}(A=\\overrightarrow{R}) \\quad\\text{Df}\\)",
+      "printed": "sg=ÂR̂(A=R⃗) Df",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_scope": "refused: source transcription only; the printed sg relation between a section family and a relation has no canonical Lean declaration",
-      "declaration": "source-only",
+      "formal_scope": "canonical eliminable definition of the printed sg relation",
+      "declaration": "PM.FirstEdition.Volume1.Star32Source.star_32_03",
       "lean_path": "Principia/FirstEdition/Volume1/Star32Source.lean",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-canonical-declaration",
+      "integration_status": "blocked-T2-T4-no-canonical-declaration-object-judgment-or-reading",
       "integration_blocked": true,
       "blocking_reason": "The available helper named sg maps a relation directly to its section family; it does not reconstruct the printed relational class abstract ÂR̂(A=→R) as a separately audited definition.",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-09-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "blocked-pm-derivation-v1-T2-T4",
+      "printed_latex_witness": "\\(\\text{sg}=\\hat{A}\\hat{R}(A=\\overrightarrow{R}) \\quad\\text{Df}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     },
     {
       "id": "PM1:✱32·04",
       "kind": "definition",
-      "printed": "\\(\\text{gs}=\\hat{A}\\hat{R}(A=\\overleftarrow{R}) \\quad\\text{Df}\\)",
+      "printed": "gs=ÂR̂(A=R⃖) Df",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_scope": "refused: source transcription only; the printed gs relation between a section family and a relation has no canonical Lean declaration",
-      "declaration": "source-only",
+      "formal_scope": "canonical eliminable definition of the printed gs relation",
+      "declaration": "PM.FirstEdition.Volume1.Star32Source.star_32_04",
       "lean_path": "Principia/FirstEdition/Volume1/Star32Source.lean",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-canonical-declaration",
+      "integration_status": "blocked-T2-T4-no-canonical-declaration-object-judgment-or-reading",
       "integration_blocked": true,
       "blocking_reason": "The available helper named gs maps a relation directly to its section family; it does not reconstruct the printed relational class abstract ÂR̂(A=←R) as a separately audited definition.",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-09-semantic-audit.md",
-      "semantic_audit_status": "strict-equivalence-refused"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "blocked-pm-derivation-v1-T2-T4",
+      "printed_latex_witness": "\\(\\text{gs}=\\hat{A}\\hat{R}(A=\\overleftarrow{R}) \\quad\\text{Df}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "ci_evidence": {

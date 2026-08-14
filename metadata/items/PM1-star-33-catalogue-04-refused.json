@@ -25,15 +25,33 @@
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-omitted-field-equality",
       "formal_scope": "refused: print asserts domain, converse-domain, and field of the universal relation all equal the universal class, while Lean proves only the first two equalities and omits Field (UniversalRelation) = UniversalClass",
-      "printed_dependencies": [],
+      "printed_dependencies": [
+        "PM1:✱33·13",
+        "PM1:✱33·131",
+        "PM1:✱24·14",
+        "PM1:✱33·16",
+        "PM1:✱22·56"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "printed": "✱33·28.  \\(\\vdash.\\text{D}ʻ\\text{V}=\\text{ᗡ}ʻ\\dot{\\text{V}}=Cʻ\\text{V}=\\text{V}\\)",
+      "printed": "✱33·28. ⊢.DʻV=ᗡʻV̇=CʻV=V",
       "printed_page": 232,
       "scan_leaf": 254,
       "integration_blocked": true,
       "semantic_audit_status": "refused-incomplete-conclusion",
-      "semantic_audit_evidence": "reviews/Star33-catalogue-04-semantic-audit.md"
+      "semantic_audit_evidence": "reviews/Star33-catalogue-04-semantic-audit.md",
+      "structural_formalization_status": "blocked-v1-missing-typed-pm-ast-and-kernel-derivation",
+      "printed_latex_witness": "✱33·28.  \\(\\vdash.\\text{D}ʻ\\text{V}=\\text{ᗡ}ʻ\\dot{\\text{V}}=Cʻ\\text{V}=\\text{V}\\)",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
     }
   ],
   "review_evidence": [

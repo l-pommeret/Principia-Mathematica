@@ -1,0 +1,162 @@
+{
+  "batch": "PM2-STAR164-CATALOGUE-07",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "382, 383"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱164·4",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. N ∈ CʻQ.⊃ _N.RʻN ∈ (SʻN) smor̅ N:⊃ .ᗡʻṡ ʻRʻʻCʻQ = CʻΣ ʻQ",
+      "printed_page": 382,
+      "lean_path": "Principia/FirstEdition/Volume2/Star164Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM1:✱41·44",
+        "PM2:✱151·11",
+        "PM1:✱37·68",
+        "PM2:✱162·22"
+      ],
+      "printed_latex_witness": "\\(\\vdash \\colon\\ldotp N \\in CʻQ.\\supset _{N}.RʻN \\in (SʻN)\\,\\overline{\\text{smor}}\\,N:\\supset .\\text{ᗡ}ʻ\\dot{s} ʻRʻʻCʻQ = Cʻ\\Sigma ʻQ\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱164·41",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. Q ∈ Rel²excl: N ∈ CʻQ.⊃ _N.RʻN ∈ (SʻN) smor̅ N:⊃ . ṡ ʻRʻʻCʻQ ∈ 1 arrow Cls",
+      "printed_page": 382,
+      "lean_path": "Principia/FirstEdition/Volume2/Star164Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱151·11",
+        "PM2:✱163·11",
+        "PM1:✱30·37"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\ldotp Q \\in \\text{Rel}^{2}\\text{excl}: N \\in CʻQ.\\supset _{N}.RʻN \\in (SʻN)\\,&\\overline{\\text{smor}}\\,N:\\supset .\\\\ &\\dot{s} ʻRʻʻCʻQ \\in 1 \\rightarrow \\text{Cls}\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱164·411",
+      "kind": "derived-proposition",
+      "printed": "⊢ :S^;Q ∈ Rel²excl.S↾ CʻQ ∈ 1 arrow 1.Hp*164·4.⊃ .ṡ ʻRʻʻCʻQ ∈ Cls arrow 1",
+      "printed_page": 383,
+      "lean_path": "Principia/FirstEdition/Volume2/Star164Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱151·11",
+        "PM2:✱163·11",
+        "PM2:✱150·22",
+        "PM1:✱71·532",
+        "PM1:✱30·37"
+      ],
+      "printed_latex_witness": "\\(\\vdash :S^{;}Q \\in \\text{Rel}^{2}\\text{excl}.S\\upharpoonright CʻQ \\in 1 \\rightarrow 1.\\text{Hp}*164·4.\\supset .\\dot{s} ʻRʻʻCʻQ \\in \\text{Cls} \\rightarrow 1\\)",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱164·412",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. S^;Q, Q ∈ Rel²excl.S↾ CʻQ ∈ 1 arrow 1: N ∈ CʻQ.⊃ _N.RʻN ∈ (SʻN) smor̅ N:⊃ .ṡ ʻRʻʻCʻQ ∈ 1 arrow 1 [*164·41·411]",
+      "printed_page": 383,
+      "lean_path": "Principia/FirstEdition/Volume2/Star164Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱164·41",
+        "PM2:✱164·411"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\ldotp S^{;}Q,&Q \\in \\text{Rel}^{2}\\text{excl}.S\\upharpoonright CʻQ \\in 1 \\rightarrow 1:\\\\ &N \\in CʻQ.\\supset _N.RʻN \\in (SʻN)\\,\\overline{\\text{smor}}\\, N:\\supset .\\dot{s} ʻRʻʻCʻQ \\in 1 \\rightarrow 1\\\\ &[*164·41·411]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱164·413",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. Hp *164·41.⊃ : N ∈ CʻQ.⊃ .RʻN = (ṡ ʻRʻʻCʻQ)↾ CʻN.SʻN = (ṡ ʻRʻʻCʻQ)^;N",
+      "printed_page": 383,
+      "lean_path": "Principia/FirstEdition/Volume2/Star164Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱164·41",
+        "PM1:✱41·13",
+        "PM1:✱72·92",
+        "PM2:✱151·11",
+        "PM2:✱150·32"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\ldotp \\text{Hp}&*164·41.\\supset :\\\\ &N \\in CʻQ.\\supset .RʻN = (\\dot{s} ʻRʻʻCʻQ)\\upharpoonright CʻN.SʻN = (\\dot{s} ʻRʻʻCʻQ)^{;}N\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

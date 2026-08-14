@@ -4,19 +4,144 @@
   "volume": 2,
   "source_range": {
     "printed_pages": "28",
-    "scan_leaves": [68],
+    "scan_leaves": [
+      68
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
-    "leaf_derivatives": [{"scan_leaf": 68, "printed_page": 28, "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page68-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg", "sha256": "8548dacc3dd607cf388a609e50928228891a8c219f56679e9c8a7d7ed89b7bf5"}],
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 68,
+        "printed_page": 28,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page68-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg",
+        "sha256": "8548dacc3dd607cf388a609e50928228891a8c219f56679e9c8a7d7ed89b7bf5"
+      }
+    ],
     "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
   },
-  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
   "source_status": "source-catalogued-PM-VERBATIM",
   "integration_status": "awaiting-ci",
   "items": [
-    {"id": "PM2:✱102·22", "kind": "derived-proposition", "printed": "✱102·22. ⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . γ sm δ . γ ⊂ tʻx . δ ⊂ tʻy [✱63·5 . (✱65·12)]", "printed_page": 28, "scan_leaf": 68, "lean_path": "Principia/Architecture/Star102OpeningKernel.lean", "declaration": "PM.Architecture.Star102OpeningKernel.star_102_22", "formal_scope": "exact typed reconstruction of assigned-type similarity with both inclusions in the universal endpoint types internalized by Class A and Class B", "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "awaiting-ci", "integration_blocked": false, "integration_status": "awaiting-ci", "printed_dependencies": ["PM1:✱63·5", "PM1:✱65·12"], "lean_dependencies": [], "normalized_dependencies": [], "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-22.txt", "parser_status": "reviewed-gap", "parser_evidence": "reviews/Q413-review.md", "semantic_audit_status": "strict-equivalence-passed"},
-    {"id": "PM2:✱102·23", "kind": "derived-proposition", "printed": "✱102·23. ⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . (∃R). R ∈ 1→1 . DʻR ⊂ tʻx . ᗡʻR ⊂ tʻy . DʻR = γ . ᗡʻR = δ [✱102·22 . ✱73·1]", "printed_page": 28, "scan_leaf": 68, "lean_path": "Principia/Architecture/Star102OpeningKernel.lean", "declaration": "PM.Architecture.Star102OpeningKernel.star_102_23", "formal_scope": "exact typed witness reconstruction of assigned-type similarity; endpoint-domain inclusions are internalized in Relation A B", "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "awaiting-ci", "integration_blocked": false, "integration_status": "awaiting-ci", "printed_dependencies": ["PM2:✱102·22", "PM1:✱73·1"], "lean_dependencies": [], "normalized_dependencies": [], "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-23.txt", "parser_status": "reviewed-gap", "parser_evidence": "reviews/Q413-review.md", "semantic_audit_status": "strict-equivalence-passed"},
-    {"id": "PM2:✱102·24", "kind": "derived-proposition", "printed": "✱102·24. ⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . (∃R). R ∈ 1(x)→1(y) . DʻR = γ . ᗡʻR = δ", "printed_page": 28, "scan_leaf": 68, "lean_path": "Principia/Architecture/Star102OpeningKernel.lean", "declaration": "PM.Architecture.Star102OpeningKernel.star_102_24", "formal_scope": "exact typed one-one-witness characterization of assigned-type similarity with both domain equalities retained", "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "awaiting-ci", "integration_blocked": false, "integration_status": "awaiting-ci", "printed_dependencies": ["PM2:✱102·23", "PM1:✱40·5", "PM1:✱52·43", "PM1:✱37·25", "PM1:✱63·5", "PM1:✱71·102", "PM1:✱65·02", "PM1:✱70·1"], "lean_dependencies": [], "normalized_dependencies": [], "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-24.txt", "parser_status": "reviewed-gap", "parser_evidence": "reviews/Q413-review.md", "semantic_audit_status": "strict-equivalence-passed"}
+    {
+      "id": "PM2:✱102·22",
+      "kind": "derived-proposition",
+      "printed": "✱102·22. ⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . γ sm δ . γ ⊂ tʻx . δ ⊂ tʻy [✱63·5 . (✱65·12)]",
+      "printed_page": 28,
+      "scan_leaf": 68,
+      "lean_path": "Principia/Architecture/Star102OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star102OpeningKernel.star_102_22",
+      "formal_scope": "exact typed reconstruction of assigned-type similarity with both inclusions in the universal endpoint types internalized by Class A and Class B",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱63·5",
+        "PM1:✱65·12"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-22.txt",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q413-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱102·23",
+      "kind": "derived-proposition",
+      "printed": "✱102·23. ⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . (∃R). R ∈ 1→1 . DʻR ⊂ tʻx . ᗡʻR ⊂ tʻy . DʻR = γ . ᗡʻR = δ [✱102·22 . ✱73·1]",
+      "printed_page": 28,
+      "scan_leaf": 68,
+      "lean_path": "Principia/Architecture/Star102OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star102OpeningKernel.star_102_23",
+      "formal_scope": "exact typed witness reconstruction of assigned-type similarity; endpoint-domain inclusions are internalized in Relation A B",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM2:✱102·22",
+        "PM1:✱73·1"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-23.txt",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q413-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱102·24",
+      "kind": "derived-proposition",
+      "printed": "✱102·24. ⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . (∃R). R ∈ 1(x)→1(y) . DʻR = γ . ᗡʻR = δ",
+      "printed_page": 28,
+      "scan_leaf": 68,
+      "lean_path": "Principia/Architecture/Star102OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star102OpeningKernel.star_102_24",
+      "formal_scope": "exact typed one-one-witness characterization of assigned-type similarity with both domain equalities retained",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "lean-typechecked",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM2:✱102·23",
+        "PM1:✱40·5",
+        "PM1:✱52·43",
+        "PM1:✱37·25",
+        "PM1:✱63·5",
+        "PM1:✱71·102",
+        "PM1:✱65·02",
+        "PM1:✱70·1"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-24.txt",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q413-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "certification": {
+        "tier": "lean-typechecked",
+        "failed_criteria": [
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
   ],
-  "review": {"apparatus_required": false, "sic_required": false, "note": "The scan is canonical and PG is a control witness. Strict typed equivalence is documented in reviews/Q413-review.md."},
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "review": {
+    "apparatus_required": false,
+    "sic_required": false,
+    "note": "The scan is canonical and PG is a control witness. Strict typed equivalence is documented in reviews/Q413-review.md."
+  },
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }

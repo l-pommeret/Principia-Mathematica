@@ -1,1 +1,242 @@
-{"batch":"PM1-STAR11-Q282","edition":"first","volume":1,"source_range":{"printed_pages":"163","scan_leaves":[185],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu","leaf_derivatives":[{"scan_leaf":185,"printed_page":163,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page185-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg","sha256":"677745c757cdde85ed1103fb0f5d4556e239e653984066e6556377e5fad1a890"}],"project_gutenberg":"https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"},"witnesses":["PM1-1910-SCAN","PG78050"],"review_evidence":["reviews/Q282-star-11-audit.md"],"items":[{"id":"PM1:✱11·39","kind":"derived-proposition","printed":"⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : .(x, y) : χ(x, y) .⊃ .θ(x, y) :. ⊃ : (x, y) : φ(x, y).χ(x, y) .⊃ .ψ(x, y).θ(x, y)","printed_page":163,"scan_leaf":185,"lean_path":"Principia/Architecture/Star11Q282Kernel.lean","declaration":"PM.Architecture.Star11Q282Kernel.star_11_39","formal_scope":"exact two-variable paired implication theorem","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","printed_dependencies":["PM1:✱3·47","PM1:✱11·11·32"],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Q282-star-11-audit.md","lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱11·11·32","PM1:✱3·47"],"strict_attempt_evidence":"reviews/Q282-star-11-audit.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱11·391","kind":"derived-proposition","printed":"⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : .(x, y) : φ(x, y) .⊃ .χ(x, y) :. ≡ : (x, y) : φ(x, y) .⊃ .ψ(x, y).χ(x, y)","printed_page":163,"scan_leaf":185,"lean_path":"Principia/Architecture/Star11Q282Kernel.lean","declaration":"PM.Architecture.Star11Q282Kernel.star_11_391","formal_scope":"exact two-variable implication-conjunction equivalence theorem","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","printed_dependencies":["PM1:✱4·76","PM1:✱11·11·33","PM1:✱11·31"],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Q282-star-11-audit.md","lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱11·11·33","PM1:✱11·31","PM1:✱4·76"],"strict_attempt_evidence":"reviews/Q282-star-11-audit.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱11·4","kind":"derived-proposition","printed":"⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : .(x, y) : χ(x, y) .≡ .θ(x, y) :. ⊃ : (x, y) : φ(x, y).χ(x, y) .≡ .ψ(x, y).θ(x, y)","printed_page":163,"scan_leaf":185,"lean_path":"Principia/Architecture/Star11Q282Kernel.lean","declaration":"PM.Architecture.Star11Q282Kernel.star_11_4","formal_scope":"exact two-variable paired equivalence theorem","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","printed_dependencies":["PM1:✱11·31","PM1:✱4·38","PM1:✱11·11·32"],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Q282-star-11-audit.md","lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱11·11·32","PM1:✱11·31","PM1:✱4·38"],"strict_attempt_evidence":"reviews/Q282-star-11-audit.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱11·401","kind":"derived-proposition","printed":"⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : ⊃ : (x, y) : φ(x, y).χ(x, y) .≡ .ψ(x, y).χ(x, y)","printed_page":163,"scan_leaf":185,"lean_path":"Principia/Architecture/Star11Q282Kernel.lean","declaration":"PM.Architecture.Star11Q282Kernel.star_11_401","formal_scope":"exact two-variable equivalence-under-conjunction theorem","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","printed_dependencies":["PM1:✱11·4"],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Q282-star-11-audit.md","lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱11·4"],"strict_attempt_evidence":"reviews/Q282-star-11-audit.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}},{"id":"PM1:✱11·41","kind":"derived-proposition","printed":"⊢ : .(∃x, y).φ(x, y) :∨: (∃x, y).ψ(x, y) : ≡ : (∃x, y) : φ(x, y) .∨ .ψ(x, y)","printed_page":163,"scan_leaf":185,"lean_path":"Principia/Architecture/Star11Q282Kernel.lean","declaration":"PM.Architecture.Star11Q282Kernel.star_11_41","formal_scope":"exact two-variable existential-disjunction equivalence theorem","source_status":"source-catalogued","formal_status": "kernel-checked","integration_status":"integrated-local","printed_dependencies":["PM1:✱10·42·281"],"normalized_dependencies":[],"parser_status":"reviewed-gap","parser_evidence":"reviews/Q282-star-11-audit.md","lean_dependencies":[],"historical_dependency_relaxation":{"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱10·42·281"],"strict_attempt_evidence":"reviews/Q282-star-11-audit.md","editorial_note":"The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."}}],"ci_evidence":{"commit": "75ba84a2d34be2b150c83ea3c2ac5b9012abcf03","run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31721426961","conclusion": "success"}}
+{
+  "batch": "PM1-STAR11-Q282",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "163",
+    "scan_leaves": [
+      185
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 185,
+        "printed_page": 163,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page185-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "677745c757cdde85ed1103fb0f5d4556e239e653984066e6556377e5fad1a890"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "review_evidence": [
+    "reviews/Q282-pm-derivation-migration.md"
+  ],
+  "integration_status": "blocked-no-pm-derivation",
+  "items": [
+    {
+      "id": "PM1:✱11·39",
+      "kind": "derived-proposition",
+      "printed": "⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : .(x, y) : χ(x, y) .⊃ .θ(x, y) :. ⊃ : (x, y) : φ(x, y).χ(x, y) .⊃ .ψ(x, y).θ(x, y)",
+      "printed_page": 163,
+      "scan_leaf": 185,
+      "lean_path": "Principia/Architecture/Star11Q282Kernel.lean",
+      "declaration": "PM.Architecture.Star11Q282Kernel.star_11_39_target",
+      "formal_scope": "exact Raw endpoint; ordinary Prop theorem retained secondarily as star_11_39_prop",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "No inductive PM judgement composes ✱3·47 with the two-binder ✱11·11·32 chain to this Raw endpoint.",
+      "printed_dependencies": [
+        "PM1:✱3·47",
+        "PM1:✱11·11·32"
+      ],
+      "lean_dependencies": [
+        "PM.Elementary.conj",
+        "PM.Elementary.imp"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·01",
+        "PM1:✱3·01"
+      ],
+      "formalization_schema": "target-only-blocked",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "pm-derivation-migration-blocked",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱11·391",
+      "kind": "derived-proposition",
+      "printed": "⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : .(x, y) : φ(x, y) .⊃ .χ(x, y) :. ≡ : (x, y) : φ(x, y) .⊃ .ψ(x, y).χ(x, y)",
+      "printed_page": 163,
+      "scan_leaf": 185,
+      "lean_path": "Principia/Architecture/Star11Q282Kernel.lean",
+      "declaration": "PM.Architecture.Star11Q282Kernel.star_11_391_target",
+      "formal_scope": "exact Raw endpoint; ordinary Prop theorem retained secondarily as star_11_391_prop",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "No inductive PM judgement composes ✱4·76, ✱11·11·33, and ✱11·31 to this exact two-binder equivalence.",
+      "printed_dependencies": [
+        "PM1:✱4·76",
+        "PM1:✱11·11·33",
+        "PM1:✱11·31"
+      ],
+      "lean_dependencies": [
+        "PM.Elementary.conj",
+        "PM.Elementary.equiv"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱3·01",
+        "PM1:✱4·01"
+      ],
+      "formalization_schema": "target-only-blocked",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "pm-derivation-migration-blocked",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱11·4",
+      "kind": "derived-proposition",
+      "printed": "⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : .(x, y) : χ(x, y) .≡ .θ(x, y) :. ⊃ : (x, y) : φ(x, y).χ(x, y) .≡ .ψ(x, y).θ(x, y)",
+      "printed_page": 163,
+      "scan_leaf": 185,
+      "lean_path": "Principia/Architecture/Star11Q282Kernel.lean",
+      "declaration": "PM.Architecture.Star11Q282Kernel.star_11_4_target",
+      "formal_scope": "exact Raw endpoint; ordinary Prop theorem retained secondarily as star_11_4_prop",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "No inductive PM judgement composes ✱11·31, ✱4·38, and ✱11·11·32 beneath both apparent binders.",
+      "printed_dependencies": [
+        "PM1:✱11·31",
+        "PM1:✱4·38",
+        "PM1:✱11·11·32"
+      ],
+      "lean_dependencies": [
+        "PM.Elementary.conj",
+        "PM.Elementary.imp"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·01",
+        "PM1:✱3·01"
+      ],
+      "formalization_schema": "target-only-blocked",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "pm-derivation-migration-blocked",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱11·401",
+      "kind": "derived-proposition",
+      "printed": "⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : ⊃ : (x, y) : φ(x, y).χ(x, y) .≡ .ψ(x, y).χ(x, y)",
+      "printed_page": 163,
+      "scan_leaf": 185,
+      "lean_path": "Principia/Architecture/Star11Q282Kernel.lean",
+      "declaration": "PM.Architecture.Star11Q282Kernel.star_11_401_target",
+      "formal_scope": "exact Raw endpoint; ordinary Prop theorem retained secondarily as star_11_401_prop",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "The printed ✱11·4 specialization cannot be consumed because ✱11·4 itself currently has only a Raw target, not a PM derivation judgement.",
+      "printed_dependencies": [
+        "PM1:✱11·4"
+      ],
+      "lean_dependencies": [
+        "PM.Elementary.imp"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·01"
+      ],
+      "formalization_schema": "target-only-blocked",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "pm-derivation-migration-blocked",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM1:✱11·41",
+      "kind": "derived-proposition",
+      "printed": "⊢ : .(∃x, y).φ(x, y) :∨: (∃x, y).ψ(x, y) : ≡ : (∃x, y) : φ(x, y) .∨ .ψ(x, y)",
+      "printed_page": 163,
+      "scan_leaf": 185,
+      "lean_path": "Principia/Architecture/Star11Q282Kernel.lean",
+      "declaration": "PM.Architecture.Star11Q282Kernel.star_11_41_target",
+      "formal_scope": "exact Raw endpoint; ordinary Prop theorem retained secondarily as star_11_41_prop",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_status": "blocked-no-pm-derivation",
+      "integration_blocked": true,
+      "blocking_reason": "The composite ✱10·42·281 citation has no closed inductive derivation at the two-binder endpoint; target construction alone is not proof.",
+      "printed_dependencies": [
+        "PM1:✱10·42·281"
+      ],
+      "lean_dependencies": [
+        "PM.Elementary.equiv"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱4·01"
+      ],
+      "formalization_schema": "target-only-blocked",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "pm-derivation-migration-blocked",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T3",
+          "T4",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

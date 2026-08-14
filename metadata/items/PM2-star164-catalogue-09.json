@@ -1,0 +1,154 @@
+{
+  "batch": "PM2-STAR164-CATALOGUE-09",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "384"
+  },
+  "witnesses": [
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱164·432",
+      "kind": "derived-proposition",
+      "printed": "⊢ :S∈ P smor̅ Q∩ Rlʻ smor.⊃ . Λ ∼∈ λ̂ {(∃ N).N∈ CʻQ.λ =(SʻN)smor̅ N}",
+      "printed_page": 384,
+      "lean_path": "Principia/FirstEdition/Volume2/Star164Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱151·11",
+        "PM1:✱71·31",
+        "PM2:✱151·12"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash :S\\in P\\,\\overline{\\text{smor}}\\,Q\\cap \\text{Rl}ʻ&\\text{smor}.\\supset .\\\\ &\\Lambda {\\sim}\\in \\hat{\\lambda} \\{(\\exists N).N\\in CʻQ.\\lambda =(SʻN)\\overline{\\text{smor}} N\\}\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱164·433",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. Mult ax.⊃ :S∈ P smor̅ Q∩ Rlʻsmor.⊃ . ∃ !∈_Δʻλ̂ {(∃ N).N∈ CʻQ.λ =(SʻN)smor̅ N} [*164·432.*88·37]",
+      "printed_page": 384,
+      "lean_path": "Principia/FirstEdition/Volume2/Star164Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱164·432",
+        "PM1:✱88·37"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\ldotp \\text{Mult ax}.\\supset :S\\in &P\\,\\overline{\\text{smor}}\\,Q\\cap \\text{Rl}ʻ\\text{smor}.\\supset .\\\\ &\\exists !{\\in}_{\\Delta}ʻ\\hat{\\lambda} \\{(\\exists N).N\\in CʻQ.\\lambda =(SʻN)\\overline{\\text{smor}} N\\}\\\\ &[*164·432.*88·37]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱164·44",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. Mult ax.⊃ :P,Q∈ Rel²excl.∃ ! P smor̅ Q∩ Rlʻsmor.⊃ . P smor smor Q [*164·433·431]",
+      "printed_page": 384,
+      "lean_path": "Principia/FirstEdition/Volume2/Star164Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱164·433",
+        "PM2:✱164·431"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\ldotp \\text{Mult ax}.\\supset :P,Q\\in \\text{Rel}^{2}\\text{excl}.\\exists !&P\\,\\overline{\\text{smor}}\\,Q\\cap \\text{Rl}ʻ\\text{smor}.\\supset .\\\\ &P \\,\\text{smor smor}\\,Q \\quad[*164·433·431]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱164·45",
+      "kind": "derived-proposition",
+      "printed": "⊢ :: Mult ax.⊃ :. P,Q∈ Rel²excl.⊃ : ∃ !P smor̅ Q∩ Rlʻsmor.≡ .P smor smor Q [*164·44·17]",
+      "printed_page": 384,
+      "lean_path": "Principia/FirstEdition/Volume2/Star164Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱164·44",
+        "PM2:✱164·17"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\colon &\\text{Mult ax}.\\supset \\colon\\ldotp P,Q\\in \\text{Rel}^{2}\\text{excl}.\\supset :\\\\ &\\exists !P\\,\\overline{\\text{smor}}\\,Q\\cap \\text{Rl}ʻ\\text{smor}.\\equiv .P \\,\\text{smor smor}\\,Q \\quad[*164·44·17]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    },
+    {
+      "id": "PM2:✱164·46",
+      "kind": "derived-proposition",
+      "printed": "⊢ :. Mult ax.⊃ :P,Q∈ Rel²excl.∃ ! P smor̅ Q∩ Rlʻsmor.⊃ . Σ ʻPsmorΣ ʻQ [*164·44·151]",
+      "printed_page": 384,
+      "lean_path": "Principia/FirstEdition/Volume2/Star164Source.lean",
+      "declaration": "source-only",
+      "formal_scope": "source transcription; canonical Lean declaration absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "printed_dependencies": [
+        "PM2:✱164·44",
+        "PM2:✱164·151"
+      ],
+      "printed_latex_witness": "\\[\\begin{align}\\vdash \\colon\\ldotp \\text{Mult ax}.\\supset :P,Q\\in \\text{Rel}^{2}\\text{excl}.\\exists !&P\\,\\overline{\\text{smor}}\\,Q\\cap \\text{Rl}ʻ\\text{smor}.\\supset .\\\\ &\\Sigma ʻP\\text{smor}\\Sigma ʻQ \\quad[*164·44·151]\\end{align}\\]",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}
