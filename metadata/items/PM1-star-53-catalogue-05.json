@@ -24,13 +24,14 @@
       "scan_leaf": 393,
       "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_231",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact classification of a class all of whose members equal y as either empty or the singleton of y",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱53·24",
@@ -40,13 +41,25 @@
       "scan_leaf": 393,
       "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_24",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact characterization of a class of classes with empty class sum as empty or the singleton containing the empty class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.Architecture.Star53OpeningKernel.star_53_02"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱53·02"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": ["PM1:✱53·02"],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star53-fifth-semantic-audit.md",
+        "editorial_note": "The source prints no bracketed citation; Lean invokes the already checked singleton class-sum identity only in the singleton-empty branch."
+      },
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱53·25",
@@ -56,13 +69,25 @@
       "scan_leaf": 393,
       "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_25",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact consequence that disjoint class sums force the common subfamily to be empty or the singleton empty class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.Architecture.Star53FinalKernel.star_53_24"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱53·24"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": ["PM1:✱53·24"],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star53-fifth-semantic-audit.md",
+        "editorial_note": "The source prints no bracketed citation; Lean applies the immediately preceding exact empty-sum classification to the common subfamily."
+      },
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱53·3",
@@ -72,15 +97,16 @@
       "scan_leaf": 394,
       "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_3",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact equivalence between contextual existence of the relation value at x and its forward image being a unit class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md"
+      "parser_evidence": "reviews/Star53-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱53·301",
@@ -90,15 +116,16 @@
       "scan_leaf": 394,
       "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_301",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact relational-image identity for the singleton source class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md"
+      "parser_evidence": "reviews/Star53-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed"
     }
   ],
   "ci_evidence": {

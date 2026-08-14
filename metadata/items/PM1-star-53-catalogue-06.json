@@ -23,15 +23,16 @@
       "scan_leaf": 394,
       "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_302",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact distribution of relational image over the union of two singleton source classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md"
+      "parser_evidence": "reviews/Star53-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱53·31",
@@ -41,15 +42,29 @@
       "scan_leaf": 394,
       "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_31",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact equality chain for the image of a singleton when the relation value exists uniquely",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star53FinalKernel.star_53_3",
+        "PM.Architecture.Star53FinalKernel.star_53_301"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱53·3",
+        "PM1:✱53·301"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": ["PM1:✱53·3", "PM1:✱53·301"],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star53-sixth-semantic-audit.md",
+        "editorial_note": "The source prints no bracketed citation; Lean combines the exact unit-image characterization and singleton relational-image identity."
+      },
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md"
+      "parser_evidence": "reviews/Star53-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱53·32",
@@ -59,13 +74,27 @@
       "scan_leaf": 394,
       "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_32",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact two-point relational-image formula under the two displayed unique-value hypotheses",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.Architecture.Star53FinalKernel.star_53_302",
+        "PM.Architecture.Star53FinalKernel.star_53_31"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱53·302",
+        "PM1:✱53·31"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": ["PM1:✱53·302", "PM1:✱53·31"],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star53-sixth-semantic-audit.md",
+        "editorial_note": "The source prints no bracketed citation; Lean rewrites by the exact two-singleton image law and the exact unique-value singleton identities."
+      },
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱53·33",
@@ -75,13 +104,14 @@
       "scan_leaf": 394,
       "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_33",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact image of a singleton class under class union",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱53·34",
@@ -91,13 +121,14 @@
       "scan_leaf": 394,
       "lean_path": "Principia/Architecture/Star53FinalKernel.lean",
       "declaration": "PM.Architecture.Star53FinalKernel.star_53_34",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact distribution of the class-union image over a two-singleton class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed"
     }
   ],
   "ci_evidence": {

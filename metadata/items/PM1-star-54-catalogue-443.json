@@ -23,15 +23,16 @@
       "scan_leaf": 402,
       "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
       "declaration": "PM.Architecture.Star54ClosingKernel.star_54_443",
-      "formal_scope": "typed cardinal-couple reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: PM assumes an inequality between the two oriented φ-values and concludes the oriented equality φ(z,w)=φ(x,y); Lean omits φ entirely and proves only that distinct pair members occur in one of the two possible orders",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star54-catalogue-review.md"
+      "parser_evidence": "reviews/Star54-closing-05-review.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     }
   ],
   "ci_evidence": {

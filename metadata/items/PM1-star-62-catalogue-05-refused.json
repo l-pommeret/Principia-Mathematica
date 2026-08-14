@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR62-CATALOGUE-05",
+  "batch": "PM1-STAR62-CATALOGUE-05-REFUSED",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -24,33 +24,17 @@
       "scan_leaf": 439,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_45",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Lean proves only the pointwise consequence of R ⊂ ε and omits PM's equivalence involving E!Rʻα and the converse domain CʻR",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-omitted-existence-and-domain-equivalence",
+      "integration_blocked": true,
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
-    },
-    {
-      "id": "PM1:✱62·5",
-      "kind": "derived-proposition",
-      "printed": "✱62·5. ⊢ . ι ⊂ ε",
-      "printed_page": 418,
-      "scan_leaf": 440,
-      "lean_path": "Principia/Architecture/Star62Kernel.lean",
-      "declaration": "PM.Architecture.Star62Kernel.star_62_5",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM1:✱62·51",
@@ -60,15 +44,17 @@
       "scan_leaf": 440,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_51",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Lean concludes only membership a x from a unique-value predicate; it does not prove equality of the printed ιʻα and εʻα values",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-target-narrowed-to-membership",
+      "integration_blocked": true,
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM1:✱62·52",
@@ -78,15 +64,17 @@
       "scan_leaf": 440,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_52",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Lean proves only ExistsValue α ↔ One α and omits the first E!ιʻα member of PM's chained equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-omitted-first-equivalence-member",
+      "integration_blocked": true,
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM1:✱62·53",
@@ -96,15 +84,17 @@
       "scan_leaf": 440,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_53",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Lean derives a = Singleton x from a parameterized unique-value witness, not the printed equality of the two descriptive-function values εʻα and ιʻα",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-no-descriptive-function-value-bridge",
+      "integration_blocked": true,
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     }
   ],
   "ci_evidence": {

@@ -4,8 +4,10 @@ The fifty-five loci are checked against Project Gutenberg 78050 on printed
 pages 609–616 (scan leaves 631–638). The source and Lean declarations form a
 duplicate-free 55/55 bijection. The first five-item lot (✱93·01, ·02, ·021,
 ·03, and ·1) has passed strict item-level semantic audit and is promoted in
-place to `awaiting-ci`; the other fifty items remain `prepared` pending
-semantic promotion.
+place to `awaiting-ci`. The next ten loci (catalogues 02–03) have also received
+strict item-level audit: eight are exact and awaiting CI, while ·102 and ·104
+are refused in a separate homogeneous manifest. The remaining forty items stay
+`prepared` pending semantic promotion.
 
 The parser accepts 20 formulas; 35 historical inductive-analysis formulas carry `reviewed-gap`.
 

@@ -16,8 +16,8 @@
       "kind": "derived-proposition",
       "printed": "\\(\\vdash.(\\alpha\\upharpoonleft R)\\dot{\\cap}(S\\upharpoonright \\beta)=\\alpha\\upharpoonleft (R\\dot{\\cap}S)\\upharpoonright \\beta\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-canonical-review.md",
       "printed_dependencies": [
@@ -31,15 +31,16 @@
       ],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_12",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "exact typed equality distributing intersection across left and right relation restrictions; strict semantic audit passed",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱35·13",
       "kind": "derived-proposition",
       "printed": "\\(\\vdash.(\\alpha\\upharpoonleft R)\\dot{\\cap}(\\beta\\upharpoonleft S)=(\\alpha \\cap \\beta)\\upharpoonleft (R\\dot{\\cap}S)\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-canonical-review.md",
       "printed_dependencies": [
@@ -53,15 +54,16 @@
       ],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_13",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "exact typed equality combining two left restrictions as class and relation intersections; strict semantic audit passed",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱35·14",
       "kind": "derived-proposition",
       "printed": "\\(\\vdash.(R\\upharpoonright \\alpha)\\dot{\\cap}(S\\upharpoonright \\beta)=(R\\dot{\\cap}S)\\upharpoonright (\\alpha \\cap \\beta) \\quad[\\text{Similar proof to *35·13}]\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-canonical-review.md",
       "printed_dependencies": [
@@ -75,15 +77,16 @@
       ],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_14",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "exact typed equality combining two right restrictions as relation and class intersections; strict semantic audit passed",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱35·15",
       "kind": "derived-proposition",
       "printed": "\\(\\vdash.(\\alpha\\upharpoonleft R\\upharpoonright \\beta)\\dot{\\cap}(\\alpha'\\upharpoonleft S\\upharpoonright \\beta')=(\\alpha \\cap \\alpha')\\upharpoonleft (R\\dot{\\cap}S)\\upharpoonright (\\beta \\cap \\beta')\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-canonical-review.md",
       "printed_dependencies": [
@@ -97,15 +100,16 @@
       ],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_15",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "exact typed equality combining simultaneous restrictions under relation intersection; strict semantic audit passed",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱35·16",
       "kind": "derived-proposition",
       "printed": "\\(\\vdash.(\\alpha\\upharpoonleft R)\\dot{\\cap}S=\\alpha\\upharpoonleft (R\\dot{\\cap}S)=R\\dot{\\cap}\\alpha\\upharpoonleft S \\quad[\\text{Similar proof to *35·13}]\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-canonical-review.md",
       "printed_dependencies": [
@@ -119,7 +123,8 @@
       ],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_16",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "exact typed reconstruction of both printed equalities moving a common left restriction across relation intersection; strict semantic audit passed",
+      "semantic_audit_status": "strict-equivalence-passed"
     }
   ],
   "ci_evidence": {

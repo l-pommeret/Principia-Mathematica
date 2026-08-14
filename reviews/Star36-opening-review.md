@@ -29,3 +29,15 @@ l'intersection avec le champ, son cas vide et l'invariance sous égalité de ces
 intersections. ·32 réemploie directement ·3 (arête et relaxation documentées).
 ·31 a seulement été déqualifiée syntaxiquement pour rendre ses définitions
 locales visibles comme infrastructure; aucun refus sémantique.
+
+## Audit strict du cinquième lot
+
+Le dernier catalogue non audité ne contient que quatre cibles, ✱36·33, ·34,
+·35 et ·4; il n'existe pas de second catalogue `prepared` dans ✱36. Les quatre
+cibles sont exactes et passent à `awaiting-ci`. ·33 conserve l'invariance sous
+restriction au champ, ·34 la commutation avec la converse, ·35 l'inclusion du
+carré restreint et ·4 l'invariance de l'union sous l'hypothèse de disjonction
+imprimée. Les preuves de ·33 et ·35 réemploient directement ·25 et ·22; ces
+deux arêtes absentes des lignes imprimées sont enregistrées comme relaxations
+de clôture. ·34 et ·4 n'appellent aucun théorème PM antérieur. Aucun item n'est
+refusé et aucun doublon n'est créé.

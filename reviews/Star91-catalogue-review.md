@@ -64,3 +64,24 @@ relation nor source biconditional. Finally, ·21 and ·211 are reflexive closure
 equalities on carrier elements, omitting the printed identity union and
 recursive composition equations on relations. All nine remain `prepared` with
 item-level blocking reasons.
+
+## Strict semantic audit of catalogues 08–09
+
+These two five-item lots contain no exact declaration and remain homogeneous
+`prepared` refusals. For ✱91·212 and ·213, the Lean premise already assumes a
+disjunction resembling the right side, substitutes `Pot R P` for the printed
+ancestral proposition, and returns that premise; both `R_ts`/`R_st` occurrences
+and the biconditional are missing. The ·22 and ·221 declarations are reflexive
+equalities of identical constructed unions and never identify their left sides
+with the printed ancestral images. Although ·23 unfolds `Potid`, its identity
+is global equality rather than the source's restricted identity `I↾CʻR`, and
+the displayed family equality is not stated.
+
+In catalogue 09, ·231 repeats the same `Potid` characterization instead of the
+ancestral image of `I`; ·24 is merely `Pot R P → Pot R P`; and ·241 is equality
+congruence under the extra premise `T=P`, with neither printed ancestral
+proposition present. For ·242, the Lean hypothesis is already the existential
+composition witness defining the conclusion, whereas the source derives that
+witness from `S R_ts (Q|P)`. Finally ·25 proves an arbitrary `imageComp Q K`
+equal to itself and omits the source's specific `R_ts` ancestral image. No
+tautology or conclusion-shaped premise is accepted as an exact formalization.

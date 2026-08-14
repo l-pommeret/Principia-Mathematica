@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR93-CATALOGUE-03",
+  "batch": "PM1-STAR93-CATALOGUE-03-AWAITING-CI",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -23,15 +23,16 @@
       "scan_leaf": 632,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_111",
-      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed extensional reconstruction of the minimum image class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md"
+      "parser_evidence": "reviews/Star93-catalogues-02-03-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱93·112",
@@ -41,13 +42,15 @@
       "scan_leaf": 632,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_112",
-      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed conjunction of PM's two boundary/minimum class equalities; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star93-catalogues-02-03-semantic-audit.md"
     },
     {
       "id": "PM1:✱93·113",
@@ -57,15 +60,16 @@
       "scan_leaf": 632,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_113",
-      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed inclusion of the minimum class in the source class intersected with the relation field; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md"
+      "parser_evidence": "reviews/Star93-catalogues-02-03-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱93·114",
@@ -75,15 +79,16 @@
       "scan_leaf": 632,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_114",
-      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed reconstruction of maximum as minimum for the converse relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md"
+      "parser_evidence": "reviews/Star93-catalogues-02-03-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱93·115",
@@ -93,15 +98,16 @@
       "scan_leaf": 632,
       "lean_path": "Principia/Architecture/Star93OpeningKernel.lean",
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_115",
-      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed pointwise reconstruction of maximum membership, preserving class, field, direct image, and negation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md"
+      "parser_evidence": "reviews/Star93-catalogues-02-03-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-passed"
     }
   ],
   "ci_evidence": {

@@ -44,3 +44,19 @@ Forty-one formulas use relation abstraction/complement, converse, restriction
 (`◁/▷`), product (`∥`), or dotted relation operators beyond the current parser
 grammar.  Those items carry `reviewed-gap`; no diplomatic reading is weakened
 to make the parser accept it.
+
+The fifth batch (·35, ·4, ·41–·43) passes strict audit and is `awaiting-ci`.
+Under the inhabited assigned-type convention already used at ·34, ·35
+constructs two distinct relations, exactly witnessing diversity on relations.
+Composition is oriented consistently: ·4 gives both identity laws, ·41 retains
+all three equivalent asymmetry/disjointness members, ·42 is identity
+idempotence, and ·43 is the square/converse form of asymmetry. No direction or
+member of an equivalence is dropped.
+
+The sixth batch (·44–·47, ·5) also passes strict audit and is `awaiting-ci`.
+At ·44 a diagonal witness for `R` supplies the repeated intermediate witness
+for `R²`; ·45 and ·46 are the two printed irreflexivity consequences; and ·47
+retains the explicit transitivity premise and both biconditionals. At ·5 the
+two typed restrictions of identity agree pointwise and their double
+restriction is the same relation. All hypotheses and chained conclusions are
+preserved.

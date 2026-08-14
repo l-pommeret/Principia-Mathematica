@@ -19,6 +19,7 @@
     "PM1-1910-SCAN",
     "PG78050"
   ],
+  "review_evidence": ["reviews/Star60-catalogue-08-semantic-audit.md"],
   "items": [
     {
       "id": "PM1:✱60·391",
@@ -26,15 +27,15 @@
       "printed": "✱60·391. ⊢ : β ∈ Clʻα . γ ⊂ β .⊃. γ ∈ Clʻα",
       "printed_page": 409,
       "scan_leaf": 431,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_391",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM subclass-closure proposition",
+      "integration_status": "awaiting-ci"
     },
     {
       "id": "PM1:✱60·4",
@@ -42,15 +43,15 @@
       "printed": "✱60·4. ⊢ : β ∈ Clʻα .⊃. β ∩ γ ∈ Clʻα",
       "printed_page": 409,
       "scan_leaf": 431,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_4",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM intersection-closure proposition",
+      "integration_status": "awaiting-ci"
     },
     {
       "id": "PM1:✱60·41",
@@ -58,15 +59,16 @@
       "printed": "✱60·41. ⊢ : β ∈ Clʻα . γ ⊂ β . ∃!γ .⊃. γ ∈ Cl exʻα",
       "printed_page": 409,
       "scan_leaf": 431,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": ["PM1:✱60·391"],
+      "normalized_dependencies": ["PM1:✱60·391"],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_41",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM inhabited-subclass proposition",
+      "integration_status": "awaiting-ci",
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱60·391"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Star60-catalogue-08-semantic-audit.md","editorial_note":"Lean reuses the immediately preceding exact closure theorem; the diplomatic proposition carries no explicit bracketed citation."}
     },
     {
       "id": "PM1:✱60·42",
@@ -74,15 +76,15 @@
       "printed": "✱60·42. ⊢ : β,γ ∈ Clʻα .≡. β ∪ γ ∈ Clʻα",
       "printed_page": 409,
       "scan_leaf": 431,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_42",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared",
+      "formal_scope": "exact typed PM binary-union equivalence",
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star60-catalogue-review.md"
     },
@@ -92,15 +94,16 @@
       "printed": "✱60·43. ⊢ : β ∈ Clʻα . γ ∈ Cl exʻα .⊃. β ∪ γ ∈ Cl exʻα",
       "printed_page": 409,
       "scan_leaf": 431,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": ["PM1:✱60·42"],
+      "normalized_dependencies": ["PM1:✱60·42"],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_43",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM inhabited-union proposition",
+      "integration_status": "awaiting-ci",
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱60·42"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Star60-catalogue-08-semantic-audit.md","editorial_note":"Lean reuses the exact preceding union equivalence; the diplomatic proposition carries no explicit bracketed citation."}
     }
   ],
   "ci_evidence": {

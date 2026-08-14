@@ -44,3 +44,18 @@ direct typed expansions of universal membership, product-to-sum inclusion,
 lower-bound inclusion, membership in a family sum, and existence in a sum.
 All close from definitions without a Lean or historical theorem edge and are
 `awaiting-ci`; no refusal was necessary.
+
+Catalogue-06 strict audit accepts all five of ·27, ·3, ·31, ·32 and ·33. The
+typed predicates preserve the intersection/union directions and the family
+image quantifiers. The direct Lean proof of ·3 uses ·18 and that of ·31 uses
+·171; those edges are now explicit. Their unused ✱37·22 citation is recorded
+as a dependency relaxation. Items ·27 and ·32 have no numbered edge; ·33 is
+proved directly, with all three unused printed citations recorded explicitly.
+
+Catalogue-07 accepts ·4, ·41, ·43 and ·44. Lean's total typed fibre classes
+discharge PM's `E‼` existence guard, and the conclusions retain the complete
+sum/product membership or inclusion characterization. Item ·42 is refused:
+Lean proves only the endpoint equality between `Forward R a` and the union of
+the two forward images, omitting PM's displayed intermediate equality with
+`sʻ(Pʻʻα ∪ Qʻʻα)`. The ten-item wave is therefore 9 awaiting CI and one
+documented refusal, in disjoint manifests with unique IDs.

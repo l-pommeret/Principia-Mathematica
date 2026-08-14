@@ -1,0 +1,54 @@
+{
+  "batch": "PM1-STAR32-CATALOGUE-7-REFUSED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱32·31",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.\\{\\text{gs}ʻ(R\\dot{\\cap}S)\\}ʻx=\\overleftarrow{R}ʻx\\cap \\overleftarrow{R}ʻx\\)",
+      "formal_scope": "refused: the Lean declaration replaces the second printed left section of R by a left section of S",
+      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel4.lean",
+      "declaration": "PM.Architecture.Star32ConsecutiveKernel4.star_32_31",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-semantic-mismatch-second-relation",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star32-catalogue-07-semantic-audit.md",
+      "semantic_audit_status": "refused-source-lean-mismatch"
+    },
+    {
+      "id": "PM1:✱32·33",
+      "kind": "derived-proposition",
+      "printed": "\\(\\vdash.\\{\\text{gs}ʻ(R\\unicode{x228d}S)\\}ʻx=\\overleftarrow{R}ʻx\\cup \\overleftarrow{R}ʻx\\)",
+      "formal_scope": "refused: the Lean declaration replaces the second printed left section of R by a left section of S",
+      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel4.lean",
+      "declaration": "PM.Architecture.Star32ConsecutiveKernel4.star_32_33",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-semantic-mismatch-second-relation",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star32-catalogue-07-semantic-audit.md",
+      "semantic_audit_status": "refused-source-lean-mismatch"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

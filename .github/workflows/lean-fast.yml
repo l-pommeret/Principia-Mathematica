@@ -1,0 +1,42 @@
+name: Lean fast
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  changed-front:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+      - name: Install elan
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Cache Lean toolchain and build
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.elan/toolchains
+            .lake/build
+          key: ${{ runner.os }}-lean-fast-${{ hashFiles('lean-toolchain', 'lakefile.toml', 'lake-manifest.json') }}
+      - name: Fast global editorial invariants
+        run: |
+          python3 scripts/sync_item_printed.py --check
+          python3 scripts/verify_editorial.py --report-all
+          python3 scripts/verify_pm_parser_coverage.py
+          python3 scripts/report_lean_source_coverage.py --verify-pipeline
+      - name: Kernel-check changed Lean fronts
+        shell: bash
+        run: |
+          lake env lean --version
+          git diff --name-only --diff-filter=ACMR HEAD^ HEAD -- 'Principia/*.lean' 'Principia/**/*.lean' \
+            | tr '\n' '\0' \
+            | xargs -0 -r -n 1 -P 4 lake env lean
+      - name: Build aggregate with cache
+        run: lake build Principia

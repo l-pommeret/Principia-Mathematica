@@ -16,11 +16,26 @@
       "printed": "P⟏CʻP=P",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel3.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel3.star_36_33",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact invariance of a relation under restriction to its field",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "lean_dependencies": [
+        "PM.Architecture.Star36RestrictionKernel2.star_36_25"
+      ],
+      "printed_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱36·25"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱36·25"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star36-opening-review.md",
+        "editorial_note": "The Lean proof specializes the earlier field-inclusion equivalence; the displayed PM line has no explicit citation."
+      }
     },
     {
       "id": "PM1:✱36·34",
@@ -28,11 +43,13 @@
       "printed": "(P⟏α)̆=P̆⟏α",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel3.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel3.star_36_34",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact commutation of converse with restriction by a common class",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM1:✱36·35",
@@ -40,11 +57,26 @@
       "printed": "(P⟏α)²⊂P²⟏α",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel3.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel3.star_36_35",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact inclusion of the square of a restricted relation in the corresponding restriction of its square",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "lean_dependencies": [
+        "PM.Architecture.Star36RestrictionKernel2.star_36_22"
+      ],
+      "printed_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱36·22"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱36·22"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star36-opening-review.md",
+        "editorial_note": "The Lean proof directly specializes the earlier restricted-composition inclusion; the displayed PM line has no explicit citation."
+      }
     },
     {
       "id": "PM1:✱36·4",
@@ -52,11 +84,13 @@
       "printed": "✱36·4. ⊢ : α∩DʻR=Λ .∨. α∩DʻR̆=Λ :⊃. (R∪S)⟏α=S⟏α",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel3.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel3.star_36_4",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact invariance of a restricted union when the limiting class misses either domain of the adjoined relation",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     }
   ],
   "ci_evidence": {

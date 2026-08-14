@@ -19,6 +19,7 @@
     "PM1-1910-SCAN",
     "PG78050"
   ],
+  "review_evidence": ["reviews/Star60-catalogue-09-semantic-audit.md"],
   "items": [
     {
       "id": "PM1:✱60·44",
@@ -26,15 +27,16 @@
       "printed": "✱60·44. ⊢ : ρ ∈ Clʻ(α ∪ β) .≡. (∃γ,δ).γ ∈ Clʻα . δ ∈ Clʻβ . ρ = γ ∪ δ",
       "printed_page": 409,
       "scan_leaf": 431,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": ["PM1:✱60·42"],
+      "normalized_dependencies": ["PM1:✱60·42"],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_44",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM subclass-of-union decomposition",
+      "integration_status": "awaiting-ci",
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱60·42"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Star60-catalogue-09-semantic-audit.md","editorial_note":"Lean reuses the exact union equivalence internally; the diplomatic proposition carries no explicit bracketed citation."}
     },
     {
       "id": "PM1:✱60·45",
@@ -42,15 +44,15 @@
       "printed": "✱60·45. ⊢ . sʻClʻα = α",
       "printed_page": 409,
       "scan_leaf": 431,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_45",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM sum-of-all-subclasses identity",
+      "integration_status": "awaiting-ci"
     },
     {
       "id": "PM1:✱60·5",
@@ -58,15 +60,15 @@
       "printed": "✱60·5. ⊢ . sʻCl exʻα = α",
       "printed_page": 406,
       "scan_leaf": 428,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_5",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM sum-of-inhabited-subclasses identity",
+      "integration_status": "awaiting-ci"
     },
     {
       "id": "PM1:✱60·501",
@@ -74,15 +76,16 @@
       "printed": "✱60·501. ⊢ . pʻClʻα = Λ",
       "printed_page": 410,
       "scan_leaf": 432,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": ["PM1:✱60·3"],
+      "normalized_dependencies": ["PM1:✱60·3"],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_501",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM product-of-all-subclasses identity",
+      "integration_status": "awaiting-ci",
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱60·3"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Star60-catalogue-09-semantic-audit.md","editorial_note":"Lean discharges the product identity using the exact empty-subclass theorem; the diplomatic proposition carries no explicit bracketed citation."}
     },
     {
       "id": "PM1:✱60·51",
@@ -90,15 +93,15 @@
       "printed": "✱60·51. ⊢ : sʻκ ⊂ β .≡. κ ⊂ Clʻβ",
       "printed_page": 410,
       "scan_leaf": 432,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_51",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM sum/subclass adjunction",
+      "integration_status": "awaiting-ci"
     }
   ],
   "ci_evidence": {

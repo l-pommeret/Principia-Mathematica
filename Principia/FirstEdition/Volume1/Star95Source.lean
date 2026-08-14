@@ -2,7 +2,7 @@
 # Principia Mathematica I, ✱95 — equi-factor relation
 
 Canonical witness: Project Gutenberg ebook 78050 and the 1910 Volume I
-facsimile, printed page 627 (scan leaf 649).
+facsimile, printed pages 627–631 (scan leaves 649–653).
 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱95·01
@@ -65,6 +65,36 @@ PM-VERBATIM-END PM1:✱95·302 -/
 /- PM-VERBATIM-BEGIN PM1:✱95·303
 ✱95·303. ⊢ : DʻR⊂ᗡʻP . DʻP⊂ᗡʻP .⊃: S∈PotidʻP .⊃. Dʻ(S|R)⊂ᗡʻP [Proof as in ✱95·302]
 PM-VERBATIM-END PM1:✱95·303 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·304
+✱95·304. ⊢ : ᗡʻQ⊂DʻQ . ᗡʻR⊂DʻQ . DʻP⊂ᗡʻP . DʻR⊂ᗡʻP .⊃: S∈PotidʻP . T∈PotidʻQ .⊃. Dʻ(S|R|T)⊂ᗡʻP . ᗡʻ(S|R|T)⊂DʻQ
+PM-VERBATIM-END PM1:✱95·304 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·305
+✱95·305. ⊢ : Hp✱95·304 .⊃: M∈(P∗Q)ʻR .⊃. DʻM⊂ᗡʻP . ᗡʻM⊂DʻQ
+PM-VERBATIM-END PM1:✱95·305 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·32
+✱95·32. ⊢ : Hp✱95·31 .⊃: M∈(P∗Q)ʻR .⊃. ∃̇!M
+PM-VERBATIM-END PM1:✱95·32 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·33
+✱95·33. ⊢ : ᗡʻR⊂B⃗ʻQ .⊃. ᗡʻ(S|R|T)⊂T̆ʻʻB⃗ʻQ
+PM-VERBATIM-END PM1:✱95·33 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·34
+✱95·34. ⊢ : ᗡʻR⊂B⃗ʻQ . M∈(P∗Q)ʻR .⊃. (∃T) . T∈PotidʻQ . ᗡʻM⊂T̆ʻʻB⃗ʻQ
+PM-VERBATIM-END PM1:✱95·34 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·35
+✱95·35. ⊢ : Q∈1→Cls . ᗡʻR⊂B⃗ʻQ . M∈(P∗Q)ʻR .⊃. (∃α) . α∈genʻQ . ᗡʻM⊂α
+PM-VERBATIM-END PM1:✱95·35 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·351
+✱95·351. ⊢ : Q∈1→Cls . ᗡʻR⊂B⃗ʻQ .⊃: T,T'∈PotidʻQ . ∃!ᗡʻ(S|R|T)∩ᗡʻ(S'|R|T') .⊃. T=T'
+PM-VERBATIM-END PM1:✱95·351 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·352
+✱95·352. ⊢ : P∈Cls→1 . DʻR⊂B⃗ʻP̆ .⊃: S,S'∈PotidʻP . ∃!Dʻ(S|R|T)∩Dʻ(S'|R|T') .⊃. S=S'
+PM-VERBATIM-END PM1:✱95·352 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·36
+✱95·36. ⊢ : Q∈1→Cls . ᗡʻR⊂B⃗ʻQ . ∃̇!R . DʻR⊂ᗡʻP . DʻP⊂ᗡʻP . ᗡʻQ⊂DʻQ .⊃: S,S'∈PotidʻP . T,T'∈PotidʻQ . S|R|T=S'|R|T' .⊃. T=T'
+PM-VERBATIM-END PM1:✱95·36 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·361
+✱95·361. ⊢ : P∈Cls→1 . DʻR⊂B⃗ʻP̆ . ∃̇!R . DʻP⊂ᗡʻP . ᗡʻR⊂DʻQ . ᗡʻQ⊂DʻQ .⊃: S,S'∈PotidʻP . T,T'∈PotidʻQ . S|R|T=S'|R|T' .⊃. S=S'
+PM-VERBATIM-END PM1:✱95·361 -/
 
 namespace PM.FirstEdition.Volume1.Star95Source
 

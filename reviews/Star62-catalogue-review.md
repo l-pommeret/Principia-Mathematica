@@ -36,3 +36,13 @@ included in its class. Loci ·4 and ·41–·43 remain prepared. Their declarati
 prove respectively one fibre of a restriction, singleton self-membership, a
 definitional membership transport, and one restricted-domain witness; none
 establishes the relation or domain equality printed by PM.
+
+## Semantic audits: catalogues 05 and 06
+
+The ten remaining prepared loci are grouped as two five-item fronts. Only
+✱62·5 and ·56 pass strict equivalence: singleton-relation inclusion and
+the extensional membership-image identity. They are isolated in homogeneous
+`awaiting-ci` artifacts. The other eight omit printed existence, domain,
+descriptive-function equality, nested-image, or relation-restriction content.
+The residual ·21 occurs once in the closing refused lot; its singleton identity
+is not PM's class of all classes containing `x`.

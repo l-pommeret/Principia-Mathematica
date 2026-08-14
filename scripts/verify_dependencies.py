@@ -44,6 +44,7 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "RightGenerated.base",
     "RightGenerated.step",
     "And.left",
+    "And.right",
     "Iff.rfl",
     "Or.inl",
     "Or.inr",
