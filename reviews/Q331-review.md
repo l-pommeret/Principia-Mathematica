@@ -17,3 +17,25 @@ printed definitional expansion (✱4·2 applied to ✱21·01), hence reflexive.
 No total relation-class choice object, untyped relation, axiom declaration,
 classical principle, inhabitance premise, placeholder, or unsafe escape hatch
 is introduced.
+
+## Definition reuse and derivation gate
+
+The next-wave audit preserves ·082 and ·083 as definitions only. Both reduce
+genuine named operations (`RelationClassApplication` and
+`AbstractRelationClass`) and introduce no proof constructor. They are
+axiom-free and do not import or reference the archived `Support` prototype.
+
+The earlier acceptance of ·1 is withdrawn. Although its host proposition has
+the right semantic expansion, the Lean proof is `rfl`; there is no relational
+object formula, no inductive judgment, and no chain consuming the printed
+✱4·2 and ✱21·01 evidence. A `Df` is not licensed as a derivation constructor,
+and the archived `Support` cannot be reused to manufacture that chain. Item ·1
+therefore remains blocked pending a real object syntax and a derivation from
+the earlier theorem/rule infrastructure.
+
+The dependency graphs were rebuilt independently. Definitions ·082 and ·083
+are uncited and their reduction bodies call no numbered theorem, so all three
+graphs are empty. For ·1 the printed and normalized graphs are exactly
+`PM1:✱4·2` and `PM1:✱21·01`; the Lean derivation graph is empty because `rfl`
+calls neither. The previous historical-relaxation record is removed: absence
+of the printed derivation is a blocker, not a permissible relaxation.

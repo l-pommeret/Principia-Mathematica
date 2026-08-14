@@ -1,4 +1,4 @@
-# ✱32 catalogue 09 strict semantic audit
+# ✱32 catalogue 09 T2–T4 strict semantic audit
 
 The four opening definitions ✱32·01–·04 remain refused for formal promotion.
 They are preserved verbatim in `Star32Source.lean`, but the canonical catalogue
@@ -17,3 +17,12 @@ Accordingly all four items stay `prepared` and
 `blocked-no-canonical-declaration`, with individual blocking reasons. No
 substitute theorem is inferred, no item is promoted, and the catalogue remains
 homogeneously refused without a split.
+
+Under the current computed gate, T2 fails because there is no canonical mapped
+declaration for any of the four source items. T3 and T4 also cannot be
+established: there is neither a PM object-language judgment endpoint nor a
+concrete reading that links each exact printed definition to a parsed AST.
+Moreover these are `Df` items, so introducing theorem constructors for them
+would be invalid; a future faithful implementation must expose audited `def`
+unfolding semantics. Their printed, Lean, and normalized dependency graphs are
+all empty.

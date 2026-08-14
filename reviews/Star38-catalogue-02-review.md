@@ -1,26 +1,19 @@
-# ✱38 catalogue-02 strict semantic review
+# ✱38 catalogue-02 axiom-free PM-derivation gate
 
-Scope: exactly ·11, ·12, ·13, ·131, and ·2, compared with the diplomatic
-transcription on printed page 313 and their declarations in
-`Star38Kernel.lean`.  As in catalogue-01, exactness is asserted only under the
-declared typed abstraction `op : α → β → γ`; it is not a claim that Lean's
-total functions model every contextual-description convention of PM.
+This cumulative second lot applies the `Star2`/T1–T9 contract after reading
+`dialogue.md`. None of the five declarations states a PM object-language
+judgment or constructs an axiom-free derivation. Ambient `Prop` results are
+recorded only as secondary evidence.
 
-All five targets are exact in that scope.  ·11 retains both printed equalities
-and identifies both section applications with `op x y`.  ·12 retains the
-conjunction of both definedness assertions: total application supplies
-`op x y : γ` as the witness on each side.  ·13 and ·131 preserve the full
-membership biconditionals, including the existential witness, class-membership
-condition, and equality.  ·2 is exactly the defining equality between the
-slice and the image of the right section.  No premise, conjunct, quantified
-variable, equality, or requested case is omitted, and no proof assumes its
-target.
+The printed graph was rebuilt directly: ·11 cites ✱38·1, ✱38·101 and
+✱30·3; ·12 cites ✱38·11 and ✱14·21; ·13 cites ✱38·1 and ✱37·1;
+·131 cites ✱38·101 and ✱37·1; ·2 cites definition ✱38·03.
 
-Each declaration closes by unfolding `LeftSection`, `RightSection`, `Image`,
-or `Slice`, rather than by invoking a numbered theorem.  Accordingly all five
-Lean dependency lists are empty.  The metadata records every printed citation
-as an audited `relaxed-closure` historical dependency; no dependency beyond
-print is introduced.
+The Lean graph is different and is recorded literally. The bodies unfold
+`LeftSection`, `RightSection`, `Image`, or `Slice`; they call none of the
+printed numbered theorem declarations. In particular ·12 has no Lean constant
+edge and weakens the printed existence assertions to
+`Nonempty γ ∧ Nonempty γ`, a semantic mismatch independent of the missing
+derivation layer.
 
-Verdict: promote exactly these five items to `awaiting-ci`.  No item from a
-later ✱38 catalogue is covered by this review.
+All five unique records remain `prepared` in one homogeneous blocked artifact.

@@ -1,24 +1,22 @@
-# ✱38 catalogue-01 strict semantic review
+# ✱38 catalogue-01 axiom-free PM-derivation gate
 
-Scope: exactly the five items in `PM1-star-38-catalogue-01.json`, checked
-against the diplomatic transcription of printed pages 312–313 and against the
-declarations in `Star38Kernel.lean`.  The declared formal scope is the typed
-reconstruction in which `op : α → β → γ` is a total binary function;
-this review does not claim a general model of PM's contextual descriptions.
+The five items are re-audited against the `Star2`/T1–T9 standard. Completion
+requires genuine PM syntax plus a judgment and axiom-free derivation; a closed
+ambient-`Prop` theorem is secondary evidence only. Printed definitions must be
+represented by actual definitions, not theorem wrappers.
 
-All five targets are exact within that explicit scope.  ·01 and ·02 identify
-the left and right sections extensionally with `y ↦ op x y` and `x ↦ op x y`.
-·03 identifies the printed section-image with the image of the right section.
-·1 and ·101 retain both sides of the printed biconditionals and merely unfold
-the corresponding section at its argument.  No hypothesis, conjunct,
-quantifier, equality, or requested case is dropped, and none of the proofs is a
-pass-through assumption.
+The graphs were rebuilt from the source. Definitions ·01–·03 have no printed
+theorem citations. Proposition ·1 cites only ✱38·01, and ·101 cites only
+✱38·02. In Lean those two real definitional edges are respectively
+`LeftSection` and `RightSection`; the `Iff.rfl` proofs introduce no numbered
+theorem edge.
 
-The Lean bodies close by definitional reduction.  Consequently ·1 and ·101
-have no direct theorem-constant dependency even though PM cites ·01 and ·02.
-Their metadata records this as `relaxed-closure`: the printed citations remain
-in the historical graph and no dependency beyond print is introduced.  The
-three definitions have empty historical and Lean dependency closures.
+All five items are blocked. `LeftSection`, `RightSection`, and `Slice` are
+genuine Lean `def`s and provide coherent typed semantics, but they construct
+meta-level functions and predicates rather than PM formulas. Likewise ·1 and
+·101 are correct `Prop` equivalences, but neither constructs an object-language
+formula, a PM judgment, or a `PM.Derivation`. The earlier successful CI checked
+only that secondary layer and therefore does not satisfy this gate.
 
-Verdict: promote exactly ·01, ·02, ·03, ·1, and ·101 to `awaiting-ci`.
-No later ✱38 item was audited or promoted in this review.
+The unique five-record artifact remains `prepared`; no later ✱38 item is in
+scope.

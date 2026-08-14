@@ -15,5 +15,25 @@ relation intersection to the intersection of the two domains, using the same
 witness for both projections.
 
 The declarations close from local definitions and hypotheses without numbered
-Lean dependencies; the printed catalogue likewise records no citations. All
-five items move to `awaiting-ci`, with no refusals to split out.
+Lean dependencies; the printed catalogue likewise records no citations. Their
+actual Lean and normalized graphs are therefore empty, with no inherited edge.
+
+## T1–T9 structural gate
+
+All five are blocked as primary v1 formalizations. The declarations are
+ordinary Lean `Prop` theorems over semantic functions `Domain`,
+`ConverseDomain`, `Field`, `Converse`, and `Inter`. None has an object-language
+relational AST as endpoint, none is a theorem of an inductive PM judgement,
+and none consumes PM inference rules. The `Prop` statements remain valid and
+useful secondary lemmas only.
+
+The missing AST structure is substantive: ·18 needs implication between two
+relation/class equalities; ·21 and ·22 need converse nested under domain/field;
+·24 needs the complete chained equivalence of four existence assertions; and
+·25 needs inclusion with relation and class intersection at distinct syntactic
+levels. An opaque atom or a primitive constructor for any derived proposition
+would fail the non-vacuity and axiom-free gates.
+
+Accordingly all five remain `prepared` with
+`blocked-missing-pm-ast-judgement-derivation`. There are no printed citations
+to consume in this lot, so all three dependency graphs are exactly empty.

@@ -1,22 +1,21 @@
-# ✱31 catalogue 01 strict semantic audit
+# ✱31 catalogue 01 v1 kernel audit
 
-Scope: exactly ✱31·01, ·02, ·1, ·101, and ·13.  Their catalogue readings
-match the literal PG78050 blocks in `Star31Source.lean`.
+Scope is exactly ·01, ·02, ·1, ·101, and ·13. The acceptance standard is the
+✱2 architecture: an exact object-language AST, an assertion or definition
+judgement over that AST, and a kernel derivation accounting for the printed
+proof. A related Lean `Prop` theorem is secondary evidence only.
 
-No item in this lot is promotable.  ✱31·01 and ·02 are printed definitions,
-but the repository has no numbered Lean declaration for either definition;
-the unnumbered infrastructure definitions `Cnv`, `converse`, and `IsConverse`
-do not by themselves constitute audited implementations of both PM class
-abstracts.  Likewise ·1 and ·101 have no corresponding theorem declarations,
-so theorem-name proximity elsewhere cannot supply a source↔Lean certificate.
+No item passes. There is no relation/class-abstract syntax representing ·01
+or ·02, hence no definitional judgement. Items ·1 and ·101 likewise lack their
+exact quantified ASTs and asserted derivations. For ·13, `star_31_13` proves
+only `∃ Q, IsConverse Q P`; it represents neither the descriptive value
+`CnvʻP`, its `E!` formula, nor the printed derivation.
 
-✱31·13 has a named candidate, but it is not equivalent.  PM asserts
-contextual existence of the descriptive value `CnvʻP`.  Lean's
-`∃ Q, IsConverse Q P` merely exhibits a relation extension satisfying the
-converse predicate; it does not encode the incomplete symbol, its description
-scope, or its denotation condition.  This is exactly the mismatch already
-identified by the strict opening audit.
+The dependency graphs were rebuilt from zero. Printed edges are: none for ·01
+and ·02; ·1 → {✱21·3, ✱31·01}; none printed for ·101; and ·13 → {✱14·21,
+✱31·12}. Since every candidate fails before the judgement gate, accepted Lean
+and normalized graphs are empty. No edge is inferred from name proximity or
+from the secondary Prop model.
 
-All five records remain `prepared` and are marked blocked with their explicit
-refusal reason.  There is no accepted Lean dependency graph for this lot and
-no item is promoted to `awaiting-ci`.
+All five remain `prepared`, explicitly blocked as v1-incomplete, with pending
+CI evidence. There is no partial promotion.

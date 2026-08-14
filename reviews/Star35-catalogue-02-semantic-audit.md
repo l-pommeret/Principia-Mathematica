@@ -1,24 +1,22 @@
-# ✱35 catalogue 02 strict semantic audit
+# ✱35 catalogue 02 Star2/T1–T9 audit
 
-The five literal source blocks PM1:✱35·1, ·101, ·102, ·103, and ·11 match
-their catalogue records and the declarations in
-`Principia/Architecture/Star35ConsecutiveKernel.lean`.
+This audit covers ·1, ·101, ·102, ·103, and ·11. A complete item must provide
+the printed formula as an object-language AST, an assertion judgement, and an
+axiom-free kernel derivation licensed by the source rules. Predicate-level
+`Prop`, support projections, and unfolding a `def` are secondary semantics,
+not substitutes for that derivation.
 
-All five translations pass strict equivalence. The Lean definitions interpret a
-class as a predicate and a relation as a typed binary predicate. Accordingly,
-·1, ·101, and ·102 are the exact pointwise laws for left, right, and
-simultaneous restriction. In ·103, the displayed application of PM's Cartesian
-relation `α ↑ β` is represented pointwise by `a x ∧ b y`; the apparently
-tautological Lean statement therefore preserves, rather than drops, the whole
-printed proposition. Finally, ·11 is extensional equality of the simultaneous
-restriction with the pointwise intersection of both one-sided restrictions.
+None passes. The first four declarations are `Iff.rfl` unfoldings (·103 is
+literally a proposition iff itself). Item ·11 proves semantic function equality
+using `funext` and `propext`. These are axiom-free Lean proofs, but no target is
+a PM syntax tree and none inhabits a PM assertion judgement. In particular,
+·1 does not replay its printed ✱21·3/✱35·01 route.
 
-PM prints the dependencies ✱21·3 and ✱35·01 for ·1. Its Lean proof is
-judgmental after unfolding `leftRestriction`, so neither citation remains as a
-Lean theorem constant; the metadata records this exact, reviewed historical
-closure relaxation. The other four demonstrations print no numbered dependency,
-and their Lean bodies call no theorem declarations. No non-logical assumption is
-introduced.
+Graphs were rebuilt from zero. The only explicit printed graph in this lot is
+·1 → {✱21·3, ✱35·01}; the other four source blocks print no citations. Since
+all candidates fail before the judgement gate, their accepted Lean and
+normalized graphs are empty. Constructor and definitional names are not
+invented as historical dependencies.
 
-All five records are promoted in place to `awaiting-ci`; CI evidence remains
-pending. No item is refused.
+All five records are `prepared` and blocked. CI evidence is pending; no
+previously green Prop compilation is reused as v1 evidence.

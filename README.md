@@ -7,9 +7,38 @@ The project keeps distinct: the historical English text, a typed abstract
 syntax reproducing PM, derivations in a reconstructed PM calculus, and
 interpretations or metatheorems proved in Lean.
 
-Every item retains its original starred number and page-level provenance. A
-proof is accepted only after Lean and CI checks, with no `sorry`, `admit`, unsafe
-escape hatch, or unrecorded axiom.
+Every item retains its original starred number and page-level provenance.
+
+## What "certified" means here
+
+A certification tier is *computed* from the Lean sources, never asserted. The
+top tier, `kernel-checked`, is reserved for items that meet the standard the
+✱1–✱5 layer already meets: the module is in the import closure that `lake build`
+kernel-checks; the statement is a judgement of an inductive derivation relation
+whose constructors are exactly PM's printed primitive propositions; a companion
+reading ties the catalogue's printed formula, character for character, to the
+abstract syntax tree the theorem asserts; the asserted formula uses PM's own
+connectives rather than Lean's; `#print axioms` reports nothing; the statement is
+neither vacuous nor a duplicate; the recorded CI evidence resolves to a commit
+that exists and predates no edit of the file it certifies; and every non-logical
+assumption reached — reducibility above all — is declared.
+
+A separate check asks the harder question: whether the proof follows the
+demonstration PM actually prints, by reading the elaborated proof term and
+requiring that everything the printed demonstration cites appears in it.
+
+The criteria, the tier vocabulary, and what each tier does and does not license
+a reader to believe are set out in
+[`docs/CERTIFICATION_TIERS.md`](docs/CERTIFICATION_TIERS.md). The lower tiers are
+deliberately unflattering: `lean-typechecked` means a declaration of that name
+compiles and nothing more is claimed, and most of the catalogue sits there or
+below. `scripts/verify_certification_tier.py --report` prints the current census;
+`scripts/report_derivation_frontier.py` shows which unformalised propositions
+block the most work.
+
+The whole apparatus rests on 23 printed primitive propositions, all in ✱1, ✱9,
+✱10, ✱11 and ✱12. Everything else is derived from those, so no chapter can be
+reconstructed before the propositions its demonstrations cite exist.
 
 Printed statements and demonstrations can be compiled into deterministic,
 strict prover manifests. See

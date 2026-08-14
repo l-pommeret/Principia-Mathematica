@@ -20,7 +20,22 @@ introduced.  ✱14·1 and ✱14·11 unfold the exact contextual definitions;
 polymorphic and need no `Classical`, decidability, inhabitedness, new axiom,
 oracle, `sorry`, or generic assertion rule.
 
-The historical dependency chains remain recorded in metadata.  Lean checks
-the complete Russellian contextual propositions directly, rather than
-claiming that the repository's object-language syntax has acquired a
-description-valued term or an unaudited derivation carrier.
+The historical dependency chains are split into exact catalogue identifiers
+in metadata: the conversion citations for ·1 and ·11 use ✱4·2 together
+with definitions ✱14·01 and ✱14·02; ·111 uses ✱4·2, definitions
+✱14·04/·03, ✱14·1, and ✱11·55.  The two conventional-scope
+corollaries ·101 and ·112 cite and call ·1 and ·111 respectively.
+
+## Star2-standard T1–T9 reaudit
+
+All five public declarations are ordinary Lean `Prop` equivalences.  Three
+close by definitional reduction (`rfl`), and the other two merely reuse those
+Prop theorems.  None is an inductive assertion judgement indexed by the
+description AST, and none has a proof term assembled from PM rules.  A `Df`
+may license unfolding but does not itself create a derivation constructor.
+
+Consequently all five records are now `prepared`, explicitly blocked on the
+missing inductive description judgement, and labelled `secondary-prop-only`.
+The Prop translations remain useful secondary checks but are not primary
+Star2-standard evidence.  No axiom, `Support`, `sorry`, `admit`, or unsafe
+declaration occurs in the targeted module.
