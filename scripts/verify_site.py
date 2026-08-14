@@ -62,9 +62,27 @@ def verify(site: Path) -> None:
     if manifest.get("ordered_item_ids") != expected_order:
         fail("generated manifest does not follow PM decimal item order")
     index_source = (site / "index.html").read_text(encoding="utf-8")
-    rendered_order = re.findall(r'<li data-item-id="([^"]+)"', index_source)
-    if rendered_order != expected_order:
-        fail("index does not render formal items in PM decimal order")
+    if re.search(r'<li data-item-id="', index_source):
+        fail("index must link chapters rather than render every formal item")
+    chapters = manifest.get("chapters", [])
+    rendered_chapter_keys = re.findall(r'<li data-chapter-key="([^"]+)"', index_source)
+    expected_chapter_keys = manifest.get("ordered_chapter_keys", [])
+    if rendered_chapter_keys != expected_chapter_keys:
+        fail("index does not render chapters in PM order")
+    chapter_item_ids: list[str] = []
+    for chapter in chapters:
+        chapter_path = site / chapter["path"]
+        if not chapter_path.is_file():
+            fail(f"chapter page is missing: {chapter['path']}")
+        rendered = re.findall(
+            r'<li data-item-id="([^"]+)"',
+            chapter_path.read_text(encoding="utf-8"),
+        )
+        if rendered != chapter["item_ids"]:
+            fail(f"chapter item order mismatch: {chapter['path']}")
+        chapter_item_ids.extend(rendered)
+    if chapter_item_ids != expected_order:
+        fail("chapter pages do not partition formal items in PM order")
     expected_source_ids = sorted(
         json.loads(path.read_text(encoding="utf-8"))["id"]
         for path in sorted((ROOT / "metadata/source_blocks").glob("*.json"))
@@ -78,7 +96,18 @@ def verify(site: Path) -> None:
             f"manifest says {expected_page_count} edition pages but "
             f"{len(pages)} pages exist"
         )
-    html_paths = [site / "index.html", site / "dependencies.html", *pages]
+    rendered_item_page_ids = []
+    for path in pages:
+        match = re.search(
+            r'<article class="edition-item" data-item-id="([^"]+)"',
+            path.read_text(encoding="utf-8"),
+        )
+        if match:
+            rendered_item_page_ids.append(match.group(1))
+    if sorted(rendered_item_page_ids) != expected_ids:
+        fail("formal item pages do not map bijectively to metadata IDs")
+    chapter_pages = sorted((site / "chapters").glob("*.html"))
+    html_paths = [site / "index.html", site / "dependencies.html", *chapter_pages, *pages]
     for path in html_paths:
         source = path.read_text(encoding="utf-8")
         if re.search(r"arstl_[A-Za-z0-9]+", source):
@@ -87,7 +116,7 @@ def verify(site: Path) -> None:
         parser.feed(source)
         if path != site / "index.html" and "content" not in parser.ids:
             fail(f"{path} lacks the main content landmark")
-        if path not in {site / "index.html", site / "dependencies.html"}:
+        if path.parent == site / "items":
             if "scan-placeholder" in source:
                 fail(f"facsimile placeholder remains in {path}")
             pending_facsimile = "No item-level scan leaf has yet been recorded." in source

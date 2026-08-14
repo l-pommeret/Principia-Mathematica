@@ -8,6 +8,7 @@
   "witnesses": [
     "PG78050"
   ],
+  "integration_status": "awaiting-ci",
   "items": [
     {
       "id": "PM1:✱32·4",
@@ -17,29 +18,14 @@
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel4.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel4.star_32_4",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱30·21", "PM1:✱32·18"],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-review.md"
-    },
-    {
-      "id": "PM1:✱32·41",
-      "kind": "derived-proposition",
-      "printed": "\\(\\vdash\\colon\\ldotp \\text{E}!Sʻy.\\supset:\\overrightarrow{R}ʻy=\\overrightarrow{S}ʻy.\\equiv.Rʻy=Sʻy\\)",
-      "formal_scope": "exact typed reconstruction of the canonical relation-section proposition",
-      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel4.lean",
-      "declaration": "PM.Architecture.Star32ConsecutiveKernel4.star_32_41",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-review.md"
+      "parser_evidence": "reviews/Star32-catalogue-08-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱32·42",
@@ -49,13 +35,14 @@
       "lean_path": "Principia/Architecture/Star32ConsecutiveKernel5.lean",
       "declaration": "PM.Architecture.Star32ConsecutiveKernel5.star_32_42",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱30·34", "PM1:✱32·18"],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star32-catalogue-review.md"
+      "parser_evidence": "reviews/Star32-catalogue-08-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-passed"
     }
   ],
   "ci_evidence": {

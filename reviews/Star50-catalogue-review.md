@@ -60,3 +60,18 @@ retains the explicit transitivity premise and both biconditionals. At ·5 the
 two typed restrictions of identity agree pointwise and their double
 restriction is the same relation. All hypotheses and chained conclusions are
 preserved.
+
+The seventh batch (·51–·55) passes strict audit and is `awaiting-ci`.
+Converse, domain, converse-domain and field are evaluated pointwise on the
+identity relation restricted to `α`; ·53 retains both equalities in the printed
+chain, and ·54 proves the printed composition idempotence. At ·55, emptiness of
+`α ∩ β` is equivalent in both directions to every pair in `α × β` being
+diverse. No field component or implication direction is omitted.
+
+The eighth batch (·56–·59, ·6) also passes strict audit and is `awaiting-ci`.
+The contextual-existence notation at ·56 is represented by a witness on each
+side, with the diagonal identity witness providing the exact equivalence.
+Theorems ·57 and ·58 retain all three printed members, ·59 has the correct
+image orientation, and ·6 is exactly right restriction by composition with
+`I ▷ α`. The typed expansions neither strengthen the premises nor weaken the
+conclusions.

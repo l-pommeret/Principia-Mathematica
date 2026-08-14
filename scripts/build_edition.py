@@ -65,6 +65,27 @@ def lean_excerpt(item: dict) -> str:
     return "\n".join(lines[start:end]).rstrip()
 
 
+def lean_signature(path_value: str, declaration_value: str) -> str:
+    """Return a real, checked Lean declaration signature without its proof body."""
+    path = ROOT / path_value
+    source = path.read_text(encoding="utf-8")
+    name = declaration_value.split(".")[-1]
+    pattern = re.compile(
+        rf"(?m)^\s*(?:theorem|lemma|def|abbrev)\s+{re.escape(name)}\b"
+    )
+    matches = list(pattern.finditer(source))
+    if len(matches) != 1:
+        raise ValueError(
+            f"expected one declaration {declaration_value} in {path_value}, "
+            f"found {len(matches)}"
+        )
+    tail = source[matches[0].start():]
+    end = re.search(r"\s(?::=|where)\s", tail)
+    if not end:
+        raise ValueError(f"cannot isolate signature {declaration_value} in {path_value}")
+    return tail[:end.start()].strip()
+
+
 def scope_reading(item: dict) -> str:
     path = ROOT / item["lean_path"]
     source = path.read_text(encoding="utf-8")
@@ -81,6 +102,25 @@ def scope_reading(item: dict) -> str:
 
 def slug(item_id: str) -> str:
     return "item-" + quote(item_id, safe="").replace("%", "-").lower()
+
+
+ITEM_ID = re.compile(r"^PM(?P<volume>\d+):✱(?P<star>\d+)·(?P<item>\d+)$")
+
+
+def item_coordinates(item_id: str) -> tuple[int, str, str]:
+    match = ITEM_ID.fullmatch(item_id)
+    if not match:
+        raise ValueError(f"unsupported PM item ID: {item_id}")
+    return int(match.group("volume")), match.group("star"), match.group("item")
+
+
+def chapter_key(item_id: str) -> tuple[int, str]:
+    volume, star, _ = item_coordinates(item_id)
+    return volume, star
+
+
+def chapter_filename(volume: int, star: str) -> str:
+    return f"volume-{volume}-star-{star}.html"
 
 
 def source_record_order(record: dict) -> tuple[int, int, int, str]:
@@ -230,6 +270,7 @@ def dependency_list(values: list[str], *, code: bool = False) -> str:
 
 
 def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]) -> str:
+    item_volume, item_star, _ = item_coordinates(item["id"])
     scan = batch.get("source_range", {}).get("canonical_scan")
     leaf = item.get("scan_leaf")
     printed_page = item.get("printed_page", "not yet recorded")
@@ -246,6 +287,20 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
     printed = printed_formula_markup(item["printed"])
     source = html.escape(block.text)
     lean = html.escape(lean_excerpt(item))
+    statement = ""
+    statement_path = item.get("statement_lean_path")
+    statement_declaration = item.get("statement_declaration")
+    if bool(statement_path) != bool(statement_declaration):
+        raise ValueError(
+            f"{item['id']}: statement_lean_path and statement_declaration must occur together"
+        )
+    if statement_path and statement_declaration:
+        signature = html.escape(lean_signature(statement_path, statement_declaration))
+        statement = f'''<section class="verified-statement">
+<h2>Verified Lean proposition</h2>
+<p class="quiet">A direct typed proposition corresponding to the displayed PM formula. This is distinct from the source-chain certificate below.</p>
+<pre><code>{signature}</code></pre>
+<p><code>{html.escape(statement_declaration)}</code></p></section>'''
     scope = html.escape(scope_reading(item))
     run = batch.get("ci_evidence", {}).get("run", "")
     evidence = (external_link(run, "Successful GitHub Actions run")
@@ -259,8 +314,8 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
     else:
         facsimile = '<p class="quiet">No item-level scan leaf has yet been recorded. The diplomatic transcription remains available alongside its source-file provenance.</p>'
     body = f"""
-<nav aria-label="Breadcrumb"><a href="../index.html">Contents</a> / Volume {item['volume'] if 'volume' in item else batch['volume']} / {html.escape(item['id'])}</nav>
-<article class="edition-item">
+<nav aria-label="Breadcrumb"><a href="../index.html">Contents</a> / Volume {item_volume} / <a href="../chapters/{chapter_filename(item_volume, item_star)}">✱{item_star}</a> / {html.escape(item['id'])}</nav>
+<article class="edition-item" data-item-id="{html.escape(item['id'])}">
 <header class="item-header"><p class="eyebrow">Volume {batch['volume']} · printed page {printed_page}</p>
 <h1>{html.escape(item['id'].split(':', 1)[1])}</h1><p class="formula" data-pm-formula>{printed}</p>
 <p><span class="badge">{html.escape(item['kind'])}</span> <span class="badge">{html.escape(item['source_status'])}</span></p></header>
@@ -269,7 +324,7 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
 <div class="parallel" aria-label="Source and formal edition">
 <section class="panel scan"><h2>Facsimile</h2>{facsimile}</section>
 <section class="panel transcription"><h2>Diplomatic transcription</h2><pre class="source-text">{source}</pre></section>
-<section class="panel lean"><h2>Lean reconstruction</h2><pre><code>{lean}</code></pre>
+<section class="panel lean"><h2>Source-critical Lean certificate</h2>{statement}<pre><code>{lean}</code></pre>
 <dl><dt>Declaration</dt><dd><code>{html.escape(item['declaration'])}</code></dd><dt>Formal scope</dt><dd>{html.escape(item['formal_scope'])}</dd></dl></section>
 </div>
 <section class="apparatus"><h2>Critical apparatus</h2>{apparatus_html(apparatus)}</section>
@@ -373,19 +428,22 @@ def build(output: Path) -> None:
     # sequence.  The reader must follow PM's decimal numbering (so ·33 is
     # between ·32 and ·36), independently of filenames and integration date.
     items.sort(key=lambda pair: pm_order(pair[0]["id"]))
+    item_slugs = [slug(item["id"]) for item, _ in items]
+    if len(item_slugs) != len(set(item_slugs)):
+        raise ValueError("item URL slug collision")
     if output.exists():
         shutil.rmtree(output)
     (output / "items").mkdir(parents=True)
+    (output / "chapters").mkdir(parents=True)
     shutil.copytree(ROOT / "edition/assets", output / "assets")
-    cards = []
+    chapter_items: dict[tuple[int, str], list[tuple[dict, Path]]] = {}
     indexed_ids = {item["id"] for item, _ in items}
     for item, batch in items:
         linked = [record for record in apparatus if record["item"] == item["id"]]
         target = output / "items" / f"{slug(item['id'])}.html"
         target.write_text(item_page(item, batch, blocks[item["id"]], linked), encoding="utf-8")
         printed_page = item.get("printed_page", "not yet recorded")
-        cards.append(f"""<li data-item-id="{html.escape(item['id'])}"><a href="items/{target.name}"><b>{html.escape(item['id'].split(':', 1)[1])}</b>
-<span>{html.escape(item['kind'])}</span><small>p. {printed_page} · {html.escape(item['printed'])}</small></a></li>""")
+        chapter_items.setdefault(chapter_key(item["id"]), []).append((item, target))
     source_cards = []
     source_ids = {record["id"] for record in source_records}
     for record in source_records:
@@ -406,7 +464,7 @@ def build(output: Path) -> None:
             encoding="utf-8",
         )
         source_cards.append(
-            f'<li><a href="items/{target.name}"><b>{html.escape(record["title"])}</b>'
+            f'<li><a href="../items/{target.name}"><b>{html.escape(record["title"])}</b>'
             f'<span>{html.escape(record["kind"])}</span>'
             f'<small>pp. {html.escape(str(record["source_range"]["printed_pages"]))}</small></a></li>'
         )
@@ -419,11 +477,61 @@ def build(output: Path) -> None:
     if orphan:
         orphan_note = ("<section><h2>Apparatus awaiting an item page</h2><p>These records are retained but the corresponding "
                        "edition item is not yet present: " + ", ".join(html.escape(r["item"]) for r in orphan) + ".</p></section>")
+    source_index_body = f'''<nav aria-label="Breadcrumb"><a href="../index.html">Contents</a> / Historical text</nav>
+<section class="hero"><p class="eyebrow">First edition · source-critical record</p>
+<h1>Historical text and notes</h1><p>Introductions, editorial notes, and extended diplomatic source blocks.</p></section>
+<ol class="contents source-contents">{''.join(source_cards)}</ol>'''
+    (output / "chapters" / "source-texts.html").write_text(
+        page("Historical text and notes", source_index_body, depth=1), encoding="utf-8"
+    )
+
+    chapter_manifest = []
+    volume_sections = []
+    for volume in sorted({key[0] for key in chapter_items}):
+        chapter_cards = []
+        volume_keys = sorted(
+            (key for key in chapter_items if key[0] == volume),
+            key=lambda key: int(key[1]),
+        )
+        for key in volume_keys:
+            _, star = key
+            filename = chapter_filename(volume, star)
+            chapter_rows = []
+            ordered_ids = []
+            for item, target in chapter_items[key]:
+                printed_page = item.get("printed_page", "not yet recorded")
+                ordered_ids.append(item["id"])
+                chapter_rows.append(
+                    f'''<li data-item-id="{html.escape(item['id'])}"><a href="../items/{target.name}"><b>{html.escape(item['id'].split(':', 1)[1])}</b>
+<span>{html.escape(item['kind'])}</span><small>p. {printed_page} · {html.escape(item['printed'])}</small></a></li>'''
+                )
+            chapter_body = f'''<nav aria-label="Breadcrumb"><a href="../index.html">Contents</a> / Volume {volume} / ✱{star}</nav>
+<section class="hero chapter-hero"><p class="eyebrow">Volume {volume} · {len(ordered_ids)} formal items</p>
+<h1>Chapter ✱{star}</h1><p>Propositions are listed in the decimal order of the printed edition.</p></section>
+<ol class="contents">{''.join(chapter_rows)}</ol>'''
+            (output / "chapters" / filename).write_text(
+                page(f"Volume {volume} · ✱{star}", chapter_body, depth=1), encoding="utf-8"
+            )
+            chapter_cards.append(
+                f'<li data-chapter-key="PM{volume}:✱{star}"><a href="chapters/{filename}">'
+                f'<b>✱{star}</b><span>{len(ordered_ids)} propositions</span></a></li>'
+            )
+            chapter_manifest.append({
+                "volume": volume,
+                "star": star,
+                "path": f"chapters/{filename}",
+                "item_ids": ordered_ids,
+            })
+        volume_sections.append(
+            f'<section><h2>Volume {volume}</h2><ol class="chapter-grid">'
+            + ''.join(chapter_cards) + '</ol></section>'
+        )
+
     body = f"""<section class="hero"><p class="eyebrow">First edition · Volumes I–III</p>
 <h1>A formal edition faithful to the printed page</h1>
 <p>Read the historical English, inspect the facsimile, and compare the audited Lean reconstruction. Scope punctuation and editorial interventions remain visible.</p></section>
-<section><h2>Historical text and notes</h2><ol class="contents source-contents">{''.join(source_cards)}</ol></section>
-<section><h2>Available formal items</h2><p><a href="dependencies.html">Explore the audited historical and Lean dependency graphs</a>.</p><ol class="contents">{''.join(cards)}</ol></section>{orphan_note}
+<section class="reader-entry"><h2>Browse the edition</h2><p><a href="chapters/source-texts.html">Historical text and notes</a> · <a href="dependencies.html">Audited dependency graphs</a></p></section>
+{''.join(volume_sections)}{orphan_note}
 <section class="method"><h2>How to read this edition</h2><p>The transcription is diplomatic. A <i>sic</i> is rendered only from a reviewed apparatus record and never inserted into canonical source bytes. Lean declarations are reconstructions, not silent replacements for PM's notation.</p></section>"""
     (output / "index.html").write_text(page("Contents", body), encoding="utf-8")
     historical_rows = ''.join(
@@ -466,6 +574,8 @@ def build(output: Path) -> None:
         "apparatus": len(apparatus),
         "item_ids": sorted(indexed_ids),
         "ordered_item_ids": [item["id"] for item, _ in items],
+        "chapters": chapter_manifest,
+        "ordered_chapter_keys": [f"PM{entry['volume']}:✱{entry['star']}" for entry in chapter_manifest],
         "source_block_ids": sorted(source_ids),
         "dependency_graph": "dependency-graph.json",
         "dependency_coverage": dependency_graph["coverage"],

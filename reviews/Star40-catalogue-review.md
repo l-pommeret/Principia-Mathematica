@@ -59,3 +59,12 @@ Lean proves only the endpoint equality between `Forward R a` and the union of
 the two forward images, omitting PM's displayed intermediate equality with
 `sʻ(Pʻʻα ∪ Qʻʻα)`. The ten-item wave is therefore 9 awaiting CI and one
 documented refusal, in disjoint manifests with unique IDs.
+
+Catalogues 10–11 strict audit promotes eight of ten items. In catalogue 10,
+·6, ·61, ·63 and ·64 preserve the complete typed product, nonemptiness and
+empty-class statements. Item ·62 is refused: PM places both products inside
+the same field `CʻR`, while Lean substitutes two distinct domain predicates
+and supplies no common field target. In catalogue 11, ·65, ·66, ·68 and ·681
+are exact. Item ·67 is refused because PM states a three-member chained
+equivalence and Lean omits its final `α ⊂ pʻR⃗ʻʻβ` member. The result is eight
+awaiting CI and two prepared refusals in four homogeneous, disjoint manifests.

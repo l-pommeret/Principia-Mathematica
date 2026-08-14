@@ -23,21 +23,19 @@
       "scan_leaf": 389,
       "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_602",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact contextual predicate equivalence for the unique member of a unit propositional class, its universal form, and its witnessed form",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
       "printed_dependencies": [
         "✱52·12",
         "✱14·26"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱52·12",
-        "PM1:✱14·26"
-      ],
+      "lean_dependencies": ["PM.Architecture.Star52CompletionKernel.star_52_601"],
+      "normalized_dependencies": ["PM1:✱52·601"],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star52-catalogue-review.md"
+      "parser_evidence": "reviews/Star52-catalogue-review.md",
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱52·601"],"printed_but_unused":["PM1:✱52·12","PM1:✱14·26"],"strict_attempt_evidence":"reviews/Star52-catalogue-07-review.md","editorial_note":"The typed contextual theorem is the exact predicate-specialized form already established at ✱52·601; PM's description route remains historical evidence."}
     },
     {
       "id": "PM1:✱52·61",
@@ -47,10 +45,10 @@
       "scan_leaf": 389,
       "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_61",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact contextual equivalence of unique-member membership, inclusion of the unit class, and inhabited intersection",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -63,10 +61,10 @@
       "scan_leaf": 389,
       "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_62",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact contextual extensional equality criterion for two unit classes via equality of their unique members",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -81,19 +79,18 @@
       "scan_leaf": 389,
       "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_63",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed disjointness of two distinct unit classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
       "printed_dependencies": [
         "✱52·46"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱52·46"
-      ],
+      "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star52-catalogue-review.md"
+      "parser_evidence": "reviews/Star52-catalogue-review.md",
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["PM1:✱52·46"],"strict_attempt_evidence":"reviews/Star52-catalogue-07-review.md","editorial_note":"The typed singleton representation proves disjointness directly; the printed transposition through ✱52·46 is retained historically."}
     },
     {
       "id": "PM1:✱52·64",
@@ -103,13 +100,14 @@
       "scan_leaf": 389,
       "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_64",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed dichotomy that the intersection of a unit class with any class is unit or empty",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": ["PM.Architecture.Star52CompletionKernel.star_52_4","PM.Architecture.Star52OpeningKernel.star_52_16"],
+      "normalized_dependencies": ["PM1:✱52·4","PM1:✱52·16"],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱52·4","PM1:✱52·16"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Star52-catalogue-07-review.md","editorial_note":"The typed proof derives the at-most-one property via ✱52·16 and applies the exact singleton-or-empty characterization ✱52·4."}
     }
   ],
   "ci_evidence": {

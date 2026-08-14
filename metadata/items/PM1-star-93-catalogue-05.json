@@ -1,5 +1,5 @@
 {
-  "batch": "PM1-STAR93-CATALOGUE-05",
+  "batch": "PM1-STAR93-CATALOGUE-05-REFUSED",
   "edition": "first",
   "volume": 1,
   "source_range": {
@@ -23,15 +23,16 @@
       "scan_leaf": 633,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
       "declaration": "PM.Architecture.Star93NextKernel.star_93_132",
-      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Lean requires the extra hypothesis cod T ⊆ field P, which is absent from the printed unconditional proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-extra-field-inclusion-hypothesis",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md"
+      "parser_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM1:✱93·21",
@@ -41,15 +42,16 @@
       "scan_leaf": 633,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
       "declaration": "PM.Architecture.Star93NextKernel.star_93_21",
-      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Potid is defined as True, so the definitional Gen equivalence erases PM's power-identity restriction",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-degenerate-potid",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md"
+      "parser_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM1:✱93·22",
@@ -59,13 +61,15 @@
       "scan_leaf": 633,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
       "declaration": "PM.Architecture.Star93NextKernel.star_93_22",
-      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: the existential Potid witness and boundary equality are supplied together as h, assuming exactly the generated-family membership PM proves",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-conclusion-assumed",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-refused",
+      "semantic_audit_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md"
     },
     {
       "id": "PM1:✱93·221",
@@ -75,13 +79,15 @@
       "scan_leaf": 633,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
       "declaration": "PM.Architecture.Star93NextKernel.star_93_221",
-      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Lean adds h : Potid P P and Potid is definitionally True, so the printed unconditional membership is not faithfully reconstructed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-extra-hypothesis-and-degenerate-potid",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-refused",
+      "semantic_audit_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md"
     },
     {
       "id": "PM1:✱93·23",
@@ -91,15 +97,16 @@
       "scan_leaf": 633,
       "lean_path": "Principia/Architecture/Star93NextKernel.lean",
       "declaration": "PM.Architecture.Star93NextKernel.star_93_23",
-      "formal_scope": "typed inductive field-analysis reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: arbitrary H replaces PM's minimum-image family and the full extensional characterization is assumed pointwise as h",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-conclusion-assumed-and-family-erased",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star93-catalogue-review.md"
+      "parser_evidence": "reviews/Star93-catalogues-04-05-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     }
   ],
   "ci_evidence": {

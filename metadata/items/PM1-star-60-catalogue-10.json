@@ -19,6 +19,7 @@
     "PM1-1910-SCAN",
     "PG78050"
   ],
+  "review_evidence": ["reviews/Star60-catalogue-10-semantic-audit.md"],
   "items": [
     {
       "id": "PM1:✱60·54",
@@ -26,15 +27,16 @@
       "printed": "✱60·54. ⊢ : Clʻα = Clʻβ .≡. α = β",
       "printed_page": 410,
       "scan_leaf": 432,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": ["PM1:✱60·34"],
+      "normalized_dependencies": ["PM1:✱60·34"],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_54",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM injectivity of the subclass-class operator",
+      "integration_status": "awaiting-ci",
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱60·34"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Star60-catalogue-10-semantic-audit.md","editorial_note":"Lean proves injectivity by the exact self-membership characterization ✱60·34; the diplomatic statement carries no bracketed citation."}
     },
     {
       "id": "PM1:✱60·56",
@@ -42,15 +44,15 @@
       "printed": "✱60·56. ⊢ . κ ⊂ Clʻsʻκ",
       "printed_page": 410,
       "scan_leaf": 432,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_56",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM inclusion into the subclasses of the sum",
+      "integration_status": "awaiting-ci"
     },
     {
       "id": "PM1:✱60·57",
@@ -58,15 +60,15 @@
       "printed": "✱60·57. ⊢ : x ∈ α .⊃. ιʻx ∈ Cl exʻα",
       "printed_page": 406,
       "scan_leaf": 428,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_57",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM singleton inhabited-subclass proposition",
+      "integration_status": "awaiting-ci"
     },
     {
       "id": "PM1:✱60·6",
@@ -74,15 +76,15 @@
       "printed": "✱60·6. ⊢ : x,y ∈ α .⊃. ιʻx ∪ ιʻy ∈ Cl exʻα",
       "printed_page": 406,
       "scan_leaf": 428,
-      "formal_status": "prepared",
+      "formal_status": "awaiting-ci",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_6",
-      "formal_scope": "typed subclass reconstruction; item-level semantic promotion audit pending",
-      "integration_status": "prepared"
+      "formal_scope": "exact typed PM two-singleton inhabited-union proposition",
+      "integration_status": "awaiting-ci"
     }
   ],
   "ci_evidence": {

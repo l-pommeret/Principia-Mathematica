@@ -41,3 +41,21 @@ bodies instead expand `Scope` and use only the local uniqueness lemma, so the
 accepted records carry explicit `relaxed-closure` evidence and empty Lean and
 normalized numbered-proposition graphs.  The split partitions all ten IDs;
 none is duplicated.
+
+## Catalogue 3 strict semantic audit
+
+All five remaining prepared candidates pass and are promoted in place to
+`awaiting-ci`.  ✱30·2 is exactly the definition of existence of the associated
+description by a witness satisfying the full relation/equality biconditional;
+·21 expands this into existence plus pairwise uniqueness without weakening the
+universal scope.  Proposition ·22 represents the printed equality with
+`(℩x)(xRy)` contextually as `Scope R y (Characterizes R y)`, so it neither
+chooses an arbitrary value nor omits the description's existence condition.
+
+✱30·3 preserves the full pointwise biconditional characterizing identity with
+the associated value.  ✱30·31 is its exact equivalent decomposition into
+`R b y` and uniqueness of every related term.  The first three declarations
+expand local contextual definitions directly; their printed ✱4/✱14 citations
+therefore carry reviewed `relaxed-closure` evidence, while ·3 and ·31 have
+empty graphs on both sides.  The catalogue remains homogeneous and no split or
+duplicate metadata record is introduced.

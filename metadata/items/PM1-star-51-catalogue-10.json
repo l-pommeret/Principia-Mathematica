@@ -23,13 +23,15 @@
       "scan_leaf": 384,
       "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_53",
-      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact relational typed equivalence between existence of the inverse unit-class description and membership of its selected element; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "integration_blocked": false,
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱51·54",
@@ -39,13 +41,15 @@
       "scan_leaf": 384,
       "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_54",
-      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact relational typed characterization of existence of the inverse unit-class description by existence of a singleton presentation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "integration_blocked": false,
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱51·55",
@@ -55,13 +59,15 @@
       "scan_leaf": 384,
       "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_55",
-      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact relational typed equivalence between existence of the inverse unit-class description and existence of the corresponding definite description; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "integration_blocked": false,
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱51·56",
@@ -71,15 +77,17 @@
       "scan_leaf": 384,
       "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_56",
-      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact relational typed reconstruction of the three-term equality chain connecting inverse unit-class selection, singleton presentation, and definite description; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star51-catalogue-review.md"
+      "parser_evidence": "reviews/Star51-catalogue-09-10-semantic-audit.md",
+      "integration_blocked": false,
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱51·57",
@@ -89,15 +97,24 @@
       "scan_leaf": 384,
       "lean_path": "Principia/Architecture/Star51RemainingKernel.lean",
       "declaration": "PM.Architecture.Star51RemainingKernel.star_51_57",
-      "formal_scope": "typed unit-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact relational typed reconstruction of existence and equality of inverse unit-class and definite descriptions; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": ["PM.Architecture.Star51RemainingKernel.star_51_55"],
+      "normalized_dependencies": ["PM1:✱51·55"],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star51-catalogue-review.md"
+      "parser_evidence": "reviews/Star51-catalogue-09-10-semantic-audit.md",
+      "integration_blocked": false,
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": ["PM1:✱51·55"],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star51-catalogue-09-10-semantic-audit.md",
+        "editorial_note": "The literal catalogue block has no bracketed citation; Lean reuses the exact description-existence equivalence ✱51·55 for the first link."
+      }
     }
   ],
   "ci_evidence": {

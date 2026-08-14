@@ -1,5 +1,5 @@
 /-! PM I, ✱94·12–✱94·401 (audited catalogue lots 01–02). Canonical witness:
-Project Gutenberg ebook 78050, printed pp. 620–624. -/
+Project Gutenberg ebook 78050, printed pp. 620–625. -/
 /- PM-VERBATIM-BEGIN PM1:✱94·12
 ✱94·12. ⊢ : P∈Potʻ(R|S) .⊃. (∃T) . T∈Potʻ(S|R) . P|R=R|T
 PM-VERBATIM-END PM1:✱94·12 -/
@@ -60,3 +60,12 @@ PM-VERBATIM-END PM1:✱94·6 -/
 /- PM-VERBATIM-BEGIN PM1:✱94·61
 ✱94·61. ⊢ : R|S=S|R .⊃: M∈PotʻR .⊃. M|Sₚₒ=Sₚₒ|M : N∈PotʻS .⊃. N|Rₚₒ=Rₚₒ|N
 PM-VERBATIM-END PM1:✱94·61 -/
+/- PM-VERBATIM-BEGIN PM1:✱94·62
+✱94·62. ⊢ : R|S=S|R .⊃. Rₚₒ|Sₚₒ=Sₚₒ|Rₚₒ
+PM-VERBATIM-END PM1:✱94·62 -/
+/- PM-VERBATIM-BEGIN PM1:✱94·63
+✱94·63. ⊢ : R|S=S|R .⊃. (R|S)ₚₒ ⪽ Rₚₒ|Sₚₒ
+PM-VERBATIM-END PM1:✱94·63 -/
+/- PM-VERBATIM-BEGIN PM1:✱94·64
+✱94·64. ⊢ : R|S=S|R .⊃. (R|S)∗ ⪽ R∗|S∗
+PM-VERBATIM-END PM1:✱94·64 -/
