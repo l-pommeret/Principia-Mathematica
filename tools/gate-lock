@@ -1,0 +1,49 @@
+#!/bin/zsh
+# Verrouille en lecture seule ce qui définit le standard de certification.
+#
+# Trois protections se complètent, et aucune ne remplace les autres :
+#
+#   ce verrou            empêche la modification distraite, sur cette machine ;
+#   gate_integrity.json  la détecte après coup, par empreinte SHA-256, partout ;
+#   CODEOWNERS           exige une revue avant qu'elle n'entre dans le dépôt.
+#
+# Git ne transporte pas les permissions (seulement le bit exécutable), donc un
+# clone frais arrive déverrouillé : relancer `tools/gate-lock` après clonage.
+#
+#   tools/gate-lock            verrouille
+#   tools/gate-lock --unlock   déverrouille, délibérément
+#   tools/gate-lock --status   liste l'état
+#
+# Modifier un gate reste possible et parfois nécessaire. Ce qu'on veut empêcher,
+# c'est de le faire sans s'en apercevoir — un gate affaibli ne coûte rien à
+# l'instant où il l'est, et invalide toute certification prononcée ensuite.
+
+set -e
+cd "$(dirname "$0")/.."
+
+FILES=(
+  scripts/verify_*.py
+  scripts/pm_lean_index.py
+  scripts/promote_awaiting_ci.py
+  .github/workflows/*.yml
+  metadata/gate_integrity.json
+  lakefile.toml
+)
+
+case "${1:-}" in
+  --unlock)
+    chmod u+w ${~FILES} 2>/dev/null || true
+    print -- "déverrouillé : ${#${(f)"$(ls ${~FILES} 2>/dev/null)"}} fichiers."
+    print -- "Pense à relancer tools/gate-lock, puis, si tu as modifié un gate :"
+    print -- "  python3 scripts/verify_gate_integrity.py --update \\"
+    print -- "      --authorised-by <nom> --reason <pourquoi>"
+    ;;
+  --status)
+    ls -l ${~FILES} 2>/dev/null | awk '{print $1, $NF}'
+    ;;
+  *)
+    chmod a-w ${~FILES} 2>/dev/null || true
+    n=$(ls -l ${~FILES} 2>/dev/null | grep -c '^-r--r--r--')
+    print -- "verrouillés : $n fichiers."
+    ;;
+esac

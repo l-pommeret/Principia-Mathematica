@@ -62,5 +62,15 @@ jobs:
         # Must follow `lake build`: this shells out to `lake env lean` on a file
         # that imports Principia, so it needs a populated .lake/build.
         run: python3 scripts/verify_axiom_audit.py
+      - name: Audit every declaration of the object calculus, catalogued or not
+        # The audit above asks only about declarations the catalogue references.
+        # That left the widest hole in the standard: an infrastructure lemma
+        # nothing catalogues yet can carry an axiom silently and hand it to
+        # everything built above it. Seven declarations sat in that hole, and
+        # the carrier was not a borrowed lemma but Lean's own structural
+        # recursion compiler — `Nat.brecOn`, `OrderedFormula.brecOn` and the
+        # generated matchers all depend on `propext`, so writing a plain `match`
+        # is enough to acquire it. Only this step sees that.
+        run: python3 scripts/verify_library_independence.py --report-all
       - name: Verify each proof follows its printed demonstration
         run: python3 scripts/verify_printed_citations.py --report-all

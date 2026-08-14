@@ -198,11 +198,29 @@ def axiom_findings(names: list[str]) -> list[str]:
             name, axioms = depends.group(1), depends.group(2).strip()
             findings.append(
                 f"{name} depends on [{axioms}]: the object calculus must rest on "
-                "PM's primitives alone. If the fact is arithmetical or structural, "
-                "prove it in this repository by structural recursion instead of "
-                "borrowing it from the library."
+                "PM's primitives alone.\n" + REMEDY
             )
     return findings
+
+
+#: What to do about it.  The first instinct is to hunt for a borrowed lemma, and
+#: that is often wrong: the commonest carrier in this repository was Lean's own
+#: structural recursion compiler.  A definition written with `match`, or with
+#: pattern-matching equations, elaborates through `Nat.brecOn`,
+#: `<Type>.brecOn` and generated `…match_1` auxiliaries, every one of which
+#: depends on `propext` — so an author who never mentions the library still
+#: acquires it.  Saying so here saves the next reader the search that cost this
+#: edition an afternoon.
+REMEDY = (
+    "      Look first at how the definition recurses: `match` and\n"
+    "      pattern-matching equations elaborate through `brecOn` and generated\n"
+    "      `…match_N` auxiliaries, which depend on `propext`. Rewrite with the\n"
+    "      primitive recursors — `Nat.rec`, `<Type>.casesOn`, explicit\n"
+    "      structural recursion — as `smartDisj`, `Formation.ofElementary` and\n"
+    "      `erase_embedElementary` were. If instead a library theorem is at\n"
+    "      fault (`Nat.max_self` was, proved upstream by the simplifier), prove\n"
+    "      the fact here under its own name, as `natMaxSelf` does."
+)
 
 
 def main() -> int:

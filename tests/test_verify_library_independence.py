@@ -14,6 +14,7 @@ from verify_library_independence import (  # noqa: E402
     CORE_TREES,
     LIBRARY_TACTICS,
     _strip_comments,
+    REMEDY,
     core_files,
     declared_names,
     tactic_findings,
@@ -115,6 +116,29 @@ class ScopeTests(unittest.TestCase):
     def test_the_scope_is_not_empty_in_this_repository(self) -> None:
         # A gate that silently audits nothing would pass vacuously.
         self.assertTrue(core_files())
+
+
+class RemedyTests(unittest.TestCase):
+    """The failure message must name the trap, not just the symptom.
+
+    Seven declarations here depended on `propext` without mentioning Lean's
+    library once: the carrier was the structural recursion compiler, whose
+    `brecOn` and generated matchers depend on it. An author reading only
+    "depends on propext" hunts for a borrowed lemma and finds none.
+    """
+
+    def test_the_message_points_at_structural_recursion_first(self) -> None:
+        self.assertIn("brecOn", REMEDY)
+        self.assertIn("match", REMEDY)
+
+    def test_the_message_names_the_primitive_recursors(self) -> None:
+        self.assertIn("Nat.rec", REMEDY)
+        self.assertIn("casesOn", REMEDY)
+
+    def test_the_message_also_covers_the_borrowed_lemma_case(self) -> None:
+        # `Nat.max_self` is proved upstream by the simplifier and so carries
+        # `propext`; the cure there is to reprove it locally.
+        self.assertIn("Nat.max_self", REMEDY)
 
 
 if __name__ == "__main__":

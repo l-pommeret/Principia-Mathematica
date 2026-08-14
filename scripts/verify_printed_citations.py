@@ -51,7 +51,20 @@ PRINTED_TITLES = {
 }
 
 _STAR_CONST = re.compile(r"\b(?:[A-Za-z_][A-Za-z0-9_']*\.)*star_(\d+)_(\d+)\b")
-_THEOREM_LINE = re.compile(r"^(?:theorem|def) (\S+)")
+#: The header line ``#print`` emits, in every shape it actually emits it.
+#:
+#: Reading only ``^(theorem|def) (\S+)`` missed most of the library and said so
+#: in the worst possible way — as 85 declarations "the build does not contain",
+#: when each existed under the exact catalogued name.  ``#print`` writes a
+#: polymorphic definition as ``def star_13_01.{u_1}``, so the universe suffix
+#: became part of the key; it keeps attributes, so ``@[reducible] def`` did not
+#: match at all; and it announces a constructor with its own keyword.  The gate
+#: was therefore judging 24 proofs while reporting on 87, and nothing said so.
+_THEOREM_LINE = re.compile(
+    r"^(?:@\[[^\]]*\]\s*)?"
+    r"(?:theorem|def|abbrev|instance|constructor)\s+"
+    r"([A-Za-z_][A-Za-z0-9_'.]*?)(?:\.\{[^}]*\})?(?=[\s:{(]|$)"
+)
 
 
 def catalogued(statuses: set[str]) -> dict[str, dict]:

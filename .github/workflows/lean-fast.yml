@@ -52,6 +52,14 @@ jobs:
           python3 scripts/verify_ci_evidence.py --report-all
           python3 scripts/verify_judgement_primitives.py --report-all
           python3 scripts/verify_lean_policy.py
+      - name: Build aggregate
+        # Must precede the per-file check below.  `lake env lean` elaborates one
+        # file against whatever is already compiled, so a front that imports
+        # `Principia.Syntax.Ramified` — which every derived chapter now does —
+        # fails with `unknown module prefix 'Principia'` when nothing has been
+        # built yet.  The step then reports a broken import instead of the
+        # broken proof it exists to find.
+        run: lake build
       - name: Kernel-check changed Lean fronts
         shell: bash
         run: |
@@ -66,5 +74,3 @@ jobs:
           git diff --name-only --diff-filter=ACMR "$base" HEAD -- 'Principia/*.lean' 'Principia/**/*.lean' \
             | tr '\n' '\0' \
             | xargs -0 -r -n 1 -P 4 lake env lean
-      - name: Build aggregate
-        run: lake build
