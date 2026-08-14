@@ -30,7 +30,8 @@ theorem star_116_5 (A : Type u) (B : Type v) (C : Type w) :
 theorem star_116_51 (A : Type u) (B : Type v) (C : Type w) :
     SimilarType ((B → A) × (C → A)) (Sum B C → A) := star_116_5 A B C
 theorem star_116_52 (A : Type u) (B : Type v) (C : Type w) :
-    CardinalClass ((B → A) × (C → A)) = CardinalClass (Sum B C → A) :=
+    Star116SecondKernel.CardinalClass ((B → A) × (C → A)) =
+      Star116SecondKernel.CardinalClass (Sum B C → A) :=
   star_116_361 (star_116_51 A B C)
 theorem star_116_529 (e : TypeEquiv A B) : SimilarType B A := ⟨equivSymm e⟩
 theorem star_116_53 (A : Type u) (B : Type v) (C : Type w) :
@@ -50,7 +51,8 @@ theorem star_116_535 (A : Type u) (B : Type v) (C : Type w) :
 theorem star_116_54 (A : Type u) (B : Type v) (C : Type w) :
     SimilarType ((C → A) × (C → B)) (C → A × B) := star_116_53 A B C
 theorem star_116_55 (A : Type u) (B : Type v) (C : Type w) :
-    CardinalClass ((C → A) × (C → B)) = CardinalClass (C → A × B) :=
+    Star116SecondKernel.CardinalClass ((C → A) × (C → B)) =
+      Star116SecondKernel.CardinalClass (C → A × B) :=
   star_116_361 (star_116_54 A B C)
 theorem star_116_6 (A : Type u) (B : Type v) (C : Type w) :
     SimilarType (B × C → A) (C → B → A) := ⟨curryEquiv A B C⟩

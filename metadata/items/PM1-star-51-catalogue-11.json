@@ -27,7 +27,7 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "awaiting-ci",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "printed_dependencies": ["PM1:✱51·57", "PM1:✱20·3", "PM1:✱14·272"],
       "lean_dependencies": ["PM.Architecture.Star51RemainingKernel.star_51_55"],
       "normalized_dependencies": ["PM1:✱51·55"],
       "parser_status": "reviewed-gap",
@@ -37,9 +37,9 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": ["PM1:✱51·55"],
-        "printed_but_unused": [],
+        "printed_but_unused": ["PM1:✱14·272", "PM1:✱20·3", "PM1:✱51·57"],
         "strict_attempt_evidence": "reviews/Star51-catalogue-11-semantic-audit.md",
-        "editorial_note": "The literal catalogue block has no bracketed citation; Lean reuses the exact inverse-unit-class/description existence equivalence ✱51·55."
+        "editorial_note": "Lean reuses the exact inverse-unit-class/description existence equivalence ✱51·55 instead of the printed route through ✱51·57, ✱20·3, and ✱14·272."
       }
     },
     {
@@ -54,13 +54,20 @@
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "awaiting-ci",
       "integration_status": "awaiting-ci",
-      "printed_dependencies": [],
+      "printed_dependencies": ["PM1:✱51·56", "PM1:✱14·205"],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star51-catalogue-11-semantic-audit.md",
       "integration_blocked": false,
-      "semantic_audit_status": "strict-equivalence-passed"
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱14·205", "PM1:✱51·56"],
+        "strict_attempt_evidence": "reviews/Star51-catalogue-11-semantic-audit.md",
+        "editorial_note": "The common contextual interpretation is definitionally reflexive in Lean; the printed derivation through ✱51·56 and ✱14·205 is therefore not called."
+      }
     }
   ],
   "ci_evidence": {

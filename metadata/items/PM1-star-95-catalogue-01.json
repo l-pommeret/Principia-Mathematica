@@ -22,7 +22,7 @@
       "printed_page": 627,
       "scan_leaf": 649,
       "lean_path": "Principia/FirstEdition/Volume1/Star95Source.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star95Source.Equi",
+      "declaration": "PM.FirstEdition.Volume1.Star95Source.star_95_01",
       "formal_scope": "exact typed inductive presentation of the least class generated from R by M ↦ P|M|Q; strict semantic audit passed via the least-closed-class characterization ✱95·1",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "kernel-checked",
@@ -87,9 +87,9 @@
       "formal_status": "kernel-checked",
       "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
-        "✱95·1",
-        "✱10·11",
-        "✱10·21"
+        "PM1:✱95·1",
+        "PM1:✱10·11",
+        "PM1:✱10·21"
       ],
       "lean_dependencies": [
         "PM.FirstEdition.Volume1.Star95Kernel.star_95_1"
@@ -101,8 +101,8 @@
         "classification": "relaxed-closure",
         "added_beyond_print": [],
         "printed_but_unused": [
-          "✱10·11",
-          "✱10·21"
+          "PM1:✱10·11",
+          "PM1:✱10·21"
         ],
         "strict_attempt_evidence": "reviews/Star95-catalogue-01-semantic-audit.md",
         "editorial_note": "The formal proof uses the exact ✱95·1 equivalence directly; PM's propositional commutation citations are kernel-logical normalization rather than imported theorem edges."

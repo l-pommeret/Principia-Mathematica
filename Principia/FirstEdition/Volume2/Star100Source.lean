@@ -73,22 +73,22 @@ PM-VERBATIM-END PM2:✱100·35 -/
 PM-VERBATIM-END PM2:✱100·36 -/
 
 /- PM-VERBATIM-BEGIN PM2:✱100·4
-✱100·4. ⊢ : μ∈NC .≡. (∃α). μ=Ncʻα
+✱100·4. ⊢ : μ∈NC .≡. (∃α). μ=Ncʻα  [✱37·78·79 . (✱100·02·01)]
 PM-VERBATIM-END PM2:✱100·4 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·41
-✱100·41. ⊢ . Ncʻα∈NC
+✱100·41. ⊢ . Ncʻα∈NC  [✱100·4·2 . ✱14·204]
 PM-VERBATIM-END PM2:✱100·41 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·42
 ✱100·42. ⊢ : μ,ν∈NC . ∃!μ∩ν .⊃. μ=ν
 PM-VERBATIM-END PM2:✱100·42 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·43
-✱100·43. ⊢ . NC∈Cls² excl
+✱100·43. ⊢ . NC∈Cls² excl  [✱100·42 . ✱84·11]
 PM-VERBATIM-END PM2:✱100·43 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·44
 ✱100·44. ⊢ :: μ∈NC . ∃!Ncʻα .⊃ : α∈μ .≡. Ncʻα=μ
 PM-VERBATIM-END PM2:✱100·44 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·45
-✱100·45. ⊢ : μ∈NC . α∈μ .⊃. Ncʻα=μ
+✱100·45. ⊢ : μ∈NC . α∈μ .⊃. Ncʻα=μ  [✱100·4·31·321]
 PM-VERBATIM-END PM2:✱100·45 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·5
 ✱100·5. ⊢ : μ∈NC . α,β∈μ .⊃. α sm β

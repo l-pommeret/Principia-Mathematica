@@ -106,4 +106,11 @@ inductive Equi (P Q R : Rel α) : Rel α → Prop
   | base : Equi P Q R R
   | step {M} : Equi P Q R M → Equi P Q R (comp (comp P M) Q)
 
+/-- Editorial name for the exact typed reconstruction of ✱95·01.
+
+`Equi` remains the internal carrier used by later kernels.  Keeping the
+numbered declaration as this dedicated transparent alias prevents carrier
+occurrences from being misread as historical citations of ✱95·01. -/
+abbrev star_95_01 (P Q R : Rel α) : Rel α → Prop := Equi P Q R
+
 end PM.FirstEdition.Volume1.Star95Source

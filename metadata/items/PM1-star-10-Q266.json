@@ -16,6 +16,7 @@
     "PM1-1910-SCAN",
     "PG78050"
   ],
+  "integration_status": "blocked-no-kernel-proof",
   "items": [
     {
       "id": "PM1:✱10·13",
@@ -29,6 +30,8 @@
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-architecture-functions-significance",
+      "integration_blocked": true,
+      "blocking_reason": "The metadata names star_10_13, but no such Lean declaration exists. The reviewed architecture explicitly lacks an assertion-level conjunction constructor and the cited ✱9·131 declaration, so no kernel term proves the printed rule.",
       "printed_dependencies": [
         "PM1:✱9·61",
         "PM1:✱9·62",
@@ -40,7 +43,11 @@
         "PM1:✱1·01",
         "PM1:✱9·12"
       ],
-      "normalized_dependencies": []
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q266-strict-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     }
   ],
   "ci_evidence": {

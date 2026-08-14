@@ -34,6 +34,13 @@
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱13·14", "PM1:✱96·101"],
+        "strict_attempt_evidence": "reviews/Star96-catalogue-02-semantic-audit.md",
+        "editorial_note": "The closed typed proof derives irreflexivity directly from the definition of Jpart; PM's displayed citations remain historical edges."
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star96-catalogue-02-semantic-audit.md"
     },
@@ -60,6 +67,13 @@
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱34·1", "PM1:✱35·1", "PM1:✱35·46", "PM1:✱41·151", "PM1:✱91·171", "PM1:✱91·502", "PM1:✱91·511"],
+        "strict_attempt_evidence": "reviews/Star96-catalogue-02-semantic-audit.md",
+        "editorial_note": "The typed proof is a direct induction on transitive closure; PM's relation-power derivation citations remain historical edges."
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star96-catalogue-02-semantic-audit.md"
     },
@@ -81,6 +95,13 @@
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱32·33", "PM1:✱91·54"],
+        "strict_attempt_evidence": "reviews/Star96-catalogue-02-semantic-audit.md",
+        "editorial_note": "The field-restricted reflexive-closure decomposition is normalized directly in Lean; PM's citations remain historical edges."
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star96-catalogue-02-semantic-audit.md"
     }

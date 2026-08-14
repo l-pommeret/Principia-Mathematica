@@ -85,3 +85,20 @@ composition witness defining the conclusion, whereas the source derives that
 witness from `S R_ts (Q|P)`. Finally ·25 proves an arbitrary `imageComp Q K`
 equal to itself and omits the source's specific `R_ts` ancestral image. No
 tautology or conclusion-shaped premise is accepted as an exact formalization.
+
+## Strict semantic audit of catalogues 10–11
+
+Both five-item lots remain homogeneous `prepared` refusals. The declarations
+for ✱91·251, ·26, ·261, ·262, and ·263 are reflexive equalities of generic
+composition-image expressions. None states the required `R_ts` or `R_st`
+ancestral image on the printed left side; ·262 additionally replaces the
+converse-domain condition by an unused `True` premise.
+
+For catalogue 11, ·264 is only `Pot R P ↔ Pot R P`, with the singleton,
+composition image, union, and family equality absent. The ·27 declaration
+assumes the field inclusion it should derive and omits `P∈PotidʻR`; ·271 keeps
+the `Pot` premise but assumes both domain inclusions before pairing them. The
+·28 declaration returns its `Potid` premise instead of proving membership of
+`P|R` in `Pot`. Finally ·281 proves only the first of the source's two
+conjunctive inclusions and entirely omits `|RʻʻPotidʻR⊂PotidʻR`. Partial
+coverage is not promoted as an exact proposition.

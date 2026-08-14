@@ -13,6 +13,8 @@ import json
 import re
 import sys
 import argparse
+from dataclasses import dataclass
+from collections import defaultdict
 from fractions import Fraction
 from pathlib import Path
 
@@ -34,6 +36,7 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "Classical.byCases",
     "Classical.em",
     "False.elim",
+    "Fin.elim0",
     "True.intro",
     "Eq.symm",
     "Eq.mpr",
@@ -56,6 +59,8 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     # typed ✱60 reconstruction; it is not a historical theorem dependency.
     "PM.Architecture.Star60Kernel.Empty",
     "PM.Architecture.Star60Kernel.Singleton",
+    # Local type-cardinal carrier, not the unrelated PM2 ✱103 source object.
+    "Star116SecondKernel.CardinalClass",
     "PM.Formation.ofElementary",
     "Elementary.schemaInstance",
     "NormalizesScoped.disjCongr",
@@ -110,6 +115,40 @@ TRANSPARENT_DEPENDENCY_WRAPPERS = {
         "PM.Architecture.Star10Q271Prerequisites.star_10_33_composition",
     ),
 }
+
+LEAN_IDENTIFIER = re.compile(
+    r"(?<![A-Za-z0-9_'])([A-Za-z_][A-Za-z0-9_']*(?:\.[A-Za-z0-9_']+)*)(?![A-Za-z0-9_'.])"
+)
+
+
+@dataclass(frozen=True)
+class DependencyIndex:
+    """Lookup tables allowing one lexical scan of each audited declaration."""
+
+    candidates: frozenset[str]
+    by_short: dict[str, frozenset[str]]
+    by_suffix: dict[str, frozenset[str]]
+    realizations: frozenset[str]
+
+    @classmethod
+    def build(cls, declarations: dict[str, str], aliases: dict) -> "DependencyIndex":
+        realizations = frozenset(aliases["lean_realizations"])
+        candidates = frozenset(set(declarations) | set(realizations) | KNOWN_BRIDGES)
+        by_short: dict[str, set[str]] = defaultdict(set)
+        by_suffix: dict[str, set[str]] = defaultdict(set)
+        for name in candidates:
+            by_short[name.rsplit(".", 1)[-1]].add(name)
+            parts = name.split(".")
+            # Exact names are looked up directly. Only qualified shortened
+            # suffixes belong here; a final component is handled by by_short.
+            for start in range(1, len(parts) - 1):
+                by_suffix[".".join(parts[start:])].add(name)
+        return cls(
+            candidates,
+            {key: frozenset(values) for key, values in by_short.items()},
+            {key: frozenset(values) for key, values in by_suffix.items()},
+            realizations,
+        )
 
 
 class DependencyError(ValueError):
@@ -410,7 +449,22 @@ def reject_unindexed_references(item: dict, body: str, candidates: set[str]) -> 
             raise DependencyError(f"{item['id']}: unindexed PM-style Lean reference {token}")
 
 
-def extract_lean_dependencies(item: dict, declarations: dict[str, str], root: Path = ROOT) -> list[str]:
+def lean_identifier_tokens(body: str) -> list[tuple[str, bool]]:
+    """Return non-field identifiers and whether each is qualified."""
+    tokens: list[tuple[str, bool]] = []
+    for match in LEAN_IDENTIFIER.finditer(body):
+        token = match.group(1)
+        remainder = body[match.end():]
+        is_field_label = "." not in token and re.match(r"\s*:=", remainder) is not None
+        if not is_field_label:
+            tokens.append((token, "." in token))
+    return tokens
+
+
+def extract_lean_dependencies(
+    item: dict, declarations: dict[str, str], root: Path = ROOT,
+    dependency_index: DependencyIndex | None = None,
+) -> list[str]:
     if (item["kind"] in PRIMITIVE_DECLARATION_KINDS or
             ".OrderedAssertion." in item["declaration"]):
         # These are inductive constructors, hence have no declaration body
@@ -426,25 +480,39 @@ def extract_lean_dependencies(item: dict, declarations: dict[str, str], root: Pa
             )
     aliases = json.loads((root / "metadata/dependency_aliases.json").read_text(encoding="utf-8"))
     realizations = aliases["lean_realizations"]
-    candidates = set(declarations) | set(realizations) | KNOWN_BRIDGES
+    dependency_index = dependency_index or DependencyIndex.build(declarations, aliases)
+    candidates = dependency_index.candidates
     reject_unindexed_references(
         item, body,
         candidates | KNOWN_SYNTAX_INFRASTRUCTURE |
         set(TRANSPARENT_DEPENDENCY_WRAPPERS),
     )
-    # Longest first avoids treating one fully qualified name as a prefix.
-    # A realization alias denotes the exact spelling registered in metadata.
-    # Do not also match its final component: doing so makes a scoped alias such
-    # as `Star22Q341Definitions.Complement` spuriously fire on every unqualified
-    # `Complement`, and multiple aliases for one node become duplicate edges.
-    found = {
-        name for name in candidates
-        if name != item["declaration"] and
-        (((re.search(rf"(?<![A-Za-z0-9_']){re.escape(name)}(?![A-Za-z0-9_'])", body)
-           is not None) or
-          (name in item.get("lean_dependencies", []) and _occurs(body, name)))
-         if name in realizations else _occurs(body, name))
-    }
+    # Scan identifiers once. A field label in a structure literal is syntax,
+    # not an unqualified reference. Qualified identifiers are tokens in their
+    # own right, so `Foo.bar` deliberately no longer matches `Foo.bar.baz`.
+    tokens = lean_identifier_tokens(body)
+
+    found: set[str] = set()
+    declared_realizations = dependency_index.realizations.intersection(
+        item.get("lean_dependencies", [])
+    )
+    for token, qualified in tokens:
+        if token in KNOWN_SYNTAX_INFRASTRUCTURE:
+            continue
+        if qualified:
+            if token in candidates:
+                found.add(token)
+            continue
+        for name in dependency_index.by_short.get(token, ()):
+            # Generic `.derive` helpers require their stable qualified name.
+            if name.endswith(".derive"):
+                continue
+            # Realization aliases normally denote their exact registered
+            # spelling. An explicitly declared dependency retains the legacy
+            # reviewed short-name escape hatch.
+            if name not in dependency_index.realizations or name in declared_realizations:
+                found.add(name)
+    found.discard(item["declaration"])
     # Resolve shortened qualified projections/constructors only when their
     # final component identifies a unique reviewed candidate. Fully qualified
     # tokens are already handled above and must not spuriously select another
@@ -454,16 +522,22 @@ def extract_lean_dependencies(item: dict, declarations: dict[str, str], root: Pa
         r"\b[A-Za-z_][A-Za-z0-9_']*(?:\.[A-Za-z0-9_']+)+", body
     ))
     for token in qualified_tokens:
+        if token in KNOWN_SYNTAX_INFRASTRUCTURE:
+            continue
         if token in candidates:
             continue
-        suffix_matches = [name for name in candidates if name.endswith("." + token)]
-        if len(suffix_matches) == 1 and suffix_matches[0] != item["declaration"]:
-            found.add(suffix_matches[0])
+        suffix_matches = dependency_index.by_suffix.get(token, ())
+        if len(suffix_matches) == 1:
+            match_name = next(iter(suffix_matches))
+            if match_name != item["declaration"]:
+                found.add(match_name)
             continue
         short = token.rsplit(".", 1)[-1]
-        matches = [name for name in candidates if name.rsplit(".", 1)[-1] == short]
-        if len(matches) == 1 and matches[0] != item["declaration"]:
-            found.add(matches[0])
+        matches = dependency_index.by_short.get(short, ())
+        if len(matches) == 1:
+            match_name = next(iter(matches))
+            if match_name != item["declaration"]:
+                found.add(match_name)
     # Alias tables may deliberately contain both a namespace-relative spelling
     # and its fully qualified spelling for the same reviewed realization.  A
     # single occurrence must yield one graph edge, preferring the exact,
@@ -558,6 +632,7 @@ def verify_dependency_alignment(item: dict, normalized: list[str], root: Path = 
 def audit_item(
     item: dict, *, items: list[dict], declarations: dict[str, str], order: dict[str, tuple],
     assumptions: dict[str, dict], assumption_usage: dict[str, dict[str, list[str]]], root: Path,
+    dependency_index: DependencyIndex | None = None,
 ) -> tuple[list[dict], list[dict], list[dict]]:
     """Audit one kernel-checked declaration without masking sibling failures."""
     for field in ("printed_dependencies", "lean_dependencies", "normalized_dependencies"):
@@ -570,7 +645,7 @@ def audit_item(
     verified_parameters = verify_assumption_parameters(
         item, assumption_usage[item["id"]], assumptions, body
     )
-    actual = extract_lean_dependencies(item, declarations, root)
+    actual = extract_lean_dependencies(item, declarations, root, dependency_index)
     if sorted(item["lean_dependencies"]) != actual:
         raise DependencyError(
             f"{item['id']}: Lean dependencies differ: metadata={sorted(item['lean_dependencies'])}, extracted={actual}"
@@ -601,6 +676,7 @@ def audit(root: Path = ROOT, *, report_all: bool = False) -> dict:
     declarations = {item["declaration"]: item["id"] for item in items}
     order = {item["id"]: pm_order(item["id"]) for item in items}
     aliases = json.loads((root / "metadata/dependency_aliases.json").read_text(encoding="utf-8"))
+    dependency_index = DependencyIndex.build(declarations, aliases)
     for alias, resolutions in aliases["aliases"].items():
         if not resolutions:
             raise DependencyError(f"alias {alias} has an empty PM resolution")
@@ -634,6 +710,7 @@ def audit(root: Path = ROOT, *, report_all: bool = False) -> dict:
             item_edges, item_lean_edges, item_assumption_evidence = audit_item(
                 item, items=items, declarations=declarations, order=order,
                 assumptions=assumptions, assumption_usage=assumption_usage, root=root,
+                dependency_index=dependency_index,
             )
             edges.extend(item_edges)
             lean_edges.extend(item_lean_edges)

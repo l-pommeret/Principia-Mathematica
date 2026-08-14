@@ -26,5 +26,10 @@ route through ancestral/image and earlier propositional-calculus results;
 Lean's inductive presentation closes ·1, ·12, and ·13 through constructors or
 elimination, while ·11 retains the exact ·1 edge. Each omitted historical edge
 is therefore documented as a reviewed relaxed closure, not silently erased.
+The metadata declaration for ·01 is the dedicated transparent alias
+`star_95_01`, not the internal carrier `Equi`: this prevents ordinary carrier
+occurrences in later signatures and proofs from creating false historical
+edges to ·01. The alias unfolds exactly to `Equi`, so this graph hygiene does
+not alter the formalized definition.
 The deterministic parser does not yet cover PM's equi-factor/ancestral
 notation, so all five records carry `reviewed-gap` evidence here.

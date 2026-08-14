@@ -66,3 +66,22 @@ elimination form of the printed inhabited-intersection antecedent.  No
 hypothesis, direction, or existence witness is dropped, and neither declaration
 is a pass-through assumption.  Both batches remain homogeneous and no metadata
 ID is duplicated.
+
+## Catalogues 05 and 06 strict semantic audit
+
+All seven candidates pass and are promoted in place to `awaiting-ci`.
+✱100·4 and ·41 are respectively the exact typed range characterization and
+introduction rule for `NC`.  Proposition ·42 preserves both NC-membership
+hypotheses and the inhabited-intersection antecedent before concluding equality.
+Proposition ·43 is the pointwise typed defining property of membership in
+`Cls² excl`, not merely a consequence with a weakened antecedent.  Proposition
+·44 preserves the membership/equality biconditional; the printed existence of
+`Ncʻα` is discharged by the typed class construction rather than assumed away.
+
+In catalogue 06, ·45 is the exact forward elimination of ·44, and ·5 proves
+similarity from precisely two memberships in the same `NC` member.  No target
+adds a pass-through premise or drops a direction.  Direct Gutenberg bracketed
+citations omitted by the earlier transcription are restored for ·4, ·41, ·43,
+and ·45.  Extracted numbered Lean dependencies and the longer printed
+demonstration routes are reconciled by explicit `relaxed-closure` records.
+Both catalogues remain homogeneous and their seven IDs remain unique.

@@ -29,8 +29,19 @@
       "formal_status": "kernel-checked",
       "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.Architecture.Star54MiddleKernel.star_54_41"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·41"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": ["PM1:✱54·41"],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star54-dependency-reconciliation.md",
+        "editorial_note": "Lean eliminates the empty case from the classification in ✱54·41; the printed line has no explicit citation."
+      }
     },
     {
       "id": "PM1:✱54·43",
@@ -45,8 +56,19 @@
       "formal_status": "kernel-checked",
       "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.Architecture.Star54OpeningKernel.star_54_26"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·26"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": ["PM1:✱54·26"],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star54-dependency-reconciliation.md",
+        "editorial_note": "Lean reduces cardinal-two membership of the singleton union to the distinctness characterization ✱54·26; PM prints no citation."
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star54-catalogue-review.md"
     }

@@ -49,13 +49,15 @@
         "PM1:✱37·1",
         "PM2:✱123·01"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star123OpeningKernel.star_123_01"
-      ],
-      "normalized_dependencies": [
-        "PM1:✱37·1",
-        "PM2:✱123·01"
-      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱37·1", "PM2:✱123·01"],
+        "strict_attempt_evidence": "reviews/Star123-catalogue-01-semantic-audit.md",
+        "editorial_note": "The exact typed membership equivalence closes definitionally by unfolding AlephZero; PM's printed route through ✱37·1 and ✱123·01 remains historical evidence."
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star123-catalogue-01-semantic-audit.md"
     },
@@ -74,12 +76,15 @@
       "printed_dependencies": [
         "PM2:✱123·1"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star123OpeningKernel.star_123_1"
-      ],
-      "normalized_dependencies": [
-        "PM2:✱123·1"
-      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM2:✱123·1"],
+        "strict_attempt_evidence": "reviews/Star123-catalogue-01-semantic-audit.md",
+        "editorial_note": "The exact typed implication constructs the progression witness directly; PM's printed citation ✱123·1 remains historical evidence."
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star123-catalogue-01-semantic-audit.md"
     }

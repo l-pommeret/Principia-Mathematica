@@ -35,7 +35,14 @@
         "PM1:✱55·12"
       ],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star55-catalogue-review.md"
+      "parser_evidence": "reviews/Star55-catalogue-review.md",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": ["PM1:✱55·12"],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star55-catalogue-review.md",
+        "editorial_note": "The printed proposition carries no bracketed citation; Lean reuses the immediately preceding exact existence theorem for the extensionally identical right pair-constructor value."
+      }
     },
     {
       "id": "PM1:✱55·123",

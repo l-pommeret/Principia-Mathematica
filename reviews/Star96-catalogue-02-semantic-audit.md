@@ -22,3 +22,8 @@ the closure direction and is not a faithful conditional theorem. Both remain
 
 The targeted Lean source compiles without placeholders or unsafe declarations.
 No CI success is asserted by this audit.
+
+For the three promoted declarations, Lean uses direct typed normalization or
+induction rather than replaying PM's printed derivations. Their printed
+citations are retained in the historical graph and explicitly classified as
+unused by the closed Lean term; no extra Lean dependency is introduced.

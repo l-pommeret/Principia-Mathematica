@@ -30,3 +30,7 @@ The resulting normalized graph records ·5 → ·51 → ·52 plus the additional
 Lean closure edge ·361 → ·52. Parser coverage remains `reviewed-gap` because
 the historical exponential, similarity, and cardinal arithmetic notation is
 not accepted deterministically.
+
+This additional ·361 edge is recorded as a reviewed relaxed closure: it is the
+typed extensional passage from similarity to equality of cardinal classes,
+not a further printed citation.

@@ -14,7 +14,9 @@ the same `DescriptionApplies φ ψ` condition. Its reflexive Lean proof is not a
 placeholder: the two syntactically different incomplete descriptions have the
 same explicitly defined contextual semantics.
 
-The promoted set is 2/2, in place, and no refused sidecar is created. The
-literal source blocks contain no bracketed citations. The only numbered Lean
-edge is ·58 → ·55; it is normalized and documented as a narrow relaxed-closure
-edge. Declaration ·59 is definitional and has no numbered dependency.
+The promoted set is 2/2, in place, and no refused sidecar is created. Gutenberg
+prints ·51·57, ·20·3, and ·14·272 at ·58, and ·51·56 and ·14·205 at
+·59. These historical edges are recorded even though the harvested literal
+formula blocks omit their brackets. The only numbered Lean edge is ·58 →
+·55; ·59 is definitional. Both closure differences have explicit narrow
+relaxation records.

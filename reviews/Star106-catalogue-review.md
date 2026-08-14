@@ -61,3 +61,14 @@ antecedent. The unconditional ·203 likewise requires both conclusion factors.
 Finally ·204 is only `A x → A x` and assumes its entire conclusion. Thus the
 ten-candidate wave is exactly 3 awaiting CI and 7 documented refusals. The
 three manifests are pairwise disjoint and contain no duplicate PM ID.
+
+## Catalogues 05–06 strict semantic audit
+
+None of these ten propositions is eligible for promotion. For ·22 and ·221,
+Lean assumes the complete universally quantified equivalence and specializes
+it. Items ·222 and ·223 assume all three conclusion components and only package
+them. Items ·23, ·231, ·24 and ·241 receive their entire implication as a
+parameter before applying it. Finally ·25 and ·251 are unconditional in PM,
+but Lean assumes the whole arbitrary equality and returns it unchanged. Both
+five-item lots therefore remain `prepared` as explicit refusals; their IDs are
+unique and no awaiting-CI manifest is created.

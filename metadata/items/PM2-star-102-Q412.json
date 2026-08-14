@@ -49,6 +49,21 @@
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱33·15",
+          "PM1:✱37·402",
+          "PM1:✱63·5",
+          "PM1:✱65·02",
+          "PM1:✱65·1",
+          "PM1:✱70·1",
+          "PM1:✱71·102"
+        ],
+        "strict_attempt_evidence": "reviews/Q412-review.md",
+        "editorial_note": "TypedOneOne is definitionally OneOne in this kernel, so the declaration needs no numbered theorem constant; PM's type-assignment derivation remains the historical route."
+      },
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-11.txt",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q412-review.md",
@@ -73,6 +88,16 @@
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱35·102",
+          "PM1:✱65·1"
+        ],
+        "strict_attempt_evidence": "reviews/Q412-review.md",
+        "editorial_note": "TypedSimilar internalizes the two endpoint-type conditions in its typed arguments and reduces to Similar, so PM's definitional citations remain historical."
+      },
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-2.txt",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q412-review.md",

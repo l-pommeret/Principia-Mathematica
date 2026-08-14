@@ -9,7 +9,7 @@ def image (f : α → β) (a : Class α) : Class β :=
 def sum (k : Class (Class α)) : Class α :=
   fun x => ∃ a, k a ∧ a x
 
-def product (k : Class (Class α)) : Class α :=
+def classProduct (k : Class (Class α)) : Class α :=
   fun x => ∀ a, k a → a x
 
 def relationSum (k : Class (Relation α)) : Relation α :=
@@ -39,12 +39,12 @@ theorem star_42_1 (k : Class (Class (Class α))) :
 
 /-- PM I ✱42·11, associativity of class product. -/
 theorem star_42_11 (k : Class (Class (Class α))) :
-    product (image product k) = product (sum k) := by
+    classProduct (image classProduct k) = classProduct (sum k) := by
   apply class_ext
   intro x
   constructor
   · intro h c hc
-    exact h (product hc.choose) ⟨hc.choose, hc.choose_spec.1, rfl⟩ c hc.choose_spec.2
+    exact h (classProduct hc.choose) ⟨hc.choose, hc.choose_spec.1, rfl⟩ c hc.choose_spec.2
   · intro h a ha
     rcases ha with ⟨b, hb, rfl⟩
     exact fun c hc => h c ⟨b, hb, hc⟩

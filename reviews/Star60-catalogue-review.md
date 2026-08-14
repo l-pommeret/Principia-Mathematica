@@ -10,6 +10,11 @@ The current parser accepts 42 of the mapped formulas. The other 5 mapped formula
 carry `reviewed-gap`; the two architecture-blocked definitions use the explicit
 blocked route.
 
+Dependency clarification: ✱60·11, ·13, and ·15 genuinely unfold the earlier
+printed definition ✱60·02 (`Cl ex`). Their Lean and normalized graphs therefore
+retain that definitional PM edge; `Included` and `Proper` remain local pieces of
+the definition rather than separately numbered PM dependencies.
+
 ## Catalogue 04 strict semantic audit
 
 The audit accepts three of the five canonical records. Definition ·02 is exactly

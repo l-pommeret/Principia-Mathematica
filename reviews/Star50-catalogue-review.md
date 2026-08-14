@@ -88,3 +88,11 @@ The operator-valued notations are represented explicitly by `rightMul` and
 ·73 retain both displayed operator applications, and ·74 proves equality of
 the complete right-multiplication operators after composing with identity.
 Thus no pointwise instance is substituted for PM's operator equality.
+
+The final three-item batch (·75, ·76, ·761) passes strict audit and is
+`awaiting-ci`. Theorem ·75 is the left-multiplication counterpart of ·74 and
+proves equality of complete operators after left identity composition.
+Theorems ·76 and ·761 are genuine biconditionals: equality of the respective
+right- or left-multiplication operators is evaluated at identity to recover
+`P = R`, while substitution proves the converse. Neither is weakened to only
+one implication or a selected argument.

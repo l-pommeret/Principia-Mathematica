@@ -35,11 +35,13 @@ theorem star_114_22 : ¬ ProductExists (fun _ : Unit => Empty) := by
   rintro ⟨f⟩; exact f () |>.elim
 
 /-- ✱114·23, any empty factor makes the whole product empty. -/
-theorem star_114_23 (F : I → Type u) (i : I) (h : EmptyType (F i)) : ¬ ProductExists F := by
+theorem star_114_23 {ι : Sort v} (F : ι → Type u) (i : ι) (h : EmptyType (F i)) :
+    ¬ ProductExists F := by
   rintro ⟨f⟩; exact h (f i)
 
 /-- ✱114·24, existence of a larger product implies existence of every restricted product. -/
-theorem star_114_24 {F : I → Type u} (h : ProductExists F) (p : J → I) :
+theorem star_114_24 {ι : Sort v} {κ : Sort w} {F : ι → Type u}
+    (h : ProductExists F) (p : κ → ι) :
     ProductExists (fun j => F (p j)) := by
   rcases h with ⟨f⟩; exact ⟨fun j => f (p j)⟩
 

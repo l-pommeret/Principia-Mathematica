@@ -9,13 +9,15 @@ def EvalGraph {I : Sort v} {F : I → Type u} (f : ClassProduct F) (i : I) (x : 
 def UniqueValue {A : Sort u} (P : A → Prop) := ∃ x, P x ∧ ∀ y, P y → y = x
 
 /-- ✱115·01, definition of the product as the class of choice functions. -/
-theorem star_115_01 (F : I → Type u) : ClassProduct F = ((i : I) → F i) := rfl
+theorem star_115_01 {ι : Sort v} (F : ι → Type u) :
+    ClassProduct F = ((i : ι) → F i) := rfl
 
 /-- ✱115·02, definition of an arithmetical family. -/
 theorem star_115_02 (F : I → Type u) : ArithmeticFamily F ↔ ∀ i, Nonempty (F i) := Iff.rfl
 
 /-- ✱115·1, the defining identity for `ClassProduct`. -/
-theorem star_115_1 (F : I → Type u) : ClassProduct F = ((i : I) → F i) := rfl
+theorem star_115_1 {ι : Sort v} (F : ι → Type u) :
+    ClassProduct F = ((i : ι) → F i) := rfl
 
 /-- ✱115·101, pointwise choices assemble into a product element. -/
 theorem star_115_101 (F : I → Type u) (f : (i : I) → F i) :

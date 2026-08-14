@@ -16,8 +16,9 @@
       "kind": "derived-proposition",
       "printed": "\\(\\vdash:\\text{ᗡ}ʻP\\cap \\alpha=\\Lambda.\\supset.P\\mid (\\alpha\\upharpoonleft R\\upharpoonright \\beta)=\\dot{\\Lambda}\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-canonical-review.md",
       "printed_dependencies": [
@@ -31,15 +32,17 @@
       ],
       "lean_path": "Principia/Architecture/Star35LateKernel.lean",
       "declaration": "PM.Architecture.Star35LateKernel.star_35_473",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "exact typed reconstruction; strict semantic audit passed",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱35·474",
       "kind": "derived-proposition",
       "printed": "\\(\\vdash:\\text{D}ʻP\\cap \\beta=\\Lambda.\\supset.(\\alpha\\upharpoonleft R\\upharpoonright \\beta)\\mid P=\\dot{\\Lambda}\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-canonical-review.md",
       "printed_dependencies": [
@@ -53,15 +56,17 @@
       ],
       "lean_path": "Principia/Architecture/Star35LateKernel.lean",
       "declaration": "PM.Architecture.Star35LateKernel.star_35_474",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "exact typed reconstruction; strict semantic audit passed",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱35·48",
       "kind": "derived-proposition",
       "printed": "\\(\\vdash:\\text{ᗡ}ʻP\\subset\\alpha.\\supset.P\\mid (\\alpha\\upharpoonleft R)=P\\mid R\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-canonical-review.md",
       "printed_dependencies": [
@@ -75,15 +80,17 @@
       ],
       "lean_path": "Principia/Architecture/Star35LateKernel.lean",
       "declaration": "PM.Architecture.Star35LateKernel.star_35_48",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "exact typed reconstruction; strict semantic audit passed",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱35·481",
       "kind": "derived-proposition",
       "printed": "\\(\\vdash:\\text{D}ʻR\\subset\\beta.\\supset.(P\\upharpoonright \\beta)\\mid R=P\\mid R \\quad[\\text{Similar proof}]\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-canonical-review.md",
       "printed_dependencies": [
@@ -97,15 +104,17 @@
       ],
       "lean_path": "Principia/Architecture/Star35LateKernel.lean",
       "declaration": "PM.Architecture.Star35LateKernel.star_35_481",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "exact typed reconstruction; strict semantic audit passed",
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱35·51",
       "kind": "derived-proposition",
       "printed": "\\(\\vdash.\\text{Cnv}ʻ(\\alpha\\upharpoonleft R)=\\breve{R}\\upharpoonright \\alpha\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-canonical-review.md",
       "printed_dependencies": [
@@ -119,7 +128,8 @@
       ],
       "lean_path": "Principia/Architecture/Star35LateKernel.lean",
       "declaration": "PM.Architecture.Star35LateKernel.star_35_51",
-      "formal_scope": "nominal mapping pending strict semantic audit"
+      "formal_scope": "exact typed reconstruction; strict semantic audit passed",
+      "semantic_audit_status": "strict-equivalence-passed"
     }
   ],
   "ci_evidence": {

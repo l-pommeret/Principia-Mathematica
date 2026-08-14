@@ -29,8 +29,19 @@
       "formal_status": "kernel-checked",
       "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.Architecture.Star54OpeningKernel.star_54_27"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·27"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": ["PM1:✱54·27"],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star54-dependency-reconciliation.md",
+        "editorial_note": "The typed class characterization reuses the immediately preceding pair-cardinality disjunction ✱54·27; PM prints no citation on this line."
+      }
     },
     {
       "id": "PM1:✱54·3",
@@ -77,8 +88,19 @@
       "formal_status": "kernel-checked",
       "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.Architecture.Star54MiddleKernel.star_54_4"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·4"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": ["PM1:✱54·4"],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star54-dependency-reconciliation.md",
+        "editorial_note": "Lean specializes the exhaustive subclass classification ✱54·4; PM gives no explicit citation for ✱54·41."
+      }
     },
     {
       "id": "PM1:✱54·411",
@@ -93,8 +115,19 @@
       "formal_status": "kernel-checked",
       "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.Architecture.Star54MiddleKernel.star_54_41"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱54·41"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": ["PM1:✱54·41"],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star54-dependency-reconciliation.md",
+        "editorial_note": "Lean packages the three cases proved by ✱54·41 as membership in zero, one, or two; the printed line has no explicit citation."
+      }
     }
   ],
   "ci_evidence": {

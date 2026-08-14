@@ -22,6 +22,9 @@ private theorem classExt {A B : Class α} (h : ∀ x, A x ↔ B x) : A = B := by
   funext x; exact propext (h x)
 private theorem relExt {R S : Relation α} (h : ∀ x y, R x y ↔ S x y) : R = S := by
   funext x y; exact propext (h x y)
+private theorem both_idem (R : Relation α) (TX TY : Class α) :
+    both TX (both TX R TY) TY = both TX R TY := by
+  apply relExt; intro x y; simp [both, left, right, and_assoc]
 
 /-- ✱65·01. -/
 theorem star_65_01 (A T : Class α) : classSub A T = inter A T := rfl
@@ -72,11 +75,13 @@ theorem star_65_2 (R : Relation α) (TX TY : Class α) (y : α) : singletonGener
 
 /-- ✱65·21. -/
 theorem star_65_21 (R : Relation α) (TX TY : Class α) : relPair (relPair R TX TY) TX TY = relPair R TX TY := by
-  apply relExt; intro x y; simp [relPair, both, left, right, and_assoc]
+  exact both_idem R TX TY
 /-- ✱65·22. -/
-theorem star_65_22 (R : Relation α) (TX TY : Class α) : relParenPair (relParenPair R TX TY) TX TY = relParenPair R TX TY := star_65_21 R TX TY
+theorem star_65_22 (R : Relation α) (TX TY : Class α) : relParenPair (relParenPair R TX TY) TX TY = relParenPair R TX TY := by
+  exact both_idem R TX TY
 /-- ✱65·23. -/
-theorem star_65_23 (R : Relation α) (TX TY : Class α) : relMixed (relMixed R TX TY) TX TY = relMixed R TX TY := star_65_21 R TX TY
+theorem star_65_23 (R : Relation α) (TX TY : Class α) : relMixed (relMixed R TX TY) TX TY = relMixed R TX TY := by
+  exact both_idem R TX TY
 /-- ✱65·24. -/
 theorem star_65_24 (R : Relation α) (T : Class α) : relSub (relSub R T) T = relSub R T := by
   apply relExt; intro x y; simp [relSub, left]

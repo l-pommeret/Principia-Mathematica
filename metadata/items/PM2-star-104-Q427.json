@@ -45,9 +45,20 @@
         "PM2:✱104·11"
       ],
       "normalized_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star104Kernel.equiv_trans"
-      ],
+  "lean_dependencies": [],
+  "historical_dependency_relaxation": {
+    "classification": "relaxed-closure",
+    "added_beyond_print": [],
+    "printed_but_unused": [
+      "PM1:✱13·12",
+      "PM1:✱63·16",
+      "PM2:✱100·32",
+      "PM2:✱104·1",
+      "PM2:✱104·11"
+    ],
+    "strict_attempt_evidence": "reviews/Star104-Q427-semantic-audit.md",
+    "editorial_note": "The Lean body invokes the local unnumbered equivalence-composition helper equiv_trans; it is not a numbered PM dependency, while the printed citations record PM's historical derivation."
+  },
       "semantic_audit_status": "strict-equivalence-passed",
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-104-12.txt"
     }

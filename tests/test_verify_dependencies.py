@@ -11,6 +11,41 @@ import verify_dependencies as dependencies
 
 
 class DependencyAuditTests(unittest.TestCase):
+    def test_dependency_index_matches_short_exact_and_unique_suffix_names(self):
+        aliases = {"lean_realizations": {}}
+        declarations = {
+            "PM.Left.alpha": "PM1:ONE",
+            "PM.Right.beta": "PM1:TWO",
+        }
+        index = dependencies.DependencyIndex.build(declarations, aliases)
+        self.assertEqual(index.by_short["alpha"], {"PM.Left.alpha"})
+        self.assertEqual(index.by_suffix["Left.alpha"], {"PM.Left.alpha"})
+
+    def test_qualified_identifier_scan_does_not_match_a_proper_prefix(self):
+        matches = [match.group(1) for match in dependencies.LEAN_IDENTIFIER.finditer(
+            "theorem t : True := Foo.bar.baz"
+        )]
+        self.assertIn("Foo.bar.baz", matches)
+        self.assertNotIn("Foo.bar", matches)
+
+    def test_dependency_index_preserves_derive_and_field_label_guards(self):
+        aliases = {"lean_realizations": {}}
+        declarations = {
+            "PM.Derivation.derive": "PM1:ONE",
+            "PM.Record.product": "PM1:TWO",
+        }
+        index = dependencies.DependencyIndex.build(declarations, aliases)
+        body = "by exact { product := value, proof := derive h }"
+        tokens = [token for token, _qualified in dependencies.lean_identifier_tokens(body)]
+        self.assertNotIn("product", tokens)
+        self.assertIn("derive", tokens)
+        self.assertTrue(declarations["PM.Derivation.derive"])
+        self.assertNotIn("PM.Derivation.derive", {
+            name for token in tokens
+            for name in index.by_short.get(token, ())
+            if not name.endswith(".derive")
+        })
+
     def test_pm_decimal_order_is_not_filename_order(self):
         self.assertLess(dependencies.pm_order("PM1:✱2·08"), dependencies.pm_order("PM1:✱2·1"))
         self.assertLess(dependencies.pm_order("PM1:✱2·1"), dependencies.pm_order("PM1:✱2·11"))

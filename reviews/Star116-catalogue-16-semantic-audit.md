@@ -19,3 +19,8 @@ The dependency graphs remain distinct. PM ·534 cites the hypotheses of ·532;
 Lean ·534 reuses the complete typed similarity at ·53. The normalized closure
 therefore records both source and implementation predecessors. Historical
 notation remains `reviewed-gap` under the deterministic parser.
+
+For dependency auditing, the strict typed term has only the implementation
+edge to ·53. The printed ·532 construction is internalized by the explicit
+equivalence, so it is recorded as printed-but-unused rather than as a false
+Lean edge.
