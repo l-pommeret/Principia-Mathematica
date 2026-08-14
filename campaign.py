@@ -703,7 +703,7 @@ def ci_run(ref: str, workflow: str = "lean.yml") -> None:
     """Dispatch an allow-listed manual workflow through the campaign wrapper."""
     if ref != "main":
         raise CampaignError("CI dispatch is restricted to main")
-    if workflow not in {"lean.yml", "edition-preview.yml"}:
+    if workflow not in {"lean.yml", "lean-fast.yml", "edition-preview.yml"}:
         raise CampaignError(f"unsupported workflow: {workflow}")
     completed = run(["gh", "workflow", "run", workflow, "--ref", ref])
     emit({"ok": True, "workflow": workflow, "ref": ref,
