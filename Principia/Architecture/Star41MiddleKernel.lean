@@ -6,7 +6,7 @@ abbrev Relation (α : Sort _) (β : Sort _) := α → β → Prop
 abbrev RelationClass (α : Sort _) (β : Sort _) := Relation α β → Prop
 
 def subrel (R S : Relation α β) : Prop := ∀ x y, R x y → S x y
-def product (collection : RelationClass α β) : Relation α β :=
+def relationalProduct (collection : RelationClass α β) : Relation α β :=
   fun x y => ∀ R, collection R → R x y
 def sum (collection : RelationClass α β) : Relation α β :=
   fun x y => ∃ R, collection R ∧ R x y
@@ -24,8 +24,8 @@ def emptyClass : RelationClass α β := fun _ => False
 
 /-- ✱41·17. -/
 theorem star_41_17 (collection larger : RelationClass α β) :
-    subrel (relUnion (product collection) (product larger))
-      (product (classInter collection larger)) := by
+    subrel (relUnion (relationalProduct collection) (relationalProduct larger))
+      (relationalProduct (classInter collection larger)) := by
   intro x y h R hR
   exact h.elim (fun hp => hp R hR.1) (fun hp => hp R hR.2)
 
@@ -47,8 +47,8 @@ theorem star_41_171 (collection larger : RelationClass α β) :
 
 /-- ✱41·18. -/
 theorem star_41_18 (collection larger : RelationClass α β) :
-    product (classUnion collection larger) =
-      relInter (product collection) (product larger) := by
+    relationalProduct (classUnion collection larger) =
+      relInter (relationalProduct collection) (relationalProduct larger) := by
   funext x y
   apply propext
   constructor
@@ -77,7 +77,7 @@ theorem star_41_19 (collection : RelationClass α β) (x : α) (y : β) :
 
 /-- ✱41·2. The product of the empty relation class is universal. -/
 theorem star_41_2 :
-    product (emptyClass : RelationClass α β) = universalRelation := by
+    relationalProduct (emptyClass : RelationClass α β) = universalRelation := by
   funext x y
   apply propext
   exact ⟨fun _ => True.intro, fun _ R hR => False.elim hR⟩
@@ -91,7 +91,7 @@ theorem star_41_21 :
 
 /-- ✱41·22. A product containing the empty relation is empty. -/
 theorem star_41_22 (collection : RelationClass α β) :
-    collection emptyRelation → product collection = emptyRelation := by
+    collection emptyRelation → relationalProduct collection = emptyRelation := by
   intro hempty
   funext x y
   apply propext
@@ -108,7 +108,7 @@ theorem star_41_221 (collection : RelationClass α β) :
 /-- ✱41·23. For a nonempty class of relations, its product is contained in
 its sum. -/
 theorem star_41_23 (collection : RelationClass α β) :
-    (∃ R, collection R) → subrel (product collection) (sum collection) := by
+    (∃ R, collection R) → subrel (relationalProduct collection) (sum collection) := by
   rintro ⟨R, hR⟩ x y hprod
   exact ⟨R, hR, hprod R hR⟩
 
