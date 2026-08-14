@@ -1,0 +1,100 @@
+{
+  "batch": "PM2-STAR104-CATALOGUE-02-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "42–43",
+    "scan_leaves": [82, 83],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱104·011",
+      "kind": "definition",
+      "printed": "✱104·011. N²cʻα = Ncʻα ∩ tʻt²ʻα Df",
+      "printed_page": 42,
+      "scan_leaf": 82,
+      "lean_path": "Principia/Architecture/Star104Kernel.lean",
+      "declaration": "PM.Architecture.Star104Kernel.star_104_011",
+      "formal_scope": "refused: the Lean declaration only unfolds Asc2 to EquivSet and omits the defining intersection Ncʻα ∩ tʻt²ʻα",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM2:✱104·021",
+      "kind": "definition",
+      "printed": "✱104·021. N²C = DʻN²c Df",
+      "printed_page": 42,
+      "scan_leaf": 82,
+      "lean_path": "Principia/Architecture/Star104Kernel.lean",
+      "declaration": "PM.Architecture.Star104Kernel.star_104_021",
+      "formal_scope": "refused: the Lean declaration identifies Asc2 with EquivSet and does not define N²C as the domain DʻN²c",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM2:✱104·031",
+      "kind": "definition",
+      "printed": "✱104·031. μ⁽²⁾ = smʻʻμ ∩ t²ʻμ Df",
+      "printed_page": 42,
+      "scan_leaf": 82,
+      "lean_path": "Principia/Architecture/Star104Kernel.lean",
+      "declaration": "PM.Architecture.Star104Kernel.star_104_031",
+      "formal_scope": "refused: the Lean declaration only unfolds Asc2 to EquivSet and contains neither the similarity image nor the type-level intersection defining μ⁽²⁾",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM2:✱104·1",
+      "kind": "derived-proposition",
+      "printed": "✱104·1. ⊢ : β ∈ N¹cʻα .≡. β ∈ Ncʻα . β ∈ tʻtʻα .≡. β ∈ Ncʻα . β ⊂ tʻα [✱63·5 . (✱104·01)]",
+      "printed_page": 43,
+      "scan_leaf": 83,
+      "lean_path": "Principia/Architecture/Star104Kernel.lean",
+      "declaration": "PM.Architecture.Star104Kernel.star_104_1",
+      "formal_scope": "refused: the Lean declaration states only Asc s t ↔ EquivSet s t; it omits both the printed type-membership condition and its subset characterization",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": ["PM1:✱63·5", "PM2:✱104·01"],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    },
+    {
+      "id": "PM2:✱104·101",
+      "kind": "derived-proposition",
+      "printed": "✱104·101. ⊢ : β ∈ N¹cʻα .≡. β sm α . β ⊂ tʻα [✱100·31 . ✱104·1]",
+      "printed_page": 43,
+      "scan_leaf": 83,
+      "lean_path": "Principia/Architecture/Star104Kernel.lean",
+      "declaration": "PM.Architecture.Star104Kernel.star_104_101",
+      "formal_scope": "refused: the Lean declaration reduces Asc to bare equinumerosity and omits the required higher-type subset condition β ⊂ tʻα",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": ["PM2:✱100·31", "PM2:✱104·1"],
+      "normalized_dependencies": [],
+      "lean_dependencies": []
+    }
+  ],
+  "review": {
+    "apparatus_required": false,
+    "sic_required": false,
+    "note": "All five namesake declarations fail strict source-to-Lean equivalence and are refused rather than promoted."
+  },
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

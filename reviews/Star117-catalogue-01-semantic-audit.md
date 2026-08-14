@@ -34,3 +34,7 @@ catalogued citations remain normalized. Lean dependencies are deliberately
 empty because no candidate
 is accepted as a formalization. Each failure is recorded once, directly in the
 canonical catalogue item, so this audit introduces no duplicate item records.
+
+Parser audit: all five unchanged diplomatic strings fail the current object
+parser on the cardinal-order symbols (`>`, `<`, `≥`, or `≤`). They therefore
+carry `reviewed-gap` with this review as evidence; no parseable item is exempted.

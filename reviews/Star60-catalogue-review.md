@@ -23,3 +23,13 @@ Definitions ·03 and ·04 are explicitly refused for formal promotion and remain
 there is no Lean declaration expressing `ClʻCls` or the third-order iteration
 `ClʻCls²`. The existing monomorphic typed kernel therefore does not establish
 either printed definition. CI evidence for this catalogue remains pending.
+
+## Catalogue 05 strict semantic audit
+
+All five records form one homogeneous definitional lot and pass strict
+equivalence. Propositions ·12 and ·13 give the values of `Cl` and `ClEx`; ·14
+and ·15 assert existence of those values (PM's existence notation is rendered
+by an explicit typed witness); and ·2 is exactly the subclass-membership
+equivalence. Their Lean proofs are reflexivity or direct witnesses and use no
+numbered proposition, matching the empty printed and Lean dependency graphs.
+All five canonical records are `awaiting-ci`; CI evidence remains pending.

@@ -1,0 +1,37 @@
+{
+  "batch": "PM2-STAR121-CATALOGUE-02-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "236",
+    "scan_leaves": [276],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱121·04",
+      "kind": "definition",
+      "printed": "✱121·04. ν_P=P̌_{ν−_c1}ʻBʻP Df",
+      "printed_page": 236,
+      "scan_leaf": 276,
+      "lean_path": "Principia/Architecture/Star121OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star121OpeningKernel.star_121_04",
+      "formal_scope": "refused: the Lean tautology P x = P x erases the index nu, cardinal predecessor, converse, B, and relational image displayed by PM",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-non-equivalent-lean-statement",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star121-catalogue-02-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

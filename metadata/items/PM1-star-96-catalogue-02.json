@@ -1,0 +1,69 @@
+{
+  "batch": "PM1-STAR96-CATALOGUE-02",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "640–641",
+    "scan_leaves": [662, 663],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "items": [
+    {
+      "id": "PM1:✱96·103",
+      "kind": "derived-proposition",
+      "printed": "✱96·103. ⊢ . (J_Rʻx)↼hR_po ⊂ J",
+      "printed_page": 640,
+      "scan_leaf": 662,
+      "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star96OpeningKernel.star_96_103",
+      "formal_scope": "exact typed inclusion of the transitive ancestral restricted to J_Rʻx in diversity",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱96·101", "PM1:✱13·14"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star96-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱96·11",
+      "kind": "derived-proposition",
+      "printed": "✱96·11. ⊢ . (α↼hR)_po ⊂ α↼hR_po",
+      "printed_page": 640,
+      "scan_leaf": 662,
+      "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star96OpeningKernel.star_96_11",
+      "formal_scope": "exact typed inclusion of the transitive closure of a domain restriction in the corresponding restriction of the transitive closure",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱91·502", "PM1:✱35·46", "PM1:✱35·1", "PM1:✱91·511", "PM1:✱34·1", "PM1:✱91·171", "PM1:✱41·151"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star96-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱96·14",
+      "kind": "derived-proposition",
+      "printed": "✱96·14. ⊢ : x ∈ CʻR .⊃. R_*⃖ʻx = ιʻx ∪ R_po⃖ʻx",
+      "printed_page": 641,
+      "scan_leaf": 663,
+      "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star96OpeningKernel.star_96_14",
+      "formal_scope": "exact typed decomposition of a field element's reflexive posterity into its singleton and proper posterity",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱91·54", "PM1:✱32·33"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star96-catalogue-02-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

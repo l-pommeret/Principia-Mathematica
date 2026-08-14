@@ -18,3 +18,11 @@ assume their complete implications and return them unchanged; ·41 additionally
 replaces PM's cardinal-existence propositions by arbitrary propositions.
 Accordingly all five remain `prepared`, with explicit semantic-mismatch
 integration statuses. There is no `awaiting-ci` promotion in this lot.
+
+Catalogue 02 (·43, ·44) was then audited by the same strict criterion. Item
+·43 assumes the complete implication from the first to the second ascending
+cardinal equality and returns it unchanged. Item ·44 assumes and returns its
+empty-class conclusion, while supplying no representation of PM's `t²`
+argument. Both therefore remain `prepared` with explicit pass-through
+semantic-mismatch statuses. This lot likewise promotes nothing to
+`awaiting-ci`.

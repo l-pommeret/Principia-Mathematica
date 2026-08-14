@@ -1,20 +1,14 @@
 {
-  "batch": "PM2-STAR116-CATALOGUE-16",
+  "batch": "PM2-STAR116-CATALOGUE-16-REFUSED",
   "edition": "first",
   "volume": 2,
   "source_range": {
     "printed_pages": "159–160",
-    "scan_leaves": [
-      199,
-      200
-    ],
+    "scan_leaves": [199, 200],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
   },
-  "witnesses": [
-    "PM2-1912-SCAN",
-    "PG78255"
-  ],
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
   "items": [
     {
       "id": "PM2:✱116·531",
@@ -24,15 +18,15 @@
       "scan_leaf": 199,
       "lean_path": "Principia/Architecture/Star116FifthKernel.lean",
       "declaration": "PM.Architecture.Star116FifthKernel.star_116_531",
-      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: the source record is only a prose synopsis of a definition and its properties, while Lean states the resulting whole function-space similarity; strict equivalence cannot be checked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star116-catalogue-review.md"
+      "parser_evidence": "reviews/Star116-catalogue-16-semantic-audit.md"
     },
     {
       "id": "PM2:✱116·532",
@@ -42,15 +36,15 @@
       "scan_leaf": 200,
       "lean_path": "Principia/Architecture/Star116FifthKernel.lean",
       "declaration": "PM.Architecture.Star116FifthKernel.star_116_532",
-      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: PM asserts that the constructed relation is one-one and has converse domain γ, whereas Lean proves only the left-inverse equation of the aggregate function-space equivalence and does not state either relational property",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": ["PM2:✱116·531"],
       "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "normalized_dependencies": ["PM2:✱116·531"],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star116-catalogue-review.md"
+      "parser_evidence": "reviews/Star116-catalogue-16-semantic-audit.md"
     },
     {
       "id": "PM2:✱116·533",
@@ -60,33 +54,15 @@
       "scan_leaf": 199,
       "lean_path": "Principia/Architecture/Star116FifthKernel.lean",
       "declaration": "PM.Architecture.Star116FifthKernel.star_116_533",
-      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: the prose-only source record does not preserve the quantified transport formula, while Lean proves a right-inverse equation for the aggregate equivalence; strict source equivalence is unavailable",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star116-catalogue-review.md"
-    },
-    {
-      "id": "PM2:✱116·534",
-      "kind": "derived-proposition",
-      "printed": "✱116·534. ⊢ : Hp ✱116·532 .⊃. ∈ΔʻDʻʻMʻʻγ sm(α×β) exp γ",
-      "printed_page": 160,
-      "scan_leaf": 200,
-      "lean_path": "Principia/Architecture/Star116FifthKernel.lean",
-      "declaration": "PM.Architecture.Star116FifthKernel.star_116_534",
-      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star116-catalogue-review.md"
+      "parser_evidence": "reviews/Star116-catalogue-16-semantic-audit.md"
     },
     {
       "id": "PM2:✱116·535",
@@ -96,20 +72,16 @@
       "scan_leaf": 200,
       "lean_path": "Principia/Architecture/Star116FifthKernel.lean",
       "declaration": "PM.Architecture.Star116FifthKernel.star_116_535",
-      "formal_scope": "typed cardinal-exponentiation reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: the source record is a prose-only claim about PM's pointwise relation, while Lean states reverse similarity of whole function spaces and does not expose the claimed relation or its one-one/onto predicates",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star116-catalogue-review.md"
+      "parser_evidence": "reviews/Star116-catalogue-16-semantic-audit.md"
     }
   ],
-  "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
-  }
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
 }

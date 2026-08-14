@@ -1,0 +1,57 @@
+{
+  "batch": "PM2-STAR120-CATALOGUE-02-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "212–213",
+    "scan_leaves": [252, 253],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱120·152",
+      "kind": "derived-proposition",
+      "printed": "✱120·152. ⊢ : α∈NC . smʻʻα∈NC induct−ιʻΛ .⊃. α∈NC induct−ιʻΛ",
+      "printed_page": 212,
+      "scan_leaf": 252,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_152",
+      "formal_scope": "refused: Lean assumes inductivity of successor n and concludes a disjunction about n; it does not represent PM's type-lift smʻʻα or the non-null inductive-cardinal conclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-type-lift-replaced-by-successor",
+      "integration_blocked": true,
+      "blocking_reason": "The source implication transports nonzero inductive-cardinal membership backward across smʻʻ. The Lean theorem instead reasons from successor n to n and weakens the conclusion with an n = 0 disjunct.",
+      "printed_dependencies": ["PM1:✱37·29", "PM2:✱100·35", "PM2:✱100·511", "PM2:✱100·521", "PM2:✱103·13", "PM2:✱120·02", "PM2:✱120·15", "PM2:✱120·2", "PM2:✱120·201"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-refused"
+    },
+    {
+      "id": "PM2:✱120·211",
+      "kind": "derived-proposition",
+      "printed": "✱120·211. ⊢ : Ncʻρ∈NC induct−ιʻΛ .⊃. ρ∈Cls induct",
+      "printed_page": 213,
+      "scan_leaf": 253,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_211",
+      "formal_scope": "refused: Lean assumes finiteClass A directly and projects it as the conclusion, rather than deriving finiteness from nonzero inductivity of Ncʻρ",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-circular-premise-omits-cardinal-operator",
+      "integration_blocked": true,
+      "blocking_reason": "The hypothesis finiteClass A ∧ A ≠ Empty already contains the conclusion finiteClass A; no Nc operator or inductive-cardinal premise is modeled.",
+      "printed_dependencies": ["PM2:✱100·511", "PM2:✱120·15", "PM2:✱120·21"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-refused"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

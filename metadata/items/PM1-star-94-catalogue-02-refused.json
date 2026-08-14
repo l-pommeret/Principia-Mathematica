@@ -1,0 +1,90 @@
+{
+  "batch": "PM1-STAR94-CATALOGUE-02-REFUSED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "621–623",
+    "scan_leaves": [643, 644, 645],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "items": [
+    {
+      "id": "PM1:✱94·21",
+      "kind": "derived-proposition",
+      "printed": "✱94·21. ⊢ . Potʻ(S|R)=(S‖R)ʻʻ{Potʻ(R|S)∪ιʻI}",
+      "printed_page": 621,
+      "scan_leaf": 643,
+      "lean_path": "Principia/Architecture/Star94Kernel.lean",
+      "declaration": "PM.Architecture.Star94Kernel.star_94_21",
+      "formal_scope": "refused: Pot is universal and the forward inclusion is discharged by the assumed universal factorization field, so the printed image characterization of relational powers is not formalized",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-degenerate-power-and-assumed-factorization",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star94-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱94·22",
+      "kind": "derived-proposition",
+      "printed": "✱94·22. ⊢ : ᗡʻR⊂DʻS .∨. DʻS⊂ᗡʻR :⊃. Potʻ(S|R)=(S‖R)ʻʻPotidʻ(R|S)",
+      "printed_page": 621,
+      "scan_leaf": 643,
+      "lean_path": "Principia/Architecture/Star94Kernel.lean",
+      "declaration": "PM.Architecture.Star94Kernel.star_94_22",
+      "formal_scope": "refused: Lean omits the printed domain alternative and Potid construction, then aliases the already degenerate theorem ✱94·21",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-omitted-hypothesis-and-potid",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star94-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱94·3",
+      "kind": "derived-proposition",
+      "printed": "✱94·3. ⊢ : R∈1→Cls . ᗡʻ(R|S)⊂DʻR .⊃: P∈Potʻ(R|S) .≡. (∃T) . T∈Potʻ(S|R) . P=R|T|R̆",
+      "printed_page": 622,
+      "scan_leaf": 644,
+      "lean_path": "Principia/Architecture/Star94Kernel.lean",
+      "declaration": "PM.Architecture.Star94Kernel.star_94_3",
+      "formal_scope": "refused: Lean merely repeats ✱94·12; it omits both printed hypotheses, the equivalence and converse, and the R|T|R-converse factorization",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-replaced-by-earlier-one-way-theorem",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star94-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱94·31",
+      "kind": "derived-proposition",
+      "printed": "✱94·31. ⊢ : R∈1→Cls . ᗡʻ(R|S)⊂DʻR .⊃. Potʻ(R|S)=(R‖R̆)ʻʻPotʻ(S|R)",
+      "printed_page": 622,
+      "scan_leaf": 644,
+      "lean_path": "Principia/Architecture/Star94Kernel.lean",
+      "declaration": "PM.Architecture.Star94Kernel.star_94_31",
+      "formal_scope": "refused: Lean aliases ✱94·14 and proves a different left/right image equality, omitting the hypotheses and sandwich by R and its converse",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-different-image-theorem",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star94-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱94·401",
+      "kind": "derived-proposition",
+      "printed": "✱94·401. ⊢ . pʻᗡʻʻPotʻ(R|S)=pʻᗡʻʻR|ʻʻS|ʻʻPotʻ(R|S)",
+      "printed_page": 623,
+      "scan_leaf": 645,
+      "lean_path": "Principia/Architecture/Star94Kernel.lean",
+      "declaration": "PM.Architecture.Star94Kernel.star_94_401",
+      "formal_scope": "refused: Lean states reflexivity of commonRight (Pot (R*S)); the printed right-hand iterated relational images are entirely absent",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-reflexive-placeholder",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star94-catalogue-02-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

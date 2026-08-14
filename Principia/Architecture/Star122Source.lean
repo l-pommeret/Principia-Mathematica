@@ -20,6 +20,21 @@ PM-VERBATIM-END PM2:✱122·12 -/
 /- PM-VERBATIM-BEGIN PM2:✱122·14
 ✱122·14. ⊢ : R∈Prog .⊃. R̅_poʻBʻR=ᗡʻR
 PM-VERBATIM-END PM2:✱122·14 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·141
+✱122·141. ⊢ : R∈Prog .⊃. ᗡʻR⊂DʻR . CʻR=DʻR
+PM-VERBATIM-END PM2:✱122·141 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·142
+✱122·142. ⊢ : R∈Prog . P∈PotʻR .⊃. DʻP=DʻR
+PM-VERBATIM-END PM2:✱122·142 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·143
+✱122·143. ⊢ : R∈Prog . P∈PotʻR .⊃. ᗡʻP⊂DʻP
+PM-VERBATIM-END PM2:✱122·143 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·15
+✱122·15. ⊢ : R∈Prog .⊃. R=(R⃖∗ʻBʻR)↿R=R↾(R⃖poʻBʻR)=R↾(R⃖∗ʻBʻR)
+PM-VERBATIM-END PM2:✱122·15 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·151
+✱122·151. ⊢ : R∈Prog .⊃. R∗=(R⃖∗ʻBʻR)↿R∗=R∗↾(R⃖∗ʻBʻR)
+PM-VERBATIM-END PM2:✱122·151 -/
 namespace PM.Architecture.Star122Source
 def canonicalSource : String :=
  "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm#Page_256"

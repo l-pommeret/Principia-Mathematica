@@ -1,0 +1,51 @@
+{
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "588",
+    "scan_leaves": [610],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"},
+  "batch": "PM1-STAR91-CATALOGUE-05-AWAITING-CI",
+  "items": [
+    {
+      "id": "PM1:✱91·12",
+      "kind": "derived-proposition",
+      "printed": "✱91·12. ⊢ : P∈PotʻR .≡. P R_ts R",
+      "printed_page": 588,
+      "scan_leaf": 610,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel.star_91_12",
+      "formal_scope": "audited typed normalization: P is a positive power of R iff it is Pow R n for some positive n",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star91-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱91·14",
+      "kind": "derived-proposition",
+      "printed": "✱91·14. ⊢ : P∈PotidʻR .≡. P R_ts (I↾CʻR)",
+      "printed_page": 588,
+      "scan_leaf": 610,
+      "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star91OpeningKernel.star_91_14",
+      "formal_scope": "audited typed normalization: P is the carrier identity or a positive power of R",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star91-catalogue-review.md"
+    }
+  ]
+}

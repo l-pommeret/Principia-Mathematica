@@ -1,0 +1,45 @@
+{
+  "batch": "PM2-STAR102-Q412-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "27",
+    "scan_leaves": [67],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "leaf_derivatives": [{
+      "scan_leaf": 67,
+      "printed_page": 27,
+      "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page67-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg",
+      "sha256": "38de239bf8da1c3717f2dd804ee3bed32f2a9e131ab28ca659e4997dc0116dd7"
+    }],
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "blocked-non-equivalent-lean-target",
+  "items": [
+    {
+      "id": "PM2:✱102·13",
+      "kind": "derived-proposition",
+      "printed": "✱102·13. ⊢ : R ∈ 1→1 .⊃ . Rₓ ∈ 1(x)→1 [Proof as in ✱102·11]",
+      "printed_page": 27,
+      "scan_leaf": 67,
+      "lean_path": "Principia/Architecture/Star102OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star102OpeningKernel.star_102_13",
+      "formal_scope": "refused: Lean states a definitional biconditional for a relation already indexed by both endpoint types, not the printed one-way specialization assigning only the x endpoint type",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-non-equivalent-lean-target",
+      "blocking_reason": "The printed theorem derives the one-sided restriction Rₓ ∈ 1(x)→1 from unrestricted one-one R. The Lean declaration instead proves TypedOneOne R ↔ OneOne R for R : Relation A B, strengthening implication to equivalence and preassigning both endpoint carrier types; it does not reconstruct Rₓ.",
+      "printed_dependencies": ["PM2:✱102·11"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-102-13.txt",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q412-review.md",
+      "semantic_audit_status": "strict-equivalence-refused"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

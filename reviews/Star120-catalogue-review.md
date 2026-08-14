@@ -28,3 +28,24 @@ their Lean graphs are empty, with the omitted historical routes documented as
 `relaxed-closure`. The refused item's printed graph is retained but is not
 normalized into a false Lean correspondence. The deterministic parser accepts
 none of these transfinite-cardinal formulas, so all five keep `reviewed-gap`.
+
+## Catalogue 02 strict audit
+
+The next five prepared records are audited independently. ✱120·151 is the
+typed successor-closure theorem; totality of `Nat` discharges the printed
+existence guard. ✱120·21 normalizes the cardinal criterion for an inductive
+class to an explicit finite enumeration, and ✱120·212 supplies the empty
+enumeration. These three statements preserve the source claims and are moved
+to the homogeneous `awaiting-ci` lot.
+
+✱120·152 is refused because the source transports nonzero inductive-cardinal
+membership backward across the type-lift `smʻʻ`, whereas Lean assumes
+inductivity of `successor n` and concludes a weakened disjunction about `n`.
+✱120·211 is also refused: its Lean premise already contains `finiteClass A`,
+the exact conclusion projected by the proof, and it omits `Ncʻρ` entirely.
+Both remain `prepared` in a separate homogeneous refused lot.
+
+The printed dependencies are extracted proposition by proposition from the
+displayed Gutenberg demonstrations. The three accepted Lean bodies invoke no
+numbered theorem, so their empty Lean graphs and historical relaxed closures
+are explicit. Every catalogue-02 ID occurs in exactly one split artifact.

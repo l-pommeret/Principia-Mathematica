@@ -20,6 +20,7 @@
       "formal_scope": "refused: Lean defines StrictlyLarger directly between two Set' representatives as one-way Embeddable, rather than defining comparison of cardinal objects through N₀c representatives and the two printed class-existence clauses",
       "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-surrogate-object-layer",
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star117-catalogue-01-semantic-audit.md",
       "printed_dependencies": [], "normalized_dependencies": [], "lean_dependencies": []
     },
     {
@@ -31,6 +32,7 @@
       "formal_scope": "refused: Lean's AtLeast is merely StrictlyLarger A B ∨ Equinumerous A B on Set' representatives; it omits the printed N₀C membership conjunct and equality to smʻʻν on cardinal objects",
       "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-omitted-cardinal-domain",
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star117-catalogue-01-semantic-audit.md",
       "printed_dependencies": [], "normalized_dependencies": [], "lean_dependencies": []
     },
     {
@@ -42,6 +44,7 @@
       "formal_scope": "refused: the reflexive Lean theorem relates definitions on arbitrary Set' representatives, while the printed theorem relates the previously defined order operations on cardinal objects; no interpretation from cardinals to the surrogate Set' layer is supplied",
       "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-unjustified-carrier-change",
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star117-catalogue-01-semantic-audit.md",
       "printed_dependencies": ["PM2:✱117·04"], "normalized_dependencies": [], "lean_dependencies": [],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -60,6 +63,7 @@
       "formal_scope": "refused: the reflexive Lean theorem relates definitions on arbitrary Set' representatives, while the printed theorem concerns cardinal objects and the ≥ relation whose N₀C side condition is absent from Lean",
       "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-unjustified-carrier-change",
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star117-catalogue-01-semantic-audit.md",
       "printed_dependencies": ["PM2:✱117·06"], "normalized_dependencies": [], "lean_dependencies": [],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
@@ -78,6 +82,7 @@
       "formal_scope": "refused: no same-number Lean declaration exists; the architecture defines Embeddable using an existential subset/equinumerosity predicate, but supplies neither Nc nor a theorem identifying the printed cardinal comparison with it",
       "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
       "integration_status": "blocked-missing-declaration-and-cardinal-interpretation",
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star117-catalogue-01-semantic-audit.md",
       "printed_dependencies": ["PM2:✱117·22", "PM1:✱60·2", "PM2:✱100·1"],
       "normalized_dependencies": ["PM1:✱60·2", "PM2:✱100·1"], "lean_dependencies": [],
       "historical_dependency_relaxation": {

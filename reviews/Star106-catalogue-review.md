@@ -27,3 +27,22 @@ infrastructure rather than numbered PM propositions. Consequently the printed,
 Lean-numbered, and normalized dependency graphs are all empty. The exact set is
 promoted to `awaiting-ci`; no refusal manifest is needed for this five-item
 lot. Kernel-checked status still requires successful immutable CI evidence.
+
+## Catalogue 02 strict semantic audit
+
+Scope: the next five loci on PM II p. 61 (scan leaf 101). The exact and
+refused subsets are recorded in disjoint manifests.
+
+| PM locus | Lean declaration | verdict | reason |
+|---|---|---|---|
+| ✱106·03 | `star_106_03` | exact, awaiting CI | `DomainOf F M` is definitionally `∃ i, M = F i`, exactly membership of `M` in the range `DʻF`. |
+| ✱106·04 | `star_106_04` | refused | PM's `smʻʻμ` is a relational image and requires similarity between the existential source `α` and result `β`; Lean uses unary `sm b`, independent of its witness `a`. |
+| ✱106·041 | `star_106_041` | refused | The same unary encoding erases the source/result relation required by `smʻʻμ`; changing the type stratum does not repair it. |
+| ✱106·1 | `star_106_1` | exact, awaiting CI | Unfolding `TypedNc` yields precisely membership in both factors of PM's defining intersection. |
+| ✱106·101 | `star_106_101` | exact, awaiting CI | This is the same exact pointwise intersection equivalence at the `t¹¹` stratum. |
+
+The promoted set is exactly 3/5. The two relational-image definitions remain
+`prepared` with explicit semantic-mismatch refusals and cannot contribute to
+source-critical coverage. All five declaration bodies cite no numbered Lean
+theorem, so their printed, Lean-numbered and normalized dependency lists are
+empty. CI evidence for the exact subset remains pending.

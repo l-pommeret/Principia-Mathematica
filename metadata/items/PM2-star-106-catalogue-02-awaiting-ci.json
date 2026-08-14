@@ -1,0 +1,70 @@
+{
+  "batch": "PM2-STAR106-CATALOGUE-02-AWAITING-CI",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "61",
+    "scan_leaves": [101],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱106·03",
+      "kind": "definition",
+      "printed": "✱106·03. N₀₀C = DʻN₀₀c Df etc.",
+      "printed_page": 61,
+      "scan_leaf": 101,
+      "lean_path": "Principia/Architecture/Star106OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star106OpeningKernel.star_106_03",
+      "formal_scope": "exact typed reconstruction of N₀₀C as the range of the indexed family N₀₀c",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star106-catalogue-review.md",
+      "semantic_audit": "reviews/Star106-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱106·1",
+      "kind": "derived-proposition",
+      "printed": "✱106·1. ⊢ : β∈N₀₀cʻα .≡. β∈Ncʻα . β∈tʻt₀₀ʻα",
+      "printed_page": 61,
+      "scan_leaf": 101,
+      "lean_path": "Principia/Architecture/Star106OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star106OpeningKernel.star_106_1",
+      "formal_scope": "exact typed pointwise membership equivalence obtained from the defining intersection for N₀₀c",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit": "reviews/Star106-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱106·101",
+      "kind": "derived-proposition",
+      "printed": "✱106·101. ⊢ : β∈N¹¹cʻα .≡. β∈Ncʻα . β∈tʻt¹¹ʻα",
+      "printed_page": 61,
+      "scan_leaf": 101,
+      "lean_path": "Principia/Architecture/Star106OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star106OpeningKernel.star_106_101",
+      "formal_scope": "exact typed pointwise membership equivalence obtained from the defining intersection for N¹¹c",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star106-catalogue-review.md",
+      "semantic_audit": "reviews/Star106-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

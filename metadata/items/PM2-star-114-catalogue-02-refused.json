@@ -1,0 +1,51 @@
+{
+  "batch": "PM2-STAR114-CATALOGUE-02-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "125",
+    "scan_leaves": [165],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm#Page_125"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱114·21",
+      "kind": "derived-proposition",
+      "printed": "✱114·21. ⊢ . ΠNcʻιʻα = Ncʻα [✱83·41]",
+      "printed_page": 125,
+      "scan_leaf": 165,
+      "lean_path": "Principia/Architecture/Star114OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star114OpeningKernel.star_114_21",
+      "formal_scope": "refused: PM asserts equality of two cardinal objects, whereas Lean proves only an equivalence between inhabitation of the singleton-indexed product type and inhabitation of its factor",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-cardinal-equality-weakened-to-inhabitation",
+      "printed_dependencies": ["PM1:✱83·41"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star114-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱114·25",
+      "kind": "derived-proposition",
+      "printed": "✱114·25. ⊢ :: Mult ax .≡: ΠNcʻκ = 0 .⊃κ. Λ∈κ",
+      "printed_page": 125,
+      "scan_leaf": 165,
+      "lean_path": "Principia/Architecture/Star114OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star114OpeningKernel.star_114_25",
+      "formal_scope": "refused: PM states an equivalence with the multiplicative axiom, universally over families; Lean assumes pointwise inhabitation for one family and invokes ambient Classical.choice to construct a product, proving only one operational direction and not the displayed equivalence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-multiplicative-axiom-equivalence-omitted",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star114-catalogue-02-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

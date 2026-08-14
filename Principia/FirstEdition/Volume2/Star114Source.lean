@@ -23,6 +23,26 @@ PM-VERBATIM-END PM2:✱114·12 -/
 ✱114·2. ⊢ . ΠNcʻΛ = 1 [✱83·15.✱101·2]
 PM-VERBATIM-END PM2:✱114·2 -/
 
+/- PM-VERBATIM-BEGIN PM2:✱114·21
+✱114·21. ⊢ . ΠNcʻιʻα = Ncʻα [✱83·41]
+PM-VERBATIM-END PM2:✱114·21 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱114·22
+✱114·22. ⊢ . ΠNcʻιʻΛ = 0 [✱114·21.✱101·1]
+PM-VERBATIM-END PM2:✱114·22 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱114·23
+✱114·23. ⊢ : Λ∈κ .⊃. ΠNcʻκ = 0 [✱83·11.✱101·1]
+PM-VERBATIM-END PM2:✱114·23 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱114·24
+✱114·24. ⊢ : ΠNcʻλ ≠ 0 . κ⊂λ .⊃. ΠNcʻκ ≠ 0
+PM-VERBATIM-END PM2:✱114·24 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱114·25
+✱114·25. ⊢ :: Mult ax .≡: ΠNcʻκ = 0 .⊃κ. Λ∈κ
+PM-VERBATIM-END PM2:✱114·25 -/
+
 namespace PM.FirstEdition.Volume2.Star114Source
 def gutenbergId : Nat := 78255
 def openingLoci : List String :=

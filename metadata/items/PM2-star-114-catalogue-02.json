@@ -1,0 +1,86 @@
+{
+  "batch": "PM2-STAR114-CATALOGUE-02",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "125",
+    "scan_leaves": [165],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm#Page_125"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱114·22",
+      "kind": "derived-proposition",
+      "printed": "✱114·22. ⊢ . ΠNcʻιʻΛ = 0 [✱114·21.✱101·1]",
+      "printed_page": 125,
+      "scan_leaf": 165,
+      "lean_path": "Principia/Architecture/Star114OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star114OpeningKernel.star_114_22",
+      "formal_scope": "exact typed reconstruction: the singleton family whose unique factor is empty has no choice function, representing cardinal product zero",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM2:✱114·21", "PM2:✱101·1"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM2:✱114·21", "PM2:✱101·1"],
+        "strict_attempt_evidence": "reviews/Star114-catalogue-02-semantic-audit.md",
+        "editorial_note": "Lean checks the empty singleton product directly from its dependent-function representation; PM derives the cardinal-zero identity through the singleton-product and cardinal-zero laws."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star114-catalogue-02-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-passed"
+    },
+    {
+      "id": "PM2:✱114·23",
+      "kind": "derived-proposition",
+      "printed": "✱114·23. ⊢ : Λ∈κ .⊃. ΠNcʻκ = 0 [✱83·11.✱101·1]",
+      "printed_page": 125,
+      "scan_leaf": 165,
+      "lean_path": "Principia/Architecture/Star114OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star114OpeningKernel.star_114_23",
+      "formal_scope": "exact typed reconstruction: an empty indexed factor makes the dependent product empty, representing PM's zero cardinal product",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱83·11", "PM2:✱101·1"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱83·11", "PM2:✱101·1"],
+        "strict_attempt_evidence": "reviews/Star114-catalogue-02-semantic-audit.md",
+        "editorial_note": "Lean eliminates a purported product witness at the empty coordinate directly; PM reaches the same implication through its earlier class and cardinal-zero results."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star114-catalogue-02-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-passed"
+    },
+    {
+      "id": "PM2:✱114·24",
+      "kind": "derived-proposition",
+      "printed": "✱114·24. ⊢ : ΠNcʻλ ≠ 0 . κ⊂λ .⊃. ΠNcʻκ ≠ 0",
+      "printed_page": 125,
+      "scan_leaf": 165,
+      "lean_path": "Principia/Architecture/Star114OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star114OpeningKernel.star_114_24",
+      "formal_scope": "exact typed reconstruction: a choice function on a family restricts along the inclusion map to a choice function on every indexed subfamily",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star114-catalogue-02-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-passed"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

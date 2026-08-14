@@ -24,13 +24,27 @@
       "scan_leaf": 320,
       "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_212",
-      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "formal_scope": "exact typed image-intersection inclusion with all four displayed conjuncts; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱37·21",
+        "PM1:✱37·211"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱37·21",
+          "PM1:✱37·211"
+        ],
+        "strict_attempt_evidence": "reviews/Star37-catalogue-09-semantic-audit.md",
+        "editorial_note": "The direct Lean proof reconstructs the four inclusions from a single witness instead of invoking the two printed predecessors."
+      }
     },
     {
       "id": "PM1:✱37·221",
@@ -40,13 +54,14 @@
       "scan_leaf": 321,
       "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_221",
-      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "formal_scope": "exact typed distribution of relation-union image over a class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱37·222",
@@ -56,13 +71,27 @@
       "scan_leaf": 321,
       "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_222",
-      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "formal_scope": "exact typed four-way distribution of relation-union image over class union; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱37·22",
+        "PM1:✱37·221"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱37·22",
+          "PM1:✱37·221"
+        ],
+        "strict_attempt_evidence": "reviews/Star37-catalogue-09-semantic-audit.md",
+        "editorial_note": "The direct Lean proof performs the four witness cases explicitly rather than calling the two printed distribution theorems."
+      }
     },
     {
       "id": "PM1:✱37·23",
@@ -72,13 +101,27 @@
       "scan_leaf": 321,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_23",
-      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "formal_scope": "exact typed characterization of the domain of the image relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱37·101",
+        "PM1:✱33·11"
+      ],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱33·11",
+          "PM1:✱37·101"
+        ],
+        "strict_attempt_evidence": "reviews/Star37-catalogue-09-semantic-audit.md",
+        "editorial_note": "The typed image relation and domain definitions make the printed characterization definitional, so the cited predecessors do not occur in the Lean term."
+      }
     },
     {
       "id": "PM1:✱37·231",
@@ -88,13 +131,14 @@
       "scan_leaf": 321,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_231",
-      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "formal_scope": "exact typed universality of the converse-domain of the image relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed"
     }
   ],
   "ci_evidence": {

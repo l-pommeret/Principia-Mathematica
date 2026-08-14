@@ -1,0 +1,33 @@
+{
+  "batch": "PM1-STAR97-CATALOGUE-02-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "656",
+    "scan_leaves": [678],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm#Page_656"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "items": [
+    {
+      "id": "PM1:✱97·12",
+      "kind": "derived-proposition",
+      "printed": "✱97·12. ⊢ . Λ∼∈R_*⃡ʻʻCʻR",
+      "printed_page": 656,
+      "scan_leaf": 678,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_12",
+      "formal_scope": "exact typed pointwise reconstruction: every symmetric neighbourhood indexed by an element of the field is nonempty",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱97·111"],
+      "lean_dependencies": ["PM1:✱97·111"],
+      "normalized_dependencies": ["PM1:✱97·111"],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star97-catalogue-02-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

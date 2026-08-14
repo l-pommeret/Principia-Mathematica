@@ -20,3 +20,14 @@ printed relation-power equalities. In ·13 and ·131 it returns only equality
 of the domains or codomains of `Q` and `T`, omitting the displayed products
 and restrictions. All five remain `prepared` and carry an explicit blocked
 semantic-mismatch integration status; there is no `awaiting-ci` promotion.
+
+The third canonical batch (·132, ·14, ·141, ·142, ·143) also has no
+strictly equivalent declaration. Lean ·132 returns the pair of field
+equalities already encoded by its `Potid`; it omits PM's product inclusion.
+Lean ·14 and ·141 replace genuine `Pot` membership plus a printed field
+inclusion by the unrelated weakened `Potid` premise. Lean ·142 and ·143 have
+the same displayed field equality as their respective PM conclusions only
+because each equality is assumed as a conjunct of Lean `Potid`; the printed
+field-inclusion premise and PM's power-or-identity semantics disappear. The
+five items remain `prepared`, explicitly blocked for semantic mismatch, with
+no `awaiting-ci` promotion.

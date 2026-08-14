@@ -19,3 +19,23 @@ PM-VERBATIM-END PM2:✱113·104 -/
 /- PM-VERBATIM-BEGIN PM2:✱113·105
 ✱113·105. ⊢ : ∃!α .⊃. α↓₍₍ ∈ 1→1
 PM-VERBATIM-END PM2:✱113·105 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱113·106
+✱113·106. ⊢ : x∈α . y∈β .⊃. x↓y∈β×α  [✱113·101]
+PM-VERBATIM-END PM2:✱113·106 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱113·107
+✱113·107. ⊢ : ∃!α . ∃!β .⊃. ∃!β×α  [✱113·106]
+PM-VERBATIM-END PM2:✱113·107 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱113·11
+✱113·11. ⊢ : ∃!α .⊃. α↓₍₍ʸʸβ∈Ncʻβ : (y). α↓₍₍ʸy∈Ncʻα
+PM-VERBATIM-END PM2:✱113·11 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱113·111
+✱113·111. ⊢ . α↓₍₍ʸʸβ∈Cls² excl  [✱113·103.✱85·55]
+PM-VERBATIM-END PM2:✱113·111 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱113·112
+✱113·112. ⊢ : α=Λ . ∃!β .⊃. α↓₍₍ʸʸβ=ιʻΛ
+PM-VERBATIM-END PM2:✱113·112 -/

@@ -1,0 +1,72 @@
+{
+  "batch": "PM1-STAR97-CATALOGUE-02-REFUSED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "657",
+    "scan_leaves": [679],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm#Page_657"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "items": [
+    {
+      "id": "PM1:✱97·13",
+      "kind": "derived-proposition",
+      "printed": "✱97·13. ⊢ . R_*⃡ʻx=R_*⃗ʻx∪R_*⃖ʻx",
+      "printed_page": 657,
+      "scan_leaf": 679,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_13",
+      "formal_scope": "refused: PM identifies a generated symmetric neighbourhood with the union of forward and backward transitive closures; Lean merely reuses symmetry of family for the already symmetrized base relation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star97-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱97·14",
+      "kind": "derived-proposition",
+      "printed": "✱97·14. ⊢ : R∈1→1 . xR_*y .⊃. R_*⃡ʻx=R_*⃡ʻy",
+      "printed_page": 657,
+      "scan_leaf": 679,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_14",
+      "formal_scope": "refused: PM assumes a one-one relation and transitive reachability to conclude equality of generated families; Lean assumes one base edge and concludes only two pointwise family memberships",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared", "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star97-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱97·15",
+      "kind": "derived-proposition",
+      "printed": "✱97·15. ⊢ : R∈1→1 . x∈R_*⃡ʻy .⊃. R_*⃡ʻx=R_*⃡ʻy",
+      "printed_page": 657,
+      "scan_leaf": 679,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_15",
+      "formal_scope": "refused: PM concludes equality of two generated families under one-one and family-membership hypotheses; Lean concludes only that both endpoints lie in the field",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared", "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star97-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱97·16",
+      "kind": "derived-proposition",
+      "printed": "✱97·16. ⊢ : R∈1→1 .⊃. R_*⃡ʻʻCʻR∈Cls² excl",
+      "printed_page": 657,
+      "scan_leaf": 679,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_16",
+      "formal_scope": "refused: PM asserts pairwise exclusivity of the entire class of generated families of a one-one relation; Lean proves only symmetry of one pointwise family-membership proposition",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared", "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star97-catalogue-02-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

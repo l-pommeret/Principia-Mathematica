@@ -20,6 +20,21 @@ PM-VERBATIM-END PM1:✱95·12 -/
 /- PM-VERBATIM-BEGIN PM1:✱95·13
 ✱95·13. ⊢ . R∈(P∗Q)ʻR [✱95·1]
 PM-VERBATIM-END PM1:✱95·13 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·131
+✱95·131. ⊢ . P|R|Q∈(P∗Q)ʻR
+PM-VERBATIM-END PM1:✱95·131 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·132
+✱95·132. ⊢ : M∈(P∗Q)ʻR .⊃. P|M|Q∈(P∗Q)ʻR
+PM-VERBATIM-END PM1:✱95·132 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·14
+✱95·14. ⊢ : φR : N∈(P∗Q)ʻR . φN .⊃_N. φ(P|N|Q) :⊃: M∈(P∗Q)ʻR .⊃_M. φM
+PM-VERBATIM-END PM1:✱95·14 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·21
+✱95·21. ⊢ : M∈(P∗Q)ʻR .⊃. (∃S,T) . S∈PotʻP∪ιʻI . T∈PotʻQ∪ιʻI . M=S|R|T
+PM-VERBATIM-END PM1:✱95·21 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·211
+✱95·211. ⊢ : ᗡʻR⊂CʻQ . M∈(P∗Q)ʻR .⊃. (∃S,T) . S∈PotʻP∪ιʻI . T∈PotidʻQ . M=S|R|T
+PM-VERBATIM-END PM1:✱95·211 -/
 
 namespace PM.FirstEdition.Volume1.Star95Source
 

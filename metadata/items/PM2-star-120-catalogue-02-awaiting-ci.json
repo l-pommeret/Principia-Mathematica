@@ -1,0 +1,104 @@
+{
+  "batch": "PM2-STAR120-CATALOGUE-02-AWAITING-CI",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "212–224",
+    "scan_leaves": [
+      252,
+      253,
+      264
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱120·151",
+      "kind": "derived-proposition",
+      "printed": "✱120·151. ⊢ : α∈NC induct . ∃!α .⊃. α+₍c₎1∈NC induct",
+      "printed_page": 212,
+      "scan_leaf": 252,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_151",
+      "formal_scope": "exact typed successor closure for inductive finite cardinals represented by Nat; the printed existence condition is discharged by the total typed carrier",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM2:✱118·241", "PM2:✱120·14", "PM2:✱120·15", "PM2:✱120·121"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM2:✱118·241", "PM2:✱120·14", "PM2:✱120·15", "PM2:✱120·121"],
+        "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
+        "editorial_note": "The total Nat representation discharges the existence guard and successor closure directly; PM's cardinal/type-lift route remains historical evidence."
+      }
+    },
+    {
+      "id": "PM2:✱120·21",
+      "kind": "derived-proposition",
+      "printed": "✱120·21. ⊢ : ρ∈Cls induct .≡. N₀cʻρ∈NC induct",
+      "printed_page": 224,
+      "scan_leaf": 264,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_21",
+      "formal_scope": "exact typed finite-class characterization: membership in the inductive classes is represented by a finite enumeration, the typed normalization of an inductive cardinal number",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱13·195", "PM2:✱103·27", "PM2:✱120·14"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱13·195", "PM2:✱103·27", "PM2:✱120·14"],
+        "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
+        "editorial_note": "Finite enumeration is the typed normalization of the source's finite-cardinal criterion; the displayed historical derivation is not replayed."
+      }
+    },
+    {
+      "id": "PM2:✱120·212",
+      "kind": "derived-proposition",
+      "printed": "✱120·212. ⊢ . Λ∈Cls induct",
+      "printed_page": 213,
+      "scan_leaf": 253,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_212",
+      "formal_scope": "exact typed proof that the empty class is finite (belongs to Cls induct)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM2:✱120·12", "PM2:✱120·211"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM2:✱120·12", "PM2:✱120·211"],
+        "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
+        "editorial_note": "Lean supplies the empty enumeration directly instead of routing through PM's cardinal propositions."
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

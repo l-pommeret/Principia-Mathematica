@@ -35,3 +35,9 @@ The exact and refused records are separated so that only the two exact items
 can enter an awaiting-CI integration wave.  Printed proof dependencies remain
 historical graph data; both accepted Lean declarations close definitionally,
 so their unused printed routes are recorded as relaxed closures.
+
+All five diplomatic readings are deliberate parser gaps: the deterministic
+grammar currently rejects the class-product sign `×` or the ordered-couple
+operator `↓` before it can build an object-language AST.  The source readings
+remain unchanged and have therefore been classified `reviewed-gap` rather than
+silently normalized.

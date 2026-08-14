@@ -71,18 +71,21 @@
       "printed": "✱103·1. ⊢ . N₀cʻα = (Ncʻα)ₐ = Nc(α)ʻα = Nc(αₐ)ʻα [✱102·6 . (✱103·01)]",
       "printed_page": 37,
       "scan_leaf": 77,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription and citation-order skeleton only; no formal target is proposed.",
+      "lean_path": "Principia/FirstEdition/Volume2/Star103Kernel.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star103Kernel.star_103_1",
+      "formal_scope": "refused: print asserts a chain of four equal homogeneous-cardinal expressions, while Lean characterizes CardinalClass membership by Equinumerous",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-homogeneous-cardinal-syntax-or-derivation-layer",
+      "integration_status": "blocked-semantic-mismatch-different-formula",
       "printed_dependencies": [
         "PM2:✱102·6",
         "PM2:✱103·01"
       ],
       "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "semantic_audit_status": "refused-non-equivalent-target",
+      "semantic_audit_evidence": "reviews/Star103-second-semantic-audit.md",
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-1.txt"
     }
   ],
@@ -97,6 +100,7 @@
     "conclusion": "pending"
   },
   "review_evidence": [
-    "reviews/Star103-opening-semantic-audit.md"
+    "reviews/Star103-opening-semantic-audit.md",
+    "reviews/Star103-second-semantic-audit.md"
   ]
 }

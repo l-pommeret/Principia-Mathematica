@@ -1,0 +1,34 @@
+{
+  "batch": "PM2-STAR117-CATALOGUE-02",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "176",
+    "scan_leaves": [216],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "review_evidence": ["reviews/Star117-catalogue-02-semantic-audit.md"],
+  "items": [
+    {
+      "id": "PM2:✱117·222",
+      "kind": "derived-proposition",
+      "printed": "✱117·222. ⊢ : β⊂α .⊃. Ncʻα ≥ Ncʻβ",
+      "printed_page": 176,
+      "scan_leaf": 216,
+      "lean_path": "Principia/Architecture/Star117OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star117OpeningKernel.star_117_222",
+      "formal_scope": "refused: no same-number Lean declaration exists; Included and Embeddable operate only on surrogate Set' representatives, and the architecture supplies neither an Nc operation nor a theorem lifting subset inclusion to the printed cardinal comparison",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-declaration-and-cardinal-interpretation",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star117-catalogue-02-semantic-audit.md",
+      "printed_dependencies": ["PM2:✱117·221"],
+      "normalized_dependencies": ["PM2:✱117·221"],
+      "lean_dependencies": []
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

@@ -27,3 +27,20 @@ reflexive equalities `positiveClosure R = positiveClosure R` and
 `reflexiveClosure R = reflexiveClosure R`; they do not even have two relation
 powers as arguments. They remain `prepared`, with item-level blocking reasons,
 until exact replacement declarations exist.
+
+## Strict semantic audit of catalogue-05
+
+After expanding the opening definitions, ✱91·12 and ·14 have exact typed
+statements. The first identifies `Pot R P` with `P = Pow R n` for a positive
+index, which is the normalized meaning of descent from `R` under `R_ts`; the
+second similarly identifies `Potid R P` with identity or a positive power,
+normalizing descent from the carrier identity. Both declarations are
+definitionally proved, so their historical and Lean dependency graphs have no
+numbered edges. They are promoted to `awaiting-ci`.
+
+✱91·1, ·11, and ·13 are refused. The first two omit the printed relations
+between arbitrary relation powers, the appropriate hereditary multiplication
+step, and both directions of the equivalence. The ·13 declaration likewise
+omits `P∈Pot R`, the base and hereditary premises, and the converse; it merely
+specializes a premise asserting membership of every `Pow R n`. All three stay
+`prepared` with explicit item-level blocking reasons.

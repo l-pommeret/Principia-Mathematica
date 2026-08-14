@@ -14,6 +14,21 @@ PM-VERBATIM-END PM2:✱110·12 -/
 /- PM-VERBATIM-BEGIN PM2:✱110·13
 ✱110·13. ⊢ : γ sm α . δ sm β . γ∩δ=Λ . ⊃ . γ∪δ sm (α+β)
 PM-VERBATIM-END PM2:✱110·13 -/
+/- PM-VERBATIM-BEGIN PM2:✱110·14
+✱110·14. ⊢ : α∩β=Λ . ⊃ . α∪β sm (α+β) [✱110·13 . ✱73·3]
+PM-VERBATIM-END PM2:✱110·14 -/
+/- PM-VERBATIM-BEGIN PM2:✱110·15
+✱110·15. ⊢ : γ sm α . δ sm β . ⊃ . γ+δ sm α+β
+PM-VERBATIM-END PM2:✱110·15 -/
+/- PM-VERBATIM-BEGIN PM2:✱110·151
+✱110·151. ⊢ : α∩β=Λ . ⊃ : ξ sm (α∪β) . ≡ . (∃γ,δ) . γ sm α . δ sm β . γ∩δ=Λ . ξ=γ∪δ
+PM-VERBATIM-END PM2:✱110·151 -/
+/- PM-VERBATIM-BEGIN PM2:✱110·152
+✱110·152. ⊢ : ξ sm (α+β) . ≡ . (∃γ,δ) . γ sm α . δ sm β . γ∩δ=Λ . ξ=γ∪δ
+PM-VERBATIM-END PM2:✱110·152 -/
+/- PM-VERBATIM-BEGIN PM2:✱110·16
+✱110·16. ⊢ . Nc‘(α+β) = ξ̂{(∃γ,δ) . γ sm α . δ sm β . γ∩δ=Λ . ξ=γ∪δ} [✱110·152 . ✱100·1]
+PM-VERBATIM-END PM2:✱110·16 -/
 namespace PM.FirstEdition.Volume2.Star110Source
 
 abbrev Set' (α : Type u) := α → Prop

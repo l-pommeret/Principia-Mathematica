@@ -1,0 +1,55 @@
+{
+  "batch": "PM1-STAR95-CATALOGUE-02-REFUSED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "628",
+    "scan_leaves": [650],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "items": [
+    {
+      "id": "PM1:✱95·21",
+      "kind": "derived-proposition",
+      "printed": "✱95·21. ⊢ : M∈(P∗Q)ʻR .⊃. (∃S,T) . S∈PotʻP∪ιʻI . T∈PotʻQ∪ιʻI . M=S|R|T",
+      "printed_page": 628,
+      "scan_leaf": 650,
+      "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star95Kernel.star_95_21",
+      "formal_scope": "refused for formal promotion: the Lean conclusion merely rewraps the input as ∃ n, Equi P Q R M and neither constructs power relations S,T nor proves M=S|R|T",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star95-catalogue-02-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
+    },
+    {
+      "id": "PM1:✱95·211",
+      "kind": "derived-proposition",
+      "printed": "✱95·211. ⊢ : ᗡʻR⊂CʻQ . M∈(P∗Q)ʻR .⊃. (∃S,T) . S∈PotʻP∪ιʻI . T∈PotidʻQ . M=S|R|T",
+      "printed_page": 628,
+      "scan_leaf": 650,
+      "lean_path": "Principia/FirstEdition/Volume1/Star95Kernel.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star95Kernel.star_95_211",
+      "formal_scope": "refused for formal promotion: the Lean theorem omits the range/domain hypothesis, power and potent-relation constraints, and factorization equation, returning only S=M",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star95-catalogue-02-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

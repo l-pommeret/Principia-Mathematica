@@ -29,3 +29,8 @@ Dependency review is necessarily source-only for this refused lot. The
 printed references retained in the manifest are ✱38·13·131 and the defining
 ✱110·01 at ·1, and ✱73·41·61·611 at ·12; no Lean dependency graph is
 credited because none of the declarations proves its assigned source theorem.
+
+All five diplomatic formulas are routed as `reviewed-gap`: the current parser
+does not yet cover the arithmetical class-sum sign or the historical relational
+image/application notation. This records a parser limitation only and does not
+alter the source transcription.

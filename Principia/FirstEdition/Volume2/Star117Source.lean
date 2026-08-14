@@ -14,6 +14,9 @@ PM-VERBATIM-END PM2:✱117·105 -/
 /- PM-VERBATIM-BEGIN PM2:✱117·221
 ✱117·221. ⊢ : Ncʻα ≥ Ncʻβ .≡. (∃ρ). ρ⊂α . ρ sm β
 PM-VERBATIM-END PM2:✱117·221 -/
+/- PM-VERBATIM-BEGIN PM2:✱117·222
+✱117·222. ⊢ : β⊂α .⊃. Ncʻα ≥ Ncʻβ
+PM-VERBATIM-END PM2:✱117·222 -/
 namespace PM.FirstEdition.Volume2.Star117Source
 def records : List (String × String) := [
   ("✱117·01", "μ > ν .=. (∃α,β). μ=N₀cʻα . ν=N₀cʻβ . ∃!Clʻα∩Ncʻβ . ∼∃!Clʻβ∩Ncʻα  Df"),

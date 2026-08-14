@@ -422,6 +422,21 @@ PM-VERBATIM-END PM2:✱104·12 -/
 /- PM-VERBATIM-BEGIN PM2:✱104·2
 ✱104·2. ⊢ . ιʻʻα ∈ N¹cʻα
 PM-VERBATIM-END PM2:✱104·2 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·011
+✱104·011. N²cʻα = Ncʻα ∩ tʻt²ʻα Df
+PM-VERBATIM-END PM2:✱104·011 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·021
+✱104·021. N²C = DʻN²c Df
+PM-VERBATIM-END PM2:✱104·021 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·031
+✱104·031. μ⁽²⁾ = smʻʻμ ∩ t²ʻμ Df
+PM-VERBATIM-END PM2:✱104·031 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·1
+✱104·1. ⊢ : β ∈ N¹cʻα .≡. β ∈ Ncʻα . β ∈ tʻtʻα .≡. β ∈ Ncʻα . β ⊂ tʻα [✱63·5 . (✱104·01)]
+PM-VERBATIM-END PM2:✱104·1 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·101
+✱104·101. ⊢ : β ∈ N¹cʻα .≡. β sm α . β ⊂ tʻα [✱100·31 . ✱104·1]
+PM-VERBATIM-END PM2:✱104·101 -/
 
 /- PM-VERBATIM-SUMMARY-BEGIN PM2:STAR105-SUMMARY-105-3
 ✱105·3. ⊢ : μ = N₀cʻα .⊃ . μ⁽¹⁾ = N₁cʻα

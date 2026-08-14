@@ -1,0 +1,74 @@
+{
+  "batch": "PM2-STAR110-CATALOGUE-02-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "77–78",
+    "scan_leaves": [117, 118],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱110·14", "kind": "derived-proposition",
+      "printed": "✱110·14. ⊢ : α∩β=Λ . ⊃ . α∪β sm (α+β) [✱110·13 . ✱73·3]",
+      "printed_page": 77, "scan_leaf": 117,
+      "lean_path": "Principia/FirstEdition/Volume2/Star110Kernel.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star110Kernel.star_110_14",
+      "formal_scope": "refused: PM proves that the ordinary union of disjoint classes is similar to their arithmetical class-sum; Lean instead proves commutativity of the tagged sum up to bijection and has no disjointness hypothesis or ordinary union",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-disjoint-union-replaced-by-commutativity",
+      "printed_dependencies": ["PM2:✱110·13", "PM1:✱73·3"], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star110-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱110·15", "kind": "derived-proposition",
+      "printed": "✱110·15. ⊢ : γ sm α . δ sm β . ⊃ . γ+δ sm α+β",
+      "printed_page": 77, "scan_leaf": 117,
+      "lean_path": "Principia/FirstEdition/Volume2/Star110Kernel.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star110Kernel.star_110_15",
+      "formal_scope": "refused: PM states congruence of arithmetical class-sum under two component similarities; Lean proves only reflexive equivalence of one tagged sum and omits both hypotheses and the second pair of classes",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-congruence-replaced-by-reflexivity",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star110-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱110·151", "kind": "derived-proposition",
+      "printed": "✱110·151. ⊢ : α∩β=Λ . ⊃ : ξ sm (α∪β) . ≡ . (∃γ,δ) . γ sm α . δ sm β . γ∩δ=Λ . ξ=γ∪δ",
+      "printed_page": 77, "scan_leaf": 117,
+      "lean_path": "Principia/FirstEdition/Volume2/Star110Kernel.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star110Kernel.star_110_151",
+      "formal_scope": "refused: PM gives an existential characterization of all classes similar to a disjoint union; Lean aliases the tagged-sum commutativity theorem and encodes none of the displayed antecedent, existential witnesses, union, or equality",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-characterization-replaced-by-commutativity",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": []
+    },
+    {
+      "id": "PM2:✱110·152", "kind": "derived-proposition",
+      "printed": "✱110·152. ⊢ : ξ sm (α+β) . ≡ . (∃γ,δ) . γ sm α . δ sm β . γ∩δ=Λ . ξ=γ∪δ",
+      "printed_page": 78, "scan_leaf": 118,
+      "lean_path": "Principia/FirstEdition/Volume2/Star110Kernel.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star110Kernel.star_110_152",
+      "formal_scope": "refused: PM characterizes similarity to the arithmetical class-sum by a decomposition into two disjoint similar parts; Lean supplies only the identity bijection witnessing that its tagged sum represents its own CardinalAdd",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-decomposition-replaced-by-identity-witness",
+      "printed_dependencies": ["PM1:✱73·37", "PM2:✱110·12"], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star110-catalogue-02-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱110·16", "kind": "derived-proposition",
+      "printed": "✱110·16. ⊢ . Nc‘(α+β) = ξ̂{(∃γ,δ) . γ sm α . δ sm β . γ∩δ=Λ . ξ=γ∪δ} [✱110·152 . ✱100·1]",
+      "printed_page": 78, "scan_leaf": 118,
+      "lean_path": "Principia/FirstEdition/Volume2/Star110Kernel.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star110Kernel.star_110_16",
+      "formal_scope": "refused: PM identifies the cardinal class of the arithmetical sum with the class of all disjoint unions of similar parts; Lean proves only the definitional equality CardinalAdd s t = Cardinal (SumClass s t)",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-cardinal-class-characterization-replaced-by-definition",
+      "printed_dependencies": ["PM2:✱110·152", "PM2:✱100·1"], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star110-catalogue-02-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

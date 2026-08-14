@@ -23,7 +23,7 @@
     "PG78255"
   ],
   "source_status": "source-catalogued-PM-VERBATIM",
-  "integration_status": "source-only-no-formal-target",
+  "integration_status": "blocked-strict-semantic-mismatch",
   "items": [
     {
       "id": "PM2:✱101·14",
@@ -31,13 +31,13 @@
       "printed": "✱101·14. ⊢ : Ncʻγ = 0 .≡ . γ = Λ",
       "printed_page": 20,
       "scan_leaf": 60,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription and citation-order skeleton only; no formal target is proposed.",
+      "lean_path": "Principia/Architecture/Star101Kernel.lean",
+      "declaration": "PM.Architecture.Star101Kernel.star_101_14 (refused candidate)",
+      "formal_scope": "refused: Card0 a is defined as a = empty and does not encode the cardinal-number equation Ncʻγ = 0",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer",
+      "integration_status": "blocked-strict-semantic-mismatch",
       "printed_dependencies": [
         "PM2:✱101·1",
         "PM2:✱101·12",
@@ -45,7 +45,10 @@
         "PM2:✱100·35",
         "PM1:✱54·102"
       ],
+      "lean_dependencies": [],
       "normalized_dependencies": [],
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star101-catalogue-02-semantic-audit.md",
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-101-14.txt"
     },
     {
@@ -54,19 +57,22 @@
       "printed": "✱101·15. ⊢ . smʻʻ0 = 0",
       "printed_page": 20,
       "scan_leaf": 60,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription and citation-order skeleton only; no formal target is proposed.",
+      "lean_path": "Principia/Architecture/Star101Kernel.lean",
+      "declaration": "PM.Architecture.Star101Kernel.star_101_15 (refused candidate)",
+      "formal_scope": "refused: equality of two Card0 representatives omits the relation image smʻʻ0 and the cardinal object 0",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer",
+      "integration_status": "blocked-strict-semantic-mismatch",
       "printed_dependencies": [
         "PM1:✱37·1",
         "PM1:✱54·102",
         "PM1:✱73·48"
       ],
+      "lean_dependencies": [],
       "normalized_dependencies": [],
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star101-catalogue-02-semantic-audit.md",
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-101-15.txt"
     },
     {
@@ -75,19 +81,22 @@
       "printed": "✱101·16. ⊢ :. μ ∈ NC − ιʻ0 .⊃ : α ∈ μ .⊃ₐ. ∃!α",
       "printed_page": 20,
       "scan_leaf": 60,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "lean_path": "Principia/Architecture/Star101Kernel.lean",
+      "declaration": "PM.Architecture.Star101Kernel.star_101_16 (refused candidate)",
+      "formal_scope": "refused: nonemptiness of an underlying predicate omits NC, exclusion of the cardinal 0, and the printed contextual universal implication",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer",
+      "integration_status": "blocked-strict-semantic-mismatch",
       "printed_dependencies": [
         "PM2:✱100·45",
         "PM2:✱101·1",
         "PM1:✱24·63"
       ],
+      "lean_dependencies": [],
       "normalized_dependencies": [],
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star101-catalogue-02-semantic-audit.md",
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-101-16.txt"
     }
   ],

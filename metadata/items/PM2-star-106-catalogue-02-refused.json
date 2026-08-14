@@ -1,0 +1,51 @@
+{
+  "batch": "PM2-STAR106-CATALOGUE-02-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "61",
+    "scan_leaves": [101],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱106·04",
+      "kind": "definition",
+      "printed": "✱106·04. μ₍₀₀₎ = smʻʻμ ∩ tʻt₀₀ʻt₁ʻμ Df",
+      "printed_page": 61,
+      "scan_leaf": 101,
+      "lean_path": "Principia/Architecture/Star106OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star106OpeningKernel.star_106_04",
+      "formal_scope": "refused: PM's relational image smʻʻμ requires a binary similarity fact relating the witness α to β; Lean's unary predicate sm b is independent of the existential witness a, so the defining class is not reconstructed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-relational-image-erased",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit": "reviews/Star106-catalogue-review.md"
+    },
+    {
+      "id": "PM2:✱106·041",
+      "kind": "definition",
+      "printed": "✱106·041. μ⁽¹¹⁾ = smʻʻμ ∩ tʻt¹¹ʻt₁ʻμ Df etc.",
+      "printed_page": 61,
+      "scan_leaf": 101,
+      "lean_path": "Principia/Architecture/Star106OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star106OpeningKernel.star_106_041",
+      "formal_scope": "refused: as in ·04, Lean replaces the binary similarity relation between existential source a and result b by a unary assumption sm b, erasing the relational-image condition",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-relational-image-erased",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star106-catalogue-review.md",
+      "semantic_audit": "reviews/Star106-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}
