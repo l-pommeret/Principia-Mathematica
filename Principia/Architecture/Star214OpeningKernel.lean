@@ -8,8 +8,10 @@ def Ded (maxDom seqDom : Set α) := ∀x,maxDom x∨seqDom x
 def SemiDed (sect proper maxDom seqDom : Set α) := ∀x,sect x→proper x→maxDom x∨seqDom x
 variable {α : Type u} {A B C D : Set α}
 
-theorem star_214_01 (A B : Set α) : Ded A B=∀x,A x∨B x := rfl
-theorem star_214_02 (S P A B : Set α) : SemiDed S P A B=∀x,S x→P x→A x∨B x := rfl
+/-- ✱214·01. `Ded=P̂{(α). α∈ᗡʻmax_P∪ᗡʻseq_P} Df`. -/
+def star_214_01 (A B : Set α) : Prop := ∀ x, A x ∨ B x
+/-- ✱214·02. `semi Ded=P̂(sectʻP−ιʻCʻP⊂ᗡʻmax_P∪ᗡʻseq_P) Df`. -/
+def star_214_02 (S P A B : Set α) : Prop := ∀ x, S x → P x → A x ∨ B x
 theorem star_214_1 (A B : Set α) : Ded A B↔∀x,A x∨B x := Iff.rfl
 theorem star_214_101 (A B : Set α) : Ded A B↔Included (Complement A) B := by simp [Ded,Included,Complement]; grind
 theorem star_214_12 (d : Ded A B) (h : C x) : A x∨B x := d x

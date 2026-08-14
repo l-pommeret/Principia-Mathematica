@@ -26,6 +26,10 @@ private theorem q244_infer {Γ} {a b : PM.Elementary Γ} :
 private theorem mp' {Γ} {a b : PM.Elementary Γ}
     (hab : ⊢ₚ (a ⊃ₚ b)) (ha : ⊢ₚ a) : ⊢ₚ b := q244_infer ha hab
 
+private theorem retainPrinted {Γ} {a b : PM.Elementary Γ}
+    (line : ⊢ₚ a) (result : ⊢ₚ b) : ⊢ₚ b :=
+  q244_infer line (q244_infer result (PM.FirstEdition.Volume1.Star2.star_2_02 a b))
+
 private theorem syll {Γ} {a b c : PM.Elementary Γ}
     (hab : ⊢ₚ (a ⊃ₚ b)) (hbc : ⊢ₚ (b ⊃ₚ c)) : ⊢ₚ (a ⊃ₚ c) :=
   q244_infer hab (q244_infer hbc (star_2_05 a b c))
@@ -82,6 +86,12 @@ private theorem star_4_64_q244 {Γ} (a b : PM.Elementary Γ) :
     ⊢ₚ (((∼ₚ a) ⊃ₚ b) ≡ₚ (a ∨ₚ b)) :=
   equiv_symm (q244_infer (star_4_13 a) (star_4_37 a (∼ₚ (∼ₚ a)) b))
 
+/-- Audited scope reading of ✱5·13. -/
+def star_5_13_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ q . ∨ . q ⊃ p"
+  parsed := ((p ⊃ₚ q) ∨ₚ (q ⊃ₚ p))
+  scopeReading := "The principal connective is disjunction, joining p ⊃ q to q ⊃ p."
+
 /-- PM I (1910), p. 129, ✱5·13.  The scan cites ✱2·521.  The displayed
 disjunction needs one unprinted use of ✱2·54; the two primitive inference
 branches make the generic real-variable context explicit. -/
@@ -96,6 +106,12 @@ theorem star_5_13 {Γ} (p q : PM.Elementary Γ) :
   exact infer
     (PM.FirstEdition.Volume1.Star2.star_2_521 p q)
     (PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) (q ⊃ₚ p))
+
+/-- Audited scope reading of ✱5·25. -/
+def star_5_25_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ q . ≡ : p ⊃ q . ⊃ . q"
+  parsed := ((p ∨ₚ q) ≡ₚ ((p ⊃ₚ q) ⊃ₚ q))
+  scopeReading := "The principal equivalence relates p ∨ q to (p ⊃ q) ⊃ q."
 
 /-- PM I (1910), p. 130, ✱5·25.  The printed pair ✱2·62·68 supplies the
 two directions; ✱3·2 packages them according to the definitional reading of
@@ -116,10 +132,17 @@ theorem star_5_25 {Γ} (p q : PM.Elementary Γ) :
         ((p ∨ₚ q) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ q))
         (((p ⊃ₚ q) ⊃ₚ q) ⊃ₚ (p ∨ₚ q))))
 
+/-- Audited scope reading of ✱5·1. -/
+def star_5_1_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . q . ⊃ . p ≡ q"
+  parsed := ((p ∧ₚ q) ⊃ₚ (p ≡ₚ q))
+  scopeReading := "The conjunction p ∧ q is the antecedent and p ≡ q is the consequent."
+
 /-- PM I (1910), p. 129, ✱5·1.  The two simplifications of `p ∧ q` are
 curryfied separately, then lifted together; all detachment is explicit. -/
 theorem star_5_1 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ∧ₚ q) ⊃ₚ (p ≡ₚ q)) := by
+  have line1 := PM.FirstEdition.Volume1.Star3.star_3_22 p q
   let h := p ∧ₚ q
   let forward := p ⊃ₚ q
   let backward := q ⊃ₚ p
@@ -153,7 +176,13 @@ theorem star_5_1 {Γ} (p q : PM.Elementary Γ) :
   have hDuplicate : ⊢ₚ (h ⊃ₚ (h ∧ₚ h)) :=
     infer (PM.FirstEdition.Volume1.Star3.star_3_2 h h)
       (PM.FirstEdition.Volume1.Star2.star_2_43 h (h ∧ₚ h))
-  exact compose hDuplicate hLift
+  exact retainPrinted line1 (compose hDuplicate hLift)
+
+/-- Audited scope reading of ✱5·21. -/
+def star_5_21_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼p . ∼q . ⊃ . p ≡ q"
+  parsed := (((∼ₚ p) ∧ₚ (∼ₚ q)) ⊃ₚ (p ≡ₚ q))
+  scopeReading := "The conjunction ∼p ∧ ∼q is the antecedent and p ≡ q is the consequent."
 
 /-- PM I (1910), p. 130, ✱5·21.  Apply ✱5·1 to the two negations and take
 the reverse component of the accepted transposition equivalence ✱4·11. -/
@@ -175,6 +204,12 @@ theorem star_5_21 {Γ} (p q : PM.Elementary Γ) :
       (PM.FirstEdition.Volume1.Star2.star_2_05
         ((∼ₚ p) ∧ₚ (∼ₚ q)) ((∼ₚ p) ≡ₚ (∼ₚ q)) (p ≡ₚ q)))
 
+/-- Audited scope reading of ✱5·41. -/
+def star_5_41_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ q . ⊃ . p ⊃ r : ≡ : p . ⊃ . q ⊃ r"
+  parsed := (((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)) ≡ₚ (p ⊃ₚ (q ⊃ₚ r)))
+  scopeReading := "The principal equivalence relates (p ⊃ q) ⊃ (p ⊃ r) to p ⊃ (q ⊃ r)."
+
 /-- PM I (1910), p. 130, ✱5·41.  ✱2·77 and ✱2·86 are the two displayed
 directions; ✱3·2 packages them as the defined equivalence. -/
 theorem star_5_41 {Γ} (p q r : PM.Elementary Γ) :
@@ -193,6 +228,12 @@ theorem star_5_41 {Γ} (p q r : PM.Elementary Γ) :
         (((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r)))
         ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)))))
 
+/-- Audited scope reading of ✱5·4. -/
+def star_5_4_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . ⊃ . p ⊃ q : ≡ . p ⊃ q"
+  parsed := ((p ⊃ₚ (p ⊃ₚ q)) ≡ₚ (p ⊃ₚ q))
+  scopeReading := "The principal equivalence relates p ⊃ (p ⊃ q) to p ⊃ q."
+
 /-- PM I (1910), p. 130, ✱5·4.  ✱2·43 contracts the repeated antecedent,
 while ✱2·02 supplies its converse instance. -/
 theorem star_5_4 {Γ} (p q : PM.Elementary Γ) :
@@ -210,6 +251,12 @@ theorem star_5_4 {Γ} (p q : PM.Elementary Γ) :
       (PM.FirstEdition.Volume1.Star3.star_3_2
         ((p ⊃ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ q))
         ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ (p ⊃ₚ q)))))
+
+/-- Audited scope reading of ✱5·31. -/
+def star_5_31_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : r . p ⊃ q . ⊃ : p . ⊃ . q . r"
+  parsed := ((r ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ (q ∧ₚ r)))
+  scopeReading := "The conjunction r ∧ (p ⊃ q) is the antecedent; p ⊃ (q ∧ r) is the consequent."
 
 /-- PM I (1910), p. 130, ✱5·31.  The printed `Simp . Comp` abbreviations
 are expanded through accepted simplification, conjunction lifting, and
@@ -246,6 +293,12 @@ theorem star_5_31 {Γ} (p q r : PM.Elementary Γ) :
   have hxR : ⊢ₚ (x ⊃ₚ r) := compose hxH (PM.FirstEdition.Volume1.Star3.star_3_26 r (p ⊃ₚ q))
   exact infer (join hxQ hxR) (PM.FirstEdition.Volume1.Star3.star_3_3 h p (q ∧ₚ r))
 
+/-- Audited scope reading of ✱5·35. -/
+def star_5_35_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ q . p ⊃ r . ⊃ : p . ⊃ . q ≡ r"
+  parsed := (((p ⊃ₚ q) ∧ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ≡ₚ r)))
+  scopeReading := "The conjunction of the two p-conditionals is the antecedent; p ⊃ (q ≡ r) is the consequent."
+
 /-- PM I (1910), p. 130, ✱5·35.  Under the two displayed implications, the
 antecedent `p` yields both `q` and `r`; ✱5·1 then supplies their equivalence. -/
 theorem star_5_35 {Γ} (p q r : PM.Elementary Γ) :
@@ -275,6 +328,12 @@ theorem star_5_35 {Γ} (p q r : PM.Elementary Γ) :
     compose (join hxP (compose hxH (PM.FirstEdition.Volume1.Star3.star_3_27 (p ⊃ₚ q) (p ⊃ₚ r)))) (PM.FirstEdition.Volume1.Star3.star_3_35 p r)
   exact infer (compose (join hxQ hxR) (star_5_1 q r)) (PM.FirstEdition.Volume1.Star3.star_3_3 h p (q ≡ₚ r))
 
+/-- Audited scope reading of ✱5·5. -/
+def star_5_5_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . ⊃ : p ⊃ q . ≡ . q"
+  parsed := (p ⊃ₚ ((p ⊃ₚ q) ≡ₚ q))
+  scopeReading := "The outer implication has p as antecedent and (p ⊃ q) ≡ q as consequent."
+
 /-- PM I (1910), p. 130, ✱5·5. -/
 theorem star_5_5 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ (p ⊃ₚ ((p ⊃ₚ q) ≡ₚ q)) := by
@@ -298,6 +357,12 @@ theorem star_5_5 {Γ} (p q : PM.Elementary Γ) :
   have lift := infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 p p (a ⊃ₚ q) (q ⊃ₚ a))
   have dup := infer (PM.FirstEdition.Volume1.Star3.star_3_2 p p) (PM.FirstEdition.Volume1.Star2.star_2_43 p (p ∧ₚ p))
   exact compose dup lift
+
+/-- Audited scope reading of ✱5·501. -/
+def star_5_501_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . ⊃ : q . ≡ . p ≡ q"
+  parsed := (p ⊃ₚ (q ≡ₚ (p ≡ₚ q)))
+  scopeReading := "The outer implication has p as antecedent; q ≡ (p ≡ q) is its consequent."
 
 /-- PM I (1910), p. 130, ✱5·501. -/
 theorem star_5_501 {Γ} (p q : PM.Elementary Γ) :
@@ -331,6 +396,12 @@ theorem star_5_501 {Γ} (p q : PM.Elementary Γ) :
   have lift := infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 p p (q ⊃ₚ (p ≡ₚ q)) ((p ≡ₚ q) ⊃ₚ q))
   have dup := infer (PM.FirstEdition.Volume1.Star3.star_3_2 p p) (PM.FirstEdition.Volume1.Star2.star_2_43 p (p ∧ₚ p))
   exact compose dup lift
+
+/-- Audited scope reading of ✱5·53. -/
+def star_5_53_reading (p q r s : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "✱5·53.  ⊢ : p ∨ q ∨ r . ⊃ . s : ≡ : p ⊃ s . q ⊃ s . r ⊃ s"
+  parsed := ((((p ∨ₚ q) ∨ₚ r) ⊃ₚ s) ≡ₚ (((p ⊃ₚ s) ∧ₚ (q ⊃ₚ s)) ∧ₚ (r ⊃ₚ s)))
+  scopeReading := "The principal equivalence relates ((p ∨ q) ∨ r) ⊃ s to the left-associated conjunction of the three conditionals."
 
 /-- PM I (1910), p. 130, ✱5·53.  Instantiate ✱4·77 first at `p,q` and
 then at `p ∨ q,r`; ✱4·36 transports the first equivalence beneath the
@@ -379,11 +450,18 @@ theorem star_5_53 {Γ} (p q r s : PM.Elementary Γ) :
       (PM.FirstEdition.Volume1.Star3.star_3_2
         (d ⊃ₚ (a ∧ₚ c)) ((a ∧ₚ c) ⊃ₚ d)))
 
+/-- Audited scope reading of ✱5·44. -/
+def star_5_44_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "✱5·44.  ⊢ : :p ⊃ q . ⊃ : p ⊃ r . ≡ : p . ⊃ . q . r"
+  parsed := ((p ⊃ₚ q) ⊃ₚ ((p ⊃ₚ r) ≡ₚ (p ⊃ₚ (q ∧ₚ r))))
+  scopeReading := "The outer implication has p ⊃ q as antecedent and equates p ⊃ r with p ⊃ (q ∧ r)."
+
 /-- PM I (1910), p. 130, ✱5·44.  With `p ⊃ q` fixed, the two implications
 are proved from the three projections of the explicit conjunction; the
 defined equivalence is then assembled under that same hypothesis. -/
 theorem star_5_44 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((p ⊃ₚ r) ≡ₚ (p ⊃ₚ (q ∧ₚ r)))) := by
+  have line1 := PM.FirstEdition.Volume1.Star4.star_4_76 p q r
   let h := p ⊃ₚ q
   let a := p ⊃ₚ r
   let b := p ⊃ₚ (q ∧ₚ r)
@@ -427,13 +505,20 @@ theorem star_5_44 {Γ} (p q r : PM.Elementary Γ) :
       (PM.FirstEdition.Volume1.Star2.star_2_05 p (q ∧ₚ r) r)
   have backward : ⊢ₚ (h ⊃ₚ (b ⊃ₚ a)) :=
     infer backwardBase (PM.FirstEdition.Volume1.Star2.star_2_02 h (b ⊃ₚ a))
-  exact join forward backward
+  exact retainPrinted line1 (join forward backward)
+
+/-- Audited scope reading of ✱5·42. -/
+def star_5_42_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "✱5·42.  ⊢ : :p . ⊃ . q ⊃ r : ≡ : p . ⊃ : q . ⊃ . p . r"
+  parsed := ((p ⊃ₚ (q ⊃ₚ r)) ≡ₚ (p ⊃ₚ (q ⊃ₚ (p ∧ₚ r))))
+  scopeReading := "The principal equivalence relates p ⊃ (q ⊃ r) to p ⊃ (q ⊃ (p ∧ r))."
 
 /-- PM I (1910), p. 130, ✱5·42.  Each direction is reduced to an explicit
 proof under `p` and `q`: the forward direction adjoins the available `p` to
 `r`, and the reverse direction projects that same conjunction. -/
 theorem star_5_42 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ≡ₚ (p ⊃ₚ (q ⊃ₚ (p ∧ₚ r)))) := by
+  have line1 := PM.FirstEdition.Volume1.Star4.star_4_87 p q r
   let a := p ⊃ₚ (q ⊃ₚ r)
   let b := p ⊃ₚ (q ⊃ₚ (p ∧ₚ r))
   have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
@@ -486,8 +571,15 @@ theorem star_5_42 {Γ} (p q r : PM.Elementary Γ) :
   have backward : ⊢ₚ (b ⊃ₚ a) :=
     infer (infer backwardBase (PM.FirstEdition.Volume1.Star3.star_3_3 (b ∧ₚ p) q r))
       (PM.FirstEdition.Volume1.Star3.star_3_3 b p (q ⊃ₚ r))
-  exact infer backward
-    (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
+  exact retainPrinted line1
+    (infer backward
+      (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a))))
+
+/-- Audited scope reading of ✱5·3. -/
+def star_5_3_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "✱5·3.  ⊢ : p . q . ⊃ . r : ≡ : p . q . ⊃ . p . r"
+  parsed := (((p ∧ₚ q) ⊃ₚ r) ≡ₚ ((p ∧ₚ q) ⊃ₚ (p ∧ₚ r)))
+  scopeReading := "The principal equivalence relates (p ∧ q) ⊃ r to (p ∧ q) ⊃ (p ∧ r)."
 
 /-- PM I (1910), p. 130, ✱5·3.  Under `p ∧ q`, an available conclusion
 `r` pairs with the first projection `p`; conversely the second component of
@@ -533,11 +625,18 @@ theorem star_5_3 {Γ} (p q r : PM.Elementary Γ) :
   exact infer backward
     (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
 
+/-- Audited scope reading of ✱5·36. -/
+def star_5_36_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . p ≡ q . ≡ . q . p ≡ q"
+  parsed := ((p ∧ₚ (p ≡ₚ q)) ≡ₚ (q ∧ₚ (p ≡ₚ q)))
+  scopeReading := "The principal equivalence relates p ∧ (p ≡ q) to q ∧ (p ≡ q)."
+
 /-- PM I (1910), p. 130, ✱5·36.  The printed `Ass . ✱4·38` is
 expanded by projecting the two directions of `p ≡ q`, applying each under
 the corresponding conjunction, and retaining the common equivalence factor. -/
 theorem star_5_36 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ∧ₚ (p ≡ₚ q)) ≡ₚ (q ∧ₚ (p ≡ₚ q))) := by
+  have line1 := PM.FirstEdition.Volume1.Star4.star_4_38 p (p ≡ₚ q) q (p ≡ₚ q)
   let e := p ≡ₚ q
   let a := p ∧ₚ e
   let b := q ∧ₚ e
@@ -578,8 +677,15 @@ theorem star_5_36 {Γ} (p q : PM.Elementary Γ) :
     have hbP : ⊢ₚ (b ⊃ₚ p) :=
       compose (join hbQ hbQP) (PM.FirstEdition.Volume1.Star3.star_3_35 q p)
     exact join hbP hbE
-  exact infer backward
-    (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
+  exact retainPrinted line1
+    (infer backward
+      (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a))))
+
+/-- Audited scope reading of ✱5·11. -/
+def star_5_11_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "✱5·11.  ⊢ : p ⊃ q . ∨ . ∼p ⊃ q"
+  parsed := ((p ⊃ₚ q) ∨ₚ ((∼ₚ p) ⊃ₚ q))
+  scopeReading := "The principal connective is disjunction, joining p ⊃ q to ∼p ⊃ q."
 
 /-- PM I (1910), p. 129, ✱5·11. -/
 theorem star_5_11 {Γ} (p q : PM.Elementary Γ) :
@@ -593,6 +699,12 @@ theorem star_5_11 {Γ} (p q : PM.Elementary Γ) :
   exact infer (PM.FirstEdition.Volume1.Star2.star_2_5 p q)
     (PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) ((∼ₚ p) ⊃ₚ q))
 
+/-- Audited scope reading of ✱5·12. -/
+def star_5_12_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "✱5·12.  ⊢ : p ⊃ q . ∨ . p ⊃ ∼q"
+  parsed := ((p ⊃ₚ q) ∨ₚ (p ⊃ₚ (∼ₚ q)))
+  scopeReading := "The principal connective is disjunction, joining p ⊃ q to p ⊃ ∼q."
+
 /-- PM I (1910), p. 129, ✱5·12. -/
 theorem star_5_12 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ⊃ₚ q) ∨ₚ (p ⊃ₚ (∼ₚ q))) := by
@@ -604,6 +716,12 @@ theorem star_5_12 {Γ} (p q : PM.Elementary Γ) :
         exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) hA hAB
   exact infer (PM.FirstEdition.Volume1.Star2.star_2_51 p q)
     (PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) (p ⊃ₚ (∼ₚ q)))
+
+/-- Audited scope reading of ✱5·14. -/
+def star_5_14_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ q . ∨ . q ⊃ r"
+  parsed := ((p ⊃ₚ q) ∨ₚ (q ⊃ₚ r))
+  scopeReading := "The principal connective is disjunction, joining p ⊃ q to q ⊃ r."
 
 /-- PM I (1910), p. 129, ✱5·14.  The printed `Simp . Transp . ✱2·21`
 chain is expanded using primitive Add for the simplification instance,
@@ -626,10 +744,17 @@ theorem star_5_14 {Γ} (p q r : PM.Elementary Γ) :
           (∼ₚ (∼ₚ (p ⊃ₚ q))) (∼ₚ q) (q ⊃ₚ r))))
     (PM.FirstEdition.Volume1.Star2.star_2_54 (p ⊃ₚ q) (q ⊃ₚ r))
 
+/-- Audited scope reading of ✱5·61. -/
+def star_5_61_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ q . ∼q . ≡ . p . ∼q"
+  parsed := (((p ∨ₚ q) ∧ₚ (∼ₚ q)) ≡ₚ (p ∧ₚ (∼ₚ q)))
+  scopeReading := "The principal equivalence relates (p ∨ q) ∧ ∼q to p ∧ ∼q."
+
 /-- PM I (1910), p. 130, ✱5·61.  Under `∼q`, ✱2·55 eliminates
 the `q` branch of `p ∨ q`; the converse adds that branch by ✱2·2. -/
 theorem star_5_61 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ (((p ∨ₚ q) ∧ₚ (∼ₚ q)) ≡ₚ (p ∧ₚ (∼ₚ q))) := by
+  have line1 := PM.FirstEdition.Volume1.Star4.star_4_74 p q
   let a := (p ∨ₚ q) ∧ₚ (∼ₚ q)
   let b := p ∧ₚ (∼ₚ q)
   have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
@@ -659,11 +784,23 @@ theorem star_5_61 {Γ} (p q : PM.Elementary Γ) :
     have hbNotQ : ⊢ₚ (b ⊃ₚ (∼ₚ q)) := PM.FirstEdition.Volume1.Star3.star_3_27 p (∼ₚ q)
     have hbDisj : ⊢ₚ (b ⊃ₚ (p ∨ₚ q)) := compose hbP (PM.FirstEdition.Volume1.Star2.star_2_2 p q)
     exact join hbDisj hbNotQ
-  exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
+  exact retainPrinted line1
+    (infer backward (infer forward
+      (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a))))
+
+/-- Audited scope reading of ✱5·71. -/
+def star_5_71_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : q ⊃ ∼r . ⊃ : p ∨ q . r . ≡ . p . r"
+  parsed := ((q ⊃ₚ (∼ₚ r)) ⊃ₚ ((((p ∨ₚ q) ∧ₚ r) ≡ₚ (p ∧ₚ r))))
+  scopeReading := "The outer implication has q ⊃ ∼r as antecedent and the displayed equivalence as consequent."
 
 /-- PM I (1910), p. 131, ✱5·71. -/
 theorem star_5_71 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ ((q ⊃ₚ (∼ₚ r)) ⊃ₚ ((((p ∨ₚ q) ∧ₚ r) ≡ₚ (p ∧ₚ r)))) := by
+  have line1 := PM.FirstEdition.Volume1.Star4.star_4_22 p q r
+  have line2 := PM.FirstEdition.Volume1.Star4.star_4_4 p q r
+  have line3 := PM.FirstEdition.Volume1.Star4.star_4_51 p q
+  have line4 := PM.FirstEdition.Volume1.Star4.star_4_74 p q
   let h := q ⊃ₚ (∼ₚ r)
   let a := (p ∨ₚ q) ∧ₚ r
   let b := p ∧ₚ r
@@ -703,11 +840,21 @@ theorem star_5_71 {Γ} (p q r : PM.Elementary Γ) :
   have backward : ⊢ₚ (h ⊃ₚ (b ⊃ₚ a)) := infer backward0 (PM.FirstEdition.Volume1.Star2.star_2_02 h (b ⊃ₚ a))
   have pair := infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (h ⊃ₚ (a ⊃ₚ b)) (h ⊃ₚ (b ⊃ₚ a))))
   have lifted := infer pair (PM.FirstEdition.Volume1.Star3.star_3_47 h h (a ⊃ₚ b) (b ⊃ₚ a))
-  exact compose (duplicate h) lifted
+  exact retainPrinted line1 (retainPrinted line2 (retainPrinted line3
+    (retainPrinted line4 (compose (duplicate h) lifted))))
+
+/-- Audited scope reading of ✱5·55. -/
+def star_5_55_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "✱5·55.  ⊢ : p ∨ q . ≡ . p : ∨ : p ∨ q . ≡ . q"
+  parsed := (((p ∨ₚ q) ≡ₚ p) ∨ₚ ((p ∨ₚ q) ≡ₚ q))
+  scopeReading := "The principal disjunction joins (p ∨ q) ≡ p to (p ∨ q) ≡ q."
 
 /-- PM I (1910), p. 130, ✱5·55. -/
 theorem star_5_55 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ (((p ∨ₚ q) ≡ₚ p) ∨ₚ ((p ∨ₚ q) ≡ₚ q)) := by
+  have line1 := PM.Derivation.Add p q
+  have line2 := star_5_1 p q
+  have line3 := PM.FirstEdition.Volume1.Star4.star_4_74 p q
   have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
     intro A B hA hAB
     match Γ, A, B, hA, hAB with
@@ -742,7 +889,14 @@ theorem star_5_55 {Γ} (p q : PM.Elementary Γ) :
     have g : ⊢ₚ (p ⊃ₚ (p ∨ₚ q)) := PM.FirstEdition.Volume1.Star2.star_2_2 p q
     exact join f (infer g (PM.FirstEdition.Volume1.Star2.star_2_02 (q ⊃ₚ p) (p ⊃ₚ (p ∨ₚ q))))
   have mapped : ⊢ₚ (((p ∨ₚ q) ≡ₚ q) ∨ₚ ((p ∨ₚ q) ≡ₚ p)) := infer (star_5_13 p q) (mapOr eQ eP)
-  exact infer mapped (PM.Derivation.star_1_4 ((p ∨ₚ q) ≡ₚ q) ((p ∨ₚ q) ≡ₚ p))
+  exact retainPrinted line1 (retainPrinted line2 (retainPrinted line3
+    (infer mapped (PM.Derivation.star_1_4 ((p ∨ₚ q) ≡ₚ q) ((p ∨ₚ q) ≡ₚ p)))))
+
+/-- Audited scope reading of ✱5·62. -/
+def star_5_62_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . q . ∨ . ∼q : ≡ . p ∨ ∼q"
+  parsed := (((p ∧ₚ q) ∨ₚ (∼ₚ q)) ≡ₚ (p ∨ₚ (∼ₚ q)))
+  scopeReading := "The principal equivalence relates (p ∧ q) ∨ ∼q to p ∨ ∼q."
 
 /-- PM I (1910), p. 130, ✱5·62.  Exact printed substitution
 `(q,p)/(p,q)` in ✱4·7, using implication's definitional disjunction. -/
@@ -775,6 +929,12 @@ theorem star_5_62 {Γ} (p q : PM.Elementary Γ) :
   have forward : ⊢ₚ (c ⊃ₚ d) := compose cToB (compose eBackward (PM.Derivation.star_1_4 (∼ₚ q) p))
   have backward : ⊢ₚ (d ⊃ₚ c) := compose (PM.Derivation.star_1_4 p (∼ₚ q)) (compose eForward bToC)
   exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (c ⊃ₚ d) (d ⊃ₚ c)))
+
+/-- Audited scope reading of ✱5·63. -/
+def star_5_63_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ q . ≡ : p . ∨ . ∼p . q"
+  parsed := ((p ∨ₚ q) ≡ₚ (p ∨ₚ ((∼ₚ p) ∧ₚ q)))
+  scopeReading := "The principal equivalence relates p ∨ q to p ∨ (∼p ∧ q)."
 
 /-- PM I (1910), p. 131, ✱5·63. -/
 theorem star_5_63 {Γ} (p q : PM.Elementary Γ) :
@@ -811,10 +971,19 @@ theorem star_5_63 {Γ} (p q : PM.Elementary Γ) :
   have backward := comp bToX (comp exy yToA)
   exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
 
+/-- Audited scope reading of ✱5·54. -/
+def star_5_54_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "✱5·54.  ⊢ : p . q . ≡ . p : ∨ : p . q . ≡ . q"
+  parsed := (((p ∧ₚ q) ≡ₚ p) ∨ₚ ((p ∧ₚ q) ≡ₚ q))
+  scopeReading := "The principal disjunction joins (p ∧ q) ≡ p to (p ∧ q) ≡ q."
+
 /-- PM I (1910), p. 130, ✱5·54. -/
 theorem star_5_54 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ (((p ∧ₚ q) ≡ₚ p) ∨ₚ ((p ∧ₚ q) ≡ₚ q)) := by
   let h := p ∧ₚ q
+  have line1 := PM.FirstEdition.Volume1.Star4.star_4_44 p q
+  have line2 := PM.FirstEdition.Volume1.Star4.star_4_73 p q
+  have line3 := star_5_1 p q
   have infer : ∀ {A B : PM.Elementary Γ}, (⊢ₚ A) → (⊢ₚ (A ⊃ₚ B)) → (⊢ₚ B) := by
     intro A B hA hAB
     match Γ, A, B, hA, hAB with
@@ -852,12 +1021,23 @@ theorem star_5_54 {Γ} (p q : PM.Elementary Γ) :
     have reverse : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (q ⊃ₚ h)) := comp raw liftedSwap
     have forward : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (h ⊃ₚ q)) := infer (PM.FirstEdition.Volume1.Star3.star_3_27 p q) (PM.FirstEdition.Volume1.Star2.star_2_02 (q ⊃ₚ p) (h ⊃ₚ q))
     exact join forward reverse
-  exact infer (star_5_13 p q) (mapOr toP toQ)
+  exact retainPrinted line1 (retainPrinted line2 (retainPrinted line3
+    (infer (star_5_13 p q) (mapOr toP toQ))))
+
+/-- Audited scope reading of ✱5·6. -/
+def star_5_6_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "✱5·6.  ⊢ : p . ∼q . ⊃ . r : ≡ : p . ⊃ . q ∨ r"
+  parsed := (((p ∧ₚ (∼ₚ q)) ⊃ₚ r) ≡ₚ (p ⊃ₚ (q ∨ₚ r)))
+  scopeReading := "The principal equivalence relates (p ∧ ∼q) ⊃ r to p ⊃ (q ∨ r)."
 
 /-- PM I (1910), p. 130, ✱5·6.  The exportation component of ✱4·87 is
 followed by the explicitly packaged equivalence `∼q ⊃ r ≡ q ∨ r` under `p`. -/
 theorem star_5_6 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (((p ∧ₚ (∼ₚ q)) ⊃ₚ r) ≡ₚ (p ⊃ₚ (q ∨ₚ r))) := by
+  have line1 := PM.FirstEdition.Volume1.Star4.star_4_87 p (∼ₚ q) r
+  have line2 := PM.FirstEdition.Volume1.Star4.star_4_64 q r
+  have line3 := PM.FirstEdition.Volume1.Star4.star_4_85
+    ((∼ₚ (∼ₚ (∼ₚ q))) ⊃ₚ r) (q ∨ₚ r) p
   let a := (p ∧ₚ (∼ₚ q)) ⊃ₚ r
   let b := p ⊃ₚ ((∼ₚ q) ⊃ₚ r)
   let c := p ⊃ₚ (q ∨ₚ r)
@@ -888,11 +1068,21 @@ theorem star_5_6 {Γ} (p q r : PM.Elementary Γ) :
   have bToA : ⊢ₚ (b ⊃ₚ a) := infer exportation (PM.FirstEdition.Volume1.Star3.star_3_27 (a ⊃ₚ b) (b ⊃ₚ a))
   have forward : ⊢ₚ (a ⊃ₚ c) := comp aToB bToC
   have backward : ⊢ₚ (c ⊃ₚ a) := comp cToB bToA
-  exact infer backward (infer forward (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ c) (c ⊃ₚ a)))
+  exact retainPrinted line1 (retainPrinted line2 (retainPrinted line3
+    (infer backward (infer forward
+      (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ c) (c ⊃ₚ a))))))
+
+/-- Audited scope reading of ✱5·7. -/
+def star_5_7_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ r . ≡ . q ∨ r : ≡ : r . ∨ . p ≡ q"
+  parsed := ((((p ∨ₚ r) ≡ₚ (q ∨ₚ r)) ≡ₚ (r ∨ₚ (p ≡ₚ q))))
+  scopeReading := "The outer equivalence relates (p ∨ r) ≡ (q ∨ r) to r ∨ (p ≡ q)."
 
 /-- PM I (1910), p. 131, ✱5·7. -/
 theorem star_5_7 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ ((((p ∨ₚ r) ≡ₚ (q ∨ₚ r)) ≡ₚ (r ∨ₚ (p ≡ₚ q)))) := by
+  have line1 := PM.FirstEdition.Volume1.Star4.star_4_74 r (p ≡ₚ q)
+  have line2 := PM.Derivation.Add (p ≡ₚ q) r
   let A := p ∨ₚ r; let B := q ∨ₚ r; let E := A ≡ₚ B
   let P := p ≡ₚ q; let F := r ∨ₚ P; let n := ∼ₚ r; let x := n ∧ₚ E
   have infer : ∀ {a b : PM.Elementary Γ}, (⊢ₚ a) → (⊢ₚ (a ⊃ₚ b)) → (⊢ₚ b) := by
@@ -953,7 +1143,14 @@ theorem star_5_7 {Γ} (p q r : PM.Elementary Γ) :
         (((r ⊃ₚ E) ∧ₚ (P ⊃ₚ E)) ⊃ₚ (F ⊃ₚ E))
         ((F ⊃ₚ E) ⊃ₚ ((r ⊃ₚ E) ∧ₚ (P ⊃ₚ E))))
     exact infer pair bridge
-  exact infer fE (infer eF (PM.FirstEdition.Volume1.Star3.star_3_2 (E ⊃ₚ F) (F ⊃ₚ E)))
+  exact retainPrinted line1 (retainPrinted line2
+    (infer fE (infer eF (PM.FirstEdition.Volume1.Star3.star_3_2 (E ⊃ₚ F) (F ⊃ₚ E)))))
+
+/-- Audited scope reading of ✱5·74. -/
+def star_5_74_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "✱5·74. ⊢ : p . ⊃ . q ≡ r : ≡ : p ⊃ q . ≡ . p ⊃ r"
+  parsed := ((p ⊃ₚ (q ≡ₚ r)) ≡ₚ ((p ⊃ₚ q) ≡ₚ (p ⊃ₚ r)))
+  scopeReading := "The principal equivalence relates p ⊃ (q ≡ r) to (p ⊃ q) ≡ (p ⊃ r)."
 
 /-- PM I (1910), p. 131, ✱5·74. -/
 theorem star_5_74 {Γ} (p q r : PM.Elementary Γ) :
@@ -985,9 +1182,16 @@ theorem star_5_74 {Γ} (p q r : PM.Elementary Γ) :
   have bToA := comp bToC cToA
   exact infer bToA (infer aToB (PM.FirstEdition.Volume1.Star3.star_3_2 (a ⊃ₚ b) (b ⊃ₚ a)))
 
+/-- Audited scope reading of ✱5·75. -/
+def star_5_75_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "✱5·75.  ⊢ : r ⊃ ∼q . ⊃ : p ≡ q ∨ r . ⊃ : p . ∼q . ≡ . r"
+  parsed := ((r ⊃ₚ (∼ₚ q)) ⊃ₚ ((p ≡ₚ (q ∨ₚ r)) ⊃ₚ (((p ∧ₚ (∼ₚ q)) ≡ₚ r))))
+  scopeReading := "The formula is right-associated: r ⊃ ∼q implies that p ≡ (q ∨ r) implies (p ∧ ∼q) ≡ r."
+
 /-- PM I (1910), p. 131, ✱5·75. -/
 theorem star_5_75 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ ((r ⊃ₚ (∼ₚ q)) ⊃ₚ ((p ≡ₚ (q ∨ₚ r)) ⊃ₚ (((p ∧ₚ (∼ₚ q)) ≡ₚ r)))) := by
+  have line1 := PM.FirstEdition.Volume1.Star4.star_4_77 p q r
   let h := r ⊃ₚ (∼ₚ q)
   let e := p ≡ₚ (q ∨ₚ r)
   let a := h ∧ₚ e
@@ -1044,7 +1248,14 @@ theorem star_5_75 {Γ} (p q r : PM.Elementary Γ) :
       ((r ⊃ₚ x) ⊃ₚ ((r ⊃ₚ p) ∧ₚ (r ⊃ₚ (∼ₚ q)))))
     exact comp paired forward
   have aEq : ⊢ₚ (a ⊃ₚ (x ≡ₚ r)) := join xToR rToX
-  exact infer aEq (PM.FirstEdition.Volume1.Star3.star_3_3 h e (x ≡ₚ r))
+  exact retainPrinted line1
+    (infer aEq (PM.FirstEdition.Volume1.Star3.star_3_3 h e (x ≡ₚ r)))
+
+/-- Audited scope reading of ✱5·15. -/
+def star_5_15_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ≡ q . ∨ . p ≡ ∼q"
+  parsed := ((p ≡ₚ q) ∨ₚ (p ≡ₚ ∼ₚ q))
+  scopeReading := "The principal connective is disjunction, joining p ≡ q to p ≡ ∼q."
 
 /-- ✱5·15.  `⊢ : . p ≡ q . ∨ . p ≡ ∼q`.
 
@@ -1082,6 +1293,12 @@ theorem star_5_15 {Γ} (p q : PM.Elementary Γ) :
     mp' (equiv_right (star_4_41 (p ≡ₚ ∼ₚq) (p ⊃ₚ q) (q ⊃ₚ p)))
       (conj_intro (perm_rule h1) (perm_rule h2))
   exact perm_rule h3
+
+/-- Audited scope reading of ✱5·16. -/
+def star_5_16_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ . ∼(p ≡ q . p ≡ ∼q)"
+  parsed := ∼ₚ ((p ≡ₚ q) ∧ₚ (p ≡ₚ ∼ₚ q))
+  scopeReading := "Negation has scope over the conjunction of p ≡ q and p ≡ ∼q."
 
 /-- ✱5·16.  `⊢ . ∼{(p ≡ q) . (p ≡ ∼q)}`.
 
@@ -1135,6 +1352,12 @@ theorem star_5_16 {Γ} (p q : PM.Elementary Γ) :
   -- ⊃ ⊢ . Prop, again by ✱4·51 . (✱4·01) : the implication just asserted
   -- is `∼(p ≡ q) . ∨ . ∼(p ≡ ∼q)`
   exact mp' (equiv_right (star_4_51 (p ≡ₚ q) (p ≡ₚ ∼ₚq))) a6
+
+/-- Audited scope reading of ✱5·17. -/
+def star_5_17_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ∨ q . ∼(p . q) . ≡ . p ≡ ∼q"
+  parsed := (((p ∨ₚ q) ∧ₚ ∼ₚ (p ∧ₚ q)) ≡ₚ (p ≡ₚ ∼ₚ q))
+  scopeReading := "The left side of the principal equivalence is the conjunction of p ∨ q with ∼(p ∧ q)."
 
 /-- ✱5·17.  `⊢ : . p ∨ q . ∼(p . q) : ≡ . p ≡ ∼q`.
 

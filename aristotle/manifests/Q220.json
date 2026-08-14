@@ -5,9 +5,9 @@
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
     "strict": true,
-    "interface_gated": false,
-    "canonical_integration_forbidden": false,
-    "requires_one_to_one_kernel_remap": false
+    "interface_gated": true,
+    "canonical_integration_forbidden": true,
+    "requires_one_to_one_kernel_remap": true
   },
   "batch_items": [
     {
@@ -16,9 +16,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": true,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱2·82",
       "proof_permissions": [
@@ -75,6 +75,7 @@
         "PM1:✱2·12",
         "PM1:✱2·3",
         "PM1:✱2·31",
+        "PM1:✱2·32",
         "PM1:✱2·38",
         "PM1:✱2·53",
         "PM1:✱2·6",
@@ -105,6 +106,7 @@
         "PM1:✱2·12": "PM.FirstEdition.Volume1.Star2.star_2_12",
         "PM1:✱2·3": "PM.FirstEdition.Volume1.Star2.star_2_3",
         "PM1:✱2·31": "PM.FirstEdition.Volume1.Star2.star_2_31",
+        "PM1:✱2·32": "PM.FirstEdition.Volume1.Star2.star_2_32",
         "PM1:✱2·38": "PM.FirstEdition.Volume1.Star2.star_2_38",
         "PM1:✱2·53": "PM.FirstEdition.Volume1.Star2.star_2_53",
         "PM1:✱2·6": "PM.FirstEdition.Volume1.Star2.star_2_6",
@@ -125,10 +127,16 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·8",
+          "PM1:✱2·81"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·8",
+        "PM1:✱2·81"
+      ],
       "substitutions": [
         {
           "step": 1,
@@ -142,9 +150,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": true,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱2·83",
       "proof_permissions": [
@@ -201,9 +209,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": true,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱2·85",
       "proof_permissions": [
@@ -360,10 +368,22 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·04",
+          "PM1:✱2·05",
+          "PM1:✱2·06",
+          "PM1:✱2·54",
+          "PM1:✱2·55"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·04",
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱2·54",
+        "PM1:✱2·55"
+      ],
       "substitutions": []
     },
     {
@@ -372,9 +392,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": true,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱2·86",
       "proof_permissions": [
@@ -458,6 +478,7 @@
     "PM1:✱2·14",
     "PM1:✱2·3",
     "PM1:✱2·31",
+    "PM1:✱2·32",
     "PM1:✱2·38",
     "PM1:✱2·53",
     "PM1:✱2·54",
@@ -492,6 +513,7 @@
     "PM1:✱2·14": "PM.FirstEdition.Volume1.Star2.star_2_14",
     "PM1:✱2·3": "PM.FirstEdition.Volume1.Star2.star_2_3",
     "PM1:✱2·31": "PM.FirstEdition.Volume1.Star2.star_2_31",
+    "PM1:✱2·32": "PM.FirstEdition.Volume1.Star2.star_2_32",
     "PM1:✱2·38": "PM.FirstEdition.Volume1.Star2.star_2_38",
     "PM1:✱2·53": "PM.FirstEdition.Volume1.Star2.star_2_53",
     "PM1:✱2·54": "PM.FirstEdition.Volume1.Star2.star_2_54",
@@ -526,10 +548,45 @@
     "PM1:✱2·83",
     "PM1:✱2·85"
   ],
-  "direct_interface_dependencies": [],
-  "interface_dependencies": [],
-  "source_backfill_required": false,
-  "integration_blocked": false,
+  "direct_interface_dependencies": [
+    "PM1:✱2·04",
+    "PM1:✱2·05",
+    "PM1:✱2·06",
+    "PM1:✱2·54",
+    "PM1:✱2·55",
+    "PM1:✱2·8",
+    "PM1:✱2·81"
+  ],
+  "interface_dependencies": [
+    "PM1:✱2·04",
+    "PM1:✱2·05",
+    "PM1:✱2·06",
+    "PM1:✱2·07",
+    "PM1:✱2·08",
+    "PM1:✱2·1",
+    "PM1:✱2·11",
+    "PM1:✱2·12",
+    "PM1:✱2·13",
+    "PM1:✱2·14",
+    "PM1:✱2·3",
+    "PM1:✱2·31",
+    "PM1:✱2·32",
+    "PM1:✱2·38",
+    "PM1:✱2·53",
+    "PM1:✱2·54",
+    "PM1:✱2·55",
+    "PM1:✱2·6",
+    "PM1:✱2·62",
+    "PM1:✱2·621",
+    "PM1:✱2·73",
+    "PM1:✱2·74",
+    "PM1:✱2·75",
+    "PM1:✱2·76",
+    "PM1:✱2·8",
+    "PM1:✱2·81"
+  ],
+  "source_backfill_required": true,
+  "integration_blocked": true,
   "interface_signature_targets": {
     "PM1:✱2·82": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_82 {Γ} (p q r s : PM.Elementary Γ) :\n    ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (((p ∨ₚ ∼ₚ r) ∨ₚ s) ⊃ₚ ((p ∨ₚ q) ∨ₚ s))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",
     "PM1:✱2·83": "namespace PM.FirstEdition.Volume1.Star2\n\ntheorem star_2_83 {Γ} (p q r s : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ\n      ((p ⊃ₚ (r ⊃ₚ s)) ⊃ₚ (p ⊃ₚ (q ⊃ₚ s)))) := by\n  -- fill exactly from the whitelist\n\nend PM.FirstEdition.Volume1.Star2",

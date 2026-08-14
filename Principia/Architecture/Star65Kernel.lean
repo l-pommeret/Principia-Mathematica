@@ -26,20 +26,20 @@ private theorem both_idem (R : Relation α) (TX TY : Class α) :
     both TX (both TX R TY) TY = both TX R TY := by
   apply relExt; intro x y; simp [both, left, right, and_assoc]
 
-/-- ✱65·01. -/
-theorem star_65_01 (A T : Class α) : classSub A T = inter A T := rfl
-/-- ✱65·02. -/
-theorem star_65_02 (A T2 : Class α) : classParen A T2 = inter A T2 := rfl
-/-- ✱65·03. -/
-theorem star_65_03 (R : Relation α) (T : Class α) : relSub R T = left T R := rfl
-/-- ✱65·04. -/
-theorem star_65_04 (R : Relation α) (T2 : Class α) : relParen R T2 = left T2 R := rfl
-/-- ✱65·1. -/
-theorem star_65_1 (R : Relation α) (TX TY : Class α) : relPair R TX TY = both TX R TY := rfl
-/-- ✱65·11. -/
-theorem star_65_11 (R : Relation α) (T2X TY : Class α) : relMixed R T2X TY = both T2X R TY := rfl
-/-- ✱65·12. -/
-theorem star_65_12 (R : Relation α) (T2X T2Y : Class α) : relParenPair R T2X T2Y = both T2X R T2Y := rfl
+/-- ✱65·01. `αₓ = α ∩ tʻx` Df. -/
+def star_65_01 (A T : Class α) : Class α := inter A T
+/-- ✱65·02. `α(x) = α ∩ tʻtʻx` Df. -/
+def star_65_02 (A T2 : Class α) : Class α := inter A T2
+/-- ✱65·03. `Rₓ = (tʻx) ◁ R` Df. -/
+def star_65_03 (R : Relation α) (T : Class α) : Relation α := left T R
+/-- ✱65·04. `R(x) = (t²ʻx) ◁ R` Df. -/
+def star_65_04 (R : Relation α) (T2 : Class α) : Relation α := left T2 R
+/-- ✱65·1. `R_(x,y) = (tʻx) ◁ R ▷ (tʻy)` Df. -/
+def star_65_1 (R : Relation α) (TX TY : Class α) : Relation α := both TX R TY
+/-- ✱65·11. `R(x_y) = (t²ʻx) ◁ R ▷ (tʻy)` Df. -/
+def star_65_11 (R : Relation α) (T2X TY : Class α) : Relation α := both T2X R TY
+/-- ✱65·12. `R(x,y) = (t²ʻx) ◁ R ▷ (t²ʻy)` Df. -/
+def star_65_12 (R : Relation α) (T2X T2Y : Class α) : Relation α := both T2X R T2Y
 
 /-- ✱65·13. -/
 theorem star_65_13 (A B T : Class α) (hBT : Included B T) :

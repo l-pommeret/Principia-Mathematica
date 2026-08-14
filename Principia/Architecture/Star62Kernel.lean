@@ -13,7 +13,8 @@ def ExistsValue (a:Class A) := ∃x,∀y,a y↔y=x
 def Value (a:Class A) (x:A) := ∀y,a y↔y=x
 def EpsImage (a:Class A) : Class A := fun x => Eps x a
 
-theorem star_62_01 (x:A) (a:Class A) : Eps x a = a x := rfl
+/-- ✱62·01. `ε = ẑxα(x ε α) Df`. -/
+def star_62_01 (x : A) (a : Class A) : Prop := a x
 theorem star_62_1 (x:A) (a:Class A) : Eps x a ↔ a x := Iff.rfl
 theorem star_62_2 (a:Class A) : EpsImage a = a := rfl
 theorem star_62_21 (x:A) : EpsImage (Singleton x) = Singleton x := rfl

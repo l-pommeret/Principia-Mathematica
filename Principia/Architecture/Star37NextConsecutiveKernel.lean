@@ -14,10 +14,30 @@ def converseDomain (R : Relation α β) : Class β := fun y => ∃ x, R x y
 def image (R : Relation α β) (B : Class β) : Class α :=
   fun x => ∃ y, B y ∧ R x y
 
+/-- PM I ✱37·01: relational image, as an eliminable definition. -/
+def star_37_01 (R : Relation α β) (B : Class β) : Class α :=
+  fun x => ∃ y, B y ∧ R x y
+
 /-- The relation `R_∈` of ✱37·101: an output class is related to an input
 class exactly when it is the image of that input class. -/
 def imageRelation (R : Relation α β) : Relation (Class α) (Class β) :=
   fun A B => A = image R B
+
+/-- PM I ✱37·02: the relation whose value at `B` is the image `R``B`. -/
+def star_37_02 (R : Relation α β) : Relation (Class α) (Class β) :=
+  fun A B => A = star_37_01 R B
+
+/-- PM I ✱37·03: converse of the image relation. -/
+def star_37_03 (R : Relation α β) : Relation (Class β) (Class α) :=
+  converse (star_37_02 R)
+
+/-- PM I ✱37·04: the image, under `R_∈`, of a class of classes. -/
+def star_37_04 (R : Relation α β) (K : Class (Class β)) : Class (Class α) :=
+  image (star_37_02 R) K
+
+/-- PM I ✱37·05: every member of `B` has a unique `R`-value. -/
+def star_37_05 (R : Relation α β) (B : Class β) : Prop :=
+  ∀ y, B y → ∃ x, R x y ∧ ∀ z, R z y → z = x
 
 /-- PM I ✱37·23. -/
 theorem star_37_23 (R : Relation α β) :

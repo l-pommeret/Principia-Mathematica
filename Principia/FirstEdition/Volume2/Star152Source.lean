@@ -1,0 +1,122 @@
+/-! Principia Mathematica, first edition, volume II, ✱152.
+Source transcription from Project Gutenberg PG78255. -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·01
+Nr = smor⃗ Df
+PM-VERBATIM-END PM2:✱152·01 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·02
+NR= DʻNr Df
+PM-VERBATIM-END PM2:✱152·02 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·1
+⊢ .NrʻP=Q̂ (Q smor P)=Q̂ (P smor Q) [*32·11.(*152·01).*151·14]
+PM-VERBATIM-END PM2:✱152·1 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·11
+⊢ :Q∈ NrʻP.≡ .Q smor P.≡ .P smor Q [*152·1]
+PM-VERBATIM-END PM2:✱152·11 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·2
+⊢ .E!NrʻP [*152·1.*14·21]
+PM-VERBATIM-END PM2:✱152·2 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·21
+⊢ .ᗡʻNr=Rel [*152·2.*33·432]
+PM-VERBATIM-END PM2:✱152·21 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·22
+⊢ .Nr∈ 1 arrow Cls [*152·2.*71·166]
+PM-VERBATIM-END PM2:✱152·22 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·3
+⊢ .P∈ NrʻP [*151·13.*152·11]
+PM-VERBATIM-END PM2:✱152·3 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·31
+⊢ :P∈ NrʻQ.≡ .Q∈ NrʻP [*152·11]
+PM-VERBATIM-END PM2:✱152·31 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·32
+⊢ :P∈ NrʻQ.Q∈ NrʻR.⊃ .P∈ NrʻR [*151·15.*152·11]
+PM-VERBATIM-END PM2:✱152·32 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·321
+⊢ :P smor Q.⊃ .NrʻP=NrʻQ [*151·17.*152·1]
+PM-VERBATIM-END PM2:✱152·321 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·33
+⊢ :∃ !NrʻP∩ NrʻQ.⊃ .P smor Q.NrʻP=NrʻQ
+PM-VERBATIM-END PM2:✱152·33 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·35
+⊢ :. ∃ ! NrʻP.∨.∃ !NrʻQ:⊃ : NrʻP=NrʻQ.≡ .P∈ NrʻQ.≡ .Q∈ NrʻP.≡ .P smor Q
+PM-VERBATIM-END PM2:✱152·35 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·4
+⊢ :μ ∈ NR.≡ .(∃ P).μ =NrʻP [*37·78·79.(*152·02·01)]
+PM-VERBATIM-END PM2:✱152·4 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·41
+⊢ .NrʻP∈ NR [*152·4·2]
+PM-VERBATIM-END PM2:✱152·41 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·42
+⊢ :μ ,ν ∈ NR.∃ !μ ∩ ν .⊃ .μ =ν [*152·33·4]
+PM-VERBATIM-END PM2:✱152·42 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·43
+⊢ .NR∈ Cls² excl [*152·42]
+PM-VERBATIM-END PM2:✱152·43 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·44
+⊢ :. μ ∈ NR:∃ !μ .∨.∃ !NrʻP.⊃ :P∈ μ .≡ .NrʻP=μ [*152·35·4]
+PM-VERBATIM-END PM2:✱152·44 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·45
+⊢ :μ ∈ NR.P∈ μ .⊃ .NrʻP=μ [*152·44.*10·24]
+PM-VERBATIM-END PM2:✱152·45 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·5
+⊢ :μ ∈ NR.P,Q∈ μ .⊃ .P smor Q [*152·31·32·4]
+PM-VERBATIM-END PM2:✱152·5 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·51
+⊢ :μ ∈ NR.P∈ μ .⊃ .smorʻʻμ =NrʻP
+PM-VERBATIM-END PM2:✱152·51 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·52
+⊢ :μ ∈ NR.∃ !μ .⊃ .smorʻʻμ ∈ NR [*152·51·4]
+PM-VERBATIM-END PM2:✱152·52 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·53
+⊢ :∃ !NrʻQ.⊃ .smorʻʻNrʻQ=NrʻQ
+PM-VERBATIM-END PM2:✱152·53 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·54
+⊢ :. ∃ !μ .∃ !ν .⊃ :μ ∈ NR.ν =smorʻʻμ .≡ .ν ∈ NR.μ =smorʻʻν [Proof as in *100·53]
+PM-VERBATIM-END PM2:✱152·54 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·6
+⊢ .ι ^;P∈ NrʻP [*151·61]
+PM-VERBATIM-END PM2:✱152·6 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·62
+⊢ .x↓ ^;P∈ NrʻP [*151·64]
+PM-VERBATIM-END PM2:✱152·62 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·63
+⊢ .↓ x^;P∈ NrʻP [*151·65]
+PM-VERBATIM-END PM2:✱152·63 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·7
+⊢ .NcʻCʻQ=CʻʻNrʻQ
+PM-VERBATIM-END PM2:✱152·7 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·71
+⊢ :μ ∈ NR.⊃ .Cʻʻμ ∈ NC [*152·7]
+PM-VERBATIM-END PM2:✱152·71 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱152·72
+⊢ .NC-ι ʻΛ =Cʻʻʻ(NR-ι ʻΛ )
+PM-VERBATIM-END PM2:✱152·72 -/

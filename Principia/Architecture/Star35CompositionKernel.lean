@@ -61,13 +61,23 @@ theorem star_35_23 (S : Relation α β) (R : Relation β γ) (c : Class γ) :
   · rintro ⟨⟨y, hxy, hyz⟩, hcz⟩
     exact ⟨y, hxy, hyz, hcz⟩
 
-/-- PM I ✱35·24. -/
-theorem star_35_24 (a : Class α) (R : Relation α β) (S : Relation β γ) :
-    leftRestrictedComposition a R S = composition (leftRestriction a R) S := rfl
+/-- PM I ✱35·24: the bracket convention is an eliminable abbreviation. -/
+def star_35_24 (a : Class α) (R : Relation α β)
+    (S : Relation β γ) : Relation α γ :=
+  composition (leftRestriction a R) S
 
-/-- PM I ✱35·25. -/
-theorem star_35_25 (S : Relation α β) (R : Relation β γ) (c : Class γ) :
-    rightRestrictedComposition S R c = rightRestriction (composition S R) c := rfl
+/-- PM I ✱35·25: the bracket convention is an eliminable abbreviation. -/
+def star_35_25 (S : Relation α β) (R : Relation β γ)
+    (c : Class γ) : Relation α γ :=
+  rightRestriction (composition S R) c
+
+theorem star_35_24_unfold (a : Class α) (R : Relation α β)
+    (S : Relation β γ) :
+    star_35_24 a R S = composition (leftRestriction a R) S := rfl
+
+theorem star_35_25_unfold (S : Relation α β) (R : Relation β γ)
+    (c : Class γ) :
+    star_35_25 S R c = rightRestriction (composition S R) c := rfl
 
 /-- PM I ✱35·26, retaining its eight printed forms. -/
 theorem star_35_26 (a : Class α) (R : Relation α β) (S : Relation β γ) (c : Class γ) :
@@ -109,9 +119,14 @@ theorem star_35_26 (a : Class α) (R : Relation α β) (S : Relation β γ) (c :
   · simpa [restrictedComposition, leftRestrictedComposition, rightRestrictedComposition]
       using hDE.symm
 
-/-- PM I ✱35·27. -/
-theorem star_35_27 (a : Class α) (R : Relation α β) (S : Relation β γ) (c : Class γ) :
-    restrictedComposition a R S c = rightRestriction (leftRestrictedComposition a R S) c := rfl
+/-- PM I ✱35·27: the bracket convention is an eliminable abbreviation. -/
+def star_35_27 (a : Class α) (R : Relation α β)
+    (S : Relation β γ) (c : Class γ) : Relation α γ :=
+  rightRestriction (leftRestrictedComposition a R S) c
+
+theorem star_35_27_unfold (a : Class α) (R : Relation α β)
+    (S : Relation β γ) (c : Class γ) :
+    star_35_27 a R S c = rightRestriction (leftRestrictedComposition a R S) c := rfl
 
 /-- PM I ✱35·31. -/
 theorem star_35_31 (R : Relation α β) (a b : Class β) :

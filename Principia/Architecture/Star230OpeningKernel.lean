@@ -7,8 +7,11 @@ def Convergent (field cod : Set α) (image : α→Set α) (target : Set α) : Se
 def ExistsUnique (A : Set α) := ∃x,A x∧∀y,A y→y=x
 variable {α : Type u} {A B C D : Set α} {x y : α}
 
-theorem star_230_01 (F C : Set α) (I : α→Set α) (A : Set α) : Convergent F C I A=fun y=>F y∧C y∧Included (I y) A := rfl
-theorem star_230_02 (A : Set α) : ExistsUnique A↔∃x,A x∧∀y,A y→y=x := Iff.rfl
+/-- ✱230·01. RQ̄_cn α=CʻQ∩ᗡʻR∩ŷ(RʻʻQ←∗ʻy⊂α) Df -/
+def star_230_01 (F C : Set α) (I : α → Set α) (A : Set α) : Set α :=
+  fun y => F y ∧ C y ∧ Included (I y) A
+/-- ✱230·02. Q_cn=R̂α̂(∃!RQ̄_cn α) Df -/
+def star_230_02 (A : Set α) : Prop := ∃ x, A x ∧ ∀ y, A y → y = x
 theorem star_230_1 (F C : Set α) (I : α→Set α) : Convergent F C I A y↔F y∧C y∧Included (I y) A := Iff.rfl
 theorem star_230_11 (A : Set α) : ExistsUnique A↔ExistsUnique A := Iff.rfl
 theorem star_230_12 (h : ∀ x, A x → B x) : Included A B := fun x hx => h x hx

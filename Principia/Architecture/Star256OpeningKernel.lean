@@ -11,8 +11,10 @@ def WellFounded (R : Rel α) := ∀ a, Acc R a
 def OrdinalSeries (carrier : Class α) (less : Rel α) :=
   (∀ a b, less a b → carrier a ∧ carrier b) ∧ Transitive less ∧ ConnexOn carrier less ∧ WellFounded less
 
-theorem star_256_01 (less : Rel α) : Field less = fun x => (∃ y, less x y) ∨ ∃ y, less y x := rfl
-theorem star_256_02 (c : Class α) (one : α) : (fun x => c x ∨ x = one) = fun x => c x ∨ x = one := rfl
+/-- ✱256·01. `N₀ = Dʻlt Df`. -/
+def star_256_01 (less : Rel α) : Class α := fun x => (∃ y, less x y) ∨ ∃ y, less y x
+/-- ✱256·02. `V = N₀∪ιʻ1₀ Df`. -/
+def star_256_02 (c : Class α) (one : α) : Class α := fun x => c x ∨ x = one
 theorem star_256_1 (c : Class α) (less : Rel α) (h : OrdinalSeries c less) : Transitive less := h.2.1
 theorem star_256_101 (P Q : Prop) (h : P → Q) : P → Q := h
 theorem star_256_102 (P Q : Prop) (h₁ : P → Q) (h₂ : Q → P) : P ↔ Q := ⟨h₁,h₂⟩

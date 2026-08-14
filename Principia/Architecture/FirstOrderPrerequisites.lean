@@ -213,7 +213,7 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
   | elementary {p : Elementary Γ} : Derivation p →
       OrderedAssertion (.elementary p)
   /-- ✱9·1, a closed Pp constructor at its exact formula schema. -/
-  | star_9_1 (φ : Apparent Γ [.elementaryProposition]) :
+  | star_9_1_rule (φ : Apparent Γ [.elementaryProposition]) :
       OrderedAssertion (star_9_1_target φ)
   /-- The explicit metalinguistic instance form of the same ✱9·1 Pp schema.
   Its value parameter corresponds to PM's schematic instantiation convention;
@@ -235,12 +235,12 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
       OrderedAssertion (star_9_13_higher_target body)
   /-- ✱9·11, deliberately independent of ✱9·1 as required by the printed
   circularity warning concerning the first-order Taut analogue. -/
-  | star_9_11 (φ : Apparent Γ [.elementaryProposition]) :
+  | star_9_11_rule (φ : Apparent Γ [.elementaryProposition]) :
       OrderedAssertion (star_9_11_target φ)
   /-- ✱9·12 at the single currently assigned first order: detachment only
   where the antecedent and implication carry the same certified order-one
   scope.  This is not a cross-order modus ponens. -/
-  | star_9_12 {p q : OrderedFormula Γ 1} :
+  | star_9_12_rule {p q : OrderedFormula Γ 1} :
       OrderedAssertion p → OrderedAssertion (firstImp p q) →
       OrderedAssertion q
   /-- The unique order-two specialization of the metalinguistic rule ✱9·12.
@@ -276,7 +276,7 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
   variable to the corresponding universally quantified first-order assertion.
   `openHead` fixes the exact real/apparent binding correspondence; arbitrary
   substitution is intentionally absent. -/
-  | star_9_13 (φ : Apparent Γ [.elementaryProposition]) :
+  | star_9_13_rule (φ : Apparent Γ [.elementaryProposition]) :
       OrderedAssertion (Γ := .elementaryProposition :: Γ)
         (.elementary (Apparent.openHead φ)) →
       OrderedAssertion (.firstOrder (FirstOrder.always φ))
@@ -289,6 +289,29 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
       OrderedAssertion (Γ := .elementaryProposition :: Γ)
         (.firstOrder (FirstOrder.openRealOuter φ)) →
       OrderedAssertion (firstOrderToSecondAll φ)
+
+/-- ✱9·1, exposed as a theorem so catalogue tooling can inspect its term. -/
+theorem OrderedAssertion.star_9_1 (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion (star_9_1_target φ) :=
+  OrderedAssertion.star_9_1_rule φ
+
+/-- ✱9·11, exposed as a theorem so catalogue tooling can inspect its term. -/
+theorem OrderedAssertion.star_9_11 (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion (star_9_11_target φ) :=
+  OrderedAssertion.star_9_11_rule φ
+
+/-- ✱9·12, the order-one detachment primitive under its catalogued name. -/
+theorem OrderedAssertion.star_9_12 {p q : OrderedFormula Γ 1}
+    (hp : OrderedAssertion p) (hpq : OrderedAssertion (firstImp p q)) :
+    OrderedAssertion q :=
+  OrderedAssertion.star_9_12_rule hp hpq
+
+/-- ✱9·13, the generalization primitive under its catalogued name. -/
+theorem OrderedAssertion.star_9_13 (φ : Apparent Γ [.elementaryProposition])
+    (h : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+      (.elementary (Apparent.openHead φ))) :
+    OrderedAssertion (.firstOrder (FirstOrder.always φ)) :=
+  OrderedAssertion.star_9_13_rule φ h
 
 /-- Line (2) of the printed demonstration of ✱9·3.  The diagonal elementary
 instance of ✱1·2 is the antecedent; the supplied instance of ✱9·1 has the

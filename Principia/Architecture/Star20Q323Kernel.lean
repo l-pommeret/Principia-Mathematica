@@ -12,8 +12,12 @@ namespace PM.Architecture.Star20Q323Kernel
 
 open PM.Architecture.Star20Q317Definitions
 
-/-- Exact contextual target of ✱20·59.  `(ια)(fα)` is eliminated by the
-existing class-description scope and never made into a freely denoting term. -/
+/-- Secondary semantic target for ✱20·59. This `Prop` is deliberately not the
+v1 formalization: unlike the object formulas and `PM.Derivation` judgments in
+`Star2.lean`, it cannot express PM's class abstraction or contextual class
+description as object syntax. It remains useful only as a statement-design
+record while the primary object/judgment layer is blocked. `(ια)(fα)` is
+eliminated by the existing scope and never made into a freely denoting term. -/
 def star_20_59_target (φ : Class Object) (f : Class Object → Prop) : Prop :=
   ClassDescriptionScope f (fun described => φ = described ↔ described = φ)
 

@@ -1,4 +1,5 @@
 import Principia.Deduction.Formed
+import Principia.Deduction.PrintedNames
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star1
 import Principia.FirstEdition.Volume1.Part1.SectionA.Star2
 
@@ -22,6 +23,14 @@ namespace PM.FirstEdition.Volume1.Star3
 
 open PM
 open PM.Elementary
+
+/-- ✱1·01, used as the explicit definitional rewrite printed in ✱3. -/
+theorem star_1_01 {Γ} (p q : PM.Elementary Γ) :
+    (p ⊃ₚ q) = ((∼ₚ p) ∨ₚ q) := rfl
+
+/-- ✱3·01, used as the explicit definitional rewrite printed in ✱3. -/
+theorem star_3_01 {Γ} (p q : PM.Elementary Γ) :
+    (p ∧ₚ q) = ∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)) := rfl
 
 /- PM-VERBATIM-BEGIN PM1:✱3·01
 ✱3·01.  p . q .=. ∼(∼p ∨ ∼q)     Df
@@ -113,33 +122,67 @@ PM-VERBATIM-END PM1:✱3·13 -/
 ✱3·14.  ⊢ : ∼p ∨ ∼q . ⊃ . ∼(p . q)     [✱3·1 . Transp]
 PM-VERBATIM-END PM1:✱3·14 -/
 
-/-- ✱3·1. Id applied to the product, with ✱3·01 made explicit by unfolding
+/- ✱3·1. Id applied to the product, with ✱3·01 made explicit by unfolding
 its definitional abbreviation. -/
+/-- Audited scope reading of ✱3·1. -/
+def star_3_1_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . q . ⊃ . ∼(∼p ∨ ∼q)     [Id . (✱3·01)]"
+  parsed := (p ∧ₚ q) ⊃ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))
+  scopeReading := "The product p . q is the antecedent; ∼(∼p ∨ ∼q) is the consequent."
+
 theorem star_3_1 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ∧ₚ q) ⊃ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))) := by
-  simpa only [PM.Elementary.conj] using
+  have line1 : ⊢ₚ ((p ∧ₚ q) ⊃ₚ (p ∧ₚ q)) :=
     PM.FirstEdition.Volume1.Star2.star_2_08 (p ∧ₚ q)
+  rw [star_3_01 p q] at line1
+  exact line1
 
-/-- ✱3·11. The converse reading of the same definitional product. -/
+/- ✱3·11. The converse reading of the same definitional product. -/
+/-- Audited scope reading of ✱3·11. -/
+def star_3_11_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼(∼p ∨ ∼q) . ⊃ . p . q     [Id . (✱3·01)]"
+  parsed := (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) ⊃ₚ (p ∧ₚ q)
+  scopeReading := "∼(∼p ∨ ∼q) is the antecedent; the product p . q is the consequent."
+
 theorem star_3_11 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) ⊃ₚ (p ∧ₚ q)) := by
-  simpa only [PM.Elementary.conj] using
+  have line1 : ⊢ₚ ((p ∧ₚ q) ⊃ₚ (p ∧ₚ q)) :=
     PM.FirstEdition.Volume1.Star2.star_2_08 (p ∧ₚ q)
+  rw [star_3_01 p q] at line1
+  exact line1
 
-/-- ✱3·12. ✱2·11 under the printed substitution `(∼p ∨ ∼q)/p`; the two
+/- ✱3·12. ✱2·11 under the printed substitution `(∼p ∨ ∼q)/p`; the two
 successive Group-I sum marks are left-associated. -/
+/-- Audited scope reading of ✱3·12. -/
+def star_3_12_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼p . ∨ . ∼q . ∨ . p . q     [✱2·11 (∼p ∨ ∼q)/p]"
+  parsed := ((∼ₚ p) ∨ₚ (∼ₚ q)) ∨ₚ (p ∧ₚ q)
+  scopeReading := "The successive disjunctions are left-associated, with p . q as the final disjunct."
+
 theorem star_3_12 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ (((∼ₚ p) ∨ₚ (∼ₚ q)) ∨ₚ (p ∧ₚ q)) :=
   PM.FirstEdition.Volume1.Star2.star_2_11 ((∼ₚ p) ∨ₚ (∼ₚ q))
 
-/-- ✱3·13. The printed ✱3·11 followed by the `Transp` form ✱2·15. -/
+/- ✱3·13. The printed ✱3·11 followed by the `Transp` form ✱2·15. -/
+/-- Audited scope reading of ✱3·13. -/
+def star_3_13_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼(p . q) . ⊃ . ∼p ∨ ∼q     [✱3·11 . Transp]"
+  parsed := (∼ₚ (p ∧ₚ q)) ⊃ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))
+  scopeReading := "The negation of the product is the antecedent; ∼p ∨ ∼q is the consequent."
+
 theorem star_3_13 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((∼ₚ (p ∧ₚ q)) ⊃ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) :=
   PM.Derivation.detach (star_3_11 p q)
     (PM.FirstEdition.Volume1.Star2.star_2_15 ((∼ₚ p) ∨ₚ (∼ₚ q)) (p ∧ₚ q))
 
-/-- ✱3·14. The printed ✱3·1 followed by `Transp` (✱2·16), with the
+/- ✱3·14. The printed ✱3·1 followed by `Transp` (✱2·16), with the
 double-negation and syllogism steps that the historical alias suppresses. -/
+/-- Audited scope reading of ✱3·14. -/
+def star_3_14_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼p ∨ ∼q . ⊃ . ∼(p . q)     [✱3·1 . Transp]"
+  parsed := ((∼ₚ p) ∨ₚ (∼ₚ q)) ⊃ₚ (∼ₚ (p ∧ₚ q))
+  scopeReading := "∼p ∨ ∼q is the antecedent; the negation of the product is the consequent."
+
 theorem star_3_14 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ (((∼ₚ p) ∨ₚ (∼ₚ q)) ⊃ₚ (∼ₚ (p ∧ₚ q))) := by
   have hImp : ⊢ₚ ((p ∧ₚ q) ⊃ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))) := star_3_1 p q
@@ -190,16 +233,34 @@ Dem.
 The above is the law of contradiction.
 PM-VERBATIM-END PM1:✱3·24 -/
 
-/-- ✱3·2. The printed citation omits the required ✱2·32 reassociation. -/
+/- ✱3·2. The printed citation omits the required ✱2·32 reassociation. -/
+/-- Audited scope reading of ✱3·2. -/
+def star_3_2_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . ⊃ : q . ⊃ . p . q"
+  parsed := p ⊃ₚ (q ⊃ₚ (p ∧ₚ q))
+  scopeReading := "The nested dots make p the outer antecedent and q the inner antecedent of the product conclusion."
+
 theorem star_3_2 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ (p ⊃ₚ (q ⊃ₚ (p ∧ₚ q))) :=
   PM.Derivation.detach (star_3_12 p q)
     (PM.FirstEdition.Volume1.Star2.star_2_32 (∼ₚ p) (∼ₚ q) (p ∧ₚ q))
 
+/-- Audited scope reading of ✱3·21. -/
+def star_3_21_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : q . ⊃ : p . ⊃ . p . q"
+  parsed := q ⊃ₚ (p ⊃ₚ (p ∧ₚ q))
+  scopeReading := "The nested dots make q the outer antecedent and p the inner antecedent of the product conclusion."
+
 theorem star_3_21 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ (q ⊃ₚ (p ⊃ₚ (p ∧ₚ q))) :=
   PM.Derivation.detach (star_3_2 p q)
     (PM.FirstEdition.Volume1.Star2.star_2_04 p q (p ∧ₚ q))
+
+/-- Audited scope reading of ✱3·22. -/
+def star_3_22_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . q . ⊃ . q . p"
+  parsed := (p ∧ₚ q) ⊃ₚ (q ∧ₚ p)
+  scopeReading := "The product p . q is the antecedent and the reversed product q . p is the consequent."
 
 theorem star_3_22 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ∧ₚ q) ⊃ₚ (q ∧ₚ p)) :=
@@ -215,54 +276,112 @@ theorem star_3_22 {Γ} (p q : PM.Elementary Γ) :
           ((∼ₚ p) ∨ₚ (∼ₚ q)) (∼ₚ (p ∧ₚ q)))))
     (PM.FirstEdition.Volume1.Star2.star_2_17 (p ∧ₚ q) (q ∧ₚ p))
 
+/-- Audited scope reading of ✱3·24. -/
+def star_3_24_reading (p : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ . ∼(p . ∼p)"
+  parsed := ∼ₚ (p ∧ₚ (∼ₚ p))
+  scopeReading := "The outer negation applies to the whole product p . ∼p."
+
 theorem star_3_24 {Γ} (p : PM.Elementary Γ) :
     ⊢ₚ (∼ₚ (p ∧ₚ (∼ₚ p))) :=
   PM.Derivation.detach
     (PM.FirstEdition.Volume1.Star2.star_2_11 (∼ₚ p))
     (star_3_14 p (∼ₚ p))
 
-/-- PM I (1910), p. 117, ✱3·26. -/
-theorem star_3_26 {Γ} (p q : PM.Elementary Γ) :
-    ⊢ₚ ((p ∧ₚ q) ⊃ₚ p) :=
-  PM.Derivation.detach
-    (PM.Derivation.detach
-      (PM.FirstEdition.Volume1.Star2.star_2_02 q p)
-      (PM.FirstEdition.Volume1.Star2.star_2_31 (∼ₚ p) (∼ₚ q) p))
-    (PM.FirstEdition.Volume1.Star2.star_2_53 ((∼ₚ p) ∨ₚ (∼ₚ q)) p)
+/- PM I (1910), p. 117, ✱3·26. -/
+/-- Audited scope reading of ✱3·26. -/
+def star_3_26_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . q . ⊃ . p"
+  parsed := (p ∧ₚ q) ⊃ₚ p
+  scopeReading := "The product p . q is the antecedent; p is the consequent."
 
-/-- PM I (1910), p. 117, ✱3·27. The printed chain leaves its one
+theorem star_3_26 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∧ₚ q) ⊃ₚ p) := by
+  have line1 : ⊢ₚ (p ⊃ₚ (q ⊃ₚ p)) :=
+    PM.FirstEdition.Volume1.Star2.star_2_02 q p
+  rw [star_1_01 p (q ⊃ₚ p), star_1_01 q p] at line1
+  have line2 : ⊢ₚ ((∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) ⊃ₚ p) :=
+    PM.Derivation.detach
+      (PM.Derivation.detach line1
+        (PM.FirstEdition.Volume1.Star2.star_2_31 (∼ₚ p) (∼ₚ q) p))
+      (PM.FirstEdition.Volume1.Star2.star_2_53 ((∼ₚ p) ∨ₚ (∼ₚ q)) p)
+  rw [← star_3_01 p q] at line2
+  exact line2
+
+/- PM I (1910), p. 117, ✱3·27. The printed chain leaves its one
 composition step implicit; see the documented ✱1·6 relaxation. -/
+/-- Audited scope reading of ✱3·27. -/
+def star_3_27_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . q . ⊃ . q"
+  parsed := (p ∧ₚ q) ⊃ₚ q
+  scopeReading := "The product p . q is the antecedent; q is the consequent."
+
 theorem star_3_27 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ∧ₚ q) ⊃ₚ q) :=
   PM.Derivation.detach (star_3_22 p q)
     (PM.Derivation.detach (star_3_26 q p)
       (PM.Derivation.star_1_6 (∼ₚ (p ∧ₚ q)) (q ∧ₚ p) q))
 
+/-- Audited scope reading of ✱3·3. -/
+def star_3_3_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . q . ⊃ . r : ⊃ : p . ⊃ . q ⊃ r"
+  parsed := ((p ∧ₚ q) ⊃ₚ r) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r))
+  scopeReading := "The major dots group (p . q) ⊃ r as antecedent and p ⊃ (q ⊃ r) as consequent."
+
 theorem star_3_3 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r))) := by
-  have a := PM.FirstEdition.Volume1.Star2.star_2_15 ((∼ₚ p) ∨ₚ (∼ₚ q)) r
-  have b := PM.FirstEdition.Volume1.Star2.star_2_04 (∼ₚ r) p (∼ₚ q)
-  have c := PM.Derivation.detach
+  have line1 := PM.FirstEdition.Volume1.Star2.star_2_15 ((∼ₚ p) ∨ₚ (∼ₚ q)) r
+  have line2 := PM.FirstEdition.Volume1.Star2.star_2_04 (∼ₚ r) p (∼ₚ q)
+  have line3 := PM.Derivation.detach
     (PM.FirstEdition.Volume1.Star2.star_2_17 q r)
     (PM.FirstEdition.Volume1.Star2.star_2_05 p ((∼ₚ r) ⊃ₚ (∼ₚ q)) (q ⊃ₚ r))
-  have ab := PM.Derivation.detach b
-    (PM.Derivation.detach a (PM.FirstEdition.Volume1.Star2.star_2_06
+  have line4 := PM.Derivation.detach line2
+    (PM.Derivation.detach line1 (PM.FirstEdition.Volume1.Star2.star_2_06
       ((p ∧ₚ q) ⊃ₚ r) ((∼ₚ r) ⊃ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))
       (p ⊃ₚ ((∼ₚ r) ⊃ₚ (∼ₚ q)))))
-  exact PM.Derivation.detach c (PM.Derivation.detach ab
+  have line5 := PM.Derivation.detach line3 (PM.Derivation.detach line4
     (PM.FirstEdition.Volume1.Star2.star_2_06 ((p ∧ₚ q) ⊃ₚ r)
       (p ⊃ₚ ((∼ₚ r) ⊃ₚ (∼ₚ q))) (p ⊃ₚ (q ⊃ₚ r))))
+  rw [star_3_01 p q, star_1_01 (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) r] at line5
+  let T : PM.Elementary Γ := ((p ∧ₚ q) ⊃ₚ r) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r))
+  let U : PM.Elementary Γ :=
+    ((∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) ⊃ₚ r) ⊃ₚ
+      ((∼ₚ r) ⊃ₚ (∼ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))))
+  have transp : ⊢ₚ U := PM.FirstEdition.Volume1.Star2.star_2_16
+    (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) r
+  have identity : ⊢ₚ (T ⊃ₚ T) := PM.FirstEdition.Volume1.Star2.star_2_08 T
+  have line5' : ⊢ₚ T := PM.Derivation.detach line5 identity
+  exact PM.Derivation.detach transp
+    (PM.Derivation.detach line5'
+      (PM.FirstEdition.Volume1.Star2.star_2_02 U T))
 
-/-- PM I (1910), p. 117, ✱3·31. The printed chain leaves its one
+/- PM I (1910), p. 117, ✱3·31. The printed chain leaves its one
 composition step implicit; see the documented ✱1·6 relaxation. -/
+/-- Audited scope reading of ✱3·31. -/
+def star_3_31_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . ⊃ . q ⊃ r : ⊃ : p . q . ⊃ . r"
+  parsed := (p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)
+  scopeReading := "The major dots group p ⊃ (q ⊃ r) as antecedent and (p . q) ⊃ r as consequent."
+
 theorem star_3_31 {Γ} (p q r : PM.Elementary Γ) :
-    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)) :=
-  PM.Derivation.detach
-    (PM.FirstEdition.Volume1.Star2.star_2_31 (∼ₚ p) (∼ₚ q) r)
-    (PM.Derivation.detach
+    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)) := by
+  have line1 : ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((∼ₚ p) ∨ₚ ((∼ₚ q) ∨ₚ r))) := by
+    rw [star_1_01 p (q ⊃ₚ r), star_1_01 q r]
+    exact PM.FirstEdition.Volume1.Star2.star_2_08 ((∼ₚ p) ∨ₚ ((∼ₚ q) ∨ₚ r))
+  have line2 : ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ (((∼ₚ p) ∨ₚ (∼ₚ q)) ∨ₚ r)) :=
+    PM.Derivation.detach line1 (PM.Derivation.detach
+      (PM.FirstEdition.Volume1.Star2.star_2_31 (∼ₚ p) (∼ₚ q) r)
+      (PM.FirstEdition.Volume1.Star2.star_2_05
+        (p ⊃ₚ (q ⊃ₚ r)) ((∼ₚ p) ∨ₚ ((∼ₚ q) ∨ₚ r))
+        (((∼ₚ p) ∨ₚ (∼ₚ q)) ∨ₚ r)))
+  have line3 : ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) ⊃ₚ r)) :=
+    PM.Derivation.detach line2 (PM.Derivation.detach
       (PM.FirstEdition.Volume1.Star2.star_2_53 ((∼ₚ p) ∨ₚ (∼ₚ q)) r)
-      (PM.Derivation.star_1_6 (∼ₚ (p ⊃ₚ (q ⊃ₚ r)))
-        (((∼ₚ p) ∨ₚ (∼ₚ q)) ∨ₚ r) ((p ∧ₚ q) ⊃ₚ r)))
+      (PM.FirstEdition.Volume1.Star2.star_2_05
+        (p ⊃ₚ (q ⊃ₚ r)) (((∼ₚ p) ∨ₚ (∼ₚ q)) ∨ₚ r)
+        ((∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) ⊃ₚ r)))
+  rw [← star_3_01 p q] at line3
+  exact line3
 
 /- PM-VERBATIM-BEGIN PM1:✱3·26
 ✱3·26.  ⊢ : p . q . ⊃ . p
@@ -326,39 +445,69 @@ usually more convenient than either ✱2·05 or ✱2·06.
 ✱3·35.  ⊢ : p . p ⊃ q . ⊃ . q     [✱2·27.Imp]
 PM-VERBATIM-END PM1:✱3·35 -/
 
-/-- PM I (1910), p. 118, ✱3·33.  The printed `Syll.Imp` step is one
+/- PM I (1910), p. 118, ✱3·33.  The printed `Syll.Imp` step is one
 detachment.  In a nonempty real-variable context this is the printed ✱1·11;
 the empty-context branch is the documented ✱1·1 relaxation. -/
+/-- Audited scope reading of ✱3·33. -/
+def star_3_33_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ q . q ⊃ r . ⊃ . p ⊃ r"
+  parsed := ((p ⊃ₚ q) ∧ₚ (q ⊃ₚ r)) ⊃ₚ (p ⊃ₚ r)
+  scopeReading := "The two adjacent implications form the product antecedent; p ⊃ r is the consequent."
+
 theorem star_3_33 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (((p ⊃ₚ q) ∧ₚ (q ⊃ₚ r)) ⊃ₚ (p ⊃ₚ r)) := by
-  have minor : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r))) :=
-    PM.FirstEdition.Volume1.Star2.star_2_06 p q r
-  have major :
+  have line1 : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
+    PM.FirstEdition.Volume1.Star2.star_2_05 p q r
+  have line2a : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r))) :=
+    PM.Derivation.detach line1
+      (PM.FirstEdition.Volume1.Star2.star_2_04 (q ⊃ₚ r) (p ⊃ₚ q) (p ⊃ₚ r))
+  have line2 :
       ⊢ₚ (((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r))) ⊃ₚ
             (((p ⊃ₚ q) ∧ₚ (q ⊃ₚ r)) ⊃ₚ (p ⊃ₚ r))) :=
     star_3_31 (p ⊃ₚ q) (q ⊃ₚ r) (p ⊃ₚ r)
-  match Γ, p, q, r, minor, major with
-  | [], _, _, _, minor, major => exact PM.Derivation.star_1_1 minor major
-  | (τ :: Δ), _, _, _, minor, major =>
-      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) minor major
+  have line3 := PM.Derivation.detach line2a line2
+  have citedImp := PM.FirstEdition.Volume1.Star2.star_2_06 p q r
+  exact PM.Derivation.detach citedImp
+    (PM.Derivation.detach line3
+      (PM.FirstEdition.Volume1.Star2.star_2_02
+        ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r)))
+        (((p ⊃ₚ q) ∧ₚ (q ⊃ₚ r)) ⊃ₚ (p ⊃ₚ r))))
 
-/-- PM I (1910), p. 118, ✱3·34.  Its one detachment has the same documented
+/- PM I (1910), p. 118, ✱3·34.  Its one detachment has the same documented
 empty-context ✱1·1 relaxation as ✱3·33. -/
+/-- Audited scope reading of ✱3·34. -/
+def star_3_34_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : q ⊃ r . p ⊃ q . ⊃ . p ⊃ r"
+  parsed := ((q ⊃ₚ r) ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ r)
+  scopeReading := "The two adjacent implications form the product antecedent; p ⊃ r is the consequent."
+
 theorem star_3_34 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (((q ⊃ₚ r) ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ r)) := by
-  have minor : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
-    PM.FirstEdition.Volume1.Star2.star_2_05 p q r
-  have major :
+  have line1 : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ r) ⊃ₚ (p ⊃ₚ r))) :=
+    PM.FirstEdition.Volume1.Star2.star_2_06 p q r
+  have line2a : ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
+    PM.Derivation.detach line1
+      (PM.FirstEdition.Volume1.Star2.star_2_04 (p ⊃ₚ q) (q ⊃ₚ r) (p ⊃ₚ r))
+  have line2 :
       ⊢ₚ (((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) ⊃ₚ
             (((q ⊃ₚ r) ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ r))) :=
     star_3_31 (q ⊃ₚ r) (p ⊃ₚ q) (p ⊃ₚ r)
-  match Γ, p, q, r, minor, major with
-  | [], _, _, _, minor, major => exact PM.Derivation.star_1_1 minor major
-  | (τ :: Δ), _, _, _, minor, major =>
-      exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) minor major
+  have line3 := PM.Derivation.detach line2a line2
+  have citedImp := PM.FirstEdition.Volume1.Star2.star_2_05 p q r
+  exact PM.Derivation.detach citedImp
+    (PM.Derivation.detach line3
+      (PM.FirstEdition.Volume1.Star2.star_2_02
+        ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)))
+        (((q ⊃ₚ r) ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ r))))
 
-/-- PM I (1910), p. 118, ✱3·35.  Its one detachment has the same documented
+/- PM I (1910), p. 118, ✱3·35.  Its one detachment has the same documented
 empty-context ✱1·1 relaxation as ✱3·33. -/
+/-- Audited scope reading of ✱3·35. -/
+def star_3_35_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . p ⊃ q . ⊃ . q"
+  parsed := (p ∧ₚ (p ⊃ₚ q)) ⊃ₚ q
+  scopeReading := "The product of p and p ⊃ q is the antecedent; q is the consequent."
+
 theorem star_3_35 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ∧ₚ (p ⊃ₚ q)) ⊃ₚ q) := by
   have minor : ⊢ₚ (p ⊃ₚ ((p ⊃ₚ q) ⊃ₚ q)) :=
@@ -385,17 +534,90 @@ Dem.
 This is another form of transposition.
 PM-VERBATIM-END PM1:✱3·37 -/
 
+/-- Audited scope reading of ✱3·37. -/
+def star_3_37_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . q . ⊃ . r : ⊃ : p . ∼r . ⊃ . ∼q"
+  parsed := ((p ∧ₚ q) ⊃ₚ r) ⊃ₚ ((p ∧ₚ (∼ₚ r)) ⊃ₚ (∼ₚ q))
+  scopeReading := "The major dots make (p . q) ⊃ r the antecedent and (p . ∼r) ⊃ ∼q the consequent."
+
+/-- ✱3·37, following the three numbered intermediate lines in PM. -/
+theorem star_3_37 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ⊃ₚ ((p ∧ₚ (∼ₚ r)) ⊃ₚ (∼ₚ q))) := by
+  have compose : ∀ {A B C : PM.Elementary Γ}, (⊢ₚ (A ⊃ₚ B)) →
+      (⊢ₚ (B ⊃ₚ C)) → (⊢ₚ (A ⊃ₚ C)) := by
+    intro A B C hAB hBC
+    exact PM.Derivation.detach hAB
+      (PM.Derivation.detach hBC (PM.FirstEdition.Volume1.Star2.star_2_05 A B C))
+  have line1 : ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ (p ⊃ₚ ((∼ₚ r) ⊃ₚ (∼ₚ q)))) :=
+    PM.Derivation.detach
+      (PM.Derivation.detach (PM.FirstEdition.Volume1.Star2.star_2_16 q r)
+        (PM.FirstEdition.Volume1.Star2.star_2_02 p
+          ((q ⊃ₚ r) ⊃ₚ ((∼ₚ r) ⊃ₚ (∼ₚ q)))))
+      (PM.FirstEdition.Volume1.Star2.star_2_77 p (q ⊃ₚ r) ((∼ₚ r) ⊃ₚ (∼ₚ q)))
+  have line2 : ⊢ₚ (((p ∧ₚ q) ⊃ₚ r) ⊃ₚ (p ⊃ₚ (q ⊃ₚ r))) :=
+    star_3_3 p q r
+  have line3 : ⊢ₚ ((p ⊃ₚ ((∼ₚ r) ⊃ₚ (∼ₚ q))) ⊃ₚ
+      ((p ∧ₚ (∼ₚ r)) ⊃ₚ (∼ₚ q))) :=
+    star_3_31 p (∼ₚ r) (∼ₚ q)
+  exact compose (compose line2 line1) line3
+
 /- PM-VERBATIM-BEGIN PM1:✱3·4
 ✱3·4.  ⊢ : p . q . ⊃ . p ⊃ q   [✱2·51 . Transp . (✱1·01 . ✱3·01)]
 PM-VERBATIM-END PM1:✱3·4 -/
+
+/-- Audited scope reading of ✱3·4. -/
+def star_3_4_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . q . ⊃ . p ⊃ q"
+  parsed := (p ∧ₚ q) ⊃ₚ (p ⊃ₚ q)
+  scopeReading := "The product p . q is the antecedent; p ⊃ q is the consequent."
+
+/-- ✱3·4, following the printed ✱2·51, transposition, and definitional rewrites. -/
+theorem star_3_4 {Γ} (p q : PM.Elementary Γ) :
+    ⊢ₚ ((p ∧ₚ q) ⊃ₚ (p ⊃ₚ q)) := by
+  have line1 : ⊢ₚ (∼ₚ (p ⊃ₚ q) ⊃ₚ (p ⊃ₚ ∼ₚ q)) :=
+    PM.FirstEdition.Volume1.Star2.star_2_51 p q
+  have line2 : ⊢ₚ (∼ₚ (p ⊃ₚ ∼ₚ q) ⊃ₚ ∼ₚ (∼ₚ (p ⊃ₚ q))) :=
+    PM.Derivation.detach line1
+      (PM.FirstEdition.Volume1.Star2.star_2_16
+        (∼ₚ (p ⊃ₚ q)) (p ⊃ₚ ∼ₚ q))
+  have line3 : ⊢ₚ (∼ₚ (p ⊃ₚ ∼ₚ q) ⊃ₚ (p ⊃ₚ q)) :=
+    PM.Derivation.detach line2
+      (PM.Derivation.detach
+        (PM.FirstEdition.Volume1.Star2.star_2_14 (p ⊃ₚ q))
+        (PM.FirstEdition.Volume1.Star2.star_2_05
+          (∼ₚ (p ⊃ₚ ∼ₚ q)) (∼ₚ (∼ₚ (p ⊃ₚ q))) (p ⊃ₚ q)))
+  rw [star_1_01 p (∼ₚ q), ← star_3_01 p q] at line3
+  exact line3
 
 /- PM-VERBATIM-BEGIN PM1:✱3·41
 ✱3·41.  ⊢ : p ⊃ r . ⊃ : p . q . ⊃ . r   [✱3·26 . Syll]
 PM-VERBATIM-END PM1:✱3·41 -/
 
+/-- Audited scope reading of ✱3·41. -/
+def star_3_41_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ r . ⊃ : p . q . ⊃ . r"
+  parsed := (p ⊃ₚ r) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)
+  scopeReading := "The implication p ⊃ r is the antecedent; (p . q) ⊃ r is the consequent."
+
+theorem star_3_41 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ r) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)) :=
+  PM.Derivation.detach (star_3_26 p q)
+    (PM.FirstEdition.Volume1.Star2.star_2_06 (p ∧ₚ q) p r)
+
 /- PM-VERBATIM-BEGIN PM1:✱3·42
 ✱3·42.  ⊢ : q ⊃ r . ⊃ : p . q . ⊃ . r   [✱3·27 . Syll]
 PM-VERBATIM-END PM1:✱3·42 -/
+
+/-- Audited scope reading of ✱3·42. -/
+def star_3_42_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : q ⊃ r . ⊃ : p . q . ⊃ . r"
+  parsed := (q ⊃ₚ r) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)
+  scopeReading := "The implication q ⊃ r is the antecedent; (p . q) ⊃ r is the consequent."
+
+theorem star_3_42 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)) :=
+  PM.Derivation.detach (star_3_27 p q)
+    (PM.FirstEdition.Volume1.Star2.star_2_06 (p ∧ₚ q) q r)
 
 /- PM-VERBATIM-BEGIN PM1:✱3·43
 ✱3·43.  ⊢ : p ⊃ q . p ⊃ r . ⊃ : p . ⊃ . q . r
@@ -407,6 +629,27 @@ Dem.
 [✱2·77] ⊃ : p ⊃ r . ⊃ : p . ⊃ . q . r   (2)
 ⊢ . (2) . Imp . ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱3·43 -/
+
+/-- Audited scope reading of ✱3·43. -/
+def star_3_43_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ q . p ⊃ r . ⊃ : p . ⊃ . q . r"
+  parsed := ((p ⊃ₚ q) ∧ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ∧ₚ r))
+  scopeReading := "The two initial implications form the product antecedent; p is the antecedent of q . r in the consequent."
+
+/-- ✱3·43, retaining PM's two numbered lines and final importation. -/
+theorem star_3_43 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ⊃ₚ q) ∧ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ∧ₚ r))) := by
+  have line1 : ⊢ₚ (q ⊃ₚ (r ⊃ₚ (q ∧ₚ r))) := star_3_2 q r
+  have firstSyll : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ (r ⊃ₚ (q ∧ₚ r)))) :=
+    PM.Derivation.detach line1
+      (PM.FirstEdition.Volume1.Star2.star_2_05 p q (r ⊃ₚ (q ∧ₚ r)))
+  have line2 : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((p ⊃ₚ r) ⊃ₚ (p ⊃ₚ (q ∧ₚ r)))) :=
+    PM.Derivation.detach firstSyll
+      (PM.Derivation.detach (PM.FirstEdition.Volume1.Star2.star_2_77 p r (q ∧ₚ r))
+        (PM.FirstEdition.Volume1.Star2.star_2_05 (p ⊃ₚ q)
+          (p ⊃ₚ (r ⊃ₚ (q ∧ₚ r))) ((p ⊃ₚ r) ⊃ₚ (p ⊃ₚ (q ∧ₚ r)))))
+  exact PM.Derivation.detach line2
+    (star_3_31 (p ⊃ₚ q) (p ⊃ₚ r) (p ⊃ₚ (q ∧ₚ r)))
 
 /- PM-VERBATIM-BEGIN PM1:✱3·44
 ✱3·44.  ⊢ : q ⊃ p . r ⊃ p . ⊃ : q ∨ r . ⊃ . p
@@ -475,7 +718,13 @@ Dem.
 ⊢ . (1) . (2) . ✱2·83 . ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱3·48 -/
 
-/-- ✱3·44. -/
+/- ✱3·44. -/
+/-- Audited scope reading of ✱3·44. -/
+def star_3_44_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : q ⊃ p . r ⊃ p . ⊃ : q ∨ r . ⊃ . p"
+  parsed := ((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)) ⊃ₚ ((q ∨ₚ r) ⊃ₚ p)
+  scopeReading := "The two implications form the product antecedent; the consequent is (q ∨ r) ⊃ p."
+
 theorem star_3_44 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)) ⊃ₚ ((q ∨ₚ r) ⊃ₚ p)) := by
   have syll : ∀ A B C : PM.Elementary Γ, (⊢ₚ (A ⊃ₚ B)) →
@@ -507,7 +756,13 @@ theorem star_3_44 {Γ} (p q r : PM.Elementary Γ) :
         (star_3_3 ((q ∨ₚ r) ⊃ₚ ((∼ₚ q) ⊃ₚ r)) (((∼ₚ q) ⊃ₚ r) ⊃ₚ p) ((q ∨ₚ r) ⊃ₚ p)))
   exact syll _ _ _ line2 transfer
 
-/-- ✱3·45. The two uses of ✱3·3 are the documented implicit exportations. -/
+/- ✱3·45. The two uses of ✱3·3 are the documented implicit exportations. -/
+/-- Audited scope reading of ✱3·45. -/
+def star_3_45_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ q . ⊃ : p . r . ⊃ . q . r"
+  parsed := (p ⊃ₚ q) ⊃ₚ ((p ∧ₚ r) ⊃ₚ (q ∧ₚ r))
+  scopeReading := "p ⊃ q is the outer antecedent; the consequent says p . r implies q . r."
+
 theorem star_3_45 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((p ∧ₚ r) ⊃ₚ (q ∧ₚ r))) := by
   have printedSyll : ⊢ₚ ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r)))) :=
@@ -516,16 +771,32 @@ theorem star_3_45 {Γ} (p q r : PM.Elementary Γ) :
   have transp : ⊢ₚ (((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ
         ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r))))) :=
     PM.FirstEdition.Volume1.Star2.star_2_16 (q ⊃ₚ (∼ₚ r)) (p ⊃ₚ (∼ₚ r))
-  exact PM.Derivation.detach transp (PM.Derivation.detach printedSyll
+  have line3 := PM.Derivation.detach transp (PM.Derivation.detach printedSyll
     (PM.Derivation.detach
       (star_3_33 (p ⊃ₚ q) ((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r)))
         ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r)))))
       (star_3_3 ((p ⊃ₚ q) ⊃ₚ ((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r))))
         (((q ⊃ₚ (∼ₚ r)) ⊃ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r)))))
         ((p ⊃ₚ q) ⊃ₚ ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r))))))))
+  let T : PM.Elementary Γ := (p ⊃ₚ q) ⊃ₚ ((p ∧ₚ r) ⊃ₚ (q ∧ₚ r))
+  have line3eq :
+      ((p ⊃ₚ q) ⊃ₚ
+        ((∼ₚ (p ⊃ₚ (∼ₚ r))) ⊃ₚ (∼ₚ (q ⊃ₚ (∼ₚ r))))) = T := by
+    dsimp [T]
+    rw [star_1_01 p (∼ₚ r), star_1_01 q (∼ₚ r),
+      star_3_01 p r, star_3_01 q r]
+  have line3' : ⊢ₚ T := (congrArg PM.Derivation line3eq).mp line3
+  have line4 : ⊢ₚ (T ⊃ₚ T) := PM.FirstEdition.Volume1.Star2.star_2_08 T
+  exact PM.Derivation.detach line3' line4
 
-/-- ✱3·47. ✱3·2 is the documented equivalence-packaging relaxation in both
+/- ✱3·47. ✱3·2 is the documented equivalence-packaging relaxation in both
 context branches; ✱3·03 remains the printed nonempty-context adjunction. -/
+/-- Audited scope reading of ✱3·47. -/
+def star_3_47_reading (p q r s : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ r . q ⊃ s . ⊃ : p . q . ⊃ . r . s"
+  parsed := ((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (r ∧ₚ s))
+  scopeReading := "The product of p ⊃ r and q ⊃ s is the outer antecedent; the consequent maps p . q to r . s."
+
 theorem star_3_47 {Γ} (p q r s : PM.Elementary Γ) :
     ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ (r ∧ₚ s))) := by
   have syllOf :
@@ -571,20 +842,19 @@ theorem star_3_47 {Γ} (p q r s : PM.Elementary Γ) :
         (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((q ∧ₚ r) ⊃ₚ (r ∧ₚ s))))
     exact PM.Derivation.detach readBack₂ (PM.Derivation.detach readBack₁
       (PM.FirstEdition.Volume1.Star2.star_2_83 ((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) (p ∧ₚ q) (q ∧ₚ r) (r ∧ₚ s)))
-  cases Γ with
-  | nil =>
-      have adjoin : ∀ A B : PM.Elementary [], (⊢ₚ A) → (⊢ₚ B) → (⊢ₚ (A ∧ₚ B)) :=
-        fun A B hA hB => PM.Derivation.detach hB (PM.Derivation.detach hA (star_3_2 A B))
-      exact printed adjoin fun W M hM => syllOf adjoin _ _ _
-        (PM.Derivation.detach hM (star_3_2 M W)) (star_3_26 M W)
-  | cons τ Δ =>
-      have adjoin : ∀ A B : PM.Elementary (τ :: Δ), (⊢ₚ A) → (⊢ₚ B) → (⊢ₚ (A ∧ₚ B)) :=
-        fun A B hA hB => (star_3_03 (List.cons_ne_nil τ Δ)
-          ⟨PM.Formation.ofElementary A, hA⟩ ⟨PM.Formation.ofElementary B, hB⟩).derivation
-      exact printed adjoin fun W M hM => syllOf adjoin _ _ _
-        (PM.Derivation.detach hM (star_3_2 M W)) (star_3_26 M W)
+  have adjoin : ∀ A B : PM.Elementary Γ, (⊢ₚ A) → (⊢ₚ B) → (⊢ₚ (A ∧ₚ B)) :=
+    fun A B hA hB => PM.Derivation.detach hB
+      (PM.Derivation.detach hA (star_3_2 A B))
+  exact printed adjoin fun W M hM => syllOf adjoin _ _ _
+    (PM.Derivation.detach hM (star_3_2 M W)) (star_3_26 M W)
 
-/-- ✱3·48. -/
+/- ✱3·48. -/
+/-- Audited scope reading of ✱3·48. -/
+def star_3_48_reading (p q r s : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p ⊃ r . q ⊃ s . ⊃ : p ∨ q . ⊃ . r ∨ s"
+  parsed := ((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (r ∨ₚ s))
+  scopeReading := "The product of p ⊃ r and q ⊃ s is the outer antecedent; the consequent maps p ∨ q to r ∨ s."
+
 theorem star_3_48 {Γ} (p q r s : PM.Elementary Γ) :
     ⊢ₚ (((p ⊃ₚ r) ∧ₚ (q ⊃ₚ s)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (r ∨ₚ s))) := by
   have syll : ∀ A B C : PM.Elementary Γ, (⊢ₚ (A ⊃ₚ B)) →

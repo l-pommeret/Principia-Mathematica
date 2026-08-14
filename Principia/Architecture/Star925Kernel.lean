@@ -15,21 +15,8 @@ only transports the exact closed ✱9·23 self-instance across that definitional
 reading.  It adds no general conversion or detachment rule.
 -/
 
-/-- Exact closed judgement for the printed ✱9·25 target. -/
-abbrev Star925KernelAssertion (p : Elementary Γ)
-    (φ : Apparent Γ [.elementaryProposition]) : Prop :=
-  Star921MatrixKernel.Star9KernelAssertion (star_9_25_target p φ)
-
-/-- PM I ✱9·25 through its fixed `Id.✱9·23.(✱9·04)` chain. -/
-theorem derive (p : Elementary Γ)
-    (φ : Apparent Γ [.elementaryProposition]) :
-    Star925KernelAssertion p φ := by
-  show Star9KernelAssertion
-    (firstImp
-      (OrderedFormula.always (Apparent.ofElementary p ∨ₐ φ))
-      (.firstOrder (PM.FirstEdition.Volume1.Star9.star_9_04 p φ)))
-  exact
-  Star921MatrixKernel.Star9KernelAssertion.star_9_23
-    (Apparent.ofElementary p ∨ₐ φ)
+/-- The exact target retained after withdrawal of the unsound judgement. -/
+def target (p : Elementary Γ) (φ : Apparent Γ [.elementaryProposition]) :=
+  star_9_25_target p φ
 
 end PM.Architecture.Star925Kernel

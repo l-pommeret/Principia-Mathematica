@@ -1,4 +1,5 @@
 import Principia.Syntax.Formula
+import Principia.Syntax.Printed
 
 namespace PM
 
@@ -9,10 +10,15 @@ Although `Elementary Γ` is intrinsically typed, this second judgement preserves
 the historical distinction between formation in the empty context (✱1·71) and
 identification of the real-variable type in a nonempty context (✱1·72). -/
 inductive Formation : {Γ : RealContext} → Elementary Γ → Prop where
-  /-- Admission of an elementary constant by the primitive idea, unnumbered. -/
+  /-- Carrier base case for an elementary constant.
+
+  This is internal evidence for the intrinsically typed syntax, not an
+  unnumbered primitive proposition or formation rule of PM. -/
   | constant (name : String) : Formation (.constant name)
-  /-- Admission of a real propositional variable by the primitive idea,
-  unnumbered. -/
+  /-- Carrier base case for a real propositional variable.
+
+  This records the primitive-idea syntax described in prose; it does not add
+  a numbered or unnumbered PM inference rule. -/
   | realVar (x : RealVar Γ .elementaryProposition) : Formation (.var x)
   /-- ✱1·7. Negation preserves elementary formation. -/
   | star_1_7 (hp : Formation p) : Formation (Elementary.neg p)
@@ -26,6 +32,27 @@ inductive Formation : {Γ : RealContext} → Elementary Γ → Prop where
       Formation (Elementary.disj φ ψ)
 
 namespace Formation
+
+/-- Audited formation reading of ✱1·7.  The parsed expression is the
+conclusion whose formation is licensed by the primitive constructor. -/
+def star_1_7_reading (p : Elementary Γ) : ElementaryReading Γ where
+  printed := pmPrinted "If p is an elementary proposition, ∼p is an elementary proposition. Pp."
+  parsed := ∼ₚ p
+  scopeReading := "Negation applies to the elementary proposition p; the rule licenses formation of ∼p."
+
+/-- Audited formation reading of ✱1·71.  The empty context records that
+`p` and `q` are definite elementary propositions. -/
+def star_1_71_reading (p q : Elementary []) : ElementaryReading [] where
+  printed := pmPrinted "If p and q are elementary propositions, p ∨ q is an elementary proposition. Pp."
+  parsed := p ∨ₚ q
+  scopeReading := "The rule forms the disjunction p ∨ q of two definite elementary propositions."
+
+/-- Audited formation reading of ✱1·72.  The shared nonempty context in
+the constructor records that φp and ψp take the same elementary argument. -/
+def star_1_72_reading (φ ψ : Elementary Γ) : ElementaryReading Γ where
+  printed := pmPrinted "If φp and ψp are elementary propositional functions which take elementary propositions as arguments, φp ∨ ψp is an elementary propositional function. Pp."
+  parsed := φ ∨ₚ ψ
+  scopeReading := "The two functions share their elementary-proposition argument; disjunction combines their values."
 
 /-- Reconstruct the numbered PM formation history of an intrinsically typed
 elementary expression. No generic disjunction constructor is used. -/

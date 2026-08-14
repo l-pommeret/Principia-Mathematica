@@ -65,22 +65,22 @@ theorem instantiateSchema {Γ Ξ : PM.RealContext}
       | nil => exact PM.Derivation.star_1_1 (ihp σ) (ihpq σ)
       | cons τ Δ =>
           exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) (ihp σ) (ihpq σ)
-  | star_1_2 p => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_2 (Γ := Ξ) (PM.Elementary.schemaInstance σ p))
-  | star_1_3 p q => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_3 (Γ := Ξ)
-        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q))
-  | star_1_4 p q => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_4 (Γ := Ξ)
-        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q))
-  | star_1_5 p q r => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_5 (Γ := Ξ)
+  | star_1_2 p =>
+      exact PM.Derivation.star_1_2 (Γ := Ξ) (PM.Elementary.schemaInstance σ p)
+  | star_1_3 p q =>
+      exact PM.Derivation.star_1_3 (Γ := Ξ)
         (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
-        (PM.Elementary.schemaInstance σ r))
-  | star_1_6 p q r => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_6 (Γ := Ξ)
+  | star_1_4 p q =>
+      exact PM.Derivation.star_1_4 (Γ := Ξ)
         (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
-        (PM.Elementary.schemaInstance σ r))
+  | star_1_5 p q r =>
+      exact PM.Derivation.star_1_5 (Γ := Ξ)
+        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
+        (PM.Elementary.schemaInstance σ r)
+  | star_1_6 p q r =>
+      exact PM.Derivation.star_1_6 (Γ := Ξ)
+        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
+        (PM.Elementary.schemaInstance σ r)
 
 /-! ## Uniform metalinguistic detachment
 

@@ -19,12 +19,4 @@ structure OrderedRuleBook (Γ : RealContext) (order : Nat) where
   of audited certificates, not a proposition-level truth predicate. -/
   Primitive : OrderedFormula Γ order → Type
 
-inductive OrderedDerivation (rules : OrderedRuleBook Γ order) :
-    OrderedFormula Γ order → Prop where
-  | primitive {p : OrderedFormula Γ order} : rules.Primitive p →
-      OrderedDerivation rules p
-  | detach {p q : OrderedFormula Γ order} (scope : OrderedDisjunctionScope order) :
-      OrderedDerivation rules p → OrderedDerivation rules (OrderedFormula.scopedImp scope p q) →
-        OrderedDerivation rules q
-
 end PM

@@ -7,7 +7,7 @@ universe u
 private theorem ext {a b : Class α} (h : ∀x,a x↔b x) : a=b := by funext x; exact propext (h x)
 
 /-- ✱60·01, defining equation. -/
-theorem star_60_01 (a : Class α) : Cl a = fun b=>Included b a := rfl
+def star_60_01 (a : Class α) : Class (Class α) := fun b=>Included b a
 /-- ✱60·321. -/
 theorem star_60_321 (a : Class α) : a=PM.Architecture.Star60Kernel.Empty ↔ Cl a=PM.Architecture.Star60Kernel.Singleton a := by
   constructor

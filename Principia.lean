@@ -1,9 +1,16 @@
 import Principia.Syntax.Formula
+import Principia.Syntax.Ramified
+import Principia.Deduction.Star11Derived
+import Principia.Deduction.Star10Derived
+import Principia.Deduction.Star20Derived
 import Principia.Syntax.Apparent
 import Principia.Syntax.Printed
 import Principia.Syntax.Description
 import Principia.Syntax.DescriptionDefinitions
 import Principia.Deduction.System
+import Principia.Deduction.Star9
+import Principia.Deduction.Star11
+import Principia.Deduction.Star10
 import Principia.Experimental.RamifiedToy
 import Principia.Experimental.TypicalAmbiguityToy
 import Principia.Experimental.DescriptionScopeToy
@@ -32,6 +39,7 @@ import Principia.Architecture.Star11Q286Kernel
 import Principia.Architecture.Star11Q287Kernel
 import Principia.Architecture.Star11Q288Kernel
 import Principia.Architecture.Star12Q289Reducibility
+import Principia.Architecture.Star12ReducibilityDerivation
 import Principia.Architecture.Star13Q290Kernel
 import Principia.Architecture.Star13Q291Targets
 import Principia.Architecture.Star13Q292Targets
@@ -96,9 +104,11 @@ import Principia.Architecture.Star22Q356Kernel
 import Principia.Architecture.Star22Q357DeMorganKernel
 import Principia.Architecture.Star22Q358Kernel
 import Principia.Architecture.Star22Q359Kernel
+import Principia.Architecture.Star22PMInfrastructure
 import Principia.Architecture.Star24Q360Kernel
 import Principia.Architecture.Star24Q361Kernel
 import Principia.Architecture.Star24Q362Kernel
+import Principia.FirstEdition.Volume1.Star23Source
 import Principia.Architecture.Star24Q363NullUniversalKernel
 import Principia.Architecture.Star24Q364Kernel
 import Principia.Architecture.Star24Q365Kernel
@@ -539,3 +549,41 @@ import Principia.Architecture.Star9Star10MissingKernel
 import Principia.Architecture.Q262MonotonicityKernel
 import Principia.Architecture.Star961FunctionFormation
 import Principia.FirstEdition.Volume1.Star14
+
+-- Modules holding catalogued declarations that no other module imported, so
+-- `lake build` compiled them (via lakefile globs) but `import Principia` could not
+-- reach them: `#print axioms` was blind to them and they were outside the
+-- published library.  Criterion T1 requires import-closure membership.
+import Principia.Architecture.Star924Kernel
+import Principia.Architecture.Star934Kernel
+import Principia.Architecture.Star10Q274Kernel
+import Principia.FirstEdition.Volume1.Part1.SectionA.Star5Q245
+import Principia.FirstEdition.Volume1.Part1.SectionA.Star5Q246
+import Principia.FirstEdition.Volume1.Part1.SectionA.Star5Q247
+import Principia.Deduction.PrintedNames
+import Principia.FirstEdition.Volume2.Star150Source
+import Principia.FirstEdition.Volume2.Star151Source
+import Principia.FirstEdition.Volume2.Star152Source
+import Principia.FirstEdition.Volume2.Star153Source
+import Principia.FirstEdition.Volume2.Star154Source
+import Principia.FirstEdition.Volume2.Star155Source
+import Principia.FirstEdition.Volume2.Star160Source
+import Principia.FirstEdition.Volume2.Star161Source
+import Principia.FirstEdition.Volume2.Star162Source
+import Principia.FirstEdition.Volume2.Star163Source
+import Principia.FirstEdition.Volume2.Star164Source
+import Principia.FirstEdition.Volume2.Star165Source
+import Principia.FirstEdition.Volume2.Star166Source
+import Principia.FirstEdition.Volume2.Star170Source
+import Principia.FirstEdition.Volume2.Star171Source
+import Principia.FirstEdition.Volume2.Star172Source
+import Principia.FirstEdition.Volume2.Star173Source
+import Principia.FirstEdition.Volume2.Star174Source
+import Principia.FirstEdition.Volume2.Star176Source
+import Principia.FirstEdition.Volume2.Star177Source
+import Principia.FirstEdition.Volume2.Star180Source
+import Principia.FirstEdition.Volume2.Star181Source
+import Principia.FirstEdition.Volume2.Star183Source
+import Principia.FirstEdition.Volume2.Star184Source
+import Principia.FirstEdition.Volume2.Star185Source
+import Principia.FirstEdition.Volume2.Star186Source

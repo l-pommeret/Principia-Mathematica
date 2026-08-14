@@ -60,9 +60,6 @@ inductive KernelAssertion (kind : Quantifier) (shape : AssocShape)
       (line1 : OrderedAssertion (Γ := .elementaryProposition :: Γ)
         (.elementary (Apparent.openHead (matrixImp
           (functionPair shape p q φ).1 (functionPair shape p q φ).2))))
-      (line2 : Star9CanonicalAssertion
-        (star_9_21_line7_raw (functionPair shape p q φ).1
-          (functionPair shape p q φ).2))
       (reading : target kind shape p q φ = target kind shape p q φ) :
       KernelAssertion kind shape p q φ
   | existential
@@ -86,8 +83,7 @@ def elementaryLine (shape : AssocShape) (p q : Elementary Γ)
 def deriveUniversal (shape : AssocShape) (p q : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) :
     KernelAssertion .universal shape p q φ :=
-  .universal rfl (.elementary (elementaryLine shape p q φ))
-    (Star9KernelAssertion.star_9_21 _ _) rfl
+  .universal rfl (.elementary (elementaryLine shape p q φ)) rfl
 
 def deriveExistential (shape : AssocShape) (p q : Elementary Γ)
     (φ : Apparent Γ [.elementaryProposition]) :

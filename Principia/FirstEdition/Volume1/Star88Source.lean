@@ -105,3 +105,37 @@ PM-VERBATIM-END PM1:✱88·441 -/
 /- PM-VERBATIM-BEGIN PM1:✱88·45
 ✱88·45. ⊢ : DʻR∩ᴃʻR=Λ . P=x̂α̂{x∈ᴃʻR . α=R⃗ʻx∪ιʻx} .⊃. P∈∈ΔʻᴃʻP
 PM-VERBATIM-END PM1:✱88·45 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱88·361
+✱88·361. ⊢:. Mult ax.≡:κ⊂ ᗡʻR.≡_R,κ.∃ !R_Δʻκ [✱88·36.✱80·2]
+PM-VERBATIM-END PM1:✱88·361 -/
+/- PM-VERBATIM-BEGIN PM1:✱88·25
+✱88·25. ⊢:. P↾ κ ∈ Cls→1. κ ⊂ ᗡʻP. ⊃ :P↾ κ ∈ Rel Mult. ≡ . P⃗ʻʻκ ∈ Cls²Mult
+PM-VERBATIM-END PM1:✱88·25 -/
+/- PM-VERBATIM-BEGIN PM1:✱88·35
+✱88·35. ⊢:Mult ax.≡.(R).R∈ Rel Mult
+PM-VERBATIM-END PM1:✱88·35 -/
+/- PM-VERBATIM-BEGIN PM1:✱88·36
+✱88·36. ⊢:. Mult ax.≡:κ⊂ ᗡʻR.⊃_R,κ.∃ !R_Δʻκ [✱88·35·12]
+PM-VERBATIM-END PM1:✱88·36 -/
+/- PM-VERBATIM-BEGIN PM1:✱88·46
+✱88·46. ⊢:DʻR∩ ᗡʻR=Λ.λ=α̂{(∃ x).x∈ ᗡʻR.α=R⃗ʻx∪ ιʻx}.⊃. λ∈ Cls² Mult
+PM-VERBATIM-END PM1:✱88·46 -/
+/- PM-VERBATIM-BEGIN PM1:✱88·47
+✱88·47. ⊢:P=α̂β̂{α∈ κ.β=ιʻʻα∪ ιʻα}.⊃.P∈ ∈_ΔʻᗡʻP
+PM-VERBATIM-END PM1:✱88·47 -/
+/- PM-VERBATIM-BEGIN PM1:✱88·48
+✱88·48. ⊢.β̂{(∃ α).α∈ κ.β=ιʻʻα∪ ιʻα}∈ Cls² Mult [✱88·47]
+PM-VERBATIM-END PM1:✱88·48 -/
+/- PM-VERBATIM-BEGIN PM1:✱88·5
+✱88·5. ⊢.Λ∩ Cls∈ Cls² Mult [✱83·9.✱88·2]
+PM-VERBATIM-END PM1:✱88·5 -/
+/- PM-VERBATIM-BEGIN PM1:✱88·51
+✱88·51. ⊢:∃ !α.⊃.ιʻα∈ Cls² Mult [✱83·901.✱88·2]
+PM-VERBATIM-END PM1:✱88·51 -/
+/- PM-VERBATIM-BEGIN PM1:✱88·52
+✱88·52. ⊢.ιʻʻα∈ Cls² Mult [✱83·42]
+PM-VERBATIM-END PM1:✱88·52 -/
+/- PM-VERBATIM-BEGIN PM1:✱88·53
+✱88·53. ⊢:κ⊂ 1.⊃.κ∈ Cls² Mult [✱83·44]
+PM-VERBATIM-END PM1:✱88·53 -/

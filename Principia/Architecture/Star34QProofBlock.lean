@@ -9,8 +9,24 @@ namespace PM.Architecture.Star34QProofBlock
 
 abbrev Relation (α : Sort u) (β : Sort v) := α → β → Prop
 
-def compose (R : Relation α β) (S : Relation β γ) : Relation α γ :=
+/-- ✱34·01. `R|S = x̂ẑ{(∃y).xRy.ySz} Df`.
+
+This is a definition, not an asserted theorem: reduction exposes exactly the
+intermediate correlate printed by PM. -/
+def star_34_01 (R : Relation α β) (S : Relation β γ) : Relation α γ :=
   fun x z => ∃ y, R x y ∧ S y z
+
+/-- The established architecture name for PM's relative product. -/
+abbrev compose (R : Relation α β) (S : Relation β γ) : Relation α γ :=
+  star_34_01 R S
+
+/-- ✱34·02. `R²=R|R Df`. -/
+def star_34_02 (R : Relation α α) : Relation α α :=
+  star_34_01 R R
+
+/-- ✱34·03. `R³=R²|R Df`. -/
+def star_34_03 (R : Relation α α) : Relation α α :=
+  star_34_01 (star_34_02 R) R
 
 def converse (R : Relation α β) : Relation β α := fun y x => R x y
 def intersection (R S : Relation α β) : Relation α β := fun x y => R x y ∧ S x y

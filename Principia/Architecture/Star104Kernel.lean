@@ -15,14 +15,19 @@ def EquivSet (s : Set α) (t : Set β) : Prop := Nonempty (EquivData s t)
 def Asc (s : Set α) (t : Set β) : Prop := EquivSet s t
 def Asc2 (s : Set α) (u : Set γ) : Prop := EquivSet s u
 
-theorem star_104_01 (s : Set α) (t : Set β) : Asc s t ↔ EquivSet s t := Iff.rfl
-theorem star_104_011 (s : Set α) (u : Set γ) : Asc2 s u ↔ EquivSet s u := Iff.rfl
-theorem star_104_02 (p : Set (Set β)) : (∃ s : Set α, p = Asc s) ↔ ∃ s : Set α, p = Asc s := Iff.rfl
-theorem star_104_021 (s : Set α) (u : Set γ) : Asc2 s u ↔ EquivSet s u := Iff.rfl
-theorem star_104_03 (p : Set (Set α)) (q : Set (Set β)) :
-    (∃ s : Set α, p = EquivSet s ∧ q = Asc s) ↔
-      ∃ s : Set α, p = EquivSet s ∧ q = Asc s := Iff.rfl
-theorem star_104_031 (s : Set α) (u : Set γ) : Asc2 s u ↔ EquivSet s u := Iff.rfl
+/-- ✱104·01. `N¹cʻα = Ncʻα ∩ tʻtʻα Df`. -/
+def star_104_01 (s : Set α) (t : Set β) : Prop := EquivSet s t
+/-- ✱104·011. `N²cʻα = Ncʻα ∩ tʻt²ʻα Df`. -/
+def star_104_011 (s : Set α) (u : Set γ) : Prop := EquivSet s u
+/-- ✱104·02. `N¹C = DʻN¹c Df`. -/
+def star_104_02 {α : Type u} (p : Set (Set β)) : Prop := ∃ s : Set α, p = Asc s
+/-- ✱104·021. `N²C = DʻN²c Df`. -/
+def star_104_021 (s : Set α) (u : Set γ) : Prop := EquivSet s u
+/-- ✱104·03. `μ⁽¹⁾ = smʻʻμ ∩ tʻμ Df`. -/
+def star_104_03 (p : Set (Set α)) (q : Set (Set β)) : Prop :=
+  ∃ s : Set α, p = EquivSet s ∧ q = Asc s
+/-- ✱104·031. `μ⁽²⁾ = smʻʻμ ∩ t²ʻμ Df`. -/
+def star_104_031 (s : Set α) (u : Set γ) : Prop := EquivSet s u
 
 theorem equiv_refl (s : Set α) : EquivSet s s :=
   ⟨⟨id, id, fun h => h, fun h => h, fun _ => rfl, fun _ => rfl⟩⟩

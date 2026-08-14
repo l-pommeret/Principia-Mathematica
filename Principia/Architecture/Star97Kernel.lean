@@ -13,8 +13,8 @@ def connected (R : Rel α) (x y : α) : Prop := family R x y
 def linearOnField (R : Rel α) : Prop :=
   ∀ ⦃x y⦄, field R x → field R y → x = y ∨ R x y ∨ R y x
 
-theorem star_97_01 (R : Rel α) (x y : α) :
-    family R x y ↔ R y x ∨ (y = x ∧ field R x) ∨ R x y := Iff.rfl
+def star_97_01 (R : Rel α) (x y : α) : Prop :=
+  R y x ∨ (y = x ∧ field R x) ∨ R x y
 
 theorem star_97_1 (R : Rel α) (x y : α) :
     family R x y ↔ R y x ∨ (y = x ∧ field R x) ∨ R x y := Iff.rfl

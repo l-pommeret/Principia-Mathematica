@@ -103,3 +103,64 @@ PM-VERBATIM-END PM1:✱53·4 -/
 /- PM-VERBATIM-BEGIN PM1:✱53·5
 ✱53·5. ⊢ : ∃!α .≡. α ∈ Cls − ιʻΛ
 PM-VERBATIM-END PM1:✱53·5 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱53·51
+✱53·51. ⊢:∃̇!R.≡.R∈Rel-ιʻΛ̇ [Proof as in ✱53·5]
+PM-VERBATIM-END PM1:✱53·51 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·52
+✱53·52. ⊢:α∈κ.∃!α.≡.α∈κ-ιʻΛ
+PM-VERBATIM-END PM1:✱53·52 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·53
+✱53·53. ⊢:R∈λ.∃̇!R.≡.R∈λ-ιʻΛ̇ [Proof as in ✱53·52]
+PM-VERBATIM-END PM1:✱53·53 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·6
+✱53·6. ⊢:R=Λ̇.∃!α.⊃.R⃗ʻʻ α=ιʻΛ.R⃗ʻʻ α=ιʻΛ
+PM-VERBATIM-END PM1:✱53·6 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·601
+✱53·601. ⊢:∃!α.α∩ᗡʻ R=Λ.⊃.R⃗ʻʻ α=ιʻΛ
+PM-VERBATIM-END PM1:✱53·601 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·602
+✱53·602. ⊢:∃!α.α∩Dʻ R=Λ.⊃.R⃖ʻʻ α=ιʻ Λ [Proof as in ✱53·601]
+PM-VERBATIM-END PM1:✱53·602 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·603
+✱53·603. ⊢:∃!-ᗡʻ R.⊃.R⃗ʻʻ (-ᗡʻ R)=ιʻ Λ [✱24·21.✱53·601]
+PM-VERBATIM-END PM1:✱53·603 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·604
+✱53·604. ⊢:∃!-Dʻ R.⊃.R⃖ʻʻ (-Dʻ R)=ιʻΛ [✱24·21.✱53·602]
+PM-VERBATIM-END PM1:✱53·604 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·61
+✱53·61. ⊢:ᗡʻ R⊂ α.ᗡʻR≠ α.⊃.R⃗ʻʻ α=R⃗ʻʻᗡʻ R∪ ιʻΛ
+PM-VERBATIM-END PM1:✱53·61 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·611
+✱53·611. ⊢:Dʻ R⊂ α.Dʻ R≠ α.⊃.R⃖ʻʻ α=R⃖ʻʻ Dʻ R∪ ιʻΛ [Proof as in ✱53·61]
+PM-VERBATIM-END PM1:✱53·611 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·612
+✱53·612. ⊢:ᗡʻ R≠V.⊃.R⃗ʻʻV=R⃗ʻʻᗡʻ R∪ ιʻΛ [✱53·61.✱24·11]
+PM-VERBATIM-END PM1:✱53·612 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·613
+✱53·613. ⊢:Dʻ R≠V.⊃.R⃖ʻʻ V=R⃖ʻʻ ᗡʻ R∪ ιʻΛ [✱53·611.✱24·11]
+PM-VERBATIM-END PM1:✱53·613 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·614
+✱53·614. ⊢.R⃗ʻʻᗡʻ R=R⃗ʻʻV-ιʻΛ
+PM-VERBATIM-END PM1:✱53·614 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·615
+✱53·615. ⊢.R⃖ʻʻDʻ R=R⃖ʻʻV-ιʻΛ [Proof as in ✱53·614]
+PM-VERBATIM-END PM1:✱53·615 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·62
+✱53·62. ⊢:R⃗ʻʻᗡʻ R⊂ γ.≡.R⃗ʻʻV⊂ γ∪ ιʻΛ
+PM-VERBATIM-END PM1:✱53·62 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·621
+✱53·621. ⊢:R⃖ʻʻDʻ R⊂ γ.≡.R⃖ʻʻV⊂ γ∪ ιʻΛ [Proof as in ✱53·62]
+PM-VERBATIM-END PM1:✱53·621 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·63
+✱53·63. ⊢:ᗡʻ R≠V.⊃.DʻR⃗=R⃗ʻʻᗡʻ R∪ ιʻΛ [✱37·78.✱53·612]
+PM-VERBATIM-END PM1:✱53·63 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·631
+✱53·631. ⊢:Dʻ R≠V.⊃.DʻR⃖=R⃖ʻʻDʻ R∪ ιʻΛ [✱37·781.✱53·613]
+PM-VERBATIM-END PM1:✱53·631 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·64
+✱53·64. ⊢:ᗡʻR=V.⊃.DʻR⃗=R⃗ʻʻ ᗡʻR [✱37·78]
+PM-VERBATIM-END PM1:✱53·64 -/
+/- PM-VERBATIM-BEGIN PM1:✱53·641
+✱53·641. ⊢:Dʻ R=V.⊃.DʻR⃖=R⃖ʻʻDʻ R [✱37·781]
+PM-VERBATIM-END PM1:✱53·641 -/

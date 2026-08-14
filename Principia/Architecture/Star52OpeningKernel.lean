@@ -23,10 +23,9 @@ def converseImage (R : Relation α β) (A : Class α) : Class β :=
   fun y => ∃ x, A x ∧ R x y
 def inhabitedClass (A : Class α) : Prop := ∃ x, A x
 
-/-- Exact definitional equation PM I ✱52·01. -/
-theorem star_52_01 :
-    unitClasses α = (fun A => ∃ x, A = singleton x) := by
-  rfl
+/-- ✱52·01. `1 = α̂{(∃x). α = ιʻx}` Df. -/
+def star_52_01 : Class (Class α) :=
+  fun A => ∃ x, A = singleton x
 
 /-- Exact membership reduction PM I ✱52·1. -/
 theorem star_52_1 (A : Class α) :

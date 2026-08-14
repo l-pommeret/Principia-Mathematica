@@ -5,9 +5,9 @@
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
     "strict": true,
-    "interface_gated": false,
-    "canonical_integration_forbidden": false,
-    "requires_one_to_one_kernel_remap": false
+    "interface_gated": true,
+    "canonical_integration_forbidden": true,
+    "requires_one_to_one_kernel_remap": true
   },
   "batch_items": [
     {
@@ -16,9 +16,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": true,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱3·1",
       "proof_permissions": [
@@ -84,10 +84,16 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·08",
+          "PM1:✱3·01"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·08",
+        "PM1:✱3·01"
+      ],
       "substitutions": []
     },
     {
@@ -96,9 +102,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": true,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱3·11",
       "proof_permissions": [
@@ -164,10 +170,16 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·08",
+          "PM1:✱3·01"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·08",
+        "PM1:✱3·01"
+      ],
       "substitutions": []
     },
     {
@@ -176,9 +188,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": true,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱3·12",
       "proof_permissions": [
@@ -235,10 +247,14 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·11"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·11"
+      ],
       "substitutions": [
         {
           "step": 1,
@@ -252,9 +268,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": true,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱3·13",
       "proof_permissions": [
@@ -355,10 +371,18 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·15",
+          "PM1:✱2·16",
+          "PM1:✱2·17"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·15",
+        "PM1:✱2·16",
+        "PM1:✱2·17"
+      ],
       "substitutions": []
     },
     {
@@ -367,9 +391,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": true,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱3·14",
       "proof_permissions": [
@@ -476,10 +500,22 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·06",
+          "PM1:✱2·12",
+          "PM1:✱2·15",
+          "PM1:✱2·16",
+          "PM1:✱2·17"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·06",
+        "PM1:✱2·12",
+        "PM1:✱2·15",
+        "PM1:✱2·16",
+        "PM1:✱2·17"
+      ],
       "substitutions": []
     }
   ],
@@ -565,10 +601,35 @@
     "PM1:✱3·1",
     "PM1:✱3·11"
   ],
-  "direct_interface_dependencies": [],
-  "interface_dependencies": [],
-  "source_backfill_required": false,
-  "integration_blocked": false,
+  "direct_interface_dependencies": [
+    "PM1:✱2·06",
+    "PM1:✱2·08",
+    "PM1:✱2·11",
+    "PM1:✱2·12",
+    "PM1:✱2·15",
+    "PM1:✱2·16",
+    "PM1:✱2·17",
+    "PM1:✱3·01"
+  ],
+  "interface_dependencies": [
+    "PM1:✱2·03",
+    "PM1:✱2·04",
+    "PM1:✱2·05",
+    "PM1:✱2·06",
+    "PM1:✱2·07",
+    "PM1:✱2·08",
+    "PM1:✱2·1",
+    "PM1:✱2·11",
+    "PM1:✱2·12",
+    "PM1:✱2·13",
+    "PM1:✱2·14",
+    "PM1:✱2·15",
+    "PM1:✱2·16",
+    "PM1:✱2·17",
+    "PM1:✱3·01"
+  ],
+  "source_backfill_required": true,
+  "integration_blocked": true,
   "interface_signature_targets": {
     "PM1:✱3·1": "namespace PM.FirstEdition.Volume1.Star3\n\ntheorem star_3_1 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((p ∧ₚ q) ⊃ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))) := by\n  -- fill exactly from the generated whitelist\n\nend PM.FirstEdition.Volume1.Star3",
     "PM1:✱3·11": "namespace PM.FirstEdition.Volume1.Star3\n\ntheorem star_3_11 {Γ} (p q : PM.Elementary Γ) :\n    ⊢ₚ ((∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q))) ⊃ₚ (p ∧ₚ q)) := by\n  -- fill exactly from the generated whitelist\n\nend PM.FirstEdition.Volume1.Star3",

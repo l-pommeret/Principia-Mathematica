@@ -6,8 +6,10 @@ def CardClass (A : Class α) : Class (Class α) := fun B=>Nonempty (Subtype A) �
 def SumCard (K : Class (Class α)) := CardClass (fun x=>∃A,K A∧A x)
 def EqCard (A B : Class α) := Nonempty (Subtype A) ↔ Nonempty (Subtype B)
 
-theorem star_112_01 (K : Class (Class α)) : SumClass K=fun p=>K p.2∧p.2 p.1 := rfl
-theorem star_112_02 (K : Class (Class α)) : SumCard K=CardClass (fun x=>∃A,K A∧A x) := rfl
+/-- ✱112·01. `Σʻκ = sʻ∈↧ʻʻκ Df`. -/
+def star_112_01 (K : Class (Class α)) : Class (α × Class α) := fun p => K p.2 ∧ p.2 p.1
+/-- ✱112·02. `ΣNcʻκ = NcʻΣʻκ Df`. -/
+def star_112_02 (K : Class (Class α)) : Class (Class α) := CardClass (fun x => ∃ A, K A ∧ A x)
 theorem star_112_1 (K : Class (Class α)) : SumClass K=SumClass K := rfl
 theorem star_112_101 (K : Class (Class α)) : SumCard K=SumCard K := rfl
 theorem star_112_102 (K : Class (Class α)) : SumClass K p ↔ K p.2∧p.2 p.1 := Iff.rfl

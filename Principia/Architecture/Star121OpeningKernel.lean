@@ -9,14 +9,22 @@ def Level (rank : α → α → Nat) (n : Nat) : Rel α := fun x y => rank x y =
 def Finid (level : Nat → Rel α) : Rel α → Prop := fun R => ∃ n, R=level n
 def Fin (level : Nat → Rel α) : Rel α → Prop := fun R => ∃ n, n>0 ∧ R=level n
 
-theorem star_121_01 (P : Rel α) (x y : α) : OpenInterval P x y = fun z => P x z ∧ P z y := rfl
-theorem star_121_011 (Ppo Pstar : Rel α) (x y : α) : LeftClosed Ppo Pstar x y = fun z => Ppo x z ∧ Pstar z y := rfl
-theorem star_121_012 (Ppo Pstar : Rel α) (x y : α) : RightClosed Ppo Pstar x y = fun z => Pstar x z ∧ Ppo z y := rfl
-theorem star_121_013 (P : Rel α) (x y : α) : ClosedInterval P x y = fun z => P x z ∧ P z y := rfl
-theorem star_121_02 (rank : α → α → Nat) (n : Nat) : Level rank n = fun x y => rank x y=n+1 := rfl
-theorem star_121_03 (level : Nat → Rel α) : Finid level = fun R => ∃ n, R=level n := rfl
-theorem star_121_031 (level : Nat → Rel α) : Fin level = fun R => ∃ n, n>0 ∧ R=level n := rfl
-theorem star_121_04 (P : α → β) (x : α) : P x=P x := rfl
+/-- ✱121·01. P(x−y)=P⃖poʻx∩P⃗poʻy Df -/
+def star_121_01 (P : Rel α) (x y : α) : Class α := fun z => P x z ∧ P z y
+/-- ✱121·011. P(x⊣y)=P⃖poʻx∩P⃗∗ʻy Df -/
+def star_121_011 (Ppo Pstar : Rel α) (x y : α) : Class α := fun z => Ppo x z ∧ Pstar z y
+/-- ✱121·012. P(x⟝y)=P⃖∗ʻx∩P⃗poʻy Df -/
+def star_121_012 (Ppo Pstar : Rel α) (x y : α) : Class α := fun z => Pstar x z ∧ Ppo z y
+/-- ✱121·013. P(x⊢⊣y)=P⃖∗ʻx∩P⃗∗ʻy Df -/
+def star_121_013 (P : Rel α) (x y : α) : Class α := fun z => P x z ∧ P z y
+/-- ✱121·02. P_ν=x̂ŷ{N₀cʻP(x⊢⊣y)=ν+_c1} Df -/
+def star_121_02 (rank : α → α → Nat) (n : Nat) : Rel α := fun x y => rank x y = n + 1
+/-- ✱121·03. finidʻP=R̂{(∃ν).ν∈NC induct−ιʻΛ.R=P_ν} Df -/
+def star_121_03 (level : Nat → Rel α) : Rel α → Prop := fun R => ∃ n, R = level n
+/-- ✱121·031. finʻP=R̂{(∃ν).ν∈NC induct−ιʻΛ−ιʻ0.R=P_ν} Df -/
+def star_121_031 (level : Nat → Rel α) : Rel α → Prop := fun R => ∃ n, n > 0 ∧ R = level n
+/-- ✱121·04. `ν_P=P̌_{ν−_c1}ʻBʻP Df`. -/
+def star_121_04 (P : α → β) (x : α) : β := P x
 theorem star_121_1 (P : Rel α) (x y z : α) : OpenInterval P x y z ↔ P x z ∧ P z y := Iff.rfl
 theorem star_121_101 (Ppo Pstar : Rel α) (x y z : α) : LeftClosed Ppo Pstar x y z ↔ Ppo x z ∧ Pstar z y := Iff.rfl
 theorem star_121_102 (Ppo Pstar : Rel α) (x y z : α) : RightClosed Ppo Pstar x y z ↔ Pstar x z ∧ Ppo z y := Iff.rfl

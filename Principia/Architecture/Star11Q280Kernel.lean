@@ -1,12 +1,11 @@
-import Principia.Architecture.Star10Q265Kernel
+import Principia.Architecture.CanonicalOrderedAdapters
 
 /-!
 # PM I, ✱11·32–341
 
-Exact two-apparent-variable readings of the four quantified transport
-propositions on p. 162.  Each certificate records the iterated use of the
-corresponding one-variable theorem printed in ✱10; no unrestricted Raw
-inference or conversion principle is introduced.
+Exact two-apparent-variable targets of the four quantified transport
+propositions on p. 162.  No derivation is claimed until the corresponding
+one-variable theorem can be iterated by the PM judgement itself.
 
 ✱11·311 is deliberately absent.  Its sole cited premise, ✱10·13, is not yet
 an indexed assertion in the current architecture, so claiming it here would
@@ -55,69 +54,12 @@ def star_11_341_target (φ ψ : Apparent Γ
     [.elementaryProposition, .elementaryProposition]) : Raw Γ :=
   imp (all2 (mEquiv φ ψ)) (equiv (some2 φ) (some2 ψ))
 
-/-- The two-variable use of ✱10·27 is recorded explicitly as two iterations;
-the endpoint is fixed to ✱11·32. -/
-structure Star_11_32Derivation (φ ψ : Apparent Γ
-    [.elementaryProposition, .elementaryProposition]) : Prop where
-  iterate : {Ξ : RealContext} → (χ θ : Apparent Ξ [.elementaryProposition]) →
-    Star10Q265Kernel.Star_10_27Derivation χ θ
-  iterationsExact : (2 : Nat) = 2 := by rfl
-  targetReading : star_11_32_target φ ψ = star_11_32_target φ ψ
-
-def star_11_32 (φ ψ : Apparent Γ
-    [.elementaryProposition, .elementaryProposition]) :
-    Star_11_32Derivation φ ψ where
-  iterate := fun χ θ => Star10Q265Kernel.star_10_27 χ θ
-  targetReading := rfl
-
-/-- Exact two-variable iteration of ✱10·271. -/
-structure Star_11_33Derivation (φ ψ : Apparent Γ
-    [.elementaryProposition, .elementaryProposition]) : Prop where
-  iterate : {Ξ : RealContext} → (χ θ : Apparent Ξ [.elementaryProposition]) →
-    Star10Q265Kernel.Star_10_271Derivation χ θ
-  iterationsExact : (2 : Nat) = 2 := by rfl
-  targetReading : star_11_33_target φ ψ = star_11_33_target φ ψ
-
-def star_11_33 (φ ψ : Apparent Γ
-    [.elementaryProposition, .elementaryProposition]) :
-    Star_11_33Derivation φ ψ where
-  iterate := fun χ θ => Star10Q265Kernel.star_10_271 χ θ
-  targetReading := rfl
-
-/-- Exact two-variable iteration of ✱10·27 followed by ✱10·28, as printed. -/
-structure Star_11_34Derivation (φ ψ : Apparent Γ
-    [.elementaryProposition, .elementaryProposition]) : Prop where
-  universalStep : {Ξ : RealContext} →
-    (χ θ : Apparent Ξ [.elementaryProposition]) →
-    Star10Q265Kernel.Star_10_27Derivation χ θ
-  existentialStep : {Ξ : RealContext} →
-    (χ θ : Apparent Ξ [.elementaryProposition]) →
-    Star10Q265Kernel.Star_10_28Derivation χ θ
-  targetReading : star_11_34_target φ ψ = star_11_34_target φ ψ
-
-def star_11_34 (φ ψ : Apparent Γ
-    [.elementaryProposition, .elementaryProposition]) :
-    Star_11_34Derivation φ ψ where
-  universalStep := fun χ θ => Star10Q265Kernel.star_10_27 χ θ
-  existentialStep := fun χ θ => Star10Q265Kernel.star_10_28 χ θ
-  targetReading := rfl
-
-/-- Exact two-variable iteration of ✱10·271 followed by ✱10·281. -/
-structure Star_11_341Derivation (φ ψ : Apparent Γ
-    [.elementaryProposition, .elementaryProposition]) : Prop where
-  universalStep : {Ξ : RealContext} →
-    (χ θ : Apparent Ξ [.elementaryProposition]) →
-    Star10Q265Kernel.Star_10_271Derivation χ θ
-  existentialStep : {Ξ : RealContext} →
-    (χ θ : Apparent Ξ [.elementaryProposition]) →
-    Star10Q265Kernel.Star_10_281Derivation χ θ
-  targetReading : star_11_341_target φ ψ = star_11_341_target φ ψ
-
-def star_11_341 (φ ψ : Apparent Γ
-    [.elementaryProposition, .elementaryProposition]) :
-    Star_11_341Derivation φ ψ where
-  universalStep := fun χ θ => Star10Q265Kernel.star_10_271 χ θ
-  existentialStep := fun χ θ => Star10Q265Kernel.star_10_281 χ θ
-  targetReading := rfl
+/-!
+The four targets above are intentionally not packaged in structures.  The
+unary ✱10 contracts do not currently export a relation-of-derivation
+constructor that iterates them beneath a second apparent binder.  Merely
+storing a polymorphic provider for a unary theorem next to `target = target`
+does not derive any of these four displayed assertions.
+-/
 
 end PM.Architecture.Star11Q280Kernel

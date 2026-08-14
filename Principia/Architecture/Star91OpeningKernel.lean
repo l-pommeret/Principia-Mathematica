@@ -21,11 +21,19 @@ private theorem pow_one (R : Rel α) : Pow R 1 = R := by
     | step h _ => cases h
   · exact Pow.one
 
-theorem star_91_01 (R : Rel α) : positiveClosure R = positiveClosure R := rfl
-theorem star_91_02 (R : Rel α) : reflexiveClosure R = reflexiveClosure R := rfl
-theorem star_91_03 (R P : Rel α) : Pot R P ↔ ∃ n, n > 0 ∧ P = Pow R n := Iff.rfl
-theorem star_91_04 (R P : Rel α) : Potid R P ↔ P = ident ∨ Pot R P := Iff.rfl
-theorem star_91_05 (R : Rel α) : positiveClosure R = fun x y => ∃ n, n > 0 ∧ Pow R n x y := rfl
+/-- ✱91·01. `R_st = (R|)_*` Df. -/
+def star_91_01 (R : Rel α) : Rel α := positiveClosure R
+/-- ✱91·02. `R_ts = (|R)_*` Df. -/
+def star_91_02 (R : Rel α) : Rel α := reflexiveClosure R
+/-- ✱91·03. `PotʻR = →R_tsʻR` Df. -/
+def star_91_03 (R : Rel α) : Rel α → Prop :=
+  fun P => ∃ n, n > 0 ∧ P = Pow R n
+/-- ✱91·04. `PotidʻR = →R_tsʻ(I↾CʻR)` Df. -/
+def star_91_04 (R : Rel α) : Rel α → Prop :=
+  fun P => P = ident ∨ Pot R P
+/-- ✱91·05. `R_po = ṡʻPotʻR` Df. -/
+def star_91_05 (R : Rel α) : Rel α :=
+  fun x y => ∃ n, n > 0 ∧ Pow R n x y
 
 theorem star_91_1 (R : Rel α) {n x y} (h : Pow R n x y) :
     ∀ μ : Rel α → Prop, (∀ n, μ (Pow R n)) → μ (Pow R n) := by

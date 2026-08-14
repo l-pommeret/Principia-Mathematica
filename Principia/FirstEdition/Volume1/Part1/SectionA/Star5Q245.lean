@@ -6,6 +6,12 @@ namespace PM.FirstEdition.Volume1.Star5
 open PM
 open PM.Elementary
 
+/-- Audited scope reading of ✱5·22. -/
+def star_5_22_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : ∼(p ≡ q) . ≡ : p . ∼q . ∨ . q . ∼p"
+  parsed := ((∼ₚ (p ≡ₚ q)) ≡ₚ ((p ∧ₚ ∼ₚ q) ∨ₚ (q ∧ₚ ∼ₚ p)))
+  scopeReading := "The principal equivalence relates ∼(p ≡ q) to the disjunction (p ∧ ∼q) ∨ (q ∧ ∼p)."
+
 /-- PM I (1910), p. 130, ✱5·22. -/
 theorem star_5_22 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((∼ₚ (p ≡ₚ q)) ≡ₚ ((p ∧ₚ ∼ₚ q) ∨ₚ (q ∧ₚ ∼ₚ p))) := by

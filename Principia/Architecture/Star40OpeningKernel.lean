@@ -15,13 +15,11 @@ def Product (κ : ClassFamily α) : Class α :=
 def Sum (κ : ClassFamily α) : Class α :=
   fun x => ∃ a, κ a ∧ a x
 
-theorem star_40_01 (κ : ClassFamily α) :
-    Product κ = fun x => ∀ a, κ a → a x := by
-  rfl
+def star_40_01 (κ : ClassFamily α) : Class α :=
+  fun x => ∀ a, κ a → a x
 
-theorem star_40_02 (κ : ClassFamily α) :
-    Sum κ = fun x => ∃ a, κ a ∧ a x := by
-  rfl
+def star_40_02 (κ : ClassFamily α) : Class α :=
+  fun x => ∃ a, κ a ∧ a x
 
 theorem star_40_1 (κ : ClassFamily α) (x : α) :
     Product κ x ↔ ∀ a, κ a → a x := by

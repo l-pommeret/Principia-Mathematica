@@ -2,6 +2,12 @@ name = "principia"
 version = "0.1.0"
 defaultTargets = ["Principia"]
 
+# `globs` makes every module under `Principia/` a build target, not only those
+# transitively imported by `Principia.lean`.  Without it the library root is the
+# aggregate file alone, so a module nobody imports is kernel-checked by nothing
+# while still being cited by the catalogue as a certified proof.  Criterion T1 of
+# `scripts/verify_certification_tier.py` reads this file: what `lake build`
+# compiles is what may be certified.
 [[lean_lib]]
 name = "Principia"
-
+globs = ["Principia", "Principia.+"]

@@ -547,40 +547,6 @@ def bodyUnderTwoReals (function : ElementaryFunction signature realContext argum
 
 end ElementaryFunction
 
-/-- Experimental rule-shape test, not canonical PM coverage. -/
-inductive ToyDerivation {signature : Signature} :
-    {realContext : RealContext} → {order : Nat} →
-      Formula signature realContext [] order → Prop where
-  | toy_star_9_1
-      (function : ElementaryFunction signature realContext argument)
-      (scope : ScopedConnectives signature argument) :
-      ToyDerivation
-        (scope.normalImp01Sometimes function.valueHead.toFormula
-          function.bodyUnderOneReal)
-  | toy_star_9_11
-      (function : ElementaryFunction signature realContext argument)
-      (scope : ScopedConnectives signature argument) :
-      ToyDerivation
-        (scope.normalImp01Sometimes
-          (scope.disj00 function.valueFirst function.valueSecond)
-          function.bodyUnderTwoReals)
-  | toy_star_9_12
-      {left right : Formula signature realContext [] operandOrder}
-      (operation : ImplicationAt signature operandOrder) :
-      ToyDerivation left →
-      ToyDerivation (operation.normalize left right) →
-      ToyDerivation right
-  | toy_star_9_13
-      (proposition : Formula signature (argument :: realContext) [] order) :
-      ToyDerivation proposition →
-      ToyDerivation (.always proposition.abstractRealHead)
-  | toy_star_10_1
-      (function : ElementaryFunction signature realContext argument)
-      (scope : ScopedConnectives signature argument) :
-      ToyDerivation
-        (scope.normalImp10Always
-          function.bodyUnderOneReal function.valueHead.toFormula)
-
 /-- Order is computed from the complete function sort, never supplied as a
 detached numeral. -/
 def ramifiedFunctionOrder (arguments : List RamifiedSort) (resultOrder excess : Nat) : Nat :=
@@ -598,37 +564,6 @@ def ReducibleAt.sourceOrder
 def ReducibleAt.targetOrder
     (_entry : ReducibleAt signature argument resultOrder excess) : Nat :=
   ramifiedFunctionOrder [argument] resultOrder 0
-
-def formalEquivalenceOrder (argument : RamifiedSort) (resultOrder leftExcess
-    rightExcess : Nat) : Nat :=
-  max (ramifiedFunctionOrder [argument] resultOrder leftExcess)
-    (ramifiedFunctionOrder [argument] resultOrder rightExcess)
-
-structure UnaryFormalEquivalence (signature : Signature) where
-  formula : {argument : RamifiedSort} → {resultOrder leftExcess rightExcess : Nat} →
-    Term signature [] [] (.function [argument] resultOrder leftExcess) →
-    Term signature [] [] (.function [argument] resultOrder rightExcess) →
-    Formula signature [] []
-      (formalEquivalenceOrder argument resultOrder leftExcess rightExcess)
-
-/-- Explicit scoped hypothesis, never a global axiom or derivation rule. -/
-structure UnaryReducibility (signature : Signature)
-    (formalEquivalence : UnaryFormalEquivalence signature) where
-  representative : {argument : RamifiedSort} → {resultOrder excess : Nat} →
-    ReducibleAt signature argument resultOrder excess →
-    Term signature [] [] (.function [argument] resultOrder 0)
-  certificate : {argument : RamifiedSort} → {resultOrder excess : Nat} →
-    (entry : ReducibleAt signature argument resultOrder excess) →
-    ToyDerivation
-      (formalEquivalence.formula entry.function (representative entry))
-
-/-- Extraction is deliberately impossible without the explicit hypothesis
-`reducibility`; there is no zero-argument or typeclass-based counterpart. -/
-def reducedRepresentative
-    (reducibility : UnaryReducibility signature formalEquivalence)
-    (entry : ReducibleAt signature argument resultOrder excess) :
-    Term signature [] [] (.function [argument] resultOrder 0) :=
-  reducibility.representative entry
 
 /-! ## Concrete higher-order witness for the architectural barrier -/
 
@@ -687,14 +622,6 @@ predicate step reaches order two. -/
 def twoBinderFormulaWitness : Formula witnessSignature [] [] 2 :=
   .always (.always twoBinderMatrixWitness.toFormula)
 
-/-- Concrete experimental ✱10·1-shaped derivation for a function whose
-argument is itself a function type. -/
-def higherToyStar10Witness : ToyDerivation
-    (higherScope.normalImp10Always
-      higherFunctionWitness.bodyUnderOneReal
-      higherFunctionWitness.valueHead.toFormula) :=
-  .toy_star_10_1 higherFunctionWitness higherScope
-
 /-- The same higher-order application with one explicit excess order. -/
 def higherNonPredicativeFunctionWitness :
     ElementaryFunction witnessSignature [] predicateSort :=
@@ -704,35 +631,6 @@ def higherNonPredicativeFunctionWitness :
 def higherNonPredicativeEntry :
     ReducibleAt witnessSignature predicateSort 0 1 :=
   ⟨.symbol .nonPredicativeEvaluator⟩
-
-def higherNonPredicativeStar10Witness : ToyDerivation
-    (higherScope.normalImp10Always
-      higherNonPredicativeFunctionWitness.bodyUnderOneReal
-      higherNonPredicativeFunctionWitness.valueHead.toFormula) :=
-  .toy_star_10_1 higherNonPredicativeFunctionWitness higherScope
-
-/-- Dependent evidence tying the exact representative selected by a
-reducibility package to the package's certificate for that representative. -/
-structure HigherStar10ReducibilityWitness
-    (formalEquivalence : UnaryFormalEquivalence witnessSignature) where
-  star10 : ToyDerivation
-    (higherScope.normalImp10Always
-      higherNonPredicativeFunctionWitness.bodyUnderOneReal
-      higherNonPredicativeFunctionWitness.valueHead.toFormula)
-  reduction : PSigma fun representative :
-      Term witnessSignature [] [] (.function [predicateSort] 0 0) =>
-    ToyDerivation
-      (formalEquivalence.formula
-        higherNonPredicativeEntry.function representative)
-
-/-- Build the dependent witness by consuming both `representative` and its
-matching `certificate` from the explicitly supplied reducibility package. -/
-def higherStar10WithReducibility
-    (reducibility : UnaryReducibility witnessSignature formalEquivalence) :
-    HigherStar10ReducibilityWitness formalEquivalence :=
-  ⟨higherNonPredicativeStar10Witness,
-    ⟨reducibility.representative higherNonPredicativeEntry,
-      reducibility.certificate higherNonPredicativeEntry⟩⟩
 
 /-- Concrete realContext-head/apparentContext-head round trip at a function argument type. -/
 @[simp] theorem higherFunctionHeadRoundTrip :

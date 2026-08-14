@@ -41,6 +41,23 @@ infixr:54 " ⊃ₚ " => imp
 end Elementary
 end PM
 
+-- PM-CONTEXT-FOUNDATION Principia/Syntax/Printed.lean
+namespace PM
+
+structure PrintedFormula where
+  source : String
+  deriving DecidableEq, Repr
+
+def pmPrinted (source : String) : PrintedFormula := ⟨source⟩
+
+structure ElementaryReading (Γ : RealContext) where
+  printed : PrintedFormula
+  parsed : Elementary Γ
+  scopeReading : String
+  deriving Repr
+
+end PM
+
 -- PM-CONTEXT-FOUNDATION Principia/Deduction/System.lean
 namespace PM
 
@@ -87,22 +104,22 @@ theorem instantiateSchema {Γ Ξ : PM.RealContext}
       | nil => exact PM.Derivation.star_1_1 (ihp σ) (ihpq σ)
       | cons τ Δ =>
           exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) (ihp σ) (ihpq σ)
-  | star_1_2 p => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_2 (Γ := Ξ) (PM.Elementary.schemaInstance σ p))
-  | star_1_3 p q => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_3 (Γ := Ξ)
-        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q))
-  | star_1_4 p q => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_4 (Γ := Ξ)
-        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q))
-  | star_1_5 p q r => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_5 (Γ := Ξ)
+  | star_1_2 p =>
+      exact PM.Derivation.star_1_2 (Γ := Ξ) (PM.Elementary.schemaInstance σ p)
+  | star_1_3 p q =>
+      exact PM.Derivation.star_1_3 (Γ := Ξ)
         (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
-        (PM.Elementary.schemaInstance σ r))
-  | star_1_6 p q r => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_6 (Γ := Ξ)
+  | star_1_4 p q =>
+      exact PM.Derivation.star_1_4 (Γ := Ξ)
         (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
-        (PM.Elementary.schemaInstance σ r))
+  | star_1_5 p q r =>
+      exact PM.Derivation.star_1_5 (Γ := Ξ)
+        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
+        (PM.Elementary.schemaInstance σ r)
+  | star_1_6 p q r =>
+      exact PM.Derivation.star_1_6 (Γ := Ξ)
+        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
+        (PM.Elementary.schemaInstance σ r)
 
 theorem detach {Γ : PM.RealContext} {φ ψ : PM.Elementary Γ}
     (hφ : PM.Derivation φ) (hφψ : PM.Derivation (φ ⊃ₚ ψ)) :
@@ -135,6 +152,21 @@ inductive Formation : {Γ : RealContext} → Elementary Γ → Prop where
       Formation (Elementary.disj φ ψ)
 
 namespace Formation
+
+def star_1_7_reading (p : Elementary Γ) : ElementaryReading Γ where
+  printed := pmPrinted "If p is an elementary proposition, ∼p is an elementary proposition. Pp."
+  parsed := ∼ₚ p
+  scopeReading := "Negation applies to the elementary proposition p; the rule licenses formation of ∼p."
+
+def star_1_71_reading (p q : Elementary []) : ElementaryReading [] where
+  printed := pmPrinted "If p and q are elementary propositions, p ∨ q is an elementary proposition. Pp."
+  parsed := p ∨ₚ q
+  scopeReading := "The rule forms the disjunction p ∨ q of two definite elementary propositions."
+
+def star_1_72_reading (φ ψ : Elementary Γ) : ElementaryReading Γ where
+  printed := pmPrinted "If φp and ψp are elementary propositional functions which take elementary propositions as arguments, φp ∨ ψp is an elementary propositional function. Pp."
+  parsed := φ ∨ₚ ψ
+  scopeReading := "The two functions share their elementary-proposition argument; disjunction combines their values."
 
 def ofElementary : {Γ : RealContext} → (p : Elementary Γ) → Formation p
   | _, .constant name => .constant name
@@ -202,76 +234,63 @@ end PM.FirstEdition.Volume1.Star1
 -- PM-CONTEXT-ITEM PM1:✱2·05 PM.FirstEdition.Volume1.Star2.star_2_05
 namespace PM.FirstEdition.Volume1.Star2
 
-theorem star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
-    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
-  PM.Derivation.star_1_6 (∼ₚ p) q r
+axiom star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)))
+
 
 end PM.FirstEdition.Volume1.Star2
 
 -- PM-CONTEXT-ITEM PM1:✱2·07 PM.FirstEdition.Volume1.Star2.star_2_07
 namespace PM.FirstEdition.Volume1.Star2
 
-theorem star_2_07 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
-    ⊢ₚ (p ⊃ₚ (p ∨ₚ p)) :=
-  PM.Derivation.star_1_3 p p
+axiom star_2_07 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ (p ∨ₚ p))
+
 
 end PM.FirstEdition.Volume1.Star2
 
 -- PM-CONTEXT-ITEM PM1:✱2·08 PM.FirstEdition.Volume1.Star2.star_2_08
 namespace PM.FirstEdition.Volume1.Star2
 
-theorem star_2_08 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
-    ⊢ₚ (p ⊃ₚ p) :=
-  PM.Derivation.detach (star_2_07 p)
-    (PM.Derivation.detach (PM.Derivation.star_1_2 p)
-      (star_2_05 p (p ∨ₚ p) p))
+axiom star_2_08 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ p)
+
 
 end PM.FirstEdition.Volume1.Star2
 
 -- PM-CONTEXT-ITEM PM1:✱2·1 PM.FirstEdition.Volume1.Star2.star_2_1
 namespace PM.FirstEdition.Volume1.Star2
 
-theorem star_2_1 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
-    ⊢ₚ (∼ₚ p ∨ₚ p) :=
-  star_2_08 p
+axiom star_2_1 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (∼ₚ p ∨ₚ p)
+
 
 end PM.FirstEdition.Volume1.Star2
 
 -- PM-CONTEXT-ITEM PM1:✱2·11 PM.FirstEdition.Volume1.Star2.star_2_11
 namespace PM.FirstEdition.Volume1.Star2
 
-theorem star_2_11 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
-    ⊢ₚ (p ∨ₚ ∼ₚ p) := by
-  have hperm := PM.Derivation.star_1_4 (∼ₚ p) p
-  exact PM.Derivation.detach (star_2_1 p) hperm
+axiom star_2_11 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ∨ₚ ∼ₚ p)
+
 
 end PM.FirstEdition.Volume1.Star2
 
 -- PM-CONTEXT-ITEM PM1:✱2·3 PM.FirstEdition.Volume1.Star2.star_2_3
 namespace PM.FirstEdition.Volume1.Star2
 
-theorem star_2_3 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
-    ⊢ₚ ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ (p ∨ₚ (r ∨ₚ q))) :=
-  PM.Derivation.detach
-    (PM.Derivation.star_1_4 q r)
-    (PM.Derivation.star_1_6 p (q ∨ₚ r) (r ∨ₚ q))
+axiom star_2_3 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ∨ₚ (q ∨ₚ r)) ⊃ₚ (p ∨ₚ (r ∨ₚ q)))
+
 
 end PM.FirstEdition.Volume1.Star2
 
 -- PM-CONTEXT-ITEM PM1:✱2·32 PM.FirstEdition.Volume1.Star2.star_2_32
 namespace PM.FirstEdition.Volume1.Star2
 
-theorem star_2_32 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
-    ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ (q ∨ₚ r))) :=
-  PM.Derivation.detach
-    (PM.Derivation.detach
-      (PM.Derivation.star_1_4 (p ∨ₚ q) r)
-      (PM.Derivation.detach
-        (PM.Derivation.star_1_5 r p q)
-        (star_2_05 ((p ∨ₚ q) ∨ₚ r) (r ∨ₚ (p ∨ₚ q)) (p ∨ₚ (r ∨ₚ q)))))
-    (PM.Derivation.detach
-      (star_2_3 p r q)
-      (star_2_05 ((p ∨ₚ q) ∨ₚ r) (p ∨ₚ (r ∨ₚ q)) (p ∨ₚ (q ∨ₚ r))))
+axiom star_2_32 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ (q ∨ₚ r)))
+
 
 end PM.FirstEdition.Volume1.Star2
 

@@ -5,12 +5,30 @@ abbrev Relation (α : Sort u) (β : Sort v) := α → β → Prop
 
 def Included (a b : Class α) : Prop := ∀ x, a x → b x
 def Union (a b : Class α) : Class α := fun x => a x ∨ b x
-def Domain (R : Relation α β) : Class α := fun x => ∃ y, R x y
-def ConverseDomain (R : Relation α β) : Class β := fun y => ∃ x, R x y
-def Field (R : Relation α α) : Class α :=
-  fun x => (∃ y, R x y) ∨ ∃ y, R y x
 def ForwardSection (R : Relation α β) (y : β) : Class α := fun x => R x y
 def BackwardSection (R : Relation α β) (x : α) : Class β := fun y => R x y
+
+/-- ✱33·01.  PM's domain operator, as the eliminable abbreviation printed
+`D=α̂R̂[α=x̂{(∃ y).xRy}] Df`. -/
+def star_33_01 (R : Relation α β) : Class α :=
+  fun x => ∃ y, R x y
+
+/-- ✱33·02.  PM's converse-domain operator, as an eliminable abbreviation. -/
+def star_33_02 (R : Relation α β) : Class β :=
+  fun y => ∃ x, R x y
+
+/-- ✱33·03.  PM's field operator, as an eliminable abbreviation. -/
+def star_33_03 (R : Relation α α) : Class α :=
+  fun x => (∃ y, R x y) ∨ ∃ y, R y x
+
+/-- ✱33·04.  PM's field relation, as the eliminable binary relation
+abbreviation printed at the opening of ✱33. -/
+def star_33_04 (x : α) (R : Relation α α) : Prop :=
+  (∃ y, R x y) ∨ ∃ y, R y x
+
+abbrev Domain (R : Relation α β) : Class α := star_33_01 R
+abbrev ConverseDomain (R : Relation α β) : Class β := star_33_02 R
+abbrev Field (R : Relation α α) : Class α := star_33_03 R
 
 /-- PM I ✱33·13. -/
 theorem star_33_13 (R : Relation α β) (x : α) :

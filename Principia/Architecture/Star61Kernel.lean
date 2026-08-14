@@ -20,10 +20,21 @@ def pairClass (p q : Relation L R) : RelClass L R := fun r => r = p ∨ r = q
 def Rel2 (L : Sort u) (R : Sort v) := Rl (universalRelation (Relation L R) (Relation L R))
 def Rel3 (L : Sort u) (R : Sort v) := Rl (universalRelation (Relation (Relation L R) (Relation L R)) (Relation (Relation L R) (Relation L R)))
 
-theorem star_61_01 (l : RelClass L R) (p : Relation L R) : (l = Rl p) = (l = fun r => Included r p) := rfl
-theorem star_61_02 (l : RelClass L R) (p : Relation L R) : (l = RlEx p) = (l = fun r => Included r p ∧ existsRelation r) := rfl
-theorem star_61_03 : Rel2 L R = Rl (universalRelation (Relation L R) (Relation L R)) := rfl
-theorem star_61_04 : Rel3 L R = Rl (universalRelation (Relation (Relation L R) (Relation L R)) (Relation (Relation L R) (Relation L R))) := rfl
+/-- ✱61·01. `Rl = λ̂P̂{λ = R̂(R ⊂ P)}` Df. -/
+def star_61_01 (p : Relation L R) : RelClass L R :=
+  fun r => Included r p
+/-- ✱61·02. `Rl ex = λ̂P̂{λ = R̂(R ⊂ P . ∃!R)}` Df. -/
+def star_61_02 (p : Relation L R) : RelClass L R :=
+  fun r => Included r p ∧ existsRelation r
+/-- ✱61·03. `Rel² = Rlʻ(Rel ↑ Rel)` Df. -/
+def star_61_03 : RelClass (Relation L R) (Relation L R) :=
+  Rl (universalRelation (Relation L R) (Relation L R))
+/-- ✱61·04. `Rel³ = Rlʻ(Rel² ↑ Rel²)` Df. -/
+def star_61_04 :
+    RelClass (Relation (Relation L R) (Relation L R))
+      (Relation (Relation L R) (Relation L R)) :=
+  Rl (universalRelation (Relation (Relation L R) (Relation L R))
+    (Relation (Relation L R) (Relation L R)))
 theorem star_61_1 (l : RelClass L R) (p : Relation L R) : l = Rl p ↔ l = fun r => Included r p := Iff.rfl
 theorem star_61_11 (l : RelClass L R) (p : Relation L R) : l = RlEx p ↔ l = fun r => Included r p ∧ existsRelation r := Iff.rfl
 theorem star_61_12 (p : Relation L R) : Rl p = fun r => Included r p := rfl

@@ -11,9 +11,11 @@ def DoubleSimilarBy (κ : Set (Set α)) (lam : Set (Set β))
 def MapsClass (κ : Set (Set α)) (lam : Set (Set β))
     (F : Set α → Set β) := ∀ a, κ a ↔ lam (F a)
 def Corresponds (F : Set α → Set α) (b : Set α) := Similar (F b) b
-theorem star_111_01 (κ : Set (Set α)) (lam : Set (Set β)) : DoubleSimilar κ lam ↔
-    ∃ F : Set α→Set β, Bijective F ∧ ∀a, κ a ↔ lam (F a) := Iff.rfl
-theorem star_111_02 (F : Set α→Set α) (b : Set α) : Corresponds F b ↔ Similar (F b) b := Iff.rfl
+/-- κ sm sm λ=(1→1)∩α̂Ŝα∩T̂(κ=T̆ʻλ) Df -/
+def star_111_01 (κ : Set (Set α)) (lam : Set (Set β)) : Prop :=
+  ∃ F : Set α → Set β, Bijective F ∧ ∀ a, κ a ↔ lam (F a)
+/-- Crp(S)ʻβ=(Sʻβ) sm β Df -/
+def star_111_02 (F : Set α → Set α) (b : Set α) : Prop := Similar (F b) b
 theorem star_111_1 (κ : Set (Set α)) (lam : Set (Set β)) : DoubleSimilar κ lam ↔ DoubleSimilar κ lam := Iff.rfl
 theorem star_111_11 (κ : Set (Set α)) (lam : Set (Set β))
     (F : Set α → Set β) : DoubleSimilarBy κ lam F → Bijective F := by

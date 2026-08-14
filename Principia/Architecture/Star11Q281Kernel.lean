@@ -12,7 +12,7 @@ namespace PM.Architecture.Star11Q281Kernel
 universe u v
 
 /-- PM I ✱11·35. -/
-theorem star_11_35 {α : Type u} {β : Type v} (φ : α → β → Prop) (p : Prop) :
+theorem star_11_35_prop {α : Type u} {β : Type v} (φ : α → β → Prop) (p : Prop) :
     (∀ x y, φ x y → p) ↔ ((∃ x y, φ x y) → p) := by
   constructor
   · intro h hφ
@@ -22,13 +22,13 @@ theorem star_11_35 {α : Type u} {β : Type v} (φ : α → β → Prop) (p : Pr
     exact h ⟨x, y, hxy⟩
 
 /-- PM I ✱11·36. -/
-theorem star_11_36 {α : Type u} {β : Type v} (φ : α → β → Prop) (z : α) (w : β) :
+theorem star_11_36_prop {α : Type u} {β : Type v} (φ : α → β → Prop) (z : α) (w : β) :
     φ z w → ∃ x y, φ x y := by
   intro h
   exact ⟨z, w, h⟩
 
 /-- PM I ✱11·37. -/
-theorem star_11_37 {α : Type u} {β : Type v} (φ ψ χ : α → β → Prop) :
+theorem star_11_37_prop {α : Type u} {β : Type v} (φ ψ χ : α → β → Prop) :
     (∀ x y, φ x y → ψ x y) →
       (∀ x y, ψ x y → χ x y) →
         ∀ x y, φ x y → χ x y := by
@@ -36,7 +36,7 @@ theorem star_11_37 {α : Type u} {β : Type v} (φ ψ χ : α → β → Prop) :
   exact hψχ x y (hφψ x y hφ)
 
 /-- PM I ✱11·371. -/
-theorem star_11_371 {α : Type u} {β : Type v} (φ ψ χ : α → β → Prop) :
+theorem star_11_371_prop {α : Type u} {β : Type v} (φ ψ χ : α → β → Prop) :
     (∀ x y, φ x y ↔ ψ x y) →
       (∀ x y, ψ x y ↔ χ x y) →
         ∀ x y, φ x y ↔ χ x y := by
@@ -44,7 +44,7 @@ theorem star_11_371 {α : Type u} {β : Type v} (φ ψ χ : α → β → Prop) 
   exact (hφψ x y).trans (hψχ x y)
 
 /-- PM I ✱11·38. -/
-theorem star_11_38 {α : Type u} {β : Type v} (φ ψ χ : α → β → Prop) :
+theorem star_11_38_prop {α : Type u} {β : Type v} (φ ψ χ : α → β → Prop) :
     (∀ x y, φ x y → ψ x y) →
       ∀ x y, φ x y ∧ χ x y → ψ x y ∧ χ x y := by
   intro h x y hφχ

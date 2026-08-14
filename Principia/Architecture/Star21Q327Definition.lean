@@ -17,12 +17,11 @@ def RelationFunctionApplication
   ∃ phi : BinaryRelation Left Right,
     (∀ x y, phi x y ↔ psi x y) ∧ f phi
 
-/-- ✱21·01. The exact two-apparent-variable reduction. -/
-theorem star_21_01
+/-- ✱21·01. f{ẑxẑyψ(x,y)} .=: (∃φ) : φ!(x,y) .≡₍x,y₎. ψ(x,y) : f{φ!(ẑu,ẑv)} Df -/
+def star_21_01
     (psi : BinaryRelation Left Right)
-    (f : BinaryRelation Left Right → Prop) :
-    RelationFunctionApplication psi f =
-      (∃ phi : BinaryRelation Left Right,
-        (∀ x y, phi x y ↔ psi x y) ∧ f phi) := rfl
+    (f : BinaryRelation Left Right → Prop) : Prop :=
+  ∃ phi : BinaryRelation Left Right,
+    (∀ x y, phi x y ↔ psi x y) ∧ f phi
 
 end PM.Architecture.Star21Q327Definition

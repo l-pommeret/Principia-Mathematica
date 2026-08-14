@@ -1,0 +1,314 @@
+import Principia.FirstEdition.Volume1.Star20Source
+import Principia.Syntax.Ramified
+import Principia.Deduction.Star4Ramified
+
+namespace PM.RamifiedSyntax
+
+/-! # Derived propositions of PM I, ✱20 -/
+
+/-- ✱20·04: comma-separated double membership is conjunction. -/
+def star_20_04
+    (negation : signature.Negation 0)
+    (disjunction : signature.Disjunction 0)
+    (left right : Formula signature real apparent 0) :
+    Formula signature real apparent 0 :=
+  mixedConjunction negation negation negation disjunction left right
+
+theorem star_20_04_unfold
+    (negation : signature.Negation 0)
+    (disjunction : signature.Disjunction 0)
+    (left right : Formula signature real apparent 0) :
+    star_20_04 negation disjunction left right =
+      mixedConjunction negation negation negation disjunction left right := rfl
+
+/-- ✱20·05: comma-separated triple membership associates to the left, as
+shown by PM's defining right-hand side. -/
+def star_20_05
+    (negation : signature.Negation 0)
+    (disjunction : signature.Disjunction 0)
+    (first second third : Formula signature real apparent 0) :
+    Formula signature real apparent 0 :=
+  mixedConjunction negation negation negation disjunction
+    (star_20_04 negation disjunction first second) third
+
+theorem star_20_05_unfold
+    (negation : signature.Negation 0)
+    (disjunction : signature.Disjunction 0)
+    (first second third : Formula signature real apparent 0) :
+    star_20_05 negation disjunction first second third =
+      mixedConjunction negation negation negation disjunction
+        (star_20_04 negation disjunction first second) third := rfl
+
+/-- ✱20·06: non-membership is the negation of membership. -/
+def star_20_06
+    (negation : signature.Negation order)
+    (membership : Formula signature real apparent order) :
+    Formula signature real apparent order :=
+  .neg negation membership
+
+theorem star_20_06_unfold
+    (negation : signature.Negation order)
+    (membership : Formula signature real apparent order) :
+    star_20_06 negation membership = .neg negation membership := rfl
+
+/-- ✱20·07: quantification over classes is quantification over predicative
+one-place functions.  `classSort resultOrder 0` records the essential `!`. -/
+def star_20_07
+    (universal : signature.Universal (classSort resultOrder 0) scopeOrder)
+    (body : Formula signature real
+      (classSort resultOrder 0 :: apparent) scopeOrder) :
+    Formula signature real apparent
+      (bindOrder scopeOrder (classSort resultOrder 0)) :=
+  .always universal body
+
+theorem star_20_07_unfold
+    (universal : signature.Universal (classSort resultOrder 0) scopeOrder)
+    (body : Formula signature real
+      (classSort resultOrder 0 :: apparent) scopeOrder) :
+    star_20_07 universal body = .always universal body := rfl
+
+/-- ✱20·071: existential class quantification has the same predicative
+function expansion as ✱20·07. -/
+def star_20_071
+    (existential : ExistentialVocabulary signature (classSort resultOrder 0) scopeOrder)
+    (body : Formula signature real
+      (classSort resultOrder 0 :: apparent) scopeOrder) :
+    Formula signature real apparent
+      (bindOrder scopeOrder (classSort resultOrder 0)) :=
+  .sometimes existential body
+
+theorem star_20_071_unfold
+    (existential : ExistentialVocabulary signature (classSort resultOrder 0) scopeOrder)
+    (body : Formula signature real
+      (classSort resultOrder 0 :: apparent) scopeOrder) :
+    star_20_071 existential body = .sometimes existential body := rfl
+
+/-- ✱20·081: membership of a class argument in a predicative class
+function is application, exactly as ✱20·02. -/
+def star_20_081
+    (predicate : Term signature real apparent
+      (.function [classSort argumentOrder 0] resultOrder 0))
+    (argument : Term signature real apparent (classSort argumentOrder 0)) :
+    Formula signature real apparent resultOrder :=
+  applyUnary predicate argument
+
+theorem star_20_081_unfold
+    (predicate : Term signature real apparent
+      (.function [classSort argumentOrder 0] resultOrder 0))
+    (argument : Term signature real apparent (classSort argumentOrder 0)) :
+    star_20_081 predicate argument = applyUnary predicate argument := rfl
+
+/-- Audited catalogue reading of ✱20·1.  The apparent class on the left is
+eliminated by ✱20·01, so both sides parse as the same existential expansion. -/
+def star_20_1_reading
+    (existential : ExistentialVocabulary signature (classSort resultOrder 0)
+      (max (bindOrder resultOrder .individual) scopeOrder))
+    (universal : signature.Universal .individual resultOrder)
+    (equivalenceNegation : signature.Negation resultOrder)
+    (equivalenceDisjunction : signature.Disjunction resultOrder)
+    (leftNegation : signature.Negation (bindOrder resultOrder .individual))
+    (rightNegation : signature.Negation scopeOrder)
+    (outerNegation : signature.Negation
+      (max (bindOrder resultOrder .individual) scopeOrder))
+    (conjunctionDisjunction : signature.Disjunction
+      (max (bindOrder resultOrder .individual) scopeOrder))
+    (finalNegation : signature.Negation
+      (bindOrder (max (bindOrder resultOrder .individual) scopeOrder)
+        (classSort resultOrder 0)))
+    (finalDisjunction : signature.Disjunction
+      (bindOrder (max (bindOrder resultOrder .individual) scopeOrder)
+        (classSort resultOrder 0)))
+    (matrix : Formula signature real (.individual :: []) resultOrder)
+    (continuation : Formula signature real
+      (classSort resultOrder 0 :: []) scopeOrder) :
+    ClaimReading signature real where
+  printed := "⊢ : f{ẑ(ψz)} .≡ : (∃φ) : φ!x .≡ₓ. ψx : f{φ!ẑ}"
+  parsed := .assertion (star_4_01 finalNegation finalDisjunction
+    (star_20_01 existential universal equivalenceNegation
+      equivalenceDisjunction leftNegation rightNegation outerNegation
+      conjunctionDisjunction matrix continuation)
+    (star_20_01 existential universal equivalenceNegation
+      equivalenceDisjunction leftNegation rightNegation outerNegation
+      conjunctionDisjunction matrix continuation))
+
+/-- ✱20·1, following PM's two printed citations: unfold ✱20·01, then use
+✱4·2 on the resulting formula.  The predicative `!` is the zero excess in
+`classSort resultOrder 0`.
+`demonstration_provenance: follows-printed`. -/
+theorem star_20_1
+    (existential : ExistentialVocabulary signature (classSort resultOrder 0)
+      (max (bindOrder resultOrder .individual) scopeOrder))
+    (universal : signature.Universal .individual resultOrder)
+    (equivalenceNegation : signature.Negation resultOrder)
+    (equivalenceDisjunction : signature.Disjunction resultOrder)
+    (leftNegation : signature.Negation (bindOrder resultOrder .individual))
+    (rightNegation : signature.Negation scopeOrder)
+    (outerNegation : signature.Negation
+      (max (bindOrder resultOrder .individual) scopeOrder))
+    (conjunctionDisjunction : signature.Disjunction
+      (max (bindOrder resultOrder .individual) scopeOrder))
+    (finalNegation : signature.Negation
+      (bindOrder (max (bindOrder resultOrder .individual) scopeOrder)
+        (classSort resultOrder 0)))
+    (finalDisjunction : signature.Disjunction
+      (bindOrder (max (bindOrder resultOrder .individual) scopeOrder)
+        (classSort resultOrder 0)))
+    (matrix : Formula signature real [.individual] resultOrder)
+    (continuation : Formula signature real [classSort resultOrder 0] scopeOrder) :
+    Derivation (star_20_1_reading existential universal equivalenceNegation
+      equivalenceDisjunction leftNegation rightNegation outerNegation
+      conjunctionDisjunction finalNegation finalDisjunction matrix
+      continuation).parsed := by
+  have line1 := star_20_01_unfold existential universal equivalenceNegation
+    equivalenceDisjunction leftNegation rightNegation outerNegation
+    conjunctionDisjunction matrix continuation
+  have line2 := star_4_2 finalNegation finalDisjunction
+    (star_20_01 existential universal equivalenceNegation
+      equivalenceDisjunction leftNegation rightNegation outerNegation
+      conjunctionDisjunction matrix continuation)
+  rw [line1] at line2
+  exact line2
+
+/-- Audited catalogue reading of ✱20·61. -/
+def star_20_61_reading
+    (universal : signature.Universal (classSort resultOrder 0) scopeOrder)
+    (negation : signature.Negation
+      (bindOrder scopeOrder (classSort resultOrder 0)))
+    (disjunction : signature.Disjunction
+      (max (bindOrder scopeOrder (classSort resultOrder 0)) scopeOrder))
+    (body : Formula signature real [classSort resultOrder 0] scopeOrder)
+    (beta : Term signature real [] (classSort resultOrder 0)) :
+    ClaimReading signature real where
+  printed := "⊢ : (α) . fα .⊃ . fβ"
+  parsed := .assertion (mixedImplication negation disjunction
+    (.always universal body) (body.instantiate beta))
+
+/-- ✱20·61, by the printed use of universal instantiation ✱10·1.
+`demonstration_provenance: follows-printed`. -/
+theorem star_20_61
+    (universal : signature.Universal (classSort resultOrder 0) scopeOrder)
+    (negation : signature.Negation
+      (bindOrder scopeOrder (classSort resultOrder 0)))
+    (disjunction : signature.Disjunction
+      (max (bindOrder scopeOrder (classSort resultOrder 0)) scopeOrder))
+    (body : Formula signature real [classSort resultOrder 0] scopeOrder)
+    (beta : Term signature real [] (classSort resultOrder 0)) :
+    Derivation
+      (star_20_61_reading universal negation disjunction body beta).parsed := by
+  have line1 := Derivation.star_10_1 universal negation disjunction body beta
+  exact line1
+
+/-- Audited catalogue reading of the metalinguistic rule ✱20·62. -/
+def star_20_62_reading
+    (universal : signature.Universal (classSort resultOrder 0) scopeOrder)
+    (body : Formula signature real [classSort resultOrder 0] scopeOrder) :
+    ClaimReading signature real where
+  printed := "When fβ is true, whatever possible argument of the form ẑ(φ!z) β may be, then (α). fα is true."
+  parsed := .assertion (.always universal body)
+
+/-- ✱20·62, following the printed application of the rule ✱10·11.
+The premise is legitimate because PM states ✱20·62 as a rule, not with `⊢`.
+`demonstration_provenance: follows-printed`. -/
+theorem star_20_62
+    (universal : signature.Universal (classSort resultOrder 0) scopeOrder)
+    (body : Formula signature real [classSort resultOrder 0] scopeOrder)
+    (line1 : Derivation (.assertion
+      (body.weakenReal.instantiate
+        (.real (.zero : Var (classSort resultOrder 0 :: real)
+          (classSort resultOrder 0)))))) :
+    Derivation (star_20_62_reading universal body).parsed := by
+  have line2 := Derivation.star_10_11 universal body line1
+  exact line2
+
+/-- Audited catalogue reading of ✱20·631. -/
+def star_20_631_reading
+    (body : Formula signature real [classSort resultOrder 0] scopeOrder) :
+    ClaimReading signature real where
+  printed := "If \"fα\" is significant, then if β is of the same type as α, \"fβ\" is significant, and vice versa."
+  parsed := .significance body
+
+/-- ✱20·631, following PM's reduction to ✱10·121.
+`demonstration_provenance: follows-printed`. -/
+theorem star_20_631
+    (body : Formula signature real [classSort resultOrder 0] scopeOrder) :
+    Derivation (star_20_631_reading body).parsed := by
+  have line1 := Derivation.star_10_121 body
+  exact line1
+
+/-- Audited catalogue reading of ✱20·632. -/
+def star_20_632_reading
+    (body : Formula signature real [classSort resultOrder 0] scopeOrder) :
+    ClaimReading signature real where
+  printed := "If, for some α, there is a proposition fα, then there is a function fα̂, and vice versa."
+  parsed := .functionExistence body
+
+/-- ✱20·632, following PM's reduction to ✱10·122.
+`demonstration_provenance: follows-printed`. -/
+theorem star_20_632
+    (body : Formula signature real [classSort resultOrder 0] scopeOrder) :
+    Derivation (star_20_632_reading body).parsed := by
+  have line1 := Derivation.star_10_122 body
+  exact line1
+
+/-- Audited catalogue reading of ✱20·633. -/
+def star_20_633_reading
+    (leftInner : signature.Universal (classSort leftOrder 0) matrixOrder)
+    (rightOuter : signature.Universal (classSort rightOrder 0)
+      (bindOrder matrixOrder (classSort leftOrder 0)))
+    (rightInner : signature.Universal (classSort rightOrder 0) matrixOrder)
+    (leftOuter : signature.Universal (classSort leftOrder 0)
+      (bindOrder matrixOrder (classSort rightOrder 0)))
+    (negation : signature.Negation
+      (bindOrder (bindOrder matrixOrder (classSort leftOrder 0))
+        (classSort rightOrder 0)))
+    (disjunction : signature.Disjunction
+      (max (bindOrder (bindOrder matrixOrder (classSort leftOrder 0))
+          (classSort rightOrder 0))
+        (bindOrder (bindOrder matrixOrder (classSort rightOrder 0))
+          (classSort leftOrder 0))))
+    (body : Formula signature real
+      [classSort leftOrder 0, classSort rightOrder 0] matrixOrder) :
+    ClaimReading signature real where
+  printed := "\"Whatever possible class α may be, f(α,β) is true whatever possible class β may be\" implies the corresponding statement with α and β interchanged except in \"f(α,β)\"."
+  parsed := .assertion (star_11_07_formula leftInner rightOuter rightInner
+    leftOuter negation disjunction body)
+
+/-- ✱20·633, reconstructed as the class-sorted instance of ✱11·07.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_20_633
+    (leftInner : signature.Universal (classSort leftOrder 0) matrixOrder)
+    (rightOuter : signature.Universal (classSort rightOrder 0)
+      (bindOrder matrixOrder (classSort leftOrder 0)))
+    (rightInner : signature.Universal (classSort rightOrder 0) matrixOrder)
+    (leftOuter : signature.Universal (classSort leftOrder 0)
+      (bindOrder matrixOrder (classSort rightOrder 0)))
+    (negation : signature.Negation
+      (bindOrder (bindOrder matrixOrder (classSort leftOrder 0))
+        (classSort rightOrder 0)))
+    (disjunction : signature.Disjunction
+      (max (bindOrder (bindOrder matrixOrder (classSort leftOrder 0))
+          (classSort rightOrder 0))
+        (bindOrder (bindOrder matrixOrder (classSort rightOrder 0))
+          (classSort leftOrder 0))))
+    (body : Formula signature real
+      [classSort leftOrder 0, classSort rightOrder 0] matrixOrder) :
+    Derivation (star_20_633_reading leftInner rightOuter rightInner leftOuter
+      negation disjunction body).parsed := by
+  have line1 := Derivation.star_11_07 leftInner rightOuter rightInner leftOuter
+    negation disjunction body
+  exact line1
+
+end PM.RamifiedSyntax
+
+#print axioms PM.RamifiedSyntax.star_20_61
+#print axioms PM.RamifiedSyntax.star_20_62
+#print axioms PM.RamifiedSyntax.star_20_631
+#print axioms PM.RamifiedSyntax.star_20_632
+#print axioms PM.RamifiedSyntax.star_20_633
+#print axioms PM.RamifiedSyntax.star_20_1
+#print axioms PM.RamifiedSyntax.star_20_04_unfold
+#print axioms PM.RamifiedSyntax.star_20_05_unfold
+#print axioms PM.RamifiedSyntax.star_20_06_unfold
+#print axioms PM.RamifiedSyntax.star_20_07_unfold
+#print axioms PM.RamifiedSyntax.star_20_071_unfold
+#print axioms PM.RamifiedSyntax.star_20_081_unfold

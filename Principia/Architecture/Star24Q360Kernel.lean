@@ -16,17 +16,17 @@ def Null (Object : Sort u) : Class Object :=
 def ClassExists (alpha : Class Object) : Prop :=
   ∃ x, alpha x
 
-theorem star_24_01 (Object : Sort u) :
-    Universal Object = fun x => x = x := by
-  rfl
+/-- ✱24·01. `V = ẑx(x = x)` Df. -/
+def star_24_01 (Object : Sort u) : Class Object :=
+  fun x => x = x
 
-theorem star_24_02 (Object : Sort u) :
-    Null Object = Complement (Universal Object) := by
-  rfl
+/-- ✱24·02. `Λ = −V` Df. -/
+def star_24_02 (Object : Sort u) : Class Object :=
+  Complement (Universal Object)
 
-theorem star_24_03 (alpha : Class Object) :
-    ClassExists alpha ↔ ∃ x, alpha x := by
-  rfl
+/-- ✱24·03. `∃!α .= . (∃x) . x ε α` Df. -/
+def star_24_03 (alpha : Class Object) : Prop :=
+  ∃ x, alpha x
 
 /-- PM I ✱24·1. As in PM's quantified universe, the displayed object type
 has at least one possible argument; at that witness the two classes differ. -/

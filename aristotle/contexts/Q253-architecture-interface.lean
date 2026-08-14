@@ -203,8 +203,11 @@ def elementaryValue : Apparent Γ [.elementaryProposition] →
   induction p with
   | constant name => rfl
   | var v => rfl
-  | neg p ih => simp [ofElementary, elementaryValue, ih]
-  | disj p q ihp ihq => simp [ofElementary, elementaryValue, ihp, ihq]
+  | neg p ih => exact congrArg Elementary.neg ih
+  | disj p q ihp ihq =>
+      change Elementary.disj (elementaryValue (ofElementary p) argument)
+        (elementaryValue (ofElementary q) argument) = Elementary.disj p q
+      rw [ihp, ihq]
 
 @[simp] theorem elementaryValue_weakenReal_zero
     (φ : Apparent Γ [.elementaryProposition]) :
@@ -217,22 +220,21 @@ def elementaryValue : Apparent Γ [.elementaryProposition] →
       | zero => rfl
       | succ tail => exact nomatch tail
   | neg p ih =>
-      have hp : elementaryValue (renameReal (fun v => .succ v) p) (.var .zero) = openHead p := by
-        simpa [weakenReal] using ih
-      simp only [weakenReal, renameReal, elementaryValue, openHead]
-      rw [hp]
+      change Elementary.neg
+        (elementaryValue (renameReal (fun v => .succ v) p) (.var .zero)) =
+        Elementary.neg (openHead p)
+      exact congrArg Elementary.neg ih
   | disj p q ihp ihq =>
-      have hp : elementaryValue (renameReal (fun v => .succ v) p) (.var .zero) = openHead p := by
-        simpa [weakenReal] using ihp
-      have hq : elementaryValue (renameReal (fun v => .succ v) q) (.var .zero) = openHead q := by
-        simpa [weakenReal] using ihq
-      simp only [weakenReal, renameReal, elementaryValue, openHead]
-      rw [hp, hq]
+      change Elementary.disj
+        (elementaryValue (weakenReal p) (.var .zero))
+        (elementaryValue (weakenReal q) (.var .zero)) =
+        Elementary.disj (openHead p) (openHead q)
+      rw [ihp, ihq]
 
 @[simp] theorem elementaryValue_renameReal_succ_zero
     (φ : Apparent Γ [.elementaryProposition]) :
     elementaryValue (renameReal (fun v => .succ v) φ) (.var .zero) = openHead φ := by
-  simpa [weakenReal] using elementaryValue_weakenReal_zero φ
+  exact elementaryValue_weakenReal_zero φ
 
 @[simp] theorem substitute_liftInstantiate_renameOuter_weakenReal
     (φ : Apparent Γ [.elementaryProposition]) :
@@ -250,8 +252,9 @@ def elementaryValue : Apparent Γ [.elementaryProposition] →
       | zero => rfl
       | succ emptyVariable => exact nomatch emptyVariable
   | neg proposition ih =>
-      simpa [substitute, rename, weakenReal, renameReal, ofElementary, openHead]
-        using congrArg neg ih
+      change neg (substitute _ (rename _ (weakenReal proposition))) =
+        neg (ofElementary (openHead proposition))
+      exact congrArg neg ih
   | disj left right ihLeft ihRight =>
       change disj (substitute _ (rename _ (weakenReal left)))
         (substitute _ (rename _ (weakenReal right))) =
@@ -272,7 +275,9 @@ def elementaryValue : Apparent Γ [.elementaryProposition] →
       | zero => rfl
       | succ emptyVariable => exact nomatch emptyVariable
   | neg proposition ih =>
-      simpa [substitute, rename, weakenReal, renameReal] using congrArg neg ih
+      change neg (substitute _ (rename _ (weakenReal proposition))) =
+        neg (weakenReal proposition)
+      exact congrArg neg ih
   | disj left right ihLeft ihRight =>
       change disj (substitute _ (rename _ (weakenReal left)))
         (substitute _ (rename _ (weakenReal right))) =
@@ -289,8 +294,11 @@ def elementaryValue : Apparent Γ [.elementaryProposition] →
   induction p with
   | constant name => rfl
   | var realVariable => rfl
-  | neg proposition ih => simpa [substitute, ofElementary] using congrArg neg ih
-  | disj left right ihLeft ihRight => simp [substitute, ofElementary, ihLeft, ihRight]
+  | neg proposition ih => exact congrArg neg ih
+  | disj left right ihLeft ihRight =>
+      change disj (substitute _ (ofElementary left))
+        (substitute _ (ofElementary right)) = disj (ofElementary left) (ofElementary right)
+      rw [ihLeft, ihRight]
 
 def openHeadOrBound (φ : Apparent Γ [.elementaryProposition]) :
     Apparent (.elementaryProposition :: Γ) [.elementaryProposition] :=
@@ -449,9 +457,19 @@ def Significant (v : BoundVar Δ .elementaryProposition)
   induction proposition with
   | constant name => rfl
   | var v => rfl
-  | neg proposition ih => simp [ofElementary, toElementary?, ih]
+  | neg proposition ih =>
+      change Option.map Elementary.neg
+        (toElementary? (ofElementary proposition)) = some (Elementary.neg proposition)
+      rw [ih]
+      rfl
   | disj left right ihLeft ihRight =>
-      simp [ofElementary, toElementary?, ihLeft, ihRight]
+      change (do
+        let p ← toElementary? (ofElementary left)
+        let q ← toElementary? (ofElementary right)
+        some (Elementary.disj p q)) = some (Elementary.disj left right)
+      rw [ihLeft, ihRight]
+      change some (Elementary.disj left right) = some (Elementary.disj left right)
+      rfl
 
 end Apparent
 
@@ -828,9 +846,14 @@ def openRealOuter : FirstOrderMatrix Γ (.elementaryProposition :: Δ) →
     (proposition : FirstOrderMatrix (.elementaryProposition :: Γ) Δ) :
     openRealOuter (abstractRealOuter proposition) = proposition := by
   induction proposition with
-  | quantified proposition => simp [abstractRealOuter, openRealOuter]
-  | neg proposition ih => simp [abstractRealOuter, openRealOuter, ih]
-  | disj left right ihLeft ihRight => simp [abstractRealOuter, openRealOuter, ihLeft, ihRight]
+  | quantified proposition =>
+      exact congrArg FirstOrderMatrix.quantified
+        (FirstOrder.openRealOuter_abstractRealOuter proposition)
+  | neg proposition ih => exact congrArg FirstOrderMatrix.neg ih
+  | disj left right ihLeft ihRight =>
+      change FirstOrderMatrix.disj (openRealOuter (abstractRealOuter left))
+        (openRealOuter (abstractRealOuter right)) = FirstOrderMatrix.disj left right
+      rw [ihLeft, ihRight]
 
 def ofSecondOrder : SecondOrder Γ Δ → Quantified Γ Δ
   | PM.Quantified.always body => PM.Quantified.always (.quantified body)

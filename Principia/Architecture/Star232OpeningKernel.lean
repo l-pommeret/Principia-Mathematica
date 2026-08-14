@@ -9,8 +9,12 @@ def Core (a c d : Set α) := Inter (Inter a c) d
 def SC (F : Set α → Set β) (c d a : Set α) := F (Core a c d)
 def OSC (F G : Set α → Set β) (c d a : Set α) := Inter (SC F c d a) (SC G c d a)
 
-theorem star_232_01 (F : Set α → Set β) (c d a : Set α) : SC F c d a = F (Core a c d) := rfl
-theorem star_232_02 (F G : Set α → Set β) (c d a : Set α) : OSC F G c d a = Inter (SC F c d a) (SC G c d a) := rfl
+/-- ✱232·01. `(P R̅ Q)scʻα = P R̅sc(Q*ʔfα)` Df. -/
+def star_232_01 (F : Set α → Set β) (c d a : Set α) : Set β :=
+  F (Core a c d)
+/-- ✱232·02. `(P R̅ Q)osʻα = P R̅os(Q*ʔfα)` Df. -/
+def star_232_02 (F G : Set α → Set β) (c d a : Set α) : Set β :=
+  Inter (SC F c d a) (SC G c d a)
 theorem star_232_1 (F : Set α → Set β) (c d a : Set α) : SC F c d a = F (Core a c d) := rfl
 theorem star_232_101 (F G : Set α → Set β) (c d a : Set α) :
     OSC F G c d a = Inter (SC F c d a) (SC G c d a) := rfl

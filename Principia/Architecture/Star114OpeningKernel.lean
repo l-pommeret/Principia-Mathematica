@@ -9,8 +9,8 @@ def CardinalProduct (F : I → Type u) := ClassProduct F
 def ProductExists (F : I → Type u) := Nonempty (CardinalProduct F)
 def EmptyType (A : Sort u) := A → False
 
-/-- ✱114·01, definition of the cardinal product. -/
-theorem star_114_01 (F : I → Type u) : CardinalProduct F = ClassProduct F := rfl
+/-- ✱114·01. `ΠNcʻκ = Ncʻ∈Δʻκ Df`. -/
+def star_114_01 (F : I → Type u) : Sort _ := ClassProduct F
 
 /-- ✱114·1, the defining identity. -/
 theorem star_114_1 (F : I → Type u) : CardinalProduct F = ((i : I) → F i) := rfl

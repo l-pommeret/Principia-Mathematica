@@ -47,8 +47,6 @@ structure Star9361KernelAssertion (p : Elementary Γ)
   line1 : PM.Derivation
     ((Apparent.openHead φ ∨ₚ Elementary.schemaInstance (fun v => .var (.succ v)) p) ⊃ₚ
       (Elementary.schemaInstance (fun v => .var (.succ v)) p ∨ₚ Apparent.openHead φ))
-  monotonicity : Star921MatrixKernel.Star9CanonicalAssertion
-    (star_9_21_line7_raw (leftFunction p φ) (rightFunction p φ))
   /-- Closed line (2) after the copied ✱9·13·21 step. -/
   line2 : line2Raw p φ = line2Raw p φ
   star903 : NormalizesScoped (line2Raw p φ) (after903Raw p φ)
@@ -59,8 +57,6 @@ theorem derive (p : Elementary Γ)
     Star9361KernelAssertion p φ where
   line1 := PM.Derivation.star_1_4
     (Apparent.openHead φ) (Elementary.schemaInstance (fun v => .var (.succ v)) p)
-  monotonicity := Star921MatrixKernel.Star9KernelAssertion.star_9_21
-    (leftFunction p φ) (rightFunction p φ)
   line2 := rfl
   star903 := by
     apply NormalizesScoped.disjCongr

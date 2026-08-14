@@ -12,7 +12,7 @@ def star_21_07 (f : Relation Left Right → Prop) : Prop :=
   ∀ φ : Left → Right → Prop, f φ
 
 /-- PM I ✱21·071. -/
-def star_21_071 (f : Relation Left Right → Prop) : Prop :=
+def star_21_071 (f : (Left → Right → Prop) → Prop) : Prop :=
   ∃ φ : Left → Right → Prop, f φ
 
 /-- PM I ✱21·072. The description remains contextually scoped. -/
@@ -26,10 +26,10 @@ def star_21_08
   ∃ φ : Relation Left Right → Relation Left' Right' → Prop,
     (∀ R S, ψ R S ↔ φ R S) ∧ f φ
 
-/-- PM I ✱21·081. -/
-theorem star_21_081
+/-- PM I ✱21·081. P{φ!(ẑR,ẑS)}Q .= . φ!(P,Q) Df -/
+def star_21_081
     (φ : Relation Left Right → Relation Left' Right' → Prop)
-    (P : Relation Left Right) (Q : Relation Left' Right') :
-    φ P Q ↔ φ P Q := Iff.rfl
+    (P : Relation Left Right) (Q : Relation Left' Right') : Prop :=
+  φ P Q
 
 end PM.Architecture.Star21Q330Definitions

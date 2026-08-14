@@ -8,12 +8,12 @@ def ArithmeticFamily (F : I → Type u) := ∀ i, Nonempty (F i)
 def EvalGraph {I : Sort v} {F : I → Type u} (f : ClassProduct F) (i : I) (x : F i) := f i = x
 def UniqueValue {A : Sort u} (P : A → Prop) := ∃ x, P x ∧ ∀ y, P y → y = x
 
-/-- ✱115·01, definition of the product as the class of choice functions. -/
-theorem star_115_01 {ι : Sort v} (F : ι → Type u) :
-    ClassProduct F = ((i : ι) → F i) := rfl
+/-- ✱115·01. Prodʻκ = Dʻʻ∈_Δʻκ Df -/
+def star_115_01 {ι : Sort v} (F : ι → Type u) :=
+  (i : ι) → F i
 
-/-- ✱115·02, definition of an arithmetical family. -/
-theorem star_115_02 (F : I → Type u) : ArithmeticFamily F ↔ ∀ i, Nonempty (F i) := Iff.rfl
+/-- ✱115·02. Cls³ arithm = κ̂(κ,sʻκ ∈ Cls² excl) Df -/
+def star_115_02 (F : I → Type u) : Prop := ∀ i, Nonempty (F i)
 
 /-- ✱115·1, the defining identity for `ClassProduct`. -/
 theorem star_115_1 {ι : Sort v} (F : ι → Type u) :

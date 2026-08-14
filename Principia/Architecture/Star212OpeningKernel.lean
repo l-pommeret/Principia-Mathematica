@@ -14,8 +14,10 @@ def Field (R : Rel α) : Class α := fun x => Dom R x ∨ Cod R x
 def EmptyRel : Rel α := fun _ _ => False
 def AtMostOne (a : Class α) := ∀ ⦃x y⦄, a x → a y → x = y
 
-theorem star_212_01 (c : Class (Class α)) : Sigma c = SegmentRel c := rfl
-theorem star_212_02 (c : Class (Class α)) : Sgm c = SegmentRel c := rfl
+/-- ✱212·01. `ςʻP=P_lc↾DʻP_∈` Df. -/
+def star_212_01 (c : Class (Class α)) : Rel (Class α) := SegmentRel c
+/-- ✱212·02. `sgmʻP=P_lc↾Dʻ(P_∈∩̇I)` Df. -/
+def star_212_02 (c : Class (Class α)) : Rel (Class α) := SegmentRel c
 theorem star_212_1 (c : Class (Class α)) (a b : Class α) :
     Sigma c a b ↔ c a ∧ c b ∧ Proper a b := Iff.rfl
 theorem star_212_11 (c : Class (Class α)) (a b : Class α) :

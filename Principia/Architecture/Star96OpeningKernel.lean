@@ -9,8 +9,12 @@ def Ipart (R : Relation α) (x : α) : Class α :=
 def Jpart (R : Relation α) (x : α) : Class α :=
   fun z => ReflexiveClosure R x z ∧ ¬ Ipart R x z
 
-theorem star_96_01 : Ipart R x = fun z => ReflexiveClosure R x z ∧ TransitiveClosure R z z := rfl
-theorem star_96_02 : Jpart R x = fun z => ReflexiveClosure R x z ∧ ¬ Ipart R x z := rfl
+/-- ✱96·01. I_Rʻx = R_*⃖ʻx ∩ ẑz(z R_po z) Dft [✱96] -/
+def star_96_01 (R : Relation α) (x : α) : Class α :=
+  fun z => ReflexiveClosure R x z ∧ TransitiveClosure R z z
+/-- ✱96·02. J_Rʻx = R_*⃖ʻx − I_Rʻx Dft [✱96] -/
+def star_96_02 (R : Relation α) (x : α) : Class α :=
+  fun z => ReflexiveClosure R x z ∧ ¬ Ipart R x z
 theorem star_96_1 : Ipart R x z ↔ ReflexiveClosure R x z ∧ TransitiveClosure R z z := Iff.rfl
 theorem star_96_101 : Jpart R x z ↔ ReflexiveClosure R x z ∧ ¬ TransitiveClosure R z z := by
   constructor

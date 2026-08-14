@@ -5,9 +5,9 @@
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
     "strict": false,
-    "interface_gated": false,
-    "canonical_integration_forbidden": false,
-    "requires_one_to_one_kernel_remap": false
+    "interface_gated": true,
+    "canonical_integration_forbidden": true,
+    "requires_one_to_one_kernel_remap": true
   },
   "batch_items": [
     {
@@ -16,9 +16,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": false,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱4·01",
       "proof_permissions": [],
@@ -52,9 +52,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": false,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱4·02",
       "proof_permissions": [],
@@ -88,9 +88,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": false,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱4·1",
       "proof_permissions": [
@@ -189,10 +189,18 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·16",
+          "PM1:✱2·17",
+          "PM1:✱3·2"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·16",
+        "PM1:✱2·17",
+        "PM1:✱3·2"
+      ],
       "substitutions": [],
       "documented_relaxations": [
         "PM1:✱1·1",
@@ -206,9 +214,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": false,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱4·12",
       "proof_permissions": [
@@ -256,8 +264,6 @@
         "PM1:✱1·4",
         "PM1:✱1·5",
         "PM1:✱1·6",
-        "PM1:✱1·7",
-        "PM1:✱1·72",
         "PM1:✱2·02",
         "PM1:✱2·03",
         "PM1:✱2·04",
@@ -289,8 +295,6 @@
         "PM1:✱2·81",
         "PM1:✱2·82",
         "PM1:✱2·83",
-        "PM1:✱3·01",
-        "PM1:✱3·03",
         "PM1:✱3·1",
         "PM1:✱3·11",
         "PM1:✱3·12",
@@ -315,8 +319,6 @@
         "PM1:✱1·4": "PM.FirstEdition.Volume1.Star1.star_1_4",
         "PM1:✱1·5": "PM.FirstEdition.Volume1.Star1.star_1_5",
         "PM1:✱1·6": "PM.FirstEdition.Volume1.Star1.star_1_6",
-        "PM1:✱1·7": "PM.Formation.star_1_7",
-        "PM1:✱1·72": "PM.Formation.star_1_72",
         "PM1:✱2·02": "PM.FirstEdition.Volume1.Star2.star_2_02",
         "PM1:✱2·03": "PM.FirstEdition.Volume1.Star2.star_2_03",
         "PM1:✱2·04": "PM.FirstEdition.Volume1.Star2.star_2_04",
@@ -348,8 +350,6 @@
         "PM1:✱2·81": "PM.FirstEdition.Volume1.Star2.star_2_81",
         "PM1:✱2·82": "PM.FirstEdition.Volume1.Star2.star_2_82",
         "PM1:✱2·83": "PM.FirstEdition.Volume1.Star2.star_2_83",
-        "PM1:✱3·01": "PM.Elementary.conj",
-        "PM1:✱3·03": "PM.FirstEdition.Volume1.Star3.star_3_03",
         "PM1:✱3·1": "PM.FirstEdition.Volume1.Star3.star_3_1",
         "PM1:✱3·11": "PM.FirstEdition.Volume1.Star3.star_3_11",
         "PM1:✱3·12": "PM.FirstEdition.Volume1.Star3.star_3_12",
@@ -366,7 +366,6 @@
         "PM1:✱3·47": "PM.FirstEdition.Volume1.Star3.star_3_47"
       },
       "context_lean_paths": [
-        "Principia/Deduction/Formation.lean",
         "Principia/Deduction/System.lean",
         "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
         "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
@@ -375,10 +374,20 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·03",
+          "PM1:✱2·15",
+          "PM1:✱3·2",
+          "PM1:✱3·47"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·03",
+        "PM1:✱2·15",
+        "PM1:✱3·2",
+        "PM1:✱3·47"
+      ],
       "substitutions": [],
       "documented_relaxations": [
         "PM1:✱1·1",
@@ -396,9 +405,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": false,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱4·13",
       "proof_permissions": [
@@ -487,10 +496,18 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·12",
+          "PM1:✱2·14",
+          "PM1:✱3·2"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·12",
+        "PM1:✱2·14",
+        "PM1:✱3·2"
+      ],
       "substitutions": [],
       "documented_relaxations": [
         "PM1:✱1·1",
@@ -522,8 +539,6 @@
     "PM1:✱1·4",
     "PM1:✱1·5",
     "PM1:✱1·6",
-    "PM1:✱1·7",
-    "PM1:✱1·72",
     "PM1:✱2·02",
     "PM1:✱2·03",
     "PM1:✱2·04",
@@ -556,7 +571,6 @@
     "PM1:✱2·82",
     "PM1:✱2·83",
     "PM1:✱3·01",
-    "PM1:✱3·03",
     "PM1:✱3·1",
     "PM1:✱3·11",
     "PM1:✱3·12",
@@ -581,8 +595,6 @@
     "PM1:✱1·4": "PM.FirstEdition.Volume1.Star1.star_1_4",
     "PM1:✱1·5": "PM.FirstEdition.Volume1.Star1.star_1_5",
     "PM1:✱1·6": "PM.FirstEdition.Volume1.Star1.star_1_6",
-    "PM1:✱1·7": "PM.Formation.star_1_7",
-    "PM1:✱1·72": "PM.Formation.star_1_72",
     "PM1:✱2·02": "PM.FirstEdition.Volume1.Star2.star_2_02",
     "PM1:✱2·03": "PM.FirstEdition.Volume1.Star2.star_2_03",
     "PM1:✱2·04": "PM.FirstEdition.Volume1.Star2.star_2_04",
@@ -615,7 +627,6 @@
     "PM1:✱2·82": "PM.FirstEdition.Volume1.Star2.star_2_82",
     "PM1:✱2·83": "PM.FirstEdition.Volume1.Star2.star_2_83",
     "PM1:✱3·01": "PM.Elementary.conj",
-    "PM1:✱3·03": "PM.FirstEdition.Volume1.Star3.star_3_03",
     "PM1:✱3·1": "PM.FirstEdition.Volume1.Star3.star_3_1",
     "PM1:✱3·11": "PM.FirstEdition.Volume1.Star3.star_3_11",
     "PM1:✱3·12": "PM.FirstEdition.Volume1.Star3.star_3_12",
@@ -632,7 +643,6 @@
     "PM1:✱3·47": "PM.FirstEdition.Volume1.Star3.star_3_47"
   },
   "context_lean_paths": [
-    "Principia/Deduction/Formation.lean",
     "Principia/Deduction/System.lean",
     "Principia/FirstEdition/Volume1/Part1/SectionA/Star1.lean",
     "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
@@ -651,10 +661,66 @@
     "PM1:✱3·2",
     "PM1:✱3·47"
   ],
-  "direct_interface_dependencies": [],
-  "interface_dependencies": [],
-  "source_backfill_required": false,
-  "integration_blocked": false,
+  "direct_interface_dependencies": [
+    "PM1:✱2·03",
+    "PM1:✱2·12",
+    "PM1:✱2·14",
+    "PM1:✱2·15",
+    "PM1:✱2·16",
+    "PM1:✱2·17",
+    "PM1:✱3·2",
+    "PM1:✱3·47"
+  ],
+  "interface_dependencies": [
+    "PM1:✱2·02",
+    "PM1:✱2·03",
+    "PM1:✱2·04",
+    "PM1:✱2·05",
+    "PM1:✱2·06",
+    "PM1:✱2·07",
+    "PM1:✱2·08",
+    "PM1:✱2·1",
+    "PM1:✱2·11",
+    "PM1:✱2·12",
+    "PM1:✱2·13",
+    "PM1:✱2·14",
+    "PM1:✱2·15",
+    "PM1:✱2·16",
+    "PM1:✱2·17",
+    "PM1:✱2·3",
+    "PM1:✱2·31",
+    "PM1:✱2·32",
+    "PM1:✱2·38",
+    "PM1:✱2·53",
+    "PM1:✱2·6",
+    "PM1:✱2·62",
+    "PM1:✱2·621",
+    "PM1:✱2·73",
+    "PM1:✱2·74",
+    "PM1:✱2·75",
+    "PM1:✱2·76",
+    "PM1:✱2·8",
+    "PM1:✱2·81",
+    "PM1:✱2·82",
+    "PM1:✱2·83",
+    "PM1:✱3·01",
+    "PM1:✱3·1",
+    "PM1:✱3·11",
+    "PM1:✱3·12",
+    "PM1:✱3·13",
+    "PM1:✱3·14",
+    "PM1:✱3·2",
+    "PM1:✱3·22",
+    "PM1:✱3·26",
+    "PM1:✱3·27",
+    "PM1:✱3·3",
+    "PM1:✱3·31",
+    "PM1:✱3·33",
+    "PM1:✱3·45",
+    "PM1:✱3·47"
+  ],
+  "source_backfill_required": true,
+  "integration_blocked": true,
   "foundation_profile": "elementary-formation-pm1",
   "context_whitespace_policy": "strip-trailing",
   "interface_signature_targets": {

@@ -18,12 +18,13 @@ theorem class_ext {alpha beta : Class Object}
   funext x
   exact propext (h x)
 
-/-- ✱54·01, the definition of cardinal zero. -/
-theorem star_54_01 (alpha : Class Object) : Zero alpha = (alpha = Empty) := rfl
+/-- ✱54·01. `0 = ιʻΛ` Df. -/
+def star_54_01 : CardinalClass Object :=
+  fun alpha => alpha = Empty
 
-/-- ✱54·02, the definition of cardinal two. -/
-theorem star_54_02 (alpha : Class Object) :
-    Two alpha = (∃ x y, x ≠ y ∧ alpha = Pair x y) := rfl
+/-- ✱54·02. `2 = α̂{(∃x,y). x ≠ y . α = ιʻx ∪ ιʻy}` Df. -/
+def star_54_02 : CardinalClass Object :=
+  fun alpha => ∃ x y, x ≠ y ∧ alpha = Pair x y
 
 /-- ✱54·1 repeats the defining identity `0 = ιʻΛ`. -/
 theorem star_54_1 : Zero = fun alpha : Class Object => alpha = Empty := rfl

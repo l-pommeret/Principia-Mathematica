@@ -43,13 +43,16 @@ theorem star_63_03 (same : Class U → Class U → Prop) (K : Class (Class U)) :
     T1 same K = t0 same K := rfl
 theorem star_63_04 (s0 : U → U → Prop) (s1 : Class U → Class U → Prop) (x : U) :
     t2 s0 s1 x = t s1 (t s0 x) := rfl
-theorem star_63_041 (s0 : U → U → Prop) (s1 : Class U → Class U → Prop)
-    (s2 : Class (Class U) → Class (Class U) → Prop) (x : U) :
-    t3 s0 s1 s2 x = t s2 (t2 s0 s1 x) := rfl
-theorem star_63_05 (same : Class U → Class U → Prop) (K : Class (Class U)) :
-    T2 same K = T1 same (T1 same K) := rfl
-theorem star_63_051 (same : Class U → Class U → Prop) (K : Class (Class U)) :
-    T3 same K = T1 same (T2 same K) := rfl
+/-- ✱63·041. \(t^{3}ʻx = tʻt^{2}ʻx \quad \text{Df}\) -/
+def star_63_041 (s0 : U → U → Prop) (s1 : Class U → Class U → Prop)
+    (s2 : Class (Class U) → Class (Class U) → Prop) (x : U) : Class (Class (Class U)) :=
+  t s2 (t2 s0 s1 x)
+/-- ✱63·05. \(t_{2}ʻ\kappa = t_{1}ʻt_{1}ʻ\kappa \quad \text{Df}\) -/
+def star_63_05 (same : Class U → Class U → Prop) (K : Class (Class U)) : Class (Class U) :=
+  T1 same (T1 same K)
+/-- ✱63·051. \(t_{3}ʻ\kappa = t_{1}ʻt_{2}ʻ\kappa \quad\text{Df}\) -/
+def star_63_051 (same : Class U → Class U → Prop) (K : Class (Class U)) : Class (Class U) :=
+  T1 same (T2 same K)
 
 /-- ✱63·107: universal instantiation in functional notation. -/
 theorem star_63_107 (φ : U → Prop) (f : Prop → Prop)

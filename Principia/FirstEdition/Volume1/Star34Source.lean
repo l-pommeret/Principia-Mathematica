@@ -1,20 +1,26 @@
 /-! PM I ✱34, canonical Gutenberg 78050, complete proposition inventory. -/
 /- PM-VERBATIM-BEGIN PM1:✱34·01
+✱34·01. R| S=x̂ẑ{(∃ y).xRy.ySz} Df
 ✱34·01. R|S = x̂ẑ{(∃y).xRy.ySz} Df
 PM-VERBATIM-END PM1:✱34·01 -/
 /- PM-VERBATIM-BEGIN PM1:✱34·02
+✱34·02. R²=R| R Df
 ✱34·02. R²=R|R Df
 PM-VERBATIM-END PM1:✱34·02 -/
 /- PM-VERBATIM-BEGIN PM1:✱34·03
+✱34·03. R³=R²| R Df
 ✱34·03. R³=R²|R Df
 PM-VERBATIM-END PM1:✱34·03 -/
 /- PM-VERBATIM-BEGIN PM1:✱34·1
+✱34·1. ⊢:x(R| S)z.≡.(∃ y).xRy.ySz [✱21·3.(✱34·01)]
 ✱34·1. ⊢ : x(R|S)z .≡. (∃y).xRy.ySz
 PM-VERBATIM-END PM1:✱34·1 -/
 /- PM-VERBATIM-BEGIN PM1:✱34·11
+✱34·11. ⊢:x(R| S)z.≡.∃ !(R⃖ʻx∩ S⃗ʻz)
 ✱34·11. ⊢ : x(R|S)z .≡. ∃!(R⃖ʻx∩S⃗ʻz)
 PM-VERBATIM-END PM1:✱34·11 -/
 /- PM-VERBATIM-BEGIN PM1:✱34·12
+✱34·12. ⊢.R| S=x̂ẑ{∃ !(R⃖ʻx∩ S⃗ʻx)} [✱21·33.✱34·11]
 ✱34·12. ⊢ . R|S=x̂ẑ{∃!(R⃖ʻx∩S⃗ʻx)}
 PM-VERBATIM-END PM1:✱34·12 -/
 /- Remaining canonical IDs (statements are represented by their homonymous exact kernel comments):
@@ -22,3 +28,157 @@ PM-VERBATIM-END PM1:✱34·12 -/
 ✱34·33 ·34 ·35 ·351 ·36 ·361 ·37 ·38 ·4 ·41 ·42 ·5 ·51 ·52 ·53 ·531 ·54
 ✱34·55 ·56 ·6 ·62 ·63 ·7 ·701 ·702 ·703 ·8 ·81 ·82 ·83 ·84 ·841 ·85.
 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱34·2
+✱34·2. ⊢.Cnvʻ(R| S)=Š| Ř
+PM-VERBATIM-END PM1:✱34·2 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·202
+✱34·202. ⊢.R| S=(CnvʻŘ)| S
+PM-VERBATIM-END PM1:✱34·202 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·203
+✱34·203. ⊢.R| S=R| (CnvʻŠ) [Similar proof]
+PM-VERBATIM-END PM1:✱34·203 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·21
+✱34·21. ⊢.(P| Q)| R=P| (Q| R)
+PM-VERBATIM-END PM1:✱34·21 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·22
+✱34·22. P| Q| R=(P| Q)| R Df
+PM-VERBATIM-END PM1:✱34·22 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·23
+✱34·23. ⊢.P| (Q∩̇R)⪽(P| Q)∩̇(P| R)
+PM-VERBATIM-END PM1:✱34·23 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·24
+✱34·24. ⊢.(P∩̇Q)| R⪽(P| R)∩̇(Q| R) [Similar proof]
+PM-VERBATIM-END PM1:✱34·24 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·25
+✱34·25. ⊢.P| (Q⊍R)=(P| Q)⊍(P| R)
+PM-VERBATIM-END PM1:✱34·25 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·26
+✱34·26. ⊢.(P⊍Q)| R=(P| R)⊍(Q| R) [Similar proof]
+PM-VERBATIM-END PM1:✱34·26 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·27
+✱34·27. ⊢:R=R'.⊃.R| P=R'| P
+PM-VERBATIM-END PM1:✱34·27 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·28
+✱34·28. ⊢:R=R'.⊃.P| R=P| R' [Similar proof]
+PM-VERBATIM-END PM1:✱34·28 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·29
+✱34·29. ⊢:R=R'.⊃.P| R| Q=P| R'| Q
+PM-VERBATIM-END PM1:✱34·29 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·3
+✱34·3. ⊢:∃̇!(P| Q).≡.∃ !(ᗡʻP∩ DʻQ)
+PM-VERBATIM-END PM1:✱34·3 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·301
+✱34·301. ⊢:ᗡʻP∩ DʻQ=Λ.≡.P| Q=Λ [✱34·3.Transp]
+PM-VERBATIM-END PM1:✱34·301 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·302
+✱34·302. ⊢:CʻP∩ CʻQ=Λ.⊃.P| Q=Λ̇.Q| P=Λ̇
+PM-VERBATIM-END PM1:✱34·302 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·31
+✱34·31. ⊢:∃̇!(P| Q).⊃.∃̇!P.∃̇!Q
+PM-VERBATIM-END PM1:✱34·31 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·32
+✱34·32. ⊢:. P=Λ.∨ .Q=Λ̇:⊃.P| Q=Λ [✱34·31.Transp.✱25·51]
+PM-VERBATIM-END PM1:✱34·32 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·33
+✱34·33. ⊢ : x ∈ DʻR . ≡ .x(R| Ř)x
+PM-VERBATIM-END PM1:✱34·33 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·34
+✱34·34. ⊢ : R ⪽ P . S ⪽ Q . ⊃ . R| S ⪽ P Q
+PM-VERBATIM-END PM1:✱34·34 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·35
+✱34·35. ⊢ : ∃̇ ! R . ᗡʻR ⊂ DʻP . ⊃ . ∃̇ ! R| P
+PM-VERBATIM-END PM1:✱34·35 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·351
+✱34·351. ⊢ : ∃̇ ! R . DʻR ⊂ ᗡʻP . ⊃ . ∃̇ ! P| R [Proof as in ✱34·35]
+PM-VERBATIM-END PM1:✱34·351 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·36
+✱34·36. ⊢ . Dʻ(P| Q) ⊂ DʻP . ᗡʻ(P| Q) ⊂ ᗡʻQ
+PM-VERBATIM-END PM1:✱34·36 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·361
+✱34·361. ⊢ : ∃̇ ! R . DʻR ⊂ ᗡʻP . ᗡʻR ⊂ DʻQ . ⊃ . ∃̇ ! P| R| Q
+PM-VERBATIM-END PM1:✱34·361 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·37
+✱34·37. ⊢.Cʻ(P| Q)⊂ DʻP∪ ᗡʻQ [✱34·36.✱33·161.✱22·72]
+PM-VERBATIM-END PM1:✱34·37 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·38
+✱34·38. ⊢.Cʻ(P| Q)⊂ CʻP∪ CʻQ [✱34·37.✱33·161.✱22·72]
+PM-VERBATIM-END PM1:✱34·38 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·4
+✱34·4. ⊢:b=Pʻc.c=Qʻz.⊃.b=(P| Q)ʻz
+PM-VERBATIM-END PM1:✱34·4 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·41
+✱34·41. ⊢:E!PʻQʻz.⊃.PʻQʻz=(P| Q)ʻz
+PM-VERBATIM-END PM1:✱34·41 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·42
+✱34·42. ⊢:(z).Rʻz=PʻQʻz.⊃.R=P| Q
+PM-VERBATIM-END PM1:✱34·42 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·5
+✱34·5. ⊢:xR²y.≡.(∃ z).xRz.zRy [✱34·1.(✱34·02)]
+PM-VERBATIM-END PM1:✱34·5 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·51
+✱34·51. ⊢:xR³y.≡.(∃ z,w).xRz.zRw.wRy
+PM-VERBATIM-END PM1:✱34·51 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·52
+✱34·52. ⊢.R³=R| R² [✱34·21]
+PM-VERBATIM-END PM1:✱34·52 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·53
+✱34·53. ⊢:∃̇!R².≡.∃ !DʻR∩ ᗡʻR [✱34·3]
+PM-VERBATIM-END PM1:✱34·53 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·531
+✱34·531. ⊢:DʻR∩ ᗡʻR=Λ.≡.R²=Λ̇ [✱34·53.Transp]
+PM-VERBATIM-END PM1:✱34·531 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·54
+✱34·54. ⊢:xRx.⊃.xR²x
+PM-VERBATIM-END PM1:✱34·54 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·55
+✱34·55. ⊢:. R²⪽S.≡:xRy.yRz.⊃ₓ,y,z.xSz [✱34·5.✱10·23]
+PM-VERBATIM-END PM1:✱34·55 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·56
+✱34·56. ⊢.DʻR²⊂DʻR.ᗡʻR²⊂ᗡʻR.CʻR²⊂ CʻR [✱34·36·38]
+PM-VERBATIM-END PM1:✱34·56 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·6
+✱34·6. ⊢.(R∩̇S)²⪽R²∩̇S²
+PM-VERBATIM-END PM1:✱34·6 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·62
+✱34·62. ⊢.(R⊍S)²=R²⊍R| S⊍S| R⊍S²
+PM-VERBATIM-END PM1:✱34·62 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·63
+✱34·63. ⊢.Cnvʻ(R²)=(CnvʻR)²
+PM-VERBATIM-END PM1:✱34·63 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·7
+✱34·7. ⊢.Cnv(S| Š)=S| Š
+PM-VERBATIM-END PM1:✱34·7 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·701
+✱34·701. ⊢.Cnv(Š| S)=Š| S [✱34·2·203]
+PM-VERBATIM-END PM1:✱34·701 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·702
+✱34·702. ⊢.Cʻ(S| Š)=DʻS
+PM-VERBATIM-END PM1:✱34·702 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·703
+✱34·703. ⊢.Cʻ(Š| S)=ᗡʻS [Similar proof]
+PM-VERBATIM-END PM1:✱34·703 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·73
+✱34·73. ⊢:CʻP∩ CʻQ=Λ.⊃.(P⊍Q)²=P²⊍Q²
+PM-VERBATIM-END PM1:✱34·73 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·8
+✱34·8. ⊢:R=Ř.R²⪽R.⊃.R=R²=R| Ř
+PM-VERBATIM-END PM1:✱34·8 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·81
+✱34·81. ⊢:R=Ř.R²⪽R.≡.R=Ř.R²=R [✱34·8.✱4·71]
+PM-VERBATIM-END PM1:✱34·81 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·82
+✱34·82. ⊢:. R=Ř.R²⪽R.⊃:x∈ DʻR.≡.xRx
+PM-VERBATIM-END PM1:✱34·82 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·83
+✱34·83. ⊢:R=Ř.R²⪽R.xRy.⊃.R⃖ʻx=R⃖ʻy
+PM-VERBATIM-END PM1:✱34·83 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·84
+✱34·84. ⊢:R=Ř.R²⪽R.y∈ DʻR.R⃖ʻx=R⃖ʻy.⊃.xRy
+PM-VERBATIM-END PM1:✱34·84 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·841
+✱34·841. ⊢:R=Ř.R²⪽R.x∈ DʻR.R⃖ʻx=R⃖ʻy.⊃.xRy
+PM-VERBATIM-END PM1:✱34·841 -/
+/- PM-VERBATIM-BEGIN PM1:✱34·85
+✱34·85. ⊢:. R=Ř.R²⪽R.⊃:xRy.≡.x∈ DʻR.R⃖ʻx=R⃖ʻy [✱34·83·841.✱33·14]
+PM-VERBATIM-END PM1:✱34·85 -/

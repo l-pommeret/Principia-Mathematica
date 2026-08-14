@@ -18,9 +18,7 @@ def Cls (representation : κ → Class α) : Class (Class α) :=
 
 /-- Exact reductional reading of PM I ✱20·03:
 `Cls = ẑ((∃φ). α = ẑ(φ!z))`. -/
-theorem star_20_03 (representation : κ → Class α) :
-    Cls representation =
-      (fun candidate => ∃ φ, candidate = extension representation φ) := by
-  rfl
+def star_20_03 (representation : κ → Class α) : Class (Class α) :=
+  fun candidate => ∃ φ, candidate = extension representation φ
 
 end PM.Architecture.Star20Q315Definition

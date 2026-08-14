@@ -503,3 +503,13 @@ abbrev star_9_08 {Γ Δ}
   PM.FirstOrder.disjSometimesAlways ψ φ
 
 end PM.FirstEdition.Volume1.Star9
+
+/- PM-VERBATIM-BEGIN PM1:✱9·131
+✱9·131. Definition of "being of the same type." The following is a step-by-step definition, the definition for higher types presupposing that for lower types. We say that u and v "are of the same type" if (1) both are individuals, (2) both are elementary functions taking arguments of the same type, (3) u is a function and v is its negation, (4) u is φ x̂ or ψx̂ and v is φ x̂ ∨ ψ x̂ , where φ x̂ and ψ x̂ are elementary functions, (5) u is (y). φ (x̂,y) and v is ( z). ψ (x̂,z) , where φ (x̂, ŷ) , ψ (x̂, ŷ) are of the same type, (6) both are elementary propositions, (7) u is a proposition and v is ∼u , or (8) u is ( x).φ x and v is ( y).ψ y , where φ x̂ and ψ x̂ are of the same type.
+PM-VERBATIM-END PM1:✱9·131 -/
+/- PM-VERBATIM-BEGIN PM1:✱9·14
+✱9·14. If " φ x " is significant, then if x is of the same type as a , " φ a " is significant, and vice versa. Pp. (Cf. note on *10·121, p. 146.)
+PM-VERBATIM-END PM1:✱9·14 -/
+/- PM-VERBATIM-BEGIN PM1:✱9·15
+✱9·15. If, for some a , there is a proposition φ a , then there is a function φ x̂ , and vice versa. Pp.
+PM-VERBATIM-END PM1:✱9·15 -/

@@ -5,9 +5,9 @@
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
     "strict": false,
-    "interface_gated": false,
-    "canonical_integration_forbidden": false,
-    "requires_one_to_one_kernel_remap": false
+    "interface_gated": true,
+    "canonical_integration_forbidden": true,
+    "requires_one_to_one_kernel_remap": true
   },
   "batch_items": [
     {
@@ -16,9 +16,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": false,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱3·33",
       "proof_permissions": [
@@ -120,10 +120,18 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·05",
+          "PM1:✱2·06",
+          "PM1:✱3·31"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱3·31"
+      ],
       "substitutions": [],
       "documented_relaxations": [
         "PM1:✱1·1"
@@ -138,9 +146,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": false,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱3·34",
       "proof_permissions": [
@@ -242,10 +250,18 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·05",
+          "PM1:✱2·06",
+          "PM1:✱3·31"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·05",
+        "PM1:✱2·06",
+        "PM1:✱3·31"
+      ],
       "substitutions": [],
       "documented_relaxations": [
         "PM1:✱1·1"
@@ -260,9 +276,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": false,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱3·35",
       "proof_permissions": [
@@ -367,10 +383,16 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·27",
+          "PM1:✱3·31"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·27",
+        "PM1:✱3·31"
+      ],
       "substitutions": [],
       "documented_relaxations": [
         "PM1:✱1·1"
@@ -459,10 +481,33 @@
     "PM1:✱2·27",
     "PM1:✱3·31"
   ],
-  "direct_interface_dependencies": [],
-  "interface_dependencies": [],
-  "source_backfill_required": false,
-  "integration_blocked": false,
+  "direct_interface_dependencies": [
+    "PM1:✱2·05",
+    "PM1:✱2·06",
+    "PM1:✱2·27",
+    "PM1:✱3·31"
+  ],
+  "interface_dependencies": [
+    "PM1:✱2·04",
+    "PM1:✱2·05",
+    "PM1:✱2·06",
+    "PM1:✱2·07",
+    "PM1:✱2·08",
+    "PM1:✱2·1",
+    "PM1:✱2·11",
+    "PM1:✱2·12",
+    "PM1:✱2·25",
+    "PM1:✱2·26",
+    "PM1:✱2·27",
+    "PM1:✱2·3",
+    "PM1:✱2·31",
+    "PM1:✱2·38",
+    "PM1:✱2·53",
+    "PM1:✱3·01",
+    "PM1:✱3·31"
+  ],
+  "source_backfill_required": true,
+  "integration_blocked": true,
   "foundation_profile": "elementary-pm1",
   "context_whitespace_policy": "strip-trailing",
   "interface_signature_targets": {

@@ -9,10 +9,16 @@ def Limax (max lt : Set α→Set α) := fun A=>Union (max A) (lt A)
 
 variable {α : Type u} {A B C : Set α} {x : α} {F : Set α → Set α} {R : α → α → Prop}
 
-theorem star_207_01 (seq : Set α→Set α) (D : Set (Set α)) : Lt seq D=Restrict seq (fun A=>¬D A) := rfl
-theorem star_207_02 (prec : Set α→Set α) (D : Set (Set α)) : Lt prec D=Restrict prec (fun A=>¬D A) := rfl
-theorem star_207_03 (max lt : Set α→Set α) : Limax max lt=fun A=>Union (max A) (lt A) := rfl
-theorem star_207_04 (min tl : Set α→Set α) : Limax min tl=fun A=>Union (min A) (tl A) := rfl
+/-- ✱207·01. `lt_P=lt(P)=seq_P↾(−ᗡʻmax_P) Df`. -/
+def star_207_01 (seq : Set α→Set α) (D : Set (Set α)) : Set α → Set α :=
+  Restrict seq (fun A=>¬D A)
+/-- ✱207·02. `tl_P=tl(P)=prec_P↾(−ᗡʻmin_P) Df`. -/
+def star_207_02 (prec : Set α→Set α) (D : Set (Set α)) : Set α → Set α :=
+  Restrict prec (fun A=>¬D A)
+/-- ✱207·03. `limax_P=max_P∪̇lt_P Df`. -/
+def star_207_03 (max lt : Set α→Set α) : Set α → Set α := fun A=>Union (max A) (lt A)
+/-- ✱207·04. `limin_P=min_P∪̇tl_P Df`. -/
+def star_207_04 (min tl : Set α→Set α) : Set α → Set α := fun A=>Union (min A) (tl A)
 theorem star_207_121 (h : A=B) : A=B := h
 theorem star_207_13 (h : P↔¬Q) : P↔¬Q := h
 theorem star_207_14 (h : P∨Q) : P∨Q := h

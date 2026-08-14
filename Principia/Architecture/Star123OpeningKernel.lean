@@ -23,9 +23,8 @@ def DomainsOfProgressions (A : Set α) : Prop :=
 
 def AlephZero : Set (Set α) := DomainsOfProgressions
 
-/-- PM ✱123·01: `ℵ₀ = DʻʻProg`. -/
-theorem star_123_01 :
-    (AlephZero : Set (Set α)) = DomainsOfProgressions := rfl
+/-- ✱123·01. `ℵ₀ = DʻʻProg` Df. -/
+def star_123_01 : Set (Set α) := DomainsOfProgressions
 
 /-- PM ✱123·1: membership in `ℵ₀` is being the domain of a progression. -/
 theorem star_123_1 (A : Set α) :

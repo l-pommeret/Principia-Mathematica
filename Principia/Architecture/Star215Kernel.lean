@@ -14,7 +14,9 @@ def Transitive (P:Rel α):=∀⦃x y z⦄,P x y→P y z→P x z
 def Connected (P:Rel α):=∀⦃x y⦄,x≠y→P x y∨P y x
 def Lower (P:Rel α) (a:Set α):=∀⦃x y⦄,a y→P x y→a x
 def Upper (P:Rel α) (a:Set α):=∀⦃x y⦄,a x→P x y→a y
-theorem star_215_01 (P:Rel α) (a:Set α): Stretch P a ↔ Included a (Field P) ∧ Included (Inter (Pred P a) (Succ P a)) a := Iff.rfl
+/-- strʻP=α̂(α⊂CʻP.P̆ʻα∩Pʻα⊂α) -/
+def star_215_01 (P : Rel α) (a : Set α) : Prop :=
+  Included a (Field P) ∧ Included (Inter (Pred P a) (Succ P a)) a
 theorem star_215_1 (P:Rel α) (a:Set α): Stretch P a ↔ Included a (Field P) ∧ Included (Inter (Pred P a) (Succ P a)) a := Iff.rfl
 theorem star_215_11 (P:Rel α): (fun a=>Stretch P a)=(fun a=>Stretch P a):=rfl
 theorem star_215_13 (P:Rel α) (a:Set α) (hl:Lower P a) (hf:Included a (Field P)):Stretch P a:=⟨hf,fun _ h=>hl h.1.choose_spec.1 h.1.choose_spec.2⟩

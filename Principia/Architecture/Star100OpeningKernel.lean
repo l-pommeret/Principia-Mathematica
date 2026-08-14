@@ -22,8 +22,10 @@ theorem similar_trans {a b c : Class α} : Similar a b → Similar b c → Simil
     fun x => by simp only; rw [f.leftInv, e.leftInv],
     fun z => by simp only; rw [e.rightInv, f.rightInv]⟩⟩
 
-theorem star_100_01 (a b : Class α) : Nc a b ↔ Similar b a := Iff.rfl
-theorem star_100_02 (m : Class (Class α)) : NC m ↔ ∃ a, m = Nc a := Iff.rfl
+/-- ✱100·01. `Nc = sm⃗ Df`. -/
+def star_100_01 (a : Class α) : Class (Class α) := fun b => Similar b a
+/-- ✱100·02. `NC = DʻNc Df`. -/
+def star_100_02 : Class (Class (Class α)) := fun m => ∃ a, m = Nc a
 theorem star_100_1 (a b : Class α) : Nc a b ↔ Similar b a ∧ Similar a b := by
   constructor
   · intro h; exact ⟨h, similar_symm h⟩

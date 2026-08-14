@@ -6,10 +6,14 @@ def ExistsExp (a : Class α) (b : Class β) := Nonempty (Exp a b)
 def NonemptyClass (a : Class α) := ∃ x, a x
 def EmptyClass (b : Class β) := ∀ x, ¬ b x
 
-theorem star_116_01 (a : Class α) (b : Class β) : Exp a b = (Subtype b → Subtype a) := rfl
-theorem star_116_02 (a : Class α) (b : Class β) : ExistsExp a b ↔ Nonempty (Subtype b → Subtype a) := Iff.rfl
-theorem star_116_03 (a : Class α) (b : Class β) : Exp a b = Exp a b := rfl
-theorem star_116_04 (a : Class α) (b : Class β) : ExistsExp a b ↔ ExistsExp a b := Iff.rfl
+/-- ✱116·01. α exp β = Prodʻα↓,,ʻʻβ Df -/
+def star_116_01 (a : Class α) (b : Class β) : Type _ := Subtype b → Subtype a
+/-- ✱116·02. μ^ν = γ̂{(∃α,β).μ=N₀cʻα.ν=N₀cʻβ.γ sm(α exp β)} Df -/
+def star_116_02 (a : Class α) (b : Class β) : Prop := Nonempty (Subtype b → Subtype a)
+/-- ✱116·03. `(Ncʻα)^ν = (N₀cʻα)^ν Df`. -/
+def star_116_03 (a : Class α) (b : Class β) : Type _ := Exp a b
+/-- ✱116·04. `μ^(Ncʻβ) = μ^(N₀cʻβ) Df`. -/
+def star_116_04 (a : Class α) (b : Class β) : Prop := ExistsExp a b
 theorem star_116_1 (a : Class α) (b : Class β) (f : Exp a b) : ∀ y : Subtype b, a (f y) := fun y => (f y).property
 theorem star_116_11 (a : Class α) (b : Class β) (f : Exp a b) :
     ∀ y : Subtype b, ∃ x : Subtype a, f y = x ∧ ∀ z, f y = z → z = x :=

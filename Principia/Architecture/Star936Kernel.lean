@@ -23,27 +23,25 @@ def target (p : Elementary Γ) (φ : Apparent Γ [.elementaryProposition]) :
     (.firstOrder (FirstOrder.disjElementaryLeft p (FirstOrder.always φ)))
     (.firstOrder (FirstOrder.disjRightElementary (FirstOrder.always φ) p))
 
-/-- Closed evidence for exactly the three printed stages of ✱9·36. -/
-inductive Star936KernelAssertion (p : Elementary Γ)
-    (φ : Apparent Γ [.elementaryProposition]) : Prop where
-  | printed_chain
-      (line1 : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+/-- Secondary evidence bundle for the three printed stages of ✱9·36.
+It is not an inductive judgement and introduces no theorem-specific rule. -/
+def Star936KernelAssertion (p : Elementary Γ)
+    (φ : Apparent Γ [.elementaryProposition]) : Prop :=
+  OrderedAssertion (Γ := .elementaryProposition :: Γ)
         (.elementary (Apparent.openHead
           (matrixImp (Apparent.ofElementary p ∨ₐ φ)
-            (φ ∨ₐ Apparent.ofElementary p)))))
-      (line2 : OrderedAssertion
+            (φ ∨ₐ Apparent.ofElementary p)))) ∧
+    OrderedAssertion
         (.firstOrder (FirstOrder.always
           (matrixImp (Apparent.ofElementary p ∨ₐ φ)
-            (φ ∨ₐ Apparent.ofElementary p)))) )
-      (monotonicity : Star9CanonicalAssertion
+            (φ ∨ₐ Apparent.ofElementary p)))) ∧
+    Star9CanonicalAssertion
         (star_9_21_line7_raw (Apparent.ofElementary p ∨ₐ φ)
-          (φ ∨ₐ Apparent.ofElementary p)))
-      (line3Reading :
+          (φ ∨ₐ Apparent.ofElementary p)) ∧
         firstImp
           (.firstOrder (FirstOrder.disjElementaryLeft p (FirstOrder.always φ)))
           (.firstOrder (FirstOrder.disjRightElementary (FirstOrder.always φ) p)) =
-          target p φ) :
-      Star936KernelAssertion p φ
+          target p φ
 
 /-- PM I ✱9·36 through its fixed displayed source chain. -/
 def derive (p : Elementary Γ)
@@ -53,19 +51,17 @@ def derive (p : Elementary Γ)
         (.firstOrder (FirstOrder.disjElementaryLeft p (FirstOrder.always φ)))
         (.firstOrder (FirstOrder.disjRightElementary (FirstOrder.always φ) p)) =
         target p φ := rfl
-  exact .printed_chain
-    (.elementary (PM.Derivation.star_1_4
+  refine ⟨.elementary (PM.Derivation.star_1_4
       (Apparent.openHead (Apparent.ofElementary p))
-      (Apparent.openHead φ)))
-    (OrderedAssertion.star_9_13
+      (Apparent.openHead φ)), ?_⟩
+  refine ⟨OrderedAssertion.star_9_13
       (matrixImp (Apparent.ofElementary p ∨ₐ φ)
         (φ ∨ₐ Apparent.ofElementary p))
       (.elementary (PM.Derivation.star_1_4
         (Apparent.openHead (Apparent.ofElementary p))
-        (Apparent.openHead φ))))
-    (Star9KernelAssertion.star_9_21
+        (Apparent.openHead φ))), ?_⟩
+  refine ⟨Star9KernelAssertion.star_9_21
       (Apparent.ofElementary p ∨ₐ φ)
-      (φ ∨ₐ Apparent.ofElementary p))
-    line3Reading
+      (φ ∨ₐ Apparent.ofElementary p), line3Reading⟩
 
 end PM.Architecture.Star936Kernel

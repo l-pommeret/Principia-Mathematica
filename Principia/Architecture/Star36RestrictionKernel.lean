@@ -16,18 +16,17 @@ def rightRestrict (P : Relation α) (a : Class α) : Relation α :=
 def fieldRestrict (P : Relation α) (a : Class α) : Relation α :=
   fun x y => a x ∧ a y ∧ P x y
 
-/-- ✱36·01, the defining equation. -/
-theorem star_36_01 (P : Relation α) (a : Class α) :
+/-- ✱36·01. `P⟏α = α◁P▷α Df`. -/
+def star_36_01 (P : Relation α) (a : Class α) : Relation α :=
+  rightRestrict (leftRestrict a P) a
+
+/-- ✱36·11, the asserted form of the definition. -/
+theorem star_36_11 (P : Relation α) (a : Class α) :
     fieldRestrict P a = rightRestrict (leftRestrict a P) a := by
   funext x y
   apply propext
   exact ⟨fun ⟨hx, hy, hp⟩ => ⟨⟨hx, hp⟩, hy⟩,
     fun ⟨⟨hx, hp⟩, hy⟩ => ⟨hx, hy, hp⟩⟩
-
-/-- ✱36·11, the asserted form of the definition. -/
-theorem star_36_11 (P : Relation α) (a : Class α) :
-    fieldRestrict P a = rightRestrict (leftRestrict a P) a := by
-  exact star_36_01 P a
 
 /-- ✱36·13, membership in the restricted relation. -/
 theorem star_36_13 (P : Relation α) (a : Class α) (x y : α) :

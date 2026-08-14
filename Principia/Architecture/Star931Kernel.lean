@@ -396,34 +396,11 @@ structure Star931MatrixAssertion
     ScopedFirstOrderMatrixReification [.elementaryProposition]
       (line2ScopedRaw φ)
 
-/-- Typed stages of the remaining printed chain.  Each constructor is closed
-to the exact ✱9·31 matrix and cannot normalize arbitrary Raw assertions. -/
-inductive Star931ClosedStage
-    (φ : Apparent Γ [.elementaryProposition]) : Nat → Prop where
-  | line2 (proof : Star931MatrixAssertion φ) : Star931ClosedStage φ 2
-  | second_9_13
-      (line2Proof : Star931ClosedStage φ 2)
-      (carrier : FirstOrderMatrix.Quantified
-        (.elementaryProposition :: Γ) [])
-      (carrierExact : carrier = line3Carrier φ)
-      (targetExact : star_9_13_higher_target carrier = line3Target φ) :
-      Star931ClosedStage φ 3
-  | star_9_03_02
-      (line3Proof : Star931ClosedStage φ 3)
-      (certificate : NormalizesScopedAt 0
-        (closedLine3DisplayRaw φ) (closedLine4DisplayRaw φ)) :
-      Star931ClosedStage φ 4
-  | star_9_05_06
-      (line4Proof : Star931ClosedStage φ 4)
-      (certificate : NormalizesScopedAt 0
-        (closedLine4DisplayRaw φ) (closedFinalDisplayRaw φ)) :
-      Star931ClosedStage φ 5
-
 /-- Closed evidence retaining the original indexed proof and its exact
 source-labelled normalization endpoint. -/
 structure Star931KernelAssertion
     (φ : Apparent Γ [.elementaryProposition]) where
-  chain : Star931ClosedStage φ 5
+  matrix : Star931MatrixAssertion φ
   endpoint : Raw Γ
   endpointExact : endpoint = exactTargetRaw φ
   normalization : NormalizesScopedAt 0
@@ -438,9 +415,7 @@ def deriveLine2
 def derive
     (φ : Apparent Γ [.elementaryProposition]) :
     Star931KernelAssertion φ where
-  chain := .star_9_05_06 (.star_9_03_02
-    (.second_9_13 (.line2 (deriveLine2 φ)) (line3Carrier φ) rfl rfl)
-    (closedLine3_to_line4 φ)) (closedLine4_to_final φ)
+  matrix := deriveLine2 φ
   endpoint := closedFinalDisplayRaw φ
   endpointExact := closedFinalDisplayRaw_eq_exactTargetRaw φ
   normalization := closedLine3_to_final φ

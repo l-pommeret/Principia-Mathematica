@@ -8,8 +8,10 @@ def Restrict (P : Rel α β) (k : Class β) : Rel α β := fun x y => P x y ∧ 
 def Selection (P : Rel α β) (k : Class β) (R : Rel α β) : Prop :=
   (∀ x y, R x y → P x y) ∧ (∀ y, k y ↔ ∃ x, R x y) ∧ (∀ x z y, R x y → R z y → x = z)
 
-theorem star_80_01 (P : Rel α β) (k : Class β) (R : Rel α β) :
-    Selection P k R ↔ ((∀ x y, R x y → P x y) ∧ (∀ y, k y ↔ ∃ x, R x y) ∧ ∀ x z y, R x y → R z y → x = z) := Iff.rfl
+/-- ✱80·01. P_Δ = λ̂κ̂{λ=(1→Cls) ∩ RlʻP ∩ ᗡ⃖ʻκ} Df -/
+def star_80_01 (P : Rel α β) (k : Class β) (R : Rel α β) : Prop :=
+  (∀ x y, R x y → P x y) ∧ (∀ y, k y ↔ ∃ x, R x y) ∧
+    ∀ x z y, R x y → R z y → x = z
 theorem star_80_1 (P : Rel α β) (k : Class β) (R : Rel α β) : Selection P k R ↔ Selection P k R := Iff.rfl
 theorem star_80_11 (P : Rel α β) (k : Class β) (R : Rel α β) : Selection P k R ↔ Selection P k R := Iff.rfl
 theorem star_80_12 (P : Rel α β) (k : Class β) : ∃ S : Rel α β → Prop, S = Selection P k := ⟨_, rfl⟩

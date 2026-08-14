@@ -200,8 +200,11 @@ def elementaryValue : Apparent Γ [.elementaryProposition] →
   induction p with
   | constant name => rfl
   | var v => rfl
-  | neg p ih => simp [ofElementary, elementaryValue, ih]
-  | disj p q ihp ihq => simp [ofElementary, elementaryValue, ihp, ihq]
+  | neg p ih => exact congrArg Elementary.neg ih
+  | disj p q ihp ihq =>
+      change Elementary.disj (elementaryValue (ofElementary p) argument)
+        (elementaryValue (ofElementary q) argument) = Elementary.disj p q
+      rw [ihp, ihq]
 
 @[simp] theorem elementaryValue_weakenReal_zero
     (φ : Apparent Γ [.elementaryProposition]) :
@@ -214,22 +217,21 @@ def elementaryValue : Apparent Γ [.elementaryProposition] →
       | zero => rfl
       | succ tail => exact nomatch tail
   | neg p ih =>
-      have hp : elementaryValue (renameReal (fun v => .succ v) p) (.var .zero) = openHead p := by
-        simpa [weakenReal] using ih
-      simp only [weakenReal, renameReal, elementaryValue, openHead]
-      rw [hp]
+      change Elementary.neg
+        (elementaryValue (renameReal (fun v => .succ v) p) (.var .zero)) =
+        Elementary.neg (openHead p)
+      exact congrArg Elementary.neg ih
   | disj p q ihp ihq =>
-      have hp : elementaryValue (renameReal (fun v => .succ v) p) (.var .zero) = openHead p := by
-        simpa [weakenReal] using ihp
-      have hq : elementaryValue (renameReal (fun v => .succ v) q) (.var .zero) = openHead q := by
-        simpa [weakenReal] using ihq
-      simp only [weakenReal, renameReal, elementaryValue, openHead]
-      rw [hp, hq]
+      change Elementary.disj
+        (elementaryValue (weakenReal p) (.var .zero))
+        (elementaryValue (weakenReal q) (.var .zero)) =
+        Elementary.disj (openHead p) (openHead q)
+      rw [ihp, ihq]
 
 @[simp] theorem elementaryValue_renameReal_succ_zero
     (φ : Apparent Γ [.elementaryProposition]) :
     elementaryValue (renameReal (fun v => .succ v) φ) (.var .zero) = openHead φ := by
-  simpa [weakenReal] using elementaryValue_weakenReal_zero φ
+  exact elementaryValue_weakenReal_zero φ
 
 @[simp] theorem substitute_liftInstantiate_renameOuter_weakenReal
     (φ : Apparent Γ [.elementaryProposition]) :
@@ -247,8 +249,9 @@ def elementaryValue : Apparent Γ [.elementaryProposition] →
       | zero => rfl
       | succ emptyVariable => exact nomatch emptyVariable
   | neg proposition ih =>
-      simpa [substitute, rename, weakenReal, renameReal, ofElementary, openHead]
-        using congrArg neg ih
+      change neg (substitute _ (rename _ (weakenReal proposition))) =
+        neg (ofElementary (openHead proposition))
+      exact congrArg neg ih
   | disj left right ihLeft ihRight =>
       change disj (substitute _ (rename _ (weakenReal left)))
         (substitute _ (rename _ (weakenReal right))) =
@@ -269,7 +272,9 @@ def elementaryValue : Apparent Γ [.elementaryProposition] →
       | zero => rfl
       | succ emptyVariable => exact nomatch emptyVariable
   | neg proposition ih =>
-      simpa [substitute, rename, weakenReal, renameReal] using congrArg neg ih
+      change neg (substitute _ (rename _ (weakenReal proposition))) =
+        neg (weakenReal proposition)
+      exact congrArg neg ih
   | disj left right ihLeft ihRight =>
       change disj (substitute _ (rename _ (weakenReal left)))
         (substitute _ (rename _ (weakenReal right))) =
@@ -286,8 +291,11 @@ def elementaryValue : Apparent Γ [.elementaryProposition] →
   induction p with
   | constant name => rfl
   | var realVariable => rfl
-  | neg proposition ih => simpa [substitute, ofElementary] using congrArg neg ih
-  | disj left right ihLeft ihRight => simp [substitute, ofElementary, ihLeft, ihRight]
+  | neg proposition ih => exact congrArg neg ih
+  | disj left right ihLeft ihRight =>
+      change disj (substitute _ (ofElementary left))
+        (substitute _ (ofElementary right)) = disj (ofElementary left) (ofElementary right)
+      rw [ihLeft, ihRight]
 
 def openHeadOrBound (φ : Apparent Γ [.elementaryProposition]) :
     Apparent (.elementaryProposition :: Γ) [.elementaryProposition] :=
@@ -446,9 +454,19 @@ def Significant (v : BoundVar Δ .elementaryProposition)
   induction proposition with
   | constant name => rfl
   | var v => rfl
-  | neg proposition ih => simp [ofElementary, toElementary?, ih]
+  | neg proposition ih =>
+      change Option.map Elementary.neg
+        (toElementary? (ofElementary proposition)) = some (Elementary.neg proposition)
+      rw [ih]
+      rfl
   | disj left right ihLeft ihRight =>
-      simp [ofElementary, toElementary?, ihLeft, ihRight]
+      change (do
+        let p ← toElementary? (ofElementary left)
+        let q ← toElementary? (ofElementary right)
+        some (Elementary.disj p q)) = some (Elementary.disj left right)
+      rw [ihLeft, ihRight]
+      change some (Elementary.disj left right) = some (Elementary.disj left right)
+      rfl
 
 end Apparent
 
@@ -825,9 +843,14 @@ def openRealOuter : FirstOrderMatrix Γ (.elementaryProposition :: Δ) →
     (proposition : FirstOrderMatrix (.elementaryProposition :: Γ) Δ) :
     openRealOuter (abstractRealOuter proposition) = proposition := by
   induction proposition with
-  | quantified proposition => simp [abstractRealOuter, openRealOuter]
-  | neg proposition ih => simp [abstractRealOuter, openRealOuter, ih]
-  | disj left right ihLeft ihRight => simp [abstractRealOuter, openRealOuter, ihLeft, ihRight]
+  | quantified proposition =>
+      exact congrArg FirstOrderMatrix.quantified
+        (FirstOrder.openRealOuter_abstractRealOuter proposition)
+  | neg proposition ih => exact congrArg FirstOrderMatrix.neg ih
+  | disj left right ihLeft ihRight =>
+      change FirstOrderMatrix.disj (openRealOuter (abstractRealOuter left))
+        (openRealOuter (abstractRealOuter right)) = FirstOrderMatrix.disj left right
+      rw [ihLeft, ihRight]
 
 def ofSecondOrder : SecondOrder Γ Δ → Quantified Γ Δ
   | PM.Quantified.always body => PM.Quantified.always (.quantified body)
@@ -1109,22 +1132,22 @@ theorem instantiateSchema {Γ Ξ : PM.RealContext}
       | nil => exact PM.Derivation.star_1_1 (ihp σ) (ihpq σ)
       | cons τ Δ =>
           exact PM.Derivation.star_1_11 (List.cons_ne_nil τ Δ) (ihp σ) (ihpq σ)
-  | star_1_2 p => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_2 (Γ := Ξ) (PM.Elementary.schemaInstance σ p))
-  | star_1_3 p q => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_3 (Γ := Ξ)
-        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q))
-  | star_1_4 p q => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_4 (Γ := Ξ)
-        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q))
-  | star_1_5 p q r => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_5 (Γ := Ξ)
+  | star_1_2 p =>
+      exact PM.Derivation.star_1_2 (Γ := Ξ) (PM.Elementary.schemaInstance σ p)
+  | star_1_3 p q =>
+      exact PM.Derivation.star_1_3 (Γ := Ξ)
         (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
-        (PM.Elementary.schemaInstance σ r))
-  | star_1_6 p q r => simpa [PM.Elementary.imp, PM.Elementary.schemaInstance] using
-      (PM.Derivation.star_1_6 (Γ := Ξ)
+  | star_1_4 p q =>
+      exact PM.Derivation.star_1_4 (Γ := Ξ)
         (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
-        (PM.Elementary.schemaInstance σ r))
+  | star_1_5 p q r =>
+      exact PM.Derivation.star_1_5 (Γ := Ξ)
+        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
+        (PM.Elementary.schemaInstance σ r)
+  | star_1_6 p q r =>
+      exact PM.Derivation.star_1_6 (Γ := Ξ)
+        (PM.Elementary.schemaInstance σ p) (PM.Elementary.schemaInstance σ q)
+        (PM.Elementary.schemaInstance σ r)
 
 theorem detach {Γ : PM.RealContext} {φ ψ : PM.Elementary Γ}
     (hφ : PM.Derivation φ) (hφψ : PM.Derivation (φ ⊃ₚ ψ)) :
@@ -1145,42 +1168,32 @@ structure OrderedRuleBook (Γ : RealContext) (order : Nat) where
 
   Primitive : OrderedFormula Γ order → Type
 
-inductive OrderedDerivation (rules : OrderedRuleBook Γ order) :
-    OrderedFormula Γ order → Prop where
-  | primitive {p : OrderedFormula Γ order} : rules.Primitive p →
-      OrderedDerivation rules p
-  | detach {p q : OrderedFormula Γ order} (scope : OrderedDisjunctionScope order) :
-      OrderedDerivation rules p → OrderedDerivation rules (OrderedFormula.scopedImp scope p q) →
-        OrderedDerivation rules q
-
 end PM
 
 -- PM-CONTEXT-PREDECLARATION PM1:✱2·05 PM.FirstEdition.Volume1.Star2.star_2_05
 namespace PM.FirstEdition.Volume1.Star2
 
-theorem star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
-    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
-  PM.Derivation.star_1_6 (∼ₚ p) q r
+axiom star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)))
+
 
 end PM.FirstEdition.Volume1.Star2
 
 -- PM-CONTEXT-PREDECLARATION PM1:✱2·07 PM.FirstEdition.Volume1.Star2.star_2_07
 namespace PM.FirstEdition.Volume1.Star2
 
-theorem star_2_07 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
-    ⊢ₚ (p ⊃ₚ (p ∨ₚ p)) :=
-  PM.Derivation.star_1_3 p p
+axiom star_2_07 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ (p ∨ₚ p))
+
 
 end PM.FirstEdition.Volume1.Star2
 
 -- PM-CONTEXT-PREDECLARATION PM1:✱2·08 PM.FirstEdition.Volume1.Star2.star_2_08
 namespace PM.FirstEdition.Volume1.Star2
 
-theorem star_2_08 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
-    ⊢ₚ (p ⊃ₚ p) :=
-  PM.Derivation.detach (star_2_07 p)
-    (PM.Derivation.detach (PM.Derivation.star_1_2 p)
-      (star_2_05 p (p ∨ₚ p) p))
+axiom star_2_08 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
+    ⊢ₚ (p ⊃ₚ p)
+
 
 end PM.FirstEdition.Volume1.Star2
 
@@ -1325,7 +1338,7 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
   | elementary {p : Elementary Γ} : Derivation p →
       OrderedAssertion (.elementary p)
 
-  | star_9_1 (φ : Apparent Γ [.elementaryProposition]) :
+  | star_9_1_rule (φ : Apparent Γ [.elementaryProposition]) :
       OrderedAssertion (star_9_1_target φ)
 
   | star_9_1_instance (φ : Apparent Γ [.elementaryProposition])
@@ -1341,10 +1354,10 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
       OrderedAssertion (.secondOrderMatrix body) →
       OrderedAssertion (star_9_13_higher_target body)
 
-  | star_9_11 (φ : Apparent Γ [.elementaryProposition]) :
+  | star_9_11_rule (φ : Apparent Γ [.elementaryProposition]) :
       OrderedAssertion (star_9_11_target φ)
 
-  | star_9_12 {p q : OrderedFormula Γ 1} :
+  | star_9_12_rule {p q : OrderedFormula Γ 1} :
       OrderedAssertion p → OrderedAssertion (firstImp p q) →
       OrderedAssertion q
 
@@ -1366,7 +1379,7 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
       OrderedAssertion (.firstOrder (FirstOrder.impElementaryToFirst p q)) →
       OrderedAssertion (.firstOrder q)
 
-  | star_9_13 (φ : Apparent Γ [.elementaryProposition]) :
+  | star_9_13_rule (φ : Apparent Γ [.elementaryProposition]) :
       OrderedAssertion (Γ := .elementaryProposition :: Γ)
         (.elementary (Apparent.openHead φ)) →
       OrderedAssertion (.firstOrder (FirstOrder.always φ))
@@ -1375,6 +1388,25 @@ inductive OrderedAssertion : {Γ : RealContext} → {order : Nat} →
       OrderedAssertion (Γ := .elementaryProposition :: Γ)
         (.firstOrder (FirstOrder.openRealOuter φ)) →
       OrderedAssertion (firstOrderToSecondAll φ)
+
+theorem OrderedAssertion.star_9_1 (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion (star_9_1_target φ) :=
+  OrderedAssertion.star_9_1_rule φ
+
+theorem OrderedAssertion.star_9_11 (φ : Apparent Γ [.elementaryProposition]) :
+    OrderedAssertion (star_9_11_target φ) :=
+  OrderedAssertion.star_9_11_rule φ
+
+theorem OrderedAssertion.star_9_12 {p q : OrderedFormula Γ 1}
+    (hp : OrderedAssertion p) (hpq : OrderedAssertion (firstImp p q)) :
+    OrderedAssertion q :=
+  OrderedAssertion.star_9_12_rule hp hpq
+
+theorem OrderedAssertion.star_9_13 (φ : Apparent Γ [.elementaryProposition])
+    (h : OrderedAssertion (Γ := .elementaryProposition :: Γ)
+      (.elementary (Apparent.openHead φ))) :
+    OrderedAssertion (.firstOrder (FirstOrder.always φ)) :=
+  OrderedAssertion.star_9_13_rule φ h
 
 def derive_star_9_3_line2 (φ : Apparent Γ [.elementaryProposition]) :
     OrderedAssertion (star_9_3_line2_target φ) := by

@@ -8,11 +8,8 @@ def iotaRelation (A : Class α) (x : α) : Prop := A = singleton x
 def identityImageRelation (A : Class α) (x : α) : Prop := A = identityImage x
 def ClassExists (A : Class α) : Prop := ∃ y, A y
 
-/-- ✱51·01: the unit-class relation is the right-hand identity image. -/
-theorem star_51_01 :
-    (iotaRelation : Class α → α → Prop) = identityImageRelation := by
-  funext A x
-  rfl
+/-- ✱51·01. `ι = I⃗` Df. -/
+def star_51_01 : Class α → α → Prop := identityImageRelation
 
 /-- ✱51·1: `A ι x` iff `A` is the class of terms identical with `x`. -/
 theorem star_51_1 (A : Class α) (x : α) :

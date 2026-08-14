@@ -1,0 +1,206 @@
+/-! Principia Mathematica, first edition, volume II, ✱154.
+Source transcription from Project Gutenberg PG78255. -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·01
+NR^Y(X) = DʻNr(X_Y) Df
+PM-VERBATIM-END PM2:✱154·01 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·1
+⊢ : ∃ ! RlʻP ∩ NrʻQ . ⊃ . ∃ ! ClʻCʻP ∩ NcʻCʻQ
+PM-VERBATIM-END PM2:✱154·1 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·11
+⊢ :∃ !ClʻCʻP∩ NcʻCʻQ.⊃ .(∃ R).R smor Q.CʻR⊂ CʻP
+PM-VERBATIM-END PM2:✱154·11 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·12
+⊢ :∃ !Rlʻ(α ↑ α )∩ NrʻQ.≡ .∃ !Clʻα ∩ NcʻCʻQ.≡ .Ncʻα ≥ NcʻCʻQ
+PM-VERBATIM-END PM2:✱154·12 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·121
+⊢ .Rlʻ(t₀ʻCʻP↑ t₀ʻCʻP)=tʻP=t₀₀ʻCʻP
+PM-VERBATIM-END PM2:✱154·121 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·13
+⊢ :∃ !tʻP∩ NrʻQ.≡ .∃ !tʻCʻP∩ NcʻCʻQ.≡ .Ncʻt₀ʻCʻP≥ NcʻCʻQ
+PM-VERBATIM-END PM2:✱154·13 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·14
+⊢ :∃ !Nr(P)ʻQ.≡ .∃ !Nc(CʻP)ʻCʻQ [*154·13.(*65·04)]
+PM-VERBATIM-END PM2:✱154·14 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·2
+⊢ .Nr(X_Y)ʻQ=P̂ {Psmor_(X,Y)Q} [*65·2.(*152·01)]
+PM-VERBATIM-END PM2:✱154·2 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·201
+⊢ .Nr(X)ʻQ=NrʻQ∩ tʻX [Proof as in *102·6]
+PM-VERBATIM-END PM2:✱154·201 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·202
+⊢ :P∈ Nr(X_Y)ʻQ.≡ .P∈ Nr(X)ʻQ.Q∈ tʻY.≡ . P∈ NrʻQ.P∈ tʻX.Q∈ tʻY [*152·2·201. (*65·1)]
+PM-VERBATIM-END PM2:✱154·202 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·203
+⊢ :Q∈ tʻY.⊃ .Nr(X_Y)ʻQ=Nr(X)ʻQ [*154·202]
+PM-VERBATIM-END PM2:✱154·203 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·21
+⊢ .NR^Y(X)=λ̂ {(∃ Q).λ =Nr(X_Y)ʻQ} [(*154·01)]
+PM-VERBATIM-END PM2:✱154·21 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·22
+⊢ .NR^Y(X)=Nr(X)ʻʻtʻY=(∩ tʻX)ʻʻNrʻʻtʻY
+PM-VERBATIM-END PM2:✱154·22 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·23
+⊢ :Λ ∈ NR^Q(P).≡ .Λ ∈ NC^CʻQ(CʻP).≡ .Λ ∈ NC(CʻP)ʻʻtʻCʻQ
+PM-VERBATIM-END PM2:✱154·23 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·24
+⊢ :CʻQ=tʻCʻP.⊃ .Nr(P)ʻQ=Λ [*102·73.*154·14]
+PM-VERBATIM-END PM2:✱154·24 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·241
+⊢ .Nr(P)ʻI↾ tʻCʻP=Λ [*154·24]
+PM-VERBATIM-END PM2:✱154·241 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·242
+⊢ .Λ ∈ NR^ι ^;P(P)
+PM-VERBATIM-END PM2:✱154·242 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·25
+⊢ :CʻQ=t₀₀ʻCʻP.⊃ .Nr(P)ʻQ=Λ [*106·53.*154·14]
+PM-VERBATIM-END PM2:✱154·25 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·251
+⊢ .Λ ∈ NR^P↓ P(P)
+PM-VERBATIM-END PM2:✱154·251 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·26
+⊢ :P∈ tʻQ.⊃ .∃ !Nr(P)ʻQ [*64·231.*103·3·13.*154·14]
+PM-VERBATIM-END PM2:✱154·26 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·261
+⊢ :CʻP∈ t²ʻCʻQ.⊃ .∃ !Nr(P)ʻQ [*104·21·1.*154·14]
+PM-VERBATIM-END PM2:✱154·261 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·262
+⊢ :CʻP∈ t₀₀ʻCʻQ.⊃ .∃ !Nr(P)ʻQ [*106·21·1.*154·14]
+PM-VERBATIM-END PM2:✱154·262 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·31
+⊢ .tʻι ^;P=t¹¹ʻCʻP
+PM-VERBATIM-END PM2:✱154·31 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·311
+⊢ .∃ !Nr(t¹¹ʻCʻP)ʻP [*154·31.*152·6]
+PM-VERBATIM-END PM2:✱154·311 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·32
+⊢ :x∈ t₀ʻCʻP.⊃ .tʻx↓ ^;P=t¹¹ʻP.t₀ʻx↓ʻʻCʻP=tʻP
+PM-VERBATIM-END PM2:✱154·32 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·321
+⊢ .∃ !Nr(t¹¹ʻP)ʻP [*154·32.*152·62.*63·18]
+PM-VERBATIM-END PM2:✱154·321 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·322
+⊢ :x∈ t₀ʻCʻP.⊃ .tʻ↓ x^;P=t¹¹ʻP [Proof as in *154·32]
+PM-VERBATIM-END PM2:✱154·322 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·33
+⊢ :x∈ t₀ʻCʻP.⊃ .tʻP↓ ^;x↓ ^;P=t¹¹ʻṡ ʻt¹¹ʻP
+PM-VERBATIM-END PM2:✱154·33 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·331
+⊢ .∃ !Nr(t¹¹ʻṡ ʻt¹¹ʻP) [*154·33.*152·62.*63·18]
+PM-VERBATIM-END PM2:✱154·331 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·4
+⊢ .Nr(X_Y)ʻQ=P̂ {(∃ S).S∈ 1 arrow 1. ᗡʻS=CʻQ.P=S^;Q. DʻS∈ tʻCʻX.ᗡʻS∈ tʻCʻY}
+PM-VERBATIM-END PM2:✱154·4 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·401
+⊢ .Nr(X_Y)ʻQ=P̂ {∃ !(P smor̅ Q)∩ tʻ(CʻX↑ CʻY)} [*154·4.*151·11.*64·63]
+PM-VERBATIM-END PM2:✱154·401 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·41
+⊢ :P∈ Nr(X_Z)ʻR.Q∈ Nr(Y_Z)ʻR.⊃ .P∈ Nr(X_Y)ʻQ.Q∈ Nr(Y_X)ʻP
+PM-VERBATIM-END PM2:✱154·41 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·42
+⊢ .P∈ Nr(P_P)ʻP
+PM-VERBATIM-END PM2:✱154·42 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·43
+⊢ .∃ !Nr(P_P)ʻP
+PM-VERBATIM-END PM2:✱154·43 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·46
+⊢ :P∈ Nr(X_Y)ʻQ.≡ .Q∈ Nr(Y_X)ʻP.≡ .P smor Q.P∈ tʻX.Q∈ tʻY
+PM-VERBATIM-END PM2:✱154·46 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·52
+⊢ :∃ !Nr(X_Y)ʻQ.⊃ .Nr(X_Y)ʻQ∈ NR^X(X)
+PM-VERBATIM-END PM2:✱154·52 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·53
+⊢ :NR^Y(X)-ι ʻΛ ⊂ NR^X(X)
+PM-VERBATIM-END PM2:✱154·53 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·55
+⊢ :Λ ∼∈ NR^X(Y).⊃ .NR^Y(X)-ι ʻΛ =NR^X(X)
+PM-VERBATIM-END PM2:✱154·55 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·64
+⊢ :μ ∈ NR.∃ !μ .⊃ .(∃ P,Q).μ =Nr(P)ʻQ
+PM-VERBATIM-END PM2:✱154·64 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·641
+⊢ :μ ∈ NR.⊃ .(∃ P,Q).μ =Nr(P)ʻQ [*154·64·241]
+PM-VERBATIM-END PM2:✱154·641 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·8
+⊢ :P∈ Nr(X_Y)ʻQ.P smor R.R∈ tʻS.⊃ .R∈ Nr(S_Y)ʻQ.R∈ Nr(S_X)ʻP
+PM-VERBATIM-END PM2:✱154·8 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·81
+⊢ :P∈ Nr(X_Y)ʻQ.⊃ .smorʻʻNr(X_Y)ʻQ∩ tʻS=Nr(S_Y)ʻQ=Nr(S_X)ʻP
+PM-VERBATIM-END PM2:✱154·81 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·82
+⊢ :μ ∈ NR^Y(X).∃ !μ .⊃ .smorʻʻμ ∩ tʻS∈ NR^Y(S)
+PM-VERBATIM-END PM2:✱154·82 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·83
+⊢ :μ ∈ NR^Y(X).ν = smorʻʻμ ∩ tʻS.∃ !ν .⊃ . smorʻʻμ ∩ tʻS=smorʻʻν ∩ tʻS.μ =smorʻʻν ∩ tʻX
+PM-VERBATIM-END PM2:✱154·83 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·84
+⊢ :(∃ P).P smor X.P∈ tʻX.Q smor P.≡ .Q smor X
+PM-VERBATIM-END PM2:✱154·84 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·85
+⊢ .smorʻʻμ ∩ tʻY=smor_Yʻʻμ
+PM-VERBATIM-END PM2:✱154·85 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·86
+⊢ :μ =Nr(X)ʻQ.∃ !μ .⊃ .smor_Yʻʻμ =Nr(Y)ʻQ
+PM-VERBATIM-END PM2:✱154·86 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·861
+⊢ .smor_Xʻʻsmor_Yʻʻμ ⊂ smor_Xʻʻμ
+PM-VERBATIM-END PM2:✱154·861 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·87
+⊢ :μ =Nr(Y)ʻQ.∃ !Nr(X)ʻQ.⊃ .smor_Pʻʻμ =smor_Pʻʻsmor_Xʻʻμ
+PM-VERBATIM-END PM2:✱154·87 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·88
+⊢ :μ =Nr(Y)ʻQ.∃ ! smor_Pʻʻμ .⊃ . smor_Pʻʻμ =Nr(P)ʻQ.smor_Xʻʻμ =Nr(X)ʻQ. smor_Xʻʻμ =smor_Xʻʻsmor_Pʻʻμ =smor_XʻʻNr(P)ʻQ
+PM-VERBATIM-END PM2:✱154·88 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱154·9
+⊢.NC=CʻʻʻNR
+PM-VERBATIM-END PM2:✱154·9 -/

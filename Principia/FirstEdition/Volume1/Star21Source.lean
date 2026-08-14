@@ -189,3 +189,22 @@ PM-VERBATIM-END PM1:✱21·705 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·71
 ✱21·71. ⊢ : R = S .≡ : g!R .⊃₍g₎. g!S  [Proof as in ✱20·71]
 PM-VERBATIM-END PM1:✱21·71 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱21·18
+✱21·18. ⊢:. x̂ŷφ(x,y)=x̂ŷψ(x,y).⊃:f{x̂ŷφ(x,y)}. ≡.f{x̂ŷψ(x,y)} [*21·11·15]
+PM-VERBATIM-END PM1:✱21·18 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·19
+✱21·19. ⊢:. x̂ŷψ(x,y)=x̂ŷχ(x,y).≡:(f):f!x̂ŷψ(x,y).⊃.f!x̂ŷχ(x,y) [*21·18.*10·11·21.*21·1.*10·35.(*13·01).*21·112.*10·301]
+PM-VERBATIM-END PM1:✱21·19 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·191
+✱21·191. ⊢:. x̂ŷψ(x,y)=x̂ŷχ(x,y). ≡:(f):f!x̂ŷψ(x,y).≡.f!x̂ŷχ(x,y) [*21·18·19]
+PM-VERBATIM-END PM1:✱21·191 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·3
+✱21·3. ⊢:xx̂ŷψ(x,y)y.≡.ψ(x,y) [*21·1·02.*10·43·35.*12·11]
+PM-VERBATIM-END PM1:✱21·3 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·31
+✱21·31. ⊢:. x̂ŷψ(x,y)=x̂ŷχ(x, y).≡:x{x̂ŷψ(x,y)}y. ≡ₓ,y.x{x̂ŷχ(x, y)}y [*21·15·3]
+PM-VERBATIM-END PM1:✱21·31 -/
+/- PM-VERBATIM-BEGIN PM1:✱21·43
+✱21·43. ⊢:. R=S.≡:xRy.≡ₓ,y.xSy [*21·15·3]
+PM-VERBATIM-END PM1:✱21·43 -/

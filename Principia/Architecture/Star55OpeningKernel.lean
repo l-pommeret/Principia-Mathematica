@@ -18,9 +18,9 @@ private theorem class_ext {A B : Class α} (h : ∀ x, A x ↔ B x) : A = B := b
   funext x; exact propext (h x)
 
 /-- ✱55·01. Definition of the ordinal couple. -/
-theorem star_55_01 (x y : α) : pair x y = cross (singleton x) (singleton y) := rfl
+def star_55_01 (x y : α) : Rel α := cross (singleton x) (singleton y)
 /-- ✱55·02. Substitution of an ordinal couple as argument. -/
-theorem star_55_02 (F : Rel α → β) (x y : α) : pairValue F x y = F (pair x y) := rfl
+def star_55_02 (F : Rel α → β) (x y : α) : β := F (pair x y)
 /-- ✱55·1. The defining equation. -/
 theorem star_55_1 (x y : α) : pair x y = cross (singleton x) (singleton y) := rfl
 /-- ✱55·11. The three notations denote the same unique couple. -/

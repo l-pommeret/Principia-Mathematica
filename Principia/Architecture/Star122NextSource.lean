@@ -7,9 +7,25 @@ Canonical Gutenberg 78255, pp. 266–270. Inventory: ✱122·24, ·25, ·26,
 -/
 /- PM-VERBATIM-BEGIN PM2:✱122·24
 ✱122·24. ⊢ : R∈Prog . P∈PotʻR .⊃. DʻP=P̆∗ʻʻB⃗ʻP=sʻgenʻP
+Dem.
+⊢ .*122·1.*92·102.⊃ ⊢ :Hp. ⊃ .P∈ 1→ 1.
+[*93·42] ⊃ .pʻᗡʻʻPotʻP=P̌ ʻʻpʻᗡʻʻPotʻP.
+[*91·581] ⊃ .pʻᗡʻʻPotʻP⊂ Ř ₚₒʻʻpʻᗡʻʻPotʻP.
+[*122·231] ⊃ .pʻᗡʻʻPotʻP=Λ (1)
+⊢ .(1).*93·37·36. ⊃ ⊢ :Hp. ⊃ .CʻP=P̌ _*ʻʻB⃗ʻP=sʻgenʻP (2)
+⊢ .(2).*122·143.⊃ ⊢ .Prop
 PM-VERBATIM-END PM2:✱122·24 -/
 /- PM-VERBATIM-BEGIN PM2:✱122·25
 ✱122·25. ⊢ : R∈Prog . P∈PotʻR . x∈DʻR .⊃. (P⃖∗ʻx)↿P∈Prog . x=Bʻ{(P⃖∗ʻx)↿P}
+Dem.
+⊢ .*122·1.*92·102. ⊃ ⊢ :Hp.⊃ .(P⃖_*ʻx)↿ P∈ 1→ 1 (1)
+⊢ .*122·143. ⊃ ⊢ :Hp.⊃ .P⃖_*ʻx⊂ DʻP.
+[*35·62] ⊃ .Dʻ{(P⃖_*ʻx)↿ P}=P⃖_*ʻx (2)
+⊢ .*37·4.*91·52. ⊃ ⊢ .ᗡʻ{(P⃖_*ʻx)↿ P}=P⃖ₚₒʻx (3)
+⊢ .*122·16.*91·6. ⊃ ⊢ :Hp.⊃ .x∼∈ P⃖ₚₒʻx (4)
+⊢ .*91·542. ⊃ ⊢ :y∈ P⃖_*ʻx.y≠ x.⊃ .y∈ P⃖ₚₒʻx (5)
+⊢ .(2).(3).(4).(5). ⊃ ⊢ :Hp.⊃ .x=Bʻ{(P⃖_*ʻx)↿ P} (6)
+⊢ .(1).(2).(6).*96·131.⊃ ⊢ .Prop
 PM-VERBATIM-END PM2:✱122·25 -/
 namespace PM.Architecture.Star122NextSource
 def canonicalSource : String :=

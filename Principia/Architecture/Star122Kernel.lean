@@ -19,11 +19,10 @@ structure Progression (R : Rel α) : Prop where
  range_domain : subset (range R) (domain R)
  acyclic : ∀ ⦃x y⦄, R x y → ¬R y x
 
-theorem star_122_01 (R : Rel α) : Progression R ↔
-    Functional R ∧ Injective R ∧ Linear R ∧ subset (range R) (domain R) ∧
-      (∀ ⦃x y⦄, R x y → ¬R y x) := by
-  exact ⟨fun h => ⟨h.functional,h.injective,h.linear,h.range_domain,h.acyclic⟩,
-    fun h => ⟨h.1,h.2.1,h.2.2.1,h.2.2.2.1,h.2.2.2.2⟩⟩
+/-- ✱122·01. `Prog = (1→1)∩R̂(DʻR = R̅_*ʻBʻR)` Df. -/
+def star_122_01 (R : Rel α) : Prop :=
+  Functional R ∧ Injective R ∧ Linear R ∧ subset (range R) (domain R) ∧
+    (∀ ⦃x y⦄, R x y → ¬R y x)
 theorem star_122_1 (R : Rel α) (h : Progression R) : Functional R ∧ Injective R := ⟨h.functional,h.injective⟩
 theorem star_122_11 (R : Rel α) (h : Progression R) : Linear R := h.linear
 theorem star_122_12 (R : Rel α) : Progression R → Linear R := fun h => h.linear

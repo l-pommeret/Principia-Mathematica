@@ -78,22 +78,35 @@ def Admissible (cutoff : Nat) : Raw Γ → Prop
 def shiftIndex (cutoff index : Nat) : Nat :=
   if cutoff ≤ index then index + 1 else index
 
+theorem natSubOneAddOne (n : Nat) (h : 1 ≤ n) : n - 1 + 1 = n := by
+  cases n with
+  | zero => nomatch h
+  | succ n => rfl
+
 /-- The elementary de Bruijn arithmetic underlying capture-safe shift
 commutation.  Inserting at `i` first moves the later insertion point `j` to
 `j + 1`. -/
 theorem shiftIndex_comm (i j index : Nat) (h : i ≤ j) :
     shiftIndex (j + 1) (shiftIndex i index) =
       shiftIndex i (shiftIndex j index) := by
+  change (if j + 1 ≤ (if i ≤ index then index + 1 else index)
+      then (if i ≤ index then index + 1 else index) + 1
+      else (if i ≤ index then index + 1 else index)) =
+    (if i ≤ (if j ≤ index then index + 1 else index)
+      then (if j ≤ index then index + 1 else index) + 1
+      else (if j ≤ index then index + 1 else index))
   by_cases hi : i ≤ index
   · by_cases hj : j ≤ index
-    · have hleft : j + 1 ≤ index + 1 := by omega
-      have hright : i ≤ index + 1 := by omega
-      simp [shiftIndex, hi, hj, hleft, hright]
-    · have hleft : ¬ j + 1 ≤ index + 1 := by omega
-      simp [shiftIndex, hi, hj, hleft]
-  · have hj : ¬ j ≤ index := by omega
-    have hleft : ¬ j + 1 ≤ index := by omega
-    simp [shiftIndex, hi, hj, hleft]
+    · have hleft : j + 1 ≤ index + 1 := Nat.add_le_add_right hj 1
+      have hright : i ≤ index + 1 := Nat.le.step hi
+      rw [if_pos hi, if_pos hleft, if_pos hj, if_pos hright]
+    · have hleft : ¬ j + 1 ≤ index + 1 := fun shifted =>
+        hj (Nat.le_of_succ_le_succ shifted)
+      rw [if_pos hi, if_neg hleft, if_neg hj, if_pos hi]
+  · have hj : ¬ j ≤ index := fun later => hi (Nat.le_trans h later)
+    have hleft : ¬ j + 1 ≤ index := fun shifted =>
+      hj (Nat.le_trans (Nat.le.step Nat.le.refl) shifted)
+    rw [if_neg hi, if_neg hleft, if_neg hj, if_neg hi]
 
 def shiftBoundAt (cutoff : Nat) : Raw Γ → Raw Γ
   | .elementary p => .elementary p
@@ -115,20 +128,25 @@ theorem shiftBoundAt_comm (i j : Nat) (p : Raw Γ) (h : i ≤ j) :
   | schema slot => rfl
   | bound index => exact congrArg Raw.bound (shiftIndex_comm i j index h)
   | quantified quantifier body ih =>
-      simp only [shiftBoundAt]
-      exact congrArg (Raw.quantified quantifier) (ih (i + 1) (j + 1) (by omega))
+      change Raw.quantified quantifier (shiftBoundAt (j + 1 + 1) (shiftBoundAt (i + 1) body)) =
+        Raw.quantified quantifier (shiftBoundAt (i + 1) (shiftBoundAt (j + 1) body))
+      exact congrArg (Raw.quantified quantifier)
+        (ih (i + 1) (j + 1) (Nat.add_le_add_right h 1))
   | neg proposition ih =>
-      simp only [shiftBoundAt]
       exact congrArg Raw.neg (ih i j h)
   | disj left right ihLeft ihRight =>
-      simp only [shiftBoundAt]
+      change Raw.disj (shiftBoundAt (j + 1) (shiftBoundAt i left))
+          (shiftBoundAt (j + 1) (shiftBoundAt i right)) =
+        Raw.disj (shiftBoundAt i (shiftBoundAt j left))
+          (shiftBoundAt i (shiftBoundAt j right))
       rw [ihLeft i j h, ihRight i j h]
 
 /-- Two successive outer lifts equal the scope-aware shift of the first
 lifted term at cutoff one. -/
 theorem weakenBound_weakenBound_eq_shiftBoundAt_one (p : Raw Γ) :
     weakenBound (weakenBound p) = shiftBoundAt 1 (weakenBound p) := by
-  simpa [weakenBound] using (shiftBoundAt_comm 0 0 p (by omega)).symm
+  change shiftBoundAt 0 (shiftBoundAt 0 p) = shiftBoundAt 1 (shiftBoundAt 0 p)
+  exact (shiftBoundAt_comm 0 0 p (Nat.le.refl)).symm
 
 /-- `FreshBelowAt depth count` records the binder-sensitive freshness
 invariant for `count` outer lifts: local binders below `depth` remain valid,
@@ -145,12 +163,12 @@ def FreshBelow (count : Nat) (p : Raw Γ) : Prop := FreshBelowAt 0 count p
 
 theorem freshBelowAt_zero (depth : Nat) (p : Raw Γ) : FreshBelowAt depth 0 p := by
   induction p generalizing depth with
-  | elementary proposition => trivial
-  | schema slot => trivial
+  | elementary proposition => exact True.intro
+  | schema slot => exact True.intro
   | bound index =>
       by_cases below : index < depth
       · exact Or.inl below
-      · exact Or.inr (by omega)
+      · exact Or.inr (Nat.le_of_not_gt below)
   | quantified quantifier body ih => exact ih (depth + 1)
   | neg proposition ih => exact ih depth
   | disj left right ihLeft ihRight => exact ⟨ihLeft depth, ihRight depth⟩
@@ -160,25 +178,30 @@ theorem freshBelowAt_shift (depth count : Nat) (p : Raw Γ) :
       FreshBelowAt depth (count + 1) (shiftBoundAt depth p) := by
   intro fresh
   induction p generalizing depth count with
-  | elementary proposition => trivial
-  | schema slot => trivial
+  | elementary proposition => exact True.intro
+  | schema slot => exact True.intro
   | bound index =>
-      simp only [FreshBelowAt, shiftBoundAt]
+      change index < depth ∨ depth + count ≤ index at fresh
+      change shiftIndex depth index < depth ∨ depth + (count + 1) ≤ shiftIndex depth index
       rcases fresh with inner | external
-      · have noShift : ¬ depth ≤ index := by omega
-        simp [shiftIndex, noShift]
+      · have noShift : ¬ depth ≤ index := Nat.not_le_of_lt inner
+        rw [shiftIndex, if_neg noShift]
         exact Or.inl inner
-      · have doShift : depth ≤ index := by omega
-        simp [shiftIndex, doShift]
-        exact Or.inr (by omega)
+      · have doShift : depth ≤ index := Nat.le_trans (Nat.le_add_right depth count) external
+        rw [shiftIndex, if_pos doShift]
+        exact Or.inr (Nat.add_le_add_right external 1)
   | quantified quantifier body ih =>
-      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      change FreshBelowAt (depth + 1) count body at fresh
+      change FreshBelowAt (depth + 1) (count + 1) (shiftBoundAt (depth + 1) body)
       exact ih (depth + 1) count fresh
   | neg proposition ih =>
-      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      change FreshBelowAt depth count proposition at fresh
+      change FreshBelowAt depth (count + 1) (shiftBoundAt depth proposition)
       exact ih depth count fresh
   | disj left right ihLeft ihRight =>
-      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      change FreshBelowAt depth count left ∧ FreshBelowAt depth count right at fresh
+      change FreshBelowAt depth (count + 1) (shiftBoundAt depth left) ∧
+        FreshBelowAt depth (count + 1) (shiftBoundAt depth right)
       exact ⟨ihLeft depth count fresh.1, ihRight depth count fresh.2⟩
 
 /-- On a term fresh for `count` external binders, shifting at the external
@@ -191,25 +214,30 @@ theorem shiftBoundAt_freshBelowAt (depth count : Nat) (p : Raw Γ)
   | elementary proposition => rfl
   | schema slot => rfl
   | bound index =>
-      simp only [FreshBelowAt] at fresh
-      simp only [shiftBoundAt]
+      change index < depth ∨ depth + count ≤ index at fresh
+      change Raw.bound (shiftIndex (depth + count) index) = Raw.bound (shiftIndex depth index)
       rcases fresh with inner | external
-      · have leftNo : ¬ depth + count ≤ index := by omega
-        have rightNo : ¬ depth ≤ index := by omega
-        simp [shiftIndex, leftNo, rightNo]
+      · have leftNo : ¬ depth + count ≤ index := fun h =>
+          Nat.not_le_of_lt inner (Nat.le_trans (Nat.le_add_right depth count) h)
+        have rightNo : ¬ depth ≤ index := Nat.not_le_of_lt inner
+        rw [shiftIndex, if_neg leftNo, shiftIndex, if_neg rightNo]
       · have leftYes : depth + count ≤ index := external
-        have rightYes : depth ≤ index := by omega
-        simp [shiftIndex, leftYes, rightYes]
+        have rightYes : depth ≤ index := Nat.le_trans (Nat.le_add_right depth count) external
+        rw [shiftIndex, if_pos leftYes, shiftIndex, if_pos rightYes]
   | quantified quantifier body ih =>
-      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
-      congr 1
-      simpa [Nat.add_assoc, Nat.add_left_comm, Nat.add_comm] using
-        ih (depth + 1) count fresh
+      change FreshBelowAt (depth + 1) count body at fresh
+      change Raw.quantified quantifier (shiftBoundAt (depth + count + 1) body) =
+        Raw.quantified quantifier (shiftBoundAt (depth + 1) body)
+      rw [Nat.add_assoc depth count 1, Nat.add_comm count 1,
+        (Nat.add_assoc depth 1 count).symm]
+      exact congrArg (Raw.quantified quantifier) (ih (depth + 1) count fresh)
   | neg proposition ih =>
-      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      change FreshBelowAt depth count proposition at fresh
       exact congrArg Raw.neg (ih depth count fresh)
   | disj left right ihLeft ihRight =>
-      simp only [FreshBelowAt, shiftBoundAt] at fresh ⊢
+      change FreshBelowAt depth count left ∧ FreshBelowAt depth count right at fresh
+      change Raw.disj (shiftBoundAt (depth + count) left) (shiftBoundAt (depth + count) right) =
+        Raw.disj (shiftBoundAt depth left) (shiftBoundAt depth right)
       rw [ihLeft depth count fresh.1, ihRight depth count fresh.2]
 
 /-- A Raw term does not use the binder located at `cutoff`.  This is the
@@ -243,22 +271,25 @@ theorem shiftBoundAt_dropUnusedBoundAt
   | elementary proposition => rfl
   | schema slot => rfl
   | bound index =>
-      simp only [UnusedBoundAt] at h
+      change index ≠ cutoff at h
       by_cases below : index < cutoff
-      · have noShift : ¬ cutoff ≤ index := by omega
-        simp [dropUnusedBoundAt, shiftBoundAt, shiftIndex, below, noShift]
-      · have above : cutoff < index := by omega
-        have shifted : cutoff ≤ index - 1 := by omega
-        simp [dropUnusedBoundAt, shiftBoundAt, shiftIndex, below, shifted]
-        omega
+      · have noShift : ¬ cutoff ≤ index := Nat.not_le_of_lt below
+        rw [dropUnusedBoundAt, if_pos below, shiftBoundAt, shiftIndex, if_neg noShift]
+      · have above : cutoff < index :=
+          Nat.lt_of_le_of_ne (Nat.le_of_not_gt below) (fun equality => h equality.symm)
+        have shifted : cutoff ≤ index - 1 := Nat.le_sub_one_of_lt above
+        rw [dropUnusedBoundAt, if_neg below, shiftBoundAt, shiftIndex, if_pos shifted]
+        exact congrArg Raw.bound (natSubOneAddOne index
+          (Nat.le_trans (Nat.succ_le_succ (Nat.zero_le cutoff)) above))
   | quantified quantifier body ih =>
-      simp only [dropUnusedBoundAt, shiftBoundAt]
       exact congrArg (Raw.quantified quantifier) (ih h)
   | neg proposition ih =>
-      simp only [dropUnusedBoundAt, shiftBoundAt]
       exact congrArg Raw.neg (ih h)
   | disj left right ihLeft ihRight =>
-      simp only [dropUnusedBoundAt, shiftBoundAt] at h ⊢
+      change UnusedBoundAt cutoff left ∧ UnusedBoundAt cutoff right at h
+      change Raw.disj
+          (shiftBoundAt cutoff (dropUnusedBoundAt cutoff left))
+          (shiftBoundAt cutoff (dropUnusedBoundAt cutoff right)) = Raw.disj left right
       rw [ihLeft h.1, ihRight h.2]
 
 theorem weakenBound_dropUnusedBound
@@ -335,8 +366,10 @@ theorem substitution_liftN_succ_as_shift (σ : Substitution Γ Ξ)
     Substitution.liftN (count + 1) σ proposition =
       shiftBoundAt count (Substitution.liftN count σ proposition) := by
   change shiftBoundAt 0 (Substitution.liftN count σ proposition) = _
-  simpa using (shiftBoundAt_freshBelowAt 0 count _
+  have result := (shiftBoundAt_freshBelowAt 0 count _
     (substitution_liftN_fresh σ count proposition)).symm
+  rw [Nat.zero_add] at result
+  exact result
 
 /-- Fusion of substitution lifting with a binder shift.  The substitution on
 the left is lifted one additional time because the shifted term has crossed
@@ -351,19 +384,28 @@ theorem substitute_liftN_shiftBoundAt (σ : Substitution Γ Ξ)
   | schema slot => rfl
   | bound index => rfl
   | quantified quantifier body ih =>
-      simp only [shiftBoundAt, substitute, Substitution.liftN_succ]
+      change Raw.quantified quantifier
+          (substitute (Substitution.liftN (count + 1 + 1) σ)
+            (shiftBoundAt (count + 1) body)) =
+        Raw.quantified quantifier
+          (shiftBoundAt (count + 1)
+            (substitute (Substitution.liftN (count + 1) σ) body))
       exact congrArg (Raw.quantified quantifier) (ih (count + 1))
   | neg proposition ih =>
-      simp only [shiftBoundAt, substitute]
       exact congrArg Raw.neg (ih count)
   | disj left right ihLeft ihRight =>
-      simp only [shiftBoundAt, substitute]
+      change Raw.disj
+          (substitute (Substitution.liftN (count + 1) σ) (shiftBoundAt count left))
+          (substitute (Substitution.liftN (count + 1) σ) (shiftBoundAt count right)) =
+        Raw.disj
+          (shiftBoundAt count (substitute (Substitution.liftN count σ) left))
+          (shiftBoundAt count (substitute (Substitution.liftN count σ) right))
       rw [ihLeft count, ihRight count]
 
 theorem substitute_lift_weakenBound (σ : Substitution Γ Ξ) (p : Raw Γ) :
     substitute (Substitution.lift σ) (weakenBound p) =
       weakenBound (substitute σ p) := by
-  simpa [weakenBound] using substitute_liftN_shiftBoundAt σ 0 p
+  exact substitute_liftN_shiftBoundAt σ 0 p
 
 /-- Dedicated placeholder substitution for theorem schemas.  Unlike
 `Substitution`, this can replace whole canonical Raw matrices. -/
@@ -382,7 +424,11 @@ def substituteSchema (σ : SchemaSubstitution Γ) : Raw Γ → Raw Γ
 def smartNeg : Raw Γ → Raw Γ
   | .quantified .always body => .quantified .sometimes (smartNeg body)
   | .quantified .sometimes body => .quantified .always (smartNeg body)
-  | proposition => .neg proposition
+  | .elementary proposition => .neg (.elementary proposition)
+  | .schema slot => .neg (.schema slot)
+  | .bound index => .neg (.bound index)
+  | .neg proposition => .neg (.neg proposition)
+  | .disj left right => .neg (.disj left right)
 
 def rawSize : Raw Γ → Nat
   | .elementary _ | .schema _ | .bound _ => 1
@@ -405,12 +451,18 @@ def expandedSize : Raw Γ → Nat
   induction p generalizing cutoff with
   | elementary proposition => rfl
   | schema slot => rfl
-  | bound index => by_cases h : cutoff ≤ index <;>
-      simp [shiftBoundAt, expandedSize, h]
-  | quantified quantifier body ih => simp [shiftBoundAt, expandedSize, ih]
-  | neg proposition ih => simp [shiftBoundAt, expandedSize, ih]
+  | bound index => rfl
+  | quantified quantifier body ih =>
+      change expandedSize (shiftBoundAt (cutoff + 1) body) + 1 = expandedSize body + 1
+      rw [ih]
+  | neg proposition ih =>
+      change expandedSize (shiftBoundAt cutoff proposition) + 1 = expandedSize proposition + 1
+      rw [ih]
   | disj left right ihLeft ihRight =>
-      simp [shiftBoundAt, expandedSize, ihLeft, ihRight]
+      change expandedSize (shiftBoundAt cutoff left) +
+        expandedSize (shiftBoundAt cutoff right) + 1 =
+        expandedSize left + expandedSize right + 1
+      rw [ihLeft, ihRight]
 
 @[simp] theorem expandedSize_abstractElementaryAt
     (cutoff : Nat) (p : Elementary (.elementaryProposition :: Γ)) :
@@ -418,24 +470,36 @@ def expandedSize : Raw Γ → Nat
   induction p generalizing cutoff with
   | constant name => rfl
   | var v => cases v <;> rfl
-  | neg proposition ih => simp [abstractElementaryAt, expandedSize,
-      elementaryExpandedSize, ih]
+  | neg proposition ih =>
+      change expandedSize (abstractElementaryAt cutoff proposition) + 1 =
+        elementaryExpandedSize proposition + 1
+      rw [ih]
   | disj left right ihLeft ihRight =>
-      simp [abstractElementaryAt, expandedSize, elementaryExpandedSize,
-        ihLeft, ihRight]
+      change expandedSize (abstractElementaryAt cutoff left) +
+        expandedSize (abstractElementaryAt cutoff right) + 1 =
+        elementaryExpandedSize left + elementaryExpandedSize right + 1
+      rw [ihLeft, ihRight]
 
 @[simp] theorem expandedSize_abstractOuterAt
     (cutoff : Nat) (p : Raw (.elementaryProposition :: Γ)) :
     expandedSize (abstractOuterAt cutoff p) = expandedSize p := by
   induction p generalizing cutoff with
-  | elementary proposition => simp [abstractOuterAt, expandedSize]
+  | elementary proposition => exact expandedSize_abstractElementaryAt cutoff proposition
   | schema slot => rfl
-  | bound index => by_cases h : index ≤ cutoff <;>
-      simp [abstractOuterAt, expandedSize, h]
-  | quantified quantifier body ih => simp [abstractOuterAt, expandedSize, ih]
-  | neg proposition ih => simp [abstractOuterAt, expandedSize, ih]
+  | bound index =>
+      rw [abstractOuterAt]
+      split <;> rfl
+  | quantified quantifier body ih =>
+      change expandedSize (abstractOuterAt (cutoff + 1) body) + 1 = expandedSize body + 1
+      rw [ih]
+  | neg proposition ih =>
+      change expandedSize (abstractOuterAt cutoff proposition) + 1 = expandedSize proposition + 1
+      rw [ih]
   | disj left right ihLeft ihRight =>
-      simp [abstractOuterAt, expandedSize, ihLeft, ihRight]
+      change expandedSize (abstractOuterAt cutoff left) +
+        expandedSize (abstractOuterAt cutoff right) + 1 =
+        expandedSize left + expandedSize right + 1
+      rw [ihLeft, ihRight]
 
 def smartDisjAux : Nat → Raw Γ → Raw Γ → Raw Γ
   | 0, p, q => .disj p q
@@ -485,8 +549,17 @@ theorem abstractOuterAt_smartNeg
       smartNeg (abstractOuterAt cutoff p) := by
   induction p generalizing cutoff with
   | quantified quantifier body ih =>
-      cases quantifier <;>
-        simp [smartNeg, abstractOuterAt, ih]
+      cases quantifier with
+      | always =>
+          change Raw.quantified .sometimes
+            (abstractOuterAt (cutoff + 1) (smartNeg body)) =
+            Raw.quantified .sometimes (smartNeg (abstractOuterAt (cutoff + 1) body))
+          exact congrArg (Raw.quantified .sometimes) (ih (cutoff + 1))
+      | sometimes =>
+          change Raw.quantified .always
+            (abstractOuterAt (cutoff + 1) (smartNeg body)) =
+            Raw.quantified .always (smartNeg (abstractOuterAt (cutoff + 1) body))
+          exact congrArg (Raw.quantified .always) (ih (cutoff + 1))
   | elementary proposition =>
       cases proposition with
       | constant name => rfl
@@ -494,8 +567,10 @@ theorem abstractOuterAt_smartNeg
       | neg p => rfl
       | disj p q => rfl
   | bound index =>
-      by_cases h : index ≤ cutoff <;>
-        simp [smartNeg, abstractOuterAt, h]
+      change Raw.neg (abstractOuterAt cutoff (.bound index)) =
+        smartNeg (abstractOuterAt cutoff (.bound index))
+      rw [abstractOuterAt]
+      split <;> rfl
   | _ => rfl
 
 @[simp] theorem shiftBoundAt_elementary (p : Elementary Γ) :

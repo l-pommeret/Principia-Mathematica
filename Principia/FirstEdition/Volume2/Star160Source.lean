@@ -1,0 +1,154 @@
+/-! Principia Mathematica, first edition, volume II, ✱160.
+Source transcription from Project Gutenberg PG78255. -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·01
+P⤉Q=P⊍ Q⊍ CʻP↑ CʻQ Df
+PM-VERBATIM-END PM2:✱160·01 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·1
+⊢ .P⤉Q=P⊍ Q⊍ CʻP↑ CʻQ [(*160·01)]
+PM-VERBATIM-END PM2:✱160·1 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·11
+⊢ :. x(P⤉Q)y.≡ :xPy.∨.xQy.∨.x∈ CʻP.y∈ CʻQ [*160·1]
+PM-VERBATIM-END PM2:✱160·11 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·111
+⊢ :. x(P⤉Q)y.≡ :xPy.∨.xQy.∨.xFP.yFQ [*160·11.*33·51]
+PM-VERBATIM-END PM2:✱160·111 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·12
+⊢ :∃̇ !Q.⊃ .Dʻ(P⤉Q)=CʻP∪ DʻQ [*33·26.*35·85.*160·1]
+PM-VERBATIM-END PM2:✱160·12 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·13
+⊢ :∃̇ !P.⊃ .ᗡʻ(P⤉Q)=ᗡʻP∪ CʻQ
+PM-VERBATIM-END PM2:✱160·13 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·14
+⊢ .Cʻ(P⤉Q)=CʻP∪ CʻQ
+PM-VERBATIM-END PM2:✱160·14 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·15
+⊢ :∃̇ !P.⊃ .B⃗ʻ(P⤉Q)=B⃗ʻP-CʻQ
+PM-VERBATIM-END PM2:✱160·15 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·151
+⊢ :∃̇ !Q.⊃ .B⃗ʻCnvʻ(P⤉Q)=B⃗ʻQ̌ -CʻP
+PM-VERBATIM-END PM2:✱160·151 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·16
+⊢ :∃̇ !P.B⃗ʻP∩ CʻQ=Λ .⊃ .B⃗ʻ(P⤉Q)=B⃗ʻP [*160·15]
+PM-VERBATIM-END PM2:✱160·16 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·161
+⊢ :∃̇ !Q.B⃗ʻQ̌ ∩ CʻP=Λ .⊃ .B⃗ʻCnvʻ(P⤉Q)=B⃗ʻQ̌
+PM-VERBATIM-END PM2:✱160·161 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·2
+⊢ .Cnvʻ(P⤉Q)=Q̌ ⤉P̌ [*31·15.*35·84]
+PM-VERBATIM-END PM2:✱160·2 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·21
+⊢ .P⤉Λ̇ =P [*35·88.*25·24]
+PM-VERBATIM-END PM2:✱160·21 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·22
+⊢ .Λ̇ ⤉Q=Q
+PM-VERBATIM-END PM2:✱160·22 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·3
+⊢ .(P⤉Q)⤉R=P⊍ Q⊍ R⊍ CʻP↑ CʻQ⊍ CʻP↑ CʻR⊍ CʻQ↑ CʻR
+PM-VERBATIM-END PM2:✱160·3 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·31
+⊢ .(P⤉Q)⤉R=P⤉(Q⤉R)
+PM-VERBATIM-END PM2:✱160·31 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·32
+P⤉Q⤉R=(P⤉Q)⤉R Df
+PM-VERBATIM-END PM2:✱160·32 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·33
+⊢ :P ⪽ Q.⊃ .P⤉R ⪽ Q⤉R [*33·265.*160·1]
+PM-VERBATIM-END PM2:✱160·33 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·34
+⊢ :R ⪽ S.⊃ .Q⤉R ⪽ Q⤉S [*33·265.*160·1]
+PM-VERBATIM-END PM2:✱160·34 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·35
+⊢ :P ⪽ Q.R ⪽ S.⊃ .P⤉Q ⪽ R⤉S [*160*33*34]
+PM-VERBATIM-END PM2:✱160·35 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·4
+⊢ .(P⊍ Q)⤉R=(P⤉R)⊍ (Q⤉R)
+PM-VERBATIM-END PM2:✱160·4 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·401
+⊢ .P⤉(Q⊍ R)=(P⤉Q)⊍ (P⤉R)
+PM-VERBATIM-END PM2:✱160·401 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·41
+⊢ :∃ !λ .⊃ .ṡ ʻλ ⤉R=ṡ ʻ⤉Rʻʻλ =ṡ ʻ(λ ⤉R)
+PM-VERBATIM-END PM2:✱160·41 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·411
+⊢ :∃ !λ .⊃ .P⤉ṡ ʻλ =ṡ ʻP⤉ʻʻλ [Proof as in *160*41]
+PM-VERBATIM-END PM2:✱160·411 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·412
+⊢ :∃ !λ .∃ !μ .⊃ .ṡ ʻλ ⤉ṡ ʻμ = ṡ ʻsʻλ ⤉_,,ʻʻμ
+PM-VERBATIM-END PM2:✱160·412 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·42
+⊢ .(P⤉Q)| S=P| S⊍ Q| S⊍ CʻP↑ Š ʻʻCʻQ
+PM-VERBATIM-END PM2:✱160·42 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·421
+⊢ .S| (P⤉Q)=S| P⊍ S| Q⊍ SʻʻCʻP↑ CʻQ
+PM-VERBATIM-END PM2:✱160·421 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·43
+⊢ .S^;(P⤉Q)=S^;P⊍ S^;Q⊍ SʻʻCʻP↑ SʻʻCʻQ
+PM-VERBATIM-END PM2:✱160·43 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·44
+⊢ :CʻP⊂ ᗡʻS.CʻQ⊂ ᗡʻS.⊃ .S^;(P⤉Q)=S^;P⤉S^;Q
+PM-VERBATIM-END PM2:✱160·44 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·45
+⊢ :S↾ (CʻP'∪ CʻQ')∈ 1 arrow 1. S↾ CʻP'∈ P smor̅ P'.S↾ CʻQ'∈ Qsmor̅ Q'.⊃ . S↾ Cʻ(P'⤉Q')∈ (P⤉Q)smor̅ (P'⤉Q')
+PM-VERBATIM-END PM2:✱160·45 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·451
+⊢ :S↾ CʻP'∈ Psmor̅ P'.S↾ CʻQ'∈ Qsmor̅ Q'.Sʻʻ(CʻP'-CʻQ')∩ CʻQ=Λ . ⊃ .S↾ Cʻ(P'⤉Q')∈ (P⤉Q)smor̅ (P'⤉Q')
+PM-VERBATIM-END PM2:✱160·451 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·452
+⊢ :S↾ CʻP'∈ P smor̅ P'. S↾ CʻQ'∈ Qsmor̅ Q'.CʻP∩ CʻQ=Λ .⊃ . S↾ Cʻ(P'⤉Q')∈ (P⤉Q)smor̅ (P'⤉Q')
+PM-VERBATIM-END PM2:✱160·452 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·46
+⊢ :CʻP=ᗡʻS.CʻQ=ᗡʻT.CʻP∩ Cʻ Q=Λ .⊃ . (S⊍ T)^;(P⤉Q)=S^;P⤉T^;Q
+PM-VERBATIM-END PM2:✱160·46 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·47
+⊢ :CʻP∩ CʻQ=Λ .CʻP'∩ CʻQ'=Λ . S∈ P smor̅ P'.T∈ Qsmor̅ Q'.⊃ . S⊍ T∈ (P⤉Q)smor̅ (P'⤉Q')
+PM-VERBATIM-END PM2:✱160·47 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·48
+⊢ :CʻP∩ CʻQ=Λ .CʻP'∩ CʻQ'=Λ .P smor P'.QsmorQ'.⊃ . P⤉Q smor P'⤉Q' [*160·47.*151·12]
+PM-VERBATIM-END PM2:✱160·48 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·5
+⊢ :CʻP∩ CʻQ=Λ .⊃ .(P⤉Q)⥏CʻP=P.(P⤉Q)⥏CʻQ=Q
+PM-VERBATIM-END PM2:✱160·5 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·51
+⊢ :CʻP∩ CʻQ=Λ .⊃ .(P⤉Q)²=P²⊍ Q²⊍ DʻP↑ CʻQ⊍ CʻP↑ ᗡʻQ
+PM-VERBATIM-END PM2:✱160·51 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱160·52
+⊢ :CʻP∩ CʻQ=Λ .CʻP∩ CʻR=Λ .P⤉Q=P⤉R.⊃ .Q=R
+PM-VERBATIM-END PM2:✱160·52 -/

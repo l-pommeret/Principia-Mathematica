@@ -18,13 +18,13 @@ def sum (collection : RelationClass α β) : Relation α β :=
 def subclass (collection larger : RelationClass α β) : Prop :=
   ∀ R, collection R → larger R
 
-/-- ✱41·01. Canonical wrapper for relational product. -/
-theorem star_41_01 (collection : RelationClass α β) :
-    relationalProduct collection = fun x y => ∀ R, collection R → R x y := rfl
+/-- ✱41·01. `ṗʻλ = x̂ŷ(R ∈ λ .⊃R. xRy)` Df. -/
+def star_41_01 (collection : RelationClass α β) : Relation α β :=
+  fun x y => ∀ R, collection R → R x y
 
-/-- ✱41·02. Canonical wrapper for relational sum. -/
-theorem star_41_02 (collection : RelationClass α β) :
-    sum collection = fun x y => ∃ R, collection R ∧ R x y := rfl
+/-- ✱41·02. `ṡʻλ = x̂ŷ{(∃R) . R ∈ λ . xRy}` Df. -/
+def star_41_02 (collection : RelationClass α β) : Relation α β :=
+  fun x y => ∃ R, collection R ∧ R x y
 
 /-- ✱41·1. Membership in the relational product. -/
 theorem star_41_1 (collection : RelationClass α β) (x : α) (y : β) :

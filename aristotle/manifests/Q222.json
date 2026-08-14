@@ -5,9 +5,9 @@
     "local_targets_must_precede_use": true,
     "context_closure_grants_proof_permission": false,
     "strict": false,
-    "interface_gated": false,
-    "canonical_integration_forbidden": false,
-    "requires_one_to_one_kernel_remap": false
+    "interface_gated": true,
+    "canonical_integration_forbidden": true,
+    "requires_one_to_one_kernel_remap": true
   },
   "batch_items": [
     {
@@ -16,9 +16,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": false,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱3·2",
       "proof_permissions": [
@@ -91,10 +91,16 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·32",
+          "PM1:✱3·12"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·32",
+        "PM1:✱3·12"
+      ],
       "substitutions": [],
       "documented_relaxations": [
         "PM1:✱2·32"
@@ -106,9 +112,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": false,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱3·21",
       "proof_permissions": [
@@ -169,10 +175,14 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·04"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·04"
+      ],
       "substitutions": []
     },
     {
@@ -181,9 +191,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": false,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱3·22",
       "proof_permissions": [
@@ -277,7 +287,6 @@
         "PM1:✱2·15",
         "PM1:✱2·16",
         "PM1:✱2·17",
-        "PM1:✱3·01",
         "PM1:✱3·1",
         "PM1:✱3·11",
         "PM1:✱3·13",
@@ -305,7 +314,6 @@
         "PM1:✱2·15": "PM.FirstEdition.Volume1.Star2.star_2_15",
         "PM1:✱2·16": "PM.FirstEdition.Volume1.Star2.star_2_16",
         "PM1:✱2·17": "PM.FirstEdition.Volume1.Star2.star_2_17",
-        "PM1:✱3·01": "PM.Elementary.conj",
         "PM1:✱3·1": "PM.FirstEdition.Volume1.Star3.star_3_1",
         "PM1:✱3·11": "PM.FirstEdition.Volume1.Star3.star_3_11",
         "PM1:✱3·13": "PM.FirstEdition.Volume1.Star3.star_3_13",
@@ -320,10 +328,24 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·06",
+          "PM1:✱2·15",
+          "PM1:✱2·16",
+          "PM1:✱2·17",
+          "PM1:✱3·13",
+          "PM1:✱3·14"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·06",
+        "PM1:✱2·15",
+        "PM1:✱2·16",
+        "PM1:✱2·17",
+        "PM1:✱3·13",
+        "PM1:✱3·14"
+      ],
       "substitutions": [
         {
           "step": 1,
@@ -340,9 +362,9 @@
         "proof_permissions_are_exact": true,
         "context_closure_grants_proof_permission": false,
         "strict": false,
-        "interface_gated": false,
-        "canonical_integration_forbidden": false,
-        "requires_one_to_one_kernel_remap": false
+        "interface_gated": true,
+        "canonical_integration_forbidden": true,
+        "requires_one_to_one_kernel_remap": true
       },
       "current_item": "PM1:✱3·24",
       "proof_permissions": [
@@ -399,7 +421,6 @@
         "PM1:✱2·11",
         "PM1:✱2·12",
         "PM1:✱2·16",
-        "PM1:✱3·01",
         "PM1:✱3·1",
         "PM1:✱3·14"
       ],
@@ -421,7 +442,6 @@
         "PM1:✱2·11": "PM.FirstEdition.Volume1.Star2.star_2_11",
         "PM1:✱2·12": "PM.FirstEdition.Volume1.Star2.star_2_12",
         "PM1:✱2·16": "PM.FirstEdition.Volume1.Star2.star_2_16",
-        "PM1:✱3·01": "PM.Elementary.conj",
         "PM1:✱3·1": "PM.FirstEdition.Volume1.Star3.star_3_1",
         "PM1:✱3·14": "PM.FirstEdition.Volume1.Star3.star_3_14"
       },
@@ -434,10 +454,16 @@
       ],
       "diagnostics": {
         "missing_items": [],
-        "non_kernel_checked_items": [],
+        "non_kernel_checked_items": [
+          "PM1:✱2·11",
+          "PM1:✱3·14"
+        ],
         "unresolved_aliases": []
       },
-      "interface_dependencies": [],
+      "interface_dependencies": [
+        "PM1:✱2·11",
+        "PM1:✱3·14"
+      ],
       "substitutions": [
         {
           "step": 1,
@@ -486,7 +512,6 @@
     "PM1:✱2·17",
     "PM1:✱2·3",
     "PM1:✱2·32",
-    "PM1:✱3·01",
     "PM1:✱3·1",
     "PM1:✱3·11",
     "PM1:✱3·12",
@@ -517,7 +542,6 @@
     "PM1:✱2·17": "PM.FirstEdition.Volume1.Star2.star_2_17",
     "PM1:✱2·3": "PM.FirstEdition.Volume1.Star2.star_2_3",
     "PM1:✱2·32": "PM.FirstEdition.Volume1.Star2.star_2_32",
-    "PM1:✱3·01": "PM.Elementary.conj",
     "PM1:✱3·1": "PM.FirstEdition.Volume1.Star3.star_3_1",
     "PM1:✱3·11": "PM.FirstEdition.Volume1.Star3.star_3_11",
     "PM1:✱3·12": "PM.FirstEdition.Volume1.Star3.star_3_12",
@@ -546,10 +570,43 @@
     "PM1:✱3·14",
     "PM1:✱3·2"
   ],
-  "direct_interface_dependencies": [],
-  "interface_dependencies": [],
-  "source_backfill_required": false,
-  "integration_blocked": false,
+  "direct_interface_dependencies": [
+    "PM1:✱2·04",
+    "PM1:✱2·06",
+    "PM1:✱2·11",
+    "PM1:✱2·15",
+    "PM1:✱2·16",
+    "PM1:✱2·17",
+    "PM1:✱2·32",
+    "PM1:✱3·12",
+    "PM1:✱3·13",
+    "PM1:✱3·14"
+  ],
+  "interface_dependencies": [
+    "PM1:✱2·03",
+    "PM1:✱2·04",
+    "PM1:✱2·05",
+    "PM1:✱2·06",
+    "PM1:✱2·07",
+    "PM1:✱2·08",
+    "PM1:✱2·1",
+    "PM1:✱2·11",
+    "PM1:✱2·12",
+    "PM1:✱2·13",
+    "PM1:✱2·14",
+    "PM1:✱2·15",
+    "PM1:✱2·16",
+    "PM1:✱2·17",
+    "PM1:✱2·3",
+    "PM1:✱2·32",
+    "PM1:✱3·1",
+    "PM1:✱3·11",
+    "PM1:✱3·12",
+    "PM1:✱3·13",
+    "PM1:✱3·14"
+  ],
+  "source_backfill_required": true,
+  "integration_blocked": true,
   "foundation_profile": "elementary-pm1",
   "context_whitespace_policy": "strip-trailing",
   "interface_signature_targets": {

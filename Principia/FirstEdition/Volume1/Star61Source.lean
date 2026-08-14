@@ -1,17 +1,200 @@
-/-! Diplomatic text record of PM I, ✱61 (pp. 412–414), collated against the
-Gutenberg transcription and first-edition scan. -/
+/-! Principia Mathematica, first edition, volume I, ✱61.
+Source transcription from Project Gutenberg PG78050. -/
+
 /- PM-VERBATIM-BEGIN PM1:✱61·01
+✱61·01. Rl=λ̂P̂{λ=R̂(R⪽P)} Df
 ✱61·01. Rl = λ̂P̂{λ = R̂(R ⊂ P)} Df
 PM-VERBATIM-END PM1:✱61·01 -/
+
 /- PM-VERBATIM-BEGIN PM1:✱61·02
+✱61·02. Rl ex=λ̂P̂{λ=R̂(R⪽P.∃̇!R)} Df
 ✱61·02. Rl ex = λ̂P̂{λ = R̂(R ⊂ P . ∃!R)} Df
 PM-VERBATIM-END PM1:✱61·02 -/
+
 /- PM-VERBATIM-BEGIN PM1:✱61·03
+✱61·03. Rel²=Rlʻ (Rel↑Rel) Df
 ✱61·03. Rel² = Rlʻ(Rel ↑ Rel) Df
 PM-VERBATIM-END PM1:✱61·03 -/
+
 /- PM-VERBATIM-BEGIN PM1:✱61·04
+✱61·04. Rel³=Rlʻ (Rel²↑Rel²) Df
 ✱61·04. Rel³ = Rlʻ(Rel² ↑ Rel²) Df
 PM-VERBATIM-END PM1:✱61·04 -/
+
 /- PM-VERBATIM-BEGIN PM1:✱61·1
+✱61·1. ⊢:λRl P.≡.λ=R̂(R⪽P)
 ✱61·1. ⊢ : λ Rl P .≡. λ = R̂(R ⊂ P)
 PM-VERBATIM-END PM1:✱61·1 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·11
+✱61·11. ⊢:λRl ex P.≡.λ=R̂(R⪽P.∃̇!R)
+PM-VERBATIM-END PM1:✱61·11 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·12
+✱61·12. ⊢.Rlʻ P=R̂(R⪽P)
+PM-VERBATIM-END PM1:✱61·12 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·13
+✱61·13. ⊢.Rl exʻ P=R̂(R⪽P.∃̇!R)
+PM-VERBATIM-END PM1:✱61·13 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·14
+✱61·14. ⊢.∃ !Rlʻ P
+PM-VERBATIM-END PM1:✱61·14 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·15
+✱61·15. ⊢.∃ !Rl exʻ P
+PM-VERBATIM-END PM1:✱61·15 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·2
+✱61·2. ⊢:R∈RlʻP.≡.R⪽P
+PM-VERBATIM-END PM1:✱61·2 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·21
+✱61·21. ⊢:R∈Rl exʻ P.≡.R⪽P.∃̇!R
+PM-VERBATIM-END PM1:✱61·21 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·22
+✱61·22. ⊢:R∈Rl exʻ P.≡.R∈Rlʻ P.∃̇!R
+PM-VERBATIM-END PM1:✱61·22 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·23
+✱61·23. ⊢:R∈Rl exʻ P.≡.R∈Rlʻ P-ιʻΛ̇
+PM-VERBATIM-END PM1:✱61·23 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·24
+✱61·24. ⊢.Rl exʻ P=Rlʻ P-ιʻΛ̇
+PM-VERBATIM-END PM1:✱61·24 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·3
+✱61·3. ⊢.Λ̇∈Rlʻ P
+PM-VERBATIM-END PM1:✱61·3 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·31
+✱61·31. ⊢.Λ̇∈Rlʻ P
+PM-VERBATIM-END PM1:✱61·31 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·32
+✱61·32. ⊢.RlʻΛ̇=ιʻΛ̇
+PM-VERBATIM-END PM1:✱61·32 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·321
+✱61·321. ⊢:P=Λ̇.≡.Rlʻ P=ιʻ P
+PM-VERBATIM-END PM1:✱61·321 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·33
+✱61·33. ⊢.Rl exʻΛ̇=Λ∩Rel
+PM-VERBATIM-END PM1:✱61·33 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·34
+✱61·34. ⊢.P∈Rlʻ P
+PM-VERBATIM-END PM1:✱61·34 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·35
+✱61·35. ⊢:∃̇!P.⊃.P∈Rl exʻ P
+PM-VERBATIM-END PM1:✱61·35 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·36
+✱61·36. ⊢:∃̇!P.⊃.∃ !Rl exʻ P
+PM-VERBATIM-END PM1:✱61·36 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·361
+✱61·361. ⊢:∃̇!P.≡.∃ !Rl exʻ P
+PM-VERBATIM-END PM1:✱61·361 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·362
+✱61·362. ⊢.Rlʻ (x↓ y)=ιʻΛ̇∪ ιʻ (x↓ y)
+PM-VERBATIM-END PM1:✱61·362 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·37
+✱61·37. ⊢.Rl exʻ (x↓ y)=ιʻ (x↓ y)
+PM-VERBATIM-END PM1:✱61·37 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·371
+✱61·371. ⊢:R∈2̇.⊃.Rlʻ R=ιʻΛ̇∪ ιʻ R
+PM-VERBATIM-END PM1:✱61·371 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·372
+✱61·372. ⊢:R∈2̇.⊃.Rlʻ R⊂ 0ᵣ∪2̇
+PM-VERBATIM-END PM1:✱61·372 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·373
+✱61·373. ⊢:R∈ 2ᵣ.⊃.Rlʻ R⊂ 0ᵣ∪ 2ᵣ
+PM-VERBATIM-END PM1:✱61·373 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·38
+✱61·38. ⊢:R∈2̇.≡.Rl exʻ R=ιʻ R
+PM-VERBATIM-END PM1:✱61·38 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·39
+✱61·39.
+⊢.Rlʻ (x↓ y⊍z↓ w)=ιʻΛ̇∪ ιʻ(x↓ y)∪ ιʻ (z↓ w)∪ ιʻ(x↓ y⊍z↓ w)
+PM-VERBATIM-END PM1:✱61·39 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·391
+✱61·391. ⊢:P,Q∈ 2.⊃.Rlʻ (P⊍Q)=ιʻΛ̇∪ ιʻ P∪ ιʻ Q∪ ιʻ (P⊍Q)
+PM-VERBATIM-END PM1:✱61·391 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·4
+✱61·4. ⊢:Q∈Rlʻ P.R⪽Q.⊃.R∈Rlʻ P
+PM-VERBATIM-END PM1:✱61·4 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·41
+✱61·41. ⊢:Q∈Rlʻ P.⊃.Q∩̇R∈Rlʻ P
+PM-VERBATIM-END PM1:✱61·41 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·42
+✱61·42. ⊢:Q∈Rlʻ P.R⪽Q.∃̇!R.⊃.R∈Rl exʻ P
+PM-VERBATIM-END PM1:✱61·42 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·43
+✱61·43. ⊢:Q,R∈RlʻP.≡.Q⊍R∈Rlʻ P
+PM-VERBATIM-END PM1:✱61·43 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·44
+✱61·44. ⊢:Q∈Rlʻ P.R∈Rl exʻ P.⊃.Q⊍R∈Rl exʻ P
+PM-VERBATIM-END PM1:✱61·44 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·5
+✱61·5. ⊢.ṡʻ Rlʻ P=P
+PM-VERBATIM-END PM1:✱61·5 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·501
+✱61·501. ⊢.ṡʻRl exʻ P=P
+PM-VERBATIM-END PM1:✱61·501 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·51
+✱61·51. ⊢.ṗʻRlʻ P=Λ̇
+PM-VERBATIM-END PM1:✱61·51 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·52
+✱61·52. ⊢:ṡʻ λ⪽Q.≡.λ⊂ Rlʻ Q
+PM-VERBATIM-END PM1:✱61·52 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·53
+✱61·53. ⊢:Q⪽ṗʻ λ.≡.Q∈ pʻRlʻʻ λ
+PM-VERBATIM-END PM1:✱61·53 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·54
+✱61·54. ⊢.Rlʻṗʻ λ=pʻRlʻʻ λ
+PM-VERBATIM-END PM1:✱61·54 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·55
+✱61·55. ⊢.Rlʻ P=Rlʻ Q.≡.P=Q
+PM-VERBATIM-END PM1:✱61·55 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·56
+✱61·56. ⊢.Rl exʻ P=Rl exʻ Q.≡.P=Q
+PM-VERBATIM-END PM1:✱61·56 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·6
+✱61·6. ⊢:xPy.⊃.x↓ y∈Rl exʻ P
+PM-VERBATIM-END PM1:✱61·6 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·62
+✱61·62. ⊢:xPy.zPw.⊃.x↓ y⊍z↓ w∈Rl exʻ P
+PM-VERBATIM-END PM1:✱61·62 -/
+
+/- PM-VERBATIM-BEGIN PM1:✱61·7
+✱61·7. ⊢.Rlʻ P∈ClʻRel
+PM-VERBATIM-END PM1:✱61·7 -/

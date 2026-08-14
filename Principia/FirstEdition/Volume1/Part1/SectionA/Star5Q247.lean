@@ -5,6 +5,12 @@ namespace PM.FirstEdition.Volume1.Star5
 open PM
 open PM.Elementary
 
+/-- Audited scope reading of ✱5·32. -/
+def star_5_32_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . ⊃ . q ≡ r : ≡ : p . q . ≡ . p . r"
+  parsed := ((p ⊃ₚ (q ≡ₚ r)) ≡ₚ ((p ∧ₚ q) ≡ₚ (p ∧ₚ r)))
+  scopeReading := "The principal equivalence relates p ⊃ (q ≡ r) to (p ∧ q) ≡ (p ∧ r)."
+
 /-- ✱5·32.  `⊢ :. p . ⊃ . q ≡ r : ≡ : p . q . ≡ . p . r`.
 
 This proposition is constantly required in subsequent proofs. -/
@@ -59,6 +65,12 @@ theorem star_5_32 {Γ} (p q r : PM.Elementary Γ) :
 
 -- This proposition is constantly required in subsequent proofs.
 
+/-- Audited scope reading of ✱5·33. -/
+def star_5_33_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
+  printed := PM.pmPrinted "⊢ : p . q ⊃ r . ≡ : p : p . q . ⊃ . r"
+  parsed := ((p ∧ₚ (q ⊃ₚ r)) ≡ₚ (p ∧ₚ ((p ∧ₚ q) ⊃ₚ r)))
+  scopeReading := "The principal equivalence relates p ∧ (q ⊃ r) to p ∧ ((p ∧ q) ⊃ r)."
+
 /-- ✱5·33.  `⊢ :. p . q ⊃ r . ≡ : p : p . q . ⊃ . r`.
 
 (The colon without an explicit connective after the second `p` is PM's product
@@ -102,4 +114,3 @@ theorem star_5_33 {Γ} (p q r : PM.Elementary Γ) :
   exact PM.Derivation.detach hmain (eqFwd (star_5_32 p (q ⊃ₚ r) ((p ∧ₚ q) ⊃ₚ r)))
 
 end PM.FirstEdition.Volume1.Star5
-

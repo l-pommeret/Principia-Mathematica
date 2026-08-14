@@ -15,10 +15,16 @@ def Included (A B:Class α):=∀x,A x→B x
 def Singleton (A:Class α):=∃x,A=fun z=>z=x
 private theorem class_ext {A B:Class α}(h:∀x,A x↔B x):A=B:=by funext x; exact propext (h x)
 
-theorem star_93_01 (P:Rel α)(x:α):boundary P x ↔ dom P x∧¬cod P x:=Iff.rfl
-theorem star_93_02 (P:Rel α)(A:Class α)(x:α):minimum P A x ↔ A x∧field P x∧¬image (converse P) A x:=Iff.rfl
-theorem star_93_021 (P:Rel α):maximum P=minimum (converse P):=rfl
-theorem star_93_03 (P:Rel α)(F:(Class α)→Prop)(A:Class α):generated P F A↔∃T,F T∧A=minimum P T:=Iff.rfl
+/-- ✱93·01. `B = x̂P̂(x∈DʻP−ᗡʻP) Df`. -/
+def star_93_01 (P : Rel α) : Class α := fun x => dom P x ∧ ¬cod P x
+/-- ✱93·02. `min_P = min(P) = x̂α̂(x∈α∩CʻP−P̌ʻʻα) Df`. -/
+def star_93_02 (P : Rel α) (A : Class α) : Class α :=
+  fun x => A x ∧ field P x ∧ ¬image (converse P) A x
+/-- ✱93·021. `max_P = max(P) = min(P̌) Df`. -/
+def star_93_021 (P : Rel α) : Class α → Class α := minimum (converse P)
+/-- ✱93·03. `genʻP = min_P→ʻʻᗡʻʻPotidʻP Df`. -/
+def star_93_03 (P : Rel α) (F : Class α → Prop) : Class (Class α) :=
+  fun A => ∃ T, F T ∧ A = minimum P T
 theorem star_93_1 (P:Rel α)(x:α):boundary P x↔dom P x∧¬cod P x:=Iff.rfl
 theorem star_93_101 (P:Rel α):boundary P=(fun x=>dom P x∧¬cod P x):=rfl
 theorem star_93_102 (P:Rel α)(x:α)(h:Singleton (boundary P)):

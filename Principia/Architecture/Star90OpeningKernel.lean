@@ -10,8 +10,10 @@ inductive Ancestral (R : Rel α) : Rel α where
   | edge {x y} : R x y → Ancestral R x y
   | trans {x y z} : Ancestral R x y → Ancestral R y z → Ancestral R x z
 
-theorem star_90_01 (R : Rel α) (x y : α) : Ancestral R x y ↔ Ancestral R x y := Iff.rfl
-theorem star_90_02 (R : Rel α) : Converse (Ancestral R) = Converse (Ancestral R) := rfl
+/-- ✱90·01. `R∗ = x̂ŷ{x∈CʻR : Řʻʻμ⊂μ.x∈μ .⊃_μ. y∈μ} Df`. -/
+def star_90_01 (R : Rel α) : Rel α := Ancestral R
+/-- ✱90·02. `Ř∗ = CnvʻR∗ Df`. -/
+def star_90_02 (R : Rel α) : Rel α := Converse (Ancestral R)
 theorem star_90_1 (R : Rel α) (x y : α) : Ancestral R x y ↔ Ancestral R x y := Iff.rfl
 theorem star_90_101 (R : Rel α) (p : α → Prop) :
     (∀ x y, R x y → p y → p x) ↔ (∀ x y, R x y → (¬p x) → ¬p y) := by grind

@@ -24,23 +24,14 @@ def complement (relation : Relation Left Right) : Relation Left Right :=
 def existsRelation (relation : Relation Left Right) : Prop :=
   ∃ x y, relation x y
 
-/-- PM I ✱25·01: definition of the universal relation. -/
-theorem star_25_01 : universalRelation Left Right =
-    (fun x y => x = x ∧ y = y) := by
-  funext x y
-  apply propext
-  exact ⟨fun _ => ⟨rfl, rfl⟩, fun _ => True.intro⟩
+/-- ✱25·01. `V̇ = x̂ŷ(x = x . y = y) Df`. -/
+def star_25_01 : Relation Left Right := fun x y => x = x ∧ y = y
 
-/-- PM I ✱25·02: definition of the null relation. -/
-theorem star_25_02 : nullRelation Left Right =
-    complement (universalRelation Left Right) := by
-  funext x y
-  apply propext
-  exact ⟨fun impossible => False.elim impossible, fun h => h True.intro⟩
+/-- ✱25·02. `Λ̇ = −̇V̇ Df`. -/
+def star_25_02 : Relation Left Right := complement (universalRelation Left Right)
 
-/-- PM I ✱25·03: definition of existence for relations. -/
-theorem star_25_03 (relation : Relation Left Right) :
-    existsRelation relation = (∃ x y, relation x y) := rfl
+/-- ✱25·03. `∃̇!R .=. (∃x,y) . xRy Df`. -/
+def star_25_03 (relation : Relation Left Right) : Prop := ∃ x y, relation x y
 
 /-- PM I ✱25·1: the null relation differs from the universal relation. -/
 theorem star_25_1 [Nonempty Left] [Nonempty Right] :

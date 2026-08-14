@@ -22,19 +22,17 @@ def RelationClassApplication
   ∃ φ : TypedRelation α β → Prop,
     (∀ R, ψ R ↔ φ R) ∧ f (AbstractRelationClass φ)
 
-/-- ✱21·082. Exact expansion of application to an abstracted relation class. -/
-theorem star_21_082
+/-- ✱21·082. `f{ẑR(ψR)} .=: (∃φ) : ψR .≡ᴿ. φ!R : f(φ!ẑR) Df`. -/
+def star_21_082
     (f : RelationClass α β → Prop) (ψ : TypedRelation α β → Prop) :
-    RelationClassApplication f ψ =
-      ∃ φ : TypedRelation α β → Prop,
-        (∀ R, ψ R ↔ φ R) ∧ f (AbstractRelationClass φ) := by
-  rfl
+    Prop :=
+  ∃ φ : TypedRelation α β → Prop,
+    (∀ R, ψ R ↔ φ R) ∧ f (AbstractRelationClass φ)
 
-/-- ✱21·083. Membership in a predicatively abstracted relation class. -/
-theorem star_21_083
+/-- ✱21·083. `R ε φ!ẑR .= . φ!R Df`. -/
+def star_21_083
     (R : TypedRelation α β) (φ : TypedRelation α β → Prop) :
-    AbstractRelationClass φ R = φ R := by
-  rfl
+    Prop := φ R
 
 /-- The ✱21·01 relation-abstraction definition used by ✱21·1. -/
 def RelationAbstractionApplication

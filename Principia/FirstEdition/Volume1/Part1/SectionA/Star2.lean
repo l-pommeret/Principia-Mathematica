@@ -1,7 +1,14 @@
 import Principia.Deduction.System
+import Principia.Deduction.PrintedNames
 import Principia.Syntax.Printed
 
 namespace PM.FirstEdition.Volume1.Star2
+
+/-- The definitional conversion printed as ✱1·01, made explicit so that a
+proof term records each such conversion rather than relying silently on
+definitional equality. -/
+private theorem star_1_01 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
+    (p ⊃ₚ q) = (∼ₚ p ∨ₚ q) := rfl
 
 /-! # ✱2. Immediate Consequences of the Primitive Propositions
 
@@ -597,8 +604,11 @@ def star_2_01_demonstration_printed : PM.PrintedFormula :=
 
 /-- ✱2·01 (`Abs`), exactly the instance of Taut specified in PM's demonstration. -/
 theorem star_2_01 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
-    ⊢ₚ ((p ⊃ₚ ∼ₚ p) ⊃ₚ ∼ₚ p) :=
-  PM.Derivation.star_1_2 (∼ₚ p)
+    ⊢ₚ ((p ⊃ₚ ∼ₚ p) ⊃ₚ ∼ₚ p) := by
+  have line1 := PM.Derivation.Taut (∼ₚ p)
+  have line2 := congrArg (fun antecedent => PM.Derivation (antecedent ⊃ₚ ∼ₚ p))
+    (star_1_01 p (∼ₚ p))
+  exact line2.mpr line1
 
 /-- Audited scope reading of ✱2·02. -/
 def star_2_02_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
@@ -612,8 +622,11 @@ def star_2_02_demonstration_printed : PM.PrintedFormula :=
 
 /-- ✱2·02, exactly the instance of Add specified in PM's demonstration. -/
 theorem star_2_02 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
-    ⊢ₚ (q ⊃ₚ (p ⊃ₚ q)) :=
-  PM.Derivation.star_1_3 (∼ₚ p) q
+    ⊢ₚ (q ⊃ₚ (p ⊃ₚ q)) := by
+  have line1 := PM.Derivation.Add (∼ₚ p) q
+  have line2 := congrArg (fun consequent => PM.Derivation (q ⊃ₚ consequent))
+    (star_1_01 p q).symm
+  exact line2.mp line1
 
 /-- Audited scope reading of ✱2·03. -/
 def star_2_03_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
@@ -627,8 +640,13 @@ def star_2_03_demonstration_printed : PM.PrintedFormula :=
 
 /-- ✱2·03, exactly the instance of Perm specified in PM's demonstration. -/
 theorem star_2_03 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
-    ⊢ₚ ((p ⊃ₚ ∼ₚ q) ⊃ₚ (q ⊃ₚ ∼ₚ p)) :=
-  PM.Derivation.star_1_4 (∼ₚ p) (∼ₚ q)
+    ⊢ₚ ((p ⊃ₚ ∼ₚ q) ⊃ₚ (q ⊃ₚ ∼ₚ p)) := by
+  have line1 := PM.Derivation.Perm (∼ₚ p) (∼ₚ q)
+  have line2 :
+      ((∼ₚ p ∨ₚ ∼ₚ q) ⊃ₚ (∼ₚ q ∨ₚ ∼ₚ p)) =
+        ((p ⊃ₚ ∼ₚ q) ⊃ₚ (q ⊃ₚ ∼ₚ p)) := by
+    rw [star_1_01 p (∼ₚ q), star_1_01 q (∼ₚ p)]
+  exact (congrArg PM.Derivation line2).mp line1
 
 /-- Audited scope reading of ✱2·04. -/
 def star_2_04_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
@@ -642,8 +660,14 @@ def star_2_04_demonstration_printed : PM.PrintedFormula :=
 
 /-- ✱2·04, exactly the instance of Assoc specified in PM's demonstration. -/
 theorem star_2_04 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
-    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ (q ⊃ₚ (p ⊃ₚ r))) :=
-  PM.Derivation.star_1_5 (∼ₚ p) (∼ₚ q) r
+    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ (q ⊃ₚ (p ⊃ₚ r))) := by
+  have line1 := PM.Derivation.Assoc (∼ₚ p) (∼ₚ q) r
+  have line2 :
+      ((∼ₚ p ∨ₚ (∼ₚ q ∨ₚ r)) ⊃ₚ (∼ₚ q ∨ₚ (∼ₚ p ∨ₚ r))) =
+        ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ (q ⊃ₚ (p ⊃ₚ r))) := by
+    rw [star_1_01 p (q ⊃ₚ r), star_1_01 q r,
+      star_1_01 q (p ⊃ₚ r), star_1_01 p r]
+  exact (congrArg PM.Derivation line2).mp line1
 
 /-- Audited scope reading of ✱2·05. -/
 def star_2_05_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
@@ -657,8 +681,13 @@ def star_2_05_demonstration_printed : PM.PrintedFormula :=
 
 /-- ✱2·05, exactly the instance of Sum specified in PM's demonstration. -/
 theorem star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :
-    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) :=
-  PM.Derivation.star_1_6 (∼ₚ p) q r
+    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) := by
+  have line1 := PM.Derivation.Sum (∼ₚ p) q r
+  have line2 :
+      ((q ⊃ₚ r) ⊃ₚ ((∼ₚ p ∨ₚ q) ⊃ₚ (∼ₚ p ∨ₚ r))) =
+        ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r))) := by
+    rw [star_1_01 p q, star_1_01 p r]
+  exact (congrArg PM.Derivation line2).mp line1
 
 /-- Audited scope reading of ✱2·06. -/
 def star_2_06_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
@@ -720,8 +749,10 @@ def star_2_1_demonstration_printed : PM.PrintedFormula :=
 
 /-- PM ✱2·1, obtained only by the ✱1·01 definitional reading of ✱2·08. -/
 theorem star_2_1 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
-    ⊢ₚ (∼ₚ p ∨ₚ p) :=
-  star_2_08 p
+    ⊢ₚ (∼ₚ p ∨ₚ p) := by
+  have line1 := star_2_08 p
+  have line2 := congrArg PM.Derivation (star_1_01 p p)
+  exact line2.mp line1
 
 /-- Audited scope reading of ✱2·11. -/
 def star_2_11_reading (p : PM.Elementary Γ) : PM.ElementaryReading Γ where
@@ -752,7 +783,9 @@ def star_2_12_demonstration_printed : PM.PrintedFormula :=
 /-- PM ✱2·12, definitionally the indicated ✱2·11 instance. -/
 theorem star_2_12 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
     ⊢ₚ (p ⊃ₚ ∼ₚ (∼ₚ p)) := by
-  exact star_2_11 (∼ₚ p)
+  have line1 := star_2_11 (∼ₚ p)
+  have line2 := congrArg PM.Derivation (star_1_01 p (∼ₚ (∼ₚ p)))
+  exact line2.mpr line1
 
 /-- Audited scope reading of ✱2·13. -/
 def star_2_13_reading (p : PM.Elementary Γ) : PM.ElementaryReading Γ where
@@ -784,8 +817,10 @@ def star_2_14_demonstration_printed : PM.PrintedFormula :=
 /-- PM ✱2·14, preserving the displayed Perm instance and detachment. -/
 theorem star_2_14 {Γ : PM.RealContext} (p : PM.Elementary Γ) :
     ⊢ₚ (∼ₚ (∼ₚ p) ⊃ₚ p) := by
-  have hperm := PM.Derivation.star_1_4 p (∼ₚ (∼ₚ (∼ₚ p)))
-  exact PM.Derivation.detach (star_2_13 p) hperm
+  have line1 := PM.Derivation.Perm p (∼ₚ (∼ₚ (∼ₚ p)))
+  have line2 := PM.Derivation.detach (star_2_13 p) line1
+  have line3 := congrArg PM.Derivation (star_1_01 (∼ₚ (∼ₚ p)) p)
+  exact line3.mpr line2
 
 /-- Audited scope reading of ✱2·15. -/
 def star_2_15_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
@@ -1317,8 +1352,12 @@ def star_2_43_demonstration_printed : PM.PrintedFormula :=
   PM.pmPrinted "[✱2·42]"
 
 theorem star_2_43 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
-    ⊢ₚ ((p ⊃ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ q)) :=
-  star_2_42 p q
+    ⊢ₚ ((p ⊃ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ q)) := by
+  have line1 := star_2_42 p q
+  have line2 := congrArg
+    (fun antecedent => PM.Derivation (antecedent ⊃ₚ (p ⊃ₚ q)))
+    (star_1_01 p (p ⊃ₚ q))
+  exact line2.mpr line1
 
 /- PM-VERBATIM-BEGIN PM1:✱2·45
 ✱2·45.  ⊢ : ∼(p ∨ q) . ⊃ . ∼p                    [✱2·2.Transp.]
@@ -1927,30 +1966,25 @@ def star_2_74_demonstration_printed : PM.PrintedFormula :=
 
 theorem star_2_74 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))) := by
-  have perm : ⊢ₚ ((p ∨ₚ q) ⊃ₚ (q ∨ₚ p)) := PM.Derivation.star_1_4 p q
-  have sumStep : ⊢ₚ ((r ∨ₚ (p ∨ₚ q)) ⊃ₚ (r ∨ₚ (q ∨ₚ p))) :=
-    PM.Derivation.detach perm (PM.Derivation.star_1_6 r (p ∨ₚ q) (q ∨ₚ p))
-  have rotateIn : ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (r ∨ₚ (p ∨ₚ q))) :=
-    PM.Derivation.star_1_4 (p ∨ₚ q) r
-  have rotateOut : ⊢ₚ ((r ∨ₚ (q ∨ₚ p)) ⊃ₚ ((q ∨ₚ p) ∨ₚ r)) :=
-    PM.Derivation.star_1_4 r (q ∨ₚ p)
-  have half : ⊢ₚ ((r ∨ₚ (p ∨ₚ q)) ⊃ₚ ((q ∨ₚ p) ∨ₚ r)) :=
-    PM.Derivation.detach sumStep
-      (PM.Derivation.detach rotateOut
-        (star_2_05 (r ∨ₚ (p ∨ₚ q)) (r ∨ₚ (q ∨ₚ p)) ((q ∨ₚ p) ∨ₚ r)))
-  have swap : ⊢ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ ((q ∨ₚ p) ∨ₚ r)) :=
-    PM.Derivation.detach rotateIn
-      (PM.Derivation.detach half
-        (star_2_05 ((p ∨ₚ q) ∨ₚ r) (r ∨ₚ (p ∨ₚ q)) ((q ∨ₚ p) ∨ₚ r)))
-  have base : ⊢ₚ ((q ⊃ₚ p) ⊃ₚ (((q ∨ₚ p) ∨ₚ r) ⊃ₚ (p ∨ₚ r))) := star_2_73 q p r
-  have inner :
+  have line1 := star_2_73 q p r
+  have line2 := star_2_32 p q r
+  have line3 := PM.Derivation.Assoc p q r
+  have line4 := star_2_31 q p r
+  have line5 := PM.Derivation.detach line2
+    (PM.Derivation.detach line3
+      (star_2_05 ((p ∨ₚ q) ∨ₚ r) (p ∨ₚ (q ∨ₚ r)) (q ∨ₚ (p ∨ₚ r))))
+  have line6 := PM.Derivation.detach line5
+    (PM.Derivation.detach line4
+      (star_2_05 ((p ∨ₚ q) ∨ₚ r) (q ∨ₚ (p ∨ₚ r)) ((q ∨ₚ p) ∨ₚ r)))
+  have line7 :
       ⊢ₚ ((((q ∨ₚ p) ∨ₚ r) ⊃ₚ (p ∨ₚ r)) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))) :=
-    PM.Derivation.detach swap
+    PM.Derivation.detach line6
       (star_2_06 ((p ∨ₚ q) ∨ₚ r) ((q ∨ₚ p) ∨ₚ r) (p ∨ₚ r))
-  exact PM.Derivation.detach base
-    (PM.Derivation.detach inner
+  have line8 := PM.Derivation.detach line1
+    (PM.Derivation.detach line7
       (star_2_05 (q ⊃ₚ p) (((q ∨ₚ p) ∨ₚ r) ⊃ₚ (p ∨ₚ r))
         (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (p ∨ₚ r))))
+  exact line8
 
 def star_2_75_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
   printed := PM.pmPrinted "⊢ : p ∨ q . ⊃ : p ∨ (q ⊃ r) . ⊃ . p ∨ r"

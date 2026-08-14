@@ -14,12 +14,6 @@ namespace PM.FirstEdition.Volume1.Star10
 open PM
 open PM.Architecture.FirstOrderPrerequisites
 
-/-- PM I (1910), p. 146, ✱10·12: `⊢ : .(x).p ∨ φx .⊃ : p .∨ .(x).φx`. -/
-theorem star_10_12 (p : Elementary Γ)
-    (φ : Apparent Γ [.elementaryProposition]) :
-    PM.Architecture.Star925Kernel.Star925KernelAssertion p φ :=
-  PM.Architecture.Star925Kernel.derive p φ
-
 /-- Structural occurrence of the newly leading real argument.  This is local
 to ✱10·121 and is not a generic significance/inference rule. -/
 private def significantRealHead : Apparent (.elementaryProposition :: Γ) Δ → Bool

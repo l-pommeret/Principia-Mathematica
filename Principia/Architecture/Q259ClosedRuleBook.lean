@@ -39,23 +39,6 @@ structure Q259ClosedRuleBook where
     (φ : Apparent Γ [.elementaryProposition]) →
     Star_9_25Derivation p φ
 
-/-- The exact kernel-judgement contract for the analogue of ✱1·2 on
-universals.  The source-audited ✱9·21 matrix-schema bridge is deliberately
-kept distinct from `OrderedAssertion`: it certifies this one closed target
-without adding a generic canonical-conversion rule. -/
-abbrev Star_9_3Derivation (φ : Apparent Γ [.elementaryProposition]) : Prop :=
-  Star921MatrixKernel.Star9KernelAssertion (FirstOrderQ259.star_9_3_target φ)
-
-/-- PM I ✱9·3 through the closed, source-audited ✱9·21 matrix-schema bridge.
-Unlike the adjacent rule-book theorems, this conclusion is intentionally a
-`Star9KernelAssertion`, not an `OrderedAssertion`: the latter has no
-source-authorized general rule for reifying arbitrary Raw normalizations. -/
-theorem star_9_3 (φ : Apparent Γ [.elementaryProposition]) :
-    Star_9_3Derivation φ := by
-  simpa [FirstOrderQ259.star_9_3_target,
-    Star921MatrixKernel.star_9_3_ordered_target] using
-    Star921MatrixKernel.derive_star_9_3 φ
-
 /-- The exact assertion contract for the analogue of ✱1·2 on existentials.
 It is a target, never a `Q259ClosedRuleBook` field. -/
 abbrev Star_9_31Derivation (φ : Apparent Γ [.elementaryProposition]) : Prop :=

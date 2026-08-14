@@ -12,9 +12,9 @@ def Nc (b : Class B) : Class (Class A) := fun a => TypedSimilar a b
 def NC {A : Sort u} {B : Sort v} : Class (Class (Class A)) :=
   fun μ => ∃ b : Class B, μ = Nc b
 
-/-- ✱102·01, assigned-type cardinals are the domain of the typed `Nc`. -/
-theorem star_102_01 (μ : Class (Class A)) :
-    NC (A := A) (B := B) μ ↔ ∃ b : Class B, μ = Nc b := Iff.rfl
+/-- ✱102·01. NCᵝ(α) = DʻNc(αᵦ) Df -/
+def star_102_01 {B : Sort v} (μ : Class (Class A)) : Prop :=
+  ∃ b : Class B, μ = Nc b
 
 /-- ✱102·11, a one-one relation remains one-one at its assigned endpoint types. -/
 theorem star_102_11 {R : Relation A B} (h : OneOne R) : TypedOneOne R := h
