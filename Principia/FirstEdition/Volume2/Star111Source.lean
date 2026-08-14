@@ -1,11 +1,26 @@
 /-! PM II ✱111, first macro-lot, pp. 88–92. -/
 namespace PM.FirstEdition.Volume2.Star111Source
+/- PM-VERBATIM-BEGIN PM2:✱111·01
+✱111·01. κ sm sm λ=(1→1)∩α̂Ŝα∩T̂(κ=T̆ʻλ) Df
+PM-VERBATIM-END PM2:✱111·01 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·02
+✱111·02. Crp(S)ʻβ=(Sʻβ) sm β Df
+PM-VERBATIM-END PM2:✱111·02 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·1
+✱111·1. ⊢:T∈κ sm sm λ.≡.T∈1→1.Sʻλ⊂αʻT.κ=T̆ʻλ
+PM-VERBATIM-END PM2:✱111·1 -/
 /- PM-VERBATIM-BEGIN PM2:✱111·11
 ✱111·11. ⊢:T∈κ sm sm λ.⊃.T∈1→1
 PM-VERBATIM-END PM2:✱111·11 -/
 /- PM-VERBATIM-BEGIN PM2:✱111·112
 ✱111·112. ⊢:T∈κ sm sm λ.⊃.T∈κ sm λ∩Rlʻsm
 PM-VERBATIM-END PM2:✱111·112 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·12
+✱111·12. ⊢:sʻλ⊂α.⊃.(T↾α)̆ʻλ=T̆ʻλ
+PM-VERBATIM-END PM2:✱111·12 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·121
+✱111·121. ⊢.(T↾sʻλ)̆ʻλ=T̆ʻλ
+PM-VERBATIM-END PM2:✱111·121 -/
 /- PM-VERBATIM-BEGIN PM2:✱111·13
 ✱111·13. ⊢:T∈κ sm sm λ.≡.T̆∈λ sm sm κ
 PM-VERBATIM-END PM2:✱111·13 -/

@@ -23,3 +23,25 @@ and domain congruence in reverse. ✱81·15 retains an extra `y∈κ` conjunct i
 its fibre equality and omits the displayed hypotheses; ·21 is tautological rather
 than one-one/similarity; ·211 assumes its conclusion; ·212 constructs a selection
 but does not state the required membership/domain equality. These four remain prepared.
+
+## Strict semantic audit of catalogue-03
+
+No item is promotable. ✱81·22 is only reflexivity of `SelectorDomain`, not the
+displayed equality characterizing all possible domains. ✱81·221 proves recovery
+of one selection from its domain, not equality between the whole selection class
+and the image of the domain class. ✱81·23 is a reflexive equality that never uses
+the selection, many-one, or membership hypotheses and does not compare the two
+printed fibres. ✱81·24 and ·25 likewise return reflexive set equalities after
+discarding their hypotheses instead of proving membership in the required
+smaller/larger selection-domain classes. All five therefore remain `prepared`.
+
+## Strict semantic audit of catalogue-04
+
+✱81·3 and ·31 are exact in the closing extensional kernel. `FibreFamily P K`
+is the typed reconstruction of the indexed fibre class `P→ʻʻκ`, while
+`RepresentativeDomains` is definitionally the displayed class of subclasses
+meeting every fibre uniquely. Thus ·3 is its exact characterization, and ·31
+is invariance of that class under equality of fibre families. Neither proof calls
+an earlier PM theorem. ✱81·26 is not exact: its conclusion repeats
+`SelectorDomain p k μ` on both sides and discards the required removal-of-fibre
+equivalence, so it remains `prepared`.

@@ -13,38 +13,44 @@
     {
       "id": "PM1:✱36·28",
       "kind": "derived-proposition",
-      "printed": "P⟏V=P",
+      "printed": "✱36·28. ⊢ . P⟏V=P",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_28",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact restriction-to-universal-class identity",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM1:✱36·29",
       "kind": "derived-proposition",
-      "printed": "P⟏α=P∩(α×α)",
+      "printed": "✱36·29. ⊢ . P⟏α=P∩(α×α)",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_29",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact extensional characterization as intersection with the class square",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM1:✱36·3",
       "kind": "derived-proposition",
-      "printed": "P⟏α=P⟏(α∩CʻP)",
+      "printed": "✱36·3. ⊢ . P⟏α=P⟏(α∩CʻP)",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_3",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact invariance after intersecting the limiting class with the relation field",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM1:✱36·31",
@@ -52,11 +58,13 @@
       "printed": "✱36·31. ⊢ : α∩CʻP=Λ .⊃. P⟏α=Λ",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel3.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel3.star_36_31",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact emptiness consequence when the limiting class misses the relation field",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM1:✱36·32",
@@ -64,11 +72,26 @@
       "printed": "✱36·32. ⊢ : α∩CʻP=β∩CʻP .⊃. P⟏α=P⟏β",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel3.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel3.star_36_32",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact equality consequence from equal intersections with the relation field",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [
+        "PM.Architecture.Star36RestrictionKernel2.star_36_3"
+      ],
+      "printed_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱36·3"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱36·3"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star36-opening-review.md",
+        "editorial_note": "The Lean proof applies the immediately preceding restriction-to-field identity twice; the displayed PM line has no explicit citation."
+      }
     }
   ],
   "ci_evidence": {

@@ -34,7 +34,9 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "Classical.byCases",
     "Classical.em",
     "False.elim",
+    "True.intro",
     "Eq.symm",
+    "Eq.mpr",
     "Eq.mp",
     # Kernel arithmetic reassociation used internally by the typed finite
     # relation-power infrastructure (✱91), not a historical PM citation.

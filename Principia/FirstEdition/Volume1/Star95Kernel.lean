@@ -22,11 +22,14 @@ theorem star_95_11 (P Q R : Rel α) (φ : Rel α → Prop)
   intro M h; exact (star_95_1 P Q R M).mp h φ hR hs
 
 /-- ✱95·12. An invariant of every transformed member holds for each
-non-seed member, represented explicitly by a predecessor. -/
+member of the equi-factor class other than the seed. -/
 theorem star_95_12 (P Q R : Rel α) (φ : Rel α → Prop)
     (hs : ∀ M, Equi P Q R M → φ (comp (comp P M) Q)) :
-    ∀ N M, Equi P Q R M → N = comp (comp P M) Q → φ N := by
-  intro N M h rfl; exact hs M h
+    ∀ N, Equi P Q R N → N ≠ R → φ N := by
+  intro N h hne
+  cases h with
+  | base => exact False.elim (hne rfl)
+  | step h => exact hs _ h
 
 /-- ✱95·13. The seed belongs to its equi-factor class. -/
 theorem star_95_13 (P Q R : Rel α) : Equi P Q R R := .base

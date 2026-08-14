@@ -83,6 +83,11 @@ def main() -> None:
         action="store_true",
         help="fail unless pipeline.json records the current coverage counters",
     )
+    parser.add_argument(
+        "--write-pipeline",
+        action="store_true",
+        help="synchronize the derived lean_source_coverage counters in pipeline.json",
+    )
     args = parser.parse_args()
     sources = source_ids()
     decls = declarations()
@@ -116,6 +121,17 @@ def main() -> None:
             "strict candidates require item-level semantic audit; this is not a proof claim",
         ],
     }
+    if args.write_pipeline:
+        pipeline_path = ROOT / "pipeline.json"
+        pipeline = json.loads(pipeline_path.read_text(encoding="utf-8"))
+        recorded = pipeline.get("lean_source_coverage", {})
+        preserved = {
+            key: recorded[key]
+            for key in ("audited_on", "generator", "scope", "semantic_audit_complete", "all_pm_percentage_claimed")
+            if key in recorded
+        }
+        pipeline["lean_source_coverage"] = {**preserved, **{k: v for k, v in report.items() if k != "notes"}}
+        pipeline_path.write_text(json.dumps(pipeline, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if args.verify_pipeline:
         pipeline = json.loads((ROOT / "pipeline.json").read_text(encoding="utf-8"))
         recorded = pipeline.get("lean_source_coverage")

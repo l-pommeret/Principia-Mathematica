@@ -1,0 +1,16 @@
+/-! # PM II ✱123 — aleph-zero, opening catalogue (PG78255, p. 269). -/
+/- PM-VERBATIM-BEGIN PM2:✱123·01
+✱123·01. ℵ₀=DʻʻProg Df
+PM-VERBATIM-END PM2:✱123·01 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·02
+✱123·02. N=μ̂ν̂{μ∈NC induct.ν=(μ+_c1)∩t₀ʻμ} Dft [✱123—4]
+PM-VERBATIM-END PM2:✱123·02 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·1
+✱123·1. ⊢ : α∈ℵ₀ .≡. (∃R).R∈Prog.α=DʻR [✱37·1.(✱123·01)]
+PM-VERBATIM-END PM2:✱123·1 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·101
+✱123·101. ⊢ : R∈Prog .⊃. DʻR∈ℵ₀ [✱123·1]
+PM-VERBATIM-END PM2:✱123·101 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·11
+✱123·11. ⊢ : R∈1→1.DʻR=R⃖∗ʻBʻR .⊃. DʻR∈ℵ₀ [✱123·101.✱122·1]
+PM-VERBATIM-END PM2:✱123·11 -/

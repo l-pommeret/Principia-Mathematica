@@ -33,3 +33,14 @@ Catalogue-03 strict re-audit confirms ✱40·16, ·161, ·17, ·171 and ·18 as
 exact typed family-inclusion/product/sum endpoints. Their proofs are direct
 from definitions and introduce no historical theorem dependency. These five
 records were already `kernel-checked`, so no status mutation was appropriate.
+
+Catalogue-04 strict audit accepts ✱40·181, ·19, ·2, ·21 and ·22. The first and
+last three close directly from the typed family definitions. ✱40·19 uses the
+earlier upper-bound characterization ✱40·13, recorded in all three dependency
+fields. All five are therefore `awaiting-ci`; no refusal was necessary.
+
+Catalogue-05 strict audit accepts ✱40·221, ·23, ·24, ·25 and ·26. They are
+direct typed expansions of universal membership, product-to-sum inclusion,
+lower-bound inclusion, membership in a family sum, and existence in a sum.
+All close from definitions without a Lean or historical theorem edge and are
+`awaiting-ci`; no refusal was necessary.

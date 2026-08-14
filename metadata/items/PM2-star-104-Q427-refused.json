@@ -1,0 +1,65 @@
+{
+  "batch": "PM2-STAR104-Q427-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "42–43",
+    "scan_leaves": [82, 83],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱104·01", "kind": "definition",
+      "printed": "✱104·01. N¹cʻα = Ncʻα ∩ tʻtʻα Df",
+      "printed_page": 42, "scan_leaf": 82,
+      "lean_path": "Principia/Architecture/Star104Kernel.lean",
+      "declaration": "PM.Architecture.Star104Kernel.star_104_01",
+      "formal_scope": "refused: the Lean declaration is the definitional tautology Asc s t ↔ EquivSet s t; it does not define the ascending cardinal as the intersection Ncʻα ∩ tʻtʻα",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [], "normalized_dependencies": [], "lean_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-104-01.txt"
+    },
+    {
+      "id": "PM2:✱104·02", "kind": "definition",
+      "printed": "✱104·02. N¹C = DʻN¹c Df",
+      "printed_page": 42, "scan_leaf": 82,
+      "lean_path": "Principia/Architecture/Star104Kernel.lean",
+      "declaration": "PM.Architecture.Star104Kernel.star_104_02",
+      "formal_scope": "refused: the Lean declaration repeats an existential equality on both sides and does not define N¹C as the domain DʻN¹c",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [], "normalized_dependencies": [], "lean_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-104-02.txt"
+    },
+    {
+      "id": "PM2:✱104·03", "kind": "definition",
+      "printed": "✱104·03. μ⁽¹⁾ = smʻʻμ ∩ tʻμ Df",
+      "printed_page": 42, "scan_leaf": 82,
+      "lean_path": "Principia/Architecture/Star104Kernel.lean",
+      "declaration": "PM.Architecture.Star104Kernel.star_104_03",
+      "formal_scope": "refused: the Lean declaration is a self-equivalence about two existential predicate equalities and omits the image/intersection definition of μ⁽¹⁾",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [], "normalized_dependencies": [], "lean_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-104-03.txt"
+    },
+    {
+      "id": "PM2:✱104·2", "kind": "derived-proposition",
+      "printed": "✱104·2. ⊢ . ιʻʻα ∈ N¹cʻα",
+      "printed_page": 44, "scan_leaf": 84,
+      "lean_path": "Principia/Architecture/Star104NextKernel.lean",
+      "declaration": "PM.Architecture.Star104NextKernel.star_104_2",
+      "formal_scope": "refused: the Lean declaration proves only s ⊆ f⁻¹(image f s) for an arbitrary function; it neither fixes f to the singleton map ι nor proves membership of ιʻʻα in the ascending-cardinal equivalence class",
+      "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": ["PM1:✱63·621", "PM1:✱37·61", "PM2:✱100·6", "PM2:✱104·1"],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-104-2.txt"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

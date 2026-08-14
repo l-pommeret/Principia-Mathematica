@@ -1,0 +1,78 @@
+{
+  "batch": "PM1-STAR97-CATALOGUE-01-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "656",
+    "scan_leaves": [
+      678
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm#Page_656"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱97·01",
+      "kind": "definition",
+      "printed": "✱97·01. R⃡ʻx=R⃗ʻx∪(ιʻx∩CʻR)∪R⃖ʻx Df",
+      "printed_page": 656,
+      "scan_leaf": 678,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_01",
+      "formal_scope": "exact typed pointwise reconstruction of PM's symmetric neighbourhood definition, including the singleton field guard",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star97-catalogue-01-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱97·1",
+      "kind": "derived-proposition",
+      "printed": "✱97·1. ⊢ : y∈R⃡ʻx .≡. yRx .∨. y=x . x∈CʻR .∨. xRy",
+      "printed_page": 656,
+      "scan_leaf": 678,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_1",
+      "formal_scope": "exact typed pointwise reconstruction of membership in PM's symmetric neighbourhood",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star97-catalogue-01-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱97·101",
+      "kind": "derived-proposition",
+      "printed": "✱97·101. ⊢ : y∈R⃡ʻx .≡. x∈R⃡ʻy",
+      "printed_page": 656,
+      "scan_leaf": 678,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_101",
+      "formal_scope": "exact typed pointwise reconstruction of symmetry of PM's generated neighbourhood",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star97-catalogue-01-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

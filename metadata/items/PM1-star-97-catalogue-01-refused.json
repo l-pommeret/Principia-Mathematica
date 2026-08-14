@@ -1,0 +1,51 @@
+{
+  "batch": "PM1-STAR97-CATALOGUE-01-REFUSED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "656",
+    "scan_leaves": [678],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm#Page_656"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "items": [
+    {
+      "id": "PM1:✱97·11",
+      "kind": "derived-proposition",
+      "printed": "✱97·11. ⊢ . sʻR⃡ʻʻCʻR=CʻR",
+      "printed_page": 656,
+      "scan_leaf": 678,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_11",
+      "formal_scope": "refused: PM states equality between the union of all neighbourhoods over the field and the field; Lean proves only the forward pointwise inclusion family R x y → field R y and omits the reverse inclusion/existential witness",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star97-catalogue-01-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱97·111",
+      "kind": "derived-proposition",
+      "printed": "✱97·111. ⊢ : x∈CʻR .≡. x∈R⃡ʻx .≡. ∃!R⃡ʻx",
+      "printed_page": 656,
+      "scan_leaf": 678,
+      "lean_path": "Principia/Architecture/Star97Kernel.lean",
+      "declaration": "PM.Architecture.Star97Kernel.star_97_111",
+      "formal_scope": "refused: Lean proves only field R x ↔ family R x x; PM additionally equates these with existence/non-emptiness of the whole neighbourhood R↔ʻx, a branch absent from the declared theorem",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star97-catalogue-01-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

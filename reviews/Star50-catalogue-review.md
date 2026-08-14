@@ -25,6 +25,21 @@ the same unique fibre. The image definition has PM's argument orientation, so
 the self-pair and uniqueness expressed by `Rʻx = x`, and proves exactly the
 image equality. No implication is weakened and no premise is hidden.
 
+The third batch (·2, ·21–·24) passes strict audit and is `awaiting-ci`.
+Converse is argument reversal and inclusion is pointwise, exactly matching PM.
+Symmetry of equality and inequality proves ·2, ·21 and the two converse
+equivalences ·22–·23. Inclusion in diversity at ·24 is equivalent in both
+directions to irreflexivity. No assumption or implication is weakened.
+
+The fourth batch (·3, ·31–·34) passes strict audit and is `awaiting-ci`.
+Identity reflexivity gives ·3 and supplies each object's witnesses for the
+domain, converse-domain and field equalities ·31–·32. At ·33, a witnessed
+unequal pair is sufficient to construct a distinct partner for every object,
+so all three diversity extensions are universal. For ·34 the PM restriction
+to classes becomes diversity on `ClassExtension α`; under the explicit
+inhabited assigned-type convention there are distinct empty and universal
+classes. The conclusions and hypotheses match without weakening.
+
 Forty-one formulas use relation abstraction/complement, converse, restriction
 (`◁/▷`), product (`∥`), or dotted relation operators beyond the current parser
 grammar.  Those items carry `reviewed-gap`; no diplomatic reading is weakened

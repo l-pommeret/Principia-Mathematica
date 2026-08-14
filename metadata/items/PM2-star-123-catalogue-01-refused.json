@@ -1,0 +1,51 @@
+{
+  "batch": "PM2-STAR123-CATALOGUE-01-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "269",
+    "scan_leaves": [309],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱123·02",
+      "kind": "definition",
+      "printed": "✱123·02. N=μ̂ν̂{μ∈NC induct.ν=(μ+_c1)∩t₀ʻμ} Dft [✱123—4]",
+      "printed_page": 269,
+      "scan_leaf": 309,
+      "lean_path": "Principia/FirstEdition/Volume2/Star123Source.lean",
+      "declaration": "source-only (no exact Lean declaration)",
+      "formal_scope": "refused: the current typed architecture has no source-faithful representation of cardinal intersection and the t₀ operation; replacing the displayed equality by a conjunction would change the formula",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-cardinal-intersection-semantics",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star123-catalogue-01-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱123·11",
+      "kind": "derived-proposition",
+      "printed": "✱123·11. ⊢ : R∈1→1.DʻR=R⃖∗ʻBʻR .⊃. DʻR∈ℵ₀ [✱123·101.✱122·1]",
+      "printed_page": 269,
+      "scan_leaf": 309,
+      "lean_path": "Principia/FirstEdition/Volume2/Star123Source.lean",
+      "declaration": "source-only (no exact Lean declaration)",
+      "formal_scope": "refused: the current ✱122 kernel proves only Progression R → Functional R ∧ Injective R; it lacks the converse characterization from one-one-ness and the displayed domain equation required to derive Progression R without adding an extra assumption",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-exact-dependency",
+      "printed_dependencies": ["PM2:✱123·101", "PM2:✱122·1"],
+      "lean_dependencies": [],
+      "normalized_dependencies": ["PM2:✱123·101", "PM2:✱122·1"],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star123-catalogue-01-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

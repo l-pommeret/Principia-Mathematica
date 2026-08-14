@@ -1,0 +1,60 @@
+{
+  "batch": "PM2-STAR115-CATALOGUE-01",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "136",
+    "scan_leaves": [176],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm#Page_136"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱115·01",
+      "kind": "definition",
+      "printed": "✱115·01. Prodʻκ = Dʻʻ∈_Δʻκ Df",
+      "printed_page": 136,
+      "scan_leaf": 176,
+      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_01",
+      "formal_scope": "exact typed dependent-function reconstruction of PM's multiplicative class: an element selects one value from every indexed factor",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star115-catalogue-01-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-passed"
+    },
+    {
+      "id": "PM2:✱115·1",
+      "kind": "derived-proposition",
+      "printed": "✱115·1. ⊢ . Prodʻκ = Dʻʻ∈_Δʻκ [(✱115·01)]",
+      "printed_page": 136,
+      "scan_leaf": 176,
+      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_1",
+      "formal_scope": "exact typed restatement of the multiplicative-class defining identity",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM2:✱115·01"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM2:✱115·01"],
+        "strict_attempt_evidence": "reviews/Star115-catalogue-01-semantic-audit.md",
+        "editorial_note": "Lean checks the same defining equality directly by reduction; PM cites its immediately preceding definition."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star115-catalogue-01-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-passed"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

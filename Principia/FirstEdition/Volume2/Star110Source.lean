@@ -1,4 +1,19 @@
 /-! # Principia Mathematica II, ✱110 — arithmetical sums -/
+/- PM-VERBATIM-BEGIN PM2:✱110·1
+✱110·1. ⊢ . R∈α+β . ≡ : (∃σ) . x∈α . R=(ι‘x)↑[(Λ∩β)↑ι‘σ] : ∨ : (∃σ) . y∈β . R=(Λ∩α)↑[(ι‘y)↑ι‘σ]
+PM-VERBATIM-END PM2:✱110·1 -/
+/- PM-VERBATIM-BEGIN PM2:✱110·101
+✱110·101. ⊢ . (ι‘x)↑(Λ∩β) disjoint (Λ∩α)↑(ι‘y)
+PM-VERBATIM-END PM2:✱110·101 -/
+/- PM-VERBATIM-BEGIN PM2:✱110·11
+✱110·11. ⊢ . ι↑(Λ∩β)“ι“α ∩ (Λ∩α)↑“ι“β = Λ
+PM-VERBATIM-END PM2:✱110·11 -/
+/- PM-VERBATIM-BEGIN PM2:✱110·12
+✱110·12. ⊢ . ι↑(Λ∩β)“ι“α sm α . (Λ∩α)↑“ι“β sm β
+PM-VERBATIM-END PM2:✱110·12 -/
+/- PM-VERBATIM-BEGIN PM2:✱110·13
+✱110·13. ⊢ : γ sm α . δ sm β . γ∩δ=Λ . ⊃ . γ∪δ sm (α+β)
+PM-VERBATIM-END PM2:✱110·13 -/
 namespace PM.FirstEdition.Volume2.Star110Source
 
 abbrev Set' (α : Type u) := α → Prop

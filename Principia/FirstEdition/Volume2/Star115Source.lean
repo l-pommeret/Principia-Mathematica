@@ -3,6 +3,21 @@
 Project Gutenberg ebook 78255, section ✱115, “The product of a class of
 cardinal numbers”; opening loci transcribed from the HTML edition.
 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·01
+✱115·01. Prodʻκ = Dʻʻ∈_Δʻκ Df
+PM-VERBATIM-END PM2:✱115·01 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·02
+✱115·02. Cls³ arithm = κ̂(κ,sʻκ ∈ Cls² excl) Df
+PM-VERBATIM-END PM2:✱115·02 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·1
+✱115·1. ⊢ . Prodʻκ = Dʻʻ∈_Δʻκ [(✱115·01)]
+PM-VERBATIM-END PM2:✱115·1 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·101
+✱115·101. ⊢ :: α∈κ .⊃_α. ϖ∩α∈1 : ϖ⊆sʻκ :⊃. ϖ∈Prodʻκ [✱84·411]
+PM-VERBATIM-END PM2:✱115·101 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·11
+✱115·11. ⊢ :: κ∈Cls² excl .⊃: ϖ∈Prodʻκ .≡: α∈κ .⊃_α. ϖ∩α∈1 : ϖ⊆sʻκ [✱84·412]
+PM-VERBATIM-END PM2:✱115·11 -/
 namespace PM.FirstEdition.Volume2.Star115Source
 def gutenbergId : Nat := 78255
 def openingLoci : List String :=

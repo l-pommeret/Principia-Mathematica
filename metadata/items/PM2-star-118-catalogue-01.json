@@ -24,13 +24,16 @@
       "scan_leaf": 235,
       "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
       "declaration": "PM.Architecture.Star118OpeningKernel.star_118_01",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: the Lean conclusion f s ↔ f s erases PM's definite-description term μ and is reflexive independently of the unique-value premise",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-erased-description",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-01-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱118·11",
@@ -40,13 +43,16 @@
       "scan_leaf": 236,
       "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
       "declaration": "PM.Architecture.Star118OpeningKernel.star_118_11",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: the custom down premise universally assumes the very downward-normality implication that PM proves from class inclusion",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-conclusion-assumed",
       "printed_dependencies": [],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star118-catalogue-01-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱118·12",
@@ -56,15 +62,16 @@
       "scan_leaf": 236,
       "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
       "declaration": "PM.Architecture.Star118OpeningKernel.star_118_12",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: the custom down premise assumes the target implication and Below is an unconstrained relation, so PM's cardinal-order theorem is not reconstructed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-conclusion-assumed",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogue-01-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱118·13",
@@ -74,15 +81,16 @@
       "scan_leaf": 236,
       "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
       "declaration": "PM.Architecture.Star118OpeningKernel.star_118_13",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: arbitrary Below and Normal parameters replace cardinal order and smξ, while down assumes the complete printed implication",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-conclusion-assumed",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogue-01-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱118·2",
@@ -92,15 +100,16 @@
       "scan_leaf": 236,
       "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
       "declaration": "PM.Architecture.Star118OpeningKernel.star_118_2",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: reflexivity of an arbitrary n (add a b) omits PM's defining class abstraction and all existential representative conditions",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-definition-erased",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogue-01-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     }
   ],
   "ci_evidence": {

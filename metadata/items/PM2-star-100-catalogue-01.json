@@ -24,10 +24,10 @@
       "scan_leaf": 55,
       "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_01",
-      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed definition of the cardinal class Nc as similarity with the represented class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -42,10 +42,10 @@
       "scan_leaf": 54,
       "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_02",
-      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed definition of NC as the class of values of Nc",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -53,52 +53,93 @@
     {
       "id": "PM2:✱100·1",
       "kind": "derived-proposition",
-      "printed": "✱100·1. ⊢ . Ncʻα = β̂(β sm α) = β̂(α sm β)",
+      "printed": "✱100·1. ⊢ . Ncʻα = β̂(β sm α) = β̂(α sm β) [✱32·13 . ✱73·31 . (✱100·01)]",
       "printed_page": 15,
       "scan_leaf": 55,
       "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_1",
-      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed pointwise form of both displayed similarity-class equalities",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱32·13",
+        "PM1:✱73·31",
+        "PM2:✱100·01"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱32·13",
+          "PM1:✱73·31",
+          "PM2:✱100·01"
+        ],
+        "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
+        "editorial_note": "The typed definition of Nc and the local symmetry lemma establish the displayed pointwise equalities directly, so PM's citations remain historical dependencies rather than Lean theorem constants."
+      }
     },
     {
       "id": "PM2:✱100·11",
       "kind": "derived-proposition",
-      "printed": "✱100·11. ⊢ . Ncʻα = β̂{(∃R). R∈1→1 . DʻR=α . ᴃʻR=β}",
+      "printed": "✱100·11. ⊢ . Ncʻα = β̂{(∃R). R∈1→1 . DʻR=α . ᗡʻR=β} [✱100·1 . ✱73·1]",
       "printed_page": 14,
       "scan_leaf": 54,
       "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_11",
-      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed encoding of the witnessing one-to-one relation as an equivalence of class subtypes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "printed_dependencies": [
+        "PM2:✱100·1",
+        "PM1:✱73·1"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM2:✱100·1",
+          "PM1:✱73·1"
+        ],
+        "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
+        "editorial_note": "ClassEquiv is the audited typed packaging of PM's one-to-one relation with prescribed domain and converse domain, so the declaration reduces without numbered theorem constants."
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star100-catalogue-review.md"
     },
     {
       "id": "PM2:✱100·12",
       "kind": "derived-proposition",
-      "printed": "✱100·12. ⊢ . Ncʻα = β̂{(∃R). R∈1→1 . α⊂DʻR . β=converse Rʻʻα}",
+      "printed": "✱100·12. ⊢ . Ncʻα = β̂{(∃R). R∈1→1 . α⊂DʻR . β=Řʻʻα} [✱100·1 . ✱73·11]",
       "printed_page": 14,
       "scan_leaf": 54,
       "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_12",
-      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed encoding of the injective restriction-and-image characterization as an equivalence of class subtypes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "printed_dependencies": [
+        "PM2:✱100·1",
+        "PM1:✱73·11"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM2:✱100·1",
+          "PM1:✱73·11"
+        ],
+        "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
+        "editorial_note": "The audited ClassEquiv target packages the restricted injective relation and its image directly, so the declaration reduces without numbered theorem constants."
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star100-catalogue-review.md"
     }

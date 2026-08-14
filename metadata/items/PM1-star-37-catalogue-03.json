@@ -18,38 +18,6 @@
   ],
   "items": [
     {
-      "id": "PM1:✱37·15",
-      "kind": "derived-proposition",
-      "printed": "✱37·15. \\vdash.Rʻʻ\\alpha\\subset \\text{D}ʻR",
-      "printed_page": 297,
-      "scan_leaf": 319,
-      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription only; no formal target is proposed.",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "lean_dependencies": []
-    },
-    {
-      "id": "PM1:✱37·16",
-      "kind": "derived-proposition",
-      "printed": "✱37·16. \\vdash.\\breve{R}ʻʻ\\alpha\\subset \\text{ᗡ}ʻR \\quad\\left[\\text{*37·15}\\, \\frac{\\breve{R}}{R}.\\text{*33·2}\\right]",
-      "printed_page": 297,
-      "scan_leaf": 319,
-      "lean_path": "Principia/FirstEdition/Volume1/Star37Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription only; no formal target is proposed.",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "lean_dependencies": []
-    },
-    {
       "id": "PM1:✱37·22",
       "kind": "derived-proposition",
       "printed": "✱37·22. \\vdash.Pʻʻ(\\alpha\\cup \\beta)=Pʻʻ\\alpha\\cup Pʻʻ\\beta",
@@ -57,13 +25,14 @@
       "scan_leaf": 320,
       "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_22",
-      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "formal_scope": "exact typed distributivity of relational image over binary class union; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱37·25",
@@ -73,13 +42,14 @@
       "scan_leaf": 322,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_25",
-      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "formal_scope": "exact typed paired domain and converse-domain image identities; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed"
     },
     {
       "id": "PM1:✱37·26",
@@ -89,13 +59,14 @@
       "scan_leaf": 322,
       "lean_path": "Principia/Architecture/Star37NextConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_26",
-      "formal_scope": "typed direct-image reconstruction; item-level audit pending",
+      "formal_scope": "exact typed invariance of relational image after intersection with the converse-domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed"
     }
   ],
   "ci_evidence": {

@@ -23,10 +23,10 @@
       "scan_leaf": 387,
       "lean_path": "Principia/Architecture/Star52NextKernel.lean",
       "declaration": "PM.Architecture.Star52NextKernel.star_52_21",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed exclusion of the null class from the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -39,10 +39,10 @@
       "scan_leaf": 387,
       "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_22",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed assertion that every singleton belongs to the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "✱51·12",
         "✱14·28",
@@ -50,12 +50,8 @@
         "✱52·1"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱51·12",
-        "PM1:✱14·28",
-        "PM1:✱10·24",
-        "PM1:✱52·1"
-      ]
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱10·24","✱14·28","✱51·12","✱52·1"],"strict_attempt_evidence":"reviews/Star52-catalogue-04-review.md","editorial_note":"The exact singleton-membership assertion closes by the typed definition; PM's printed derivation remains historical evidence."}
     },
     {
       "id": "PM1:✱52·23",
@@ -65,13 +61,15 @@
       "scan_leaf": 387,
       "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_23",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed existence of the unit-class class and its complement over PM's nonempty object range",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": ["PM.Architecture.Star52CompletionKernel.star_52_22", "PM.Architecture.Star52NextKernel.star_52_21"],
+      "normalized_dependencies": ["PM1:✱52·21", "PM1:✱52·22"],
+      "non_logical_assumptions": [{"id":"PM1-ASSUMPTION-NONEMPTY-OBJECT-DOMAIN","lean_parameter":"inst","lean_type":"Nonempty α","scope":"PM's object-variable range has a possible argument","justification":"Existence of a singleton class requires a possible object; PM's variables range over possible values."}],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱52·21","PM1:✱52·22"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Star52-catalogue-04-review.md","editorial_note":"The typed proof constructs the two witnesses using the immediately audited singleton-membership and null-exclusion propositions."},
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star52-catalogue-review.md"
     },
@@ -83,20 +81,18 @@
       "scan_leaf": 387,
       "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_24",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed non-nullity of the unit-class class and its complement over PM's nonempty object range",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "✱52·23",
         "✱24·54",
         "✱24·17"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱52·23",
-        "PM1:✱24·17"
-      ],
+      "lean_dependencies": ["PM.Architecture.Star52CompletionKernel.star_52_23"],
+      "normalized_dependencies": ["PM1:✱52·23"],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱24·17","✱24·54"],"strict_attempt_evidence":"reviews/Star52-catalogue-04-review.md","editorial_note":"The exact pair of non-nullities follows directly from ✱52·23; PM's complement and transposition citations remain historical evidence."},
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star52-catalogue-review.md"
     },
@@ -108,13 +104,14 @@
       "scan_leaf": 387,
       "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
       "declaration": "PM.Architecture.Star52CompletionKernel.star_52_3",
-      "formal_scope": "typed unit-class class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed inclusion of the singleton image of a class in the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": ["PM.Architecture.Star52CompletionKernel.star_52_22"],
+      "normalized_dependencies": ["PM1:✱52·22"],
+      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱52·22"],"printed_but_unused":[],"strict_attempt_evidence":"reviews/Star52-catalogue-04-review.md","editorial_note":"The image inclusion is realized pointwise by the audited singleton-membership theorem ✱52·22."}
     }
   ],
   "ci_evidence": {

@@ -23,7 +23,7 @@
     "PG78255"
   ],
   "source_status": "source-catalogued-PM-VERBATIM",
-  "integration_status": "source-only-no-formal-target",
+  "integration_status": "awaiting-ci",
   "items": [
     {
       "id": "PM2:✱102·01",
@@ -31,15 +31,19 @@
       "printed": "✱102·01. NCᵝ(α) = DʻNc(αᵦ) Df",
       "printed_page": 26,
       "scan_leaf": 66,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription only; no formal target or interpretation of the assigned-type notation is proposed.",
+      "lean_path": "Principia/Architecture/Star102OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star102OpeningKernel.star_102_01",
+      "formal_scope": "exact typed extensional reconstruction of the definition of the assigned-type cardinal class as the domain of the typed Nc relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-cardinal-arithmetic-syntax-or-derivation-layer",
+      "formal_status": "awaiting-ci",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Q411-review.md",
+      "semantic_audit_status": "strict-equivalence-passed"
     }
   ],
   "ci_evidence": {

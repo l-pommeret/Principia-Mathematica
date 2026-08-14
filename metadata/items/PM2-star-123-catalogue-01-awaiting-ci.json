@@ -1,0 +1,69 @@
+{
+  "batch": "PM2-STAR123-CATALOGUE-01-AWAITING-CI",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "269",
+    "scan_leaves": [309],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱123·01",
+      "kind": "definition",
+      "printed": "✱123·01. ℵ₀=DʻʻProg Df",
+      "printed_page": 269,
+      "scan_leaf": 309,
+      "lean_path": "Principia/Architecture/Star123OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star123OpeningKernel.star_123_01",
+      "formal_scope": "exact typed reconstruction: ℵ₀ is extensionally the class of domains of progressions",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star123-catalogue-01-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱123·1",
+      "kind": "derived-proposition",
+      "printed": "✱123·1. ⊢ : α∈ℵ₀ .≡. (∃R).R∈Prog.α=DʻR [✱37·1.(✱123·01)]",
+      "printed_page": 269,
+      "scan_leaf": 309,
+      "lean_path": "Principia/Architecture/Star123OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star123OpeningKernel.star_123_1",
+      "formal_scope": "exact typed reconstruction of both directions of the displayed membership equivalence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱37·1", "PM2:✱123·01"],
+      "lean_dependencies": ["PM.Architecture.Star123OpeningKernel.star_123_01"],
+      "normalized_dependencies": ["PM1:✱37·1", "PM2:✱123·01"],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star123-catalogue-01-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱123·101",
+      "kind": "derived-proposition",
+      "printed": "✱123·101. ⊢ : R∈Prog .⊃. DʻR∈ℵ₀ [✱123·1]",
+      "printed_page": 269,
+      "scan_leaf": 309,
+      "lean_path": "Principia/Architecture/Star123OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star123OpeningKernel.star_123_101",
+      "formal_scope": "exact typed reconstruction: the domain of every progression witnesses membership in ℵ₀",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM2:✱123·1"],
+      "lean_dependencies": ["PM.Architecture.Star123OpeningKernel.star_123_1"],
+      "normalized_dependencies": ["PM2:✱123·1"],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star123-catalogue-01-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

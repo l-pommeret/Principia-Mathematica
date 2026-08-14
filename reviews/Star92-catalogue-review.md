@@ -10,3 +10,13 @@ source-to-Lean. None is strictly equivalent: the kernel defines `Potid` as
 domain/codomain equality instead of PM's class of powers; moreover ·11 and
 ·112 omit PM's relational products and restriction identities. These five
 therefore remain `prepared`, with the mismatch recorded item by item.
+
+The second canonical batch (·113, ·12, ·121, ·13, ·131) was then
+audited item by item. None is strictly equivalent. In ·113 Lean proves only
+that restricting an arbitrary `Q` by two equal codomains gives the same
+relation; it never represents `CnvʻR|Rpo|R`. In ·12 and ·121 it turns the
+two conjuncts of the weakened `Potid` into a field inclusion, omitting the
+printed relation-power equalities. In ·13 and ·131 it returns only equality
+of the domains or codomains of `Q` and `T`, omitting the displayed products
+and restrictions. All five remain `prepared` and carry an explicit blocked
+semantic-mismatch integration status; there is no `awaiting-ci` promotion.

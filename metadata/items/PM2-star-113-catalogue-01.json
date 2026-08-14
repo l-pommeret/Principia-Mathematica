@@ -1,0 +1,61 @@
+{
+  "batch": "PM2-STAR113-CATALOGUE-01",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "108–109",
+    "scan_leaves": [148, 149],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱113·101",
+      "kind": "derived-proposition",
+      "printed": "✱113·101. ⊢ : R∈β×α .≡. (∃x,y). x∈α . y∈β . R=x↓y  [✱40·7.✱113·1]",
+      "printed_page": 108,
+      "scan_leaf": 148,
+      "lean_path": "Principia/Architecture/Star113OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star113OpeningKernel.star_113_101",
+      "formal_scope": "exact typed membership characterization of the class product by ordered-pair relations with first coordinate in alpha and second coordinate in beta",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "printed_dependencies": ["PM1:✱40·7", "PM2:✱113·1"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱40·7", "PM2:✱113·1"],
+        "strict_attempt_evidence": "reviews/Star113-catalogue-01-semantic-audit.md",
+        "editorial_note": "The two printed citations motivate the direct representation; the typed theorem unfolds the audited class-product representation definitionally."
+      }
+    },
+    {
+      "id": "PM2:✱113·104",
+      "kind": "derived-proposition",
+      "printed": "✱113·104. ⊢ . E! α↓₍₍ʸy  [✱38·12]",
+      "printed_page": 109,
+      "scan_leaf": 149,
+      "lean_path": "Principia/Architecture/Star113OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star113OpeningKernel.star_113_104",
+      "formal_scope": "exact typed existence of the fixed-second-coordinate class of ordered-pair relations",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "printed_dependencies": ["PM1:✱38·12"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱38·12"],
+        "strict_attempt_evidence": "reviews/Star113-catalogue-01-semantic-audit.md",
+        "editorial_note": "Lean's predicate-class universe makes the displayed class directly available; the historical existence theorem remains recorded."
+      }
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

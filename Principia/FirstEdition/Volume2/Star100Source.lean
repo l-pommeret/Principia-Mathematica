@@ -6,13 +6,13 @@ PM-VERBATIM-END PM2:✱100·01 -/
 ✱100·02. NC = DʻNc Df
 PM-VERBATIM-END PM2:✱100·02 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·1
-✱100·1. ⊢ . Ncʻα = β̂(β sm α) = β̂(α sm β)
+✱100·1. ⊢ . Ncʻα = β̂(β sm α) = β̂(α sm β)  [✱32·13 . ✱73·31 . (✱100·01)]
 PM-VERBATIM-END PM2:✱100·1 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·11
-✱100·11. ⊢ . Ncʻα = β̂{(∃R). R∈1→1 . DʻR=α . ᴃʻR=β}
+✱100·11. ⊢ . Ncʻα = β̂{(∃R). R∈1→1 . DʻR=α . ᗡʻR=β}  [✱100·1 . ✱73·1]
 PM-VERBATIM-END PM2:✱100·11 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·12
-✱100·12. ⊢ . Ncʻα = β̂{(∃R). R∈1→1 . α⊂DʻR . β=converse Rʻʻα}
+✱100·12. ⊢ . Ncʻα = β̂{(∃R). R∈1→1 . α⊂DʻR . β=Řʻʻα}  [✱100·1 . ✱73·11]
 PM-VERBATIM-END PM2:✱100·12 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·13
 ✱100·13. ⊢ . Ncʻα = ᴃʻʻ(1→1∩converse Dʻα) = Dʻʻ(1→1∩converse ᴃʻα)
@@ -420,7 +420,7 @@ PM-VERBATIM-END PM2:✱104·03 -/
 ✱104·12. ⊢ : β ∈ N¹cʻα . γ ∈ N¹cʻβ .⊃ . γ ∈ N²cʻα
 PM-VERBATIM-END PM2:✱104·12 -/
 /- PM-VERBATIM-BEGIN PM2:✱104·2
-✱104·2. ⊢ . ʻʻα ∈ N¹cʻα
+✱104·2. ⊢ . ιʻʻα ∈ N¹cʻα
 PM-VERBATIM-END PM2:✱104·2 -/
 
 /- PM-VERBATIM-SUMMARY-BEGIN PM2:STAR105-SUMMARY-105-3

@@ -1,0 +1,53 @@
+{
+  "batch": "PM2-STAR111-CATALOGUE-03-AWAITING-CI",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "88–89",
+    "canonical_scan": "https://archive.org/details/PrincipiaMathematicaVol2/page/n111",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱111·01",
+      "kind": "definition",
+      "printed": "κ sm sm λ=(1→1)∩α̂Ŝα∩T̂(κ=T̆ʻλ) Df",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_01",
+      "formal_scope": "exact typed definitional expansion of double similarity into a bijective class map preserving class membership",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star111-catalogue-03-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱111·02",
+      "kind": "definition",
+      "printed": "Crp(S)ʻβ=(Sʻβ) sm β Df",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_02",
+      "formal_scope": "exact typed definitional expansion of correspondence as similarity of the correlated class and its argument",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star111-catalogue-03-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

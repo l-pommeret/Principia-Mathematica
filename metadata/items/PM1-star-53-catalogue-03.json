@@ -23,19 +23,26 @@
       "scan_leaf": 392,
       "lean_path": "Principia/Architecture/Star53SecondKernel.lean",
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_16",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact relation-product reduction after adjoining a singleton relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
-        "✱53·14"
-      ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [
         "PM1:✱53·14"
       ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md"
+      "parser_evidence": "reviews/Star53-catalogue-review.md",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱53·14"
+        ],
+        "strict_attempt_evidence": "reviews/Star53-third-semantic-audit.md",
+        "editorial_note": "The Lean certificate directly expands the typed relation/class operators; the printed analogous-proof reference is retained historically but is not invoked."
+      }
     },
     {
       "id": "PM1:✱53·17",
@@ -45,19 +52,26 @@
       "scan_leaf": 392,
       "lean_path": "Principia/Architecture/Star53SecondKernel.lean",
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_17",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact relation-sum reduction after adjoining a singleton relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
-        "✱53·14"
-      ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [
         "PM1:✱53·14"
       ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md"
+      "parser_evidence": "reviews/Star53-catalogue-review.md",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱53·14"
+        ],
+        "strict_attempt_evidence": "reviews/Star53-third-semantic-audit.md",
+        "editorial_note": "The Lean certificate directly expands the typed relation/class operators; the printed analogous-proof reference is retained historically but is not invoked."
+      }
     },
     {
       "id": "PM1:✱53·18",
@@ -67,10 +81,10 @@
       "scan_leaf": 392,
       "lean_path": "Principia/Architecture/Star53SecondKernel.lean",
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_18",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact invariance of class sum after removing the singleton empty class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -83,19 +97,26 @@
       "scan_leaf": 392,
       "lean_path": "Principia/Architecture/Star53SecondKernel.lean",
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_181",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact relation analogue: invariance of relation sum after removing the singleton empty relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
-        "✱53·18"
-      ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [
         "PM1:✱53·18"
       ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star53-catalogue-review.md"
+      "parser_evidence": "reviews/Star53-catalogue-review.md",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱53·18"
+        ],
+        "strict_attempt_evidence": "reviews/Star53-third-semantic-audit.md",
+        "editorial_note": "The Lean certificate directly expands the typed relation/class operators; the printed analogous-proof reference is retained historically but is not invoked."
+      }
     },
     {
       "id": "PM1:✱53·2",
@@ -105,13 +126,29 @@
       "scan_leaf": 392,
       "lean_path": "Principia/Architecture/Star53SecondKernel.lean",
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_2",
-      "formal_scope": "typed unit-class miscellaneous reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact common value of the unique member, product, and sum of a singleton class of classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
+      "lean_dependencies": [
+        "PM.Architecture.Star53OpeningKernel.star_53_01",
+        "PM.Architecture.Star53OpeningKernel.star_53_02"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱53·01",
+        "PM1:✱53·02"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱53·01",
+          "PM1:✱53·02"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/Star53-third-semantic-audit.md",
+        "editorial_note": "The Lean proof instantiates the two immediately preceding singleton product/sum identities; the displayed source carries no bracketed citations."
+      }
     }
   ],
   "ci_evidence": {

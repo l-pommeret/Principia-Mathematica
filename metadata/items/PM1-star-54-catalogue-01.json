@@ -63,9 +63,14 @@
         "PM1:✱54·01"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱54·01"
-      ]
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱54·01"],
+        "strict_attempt_evidence": "reviews/star54-catalogue-01-definitional-dependencies.md",
+        "editorial_note": "The printed parenthesized definition unfolds judgmentally in the exact Lean statement, so the proof term is `rfl` and has no theorem dependency."
+      }
     },
     {
       "id": "PM1:✱54·101",
@@ -83,9 +88,14 @@
         "PM1:✱54·02"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱54·02"
-      ]
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱54·02"],
+        "strict_attempt_evidence": "reviews/star54-catalogue-01-definitional-dependencies.md",
+        "editorial_note": "The printed parenthesized definition unfolds judgmentally in the exact Lean statement, so the proof term is `Iff.rfl` and has no theorem dependency."
+      }
     },
     {
       "id": "PM1:✱54·102",
@@ -103,9 +113,14 @@
         "PM1:✱54·1"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱54·1"
-      ]
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱54·1"],
+        "strict_attempt_evidence": "reviews/star54-catalogue-01-definitional-dependencies.md",
+        "editorial_note": "The cited defining identity is judgmentally present in `Zero`; `Iff.rfl` therefore carries no theorem dependency."
+      }
     }
   ],
   "ci_evidence": {

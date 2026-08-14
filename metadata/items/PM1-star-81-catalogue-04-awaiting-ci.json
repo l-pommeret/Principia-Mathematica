@@ -1,0 +1,72 @@
+{
+  "batch": "PM1-STAR81-CATALOGUE-04-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "523",
+    "scan_leaves": [
+      545
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱81·3",
+      "kind": "derived-proposition",
+      "printed": "✱81·3. ⊢ : P↾κ∈Cls→1 . λ=P→ʻʻκ .⊃. DʻʻPΔʻκ=μ̂{α∈λ .⊃ᵅ. μ∩α∈1 : μ⊂sʻλ}",
+      "printed_page": 523,
+      "scan_leaf": 545,
+      "lean_path": "Principia/Architecture/Star81ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star81ClosingKernel.star_81_3",
+      "formal_scope": "exact typed extensional characterization of representative domains from the indexed family of fibres",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star81-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱81·31",
+      "kind": "derived-proposition",
+      "printed": "✱81·31. ⊢ : P↾κ,Q↾κ∈Cls→1 . P→ʻʻκ=Q→ʻʻκ .⊃. DʻʻPΔʻκ=DʻʻQΔʻκ",
+      "printed_page": 523,
+      "scan_leaf": 545,
+      "lean_path": "Principia/Architecture/Star81ClosingKernel.lean",
+      "declaration": "PM.Architecture.Star81ClosingKernel.star_81_31",
+      "formal_scope": "exact typed extensional invariance of representative domains under equality of indexed fibre families",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "printed_dependencies": [
+
+      ],
+      "lean_dependencies": [
+
+      ],
+      "normalized_dependencies": [
+
+      ],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star81-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

@@ -8,6 +8,16 @@ and left/right restriction definitions preserve the printed endpoints by
 definitional equality; ·13–·15 additionally prove the displayed extensional
 equalities from the exact type-inclusion/equality hypotheses. All later loci
 remain `prepared` pending audit.
+
+The next batch audit promotes ·16 and ·21–·23: these are extensional
+restriction equalities under the displayed type hypotheses. Item ·2 remains
+`prepared`: its Lean declaration only unfolds an alias and does not formalize
+PM's `sg` operation on a singleton relation.
+
+Catalogue 04 contains only three source loci (not five): ·24, ·25 and ·3.
+All three pass strict audit and are promoted. The first two are idempotence
+of type restriction (with ·25 derived from ·24); ·3 is the exact extensional
+image/restriction/intersection identity. No refusal occurs in this short lot.
 The former source-header page range 432–433 was corrected against the witness.
 
 The parser accepts 2 formulas; 16 typical-ambiguity formulas carry `reviewed-gap`.

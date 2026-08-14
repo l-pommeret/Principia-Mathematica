@@ -1,0 +1,161 @@
+{
+  "batch": "PM1-STAR96-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "640",
+    "scan_leaves": [
+      662
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱96·01",
+      "kind": "definition",
+      "printed": "✱96·01. I_Rʻx = R_*⃖ʻx ∩ ẑz(z R_po z) Dft [✱96]",
+      "printed_page": 640,
+      "scan_leaf": 662,
+      "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star96OpeningKernel.star_96_01",
+      "formal_scope": "exact typed extensional definition of the cyclic part of x's R-posterity",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star96-catalogue-01-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱96·02",
+      "kind": "definition",
+      "printed": "✱96·02. J_Rʻx = R_*⃖ʻx − I_Rʻx Dft [✱96]",
+      "printed_page": 640,
+      "scan_leaf": 662,
+      "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star96OpeningKernel.star_96_02",
+      "formal_scope": "exact typed extensional definition of the acyclic remainder of x's R-posterity",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star96-catalogue-01-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱96·1",
+      "kind": "derived-proposition",
+      "printed": "✱96·1. ⊢ : z ∈ I_Rʻx .≡. x R_* z . z R_po z",
+      "printed_page": 640,
+      "scan_leaf": 662,
+      "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star96OpeningKernel.star_96_1",
+      "formal_scope": "exact typed membership characterization of I_Rʻx",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱32·181",
+        "PM1:✱96·01"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱20·3",
+          "PM1:✱32·181",
+          "PM1:✱96·01"
+        ],
+        "strict_attempt_evidence": "reviews/Star96-catalogue-01-semantic-audit.md",
+        "editorial_note": "The definitional membership theorem is checked directly; PM's printed derivation citations remain recorded as historical edges."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star96-catalogue-01-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱96·101",
+      "kind": "derived-proposition",
+      "printed": "✱96·101. ⊢ : z ∈ J_Rʻx .≡. x R_* z . ∼(z R_po z)",
+      "printed_page": 640,
+      "scan_leaf": 662,
+      "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star96OpeningKernel.star_96_101",
+      "formal_scope": "exact typed membership characterization of J_Rʻx",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱96·1",
+        "PM1:✱22·93",
+        "PM1:✱96·02"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱22·93",
+          "PM1:✱96·02",
+          "PM1:✱96·1"
+        ],
+        "strict_attempt_evidence": "reviews/Star96-catalogue-01-semantic-audit.md",
+        "editorial_note": "Lean proves the classical set-difference normalization directly; PM's displayed derivation citations remain historical edges."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star96-catalogue-01-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱96·102",
+      "kind": "derived-proposition",
+      "printed": "✱96·102. ⊢ . R_*⃖ʻx = J_Rʻx ∪ I_Rʻx . J_Rʻx ∩ I_Rʻx = Λ",
+      "printed_page": 640,
+      "scan_leaf": 662,
+      "lean_path": "Principia/Architecture/Star96OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star96OpeningKernel.star_96_102",
+      "formal_scope": "exact typed conjunction of the posterity partition and disjointness equations",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [
+        "PM1:✱24·41",
+        "PM1:✱24·21",
+        "PM1:✱96·01",
+        "PM1:✱96·02"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱24·21",
+          "PM1:✱24·41",
+          "PM1:✱96·01",
+          "PM1:✱96·02"
+        ],
+        "strict_attempt_evidence": "reviews/Star96-catalogue-01-semantic-audit.md",
+        "editorial_note": "The canonical wrapper reuses chapter-local partition helpers rather than canonical PM item declarations; printed citations remain historical edges."
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star96-catalogue-01-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

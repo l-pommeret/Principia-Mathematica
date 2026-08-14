@@ -8,17 +8,19 @@ open PM.Architecture.Star36RestrictionKernel2
 def converse (P : Relation α) : Relation α := fun x y => P y x
 def domain (P : Relation α) : Class α := fun x => ∃ y, P x y
 def converseDomain (P : Relation α) : Class α := fun y => ∃ x, P x y
+private abbrev nullClass : Class α := Star36RestrictionKernel2.emptyClass
+private abbrev nullRelation : Relation α := Star36RestrictionKernel2.emptyRelation
 
 /-- ✱36·31: when the limiting class misses the field, the restriction is
 the null relation. -/
 theorem star_36_31 (P : Relation α) (a : Class α)
-    (h : classInter a (field P) = Star36RestrictionKernel2.emptyClass) :
-    fieldRestrict P a = Star36RestrictionKernel2.emptyRelation := by
+    (h : classInter a (field P) = nullClass) :
+    fieldRestrict P a = nullRelation := by
   funext x y
   apply propext
   constructor
   · rintro ⟨hx, _, hp⟩
-    have hempty : Star36RestrictionKernel2.emptyClass x := by
+    have hempty : nullClass x := by
       rw [← h]
       exact ⟨hx, Or.inl ⟨y, hp⟩⟩
     exact hempty

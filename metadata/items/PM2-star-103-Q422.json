@@ -1,1 +1,102 @@
-{"batch":"PM2-STAR103-Q422","edition":"first","volume":2,"source_range":{"printed_pages":"37","scan_leaves":[77],"canonical_scan":"https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu","leaf_derivatives":[{"scan_leaf":77,"printed_page":37,"uri":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page77-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg","sha256":"c74f5d69d77c29733f8f7c99b5a41485cac682b32d52d8080a16ec050b771cc5"}],"project_gutenberg":"https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},"witnesses":["PM2-1912-SCAN","PG78255"],"source_status":"source-catalogued-PM-VERBATIM","integration_status":"source-only-no-formal-target","items":[{"id":"PM2:✱103·01","kind":"definition","printed":"✱103·01. N₀cʻα = Ncʻα ∩ tʻα Df","printed_page":37,"scan_leaf":77,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-homogeneous-cardinal-syntax-or-derivation-layer","printed_dependencies":[],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM2-star-103-01.txt"},{"id":"PM2:✱103·02","kind":"definition","printed":"✱103·02. N₀C = DʻN₀c Df","printed_page":37,"scan_leaf":77,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-homogeneous-cardinal-syntax-or-derivation-layer","printed_dependencies":[],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM2-star-103-02.txt"},{"id":"PM2:✱103·1","kind":"derived-proposition","printed":"✱103·1. ⊢ . N₀cʻα = (Ncʻα)ₐ = Nc(α)ʻα = Nc(αₐ)ʻα [✱102·6 . (✱103·01)]","printed_page":37,"scan_leaf":77,"lean_path":"Principia/FirstEdition/Volume2/Star100Source.lean","declaration":"source-only (no Lean declaration)","formal_scope":"Source transcription and citation-order skeleton only; no formal target is proposed.","source_status":"source-catalogued-PM-VERBATIM","formal_status":"prepared","integration_blocked":true,"integration_status":"blocked-no-volume-II-homogeneous-cardinal-syntax-or-derivation-layer","printed_dependencies":["PM2:✱102·6","PM2:✱103·01"],"normalized_dependencies":[],"demonstration_skeleton":"aristotle/demonstrations/PM2-star-103-1.txt"}],"review":{"apparatus_required":false,"sic_required":false,"note":"Scan and PG collated; homogeneous-cardinal notation remains source-only."},"ci_evidence":{"commit":"pending","run":"pending","conclusion":"pending"}}
+{
+  "batch": "PM2-STAR103-Q422",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "37",
+    "scan_leaves": [
+      77
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 77,
+        "printed_page": 37,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu/page77-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._II%2C_1912.djvu.jpg",
+        "sha256": "c74f5d69d77c29733f8f7c99b5a41485cac682b32d52d8080a16ec050b771cc5"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "source_status": "source-catalogued-PM-VERBATIM",
+  "integration_status": "source-only-no-formal-target",
+  "items": [
+    {
+      "id": "PM2:✱103·01",
+      "kind": "definition",
+      "printed": "✱103·01. N₀cʻα = Ncʻα ∩ tʻα Df",
+      "printed_page": 37,
+      "scan_leaf": 77,
+      "lean_path": "Principia/FirstEdition/Volume2/Star103Source.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star103Source.Homogeneous",
+      "formal_scope": "refused: the printed definition constructs N₀cʻα as an intersection, whereas Lean's declaration labelled ✱103·01 defines homogeneity of a class of sets",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-semantic-mismatch-number-collision",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-01.txt",
+      "lean_dependencies": [],
+      "semantic_audit_status": "refused-non-equivalent-target",
+      "semantic_audit_evidence": "reviews/Star103-opening-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱103·02",
+      "kind": "definition",
+      "printed": "✱103·02. N₀C = DʻN₀c Df",
+      "printed_page": 37,
+      "scan_leaf": 77,
+      "lean_path": "Principia/FirstEdition/Volume2/Star103Source.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star103Source.CardinalClass",
+      "formal_scope": "refused: the printed definition makes N₀C the domain of N₀c, whereas Lean's declaration labelled ✱103·02 defines the equinumerosity class represented by one set",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-semantic-mismatch-number-collision",
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-02.txt",
+      "lean_dependencies": [],
+      "semantic_audit_status": "refused-non-equivalent-target",
+      "semantic_audit_evidence": "reviews/Star103-opening-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱103·1",
+      "kind": "derived-proposition",
+      "printed": "✱103·1. ⊢ . N₀cʻα = (Ncʻα)ₐ = Nc(α)ʻα = Nc(αₐ)ʻα [✱102·6 . (✱103·01)]",
+      "printed_page": 37,
+      "scan_leaf": 77,
+      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
+      "declaration": "source-only (no Lean declaration)",
+      "formal_scope": "Source transcription and citation-order skeleton only; no formal target is proposed.",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-no-volume-II-homogeneous-cardinal-syntax-or-derivation-layer",
+      "printed_dependencies": [
+        "PM2:✱102·6",
+        "PM2:✱103·01"
+      ],
+      "normalized_dependencies": [],
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-1.txt"
+    }
+  ],
+  "review": {
+    "apparatus_required": false,
+    "sic_required": false,
+    "note": "Scan and PG collated; homogeneous-cardinal notation remains source-only."
+  },
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "review_evidence": [
+    "reviews/Star103-opening-semantic-audit.md"
+  ]
+}

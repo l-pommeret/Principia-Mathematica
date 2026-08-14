@@ -24,15 +24,16 @@
       "scan_leaf": 436,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_3",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "semantic target mismatch: kernel repeats EpsImage a = a for one class; it does not reconstruct the printed image of the membership relation as the universal class-type relation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-target-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "integration_blocked": true
     },
     {
       "id": "PM1:✱62·31",
@@ -42,15 +43,16 @@
       "scan_leaf": 438,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_31",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "semantic target mismatch: kernel identifies partial application Eps x with evaluation at x; it does not reconstruct the printed relation-image/type equality",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-target-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "integration_blocked": true
     },
     {
       "id": "PM1:✱62·32",
@@ -60,15 +62,16 @@
       "scan_leaf": 438,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_32",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "semantic target mismatch: kernel gives pointwise membership reflexivity; it does not prove either printed relation equality involving restrictions of ε",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-target-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "integration_blocked": true
     },
     {
       "id": "PM1:✱62·33",
@@ -78,15 +81,16 @@
       "scan_leaf": 438,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_33",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "semantic target mismatch: kernel gives pointwise negated membership; it does not reconstruct complement of ε as identity restricted to Cls",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-target-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "integration_blocked": true
     },
     {
       "id": "PM1:✱62·34",
@@ -96,15 +100,16 @@
       "scan_leaf": 438,
       "lean_path": "Principia/Architecture/Star62Kernel.lean",
       "declaration": "PM.Architecture.Star62Kernel.star_62_34",
-      "formal_scope": "typed class-membership reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "semantic target mismatch: kernel merely unfolds a generic Image existential; it does not reconstruct the printed relational image Pʻε and singularization equality",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-target-mismatch",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star62-catalogue-review.md"
+      "parser_evidence": "reviews/Star62-catalogue-review.md",
+      "integration_blocked": true
     }
   ],
   "ci_evidence": {

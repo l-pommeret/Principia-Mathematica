@@ -21,6 +21,22 @@ class witness. The Lean conjunction in ·141 preserves both printed
 equivalences and all scopes. These five items are exact and promoted to
 `awaiting-ci`.
 
+Catalogue 04 (✱51·22, ·221, ·222, ·23, ·231) was checked against
+the complete Lean proposition types and proof bodies. The conjunctions in
+·22 preserve both printed hypotheses and conclusions; ·23 represents the
+entire four-term equivalence chain as three adjacent equivalences, rather than
+selecting one endpoint. Deletion, restoration, disjointness, and equality all
+retain the printed direction and quantifier scope. No item is refused; all
+five are promoted to `awaiting-ci`.
+
+Catalogue 03 (✱51·161, ·17, ·2, ·21, ·211) is also exact in the
+typed reconstruction. In ·161, `∃!ιʻx` again denotes existence of the
+unit class (and is therefore correctly `ClassExists`), whereas ·17 quantifies
+the class witness in the converse domain. The inclusion, difference, and
+intersection statements preserve their printed orientations and both sides of
+each equivalence. No item in this lot is refused; all five are promoted to
+`awaiting-ci`.
+
 The Gutenberg heading `*51.161` uses a full stop where the numbered series and
 printed scan require the ordinary middle dot; the canonical ID is therefore
 ✱51·161 while the formula itself is unchanged.

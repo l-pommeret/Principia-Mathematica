@@ -1,4 +1,26 @@
-/-! # Principia Mathematica I, ✱95 — equi-factor source model -/
+/-!
+# Principia Mathematica I, ✱95 — equi-factor relation
+
+Canonical witness: Project Gutenberg ebook 78050 and the 1910 Volume I
+facsimile, printed page 627 (scan leaf 649).
+-/
+
+/- PM-VERBATIM-BEGIN PM1:✱95·01
+✱95·01. (P∗Q) = sgʻ{(P∥Q)∗} Dft [✱95]
+PM-VERBATIM-END PM1:✱95·01 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·1
+✱95·1. ⊢ :: M∈(P∗Q)ʻR .≡: R∈μ : N∈μ .⊃_N. P|N|Q∈μ :⊃_μ. M∈μ
+PM-VERBATIM-END PM1:✱95·1 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·11
+✱95·11. ⊢ : φR : φN .⊃_N. φ(P|N|Q) :⊃: M∈(P∗Q)ʻR .⊃_M. φM
+PM-VERBATIM-END PM1:✱95·11 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·12
+✱95·12. ⊢ : M∈(P∗Q)ʻR .⊃_M. φ(P|M|Q) :⊃: N∈(P∗Q)ʻR−ιʻR .⊃_N. φN
+PM-VERBATIM-END PM1:✱95·12 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·13
+✱95·13. ⊢ . R∈(P∗Q)ʻR [✱95·1]
+PM-VERBATIM-END PM1:✱95·13 -/
+
 namespace PM.FirstEdition.Volume1.Star95Source
 
 abbrev Rel (α : Sort u) := α → α → Prop

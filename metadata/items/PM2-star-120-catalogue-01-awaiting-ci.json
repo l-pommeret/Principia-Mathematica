@@ -1,0 +1,129 @@
+{
+  "batch": "PM2-STAR120-CATALOGUE-01-AWAITING-CI",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "211–212",
+    "scan_leaves": [
+      251,
+      252
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱120·11",
+      "kind": "derived-proposition",
+      "printed": "✱120·11. ⊢ : α∈NηC induct : φξ .⊃ξ. φ(ξ+₍c₎1) : φ0η :⊃. φα",
+      "printed_page": 211,
+      "scan_leaf": 251,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_11",
+      "formal_scope": "exact typed natural-number reconstruction of PM's induction principle over inductive cardinals; strict semantic audit passed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM2:✱120·102", "PM1:✱90·112"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱90·112", "PM2:✱120·102"],
+        "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
+        "editorial_note": "Lean's Nat induction closes the same typed induction principle directly; PM's definition and ancestral theorem remain historical proof-route evidence."
+      }
+    },
+    {
+      "id": "PM2:✱120·12",
+      "kind": "derived-proposition",
+      "printed": "✱120·12. ⊢ . 0∈NC induct",
+      "printed_page": 211,
+      "scan_leaf": 251,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_12",
+      "formal_scope": "exact typed zero case for inductive finite cardinals represented by Nat; strict semantic audit passed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM2:✱120·101"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM2:✱120·101"],
+        "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
+        "editorial_note": "The typed Nat carrier makes zero an inductive cardinal definitionally; PM's substitution instance is retained as historical evidence."
+      }
+    },
+    {
+      "id": "PM2:✱120·121",
+      "kind": "derived-proposition",
+      "printed": "✱120·121. ⊢ : α∈NξC induct .⊃. (α+₍c₎1)ξ∈NξC induct",
+      "printed_page": 211,
+      "scan_leaf": 251,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_121",
+      "formal_scope": "exact typed closure of inductive finite cardinals under cardinal successor; strict semantic audit passed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱90·172", "PM2:✱120·102"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱90·172", "PM2:✱120·102"],
+        "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
+        "editorial_note": "Successor closure is definitional on the typed Nat carrier; PM's ancestral and definition citations are retained as historical evidence."
+      }
+    },
+    {
+      "id": "PM2:✱120·13",
+      "kind": "derived-proposition",
+      "printed": "✱120·13. ⊢ : α∈NηC induct : ξ∈NηC induct . φξ .⊃ξ. φ(ξ+₍c₎1) : φ0η :⊃. φα",
+      "printed_page": 212,
+      "scan_leaf": 252,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_13",
+      "formal_scope": "exact typed strong-induction variant with the inductive-cardinal premise retained in the step; strict semantic audit passed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM2:✱120·11", "PM2:✱120·12", "PM2:✱120·121"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM2:✱120·11", "PM2:✱120·12", "PM2:✱120·121"],
+        "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
+        "editorial_note": "Lean proves the same restricted induction principle directly by Nat induction; PM derives it through the three cited ✱120 propositions."
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

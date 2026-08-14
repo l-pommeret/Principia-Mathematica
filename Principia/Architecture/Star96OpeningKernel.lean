@@ -28,6 +28,18 @@ theorem star_96_102_union :
 theorem star_96_102_disjoint : ¬ ∃ z, Jpart R x z ∧ Ipart R x z := by
   rintro ⟨z,hJ,hI⟩; exact hJ.2 hI
 
+/-- The two displayed conjuncts of PM ✱96·102, kept together under the
+canonical theorem name. -/
+theorem star_96_102 :
+    converseImage (ReflexiveClosure R) x =
+        (fun z => Jpart R x z ∨ Ipart R x z) ∧
+      (fun z => Jpart R x z ∧ Ipart R x z) = (fun _ => False) := by
+  constructor
+  · exact star_96_102_union.symm
+  · funext z
+    apply propext
+    exact ⟨fun h => star_96_102_disjoint ⟨z, h⟩, False.elim⟩
+
 theorem star_96_103 :
     IncludedRelation (restrictDomain (Jpart R x) (TransitiveClosure R)) Diversity := by
   rintro z y ⟨hz, hzy⟩ equality

@@ -1,0 +1,61 @@
+{
+  "batch": "PM1-STAR55-CATALOGUE-03-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "385–386",
+    "scan_leaves": [
+      407,
+      408
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "items": [
+    {
+      "id": "PM1:✱55·15",
+      "kind": "derived-proposition",
+      "printed": "✱55·15. ⊢ . Dʻx↓y = ιʻx . ᗡʻx↓y = ιʻy . Cʻx↓y = ιʻx ∪ ιʻy",
+      "printed_page": 385,
+      "scan_leaf": 407,
+      "lean_path": "Principia/Architecture/Star55OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star55OpeningKernel.star_55_15",
+      "formal_scope": "exact typed domain, converse-domain, and field equations for an ordinal couple",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱55·2",
+      "kind": "derived-proposition",
+      "printed": "✱55·2. ⊢ : x↓y = x↓z .≡. y = z",
+      "printed_page": 386,
+      "scan_leaf": 408,
+      "lean_path": "Principia/Architecture/Star55OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star55OpeningKernel.star_55_2",
+      "formal_scope": "exact typed right-cancellation equivalence for ordinal couples",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    }
+  ]
+}

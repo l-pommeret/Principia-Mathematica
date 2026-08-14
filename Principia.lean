@@ -280,6 +280,7 @@ import Principia.Architecture.Star93OpeningKernel
 import Principia.Architecture.Star93NextKernel
 import Principia.Architecture.Star93ClosureKernel
 import Principia.Architecture.Star93FinalKernel
+import Principia.FirstEdition.Volume1.Star94Source
 import Principia.Architecture.Star94Source
 import Principia.Architecture.Star94Kernel
 import Principia.FirstEdition.Volume1.Star95Source
@@ -290,6 +291,7 @@ import Principia.FirstEdition.Volume1.Star95Kernel4
 import Principia.Architecture.Star96Prerequisites
 import Principia.FirstEdition.Volume1.Star96Source
 import Principia.Architecture.Star96OpeningKernel
+import Principia.FirstEdition.Volume1.Star97Source
 import Principia.Architecture.Star97Source
 import Principia.Architecture.Star97Kernel
 import Principia.Architecture.Star97NextSource
@@ -341,6 +343,7 @@ import Principia.Architecture.Star112OpeningKernel
 import Principia.Architecture.Star112MiddleKernel
 import Principia.Architecture.Star112ClosingKernel
 import Principia.Architecture.Star113OpeningKernel
+import Principia.FirstEdition.Volume2.Star113Source
 import Principia.Architecture.Star113StructuralKernel
 import Principia.Architecture.Star113ProductPropertiesKernel
 import Principia.Architecture.Star113CardinalProductKernel
@@ -397,6 +400,8 @@ import Principia.Architecture.Star122NextSource
 import Principia.Architecture.Star122NextKernel
 import Principia.Architecture.Star122FinalSource
 import Principia.Architecture.Star122FinalKernel
+import Principia.FirstEdition.Volume2.Star123Source
+import Principia.Architecture.Star123OpeningKernel
 import Principia.FirstEdition.Volume2.Star124Source
 import Principia.Architecture.Star124OpeningKernel
 import Principia.Architecture.Star124OpeningKernel2

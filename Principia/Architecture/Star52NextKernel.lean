@@ -74,8 +74,15 @@ theorem star_52_173 (A : Class α) :
 
 /-- Exact witness-first formulation PM I ✱52·18. -/
 theorem star_52_18 (A : Class α) :
-    unitClasses α A ↔ ∃ x, A x ∧ ∀ y, A y → y = x :=
-  star_52_171 A
+    unitClasses α A ↔ ∃ x, A x ∧ ∀ y, A y → y = x := by
+  constructor
+  · rintro ⟨x, rfl⟩
+    exact ⟨x, rfl, fun y hy => hy⟩
+  · rintro ⟨x, member, unique⟩
+    refine ⟨x, ?_⟩
+    funext y
+    apply propext
+    exact ⟨fun hy => unique y hy, fun hy => hy ▸ member⟩
 
 /-- Exact negated-unit characterization PM I ✱52·181. -/
 theorem star_52_181 (A : Class α) :
@@ -110,7 +117,7 @@ def classes (α : Sort u) : Class (Class α) := fun _ => True
 theorem star_52_2 :
     ∀ A, unitClasses α A → classes α A := by
   intro A _
-  exact True.intro
+  trivial
 
 /-- Exact null-class exclusion PM I ✱52·21. -/
 theorem star_52_21 :

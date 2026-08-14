@@ -1,0 +1,106 @@
+{
+  "batch": "PM1-STAR42-CATALOGUE-1-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "336–338",
+    "scan_leaves": [
+      358,
+      359,
+      360
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "items": [
+    {
+      "id": "PM1:✱42·1",
+      "kind": "derived-proposition",
+      "printed": "✱42·1. ⊢ . sʻsʻʻκ = sʻsʻκ",
+      "printed_page": 336,
+      "scan_leaf": 358,
+      "lean_path": "Principia/Architecture/Star42OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star42OpeningKernel.star_42_1",
+      "formal_scope": "exact typed associativity law for class sum; strict semantic audit passed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "integration_blocked": false,
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star42-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱42·11",
+      "kind": "derived-proposition",
+      "printed": "✱42·11. ⊢ . pʻpʻʻκ = pʻsʻκ",
+      "printed_page": 337,
+      "scan_leaf": 359,
+      "lean_path": "Principia/Architecture/Star42OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star42OpeningKernel.star_42_11",
+      "formal_scope": "exact typed associativity law for class product; strict semantic audit passed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "integration_blocked": false,
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star42-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱42·12",
+      "kind": "derived-proposition",
+      "printed": "✱42·12. ⊢ . ṡʻṡʻʻλ = ṡʻsʻλ",
+      "printed_page": 338,
+      "scan_leaf": 360,
+      "lean_path": "Principia/Architecture/Star42OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star42OpeningKernel.star_42_12",
+      "formal_scope": "exact typed associativity law for relational sum; strict semantic audit passed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "integration_blocked": false,
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star42-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star42-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱42·13",
+      "kind": "derived-proposition",
+      "printed": "✱42·13. ⊢ . ṗʻṗʻʻλ = ṗʻsʻλ",
+      "printed_page": 338,
+      "scan_leaf": 360,
+      "lean_path": "Principia/Architecture/Star42OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star42OpeningKernel.star_42_13",
+      "formal_scope": "exact typed associativity law for relational product; strict semantic audit passed",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "integration_blocked": false,
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star42-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star42-catalogue-review.md"
+    }
+  ]
+}

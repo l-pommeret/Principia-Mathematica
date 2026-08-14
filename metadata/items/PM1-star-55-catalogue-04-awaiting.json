@@ -1,0 +1,96 @@
+{
+  "batch": "PM1-STAR55-CATALOGUE-04-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "386",
+    "scan_leaves": [
+      408
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "items": [
+    {
+      "id": "PM1:✱55·201",
+      "kind": "derived-proposition",
+      "printed": "✱55·201. ⊢ : x↓z = y↓z .≡. x = y",
+      "printed_page": 386,
+      "scan_leaf": 408,
+      "lean_path": "Principia/Architecture/Star55OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star55OpeningKernel.star_55_201",
+      "formal_scope": "exact typed left-cancellation equivalence for ordinal couples",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱55·21",
+      "kind": "derived-proposition",
+      "printed": "✱55·21. ⊢ . ᗡʻx↓ = V . ᗡʻ↓x = V",
+      "printed_page": 386,
+      "scan_leaf": 408,
+      "lean_path": "Principia/Architecture/Star55NextKernel.lean",
+      "declaration": "PM.Architecture.Star55NextKernel.star_55_21",
+      "formal_scope": "exact typed universality of both ordinal-couple constructor domains",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱55·22",
+      "kind": "derived-proposition",
+      "printed": "✱55·22. ⊢ . Dʻx↓ = Ř{(∃y).R=x↓y}",
+      "printed_page": 386,
+      "scan_leaf": 408,
+      "lean_path": "Principia/Architecture/Star55NextKernel.lean",
+      "declaration": "PM.Architecture.Star55NextKernel.star_55_22",
+      "formal_scope": "exact typed domain characterization of the left ordinal-couple constructor",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱55·221",
+      "kind": "derived-proposition",
+      "printed": "✱55·221. ⊢ . Dʻ↓x = Ř{(∃y).R=y↓x}",
+      "printed_page": 386,
+      "scan_leaf": 408,
+      "lean_path": "Principia/Architecture/Star55NextKernel.lean",
+      "declaration": "PM.Architecture.Star55NextKernel.star_55_221",
+      "formal_scope": "exact typed domain characterization of the right ordinal-couple constructor",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star55-catalogue-review.md"
+    }
+  ]
+}

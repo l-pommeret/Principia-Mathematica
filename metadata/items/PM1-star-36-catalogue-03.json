@@ -16,11 +16,13 @@
       "printed": "✱36·24. ⊢ : α⊂β .⊃. P⟏α⊂P⟏β",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_24",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact monotonicity of field restriction in its limiting class",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM1:✱36·241",
@@ -28,11 +30,13 @@
       "printed": "✱36·241. ⊢ : P⊂Q .⊃. P⟏α⊂Q⟏α",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_241",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact monotonicity of field restriction in its relation argument",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM1:✱36·25",
@@ -40,11 +44,13 @@
       "printed": "✱36·25. ⊢ : CʻP⊂α .≡. P⟏α=P",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_25",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact equivalence between field inclusion and invariance under restriction",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM1:✱36·26",
@@ -52,23 +58,27 @@
       "printed": "✱36·26. ⊢ : CʻP∩α=Λ .⊃. P;(Q⟏α)=Λ . (Q⟏α);P=Λ",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_26",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact pair of emptiness conclusions from disjointness of the field and limiting class",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     },
     {
       "id": "PM1:✱36·27",
       "kind": "derived-proposition",
-      "printed": "P⟏Λ=Λ",
+      "printed": "✱36·27. ⊢ . P⟏Λ=Λ",
       "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_27",
-      "formal_scope": "source-mapped kernel target; semantic audit pending",
+      "formal_scope": "exact restriction-to-empty-class identity",
       "source_status": "source-catalogued",
-      "formal_status": "prepared",
-      "integration_status": "pending",
-      "lean_dependencies": []
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "lean_dependencies": [],
+      "printed_dependencies": [],
+      "normalized_dependencies": []
     }
   ],
   "ci_evidence": {

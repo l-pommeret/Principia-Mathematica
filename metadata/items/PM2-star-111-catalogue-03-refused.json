@@ -1,0 +1,65 @@
+{
+  "batch": "PM2-STAR111-CATALOGUE-03-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "88–89",
+    "canonical_scan": "https://archive.org/details/PrincipiaMathematicaVol2/page/n111",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱111·1",
+      "kind": "derived-proposition",
+      "printed": "⊢:T∈κ sm sm λ.≡.T∈1→1.Sʻλ⊂αʻT.κ=T̆ʻλ",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_1 (refused candidate)",
+      "formal_scope": "refused: the Lean self-equivalence omits the specified witness T and all three printed characterization components",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogue-03-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱111·12",
+      "kind": "derived-proposition",
+      "printed": "⊢:sʻλ⊂α.⊃.(T↾α)̆ʻλ=T̆ʻλ",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_12 (refused candidate)",
+      "formal_scope": "refused: chosen-preimage membership for a global bijection does not express preservation of inverse image under restriction to a superclass",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogue-03-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱111·121",
+      "kind": "derived-proposition",
+      "printed": "⊢.(T↾sʻλ)̆ʻλ=T̆ʻλ",
+      "lean_path": "Principia/Architecture/Star111Kernel.lean",
+      "declaration": "PM.Architecture.Star111Kernel.star_111_121 (refused candidate)",
+      "formal_scope": "refused: returning Bijective F unchanged omits the printed restriction and inverse-image equality",
+      "source_status": "source-catalogued",
+      "formal_status": "prepared",
+      "integration_blocked": true,
+      "integration_status": "blocked-strict-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "semantic_audit_status": "refused-not-source-equivalent",
+      "semantic_audit_evidence": "reviews/Star111-catalogue-03-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

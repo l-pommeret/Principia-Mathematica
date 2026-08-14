@@ -1,0 +1,69 @@
+{
+  "batch": "PM2-STAR116-CATALOGUE-15-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "157–158",
+    "scan_leaves": [197, 198],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱116·5",
+      "kind": "derived-proposition",
+      "printed": "✱116·5. Canonical correspondence for exponentials over a disjoint sum.",
+      "printed_page": 157,
+      "scan_leaf": 197,
+      "lean_path": "Principia/Architecture/Star116FifthKernel.lean",
+      "declaration": "PM.Architecture.Star116FifthKernel.star_116_5",
+      "formal_scope": "refused: the catalogue preserves only a prose paraphrase, not PM's displayed construction and hypotheses, so strict source-to-Lean equivalence cannot be established from this record",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-15-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱116·529",
+      "kind": "derived-proposition",
+      "printed": "✱116·529. R† = R∥converse R Dft",
+      "printed_page": 158,
+      "scan_leaf": 198,
+      "lean_path": "Principia/Architecture/Star116FifthKernel.lean",
+      "declaration": "PM.Architecture.Star116FifthKernel.star_116_529",
+      "formal_scope": "refused: PM defines the relational operation R† by a restriction of R to converse R, whereas Lean proves only that a type equivalence yields similarity in the reverse direction",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-15-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱116·53",
+      "kind": "derived-proposition",
+      "printed": "✱116·53. ⊢ . (α exp γ)×(β exp γ) sm pointwise products",
+      "printed_page": 158,
+      "scan_leaf": 198,
+      "lean_path": "Principia/Architecture/Star116FifthKernel.lean",
+      "declaration": "PM.Architecture.Star116FifthKernel.star_116_53",
+      "formal_scope": "refused: the catalogue's prose replacement 'pointwise products' omits PM's displayed target construction, so the otherwise relevant function-product bijection cannot be certified as strictly equivalent to the recorded source",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star116-catalogue-15-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

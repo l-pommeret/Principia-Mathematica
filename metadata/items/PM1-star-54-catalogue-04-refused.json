@@ -1,0 +1,79 @@
+{
+  "batch": "PM1-STAR54-CATALOGUE-04-REFUSED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "379–380",
+    "scan_leaves": [
+      401,
+      402
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱54·44",
+      "kind": "derived-proposition",
+      "printed": "✱54·44.  ⊢ : x,z,w ε ιʻx ∪ ιʻy . z ≠ w .⊃ : φ(z,w) .≡ . φ(x,y) .∨. φ(y,x) .∨. φ(y,y)",
+      "printed_page": 379,
+      "scan_leaf": 401,
+      "lean_path": "Principia/Architecture/Star54MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star54MiddleKernel.star_54_44",
+      "formal_scope": "refused: Lean proves only member permutation and omits the printed arbitrary predicate equivalence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-weakened-predicate-content",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star54-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱54·441",
+      "kind": "derived-proposition",
+      "printed": "✱54·441.  ⊢ : x,z,w ε ιʻx ∪ ιʻy . z ≠ w .⊃ : φ(z,w) .⊃ . φ(x,y) .∨. φ(y,x)",
+      "printed_page": 379,
+      "scan_leaf": 401,
+      "lean_path": "Principia/Architecture/Star54MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star54MiddleKernel.star_54_441",
+      "formal_scope": "refused: Lean proves only member permutation and omits the printed implication involving arbitrary φ",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-weakened-predicate-content",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star54-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱54·442",
+      "kind": "derived-proposition",
+      "printed": "✱54·442.  ⊢ : x ≠ y .⊃ : z,w ε ιʻx ∪ ιʻy . z ≠ w .⊃ : φ(z,w) .≡ . φ(x,y) .∨. φ(y,x)",
+      "printed_page": 380,
+      "scan_leaf": 402,
+      "lean_path": "Principia/Architecture/Star54MiddleKernel.lean",
+      "declaration": "PM.Architecture.Star54MiddleKernel.star_54_442",
+      "formal_scope": "refused: Lean ignores hxy and omits the printed arbitrary predicate equivalence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-weakened-predicate-content",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star54-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

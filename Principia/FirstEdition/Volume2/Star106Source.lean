@@ -1,4 +1,14 @@
-/-! PM II ✱106, canonical Gutenberg 78255, opening macro-lot. -/
+/-!
+PM II ✱106, first edition, printed p. 61 (scan leaf 101).
+
+Canonical witness:
+https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu?page=101
+
+Independent transcription witness:
+https://www.gutenberg.org/files/78255/78255-h/78255-h.htm
+
+The opening five diplomatic blocks below were collated against both witnesses.
+-/
 /- PM-VERBATIM-BEGIN PM2:✱106·01
 ✱106·01. N₀₀cʻα = Ncʻα ∩ tʻt₀₀ʻα Df
 PM-VERBATIM-END PM2:✱106·01 -/
