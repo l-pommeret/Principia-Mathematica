@@ -1,0 +1,17 @@
+# The gates decide what may be called a derivation of Principia Mathematica.
+#
+# Everything else in this repository is a claim; these files are what makes a
+# claim checkable. A weakened gate costs nothing at the moment it is weakened
+# and invalidates every certification made afterwards — this repository has
+# already carried 969 items marked certified that were not.
+#
+# Requiring review here does not make the standard unchangeable. It makes
+# changing it a decision someone signs for, in a diff that says so.
+
+/scripts/verify_*.py          @l-pommeret
+/scripts/pm_lean_index.py     @l-pommeret
+/scripts/promote_awaiting_ci.py @l-pommeret
+/metadata/gate_integrity.json @l-pommeret
+/docs/CERTIFICATION_TIERS.md  @l-pommeret
+/.github/workflows/           @l-pommeret
+/lakefile.toml                @l-pommeret

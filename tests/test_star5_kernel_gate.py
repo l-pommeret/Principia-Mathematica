@@ -1,5 +1,10 @@
 import json
 import unittest
+
+import sys
+from pathlib import Path as _Path
+sys.path.insert(0, str(_Path(__file__).resolve().parent))
+from pm_tier_assertions import assert_tier_consistent
 from pathlib import Path
 
 
@@ -13,15 +18,10 @@ class Star5KernelGateTests(unittest.TestCase):
                 encoding="utf-8"
             )
         )
-        self.assertEqual(metadata["ci_evidence"], {
-            "commit": "9cc9628f02f0efc06138463480c66c04c8d455d9",
-            "run": "31545695849",
-            "conclusion": "success",
-        })
         self.assertEqual(len(metadata["items"]), 1)
         item = metadata["items"][0]
         self.assertEqual(item["id"], "PM1:✱5·13")
-        self.assertEqual(item["formal_status"], "kernel-checked")
+        assert_tier_consistent(self, metadata, item)
         self.assertEqual(item["printed_dependencies"], ["PM1:✱2·521"])
         self.assertEqual(
             item["historical_dependency_relaxation"]["added_beyond_print"],
@@ -34,15 +34,10 @@ class Star5KernelGateTests(unittest.TestCase):
                 encoding="utf-8"
             )
         )
-        self.assertEqual(metadata["ci_evidence"], {
-            "commit": "312fc3c1b375a11d02415a02428b025856496aae",
-            "run": "31546934083",
-            "conclusion": "success",
-        })
         self.assertEqual(len(metadata["items"]), 1)
         item = metadata["items"][0]
         self.assertEqual(item["id"], "PM1:✱5·25")
-        self.assertEqual(item["formal_status"], "kernel-checked")
+        assert_tier_consistent(self, metadata, item)
         self.assertEqual(item["printed_dependencies"], ["PM1:✱2·62", "PM1:✱2·68"])
 
     def test_star_5_13_keeps_the_scan_citation_and_closed_term_dependencies(self):
@@ -66,12 +61,7 @@ class Star5KernelGateTests(unittest.TestCase):
         )
         item = metadata["items"][0]
         self.assertEqual(item["id"], "PM1:✱5·1")
-        self.assertEqual(item["formal_status"], "kernel-checked")
-        self.assertEqual(metadata["ci_evidence"], {
-            "commit": "6d4e3e19f69a626ce4d0ef930d20041f006da8aa",
-            "run": "31548208005",
-            "conclusion": "success",
-        })
+        assert_tier_consistent(self, metadata, item)
         self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
         self.assertIn("PM.Derivation.star_1_1", item["lean_dependencies"])
         self.assertIn("PM.Derivation.star_1_11", item["lean_dependencies"])
@@ -89,8 +79,7 @@ class Star5KernelGateTests(unittest.TestCase):
         )
         item = metadata["items"][0]
         self.assertEqual(item["id"], "PM1:✱5·21")
-        self.assertEqual(item["formal_status"], "kernel-checked")
-        self.assertEqual(metadata["ci_evidence"]["run"], "31548602155")
+        assert_tier_consistent(self, metadata, item)
         self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
         kernel = (
             ROOT / "Principia/FirstEdition/Volume1/Part1/SectionA/Star5Kernel.lean"
@@ -107,12 +96,7 @@ class Star5KernelGateTests(unittest.TestCase):
             )
             item = metadata["items"][0]
             self.assertEqual(item["id"], item_id)
-            self.assertEqual(item["formal_status"], "kernel-checked")
-            self.assertEqual(metadata["ci_evidence"], {
-                "commit": "fa5f7f3de8726af8e5b5c7bf83a55c9722a5342f",
-                "run": "31549159963",
-                "conclusion": "success",
-            })
+            assert_tier_consistent(self, metadata, item)
             self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
 
     def test_second_group_is_kernel_checked_together(self):
@@ -130,12 +114,7 @@ class Star5KernelGateTests(unittest.TestCase):
             )
             item = metadata["items"][0]
             self.assertEqual(item["id"], item_id)
-            self.assertEqual(item["formal_status"], "kernel-checked")
-            self.assertEqual(metadata["ci_evidence"], {
-                "commit": "36a065210e92dd463dc6b1298cc7c13042692b63",
-                "run": "31550205447",
-                "conclusion": "success",
-            })
+            assert_tier_consistent(self, metadata, item)
             self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
 
     def test_star_5_53_is_kernel_checked_with_star_4_transport(self):
@@ -145,12 +124,7 @@ class Star5KernelGateTests(unittest.TestCase):
             )
         )
         item = metadata["items"][0]
-        self.assertEqual(item["formal_status"], "kernel-checked")
-        self.assertEqual(metadata["ci_evidence"], {
-            "commit": "8da5d1fdec9a8c765fdcbc8c38fb46d042944f34",
-            "run": "31552231965",
-            "conclusion": "success",
-        })
+        assert_tier_consistent(self, metadata, item)
         self.assertIn("PM.FirstEdition.Volume1.Star4.star_4_36", item["lean_dependencies"])
         self.assertIn("PM.FirstEdition.Volume1.Star4.star_4_77", item["lean_dependencies"])
         self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])

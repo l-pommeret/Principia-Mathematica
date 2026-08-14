@@ -10,6 +10,7 @@ both term acceptance and agreement with the dependencies printed in PM.
 from __future__ import annotations
 
 import json
+import pathlib
 import re
 import sys
 import argparse
@@ -23,6 +24,57 @@ DECL_START = re.compile(
     r"^\s*(?:theorem|def|abbrev|inductive|structure)\s+([A-Za-z0-9_']+)\b"
 )
 KNOWN_BRIDGES = {"PM.Derivation.detach"}
+
+#: PM's own abbreviated titles for ✱1·2–✱1·6, declared in
+#: Principia/Deduction/PrintedNames.lean.  PM cites these propositions by title
+#: inside its demonstrations — `[Taut ∼p/p]`, not `[✱1·2]` — so a proof that
+#: writes `Taut` is citing ✱1·2 exactly as the printed page does.  They are
+#: abbreviations, not new content: each is definitionally the numbered
+#: proposition it names.
+#: Names of the calculus itself — types and their evidence, not proof steps.
+#: They appear in a proof term as ascriptions and anonymous constructors
+#: (`⟨DerivationEvidence.star_1_2 p⟩`), and flagging them as uncited
+#: dependencies would report the calculus as a dependency of every proof in it.
+def catalogued_definition_names() -> set[str]:
+    """PM-style Lean names of catalogued definitions.
+
+    PM's demonstrations cite definitions in brackets — `[(✱1·01)]` — as often as
+    they cite propositions, so a proof term mentioning a catalogued `Df` is
+    citing the printed text, not evading the index.  Whether that citation is
+    *licensed* for a given item is the printed-citation gate's question, not
+    this one's.
+    """
+    import glob as _glob
+    names: set[str] = set()
+    for path in _glob.glob(str(ROOT / "metadata" / "items" / "*.json")):
+        try:
+            batch = json.loads(pathlib.Path(path).read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        for item in batch.get("items", []):
+            if item.get("kind") not in {
+                "definition", "notation-definition", "contextual-definition"
+            }:
+                continue
+            identifier = item.get("id", "")
+            match = re.search(r"✱(\d+)·(\d+)", identifier)
+            if match:
+                names.add(f"star_{match.group(1)}_{match.group(2)}")
+    return names
+
+
+CALCULUS_TYPES = {
+    "PM.Derivation", "PM.DerivationEvidence", "PM.Elementary", "PM.Formation",
+    "PM.RealContext", "PM.RealVar", "PM.RealType",
+}
+
+PRINTED_TITLES = {
+    "PM.Derivation.Taut": "PM.Derivation.star_1_2",
+    "PM.Derivation.Add": "PM.Derivation.star_1_3",
+    "PM.Derivation.Perm": "PM.Derivation.star_1_4",
+    "PM.Derivation.Assoc": "PM.Derivation.star_1_5",
+    "PM.Derivation.Sum": "PM.Derivation.star_1_6",
+}
 PRIMITIVE_DECLARATION_KINDS = {
     "primitive-inference-rule",
     "primitive-function-inference-rule",
@@ -440,11 +492,23 @@ def reject_unindexed_references(item: dict, body: str, candidates: set[str]) -> 
     supplies the authoritative elaborated/kernel check.
     """
     proof = body.split(":=", 1)[1] if ":=" in body else ""
+    # A printed title stands for the numbered proposition it abbreviates, so it
+    # is indexed whenever that proposition is.
+    candidates = set(candidates) | {
+        title for title, numbered in PRINTED_TITLES.items()
+        if numbered in candidates or numbered.rsplit(".", 1)[-1] in
+        {name.rsplit(".", 1)[-1] for name in candidates}
+    }
     indexed_short = {name.rsplit(".", 1)[-1] for name in candidates}
     for token in re.findall(r"\b[A-Z][A-Za-z0-9_']*(?:\.[A-Za-z0-9_']+)+", proof):
+        if token in CALCULUS_TYPES:
+            continue
         if token not in candidates and token.rsplit(".", 1)[-1] not in indexed_short:
             raise DependencyError(f"{item['id']}: unindexed qualified Lean reference {token}")
+    definitions = catalogued_definition_names()
     for token in re.findall(r"\bstar_[0-9]+(?:_[0-9]+)+\b", proof):
+        if token in definitions:
+            continue
         if token not in indexed_short:
             raise DependencyError(f"{item['id']}: unindexed PM-style Lean reference {token}")
 
@@ -473,6 +537,12 @@ def extract_lean_dependencies(
     body = strip_lean_comments(
         declaration_body(root / item["lean_path"], item["declaration"])
     )
+    # A proof written with PM's own abbreviated title cites the numbered
+    # proposition that title names: `[Taut ∼p/p]` is a citation of ✱1·2, exactly
+    # as the printed demonstration writes it.  Normalising here keeps the
+    # extracted dependencies in the catalogue's vocabulary.
+    for title, numbered in PRINTED_TITLES.items():
+        body = body.replace(title, numbered)
     for token, (path, declaration) in TRANSPARENT_DEPENDENCY_WRAPPERS.items():
         if token in body:
             body += "\n" + strip_lean_comments(
@@ -531,13 +601,10 @@ def extract_lean_dependencies(
             match_name = next(iter(suffix_matches))
             if match_name != item["declaration"]:
                 found.add(match_name)
-            continue
-        short = token.rsplit(".", 1)[-1]
-        matches = dependency_index.by_short.get(short, ())
-        if len(matches) == 1:
-            match_name = next(iter(matches))
-            if match_name != item["declaration"]:
-                found.add(match_name)
+        # A qualified spelling in a different namespace is not the indexed
+        # theorem merely because its final component is equal.  In particular
+        # a secondary `Prop` reading must not become an edge to the primary PM
+        # judgment that happens to share `star_N_M` as its short name.
     # Alias tables may deliberately contain both a namespace-relative spelling
     # and its fully qualified spelling for the same reviewed realization.  A
     # single occurrence must yield one graph edge, preferring the exact,
@@ -640,7 +707,6 @@ def audit_item(
             raise DependencyError(f"{item['id']}: missing dependency field {field}")
     body = (declaration_body(root / item["lean_path"], item["declaration"])
             if (assumption_usage[item["id"]]["effective"] and
-                item["kind"] not in PRIMITIVE_DECLARATION_KINDS and
                 ".OrderedAssertion." not in item["declaration"]) else "")
     verified_parameters = verify_assumption_parameters(
         item, assumption_usage[item["id"]], assumptions, body

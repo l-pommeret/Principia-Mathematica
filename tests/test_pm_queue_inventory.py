@@ -20,7 +20,8 @@ class PMQueueInventoryTests(unittest.TestCase):
             counts["architecture_gated_source_routes"],
         )
         self.assertGreaterEqual(counts["all_proof_skeleton_targets"], 17)
-        self.assertGreater(counts["planned_uncatalogued_pm_ids"], 0)
+        self.assertEqual(counts["planned_uncatalogued_pm_ids"], 0)
+        self.assertEqual(result["planned_but_uncatalogued"], {})
         self.assertGreater(counts["catalogued_items_without_campaign_question"], 0)
         self.assertNotIn("PM1:✱3·26", result["planned_but_uncatalogued"])
         self.assertNotIn("PM2:✱1", result["pm_section_coverage"]["planned"])

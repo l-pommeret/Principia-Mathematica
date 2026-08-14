@@ -11,6 +11,30 @@ import argparse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+
+#: The tier vocabulary, computed by scripts/verify_certification_tier.py.
+#: "kernel-checked" is reserved for the ✱1–✱5 standard; see
+#: docs/CERTIFICATION_TIERS.md.
+KNOWN_FORMAL_STATUSES = frozenset({
+    "kernel-checked",
+    "lean-typechecked",
+    "unbuilt",
+    "awaiting-ci",
+    "prepared",
+})
+#: Readings still carried in the witness's LaTeX rather than PM's own notation.
+#:
+#: Project Gutenberg renders PM's formulae as images whose LaTeX source travels
+#: in a `data-tex` attribute, so a transcription taken from that witness arrives
+#: as LaTeX.  `scripts/latex_to_diplomatic.py` converts it; these six resist
+#: conversion and are listed rather than hidden, so the set is visible and can
+#: only shrink.  An unlisted LaTeX reading is a gate failure: the edition must
+#: not silently reacquire a notation that is not the one on the page.
+LATEX_READING_EXCEPTIONS = frozenset({
+    "PM2:✱176·12", "PM2:✱181·62", "PM2:✱183·42",
+    "PM2:✱183·43", "PM2:✱183·5", "PM2:✱186·5",
+})
+
 BEGIN = re.compile(r"PM-VERBATIM-BEGIN\s+(\S+)")
 END = re.compile(r"PM-VERBATIM-END\s+(\S+)")
 EXCERPT_BEGIN = re.compile(r"PM-SOURCE-EXCERPT-BEGIN\s+(\S+)")
@@ -161,6 +185,13 @@ def check_item_metadata() -> None:
             verbatim = " ".join(blocks[item_id].split())
             if printed not in verbatim:
                 fail(f"printed reading for {item_id} does not occur in its verbatim block")
+            if "\\" in item.get("printed", "") and item_id not in LATEX_READING_EXCEPTIONS:
+                fail(
+                    f"printed reading for {item_id} is still in the witness's "
+                    "LaTeX, not PM's notation; run "
+                    "scripts/latex_to_diplomatic.py, or add it to "
+                    "LATEX_READING_EXCEPTIONS with a reason if it cannot convert"
+                )
             lean_path = ROOT / item.get("lean_path", "")
             if not lean_path.is_file():
                 fail(f"Lean path for {item_id} does not exist: {lean_path}")
@@ -169,22 +200,28 @@ def check_item_metadata() -> None:
         evidence_values = {
             evidence.get("commit"), evidence.get("run"), evidence.get("conclusion")
         }
-        if formal_statuses in ({"prepared"}, {"awaiting-ci"}):
-            if evidence_values != {"pending"}:
-                fail(
-                    f"{path} prepared/awaiting-ci batch must have entirely pending "
-                    "CI evidence"
-                )
-        elif formal_statuses == {"kernel-checked"}:
+        # A batch is a provenance unit: a dependency-closed group of items
+        # sharing a source range and one CI run.  It used to be required to be
+        # homogeneous in `formal_status`, which was workable while the status was
+        # asserted per batch.  The status is now *computed per item* from the
+        # Lean tree, so a batch legitimately holds items at different tiers, and
+        # re-splitting the catalogue every time a tier changes would churn
+        # provenance to satisfy a bookkeeping rule.  What actually matters is the
+        # evidence claim, so that is what is checked.
+        certified = {status for status in formal_statuses if status == "kernel-checked"}
+        if certified:
             if "pending" in evidence_values:
-                fail(f"{path} mixes pending and successful CI evidence")
+                fail(f"{path} certifies items but records pending CI evidence")
             if evidence.get("conclusion") != "success" or not evidence.get("run"):
                 fail(f"{path} lacks successful immutable CI evidence")
-        else:
+        elif evidence_values != {"pending"} and evidence.get("conclusion") != "success":
             fail(
-                f"{path} must contain only prepared items, only awaiting-ci "
-                "items, or only kernel-checked items"
+                f"{path} certifies nothing yet records non-pending, non-successful "
+                "CI evidence"
             )
+        unknown = formal_statuses - KNOWN_FORMAL_STATUSES
+        if unknown:
+            fail(f"{path} uses unknown formal_status values: {sorted(unknown)}")
     numbered = {item_id for item_id in blocks if "✱" in item_id}
     missing = numbered - metadata_ids
     if missing:

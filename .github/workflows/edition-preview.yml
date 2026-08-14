@@ -1,6 +1,9 @@
 name: Edition preview and Pages
 
 on:
+  push:
+    branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -17,23 +20,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: Install elan
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
             | sh -s -- -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-      - name: Verify source-critical apparatus
-        run: python3 scripts/verify_editorial.py --report-all
-      - name: Verify Lean/source coverage ledger
-        run: python3 scripts/report_lean_source_coverage.py --verify-pipeline
-      - name: Verify the PM anomaly register
-        run: python3 scripts/verify_anomaly_registry.py
+      - name: Verify the recorded printed readings
+        run: python3 scripts/sync_item_printed.py --check
+      - name: Aggregate preflight
+        # This is the workflow that publishes to GitHub Pages, and it used to run
+        # six hand-picked checks: no preflight, no dependency audit, no unit
+        # tests.  The public artefact was built by the weakest gate set in the
+        # repository.  It now runs the same aggregate everything else runs.
+        run: python3 scripts/verify_preflight.py
       - name: Build and kernel-check the edition
         run: lake build
-      - name: Reject placeholders and unsafe declarations
-        run: python3 scripts/verify_lean_policy.py
-      - name: Guard the conservative apparent-variable architecture
-        run: python3 scripts/verify_apparent_architecture.py
+      - name: Audit the axioms of every certified declaration
+        run: python3 scripts/verify_axiom_audit.py
+      - name: Verify each proof follows its printed demonstration
+        run: python3 scripts/verify_printed_citations.py --report-all
       - name: Build the reader edition
         run: python3 scripts/build_edition.py
       - name: Verify the reader edition

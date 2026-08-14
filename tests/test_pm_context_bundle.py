@@ -26,14 +26,15 @@ class ContextBundleTests(unittest.TestCase):
             current_item="PM1:✱2·45",
         )
         manifest = compile_manifest(
-            skeleton, registry, global_conventions=["PM1:✱1·11"]
+            skeleton, registry, global_conventions=["PM1:✱1·11"],
+            interface_gated=True,
         )
         bundle = build_bundle(manifest, registry, ROOT)
         source = bundle["lean_source"]
         self.assertIn("inductive Elementary", source)
         self.assertIn("inductive Derivation", source)
-        self.assertIn("theorem star_2_2", source)
-        self.assertIn("theorem star_2_16", source)
+        self.assertIn("axiom star_2_2", source)
+        self.assertIn("axiom star_2_16", source)
         self.assertNotIn("theorem star_2_45", source)
         self.assertNotIn("PM-VERBATIM", source)
         self.assertLess(bundle["source_bytes"], 15000)
@@ -58,7 +59,7 @@ class ContextBundleTests(unittest.TestCase):
         self.assertTrue(stub.lstrip().startswith("axiom star_3_37"))
         self.assertTrue(signature.lstrip().startswith("theorem star_3_37"))
 
-    def test_interface_syntax_precedes_a_dependent_stub(self):
+    def test_core_syntax_precedes_a_dependent_stub(self):
         from pm_constraint_manifest import load_item_registry
 
         manifest = json.loads((ROOT / "aristotle/manifests/Q228.json").read_text())
@@ -70,12 +71,10 @@ class ContextBundleTests(unittest.TestCase):
             if "axiom star_4_13" in source
             else "theorem star_4_13"
         )
-        self.assertLess(
-            source.index('infix:53 " ≡ₚ "'),
-            source.index(target),
-        )
+        self.assertLess(source.index("inductive Elementary"), source.index(target))
+        self.assertIn("≡ₚ", source[source.index("inductive Elementary"):])
 
-    def test_interface_syntax_must_belong_to_a_stub(self):
+    def test_eliminable_definition_rejects_redundant_interface_notation(self):
         from pm_constraint_manifest import load_item_registry
 
         registry = load_item_registry(ROOT / "metadata/items")
@@ -203,9 +202,10 @@ class ContextBundleTests(unittest.TestCase):
         batch = compile_batch_manifest(
             [first, second], registry,
             {"PM1:✱8·91": "PM.Test.star_8_91", "PM1:✱8·92": "PM.Test.star_8_92"},
+            interface_gated=True,
         )
         bundle = build_bundle(batch, registry, ROOT)
-        self.assertIn("theorem star_2_2", bundle["lean_source"])
+        self.assertIn("axiom star_2_2", bundle["lean_source"])
         self.assertNotIn("star_8_91", bundle["lean_source"])
         self.assertEqual(bundle["target_order"], ["PM1:✱8·91", "PM1:✱8·92"])
 

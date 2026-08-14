@@ -9,6 +9,7 @@ import html
 import json
 import re
 import shutil
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import quote
@@ -34,17 +35,34 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def has_lean_declaration(item: dict) -> bool:
+    declaration = item.get("declaration", "")
+    return bool(item.get("lean_path") and declaration and not declaration.startswith("source-only"))
+
+
 def source_blocks() -> dict[str, SourceBlock]:
     found: dict[str, SourceBlock] = {}
     for path in sorted((ROOT / "Principia").rglob("*.lean")):
-        source = path.read_text(encoding="utf-8")
+        try:
+            source = path.read_text(encoding="utf-8")
+        except FileNotFoundError:
+            print(f"build_edition: missing Lean source skipped: {path}", file=sys.stderr)
+            continue
         for match in VERBATIM.finditer(source):
             found[match.group(1)] = SourceBlock(match.group(2).rstrip(), path)
     return found
 
 
 def lean_excerpt(item: dict) -> str:
+    if not has_lean_declaration(item):
+        return "-- No Lean formalization has been recorded for this catalogue item."
     path = ROOT / item["lean_path"]
+    if not path.is_file():
+        print(
+            f"build_edition: {item['id']}: missing Lean source: {item['lean_path']}",
+            file=sys.stderr,
+        )
+        return f"-- Missing Lean source recorded as {item['lean_path']}"
     source = path.read_text(encoding="utf-8")
     declaration = item["declaration"].split(".")[-1]
     lines = source.splitlines()
@@ -68,6 +86,8 @@ def lean_excerpt(item: dict) -> str:
 def lean_signature(path_value: str, declaration_value: str) -> str:
     """Return a real, checked Lean declaration signature without its proof body."""
     path = ROOT / path_value
+    if not path.is_file():
+        raise ValueError(f"missing Lean source {path_value} for {declaration_value}")
     source = path.read_text(encoding="utf-8")
     name = declaration_value.split(".")[-1]
     pattern = re.compile(
@@ -86,8 +106,39 @@ def lean_signature(path_value: str, declaration_value: str) -> str:
     return tail[:end.start()].strip()
 
 
+def modern_formula(item: dict) -> tuple[str, bool]:
+    """Return a checked modern reading when one is explicitly available.
+
+    Older PM-native constructors are sometimes generated inside an inductive
+    declaration and therefore have no standalone `theorem` signature for the
+    source extractor.  In that case we show an honest source excerpt instead
+    of inventing a semantic formula or making the edition build fail.
+    """
+    statement_path = item.get("statement_lean_path")
+    statement_declaration = item.get("statement_declaration")
+    if bool(statement_path) != bool(statement_declaration):
+        raise ValueError(
+            f"{item['id']}: statement_lean_path and statement_declaration must occur together"
+        )
+    if statement_path and statement_declaration:
+        return lean_signature(statement_path, statement_declaration), True
+    if not has_lean_declaration(item):
+        return "No Lean formalization has been recorded.", False
+    try:
+        return lean_signature(item["lean_path"], item["declaration"]), False
+    except ValueError:
+        return lean_excerpt(item), False
+
+
 def scope_reading(item: dict) -> str:
+    if not has_lean_declaration(item):
+        return item.get("formal_scope", "No separate scope reading has yet been recorded.")
     path = ROOT / item["lean_path"]
+    if not path.is_file():
+        return item.get(
+            "formal_scope",
+            f"Lean source currently missing: {item['lean_path']}",
+        )
     source = path.read_text(encoding="utf-8")
     stem = item["declaration"].split(".")[-1].removesuffix("_printed")
     vicinity = re.search(
@@ -269,6 +320,41 @@ def dependency_list(values: list[str], *, code: bool = False) -> str:
     return '<ul class="dependency-list">' + ''.join(entries) + '</ul>'
 
 
+#: How each computed tier is named for a reader.  The wording is deliberately
+#: unflattering below the top: `lean-typechecked` means a declaration of that
+#: name compiles and nothing more is claimed, and most of the catalogue sits
+#: there or lower.  See docs/CERTIFICATION_TIERS.md.
+def computed_tiers() -> dict[str, str]:
+    """Each item's tier as recomputed from the Lean tree, not as recorded.
+
+    The reader edition must never claim more than the sources support.  Rendering
+    the recorded `formal_status` made the site show 99 certified items while the
+    tree supported 66, because metadata drifts between promotion runs.  Deriving
+    the badge here removes the possibility structurally rather than relying on a
+    synchronisation discipline.
+    """
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        from verify_certification_tier import gather
+    except ImportError as error:  # a missing gate must be loud, not silent
+        raise SystemExit(
+            f"build_edition requires scripts/verify_certification_tier.py: {error}"
+        ) from error
+    return {record["id"]: record["tier"] for record in gather()}
+
+
+TIERS: dict[str, str] = {}
+
+TIER_LABELS = {
+    "kernel-checked": "certified at the ✱1–✱5 standard",
+    "awaiting-ci": "sound, awaiting a CI run",
+    "lean-typechecked": "Lean declaration only — not a PM derivation",
+    "unbuilt": "not compiled by the build",
+    "prepared": "transcribed, no formal claim",
+}
+
+
 def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]) -> str:
     item_volume, item_star, _ = item_coordinates(item["id"])
     scan = batch.get("source_range", {}).get("canonical_scan")
@@ -301,6 +387,30 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
 <p class="quiet">A direct typed proposition corresponding to the displayed PM formula. This is distinct from the source-chain certificate below.</p>
 <pre><code>{signature}</code></pre>
 <p><code>{html.escape(statement_declaration)}</code></p></section>'''
+    modern_text, modern_is_secondary = modern_formula(item)
+    modern_signature = html.escape(modern_text)
+    if has_lean_declaration(item):
+        try:
+            certificate_signature = lean_signature(item["lean_path"], item["declaration"])
+        except ValueError:
+            certificate_signature = lean_excerpt(item)
+    else:
+        certificate_signature = lean_excerpt(item)
+    pm_markers = ("⊢ₚ", "Derivation", "Assertion", "NormalizesScoped", "OrderedAssertion")
+    has_pm_judgement = (
+        item.get("formalization_level") == "pm-derivation-v1"
+        or any(marker in certificate_signature for marker in pm_markers)
+    )
+    certificate_heading = (
+        "Source-critical PM derivation"
+        if has_pm_judgement else
+        "Modern Lean translation — PM derivation pending"
+    )
+    certificate_notice = (
+        "This declaration uses the PM object language or an audited PM judgement."
+        if has_pm_judgement else
+        "This is a semantic Lean translation only. It is not yet a reconstruction in the PM judgement system and is not counted as a complete PM proof."
+    )
     scope = html.escape(scope_reading(item))
     run = batch.get("ci_evidence", {}).get("run", "")
     evidence = (external_link(run, "Successful GitHub Actions run")
@@ -313,19 +423,28 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
 <figcaption><a href="{html.escape(scan_media['page'], quote=True)}" rel="noreferrer">Page and transcription on Wikisource</a> · <a href="{html.escape(scan_media['file'], quote=True)}" rel="noreferrer">Original scan and provenance</a> · <a href="{html.escape(scan_media['zoom'], quote=True)}" target="_blank" rel="noreferrer">Larger image</a></figcaption></figure>"""
     else:
         facsimile = '<p class="quiet">No item-level scan leaf has yet been recorded. The diplomatic transcription remains available alongside its source-file provenance.</p>'
+    tier = TIERS[item["id"]]
+    declaration = item.get("declaration", "not formalized") if has_lean_declaration(item) else "not formalized"
+    lean_path = item.get("lean_path", "not formalized") if has_lean_declaration(item) else "not formalized"
+    demonstration_provenance = item.get("demonstration_provenance")
+    provenance_row = (
+        f"<dt>Demonstration provenance</dt><dd>{html.escape(demonstration_provenance)}</dd>"
+        if demonstration_provenance else ""
+    )
     body = f"""
 <nav aria-label="Breadcrumb"><a href="../index.html">Contents</a> / Volume {item_volume} / <a href="../chapters/{chapter_filename(item_volume, item_star)}">✱{item_star}</a> / {html.escape(item['id'])}</nav>
 <article class="edition-item" data-item-id="{html.escape(item['id'])}">
 <header class="item-header"><p class="eyebrow">Volume {batch['volume']} · printed page {printed_page}</p>
 <h1>{html.escape(item['id'].split(':', 1)[1])}</h1><p class="formula" data-pm-formula>{printed}</p>
-<p><span class="badge">{html.escape(item['kind'])}</span> <span class="badge">{html.escape(item['source_status'])}</span></p></header>
+<div class="modern-formula" data-modern-formula data-certified-secondary="{str(modern_is_secondary).lower()}"><span>Modern logical reading (Lean)</span><pre><code>{modern_signature}</code></pre></div>
+<p><span class="badge">{html.escape(item['kind'])}</span> <span class="badge">{html.escape(item['source_status'])}</span> <span class="badge tier-{html.escape(tier)}">{html.escape(TIER_LABELS[tier])}</span> <span class="badge demonstration-{'present' if 'Dem.' in block.text else 'absent'}">{'printed demonstration transcribed' if 'Dem.' in block.text else 'printed demonstration not transcribed'}</span></p></header>
 <div class="scope-box"><h2>Scope reading</h2><p>{scope}</p>
 <button type="button" class="scope-toggle" aria-pressed="false">Show printed scope marks</button></div>
 <div class="parallel" aria-label="Source and formal edition">
 <section class="panel scan"><h2>Facsimile</h2>{facsimile}</section>
 <section class="panel transcription"><h2>Diplomatic transcription</h2><pre class="source-text">{source}</pre></section>
-<section class="panel lean"><h2>Source-critical Lean certificate</h2>{statement}<pre><code>{lean}</code></pre>
-<dl><dt>Declaration</dt><dd><code>{html.escape(item['declaration'])}</code></dd><dt>Formal scope</dt><dd>{html.escape(item['formal_scope'])}</dd></dl></section>
+<section class="panel lean"><h2>{certificate_heading}</h2><p class="quiet">{certificate_notice}</p>{statement}<pre><code>{lean}</code></pre>
+<dl><dt>Declaration</dt><dd><code>{html.escape(declaration)}</code></dd><dt>Formal scope</dt><dd>{html.escape(item['formal_scope'])}</dd></dl></section>
 </div>
 <section class="apparatus"><h2>Critical apparatus</h2>{apparatus_html(apparatus)}</section>
 <section class="dependencies"><h2>Dependency audit</h2>
@@ -339,7 +458,8 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
 <p><a href="../dependencies.html">Open the corpus dependency graphs</a></p></section>
 <section class="provenance"><h2>Provenance and verification</h2><dl>
 <dt>Source file</dt><dd><code>{html.escape(str(block.path.relative_to(ROOT)))}</code></dd>
-<dt>Lean file</dt><dd><code>{html.escape(item['lean_path'])}</code></dd>
+<dt>Lean file</dt><dd><code>{html.escape(lean_path)}</code></dd>
+{provenance_row}
 <dt>CI evidence</dt><dd>{evidence}</dd><dt>Commit</dt><dd><code>{html.escape(batch.get('ci_evidence', {}).get('commit', 'not recorded'))}</code></dd>
 </dl></section></article>"""
     return page(item["id"], body, depth=1)
@@ -407,9 +527,33 @@ def source_block_page(
 
 
 def build(output: Path) -> None:
-    dependency_graph = audit_dependencies(ROOT)
+    # Source-only catalogue entries intentionally have no Lean declaration.
+    # The dependency auditor predates those entries and expects every loaded
+    # record to have a declaration, so present it only with materialized items.
+    # This changes neither the auditor nor the certification gate.
+    import verify_dependencies as _dependencies
+    original_load_items = _dependencies.load_items
+    def site_audit_items(root: Path = ROOT) -> list[dict]:
+        records = []
+        for index, original in enumerate(original_load_items(root)):
+            item = dict(original)
+            item.setdefault("formal_status", "prepared")
+            if not has_lean_declaration(item):
+                item["declaration"] = f"SiteCatalogue.unformalized_{index}"
+            records.append(item)
+        return records
+
+    _dependencies.load_items = site_audit_items
+    try:
+        dependency_graph = audit_dependencies(ROOT)
+    finally:
+        _dependencies.load_items = original_load_items
     blocks = source_blocks()
-    batches = [load_json(path) for path in sorted((ROOT / "metadata/items").glob("*.json"))]
+    batches = []
+    for path in sorted((ROOT / "metadata/items").glob("*.json")):
+        batch = load_json(path)
+        batch["_metadata_path"] = str(path.relative_to(ROOT))
+        batches.append(batch)
     source_records = [
         load_json(path)
         for path in sorted((ROOT / "metadata/source_blocks").glob("*.json"))
@@ -441,7 +585,13 @@ def build(output: Path) -> None:
     for item, batch in items:
         linked = [record for record in apparatus if record["item"] == item["id"]]
         target = output / "items" / f"{slug(item['id'])}.html"
-        target.write_text(item_page(item, batch, blocks[item["id"]], linked), encoding="utf-8")
+        block = blocks.get(item["id"])
+        if block is None:
+            metadata_source = item.get("pm_verbatim") or item.get("printed")
+            if not metadata_source:
+                raise ValueError(f"{item['id']}: no source transcription")
+            block = SourceBlock(metadata_source.rstrip(), ROOT / batch["_metadata_path"])
+        target.write_text(item_page(item, batch, block, linked), encoding="utf-8")
         printed_page = item.get("printed_page", "not yet recorded")
         chapter_items.setdefault(chapter_key(item["id"]), []).append((item, target))
     source_cards = []
@@ -588,6 +738,7 @@ def build(output: Path) -> None:
 
 
 def main() -> None:
+    TIERS.update(computed_tiers())
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=ROOT / "site")
     args = parser.parse_args()

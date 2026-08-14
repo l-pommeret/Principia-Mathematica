@@ -52,7 +52,7 @@ OPERATORS = {
     "∨": "or", "⊃": "implies", "≡": "equiv", "=": "equal", "≠": "not_equal", "∈": "member",
     "∩": "class_intersection", "∪": "class_union", "⊂": "class_inclusion",
     "∩̇": "relation_intersection", "⋃̇": "relation_union",
-    "⊂̇": "relation_inclusion", "|": "relative_product",
+    "⊂̇": "relation_inclusion", "⪽": "relation_inclusion", "|": "relative_product",
     "→": "function_relation",
     "sm": "similar",
     "∼∈": "not_member",
@@ -234,7 +234,8 @@ def raw_tokens(source: str) -> list[Token]:
             continue
         if char in {"≡", "⊃"}:
             decorated = re.match(
-                rf"{re.escape(char)}(?:[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ]+(?:,[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ]+)*)?",
+                rf"{re.escape(char)}(?:_[A-Za-zΑ-Ωα-ω]+|"
+                rf"[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ]+(?:,[₀-₉ₐ-ₜᵢⱼₓᵧᵩφψχθ]+)*)?",
                 source[index:],
             )
             text = decorated.group(0) if decorated else char
@@ -408,7 +409,7 @@ def binding_power(token: Token, side: str) -> int:
         "⊃": 1200, "∨": 1300, "·": 1400, "=": 1450, "≠": 1450, "∈": 1450,
         "∼∈": 1450,
         "⊂": 1450, "∪": 1500, "∩": 1510, "−": 1500,
-        "⊂̇": 1450, "⋃̇": 1500, "∩̇": 1510, "|": 1520, "→": 1520,
+        "⊂̇": 1450, "⪽": 1450, "⋃̇": 1500, "∩̇": 1510, "|": 1520, "→": 1520,
         "sm": 1450,
     }[token.text]
 
@@ -884,6 +885,17 @@ class Parser:
                         if is_relation_surface(right) else right,
                     ),
                 )
+            elif tag == "not_member" and is_class_context_candidate(right):
+                # ✱20·06 is an eliminable expansion of membership.  Its
+                # printed left side therefore supplies exactly the same class
+                # context as `x ∈ α`; do not let the incomplete class
+                # symbol escape merely because negation is fused into the
+                # membership glyph.
+                left = AST(
+                    "not_member",
+                    (seal_as_class(left) if is_class_context_candidate(left) else left,
+                     seal_as_class(right)),
+                )
             elif tag == "not_member":
                 left = AST("not_member", (left, right))
             elif tag == "member" and is_class_context_candidate(right):
@@ -1005,6 +1017,13 @@ class Parser:
                 arguments.append(AST(
                     "description", (condition,), description_variable(argument_token.text)
                 ))
+        elif next_token is not None and next_token.kind == "class_binder" and next_token.text == "ẑ":
+            # In the eliminable class expansion ✱20·1, `φ!ẑ` applies a
+            # quantified predicative function to the class variable bound by
+            # the surrounding `(∃φ)`.  Unlike `ẑ(ψz)`, this occurrence has
+            # no comprehension matrix of its own.
+            self.take()
+            arguments.append(AST("class_bound"))
         else:
             raise PMSyntaxError(f"function {function.text!r} has no argument")
         application_tag = "apply_predicative" if predicative else "apply_general"

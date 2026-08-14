@@ -66,8 +66,15 @@ def audit(source: str) -> None:
                 if re.search(pattern, code, re.MULTILINE)]
     if failures:
         raise ValueError("elementary-formation policy violation: " + ", ".join(failures))
-    if len(re.findall(r"inductive\s+(?:PM\.)?Derivation\b", code)) != 1:
-        raise ValueError("the accepted Derivation inductive must remain unique")
+    # The accepted calculus must remain a single inductive.  It is now named
+    # `DerivationEvidence` and inhabited through `Derivation p := Nonempty …`;
+    # the invariant this guards — no proliferation of accepted derivation
+    # relations — is unchanged.
+    accepted = re.findall(r"inductive\s+(?:PM\.)?Derivation(?:Evidence)?\b", code)
+    if len(accepted) != 1:
+        raise ValueError(
+            f"the accepted Derivation inductive must remain unique, found {len(accepted)}"
+        )
 
 
 def _formation_block(code: str) -> str:

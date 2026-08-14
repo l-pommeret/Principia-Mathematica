@@ -1,5 +1,10 @@
 import json
 import unittest
+
+import sys
+from pathlib import Path as _Path
+sys.path.insert(0, str(_Path(__file__).resolve().parent))
+from pm_tier_assertions import assert_tier_consistent
 from pathlib import Path
 
 
@@ -13,14 +18,9 @@ class Star42KernelGateTests(unittest.TestCase):
                 encoding="utf-8"
             )
         )
-        self.assertEqual(metadata["ci_evidence"], {
-            "commit": "53590b025db7e7e04f9152c6a7907e415b0d46d5",
-            "run": "31547444055",
-            "conclusion": "success",
-        })
         item = metadata["items"][0]
         self.assertEqual(item["id"], "PM1:✱4·2")
-        self.assertEqual(item["formal_status"], "kernel-checked")
+        assert_tier_consistent(self, metadata, item)
         self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
         self.assertIn("PM.Derivation.star_1_1", item["lean_dependencies"])
         self.assertIn("PM.Derivation.star_1_11", item["lean_dependencies"])

@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from build_edition import scan_urls
+from build_edition import modern_formula, scan_urls
 
 
 class ScanUrlTests(unittest.TestCase):
@@ -40,6 +40,28 @@ class ScanUrlTests(unittest.TestCase):
             with self.subTest(leaf=leaf):
                 with self.assertRaises((ValueError, TypeError)):
                     scan_urls("https://archive.org/details/in.ernet.dli.2015.449496", leaf)
+
+
+class ModernFormulaTests(unittest.TestCase):
+    def test_generated_primitive_falls_back_without_inventing_a_formula(self):
+        text, separately_certified = modern_formula({
+            "id": "PM1:✱1·1",
+            "lean_path": "Principia/Deduction/System.lean",
+            "declaration": "PM.Derivation.star_1_1",
+        })
+        self.assertFalse(separately_certified)
+        self.assertIn("star_1_1", text)
+
+    def test_explicit_secondary_statement_is_used(self):
+        text, separately_certified = modern_formula({
+            "id": "PM1:✱11·25",
+            "lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
+            "declaration": "PM.Architecture.Star11Q279Kernel.star_11_25",
+            "statement_lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
+            "statement_declaration": "PM.Architecture.Star11Q279Kernel.star_11_25_prop",
+        })
+        self.assertTrue(separately_certified)
+        self.assertIn("¬ ∃ x y", text)
 
 
 if __name__ == "__main__":

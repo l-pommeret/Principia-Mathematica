@@ -12,6 +12,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 from verify_dependencies import pm_order
+from verify_certification_tier import gather as certification_tiers
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -58,6 +59,14 @@ def verify(site: Path) -> None:
     )
     if manifest.get("item_ids") != expected_ids:
         fail("generated manifest does not match metadata/items")
+    computed_tiers = {record["id"]: record["tier"] for record in certification_tiers()}
+    if sorted(computed_tiers) != expected_ids:
+        fail("certification gate does not cover every metadata item")
+    demonstration_provenance = {
+        item["id"]: item.get("demonstration_provenance")
+        for metadata_path in sorted((ROOT / "metadata/items").glob("*.json"))
+        for item in json.loads(metadata_path.read_text(encoding="utf-8"))["items"]
+    }
     expected_order = sorted(expected_ids, key=pm_order)
     if manifest.get("ordered_item_ids") != expected_order:
         fail("generated manifest does not follow PM decimal item order")
@@ -98,12 +107,24 @@ def verify(site: Path) -> None:
         )
     rendered_item_page_ids = []
     for path in pages:
+        source = path.read_text(encoding="utf-8")
         match = re.search(
             r'<article class="edition-item" data-item-id="([^"]+)"',
-            path.read_text(encoding="utf-8"),
+            source,
         )
         if match:
-            rendered_item_page_ids.append(match.group(1))
+            item_id = match.group(1)
+            rendered_item_page_ids.append(item_id)
+            tiers = re.findall(r'class="badge tier-([^"]+)"', source)
+            if tiers != [computed_tiers[item_id]]:
+                fail(f"{path} does not render its computed certification tier")
+            provenance = demonstration_provenance[item_id]
+            rendered_provenance = re.findall(
+                r'<dt>Demonstration provenance</dt><dd>([^<]*)</dd>', source
+            )
+            expected_provenance = [provenance] if provenance else []
+            if rendered_provenance != expected_provenance:
+                fail(f"{path} does not render its demonstration provenance exactly")
     if sorted(rendered_item_page_ids) != expected_ids:
         fail("formal item pages do not map bijectively to metadata IDs")
     chapter_pages = sorted((site / "chapters").glob("*.html"))

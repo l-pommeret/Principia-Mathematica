@@ -26,10 +26,12 @@ ROOT = Path(__file__).resolve().parents[1]
 FOUNDATION_PROFILES = {
     "elementary-pm1": (
         "Principia/Syntax/Formula.lean",
+        "Principia/Syntax/Printed.lean",
         "Principia/Deduction/System.lean",
     ),
     "elementary-formation-pm1": (
         "Principia/Syntax/Formula.lean",
+        "Principia/Syntax/Printed.lean",
         "Principia/Deduction/System.lean",
         "Principia/Deduction/Formation.lean",
         "Principia/Deduction/Formed.lean",
@@ -194,6 +196,33 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
             "bytes": len(clean.encode("utf-8")),
         })
 
+    if (profile in {"elementary-pm1", "elementary-formation-pm1"} and
+            "PM1:✱3·01" not in closure):
+        # ✱3·01 and ✱3·02 are eliminable syntax, not judgement
+        # constructors.  Interface stubs for later ✱3 propositions may use
+        # their notation, so reproduce this audited definitional slice before
+        # those stubs rather than treating the definitions as proof permission.
+        definitions = """namespace PM.Elementary
+
+def conj (p q : PM.Elementary Γ) : PM.Elementary Γ :=
+  ∼ₚ (∼ₚ p ∨ₚ ∼ₚ q)
+
+infixl:56 " ∧ₚ " => conj
+
+def impChain (p q r : PM.Elementary Γ) : PM.Elementary Γ :=
+  conj (p ⊃ₚ q) (q ⊃ₚ r)
+
+end PM.Elementary
+"""
+        chunks.append("-- PM-CONTEXT-ELIMINABLE-DEFINITIONS ✱3·01-✱3·02\n" + definitions)
+        sources.append({
+            "kind": "eliminable-definition-slice",
+            "id": "PM1:✱3·01-✱3·02",
+            "slice_sha256": sha256_text(definitions),
+            "bytes": len(definitions.encode("utf-8")),
+            "grants_proof_permission": False,
+        })
+
     # An assigned-order experiment may need a small, audited architecture
     # adapter which is not yet an edition item.  Keep this separate from both
     # PM declaration slices and opaque interfaces: its whole source is copied
@@ -230,16 +259,23 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
         raise BundleError("context_predeclarations must belong to context_closure")
     for identifier in sorted(predeclare_ids, key=pm_order):
         item = registry[identifier]
-        if item.get("formal_status") != "kernel-checked":
-            raise BundleError("context_predeclaration must be kernel-checked: " + identifier)
-        clean = clean_declaration(item, root)
+        is_interface_predeclaration = item.get("formal_status") != "kernel-checked"
+        if is_interface_predeclaration and not interface_gated:
+            raise BundleError(
+                "non-kernel context_predeclaration requires interface gate: " + identifier
+            )
+        if is_interface_predeclaration:
+            clean, signature = interface_stub(item, root)
+        else:
+            clean = clean_declaration(item, root)
+            signature = None
         namespace = declaration_namespace(item["declaration"])
         wrapped = f"namespace {namespace}\n\n{clean}\n\nend {namespace}\n"
         chunks.append(
             f"-- PM-CONTEXT-PREDECLARATION {item['id']} {item['declaration']}\n{wrapped}"
         )
         sources.append({
-            "kind": "item-declaration",
+            "kind": "opaque-interface-stub" if is_interface_predeclaration else "item-declaration",
             "id": item["id"],
             "path": item["lean_path"],
             "declaration": item["declaration"],
@@ -248,6 +284,11 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
             ),
             "slice_sha256": sha256_text(clean),
             "bytes": len(clean.encode("utf-8")),
+            **({
+                "signature_sha256": sha256_text(signature),
+                "signature": signature,
+                "remap_required": True,
+            } if is_interface_predeclaration else {}),
         })
     if local_context_paths and not interface_gated:
         raise BundleError("local architecture context requires interface-gated policy")
@@ -276,9 +317,12 @@ def build_bundle(manifest: dict, registry: dict[str, dict], root: Path = ROOT) -
 
     # Constructors and `detach` live inside the complete System foundation;
     # ✱1·01 lives inside Formula. Do not duplicate those declarations.
+    eliminable_kinds = {"definition", "notation-definition", "contextual-definition"}
     non_kernel = sorted(
         identifier for identifier in closure
-        if registry[identifier].get("formal_status") != "kernel-checked"
+        if (registry[identifier].get("formal_status") != "kernel-checked" and
+            registry[identifier].get("kind") not in eliminable_kinds and
+            identifier != "PM1:✱3·03")
     )
     if non_kernel and not interface_gated:
         raise BundleError(

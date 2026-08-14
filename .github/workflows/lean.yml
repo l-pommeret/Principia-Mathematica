@@ -1,16 +1,32 @@
 name: Lean
 
+# Previously `workflow_dispatch` only: nothing ran unless a human asked, so the
+# claim that a proof is accepted only after Lean and CI checks rested on
+# operator discipline alone.  Certification is now gated on every push and pull
+# request to the default branch.
 on:
+  push:
+    branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
+
+concurrency:
+  group: lean-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          # `verify_ci_evidence.py` resolves recorded commits with
+          # `git cat-file` and `git merge-base --is-ancestor`, which need real
+          # history rather than a depth-1 clone.
+          fetch-depth: 0
       - name: Install elan
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
@@ -23,7 +39,9 @@ jobs:
           key: ${{ runner.os }}-lean-${{ hashFiles('lean-toolchain') }}
       - name: Aggregate source, dependency, and context preflight
         run: |
-          python3 scripts/sync_item_printed.py
+          # `--check`, never a bare run: a CI step that repairs metadata makes
+          # every later gate validate CI's own output instead of the commit.
+          python3 scripts/sync_item_printed.py --check
           python3 scripts/verify_preflight.py
       - name: Kernel-check every isolated elementary context
         shell: bash
@@ -40,3 +58,9 @@ jobs:
               ' _
       - name: Build and kernel-check the edition
         run: lake build
+      - name: Audit the axioms of every certified declaration
+        # Must follow `lake build`: this shells out to `lake env lean` on a file
+        # that imports Principia, so it needs a populated .lake/build.
+        run: python3 scripts/verify_axiom_audit.py
+      - name: Verify each proof follows its printed demonstration
+        run: python3 scripts/verify_printed_citations.py --report-all

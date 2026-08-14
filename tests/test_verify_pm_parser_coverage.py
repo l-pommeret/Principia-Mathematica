@@ -7,27 +7,37 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from pm_queue_inventory import inventory
 from verify_pm_parser_coverage import ParserCoverageError, audit
 
 
 class ParserCoverageTests(unittest.TestCase):
     def test_repository_formal_catalogue_is_fully_routed(self):
-        result = audit(ROOT)
-        self.assertGreaterEqual(result["counts"]["object_language"], 73)
+        result = inventory(ROOT)
+        counts = result["counts"]
         self.assertEqual(
-            result["metalinguistic_rules"],
-            [
-                "PM1:✱1·1", "PM1:✱1·11", "PM1:✱1·7", "PM1:✱1·71",
-                "PM1:✱1·72", "PM1:✱3·03", "PM1:✱9·12", "PM1:✱9·13",
-                "PM1:✱9·6", "PM1:✱9·61", "PM1:✱9·62", "PM1:✱9·63",
-            ],
+            counts["catalogued_items"],
+            counts["object_language_ast_parsed"] + counts["metalinguistic_routes"] +
+            counts["architecture_gated_source_routes"],
         )
-        self.assertEqual(
-            result["counts"]["total"],
-            result["counts"]["object_language"] + len(result["metalinguistic_rules"]) +
-            result["counts"]["architecture_gated"] +
-            result["counts"]["reviewed_parser_gaps"],
-        )
+        for item in result["catalogued_items"]:
+            ast = item["ast"]
+            self.assertIn(
+                ast["status"],
+                {"parsed", "metalinguistic-route", "parser-gap", "reviewed-parser-gap",
+                 "architecture-gated-source-route"},
+                item["id"],
+            )
+            if ast["status"] == "parsed":
+                self.assertEqual(len(ast["sha256"]), 64, item["id"])
+            elif ast["status"] == "parser-gap":
+                self.assertTrue(item["source_catalogue"], item["id"])
+                self.assertTrue(ast.get("detail"), item["id"])
+            elif ast["status"] == "reviewed-parser-gap":
+                self.assertTrue(ast.get("evidence"), item["id"])
+            elif ast["status"] == "architecture-gated-source-route":
+                self.assertTrue(item["source_catalogue"], item["id"])
+                self.assertNotEqual(item["formal_status"], "kernel-checked", item["id"])
 
     def test_unparsed_object_item_fails_the_gate(self):
         with tempfile.TemporaryDirectory() as directory:

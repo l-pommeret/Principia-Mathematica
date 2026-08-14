@@ -1,5 +1,10 @@
 import json
 import unittest
+
+import sys
+from pathlib import Path as _Path
+sys.path.insert(0, str(_Path(__file__).resolve().parent))
+from pm_tier_assertions import assert_tier_consistent
 from pathlib import Path
 
 
@@ -15,12 +20,7 @@ class Star4KernelGateTests(unittest.TestCase):
         )
         item = metadata["items"][0]
         self.assertEqual(item["id"], "PM1:✱4·77")
-        self.assertEqual(item["formal_status"], "kernel-checked")
-        self.assertEqual(metadata["ci_evidence"], {
-            "commit": "9cf0db084ad6ee4baa542aab1be9080e3d395690",
-            "run": "31551057810",
-            "conclusion": "success",
-        })
+        assert_tier_consistent(self, metadata, item)
         self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
 
     def test_third_group_is_kernel_checked_together(self):
@@ -37,17 +37,14 @@ class Star4KernelGateTests(unittest.TestCase):
             )
             item = metadata["items"][0]
             self.assertEqual(item["id"], item_id)
-            self.assertEqual(item["formal_status"], "kernel-checked")
-            self.assertEqual(metadata["ci_evidence"], {
-                "commit": "8da5d1fdec9a8c765fdcbc8c38fb46d042944f34",
-                "run": "31552231965",
-                "conclusion": "success",
-            })
+            assert_tier_consistent(self, metadata, item)
             self.assertNotIn("PM.Derivation.detach", item["lean_dependencies"])
         source = (
             ROOT / "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean"
         ).read_text(encoding="utf-8")
-        body = source[source.index("theorem star_4_8") :]
+        start = source.index("theorem star_4_8")
+        end = source.index("/-- Audited scope reading of ✱4·81.", start)
+        body = source[start:end]
         self.assertNotIn("PM.Derivation.detach", body)
 
 

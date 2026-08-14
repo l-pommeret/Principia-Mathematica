@@ -274,7 +274,17 @@ class PMDotSyntaxTests(unittest.TestCase):
 
     def test_q102_55_preserves_alpha_and_beta_type_indices(self):
         parsed = statement_shape("✱102·55. ⊢ : Λ ∼∈ NCᵅ(β) .⊃ . NCᵝ(α) − ιʻΛ = NCᵅ(α)")
-        self.assertGreaterEqual(tags(parsed).count("type_indexed"), 2)
+        def indexed_values(node):
+            values = ([node.get("value")] if node["tag"] in {
+                "type_indexed", "class_type_indexed"
+            } else [])
+            return values + [
+                value for child in node.get("children", [])
+                for value in indexed_values(child)
+            ]
+        indexed = indexed_values(parsed)
+        self.assertIn("ᵅ", indexed)
+        self.assertIn("ᵝ", indexed)
         self.assertIn("not_member", tags(parsed))
 
     def test_q102_6_preserves_gamma_hat_parenthesized_class_binder(self):

@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SHA = re.compile(r"[0-9a-f]{40}")
 RUN = re.compile(r"https://github\.com/[^/]+/[^/]+/actions/runs/[0-9]+")
+REQUIRED_FORMALIZATION_LEVEL = "pm-derivation-v1"
 
 
 def main() -> int:
@@ -62,6 +63,16 @@ def main() -> int:
             continue
         if len(selected) != len(items) or {item.get("formal_status") for item in items} != {"awaiting-ci"}:
             raise SystemExit(f"evidence batch changed membership/status and must be split first: {path}")
+        weak = [
+            item["id"] for item in selected
+            if item.get("formalization_level") != REQUIRED_FORMALIZATION_LEVEL
+        ]
+        if weak:
+            raise SystemExit(
+                "refusing to promote semantic translations as PM proofs; "
+                f"missing formalization_level={REQUIRED_FORMALIZATION_LEVEL}: "
+                + ", ".join(weak)
+            )
         evidence = data.get("ci_evidence", {})
         if {evidence.get("commit"), evidence.get("run"), evidence.get("conclusion")} != {"pending"}:
             raise SystemExit(f"non-pending evidence in awaiting batch: {path}")
