@@ -22,9 +22,11 @@
       "printed": "⊢ : α ⊂ β . β ⊂ γ .⊃ . α ⊂ γ",
       "printed_page": 221,
       "scan_leaf": 243,
-      "lean_path": "Principia/Architecture/Star22Q344Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q344Kernel.star_22_44",
-      "formal_scope": "exact polymorphic transitivity of class inclusion",
+      "lean_path": "Principia/Deduction/Star22Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_22_44",
+      "statement_lean_path": "Principia/Architecture/Star22Q344Kernel.lean",
+      "statement_declaration": "PM.Architecture.Star22Q344Kernel.star_22_44",
+      "formal_scope": "exact ramified full-scope transitivity of class inclusion",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "demonstration_provenance": "follows-printed",
@@ -33,28 +35,17 @@
         "PM1:✱10·3"
       ],
       "lean_dependencies": [
-        "PM.FirstEdition.Volume1.Star3.star_3_33"
+        "PM.RamifiedSyntax.Star10For22.star_10_3"
       ],
       "normalized_dependencies": [
-        "PM1:✱3·33"
+        "PM1:✱10·3"
       ],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [
-          "PM1:✱3·33"
-        ],
-        "printed_but_unused": [
-          "PM1:✱10·3"
-        ],
-        "strict_attempt_evidence": "reviews/Q344-review.md",
-        "editorial_note": "The exact statement closes directly in the typed class reconstruction; the printed citations remain recorded as historical proof evidence."
-      },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "af83b7974c26af28a1462683616d4f44f4167091"
+        "computed_at_commit": "697e23d824a7e9a8afa1fe58e9db3099c464d323"
       }
     },
     {
@@ -64,9 +55,11 @@
       "printed": "⊢ : α ⊂ β . x ε α .⊃ . x ε β",
       "printed_page": 221,
       "scan_leaf": 243,
-      "lean_path": "Principia/Architecture/Star22Q344Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q344Kernel.star_22_441",
-      "formal_scope": "exact polymorphic elimination of class inclusion at a member",
+      "lean_path": "Principia/Deduction/Star22Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_22_441",
+      "statement_lean_path": "Principia/Architecture/Star22Q344Kernel.lean",
+      "statement_declaration": "PM.Architecture.Star22Q344Kernel.star_22_441",
+      "formal_scope": "exact positive-order ramified elimination of class inclusion at a member",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
       "demonstration_provenance": "follows-printed",
@@ -78,46 +71,26 @@
         "PM1:Imp"
       ],
       "lean_dependencies": [
-        "PM.Derivation.detach",
-        "PM.FirstEdition.Volume1.Star2.star_2_05",
-        "PM.FirstEdition.Volume1.Star3.star_3_22",
-        "PM.FirstEdition.Volume1.Star3.star_3_35"
+        "PM.RamifiedSyntax.star_10_1"
       ],
       "normalized_dependencies": [
-        "PM1:✱1·1",
-        "PM1:✱2·05",
-        "PM1:✱3·22",
-        "PM1:✱3·35"
-      ],
-      "dependency_justifications": [
-        {
-          "kind": "metalinguistic-rule-selection",
-          "lean_dependency": "PM.Derivation.detach",
-          "pm_dependency": "PM1:✱1·1",
-          "evidence": "The derivation is uniform in the real-variable context; the catalogue records the general detachment rule ✱1·1."
-        }
+        "PM1:✱10·1"
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": [
-          "PM1:✱1·1",
-          "PM1:✱2·05",
-          "PM1:✱3·22",
-          "PM1:✱3·35"
-        ],
+        "added_beyond_print": [],
         "printed_but_unused": [
-          "PM1:Imp",
-          "PM1:✱10·1"
+          "PM1:Imp"
         ],
         "strict_attempt_evidence": "reviews/Q344-review.md",
-        "editorial_note": "The exact statement closes directly in the typed class reconstruction; the printed citations remain recorded as historical proof evidence."
+        "editorial_note": "The ramified proof uses ✱10·1 directly; PM's `Imp` is the unnumbered propositional presentation implemented by the local object-calculus helper."
       },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "af83b7974c26af28a1462683616d4f44f4167091"
+        "computed_at_commit": "697e23d824a7e9a8afa1fe58e9db3099c464d323"
       }
     }
   ],

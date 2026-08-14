@@ -1,8 +1,15 @@
 import Principia.Deduction.Star4Ramified
 import Principia.Deduction.Star10Derived
 import Principia.FirstEdition.Volume1.Star22Source
+import Principia.Syntax.Printed
 
 namespace PM.RamifiedSyntax
+
+/- A T4 reading for the ramified heterogeneous claim syntax. -/
+structure RamifiedReading (signature : Signature) (real : Context) where
+  printed : PM.PrintedFormula
+  parsed : Claim signature real
+  scopeReading : String
 
 /-! # Derived propositions of PM I, ✱22
 
@@ -163,6 +170,126 @@ theorem star_22_42
     (implication negation disjunction body body) line1
   exact line2
 
+/-! ### The printed ✱10·3 route used by ✱22·44
+
+The apparent variable in PM's formal implications has the whole assertion as
+its real scope. Thus the instance needed below is the universal closure of
+the pointwise `Syll` matrix. -/
+
+private def apparentConjunction
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature real apparent order) :
+    Formula signature real apparent order :=
+  .neg negation
+    (sameDisjunction disjunction (.neg negation left) (.neg negation right))
+
+private theorem apparentConjunction_weakenReal
+    {fresh : RSort}
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature real apparent order) :
+    (apparentConjunction negation disjunction left right).weakenReal
+        (fresh := fresh) =
+      apparentConjunction negation disjunction
+        (left.weakenReal (fresh := fresh))
+        (right.weakenReal (fresh := fresh)) := by
+  unfold apparentConjunction
+  change Formula.neg negation
+    ((sameDisjunction disjunction (.neg negation left)
+      (.neg negation right)).weakenReal) = _
+  rw [sameDisjunction_weakenReal]
+  rfl
+
+private theorem apparentConjunction_substitute
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature real source order)
+    (sigma : Substitution signature real source target) :
+    (apparentConjunction negation disjunction left right).substitute sigma =
+      apparentConjunction negation disjunction
+        (left.substitute sigma) (right.substitute sigma) := by
+  unfold apparentConjunction
+  change Formula.neg negation
+    ((sameDisjunction disjunction (.neg negation left)
+      (.neg negation right)).substitute sigma) = _
+  rw [sameDisjunction_substitute]
+  rfl
+
+namespace Star10For22
+
+/-- The exact full-scope reading of ✱10·3 used at ✱22·44. -/
+def star_10_3_reading
+    (universal : signature.Universal .individual order)
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (phi psi chi : Formula signature real [.individual] order) :
+    ClaimReading signature real where
+  printed := "✱10·3.  ⊢ : .(x).φx⊃ψx : (x).ψx⊃χx : ⊃ .(x).φx⊃χx"
+  parsed := .assertion (.always universal
+    (implication negation disjunction
+      (apparentConjunction negation disjunction
+        (implication negation disjunction phi psi)
+        (implication negation disjunction psi chi))
+      (implication negation disjunction phi chi)))
+
+/-- Ramified realization of ✱10·3 in the full-scope normal form used by PM.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_10_3
+    (universal : signature.Universal .individual order)
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (phi psi chi : Formula signature real [.individual] order) :
+    Derivation (star_10_3_reading universal negation disjunction
+      phi psi chi).parsed := by
+  let body := implication negation disjunction
+    (apparentConjunction negation disjunction
+      (implication negation disjunction phi psi)
+      (implication negation disjunction psi chi))
+    (implication negation disjunction phi chi)
+  let value : Term signature (.individual :: real) [] .individual :=
+    .real (.zero : Var (.individual :: real) .individual)
+  have line1 : Derivation (.assertion
+      (body.weakenReal.instantiate value)) := by
+    unfold body
+    rw [implication_weakenReal, apparentConjunction_weakenReal,
+      Formula.instantiate, implication_substitute,
+      apparentConjunction_substitute]
+    unfold apparentConjunction
+    rw [implication_weakenReal, implication_substitute]
+    rw [implication_weakenReal, implication_substitute]
+    rw [implication_weakenReal, implication_substitute]
+    exact star_3_33 negation disjunction
+      (phi.weakenReal.substitute (instantiateSubstitution value))
+      (psi.weakenReal.substitute (instantiateSubstitution value))
+      (chi.weakenReal.substitute (instantiateSubstitution value))
+  have line2 := Derivation.star_10_11 universal body line1
+  exact line2
+
+end Star10For22
+
+/-- Audited full-scope reading of ✱22·44. -/
+def star_22_44_reading
+    (universal : signature.Universal .individual order)
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (alpha beta gamma : Term signature real [] (classSort order 0)) :
+    RamifiedReading signature real where
+  printed := PM.pmPrinted "⊢ : α ⊂ β . β ⊂ γ .⊃ . α ⊂ γ"
+  parsed := .assertion (.always universal
+    (implication negation disjunction
+      (apparentConjunction negation disjunction
+        (implication negation disjunction
+          (star_20_02 alpha.weaken (.apparent .zero))
+          (star_20_02 beta.weaken (.apparent .zero)))
+        (implication negation disjunction
+          (star_20_02 beta.weaken (.apparent .zero))
+          (star_20_02 gamma.weaken (.apparent .zero))))
+      (implication negation disjunction
+        (star_20_02 alpha.weaken (.apparent .zero))
+        (star_20_02 gamma.weaken (.apparent .zero)))))
+  scopeReading := "The three class variables have the scope of the displayed implication."
+
 /-- Binding an individual does not raise an already positive matrix order. -/
 private theorem bindOrder_succ_individual (order : Nat) :
     bindOrder (Nat.succ order) .individual = Nat.succ order := by
@@ -188,14 +315,15 @@ def star_22_441_reading
     (disjunction : signature.Disjunction (Nat.succ order))
     (alpha beta : Term signature real [] (classSort (Nat.succ order) 0))
     (x : Term signature real [] .individual) :
-    ClaimReading signature real where
-  printed := "⊢ : α ⊂ β . x ε α .⊃ . x ε β"
+    RamifiedReading signature real where
+  printed := PM.pmPrinted "⊢ : α ⊂ β . x ε α .⊃ . x ε β"
   parsed := .assertion
     (implication negation disjunction
       (conjunction negation disjunction
         (star_22_01_successor universal negation disjunction alpha beta)
         (star_20_02 alpha x))
       (star_20_02 beta x))
+  scopeReading := "The inclusion and antecedent membership form the antecedent of the final implication."
 
 /-- Transport a derivation along the computed equality of two ramified
 formula orders.  This is only dependent transport in Lean's metalanguage. -/
@@ -205,6 +333,14 @@ private theorem castAssertionOrder
     Derivation (.assertion formula) →
       Derivation (.assertion
         (Eq.mp (congrArg (Formula signature real []) equality) formula)) := by
+  cases equality
+  exact fun derivation => derivation
+
+/-- Transport only along literal equality of object formulae. -/
+private theorem castAssertionFormula
+    {left right : Formula signature real [] order}
+    (equality : left = right) :
+    Derivation (.assertion right) → Derivation (.assertion left) := by
   cases equality
   exact fun derivation => derivation
 
@@ -218,25 +354,129 @@ private theorem star_20_02_weaken_instantiate
         (instantiateSubstitution x) = star_20_02 predicate x := by
   cases predicate <;> rfl
 
+/-- The pointwise implication matrix obtained by unfolding one inclusion. -/
+private def star_22_441_body
+    (negation : signature.Negation resultOrder)
+    (disjunction : signature.Disjunction resultOrder)
+    (alpha beta : Term signature real [] (classSort resultOrder 0)) :
+    Formula signature real [.individual] resultOrder :=
+  implication negation disjunction
+    (star_20_02 alpha.weaken (.apparent .zero))
+    (star_20_02 beta.weaken (.apparent .zero))
+
+private theorem star_22_441_body_instantiate
+    (negation : signature.Negation resultOrder)
+    (disjunction : signature.Disjunction resultOrder)
+    (alpha beta : Term signature real [] (classSort resultOrder 0))
+    (x : Term signature real [] .individual) :
+    (star_22_441_body negation disjunction alpha beta).instantiate x =
+      implication negation disjunction
+        (star_20_02 alpha x) (star_20_02 beta x) := by
+  unfold star_22_441_body
+  rw [Formula.instantiate, implication_substitute]
+  rw [star_20_02_weaken_instantiate alpha x,
+    star_20_02_weaken_instantiate beta x]
+
+/-- Normalize the order casts forced by instantiating ✱22·01. -/
+private theorem normalizeInclusionInstantiation
+    {order : Nat}
+    (universal : signature.Universal .individual order.succ)
+    (negation : signature.Negation order.succ)
+    (disjunction : signature.Disjunction order.succ)
+    (alpha beta : Term signature real [] (classSort order.succ 0))
+    (x : Term signature real [] .individual)
+    (bindEq : bindOrder order.succ .individual = order.succ)
+    (resultEq : max (bindOrder order.succ .individual) order.succ = order.succ)
+    (line : Derivation (.assertion
+      (Eq.mp (congrArg (Formula signature real []) resultEq)
+        (mixedImplication
+          (Eq.mp (congrArg signature.Negation bindEq.symm) negation)
+          (Eq.mp (congrArg signature.Disjunction resultEq.symm) disjunction)
+          (.always universal (star_22_441_body negation disjunction alpha beta))
+          ((star_22_441_body negation disjunction alpha beta).instantiate x))))) :
+    ⊢ᵣ implication negation disjunction
+      (star_22_01_successor universal negation disjunction alpha beta)
+      ((star_22_441_body negation disjunction alpha beta).instantiate x) := by
+  exact castAssertionFormula
+    (by
+      unfold star_22_01_successor star_22_01 star_22_441_body
+      exact (mixedImplication_normalizeSameOrder bindEq rfl negation
+        disjunction (.always universal
+          (implication negation disjunction
+            (star_20_02 alpha.weaken (.apparent .zero))
+            (star_20_02 beta.weaken (.apparent .zero))))
+        ((implication negation disjunction
+          (star_20_02 alpha.weaken (.apparent .zero))
+          (star_20_02 beta.weaken (.apparent .zero))).instantiate x)).symm)
+    line
+
+/-- The propositional `Imp` presentation used after ✱10·1. -/
+private theorem implicationPresentation
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q r : Formula signature real [] order)
+    (line1 : ⊢ᵣ implication negation disjunction p
+      (implication negation disjunction q r)) :
+    ⊢ᵣ implication negation disjunction
+      (conjunction negation disjunction p q) r := by
+  have line2 := star_3_31 negation disjunction p q r
+  have line3 := Derivation.star_9_12_same negation disjunction line1 line2
+  exact line3
+
+/-- ✱22·44, exactly the printed `[✱10·3]` instance.
+`demonstration_provenance: follows-printed`. -/
+theorem star_22_44
+    (universal : signature.Universal .individual order)
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (alpha beta gamma : Term signature real [] (classSort order 0)) :
+    Derivation (.assertion (.always universal
+      (implication negation disjunction
+        (apparentConjunction negation disjunction
+          (implication negation disjunction
+            (star_20_02 alpha.weaken (.apparent .zero))
+            (star_20_02 beta.weaken (.apparent .zero)))
+          (implication negation disjunction
+            (star_20_02 beta.weaken (.apparent .zero))
+            (star_20_02 gamma.weaken (.apparent .zero))))
+        (implication negation disjunction
+          (star_20_02 alpha.weaken (.apparent .zero))
+          (star_20_02 gamma.weaken (.apparent .zero)))))) := by
+  have line1 : Derivation (.assertion (.always universal
+      (implication negation disjunction
+        (apparentConjunction negation disjunction
+          (implication negation disjunction
+            (star_20_02 alpha.weaken (.apparent .zero))
+            (star_20_02 beta.weaken (.apparent .zero)))
+          (implication negation disjunction
+            (star_20_02 beta.weaken (.apparent .zero))
+            (star_20_02 gamma.weaken (.apparent .zero))))
+        (implication negation disjunction
+          (star_20_02 alpha.weaken (.apparent .zero))
+          (star_20_02 gamma.weaken (.apparent .zero)))))) :=
+    Star10For22.star_10_3 universal negation disjunction _ _ _
+  exact line1
+
 /-- ✱22·441, following PM's printed `[✱10·1.Imp]` route.
 `demonstration_provenance: follows-printed`. -/
 theorem star_22_441
-    (universal : signature.Universal .individual (Nat.succ order))
-    (negation : signature.Negation (Nat.succ order))
-    (disjunction : signature.Disjunction (Nat.succ order))
-    (alpha beta : Term signature real [] (classSort (Nat.succ order) 0))
+    {order : Nat}
+    (universal : signature.Universal .individual order.succ)
+    (negation : signature.Negation order.succ)
+    (disjunction : signature.Disjunction order.succ)
+    (alpha beta : Term signature real [] (classSort order.succ 0))
     (x : Term signature real [] .individual) :
-    Derivation (star_22_441_reading universal negation disjunction
-      alpha beta x).parsed := by
-  let body : Formula signature real [.individual] (Nat.succ order) :=
-    implication negation disjunction
-      (star_20_02 alpha.weaken (.apparent .zero))
-      (star_20_02 beta.weaken (.apparent .zero))
-  have bindEq : bindOrder (Nat.succ order) .individual = Nat.succ order := by
+    Derivation (.assertion
+      (implication negation disjunction
+        (conjunction negation disjunction
+          (star_22_01_successor universal negation disjunction alpha beta)
+          (star_20_02 alpha x))
+        (star_20_02 beta x))) := by
+  let body := star_22_441_body negation disjunction alpha beta
+  have bindEq : bindOrder order.succ .individual = order.succ := by
     exact bindOrder_succ_individual order
   have resultEq :
-      max (bindOrder (Nat.succ order) .individual) (Nat.succ order) =
-        Nat.succ order :=
+      max (bindOrder order.succ .individual) order.succ = order.succ :=
     natMaxCongr bindEq rfl
   have line1Raw := star_10_1 universal
     (Eq.mp (congrArg signature.Negation bindEq.symm) negation)
@@ -245,22 +485,22 @@ theorem star_22_441
   have line1 : ⊢ᵣ implication negation disjunction
       (star_22_01_successor universal negation disjunction alpha beta)
       (body.instantiate x) :=
-    Derivation.castAssertion
-      (mixedImplication_normalizeSameOrder bindEq rfl negation disjunction
-        (.always universal body) (body.instantiate x)).symm
-      line1Cast
-  rw [Formula.instantiate, implication_substitute] at line1
-  rw [star_20_02_weaken_instantiate alpha x,
-    star_20_02_weaken_instantiate beta x] at line1
-  have line2 := star_3_31 negation disjunction
-    (star_22_01_successor universal negation disjunction alpha beta)
-    (star_20_02 alpha x) (star_20_02 beta x)
-  have line3 := Derivation.star_9_12_same negation disjunction line1 line2
-  exact line3
+    normalizeInclusionInstantiation universal negation disjunction alpha beta x
+      bindEq resultEq line1Cast
+  rw [star_22_441_body_instantiate negation disjunction alpha beta x] at line1
+  have line2 : Derivation (.assertion
+      (implication negation disjunction
+        (conjunction negation disjunction
+          (star_22_01_successor universal negation disjunction alpha beta)
+          (star_20_02 alpha x))
+        (star_20_02 beta x))) :=
+    implicationPresentation negation disjunction _ _ _ line1
+  exact line2
 
 end PM.RamifiedSyntax
 
 #print axioms PM.RamifiedSyntax.star_22_441
+#print axioms PM.RamifiedSyntax.star_22_44
 #print axioms PM.RamifiedSyntax.star_22_42
 #print axioms PM.RamifiedSyntax.star_22_1
 #print axioms PM.RamifiedSyntax.star_22_01_unfold

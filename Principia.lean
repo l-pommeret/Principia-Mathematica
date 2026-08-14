@@ -3,6 +3,7 @@ import Principia.Syntax.Ramified
 import Principia.Deduction.Star11Derived
 import Principia.Deduction.Star10Derived
 import Principia.Deduction.Star20Derived
+import Principia.Deduction.Star22Derived
 import Principia.Syntax.Apparent
 import Principia.Syntax.Printed
 import Principia.Syntax.Description

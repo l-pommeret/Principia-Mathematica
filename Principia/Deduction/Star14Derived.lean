@@ -82,8 +82,269 @@ theorem star_14_11
     (star_14_02 existential uniquenessMatrix)
   exact line1
 
+/-!
+The following contextual envelopes are object-language formulae in
+`Derivation`, but their proofs remain explicit named assumptions.  This keeps
+the catalogue honest while the missing ✱13 substitution chain and the
+unexported quantifier steps in the printed demonstrations are reconstructed.
+-/
+
+/-- Audited scope reading of ✱14·12. -/
+def star_14_12_reading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionExists uniqueness : Formula signature real [] order) :
+    ClaimReading signature real where
+  printed := "⊢ : E!(℩x)(φx) .⊃ : φx . φy .⊃ₓ,ᵧ. x = y"
+  parsed := .assertion
+    (implication negation disjunction descriptionExists uniqueness)
+
+/-- ✱14·12 remains explicitly asserted.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_14_12
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionExists uniqueness : Formula signature real [] order)
+    (star_14_12_hypothesis : Derivation
+      (star_14_12_reading negation disjunction
+        descriptionExists uniqueness).parsed) :
+    Derivation (star_14_12_reading negation disjunction
+      descriptionExists uniqueness).parsed := by
+  have line1 := star_14_12_hypothesis
+  exact line1
+
+/-- Audited scope reading of ✱14·13. -/
+def star_14_13_reading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (equalsDescription descriptionEquals : Formula signature real [] order) :
+    ClaimReading signature real where
+  printed := "⊢ : a = (℩x)(φx) .≡ . (℩x)(φx) = a"
+  parsed := .assertion (star_4_01 negation disjunction
+    equalsDescription descriptionEquals)
+
+/-- ✱14·13 remains explicitly asserted.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_14_13
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (equalsDescription descriptionEquals : Formula signature real [] order)
+    (star_14_13_hypothesis : Derivation
+      (star_14_13_reading negation disjunction
+        equalsDescription descriptionEquals).parsed) :
+    Derivation (star_14_13_reading negation disjunction
+      equalsDescription descriptionEquals).parsed := by
+  have line1 := star_14_13_hypothesis
+  exact line1
+
+/-- Audited scope reading of ✱14·14. -/
+def star_14_14_reading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (identityAB identityBDescription identityADescription :
+      Formula signature real [] order) : ClaimReading signature real where
+  printed := "⊢ : a = b . b = (℩x)(φx) .⊃ . a = (℩x)(φx)"
+  parsed := .assertion (implication negation disjunction
+    (conjunction negation disjunction identityAB identityBDescription)
+    identityADescription)
+
+/-- ✱14·14 remains explicitly asserted pending ✱13·13.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_14_14
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (identityAB identityBDescription identityADescription :
+      Formula signature real [] order)
+    (star_14_14_hypothesis : Derivation
+      (star_14_14_reading negation disjunction identityAB
+        identityBDescription identityADescription).parsed) :
+    Derivation (star_14_14_reading negation disjunction identityAB
+      identityBDescription identityADescription).parsed := by
+  have line1 := star_14_14_hypothesis
+  exact line1
+
+/-- Audited scope reading of ✱14·15. -/
+def star_14_15_reading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionIdentity psiDescription psiB : Formula signature real [] order) :
+    ClaimReading signature real where
+  printed := "⊢ : (℩x)(φx) = b .⊃ : ψ{(℩x)(φx)} .≡ . ψb"
+  parsed := .assertion (implication negation disjunction descriptionIdentity
+    (star_4_01 negation disjunction psiDescription psiB))
+
+/-- ✱14·15 remains explicitly asserted pending ✱13·192.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_14_15
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionIdentity psiDescription psiB : Formula signature real [] order)
+    (star_14_15_hypothesis : Derivation
+      (star_14_15_reading negation disjunction descriptionIdentity
+        psiDescription psiB).parsed) :
+    Derivation (star_14_15_reading negation disjunction descriptionIdentity
+      psiDescription psiB).parsed := by
+  have line1 := star_14_15_hypothesis
+  exact line1
+
+/-- Audited scope reading of ✱14·16. -/
+def star_14_16_reading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionIdentity chiLeft chiRight : Formula signature real [] order) :
+    ClaimReading signature real where
+  printed := "⊢ : (℩x)(φx) = (℩x)(ψx) .⊃ : χ{(℩x)(φx)} .≡ . χ{(℩x)(ψx)}"
+  parsed := .assertion (implication negation disjunction descriptionIdentity
+    (star_4_01 negation disjunction chiLeft chiRight))
+
+/-- ✱14·16 remains explicitly asserted.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_14_16
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionIdentity chiLeft chiRight : Formula signature real [] order)
+    (star_14_16_hypothesis : Derivation
+      (star_14_16_reading negation disjunction descriptionIdentity
+        chiLeft chiRight).parsed) :
+    Derivation (star_14_16_reading negation disjunction descriptionIdentity
+      chiLeft chiRight).parsed := by
+  have line1 := star_14_16_hypothesis
+  exact line1
+
+/-- Audited scope reading of ✱14·17. -/
+def star_14_17_reading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionIdentity formallyEquivalent : Formula signature real [] order) :
+    ClaimReading signature real where
+  printed := "⊢ : (℩x)(φx) = b .≡ : ψ!(℩x)(φx) .≡_ψ . ψ!b"
+  parsed := .assertion (star_4_01 negation disjunction
+    descriptionIdentity formallyEquivalent)
+
+/-- ✱14·17 remains explicitly asserted.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_14_17
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionIdentity formallyEquivalent : Formula signature real [] order)
+    (star_14_17_hypothesis : Derivation
+      (star_14_17_reading negation disjunction
+        descriptionIdentity formallyEquivalent).parsed) :
+    Derivation (star_14_17_reading negation disjunction
+      descriptionIdentity formallyEquivalent).parsed := by
+  have line1 := star_14_17_hypothesis
+  exact line1
+
+/-- Audited scope reading of ✱14·18. -/
+def star_14_18_reading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionExists universalPsi psiDescription :
+      Formula signature real [] order) : ClaimReading signature real where
+  printed := "⊢ :: E!(℩x)(φx) .⊃ : (x) . ψx .⊃ . ψ(℩x)(φx)"
+  parsed := .assertion (implication negation disjunction descriptionExists
+    (implication negation disjunction universalPsi psiDescription))
+
+/-- ✱14·18 remains explicitly asserted; in particular no hidden ✱10·35
+bridge is introduced. `demonstration_provenance: editorial-reconstruction`. -/
+theorem star_14_18
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionExists universalPsi psiDescription :
+      Formula signature real [] order)
+    (star_14_18_hypothesis : Derivation
+      (star_14_18_reading negation disjunction descriptionExists
+        universalPsi psiDescription).parsed) :
+    Derivation (star_14_18_reading negation disjunction descriptionExists
+      universalPsi psiDescription).parsed := by
+  have line1 := star_14_18_hypothesis
+  exact line1
+
+/-- Audited scope reading of ✱14·21. -/
+def star_14_21_reading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (psiDescription descriptionExists : Formula signature real [] order) :
+    ClaimReading signature real where
+  printed := "⊢ : ψ(℩x)(φx) .⊃ . E!(℩x)(φx)"
+  parsed := .assertion
+    (implication negation disjunction psiDescription descriptionExists)
+
+/-- ✱14·21 remains explicitly asserted.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_14_21
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (psiDescription descriptionExists : Formula signature real [] order)
+    (star_14_21_hypothesis : Derivation
+      (star_14_21_reading negation disjunction
+        psiDescription descriptionExists).parsed) :
+    Derivation (star_14_21_reading negation disjunction
+      psiDescription descriptionExists).parsed := by
+  have line1 := star_14_21_hypothesis
+  exact line1
+
+/-- Audited scope reading of ✱14·22. -/
+def star_14_22_reading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionExists phiDescription : Formula signature real [] order) :
+    ClaimReading signature real where
+  printed := "⊢ : E!(℩x)(φx) .≡ . φ(℩x)(φx)"
+  parsed := .assertion (star_4_01 negation disjunction
+    descriptionExists phiDescription)
+
+/-- ✱14·22 remains explicitly asserted.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_14_22
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionExists phiDescription : Formula signature real [] order)
+    (star_14_22_hypothesis : Derivation
+      (star_14_22_reading negation disjunction
+        descriptionExists phiDescription).parsed) :
+    Derivation (star_14_22_reading negation disjunction
+      descriptionExists phiDescription).parsed := by
+  have line1 := star_14_22_hypothesis
+  exact line1
+
+/-- Audited scope reading of ✱14·31. -/
+def star_14_31_reading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionExists scopedDisjunction disjunctionScoped :
+      Formula signature real [] order) : ClaimReading signature real where
+  printed := "⊢ : E!(℩x)(φx) .⊃ : [(℩x)(φx)] . p ∨ χ(℩x)(φx) .≡ : p ∨ [(℩x)(φx)] . χ(℩x)(φx)"
+  parsed := .assertion (implication negation disjunction descriptionExists
+    (star_4_01 negation disjunction scopedDisjunction disjunctionScoped))
+
+/-- ✱14·31 remains explicitly asserted; this declaration supplies only the
+object target expected by ✱30. `demonstration_provenance: editorial-reconstruction`. -/
+theorem star_14_31
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (descriptionExists scopedDisjunction disjunctionScoped :
+      Formula signature real [] order)
+    (star_14_31_hypothesis : Derivation
+      (star_14_31_reading negation disjunction descriptionExists
+        scopedDisjunction disjunctionScoped).parsed) :
+    Derivation (star_14_31_reading negation disjunction descriptionExists
+      scopedDisjunction disjunctionScoped).parsed := by
+  have line1 := star_14_31_hypothesis
+  exact line1
+
 end PM.RamifiedSyntax
 
 #print axioms PM.RamifiedSyntax.star_14_11
 #print axioms PM.RamifiedSyntax.star_14_1
 #print axioms PM.RamifiedSyntax.star_14_101
+#print axioms PM.RamifiedSyntax.star_14_12
+#print axioms PM.RamifiedSyntax.star_14_13
+#print axioms PM.RamifiedSyntax.star_14_14
+#print axioms PM.RamifiedSyntax.star_14_15
+#print axioms PM.RamifiedSyntax.star_14_16
+#print axioms PM.RamifiedSyntax.star_14_17
+#print axioms PM.RamifiedSyntax.star_14_18
+#print axioms PM.RamifiedSyntax.star_14_21
+#print axioms PM.RamifiedSyntax.star_14_22
+#print axioms PM.RamifiedSyntax.star_14_31
