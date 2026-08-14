@@ -1437,12 +1437,13 @@ inductive Derivation {signature : Signature} :
       Derivation (.assertion (mixedImplication negation disjunction
         (sameDisjunction matrixDisjunction (body.instantiate x) (body.instantiate y))
         (.sometimes existential body)))
-  | star_9_12 {order : Nat}
-      {p q : Formula signature real [] order}
-      (negation : signature.Negation order)
-      (disjunction : signature.Disjunction order) :
+  | star_9_12 {leftOrder rightOrder : Nat}
+      {p : Formula signature real [] leftOrder}
+      {q : Formula signature real [] rightOrder}
+      (negation : signature.Negation leftOrder)
+      (disjunction : signature.Disjunction (max leftOrder rightOrder)) :
       Derivation (.assertion p) →
-      Derivation (.assertion (implication negation disjunction p q)) →
+      Derivation (.assertion (mixedImplication negation disjunction p q)) →
       Derivation (.assertion q)
   | star_9_13 {argument : RSort} {matrixOrder : Nat}
       (universal : signature.Universal argument matrixOrder)
@@ -1543,6 +1544,32 @@ theorem Derivation.castAssertion
   fun derivation => Eq.rec (motive := fun formula _ =>
       @Derivation signature real (@Claim.assertion signature real order formula))
     derivation equality.symm
+
+private theorem Derivation.uncastAssertionOrder
+    (equality : sourceOrder = targetOrder)
+    (formula : Formula signature real [] sourceOrder) :
+    Derivation (.assertion
+      (Eq.mp (congrArg (Formula signature real []) equality) formula)) →
+      Derivation (.assertion formula) := by
+  cases equality
+  exact fun derivation => derivation
+
+/-- The same-order instance retained for existing printed uses of ✱9·12. -/
+theorem Derivation.star_9_12_same
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    {p q : Formula signature real [] order}
+    (line1 : Derivation (.assertion p))
+    (line2 : Derivation (.assertion
+      (implication negation disjunction p q))) :
+    Derivation (.assertion q) := by
+  apply Derivation.star_9_12 negation
+    (Eq.mp (congrArg signature.Disjunction (natMaxSelf order).symm) disjunction)
+    line1
+  exact Derivation.uncastAssertionOrder (natMaxSelf order)
+    (mixedImplication negation
+      (Eq.mp (congrArg signature.Disjunction (natMaxSelf order).symm) disjunction)
+      p q) line2
 
 /-! ### Instantiating a formula that has no apparent variable
 

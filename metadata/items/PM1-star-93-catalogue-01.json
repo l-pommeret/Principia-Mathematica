@@ -25,7 +25,7 @@
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_01",
       "formal_scope": "exact typed definition of the boundary class as domain minus converse-domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
@@ -35,7 +35,14 @@
       "semantic_audit_evidence": "reviews/Star93-catalogue-review.md",
       "formalization_level": "pm-derivation-v1",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     },
     {
       "id": "PM1:✱93·02",
@@ -47,7 +54,7 @@
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_02",
       "formal_scope": "exact typed definition of the minimum members of a class under P, using PM's output-first relational-image orientation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
@@ -57,7 +64,14 @@
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "semantic_audit_evidence": "reviews/Star93-catalogue-review.md",
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     },
     {
       "id": "PM1:✱93·021",
@@ -82,9 +96,10 @@
         "tier": "lean-typechecked",
         "failed_criteria": [
           "T6",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       }
     },
     {
@@ -97,7 +112,7 @@
       "declaration": "PM.Architecture.Star93OpeningKernel.star_93_03",
       "formal_scope": "exact typed definition of the generated family as minima of members of the supplied Potid-family interpretation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
@@ -107,7 +122,14 @@
       "semantic_audit_evidence": "reviews/Star93-catalogue-review.md",
       "formalization_level": "pm-derivation-v1",
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     },
     {
       "id": "PM1:✱93·1",
@@ -131,9 +153,10 @@
         "failed_criteria": [
           "T3",
           "T4",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"

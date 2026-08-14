@@ -1,10 +1,29 @@
 {
-  "kind": "pm-isolated-context-bundle",
-  "profile": "ordered-first-order-pm1",
+  "context_closure": [
+    "PM1:✱2·05",
+    "PM1:✱2·07",
+    "PM1:✱2·08",
+    "PM1:✱2·1"
+  ],
   "current_item": "PM1:✱9·3–·33",
+  "integration_blocked": true,
+  "interface_dependencies": [
+    "PM1:✱2·05",
+    "PM1:✱2·07",
+    "PM1:✱2·08",
+    "PM1:✱2·1"
+  ],
+  "kind": "pm-isolated-context-bundle",
   "manifest_sha256": "2de718adfa68be4bcfd9bfeb679273835d33801f7fe6ba6ed033aced2fbed111",
-  "source_sha256": "51fb223ed9f03e796e29cef64852e96ff03c5405c0a48f148e6f47cc9d7cf8ad",
-  "source_bytes": 186066,
+  "policy": {
+    "canonical_integration_forbidden": true,
+    "grants_no_additional_proof_permission": true,
+    "interface_gated": true,
+    "requires_one_to_one_kernel_remap": true,
+    "requires_remote_kernel_check": true,
+    "standalone_context_only": true
+  },
+  "profile": "ordered-first-order-pm1",
   "proof_permissions": [
     "PM1:✱1·2",
     "PM1:✱1·3",
@@ -21,257 +40,238 @@
     "PM1:✱9·21",
     "PM1:✱9·25"
   ],
-  "context_closure": [
-    "PM1:✱2·05",
-    "PM1:✱2·07",
-    "PM1:✱2·08",
-    "PM1:✱2·1"
-  ],
-  "sources": [
-    {
-      "kind": "foundation",
-      "path": "Principia/Syntax/Formula.lean",
-      "source_sha256": "c21ac8e6599ffcbd05870819c284e8d48c2f20c09728a95a1ae85a02915d7217",
-      "slice_sha256": "753e6e7bccce1c9a73b50f79611685ed31ca90529ea0f4c767e69177c98f3955",
-      "bytes": 1191
-    },
-    {
-      "kind": "foundation",
-      "path": "Principia/Syntax/Apparent.lean",
-      "source_sha256": "3b8f4db005934b904a64a4793c9f399e4d400129c78d2b55a9e82027803d53e3",
-      "slice_sha256": "d3dfacbd52addc28d64c198c6d746ac996108e7859a7ada713d0c6ca8597b283",
-      "bytes": 38862
-    },
-    {
-      "kind": "foundation",
-      "path": "Principia/Syntax/Ordered.lean",
-      "source_sha256": "1cabb408097a5447898ea0252b493ea631cf44303de855d1172eb0bb49498bc9",
-      "slice_sha256": "287db63983fef1cc0c19e9f0136b7c8409998785b334f426e431b32234d37d18",
-      "bytes": 4147
-    },
-    {
-      "kind": "foundation",
-      "path": "Principia/Deduction/System.lean",
-      "source_sha256": "65272bf79fc3aa50fab253c689cee8e2b0517255080a0992dc2bbea8b72de06d",
-      "slice_sha256": "6c1a587e2cde16b21120250ab9a6ce451a25d2d65291df08f4f6812facc1d08c",
-      "bytes": 2846
-    },
-    {
-      "kind": "foundation",
-      "path": "Principia/Deduction/Ordered.lean",
-      "source_sha256": "3b85384341477a79ef1300f30071294494bc7d0b303ef58fd1b59cf7ab64a156",
-      "slice_sha256": "d46ad39e3432753cdb53d7ab77e43da441eca796ff109b56c0a8471a53058332",
-      "bytes": 135
-    },
-    {
-      "kind": "opaque-interface-stub",
-      "id": "PM1:✱2·05",
-      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_05",
-      "source_sha256": "7c5dab2fef98c1599cdd87595805f0b5f2ba0189b59d35e68d04a0a5185cb0c9",
-      "slice_sha256": "e87ed673f8c5677e1960ce8a541d9b2f583f0e23c1a3bc3f155d2c1162ab669f",
-      "bytes": 135,
-      "signature_sha256": "47d078eb57da1c4d34e11bbc921ed010defb5d6cacaf29169da1eca7b84e7621",
-      "signature": "theorem star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)))\n",
-      "remap_required": true
-    },
-    {
-      "kind": "opaque-interface-stub",
-      "id": "PM1:✱2·07",
-      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_07",
-      "source_sha256": "7c5dab2fef98c1599cdd87595805f0b5f2ba0189b59d35e68d04a0a5185cb0c9",
-      "slice_sha256": "b3cfcbb1ad8ef7d66738d46f1cba20562492c857a7b5d201939a9438a76af912",
-      "bytes": 98,
-      "signature_sha256": "449d496350a24e203c417fa809c4b6fabb901f766141a3306141c99e92884428",
-      "signature": "theorem star_2_07 {Γ : PM.RealContext} (p : PM.Elementary Γ) :\n    ⊢ₚ (p ⊃ₚ (p ∨ₚ p))\n",
-      "remap_required": true
-    },
-    {
-      "kind": "opaque-interface-stub",
-      "id": "PM1:✱2·08",
-      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_08",
-      "source_sha256": "7c5dab2fef98c1599cdd87595805f0b5f2ba0189b59d35e68d04a0a5185cb0c9",
-      "slice_sha256": "f537a4551f847e6ae26a454cc653923567fe4f5bd090a64307fee4dd1b5ec5c7",
-      "bytes": 87,
-      "signature_sha256": "0b0a24ff0e764d9b9bc9c2a71f2f0a0af31c364a6da9af2e8e63d64e64294287",
-      "signature": "theorem star_2_08 {Γ : PM.RealContext} (p : PM.Elementary Γ) :\n    ⊢ₚ (p ⊃ₚ p)\n",
-      "remap_required": true
-    },
-    {
-      "kind": "opaque-interface-stub",
-      "id": "PM1:✱2·1",
-      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_1",
-      "source_sha256": "7c5dab2fef98c1599cdd87595805f0b5f2ba0189b59d35e68d04a0a5185cb0c9",
-      "slice_sha256": "b21593eb0f0ef7731573b19b288010b42683501ffc9e1807a00a964b4145a39f",
-      "bytes": 93,
-      "signature_sha256": "851bac0169a4fee68b4b267200fbfaceb5e74fa746da8fd6d5cbc9de1850fdf0",
-      "signature": "theorem star_2_1 {Γ : PM.RealContext} (p : PM.Elementary Γ) :\n    ⊢ₚ (∼ₚ p ∨ₚ p)\n",
-      "remap_required": true
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/FirstOrderPrerequisites.lean",
-      "source_sha256": "23cc4c84fd3e49809bd10774d0ce13c3bea2e4a4b08e67bff2974bc10306e906",
-      "slice_sha256": "2b82d35db7d568c0108f28452dbde7e4fa8ffe4e10ea5e4d1879f71e84be4607",
-      "bytes": 17418,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Syntax/CanonicalOrderedFormula.lean",
-      "source_sha256": "c9ca8777f9ae5bac8cfe80ae3ffc6b379e38b88af5cb1c5dfbc71d522eb9f34b",
-      "slice_sha256": "aac421f9a6fc3fcfff5de9317429d97b0bf39438cc018ce378cc7b8aa83dfbaa",
-      "bytes": 23837,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/CanonicalOrderedAdapters.lean",
-      "source_sha256": "a44e0a753bc50d92da133e9679efa4965b29b289a0d42756b51117691f2c6926",
-      "slice_sha256": "ae9d231f3687ff1096b62e10731fb806c5ec7970bfd6a8ac30fe85b3d5f3d316",
-      "bytes": 17007,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/CanonicalNormalization.lean",
-      "source_sha256": "f0df7140e7083d110ca11da75a6606921a3da2f7d3ad478e3bf7ddbc73624fd1",
-      "slice_sha256": "0e5c1056aae05ec8d2e3676b6f12b1d1a4000e05a0ae694b116a5dc7faf9981d",
-      "bytes": 16681,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/CanonicalOrderedJudgement.lean",
-      "source_sha256": "396e3b00b0460f4c0fcd553beed86b1690d7d1b3493f3c8f8bfc70bbdaa0da89",
-      "slice_sha256": "5eff9a7287749f009e0b5bdc91d0b73e29561637e98152972477e56eee46e7a7",
-      "bytes": 6833,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/Star921MatrixKernel.lean",
-      "source_sha256": "9bab5647a8df2fd5fb31ce610b3cd81fe00b85da1b8645290fa4100c2286db21",
-      "slice_sha256": "6c425f4e3337978544d139956777e9fbc22acb5e33be376633c424bcc72f5b64",
-      "bytes": 2704,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/FirstOrderQ259.lean",
-      "source_sha256": "b97f8023ea87cd359be6b1a34903c58c5762421f30dd84fd01b03cceb5eedfc6",
-      "slice_sha256": "9901702b8c726ba2068cc400f52976ad2747be09a0de53fda45d56628240e62a",
-      "bytes": 996,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/Star931Kernel.lean",
-      "source_sha256": "93a060d1b574a472a51faf7f6b6301b5812d6a496fc67ab34412d8147fb70ccc",
-      "slice_sha256": "0a2f385ddd6e21342f512b780d43f734ffaa77ded923a87a1ddad781ed5688a6",
-      "bytes": 16631,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/Star922Kernel.lean",
-      "source_sha256": "dfe1673ec0001b1184704846d62237b61371e17dd5ecba213eedf6be24babe09",
-      "slice_sha256": "725807b23d90504366c0488891e1c8364829186ecf049894e04b1cf975afa215",
-      "bytes": 15488,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/Star92Kernel.lean",
-      "source_sha256": "0c2fae126e5018b27b609edef0d414393f194e06cf17e8937ca664b1ce3fe81c",
-      "slice_sha256": "f46a53b9c09eea29539c94e4b96d2a19cc9bb744cd6e2c5a1d2f6eea1befcbe1",
-      "bytes": 2283,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/Star935Kernel.lean",
-      "source_sha256": "818c2af607aff118dbe6c6a557ddc51eb2bdaedc068d1ebf7ecb32cc3529aba5",
-      "slice_sha256": "a19076440ab08ae2e39d8c246bba3cb0146c69a7136341e07f674bfe5e424fe3",
-      "bytes": 1485,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/Star936Kernel.lean",
-      "source_sha256": "15c33a909dbf331ec2a6f8d6e5f5114a18b876bb815b2cdb0b247ecf286c80fa",
-      "slice_sha256": "918bdb398fd8f29efc3dd82c96f8e6260662d599624bd66ed8b27c396d516b3e",
-      "bytes": 2276,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/Star9361Kernel.lean",
-      "source_sha256": "eabc16619f4b0e37f6f65d950802ca1c39a6c6c0045724c5d4c5fb4b18739aa0",
-      "slice_sha256": "13871fbd90f79a5bd586723f5a3765f252777aaf1601fd9b99132f6f3fc67379",
-      "bytes": 2599,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/Star937Kernel.lean",
-      "source_sha256": "6ba132951951d7499d2e20498677e2f4e3c3cc60db466d219122efe7f428e0a3",
-      "slice_sha256": "ffd00ef25e79224c895ad4f79bd6030c02f45de8452791abc390ce49b38f2fac",
-      "bytes": 2842,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/Star9371Kernel.lean",
-      "source_sha256": "aba8403a4e61b9786566d0179753cff706b6089dfca1777f642ac3afa2c00134",
-      "slice_sha256": "f2ff7f1c1ea4e03e987da20a0b964ad66fc03c5349d02f03e09ca163a5d3e595",
-      "bytes": 2846,
-      "grants_proof_permission": false
-    },
-    {
-      "kind": "local-architecture-context",
-      "path": "Principia/Architecture/Q259ClosedRuleBook.lean",
-      "source_sha256": "92e0d80b72f720f8f7a255364e0a8145ed6fc2a2d3bc9622df34618402be6be4",
-      "slice_sha256": "8182d2e0e19814ab3818f009b630621f626eba1c856365fcb160e0cd4c74ceee",
-      "bytes": 4556,
-      "grants_proof_permission": false
-    }
-  ],
-  "policy": {
-    "standalone_context_only": true,
-    "grants_no_additional_proof_permission": true,
-    "requires_remote_kernel_check": true,
-    "interface_gated": true,
-    "canonical_integration_forbidden": true,
-    "requires_one_to_one_kernel_remap": true
-  },
-  "interface_dependencies": [
-    "PM1:✱2·05",
-    "PM1:✱2·07",
-    "PM1:✱2·08",
-    "PM1:✱2·1"
-  ],
-  "source_backfill_required": false,
-  "integration_blocked": true,
   "source_backfill_audit": {
-    "status": "complete",
     "basis": "PM-VERBATIM, item metadata, scan collation, and parsed diplomatic demonstrations",
+    "demonstration_paths": [
+      "aristotle/demonstrations/PM1-star-9-3.txt",
+      "aristotle/demonstrations/PM1-star-9-31.txt",
+      "aristotle/demonstrations/PM1-star-9-32.txt",
+      "aristotle/demonstrations/PM1-star-9-33.txt"
+    ],
     "item_ids": [
       "PM1:✱9·3",
       "PM1:✱9·31",
       "PM1:✱9·32",
       "PM1:✱9·33"
     ],
-    "demonstration_paths": [
-      "aristotle/demonstrations/PM1-star-9-3.txt",
-      "aristotle/demonstrations/PM1-star-9-31.txt",
-      "aristotle/demonstrations/PM1-star-9-32.txt",
-      "aristotle/demonstrations/PM1-star-9-33.txt"
-    ]
+    "status": "complete"
   },
+  "source_backfill_required": false,
+  "source_bytes": 186066,
+  "source_sha256": "51fb223ed9f03e796e29cef64852e96ff03c5405c0a48f148e6f47cc9d7cf8ad",
+  "sources": [
+    {
+      "bytes": 1191,
+      "kind": "foundation",
+      "path": "Principia/Syntax/Formula.lean",
+      "slice_sha256": "753e6e7bccce1c9a73b50f79611685ed31ca90529ea0f4c767e69177c98f3955",
+      "source_sha256": "c21ac8e6599ffcbd05870819c284e8d48c2f20c09728a95a1ae85a02915d7217"
+    },
+    {
+      "bytes": 38862,
+      "kind": "foundation",
+      "path": "Principia/Syntax/Apparent.lean",
+      "slice_sha256": "d3dfacbd52addc28d64c198c6d746ac996108e7859a7ada713d0c6ca8597b283",
+      "source_sha256": "3b8f4db005934b904a64a4793c9f399e4d400129c78d2b55a9e82027803d53e3"
+    },
+    {
+      "bytes": 4147,
+      "kind": "foundation",
+      "path": "Principia/Syntax/Ordered.lean",
+      "slice_sha256": "287db63983fef1cc0c19e9f0136b7c8409998785b334f426e431b32234d37d18",
+      "source_sha256": "1cabb408097a5447898ea0252b493ea631cf44303de855d1172eb0bb49498bc9"
+    },
+    {
+      "bytes": 2846,
+      "kind": "foundation",
+      "path": "Principia/Deduction/System.lean",
+      "slice_sha256": "6c1a587e2cde16b21120250ab9a6ce451a25d2d65291df08f4f6812facc1d08c",
+      "source_sha256": "65272bf79fc3aa50fab253c689cee8e2b0517255080a0992dc2bbea8b72de06d"
+    },
+    {
+      "bytes": 135,
+      "kind": "foundation",
+      "path": "Principia/Deduction/Ordered.lean",
+      "slice_sha256": "d46ad39e3432753cdb53d7ab77e43da441eca796ff109b56c0a8471a53058332",
+      "source_sha256": "3b85384341477a79ef1300f30071294494bc7d0b303ef58fd1b59cf7ab64a156"
+    },
+    {
+      "bytes": 135,
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_05",
+      "id": "PM1:✱2·05",
+      "kind": "opaque-interface-stub",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "remap_required": true,
+      "signature": "theorem star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)))\n",
+      "signature_sha256": "47d078eb57da1c4d34e11bbc921ed010defb5d6cacaf29169da1eca7b84e7621",
+      "slice_sha256": "e87ed673f8c5677e1960ce8a541d9b2f583f0e23c1a3bc3f155d2c1162ab669f",
+      "source_sha256": "7c5dab2fef98c1599cdd87595805f0b5f2ba0189b59d35e68d04a0a5185cb0c9"
+    },
+    {
+      "bytes": 98,
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_07",
+      "id": "PM1:✱2·07",
+      "kind": "opaque-interface-stub",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "remap_required": true,
+      "signature": "theorem star_2_07 {Γ : PM.RealContext} (p : PM.Elementary Γ) :\n    ⊢ₚ (p ⊃ₚ (p ∨ₚ p))\n",
+      "signature_sha256": "449d496350a24e203c417fa809c4b6fabb901f766141a3306141c99e92884428",
+      "slice_sha256": "b3cfcbb1ad8ef7d66738d46f1cba20562492c857a7b5d201939a9438a76af912",
+      "source_sha256": "7c5dab2fef98c1599cdd87595805f0b5f2ba0189b59d35e68d04a0a5185cb0c9"
+    },
+    {
+      "bytes": 87,
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_08",
+      "id": "PM1:✱2·08",
+      "kind": "opaque-interface-stub",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "remap_required": true,
+      "signature": "theorem star_2_08 {Γ : PM.RealContext} (p : PM.Elementary Γ) :\n    ⊢ₚ (p ⊃ₚ p)\n",
+      "signature_sha256": "0b0a24ff0e764d9b9bc9c2a71f2f0a0af31c364a6da9af2e8e63d64e64294287",
+      "slice_sha256": "f537a4551f847e6ae26a454cc653923567fe4f5bd090a64307fee4dd1b5ec5c7",
+      "source_sha256": "7c5dab2fef98c1599cdd87595805f0b5f2ba0189b59d35e68d04a0a5185cb0c9"
+    },
+    {
+      "bytes": 93,
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_1",
+      "id": "PM1:✱2·1",
+      "kind": "opaque-interface-stub",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "remap_required": true,
+      "signature": "theorem star_2_1 {Γ : PM.RealContext} (p : PM.Elementary Γ) :\n    ⊢ₚ (∼ₚ p ∨ₚ p)\n",
+      "signature_sha256": "851bac0169a4fee68b4b267200fbfaceb5e74fa746da8fd6d5cbc9de1850fdf0",
+      "slice_sha256": "b21593eb0f0ef7731573b19b288010b42683501ffc9e1807a00a964b4145a39f",
+      "source_sha256": "7c5dab2fef98c1599cdd87595805f0b5f2ba0189b59d35e68d04a0a5185cb0c9"
+    },
+    {
+      "bytes": 17418,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/FirstOrderPrerequisites.lean",
+      "slice_sha256": "2b82d35db7d568c0108f28452dbde7e4fa8ffe4e10ea5e4d1879f71e84be4607",
+      "source_sha256": "23cc4c84fd3e49809bd10774d0ce13c3bea2e4a4b08e67bff2974bc10306e906"
+    },
+    {
+      "bytes": 23837,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Syntax/CanonicalOrderedFormula.lean",
+      "slice_sha256": "aac421f9a6fc3fcfff5de9317429d97b0bf39438cc018ce378cc7b8aa83dfbaa",
+      "source_sha256": "c9ca8777f9ae5bac8cfe80ae3ffc6b379e38b88af5cb1c5dfbc71d522eb9f34b"
+    },
+    {
+      "bytes": 17007,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/CanonicalOrderedAdapters.lean",
+      "slice_sha256": "ae9d231f3687ff1096b62e10731fb806c5ec7970bfd6a8ac30fe85b3d5f3d316",
+      "source_sha256": "a44e0a753bc50d92da133e9679efa4965b29b289a0d42756b51117691f2c6926"
+    },
+    {
+      "bytes": 16681,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/CanonicalNormalization.lean",
+      "slice_sha256": "0e5c1056aae05ec8d2e3676b6f12b1d1a4000e05a0ae694b116a5dc7faf9981d",
+      "source_sha256": "f0df7140e7083d110ca11da75a6606921a3da2f7d3ad478e3bf7ddbc73624fd1"
+    },
+    {
+      "bytes": 6833,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/CanonicalOrderedJudgement.lean",
+      "slice_sha256": "5eff9a7287749f009e0b5bdc91d0b73e29561637e98152972477e56eee46e7a7",
+      "source_sha256": "396e3b00b0460f4c0fcd553beed86b1690d7d1b3493f3c8f8bfc70bbdaa0da89"
+    },
+    {
+      "bytes": 2704,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star921MatrixKernel.lean",
+      "slice_sha256": "6c425f4e3337978544d139956777e9fbc22acb5e33be376633c424bcc72f5b64",
+      "source_sha256": "9bab5647a8df2fd5fb31ce610b3cd81fe00b85da1b8645290fa4100c2286db21"
+    },
+    {
+      "bytes": 996,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/FirstOrderQ259.lean",
+      "slice_sha256": "9901702b8c726ba2068cc400f52976ad2747be09a0de53fda45d56628240e62a",
+      "source_sha256": "b97f8023ea87cd359be6b1a34903c58c5762421f30dd84fd01b03cceb5eedfc6"
+    },
+    {
+      "bytes": 16631,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star931Kernel.lean",
+      "slice_sha256": "0a2f385ddd6e21342f512b780d43f734ffaa77ded923a87a1ddad781ed5688a6",
+      "source_sha256": "93a060d1b574a472a51faf7f6b6301b5812d6a496fc67ab34412d8147fb70ccc"
+    },
+    {
+      "bytes": 15488,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star922Kernel.lean",
+      "slice_sha256": "725807b23d90504366c0488891e1c8364829186ecf049894e04b1cf975afa215",
+      "source_sha256": "dfe1673ec0001b1184704846d62237b61371e17dd5ecba213eedf6be24babe09"
+    },
+    {
+      "bytes": 2283,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star92Kernel.lean",
+      "slice_sha256": "f46a53b9c09eea29539c94e4b96d2a19cc9bb744cd6e2c5a1d2f6eea1befcbe1",
+      "source_sha256": "0c2fae126e5018b27b609edef0d414393f194e06cf17e8937ca664b1ce3fe81c"
+    },
+    {
+      "bytes": 1485,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star935Kernel.lean",
+      "slice_sha256": "a19076440ab08ae2e39d8c246bba3cb0146c69a7136341e07f674bfe5e424fe3",
+      "source_sha256": "818c2af607aff118dbe6c6a557ddc51eb2bdaedc068d1ebf7ecb32cc3529aba5"
+    },
+    {
+      "bytes": 2276,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star936Kernel.lean",
+      "slice_sha256": "918bdb398fd8f29efc3dd82c96f8e6260662d599624bd66ed8b27c396d516b3e",
+      "source_sha256": "15c33a909dbf331ec2a6f8d6e5f5114a18b876bb815b2cdb0b247ecf286c80fa"
+    },
+    {
+      "bytes": 2599,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star9361Kernel.lean",
+      "slice_sha256": "13871fbd90f79a5bd586723f5a3765f252777aaf1601fd9b99132f6f3fc67379",
+      "source_sha256": "eabc16619f4b0e37f6f65d950802ca1c39a6c6c0045724c5d4c5fb4b18739aa0"
+    },
+    {
+      "bytes": 2842,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star937Kernel.lean",
+      "slice_sha256": "ffd00ef25e79224c895ad4f79bd6030c02f45de8452791abc390ce49b38f2fac",
+      "source_sha256": "6ba132951951d7499d2e20498677e2f4e3c3cc60db466d219122efe7f428e0a3"
+    },
+    {
+      "bytes": 2846,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Star9371Kernel.lean",
+      "slice_sha256": "f2ff7f1c1ea4e03e987da20a0b964ad66fc03c5349d02f03e09ca163a5d3e595",
+      "source_sha256": "aba8403a4e61b9786566d0179753cff706b6089dfca1777f642ac3afa2c00134"
+    },
+    {
+      "bytes": 4556,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Architecture/Q259ClosedRuleBook.lean",
+      "slice_sha256": "8182d2e0e19814ab3818f009b630621f626eba1c856365fcb160e0cd4c74ceee",
+      "source_sha256": "92e0d80b72f720f8f7a255364e0a8145ed6fc2a2d3bc9622df34618402be6be4"
+    }
+  ],
   "ci_evidence": {
     "commit": "pending",
     "run": "pending",

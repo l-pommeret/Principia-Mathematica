@@ -60,8 +60,15 @@ class DependencyAuditTests(unittest.TestCase):
         # kernel-checked frontier; coverage must follow metadata, not preserve
         # a stale pre-migration cardinality.
         self.assertGreater(checked, 0)
-        self.assertTrue(graph["historical_graph"]["edges"])
-        self.assertTrue(graph["lean_graph"]["edges"])
+        # The current frontier consists only of primitive constructors.  They
+        # correctly have no dependency edges: requiring a nonempty graph here
+        # encoded the superseded derived-facts/T12 architecture.
+        self.assertEqual(graph["historical_graph"]["edges"], [])
+        self.assertEqual(graph["lean_graph"]["edges"], [
+            {"from": "PM1:✱1·4", "to": "PM.Derivation.star_1_4"},
+            {"from": "PM1:✱1·5", "to": "PM.Derivation.star_1_5"},
+            {"from": "PM1:✱1·6", "to": "PM.Derivation.star_1_6"},
+        ])
 
     def test_detach_resolves_to_printed_function_rule(self):
         items = {item["id"]: item for item in dependencies.load_items(ROOT)}

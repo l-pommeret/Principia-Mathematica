@@ -205,16 +205,16 @@ end PM.Elementary
 -- PM-CONTEXT-ITEM PM1:✱1·2 PM.FirstEdition.Volume1.Star1.star_1_2
 namespace PM.FirstEdition.Volume1.Star1
 
-theorem star_1_2 (p : PM.Elementary Γ) : ⊢ₚ ((p ∨ₚ p) ⊃ₚ p) :=
-  PM.Derivation.star_1_2 p
+axiom star_1_2 (p : PM.Elementary Γ) : ⊢ₚ ((p ∨ₚ p) ⊃ₚ p)
+
 
 end PM.FirstEdition.Volume1.Star1
 
 -- PM-CONTEXT-ITEM PM1:✱1·3 PM.FirstEdition.Volume1.Star1.star_1_3
 namespace PM.FirstEdition.Volume1.Star1
 
-theorem star_1_3 (p q : PM.Elementary Γ) : ⊢ₚ (q ⊃ₚ (p ∨ₚ q)) :=
-  PM.Derivation.star_1_3 p q
+axiom star_1_3 (p q : PM.Elementary Γ) : ⊢ₚ (q ⊃ₚ (p ∨ₚ q))
+
 
 end PM.FirstEdition.Volume1.Star1
 

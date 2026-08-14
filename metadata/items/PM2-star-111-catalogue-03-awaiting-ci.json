@@ -20,7 +20,7 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_01",
       "formal_scope": "exact typed definitional expansion of double similarity into a bijective class map preserving class membership",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
@@ -28,7 +28,14 @@
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     },
     {
       "id": "PM2:✱111·02",
@@ -38,7 +45,7 @@
       "declaration": "PM.Architecture.Star111Kernel.star_111_02",
       "formal_scope": "exact typed definitional expansion of correspondence as similarity of the correlated class and its argument",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
@@ -46,7 +53,14 @@
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     }
   ],
   "ci_evidence": {

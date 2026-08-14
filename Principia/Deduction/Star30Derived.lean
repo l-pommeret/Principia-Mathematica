@@ -23,9 +23,9 @@ private theorem star30_reflexive_equivalence
   let ramified_star_3_2 := star_3_2 negation disjunction
     (implication negation disjunction p p)
     (implication negation disjunction p p)
-  have line1 := Derivation.star_9_12 negation disjunction
+  have line1 := Derivation.star_9_12_same negation disjunction
     ramified_Id ramified_star_3_2
-  have line2 := Derivation.star_9_12 negation disjunction ramified_Id line1
+  have line2 := Derivation.star_9_12_same negation disjunction ramified_Id line1
   exact line2
 
 /-- Audited scope reading of ✱30·1. -/

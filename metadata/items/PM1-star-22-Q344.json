@@ -26,7 +26,7 @@
       "declaration": "PM.Architecture.Star22Q344Kernel.star_22_44",
       "formal_scope": "exact polymorphic transitivity of class inclusion",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "follows-printed",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
@@ -48,6 +48,13 @@
         ],
         "strict_attempt_evidence": "reviews/Q344-review.md",
         "editorial_note": "The exact statement closes directly in the typed class reconstruction; the printed citations remain recorded as historical proof evidence."
+      },
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       }
     },
     {
@@ -61,7 +68,7 @@
       "declaration": "PM.Architecture.Star22Q344Kernel.star_22_441",
       "formal_scope": "exact polymorphic elimination of class inclusion at a member",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "follows-printed",
       "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
@@ -104,6 +111,13 @@
         ],
         "strict_attempt_evidence": "reviews/Q344-review.md",
         "editorial_note": "The exact statement closes directly in the typed class reconstruction; the printed citations remain recorded as historical proof evidence."
+      },
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       }
     }
   ],

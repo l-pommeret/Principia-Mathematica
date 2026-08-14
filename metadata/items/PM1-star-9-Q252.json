@@ -38,18 +38,18 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "source_status": "double-witness-checked",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "formalization_level": "pm-definition-v1",
       "pm_ast": "FirstOrder.neg (FirstOrder.always φ)",
       "pm_judgement": "definitional expansion of the printed Df in FirstOrder syntax",
       "pm_certificate": "reducible definition star_9_01; kernel computation unfolds the definiendum to its definiens",
       "certificate_kind": "definition-unfolding",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T6"
+          "T7"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       }
     },
     {
@@ -65,18 +65,18 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "source_status": "double-witness-checked",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "formalization_level": "pm-definition-v1",
       "pm_ast": "FirstOrder.neg (FirstOrder.sometimes φ)",
       "pm_judgement": "definitional expansion of the printed Df in FirstOrder syntax",
       "pm_certificate": "reducible definition star_9_02; kernel computation unfolds the definiendum to its definiens",
       "certificate_kind": "definition-unfolding",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T6"
+          "T7"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       }
     },
     {
@@ -98,18 +98,18 @@
         "PM1:✱9·01"
       ],
       "source_status": "double-witness-checked",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "formalization_level": "pm-definition-v1",
       "pm_ast": "the same FirstOrder syntax as star_9_01 after omission of redundant printed braces",
       "pm_judgement": "definitional alias expansion, not an asserted inference",
       "pm_certificate": "reducible alias star_9_011 unfolds through star_9_01; no assertion constructor or axiom is used",
       "certificate_kind": "definition-unfolding",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T6"
+          "T7"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       }
     },
     {
@@ -131,18 +131,18 @@
         "PM1:✱9·02"
       ],
       "source_status": "double-witness-checked",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "formalization_level": "pm-definition-v1",
       "pm_ast": "the same FirstOrder syntax as star_9_02 after omission of redundant printed braces",
       "pm_judgement": "definitional alias expansion, not an asserted inference",
       "pm_certificate": "reducible alias star_9_021 unfolds through star_9_02; no assertion constructor or axiom is used",
       "certificate_kind": "definition-unfolding",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T6"
+          "T7"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       }
     }
   ],

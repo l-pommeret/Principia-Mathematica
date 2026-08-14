@@ -1,42 +1,42 @@
 {
-  "kind": "pm-isolated-context-bundle",
-  "profile": "description-scope-pm1",
-  "current_item": null,
-  "manifest_sha256": "2828dec50140dc1cb81e88670917ebd41c53338366ad8f1bb89388e63f265e36",
-  "source_sha256": "9e8aaa9bba962c719dbfb0452c87ec8c323c6be41bbdb7eaa906f72228025f46",
-  "source_bytes": 13375,
-  "proof_permissions": [],
   "context_closure": [],
-  "sources": [
-    {
-      "kind": "foundation",
-      "path": "Principia/Syntax/Description.lean",
-      "source_sha256": "d4223a5f818de6a15ac62eabed917a6925d7a2a7a06b87e4baa5ba3b346d86e9",
-      "slice_sha256": "08425df2be9ba7538e30ce1794ab142a98726ad282b5cfdae07ff8ca9dc93f28",
-      "bytes": 13316
-    }
-  ],
-  "policy": {
-    "standalone_context_only": true,
-    "grants_no_additional_proof_permission": true,
-    "requires_remote_kernel_check": true,
-    "interface_gated": true,
-    "canonical_integration_forbidden": true,
-    "requires_one_to_one_kernel_remap": true
-  },
-  "interface_dependencies": [],
-  "source_backfill_required": false,
+  "current_item": null,
   "integration_blocked": true,
+  "interface_dependencies": [],
+  "kind": "pm-isolated-context-bundle",
+  "manifest_sha256": "2828dec50140dc1cb81e88670917ebd41c53338366ad8f1bb89388e63f265e36",
+  "policy": {
+    "canonical_integration_forbidden": true,
+    "grants_no_additional_proof_permission": true,
+    "interface_gated": true,
+    "requires_one_to_one_kernel_remap": true,
+    "requires_remote_kernel_check": true,
+    "standalone_context_only": true
+  },
+  "profile": "description-scope-pm1",
+  "proof_permissions": [],
   "source_backfill_audit": {
-    "status": "complete",
     "basis": "PM-VERBATIM, leaf-203 scan collation, PG78050 witness, and exact reductional definition",
+    "demonstration_paths": [
+      "aristotle/demonstrations/PM1-star-14-01.txt"
+    ],
     "item_ids": [
       "PM1:✱14·01"
     ],
-    "demonstration_paths": [
-      "aristotle/demonstrations/PM1-star-14-01.txt"
-    ]
+    "status": "complete"
   },
+  "source_backfill_required": false,
+  "source_bytes": 13375,
+  "source_sha256": "9e8aaa9bba962c719dbfb0452c87ec8c323c6be41bbdb7eaa906f72228025f46",
+  "sources": [
+    {
+      "bytes": 13316,
+      "kind": "foundation",
+      "path": "Principia/Syntax/Description.lean",
+      "slice_sha256": "08425df2be9ba7538e30ce1794ab142a98726ad282b5cfdae07ff8ca9dc93f28",
+      "source_sha256": "d4223a5f818de6a15ac62eabed917a6925d7a2a7a06b87e4baa5ba3b346d86e9"
+    }
+  ],
   "target_order": [
     "PM1:✱14·01"
   ],

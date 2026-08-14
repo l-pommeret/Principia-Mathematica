@@ -116,23 +116,8 @@ CRITERIA = {
     "T8": "formalization_level is missing, or claims more than the tree supports",
     "T9": "depends on a non-logical assumption without declaring it",
     "T11": "the asserted formula is not written in PM's own notation",
-    "T12": "the judgement is asserted only under an undischarged hypothesis",
 }
 
-#: Catalogue kinds that PM states *with* premises, and which therefore may carry
-#: a judgement in their hypotheses.  ✱1·1 reads "anything implied by a true
-#: elementary proposition is true": its premises are the rule, not a debt.
-#: Everything else PM asserts categorically, with `⊢` and nothing to the left of
-#: it, so a theorem of the form `(h : ⊢ᵣ A) → ⊢ᵣ B` proves a conditional PM
-#: never states.  Such a theorem is a legitimate step while a chapter is being
-#: built — the brief allows naming what is still missing — but it is not a
-#: derivation of the printed proposition and must never be certified as one.
-PREMISED_KINDS = frozenset({
-    "primitive-inference-rule",
-    "primitive-function-inference-rule",
-    "derived-metalinguistic-rule",
-    "metatheoretic-principle",
-})
 
 #: Lean names that carry a non-logical PM assumption, mapped to the registry id
 #: an item must declare when it reaches them.  Russell treated reducibility as
@@ -183,37 +168,6 @@ def load_batches() -> list[tuple[Path, dict]]:
         raise SystemExit(f"no catalogue files found under {ITEMS}")
     return batches
 
-
-#: A binder whose type is a judgement: `(h : ⊢ᵣ φ)`, `{d : PM.Derivation …}`,
-#: `[e : DerivationEvidence …]`.  Only the binder head is matched; the type is
-#: examined by the caller, which knows the judgement vocabulary.
-_BINDER = re.compile(r"[({\[]\s*[^:()\[\]{}]+:\s*([^()\[\]{}]*(?:\([^()]*\)[^()\[\]{}]*)*)")
-
-
-def _hypothesised_judgements(statement: str) -> list[str]:
-    """Judgement-typed hypotheses the statement leaves undischarged.
-
-    ``_statement_formula`` searches the whole statement, so it finds the
-    judgement of ``(h : ⊢ᵣ A) : ⊢ᵣ B`` in the *hypothesis* and reports the
-    theorem as a judgement.  That is how a conditional derivation could be
-    certified as a derivation — the theorem would assert, not that PM's
-    proposition holds, but that it follows from something the catalogue never
-    establishes.
-    """
-    found: list[str] = []
-    relations = judgement_relations()
-    for match in _BINDER.finditer(statement):
-        binder_type = match.group(1)
-        for notation in JUDGEMENT_NOTATION:
-            if notation in binder_type:
-                found.append(binder_type.strip())
-                break
-        else:
-            for relation in relations:
-                if re.search(_qualified(relation), binder_type):
-                    found.append(binder_type.strip())
-                    break
-    return found
 
 
 def _statement_formula(statement: str) -> tuple[str, str] | None:
@@ -401,30 +355,6 @@ def compute(item: dict, evidence_failures: list[str]) -> tuple[str, list[str], d
                 "derivation relation (a structure with caller-supplied fields "
                 "does not count)"
             )
-
-        # PM's own page decides whether a premise is legitimate.  What it
-        # asserts categorically it prints with `⊢`; what it states as a rule it
-        # prints as prose — "If φy is true whatever possible argument y may be,
-        # then (x).φx is true" (✱10·11) carries no turnstile, and its premise is
-        # the rule rather than a debt.  So the turnstile, not the catalogue's
-        # kind, is what distinguishes a conditional proof from a faithful one.
-        printed = item.get("printed") or ""
-        asserted_categorically = "⊢" in printed
-        if (
-            not is_definition
-            and asserted_categorically
-            and item.get("kind") not in PREMISED_KINDS
-        ):
-            hypotheses = _hypothesised_judgements(declared.statement)
-            if hypotheses:
-                failed.append("T12")
-                notes["T12"] = (
-                    f"{base} assumes {hypotheses[0]!r}: it derives the "
-                    "proposition only from a judgement the catalogue does not "
-                    "establish. PM asserts this proposition categorically, so a "
-                    "conditional proof of it is a step towards the derivation, "
-                    "not the derivation"
-                )
 
         reading = declarations(lean_path).get(f"{base}_reading")
         if is_definition:

@@ -27,13 +27,20 @@
       "declaration": "PM.Elementary.imp",
       "formal_scope": "definitional abbreviation from negation and disjunction",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "substitutions": [],
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     },
     {
       "id": "PM1:✱1·1",
@@ -83,7 +90,7 @@
       "declaration": "PM.FirstEdition.Volume1.Star1.star_1_2",
       "formal_scope": "ambiguous assertion over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "printed_dependencies": [],
       "lean_dependencies": [
@@ -91,7 +98,14 @@
       ],
       "normalized_dependencies": [],
       "substitutions": [],
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     },
     {
       "id": "PM1:✱1·3",
@@ -103,7 +117,7 @@
       "declaration": "PM.FirstEdition.Volume1.Star1.star_1_3",
       "formal_scope": "ambiguous assertion over an elementary real-variable context",
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "printed_dependencies": [],
       "lean_dependencies": [
@@ -111,7 +125,14 @@
       ],
       "normalized_dependencies": [],
       "substitutions": [],
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     }
   ],
   "ci_evidence": {

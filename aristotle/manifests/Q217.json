@@ -157,6 +157,7 @@
       "diagnostics": {
         "missing_items": [],
         "non_kernel_checked_items": [
+          "PM1:✱1·01",
           "PM1:✱2·11",
           "PM1:✱2·32",
           "PM1:✱3·01"
@@ -164,6 +165,7 @@
         "unresolved_aliases": []
       },
       "interface_dependencies": [
+        "PM1:✱1·01",
         "PM1:✱2·11",
         "PM1:✱2·32",
         "PM1:✱3·01"
@@ -233,11 +235,15 @@
     "PM1:✱3·01"
   ],
   "direct_interface_dependencies": [
+    "PM1:✱1·01",
     "PM1:✱2·11",
     "PM1:✱2·32",
     "PM1:✱3·01"
   ],
   "interface_dependencies": [
+    "PM1:✱1·01",
+    "PM1:✱1·2",
+    "PM1:✱1·3",
     "PM1:✱2·05",
     "PM1:✱2·07",
     "PM1:✱2·08",

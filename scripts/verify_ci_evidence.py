@@ -33,7 +33,6 @@ NO_RUN_YET = (
     "pending)"
 )
 
-
 def _git(*arguments: str) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
         ["git", *arguments], cwd=ROOT, capture_output=True, text=True, check=False
@@ -104,9 +103,19 @@ def evidence_failures(
     elif not is_ancestor_of_head(commit):
         reasons.append(f"commit {commit} is not an ancestor of HEAD")
     else:
+        # Whether the run predates the file it is supposed to vouch for is a
+        # fact about the evidence and the git history, not about what the
+        # catalogue currently claims.
+        #
+        # Skipping items recorded as uncertified made the criterion depend on
+        # the statuses it is used to compute, and the computation oscillated:
+        # an item recorded `kernel-checked` failed T7, dropped to `awaiting-ci`,
+        # was thereby skipped, passed T7, and was promoted again — 49 items
+        # flipping on every pass. A tier that depends on what is currently
+        # written down is negotiated, not computed.
         for item in items:
             lean_path = item.get("lean_path")
-            if not lean_path or item.get("formal_status") in UNCERTIFIED:
+            if not lean_path:
                 continue
             touched = last_commit_touching(lean_path)
             if touched and not _git(
@@ -150,16 +159,25 @@ def main() -> int:
         batch = json.loads(path.read_text(encoding="utf-8"))
         items = batch.get("items", [])
         reasons = evidence_failures(path, batch.get("ci_evidence") or {}, items)
-        # A batch awaiting its first run is not a provenance failure: it claims
-        # nothing.  It becomes one the moment an item in it says it is certified.
-        if reasons == [NO_RUN_YET]:
+        # Two reasons say only "this batch is not yet vouched for": no run at
+        # all, and a run that predates the file it was supposed to vouch for —
+        # which is what every commit touching a certified Lean file produces.
+        # Both must fail criterion T7, so that no item of the batch reaches the
+        # top tier; neither is a *false* claim while the batch claims nothing.
+        # The gate reports a batch that overstates, not one that is waiting.
+        awaiting = [
+            reason
+            for reason in reasons
+            if reason == NO_RUN_YET or reason.startswith("evidence commit ")
+        ]
+        if reasons and len(awaiting) == len(reasons):
             certified = {
                 item.get("formal_status") for item in items
             } - UNCERTIFIED - {None}
             if not certified:
                 continue
             reasons = [
-                f"{NO_RUN_YET}, yet the batch certifies {sorted(certified)}"
+                f"{reasons[0]}, yet the batch certifies {sorted(certified)}"
             ]
         if reasons:
             failures.append((str(path.relative_to(ROOT)), reasons))

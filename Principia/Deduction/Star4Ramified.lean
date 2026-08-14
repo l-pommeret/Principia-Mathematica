@@ -307,14 +307,9 @@ theorem star_4_2
     (negation : signature.Negation order)
     (disjunction : signature.Disjunction order)
     (p : Formula signature real [] order) :
-    ⊢ᵣ star_4_01 negation disjunction p p :=
-  let ramified_Id := star_2_08 negation disjunction p
-  let ramified_star_3_2 := star_3_2 negation disjunction
-    (implication negation disjunction p p)
-    (implication negation disjunction p p)
-  let line1 := Derivation.star_9_12 negation disjunction
-    ramified_Id ramified_star_3_2
-  Derivation.star_9_12 negation disjunction ramified_Id line1
+    ⊢ᵣ star_4_01 negation disjunction p p := by
+  have line1 := star_2_08 negation disjunction p
+  exact star4_join negation disjunction p p line1 line1
 
 /-- ✱4·31, PM's printed `Perm` proof in both directions, packaged by ✱3·2. -/
 theorem star_4_31
@@ -323,19 +318,10 @@ theorem star_4_31
     (p q : Formula signature real [] order) :
     ⊢ᵣ star_4_01 negation disjunction
       (sameDisjunction disjunction p q)
-      (sameDisjunction disjunction q p) :=
-  let line1 := Derivation.star_1_4 negation disjunction p q
-  let line2 := Derivation.star_1_4 negation disjunction q p
-  let ramified_star_3_2 := star_3_2 negation disjunction
-    (implication negation disjunction
-      (sameDisjunction disjunction p q)
-      (sameDisjunction disjunction q p))
-    (implication negation disjunction
-      (sameDisjunction disjunction q p)
-      (sameDisjunction disjunction p q))
-  let line3 := Derivation.star_9_12 negation disjunction
-    line1 ramified_star_3_2
-  Derivation.star_9_12 negation disjunction line2 line3
+      (sameDisjunction disjunction q p) := by
+  have line1 := Derivation.star_1_4 negation disjunction p q
+  have line2 := Derivation.star_1_4 negation disjunction q p
+  exact star4_join negation disjunction _ _ line1 line2
 
 /-- ✱4·71, following PM's numbered implication/equivalence chain. -/
 theorem star_4_71
@@ -710,6 +696,123 @@ theorem star_4_44
       (star_3_44 negation disjunction p p (conjunction negation disjunction p q))
   exact star4_join negation disjunction _ _ line1 line2
 
+/-! The following propositions complete the directly reusable part of PM's
+printed ✱4 chain.  The names `line1`, ... retain the order of the displayed
+or bracketed PM justification. -/
+
+section
+
+variable {signature : Signature} {real : Context} {order : Nat}
+variable (negation : signature.Negation order)
+variable (disjunction : signature.Disjunction order)
+
+local prefix:max "∼ᵣ" => Formula.neg negation
+local infixr:55 " ∨ᵣ " => sameDisjunction disjunction
+local infixr:54 " ⊃ᵣ " => implication negation disjunction
+local infixr:56 " ∧ᵣ " => conjunction negation disjunction
+local infixr:53 " ≡ᵣ " => star_4_01 negation disjunction
+
+def star_4_72_reading
+    (p q : Formula signature real [] order) :=
+  star4_reading "✱4·72.  ⊢ : p ⊃ q . ≡ : q . ≡ . p ∨ q"
+    ((p ⊃ᵣ q) ≡ᵣ (q ≡ᵣ (p ∨ᵣ q)))
+
+theorem star_4_72
+    (p q : Formula signature real [] order) :
+    ⊢ᵣ ((p ⊃ᵣ q) ≡ᵣ (q ≡ᵣ (p ∨ᵣ q))) := by
+  let a := p ⊃ᵣ q
+  have line1 : ⊢ᵣ (a ⊃ᵣ (q ⊃ᵣ (p ∨ᵣ q))) :=
+    star4_detach negation disjunction _ _
+      (Derivation.star_1_3 negation disjunction p q)
+      (star_2_02 negation disjunction a (q ⊃ᵣ (p ∨ᵣ q)))
+  have line2 : ⊢ᵣ (a ⊃ᵣ ((p ∨ᵣ q) ⊃ᵣ q)) :=
+    star4_compose negation disjunction _ _ _
+      (star4_joinUnder negation disjunction a _ _
+        (star_2_08 negation disjunction a)
+        (star4_detach negation disjunction _ _ (star_2_08 negation disjunction q)
+          (star_2_02 negation disjunction a (q ⊃ᵣ q))))
+      (star_3_44 negation disjunction q p q)
+  have line3 : ⊢ᵣ (a ⊃ᵣ (q ≡ᵣ (p ∨ᵣ q))) :=
+    star4_joinUnder negation disjunction a _ _ line1 line2
+  have line4 : ⊢ᵣ ((q ≡ᵣ (p ∨ᵣ q)) ⊃ᵣ a) :=
+    star4_compose negation disjunction _ _ _
+      (star_3_27 negation disjunction (q ⊃ᵣ (p ∨ᵣ q)) ((p ∨ᵣ q) ⊃ᵣ q))
+      (star4_detach negation disjunction _ _ (star_2_2 negation disjunction p q)
+        (star_2_06 negation disjunction p (p ∨ᵣ q) q))
+  exact star4_join negation disjunction _ _ line3 line4
+
+def star_4_82_reading
+    (p q : Formula signature real [] order) :=
+  star4_reading "✱4·82.  ⊢ : p ⊃ q . p ⊃ ∼q . ≡ . ∼p"
+    (((p ⊃ᵣ q) ∧ᵣ (p ⊃ᵣ ∼ᵣ q)) ≡ᵣ ∼ᵣ p)
+
+theorem star_4_82
+    (p q : Formula signature real [] order) :
+    ⊢ᵣ (((p ⊃ᵣ q) ∧ᵣ (p ⊃ᵣ ∼ᵣ q)) ≡ᵣ ∼ᵣ p) := by
+  let e := (p ⊃ᵣ q) ∧ᵣ (p ⊃ᵣ ∼ᵣ q)
+  have line1 : ⊢ᵣ (e ⊃ᵣ ∼ᵣ p) :=
+    star4_detach negation disjunction _ _ (star_2_65 negation disjunction p q)
+      (star_3_31 negation disjunction (p ⊃ᵣ q) (p ⊃ᵣ ∼ᵣ q) (∼ᵣ p))
+  have line2 : ⊢ᵣ ((∼ᵣ p) ⊃ᵣ e) :=
+    star4_joinUnder negation disjunction (∼ᵣ p) _ _
+      (star_2_21 negation disjunction p q)
+      (star_2_21 negation disjunction p (∼ᵣ q))
+  exact star4_join negation disjunction _ _ line1 line2
+
+def star_4_83_reading
+    (p q : Formula signature real [] order) :=
+  star4_reading "✱4·83.  ⊢ : p ⊃ q . ∼p ⊃ q . ≡ . q"
+    (((p ⊃ᵣ q) ∧ᵣ ((∼ᵣ p) ⊃ᵣ q)) ≡ᵣ q)
+
+theorem star_4_83
+    (p q : Formula signature real [] order) :
+    ⊢ᵣ (((p ⊃ᵣ q) ∧ᵣ ((∼ᵣ p) ⊃ᵣ q)) ≡ᵣ q) := by
+  let e := (p ⊃ᵣ q) ∧ᵣ ((∼ᵣ p) ⊃ᵣ q)
+  have line1 : ⊢ᵣ (e ⊃ᵣ q) :=
+    star4_detach negation disjunction _ _ (star_2_61 negation disjunction p q)
+      (star_3_31 negation disjunction (p ⊃ᵣ q) ((∼ᵣ p) ⊃ᵣ q) q)
+  have line2 : ⊢ᵣ (q ⊃ᵣ e) :=
+    star4_joinUnder negation disjunction q _ _
+      (star_2_02 negation disjunction p q)
+      (star_2_02 negation disjunction (∼ᵣ p) q)
+  exact star4_join negation disjunction _ _ line1 line2
+
+def star_4_84_reading
+    (p q r : Formula signature real [] order) :=
+  star4_reading "✱4·84.  ⊢ : p ≡ q . ⊃ : p ⊃ r . ≡ . q ⊃ r"
+    ((p ≡ᵣ q) ⊃ᵣ ((p ⊃ᵣ r) ≡ᵣ (q ⊃ᵣ r)))
+
+theorem star_4_84
+    (p q r : Formula signature real [] order) :
+    ⊢ᵣ ((p ≡ᵣ q) ⊃ᵣ ((p ⊃ᵣ r) ≡ᵣ (q ⊃ᵣ r))) := by
+  let e := p ≡ᵣ q
+  have line1 := star4_compose negation disjunction _ _ _
+    (star_3_27 negation disjunction (p ⊃ᵣ q) (q ⊃ᵣ p))
+    (star_2_06 negation disjunction q p r)
+  have line2 := star4_compose negation disjunction _ _ _
+    (star_3_26 negation disjunction (p ⊃ᵣ q) (q ⊃ᵣ p))
+    (star_2_06 negation disjunction p q r)
+  exact star4_joinUnder negation disjunction e _ _ line1 line2
+
+def star_4_85_reading
+    (p q r : Formula signature real [] order) :=
+  star4_reading "✱4·85.  ⊢ : p ≡ q . ⊃ : r ⊃ p . ≡ . r ⊃ q   [✱2·05 . ✱3·47]"
+    ((p ≡ᵣ q) ⊃ᵣ ((r ⊃ᵣ p) ≡ᵣ (r ⊃ᵣ q)))
+
+theorem star_4_85
+    (p q r : Formula signature real [] order) :
+    ⊢ᵣ ((p ≡ᵣ q) ⊃ᵣ ((r ⊃ᵣ p) ≡ᵣ (r ⊃ᵣ q))) := by
+  let e := p ≡ᵣ q
+  have line1 := star4_compose negation disjunction _ _ _
+    (star_3_26 negation disjunction (p ⊃ᵣ q) (q ⊃ᵣ p))
+    (star_2_05 negation disjunction r p q)
+  have line2 := star4_compose negation disjunction _ _ _
+    (star_3_27 negation disjunction (p ⊃ᵣ q) (q ⊃ᵣ p))
+    (star_2_05 negation disjunction r q p)
+  exact star4_joinUnder negation disjunction e _ _ line1 line2
+
+end
+
 #print axioms star_4_01_unfold
 #print axioms star_4_1
 #print axioms star_4_13
@@ -733,6 +836,11 @@ theorem star_4_44
 #print axioms star_4_39
 #print axioms star_4_45
 #print axioms star_4_44
+#print axioms star_4_72
+#print axioms star_4_82
+#print axioms star_4_83
+#print axioms star_4_84
+#print axioms star_4_85
 #print axioms star_4_12
 
 end PM.RamifiedSyntax

@@ -313,6 +313,131 @@ theorem star_9_25 (universal : signature.Universal argument 0)
       (p.rename (fun v => .succ v)) phi))
   exact line1
 
+def star_9_41_reading (universal : signature.Universal argument 0)
+    (negation : signature.Negation 0) (disjunction : signature.Disjunction 0)
+    (p r : Formula signature real [] 0) (phi : Formula signature real [argument] 0) :
+    ClaimReading signature real where
+  printed := "⊢ : : p : ∨ : (x).φx .∨. r : .⊃ : .(x).φx : ∨ : p ∨ r"
+  parsed := .assertion (.always universal (implication negation disjunction
+    (sameDisjunction disjunction (p.rename (fun v => .succ v))
+      (sameDisjunction disjunction phi (r.rename (fun v => .succ v))))
+    (sameDisjunction disjunction phi
+      (sameDisjunction disjunction (p.rename (fun v => .succ v))
+        (r.rename (fun v => .succ v))))))
+
+/-- `demonstration_provenance: follows-printed`. -/
+theorem star_9_41 (universal : signature.Universal argument 0)
+    (negation : signature.Negation 0) (disjunction : signature.Disjunction 0)
+    (p r : Formula signature real [] 0) (phi : Formula signature real [argument] 0) :
+    Derivation (star_9_41_reading universal negation disjunction p r phi).parsed := by
+  let value : Term signature (argument :: real) [] argument :=
+    .real (.zero : Var (argument :: real) argument)
+  have line1 :
+      ⊢ᵣ implication negation disjunction
+        (sameDisjunction disjunction p.weakenReal
+          (sameDisjunction disjunction (phi.weakenReal.instantiate value) r.weakenReal))
+        (sameDisjunction disjunction (phi.weakenReal.instantiate value)
+          (sameDisjunction disjunction p.weakenReal r.weakenReal)) :=
+    Derivation.star_1_5 negation disjunction p.weakenReal
+      (phi.weakenReal.instantiate value) r.weakenReal
+  have matrixEq :
+      (implication negation disjunction
+        (sameDisjunction disjunction (p.rename (fun v => .succ v))
+          (sameDisjunction disjunction phi (r.rename (fun v => .succ v))))
+        (sameDisjunction disjunction phi
+          (sameDisjunction disjunction (p.rename (fun v => .succ v))
+            (r.rename (fun v => .succ v))))).weakenReal.instantiate value =
+      implication negation disjunction
+        (sameDisjunction disjunction p.weakenReal
+          (sameDisjunction disjunction (phi.weakenReal.instantiate value) r.weakenReal))
+        (sameDisjunction disjunction (phi.weakenReal.instantiate value)
+          (sameDisjunction disjunction p.weakenReal r.weakenReal)) := by
+    rw [implication_weakenReal, sameDisjunction_weakenReal,
+      sameDisjunction_weakenReal, sameDisjunction_weakenReal,
+      sameDisjunction_weakenReal, Formula.instantiate, implication_substitute,
+      sameDisjunction_substitute, sameDisjunction_substitute,
+      sameDisjunction_substitute, sameDisjunction_substitute,
+      Formula.closed_weakenReal_instantiateSubstitution,
+      Formula.closed_weakenReal_instantiateSubstitution, Formula.instantiate]
+  have line2 := Derivation.star_9_13 universal
+    (implication negation disjunction
+      (sameDisjunction disjunction (p.rename (fun v => .succ v))
+        (sameDisjunction disjunction phi (r.rename (fun v => .succ v))))
+      (sameDisjunction disjunction phi
+        (sameDisjunction disjunction (p.rename (fun v => .succ v))
+          (r.rename (fun v => .succ v)))))
+    (Derivation.castAssertion matrixEq line1)
+  change ⊢ᵣ .always universal (implication negation disjunction
+    (sameDisjunction disjunction (p.rename (fun v => .succ v))
+      (sameDisjunction disjunction phi (r.rename (fun v => .succ v))))
+    (sameDisjunction disjunction phi
+      (sameDisjunction disjunction (p.rename (fun v => .succ v))
+        (r.rename (fun v => .succ v)))))
+  exact line2
+
+def star_9_42_reading (universal : signature.Universal argument 0)
+    (negation : signature.Negation 0) (disjunction : signature.Disjunction 0)
+    (q r : Formula signature real [] 0) (phi : Formula signature real [argument] 0) :
+    ClaimReading signature real where
+  printed := "⊢ : : (x).φx : ∨ : q ∨ r : .⊃ : .q : ∨ : (x).φx .∨. r"
+  parsed := .assertion (.always universal (implication negation disjunction
+    (sameDisjunction disjunction phi
+      (sameDisjunction disjunction (q.rename (fun v => .succ v))
+        (r.rename (fun v => .succ v))))
+    (sameDisjunction disjunction (q.rename (fun v => .succ v))
+      (sameDisjunction disjunction phi (r.rename (fun v => .succ v))))))
+
+/-- `demonstration_provenance: follows-printed`. -/
+theorem star_9_42 (universal : signature.Universal argument 0)
+    (negation : signature.Negation 0) (disjunction : signature.Disjunction 0)
+    (q r : Formula signature real [] 0) (phi : Formula signature real [argument] 0) :
+    Derivation (star_9_42_reading universal negation disjunction q r phi).parsed := by
+  let value : Term signature (argument :: real) [] argument :=
+    .real (.zero : Var (argument :: real) argument)
+  have line1 :
+      ⊢ᵣ implication negation disjunction
+        (sameDisjunction disjunction (phi.weakenReal.instantiate value)
+          (sameDisjunction disjunction q.weakenReal r.weakenReal))
+        (sameDisjunction disjunction q.weakenReal
+          (sameDisjunction disjunction (phi.weakenReal.instantiate value) r.weakenReal)) :=
+    Derivation.star_1_5 negation disjunction
+      (phi.weakenReal.instantiate value) q.weakenReal r.weakenReal
+  have matrixEq :
+      (implication negation disjunction
+        (sameDisjunction disjunction phi
+          (sameDisjunction disjunction (q.rename (fun v => .succ v))
+            (r.rename (fun v => .succ v))))
+        (sameDisjunction disjunction (q.rename (fun v => .succ v))
+          (sameDisjunction disjunction phi
+            (r.rename (fun v => .succ v))))).weakenReal.instantiate value =
+      implication negation disjunction
+        (sameDisjunction disjunction (phi.weakenReal.instantiate value)
+          (sameDisjunction disjunction q.weakenReal r.weakenReal))
+        (sameDisjunction disjunction q.weakenReal
+          (sameDisjunction disjunction (phi.weakenReal.instantiate value) r.weakenReal)) := by
+    rw [implication_weakenReal, sameDisjunction_weakenReal,
+      sameDisjunction_weakenReal, sameDisjunction_weakenReal,
+      sameDisjunction_weakenReal, Formula.instantiate, implication_substitute,
+      sameDisjunction_substitute, sameDisjunction_substitute,
+      sameDisjunction_substitute, sameDisjunction_substitute,
+      Formula.closed_weakenReal_instantiateSubstitution,
+      Formula.closed_weakenReal_instantiateSubstitution, Formula.instantiate]
+  have line2 := Derivation.star_9_13 universal
+    (implication negation disjunction
+      (sameDisjunction disjunction phi
+        (sameDisjunction disjunction (q.rename (fun v => .succ v))
+          (r.rename (fun v => .succ v))))
+      (sameDisjunction disjunction (q.rename (fun v => .succ v))
+        (sameDisjunction disjunction phi (r.rename (fun v => .succ v)))))
+    (Derivation.castAssertion matrixEq line1)
+  change ⊢ᵣ .always universal (implication negation disjunction
+    (sameDisjunction disjunction phi
+      (sameDisjunction disjunction (q.rename (fun v => .succ v))
+        (r.rename (fun v => .succ v))))
+    (sameDisjunction disjunction (q.rename (fun v => .succ v))
+      (sameDisjunction disjunction phi (r.rename (fun v => .succ v)))))
+  exact line2
+
 #print axioms star_9_32
 #print axioms star_9_34
 #print axioms star_9_36
@@ -321,5 +446,7 @@ theorem star_9_25 (universal : signature.Universal argument 0)
 #print axioms star_9_23
 #print axioms star_9_24
 #print axioms star_9_25
+#print axioms star_9_41
+#print axioms star_9_42
 
 end PM.RamifiedSyntax

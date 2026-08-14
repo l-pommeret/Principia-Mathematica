@@ -34,14 +34,21 @@
       "declaration": "PM.Architecture.Star22Q341Definitions.star_22_01",
       "formal_scope": "exact polymorphic pointwise class-inclusion definition",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q341-review.md",
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     },
     {
       "id": "PM1:✱22·02",
@@ -54,7 +61,7 @@
       "declaration": "PM.Architecture.Star22Q341Definitions.star_22_02",
       "formal_scope": "exact polymorphic pointwise class-intersection definition",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "normalized_dependencies": [],
@@ -62,11 +69,11 @@
       "parser_evidence": "reviews/Q341-review.md",
       "lean_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T6"
+          "T7"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       }
     },
     {
@@ -80,7 +87,7 @@
       "declaration": "PM.Architecture.Star22Q341Definitions.star_22_03",
       "formal_scope": "exact polymorphic pointwise class-union definition",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "normalized_dependencies": [],
@@ -88,11 +95,11 @@
       "parser_evidence": "reviews/Q341-review.md",
       "lean_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T6"
+          "T7"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       }
     },
     {
@@ -106,14 +113,21 @@
       "declaration": "PM.Architecture.Star22Q341Definitions.star_22_04",
       "formal_scope": "exact polymorphic pointwise class-complement definition",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q341-review.md",
-      "lean_dependencies": []
+      "lean_dependencies": [],
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     },
     {
       "id": "PM1:✱22·05",
@@ -125,7 +139,7 @@
       "declaration": "PM.Architecture.Star22Q341Definitions.star_22_05",
       "formal_scope": "exact polymorphic class-difference definition",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "normalized_dependencies": [],
@@ -133,11 +147,11 @@
       "parser_evidence": "reviews/Q341-review.md",
       "lean_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T6"
+          "T7"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       },
       "formalization_level": "pm-derivation-v1"
     }

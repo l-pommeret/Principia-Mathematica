@@ -33,7 +33,7 @@
       "declaration": "PM.Architecture.Star20Q315Definition.star_20_03",
       "formal_scope": "exact type-relative class-of-predicative-extensions reduction with abstract predicative code type",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
@@ -42,7 +42,14 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "dependency_fidelity": "strict-closure",
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     }
   ],
   "ci_evidence": {

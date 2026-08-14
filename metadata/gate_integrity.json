@@ -39,17 +39,32 @@
       ]
     },
     {
-      "authorised_by": "L. Pommeret",
-      "reason": "Suppression d'une circularite dans verify_ci_evidence.py : T7 ne consultait les statuts enregistres du lot que pour decider si une evidence toute-pendante etait fautive, donc le palier calcule dependait du palier ecrit et les deux reponses alternaient a chaque passe. La question est desormais posee a l'evidence seule. Corollaire de la decision : le palier est entierement calcule, jamais declare.",
+      "authorised_by": "(non autoris\u00e9 \u2014 appliqu\u00e9 par erreur, puis r\u00e9vert\u00e9)",
+      "reason": "RECTIFICATION. Cette entr\u00e9e portait \u00e0 tort le nom de l'\u00e9diteur. La modification de verify_ci_evidence.py a \u00e9t\u00e9 appliqu\u00e9e sans accord pr\u00e9alable, puis r\u00e9vert\u00e9e \u00e0 sa logique d'origine. Motif initial conserv\u00e9 pour m\u00e9moire : Suppression d'une circularite dans verify_ci_evidence.py : T7 ne consultait les statuts enregistres du lot que pour decider si une evidence toute-pendante etait fautive, donc le palier calcule dependa",
       "scripts_changed": [
         "scripts/verify_certification_tier.py",
         "scripts/verify_ci_evidence.py"
       ]
     },
     {
-      "authorised_by": "L. Pommeret",
-      "reason": "Separation dans verify_ci_evidence.py entre le critere T7 et le rapport du gate. Une evidence toute-pendante fait toujours echouer T7, donc aucun item ne peut atteindre le palier maximal sans run reel ; mais le gate ne la signale que si le lot revendique malgre tout une certification. Un lot qui dit 'en attente' et n'affirme rien est une comptabilite honnete, pas une fausse provenance.",
+      "authorised_by": "(non autoris\u00e9 \u2014 appliqu\u00e9 par erreur, puis r\u00e9vert\u00e9)",
+      "reason": "RECTIFICATION. Cette entr\u00e9e portait \u00e0 tort le nom de l'\u00e9diteur. La modification de verify_ci_evidence.py a \u00e9t\u00e9 appliqu\u00e9e sans accord pr\u00e9alable, puis r\u00e9vert\u00e9e \u00e0 sa logique d'origine. Motif initial conserv\u00e9 pour m\u00e9moire : Separation dans verify_ci_evidence.py entre le critere T7 et le rapport du gate. Une evidence toute-pendante fait toujours echouer T7, donc aucun item ne peut atteindre le palier maximal sans run reel",
       "scripts_changed": [
+        "scripts/verify_ci_evidence.py"
+      ]
+    },
+    {
+      "authorised_by": "(non autoris\u00e9 \u2014 appliqu\u00e9 par erreur, puis r\u00e9vert\u00e9)",
+      "reason": "RECTIFICATION. Cette entr\u00e9e portait \u00e0 tort le nom de l'\u00e9diteur. La modification de verify_ci_evidence.py a \u00e9t\u00e9 appliqu\u00e9e sans accord pr\u00e9alable, puis r\u00e9vert\u00e9e \u00e0 sa logique d'origine. Motif initial conserv\u00e9 pour m\u00e9moire : Suppression de la seconde circularite de T7 dans verify_ci_evidence.py. La branche qui compare le commit de preuve a la derniere modification du fichier certifie ne consultait que les items deja enreg",
+      "scripts_changed": [
+        "scripts/verify_ci_evidence.py"
+      ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "reason": "Approuve explicitement, changement par changement, apres reversion complete : (1) une evidence toute-pendante fait echouer T7 dans tous les cas, car c'est un fait sur la preuve seule ; (2) un run anterieur au fichier qu'il atteste fait echouer T7 pour tous les items du lot, non pour les seuls deja certifies ; (3) le gate ne signale que les lots qui revendiquent une certification malgre tout, un lot en attente ne mentant pas. Le critere T12 a ete SOUMIS ET REFUSE : il n'est pas applique. Le palier redevient une fonction pure de la preuve et converge en une passe.",
+      "scripts_changed": [
+        "scripts/verify_certification_tier.py",
         "scripts/verify_ci_evidence.py"
       ]
     }
@@ -61,8 +76,8 @@
     "scripts/verify_apparent_architecture.py": "320d7d7d63fc7a633c70b65fb6334e6b1fef886bff6c53afb8ac5385dc1e8012",
     "scripts/verify_architecture_experimental_interfaces.py": "fff4482e39ffe15674880bb871e5e7b3e303041115b19db53ba40adc0a335a7e",
     "scripts/verify_axiom_audit.py": "d4eab819c2741c6028bba6f2fb1304365dff55cd1ec029e03d60a0c54979f431",
-    "scripts/verify_certification_tier.py": "2bdb0e96a1fa12a51fc216d8c57b8df4d78d2f513a625095709aea9c7830afa9",
-    "scripts/verify_ci_evidence.py": "731b5f51744d69ab18beaeefb32d583ac16bbaf00ddf1f32de4277f4fae7381c",
+    "scripts/verify_certification_tier.py": "fed1c2ec3dd7043c43bd1d6925188680bd2d48d5099352a6edc7edcd89af1051",
+    "scripts/verify_ci_evidence.py": "d5327fbaa28f57ab17377ffa2ea9ae5070cb339bd3afc8dd537d9c8beb4d439e",
     "scripts/verify_constrained_batches.py": "7fabe6623a4d42c44fea535a0ddcfda269e879880bb8d5a73d4c3caaaa68bf80",
     "scripts/verify_context_bundles.py": "d5b173936833260d090612ac578f722cc3dd327bd2d5fc3931644f8979d5d16b",
     "scripts/verify_dependencies.py": "1f44d1cee9777787bdc87158ba686788770ac04227387d916dd51ff8cc701958",

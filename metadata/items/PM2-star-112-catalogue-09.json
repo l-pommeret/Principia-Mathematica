@@ -25,7 +25,7 @@
       "declaration": "PM.Architecture.Star112OpeningKernel.star_112_01",
       "formal_scope": "exact typed definitional expansion of the dependent tagged sum class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
@@ -33,7 +33,14 @@
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     },
     {
       "id": "PM2:✱112·102",
@@ -57,9 +64,10 @@
         "failed_criteria": [
           "T3",
           "T4",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       }
     }
   ],

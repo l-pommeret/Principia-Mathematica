@@ -38,7 +38,7 @@
       "declaration": "PM.DescriptionSyntax.Formula.star_14_01",
       "formal_scope": "Exact contextual reduction by canonical definitional equality; description is not a term.",
       "source_status": "source-catalogued",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_blocked": false,
       "integration_status": "integrated-local",
@@ -47,7 +47,14 @@
         "CoreFormula.uniquely"
       ],
       "normalized_dependencies": [],
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     }
   ],
   "ci_evidence": {

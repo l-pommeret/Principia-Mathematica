@@ -24,7 +24,7 @@
       "declaration": "PM.FirstEdition.Volume1.Star5.star_5_22",
       "formal_scope": "elementary",
       "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "follows-printed",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [
@@ -62,7 +62,14 @@
         "strict_attempt_evidence": "reviews/Q245-kernel-gate.md",
         "editorial_note": "Explicit equivalence packaging and transitivity expose the kernel closure of the printed chain."
       },
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     }
   ],
   "ci_evidence": {

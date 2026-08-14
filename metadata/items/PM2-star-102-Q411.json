@@ -35,7 +35,7 @@
       "declaration": "PM.Architecture.Star102OpeningKernel.star_102_01",
       "formal_scope": "exact typed extensional reconstruction of the definition of the assigned-type cardinal class as the domain of the typed Nc relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_blocked": false,
       "integration_status": "provisional-kernel-checked",
@@ -45,7 +45,14 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q411-review.md",
       "semantic_audit_status": "strict-equivalence-passed",
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     }
   ],
   "ci_evidence": {

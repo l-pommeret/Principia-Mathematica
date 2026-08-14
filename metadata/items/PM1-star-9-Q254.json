@@ -36,14 +36,21 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "formalization_level": "pm-derivation-v1",
       "pm_ast": "FirstOrder.disjAlwaysSometimes φ ψ",
       "pm_judgement": "definitional expansion in SecondOrder syntax; no assertion judgement is claimed",
       "pm_certificate": "reducible definition star_9_07, certified only by kernel unfolding",
-      "certificate_kind": "definition-unfolding"
+      "certificate_kind": "definition-unfolding",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     },
     {
       "id": "PM1:✱9·08",
@@ -58,14 +65,21 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "source_status": "double-witness-checked",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "formalization_level": "pm-derivation-v1",
       "pm_ast": "FirstOrder.disjSometimesAlways ψ φ",
       "pm_judgement": "definitional expansion in SecondOrder syntax; no assertion judgement is claimed",
       "pm_certificate": "reducible definition star_9_08, certified only by kernel unfolding",
-      "certificate_kind": "definition-unfolding"
+      "certificate_kind": "definition-unfolding",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     }
   ],
   "ci_evidence": {

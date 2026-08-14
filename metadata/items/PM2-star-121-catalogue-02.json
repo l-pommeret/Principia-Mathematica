@@ -26,7 +26,7 @@
       "declaration": "PM.Architecture.Star121OpeningKernel.star_121_03",
       "formal_scope": "exact typed reconstruction of the class of finite-distance levels, with admissible non-null indices represented by Nat",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -34,11 +34,11 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T6"
+          "T7"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       },
       "formalization_level": "pm-derivation-v1"
     },
@@ -52,7 +52,7 @@
       "declaration": "PM.Architecture.Star121OpeningKernel.star_121_031",
       "formal_scope": "exact typed reconstruction of the positive finite-distance levels",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -60,11 +60,11 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T6"
+          "T7"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       },
       "formalization_level": "pm-derivation-v1"
     },
@@ -90,9 +90,10 @@
         "failed_criteria": [
           "T3",
           "T4",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       }
     },
     {
@@ -117,9 +118,10 @@
         "failed_criteria": [
           "T3",
           "T4",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "bcc3ac24876619b682ba7db6c8357b4c25fa69fa"
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
       }
     }
   ],

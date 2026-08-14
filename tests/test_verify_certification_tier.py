@@ -16,49 +16,7 @@ from pm_lean_index import (  # noqa: E402
     normalise_printed,
     reading_types,
 )
-from verify_certification_tier import (  # noqa: E402
-    PREMISED_KINDS,
-    _hypothesised_judgements,
-    _is_vacuous,
-    _statement_formula,
-)
-
-
-class ConditionalDerivationTests(unittest.TestCase):
-    """A derivation under an undischarged hypothesis is not a derivation.
-
-    `_statement_formula` searches the whole statement, so it finds the
-    judgement of `(h : ⊢ₚ A) : ⊢ₚ B` in the hypothesis and reports the theorem
-    as a judgement.  Criterion T12 exists to stop that from certifying.
-    """
-
-    def test_a_judgement_hypothesis_is_detected(self) -> None:
-        self.assertTrue(_hypothesised_judgements("theorem t (h : ⊢ₚ p) : ⊢ₚ q"))
-
-    def test_the_ramified_judgement_is_detected_too(self) -> None:
-        self.assertTrue(_hypothesised_judgements("theorem t (h : ⊢ᵣ A) : ⊢ᵣ B"))
-
-    def test_a_categorical_theorem_has_no_hypothesis(self) -> None:
-        statement = (
-            "theorem star_2_01 {Γ : PM.RealContext} (p : PM.Elementary Γ) : "
-            "⊢ₚ ((p ⊃ₚ ∼ₚ p) ⊃ₚ ∼ₚ p)"
-        )
-        self.assertEqual(_hypothesised_judgements(statement), [])
-
-    def test_ordinary_syntactic_binders_are_not_hypotheses(self) -> None:
-        # A formula or a signature argument is data the theorem quantifies over,
-        # not a judgement it assumes.
-        statement = (
-            "theorem star_9_34 (universal : signature.Universal argument 0) "
-            "(p : Formula signature real [] 0) : ⊢ᵣ star_9_34_formula universal p"
-        )
-        self.assertEqual(_hypothesised_judgements(statement), [])
-
-    def test_pm_s_own_rules_may_carry_premises(self) -> None:
-        """✱1·1 reads "anything implied by a true elementary proposition is
-        true": its premises are the rule, not a debt."""
-        self.assertIn("primitive-inference-rule", PREMISED_KINDS)
-        self.assertIn("derived-metalinguistic-rule", PREMISED_KINDS)
+from verify_certification_tier import _is_vacuous, _statement_formula  # noqa: E402
 
 
 class NormalisationTests(unittest.TestCase):

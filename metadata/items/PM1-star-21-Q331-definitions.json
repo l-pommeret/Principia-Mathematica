@@ -37,7 +37,7 @@
       "declaration": "PM.Architecture.Star21Q331RelationAbstraction.star_21_082",
       "formal_scope": "exact axiom-free non-v1 reduction theorem exposing the RelationClassApplication definition-in-use, with the existential representative and pointwise relation equivalence intact",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
@@ -46,7 +46,14 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit": "reviews/Q331-review.md",
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     },
     {
       "id": "PM1:✱21·083",
@@ -58,7 +65,7 @@
       "declaration": "PM.Architecture.Star21Q331RelationAbstraction.star_21_083",
       "formal_scope": "exact axiom-free non-v1 reduction theorem obtained by unfolding the genuine AbstractRelationClass definition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
@@ -67,7 +74,14 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit": "reviews/Q331-review.md",
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+      }
     }
   ],
   "ci_evidence": {

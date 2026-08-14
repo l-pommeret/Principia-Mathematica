@@ -132,6 +132,40 @@ theorem star_10_13
     (conjunction negation disjunction phi psi) psiDerived line2
   exact line3
 
+/-- Audited catalogue reading of ✱10·26. -/
+def star_10_26_reading
+    (universal : signature.Universal argument matrixOrder)
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction matrixOrder)
+    (outerNegation : signature.Negation (bindOrder matrixOrder argument))
+    (outerDisjunction : signature.Disjunction
+      (max (bindOrder matrixOrder argument) matrixOrder))
+    (phi psi : Formula signature real [argument] matrixOrder)
+    (value : Term signature real [] argument) :
+    ClaimReading signature real where
+  printed := "✱10·26. ⊢:. (z).φ z⊃ψ z:φ x:⊃.ψ x [*10·1. Imp]"
+  parsed := .assertion (mixedImplication outerNegation outerDisjunction
+    (.always universal (implication matrixNegation matrixDisjunction phi psi))
+    ((implication matrixNegation matrixDisjunction phi psi).instantiate value))
+
+/-- ✱10·26.  The printed ✱10·1 specialization already has the displayed
+`Imp` presentation after unfolding the instantiated matrix.
+`demonstration_provenance: follows-printed`. -/
+theorem star_10_26
+    (universal : signature.Universal argument matrixOrder)
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction matrixOrder)
+    (outerNegation : signature.Negation (bindOrder matrixOrder argument))
+    (outerDisjunction : signature.Disjunction
+      (max (bindOrder matrixOrder argument) matrixOrder))
+    (phi psi : Formula signature real [argument] matrixOrder)
+    (value : Term signature real [] argument) :
+    Derivation (star_10_26_reading universal matrixNegation matrixDisjunction
+      outerNegation outerDisjunction phi psi value).parsed := by
+  have line1 := Derivation.star_10_1 universal outerNegation outerDisjunction
+    (implication matrixNegation matrixDisjunction phi psi) value
+  exact line1
+
 /-- Audited catalogue reading of ✱10·43. -/
 def star_10_43_reading
     (universal : signature.Universal argument matrixOrder)
@@ -174,4 +208,5 @@ end PM.RamifiedSyntax
 #print axioms PM.RamifiedSyntax.star_10_122
 #print axioms PM.RamifiedSyntax.star_10_12
 #print axioms PM.RamifiedSyntax.star_10_13
+#print axioms PM.RamifiedSyntax.star_10_26
 #print axioms PM.RamifiedSyntax.star_10_43
