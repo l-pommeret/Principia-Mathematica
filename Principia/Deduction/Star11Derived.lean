@@ -938,7 +938,7 @@ def star_11_32_reading
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
     ClaimReading signature real where
-  printed := "⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : ⊃ :\n(x, y).φ(x, y) .⊃ .(x, y).ψ(x, y)  [✱10·27]"
+  printed := "⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : ⊃ :\n(x, y).φ(x, y) .⊃ .(x, y).ψ(x, y)"
   parsed := .assertion (Formula.always₂Saturated inner outer
     (star_10_27_body inner outer negation disjunction phi psi))
 
@@ -963,7 +963,7 @@ def star_11_33_reading
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
     ClaimReading signature real where
-  printed := "⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : ⊃ :\n(x, y).φ(x, y) .≡ .(x, y).ψ(x, y)  [✱10·271]"
+  printed := "⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : ⊃ :\n(x, y).φ(x, y) .≡ .(x, y).ψ(x, y)"
   parsed := .assertion (Formula.always₂Saturated inner outer
     (star_10_271_body inner outer negation disjunction phi psi))
 
@@ -1335,7 +1335,7 @@ def star_11_35_reading
     (p : Formula signature real [] (bindOrder baseOrder sort))
     (phi : Formula signature real [sort, sort]
       (bindOrder baseOrder sort)) : ClaimReading signature real where
-  printed := "⊢ : .(x, y) : φ(x, y) .⊃ .p : ≡ :\n(∃x, y).φ(x, y) .⊃ .p  [✱10·23·271]"
+  printed := "⊢ : .(x, y) : φ(x, y) .⊃ .p : ≡ :\n(∃x, y).φ(x, y) .⊃ .p"
   parsed := .assertion (star_4_01 negation disjunction
     (star_11_35_common inner outer negation disjunction p phi)
     (star_11_35_common inner outer negation disjunction p phi))
@@ -1462,7 +1462,7 @@ def star_11_34_reading
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi : Formula signature real [sort, sort]
       (bindOrder baseOrder sort)) : ClaimReading signature real where
-  printed := "⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : ⊃ :\n(∃x, y).φ(x, y) .⊃ .(∃x, y).ψ(x, y)  [✱10·27·28]"
+  printed := "⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : ⊃ :\n(∃x, y).φ(x, y) .⊃ .(∃x, y).ψ(x, y)"
   parsed := .assertion (Formula.always₂Saturated inner outer
     (star_10_27_star_10_28_body inner outer negation disjunction phi psi))
 
@@ -1749,7 +1749,7 @@ def star_11_25_reading
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (body : Formula signature real [sort, sort]
       (bindOrder baseOrder sort)) : ClaimReading signature real where
-  printed := "⊢ : ∼{(∃x, y).φ(x, y)} .≡ .(x, y).∼φ(x, y)"
+  printed := "⊢ : ∼{(∃x, y).φ(x, y)} .≡ .(x, y).∼φ(x, y)  [✱11·22.Transp]"
   parsed :=
     let universalNegation :=
       Formula.always₂Saturated inner outer (Formula.neg negation body)
@@ -1862,10 +1862,62 @@ private theorem star_10_1_saturated
     negation disjunction (.always universal body) (body.instantiate value)
   exact Derivation.castAssertion line3.symm line2
 
-private def keepHeadRenaming (sort : RSort) : Renaming [sort] [sort, sort] := by
-  intro variable
-  cases variable with
-  | zero => exact .zero
+private def keepHeadRenaming (sort : RSort) : Renaming [sort] [sort, sort]
+  | _, .zero => .zero
+  | _, .succ v => nomatch v
+
+private theorem Term.closed_weaken_instantiate
+    (term : Term signature real [] sort)
+    (value : Term signature real [] binder) :
+    term.weaken.substitute (instantiateSubstitution value) = term := by
+  cases term with
+  | real v => rfl
+  | apparent v => cases v
+  | symbol payload => rfl
+
+private theorem Formula.keepHead_instantiate₂
+    (formula : Formula signature real [sort] order)
+    (left right : Term signature real [] sort) :
+    (formula.rename (keepHeadRenaming sort)).instantiate₂ left right =
+      formula.instantiate left := by
+  unfold Formula.instantiate₂ Formula.instantiate
+  rw [Formula.rename_substitute, Formula.substitute_substitute]
+  apply Formula.substitute_of_pointwise
+  intro targetSort v
+  cases v with
+  | zero =>
+      change left.weaken.substitute (instantiateSubstitution right) = left
+      exact Term.closed_weaken_instantiate left right
+  | succ v => cases v
+
+private theorem Formula.alwaysHeadSaturated_substitute
+    (universal : signature.Universal sort (bindOrder baseOrder sort))
+    (body : Formula signature real (sort :: source)
+      (bindOrder baseOrder sort))
+    (substitution : Substitution signature real source target) :
+    (Formula.alwaysHeadSaturated universal body).substitute substitution =
+      Formula.alwaysHeadSaturated universal
+        (body.substitute (liftSubstitution substitution)) := by
+  unfold Formula.alwaysHeadSaturated
+  rw [Formula.substitute_cast, substitute_always]
+  exact bindOrder_idem baseOrder sort
+
+private theorem Formula.swapHeads_substitute_left
+    (body : Formula signature real [sort, sort] order)
+    (left : Term signature real [] sort) :
+    body.swapHeads.substitute
+        (liftSubstitution (instantiateSubstitution left)) =
+      body.instantiate left.weaken := by
+  rw [Formula.swapHeads_substitute]
+  unfold Formula.instantiate
+  apply Formula.substitute_of_pointwise
+  intro targetSort v
+  cases v with
+  | zero => rfl
+  | succ v =>
+      cases v with
+      | zero => rfl
+      | succ v => cases v
 
 private def star_11_26_forallYAtX
     (universal : signature.Universal sort (bindOrder baseOrder sort))
@@ -1873,6 +1925,20 @@ private def star_11_26_forallYAtX
     Formula signature real [sort, sort] (bindOrder baseOrder sort) :=
   (Formula.alwaysHeadSaturated universal body.swapHeads).rename
     (keepHeadRenaming sort)
+
+private theorem star_11_26_forallYAtX_instantiate₂
+    (universal : signature.Universal sort (bindOrder baseOrder sort))
+    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort))
+    (left right : Term signature real [] sort) :
+    (star_11_26_forallYAtX universal body).instantiate₂ left right =
+      Formula.alwaysHeadSaturated universal (body.instantiate left.weaken) := by
+  unfold star_11_26_forallYAtX
+  rw [Formula.keepHead_instantiate₂]
+  unfold Formula.instantiate
+  rw [Formula.alwaysHeadSaturated_substitute,
+    Formula.swapHeads_substitute_left]
+  unfold Formula.instantiate
+  rfl
 
 private def star_11_26_matrix
     (universal : signature.Universal sort (bindOrder baseOrder sort))
@@ -1911,11 +1977,12 @@ private theorem star_10_1_star_10_28_star_10_11_star_10_21_instance
         implication negation disjunction
           (Formula.neg negation (bodyAtLeft.instantiate right))
           (Formula.neg negation universalAtLeft) := by
-    dsimp [star_11_26_matrix, bodyAtLeft, universalAtLeft,
-      star_11_26_forallYAtX, Formula.alwaysHeadSaturated,
-      keepHeadRenaming]
-    rw [bindOrder_idem]
-    rfl
+    unfold star_11_26_matrix
+    rw [Formula.implication_instantiate₂,
+      Formula.neg_instantiate₂,
+      Formula.neg_instantiate₂,
+      star_11_26_forallYAtX_instantiate₂]
+    dsimp [bodyAtLeft, universalAtLeft, Formula.instantiate₂]
   exact Derivation.castAssertion matrixEq line2
 
 def star_11_26_reading

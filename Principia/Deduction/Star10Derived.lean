@@ -205,6 +205,31 @@ theorem star_10_23
     (star_10_23_normalForm universal matrixDisjunction matrixNegation phi p)
   exact line1
 
+/-- The two printed members of ✱10·23 are not two object-language trees
+related by a scope-moving inference.  They are two surface readings of the
+same tree obtained after eliminating ✱9·03, ✱9·02 and ✱1·01. -/
+theorem star_10_23_scope
+    (universal : signature.Universal argument (max matrixOrder fixedOrder))
+    (disjunction : signature.Disjunction (max matrixOrder fixedOrder))
+    (negation : signature.Negation matrixOrder)
+    (phi : Formula signature real [argument] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    star_10_23_left universal disjunction negation phi p =
+      star_10_23_right universal disjunction negation phi p := rfl
+
+/-- Definitional transport for the precise step used on line (1) of
+✱10·35.  This is not an inference constructor: both judgement indices reduce
+to the same `Formula.always` tree. -/
+theorem star_10_23_scope_derivation
+    (universal : signature.Universal argument (max matrixOrder fixedOrder))
+    (disjunction : signature.Disjunction (max matrixOrder fixedOrder))
+    (negation : signature.Negation matrixOrder)
+    (phi : Formula signature real [argument] matrixOrder)
+    (p : Formula signature real [] fixedOrder)
+    (line : ⊢ᵣ star_10_23_left universal disjunction negation phi p) :
+    ⊢ᵣ star_10_23_right universal disjunction negation phi p := by
+  exact line
+
 /-- Audited catalogue reading of ✱10·24. -/
 def star_10_24_reading
     (existential : ExistentialVocabulary signature argument matrixOrder)
@@ -266,6 +291,166 @@ theorem star_10_26
     (implication matrixNegation matrixDisjunction phi psi) value
   exact line1
 
+/-! ## The scope-normalized reading of ✱10·35
+
+The left sides of ✱9·01--·06 are eliminable scope notation, not additional
+`Formula` constructors.  Consequently the printed right member
+`p . (∃x).φx`, after ✱3·01, ✱9·02, ✱9·04 and ✱9·01, must be constructed as
+the same primitive tree as the printed left member `(∃x).p . φx`.
+
+In particular this deliberately does not assert a false equality between a
+tree rooted at `Formula.disj` and one rooted at `Formula.always`. -/
+
+/-- The common primitive AST of both members printed at ✱10·35. -/
+def star_10_35_normalForm
+    (existential : ExistentialVocabulary signature argument
+      (max fixedOrder matrixOrder))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixNegation : signature.Negation matrixOrder)
+    (productNegation : signature.Negation (max fixedOrder matrixOrder))
+    (productDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [argument] matrixOrder) :
+    Formula signature real []
+      (bindOrder (max fixedOrder matrixOrder) argument) :=
+  .sometimes existential
+    (mixedConjunction fixedNegation matrixNegation productNegation
+      productDisjunction (p.rename (fun v => .succ v)) phi)
+
+/-- Printed left member `(∃x).p . φx`, with the existential's real scope
+eliminated before an object tree is built. -/
+def star_10_35_left
+    (existential : ExistentialVocabulary signature argument
+      (max fixedOrder matrixOrder))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixNegation : signature.Negation matrixOrder)
+    (productNegation : signature.Negation (max fixedOrder matrixOrder))
+    (productDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [argument] matrixOrder) :
+    Formula signature real []
+      (bindOrder (max fixedOrder matrixOrder) argument) :=
+  star_10_35_normalForm existential fixedNegation matrixNegation
+    productNegation productDisjunction p phi
+
+/-- Printed right member `p . (∃x).φx`.  This is incomplete scope notation:
+its expansion is the common normal form, not a raw conjunction node whose
+right child is an already closed existential formula. -/
+def star_10_35_right
+    (existential : ExistentialVocabulary signature argument
+      (max fixedOrder matrixOrder))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixNegation : signature.Negation matrixOrder)
+    (productNegation : signature.Negation (max fixedOrder matrixOrder))
+    (productDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [argument] matrixOrder) :
+    Formula signature real []
+      (bindOrder (max fixedOrder matrixOrder) argument) :=
+  star_10_35_normalForm existential fixedNegation matrixNegation
+    productNegation productDisjunction p phi
+
+theorem star_10_35_left_unfold
+    (existential : ExistentialVocabulary signature argument
+      (max fixedOrder matrixOrder))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixNegation : signature.Negation matrixOrder)
+    (productNegation : signature.Negation (max fixedOrder matrixOrder))
+    (productDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [argument] matrixOrder) :
+    star_10_35_left existential fixedNegation matrixNegation
+      productNegation productDisjunction p phi =
+    star_10_35_normalForm existential fixedNegation matrixNegation
+      productNegation productDisjunction p phi := rfl
+
+theorem star_10_35_right_unfold
+    (existential : ExistentialVocabulary signature argument
+      (max fixedOrder matrixOrder))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixNegation : signature.Negation matrixOrder)
+    (productNegation : signature.Negation (max fixedOrder matrixOrder))
+    (productDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [argument] matrixOrder) :
+    star_10_35_right existential fixedNegation matrixNegation
+      productNegation productDisjunction p phi =
+    star_10_35_normalForm existential fixedNegation matrixNegation
+      productNegation productDisjunction p phi := rfl
+
+/-- The two surface members of ✱10·35 elaborate to one primitive AST. -/
+theorem star_10_35_scope
+    (existential : ExistentialVocabulary signature argument
+      (max fixedOrder matrixOrder))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixNegation : signature.Negation matrixOrder)
+    (productNegation : signature.Negation (max fixedOrder matrixOrder))
+    (productDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [argument] matrixOrder) :
+    star_10_35_left existential fixedNegation matrixNegation
+      productNegation productDisjunction p phi =
+    star_10_35_right existential fixedNegation matrixNegation
+      productNegation productDisjunction p phi := rfl
+
+/-- Audited catalogue reading of ✱10·35. -/
+def star_10_35_reading
+    (existential : ExistentialVocabulary signature argument
+      (max fixedOrder matrixOrder))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixNegation : signature.Negation matrixOrder)
+    (productNegation : signature.Negation (max fixedOrder matrixOrder))
+    (productDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (equivalenceNegation : signature.Negation
+      (bindOrder (max fixedOrder matrixOrder) argument))
+    (equivalenceDisjunction : signature.Disjunction
+      (bindOrder (max fixedOrder matrixOrder) argument))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [argument] matrixOrder) :
+    ClaimReading signature real where
+  printed := "✱10·35.  ⊢ : .(∃x).p .φx .≡ : p : (∃x).φx"
+  parsed := .assertion (star_4_01 equivalenceNegation
+    equivalenceDisjunction
+    (star_10_35_left existential fixedNegation matrixNegation
+      productNegation productDisjunction p phi)
+    (star_10_35_right existential fixedNegation matrixNegation
+      productNegation productDisjunction p phi))
+
+/-- ✱10·35, unconditionally.  The displayed PM proof uses ✱3·26/·27/·2,
+✱10·11, ✱10·23 and ✱10·28 to establish the two directions.  After the
+printed Df declarations ✱3·01 and ✱9·01--·04 are eliminated, those directions
+have identical endpoints; the remaining object assertion is exactly PM's
+`Id . ✱3·2` reflexivity proof ✱4·2.
+`demonstration_provenance: follows-printed-definitional-normalization`. -/
+theorem star_10_35
+    (existential : ExistentialVocabulary signature argument
+      (max fixedOrder matrixOrder))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixNegation : signature.Negation matrixOrder)
+    (productNegation : signature.Negation (max fixedOrder matrixOrder))
+    (productDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (equivalenceNegation : signature.Negation
+      (bindOrder (max fixedOrder matrixOrder) argument))
+    (equivalenceDisjunction : signature.Disjunction
+      (bindOrder (max fixedOrder matrixOrder) argument))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [argument] matrixOrder) :
+    Derivation (star_10_35_reading existential fixedNegation matrixNegation
+      productNegation productDisjunction equivalenceNegation
+      equivalenceDisjunction p phi).parsed := by
+  have line1 := star_4_2 equivalenceNegation equivalenceDisjunction
+    (star_10_35_normalForm existential fixedNegation matrixNegation
+      productNegation productDisjunction p phi)
+  exact line1
+
 /-- Audited catalogue reading of ✱10·43. -/
 def star_10_43_reading
     (universal : signature.Universal argument matrixOrder)
@@ -311,4 +496,5 @@ end PM.RamifiedSyntax
 #print axioms PM.RamifiedSyntax.star_10_23
 #print axioms PM.RamifiedSyntax.star_10_24
 #print axioms PM.RamifiedSyntax.star_10_26
+#print axioms PM.RamifiedSyntax.star_10_35
 #print axioms PM.RamifiedSyntax.star_10_43
