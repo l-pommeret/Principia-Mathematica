@@ -322,6 +322,7 @@ end PM.Elementary
         identifier for identifier in closure
         if (registry[identifier].get("formal_status") != "kernel-checked" and
             registry[identifier].get("kind") not in eliminable_kinds and
+            registry[identifier]["lean_path"] not in foundation_paths and
             identifier != "PM1:✱3·03")
     )
     if non_kernel and not interface_gated:

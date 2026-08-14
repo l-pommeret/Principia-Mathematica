@@ -52,14 +52,21 @@
       "declaration": "PM.Derivation.star_1_1",
       "formal_scope": "asserted definite elementary propositions only",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "demonstration_provenance": "editorial-reconstruction",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "substitutions": [],
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "af83b7974c26af28a1462683616d4f44f4167091"
+      }
     },
     {
       "id": "PM1:✱1·11",
@@ -71,14 +78,21 @@
       "declaration": "PM.Derivation.star_1_11",
       "formal_scope": "nonempty context of one or more real variables",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "kernel-checked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "demonstration_provenance": "editorial-reconstruction",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "substitutions": [],
-      "formalization_level": "pm-derivation-v1"
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "af83b7974c26af28a1462683616d4f44f4167091"
+      }
     },
     {
       "id": "PM1:✱1·2",
@@ -104,7 +118,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+        "computed_at_commit": "af83b7974c26af28a1462683616d4f44f4167091"
       }
     },
     {
@@ -131,7 +145,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "b820d6967b244c4cf8b911188b55fdc93061bc27"
+        "computed_at_commit": "af83b7974c26af28a1462683616d4f44f4167091"
       }
     }
   ],

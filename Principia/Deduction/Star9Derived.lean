@@ -45,6 +45,41 @@ private theorem lift_star_1_3_left
     (Derivation.castAssertion matrixEq line1)
   exact line2
 
+private theorem lift_star_1_2
+    (universal : signature.Universal argument 0)
+    (negation : signature.Negation 0)
+    (disjunction : signature.Disjunction 0)
+    (phi : Formula signature real [argument] 0) :
+    ⊢ᵣ .always universal
+      (implication negation disjunction
+        (sameDisjunction disjunction phi phi) phi) := by
+  let value : Term signature (argument :: real) [] argument :=
+    .real (.zero : Var (argument :: real) argument)
+  have line1 :
+      ⊢ᵣ implication negation disjunction
+        (sameDisjunction disjunction
+          (phi.weakenReal.instantiate value)
+          (phi.weakenReal.instantiate value))
+        (phi.weakenReal.instantiate value) :=
+    Derivation.star_1_2 negation disjunction
+      (phi.weakenReal.instantiate value)
+  have matrixEq :
+      (implication negation disjunction
+        (sameDisjunction disjunction phi phi) phi).weakenReal.instantiate value =
+      implication negation disjunction
+        (sameDisjunction disjunction
+          (phi.weakenReal.instantiate value)
+          (phi.weakenReal.instantiate value))
+        (phi.weakenReal.instantiate value) := by
+    rw [implication_weakenReal, sameDisjunction_weakenReal,
+      Formula.instantiate, implication_substitute,
+      sameDisjunction_substitute, Formula.instantiate]
+  have line2 := Derivation.star_9_13 universal
+    (implication negation disjunction
+      (sameDisjunction disjunction phi phi) phi)
+    (Derivation.castAssertion matrixEq line1)
+  exact line2
+
 private theorem lift_star_1_4
     (universal : signature.Universal argument 0)
     (negation : signature.Negation 0)
@@ -244,6 +279,50 @@ theorem star_9_4 (universal : signature.Universal argument 0)
     Derivation (star_9_4_reading universal negation disjunction p q phi).parsed := by
   exact lift_star_1_5 universal negation disjunction p q phi
 
+def star_9_2_reading
+    (universal : signature.Universal argument matrixOrder)
+    (negation : signature.Negation (bindOrder matrixOrder argument))
+    (disjunction : signature.Disjunction
+      (max (bindOrder matrixOrder argument) matrixOrder))
+    (phi : Formula signature real [argument] matrixOrder)
+    (y : Term signature real [] argument) :
+    ClaimReading signature real where
+  printed := "⊢:(x).φx.⊃.φy"
+  parsed := .assertion (mixedImplication negation disjunction
+    (.always universal phi) (phi.instantiate y))
+
+/-- ✱9·2 is the general-to-particular inference later restated as ✱10·1.
+The canonical block prints no demonstration, so the later primitive restatement
+is used as the reconstruction.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_9_2
+    (universal : signature.Universal argument matrixOrder)
+    (negation : signature.Negation (bindOrder matrixOrder argument))
+    (disjunction : signature.Disjunction
+      (max (bindOrder matrixOrder argument) matrixOrder))
+    (phi : Formula signature real [argument] matrixOrder)
+    (y : Term signature real [] argument) :
+    Derivation (star_9_2_reading universal negation disjunction phi y).parsed := by
+  have line1 := Derivation.star_10_1 universal negation disjunction phi y
+  exact line1
+
+def star_9_3_reading (universal : signature.Universal argument 0)
+    (negation : signature.Negation 0) (disjunction : signature.Disjunction 0)
+    (phi : Formula signature real [argument] 0) :
+    ClaimReading signature real where
+  printed := "⊢ : .(x).φx .∨. (x).φx : ⊃ . (x).φx"
+  parsed := .assertion (.always universal (implication negation disjunction
+    (sameDisjunction disjunction phi phi) phi))
+
+/-- The eliminable scope definitions reduce the printed proof to its
+elementary `Taut` matrix and the final generalization.
+`demonstration_provenance: follows-printed`. -/
+theorem star_9_3 (universal : signature.Universal argument 0)
+    (negation : signature.Negation 0) (disjunction : signature.Disjunction 0)
+    (phi : Formula signature real [argument] 0) :
+    Derivation (star_9_3_reading universal negation disjunction phi).parsed := by
+  exact lift_star_1_2 universal negation disjunction phi
+
 def star_9_23_reading (universal : signature.Universal argument 0)
     (negation : signature.Negation (bindOrder 0 argument))
     (disjunction : signature.Disjunction (bindOrder 0 argument))
@@ -438,7 +517,96 @@ theorem star_9_42 (universal : signature.Universal argument 0)
       (sameDisjunction disjunction phi (r.rename (fun v => .succ v)))))
   exact line2
 
+def star_9_51_reading (universal : signature.Universal argument 0)
+    (negation : signature.Negation 0) (disjunction : signature.Disjunction 0)
+    (p r : Formula signature real [] 0)
+    (phi : Formula signature real [argument] 0) :
+    ClaimReading signature real where
+  printed := "⊢ : : p .⊃. (x).φx : ⊃ : .p ∨ r .⊃ .⊃ : (x).φx .∨. r"
+  parsed := .assertion (.always universal (implication negation disjunction
+    (implication negation disjunction (p.rename (fun v => .succ v)) phi)
+    (implication negation disjunction
+      (sameDisjunction disjunction (p.rename (fun v => .succ v))
+        (r.rename (fun v => .succ v)))
+      (sameDisjunction disjunction phi (r.rename (fun v => .succ v))))))
+
+/-- `demonstration_provenance: editorial-reconstruction`. -/
+theorem star_9_51 (universal : signature.Universal argument 0)
+    (negation : signature.Negation 0) (disjunction : signature.Disjunction 0)
+    (p r : Formula signature real [] 0)
+    (phi : Formula signature real [argument] 0) :
+    Derivation (star_9_51_reading universal negation disjunction p r phi).parsed := by
+  let value : Term signature (argument :: real) [] argument :=
+    .real (.zero : Var (argument :: real) argument)
+  have line1 :
+      ⊢ᵣ implication negation disjunction
+        (implication negation disjunction p.weakenReal
+          (phi.weakenReal.instantiate value))
+        (implication negation disjunction
+          (sameDisjunction disjunction p.weakenReal r.weakenReal)
+          (sameDisjunction disjunction
+            (phi.weakenReal.instantiate value) r.weakenReal)) :=
+    star_2_38 negation disjunction r.weakenReal p.weakenReal
+      (phi.weakenReal.instantiate value)
+  have matrixEq :
+      (implication negation disjunction
+        (implication negation disjunction (p.rename (fun v => .succ v)) phi)
+        (implication negation disjunction
+          (sameDisjunction disjunction (p.rename (fun v => .succ v))
+            (r.rename (fun v => .succ v)))
+          (sameDisjunction disjunction phi
+            (r.rename (fun v => .succ v))))).weakenReal.instantiate value =
+      implication negation disjunction
+        (implication negation disjunction p.weakenReal
+          (phi.weakenReal.instantiate value))
+        (implication negation disjunction
+          (sameDisjunction disjunction p.weakenReal r.weakenReal)
+          (sameDisjunction disjunction
+            (phi.weakenReal.instantiate value) r.weakenReal)) := by
+    rw [implication_weakenReal, implication_weakenReal,
+      implication_weakenReal, sameDisjunction_weakenReal,
+      sameDisjunction_weakenReal, Formula.instantiate,
+      implication_substitute, implication_substitute,
+      implication_substitute, sameDisjunction_substitute,
+      sameDisjunction_substitute,
+      Formula.closed_weakenReal_instantiateSubstitution,
+      Formula.closed_weakenReal_instantiateSubstitution]
+    rfl
+  have line2 := Derivation.star_9_13 universal
+    (implication negation disjunction
+      (implication negation disjunction (p.rename (fun v => .succ v)) phi)
+      (implication negation disjunction
+        (sameDisjunction disjunction (p.rename (fun v => .succ v))
+          (r.rename (fun v => .succ v)))
+        (sameDisjunction disjunction phi (r.rename (fun v => .succ v)))))
+    (Derivation.castAssertion matrixEq line1)
+  exact line2
+
+def star_9_61_reading
+    (disjunction : signature.Disjunction matrixOrder)
+    (phi psi : Formula signature real [argument] matrixOrder) :
+    ClaimReading signature real where
+  printed := "If φx̂ and ψx̂ are elementary functions of the same type, there is a function φx̂ ∨ ψx̂."
+  parsed := .functionExistence (sameDisjunction disjunction phi psi)
+
+/-- ✱9·61. Intrinsic typing supplies PM's same-type hypothesis, and the
+printed appeal to ✱9·15 is the primitive function-existence constructor.
+`demonstration_provenance: follows-printed`. -/
+theorem star_9_61
+    (disjunction : signature.Disjunction matrixOrder)
+    (phi psi : Formula signature real [argument] matrixOrder) :
+    Derivation (star_9_61_reading disjunction phi psi).parsed := by
+  have line1 := Derivation.star_10_121 psi
+  have line2 := Derivation.star_10_121 phi
+  have line3 := Derivation.star_10_121
+    (sameDisjunction disjunction phi psi)
+  have line4 := Derivation.star_10_122
+    (sameDisjunction disjunction phi psi)
+  exact line4
+
 #print axioms star_9_32
+#print axioms star_9_2
+#print axioms star_9_3
 #print axioms star_9_34
 #print axioms star_9_36
 #print axioms star_9_4
@@ -448,5 +616,7 @@ theorem star_9_42 (universal : signature.Universal argument 0)
 #print axioms star_9_25
 #print axioms star_9_41
 #print axioms star_9_42
+#print axioms star_9_51
+#print axioms star_9_61
 
 end PM.RamifiedSyntax

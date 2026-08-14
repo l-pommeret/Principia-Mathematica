@@ -1,4 +1,5 @@
 import Principia.Deduction.Star3Ramified
+import Principia.Deduction.Star4Ramified
 import Principia.Deduction.Star9Derived
 
 namespace PM.RamifiedSyntax
@@ -132,6 +133,105 @@ theorem star_10_13
     (conjunction negation disjunction phi psi) psiDerived line2
   exact line3
 
+/-- The common AST obtained from the two sides of ✱10·23 by the printed
+definitions ✱9·03, ✱9·02 and ✱1·01. -/
+def star_10_23_normalForm
+    (universal : signature.Universal argument (max matrixOrder fixedOrder))
+    (disjunction : signature.Disjunction (max matrixOrder fixedOrder))
+    (negation : signature.Negation matrixOrder)
+    (phi : Formula signature real [argument] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Formula signature real []
+      (bindOrder (max matrixOrder fixedOrder) argument) :=
+  star_9_03 universal disjunction (.neg negation phi) p
+
+/-- Left member (x).φx⊃p, with PM's full-scope convention ✱9·03
+eliminated to its object AST. -/
+def star_10_23_left
+    (universal : signature.Universal argument (max matrixOrder fixedOrder))
+    (disjunction : signature.Disjunction (max matrixOrder fixedOrder))
+    (negation : signature.Negation matrixOrder)
+    (phi : Formula signature real [argument] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Formula signature real []
+      (bindOrder (max matrixOrder fixedOrder) argument) :=
+  star_10_23_normalForm universal disjunction negation phi p
+
+/-- Right member (∃x).φx⊃p, after the eliminable definitions ✱9·02
+and ✱1·01 used on PM's first printed line. -/
+def star_10_23_right
+    (universal : signature.Universal argument (max matrixOrder fixedOrder))
+    (disjunction : signature.Disjunction (max matrixOrder fixedOrder))
+    (negation : signature.Negation matrixOrder)
+    (phi : Formula signature real [argument] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Formula signature real []
+      (bindOrder (max matrixOrder fixedOrder) argument) :=
+  star_10_23_normalForm universal disjunction negation phi p
+
+/-- Audited catalogue reading of ✱10·23. -/
+def star_10_23_reading
+    (universal : signature.Universal argument (max matrixOrder fixedOrder))
+    (matrixDisjunction : signature.Disjunction (max matrixOrder fixedOrder))
+    (matrixNegation : signature.Negation matrixOrder)
+    (outerNegation : signature.Negation
+      (bindOrder (max matrixOrder fixedOrder) argument))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder (max matrixOrder fixedOrder) argument))
+    (phi : Formula signature real [argument] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    ClaimReading signature real where
+  printed := "✱10·23.  ⊢ : .(x).φx⊃p .≡ : (∃x).φx .⊃ .p"
+  parsed := .assertion (star_4_01 outerNegation outerDisjunction
+    (star_10_23_left universal matrixDisjunction matrixNegation phi p)
+    (star_10_23_right universal matrixDisjunction matrixNegation phi p))
+
+/-- ✱10·23.  PM's first demonstration reduces both printed members, in
+order, by ✱4·2, ✱9·03, ✱9·02 and ✱1·01 to one formula.
+demonstration_provenance: follows-printed. -/
+theorem star_10_23
+    (universal : signature.Universal argument (max matrixOrder fixedOrder))
+    (matrixDisjunction : signature.Disjunction (max matrixOrder fixedOrder))
+    (matrixNegation : signature.Negation matrixOrder)
+    (outerNegation : signature.Negation
+      (bindOrder (max matrixOrder fixedOrder) argument))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder (max matrixOrder fixedOrder) argument))
+    (phi : Formula signature real [argument] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Derivation (star_10_23_reading universal matrixDisjunction matrixNegation
+      outerNegation outerDisjunction phi p).parsed := by
+  have line1 := star_4_2 outerNegation outerDisjunction
+    (star_10_23_normalForm universal matrixDisjunction matrixNegation phi p)
+  exact line1
+
+/-- Audited catalogue reading of ✱10·24. -/
+def star_10_24_reading
+    (existential : ExistentialVocabulary signature argument matrixOrder)
+    (negation : signature.Negation matrixOrder)
+    (disjunction : signature.Disjunction
+      (max matrixOrder (bindOrder matrixOrder argument)))
+    (body : Formula signature real [argument] matrixOrder)
+    (value : Term signature real [] argument) :
+    ClaimReading signature real where
+  printed := "✱10·24.  ⊢ : φy .⊃ .(∃x).φx"
+  parsed := .assertion (mixedImplication negation disjunction
+    (body.instantiate value) (.sometimes existential body))
+
+/-- ✱10·24.  After the eliminable definition ✱10·01 is unfolded, PM's
+printed ✱10·1/`Transp` proof is the existential primitive ✱9·1.
+`demonstration_provenance: follows-printed`. -/
+theorem star_10_24
+    (existential : ExistentialVocabulary signature argument matrixOrder)
+    (negation : signature.Negation matrixOrder)
+    (disjunction : signature.Disjunction
+      (max matrixOrder (bindOrder matrixOrder argument)))
+    (body : Formula signature real [argument] matrixOrder)
+    (value : Term signature real [] argument) :
+    Derivation (star_10_24_reading existential negation disjunction body value).parsed := by
+  have line1 := Derivation.star_9_1 existential negation disjunction body value
+  exact line1
+
 /-- Audited catalogue reading of ✱10·26. -/
 def star_10_26_reading
     (universal : signature.Universal argument matrixOrder)
@@ -208,5 +308,7 @@ end PM.RamifiedSyntax
 #print axioms PM.RamifiedSyntax.star_10_122
 #print axioms PM.RamifiedSyntax.star_10_12
 #print axioms PM.RamifiedSyntax.star_10_13
+#print axioms PM.RamifiedSyntax.star_10_23
+#print axioms PM.RamifiedSyntax.star_10_24
 #print axioms PM.RamifiedSyntax.star_10_26
 #print axioms PM.RamifiedSyntax.star_10_43

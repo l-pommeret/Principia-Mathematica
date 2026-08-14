@@ -326,6 +326,20 @@ def compute(item: dict, evidence_failures: list[str]) -> tuple[str, list[str], d
         else:
             # T3 and T4 are satisfied by construction here: the constructor's
             # own type is the judgement, indexed by the printed formula's AST.
+            #
+            # T7 is still owed.  A constructor is not an abstract object: it
+            # lives in a Lean file, and when that file changes the run that
+            # vouched for it no longer says anything about the code now
+            # published.  Returning the top tier before evaluating T7 also
+            # deadlocked the repository — eight primitives held `kernel-checked`
+            # on evidence predating their own file, `--write` could not demote
+            # them, and CI therefore stayed red for good, blocking every other
+            # promotion.
+            if evidence_failures:
+                failed.append("T7")
+                notes["T7"] = "; ".join(evidence_failures)
+            if failed == ["T7"]:
+                return TIER_AWAITING, sorted(set(failed)), notes
             return (TIER_MAX if not failed else TIER_TYPECHECKED), sorted(set(failed)), notes
     elif declared is None:
         failed.append("T2")

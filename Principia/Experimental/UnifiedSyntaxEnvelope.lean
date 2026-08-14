@@ -85,7 +85,7 @@ theorem injectOrdered_injective (ObjectSort : Type u) {realContext : PM.RealCont
 /-- The only currently audited cross-family retraction is the existing
 order-zero `OrderedFormula` eraser.  It stays partial: a first- or
 second-order formula is never treated as elementary syntax. -/
-def retractOrderedElementary? :
+noncomputable def retractOrderedElementary? :
     Envelope (ObjectSort := ObjectSort) (.ordered realContext order) →
       Option (PM.Elementary realContext)
   | .ordered formula => PM.OrderedFormula.eraseElementary? formula

@@ -28,6 +28,225 @@ private theorem conjoin
     (conjunction negation disjunction phi psi) psiDerived line2
   exact line3
 
+private theorem castAssertionOrder
+    (equality : sourceOrder = targetOrder)
+    (formula : Formula signature real [] sourceOrder) :
+    Derivation (.assertion formula) →
+    Derivation (.assertion
+      (Eq.mp (congrArg (Formula signature real []) equality) formula)) := by
+  cases equality
+  exact fun derivation => derivation
+
+private theorem Term.rename_rename_of_pointwise
+    (rho : Renaming source middle) (tau : Renaming middle target)
+    (upsilon : Renaming source target)
+    (pointwise : ∀ {sort} (v : Var source sort), tau (rho v) = upsilon v)
+    (term : Term signature realCtx source sort) :
+    (term.rename rho).rename tau = term.rename upsilon := by
+  cases term with
+  | real v => rfl
+  | apparent v => exact congrArg Term.apparent (pointwise v)
+  | symbol payload => rfl
+
+private theorem Arguments.rename_rename_of_pointwise
+    (rho : Renaming source middle) (tau : Renaming middle target)
+    (upsilon : Renaming source target)
+    (pointwise : ∀ {sort} (v : Var source sort), tau (rho v) = upsilon v)
+    (arguments : Arguments signature realCtx source sorts) :
+    (arguments.rename rho).rename tau = arguments.rename upsilon := by
+  induction arguments with
+  | nil => rfl
+  | cons term tail ih =>
+      show Arguments.cons _ _ = Arguments.cons _ _
+      rw [Term.rename_rename_of_pointwise rho tau upsilon pointwise term, ih]
+
+private theorem liftRenaming_comp_pointwise
+    (rho : Renaming source middle) (tau : Renaming middle target)
+    (upsilon : Renaming source target)
+    (pointwise : ∀ {sort} (v : Var source sort), tau (rho v) = upsilon v) :
+    ∀ {sort} (v : Var (binder :: source) sort),
+      liftRenaming tau (liftRenaming rho v) = liftRenaming upsilon v := by
+  intro sort v
+  cases v with
+  | zero => rfl
+  | succ v => exact congrArg Var.succ (pointwise v)
+
+private theorem liftRenamingN_comp_pointwise
+    (binders : List RSort)
+    (rho : Renaming source middle) (tau : Renaming middle target)
+    (upsilon : Renaming source target)
+    (pointwise : ∀ {sort} (v : Var source sort), tau (rho v) = upsilon v) :
+    ∀ {sort} (v : Var (binders ++ source) sort),
+      liftRenamingN binders tau (liftRenamingN binders rho v) =
+        liftRenamingN binders upsilon v := by
+  induction binders with
+  | nil => exact pointwise
+  | cons binder binders ih => exact liftRenaming_comp_pointwise _ _ _ ih
+
+private theorem Formula.rename_rename_of_pointwise
+    (rho : Renaming source middle) (tau : Renaming middle target)
+    (upsilon : Renaming source target)
+    (pointwise : ∀ {sort} (v : Var source sort), tau (rho v) = upsilon v)
+    (formula : Formula signature realCtx source order) :
+    (formula.rename rho).rename tau = formula.rename upsilon := by
+  induction formula generalizing middle target with
+  | proposition term =>
+      show Formula.proposition _ = Formula.proposition _
+      rw [Term.rename_rename_of_pointwise rho tau upsilon pointwise term]
+  | apply function arguments =>
+      show Formula.apply _ _ = Formula.apply _ _
+      rw [Term.rename_rename_of_pointwise rho tau upsilon pointwise function,
+        Arguments.rename_rename_of_pointwise rho tau upsilon pointwise arguments]
+  | neg meaning body ih =>
+      show Formula.neg _ _ = Formula.neg _ _
+      rw [ih rho tau upsilon pointwise]
+  | disj meaning left right leftIH rightIH =>
+      show Formula.disj _ _ _ = Formula.disj _ _ _
+      rw [leftIH rho tau upsilon pointwise, rightIH rho tau upsilon pointwise]
+  | always meaning body ih =>
+      show Formula.always _ _ = Formula.always _ _
+      rw [ih (liftRenaming rho) (liftRenaming tau) (liftRenaming upsilon)
+        (liftRenaming_comp_pointwise rho tau upsilon pointwise)]
+  | incompleteScope kind parameters resultOrder excess scopeOrder
+      matrix continuation matrixIH continuationIH =>
+      show Formula.incompleteScope _ _ _ _ _ _ _ =
+        Formula.incompleteScope _ _ _ _ _ _ _
+      rw [matrixIH (liftRenamingN parameters rho) (liftRenamingN parameters tau)
+          (liftRenamingN parameters upsilon)
+          (liftRenamingN_comp_pointwise parameters rho tau upsilon pointwise),
+        continuationIH (liftRenaming rho) (liftRenaming tau) (liftRenaming upsilon)
+          (liftRenaming_comp_pointwise rho tau upsilon pointwise)]
+  | descriptionScope sort conditionOrder scopeOrder
+      condition continuation conditionIH continuationIH =>
+      show Formula.descriptionScope _ _ _ _ _ =
+        Formula.descriptionScope _ _ _ _ _
+      rw [conditionIH (liftRenaming rho) (liftRenaming tau) (liftRenaming upsilon)
+          (liftRenaming_comp_pointwise rho tau upsilon pointwise),
+        continuationIH (liftRenaming rho) (liftRenaming tau) (liftRenaming upsilon)
+          (liftRenaming_comp_pointwise rho tau upsilon pointwise)]
+
+private theorem Term.rename_eq_self
+    (rho : Renaming source source)
+    (pointwise : ∀ {sort} (v : Var source sort), rho v = v)
+    (term : Term signature realCtx source sort) :
+    term.rename rho = term := by
+  cases term with
+  | real v => rfl
+  | apparent v => exact congrArg Term.apparent (pointwise v)
+  | symbol payload => rfl
+
+private theorem Arguments.rename_eq_self
+    (rho : Renaming source source)
+    (pointwise : ∀ {sort} (v : Var source sort), rho v = v)
+    (arguments : Arguments signature realCtx source sorts) :
+    arguments.rename rho = arguments := by
+  induction arguments with
+  | nil => rfl
+  | cons term tail ih =>
+      show Arguments.cons _ _ = Arguments.cons _ _
+      rw [Term.rename_eq_self rho pointwise term, ih]
+
+private theorem liftRenaming_eq_self
+    (rho : Renaming source source)
+    (pointwise : ∀ {sort} (v : Var source sort), rho v = v) :
+    ∀ {sort} (v : Var (binder :: source) sort), liftRenaming rho v = v := by
+  intro sort v
+  cases v with
+  | zero => rfl
+  | succ v => exact congrArg Var.succ (pointwise v)
+
+private theorem liftRenamingN_eq_self
+    (binders : List RSort)
+    (rho : Renaming source source)
+    (pointwise : ∀ {sort} (v : Var source sort), rho v = v) :
+    ∀ {sort} (v : Var (binders ++ source) sort),
+      liftRenamingN binders rho v = v := by
+  induction binders with
+  | nil => exact pointwise
+  | cons binder binders ih => exact liftRenaming_eq_self _ ih
+
+private theorem Formula.rename_eq_self
+    (rho : Renaming source source)
+    (pointwise : ∀ {sort} (v : Var source sort), rho v = v)
+    (formula : Formula signature realCtx source order) :
+    formula.rename rho = formula := by
+  induction formula with
+  | proposition term =>
+      show Formula.proposition _ = Formula.proposition _
+      rw [Term.rename_eq_self rho pointwise term]
+  | apply function arguments =>
+      change Formula.apply (function.rename rho) (arguments.rename rho) = _
+      rw [Term.rename_eq_self rho pointwise function,
+        Arguments.rename_eq_self rho pointwise arguments]
+  | neg meaning body ih =>
+      show Formula.neg _ _ = Formula.neg _ _
+      rw [ih rho pointwise]
+  | disj meaning left right leftIH rightIH =>
+      show Formula.disj _ _ _ = Formula.disj _ _ _
+      rw [leftIH rho pointwise, rightIH rho pointwise]
+  | always meaning body ih =>
+      show Formula.always _ _ = Formula.always _ _
+      rw [ih (liftRenaming rho) (liftRenaming_eq_self rho pointwise)]
+  | incompleteScope kind parameters resultOrder excess scopeOrder
+      matrix continuation matrixIH continuationIH =>
+      show Formula.incompleteScope _ _ _ _ _ _ _ =
+        Formula.incompleteScope _ _ _ _ _ _ _
+      rw [matrixIH (liftRenamingN parameters rho)
+          (liftRenamingN_eq_self parameters rho pointwise),
+        continuationIH (liftRenaming rho) (liftRenaming_eq_self rho pointwise)]
+  | descriptionScope sort conditionOrder scopeOrder
+      condition continuation conditionIH continuationIH =>
+      show Formula.descriptionScope _ _ _ _ _ =
+        Formula.descriptionScope _ _ _ _ _
+      rw [conditionIH (liftRenaming rho) (liftRenaming_eq_self rho pointwise),
+        continuationIH (liftRenaming rho) (liftRenaming_eq_self rho pointwise)]
+
+private theorem Formula.swapHeads_swapHeads
+    (formula : Formula signature real
+      (leftSort :: rightSort :: apparent) order) :
+    formula.swapHeads.swapHeads = formula := by
+  have pointwise : ∀ {sort} (v : Var
+      (leftSort :: rightSort :: apparent) sort),
+      swapHeadsRenaming (swapHeadsRenaming v) = v := by
+    intro sort v
+    cases v with
+    | zero => rfl
+    | succ v =>
+        cases v with
+        | zero => rfl
+        | succ v => rfl
+  have line1 := Formula.rename_rename_of_pointwise
+    (signature := signature) (realCtx := real)
+    swapHeadsRenaming swapHeadsRenaming (fun v => v) pointwise formula
+  have line2 := Formula.rename_eq_self (signature := signature)
+    (realCtx := real) (fun v => v) (fun _ => rfl) formula
+  exact Eq.trans line1 line2
+
+private theorem exchangeSameSort
+    (inner : signature.Universal sort matrixOrder)
+    (outer : signature.Universal sort (bindOrder matrixOrder sort))
+    (swappedInner : signature.Universal sort matrixOrder)
+    (swappedOuter : signature.Universal sort (bindOrder matrixOrder sort))
+    (negation : signature.Negation
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (disjunction : signature.Disjunction
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (body : Formula signature real [sort, sort] matrixOrder) :
+    ⊢ᵣ implication negation disjunction
+      (body.always₂ inner outer)
+      (body.swapHeads.always₂ swappedInner swappedOuter) := by
+  let castDisjunction := Eq.mp
+    (congrArg signature.Disjunction
+      (natMaxSelf (bindOrder (bindOrder matrixOrder sort) sort)).symm)
+    disjunction
+  have line1 := Derivation.star_11_07 inner outer swappedInner swappedOuter
+    negation castDisjunction body
+  exact castAssertionOrder
+    (natMaxSelf (bindOrder (bindOrder matrixOrder sort) sort))
+    (mixedImplication negation castDisjunction
+      (body.always₂ inner outer)
+      (body.swapHeads.always₂ swappedInner swappedOuter)) line1
+
 /-!
 # Derived declarations for PM I, ✱11
 
@@ -129,6 +348,55 @@ theorem star_11_11
   have line1 := Derivation.star_11_11 inner outer body hypothesis
   exact line1
 
+/-- Catalogue reading of ✱11·2. -/
+def star_11_2_reading
+    (leftInner : signature.Universal sort matrixOrder)
+    (rightOuter : signature.Universal sort (bindOrder matrixOrder sort))
+    (rightInner : signature.Universal sort matrixOrder)
+    (leftOuter : signature.Universal sort (bindOrder matrixOrder sort))
+    (negation : signature.Negation
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (disjunction : signature.Disjunction
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (body : Formula signature real [sort, sort] matrixOrder) :
+    ClaimReading signature real where
+  printed := "⊢ : (x, y).φ(x, y) .≡ .(y, x).φ(x, y)"
+  parsed := .assertion (conjunction negation disjunction
+    (implication negation disjunction
+      (body.always₂ leftInner rightOuter)
+      (body.swapHeads.always₂ rightInner leftOuter))
+    (implication negation disjunction
+      (body.swapHeads.always₂ rightInner leftOuter)
+      (body.always₂ leftInner rightOuter)))
+
+/-- ✱11·2, reconstructed from primitive exchange in both directions and adjunction.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_11_2
+    (leftInner : signature.Universal sort matrixOrder)
+    (rightOuter : signature.Universal sort (bindOrder matrixOrder sort))
+    (rightInner : signature.Universal sort matrixOrder)
+    (leftOuter : signature.Universal sort (bindOrder matrixOrder sort))
+    (negation : signature.Negation
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (disjunction : signature.Disjunction
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (body : Formula signature real [sort, sort] matrixOrder) :
+    Derivation (star_11_2_reading leftInner rightOuter rightInner leftOuter
+      negation disjunction body).parsed := by
+  have line1 := exchangeSameSort leftInner rightOuter rightInner leftOuter
+    negation disjunction body
+  have line2 := exchangeSameSort rightInner leftOuter leftInner rightOuter
+    negation disjunction body.swapHeads
+  rw [Formula.swapHeads_swapHeads] at line2
+  have line3 := conjoin negation disjunction
+    (implication negation disjunction
+      (body.always₂ leftInner rightOuter)
+      (body.swapHeads.always₂ rightInner leftOuter))
+    (implication negation disjunction
+      (body.swapHeads.always₂ rightInner leftOuter)
+      (body.always₂ leftInner rightOuter)) line1 line2
+  exact line3
+
 /-- Catalogue reading of the metalinguistic rule ✱11·13. -/
 def star_11_13_reading
     (negation : signature.Negation order)
@@ -174,6 +442,7 @@ theorem star_11_311
 #print axioms star_11_07
 #print axioms star_11_1
 #print axioms star_11_11
+#print axioms star_11_2
 #print axioms star_11_13
 #print axioms star_11_311
 

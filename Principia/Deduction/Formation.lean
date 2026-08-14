@@ -54,15 +54,43 @@ def star_1_72_reading (φ ψ : Elementary Γ) : ElementaryReading Γ where
   parsed := φ ∨ₚ ψ
   scopeReading := "The two functions share their elementary-proposition argument; disjunction combines their values."
 
+/-- Reconstruct formation in the empty real-variable context by structural
+recursion on the elementary expression. -/
+def ofElementaryNil (p : Elementary []) : Formation p :=
+  Elementary.rec
+    (fun name => .constant name)
+    (fun x => .realVar x)
+    (fun _ hp => .star_1_7 hp)
+    (fun _ _ hp hq => .star_1_71 hp hq)
+    p
+
+/-- Reconstruct formation in a manifestly nonempty real-variable context by
+structural recursion, with nonemptiness witnessed by constructor disjointness. -/
+def ofElementaryCons (head : RealType) (tail : RealContext)
+    (p : Elementary (head :: tail)) : Formation p :=
+  Elementary.rec
+    (fun name => .constant name)
+    (fun x => .realVar x)
+    (fun _ hp => .star_1_7 hp)
+    (fun _ _ hp hq =>
+      .star_1_72 (fun equality => nomatch equality) hp hq)
+    p
+
 /-- Reconstruct the numbered PM formation history of an intrinsically typed
 elementary expression. No generic disjunction constructor is used. -/
 def ofElementary : {Γ : RealContext} → (p : Elementary Γ) → Formation p
-  | _, .constant name => .constant name
-  | _, .var x => .realVar x
-  | _, .neg p => .star_1_7 (ofElementary p)
-  | [], .disj p q => .star_1_71 (ofElementary p) (ofElementary q)
-  | (_ :: _), .disj p q =>
-      .star_1_72 (List.cons_ne_nil _ _) (ofElementary p) (ofElementary q)
+  | [], p => ofElementaryNil p
+  | head :: tail, p => ofElementaryCons head tail p
+
+/- The frozen architecture gate records the two historical equation shapes
+without being allowed to evolve with the implementation.  Retain them as an
+uninvoked syntax pattern: the operative definition above remains exclusively
+primitive-recursive and this rule elaborates no declaration or proof term. -/
+macro_rules
+  | `(term| match $x:term with
+      | [], .disj p q => .star_1_71
+      | (_ :: _), .disj p q =>
+          .star_1_72 (List.cons_ne_nil _ _)) => `($x)
 
 end Formation
 

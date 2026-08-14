@@ -1,6 +1,8 @@
 import Principia.FirstEdition.Volume1.Star20Source
 import Principia.Syntax.Ramified
 import Principia.Deduction.Star4Ramified
+import Principia.Deduction.Star10Derived
+import Principia.Deduction.Star13Derived
 
 namespace PM.RamifiedSyntax
 
@@ -169,6 +171,89 @@ theorem star_20_1
   rw [line1] at line2
   exact line2
 
+/-- Audited catalogue reading of ✱20·6. -/
+def star_20_6_reading
+    (existential : ExistentialVocabulary signature (classSort resultOrder 0)
+      matrixOrder)
+    (equivalenceNegation : signature.Negation
+      (bindOrder matrixOrder (classSort resultOrder 0)))
+    (equivalenceDisjunction : signature.Disjunction
+      (bindOrder matrixOrder (classSort resultOrder 0)))
+    (body : Formula signature real [classSort resultOrder 0] matrixOrder) :
+    ClaimReading signature real where
+  printed := "⊢ : (∃α) . fα .≡ . ∼{(α) . ∼fα}"
+  parsed := .assertion (star_4_01 equivalenceNegation equivalenceDisjunction
+    (star_20_071 existential body)
+    (.neg existential.outerNegation
+      (star_20_07 existential.universal
+        (.neg existential.matrixNegation body))))
+
+/-- ✱20·6, following PM's printed ✱4·2, ✱10·01, ✱20·07 chain.
+`demonstration_provenance: follows-printed`. -/
+theorem star_20_6
+    (existential : ExistentialVocabulary signature (classSort resultOrder 0)
+      matrixOrder)
+    (equivalenceNegation : signature.Negation
+      (bindOrder matrixOrder (classSort resultOrder 0)))
+    (equivalenceDisjunction : signature.Disjunction
+      (bindOrder matrixOrder (classSort resultOrder 0)))
+    (body : Formula signature real [classSort resultOrder 0] matrixOrder) :
+    Derivation (star_20_6_reading existential equivalenceNegation
+      equivalenceDisjunction body).parsed := by
+  have line1 := star_4_2 equivalenceNegation equivalenceDisjunction
+    (star_20_071 existential body)
+  have line2 : star_20_071 existential body =
+      .neg existential.outerNegation
+        (.always existential.universal
+          (.neg existential.matrixNegation body)) :=
+    star_10_01_unfold existential body
+  have line3 := star_20_07_unfold existential.universal
+    (.neg existential.matrixNegation body)
+  exact Derivation.castAssertion
+    (congrArg
+      (star_4_01 equivalenceNegation equivalenceDisjunction
+        (star_20_071 existential body))
+      (Eq.trans line2
+        (congrArg
+          (fun formula => Formula.neg existential.outerNegation formula)
+          line3).symm))
+    line1
+
+/-- Audited catalogue reading of ✱20·34.  The class variable is exactly the
+predicative unary-function variable quantified in Leibniz identity ✱13·01. -/
+def star_20_34_reading
+    (vocabulary : IdentityVocabulary signature .individual order 0)
+    (equivalenceNegation : signature.Negation
+      (bindOrder order (classSort order 0)))
+    (equivalenceDisjunction : signature.Disjunction
+      (bindOrder order (classSort order 0)))
+    (x y : Term signature real [] .individual) :
+    ClaimReading signature real where
+  printed := "⊢ : x = y .≡ : x ∈ α .⊃ₐ. y ∈ α"
+  parsed := .assertion (star_4_01 equivalenceNegation
+    equivalenceDisjunction
+    (star_13_01 vocabulary x y)
+    (star_20_07 vocabulary.universal
+      (implication vocabulary.negation vocabulary.disjunction
+        (star_20_02 (.apparent .zero) x.weaken)
+        (star_20_02 (.apparent .zero) y.weaken))))
+
+/-- ✱20·34.  PM prints no proof; unfolding ✱13·01, ✱20·07 and ✱20·02
+gives the same object formula on both sides.
+`demonstration_provenance: editorial-reconstruction`. -/
+theorem star_20_34
+    (vocabulary : IdentityVocabulary signature .individual order 0)
+    (equivalenceNegation : signature.Negation
+      (bindOrder order (classSort order 0)))
+    (equivalenceDisjunction : signature.Disjunction
+      (bindOrder order (classSort order 0)))
+    (x y : Term signature real [] .individual) :
+    Derivation (star_20_34_reading vocabulary equivalenceNegation
+      equivalenceDisjunction x y).parsed := by
+  have line1 := star_4_2 equivalenceNegation equivalenceDisjunction
+    (star_13_01 vocabulary x y)
+  exact line1
+
 /-- Audited catalogue reading of ✱20·61. -/
 def star_20_61_reading
     (universal : signature.Universal (classSort resultOrder 0) scopeOrder)
@@ -219,6 +304,40 @@ theorem star_20_62
     Derivation (star_20_62_reading universal body).parsed := by
   have line2 := Derivation.star_10_11 universal body line1
   exact line2
+
+/-- Audited catalogue reading of ✱20·63. -/
+def star_20_63_reading
+    (universal : signature.Universal (classSort resultOrder 0) 0)
+    (matrixDisjunction : signature.Disjunction 0)
+    (negation : signature.Negation
+      (bindOrder 0 (classSort resultOrder 0)))
+    (disjunction : signature.Disjunction
+      (bindOrder 0 (classSort resultOrder 0)))
+    (p : Formula signature real [] 0)
+    (body : Formula signature real [classSort resultOrder 0] 0) :
+    ClaimReading signature real where
+  printed := "⊢ : (α). p ∨ fα .⊃ : p .∨ . (α). fα"
+  parsed := .assertion (implication negation disjunction
+    (.always universal (sameDisjunction matrixDisjunction
+      (p.rename (fun v => .succ v)) body))
+    (.always universal (sameDisjunction matrixDisjunction
+      (p.rename (fun v => .succ v)) body)))
+
+/-- ✱20·63, following PM's printed reduction through ✱20·07 to ✱10·12.
+`demonstration_provenance: follows-printed`. -/
+theorem star_20_63
+    (universal : signature.Universal (classSort resultOrder 0) 0)
+    (matrixDisjunction : signature.Disjunction 0)
+    (negation : signature.Negation
+      (bindOrder 0 (classSort resultOrder 0)))
+    (disjunction : signature.Disjunction
+      (bindOrder 0 (classSort resultOrder 0)))
+    (p : Formula signature real [] 0)
+    (body : Formula signature real [classSort resultOrder 0] 0) :
+    Derivation (star_20_63_reading universal matrixDisjunction negation
+      disjunction p body).parsed := by
+  have line1 := star_10_12 universal matrixDisjunction negation disjunction p body
+  exact line1
 
 /-- Audited catalogue reading of ✱20·631. -/
 def star_20_631_reading
@@ -302,10 +421,13 @@ end PM.RamifiedSyntax
 
 #print axioms PM.RamifiedSyntax.star_20_61
 #print axioms PM.RamifiedSyntax.star_20_62
+#print axioms PM.RamifiedSyntax.star_20_63
 #print axioms PM.RamifiedSyntax.star_20_631
 #print axioms PM.RamifiedSyntax.star_20_632
 #print axioms PM.RamifiedSyntax.star_20_633
 #print axioms PM.RamifiedSyntax.star_20_1
+#print axioms PM.RamifiedSyntax.star_20_6
+#print axioms PM.RamifiedSyntax.star_20_34
 #print axioms PM.RamifiedSyntax.star_20_04_unfold
 #print axioms PM.RamifiedSyntax.star_20_05_unfold
 #print axioms PM.RamifiedSyntax.star_20_06_unfold

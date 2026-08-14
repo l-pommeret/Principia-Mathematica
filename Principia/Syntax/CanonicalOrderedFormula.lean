@@ -501,42 +501,115 @@ def expandedSize : Raw Γ → Nat
         expandedSize left + expandedSize right + 1
       rw [ihLeft, ihRight]
 
-def smartDisjAux : Nat → Raw Γ → Raw Γ → Raw Γ
-  | 0, p, q => .disj p q
-  | fuel + 1, .quantified .always p, .quantified .sometimes q =>
-      .quantified .always (.quantified .sometimes
-        (smartDisjAux fuel (weakenBound p) q))
-  | fuel + 1, .quantified .sometimes p, .quantified .always q =>
-      .quantified .always (.quantified .sometimes
-        (smartDisjAux fuel (weakenBound p) q))
-  | fuel + 1, .quantified q p, r =>
-      .quantified q (smartDisjAux fuel p (weakenBound r))
-  | fuel + 1, p, .quantified q r =>
-      .quantified q (smartDisjAux fuel (weakenBound p) r)
-  | _ + 1, p, q => .disj p q
+/-- One nonrecursive smart-disjunction step when the left operand is not
+quantified. -/
+abbrev smartDisjRightStep (recursive : Raw Γ → Raw Γ → Raw Γ) (p q : Raw Γ) : Raw Γ :=
+  Raw.casesOn q
+    (fun e => .disj p (.elementary e))
+    (fun s => .disj p (.schema s))
+    (fun i => .disj p (.bound i))
+    (fun quantifier body => .quantified quantifier (recursive (weakenBound p) body))
+    (fun body => .disj p (.neg body))
+    (fun left right => .disj p (.disj left right))
+
+/-- One nonrecursive smart-disjunction step for two quantified operands. -/
+abbrev smartDisjQuantifiedStep (recursive : Raw Γ → Raw Γ → Raw Γ)
+    (leftQuantifier rightQuantifier : Quantifier) (left right : Raw Γ) : Raw Γ :=
+  Quantifier.casesOn leftQuantifier
+    (Quantifier.casesOn rightQuantifier
+      (.quantified .always (recursive left (weakenBound (.quantified .always right))))
+      (.quantified .always (.quantified .sometimes (recursive (weakenBound left) right))))
+    (Quantifier.casesOn rightQuantifier
+      (.quantified .always (.quantified .sometimes (recursive (weakenBound left) right)))
+      (.quantified .sometimes (recursive left (weakenBound (.quantified .sometimes right)))))
+
+/-- One nonrecursive smart-disjunction step, expressed only through primitive
+recursors so its definition introduces no equation-compiler axioms. -/
+abbrev smartDisjStep (recursive : Raw Γ → Raw Γ → Raw Γ) (p q : Raw Γ) : Raw Γ :=
+  Raw.casesOn p
+    (fun e => smartDisjRightStep recursive (.elementary e) q)
+    (fun s => smartDisjRightStep recursive (.schema s) q)
+    (fun i => smartDisjRightStep recursive (.bound i) q)
+    (fun quantifier body => Raw.casesOn q
+      (fun e => .quantified quantifier (recursive body (weakenBound (.elementary e))))
+      (fun s => .quantified quantifier (recursive body (weakenBound (.schema s))))
+      (fun i => .quantified quantifier (recursive body (weakenBound (.bound i))))
+      (fun rightQuantifier right =>
+        smartDisjQuantifiedStep recursive quantifier rightQuantifier body right)
+      (fun right => .quantified quantifier (recursive body (weakenBound (.neg right))))
+      (fun left right =>
+        .quantified quantifier (recursive body (weakenBound (.disj left right)))))
+    (fun body => smartDisjRightStep recursive (.neg body) q)
+    (fun left right => smartDisjRightStep recursive (.disj left right) q)
+
+def smartDisjAux (fuel : Nat) (p q : Raw Γ) : Raw Γ :=
+  Nat.rec
+    (fun p q => .disj p q)
+    (fun _ recursive => smartDisjStep recursive)
+    fuel p q
 
 def smartDisj (p q : Raw Γ) : Raw Γ :=
   smartDisjAux (rawSize p + rawSize q) p q
 
 /-- Capture-safe smart disjunction.  `depth` is the number of surrounding
 apparent binders already retained by the normalization. -/
-def smartDisjScopedAux : Nat → Nat → Raw Γ → Raw Γ → Raw Γ
-  | _, 0, p, q => .disj p q
-  | depth, fuel + 1, .quantified .always p, .quantified .sometimes q =>
-      .quantified .always (.quantified .sometimes
-        (smartDisjScopedAux (depth + 2) fuel
-          (shiftBoundAt (depth + 1) p) (shiftBoundAt (depth + 1) q)))
-  | depth, fuel + 1, .quantified .sometimes p, .quantified .always q =>
-      .quantified .always (.quantified .sometimes
-        (smartDisjScopedAux (depth + 2) fuel
-          (shiftBoundAt (depth + 1) p) (shiftBoundAt (depth + 1) q)))
-  | depth, fuel + 1, .quantified quantifier p, q =>
-      .quantified quantifier
-        (smartDisjScopedAux (depth + 1) fuel p (shiftBoundAt depth q))
-  | depth, fuel + 1, p, .quantified quantifier q =>
-      .quantified quantifier
-        (smartDisjScopedAux (depth + 1) fuel (shiftBoundAt depth p) q)
-  | _, _ + 1, p, q => .disj p q
+abbrev smartDisjScopedRightStep
+    (recursive : Nat → Raw Γ → Raw Γ → Raw Γ) (depth : Nat)
+    (p q : Raw Γ) : Raw Γ :=
+  Raw.casesOn q
+    (fun e => .disj p (.elementary e))
+    (fun s => .disj p (.schema s))
+    (fun i => .disj p (.bound i))
+    (fun quantifier body =>
+      .quantified quantifier (recursive (depth + 1) (shiftBoundAt depth p) body))
+    (fun body => .disj p (.neg body))
+    (fun left right => .disj p (.disj left right))
+
+abbrev smartDisjScopedQuantifiedStep
+    (recursive : Nat → Raw Γ → Raw Γ → Raw Γ) (depth : Nat)
+    (leftQuantifier rightQuantifier : Quantifier) (left right : Raw Γ) : Raw Γ :=
+  Quantifier.casesOn leftQuantifier
+    (Quantifier.casesOn rightQuantifier
+      (.quantified .always
+        (recursive (depth + 1) left (shiftBoundAt depth (.quantified .always right))))
+      (.quantified .always (.quantified .sometimes
+        (recursive (depth + 2)
+          (shiftBoundAt (depth + 1) left) (shiftBoundAt (depth + 1) right)))))
+    (Quantifier.casesOn rightQuantifier
+      (.quantified .always (.quantified .sometimes
+        (recursive (depth + 2)
+          (shiftBoundAt (depth + 1) left) (shiftBoundAt (depth + 1) right))))
+      (.quantified .sometimes
+        (recursive (depth + 1) left (shiftBoundAt depth (.quantified .sometimes right)))))
+
+abbrev smartDisjScopedStep
+    (recursive : Nat → Raw Γ → Raw Γ → Raw Γ) (depth : Nat)
+    (p q : Raw Γ) : Raw Γ :=
+  Raw.casesOn p
+    (fun e => smartDisjScopedRightStep recursive depth (.elementary e) q)
+    (fun s => smartDisjScopedRightStep recursive depth (.schema s) q)
+    (fun i => smartDisjScopedRightStep recursive depth (.bound i) q)
+    (fun quantifier body => Raw.casesOn q
+      (fun e => .quantified quantifier
+        (recursive (depth + 1) body (shiftBoundAt depth (.elementary e))))
+      (fun s => .quantified quantifier
+        (recursive (depth + 1) body (shiftBoundAt depth (.schema s))))
+      (fun i => .quantified quantifier
+        (recursive (depth + 1) body (shiftBoundAt depth (.bound i))))
+      (fun rightQuantifier right =>
+        smartDisjScopedQuantifiedStep recursive depth quantifier rightQuantifier body right)
+      (fun right => .quantified quantifier
+        (recursive (depth + 1) body (shiftBoundAt depth (.neg right))))
+      (fun left right => .quantified quantifier
+        (recursive (depth + 1) body (shiftBoundAt depth (.disj left right)))))
+    (fun body => smartDisjScopedRightStep recursive depth (.neg body) q)
+    (fun left right => smartDisjScopedRightStep recursive depth (.disj left right) q)
+
+def smartDisjScopedAux (depth fuel : Nat) (p q : Raw Γ) : Raw Γ :=
+  Nat.rec
+    (fun _ p q => .disj p q)
+    (fun _ recursive => smartDisjScopedStep recursive)
+    fuel depth p q
 
 def smartDisjScoped (p q : Raw Γ) : Raw Γ :=
   smartDisjScopedAux 0 (expandedSize p + expandedSize q + 1) p q

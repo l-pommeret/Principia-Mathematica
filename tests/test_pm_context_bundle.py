@@ -112,6 +112,22 @@ class ContextBundleTests(unittest.TestCase):
         self.assertIn("inductive Formation", bundle["lean_source"])
         self.assertIn("structure FormedDerivation", bundle["lean_source"])
 
+    def test_foundation_declaration_awaiting_ci_is_not_an_interface_stub(self):
+        from pm_constraint_manifest import load_item_registry
+
+        registry = load_item_registry(ROOT / "metadata/items")
+        manifest = {
+            "kind": "pm-constrained-prover-manifest",
+            "foundation_profile": "elementary-formation-pm1",
+            "context_closure": ["PM1:✱1·11"],
+            "allowed_pm_items": ["PM1:✱1·11"],
+            "policy": {"interface_gated": True},
+        }
+        bundle = build_bundle(manifest, registry, ROOT)
+        self.assertNotIn("PM1:✱1·11", bundle["interface_dependencies"])
+        self.assertNotIn("axiom star_1_11", bundle["lean_source"])
+        self.assertIn("| star_1_11", bundle["lean_source"])
+
     def test_description_profile_contains_de_bruijn_scope_without_term_description(self):
         manifest = {
             "kind": "pm-constrained-prover-manifest",

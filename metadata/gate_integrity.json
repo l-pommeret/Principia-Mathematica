@@ -67,6 +67,13 @@
         "scripts/verify_certification_tier.py",
         "scripts/verify_ci_evidence.py"
       ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "reason": "Approuve explicitement : les propositions primitives restent exemptees de T3 et T4 par construction (le type du constructeur EST le jugement, c'est fidele), mais elles sont desormais soumises a T7 comme toutes les autres. Un constructeur vit dans un fichier Lean ; quand ce fichier change, le run qui l'attestait ne dit plus rien du code publie. Le retour anticipe avant T7 bloquait le depot : huit primitives tenaient kernel-checked sur une preuve anterieure a leur propre fichier, --write ne pouvait pas les retrograder, et la CI restait rouge indefiniment.",
+      "scripts_changed": [
+        "scripts/verify_certification_tier.py"
+      ]
     }
   ],
   "digests": {
@@ -76,7 +83,7 @@
     "scripts/verify_apparent_architecture.py": "320d7d7d63fc7a633c70b65fb6334e6b1fef886bff6c53afb8ac5385dc1e8012",
     "scripts/verify_architecture_experimental_interfaces.py": "fff4482e39ffe15674880bb871e5e7b3e303041115b19db53ba40adc0a335a7e",
     "scripts/verify_axiom_audit.py": "d4eab819c2741c6028bba6f2fb1304365dff55cd1ec029e03d60a0c54979f431",
-    "scripts/verify_certification_tier.py": "fed1c2ec3dd7043c43bd1d6925188680bd2d48d5099352a6edc7edcd89af1051",
+    "scripts/verify_certification_tier.py": "4b222da9a3d9ed10fcea3081e0940747949dafdad6bb4ef2bc7402608191762d",
     "scripts/verify_ci_evidence.py": "d5327fbaa28f57ab17377ffa2ea9ae5070cb339bd3afc8dd537d9c8beb4d439e",
     "scripts/verify_constrained_batches.py": "7fabe6623a4d42c44fea535a0ddcfda269e879880bb8d5a73d4c3caaaa68bf80",
     "scripts/verify_context_bundles.py": "d5b173936833260d090612ac578f722cc3dd327bd2d5fc3931644f8979d5d16b",

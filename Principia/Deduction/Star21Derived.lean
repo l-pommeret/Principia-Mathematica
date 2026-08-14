@@ -1,10 +1,183 @@
 import Principia.FirstEdition.Volume1.Star21Source
+import Principia.Deduction.Star4Ramified
 import Principia.Deduction.Star10Derived
 import Principia.Syntax.Ramified
 
 namespace PM.RamifiedSyntax
 
 /-! # Derived propositions of PM I, ✱21 -/
+
+/-- ✱21·07: quantification over relations is quantification over
+predicative two-place functions. -/
+def star_21_07
+    (universal : signature.Universal (relationSort resultOrder 0) scopeOrder)
+    (body : Formula signature real
+      (relationSort resultOrder 0 :: apparent) scopeOrder) :
+    Formula signature real apparent
+      (bindOrder scopeOrder (relationSort resultOrder 0)) :=
+  .always universal body
+
+theorem star_21_07_unfold
+    (universal : signature.Universal (relationSort resultOrder 0) scopeOrder)
+    (body : Formula signature real
+      (relationSort resultOrder 0 :: apparent) scopeOrder) :
+    star_21_07 universal body = .always universal body := rfl
+
+/-- ✱21·071: existential relation quantification has the same predicative
+two-place-function expansion as ✱21·07. -/
+def star_21_071
+    (existential : ExistentialVocabulary signature
+      (relationSort resultOrder 0) scopeOrder)
+    (body : Formula signature real
+      (relationSort resultOrder 0 :: apparent) scopeOrder) :
+    Formula signature real apparent
+      (bindOrder scopeOrder (relationSort resultOrder 0)) :=
+  .sometimes existential body
+
+theorem star_21_071_unfold
+    (existential : ExistentialVocabulary signature
+      (relationSort resultOrder 0) scopeOrder)
+    (body : Formula signature real
+      (relationSort resultOrder 0 :: apparent) scopeOrder) :
+    star_21_071 existential body = .sometimes existential body := rfl
+
+/-- Audited catalogue reading of ✱21·1.  The apparent relation on the left
+is eliminated by ✱21·01, so both sides parse as its existential expansion. -/
+def star_21_1_reading
+    (existential : ExistentialVocabulary signature (relationSort resultOrder 0)
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        scopeOrder))
+    (leftUniversal : signature.Universal .individual resultOrder)
+    (rightUniversal : signature.Universal .individual
+      (bindOrder resultOrder .individual))
+    (equivalenceNegation : signature.Negation resultOrder)
+    (equivalenceDisjunction : signature.Disjunction resultOrder)
+    (leftNegation : signature.Negation
+      (bindOrder (bindOrder resultOrder .individual) .individual))
+    (rightNegation : signature.Negation scopeOrder)
+    (outerNegation : signature.Negation
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        scopeOrder))
+    (conjunctionDisjunction : signature.Disjunction
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        scopeOrder))
+    (finalNegation : signature.Negation
+      (bindOrder
+        (max (bindOrder (bindOrder resultOrder .individual) .individual)
+          scopeOrder)
+        (relationSort resultOrder 0)))
+    (finalDisjunction : signature.Disjunction
+      (bindOrder
+        (max (bindOrder (bindOrder resultOrder .individual) .individual)
+          scopeOrder)
+        (relationSort resultOrder 0)))
+    (matrix : Formula signature real [.individual, .individual] resultOrder)
+    (continuation : Formula signature real
+      [relationSort resultOrder 0] scopeOrder) :
+    ClaimReading signature real where
+  printed := "⊢ : f{ẑxẑyψ(x,y)} .≡ : (∃φ) : φ!(x,y) .≡₍x,y₎. ψ(x,y) : f{φ!(ẑu,ẑv)}"
+  parsed := .assertion (star_4_01 finalNegation finalDisjunction
+    (star_21_01 existential leftUniversal rightUniversal equivalenceNegation
+      equivalenceDisjunction leftNegation rightNegation outerNegation
+      conjunctionDisjunction matrix continuation)
+    (star_21_01 existential leftUniversal rightUniversal equivalenceNegation
+      equivalenceDisjunction leftNegation rightNegation outerNegation
+      conjunctionDisjunction matrix continuation))
+
+/-- ✱21·1, following PM's printed `[✱4·2.(✱21·01)]` route.
+`demonstration_provenance: follows-printed`. -/
+theorem star_21_1
+    (existential : ExistentialVocabulary signature (relationSort resultOrder 0)
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        scopeOrder))
+    (leftUniversal : signature.Universal .individual resultOrder)
+    (rightUniversal : signature.Universal .individual
+      (bindOrder resultOrder .individual))
+    (equivalenceNegation : signature.Negation resultOrder)
+    (equivalenceDisjunction : signature.Disjunction resultOrder)
+    (leftNegation : signature.Negation
+      (bindOrder (bindOrder resultOrder .individual) .individual))
+    (rightNegation : signature.Negation scopeOrder)
+    (outerNegation : signature.Negation
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        scopeOrder))
+    (conjunctionDisjunction : signature.Disjunction
+      (max (bindOrder (bindOrder resultOrder .individual) .individual)
+        scopeOrder))
+    (finalNegation : signature.Negation
+      (bindOrder
+        (max (bindOrder (bindOrder resultOrder .individual) .individual)
+          scopeOrder)
+        (relationSort resultOrder 0)))
+    (finalDisjunction : signature.Disjunction
+      (bindOrder
+        (max (bindOrder (bindOrder resultOrder .individual) .individual)
+          scopeOrder)
+        (relationSort resultOrder 0)))
+    (matrix : Formula signature real [.individual, .individual] resultOrder)
+    (continuation : Formula signature real
+      [relationSort resultOrder 0] scopeOrder) :
+    Derivation (star_21_1_reading existential leftUniversal rightUniversal
+      equivalenceNegation equivalenceDisjunction leftNegation rightNegation
+      outerNegation conjunctionDisjunction finalNegation finalDisjunction
+      matrix continuation).parsed := by
+  have line1 := star_21_01_unfold existential leftUniversal rightUniversal
+    equivalenceNegation equivalenceDisjunction leftNegation rightNegation
+    outerNegation conjunctionDisjunction matrix continuation
+  have line2 := star_4_2 finalNegation finalDisjunction
+    (star_21_01 existential leftUniversal rightUniversal equivalenceNegation
+      equivalenceDisjunction leftNegation rightNegation outerNegation
+      conjunctionDisjunction matrix continuation)
+  rw [line1] at line2
+  exact line2
+
+/-- Audited catalogue reading of ✱21·6. -/
+def star_21_6_reading
+    (existential : ExistentialVocabulary signature (relationSort resultOrder 0)
+      matrixOrder)
+    (equivalenceNegation : signature.Negation
+      (bindOrder matrixOrder (relationSort resultOrder 0)))
+    (equivalenceDisjunction : signature.Disjunction
+      (bindOrder matrixOrder (relationSort resultOrder 0)))
+    (body : Formula signature real [relationSort resultOrder 0] matrixOrder) :
+    ClaimReading signature real where
+  printed := "⊢ : (∃R). fR .≡ . ∼{(R). ∼fR}"
+  parsed := .assertion (star_4_01 equivalenceNegation equivalenceDisjunction
+    (star_21_071 existential body)
+    (.neg existential.outerNegation
+      (star_21_07 existential.universal
+        (.neg existential.matrixNegation body))))
+
+/-- ✱21·6, following the printed instruction `[Proof as in ✱20·6]`.
+`demonstration_provenance: follows-printed`. -/
+theorem star_21_6
+    (existential : ExistentialVocabulary signature (relationSort resultOrder 0)
+      matrixOrder)
+    (equivalenceNegation : signature.Negation
+      (bindOrder matrixOrder (relationSort resultOrder 0)))
+    (equivalenceDisjunction : signature.Disjunction
+      (bindOrder matrixOrder (relationSort resultOrder 0)))
+    (body : Formula signature real [relationSort resultOrder 0] matrixOrder) :
+    Derivation (star_21_6_reading existential equivalenceNegation
+      equivalenceDisjunction body).parsed := by
+  have line1 := star_4_2 equivalenceNegation equivalenceDisjunction
+    (star_21_071 existential body)
+  have line2 : star_21_071 existential body =
+      .neg existential.outerNegation
+        (.always existential.universal
+          (.neg existential.matrixNegation body)) :=
+    star_10_01_unfold existential body
+  have line3 := star_21_07_unfold existential.universal
+    (.neg existential.matrixNegation body)
+  exact Derivation.castAssertion
+    (congrArg
+      (star_4_01 equivalenceNegation equivalenceDisjunction
+        (star_21_071 existential body))
+      (Eq.trans line2
+        (congrArg
+          (fun formula => Formula.neg existential.outerNegation formula)
+          line3).symm))
+    line1
 
 /-- Audited catalogue reading of ✱21·61. -/
 def star_21_61_reading
@@ -177,3 +350,7 @@ end PM.RamifiedSyntax
 #print axioms PM.RamifiedSyntax.star_21_631
 #print axioms PM.RamifiedSyntax.star_21_632
 #print axioms PM.RamifiedSyntax.star_21_633
+#print axioms PM.RamifiedSyntax.star_21_1
+#print axioms PM.RamifiedSyntax.star_21_6
+#print axioms PM.RamifiedSyntax.star_21_07_unfold
+#print axioms PM.RamifiedSyntax.star_21_071_unfold

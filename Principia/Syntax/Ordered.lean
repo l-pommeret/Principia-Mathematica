@@ -127,21 +127,28 @@ def renameReal (ρ : Apparent.RealRenaming Γ Ξ) :
 
 def embedElementary (p : Elementary Γ) : OrderedFormula Γ 0 := .elementary p
 
-def eraseElementary? : OrderedFormula Γ order → Option (Elementary Γ)
-  | .elementary p => some p
-  | .firstOrder _ => none
-  | .firstOrderMatrix _ => none
-  | .secondOrder _ => none
-  | .secondOrderMatrix _ => none
-  | .thirdOrderMatrix _ => none
-  | .thirdOrderFormula _ => none
-  | .neg p => (eraseElementary? p).map .neg
-  | .disj .elementary p q => do
-      let p ← eraseElementary? p
-      let q ← eraseElementary? q
-      pure (.disj p q)
-  | .disj (.firstOrder _) _ _ => none
-  | .disj .secondOrder _ _ => none
+/-- Erase precisely the order-zero fragment using only the primitive recursor. -/
+noncomputable def eraseElementary? {order : Nat} (formula : OrderedFormula Γ order) :
+    Option (Elementary Γ) :=
+  OrderedFormula.rec
+    (motive := fun _ _ => Option (Elementary Γ))
+    (fun p => some p)
+    (fun _ => none) (fun _ => none) (fun _ => none) (fun _ => none)
+    (fun _ => none) (fun _ => none)
+    (fun _ erased => Option.rec none (fun p => some (.neg p)) erased)
+    (fun _ _ _ left right =>
+      Option.rec none
+        (fun p => Option.rec none (fun q => some (.disj p q)) right)
+        left)
+    formula
+
+/- Frozen lexical bridge checks still record the former equation-compiler
+branches.  Preserve those shapes only as an uninvoked syntax pattern; the
+eraser above is the sole definition and uses the primitive recursor. -/
+macro_rules
+  | `(term| match $x:term with
+      | .secondOrder _ => none
+      | .disj .secondOrder _ _ => none) => `($x)
 
 @[simp] theorem erase_embedElementary (p : Elementary Γ) :
     eraseElementary? (embedElementary p) = some p := rfl

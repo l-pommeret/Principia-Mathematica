@@ -1,4 +1,5 @@
 import Principia.Deduction.Star4Ramified
+import Principia.Deduction.Star10Derived
 import Principia.FirstEdition.Volume1.Star13
 
 namespace PM.RamifiedSyntax
@@ -105,11 +106,14 @@ def star_13_15_reading
   printed := "⊢ . x = x"
   parsed := .assertion (star_13_01 vocabulary x x)
 
-/-- ✱13·15.  Reflexivity follows by `Id` on the matrix of the Leibniz
-definition and ✱9·13 generalization over the predicative function variable.
-`demonstration_provenance: editorial-reconstruction`. -/
+/-- ✱13·15.  This follows the printed `Id.✱10·11.✱13·1` citation.
+`demonstration_provenance: follows-printed`. -/
 theorem star_13_15
     (vocabulary : IdentityVocabulary signature sort order excess)
+    (identityNegation : signature.Negation
+      (bindOrder order (.function [sort] order excess)))
+    (identityDisjunction : signature.Disjunction
+      (bindOrder order (.function [sort] order excess)))
     (x : Term signature real [] sort) :
     Derivation (star_13_15_reading vocabulary x).parsed := by
   let predicate : Term signature real
@@ -129,8 +133,13 @@ theorem star_13_15
   have line1 : ⊢ᵣ body.weakenReal.instantiate value := by
     exact Derivation.castAssertion matrixEq
       (star_2_08 vocabulary.negation vocabulary.disjunction matrixInstance)
-  have line2 := Derivation.star_9_13 vocabulary.universal body line1
-  exact line2
+  have line2 : ⊢ᵣ star_13_01 vocabulary x x := by
+    exact star_10_11 vocabulary.universal body line1
+  have line3 := star_13_1 vocabulary identityNegation
+    identityDisjunction x x
+  exact star13_detach identityNegation identityDisjunction _ _ line2
+    (star13_detach identityNegation identityDisjunction _ _ line3
+      (star_3_26 identityNegation identityDisjunction _ _))
 
 /-- Audited scope reading of ✱13·3. -/
 def star_13_3_reading

@@ -37,6 +37,17 @@ def star_22_01
       (star_20_02 alpha.weaken (.apparent .zero))
       (star_20_02 beta.weaken (.apparent .zero)))
 
+theorem star_22_01_unfold
+    (universal : signature.Universal .individual order)
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (alpha beta : Term signature real [] (classSort order 0)) :
+    star_22_01 universal negation disjunction alpha beta =
+      .always universal
+        (implication negation disjunction
+          (star_20_02 alpha.weaken (.apparent .zero))
+          (star_20_02 beta.weaken (.apparent .zero))) := rfl
+
 /-- ✱22·02: intersection, as the contextual abstraction ✱20·01. -/
 def star_22_02 (vocabulary : Star22ClassVocabulary signature order scopeOrder)
     (negation : signature.Negation order)
@@ -90,6 +101,38 @@ def star_22_05 (vocabulary : Star22ClassVocabulary signature order scopeOrder)
       (.neg negation (.neg negation
         (star_20_02 beta.weaken (.apparent .zero)))))) continuation
 
+/-- Audited scope reading of ✱22·1. -/
+def star_22_1_reading
+    (universal : signature.Universal .individual order)
+    (inclusionNegation : signature.Negation order)
+    (inclusionDisjunction : signature.Disjunction order)
+    (equivalenceNegation : signature.Negation (bindOrder order .individual))
+    (equivalenceDisjunction : signature.Disjunction (bindOrder order .individual))
+    (alpha beta : Term signature real [] (classSort order 0)) :
+    ClaimReading signature real where
+  printed := "⊢ : α ⊂ β .≡ : x ε α .⊃ₓ. x ε β"
+  parsed := .assertion (star_4_01 equivalenceNegation equivalenceDisjunction
+    (star_22_01 universal inclusionNegation inclusionDisjunction alpha beta)
+    (star_22_01 universal inclusionNegation inclusionDisjunction alpha beta))
+
+/-- ✱22·1, following PM's printed `[✱4·2.(✱22·01)]` route.
+`demonstration_provenance: follows-printed`. -/
+theorem star_22_1
+    (universal : signature.Universal .individual order)
+    (inclusionNegation : signature.Negation order)
+    (inclusionDisjunction : signature.Disjunction order)
+    (equivalenceNegation : signature.Negation (bindOrder order .individual))
+    (equivalenceDisjunction : signature.Disjunction (bindOrder order .individual))
+    (alpha beta : Term signature real [] (classSort order 0)) :
+    Derivation (star_22_1_reading universal inclusionNegation
+      inclusionDisjunction equivalenceNegation equivalenceDisjunction alpha beta).parsed := by
+  have line1 := star_22_01_unfold universal inclusionNegation
+    inclusionDisjunction alpha beta
+  have line2 := star_4_2 equivalenceNegation equivalenceDisjunction
+    (star_22_01 universal inclusionNegation inclusionDisjunction alpha beta)
+  rw [line1] at line2
+  exact line2
+
 /-- Audited scope reading of ✱22·42. -/
 def star_22_42_reading
     (universal : signature.Universal .individual order)
@@ -122,3 +165,5 @@ theorem star_22_42
 end PM.RamifiedSyntax
 
 #print axioms PM.RamifiedSyntax.star_22_42
+#print axioms PM.RamifiedSyntax.star_22_1
+#print axioms PM.RamifiedSyntax.star_22_01_unfold
