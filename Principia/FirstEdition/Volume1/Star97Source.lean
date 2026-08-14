@@ -63,6 +63,36 @@ PM-VERBATIM-END PM1:✱97·241 -/
 /- PM-VERBATIM-BEGIN PM1:✱97·242
 ✱97·242. ⊢ :: R_*⃡ʻʻCʻR∈0∪1 .≡: x,y∈CʻR .⊃_x,y: x=y .∨. xR_po y .∨. yR_po x :≡. R_po⃡ʻʻCʻR∈0∪1
 PM-VERBATIM-END PM1:✱97·242 -/
+/- PM-VERBATIM-BEGIN PM1:✱97·301
+✱97·301. ⊢ . I↾B⃗ʻR∈(R̆_*)_ΔʻB⃗ʻR
+PM-VERBATIM-END PM1:✱97·301 -/
+/- PM-VERBATIM-BEGIN PM1:✱97·32
+✱97·32. ⊢ . B⃗ʻR∈Dʻʻ∈_ΔʻR←_*ʻʻB⃗ʻR [✱97·31]
+PM-VERBATIM-END PM1:✱97·32 -/
+/- PM-VERBATIM-BEGIN PM1:✱97·33
+✱97·33. ⊢ : R∈1→1 . α⊂sʻR_*⃡ʻʻβ . β⊂sʻR_*⃡ʻʻα .⊃. R_*⃡ʻʻα=R_*⃡ʻʻβ
+PM-VERBATIM-END PM1:✱97·33 -/
+/- PM-VERBATIM-BEGIN PM1:✱97·34
+✱97·34. ⊢ : R∈1→1 . β∈Dʻʻ∈_ΔʻR_*⃡ʻʻα .⊃. R_*⃡ʻʻα=R_*⃡ʻʻβ
+PM-VERBATIM-END PM1:✱97·34 -/
+/- PM-VERBATIM-BEGIN PM1:✱97·341
+✱97·341. ⊢ : R∈1→1 . β∈Dʻʻ∈_ΔʻR←_*ʻʻB⃗ʻR .⊃. R_*⃡ʻʻβ=R←_*ʻʻB⃗ʻR [✱97·34.✱97·2]
+PM-VERBATIM-END PM1:✱97·341 -/
+/- PM-VERBATIM-BEGIN PM1:✱97·35
+✱97·35. ⊢ : R∈Cls→1 . T∈PotidʻR . B⃗ʻR⊂DʻT .⊃. Cnvʻ{(R←_*↾B⃗ʻR)|T}∈∈_ΔʻR←_*ʻʻB⃗ʻR . ᗡʻ{(R←_*↾B⃗ʻR)|T}=T̆ʻʻB⃗ʻR
+PM-VERBATIM-END PM1:✱97·35 -/
+/- PM-VERBATIM-BEGIN PM1:✱97·36
+✱97·36. ⊢ : R∈Cls→1 . T∈PotidʻR . B⃗ʻR⊂DʻT .⊃. T̆ʻʻB⃗ʻR∈Dʻʻ∈_ΔʻR←_*ʻʻB⃗ʻR [✱97·35]
+PM-VERBATIM-END PM1:✱97·36 -/
+/- PM-VERBATIM-BEGIN PM1:✱97·37
+✱97·37. ⊢ : R∈1→1 . ᗡʻR⊂DʻR .⊃. genʻR⊂Dʻʻ∈_ΔʻR←_*ʻʻB⃗ʻR
+PM-VERBATIM-END PM1:✱97·37 -/
+/- PM-VERBATIM-BEGIN PM1:✱97·38
+✱97·38. ⊢ : R∈1→1 . ᗡʻR⊂DʻR .⊃. R←_*ʻʻB⃗ʻR⊂Dʻʻ∈_ΔʻgenʻR
+PM-VERBATIM-END PM1:✱97·38 -/
+/- PM-VERBATIM-BEGIN PM1:✱97·4
+✱97·4. ⊢ : S∈PotʻR .⊃. S̆ʻʻB⃗ʻR̆=Λ
+PM-VERBATIM-END PM1:✱97·4 -/
 
 namespace PM.FirstEdition.Volume1.Star97Source
 

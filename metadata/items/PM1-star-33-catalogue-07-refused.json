@@ -1,0 +1,68 @@
+{
+  "batch": "PM1-STAR33-CATALOGUE-07-REFUSED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "232–240",
+    "scan_leaves": [
+      254,
+      262
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-src/78050-src.htm#*33"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱33·61",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel6.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel6.star_33_61",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-source-incomplete-restoration-not-audited",
+      "formal_scope": "refused: the diplomatic formula has an incomplete right-hand side after the biconditional, while Lean restores an unprinted equality b = ConverseDomain R",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "printed": "✱33·61.  \\(\\vdash:R\\in \\overleftarrow{ᗡ}ʻ\\alpha.\\equiv.\\text{ᗡ}ʻR\\)",
+      "printed_page": 232,
+      "scan_leaf": 254,
+      "integration_blocked": true,
+      "semantic_audit_status": "refused-source-formula-incomplete",
+      "semantic_audit_evidence": "reviews/Star33-catalogue-07-semantic-audit.md"
+    },
+    {
+      "id": "PM1:✱33·62",
+      "kind": "derived-proposition",
+      "lean_path": "Principia/Architecture/Star33DomainKernel6.lean",
+      "declaration": "PM.Architecture.Star33DomainKernel6.star_33_62",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-source-incomplete-restoration-not-audited",
+      "formal_scope": "refused: the diplomatic formula has an incomplete right-hand side after the biconditional, while Lean restores an unprinted equality b = Field R",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "printed": "✱33·62.  \\(\\vdash:R\\in \\overleftarrow{C}ʻ\\alpha.\\equiv.CʻR\\)",
+      "printed_page": 232,
+      "scan_leaf": 254,
+      "integration_blocked": true,
+      "semantic_audit_status": "refused-source-formula-incomplete",
+      "semantic_audit_evidence": "reviews/Star33-catalogue-07-semantic-audit.md"
+    }
+  ],
+  "review_evidence": [
+    "reviews/Star33-catalogue-07-semantic-audit.md"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "parser_status": "reviewed-gap",
+  "parser_evidence": "reviews/Star33-parser-gaps.md"
+}

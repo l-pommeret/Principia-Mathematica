@@ -22,15 +22,18 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel5.lean",
       "declaration": "PM.Architecture.Star33DomainKernel5.star_33_42",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "formal_scope": "exact typed extensional characterization of field by existence in the union of the two coordinate sections; strict semantic audit passed",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "printed": "✱33·42.  \\(\\vdash.CʻR=\\hat{x}\\{\\exists !(\\overrightarrow{R}ʻx\\cup \\overleftarrow{R}ʻx)\\}\\)",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "integration_blocked": false,
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star33-catalogue-06-semantic-audit.md"
     },
     {
       "id": "PM1:✱33·43",
@@ -38,15 +41,18 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel5.lean",
       "declaration": "PM.Architecture.Star33DomainKernel5.star_33_43",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "formal_scope": "exact witness-retaining reconstruction of the contextual-value implication from a unique second-coordinate section to converse-domain and domain membership; strict semantic audit passed",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "printed": "✱33·43.  \\(\\vdash:\\text{E}!Rʻy.\\supset.y\\in \\text{ᗡ}ʻR.Rʻy\\in \\text{D}ʻR\\)",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "integration_blocked": false,
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star33-catalogue-06-semantic-audit.md"
     },
     {
       "id": "PM1:✱33·44",
@@ -54,15 +60,18 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel5.lean",
       "declaration": "PM.Architecture.Star33DomainKernel5.star_33_44",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "formal_scope": "exact converse witness-retaining reconstruction from a unique first-coordinate section to domain and converse-domain membership; strict semantic audit passed",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "printed": "✱33·44.  \\(\\vdash:\\text{E}!\\breve{R}ʻx.\\supset.x\\in \\text{D}ʻR.\\breve{R}ʻx\\in \\text{ᗡ}ʻR\\)",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "integration_blocked": false,
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star33-catalogue-06-semantic-audit.md"
     },
     {
       "id": "PM1:✱33·45",
@@ -70,15 +79,18 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel5.lean",
       "declaration": "PM.Architecture.Star33DomainKernel5.star_33_45",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "formal_scope": "exact typed relation-extensionality theorem from equality of every active second-coordinate section; strict semantic audit passed",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "printed": "✱33·45.  \\(\\vdash\\colon\\ldotp y\\in \\text{ᗡ}ʻR\\cup \\text{ᗡ}ʻS.\\supset_{y}.Rʻy=Sʻy:\\supset.R=S\\)",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "integration_blocked": false,
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star33-catalogue-06-semantic-audit.md"
     },
     {
       "id": "PM1:✱33·46",
@@ -86,15 +98,31 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel5.lean",
       "declaration": "PM.Architecture.Star33DomainKernel5.star_33_46",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "formal_scope": "typed domain/converse-domain reconstruction; strict audit pending",
-      "printed_dependencies": [],
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "formal_scope": "exact typed relation-extensionality theorem from equality of every active first-coordinate section; strict semantic audit passed",
+      "printed_dependencies": [
+        "PM1:✱33·45"
+      ],
       "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱33·45"
+      ],
       "printed": "✱33·46.  \\(\\vdash\\colon\\ldotp x\\in \\text{D}ʻR\\cup \\text{D}ʻS.\\supset_{x}.\\breve{R}ʻx=\\breve{S}ʻx:\\supset.R=S \\quad[\\text{Proof as in *33·45}]\\)",
       "printed_page": 232,
-      "scan_leaf": 254
+      "scan_leaf": 254,
+      "integration_blocked": false,
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star33-catalogue-06-semantic-audit.md",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱33·45"
+        ],
+        "strict_attempt_evidence": "reviews/Star33-catalogue-06-semantic-audit.md",
+        "editorial_note": "The audited Lean declaration proves the same endpoint with the recorded local proof dependency pattern; the printed proof reference remains in the historical graph."
+      }
     }
   ],
   "ci_evidence": {
@@ -103,5 +131,9 @@
     "conclusion": "pending"
   },
   "parser_status": "reviewed-gap",
-  "parser_evidence": "reviews/Star33-parser-gaps.md"
+  "parser_evidence": "reviews/Star33-parser-gaps.md",
+  "integration_status": "awaiting-ci",
+  "review_evidence": [
+    "reviews/Star33-catalogue-06-semantic-audit.md"
+  ]
 }

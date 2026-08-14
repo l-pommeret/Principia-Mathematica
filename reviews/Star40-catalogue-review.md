@@ -68,3 +68,13 @@ and supplies no common field target. In catalogue 11, ·65, ·66, ·68 and ·681
 are exact. Item ·67 is refused because PM states a three-member chained
 equivalence and Lean omits its final `α ⊂ pʻR⃗ʻʻβ` member. The result is eight
 awaiting CI and two prepared refusals in four homogeneous, disjoint manifests.
+
+Catalogue 12 strict audit promotes ·682, ·7 and ·8. They retain respectively
+the nonempty-intersection implication, the complete binary-operation image,
+and closure of a family sum under the backward relation image. Item ·69 is
+refused because Lean repeats a pointwise expansion of the left nonemptiness
+condition instead of representing PM's right-hand conjunction of two
+existence assertions. Item ·71 is also refused: PM has a three-member chained
+equality, but Lean contains only its first equality and no term for the final
+`♀ʻʻsʻκ`. The final lot is therefore three awaiting CI and two documented
+refusals, split into homogeneous manifests.

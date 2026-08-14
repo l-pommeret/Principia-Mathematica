@@ -1,0 +1,72 @@
+{
+  "batch": "PM1-STAR40-CATALOGUE-12-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "329–330",
+    "scan_leaves": [351, 352],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "items": [
+    {
+      "id": "PM1:✱40·682",
+      "kind": "derived-proposition",
+      "printed": "✱40·682. ⊢ : ∃!α ∩ pʻP⃖ʻʻβ .⊃. β ⊂ Pʻʻα",
+      "printed_page": 329,
+      "scan_leaf": 351,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_682",
+      "formal_scope": "exact typed implication from nonemptiness of α intersect the converse-fibre product over β to inclusion of β in the forward image of α",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱40·7",
+      "kind": "derived-proposition",
+      "printed": "✱40·7. ⊢. sʻα♀_{,,}ʻʻβ = ẑ{(∃x,y). x ∈ α . y ∈ β . z = x ♀ y}",
+      "printed_page": 329,
+      "scan_leaf": 351,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_7",
+      "formal_scope": "exact typed pointwise characterization of the binary-operation image of α and β",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱40·8",
+      "kind": "derived-proposition",
+      "printed": "✱40·8. ⊢ :. α ∈ κ .⊃_α. Řʻʻα ⊂ α :⊃. Řʻʻsʻκ ⊂ sʻκ",
+      "printed_page": 330,
+      "scan_leaf": 352,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_8",
+      "formal_scope": "exact typed preservation of closure under the backward relation image from every family member to the family sum",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

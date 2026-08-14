@@ -1,0 +1,53 @@
+{
+  "batch": "PM1-STAR40-CATALOGUE-12-REFUSED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "329–330",
+    "scan_leaves": [351, 352],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "items": [
+    {
+      "id": "PM1:✱40·69",
+      "kind": "derived-proposition",
+      "printed": "✱40·69. ⊢ : ∃!CʻP⃗ ∩ pʻP⃗ʻʻα .≡. ∃!P . ∃!pʻP⃗ʻʻα",
+      "printed_page": 329,
+      "scan_leaf": 351,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_69",
+      "formal_scope": "refused: Lean merely expands nonemptiness of the left intersection pointwise on both sides; it does not encode PM's right-hand conjunction of existence of P and existence of the fibre product",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-existence-conjunction-erased",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md"
+    },
+    {
+      "id": "PM1:✱40·71",
+      "kind": "derived-proposition",
+      "printed": "✱40·71. ⊢. sʻ♀_{,,}yʻʻκ = (sʻκ)♀_{,,}y = ♀ʻʻsʻκ",
+      "printed_page": 330,
+      "scan_leaf": 352,
+      "lean_path": "Principia/Architecture/Star40FinalKernel.lean",
+      "declaration": "PM.Architecture.Star40FinalKernel.star_40_71",
+      "formal_scope": "refused: PM displays a three-member chained equality; Lean proves only equality of the family sum image with the pointwise image of Sum κ and has no third term corresponding to ♀ʻʻsʻκ",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-omitted-third-equality",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star40-catalogue-review.md",
+      "semantic_audit": "reviews/Star40-catalogue-review.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

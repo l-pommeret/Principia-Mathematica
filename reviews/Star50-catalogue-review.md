@@ -75,3 +75,16 @@ Theorems ·57 and ·58 retain all three printed members, ·59 has the correct
 image orientation, and ·6 is exactly right restriction by composition with
 `I ▷ α`. The typed expansions neither strengthen the premises nor weaken the
 conclusions.
+
+The ninth batch (·61–·65) passes strict audit and is `awaiting-ci`. The
+composition orientation is checked separately on both sides: ·61 is left
+restriction, ·62 uses converse-domain inclusion, and ·63 uses domain inclusion.
+The two equalities at each of ·64 and ·65 are retained, with converse domain or
+domain first and the field specialization second.
+
+The tenth batch (·7, ·71–·74) also passes strict audit and is `awaiting-ci`.
+The operator-valued notations are represented explicitly by `rightMul` and
+`leftMul`: ·7 and ·71 preserve their respective inclusion hypotheses, ·72 and
+·73 retain both displayed operator applications, and ·74 proves equality of
+the complete right-multiplication operators after composing with identity.
+Thus no pointwise instance is substituted for PM's operator equality.

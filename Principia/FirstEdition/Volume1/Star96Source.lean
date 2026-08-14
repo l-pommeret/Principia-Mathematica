@@ -95,6 +95,36 @@ PM-VERBATIM-END PM1:✱96·159 -/
 /- PM-VERBATIM-BEGIN PM1:✱96·16
 ✱96·16. ⊢ . (R_*⃖ʻx)↼hR = R ⧏ R_*⃖ʻx
 PM-VERBATIM-END PM1:✱96·16 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·2
+✱96·2. ⊢ : R ∈ 1→Cls .⊃. (R_*⃖ʻx)↼hR = R↾R_po⃖ʻx
+PM-VERBATIM-END PM1:✱96·2 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·21
+✱96·21. ⊢ : R ∈ 1→Cls . xBR .⊃. (R_*⃖ʻx)↼hR = R↾R_*⃖ʻx
+PM-VERBATIM-END PM1:✱96·21 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·22
+✱96·22. ⊢ : R ∈ 1→Cls . ∼(xRx) .⊃. (R_*⃖ʻx)↼hR ⊂ J
+PM-VERBATIM-END PM1:✱96·22 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·23
+✱96·23. ⊢ : R ∈ 1→Cls . xBR .⊃. I_Rʻx = Λ . (R_*⃖ʻx)↼hR_po ⊂ J
+PM-VERBATIM-END PM1:✱96·23 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·24
+✱96·24. ⊢ : R ∈ 1→Cls . CʻR = Ř_*ʻʻB⃗ʻR .⊃. R_po ⊂ J
+PM-VERBATIM-END PM1:✱96·24 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·25
+✱96·25. ⊢ :: R ∈ 1→Cls . xBR . xR_*y : yR_*z .∨. zR_*y :⊃. xR_*z
+PM-VERBATIM-END PM1:✱96·25 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·3
+✱96·3. ⊢ : xR_*y .⊃. R_*⃖ʻy ⊂ R_*⃖ʻx
+PM-VERBATIM-END PM1:✱96·3 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·301
+✱96·301. ⊢ : xR_*y .⊃. R_*⃗ʻx ⊂ R_*⃗ʻy
+PM-VERBATIM-END PM1:✱96·301 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·302
+✱96·302. ⊢ :: R ∈ Cls→1 . xR_*y . xR_*z .⊃. yR_*z .∨. zR_*y
+PM-VERBATIM-END PM1:✱96·302 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·303
+✱96·303. ⊢ :: R ∈ Cls→1 . xR_*y . xR_*z . y ≠ z .⊃. yR_po z .∨. zR_po y
+PM-VERBATIM-END PM1:✱96·303 -/
 def records : List (String × String) := [
   ("✱96·01", "I_Rʻx = R_*⃖ʻx ∩ ẑz(z R_po z)  Dft [✱96]"),
   ("✱96·02", "J_Rʻx = R_*⃖ʻx − I_Rʻx  Dft [✱96]"),
@@ -126,5 +156,15 @@ def records : List (String × String) := [
   ("✱96·157", "⊢ : x ∈ DʻR .⊃. Cʻ{(R_*⃖ʻx)↼hR_po} = R_*⃖ʻx"),
   ("✱96·158", "⊢ : x ∼∈ DʻR .⊃. (R_*⃖ʻx)↼hR_po = Λ̇"),
   ("✱96·159", "⊢ : ∃̇!(R_*⃖ʻx)↼hR_po .⊃. Cʻ{(R_*⃖ʻx)↼hR_po} = R_*⃖ʻx"),
-  ("✱96·16", "⊢ . (R_*⃖ʻx)↼hR = R ⧏ R_*⃖ʻx")]
+  ("✱96·16", "⊢ . (R_*⃖ʻx)↼hR = R ⧏ R_*⃖ʻx"),
+  ("✱96·2", "⊢ : R ∈ 1→Cls .⊃. (R_*⃖ʻx)↼hR = R↾R_po⃖ʻx"),
+  ("✱96·21", "⊢ : R ∈ 1→Cls . xBR .⊃. (R_*⃖ʻx)↼hR = R↾R_*⃖ʻx"),
+  ("✱96·22", "⊢ : R ∈ 1→Cls . ∼(xRx) .⊃. (R_*⃖ʻx)↼hR ⊂ J"),
+  ("✱96·23", "⊢ : R ∈ 1→Cls . xBR .⊃. I_Rʻx = Λ . (R_*⃖ʻx)↼hR_po ⊂ J"),
+  ("✱96·24", "⊢ : R ∈ 1→Cls . CʻR = Ř_*ʻʻB⃗ʻR .⊃. R_po ⊂ J"),
+  ("✱96·25", "⊢ :: R ∈ 1→Cls . xBR . xR_*y : yR_*z .∨. zR_*y :⊃. xR_*z"),
+  ("✱96·3", "⊢ : xR_*y .⊃. R_*⃖ʻy ⊂ R_*⃖ʻx"),
+  ("✱96·301", "⊢ : xR_*y .⊃. R_*⃗ʻx ⊂ R_*⃗ʻy"),
+  ("✱96·302", "⊢ :: R ∈ Cls→1 . xR_*y . xR_*z .⊃. yR_*z .∨. zR_*y"),
+  ("✱96·303", "⊢ :: R ∈ Cls→1 . xR_*y . xR_*z . y ≠ z .⊃. yR_po z .∨. zR_po y")]
 end PM.FirstEdition.Volume1.Star96Source

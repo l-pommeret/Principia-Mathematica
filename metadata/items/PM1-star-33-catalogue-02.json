@@ -125,10 +125,17 @@
         "PM1:✱33·161"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱33·14",
-        "PM1:✱33·161"
-      ],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱33·14",
+          "PM1:✱33·161"
+        ],
+        "strict_attempt_evidence": "reviews/Star33-catalogue-02-semantic-audit.md",
+        "editorial_note": "The Lean proof establishes the typed field-membership implication directly; the two printed citations remain historical provenance but are not calls in the proof term."
+      },
       "integration_blocked": false,
       "semantic_audit_status": "strict-equivalence-passed",
       "parser_status": "reviewed-gap",
