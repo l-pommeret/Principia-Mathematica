@@ -27,8 +27,8 @@
       "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_22",
       "formal_scope": "exact typed distributivity of relational image over binary class union; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
@@ -44,8 +44,8 @@
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_25",
       "formal_scope": "exact typed paired domain and converse-domain image identities; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
@@ -61,8 +61,8 @@
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_26",
       "formal_scope": "exact typed invariance of relational image after intersection with the converse-domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
@@ -70,9 +70,9 @@
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star37-parser-gaps.md"

@@ -35,6 +35,36 @@ PM-VERBATIM-END PM1:✱96·121 -/
 /- PM-VERBATIM-BEGIN PM1:✱96·14
 ✱96·14. ⊢ : x ∈ CʻR .⊃. R_*⃖ʻx = ιʻx ∪ R_po⃖ʻx
 PM-VERBATIM-END PM1:✱96·14 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·111
+✱96·111. ⊢ : Řʻʻα ⊂ α .⊃. (α↼hR)_po = α↼hR_po
+PM-VERBATIM-END PM1:✱96·111 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·112
+✱96·112. ⊢ : α ⊂ DʻR . Řʻʻα ⊂ α .⊃. (α↼hR)_* = α↼hR_*
+PM-VERBATIM-END PM1:✱96·112 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·122
+✱96·122. ⊢ : α ⊂ ᗡʻR . Rʻʻα ⊂ α .⊃. (R↾α)_* = R_*↾α
+PM-VERBATIM-END PM1:✱96·122 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·13
+✱96·13. ⊢ . (R_*⃖ʻx)↼hR_po = {(R_*⃖ʻx)↼hR}_po
+PM-VERBATIM-END PM1:✱96·13 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·131
+✱96·131. ⊢ . x ∈ DʻR .⊃. (R_*⃖ʻx)↼hR_* = {(R_*⃖ʻx)↼hR}_*
+PM-VERBATIM-END PM1:✱96·131 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·141
+✱96·141. ⊢ . Cʻ(α↼hR_*) = Ř_*ʻʻα
+PM-VERBATIM-END PM1:✱96·141 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·142
+✱96·142. ⊢ . Cʻ(α↼hR_po) = (α ∩ DʻR) ∪ Ř_poʻʻα
+PM-VERBATIM-END PM1:✱96·142 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·143
+✱96·143. ⊢ . Cʻ(α↼hR_po) = Ř_*ʻʻ(α ∩ DʻR)
+PM-VERBATIM-END PM1:✱96·143 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·144
+✱96·144. ⊢ : α ∩ ᗡʻR ⊂ Ř_*ʻʻ(α ∩ DʻR) .⊃. Cʻ(α↼hR_po) = Ř_*ʻʻα
+PM-VERBATIM-END PM1:✱96·144 -/
+/- PM-VERBATIM-BEGIN PM1:✱96·15
+✱96·15. ⊢ : Dʻ{(R_*⃖ʻx)↼hR} = R_*⃖ʻx ∩ DʻR . ᗡʻ{(R_*⃖ʻx)↼hR} = R_po⃖ʻx
+PM-VERBATIM-END PM1:✱96·15 -/
 def records : List (String × String) := [
   ("✱96·01", "I_Rʻx = R_*⃖ʻx ∩ ẑz(z R_po z)  Dft [✱96]"),
   ("✱96·02", "J_Rʻx = R_*⃖ʻx − I_Rʻx  Dft [✱96]"),
@@ -46,5 +76,15 @@ def records : List (String × String) := [
   ++ [
   ("✱96·11", "⊢ . (α↼hR)_po ⊂ α↼hR_po"),
   ("✱96·121", "⊢ : Rʻʻα ⊂ α .⊃. (R↾α)_po = R_po↾α"),
-  ("✱96·14", "⊢ : x ∈ CʻR .⊃. R_*⃖ʻx = ιʻx ∪ R_po⃖ʻx")]
+  ("✱96·14", "⊢ : x ∈ CʻR .⊃. R_*⃖ʻx = ιʻx ∪ R_po⃖ʻx"),
+  ("✱96·111", "⊢ : Řʻʻα ⊂ α .⊃. (α↼hR)_po = α↼hR_po"),
+  ("✱96·112", "⊢ : α ⊂ DʻR . Řʻʻα ⊂ α .⊃. (α↼hR)_* = α↼hR_*"),
+  ("✱96·122", "⊢ : α ⊂ ᗡʻR . Rʻʻα ⊂ α .⊃. (R↾α)_* = R_*↾α"),
+  ("✱96·13", "⊢ . (R_*⃖ʻx)↼hR_po = {(R_*⃖ʻx)↼hR}_po"),
+  ("✱96·131", "⊢ . x ∈ DʻR .⊃. (R_*⃖ʻx)↼hR_* = {(R_*⃖ʻx)↼hR}_*"),
+  ("✱96·141", "⊢ . Cʻ(α↼hR_*) = Ř_*ʻʻα"),
+  ("✱96·142", "⊢ . Cʻ(α↼hR_po) = (α ∩ DʻR) ∪ Ř_poʻʻα"),
+  ("✱96·143", "⊢ . Cʻ(α↼hR_po) = Ř_*ʻʻ(α ∩ DʻR)"),
+  ("✱96·144", "⊢ : α ∩ ᗡʻR ⊂ Ř_*ʻʻ(α ∩ DʻR) .⊃. Cʻ(α↼hR_po) = Ř_*ʻʻα"),
+  ("✱96·15", "⊢ : Dʻ{(R_*⃖ʻx)↼hR} = R_*⃖ʻx ∩ DʻR . ᗡʻ{(R_*⃖ʻx)↼hR} = R_po⃖ʻx")]
 end PM.FirstEdition.Volume1.Star96Source

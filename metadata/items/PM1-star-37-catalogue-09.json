@@ -26,8 +26,8 @@
       "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_212",
       "formal_scope": "exact typed image-intersection inclusion with all four displayed conjuncts; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM1:✱37·21",
         "PM1:✱37·211"
@@ -56,8 +56,8 @@
       "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_221",
       "formal_scope": "exact typed distribution of relation-union image over a class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
@@ -73,8 +73,8 @@
       "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_222",
       "formal_scope": "exact typed four-way distribution of relation-union image over class union; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM1:✱37·22",
         "PM1:✱37·221"
@@ -103,8 +103,8 @@
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_23",
       "formal_scope": "exact typed characterization of the domain of the image relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM1:✱37·101",
         "PM1:✱33·11"
@@ -133,8 +133,8 @@
       "declaration": "PM.Architecture.Star37NextConsecutiveKernel.star_37_231",
       "formal_scope": "exact typed universality of the converse-domain of the image relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
@@ -142,9 +142,9 @@
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star37-parser-gaps.md"

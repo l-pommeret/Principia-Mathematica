@@ -26,3 +26,12 @@ empty-class conclusion, while supplying no representation of PM's `t²`
 argument. Both therefore remain `prepared` with explicit pass-through
 semantic-mismatch statuses. This lot likewise promotes nothing to
 `awaiting-ci`.
+
+The next two prepared source lots, Q430 (·01, ·011, ·02) and Q430b (·021,
+·03, ·031), were audited with a maximum of five items per lot. Definitions
+·01 and ·011 are exact typed intersection definitions, and ·02 and ·021 are
+exact range definitions; these four unique records are promoted to
+`awaiting-ci`. Definitions ·03 and ·031 are refused: their Lean declarations
+prove only `Inter sm typ = Inter sm typ`, leave the alleged class `m` unused,
+and omit both PM's image `smʻʻμ` and the defined operators `μ_(1)`/`μ_(2)`.
+They remain `prepared` with explicit semantic-mismatch statuses.

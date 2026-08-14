@@ -23,15 +23,16 @@
       "scan_leaf": 238,
       "lean_path": "Principia/Architecture/Star118MiddleKernel.lean",
       "declaration": "PM.Architecture.Star118MiddleKernel.star_118_33",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Lean takes the complete normalized-product equality as h and omits PM's NC-minus-zero antecedent",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-conclusion-assumed",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogues-03-04-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱118·34",
@@ -41,15 +42,16 @@
       "scan_leaf": 238,
       "lean_path": "Principia/Architecture/Star118MiddleKernel.lean",
       "declaration": "PM.Architecture.Star118MiddleKernel.star_118_34",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Lean takes the final equality as h and drops both printed conditions ν∈NC and μ≠0",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-conclusion-assumed",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogues-03-04-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱118·341",
@@ -59,15 +61,16 @@
       "scan_leaf": 238,
       "lean_path": "Principia/Architecture/Star118MiddleKernel.lean",
       "declaration": "PM.Architecture.Star118MiddleKernel.star_118_341",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Lean takes the final equality as h and drops both printed conditions μ∈NC and ν≠0",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-conclusion-assumed",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogues-03-04-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱118·35",
@@ -77,15 +80,16 @@
       "scan_leaf": 238,
       "lean_path": "Principia/Architecture/Star118MiddleKernel.lean",
       "declaration": "PM.Architecture.Star118MiddleKernel.star_118_35",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: associativity rewrites to a raw right-associated product, not PM's product with the left intermediate product normalized, and ϖ≠0 is absent",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-wrong-normalized-factor",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogues-03-04-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱118·351",
@@ -95,15 +99,16 @@
       "scan_leaf": 238,
       "lean_path": "Principia/Architecture/Star118MiddleKernel.lean",
       "declaration": "PM.Architecture.Star118MiddleKernel.star_118_351",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: associativity does not insert PM's normalization of the right intermediate product, and the antecedent μ≠0 is absent",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-intermediate-normalization-erased",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogues-03-04-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     }
   ],
   "ci_evidence": {

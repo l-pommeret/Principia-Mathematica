@@ -4,11 +4,17 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "627–628",
-    "scan_leaves": [649, 650],
+    "scan_leaves": [
+      649,
+      650
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
   "items": [
     {
       "id": "PM1:✱95·131",
@@ -20,15 +26,23 @@
       "declaration": "PM.FirstEdition.Volume1.Star95Kernel.star_95_131",
       "formal_scope": "exact typed membership of the first two-sided transform; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱90·151", "PM1:✱43·102", "PM1:✱95·01"],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱90·151",
+        "PM1:✱43·102",
+        "PM1:✱95·01"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱43·102", "PM1:✱90·151", "PM1:✱95·01"],
+        "printed_but_unused": [
+          "PM1:✱43·102",
+          "PM1:✱90·151",
+          "PM1:✱95·01"
+        ],
         "strict_attempt_evidence": "reviews/Star95-catalogue-02-semantic-audit.md",
         "editorial_note": "The exact inductive base followed by one generator step closes the proposition directly; PM's ancestral route remains historical evidence."
       },
@@ -46,15 +60,21 @@
       "declaration": "PM.FirstEdition.Volume1.Star95Kernel.star_95_132",
       "formal_scope": "exact typed closure of the equi-factor class under its two-sided generator; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱90·172", "PM1:✱43·102"],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱90·172",
+        "PM1:✱43·102"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱43·102", "PM1:✱90·172"],
+        "printed_but_unused": [
+          "PM1:✱43·102",
+          "PM1:✱90·172"
+        ],
         "strict_attempt_evidence": "reviews/Star95-catalogue-02-semantic-audit.md",
         "editorial_note": "The generator constructor is the direct kernel proof of the same closure claim; PM's ancestral-image derivation remains historical evidence."
       },
@@ -72,15 +92,23 @@
       "declaration": "PM.FirstEdition.Volume1.Star95Kernel.star_95_14",
       "formal_scope": "exact typed strong induction principle retaining generated membership in the step hypothesis; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱95·13", "PM1:✱95·132", "PM1:✱95·11"],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱95·13",
+        "PM1:✱95·132",
+        "PM1:✱95·11"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱95·11", "PM1:✱95·13", "PM1:✱95·132"],
+        "printed_but_unused": [
+          "PM1:✱95·11",
+          "PM1:✱95·13",
+          "PM1:✱95·132"
+        ],
         "strict_attempt_evidence": "reviews/Star95-catalogue-02-semantic-audit.md",
         "editorial_note": "Lean's exact inductive eliminator supplies both membership and the induction hypothesis directly; PM packages the same argument via three earlier propositions."
       },
@@ -89,5 +117,9 @@
       "semantic_audit_status": "strict-equivalence-passed"
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
+  }
 }

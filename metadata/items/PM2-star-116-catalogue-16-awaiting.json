@@ -4,11 +4,17 @@
   "volume": 2,
   "source_range": {
     "printed_pages": "159–160",
-    "scan_leaves": [199, 200],
+    "scan_leaves": [
+      199,
+      200
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
   },
-  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
   "items": [
     {
       "id": "PM2:✱116·534",
@@ -20,14 +26,25 @@
       "declaration": "PM.Architecture.Star116FifthKernel.star_116_534",
       "formal_scope": "exact typed pointwise-product similarity: paired γ-indexed functions into α and β are bijective with γ-indexed functions into α × β; PM's construction hypotheses are internalized by the explicit canonical equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
-      "printed_dependencies": ["PM2:✱116·532"],
-      "lean_dependencies": ["PM.Architecture.Star116FifthKernel.star_116_53"],
-      "normalized_dependencies": ["PM2:✱116·53", "PM2:✱116·532"],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
+      "printed_dependencies": [
+        "PM2:✱116·532"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star116FifthKernel.star_116_53"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱116·53",
+        "PM2:✱116·532"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star116-catalogue-16-semantic-audit.md"
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
+  }
 }

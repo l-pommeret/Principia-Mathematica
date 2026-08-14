@@ -29,3 +29,33 @@ PM-VERBATIM-END PM2:✱123·15 -/
 /- PM-VERBATIM-BEGIN PM2:✱123·16
 ✱123·16. ⊢ : α∈ℵ₀ .⊃. Clʻα⊂Cls induct∪ℵ₀ [✱122·46]
 PM-VERBATIM-END PM2:✱123·16 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·17
+✱123·17. ⊢ : α∈ℵ₀.β∈Cls induct .⊃. α−β∈ℵ₀
+PM-VERBATIM-END PM2:✱123·17 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·18
+✱123·18. ⊢ : ∃!ℵ₀(x) .⊃. Infin ax(x) [✱122·36]
+PM-VERBATIM-END PM2:✱123·18 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·19
+✱123·19. ⊢ : R∈Prog.∃!α.α⊂Rpoʻʻα .⊃. α∈ℵ₀ [✱122·45]
+PM-VERBATIM-END PM2:✱123·19 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·191
+✱123·191. ⊢ : R∈1→1.x∈DʻR.∼(xRpo x).R⃖∗ʻx⊂DʻR .⊃. R⃖∗ʻx∈ℵ₀ [✱122·52]
+PM-VERBATIM-END PM2:✱123·191 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·192
+✱123·192. ⊢ : R∈1→1.ᗡʻR⊂DʻR .⊃. R⃖∗ʻʻB⃗ʻR⊂ℵ₀
+PM-VERBATIM-END PM2:✱123·192 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·2
+✱123·2. ⊢ : μNν .≡. μ∈NC induct.ν=(μ+_c1)∩t₀ʻμ [(✱123·02)]
+PM-VERBATIM-END PM2:✱123·2 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·21
+✱123·21. ⊢. N∈Cls→1.DʻN=NC induct.ᗡʻN=NC induct−ιʻ0.BʻN=0
+PM-VERBATIM-END PM2:✱123·21 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·22
+✱123·22. ⊢. Ň=(+_c1)↾NC induct [✱123·2]
+PM-VERBATIM-END PM2:✱123·22 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·23
+✱123·23. ⊢. N⃖∗ʻ0=NC induct=DʻN
+PM-VERBATIM-END PM2:✱123·23 -/
+/- PM-VERBATIM-BEGIN PM2:✱123·24
+✱123·24. ⊢ : Infin ax(x) .⊃. N⥏t³ʻx∈1→1
+PM-VERBATIM-END PM2:✱123·24 -/

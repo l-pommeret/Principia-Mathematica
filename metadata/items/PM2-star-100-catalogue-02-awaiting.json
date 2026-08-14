@@ -4,11 +4,17 @@
   "volume": 2,
   "source_range": {
     "printed_pages": "14–15",
-    "scan_leaves": [54, 55],
+    "scan_leaves": [
+      54,
+      55
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
   },
-  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
   "items": [
     {
       "id": "PM2:✱100·14",
@@ -20,8 +26,8 @@
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_14",
       "formal_scope": "exact typed bijective invariant of the injective restriction-and-image characterization",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -38,8 +44,8 @@
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_15",
       "formal_scope": "exact typed bijective invariant of the unique-image and injectivity characterization",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -56,8 +62,8 @@
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_16",
       "formal_scope": "exact typed bijective invariant of the pointwise injectivity-and-image characterization",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -65,5 +71,9 @@
       "parser_evidence": "reviews/Star100-catalogue-review.md"
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
+  }
 }

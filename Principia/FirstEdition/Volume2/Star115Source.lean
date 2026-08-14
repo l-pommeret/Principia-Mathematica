@@ -33,6 +33,36 @@ PM-VERBATIM-END PM2:✱115·14 -/
 /- PM-VERBATIM-BEGIN PM2:✱115·141
 ✱115·141. ⊢ : ∃!Prodʻκ .⊃. sʻProdʻκ=sʻκ [✱83·66]
 PM-VERBATIM-END PM2:✱115·141 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·142
+✱115·142. ⊢ . Prodʻιʻα=ιʻʻα [✱83·7]
+PM-VERBATIM-END PM2:✱115·142 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·143
+✱115·143. ⊢ . Prodʻιʻʻα=ιʻα [✱83·71]
+PM-VERBATIM-END PM2:✱115·143 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·144
+✱115·144. ⊢ : κ⊆1 .⊃. Prodʻκ=ιʻsʻκ [✱83·72]
+PM-VERBATIM-END PM2:✱115·144 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·145
+✱115·145. ⊢ :: κ∈Cls² excl . α∈κ . μ∩α∈1 .⊃: μ−α∈Prodʻ(κ−ιʻα) .≡. μ∈Prodʻκ [✱84·422]
+PM-VERBATIM-END PM2:✱115·145 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·15
+✱115·15. ⊢ :: κ,λ∈Cls² excl . sʻκ=sʻλ .⊃: κ⊆Prodʻλ .≡. λ⊆Prodʻκ [✱84·43]
+PM-VERBATIM-END PM2:✱115·15 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·151
+✱115·151. ⊢ : κ∈Cls² excl .⊃. ∈_Δʻsʻκ=ṡʻʻProdʻ∈_Δʻʻκ [✱85·28]
+PM-VERBATIM-END PM2:✱115·151 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·152
+✱115·152. ⊢ . P_Δʻα sm ProdʻP↧ʻʻα [✱85·55]
+PM-VERBATIM-END PM2:✱115·152 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·153
+✱115·153. ⊢ . ∈_Δʻκ sm Prodʻ∈↧ʻʻκ [✱115·152]
+PM-VERBATIM-END PM2:✱115·153 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·154
+✱115·154. ⊢ . Prodʻ∈↧ʻʻκ∈ΠNcʻκ [✱115·153]
+PM-VERBATIM-END PM2:✱115·154 -/
+/- PM-VERBATIM-BEGIN PM2:✱115·16
+✱115·16. ⊢ : κ∈Cls² excl .⊃. Prodʻκ⊆Ncʻκ [✱100·64]
+PM-VERBATIM-END PM2:✱115·16 -/
 namespace PM.FirstEdition.Volume2.Star115Source
 def gutenbergId : Nat := 78255
 def openingLoci : List String :=

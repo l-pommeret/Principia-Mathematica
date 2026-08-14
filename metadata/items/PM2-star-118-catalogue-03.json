@@ -23,15 +23,16 @@
       "scan_leaf": 237,
       "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
       "declaration": "PM.Architecture.Star118OpeningKernel.star_118_25",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: ordinary associativity proves equality of two raw parenthesizations under n, but PM also normalizes the intermediate sums on both displayed right-hand expressions",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-intermediate-normalization-erased",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogues-03-04-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱118·3",
@@ -41,15 +42,16 @@
       "scan_leaf": 237,
       "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
       "declaration": "PM.Architecture.Star118OpeningKernel.star_118_3",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: reflexivity of arbitrary n and mul omits PM's defining class abstraction for cardinal multiplication and all representative witnesses",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-definition-erased",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogues-03-04-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱118·301",
@@ -59,15 +61,16 @@
       "scan_leaf": 237,
       "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
       "declaration": "PM.Architecture.Star118OpeningKernel.star_118_301",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Normal n (op a b) unfolds to the equality returned, so PM's existence-to-smξ theorem is assumed rather than proved",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-conclusion-assumed",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogues-03-04-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱118·31",
@@ -77,15 +80,16 @@
       "scan_leaf": 237,
       "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
       "declaration": "PM.Architecture.Star118OpeningKernel.star_118_31",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Lean returns normality of the product unchanged instead of deriving existence of smξ on μ, and it omits ν≠0",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-wrong-conclusion",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogues-03-04-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱118·32",
@@ -95,15 +99,16 @@
       "scan_leaf": 237,
       "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
       "declaration": "PM.Architecture.Star118OpeningKernel.star_118_32",
-      "formal_scope": "typed cardinal-subtraction reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: the entire normality equivalence is supplied as h, while PM's NC-minus-zero antecedent is absent",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-conclusion-assumed",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star118-catalogue-review.md"
+      "parser_evidence": "reviews/Star118-catalogues-03-04-semantic-audit.md",
+      "semantic_audit_status": "strict-equivalence-refused"
     }
   ],
   "ci_evidence": {

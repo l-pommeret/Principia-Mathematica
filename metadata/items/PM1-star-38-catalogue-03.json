@@ -15,7 +15,8 @@
     "PG78050"
   ],
   "review_evidence": [
-    "reviews/Star38-39-canonical-review.md"
+    "reviews/Star38-39-canonical-review.md",
+    "reviews/Star38-catalogue-03-04-review.md"
   ],
   "items": [
     {
@@ -26,19 +27,23 @@
       "scan_leaf": 335,
       "lean_path": "Principia/Architecture/Star38Kernel.lean",
       "declaration": "PM.Architecture.Star38Kernel.star_38_21",
-      "formal_scope": "typed comprehension for a section image",
+      "formal_scope": "exact typed total-binary-function comprehension for a section image",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "✱38·2",
         "✱38·131"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱38·2",
-        "PM1:✱38·131"
-      ]
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["✱38·131", "✱38·2"],
+        "strict_attempt_evidence": "reviews/Star38-catalogue-03-04-review.md",
+        "editorial_note": "Slice, Image, and RightSection unfold directly to the printed comprehension; both printed citations remain historical evidence."
+      }
     },
     {
       "id": "PM1:✱38·22",
@@ -48,17 +53,22 @@
       "scan_leaf": 335,
       "lean_path": "Principia/Architecture/Star38Kernel.lean",
       "declaration": "PM.Architecture.Star38Kernel.star_38_22",
-      "formal_scope": "typed agreement of slice presentations",
+      "formal_scope": "exact typed total-binary-function agreement of all three slice presentations",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "✱38·11"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱38·11"
-      ]
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["✱38·11"],
+        "strict_attempt_evidence": "reviews/Star38-catalogue-03-04-review.md",
+        "editorial_note": "Both equalities close by unfolding the slice and image presentations; the printed theorem citation remains historical evidence."
+      }
     },
     {
       "id": "PM1:✱38·23",
@@ -68,19 +78,23 @@
       "scan_leaf": 335,
       "lean_path": "Principia/Architecture/Star38Kernel.lean",
       "declaration": "PM.Architecture.Star38Kernel.star_38_23",
-      "formal_scope": "typed definedness witness for both slice presentations",
+      "formal_scope": "exact definedness of both slice presentations under the explicit typed total-function abstraction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "✱38·22",
         "✱14·21"
       ],
       "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱38·22",
-        "PM1:✱14·21"
-      ]
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["✱14·21", "✱38·22"],
+        "strict_attempt_evidence": "reviews/Star38-catalogue-03-04-review.md",
+        "editorial_note": "The two total slice terms directly inhabit Class γ; the printed derivation is historical and no numbered Lean theorem is invoked."
+      }
     },
     {
       "id": "PM1:✱38·24",
@@ -90,35 +104,13 @@
       "scan_leaf": 335,
       "lean_path": "Principia/Architecture/Star38Kernel.lean",
       "declaration": "PM.Architecture.Star38Kernel.star_38_24",
-      "formal_scope": "typed nonemptiness equivalence for a section image",
+      "formal_scope": "exact typed total-binary-function nonemptiness equivalence for a section image",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
-    },
-    {
-      "id": "PM1:✱38·3",
-      "kind": "derived-proposition",
-      "printed": "✱38·3. ⊢. α♀_{,,}ʻʻβ = γ̂{(∃y). y ∈ β . γ = α♀_{,,}y} = γ̂{(∃y). y ∈ β . γ = ♀yʻʻα}  [✱38·13·2]",
-      "printed_page": 313,
-      "scan_leaf": 335,
-      "lean_path": "Principia/Architecture/Star38Kernel.lean",
-      "declaration": "PM.Architecture.Star38Kernel.star_38_3",
-      "formal_scope": "typed image of a family of slices",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [
-        "✱38·13",
-        "✱38·2"
-      ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱38·13",
-        "PM1:✱38·2"
-      ]
     }
   ],
   "ci_evidence": {

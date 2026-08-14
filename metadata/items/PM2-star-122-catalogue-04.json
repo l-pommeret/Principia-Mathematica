@@ -1,0 +1,28 @@
+{
+  "batch": "PM2-STAR122-CATALOGUE-04", "edition": "first", "volume": 2,
+  "source_range": {"printed_pages": "258–259", "scan_leaves": [298, 299], "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu", "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱122·22", "kind": "derived-proposition", "printed": "✱122·22. ⊢ : R∈Prog . α⊂DʻR . x,y∈α−R̆poʻʻα .⊃. x=y", "printed_page": 258, "scan_leaf": 298,
+      "lean_path": "Principia/Architecture/Star122Kernel.lean", "declaration": "PM.Architecture.Star122Kernel.star_122_22", "formal_scope": "order-theoretic reconstruction; item-level semantic promotion refused by strict audit", "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared", "integration_status": "blocked-semantic-mismatch-comparability-for-uniqueness-of-minimal-member", "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [], "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star122-catalogue-04-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱122·23", "kind": "derived-proposition", "printed": "✱122·23. ⊢ : R∈Prog . α⊂DʻR . ∃!α .⊃. E!min(Rpo)ʻα . α−R̆poʻʻα=ιʻmin(Rpo)ʻα", "printed_page": 259, "scan_leaf": 299,
+      "lean_path": "Principia/Architecture/Star122Kernel.lean", "declaration": "PM.Architecture.Star122Kernel.star_122_23", "formal_scope": "order-theoretic reconstruction; item-level semantic promotion refused by strict audit", "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared", "integration_status": "blocked-semantic-mismatch-trichotomy-for-existence-and-characterization-of-minimum", "printed_dependencies": ["PM1:✱93·111", "PM2:✱122·22", "PM2:✱122·141"], "lean_dependencies": [], "normalized_dependencies": [], "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star122-catalogue-04-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱122·231", "kind": "derived-proposition", "printed": "✱122·231. ⊢ : R∈Prog . α⊂R̆poʻʻα .⊃. α=Λ", "printed_page": 259, "scan_leaf": 299,
+      "lean_path": "Principia/Architecture/Star122Kernel.lean", "declaration": "PM.Architecture.Star122Kernel.star_122_231", "formal_scope": "order-theoretic reconstruction; item-level semantic promotion refused by strict audit", "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared", "integration_status": "blocked-semantic-mismatch-empty-premise-repeats-empty-conclusion", "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [], "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star122-catalogue-04-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱122·24", "kind": "derived-proposition", "printed": "✱122·24. ⊢ : R∈Prog . P∈PotʻR .⊃. DʻP=P̆∗ʻʻB⃗ʻP=sʻgenʻP", "printed_page": 259, "scan_leaf": 299,
+      "lean_path": "Principia/Architecture/Star122NextKernel.lean", "declaration": "PM.Architecture.Star122NextKernel.star_122_24", "formal_scope": "natural-number reconstruction; item-level semantic promotion refused by strict audit", "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared", "integration_status": "blocked-semantic-mismatch-segment-reflexivity-for-domain-generator-equalities", "printed_dependencies": ["PM2:✱122·1", "PM1:✱92·102", "PM1:✱93·42", "PM1:✱91·581", "PM2:✱122·231", "PM1:✱93·37", "PM1:✱93·36", "PM2:✱122·143"], "lean_dependencies": [], "normalized_dependencies": [], "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star122-catalogue-04-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱122·25", "kind": "derived-proposition", "printed": "✱122·25. ⊢ : R∈Prog . P∈PotʻR . x∈DʻR .⊃. (P⃖∗ʻx)↿P∈Prog . x=Bʻ{(P⃖∗ʻx)↿P}", "printed_page": 259, "scan_leaf": 299,
+      "lean_path": "Principia/Architecture/Star122NextKernel.lean", "declaration": "PM.Architecture.Star122NextKernel.star_122_25", "formal_scope": "natural-number reconstruction; item-level semantic promotion refused by strict audit", "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "prepared", "integration_status": "blocked-semantic-mismatch-definitional-segment-order-for-restricted-progression", "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [], "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star122-catalogue-04-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

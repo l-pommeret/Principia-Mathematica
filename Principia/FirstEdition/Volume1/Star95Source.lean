@@ -35,6 +35,36 @@ PM-VERBATIM-END PM1:✱95·21 -/
 /- PM-VERBATIM-BEGIN PM1:✱95·211
 ✱95·211. ⊢ : ᗡʻR⊂CʻQ . M∈(P∗Q)ʻR .⊃. (∃S,T) . S∈PotʻP∪ιʻI . T∈PotidʻQ . M=S|R|T
 PM-VERBATIM-END PM1:✱95·211 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·212
+✱95·212. ⊢ : DʻR⊂CʻP . M∈(P∗Q)ʻR .⊃. (∃S,T) . S∈PotidʻP . T∈PotʻQ∪ιʻI . M=S|R|T [Proof as in ✱95·211]
+PM-VERBATIM-END PM1:✱95·212 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·22
+✱95·22. ⊢ : DʻR⊂CʻP . ᗡʻR⊂CʻQ . M∈(P∗Q)ʻR .⊃. (∃S,T) . S∈PotidʻP . T∈PotidʻQ . M=S|R|T [Proof as in ✱95·211]
+PM-VERBATIM-END PM1:✱95·22 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·221
+✱95·221. ⊢ : T∈PotʻQ .⊃. (∃S) . S∈PotʻP . S|R|T∈(P∗Q)ʻR
+PM-VERBATIM-END PM1:✱95·221 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·222
+✱95·222. ⊢ : S∈PotʻP .⊃. (∃T) . T∈PotʻQ . S|R|T∈(P∗Q)ʻR [Proof as in ✱95·221]
+PM-VERBATIM-END PM1:✱95·222 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·23
+✱95·23. ⊢ : M∈(P∗Q)ʻR .⊃. M(P_st|Q_ts)R
+PM-VERBATIM-END PM1:✱95·23 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·24
+✱95·24. ⊢ : M∈(P∗Q)ʻR .⊃. M(Q_ts|P_st)R [Proof as in ✱95·23]
+PM-VERBATIM-END PM1:✱95·24 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·3
+✱95·3. ⊢ : ∃̇!R . ᗡʻQ⊂DʻQ . ᗡʻR⊂DʻQ .⊃: T∈PotidʻQ .⊃. ∃̇!(R|T)
+PM-VERBATIM-END PM1:✱95·3 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·301
+✱95·301. ⊢ : ∃̇!R . DʻP⊂ᗡʻP . DʻR⊂ᗡʻP .⊃: S∈PotidʻP .⊃. ∃̇!(S|R) [Proof as in ✱95·3]
+PM-VERBATIM-END PM1:✱95·301 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·302
+✱95·302. ⊢ : ᗡʻQ⊂DʻQ . ᗡʻR⊂DʻQ .⊃: T∈PotidʻQ .⊃. ᗡʻ(R|T)⊂DʻQ
+PM-VERBATIM-END PM1:✱95·302 -/
+/- PM-VERBATIM-BEGIN PM1:✱95·303
+✱95·303. ⊢ : DʻR⊂ᗡʻP . DʻP⊂ᗡʻP .⊃: S∈PotidʻP .⊃. Dʻ(S|R)⊂ᗡʻP [Proof as in ✱95·302]
+PM-VERBATIM-END PM1:✱95·303 -/
 
 namespace PM.FirstEdition.Volume1.Star95Source
 

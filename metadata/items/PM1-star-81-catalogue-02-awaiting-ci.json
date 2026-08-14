@@ -26,11 +26,9 @@
       "declaration": "PM.Architecture.Star81OpeningKernel.star_81_2",
       "formal_scope": "exact typed extensional reconstruction of domain equality iff equality for selections from a many-one relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
-      "printed_dependencies": [
-
-      ],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
+      "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star81OpeningKernel.star_81_1"
       ],
@@ -44,17 +42,15 @@
         "added_beyond_print": [
           "PM1:✱81·1"
         ],
-        "printed_but_unused": [
-
-        ],
+        "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Star81-catalogue-review.md",
         "editorial_note": "The exact reverse implication is congruence of Domain; the forward implication reuses the immediately preceding uniqueness theorem ✱81·1, made explicit because the diplomatic proposition line carries no printed proof citation."
       }
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   }
 }

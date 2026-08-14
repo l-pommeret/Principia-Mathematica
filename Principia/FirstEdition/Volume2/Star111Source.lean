@@ -54,6 +54,36 @@ PM-VERBATIM-END PM2:✱111·221 -/
 /- PM-VERBATIM-BEGIN PM2:✱111·23
 ✱111·23. ⊢:S∈1→1.β∈αʻS.⊃.Crp(S)ʻβ=ConvʻCrp(S)ʻSʻβ
 PM-VERBATIM-END PM2:✱111·23 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·25
+✱111·25. ⊢:S∈1→Cls.S⊂sm.λ⊂αʻS.⊃.Crp(S)ʻʻλ∈Cls ex² excl
+PM-VERBATIM-END PM2:✱111·25 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·31
+✱111·31. ⊢:λ,Sʻκ∈Cls² excl.S∈1→1.R∈∈ΔʻCrp(S)ʻκ.⊃.DʻR sm sʻκ
+PM-VERBATIM-END PM2:✱111·31 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·32
+✱111·32. ⊢:κ,Sʻλ∈Cls² excl.S∈1→1.R∈∈ΔʻCrp(S)ʻλ.M=sʻDʻR.⊃.M sm sʻλ
+PM-VERBATIM-END PM2:✱111·32 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·321
+✱111·321. ⊢:κ,Sʻλ∈Cls² excl.S∈1→1.E!∈ΔʻCrp(S)ʻλ.⊃.E!κ sm sm λ
+PM-VERBATIM-END PM2:✱111·321 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·33
+✱111·33. ⊢:Mult ax.⊃:S∈1→1.S⊂sm.κ,λ∈Cls² excl.κ=Sʻλ.λ⊂αʻS.⊃.κ sm sm λ
+PM-VERBATIM-END PM2:✱111·33 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·34
+✱111·34. ⊢:Mult ax.⊃:κ sm sm λ.≡.λ sm sm κ
+PM-VERBATIM-END PM2:✱111·34 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·4
+✱111·4. ⊢:κ sm sm λ.≡.(∃T).T∈1→1.Sʻλ⊂αʻT.κ=T̆ʻλ.≡.E!κ sm sm λ
+PM-VERBATIM-END PM2:✱111·4 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·401
+✱111·401. ⊢:κ sm sm λ.≡.(αT).T∈1→1.Sʻλ⊂αʻT.κ=T̆ʻλ
+PM-VERBATIM-END PM2:✱111·401 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·402
+✱111·402. ⊢:κ sm sm λ.≡.(αT).T↾sʻλ∈1→1.Sʻλ⊂αʻT.κ=T̆ʻλ
+PM-VERBATIM-END PM2:✱111·402 -/
+/- PM-VERBATIM-BEGIN PM2:✱111·43
+✱111·43. ⊢:κ sm sm λ.⊃.(∃S).S∈1→1.S⊂sm.DʻS=κ.GʻS=λ
+PM-VERBATIM-END PM2:✱111·43 -/
 /- PM-VERBATIM-BEGIN PM2:✱111·451
 ✱111·451. ⊢:κ sm sm λ.≡.λ sm sm κ
 PM-VERBATIM-END PM2:✱111·451 -/

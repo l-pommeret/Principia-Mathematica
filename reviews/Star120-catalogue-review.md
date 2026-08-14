@@ -49,3 +49,15 @@ The printed dependencies are extracted proposition by proposition from the
 displayed Gutenberg demonstrations. The three accepted Lean bodies invoke no
 numbered theorem, so their empty Lean graphs and historical relaxed closures
 are explicit. Every catalogue-02 ID occurs in exactly one split artifact.
+
+## Catalogues 03 and 04 strict audit
+
+Catalogue 03 accepts only ·213 (singleton enumeration) and ·251 (adjoining
+one member). It refuses ·214 because equality replaces similarity, ·26 because
+the generalized conclusion is assumed as `finiteInduction`, and ·311 because
+successor injectivity omits `smʻʻ` and the existence assertions.
+
+The next five loci (·322, ·41, ·411, ·4111, ·412) are transcribed in
+`Star120NextSource`. None passes strict audit: their targets omit an existence
+biconditional, type transport and guards, cardinal-difference membership, or
+the printed class-of-witnesses identity. They form one homogeneous refused lot.

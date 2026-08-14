@@ -25,8 +25,8 @@
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_16",
       "formal_scope": "exact relation-product reduction after adjoining a singleton relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM1:✱53·14"
       ],
@@ -54,8 +54,8 @@
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_17",
       "formal_scope": "exact relation-sum reduction after adjoining a singleton relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM1:✱53·14"
       ],
@@ -83,8 +83,8 @@
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_18",
       "formal_scope": "exact invariance of class sum after removing the singleton empty class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -99,8 +99,8 @@
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_181",
       "formal_scope": "exact relation analogue: invariance of relation sum after removing the singleton empty relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM1:✱53·18"
       ],
@@ -128,8 +128,8 @@
       "declaration": "PM.Architecture.Star53SecondKernel.star_53_2",
       "formal_scope": "exact common value of the unique member, product, and sum of a singleton class of classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [
         "PM.Architecture.Star53OpeningKernel.star_53_01",
@@ -152,8 +152,8 @@
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   }
 }

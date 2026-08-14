@@ -44,13 +44,13 @@ PM-VERBATIM-END PM2:✱100·21 -/
 PM-VERBATIM-END PM2:✱100·22 -/
 
 /- PM-VERBATIM-BEGIN PM2:✱100·3
-✱100·3. ⊢ . α ∈ Ncʻα
+✱100·3. ⊢ . α ∈ Ncʻα  [✱73·3 . ✱100·1]
 PM-VERBATIM-END PM2:✱100·3 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·31
-✱100·31. ⊢ : α∈Ncʻβ .≡. β∈Ncʻα .≡. α sm β
+✱100·31. ⊢ : α∈Ncʻβ .≡. β∈Ncʻα .≡. α sm β  [✱32·18 . ✱73·31 . (✱100·01)]
 PM-VERBATIM-END PM2:✱100·31 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·32
-✱100·32. ⊢ : α∈Ncʻβ . β∈Ncʻγ .⊃. α∈Ncʻγ
+✱100·32. ⊢ : α∈Ncʻβ . β∈Ncʻγ .⊃. α∈Ncʻγ  [✱100·31 . ✱73·32]
 PM-VERBATIM-END PM2:✱100·32 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·321
 ✱100·321. ⊢ : α sm β .⊃. Ncʻα = Ncʻβ
@@ -437,6 +437,36 @@ PM-VERBATIM-END PM2:✱104·1 -/
 /- PM-VERBATIM-BEGIN PM2:✱104·101
 ✱104·101. ⊢ : β ∈ N¹cʻα .≡. β sm α . β ⊂ tʻα [✱100·31 . ✱104·1]
 PM-VERBATIM-END PM2:✱104·101 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·102
+✱104·102. ⊢ . N¹cʻα = Nc(tʻα)ʻα = Nc{(tʻα)α}ʻα [✱102·6 . (✱104·01)]
+PM-VERBATIM-END PM2:✱104·102 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·11
+✱104·11. ⊢ : β ∈ N²cʻα .≡. β ∈ Ncʻα . β ∈ tʻt²ʻα .≡. β ∈ Ncʻα . β ⊂ t²ʻα [✱63·5 . (✱104·011)]
+PM-VERBATIM-END PM2:✱104·11 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·111
+✱104·111. ⊢ : β ∈ N²cʻα .≡. β sm α . β ⊂ t²ʻα [✱100·31 . ✱104·11]
+PM-VERBATIM-END PM2:✱104·111 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·112
+✱104·112. ⊢ . N²cʻα = Nc(t²ʻα)ʻα = Nc{(t²ʻα)α}ʻα [✱102·6 . (✱104·011)]
+PM-VERBATIM-END PM2:✱104·112 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·121
+✱104·121. ⊢ : β ∈ N¹cʻα . γ ∈ N²cʻα .⊃. γ ∈ N¹cʻβ
+PM-VERBATIM-END PM2:✱104·121 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·122
+✱104·122. ⊢ : β ∈ N¹cʻα .⊃. N¹cʻβ = N²cʻα [✱104·12 . ✱104·121]
+PM-VERBATIM-END PM2:✱104·122 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·123
+✱104·123. ⊢ : N₀cʻβ = N¹cʻα .⊃. N¹cʻβ = N²cʻα [✱104·122 . ✱103·26]
+PM-VERBATIM-END PM2:✱104·123 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·13
+✱104·13. ⊢ : μ ∈ N¹C .≡. (∃α). μ = N¹cʻα [✱100·122 . ✱71·41 . (✱104·02)]
+PM-VERBATIM-END PM2:✱104·13 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·14
+✱104·14. ⊢ : δ ∈ μ⁽¹⁾ .≡. (∃γ). γ ∈ μ . δ sm γ . δ ∈ tʻμ .≡. (∃γ). γ ∈ μ . δ sm γ . δ ⊂ tʻγ [✱37·1 . ✱63·22 . (✱104·03)]
+PM-VERBATIM-END PM2:✱104·14 -/
+/- PM-VERBATIM-BEGIN PM2:✱104·141
+✱104·141. ⊢ : μ ∈ NC . ∃!μ .⊃. μ⁽¹⁾ ∈ NC [✱100·52]
+PM-VERBATIM-END PM2:✱104·141 -/
 
 /- PM-VERBATIM-SUMMARY-BEGIN PM2:STAR105-SUMMARY-105-3
 ✱105·3. ⊢ : μ = N₀cʻα .⊃ . μ⁽¹⁾ = N₁cʻα

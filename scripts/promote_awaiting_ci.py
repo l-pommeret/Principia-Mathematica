@@ -31,22 +31,42 @@ def main() -> int:
         parser.error("select exactly one of --check or --write")
     if not SHA.fullmatch(args.commit) or not RUN.fullmatch(args.run):
         parser.error("immutable 40-hex commit and GitHub Actions run URL required")
-    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
-    if head != args.commit:
-        raise SystemExit(f"evidence commit {args.commit} is not checked-out HEAD {head}")
+    ancestry = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", args.commit, "HEAD"], cwd=ROOT
+    )
+    if ancestry.returncode:
+        raise SystemExit(f"evidence commit {args.commit} is not an ancestor of HEAD")
+
+    snapshot_paths = subprocess.check_output(
+        ["git", "grep", "-l", '"formal_status": "awaiting-ci"', args.commit, "--", "metadata/items"],
+        cwd=ROOT,
+        text=True,
+    ).splitlines()
+    eligible: set[str] = set()
+    for tagged_path in snapshot_paths:
+        path = tagged_path.split(":", 1)[1]
+        raw = subprocess.check_output(["git", "show", f"{args.commit}:{path}"], cwd=ROOT, text=True)
+        data = json.loads(raw)
+        eligible.update(
+            item["id"] for item in data.get("items", [])
+            if item.get("formal_status") == "awaiting-ci"
+        )
 
     files: list[Path] = []
     item_count = 0
     for path in sorted((ROOT / "metadata" / "items").glob("*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
         items = data.get("items", [])
-        if not items or {item.get("formal_status") for item in items} != {"awaiting-ci"}:
+        selected = [item for item in items if item.get("id") in eligible]
+        if not selected:
             continue
+        if len(selected) != len(items) or {item.get("formal_status") for item in items} != {"awaiting-ci"}:
+            raise SystemExit(f"evidence batch changed membership/status and must be split first: {path}")
         evidence = data.get("ci_evidence", {})
         if {evidence.get("commit"), evidence.get("run"), evidence.get("conclusion")} != {"pending"}:
             raise SystemExit(f"non-pending evidence in awaiting batch: {path}")
         files.append(path)
-        item_count += len(items)
+        item_count += len(selected)
         if args.write:
             for item in items:
                 item["formal_status"] = "kernel-checked"

@@ -16,9 +16,9 @@
     "PG78255"
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   },
   "items": [
     {
@@ -31,8 +31,8 @@
       "declaration": "PM.Architecture.Star116FifthKernel.star_116_51",
       "formal_scope": "exact typed exponential-sum law: pairs of functions on β and γ are bijective with functions on their disjoint sum",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM2:✱116·5"
       ],
@@ -55,8 +55,8 @@
       "declaration": "PM.Architecture.Star116FifthKernel.star_116_52",
       "formal_scope": "exact typed cardinal lift of the exponential-sum bijection: product of two powers with common base equals the power over the disjoint-sum exponent",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM2:✱116·51"
       ],

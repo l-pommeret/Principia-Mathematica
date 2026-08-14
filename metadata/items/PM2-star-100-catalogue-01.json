@@ -26,8 +26,8 @@
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_01",
       "formal_scope": "exact typed definition of the cardinal class Nc as similarity with the represented class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -44,8 +44,8 @@
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_02",
       "formal_scope": "exact typed definition of NC as the class of values of Nc",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -60,8 +60,8 @@
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_1",
       "formal_scope": "exact typed pointwise form of both displayed similarity-class equalities",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM1:✱32·13",
         "PM1:✱73·31",
@@ -91,8 +91,8 @@
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_11",
       "formal_scope": "exact typed encoding of the witnessing one-to-one relation as an equivalence of class subtypes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM2:✱100·1",
         "PM1:✱73·1"
@@ -122,8 +122,8 @@
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_12",
       "formal_scope": "exact typed encoding of the injective restriction-and-image characterization as an equivalence of class subtypes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "canonical-awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM2:✱100·1",
         "PM1:✱73·11"
@@ -145,8 +145,8 @@
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   }
 }

@@ -20,9 +20,9 @@
     "PG78050"
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   },
   "items": [
     {
@@ -31,7 +31,7 @@
       "printed": "✱60·02. Cl ex = κ̂α̂{κ = β̂(β ⊂ α . ∃!β)} Df",
       "printed_page": 406,
       "scan_leaf": 428,
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -39,7 +39,7 @@
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.ClEx",
       "formal_scope": "exact typed definition of the class of inhabited subclasses; strict semantic audit passed",
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-checked",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star60-catalogue-review.md"
     },
@@ -49,7 +49,7 @@
       "printed": "✱60·1. ⊢ : κ Cl α .≡. κ = β̂(β ⊂ α)",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -57,7 +57,7 @@
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_1",
       "formal_scope": "exact typed defining equivalence for Cl; strict semantic audit passed",
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-checked",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star60-catalogue-review.md"
     },
@@ -67,7 +67,7 @@
       "printed": "✱60·11. ⊢ : κ Cl ex α .≡. κ = β̂(β ⊂ α . ∃!β)",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -75,7 +75,7 @@
       "lean_path": "Principia/Architecture/Star60Kernel.lean",
       "declaration": "PM.Architecture.Star60Kernel.star_60_11",
       "formal_scope": "exact typed defining equivalence for Cl ex; strict semantic audit passed",
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-checked",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star60-catalogue-review.md"
     }

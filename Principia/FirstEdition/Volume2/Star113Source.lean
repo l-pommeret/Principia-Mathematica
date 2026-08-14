@@ -39,3 +39,35 @@ PM-VERBATIM-END PM2:✱113·111 -/
 /- PM-VERBATIM-BEGIN PM2:✱113·112
 ✱113·112. ⊢ : α=Λ . ∃!β .⊃. α↓₍₍ʸʸβ=ιʻΛ
 PM-VERBATIM-END PM2:✱113·112 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱113·113
+✱113·113. ⊢ : β=Λ .⊃. α↓₍₍ʸʸβ=Λ  [✱37·29]
+PM-VERBATIM-END PM2:✱113·113 -/
+/- PM-VERBATIM-BEGIN PM2:✱113·114
+✱113·114. ⊢ :. α=Λ .∨. β=Λ :≡. β×α=Λ  [✱113·1·112·113·107.✱53·24]
+PM-VERBATIM-END PM2:✱113·114 -/
+/- PM-VERBATIM-BEGIN PM2:✱113·115
+✱113·115. ⊢ . ṡʻ(β×α)=α↑β
+PM-VERBATIM-END PM2:✱113·115 -/
+/- PM-VERBATIM-BEGIN PM2:✱113·117
+✱113·117. ⊢ :. α=Λ .∨. β=Λ :⊃. sʻDʸʸ(β×α)=Λ . sʻᗡʸʸ(β×α)=Λ  [✱113·115.✱41·43·44.✱35·88]
+PM-VERBATIM-END PM2:✱113·117 -/
+/- PM-VERBATIM-BEGIN PM2:✱113·118
+✱113·118. ⊢ . sʻDʸʸ(β×α)⊂α . sʻᗡʸʸ(β×α)⊂β  [✱113·116·117]
+PM-VERBATIM-END PM2:✱113·118 -/
+
+/- PM-VERBATIM-BEGIN PM2:✱113·121
+✱113·121. ⊢ . Σʻα↓₍₍ʸʸβ sm β×α  [✱112·15.✱113·111·1]
+PM-VERBATIM-END PM2:✱113·121 -/
+/- PM-VERBATIM-BEGIN PM2:✱113·122
+✱113·122. ⊢ : R↾γ,S↾δ∈Cls→1 . γ⊂ᗡʻR . δ⊂ᗡʻS .⊃. (R∥S̆)↾(δ×γ)∈1→1  [✱74·773.✱113·118]
+PM-VERBATIM-END PM2:✱113·122 -/
+/- PM-VERBATIM-BEGIN PM2:✱113·123
+✱113·123. ⊢ : R↾γ,S↾δ∈1→Cls . γ⊂ᗡʻR . δ⊂ᗡʻS . z∈γ . w∈δ .⊃. (R∥S̆)ʻ(z↓w)=(Rʻz)↓(Sʻw)  [✱55·61]
+PM-VERBATIM-END PM2:✱113·123 -/
+/- PM-VERBATIM-BEGIN PM2:✱113·124
+✱113·124. ⊢ : R↾γ,S↾δ∈1→Cls . γ⊂ᗡʻR . δ⊂ᗡʻS . w∈δ .⊃. (R∥S̆)ʸʸγ↓₍₍ʸw=(Rʸʸγ)↓₍₍ʸ(Sʻw)
+PM-VERBATIM-END PM2:✱113·124 -/
+/- PM-VERBATIM-BEGIN PM2:✱113·125
+✱113·125. ⊢ : R↾γ,S↾δ∈1→Cls . γ⊂ᗡʻR . δ⊂ᗡʻS .⊃. (R∥S̆)∈ʸʸγ↓₍₍ʸʸδ=(Rʸʸγ)↓₍₍ʸʸ(Sʸʸδ)  [✱113·124]
+PM-VERBATIM-END PM2:✱113·125 -/

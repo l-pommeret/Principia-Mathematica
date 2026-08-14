@@ -25,15 +25,24 @@
       "declaration": "PM.Architecture.Star52NextKernel.star_52_172",
       "formal_scope": "exact contextual singleton reconstruction from the converse-iota value",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "✱51·52",
         "✱52·15"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱51·52","✱52·15"],"strict_attempt_evidence":"reviews/Star52-catalogue-03-review.md","editorial_note":"The contextual singleton reconstruction closes directly without totalizing the incomplete description; printed citations remain historical evidence."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱51·52",
+          "✱52·15"
+        ],
+        "strict_attempt_evidence": "reviews/Star52-catalogue-03-review.md",
+        "editorial_note": "The contextual singleton reconstruction closes directly without totalizing the incomplete description; printed citations remain historical evidence."
+      }
     },
     {
       "id": "PM1:✱52·173",
@@ -45,15 +54,24 @@
       "declaration": "PM.Architecture.Star52NextKernel.star_52_173",
       "formal_scope": "exact contextual assertion that the converse-iota value belongs to the class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "✱51·53",
         "✱52·5"
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":[],"printed_but_unused":["✱51·53","✱52·5"],"strict_attempt_evidence":"reviews/Star52-catalogue-03-review.md","editorial_note":"The contextual membership assertion closes directly from existence and uniqueness; both printed citations remain historical evidence."}
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱51·53",
+          "✱52·5"
+        ],
+        "strict_attempt_evidence": "reviews/Star52-catalogue-03-review.md",
+        "editorial_note": "The contextual membership assertion closes directly from existence and uniqueness; both printed citations remain historical evidence."
+      }
     },
     {
       "id": "PM1:✱52·18",
@@ -65,8 +83,8 @@
       "declaration": "PM.Architecture.Star52NextKernel.star_52_18",
       "formal_scope": "exact witness-first existence-and-uniqueness characterization of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -81,15 +99,30 @@
       "declaration": "PM.Architecture.Star52NextKernel.star_52_181",
       "formal_scope": "exact classical characterization of non-singleton classes by a distinct companion for every member",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "✱52·18",
         "✱10·51"
       ],
-      "lean_dependencies": ["PM.Architecture.Star52OpeningKernel.star_52_16"],
-      "normalized_dependencies": ["PM1:✱52·16"],
-      "historical_dependency_relaxation": {"classification":"relaxed-closure","added_beyond_print":["PM1:✱52·16"],"printed_but_unused":["✱10·51","✱52·18"],"strict_attempt_evidence":"reviews/Star52-catalogue-03-review.md","editorial_note":"The exact classical contrapositive uses the already audited equivalent uniqueness characterization ✱52·16; PM's printed route through ✱52·18 and ✱10·51 remains historical evidence."},
+      "lean_dependencies": [
+        "PM.Architecture.Star52OpeningKernel.star_52_16"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱52·16"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱52·16"
+        ],
+        "printed_but_unused": [
+          "✱10·51",
+          "✱52·18"
+        ],
+        "strict_attempt_evidence": "reviews/Star52-catalogue-03-review.md",
+        "editorial_note": "The exact classical contrapositive uses the already audited equivalent uniqueness characterization ✱52·16; PM's printed route through ✱52·18 and ✱10·51 remains historical evidence."
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star52-catalogue-review.md"
     },
@@ -103,16 +136,16 @@
       "declaration": "PM.Architecture.Star52NextKernel.star_52_2",
       "formal_scope": "exact type-relative inclusion of singleton classes in the class of all classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   }
 }

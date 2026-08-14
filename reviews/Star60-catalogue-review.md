@@ -33,3 +33,19 @@ by an explicit typed witness); and ·2 is exactly the subclass-membership
 equivalence. Their Lean proofs are reflexivity or direct witnesses and use no
 numbered proposition, matching the empty printed and Lean dependency graphs.
 All five canonical records are `awaiting-ci`; CI evidence remains pending.
+
+## Catalogues 06 and 07 strict semantic audit
+
+Both five-item lots pass strict semantic equivalence. Catalogue 06 contains the
+four successive membership/removal characterizations ·21–·24 and the empty
+subclass theorem ·3. Catalogue 07 contains existence ·31, the empty-class value
+·32, self-membership ·34, inhabited self-membership ·35, and the singleton
+value ·37. All ten declarations preserve the printed direction, quantifier
+scope, and class level; all ten canonical records are `awaiting-ci`.
+
+The historical graph is transcribed from the printed citations. The Lean graph
+is deliberately smaller because definitions, predicate extensionality, empty
+elimination, and existential introduction replace several printed logical
+rules. Its only numbered edges are ·24→·23, ·31→·3, and ·35→·34. Each
+strictly reviewed difference is recorded item-by-item as a relaxed closure; no
+unrecorded edge or duplicate record is introduced. CI evidence remains pending.

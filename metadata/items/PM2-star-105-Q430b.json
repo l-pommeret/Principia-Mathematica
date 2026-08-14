@@ -26,22 +26,6 @@
   "integration_status": "prepared",
   "items": [
     {
-      "id": "PM2:✱105·021",
-      "kind": "definition",
-      "printed": "✱105·021. N₂C=DʻN₂c Df",
-      "printed_page": 53,
-      "scan_leaf": 93,
-      "lean_path": "Principia/Architecture/Star105OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star105OpeningKernel.star_105_021",
-      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": []
-    },
-    {
       "id": "PM2:✱105·03",
       "kind": "definition",
       "printed": "✱105·03. μ_(1)=smʻʻμ∩t₁ʻμ Df",
@@ -49,10 +33,10 @@
       "scan_leaf": 96,
       "lean_path": "Principia/Architecture/Star105OpeningKernel.lean",
       "declaration": "PM.Architecture.Star105OpeningKernel.star_105_03",
-      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Lean states only the reflexive equality Inter sm typ = Inter sm typ; the parameter m is unused and the printed image sm''mu, its dependence on mu, and the defining left-hand side mu_(1) are absent",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-omits-image-and-defined-operator",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -65,10 +49,10 @@
       "scan_leaf": 93,
       "lean_path": "Principia/Architecture/Star105OpeningKernel.lean",
       "declaration": "PM.Architecture.Star105OpeningKernel.star_105_031",
-      "formal_scope": "typed ascending-cardinal reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: Lean states only the reflexive equality Inter sm typ = Inter sm typ; the parameter m is unused and the printed image sm''mu, its dependence on mu, and the defining left-hand side mu_(2) are absent",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-omits-image-and-defined-operator",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []

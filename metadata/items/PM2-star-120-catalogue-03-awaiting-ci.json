@@ -1,0 +1,67 @@
+{
+  "batch": "PM2-STAR120-CATALOGUE-03-AWAITING-CI",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "208–215",
+    "scan_leaves": [
+      248,
+      253,
+      254,
+      255
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱120·213",
+      "kind": "derived-proposition",
+      "printed": "✱120·213. ⊢ . ιʻx∈Cls induct",
+      "printed_page": 213,
+      "scan_leaf": 253,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_213",
+      "formal_scope": "exact typed proof that every singleton class is finite",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM2:✱120·122", "PM2:✱120·211"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM2:✱120·122", "PM2:✱120·211"], "strict_attempt_evidence": "reviews/Star120-catalogue-review.md", "editorial_note": "Lean constructs the singleton enumeration directly."}
+    },
+    {
+      "id": "PM2:✱120·251",
+      "kind": "derived-proposition",
+      "printed": "✱120·251. ⊢ : η∈Cls induct .⊃. η∪ιʻy∈Cls induct",
+      "printed_page": 214,
+      "scan_leaf": 254,
+      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
+      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_251",
+      "formal_scope": "exact typed closure of finite classes under adjoining one singleton member",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": ["PM1:✱90·172", "PM2:✱120·25"],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star120-catalogue-review.md",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "historical_dependency_relaxation": {"classification": "relaxed-closure", "added_beyond_print": [], "printed_but_unused": ["PM1:✱90·172", "PM2:✱120·25"], "strict_attempt_evidence": "reviews/Star120-catalogue-review.md", "editorial_note": "Lean constructs the enlarged finite enumeration directly."}
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

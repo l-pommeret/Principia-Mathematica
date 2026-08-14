@@ -29,8 +29,8 @@
       "declaration": "PM.Architecture.Star38Kernel.star_38_11",
       "formal_scope": "exact typed total-binary-function agreement of both section evaluations",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "✱38·1",
         "✱38·101",
@@ -41,7 +41,11 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["✱30·3", "✱38·1", "✱38·101"],
+        "printed_but_unused": [
+          "✱30·3",
+          "✱38·1",
+          "✱38·101"
+        ],
         "strict_attempt_evidence": "reviews/Star38-catalogue-02-review.md",
         "editorial_note": "Both section evaluations reduce definitionally to op x y; the three printed citations remain historical evidence and no theorem constant is used."
       }
@@ -56,8 +60,8 @@
       "declaration": "PM.Architecture.Star38Kernel.star_38_12",
       "formal_scope": "exact definedness of both section values under the explicit typed total-binary-function abstraction",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "✱38·11",
         "✱14·21"
@@ -67,7 +71,10 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["✱14·21", "✱38·11"],
+        "printed_but_unused": [
+          "✱14·21",
+          "✱38·11"
+        ],
         "strict_attempt_evidence": "reviews/Star38-catalogue-02-review.md",
         "editorial_note": "Total application op x y directly witnesses both typed definedness claims; the printed route through ✱38·11 and ✱14·21 is not a Lean theorem dependency."
       }
@@ -82,8 +89,8 @@
       "declaration": "PM.Architecture.Star38Kernel.star_38_13",
       "formal_scope": "exact typed total-binary-function membership equivalence for a left-section image",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "✱38·1",
         "✱37·1"
@@ -93,7 +100,10 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["✱37·1", "✱38·1"],
+        "printed_but_unused": [
+          "✱37·1",
+          "✱38·1"
+        ],
         "strict_attempt_evidence": "reviews/Star38-catalogue-02-review.md",
         "editorial_note": "The image and left-section definitions unfold directly to the complete printed existential equivalence, leaving both printed citations historical."
       }
@@ -108,8 +118,8 @@
       "declaration": "PM.Architecture.Star38Kernel.star_38_131",
       "formal_scope": "exact typed total-binary-function membership equivalence for a right-section image",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "✱38·101",
         "✱37·1"
@@ -119,7 +129,10 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["✱37·1", "✱38·101"],
+        "printed_but_unused": [
+          "✱37·1",
+          "✱38·101"
+        ],
         "strict_attempt_evidence": "reviews/Star38-catalogue-02-review.md",
         "editorial_note": "The image and right-section definitions unfold directly to the complete printed existential equivalence, leaving both printed citations historical."
       }
@@ -134,8 +147,8 @@
       "declaration": "PM.Architecture.Star38Kernel.star_38_2",
       "formal_scope": "exact typed total-binary-function unfolding of the section-image definition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "✱38·03"
       ],
@@ -144,16 +157,18 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["✱38·03"],
+        "printed_but_unused": [
+          "✱38·03"
+        ],
         "strict_attempt_evidence": "reviews/Star38-catalogue-02-review.md",
         "editorial_note": "The section-image definition unfolds directly; the parenthesized printed definition citation remains historical evidence."
       }
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star38-parser-gaps.md"

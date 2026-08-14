@@ -15,6 +15,10 @@ The current rejected forms are deliberate and localized:
   correspondence notation without a parser context;
 - `✱111·01` contains the hatted relation-building definition, while `·201`
   combines contextual existence with nested correspondence/similarity syntax.
+- `✱111·25` requires a compound class expression on the right of inclusion;
+  `·31`, `·32`, and `·321` use the unimplemented `Cls² excl` qualifier;
+  `·33` and `·34` use `Mult ax`; and `·4`, `·401`, `·402`, and `·43`
+  combine `sm sm` with existential, description, or restriction syntax.
 
 By contrast, `✱111·16` is accepted by the current parser and therefore has no
 `reviewed-gap` exemption. Parser status is independent of the strict semantic

@@ -3,12 +3,21 @@
   "volume": 1,
   "source_range": {
     "printed_pages": "587",
-    "scan_leaves": [609],
+    "scan_leaves": [
+      609
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
   },
-  "witnesses": ["PM1-1910-SCAN", "PG78050"],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"},
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "ci_evidence": {
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
+  },
   "batch": "PM1-STAR91-CATALOGUE-04-AWAITING-CI",
   "items": [
     {
@@ -21,8 +30,8 @@
       "declaration": "PM.Architecture.Star91OpeningKernel.star_91_03",
       "formal_scope": "audited typed definition of the family of strictly positive powers of R",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -39,8 +48,8 @@
       "declaration": "PM.Architecture.Star91OpeningKernel.star_91_04",
       "formal_scope": "audited typed definition of the family containing identity and every strictly positive power of R",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -57,8 +66,8 @@
       "declaration": "PM.Architecture.Star91OpeningKernel.star_91_05",
       "formal_scope": "audited typed definition of the positive transitive closure as the union of all strictly positive powers of R",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],

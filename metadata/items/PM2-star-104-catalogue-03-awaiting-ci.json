@@ -1,0 +1,19 @@
+{
+  "batch": "PM2-STAR104-CATALOGUE-03-AWAITING-CI",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {"printed_pages": "43–44", "scan_leaves": [83, 84], "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu", "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"},
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [{
+    "id": "PM2:✱104·121", "kind": "derived-proposition",
+    "printed": "✱104·121. ⊢ : β ∈ N¹cʻα . γ ∈ N²cʻα .⊃. γ ∈ N¹cʻβ",
+    "printed_page": 44, "scan_leaf": 84,
+    "lean_path": "Principia/Architecture/Star104Kernel.lean", "declaration": "PM.Architecture.Star104Kernel.star_104_121",
+    "formal_scope": "exact typed reconstruction of descent from a second ascent over α to a first ascent over an equinumerous first-ascent representative β",
+    "source_status": "source-catalogued-PM-VERBATIM", "formal_status": "awaiting-ci", "integration_status": "awaiting-ci",
+    "printed_dependencies": [], "normalized_dependencies": [],
+    "lean_dependencies": ["PM.Architecture.Star104Kernel.equiv_symm", "PM.Architecture.Star104Kernel.equiv_trans"],
+    "semantic_audit_status": "strict-equivalence-passed"
+  }],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}

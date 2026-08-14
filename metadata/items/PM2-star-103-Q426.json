@@ -23,7 +23,7 @@
     "PG78255"
   ],
   "source_status": "source-catalogued-PM-VERBATIM",
-  "integration_status": "source-only-no-formal-target",
+  "integration_status": "strict-audit-refused",
   "items": [
     {
       "id": "PM2:✱103·42",
@@ -31,16 +31,19 @@
       "printed": "✱103·42. ⊢ : β sm α .≡ . Nc(β)ʻα = N₀cʻβ",
       "printed_page": 41,
       "scan_leaf": 81,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "lean_path": "Principia/FirstEdition/Volume2/Star103Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star103Kernel2.star_103_42",
+      "formal_scope": "refused: print characterizes the sm relation by an equality involving Nc and N₀c, while Lean proves symmetry of equality of represented CardinalClass predicates",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-homogeneous-cardinal-syntax-or-derivation-layer",
+      "integration_status": "blocked-semantic-mismatch-different-formula",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-42.txt"
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-42.txt",
+      "lean_dependencies": [],
+      "semantic_audit_status": "refused-non-equivalent-target",
+      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md"
     },
     {
       "id": "PM2:✱103·43",
@@ -48,16 +51,19 @@
       "printed": "✱103·43. ⊢ : μ ∈ NC .⊃ . smʻʻμ ∩ t₀ʻμ = μ",
       "printed_page": 41,
       "scan_leaf": 81,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "lean_path": "Principia/FirstEdition/Volume2/Star103Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star103Kernel2.star_103_43",
+      "formal_scope": "refused: print derives an sm-image/intersection identity from μ∈NC, while Lean proves transitivity of equality of represented CardinalClass predicates",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-homogeneous-cardinal-syntax-or-derivation-layer",
+      "integration_status": "blocked-semantic-mismatch-different-hypothesis-and-conclusion",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-43.txt"
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-43.txt",
+      "lean_dependencies": [],
+      "semantic_audit_status": "refused-non-equivalent-target",
+      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md"
     },
     {
       "id": "PM2:✱103·44",
@@ -65,16 +71,21 @@
       "printed": "✱103·44. ⊢ :: μ,ν ∈ N₀C .⊃ : μ = smʻʻν .≡ . ν = smʻʻμ",
       "printed_page": 41,
       "scan_leaf": 81,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "lean_path": "Principia/FirstEdition/Volume2/Star103Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star103Kernel2.star_103_44",
+      "formal_scope": "refused: print gives a conditional biconditional involving sm-images of μ and ν in N₀C, while Lean equates SameCardinalClass s t with CardinalClass s t",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-homogeneous-cardinal-syntax-or-derivation-layer",
+      "integration_status": "blocked-semantic-mismatch-different-hypothesis-and-conclusion",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-44.txt"
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-44.txt",
+      "lean_dependencies": [
+        "PM2:✱103·301"
+      ],
+      "semantic_audit_status": "refused-non-equivalent-target",
+      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md"
     },
     {
       "id": "PM2:✱103·5",
@@ -84,14 +95,17 @@
       "scan_leaf": 81,
       "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
       "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "formal_scope": "refused: print asserts 0∈N₀C, but the ✱103 Lean surrogate contains no star_103_5 declaration or other audited target for this formula",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-homogeneous-cardinal-syntax-or-derivation-layer",
+      "integration_status": "blocked-no-lean-declaration",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-5.txt"
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-5.txt",
+      "lean_dependencies": [],
+      "semantic_audit_status": "refused-non-equivalent-target",
+      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md"
     },
     {
       "id": "PM2:✱103·51",
@@ -99,26 +113,34 @@
       "printed": "✱103·51. ⊢ . 1 ∈ N₀C",
       "printed_page": 41,
       "scan_leaf": 81,
-      "lean_path": "Principia/FirstEdition/Volume2/Star100Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "lean_path": "Principia/FirstEdition/Volume2/Star103Kernel2.lean",
+      "declaration": "PM.FirstEdition.Volume2.Star103Kernel2.star_103_51",
+      "formal_scope": "refused: print asserts 1∈N₀C, while Lean concludes homogeneity of two represented CardinalClass predicates from Equinumerous s t",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": true,
-      "integration_status": "blocked-no-volume-II-homogeneous-cardinal-syntax-or-derivation-layer",
+      "integration_status": "blocked-semantic-mismatch-different-hypothesis-and-conclusion",
       "printed_dependencies": [],
       "normalized_dependencies": [],
-      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-51.txt"
+      "demonstration_skeleton": "aristotle/demonstrations/PM2-star-103-51.txt",
+      "lean_dependencies": [
+        "PM2:✱103·14"
+      ],
+      "semantic_audit_status": "refused-non-equivalent-target",
+      "semantic_audit_evidence": "reviews/Star103-fourth-semantic-audit.md"
     }
   ],
   "review": {
     "apparatus_required": false,
     "sic_required": false,
-    "note": "Scan collated against PG; no formal interpretation supplied."
+    "note": "Strict audit refused all five candidates; ✱103·5 has no Lean declaration and the other same-number declarations are non-equivalent."
   },
   "ci_evidence": {
     "commit": "pending",
     "run": "pending",
     "conclusion": "pending"
-  }
+  },
+  "review_evidence": [
+    "reviews/Star103-fourth-semantic-audit.md"
+  ]
 }

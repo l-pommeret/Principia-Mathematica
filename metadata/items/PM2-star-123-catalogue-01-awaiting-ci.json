@@ -4,11 +4,16 @@
   "volume": 2,
   "source_range": {
     "printed_pages": "269",
-    "scan_leaves": [309],
+    "scan_leaves": [
+      309
+    ],
     "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
     "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
   },
-  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
   "items": [
     {
       "id": "PM2:✱123·01",
@@ -20,8 +25,8 @@
       "declaration": "PM.Architecture.Star123OpeningKernel.star_123_01",
       "formal_scope": "exact typed reconstruction: ℵ₀ is extensionally the class of domains of progressions",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -38,11 +43,19 @@
       "declaration": "PM.Architecture.Star123OpeningKernel.star_123_1",
       "formal_scope": "exact typed reconstruction of both directions of the displayed membership equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱37·1", "PM2:✱123·01"],
-      "lean_dependencies": ["PM.Architecture.Star123OpeningKernel.star_123_01"],
-      "normalized_dependencies": ["PM1:✱37·1", "PM2:✱123·01"],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱37·1",
+        "PM2:✱123·01"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star123OpeningKernel.star_123_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱37·1",
+        "PM2:✱123·01"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star123-catalogue-01-semantic-audit.md"
     },
@@ -56,14 +69,24 @@
       "declaration": "PM.Architecture.Star123OpeningKernel.star_123_101",
       "formal_scope": "exact typed reconstruction: the domain of every progression witnesses membership in ℵ₀",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM2:✱123·1"],
-      "lean_dependencies": ["PM.Architecture.Star123OpeningKernel.star_123_1"],
-      "normalized_dependencies": ["PM2:✱123·1"],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
+      "printed_dependencies": [
+        "PM2:✱123·1"
+      ],
+      "lean_dependencies": [
+        "PM.Architecture.Star123OpeningKernel.star_123_1"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱123·1"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star123-catalogue-01-semantic-audit.md"
     }
   ],
-  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+  "ci_evidence": {
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
+  }
 }

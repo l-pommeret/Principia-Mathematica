@@ -25,8 +25,8 @@
       "declaration": "PM.Architecture.Star51OpeningKernel.star_51_131",
       "formal_scope": "exact typed equivalence between the unit-class relation and equality to its descriptive value",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -43,8 +43,8 @@
       "declaration": "PM.Architecture.Star51OpeningKernel.star_51_14",
       "formal_scope": "exact typed extensional characterization of equality to a unit class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -59,8 +59,8 @@
       "declaration": "PM.Architecture.Star51OpeningKernel.star_51_141",
       "formal_scope": "exact typed characterization of a unit class by existence and uniqueness of its member, including the equivalent pointed form",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -75,8 +75,8 @@
       "declaration": "PM.Architecture.Star51OpeningKernel.star_51_15",
       "formal_scope": "exact typed membership equivalence for a unit class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -91,17 +91,17 @@
       "declaration": "PM.Architecture.Star51OpeningKernel.star_51_16",
       "formal_scope": "exact typed self-membership of an object in its unit class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   },
   "review_evidence": [
     "reviews/Star51-catalogue-review.md"

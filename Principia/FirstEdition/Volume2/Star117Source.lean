@@ -17,6 +17,21 @@ PM-VERBATIM-END PM2:✱117·221 -/
 /- PM-VERBATIM-BEGIN PM2:✱117·222
 ✱117·222. ⊢ : β⊂α .⊃. Ncʻα ≥ Ncʻβ
 PM-VERBATIM-END PM2:✱117·222 -/
+/- PM-VERBATIM-BEGIN PM2:✱117·23
+✱117·23. ⊢ : Ncʻα ≥ Ncʻβ . Ncʻβ ≥ Ncʻα .≡. Ncʻα=Ncʻβ
+PM-VERBATIM-END PM2:✱117·23 -/
+/- PM-VERBATIM-BEGIN PM2:✱117·24
+✱117·24. ⊢ : μ ≥ ν .≡. (∃α,β). μ=N₀cʻα . ν=N₀cʻβ . Ncʻα ≥ Ncʻβ
+PM-VERBATIM-END PM2:✱117·24 -/
+/- PM-VERBATIM-BEGIN PM2:✱117·241
+✱117·241. ⊢ : μ ≥ ν .≡. (∃α,β). μ=N₀cʻα . ν=N₀cʻβ . ∃!Clʻα∩Ncʻβ
+PM-VERBATIM-END PM2:✱117·241 -/
+/- PM-VERBATIM-BEGIN PM2:✱117·242
+✱117·242. ⊢ :: μ,ν∈NC .⊃: μ ≥ ν .≡. (∃α,β). α∈μ . β∈ν . ∃!Clʻα∩Ncʻβ
+PM-VERBATIM-END PM2:✱117·242 -/
+/- PM-VERBATIM-BEGIN PM2:✱117·243
+✱117·243. ⊢ :: μ ≥ ν .≡: (∃α,β): μ=N₀cʻα . ν=N₀cʻβ : (∃ρ). ρ⊂α . ρ sm β
+PM-VERBATIM-END PM2:✱117·243 -/
 namespace PM.FirstEdition.Volume2.Star117Source
 def records : List (String × String) := [
   ("✱117·01", "μ > ν .=. (∃α,β). μ=N₀cʻα . ν=N₀cʻβ . ∃!Clʻα∩Ncʻβ . ∼∃!Clʻβ∩Ncʻα  Df"),

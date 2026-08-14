@@ -1,5 +1,5 @@
 {
-  "batch": "PM2-STAR112-CATALOGUE-04",
+  "batch": "PM2-STAR112-CATALOGUE-04-REFUSED",
   "edition": "first",
   "volume": 2,
   "source_range": {
@@ -23,15 +23,17 @@
       "scan_leaf": 141,
       "lean_path": "Principia/Architecture/Star112OpeningKernel.lean",
       "declaration": "PM.Architecture.Star112OpeningKernel.star_112_17",
-      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: PM derives both equality of cardinal sums and similarity of tagged sum classes; Lean uses weakened nonemptiness equivalence and proves only equality of its CardClass predicates",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-omitted-conjunct-and-weakened-cardinality",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star112-catalogue-review.md"
+      "parser_evidence": "reviews/Star112-catalogue-04-semantic-audit.md",
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱112·18",
@@ -41,15 +43,17 @@
       "scan_leaf": 141,
       "lean_path": "Principia/Architecture/Star112OpeningKernel.lean",
       "declaration": "PM.Architecture.Star112OpeningKernel.star_112_18",
-      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: PM equates cardinal sums of κ and its restricted-membership image; Lean states only the reflexive identity SumCard K = SumCard K",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-reflexive-placeholder",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star112-catalogue-review.md"
+      "parser_evidence": "reviews/Star112-catalogue-04-semantic-audit.md",
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱112·2",
@@ -59,15 +63,17 @@
       "scan_leaf": 141,
       "lean_path": "Principia/Architecture/Star112OpeningKernel.lean",
       "declaration": "PM.Architecture.Star112OpeningKernel.star_112_2",
-      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: PM derives similarity of two tagged sum classes from a one-one relation with specified domain and converse domain; Lean merely returns an arbitrary weakened EqCard hypothesis",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-generic-tautology",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star112-catalogue-review.md"
+      "parser_evidence": "reviews/Star112-catalogue-04-semantic-audit.md",
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱112·21",
@@ -77,15 +83,17 @@
       "scan_leaf": 141,
       "lean_path": "Principia/Architecture/Star112MiddleKernel.lean",
       "declaration": "PM.Architecture.Star112MiddleKernel.star_112_21",
-      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: PM states under the multiplicative axiom an existence equivalence for a one-one similarity relation with fixed domain and range; Lean is the generic tautology P ↔ Q → P ↔ Q",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-generic-tautology",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star112-catalogue-review.md"
+      "parser_evidence": "reviews/Star112-catalogue-04-semantic-audit.md",
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-equivalence-refused"
     },
     {
       "id": "PM2:✱112·22",
@@ -95,15 +103,17 @@
       "scan_leaf": 141,
       "lean_path": "Principia/Architecture/Star112MiddleKernel.lean",
       "declaration": "PM.Architecture.Star112MiddleKernel.star_112_22",
-      "formal_scope": "typed cardinal-sum reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "refused: PM derives equality of cardinal sums from a nonempty similarity-relation class under the multiplicative axiom; Lean merely returns an arbitrary equality hypothesis",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "prepared",
+      "integration_status": "blocked-semantic-mismatch-assumed-conclusion",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/Star112-catalogue-review.md"
+      "parser_evidence": "reviews/Star112-catalogue-04-semantic-audit.md",
+      "integration_blocked": true,
+      "semantic_audit_status": "strict-equivalence-refused"
     }
   ],
   "ci_evidence": {

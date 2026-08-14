@@ -18,8 +18,8 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_202",
       "formal_scope": "exact extensional distribution of a common field restriction over relation intersection",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
@@ -32,8 +32,8 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_203",
       "formal_scope": "exact extensional intersection law with one unrestricted relation",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
@@ -46,8 +46,8 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_21",
       "formal_scope": "exact extensional law for iterated field restriction",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
@@ -60,8 +60,8 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_22",
       "formal_scope": "exact pointwise inclusion of the composition of restricted relations in the restricted composition",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
@@ -74,17 +74,17 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_23",
       "formal_scope": "exact extensional distribution of field restriction over relation union",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star36-parser-gaps.md"

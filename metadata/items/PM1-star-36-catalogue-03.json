@@ -18,8 +18,8 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_24",
       "formal_scope": "exact monotonicity of field restriction in its limiting class",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
@@ -32,8 +32,8 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_241",
       "formal_scope": "exact monotonicity of field restriction in its relation argument",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
@@ -46,8 +46,8 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_25",
       "formal_scope": "exact equivalence between field inclusion and invariance under restriction",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
@@ -60,8 +60,8 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_26",
       "formal_scope": "exact pair of emptiness conclusions from disjointness of the field and limiting class",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
@@ -74,17 +74,17 @@
       "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_27",
       "formal_scope": "exact restriction-to-empty-class identity",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": []
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star36-parser-gaps.md"

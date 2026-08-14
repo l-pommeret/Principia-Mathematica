@@ -22,8 +22,8 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel.lean",
       "declaration": "PM.Architecture.Star33DomainKernel.star_33_13",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "formal_scope": "exact typed characterization of domain membership by an existential second correlate; strict semantic audit passed",
       "printed_dependencies": [
         "PM1:✱33·11",
@@ -50,8 +50,8 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel.lean",
       "declaration": "PM.Architecture.Star33DomainKernel.star_33_14",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "formal_scope": "exact typed implication from a relation instance to membership of its first and second correlates in the domain and converse domain; strict semantic audit passed",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -70,8 +70,8 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel.lean",
       "declaration": "PM.Architecture.Star33DomainKernel.star_33_15",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "formal_scope": "exact typed inclusion of the fixed-second-coordinate section in the domain; strict semantic audit passed",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -90,8 +90,8 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel.lean",
       "declaration": "PM.Architecture.Star33DomainKernel.star_33_16",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "formal_scope": "exact typed equality of a homogeneous relation's field with the union of its domain and converse domain; strict semantic audit passed",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -110,8 +110,8 @@
       "lean_path": "Principia/Architecture/Star33DomainKernel2.lean",
       "declaration": "PM.Architecture.Star33DomainKernel2.star_33_17",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "formal_scope": "exact typed implication from a homogeneous relation instance to field membership of both correlates; strict semantic audit passed",
       "printed_dependencies": [
         "PM1:✱33·14",
@@ -132,9 +132,9 @@
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   },
   "parser_status": "reviewed-gap",
   "parser_evidence": "reviews/Star33-parser-gaps.md"

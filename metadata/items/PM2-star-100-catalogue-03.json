@@ -19,50 +19,71 @@
     {
       "id": "PM2:✱100·3",
       "kind": "derived-proposition",
-      "printed": "✱100·3. ⊢ . α ∈ Ncʻα",
+      "printed": "✱100·3. ⊢ . α ∈ Ncʻα [✱73·3 . ✱100·1]",
       "printed_page": 15,
       "scan_leaf": 55,
       "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_3",
-      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed reflexivity of cardinal-class membership",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "printed_dependencies": ["PM1:✱73·3", "PM2:✱100·1"],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱73·3", "PM2:✱100·1"],
+        "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
+        "editorial_note": "The typed similarity model proves reflexivity directly through the local unnumbered lemma similar_refl."
+      }
     },
     {
       "id": "PM2:✱100·31",
       "kind": "derived-proposition",
-      "printed": "✱100·31. ⊢ : α∈Ncʻβ .≡. β∈Ncʻα .≡. α sm β",
+      "printed": "✱100·31. ⊢ : α∈Ncʻβ .≡. β∈Ncʻα .≡. α sm β [✱32·18 . ✱73·31 . (✱100·01)]",
       "printed_page": 18,
       "scan_leaf": 58,
       "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_31",
-      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed chained equivalence of the two cardinal-class memberships and similarity",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "printed_dependencies": ["PM1:✱32·18", "PM1:✱73·31", "PM2:✱100·01"],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM1:✱32·18", "PM1:✱73·31", "PM2:✱100·01"],
+        "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
+        "editorial_note": "The typed definition of Nc and local symmetry lemma directly establish all three equivalent propositions."
+      }
     },
     {
       "id": "PM2:✱100·32",
       "kind": "derived-proposition",
-      "printed": "✱100·32. ⊢ : α∈Ncʻβ . β∈Ncʻγ .⊃. α∈Ncʻγ",
+      "printed": "✱100·32. ⊢ : α∈Ncʻβ . β∈Ncʻγ .⊃. α∈Ncʻγ [✱100·31 . ✱73·32]",
       "printed_page": 15,
       "scan_leaf": 55,
       "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
       "declaration": "PM.Architecture.Star100OpeningKernel.star_100_32",
-      "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
+      "formal_scope": "exact typed transitivity of cardinal-class membership",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "prepared",
-      "integration_status": "prepared",
-      "printed_dependencies": [],
+      "formal_status": "awaiting-ci",
+      "integration_status": "canonical-awaiting-ci",
+      "printed_dependencies": ["PM2:✱100·31", "PM1:✱73·32"],
       "lean_dependencies": [],
-      "normalized_dependencies": []
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": ["PM2:✱100·31", "PM1:✱73·32"],
+        "strict_attempt_evidence": "reviews/Star100-catalogue-review.md",
+        "editorial_note": "The local unnumbered lemma similar_trans is the typed direct proof of the printed transitivity step."
+      }
     }
   ],
   "ci_evidence": {

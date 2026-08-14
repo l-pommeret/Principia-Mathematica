@@ -46,3 +46,23 @@ domains and one through domains.  The Lean declaration merely unfolds
 neither displayed equality.  Equinumerosity alone is the common conclusion,
 not an exact formalization of this stronger displayed structure.  The split
 metadata files partition the four IDs, so no duplicate record is introduced.
+
+## Catalogues 03 and 04 strict semantic audit
+
+All five candidates pass and are promoted in place to `awaiting-ci`.  In
+catalogue 03, ✱100·3 is reflexivity of similarity, ·31 preserves the full
+three-way equivalence between the two membership orientations and similarity,
+and ·32 is precisely transitivity through the displayed intermediate class.
+The canonical bracketed citations omitted by the earlier transcription are
+restored in both source and metadata; explicit `relaxed-closure` records explain
+that the Lean proofs use the local typed reflexivity, symmetry, and transitivity
+lemmas directly.
+
+In catalogue 04, ✱100·321 proves extensional equality of `Nc a` and `Nc b`
+from exactly the printed similarity hypothesis; it does not assert the invalid
+unconditional converse discussed by PM.  Proposition ·33 accepts a common
+member of the two cardinal classes and derives similarity, which is the typed
+elimination form of the printed inhabited-intersection antecedent.  No
+hypothesis, direction, or existence witness is dropped, and neither declaration
+is a pass-through assumption.  Both batches remain homogeneous and no metadata
+ID is duplicated.

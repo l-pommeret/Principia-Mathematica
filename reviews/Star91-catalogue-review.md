@@ -44,3 +44,23 @@ step, and both directions of the equivalence. The ·13 declaration likewise
 omits `P∈Pot R`, the base and hereditary premises, and the converse; it merely
 specializes a premise asserting membership of every `Pow R n`. All three stay
 `prepared` with explicit item-level blocking reasons.
+
+## Strict semantic audit of catalogues 06–07
+
+Among these ten candidates, only ✱91·16 is exact. Its Lean biconditional says
+pointwise that `positiveClosure R x y` holds exactly when some `P` in `Pot R`
+relates `x` to `y`, which is the displayed definition-expanded
+characterization of `R_po`. The proof uses only the local definitions, so both
+numbered dependency graphs are empty. It is promoted to `awaiting-ci`.
+
+The other nine are refused. For ·15, ·17, and ·171 the declarations replace
+the printed hereditary step by a premise already asserting the desired
+property for every power; ·15 additionally loses the biconditional. The ·2 and
+·201 declarations are pointwise path-extension lemmas rather than statements
+about the ancestral relations between relation powers (and ·201 even repeats
+right extension where PM prints left multiplication). The ·204 and ·205
+declarations are reflexive composition equalities with neither ancestral
+relation nor source biconditional. Finally, ·21 and ·211 are reflexive closure
+equalities on carrier elements, omitting the printed identity union and
+recursive composition equations on relations. All nine remain `prepared` with
+item-level blocking reasons.

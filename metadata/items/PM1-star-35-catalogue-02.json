@@ -16,21 +16,17 @@
       "kind": "derived-proposition",
       "printed": "\\(\\vdash:x(\\alpha\\upharpoonleft R)y.\\equiv.x\\in \\alpha.xRy \\quad[\\text{*21·3.(*35·01)}]\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_blocked": false,
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-checked",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-catalogue-02-semantic-audit.md",
       "printed_dependencies": [
         "PM1:✱21·3",
         "PM1:✱35·01"
       ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_1",
       "formal_scope": "exact typed pointwise reconstruction of left restriction evaluation; strict semantic audit passed",
@@ -51,20 +47,14 @@
       "kind": "derived-proposition",
       "printed": "\\(\\vdash:x(R\\upharpoonright \\beta)y.\\equiv.xRy.y\\in \\beta\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_blocked": false,
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-checked",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-catalogue-02-semantic-audit.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_101",
       "formal_scope": "exact typed pointwise reconstruction of right restriction evaluation; strict semantic audit passed",
@@ -75,20 +65,14 @@
       "kind": "derived-proposition",
       "printed": "\\(\\vdash:x(\\alpha\\upharpoonleft R\\upharpoonright \\beta)y.\\equiv.x\\in \\alpha.xRy.y\\in \\beta\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_blocked": false,
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-checked",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-catalogue-02-semantic-audit.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_102",
       "formal_scope": "exact typed pointwise reconstruction of simultaneous left and right restriction evaluation; strict semantic audit passed",
@@ -99,20 +83,14 @@
       "kind": "derived-proposition",
       "printed": "\\(\\vdash:x(\\alpha\\uparrow \\beta)y.\\equiv.x\\in \\alpha.y\\in \\beta\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_blocked": false,
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-checked",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-catalogue-02-semantic-audit.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_103",
       "formal_scope": "exact typed pointwise reconstruction of the Cartesian relation between two classes; strict semantic audit passed",
@@ -123,20 +101,14 @@
       "kind": "derived-proposition",
       "printed": "\\(\\vdash.\\alpha\\upharpoonleft R\\upharpoonright \\beta=(\\alpha\\upharpoonleft R)\\dot{\\cap}(R\\upharpoonright \\beta)\\)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
       "integration_blocked": false,
-      "integration_status": "awaiting-ci",
+      "integration_status": "canonical-kernel-checked",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star35-catalogue-02-semantic-audit.md",
-      "printed_dependencies": [
-
-      ],
-      "normalized_dependencies": [
-
-      ],
-      "lean_dependencies": [
-
-      ],
+      "printed_dependencies": [],
+      "normalized_dependencies": [],
+      "lean_dependencies": [],
       "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
       "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_11",
       "formal_scope": "exact typed relation equality between simultaneous restriction and the intersection of its one-sided restrictions; strict semantic audit passed",
@@ -144,8 +116,8 @@
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   }
 }

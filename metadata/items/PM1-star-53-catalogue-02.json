@@ -26,8 +26,8 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_11",
       "formal_scope": "exact class-sum reduction over two singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -42,8 +42,8 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_12",
       "formal_scope": "exact relation-product reduction over two singleton relation classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM1:✱41·18",
         "PM1:✱53·03"
@@ -73,8 +73,8 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_13",
       "formal_scope": "exact relation-sum reduction over two singleton relation classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM1:✱41·171",
         "PM1:✱53·04"
@@ -104,8 +104,8 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_14",
       "formal_scope": "exact class-product reduction after adjoining one singleton class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": []
@@ -120,8 +120,8 @@
       "declaration": "PM.Architecture.Star53OpeningKernel.star_53_15",
       "formal_scope": "exact class-sum reduction after adjoining one singleton class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
       "printed_dependencies": [
         "PM1:✱53·14"
       ],
@@ -139,8 +139,8 @@
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   }
 }

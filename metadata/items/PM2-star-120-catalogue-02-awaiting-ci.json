@@ -27,9 +27,14 @@
       "declaration": "PM.Architecture.Star120OpeningKernel.star_120_151",
       "formal_scope": "exact typed successor closure for inductive finite cardinals represented by Nat; the printed existence condition is discharged by the total typed carrier",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM2:✱118·241", "PM2:✱120·14", "PM2:✱120·15", "PM2:✱120·121"],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
+      "printed_dependencies": [
+        "PM2:✱118·241",
+        "PM2:✱120·14",
+        "PM2:✱120·15",
+        "PM2:✱120·121"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
@@ -38,7 +43,12 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM2:✱118·241", "PM2:✱120·14", "PM2:✱120·15", "PM2:✱120·121"],
+        "printed_but_unused": [
+          "PM2:✱118·241",
+          "PM2:✱120·14",
+          "PM2:✱120·15",
+          "PM2:✱120·121"
+        ],
         "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
         "editorial_note": "The total Nat representation discharges the existence guard and successor closure directly; PM's cardinal/type-lift route remains historical evidence."
       }
@@ -53,9 +63,13 @@
       "declaration": "PM.Architecture.Star120OpeningKernel.star_120_21",
       "formal_scope": "exact typed finite-class characterization: membership in the inductive classes is represented by a finite enumeration, the typed normalization of an inductive cardinal number",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM1:✱13·195", "PM2:✱103·27", "PM2:✱120·14"],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
+      "printed_dependencies": [
+        "PM1:✱13·195",
+        "PM2:✱103·27",
+        "PM2:✱120·14"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
@@ -64,7 +78,11 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM1:✱13·195", "PM2:✱103·27", "PM2:✱120·14"],
+        "printed_but_unused": [
+          "PM1:✱13·195",
+          "PM2:✱103·27",
+          "PM2:✱120·14"
+        ],
         "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
         "editorial_note": "Finite enumeration is the typed normalization of the source's finite-cardinal criterion; the displayed historical derivation is not replayed."
       }
@@ -79,9 +97,12 @@
       "declaration": "PM.Architecture.Star120OpeningKernel.star_120_212",
       "formal_scope": "exact typed proof that the empty class is finite (belongs to Cls induct)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "integration_status": "awaiting-ci",
-      "printed_dependencies": ["PM2:✱120·12", "PM2:✱120·211"],
+      "formal_status": "kernel-checked",
+      "integration_status": "canonical-kernel-checked",
+      "printed_dependencies": [
+        "PM2:✱120·12",
+        "PM2:✱120·211"
+      ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
@@ -90,15 +111,18 @@
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [],
-        "printed_but_unused": ["PM2:✱120·12", "PM2:✱120·211"],
+        "printed_but_unused": [
+          "PM2:✱120·12",
+          "PM2:✱120·211"
+        ],
         "strict_attempt_evidence": "reviews/Star120-catalogue-review.md",
         "editorial_note": "Lean supplies the empty enumeration directly instead of routing through PM's cardinal propositions."
       }
     }
   ],
   "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
+    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
+    "conclusion": "success"
   }
 }

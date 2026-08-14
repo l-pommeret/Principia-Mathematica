@@ -46,3 +46,18 @@ The promoted set is exactly 3/5. The two relational-image definitions remain
 source-critical coverage. All five declaration bodies cite no numbered Lean
 theorem, so their printed, Lean-numbered and normalized dependency lists are
 empty. CI evidence for the exact subset remains pending.
+
+## Catalogues 03–04 strict semantic audit
+
+Catalogue 03 yields three exact items: ·11 and ·121 unfold the appropriate
+typed intersections pointwise, while ·13 unfolds membership in the range
+class. Items ·14 and ·141 are refused because `SimilarImage` uses unary
+`sm b`; PM requires the binary relation `β sm α`, tying the result to the
+existential source.
+
+Catalogue 04 yields no promotion. For ·2, ·201 and ·202 Lean assumes `hNc`
+and `hT`, the two factors of its encoded conclusion, while omitting the printed
+antecedent. The unconditional ·203 likewise requires both conclusion factors.
+Finally ·204 is only `A x → A x` and assumes its entire conclusion. Thus the
+ten-candidate wave is exactly 3 awaiting CI and 7 documented refusals. The
+three manifests are pairwise disjoint and contain no duplicate PM ID.

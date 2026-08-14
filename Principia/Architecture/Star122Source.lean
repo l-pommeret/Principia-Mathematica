@@ -35,6 +35,30 @@ PM-VERBATIM-END PM2:✱122·15 -/
 /- PM-VERBATIM-BEGIN PM2:✱122·151
 ✱122·151. ⊢ : R∈Prog .⊃. R∗=(R⃖∗ʻBʻR)↿R∗=R∗↾(R⃖∗ʻBʻR)
 PM-VERBATIM-END PM2:✱122·151 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·152
+✱122·152. ⊢ : R∈Prog .⊃. Rpo=(R⃖∗ʻBʻR)↿Rpo=Rpo↾(R⃖poʻBʻR)=Rpo↾(R⃖∗ʻBʻR)
+PM-VERBATIM-END PM2:✱122·152 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·16
+✱122·16. ⊢ : R∈Prog .⊃. Rpo⪽J
+PM-VERBATIM-END PM2:✱122·16 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·17
+✱122·17. ⊢ : R∈Prog .≡. R∈Cls→1 . Rpo⪽J . DʻR=R⃖∗ʻBʻR
+PM-VERBATIM-END PM2:✱122·17 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·2
+✱122·2. ⊢ : R∈Prog . x,y∈CʻR .⊃: xR∗y ∨ yR∗x
+PM-VERBATIM-END PM2:✱122·2 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·21
+✱122·21. ⊢ : R∈Prog . x,y∈CʻR .⊃: xRpo y ∨ x=y ∨ yRpo x
+PM-VERBATIM-END PM2:✱122·21 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·22
+✱122·22. ⊢ : R∈Prog . α⊂DʻR . x,y∈α−R̆poʻʻα .⊃. x=y
+PM-VERBATIM-END PM2:✱122·22 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·23
+✱122·23. ⊢ : R∈Prog . α⊂DʻR . ∃!α .⊃. E!min(Rpo)ʻα . α−R̆poʻʻα=ιʻmin(Rpo)ʻα
+PM-VERBATIM-END PM2:✱122·23 -/
+/- PM-VERBATIM-BEGIN PM2:✱122·231
+✱122·231. ⊢ : R∈Prog . α⊂R̆poʻʻα .⊃. α=Λ
+PM-VERBATIM-END PM2:✱122·231 -/
 namespace PM.Architecture.Star122Source
 def canonicalSource : String :=
  "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm#Page_256"

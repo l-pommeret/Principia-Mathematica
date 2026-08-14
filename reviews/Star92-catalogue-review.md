@@ -31,3 +31,18 @@ because each equality is assumed as a conjunct of Lean `Potid`; the printed
 field-inclusion premise and PM's power-or-identity semantics disappear. The
 five items remain `prepared`, explicitly blocked for semantic mismatch, with
 no `awaiting-ci` promotion.
+
+The fourth canonical batch (·144, ·145, ·146, ·147, ·15) is likewise
+refused in full. The first two recover field inclusions only through Lean's
+weakened `Potid`, without PM's functionality and genuine power semantics.
+The next two equate restrictions using an assumed field equality but do not
+prove the printed restriction equals `T`. Lean ·15 simply assumes its entire
+conclusion. All five remain `prepared` with explicit semantic blockers.
+
+The fifth canonical batch (·151, ·152, ·153, ·16, ·161) also contains no
+strictly equivalent formalization. Lean ·151–·153 are identity functions on
+the exact product equality they purport to prove. Lean ·16 and ·161 choose
+the product itself as an unrestricted existential witness; they omit witness
+membership in `PotidʻR`, both displayed restriction alternatives, and all
+printed antecedents. These five remain `prepared`; none is promoted to
+`awaiting-ci`.

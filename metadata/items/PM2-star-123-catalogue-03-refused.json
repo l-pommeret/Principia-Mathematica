@@ -1,0 +1,90 @@
+{
+  "batch": "PM2-STAR123-CATALOGUE-03-REFUSED",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "270",
+    "scan_leaves": [310],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": ["PM2-1912-SCAN", "PG78255"],
+  "items": [
+    {
+      "id": "PM2:✱123·17",
+      "kind": "derived-proposition",
+      "printed": "✱123·17. ⊢ : α∈ℵ₀.β∈Cls induct .⊃. α−β∈ℵ₀",
+      "printed_page": 270,
+      "scan_leaf": 310,
+      "lean_path": "Principia/FirstEdition/Volume2/Star123Source.lean",
+      "declaration": "source-only (no exact Lean declaration)",
+      "formal_scope": "refused: PM inductive classes and class subtraction are not represented together with the typed ℵ₀ predicate",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-inductive-class-semantics",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star123-catalogue-03-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱123·18",
+      "kind": "derived-proposition",
+      "printed": "✱123·18. ⊢ : ∃!ℵ₀(x) .⊃. Infin ax(x) [✱122·36]",
+      "printed_page": 270,
+      "scan_leaf": 310,
+      "lean_path": "Principia/FirstEdition/Volume2/Star123Source.lean",
+      "declaration": "source-only (no exact Lean declaration)",
+      "formal_scope": "refused: the parameterized existence of ℵ₀ and PM's Infin ax predicate have no source-faithful typed representation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-infinity-axiom-semantics",
+      "printed_dependencies": ["PM2:✱122·36"], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star123-catalogue-03-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱123·19",
+      "kind": "derived-proposition",
+      "printed": "✱123·19. ⊢ : R∈Prog.∃!α.α⊂Rpoʻʻα .⊃. α∈ℵ₀ [✱122·45]",
+      "printed_page": 270,
+      "scan_leaf": 310,
+      "lean_path": "Principia/FirstEdition/Volume2/Star123Source.lean",
+      "declaration": "source-only (no exact Lean declaration)",
+      "formal_scope": "refused: the current progression kernel does not formalize the proper-part image condition or the induced progression needed to prove the conclusion",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-proper-segment-semantics",
+      "printed_dependencies": ["PM2:✱122·45"], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star123-catalogue-03-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱123·191",
+      "kind": "derived-proposition",
+      "printed": "✱123·191. ⊢ : R∈1→1.x∈DʻR.∼(xRpo x).R⃖∗ʻx⊂DʻR .⊃. R⃖∗ʻx∈ℵ₀ [✱122·52]",
+      "printed_page": 270,
+      "scan_leaf": 310,
+      "lean_path": "Principia/FirstEdition/Volume2/Star123Source.lean",
+      "declaration": "source-only (no exact Lean declaration)",
+      "formal_scope": "refused: one-one relation membership, proper ancestral closure, and the Rpo irreflexivity condition are not jointly represented in the current typed kernel",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-ancestral-closure-semantics",
+      "printed_dependencies": ["PM2:✱122·52"], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star123-catalogue-03-semantic-audit.md"
+    },
+    {
+      "id": "PM2:✱123·192",
+      "kind": "derived-proposition",
+      "printed": "✱123·192. ⊢ : R∈1→1.ᗡʻR⊂DʻR .⊃. R⃖∗ʻʻB⃗ʻR⊂ℵ₀",
+      "printed_page": 270,
+      "scan_leaf": 310,
+      "lean_path": "Principia/FirstEdition/Volume2/Star123Source.lean",
+      "declaration": "source-only (no exact Lean declaration)",
+      "formal_scope": "refused: the image of the initial-term class under proper ancestral closure is absent from the typed relation architecture",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "prepared",
+      "integration_status": "blocked-missing-ancestral-image-semantics",
+      "printed_dependencies": [], "lean_dependencies": [], "normalized_dependencies": [],
+      "parser_status": "reviewed-gap", "parser_evidence": "reviews/Star123-catalogue-03-semantic-audit.md"
+    }
+  ],
+  "ci_evidence": {"commit": "pending", "run": "pending", "conclusion": "pending"}
+}
