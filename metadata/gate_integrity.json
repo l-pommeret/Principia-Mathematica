@@ -207,6 +207,15 @@
         "tests/test_verify_editorial_unformalized_item.py",
         "scripts/verify_editorial.py"
       ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "authorised_head": "e7f3e28356f252d60a21c4dc0e781de3a6926f34",
+      "reason": "Autoriser le contenu pr\u00e9sent dans HEAD : pont du second ordre repoint\u00e9 vers le calcul ramifi\u00e9, gate \u00e9ditorial tol\u00e9rant \u00e0 l'item catalogu\u00e9 non formalis\u00e9, couverture CI de tout gate.",
+      "scripts_changed": [
+        "tests/test_verify_second_order_bridge.py",
+        "scripts/verify_second_order_bridge.py"
+      ]
     }
   ],
   "digests": {
@@ -246,7 +255,7 @@
     "scripts/verify_printed_citations.py": "bb1ee1609550a4c7392ce031f18b4d7943950bf99b2a241220dc7ec75ae2f14f",
     "scripts/verify_q301_gate.py": "c368e4661701b66ec17b9e64d5a42b3657d24c93f2a87f3d3623ce8efa03c794",
     "scripts/verify_retry_registry.py": "4e62c3133cdf596b61fd4ba035c3b5f099f299e4a56cd3530121f9bcb97968cb",
-    "scripts/verify_second_order_bridge.py": "915ac8a9c9feb4e428c191231fda68582451298266d913b2c2bd8b4b4cd4a3ad",
+    "scripts/verify_second_order_bridge.py": "45b7ee5fcf92237a1af675156270d44f0992bf9bbd90e2009079b94d9d0cb5b9",
     "scripts/verify_site.py": "4d34f886f2d141927dac260016919ebaad5637526650143936e7777ab3f7e9c9",
     "scripts/verify_statement_only_interfaces.py": "2dd955218c5229bde6f3b3136217d40c0497344f7282b780bfef6dc0be7afd3b",
     "scripts/verify_two_sided_readings.py": "c38de99af871d27d2112af7d67f051c0b2e7319d681b698052b2ecf3bd3b7e57",
@@ -301,6 +310,7 @@
     "tests/test_verify_printed_citations.py": "3f951a32e72986de41eac4c233ee0dd0e045e462f5a2719f310f39e8fd296e3f",
     "tests/test_verify_printed_citations_reporting.py": "7f046fc5751e384ca39fd2c1c71aad4a8d56ad8930f6ddbc8c28c878cdb4e27d",
     "tests/test_verify_retry_registry.py": "d5b5486ca9aa185c5040762cbc8f34bf76d5be0472fed96d4753c2a3bee7840c",
+    "tests/test_verify_second_order_bridge.py": "2912534ba3c04c45df6f7cc2ed6eddaf3e095928bb367baea4f080daaa5f8821",
     "tests/test_verify_substitution_architecture.py": "48af05f2c5450a816b8e5fe4201910cc50351e206ac78ae97352e47da6c60086",
     "tests/test_verify_typical_ambiguity_toy.py": "6bff62363d6a915df4f077b6f6ae8e7627537fbbd3ce06e3a50fc6a0df39f3c9",
     "tests/test_verify_unified_syntax_envelope.py": "714b5afd45730d91fb63aff21439a301a81155d4de2772ddb74e7b4d2e577991"
