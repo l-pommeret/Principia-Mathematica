@@ -1,4 +1,65 @@
 {
   "schema_version": 1,
-  "exemptions": []
+  "exemptions": [
+    {
+      "proposition": "PM1:✱9·361",
+      "gutenberg_reading": "\\(\\vdash\\colon\\ldotp (x).\\phi x.\\lor .p:\\supset :p.\\lor .(x).\\phi x \\quad[\\text{Similar proof}]\\)",
+      "repository_reading": "⊢ : .(x).φx .∨. p : ⊃ : p .∨. (x).φx   [Similar Proof]",
+      "reason": "La transcription Gutenberg décapitalise une note éditoriale que le livre imprime en capitales. La page 163 du djvu de 1910 porte « [Similar Proof] » neuf fois et « [As Above] » six fois, à côté de trois « [As above] » : les Principia sont eux-mêmes irréguliers sur ce point, et une transcription diplomatique conserve cette irrégularité là où une transcription modernisante l'aplatit. Le dépôt suit la page imprimée."
+    },
+    {
+      "proposition": "PM1:✱9·37",
+      "gutenberg_reading": "\\(\\vdash\\colon\\ldotp p.\\lor .(\\exists x).\\phi x:\\supset :(\\exists x).\\phi x.\\lor .p \\quad[\\text{Similar proof}]\\)",
+      "repository_reading": "⊢ : .p .∨. (∃x).φx : ⊃ : (∃x).φx .∨. p   [Similar Proof]",
+      "reason": "La transcription Gutenberg décapitalise une note éditoriale que le livre imprime en capitales. La page 163 du djvu de 1910 porte « [Similar Proof] » neuf fois et « [As Above] » six fois, à côté de trois « [As above] » : les Principia sont eux-mêmes irréguliers sur ce point, et une transcription diplomatique conserve cette irrégularité là où une transcription modernisante l'aplatit. Le dépôt suit la page imprimée."
+    },
+    {
+      "proposition": "PM1:✱9·371",
+      "gutenberg_reading": "\\(\\vdash\\colon\\ldotp (\\exists x).\\phi x.\\lor .p:\\supset :p.\\lor .(\\exists x).\\phi x \\quad[\\text{Similar proof}]\\)",
+      "repository_reading": "⊢ : .(∃x).φx .∨. p : ⊃ : p .∨. (∃x).φx   [Similar Proof]",
+      "reason": "La transcription Gutenberg décapitalise une note éditoriale que le livre imprime en capitales. La page 163 du djvu de 1910 porte « [Similar Proof] » neuf fois et « [As Above] » six fois, à côté de trois « [As above] » : les Principia sont eux-mêmes irréguliers sur ce point, et une transcription diplomatique conserve cette irrégularité là où une transcription modernisante l'aplatit. Le dépôt suit la page imprimée."
+    },
+    {
+      "proposition": "PM1:✱9·401",
+      "gutenberg_reading": "\\(\\vdash\\colon\\colon p:\\lor :q.\\lor .(\\exists x).\\phi x\\colon\\ldotp \\supset \\colon\\ldotp q:\\lor :p.\\lor .(\\exists x).\\phi x \\quad[\\text{As above}]\\)",
+      "repository_reading": "⊢ : : p : ∨ : q .∨. (∃x).φx : .⊃ : .q : ∨ : p .∨. (∃x).φx   [As Above]",
+      "reason": "La transcription Gutenberg décapitalise une note éditoriale que le livre imprime en capitales. La page 163 du djvu de 1910 porte « [Similar Proof] » neuf fois et « [As Above] » six fois, à côté de trois « [As above] » : les Principia sont eux-mêmes irréguliers sur ce point, et une transcription diplomatique conserve cette irrégularité là où une transcription modernisante l'aplatit. Le dépôt suit la page imprimée."
+    },
+    {
+      "proposition": "PM1:✱9·41",
+      "gutenberg_reading": "\\(\\vdash\\colon\\colon p:\\lor :(x).\\phi x.\\lor .r\\colon\\ldotp \\supset \\colon\\ldotp (x).\\phi x:\\lor :p\\lor r \\quad[\\text{As above}]\\)",
+      "repository_reading": "⊢ : : p : ∨ : (x).φx .∨. r : .⊃ : .(x).φx : ∨ : p ∨ r   [As Above]",
+      "reason": "La transcription Gutenberg décapitalise une note éditoriale que le livre imprime en capitales. La page 163 du djvu de 1910 porte « [Similar Proof] » neuf fois et « [As Above] » six fois, à côté de trois « [As above] » : les Principia sont eux-mêmes irréguliers sur ce point, et une transcription diplomatique conserve cette irrégularité là où une transcription modernisante l'aplatit. Le dépôt suit la page imprimée."
+    },
+    {
+      "proposition": "PM1:✱9·411",
+      "gutenberg_reading": "\\(\\vdash\\colon\\colon p:\\lor :(\\exists x).\\phi x.\\lor .r\\colon\\ldotp \\supset \\colon\\ldotp (\\exists x).\\phi x:\\lor :p\\lor r \\quad[\\text{As above}]\\)",
+      "repository_reading": "⊢ : : p : ∨ : (∃x).φx .∨. r : .⊃ : .(∃x).φx : ∨ : p ∨ r   [As Above]",
+      "reason": "La transcription Gutenberg décapitalise une note éditoriale que le livre imprime en capitales. La page 163 du djvu de 1910 porte « [Similar Proof] » neuf fois et « [As Above] » six fois, à côté de trois « [As above] » : les Principia sont eux-mêmes irréguliers sur ce point, et une transcription diplomatique conserve cette irrégularité là où une transcription modernisante l'aplatit. Le dépôt suit la page imprimée."
+    },
+    {
+      "proposition": "PM1:✱9·42",
+      "gutenberg_reading": "\\(\\vdash\\colon\\colon (x).\\phi x:\\lor :q\\lor r\\colon\\ldotp \\supset \\colon\\ldotp q:\\lor :(x).\\phi x.\\lor .r \\quad[\\text{As above}]\\)",
+      "repository_reading": "⊢ : : (x).φx : ∨ : q ∨ r : .⊃ : .q : ∨ : (x).φx .∨. r   [As Above]",
+      "reason": "La transcription Gutenberg décapitalise une note éditoriale que le livre imprime en capitales. La page 163 du djvu de 1910 porte « [Similar Proof] » neuf fois et « [As Above] » six fois, à côté de trois « [As above] » : les Principia sont eux-mêmes irréguliers sur ce point, et une transcription diplomatique conserve cette irrégularité là où une transcription modernisante l'aplatit. Le dépôt suit la page imprimée."
+    },
+    {
+      "proposition": "PM1:✱9·421",
+      "gutenberg_reading": "\\(\\vdash\\colon\\colon (\\exists x).\\phi x:\\lor :q\\lor r\\colon\\ldotp \\supset \\colon\\ldotp q:\\lor :(\\exists x).\\phi x.\\lor .r \\quad[\\text{As above}]\\)",
+      "repository_reading": "⊢ : : (∃x).φx : ∨ : q ∨ r : .⊃ : .q : ∨ : (∃x).φx .∨. r   [As Above]",
+      "reason": "La transcription Gutenberg décapitalise une note éditoriale que le livre imprime en capitales. La page 163 du djvu de 1910 porte « [Similar Proof] » neuf fois et « [As Above] » six fois, à côté de trois « [As above] » : les Principia sont eux-mêmes irréguliers sur ce point, et une transcription diplomatique conserve cette irrégularité là où une transcription modernisante l'aplatit. Le dépôt suit la page imprimée."
+    },
+    {
+      "proposition": "PM1:✱9·25",
+      "gutenberg_reading": "\\(\\vdash\\colon\\ldotp (x).p\\lor \\phi x.\\supset :p.\\lor .(x).\\phi x \\quad[\\text{*9·23.(*9·04)}]\\)",
+      "repository_reading": "⊢:.(x).p∨φx.⊃:p.∨.(x).φx   [Id.✱9·23.(✱9·04)]",
+      "reason": "Gutenberg omet le « Id. » qui ouvre la citation. La page 162 du djvu de 1910 porte « [Id. ∗9·23 . (∗9·04)] », vérifié sur la transcription indépendante de Wikisource. L'omission supprime une prémisse de la démonstration imprimée : ce n'est pas une variante de présentation."
+    },
+    {
+      "proposition": "PM1:✱9·131",
+      "gutenberg_reading": "Definition of \"being of the same type.\" The",
+      "repository_reading": "Definition of \"being of the same type.\" The following is a step-by-step definition, the definition for higher types presupposing that for lower types. We say that u and v \"are of the same type\" if (1) both are individuals, (2) both are elementary functions taking arguments of the same type, (3) u is a function and v is its negation, (4) u is φ x̂ or ψx̂ and v is φ x̂ ∨ ψ x̂ , where φ x̂ and ψ x̂ are elementary functions, (5) u is (y). φ (x̂,y) and v is ( z). ψ (x̂,z) , where φ (x̂, ŷ) , ψ (x̂, ŷ) are of the same type, (6) both are elementary propositions, (7) u is a proposition and v is ∼u , or (8) u is ( x).φ x and v is ( y).ψ y , where φ x̂ and ψ x̂ are of the same type.",
+      "reason": "La leçon Gutenberg est tronquée par une rupture de ligne : elle s'arrête au milieu d'une phrase, sur le mot « The », alors que la définition du « being of the same type » se poursuit sur huit clauses numérotées (djvu de 1910, page 160). Le bloc du dépôt porte la définition complète."
+    }
+  ]
 }

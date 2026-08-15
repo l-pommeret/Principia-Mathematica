@@ -341,13 +341,16 @@ Dem.
 [(5) . (✱9·04)] ⊢ : : p ⊃ q .⊃ : .p .∨. (x).φx : ⊃ : q .∨. (y).φy
 PM-VERBATIM-END PM1:✱9·5 -/
 /- PM-VERBATIM-BEGIN PM1:✱9·501
-✱9·501.  ⊢ : : p ⊃ q .⊃ : .p .∨. (∃x).φx : ⊃ : q .∨. (∃x).φx   [As Above]
+✱9·501.  ⊢ : : p ⊃ q .⊃ : .p .∨. (∃x).φx : ⊃ : q .∨. (∃x).φx   [As above]
 PM-VERBATIM-END PM1:✱9·501 -/
 /- PM-VERBATIM-BEGIN PM1:✱9·51
-✱9·51.  ⊢ : : p .⊃. (x).φx : ⊃ : .p ∨ r .⊃ .⊃ : (x).φx .∨. r
+-- Émendation éditoriale : le livre de 1910 (djvu p. 163) imprime « ⊃ . ⊃ : »,
+-- un horseshoe doublé qui ne forme aucune expression des Principia. On ne suit
+-- pas le scan sur une coquille manifeste ; Gutenberg la corrige de même.
+✱9·51.  ⊢ : : p .⊃. (x).φx : ⊃ : .p ∨ r .⊃ : (x).φx .∨. r
 PM-VERBATIM-END PM1:✱9·51 -/
 /- PM-VERBATIM-BEGIN PM1:✱9·511
-✱9·511.  ⊢ : : p .⊃. (∃x).φx : ⊃ : .p ∨ r .⊃ .⊃ : (∃x).φx .∨. r   [As above]
+✱9·511.  ⊢ : : p .⊃. (∃x).φx : ⊃ : .p ∨ r .⊃ : (∃x).φx .∨. r   [As above]
 PM-VERBATIM-END PM1:✱9·511 -/
 /- PM-VERBATIM-BEGIN PM1:✱9·52
 ✱9·52.  ⊢ : : (x).φx .⊃. q : ⊃ : .(x).φx .∨. r .⊃ . q ∨ r
@@ -359,7 +362,7 @@ Dem.
 ⊢ . (3) . (✱9·03) . ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱9·52 -/
 /- PM-VERBATIM-BEGIN PM1:✱9·521
-✱9·521.  ⊢ : : (∃x).φx .⊃. q : ⊃ : .(∃x).φx .∨. r .⊃ . q ∨ r   [As above]
+✱9·521.  ⊢ : : (∃x).φx .⊃. q : ⊃ : .(∃x).φx .∨. r :⊃ . q ∨ r   [As above]
 PM-VERBATIM-END PM1:✱9·521 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱9·6
@@ -414,11 +417,11 @@ PM-VERBATIM-END PM1:✱9·13 -/
 PM-VERBATIM-END PM1:✱9·2 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱9·21
-✱9·21.  ⊢:.(x).φx⊃ψx.⊃:.(x).φx.⊃.(x).ψx
+✱9·21.  ⊢:.(x).φx⊃ψx.⊃:(x).φx.⊃.(x).ψx
 PM-VERBATIM-END PM1:✱9·21 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱9·22
-✱9·22.  ⊢:.(x).φx⊃ψx.⊃:.(∃x).φx.⊃.(∃x).ψx
+✱9·22.  ⊢:.(x).φx⊃ψx.⊃:(∃x).φx.⊃.(∃x).ψx
 PM-VERBATIM-END PM1:✱9·22 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱9·23

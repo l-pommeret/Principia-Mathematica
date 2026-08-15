@@ -49,7 +49,17 @@ où le moindre écart devient un échec. C'est un chantier éditorial à part
 entière, à mener quand la CI n'est pas l'objectif immédiat.
 
 **Non établie, pour ✱40·38 et ✱92·2.** Leur numéro est parfaitement régulier.
-La raison de leur absence reste à trouver.
+
+Une hypothèse a été formée puis **rejetée par la mesure** : aucune des quatre
+ne porte de bloc `Dem.`, et l'on pouvait croire qu'une passe reconnaissant les
+propositions à leur démonstration les avait sautées. Mais le témoin compte 2541
+énoncés sans `Dem.`, dont 2537 étaient correctement catalogués. L'absence de
+démonstration n'explique donc rien.
+
+Aucune cause systématique n'a été trouvée pour ces deux-là : deux omissions
+isolées sur 3368 énoncés. Il n'est pas nécessaire de l'établir pour s'en
+protéger — le gate les rattrape quelle qu'en soit la raison, et c'est
+précisément ce qu'on attend d'un contrôle plutôt que d'une relecture.
 
 ## Le gate
 

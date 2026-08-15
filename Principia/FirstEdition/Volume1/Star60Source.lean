@@ -28,10 +28,10 @@ PM-VERBATIM-END PM1:✱60·12 -/
 ✱60·13. ⊢ . Cl exʻα = β̂(β ⊂ α . ∃!β)
 PM-VERBATIM-END PM1:✱60·13 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·14
-✱60·14. ⊢ . ∃!Clʻα
+✱60·14. ⊢ . ∃!Clʻα  [✱60·12.✱14·21]
 PM-VERBATIM-END PM1:✱60·14 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·15
-✱60·15. ⊢ . ∃!Cl exʻα
+✱60·15. ⊢ . ∃!Cl exʻα  [✱60·13.✱14·21]
 PM-VERBATIM-END PM1:✱60·15 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·2
 ✱60·2. ⊢ : β ∈ Clʻα .≡. β ⊂ α
@@ -46,13 +46,13 @@ PM-VERBATIM-END PM1:✱60·22 -/
 ✱60·23. ⊢ : β ∈ Cl exʻα .≡. β ∈ Clʻα − ιʻΛ
 PM-VERBATIM-END PM1:✱60·23 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·24
-✱60·24. ⊢ . Cl exʻα = Clʻα − ιʻΛ
+✱60·24. ⊢ . Cl exʻα = Clʻα − ιʻΛ  [✱60·23.✱20·43]
 PM-VERBATIM-END PM1:✱60·24 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·3
 ✱60·3. ⊢ . Λ ∈ Clʻα
 PM-VERBATIM-END PM1:✱60·3 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·31
-✱60·31. ⊢ . ∃!Clʻα
+✱60·31. ⊢ . ∃!Clʻα  [✱60·3.✱10·24]
 PM-VERBATIM-END PM1:✱60·31 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·32
 ✱60·32. ⊢ . ClʻΛ = ιʻΛ
@@ -85,10 +85,10 @@ PM-VERBATIM-END PM1:✱60·34 -/
 ✱60·35. ⊢ : ∃!α .⊃. α ∈ Cl exʻα
 PM-VERBATIM-END PM1:✱60·35 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·36
-✱60·36. ⊢ : ∃!α .⊃. ∃!Cl exʻα
+✱60·36. ⊢ : ∃!α .⊃. ∃!Cl exʻα  [✱60·35.✱10·24]
 PM-VERBATIM-END PM1:✱60·36 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·361
-✱60·361. ⊢ : ∃!α .≡. ∃!Cl exʻα
+✱60·361. ⊢ : ∃!α .≡. ∃!Cl exʻα  [✱60·36·33]
 PM-VERBATIM-END PM1:✱60·361 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·362
 ✱60·362. ⊢ . Clʻιʻx = ιʻΛ ∪ ιʻιʻx
@@ -124,10 +124,10 @@ Dem.
 ⊢.(1).(4).⊃⊢.Prop
 PM-VERBATIM-END PM1:✱60·38 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·39
-✱60·39. ⊢ : α ∈ 2 .⊃. Clʻα ⊂ 0 ∪ 1 ∪ 2
+✱60·39. ⊢ . Clʻ(ιʻx ∪ ιʻy) = ιʻΛ ∪ ιʻιʻx ∪ ιʻιʻy ∪ ιʻ(ιʻx ∪ ιʻy)  [✱54·4.✱60·2]
 PM-VERBATIM-END PM1:✱60·39 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·391
-✱60·391. ⊢ : β ∈ Clʻα . γ ⊂ β .⊃. γ ∈ Clʻα
+✱60·391. ⊢ : α ε 2 .⊃. Clʻα ⊂ 0 ∪ 1 ∪ 2  [✱54·411.✱60·2]
 PM-VERBATIM-END PM1:✱60·391 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·4
 ✱60·4. ⊢ : β ∈ Clʻα .⊃. β ∩ γ ∈ Clʻα
@@ -180,10 +180,10 @@ Dem.
 ⊢.(2).(3). ⊃⊢.Prop
 PM-VERBATIM-END PM1:✱60·501 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·51
-✱60·51. ⊢ : sʻκ ⊂ β .≡. κ ⊂ Clʻβ
+✱60·51. ⊢ . pʻClʻα = Λ  [✱40·22.✱60·3]
 PM-VERBATIM-END PM1:✱60·51 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·52
-✱60·52. ⊢ : β ⊂ pʻκ .≡. β ∈ pʻClʻʻκ
+✱60·52. ⊢ : sʻκ ⊂ β .≡. κ ⊂ Clʻβ  [✱40·151.✱60·2]
 PM-VERBATIM-END PM1:✱60·52 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·53
 ✱60·53. ⊢ . Clʻpʻκ = pʻClʻʻκ
@@ -192,7 +192,7 @@ Dem.
 [*40·41.*60·14] ≡:β∈ pʻClʻʻ κ:.⊃⊢.Prop
 PM-VERBATIM-END PM1:✱60·53 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·54
-✱60·54. ⊢ : Clʻα = Clʻβ .≡. α = β
+✱60·54. ⊢ . Clʻpʻκ = pʻClʻʻκ  [✱60·53·2]
 PM-VERBATIM-END PM1:✱60·54 -/
 /- PM-VERBATIM-BEGIN PM1:✱60·55
 ✱60·55. ⊢ : Cl exʻα = Cl exʻβ .≡. α = β
