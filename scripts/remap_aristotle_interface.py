@@ -299,10 +299,18 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
             items.extend(fragment)
         if not isinstance(items, list):
             raise RemapError("Q259 item registry has no item list")
+        # Removing Architecture legitimately left catalogued items undeclared.
+        declared_items = [record for record in items if record.get("declaration")]
         canonical_by_short_name = {
             record["declaration"].rsplit(".", 1)[-1]: record["declaration"]
-            for record in items
+            for record in declared_items
         }
+        if batch in STRICT_INSERTION_BATCHES:
+            # Architecture deletion leaves these insertion targets undeclared.
+            canonical_by_short_name = {
+                target["source"].rsplit(".", 1)[-1]: target["source"]
+                for target in prompt_targets
+            }
         if batch in RFL_ONLY_INSERTION_BATCHES:
             # These strict definition batches are inserted under exactly the
             # declaration name already sealed by their manifest.  They have
@@ -318,6 +326,13 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
             canonical_by_short_name["star_9_21"] = (
                 "PM.Architecture.FirstOrderPrerequisites.star_9_21"
             )
+        source_backfill_ids = manifest.get("source_backfill_audit", {}).get("item_ids", [])
+        if source_backfill_ids and len(source_backfill_ids) != len(prompt_targets):
+            raise RemapError(f"source-backfill item/target mismatch for {batch}")
+        source_backfill_id_by_short_name = {
+            target["source"].rsplit(".", 1)[-1]: identifier
+            for target, identifier in zip(prompt_targets, source_backfill_ids)
+        }
         for target in prompt_targets:
             short_name = target["source"].rsplit(".", 1)[-1]
             canonical = canonical_by_short_name.get(short_name)
@@ -327,9 +342,9 @@ def batch_plan(root: Path, batch: str) -> dict[str, Any]:
                 "id": next(
                     (identifier for identifier in manifest.get("target_order", [])
                      if manifest.get("target_declarations", {}).get(identifier) == target["source"]),
-                    next((record["id"] for record in items
+                    next((record["id"] for record in declared_items
                           if record["declaration"].rsplit(".", 1)[-1] == short_name),
-                         "PM1:✱9·21"),
+                         source_backfill_id_by_short_name.get(short_name, "PM1:✱9·21")),
                 ),
                 "source": target["source"],
                 "canonical": canonical,

@@ -1,9 +1,16 @@
 # Certification tiers
 
-A tier is *derived*, never asserted. `scripts/verify_certification_tier.py`
-recomputes every catalogue item's tier from the Lean sources and from git, and
-fails when a recorded `formal_status` claims more than the tree supports. No
-script may promote an item; a script may only record what the computation found.
+A tier is *derived*, never asserted. The canonical result is
+`docs/certification_registry.json`, generated only by
+`scripts/derive_certification_registry.py --write`. Its `--check` mode reruns
+the gates and requires byte-for-byte identity with the stored file. A change to
+an item's stored tier is therefore rejected even when it is valid JSON.
+
+`scripts/verify_certification_tier.py` is the transitional gate for the current
+catalogue, in which `formal_status`, `formalization_level` and `certification`
+are still duplicated into 6,203 items. It compares those claims to the tree.
+The derived registry goes further: it erases those fields before evaluating an
+item, so a conclusion cannot influence its own derivation.
 
 ## The standard: ✱1–✱5
 
@@ -28,6 +35,35 @@ that tree, proved by applying those constructors.
 
 Nothing in that theorem is true for a reason other than the derivation.
 
+## Trust boundary: facts and conclusions
+
+The distinction is whether editing a field may legitimately change what the
+gates observe, not whether a human or an agent happened to type it.
+
+| Facts supplied to the gates | Why they are facts |
+|---|---|
+| `id`, `kind`, `printed`, edition/volume, printed page, scan leaf and witness digests | identity and transcription from the printed source |
+| `lean_path`, `declaration`, `formal_scope` | the concrete formal target proposed for inspection; existence, kind and reachability are then checked |
+| `demonstration_provenance`, `printed_dependencies`, `normalized_dependencies`, `lean_dependencies` | editorial evidence about the printed demonstration and the proposed correspondence |
+| `direct_assumptions`, `inherited_assumptions`, `non_logical_assumptions` | explicit declarations of non-logical hypotheses; T9 checks them against what the proof reaches |
+| batch `ci_evidence` (`commit`, run URL, conclusion) | an external attestation; T7 derives whether it resolves, is ancestral, successful and fresh |
+| parser evidence and an integration/blocking reason | reviewable evidence or routing input; a `*-status` that merely summarizes it should ultimately be derived |
+
+The following are conclusions and must not be accepted from an item:
+
+- `formalization_level`;
+- `formal_status` / `certification_tier`;
+- `certification.tier`, `certification.failed_criteria` and
+  `certification.computed_at_commit`;
+- whether an integration may carry the `canonical-` rather than
+  `provisional-` prefix;
+- any census, coverage percentage, or site badge computed from those values.
+
+`integration_status` currently mixes a factual routing reason (for example an
+architecture blocker) with the derived `canonical-/provisional-` prefix. The
+migration must split those two meanings rather than copy the mixed field into
+the new registry.
+
 ## The criteria
 
 | | Criterion | Enforced by |
@@ -39,7 +75,7 @@ Nothing in that theorem is true for a reason other than the derivation.
 | T5 | `#print axioms` reports no axioms | `verify_axiom_audit.py` |
 | T6 | the statement is neither vacuous nor a duplicate | `verify_certification_tier.py` |
 | T7 | `ci_evidence` resolves, is an ancestor of HEAD, and is not stale | `verify_ci_evidence.py` |
-| T8 | `formalization_level` is present and does not exceed the tree | `verify_certification_tier.py` |
+| T8 | the stored derived registry is exactly what the gates recalculate | `derive_certification_registry.py --check` |
 | T9 | non-logical assumptions reached are declared | `verify_certification_tier.py` |
 | T10 | every constructor of a judgement relation answers to a printed primitive | `verify_judgement_primitives.py` |
 | T11 | the asserted formula is written in PM's notation, not Lean's | `verify_certification_tier.py` |
@@ -100,6 +136,39 @@ converse is deliberately not required — PM abbreviates, citing the substantive
 steps and leaving routine transitions implicit — so a Lean term legitimately
 mentions more than the page does, never less.
 
+## Exact facts → tier function
+
+The registry generator first removes `formal_status`, `formalization_level`,
+`certification_tier` and `certification` from every in-memory item. It then runs
+the item-local implementation of T1–T7, T9 and T11, the kernel axiom audit for
+T5, and the global judgement-constructor audit for T10. Duplicate declarations
+are marked T6 independently of their former status. T8 is not an item input: it
+is the exact-file comparison performed by `--check`.
+
+For a catalogue item `i`, let `F(i)` be the failed criteria after those gates,
+and let `resolves(i)` mean that its declared Lean name is found as a declaration
+or legitimate primitive constructor. The tier is the first applicable case:
+
+1. `prepared` if no non-empty `lean_path` and `declaration` pair was supplied,
+   or if the named declaration does not resolve in an otherwise imported file;
+2. `unbuilt` if a concrete `lean_path` was supplied but T1 fails;
+3. `lean-typechecked` if the declaration resolves but any criterion other than
+   T7 fails;
+4. `awaiting-ci` if the declaration passes every structural/kernel criterion
+   and T7 alone fails;
+5. `kernel-checked` if no criterion fails.
+
+The derived `formalization_level` is `pm-derivation-v1` exactly when
+`F(i) − {T7}` is empty; otherwise it is JSON `null`. Thus lack of CI may delay a
+certification tier without denying a structurally complete derivation. The
+derived `canonical_integration_eligible` flag is true exactly at
+`kernel-checked`.
+
+Definitions retain the existing kind-sensitive interpretation: a printed `Df`
+must resolve to an unfoldable `def`/`abbrev`; it is not required to masquerade
+as a theorem or a derivation judgement. Primitive propositions may resolve to
+constructors only when their catalogue kind says they are primitive.
+
 ## The tiers
 
 - **`kernel-checked`** — every criterion holds. Reserved. A reader may take this
@@ -115,6 +184,53 @@ mentions more than the page does, never less.
 
 An `integration_status` beginning `canonical-` is permitted only at
 `kernel-checked`; below it the prefix is rewritten to `provisional-`.
+
+## Migration plan (not executed here)
+
+The removal of the duplicated fields must be one coordinated migration, not a
+sequence in which some consumers silently fall back to item claims.
+
+1. Land the generator, the initial derived registry, its anti-falsification
+   test, and protection of both generator and registry. Add
+   `python3 scripts/derive_certification_registry.py --check` to CI only after
+   the generator change has received the separately authorised gate re-pin.
+2. Add one registry reader keyed by item `id`. Make all consumers read
+   `certification_tier`, `formalization_level`, failed criteria and canonical
+   eligibility from it. A missing/duplicate id or a stale registry must be a
+   hard error; there must be no fallback to catalogue fields.
+3. Break the remaining status-dependent gate cycle. In particular,
+   `verify_axiom_audit.py`, `verify_printed_citations.py` and
+   `verify_ci_evidence.py` currently select work using `formal_status`. Their
+   reusable audit functions must consume factual candidates during derivation;
+   their stand-alone reporting modes may read the checked registry afterward.
+4. Split factual integration routing/blocker data from the derived
+   `canonical_integration_eligible` result. Likewise, keep parser evidence as an
+   input but calculate parser/status summaries from it.
+5. In one mechanical, reviewable change, remove `formal_status`,
+   `formalization_level` and `certification` from all 6,203 items. Do not infer
+   or preserve their values: regenerate the registry from the remaining facts.
+6. Change schemas and editorial gates to reject those conclusion fields in
+   item JSON. Regenerate the registry with `--write`, run `--check`, the full
+   test suite and Lean gates, then lock it again with `tools/gate-lock`.
+
+The direct breakage surface found in the current tree is substantial. The
+following scripts presently read or write one of the fields being removed:
+`build_edition.py`, `pm_constraint_manifest.py`, `pm_context_bundle.py`,
+`pm_queue_inventory.py`, `promote_awaiting_ci.py`,
+`promote_canonical_backfill.py`, `report_lean_source_coverage.py`,
+`verify_axiom_audit.py`, `verify_certification_tier.py`,
+`verify_ci_evidence.py`, `verify_dependencies.py`, `verify_editorial.py`,
+`verify_pm_parser_coverage.py`, `verify_preflight.py`,
+`verify_printed_citations.py`, `verify_retry_registry.py` and
+`verify_statement_only_interfaces.py`. Edition/site output, workflow steps and
+their fixtures/tests also assume item-local status. Until every one of those
+callers uses the checked registry, deleting the fields would either break the
+build or, worse, reintroduce a permissive fallback.
+
+This mission does not perform that migration and does not modify any catalogue
+item. It also deliberately does not update `metadata/gate_integrity.json`: the
+new protected files and changed protection policy must be re-pinned only in the
+maintainer's separately authorised gate-integrity workflow.
 
 ## What is still not checked
 

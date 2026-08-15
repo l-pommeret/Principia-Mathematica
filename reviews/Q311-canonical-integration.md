@@ -16,3 +16,12 @@ logic; it is not a new axiom. The proofs introduce no choice, default
 description value, unsafe declaration, or generic assertion rule. Direct
 ✱14·01 expansion compresses the longer printed
 routes; the metadata records those unused historical citations explicitly.
+
+The primary object-calculus declaration of ✱14·31 now lives in
+`Star14Derived.lean`. Its public theorem delegates to a private strict proof:
+the two ✱14·242 instances give the candidate-level equivalences, ✱4·37 lifts
+the second through the independent disjunct (with the explicit commutations
+required by the ramified orientation), and primitive generalization produces
+the ✱10·23 real-scope normal form. ✱14·11 then records the printed existence
+expansion. The only remaining premise is the polymorphic, explicitly named
+`star_14_242_hypothesis`; it is strictly narrower than assuming ✱14·31 itself.

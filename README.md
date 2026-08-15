@@ -25,7 +25,10 @@ assumption reached — reducibility above all — is declared.
 
 A separate check asks the harder question: whether the proof follows the
 demonstration PM actually prints, by reading the elaborated proof term and
-requiring that everything the printed demonstration cites appears in it.
+requiring that everything the printed demonstration cites appears in it. Its
+default scope is only `kernel-checked` and `awaiting-ci`: 133 of 6203 catalogue
+items; `lean-typechecked` items are therefore not compared with their printed
+demonstrations.
 
 The criteria, the tier vocabulary, and what each tier does and does not license
 a reader to believe are set out in

@@ -83,11 +83,19 @@ def lean_excerpt(item: dict) -> str:
     return "\n".join(lines[start:end]).rstrip()
 
 
-def lean_signature(path_value: str, declaration_value: str) -> str:
+def lean_signature(
+    path_value: str,
+    declaration_value: str,
+    *,
+    item_id: str,
+) -> str:
     """Return a real, checked Lean declaration signature without its proof body."""
     path = ROOT / path_value
     if not path.is_file():
-        raise ValueError(f"missing Lean source {path_value} for {declaration_value}")
+        raise ValueError(
+            f"{item_id}: missing Lean source {path_value} "
+            f"for declaration {declaration_value}"
+        )
     source = path.read_text(encoding="utf-8")
     name = declaration_value.split(".")[-1]
     pattern = re.compile(
@@ -96,13 +104,15 @@ def lean_signature(path_value: str, declaration_value: str) -> str:
     matches = list(pattern.finditer(source))
     if len(matches) != 1:
         raise ValueError(
-            f"expected one declaration {declaration_value} in {path_value}, "
+            f"{item_id}: expected one declaration {declaration_value} in {path_value}, "
             f"found {len(matches)}"
         )
     tail = source[matches[0].start():]
     end = re.search(r"\s(?::=|where)\s", tail)
     if not end:
-        raise ValueError(f"cannot isolate signature {declaration_value} in {path_value}")
+        raise ValueError(
+            f"{item_id}: cannot isolate signature {declaration_value} in {path_value}"
+        )
     return tail[:end.start()].strip()
 
 
@@ -121,11 +131,19 @@ def modern_formula(item: dict) -> tuple[str, bool]:
             f"{item['id']}: statement_lean_path and statement_declaration must occur together"
         )
     if statement_path and statement_declaration:
-        return lean_signature(statement_path, statement_declaration), True
+        return lean_signature(
+            statement_path,
+            statement_declaration,
+            item_id=item["id"],
+        ), True
     if not has_lean_declaration(item):
         return "No Lean formalization has been recorded.", False
     try:
-        return lean_signature(item["lean_path"], item["declaration"]), False
+        return lean_signature(
+            item["lean_path"],
+            item["declaration"],
+            item_id=item["id"],
+        ), False
     except ValueError:
         return lean_excerpt(item), False
 
@@ -381,7 +399,13 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
             f"{item['id']}: statement_lean_path and statement_declaration must occur together"
         )
     if statement_path and statement_declaration:
-        signature = html.escape(lean_signature(statement_path, statement_declaration))
+        signature = html.escape(
+            lean_signature(
+                statement_path,
+                statement_declaration,
+                item_id=item["id"],
+            )
+        )
         statement = f'''<section class="verified-statement">
 <h2>Verified Lean proposition</h2>
 <p class="quiet">A direct typed proposition corresponding to the displayed PM formula. This is distinct from the source-chain certificate below.</p>
@@ -391,7 +415,11 @@ def item_page(item: dict, batch: dict, block: SourceBlock, apparatus: list[dict]
     modern_signature = html.escape(modern_text)
     if has_lean_declaration(item):
         try:
-            certificate_signature = lean_signature(item["lean_path"], item["declaration"])
+            certificate_signature = lean_signature(
+                item["lean_path"],
+                item["declaration"],
+                item_id=item["id"],
+            )
         except ValueError:
             certificate_signature = lean_excerpt(item)
     else:
@@ -738,11 +766,15 @@ def build(output: Path) -> None:
 
 
 def main() -> None:
-    TIERS.update(computed_tiers())
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=ROOT / "site")
     args = parser.parse_args()
-    build(args.output.resolve())
+    try:
+        TIERS.update(computed_tiers())
+        build(args.output.resolve())
+    except ValueError as error:
+        print(f"build-edition error: {error}", file=sys.stderr)
+        raise SystemExit(1) from None
 
 
 if __name__ == "__main__":
