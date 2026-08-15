@@ -80,6 +80,17 @@ def _is_protected(name: str) -> bool:
     return any(path.match(pattern) for pattern in PROTECTED_GLOBS)
 
 
+def _protected_tree_roots() -> tuple[str, ...]:
+    """Return the narrowest top-level Git pathspecs covering every glob."""
+    roots: set[str] = set()
+    for pattern in PROTECTED_GLOBS:
+        root = Path(pattern).parts[0]
+        if any(character in root for character in "*?["):
+            return (".",)
+        roots.add(root)
+    return tuple(sorted(roots))
+
+
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -94,10 +105,15 @@ def current() -> dict[str, str]:
     }
 
 
-def _git(*arguments: str, check: bool = True) -> subprocess.CompletedProcess[bytes]:
+def _git(
+    *arguments: str,
+    check: bool = True,
+    input_data: bytes | None = None,
+) -> subprocess.CompletedProcess[bytes]:
     result = subprocess.run(
         ["git", *arguments],
         cwd=ROOT,
+        input=input_data,
         capture_output=True,
         check=False,
     )
@@ -112,19 +128,53 @@ def _git_blob(revision: str, name: str) -> bytes | None:
     return result.stdout if result.returncode == 0 else None
 
 
+def _git_blob_digests(entries: list[tuple[str, str]]) -> dict[str, str]:
+    """Hash Git blobs in one batch instead of spawning once per protected file."""
+    if not entries:
+        return {}
+    queries = b"".join(f"{object_id}\n".encode("ascii") for _, object_id in entries)
+    output = _git("cat-file", "--batch", input_data=queries).stdout
+    digests: dict[str, str] = {}
+    offset = 0
+    for name, expected_id in entries:
+        header_end = output.find(b"\n", offset)
+        if header_end < 0:
+            raise RuntimeError("git cat-file --batch returned a truncated header")
+        fields = output[offset:header_end].split()
+        if len(fields) != 3 or fields[0].decode("ascii") != expected_id:
+            raise RuntimeError("git cat-file --batch returned an unexpected object")
+        if fields[1] != b"blob":
+            raise RuntimeError(f"git object for {name} is not a blob")
+        size = int(fields[2])
+        content_start = header_end + 1
+        content_end = content_start + size
+        if output[content_end : content_end + 1] != b"\n":
+            raise RuntimeError("git cat-file --batch returned truncated content")
+        digests[name] = digest_bytes(output[content_start:content_end])
+        offset = content_end + 1
+    return digests
+
+
 def committed_at(revision: str) -> dict[str, str]:
     """Return protected digests from a commit, never the worktree."""
     listing = _git(
-        "ls-tree", "-r", "-z", "--name-only", revision, "--", "scripts"
+        "ls-tree",
+        "-r",
+        "-z",
+        revision,
+        "--",
+        *_protected_tree_roots(),
     )
-    names = listing.stdout.decode("utf-8").rstrip("\0").split("\0")
-    return {
-        name: digest_bytes(blob)
-        for name in names
-        if name and _is_protected(name)
-        for blob in [_git_blob(revision, name)]
-        if blob is not None
-    }
+    entries: list[tuple[str, str]] = []
+    for record in listing.stdout.rstrip(b"\0").split(b"\0"):
+        if not record:
+            continue
+        metadata, raw_name = record.split(b"\t", 1)
+        _, object_type, raw_object_id = metadata.split(b" ", 2)
+        name = raw_name.decode("utf-8")
+        if object_type == b"blob" and _is_protected(name):
+            entries.append((name, raw_object_id.decode("ascii")))
+    return _git_blob_digests(entries)
 
 
 def head_current() -> dict[str, str]:
