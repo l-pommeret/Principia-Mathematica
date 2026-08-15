@@ -250,6 +250,15 @@
       "scripts_changed": [
         "metadata/printed_witness_exemptions.json"
       ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "authorised_head": "8ac0679efffc9d912f7e9e0152bbb23fe97daa3d",
+      "reason": "Collation compl\u00e8te contre les t\u00e9moins Gutenberg, dix-huit dispenses v\u00e9rifi\u00e9es, sur demande expresse du mainteneur",
+      "scripts_changed": [
+        "metadata/printed_witness_exemptions.json",
+        "scripts/verify_printed_against_witness.py"
+      ]
     }
   ],
   "digests": {
@@ -258,7 +267,7 @@
     "metadata/catalogue_completeness_exemptions.json": "5cfba03cf85cbe19c4c4a9d21f3893eb08fa7dfc04c14276df78bc9a48204e18",
     "metadata/dependency_aliases.json": "d1331ed17c27d94fb14bd99eb72440771e08117caa7e12b7f851935f7318c14c",
     "metadata/judgement_constructors.json": "252b73a51c4814a98e9cb1e63653ababd3cbd588a0d89dcb6d85f3cbe1772bac",
-    "metadata/printed_witness_exemptions.json": "598a7a5439e7f9237d6fb30465a6d80892cf3ee1c88919e8b602131917613241",
+    "metadata/printed_witness_exemptions.json": "e3488c2a1a795f23b3101f1db6382306d3fd86f85bd10207833a147e15d8f394",
     "metadata/two_sided_exemptions.json": "3ae93d86ea0d26bea6e0319179bbcd113ca529f58db0679b71b33041e5157a72",
     "metadata/witnesses/gutenberg/pg78050-tex.txt": "9d70c823ceb821bfa4ea786a4952fdc8d5cce846706d980b3c0103edbc99b8c5",
     "metadata/witnesses/gutenberg/pg78255-tex.txt": "688668389fe4e3123af5af92f4b026cc823a76610fe9c07b93ff509b32d37120",
@@ -291,7 +300,7 @@
     "scripts/verify_pm_parser_coverage.py": "0528160e87cf4f28a9a52652bcf4fb9fd8fb490a82251ec572f755f6708a94fd",
     "scripts/verify_predicative_gate_toy.py": "ce75f0945c0733d8d0b467d0abc90b5f6a8fa6f72eed43e5d033ad363806ab20",
     "scripts/verify_preflight.py": "c51b48a8b5b3604fb4e920239d61a978e6016a7dac19e1c5b48b6d43257464f2",
-    "scripts/verify_printed_against_witness.py": "46969402bbe03846cd08b8f1b5a5318afa3da47e94d3efd796d1c01ff6a495e2",
+    "scripts/verify_printed_against_witness.py": "134fd4f1fa66ac92a4227d4adf74a536cb880d55781407f91f921bff0ccb19c4",
     "scripts/verify_printed_citations.py": "bb1ee1609550a4c7392ce031f18b4d7943950bf99b2a241220dc7ec75ae2f14f",
     "scripts/verify_q301_gate.py": "c368e4661701b66ec17b9e64d5a42b3657d24c93f2a87f3d3623ce8efa03c794",
     "scripts/verify_retry_registry.py": "4e62c3133cdf596b61fd4ba035c3b5f099f299e4a56cd3530121f9bcb97968cb",
