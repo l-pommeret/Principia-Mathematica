@@ -88,6 +88,42 @@
       "scripts_changed": [
         "scripts/verify_printed_citations.py"
       ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "reason": "Ajout du gate verify_two_sided_readings, demande explicitement. Une proposition que PM imprime comme equivalence doit avoir deux membres a demontrer. Trois theoremes ont ete ecrits dont l'enonce nommait un seul membre deux fois, ou une forme normale partagee deux fois : l'enonce se reduisait a N = N et la reflexivite le dechargeait. Chacun compilait, ne dependait d'aucun axiome, et etait ecrit en notation PM. C'est la forme exacte des 969 fausses certifications, et elle est invisible aux autres gates : l'audit d'axiomes voit une preuve pure, T11 voit les connecteurs de PM, et T4 compare la chaine imprimee a l'AST deja replie qu'on lui donne. Mesure a l'ajout : 35 propositions concernees. Un mecanisme d'exemption existe pour les replis fideles \u2014 \u273113\u00b71 par \u273113\u00b701 \u2014 exigeant le Df justificatif et une raison motivee.",
+      "scripts_changed": [
+        "scripts/verify_two_sided_readings.py",
+        "scripts/verify_preflight.py"
+      ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "reason": "\u00c9tendre verify_two_sided_readings aux implications dont l'ant\u00e9c\u00e9dent et le cons\u00e9quent sont la m\u00eame expression (\u00ab N \u2283 N \u00bb d\u00e9charg\u00e9 par \u27312\u00b708), avec une liste d'exemptions distincte pour les identit\u00e9s que PM imprime r\u00e9ellement (\u27319\u00b723, \u27319\u00b724) ; corriger au passage la fronti\u00e8re de capture du parsed, dont le \\b final annulait l'alternative /-- et faisait d\u00e9border la lecture sur la d\u00e9claration suivante.",
+      "scripts_changed": [
+        "scripts/verify_two_sided_readings.py"
+      ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "reason": "\u00c9tendre verify_two_sided_readings \u00e0 la comparaison des CORPS de <base>_left, <base>_right et <base>_normalForm : donner deux noms au m\u00eame terme n'est pas le construire deux fois. Le contr\u00f4le passe AVANT les exemptions, une exemption attestant qu'un effondrement d\u00e9coule d'un Df de PM et ne pouvant l\u00e9gitimer un effondrement par construction \u2014 \u273110\u00b723 portait une exemption valide pour \u27319\u00b702--\u00b703 alors que son membre droit \u00e9tait une copie de la forme normale partag\u00e9e.",
+      "scripts_changed": [
+        "scripts/verify_two_sided_readings.py"
+      ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "reason": "\u00c9tendre verify_library_independence \u00e0 TOUT l'arbre Principia (CORE_TREES = ('Principia',)) au lieu des seuls Syntax et Deduction. Le p\u00e9rim\u00e8tre restreint laissait passer 33 161 lignes sous Principia/Architecture d\u00e9montrant des propositions de PM dans la logique de Lean \u2014 Classical.choice, propext, simpa, or_comm \u2014 dont 26 \u00e9taient certifi\u00e9es pm-derivation-v1. Une preuve d'une proposition de PM doit \u00eatre une preuve DANS PM ; Lean est le m\u00e9talangage qui v\u00e9rifie, jamais la logique qui fournit.",
+      "scripts_changed": [
+        "scripts/verify_library_independence.py"
+      ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "reason": "Auditer aussi inductive, structure et class dans verify_library_independence : le motif ne reconnaissait que theorem/def/abbrev/instance/lemma, si bien que PM.Star9.Star9Derivation \u2014 la relation de d\u00e9rivation de \u27319 elle-m\u00eame, dans l'arbre audit\u00e9 \u2014 portait propext et Quot.sound h\u00e9rit\u00e9s du normalisateur impur qu'elle importe, sans que l'audit ne le voie. Une relation de jugement est la d\u00e9claration dont la puret\u00e9 importe le plus : tout le d\u00e9riv\u00e9 est b\u00e2ti sur ses constructeurs.",
+      "scripts_changed": [
+        "scripts/verify_library_independence.py"
+      ]
     }
   ],
   "digests": {
@@ -110,16 +146,17 @@
     "scripts/verify_gate_integrity.py": "71b98dc10e4f98e9ba58223f7d60eee9b3635a4f4970f60c9548abb587bda44f",
     "scripts/verify_judgement_primitives.py": "e1b20a8e88c9be0d55228eb37edcfb537ca13a2942319931608e62d180a39dba",
     "scripts/verify_lean_policy.py": "b839b70fdc881fc4c76fd922572c602ccf495a5c5032098da8a5302292789b3e",
-    "scripts/verify_library_independence.py": "a54a3c49a459ffb0d85cd333a54370e4f2b588aa22b1ce24a1866382d57c13d5",
+    "scripts/verify_library_independence.py": "3a560ff713e4e713988292a8550cc6581cb5b218dad35357382801c84885247f",
     "scripts/verify_pm_parser_coverage.py": "0528160e87cf4f28a9a52652bcf4fb9fd8fb490a82251ec572f755f6708a94fd",
     "scripts/verify_predicative_gate_toy.py": "ce75f0945c0733d8d0b467d0abc90b5f6a8fa6f72eed43e5d033ad363806ab20",
-    "scripts/verify_preflight.py": "5480d9e6e50ccab25ab6f3956409a54de751d7caf93824f2e7d0971e4a48e948",
+    "scripts/verify_preflight.py": "c51b48a8b5b3604fb4e920239d61a978e6016a7dac19e1c5b48b6d43257464f2",
     "scripts/verify_printed_citations.py": "8bd6163bb026f29ded688ffbe3a64b2ca5e65dabdb2e178fbb0dc339bb9940cc",
     "scripts/verify_q301_gate.py": "c368e4661701b66ec17b9e64d5a42b3657d24c93f2a87f3d3623ce8efa03c794",
     "scripts/verify_retry_registry.py": "4e62c3133cdf596b61fd4ba035c3b5f099f299e4a56cd3530121f9bcb97968cb",
     "scripts/verify_second_order_bridge.py": "915ac8a9c9feb4e428c191231fda68582451298266d913b2c2bd8b4b4cd4a3ad",
     "scripts/verify_site.py": "4d34f886f2d141927dac260016919ebaad5637526650143936e7777ab3f7e9c9",
     "scripts/verify_statement_only_interfaces.py": "2dd955218c5229bde6f3b3136217d40c0497344f7282b780bfef6dc0be7afd3b",
+    "scripts/verify_two_sided_readings.py": "c38de99af871d27d2112af7d67f051c0b2e7319d681b698052b2ecf3bd3b7e57",
     "scripts/verify_typical_ambiguity_toy.py": "500ee91350204c4b0c3cb58315dcb0520a9030b7b9df317df876856e73c71818"
   },
   "note": "SHA-256 of every script that defines the certification standard. Changing a gate is legitimate; changing one without updating this file is not, and the preflight refuses it. Update lands in the same commit as the edit so the diff shows that the standard itself moved. Every re-pinning records who authorised it and why."
