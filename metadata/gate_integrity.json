@@ -234,6 +234,14 @@
         "tests/test_verify_context_bundles.py",
         "scripts/verify_gate_integrity.py"
       ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "authorised_head": "11ae4fa280ccdac74d645b8e66ce8f9251cee798",
+      "reason": "\u00c9quivalence diplomatique epsilon/U+2208 dans le gate de collation, sur demande expresse du mainteneur",
+      "scripts_changed": [
+        "scripts/verify_printed_against_witness.py"
+      ]
     }
   ],
   "digests": {
@@ -275,7 +283,7 @@
     "scripts/verify_pm_parser_coverage.py": "0528160e87cf4f28a9a52652bcf4fb9fd8fb490a82251ec572f755f6708a94fd",
     "scripts/verify_predicative_gate_toy.py": "ce75f0945c0733d8d0b467d0abc90b5f6a8fa6f72eed43e5d033ad363806ab20",
     "scripts/verify_preflight.py": "c51b48a8b5b3604fb4e920239d61a978e6016a7dac19e1c5b48b6d43257464f2",
-    "scripts/verify_printed_against_witness.py": "6a21d9b2b8bb1c07f297c2b7109453df08673ecde045dded7bec6754ef074fcf",
+    "scripts/verify_printed_against_witness.py": "46969402bbe03846cd08b8f1b5a5318afa3da47e94d3efd796d1c01ff6a495e2",
     "scripts/verify_printed_citations.py": "bb1ee1609550a4c7392ce031f18b4d7943950bf99b2a241220dc7ec75ae2f14f",
     "scripts/verify_q301_gate.py": "c368e4661701b66ec17b9e64d5a42b3657d24c93f2a87f3d3623ce8efa03c794",
     "scripts/verify_retry_registry.py": "4e62c3133cdf596b61fd4ba035c3b5f099f299e4a56cd3530121f9bcb97968cb",
