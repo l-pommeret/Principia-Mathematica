@@ -854,6 +854,50 @@ private theorem star_10_35_conjunction_substitute
   rw [sameDisjunction_substitute]
   rfl
 
+private theorem star10_matrixEquivalence_weakenReal
+    {fresh : RSort}
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature real apparent order) :
+    (equivalence negation disjunction left right).weakenReal (fresh := fresh) =
+      equivalence negation disjunction left.weakenReal right.weakenReal := by
+  unfold equivalence conjunction
+  change Formula.neg negation
+    ((sameDisjunction disjunction
+      (.neg negation (implication negation disjunction left right))
+      (.neg negation (implication negation disjunction right left))).weakenReal) = _
+  rw [sameDisjunction_weakenReal]
+  change Formula.neg negation
+    (sameDisjunction disjunction
+      (.neg negation
+        ((implication negation disjunction left right).weakenReal))
+      (.neg negation
+        ((implication negation disjunction right left).weakenReal))) = _
+  rw [implication_weakenReal, implication_weakenReal]
+
+private theorem star10_matrixEquivalence_substitute
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature real source order)
+    (sigma : Substitution signature real source target) :
+    (equivalence negation disjunction left right).substitute sigma =
+      equivalence negation disjunction
+        (left.substitute sigma) (right.substitute sigma) := by
+  unfold equivalence conjunction
+  change Formula.neg negation
+    ((sameDisjunction disjunction
+      (.neg negation (implication negation disjunction left right))
+      (.neg negation (implication negation disjunction right left))).substitute
+        sigma) = _
+  rw [sameDisjunction_substitute]
+  change Formula.neg negation
+    (sameDisjunction disjunction
+      (.neg negation
+        ((implication negation disjunction left right).substitute sigma))
+      (.neg negation
+        ((implication negation disjunction right left).substitute sigma))) = _
+  rw [implication_substitute, implication_substitute]
+
 /-! ## ✱10·22 and its stable-order ✱10·21 scope instance -/
 
 /-- The independently constructed left member `(x).p⊃φx` of the stable-order
@@ -1550,6 +1594,534 @@ theorem star_10_271
       (implication negation disjunction universalPsi universalPhi))
     line1 line2
   unfold star_10_271_reading star_10_271_right star_4_01
+  exact line3
+
+/-! ## ✱10·301--·32 -/
+
+/-- Audited catalogue reading of ✱10·301.  The final implication retains
+the ✱10·21 scope tree used in PM's printed ✱10·22 step. -/
+def star_10_301_reading
+    (universal : signature.Universal argument (Nat.succ argument.height))
+    (negation : signature.Negation (Nat.succ argument.height))
+    (disjunction : signature.Disjunction (Nat.succ argument.height))
+    (phi psi chi :
+      Formula signature real [argument] (Nat.succ argument.height)) :
+    ClaimReading signature real where
+  printed := "✱10·301.  ⊢ : .(x).φx≡ψx : (x).ψx≡χx : ⊃ .(x).φx≡χx"
+  parsed := .assertion
+    (star_10_21_stable_right universal negation disjunction
+      (conjunction negation disjunction
+        (star10_stableUniversal universal
+          (equivalence negation disjunction phi psi))
+        (star10_stableUniversal universal
+          (equivalence negation disjunction psi chi)))
+      (equivalence negation disjunction phi chi))
+
+/-- ✱10·301.  `line1` and `line2` are the cited ✱10·22 consequence;
+`line3`--`line5` are ✱4·22 followed by ✱10·11 and ✱10·27, and `line6`
+is the printed propositional composition.
+`demonstration_provenance: follows-printed`. -/
+theorem star_10_301
+    (universal : signature.Universal argument (Nat.succ argument.height))
+    (negation : signature.Negation (Nat.succ argument.height))
+    (disjunction : signature.Disjunction (Nat.succ argument.height))
+    (phi psi chi :
+      Formula signature real [argument] (Nat.succ argument.height)) :
+    Derivation (star_10_301_reading universal negation disjunction
+      phi psi chi).parsed := by
+  let value : Term signature (argument :: real) [] argument := .real .zero
+  let phiPsi := equivalence negation disjunction phi psi
+  let psiChi := equivalence negation disjunction psi chi
+  let phiChi := equivalence negation disjunction phi chi
+  let pair := conjunction negation disjunction phiPsi psiChi
+  let hypothesis := conjunction negation disjunction
+    (star10_stableUniversal universal phiPsi)
+    (star10_stableUniversal universal psiChi)
+  have line1 := star_10_22 universal negation disjunction phiPsi psiChi
+  unfold star_10_22_reading at line1
+  change Derivation (.assertion (conjunction negation disjunction
+    (implication negation disjunction
+      (star10_stableUniversal universal pair) hypothesis)
+    (star_10_21_stable_right universal negation disjunction
+      hypothesis pair))) at line1
+  have line2 := Derivation.star_9_12_same negation disjunction line1
+    (star_3_27 negation disjunction
+      (implication negation disjunction
+        (star10_stableUniversal universal pair) hypothesis)
+      (star_10_21_stable_right universal negation disjunction
+        hypothesis pair))
+  have line3 : Derivation (.assertion
+      (star10_stableUniversal universal
+        (implication negation disjunction pair phiChi))) := by
+    apply star10_stableGeneralize
+    unfold pair phiPsi psiChi phiChi
+    rw [implication_weakenReal,
+      star_10_35_conjunction_weakenReal,
+      star10_matrixEquivalence_weakenReal,
+      star10_matrixEquivalence_weakenReal,
+      star10_matrixEquivalence_weakenReal,
+      Formula.instantiate, implication_substitute,
+      star_10_35_conjunction_substitute,
+      star10_matrixEquivalence_substitute,
+      star10_matrixEquivalence_substitute,
+      star10_matrixEquivalence_substitute]
+    exact star_4_22 negation disjunction
+      (phi.weakenReal.substitute (instantiateSubstitution value))
+      (psi.weakenReal.substitute (instantiateSubstitution value))
+      (chi.weakenReal.substitute (instantiateSubstitution value))
+  have line4 := star_10_27_stable universal negation disjunction pair phiChi
+  unfold star_10_27_stable_reading star_10_27_stable_left
+    star_10_27_stable_right at line4
+  have line5 := detach negation disjunction _ _ line3 line4
+  have line6 := star10_composeCertified negation disjunction
+    hypothesis (star10_stableUniversal universal pair)
+    (star10_stableUniversal universal phiChi)
+    (.neg negation hypothesis)
+    (.neg negation (star10_stableUniversal universal pair))
+    (star_10_21_stable_right universal negation disjunction hypothesis pair)
+    (implication negation disjunction
+      (star10_stableUniversal universal pair)
+      (star10_stableUniversal universal phiChi))
+    (star_10_21_stable_right universal negation disjunction hypothesis phiChi)
+    (ImplicationNegation.star_1_01 negation hypothesis)
+    (ImplicationNegation.star_1_01 negation
+      (star10_stableUniversal universal pair))
+    (star10_stableScopeDisjunction universal negation disjunction
+      hypothesis pair)
+    (ImplicationDisjunction.star_1_01_same disjunction
+      (.neg negation (star10_stableUniversal universal pair))
+      (star10_stableUniversal universal phiChi))
+    (star10_stableScopeDisjunction universal negation disjunction
+      hypothesis phiChi)
+    line2 line5
+  unfold star_10_301_reading
+  exact line6
+
+/-- Audited catalogue reading of ✱10·31. -/
+def star_10_31_reading
+    (universal : signature.Universal argument (Nat.succ argument.height))
+    (negation : signature.Negation (Nat.succ argument.height))
+    (disjunction : signature.Disjunction (Nat.succ argument.height))
+    (phi psi chi :
+      Formula signature real [argument] (Nat.succ argument.height)) :
+    ClaimReading signature real where
+  printed := "✱10·31.  ⊢ : .(x).φx⊃ψx .⊃ : (x) : φx .χx .⊃ .ψx .χx"
+  parsed := .assertion (implication negation disjunction
+    (star10_stableUniversal universal
+      (implication negation disjunction phi psi))
+    (star10_stableUniversal universal
+      (implication negation disjunction
+        (conjunction negation disjunction phi chi)
+        (conjunction negation disjunction psi chi))))
+
+/-- ✱10·31, by the printed `Fact`, ✱10·11 and ✱10·27 chain.
+`demonstration_provenance: follows-printed`. -/
+theorem star_10_31
+    (universal : signature.Universal argument (Nat.succ argument.height))
+    (negation : signature.Negation (Nat.succ argument.height))
+    (disjunction : signature.Disjunction (Nat.succ argument.height))
+    (phi psi chi :
+      Formula signature real [argument] (Nat.succ argument.height)) :
+    Derivation (star_10_31_reading universal negation disjunction
+      phi psi chi).parsed := by
+  let value : Term signature (argument :: real) [] argument := .real .zero
+  let forward := implication negation disjunction phi psi
+  let consequence := implication negation disjunction
+    (conjunction negation disjunction phi chi)
+    (conjunction negation disjunction psi chi)
+  have line1 : Derivation (.assertion
+      (star10_stableUniversal universal
+        (implication negation disjunction forward consequence))) := by
+    apply star10_stableGeneralize
+    unfold forward consequence
+    rw [implication_weakenReal,
+      implication_weakenReal, implication_weakenReal,
+      star_10_35_conjunction_weakenReal,
+      star_10_35_conjunction_weakenReal,
+      Formula.instantiate, implication_substitute,
+      implication_substitute, implication_substitute,
+      star_10_35_conjunction_substitute,
+      star_10_35_conjunction_substitute]
+    exact star_3_45 negation disjunction
+      (phi.weakenReal.substitute (instantiateSubstitution value))
+      (psi.weakenReal.substitute (instantiateSubstitution value))
+      (chi.weakenReal.substitute (instantiateSubstitution value))
+  have line2 := star_10_27_stable universal negation disjunction
+    forward consequence
+  unfold star_10_27_stable_reading star_10_27_stable_left
+    star_10_27_stable_right at line2
+  have line3 := detach negation disjunction _ _ line1 line2
+  unfold star_10_31_reading
+  exact line3
+
+/-- Audited catalogue reading of ✱10·311. -/
+def star_10_311_reading
+    (universal : signature.Universal argument (Nat.succ argument.height))
+    (negation : signature.Negation (Nat.succ argument.height))
+    (disjunction : signature.Disjunction (Nat.succ argument.height))
+    (phi psi chi :
+      Formula signature real [argument] (Nat.succ argument.height)) :
+    ClaimReading signature real where
+  printed := "✱10·311.  ⊢ : .(x).φx≡ψx .⊃ : (x) : φx .χx .≡ .ψx .χx"
+  parsed := .assertion (implication negation disjunction
+    (star10_stableUniversal universal
+      (equivalence negation disjunction phi psi))
+    (star10_stableUniversal universal
+      (equivalence negation disjunction
+        (conjunction negation disjunction phi chi)
+        (conjunction negation disjunction psi chi))))
+
+/-- ✱10·311, by the printed ✱4·36, ✱10·11 and ✱10·27 chain.
+`demonstration_provenance: follows-printed`. -/
+theorem star_10_311
+    (universal : signature.Universal argument (Nat.succ argument.height))
+    (negation : signature.Negation (Nat.succ argument.height))
+    (disjunction : signature.Disjunction (Nat.succ argument.height))
+    (phi psi chi :
+      Formula signature real [argument] (Nat.succ argument.height)) :
+    Derivation (star_10_311_reading universal negation disjunction
+      phi psi chi).parsed := by
+  let value : Term signature (argument :: real) [] argument := .real .zero
+  let antecedent := equivalence negation disjunction phi psi
+  let consequence := equivalence negation disjunction
+    (conjunction negation disjunction phi chi)
+    (conjunction negation disjunction psi chi)
+  have line1 : Derivation (.assertion
+      (star10_stableUniversal universal
+        (implication negation disjunction antecedent consequence))) := by
+    apply star10_stableGeneralize
+    unfold antecedent consequence
+    rw [implication_weakenReal,
+      star10_matrixEquivalence_weakenReal,
+      star10_matrixEquivalence_weakenReal,
+      star_10_35_conjunction_weakenReal,
+      star_10_35_conjunction_weakenReal,
+      Formula.instantiate, implication_substitute,
+      star10_matrixEquivalence_substitute,
+      star10_matrixEquivalence_substitute,
+      star_10_35_conjunction_substitute,
+      star_10_35_conjunction_substitute]
+    exact star_4_36 negation disjunction
+      (phi.weakenReal.substitute (instantiateSubstitution value))
+      (psi.weakenReal.substitute (instantiateSubstitution value))
+      (chi.weakenReal.substitute (instantiateSubstitution value))
+  have line2 := star_10_27_stable universal negation disjunction
+    antecedent consequence
+  unfold star_10_27_stable_reading star_10_27_stable_left
+    star_10_27_stable_right at line2
+  have line3 := detach negation disjunction _ _ line1 line2
+  unfold star_10_311_reading
+  exact line3
+
+private theorem star10_bindOrderAbsorbMatrix
+    (matrixOrder : Nat) (argument : RSort) :
+    max (bindOrder matrixOrder argument) matrixOrder =
+      bindOrder matrixOrder argument := by
+  rw [bindOrderMaxRight, natMaxSelf]
+
+private theorem star10_bindOrderIdempotent
+    (matrixOrder : Nat) (argument : RSort) :
+    bindOrder (bindOrder matrixOrder argument) argument =
+      bindOrder matrixOrder argument := by
+  unfold bindOrder
+  exact MixedOrder.maxRightAbsorb matrixOrder (Nat.succ argument.height)
+
+private def star10_boundImplication
+    (orderEquality : max leftOrder rightOrder = resultOrder)
+    (negation : signature.Negation leftOrder)
+    (disjunction : signature.Disjunction resultOrder)
+    (left : Formula signature real apparent leftOrder)
+    (right : Formula signature real apparent rightOrder) :
+    Formula signature real apparent resultOrder :=
+  Eq.mp (congrArg (Formula signature real apparent) orderEquality)
+    (mixedImplication negation
+      (Eq.mp (congrArg signature.Disjunction orderEquality.symm) disjunction)
+      left right)
+
+private theorem star10_boundImplication_weakenReal
+    (orderEquality : max leftOrder rightOrder = resultOrder)
+    (negation : signature.Negation leftOrder)
+    (disjunction : signature.Disjunction resultOrder)
+    (left : Formula signature real apparent leftOrder)
+    (right : Formula signature real apparent rightOrder) :
+    (star10_boundImplication orderEquality negation disjunction
+      left right).weakenReal (fresh := fresh) =
+      star10_boundImplication orderEquality negation disjunction
+        left.weakenReal right.weakenReal := by
+  cases orderEquality
+  rfl
+
+private theorem star10_boundImplication_substitute
+    (orderEquality : max leftOrder rightOrder = resultOrder)
+    (negation : signature.Negation leftOrder)
+    (disjunction : signature.Disjunction resultOrder)
+    (left : Formula signature real source leftOrder)
+    (right : Formula signature real source rightOrder)
+    (sigma : Substitution signature real source target) :
+    (star10_boundImplication orderEquality negation disjunction
+      left right).substitute sigma =
+      star10_boundImplication orderEquality negation disjunction
+        (left.substitute sigma) (right.substitute sigma) := by
+  cases orderEquality
+  rfl
+
+private theorem star10_uncastAssertionOrder
+    (equality : sourceOrder = targetOrder)
+    (formula : Formula signature real [] sourceOrder) :
+    Derivation (.assertion
+      (Eq.mp (congrArg (Formula signature real []) equality) formula)) →
+      Derivation (.assertion formula) := by
+  cases equality
+  exact fun derivation => derivation
+
+private def star10_castImplicationDisjunctionResult
+    (equality : sourceOrder = targetOrder)
+    (left : Formula signature real apparent leftOrder)
+    (right : Formula signature real apparent rightOrder)
+    (result : Formula signature real apparent sourceOrder)
+    (reading : ImplicationDisjunction signature real left right result) :
+    ImplicationDisjunction signature real left right
+      (Eq.mp (congrArg (Formula signature real apparent) equality) result) := by
+  cases equality
+  exact reading
+
+private theorem star10_ternarySyll
+    (negation : MixedOrder.TernaryNegations signature)
+    (disjunction : MixedOrder.TernaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.pOrder)
+    (q : Formula signature real [] negation.qOrder)
+    (r : Formula signature real [] negation.rOrder)
+    (line1 : Derivation (.assertion
+      (MixedOrder.ternaryInterpret negation disjunction p q r
+        (MixedOrder.ternaryP ⊃ₚ MixedOrder.ternaryQ))))
+    (line2 : Derivation (.assertion
+      (MixedOrder.ternaryInterpret negation disjunction p q r
+        (MixedOrder.ternaryQ ⊃ₚ MixedOrder.ternaryR)))) :
+    Derivation (.assertion
+      (MixedOrder.ternaryInterpret negation disjunction p q r
+        (MixedOrder.ternaryP ⊃ₚ MixedOrder.ternaryR))) := by
+  have line3 := MixedOrder.ternaryTransport negation disjunction p q r
+    (PM.FirstEdition.Volume1.Star2.star_2_05 MixedOrder.ternaryP
+      MixedOrder.ternaryQ MixedOrder.ternaryR)
+  have line4 := MixedOrder.detach
+    (MixedOrder.ternaryOrderCombine negation .qr .pqr)
+    negation.qr disjunction.pqr
+    (MixedOrder.ternaryInterpret negation disjunction p q r
+      (MixedOrder.ternaryQ ⊃ₚ MixedOrder.ternaryR))
+    (MixedOrder.ternaryInterpret negation disjunction p q r
+      ((MixedOrder.ternaryP ⊃ₚ MixedOrder.ternaryQ) ⊃ₚ
+        (MixedOrder.ternaryP ⊃ₚ MixedOrder.ternaryR))) line2 line3
+  exact MixedOrder.detach
+    (MixedOrder.ternaryOrderCombine negation .pq .pr)
+    negation.pq disjunction.pqr
+    (MixedOrder.ternaryInterpret negation disjunction p q r
+      (MixedOrder.ternaryP ⊃ₚ MixedOrder.ternaryQ))
+    (MixedOrder.ternaryInterpret negation disjunction p q r
+      (MixedOrder.ternaryP ⊃ₚ MixedOrder.ternaryR)) line1 line4
+
+private theorem star10_generalFormalDirection
+    (universal : signature.Universal argument matrixOrder)
+    (scopeUniversal : signature.Universal argument
+      (bindOrder matrixOrder argument))
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction matrixOrder)
+    (outerNegation : signature.Negation (bindOrder matrixOrder argument))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder matrixOrder argument))
+    (phi psi : Formula signature real [argument] matrixOrder) :
+    Derivation (.assertion (implication outerNegation outerDisjunction
+      (.always universal (equivalence matrixNegation matrixDisjunction phi psi))
+      (.always universal (equivalence matrixNegation matrixDisjunction psi phi)))) := by
+  let boundOrder := bindOrder matrixOrder argument
+  let boundMatrixEquality := star10_bindOrderAbsorbMatrix matrixOrder argument
+  let boundEquality := star10_bindOrderIdempotent matrixOrder argument
+  let matrixSelfEquality := natMaxSelf matrixOrder
+  let fullEquality : max boundOrder (max matrixOrder matrixOrder) = boundOrder :=
+    Eq.trans (congrArg (max boundOrder) matrixSelfEquality) boundMatrixEquality
+  let mixedDisjunction := Eq.mp
+    (congrArg signature.Disjunction boundMatrixEquality.symm) outerDisjunction
+  let phiPsi := equivalence matrixNegation matrixDisjunction phi psi
+  let psiPhi := equivalence matrixNegation matrixDisjunction psi phi
+  let left := Formula.always universal phiPsi
+  let right := Formula.always universal psiPhi
+  let value : Term signature (argument :: real) [] argument := .real .zero
+  let phiInstance := phi.weakenReal.substitute (instantiateSubstitution value)
+  let psiInstance := psi.weakenReal.substitute (instantiateSubstitution value)
+  let phiPsiInstance := equivalence matrixNegation matrixDisjunction
+    phiInstance psiInstance
+  let psiPhiInstance := equivalence matrixNegation matrixDisjunction
+    psiInstance phiInstance
+  let orderVocabulary : MixedOrder.TernaryNegations signature := {
+    pOrder := boundOrder
+    qOrder := matrixOrder
+    rOrder := matrixOrder
+    p := outerNegation
+    q := matrixNegation
+    r := matrixNegation
+    pq := Eq.mp (congrArg signature.Negation boundMatrixEquality.symm)
+      outerNegation
+    pr := Eq.mp (congrArg signature.Negation boundMatrixEquality.symm)
+      outerNegation
+    qr := Eq.mp (congrArg signature.Negation matrixSelfEquality.symm)
+      matrixNegation
+    pqr := Eq.mp (congrArg signature.Negation fullEquality.symm)
+      outerNegation
+  }
+  let connectiveVocabulary : MixedOrder.TernaryDisjunctions signature
+      orderVocabulary := {
+    p := outerDisjunction
+    q := matrixDisjunction
+    r := matrixDisjunction
+    pq := mixedDisjunction
+    pr := mixedDisjunction
+    qr := Eq.mp (congrArg signature.Disjunction matrixSelfEquality.symm)
+      matrixDisjunction
+    pqr := Eq.mp (congrArg signature.Disjunction fullEquality.symm)
+      outerDisjunction
+  }
+  have line1 := Derivation.star_10_1 universal outerNegation mixedDisjunction
+    phiPsi.weakenReal value
+  have line2 :
+      (phiPsi.weakenReal.instantiate value) = phiPsiInstance := by
+    unfold phiPsi phiPsiInstance
+    rw [star10_matrixEquivalence_weakenReal, Formula.instantiate,
+      star10_matrixEquivalence_substitute]
+  have line3 : Derivation (.assertion
+      (mixedImplication outerNegation mixedDisjunction left.weakenReal
+        phiPsiInstance)) :=
+    Derivation.castAssertion
+      (congrArg (mixedImplication outerNegation mixedDisjunction
+        left.weakenReal) line2.symm) line1
+  change Derivation (.assertion
+    (MixedOrder.ternaryInterpret orderVocabulary connectiveVocabulary
+      left.weakenReal phiPsiInstance psiPhiInstance
+      (MixedOrder.ternaryP ⊃ₚ MixedOrder.ternaryQ))) at line3
+  have line4 := star_4_21 matrixNegation matrixDisjunction
+    phiInstance psiInstance
+  have line5 := Derivation.star_9_12_same matrixNegation matrixDisjunction
+    line4 (star_3_26 matrixNegation matrixDisjunction
+      (implication matrixNegation matrixDisjunction
+        phiPsiInstance psiPhiInstance)
+      (implication matrixNegation matrixDisjunction
+        psiPhiInstance phiPsiInstance))
+  have line6 := Derivation.castAssertion
+    (mixedImplication_normalizeSameOrder rfl rfl matrixNegation
+      matrixDisjunction phiPsiInstance psiPhiInstance) line5
+  have line7 := star10_uncastAssertionOrder matrixSelfEquality
+    (mixedImplication matrixNegation
+      (Eq.mp (congrArg signature.Disjunction matrixSelfEquality.symm)
+        matrixDisjunction) phiPsiInstance psiPhiInstance) line6
+  change Derivation (.assertion
+    (MixedOrder.ternaryInterpret orderVocabulary connectiveVocabulary
+      left.weakenReal phiPsiInstance psiPhiInstance
+      (MixedOrder.ternaryQ ⊃ₚ MixedOrder.ternaryR))) at line7
+  have line8 := star10_ternarySyll orderVocabulary connectiveVocabulary
+    left.weakenReal phiPsiInstance psiPhiInstance line3 line7
+  change Derivation (.assertion
+    (mixedImplication outerNegation mixedDisjunction
+      left.weakenReal psiPhiInstance)) at line8
+  have line9 := star10_castAssertionOrder boundMatrixEquality
+    (mixedImplication outerNegation mixedDisjunction
+      left.weakenReal psiPhiInstance) line8
+  let scopeBody := star10_boundImplication boundMatrixEquality
+    outerNegation outerDisjunction (left.rename (fun v => .succ v)) psiPhi
+  have line10 : Derivation (.assertion
+      (scopeBody.weakenReal.instantiate value)) := by
+    unfold scopeBody
+    rw [star10_boundImplication_weakenReal,
+      Formula.instantiate, star10_boundImplication_substitute,
+      Formula.closed_weakenReal_instantiateSubstitution,
+      star10_matrixEquivalence_weakenReal,
+      star10_matrixEquivalence_substitute]
+    exact line9
+  have line11 := star_10_11 scopeUniversal scopeBody line10
+  let scopedFormula := Eq.mp
+    (congrArg (Formula signature real []) boundEquality)
+    (.always scopeUniversal scopeBody)
+  have line12 : Derivation (.assertion scopedFormula) :=
+    star10_castAssertionOrder boundEquality
+      (.always scopeUniversal scopeBody) line11
+  let line13 : ImplicationDisjunction signature real
+      (Formula.neg outerNegation left) right scopedFormula := by
+    let line11a : ImplicationDisjunction signature real
+        ((Formula.neg outerNegation left).rename (fun v => .succ v)) psiPhi
+        scopeBody := by
+      unfold scopeBody star10_boundImplication
+      exact star10_castImplicationDisjunctionResult boundMatrixEquality
+        ((Formula.neg outerNegation left).rename (fun v => .succ v)) psiPhi
+        (.disj mixedDisjunction
+          ((Formula.neg outerNegation left).rename (fun v => .succ v)) psiPhi)
+        (ImplicationDisjunction.star_1_01 mixedDisjunction
+          ((Formula.neg outerNegation left).rename (fun v => .succ v)) psiPhi)
+    let line11b : ImplicationDisjunction signature real
+        (Formula.neg outerNegation left) right
+          (.always scopeUniversal scopeBody) :=
+      ImplicationDisjunction.star_9_04 universal scopeUniversal
+        (Formula.neg outerNegation left) psiPhi scopeBody line11a
+    exact star10_castImplicationDisjunctionResult boundEquality
+      (Formula.neg outerNegation left) right
+      (.always scopeUniversal scopeBody) line11b
+  have line14 := star10_composeCertified outerNegation outerDisjunction
+    left left right
+    (.neg outerNegation left) (.neg outerNegation left)
+    (implication outerNegation outerDisjunction left left)
+    scopedFormula
+    (implication outerNegation outerDisjunction left right)
+    (ImplicationNegation.star_1_01 outerNegation left)
+    (ImplicationNegation.star_1_01 outerNegation left)
+    (ImplicationDisjunction.star_1_01_same outerDisjunction
+      (.neg outerNegation left) left)
+    line13
+    (ImplicationDisjunction.star_1_01_same outerDisjunction
+      (.neg outerNegation left) right)
+    (star_2_08 outerNegation outerDisjunction left) line12
+  exact line14
+
+/-- Audited catalogue reading of ✱10·32, generalized over the matrix order.
+The second universal is the scope meaning required by the printed ✱10·271
+transport once the first quantifier has raised the assigned order. -/
+def star_10_32_reading
+    (universal : signature.Universal argument matrixOrder)
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction matrixOrder)
+    (outerNegation : signature.Negation (bindOrder matrixOrder argument))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder matrixOrder argument))
+    (phi psi : Formula signature real [argument] matrixOrder) :
+    ClaimReading signature real where
+  printed := "✱10·32. ⊢:φ x≡ₓψ x.≡.ψ x≡ₓφ x"
+  parsed := .assertion (star_4_01 outerNegation outerDisjunction
+    (.always universal (equivalence matrixNegation matrixDisjunction phi psi))
+    (.always universal (equivalence matrixNegation matrixDisjunction psi phi)))
+
+/-- ✱10·32.  Each direction generalizes ✱4·21 by ✱10·11 and the
+general-order form of the ✱10·271 transport; ✱10·13 joins both directions.
+`demonstration_provenance: follows-printed`. -/
+theorem star_10_32
+    (universal : signature.Universal argument matrixOrder)
+    (scopeUniversal : signature.Universal argument
+      (bindOrder matrixOrder argument))
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction matrixOrder)
+    (outerNegation : signature.Negation (bindOrder matrixOrder argument))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder matrixOrder argument))
+    (phi psi : Formula signature real [argument] matrixOrder) :
+    Derivation (star_10_32_reading universal matrixNegation
+      matrixDisjunction outerNegation outerDisjunction phi psi).parsed := by
+  have line1 := star10_generalFormalDirection universal scopeUniversal
+    matrixNegation matrixDisjunction outerNegation outerDisjunction phi psi
+  have line2 := star10_generalFormalDirection universal scopeUniversal
+    matrixNegation matrixDisjunction outerNegation outerDisjunction psi phi
+  have line3 := star_10_13 outerNegation outerDisjunction
+    (implication outerNegation outerDisjunction
+      (.always universal (equivalence matrixNegation matrixDisjunction phi psi))
+      (.always universal (equivalence matrixNegation matrixDisjunction psi phi)))
+    (implication outerNegation outerDisjunction
+      (.always universal (equivalence matrixNegation matrixDisjunction psi phi))
+      (.always universal (equivalence matrixNegation matrixDisjunction phi psi)))
+    line1 line2
+  unfold star_10_32_reading star_4_01
   exact line3
 
 /-! ## ✱10·33 -/
@@ -2928,6 +3500,10 @@ end PM.RamifiedSyntax
 #print axioms PM.RamifiedSyntax.star_10_27_stable
 #print axioms PM.RamifiedSyntax.star_10_271
 #print axioms PM.RamifiedSyntax.star_10_28
+#print axioms PM.RamifiedSyntax.star_10_301
+#print axioms PM.RamifiedSyntax.star_10_31
+#print axioms PM.RamifiedSyntax.star_10_311
+#print axioms PM.RamifiedSyntax.star_10_32
 #print axioms PM.RamifiedSyntax.star_10_33
 #print axioms PM.RamifiedSyntax.star_10_34
 #print axioms PM.RamifiedSyntax.star_10_36
