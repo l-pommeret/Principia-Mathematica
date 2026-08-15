@@ -16,8 +16,9 @@
       "id": "PM2:✱111·01",
       "kind": "definition",
       "printed": "κ sm sm λ=(1→1)∩α̂Ŝα∩T̂(κ=T̆ʻλ) Df",
-      "lean_path": "Principia/Architecture/Star111Kernel.lean",
-      "declaration": "PM.Architecture.Star111Kernel.star_111_01",
+      "lean_path": "Principia/Deduction/Star111Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_111_01",
+      "reading_declaration": "PM.RamifiedSyntax.star_111_01_reading",
       "formal_scope": "exact typed definitional expansion of double similarity into a bijective class map preserving class membership",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
@@ -34,15 +35,16 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM2:✱111·02",
       "kind": "definition",
       "printed": "Crp(S)ʻβ=(Sʻβ) sm β Df",
-      "lean_path": "Principia/Architecture/Star111Kernel.lean",
-      "declaration": "PM.Architecture.Star111Kernel.star_111_02",
+      "lean_path": "Principia/Deduction/Star111Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_111_02",
+      "reading_declaration": "PM.RamifiedSyntax.star_111_02_reading",
       "formal_scope": "exact typed definitional expansion of correspondence as similarity of the correlated class and its argument",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
@@ -59,13 +61,13 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

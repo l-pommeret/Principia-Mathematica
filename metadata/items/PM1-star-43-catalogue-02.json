@@ -21,8 +21,6 @@
       "printed": "✱43·111. ⊢ . (| R)ʻQ = Q | R",
       "printed_page": 341,
       "scan_leaf": 363,
-      "lean_path": "Principia/Architecture/Star43OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star43OpeningKernel.star_43_111",
       "formal_scope": "refused: Lean proves only reflexivity of the local right-product value; the printed descriptive-function application and its link to PM relative product are not reconstructed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -30,9 +28,7 @@
       "integration_blocked": true,
       "blocking_reason": "The declaration proves product Q R = product Q R by reflexivity; it does not reconstruct application of PM's descriptive function (| R) or bridge the local product to PM relative product.",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star43OpeningKernel.product"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱43·01"
       ],
@@ -48,7 +44,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -57,8 +53,6 @@
       "printed": "✱43·112. ⊢ . (R ∥ S)ʻQ = R | Q | S",
       "printed_page": 341,
       "scan_leaf": 363,
-      "lean_path": "Principia/Architecture/Star43OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star43OpeningKernel.star_43_112",
       "formal_scope": "refused: Lean proves only reflexivity of the local sandwich value; the printed descriptive-function application and its link to PM relative product are not reconstructed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -66,9 +60,7 @@
       "integration_blocked": true,
       "blocking_reason": "The declaration proves product (product R Q) S = itself by reflexivity; it does not reconstruct application of PM's descriptive function (R ∥ S) or bridge either product to PM relative product.",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star43OpeningKernel.product"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱43·01"
       ],
@@ -84,7 +76,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -93,8 +85,6 @@
       "printed": "✱43·12. ⊢ . E!(R |)ʻQ",
       "printed_page": 341,
       "scan_leaf": 363,
-      "lean_path": "Principia/Architecture/Star43OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star43OpeningKernel.star_43_12",
       "formal_scope": "refused pending a source-semantic bridge: Lean proves unique output for a locally defined equality relation, not PM's E! assertion for the descriptive function (R |)",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -102,9 +92,7 @@
       "integration_blocked": true,
       "blocking_reason": "uniqueValue is satisfied definitionally by leftProduct P Q := P = product R Q; no theorem identifies this local construction with PM's descriptive-function existence assertion.",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star43OpeningKernel.product"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱43·01"
       ],
@@ -119,7 +107,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -128,8 +116,6 @@
       "printed": "✱43·121. ⊢ . E!(| R)ʻQ",
       "printed_page": 341,
       "scan_leaf": 363,
-      "lean_path": "Principia/Architecture/Star43OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star43OpeningKernel.star_43_121",
       "formal_scope": "refused pending a source-semantic bridge: Lean proves unique output for a locally defined equality relation, not PM's E! assertion for the descriptive function (| R)",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -137,9 +123,7 @@
       "integration_blocked": true,
       "blocking_reason": "uniqueValue is satisfied definitionally by rightProduct P Q := P = product Q R; no theorem identifies this local construction with PM's descriptive-function existence assertion.",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star43OpeningKernel.product"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱43·01"
       ],
@@ -154,7 +138,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -163,8 +147,6 @@
       "printed": "✱43·122. ⊢ . E!(R ∥ S)ʻQ",
       "printed_page": 341,
       "scan_leaf": 363,
-      "lean_path": "Principia/Architecture/Star43OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star43OpeningKernel.star_43_122",
       "formal_scope": "refused pending a source-semantic bridge: Lean proves unique output for a locally defined equality relation, not PM's E! assertion for the descriptive function (R ∥ S)",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -172,9 +154,7 @@
       "integration_blocked": true,
       "blocking_reason": "uniqueValue is satisfied definitionally by sandwich P Q := P = product (product R Q) S; no theorem identifies this local construction with PM's descriptive-function existence assertion.",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star43OpeningKernel.product"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱43·01"
       ],
@@ -189,7 +169,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

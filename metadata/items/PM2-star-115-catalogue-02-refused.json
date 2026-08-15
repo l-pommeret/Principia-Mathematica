@@ -21,8 +21,6 @@
       "printed": "✱115·12. ⊢ : κ∈Cls² excl .⊃. Prodʻκ∈ΠNcʻκ . Prodʻκ sm ∈_Δʻκ [✱84·41]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_12",
       "formal_scope": "refused: PM asserts cardinal-class membership and similarity of the multiplicative class with the diagonal membership relation under mutual exclusivity; Lean proves only function extensionality for two already-typed product elements",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -30,9 +28,7 @@
       "printed_dependencies": [
         "PM1:✱84·41"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
@@ -46,7 +42,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -55,8 +51,6 @@
       "printed": "✱115·13. ⊢ : α∩β=Λ .⊃. Prodʻ(ιʻα∪ιʻβ) sm (α×β) [✱113·152]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_13",
       "formal_scope": "refused: PM gives a similarity/equinumerosity between the whole product class of two disjoint factors and their Cartesian product; Lean proves only equivalence of inhabitation for a Bool-indexed dependent product and A × B",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -76,7 +70,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -85,8 +79,6 @@
       "printed": "✱115·131. ⊢ : α≠β .⊃. Prodʻ(ιʻα∪ιʻβ)=Cʻʻ(α×β) [✱113·151]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_131",
       "formal_scope": "refused: PM states an equality of the full product class with the image of ordered pairs when the factors differ; Lean only equates simultaneous inhabitation of A and B with inhabitation of A × B and omits the distinctness premise",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -106,7 +98,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -115,8 +107,6 @@
       "printed": "✱115·14. ⊢ :: κ∩λ=Λ ∨ sʻκ∩sʻλ=Λ :⊃: ϖ∈Prodʻ(κ∪λ) .≡. (∃ρ,σ). ρ∈Prodʻκ . σ∈Prodʻλ . ϖ=ρ∪σ [✱83·64·641]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_14",
       "formal_scope": "refused: PM characterizes membership of each ϖ in a union-family product by an explicit decomposition ϖ=ρ∪σ under a disjointness alternative; Lean proves only equivalence of nonemptiness for a Sum-indexed product and a pair of subproducts",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -137,7 +127,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -146,8 +136,6 @@
       "printed": "✱115·141. ⊢ : ∃!Prodʻκ .⊃. sʻProdʻκ=sʻκ [✱83·66]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_141",
       "formal_scope": "refused: PM identifies the union/support of the product class with the union of the factor family when the product exists uniquely; Lean assumes only Nonempty (ClassProduct F) and concludes the reflexive index equality I = I",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -155,9 +143,7 @@
       "printed_dependencies": [
         "PM1:✱83·66"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
@@ -172,7 +158,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

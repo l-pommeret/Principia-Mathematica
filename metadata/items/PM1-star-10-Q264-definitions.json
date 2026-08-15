@@ -21,8 +21,8 @@
       "printed": "(∃x).φx .=. ∼(x).∼φx  Df",
       "printed_page": 144,
       "scan_leaf": 166,
-      "lean_path": "Principia/Architecture/Star10Definitions.lean",
-      "declaration": "PM.Architecture.Star10Definitions.star_10_01",
+      "lean_path": "Principia/Syntax/Ramified.lean",
+      "declaration": "PM.RamifiedSyntax.star_10_01",
       "formal_scope": "alternative existential definiens at one assigned first-order carrier",
       "formalization_level": "pm-derivation-v1",
       "migration_audit": "reviews/Q264-pm-v1-migration-audit.md",
@@ -41,10 +41,7 @@
       "printed": "φx ⊃ₓ ψx .=. (x).φx ⊃ ψx  Df",
       "printed_page": 144,
       "scan_leaf": 166,
-      "lean_path": "Principia/Architecture/Star10Definitions.lean",
-      "declaration": "PM.Architecture.Star10Definitions.star_10_02",
       "formal_scope": "formal implication as an always-bound apparent implication matrix",
-      "formalization_level": "pm-definition-v1",
       "migration_audit": "reviews/Q264-pm-v1-migration-audit.md",
       "axiom_report_status": "axiom-free",
       "source_status": "source-catalogued",
@@ -58,7 +55,7 @@
         "failed_criteria": [
           "T6"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -67,10 +64,7 @@
       "printed": "φx ≡ₓ ψx .=. (x).φx ≡ ψx  Df",
       "printed_page": 144,
       "scan_leaf": 166,
-      "lean_path": "Principia/Architecture/Star10Definitions.lean",
-      "declaration": "PM.Architecture.Star10Definitions.star_10_03",
       "formal_scope": "formal equivalence as an always-bound apparent equivalence matrix",
-      "formalization_level": "pm-definition-v1",
       "migration_audit": "reviews/Q264-pm-v1-migration-audit.md",
       "axiom_report_status": "axiom-free",
       "source_status": "source-catalogued",
@@ -84,7 +78,7 @@
         "failed_criteria": [
           "T6"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

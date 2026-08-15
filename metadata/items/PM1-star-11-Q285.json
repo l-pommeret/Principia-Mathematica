@@ -36,8 +36,6 @@
       "printed": "⊢ : .∼(∃x, y).φ(x, y).∼ψ(x, y) .≡ : (x, y) : φ(x, y) .⊃ .ψ(x, y)",
       "printed_page": 164,
       "scan_leaf": 186,
-      "lean_path": "Principia/Architecture/Star11Q285Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q285Kernel.star_11_521",
       "formal_scope": "exact polymorphic binary no-counterexample/universal-implication equivalence",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -65,7 +63,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -74,11 +72,13 @@
       "printed": "⊢ : .(x, y).φx ⊃ ψy .≡ : (∃x).φx .⊃ .(y).ψy",
       "printed_page": 164,
       "scan_leaf": 186,
-      "lean_path": "Principia/Architecture/Star11Q285Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q285Kernel.star_11_53",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_53",
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
       "formal_scope": "exact polymorphic separated-variable implication equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·21·271",
@@ -97,13 +97,11 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T8"
+          "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -112,11 +110,13 @@
       "printed": "⊢ : .(∃x, y).φx.ψy .≡ : (∃x).φx : (∃y).ψy",
       "printed_page": 164,
       "scan_leaf": 186,
-      "lean_path": "Principia/Architecture/Star11Q285Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q285Kernel.star_11_54",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_54",
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
       "formal_scope": "exact polymorphic separated-variable existential conjunction equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·35",
@@ -135,13 +135,11 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T8"
+          "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -150,11 +148,13 @@
       "printed": "⊢ : .(∃x, y).φx.ψ(x, y) .≡ : (∃x) : φx : (∃y).ψ(x, y)",
       "printed_page": 165,
       "scan_leaf": 187,
-      "lean_path": "Principia/Architecture/Star11Q285Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q285Kernel.star_11_55",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_55",
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
       "formal_scope": "exact polymorphic nested binary existential equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·35",
@@ -177,13 +177,11 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T8"
+          "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -192,11 +190,13 @@
       "printed": "⊢ : .(x).φx : (y).ψy .≡ : (x, y).φx.ψy",
       "printed_page": 165,
       "scan_leaf": 187,
-      "lean_path": "Principia/Architecture/Star11Q285Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q285Kernel.star_11_56",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_56",
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
       "formal_scope": "exact polymorphic separated-universal/binary-conjunction equivalence under PM nonempty-type convention",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·33",
@@ -219,13 +219,11 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T8"
+          "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

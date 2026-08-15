@@ -23,8 +23,6 @@
       "printed": "✱55·431. ⊢ : x↓y⊍z↓w=a↓b⊍c↓d .⊃: x=a.y=b .∨. x=c.y=d",
       "printed_page": 390,
       "scan_leaf": 412,
-      "lean_path": "Principia/Architecture/Star55FiniteKernel.lean",
-      "declaration": "PM.Architecture.Star55FiniteKernel.star_55_431",
       "formal_scope": "exact typed endpoint alternative from equality of two two-couple unions",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -49,7 +47,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -58,8 +56,6 @@
       "printed": "✱55·44. ⊢ : x↓y⊍z↓w=a↓b⊍c↓d . x↓y≠z↓w .⊃: x=a.y=b.z=c.w=d .∨. x=c.y=d.z=a.w=b",
       "printed_page": 391,
       "scan_leaf": 413,
-      "lean_path": "Principia/Architecture/Star55FiniteKernel.lean",
-      "declaration": "PM.Architecture.Star55FiniteKernel.star_55_44",
       "formal_scope": "exact typed ordered-or-swapped decomposition of equal two-couple unions",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -71,10 +67,7 @@
         "PM1:✱55·431",
         "PM1:✱55·202"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star55FiniteKernel.star_55_431",
-        "PM.Architecture.Star55NextKernel.star_55_202"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱55·202",
         "PM1:✱55·431"
@@ -89,7 +82,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -98,8 +91,6 @@
       "printed": "✱55·5. ⊢ : R⊂̇x↓y⊍z↓w .⊃: R=Λ̇ .∨. R=x↓y .∨. R=z↓w .∨. R=x↓y⊍z↓w",
       "printed_page": 391,
       "scan_leaf": 413,
-      "lean_path": "Principia/Architecture/Star55FiniteKernel.lean",
-      "declaration": "PM.Architecture.Star55FiniteKernel.star_55_5",
       "formal_scope": "exact typed four-case classification of subrelations of a two-couple union",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -128,7 +119,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -137,8 +128,6 @@
       "printed": "✱55·52. ⊢ : x=y .≡. x↓y⊂̇I",
       "printed_page": 392,
       "scan_leaf": 414,
-      "lean_path": "Principia/Architecture/Star55FiniteKernel.lean",
-      "declaration": "PM.Architecture.Star55FiniteKernel.star_55_52",
       "formal_scope": "exact typed equality/identity-relation inclusion equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -156,7 +145,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -165,8 +154,6 @@
       "printed": "✱55·521. ⊢ : x≠y .≡. x↓y⊂̇J",
       "printed_page": 392,
       "scan_leaf": 414,
-      "lean_path": "Principia/Architecture/Star55FiniteKernel.lean",
-      "declaration": "PM.Architecture.Star55FiniteKernel.star_55_521",
       "formal_scope": "exact typed diversity-relation inclusion equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -184,7 +171,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

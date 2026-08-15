@@ -21,19 +21,13 @@
       "printed": "⊢:(x).φx.⊃.φy",
       "printed_page": 138,
       "scan_leaf": 160,
-      "lean_path": "Principia/Architecture/Q259ClosedRuleBook.lean",
-      "declaration": "PM.Architecture.Q259ClosedRuleBook.star_9_2",
       "formal_scope": "exact mixed-order Raw judgement Star92KernelAssertion, parameterized by the displayed real value y; not OrderedAssertion",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
       "integration_status": "kernel-checked-star92-kernel-assertion",
-      "formalization_level": "pm-derivation-v1",
-      "pm_ast": "PM.Architecture.Star92Kernel.targetRaw over CanonicalOrderedFormula.Raw, with quantified universal antecedent and elementary value consequent",
-      "pm_judgement": "PM.Architecture.Star92Kernel.Star92KernelAssertion",
       "pm_certificate": "closed printed_chain certificate carrying the ✱2·1 Derivation, exact ✱9·1 instance, line-3/line-4 Raw scope identities and ✱9·05/✱9·01 normalization witnesses",
       "certificate_lean_dependencies": [
         "PM.FirstEdition.Volume1.Star2.star_2_1",
-        "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_1_instance",
         "PM.CanonicalOrderedFormula.NormalizesScoped.star_9_05_disj_independent_right",
         "PM.CanonicalOrderedFormula.NormalizesScoped.disjCongr",
         "PM.CanonicalOrderedFormula.NormalizesScoped.negAlwaysReverse"
@@ -81,7 +75,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

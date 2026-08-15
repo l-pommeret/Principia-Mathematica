@@ -25,8 +25,6 @@
       "printed": "✱117·01. μ > ν .=. (∃α,β). μ=N₀cʻα . ν=N₀cʻβ . ∃!Clʻα∩Ncʻβ . ∼∃!Clʻβ∩Ncʻα Df",
       "printed_page": 173,
       "scan_leaf": 213,
-      "lean_path": "Principia/Architecture/Star117OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star117OpeningKernel.star_117_01",
       "formal_scope": "refused: Lean defines StrictlyLarger directly between two Set' representatives as one-way Embeddable, rather than defining comparison of cardinal objects through N₀c representatives and the two printed class-existence clauses",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -42,7 +40,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -51,8 +49,6 @@
       "printed": "✱117·05. μ ≥ ν .=: μ > ν .∨. μ,ν∈N₀C . μ=smʻʻν Df",
       "printed_page": 173,
       "scan_leaf": 213,
-      "lean_path": "Principia/Architecture/Star117OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star117OpeningKernel.star_117_05",
       "formal_scope": "refused: Lean's AtLeast is merely StrictlyLarger A B ∨ Equinumerous A B on Set' representatives; it omits the printed N₀C membership conjunct and equality to smʻʻν on cardinal objects",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -68,7 +64,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -77,8 +73,6 @@
       "printed": "✱117·103. ⊢ : μ < ν .≡. ν > μ",
       "printed_page": 173,
       "scan_leaf": 213,
-      "lean_path": "Principia/Architecture/Star117OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star117OpeningKernel.star_117_103",
       "formal_scope": "refused: the reflexive Lean theorem relates definitions on arbitrary Set' representatives, while the printed theorem relates the previously defined order operations on cardinal objects; no interpretation from cardinals to the surrogate Set' layer is supplied",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -107,7 +101,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -116,8 +110,6 @@
       "printed": "✱117·105. ⊢ : μ ≤ ν .≡. ν ≥ μ",
       "printed_page": 173,
       "scan_leaf": 213,
-      "lean_path": "Principia/Architecture/Star117OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star117OpeningKernel.star_117_105",
       "formal_scope": "refused: the reflexive Lean theorem relates definitions on arbitrary Set' representatives, while the printed theorem concerns cardinal objects and the ≥ relation whose N₀C side condition is absent from Lean",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -146,7 +138,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -155,8 +147,6 @@
       "printed": "✱117·221. ⊢ : Ncʻα ≥ Ncʻβ .≡. (∃ρ). ρ⊂α . ρ sm β",
       "printed_page": 176,
       "scan_leaf": 216,
-      "lean_path": "Principia/Architecture/Star117OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star117OpeningKernel.star_117_221",
       "formal_scope": "refused: no same-number Lean declaration exists; the architecture defines Embeddable using an existential subset/equinumerosity predicate, but supplies neither Nc nor a theorem identifying the printed cardinal comparison with it",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -186,7 +176,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

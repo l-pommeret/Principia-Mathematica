@@ -22,8 +22,6 @@
       "printed": "✱116·603. ⊢ : Hp ✱116·602 . z∈γ .⊃. ᴃʻMʻz=α exp β",
       "printed_page": 161,
       "scan_leaf": 201,
-      "lean_path": "Principia/Architecture/Star116SixthKernel.lean",
-      "declaration": "PM.Architecture.Star116SixthKernel.star_116_603",
       "formal_scope": "refused: PM identifies a fibre's converse domain; Lean proves only the right-inverse equation for currying",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -42,7 +40,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -51,8 +49,6 @@
       "printed": "✱116·604. ⊢ : Hp ✱116·602 . z∈γ .⊃. DʻMʻz=Prodʻα↓,,ʻʻβ↓,,z",
       "printed_page": 161,
       "scan_leaf": 201,
-      "lean_path": "Principia/Architecture/Star116SixthKernel.lean",
-      "declaration": "PM.Architecture.Star116SixthKernel.star_116_604",
       "formal_scope": "refused: PM identifies the domain of a constructed fibre; Lean proves only the opposite inverse equation for currying",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -62,9 +58,7 @@
         "PM2:✱113·125",
         "PM1:✱38·2"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star116FifthKernel.star_116_601"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM2:✱116·601"
       ],
@@ -77,7 +71,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -86,8 +80,6 @@
       "printed": "✱116·605. ⊢ : Hp ✱116·602 . z∈γ .⊃. Mʻz∈1→1",
       "printed_page": 162,
       "scan_leaf": 202,
-      "lean_path": "Principia/Architecture/Star116SixthKernel.lean",
-      "declaration": "PM.Architecture.Star116SixthKernel.star_116_605",
       "formal_scope": "refused: PM asserts each fibre is one-one; Lean states only aggregate currying similarity",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -107,7 +99,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -116,8 +108,6 @@
       "printed": "✱116·606. ⊢ : Hp ✱116·602 .⊃. M∈1→1 and distinct fibres have distinct domains",
       "printed_page": 162,
       "scan_leaf": 202,
-      "lean_path": "Principia/Architecture/Star116SixthKernel.lean",
-      "declaration": "PM.Architecture.Star116SixthKernel.star_116_606",
       "formal_scope": "refused: PM states one-one-ness and distinct-domain properties of M; Lean instead swaps two function arguments by an equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -143,7 +133,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -152,8 +142,6 @@
       "printed": "✱116·607. ⊢ : Hp ✱116·602 .⊃. DʻʻMʻʻγ=Prodʻʻα↓,,ʻʻʻβ↓,,ʻγ",
       "printed_page": 162,
       "scan_leaf": 202,
-      "lean_path": "Principia/Architecture/Star116SixthKernel.lean",
-      "declaration": "PM.Architecture.Star116SixthKernel.star_116_607",
       "formal_scope": "refused: PM gives equality of the image of fibre domains with a dependent product family; Lean only restates aggregate currying similarity",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -161,9 +149,7 @@
       "printed_dependencies": [
         "PM2:✱116·602"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star116FifthKernel.star_116_6"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM2:✱116·6"
       ],
@@ -177,7 +163,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

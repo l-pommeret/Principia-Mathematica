@@ -21,8 +21,6 @@
       "printed": "✱115·142. ⊢ . Prodʻιʻα=ιʻʻα [✱83·7]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_142",
       "formal_scope": "refused: PM identifies the complete product class of a singleton family with the singleton image of its factor; Lean proves only equivalence of inhabitation between a Unit-indexed function type and A",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -42,7 +40,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -51,8 +49,6 @@
       "printed": "✱115·144. ⊢ : κ⊆1 .⊃. Prodʻκ=ιʻsʻκ [✱83·72]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_144",
       "formal_scope": "refused: PM gives equality of the product class with a singleton under the possibly empty condition κ⊆1; Lean assumes an inhabited subsingleton index through i : I and proves only equivalence of product/factor inhabitation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -60,9 +56,7 @@
       "printed_dependencies": [
         "PM1:✱83·72"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
@@ -76,7 +70,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -85,8 +79,6 @@
       "printed": "✱115·145. ⊢ :: κ∈Cls² excl . α∈κ . μ∩α∈1 .⊃: μ−α∈Prodʻ(κ−ιʻα) .≡. μ∈Prodʻκ [✱84·422]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_145",
       "formal_scope": "refused: PM characterizes removal and reinsertion of one selected factor under disjointness and singleton-intersection hypotheses; Lean instead invokes classical choice to infer product inhabitation from pointwise inhabitation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -94,9 +86,7 @@
       "printed_dependencies": [
         "PM1:✱84·422"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
@@ -110,7 +100,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -119,8 +109,6 @@
       "printed": "✱115·15. ⊢ :: κ,λ∈Cls² excl . sʻκ=sʻλ .⊃: κ⊆Prodʻλ .≡. λ⊆Prodʻκ [✱84·43]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_15",
       "formal_scope": "refused: PM proves a reciprocal inclusion equivalence for two mutually exclusive families with equal unions; Lean states only a reflexive equality between the same pair of restrictions of one product function",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -128,10 +116,7 @@
       "printed_dependencies": [
         "PM1:✱84·43"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I",
-        "PM.Architecture.Star50OpeningKernel.J"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01",
         "PM1:✱50·02"
@@ -146,7 +131,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

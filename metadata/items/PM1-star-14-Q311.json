@@ -29,8 +29,6 @@
       "printed": "⊢ : p ≡ q .⊃ₚ,ᵩ. f(p) ≡ f(q) : E!(℩x)(φx) .⊃ : f{[(℩x)(φx)] . χ(℩x)(φx)} .≡ . [(℩x)(φx)] . f{χ(℩x)(φx)}",
       "printed_page": 194,
       "scan_leaf": 216,
-      "lean_path": "Principia/Architecture/Star14Q311Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q311Kernel.star_14_3",
       "formal_scope": "exact equivalence-respecting propositional function commuting with an existing contextual description",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -62,7 +60,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -71,12 +69,12 @@
       "printed": "⊢ : E!(℩x)(φx) .⊃ : [(℩x)(φx)] . p ∨ χ(℩x)(φx) .≡ : p ∨ [(℩x)(φx)] . χ(℩x)(φx)",
       "printed_page": 194,
       "scan_leaf": 216,
-      "lean_path": "Principia/Architecture/Star14Q311Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q311Kernel.star_14_31",
-      "formal_scope": "exact disjunction distribution through an existing contextual description",
+      "lean_path": "Principia/Deduction/Star14Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_14_31",
+      "formal_scope": "exact ramified real-scope distribution at the least assigned order; conditional only on the named star_14_242_hypothesis substitution contract",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
-      "integration_status": "provisional-kernel-integrated",
+      "integration_status": "integrated-local",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q311-canonical-integration.md",
       "printed_dependencies": [
@@ -96,9 +94,11 @@
           "PM1:✱4·37"
         ],
         "strict_attempt_evidence": "reviews/Q311-canonical-integration.md",
-        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
+        "editorial_note": "The public theorem delegates to a private follows-printed derivation, so the frozen lexical graph sees no direct edge. The private proof uses the named ✱14·242 contract, lifts it with ✱4·37, closes the candidate in the ✱10·23 real-scope normal form, and certifies existence with ✱14·11."
       },
       "lean_dependencies": [],
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
       "certification": {
         "tier": "lean-typechecked",
         "failed_criteria": [
@@ -106,7 +106,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -115,8 +115,6 @@
       "printed": "⊢ : E!(℩x)(φx) .≡ : [(℩x)(φx)] . ∼χ(℩x)(φx) .≡ . ∼[(℩x)(φx)] . χ(℩x)(φx)",
       "printed_page": 194,
       "scan_leaf": 216,
-      "lean_path": "Principia/Architecture/Star14Q311Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q311Kernel.star_14_32",
       "formal_scope": "exact existence/contextual-negation equivalence including the non-denoting case",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -150,7 +148,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

@@ -29,8 +29,6 @@
       "printed": "⊢ : (℩x)(φx) = b .⊃ : ψ{(℩x)(φx)} .≡ . ψb",
       "printed_page": 188,
       "scan_leaf": 210,
-      "lean_path": "Principia/Architecture/Star14Q305Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q305Kernel.star_14_15",
       "formal_scope": "exact contextual description substitution equivalence under identity",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -62,7 +60,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -71,8 +69,6 @@
       "printed": "⊢ : (℩x)(φx) = (℩x)(ψx) .⊃ : χ{(℩x)(φx)} .≡ . χ{(℩x)(ψx)}",
       "printed_page": 188,
       "scan_leaf": 210,
-      "lean_path": "Principia/Architecture/Star14Q305Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q305Kernel.star_14_16",
       "formal_scope": "exact contextual substitution equivalence across two-description identity",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -83,9 +79,7 @@
         "PM1:✱14·13·15",
         "PM1:✱10·1·23"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star14Q305Kernel.star_14_15"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱14·15"
       ],
@@ -111,7 +105,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -120,8 +114,6 @@
       "printed": "⊢ : (℩x)(φx) = b .≡ : ψ!(℩x)(φx) .≡_ψ . ψ!b",
       "printed_page": 188,
       "scan_leaf": 210,
-      "lean_path": "Principia/Architecture/Star14Q305Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q305Kernel.star_14_17",
       "formal_scope": "exact description identity equivalence quantified over every predicative one-place context",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -135,9 +127,7 @@
         "PM1:✱10·11·23",
         "PM1:✱12·1"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star14Q305Kernel.star_14_15"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱14·15"
       ],
@@ -164,7 +154,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

@@ -29,27 +29,39 @@
       "printed": "⊢ : (∃g) : fR .≡ᴿ. g!R",
       "printed_page": 216,
       "scan_leaf": 238,
-      "lean_path": "Principia/Architecture/Star21Q339Kernel.lean",
-      "declaration": "PM.Architecture.Star21Q339Kernel.star_21_7",
-      "formal_scope": "exact typed relation-function representative in the simple-type embedding",
+      "lean_path": "Principia/Deduction/Star21Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_21_7",
+      "formal_scope": "exact unary relation-sorted reducibility assertion in the ramified PM derivation calculus",
+      "formalization_level": "pm-derivation-v1",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
-      "integration_status": "provisional-kernel-integrated",
+      "integration_status": "integrated-local",
+      "demonstration_provenance": "follows-printed",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "PM1:✱20·7"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_12_1"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱12·1"
+      ],
+      "direct_assumptions": [],
+      "inherited_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": [],
+        "added_beyond_print": [
+          "PM1:✱12·1"
+        ],
         "printed_but_unused": [
           "PM1:✱20·7"
         ],
         "strict_attempt_evidence": "reviews/Q339-canonical-integration.md",
-        "editorial_note": "The audited simple-type embedding makes the representative definitional."
+        "editorial_note": "The ramified proof repeats the proof cited at ✱20·7 by its unary reducibility primitive ✱12·1."
       },
       "certification": {
         "tier": "lean-typechecked",
@@ -58,7 +70,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -67,27 +79,39 @@
       "printed": "⊢ : (∃g) : f(R,x) .≡₍R,x₎. g!(R,x)",
       "printed_page": 216,
       "scan_leaf": 238,
-      "lean_path": "Principia/Architecture/Star21Q339Kernel.lean",
-      "declaration": "PM.Architecture.Star21Q339Kernel.star_21_701",
-      "formal_scope": "exact typed relation/object function representative",
+      "lean_path": "Principia/Deduction/Star21Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_21_701",
+      "formal_scope": "exact binary relation/object reducibility assertion in the ramified PM derivation calculus",
+      "formalization_level": "pm-derivation-v1",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
-      "integration_status": "provisional-kernel-integrated",
+      "integration_status": "integrated-local",
+      "demonstration_provenance": "follows-printed",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "PM1:✱20·701"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_12_11"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱12·11"
+      ],
+      "direct_assumptions": [],
+      "inherited_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": [],
+        "added_beyond_print": [
+          "PM1:✱12·11"
+        ],
         "printed_but_unused": [
           "PM1:✱20·701"
         ],
         "strict_attempt_evidence": "reviews/Q339-canonical-integration.md",
-        "editorial_note": "The audited simple-type embedding makes the representative definitional."
+        "editorial_note": "The ramified proof repeats the proof cited at ✱20·701 by the binary reducibility primitive ✱12·11."
       },
       "certification": {
         "tier": "lean-typechecked",
@@ -96,7 +120,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -105,27 +129,39 @@
       "printed": "⊢ : (∃g) : f(x,R) .≡₍R,x₎. g!(R,x)",
       "printed_page": 216,
       "scan_leaf": 238,
-      "lean_path": "Principia/Architecture/Star21Q339Kernel.lean",
-      "declaration": "PM.Architecture.Star21Q339Kernel.star_21_702",
-      "formal_scope": "exact typed object/relation representative with printed argument reordering",
+      "lean_path": "Principia/Deduction/Star21Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_21_702",
+      "formal_scope": "exact reordered object/relation reducibility assertion in the ramified PM derivation calculus",
+      "formalization_level": "pm-derivation-v1",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
-      "integration_status": "provisional-kernel-integrated",
+      "integration_status": "integrated-local",
+      "demonstration_provenance": "follows-printed",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "PM1:✱20·702"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_12_11"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱12·11"
+      ],
+      "direct_assumptions": [],
+      "inherited_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": [],
+        "added_beyond_print": [
+          "PM1:✱12·11"
+        ],
         "printed_but_unused": [
           "PM1:✱20·702"
         ],
         "strict_attempt_evidence": "reviews/Q339-canonical-integration.md",
-        "editorial_note": "The audited simple-type embedding makes the reordered representative definitional."
+        "editorial_note": "The ramified proof repeats the proof cited at ✱20·702 by the reordered binary instance of ✱12·11."
       },
       "certification": {
         "tier": "lean-typechecked",
@@ -134,7 +170,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -143,27 +179,39 @@
       "printed": "⊢ : (∃g) : f(R,S) .≡₍R,S₎. g!(R,S)",
       "printed_page": 216,
       "scan_leaf": 238,
-      "lean_path": "Principia/Architecture/Star21Q339Kernel.lean",
-      "declaration": "PM.Architecture.Star21Q339Kernel.star_21_703",
-      "formal_scope": "exact typed two-relation function representative",
+      "lean_path": "Principia/Deduction/Star21Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_21_703",
+      "formal_scope": "exact two-relation reducibility assertion in the ramified PM derivation calculus",
+      "formalization_level": "pm-derivation-v1",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
-      "integration_status": "provisional-kernel-integrated",
+      "integration_status": "integrated-local",
+      "demonstration_provenance": "follows-printed",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "PM1:✱20·703"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_12_11"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱12·11"
+      ],
+      "direct_assumptions": [],
+      "inherited_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": [],
+        "added_beyond_print": [
+          "PM1:✱12·11"
+        ],
         "printed_but_unused": [
           "PM1:✱20·703"
         ],
         "strict_attempt_evidence": "reviews/Q339-canonical-integration.md",
-        "editorial_note": "The audited simple-type embedding makes the representative definitional."
+        "editorial_note": "The ramified proof repeats the proof cited at ✱20·703 by the two-relation instance of ✱12·11."
       },
       "certification": {
         "tier": "lean-typechecked",
@@ -172,7 +220,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -181,27 +229,39 @@
       "printed": "⊢ : (∃g) : f(R,α) .≡₍R,α₎. g!(R,α)",
       "printed_page": 216,
       "scan_leaf": 238,
-      "lean_path": "Principia/Architecture/Star21Q339Kernel.lean",
-      "declaration": "PM.Architecture.Star21Q339Kernel.star_21_704",
-      "formal_scope": "exact typed relation/class function representative",
+      "lean_path": "Principia/Deduction/Star21Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_21_704",
+      "formal_scope": "exact mixed relation/class reducibility assertion in the ramified PM derivation calculus",
+      "formalization_level": "pm-derivation-v1",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
-      "integration_status": "provisional-kernel-integrated",
+      "integration_status": "integrated-local",
+      "demonstration_provenance": "follows-printed",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "PM1:✱20·703"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_12_11"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱12·11"
+      ],
+      "direct_assumptions": [],
+      "inherited_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": [],
+        "added_beyond_print": [
+          "PM1:✱12·11"
+        ],
         "printed_but_unused": [
           "PM1:✱20·703"
         ],
         "strict_attempt_evidence": "reviews/Q339-canonical-integration.md",
-        "editorial_note": "The audited simple-type embedding makes the mixed representative definitional."
+        "editorial_note": "The ramified proof repeats the proof cited at ✱20·703 by the mixed relation/class instance of ✱12·11."
       },
       "certification": {
         "tier": "lean-typechecked",
@@ -210,7 +270,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

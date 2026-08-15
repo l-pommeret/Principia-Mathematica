@@ -21,8 +21,6 @@
       "printed": "✱50·61. ⊢ . I ▷ α | R = α ◁ R",
       "printed_page": 355,
       "scan_leaf": 377,
-      "lean_path": "Principia/Architecture/Star50OpeningKernel5.lean",
-      "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_61",
       "formal_scope": "exact composition of left identity restriction with a relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -32,9 +30,7 @@
         "PM1:✱35·354",
         "PM1:✱50·4"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
@@ -48,7 +44,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -57,18 +53,13 @@
       "printed": "✱50·62. ⊢ : ᗡʻR ⊂ α .⊃. R | (I ▷ α) = R",
       "printed_page": 355,
       "scan_leaf": 377,
-      "lean_path": "Principia/Architecture/Star50OpeningKernel5.lean",
-      "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_62",
       "formal_scope": "exact elimination of right restriction under converse-domain inclusion; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I",
-        "PM.Architecture.Star50OpeningKernel5.star_50_6"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01",
         "PM1:✱50·6"
@@ -83,7 +74,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -92,18 +83,13 @@
       "printed": "✱50·63. ⊢ : DʻR ⊂ α .⊃. I ▷ α | R = R",
       "printed_page": 355,
       "scan_leaf": 377,
-      "lean_path": "Principia/Architecture/Star50OpeningKernel5.lean",
-      "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_63",
       "formal_scope": "exact elimination of left restriction under domain inclusion; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I",
-        "PM.Architecture.Star50OpeningKernel5.star_50_61"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01",
         "PM1:✱50·61"
@@ -118,7 +104,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -127,18 +113,13 @@
       "printed": "✱50·64. ⊢ . R | (I ▷ ᗡʻR) = R | (I ▷ CʻR) = R",
       "printed_page": 355,
       "scan_leaf": 377,
-      "lean_path": "Principia/Architecture/Star50OpeningKernel5.lean",
-      "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_64",
       "formal_scope": "exact right-composition identities at converse domain and field; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I",
-        "PM.Architecture.Star50OpeningKernel5.star_50_62"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01",
         "PM1:✱50·62"
@@ -153,7 +134,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -162,18 +143,13 @@
       "printed": "✱50·65. ⊢ . I ▷ (DʻR) | R = I ▷ (CʻR) | R = R",
       "printed_page": 355,
       "scan_leaf": 377,
-      "lean_path": "Principia/Architecture/Star50OpeningKernel5.lean",
-      "declaration": "PM.Architecture.Star50OpeningKernel5.star_50_65",
       "formal_scope": "exact left-composition identities at domain and field; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_status": "awaiting-ci",
       "semantic_audit_status": "strict-equivalence-passed",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I",
-        "PM.Architecture.Star50OpeningKernel5.star_50_63"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01",
         "PM1:✱50·63"
@@ -188,7 +164,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

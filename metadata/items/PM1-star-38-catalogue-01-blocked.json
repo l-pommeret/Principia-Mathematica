@@ -26,8 +26,6 @@
       "printed": "✱38·01. x♀ = ûŷ(u = x♀y)  Df",
       "printed_page": 312,
       "scan_leaf": 334,
-      "lean_path": "Principia/Architecture/Star38Kernel.lean",
-      "declaration": "PM.Architecture.Star38Kernel.LeftSection",
       "formal_scope": "blocked: typed semantic def only; no PM syntax definition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -37,7 +35,6 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "semantic_audit_status": "pm-derivation-gate-blocked",
-      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_01",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
@@ -46,7 +43,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -55,8 +52,6 @@
       "printed": "✱38·02. ♀y = ûx̂(u = x♀y)  Df",
       "printed_page": 312,
       "scan_leaf": 334,
-      "lean_path": "Principia/Architecture/Star38Kernel.lean",
-      "declaration": "PM.Architecture.Star38Kernel.RightSection",
       "formal_scope": "blocked: typed semantic def only; no PM syntax definition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -66,7 +61,6 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "semantic_audit_status": "pm-derivation-gate-blocked",
-      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_02",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
@@ -75,7 +69,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -84,22 +78,17 @@
       "printed": "✱38·03. α♀_{,,}y = ♀yʻʻα  Df",
       "printed_page": 312,
       "scan_leaf": 334,
-      "lean_path": "Principia/Architecture/Star38Kernel.lean",
-      "declaration": "PM.Architecture.Star38Kernel.Slice",
       "formal_scope": "blocked: typed semantic def using meta-level Image; no PM syntax definition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-no-pm-syntax-definition",
       "integration_blocked": true,
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star38Kernel.RightSection"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱38·02"
       ],
       "semantic_audit_status": "pm-derivation-gate-blocked",
-      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_03",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
@@ -108,7 +97,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -117,8 +106,6 @@
       "printed": "✱38·1. ⊢ : u(x♀)y .≡. u = x♀y  [(✱38·01)]",
       "printed_page": 312,
       "scan_leaf": 334,
-      "lean_path": "Principia/Architecture/Star38Kernel.lean",
-      "declaration": "PM.Architecture.Star38Kernel.star_38_1",
       "formal_scope": "blocked: secondary Prop equivalence only; no PM formula, judgment, or axiom-free derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -127,14 +114,11 @@
       "printed_dependencies": [
         "✱38·01"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star38Kernel.LeftSection"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱38·01"
       ],
       "semantic_audit_status": "pm-derivation-gate-blocked",
-      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_1",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
@@ -145,7 +129,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -154,8 +138,6 @@
       "printed": "✱38·101. ⊢ : u(♀y)x .≡. u = x♀y  [(✱38·02)]",
       "printed_page": 313,
       "scan_leaf": 335,
-      "lean_path": "Principia/Architecture/Star38Kernel.lean",
-      "declaration": "PM.Architecture.Star38Kernel.star_38_101",
       "formal_scope": "blocked: secondary Prop equivalence only; no PM formula, judgment, or axiom-free derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -164,14 +146,11 @@
       "printed_dependencies": [
         "✱38·02"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star38Kernel.RightSection"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱38·02"
       ],
       "semantic_audit_status": "pm-derivation-gate-blocked",
-      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_101",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
@@ -182,7 +161,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

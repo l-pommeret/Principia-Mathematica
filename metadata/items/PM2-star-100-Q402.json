@@ -31,8 +31,6 @@
       "printed": "✱100·51. ⊢ : μ ∈ NC . α ∈ μ .⊃ . smʻʻμ = Ncʻα",
       "printed_page": 17,
       "scan_leaf": 57,
-      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
-      "declaration": "PM.Architecture.Star100SecondKernel.star_100_51",
       "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -47,9 +45,7 @@
         "PM1:✱10·23",
         "PM1:✱37·1"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star100SecondKernel.star_100_5"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM2:✱100·5"
       ],
@@ -62,7 +58,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -71,8 +67,6 @@
       "printed": "✱100·511. ⊢ : ∃!Ncʻβ .⊃ . smʻʻNcʻβ = Ncʻβ",
       "printed_page": 17,
       "scan_leaf": 57,
-      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
-      "declaration": "PM.Architecture.Star100SecondKernel.star_100_511",
       "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -85,11 +79,7 @@
         "PM1:✱10·11",
         "PM1:✱10·23"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star100OpeningKernel.star_100_321",
-        "PM.Architecture.Star100SecondKernel.star_100_41",
-        "PM.Architecture.Star100SecondKernel.star_100_51"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM2:✱100·321",
         "PM2:✱100·41",
@@ -104,7 +94,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -113,8 +103,6 @@
       "printed": "✱100·52. ⊢ : μ ∈ NC . ∃!μ .⊃ . smʻʻμ ∈ NC [✱100·51·4]",
       "printed_page": 17,
       "scan_leaf": 57,
-      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
-      "declaration": "PM.Architecture.Star100SecondKernel.star_100_52",
       "formal_scope": "typed cardinal-class reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -123,10 +111,7 @@
         "PM2:✱100·51",
         "PM2:✱100·4"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star100SecondKernel.star_100_41",
-        "PM.Architecture.Star100SecondKernel.star_100_51"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM2:✱100·41",
         "PM2:✱100·51"
@@ -139,7 +124,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

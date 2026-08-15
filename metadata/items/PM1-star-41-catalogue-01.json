@@ -22,28 +22,26 @@
       "printed": "✱41·01. ṗʻλ = x̂ŷ(R ∈ λ .⊃_R. xRy) Df",
       "printed_page": 331,
       "scan_leaf": 353,
-      "lean_path": "Principia/Architecture/Star41InitialKernel.lean",
-      "declaration": "PM.Architecture.Star41InitialKernel.star_41_01",
-      "formal_scope": "blocked v1: Df has a correct secondary extensional unfolding, but no relation-class syntax object or kernel-recognized definitional reading",
+      "lean_path": "Principia/Deduction/Star41Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_41_01",
+      "formal_scope": "exact eliminable ✱21·01 expansion of the product of a predicative relation-class",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "blocked-missing-relational-object-language-and-derivation-v1",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star41-object-judgment-v1-audit.md",
-      "semantic_audit_status": "blocked-object-judgment-v1-incomplete",
-      "secondary_prop_declaration": "PM.Architecture.Star41InitialKernel.star_41_01",
       "printed_latex_witness": "✱41·01. \\(\\dot{p}ʻ\\lambda = \\hat{x}\\hat{y}(R \\in \\lambda .\\supset_{R}. xRy) \\quad \\text{Df}\\)",
+      "formalization_level": "pm-derivation-v1",
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -52,28 +50,26 @@
       "printed": "✱41·02. ṡʻλ = x̂ŷ{(∃ R) . R ∈ λ . xRy} Df",
       "printed_page": 331,
       "scan_leaf": 353,
-      "lean_path": "Principia/Architecture/Star41InitialKernel.lean",
-      "declaration": "PM.Architecture.Star41InitialKernel.star_41_02",
-      "formal_scope": "blocked v1: Df has a correct secondary extensional unfolding, but no relation-class syntax object or kernel-recognized definitional reading",
+      "lean_path": "Principia/Deduction/Star41Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_41_02",
+      "formal_scope": "exact eliminable ✱21·01 expansion of the sum of a predicative relation-class",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "blocked-missing-relational-object-language-and-derivation-v1",
+      "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star41-object-judgment-v1-audit.md",
-      "semantic_audit_status": "blocked-object-judgment-v1-incomplete",
-      "secondary_prop_declaration": "PM.Architecture.Star41InitialKernel.star_41_02",
       "printed_latex_witness": "✱41·02. \\(\\dot{s}ʻ\\lambda = \\hat{x}\\hat{y}\\{(\\exists R) . R \\in \\lambda . xRy\\} \\quad \\text{Df}\\)",
+      "formalization_level": "pm-derivation-v1",
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -82,21 +78,35 @@
       "printed": "✱41·1. ⊢ :. x(ṗʻλ)y .≡: R ∈ λ .⊃_R. xRy",
       "printed_page": 331,
       "scan_leaf": 353,
-      "lean_path": "Principia/Architecture/Star41InitialKernel.lean",
-      "declaration": "PM.Architecture.Star41InitialKernel.star_41_1",
-      "formal_scope": "blocked v1: rfl unfolds ✱41·01 only in the secondary host model; no relational formula endpoint or inductive derivation judgment exists",
+      "lean_path": "Principia/Deduction/Star41Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_41_1",
+      "formal_scope": "exact ramified Formula AST and PM derivation by specialization of ✱21·3 to ✱41·01; conditional only on the explicitly named star_10_35_hypothesis inherited from ✱21·3",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": true,
-      "integration_status": "blocked-missing-relational-object-language-and-derivation-v1",
+      "integration_status": "blocked-star-10-35-hypothesis",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_21_3",
+        "PM.RamifiedSyntax.star_41_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱41·01"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-      "semantic_audit_status": "blocked-object-judgment-v1-incomplete",
-      "secondary_prop_declaration": "PM.Architecture.Star41InitialKernel.star_41_1",
       "printed_latex_witness": "✱41·1. \\(\\vdash \\colon\\ldotp x(\\dot{p}ʻ\\lambda)y .\\equiv: R \\in \\lambda .\\supset_{R}. xRy\\)",
+      "demonstration_provenance": "editorial-reconstruction",
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "reducibilityExistential, star_10_35_hypothesis",
+          "lean_type": "the explicit binary reducibility vocabulary and named remaining ✱10·35 bridge premise required by PM.RamifiedSyntax.star_21_3"
+        }
+      },
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
@@ -105,7 +115,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -114,21 +124,35 @@
       "printed": "✱41·11. ⊢ :x(ṡʻλ)y .≡. (∃ R) . R ∈ λ . xRy",
       "printed_page": 331,
       "scan_leaf": 353,
-      "lean_path": "Principia/Architecture/Star41InitialKernel.lean",
-      "declaration": "PM.Architecture.Star41InitialKernel.star_41_11",
-      "formal_scope": "blocked v1: rfl unfolds ✱41·02 only in the secondary host model; no relational formula endpoint or inductive derivation judgment exists",
+      "lean_path": "Principia/Deduction/Star41Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_41_11",
+      "formal_scope": "exact ramified Formula AST and PM derivation by specialization of ✱21·3 to ✱41·02; conditional only on the explicitly named star_10_35_hypothesis inherited from ✱21·3",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": true,
-      "integration_status": "blocked-missing-relational-object-language-and-derivation-v1",
+      "integration_status": "blocked-star-10-35-hypothesis",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_21_3",
+        "PM.RamifiedSyntax.star_41_02"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱41·02"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-      "semantic_audit_status": "blocked-object-judgment-v1-incomplete",
-      "secondary_prop_declaration": "PM.Architecture.Star41InitialKernel.star_41_11",
       "printed_latex_witness": "✱41·11. \\(\\vdash :x(\\dot{s}ʻ\\lambda)y .\\equiv. (\\exists R) . R \\in \\lambda . xRy\\)",
+      "demonstration_provenance": "editorial-reconstruction",
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "reducibilityExistential, star_10_35_hypothesis",
+          "lean_type": "the explicit binary reducibility vocabulary and named remaining ✱10·35 bridge premise required by PM.RamifiedSyntax.star_21_3"
+        }
+      },
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
@@ -137,7 +161,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -146,8 +170,6 @@
       "printed": "✱41·12. ⊢ : R ∈ λ .⊃. ṗʻλ ⪽ R",
       "printed_page": 331,
       "scan_leaf": 353,
-      "lean_path": "Principia/Architecture/Star41InitialKernel.lean",
-      "declaration": "PM.Architecture.Star41InitialKernel.star_41_12",
       "formal_scope": "blocked v1: the inclusion is proved only as a host function implication; no relational formula, reading, or PM derivation is constructed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -159,7 +181,6 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "blocked-object-judgment-v1-incomplete",
-      "secondary_prop_declaration": "PM.Architecture.Star41InitialKernel.star_41_12",
       "printed_latex_witness": "✱41·12. \\(\\vdash : R \\in \\lambda .\\supset. \\dot{p}ʻ\\lambda \\unicode{x2abd} R\\)",
       "certification": {
         "tier": "prepared",
@@ -169,7 +190,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

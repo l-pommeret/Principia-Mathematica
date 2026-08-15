@@ -36,11 +36,13 @@
       "printed": "⊢ :: (∃x) :: (∃y).φ(x, y).ψy:χx :: ≡ :: (∃y) :: (∃x).φ(x, y).χx:ψy",
       "printed_page": 165,
       "scan_leaf": 187,
-      "lean_path": "Principia/Architecture/Star11Q287Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q287Kernel.star_11_6",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_6",
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
       "formal_scope": "exact polymorphic nested binary existential permutation",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·35",
@@ -67,13 +69,11 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T8"
+          "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -82,12 +82,14 @@
       "printed": "⊢ :: (∃y) : φx .⊃ₓ .ψ(x, y) : ⊃ : φx .⊃ₓ .(∃y).ψ(x, y)",
       "printed_page": 166,
       "scan_leaf": 188,
-      "lean_path": "Principia/Architecture/Star11Q287Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q287Kernel.star_11_61",
-      "formal_scope": "exact polymorphic nested existential formal implication",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_61",
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
+      "formal_scope": "ramified nested existential formal implication with audited scope normalization",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
-      "integration_status": "provisional-kernel-integrated",
+      "formal_status": "awaiting-ci",
+      "integration_status": "provisional-pm-derivation-integrated",
       "printed_dependencies": [
         "PM1:✱11·26",
         "PM1:✱10·37",
@@ -95,27 +97,14 @@
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": [
-          "PM1:✱10·11·27",
-          "PM1:✱10·37",
-          "PM1:✱11·26"
-        ],
-        "strict_attempt_evidence": "reviews/Q287-star-11-audit.md",
-        "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
-      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T8"
+          "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -124,11 +113,13 @@
       "printed": "⊢ :: φx.ψ(x, y) .⊃ₓ,ᵧ .χ(x, y) .≡ : φx .⊃ₓ .ψ(x, y) .⊃ᵧ .χ(x, y)",
       "printed_page": 166,
       "scan_leaf": 188,
-      "lean_path": "Principia/Architecture/Star11Q287Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q287Kernel.star_11_62",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_62",
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
       "formal_scope": "exact polymorphic binary formal implication exportation equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱4·87",
@@ -151,13 +142,11 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T8"
+          "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -166,8 +155,6 @@
       "printed": "⊢ :: ∼(∃x, y).φ(x, y) .⊃ : φ(x, y) .⊃ₓ,ᵧ .ψ(x, y)",
       "printed_page": 166,
       "scan_leaf": 188,
-      "lean_path": "Principia/Architecture/Star11Q287Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q287Kernel.star_11_63",
       "formal_scope": "exact polymorphic binary existential-negation implication",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -201,7 +188,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -210,11 +197,13 @@
       "printed": "⊢ :: (∃x, y) : φ(x, y) .∨ .φ(y, x) .≡ .(∃x, y).φ(x, y)",
       "printed_page": 166,
       "scan_leaf": 188,
-      "lean_path": "Principia/Architecture/Star11Q287Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q287Kernel.star_11_7",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_7",
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
       "formal_scope": "exact same-type binary existential permutation-disjunction equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱11·41",
@@ -237,13 +226,11 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T8"
+          "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

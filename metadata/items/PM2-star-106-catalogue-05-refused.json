@@ -22,8 +22,6 @@
       "printed": "✱106·22. ⊢ : λ∈N¹₀cʻα .≡. Cnvʻʻλ∈¹N₀cʻα",
       "printed_page": 62,
       "scan_leaf": 102,
-      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
-      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_22",
       "formal_scope": "refused: Lean assumes the universally quantified equivalence ∀x, A x ↔ B (f x) as h and merely specializes it; it does not derive PM's converse-cardinal equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -42,7 +40,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -51,8 +49,6 @@
       "printed": "✱106·221. ⊢ : λ∈N²₀cʻα .≡. Cnvʻʻλ∈²N₀cʻα",
       "printed_page": 63,
       "scan_leaf": 103,
-      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
-      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_221",
       "formal_scope": "refused: Lean receives the complete universal equivalence as parameter h and returns h x, rather than proving the displayed converse-cardinal equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -71,7 +67,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -80,8 +76,6 @@
       "printed": "✱106·222. ⊢ . Λ∉¹N₀C . ¹N₀C⊂N₀C . ¹N₀C∈N₀C",
       "printed_page": 63,
       "scan_leaf": 103,
-      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
-      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_222",
       "formal_scope": "refused: Lean assumes all three displayed conclusion components separately as h₀, h₁ and h₂ and only packages them into a conjunction",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -100,7 +94,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -109,8 +103,6 @@
       "printed": "✱106·223. ⊢ . Λ∉²N₀C . ²N₀C⊂N₀C . ²N₀C∈N₀C",
       "printed_page": 63,
       "scan_leaf": 103,
-      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
-      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_223",
       "formal_scope": "refused: Lean assumes the nonmembership, inclusion and membership conclusions as parameters and merely conjoins them",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -129,7 +121,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -138,8 +130,6 @@
       "printed": "✱106·23. ⊢ : β∈N¹cʻα .⊃. N¹¹cʻα=N₀₀cʻβ",
       "printed_page": 63,
       "scan_leaf": 103,
-      "lean_path": "Principia/Architecture/Star106MiddleKernel.lean",
-      "declaration": "PM.Architecture.Star106MiddleKernel.star_106_23",
       "formal_scope": "refused: Lean takes the entire implication A b → C = D as parameter k and applies it to h; the printed conclusion is therefore assumed rather than derived",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -157,7 +147,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

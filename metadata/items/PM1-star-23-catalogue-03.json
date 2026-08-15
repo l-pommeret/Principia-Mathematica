@@ -19,10 +19,19 @@
       "printed_page": 227,
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱11·11",
+        "PM1:✱23·01"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_4_2",
+        "PM.RamifiedSyntax.star_11_11",
+        "PM.RamifiedSyntax.star_23_01_matrix"
+      ],
       "integration_status": "prepared",
-      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_scope": "exact double-universal equivalence between mutual relation inclusion and pointwise equivalence",
+      "demonstration_provenance": "editorial-reconstruction",
       "formal_status": "lean-typechecked",
       "certification": {
         "tier": "lean-typechecked",
@@ -31,10 +40,10 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
-      "declaration": "PM.FirstEdition.Volume1.Star23.star_23_4",
-      "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean",
+      "declaration": "PM.RamifiedSyntax.star_23_4",
+      "lean_path": "Principia/Deduction/Star23Derived.lean",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
@@ -59,7 +68,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "declaration": "PM.FirstEdition.Volume1.Star23.star_23_41",
       "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean"
@@ -73,10 +82,17 @@
       "printed_page": 227,
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱2·08",
+        "PM1:✱11·11"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_2_08",
+        "PM.RamifiedSyntax.star_11_11"
+      ],
       "integration_status": "prepared",
-      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_scope": "exact double-universal reflexivity of relation inclusion in the ramified PM judgement",
+      "demonstration_provenance": "editorial-reconstruction",
       "formal_status": "lean-typechecked",
       "certification": {
         "tier": "lean-typechecked",
@@ -85,10 +101,10 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
-      "declaration": "PM.FirstEdition.Volume1.Star23.star_23_42",
-      "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean"
+      "declaration": "PM.RamifiedSyntax.star_23_42",
+      "lean_path": "Principia/Deduction/Star23Derived.lean"
     },
     {
       "id": "PM1:✱23·43",
@@ -111,7 +127,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "declaration": "PM.FirstEdition.Volume1.Star23.star_23_43",
       "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean"
@@ -125,10 +141,17 @@
       "printed_page": 227,
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱3·33",
+        "PM1:✱11·11"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_3_33",
+        "PM.RamifiedSyntax.star_11_11"
+      ],
       "integration_status": "prepared",
-      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_scope": "exact double-universal pointwise transitivity of relation inclusion in the ramified PM judgement",
+      "demonstration_provenance": "editorial-reconstruction",
       "formal_status": "lean-typechecked",
       "certification": {
         "tier": "lean-typechecked",
@@ -137,10 +160,10 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
-      "declaration": "PM.FirstEdition.Volume1.Star23.star_23_44",
-      "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean",
+      "declaration": "PM.RamifiedSyntax.star_23_44",
+      "lean_path": "Principia/Deduction/Star23Derived.lean",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     }

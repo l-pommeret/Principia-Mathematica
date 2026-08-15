@@ -30,8 +30,8 @@
       "printed": "α ⊂ β .=: x ε α .⊃ₓ. x ε β Df",
       "printed_page": 217,
       "scan_leaf": 239,
-      "lean_path": "Principia/Architecture/Star22Q341Definitions.lean",
-      "declaration": "PM.Architecture.Star22Q341Definitions.star_22_01",
+      "lean_path": "Principia/Deduction/Star22Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_22_01",
       "formal_scope": "exact polymorphic pointwise class-inclusion definition",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
@@ -47,7 +47,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -57,8 +57,8 @@
       "printed": "α ∩ β = ẑx(x ε α . x ε β) Df",
       "printed_page": 217,
       "scan_leaf": 239,
-      "lean_path": "Principia/Architecture/Star22Q341Definitions.lean",
-      "declaration": "PM.Architecture.Star22Q341Definitions.star_22_02",
+      "lean_path": "Principia/Deduction/Star22Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_22_02",
       "formal_scope": "exact polymorphic pointwise class-intersection definition",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
@@ -73,7 +73,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -83,8 +83,8 @@
       "printed": "α ∪ β = ẑx(x ε α .∨. x ε β) Df",
       "printed_page": 217,
       "scan_leaf": 239,
-      "lean_path": "Principia/Architecture/Star22Q341Definitions.lean",
-      "declaration": "PM.Architecture.Star22Q341Definitions.star_22_03",
+      "lean_path": "Principia/Deduction/Star22Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_22_03",
       "formal_scope": "exact polymorphic pointwise class-union definition",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
@@ -99,7 +99,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -109,8 +109,8 @@
       "printed": "−α = ẑx(x ∼ε α) Df",
       "printed_page": 217,
       "scan_leaf": 239,
-      "lean_path": "Principia/Architecture/Star22Q341Definitions.lean",
-      "declaration": "PM.Architecture.Star22Q341Definitions.star_22_04",
+      "lean_path": "Principia/Deduction/Star22Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_22_04",
       "formal_scope": "exact polymorphic pointwise class-complement definition",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
@@ -126,7 +126,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -135,8 +135,8 @@
       "printed": "α − β = α ∩ −β Df",
       "printed_page": 217,
       "scan_leaf": 239,
-      "lean_path": "Principia/Architecture/Star22Q341Definitions.lean",
-      "declaration": "PM.Architecture.Star22Q341Definitions.star_22_05",
+      "lean_path": "Principia/Deduction/Star22Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_22_05",
       "formal_scope": "exact polymorphic class-difference definition",
       "source_status": "source-catalogued",
       "formal_status": "awaiting-ci",
@@ -151,14 +151,14 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "formalization_level": "pm-derivation-v1"
     }
   ],
   "ci_evidence": {
-    "commit": "4830bce2d5a0385d2ecb78e034170a5fce54f88a",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31724447099",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

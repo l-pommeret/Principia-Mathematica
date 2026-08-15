@@ -36,8 +36,6 @@
       "printed": "⊢ : ∼{(∃x, y).φ(x, y)} .≡ .(x, y).∼φ(x, y)  [✱11·22.Transp]",
       "printed_page": 160,
       "scan_leaf": 182,
-      "lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q279Kernel.star_11_25",
       "formal_scope": "canonical Raw reconstruction and two-step quantifier-negation normalization; the ordinary Prop theorem is secondary; a PM assertion judgement and the printed ✱11·22.Transp derivation remain to be reconstructed",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -50,9 +48,7 @@
       "normalized_dependencies": [
         "PM1:✱10·252"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star10Q269Kernel.star_10_252"
-      ],
+      "lean_dependencies": [],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
@@ -64,9 +60,6 @@
         "strict_attempt_evidence": "reviews/Q279-canonical-integration.md",
         "editorial_note": "The current Raw normalization reuses the unary quantifier-negation contract ✱10·252. The printed ✱11·22.Transp assertion chain is not yet represented by a Raw assertion judgement, so this item is deliberately not kernel-integrated."
       },
-      "statement_lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
-      "statement_declaration": "PM.Architecture.Star11Q279Kernel.star_11_25_prop",
-      "formalization_level": "pm-syntax-normalization",
       "semantic_audit_status": "strict-pm-derivation-incomplete",
       "certification": {
         "tier": "prepared",
@@ -76,7 +69,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

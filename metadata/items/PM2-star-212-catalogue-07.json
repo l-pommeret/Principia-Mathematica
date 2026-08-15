@@ -15,8 +15,6 @@
       "id": "PM2:✱212·23",
       "kind": "derived-proposition",
       "printed": "✱212·23. ⊢ : P∈trans∩connex .⊃. ςʻP=α̂β̂{α,β∈DʻP_∈.α⊂β.α≠β}",
-      "lean_path": "Principia/Architecture/Star212OrderKernel.lean",
-      "declaration": "PM.Architecture.Star212OrderKernel.star_212_23",
       "formal_scope": "typed reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -34,15 +32,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM2:✱212·24",
       "kind": "derived-proposition",
       "printed": "✱212·24. ⊢ : P_*∈connex .⊃. ςʻP_*=α̂β̂{α,β∈sectʻP.α⊂β.α≠β}",
-      "lean_path": "Principia/Architecture/Star212OrderKernel.lean",
-      "declaration": "PM.Architecture.Star212OrderKernel.star_212_24",
       "formal_scope": "typed reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -60,15 +56,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM2:✱212·25",
       "kind": "derived-proposition",
       "printed": "✱212·25. ⊢ : P∈Ser .⊃. P→⁏P=(ςʻP)↾P→ʻʻCʻP",
-      "lean_path": "Principia/Architecture/Star212OrderKernel.lean",
-      "declaration": "PM.Architecture.Star212OrderKernel.star_212_25",
       "formal_scope": "typed reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -86,23 +80,19 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM2:✱212·3",
       "kind": "derived-proposition",
       "printed": "✱212·3. ⊢ : P∈connex .⊃. sgmʻP,ςʻP_*∈Ser",
-      "lean_path": "Principia/Architecture/Star212OrderKernel.lean",
-      "declaration": "PM.Architecture.Star212OrderKernel.star_212_3",
       "formal_scope": "typed reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "pending",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star212MiddleKernel.star_212_155"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM2:✱212·155"
       ],
@@ -116,23 +106,19 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM2:✱212·31",
       "kind": "derived-proposition",
       "printed": "✱212·31. ⊢ : P∈trans∩connex .⊃. ςʻP∈Ser",
-      "lean_path": "Principia/Architecture/Star212OrderKernel.lean",
-      "declaration": "PM.Architecture.Star212OrderKernel.star_212_31",
       "formal_scope": "typed reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "pending",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star212OrderKernel.star_212_3"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM2:✱212·3"
       ],
@@ -146,7 +132,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

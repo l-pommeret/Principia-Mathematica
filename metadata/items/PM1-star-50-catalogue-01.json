@@ -21,8 +21,6 @@
       "printed": "✱50·01. I = ẑxẑy(x = y)  Df",
       "printed_page": 350,
       "scan_leaf": 372,
-      "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star50OpeningKernel.I",
       "formal_scope": "exact axiom-free typed identity relation definition retained as secondary semantics; blocked for pm-derivation-v1 because a printed Df is eliminable syntax, not an object-language theorem or derivation constructor",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -39,7 +37,7 @@
         "failed_criteria": [
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -48,16 +46,12 @@
       "printed": "✱50·02. J = −̇I  Df",
       "printed_page": 350,
       "scan_leaf": 372,
-      "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star50OpeningKernel.J",
       "formal_scope": "exact axiom-free typed diversity-as-complement definition retained as secondary semantics; blocked for pm-derivation-v1 because Df must unfold rather than become a primitive judgement",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-definition-not-judgment",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
@@ -79,7 +73,7 @@
         "failed_criteria": [
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -88,33 +82,37 @@
       "printed": "✱50·1. ⊢ : xIy .≡. x = y  [✱21·3.(✱50·01)]",
       "printed_page": 350,
       "scan_leaf": 372,
-      "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star50OpeningKernel.star_50_1",
-      "formal_scope": "exact axiom-free Prop-level expansion retained only as secondary semantics; blocked because the theorem is Iff.rfl, not a relational Formula AST judged by an inductive PM derivation",
+      "lean_path": "Principia/Deduction/Star50Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_50_1",
+      "formal_scope": "exact axiom-free ramified Formula AST and PM derivation following the printed specialization of ✱21·3 to ✱50·01; conditional only on the explicitly named star_10_35_hypothesis inherited from the available ✱21·3 theorem",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-pm-derivation",
+      "integration_status": "blocked-star-10-35-hypothesis",
       "printed_dependencies": [
         "PM1:✱21·3",
         "PM1:✱50·01"
       ],
       "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I"
+        "PM.RamifiedSyntax.star_21_3",
+        "PM.RamifiedSyntax.star_50_01_matrix",
+        "PM.RamifiedSyntax.star_50_01_application"
       ],
       "normalized_dependencies": [
+        "PM1:✱21·3",
         "PM1:✱50·01"
       ],
-      "semantic_audit_status": "strict-pm-derivation-refused",
-      "semantic_audit": "reviews/Star50-catalogue-01-pm-derivation-audit.md",
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": [
-          "PM1:✱21·3"
-        ],
-        "strict_attempt_evidence": "reviews/Star50-catalogue-review.md",
-        "editorial_note": "The typed definition unfolds pointwise by reflexivity; PM's general relation-abstraction theorem is retained as a printed citation but is not a direct Lean theorem call."
+      "demonstration_provenance": "follows-printed",
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "reducibilityExistential",
+          "lean_type": "the explicit binary reducibility vocabulary consumed by PM.RamifiedSyntax.star_12_11; star_10_35_hypothesis is recorded separately as the remaining logical bridge premise"
+        }
       },
+      "formalization_level": "pm-derivation-v1",
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
@@ -122,7 +120,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -131,8 +129,6 @@
       "printed": "✱50·11. ⊢ : xJy .≡. x ≠ y  [✱23·35.✱50·1.(✱50·02)]",
       "printed_page": 350,
       "scan_leaf": 372,
-      "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star50OpeningKernel.star_50_11",
       "formal_scope": "exact axiom-free Prop-level expansion retained only as secondary semantics; blocked because Iff.rfl contains no object-language judgement or PM derivation of the printed equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -142,9 +138,7 @@
         "PM1:✱50·1",
         "PM1:✱50·02"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.J"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·02"
       ],
@@ -167,7 +161,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -176,8 +170,6 @@
       "printed": "✱50·12. ⊢ . J = ẑxẑy(x ≠ y)  [✱50·11.✱21·33]",
       "printed_page": 350,
       "scan_leaf": 372,
-      "lean_path": "Principia/Architecture/Star50OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star50OpeningKernel.star_50_12",
       "formal_scope": "exact axiom-free Prop-level relation equality retained only as secondary semantics; blocked because rfl is not an object-language relational judgement derived through PM rules",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -186,9 +178,7 @@
         "PM1:✱50·11",
         "PM1:✱21·33"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.J"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·02"
       ],
@@ -215,7 +205,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

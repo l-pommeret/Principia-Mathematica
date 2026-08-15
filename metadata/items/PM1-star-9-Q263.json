@@ -30,13 +30,11 @@
       "printed": "(x).φx, ∼(x).φx, (∃x).φx and ∼(∃x).φx are of the same type.",
       "printed_page": 142,
       "scan_leaf": 164,
-      "lean_path": "Principia/Architecture/Star96SameType.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_6",
       "formal_scope": "typed certificate that the four displayed expressions inhabit one assigned FirstOrder carrier",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-integrated",
-      "formalization_level": "prepared",
       "pm_migration_status": "blocked",
       "pm_ast": "the four displayed FirstOrder expressions over one apparent matrix",
       "pm_judgement": "SameAssignedType4 structure, not an inductive PM derivation relation",
@@ -63,7 +61,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -72,13 +70,11 @@
       "printed": "If φx̂ and ψx̂ are elementary functions of the same type, there is a function φx̂ ∨ ψx̂.",
       "printed_page": 142,
       "scan_leaf": 164,
-      "lean_path": "Principia/Architecture/Star961FunctionFormation.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_61",
       "formal_scope": "capture-safe pointwise disjunction of same-indexed elementary function matrices",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-integrated",
-      "formalization_level": "prepared",
       "pm_migration_status": "blocked",
       "pm_ast": "Apparent.disj φ ψ at the shared indexed argument places",
       "pm_judgement": "none: star_9_61 is a data-producing def rather than a theorem in an inductive formation judgement",
@@ -106,7 +102,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -115,13 +111,11 @@
       "printed": "If φ(x̂, ŷ) and ψẑ are elementary functions, and the x-argument to φ is of the same type as the argument to ψ, there are functions (y).φ(x̂,y).∨.ψx̂, (∃y).φ(x̂,y).∨.ψx̂.",
       "printed_page": 142,
       "scan_leaf": 164,
-      "lean_path": "Principia/Architecture/Star961FunctionFormation.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_62",
       "formal_scope": "the printed universal and existential y-closures, disjoined with ψx while retaining x",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-integrated",
-      "formalization_level": "prepared",
       "pm_migration_status": "blocked",
       "pm_ast": "Star_9_62Functions pair of universal/existential disjunction matrices",
       "pm_judgement": "none: star_9_62 is a structure-producing def rather than a theorem in an inductive formation judgement",
@@ -153,7 +147,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -162,13 +156,11 @@
       "printed": "If φ(x̂, ŷ), ψ(x̂, ŷ) are elementary functions of the same type, there are functions (y).φ(x̂,y).∨.(z).ψ(x̂,z), etc.",
       "printed_page": 142,
       "scan_leaf": 164,
-      "lean_path": "Principia/Architecture/Star961FunctionFormation.lean",
       "declaration": "PM.FirstEdition.Volume1.Star9.star_9_63",
       "formal_scope": "all four independently bound always/sometimes combinations covered by etc.",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-integrated",
-      "formalization_level": "prepared",
       "pm_migration_status": "blocked",
       "pm_ast": "Star_9_63Functions record of four independently quantified disjunction matrices",
       "pm_judgement": "none: star_9_63 is a structure-producing def rather than a theorem in an inductive formation judgement",
@@ -196,7 +188,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

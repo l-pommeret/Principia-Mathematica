@@ -22,8 +22,6 @@
       "printed": "✱41·27. ⊢:. P∩̇ṡʻλ=Λ̇.≡:R∈ λ.⊃_R.P∩̇R=Λ̇",
       "printed_page": 332,
       "scan_leaf": 354,
-      "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
-      "declaration": "PM.Architecture.Star41ConverseKernel.star_41_27",
       "formal_scope": "exact typed equivalence between disjointness from a relational sum and disjointness from every member relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -42,7 +40,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱41·27. \\(\\vdash\\colon\\ldotp P\\dot{\\cap}\\dot{s}ʻ\\lambda=\\dot{\\Lambda}.\\equiv:R\\in \\lambda.\\supset_{R}.P\\dot{\\cap}R=\\dot{\\Lambda}\\)"
     },
@@ -52,17 +50,13 @@
       "printed": "✱41·3. ⊢.Cnvʻṗʻλ =ṗʻCnvʻʻλ",
       "printed_page": 332,
       "scan_leaf": 354,
-      "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
-      "declaration": "PM.Architecture.Star41ConverseKernel.star_41_3",
       "formal_scope": "exact typed theorem that converse commutes with relational product after pointwise converse mapping; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star43OpeningKernel.product"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱43·01"
       ],
@@ -76,7 +70,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱41·3. \\(\\vdash.\\text{Cnv}ʻ\\dot{p}ʻ\\lambda =\\dot{p}ʻ\\text{Cnv}ʻʻ\\lambda\\)"
     },
@@ -86,8 +80,6 @@
       "printed": "✱41·31. ⊢.Cnvʻṡʻλ=ṡʻCnvʻʻλ [Proof as in *41·3]",
       "printed_page": 332,
       "scan_leaf": 354,
-      "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
-      "declaration": "PM.Architecture.Star41ConverseKernel.star_41_31",
       "formal_scope": "exact typed theorem that converse commutes with relational sum after pointwise converse mapping; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -106,7 +98,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱41·31. \\(\\vdash.\\text{Cnv}ʻ\\dot{s}ʻ\\lambda=\\dot{s}ʻ\\text{Cnv}ʻʻ\\lambda \\quad[\\text{Proof as in *41·3}]\\)"
     },
@@ -116,18 +108,13 @@
       "printed": "✱41·32. ⊢.Cnvʻʻṗʻʻκ =ṗʻʻCnvʻʻʻκ [*41·3.*37·354]",
       "printed_page": 332,
       "scan_leaf": 354,
-      "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
-      "declaration": "PM.Architecture.Star41ConverseKernel.star_41_32",
       "formal_scope": "exact typed lifted converse/product-value mapping law for a class of relation classes; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star41ConverseKernel.star_41_3",
-        "PM.Architecture.Star43OpeningKernel.product"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱41·3",
         "PM1:✱43·01"
@@ -142,7 +129,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱41·32. \\(\\vdash.\\text{Cnv}ʻʻ\\dot{p}ʻʻ\\kappa =\\dot{p}ʻʻ\\text{Cnv}ʻʻʻ\\kappa \\quad[\\text{*41·3.*37·354}]\\)"
     },
@@ -152,17 +139,13 @@
       "printed": "✱41·33. ⊢.Cnvʻʻṡʻʻκ =ṡʻʻCnvʻʻʻκ [*41·31.*37·354]",
       "printed_page": 332,
       "scan_leaf": 354,
-      "lean_path": "Principia/Architecture/Star41ConverseKernel.lean",
-      "declaration": "PM.Architecture.Star41ConverseKernel.star_41_33",
       "formal_scope": "exact typed lifted converse/sum-value mapping law for a class of relation classes; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_blocked": false,
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star41ConverseKernel.star_41_31"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱41·31"
       ],
@@ -176,7 +159,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱41·33. \\(\\vdash.\\text{Cnv}ʻʻ\\dot{s}ʻʻ\\kappa =\\dot{s}ʻʻ\\text{Cnv}ʻʻʻ\\kappa \\quad[\\text{*41·31.*37·354}]\\)"
     }

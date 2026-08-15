@@ -17,13 +17,10 @@
   "items": [
     {
       "id": "PM1:✱22·65",
-      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α ⊂ β .∨ . α ⊂ γ .⊃ . α ⊂ β ∪ γ",
       "printed_page": 223,
       "scan_leaf": 245,
-      "lean_path": "Principia/Architecture/Star22Q354Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q354Kernel.star_22_65",
       "formal_scope": "exact constructive inclusion into a union from either inclusion premise",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -53,18 +50,15 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱22·66",
-      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ : α ⊂ β .⊃ . α ∪ γ ⊂ β ∪ γ",
       "printed_page": 223,
       "scan_leaf": 245,
-      "lean_path": "Principia/Architecture/Star22Q354Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q354Kernel.star_22_66",
       "formal_scope": "exact constructive monotonicity of union in its first operand",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -90,18 +84,15 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱22·68",
-      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . (α ∩ β) ∪ (α ∩ γ) = α ∩ (β ∪ γ)",
       "printed_page": 223,
       "scan_leaf": 245,
-      "lean_path": "Principia/Architecture/Star22Q354Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q354Kernel.star_22_68",
       "formal_scope": "exact typed distributivity of intersection over union",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -125,18 +116,15 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱22·69",
-      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . (α ∪ β) ∩ (α ∪ γ) = α ∪ (β ∩ γ)",
       "printed_page": 223,
       "scan_leaf": 245,
-      "lean_path": "Principia/Architecture/Star22Q354Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q354Kernel.star_22_69",
       "formal_scope": "exact typed distributivity of union over intersection",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -164,18 +152,15 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱22·7",
-      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . (α ∪ β) ∪ γ = α ∪ (β ∪ γ)",
       "printed_page": 223,
       "scan_leaf": 245,
-      "lean_path": "Principia/Architecture/Star22Q354Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q354Kernel.star_22_7",
       "formal_scope": "exact typed associativity of class union",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -201,7 +186,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

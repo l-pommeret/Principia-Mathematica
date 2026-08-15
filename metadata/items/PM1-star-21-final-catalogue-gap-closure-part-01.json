@@ -22,19 +22,33 @@
       "printed": "✱21·18. ⊢:. x̂ŷφ(x,y)=x̂ŷψ(x,y).⊃:f{x̂ŷφ(x,y)}. ≡.f{x̂ŷψ(x,y)} [*21·11·15]",
       "printed_page": 214,
       "scan_leaf": 236,
-      "lean_path": "Principia/FirstEdition/Volume1/Star21Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "lean_path": "Principia/Deduction/Star21Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_21_3",
+      "formal_scope": "exact ramified contextual relation-membership elimination, modulo the named star_10_35_hypothesis",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "integrated-local",
       "printed_dependencies": [
         "PM1:✱21·11",
         "PM1:✱21·15"
       ],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱10·43",
+        "PM1:✱12·11",
+        "PM1:✱21·02",
+        "PM1:✱21·1"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_10_43",
+        "PM.RamifiedSyntax.star_12_11",
+        "PM.RamifiedSyntax.star_21_02_unfold",
+        "PM.RamifiedSyntax.star_21_1"
+      ],
+      "direct_assumptions": [],
+      "inherited_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
       "pm_verbatim": "*21·18. \\[\\begin{align}\\vdash\\colon\\ldotp \\hat{x}\\hat{y}\\phi(x,y)=\\hat{x}\\hat{y}\\psi(x,y).\\supset:f\\{\\hat{x}\\hat{y}\\phi(x,y)\\}.&\\equiv.f\\{\\hat{x}\\hat{y}\\psi(x,y)\\}\\\\ &\\quad[\\text{*21·11·15}]\\end{align}\\]",
       "printed_latex_witness": "✱21·18. \\[\\begin{align}\\vdash\\colon\\ldotp \\hat{x}\\hat{y}\\phi(x,y)=\\hat{x}\\hat{y}\\psi(x,y).\\supset:f\\{\\hat{x}\\hat{y}\\phi(x,y)\\}.&\\equiv.f\\{\\hat{x}\\hat{y}\\psi(x,y)\\}\\\\ &\\quad[\\text{*21·11·15}]\\end{align}\\]",
       "demonstration_provenance": "follows-printed",
@@ -46,7 +60,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -87,7 +101,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -122,7 +136,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -160,7 +174,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -195,7 +209,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

@@ -51,7 +51,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -90,7 +90,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -130,7 +130,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -139,20 +139,24 @@
       "printed": "✱24·5. ⊢:∃!α.≡.(∃ x).x ∈ α [✱4·2.(✱24·03)]",
       "printed_page": 239,
       "scan_leaf": 261,
-      "lean_path": "Principia/FirstEdition/Volume1/Star24Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "Source transcription only; no formal target is proposed.",
+      "lean_path": "Principia/Deduction/Star24Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_24_5",
+      "formal_scope": "exact definitional class-existence equivalence in the ramified PM judgement",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_status": "source-only-no-formal-target",
+      "integration_status": "prepared",
       "printed_dependencies": [
         "PM1:✱4·2",
-        "PM1:✱24·03",
-        "PM1:✱10·252",
-        "PM1:✱24·15"
+        "PM1:✱24·03"
       ],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱24·03"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_4_2",
+        "PM.RamifiedSyntax.star_24_03"
+      ],
       "demonstration_provenance": "follows-printed",
       "printed_latex_witness": "✱24·5. \\vdash\\colon\\exists!\\alpha.\\equiv.(\\exists x).x \\in \\alpha \\quad[\\text{*4·2.(*24·03)}]",
       "certification": {
@@ -163,7 +167,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -201,7 +205,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

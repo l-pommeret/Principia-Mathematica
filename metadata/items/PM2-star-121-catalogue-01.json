@@ -21,8 +21,9 @@
       "printed": "✱121·01. P(x−y)=P⃖poʻx∩P⃗poʻy Df",
       "printed_page": 236,
       "scan_leaf": 276,
-      "lean_path": "Principia/Architecture/Star121OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star121OpeningKernel.star_121_01",
+      "lean_path": "Principia/Deduction/Star121Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_121_01",
+      "reading_declaration": "PM.RamifiedSyntax.star_121_01_reading",
       "formal_scope": "exact typed reconstruction of PM's open-interval definition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "awaiting-ci",
@@ -37,7 +38,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "formalization_level": "pm-derivation-v1"
     },
@@ -47,8 +48,9 @@
       "printed": "✱121·011. P(x⊣y)=P⃖poʻx∩P⃗∗ʻy Df",
       "printed_page": 236,
       "scan_leaf": 276,
-      "lean_path": "Principia/Architecture/Star121OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star121OpeningKernel.star_121_011",
+      "lean_path": "Principia/Deduction/Star121Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_121_011",
+      "reading_declaration": "PM.RamifiedSyntax.star_121_011_reading",
       "formal_scope": "exact typed reconstruction of PM's left-closed interval definition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "awaiting-ci",
@@ -63,7 +65,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "formalization_level": "pm-derivation-v1"
     },
@@ -73,8 +75,9 @@
       "printed": "✱121·012. P(x⟝y)=P⃖∗ʻx∩P⃗poʻy Df",
       "printed_page": 236,
       "scan_leaf": 276,
-      "lean_path": "Principia/Architecture/Star121OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star121OpeningKernel.star_121_012",
+      "lean_path": "Principia/Deduction/Star121Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_121_012",
+      "reading_declaration": "PM.RamifiedSyntax.star_121_012_reading",
       "formal_scope": "exact typed reconstruction of PM's right-closed interval definition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "awaiting-ci",
@@ -89,7 +92,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "formalization_level": "pm-derivation-v1"
     },
@@ -99,8 +102,9 @@
       "printed": "✱121·013. P(x⊢⊣y)=P⃖∗ʻx∩P⃗∗ʻy Df",
       "printed_page": 236,
       "scan_leaf": 276,
-      "lean_path": "Principia/Architecture/Star121OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star121OpeningKernel.star_121_013",
+      "lean_path": "Principia/Deduction/Star121Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_121_013",
+      "reading_declaration": "PM.RamifiedSyntax.star_121_013_reading",
       "formal_scope": "exact typed reconstruction of PM's closed-interval definition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "awaiting-ci",
@@ -115,7 +119,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "formalization_level": "pm-derivation-v1"
     },
@@ -125,8 +129,9 @@
       "printed": "✱121·02. P_ν=x̂ŷ{N₀cʻP(x⊢⊣y)=ν+_c1} Df",
       "printed_page": 236,
       "scan_leaf": 276,
-      "lean_path": "Principia/Architecture/Star121OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star121OpeningKernel.star_121_02",
+      "lean_path": "Principia/Deduction/Star121Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_121_02",
+      "reading_declaration": "PM.RamifiedSyntax.star_121_02_reading",
       "formal_scope": "exact typed reconstruction of PM's finite-distance level definition, with its cardinal measure represented by rank",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "awaiting-ci",
@@ -143,13 +148,13 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

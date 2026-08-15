@@ -24,8 +24,6 @@
       "printed": "✱105·3. ⊢ : μ=N₀cʻα .⊃. μ_(1)=N₁cʻα",
       "printed_page": 55,
       "scan_leaf": 95,
-      "lean_path": "Principia/Architecture/Star105ThirdKernel.lean",
-      "declaration": "PM.Architecture.Star105ThirdKernel.star_105_3",
       "formal_scope": "refused: Lean assumes the conclusion lift m = N1 a as parameter e and returns it unchanged; N0 is unused and the printed antecedent mu = N0c alpha is represented only by the unrelated equality m = a",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -41,7 +39,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -50,8 +48,6 @@
       "printed": "✱105·322. ⊢ : ∃!N₁cʻα .⊃: N₁cʻα=N₁cʻβ .≡. N₀cʻα=N₀cʻβ",
       "printed_page": 56,
       "scan_leaf": 96,
-      "lean_path": "Principia/Architecture/Star105ThirdKernel.lean",
-      "declaration": "PM.Architecture.Star105ThirdKernel.star_105_322",
       "formal_scope": "refused: Lean assumes and returns the displayed equivalence unchanged, omitting the printed uniqueness/existence antecedent and providing no derivation of either direction",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -67,7 +63,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -76,8 +72,6 @@
       "printed": "✱105·4. ⊢ : γ∈N₂cʻα .⊃. ιʻʻγ∈N₁cʻα",
       "printed_page": 58,
       "scan_leaf": 98,
-      "lean_path": "Principia/Architecture/Star105FinalKernel.lean",
-      "declaration": "PM.Architecture.Star105FinalKernel.star_105_4",
       "formal_scope": "refused: Lean includes a representation of the N2-membership antecedent but separately assumes the N1-membership conclusion as parameter e and returns e unchanged",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -93,7 +87,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -102,8 +96,6 @@
       "printed": "✱105·41. ⊢ : ∃!N₂cʻα .⊃. ∃!N₁cʻα",
       "printed_page": 58,
       "scan_leaf": 98,
-      "lean_path": "Principia/Architecture/Star105FinalKernel.lean",
-      "declaration": "PM.Architecture.Star105FinalKernel.star_105_41",
       "formal_scope": "refused: Lean abstracts the printed existence claims to arbitrary propositions p and q, assumes the complete implication p -> q as h, and returns h unchanged",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -119,7 +111,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -128,8 +120,6 @@
       "printed": "✱105·42. ⊢ : N₁cʻα=Λ .⊃. N₂cʻα=Λ",
       "printed_page": 59,
       "scan_leaf": 99,
-      "lean_path": "Principia/Architecture/Star105FinalKernel.lean",
-      "declaration": "PM.Architecture.Star105FinalKernel.star_105_42",
       "formal_scope": "refused: Lean assumes the complete implication N1 a = e -> N2 a = e as h and returns it unchanged; it does not derive the empty-class conclusion from the antecedent",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -145,7 +135,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

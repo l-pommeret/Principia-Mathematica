@@ -23,8 +23,6 @@
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
-      "declaration": "PM.Architecture.Star35CompositionKernel.star_35_25",
       "formal_scope": "exact typed definitional equality for PM's bracket convention on right-restricted composition; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
@@ -33,7 +31,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "\\(S\\mid R\\upharpoonright \\beta=(S\\mid R)\\upharpoonright \\beta \\quad\\text{Df}\\)"
     },
@@ -62,13 +60,7 @@
       "normalized_dependencies": [
         "PM1:✱35·21"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star35CompositionKernel.star_35_21",
-        "PM.Architecture.Star35CompositionKernel.star_35_22",
-        "PM.Architecture.Star35CompositionKernel.star_35_23"
-      ],
-      "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
-      "declaration": "PM.Architecture.Star35CompositionKernel.star_35_26",
+      "lean_dependencies": [],
       "formal_scope": "exact typed reconstruction of all eight printed forms as the seven successive equalities of restricted composition; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
@@ -79,7 +71,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "\\[\\begin{align}\\vdash.(\\alpha\\upharpoonleft R)\\mid (S\\upharpoonright \\beta)&=\\alpha\\upharpoonleft (R\\mid S)\\upharpoonright \\beta=\\{\\alpha\\upharpoonleft (R\\mid S)\\}\\upharpoonright \\beta=\\alpha\\upharpoonleft \\{(R\\mid S)\\upharpoonright \\beta\\}\\\\ &=\\{(\\alpha\\upharpoonleft R)\\mid S)\\}\\upharpoonright \\beta=\\alpha\\upharpoonleft \\{R\\mid (S\\upharpoonright \\beta)\\}\\\\ &=(\\alpha\\upharpoonleft R\\mid S)\\upharpoonright \\beta=\\alpha\\upharpoonleft (R\\mid S\\upharpoonright \\beta)\\end{align}\\]"
     },
@@ -95,8 +87,6 @@
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35CompositionKernel.lean",
-      "declaration": "PM.Architecture.Star35CompositionKernel.star_35_27",
       "formal_scope": "exact typed definitional equality for the fully restricted composition bracket convention; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
@@ -105,7 +95,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "\\(\\alpha\\upharpoonleft R\\mid S\\upharpoonright \\beta=(\\alpha\\upharpoonleft R\\mid S)\\upharpoonright \\beta \\quad\\text{Df}\\)"
     },
@@ -122,8 +112,6 @@
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
-      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_33",
       "formal_scope": "exact typed equality merging consecutive right restrictions into intersection of their endpoint classes; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
@@ -134,7 +122,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "\\(\\vdash.(\\alpha\\upharpoonleft R\\upharpoonright \\beta)\\upharpoonright \\gamma=\\{\\alpha\\upharpoonleft R\\upharpoonright (\\beta\\cap \\gamma)\\} \\quad[\\text{Proof similar to that of *35·31}]\\)"
     },
@@ -151,8 +139,6 @@
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
-      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_34",
       "formal_scope": "exact typed equality merging nested left and simultaneous restrictions into intersection of their source classes; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
@@ -163,7 +149,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "\\(\\vdash.\\alpha\\upharpoonleft (\\beta\\upharpoonleft R\\upharpoonright \\gamma)=\\{(\\alpha\\cap \\beta)\\upharpoonleft R\\upharpoonright \\gamma\\} \\quad[\\text{Proof similar to that of *35·31}]\\)"
     }

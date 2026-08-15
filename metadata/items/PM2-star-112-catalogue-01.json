@@ -22,8 +22,6 @@
       "printed": "✱112·02. ΣNcʻκ = NcʻΣʻκ Df",
       "printed_page": 99,
       "scan_leaf": 139,
-      "lean_path": "Principia/Architecture/Star112OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star112OpeningKernel.star_112_02",
       "formal_scope": "refused: PM defines the cardinal sum as the cardinal number of the previously defined sum class, whereas Lean defines SumCard from the untagged union and proves only that local definition by reflexivity",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -43,7 +41,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -52,8 +50,6 @@
       "printed": "✱112·1. ⊢ . Σʻκ=sʻ∈↧ʻʻκ",
       "printed_page": 102,
       "scan_leaf": 142,
-      "lean_path": "Principia/Architecture/Star112OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star112OpeningKernel.star_112_1",
       "formal_scope": "refused: PM expands the sum class as the union of the membership relation restricted to κ, while Lean states only the reflexive identity SumClass K = SumClass K",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -74,7 +70,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -83,8 +79,6 @@
       "printed": "✱112·101. ⊢ . ΣNcʻκ=NcʻΣʻκ=Ncʻsʻ∈↧ʻʻκ",
       "printed_page": 99,
       "scan_leaf": 139,
-      "lean_path": "Principia/Architecture/Star112OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star112OpeningKernel.star_112_101",
       "formal_scope": "refused: PM proves a three-term equality connecting cardinal sum, the cardinal of the sum class, and the cardinal of its relational expansion; Lean states only SumCard K = SumCard K",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -108,7 +102,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

@@ -1,0 +1,78 @@
+{
+  "batch": "PM1-STAR55-CATALOGUE-01-AWAITING-CI-SPLIT",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "385",
+    "scan_leaves": [
+      407
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱55·01",
+      "kind": "definition",
+      "printed": "✱55·01. x↓y = ιʻx ↑ ιʻy Df",
+      "printed_page": 385,
+      "scan_leaf": 407,
+      "lean_path": "Principia/Deduction/Star55Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_55_01",
+      "formal_scope": "exact typed definition of the ordinal couple as a singleton cross-product",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      }
+    },
+    {
+      "id": "PM1:✱55·02",
+      "kind": "definition",
+      "printed": "✱55·02. Rʻx↓y = Rʻ(x↓y) Df",
+      "printed_page": 385,
+      "scan_leaf": 407,
+      "lean_path": "Principia/Deduction/Star55Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_55_02",
+      "formal_scope": "exact typed definition of application to an ordinal-couple argument",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

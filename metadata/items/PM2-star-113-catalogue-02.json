@@ -21,8 +21,6 @@
       "printed": "✱113·106. ⊢ : x∈α . y∈β .⊃. x↓y∈β×α  [✱113·101]",
       "printed_page": 109,
       "scan_leaf": 149,
-      "lean_path": "Principia/Architecture/Star113OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star113OpeningKernel.star_113_106",
       "formal_scope": "exact typed introduction rule placing an ordered-pair relation in the class product from membership of its two coordinates",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -50,7 +48,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -59,8 +57,6 @@
       "printed": "✱113·107. ⊢ : ∃!α . ∃!β .⊃. ∃!β×α  [✱113·106]",
       "printed_page": 109,
       "scan_leaf": 149,
-      "lean_path": "Principia/Architecture/Star113OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star113OpeningKernel.star_113_107",
       "formal_scope": "exact typed nonemptiness of the class product from nonemptiness of both factor classes",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -68,9 +64,7 @@
       "printed_dependencies": [
         "PM2:✱113·106"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star113OpeningKernel.star_113_106"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM2:✱113·106"
       ],
@@ -83,7 +77,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

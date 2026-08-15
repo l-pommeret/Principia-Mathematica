@@ -39,11 +39,13 @@
       "printed": "⊢ :: (∃z).φz : (∃w).χw : ⊃ : φz .⊃z .ψz : χw .⊃w .θw : ≡ : φz.χw .⊃z,w .ψz.θw",
       "printed_page": 166,
       "scan_leaf": 188,
-      "lean_path": "Principia/Architecture/Star11Q288Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q288Kernel.star_11_71",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_71",
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
       "formal_scope": "exact binary formal-implication composition theorem",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "awaiting-ci",
       "integration_status": "integrated-local",
       "printed_dependencies": [
         "PM1:✱10·1",
@@ -74,13 +76,11 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "awaiting-ci",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T8"
+          "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

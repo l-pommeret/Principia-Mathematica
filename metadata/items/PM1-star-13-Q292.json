@@ -29,8 +29,6 @@
       "printed": "⊢ : x = y .≡ . y = x",
       "printed_page": 178,
       "scan_leaf": 200,
-      "lean_path": "Principia/Architecture/Star13Q292Targets.lean",
-      "declaration": "PM.Architecture.Star13Q292Targets.star_13_16_target",
       "formal_scope": "exact typed object-syntax target; identity assertion architecture remains blocked",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -40,7 +38,6 @@
         "PM1:✱10·32"
       ],
       "normalized_dependencies": [],
-      "formalization_level": "pm-syntax-target",
       "integration_blocked": true,
       "blocking_reason": "Printed proof depends on blocked ✱13·11; CoreFormula equality is only assigned vocabulary and no inductive assertion relation derives symmetry.",
       "semantic_audit_status": "blocked-syntax-target-no-object-derivation",
@@ -54,7 +51,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -63,28 +60,29 @@
       "printed": "⊢ : x = y . y = z .⊃ . x = z",
       "printed_page": 178,
       "scan_leaf": 200,
-      "lean_path": "Principia/Architecture/Star13Q292Targets.lean",
-      "declaration": "PM.Architecture.Star13Q292Targets.star_13_17_target",
-      "formal_scope": "exact typed object-syntax target; identity assertion architecture remains blocked",
+      "lean_path": "Principia/Deduction/Star13Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_13_17",
+      "reading_declaration": "PM.RamifiedSyntax.star_13_17_reading",
+      "formal_scope": "exact unconditional ramified derivation in the printed full-scope ✱10·3 normal form",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-t1-t9-object-derivation",
+      "integration_status": "ramified-object-derivation",
       "printed_dependencies": [
         "PM1:✱13·1",
         "PM1:✱10·3"
       ],
       "normalized_dependencies": [
-        "PM1:✱1·01",
-        "PM1:✱3·01"
+        "PM1:✱13·1",
+        "PM1:✱10·3"
       ],
-      "formalization_level": "pm-syntax-target",
-      "integration_blocked": true,
-      "blocking_reason": "Printed proof depends on blocked ✱13·1; CoreFormula equality has no canonical ✱13·01 normalization or object derivation of transitivity.",
-      "semantic_audit_status": "blocked-syntax-target-no-object-derivation",
+      "formalization_level": "pm-derivation-v1",
+      "integration_blocked": false,
+      "demonstration_provenance": "follows-printed",
+      "semantic_audit_status": "exact-ramified-object-derivation",
       "semantic_audit_evidence": "reviews/Q292-star-13-target-audit.md",
       "lean_dependencies": [
-        "PM.Elementary.conj",
-        "PM.Elementary.imp"
+        "PM.RamifiedSyntax.star_3_33",
+        "PM.RamifiedSyntax.Derivation.star_10_11"
       ],
       "certification": {
         "tier": "prepared",
@@ -94,7 +92,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -103,8 +101,8 @@
       "printed": "⊢ : x = y . x = z .⊃ . y = z",
       "printed_page": 178,
       "scan_leaf": 200,
-      "lean_path": "Principia/Architecture/Star13Q292Targets.lean",
-      "declaration": "PM.Architecture.Star13Q292Targets.star_13_171_target",
+      "lean_path": "Principia/Deduction/Star13Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_13_171",
       "formal_scope": "exact typed object-syntax target; identity assertion architecture remains blocked",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -134,7 +132,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -143,8 +141,6 @@
       "printed": "⊢ : y = x . z = x .⊃ . y = z",
       "printed_page": 178,
       "scan_leaf": 200,
-      "lean_path": "Principia/Architecture/Star13Q292Targets.lean",
-      "declaration": "PM.Architecture.Star13Q292Targets.star_13_172_target",
       "formal_scope": "exact typed object-syntax target; identity assertion architecture remains blocked",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -157,7 +153,6 @@
         "PM1:✱1·01",
         "PM1:✱3·01"
       ],
-      "formalization_level": "pm-syntax-target",
       "integration_blocked": true,
       "blocking_reason": "Both cited premises ✱13·16 and ✱13·17 are blocked syntax targets; their compact printed citation is split but cannot be consumed by a judgement.",
       "semantic_audit_status": "blocked-syntax-target-no-object-derivation",
@@ -174,7 +169,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -183,8 +178,8 @@
       "printed": "⊢ : x = y . x ≠ z .⊃ . y ≠ z",
       "printed_page": 178,
       "scan_leaf": 200,
-      "lean_path": "Principia/Architecture/Star13Q292Targets.lean",
-      "declaration": "PM.Architecture.Star13Q292Targets.star_13_18_target",
+      "lean_path": "Principia/Deduction/Star13Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_13_18",
       "formal_scope": "exact typed object-syntax target with ✱13·02 inequality expansion; identity assertion architecture remains blocked",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -214,7 +209,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

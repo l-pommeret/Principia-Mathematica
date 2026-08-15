@@ -28,8 +28,6 @@
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
-      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_35",
       "formal_scope": "exact typed equality restricting a relation's source class to its domain without changing the restricted relation; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
@@ -40,7 +38,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "\\(\\vdash.\\alpha\\upharpoonleft R=(\\alpha\\cap \\text{D}ʻR)\\upharpoonleft R\\)"
     },
@@ -61,8 +59,6 @@
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
-      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_351",
       "formal_scope": "exact typed equality restricting a relation's target class to its converse-domain without changing the restricted relation; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
@@ -73,7 +69,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "\\(\\vdash.R\\upharpoonright \\beta=R\\upharpoonright (\\beta\\cap \\text{ᗡ}ʻR) \\quad[\\text{Proof as in *35·35}]\\)"
     },
@@ -90,8 +86,6 @@
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
-      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_352",
       "formal_scope": "exact typed equality simultaneously intersecting endpoint restrictions with domain and converse-domain; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
@@ -102,7 +96,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "\\(\\vdash.\\alpha\\upharpoonleft R\\upharpoonright \\beta=(\\alpha\\cap \\text{D}ʻR)\\upharpoonleft R\\upharpoonright (\\beta\\cap \\text{ᗡ}ʻR) \\quad[\\text{Proof as in *35·35}]\\)"
     },
@@ -119,8 +113,6 @@
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
-      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_354",
       "formal_scope": "exact typed equality moving an intermediate-class restriction across relational composition; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
@@ -131,7 +123,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "\\(\\vdash.(R\\upharpoonright \\alpha)\\mid S=R\\mid \\alpha\\upharpoonleft S\\)"
     },
@@ -148,8 +140,6 @@
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35DomainUnionKernel.lean",
-      "declaration": "PM.Architecture.Star35DomainUnionKernel.star_35_41",
       "formal_scope": "exact typed distributivity of left restriction over union of source classes; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
@@ -160,7 +150,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "\\(\\vdash.(\\alpha\\cup \\alpha')\\upharpoonleft R=\\alpha\\upharpoonleft R\\unicode{x228d}\\alpha'\\upharpoonleft R \\quad[\\text{*35·1.*22·34}]\\)"
     }

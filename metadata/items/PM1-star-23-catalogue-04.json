@@ -19,10 +19,21 @@
       "printed_page": 227,
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱2·05",
+        "PM1:✱3·22",
+        "PM1:✱3·35",
+        "PM1:✱11·11"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_2_05",
+        "PM.RamifiedSyntax.star_3_22",
+        "PM.RamifiedSyntax.star_3_35",
+        "PM.RamifiedSyntax.star_11_11"
+      ],
       "integration_status": "prepared",
-      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_scope": "exact double-universal pointwise elimination of relation inclusion in the ramified PM judgement",
+      "demonstration_provenance": "editorial-reconstruction",
       "formal_status": "lean-typechecked",
       "certification": {
         "tier": "lean-typechecked",
@@ -31,10 +42,10 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
-      "declaration": "PM.FirstEdition.Volume1.Star23.star_23_441",
-      "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean"
+      "declaration": "PM.RamifiedSyntax.star_23_441",
+      "lean_path": "Principia/Deduction/Star23Derived.lean"
     },
     {
       "id": "PM1:✱23·45",
@@ -57,7 +68,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "declaration": "PM.FirstEdition.Volume1.Star23.star_23_45",
       "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean",
@@ -73,10 +84,17 @@
       "printed_page": 227,
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱3·35",
+        "PM1:✱11·11"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_3_35",
+        "PM.RamifiedSyntax.star_11_11"
+      ],
       "integration_status": "prepared",
-      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "formal_scope": "exact double-universal pointwise `Comp` instance for relation inclusion",
+      "demonstration_provenance": "editorial-reconstruction",
       "formal_status": "lean-typechecked",
       "certification": {
         "tier": "lean-typechecked",
@@ -85,10 +103,10 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
-      "declaration": "PM.FirstEdition.Volume1.Star23.star_23_46",
-      "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean"
+      "declaration": "PM.RamifiedSyntax.star_23_46",
+      "lean_path": "Principia/Deduction/Star23Derived.lean"
     },
     {
       "id": "PM1:✱23·47",
@@ -111,7 +129,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "declaration": "PM.FirstEdition.Volume1.Star23.star_23_47",
       "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean",
@@ -139,7 +157,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "declaration": "PM.FirstEdition.Volume1.Star23.star_23_48",
       "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean",

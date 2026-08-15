@@ -14,8 +14,6 @@
       "id": "PM1:✱36·28",
       "kind": "derived-proposition",
       "printed": "✱36·28. ⊢ . P⟏V=P",
-      "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
-      "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_28",
       "formal_scope": "exact restriction-to-universal-class identity",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -30,7 +28,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
@@ -39,8 +37,6 @@
       "id": "PM1:✱36·29",
       "kind": "derived-proposition",
       "printed": "✱36·29. ⊢ . P⟏α=P∩(α×α)",
-      "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
-      "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_29",
       "formal_scope": "exact extensional characterization as intersection with the class square",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -55,7 +51,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
@@ -64,8 +60,6 @@
       "id": "PM1:✱36·3",
       "kind": "derived-proposition",
       "printed": "✱36·3. ⊢ . P⟏α=P⟏(α∩CʻP)",
-      "lean_path": "Principia/Architecture/Star36RestrictionKernel2.lean",
-      "declaration": "PM.Architecture.Star36RestrictionKernel2.star_36_3",
       "formal_scope": "exact invariance after intersecting the limiting class with the relation field",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -80,7 +74,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
@@ -89,8 +83,6 @@
       "id": "PM1:✱36·31",
       "kind": "derived-proposition",
       "printed": "✱36·31. ⊢ : α∩CʻP=Λ .⊃. P⟏α=Λ",
-      "lean_path": "Principia/Architecture/Star36RestrictionKernel3.lean",
-      "declaration": "PM.Architecture.Star36RestrictionKernel3.star_36_31",
       "formal_scope": "exact emptiness consequence when the limiting class misses the relation field",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -105,7 +97,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
@@ -114,15 +106,11 @@
       "id": "PM1:✱36·32",
       "kind": "derived-proposition",
       "printed": "✱36·32. ⊢ : α∩CʻP=β∩CʻP .⊃. P⟏α=P⟏β",
-      "lean_path": "Principia/Architecture/Star36RestrictionKernel3.lean",
-      "declaration": "PM.Architecture.Star36RestrictionKernel3.star_36_32",
       "formal_scope": "exact equality consequence from equal intersections with the relation field",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-checked",
-      "lean_dependencies": [
-        "PM.Architecture.Star36RestrictionKernel2.star_36_3"
-      ],
+      "lean_dependencies": [],
       "printed_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱36·3"
@@ -143,7 +131,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"

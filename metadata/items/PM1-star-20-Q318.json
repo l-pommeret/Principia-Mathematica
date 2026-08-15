@@ -29,8 +29,6 @@
       "printed": "⊢ : (∃φ) : φ!x .≡ₓ. ψx : f{ẑ(ψz)} .≡ . f{ẑ(φ!z)}",
       "printed_page": 201,
       "scan_leaf": 223,
-      "lean_path": "Principia/Architecture/Star20Q318Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q318Kernel.star_20_12",
       "formal_scope": "exact eliminative class-context equivalence with explicit extensionality and predicative witness",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -59,7 +57,7 @@
           "T8",
           "T9"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -68,8 +66,6 @@
       "printed": "⊢ : ψx .≡ₓ. χx .⊃ . ẑ(ψz) = ẑ(χz)",
       "printed_page": 201,
       "scan_leaf": 223,
-      "lean_path": "Principia/Architecture/Star20Q318Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q318Kernel.star_20_13",
       "formal_scope": "exact polymorphic forward class-extensionality implication",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -84,6 +80,10 @@
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
       "certification": {
         "tier": "lean-typechecked",
         "failed_criteria": [
@@ -91,7 +91,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -100,8 +100,6 @@
       "printed": "⊢ : ẑ(ψz) = ẑ(χz) .⊃ : ψx .≡ₓ. χx",
       "printed_page": 201,
       "scan_leaf": 223,
-      "lean_path": "Principia/Architecture/Star20Q318Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q318Kernel.star_20_14",
       "formal_scope": "exact polymorphic reverse class-extensionality implication",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -122,7 +120,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -131,9 +129,9 @@
       "printed": "⊢ : ψx .≡ₓ. χx : ≡ : ẑ(ψz) = ẑ(χz)",
       "printed_page": 201,
       "scan_leaf": 223,
-      "lean_path": "Principia/Architecture/Star20Q318Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q318Kernel.star_20_15",
-      "formal_scope": "exact polymorphic class-extensionality equivalence",
+      "lean_path": "Principia/Deduction/Star20Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_20_15",
+      "formal_scope": "exact ramified mutual implication between pointwise equivalence and Leibniz identity of contextual class abstractions; the printed directions ✱20·13 and ✱20·14 remain explicit hypotheses",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-integrated",
@@ -144,13 +142,17 @@
         "PM1:✱20·14"
       ],
       "lean_dependencies": [
-        "PM.Architecture.Star20Q318Kernel.star_20_13",
-        "PM.Architecture.Star20Q318Kernel.star_20_14"
+        "PM.RamifiedSyntax.star_3_03"
       ],
       "normalized_dependencies": [
         "PM1:✱20·13",
         "PM1:✱20·14"
       ],
+      "direct_assumptions": [],
+      "inherited_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "demonstration_provenance": "follows-printed",
       "certification": {
         "tier": "lean-typechecked",
         "failed_criteria": [
@@ -158,7 +160,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -167,8 +169,6 @@
       "printed": "⊢ . (∃φ) . ẑ(ψz) = ẑ(φ!z)",
       "printed_page": 201,
       "scan_leaf": 223,
-      "lean_path": "Principia/Architecture/Star20Q318Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q318Kernel.star_20_151",
       "formal_scope": "exact eliminative existence of an extensionally equal predicative representative",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -200,7 +200,7 @@
           "T8",
           "T9"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

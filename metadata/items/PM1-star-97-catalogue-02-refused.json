@@ -21,16 +21,12 @@
       "printed": "✱97·13. ⊢. R⃡_∗ʻx = R⃗_∗ʻx ∪ R⃖_∗ʻx",
       "printed_page": 657,
       "scan_leaf": 679,
-      "lean_path": "Principia/Architecture/Star97Kernel.lean",
-      "declaration": "PM.Architecture.Star97Kernel.star_97_13",
       "formal_scope": "refused: PM identifies a generated symmetric neighbourhood with the union of forward and backward transitive closures; Lean merely reuses symmetry of family for the already symmetrized base relation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star97Kernel.star_97_101"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱97·101"
       ],
@@ -44,7 +40,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -53,8 +49,6 @@
       "printed": "✱97·14. ⊢:R∈ 1→1.xR_∗y.⊃.R⃡_∗ʻx=R⃡_∗ʻy [✱96·32.✱97·13]",
       "printed_page": 657,
       "scan_leaf": 679,
-      "lean_path": "Principia/Architecture/Star97Kernel.lean",
-      "declaration": "PM.Architecture.Star97Kernel.star_97_14",
       "formal_scope": "refused: PM assumes a one-one relation and transitive reachability to conclude equality of generated families; Lean assumes one base edge and concludes only two pointwise family memberships",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -72,7 +66,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -81,17 +75,12 @@
       "printed": "✱97·15. ⊢:R∈ 1→1.x∈ R⃡_∗ʻy.⊃.R⃡_∗ʻx=R⃡_∗ʻy",
       "printed_page": 657,
       "scan_leaf": 679,
-      "lean_path": "Principia/Architecture/Star97Kernel.lean",
-      "declaration": "PM.Architecture.Star97Kernel.star_97_15",
       "formal_scope": "refused: PM concludes equality of two generated families under one-one and family-membership hypotheses; Lean concludes only that both endpoints lie in the field",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star97Kernel.star_97_101",
-        "PM.Architecture.Star97Kernel.star_97_11"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱97·101",
         "PM1:✱97·11"
@@ -106,7 +95,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -115,16 +104,12 @@
       "printed": "✱97·16. ⊢:R∈ 1→1.⊃.R⃡_∗ʻʻCʻR∈ Cls² excl",
       "printed_page": 657,
       "scan_leaf": 679,
-      "lean_path": "Principia/Architecture/Star97Kernel.lean",
-      "declaration": "PM.Architecture.Star97Kernel.star_97_16",
       "formal_scope": "refused: PM asserts pairwise exclusivity of the entire class of generated families of a one-one relation; Lean proves only symmetry of one pointwise family-membership proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star97Kernel.star_97_101"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱97·101"
       ],
@@ -138,7 +123,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

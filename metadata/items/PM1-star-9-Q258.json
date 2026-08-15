@@ -22,16 +22,17 @@
       "printed": "⊢:φx.⊃.(∃z).φz  Pp",
       "printed_page": 136,
       "scan_leaf": 158,
-      "lean_path": "Principia/Architecture/FirstOrderPrerequisites.lean",
-      "declaration": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_1",
-      "formal_scope": "closed first-order primitive assertion schema from an elementary value to the same matrix's sometimes form",
+      "lean_path": "Principia/Deduction/Star9Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_9_1",
+      "demonstration_provenance": "follows-printed",
+      "formal_scope": "order-generic ramified primitive assertion schema from a typed matrix value to the same matrix's sometimes form",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
-      "integration_status": "kernel-checked-first-order-primitive-proposition",
+      "integration_status": "ramified-pm-derivation-v1-awaiting-ci",
       "formalization_level": "pm-derivation-v1",
-      "pm_ast": "FirstOrderPrerequisites.star_9_1_target over Apparent, FirstOrder and OrderedFormula",
-      "pm_judgement": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion",
-      "pm_certificate": "primitive constructor OrderedAssertion.star_9_1 at the exact assigned first order",
+      "pm_ast": "mixedImplication negation disjunction (body.instantiate value) (.sometimes existential body)",
+      "pm_judgement": "PM.RamifiedSyntax.Derivation",
+      "pm_certificate": "primitive constructor Derivation.star_9_1 at arbitrary assigned matrix order",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -42,7 +43,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -51,16 +52,17 @@
       "printed": "⊢:φx∨φy.⊃.(∃z).φz  Pp",
       "printed_page": 136,
       "scan_leaf": 158,
-      "lean_path": "Principia/Architecture/FirstOrderPrerequisites.lean",
-      "declaration": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_11",
-      "formal_scope": "closed primitive assertion schema with two distinct real values and one existential conclusion",
+      "lean_path": "Principia/Deduction/Star9Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_9_11",
+      "demonstration_provenance": "follows-printed",
+      "formal_scope": "order-generic ramified primitive assertion schema with two typed real values and one existential conclusion",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
-      "integration_status": "kernel-checked-first-order-primitive-proposition",
+      "integration_status": "ramified-pm-derivation-v1-awaiting-ci",
       "formalization_level": "pm-derivation-v1",
-      "pm_ast": "FirstOrderPrerequisites.star_9_11_target with two distinct RealVar occurrences and one Apparent existential binder",
-      "pm_judgement": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion",
-      "pm_certificate": "independent primitive constructor OrderedAssertion.star_9_11 preserving anti-circularity",
+      "pm_ast": "mixedImplication negation disjunction (sameDisjunction matrixDisjunction (body.instantiate x) (body.instantiate y)) (.sometimes existential body)",
+      "pm_judgement": "PM.RamifiedSyntax.Derivation",
+      "pm_certificate": "independent primitive constructor Derivation.star_9_11 preserving anti-circularity",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
@@ -71,7 +73,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

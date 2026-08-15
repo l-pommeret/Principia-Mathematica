@@ -20,8 +20,8 @@
       "printed": "(x, y).φ(x, y) .= : (x) : (y).φ(x, y)  Df",
       "printed_page": 157,
       "scan_leaf": 179,
-      "lean_path": "Principia/Architecture/Star11Q275Definitions.lean",
-      "declaration": "PM.Architecture.Star11Q275Definitions.star_11_01",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_01",
       "formal_scope": "exact two successive typed universal binders",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -34,7 +34,7 @@
         "failed_criteria": [
           "T6"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "formalization_level": "pm-derivation-v1"
     },
@@ -44,8 +44,8 @@
       "printed": "(x, y, z).φ(x, y, z) .= : (x) : (y, z).φ(x, y, z)  Df",
       "printed_page": 157,
       "scan_leaf": 179,
-      "lean_path": "Principia/Architecture/Star11Q275Definitions.lean",
-      "declaration": "PM.Architecture.Star11Q275Definitions.star_11_02",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_02",
       "formal_scope": "exact three successive typed universal binders",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -58,7 +58,7 @@
         "failed_criteria": [
           "T6"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "formalization_level": "pm-derivation-v1"
     },
@@ -68,8 +68,8 @@
       "printed": "(∃x, y).φ(x, y) .= : (∃x) : (∃y).φ(x, y)  Df",
       "printed_page": 157,
       "scan_leaf": 179,
-      "lean_path": "Principia/Architecture/Star11Q275Definitions.lean",
-      "declaration": "PM.Architecture.Star11Q275Definitions.star_11_03",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_03",
       "formal_scope": "exact two successive typed existential binders",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -82,7 +82,7 @@
         "failed_criteria": [
           "T6"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "formalization_level": "pm-derivation-v1"
     },
@@ -92,8 +92,8 @@
       "printed": "(∃x, y, z).φ(x, y, z) .= : (∃x) : (∃y, z).φ(x, y, z)  Df",
       "printed_page": 157,
       "scan_leaf": 179,
-      "lean_path": "Principia/Architecture/Star11Q275Definitions.lean",
-      "declaration": "PM.Architecture.Star11Q275Definitions.star_11_04",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_04",
       "formal_scope": "exact three successive typed existential binders",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -106,7 +106,7 @@
         "failed_criteria": [
           "T6"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "formalization_level": "pm-derivation-v1"
     },
@@ -116,8 +116,8 @@
       "printed": "φ(x, y) .⊃ₓ,ᵧ. ψ(x, y) .= : (x, y) : φ(x, y) .⊃ .ψ(x, y)  Df",
       "printed_page": 157,
       "scan_leaf": 179,
-      "lean_path": "Principia/Architecture/Star11Q275Definitions.lean",
-      "declaration": "PM.Architecture.Star11Q275Definitions.star_11_05",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_05",
       "formal_scope": "exact pointwise implication beneath two universal binders",
       "source_status": "source-catalogued",
       "formal_status": "kernel-checked",

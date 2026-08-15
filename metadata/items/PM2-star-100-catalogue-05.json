@@ -21,8 +21,6 @@
       "printed": "✱100·4. ⊢ : μ∈NC .≡. (∃α). μ=Ncʻα [✱37·78·79 . (✱100·02·01)]",
       "printed_page": 16,
       "scan_leaf": 56,
-      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
-      "declaration": "PM.Architecture.Star100SecondKernel.star_100_4",
       "formal_scope": "exact typed range characterization of membership in NC",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -55,7 +53,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -64,8 +62,6 @@
       "printed": "✱100·41. ⊢ . Ncʻα∈NC [✱100·4·2 . ✱14·204]",
       "printed_page": 16,
       "scan_leaf": 56,
-      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
-      "declaration": "PM.Architecture.Star100SecondKernel.star_100_41",
       "formal_scope": "exact typed introduction of every Nc value into NC",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -96,7 +92,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -105,8 +101,6 @@
       "printed": "✱100·42. ⊢ : μ,ν∈NC . ∃!μ∩ν .⊃. μ=ν",
       "printed_page": 16,
       "scan_leaf": 56,
-      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
-      "declaration": "PM.Architecture.Star100SecondKernel.star_100_42",
       "formal_scope": "exact typed uniqueness of two inhabited intersecting cardinal classes",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -116,9 +110,7 @@
         "PM2:✱100·34",
         "PM1:✱14·15"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star100SecondKernel.star_100_34"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM2:✱100·34"
       ],
@@ -140,7 +132,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -149,8 +141,6 @@
       "printed": "✱100·43. ⊢ . NC∈Cls² excl [✱100·42 . ✱84·11]",
       "printed_page": 16,
       "scan_leaf": 56,
-      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
-      "declaration": "PM.Architecture.Star100SecondKernel.star_100_43",
       "formal_scope": "exact typed pointwise exclusivity of the class NC",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -159,9 +149,7 @@
         "PM2:✱100·42",
         "PM1:✱84·11"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star100SecondKernel.star_100_42"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM2:✱100·42"
       ],
@@ -184,7 +172,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -193,8 +181,6 @@
       "printed": "✱100·44. ⊢ :: μ∈NC . ∃!Ncʻα .⊃ : α∈μ .≡. Ncʻα=μ",
       "printed_page": 16,
       "scan_leaf": 56,
-      "lean_path": "Principia/Architecture/Star100SecondKernel.lean",
-      "declaration": "PM.Architecture.Star100SecondKernel.star_100_44",
       "formal_scope": "exact typed membership/equality equivalence for a cardinal class",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -206,9 +192,7 @@
         "PM2:✱100·35",
         "PM1:✱14·15"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star100OpeningKernel.star_100_321"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM2:✱100·321"
       ],
@@ -235,7 +219,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

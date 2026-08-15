@@ -16,40 +16,11 @@
   ],
   "items": [
     {
-      "id": "PM1:✱51·01",
-      "kind": "definition",
-      "printed": "✱51·01. ι = I⃗  Df",
-      "printed_page": 357,
-      "scan_leaf": 379,
-      "lean_path": "Principia/Architecture/Star51OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star51OpeningKernel.star_51_01",
-      "formal_scope": "exact typed equality of the unit-class relation with the right identity image relation",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "demonstration_provenance": "editorial-reconstruction",
-      "integration_status": "provisional-kernel-integrated",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-      "formalization_level": "pm-derivation-v1",
-      "certification": {
-        "tier": "awaiting-ci",
-        "failed_criteria": [
-          "T7"
-        ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
-      }
-    },
-    {
       "id": "PM1:✱51·1",
       "kind": "derived-proposition",
       "printed": "✱51·1. ⊢ : α ι x .≡ . α = ŷ(y = x)",
       "printed_page": 357,
       "scan_leaf": 379,
-      "lean_path": "Principia/Architecture/Star51OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star51OpeningKernel.star_51_1",
       "formal_scope": "exact typed characterization of the unit-class relation by singleton equality",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -72,7 +43,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -81,8 +52,6 @@
       "printed": "✱51·11. ⊢ . ιʻx = ŷ(y = x)",
       "printed_page": 357,
       "scan_leaf": 379,
-      "lean_path": "Principia/Architecture/Star51OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star51OpeningKernel.star_51_11",
       "formal_scope": "exact typed value of the unit-class descriptive function as the identity singleton",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -100,7 +69,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -109,8 +78,6 @@
       "printed": "✱51·12. ⊢ . E!ιʻx",
       "printed_page": 357,
       "scan_leaf": 379,
-      "lean_path": "Principia/Architecture/Star51OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star51OpeningKernel.star_51_12",
       "formal_scope": "exact typed existence of the unit-class descriptive-function value",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -126,7 +93,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -135,8 +102,6 @@
       "printed": "✱51·13. ⊢ : α = ιʻx .≡ . α = ŷ(y = x)",
       "printed_page": 357,
       "scan_leaf": 379,
-      "lean_path": "Principia/Architecture/Star51OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star51OpeningKernel.star_51_13",
       "formal_scope": "exact typed equivalence between equality to the unit class and equality to its displayed abstraction",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -154,14 +119,14 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "0451de2d71917e28ddd43b37ef3a409da0bc276d",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31743886049",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   },
   "review_evidence": [
     "reviews/Star51-catalogue-review.md"

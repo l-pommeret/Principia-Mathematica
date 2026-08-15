@@ -29,8 +29,6 @@
       "printed": "⊢ : (∃φ) : φ!x .≡ₓ. ψx : f{ẑ(ψz)} .≡ . f{ẑ(φ!z)}",
       "printed_page": 202,
       "scan_leaf": 224,
-      "lean_path": "Principia/Architecture/Star20Q319Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q319Kernel.star_20_16",
       "formal_scope": "exact polymorphic class-extension endpoint in the documented simple-type embedding",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -58,7 +56,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -67,8 +65,6 @@
       "printed": "⊢ : (φ). f{ẑ(φ!z)} .⊃ . f{ẑ(ψz)}",
       "printed_page": 202,
       "scan_leaf": 224,
-      "lean_path": "Principia/Architecture/Star20Q319Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q319Kernel.star_20_17",
       "formal_scope": "exact polymorphic universal class-function specialization",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -79,9 +75,7 @@
         "PM1:✱20·16",
         "PM1:✱10·11"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star20Q319Kernel.star_20_16"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱20·16"
       ],
@@ -101,7 +95,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -110,8 +104,6 @@
       "printed": "⊢ : ẑ(φz) = ẑ(ψz) .⊃ : f{ẑ(φz)} .≡ . f{ẑ(ψz)}",
       "printed_page": 202,
       "scan_leaf": 224,
-      "lean_path": "Principia/Architecture/Star20Q319Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q319Kernel.star_20_18",
       "formal_scope": "exact polymorphic class-identity congruence",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -141,7 +133,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -150,8 +142,6 @@
       "printed": "⊢ : ẑ(ψz) = ẑ(χz) .≡ : (f) : f!ẑ(ψz) .⊃ . f!ẑ(χz)",
       "printed_page": 202,
       "scan_leaf": 224,
-      "lean_path": "Principia/Architecture/Star20Q319Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q319Kernel.star_20_19",
       "formal_scope": "exact polymorphic Leibniz identity for class extensions, implication form",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -183,7 +173,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -192,8 +182,6 @@
       "printed": "⊢ : ẑ(ψz) = ẑ(χz) .≡ : (f) : f!ẑ(ψz) .≡ . f!ẑ(χz)",
       "printed_page": 202,
       "scan_leaf": 224,
-      "lean_path": "Principia/Architecture/Star20Q319Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q319Kernel.star_20_191",
       "formal_scope": "exact polymorphic Leibniz identity for class extensions, equivalence form",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -210,7 +198,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

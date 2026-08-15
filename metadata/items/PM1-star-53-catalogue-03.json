@@ -21,8 +21,6 @@
       "printed": "✱53·16. ⊢ . ṗʻ(λ ∪ ιʻR) = ṗʻλ ṙ∩ R  [Proof as in ✱53·14]",
       "printed_page": 370,
       "scan_leaf": 392,
-      "lean_path": "Principia/Architecture/Star53SecondKernel.lean",
-      "declaration": "PM.Architecture.Star53SecondKernel.star_53_16",
       "formal_scope": "exact relation-product reduction after adjoining a singleton relation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -50,7 +48,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -59,8 +57,6 @@
       "printed": "✱53·17. ⊢ . ṡʻ(λ ∪ ιʻR) = ṡʻλ ⊍ R  [Proof as in ✱53·14]",
       "printed_page": 370,
       "scan_leaf": 392,
-      "lean_path": "Principia/Architecture/Star53SecondKernel.lean",
-      "declaration": "PM.Architecture.Star53SecondKernel.star_53_17",
       "formal_scope": "exact relation-sum reduction after adjoining a singleton relation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -88,7 +84,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -97,8 +93,6 @@
       "printed": "✱53·18. ⊢ . sʻ(α − ιʻΛ) = sʻα",
       "printed_page": 370,
       "scan_leaf": 392,
-      "lean_path": "Principia/Architecture/Star53SecondKernel.lean",
-      "declaration": "PM.Architecture.Star53SecondKernel.star_53_18",
       "formal_scope": "exact invariance of class sum after removing the singleton empty class",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -113,7 +107,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -122,8 +116,6 @@
       "printed": "✱53·181. ⊢ . ṡʻ(λ − ιʻΛ̇) = ṡʻλ  [Proof as in ✱53·18]",
       "printed_page": 370,
       "scan_leaf": 392,
-      "lean_path": "Principia/Architecture/Star53SecondKernel.lean",
-      "declaration": "PM.Architecture.Star53SecondKernel.star_53_181",
       "formal_scope": "exact relation analogue: invariance of relation sum after removing the singleton empty relation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -151,7 +143,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -160,17 +152,12 @@
       "printed": "✱53·2. ⊢ : κ ∈ 1 .⊃ . ῐʻκ = pʻκ = sʻκ",
       "printed_page": 370,
       "scan_leaf": 392,
-      "lean_path": "Principia/Architecture/Star53SecondKernel.lean",
-      "declaration": "PM.Architecture.Star53SecondKernel.star_53_2",
       "formal_scope": "exact common value of the unique member, product, and sum of a singleton class of classes",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star53OpeningKernel.star_53_01",
-        "PM.Architecture.Star53OpeningKernel.star_53_02"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱53·01",
         "PM1:✱53·02"
@@ -192,7 +179,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

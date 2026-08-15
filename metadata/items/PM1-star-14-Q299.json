@@ -29,8 +29,6 @@
       "printed": "⊢ : [(℩x)(φx)] . ψ(℩x)(φx) .≡ : (∃b) : φx .≡ₓ. x = b : ψb",
       "printed_page": 184,
       "scan_leaf": 206,
-      "lean_path": "Principia/Architecture/Star14Q299Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q299Kernel.star_14_1",
       "formal_scope": "exact polymorphic contextual description-elimination equivalence, without a description term",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -42,7 +40,6 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "dependency_fidelity": "printed-graph-rebuilt-secondary-prop-only",
-      "formalization_level": "secondary-prop-only",
       "semantic_audit_status": "strict-pm-judgement-refused",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q299-review.md",
@@ -52,7 +49,7 @@
           "T3",
           "T4"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -61,8 +58,6 @@
       "printed": "⊢ : ψ(℩x)(φx) .≡ : (∃b) : φx .≡ₓ. x = b : ψb",
       "printed_page": 184,
       "scan_leaf": 206,
-      "lean_path": "Principia/Architecture/Star14Q299Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q299Kernel.star_14_101",
       "formal_scope": "exact polymorphic default contextual description-elimination equivalence",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -71,14 +66,11 @@
       "printed_dependencies": [
         "PM1:✱14·1"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star14Q299Kernel.star_14_1"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱14·1"
       ],
       "dependency_fidelity": "printed-and-lean-graphs-exact-secondary-prop-only",
-      "formalization_level": "secondary-prop-only",
       "semantic_audit_status": "strict-pm-judgement-refused",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -88,7 +80,7 @@
           "T3",
           "T4"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -97,8 +89,6 @@
       "printed": "⊢ : E!(℩x)(φx) .≡ : (∃b) : φx .≡ₓ. x = b",
       "printed_page": 184,
       "scan_leaf": 206,
-      "lean_path": "Principia/Architecture/Star14Q299Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q299Kernel.star_14_11",
       "formal_scope": "exact polymorphic contextual description-existence equivalence",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -110,7 +100,6 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "dependency_fidelity": "printed-graph-rebuilt-secondary-prop-only",
-      "formalization_level": "secondary-prop-only",
       "semantic_audit_status": "strict-pm-judgement-refused",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q299-review.md",
@@ -120,7 +109,7 @@
           "T3",
           "T4"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -129,8 +118,6 @@
       "printed": "⊢ : [(℩x)(ψx)] . f{(℩x)(φx), (℩x)(ψx)} .≡ : (∃b,c) : φx .≡ₓ. x = b : ψx .≡ₓ. x = c : f(b,c)",
       "printed_page": 184,
       "scan_leaf": 206,
-      "lean_path": "Principia/Architecture/Star14Q299Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q299Kernel.star_14_111",
       "formal_scope": "exact polymorphic nested two-description contextual elimination equivalence",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -145,7 +132,6 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "dependency_fidelity": "printed-graph-rebuilt-secondary-prop-only",
-      "formalization_level": "secondary-prop-only",
       "semantic_audit_status": "strict-pm-judgement-refused",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q299-review.md",
@@ -155,7 +141,7 @@
           "T3",
           "T4"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -164,8 +150,6 @@
       "printed": "⊢ : f{(℩x)(φx), (℩x)(ψx)} .≡ : (∃b,c) : φx .≡ₓ. x = b : ψx .≡ₓ. x = c : f(b,c)",
       "printed_page": 184,
       "scan_leaf": 206,
-      "lean_path": "Principia/Architecture/Star14Q299Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q299Kernel.star_14_112",
       "formal_scope": "exact polymorphic default two-description contextual elimination equivalence",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -174,14 +158,11 @@
       "printed_dependencies": [
         "PM1:✱14·111"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star14Q299Kernel.star_14_111"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱14·111"
       ],
       "dependency_fidelity": "printed-and-lean-graphs-exact-secondary-prop-only",
-      "formalization_level": "secondary-prop-only",
       "semantic_audit_status": "strict-pm-judgement-refused",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -191,7 +172,7 @@
           "T3",
           "T4"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

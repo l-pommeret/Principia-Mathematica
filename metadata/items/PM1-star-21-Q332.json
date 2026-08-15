@@ -28,8 +28,6 @@
       "printed": "⊢ : ψ(x,y) .≡₍x,y₎. χ(x,y) .⊃ : f{ẑxẑyψ(x,y)} .≡ . f{ẑxẑyχ(x,y)}",
       "printed_page": 216,
       "scan_leaf": 238,
-      "lean_path": "Principia/Architecture/Star21Q332Kernel.lean",
-      "declaration": "PM.Architecture.Star21Q332Kernel.star_21_11",
       "formal_scope": "blocked: the host-Prop proof uses Lean extensionality and rewriting, not a relational object formula judged by an inductive PM derivation consuming the printed ✱4·86 and ✱4·36 (compacted in the source as ✱4·86·36), ✱10·281 and ✱21·1 chain",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -54,7 +52,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -63,8 +61,6 @@
       "printed": "⊢ : f{φ!(ẑx,ẑy)} .≡ᵠ. g{φ!(x,y)} .⊃ : f{ẑxẑyφ!(x,y)} .≡ᵠ. g{ẑxẑyφ!(x,y)}",
       "printed_page": 216,
       "scan_leaf": 238,
-      "lean_path": "Principia/Architecture/Star21Q332Kernel.lean",
-      "declaration": "PM.Architecture.Star21Q332Kernel.star_21_111",
       "formal_scope": "blocked: Lean specializes a host-level universal equivalence, but provides no relational object formula or PM derivation judgment for the printed assertion",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -84,7 +80,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -93,8 +89,6 @@
       "printed": "⊢ : (∃g) : f{ẑxẑyφ!(x,y)} .≡ᵠ. g!{ẑxẑyφ!(x,y)}",
       "printed_page": 216,
       "scan_leaf": 238,
-      "lean_path": "Principia/Architecture/Star21Q332Kernel.lean",
-      "declaration": "PM.Architecture.Star21Q332Kernel.star_21_112",
       "formal_scope": "blocked: choosing g := f in Lean Prop does not reconstruct the PM derivation from reducibility ✱12·1 and ✱21·111, nor state an object-level judged formula",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -121,7 +115,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -130,8 +124,6 @@
       "printed": "⊢ : (∃φ) : φ!(x,y) .≡₍x,y₎. ψ(x,y) : f{ẑxẑyψ(x,y)} .≡ . f{ẑxẑyφ!(x,y)}",
       "printed_page": 216,
       "scan_leaf": 238,
-      "lean_path": "Principia/Architecture/Star21Q332Kernel.lean",
-      "declaration": "PM.Architecture.Star21Q332Kernel.star_21_12",
       "formal_scope": "blocked: the reflexive semantic witness phi := psi does not consume the printed ✱21·11 and ✱12·11 derivations and is not an object-level PM judgment",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -158,7 +150,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -167,8 +159,6 @@
       "printed": "⊢ : ψ(x,y) .≡₍x,y₎. χ(x,y) .⊃ . ẑxẑyψ(x,y) = ẑxẑyχ(x,y)",
       "printed_page": 216,
       "scan_leaf": 238,
-      "lean_path": "Principia/Architecture/Star21Q332Kernel.lean",
-      "declaration": "PM.Architecture.Star21Q332Kernel.star_21_13",
       "formal_scope": "blocked: Lean propext/function extensionality proves semantic function equality, not the printed PM object assertion derived from ✱21·1, ✱12·11 and ✱13·195",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -196,7 +186,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

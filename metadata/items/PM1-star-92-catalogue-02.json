@@ -21,8 +21,6 @@
       "printed": "✱92·113. ⊢:R∈ Cls→1.⊃.Ř| Rₚₒ| R = (ᗡʻR)↿ Rₚₒ [✱92·111.✱91·52]",
       "printed_page": 602,
       "scan_leaf": 624,
-      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_113",
       "formal_scope": "refused: Lean proves only equality between two codomain restrictions of arbitrary Q from Cod Q = Cod R; PM asserts the composition/restriction identity CnvʻR|Rpo|R = (ᗡʻR)◁Rpo",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -40,7 +38,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -49,8 +47,6 @@
       "printed": "✱92·12. ⊢:R∈ 1→Cls.ᗡʻR⊂ DʻR.⊃.Rₚₒ| Ř = R_∗ [✱92·11.✱35·66]",
       "printed_page": 602,
       "scan_leaf": 624,
-      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_12",
       "formal_scope": "refused: Lean assumes an arbitrary Q already has Dom Q = Dom R and Cod Q = Cod R, then proves Cod Q ⊆ Dom Q; PM assumes R is one-many with converse-domain inclusion and concludes Rpo|CnvʻR = R∗",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -68,7 +64,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -77,8 +73,6 @@
       "printed": "✱92·121. ⊢:R∈ Cls→1.DʻR⊂ ᗡʻR.⊃.Ř| Rₚₒ = R_∗ [✱92·111.✱35·63]",
       "printed_page": 602,
       "scan_leaf": 624,
-      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_121",
       "formal_scope": "refused: Lean assumes an arbitrary Q already has Dom Q = Dom R and Cod Q = Cod R, then proves Dom Q ⊆ Cod Q; PM assumes R is many-one with domain inclusion and concludes CnvʻR|Rpo = R∗",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -96,7 +90,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -105,8 +99,6 @@
       "printed": "✱92·13. ⊢:R∈ 1→Cls.Q, T∈ PotidʻR.⊃.T| Q| Q̌ = T↾ DʻQ",
       "printed_page": 602,
       "scan_leaf": 624,
-      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_13",
       "formal_scope": "refused: Lean concludes only Dom Q = Dom T from the defining equal-domain conjuncts of its weakened Potid; PM concludes the exact product/restriction identity T|Q|CnvʻQ = T↾DʻQ for two powers",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -124,7 +116,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -133,8 +125,6 @@
       "printed": "✱92·131. ⊢:R∈ Cls→1.Q, T∈ PotidʻR.⊃.Q̌| Q| T= (ᗡʻQ)↿ T",
       "printed_page": 602,
       "scan_leaf": 624,
-      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_131",
       "formal_scope": "refused: Lean concludes only Cod Q = Cod T from the defining equal-codomain conjuncts of its weakened Potid; PM concludes CnvʻQ|Q|T = (ᗡʻQ)◁T for two powers",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -152,7 +142,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

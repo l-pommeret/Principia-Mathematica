@@ -16,8 +16,6 @@
       "id": "PM2:✱111·1",
       "kind": "derived-proposition",
       "printed": "⊢:T∈κ sm sm λ.≡.T∈1→1.Sʻλ⊂αʻT.κ=T̆ʻλ",
-      "lean_path": "Principia/Architecture/Star111Kernel.lean",
-      "declaration": "PM.Architecture.Star111Kernel.star_111_1 (refused candidate)",
       "formal_scope": "refused: the Lean self-equivalence omits the specified witness T and all three printed characterization components",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -37,15 +35,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM2:✱111·12",
       "kind": "derived-proposition",
       "printed": "⊢:sʻλ⊂α.⊃.(T↾α)̆ʻλ=T̆ʻλ",
-      "lean_path": "Principia/Architecture/Star111Kernel.lean",
-      "declaration": "PM.Architecture.Star111Kernel.star_111_12 (refused candidate)",
       "formal_scope": "refused: chosen-preimage membership for a global bijection does not express preservation of inverse image under restriction to a superclass",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -65,15 +61,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM2:✱111·121",
       "kind": "derived-proposition",
       "printed": "⊢.(T↾sʻλ)̆ʻλ=T̆ʻλ",
-      "lean_path": "Principia/Architecture/Star111Kernel.lean",
-      "declaration": "PM.Architecture.Star111Kernel.star_111_121 (refused candidate)",
       "formal_scope": "refused: returning Bijective F unchanged omits the printed restriction and inverse-image equality",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -93,7 +87,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

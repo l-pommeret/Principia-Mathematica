@@ -22,8 +22,6 @@
       "printed": "✱52·21.  ⊢ . Λ ∼∈ 1",
       "printed_page": 365,
       "scan_leaf": 387,
-      "lean_path": "Principia/Architecture/Star52NextKernel.lean",
-      "declaration": "PM.Architecture.Star52NextKernel.star_52_21",
       "formal_scope": "exact typed exclusion of the null class from the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -38,7 +36,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -48,8 +46,6 @@
       "printed": "✱52·22.  ⊢ . ιʻx ∈ 1  [✱51·12.✱14·28.✱10·24.✱52·1]",
       "printed_page": 365,
       "scan_leaf": 387,
-      "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
-      "declaration": "PM.Architecture.Star52CompletionKernel.star_52_22",
       "formal_scope": "exact typed assertion that every singleton belongs to the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -81,7 +77,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -91,17 +87,12 @@
       "printed": "✱52·23.  ⊢ . ∃!1 . ∃!−1",
       "printed_page": 365,
       "scan_leaf": 387,
-      "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
-      "declaration": "PM.Architecture.Star52CompletionKernel.star_52_23",
       "formal_scope": "exact typed existence of the unit-class class and its complement over PM's nonempty object range",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star52CompletionKernel.star_52_22",
-        "PM.Architecture.Star52NextKernel.star_52_21"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱52·21",
         "PM1:✱52·22"
@@ -134,7 +125,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -144,8 +135,6 @@
       "printed": "✱52·24.  ⊢ . 1 ≠ Λ ∩ Cls . −1 ≠ Λ ∩ Cls  [✱52·23.✱24·54.✱24·17.Transp.]",
       "printed_page": 365,
       "scan_leaf": 387,
-      "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
-      "declaration": "PM.Architecture.Star52CompletionKernel.star_52_24",
       "formal_scope": "exact typed non-nullity of the unit-class class and its complement over PM's nonempty object range",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -155,9 +144,7 @@
         "PM1:✱24·54",
         "PM1:✱24·17"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star52CompletionKernel.star_52_23"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱52·23"
       ],
@@ -180,7 +167,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -190,16 +177,12 @@
       "printed": "✱52·3.  ⊢ . ιʻʻα ⊃ 1",
       "printed_page": 365,
       "scan_leaf": 387,
-      "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
-      "declaration": "PM.Architecture.Star52CompletionKernel.star_52_3",
       "formal_scope": "exact typed inclusion of the singleton image of a class in the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star52CompletionKernel.star_52_22"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱52·22"
       ],
@@ -219,7 +202,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

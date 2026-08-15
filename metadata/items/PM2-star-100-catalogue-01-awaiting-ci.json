@@ -1,0 +1,79 @@
+{
+  "batch": "PM2-STAR100-CATALOGUE-01-AWAITING-CI-SPLIT",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "14–15",
+    "scan_leaves": [
+      54,
+      55
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱100·01",
+      "kind": "definition",
+      "printed": "✱100·01. Nc = sm⃗ Df",
+      "printed_page": 15,
+      "scan_leaf": 55,
+      "lean_path": "Principia/Deduction/Star100Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_100_01",
+      "reading_declaration": "PM.RamifiedSyntax.star_100_01_reading",
+      "formal_scope": "exact typed definition of the cardinal class Nc as similarity with the represented class",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      }
+    },
+    {
+      "id": "PM2:✱100·02",
+      "kind": "definition",
+      "printed": "✱100·02. NC = DʻNc Df",
+      "printed_page": 14,
+      "scan_leaf": 54,
+      "lean_path": "Principia/Deduction/Star100Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_100_02",
+      "reading_declaration": "PM.RamifiedSyntax.star_100_02_reading",
+      "formal_scope": "exact typed definition of NC as the class of values of Nc",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

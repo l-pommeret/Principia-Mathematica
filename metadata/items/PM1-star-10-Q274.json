@@ -36,8 +36,6 @@
       "printed": "⊢ : ∼{(∃x).φx .ψx} .≡ : φx .⊃ₓ .∼ψx",
       "printed_page": 155,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star10Q274Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q274Kernel.star_10_51",
       "formal_scope": "exact closed canonical formal negated existential rule",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -47,10 +45,7 @@
         "PM1:✱4·51·62",
         "PM1:✱10·271"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star10Q269Kernel.star_10_252",
-        "PM.Architecture.Star10Q265Kernel.star_10_271"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱10·252",
         "PM1:✱10·271"
@@ -73,7 +68,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -82,8 +77,6 @@
       "printed": "⊢ : .(∃x).φx .⊃ : (x).φx⊃p .⊃ .p",
       "printed_page": 155,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star10Q274Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q274Kernel.star_10_52",
       "formal_scope": "exact closed canonical existential formal implication rule",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -93,7 +86,6 @@
         "PM1:✱10·23"
       ],
       "lean_dependencies": [
-        "PM.Architecture.Star10Q265FinalPrerequisites.star_10_23",
         "PM.FirstEdition.Volume1.Star5.star_5_5"
       ],
       "normalized_dependencies": [
@@ -109,7 +101,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -118,8 +110,6 @@
       "printed": "⊢ : ∼(∃x).φx .⊃ : φx .⊃ₓ .ψx",
       "printed_page": 155,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star10Q274Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q274Kernel.star_10_53",
       "formal_scope": "exact closed canonical formal implication under nonexistence",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -131,9 +121,7 @@
         "PM1:✱10·252"
       ],
       "lean_dependencies": [
-        "PM.FirstEdition.Volume1.Star2.star_2_21",
-        "PM.Architecture.Star10Q265Kernel.star_10_27",
-        "PM.Architecture.Star10Q269Kernel.star_10_252"
+        "PM.FirstEdition.Volume1.Star2.star_2_21"
       ],
       "normalized_dependencies": [
         "PM1:✱10·252",
@@ -158,7 +146,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -167,8 +155,6 @@
       "printed": "⊢ : φy .⊃ᵧ .p∨ψy .≡ : p .∨ .φy⊃ᵧψy",
       "printed_page": 155,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star10Q274Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q274Kernel.star_10_541",
       "formal_scope": "exact closed canonical formal implication/disjunction equivalence",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -179,10 +165,7 @@
         "PM1:✱10·271",
         "PM1:✱10·2"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star10Q265Kernel.star_10_271",
-        "PM.Architecture.Star10Q267Kernel.star_10_2"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱10·2",
         "PM1:✱10·271"
@@ -206,7 +189,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -215,8 +198,6 @@
       "printed": "⊢ : φy .⊃ᵧ .p⊃ψy .≡ : p .⊃ .φy⊃ᵧψy  [✱10·541  ∼p/p]",
       "printed_page": 156,
       "scan_leaf": 178,
-      "lean_path": "Principia/Architecture/Star10Q274Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q274Kernel.star_10_542",
       "formal_scope": "exact closed canonical formal implication nesting equivalence",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -224,9 +205,7 @@
       "printed_dependencies": [
         "PM1:✱10·541"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star10Q274Kernel.star_10_541"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱10·541"
       ],
@@ -239,7 +218,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

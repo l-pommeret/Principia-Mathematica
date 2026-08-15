@@ -21,8 +21,6 @@
       "printed": "✱114·31. ⊢ : κ∩λ = Λ .⊃. ΠNcʻκ ×c ΠNcʻλ = ΠNcʻ(κ∪λ) [✱114·301·1.✱113·25]",
       "printed_page": 126,
       "scan_leaf": 166,
-      "lean_path": "Principia/Architecture/Star114OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star114OpeningKernel.star_114_31",
       "formal_scope": "refused: PM asserts equality of cardinal multiplication with the union product; Lean retains only an iff of product-existence propositions",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -32,11 +30,7 @@
         "PM2:✱114·1",
         "PM2:✱113·25"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star114OpeningKernel.star_114_3",
-        "PM.Architecture.Star50OpeningKernel.I",
-        "PM.Architecture.Star50OpeningKernel.J"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01",
         "PM1:✱50·02",
@@ -52,7 +46,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -61,8 +55,6 @@
       "printed": "✱114·311. ⊢ . ΠNcʻ(κ∪λ) = ΠNcʻκ ×c ΠNcʻ(λ−κ) [✱114·31.✱22·91]",
       "printed_page": 126,
       "scan_leaf": 166,
-      "lean_path": "Principia/Architecture/Star114OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star114OpeningKernel.star_114_311",
       "formal_scope": "refused: Lean repeats the tagged disjoint-union existence iff and represents neither class difference λ−κ nor the printed cardinal equality",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -71,11 +63,7 @@
         "PM2:✱114·31",
         "PM1:✱22·91"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star114OpeningKernel.star_114_31",
-        "PM.Architecture.Star50OpeningKernel.I",
-        "PM.Architecture.Star50OpeningKernel.J"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01",
         "PM1:✱50·02",
@@ -91,7 +79,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -100,8 +88,6 @@
       "printed": "✱114·33. ⊢ : α∼∈κ .⊃. ΠNcʻ(κ∪ιʻα) = ΠNcʻκ ×c Ncʻα [✱114·31·21]",
       "printed_page": 126,
       "scan_leaf": 166,
-      "lean_path": "Principia/Architecture/Star114MiddleKernel.lean",
-      "declaration": "PM.Architecture.Star114MiddleKernel.star_114_33",
       "formal_scope": "refused: PM proves a cardinal equality under freshness of α; Lean uses a tagged index and states only equivalence between product existence and inhabitation of a binary product type",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -122,7 +108,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

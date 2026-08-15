@@ -29,8 +29,6 @@
       "printed": "⊢ : φx .≡ₓ. x = b : ≡ : (℩x)(φx) = b : ≡ : φx .≡ₓ. b = x : ≡ : b = (℩x)(φx)",
       "printed_page": 183,
       "scan_leaf": 205,
-      "lean_path": "Principia/Architecture/Star14Q298Targets.lean",
-      "declaration": "PM.Architecture.Star14Q298Targets.star_14_202_target",
       "formal_scope": "blocked v1: exact four-member typed AST target only; no PM-kernel assertion judgement or derivation of the printed proposition exists",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -42,7 +40,6 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "dependency_fidelity": "printed-graph-rebuilt-no-judgement-calls",
-      "formalization_level": "object-syntax-target-only",
       "semantic_audit_status": "strict-pm-judgement-refused",
       "formal_layers": {
         "ast": "complete-exact",
@@ -60,7 +57,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -69,8 +66,6 @@
       "printed": "⊢ : E!(℩x)(φx) .≡ . (∃b). (℩x)(φx) = b",
       "printed_page": 183,
       "scan_leaf": 205,
-      "lean_path": "Principia/Architecture/Star14Q298Targets.lean",
-      "declaration": "PM.Architecture.Star14Q298Targets.star_14_204_target",
       "formal_scope": "blocked v1: exact contextual-description existence-equivalence AST only; no PM-kernel assertion judgement or derivation exists",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -88,7 +83,6 @@
         "PM1:✱3·01"
       ],
       "dependency_fidelity": "printed-graph-rebuilt-no-judgement-calls",
-      "formalization_level": "object-syntax-target-only",
       "semantic_audit_status": "strict-pm-judgement-refused",
       "formal_layers": {
         "ast": "complete-exact",
@@ -106,7 +100,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -115,8 +109,6 @@
       "printed": "⊢ : ψ(℩x)(φx) .≡ . (∃b). b = (℩x)(φx) . ψb",
       "printed_page": 183,
       "scan_leaf": 205,
-      "lean_path": "Principia/Architecture/Star14Q298Targets.lean",
-      "declaration": "PM.Architecture.Star14Q298Targets.star_14_205_target",
       "formal_scope": "blocked v1: exact contextual-description elimination AST only; no PM-kernel assertion judgement or derivation exists",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -125,7 +117,6 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "dependency_fidelity": "printed-graph-rebuilt-no-judgement-calls",
-      "formalization_level": "object-syntax-target-only",
       "semantic_audit_status": "strict-pm-judgement-refused",
       "formal_layers": {
         "ast": "complete-exact",
@@ -143,7 +134,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -152,8 +143,6 @@
       "printed": "⊢ : E!(℩x)(φx) .≡ . (℩x)(φx) = (℩x)(φx)",
       "printed_page": 183,
       "scan_leaf": 205,
-      "lean_path": "Principia/Architecture/Star14Q298Targets.lean",
-      "declaration": "PM.Architecture.Star14Q298Targets.star_14_28_target",
       "formal_scope": "blocked v1: exact contextual-description self-identity AST only; no PM-kernel assertion judgement or derivation exists",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -167,7 +156,6 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "dependency_fidelity": "printed-graph-rebuilt-no-judgement-calls",
-      "formalization_level": "object-syntax-target-only",
       "semantic_audit_status": "strict-pm-judgement-refused",
       "formal_layers": {
         "ast": "complete-exact",
@@ -185,7 +173,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -194,8 +182,6 @@
       "printed": "⊢ : a = (℩x)(φx) .≡ . (℩x)(φx) = a",
       "printed_page": 183,
       "scan_leaf": 205,
-      "lean_path": "Principia/Architecture/Star14Q298Targets.lean",
-      "declaration": "PM.Architecture.Star14Q298Targets.star_14_13_target",
       "formal_scope": "blocked v1: exact contextual-description identity-symmetry AST only; no PM-kernel assertion judgement or derivation exists",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -209,7 +195,6 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "dependency_fidelity": "printed-graph-rebuilt-no-judgement-calls",
-      "formalization_level": "object-syntax-target-only",
       "semantic_audit_status": "strict-pm-judgement-refused",
       "formal_layers": {
         "ast": "complete-exact",
@@ -227,7 +212,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

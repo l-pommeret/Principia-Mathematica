@@ -46,9 +46,7 @@
         "PM1:✱10·1",
         "PM1:✱10·01"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_1_instance"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱9·1"
       ],
@@ -68,7 +66,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -77,10 +75,7 @@
       "printed": "⊢ : (x).φx .⊃ .(∃x).φx  [✱10·1·24]",
       "printed_page": 149,
       "scan_leaf": 171,
-      "lean_path": "Principia/Architecture/Star10Q269Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q269Kernel.star_10_25",
       "formal_scope": "exact Raw target plus axiom-free component certificate; no PM assertion judgement for the endpoint",
-      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-missing-pm-assertion-judgement",
@@ -91,10 +86,7 @@
       "printed_dependencies": [
         "PM1:✱10·1·24"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star10Q264Kernel.star_10_1",
-        "PM.Architecture.Star10Q269Kernel.star_10_24"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱10·1",
         "PM1:✱10·24"
@@ -119,7 +111,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -128,10 +120,7 @@
       "printed": "⊢ : (x).∼φx .⊃ .∼{(x).φx}  [✱10·25 . Transp]",
       "printed_page": 149,
       "scan_leaf": 171,
-      "lean_path": "Principia/Architecture/Star10Q269Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q269Kernel.star_10_251",
       "formal_scope": "exact Raw target plus axiom-free component certificate; no PM assertion judgement for the endpoint",
-      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-missing-pm-assertion-judgement",
@@ -142,9 +131,7 @@
       "printed_dependencies": [
         "PM1:✱10·25"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star10Q269Kernel.star_10_25"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱10·25"
       ],
@@ -156,7 +143,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -165,10 +152,7 @@
       "printed": "⊢ : ∼{(∃x).φx} .≡ .(x).∼φx  [✱4·2 . (✱9·02)]",
       "printed_page": 149,
       "scan_leaf": 171,
-      "lean_path": "Principia/Architecture/Star10Q269Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q269Kernel.star_10_252",
       "formal_scope": "exact Raw target plus axiom-free negated-existential normalization certificate; no PM assertion judgement for the endpoint",
-      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-missing-pm-assertion-judgement",
@@ -204,7 +188,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -213,10 +197,7 @@
       "printed": "⊢ : ∼{(x).φx} .≡ .(∃x).∼φx  [✱4·2 . (✱9·01)]",
       "printed_page": 149,
       "scan_leaf": 171,
-      "lean_path": "Principia/Architecture/Star10Q269Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q269Kernel.star_10_253",
       "formal_scope": "exact Raw target plus axiom-free negated-universal normalization certificate; no PM assertion judgement for the endpoint",
-      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-missing-pm-assertion-judgement",
@@ -258,7 +239,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

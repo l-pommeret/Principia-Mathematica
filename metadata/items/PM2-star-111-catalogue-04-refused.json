@@ -16,8 +16,6 @@
       "id": "PM2:✱111·15",
       "kind": "derived-proposition",
       "printed": "✱111·15. ⊢:T↾sʻλ∈κ sm sm λ.≡.T↾sʻλ∈(sʻκ)α sm(sʻλ).T∈κ sm λ",
-      "lean_path": "Principia/Architecture/Star111Kernel.lean",
-      "declaration": "PM.Architecture.Star111Kernel.star_111_15 (refused candidate)",
       "formal_scope": "refused: an identity implication on Similar omits PM's restricted relation, ranges, witness membership, and biconditional",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -37,15 +35,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM2:✱111·16",
       "kind": "derived-proposition",
       "printed": "✱111·16. ⊢:α sm β.γ sm δ.⊃.α=γ.β=δ",
-      "lean_path": "Principia/Architecture/Star111Kernel.lean",
-      "declaration": "PM.Architecture.Star111Kernel.star_111_16 (refused candidate)",
       "formal_scope": "refused: Lean assumes and returns a=c, and omits derivation of both printed equalities from the two similarity premises",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -63,15 +59,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM2:✱111·18",
       "kind": "derived-proposition",
       "printed": "✱111·18. ⊢.α sm β⊂(α†β)₄ʻβ",
-      "lean_path": "Principia/Architecture/Star111Kernel.lean",
-      "declaration": "PM.Architecture.Star111Kernel.star_111_18 (refused candidate)",
       "formal_scope": "refused: extracting a bijection witness does not express PM's class inclusion",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -91,15 +85,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM2:✱111·201",
       "kind": "derived-proposition",
       "printed": "✱111·201. ⊢:E!Crp(S)ʻβ.≡.E!((Sʻβ)smβ)",
-      "lean_path": "Principia/Architecture/Star111Kernel.lean",
-      "declaration": "PM.Architecture.Star111Kernel.star_111_201 (refused candidate)",
       "formal_scope": "refused: definitional correspondence equivalence omits both contextual-existence operators",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -119,15 +111,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM2:✱111·211",
       "kind": "derived-proposition",
       "printed": "✱111·211. ⊢:E!Crp(S)ʻβ.⊃.E!Sʻβ.β∈αʻS",
-      "lean_path": "Principia/Architecture/Star111Kernel.lean",
-      "declaration": "PM.Architecture.Star111Kernel.star_111_211 (refused candidate)",
       "formal_scope": "refused: the Lean projection omits existence of Sʻβ and the domain conclusion",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -147,7 +137,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

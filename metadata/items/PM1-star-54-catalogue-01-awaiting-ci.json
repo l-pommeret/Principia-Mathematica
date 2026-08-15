@@ -1,0 +1,80 @@
+{
+  "batch": "PM1-STAR54-CATALOGUE-01-AWAITING-CI-SPLIT",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "377",
+    "scan_leaves": [
+      399
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱54·01",
+      "kind": "definition",
+      "printed": "✱54·01.  0 = ιʻΛ  Df",
+      "printed_page": 377,
+      "scan_leaf": 399,
+      "lean_path": "Principia/Deduction/Star54Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_54_01",
+      "formal_scope": "exact typed characteristic-function reading of cardinal zero",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume2.Star103Source.CardinalClass"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱103·02"
+      ],
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      },
+      "formalization_level": "pm-derivation-v1"
+    },
+    {
+      "id": "PM1:✱54·02",
+      "kind": "definition",
+      "printed": "✱54·02.  2 = α̂{(∃x,y). x ≠ y . α = ιʻx ∪ ιʻy}  Df",
+      "printed_page": 377,
+      "scan_leaf": 399,
+      "lean_path": "Principia/Deduction/Star54Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_54_02",
+      "formal_scope": "exact typed characteristic-function reading of cardinal two",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [
+        "PM.FirstEdition.Volume2.Star103Source.CardinalClass"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱103·02"
+      ],
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      },
+      "formalization_level": "pm-derivation-v1"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

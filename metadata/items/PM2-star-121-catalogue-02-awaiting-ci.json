@@ -1,0 +1,79 @@
+{
+  "batch": "PM2-STAR121-CATALOGUE-02-AWAITING-CI-SPLIT",
+  "edition": "first",
+  "volume": 2,
+  "source_range": {
+    "printed_pages": "236",
+    "scan_leaves": [
+      276,
+      277
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._II,_1912.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78255/78255-h/78255-h.htm"
+  },
+  "witnesses": [
+    "PM2-1912-SCAN",
+    "PG78255"
+  ],
+  "items": [
+    {
+      "id": "PM2:✱121·03",
+      "kind": "definition",
+      "printed": "✱121·03. finidʻP=R̂{(∃ν).ν∈NC induct−ιʻΛ.R=P_ν} Df",
+      "printed_page": 236,
+      "scan_leaf": 276,
+      "lean_path": "Principia/Deduction/Star121Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_121_03",
+      "reading_declaration": "PM.RamifiedSyntax.star_121_03_reading",
+      "formal_scope": "exact typed reconstruction of the class of finite-distance levels, with admissible non-null indices represented by Nat",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      },
+      "formalization_level": "pm-derivation-v1"
+    },
+    {
+      "id": "PM2:✱121·031",
+      "kind": "definition",
+      "printed": "✱121·031. finʻP=R̂{(∃ν).ν∈NC induct−ιʻΛ−ιʻ0.R=P_ν} Df",
+      "printed_page": 236,
+      "scan_leaf": 276,
+      "lean_path": "Principia/Deduction/Star121Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_121_031",
+      "reading_declaration": "PM.RamifiedSyntax.star_121_031_reading",
+      "formal_scope": "exact typed reconstruction of the positive finite-distance levels",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      },
+      "formalization_level": "pm-derivation-v1"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

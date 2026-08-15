@@ -22,8 +22,6 @@
       "printed": "✱80·6. ⊢ : R∈P_Δʻκ . λ⊂κ .⊃. R↾λ∈P_Δʻλ",
       "printed_page": 512,
       "scan_leaf": 534,
-      "lean_path": "Principia/Architecture/Star80ThirdKernel.lean",
-      "declaration": "PM.Architecture.Star80ThirdKernel.star_80_6",
       "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -41,7 +39,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -50,8 +48,6 @@
       "printed": "✱80·61. ⊢ : M↾κ∈P_Δʻκ . M↾λ∈P_Δʻλ .⊃. M↾(κ∪λ)∈P_Δʻ(κ∪λ)",
       "printed_page": 512,
       "scan_leaf": 534,
-      "lean_path": "Principia/Architecture/Star80ThirdKernel.lean",
-      "declaration": "PM.Architecture.Star80ThirdKernel.star_80_61",
       "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -74,7 +70,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -83,16 +79,12 @@
       "printed": "✱80·62. ⊢ : M∈P_Δʻ(κ∪λ) .⊃. M↾κ∈P_Δʻκ . M↾λ∈P_Δʻλ",
       "printed_page": 513,
       "scan_leaf": 535,
-      "lean_path": "Principia/Architecture/Star80ThirdKernel.lean",
-      "declaration": "PM.Architecture.Star80ThirdKernel.star_80_62",
       "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star80ThirdKernel.star_80_6"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱80·6"
       ],
@@ -106,7 +98,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -115,8 +107,6 @@
       "printed": "✱80·621. ⊢ : M↾(κ∪λ)∈P_Δʻ(κ∪λ) .⊃. M↾κ∈P_Δʻκ . M↾λ∈P_Δʻλ",
       "printed_page": 513,
       "scan_leaf": 535,
-      "lean_path": "Principia/Architecture/Star80ThirdKernel.lean",
-      "declaration": "PM.Architecture.Star80ThirdKernel.star_80_621",
       "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -124,9 +114,7 @@
       "printed_dependencies": [
         "PM1:✱22·631"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star80ThirdKernel.star_80_62"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱80·62"
       ],
@@ -140,7 +128,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -149,8 +137,6 @@
       "printed": "✱80·63. ⊢ : M↾κ∈P_Δʻκ . M↾λ∈P_Δʻλ .≡. M↾(κ∪λ)∈P_Δʻ(κ∪λ)",
       "printed_page": 513,
       "scan_leaf": 535,
-      "lean_path": "Principia/Architecture/Star80ThirdKernel.lean",
-      "declaration": "PM.Architecture.Star80ThirdKernel.star_80_63",
       "formal_scope": "typed selection-function reconstruction; item-level semantic promotion audit pending",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -169,7 +155,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

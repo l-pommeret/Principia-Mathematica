@@ -32,7 +32,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "lean_path": "Principia/FirstEdition/Volume1/Star25Source.lean",
       "declaration": "PM.FirstEdition.Volume1.Star25.star_25_493",
@@ -61,7 +61,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "lean_path": "Principia/FirstEdition/Volume1/Star25Source.lean",
       "declaration": "PM.FirstEdition.Volume1.Star25.star_25_494",
@@ -90,7 +90,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "lean_path": "Principia/FirstEdition/Volume1/Star25Source.lean",
       "declaration": "PM.FirstEdition.Volume1.Star25.star_25_495",
@@ -106,10 +106,22 @@
       "printed_page": 243,
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
-      "integration_status": "prepared",
-      "formal_scope": "source-only catalogue item; formalization not yet attempted",
+      "normalized_dependencies": [
+        "PM1:✱4·2"
+      ],
+      "definition_dependencies": [
+        "PM1:✱25·03"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_25_03_unfold",
+        "PM.RamifiedSyntax.star_4_2"
+      ],
+      "integration_status": "pm-derivation-v1-integrated",
+      "integration_blocked": false,
+      "formalization_level": "pm-derivation-v1",
+      "semantic_audit_status": "strict-pm-derivation-complete",
+      "demonstration_provenance": "editorial-reconstruction",
+      "formal_scope": "unconditional ramified derivation obtained by eliminating ✱25·03 and applying ✱4·2",
       "formal_status": "unbuilt",
       "certification": {
         "tier": "unbuilt",
@@ -119,10 +131,10 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
-      "lean_path": "Principia/FirstEdition/Volume1/Star25Source.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star25.star_25_5",
+      "lean_path": "Principia/Deduction/Star25Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_25_5",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md"
     },
@@ -148,7 +160,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "lean_path": "Principia/FirstEdition/Volume1/Star25Source.lean",
       "declaration": "PM.FirstEdition.Volume1.Star25.star_25_51",

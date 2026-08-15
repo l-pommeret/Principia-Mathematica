@@ -20,8 +20,6 @@
     {
       "id": "PM1:✱33·131",
       "kind": "derived-proposition",
-      "lean_path": "Principia/Architecture/Star33DomainKernel.lean",
-      "declaration": "PM.Architecture.Star33DomainKernel.star_33_131",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_blocked": false,
@@ -43,15 +41,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱33·131.  \\(\\vdash:y\\in \\text{ᗡ}ʻR.\\equiv.(\\exists x).xRy\\)"
     },
     {
       "id": "PM1:✱33·132",
       "kind": "derived-proposition",
-      "lean_path": "Principia/Architecture/Star33DomainKernel.lean",
-      "declaration": "PM.Architecture.Star33DomainKernel.star_33_132",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_blocked": false,
@@ -73,15 +69,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱33·132.  \\(\\vdash\\colon\\ldotp x\\in CʻR.\\equiv:(\\exists y):xRy.\\lor .yRx\\)"
     },
     {
       "id": "PM1:✱33·152",
       "kind": "derived-proposition",
-      "lean_path": "Principia/Architecture/Star33DomainKernel.lean",
-      "declaration": "PM.Architecture.Star33DomainKernel.star_33_152",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_blocked": false,
@@ -103,7 +97,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱33·152.  \\(\\vdash.\\overrightarrow{R}ʻx\\cup \\overleftarrow{R}ʻx\\subset CʻR\\)",
       "parser_status": "reviewed-gap",
@@ -112,8 +106,6 @@
     {
       "id": "PM1:✱33·161",
       "kind": "derived-proposition",
-      "lean_path": "Principia/Architecture/Star33DomainKernel.lean",
-      "declaration": "PM.Architecture.Star33DomainKernel.star_33_161",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_blocked": false,
@@ -148,15 +140,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱33·161.  \\(\\vdash.\\text{D}ʻR\\subset CʻR.\\text{ᗡ}ʻR\\subset CʻR \\quad[\\text{*33·16.*22·58}]\\)"
     },
     {
       "id": "PM1:✱33·181",
       "kind": "derived-proposition",
-      "lean_path": "Principia/Architecture/Star33DomainKernel2.lean",
-      "declaration": "PM.Architecture.Star33DomainKernel2.star_33_181",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_blocked": false,
@@ -165,9 +155,7 @@
       "printed_dependencies": [
         "PM1:✱33·16"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star33DomainKernel.star_33_16"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱33·16"
       ],
@@ -193,7 +181,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱33·181.  \\(\\vdash:\\text{ᗡ}ʻR\\subset \\text{D}ʻR.\\equiv.\\text{D}ʻR=CʻR\\)"
     }

@@ -21,8 +21,6 @@
       "printed": "✱115·151. ⊢ : κ∈Cls² excl .⊃. ∈_Δʻsʻκ=ṡʻʻProdʻ∈_Δʻʻκ [✱85·28]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_151",
       "formal_scope": "refused: PM equates a diagonal-membership relation with an image/union formed from product classes under disjointness; Lean proves only uniqueness of the value of an already fixed function at one index",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -30,9 +28,7 @@
       "printed_dependencies": [
         "PM1:✱85·28"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
@@ -46,7 +42,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -55,8 +51,6 @@
       "printed": "✱115·152. ⊢ . P_Δʻα sm ProdʻP↧ʻʻα [✱85·55]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_152",
       "formal_scope": "refused: PM asserts similarity of a diagonalized relation/class with a product of restricted fibres; Lean merely maps one supplied product element pointwise and returns the resulting element",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -64,9 +58,7 @@
       "printed_dependencies": [
         "PM1:✱85·55"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
@@ -80,7 +72,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -89,8 +81,6 @@
       "printed": "✱115·153. ⊢ . ∈_Δʻκ sm Prodʻ∈↧ʻʻκ [✱115·152]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star115OpeningKernel.star_115_153",
       "formal_scope": "refused: PM states a similarity between the diagonal membership relation and a full product class; Lean only repeats pointwise uniqueness of evaluation for one supplied dependent function",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -98,10 +88,7 @@
       "printed_dependencies": [
         "PM2:✱115·152"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star115OpeningKernel.star_115_151",
-        "PM.Architecture.Star50OpeningKernel.I"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01",
         "PM2:✱115·151"
@@ -116,7 +103,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -125,8 +112,6 @@
       "printed": "✱115·154. ⊢ . Prodʻ∈↧ʻʻκ∈ΠNcʻκ [✱115·153]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115MiddleKernel.lean",
-      "declaration": "PM.Architecture.Star115MiddleKernel.star_115_154",
       "formal_scope": "refused: PM places an entire product class in the cardinal-class construction ΠNcʻκ; Lean takes an existing product element f and concludes only Nonempty (ClassProduct F)",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -134,9 +119,7 @@
       "printed_dependencies": [
         "PM2:✱115·153"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
@@ -150,7 +133,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -159,8 +142,6 @@
       "printed": "✱115·16. ⊢ : κ∈Cls² excl .⊃. Prodʻκ⊆Ncʻκ [✱100·64]",
       "printed_page": 137,
       "scan_leaf": 177,
-      "lean_path": "Principia/Architecture/Star115MiddleKernel.lean",
-      "declaration": "PM.Architecture.Star115MiddleKernel.star_115_16",
       "formal_scope": "refused: PM asserts inclusion of all product members in the cardinal class of the family under mutual exclusivity; Lean proves only that an already supplied product function yields an inhabitant of each factor",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -168,9 +149,7 @@
       "printed_dependencies": [
         "PM2:✱100·64"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star50OpeningKernel.I"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱50·01"
       ],
@@ -184,7 +163,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

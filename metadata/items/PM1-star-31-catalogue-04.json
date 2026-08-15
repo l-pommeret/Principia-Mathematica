@@ -11,8 +11,6 @@
       "id": "PM1:✱31·33",
       "kind": "derived-proposition",
       "printed": "⊢ . CnvʻCnvʻP = P",
-      "lean_path": "Principia/Architecture/Star31ConverseKernel2.lean",
-      "declaration": "PM.Architecture.Star31ConverseKernel2.star_31_33",
       "formal_scope": "blocked non-v1: exact secondary Prop only; no object judgment or axiom-free inductive PM derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -35,15 +33,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱31·34",
       "kind": "derived-proposition",
       "printed": "⊢ : P = Q̌ ≡ . Q = P̌",
-      "lean_path": "Principia/Architecture/Star31ConverseKernel2.lean",
-      "declaration": "PM.Architecture.Star31ConverseKernel2.star_31_34",
       "formal_scope": "blocked non-v1: exact secondary Prop only; no object judgment or axiom-free inductive PM derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -52,9 +48,7 @@
       "formalization_layer": "proposition-only-secondary",
       "blocking_reason": "The Prop proof calls converse involution, but no PM derivation relation licenses the inference.",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star31ConverseKernel2.star_31_33"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱31·33"
       ],
@@ -79,15 +73,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱31·4",
       "kind": "derived-proposition",
       "printed": "⊢ : P ⪽ Q ≡ . P̌ ⪽ Q̌",
-      "lean_path": "Principia/Architecture/Star31ConverseKernel3.lean",
-      "declaration": "PM.Architecture.Star31ConverseKernel3.star_31_4",
       "formal_scope": "blocked non-v1: exact secondary Prop only; no object judgment or axiom-free inductive PM derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -123,15 +115,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱31·41",
       "kind": "derived-proposition",
       "printed": "⊢ : P ⪽ Q̌ ≡ . P̌ ⪽ Q",
-      "lean_path": "Principia/Architecture/Star31ConverseKernel3.lean",
-      "declaration": "PM.Architecture.Star31ConverseKernel3.star_31_41",
       "formal_scope": "blocked non-v1: exact secondary Prop only; no object judgment or axiom-free inductive PM derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -169,15 +159,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱31·5",
       "kind": "derived-proposition",
       "printed": "⊢ : ∃̇!P ≡ . ∃̇!P̌",
-      "lean_path": "Principia/Architecture/Star31ConverseKernel3.lean",
-      "declaration": "PM.Architecture.Star31ConverseKernel3.star_31_5",
       "formal_scope": "blocked non-v1: exact secondary Prop only; no object judgment or axiom-free inductive PM derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -216,7 +204,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

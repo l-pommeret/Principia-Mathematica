@@ -21,8 +21,6 @@
       "printed": "✱104·122. ⊢ : β ∈ N¹cʻα .⊃. N¹cʻβ = N²cʻα [✱104·12 . ✱104·121]",
       "printed_page": 44,
       "scan_leaf": 84,
-      "lean_path": "Principia/Architecture/Star104Kernel.lean",
-      "declaration": "PM.Architecture.Star104Kernel.star_104_122",
       "formal_scope": "exact typed extensional equality of first ascent over β and second ascent over α under the printed first-ascent premise",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -35,10 +33,7 @@
         "PM2:✱104·12",
         "PM2:✱104·121"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star104Kernel.star_104_12",
-        "PM.Architecture.Star104Kernel.star_104_121"
-      ],
+      "lean_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
         "tier": "lean-typechecked",
@@ -48,7 +43,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -57,8 +52,6 @@
       "printed": "✱104·123. ⊢ : N₀cʻβ = N¹cʻα .⊃. N¹cʻβ = N²cʻα [✱104·122 . ✱103·26]",
       "printed_page": 44,
       "scan_leaf": 84,
-      "lean_path": "Principia/Architecture/Star104Kernel.lean",
-      "declaration": "PM.Architecture.Star104Kernel.star_104_123",
       "formal_scope": "exact typed reconstruction after normalizing the printed cross-type cardinal equality to equinumerosity via ✱103·26",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -70,9 +63,7 @@
       "normalized_dependencies": [
         "PM2:✱104·122"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star104Kernel.star_104_122"
-      ],
+      "lean_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
         "tier": "lean-typechecked",
@@ -81,7 +72,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -90,8 +81,6 @@
       "printed": "✱104·13. ⊢ : μ ∈ N¹C .≡. (∃α). μ = N¹cʻα [✱100·122 . ✱71·41 . (✱104·02)]",
       "printed_page": 44,
       "scan_leaf": 84,
-      "lean_path": "Principia/Architecture/Star104Kernel.lean",
-      "declaration": "PM.Architecture.Star104Kernel.star_104_13",
       "formal_scope": "exact typed existential/domain characterization of the class N¹C of first ascending cardinals",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -112,7 +101,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

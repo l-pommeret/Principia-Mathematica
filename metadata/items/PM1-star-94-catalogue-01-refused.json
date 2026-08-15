@@ -22,8 +22,6 @@
       "printed": "✱94·12. ⊢:P∈ Potʻ(R| S).⊃.(∃ T).T∈ Potʻ(S| R).P| R=R| T",
       "printed_page": 620,
       "scan_leaf": 642,
-      "lean_path": "Principia/Architecture/Star94Kernel.lean",
-      "declaration": "PM.Architecture.Star94Kernel.star_94_12",
       "formal_scope": "refused: Pot is defined as the universal predicate and the witness is P itself; global monoid commutativity replaces PM's power-of-a-relation argument",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -41,7 +39,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -50,8 +48,6 @@
       "printed": "✱94·13. ⊢:T∈ Potʻ(S| R).⊃.(∃ P).P∈ Potʻ(R| S).P| R=R| T [Proof as in ✱94·12]",
       "printed_page": 620,
       "scan_leaf": 642,
-      "lean_path": "Principia/Architecture/Star94Kernel.lean",
-      "declaration": "PM.Architecture.Star94Kernel.star_94_13",
       "formal_scope": "refused: Pot is definitionally True and the proof chooses T itself using an unrelated global commutativity axiom",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -69,7 +65,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -78,8 +74,6 @@
       "printed": "✱94·14. ⊢.| RʻʻPotʻ(R| S)=R| ʻʻPotʻ(S| R)",
       "printed_page": 620,
       "scan_leaf": 642,
-      "lean_path": "Principia/Architecture/Star94Kernel.lean",
-      "declaration": "PM.Architecture.Star94Kernel.star_94_14",
       "formal_scope": "refused: both power classes collapse to the universal set, and equality of the two images follows solely from global commutativity rather than the printed relational image theorem",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -97,7 +91,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -106,8 +100,6 @@
       "printed": "✱94·2. ⊢:P∈ Potʻ(R| S)∪ ιʻI.⊃.S| P| R∈ Potʻ(S| R)",
       "printed_page": 620,
       "scan_leaf": 642,
-      "lean_path": "Principia/Architecture/Star94Kernel.lean",
-      "declaration": "PM.Architecture.Star94Kernel.star_94_2",
       "formal_scope": "refused: the conclusion reduces to True because Pot ignores its relation argument; no closure of relational powers is formalized",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -125,7 +117,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -134,8 +126,6 @@
       "printed": "✱94·201. ⊢:T∈ Potʻ(S| R).⊃.(∃ P).P∈ Potʻ(R| S)∪ ιʻI.T=S| P| R",
       "printed_page": 621,
       "scan_leaf": 643,
-      "lean_path": "Principia/Architecture/Star94Kernel.lean",
-      "declaration": "PM.Architecture.Star94Kernel.star_94_201",
       "formal_scope": "refused: the existential is exactly the custom Monoid.factor field, while Pot is universal; this assumes rather than proves the printed converse power decomposition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -153,7 +143,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

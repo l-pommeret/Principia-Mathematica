@@ -21,17 +21,12 @@
       "printed": "✱92·144. ⊢:R∈ 1→Cls.ᗡʻR⊂ DʻR.Q∈ PotidʻR.⊃.ᗡʻQ⊂ DʻR.ᗡʻQ⊂ DʻQ",
       "printed_page": 603,
       "scan_leaf": 625,
-      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_144",
       "formal_scope": "refused: Lean derives the two field inclusions only from its weakened Potid equalities and a supplied inclusion; it omits PM's one-many condition and genuine power-or-identity semantics",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-semantic-mismatch-weakened-potid",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star92OpeningKernel.star_92_11",
-        "PM.Architecture.Star92OpeningKernel.star_92_12"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱92·11",
         "PM1:✱92·12"
@@ -44,7 +39,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -53,8 +48,6 @@
       "printed": "✱92·145. ⊢:R∈ Cls→1.DʻR⊂ ᗡʻR.Q∈ PotidʻR.⊃.DʻQ⊂ ᗡʻR.DʻQ⊂ ᗡʻQ",
       "printed_page": 603,
       "scan_leaf": 625,
-      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_145",
       "formal_scope": "refused: Lean derives the two field inclusions only from its weakened Potid equalities and a supplied inclusion; it omits PM's many-one condition and genuine power-or-identity semantics",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -70,7 +63,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -79,8 +72,6 @@
       "printed": "✱92·146. ⊢:R∈ 1→Cls.ᗡʻR⊂ DʻR.Q, T∈ PotidʻR.⊃.T↾ DʻQ=T",
       "printed_page": 603,
       "scan_leaf": 625,
-      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_146",
       "formal_scope": "refused: Lean proves equality between restrictions of arbitrary T by Dom Q and Dom R from weakened Potid; PM concludes the restriction T↾DʻQ equals T under functionality, field-inclusion, and two genuine Potid hypotheses",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -98,7 +89,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -107,8 +98,6 @@
       "printed": "✱92·147. ⊢:R∈ Cls→1.DʻR⊂ ᗡʻR.Q, T∈ PotidʻR.⊃.(ᗡʻQ)↿ T=T",
       "printed_page": 603,
       "scan_leaf": 625,
-      "lean_path": "Principia/Architecture/Star92OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star92OpeningKernel.star_92_147",
       "formal_scope": "refused: Lean proves equality between restrictions of arbitrary T by Cod Q and Cod R from weakened Potid; PM concludes the range restriction (ᗡʻQ)◁T equals T under functionality, field-inclusion, and two genuine Potid hypotheses",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -126,7 +115,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -135,8 +124,6 @@
       "printed": "✱92·15. ⊢:R∈ 1→Cls.ᗡʻR⊂ DʻR.Q, T∈ PotidʻR.⊃.T| Q| Q̌=T [✱92·13·146]",
       "printed_page": 603,
       "scan_leaf": 625,
-      "lean_path": "Principia/Architecture/Star92ClosingKernel.lean",
-      "declaration": "PM.Architecture.Star92ClosingKernel.star_92_15",
       "formal_scope": "refused: Lean takes the entire displayed product equality as hypothesis and returns it unchanged, omitting every printed antecedent and any derivation from relation-power semantics",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -154,7 +141,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

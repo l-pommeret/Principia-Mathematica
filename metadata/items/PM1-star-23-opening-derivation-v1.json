@@ -23,17 +23,22 @@
       "scan_leaf": 248,
       "lean_path": "Principia/Deduction/Star23Derived.lean",
       "declaration": "PM.RamifiedSyntax.star_23_1",
-      "formal_scope": "source-only transcription; PM object syntax, definitional unfolding, and kernel derivation are not yet implemented",
+      "formal_scope": "exact ramified PM assertion: relation inclusion is the double universal closure of pointwise implication",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "formalization_level": "source-only",
+      "formalization_level": "pm-derivation-v1",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "integration_blocked": true,
-      "semantic_audit_status": "strict-pm-derivation-refused",
-      "semantic_audit_evidence": "reviews/Star23-opening-derivation-v1-review.md",
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_4_2",
+        "PM.RamifiedSyntax.star_23_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱23·01"
+      ],
+      "integration_blocked": false,
+      "demonstration_provenance": "editorial-reconstruction",
       "pm_verbatim": "*23·1. \\(\\vdash \\colon\\ldotp R \\unicode{x2abd} S .\\equiv: xRy .\\supset_{x,y}. xSy\\) ",
       "printed_latex_witness": "*23·1. \\(\\vdash \\colon\\ldotp R \\unicode{x2abd} S .\\equiv: xRy .\\supset_{x,y}. xSy\\) ",
       "parser_status": "reviewed-gap",
@@ -45,7 +50,7 @@
           "T2",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -54,19 +59,24 @@
       "printed": "✱23·2. ⊢ . R ∩̇ S = x̂ŷ(xRy . xSy)",
       "printed_page": 226,
       "scan_leaf": 248,
-      "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star23Source.source_only_star_23_2",
-      "formal_scope": "source-only transcription; PM object syntax, definitional unfolding, and kernel derivation are not yet implemented",
+      "lean_path": "Principia/Deduction/Star23Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_23_2",
+      "formal_scope": "exact contextual relation-intersection assertion after eliminable expansion of ✱23·02",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "formalization_level": "source-only",
+      "formalization_level": "pm-derivation-v1",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "integration_blocked": true,
-      "semantic_audit_status": "strict-pm-derivation-refused",
-      "semantic_audit_evidence": "reviews/Star23-opening-derivation-v1-review.md",
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_4_2",
+        "PM.RamifiedSyntax.star_23_02"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱23·02"
+      ],
+      "integration_blocked": false,
+      "demonstration_provenance": "editorial-reconstruction",
       "pm_verbatim": "*23·2. \\(\\vdash . R \\dot{\\cap} S = \\hat{x}\\hat{y}(xRy . xSy)\\) ",
       "printed_latex_witness": "*23·2. \\(\\vdash . R \\dot{\\cap} S = \\hat{x}\\hat{y}(xRy . xSy)\\) ",
       "certification": {
@@ -75,7 +85,7 @@
           "T2",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -84,21 +94,26 @@
       "printed": "✱23·3. ⊢ . R ⊍ S = x̂ŷ(xRy .∨. xSy)",
       "printed_page": 226,
       "scan_leaf": 248,
-      "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star23Source.source_only_star_23_3",
-      "formal_scope": "source-only transcription; PM object syntax, definitional unfolding, and kernel derivation are not yet implemented",
+      "lean_path": "Principia/Deduction/Star23Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_23_3",
+      "formal_scope": "exact contextual relation-sum assertion after eliminable expansion of ✱23·03",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "formalization_level": "source-only",
+      "formalization_level": "pm-derivation-v1",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_4_2",
+        "PM.RamifiedSyntax.star_23_03"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱23·03"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-      "integration_blocked": true,
-      "semantic_audit_status": "strict-pm-derivation-refused",
-      "semantic_audit_evidence": "reviews/Star23-opening-derivation-v1-review.md",
+      "integration_blocked": false,
+      "demonstration_provenance": "editorial-reconstruction",
       "pm_verbatim": "*23·3. \\(\\vdash . R \\unicode{x228d} S = \\hat{x}\\hat{y}(xRy .\\lor. xSy)\\) ",
       "printed_latex_witness": "*23·3. \\(\\vdash . R \\unicode{x228d} S = \\hat{x}\\hat{y}(xRy .\\lor. xSy)\\) ",
       "certification": {
@@ -107,7 +122,7 @@
           "T2",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -116,19 +131,24 @@
       "printed": "✱23·31. ⊢ . ∸R = x̂ŷ{∼(xRy)}",
       "printed_page": 226,
       "scan_leaf": 248,
-      "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star23Source.source_only_star_23_31",
-      "formal_scope": "source-only transcription; PM object syntax, definitional unfolding, and kernel derivation are not yet implemented",
+      "lean_path": "Principia/Deduction/Star23Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_23_31",
+      "formal_scope": "exact contextual relation-complement assertion after eliminable expansion of ✱23·04",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "formalization_level": "source-only",
+      "formalization_level": "pm-derivation-v1",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "integration_blocked": true,
-      "semantic_audit_status": "strict-pm-derivation-refused",
-      "semantic_audit_evidence": "reviews/Star23-opening-derivation-v1-review.md",
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_4_2",
+        "PM.RamifiedSyntax.star_23_04"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱23·04"
+      ],
+      "integration_blocked": false,
+      "demonstration_provenance": "editorial-reconstruction",
       "pm_verbatim": "*23·31. \\(\\vdash . \\unicode{x2238}R = \\hat{x}\\hat{y}\\{{\\sim}(xRy)\\}\\) ",
       "printed_latex_witness": "*23·31. \\(\\vdash . \\unicode{x2238}R = \\hat{x}\\hat{y}\\{{\\sim}(xRy)\\}\\) ",
       "parser_status": "reviewed-gap",
@@ -139,7 +159,7 @@
           "T2",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

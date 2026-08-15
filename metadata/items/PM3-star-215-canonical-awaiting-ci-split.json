@@ -1,0 +1,41 @@
+{
+  "batch": "PM3-STAR215-CANONICAL-01-AWAITING-CI-SPLIT",
+  "edition": "first",
+  "volume": 3,
+  "source_range": {
+    "printed_pages": "691-692",
+    "canonical_scan": "https://archive.org/details/principiamathema03whit/page/691"
+  },
+  "witnesses": [
+    "PM3-1913-SCAN"
+  ],
+  "items": [
+    {
+      "id": "PM3:✱215·01",
+      "kind": "definition",
+      "printed": "strʻP=α̂(α⊂CʻP.P̆ʻα∩Pʻα⊂α)",
+      "formal_scope": "exact typed definition of a P-convex stretch",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

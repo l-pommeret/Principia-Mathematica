@@ -19,82 +19,39 @@
   ],
   "items": [
     {
-      "id": "PM1:✱40·01",
-      "kind": "definition",
-      "printed": "✱40·01. pʻκ = x̂(α ∈ κ .⊃ₐ. x ∈ α)  Df",
-      "printed_page": 320,
-      "scan_leaf": 342,
-      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_01",
-      "formal_scope": "exact typed definition of the product of a class-family by universal membership",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "demonstration_provenance": "editorial-reconstruction",
-      "integration_status": "provisional-kernel-integrated",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "certification": {
-        "tier": "awaiting-ci",
-        "failed_criteria": [
-          "T7"
-        ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
-      },
-      "formalization_level": "pm-derivation-v1"
-    },
-    {
-      "id": "PM1:✱40·02",
-      "kind": "definition",
-      "printed": "✱40·02. sʻκ = x̂{(∃α). α ∈ κ . x ∈ α}  Df",
-      "printed_page": 320,
-      "scan_leaf": 342,
-      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_02",
-      "formal_scope": "exact typed definition of the sum of a class-family by existential membership",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "demonstration_provenance": "editorial-reconstruction",
-      "integration_status": "provisional-kernel-integrated",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "certification": {
-        "tier": "awaiting-ci",
-        "failed_criteria": [
-          "T7"
-        ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
-      },
-      "formalization_level": "pm-derivation-v1"
-    },
-    {
       "id": "PM1:✱40·1",
       "kind": "derived-proposition",
       "printed": "✱40·1. ⊢ :: x ∈ pʻκ .≡ : α ∈ κ .⊃ₐ. x ∈ α  [✱20·3.(✱40·01)]",
       "printed_page": 320,
       "scan_leaf": 342,
-      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_1",
-      "formal_scope": "exact typed product membership equivalence",
+      "lean_path": "Principia/Deduction/Star40Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_40_1",
+      "formal_scope": "exact ramified Formula AST and PM derivation following the printed specialization of ✱20·3 to ✱40·01; conditional only on the explicitly named star_10_35_hypothesis inherited from ✱20·3",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
-      "integration_status": "provisional-kernel-integrated",
+      "integration_status": "blocked-star-10-35-hypothesis",
       "printed_dependencies": [
         "PM1:✱20·3",
         "PM1:✱40·01"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": [
-          "✱20·3",
-          "✱40·01"
-        ],
-        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
-        "editorial_note": "The exact typed certificate discharges the printed citations by direct definitional reduction through a non-indexed product/sum helper."
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_20_3",
+        "PM.RamifiedSyntax.star_40_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱40·01"
+      ],
+      "demonstration_provenance": "follows-printed",
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "reducibilityExistential, star_10_35_hypothesis",
+          "lean_type": "the explicit unary reducibility vocabulary and named remaining ✱10·35 bridge premise required by PM.RamifiedSyntax.star_20_3"
+        }
       },
       "certification": {
         "tier": "lean-typechecked",
@@ -104,7 +61,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -113,27 +70,34 @@
       "printed": "✱40·11. ⊢ : x ∈ sʻκ .≡. (∃α). α ∈ κ . x ∈ α  [✱20·3.(✱40·02)]",
       "printed_page": 320,
       "scan_leaf": 342,
-      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_11",
-      "formal_scope": "exact typed sum membership equivalence",
+      "lean_path": "Principia/Deduction/Star40Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_40_11",
+      "formal_scope": "exact ramified Formula AST and PM derivation following the printed specialization of ✱20·3 to ✱40·02; conditional only on the explicitly named star_10_35_hypothesis inherited from ✱20·3",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
-      "integration_status": "provisional-kernel-integrated",
+      "integration_status": "blocked-star-10-35-hypothesis",
       "printed_dependencies": [
         "PM1:✱20·3",
         "PM1:✱40·02"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": [
-          "✱20·3",
-          "✱40·02"
-        ],
-        "strict_attempt_evidence": "reviews/Star40-catalogue-review.md",
-        "editorial_note": "The exact typed certificate discharges the printed citations by direct definitional reduction through a non-indexed product/sum helper."
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_20_3",
+        "PM.RamifiedSyntax.star_40_02"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱40·02"
+      ],
+      "demonstration_provenance": "follows-printed",
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "reducibilityExistential, star_10_35_hypothesis",
+          "lean_type": "the explicit unary reducibility vocabulary and named remaining ✱10·35 bridge premise required by PM.RamifiedSyntax.star_20_3"
+        }
       },
       "certification": {
         "tier": "lean-typechecked",
@@ -143,7 +107,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -152,8 +116,6 @@
       "printed": "✱40·12. ⊢ : α ∈ κ .⊃. pʻκ ⊂ α",
       "printed_page": 320,
       "scan_leaf": 342,
-      "lean_path": "Principia/Architecture/Star40OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star40OpeningKernel.star_40_12",
       "formal_scope": "exact typed inclusion of a product in every member class",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -169,7 +131,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

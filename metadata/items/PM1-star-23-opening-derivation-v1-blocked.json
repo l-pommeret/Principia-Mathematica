@@ -21,21 +21,26 @@
       "printed": "✱23·32. ⊢ . R ∸ S = x̂ŷ{xRy . ∼(xSy)}",
       "printed_page": 226,
       "scan_leaf": 248,
-      "lean_path": "Principia/FirstEdition/Volume1/Star23Source.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star23Source.source_only_star_23_32",
-      "formal_scope": "source-only transcription; PM object syntax, definitional unfolding, and kernel derivation are not yet implemented",
+      "lean_path": "Principia/Deduction/Star23Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_23_32",
+      "formal_scope": "exact contextual relation-difference assertion after eliminable expansion of ✱23·05",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "prepared",
-      "formalization_level": "source-only",
+      "formalization_level": "pm-derivation-v1",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_4_2",
+        "PM.RamifiedSyntax.star_23_05"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱23·05"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-      "integration_blocked": true,
-      "semantic_audit_status": "strict-pm-derivation-incomplete",
-      "semantic_audit_evidence": "reviews/Star23-opening-derivation-v1-review.md",
+      "integration_blocked": false,
+      "demonstration_provenance": "editorial-reconstruction",
       "pm_verbatim": "*23·32. \\(\\vdash . R \\unicode{x2238} S = \\hat{x}\\hat{y}\\{xRy . {\\sim}(xSy)\\}\\) ",
       "printed_latex_witness": "*23·32. \\(\\vdash . R \\unicode{x2238} S = \\hat{x}\\hat{y}\\{xRy . {\\sim}(xSy)\\}\\) ",
       "certification": {
@@ -44,7 +49,7 @@
           "T2",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

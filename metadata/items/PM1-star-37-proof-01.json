@@ -21,8 +21,6 @@
       "printed": "✱37·2. ⊢:α⊂ β.⊃.Pʻʻα⊂ Pʻʻβ",
       "printed_page": 298,
       "scan_leaf": 320,
-      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_2",
       "formal_scope": "exact typed direct-image proposition, audited against the canonical transcription",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -41,7 +39,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱37·2. \\vdash:\\alpha\\subset \\beta.\\supset.Pʻʻ\\alpha\\subset Pʻʻ\\beta"
     },
@@ -51,8 +49,6 @@
       "printed": "✱37·201. ⊢:P⪽Q.⊃.Pʻʻα⊂ Qʻʻα [Similar proof]",
       "printed_page": 298,
       "scan_leaf": 320,
-      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_201",
       "formal_scope": "exact typed direct-image proposition, audited against the canonical transcription",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -67,7 +63,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱37·201. \\vdash:P\\unicode{x2abd}Q.\\supset.Pʻʻ\\alpha\\subset Qʻʻ\\alpha \\quad[\\text{Similar proof}]"
     },
@@ -77,8 +73,6 @@
       "printed": "✱37·202. ⊢:a⊂ β.P⪽Q.⊃.Pʻʻα⊂ Qʻʻβ [*37·2·201]",
       "printed_page": 298,
       "scan_leaf": 320,
-      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_202",
       "formal_scope": "exact typed direct-image proposition, audited against the canonical transcription",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -91,10 +85,7 @@
         "PM1:✱37·2",
         "PM1:✱37·201"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star37ConsecutiveKernel.star_37_2",
-        "PM.Architecture.Star37ConsecutiveKernel.star_37_201"
-      ],
+      "lean_dependencies": [],
       "certification": {
         "tier": "lean-typechecked",
         "failed_criteria": [
@@ -102,7 +93,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱37·202. \\vdash:a\\subset \\beta.P\\unicode{x2abd}Q.\\supset.Pʻʻ\\alpha\\subset Qʻʻ\\beta \\quad[\\text{*37·2·201}]"
     },
@@ -112,8 +103,6 @@
       "printed": "✱37·21. ⊢.Pʻʻ(α∩ β)⊂ Pʻʻα∩ Pʻʻβ",
       "printed_page": 298,
       "scan_leaf": 320,
-      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_21",
       "formal_scope": "exact typed direct-image proposition, audited against the canonical transcription",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -132,7 +121,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱37·21. \\vdash.Pʻʻ(\\alpha\\cap \\beta)\\subset Pʻʻ\\alpha\\cap Pʻʻ\\beta"
     },
@@ -142,8 +131,6 @@
       "printed": "✱37·211. ⊢.(P∩̇Q)ʻʻα⊂ Pʻʻα∩ Qʻʻα [Similar proof]",
       "printed_page": 298,
       "scan_leaf": 320,
-      "lean_path": "Principia/Architecture/Star37ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star37ConsecutiveKernel.star_37_211",
       "formal_scope": "exact typed direct-image proposition, audited against the canonical transcription",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -158,7 +145,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "printed_latex_witness": "✱37·211. \\vdash.(P\\dot{\\cap}Q)ʻʻ\\alpha\\subset Pʻʻ\\alpha\\cap Qʻʻ\\alpha \\quad[\\text{Similar proof}]",
       "parser_status": "reviewed-gap",

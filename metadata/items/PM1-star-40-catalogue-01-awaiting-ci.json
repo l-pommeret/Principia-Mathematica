@@ -1,0 +1,77 @@
+{
+  "batch": "PM1-STAR40-CATALOGUE-01-AWAITING-CI-SPLIT",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "320",
+    "scan_leaves": [
+      342
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "review_evidence": [
+    "reviews/Star40-catalogue-review.md"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱40·01",
+      "kind": "definition",
+      "printed": "✱40·01. pʻκ = x̂(α ∈ κ .⊃ₐ. x ∈ α)  Df",
+      "printed_page": 320,
+      "scan_leaf": 342,
+      "lean_path": "Principia/Deduction/Star40Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_40_01",
+      "formal_scope": "exact eliminable ✱20·01 expansion of the product of a predicative class-family",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      },
+      "formalization_level": "pm-derivation-v1"
+    },
+    {
+      "id": "PM1:✱40·02",
+      "kind": "definition",
+      "printed": "✱40·02. sʻκ = x̂{(∃α). α ∈ κ . x ∈ α}  Df",
+      "printed_page": 320,
+      "scan_leaf": 342,
+      "lean_path": "Principia/Deduction/Star40Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_40_02",
+      "formal_scope": "exact eliminable ✱20·01 expansion of the sum of a predicative class-family",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      },
+      "formalization_level": "pm-derivation-v1"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

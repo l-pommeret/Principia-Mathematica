@@ -21,29 +21,47 @@
       "printed": "⊢ : x ε α ∩ β .≡ . x ε α . x ε β",
       "printed_page": 220,
       "scan_leaf": 242,
-      "lean_path": "Principia/Architecture/Star22Q346Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q346Kernel.star_22_33",
-      "formal_scope": "exact polymorphic typed-class intersection membership equivalence",
+      "lean_path": "Principia/Deduction/Star22Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_22_33",
+      "formal_scope": "exact ramified intersection-membership equivalence via contextual class elimination",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
-      "integration_status": "provisional-kernel-integrated",
+      "integration_status": "integrated-local",
+      "demonstration_provenance": "follows-printed",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q346-review.md",
       "printed_dependencies": [
         "PM1:✱20·3",
         "PM1:✱22·2"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_20_3",
+        "PM.RamifiedSyntax.star_22_2",
+        "PM.RamifiedSyntax.star_3_03",
+        "PM.RamifiedSyntax.star_3_26",
+        "PM.RamifiedSyntax.Derivation.star_9_12_same"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱3·03",
+        "PM1:✱3·26",
+        "PM1:✱9·12",
+        "PM1:✱20·3",
+        "PM1:✱22·2"
+      ],
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": [
-          "PM1:✱20·3",
-          "PM1:✱22·2"
+        "added_beyond_print": [
+          "PM1:✱3·03",
+          "PM1:✱3·26",
+          "PM1:✱9·12"
         ],
+        "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Q346-review.md",
-        "editorial_note": "The exact endpoint reduces definitionally from the kernel-checked typed intersection definition."
+        "editorial_note": "The three added propositional steps conjoin the two printed premises and project the ✱20·3 conclusion; the mathematical route is exactly the printed one."
       },
       "certification": {
         "tier": "lean-typechecked",
@@ -53,7 +71,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -63,29 +81,47 @@
       "printed": "⊢ : x ε α ∪ β .≡ : x ε α .∨. x ε β",
       "printed_page": 220,
       "scan_leaf": 242,
-      "lean_path": "Principia/Architecture/Star22Q346Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q346Kernel.star_22_34",
-      "formal_scope": "exact polymorphic typed-class union membership equivalence",
+      "lean_path": "Principia/Deduction/Star22Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_22_34",
+      "formal_scope": "exact ramified union-membership equivalence via contextual class elimination",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
-      "integration_status": "provisional-kernel-integrated",
+      "integration_status": "integrated-local",
+      "demonstration_provenance": "follows-printed",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q346-review.md",
       "printed_dependencies": [
         "PM1:✱20·3",
         "PM1:✱22·3"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_20_3",
+        "PM.RamifiedSyntax.star_22_3",
+        "PM.RamifiedSyntax.star_3_03",
+        "PM.RamifiedSyntax.star_3_26",
+        "PM.RamifiedSyntax.Derivation.star_9_12_same"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱3·03",
+        "PM1:✱3·26",
+        "PM1:✱9·12",
+        "PM1:✱20·3",
+        "PM1:✱22·3"
+      ],
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
-        "added_beyond_print": [],
-        "printed_but_unused": [
-          "PM1:✱20·3",
-          "PM1:✱22·3"
+        "added_beyond_print": [
+          "PM1:✱3·03",
+          "PM1:✱3·26",
+          "PM1:✱9·12"
         ],
+        "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Q346-review.md",
-        "editorial_note": "The exact endpoint reduces definitionally from the kernel-checked typed union definition."
+        "editorial_note": "The three added propositional steps conjoin the two printed premises and project the ✱20·3 conclusion; the mathematical route is exactly the printed one."
       },
       "certification": {
         "tier": "lean-typechecked",
@@ -95,7 +131,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -105,12 +141,13 @@
       "printed": "⊢ : x ε −α .≡ . x ∼ε α",
       "printed_page": 220,
       "scan_leaf": 242,
-      "lean_path": "Principia/Architecture/Star22Q346Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q346Kernel.star_22_35",
-      "formal_scope": "exact polymorphic typed-class complement membership equivalence",
+      "lean_path": "Principia/Deduction/Star22Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_22_35",
+      "formal_scope": "exact ramified complement-membership equivalence via contextual class elimination",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
-      "integration_status": "provisional-kernel-integrated",
+      "integration_status": "integrated-local",
+      "demonstration_provenance": "follows-printed",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q346-review.md",
       "printed_dependencies": [
@@ -118,22 +155,33 @@
         "PM1:✱22·31"
       ],
       "lean_dependencies": [
-        "Star22Q341Definitions.Complement"
+        "PM.RamifiedSyntax.star_20_3",
+        "PM.RamifiedSyntax.star_22_31",
+        "PM.RamifiedSyntax.star_3_03",
+        "PM.RamifiedSyntax.star_3_26",
+        "PM.RamifiedSyntax.Derivation.star_9_12_same"
       ],
       "normalized_dependencies": [
-        "PM1:✱22·04"
+        "PM1:✱3·03",
+        "PM1:✱3·26",
+        "PM1:✱9·12",
+        "PM1:✱20·3",
+        "PM1:✱22·31"
       ],
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
-          "PM1:✱22·04"
+          "PM1:✱3·03",
+          "PM1:✱3·26",
+          "PM1:✱9·12"
         ],
-        "printed_but_unused": [
-          "PM1:✱20·3",
-          "PM1:✱22·31"
-        ],
+        "printed_but_unused": [],
         "strict_attempt_evidence": "reviews/Q346-review.md",
-        "editorial_note": "The exact endpoint reduces definitionally from the typed complement definition."
+        "editorial_note": "The three added propositional steps conjoin the two printed premises and project the ✱20·3 conclusion; the mathematical route is exactly the printed one."
       },
       "certification": {
         "tier": "lean-typechecked",
@@ -143,18 +191,15 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱22·351",
-      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . −α ≠ α",
       "printed_page": 220,
       "scan_leaf": 242,
-      "lean_path": "Principia/Architecture/Star22Q346Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q346Kernel.star_22_351",
       "formal_scope": "exact polymorphic complement inequality with PM possible-argument nonempty-type convention explicit",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -195,18 +240,15 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱22·36",
-      "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
       "printed": "⊢ . α ∩ β ε Cls",
       "printed_page": 220,
       "scan_leaf": 242,
-      "lean_path": "Principia/Architecture/Star22Q346Kernel.lean",
-      "declaration": "PM.Architecture.Star22Q346Kernel.star_22_36",
       "formal_scope": "exact type-relative classhood of intersection with characteristic functions as explicit predicative codes",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -235,7 +277,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

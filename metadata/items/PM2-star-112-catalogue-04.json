@@ -21,8 +21,6 @@
       "printed": "✱112·17. ⊢ : κ sm sm λ .⊃. ΣNcʻκ=ΣNcʻλ . Σʻκ sm Σʻλ",
       "printed_page": 101,
       "scan_leaf": 141,
-      "lean_path": "Principia/Architecture/Star112OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star112OpeningKernel.star_112_17",
       "formal_scope": "refused: PM derives both equality of cardinal sums and similarity of tagged sum classes; Lean uses weakened nonemptiness equivalence and proves only equality of its CardClass predicates",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -42,7 +40,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -51,8 +49,6 @@
       "printed": "✱112·18. ⊢ . ΣNcʻκ=ΣNcʻ∈↧ʻʻκ",
       "printed_page": 101,
       "scan_leaf": 141,
-      "lean_path": "Principia/Architecture/Star112OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star112OpeningKernel.star_112_18",
       "formal_scope": "refused: PM equates cardinal sums of κ and its restricted-membership image; Lean states only the reflexive identity SumCard K = SumCard K",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -73,7 +69,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -82,8 +78,6 @@
       "printed": "✱112·2. ⊢ : S∈1→1 . DʻS=∈↧ʻʻκ . ᗡʻS=∈↧ʻʻλ .⊃. Σʻκ sm Σʻλ",
       "printed_page": 101,
       "scan_leaf": 141,
-      "lean_path": "Principia/Architecture/Star112OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star112OpeningKernel.star_112_2",
       "formal_scope": "refused: PM derives similarity of two tagged sum classes from a one-one relation with specified domain and converse domain; Lean merely returns an arbitrary weakened EqCard hypothesis",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -103,7 +97,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -112,8 +106,6 @@
       "printed": "✱112·21. ⊢ : Mult ax .⊃: (∃S).S∈1→1 . S⊂̇sm . DʻS=∈↧ʻʻκ . ᗡʻS=∈↧ʻʻλ .≡. ∈↧ʻʻκ sm sm ∈↧ʻʻλ",
       "printed_page": 101,
       "scan_leaf": 141,
-      "lean_path": "Principia/Architecture/Star112MiddleKernel.lean",
-      "declaration": "PM.Architecture.Star112MiddleKernel.star_112_21",
       "formal_scope": "refused: PM states under the multiplicative axiom an existence equivalence for a one-one similarity relation with fixed domain and range; Lean is the generic tautology P ↔ Q → P ↔ Q",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -133,7 +125,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -142,8 +134,6 @@
       "printed": "✱112·22. ⊢ : Mult ax .⊃: ∃!(∈↧ʻʻκ) sm̄ (∈↧ʻʻλ)∩ᗡʻʻʻsm .⊃. ΣNcʻκ=ΣNcʻλ",
       "printed_page": 101,
       "scan_leaf": 141,
-      "lean_path": "Principia/Architecture/Star112MiddleKernel.lean",
-      "declaration": "PM.Architecture.Star112MiddleKernel.star_112_22",
       "formal_scope": "refused: PM derives equality of cardinal sums from a nonempty similarity-relation class under the multiplicative axiom; Lean merely returns an arbitrary equality hypothesis",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -163,7 +153,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

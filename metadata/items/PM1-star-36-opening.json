@@ -16,9 +16,6 @@
       "id": "PM1:✱36·01",
       "kind": "definition",
       "printed": "P⟏α = α◁P▷α Df",
-      "lean_path": "Principia/Architecture/Star36RestrictionKernel.lean",
-      "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_01",
-      "secondary_prop_declaration": "PM.Architecture.Star36RestrictionKernel.star_36_01",
       "formal_scope": "blocked v1: the extensional Prop-level relation model is secondary evidence only; no PM object-language definition or kernel-recognized definition judgment is constructed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -35,16 +32,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱36·11",
       "kind": "derived-proposition",
       "printed": "⊢ . P⟏α = α◁P▷α",
-      "lean_path": "Principia/Architecture/Star36RestrictionKernel.lean",
-      "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_11",
-      "secondary_prop_declaration": "PM.Architecture.Star36RestrictionKernel.star_36_11",
       "formal_scope": "blocked v1: exact extensional equality exists only as a host Prop; no PM formula object, printed reading, or PM.Derivation judgment is supplied",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -65,16 +59,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱36·13",
       "kind": "derived-proposition",
       "printed": "⊢ : x(P⟏α)y .≡. x∈α . y∈α . xPy",
-      "lean_path": "Principia/Architecture/Star36RestrictionKernel.lean",
-      "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_13",
-      "secondary_prop_declaration": "PM.Architecture.Star36RestrictionKernel.star_36_13",
       "formal_scope": "blocked v1: pointwise host equivalence is secondary; the source formula and a kernel derivation from the printed premises are absent",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -106,16 +97,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱36·2",
       "kind": "derived-proposition",
       "printed": "⊢ . (P⟏α)∩(Q⟏β) = (P∩Q)⟏(α∩β)",
-      "lean_path": "Principia/Architecture/Star36RestrictionKernel.lean",
-      "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_2",
-      "secondary_prop_declaration": "PM.Architecture.Star36RestrictionKernel.star_36_2",
       "formal_scope": "blocked v1: extensional host equality does not construct the PM equality formula or a PM.Derivation proof of it",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -145,16 +133,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
       "id": "PM1:✱36·201",
       "kind": "derived-proposition",
       "printed": "⊢ . (P⟏α)∩(P⟏β) = P⟏(α∩β)",
-      "lean_path": "Principia/Architecture/Star36RestrictionKernel.lean",
-      "declaration": "PM.Architecture.Star36RestrictionKernel.star_36_201",
-      "secondary_prop_declaration": "PM.Architecture.Star36RestrictionKernel.star_36_201",
       "formal_scope": "blocked v1: direct host extensionality replaces the printed inference and supplies no PM formula object or derivability judgment",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -184,7 +169,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

@@ -22,8 +22,6 @@
       "printed": "✱120·152. ⊢ : α∈NC . smʻʻα∈NC induct−ιʻΛ .⊃. α∈NC induct−ιʻΛ",
       "printed_page": 212,
       "scan_leaf": 252,
-      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_152",
       "formal_scope": "refused: Lean assumes inductivity of successor n and concludes a disjunction about n; it does not represent PM's type-lift smʻʻα or the non-null inductive-cardinal conclusion",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -48,7 +46,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -57,8 +55,6 @@
       "printed": "✱120·211. ⊢ : Ncʻρ∈NC induct−ιʻΛ .⊃. ρ∈Cls induct",
       "printed_page": 213,
       "scan_leaf": 253,
-      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_211",
       "formal_scope": "refused: Lean assumes finiteClass A directly and projects it as the conclusion, rather than deriving finiteness from nonzero inductivity of Ncʻρ",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -83,7 +79,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

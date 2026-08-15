@@ -23,16 +23,12 @@
       "printed": "✱52·31.  ⊢ : κ ⊃ 1 .≡. (∃α). κ = ιʻʻα",
       "printed_page": 365,
       "scan_leaf": 387,
-      "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
-      "declaration": "PM.Architecture.Star52CompletionKernel.star_52_31",
       "formal_scope": "exact typed characterization of subclasses of the unit-class class as singleton images of an underlying class",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star52CompletionKernel.star_52_3"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱52·3"
       ],
@@ -55,7 +51,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -65,16 +61,12 @@
       "printed": "✱52·4.  ⊢ :: α ∈ 1 ∪ ιʻΛ .≡ : x,y ∈ α .⊃ₓ,ᵧ. x = y",
       "printed_page": 365,
       "scan_leaf": 387,
-      "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
-      "declaration": "PM.Architecture.Star52CompletionKernel.star_52_4",
       "formal_scope": "exact typed at-most-one characterization of singleton-or-empty classes",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star52OpeningKernel.star_52_16"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱52·16"
       ],
@@ -95,7 +87,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -105,8 +97,6 @@
       "printed": "✱52·41.  ⊢ : ∃!α . α ∉ 1 .≡. (∃x,y). x,y ∈ α . x ≠ y",
       "printed_page": 366,
       "scan_leaf": 388,
-      "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
-      "declaration": "PM.Architecture.Star52CompletionKernel.star_52_41",
       "formal_scope": "exact classical characterization of an existent non-unit class by two distinct members",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -124,7 +114,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -134,16 +124,12 @@
       "printed": "✱52·42.  ⊢ :: α ∈ 1 .⊃ : ∃!(α ∩ β) .≡. α ∩ β ∈ 1",
       "printed_page": 366,
       "scan_leaf": 388,
-      "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
-      "declaration": "PM.Architecture.Star52CompletionKernel.star_52_42",
       "formal_scope": "exact typed equivalence between inhabited and unit intersection under a unit-class hypothesis",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star52OpeningKernel.star_52_16"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱52·16"
       ],
@@ -164,7 +150,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -174,8 +160,6 @@
       "printed": "✱52·43.  ⊢ : α ∈ 1 . ∃!(α ∩ β) .≡. α ∈ 1 . α ∩ β ∈ 1  [✱52·42.✱5·32]",
       "printed_page": 366,
       "scan_leaf": 388,
-      "lean_path": "Principia/Architecture/Star52CompletionKernel.lean",
-      "declaration": "PM.Architecture.Star52CompletionKernel.star_52_43",
       "formal_scope": "exact contextual form of ✱52·42 retaining the common unit-class antecedent on both sides",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -184,9 +168,7 @@
         "✱52·42",
         "✱5·32"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star52CompletionKernel.star_52_42"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱52·42"
       ],
@@ -207,7 +189,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

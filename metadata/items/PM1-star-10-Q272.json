@@ -36,10 +36,7 @@
       "printed": "⊢ : φx⊃ₓχx .ψx⊃ₓθx .⊃ : φx .ψx .⊃ₓ .χx .θx",
       "printed_page": 153,
       "scan_leaf": 175,
-      "lean_path": "Principia/Architecture/Star10Q272Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q272Kernel.star_10_39",
       "formal_scope": "exact Raw target plus kernel-checked PM component certificates; no PM assertion judgement for the endpoint",
-      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-missing-pm-assertion-judgement",
@@ -57,8 +54,6 @@
         "PM1:✱3·47"
       ],
       "lean_dependencies": [
-        "PM.Architecture.Star10Q265Kernel.star_10_27",
-        "PM.Architecture.Star10Q265Prerequisites.star_10_22",
         "PM.FirstEdition.Volume1.Star3.star_3_47"
       ],
       "certification": {
@@ -69,7 +64,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -78,10 +73,7 @@
       "printed": "⊢ : φx≡ₓχx .ψx≡ₓθx .⊃ : φx .ψx .≡ₓ .χx .θx",
       "printed_page": 153,
       "scan_leaf": 175,
-      "lean_path": "Principia/Architecture/Star10Q272Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q272Kernel.star_10_4",
       "formal_scope": "exact Raw target plus kernel-checked PM component certificates; no PM assertion judgement for the endpoint",
-      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-missing-pm-assertion-judgement",
@@ -96,10 +88,7 @@
         "PM1:✱10·22",
         "PM1:✱10·39"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star10Q265Prerequisites.star_10_22",
-        "PM.Architecture.Star10Q272Kernel.star_10_39"
-      ],
+      "lean_dependencies": [],
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
@@ -108,7 +97,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -117,10 +106,7 @@
       "printed": "⊢ : .(x).φx .∨ .(x).ψx .⊃ .(x).φx∨ψx",
       "printed_page": 154,
       "scan_leaf": 176,
-      "lean_path": "Principia/Architecture/Star10Q272Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q272Kernel.star_10_41",
       "formal_scope": "exact Raw target plus kernel-checked PM component certificates; no PM assertion judgement for the endpoint",
-      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-missing-pm-assertion-judgement",
@@ -139,10 +125,7 @@
         "PM1:✱10·1",
         "PM1:✱10·11"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star10Q264Kernel.star_10_1",
-        "PM.Architecture.Star10Q265FinalPrerequisites.star_10_11_21"
-      ],
+      "lean_dependencies": [],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
@@ -166,7 +149,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -175,10 +158,7 @@
       "printed": "⊢ : φx≡ₓχx .ψx≡ₓθx .⊃ : φx∨ψx .≡ₓ .χx∨θx",
       "printed_page": 154,
       "scan_leaf": 176,
-      "lean_path": "Principia/Architecture/Star10Q272Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q272Kernel.star_10_411",
       "formal_scope": "exact Raw target plus kernel-checked PM component certificates; no PM assertion judgement for the endpoint",
-      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-missing-pm-assertion-judgement",
@@ -195,7 +175,6 @@
         "PM1:✱4·39"
       ],
       "lean_dependencies": [
-        "PM.Architecture.Star10Q265FinalPrerequisites.star_10_11_21",
         "PM.FirstEdition.Volume1.Star4.star_4_39"
       ],
       "historical_dependency_relaxation": {
@@ -218,7 +197,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -227,10 +206,7 @@
       "printed": "⊢ : φx≡ₓψx .≡ .∼φx≡ₓ∼ψx  [✱4·11 . ✱10·11·271]",
       "printed_page": 154,
       "scan_leaf": 176,
-      "lean_path": "Principia/Architecture/Star10Q272Kernel.lean",
-      "declaration": "PM.Architecture.Star10Q272Kernel.star_10_412",
       "formal_scope": "exact Raw target plus kernel-checked PM component certificates; no PM assertion judgement for the endpoint",
-      "formalization_level": "pm-ast-component-certificate-v1",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-missing-pm-assertion-judgement",
@@ -246,7 +222,6 @@
         "PM1:✱4·11"
       ],
       "lean_dependencies": [
-        "PM.Architecture.Star10Q265Kernel.star_10_271",
         "PM.FirstEdition.Volume1.Star4.star_4_11"
       ],
       "historical_dependency_relaxation": {
@@ -268,7 +243,7 @@
           "T4",
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

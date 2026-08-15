@@ -14,9 +14,9 @@
     "PG78050"
   ],
   "ci_evidence": {
-    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   },
   "batch": "PM1-STAR91-CATALOGUE-04-AWAITING-CI",
   "items": [
@@ -26,8 +26,8 @@
       "printed": "✱91·03. PotʻR=R⃗ₜₛʻR Df",
       "printed_page": 587,
       "scan_leaf": 609,
-      "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star91OpeningKernel.star_91_03",
+      "lean_path": "Principia/Deduction/Star91Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_91_03",
       "formal_scope": "audited typed definition of the family of strictly positive powers of R",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "awaiting-ci",
@@ -42,7 +42,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "formalization_level": "pm-derivation-v1"
     },
@@ -52,8 +52,8 @@
       "printed": "✱91·04. PotidʻR=R⃗ₜₛʻ(I↾ CʻR) Df",
       "printed_page": 587,
       "scan_leaf": 609,
-      "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star91OpeningKernel.star_91_04",
+      "lean_path": "Principia/Deduction/Star91Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_91_04",
       "formal_scope": "audited typed definition of the family containing identity and every strictly positive power of R",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "awaiting-ci",
@@ -68,7 +68,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "formalization_level": "pm-derivation-v1"
     },
@@ -78,8 +78,8 @@
       "printed": "✱91·05. Rₚₒ=ṡʻPotʻR Df",
       "printed_page": 587,
       "scan_leaf": 609,
-      "lean_path": "Principia/Architecture/Star91OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star91OpeningKernel.star_91_05",
+      "lean_path": "Principia/Deduction/Star91Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_91_05",
       "formal_scope": "audited typed definition of the positive transitive closure as the union of all strictly positive powers of R",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "awaiting-ci",
@@ -94,7 +94,7 @@
         "failed_criteria": [
           "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       },
       "formalization_level": "pm-derivation-v1"
     }

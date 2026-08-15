@@ -24,8 +24,6 @@
       "printed": "✱64·13. ⊢. tʻ(t₀ʻα ↑ t₀ʻβ) = tʻ(α ↑ β)",
       "printed_page": 431,
       "scan_leaf": 453,
-      "lean_path": "Principia/Architecture/Star64Kernel.lean",
-      "declaration": "PM.Architecture.Star64Kernel.star_64_13",
       "formal_scope": "refused: reflexivity of collapsed t00/t does not express the printed equality of heterogeneous relation types",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -43,7 +41,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -52,8 +50,6 @@
       "printed": "✱64·14. ⊢. (x,y). x(t₀ʻα ↑ t₀ʻβ)y",
       "printed_page": 431,
       "scan_leaf": 453,
-      "lean_path": "Principia/Architecture/Star64Kernel.lean",
-      "declaration": "PM.Architecture.Star64Kernel.star_64_14",
       "formal_scope": "refused: Same x x omits the printed universally typed pair assertion and both relative operand types",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -71,7 +67,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -80,8 +76,6 @@
       "printed": "✱64·15. ⊢. (R). R ⊂ t₀ʻα ↑ t₀ʻβ",
       "printed_page": 431,
       "scan_leaf": 453,
-      "lean_path": "Principia/Architecture/Star64Kernel.lean",
-      "declaration": "PM.Architecture.Star64Kernel.star_64_15",
       "formal_scope": "refused: Same x x omits the printed universal relation-subclass assertion",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -99,7 +93,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -108,8 +102,6 @@
       "printed": "✱64·16. ⊢ : R ⊂ t₀ʻα ↑ t₀ʻβ .≡. R ∈ tʻ(t₀ʻα ↑ t₀ʻβ)",
       "printed_page": 431,
       "scan_leaf": 453,
-      "lean_path": "Principia/Architecture/Star64Kernel.lean",
-      "declaration": "PM.Architecture.Star64Kernel.star_64_16",
       "formal_scope": "refused: Lean's Same/membership tautology does not formalize subclasshood of relations in the printed relative type",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -127,7 +119,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -136,8 +128,6 @@
       "printed": "✱64·2. ⊢. ∃!R ∩ S .⊃. S ∈ tʻR . tʻR = tʻS",
       "printed_page": 431,
       "scan_leaf": 453,
-      "lean_path": "Principia/Architecture/Star64Kernel.lean",
-      "declaration": "PM.Architecture.Star64Kernel.star_64_2",
       "formal_scope": "refused: Lean assumes Same and concludes only equality of t predicates, omitting the printed intersection-existence premise and membership conjunct",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -155,7 +145,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

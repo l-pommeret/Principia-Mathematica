@@ -37,9 +37,7 @@
       "printed": "⊢ : .(∃x) : (y).φ(x, y) .⊃ : (y) : (∃x).φ(x, y)",
       "printed_page": 161,
       "scan_leaf": 183,
-      "lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q279Kernel.star_11_26_prop",
-      "formal_scope": "secondary modern Prop reading only; canonical PM derivation not yet constructed",
+      "formal_scope": "ramified two-binder PM derivation with an audited printed-to-AST reading",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
       "integration_status": "blocked-no-pm-derivation",
@@ -63,7 +61,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -72,8 +70,6 @@
       "printed": "⊢ : .(∃x, y) : (∃z).φ(x, y, z) .≡ : (∃x) : (∃y, z).φ(x, y, z) ≡ : (∃x, y, z).φ(x, y, z)",
       "printed_page": 161,
       "scan_leaf": 183,
-      "lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q279Kernel.star_11_27_prop",
       "formal_scope": "secondary modern Prop reading only; both adjacent printed equivalences lack a canonical PM derivation",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
@@ -100,7 +96,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -109,14 +105,14 @@
       "printed": "⊢ : .p .⊃ .(x, y).φ(x, y) .≡ : (x, y) : p .⊃ .φ(x, y)",
       "printed_page": 161,
       "scan_leaf": 183,
-      "lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q279Kernel.star_11_3_prop",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_3",
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
       "formal_scope": "secondary modern Prop reading only; canonical PM derivation not yet constructed",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-pm-derivation",
-      "integration_blocked": true,
-      "blocking_reason": "The Lean proof curries ordinary implications directly and does not instantiate and compose the printed ✱10·21 and ✱10·21·271 PM contracts beneath two binders.",
+      "integration_status": "provisional-pm-derivation-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
@@ -125,17 +121,14 @@
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "formalization_schema": "prop-reading-only",
-      "semantic_audit_status": "pm-derivation-migration-blocked",
+      "formalization_schema": "pm-derivation-v1",
+      "semantic_audit_status": "pm-derivation-integrated",
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T7",
-          "T8"
+          "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -144,14 +137,14 @@
       "printed": "⊢ : .(x, y).φ(x, y) : (x̂, ŷ).ψ(x, y) .≡ : (x, y) φ(x, y).ψ(x, y)",
       "printed_page": 161,
       "scan_leaf": 183,
-      "lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
-      "declaration": "PM.Architecture.Star11Q279Kernel.star_11_31_prop",
-      "formal_scope": "secondary modern Prop reading only; canonical PM derivation not yet constructed",
+      "lean_path": "Principia/Deduction/Star11Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_11_31",
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
+      "formal_scope": "ramified two-binder PM derivation with an audited printed-to-AST reading",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-pm-derivation",
-      "integration_blocked": true,
-      "blocking_reason": "The Lean proof splits and pairs conjunctions directly; it does not instantiate and compose the printed ✱10·22 and ✱10·22·271 PM derivations beneath both universal binders.",
+      "integration_status": "provisional-pm-derivation-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
@@ -160,17 +153,14 @@
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "formalization_schema": "prop-reading-only",
-      "semantic_audit_status": "pm-derivation-migration-blocked",
+      "formalization_schema": "pm-derivation-v1",
+      "semantic_audit_status": "pm-derivation-integrated",
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T7",
-          "T8"
+          "T7"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

@@ -19,21 +19,35 @@
       "printed": "⊢:x(α↿ R)y.≡.x∈ α.xRy [*21·3.(*35·01)]",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
-      "blocking_reason": "Iff.rfl unfolds a meta-level predicate definition; it is not an AST judgement or a derivation using ✱21·3 and ✱35·01.",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [
         "PM1:✱21·3",
         "PM1:✱35·01"
       ],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_1 (secondary Prop theorem only)",
-      "formal_scope": "axiom-free typed Prop reconstruction only; refused as a v1 object derivation",
-      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "normalized_dependencies": [
+        "PM1:✱21·3"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_21_3"
+      ],
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "star_10_35_hypothesis",
+          "lean_type": "PM.RamifiedSyntax.Star21EliminationHypothesis vocabulary (star_35_01 ...) x y"
+        }
+      },
+      "lean_path": "Principia/Deduction/Star35Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_35_1",
+      "formal_scope": "exact left-restriction application equivalence in the ramified PM judgement",
+      "formalization_level": "pm-derivation-v1",
+      "semantic_audit_status": "object-derivation-passed",
       "printed_latex_witness": "\\(\\vdash:x(\\alpha\\upharpoonleft R)y.\\equiv.x\\in \\alpha.xRy \\quad[\\text{*21·3.(*35·01)}]\\)",
       "certification": {
         "tier": "prepared",
@@ -42,7 +56,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -52,18 +66,32 @@
       "printed": "⊢:x(R↾ β)y.≡.xRy.y∈ β",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
-      "blocking_reason": "Iff.rfl unfolds rightRestriction but supplies no printed-formula AST, assertion judgement, or derivation.",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_101 (secondary Prop theorem only)",
-      "formal_scope": "axiom-free typed Prop reconstruction only; refused as a v1 object derivation",
-      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "normalized_dependencies": [
+        "PM1:✱21·3"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_21_3"
+      ],
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "star_10_35_hypothesis",
+          "lean_type": "PM.RamifiedSyntax.Star21EliminationHypothesis vocabulary (star_35_02 ...) x y"
+        }
+      },
+      "lean_path": "Principia/Deduction/Star35Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_35_101",
+      "formal_scope": "exact right-restriction application equivalence in the ramified PM judgement",
+      "formalization_level": "pm-derivation-v1",
+      "semantic_audit_status": "object-derivation-passed",
       "printed_latex_witness": "\\(\\vdash:x(R\\upharpoonright \\beta)y.\\equiv.xRy.y\\in \\beta\\)",
       "certification": {
         "tier": "prepared",
@@ -72,7 +100,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -82,18 +110,32 @@
       "printed": "⊢:x(α↿ R↾ β)y.≡.x∈ α.xRy.y∈ β",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
-      "blocking_reason": "Iff.rfl unfolds bothRestrictions but supplies no printed-formula AST, assertion judgement, or derivation.",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_102 (secondary Prop theorem only)",
-      "formal_scope": "axiom-free typed Prop reconstruction only; refused as a v1 object derivation",
-      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "normalized_dependencies": [
+        "PM1:✱21·3"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_21_3"
+      ],
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "star_10_35_hypothesis",
+          "lean_type": "PM.RamifiedSyntax.Star21EliminationHypothesis vocabulary (star_35_03 ...) x y"
+        }
+      },
+      "lean_path": "Principia/Deduction/Star35Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_35_102",
+      "formal_scope": "exact two-sided restriction application equivalence in the ramified PM judgement",
+      "formalization_level": "pm-derivation-v1",
+      "semantic_audit_status": "object-derivation-passed",
       "printed_latex_witness": "\\(\\vdash:x(\\alpha\\upharpoonleft R\\upharpoonright \\beta)y.\\equiv.x\\in \\alpha.xRy.y\\in \\beta\\)",
       "certification": {
         "tier": "prepared",
@@ -102,7 +144,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -112,18 +154,32 @@
       "printed": "⊢:x(α↑ β)y.≡.x∈ α.y∈ β",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "blocked-star2-t1-t9-no-object-derivation",
-      "blocking_reason": "The theorem is the reflexive Prop `a x ∧ b y ↔ a x ∧ b y`; it has no cross-product AST judgement or PM derivation.",
+      "integration_blocked": false,
+      "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_103 (secondary Prop theorem only)",
-      "formal_scope": "axiom-free typed Prop reconstruction only; refused as a v1 object derivation",
-      "semantic_audit_status": "refused-star2-t1-t9-incomplete",
+      "normalized_dependencies": [
+        "PM1:✱21·3"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_21_3"
+      ],
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "star_10_35_hypothesis",
+          "lean_type": "PM.RamifiedSyntax.Star21EliminationHypothesis vocabulary (star_35_04 ...) x y"
+        }
+      },
+      "lean_path": "Principia/Deduction/Star35Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_35_103",
+      "formal_scope": "exact class-product application equivalence in the ramified PM judgement",
+      "formalization_level": "pm-derivation-v1",
+      "semantic_audit_status": "object-derivation-passed",
       "printed_latex_witness": "\\(\\vdash:x(\\alpha\\uparrow \\beta)y.\\equiv.x\\in \\alpha.y\\in \\beta\\)",
       "certification": {
         "tier": "prepared",
@@ -132,7 +188,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -156,8 +212,6 @@
       ],
       "normalized_dependencies": [],
       "lean_dependencies": [],
-      "lean_path": "Principia/Architecture/Star35ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star35ConsecutiveKernel.star_35_11 (secondary Prop/extensional theorem only)",
       "formal_scope": "axiom-free typed extensional reconstruction only; refused as a v1 object derivation",
       "semantic_audit_status": "refused-star2-t1-t9-incomplete",
       "printed_latex_witness": "\\(\\vdash.\\alpha\\upharpoonleft R\\upharpoonright \\beta=(\\alpha\\upharpoonleft R)\\dot{\\cap}(R\\upharpoonright \\beta)\\)",
@@ -168,7 +222,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

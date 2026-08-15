@@ -43,7 +43,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -74,7 +74,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -105,7 +105,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -113,22 +113,37 @@
       "kind": "derived-proposition",
       "printed": "✱34·1. ⊢:x(R| S)z.≡.(∃ y).xRy.ySz [✱21·3.(✱34·01)]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_scope": "v1 blocked: the architecture theorem proves the secondary Prop equivalence by rfl, but supplies neither a PM Elementary formula nor a Derivation judgment",
-      "declaration": "PM.Architecture.Star34QProofBlock7.star_34_1",
-      "lean_path": "Principia/Architecture/Star34QProofBlock7.lean",
+      "formal_scope": "exact relative-product application equivalence in the ramified PM judgement",
+      "formalization_level": "pm-derivation-v1",
+      "declaration": "PM.RamifiedSyntax.star_34_1",
+      "lean_path": "Principia/Deduction/Star34Derived.lean",
       "formal_status": "prepared",
-      "integration_status": "prepared",
-      "integration_blocked": true,
+      "integration_status": "awaiting-ci",
+      "integration_blocked": false,
       "printed_dependencies": [
         "PM1:✱21·3",
         "PM1:✱34·01"
       ],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_21_3"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱21·3"
+      ],
+      "demonstration_provenance": "follows-printed",
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "star_10_35_hypothesis",
+          "lean_type": "PM.RamifiedSyntax.Star21EliminationHypothesis vocabulary (star_34_01 ...) x z"
+        }
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-      "semantic_audit_status": "v1-pm-judgment-blocked",
-      "secondary_prop_evidence": "PM.Architecture.Star34QProofBlock7.star_34_1",
+      "semantic_audit_status": "object-derivation-passed",
       "pm_verbatim": "*34·1. \\(\\vdash:x(R\\mid S)z.\\equiv.(\\exists y).xRy.ySz \\quad[\\text{*21·3.(*34·01)}]\\) ",
       "printed_latex_witness": "*34·1. \\(\\vdash:x(R\\mid S)z.\\equiv.(\\exists y).xRy.ySz \\quad[\\text{*21·3.(*34·01)}]\\) ",
       "printed_page": 270,
@@ -140,7 +155,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -149,8 +164,6 @@
       "printed": "✱34·11. ⊢:x(R| S)z.≡.∃ !(R⃖ʻx∩ S⃗ʻz)",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_scope": "v1 blocked: the architecture theorem proves only the secondary inhabited-meeting Prop equivalence and does not replay the printed PM derivation",
-      "declaration": "PM.Architecture.Star34QProofBlock7.star_34_11",
-      "lean_path": "Principia/Architecture/Star34QProofBlock7.lean",
       "formal_status": "prepared",
       "integration_status": "prepared",
       "integration_blocked": true,
@@ -166,7 +179,6 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "v1-pm-judgment-blocked",
-      "secondary_prop_evidence": "PM.Architecture.Star34QProofBlock7.star_34_11",
       "pm_verbatim": "*34·11. \\(\\vdash:x(R\\mid S)z.\\equiv.\\exists !(\\overleftarrow{R}ʻx\\cap \\overrightarrow{S}ʻz)\\) \n\nDem.\n\n \\[ \\begin{array}{l} \\vdash.\\text{*34·1.*32·18·181}.\\supset\\\\ \\vdash:x(R\\mid S)z.&\\equiv.(\\exists y).y\\in \\overleftarrow{R}ʻx.y\\in \\overrightarrow{S}ʻz.\\\\ [\\text{*22·33}] & \\equiv.(\\exists y).y\\in \\overleftarrow{R}ʻx\\cap \\overrightarrow{S}ʻz.\\\\ [\\text{*24·5}] & \\equiv.\\exists !(\\overleftarrow{R}ʻx\\cap \\overrightarrow{S}ʻz):\\supset\\vdash.\\text{Prop} \\end{array} \\]",
       "printed_latex_witness": "*34·11. \\(\\vdash:x(R\\mid S)z.\\equiv.\\exists !(\\overleftarrow{R}ʻx\\cap \\overrightarrow{S}ʻz)\\) ",
       "printed_page": 270,
@@ -178,7 +190,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

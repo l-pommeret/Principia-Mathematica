@@ -22,8 +22,6 @@
       "printed": "✱120·322. ⊢ : α∈NC induct .⊃: ∃!α .≡. α≠α+₍c₎1",
       "printed_page": 216,
       "scan_leaf": 256,
-      "lean_path": "Principia/Architecture/Star120NextKernel.lean",
-      "declaration": "PM.Architecture.Star120NextKernel.star_120_322",
       "formal_scope": "refused: Lean proves only non-equality with successor, omitting PM's displayed equivalence with existence",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -47,7 +45,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -56,8 +54,6 @@
       "printed": "✱120·41. ⊢ : ν∈NC induct . ∃!α+₍c₎ν .⊃: α+₍c₎ν=β+₍c₎ν .⊃. α=smʻʻβ",
       "printed_page": 216,
       "scan_leaf": 256,
-      "lean_path": "Principia/Architecture/Star120NextKernel.lean",
-      "declaration": "PM.Architecture.Star120NextKernel.star_120_41",
       "formal_scope": "refused: Nat cancellation concludes same-type equality and omits the inductive/existence guards and smʻʻ type transport",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -92,7 +88,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -101,8 +97,6 @@
       "printed": "✱120·411. ⊢ : ν∈NC induct .⊃: ∃!γ−₍c₎ν .⊃. γ−₍c₎ν∈N₀C : γ≥ν .≡. (γ−₍c₎ν)∩t₀ʻγ∈N₀C",
       "printed_page": 217,
       "scan_leaf": 257,
-      "lean_path": "Principia/Architecture/Star120NextKernel.lean",
-      "declaration": "PM.Architecture.Star120NextKernel.star_120_411",
       "formal_scope": "refused: Lean gives an additive difference witness and omits PM's cardinal membership, guard, restriction, and equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -132,7 +126,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -141,8 +135,6 @@
       "printed": "✱120·4111. ⊢ : ν∈NC induct . ∃!smξʻʻγ .⊃: γ≥ν .≡. (γ−₍c₎ν)ξ∈N₀C",
       "printed_page": 217,
       "scan_leaf": 257,
-      "lean_path": "Principia/Architecture/Star120NextKernel.lean",
-      "declaration": "PM.Architecture.Star120NextKernel.star_120_4111",
       "formal_scope": "refused: Lean characterizes order by an additive witness, not membership of the typed cardinal difference in N₀C",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -168,7 +160,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -177,8 +169,6 @@
       "printed": "✱120·412. ⊢ : ν∈NC induct . γ≥ν . ∃!smξʻʻγ .⊃. (γ−₍c₎ν)ξ={(ια)(α+₍c₎ν=γ)}ξ",
       "printed_page": 217,
       "scan_leaf": 257,
-      "lean_path": "Principia/Architecture/Star120NextKernel.lean",
-      "declaration": "PM.Architecture.Star120NextKernel.star_120_412",
       "formal_scope": "refused: Lean proves only definitional equality of Nat subtraction and omits the class-of-witnesses identity",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -205,7 +195,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

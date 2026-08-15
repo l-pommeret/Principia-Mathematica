@@ -42,7 +42,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -51,13 +51,14 @@
       "printed": "✱9·14. If \" φ x \" is significant, then if x is of the same type as a , \" φ a \" is significant, and vice versa. Pp. (Cf. note on *10·121, p. 146.)",
       "printed_page": 138,
       "scan_leaf": 160,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "lean_path": "Principia/Deduction/Star9Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_9_14",
+      "demonstration_provenance": "follows-printed",
+      "formal_scope": "intrinsically typed ramified significance claim, identical to the primitive restatement at ✱10·121",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "ramified-primitive-awaiting-ci",
       "printed_dependencies": [
         "PM1:✱10·121"
       ],
@@ -74,7 +75,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -83,13 +84,14 @@
       "printed": "✱9·15. If, for some a , there is a proposition φ a , then there is a function φ x̂ , and vice versa. Pp.",
       "printed_page": 138,
       "scan_leaf": 160,
-      "lean_path": "Principia/FirstEdition/Volume1/Star9.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "lean_path": "Principia/Deduction/Star9Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_9_15",
+      "demonstration_provenance": "follows-printed",
+      "formal_scope": "intrinsically typed ramified function-existence claim, identical to the primitive restatement at ✱10·122",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "ramified-primitive-awaiting-ci",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
@@ -104,7 +106,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

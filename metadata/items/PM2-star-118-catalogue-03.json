@@ -21,8 +21,6 @@
       "printed": "✱118·25. ⊢ . (μ+cν+cϖ)ξ={(μ+cν)ξ+cϖ}ξ={μ+c(ν+cϖ)ξ}ξ",
       "printed_page": 197,
       "scan_leaf": 237,
-      "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star118OpeningKernel.star_118_25",
       "formal_scope": "refused: ordinary associativity proves equality of two raw parenthesizations under n, but PM also normalizes the intermediate sums on both displayed right-hand expressions",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -41,7 +39,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -50,8 +48,6 @@
       "printed": "✱118·3. ⊢ . (μ×cν)ξ=η̂{(∃α,β). μ=N₀cʻα . ν=N₀cʻβ . η=N₀cʻ(α×β)}",
       "printed_page": 197,
       "scan_leaf": 237,
-      "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star118OpeningKernel.star_118_3",
       "formal_scope": "refused: reflexivity of arbitrary n and mul omits PM's defining class abstraction for cardinal multiplication and all representative witnesses",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -71,7 +67,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -80,8 +76,6 @@
       "printed": "✱118·301. ⊢ : ∃!(μ×cν) .⊃. smξʻʻ(μ×cν)=(μ×cν)ξ",
       "printed_page": 197,
       "scan_leaf": 237,
-      "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star118OpeningKernel.star_118_301",
       "formal_scope": "refused: Normal n (op a b) unfolds to the equality returned, so PM's existence-to-smξ theorem is assumed rather than proved",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -100,7 +94,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -109,8 +103,6 @@
       "printed": "✱118·31. ⊢ : ∃!(μ×cν)ξ . ν≠0 .⊃. ∃!smξʻʻμ",
       "printed_page": 197,
       "scan_leaf": 237,
-      "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star118OpeningKernel.star_118_31",
       "formal_scope": "refused: Lean returns normality of the product unchanged instead of deriving existence of smξ on μ, and it omits ν≠0",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -129,7 +121,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -138,8 +130,6 @@
       "printed": "✱118·32. ⊢ : μ,ν∈NC−ιʻ0 .⊃: ∃!(μ×cν)ξ .≡. ∃!{smξʻʻμ×csmξʻʻν}ξ",
       "printed_page": 197,
       "scan_leaf": 237,
-      "lean_path": "Principia/Architecture/Star118OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star118OpeningKernel.star_118_32",
       "formal_scope": "refused: the entire normality equivalence is supplied as h, while PM's NC-minus-zero antecedent is absent",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -158,7 +148,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

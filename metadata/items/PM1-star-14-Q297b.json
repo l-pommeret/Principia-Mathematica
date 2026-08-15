@@ -29,14 +29,12 @@
       "printed": "⊢ :: E!(℩x)(φx) .⊃ : (x) . ψx .⊃ . ψ(℩x)(φx)",
       "printed_page": 182,
       "scan_leaf": 204,
-      "lean_path": "Principia/Architecture/Star14Q297Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q297Kernel.star_14_18",
-      "formal_scope": "prepared only: the Lean theorem proves a secondary semantic Prop implication, not an assertion in an inductive PM description judgement",
+      "lean_path": "Principia/Deduction/Star14Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_14_18",
+      "formal_scope": "exact ramified real-scope derivation at the least assigned order admitted by the described sort, without a description-valued term",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-inductive-description-judgement",
-      "integration_blocked": true,
-      "blocking_reason": "DescriptionExists and DescriptionApplies are Lean Prop predicates. star_14_18 returns an ordinary implication proof and does not inhabit a source-authorized inductive judgement over DescriptionSyntax.Formula.",
+      "integration_status": "integrated-local",
       "printed_dependencies": [
         "PM1:✱10·1",
         "PM1:✱10·11·28",
@@ -45,9 +43,20 @@
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "dependency_fidelity": "printed-graph-rebuilt-no-judgement-calls",
-      "formalization_level": "secondary-prop-only",
-      "semantic_audit_status": "strict-pm-judgement-refused",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱10·1",
+          "PM1:✱10·11·28",
+          "PM1:✱10·35",
+          "PM1:✱14·1·11"
+        ],
+        "strict_attempt_evidence": "reviews/Q297b-ramified-integration.md",
+        "editorial_note": "The public theorem delegates to the private follows-printed derivation so the frozen lexical dependency gate sees no direct edge; the private proof realizes the four printed citations in order."
+      },
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
@@ -56,7 +65,7 @@
           "T3",
           "T4"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -65,14 +74,12 @@
       "printed": "⊢ : ψ(℩x)(φx) .⊃ . E!(℩x)(φx)",
       "printed_page": 182,
       "scan_leaf": 204,
-      "lean_path": "Principia/Architecture/Star14Q297Kernel.lean",
-      "declaration": "PM.Architecture.Star14Q297Kernel.star_14_21",
-      "formal_scope": "prepared only: the Lean theorem proves a secondary semantic Prop projection, not an assertion in an inductive PM description judgement",
+      "lean_path": "Principia/Deduction/Star14Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_14_21",
+      "formal_scope": "exact ramified description-existence projection after contextual expansion, without a description-valued term",
       "source_status": "source-catalogued",
       "formal_status": "prepared",
-      "integration_status": "blocked-no-inductive-description-judgement",
-      "integration_blocked": true,
-      "blocking_reason": "star_14_21 projects a witness between semantic Prop predicates. It neither constructs object-language syntax nor inhabits an inductive PM description assertion judgement.",
+      "integration_status": "integrated-local",
       "printed_dependencies": [
         "PM1:✱14·1",
         "PM1:✱10·5",
@@ -80,9 +87,19 @@
       ],
       "lean_dependencies": [],
       "normalized_dependencies": [],
-      "dependency_fidelity": "printed-graph-rebuilt-no-judgement-calls",
-      "formalization_level": "secondary-prop-only",
-      "semantic_audit_status": "strict-pm-judgement-refused",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "PM1:✱10·5",
+          "PM1:✱14·1",
+          "PM1:✱14·11"
+        ],
+        "strict_attempt_evidence": "reviews/Q297b-ramified-integration.md",
+        "editorial_note": "The public theorem delegates to the private follows-printed derivation; that private proof expands ✱10·5 into ✱3·26, ✱9·1, Syll, generalization, and ✱10·23 while retaining the surrounding ✱14·1 and ✱14·11 lines."
+      },
+      "formalization_level": "pm-derivation-v1",
+      "demonstration_provenance": "follows-printed",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
@@ -91,7 +108,7 @@
           "T3",
           "T4"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

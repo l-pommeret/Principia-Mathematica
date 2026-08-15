@@ -21,8 +21,6 @@
       "printed": "✱93·132. ⊢.min⃗_PʻᗡʻT=ᗡʻT-ᗡʻ(T| P)",
       "printed_page": 611,
       "scan_leaf": 633,
-      "lean_path": "Principia/Architecture/Star93NextKernel.lean",
-      "declaration": "PM.Architecture.Star93NextKernel.star_93_132",
       "formal_scope": "refused: Lean requires the extra hypothesis cod T ⊆ field P, which is absent from the printed unconditional proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -44,7 +42,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -53,8 +51,6 @@
       "printed": "✱93·21. ⊢:α∈ genʻP.≡.(∃ T).T∈ PotidʻP.α=ᗡʻT-ᗡʻ(T| P) [✱93·2·132]",
       "printed_page": 611,
       "scan_leaf": 633,
-      "lean_path": "Principia/Architecture/Star93NextKernel.lean",
-      "declaration": "PM.Architecture.Star93NextKernel.star_93_21",
       "formal_scope": "refused: Potid is defined as True, so the definitional Gen equivalence erases PM's power-identity restriction",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -73,7 +69,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -82,8 +78,6 @@
       "printed": "✱93·22. ⊢.B⃗ʻP∈ genʻP [✱93·2·13.✱91·35]",
       "printed_page": 611,
       "scan_leaf": 633,
-      "lean_path": "Principia/Architecture/Star93NextKernel.lean",
-      "declaration": "PM.Architecture.Star93NextKernel.star_93_22",
       "formal_scope": "refused: the existential Potid witness and boundary equality are supplied together as h, assuming exactly the generated-family membership PM proves",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -103,7 +97,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -112,8 +106,6 @@
       "printed": "✱93·221. ⊢.ᗡʻP-ᗡʻP²∈ genʻP [✱93·2·131.✱91·351·23]",
       "printed_page": 611,
       "scan_leaf": 633,
-      "lean_path": "Principia/Architecture/Star93NextKernel.lean",
-      "declaration": "PM.Architecture.Star93NextKernel.star_93_221",
       "formal_scope": "refused: Lean adds h : Potid P P and Potid is definitionally True, so the printed unconditional membership is not faithfully reconstructed",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -133,7 +125,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -142,8 +134,6 @@
       "printed": "✱93·23. ⊢.genʻP=ιʻB⃗ʻP∪ min⃗_PʻʻᗡʻʻPotʻP",
       "printed_page": 611,
       "scan_leaf": 633,
-      "lean_path": "Principia/Architecture/Star93NextKernel.lean",
-      "declaration": "PM.Architecture.Star93NextKernel.star_93_23",
       "formal_scope": "refused: arbitrary H replaces PM's minimum-image family and the full extensional characterization is assumed pointwise as h",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -167,7 +157,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

@@ -1,0 +1,76 @@
+{
+  "batch": "PM1-STAR96-CATALOGUE-01-AWAITING-CI-SPLIT",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "640",
+    "scan_leaves": [
+      662
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱96·01",
+      "kind": "definition",
+      "printed": "✱96·01. I_Rʻx=R⃖_∗ʻx∩ ẑ(zRₚₒz) Dft [✱96]",
+      "printed_page": 640,
+      "scan_leaf": 662,
+      "lean_path": "Principia/Deduction/Star96Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_96_01",
+      "formal_scope": "exact typed extensional definition of the cyclic part of x's R-posterity",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      },
+      "formalization_level": "pm-derivation-v1"
+    },
+    {
+      "id": "PM1:✱96·02",
+      "kind": "definition",
+      "printed": "✱96·02. J_Rʻx=R⃖_∗ʻx-I_Rʻx Dft [✱96]",
+      "printed_page": 640,
+      "scan_leaf": 662,
+      "lean_path": "Principia/Deduction/Star96Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_96_02",
+      "formal_scope": "exact typed extensional definition of the acyclic remainder of x's R-posterity",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "provisional-kernel-checked",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      },
+      "formalization_level": "pm-derivation-v1"
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
+}

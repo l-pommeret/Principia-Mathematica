@@ -17,65 +17,11 @@
   ],
   "items": [
     {
-      "id": "PM2:✱100·01",
-      "kind": "definition",
-      "printed": "✱100·01. Nc = sm⃗ Df",
-      "printed_page": 15,
-      "scan_leaf": 55,
-      "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star100OpeningKernel.star_100_01",
-      "formal_scope": "exact typed definition of the cardinal class Nc as similarity with the represented class",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "demonstration_provenance": "editorial-reconstruction",
-      "integration_status": "provisional-kernel-checked",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "parser_status": "reviewed-gap",
-      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-      "formalization_level": "pm-derivation-v1",
-      "certification": {
-        "tier": "awaiting-ci",
-        "failed_criteria": [
-          "T7"
-        ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
-      }
-    },
-    {
-      "id": "PM2:✱100·02",
-      "kind": "definition",
-      "printed": "✱100·02. NC = DʻNc Df",
-      "printed_page": 14,
-      "scan_leaf": 54,
-      "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star100OpeningKernel.star_100_02",
-      "formal_scope": "exact typed definition of NC as the class of values of Nc",
-      "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "awaiting-ci",
-      "demonstration_provenance": "editorial-reconstruction",
-      "integration_status": "provisional-kernel-checked",
-      "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "formalization_level": "pm-derivation-v1",
-      "certification": {
-        "tier": "awaiting-ci",
-        "failed_criteria": [
-          "T7"
-        ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
-      }
-    },
-    {
       "id": "PM2:✱100·1",
       "kind": "derived-proposition",
       "printed": "✱100·1. ⊢ . Ncʻα = β̂(β sm α) = β̂(α sm β) [✱32·13 . ✱73·31 . (✱100·01)]",
       "printed_page": 15,
       "scan_leaf": 55,
-      "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star100OpeningKernel.star_100_1",
       "formal_scope": "exact typed pointwise form of both displayed similarity-class equalities",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -106,7 +52,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -115,8 +61,6 @@
       "printed": "✱100·11. ⊢ . Ncʻα = β̂{(∃R). R∈1→1 . DʻR=α . ᗡʻR=β} [✱100·1 . ✱73·1]",
       "printed_page": 14,
       "scan_leaf": 54,
-      "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star100OpeningKernel.star_100_11",
       "formal_scope": "exact typed encoding of the witnessing one-to-one relation as an equivalence of class subtypes",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -147,7 +91,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -156,8 +100,6 @@
       "printed": "✱100·12. ⊢ . Ncʻα = β̂{(∃R). R∈1→1 . α⊂DʻR . β=Řʻʻα} [✱100·1 . ✱73·11]",
       "printed_page": 14,
       "scan_leaf": 54,
-      "lean_path": "Principia/Architecture/Star100OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star100OpeningKernel.star_100_12",
       "formal_scope": "exact typed encoding of the injective restriction-and-image characterization as an equivalence of class subtypes",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -188,13 +130,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

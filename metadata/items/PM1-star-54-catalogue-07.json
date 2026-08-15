@@ -22,8 +22,6 @@
       "printed": "✱54·54.  ⊢ : α ε 2 .⊃ : (∃x,y). x,y ε α . x ≠ y . α = ιʻx ∪ ιʻy",
       "printed_page": 381,
       "scan_leaf": 403,
-      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
-      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_54",
       "formal_scope": "exact existence of two distinct members witnessing a cardinal couple",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -41,7 +39,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -50,8 +48,6 @@
       "printed": "✱54·55.  ⊢ . 0 ∪ 1 ∪ 2 = α̂{(∃x,y). x ≠ y . α = ιʻx ∪ ιʻy} ∪ 0 ∪ 1",
       "printed_page": 381,
       "scan_leaf": 403,
-      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
-      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_55",
       "formal_scope": "exact permutation of the zero/one/two cardinal-class union",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -69,7 +65,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -78,8 +74,6 @@
       "printed": "✱54·56.  ⊢ : α ∉ 0 ∪ 1 ∪ 2 .≡ : (∃x,y,z). x,y,z ε α . x ≠ y . x ≠ z . y ≠ z",
       "printed_page": 382,
       "scan_leaf": 404,
-      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
-      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_56",
       "formal_scope": "exact characterization of classes outside cardinal zero, one, and two by three pairwise distinct members",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -87,9 +81,7 @@
       "printed_dependencies": [
         "PM1:✱54·44"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star54MiddleKernel.star_54_44"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱54·44"
       ],
@@ -103,7 +95,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -112,8 +104,6 @@
       "printed": "✱54·6.  ⊢ : α ∩ β = Λ . x,y ε α . z,w ε β .⊃ : ιʻx ∪ ιʻz = ιʻy ∪ ιʻw .≡ . x = y . z = w",
       "printed_page": 382,
       "scan_leaf": 404,
-      "lean_path": "Principia/Architecture/Star54ClosingKernel.lean",
-      "declaration": "PM.Architecture.Star54ClosingKernel.star_54_6",
       "formal_scope": "exact equality characterization for cross-pairs drawn from disjoint classes",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -121,9 +111,7 @@
       "printed_dependencies": [
         "PM1:✱54·22"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star54OpeningKernel.star_54_22"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱54·22"
       ],
@@ -137,7 +125,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

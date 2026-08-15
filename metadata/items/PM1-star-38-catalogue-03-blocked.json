@@ -24,8 +24,6 @@
       "printed": "✱38·21. ⊢. α♀_{,,}y = û{(∃x). x ∈ α . u = x♀y}  [✱38·2·131]",
       "printed_page": 313,
       "scan_leaf": 335,
-      "lean_path": "Principia/Architecture/Star38Kernel.lean",
-      "declaration": "PM.Architecture.Star38Kernel.star_38_21",
       "formal_scope": "blocked: secondary meta-level comprehension equality only; no PM syntax, judgment, or derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -35,16 +33,13 @@
         "PM1:✱38·2",
         "PM1:✱38·131"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star38Kernel.Slice"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱38·03"
       ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "pm-derivation-gate-blocked",
-      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_21",
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
@@ -53,7 +48,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -62,8 +57,6 @@
       "printed": "✱38·22. ⊢. α♀_{,,}ʻy = ♀_{,,}yʻα = α♀_{,,}y  [✱38·11]",
       "printed_page": 313,
       "scan_leaf": 335,
-      "lean_path": "Principia/Architecture/Star38Kernel.lean",
-      "declaration": "PM.Architecture.Star38Kernel.star_38_22",
       "formal_scope": "blocked: conjunction of meta-level equalities only; no PM syntax, judgment, or derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -72,10 +65,7 @@
       "printed_dependencies": [
         "PM1:✱38·11"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star38Kernel.RightSection",
-        "PM.Architecture.Star38Kernel.Slice"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱38·02",
         "PM1:✱38·03"
@@ -83,7 +73,6 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "pm-derivation-gate-blocked",
-      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_22",
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
@@ -92,7 +81,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -101,8 +90,6 @@
       "printed": "✱38·23. ⊢. E!α♀_{,,}ʻy . E!♀_{,,}yʻα  [✱38·22.✱14·21]",
       "printed_page": 313,
       "scan_leaf": 335,
-      "lean_path": "Principia/Architecture/Star38Kernel.lean",
-      "declaration": "PM.Architecture.Star38Kernel.star_38_23",
       "formal_scope": "blocked semantic mismatch: Nonempty (Class γ) twice does not assert existence of the printed descriptive-function values",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -112,16 +99,13 @@
         "PM1:✱14·21",
         "PM1:✱38·22"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star38Kernel.Slice"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱38·03"
       ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "pm-derivation-gate-blocked",
-      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_23",
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
@@ -130,7 +114,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -139,24 +123,19 @@
       "printed": "✱38·24. ⊢ : ∃!α♀_{,,}y .≡. ∃!α",
       "printed_page": 313,
       "scan_leaf": 335,
-      "lean_path": "Principia/Architecture/Star38Kernel.lean",
-      "declaration": "PM.Architecture.Star38Kernel.star_38_24",
       "formal_scope": "blocked: secondary nonemptiness equivalence only; no PM syntax, judgment, or derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-no-pm-object-language-derivation",
       "integration_blocked": true,
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star38Kernel.Slice"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱38·03"
       ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "pm-derivation-gate-blocked",
-      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_24",
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
@@ -165,7 +144,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -174,8 +153,6 @@
       "printed": "✱38·3. ⊢. α♀_{,,}ʻʻβ = γ̂{(∃y). y ∈ β . γ = α♀_{,,}y} = γ̂{(∃y). y ∈ β . γ = ♀yʻʻα}  [✱38·13·2]",
       "printed_page": 313,
       "scan_leaf": 335,
-      "lean_path": "Principia/Architecture/Star38Kernel.lean",
-      "declaration": "PM.Architecture.Star38Kernel.star_38_3",
       "formal_scope": "blocked semantic mismatch: Lean proves only the first equality of the printed three-term chain and has no PM derivation",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -185,16 +162,13 @@
         "PM1:✱38·2",
         "PM1:✱38·13"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star38Kernel.Slice"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱38·03"
       ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "pm-derivation-gate-blocked",
-      "secondary_prop_evidence": "PM.Architecture.Star38Kernel.star_38_3",
       "certification": {
         "tier": "prepared",
         "failed_criteria": [
@@ -203,7 +177,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

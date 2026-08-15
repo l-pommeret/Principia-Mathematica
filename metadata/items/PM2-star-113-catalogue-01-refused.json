@@ -22,8 +22,6 @@
       "printed": "✱113·1. ⊢ . β×α = sʻα↓₍₍ʸʸβ  [(✱113·02)]",
       "printed_page": 108,
       "scan_leaf": 148,
-      "lean_path": "Principia/Architecture/Star113OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star113OpeningKernel.star_113_1",
       "formal_scope": "refused: Lean replaces the printed union of the beta-indexed family of alpha fibres by the already-expanded existential ordered-pair characterization; it neither represents the family image nor its union and thus duplicates the content of ✱113·101 under the wrong source ID",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -43,7 +41,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -52,8 +50,6 @@
       "printed": "✱113·102. ⊢ : y∈β .⊃. α↓₍₍ʸy = (α↑β)Δʻιʻy",
       "printed_page": 108,
       "scan_leaf": 148,
-      "lean_path": "Principia/Architecture/Star113OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star113OpeningKernel.star_113_102",
       "formal_scope": "refused: Lean proves a reflexive equality between two copies of the direct fibre comprehension; the beta-membership hypothesis is unused and the selection/image expression (α↑β)Δʻιʻy is absent",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -75,7 +71,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -84,8 +80,6 @@
       "printed": "✱113·105. ⊢ : ∃!α .⊃. α↓₍₍ ∈ 1→1",
       "printed_page": 109,
       "scan_leaf": 149,
-      "lean_path": "Principia/Architecture/Star113OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star113OpeningKernel.star_113_105",
       "formal_scope": "refused: the printed theorem makes the map y ↦ alpha-fibre-at-y one-to-one, whereas Lean fixes the second coordinate z and proves injectivity of x ↦ PairRel x z on members of alpha; this reverses the varying coordinate and does not state function-class membership in 1→1",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -112,7 +106,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

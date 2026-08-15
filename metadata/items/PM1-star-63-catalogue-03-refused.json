@@ -22,8 +22,6 @@
       "printed": "✱63·11. ⊢ : x ∈ t₀ʻα . ⊃ . tʻx = α ∪ - α = t₀ʻα",
       "printed_page": 422,
       "scan_leaf": 444,
-      "lean_path": "Principia/Architecture/Star63TypeKernel.lean",
-      "declaration": "PM.Architecture.Star63TypeKernel.star_63_11",
       "formal_scope": "refused: Lean proves equality of two type fibres from relatedness and omits PM's class α, union-with-negation equality, and t₀ chain",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -52,7 +50,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -61,8 +59,6 @@
       "printed": "✱63·13. ⊢ : φ x . φ y . ⊃ . y ∈ tʻx [*63·12 . Imp . Add]",
       "printed_page": 422,
       "scan_leaf": 444,
-      "lean_path": "Principia/Architecture/Star63TypeKernel.lean",
-      "declaration": "PM.Architecture.Star63TypeKernel.star_63_13",
       "formal_scope": "refused: Lean assumes the ambient relation r x y and applies symmetry; it does not derive common type from the printed φx and φy premises",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -83,7 +79,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -92,8 +88,6 @@
       "printed": "✱63·15. ⊢ . t₀ʻtʻx = tʻx [*63·14·102]",
       "printed_page": 422,
       "scan_leaf": 444,
-      "lean_path": "Principia/Architecture/Star63TypeKernel2.lean",
-      "declaration": "PM.Architecture.Star63TypeKernel2.star_63_15",
       "formal_scope": "refused: Lean takes F A = A as a hypothesis and returns it, assuming the printed closure identity",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -114,7 +108,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -123,8 +117,6 @@
       "printed": "✱63·19. ⊢.tʻt₀ʻα=tʻα",
       "printed_page": 423,
       "scan_leaf": 445,
-      "lean_path": "Principia/Architecture/Star63TypeKernel3.lean",
-      "declaration": "PM.Architecture.Star63TypeKernel3.star_63_19",
       "formal_scope": "refused: Lean adds membership and subset hypotheses and proves a different closure equality, not tʻt₀ʻα = tʻα",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -150,7 +142,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -159,8 +151,6 @@
       "printed": "✱63·16. ⊢:x∈ tʻy.≡.y∈ tʻx.≡.∃ !tʻx∩ tʻy.≡.tʻx=tʻy",
       "printed_page": 423,
       "scan_leaf": 445,
-      "lean_path": "Principia/Architecture/Star63TypeKernel.lean",
-      "declaration": "PM.Architecture.Star63TypeKernel.star_63_16",
       "formal_scope": "refused: Lean packages three consequences in a conjunction under one iff rather than proving PM's four-member chained equivalence",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -173,9 +163,7 @@
         "PM1:✱63·103",
         "PM1:✱10·24"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star63TypeKernel.star_63_11"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱63·11"
       ],
@@ -191,7 +179,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

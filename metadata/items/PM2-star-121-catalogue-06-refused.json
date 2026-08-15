@@ -21,8 +21,6 @@
       "printed": "✱121·231. ⊢ : x∈CʻP .≡. x∈P(x⊢⊣x) .≡. ∃!P(x⊢⊣x)",
       "printed_page": 237,
       "scan_leaf": 277,
-      "lean_path": "Principia/Architecture/Star121SecondKernel.lean",
-      "declaration": "PM.Architecture.Star121SecondKernel.star_121_231",
       "formal_scope": "refused: Lean proves only one endpoint-membership consequence from P x x and omits field membership, both reverse implications, and existence",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -40,7 +38,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -49,8 +47,6 @@
       "printed": "✱121·242. ⊢ : xP∗y .⊃. P(x⊢⊣y)=P(x⊣y)∪ιʻx=P(x⟝y)∪ιʻy",
       "printed_page": 237,
       "scan_leaf": 277,
-      "lean_path": "Principia/Architecture/Star121ThirdKernel.lean",
-      "declaration": "PM.Architecture.Star121ThirdKernel.star_121_242",
       "formal_scope": "refused: Lean assumes and returns reflexive equality of one closed interval, omitting both displayed singleton-union equalities",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -69,7 +65,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -78,8 +74,6 @@
       "printed": "✱121·251. ⊢. Ppo(x⊣y)=P(x⊣y)",
       "printed_page": 237,
       "scan_leaf": 277,
-      "lean_path": "Principia/Architecture/Star121ThirdKernel.lean",
-      "declaration": "PM.Architecture.Star121ThirdKernel.star_121_251",
       "formal_scope": "refused: Lean states reflexivity of LeftClosed P Q and does not apply PM's strict-part operation Ppo or compare it with P",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -98,7 +92,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

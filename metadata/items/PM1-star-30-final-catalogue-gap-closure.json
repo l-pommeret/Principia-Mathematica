@@ -22,22 +22,22 @@
       "printed_page": 248,
       "scan_leaf": 270,
       "lean_path": "Principia/Deduction/Star30Derived.lean",
-      "declaration": "PM.RamifiedSyntax.star_30_1",
-      "formal_scope": "unconditional ramified PM derivation of the exact ✱4·2 instance after unfolding ✱30·01",
+      "declaration": "PM.RamifiedSyntax.star_30_01",
+      "formal_scope": "eliminable contextual abbreviation for the ✱14·01 description expansion",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": false,
       "integration_status": "pm-derivation-v1-integrated",
+      "formalization_level": "pm-derivation-v1",
       "formalization_layer": "pm-derivation-v1",
-      "semantic_audit_status": "strict-pm-derivation-complete",
+      "semantic_audit_status": "strict-pm-definition-complete",
       "printed_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱4·2"
+      "normalized_dependencies": [],
+      "definition_dependencies": [
+        "PM1:✱14·01"
       ],
       "lean_dependencies": [
-        "PM.RamifiedSyntax.star_2_08",
-        "PM.RamifiedSyntax.star_3_2",
-        "PM.RamifiedSyntax.Derivation.star_9_12"
+        "PM.RamifiedSyntax.star_14_01"
       ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -51,7 +51,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -61,21 +61,22 @@
       "printed_page": 248,
       "scan_leaf": 270,
       "lean_path": "Principia/Deduction/Star30Derived.lean",
-      "declaration": "PM.RamifiedSyntax.star_30_11",
-      "formal_scope": "unconditional ramified PM derivation following ✱30·1 and the contextual expansion ✱14·1",
+      "declaration": "PM.RamifiedSyntax.star_30_02",
+      "formal_scope": "eliminable abbreviation for the nested contextual expansion of descriptive-function composition",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_blocked": false,
       "integration_status": "pm-derivation-v1-integrated",
+      "formalization_level": "pm-derivation-v1",
       "formalization_layer": "pm-derivation-v1",
-      "semantic_audit_status": "strict-pm-derivation-complete",
+      "semantic_audit_status": "strict-pm-definition-complete",
       "printed_dependencies": [],
-      "normalized_dependencies": [
-        "PM1:✱30·1",
-        "PM1:✱14·1"
+      "normalized_dependencies": [],
+      "definition_dependencies": [
+        "PM1:✱30·01"
       ],
       "lean_dependencies": [
-        "PM.RamifiedSyntax.star_30_1"
+        "PM.RamifiedSyntax.star_30_01"
       ],
       "pm_verbatim": "*30·02. \\(RʻSʻy=Rʻ(Sʻy) \\quad\\text{Df}\\)",
       "printed_latex_witness": "✱30·02. \\(RʻSʻy=Rʻ(Sʻy) \\quad\\text{Df}\\)",
@@ -87,7 +88,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -96,19 +97,28 @@
       "printed": "✱30·1. ⊢:[Rʻy].f(Rʻy).≡.[(℩x)(xRy)].f(℩x)(xRy) [*4·2.(*30·01)]",
       "printed_page": 248,
       "scan_leaf": 270,
-      "lean_path": "Principia/FirstEdition/Volume1/Star30Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "lean_path": "Principia/Deduction/Star30Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_30_1",
+      "formal_scope": "unconditional ramified derivation of the exact ✱4·2 instance after unfolding ✱30·01",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "pm-derivation-v1-integrated",
+      "formalization_level": "pm-derivation-v1",
+      "semantic_audit_status": "strict-pm-derivation-complete",
       "printed_dependencies": [
         "PM1:✱4·2",
         "PM1:✱30·01"
       ],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱4·2"
+      ],
+      "definition_dependencies": [
+        "PM1:✱30·01"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_4_2"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "pm_verbatim": "*30·1. \\(\\vdash:[Rʻy].f(Rʻy).\\equiv.[({℩}x)(xRy)].f({℩}x)(xRy) \\quad[\\text{*4·2.(*30·01)}]\\)",
@@ -121,7 +131,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -130,19 +140,30 @@
       "printed": "✱30·11. ⊢:.[Rʻy].f(Rʻy).≡:(∃ b):xRy.≡ₓ.x=b:fb [*30·1.*14·1]",
       "printed_page": 248,
       "scan_leaf": 270,
-      "lean_path": "Principia/FirstEdition/Volume1/Star30Source.lean",
-      "declaration": "source-only (no Lean declaration)",
-      "formal_scope": "source-faithful catalogue item; formal reconstruction pending",
+      "lean_path": "Principia/Deduction/Star30Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_30_11",
+      "formal_scope": "unconditional ramified derivation following ✱30·1 and the contextual expansion ✱14·1",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
-      "integration_blocked": true,
-      "integration_status": "prepared",
+      "integration_blocked": false,
+      "integration_status": "pm-derivation-v1-integrated",
+      "formalization_level": "pm-derivation-v1",
+      "semantic_audit_status": "strict-pm-derivation-complete",
       "printed_dependencies": [
         "PM1:✱30·1",
         "PM1:✱14·1"
       ],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱30·1",
+        "PM1:✱14·1"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_30_1",
+        "PM.RamifiedSyntax.star_4_2",
+        "PM.RamifiedSyntax.star_10_13",
+        "PM.RamifiedSyntax.star_4_22",
+        "PM.RamifiedSyntax.Derivation.star_9_12_same"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "pm_verbatim": "*30·11. \\(\\vdash\\colon\\ldotp[Rʻy].f(Rʻy).\\equiv:(\\exists b):xRy.\\equiv_{x}.x=b:fb \\quad[\\text{*30·1.*14·1}]\\)",
@@ -155,7 +176,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

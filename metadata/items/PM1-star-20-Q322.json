@@ -29,8 +29,6 @@
       "printed": "⊢ : (∃β) . β = α . φβ .≡ . φα",
       "printed_page": 205,
       "scan_leaf": 227,
-      "lean_path": "Principia/Architecture/Star20Q322Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q322Kernel.star_20_54",
       "formal_scope": "exact existential class-identity substitution",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -54,7 +52,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -63,8 +61,6 @@
       "printed": "⊢ . ẑ(φz) = (ια)(x ε α .≡ₓ. φx)",
       "printed_page": 205,
       "scan_leaf": 227,
-      "lean_path": "Principia/Architecture/Star20Q322Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q322Kernel.star_20_55",
       "formal_scope": "exact extensional-class contextual-description identity",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -85,7 +81,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -94,8 +90,6 @@
       "printed": "⊢ . E!(ια)(x ε α .≡ₓ. φx)",
       "printed_page": 205,
       "scan_leaf": 227,
-      "lean_path": "Principia/Architecture/Star20Q322Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q322Kernel.star_20_56",
       "formal_scope": "exact contextual class-description existence",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -106,9 +100,7 @@
       "normalized_dependencies": [
         "PM1:✱20·55"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star20Q322Kernel.star_20_55"
-      ],
+      "lean_dependencies": [],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
@@ -125,7 +117,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -134,8 +126,6 @@
       "printed": "⊢ : ẑ(φz) = (ια)(fα) .⊃ : g{ẑ(φz)} .≡ . g{(ια)(fα)}",
       "printed_page": 205,
       "scan_leaf": 227,
-      "lean_path": "Principia/Architecture/Star20Q322Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q322Kernel.star_20_57",
       "formal_scope": "exact contextual class-description substitution",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -156,7 +146,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -165,8 +155,6 @@
       "printed": "⊢ . ẑ(φz) = (ια){α = ẑ(φz)}",
       "printed_page": 205,
       "scan_leaf": 227,
-      "lean_path": "Principia/Architecture/Star20Q322Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q322Kernel.star_20_58",
       "formal_scope": "exact contextual self-identity class description",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -188,7 +176,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

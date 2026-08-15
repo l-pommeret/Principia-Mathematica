@@ -17,8 +17,6 @@
       "kind": "derived-proposition",
       "printed": "⊢.R⃗ʻy=x̂(xRy) [*32·11.*20·59]",
       "formal_scope": "secondary host-Prop equality only; blocked from pm-derivation-v1 because no PM object judgment or concrete source-to-AST reading is present",
-      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_13",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-T3-T4-no-pm-object-judgment-or-reading",
@@ -51,7 +49,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -59,8 +57,6 @@
       "kind": "derived-proposition",
       "printed": "⊢.R⃖ʻx=ŷ(xRy) [*32·111.*20·59]",
       "formal_scope": "secondary host-Prop equality only; blocked from pm-derivation-v1 because no PM object judgment or concrete source-to-AST reading is present",
-      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_131",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-T3-T4-no-pm-object-judgment-or-reading",
@@ -93,7 +89,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -101,8 +97,6 @@
       "kind": "derived-proposition",
       "printed": "⊢:R⃗=S⃗.≡.R⃖=S⃖.≡.R=S [*32·14·15]",
       "formal_scope": "secondary host-Prop equivalence only; blocked from pm-derivation-v1 by T3/T4 and additionally from the axiom-free gate by Quot.sound",
-      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel2.lean",
-      "declaration": "PM.Architecture.Star32ConsecutiveKernel2.star_32_16",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-T3-T4-and-axiom-dependency-Quot.sound",
@@ -111,10 +105,7 @@
         "PM1:✱32·14",
         "PM1:✱32·15"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star32ConsecutiveKernel2.star_32_14",
-        "PM.Architecture.Star32ConsecutiveKernel2.star_32_15"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱32·14",
         "PM1:✱32·15"
@@ -131,7 +122,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -139,8 +130,6 @@
       "kind": "derived-proposition",
       "printed": "⊢:αR⃗y.≡.α=x̂(xRy) [*21·3.(*32·01)]",
       "formal_scope": "secondary host-Prop definitional biconditional only; blocked from pm-derivation-v1 because no PM object judgment or concrete source-to-AST reading is present",
-      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_1",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-T3-T4-no-pm-object-judgment-or-reading",
@@ -173,7 +162,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -181,8 +170,6 @@
       "kind": "derived-proposition",
       "printed": "⊢:βR⃖x.≡.β=ŷ(xRy) [*21·3.(*32·02)]",
       "formal_scope": "secondary host-Prop definitional biconditional only; blocked from pm-derivation-v1 because no PM object judgment or concrete source-to-AST reading is present",
-      "lean_path": "Principia/Architecture/Star32ConsecutiveKernel.lean",
-      "declaration": "PM.Architecture.Star32ConsecutiveKernel.star_32_101",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
       "integration_status": "blocked-T3-T4-no-pm-object-judgment-or-reading",
@@ -215,7 +202,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

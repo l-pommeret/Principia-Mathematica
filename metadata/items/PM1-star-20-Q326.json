@@ -29,8 +29,6 @@
       "printed": "⊢ : α = β .≡ : g!α .⊃₍g₎. g!β",
       "printed_page": 209,
       "scan_leaf": 231,
-      "lean_path": "Principia/Architecture/Star20Q326Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q326Kernel.star_20_71",
       "formal_scope": "exact Leibniz identity theorem for typed class extensions",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -40,9 +38,7 @@
       "printed_dependencies": [
         "PM1:✱20·19"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star20Q319Kernel.star_20_19"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱20·19"
       ],
@@ -53,7 +49,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -62,8 +58,6 @@
       "printed": "⊢ : φa ∨ ∼φa .⊃ . ẑ(φx ∨ ∼φx) = ẑ(x = a ∨ x ≠ a)",
       "printed_page": 209,
       "scan_leaf": 231,
-      "lean_path": "Principia/Architecture/Star20Q326Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q326Kernel.star_20_8",
       "formal_scope": "exact equality of typed excluded-middle class extensions",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -97,7 +91,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -106,8 +100,6 @@
       "printed": "⊢ : φa ∨ ∼φa . ψa ∨ ∼ψa .⊃ . ẑ(φx ∨ ∼φx) = ẑ(ψx ∨ ∼ψx)",
       "printed_page": 209,
       "scan_leaf": 231,
-      "lean_path": "Principia/Architecture/Star20Q326Kernel.lean",
-      "declaration": "PM.Architecture.Star20Q326Kernel.star_20_81",
       "formal_scope": "exact equality of two typed excluded-middle class extensions",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -121,9 +113,7 @@
         "PM1:Comp",
         "PM1:✱20·24"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star20Q326Kernel.star_20_8"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱20·8"
       ],
@@ -146,7 +136,7 @@
           "T4",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

@@ -23,8 +23,6 @@
       "printed": "✱120·214. ⊢ : ρ sm σ .⊃: ρ∈Cls induct .≡. σ∈Cls induct",
       "printed_page": 213,
       "scan_leaf": 253,
-      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_214",
       "formal_scope": "refused: Lean assumes pointwise equivalence (extensional equality), not PM similarity by a bijection",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -52,7 +50,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -61,8 +59,6 @@
       "printed": "✱120·26. ⊢ : ρ∈Cls induct : φη .⊃η,x. φ(η∪ιʻx) : φΛ :⊃. φρ",
       "printed_page": 208,
       "scan_leaf": 248,
-      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_26",
       "formal_scope": "refused: Lean takes the generalized conclusion itself as `finiteInduction` and returns it, rather than deriving finite induction from the base and step hypotheses",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -83,7 +79,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -92,8 +88,6 @@
       "printed": "✱120·311. ⊢ : ∃!α+₍c₎1 . α+₍c₎1=β+₍c₎1 .⊃. α=smʻʻβ . ∃!α",
       "printed_page": 215,
       "scan_leaf": 255,
-      "lean_path": "Principia/Architecture/Star120OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star120OpeningKernel.star_120_311",
       "formal_scope": "refused: Lean concludes same-type Nat equality and trivial inductivity, not PM's type-lift equality α = smʻʻβ with existence conditions",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "prepared",
@@ -119,7 +113,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],

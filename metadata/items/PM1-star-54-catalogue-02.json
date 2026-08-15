@@ -21,8 +21,6 @@
       "printed": "✱54·21.  ⊢ : ιʻx ∪ ιʻy = ιʻx ∪ ιʻz .≡ . y = z  [✱51·41]",
       "printed_page": 377,
       "scan_leaf": 399,
-      "lean_path": "Principia/Architecture/Star54OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star54OpeningKernel.star_54_21",
       "formal_scope": "exact typed equality cancellation for unordered couples",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -49,7 +47,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -58,8 +56,6 @@
       "printed": "✱54·22.  ⊢ : ιʻx ∪ ιʻy = ιʻz ∪ ιʻw .⊃ : x = z . y = w .∨. x = w . y = z  [✱51·43]",
       "printed_page": 377,
       "scan_leaf": 399,
-      "lean_path": "Principia/Architecture/Star54OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star54OpeningKernel.star_54_22",
       "formal_scope": "exact typed characterization of equality of unordered couples",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -67,9 +63,7 @@
       "printed_dependencies": [
         "PM1:✱51·43"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star54OpeningKernel.star_54_21"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱54·21"
       ],
@@ -92,7 +86,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -101,8 +95,6 @@
       "printed": "✱54·25.  ⊢ : ιʻx ∪ ιʻy ε 1 .≡ . x = y",
       "printed_page": 377,
       "scan_leaf": 399,
-      "lean_path": "Principia/Architecture/Star54OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star54OpeningKernel.star_54_25",
       "formal_scope": "exact typed characterization of a couple as a unit class",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -118,7 +110,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -127,16 +119,12 @@
       "printed": "✱54·26.  ⊢ : ιʻx ∪ ιʻy ε 2 .≡ . x ≠ y",
       "printed_page": 377,
       "scan_leaf": 399,
-      "lean_path": "Principia/Architecture/Star54OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star54OpeningKernel.star_54_26",
       "formal_scope": "exact typed characterization of a cardinal couple by distinctness",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
-      "lean_dependencies": [
-        "PM.Architecture.Star54OpeningKernel.star_54_25"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱54·25"
       ],
@@ -157,7 +145,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     },
     {
@@ -166,8 +154,6 @@
       "printed": "✱54·27.  ⊢ . ιʻx ∪ ιʻy ε 1 ∪ 2  [✱54·25·26]",
       "printed_page": 377,
       "scan_leaf": 399,
-      "lean_path": "Principia/Architecture/Star54OpeningKernel.lean",
-      "declaration": "PM.Architecture.Star54OpeningKernel.star_54_27",
       "formal_scope": "exact typed disjunction that every couple has cardinal one or two",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_status": "lean-typechecked",
@@ -176,10 +162,7 @@
         "PM1:✱54·25",
         "PM1:✱54·26"
       ],
-      "lean_dependencies": [
-        "PM.Architecture.Star54OpeningKernel.star_54_25",
-        "PM.Architecture.Star54OpeningKernel.star_54_26"
-      ],
+      "lean_dependencies": [],
       "normalized_dependencies": [
         "PM1:✱54·25",
         "PM1:✱54·26"
@@ -192,13 +175,13 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "85c5eb3dd0575e19f7412dec374cd3ac1accf649"
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
       }
     }
   ],
   "ci_evidence": {
-    "commit": "4d46f84322d491b99f780648be20710d68151b3a",
-    "run": "https://github.com/l-pommeret/Principia-Mathematica/actions/runs/31758480263",
-    "conclusion": "success"
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
 }

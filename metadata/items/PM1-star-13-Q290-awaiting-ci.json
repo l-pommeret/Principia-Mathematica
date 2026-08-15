@@ -1,0 +1,65 @@
+{
+  "batch": "PM1-STAR13-Q290-AWAITING-CI",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "177",
+    "scan_leaves": [
+      199
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "leaf_derivatives": [
+      {
+        "scan_leaf": 199,
+        "printed_page": 177,
+        "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu/page199-1920px-Russell%2C_Whitehead_-_Principia_Mathematica%2C_vol._I%2C_1910.djvu.jpg",
+        "sha256": "377a277639f9d194f712cf5d0a88d5979b7243b26088b04133d0be91464b4960"
+      }
+    ],
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
+  ],
+  "items": [
+    {
+      "id": "PM1:✱13·01",
+      "kind": "definition",
+      "printed": "x = y .=: (φ) : φ!x .⊃ . φ!y Df",
+      "printed_page": 177,
+      "scan_leaf": 199,
+      "lean_path": "Principia/Syntax/Ramified.lean",
+      "declaration": "PM.RamifiedSyntax.star_13_01",
+      "reading_declaration": "PM.RamifiedSyntax.star_13_01_reading",
+      "formal_scope": "exact reducible object-language Leibniz identity definition and audited ClaimReading",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "demonstration_provenance": "follows-printed",
+      "integration_blocked": false,
+      "formalization_level": "pm-definition-v1",
+      "semantic_audit_status": "strict-equivalence-passed",
+      "semantic_audit_evidence": "reviews/Star13-Q290-object-proof-reaudit.md",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+      }
+    }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  },
+  "integration_status": "blocked-no-pm-object-derivations",
+  "review_evidence": [
+    "reviews/Star13-Q290-object-proof-reaudit.md"
+  ]
+}
