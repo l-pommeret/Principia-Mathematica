@@ -22,6 +22,8 @@ jobs:
           fetch-depth: 0
       - name: Verify gate integrity
         run: python3 scripts/verify_gate_integrity.py
+      - name: Verify CI covers every gate
+        run: python3 scripts/verify_ci_covers_gates.py
       - name: Install elan
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
@@ -54,6 +56,7 @@ jobs:
           python3 scripts/verify_ci_evidence.py --report-all
           python3 scripts/verify_judgement_primitives.py --report-all
           python3 scripts/verify_lean_policy.py
+          python3 scripts/verify_q301_gate.py
       - name: Build aggregate
         # Must precede the per-file check below.  `lake env lean` elaborates one
         # file against whatever is already compiled, so a front that imports

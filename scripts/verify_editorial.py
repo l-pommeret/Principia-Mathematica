@@ -155,9 +155,10 @@ def check_item_metadata() -> None:
     blocks = collect_verbatim()
     metadata_ids: set[str] = set()
     required_item_fields = {
-        "id", "kind", "printed", "lean_path", "declaration", "formal_scope",
-        "source_status", "formal_status",
+        "id", "kind", "printed", "formal_scope", "source_status",
+        "formal_status",
     }
+    formalization_pointer_fields = {"declaration", "lean_path"}
     for path in sorted((ROOT / "metadata" / "items").glob("*.json")):
         try:
             batch = json.loads(path.read_text(encoding="utf-8"))
@@ -179,12 +180,27 @@ def check_item_metadata() -> None:
             if not item_id or item_id in metadata_ids:
                 fail(f"missing or duplicate item ID {item_id!r} in {path}")
             metadata_ids.add(item_id)
-            if item_id not in blocks:
-                fail(f"metadata item {item_id} has no PM-VERBATIM block")
+            if "formalization_level" in item:
+                missing_pointers = {
+                    field for field in formalization_pointer_fields
+                    if not item.get(field)
+                }
+                if missing_pointers:
+                    fail(
+                        f"{path} item {item_id!r} has formalization_level but "
+                        "lacks required formalization pointers: "
+                        f"{sorted(missing_pointers)}"
+                    )
             printed = " ".join(item.get("printed", "").split())
-            verbatim = " ".join(blocks[item_id].split())
-            if printed not in verbatim:
-                fail(f"printed reading for {item_id} does not occur in its verbatim block")
+            if item_id in blocks:
+                verbatim = " ".join(blocks[item_id].split())
+                if printed not in verbatim:
+                    fail(
+                        f"printed reading for {item_id} does not occur in its "
+                        "verbatim block"
+                    )
+            elif item.get("lean_path"):
+                fail(f"metadata item {item_id} has no PM-VERBATIM block")
             if "\\" in item.get("printed", "") and item_id not in LATEX_READING_EXCEPTIONS:
                 fail(
                     f"printed reading for {item_id} is still in the witness's "
@@ -192,9 +208,15 @@ def check_item_metadata() -> None:
                     "scripts/latex_to_diplomatic.py, or add it to "
                     "LATEX_READING_EXCEPTIONS with a reason if it cannot convert"
                 )
-            lean_path = ROOT / item.get("lean_path", "")
-            if not lean_path.is_file():
-                fail(f"Lean path for {item_id} does not exist: {lean_path}")
+            # Removing Principia/Architecture legitimately left catalogued PM
+            # items without a Lean declaration or path, and some source-only
+            # entries without a PM-VERBATIM block in the remaining Lean tree.
+            # Such absence means "not formalized", not gate conformance; only a
+            # claimed formalization_level makes both pointers mandatory.
+            if lean_path_value := item.get("lean_path"):
+                lean_path = ROOT / lean_path_value
+                if not lean_path.is_file():
+                    fail(f"Lean path for {item_id} does not exist: {lean_path}")
         formal_statuses = {item.get("formal_status") for item in items}
         evidence = batch.get("ci_evidence", {})
         evidence_values = {

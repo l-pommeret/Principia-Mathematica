@@ -1,0 +1,139 @@
+#!/usr/bin/env python3
+"""Run the CI here, before pushing, by reading the workflows themselves.
+
+Pushing blind cost a red run on 2026-08-15: `verify_editorial.py` required a
+`declaration` field that 2914 catalogued-but-unformalised items no longer carry,
+and one local command would have said so.
+
+The steps are *parsed from* `.github/workflows/*.yml`, never copied into this
+file.  Three times that day two lists describing the same standard had drifted —
+`tools/gate-lock` against `PROTECTED_GLOBS`, the purity scope against the real
+tree, `committed_at` against the protected paths — and each drift was invisible
+until something failed.  A local mirror that restates the steps would be the
+fourth.  If a workflow gains a step, this runs it too, without being touched.
+
+Usage:
+    tools/ci-local              every workflow
+    tools/ci-local lean-fast    one workflow, by file stem
+    tools/ci-local --list       show the steps without running them
+"""
+
+from __future__ import annotations
+
+import argparse
+import re
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+WORKFLOWS = ROOT / ".github" / "workflows"
+
+#: Steps that only mean something on GitHub's runners.  Skipping them is not a
+#: weakening: none of them checks the repository's claims.
+GITHUB_ONLY = re.compile(
+    r"actions/|elan|rustup|curl -|~/\.elan|\$GITHUB_|softprops|"
+    r"\$\{\{|github\.event|upload-artifact|configure-pages|deploy-pages|upload-pages"
+)
+
+RED, GREEN, DIM, OFF = "\033[31m", "\033[32m", "\033[2m", "\033[0m"
+
+
+def steps(path: Path) -> list[tuple[str, str]]:
+    """(name, command) for every `run:` step of a workflow, in file order."""
+    found: list[tuple[str, str]] = []
+    name = "(sans nom)"
+    lines = path.read_text(encoding="utf-8").splitlines()
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        label = re.match(r"\s*- name:\s*(.+?)\s*$", line)
+        if label:
+            name = label.group(1)
+            index += 1
+            continue
+        # The block form must be tried first: `run: |` also matches the inline
+        # pattern, and would otherwise be read as the one-character command `|`.
+        block = re.match(r"(\s*)run:\s*[|>]-?\s*$", line)
+        if not block:
+            inline = re.match(r"(\s*)run:\s*(\S.*?)\s*$", line)
+            if inline:
+                found.append((name, inline.group(2)))
+                index += 1
+                continue
+        if block:
+            indent = len(block.group(1))
+            index += 1
+            body: list[str] = []
+            while index < len(lines):
+                nxt = lines[index]
+                if nxt.strip() and (len(nxt) - len(nxt.lstrip())) <= indent:
+                    break
+                body.append(nxt.strip())
+                index += 1
+            command = "\n".join(part for part in body if part)
+            if command:
+                found.append((name, command))
+            continue
+        index += 1
+    return found
+
+
+def runnable(command: str) -> bool:
+    return not GITHUB_ONLY.search(command)
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("workflow", nargs="?", help="file stem, e.g. lean-fast")
+    parser.add_argument("--list", action="store_true", help="show, do not run")
+    arguments = parser.parse_args()
+
+    files = sorted(WORKFLOWS.glob("*.yml"))
+    if arguments.workflow:
+        files = [f for f in files if f.stem == arguments.workflow]
+        if not files:
+            print(f"aucun workflow nommé {arguments.workflow!r}", file=sys.stderr)
+            return 2
+
+    failures: list[tuple[str, str]] = []
+    for path in files:
+        print(f"\n{DIM}━━━ {path.name} ━━━{OFF}")
+        for name, command in steps(path):
+            if not runnable(command):
+                print(f"  {DIM}passé (propre au runner) : {name}{OFF}")
+                continue
+            if arguments.list:
+                print(f"  {name}\n      {command}")
+                continue
+            started = time.monotonic()
+            result = subprocess.run(
+                command, shell=True, cwd=ROOT,
+                capture_output=True, text=True,
+            )
+            elapsed = time.monotonic() - started
+            if result.returncode == 0:
+                tail = (result.stdout.strip().splitlines() or [""])[-1][:96]
+                print(f"  {GREEN}✔{OFF} {name} {DIM}({elapsed:.0f}s){OFF}  {tail}")
+            else:
+                print(f"  {RED}✘ {name}{OFF} {DIM}({elapsed:.0f}s){OFF}")
+                for stream in (result.stdout, result.stderr):
+                    for line in stream.strip().splitlines()[-6:]:
+                        print(f"      {line[:160]}")
+                failures.append((path.name, name))
+
+    if arguments.list:
+        return 0
+    print()
+    if failures:
+        print(f"{RED}{len(failures)} étape(s) en échec :{OFF}")
+        for workflow, name in failures:
+            print(f"  {workflow} :: {name}")
+        return 1
+    print(f"{GREEN}la CI passe en local ; le push peut partir{OFF}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
