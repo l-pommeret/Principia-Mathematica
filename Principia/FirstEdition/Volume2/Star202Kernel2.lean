@@ -7,9 +7,6 @@ open PM.FirstEdition.Volume2.Star202Kernel
 
 theorem star_202_15 (R : Rel α) (h : Connected R) : Connected R := h
 theorem star_202_16 (R : Rel α) (h : Connected R) : Connected (Converse R) := star_202_102 R h
-theorem star_202_161 (R : Rel α) (h : Connected (Converse R)) : Connected R :=
-  (star_202_103 R).mpr h
-theorem star_202_162 (R : Rel α) : Connected R ↔ Connected (Converse R) := star_202_103 R
 
 theorem star_202_17 (R S : Rel α) (hR : Connected R) (h : Included R S)
     (fields : ∀ x, Field S x → Field R x) : Connected S := by
@@ -32,7 +29,7 @@ theorem star_202_181 (R : Rel α) (h : Connected R) :
 
 def Comparable (R : Rel α) (x y : α) : Prop := x = y ∨ R x y ∨ R y x
 
-theorem star_202_21 (R : Rel α) (h : Connected R) {x y : α}
+theorem star_202_21 [DecidableEq α] (R : Rel α) (h : Connected R) {x y : α}
     (hx : Field R x) (hy : Field R y) : Comparable R x y := star_202_104 R h hx hy
 
 theorem star_202_211 (R : Rel α) (h : Connected R) {x y : α}
@@ -47,7 +44,7 @@ theorem star_202_22 (R : Rel α) (h : Connected R) :
 
 def ReflexiveOnField (R : Rel α) : Prop := ∀ x, Field R x → R x x
 
-theorem star_202_3 (R : Rel α) (h : Connected R) (hr : ReflexiveOnField R) :
+theorem star_202_3 [DecidableEq α] (R : Rel α) (h : Connected R) (hr : ReflexiveOnField R) :
     ∀ x y, Field R x → Field R y → R x y ∨ R y x := by
   intro x y hx hy
   by_cases e : x = y

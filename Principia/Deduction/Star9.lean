@@ -1,9 +1,53 @@
 import Principia.Deduction.System
-import Principia.Experimental.CanonicalOrderedFormula
+import Principia.Syntax.CanonicalOrderedFormula
 
 namespace PM.Star9
 
-open PM.Experimental.CanonicalOrderedFormula
+open PM.CanonicalOrderedFormula
+
+/-- Expand an elementary value into canonical raw syntax before it replaces an
+apparent variable.  This is structural recursion in Lean's kernel; it does not
+consult the library. -/
+def ofElementaryRaw : Elementary Γ → Raw Γ
+  | .constant name => .elementary (.constant name)
+  | .var entryVar => .elementary (.var entryVar)
+  | .neg proposition => .neg (ofElementaryRaw proposition)
+  | .disj left right => .disj (ofElementaryRaw left) (ofElementaryRaw right)
+
+/-- Instantiate the apparent variable at `cutoff`, lowering the indices that
+cross the removed binder. -/
+def instantiateBoundAt (cutoff : Nat) (value : Elementary Γ) : Raw Γ → Raw Γ
+  | .elementary proposition => .elementary proposition
+  | .schema slot => .schema slot
+  | .bound index =>
+      if index = cutoff then ofElementaryRaw value
+      else if cutoff < index then .bound (index - 1) else .bound index
+  | .quantified quantifier body =>
+      .quantified quantifier (instantiateBoundAt (cutoff + 1) value body)
+  | .neg proposition => .neg (instantiateBoundAt cutoff value proposition)
+  | .disj left right =>
+      .disj (instantiateBoundAt cutoff value left)
+        (instantiateBoundAt cutoff value right)
+
+def instantiateHeadRaw (value : Elementary Γ) (body : Raw Γ) : Raw Γ :=
+  instantiateBoundAt 0 value body
+
+/-- Open the apparent variable at `cutoff` as a new leading real variable. -/
+def openBoundAt (cutoff : Nat) : Raw Γ → Raw (.elementaryProposition :: Γ)
+  | .elementary proposition => .elementary
+      (Elementary.schemaInstance (fun entryVar => .var (.succ entryVar)) proposition)
+  | .schema slot => .schema slot
+  | .bound index =>
+      if index = cutoff then .elementary (.var .zero)
+      else if cutoff < index then .bound (index - 1) else .bound index
+  | .quantified quantifier body =>
+      .quantified quantifier (openBoundAt (cutoff + 1) body)
+  | .neg proposition => .neg (openBoundAt cutoff proposition)
+  | .disj left right =>
+      .disj (openBoundAt cutoff left) (openBoundAt cutoff right)
+
+def openHeadRaw (body : Raw Γ) : Raw (.elementaryProposition :: Γ) :=
+  openBoundAt 0 body
 
 /-- The single quantificational deduction judgement of ✱9.
 
@@ -60,3 +104,12 @@ theorem star_9_11 (body : Raw Γ) (x y : Elementary Γ) :
   Star9Derivation.star_9_11 body x y
 
 end PM.Star9
+
+/-! Pure compatibility surface for `Star10`, which is outside this task's
+ownership perimeter and historically opened the experimental namespace. -/
+namespace PM.Experimental.CanonicalOrderedFormula
+
+export PM.CanonicalOrderedFormula (Raw Quantifier smartNeg smartDisj smartImp)
+export PM.Star9 (ofElementaryRaw instantiateBoundAt instantiateHeadRaw openBoundAt openHeadRaw)
+
+end PM.Experimental.CanonicalOrderedFormula

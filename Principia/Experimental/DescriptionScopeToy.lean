@@ -78,10 +78,10 @@ inductive Formula where
 
 namespace Formula
 
-private def objectEq : Object → Object → CoreFormula
-  | .left, .left => .truth true
-  | .right, .right => .truth true
-  | _, _ => .truth false
+private def objectEq (first second : Object) : CoreFormula :=
+  Object.casesOn first
+    (Object.casesOn second (.truth true) (.truth false))
+    (Object.casesOn second (.truth false) (.truth true))
 
 /-- `condition` holds of exactly `candidate`, written without introducing a
 description-denoting term. -/
@@ -98,20 +98,19 @@ private def uniquely (condition : Object → CoreFormula)
 
 The two disjuncts are the finite-domain expansion of the existential.  No
 description survives in the resulting core formula. -/
-def expand : Formula → CoreFormula
-  | .truth value => .truth value
-  | .neg body => .neg body.expand
-  | .conj left right => .conj left.expand right.expand
-  | .disj left right => .disj left.expand right.expand
-  | .imp left right => CoreFormula.imp left.expand right.expand
-  | .descriptionScope condition continuation =>
+noncomputable def expand : Formula → CoreFormula :=
+  Formula.rec
+    (fun value => .truth value)
+    (fun _ expanded => .neg expanded)
+    (fun _ _ expandedLeft expandedRight => .conj expandedLeft expandedRight)
+    (fun _ _ expandedLeft expandedRight => .disj expandedLeft expandedRight)
+    (fun _ _ expandedLeft expandedRight => CoreFormula.imp expandedLeft expandedRight)
+    (fun _ _ expandedCondition expandedContinuation =>
       .disj
-        (.conj (uniquely (fun x => (condition x).expand) .left)
-          (continuation .left).expand)
-        (.conj (uniquely (fun x => (condition x).expand) .right)
-          (continuation .right).expand)
+        (.conj (uniquely expandedCondition .left) (expandedContinuation .left))
+        (.conj (uniquely expandedCondition .right) (expandedContinuation .right)))
 
-def eval (formula : Formula) : Bool := formula.expand.eval
+noncomputable def eval (formula : Formula) : Bool := formula.expand.eval
 
 /-- The deliberately non-denoting description in the countermodel. -/
 def nonDenoting : Object → Formula := fun _ => .truth false
@@ -145,7 +144,8 @@ theorem negInsideDescription_isFalse :
 /-- This is semantic separation, not merely inequality of two syntax trees. -/
 theorem scopeReadings_haveDifferentTruthValues :
     negOutsideDescription.eval ≠ negInsideDescription.eval := by
-  decide
+  intro equality
+  cases equality
 
 /-!
 Printed p. 181 gives the canonical implication pair (letters normalized only
@@ -179,7 +179,8 @@ theorem wideDescriptionImplication_isFalse :
 /-- Semantic separation of the exact p. 181 implication readings. -/
 theorem implicationScopeReadings_haveDifferentTruthValues :
     narrowDescriptionImplication.eval ≠ wideDescriptionImplication.eval := by
-  decide
+  intro equality
+  cases equality
 
 end Formula
 

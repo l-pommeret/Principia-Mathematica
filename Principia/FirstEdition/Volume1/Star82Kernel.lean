@@ -4,9 +4,6 @@ import Principia.FirstEdition.Volume1.Star82Source
 namespace PM.FirstEdition.Volume1.Star82Kernel
 open Star82Source
 
-private theorem rel_ext {R S : Rel α} (h : ∀ x y, R x y ↔ S x y) : R = S := by
-  funext x y; exact propext (h x y)
-
 theorem star_82_2 (P Q M N : Rel α) (s t : Set' α)
     (hM : Delta (fun R => R = M) t M) (hN : Delta (fun R => R = N) s N) :
     Delta (fun R => R = comp M N) s (comp M N) := by
@@ -25,8 +22,8 @@ theorem star_82_221 (P Q M : Rel α) (s : Set' α)
   exact hQ y z hyz
 
 theorem star_82_23 (P Q R : Rel α) :
-    comp (comp R (cnv Q)) Q = comp R (comp (cnv Q) Q) := by
-  apply rel_ext; intro x z; constructor
+    ∀ x z, comp (comp R (cnv Q)) Q x z ↔ comp R (comp (cnv Q) Q) x z := by
+  intro x z; constructor
   · rintro ⟨y,⟨w,hxw,hwy⟩,hyz⟩; exact ⟨w,hxw,y,hwy,hyz⟩
   · rintro ⟨w,hxw,y,hwy,hyz⟩; exact ⟨y,⟨w,hxw,hwy⟩,hyz⟩
 

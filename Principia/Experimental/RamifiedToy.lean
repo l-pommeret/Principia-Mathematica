@@ -35,9 +35,9 @@ end
 def minimumFunctionOrder (arguments : List RamifiedSort) (resultOrder : Nat) : Nat :=
   max (Nat.succ (maxHeight arguments)) (Nat.succ resultOrder)
 
-def Predicative : RamifiedSort → Prop
-  | .function _ _ 0 => True
-  | _ => False
+def Predicative (sort : RamifiedSort) : Prop :=
+  RamifiedSort.casesOn sort False (fun _ => False)
+    (fun _ _ excess => Nat.casesOn excess True (fun _ => False))
 
 end RamifiedSort
 
@@ -358,11 +358,9 @@ def renameReal (rho : RealRenaming source target) :
     term.abstractHead.valueHead = term := by
   cases term with
   | real entryVar =>
-      cases entryVar <;>
-        simp [Term.abstractHead, Term.valueHead, abstractHeadVar, valueHeadVar]
-  | apparent entryVar =>
-      simp [Term.abstractHead, Term.valueHead, abstractHeadVar, valueHeadVar]
-  | symbol symbol => simp [Term.abstractHead, Term.valueHead]
+      cases entryVar <;> rfl
+  | apparent entryVar => rfl
+  | symbol symbol => rfl
 
 @[simp] theorem arguments_value_abstract_head
     (arguments : Arguments signature (head :: realContext) apparentContext sorts) :
@@ -370,20 +368,30 @@ def renameReal (rho : RealRenaming source target) :
   induction arguments with
   | nil => rfl
   | cons argument arguments inductionHypothesis =>
-      simp [Arguments.abstractHead, Arguments.valueHead, inductionHypothesis]
+      change Arguments.cons argument.abstractHead.valueHead
+        arguments.abstractHead.valueHead = Arguments.cons argument arguments
+      rw [term_value_abstract_head, inductionHypothesis]
 
 @[simp] theorem value_abstract_head
     (matrix : ElementaryMatrix signature (head :: realContext) apparentContext) :
     matrix.abstractHead.valueHead = matrix := by
   induction matrix with
   | propositionVariable entryVar =>
-      simp [abstractHead, valueHead]
+      change ElementaryMatrix.propositionVariable entryVar.abstractHead.valueHead =
+        ElementaryMatrix.propositionVariable entryVar
+      rw [term_value_abstract_head]
   | apply function arguments =>
-      simp [abstractHead, valueHead]
+      change ElementaryMatrix.apply function.abstractHead.valueHead
+        arguments.abstractHead.valueHead = ElementaryMatrix.apply function arguments
+      rw [term_value_abstract_head, arguments_value_abstract_head]
   | neg meaning proposition inductionHypothesis =>
-      simp [abstractHead, valueHead, inductionHypothesis]
+      change ElementaryMatrix.neg meaning proposition.abstractHead.valueHead =
+        ElementaryMatrix.neg meaning proposition
+      rw [inductionHypothesis]
   | disj meaning left right leftHypothesis rightHypothesis =>
-      simp [abstractHead, valueHead, leftHypothesis, rightHypothesis]
+      change ElementaryMatrix.disj meaning left.abstractHead.valueHead
+        right.abstractHead.valueHead = ElementaryMatrix.disj meaning left right
+      rw [leftHypothesis, rightHypothesis]
 
 end ElementaryMatrix
 

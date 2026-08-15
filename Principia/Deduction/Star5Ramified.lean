@@ -20,19 +20,19 @@ local infixl:64 " ∧ᵣ " => conjunction negation disjunction
 local infix:50 " ≡ᵣ " => star_4_01 negation disjunction
 
 @[reducible] private def interpret {Γ : PM.RealContext}
-    (constant : String → RF signature real order)
+    (constantMeaning : String → RF signature real order)
     (valuation : PM.RealVar Γ .elementaryProposition → RF signature real order) :
     PM.Elementary Γ → RF signature real order
-  | .constant name => constant name
+  | .constant name => constantMeaning name
   | .var v => valuation v
-  | .neg p => ∼ᵣ interpret constant valuation p
-  | .disj p q => interpret constant valuation p ∨ᵣ interpret constant valuation q
+  | .neg p => ∼ᵣ interpret constantMeaning valuation p
+  | .disj p q => interpret constantMeaning valuation p ∨ᵣ interpret constantMeaning valuation q
 
 private theorem transport {Γ : PM.RealContext}
-    (constant : String → RF signature real order)
+    (constantMeaning : String → RF signature real order)
     (valuation : PM.RealVar Γ .elementaryProposition → RF signature real order)
     {p : PM.Elementary Γ} (proof : PM.Derivation p) :
-    ⊢ᵣ interpret negation disjunction constant valuation p := by
+    ⊢ᵣ interpret negation disjunction constantMeaning valuation p := by
   induction proof with
   | star_1_1 hp hpq ihp ihpq =>
       cases real with
@@ -350,4 +350,134 @@ def star_5_75_reading (p q r : RF signature real order) := reading "⊢ : r ⊃ 
 #print axioms star_5_75
 
 end
+
+namespace MixedOrder
+
+/-- ✱5·32 with independent orders for `p`, `q`, and `r`. -/
+def star_5_32_formula
+    (negation : TernaryNegations signature)
+    (disjunction : TernaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.pOrder)
+    (q : Formula signature real [] negation.qOrder)
+    (r : Formula signature real [] negation.rOrder) :=
+  ternaryInterpret negation disjunction p q r
+    (PM.Elementary.equiv
+      (PM.Elementary.imp ternaryP
+        (PM.Elementary.equiv ternaryQ ternaryR))
+      (PM.Elementary.equiv
+        (PM.Elementary.conj ternaryP ternaryQ)
+        (PM.Elementary.conj ternaryP ternaryR)))
+
+theorem star_5_32
+    (negation : TernaryNegations signature)
+    (disjunction : TernaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.pOrder)
+    (q : Formula signature real [] negation.qOrder)
+    (r : Formula signature real [] negation.rOrder) :
+    ⊢ᵣ star_5_32_formula negation disjunction p q r := by
+  exact ternaryTransport negation disjunction p q r
+    (PM.FirstEdition.Volume1.Star5.star_5_32 ternaryP ternaryQ ternaryR)
+
+#print axioms star_5_32
+
+/-- Type-level regression test for the mismatch occurring in ✱20·3:
+`p` has order `bindOrder resultOrder .individual`, while `q` and `r` have
+order `resultOrder`. -/
+example
+    (higherNegation : signature.Negation
+      (bindOrder resultOrder .individual))
+    (lowerNegation : signature.Negation resultOrder)
+    (higherDisjunction : signature.Disjunction
+      (bindOrder resultOrder .individual))
+    (lowerDisjunction : signature.Disjunction resultOrder)
+    (p : Formula signature real [] (bindOrder resultOrder .individual))
+    (q r : Formula signature real [] resultOrder) :
+    let pairEquality :
+        max (bindOrder resultOrder .individual) resultOrder =
+          bindOrder resultOrder .individual :=
+      Eq.trans (bindOrderMaxRight resultOrder resultOrder .individual)
+        (congrArg (fun order => bindOrder order .individual)
+          (natMaxSelf resultOrder))
+    let lowerEquality : max resultOrder resultOrder = resultOrder :=
+      natMaxSelf resultOrder
+    let tripleEquality :
+        max (bindOrder resultOrder .individual)
+            (max resultOrder resultOrder) =
+          bindOrder resultOrder .individual :=
+      Eq.trans
+        (congrArg (max (bindOrder resultOrder .individual)) lowerEquality)
+        pairEquality
+    let negation : TernaryNegations signature :=
+      { pOrder := bindOrder resultOrder .individual
+        qOrder := resultOrder
+        rOrder := resultOrder
+        p := higherNegation
+        q := lowerNegation
+        r := lowerNegation
+        pq := Eq.mp (congrArg signature.Negation pairEquality.symm)
+          higherNegation
+        pr := Eq.mp (congrArg signature.Negation pairEquality.symm)
+          higherNegation
+        qr := Eq.mp (congrArg signature.Negation lowerEquality.symm)
+          lowerNegation
+        pqr := Eq.mp (congrArg signature.Negation tripleEquality.symm)
+          higherNegation }
+    let disjunction : TernaryDisjunctions signature negation :=
+      { p := higherDisjunction
+        q := lowerDisjunction
+        r := lowerDisjunction
+        pq := Eq.mp (congrArg signature.Disjunction pairEquality.symm)
+          higherDisjunction
+        pr := Eq.mp (congrArg signature.Disjunction pairEquality.symm)
+          higherDisjunction
+        qr := Eq.mp (congrArg signature.Disjunction lowerEquality.symm)
+          lowerDisjunction
+        pqr := Eq.mp (congrArg signature.Disjunction tripleEquality.symm)
+          higherDisjunction }
+    ⊢ᵣ star_5_32_formula negation disjunction p q r := by
+  let pairEquality :
+      max (bindOrder resultOrder .individual) resultOrder =
+        bindOrder resultOrder .individual :=
+    Eq.trans (bindOrderMaxRight resultOrder resultOrder .individual)
+      (congrArg (fun order => bindOrder order .individual)
+        (natMaxSelf resultOrder))
+  let lowerEquality : max resultOrder resultOrder = resultOrder :=
+    natMaxSelf resultOrder
+  let tripleEquality :
+      max (bindOrder resultOrder .individual) (max resultOrder resultOrder) =
+        bindOrder resultOrder .individual :=
+    Eq.trans
+      (congrArg (max (bindOrder resultOrder .individual)) lowerEquality)
+      pairEquality
+  let negation : TernaryNegations signature :=
+    { pOrder := bindOrder resultOrder .individual
+      qOrder := resultOrder
+      rOrder := resultOrder
+      p := higherNegation
+      q := lowerNegation
+      r := lowerNegation
+      pq := Eq.mp (congrArg signature.Negation pairEquality.symm)
+        higherNegation
+      pr := Eq.mp (congrArg signature.Negation pairEquality.symm)
+        higherNegation
+      qr := Eq.mp (congrArg signature.Negation lowerEquality.symm)
+        lowerNegation
+      pqr := Eq.mp (congrArg signature.Negation tripleEquality.symm)
+        higherNegation }
+  let disjunction : TernaryDisjunctions signature negation :=
+    { p := higherDisjunction
+      q := lowerDisjunction
+      r := lowerDisjunction
+      pq := Eq.mp (congrArg signature.Disjunction pairEquality.symm)
+        higherDisjunction
+      pr := Eq.mp (congrArg signature.Disjunction pairEquality.symm)
+        higherDisjunction
+      qr := Eq.mp (congrArg signature.Disjunction lowerEquality.symm)
+        lowerDisjunction
+      pqr := Eq.mp (congrArg signature.Disjunction tripleEquality.symm)
+        higherDisjunction }
+  exact star_5_32 negation disjunction p q r
+
+end MixedOrder
+
 end PM.RamifiedSyntax

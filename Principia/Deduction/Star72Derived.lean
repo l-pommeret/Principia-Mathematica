@@ -6,19 +6,22 @@ namespace PM.RamifiedSyntax
 /-!
 # Derived propositions of PM I, ✱72
 
-The source catalogue contains 114 asserted propositions.  Their theory of
-serial, connected, and related relation classes is built on the relation-class
-constructions and derived theorems of ✱70 and ✱71.  Those predecessor
-modules currently provide no exact `⊢ᵣ` theorem: the first obstruction is
-the unavailable derived elimination/definition-conversion rule for the
-contextual relation abstraction `star_21_01` used by ✱70·01 and ✱70·1.
+The source catalogue contains 114 asserted propositions.  Their printed
+demonstrations use ✱71 throughout; for example the first proof, ✱72·1,
+uses ✱71·17 and ✱71·103.  No unconditional `Derivation` values for those
+premises exist while ✱70·1 remains conditional on
+`reducibility_scope_transport`.
 
-Thus the cited premises of the printed ✱72 demonstrations cannot presently
-be supplied as `Derivation` values.  The similarly named host-language
-predicates in `Star72Source` are diplomatic catalogue aids, not PM object
-formulae, and importing their proofs would violate both the object-judgement
-and purity requirements.  No theorem is declared rather than certifying a
-weakened or opaque surrogate.
+At the object-tree level, the obstruction is inherited unchanged: the
+relation-class definition required by ✱70·01 has a `.sometimes` binder of
+sort `.function [relationSort relationOrder 0] conditionOrder 0`, but the
+available ✱20·3 result is specialized to a `.sometimes` binder of sort
+`classSort resultOrder 0`.  The two binders do not reduce to the same
+constructor index.
+
+The similarly named host-language predicates in `Star72Source` are diplomatic
+catalogue aids, not PM object formulae.  No conditional ✱72 assertion is
+declared from unavailable ✱71 premises.
 -/
 
 end PM.RamifiedSyntax

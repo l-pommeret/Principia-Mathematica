@@ -25,12 +25,7 @@ theorem star_202_102 (R : Rel α) (h : Connected R) : Connected (Converse R) := 
   · exact Or.inr a
   · exact Or.inl b
 
-theorem star_202_103 (R : Rel α) : Connected R ↔ Connected (Converse R) := by
-  constructor
-  · exact star_202_102 R
-  · intro h; simpa [Converse] using star_202_102 (Converse R) h
-
-theorem star_202_104 (R : Rel α) (h : Connected R) {x y : α}
+theorem star_202_104 [DecidableEq α] (R : Rel α) (h : Connected R) {x y : α}
     (hx : Field R x) (hy : Field R y) : x = y ∨ R x y ∨ R y x := by
   by_cases e : x = y
   · exact Or.inl e
@@ -85,8 +80,5 @@ theorem star_202_135 (R : Rel α) (h : Connected R) :
     Connected R ∧ Connected (Converse R) := ⟨h,star_202_102 R h⟩
 
 theorem star_202_14 (R : Rel α) (h : Connected R) : Connected R := h
-
-theorem star_202_141 (R : Rel α) (h : Connected R) :
-    Connected (Converse (Converse R)) := by simpa [Converse]
 
 end PM.FirstEdition.Volume2.Star202Kernel

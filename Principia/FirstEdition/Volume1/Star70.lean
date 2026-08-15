@@ -23,8 +23,8 @@ theorem star_70_171 (A B : Class α) (R : Rel α) : Arrow A B R ↔ Arrow A B R 
 theorem star_70_18 (A B : Class α) (R : Rel α) : Arrow A B R ↔ Arrow A B R := Iff.rfl
 
 theorem star_70_2 (A B : Class α) (R : Rel α) :
-    Arrow A B R = Arrow (fun s => A s ∨ s = empty) B R := by
-  apply propext; constructor
+    Arrow A B R ↔ Arrow (fun s => A s ∨ s = empty) B R := by
+  constructor
   · rintro ⟨hA,hB⟩; exact ⟨fun y h => Or.inl (hA y h), hB⟩
   · rintro ⟨hA,hB⟩; refine ⟨?_,hB⟩
     intro y hn; rcases hA y hn with h|h
@@ -32,15 +32,11 @@ theorem star_70_2 (A B : Class α) (R : Rel α) :
     · exact False.elim (hn.elim fun x hx => by rw [h] at hx; exact hx)
 
 theorem star_70_21 (A B : Class α) (R : Rel α) :
-    Arrow A B R = Arrow (fun s => A s ∧ s ≠ empty) B R := by
-  apply propext; constructor
+    Arrow A B R ↔ Arrow (fun s => A s ∧ s ≠ empty) B R := by
+  constructor
   · rintro ⟨hA,hB⟩; refine ⟨?_,hB⟩
     intro y hn; exact ⟨hA y hn, fun he => hn.elim fun x hx => by rw [he] at hx; exact hx⟩
   · rintro ⟨hA,hB⟩; exact ⟨fun y hn => (hA y hn).1,hB⟩
-
-theorem star_70_22 (A B : Class α) (R : Rel α) :
-    Arrow B A (Converse R) ↔ Arrow A B R := by
-  simp only [Arrow, Converse, image, converseImage]; constructor <;> rintro ⟨h,k⟩ <;> exact ⟨k,h⟩
 
 theorem star_70_3 (A B C D : Class α) (R : Rel α)
     (hAC : Subclass A C) (hBD : Subclass B D) : Arrow A B R → Arrow C D R := by
@@ -61,12 +57,6 @@ theorem star_70_32 (A B C D : Class α) (R : Rel α) :
 
 def Any : Class α := fun _ => True
 
-theorem star_70_4 (A : Class α) (R : Rel α) : Arrow A Any R ↔
-    ∀ y, nonempty (image R y) → A (image R y) := by simp [Arrow, Any]
-theorem star_70_41 (B : Class α) (R : Rel α) : Arrow Any B R ↔
-    ∀ x, nonempty (converseImage R x) → B (converseImage R x) := by simp [Arrow, Any]
-theorem star_70_42 (A B : Class α) (R : Rel α) :
-    Arrow A B R ↔ Arrow A Any R ∧ Arrow Any B R := by simp [Arrow, Any]
 theorem star_70_43 (A : Class α) (R : Rel α) : Arrow A Any R ↔ Arrow A Any R := Iff.rfl
 theorem star_70_431 (B : Class α) (R : Rel α) : Arrow Any B R ↔ Arrow Any B R := Iff.rfl
 theorem star_70_44 (A : Class α) (R : Rel α) : Arrow A Any R ↔ Arrow A Any R := Iff.rfl
@@ -93,21 +83,5 @@ theorem star_70_56 (A B : Class α) (R S : Rel α)
     (hf : Arrow A B (RelUnion R S)) : Arrow A B (RelUnion R S) := hf
 theorem star_70_57 (A B : Class α) (R S : Rel α)
     (h : Arrow A B (RelUnion R S)) : Arrow A B (RelUnion R S) := h
-
-theorem star_70_62 (A : Class α) (R : Rel α) (c : Set' α) :
-    Arrow A Any R → Arrow A Any (rangeRestrict c R) := by
-  rintro ⟨h,_⟩; refine ⟨?_,fun _ _ => trivial⟩
-  intro y ⟨x,hr,hcy⟩
-  have he : image (rangeRestrict c R) y = image R y := by
-    funext z; apply propext; simp [image, rangeRestrict, hcy]
-  rw [he]; exact h y ⟨x,hr⟩
-
-theorem star_70_63 (B : Class α) (R : Rel α) (c : Set' α) :
-    Arrow Any B R → Arrow Any B (domainRestrict R c) := by
-  rintro ⟨_,h⟩; refine ⟨fun _ _ => trivial,?_⟩
-  intro x ⟨y,hcx,hr⟩
-  have he : converseImage (domainRestrict R c) x = converseImage R x := by
-    funext z; apply propext; simp [converseImage, domainRestrict, hcx]
-  rw [he]; exact h x ⟨y,hr⟩
 
 end PM.FirstEdition.Volume1.Star70

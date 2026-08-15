@@ -1,4 +1,5 @@
 import Principia.Deduction.Star2Ramified
+import Principia.FirstEdition.Volume1.Part1.SectionA.Star3
 
 namespace PM.RamifiedSyntax
 
@@ -16,11 +17,6 @@ variable (disjunction : signature.Disjunction order)
 local prefix:75 "∼ᵣ " => Formula.neg negation
 local infixl:65 " ∨ᵣ " => sameDisjunction disjunction
 local infixr:60 " ⊃ᵣ " => implication negation disjunction
-
-/-- ✱3·01. Logical product is an eliminable abbreviation. -/
-def conjunction (p q : RFormula signature real order) :
-    RFormula signature real order :=
-  ∼ᵣ ((∼ᵣ p) ∨ᵣ (∼ᵣ q))
 
 local infixl:64 " ∧ᵣ " => conjunction negation disjunction
 
@@ -405,5 +401,68 @@ def star_3_48_reading (p q r s : RFormula signature real order) : ClaimReading s
 #print axioms star_3_48
 
 end
+
+namespace MixedOrder
+
+/-- ✱3·2 with independent orders for `p` and `q`. -/
+def star_3_2_formula
+    (negation : BinaryNegations signature)
+    (disjunction : BinaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.leftOrder)
+    (q : Formula signature real [] negation.rightOrder) :=
+  binaryInterpret negation disjunction p q
+    (PM.Elementary.imp binaryP
+      (PM.Elementary.imp binaryQ (PM.Elementary.conj binaryP binaryQ)))
+
+theorem star_3_2
+    (negation : BinaryNegations signature)
+    (disjunction : BinaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.leftOrder)
+    (q : Formula signature real [] negation.rightOrder) :
+    ⊢ᵣ star_3_2_formula negation disjunction p q := by
+  exact binaryTransport negation disjunction p q
+    (PM.FirstEdition.Volume1.Star3.star_3_2 binaryP binaryQ)
+
+/-- ✱3·26 with independent orders for the two conjuncts. -/
+def star_3_26_formula
+    (negation : BinaryNegations signature)
+    (disjunction : BinaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.leftOrder)
+    (q : Formula signature real [] negation.rightOrder) :=
+  binaryInterpret negation disjunction p q
+    (PM.Elementary.imp (PM.Elementary.conj binaryP binaryQ) binaryP)
+
+theorem star_3_26
+    (negation : BinaryNegations signature)
+    (disjunction : BinaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.leftOrder)
+    (q : Formula signature real [] negation.rightOrder) :
+    ⊢ᵣ star_3_26_formula negation disjunction p q := by
+  exact binaryTransport negation disjunction p q
+    (PM.FirstEdition.Volume1.Star3.star_3_26 binaryP binaryQ)
+
+/-- ✱3·27 with independent orders for the two conjuncts. -/
+def star_3_27_formula
+    (negation : BinaryNegations signature)
+    (disjunction : BinaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.leftOrder)
+    (q : Formula signature real [] negation.rightOrder) :=
+  binaryInterpret negation disjunction p q
+    (PM.Elementary.imp (PM.Elementary.conj binaryP binaryQ) binaryQ)
+
+theorem star_3_27
+    (negation : BinaryNegations signature)
+    (disjunction : BinaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.leftOrder)
+    (q : Formula signature real [] negation.rightOrder) :
+    ⊢ᵣ star_3_27_formula negation disjunction p q := by
+  exact binaryTransport negation disjunction p q
+    (PM.FirstEdition.Volume1.Star3.star_3_27 binaryP binaryQ)
+
+#print axioms star_3_2
+#print axioms star_3_26
+#print axioms star_3_27
+
+end MixedOrder
 
 end PM.RamifiedSyntax

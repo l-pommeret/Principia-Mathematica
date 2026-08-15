@@ -1,4 +1,5 @@
 import Principia.Syntax.Ramified
+import Principia.Deduction.System
 
 namespace PM.RamifiedSyntax
 
@@ -723,6 +724,980 @@ theorem star_2_86 (p q r : Formula signature real [] order) :
 
 
 end
+
+/-! ## Independent-order propositional transport
+
+The support records which schematic members occur in a formula.  Its order is
+the maximum of exactly those member orders.  The normalization equality at
+each disjunction is explicit: no formula is cast between unrelated orders.
+-/
+
+namespace MixedOrder
+
+
+structure NegationVocabulary (signature : Signature) (support : Type) where
+  order : support → Nat
+  meaning : ∀ item, signature.Negation (order item)
+
+structure DisjunctionVocabulary (signature : Signature) (support : Type)
+    (combine : support → support → support)
+    (negation : NegationVocabulary signature support) where
+  orderEquality : ∀ left right,
+    max (negation.order left) (negation.order right) =
+      negation.order (combine left right)
+  meaning : ∀ left right,
+    signature.Disjunction (negation.order (combine left right))
+
+def normalizedDisjunction
+    (equality : max leftOrder rightOrder = resultOrder)
+    (disjunction : signature.Disjunction resultOrder)
+    (left : Formula signature real [] leftOrder)
+    (right : Formula signature real [] rightOrder) :
+    Formula signature real [] resultOrder :=
+  Eq.mp (congrArg (Formula signature real []) equality)
+    (.disj
+      (Eq.mp (congrArg signature.Disjunction equality.symm) disjunction)
+      left right)
+
+theorem derive_star_1_2
+    (selfEquality : max order order = order)
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p : Formula signature real [] order) :
+    ⊢ᵣ normalizedDisjunction selfEquality disjunction
+      (.neg negation (normalizedDisjunction selfEquality disjunction p p)) p := by
+  exact Derivation.castAssertion (by rfl)
+    (Derivation.star_1_2 negation disjunction p)
+
+theorem derive_star_1_3
+    (innerEquality : max pOrder qOrder = innerOrder)
+    (outerEquality : max qOrder innerOrder = outerOrder)
+    (qNegation : signature.Negation qOrder)
+    (innerDisjunction : signature.Disjunction innerOrder)
+    (outerDisjunction : signature.Disjunction outerOrder)
+    (p : Formula signature real [] pOrder)
+    (q : Formula signature real [] qOrder) :
+    ⊢ᵣ normalizedDisjunction outerEquality outerDisjunction
+      (.neg qNegation q)
+      (normalizedDisjunction innerEquality innerDisjunction p q) := by
+  cases innerEquality
+  cases outerEquality
+  exact Derivation.star_1_3 qNegation innerDisjunction outerDisjunction p q
+
+theorem derive_star_1_4
+    (leftEquality : max pOrder qOrder = leftOrder)
+    (rightEquality : max qOrder pOrder = rightOrder)
+    (outerEquality : max leftOrder rightOrder = outerOrder)
+    (leftNegation : signature.Negation leftOrder)
+    (leftDisjunction : signature.Disjunction leftOrder)
+    (rightDisjunction : signature.Disjunction rightOrder)
+    (outerDisjunction : signature.Disjunction outerOrder)
+    (p : Formula signature real [] pOrder)
+    (q : Formula signature real [] qOrder) :
+    ⊢ᵣ normalizedDisjunction outerEquality outerDisjunction
+      (.neg leftNegation
+        (normalizedDisjunction leftEquality leftDisjunction p q))
+      (normalizedDisjunction rightEquality rightDisjunction q p) := by
+  cases leftEquality
+  cases rightEquality
+  cases outerEquality
+  exact Derivation.star_1_4 leftNegation leftDisjunction rightDisjunction
+    outerDisjunction p q
+
+theorem derive_star_1_5
+    (qrEquality : max qOrder rOrder = qrOrder)
+    (leftEquality : max pOrder qrOrder = leftOrder)
+    (prEquality : max pOrder rOrder = prOrder)
+    (rightEquality : max qOrder prOrder = rightOrder)
+    (outerEquality : max leftOrder rightOrder = outerOrder)
+    (leftNegation : signature.Negation leftOrder)
+    (qrDisjunction : signature.Disjunction qrOrder)
+    (leftDisjunction : signature.Disjunction leftOrder)
+    (prDisjunction : signature.Disjunction prOrder)
+    (rightDisjunction : signature.Disjunction rightOrder)
+    (outerDisjunction : signature.Disjunction outerOrder)
+    (p : Formula signature real [] pOrder)
+    (q : Formula signature real [] qOrder)
+    (r : Formula signature real [] rOrder) :
+    ⊢ᵣ normalizedDisjunction outerEquality outerDisjunction
+      (.neg leftNegation
+        (normalizedDisjunction leftEquality leftDisjunction p
+          (normalizedDisjunction qrEquality qrDisjunction q r)))
+      (normalizedDisjunction rightEquality rightDisjunction q
+        (normalizedDisjunction prEquality prDisjunction p r)) := by
+  cases qrEquality
+  cases leftEquality
+  cases prEquality
+  cases rightEquality
+  cases outerEquality
+  exact Derivation.star_1_5 leftNegation qrDisjunction leftDisjunction
+    prDisjunction rightDisjunction outerDisjunction p q r
+
+theorem derive_star_1_6
+    (qrEquality : max qOrder rOrder = qrOrder)
+    (pqEquality : max pOrder qOrder = pqOrder)
+    (prEquality : max pOrder rOrder = prOrder)
+    (consequentEquality : max pqOrder prOrder = consequentOrder)
+    (outerEquality : max qrOrder consequentOrder = outerOrder)
+    (qNegation : signature.Negation qOrder)
+    (qrDisjunction : signature.Disjunction qrOrder)
+    (qrNegation : signature.Negation qrOrder)
+    (pqNegation : signature.Negation pqOrder)
+    (pqDisjunction : signature.Disjunction pqOrder)
+    (prDisjunction : signature.Disjunction prOrder)
+    (consequentDisjunction : signature.Disjunction consequentOrder)
+    (outerDisjunction : signature.Disjunction outerOrder)
+    (p : Formula signature real [] pOrder)
+    (q : Formula signature real [] qOrder)
+    (r : Formula signature real [] rOrder) :
+    ⊢ᵣ normalizedDisjunction outerEquality outerDisjunction
+      (.neg qrNegation
+        (normalizedDisjunction qrEquality qrDisjunction
+          (.neg qNegation q) r))
+      (normalizedDisjunction consequentEquality consequentDisjunction
+        (.neg pqNegation
+          (normalizedDisjunction pqEquality pqDisjunction p q))
+        (normalizedDisjunction prEquality prDisjunction p r)) := by
+  cases qrEquality
+  cases pqEquality
+  cases prEquality
+  cases consequentEquality
+  cases outerEquality
+  exact Derivation.star_1_6 qNegation qrDisjunction qrNegation pqNegation
+    pqDisjunction prDisjunction consequentDisjunction outerDisjunction p q r
+
+theorem detach
+    (equality : max pOrder qOrder = resultOrder)
+    (pNegation : signature.Negation pOrder)
+    (disjunction : signature.Disjunction resultOrder)
+    (p : Formula signature real [] pOrder)
+    (q : Formula signature real [] qOrder)
+    (line1 : ⊢ᵣ p)
+    (line2 : ⊢ᵣ normalizedDisjunction equality disjunction
+      (.neg pNegation p) q) : ⊢ᵣ q := by
+  cases real with
+  | nil =>
+      cases equality
+      exact Derivation.star_1_1 pNegation disjunction line1 line2
+  | cons realSort real =>
+      cases equality
+      exact Derivation.star_1_11 pNegation disjunction line1 line2
+
+def elementarySupport
+    (combine : support → support → support)
+    (constantSupport : String → support)
+    (valuationSupport : PM.RealVar Γ .elementaryProposition → support) :
+    PM.Elementary Γ → support
+  | .constant name => constantSupport name
+  | .var v => valuationSupport v
+  | .neg proposition =>
+      elementarySupport combine constantSupport valuationSupport proposition
+  | .disj left right =>
+      combine
+        (elementarySupport combine constantSupport valuationSupport left)
+        (elementarySupport combine constantSupport valuationSupport right)
+
+def interpret
+    (combine : support → support → support)
+    (negation : NegationVocabulary signature support)
+    (disjunction : DisjunctionVocabulary signature support combine negation)
+    (constantSupport : String → support)
+    (constantMeaning : ∀ name,
+      Formula signature real [] (negation.order (constantSupport name)))
+    (valuationSupport : PM.RealVar Γ .elementaryProposition → support)
+    (valuation : ∀ v,
+      Formula signature real [] (negation.order (valuationSupport v))) :
+    (proposition : PM.Elementary Γ) →
+      Formula signature real []
+        (negation.order
+          (elementarySupport combine constantSupport valuationSupport proposition))
+  | .constant name => constantMeaning name
+  | .var v => valuation v
+  | .neg proposition =>
+      .neg
+        (negation.meaning
+          (elementarySupport combine constantSupport valuationSupport proposition))
+        (interpret combine negation disjunction constantSupport constantMeaning
+          valuationSupport valuation proposition)
+  | .disj left right =>
+      normalizedDisjunction
+        (disjunction.orderEquality
+          (elementarySupport combine constantSupport valuationSupport left)
+          (elementarySupport combine constantSupport valuationSupport right))
+        (disjunction.meaning
+          (elementarySupport combine constantSupport valuationSupport left)
+          (elementarySupport combine constantSupport valuationSupport right))
+        (interpret combine negation disjunction constantSupport constantMeaning
+          valuationSupport valuation left)
+        (interpret combine negation disjunction constantSupport constantMeaning
+          valuationSupport valuation right)
+
+theorem transport
+    (combine : support → support → support)
+    (negation : NegationVocabulary signature support)
+    (disjunction : DisjunctionVocabulary signature support combine negation)
+    (tautology : ∀ item
+      (p : Formula signature real [] (negation.order item)),
+      ⊢ᵣ normalizedDisjunction
+        (disjunction.orderEquality (combine item item) item)
+        (disjunction.meaning (combine item item) item)
+        (.neg (negation.meaning (combine item item))
+          (normalizedDisjunction (disjunction.orderEquality item item)
+            (disjunction.meaning item item) p p)) p)
+    (constantSupport : String → support)
+    (constantMeaning : ∀ name,
+      Formula signature real [] (negation.order (constantSupport name)))
+    (valuationSupport : PM.RealVar Γ .elementaryProposition → support)
+    (valuation : ∀ v,
+      Formula signature real [] (negation.order (valuationSupport v)))
+    {proposition : PM.Elementary Γ} (proof : PM.Derivation proposition) :
+    ⊢ᵣ interpret combine negation disjunction constantSupport constantMeaning
+      valuationSupport valuation proposition := by
+  induction proof with
+  | @star_1_1 p q hp hpq ihp ihpq =>
+      let pSupport := elementarySupport combine constantSupport valuationSupport p
+      let qSupport := elementarySupport combine constantSupport valuationSupport q
+      let pFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation p
+      let qFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation q
+      have hp' := ihp valuationSupport valuation
+      have hpq' := ihpq valuationSupport valuation
+      change ⊢ᵣ normalizedDisjunction
+        (disjunction.orderEquality pSupport qSupport)
+        (disjunction.meaning pSupport qSupport)
+        (.neg (negation.meaning pSupport) pFormula) qFormula at hpq'
+      exact detach (disjunction.orderEquality pSupport qSupport)
+        (negation.meaning pSupport) (disjunction.meaning pSupport qSupport)
+        pFormula qFormula hp' hpq'
+  | @star_1_11 context p q _ hp hpq ihp ihpq =>
+      let pSupport := elementarySupport combine constantSupport valuationSupport p
+      let qSupport := elementarySupport combine constantSupport valuationSupport q
+      let pFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation p
+      let qFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation q
+      have hp' := ihp valuationSupport valuation
+      have hpq' := ihpq valuationSupport valuation
+      change ⊢ᵣ normalizedDisjunction
+        (disjunction.orderEquality pSupport qSupport)
+        (disjunction.meaning pSupport qSupport)
+        (.neg (negation.meaning pSupport) pFormula) qFormula at hpq'
+      exact detach (disjunction.orderEquality pSupport qSupport)
+        (negation.meaning pSupport) (disjunction.meaning pSupport qSupport)
+        pFormula qFormula hp' hpq'
+  | star_1_2 proposition =>
+      let item := elementarySupport combine constantSupport valuationSupport proposition
+      let interpreted := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation proposition
+      change ⊢ᵣ normalizedDisjunction
+        (disjunction.orderEquality (combine item item) item)
+        (disjunction.meaning (combine item item) item)
+        (.neg (negation.meaning (combine item item))
+          (normalizedDisjunction (disjunction.orderEquality item item)
+            (disjunction.meaning item item) interpreted interpreted)) interpreted
+      exact tautology item interpreted
+  | star_1_3 left right =>
+      let leftSupport := elementarySupport combine constantSupport
+        valuationSupport left
+      let rightSupport := elementarySupport combine constantSupport
+        valuationSupport right
+      let leftFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation left
+      let rightFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation right
+      change ⊢ᵣ normalizedDisjunction
+        (disjunction.orderEquality rightSupport
+          (combine leftSupport rightSupport))
+        (disjunction.meaning rightSupport (combine leftSupport rightSupport))
+        (.neg (negation.meaning rightSupport) rightFormula)
+        (normalizedDisjunction
+          (disjunction.orderEquality leftSupport rightSupport)
+          (disjunction.meaning leftSupport rightSupport)
+          leftFormula rightFormula)
+      exact derive_star_1_3
+        (disjunction.orderEquality leftSupport rightSupport)
+        (disjunction.orderEquality rightSupport (combine leftSupport rightSupport))
+        _ _ _ _ _
+  | star_1_4 left right =>
+      let leftSupport := elementarySupport combine constantSupport
+        valuationSupport left
+      let rightSupport := elementarySupport combine constantSupport
+        valuationSupport right
+      let leftFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation left
+      let rightFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation right
+      let forwardSupport := combine leftSupport rightSupport
+      let reverseSupport := combine rightSupport leftSupport
+      change ⊢ᵣ normalizedDisjunction
+        (disjunction.orderEquality forwardSupport reverseSupport)
+        (disjunction.meaning forwardSupport reverseSupport)
+        (.neg (negation.meaning forwardSupport)
+          (normalizedDisjunction
+            (disjunction.orderEquality leftSupport rightSupport)
+            (disjunction.meaning leftSupport rightSupport)
+            leftFormula rightFormula))
+        (normalizedDisjunction
+          (disjunction.orderEquality rightSupport leftSupport)
+          (disjunction.meaning rightSupport leftSupport)
+          rightFormula leftFormula)
+      exact derive_star_1_4
+        (disjunction.orderEquality leftSupport rightSupport)
+        (disjunction.orderEquality rightSupport leftSupport)
+        (disjunction.orderEquality forwardSupport reverseSupport)
+        _ _ _ _ _ _
+  | star_1_5 left middle right =>
+      let pSupport := elementarySupport combine constantSupport valuationSupport left
+      let qSupport := elementarySupport combine constantSupport valuationSupport middle
+      let rSupport := elementarySupport combine constantSupport valuationSupport right
+      let pFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation left
+      let qFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation middle
+      let rFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation right
+      let qrSupport := combine qSupport rSupport
+      let leftSideSupport := combine pSupport qrSupport
+      let prSupport := combine pSupport rSupport
+      let rightSideSupport := combine qSupport prSupport
+      change ⊢ᵣ normalizedDisjunction
+        (disjunction.orderEquality leftSideSupport rightSideSupport)
+        (disjunction.meaning leftSideSupport rightSideSupport)
+        (.neg (negation.meaning leftSideSupport)
+          (normalizedDisjunction
+            (disjunction.orderEquality pSupport qrSupport)
+            (disjunction.meaning pSupport qrSupport) pFormula
+            (normalizedDisjunction
+              (disjunction.orderEquality qSupport rSupport)
+              (disjunction.meaning qSupport rSupport) qFormula rFormula)))
+        (normalizedDisjunction
+          (disjunction.orderEquality qSupport prSupport)
+          (disjunction.meaning qSupport prSupport) qFormula
+          (normalizedDisjunction
+            (disjunction.orderEquality pSupport rSupport)
+            (disjunction.meaning pSupport rSupport) pFormula rFormula))
+      exact derive_star_1_5
+        (disjunction.orderEquality qSupport rSupport)
+        (disjunction.orderEquality pSupport qrSupport)
+        (disjunction.orderEquality pSupport rSupport)
+        (disjunction.orderEquality qSupport prSupport)
+        (disjunction.orderEquality leftSideSupport rightSideSupport)
+        _ _ _ _ _ _ _ _ _
+  | star_1_6 left middle right =>
+      let pSupport := elementarySupport combine constantSupport valuationSupport left
+      let qSupport := elementarySupport combine constantSupport valuationSupport middle
+      let rSupport := elementarySupport combine constantSupport valuationSupport right
+      let pFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation left
+      let qFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation middle
+      let rFormula := interpret combine negation disjunction constantSupport
+        constantMeaning valuationSupport valuation right
+      let qrSupport := combine qSupport rSupport
+      let pqSupport := combine pSupport qSupport
+      let prSupport := combine pSupport rSupport
+      let consequentSupport := combine pqSupport prSupport
+      change ⊢ᵣ normalizedDisjunction
+        (disjunction.orderEquality qrSupport consequentSupport)
+        (disjunction.meaning qrSupport consequentSupport)
+        (.neg (negation.meaning qrSupport)
+          (normalizedDisjunction
+            (disjunction.orderEquality qSupport rSupport)
+            (disjunction.meaning qSupport rSupport)
+            (.neg (negation.meaning qSupport) qFormula) rFormula))
+        (normalizedDisjunction
+          (disjunction.orderEquality pqSupport prSupport)
+          (disjunction.meaning pqSupport prSupport)
+          (.neg (negation.meaning pqSupport)
+            (normalizedDisjunction
+              (disjunction.orderEquality pSupport qSupport)
+              (disjunction.meaning pSupport qSupport) pFormula qFormula))
+          (normalizedDisjunction
+            (disjunction.orderEquality pSupport rSupport)
+            (disjunction.meaning pSupport rSupport) pFormula rFormula))
+      exact derive_star_1_6
+        (disjunction.orderEquality qSupport rSupport)
+        (disjunction.orderEquality pSupport qSupport)
+        (disjunction.orderEquality pSupport rSupport)
+        (disjunction.orderEquality pqSupport prSupport)
+        (disjunction.orderEquality qrSupport consequentSupport)
+        _ _ _ _ _ _ _ _ _ _ _
+
+private theorem maxZeroRight : ∀ order : Nat, max order 0 = order
+  | 0 => rfl
+  | Nat.succ _ => rfl
+
+private theorem succLeSucc {left right : Nat} :
+    left ≤ right → left.succ ≤ right.succ :=
+  fun proof => Nat.le.rec
+    (motive := fun right _ => left.succ ≤ right.succ)
+    Nat.le.refl (fun _ induction => Nat.le.step induction) proof
+
+private theorem predLePred {left right : Nat} (proof : left ≤ right) :
+    left.pred ≤ right.pred := by
+  induction proof with
+  | refl => exact Nat.le.refl
+  | @step right proof induction =>
+      cases right with
+      | zero => exact induction
+      | succ right => exact Nat.le.step induction
+
+private theorem leOfSuccLeSucc {left right : Nat}
+    (proof : left.succ ≤ right.succ) : left ≤ right :=
+  predLePred proof
+
+private theorem maxSuccSucc (left right : Nat) :
+    max left.succ right.succ = (max left right).succ := by
+  unfold Max.max Nat.instMax maxOfLe
+  change (if left.succ ≤ right.succ then right.succ else left.succ) =
+    (if left ≤ right then right else left).succ
+  by_cases ordering : left ≤ right
+  · rw [if_pos ordering, if_pos (succLeSucc ordering)]
+  · rw [if_neg ordering]
+    have successorOrdering : ¬ left.succ ≤ right.succ :=
+      fun proof => ordering (leOfSuccLeSucc proof)
+    rw [if_neg successorOrdering]
+
+theorem maxAssoc : ∀ left middle right : Nat,
+    max (max left middle) right = max left (max middle right)
+  | 0, middle, right => rfl
+  | Nat.succ left, 0, right => rfl
+  | Nat.succ left, Nat.succ middle, 0 =>
+      Eq.trans (maxZeroRight (max left.succ middle.succ))
+        (congrArg (max left.succ) (maxZeroRight middle.succ).symm)
+  | Nat.succ left, Nat.succ middle, Nat.succ right => by
+      rw [maxSuccSucc, maxSuccSucc, maxSuccSucc, maxSuccSucc]
+      exact congrArg Nat.succ (maxAssoc left middle right)
+
+theorem maxComm : ∀ left right : Nat, max left right = max right left
+  | 0, 0 => rfl
+  | 0, Nat.succ right => rfl
+  | Nat.succ left, 0 => rfl
+  | Nat.succ left, Nat.succ right => by
+      rw [maxSuccSucc, maxSuccSucc]
+      exact congrArg Nat.succ (maxComm left right)
+
+theorem maxLeftAbsorb (left right : Nat) :
+    max left (max left right) = max left right := by
+  rw [← maxAssoc, natMaxSelf]
+
+theorem maxRightAbsorb (left right : Nat) :
+    max (max left right) right = max left right := by
+  rw [maxAssoc, natMaxSelf]
+
+theorem maxRightLeftAbsorb (left right : Nat) :
+    max right (max left right) = max left right := by
+  rw [maxComm right, maxRightAbsorb]
+
+theorem maxLeftRightAbsorb (left right : Nat) :
+    max (max left right) left = max left right := by
+  rw [maxComm (max left right) left, maxLeftAbsorb]
+
+inductive BinarySupport where
+  | left
+  | right
+  | both
+
+def BinarySupport.combine : BinarySupport → BinarySupport → BinarySupport
+  | .left, .left => .left
+  | .left, .right => .both
+  | .left, .both => .both
+  | .right, .left => .both
+  | .right, .right => .right
+  | .right, .both => .both
+  | .both, .left => .both
+  | .both, .right => .both
+  | .both, .both => .both
+
+structure BinaryNegations (signature : Signature) where
+  leftOrder : Nat
+  rightOrder : Nat
+  left : signature.Negation leftOrder
+  right : signature.Negation rightOrder
+  both : signature.Negation (max leftOrder rightOrder)
+
+structure BinaryDisjunctions (signature : Signature)
+    (negation : BinaryNegations signature) where
+  left : signature.Disjunction negation.leftOrder
+  right : signature.Disjunction negation.rightOrder
+  both : signature.Disjunction (max negation.leftOrder negation.rightOrder)
+
+def BinaryNegations.order (negation : BinaryNegations signature) :
+    BinarySupport → Nat
+  | .left => negation.leftOrder
+  | .right => negation.rightOrder
+  | .both => max negation.leftOrder negation.rightOrder
+
+def BinaryNegations.meaning (negation : BinaryNegations signature) :
+    ∀ item, signature.Negation (negation.order item)
+  | .left => negation.left
+  | .right => negation.right
+  | .both => negation.both
+
+def BinaryDisjunctions.meaning
+    (disjunction : BinaryDisjunctions signature negation) :
+    ∀ item, signature.Disjunction (negation.order item)
+  | .left => disjunction.left
+  | .right => disjunction.right
+  | .both => disjunction.both
+
+theorem binaryOrderCombine
+    (negation : BinaryNegations signature)
+    (leftSupport rightSupport : BinarySupport) :
+    max (negation.order leftSupport) (negation.order rightSupport) =
+      negation.order (leftSupport.combine rightSupport) := by
+  cases leftSupport <;> cases rightSupport
+  · exact natMaxSelf negation.leftOrder
+  · rfl
+  · exact maxLeftAbsorb negation.leftOrder negation.rightOrder
+  · exact maxComm negation.rightOrder negation.leftOrder
+  · exact natMaxSelf negation.rightOrder
+  · exact maxRightLeftAbsorb negation.leftOrder negation.rightOrder
+  · exact maxLeftRightAbsorb negation.leftOrder negation.rightOrder
+  · exact maxRightAbsorb negation.leftOrder negation.rightOrder
+  · exact natMaxSelf (max negation.leftOrder negation.rightOrder)
+
+def BinaryNegations.toVocabulary (negation : BinaryNegations signature) :
+    NegationVocabulary signature BinarySupport where
+  order := negation.order
+  meaning := negation.meaning
+
+def BinaryDisjunctions.toVocabulary
+    (disjunction : BinaryDisjunctions signature negation) :
+    DisjunctionVocabulary signature BinarySupport BinarySupport.combine
+      negation.toVocabulary where
+  orderEquality := binaryOrderCombine negation
+  meaning := fun leftSupport rightSupport =>
+    disjunction.meaning (leftSupport.combine rightSupport)
+
+theorem binaryTautology
+    (negation : BinaryNegations signature)
+    (disjunction : BinaryDisjunctions signature negation)
+    (item : BinarySupport)
+    (p : Formula signature real [] (negation.order item)) :
+    ⊢ᵣ normalizedDisjunction
+      (binaryOrderCombine negation (item.combine item) item)
+      (disjunction.meaning ((item.combine item).combine item))
+      (.neg (negation.meaning (item.combine item))
+        (normalizedDisjunction (binaryOrderCombine negation item item)
+          (disjunction.meaning (item.combine item)) p p)) p := by
+  cases item
+  · exact derive_star_1_2 (natMaxSelf negation.leftOrder)
+      negation.left disjunction.left p
+  · exact derive_star_1_2 (natMaxSelf negation.rightOrder)
+      negation.right disjunction.right p
+  · exact derive_star_1_2
+      (natMaxSelf (max negation.leftOrder negation.rightOrder))
+      negation.both disjunction.both p
+
+def binaryConstantSupport (_ : String) : BinarySupport := .left
+
+def binaryValuationSupport :
+    PM.RealVar [.elementaryProposition, .elementaryProposition]
+      .elementaryProposition → BinarySupport
+  | .zero => .left
+  | .succ .zero => .right
+
+def binaryValuation
+    (negation : BinaryNegations signature)
+    (p : Formula signature real [] negation.leftOrder)
+    (q : Formula signature real [] negation.rightOrder) :
+    ∀ v : PM.RealVar [.elementaryProposition, .elementaryProposition]
+      .elementaryProposition,
+      Formula signature real [] (negation.order (binaryValuationSupport v))
+  | .zero => p
+  | .succ .zero => q
+
+def binaryInterpret
+    (negation : BinaryNegations signature)
+    (disjunction : BinaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.leftOrder)
+    (q : Formula signature real [] negation.rightOrder)
+    (proposition : PM.Elementary
+      [.elementaryProposition, .elementaryProposition]) :
+    Formula signature real []
+      (negation.order (elementarySupport BinarySupport.combine
+        binaryConstantSupport binaryValuationSupport proposition)) :=
+  interpret BinarySupport.combine negation.toVocabulary disjunction.toVocabulary
+    binaryConstantSupport (fun _ => p) binaryValuationSupport
+    (binaryValuation negation p q) proposition
+
+theorem binaryTransport
+    (negation : BinaryNegations signature)
+    (disjunction : BinaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.leftOrder)
+    (q : Formula signature real [] negation.rightOrder)
+    {proposition : PM.Elementary
+      [.elementaryProposition, .elementaryProposition]}
+    (proof : PM.Derivation proposition) :
+    ⊢ᵣ binaryInterpret negation disjunction p q proposition :=
+  transport BinarySupport.combine negation.toVocabulary disjunction.toVocabulary
+    (binaryTautology negation disjunction) binaryConstantSupport (fun _ => p)
+    binaryValuationSupport (binaryValuation negation p q) proof
+
+def binaryP : PM.Elementary [.elementaryProposition, .elementaryProposition] :=
+  .var .zero
+
+def binaryQ : PM.Elementary [.elementaryProposition, .elementaryProposition] :=
+  .var (.succ .zero)
+
+
+theorem maxSwapLeft (left middle right : Nat) :
+    max left (max middle right) = max middle (max left right) := by
+  exact Eq.trans (maxAssoc left middle right).symm
+    (Eq.trans (congrArg (fun order => max order right) (maxComm left middle))
+      (maxAssoc middle left right))
+
+theorem maxThirdPair (left middle right : Nat) :
+    max right (max left middle) = max left (max middle right) := by
+  exact Eq.trans (maxSwapLeft right left middle)
+    (congrArg (max left) (maxComm right middle))
+
+theorem maxPairsSameLeft (left middle right : Nat) :
+    max (max left middle) (max left right) =
+      max left (max middle right) := by
+  rw [maxAssoc, maxSwapLeft middle left right, maxLeftAbsorb]
+
+theorem maxPairsSharedMiddle (left middle right : Nat) :
+    max (max left middle) (max middle right) =
+      max left (max middle right) := by
+  rw [maxAssoc, maxLeftAbsorb]
+
+theorem maxPairsSharedRight (left middle right : Nat) :
+    max (max left right) (max middle right) =
+      max left (max middle right) := by
+  rw [maxAssoc, maxRightLeftAbsorb]
+
+theorem maxMiddleFull (left middle right : Nat) :
+    max middle (max left (max middle right)) =
+      max left (max middle right) := by
+  rw [maxSwapLeft middle left, maxLeftAbsorb]
+
+theorem maxRightFull (left middle right : Nat) :
+    max right (max left (max middle right)) =
+      max left (max middle right) := by
+  rw [maxSwapLeft right left, maxSwapLeft right middle, natMaxSelf]
+
+theorem maxPairLeftFull (left middle right : Nat) :
+    max (max left middle) (max left (max middle right)) =
+      max left (max middle right) := by
+  rw [maxPairsSameLeft, maxLeftAbsorb]
+
+theorem maxPairRightFull (left middle right : Nat) :
+    max (max left right) (max left (max middle right)) =
+      max left (max middle right) := by
+  rw [maxPairsSameLeft, maxRightLeftAbsorb]
+
+theorem maxPairMiddleFull (left middle right : Nat) :
+    max (max middle right) (max left (max middle right)) =
+      max left (max middle right) := by
+  rw [maxComm (max middle right), maxRightAbsorb]
+
+inductive TernarySupport where
+  | p
+  | q
+  | r
+  | pq
+  | pr
+  | qr
+  | pqr
+
+def TernarySupport.combine : TernarySupport → TernarySupport → TernarySupport
+  | .p, .p => .p
+  | .p, .q => .pq
+  | .p, .r => .pr
+  | .p, .pq => .pq
+  | .p, .pr => .pr
+  | .p, .qr => .pqr
+  | .p, .pqr => .pqr
+  | .q, .p => .pq
+  | .q, .q => .q
+  | .q, .r => .qr
+  | .q, .pq => .pq
+  | .q, .pr => .pqr
+  | .q, .qr => .qr
+  | .q, .pqr => .pqr
+  | .r, .p => .pr
+  | .r, .q => .qr
+  | .r, .r => .r
+  | .r, .pq => .pqr
+  | .r, .pr => .pr
+  | .r, .qr => .qr
+  | .r, .pqr => .pqr
+  | .pq, .p => .pq
+  | .pq, .q => .pq
+  | .pq, .r => .pqr
+  | .pq, .pq => .pq
+  | .pq, .pr => .pqr
+  | .pq, .qr => .pqr
+  | .pq, .pqr => .pqr
+  | .pr, .p => .pr
+  | .pr, .q => .pqr
+  | .pr, .r => .pr
+  | .pr, .pq => .pqr
+  | .pr, .pr => .pr
+  | .pr, .qr => .pqr
+  | .pr, .pqr => .pqr
+  | .qr, .p => .pqr
+  | .qr, .q => .qr
+  | .qr, .r => .qr
+  | .qr, .pq => .pqr
+  | .qr, .pr => .pqr
+  | .qr, .qr => .qr
+  | .qr, .pqr => .pqr
+  | .pqr, .p => .pqr
+  | .pqr, .q => .pqr
+  | .pqr, .r => .pqr
+  | .pqr, .pq => .pqr
+  | .pqr, .pr => .pqr
+  | .pqr, .qr => .pqr
+  | .pqr, .pqr => .pqr
+
+structure TernaryNegations (signature : Signature) where
+  pOrder : Nat
+  qOrder : Nat
+  rOrder : Nat
+  p : signature.Negation pOrder
+  q : signature.Negation qOrder
+  r : signature.Negation rOrder
+  pq : signature.Negation (max pOrder qOrder)
+  pr : signature.Negation (max pOrder rOrder)
+  qr : signature.Negation (max qOrder rOrder)
+  pqr : signature.Negation (max pOrder (max qOrder rOrder))
+
+structure TernaryDisjunctions (signature : Signature)
+    (negation : TernaryNegations signature) where
+  p : signature.Disjunction negation.pOrder
+  q : signature.Disjunction negation.qOrder
+  r : signature.Disjunction negation.rOrder
+  pq : signature.Disjunction (max negation.pOrder negation.qOrder)
+  pr : signature.Disjunction (max negation.pOrder negation.rOrder)
+  qr : signature.Disjunction (max negation.qOrder negation.rOrder)
+  pqr : signature.Disjunction
+    (max negation.pOrder (max negation.qOrder negation.rOrder))
+
+def TernaryNegations.order (negation : TernaryNegations signature) :
+    TernarySupport → Nat
+  | .p => negation.pOrder
+  | .q => negation.qOrder
+  | .r => negation.rOrder
+  | .pq => max negation.pOrder negation.qOrder
+  | .pr => max negation.pOrder negation.rOrder
+  | .qr => max negation.qOrder negation.rOrder
+  | .pqr => max negation.pOrder (max negation.qOrder negation.rOrder)
+
+def TernaryNegations.meaning (negation : TernaryNegations signature) :
+    ∀ item, signature.Negation (negation.order item)
+  | .p => negation.p
+  | .q => negation.q
+  | .r => negation.r
+  | .pq => negation.pq
+  | .pr => negation.pr
+  | .qr => negation.qr
+  | .pqr => negation.pqr
+
+def TernaryDisjunctions.meaning
+    (disjunction : TernaryDisjunctions signature negation) :
+    ∀ item, signature.Disjunction (negation.order item)
+  | .p => disjunction.p
+  | .q => disjunction.q
+  | .r => disjunction.r
+  | .pq => disjunction.pq
+  | .pr => disjunction.pr
+  | .qr => disjunction.qr
+  | .pqr => disjunction.pqr
+
+theorem ternaryOrderCombine
+    (negation : TernaryNegations signature) (left right : TernarySupport) :
+    max (negation.order left) (negation.order right) =
+      negation.order (left.combine right) := by
+  cases left <;> cases right
+  · exact natMaxSelf negation.pOrder
+  · rfl
+  · rfl
+  · exact maxLeftAbsorb negation.pOrder negation.qOrder
+  · exact maxLeftAbsorb negation.pOrder negation.rOrder
+  · rfl
+  · exact maxLeftAbsorb negation.pOrder (max negation.qOrder negation.rOrder)
+  · exact maxComm negation.qOrder negation.pOrder
+  · exact natMaxSelf negation.qOrder
+  · rfl
+  · exact maxRightLeftAbsorb negation.pOrder negation.qOrder
+  · exact maxSwapLeft negation.qOrder negation.pOrder negation.rOrder
+  · exact maxLeftAbsorb negation.qOrder negation.rOrder
+  · exact maxMiddleFull negation.pOrder negation.qOrder negation.rOrder
+  · exact maxComm negation.rOrder negation.pOrder
+  · exact maxComm negation.rOrder negation.qOrder
+  · exact natMaxSelf negation.rOrder
+  · exact maxThirdPair negation.pOrder negation.qOrder negation.rOrder
+  · exact maxRightLeftAbsorb negation.pOrder negation.rOrder
+  · exact maxRightLeftAbsorb negation.qOrder negation.rOrder
+  · exact maxRightFull negation.pOrder negation.qOrder negation.rOrder
+  · exact maxLeftRightAbsorb negation.pOrder negation.qOrder
+  · exact maxRightAbsorb negation.pOrder negation.qOrder
+  · exact Eq.trans
+      (maxComm (max negation.pOrder negation.qOrder) negation.rOrder)
+      (maxThirdPair negation.pOrder negation.qOrder negation.rOrder)
+  · exact natMaxSelf (max negation.pOrder negation.qOrder)
+  · exact maxPairsSameLeft negation.pOrder negation.qOrder negation.rOrder
+  · exact maxPairsSharedMiddle negation.pOrder negation.qOrder negation.rOrder
+  · exact maxPairLeftFull negation.pOrder negation.qOrder negation.rOrder
+  · exact maxLeftRightAbsorb negation.pOrder negation.rOrder
+  · exact Eq.trans
+      (maxComm (max negation.pOrder negation.rOrder) negation.qOrder)
+      (maxSwapLeft negation.qOrder negation.pOrder negation.rOrder)
+  · exact maxRightAbsorb negation.pOrder negation.rOrder
+  · exact Eq.trans
+      (maxComm (max negation.pOrder negation.rOrder)
+        (max negation.pOrder negation.qOrder))
+      (maxPairsSameLeft negation.pOrder negation.qOrder negation.rOrder)
+  · exact natMaxSelf (max negation.pOrder negation.rOrder)
+  · exact maxPairsSharedRight negation.pOrder negation.qOrder negation.rOrder
+  · exact maxPairRightFull negation.pOrder negation.qOrder negation.rOrder
+  · exact maxComm (max negation.qOrder negation.rOrder) negation.pOrder
+  · exact maxLeftRightAbsorb negation.qOrder negation.rOrder
+  · exact maxRightAbsorb negation.qOrder negation.rOrder
+  · exact Eq.trans
+      (maxComm (max negation.qOrder negation.rOrder)
+        (max negation.pOrder negation.qOrder))
+      (maxPairsSharedMiddle negation.pOrder negation.qOrder negation.rOrder)
+  · exact Eq.trans
+      (maxComm (max negation.qOrder negation.rOrder)
+        (max negation.pOrder negation.rOrder))
+      (maxPairsSharedRight negation.pOrder negation.qOrder negation.rOrder)
+  · exact natMaxSelf (max negation.qOrder negation.rOrder)
+  · exact maxPairMiddleFull negation.pOrder negation.qOrder negation.rOrder
+  · exact Eq.trans
+      (maxComm (max negation.pOrder (max negation.qOrder negation.rOrder))
+        negation.pOrder)
+      (maxLeftAbsorb negation.pOrder (max negation.qOrder negation.rOrder))
+  · exact Eq.trans
+      (maxComm (max negation.pOrder (max negation.qOrder negation.rOrder))
+        negation.qOrder)
+      (maxMiddleFull negation.pOrder negation.qOrder negation.rOrder)
+  · exact Eq.trans
+      (maxComm (max negation.pOrder (max negation.qOrder negation.rOrder))
+        negation.rOrder)
+      (maxRightFull negation.pOrder negation.qOrder negation.rOrder)
+  · exact Eq.trans
+      (maxComm (max negation.pOrder (max negation.qOrder negation.rOrder))
+        (max negation.pOrder negation.qOrder))
+      (maxPairLeftFull negation.pOrder negation.qOrder negation.rOrder)
+  · exact Eq.trans
+      (maxComm (max negation.pOrder (max negation.qOrder negation.rOrder))
+        (max negation.pOrder negation.rOrder))
+      (maxPairRightFull negation.pOrder negation.qOrder negation.rOrder)
+  · exact Eq.trans
+      (maxComm (max negation.pOrder (max negation.qOrder negation.rOrder))
+        (max negation.qOrder negation.rOrder))
+      (maxPairMiddleFull negation.pOrder negation.qOrder negation.rOrder)
+  · exact natMaxSelf
+      (max negation.pOrder (max negation.qOrder negation.rOrder))
+
+def TernaryNegations.toVocabulary (negation : TernaryNegations signature) :
+    NegationVocabulary signature TernarySupport where
+  order := negation.order
+  meaning := negation.meaning
+
+def TernaryDisjunctions.toVocabulary
+    (disjunction : TernaryDisjunctions signature negation) :
+    DisjunctionVocabulary signature TernarySupport TernarySupport.combine
+      negation.toVocabulary where
+  orderEquality := ternaryOrderCombine negation
+  meaning := fun left right => disjunction.meaning (left.combine right)
+
+theorem ternaryTautology
+    (negation : TernaryNegations signature)
+    (disjunction : TernaryDisjunctions signature negation)
+    (item : TernarySupport)
+    (formula : Formula signature real [] (negation.order item)) :
+    ⊢ᵣ normalizedDisjunction
+      (ternaryOrderCombine negation (item.combine item) item)
+      (disjunction.meaning ((item.combine item).combine item))
+      (.neg (negation.meaning (item.combine item))
+        (normalizedDisjunction (ternaryOrderCombine negation item item)
+          (disjunction.meaning (item.combine item)) formula formula)) formula := by
+  cases item
+  · exact derive_star_1_2 (natMaxSelf negation.pOrder)
+      negation.p disjunction.p formula
+  · exact derive_star_1_2 (natMaxSelf negation.qOrder)
+      negation.q disjunction.q formula
+  · exact derive_star_1_2 (natMaxSelf negation.rOrder)
+      negation.r disjunction.r formula
+  · exact derive_star_1_2 (natMaxSelf (max negation.pOrder negation.qOrder))
+      negation.pq disjunction.pq formula
+  · exact derive_star_1_2 (natMaxSelf (max negation.pOrder negation.rOrder))
+      negation.pr disjunction.pr formula
+  · exact derive_star_1_2 (natMaxSelf (max negation.qOrder negation.rOrder))
+      negation.qr disjunction.qr formula
+  · exact derive_star_1_2
+      (natMaxSelf (max negation.pOrder (max negation.qOrder negation.rOrder)))
+      negation.pqr disjunction.pqr formula
+
+def ternaryConstantSupport (_ : String) : TernarySupport := .p
+
+def ternaryValuationSupport :
+    PM.RealVar [.elementaryProposition, .elementaryProposition,
+      .elementaryProposition] .elementaryProposition → TernarySupport
+  | .zero => .p
+  | .succ .zero => .q
+  | .succ (.succ .zero) => .r
+
+def ternaryValuation
+    (negation : TernaryNegations signature)
+    (p : Formula signature real [] negation.pOrder)
+    (q : Formula signature real [] negation.qOrder)
+    (r : Formula signature real [] negation.rOrder) :
+    ∀ v : PM.RealVar [.elementaryProposition, .elementaryProposition,
+      .elementaryProposition] .elementaryProposition,
+      Formula signature real [] (negation.order (ternaryValuationSupport v))
+  | .zero => p
+  | .succ .zero => q
+  | .succ (.succ .zero) => r
+
+def ternaryInterpret
+    (negation : TernaryNegations signature)
+    (disjunction : TernaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.pOrder)
+    (q : Formula signature real [] negation.qOrder)
+    (r : Formula signature real [] negation.rOrder)
+    (proposition : PM.Elementary [.elementaryProposition,
+      .elementaryProposition, .elementaryProposition]) :
+    Formula signature real []
+      (negation.order (elementarySupport TernarySupport.combine
+        ternaryConstantSupport ternaryValuationSupport proposition)) :=
+  interpret TernarySupport.combine negation.toVocabulary
+    disjunction.toVocabulary ternaryConstantSupport (fun _ => p)
+    ternaryValuationSupport (ternaryValuation negation p q r) proposition
+
+theorem ternaryTransport
+    (negation : TernaryNegations signature)
+    (disjunction : TernaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.pOrder)
+    (q : Formula signature real [] negation.qOrder)
+    (r : Formula signature real [] negation.rOrder)
+    {proposition : PM.Elementary [.elementaryProposition,
+      .elementaryProposition, .elementaryProposition]}
+    (proof : PM.Derivation proposition) :
+    ⊢ᵣ ternaryInterpret negation disjunction p q r proposition :=
+  transport TernarySupport.combine negation.toVocabulary
+    disjunction.toVocabulary (ternaryTautology negation disjunction)
+    ternaryConstantSupport (fun _ => p) ternaryValuationSupport
+    (ternaryValuation negation p q r) proof
+
+def ternaryP : PM.Elementary [.elementaryProposition, .elementaryProposition,
+    .elementaryProposition] := .var .zero
+
+def ternaryQ : PM.Elementary [.elementaryProposition, .elementaryProposition,
+    .elementaryProposition] := .var (.succ .zero)
+
+def ternaryR : PM.Elementary [.elementaryProposition, .elementaryProposition,
+    .elementaryProposition] := .var (.succ (.succ .zero))
+
+
+
+end MixedOrder
 
 end PM.RamifiedSyntax
 

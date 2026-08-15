@@ -1,4 +1,5 @@
 import Principia.Deduction.Star3Ramified
+import Principia.FirstEdition.Volume1.Part1.SectionA.Star4
 
 /-!
 # PM I, first edition, ✱4 in the ramified calculus
@@ -1374,5 +1375,31 @@ end
 #print axioms star_4_15
 #print axioms star_4_78
 #print axioms star_4_79
+
+namespace MixedOrder
+
+/-- ✱4·21 with independent orders for `p` and `q`. -/
+def star_4_21_formula
+    (negation : BinaryNegations signature)
+    (disjunction : BinaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.leftOrder)
+    (q : Formula signature real [] negation.rightOrder) :=
+  binaryInterpret negation disjunction p q
+    (PM.Elementary.equiv
+      (PM.Elementary.equiv binaryP binaryQ)
+      (PM.Elementary.equiv binaryQ binaryP))
+
+theorem star_4_21
+    (negation : BinaryNegations signature)
+    (disjunction : BinaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.leftOrder)
+    (q : Formula signature real [] negation.rightOrder) :
+    ⊢ᵣ star_4_21_formula negation disjunction p q := by
+  exact binaryTransport negation disjunction p q
+    (PM.FirstEdition.Volume1.Star4.star_4_21 binaryP binaryQ)
+
+#print axioms star_4_21
+
+end MixedOrder
 
 end PM.RamifiedSyntax

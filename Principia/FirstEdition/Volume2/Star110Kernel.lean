@@ -4,13 +4,6 @@ import Principia.FirstEdition.Volume2.Star110Source
 namespace PM.FirstEdition.Volume2.Star110Kernel
 open Star110Source
 
-theorem star_110_1 (s : Set' α) (t : Set' β) (z : Sum α β) :
-    SumClass s t z ↔
-      (∃ x, z = .inl x ∧ s x) ∨ (∃ y, z = .inr y ∧ t y) := by
-  cases z with
-  | inl x => simp [SumClass]
-  | inr y => simp [SumClass]
-
 theorem star_110_101 (s : Set' α) (t : Set' β) :
     (∀ z, ¬ SumClass s t z) ↔ (∀ x, ¬ s x) ∧ (∀ y, ¬ t y) := by
   constructor

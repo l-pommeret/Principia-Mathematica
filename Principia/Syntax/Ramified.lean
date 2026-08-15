@@ -93,6 +93,90 @@ inductive Arguments (signature : Signature) (real apparent : Context) :
 def bindOrder (matrixOrder : Nat) (sort : RSort) : Nat :=
   max matrixOrder (Nat.succ sort.height)
 
+/-! Kernel-only arithmetic used to compare the order computed before and
+after a scope extension.  These proofs deliberately avoid the corresponding
+library normalization theorems. -/
+
+private theorem scopeSuccLeSucc {left right : Nat} :
+    left ≤ right → left.succ ≤ right.succ :=
+  fun proof => Nat.le.rec
+    (motive := fun right _ => left.succ ≤ right.succ)
+    Nat.le.refl (fun _ induction => Nat.le.step induction) proof
+
+private theorem scopePredLePred {left right : Nat} (proof : left ≤ right) :
+    left.pred ≤ right.pred := by
+  induction proof with
+  | refl => exact Nat.le.refl
+  | @step right proof induction =>
+      cases right with
+      | zero => exact induction
+      | succ right => exact Nat.le.step induction
+
+private theorem scopeLeOfSuccLeSucc {left right : Nat}
+    (proof : left.succ ≤ right.succ) : left ≤ right :=
+  scopePredLePred proof
+
+private theorem scopeNatMaxSuccSucc (left right : Nat) :
+    max left.succ right.succ = (max left right).succ := by
+  unfold Max.max Nat.instMax maxOfLe
+  change (if left.succ ≤ right.succ then right.succ else left.succ) =
+    (if left ≤ right then right else left).succ
+  by_cases ordering : left ≤ right
+  · rw [if_pos ordering, if_pos (scopeSuccLeSucc ordering)]
+  · have successorOrdering : ¬ left.succ ≤ right.succ :=
+      fun proof => ordering (scopeLeOfSuccLeSucc proof)
+    rw [if_neg ordering, if_neg successorOrdering]
+
+private theorem scopeNatMaxZeroRight : ∀ order : Nat, max order 0 = order
+  | 0 => rfl
+  | Nat.succ _order => rfl
+
+private theorem scopeNatMaxAssoc : ∀ left middle right : Nat,
+    max (max left middle) right = max left (max middle right)
+  | 0, middle, right => rfl
+  | Nat.succ left, 0, right => rfl
+  | Nat.succ left, Nat.succ middle, 0 =>
+      Eq.trans (scopeNatMaxZeroRight (max left.succ middle.succ))
+        (congrArg (max left.succ)
+          (scopeNatMaxZeroRight middle.succ).symm)
+  | Nat.succ left, Nat.succ middle, Nat.succ right => by
+      rw [scopeNatMaxSuccSucc, scopeNatMaxSuccSucc,
+        scopeNatMaxSuccSucc, scopeNatMaxSuccSucc]
+      exact congrArg Nat.succ (scopeNatMaxAssoc left middle right)
+
+private theorem scopeNatMaxComm : ∀ left right : Nat,
+    max left right = max right left
+  | 0, 0 => rfl
+  | 0, Nat.succ right => rfl
+  | Nat.succ left, 0 => rfl
+  | Nat.succ left, Nat.succ right => by
+      rw [scopeNatMaxSuccSucc, scopeNatMaxSuccSucc]
+      exact congrArg Nat.succ (scopeNatMaxComm left right)
+
+private theorem scopeNatMaxSwapMiddle (left middle right : Nat) :
+    max (max left middle) right = max (max left right) middle := by
+  exact Eq.trans (scopeNatMaxAssoc left middle right)
+    (Eq.trans
+      (congrArg (fun order => max left order)
+        (scopeNatMaxComm middle right))
+      (scopeNatMaxAssoc left right middle).symm)
+
+theorem bindOrderMaxRight
+    (matrixOrder fixedOrder : Nat) (argument : RSort) :
+    max (bindOrder matrixOrder argument) fixedOrder =
+      bindOrder (max matrixOrder fixedOrder) argument := by
+  unfold bindOrder
+  exact (scopeNatMaxSwapMiddle matrixOrder fixedOrder
+    (Nat.succ argument.height)).symm
+
+theorem bindOrderMaxLeft
+    (fixedOrder matrixOrder : Nat) (argument : RSort) :
+    max fixedOrder (bindOrder matrixOrder argument) =
+      bindOrder (max fixedOrder matrixOrder) argument := by
+  unfold bindOrder
+  exact (scopeNatMaxAssoc fixedOrder matrixOrder
+    (Nat.succ argument.height)).symm
+
 /-- The printed existential sign together with its eliminable ✱10·01
 expansion.  The two negations have different assigned orders in the
 intrinsically ordered syntax. -/
@@ -729,6 +813,198 @@ theorem star_9_06_unfold
       .sometimes existential
         (.disj disjunction (fixed.rename (fun v => .succ v)) body) := rfl
 
+/-! ### Constructor audit for the proposed scope equalities
+
+The six printed Df clauses cannot be installed as Lean equalities between the
+two independently built `Formula` trees.  The following declarations make
+that obstruction kernel-visible.  They compare the reducible scope expansion
+above with the literal outer-connective tree printed on the other side. -/
+
+private def Formula.scopeCast
+    (formula : Formula signature real apparent sourceOrder) :
+    {targetOrder : Nat} → sourceOrder = targetOrder →
+      Formula signature real apparent targetOrder
+  | _, rfl => formula
+
+private inductive Formula.ScopeRoot where
+  | proposition
+  | apply
+  | neg
+  | disj
+  | always
+  | incompleteScope
+  | descriptionScope
+
+private def Formula.scopeRoot :
+    Formula signature real apparent order → Formula.ScopeRoot
+  | .proposition _ => .proposition
+  | .apply _ _ => .apply
+  | .neg _ _ => .neg
+  | .disj _ _ _ => .disj
+  | .always _ _ => .always
+  | .incompleteScope _ _ _ _ _ _ _ => .incompleteScope
+  | .descriptionScope _ _ _ _ _ => .descriptionScope
+
+private theorem Formula.scopeRoot_scopeCast
+    (formula : Formula signature real apparent sourceOrder)
+    (equality : sourceOrder = targetOrder) :
+    (formula.scopeCast equality).scopeRoot = formula.scopeRoot := by
+  cases equality
+  rfl
+
+private def Formula.scopeTreeSize :
+    Formula signature real apparent order → Nat
+  | .proposition _ => 1
+  | .apply _ _ => 1
+  | .neg _ body => Nat.succ body.scopeTreeSize
+  | .disj _ left right => Nat.succ
+      (left.scopeTreeSize + right.scopeTreeSize)
+  | .always _ body => Nat.succ body.scopeTreeSize
+  | .incompleteScope _ _ _ _ _ matrix continuation => Nat.succ
+      (matrix.scopeTreeSize + continuation.scopeTreeSize)
+  | .descriptionScope _ _ _ condition continuation => Nat.succ
+      (condition.scopeTreeSize + continuation.scopeTreeSize)
+
+private theorem scopeNatNeSuccSucc (number : Nat) :
+    number ≠ number.succ.succ :=
+  Nat.rec (motive := fun current => current ≠ current.succ.succ)
+    (fun equality => Nat.noConfusion equality)
+    (fun _ induction equality => induction (Nat.succ.inj equality)) number
+
+private theorem Formula.scopeNeTwoNegations
+    (outerNegation innerNegation : signature.Negation order)
+    (body : Formula signature real apparent order) :
+    body ≠ .neg outerNegation (.neg innerNegation body) := by
+  intro equality
+  have sizeEquality := congrArg Formula.scopeTreeSize equality
+  exact scopeNatNeSuccSucc body.scopeTreeSize sizeEquality
+
+/-- Constructor obstruction for printed ✱9·01,
+`∼{(x).φx} = (∃x).∼φx`: the right expansion contains two additional
+`Formula.neg` nodes below the common `neg (always ...)` prefix. -/
+theorem star_9_01_scope_impossible
+    (existential : ExistentialVocabulary signature argument matrixOrder)
+    (body : Formula signature real (argument :: apparent) matrixOrder) :
+    Formula.neg existential.outerNegation
+        (.always existential.universal body) ≠
+      star_9_01 existential existential.matrixNegation body := by
+  unfold star_9_01 Formula.sometimes
+  intro equality
+  have alwaysEquality := (Formula.neg.inj equality).2
+  have bodyEquality := (Formula.always.inj alwaysEquality).2
+  exact Formula.scopeNeTwoNegations existential.matrixNegation
+    existential.matrixNegation body bodyEquality
+
+/-- Constructor obstruction for printed ✱9·02,
+`∼{(∃x).φx} = (x).∼φx`: the literal left tree is rooted at
+`Formula.neg`, while the scope expansion is rooted at `Formula.always`. -/
+theorem star_9_02_scope_impossible
+    (existential : ExistentialVocabulary signature argument matrixOrder)
+    (body : Formula signature real (argument :: apparent) matrixOrder) :
+    Formula.neg existential.outerNegation
+        (.sometimes existential body) ≠
+      star_9_02 existential.universal existential.matrixNegation body := by
+  intro equality
+  have rootEquality := congrArg Formula.scopeRoot equality
+  unfold star_9_02 at rootEquality
+  cases rootEquality
+
+/-- Constructor obstruction for printed ✱9·03,
+`(x).φx ∨ p = (x). φx ∨ p`: after the assigned-order cast, the literal
+left tree is rooted at `Formula.disj`, while `star_9_03` is rooted at
+`Formula.always`. -/
+theorem star_9_03_scope_impossible
+    (matrixUniversal : signature.Universal argument matrixOrder)
+    (scopeUniversal : signature.Universal argument
+      (max matrixOrder fixedOrder))
+    (scopeDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (outerDisjunction : signature.Disjunction
+      (max (bindOrder matrixOrder argument) fixedOrder))
+    (body : Formula signature real (argument :: apparent) matrixOrder)
+    (fixed : Formula signature real apparent fixedOrder) :
+    star_9_03 scopeUniversal scopeDisjunction body fixed ≠
+      Formula.scopeCast
+        (.disj outerDisjunction (.always matrixUniversal body) fixed)
+        (bindOrderMaxRight matrixOrder fixedOrder argument) := by
+  intro equality
+  have rootEquality := congrArg Formula.scopeRoot equality
+  rw [Formula.scopeRoot_scopeCast] at rootEquality
+  unfold star_9_03 at rootEquality
+  cases rootEquality
+
+/-- Constructor obstruction for printed ✱9·04,
+`p ∨ (x).φx = (x). p ∨ φx`: after the assigned-order cast, the literal
+left tree is rooted at `Formula.disj`, while `star_9_04` is rooted at
+`Formula.always`. -/
+theorem star_9_04_scope_impossible
+    (matrixUniversal : signature.Universal argument matrixOrder)
+    (scopeUniversal : signature.Universal argument
+      (max fixedOrder matrixOrder))
+    (scopeDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (outerDisjunction : signature.Disjunction
+      (max fixedOrder (bindOrder matrixOrder argument)))
+    (fixed : Formula signature real apparent fixedOrder)
+    (body : Formula signature real (argument :: apparent) matrixOrder) :
+    star_9_04 scopeUniversal scopeDisjunction fixed body ≠
+      Formula.scopeCast
+        (.disj outerDisjunction fixed (.always matrixUniversal body))
+        (bindOrderMaxLeft fixedOrder matrixOrder argument) := by
+  intro equality
+  have rootEquality := congrArg Formula.scopeRoot equality
+  rw [Formula.scopeRoot_scopeCast] at rootEquality
+  unfold star_9_04 at rootEquality
+  cases rootEquality
+
+/-- Constructor obstruction for printed ✱9·05,
+`(∃x).φx ∨ p = (∃x). φx ∨ p`: after the assigned-order cast, the literal
+left tree is rooted at `Formula.disj`, while `star_9_05` unfolds to a
+`Formula.neg` root. -/
+theorem star_9_05_scope_impossible
+    (matrixExistential : ExistentialVocabulary signature argument matrixOrder)
+    (scopeExistential : ExistentialVocabulary signature argument
+      (max matrixOrder fixedOrder))
+    (scopeDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (outerDisjunction : signature.Disjunction
+      (max (bindOrder matrixOrder argument) fixedOrder))
+    (body : Formula signature real (argument :: apparent) matrixOrder)
+    (fixed : Formula signature real apparent fixedOrder) :
+    star_9_05 scopeExistential scopeDisjunction body fixed ≠
+      Formula.scopeCast
+        (.disj outerDisjunction (.sometimes matrixExistential body) fixed)
+        (bindOrderMaxRight matrixOrder fixedOrder argument) := by
+  intro equality
+  have rootEquality := congrArg Formula.scopeRoot equality
+  rw [Formula.scopeRoot_scopeCast] at rootEquality
+  unfold star_9_05 Formula.sometimes at rootEquality
+  cases rootEquality
+
+/-- Constructor obstruction for printed ✱9·06,
+`p ∨ (∃x).φx = (∃x). p ∨ φx`: after the assigned-order cast, the literal
+left tree is rooted at `Formula.disj`, while `star_9_06` unfolds to a
+`Formula.neg` root. -/
+theorem star_9_06_scope_impossible
+    (matrixExistential : ExistentialVocabulary signature argument matrixOrder)
+    (scopeExistential : ExistentialVocabulary signature argument
+      (max fixedOrder matrixOrder))
+    (scopeDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (outerDisjunction : signature.Disjunction
+      (max fixedOrder (bindOrder matrixOrder argument)))
+    (fixed : Formula signature real apparent fixedOrder)
+    (body : Formula signature real (argument :: apparent) matrixOrder) :
+    star_9_06 scopeExistential scopeDisjunction fixed body ≠
+      Formula.scopeCast
+        (.disj outerDisjunction fixed (.sometimes matrixExistential body))
+        (bindOrderMaxLeft fixedOrder matrixOrder argument) := by
+  intro equality
+  have rootEquality := congrArg Formula.scopeRoot equality
+  rw [Formula.scopeRoot_scopeCast] at rootEquality
+  unfold star_9_06 Formula.sometimes at rootEquality
+  cases rootEquality
+
 theorem star_9_07_unfold
     (existential : ExistentialVocabulary signature rightSort matrixOrder)
     (universal : signature.Universal leftSort
@@ -798,6 +1074,14 @@ def mixedImplication (negation : signature.Negation leftOrder)
     Formula signature realCtx apparent (max leftOrder rightOrder) :=
   .disj disjunction (.neg negation left) right
 
+theorem mixedImplication_unfold
+    (negation : signature.Negation leftOrder)
+    (disjunction : signature.Disjunction (max leftOrder rightOrder))
+    (left : Formula signature realCtx apparent leftOrder)
+    (right : Formula signature realCtx apparent rightOrder) :
+    mixedImplication negation disjunction left right =
+      .disj disjunction (.neg negation left) right := rfl
+
 /-- The object formula printed at ✱11·1: `(x,y).φ(x,y) ⊃ φ(z,w)`.
 The consequent is the exact specialization of the matrix in the antecedent. -/
 def star_11_1_formula
@@ -849,14 +1133,24 @@ def implication (negation : signature.Negation order)
         disjunction)
       left right)
 
-def equivalence (negation : signature.Negation order)
-    (disjunction : signature.Disjunction order)
+def sameDisjunction (disjunction : signature.Disjunction order)
     (left right : Formula signature realCtx apparent order) :
     Formula signature realCtx apparent order :=
-  .neg negation
-    (implication negation disjunction
-      (.neg negation (implication negation disjunction left right))
-      (.neg negation (implication negation disjunction right left)))
+  Eq.mp (congrArg (Formula signature realCtx apparent) (natMaxSelf order))
+    (.disj
+      (Eq.mp (congrArg signature.Disjunction (natMaxSelf order).symm)
+        disjunction)
+      left right)
+
+theorem sameDisjunction_unfold
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature realCtx apparent order) :
+    sameDisjunction disjunction left right =
+      Eq.mp (congrArg (Formula signature realCtx apparent) (natMaxSelf order))
+        (.disj
+          (Eq.mp (congrArg signature.Disjunction (natMaxSelf order).symm)
+            disjunction)
+          left right) := rfl
 
 /-- Conjunction at possibly different ramified orders, expressed through the
 primitive negation and disjunction vocabulary. -/
@@ -870,6 +1164,54 @@ def mixedConjunction
     Formula signature realCtx apparent (max leftOrder rightOrder) :=
   .neg outerNegation
     (.disj disjunction (.neg leftNegation left) (.neg rightNegation right))
+
+theorem mixedConjunction_unfold
+    (leftNegation : signature.Negation leftOrder)
+    (rightNegation : signature.Negation rightOrder)
+    (outerNegation : signature.Negation (max leftOrder rightOrder))
+    (disjunction : signature.Disjunction (max leftOrder rightOrder))
+    (left : Formula signature realCtx apparent leftOrder)
+    (right : Formula signature realCtx apparent rightOrder) :
+    mixedConjunction leftNegation rightNegation outerNegation disjunction
+        left right =
+      .neg outerNegation
+        (.disj disjunction (.neg leftNegation left) (.neg rightNegation right)) :=
+  rfl
+
+/-- ✱3·01 at one assigned order. -/
+def conjunction (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature realCtx apparent order) :
+    Formula signature realCtx apparent order :=
+  .neg negation
+    (sameDisjunction disjunction (.neg negation left) (.neg negation right))
+
+theorem conjunction_unfold
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature realCtx apparent order) :
+    conjunction negation disjunction left right =
+      .neg negation
+        (sameDisjunction disjunction
+          (.neg negation left) (.neg negation right)) := rfl
+
+/-- ✱4·01: equivalence is the conjunction of both implications. -/
+def equivalence (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature realCtx apparent order) :
+    Formula signature realCtx apparent order :=
+  conjunction negation disjunction
+    (implication negation disjunction left right)
+    (implication negation disjunction right left)
+
+theorem equivalence_unfold
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature realCtx apparent order) :
+    equivalence negation disjunction left right =
+      conjunction negation disjunction
+        (implication negation disjunction left right)
+        (implication negation disjunction right left) := rfl
 
 /-- The matrix in PM's primitive proposition ✱10·1 has its original order,
 while its universal closure has the order introduced by binding `x`.
@@ -1305,15 +1647,6 @@ def BinaryReducibility
       (.function [leftSort, rightSort] order 0) //
     RSort.Predicative (.function [leftSort, rightSort] order 0) }
 
-def sameDisjunction (disjunction : signature.Disjunction order)
-    (left right : Formula signature real apparent order) :
-    Formula signature real apparent order :=
-  Eq.mp (congrArg (Formula signature real apparent) (natMaxSelf order))
-    (.disj
-      (Eq.mp (congrArg signature.Disjunction (natMaxSelf order).symm)
-        disjunction)
-      left right)
-
 /-- A heterogeneous disjunction whose two member orders are identified with
 one common order normalizes to the established mono-order abbreviation.  The
 equalities are explicit, so this lemma cannot transport a formula between
@@ -1426,6 +1759,195 @@ def star_9_34_formula
     (implication negation disjunction phi
       (sameDisjunction disjunction (p.rename (fun v => .succ v)) phi))
 
+/-! ### The printed meaning of implication at quantified scope
+
+At ✱9·12 PM uses the word *implied*, not one selected constructor tree.
+The following relations record the eliminable readings by which ✱1·01 and
+✱9·01--·08 turn that printed implication into a ramified `Formula`.
+They are syntax certificates only; they add no rule to `Derivation`. -/
+
+/-- A certificate that the second formula is the printed negation of the
+first.  The elementary case is ✱1·01; the quantified cases are the two
+negation definitions ✱9·01 and ✱9·02. -/
+inductive ImplicationNegation (signature : Signature) (real : Context) :
+    {order : Nat} → signature.Negation order →
+      Formula signature real [] order →
+      Formula signature real [] order → Type where
+  | star_1_01
+      (negation : signature.Negation order)
+      (formula : Formula signature real [] order) :
+      ImplicationNegation signature real negation formula
+        (.neg negation formula)
+  | star_9_01
+      (surfaceNegation : signature.Negation
+        (bindOrder matrixOrder argument))
+      (universal : signature.Universal argument matrixOrder)
+      (existential : ExistentialVocabulary signature argument matrixOrder)
+      (matrixNegation : signature.Negation matrixOrder)
+      (body : Formula signature real [argument] matrixOrder) :
+      ImplicationNegation signature real surfaceNegation
+        (.always universal body)
+        (star_9_01 existential matrixNegation body)
+  | star_9_02
+      (surfaceNegation : signature.Negation
+        (bindOrder matrixOrder argument))
+      (existential : ExistentialVocabulary signature argument matrixOrder)
+      (universal : signature.Universal argument matrixOrder)
+      (matrixNegation : signature.Negation matrixOrder)
+      (body : Formula signature real [argument] matrixOrder) :
+      ImplicationNegation signature real surfaceNegation
+        (.sometimes existential body)
+        (star_9_02 universal matrixNegation body)
+
+/-- The insertion retaining the old head variable when a second apparent
+variable is added.  It is the right-matrix renaming in ✱9·07--·08. -/
+def implicationScopeHead :
+    Renaming (head :: apparent) (head :: tail :: apparent)
+  | _, .zero => .zero
+  | _, .succ v => .succ (.succ v)
+
+/-- A certificate that the third formula is the printed disjunction of the
+first two.  The first two constructors give ✱1·01; the six scope
+constructors bear the exact names of ✱9·03--·08.  The recursive premises in
+✱9·03--·06 express repeated full-scope propagation without identifying two
+different surface members. -/
+inductive ImplicationDisjunction (signature : Signature) (real : Context) :
+    {apparent : Context} →
+    {leftOrder rightOrder resultOrder : Nat} →
+    Formula signature real apparent leftOrder →
+    Formula signature real apparent rightOrder →
+    Formula signature real apparent resultOrder → Type where
+  | star_1_01
+      (disjunction : signature.Disjunction (max leftOrder rightOrder))
+      (left : Formula signature real apparent leftOrder)
+      (right : Formula signature real apparent rightOrder) :
+      ImplicationDisjunction signature real left right
+        (.disj disjunction left right)
+  | star_1_01_same
+      (disjunction : signature.Disjunction order)
+      (left right : Formula signature real apparent order) :
+      ImplicationDisjunction signature real left right
+        (sameDisjunction disjunction left right)
+  | star_9_03
+      (matrixUniversal : signature.Universal argument matrixOrder)
+      (scopeUniversal : signature.Universal argument resultOrder)
+      (body : Formula signature real (argument :: apparent) matrixOrder)
+      (fixed : Formula signature real apparent fixedOrder)
+      (result : Formula signature real (argument :: apparent) resultOrder)
+      (reading : ImplicationDisjunction signature real body
+        (fixed.rename (fun v => .succ v)) result) :
+      ImplicationDisjunction signature real
+        (.always matrixUniversal body) fixed
+        (.always scopeUniversal result)
+  | star_9_04
+      (matrixUniversal : signature.Universal argument matrixOrder)
+      (scopeUniversal : signature.Universal argument resultOrder)
+      (fixed : Formula signature real apparent fixedOrder)
+      (body : Formula signature real (argument :: apparent) matrixOrder)
+      (result : Formula signature real (argument :: apparent) resultOrder)
+      (reading : ImplicationDisjunction signature real
+        (fixed.rename (fun v => .succ v)) body result) :
+      ImplicationDisjunction signature real fixed
+        (.always matrixUniversal body)
+        (.always scopeUniversal result)
+  | star_9_05
+      (matrixExistential : ExistentialVocabulary signature argument matrixOrder)
+      (scopeExistential : ExistentialVocabulary signature argument resultOrder)
+      (body : Formula signature real (argument :: apparent) matrixOrder)
+      (fixed : Formula signature real apparent fixedOrder)
+      (result : Formula signature real (argument :: apparent) resultOrder)
+      (reading : ImplicationDisjunction signature real body
+        (fixed.rename (fun v => .succ v)) result) :
+      ImplicationDisjunction signature real
+        (.sometimes matrixExistential body) fixed
+        (.sometimes scopeExistential result)
+  | star_9_06
+      (matrixExistential : ExistentialVocabulary signature argument matrixOrder)
+      (scopeExistential : ExistentialVocabulary signature argument resultOrder)
+      (fixed : Formula signature real apparent fixedOrder)
+      (body : Formula signature real (argument :: apparent) matrixOrder)
+      (result : Formula signature real (argument :: apparent) resultOrder)
+      (reading : ImplicationDisjunction signature real
+        (fixed.rename (fun v => .succ v)) body result) :
+      ImplicationDisjunction signature real fixed
+        (.sometimes matrixExistential body)
+        (.sometimes scopeExistential result)
+  | star_9_07
+      (leftUniversal : signature.Universal leftSort matrixOrder)
+      (rightExistential : ExistentialVocabulary signature rightSort matrixOrder)
+      (scopeUniversal : signature.Universal leftSort
+        (bindOrder matrixOrder rightSort))
+      (disjunction : signature.Disjunction matrixOrder)
+      (leftBody : Formula signature real (leftSort :: apparent) matrixOrder)
+      (rightBody : Formula signature real (rightSort :: apparent) matrixOrder) :
+      ImplicationDisjunction signature real
+        (.always leftUniversal leftBody)
+        (.sometimes rightExistential rightBody)
+        (star_9_07 rightExistential scopeUniversal disjunction
+          (leftBody.rename (fun v => .succ v))
+          (rightBody.rename implicationScopeHead))
+  | star_9_08
+      (leftExistential : ExistentialVocabulary signature leftSort matrixOrder)
+      (rightUniversal : signature.Universal rightSort matrixOrder)
+      (scopeUniversal : signature.Universal rightSort
+        (bindOrder matrixOrder leftSort))
+      (disjunction : signature.Disjunction matrixOrder)
+      (leftBody : Formula signature real (leftSort :: apparent) matrixOrder)
+      (rightBody : Formula signature real (rightSort :: apparent) matrixOrder) :
+      ImplicationDisjunction signature real
+        (.sometimes leftExistential leftBody)
+        (.always rightUniversal rightBody)
+        (star_9_08 leftExistential scopeUniversal disjunction
+          (leftBody.rename implicationScopeHead)
+          (rightBody.rename (fun v => .succ v)))
+
+/-- `formula` is an implication of `p` to `q` in PM's printed sense.  The
+surface `∼` and `∨` are retained as indices even when ✱9·01--·08 eliminate
+them from the root of the resulting ramified tree. -/
+class ImplicationReading
+    (negation : signature.Negation leftOrder)
+    (disjunction : signature.Disjunction (max leftOrder rightOrder))
+    (p : Formula signature real [] leftOrder)
+    (formula : Formula signature real [] formulaOrder)
+    (q : outParam (Formula signature real [] rightOrder)) where
+  negated : Formula signature real [] leftOrder
+  negationDefinition :
+    ImplicationNegation signature real negation p negated
+  disjunctionDefinition :
+    ImplicationDisjunction signature real negated q formula
+
+/-- The automatically inferred ✱1·01 reading preserves every existing
+elementary use of ✱9·12. -/
+instance mixedImplicationReading
+    (negation : signature.Negation leftOrder)
+    (disjunction : signature.Disjunction (max leftOrder rightOrder))
+    (p : Formula signature real [] leftOrder)
+    (q : Formula signature real [] rightOrder) :
+    ImplicationReading negation disjunction p
+      (mixedImplication negation disjunction p q) q where
+  negated := .neg negation p
+  negationDefinition := .star_1_01 negation p
+  disjunctionDefinition := .star_1_01 disjunction (.neg negation p) q
+
+/-- The nested elementary reading keeps `Syll` applications inferable even
+when their antecedent has been named by a local `let`.  It is still only the
+same ✱1·01 computation at the outer implication. -/
+instance (priority := 1100) nestedMixedImplicationReading
+    (innerNegation : signature.Negation leftOrder)
+    (innerDisjunction : signature.Disjunction (max leftOrder middleOrder))
+    (outerNegation : signature.Negation (max leftOrder middleOrder))
+    (outerDisjunction : signature.Disjunction
+      (max (max leftOrder middleOrder) rightOrder))
+    (p : Formula signature real [] leftOrder)
+    (q : Formula signature real [] middleOrder)
+    (r : Formula signature real [] rightOrder) :
+    ImplicationReading outerNegation outerDisjunction
+      (mixedImplication innerNegation innerDisjunction p q)
+      (mixedImplication outerNegation outerDisjunction
+        (.disj innerDisjunction (.neg innerNegation p) q) r) r :=
+  mixedImplicationReading outerNegation outerDisjunction
+    (mixedImplication innerNegation innerDisjunction p q) r
+
 /- PM's ramified deduction judgement.  At ✱12 a certificate exhibits a
 predicative function, and a separate premise derives its pointwise
 equivalence before the existential assertion may be introduced. -/
@@ -1531,13 +2053,18 @@ inductive Derivation {signature : Signature} :
       Derivation (.assertion (mixedImplication negation disjunction
         (sameDisjunction matrixDisjunction (body.instantiate x) (body.instantiate y))
         (.sometimes existential body)))
-  | star_9_12 {leftOrder rightOrder : Nat}
+  /-- ✱9·12. "What is implied by a true premiss is true. Pp."
+  `ImplicationReading` makes PM's word "implied" explicit: at elementary
+  scope it is ✱1·01, while quantified scope is read through ✱9·01--·08. -/
+  | star_9_12 {leftOrder rightOrder implicationOrder : Nat}
       {p : Formula signature real [] leftOrder}
       {q : Formula signature real [] rightOrder}
+      {implicationFormula : Formula signature real [] implicationOrder}
       (negation : signature.Negation leftOrder)
-      (disjunction : signature.Disjunction (max leftOrder rightOrder)) :
-      Derivation (.assertion p) →
-      Derivation (.assertion (mixedImplication negation disjunction p q)) →
+      (disjunction : signature.Disjunction (max leftOrder rightOrder))
+      (premissLine : Derivation (.assertion p))
+      (implicationLine : Derivation (.assertion implicationFormula))
+      [ImplicationReading negation disjunction p implicationFormula q] :
       Derivation (.assertion q)
   | star_9_13 {argument : RSort} {matrixOrder : Nat}
       (universal : signature.Universal argument matrixOrder)
@@ -2027,13 +2554,15 @@ theorem Derivation.star_9_12_same
     (line2 : Derivation (.assertion
       (implication negation disjunction p q))) :
     Derivation (.assertion q) := by
-  apply Derivation.star_9_12 negation
-    (Eq.mp (congrArg signature.Disjunction (natMaxSelf order).symm) disjunction)
-    line1
-  exact Derivation.uncastAssertionOrder (natMaxSelf order)
+  let mixedDisjunction :=
+    Eq.mp (congrArg signature.Disjunction (natMaxSelf order).symm) disjunction
+  have line3 : Derivation (.assertion
+      (mixedImplication negation mixedDisjunction p q)) :=
+    Derivation.uncastAssertionOrder (natMaxSelf order)
     (mixedImplication negation
       (Eq.mp (congrArg signature.Disjunction (natMaxSelf order).symm) disjunction)
       p q) line2
+  exact Derivation.star_9_12 negation mixedDisjunction line1 line3
 
 /-! ### Instantiating a formula that has no apparent variable
 

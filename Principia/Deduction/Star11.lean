@@ -1,12 +1,38 @@
-import Principia.Experimental.CanonicalOrderedFormula
+import Principia.Syntax.CanonicalOrderedFormula
 
 namespace PM.Star11
 
-open PM.Experimental.CanonicalOrderedFormula
+open PM.CanonicalOrderedFormula
+
+/-- Expand an elementary value before substituting it for an apparent
+variable.  Kept local to ✱11 so this module depends directly on the pure
+canonical syntax. -/
+def ofElementaryRaw : Elementary Γ → Raw Γ
+  | .constant name => .elementary (.constant name)
+  | .var entryVar => .elementary (.var entryVar)
+  | .neg proposition => .neg (ofElementaryRaw proposition)
+  | .disj left right => .disj (ofElementaryRaw left) (ofElementaryRaw right)
+
+def instantiateBoundAt (cutoff : Nat) (value : Elementary Γ) : Raw Γ → Raw Γ
+  | .elementary proposition => .elementary proposition
+  | .schema slot => .schema slot
+  | .bound index =>
+      if index = cutoff then ofElementaryRaw value
+      else if cutoff < index then .bound (index - 1) else .bound index
+  | .quantified quantifier body =>
+      .quantified quantifier (instantiateBoundAt (cutoff + 1) value body)
+  | .neg proposition => .neg (instantiateBoundAt cutoff value proposition)
+  | .disj left right =>
+      .disj (instantiateBoundAt cutoff value left)
+        (instantiateBoundAt cutoff value right)
+
+def instantiateHeadRaw (value : Elementary Γ) (body : Raw Γ) : Raw Γ :=
+  instantiateBoundAt 0 value body
 
 /-- Exchange the two apparent variables bound at `depth` and `depth + 1`. -/
 def swapAdjacentBoundAt (depth : Nat) : Raw Γ → Raw Γ
   | .elementary p => .elementary p
+  | .schema slot => .schema slot
   | .bound index =>
       if index = depth then .bound (depth + 1)
       else if index = depth + 1 then .bound depth

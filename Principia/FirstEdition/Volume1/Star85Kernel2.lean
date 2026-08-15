@@ -4,9 +4,6 @@ import Principia.FirstEdition.Volume1.Star85Kernel
 namespace PM.FirstEdition.Volume1.Star85Kernel2
 open Star85Source
 
-private theorem rel_ext {R S : Rel α} (h : ∀ x y, R x y ↔ S x y) : R = S := by
-  funext x y; exact propext (h x y)
-
 theorem star_85_34 (K : Set' (Set' α)) (h : PairwiseDisjoint K) :
     PairwiseDisjoint K := h
 
@@ -32,8 +29,8 @@ theorem star_85_53 (P : Rel α) (s : Set' α) :
 theorem star_85_54 (F G : Rel α → Prop) (h : Similar F G) : Similar F G := h
 
 theorem star_85_56 (P : Rel α) (s : Set' α) :
-    range (restrict P s) = fun y => s y ∧ range P y := by
-  funext y; apply propext; constructor
+    ∀ y, range (restrict P s) y ↔ s y ∧ range P y := by
+  intro y; constructor
   · rintro ⟨x,hxy,hy⟩; exact ⟨hy,x,hxy⟩
   · rintro ⟨hy,x,hxy⟩; exact ⟨x,hxy,hy⟩
 

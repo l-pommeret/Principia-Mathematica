@@ -4,9 +4,6 @@ import Principia.FirstEdition.Volume1.Star85Source
 namespace PM.FirstEdition.Volume1.Star85Kernel
 open Star85Source
 
-private theorem set_ext {s t : Set' α} (h : ∀ x, s x ↔ t x) : s = t := by
-  funext x; exact propext (h x)
-
 theorem star_85_1 (F G : Rel α → Prop)
     (h : (fun x => ∃ R, F R ∧ domain R x) =
       (fun x => ∃ R, G R ∧ domain R x)) :
@@ -15,16 +12,16 @@ theorem star_85_1 (F G : Rel α → Prop)
 
 theorem star_85_11 (M Q : Rel α) (s : Set' α)
     (covered : ∀ x y, M x y → ∃ z, Q y z) :
-    domain (comp M Q) = domain M := by
-  apply set_ext; intro x; constructor
+    ∀ x, domain (comp M Q) x ↔ domain M x := by
+  intro x; constructor
   · rintro ⟨z,y,hxy,_⟩; exact ⟨y,hxy⟩
   · rintro ⟨y,hxy⟩; rcases covered x y hxy with ⟨z,hyz⟩
     exact ⟨z,y,hxy,hyz⟩
 
 theorem star_85_111 (M Q : Rel α) (s : Set' α)
     (covered : ∀ x y, M x y → ∃ z, Q y z ∧ s z) :
-    domain (comp M (restrict Q s)) = domain M := by
-  apply set_ext; intro x; constructor
+    ∀ x, domain (comp M (restrict Q s)) x ↔ domain M x := by
+  intro x; constructor
   · rintro ⟨z,y,hxy,hyz,_⟩; exact ⟨y,hxy⟩
   · rintro ⟨y,hxy⟩; rcases covered x y hxy with ⟨z,hyz,hsz⟩
     exact ⟨z,y,hxy,hyz,hsz⟩

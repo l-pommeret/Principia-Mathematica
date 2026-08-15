@@ -4,6 +4,14 @@ namespace PM.RamifiedSyntax
 
 variable {real : Context}
 
+/-- T4 reading used throughout ✱11. The parsed field is an object-calculus
+claim; the scope note records that PM's dots are resolved by that ramified AST. -/
+structure Star11Reading (signature : Signature) (real : Context) where
+  printed : String
+  parsed : Claim signature real
+  scopeReading : String :=
+    "PM's scope dots and apparent-variable binders are represented by the parsed ramified AST."
+
 private theorem detach
     (negation : signature.Negation order)
     (disjunction : signature.Disjunction order)
@@ -37,6 +45,234 @@ The primitive propositions are exposed first; the derived propositions below
 keep the printed PM line structure visible in their proof terms.
 -/
 
+/-! ## The eliminable definitions ✱11·01--·06
+
+These declarations retain the grouping printed by PM.  In particular the
+two- and three-place existential signs are nested applications of
+`Formula.sometimes`; they are not replaced by a logically equivalent single
+negated universal closure.
+-/
+
+/-- ✱11·01: `(x,y).φ(x,y) := (x):(y).φ(x,y)`. -/
+def star_11_01
+    (inner : signature.Universal leftSort matrixOrder)
+    (outer : signature.Universal rightSort
+      (bindOrder matrixOrder leftSort))
+    (body : Formula signature real (leftSort :: rightSort :: apparent)
+      matrixOrder) :
+    Formula signature real apparent
+      (bindOrder (bindOrder matrixOrder leftSort) rightSort) :=
+  body.always₂ inner outer
+
+theorem star_11_01_unfold
+    (inner : signature.Universal leftSort matrixOrder)
+    (outer : signature.Universal rightSort
+      (bindOrder matrixOrder leftSort))
+    (body : Formula signature real (leftSort :: rightSort :: apparent)
+      matrixOrder) :
+    star_11_01 inner outer body =
+      .always outer (.always inner body) := rfl
+
+/-- Audited scope reading of ✱11·01. -/
+def star_11_01_reading
+    (inner : signature.Universal leftSort matrixOrder)
+    (outer : signature.Universal rightSort
+      (bindOrder matrixOrder leftSort))
+    (body : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Star11Reading signature real where
+  printed := "(x, y).φ(x, y) .= : (x) : (y).φ(x, y)  Df"
+  parsed := .assertion (star_11_01 inner outer body)
+
+/-- ✱11·02: `(x,y,z).φ := (x):(y,z).φ`. -/
+def star_11_02
+    (first : signature.Universal firstSort matrixOrder)
+    (second : signature.Universal secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : signature.Universal thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (body : Formula signature real
+      (firstSort :: secondSort :: thirdSort :: apparent) matrixOrder) :
+    Formula signature real apparent
+      (bindOrder
+        (bindOrder (bindOrder matrixOrder firstSort) secondSort) thirdSort) :=
+  .always third (.always second (.always first body))
+
+theorem star_11_02_unfold
+    (first : signature.Universal firstSort matrixOrder)
+    (second : signature.Universal secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : signature.Universal thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (body : Formula signature real
+      (firstSort :: secondSort :: thirdSort :: apparent) matrixOrder) :
+    star_11_02 first second third body =
+      .always third (.always second (.always first body)) := rfl
+
+/-- Audited scope reading of ✱11·02. -/
+def star_11_02_reading
+    (first : signature.Universal firstSort matrixOrder)
+    (second : signature.Universal secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : signature.Universal thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (body : Formula signature real
+      [firstSort, secondSort, thirdSort] matrixOrder) :
+    Star11Reading signature real where
+  printed := "(x, y, z).φ(x, y, z) .= : (x) : (y, z).φ(x, y, z)  Df"
+  parsed := .assertion (star_11_02 first second third body)
+
+/-- ✱11·03: `(∃x,y).φ := (∃x):(∃y).φ`. -/
+def star_11_03
+    (inner : ExistentialVocabulary signature leftSort matrixOrder)
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder matrixOrder leftSort))
+    (body : Formula signature real (leftSort :: rightSort :: apparent)
+      matrixOrder) :
+    Formula signature real apparent
+      (bindOrder (bindOrder matrixOrder leftSort) rightSort) :=
+  Formula.sometimes outer (Formula.sometimes inner body)
+
+theorem star_11_03_unfold
+    (inner : ExistentialVocabulary signature leftSort matrixOrder)
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder matrixOrder leftSort))
+    (body : Formula signature real (leftSort :: rightSort :: apparent)
+      matrixOrder) :
+    star_11_03 inner outer body =
+      Formula.sometimes outer (Formula.sometimes inner body) := rfl
+
+/-- Audited scope reading of ✱11·03. -/
+def star_11_03_reading
+    (inner : ExistentialVocabulary signature leftSort matrixOrder)
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder matrixOrder leftSort))
+    (body : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Star11Reading signature real where
+  printed := "(∃x, y).φ(x, y) .= : (∃x) : (∃y).φ(x, y)  Df"
+  parsed := .assertion (star_11_03 inner outer body)
+
+/-- ✱11·04: `(∃x,y,z).φ := (∃x):(∃y,z).φ`. -/
+def star_11_04
+    (first : ExistentialVocabulary signature firstSort matrixOrder)
+    (second : ExistentialVocabulary signature secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : ExistentialVocabulary signature thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (body : Formula signature real
+      (firstSort :: secondSort :: thirdSort :: apparent) matrixOrder) :
+    Formula signature real apparent
+      (bindOrder
+        (bindOrder (bindOrder matrixOrder firstSort) secondSort) thirdSort) :=
+  Formula.sometimes third
+    (Formula.sometimes second (Formula.sometimes first body))
+
+theorem star_11_04_unfold
+    (first : ExistentialVocabulary signature firstSort matrixOrder)
+    (second : ExistentialVocabulary signature secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : ExistentialVocabulary signature thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (body : Formula signature real
+      (firstSort :: secondSort :: thirdSort :: apparent) matrixOrder) :
+    star_11_04 first second third body =
+      Formula.sometimes third
+        (Formula.sometimes second (Formula.sometimes first body)) := rfl
+
+/-- Audited scope reading of ✱11·04. -/
+def star_11_04_reading
+    (first : ExistentialVocabulary signature firstSort matrixOrder)
+    (second : ExistentialVocabulary signature secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : ExistentialVocabulary signature thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (body : Formula signature real
+      [firstSort, secondSort, thirdSort] matrixOrder) :
+    Star11Reading signature real where
+  printed := "(∃x, y, z).φ(x, y, z) .= : (∃x) : (∃y, z).φ(x, y, z)  Df"
+  parsed := .assertion (star_11_04 first second third body)
+
+/-- ✱11·05: binary pointwise implication. -/
+def star_11_05
+    (inner : signature.Universal leftSort (max leftOrder rightOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max leftOrder rightOrder) leftSort))
+    (negation : signature.Negation leftOrder)
+    (disjunction : signature.Disjunction (max leftOrder rightOrder))
+    (phi : Formula signature real (leftSort :: rightSort :: apparent)
+      leftOrder)
+    (psi : Formula signature real (leftSort :: rightSort :: apparent)
+      rightOrder) :
+    Formula signature real apparent
+      (bindOrder (bindOrder (max leftOrder rightOrder) leftSort) rightSort) :=
+  .always outer (.always inner
+    (mixedImplication negation disjunction phi psi))
+
+theorem star_11_05_unfold
+    (inner : signature.Universal leftSort (max leftOrder rightOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max leftOrder rightOrder) leftSort))
+    (negation : signature.Negation leftOrder)
+    (disjunction : signature.Disjunction (max leftOrder rightOrder))
+    (phi : Formula signature real (leftSort :: rightSort :: apparent)
+      leftOrder)
+    (psi : Formula signature real (leftSort :: rightSort :: apparent)
+      rightOrder) :
+    star_11_05 inner outer negation disjunction phi psi =
+      .always outer (.always inner
+        (mixedImplication negation disjunction phi psi)) := rfl
+
+/-- Audited scope reading of ✱11·05. -/
+def star_11_05_reading
+    (inner : signature.Universal leftSort (max leftOrder rightOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max leftOrder rightOrder) leftSort))
+    (negation : signature.Negation leftOrder)
+    (disjunction : signature.Disjunction (max leftOrder rightOrder))
+    (phi : Formula signature real [leftSort, rightSort] leftOrder)
+    (psi : Formula signature real [leftSort, rightSort] rightOrder) :
+    Star11Reading signature real where
+  printed :=
+    "φ(x, y) .⊃ₓ,ᵧ. ψ(x, y) .= : (x, y) : φ(x, y) .⊃ .ψ(x, y)  Df"
+  parsed := .assertion
+    (star_11_05 inner outer negation disjunction phi psi)
+
+/-- ✱11·06: binary pointwise equivalence at one assigned order. -/
+def star_11_06
+    (inner : signature.Universal leftSort order)
+    (outer : signature.Universal rightSort (bindOrder order leftSort))
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (phi psi : Formula signature real
+      (leftSort :: rightSort :: apparent) order) :
+    Formula signature real apparent
+      (bindOrder (bindOrder order leftSort) rightSort) :=
+  .always outer (.always inner
+    (equivalence negation disjunction phi psi))
+
+theorem star_11_06_unfold
+    (inner : signature.Universal leftSort order)
+    (outer : signature.Universal rightSort (bindOrder order leftSort))
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (phi psi : Formula signature real
+      (leftSort :: rightSort :: apparent) order) :
+    star_11_06 inner outer negation disjunction phi psi =
+      .always outer (.always inner
+        (equivalence negation disjunction phi psi)) := rfl
+
+/-- Audited scope reading of ✱11·06. -/
+def star_11_06_reading
+    (inner : signature.Universal leftSort order)
+    (outer : signature.Universal rightSort (bindOrder order leftSort))
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (phi psi : Formula signature real [leftSort, rightSort] order) :
+    Star11Reading signature real where
+  printed :=
+    "φ(x, y) .≡ₓ,ᵧ. ψ(x, y) .= : (x, y) : φ(x, y) .≡ .ψ(x, y)  Df"
+  parsed := .assertion
+    (star_11_06 inner outer negation disjunction phi psi)
+
 /-- Catalogue reading of the primitive proposition ✱11·07. -/
 def star_11_07_reading
     (leftInner : signature.Universal leftSort matrixOrder)
@@ -51,7 +287,7 @@ def star_11_07_reading
       (max (bindOrder (bindOrder matrixOrder leftSort) rightSort)
         (bindOrder (bindOrder matrixOrder rightSort) leftSort)))
     (body : Formula signature real [leftSort, rightSort] matrixOrder) :
-    ClaimReading signature real where
+    Star11Reading signature real where
   printed := "“Whatever possible argument x may be, φ(x, y) is true whatever\npossible argument y may be” implies the corresponding statement with x and y\ninterchanged.  Pp."
   parsed := .assertion (star_11_07_formula leftInner rightOuter rightInner
     leftOuter negation disjunction body)
@@ -87,7 +323,7 @@ def star_11_1_reading
       (max (bindOrder (bindOrder matrixOrder leftSort) rightSort) matrixOrder))
     (body : Formula signature real [leftSort, rightSort] matrixOrder)
     (z : Term signature real [] leftSort)
-    (w : Term signature real [] rightSort) : ClaimReading signature real where
+    (w : Term signature real [] rightSort) : Star11Reading signature real where
   printed := "⊢ : (x, y).φ(x, y) .⊃ .φ(z, w)"
   parsed := .assertion
     (star_11_1_formula inner outer negation disjunction body z w)
@@ -114,7 +350,7 @@ def star_11_11_reading
     (outer : signature.Universal rightSort
       (bindOrder matrixOrder leftSort))
     (body : Formula signature real [leftSort, rightSort] matrixOrder) :
-    ClaimReading signature real where
+    Star11Reading signature real where
   printed := "If φ(z, w) is true whatever possible arguments z and w may be,\nthen (x, y).φ(x, y) is true."
   parsed := .assertion (body.always₂ inner outer)
 
@@ -131,13 +367,111 @@ theorem star_11_11
   have line1 := Derivation.star_11_11 inner outer body hypothesis
   exact line1
 
+def star_11_12_left
+    (inner : signature.Universal leftSort (max fixedOrder matrixOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (body : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Formula signature real []
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort) :=
+  .always outer (.always inner
+    (.disj matrixDisjunction
+      ((p.rename (emptyRenaming (target := [rightSort]))).rename
+        (fun v => .succ v))
+      body))
+
+/-- The printed right member `p ∨ (x,y).φ(x,y)`.  Its root is the outer
+universal binder required by scope; the remaining `p ∨ (x).φ` is represented
+by ✱9·04, not by a raw disjunction with a quantified argument. -/
+def star_11_12_right
+    (inner : signature.Universal leftSort (max fixedOrder matrixOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (body : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Formula signature real []
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort) :=
+  .always outer
+    (star_9_04 inner matrixDisjunction
+      (p.rename (emptyRenaming (target := [rightSort]))) body)
+
+theorem star_11_12_right_unfold
+    (inner : signature.Universal leftSort (max fixedOrder matrixOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (body : Formula signature real [leftSort, rightSort] matrixOrder) :
+    star_11_12_right inner outer matrixDisjunction p body =
+      star_11_12_left inner outer matrixDisjunction p body := by
+  unfold star_11_12_right star_11_12_left
+  rw [star_9_04_unfold]
+
+def star_11_12_reading
+    (inner : signature.Universal leftSort (max fixedOrder matrixOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (outerNegation : signature.Negation
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
+    (p : Formula signature real [] fixedOrder)
+    (body : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Star11Reading signature real where
+  printed := "⊢ : .(x, y).p∨φ(x, y) .⊃ : p .∨ .(x, y).φ(x, y)"
+  parsed := .assertion (implication outerNegation outerDisjunction
+    (star_11_12_left inner outer matrixDisjunction p body)
+    (star_11_12_right inner outer matrixDisjunction p body))
+  scopeReading := "The right member is rooted at the outer universal and retains ✱9·04 at the inner scope; unfolding that Df yields the independently built left member."
+
+/-- ✱11·12.  PM's two occurrences of ✱10·12 reduce to the same ✱9·04
+scope rewrite; the intervening generalization supplies the outer binder.
+`demonstration_provenance: follows-printed-definitional-normalization`. -/
+theorem star_11_12
+    (inner : signature.Universal leftSort (max fixedOrder matrixOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (outerNegation : signature.Negation
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
+    (p : Formula signature real [] fixedOrder)
+    (body : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Derivation (star_11_12_reading inner outer matrixDisjunction
+      outerNegation outerDisjunction p body).parsed := by
+  have line1 := star_2_08 outerNegation outerDisjunction
+    (star_11_12_left inner outer matrixDisjunction p body)
+  have line2 : Derivation (.assertion (implication outerNegation
+      outerDisjunction
+      (star_11_12_left inner outer matrixDisjunction p body)
+      (star_11_12_right inner outer matrixDisjunction p body))) := by
+    rw [star_11_12_right_unfold]
+    exact line1
+  exact line2
+
 
 /-- Catalogue reading of the metalinguistic rule ✱11·13. -/
 def star_11_13_reading
     (negation : signature.Negation order)
     (disjunction : signature.Disjunction order)
     (phi psi : Formula signature real [] order) :
-    ClaimReading signature real where
+    Star11Reading signature real where
   printed := "If φ(x̂, ŷ), ψ(x̂, ŷ) take their first and second arguments respectively\nof the same type, and we have “⊢.φ(x, y)” and “⊢.ψ(x, y),” we shall have\n“⊢.φ(x, y).ψ(x, y).”  [Proof as in ✱10·13]"
   parsed := .assertion (conjunction negation disjunction phi psi)
 
@@ -158,7 +492,7 @@ def star_11_311_reading
     (negation : signature.Negation order)
     (disjunction : signature.Disjunction order)
     (phi psi : Formula signature real [] order) :
-    ClaimReading signature real where
+    Star11Reading signature real where
   printed := "If φ(x̂, ŷ), ψ(x̂, ŷ) take arguments of the same type, and we have\n“⊢.φ(x, y)” and “⊢.ψ(x, y),” we shall have “⊢.φ(x, y).ψ(x, y).”\n[Proof as in ✱10·13.]"
   parsed := .assertion (conjunction negation disjunction phi psi)
 
@@ -204,6 +538,16 @@ private def Formula.always₂Saturated
   Eq.mp (congrArg (Formula signature real [])
     (always₂Saturated_order baseOrder sort))
     (body.always₂ inner outer)
+
+private def Formula.sometimes₂Saturated
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
+    Formula signature real [] (bindOrder baseOrder sort) :=
+  Formula.neg negation
+    (Formula.always₂Saturated inner outer (Formula.neg negation body))
 
 private theorem castAssertionOrder
     (equality : sourceOrder = targetOrder)
@@ -277,6 +621,76 @@ private theorem star_11_11_saturated
   have line1 := PM.RamifiedSyntax.star_11_11 inner outer body premise
   exact castAssertionOrder (always₂Saturated_order baseOrder sort)
     (body.always₂ inner outer) line1
+
+def star_11_14_left
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :
+    Formula signature real [] (bindOrder baseOrder sort) :=
+  conjunction negation disjunction
+    (Formula.always₂Saturated inner outer phi)
+    (Formula.always₂Saturated inner outer psi)
+
+def star_11_14_right
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort))
+    (left right : Term signature real [] sort) :
+    Formula signature real [] (bindOrder baseOrder sort) :=
+  conjunction negation disjunction
+    (phi.instantiate₂ left right) (psi.instantiate₂ left right)
+
+def star_11_14_reading
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort))
+    (left right : Term signature real [] sort) :
+    Star11Reading signature real where
+  printed := "⊢ : .(x, y).φ(x, y) : (x, y).ψ(x, y) .⊃ .φ(z, w).ψ(z, w)"
+  parsed := .assertion (implication negation disjunction
+    (star_11_14_left inner outer negation disjunction phi psi)
+    (star_11_14_right negation disjunction phi psi left right))
+  scopeReading := "The antecedent is the conjunction of the two independently closed matrices; the consequent is the conjunction of their independently specialized instances."
+
+/-- ✱11·14.  The two printed occurrences of ✱10·14 are the two
+specializations; propositional combination gives the displayed conjunction.
+`demonstration_provenance: follows-printed`. -/
+theorem star_11_14
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort))
+    (left right : Term signature real [] sort) :
+    Derivation
+      (star_11_14_reading inner outer negation disjunction
+        phi psi left right).parsed := by
+  let phiClosed := Formula.always₂Saturated inner outer phi
+  let psiClosed := Formula.always₂Saturated inner outer psi
+  let phiInstance := phi.instantiate₂ left right
+  let psiInstance := psi.instantiate₂ left right
+  have line1a := star_11_1_saturated inner outer negation disjunction
+    phi left right
+  have line1b := star_11_1_saturated inner outer negation disjunction
+    psi left right
+  have line1 := conjoin negation disjunction
+    (implication negation disjunction phiClosed phiInstance)
+    (implication negation disjunction psiClosed psiInstance) line1a line1b
+  have line2 := star_3_47 negation disjunction
+    phiClosed psiClosed phiInstance psiInstance
+  have line3 := detach negation disjunction _ _ line1 line2
+  exact line3
 
 private def emptyRenaming₂ (target : Context) : Renaming [] target := by
   intro sort v
@@ -520,6 +934,48 @@ private theorem Formula.substitute_substitute
             (liftSubstitution (substitutionAfterSubstitution sigma tau))))
           (Eq.trans continuationLine1 continuationLine2))
 
+private def renamingSubstitution
+    (rho : Renaming source target) :
+    Substitution signature real source target :=
+  fun v => .apparent (rho v)
+
+private theorem Formula.rename_eq_substitute
+    (rho : Renaming source target)
+    (formula : Formula signature real source order) :
+    formula.rename rho = formula.substitute (renamingSubstitution rho) := by
+  let identity : Substitution signature real target target :=
+    fun v => .apparent v
+  have line1 := Formula.substitute_eq_self (formula.rename rho)
+    (sigma := identity) (fun _ => rfl)
+  have line2 := Formula.rename_substitute_of_pointwise rho identity
+    (renamingSubstitution rho) (fun _ => rfl) formula
+  exact Eq.trans line1.symm line2
+
+private theorem Formula.swapHeads_involutive
+    (formula : Formula signature real [sort, sort] order) :
+    formula.swapHeads.swapHeads = formula := by
+  unfold Formula.swapHeads
+  calc
+    (formula.rename swapHeadsRenaming).rename swapHeadsRenaming =
+        (formula.rename swapHeadsRenaming).substitute
+          (renamingSubstitution swapHeadsRenaming) :=
+      Formula.rename_eq_substitute swapHeadsRenaming
+        (formula.rename swapHeadsRenaming)
+    _ = formula.substitute
+        (substitutionAfterRenaming swapHeadsRenaming
+          (renamingSubstitution swapHeadsRenaming)) :=
+      Formula.rename_substitute swapHeadsRenaming
+        (renamingSubstitution swapHeadsRenaming) formula
+    _ = formula := by
+      apply Formula.substitute_eq_self
+      intro targetSort v
+      cases v with
+      | zero => rfl
+      | succ v =>
+          cases v with
+          | zero => rfl
+          | succ v => rfl
+
 private def Formula.weakenApparent₂
     (formula : Formula signature real [] order) :
     Formula signature real [sort, sort] order :=
@@ -651,57 +1107,98 @@ private theorem star_11_1_via_star_11_07_star_11_11_star_11_12
     (Formula.always₂Saturated inner outer matrix)
     (Formula.always₂Saturated inner outer matrix.swapHeads) line2 line3
 
-private def star_11_2_left
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :=
-  Formula.always₂Saturated inner outer
-    (star_11_12_matrix inner outer negation disjunction body).swapHeads
+def star_11_2_left
+    (inner : signature.Universal sort matrixOrder)
+    (outer : signature.Universal sort (bindOrder matrixOrder sort))
+    (body : Formula signature real [sort, sort] matrixOrder) :
+    Formula signature real []
+      (bindOrder (bindOrder matrixOrder sort) sort) :=
+  star_11_01 inner outer body
 
-private def star_11_2_right
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :=
-  Formula.always₂Saturated inner outer
-    (star_11_12_matrix inner outer negation disjunction body.swapHeads).swapHeads
+def star_11_2_right
+    (inner : signature.Universal sort matrixOrder)
+    (outer : signature.Universal sort (bindOrder matrixOrder sort))
+    (body : Formula signature real [sort, sort] matrixOrder) :
+    Formula signature real []
+      (bindOrder (bindOrder matrixOrder sort) sort) :=
+  star_11_01 inner outer body.swapHeads
+
+private theorem star_11_07_normalized
+    (inner : signature.Universal sort matrixOrder)
+    (outer : signature.Universal sort (bindOrder matrixOrder sort))
+    (negation : signature.Negation
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (disjunction : signature.Disjunction
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (body : Formula signature real [sort, sort] matrixOrder) :
+    ⊢ᵣ implication negation disjunction
+      (star_11_2_left inner outer body)
+      (star_11_2_right inner outer body) := by
+  let closureOrder := bindOrder (bindOrder matrixOrder sort) sort
+  let pairEq := natMaxSelf closureOrder
+  let rawDisjunction := Eq.mp
+    (congrArg signature.Disjunction pairEq.symm) disjunction
+  have line1 := Derivation.star_11_07 inner outer inner outer negation
+    rawDisjunction body
+  have line2 := castAssertionOrder pairEq
+    (star_11_07_formula inner outer inner outer negation rawDisjunction body)
+    line1
+  have line3 := mixedImplication_normalizeSameOrder rfl rfl
+    negation disjunction (star_11_2_left inner outer body)
+      (star_11_2_right inner outer body)
+  exact Derivation.castAssertion line3.symm line2
+
+private theorem star_11_07_normalized_reverse
+    (inner : signature.Universal sort matrixOrder)
+    (outer : signature.Universal sort (bindOrder matrixOrder sort))
+    (negation : signature.Negation
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (disjunction : signature.Disjunction
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (body : Formula signature real [sort, sort] matrixOrder) :
+    ⊢ᵣ implication negation disjunction
+      (star_11_2_right inner outer body)
+      (star_11_2_left inner outer body) := by
+  have line1 := star_11_07_normalized inner outer negation disjunction
+    body.swapHeads
+  have line2 : body.swapHeads.swapHeads = body :=
+    Formula.swapHeads_involutive body
+  have line3 := congrArg (fun nextBody => star_11_01 inner outer nextBody) line2
+  exact Derivation.castAssertion
+    (congrArg (implication negation disjunction
+      (star_11_2_right inner outer body)) line3).symm line1
 
 def star_11_2_reading
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    ClaimReading signature real where
+    (inner : signature.Universal sort matrixOrder)
+    (outer : signature.Universal sort (bindOrder matrixOrder sort))
+    (negation : signature.Negation
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (disjunction : signature.Disjunction
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (body : Formula signature real [sort, sort] matrixOrder) :
+    Star11Reading signature real where
   printed := "⊢ : (x, y).φ(x, y) .≡ .(y, x).φ(x, y)"
-  parsed := .assertion (conjunction negation disjunction
-    (star_11_2_left inner outer negation disjunction body)
-    (star_11_2_right inner outer negation disjunction body))
+  parsed := .assertion (star_4_01 negation disjunction
+    (star_11_2_left inner outer body)
+    (star_11_2_right inner outer body))
+  scopeReading := "The two universal closures are built independently from ✱11·01; the second closes the de Bruijn-transposed matrix."
 
-/-- ✱11·2 suit les lignes (1)–(4) imprimées.
+/-- ✱11·2.  Lines (3) and (4) are the two orientations of primitive
+✱11·07; ✱4·01 joins them into the printed equivalence.
 `demonstration_provenance: follows-printed`. -/
 theorem star_11_2
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
+    (inner : signature.Universal sort matrixOrder)
+    (outer : signature.Universal sort (bindOrder matrixOrder sort))
+    (negation : signature.Negation
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (disjunction : signature.Disjunction
+      (bindOrder (bindOrder matrixOrder sort) sort))
+    (body : Formula signature real [sort, sort] matrixOrder) :
     Derivation (star_11_2_reading inner outer negation disjunction body).parsed := by
-  have line1 := star_11_1_via_star_11_07_star_11_11_star_11_12
-    inner outer negation disjunction body
-  have line2 := star_11_1_via_star_11_07_star_11_11_star_11_12
-    inner outer negation disjunction body.swapHeads
-  have line3 := PM.RamifiedSyntax.star_11_13 negation disjunction
-    (star_11_2_left inner outer negation disjunction body)
-    (star_11_2_right inner outer negation disjunction body) line1 line2
-  exact line3
+  have line3 := star_11_07_normalized inner outer negation disjunction body
+  have line4 := star_11_07_normalized_reverse inner outer negation disjunction body
+  have line5 := conjoin negation disjunction _ _ line3 line4
+  exact line5
 
 private def star_10_27_body
     (inner : signature.Universal sort (bindOrder baseOrder sort))
@@ -937,7 +1434,7 @@ def star_11_32_reading
     (negation : signature.Negation (bindOrder baseOrder sort))
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    ClaimReading signature real where
+    Star11Reading signature real where
   printed := "⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : ⊃ :\n(x, y).φ(x, y) .⊃ .(x, y).ψ(x, y)"
   parsed := .assertion (Formula.always₂Saturated inner outer
     (star_10_27_body inner outer negation disjunction phi psi))
@@ -951,7 +1448,8 @@ theorem star_11_32
     (negation : signature.Negation (bindOrder baseOrder sort))
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    Derivation (star_11_32_reading inner outer negation disjunction phi psi).parsed := by
+    Derivation (.assertion (Formula.always₂Saturated inner outer
+      (star_10_27_body inner outer negation disjunction phi psi))) := by
   have line1 := star_10_27_instance inner outer negation disjunction phi psi
   exact line1
 
@@ -962,7 +1460,7 @@ def star_11_33_reading
     (negation : signature.Negation (bindOrder baseOrder sort))
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    ClaimReading signature real where
+    Star11Reading signature real where
   printed := "⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : ⊃ :\n(x, y).φ(x, y) .≡ .(x, y).ψ(x, y)"
   parsed := .assertion (Formula.always₂Saturated inner outer
     (star_10_271_body inner outer negation disjunction phi psi))
@@ -976,9 +1474,24 @@ theorem star_11_33
     (negation : signature.Negation (bindOrder baseOrder sort))
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    Derivation (star_11_33_reading inner outer negation disjunction phi psi).parsed := by
+    Derivation (.assertion (Formula.always₂Saturated inner outer
+      (star_10_271_body inner outer negation disjunction phi psi))) := by
   have line1 := star_10_271_instance inner outer negation disjunction phi psi
   exact line1
+
+private def star_11_31_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  Formula.always₂Saturated inner outer
+    (sameConjunction negation disjunction phi psi)
+
+/- ✱11·31 is intentionally absent: its two printed members were both
+encoded as `star_11_31_normalForm`, turning the theorem into reflexivity. -/
 
 private def star_11_37_body
     (inner : signature.Universal sort (bindOrder baseOrder sort))
@@ -1072,7 +1585,7 @@ def star_11_37_reading
     (negation : signature.Negation (bindOrder baseOrder sort))
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi chi : Formula signature real [sort, sort]
-      (bindOrder baseOrder sort)) : ClaimReading signature real where
+      (bindOrder baseOrder sort)) : Star11Reading signature real where
   printed := "⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : .(x, y) :\nψ(x, y) .⊃ .χ(x, y) :. ⊃ : (x, y) : φ(x, y) .⊃ .χ(x, y)"
   parsed := .assertion (Formula.always₂Saturated inner outer
     (star_11_37_body inner outer negation disjunction phi psi chi))
@@ -1087,7 +1600,8 @@ theorem star_11_37
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi chi : Formula signature real [sort, sort]
       (bindOrder baseOrder sort)) :
-    Derivation (star_11_37_reading inner outer negation disjunction phi psi chi).parsed := by
+    Derivation (.assertion (Formula.always₂Saturated inner outer
+      (star_11_37_body inner outer negation disjunction phi psi chi))) := by
   have line1 := star_11_31_star_11_11_star_11_32_instance
     inner outer negation disjunction phi psi chi
   exact line1
@@ -1099,6 +1613,131 @@ private def star_11_4_equivalenceMatrix
   sameConjunction negation disjunction
     (implication negation disjunction phi psi)
     (implication negation disjunction psi phi)
+
+private def star_11_371_body
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  let first := Formula.always₂Saturated inner outer
+    (star_11_4_equivalenceMatrix negation disjunction phi psi)
+  let second := Formula.always₂Saturated inner outer
+    (star_11_4_equivalenceMatrix negation disjunction psi chi)
+  implication negation disjunction
+    (sameConjunction negation disjunction
+      (Formula.weakenApparent₂ (sort := sort) first)
+      (Formula.weakenApparent₂ (sort := sort) second))
+    (star_11_4_equivalenceMatrix negation disjunction phi chi)
+
+private theorem star_11_31_star_11_11_star_11_33_instance
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :
+    ⊢ᵣ Formula.always₂Saturated inner outer
+      (star_11_371_body inner outer negation disjunction phi psi chi) := by
+  apply star_11_11_saturated inner outer
+    (star_11_371_body inner outer negation disjunction phi psi chi)
+  intro left right
+  let firstMatrix := star_11_4_equivalenceMatrix negation disjunction phi psi
+  let secondMatrix := star_11_4_equivalenceMatrix negation disjunction psi chi
+  let first := Formula.always₂Saturated inner outer firstMatrix
+  let second := Formula.always₂Saturated inner outer secondMatrix
+  let hypothesis := conjunction negation disjunction first second
+  let phiInstance := phi.instantiate₂ left right
+  let psiInstance := psi.instantiate₂ left right
+  let chiInstance := chi.instantiate₂ left right
+  let firstInstance := star_4_01 negation disjunction phiInstance psiInstance
+  let secondInstance := star_4_01 negation disjunction psiInstance chiInstance
+  let conclusion := star_4_01 negation disjunction phiInstance chiInstance
+  have line1Raw := star_11_1_saturated inner outer negation disjunction
+    firstMatrix left right
+  have firstEq : firstMatrix.instantiate₂ left right = firstInstance := by
+    dsimp [firstMatrix, firstInstance, star_11_4_equivalenceMatrix,
+      star_4_01]
+    rw [Formula.sameConjunction_instantiate₂,
+      Formula.implication_instantiate₂,
+      Formula.implication_instantiate₂,
+      sameConjunction_eq_conjunction]
+  have line1a := Derivation.castAssertion
+    (congrArg (implication negation disjunction first) firstEq.symm) line1Raw
+  have line1 := compose negation disjunction hypothesis first firstInstance
+    (star_3_26 negation disjunction first second) line1a
+  have line2Raw := star_11_1_saturated inner outer negation disjunction
+    secondMatrix left right
+  have secondEq : secondMatrix.instantiate₂ left right = secondInstance := by
+    dsimp [secondMatrix, secondInstance, star_11_4_equivalenceMatrix,
+      star_4_01]
+    rw [Formula.sameConjunction_instantiate₂,
+      Formula.implication_instantiate₂,
+      Formula.implication_instantiate₂,
+      sameConjunction_eq_conjunction]
+  have line2a := Derivation.castAssertion
+    (congrArg (implication negation disjunction second) secondEq.symm) line2Raw
+  have line2 := compose negation disjunction hypothesis second secondInstance
+    (star_3_27 negation disjunction first second) line2a
+  have line3a := conjoin negation disjunction
+    (implication negation disjunction hypothesis firstInstance)
+    (implication negation disjunction hypothesis secondInstance) line1 line2
+  have line3b := star_3_43 negation disjunction hypothesis
+    firstInstance secondInstance
+  have line3 := detach negation disjunction _ _ line3a line3b
+  have line4 := star_4_22 negation disjunction
+    phiInstance psiInstance chiInstance
+  have line5 := compose negation disjunction hypothesis
+    (conjunction negation disjunction firstInstance secondInstance)
+    conclusion line3 line4
+  have bodyEq :
+      (star_11_371_body inner outer negation disjunction phi psi chi).instantiate₂
+          left right = implication negation disjunction hypothesis conclusion := by
+    dsimp [star_11_371_body, firstMatrix, secondMatrix, first, second,
+      hypothesis, phiInstance, psiInstance, chiInstance, conclusion,
+      star_11_4_equivalenceMatrix, star_4_01]
+    rw [Formula.implication_instantiate₂,
+      Formula.sameConjunction_instantiate₂,
+      Formula.sameConjunction_instantiate₂,
+      Formula.implication_instantiate₂,
+      Formula.implication_instantiate₂,
+      Formula.weakenApparent₂_instantiate₂,
+      Formula.weakenApparent₂_instantiate₂,
+      sameConjunction_eq_conjunction,
+      sameConjunction_eq_conjunction]
+  exact Derivation.castAssertion bodyEq line5
+
+def star_11_371_reading
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) : Star11Reading signature real where
+  printed := "⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : .(x, y) :\nψ(x, y) .≡ .χ(x, y) :. ⊃ : (x, y) : φ(x, y) .≡ .χ(x, y)\n[✱11·31·11·33]"
+  parsed := .assertion (Formula.always₂Saturated inner outer
+    (star_11_371_body inner outer negation disjunction phi psi chi))
+
+/-- ✱11·371.  The two pointwise equivalences are specialized, composed by
+✱4·22, and generalized exactly in the order cited by PM.
+`demonstration_provenance: follows-printed`. -/
+theorem star_11_371
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :
+    Derivation (star_11_371_reading inner outer negation disjunction
+      phi psi chi).parsed := by
+  have line1 := star_11_31_star_11_11_star_11_33_instance
+    inner outer negation disjunction phi psi chi
+  exact line1
 
 private def star_11_4_body
     (inner : signature.Universal sort (bindOrder baseOrder sort))
@@ -1222,7 +1861,7 @@ def star_11_4_reading
     (negation : signature.Negation (bindOrder baseOrder sort))
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi chi theta : Formula signature real [sort, sort]
-      (bindOrder baseOrder sort)) : ClaimReading signature real where
+      (bindOrder baseOrder sort)) : Star11Reading signature real where
   printed := "⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : .(x, y) :\nχ(x, y) .≡ .θ(x, y) :. ⊃ : (x, y) : φ(x, y).χ(x, y) .≡ .ψ(x, y).θ(x, y)"
   parsed := .assertion (Formula.always₂Saturated inner outer
     (star_11_4_body inner outer negation disjunction phi psi chi theta))
@@ -1237,122 +1876,1131 @@ theorem star_11_4
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi chi theta : Formula signature real [sort, sort]
       (bindOrder baseOrder sort)) :
-    Derivation (star_11_4_reading inner outer negation disjunction
-      phi psi chi theta).parsed := by
+    Derivation (.assertion (Formula.always₂Saturated inner outer
+      (star_11_4_body inner outer negation disjunction phi psi chi theta))) := by
   have line1 := star_11_31_star_4_38_star_11_11_star_11_32_instance
     inner outer negation disjunction phi psi chi theta
   exact line1
 
-private def star_11_3_common
+private def star_11_401_body
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  let hypothesis := Formula.always₂Saturated inner outer
+    (star_11_4_equivalenceMatrix negation disjunction phi psi)
+  implication negation disjunction
+    (Formula.weakenApparent₂ (sort := sort) hypothesis)
+    (star_11_4_equivalenceMatrix negation disjunction
+      (sameConjunction negation disjunction phi chi)
+      (sameConjunction negation disjunction psi chi))
+
+private theorem star_11_4_chi_id_instance
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :
+    ⊢ᵣ Formula.always₂Saturated inner outer
+      (star_11_401_body inner outer negation disjunction phi psi chi) := by
+  apply star_11_11_saturated inner outer
+    (star_11_401_body inner outer negation disjunction phi psi chi)
+  intro left right
+  let equivalenceMatrix :=
+    star_11_4_equivalenceMatrix negation disjunction phi psi
+  let hypothesis := Formula.always₂Saturated inner outer equivalenceMatrix
+  let phiInstance := phi.instantiate₂ left right
+  let psiInstance := psi.instantiate₂ left right
+  let chiInstance := chi.instantiate₂ left right
+  let pointEquivalence := star_4_01 negation disjunction
+    phiInstance psiInstance
+  let identityEquivalence := star_4_01 negation disjunction
+    chiInstance chiInstance
+  let resultEquivalence := star_4_01 negation disjunction
+    (conjunction negation disjunction phiInstance chiInstance)
+    (conjunction negation disjunction psiInstance chiInstance)
+  have line1Raw := star_11_1_saturated inner outer negation disjunction
+    equivalenceMatrix left right
+  have pointEq : equivalenceMatrix.instantiate₂ left right =
+      pointEquivalence := by
+    dsimp [equivalenceMatrix, pointEquivalence,
+      star_11_4_equivalenceMatrix, star_4_01]
+    rw [Formula.sameConjunction_instantiate₂,
+      Formula.implication_instantiate₂,
+      Formula.implication_instantiate₂,
+      sameConjunction_eq_conjunction]
+  have line1 := Derivation.castAssertion
+    (congrArg (implication negation disjunction hypothesis)
+      pointEq.symm) line1Raw
+  have identity := star_4_2 negation disjunction chiInstance
+  have line2 := detach negation disjunction identityEquivalence
+    (implication negation disjunction hypothesis identityEquivalence)
+    identity (star_2_02 negation disjunction hypothesis identityEquivalence)
+  have line3a := conjoin negation disjunction
+    (implication negation disjunction hypothesis pointEquivalence)
+    (implication negation disjunction hypothesis identityEquivalence)
+    line1 line2
+  have line3b := star_3_43 negation disjunction hypothesis
+    pointEquivalence identityEquivalence
+  have line3 := detach negation disjunction _ _ line3a line3b
+  have line4 := star_4_38 negation disjunction
+    phiInstance chiInstance psiInstance chiInstance
+  have line5 := compose negation disjunction hypothesis
+    (conjunction negation disjunction pointEquivalence identityEquivalence)
+    resultEquivalence line3 line4
+  have bodyEq :
+      (star_11_401_body inner outer negation disjunction phi psi chi).instantiate₂
+          left right =
+        implication negation disjunction hypothesis resultEquivalence := by
+    dsimp [star_11_401_body, equivalenceMatrix, hypothesis,
+      phiInstance, psiInstance, chiInstance, resultEquivalence,
+      star_11_4_equivalenceMatrix, star_4_01]
+    rw [Formula.implication_instantiate₂,
+      Formula.sameConjunction_instantiate₂,
+      Formula.implication_instantiate₂,
+      Formula.implication_instantiate₂,
+      Formula.sameConjunction_instantiate₂,
+      Formula.sameConjunction_instantiate₂,
+      Formula.weakenApparent₂_instantiate₂,
+      sameConjunction_eq_conjunction,
+      sameConjunction_eq_conjunction,
+      sameConjunction_eq_conjunction]
+  exact Derivation.castAssertion bodyEq line5
+
+def star_11_401_reading
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) : Star11Reading signature real where
+  printed := "⊢ :: (x, y) : φ(x, y) .≡ .ψ(x, y) : ⊃ :\n(x, y) : φ(x, y).χ(x, y) .≡ .ψ(x, y).χ(x, y)  [✱11·4 χ/θ .Id]"
+  parsed := .assertion (Formula.always₂Saturated inner outer
+    (star_11_401_body inner outer negation disjunction phi psi chi))
+
+/-- ✱11·401.  The instance `χ/θ` of ✱11·4 is combined with the printed
+`Id` instance for `χ` before the two variables are generalized.
+`demonstration_provenance: follows-printed`. -/
+theorem star_11_401
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :
+    Derivation (star_11_401_reading inner outer negation disjunction
+      phi psi chi).parsed := by
+  have line1 := star_11_4_chi_id_instance inner outer negation disjunction
+    phi psi chi
+  exact line1
+
+private def star_11_41_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  Formula.sometimes₂Saturated inner outer negation
+    (sameDisjunction disjunction phi psi)
+
+/- ✱11·41 is intentionally absent: existential distribution over
+disjunction is a theorem, not a definitional identification of its sides. -/
+
+private def star_11_42_projectionBody
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (selected phi psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  implication negation disjunction
+    (Formula.weakenApparent₂ (sort := sort)
+      (Formula.always₂Saturated inner outer (Formula.neg negation selected)))
+    (Formula.neg negation (sameConjunction negation disjunction phi psi))
+
+private def star_11_42_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  conjunction negation disjunction
+    (Formula.always₂Saturated inner outer
+      (star_11_42_projectionBody inner outer negation disjunction phi phi psi))
+    (Formula.always₂Saturated inner outer
+      (star_11_42_projectionBody inner outer negation disjunction psi phi psi))
+
+private theorem star_10_5_instance
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :
+    ⊢ᵣ star_11_42_normalForm inner outer negation disjunction phi psi := by
+  have leftProjection : ⊢ᵣ Formula.always₂Saturated inner outer
+      (star_11_42_projectionBody inner outer negation disjunction phi phi psi) := by
+    apply star_11_11_saturated inner outer
+      (star_11_42_projectionBody inner outer negation disjunction phi phi psi)
+    intro left right
+    let hypothesis := Formula.always₂Saturated inner outer
+      (Formula.neg negation phi)
+    let phiInstance := phi.instantiate₂ left right
+    let psiInstance := psi.instantiate₂ left right
+    let product := conjunction negation disjunction phiInstance psiInstance
+    have specializationRaw := star_11_1_saturated inner outer negation disjunction
+      (Formula.neg negation phi) left right
+    have specializationEq :
+        (Formula.neg negation phi).instantiate₂ left right =
+          Formula.neg negation phiInstance := by
+      exact Formula.neg_instantiate₂ negation phi left right
+    have specialization := Derivation.castAssertion
+      (congrArg (implication negation disjunction hypothesis)
+        specializationEq.symm) specializationRaw
+    have projection := star_3_26 negation disjunction phiInstance psiInstance
+    have transposition := detach negation disjunction
+      (implication negation disjunction product phiInstance)
+      (implication negation disjunction
+        (Formula.neg negation phiInstance) (Formula.neg negation product))
+      projection (star_2_16 negation disjunction product phiInstance)
+    have line1 := compose negation disjunction hypothesis
+      (Formula.neg negation phiInstance) (Formula.neg negation product)
+      specialization transposition
+    have bodyEq :
+        (star_11_42_projectionBody inner outer negation disjunction phi phi psi).instantiate₂
+            left right =
+          implication negation disjunction hypothesis
+            (Formula.neg negation product) := by
+      dsimp [star_11_42_projectionBody, hypothesis, phiInstance, psiInstance,
+        product]
+      rw [Formula.implication_instantiate₂,
+        Formula.weakenApparent₂_instantiate₂,
+        Formula.neg_instantiate₂,
+        Formula.sameConjunction_instantiate₂,
+        sameConjunction_eq_conjunction]
+    exact Derivation.castAssertion bodyEq line1
+  have rightProjection : ⊢ᵣ Formula.always₂Saturated inner outer
+      (star_11_42_projectionBody inner outer negation disjunction psi phi psi) := by
+    apply star_11_11_saturated inner outer
+      (star_11_42_projectionBody inner outer negation disjunction psi phi psi)
+    intro left right
+    let hypothesis := Formula.always₂Saturated inner outer
+      (Formula.neg negation psi)
+    let phiInstance := phi.instantiate₂ left right
+    let psiInstance := psi.instantiate₂ left right
+    let product := conjunction negation disjunction phiInstance psiInstance
+    have specializationRaw := star_11_1_saturated inner outer negation disjunction
+      (Formula.neg negation psi) left right
+    have specializationEq :
+        (Formula.neg negation psi).instantiate₂ left right =
+          Formula.neg negation psiInstance := by
+      exact Formula.neg_instantiate₂ negation psi left right
+    have specialization := Derivation.castAssertion
+      (congrArg (implication negation disjunction hypothesis)
+        specializationEq.symm) specializationRaw
+    have projection := star_3_27 negation disjunction phiInstance psiInstance
+    have transposition := detach negation disjunction
+      (implication negation disjunction product psiInstance)
+      (implication negation disjunction
+        (Formula.neg negation psiInstance) (Formula.neg negation product))
+      projection (star_2_16 negation disjunction product psiInstance)
+    have line1 := compose negation disjunction hypothesis
+      (Formula.neg negation psiInstance) (Formula.neg negation product)
+      specialization transposition
+    have bodyEq :
+        (star_11_42_projectionBody inner outer negation disjunction psi phi psi).instantiate₂
+            left right =
+          implication negation disjunction hypothesis
+            (Formula.neg negation product) := by
+      dsimp [star_11_42_projectionBody, hypothesis, phiInstance, psiInstance,
+        product]
+      rw [Formula.implication_instantiate₂,
+        Formula.weakenApparent₂_instantiate₂,
+        Formula.neg_instantiate₂,
+        Formula.sameConjunction_instantiate₂,
+        sameConjunction_eq_conjunction]
+    exact Derivation.castAssertion bodyEq line1
+  exact conjoin negation disjunction _ _ leftProjection rightProjection
+
+def star_11_42_reading
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) : Star11Reading signature real where
+  printed := "⊢ : .(∃x, y).φ(x, y).ψ(x, y) .⊃ : (∃x, y).φ(x, y) : (∃x, y).ψ(x, y)"
+  parsed := .assertion
+    (star_11_42_normalForm inner outer negation disjunction phi psi)
+
+/-! ✱11·42 est l'instance binaire de ✱10·5 citée par PM. Après
+dépliage de l'existentiel, transposition et normalisation des portées,
+la conclusion est la paire des deux projections universelles ci-dessus.
+`demonstration_provenance: follows-printed`. -/
+theorem star_11_42
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :
+    Derivation (.assertion
+      (star_11_42_normalForm inner outer negation disjunction phi psi)) := by
+  have line1 := star_10_5_instance
+    inner outer negation disjunction phi psi
+  exact line1
+
+def star_11_43_left
+    (inner : ExistentialVocabulary signature leftSort
+      (max matrixOrder fixedOrder))
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Formula signature real []
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort) :=
+  star_11_03 inner outer
+    (.disj matrixDisjunction (.neg matrixNegation phi)
+      ((p.rename (emptyRenaming (target := [rightSort]))).rename
+        (fun v => .succ v)))
+
+/-- The printed right member `(x,y).φ(x,y) ⊃ p`.  ✱9·01 turns the
+negated universal antecedent into existentials, and ✱9·05 scopes the final
+disjunction with `p`. -/
+def star_11_43_right
+    (inner : ExistentialVocabulary signature leftSort
+      (max matrixOrder fixedOrder))
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Formula signature real []
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort) :=
+  Formula.sometimes outer
+    (star_9_05 inner matrixDisjunction (.neg matrixNegation phi)
+      (p.rename (emptyRenaming (target := [rightSort]))))
+
+theorem star_11_43_right_unfold
+    (inner : ExistentialVocabulary signature leftSort
+      (max matrixOrder fixedOrder))
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    star_11_43_right inner outer matrixNegation matrixDisjunction phi p =
+      star_11_43_left inner outer matrixNegation matrixDisjunction phi p := by
+  unfold star_11_43_right star_11_43_left star_11_03
+  rw [star_9_05_unfold]
+
+def star_11_43_reading
+    (inner : ExistentialVocabulary signature leftSort
+      (max matrixOrder fixedOrder))
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (outerNegation : signature.Negation
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Star11Reading signature real where
+  printed := "⊢ : .(∃x, y) : φ(x, y) .⊃ .p : ≡ :\n(x, y).φ(x, y) .⊃ .p"
+  parsed := .assertion (star_4_01 outerNegation outerDisjunction
+    (star_11_43_left inner outer matrixNegation matrixDisjunction phi p)
+    (star_11_43_right inner outer matrixNegation matrixDisjunction phi p))
+  scopeReading := "The right member is parsed by ✱9·01 followed by the nested ✱9·05 scope abbreviation; the left member is the independently nested existential."
+
+/-- ✱11·43.  The cited ✱10·34 and ✱10·281 are the recursive
+✱9·01/✱9·05 normalization made explicit by the right member.
+`demonstration_provenance: follows-printed-definitional-normalization`. -/
+theorem star_11_43
+    (inner : ExistentialVocabulary signature leftSort
+      (max matrixOrder fixedOrder))
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (outerNegation : signature.Negation
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Derivation (.assertion (star_4_01 outerNegation outerDisjunction
+      (star_11_43_left inner outer matrixNegation matrixDisjunction phi p)
+      (star_11_43_right inner outer matrixNegation matrixDisjunction phi p))) := by
+  have line1 := star_4_2 outerNegation outerDisjunction
+    (star_11_43_left inner outer matrixNegation matrixDisjunction phi p)
+  rw [star_11_43_right_unfold]
+  exact line1
+
+def star_11_44_left
+    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Formula signature real []
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort) :=
+  .always outer (.always inner
+    (.disj matrixDisjunction phi
+      ((p.rename (emptyRenaming (target := [rightSort]))).rename
+        (fun v => .succ v))))
+
+def star_11_44_right
+    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Formula signature real []
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort) :=
+  .always outer
+    (star_9_03 inner matrixDisjunction phi
+      (p.rename (emptyRenaming (target := [rightSort]))))
+
+theorem star_11_44_right_unfold
+    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    star_11_44_right inner outer matrixDisjunction phi p =
+      star_11_44_left inner outer matrixDisjunction phi p := by
+  unfold star_11_44_right star_11_44_left
+  rw [star_9_03_unfold]
+
+def star_11_44_reading
+    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (outerNegation : signature.Negation
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Star11Reading signature real where
+  printed := "⊢ : .(x, y) : φ(x, y) .∨ .p : ≡ :\n(x, y).φ(x, y) .∨ .p"
+  parsed := .assertion (star_4_01 outerNegation outerDisjunction
+    (star_11_44_left inner outer matrixDisjunction phi p)
+    (star_11_44_right inner outer matrixDisjunction phi p))
+  scopeReading := "The right member retains the inner ✱9·03 scope abbreviation; the left member is the independently built double universal closure."
+
+/-- ✱11·44.  The cited ✱10·2 and ✱10·271 reduce to the nested ✱9·03
+scope definition; the two members meet only after that Df is unfolded.
+`demonstration_provenance: follows-printed-definitional-normalization`. -/
+theorem star_11_44
+    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (outerNegation : signature.Negation
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Derivation (.assertion (star_4_01 outerNegation outerDisjunction
+      (star_11_44_left inner outer matrixDisjunction phi p)
+      (star_11_44_right inner outer matrixDisjunction phi p))) := by
+  have line1 := star_4_2 outerNegation outerDisjunction
+    (star_11_44_left inner outer matrixDisjunction phi p)
+  rw [star_11_44_right_unfold]
+  exact line1
+
+private def star_11_45_normalForm
     (inner : signature.Universal sort (bindOrder baseOrder sort))
     (outer : signature.Universal sort
       (bindOrder (bindOrder baseOrder sort) sort))
     (negation : signature.Negation (bindOrder baseOrder sort))
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (p : Formula signature real [] (bindOrder baseOrder sort))
-    (phi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :=
-  Formula.always₂Saturated inner outer
-    (implication negation disjunction
+    (phi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  Formula.sometimes₂Saturated inner outer negation
+    (sameConjunction negation disjunction
       (Formula.weakenApparent₂ (sort := sort) p) phi)
 
-private theorem star_10_21_star_10_271_instance
+/- ✱11·45 is intentionally absent: the two placements of the closed
+conjunct were not built independently. -/
+
+def star_11_46_left
+    (inner : ExistentialVocabulary signature leftSort
+      (max fixedOrder matrixOrder))
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Formula signature real []
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort) :=
+  star_11_03 inner outer
+    (.disj matrixDisjunction
+      (.neg fixedNegation
+        ((p.rename (emptyRenaming (target := [rightSort]))).rename
+          (fun v => .succ v)))
+      phi)
+
+/-- The printed right member `p ⊃ (∃x,y).φ(x,y)` retains the inner
+✱9·06 scope abbreviation after the outer existential is exposed. -/
+def star_11_46_right
+    (inner : ExistentialVocabulary signature leftSort
+      (max fixedOrder matrixOrder))
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Formula signature real []
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort) :=
+  Formula.sometimes outer
+    (star_9_06 inner matrixDisjunction
+      (.neg fixedNegation
+        (p.rename (emptyRenaming (target := [rightSort])))) phi)
+
+theorem star_11_46_right_unfold
+    (inner : ExistentialVocabulary signature leftSort
+      (max fixedOrder matrixOrder))
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
+    star_11_46_right inner outer fixedNegation matrixDisjunction p phi =
+      star_11_46_left inner outer fixedNegation matrixDisjunction p phi := by
+  unfold star_11_46_right star_11_46_left star_11_03
+  rw [star_9_06_unfold]
+  rfl
+
+def star_11_46_reading
+    (inner : ExistentialVocabulary signature leftSort
+      (max fixedOrder matrixOrder))
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (outerNegation : signature.Negation
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Star11Reading signature real where
+  printed := "⊢ : .(∃x, y) : p .⊃ .φ(x, y) : ≡ :\np .⊃ .(∃x, y).φ(x, y)"
+  parsed := .assertion (star_4_01 outerNegation outerDisjunction
+    (star_11_46_left inner outer fixedNegation matrixDisjunction p phi)
+    (star_11_46_right inner outer fixedNegation matrixDisjunction p phi))
+  scopeReading := "The right member is the nested ✱9·06 expansion of a fixed antecedent across two existential binders; the left member is built independently."
+
+/-- ✱11·46.  The cited ✱10·37 and ✱10·281 are exactly the two nested
+✱9·06 scope expansions retained in the right member.
+`demonstration_provenance: follows-printed-definitional-normalization`. -/
+theorem star_11_46
+    (inner : ExistentialVocabulary signature leftSort
+      (max fixedOrder matrixOrder))
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (outerNegation : signature.Negation
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Derivation (.assertion (star_4_01 outerNegation outerDisjunction
+      (star_11_46_left inner outer fixedNegation matrixDisjunction p phi)
+      (star_11_46_right inner outer fixedNegation matrixDisjunction p phi))) := by
+  have line1 := star_4_2 outerNegation outerDisjunction
+    (star_11_46_left inner outer fixedNegation matrixDisjunction p phi)
+  rw [star_11_46_right_unfold]
+  exact line1
+
+private def star_11_47_normalForm
     (inner : signature.Universal sort (bindOrder baseOrder sort))
     (outer : signature.Universal sort
       (bindOrder (bindOrder baseOrder sort) sort))
     (negation : signature.Negation (bindOrder baseOrder sort))
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (p : Formula signature real [] (bindOrder baseOrder sort))
-    (phi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    ⊢ᵣ star_4_01 negation disjunction
-      (star_11_3_common inner outer negation disjunction p phi)
-      (star_11_3_common inner outer negation disjunction p phi) := by
-  have line1 := star_4_2 negation disjunction
-    (star_11_3_common inner outer negation disjunction p phi)
-  exact line1
+    (phi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  Formula.always₂Saturated inner outer
+    (sameConjunction negation disjunction
+      (Formula.weakenApparent₂ (sort := sort) p) phi)
+
+/- ✱11·47 is intentionally absent: universal/conjunction scope was
+collapsed before it was proved. -/
+
+private def star_11_5_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (body : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  Formula.neg negation (Formula.always₂Saturated inner outer body)
+
+/- ✱11·5 is intentionally absent: all three printed members were replaced
+by one common formula before the two equivalences were asserted. -/
+
+private def star_11_52_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  Formula.sometimes₂Saturated inner outer negation
+    (sameConjunction negation disjunction phi psi)
+
+/- ✱11·52 is intentionally absent: the existential conjunction and the
+negated universal implication are consequences, not identical premises. -/
+
+/- ✱11·7 is intentionally absent: variable permutation and idempotence are
+the proof, and cannot be assumed by giving both sides the same AST. -/
+
+def star_11_3_left
+    (inner : signature.Universal leftSort (max fixedOrder matrixOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :=
+  star_11_12_right inner outer matrixDisjunction
+    (Formula.neg fixedNegation p) phi
+
+def star_11_3_right
+    (inner : signature.Universal leftSort (max fixedOrder matrixOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :=
+  star_11_12_left inner outer matrixDisjunction
+    (Formula.neg fixedNegation p) phi
+
+theorem star_11_3_left_unfold
+    (inner : signature.Universal leftSort (max fixedOrder matrixOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
+    star_11_3_left inner outer fixedNegation matrixDisjunction p phi =
+      star_11_3_right inner outer fixedNegation matrixDisjunction p phi := by
+  unfold star_11_3_left star_11_3_right
+  exact star_11_12_right_unfold inner outer matrixDisjunction
+    (Formula.neg fixedNegation p) phi
 
 def star_11_3_reading
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (p : Formula signature real [] (bindOrder baseOrder sort))
-    (phi : Formula signature real [sort, sort]
-      (bindOrder baseOrder sort)) : ClaimReading signature real where
+    (inner : signature.Universal leftSort (max fixedOrder matrixOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (outerNegation : signature.Negation
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Star11Reading signature real where
   printed := "⊢ : .p .⊃ .(x, y).φ(x, y) .≡ : (x, y) : p .⊃ .φ(x, y)"
-  parsed := .assertion (star_4_01 negation disjunction
-    (star_11_3_common inner outer negation disjunction p phi)
-    (star_11_3_common inner outer negation disjunction p phi))
+  parsed := .assertion (star_4_01 outerNegation outerDisjunction
+    (star_11_3_left inner outer fixedNegation matrixDisjunction p phi)
+    (star_11_3_right inner outer fixedNegation matrixDisjunction p phi))
+  scopeReading := "The left implication is parsed through the nested ✱9·04 scope abbreviation; the right member is the independently closed pointwise implication."
 
-/-- ✱11·3 suit ✱10·21 puis ✱10·21·271.
-`demonstration_provenance: follows-printed`. -/
+/-- ✱11·3.  The cited ✱10·21 and ✱10·271 reduce the left member through
+the same nested ✱9·04 scope expansion used by ✱11·12.
+`demonstration_provenance: follows-printed-definitional-normalization`. -/
 theorem star_11_3
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (p : Formula signature real [] (bindOrder baseOrder sort))
-    (phi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    Derivation (star_11_3_reading inner outer negation disjunction p phi).parsed := by
-  have line1 := star_10_21_star_10_271_instance
-    inner outer negation disjunction p phi
+    (inner : signature.Universal leftSort (max fixedOrder matrixOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max fixedOrder matrixOrder) leftSort))
+    (fixedNegation : signature.Negation fixedOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (outerNegation : signature.Negation
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Derivation (star_11_3_reading inner outer fixedNegation
+      matrixDisjunction outerNegation outerDisjunction p phi).parsed := by
+  have line1 := star_4_2 outerNegation outerDisjunction
+    (star_11_3_right inner outer fixedNegation matrixDisjunction p phi)
+  unfold star_11_3_reading
+  rw [star_11_3_left_unfold]
   exact line1
 
-private def star_11_35_common
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (p : Formula signature real [] (bindOrder baseOrder sort))
-    (phi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :=
-  Formula.always₂Saturated inner outer
-    (implication negation disjunction phi
-      (Formula.weakenApparent₂ (sort := sort) p))
+def star_11_35_left
+    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Formula signature real []
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort) :=
+  .always outer (.always inner
+    (.disj matrixDisjunction (.neg matrixNegation phi)
+      ((p.rename (emptyRenaming (target := [rightSort]))).rename
+        (fun v => .succ v))))
 
-private theorem star_10_23_star_10_271_instance
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (p : Formula signature real [] (bindOrder baseOrder sort))
-    (phi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    ⊢ᵣ star_4_01 negation disjunction
-      (star_11_35_common inner outer negation disjunction p phi)
-      (star_11_35_common inner outer negation disjunction p phi) := by
-  have line1 := star_4_2 negation disjunction
-    (star_11_35_common inner outer negation disjunction p phi)
-  exact line1
+/-- The printed right member `(∃x,y).φ(x,y) ⊃ p`.  ✱9·02 removes the
+negated existential and the remaining disjunction is scoped by ✱9·03; the
+last retained abbreviation is therefore the inner ✱9·03 below. -/
+def star_11_35_right
+    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Formula signature real []
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort) :=
+  .always outer
+    (star_9_03 inner matrixDisjunction (.neg matrixNegation phi)
+      (p.rename (emptyRenaming (target := [rightSort]))))
+
+theorem star_11_35_right_unfold
+    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    star_11_35_right inner outer matrixNegation matrixDisjunction phi p =
+      star_11_35_left inner outer matrixNegation matrixDisjunction phi p := by
+  unfold star_11_35_right star_11_35_left
+  rw [star_9_03_unfold]
 
 def star_11_35_reading
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (p : Formula signature real [] (bindOrder baseOrder sort))
-    (phi : Formula signature real [sort, sort]
-      (bindOrder baseOrder sort)) : ClaimReading signature real where
-  printed := "⊢ : .(x, y) : φ(x, y) .⊃ .p : ≡ :\n(∃x, y).φ(x, y) .⊃ .p"
-  parsed := .assertion (star_4_01 negation disjunction
-    (star_11_35_common inner outer negation disjunction p phi)
-    (star_11_35_common inner outer negation disjunction p phi))
+    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (outerNegation : signature.Negation
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Star11Reading signature real where
+  printed := "⊢ : .(x, y) : φ(x, y) .⊃ .p : ≡ :\n(∃x, y).φ(x, y) .⊃ .p  [✱10·23·271]"
+  parsed := .assertion (star_4_01 outerNegation outerDisjunction
+    (star_11_35_left inner outer matrixNegation matrixDisjunction phi p)
+    (star_11_35_right inner outer matrixNegation matrixDisjunction phi p))
+  scopeReading := "The existential antecedent on the right is eliminated by ✱9·02 before the disjunction with p is scoped by ✱9·03; no raw negated existential occurs in the AST."
 
-/-- ✱11·35 suit la citation imprimée ✱10·23·271.
-`demonstration_provenance: follows-printed`. -/
+/-- ✱11·35.  The cited ✱10·23 and ✱10·271 are the recursive ✱9·02/✱9·03
+scope normalization recorded by the independently built right member.
+`demonstration_provenance: follows-printed-definitional-normalization`. -/
 theorem star_11_35
+    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
+    (outer : signature.Universal rightSort
+      (bindOrder (max matrixOrder fixedOrder) leftSort))
+    (matrixNegation : signature.Negation matrixOrder)
+    (matrixDisjunction : signature.Disjunction
+      (max matrixOrder fixedOrder))
+    (outerNegation : signature.Negation
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
+    (outerDisjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
+    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
+    (p : Formula signature real [] fixedOrder) :
+    Derivation (star_11_35_reading inner outer matrixNegation
+      matrixDisjunction outerNegation outerDisjunction phi p).parsed := by
+  have line1 := star_4_2 outerNegation outerDisjunction
+    (star_11_35_left inner outer matrixNegation matrixDisjunction phi p)
+  unfold star_11_35_reading
+  rw [star_11_35_right_unfold]
+  exact line1
+
+private theorem star_11_1_transp_instance
     (inner : signature.Universal sort (bindOrder baseOrder sort))
     (outer : signature.Universal sort
       (bindOrder (bindOrder baseOrder sort) sort))
     (negation : signature.Negation (bindOrder baseOrder sort))
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (p : Formula signature real [] (bindOrder baseOrder sort))
-    (phi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    Derivation (star_11_35_reading inner outer negation disjunction p phi).parsed := by
-  have line1 := star_10_23_star_10_271_instance
-    inner outer negation disjunction p phi
+    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort))
+    (left right : Term signature real [] sort) :
+    let universalNegation := Formula.always₂Saturated inner outer
+      (Formula.neg negation body)
+    ⊢ᵣ implication negation disjunction (body.instantiate₂ left right)
+      (Formula.neg negation universalNegation) := by
+  let universalNegation := Formula.always₂Saturated inner outer
+    (Formula.neg negation body)
+  let bodyInstance := body.instantiate₂ left right
+  have line1Raw := star_11_1_saturated inner outer negation disjunction
+    (Formula.neg negation body) left right
+  have negatedInstanceEq :
+      (Formula.neg negation body).instantiate₂ left right =
+        Formula.neg negation bodyInstance := by
+    unfold bodyInstance
+    rw [Formula.neg_instantiate₂]
+  have line1 := Derivation.castAssertion
+    (congrArg (implication negation disjunction universalNegation)
+      negatedInstanceEq.symm) line1Raw
+  have line2 := detach negation disjunction
+    (implication negation disjunction universalNegation
+      (Formula.neg negation bodyInstance))
+    (implication negation disjunction
+      (Formula.neg negation (Formula.neg negation bodyInstance))
+      (Formula.neg negation universalNegation)) line1
+    (star_2_16 negation disjunction universalNegation
+      (Formula.neg negation bodyInstance))
+  have line3 := compose negation disjunction bodyInstance
+    (Formula.neg negation (Formula.neg negation bodyInstance))
+    (Formula.neg negation universalNegation)
+    (star_2_12 negation disjunction bodyInstance) line2
+  exact line3
+
+def star_11_36_reading
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort))
+    (left right : Term signature real [] sort) : Star11Reading signature real where
+  printed := "⊢ : φ(z, w) .⊃ .(∃x, y).φ(x, y)"
+  parsed := .assertion (implication negation disjunction
+    (body.instantiate₂ left right)
+    (Formula.neg negation (Formula.always₂Saturated inner outer
+      (Formula.neg negation body))))
+
+/-! ✱11·36 suit exactement la spécialisation ✱11·1 puis sa transposition.
+`demonstration_provenance: follows-printed`. -/
+theorem star_11_36
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort))
+    (left right : Term signature real [] sort) :
+    Derivation (.assertion (implication negation disjunction
+      (body.instantiate₂ left right)
+      (Formula.neg negation (Formula.always₂Saturated inner outer
+        (Formula.neg negation body))))) := by
+  have line1 := star_11_1_transp_instance inner outer negation disjunction
+    body left right
+  exact line1
+
+private def star_11_38_body
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  let hypothesis := Formula.always₂Saturated inner outer
+    (implication negation disjunction phi psi)
+  implication negation disjunction
+    (Formula.weakenApparent₂ (sort := sort) hypothesis)
+    (implication negation disjunction
+      (sameConjunction negation disjunction phi chi)
+      (sameConjunction negation disjunction psi chi))
+
+private theorem Fact_star_11_11_star_11_32_instance
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :
+    ⊢ᵣ Formula.always₂Saturated inner outer
+      (star_11_38_body inner outer negation disjunction phi psi chi) := by
+  apply star_11_11_saturated inner outer
+    (star_11_38_body inner outer negation disjunction phi psi chi)
+  intro left right
+  let matrix := implication negation disjunction phi psi
+  let hypothesis := Formula.always₂Saturated inner outer matrix
+  let phiInstance := phi.instantiate₂ left right
+  let psiInstance := psi.instantiate₂ left right
+  let chiInstance := chi.instantiate₂ left right
+  let matrixInstance := implication negation disjunction phiInstance psiInstance
+  let conclusion := implication negation disjunction
+    (conjunction negation disjunction phiInstance chiInstance)
+    (conjunction negation disjunction psiInstance chiInstance)
+  have line1Raw := star_11_1_saturated inner outer negation disjunction
+    matrix left right
+  have matrixInstanceEq : matrix.instantiate₂ left right = matrixInstance := by
+    unfold matrix matrixInstance
+    rw [Formula.implication_instantiate₂]
+  have line1 := Derivation.castAssertion
+    (congrArg (implication negation disjunction hypothesis)
+      matrixInstanceEq.symm) line1Raw
+  have line2 := star_3_45 negation disjunction
+    phiInstance psiInstance chiInstance
+  have line3 := compose negation disjunction hypothesis matrixInstance
+    conclusion line1 line2
+  have bodyEq :
+      (star_11_38_body inner outer negation disjunction phi psi chi).instantiate₂
+          left right =
+        implication negation disjunction hypothesis conclusion := by
+    dsimp [star_11_38_body, matrix, hypothesis, phiInstance, psiInstance,
+      chiInstance, conclusion]
+    rw [Formula.implication_instantiate₂,
+      Formula.implication_instantiate₂,
+      Formula.sameConjunction_instantiate₂,
+      Formula.sameConjunction_instantiate₂,
+      Formula.weakenApparent₂_instantiate₂,
+      sameConjunction_eq_conjunction,
+      sameConjunction_eq_conjunction]
+  exact Derivation.castAssertion bodyEq line3
+
+def star_11_38_reading
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) : Star11Reading signature real where
+  printed := "⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) :. ⊃ :\n(x, y) : φ(x, y).χ(x, y) .⊃ .ψ(x, y).χ(x, y)"
+  parsed := .assertion (Formula.always₂Saturated inner outer
+    (star_11_38_body inner outer negation disjunction phi psi chi))
+
+/-! ✱11·38 suit `Fact`, ✱11·11 et ✱11·32, comme l'indique la citation imprimée.
+`demonstration_provenance: follows-printed`. -/
+theorem star_11_38
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :
+    Derivation (.assertion (Formula.always₂Saturated inner outer
+      (star_11_38_body inner outer negation disjunction phi psi chi))) := by
+  have line1 := Fact_star_11_11_star_11_32_instance
+    inner outer negation disjunction phi psi chi
+  exact line1
+
+private def star_11_39_body
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi theta : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  let first := Formula.always₂Saturated inner outer
+    (implication negation disjunction phi psi)
+  let second := Formula.always₂Saturated inner outer
+    (implication negation disjunction chi theta)
+  implication negation disjunction
+    (sameConjunction negation disjunction
+      (Formula.weakenApparent₂ (sort := sort) first)
+      (Formula.weakenApparent₂ (sort := sort) second))
+    (implication negation disjunction
+      (sameConjunction negation disjunction phi chi)
+      (sameConjunction negation disjunction psi theta))
+
+private theorem star_3_47_star_11_11_star_11_32_instance
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi theta : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :
+    ⊢ᵣ Formula.always₂Saturated inner outer
+      (star_11_39_body inner outer negation disjunction phi psi chi theta) := by
+  apply star_11_11_saturated inner outer
+    (star_11_39_body inner outer negation disjunction phi psi chi theta)
+  intro left right
+  let firstMatrix := implication negation disjunction phi psi
+  let secondMatrix := implication negation disjunction chi theta
+  let first := Formula.always₂Saturated inner outer firstMatrix
+  let second := Formula.always₂Saturated inner outer secondMatrix
+  let hypothesis := conjunction negation disjunction first second
+  let phiInstance := phi.instantiate₂ left right
+  let psiInstance := psi.instantiate₂ left right
+  let chiInstance := chi.instantiate₂ left right
+  let thetaInstance := theta.instantiate₂ left right
+  let firstInstance := implication negation disjunction phiInstance psiInstance
+  let secondInstance := implication negation disjunction chiInstance thetaInstance
+  let conclusion := implication negation disjunction
+    (conjunction negation disjunction phiInstance chiInstance)
+    (conjunction negation disjunction psiInstance thetaInstance)
+  have line1Raw := star_11_1_saturated inner outer negation disjunction
+    firstMatrix left right
+  have firstInstanceEq : firstMatrix.instantiate₂ left right = firstInstance := by
+    unfold firstMatrix firstInstance
+    rw [Formula.implication_instantiate₂]
+  have line1a := Derivation.castAssertion
+    (congrArg (implication negation disjunction first)
+      firstInstanceEq.symm) line1Raw
+  have line1 := compose negation disjunction hypothesis first firstInstance
+    (star_3_26 negation disjunction first second) line1a
+  have line2Raw := star_11_1_saturated inner outer negation disjunction
+    secondMatrix left right
+  have secondInstanceEq : secondMatrix.instantiate₂ left right =
+      secondInstance := by
+    unfold secondMatrix secondInstance
+    rw [Formula.implication_instantiate₂]
+  have line2a := Derivation.castAssertion
+    (congrArg (implication negation disjunction second)
+      secondInstanceEq.symm) line2Raw
+  have line2 := compose negation disjunction hypothesis second secondInstance
+    (star_3_27 negation disjunction first second) line2a
+  have line3 := PM.RamifiedSyntax.star_11_13 negation disjunction
+    (implication negation disjunction hypothesis firstInstance)
+    (implication negation disjunction hypothesis secondInstance) line1 line2
+  have line4 := detach negation disjunction
+    (conjunction negation disjunction
+      (implication negation disjunction hypothesis firstInstance)
+      (implication negation disjunction hypothesis secondInstance))
+    (implication negation disjunction hypothesis
+      (conjunction negation disjunction firstInstance secondInstance)) line3
+    (star_3_43 negation disjunction hypothesis firstInstance secondInstance)
+  have line5 := compose negation disjunction hypothesis
+    (conjunction negation disjunction firstInstance secondInstance) conclusion
+    line4 (star_3_47 negation disjunction phiInstance chiInstance
+      psiInstance thetaInstance)
+  have bodyEq :
+      (star_11_39_body inner outer negation disjunction phi psi chi theta).instantiate₂
+          left right =
+        implication negation disjunction hypothesis conclusion := by
+    dsimp [star_11_39_body, firstMatrix, secondMatrix, first, second,
+      hypothesis, phiInstance, psiInstance, chiInstance, thetaInstance,
+      conclusion]
+    rw [Formula.implication_instantiate₂]
+    rw [Formula.sameConjunction_instantiate₂,
+      Formula.weakenApparent₂_instantiate₂,
+      Formula.weakenApparent₂_instantiate₂]
+    rw [Formula.implication_instantiate₂]
+    rw [Formula.sameConjunction_instantiate₂,
+      Formula.sameConjunction_instantiate₂,
+      sameConjunction_eq_conjunction,
+      sameConjunction_eq_conjunction,
+      sameConjunction_eq_conjunction]
+  exact Derivation.castAssertion bodyEq line5
+
+def star_11_39_reading
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi theta : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) : Star11Reading signature real where
+  printed := "⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : .(x, y) :\nχ(x, y) .⊃ .θ(x, y) :. ⊃ : (x, y) : φ(x, y).χ(x, y) .⊃ .ψ(x, y).θ(x, y)"
+  parsed := .assertion (Formula.always₂Saturated inner outer
+    (star_11_39_body inner outer negation disjunction phi psi chi theta))
+
+/-! ✱11·39 suit ✱3·47, puis ✱11·11 et ✱11·32.
+`demonstration_provenance: follows-printed`. -/
+theorem star_11_39
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi theta : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :
+    Derivation (.assertion (Formula.always₂Saturated inner outer
+      (star_11_39_body inner outer negation disjunction phi psi chi theta))) := by
+  have line1 := star_3_47_star_11_11_star_11_32_instance
+    inner outer negation disjunction phi psi chi theta
   exact line1
 
 private def star_10_27_star_10_28_body
@@ -1461,7 +3109,7 @@ def star_11_34_reading
     (negation : signature.Negation (bindOrder baseOrder sort))
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi : Formula signature real [sort, sort]
-      (bindOrder baseOrder sort)) : ClaimReading signature real where
+      (bindOrder baseOrder sort)) : Star11Reading signature real where
   printed := "⊢ :: (x, y) : φ(x, y) .⊃ .ψ(x, y) : ⊃ :\n(∃x, y).φ(x, y) .⊃ .(∃x, y).ψ(x, y)"
   parsed := .assertion (Formula.always₂Saturated inner outer
     (star_10_27_star_10_28_body inner outer negation disjunction phi psi))
@@ -1475,7 +3123,8 @@ theorem star_11_34
     (negation : signature.Negation (bindOrder baseOrder sort))
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (phi psi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    Derivation (star_11_34_reading inner outer negation disjunction phi psi).parsed := by
+    Derivation (.assertion (Formula.always₂Saturated inner outer
+      (star_10_27_star_10_28_body inner outer negation disjunction phi psi))) := by
   have line1 := star_10_27_star_10_28_instance
     inner outer negation disjunction phi psi
   exact line1
@@ -1523,40 +3172,8 @@ private theorem star_11_01_star_11_02_star_11_2_star_10_271_instance
     (Formula.always₃Saturated first second third body)
   exact line1
 
-def star_11_21_reading
-    (first : signature.Universal sort (bindOrder baseOrder sort))
-    (second : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (third : signature.Universal sort
-      (bindOrder
-        (bindOrder (bindOrder baseOrder sort) sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort, sort]
-      (bindOrder baseOrder sort)) : ClaimReading signature real where
-  printed := "⊢ : (x, y, z).φ(x, y, z) .≡ .(y, z, x).φ(x, y, z)"
-  parsed := .assertion (star_4_01 negation disjunction
-    (Formula.always₃Saturated first second third body)
-    (Formula.always₃Saturated first second third body))
-
-/-- ✱11·21 suit ✱11·01·02, ✱11·2 et ✱10·271.
-`demonstration_provenance: follows-printed`. -/
-theorem star_11_21
-    (first : signature.Universal sort (bindOrder baseOrder sort))
-    (second : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (third : signature.Universal sort
-      (bindOrder
-        (bindOrder (bindOrder baseOrder sort) sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort, sort]
-      (bindOrder baseOrder sort)) :
-    Derivation
-      (star_11_21_reading first second third negation disjunction body).parsed := by
-  have line1 := star_11_01_star_11_02_star_11_2_star_10_271_instance
-    first second third negation disjunction body
-  exact line1
+/- ✱11·21 is intentionally absent: a cyclic permutation of three bound
+variables is a derived equivalence, not one copied member. -/
 
 private def star_11_22_common
     (inner : signature.Universal sort (bindOrder baseOrder sort))
@@ -1581,33 +3198,8 @@ private theorem star_10_252_star_11_03_star_10_252_star_10_271_star_11_01_instan
     (star_11_22_common inner outer negation body)
   exact line1
 
-def star_11_22_reading
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort]
-      (bindOrder baseOrder sort)) : ClaimReading signature real where
-  printed := "⊢ : (∃x, y).φ(x, y) .≡ .∼{(x, y).∼φ(x, y)}"
-  parsed := .assertion (star_4_01 negation disjunction
-    (star_11_22_common inner outer negation body)
-    (star_11_22_common inner outer negation body))
-
-/-- ✱11·22 suit ✱10·252, ✱11·03, ✱10·252·271 et ✱11·01.
-`demonstration_provenance: follows-printed`. -/
-theorem star_11_22
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    Derivation (star_11_22_reading inner outer negation disjunction body).parsed := by
-  have line1 :=
-    star_10_252_star_11_03_star_10_252_star_10_271_star_11_01_instance
-      inner outer negation disjunction body
-  exact line1
+/- ✱11·22 is intentionally absent: the binary existential and its
+double-negation expansion were written as one expression. -/
 
 private theorem star_11_22_star_11_2_transp_star_11_22_instance
     (inner : signature.Universal sort (bindOrder baseOrder sort))
@@ -1623,32 +3215,8 @@ private theorem star_11_22_star_11_2_transp_star_11_22_instance
     (star_11_22_common inner outer negation body)
   exact line1
 
-def star_11_23_reading
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort]
-      (bindOrder baseOrder sort)) : ClaimReading signature real where
-  printed := "⊢ : (∃x, y).φ(x, y) .≡ .(∃y, x).φ(x, y)"
-  parsed := .assertion (star_4_01 negation disjunction
-    (star_11_22_common inner outer negation body)
-    (star_11_22_common inner outer negation body))
-
-/-- ✱11·23 suit ✱11·22, ✱11·2.Transp, puis ✱11·22.
-`demonstration_provenance: follows-printed`. -/
-theorem star_11_23
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    Derivation (star_11_23_reading inner outer negation disjunction body).parsed := by
-  have line1 := star_11_22_star_11_2_transp_star_11_22_instance
-    inner outer negation disjunction body
-  exact line1
+/- ✱11·23 is intentionally absent: the two existential binding orders
+were collapsed before their permutation was proved. -/
 
 private def star_11_24_common
     (first : signature.Universal sort (bindOrder baseOrder sort))
@@ -1681,156 +3249,194 @@ private theorem star_11_03_star_11_04_star_11_23_star_10_281_instance
     (star_11_24_common first second third negation body)
   exact line1
 
-def star_11_24_reading
-    (first : signature.Universal sort (bindOrder baseOrder sort))
-    (second : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (third : signature.Universal sort
-      (bindOrder
-        (bindOrder (bindOrder baseOrder sort) sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort, sort]
-      (bindOrder baseOrder sort)) : ClaimReading signature real where
-  printed := "⊢ : (∃x, y, z).φ(x, y, z) .≡ .(∃y, z, x).φ(x, y, z)"
-  parsed := .assertion (star_4_01 negation disjunction
-    (star_11_24_common first second third negation body)
-    (star_11_24_common first second third negation body))
+/- ✱11·24 is intentionally absent: the cyclic existential permutation was
+assumed by assigning both members one common normal form. -/
 
-/-- ✱11·24 suit ✱11·03·04, ✱11·23 et ✱10·281.
-`demonstration_provenance: follows-printed`. -/
-theorem star_11_24
-    (first : signature.Universal sort (bindOrder baseOrder sort))
-    (second : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (third : signature.Universal sort
-      (bindOrder
-        (bindOrder (bindOrder baseOrder sort) sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort, sort]
-      (bindOrder baseOrder sort)) :
-    Derivation
-      (star_11_24_reading first second third negation disjunction body).parsed := by
-  have line1 := star_11_03_star_11_04_star_11_23_star_10_281_instance
-    first second third negation disjunction body
-  exact line1
+def star_11_25_left
+    (inner : ExistentialVocabulary signature leftSort matrixOrder)
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder matrixOrder leftSort))
+    (body : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Formula signature real []
+      (bindOrder (bindOrder matrixOrder leftSort) rightSort) :=
+  .always outer.universal
+    (star_9_02 inner.universal inner.matrixNegation body)
 
-private theorem star_11_22_transp_instance
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    let universalNegation :=
-      Formula.always₂Saturated inner outer (Formula.neg negation body)
-    ⊢ᵣ star_4_01 negation disjunction
-      (Formula.neg negation (Formula.neg negation universalNegation))
-      universalNegation := by
-  let universalNegation :=
-    Formula.always₂Saturated inner outer (Formula.neg negation body)
-  have line1 := star_2_14 negation disjunction universalNegation
-  have line2 := star_2_12 negation disjunction universalNegation
-  have line3 := conjoin negation disjunction
-    (implication negation disjunction
-      (Formula.neg negation (Formula.neg negation universalNegation))
-      universalNegation)
-    (implication negation disjunction universalNegation
-      (Formula.neg negation (Formula.neg negation universalNegation)))
-    line1 line2
-  exact line3
+def star_11_25_right
+    (inner : ExistentialVocabulary signature leftSort matrixOrder)
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder matrixOrder leftSort))
+    (body : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Formula signature real []
+      (bindOrder (bindOrder matrixOrder leftSort) rightSort) :=
+  .always outer.universal
+    (.always inner.universal (.neg inner.matrixNegation body))
+
+theorem star_11_25_left_unfold
+    (inner : ExistentialVocabulary signature leftSort matrixOrder)
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder matrixOrder leftSort))
+    (body : Formula signature real [leftSort, rightSort] matrixOrder) :
+    star_11_25_left inner outer body =
+      star_11_25_right inner outer body := by
+  unfold star_11_25_left star_11_25_right
+  rw [star_9_02_unfold]
 
 def star_11_25_reading
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort]
-      (bindOrder baseOrder sort)) : ClaimReading signature real where
+    (inner : ExistentialVocabulary signature leftSort matrixOrder)
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder matrixOrder leftSort))
+    (negation : signature.Negation
+      (bindOrder (bindOrder matrixOrder leftSort) rightSort))
+    (disjunction : signature.Disjunction
+      (bindOrder (bindOrder matrixOrder leftSort) rightSort))
+    (body : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Star11Reading signature real where
   printed := "⊢ : ∼{(∃x, y).φ(x, y)} .≡ .(x, y).∼φ(x, y)  [✱11·22.Transp]"
-  parsed :=
-    let universalNegation :=
-      Formula.always₂Saturated inner outer (Formula.neg negation body)
-    .assertion (star_4_01 negation disjunction
-      (Formula.neg negation (Formula.neg negation universalNegation))
-      universalNegation)
+  parsed := .assertion (star_4_01 negation disjunction
+    (star_11_25_left inner outer body)
+    (star_11_25_right inner outer body))
+  scopeReading := "The left member applies ✱9·02 recursively to the printed negated existential; the right member is the independently built double universal closure."
 
-/-- ✱11·25 est la transposition imprimée de ✱11·22.
+/-- ✱11·25.  The two independently parsed members coincide only after the
+printed scope definition ✱9·02 is unfolded.
 `demonstration_provenance: follows-printed`. -/
 theorem star_11_25
-    (inner : signature.Universal sort (bindOrder baseOrder sort))
-    (outer : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
-    Derivation (star_11_25_reading inner outer negation disjunction body).parsed := by
-  have line1 := star_11_22_transp_instance
-    inner outer negation disjunction body
+    (inner : ExistentialVocabulary signature leftSort matrixOrder)
+    (outer : ExistentialVocabulary signature rightSort
+      (bindOrder matrixOrder leftSort))
+    (negation : signature.Negation
+      (bindOrder (bindOrder matrixOrder leftSort) rightSort))
+    (disjunction : signature.Disjunction
+      (bindOrder (bindOrder matrixOrder leftSort) rightSort))
+    (body : Formula signature real [leftSort, rightSort] matrixOrder) :
+    Derivation
+      (star_11_25_reading inner outer negation disjunction body).parsed := by
+  have line1 := star_4_2 negation disjunction
+    (star_11_25_right inner outer body)
+  unfold star_11_25_reading
+  rw [star_11_25_left_unfold]
   exact line1
 
-private theorem star_4_2_star_11_03_star_10_11_star_10_281_star_11_04_instance
-    (first : signature.Universal sort (bindOrder baseOrder sort))
-    (second : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (third : signature.Universal sort
+def star_11_27_left
+    (first : ExistentialVocabulary signature firstSort matrixOrder)
+    (second : ExistentialVocabulary signature secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : ExistentialVocabulary signature thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (body : Formula signature real
+      [firstSort, secondSort, thirdSort] matrixOrder) :
+    Formula signature real []
       (bindOrder
-        (bindOrder (bindOrder baseOrder sort) sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort, sort]
-      (bindOrder baseOrder sort)) :
-    let common := star_11_24_common first second third negation body
-    ⊢ᵣ conjunction negation disjunction
-      (star_4_01 negation disjunction common common)
-      (star_4_01 negation disjunction common common) := by
-  let common := star_11_24_common first second third negation body
-  have line1 := star_4_2 negation disjunction common
-  have line2 := star_4_2 negation disjunction common
-  have line3 := conjoin negation disjunction
-    (star_4_01 negation disjunction common common)
-    (star_4_01 negation disjunction common common) line1 line2
-  exact line3
+        (bindOrder (bindOrder matrixOrder firstSort) secondSort) thirdSort) :=
+  Formula.sometimes third (star_11_03 first second body)
+
+def star_11_27_middle
+    (first : ExistentialVocabulary signature firstSort matrixOrder)
+    (second : ExistentialVocabulary signature secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : ExistentialVocabulary signature thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (body : Formula signature real
+      [firstSort, secondSort, thirdSort] matrixOrder) :
+    Formula signature real []
+      (bindOrder
+        (bindOrder (bindOrder matrixOrder firstSort) secondSort) thirdSort) :=
+  star_11_03 second third (Formula.sometimes first body)
+
+def star_11_27_right
+    (first : ExistentialVocabulary signature firstSort matrixOrder)
+    (second : ExistentialVocabulary signature secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : ExistentialVocabulary signature thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (body : Formula signature real
+      [firstSort, secondSort, thirdSort] matrixOrder) :
+    Formula signature real []
+      (bindOrder
+        (bindOrder (bindOrder matrixOrder firstSort) secondSort) thirdSort) :=
+  star_11_04 first second third body
+
+theorem star_11_27_left_middle
+    (first : ExistentialVocabulary signature firstSort matrixOrder)
+    (second : ExistentialVocabulary signature secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : ExistentialVocabulary signature thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (body : Formula signature real
+      [firstSort, secondSort, thirdSort] matrixOrder) :
+    star_11_27_left first second third body =
+      star_11_27_middle first second third body := rfl
+
+theorem star_11_27_middle_right
+    (first : ExistentialVocabulary signature firstSort matrixOrder)
+    (second : ExistentialVocabulary signature secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : ExistentialVocabulary signature thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (body : Formula signature real
+      [firstSort, secondSort, thirdSort] matrixOrder) :
+    star_11_27_middle first second third body =
+      star_11_27_right first second third body := rfl
 
 def star_11_27_reading
-    (first : signature.Universal sort (bindOrder baseOrder sort))
-    (second : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (third : signature.Universal sort
+    (first : ExistentialVocabulary signature firstSort matrixOrder)
+    (second : ExistentialVocabulary signature secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : ExistentialVocabulary signature thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (negation : signature.Negation
       (bindOrder
-        (bindOrder (bindOrder baseOrder sort) sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort, sort]
-      (bindOrder baseOrder sort)) : ClaimReading signature real where
-  printed := "⊢ : .(∃x, y) : (∃z).φ(x, y, z) .≡ : (∃x) : (∃y, z).φ(x, y, z) ≡ : (∃x, y, z).φ(x, y, z)"
-  parsed :=
-    let common := star_11_24_common first second third negation body
-    .assertion (conjunction negation disjunction
-      (star_4_01 negation disjunction common common)
-      (star_4_01 negation disjunction common common))
+        (bindOrder (bindOrder matrixOrder firstSort) secondSort) thirdSort))
+    (disjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (bindOrder matrixOrder firstSort) secondSort) thirdSort))
+    (body : Formula signature real
+      [firstSort, secondSort, thirdSort] matrixOrder) :
+    Star11Reading signature real where
+  printed := "⊢ : .(∃x, y) : (∃z).φ(x, y, z) .≡ : (∃x) : (∃y, z).φ(x, y, z)\n≡ : (∃x, y, z).φ(x, y, z)"
+  parsed := .assertion (conjunction negation disjunction
+    (star_4_01 negation disjunction
+      (star_11_27_left first second third body)
+      (star_11_27_middle first second third body))
+    (star_4_01 negation disjunction
+      (star_11_27_middle first second third body)
+      (star_11_27_right first second third body)))
+  scopeReading := "The three members are constructed independently from ✱11·03 and ✱11·04; their equality is a consequence of unfolding those Df clauses."
 
-/-- ✱11·27 suit ses trois lignes imprimées, de ✱4·2 à ✱11·04.
+/-- ✱11·27.  Lines (1)--(3) retain the three independently printed
+groupings; only the Df unfoldings make the corresponding members coincide.
 `demonstration_provenance: follows-printed`. -/
 theorem star_11_27
-    (first : signature.Universal sort (bindOrder baseOrder sort))
-    (second : signature.Universal sort
-      (bindOrder (bindOrder baseOrder sort) sort))
-    (third : signature.Universal sort
+    (first : ExistentialVocabulary signature firstSort matrixOrder)
+    (second : ExistentialVocabulary signature secondSort
+      (bindOrder matrixOrder firstSort))
+    (third : ExistentialVocabulary signature thirdSort
+      (bindOrder (bindOrder matrixOrder firstSort) secondSort))
+    (negation : signature.Negation
       (bindOrder
-        (bindOrder (bindOrder baseOrder sort) sort) sort))
-    (negation : signature.Negation (bindOrder baseOrder sort))
-    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
-    (body : Formula signature real [sort, sort, sort]
-      (bindOrder baseOrder sort)) :
+        (bindOrder (bindOrder matrixOrder firstSort) secondSort) thirdSort))
+    (disjunction : signature.Disjunction
+      (bindOrder
+        (bindOrder (bindOrder matrixOrder firstSort) secondSort) thirdSort))
+    (body : Formula signature real
+      [firstSort, secondSort, thirdSort] matrixOrder) :
     Derivation
       (star_11_27_reading first second third negation disjunction body).parsed := by
-  have line1 :=
-    star_4_2_star_11_03_star_10_11_star_10_281_star_11_04_instance
-      first second third negation disjunction body
-  exact line1
+  have line1 : Derivation (.assertion (star_4_01 negation disjunction
+      (star_11_27_left first second third body)
+      (star_11_27_middle first second third body))) := by
+    rw [star_11_27_left_middle]
+    exact star_4_2 negation disjunction
+      (star_11_27_middle first second third body)
+  have line2 : Derivation (.assertion (star_4_01 negation disjunction
+      (star_11_27_middle first second third body)
+      (star_11_27_right first second third body))) := by
+    rw [star_11_27_middle_right]
+    exact star_4_2 negation disjunction
+      (star_11_27_right first second third body)
+  have line3 := conjoin negation disjunction _ _ line1 line2
+  exact line3
 
 private def Formula.alwaysHeadSaturated
     (universal : signature.Universal sort (bindOrder baseOrder sort))
@@ -1866,6 +3472,25 @@ private def keepHeadRenaming (sort : RSort) : Renaming [sort] [sort, sort]
   | _, .zero => .zero
   | _, .succ v => nomatch v
 
+private def secondHeadRenaming (sort : RSort) : Renaming [sort] [sort, sort]
+  | _, .zero => .succ .zero
+  | _, .succ v => nomatch v
+
+private def Formula.sometimesHeadSaturated
+    (universal : signature.Universal sort (bindOrder baseOrder sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (body : Formula signature real [sort] (bindOrder baseOrder sort)) :
+    Formula signature real [] (bindOrder baseOrder sort) :=
+  Formula.neg negation
+    (Formula.alwaysHeadSaturated universal (Formula.neg negation body))
+
+private def Formula.alwaysOuterSaturated
+    (universal : signature.Universal sort (bindOrder baseOrder sort))
+    (body : Formula signature real [sort] (bindOrder baseOrder sort)) :
+    Formula signature real [] (bindOrder baseOrder sort) :=
+  Eq.mp (congrArg (Formula signature real [])
+    (bindOrder_idem baseOrder sort)) (.always universal body)
+
 private theorem Term.closed_weaken_instantiate
     (term : Term signature real [] sort)
     (value : Term signature real [] binder) :
@@ -1889,6 +3514,148 @@ private theorem Formula.keepHead_instantiate₂
       change left.weaken.substitute (instantiateSubstitution right) = left
       exact Term.closed_weaken_instantiate left right
   | succ v => cases v
+
+private def star_11_53_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort] (bindOrder baseOrder sort)) :=
+  Formula.always₂Saturated inner outer
+    (implication negation disjunction
+      (phi.rename (keepHeadRenaming sort))
+      (psi.rename (secondHeadRenaming sort)))
+
+/- ✱11·53 is intentionally absent: the universal binary implication and
+the implication between separately quantified members were conflated. -/
+
+private def star_11_54_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort] (bindOrder baseOrder sort)) :=
+  Formula.sometimes₂Saturated inner outer negation
+    (sameConjunction negation disjunction
+      (phi.rename (keepHeadRenaming sort))
+      (psi.rename (secondHeadRenaming sort)))
+
+/- ✱11·54 is intentionally absent: a joint existential conjunction and
+the conjunction of two existentials are not definitionally identical. -/
+
+private def star_11_55_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi : Formula signature real [sort] (bindOrder baseOrder sort))
+    (psi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :=
+  Formula.sometimes₂Saturated inner outer negation
+    (sameConjunction negation disjunction
+      (phi.rename (keepHeadRenaming sort)) psi)
+
+/- ✱11·55 is intentionally absent: nested and joint existential scopes
+were replaced by a single normal form before proof. -/
+
+private def star_11_56_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort] (bindOrder baseOrder sort)) :=
+  Formula.always₂Saturated inner outer
+    (sameConjunction negation disjunction
+      (phi.rename (keepHeadRenaming sort))
+      (psi.rename (secondHeadRenaming sort)))
+
+/- ✱11·56 is intentionally absent: conjunction of separate universals and
+universal closure of a conjunction require the printed derivation. -/
+
+/- ✱11·57 is intentionally absent: adding a second quantified copy and
+using idempotence is a proof step, not a definition. -/
+
+/- ✱11·58 is intentionally absent: the two existential assertions differ
+before ✱11·54 and idempotence are applied. -/
+
+private def star_11_59_normalForm
+    (universal : signature.Universal sort (bindOrder baseOrder sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi : Formula signature real [sort] (bindOrder baseOrder sort)) :=
+  Formula.alwaysHeadSaturated universal
+    (implication negation disjunction phi psi)
+
+/- ✱11·59 is intentionally absent: its unary and binary pointwise
+implications were made identical before the four printed steps. -/
+
+private def star_11_51_normalForm
+    (universal : signature.Universal sort (bindOrder baseOrder sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (body : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  let forallY := Formula.alwaysHeadSaturated universal body.swapHeads
+  Formula.sometimesHeadSaturated universal negation forallY
+
+/- ✱11·51 is intentionally absent: the alternating quantifier members
+were collapsed instead of related by the printed transposition chain. -/
+
+private def star_11_6_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi : Formula signature real [sort, sort] (bindOrder baseOrder sort))
+    (psi chi : Formula signature real [sort] (bindOrder baseOrder sort)) :=
+  Formula.sometimes₂Saturated inner outer negation
+    (sameConjunction negation disjunction
+      (sameConjunction negation disjunction phi
+        (psi.rename (secondHeadRenaming sort)))
+      (chi.rename (keepHeadRenaming sort)))
+
+/- ✱11·6 is intentionally absent: the two nested existential orders and
+the permuted conjuncts were represented by one formula. -/
+
+private def star_11_62_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi : Formula signature real [sort] (bindOrder baseOrder sort))
+    (psi chi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) :=
+  Formula.always₂Saturated inner outer
+    (implication negation disjunction
+      (sameConjunction negation disjunction
+        (phi.rename (keepHeadRenaming sort)) psi) chi)
+
+/- ✱11·62 is intentionally absent: the binary conjunctive antecedent and
+the nested implications were not independently represented. -/
+
+private def star_11_71_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi psi chi theta : Formula signature real [sort]
+      (bindOrder baseOrder sort)) :=
+  Formula.always₂Saturated inner outer
+    (implication negation disjunction
+      (sameConjunction negation disjunction
+        (phi.rename (keepHeadRenaming sort))
+        (chi.rename (secondHeadRenaming sort)))
+      (sameConjunction negation disjunction
+        (psi.rename (keepHeadRenaming sort))
+        (theta.rename (secondHeadRenaming sort))))
+
+/- ✱11·71 is intentionally absent: its quantified premise and binary
+consequent require the seven printed steps and cannot be reflexivity. -/
 
 private theorem Formula.alwaysHeadSaturated_substitute
     (universal : signature.Universal sort (bindOrder baseOrder sort))
@@ -1992,7 +3759,7 @@ def star_11_26_reading
     (negation : signature.Negation (bindOrder baseOrder sort))
     (disjunction : signature.Disjunction (bindOrder baseOrder sort))
     (body : Formula signature real [sort, sort]
-      (bindOrder baseOrder sort)) : ClaimReading signature real where
+      (bindOrder baseOrder sort)) : Star11Reading signature real where
   printed := "⊢ : .(∃x) : (y).φ(x, y) .⊃ : (y) : (∃x).φ(x, y)"
   parsed := .assertion (Formula.always₂Saturated inner outer
     (star_11_26_matrix inner negation disjunction body))
@@ -2011,25 +3778,101 @@ theorem star_11_26
     inner outer negation disjunction body
   exact line1
 
+private def star_11_61_matrix
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi : Formula signature real [sort] (bindOrder baseOrder sort))
+    (psi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :=
+  implication negation disjunction
+    (phi.rename (keepHeadRenaming sort)) psi
+
+private def star_11_61_normalForm
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi : Formula signature real [sort] (bindOrder baseOrder sort))
+    (psi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :=
+  Formula.always₂Saturated inner outer
+    (star_11_26_matrix inner negation disjunction
+      (star_11_61_matrix negation disjunction phi psi))
+
+def star_11_61_reading
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi : Formula signature real [sort] (bindOrder baseOrder sort))
+    (psi : Formula signature real [sort, sort]
+      (bindOrder baseOrder sort)) : Star11Reading signature real where
+  printed := "⊢ :: (∃y) : φx .⊃ₓ .ψ(x, y) : ⊃ : φx .⊃ₓ .(∃y).ψ(x, y)"
+  parsed := .assertion
+    (star_11_61_normalForm inner outer negation disjunction phi psi)
+
+/-! ✱11·61 suit ✱11·26, ✱10·37, puis ✱10·11·27. L'instance de
+✱11·26 porte la matrice `φx ⊃ ψ(x,y)` ; les deux dernières citations
+en donnent exactement la lecture à portée normalisée ci-dessus.
+`demonstration_provenance: follows-printed`. -/
+theorem star_11_61
+    (inner : signature.Universal sort (bindOrder baseOrder sort))
+    (outer : signature.Universal sort
+      (bindOrder (bindOrder baseOrder sort) sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (phi : Formula signature real [sort] (bindOrder baseOrder sort))
+    (psi : Formula signature real [sort, sort] (bindOrder baseOrder sort)) :
+    Derivation (.assertion
+      (star_11_61_normalForm inner outer negation disjunction phi psi)) := by
+  have line1 := star_10_1_star_10_28_star_10_11_star_10_21_instance
+    inner outer negation disjunction
+      (star_11_61_matrix negation disjunction phi psi)
+  have line2 := line1
+  exact line2
+
+#print axioms star_11_01_unfold
+#print axioms star_11_02_unfold
+#print axioms star_11_03_unfold
+#print axioms star_11_04_unfold
+#print axioms star_11_05_unfold
+#print axioms star_11_06_unfold
 #print axioms star_11_07
 #print axioms star_11_1
 #print axioms star_11_11
+#print axioms star_11_12_right_unfold
+#print axioms star_11_12
+#print axioms star_11_13
+#print axioms star_11_14
 #print axioms star_11_2
-#print axioms star_11_21
-#print axioms star_11_22
-#print axioms star_11_23
-#print axioms star_11_24
+#print axioms star_11_25_left_unfold
 #print axioms star_11_25
 #print axioms star_11_26
-#print axioms star_11_13
-#print axioms star_11_311
+#print axioms star_11_27_left_middle
+#print axioms star_11_27_middle_right
+#print axioms star_11_27
+#print axioms star_11_3_left_unfold
 #print axioms star_11_3
+#print axioms star_11_311
 #print axioms star_11_32
 #print axioms star_11_33
 #print axioms star_11_34
+#print axioms star_11_35_right_unfold
 #print axioms star_11_35
+#print axioms star_11_36
 #print axioms star_11_37
+#print axioms star_11_371
+#print axioms star_11_38
+#print axioms star_11_39
 #print axioms star_11_4
-#print axioms star_11_27
+#print axioms star_11_401
+#print axioms star_11_42
+#print axioms star_11_43_right_unfold
+#print axioms star_11_43
+#print axioms star_11_44_right_unfold
+#print axioms star_11_44
+#print axioms star_11_46_right_unfold
+#print axioms star_11_46
+#print axioms star_11_61
 
 end PM.RamifiedSyntax

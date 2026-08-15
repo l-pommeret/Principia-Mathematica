@@ -25,7 +25,12 @@ theorem star_250_36 (s : Set Nat) (hmin : ∃ m, minimum s m) : ∃ m, minimum s
 theorem star_250_361 (s : Set Nat) (hs : nonempty s) : ∃ m, s m := hs
 theorem star_250_362 (s : Set Nat) (hs : ∃ m, minimum s m) : ∃ m, s m ∧ ∀ ⦃k⦄, s k → m ≤ k := hs
 theorem star_250_4 : ∀ n : Nat, n = n := fun _ => rfl
-theorem star_250_41 (x y : Bool) (h : x ≠ y) : x = false ∧ y = true ∨ x = true ∧ y = false := by cases x <;> cases y <;> simp_all
+theorem star_250_41 (x y : Bool) (h : x ≠ y) : x = false ∧ y = true ∨ x = true ∧ y = false := by
+  cases x <;> cases y
+  · exact False.elim (h rfl)
+  · exact Or.inl ⟨rfl, rfl⟩
+  · exact Or.inr ⟨rfl, rfl⟩
+  · exact False.elim (h rfl)
 theorem star_250_42 (n : Nat) : minimum (fun k => k = n) n := ⟨rfl,fun {_} h => h ▸ Nat.le_refl n⟩
 theorem star_250_43 (n : Nat) : nonempty (fun k => k = n) := ⟨n,rfl⟩
 theorem star_250_44 (n : Nat) : ∃ m, minimum (fun k => k = n) m := ⟨n,star_250_42 n⟩
