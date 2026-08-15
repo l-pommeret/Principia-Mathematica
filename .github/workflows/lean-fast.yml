@@ -24,6 +24,10 @@ jobs:
         run: python3 scripts/verify_gate_integrity.py
       - name: Verify CI covers every gate
         run: python3 scripts/verify_ci_covers_gates.py
+      - name: Verify printed readings against Gutenberg witnesses
+        run: python3 scripts/verify_printed_against_witness.py
+      - name: Verify every printed proposition is catalogued
+        run: python3 scripts/verify_catalogue_completeness.py --report-all
       - name: Install elan
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \

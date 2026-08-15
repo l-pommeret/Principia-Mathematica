@@ -19,6 +19,8 @@
 # Exemption registries, workflow success conditions, and the test harness are
 # extensions of the certification standard, not ordinary data.
 /metadata/two_sided_exemptions.json   @l-pommeret
+/metadata/printed_witness_exemptions.json @l-pommeret
+/metadata/witnesses/gutenberg/pg*-tex.txt @l-pommeret
 /metadata/judgement_constructors.json @l-pommeret
 /metadata/assumptions.json            @l-pommeret
 /metadata/dependency_aliases.json     @l-pommeret
@@ -26,3 +28,9 @@
 /scripts/report_lean_source_coverage.py @l-pommeret
 /scripts/build_edition.py             @l-pommeret
 /tests/                               @l-pommeret
+
+# Le registre de certification dérivé et son générateur définissent le standard
+# au même titre que les vérificateurs : l'épinglage détecte leur modification,
+# la revue doit être exigée comme pour le reste.
+/docs/certification_registry.json      @l-pommeret
+/scripts/derive_certification_registry.py @l-pommeret

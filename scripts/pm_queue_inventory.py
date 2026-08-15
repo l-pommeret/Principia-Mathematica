@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import aristotle_scheduler
+from proof_campaign import aristotle_scheduler
 from pm_constraint_manifest import load_item_registry
 from pm_proof_skeleton import parse_demonstration
 from pm_syntax import parse_statement

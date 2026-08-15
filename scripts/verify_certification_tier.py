@@ -94,6 +94,14 @@ HOST_CONNECTIVES = re.compile(r"(?<![ₚᵣ])(?:∧|∨|¬|↔|→|⊃)(?![ₚ�
 #: rather than merely avoiding Lean's.
 PM_CONNECTIVES = re.compile(r"∼ₚ|∨ₚ|⊃ₚ|∧ₚ|≡ₚ")
 
+_LEAN_STRING_LITERAL = re.compile(r'"(?:[^"\\]|\\.)*"')
+_LEAN_NAME = r"(?:[A-Za-z_][A-Za-z0-9_']*\.)*[A-Za-z_][A-Za-z0-9_']*"
+_HELPER_APPLICATION = re.compile(
+    rf"^\s*(?P<helper>{_LEAN_NAME})\s+(?P<printed>{_LEAN_STRING_LITERAL.pattern})"
+    r"(?P<formula>\s+.+?)\s*$",
+    re.S,
+)
+
 
 def _qualified(name: str) -> str:
     """Match ``Name`` whether or not it carries a namespace prefix.
@@ -104,6 +112,129 @@ def _qualified(name: str) -> str:
     reference layer, fail the criteria calibrated on it.
     """
     return r"(?<![A-Za-z0-9_])(?:[A-Za-z_][A-Za-z0-9_']*\.)*" + re.escape(name) + r"(?![A-Za-z0-9_'])"
+
+
+def _reading_type(statement: str, *, helper: bool = False) -> str | None:
+    """Return the reading structure named by a declaration's result type.
+
+    ``ClaimReading`` predates the scope-audited structures returned by
+    ``reading_types()``.  A bare annotation with that type is not enough for T4,
+    but a helper may return it when the helper is also proved below to forward
+    its two inputs into ``printed`` and ``parsed`` exactly.
+    """
+    accepted = set(reading_types())
+    if helper:
+        accepted.add("ClaimReading")
+    for name in sorted(accepted):
+        if re.search(_qualified(name), statement):
+            return name
+    return None
+
+
+def _field_value(body: str, field: str) -> str | None:
+    """Extract one named record field, refusing missing or duplicate fields."""
+    pattern = re.compile(
+        rf"(?m)^\s*{re.escape(field)}\s*:=\s*(.+?)"
+        r"(?=;\s*[A-Za-z_][A-Za-z0-9_']*\s*:=|"
+        r"\n\s*[A-Za-z_][A-Za-z0-9_']*\s*:=|\Z)",
+        re.S,
+    )
+    matches = list(pattern.finditer(body))
+    return matches[0].group(1).strip() if len(matches) == 1 else None
+
+
+def _explicit_parameters(statement: str) -> list[str]:
+    """Return names from the declaration's top-level explicit binders."""
+    return re.findall(r"\(\s*([A-Za-z_][A-Za-z0-9_']*)\s*:", statement)
+
+
+def _helper_reading_payload(
+    reading, index: dict
+) -> tuple[str | None, str | None, str | None]:
+    """Resolve ``helper \"printed\" formula`` after auditing the helper itself."""
+    application = _HELPER_APPLICATION.fullmatch(reading.body)
+    if application is None:
+        head = re.match(rf"\s*(?P<name>{_LEAN_NAME})", reading.body)
+        shown = head.group("name") if head else "<empty>"
+        return None, None, (
+            f"{reading.name} uses unrecognised reading form `{shown} …`; "
+            'expected `<helper> "…" <formula>`'
+        )
+
+    helper_name = application.group("helper")
+    helper = index.get(helper_name.rsplit(".", 1)[-1])
+    if helper is None:
+        return None, None, (
+            f"{reading.name} calls reading helper `{helper_name}`, but no such "
+            "local declaration can be audited"
+        )
+    if helper.kind not in {"def", "abbrev"}:
+        return None, None, (
+            f"reading helper `{helper_name}` is a `{helper.kind}`, not a definition"
+        )
+    if _reading_type(helper.statement, helper=True) is None:
+        return None, None, (
+            f"reading helper `{helper_name}` has no recognised printed↔AST result type"
+        )
+
+    parameters = _explicit_parameters(helper.statement)
+    if len(parameters) != 2:
+        return None, None, (
+            f"reading helper `{helper_name}` has {len(parameters)} explicit "
+            "parameters; expected exactly printed text and formula"
+        )
+    printed_parameter, formula_parameter = parameters
+    printed_field = _field_value(helper.body, "printed")
+    parsed_field = _field_value(helper.body, "parsed")
+    normal_printed = normalise_formula(printed_field or "")
+    normal_parsed = normalise_formula(parsed_field or "")
+    forwarded_printed = {
+        normalise_formula(printed_parameter),
+        normalise_formula(f"pmPrinted {printed_parameter}"),
+        normalise_formula(f"PM.pmPrinted {printed_parameter}"),
+    }
+    forwarded_parsed = {
+        normalise_formula(formula_parameter),
+        normalise_formula(f".assertion {formula_parameter}"),
+        normalise_formula(f"Claim.assertion {formula_parameter}"),
+    }
+    if normal_printed not in forwarded_printed or normal_parsed not in forwarded_parsed:
+        missing = []
+        if normal_printed not in forwarded_printed:
+            missing.append(f"printed := {printed_parameter}")
+        if normal_parsed not in forwarded_parsed:
+            missing.append(f"parsed := {formula_parameter}")
+        return None, None, (
+            f"reading helper `{helper_name}` does not forward " + " and ".join(missing)
+        )
+
+    printed = lean_string_after(application.group("printed"), "")
+    if printed is None:  # The application regex guarantees a literal.
+        return None, None, f"{reading.name} has an unreadable printed string literal"
+    return printed, application.group("formula").strip(), None
+
+
+def _reading_payload(reading, index: dict) -> tuple[str | None, str | None, str | None]:
+    """Extract printed text and AST from a direct or verified-helper reading."""
+    direct = re.search(r"(?m)^\s*(?:printed|parsed)\s*:=", reading.body)
+    if not direct:
+        return _helper_reading_payload(reading, index)
+    if _reading_type(reading.statement) is None:
+        return None, None, (
+            f"{reading.name} is not typed by a printed↔AST reading structure "
+            f"(accepted: {', '.join(sorted(reading_types())) or 'none'})"
+        )
+    printed = lean_string_after(reading.body, "printed")
+    parsed_match = re.search(
+        r"parsed\s*:=\s*(.+?)(?=\n\s*\w+\s*:=|\Z)", reading.body, re.S
+    )
+    parsed = parsed_match.group(1) if parsed_match else None
+    if printed is None:
+        return None, None, f'{reading.name} has no printed := PM.pmPrinted "…"'
+    if parsed is None:
+        return None, None, f"{reading.name} has no parsed := field"
+    return printed, parsed, None
+
 
 CRITERIA = {
     "T1": "lean_path is outside the import closure of Principia.lean",
@@ -370,29 +501,21 @@ def compute(item: dict, evidence_failures: list[str]) -> tuple[str, list[str], d
                 "does not count)"
             )
 
-        reading = declarations(lean_path).get(f"{base}_reading")
+        reading = index.get(f"{base}_reading")
         if is_definition:
             reading = None  # a Df asserts nothing, so it reads nothing
         elif reading is None:
             failed.append("T4")
             notes["T4"] = f"no `def {base}_reading` in {lean_path}"
-        elif not any(
-            re.search(_qualified(name), reading.statement) for name in reading_types()
-        ):
-            failed.append("T4")
-            notes["T4"] = (
-                f"{base}_reading is not typed by a printed↔AST reading structure "
-                f"(accepted: {', '.join(sorted(reading_types())) or 'none'})"
-            )
         else:
-            printed = lean_string_after(reading.body, "printed")
-            parsed_match = re.search(
-                r"parsed\s*:=\s*(.+?)(?=\n\s*\w+\s*:=|\Z)", reading.body, re.S
-            )
+            printed, parsed, reading_error = _reading_payload(reading, index)
             catalogue_printed = normalise_printed(item.get("printed", ""))
-            if printed is None:
+            if reading_error is not None:
                 failed.append("T4")
-                notes["T4"] = f"{base}_reading has no printed := PM.pmPrinted \"…\""
+                notes["T4"] = reading_error
+            elif printed is None:  # Kept explicit: unknown shapes never pass.
+                failed.append("T4")
+                notes["T4"] = f"{base}_reading yielded no printed text"
             elif normalise_printed(printed) != catalogue_printed:
                 failed.append("T4")
                 notes["T4"] = (
@@ -400,16 +523,16 @@ def compute(item: dict, evidence_failures: list[str]) -> tuple[str, list[str], d
                     f"      lean:      {normalise_printed(printed)!r}\n"
                     f"      catalogue: {catalogue_printed!r}"
                 )
-            elif parsed_match is None:
+            elif parsed is None:
                 failed.append("T4")
-                notes["T4"] = f"{base}_reading has no parsed := field"
+                notes["T4"] = f"{base}_reading yielded no parsed AST"
             elif formula is not None and normalise_formula(
-                parsed_match.group(1)
+                parsed
             ) != normalise_formula(formula):
                 failed.append("T4")
                 notes["T4"] = (
                     "the reading's AST is not the formula the theorem asserts\n"
-                    f"      reading: {normalise_formula(parsed_match.group(1))}\n"
+                    f"      reading: {normalise_formula(parsed)}\n"
                     f"      theorem: {normalise_formula(formula)}"
                 )
 

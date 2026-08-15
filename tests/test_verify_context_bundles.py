@@ -1,3 +1,4 @@
+import json
 import sys
 import tempfile
 import unittest
@@ -12,18 +13,35 @@ from verify_context_bundles import ContextBundleVerificationError, report_all, v
 
 class VerifyContextBundlesTests(unittest.TestCase):
     def test_repository_bundle_reproduces_exactly(self):
-        # Deleting Architecture retired exactly the Q259/Q300 source snapshots;
-        # every bundle backed by the surviving repository must still reproduce.
-        metadata = ROOT / "metadata/context_bundles"
-        active = {path.stem for path in metadata.glob("*.json")} - {"Q259", "Q300"}
-        checked, errors = report_all(ROOT)
-        self.assertEqual(checked, len(active))
-        self.assertEqual(errors, [
-            "Q259: local context path is not a file: "
-            "Principia/Architecture/FirstOrderPrerequisites.lean",
-            "Q300: local context path is not a file: "
-            "Principia/Architecture/FirstOrderPrerequisites.lean",
-        ])
+        self.assertGreaterEqual(verify(ROOT), 1)
+
+    def test_q259_q300_use_the_closed_ramified_star9_context(self):
+        q259_paths = [
+            "Principia/Syntax/Ramified.lean",
+            "Principia/Syntax/Printed.lean",
+            "Principia/Deduction/Star2Ramified.lean",
+            "Principia/Deduction/Star9Derived.lean",
+        ]
+        q300_paths = [
+            "Principia/Syntax/Ramified.lean",
+            "Principia/Deduction/Star2Ramified.lean",
+        ]
+        manifests = {
+            stem: json.loads(
+                (ROOT / "aristotle/manifests" / f"{stem}.json").read_text()
+            )
+            for stem in ("Q259", "Q300")
+        }
+        self.assertEqual(manifests["Q259"]["local_context_paths"], q259_paths)
+        self.assertEqual(manifests["Q300"]["local_context_paths"], q300_paths)
+
+        q259 = (ROOT / "aristotle/contexts/Q259.lean").read_text()
+        q300 = (ROOT / "aristotle/contexts/Q300.lean").read_text()
+        self.assertIn("theorem star_9_21", q259)
+        self.assertIn("def star_9_31_reading", q259)
+        self.assertNotIn("theorem star_9_31", q259)
+        self.assertNotIn("theorem star_9_21", q300)
+        self.assertNotIn("Principia/Architecture", q259 + q300)
 
     def test_missing_bundle_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:

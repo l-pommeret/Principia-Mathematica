@@ -80,6 +80,42 @@ def preserve_historical_container_hashes(recorded: dict, rebuilt: dict) -> None:
             new["source_sha256"] = old.get("source_sha256")
 
 
+PENDING_CI_EVIDENCE = {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending",
+}
+
+
+def prepare_metadata_output(bundle: dict, output: Path) -> None:
+    """Carry only evidence that still describes the exact generated bundle.
+
+    Regeneration must not silently bless changed bytes with an earlier CI run.
+    It should, however, retain append-only container provenance for unchanged
+    declaration slices and keep valid CI evidence when the generated manifest
+    and source are byte-identical.
+    """
+    previous = None
+    if output.is_file():
+        try:
+            candidate = json.loads(output.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            candidate = None
+        if isinstance(candidate, dict):
+            previous = candidate
+            preserve_historical_container_hashes(previous, bundle)
+
+    unchanged = (
+        previous is not None
+        and previous.get("manifest_sha256") == bundle.get("manifest_sha256")
+        and previous.get("source_sha256") == bundle.get("source_sha256")
+    )
+    evidence = previous.get("ci_evidence") if unchanged else None
+    bundle["ci_evidence"] = (
+        evidence if isinstance(evidence, dict) else dict(PENDING_CI_EVIDENCE)
+    )
+
+
 def clean_foundation(source: str, *, strip_trailing_whitespace: bool = False) -> str:
     clean = strip_lean_comments(source)
     clean = re.sub(r"(?m)^import\s+[^\n]+\n", "", clean)
@@ -444,6 +480,8 @@ def main() -> None:
         options.source_output.write_text(bundle.pop("lean_source"), encoding="utf-8")
     rendered = json.dumps(bundle, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
     if options.metadata_output:
+        prepare_metadata_output(bundle, options.metadata_output)
+        rendered = json.dumps(bundle, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
         options.metadata_output.write_text(rendered, encoding="utf-8")
     else:
         print(rendered, end="")

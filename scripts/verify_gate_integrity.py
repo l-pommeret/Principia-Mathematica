@@ -49,6 +49,11 @@ PROTECTED_GLOBS = (
     # Exemption registries, workflow success conditions, and gate tests extend
     # the certification standard; they are normative inputs, not ordinary data.
     "metadata/two_sided_exemptions.json",
+    "metadata/printed_witness_exemptions.json",
+    "metadata/catalogue_completeness_exemptions.json",
+    # The durable witnesses are the bytes judged by the printed-reading gate;
+    # leaving them mutable would protect the judge while releasing its evidence.
+    "metadata/witnesses/gutenberg/pg*-tex.txt",
     "metadata/judgement_constructors.json",
     "metadata/assumptions.json",
     "metadata/dependency_aliases.json",

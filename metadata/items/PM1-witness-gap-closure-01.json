@@ -1,0 +1,149 @@
+{
+ "batch": "PM1-WITNESS-GAP-CLOSURE-01",
+ "edition": "first",
+ "volume": 1,
+ "source_range": {
+  "printed_pages": "263, 319, 454, 611",
+  "scan_leaves": [
+   285,
+   341,
+   476,
+   633
+  ],
+  "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+  "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+ },
+ "witnesses": [
+  "PM1-1910-SCAN",
+  "PG78050"
+ ],
+ "items": [
+  {
+   "id": "PM1:✱33·151",
+   "kind": "derived-proposition",
+   "printed": "✱33·151. ⊢. R⃖ʻx ⊂ ᗡʻR",
+   "printed_page": 263,
+   "scan_leaf": 285,
+   "lean_path": "Principia/FirstEdition/Volume1/Star33Source.lean",
+   "declaration": "source-only (no Lean declaration)",
+   "formal_scope": "source-faithful catalogue item; no formal derivation claimed",
+   "source_status": "source-catalogued-PM-VERBATIM",
+   "formal_status": "prepared",
+   "integration_status": "prepared",
+   "printed_dependencies": [],
+   "normalized_dependencies": [],
+   "lean_dependencies": [],
+   "printed_latex_witness": "✱33·151. \\(\\vdash.\\overleftarrow{R}ʻx\\subset\\text{ᗡ}ʻR\\)",
+   "demonstration_provenance": "follows-printed",
+   "parser_status": "reviewed-gap",
+   "parser_evidence": "reviews/witness-catalogue-gap-2026-08-15.md",
+   "certification": {
+    "tier": "prepared",
+    "failed_criteria": [
+     "T2",
+     "T7",
+     "T8"
+    ],
+    "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
+   }
+  },
+  {
+   "id": "PM1:✱40·38",
+   "kind": "derived-proposition",
+   "printed": "✱40·38. ⊢ . Rʻʻsʻκ = sʻRʻʻʻκ",
+   "printed_page": 319,
+   "scan_leaf": 341,
+   "lean_path": "Principia/FirstEdition/Volume1/Star40Source.lean",
+   "declaration": "source-only (no Lean declaration)",
+   "formal_scope": "source-faithful catalogue item; no formal derivation claimed",
+   "source_status": "source-catalogued-PM-VERBATIM",
+   "formal_status": "prepared",
+   "integration_status": "prepared",
+   "printed_dependencies": [],
+   "normalized_dependencies": [],
+   "lean_dependencies": [],
+   "printed_latex_witness": "✱40·38. \\(\\vdash . Rʻʻsʻ\\kappa = sʻRʻʻʻ\\kappa\\)",
+   "demonstration_provenance": "follows-printed",
+   "parser_status": "reviewed-gap",
+   "parser_evidence": "reviews/witness-catalogue-gap-2026-08-15.md",
+   "certification": {
+    "tier": "prepared",
+    "failed_criteria": [
+     "T2",
+     "T7",
+     "T8"
+    ],
+    "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
+   }
+  },
+  {
+   "id": "PM1:✱71·28",
+   "kind": "derived-proposition",
+   "printed": "✱71·28. ⊢:R ∈ 1→ Cls.⊃.β↿R↾ γ ∈ 1→ Cls [*35·442.*71·22]",
+   "printed_page": 454,
+   "scan_leaf": 476,
+   "lean_path": "Principia/FirstEdition/Volume1/Star71Source.lean",
+   "declaration": "source-only (no Lean declaration)",
+   "formal_scope": "source-faithful catalogue item; no formal derivation claimed",
+   "source_status": "source-catalogued-PM-VERBATIM",
+   "formal_status": "prepared",
+   "integration_status": "prepared",
+   "printed_dependencies": [
+    "PM1:✱35·442",
+    "PM1:✱71·22"
+   ],
+   "normalized_dependencies": [],
+   "lean_dependencies": [],
+   "printed_latex_witness": "✱71·28. \\(\\vdash:R\\in 1\\rightarrow \\text{Cls}.\\supset.\\beta\\upharpoonleft R\\upharpoonright \\gamma\\in 1\\rightarrow \\text{Cls} \\quad[\\text{*35·442.*71·22}]\\)",
+   "demonstration_provenance": "follows-printed",
+   "parser_status": "reviewed-gap",
+   "parser_evidence": "reviews/witness-catalogue-gap-2026-08-15.md",
+   "certification": {
+    "tier": "prepared",
+    "failed_criteria": [
+     "T2",
+     "T7",
+     "T8"
+    ],
+    "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
+   }
+  },
+  {
+   "id": "PM1:✱92·2",
+   "kind": "derived-proposition",
+   "printed": "✱92·2. ⊢:α ∈ genʻP.≡.(∃T).T ∈ PotidʻP.α=min⃗_PʻᗡʻT [*37·67.(*93·03)]",
+   "printed_page": 611,
+   "scan_leaf": 633,
+   "lean_path": "Principia/FirstEdition/Volume1/Star92Source.lean",
+   "declaration": "source-only (no Lean declaration)",
+   "formal_scope": "source-faithful catalogue item; no formal derivation claimed",
+   "source_status": "source-catalogued-PM-VERBATIM",
+   "formal_status": "prepared",
+   "integration_status": "prepared",
+   "printed_dependencies": [
+    "PM1:✱37·67",
+    "PM1:✱93·03"
+   ],
+   "normalized_dependencies": [],
+   "lean_dependencies": [],
+   "printed_latex_witness": "✱92·2. \\[\\begin{align}&\\vdash:\\alpha\\in \\text{gen}ʻP.\\equiv.(\\exists T).T\\in \\text{Potid}ʻP.\\alpha=\\overrightarrow{\\text{min}}_{P}ʻ\\text{ᗡ}ʻT\\\\ &[\\text{*37·67.(*93·03)}]\\end{align}\\]",
+   "demonstration_provenance": "follows-printed",
+   "parser_status": "reviewed-gap",
+   "parser_evidence": "reviews/witness-catalogue-gap-2026-08-15.md",
+   "certification": {
+    "tier": "prepared",
+    "failed_criteria": [
+     "T2",
+     "T7",
+     "T8"
+    ],
+    "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
+   }
+  }
+ ],
+ "ci_evidence": {
+  "commit": "pending",
+  "run": "pending",
+  "conclusion": "pending"
+ }
+}
