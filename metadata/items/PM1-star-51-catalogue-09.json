@@ -19,12 +19,12 @@
     {
       "id": "PM1:✱51·421",
       "kind": "derived-proposition",
-      "printed": "✱51·421. ⊢ : x = z . y = w .∨. x = w . y = z .⊃ . ιʻx ∪ ιʻy = ιʻz ∪ ιʻw",
+      "printed": "✱51·421. ⊢ :. x = z . y = w .∨. x = w . y = z :⊃ . ιʻx ∪ ιʻy = ιʻz ∪ ιʻw [✱51·41]",
       "printed_page": 361,
       "scan_leaf": 383,
       "formal_scope": "exact typed converse implication from equality of the displayed pairs to equality of their two-unit classes; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱51·131",
@@ -40,14 +40,14 @@
       "integration_blocked": false,
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -58,7 +58,7 @@
       "scan_leaf": 383,
       "formal_scope": "exact typed equivalence between equality of two-unit classes and equality of the displayed pairs up to exchange; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -79,14 +79,14 @@
         "editorial_note": "The literal catalogue block has no bracketed citation, while the Lean proof composes the exact two adjacent directions ✱51·42 and ✱51·421."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -97,7 +97,7 @@
       "scan_leaf": 384,
       "formal_scope": "exact relational typed reconstruction of the three-term equivalence defining the inverse unit-class relation and its application; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱51·131",
@@ -115,14 +115,14 @@
       "integration_blocked": false,
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -133,7 +133,7 @@
       "scan_leaf": 384,
       "formal_scope": "exact relational typed reconstruction that the inverse unit-class relation selects the member of a singleton; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -141,14 +141,14 @@
       "integration_blocked": false,
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -159,7 +159,7 @@
       "scan_leaf": 384,
       "formal_scope": "exact relational typed reconstruction of existence of the inverse unit-class description and restoration of the original singleton; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -167,14 +167,14 @@
       "integration_blocked": false,
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

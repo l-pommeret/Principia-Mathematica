@@ -24,7 +24,7 @@
       "scan_leaf": 386,
       "formal_scope": "exact contextual singleton reconstruction from the converse-iota value",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱51·52",
@@ -43,13 +43,13 @@
         "editorial_note": "The contextual singleton reconstruction closes directly without totalizing the incomplete description; printed citations remain historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -61,7 +61,7 @@
       "scan_leaf": 386,
       "formal_scope": "exact contextual assertion that the converse-iota value belongs to the class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱51·53",
@@ -80,13 +80,13 @@
         "editorial_note": "The contextual membership assertion closes directly from existence and uniqueness; both printed citations remain historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -98,19 +98,19 @@
       "scan_leaf": 386,
       "formal_scope": "exact witness-first existence-and-uniqueness characterization of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -122,7 +122,7 @@
       "scan_leaf": 386,
       "formal_scope": "exact classical characterization of non-singleton classes by a distinct companion for every member",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱52·18",
@@ -147,13 +147,13 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star52-catalogue-review.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -165,19 +165,19 @@
       "scan_leaf": 386,
       "formal_scope": "exact type-relative inclusion of singleton classes in the class of all classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

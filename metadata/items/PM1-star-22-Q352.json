@@ -23,7 +23,7 @@
       "scan_leaf": 244,
       "formal_scope": "exact extensional union-membership theorem",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱22·1",
@@ -50,13 +50,13 @@
         "editorial_note": "The exact union-membership equivalence is definitional in the audited class-extension layer."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -67,7 +67,7 @@
       "scan_leaf": 244,
       "formal_scope": "exact extensional universal property of class union",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱22·59",
@@ -92,13 +92,13 @@
         "editorial_note": "The exact universal property closes directly from the definitions of union and inclusion."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -109,7 +109,7 @@
       "scan_leaf": 244,
       "formal_scope": "exact extensional class inclusion theorem",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱22·44",
@@ -128,13 +128,13 @@
         "editorial_note": "The exact inclusion theorem closes directly by the left union injection."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -145,7 +145,7 @@
       "scan_leaf": 244,
       "formal_scope": "exact extensional union characterization of inclusion",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱4·72",
@@ -163,13 +163,13 @@
         "editorial_note": "The exact equivalence closes directly by class extensionality."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -180,7 +180,7 @@
       "scan_leaf": 244,
       "formal_scope": "exact extensional intersection characterization of inclusion",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱4·71"
@@ -197,13 +197,13 @@
         "editorial_note": "The exact equivalence closes directly by class extensionality."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

@@ -26,7 +26,7 @@
       "printed": "✱60·362. ⊢ . Clʻιʻx = ιʻΛ ∪ ιʻιʻx",
       "printed_page": 406,
       "scan_leaf": 428,
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [
         "PM1:✱60·3"
@@ -38,14 +38,14 @@
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
       "integration_status": "provisional-kernel-integrated",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -54,7 +54,7 @@
       "printed": "✱60·371. ⊢ : α ∈ 1 .⊃. Clʻα ⊂ 0 ∪ 1",
       "printed_page": 406,
       "scan_leaf": 428,
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [
         "PM1:✱51·401",
@@ -72,14 +72,14 @@
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
       "integration_status": "provisional-kernel-integrated",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -88,7 +88,7 @@
       "printed": "✱60·38. ⊢ . Clʻ(ιʻx ∪ ιʻy) = ιʻΛ ∪ ιʻιʻx ∪ ιʻιʻy ∪ ιʻ(ιʻx ∪ ιʻy)",
       "printed_page": 408,
       "scan_leaf": 430,
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [
         "PM1:✱60·37",
@@ -118,23 +118,23 @@
         "editorial_note": "The typed proof expands the elementary singleton-subclass witness directly, eliminating the later packaged lemma while preserving its printed citation."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱60·39",
       "kind": "derived-proposition",
-      "printed": "✱60·39. ⊢ : α ∈ 2 .⊃. Clʻα ⊂ 0 ∪ 1 ∪ 2",
+      "printed": "✱60·39. ⊢ . Clʻ(ιʻx ∪ ιʻy) = ιʻΛ ∪ ιʻιʻx ∪ ιʻιʻy ∪ ιʻ(ιʻx ∪ ιʻy) [✱54·4.✱60·2]",
       "printed_page": 409,
       "scan_leaf": 431,
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -142,23 +142,23 @@
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
       "integration_status": "provisional-kernel-integrated",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱60·52",
       "kind": "derived-proposition",
-      "printed": "✱60·52. ⊢ : β ⊂ pʻκ .≡. β ∈ pʻClʻʻκ",
+      "printed": "✱60·52. ⊢ : sʻκ ⊂ β .≡. κ ⊂ Clʻβ [✱40·151.✱60·2]",
       "printed_page": 410,
       "scan_leaf": 432,
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -166,14 +166,14 @@
       "formal_scope": "exact typed PM proposition; item-level source and kernel audit complete",
       "integration_status": "provisional-kernel-integrated",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

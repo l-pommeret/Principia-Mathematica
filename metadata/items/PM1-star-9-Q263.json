@@ -30,10 +30,9 @@
       "printed": "(x).φx, ∼(x).φx, (∃x).φx and ∼(∃x).φx are of the same type.",
       "printed_page": 142,
       "scan_leaf": 164,
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_6",
       "formal_scope": "typed certificate that the four displayed expressions inhabit one assigned FirstOrder carrier",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "pm_migration_status": "blocked",
       "pm_ast": "the four displayed FirstOrder expressions over one apparent matrix",
@@ -55,13 +54,14 @@
       },
       "blocked_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T7"
+          "T1",
+          "T2",
+          "T7",
+          "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -70,7 +70,7 @@
       "printed": "If φx̂ and ψx̂ are elementary functions of the same type, there is a function φx̂ ∨ ψx̂.",
       "printed_page": 142,
       "scan_leaf": 164,
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_61",
+      "declaration": "PM.RamifiedSyntax.star_9_61",
       "formal_scope": "capture-safe pointwise disjunction of same-indexed elementary function matrices",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -97,13 +97,13 @@
       "certification": {
         "tier": "lean-typechecked",
         "failed_criteria": [
-          "T2",
-          "T3",
           "T4",
-          "T7"
+          "T7",
+          "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
-      }
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
+      },
+      "lean_path": "Principia/Deduction/Star9Derived.lean"
     },
     {
       "id": "PM1:✱9·62",
@@ -111,7 +111,7 @@
       "printed": "If φ(x̂, ŷ) and ψẑ are elementary functions, and the x-argument to φ is of the same type as the argument to ψ, there are functions (y).φ(x̂,y).∨.ψx̂, (∃y).φ(x̂,y).∨.ψx̂.",
       "printed_page": 142,
       "scan_leaf": 164,
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_62",
+      "declaration": "PM.RamifiedSyntax.star_9_62",
       "formal_scope": "the printed universal and existential y-closures, disjoined with ψx while retaining x",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -142,13 +142,13 @@
       "certification": {
         "tier": "lean-typechecked",
         "failed_criteria": [
-          "T2",
-          "T3",
           "T4",
-          "T7"
+          "T7",
+          "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
-      }
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
+      },
+      "lean_path": "Principia/Deduction/Star9Derived.lean"
     },
     {
       "id": "PM1:✱9·63",
@@ -156,7 +156,7 @@
       "printed": "If φ(x̂, ŷ), ψ(x̂, ŷ) are elementary functions of the same type, there are functions (y).φ(x̂,y).∨.(z).ψ(x̂,z), etc.",
       "printed_page": 142,
       "scan_leaf": 164,
-      "declaration": "PM.FirstEdition.Volume1.Star9.star_9_63",
+      "declaration": "PM.RamifiedSyntax.star_9_63",
       "formal_scope": "all four independently bound always/sometimes combinations covered by etc.",
       "source_status": "source-catalogued",
       "formal_status": "lean-typechecked",
@@ -183,13 +183,13 @@
       "certification": {
         "tier": "lean-typechecked",
         "failed_criteria": [
-          "T2",
-          "T3",
           "T4",
-          "T7"
+          "T7",
+          "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
-      }
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
+      },
+      "lean_path": "Principia/Deduction/Star9Derived.lean"
     }
   ],
   "ci_evidence": {

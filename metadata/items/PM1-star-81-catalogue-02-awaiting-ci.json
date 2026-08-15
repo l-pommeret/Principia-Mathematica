@@ -24,7 +24,7 @@
       "scan_leaf": 543,
       "formal_scope": "exact typed extensional reconstruction of domain equality iff equality for selections from a many-one relation",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -43,13 +43,13 @@
         "editorial_note": "The exact reverse implication is congruence of Domain; the forward implication reuses the immediately preceding uniqueness theorem ✱81·1, made explicit because the diplomatic proposition line carries no printed proof citation."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

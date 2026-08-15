@@ -24,7 +24,7 @@
       "scan_leaf": 354,
       "formal_scope": "exact typed theorem that a relation class containing the universal relation has universal relational sum; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_blocked": false,
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
@@ -33,14 +33,14 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Star41-catalogue-review.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱41·221. \\(\\vdash:\\dot{\\text{V}}\\in \\lambda.\\supset.\\dot{s}ʻ\\lambda=\\dot{\\text{V}}\\)"
     },
@@ -52,7 +52,7 @@
       "scan_leaf": 354,
       "formal_scope": "exact typed theorem that the relational product of a nonempty relation class is contained in its relational sum; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_blocked": false,
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
@@ -61,14 +61,14 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱41·23. \\(\\vdash:\\exists !\\lambda.\\supset.\\dot{p}ʻ\\lambda\\unicode{x2abd}\\dot{s}ʻ\\lambda\\)"
     },
@@ -80,7 +80,7 @@
       "scan_leaf": 354,
       "formal_scope": "exact typed lower-bound theorem for the relational sum of a nonempty relation class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_blocked": false,
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
@@ -89,14 +89,14 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱41·24. \\(\\vdash\\colon\\ldotp \\exists !\\lambda:R\\in \\lambda.\\supset_{R}.S\\unicode{x2abd}R:\\supset.S\\unicode{x2abd}\\dot{s}ʻ\\lambda\\)"
     },
@@ -108,7 +108,7 @@
       "scan_leaf": 354,
       "formal_scope": "exact typed pointwise characterization of relational-sum membership by nonempty intersection with the class of relations containing the pair; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_blocked": false,
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
@@ -117,14 +117,14 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱41·25. \\(\\vdash:x(\\dot{s}ʻ\\lambda)y.\\equiv.\\exists !\\lambda\\cap \\hat{R}(xRy)\\)"
     },
@@ -136,7 +136,7 @@
       "scan_leaf": 354,
       "formal_scope": "exact typed equivalence between inhabitedness of a relational sum and inhabitedness of a member relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_blocked": false,
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
@@ -145,14 +145,14 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱41·26. \\(\\vdash:\\dot{\\exists}!\\dot{s}ʻ\\lambda.\\equiv.(\\exists R).R\\in \\lambda.\\dot{\\exists}!R\\)"
     }

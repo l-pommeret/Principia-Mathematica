@@ -23,7 +23,7 @@
       "scan_leaf": 402,
       "formal_scope": "exact universal expansion over the two-member class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -32,13 +32,13 @@
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -49,7 +49,7 @@
       "scan_leaf": 402,
       "formal_scope": "exact reduction of the universal binary condition under diagonal and cross equivalence hypotheses",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·45"
@@ -62,13 +62,13 @@
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -79,7 +79,7 @@
       "scan_leaf": 402,
       "formal_scope": "exact reduction of the universal binary condition to one cross instance",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·451"
@@ -92,24 +92,24 @@
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱54·46",
       "kind": "derived-proposition",
-      "printed": "✱54·46.  ⊢ : (z,w). z,w ε ιʻx ∪ ιʻy . z ≠ w .⊃ . x ≠ y",
+      "printed": "✱54·46. ⊢ : (∃z,w). z,w ε ιʻx ∪ ιʻy . z ≠ w .≡ . x ≠ y [✱54·452.✱13·15·16]",
       "printed_page": 380,
       "scan_leaf": 402,
       "formal_scope": "exact distinct-member implication for a two-member class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -118,13 +118,13 @@
       "parser_evidence": "reviews/Star54-closing-05-review.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

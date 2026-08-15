@@ -24,7 +24,7 @@
       "scan_leaf": 386,
       "formal_scope": "exact typed image identity for the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱52·13",
@@ -43,14 +43,14 @@
         "editorial_note": "The exact typed image identity closes by unfolding image and singleton relation; PM's printed relational route remains historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -62,7 +62,7 @@
       "scan_leaf": 386,
       "formal_scope": "exact typed existence characterization of the converse singleton image",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱51·54",
@@ -81,14 +81,14 @@
         "editorial_note": "The exact existence equivalence closes directly from the typed converse-image definition; printed citations remain historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -100,7 +100,7 @@
       "scan_leaf": 386,
       "formal_scope": "exact typed inhabited-and-at-most-one characterization of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱52·15",
@@ -121,14 +121,14 @@
         "editorial_note": "The exact inhabited-and-unique characterization is proved extensionally; PM's printed description-theoretic derivation remains historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -140,7 +140,7 @@
       "scan_leaf": 386,
       "formal_scope": "exact contextual equality of the converse-iota and unique-member descriptions",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱51·58",
@@ -161,14 +161,14 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -180,7 +180,7 @@
       "scan_leaf": 386,
       "formal_scope": "exact typed existence of the unique member description",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱51·55",
@@ -199,14 +199,14 @@
         "editorial_note": "The exact unique-member existence assertion closes directly in the typed embedding; printed citations remain historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

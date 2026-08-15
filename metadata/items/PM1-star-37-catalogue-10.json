@@ -24,7 +24,7 @@
       "scan_leaf": 321,
       "formal_scope": "exact typed inclusion of every image-class in the domain of its relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱20·33",
@@ -39,14 +39,14 @@
       "lean_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱37·24. \\vdash:\\alpha\\in \\text{D}ʻR_{\\in}.\\supset.\\alpha\\subset \\text{D}ʻR",
       "parser_status": "reviewed-gap",
@@ -60,7 +60,7 @@
       "scan_leaf": 322,
       "formal_scope": "exact typed converse-image restriction to the domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱37·26",
@@ -80,14 +80,14 @@
         "editorial_note": "The converse-image equality is proved directly from witnesses, so the printed substitution and converse predecessors do not occur in the Lean term."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱37·261. \\vdash.\\breve{R}ʻʻ\\beta=\\breve{R}ʻʻ(\\beta\\cap \\text{D}ʻR) \\quad[\\text{*37·26.*33·21}]",
       "parser_status": "reviewed-gap",
@@ -101,7 +101,7 @@
       "scan_leaf": 322,
       "formal_scope": "exact typed image equality from equality on the converse-domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱37·26"
@@ -112,14 +112,14 @@
       "lean_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱37·262. \\vdash:\\alpha\\cap \\text{ᗡ}ʻR=\\beta\\cap \\text{ᗡ}ʻR.\\supset.Rʻʻ\\alpha=Rʻʻ\\beta \\quad[\\text{*37·26}]"
     },
@@ -131,7 +131,7 @@
       "scan_leaf": 322,
       "formal_scope": "exact typed converse-image equality from equality on the domain; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱37·261"
@@ -142,14 +142,14 @@
       "lean_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱37·263. \\vdash:\\alpha\\cap \\text{D}ʻR=\\beta\\cap \\text{D}ʻR.\\supset.\\breve{R}ʻʻ\\alpha=\\breve{R}ʻʻ\\beta \\quad[\\text{*37·261}]",
       "parser_status": "reviewed-gap",
@@ -163,7 +163,7 @@
       "scan_leaf": 322,
       "formal_scope": "exact typed three-way equivalence between nonempty intersection and a related witness pair; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱11·55",
@@ -174,14 +174,14 @@
       "lean_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱37·264. \\vdash:\\exists !\\alpha\\cap Rʻʻ\\beta.\\equiv.(\\exists x,y).x\\in \\alpha.y\\in \\beta.xRy.\\equiv.\\exists !\\beta\\cap \\breve{R}ʻʻ\\alpha",
       "parser_status": "reviewed-gap",

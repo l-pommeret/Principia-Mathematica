@@ -20,7 +20,7 @@
       "id": "PM1:✱33·42",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed extensional characterization of field by existence in the union of the two coordinate sections; strict semantic audit passed",
       "printed_dependencies": [
@@ -37,14 +37,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "semantic_audit_evidence": "reviews/Star33-catalogue-06-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·42.  \\(\\vdash.CʻR=\\hat{x}\\{\\exists !(\\overrightarrow{R}ʻx\\cup \\overleftarrow{R}ʻx)\\}\\)",
       "parser_status": "reviewed-gap",
@@ -54,7 +54,7 @@
       "id": "PM1:✱33·43",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact witness-retaining reconstruction of the contextual-value implication from a unique second-coordinate section to converse-domain and domain membership; strict semantic audit passed",
       "printed_dependencies": [
@@ -69,14 +69,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "semantic_audit_evidence": "reviews/Star33-catalogue-06-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·43.  \\(\\vdash:\\text{E}!Rʻy.\\supset.y\\in \\text{ᗡ}ʻR.Rʻy\\in \\text{D}ʻR\\)"
     },
@@ -84,7 +84,7 @@
       "id": "PM1:✱33·44",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact converse witness-retaining reconstruction from a unique first-coordinate section to domain and converse-domain membership; strict semantic audit passed",
       "printed_dependencies": [
@@ -100,14 +100,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "semantic_audit_evidence": "reviews/Star33-catalogue-06-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·44.  \\(\\vdash:\\text{E}!\\breve{R}ʻx.\\supset.x\\in \\text{D}ʻR.\\breve{R}ʻx\\in \\text{ᗡ}ʻR\\)",
       "parser_status": "reviewed-gap",
@@ -117,7 +117,7 @@
       "id": "PM1:✱33·45",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed relation-extensionality theorem from equality of every active second-coordinate section; strict semantic audit passed",
       "printed_dependencies": [
@@ -138,14 +138,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "semantic_audit_evidence": "reviews/Star33-catalogue-06-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·45.  \\(\\vdash\\colon\\ldotp y\\in \\text{ᗡ}ʻR\\cup \\text{ᗡ}ʻS.\\supset_{y}.Rʻy=Sʻy:\\supset.R=S\\)"
     },
@@ -153,7 +153,7 @@
       "id": "PM1:✱33·46",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed relation-extensionality theorem from equality of every active first-coordinate section; strict semantic audit passed",
       "printed_dependencies": [
@@ -177,14 +177,14 @@
         "editorial_note": "The audited Lean declaration proves the same endpoint with the recorded local proof dependency pattern; the printed proof reference remains in the historical graph."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·46.  \\(\\vdash\\colon\\ldotp x\\in \\text{D}ʻR\\cup \\text{D}ʻS.\\supset_{x}.\\breve{R}ʻx=\\breve{S}ʻx:\\supset.R=S \\quad[\\text{Proof as in *33·45}]\\)",
       "parser_status": "reviewed-gap",

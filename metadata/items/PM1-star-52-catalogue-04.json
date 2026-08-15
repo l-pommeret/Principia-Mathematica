@@ -24,19 +24,19 @@
       "scan_leaf": 387,
       "formal_scope": "exact typed exclusion of the null class from the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -48,7 +48,7 @@
       "scan_leaf": 387,
       "formal_scope": "exact typed assertion that every singleton belongs to the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "✱51·12",
@@ -71,13 +71,13 @@
         "editorial_note": "The exact singleton-membership assertion closes by the typed definition; PM's printed derivation remains historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -89,7 +89,7 @@
       "scan_leaf": 387,
       "formal_scope": "exact typed existence of the unit-class class and its complement over PM's nonempty object range",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -119,13 +119,13 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -137,7 +137,7 @@
       "scan_leaf": 387,
       "formal_scope": "exact typed non-nullity of the unit-class class and its complement over PM's nonempty object range",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱52·23",
@@ -161,13 +161,13 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -179,7 +179,7 @@
       "scan_leaf": 387,
       "formal_scope": "exact typed inclusion of the singleton image of a class in the class of singleton classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -196,13 +196,13 @@
         "editorial_note": "The image inclusion is realized pointwise by the audited singleton-membership theorem ✱52·22."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

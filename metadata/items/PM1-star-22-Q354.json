@@ -18,12 +18,12 @@
     {
       "id": "PM1:✱22·65",
       "kind": "derived-proposition",
-      "printed": "⊢ : α ⊂ β .∨ . α ⊂ γ .⊃ . α ⊂ β ∪ γ",
+      "printed": "✱22·65. ⊢ :. α ⊂ β .∨ . α ⊂ γ :⊃ . α ⊂ β ∪ γ [✱22·61·57.*4·77]",
       "printed_page": 223,
       "scan_leaf": 245,
       "formal_scope": "exact constructive inclusion into a union from either inclusion premise",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱22·61",
@@ -44,13 +44,13 @@
         "editorial_note": "The exact elementwise inclusion closes directly; printed propositional citations remain historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -61,7 +61,7 @@
       "scan_leaf": 245,
       "formal_scope": "exact constructive monotonicity of union in its first operand",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱2·38"
@@ -78,13 +78,13 @@
         "editorial_note": "The exact elementwise map closes by cases on union membership; the printed propositional citation remains historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -95,7 +95,7 @@
       "scan_leaf": 245,
       "formal_scope": "exact typed distributivity of intersection over union",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱22·34",
@@ -110,13 +110,13 @@
       "normalized_dependencies": [],
       "dependency_fidelity": "strict-closure",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -127,7 +127,7 @@
       "scan_leaf": 245,
       "formal_scope": "exact typed distributivity of union over intersection",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "Similar proof",
@@ -146,13 +146,13 @@
         "editorial_note": "The exact extensional equality closes by complete case analysis; the printed similar-proof citation remains historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -163,7 +163,7 @@
       "scan_leaf": 245,
       "formal_scope": "exact typed associativity of class union",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "✱4·33"
@@ -180,13 +180,13 @@
         "editorial_note": "The exact extensional equality closes by complete case analysis; the printed propositional citation remains historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

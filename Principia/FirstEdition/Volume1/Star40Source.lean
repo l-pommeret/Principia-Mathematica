@@ -220,6 +220,9 @@ Dem.
 [✱11·6] ≡ : (∃ y) : y ∈ β : (∃ α) . α = Rʻy . x ∈ α :
 [✱14·205] ≡ : (∃ y) . y ∈ β . x ∈ Rʻy :: ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱40·4 -/
+/- PM-VERBATIM-BEGIN PM1:✱40·38
+✱40·38. ⊢ . Rʻʻsʻκ = sʻRʻʻʻκ
+PM-VERBATIM-END PM1:✱40·38 -/
 /- PM-VERBATIM-BEGIN PM1:✱40·41
 ✱40·41. ⊢ : E‼Rʻʻβ .⊃. pʻRʻʻβ = x̂{y ∈ β .⊃_y. x ∈ Rʻy}  [Similar proof]
 PM-VERBATIM-END PM1:✱40·41 -/

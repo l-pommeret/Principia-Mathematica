@@ -23,7 +23,7 @@
       "scan_leaf": 444,
       "formal_scope": "exact typed reflexivity of relative type membership",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱51·16",
@@ -45,14 +45,14 @@
         "editorial_note": "The equivalence-relation reflexivity field proves the exact membership directly."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱63·103. \\(\\vdash . x \\in tʻx \\quad[\\text{*63·101 . *51·16}]\\)"
     },
@@ -64,7 +64,7 @@
       "scan_leaf": 444,
       "formal_scope": "exact typed inclusion of a class in its homogeneous closure",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱22·58"
@@ -84,14 +84,14 @@
         "editorial_note": "Lean uses the witness itself and reflexivity to prove the exact inclusion."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱63·105. \\(\\vdash . \\alpha \\subset t_{0}ʻ\\alpha \\quad[\\text{*22·58}]\\)"
     }

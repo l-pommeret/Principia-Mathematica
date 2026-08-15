@@ -78,7 +78,7 @@
       "id": "PM1:✱22·34",
       "formalization_level": "pm-derivation-v1",
       "kind": "derived-proposition",
-      "printed": "⊢ : x ε α ∪ β .≡ : x ε α .∨. x ε β",
+      "printed": "✱22·34. ⊢ :. x ε α ∪ β .≡ : x ε α .∨. x ε β [✱20·3.*22·3]",
       "printed_page": 220,
       "scan_leaf": 242,
       "lean_path": "Principia/Deduction/Star22Derived.lean",
@@ -202,7 +202,7 @@
       "scan_leaf": 242,
       "formal_scope": "exact polymorphic complement inequality with PM possible-argument nonempty-type convention explicit",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱22·35",
@@ -233,14 +233,14 @@
         "editorial_note": "The exact theorem is proved pointwise; Nonempty exposes PM's possible-argument convention."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -251,7 +251,7 @@
       "scan_leaf": 242,
       "formal_scope": "exact type-relative classhood of intersection with characteristic functions as explicit predicative codes",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q346-review.md",
@@ -270,14 +270,14 @@
         "editorial_note": "The typed intersection itself is the predicative characteristic-function code witnessing membership in the type-relative Cls."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

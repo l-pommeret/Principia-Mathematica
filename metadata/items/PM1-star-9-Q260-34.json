@@ -23,7 +23,7 @@
       "scan_leaf": 163,
       "formal_scope": "exact printed formula in PM.RamifiedSyntax, derived honestly from ✱1·3 and ✱9·13; the surface ✱9·04 form unfolds definitionally",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "ramified-derivation-typechecked",
       "printed_dependencies": [
         "PM1:✱1·3",
@@ -43,13 +43,14 @@
       ],
       "blocked_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

@@ -18,12 +18,12 @@
     {
       "id": "PM1:✱51·232",
       "kind": "derived-proposition",
-      "printed": "✱51·232. ⊢ : z ε (ιʻx ∪ ιʻy) .≡ : z = x .∨. z = y",
+      "printed": "✱51·232. ⊢ :. z ε (ιʻx ∪ ιʻy) .≡ : z = x .∨. z = y [✱22·34.*51·15]",
       "printed_page": 359,
       "scan_leaf": 381,
       "formal_scope": "exact typed reconstruction of membership in the union of two unit classes; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -32,14 +32,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -50,7 +50,7 @@
       "scan_leaf": 381,
       "formal_scope": "exact typed pointwise characterization of a class equal to the union of two unit classes; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -59,14 +59,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -77,7 +77,7 @@
       "scan_leaf": 381,
       "formal_scope": "exact typed equivalence between universal truth over a two-element class and truth at both displayed elements; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱51·233",
@@ -91,14 +91,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -109,7 +109,7 @@
       "scan_leaf": 381,
       "formal_scope": "exact typed equivalence between existence over a two-element class and the disjunction at its two displayed elements; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱51·233",
@@ -123,14 +123,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -141,7 +141,7 @@
       "scan_leaf": 381,
       "formal_scope": "exact typed membership characterization after adjoining one element to a class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -150,14 +150,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "parser_evidence": "reviews/Star51-catalogue-05-06-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

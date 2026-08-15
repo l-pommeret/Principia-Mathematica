@@ -19,12 +19,12 @@
     {
       "id": "PM1:✱54·5",
       "kind": "derived-proposition",
-      "printed": "✱54·5.  ⊢ : α ε 2 .⊃ : α ⊂ ιʻz ∪ ιʻw .≡ . α = ιʻz ∪ ιʻw",
+      "printed": "✱54·5. ⊢ :. α ε 2 .⊃ : α ⊂ ιʻz ∪ ιʻw .≡ . α = ιʻz ∪ ιʻw",
       "printed_page": 380,
       "scan_leaf": 402,
       "formal_scope": "exact inclusion/equality characterization for a cardinal couple",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -33,24 +33,24 @@
       "parser_evidence": "reviews/Star54-closing-06-review.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱54·51",
       "kind": "derived-proposition",
-      "printed": "✱54·51.  ⊢ : α ε 2 . β ε 1 ∪ 2 .⊃ : α ⊂ β .≡ . α = β",
+      "printed": "✱54·51. ⊢ :. α ε 2 . β ε 1 ∪ 2 .⊃ : α ⊂ β .≡ . α = β",
       "printed_page": 380,
       "scan_leaf": 402,
       "formal_scope": "exact inclusion/equality characterization against cardinal one or two",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·5"
@@ -63,24 +63,24 @@
       "parser_evidence": "reviews/Star54-closing-06-review.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱54·52",
       "kind": "derived-proposition",
-      "printed": "✱54·52.  ⊢ : α,β ε 2 .⊃ : α ⊂ β .≡ . α = β .≡ . β ⊂ α",
+      "printed": "✱54·52. ⊢ :. α,β ε 2 .⊃ : α ⊂ β .≡ . α = β .≡ . β ⊂ α [✱54·51]",
       "printed_page": 380,
       "scan_leaf": 402,
       "formal_scope": "exact mutual inclusion/equality characterization for cardinal couples",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·51"
@@ -93,24 +93,24 @@
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱54·53",
       "kind": "derived-proposition",
-      "printed": "✱54·53.  ⊢ : α ε 2 . z,y ε α . z ≠ y .⊃ . α = ιʻz ∪ ιʻy",
+      "printed": "✱54·53. ⊢ : α ε 2 . x,y ε α . x ≠ y .⊃ . α = ιʻx ∪ ιʻy",
       "printed_page": 380,
       "scan_leaf": 402,
       "formal_scope": "exact reconstruction of a cardinal couple from two distinct members",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·44"
@@ -123,24 +123,24 @@
       "parser_evidence": "reviews/Star54-closing-06-review.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱54·531",
       "kind": "derived-proposition",
-      "printed": "✱54·531.  ⊢ : α ε 2 .⊃ : z,y ε α . z ≠ y .⊃ . α = ιʻz ∪ ιʻy",
+      "printed": "✱54·531. ⊢ :. α ε 2 .⊃ : x,y ε α . x ≠ y .≡ . α = ιʻx ∪ ιʻy",
       "printed_page": 381,
       "scan_leaf": 403,
       "formal_scope": "exact universally scoped reconstruction of a cardinal couple from two distinct members",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·44"
@@ -153,13 +153,13 @@
       "parser_evidence": "reviews/Star54-closing-06-review.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

@@ -67,7 +67,7 @@
       "scan_leaf": 185,
       "formal_scope": "exact two-variable universal disjunction implication with kernel-checked truth certificate",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱11·42",
@@ -92,14 +92,14 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
           "T2",
-          "T3",
-          "T4",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -200,7 +200,7 @@
       "demonstration_provenance": "follows-printed",
       "formal_scope": "exact two-variable existential conjunction equivalence with kernel-checked truth certificate",
       "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
+      "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·35·281"
@@ -225,11 +225,13 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "awaiting-ci",
+        "tier": "lean-typechecked",
         "failed_criteria": [
-          "T7"
+          "T2",
+          "T7",
+          "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

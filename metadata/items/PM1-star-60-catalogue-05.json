@@ -26,7 +26,7 @@
       "printed": "✱60·12. ⊢ . Clʻα = β̂(β ⊂ α)",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -34,13 +34,13 @@
       "formal_scope": "exact typed value equation for Cl; strict semantic audit passed",
       "integration_status": "provisional-kernel-checked",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -49,7 +49,7 @@
       "printed": "✱60·13. ⊢ . Cl exʻα = β̂(β ⊂ α . ∃!β)",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -68,13 +68,13 @@
         "editorial_note": "The value equation unfolds the already printed definition ✱60·02 of Cl ex; this is a genuine definitional PM edge although no bracketed citation is printed."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -83,7 +83,7 @@
       "printed": "✱60·14. ⊢ . ∃!Clʻα",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -91,13 +91,13 @@
       "formal_scope": "exact typed existence assertion for the value Clʻα; strict semantic audit passed",
       "integration_status": "provisional-kernel-checked",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -106,7 +106,7 @@
       "printed": "✱60·15. ⊢ . ∃!Cl exʻα",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -125,13 +125,13 @@
         "editorial_note": "The existence witness uses the already printed definition ✱60·02 of Cl ex; this is a genuine definitional PM edge although no bracketed citation is printed."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -140,7 +140,7 @@
       "printed": "✱60·2. ⊢ : β ∈ Clʻα .≡. β ⊂ α",
       "printed_page": 407,
       "scan_leaf": 429,
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "source_status": "source-catalogued-PM-VERBATIM",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -148,13 +148,13 @@
       "formal_scope": "exact typed membership/subclass equivalence; strict semantic audit passed",
       "integration_status": "provisional-kernel-checked",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

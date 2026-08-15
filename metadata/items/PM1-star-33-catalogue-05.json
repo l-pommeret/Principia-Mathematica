@@ -20,7 +20,7 @@
       "id": "PM1:✱33·32",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed implication from disjoint domains to emptiness of pointwise relational intersection; strict semantic audit passed",
       "printed_dependencies": [
@@ -38,14 +38,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "semantic_audit_evidence": "reviews/Star33-catalogue-05-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·32.  \\(\\vdash:\\text{D}ʻR\\cap \\text{D}ʻS=\\Lambda.\\supset.R\\dot{\\cap}S=\\Lambda\\)"
     },
@@ -53,7 +53,7 @@
       "id": "PM1:✱33·33",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed implication from disjoint converse-domains to emptiness of pointwise relational intersection; strict semantic audit passed",
       "printed_dependencies": [
@@ -77,14 +77,14 @@
         "editorial_note": "Lean proves the audited endpoint directly from the local typed definitions; the printed citation remains in the historical graph without becoming a theorem-constant dependency."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·33.  \\(\\vdash:\\text{ᗡ}ʻR\\cap \\text{ᗡ}ʻS=\\Lambda.\\supset.R\\dot{\\cap}S=\\dot{\\Lambda} \\quad[\\text{Proof as in *33·32}]\\)"
     },
@@ -92,7 +92,7 @@
       "id": "PM1:✱33·34",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed implication from disjoint fields to emptiness of pointwise relational intersection; strict semantic audit passed",
       "printed_dependencies": [
@@ -108,14 +108,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "semantic_audit_evidence": "reviews/Star33-catalogue-05-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·34.  \\(\\vdash:CʻR\\cap CʻS=\\Lambda.\\supset.R\\dot{\\cap}S=\\dot{\\Lambda}\\)"
     },
@@ -123,7 +123,7 @@
       "id": "PM1:✱33·35",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed equivalence between domain inclusion and pointwise containment of every first correlate; strict semantic audit passed",
       "printed_dependencies": [
@@ -138,14 +138,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "semantic_audit_evidence": "reviews/Star33-catalogue-05-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·35.  \\(\\vdash\\colon\\ldotp \\text{D}ʻR\\subset\\alpha.\\equiv:xRy.\\supset_{x,y}.x\\in \\alpha\\)",
       "parser_status": "reviewed-gap",
@@ -155,7 +155,7 @@
       "id": "PM1:✱33·41",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed extensional characterization of converse-domain by existence of the second-coordinate section; strict semantic audit passed",
       "printed_dependencies": [],
@@ -168,14 +168,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "semantic_audit_evidence": "reviews/Star33-catalogue-05-semantic-audit.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·41.  \\(\\vdash.\\text{ᗡ}ʻR=\\hat{y}\\{\\exists !\\overrightarrow{R}ʻy\\} \\quad[\\text{Similar proof}]\\)",
       "parser_status": "reviewed-gap",

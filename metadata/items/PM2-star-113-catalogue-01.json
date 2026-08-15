@@ -24,7 +24,7 @@
       "scan_leaf": 148,
       "formal_scope": "exact typed membership characterization of the class product by ordered-pair relations with first coordinate in alpha and second coordinate in beta",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱40·7",
@@ -45,13 +45,13 @@
         "editorial_note": "The two printed citations motivate the direct representation; the typed theorem unfolds the audited class-product representation definitionally."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -62,7 +62,7 @@
       "scan_leaf": 149,
       "formal_scope": "exact typed existence of the fixed-second-coordinate class of ordered-pair relations",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱38·12"
@@ -81,13 +81,13 @@
         "editorial_note": "Lean's predicate-class universe makes the displayed class directly available; the historical existence theorem remains recorded."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

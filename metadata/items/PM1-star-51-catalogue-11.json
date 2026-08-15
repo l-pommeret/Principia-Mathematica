@@ -23,7 +23,7 @@
       "scan_leaf": 384,
       "formal_scope": "exact relational typed equivalence between existence of the inverse unit-class description and equality with the membership definite description; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱51·57",
@@ -52,14 +52,14 @@
         "editorial_note": "Lean reuses the exact inverse-unit-class/description existence equivalence ✱51·55 instead of the printed route through ✱51·57, ✱20·3, and ✱14·272."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -70,7 +70,7 @@
       "scan_leaf": 384,
       "formal_scope": "exact contextual relational reconstruction: applying ψ to either incomplete description has the same unique-witness condition DescriptionApplies φ ψ; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "printed_dependencies": [
         "PM1:✱51·56",
@@ -93,15 +93,14 @@
         "editorial_note": "The common contextual interpretation is definitionally reflexive in Lean; the printed derivation through ✱51·56 and ✱14·205 is therefore not called."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T6",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

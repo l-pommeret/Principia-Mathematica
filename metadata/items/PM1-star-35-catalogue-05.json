@@ -16,7 +16,7 @@
       "kind": "definition",
       "printed": "S| R↾ β=(S| R)↾ β Df",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -26,12 +26,14 @@
       "formal_scope": "exact typed definitional equality for PM's bracket convention on right-restricted composition; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "\\(S\\mid R\\upharpoonright \\beta=(S\\mid R)\\upharpoonright \\beta \\quad\\text{Df}\\)"
     },
@@ -41,7 +43,7 @@
       "demonstration_provenance": "follows-printed",
       "printed": "⊢.(α↿ R)| (S↾ β) =α↿ (R| S)↾ β={α↿ (R| S)}↾ β=α↿ {(R| S)↾ β} ={(α↿ R)| S)}↾ β=α↿ {R| (S↾ β)} =(α↿ R| S)↾ β=α↿ (R| S↾ β)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -64,14 +66,14 @@
       "formal_scope": "exact typed reconstruction of all eight printed forms as the seven successive equalities of restricted composition; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "\\[\\begin{align}\\vdash.(\\alpha\\upharpoonleft R)\\mid (S\\upharpoonright \\beta)&=\\alpha\\upharpoonleft (R\\mid S)\\upharpoonright \\beta=\\{\\alpha\\upharpoonleft (R\\mid S)\\}\\upharpoonright \\beta=\\alpha\\upharpoonleft \\{(R\\mid S)\\upharpoonright \\beta\\}\\\\ &=\\{(\\alpha\\upharpoonleft R)\\mid S)\\}\\upharpoonright \\beta=\\alpha\\upharpoonleft \\{R\\mid (S\\upharpoonright \\beta)\\}\\\\ &=(\\alpha\\upharpoonleft R\\mid S)\\upharpoonright \\beta=\\alpha\\upharpoonleft (R\\mid S\\upharpoonright \\beta)\\end{align}\\]"
     },
@@ -80,7 +82,7 @@
       "kind": "definition",
       "printed": "α↿ R| S↾ β=(α↿ R| S)↾ β Df",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -90,12 +92,14 @@
       "formal_scope": "exact typed definitional equality for the fully restricted composition bracket convention; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "\\(\\alpha\\upharpoonleft R\\mid S\\upharpoonright \\beta=(\\alpha\\upharpoonleft R\\mid S)\\upharpoonright \\beta \\quad\\text{Df}\\)"
     },
@@ -105,7 +109,7 @@
       "demonstration_provenance": "follows-printed",
       "printed": "⊢.(α↿ R↾ β)↾ γ={α↿ R↾ (β∩ γ)} [Proof similar to that of *35·31]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -115,14 +119,14 @@
       "formal_scope": "exact typed equality merging consecutive right restrictions into intersection of their endpoint classes; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "\\(\\vdash.(\\alpha\\upharpoonleft R\\upharpoonright \\beta)\\upharpoonright \\gamma=\\{\\alpha\\upharpoonleft R\\upharpoonright (\\beta\\cap \\gamma)\\} \\quad[\\text{Proof similar to that of *35·31}]\\)"
     },
@@ -132,7 +136,7 @@
       "demonstration_provenance": "follows-printed",
       "printed": "⊢.α↿ (β↿ R↾ γ)={(α∩ β)↿ R↾ γ} [Proof similar to that of *35·31]",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -142,14 +146,14 @@
       "formal_scope": "exact typed equality merging nested left and simultaneous restrictions into intersection of their source classes; strict semantic audit passed",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "\\(\\vdash.\\alpha\\upharpoonleft (\\beta\\upharpoonleft R\\upharpoonright \\gamma)=\\{(\\alpha\\cap \\beta)\\upharpoonleft R\\upharpoonright \\gamma\\} \\quad[\\text{Proof similar to that of *35·31}]\\)"
     }

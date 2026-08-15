@@ -24,7 +24,7 @@
       "scan_leaf": 251,
       "formal_scope": "exact typed natural-number reconstruction of PM's induction principle over inductive cardinals; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱120·102",
@@ -46,13 +46,13 @@
         "editorial_note": "Lean's Nat induction closes the same typed induction principle directly; PM's definition and ancestral theorem remain historical proof-route evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -63,7 +63,7 @@
       "scan_leaf": 251,
       "formal_scope": "exact typed zero case for inductive finite cardinals represented by Nat; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱120·101"
@@ -83,13 +83,13 @@
         "editorial_note": "The typed Nat carrier makes zero an inductive cardinal definitionally; PM's substitution instance is retained as historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -100,7 +100,7 @@
       "scan_leaf": 251,
       "formal_scope": "exact typed closure of inductive finite cardinals under cardinal successor; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱90·172",
@@ -122,13 +122,13 @@
         "editorial_note": "Successor closure is definitional on the typed Nat carrier; PM's ancestral and definition citations are retained as historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -139,7 +139,7 @@
       "scan_leaf": 252,
       "formal_scope": "exact typed strong-induction variant with the inductive-cardinal premise retained in the step; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱120·121",
@@ -163,13 +163,13 @@
         "editorial_note": "Lean proves the same restricted induction principle directly by Nat induction; PM derives it through the three cited ✱120 propositions."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

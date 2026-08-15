@@ -31,7 +31,7 @@
       "scan_leaf": 200,
       "formal_scope": "exact polymorphic equality transport of inequality",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱13·171",
@@ -50,24 +50,25 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱13·182",
       "kind": "derived-proposition",
-      "printed": "⊢ :: x = y .⊃ : z = x .≡ . z = y",
+      "printed": "✱13·182. ⊢ :. x = y .⊃ : z = x .≡ . z = y [✱13·17·172 . Exp . Comp]",
       "printed_page": 178,
       "scan_leaf": 200,
       "formal_scope": "exact polymorphic equality equivalence transport",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱13·17·172"
@@ -84,13 +85,14 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -101,7 +103,7 @@
       "scan_leaf": 200,
       "formal_scope": "exact polymorphic equality/formal-equivalence characterization",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱13·182",
@@ -122,13 +124,14 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -178,7 +181,7 @@
       "scan_leaf": 200,
       "formal_scope": "exact polymorphic universally bound identity elimination equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·1",
@@ -200,13 +203,14 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

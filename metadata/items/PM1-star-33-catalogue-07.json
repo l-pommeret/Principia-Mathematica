@@ -20,7 +20,7 @@
       "id": "PM1:✱33·47",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed relation-extensionality theorem from equality of every active second-coordinate section; strict semantic audit passed",
       "printed_dependencies": [
@@ -47,14 +47,14 @@
         "editorial_note": "The audited Lean declaration proves the same endpoint with the recorded local proof dependency pattern; the printed proof reference remains in the historical graph."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·47.  \\(\\vdash\\colon\\ldotp y\\in \\text{ᗡ}ʻR\\cup \\text{ᗡ}ʻS.\\supset_{y}.\\overrightarrow{R}ʻy=\\overrightarrow{S}ʻy:\\supset.R=S\\)",
       "parser_status": "reviewed-gap",
@@ -64,7 +64,7 @@
       "id": "PM1:✱33·48",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed relation-extensionality theorem from equality of every active first-coordinate section; strict semantic audit passed",
       "printed_dependencies": [
@@ -88,14 +88,14 @@
         "editorial_note": "The audited Lean declaration proves the same endpoint with the recorded local proof dependency pattern; the printed proof reference remains in the historical graph."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·48.  \\(\\vdash\\colon\\ldotp x\\in \\text{D}ʻR\\cup \\text{D}ʻS.\\supset_{x}.\\overleftarrow{R}ʻx=\\overleftarrow{S}ʻx:\\supset.R=S \\quad[\\text{Proof as in *33·47}]\\)",
       "parser_status": "reviewed-gap",
@@ -105,7 +105,7 @@
       "id": "PM1:✱33·51",
       "kind": "derived-proposition",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "awaiting-ci",
       "formal_scope": "exact typed biconditional between field membership and PM's field relation F; strict semantic audit passed",
       "printed_dependencies": [
@@ -131,14 +131,14 @@
         "editorial_note": "The audited Lean declaration proves the same endpoint with the recorded local proof dependency pattern; the printed proof reference remains in the historical graph."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱33·51.  \\(\\vdash:x\\in CʻR.\\equiv.xFR \\quad[\\text{*33·132·103}]\\)"
     }

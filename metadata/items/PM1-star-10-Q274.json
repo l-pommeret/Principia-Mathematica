@@ -38,7 +38,7 @@
       "scan_leaf": 177,
       "formal_scope": "exact closed canonical formal negated existential rule",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·252",
@@ -60,15 +60,14 @@
         "editorial_note": "Canonical normalization discharges the propositional conversion without a distinct Lean theorem edge."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
           "T2",
-          "T3",
-          "T4",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -79,7 +78,7 @@
       "scan_leaf": 177,
       "formal_scope": "exact closed canonical existential formal implication rule",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱5·5",
@@ -93,15 +92,14 @@
         "PM1:✱5·5"
       ],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
           "T2",
-          "T3",
-          "T4",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -112,7 +110,7 @@
       "scan_leaf": 177,
       "formal_scope": "exact closed canonical formal implication under nonexistence",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱2·21",
@@ -138,15 +136,14 @@
         "editorial_note": "The scoped implication is represented by the closed ✱10·27 target; ✱10·11 has no separate direct call."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
           "T2",
-          "T3",
-          "T4",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -157,7 +154,7 @@
       "scan_leaf": 177,
       "formal_scope": "exact closed canonical formal implication/disjunction equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱4·2",
@@ -181,15 +178,14 @@
         "editorial_note": "The canonical target encodes the propositional rearrangement definitionally; only scoped quantifier theorems are direct calls."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
           "T2",
-          "T3",
-          "T4",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -200,7 +196,7 @@
       "scan_leaf": 178,
       "formal_scope": "exact closed canonical formal implication nesting equivalence",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·541"
@@ -210,15 +206,14 @@
         "PM1:✱10·541"
       ],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
           "T2",
-          "T3",
-          "T4",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

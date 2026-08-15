@@ -31,7 +31,7 @@
       "scan_leaf": 223,
       "formal_scope": "exact eliminative class-context equivalence with explicit extensionality and predicative witness",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q318-review.md",
@@ -50,14 +50,14 @@
         "editorial_note": "The Lean body calls only the secondary Prop reading of ✱12·1, not its primary PM derivation; no primary graph edge is claimed."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T8",
-          "T9"
+          "T1",
+          "T2",
+          "T7",
+          "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -68,7 +68,7 @@
       "scan_leaf": 223,
       "formal_scope": "exact polymorphic forward class-extensionality implication",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q318-review.md",
@@ -85,13 +85,14 @@
       ],
       "inherited_assumptions": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -102,7 +103,7 @@
       "scan_leaf": 223,
       "formal_scope": "exact polymorphic reverse class-extensionality implication",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -114,13 +115,14 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -171,7 +173,7 @@
       "scan_leaf": 223,
       "formal_scope": "exact eliminative existence of an extensionally equal predicative representative",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q318-review.md",
@@ -193,14 +195,14 @@
         "editorial_note": "The Lean body calls only the secondary Prop reading of ✱12·1, not its primary PM derivation; no primary graph edge is claimed."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T8",
-          "T9"
+          "T1",
+          "T2",
+          "T7",
+          "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

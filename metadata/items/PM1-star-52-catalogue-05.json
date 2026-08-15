@@ -25,7 +25,7 @@
       "scan_leaf": 387,
       "formal_scope": "exact typed characterization of subclasses of the unit-class class as singleton images of an underlying class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -44,14 +44,14 @@
         "editorial_note": "The reverse direction reuses the immediately preceding exact singleton-image inclusion ✱52·3; the displayed item has no printed citation list."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -63,7 +63,7 @@
       "scan_leaf": 387,
       "formal_scope": "exact typed at-most-one characterization of singleton-or-empty classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -80,26 +80,26 @@
         "editorial_note": "The typed proof uses the already audited equivalent existence-and-uniqueness characterization of unit classes."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱52·41",
       "kind": "derived-proposition",
       "demonstration_provenance": "editorial-reconstruction",
-      "printed": "✱52·41.  ⊢ : ∃!α . α ∉ 1 .≡. (∃x,y). x,y ∈ α . x ≠ y",
+      "printed": "✱52·41. ⊢ : ∃!α . α ∼ε 1 .≡. (∃x,y). x,y ∈ α . x ≠ y",
       "printed_page": 366,
       "scan_leaf": 388,
       "formal_scope": "exact classical characterization of an existent non-unit class by two distinct members",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -107,26 +107,26 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱52·42",
       "kind": "derived-proposition",
       "demonstration_provenance": "editorial-reconstruction",
-      "printed": "✱52·42.  ⊢ :: α ∈ 1 .⊃ : ∃!(α ∩ β) .≡. α ∩ β ∈ 1",
+      "printed": "✱52·42. ⊢ :. α ∈ 1 .⊃ : ∃!α ∩ β .≡. α ∩ β ∈ 1",
       "printed_page": 366,
       "scan_leaf": 388,
       "formal_scope": "exact typed equivalence between inhabited and unit intersection under a unit-class hypothesis",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -143,26 +143,26 @@
         "editorial_note": "The reverse implication extracts inhabitation through the exact unit-class characterization ✱52·16."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱52·43",
       "kind": "derived-proposition",
       "demonstration_provenance": "follows-printed",
-      "printed": "✱52·43.  ⊢ : α ∈ 1 . ∃!(α ∩ β) .≡. α ∈ 1 . α ∩ β ∈ 1  [✱52·42.✱5·32]",
+      "printed": "✱52·43. ⊢ : α ∈ 1 . ∃!α ∩ β .≡. α ∈ 1 . α ∩ β ∈ 1 [✱52·42.✱5·32]",
       "printed_page": 366,
       "scan_leaf": 388,
       "formal_scope": "exact contextual form of ✱52·42 retaining the common unit-class antecedent on both sides",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [
         "✱52·42",
@@ -182,14 +182,14 @@
         "editorial_note": "Lean uses the printed ✱52·42 directly; ✱5·32 is retained as historical propositional rearrangement evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

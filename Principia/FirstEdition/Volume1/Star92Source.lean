@@ -123,6 +123,9 @@ PM-VERBATIM-END PM1:✱92·19 -/
 ✱92·191. ⊢:R∈ Cls→1.DʻR⊂ ᗡʻR.P| Q ∈ PotidʻR.⊃: P̌| Q∈ PotidʻR.∨.Q̌| P∈ PotidʻR
 ✱92·191. ⊢ : R∈Cls→1 . DʻR⊂ᗡʻR . P|Q∈PotidʻR .⊃: CnvʻP|Q∈PotidʻR .∨. CnvʻQ|P∈PotidʻR
 PM-VERBATIM-END PM1:✱92·191 -/
+/- PM-VERBATIM-BEGIN PM1:✱92·2
+✱92·2. ⊢:α ∈ genʻP.≡.(∃T).T ∈ PotidʻP.α=min⃗_PʻᗡʻT  [✱37·67.(✱93·03)]
+PM-VERBATIM-END PM1:✱92·2 -/
 /- PM-VERBATIM-BEGIN PM1:✱92·3
 ✱92·3. ⊢:R∈ 1→Cls.P, Q∈ PotidʻR.⊃.P| Q̌⪽R_∗⊍Ř_∗
 ✱92·3. ⊢ : R∈1→Cls . P,Q∈PotidʻR .⊃. P|CnvʻQ⊂̇R∗∪̇CnvʻR∗

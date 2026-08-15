@@ -23,7 +23,7 @@
       "scan_leaf": 56,
       "formal_scope": "exact typed range characterization of membership in NC",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [
         "PM1:✱37·78",
@@ -46,14 +46,14 @@
         "editorial_note": "NC is the typed range predicate by definition, so the printed relation-theoretic citations remain historical."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -64,7 +64,7 @@
       "scan_leaf": 56,
       "formal_scope": "exact typed introduction of every Nc value into NC",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [
         "PM2:✱100·4",
@@ -85,14 +85,14 @@
         "editorial_note": "The range witness is constructed directly in the typed NC definition; PM's citations remain historical."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -103,7 +103,7 @@
       "scan_leaf": 56,
       "formal_scope": "exact typed uniqueness of two inhabited intersecting cardinal classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [
         "PM2:✱100·4",
@@ -125,14 +125,14 @@
         "editorial_note": "Lean uses the exact common-member equality lemma ·34 directly; PM's range expansion and final substitution citation are historical."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -143,7 +143,7 @@
       "scan_leaf": 56,
       "formal_scope": "exact typed pointwise exclusivity of the class NC",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [
         "PM2:✱100·42",
@@ -165,25 +165,25 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM2:✱100·44",
       "kind": "derived-proposition",
-      "printed": "✱100·44. ⊢ :: μ∈NC . ∃!Ncʻα .⊃ : α∈μ .≡. Ncʻα=μ",
+      "printed": "✱100·44. ⊢ :. μ∈NC . ∃!Ncʻα .⊃ : α∈μ .≡. Ncʻα=μ",
       "printed_page": 16,
       "scan_leaf": 56,
       "formal_scope": "exact typed membership/equality equivalence for a cardinal class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [
         "PM2:✱100·3",
@@ -212,14 +212,14 @@
         "editorial_note": "The typed proof reduces membership in an Nc value and uses extensional invariance ·321; this replaces PM's longer existence-and-substitution route."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

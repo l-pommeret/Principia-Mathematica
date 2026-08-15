@@ -23,7 +23,7 @@
       "scan_leaf": 165,
       "formal_scope": "exact typed reconstruction: the singleton family whose unique factor is empty has no choice function, representing cardinal product zero",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱114·21",
@@ -45,14 +45,14 @@
       "parser_evidence": "reviews/Star114-catalogue-02-semantic-audit.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -63,7 +63,7 @@
       "scan_leaf": 165,
       "formal_scope": "exact typed reconstruction: an empty indexed factor makes the dependent product empty, representing PM's zero cardinal product",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱83·11",
@@ -85,14 +85,14 @@
       "parser_evidence": "reviews/Star114-catalogue-02-semantic-audit.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -103,7 +103,7 @@
       "scan_leaf": 165,
       "formal_scope": "exact typed reconstruction: a choice function on a family restricts along the inclusion map to a choice function on every indexed subfamily",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -112,14 +112,14 @@
       "parser_evidence": "reviews/Star114-catalogue-02-semantic-audit.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

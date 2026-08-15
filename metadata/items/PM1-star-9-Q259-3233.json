@@ -37,7 +37,7 @@
       "scan_leaf": 162,
       "formal_scope": "right injection into a universal first-order disjunction",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-first-order-kernel-integrated",
       "pm_migration_status": "blocked",
       "pm_ast": "FirstOrderQ259.star_9_32_target q φ",
@@ -71,13 +71,14 @@
         "editorial_note": "The Lean body expands PM’s compressed or cross-referenced proof into explicit typed inference constructors and definitional readings."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
-          "T7"
+          "T1",
+          "T2",
+          "T7",
+          "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -88,7 +89,7 @@
       "scan_leaf": 162,
       "formal_scope": "right injection into an existential first-order disjunction",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-first-order-kernel-integrated",
       "printed_dependencies": [
         "Proof as above"
@@ -119,14 +120,14 @@
         "editorial_note": "The Lean body expands PM’s compressed or cross-referenced proof into explicit typed inference constructors and definitional readings."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ]

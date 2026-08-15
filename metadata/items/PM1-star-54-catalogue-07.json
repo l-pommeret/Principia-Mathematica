@@ -24,7 +24,7 @@
       "scan_leaf": 403,
       "formal_scope": "exact existence of two distinct members witnessing a cardinal couple",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -33,13 +33,13 @@
       "parser_evidence": "reviews/Star54-closing-07-review.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -50,7 +50,7 @@
       "scan_leaf": 403,
       "formal_scope": "exact permutation of the zero/one/two cardinal-class union",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -59,24 +59,24 @@
       "parser_evidence": "reviews/Star54-closing-07-review.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱54·56",
       "kind": "derived-proposition",
-      "printed": "✱54·56.  ⊢ : α ∉ 0 ∪ 1 ∪ 2 .≡ : (∃x,y,z). x,y,z ε α . x ≠ y . x ≠ z . y ≠ z",
+      "printed": "✱54·56. ⊢ : α ∼ε 0 ∪ 1 ∪ 2 .≡ . (∃x,y,z). x,y,z ε α . x ≠ y . x ≠ z . y ≠ z",
       "printed_page": 382,
       "scan_leaf": 404,
       "formal_scope": "exact characterization of classes outside cardinal zero, one, and two by three pairwise distinct members",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·44"
@@ -89,24 +89,24 @@
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱54·6",
       "kind": "derived-proposition",
-      "printed": "✱54·6.  ⊢ : α ∩ β = Λ . x,y ε α . z,w ε β .⊃ : ιʻx ∪ ιʻz = ιʻy ∪ ιʻw .≡ . x = y . z = w",
+      "printed": "✱54·6. ⊢ :. α ∩ β = Λ . x,xʻ ε α . y,yʻ ε β .⊃ : ιʻx ∪ ιʻy = ιʻxʻ ∪ ιʻyʻ .≡ . x = xʻ . y = yʻ",
       "printed_page": 382,
       "scan_leaf": 404,
       "formal_scope": "exact equality characterization for cross-pairs drawn from disjoint classes",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱54·22"
@@ -119,13 +119,13 @@
       "parser_evidence": "reviews/Star54-closing-07-review.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

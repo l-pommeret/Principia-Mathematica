@@ -15,7 +15,7 @@
       "printed": "⊢:x∈ R⃗ʻy.≡.y∈ R⃖ʻx [*32·18·181]",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
@@ -25,14 +25,14 @@
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "\\(\\vdash:x\\in \\overrightarrow{R}ʻy.\\equiv.y\\in \\overleftarrow{R}ʻx \\quad[\\text{*32·18·181}]\\)"
     },
@@ -42,7 +42,7 @@
       "printed": "⊢:R⪽S.⊃.R⃗ʻy⊂S⃗ʻy.R⃖ʻx⊂S⃖ʻx",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
@@ -52,14 +52,14 @@
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "\\(\\vdash:R\\unicode{x2abd}S.\\supset.\\overrightarrow{R}ʻy\\subset\\overrightarrow{S}ʻy.\\overleftarrow{R}ʻx\\subset\\overleftarrow{S}ʻx\\)"
     },
@@ -69,7 +69,7 @@
       "printed": "⊢:A sg R.≡.A=R⃗ [*21·3.(*32·03)]",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
@@ -79,14 +79,14 @@
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "\\(\\vdash:A \\text{sg} R.\\equiv.A=\\overrightarrow{R} \\quad[\\text{*21·3.(*32·03)}]\\)"
     },
@@ -96,7 +96,7 @@
       "printed": "⊢:A gs R.≡.A=R⃖ [*21·3.(*32·04)]",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
@@ -106,14 +106,14 @@
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "\\(\\vdash:A \\text{gs} R.\\equiv.A=\\overleftarrow{R} \\quad[\\text{*21·3.(*32·04)}]\\)"
     },
@@ -123,7 +123,7 @@
       "printed": "⊢.R⃗=sgʻR [*32·2.*30·3]",
       "formal_scope": "exact typed reconstruction of the canonical relation-section proposition; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_blocked": false,
       "integration_status": "awaiting-ci",
       "printed_dependencies": [],
@@ -133,14 +133,14 @@
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "\\(\\vdash.\\overrightarrow{R}=\\text{sg}ʻR \\quad[\\text{*32·2.*30·3}]\\)"
     }

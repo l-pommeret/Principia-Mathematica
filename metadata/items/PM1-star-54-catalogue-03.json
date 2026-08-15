@@ -24,7 +24,7 @@
       "scan_leaf": 399,
       "formal_scope": "exact typed characterization of cardinal one-or-two classes as unordered couples",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -41,13 +41,13 @@
         "editorial_note": "The typed class characterization reuses the immediately preceding pair-cardinality disjunction ✱54·27; PM prints no citation on this line."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -58,42 +58,42 @@
       "scan_leaf": 400,
       "formal_scope": "exact typed characterization of cardinal two by singleton deletion",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱54·4",
       "kind": "derived-proposition",
-      "printed": "✱54·4.  ⊢ : β ⊂ ιʻx ∪ ιʻy .≡ : β = Λ .∨. β = ιʻx .∨. β = ιʻy .∨. β = ιʻx ∪ ιʻy",
+      "printed": "✱54·4. ⊢ :. β ⊂ ιʻx ∪ ιʻy .≡ : β = Λ .∨. β = ιʻx .∨. β = ιʻy .∨. β = ιʻx ∪ ιʻy",
       "printed_page": 378,
       "scan_leaf": 400,
       "formal_scope": "exact typed enumeration of all subclasses of an unordered couple",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -104,7 +104,7 @@
       "scan_leaf": 400,
       "formal_scope": "exact typed cardinal classification of subclasses of a cardinal-two class",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -121,24 +121,24 @@
         "editorial_note": "Lean specializes the exhaustive subclass classification ✱54·4; PM gives no explicit citation for ✱54·41."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
       "id": "PM1:✱54·411",
       "kind": "derived-proposition",
-      "printed": "✱54·411.  ⊢ : α ε 2 . β ⊂ α .⊃ . β ε 0 ∪ 1 ∪ 2",
+      "printed": "✱54·411. ⊢ :. α ε 2 .⊃ : β ⊂ α .⊃ . β ε 0 ∪ 1 ∪ 2 [✱54·41·02]",
       "printed_page": 378,
       "scan_leaf": 400,
       "formal_scope": "exact typed membership of every subclass in cardinal zero, one, or two",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "lean_dependencies": [],
@@ -155,13 +155,13 @@
         "editorial_note": "Lean packages the three cases proved by ✱54·41 as membership in zero, one, or two; the printed line has no explicit citation."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

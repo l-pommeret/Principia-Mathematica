@@ -33,7 +33,7 @@
       "scan_leaf": 82,
       "formal_scope": "exact typed reconstruction of transitivity across two successive cardinal type ascents; strict source-to-Lean audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱104·1",
@@ -60,14 +60,14 @@
       "semantic_audit_status": "strict-equivalence-passed",
       "demonstration_skeleton": "aristotle/demonstrations/PM2-star-104-12.txt",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

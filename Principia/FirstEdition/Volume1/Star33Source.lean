@@ -88,6 +88,9 @@ Dem.
 [*10·24] ⊃ₓ.(∃ y).xRy.
 [*33·13] ⊃ₓ.x∈ DʻR:⊃⊢.Prop
 PM-VERBATIM-END PM1:✱33·15 -/
+/- PM-VERBATIM-BEGIN PM1:✱33·151
+✱33·151. ⊢. R⃖ʻx ⊂ ᗡʻR
+PM-VERBATIM-END PM1:✱33·151 -/
 /- PM-VERBATIM-BEGIN PM1:✱33·152
 ✱33·152. ⊢.R⃗ʻx∪ R⃖ʻx⊂ CʻR
 ✱33·152.  \(\vdash.\overrightarrow{R}ʻx\cup \overleftarrow{R}ʻx\subset CʻR\)

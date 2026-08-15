@@ -25,7 +25,7 @@
       "scan_leaf": 252,
       "formal_scope": "exact typed successor closure for inductive finite cardinals represented by Nat; the printed existence condition is discharged by the total typed carrier",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱120·15",
@@ -51,13 +51,13 @@
         "editorial_note": "The total Nat representation discharges the existence guard and successor closure directly; PM's cardinal/type-lift route remains historical evidence."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -68,7 +68,7 @@
       "scan_leaf": 264,
       "formal_scope": "exact typed finite-class characterization: membership in the inductive classes is represented by a finite enumeration, the typed normalization of an inductive cardinal number",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱120·14",
@@ -92,13 +92,13 @@
         "editorial_note": "Finite enumeration is the typed normalization of the source's finite-cardinal criterion; the displayed historical derivation is not replayed."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -109,7 +109,7 @@
       "scan_leaf": 253,
       "formal_scope": "exact typed proof that the empty class is finite (belongs to Cls induct)",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM2:✱120·12",
@@ -131,13 +131,13 @@
         "editorial_note": "Lean supplies the empty enumeration directly instead of routing through PM's cardinal propositions."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

@@ -24,7 +24,7 @@
       "scan_leaf": 320,
       "formal_scope": "exact typed image-intersection inclusion with all four displayed conjuncts; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱37·21",
@@ -44,14 +44,14 @@
         "editorial_note": "The direct Lean proof reconstructs the four inclusions from a single witness instead of invoking the two printed predecessors."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱37·212. \\vdash.(P\\dot{\\cap}Q)ʻʻ(\\alpha\\cap \\beta)\\subset Pʻʻ\\alpha\\cap Pʻʻ\\beta\\cap Qʻʻ\\alpha\\cap Qʻʻ\\beta \\quad[\\text{*37·21·211}]",
       "parser_status": "reviewed-gap",
@@ -65,21 +65,21 @@
       "scan_leaf": 321,
       "formal_scope": "exact typed distribution of relation-union image over a class; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
       "normalized_dependencies": [],
       "lean_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱37·221. \\vdash.(P\\unicode{x228d}Q)ʻʻ\\alpha=Pʻʻ\\alpha\\cup Qʻʻ\\alpha \\quad[\\text{Similar proof}]",
       "parser_status": "reviewed-gap",
@@ -93,7 +93,7 @@
       "scan_leaf": 321,
       "formal_scope": "exact typed four-way distribution of relation-union image over class union; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱37·22",
@@ -113,14 +113,14 @@
         "editorial_note": "The direct Lean proof performs the four witness cases explicitly rather than calling the two printed distribution theorems."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱37·222. \\vdash.(P\\unicode{x228d}Q)ʻʻ(\\alpha\\cup \\beta)=Pʻʻ\\alpha\\cup Pʻʻ\\beta\\cup Qʻʻ\\alpha\\cup Qʻʻ\\beta \\quad[\\text{*37·22·221}]",
       "parser_status": "reviewed-gap",
@@ -134,7 +134,7 @@
       "scan_leaf": 321,
       "formal_scope": "exact typed characterization of the domain of the image relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱37·101",
@@ -154,14 +154,14 @@
         "editorial_note": "The typed image relation and domain definitions make the printed characterization definitional, so the cited predecessors do not occur in the Lean term."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱37·23. \\vdash.DʻR_{\\in}=\\hat{\\alpha}\\{(\\exists \\beta).\\alpha=Rʻʻ\\beta\\} \\quad[\\text{*37·101.*33·11}]",
       "parser_status": "reviewed-gap",
@@ -175,7 +175,7 @@
       "scan_leaf": 321,
       "formal_scope": "exact typed universality of the converse-domain of the image relation; strict semantic audit passed",
       "source_status": "source-catalogued-PM-VERBATIM",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [
         "PM1:✱10·11",
@@ -187,14 +187,14 @@
       "lean_dependencies": [],
       "semantic_audit_status": "strict-equivalence-passed",
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       },
       "printed_latex_witness": "✱37·231. \\vdash.\\text{ᗡ}ʻR_{\\in}=\\text{Cls}",
       "parser_status": "reviewed-gap",

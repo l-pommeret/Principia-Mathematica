@@ -9,7 +9,7 @@
       "printed": "✱205·195. ⊢ : x max_P α .⊃. ~(xPx)",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_scope": "audited typed irreflexivity endpoint",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "integration_blocked": false,
       "parser_status": "reviewed-gap",
@@ -18,13 +18,13 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -33,7 +33,7 @@
       "printed": "✱205·21. ⊢ : P∈connex . E!min_Pʻα . y∈α∩CʻP-℩ʻmin_Pʻα .⊃. min_Pʻα P y",
       "source_status": "source-catalogued-PM-VERBATIM",
       "formal_scope": "audited typed connex minimum endpoint",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "integration_blocked": false,
       "parser_status": "reviewed-gap",
@@ -42,13 +42,13 @@
       "lean_dependencies": [],
       "normalized_dependencies": [],
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
-          "T3",
-          "T4",
+          "T1",
+          "T2",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],

@@ -38,7 +38,7 @@
       "scan_leaf": 172,
       "formal_scope": "exact closed canonical formal implication composition",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·22",
@@ -64,14 +64,13 @@
         "editorial_note": "The closed record retains ✱10·22, ✱4·76, and ✱10·271 directly; the printed generalization step ✱10·11 is internal to the reused closed contracts."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
           "T2",
-          "T3",
-          "T4",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -82,7 +81,7 @@
       "scan_leaf": 172,
       "formal_scope": "exact closed canonical formal syllogism",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·22·221",
@@ -105,14 +104,13 @@
         "editorial_note": "The ✱10·221 same-type side condition is discharged by the shared typed Apparent carrier and therefore has no theorem call; ✱10·22 and ✱10·27 remain explicit."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
           "T2",
-          "T3",
-          "T4",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -123,7 +121,7 @@
       "scan_leaf": 173,
       "formal_scope": "exact closed canonical formal equivalence transitivity",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·22·221",
@@ -150,14 +148,13 @@
         "editorial_note": "The ✱10·221 same-type side condition is discharged by the shared typed Apparent carrier; the three proposition dependencies remain direct."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
           "T2",
-          "T3",
-          "T4",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -168,7 +165,7 @@
       "scan_leaf": 173,
       "formal_scope": "exact closed canonical formal implication factor",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·11",
@@ -188,14 +185,13 @@
         "editorial_note": "The theorem-specific wrapper reuses the closed ✱10·27 lift; generalization is internal to that contract."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
           "T2",
-          "T3",
-          "T4",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     },
     {
@@ -206,7 +202,7 @@
       "scan_leaf": 173,
       "formal_scope": "exact closed canonical formal equivalence factor",
       "source_status": "source-catalogued",
-      "formal_status": "lean-typechecked",
+      "formal_status": "unbuilt",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱4·36",
@@ -230,14 +226,13 @@
         "editorial_note": "The theorem-specific wrapper directly retains ✱4·36 and the closed ✱10·27 lift; generalization is internal to that contract."
       },
       "certification": {
-        "tier": "lean-typechecked",
+        "tier": "unbuilt",
         "failed_criteria": [
+          "T1",
           "T2",
-          "T3",
-          "T4",
           "T8"
         ],
-        "computed_at_commit": "c9259778ddb94a65b0748396bac71405f17799ed"
+        "computed_at_commit": "3af24d34c13d7d2826094750201d493b03af89bf"
       }
     }
   ],
