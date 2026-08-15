@@ -2539,33 +2539,163 @@ theorem star_13_171
 /-- Audited scope reading of ✱13·18. -/
 def star_13_18_reading
     (vocabulary : IdentityVocabulary signature sort order excess)
-    (negation : signature.Negation
-      (bindOrder order (.function [sort] order excess)))
-    (disjunction : signature.Disjunction
-      (bindOrder order (.function [sort] order excess)))
-    (x y z : Term signature real [] sort) : ClaimReading signature real where
-  printed := "⊢ : x = y . x ≠ z .⊃ . y ≠ z"
-  parsed := .assertion (implication negation disjunction
-    (conjunction negation disjunction
-      (star_13_01 vocabulary x y)
-      (star_13_02 vocabulary negation x z))
-    (star_13_02 vocabulary negation y z))
+    (x y z : Term signature real [] sort) : ClaimReading signature real :=
+  let predicate : Term signature real
+      [.function [sort] order excess]
+      (.function [sort] order excess) := .apparent .zero
+  let phiX := applyUnary predicate x.weaken
+  let phiY := applyUnary predicate y.weaken
+  let phiZ := applyUnary predicate z.weaken
+  {
+    printed := "⊢ : x = y . x ≠ z .⊃ . y ≠ z"
+    parsed := .assertion (.always vocabulary.universal
+      (implication vocabulary.negation vocabulary.disjunction
+        (star13_apparentConjunction vocabulary.negation
+          vocabulary.disjunction
+          (implication vocabulary.negation vocabulary.disjunction phiX phiY)
+          (.neg vocabulary.negation
+            (implication vocabulary.negation vocabulary.disjunction phiX phiZ)))
+        (.neg vocabulary.negation
+          (implication vocabulary.negation vocabulary.disjunction phiY phiZ))))
+  }
 
-/-- ✱13·18 remains explicitly asserted.
-`demonstration_provenance: editorial-reconstruction`. -/
+/-- ✱13·18, by the printed `✱13·17 . ✱4·14` citation.
+`demonstration_provenance: follows-printed`. -/
 theorem star_13_18
     (vocabulary : IdentityVocabulary signature sort order excess)
     (negation : signature.Negation
       (bindOrder order (.function [sort] order excess)))
     (disjunction : signature.Disjunction
-      (bindOrder order (.function [sort] order excess)))
-    (x y z : Term signature real [] sort)
-    (star_13_18_hypothesis : Derivation
-      (star_13_18_reading vocabulary negation disjunction x y z).parsed) :
+      (max (bindOrder order (.function [sort] order excess)) order))
+    (x y z : Term signature real [] sort) :
     Derivation
-      (star_13_18_reading vocabulary negation disjunction x y z).parsed := by
-  have line1 := star_13_18_hypothesis
-  exact line1
+      (star_13_18_reading vocabulary x y z).parsed := by
+  let functionSort : RSort := .function [sort] order excess
+  let identityOrder := bindOrder order functionSort
+  let predicate : Term signature real [functionSort] functionSort :=
+    .apparent .zero
+  let phiX := applyUnary predicate x.weaken
+  let phiY := applyUnary predicate y.weaken
+  let phiZ := applyUnary predicate z.weaken
+  let weakPredicate : Term signature (functionSort :: real)
+      [functionSort] functionSort := .apparent .zero
+  let weakPhiX := applyUnary weakPredicate
+    (x.weakenReal (fresh := functionSort)).weaken
+  let weakPhiY := applyUnary weakPredicate
+    (y.weakenReal (fresh := functionSort)).weaken
+  let weakPhiZ := applyUnary weakPredicate
+    (z.weakenReal (fresh := functionSort)).weaken
+  let weakSourceBody := implication vocabulary.negation vocabulary.disjunction
+    (star13_apparentConjunction vocabulary.negation vocabulary.disjunction
+      (implication vocabulary.negation vocabulary.disjunction weakPhiX weakPhiY)
+      (implication vocabulary.negation vocabulary.disjunction weakPhiY weakPhiZ))
+    (implication vocabulary.negation vocabulary.disjunction weakPhiX weakPhiZ)
+  let targetBody := implication vocabulary.negation vocabulary.disjunction
+    (star13_apparentConjunction vocabulary.negation vocabulary.disjunction
+      (implication vocabulary.negation vocabulary.disjunction phiX phiY)
+      (.neg vocabulary.negation
+        (implication vocabulary.negation vocabulary.disjunction phiX phiZ)))
+    (.neg vocabulary.negation
+      (implication vocabulary.negation vocabulary.disjunction phiY phiZ))
+  let value : Term signature (functionSort :: real) [] functionSort :=
+    .real .zero
+  have line1a := star_13_17 (real := functionSort :: real) vocabulary
+    (x.weakenReal (fresh := functionSort))
+    (y.weakenReal (fresh := functionSort))
+    (z.weakenReal (fresh := functionSort))
+  change ⊢ᵣ Formula.always vocabulary.universal weakSourceBody at line1a
+  have line1b := Derivation.star_10_1 vocabulary.universal negation
+    disjunction weakSourceBody value
+  have line1 := star13_mixedDetach negation disjunction
+    (.always vocabulary.universal weakSourceBody)
+    (weakSourceBody.instantiate value) line1a line1b
+  let pointXY :=
+    (implication vocabulary.negation vocabulary.disjunction weakPhiX weakPhiY).instantiate value
+  let pointYZ :=
+    (implication vocabulary.negation vocabulary.disjunction weakPhiY weakPhiZ).instantiate value
+  let pointXZ :=
+    (implication vocabulary.negation vocabulary.disjunction weakPhiX weakPhiZ).instantiate value
+  let sourcePoint := implication vocabulary.negation vocabulary.disjunction
+    (conjunction vocabulary.negation vocabulary.disjunction pointXY pointYZ) pointXZ
+  let targetPoint := implication vocabulary.negation vocabulary.disjunction
+    (conjunction vocabulary.negation vocabulary.disjunction pointXY
+      (.neg vocabulary.negation pointXZ))
+    (.neg vocabulary.negation pointYZ)
+  have line1Equality : weakSourceBody.instantiate value = sourcePoint := by
+    unfold weakSourceBody sourcePoint pointXY pointYZ pointXZ
+    rw [Formula.instantiate, implication_substitute,
+      star13_apparentConjunction_substitute]
+    rfl
+  have line1' := Derivation.castAssertion line1Equality.symm line1
+  have line2a := star_4_14 vocabulary.negation vocabulary.disjunction
+    pointXY pointYZ pointXZ
+  have line2b := star_3_26 (real := functionSort :: real)
+    vocabulary.negation vocabulary.disjunction
+    (implication vocabulary.negation vocabulary.disjunction sourcePoint targetPoint)
+    (implication vocabulary.negation vocabulary.disjunction targetPoint sourcePoint)
+  have line2c := star13_detach vocabulary.negation vocabulary.disjunction
+    (star_4_01 vocabulary.negation vocabulary.disjunction sourcePoint targetPoint)
+    (implication vocabulary.negation vocabulary.disjunction sourcePoint targetPoint)
+    line2a line2b
+  have line2d := star13_detach vocabulary.negation vocabulary.disjunction
+    sourcePoint targetPoint line1' line2c
+  have line2e :
+      (implication vocabulary.negation vocabulary.disjunction phiX phiY).weakenReal
+        (fresh := functionSort) =
+      implication vocabulary.negation vocabulary.disjunction weakPhiX weakPhiY := by
+    rw [implication_weakenReal]
+    unfold phiX phiY predicate weakPhiX weakPhiY weakPredicate
+    cases x <;> cases y <;> rfl
+  have line2f :
+      (implication vocabulary.negation vocabulary.disjunction phiX phiZ).weakenReal
+        (fresh := functionSort) =
+      implication vocabulary.negation vocabulary.disjunction weakPhiX weakPhiZ := by
+    rw [implication_weakenReal]
+    unfold phiX phiZ predicate weakPhiX weakPhiZ weakPredicate
+    cases x <;> cases z <;> rfl
+  have line2g :
+      (implication vocabulary.negation vocabulary.disjunction phiY phiZ).weakenReal
+        (fresh := functionSort) =
+      implication vocabulary.negation vocabulary.disjunction weakPhiY weakPhiZ := by
+    rw [implication_weakenReal]
+    unfold phiY phiZ predicate weakPhiY weakPhiZ weakPredicate
+    cases y <;> cases z <;> rfl
+  let weakTargetBody := implication vocabulary.negation vocabulary.disjunction
+    (star13_apparentConjunction vocabulary.negation vocabulary.disjunction
+      (implication vocabulary.negation vocabulary.disjunction weakPhiX weakPhiY)
+      (.neg vocabulary.negation
+        (implication vocabulary.negation vocabulary.disjunction weakPhiX weakPhiZ)))
+    (.neg vocabulary.negation
+      (implication vocabulary.negation vocabulary.disjunction weakPhiY weakPhiZ))
+  have line2h : targetBody.weakenReal = weakTargetBody := by
+    unfold targetBody weakTargetBody
+    rw [implication_weakenReal, star13_apparentConjunction_weakenReal]
+    change implication vocabulary.negation vocabulary.disjunction
+      (star13_apparentConjunction vocabulary.negation vocabulary.disjunction
+        ((implication vocabulary.negation vocabulary.disjunction phiX phiY).weakenReal)
+        (.neg vocabulary.negation
+          ((implication vocabulary.negation vocabulary.disjunction phiX phiZ).weakenReal)))
+      (.neg vocabulary.negation
+        ((implication vocabulary.negation vocabulary.disjunction phiY phiZ).weakenReal)) = _
+    rw [line2e, line2f, line2g]
+  have line2Equality : targetBody.weakenReal.instantiate value = targetPoint := by
+    rw [line2h]
+    unfold weakTargetBody targetPoint pointXY pointYZ pointXZ
+    rw [Formula.instantiate, implication_substitute,
+      star13_apparentConjunction_substitute]
+    change implication vocabulary.negation vocabulary.disjunction
+      (star13_apparentConjunction vocabulary.negation vocabulary.disjunction
+        ((implication vocabulary.negation vocabulary.disjunction
+          weakPhiX weakPhiY).instantiate value)
+        (.neg vocabulary.negation
+          ((implication vocabulary.negation vocabulary.disjunction
+            weakPhiX weakPhiZ).instantiate value)))
+      (.neg vocabulary.negation
+        ((implication vocabulary.negation vocabulary.disjunction
+          weakPhiY weakPhiZ).instantiate value)) = _
+    rfl
+  have line2 := Derivation.castAssertion line2Equality line2d
+  exact star_10_11 vocabulary.universal targetBody line2
 
 /-- Audited scope reading of ✱13·181. -/
 def star_13_181_reading
@@ -4798,38 +4928,302 @@ theorem star_13_193
 
 /-- Audited scope reading of ✱13·194. -/
 def star_13_194_reading
-    (vocabulary : IdentityVocabulary signature sort order excess)
-    (negation : signature.Negation
-      (bindOrder order (.function [sort] order excess)))
-    (disjunction : signature.Disjunction
-      (bindOrder order (.function [sort] order excess)))
+    (vocabulary : IdentityVocabulary signature sort order 0)
+    (identityNegation : signature.Negation
+      (bindOrder order (.function [sort] order 0)))
+    (identityOrderDisjunction : signature.Disjunction
+      (bindOrder order (.function [sort] order 0)))
+    (identityBaseNegation : signature.Negation
+      (max (bindOrder order (.function [sort] order 0)) order))
+    (identityBaseDisjunction : signature.Disjunction
+      (max (bindOrder order (.function [sort] order 0)) order))
+    (psi : Formula signature real [sort] order)
     (x y : Term signature real [] sort)
-    (phiX phiY : Formula signature real []
-      (bindOrder order (.function [sort] order excess))) :
-    ClaimReading signature real where
-  printed := "⊢ : φx . x = y .≡ . φx . φy . x = y"
-  parsed := .assertion (star_4_01 negation disjunction
-    (conjunction negation disjunction phiX (star_13_01 vocabulary x y))
-    (conjunction negation disjunction phiX
-      (conjunction negation disjunction phiY (star_13_01 vocabulary x y))))
+    : ClaimReading signature real :=
+  let identityOrder := bindOrder order (.function [sort] order 0)
+  let identity := star_13_01 vocabulary x y
+  let psiX := psi.instantiate x
+  let psiY := psi.instantiate y
+  let ternaryNegation : MixedOrder.TernaryNegations signature := {
+    pOrder := identityOrder
+    qOrder := identityOrder
+    rOrder := order
+    p := identityNegation
+    q := identityNegation
+    r := vocabulary.negation
+    pq := Eq.mp (congrArg signature.Negation
+      (natMaxSelf identityOrder).symm) identityNegation
+    pr := identityBaseNegation
+    qr := identityBaseNegation
+    pqr := Eq.mp (congrArg signature.Negation
+      (MixedOrder.maxLeftAbsorb identityOrder order).symm)
+      identityBaseNegation
+  }
+  let ternaryDisjunction : MixedOrder.TernaryDisjunctions signature
+      ternaryNegation := {
+    p := identityOrderDisjunction
+    q := identityOrderDisjunction
+    r := vocabulary.disjunction
+    pq := Eq.mp (congrArg signature.Disjunction
+      (natMaxSelf identityOrder).symm) identityOrderDisjunction
+    pr := identityBaseDisjunction
+    qr := identityBaseDisjunction
+    pqr := Eq.mp (congrArg signature.Disjunction
+      (MixedOrder.maxLeftAbsorb identityOrder order).symm)
+      identityBaseDisjunction
+  }
+  let leftElement := star13_bridgeX ∧ₚ star13_bridgeE
+  let rightElement := star13_bridgeX ∧ₚ
+    (star13_bridgeY ∧ₚ star13_bridgeE)
+  let targetElement := leftElement ≡ₚ
+    rightElement
+  {
+    printed := "⊢ : φx . x = y .≡ . φx . φy . x = y"
+    parsed := .assertion (star13_bridgeInterpret ternaryNegation
+      ternaryDisjunction identity identity psiX psiY psiX psiY
+      targetElement)
+  }
 
-/-- ✱13·194 remains explicitly asserted.
-`demonstration_provenance: editorial-reconstruction`. -/
+/-- ✱13·194, by the printed `✱13·13 . ✱4·71` citation.
+`assumptions: PM1:REDUCIBILITY`.
+`demonstration_provenance: follows-printed`. -/
 theorem star_13_194
-    (vocabulary : IdentityVocabulary signature sort order excess)
-    (negation : signature.Negation
-      (bindOrder order (.function [sort] order excess)))
-    (disjunction : signature.Disjunction
-      (bindOrder order (.function [sort] order excess)))
-    (x y : Term signature real [] sort)
-    (phiX phiY : Formula signature real []
-      (bindOrder order (.function [sort] order excess)))
-    (star_13_194_hypothesis : Derivation
-      (star_13_194_reading vocabulary negation disjunction x y phiX phiY).parsed) :
-    Derivation (star_13_194_reading vocabulary negation disjunction
-      x y phiX phiY).parsed := by
-  have line1 := star_13_194_hypothesis
-  exact line1
+    (vocabulary : IdentityVocabulary signature sort order 0)
+    (reducibilityExistential : ExistentialVocabulary signature
+      (.function [sort] order 0) (bindOrder order sort))
+    (argumentUniversal : signature.Universal sort order)
+    (identityNegation : signature.Negation
+      (bindOrder order (.function [sort] order 0)))
+    (identityBaseDisjunction : signature.Disjunction
+      (max (bindOrder order (.function [sort] order 0)) order))
+    (reducibilityNegation : signature.Negation (bindOrder order sort))
+    (reducibilityIdentityNegation : signature.Negation
+      (max (bindOrder order sort)
+        (bindOrder order (.function [sort] order 0))))
+    (reducibilityBaseNegation : signature.Negation
+      (max (bindOrder order sort) order))
+    (identityBaseNegation : signature.Negation
+      (max (bindOrder order (.function [sort] order 0)) order))
+    (substitutionResultNegation : signature.Negation
+      (max (bindOrder order sort)
+        (max (bindOrder order (.function [sort] order 0)) order)))
+    (reducibilityDisjunction : signature.Disjunction (bindOrder order sort))
+    (identityOrderDisjunction : signature.Disjunction
+      (bindOrder order (.function [sort] order 0)))
+    (reducibilityIdentityDisjunction : signature.Disjunction
+      (max (bindOrder order sort)
+        (bindOrder order (.function [sort] order 0))))
+    (reducibilityBaseDisjunction : signature.Disjunction
+      (max (bindOrder order sort) order))
+    (substitutionResultDisjunction : signature.Disjunction
+      (max (bindOrder order sort)
+        (max (bindOrder order (.function [sort] order 0)) order)))
+    (reducibilityScopeUniversal : signature.Universal
+      (.function [sort] order 0)
+      (max (bindOrder order sort)
+        (max (bindOrder order (.function [sort] order 0)) order)))
+    (reducibilityScopeNegation : signature.Negation
+      (bindOrder
+        (max (bindOrder order sort)
+          (max (bindOrder order (.function [sort] order 0)) order))
+        (.function [sort] order 0)))
+    (reducibilityScopeDisjunction : signature.Disjunction
+      (bindOrder
+        (max (bindOrder order sort)
+          (max (bindOrder order (.function [sort] order 0)) order))
+        (.function [sort] order 0)))
+    (existentialTargetDisjunction : signature.Disjunction
+      (max
+        (bindOrder (bindOrder order sort) (.function [sort] order 0))
+        (max (bindOrder order (.function [sort] order 0)) order)))
+    (psi : Formula signature real [sort] order)
+    (x y : Term signature real [] sort) :
+    Derivation (star_13_194_reading vocabulary identityNegation
+      identityOrderDisjunction identityBaseNegation identityBaseDisjunction
+      psi x y).parsed := by
+  let identityOrder := bindOrder order (.function [sort] order 0)
+  let identity := star_13_01 vocabulary x y
+  let psiX := psi.instantiate x
+  let psiY := psi.instantiate y
+  let ternaryNegation : MixedOrder.TernaryNegations signature := {
+    pOrder := identityOrder
+    qOrder := identityOrder
+    rOrder := order
+    p := identityNegation
+    q := identityNegation
+    r := vocabulary.negation
+    pq := Eq.mp (congrArg signature.Negation
+      (natMaxSelf identityOrder).symm) identityNegation
+    pr := identityBaseNegation
+    qr := identityBaseNegation
+    pqr := Eq.mp (congrArg signature.Negation
+      (MixedOrder.maxLeftAbsorb identityOrder order).symm)
+      identityBaseNegation
+  }
+  let ternaryDisjunction : MixedOrder.TernaryDisjunctions signature
+      ternaryNegation := {
+    p := identityOrderDisjunction
+    q := identityOrderDisjunction
+    r := vocabulary.disjunction
+    pq := Eq.mp (congrArg signature.Disjunction
+      (natMaxSelf identityOrder).symm) identityOrderDisjunction
+    pr := identityBaseDisjunction
+    qr := identityBaseDisjunction
+    pqr := Eq.mp (congrArg signature.Disjunction
+      (MixedOrder.maxLeftAbsorb identityOrder order).symm)
+      identityBaseDisjunction
+  }
+  let leftElement := star13_bridgeX ∧ₚ star13_bridgeE
+  let sourceElement := leftElement ⊃ₚ star13_bridgeY
+  let directRightElement := leftElement ∧ₚ star13_bridgeY
+  let rightElement := star13_bridgeX ∧ₚ
+    (star13_bridgeY ∧ₚ star13_bridgeE)
+  let directTargetElement := leftElement ≡ₚ directRightElement
+  let targetElement := leftElement ≡ₚ rightElement
+  have line1 := star_13_13 vocabulary reducibilityExistential
+    argumentUniversal identityNegation identityBaseDisjunction
+    reducibilityNegation reducibilityIdentityNegation
+    reducibilityBaseNegation identityBaseNegation
+    substitutionResultNegation reducibilityDisjunction
+    identityOrderDisjunction reducibilityIdentityDisjunction
+    reducibilityBaseDisjunction substitutionResultDisjunction
+    reducibilityScopeUniversal reducibilityScopeNegation
+    reducibilityScopeDisjunction existentialTargetDisjunction psi x y
+  change ⊢ᵣ star_13_13_formula vocabulary identityNegation
+    identityOrderDisjunction identityBaseNegation identityBaseDisjunction
+    psi x y at line1
+  unfold star_13_13_formula at line1
+  change ⊢ᵣ star13_bridgeInterpret ternaryNegation ternaryDisjunction
+    identity identity psiX psiY psiX psiY sourceElement at line1
+  have line2a := MixedOrder.transport MixedOrder.TernarySupport.combine
+    ternaryNegation.toVocabulary ternaryDisjunction.toVocabulary
+    (MixedOrder.ternaryTautology ternaryNegation ternaryDisjunction)
+    (fun _ => MixedOrder.TernarySupport.p) (fun _ => identity)
+    star13_bridgeSupport
+    (star13_bridgeValuation ternaryNegation identity identity
+      psiX psiY psiX psiY)
+    (PM.FirstEdition.Volume1.Star4.star_4_71
+      leftElement star13_bridgeY)
+  change ⊢ᵣ star13_bridgeInterpret ternaryNegation ternaryDisjunction
+    identity identity psiX psiY psiX psiY
+    (sourceElement ≡ₚ directTargetElement) at line2a
+  have line2b := MixedOrder.transport MixedOrder.TernarySupport.combine
+    ternaryNegation.toVocabulary ternaryDisjunction.toVocabulary
+    (MixedOrder.ternaryTautology ternaryNegation ternaryDisjunction)
+    (fun _ => MixedOrder.TernarySupport.p) (fun _ => identity)
+    star13_bridgeSupport
+    (star13_bridgeValuation ternaryNegation identity identity
+      psiX psiY psiX psiY)
+    (PM.FirstEdition.Volume1.Star3.star_3_26
+      (sourceElement ⊃ₚ directTargetElement)
+      (directTargetElement ⊃ₚ sourceElement))
+  change ⊢ᵣ star13_bridgeInterpret ternaryNegation ternaryDisjunction
+    identity identity psiX psiY psiX psiY
+    ((sourceElement ≡ₚ directTargetElement) ⊃ₚ
+      (sourceElement ⊃ₚ directTargetElement)) at line2b
+  have line2 := MixedOrder.detach
+    (MixedOrder.ternaryOrderCombine ternaryNegation .qr .qr)
+    ternaryNegation.qr ternaryDisjunction.qr
+    (star13_bridgeInterpret ternaryNegation ternaryDisjunction
+      identity identity psiX psiY psiX psiY
+      (sourceElement ≡ₚ directTargetElement))
+    (star13_bridgeInterpret ternaryNegation ternaryDisjunction
+      identity identity psiX psiY psiX psiY
+      (sourceElement ⊃ₚ directTargetElement)) line2a line2b
+  have line3 := MixedOrder.detach
+    (MixedOrder.ternaryOrderCombine ternaryNegation .qr .qr)
+    ternaryNegation.qr ternaryDisjunction.qr
+    (star13_bridgeInterpret ternaryNegation ternaryDisjunction
+      identity identity psiX psiY psiX psiY sourceElement)
+    (star13_bridgeInterpret ternaryNegation ternaryDisjunction
+      identity identity psiX psiY psiX psiY directTargetElement)
+    line1 line2
+  have line4aElementary :
+      PM.Derivation (directTargetElement ⊃ₚ targetElement) := by
+    let syll : ∀ p q r : PM.Elementary Star13BridgeContext,
+        PM.Derivation (p ⊃ₚ q) → PM.Derivation (q ⊃ₚ r) →
+          PM.Derivation (p ⊃ₚ r) := by
+      intro p q r lineA lineB
+      exact PM.Derivation.detach lineA
+        (PM.Derivation.detach lineB
+          (PM.FirstEdition.Volume1.Star2.star_2_05 p q r))
+    let joinUnder : ∀ h p q : PM.Elementary Star13BridgeContext,
+        PM.Derivation (h ⊃ₚ p) → PM.Derivation (h ⊃ₚ q) →
+          PM.Derivation (h ⊃ₚ (p ∧ₚ q)) := by
+      intro h p q lineA lineB
+      have lineC := PM.Derivation.detach lineB
+        (PM.Derivation.detach lineA
+          (PM.FirstEdition.Volume1.Star3.star_3_2
+            (h ⊃ₚ p) (h ⊃ₚ q)))
+      have lineD := PM.Derivation.detach
+        (PM.FirstEdition.Volume1.Star4.star_4_76 h p q)
+        (PM.FirstEdition.Volume1.Star3.star_3_26 _ _)
+      exact PM.Derivation.detach lineC lineD
+    have line4a1a := PM.FirstEdition.Volume1.Star3.star_3_26
+      leftElement star13_bridgeY
+    have line4a1b := syll directRightElement leftElement star13_bridgeX
+      line4a1a (PM.FirstEdition.Volume1.Star3.star_3_26
+        star13_bridgeX star13_bridgeE)
+    have line4a1c := syll directRightElement leftElement star13_bridgeE
+      line4a1a (PM.FirstEdition.Volume1.Star3.star_3_27
+        star13_bridgeX star13_bridgeE)
+    have line4a1d := PM.FirstEdition.Volume1.Star3.star_3_27
+      leftElement star13_bridgeY
+    have line4a1e := joinUnder directRightElement star13_bridgeY
+      star13_bridgeE line4a1d line4a1c
+    have line4a1 := joinUnder directRightElement star13_bridgeX
+      (star13_bridgeY ∧ₚ star13_bridgeE) line4a1b line4a1e
+    have line4a2a := PM.FirstEdition.Volume1.Star3.star_3_26
+      star13_bridgeX (star13_bridgeY ∧ₚ star13_bridgeE)
+    have line4a2b := PM.FirstEdition.Volume1.Star3.star_3_27
+      star13_bridgeX (star13_bridgeY ∧ₚ star13_bridgeE)
+    have line4a2c := syll rightElement
+      (star13_bridgeY ∧ₚ star13_bridgeE) star13_bridgeY line4a2b
+      (PM.FirstEdition.Volume1.Star3.star_3_26
+        star13_bridgeY star13_bridgeE)
+    have line4a2d := syll rightElement
+      (star13_bridgeY ∧ₚ star13_bridgeE) star13_bridgeE line4a2b
+      (PM.FirstEdition.Volume1.Star3.star_3_27
+        star13_bridgeY star13_bridgeE)
+    have line4a2e := joinUnder rightElement star13_bridgeX
+      star13_bridgeE line4a2a line4a2d
+    have line4a2 := joinUnder rightElement leftElement
+      star13_bridgeY line4a2e line4a2c
+    have line4a3 := PM.Derivation.detach line4a2
+      (PM.Derivation.detach line4a1
+        (PM.FirstEdition.Volume1.Star3.star_3_2
+          (directRightElement ⊃ₚ rightElement)
+          (rightElement ⊃ₚ directRightElement)))
+    have line4a4 := PM.Derivation.detach line4a3
+      (PM.FirstEdition.Volume1.Star3.star_3_21
+        directTargetElement
+        (directRightElement ≡ₚ rightElement))
+    have line4a5 := PM.FirstEdition.Volume1.Star4.star_4_22
+      leftElement directRightElement rightElement
+    exact PM.Derivation.detach line4a4
+      (PM.Derivation.detach line4a5
+        (PM.FirstEdition.Volume1.Star2.star_2_05 directTargetElement
+          (directTargetElement ∧ₚ
+            (directRightElement ≡ₚ rightElement)) targetElement))
+  have line4a := MixedOrder.transport MixedOrder.TernarySupport.combine
+    ternaryNegation.toVocabulary ternaryDisjunction.toVocabulary
+    (MixedOrder.ternaryTautology ternaryNegation ternaryDisjunction)
+    (fun _ => MixedOrder.TernarySupport.p) (fun _ => identity)
+    star13_bridgeSupport
+    (star13_bridgeValuation ternaryNegation identity identity
+      psiX psiY psiX psiY) line4aElementary
+  change ⊢ᵣ star13_bridgeInterpret ternaryNegation ternaryDisjunction
+    identity identity psiX psiY psiX psiY
+    (directTargetElement ⊃ₚ targetElement) at line4a
+  have line4 := MixedOrder.detach
+    (MixedOrder.ternaryOrderCombine ternaryNegation .qr .qr)
+    ternaryNegation.qr ternaryDisjunction.qr
+    (star13_bridgeInterpret ternaryNegation ternaryDisjunction
+      identity identity psiX psiY psiX psiY directTargetElement)
+    (star13_bridgeInterpret ternaryNegation ternaryDisjunction
+      identity identity psiX psiY psiX psiY targetElement)
+    line3 line4a
+  exact line4
 
 def star_13_195_body
     (vocabulary : IdentityVocabulary signature sort order 0)
