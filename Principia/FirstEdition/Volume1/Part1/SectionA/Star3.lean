@@ -199,11 +199,11 @@ theorem star_3_14 {Γ} (p q : PM.Elementary Γ) :
         (∼ₚ (∼ₚ ((∼ₚ p) ∨ₚ (∼ₚ q)))) (∼ₚ (p ∧ₚ q))))
 
 /- PM-VERBATIM-BEGIN PM1:✱3·2
-✱3·2.  ⊢ : p . ⊃ : q . ⊃ . p . q   [✱3·12]
+✱3·2.  ⊢ :. p . ⊃ : q . ⊃ . p . q   [✱3·12]
 PM-VERBATIM-END PM1:✱3·2 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱3·21
-✱3·21.  ⊢ : q . ⊃ : p . ⊃ . p . q   [✱3·2 . Comm]
+✱3·21.  ⊢ :. q . ⊃ : p . ⊃ . p . q   [✱3·2 . Comm]
 PM-VERBATIM-END PM1:✱3·21 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱3·22
@@ -236,7 +236,7 @@ PM-VERBATIM-END PM1:✱3·24 -/
 /- ✱3·2. The printed citation omits the required ✱2·32 reassociation. -/
 /-- Audited scope reading of ✱3·2. -/
 def star_3_2_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : p . ⊃ : q . ⊃ . p . q"
+  printed := PM.pmPrinted "⊢ :. p . ⊃ : q . ⊃ . p . q"
   parsed := p ⊃ₚ (q ⊃ₚ (p ∧ₚ q))
   scopeReading := "The nested dots make p the outer antecedent and q the inner antecedent of the product conclusion."
 
@@ -247,7 +247,7 @@ theorem star_3_2 {Γ} (p q : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱3·21. -/
 def star_3_21_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : q . ⊃ : p . ⊃ . p . q"
+  printed := PM.pmPrinted "⊢ :. q . ⊃ : p . ⊃ . p . q"
   parsed := q ⊃ₚ (p ⊃ₚ (p ∧ₚ q))
   scopeReading := "The nested dots make q the outer antecedent and p the inner antecedent of the product conclusion."
 
@@ -590,12 +590,12 @@ theorem star_3_4 {Γ} (p q : PM.Elementary Γ) :
   exact line3
 
 /- PM-VERBATIM-BEGIN PM1:✱3·41
-✱3·41.  ⊢ : p ⊃ r . ⊃ : p . q . ⊃ . r   [✱3·26 . Syll]
+✱3·41.  ⊢ :. p ⊃ r . ⊃ : p . q . ⊃ . r   [✱3·26 . Syll]
 PM-VERBATIM-END PM1:✱3·41 -/
 
 /-- Audited scope reading of ✱3·41. -/
 def star_3_41_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : p ⊃ r . ⊃ : p . q . ⊃ . r"
+  printed := PM.pmPrinted "⊢ :. p ⊃ r . ⊃ : p . q . ⊃ . r"
   parsed := (p ⊃ₚ r) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)
   scopeReading := "The implication p ⊃ r is the antecedent; (p . q) ⊃ r is the consequent."
 
@@ -605,12 +605,12 @@ theorem star_3_41 {Γ} (p q r : PM.Elementary Γ) :
     (PM.FirstEdition.Volume1.Star2.star_2_06 (p ∧ₚ q) p r)
 
 /- PM-VERBATIM-BEGIN PM1:✱3·42
-✱3·42.  ⊢ : q ⊃ r . ⊃ : p . q . ⊃ . r   [✱3·27 . Syll]
+✱3·42.  ⊢ :. q ⊃ r . ⊃ : p . q . ⊃ . r   [✱3·27 . Syll]
 PM-VERBATIM-END PM1:✱3·42 -/
 
 /-- Audited scope reading of ✱3·42. -/
 def star_3_42_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : q ⊃ r . ⊃ : p . q . ⊃ . r"
+  printed := PM.pmPrinted "⊢ :. q ⊃ r . ⊃ : p . q . ⊃ . r"
   parsed := (q ⊃ₚ r) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r)
   scopeReading := "The implication q ⊃ r is the antecedent; (p . q) ⊃ r is the consequent."
 

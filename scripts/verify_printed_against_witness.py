@@ -254,7 +254,12 @@ def normalize_reading(reading: str, *, tex: bool) -> str:
             }
         )
     )
-    text = re.sub(r"\*(?=\d)", "✱", text)
+    # Whitespace may separate the star from its number in a transcription --
+    # the Gutenberg text sets *51·35's citation as "[*51·2.* 22·35]".  Since
+    # whitespace is removed on the next line anyway, letting a space block this
+    # substitution would report a divergence on nothing: one reading would keep
+    # an ASCII star where the other carries ✱.
+    text = re.sub(r"\*\s*(?=\d)", "✱", text)
     return re.sub(r"\s+", "", text)
 
 

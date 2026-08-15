@@ -187,7 +187,7 @@ a metasymbol in print; this item is not encoded as a derivable equivalence.
 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱1·1
-✱1·1. Anything implied by a true elementary proposition is true. Pp.
+✱1·1. Anything implied by a true elementary proposition is true.
 PM-VERBATIM-END PM1:✱1·1 -/
 
 /- PM-FORMAL-GLOSS
@@ -259,7 +259,7 @@ def star_1_01_printed : PM.PrintedFormula :=
 
 /-- Printed prose of ✱1·1; PM supplies no symbolic formula for this rule. -/
 def star_1_1_printed : PM.PrintedFormula :=
-  PM.pmPrinted "Anything implied by a true elementary proposition is true. Pp."
+  PM.pmPrinted "Anything implied by a true elementary proposition is true."
 
 /-- Printed metalinguistic rule ✱1·11. -/
 def star_1_11_printed : PM.PrintedFormula :=

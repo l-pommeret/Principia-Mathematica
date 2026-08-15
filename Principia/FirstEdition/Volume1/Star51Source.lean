@@ -20,7 +20,7 @@ PM-VERBATIM-END PM1:✱51·12 -/
 ✱51·13. ⊢ : α = ιʻx .≡ . α = ŷ(y = x)
 PM-VERBATIM-END PM1:✱51·13 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·131
-✱51·131. ⊢ : α ι x .≡ . α = ιʻx
+✱51·131. ⊢ : α ι x .≡ . α = ιʻx  [✱51·1·13]
 PM-VERBATIM-END PM1:✱51·131 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·14
 ✱51·14. ⊢ :: α = ιʻx .≡ : y ε α .≡ᵧ. y = x
@@ -102,7 +102,7 @@ Dem.
 [✱3·191] ≡ : x ≠ y :: ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱51·231 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·232
-✱51·232. ⊢ : z ε (ιʻx ∪ ιʻy) .≡ : z = x .∨. z = y
+✱51·232. ⊢ :. z ε (ιʻx ∪ ιʻy) .≡ : z = x .∨. z = y  [✱22·34.*51·15]
 PM-VERBATIM-END PM1:✱51·232 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·233
 ✱51·233. ⊢ :: α = ιʻx ∪ ιʻy .⊃ :: (z) :: z ε α .≡ : z = x .∨. z = y
@@ -125,7 +125,7 @@ Dem.
 [✱13·195] ≡ : φx .∨. φy :: ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱51·235 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·236
-✱51·236. ⊢ : z ε ιʻx ∪ β .≡ : z = x .∨. z ε β
+✱51·236. ⊢ : z ε ιʻx ∪ β .≡ : z = x .∨. z ε β  [✱22·34.*51·15]
 PM-VERBATIM-END PM1:✱51·236 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·237
 ✱51·237. ⊢ :: α = ιʻx ∪ β .⊃ :: (z) :: z ε α .≡ : z = x .∨. z ε β
@@ -156,10 +156,10 @@ Dem.
 [✱13·191] ≡ :: y = x .∨. y ε β ::: ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱51·24 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·25
-✱51·25. ⊢ : α ⊂ ιʻx ∪ β . x ∼ε α .⊃ . α ⊂ β
+✱51·25. ⊢ : α ⊂ ιʻx ∪ β . x ∼ε α .⊃ . α ⊂ β  [✱51·211.*24·49]
 PM-VERBATIM-END PM1:✱51·25 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·3
-✱51·3. ⊢ : y ε α . y ≠ x .≡ . y ε α − ιʻx
+✱51·3. ⊢ : y ε α . y ≠ x .≡ . y ε α − ιʻx  [✱51·15.*22·33·35]
 PM-VERBATIM-END PM1:✱51·3 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·31
 ✱51·31. ⊢ : ∃!α ∩ ιʻx .≡ . ιʻx ⊂ α .≡ . α ∩ ιʻx = ιʻx .≡ . x ε α
@@ -171,13 +171,13 @@ Dem.
 ⊢ . (1).(2).(3) . ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱51·31 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·34
-✱51·34. ⊢ : x ε α .≡ . −α ⊂ −ιʻx
+✱51·34. ⊢ : x ε α .≡ . −α ⊂ −ιʻx  [✱51·2.*22·81]
 PM-VERBATIM-END PM1:✱51·34 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·35
-✱51·35. ⊢ : x ∼ε α .≡ . ιʻx ⊂ −α
+✱51·35. ⊢ : x ∼ε α .≡ . ιʻx ⊂ −α  [✱51·2.*22·35]
 PM-VERBATIM-END PM1:✱51·35 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·36
-✱51·36. ⊢ : x ∼ε α .≡ . α ⊂ −ιʻx
+✱51·36. ⊢ : x ∼ε α .≡ . α ⊂ −ιʻx  [✱51·35.*22·811]
 PM-VERBATIM-END PM1:✱51·36 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·37
 ✱51·37. ⊢ . α = x̂(ιʻx ⊂ α)
@@ -219,7 +219,7 @@ Similarly ⊢ : ιʻx ∪ ιʻy = ιʻz ∪ ιʻw . x = w .⊃ . y = z  (3)
 ⊢ . (1).(2).(3) . ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱51·42 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·421
-✱51·421. ⊢ : x = z . y = w .∨. x = w . y = z .⊃ . ιʻx ∪ ιʻy = ιʻz ∪ ιʻw
+✱51·421. ⊢ :. x = z . y = w .∨. x = w . y = z :⊃ . ιʻx ∪ ιʻy = ιʻz ∪ ιʻw  [✱51·41]
 PM-VERBATIM-END PM1:✱51·421 -/
 /- PM-VERBATIM-BEGIN PM1:✱51·43
 ✱51·43. ⊢ : ιʻx ∪ ιʻy = ιʻz ∪ ιʻw .≡ : x = z . y = w .∨. x = w . y = z

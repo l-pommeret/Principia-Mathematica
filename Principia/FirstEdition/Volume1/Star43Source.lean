@@ -13,19 +13,19 @@ PM-VERBATIM-END PM1:✱43·101 -/
 ✱43·102. ⊢ : P(R ∥ S)Q .≡ . P = R | Q | S
 PM-VERBATIM-END PM1:✱43·102 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·11
-✱43·11. ⊢ . (R |)ʻQ = R | Q
+✱43·11. ⊢ . R|ʻQ = R | Q
 PM-VERBATIM-END PM1:✱43·11 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·111
-✱43·111. ⊢ . (| R)ʻQ = Q | R
+✱43·111. ⊢ . |RʻQ = Q | R
 PM-VERBATIM-END PM1:✱43·111 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·112
 ✱43·112. ⊢ . (R ∥ S)ʻQ = R | Q | S
 PM-VERBATIM-END PM1:✱43·112 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·12
-✱43·12. ⊢ . E!(R |)ʻQ
+✱43·12. ⊢ . E!R|ʻQ
 PM-VERBATIM-END PM1:✱43·12 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·121
-✱43·121. ⊢ . E!(| R)ʻQ
+✱43·121. ⊢ . E!|RʻQ
 PM-VERBATIM-END PM1:✱43·121 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·122
 ✱43·122. ⊢ . E!(R ∥ S)ʻQ
@@ -34,7 +34,7 @@ PM-VERBATIM-END PM1:✱43·122 -/
 ✱43·2. ⊢ . (R |) | (S |) = (R | S) |
 PM-VERBATIM-END PM1:✱43·2 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·201
-✱43·201. ⊢ . (| R) | (| S) = | (S | R)
+✱43·201. ⊢ . (| R) | (| S) = | (S | R)  [Proof as in ✱43·2]
 PM-VERBATIM-END PM1:✱43·201 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·202
 ✱43·202. ⊢ . (| R) | (S |) = (S |) | (| R) = S ∥ R
@@ -55,10 +55,10 @@ PM-VERBATIM-END PM1:✱43·213 -/
 ✱43·22. ⊢ . (P ∥ Q) | (R ∥ S) = (P | R) ∥ (S | Q)
 PM-VERBATIM-END PM1:✱43·22 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·3
-✱43·3. ⊢ . (P). P ∈ ᗡʻ(R |)
+✱43·3. ⊢ . (P). P ∈ ᗡʻR|  [✱43·12.*33·43]
 PM-VERBATIM-END PM1:✱43·3 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·301
-✱43·301. ⊢ . (P). P ∈ ᗡʻ(| R)
+✱43·301. ⊢ . (P). P ∈ ᗡʻ|R
 PM-VERBATIM-END PM1:✱43·301 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·302
 ✱43·302. ⊢ . (P). P ∈ ᗡʻ(R ∥ S)
@@ -76,13 +76,13 @@ PM-VERBATIM-END PM1:✱43·312 -/
 ✱43·34. ⊢ . R|ʻR = |RʻR = R²
 PM-VERBATIM-END PM1:✱43·34 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·4
-✱43·4. ⊢ . RʻʻDʻP = DʻR|ʻP
+✱43·4. ⊢ . RʻʻDʻP = DʻR|ʻP  [✱37·32.*43·1]
 PM-VERBATIM-END PM1:✱43·4 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·401
 ✱43·401. ⊢ . ŘʻʻᗡʻP = ᗡʻ|RʻP
 PM-VERBATIM-END PM1:✱43·401 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·41
-✱43·41. ⊢ . RʻʻʻDʻʻλ = DʻʻR|ʻʻλ
+✱43·41. ⊢ . RʻʻʻDʻʻλ = DʻʻR|ʻʻλ  [✱43·4.*37·355]
 PM-VERBATIM-END PM1:✱43·41 -/
 /- PM-VERBATIM-BEGIN PM1:✱43·411
 ✱43·411. ⊢ . Řʻʻʻᗡʻʻλ = ᗡʻʻ|Rʻʻλ

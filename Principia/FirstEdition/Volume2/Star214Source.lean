@@ -78,7 +78,7 @@ PM-VERBATIM-END PM2:✱214·54 -/
 ✱214·7. ⊢ : P∈semi Ded .≡: α∈sectʻP . α≠CʻP .⊃ᵅ. ∃!max_Pʻα .∨. ∃!seq_Pʻα
 PM-VERBATIM-END PM2:✱214·7 -/
 /- PM-VERBATIM-BEGIN PM2:✱214·71
-✱214·71. ⊢ . Ded⊂semi Ded
+✱214·71. ⊢ . Ded⊂semi Ded [✱214·1·7]
 PM-VERBATIM-END PM2:✱214·71 -/
 /- PM-VERBATIM-BEGIN PM2:✱214·72
 ✱214·72. ⊢ : P∈trans .⊃: P∈Ded .≡. P∈semi Ded . ∃!B→ʻCnvʻP

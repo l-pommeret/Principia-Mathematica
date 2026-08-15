@@ -130,7 +130,7 @@ PM-VERBATIM-END PM1:✱21·42 -/
 ✱21·53. ⊢ : S = R .⊃ₛ. φS : ≡ . φR
 PM-VERBATIM-END PM1:✱21·53 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·54
-✱21·54. ⊢ : (∃S). S = R . φS .≡ . φR
+✱21·54. ⊢ :. (∃S). S = R . φS .≡ . φR  [✱21·18.✱10·11·23.✱21·2.✱10·24]
 PM-VERBATIM-END PM1:✱21·54 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·55
 ✱21·55. ⊢ . ẑxẑyφ(x,y) = (℩R){xRy .≡₍x,y₎. φ(x,y)}
@@ -154,7 +154,7 @@ PM-VERBATIM-END PM1:✱21·61 -/
 ✱21·62. When fR is true, whatever possible argument of the form ẑxẑyφ!(x,y) R may be, (R). fR is true.  [Proof as in ✱20·62]
 PM-VERBATIM-END PM1:✱21·62 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·63
-✱21·63. ⊢ : (R). p ∨ fR .⊃ : p .∨ . (R). fR  [Proof as in ✱20·63]
+✱21·63. ⊢ :. (R). p ∨ fR .⊃ : p .∨ . (R). fR  [Proof as in ✱20·63]
 PM-VERBATIM-END PM1:✱21·63 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·631
 ✱21·631. If "fR" is significant, then if S is of the same type as R, "fS" is significant, and vice versa.  [Proof as in ✱20·631]
@@ -166,7 +166,7 @@ PM-VERBATIM-END PM1:✱21·632 -/
 ✱21·633. "Whatever possible relation R may be, f(R,S) is true whatever possible relation S may be" implies "whatever possible relation S may be, f(R,S) is true whatever possible relation R may be."  [Proof as in ✱20·633]
 PM-VERBATIM-END PM1:✱21·633 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·64
-✱21·64. ⊢ : (R). fR : (R). gR .⊃ . fS . gS  [Proof as in ✱20·64]
+✱21·64. ⊢ :. (R). fR : (R). gR :⊃ . fS . gS  [Proof as in ✱20·64]
 PM-VERBATIM-END PM1:✱21·64 -/
 /- PM-VERBATIM-BEGIN PM1:✱21·7
 ✱21·7. ⊢ : (∃g) : fR .≡ᴿ. g!R  [Proof as in ✱20·7]

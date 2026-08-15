@@ -9,7 +9,7 @@ PM-VERBATIM-END PM2:✱117·05 -/
 ✱117·103. ⊢ : μ < ν .≡. ν > μ
 PM-VERBATIM-END PM2:✱117·103 -/
 /- PM-VERBATIM-BEGIN PM2:✱117·105
-✱117·105. ⊢ : μ ≤ ν .≡. ν ≥ μ
+✱117·105. ⊢ : μ ≤ ν .≡. ν ≥ μ [(✱117·06)]
 PM-VERBATIM-END PM2:✱117·105 -/
 /- PM-VERBATIM-BEGIN PM2:✱117·221
 ✱117·221. ⊢ : Ncʻα ≥ Ncʻβ .≡. (∃ρ). ρ⊂α . ρ sm β

@@ -43,10 +43,10 @@ PM-VERBATIM-END PM2:✱111·18 -/
 ✱111·201. ⊢:E!Crp(S)ʻβ.≡.E!((Sʻβ)smβ)
 PM-VERBATIM-END PM2:✱111·201 -/
 /- PM-VERBATIM-BEGIN PM2:✱111·21
-✱111·21. ⊢:E!Crp(S)ʻβ.≡.Sʻβ sm β
+✱111·21. ⊢:∃!Crp(S)ʻβ.≡.Sʻβ sm β [✱111·201 . ✱73·04]
 PM-VERBATIM-END PM2:✱111·21 -/
 /- PM-VERBATIM-BEGIN PM2:✱111·211
-✱111·211. ⊢:E!Crp(S)ʻβ.⊃.E!Sʻβ.β∈αʻS
+✱111·211. ⊢:∃!Crp(S)ʻβ.⊃.E!Sʻβ.β∈ᗡʻS [✱111·21 . ✱14·21 . ✱33·43]
 PM-VERBATIM-END PM2:✱111·211 -/
 /- PM-VERBATIM-BEGIN PM2:✱111·221
 ✱111·221. ⊢:S∈1→Cls.S⊂sm.⊃:E!Crp(S)ʻβ.≡.β∈α†S
@@ -85,10 +85,10 @@ PM-VERBATIM-END PM2:✱111·402 -/
 ✱111·43. ⊢:κ sm sm λ.⊃.(∃S).S∈1→1.S⊂sm.DʻS=κ.GʻS=λ
 PM-VERBATIM-END PM2:✱111·43 -/
 /- PM-VERBATIM-BEGIN PM2:✱111·451
-✱111·451. ⊢:κ sm sm λ.≡.λ sm sm κ
+✱111·451. ⊢:κ sm sm λ.≡.λ sm sm κ [✱111·131·4]
 PM-VERBATIM-END PM2:✱111·451 -/
 /- PM-VERBATIM-BEGIN PM2:✱111·452
-✱111·452. ⊢:κ sm sm λ.λ sm sm μ.⊃.κ sm sm μ
+✱111·452. ⊢:κ sm sm λ.λ sm sm μ.⊃.κ sm sm μ [✱111·132·4]
 PM-VERBATIM-END PM2:✱111·452 -/
 def canonicalSource := "https://archive.org/details/PrincipiaMathematicaVol2/page/n111"
 def propositionIds := ["111.01","111.02","111.1","111.11","111.112","111.12",

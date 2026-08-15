@@ -471,7 +471,7 @@ only according to ✱1·01.
 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱2·27
-✱2·27.  ⊢ :· p . ⊃ : p ⊃ q . ⊃ . q                    [✱2·26]
+✱2·27.  ⊢ :. p . ⊃ : p ⊃ q . ⊃ . q                    [✱2·26]
 PM-VERBATIM-END PM1:✱2·27 -/
 
 /- PM-FORMAL-GLOSS
@@ -984,7 +984,7 @@ theorem star_2_26 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱2·27. -/
 def star_2_27_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ :· p . ⊃ : p ⊃ q . ⊃ . q"
+  printed := PM.pmPrinted "⊢ :. p . ⊃ : p ⊃ q . ⊃ . q"
   parsed := p ⊃ₚ ((p ⊃ₚ q) ⊃ₚ q)
   scopeReading := "The outer implication is the ✱1·01 reading of the leading disjunction in ✱2·26."
 
@@ -1360,11 +1360,11 @@ theorem star_2_43 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
   exact line2.mpr line1
 
 /- PM-VERBATIM-BEGIN PM1:✱2·45
-✱2·45.  ⊢ : ∼(p ∨ q) . ⊃ . ∼p                    [✱2·2.Transp.]
+✱2·45.  ⊢ : ∼(p ∨ q) . ⊃ . ∼p                    [✱2·2.Transp]
 PM-VERBATIM-END PM1:✱2·45 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱2·46
-✱2·46.  ⊢ : ∼(p ∨ q) . ⊃ . ∼q                    [✱1·3.Transp.]
+✱2·46.  ⊢ : ∼(p ∨ q) . ⊃ . ∼q                    [✱1·3.Transp]
 PM-VERBATIM-END PM1:✱2·46 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱2·47
@@ -1562,7 +1562,7 @@ PM-VERBATIM-END PM1:✱2·53 -/
 PM-VERBATIM-END PM1:✱2·54 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱2·55
-✱2·55.  ⊢ :. ∼p . ⊃ : p ∨ q . ⊃ . q               [✱2·53.Comm]
+✱2·55.  ⊢ :. ∼p . ⊃ .: p ∨ q . ⊃ . q              [✱2·53.Comm]
 PM-VERBATIM-END PM1:✱2·55 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱2·56
@@ -1616,7 +1616,7 @@ theorem star_2_54 {Γ : PM.RealContext} (p q : PM.Elementary Γ) :
   exact PM.Derivation.detach (star_2_14 p) lift
 
 def star_2_55_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ :. ∼p . ⊃ : p ∨ q . ⊃ . q"
+  printed := PM.pmPrinted "⊢ :. ∼p . ⊃ .: p ∨ q . ⊃ . q"
   parsed := ∼ₚ p ⊃ₚ ((p ∨ₚ q) ⊃ₚ q)
   scopeReading := "The outer antecedent is ∼p; its consequent is (p ∨ q) ⊃ q."
 
@@ -1911,7 +1911,7 @@ theorem star_2_69 {Γ} (p q : PM.Elementary Γ) :
       (star_2_06 ((p ⊃ₚ q) ⊃ₚ q) (q ∨ₚ p) ((q ⊃ₚ p) ⊃ₚ p)))
 
 /- PM-VERBATIM-BEGIN PM1:✱2·73
-✱2·73.  ⊢ : p ⊃ q . ⊃ : p ∨ q ∨ r . ⊃ . q ∨ r    [✱2·621·38]
+✱2·73.  ⊢ :. p ⊃ q . ⊃ : p ∨ q ∨ r . ⊃ . q ∨ r   [✱2·621·38]
 PM-VERBATIM-END PM1:✱2·73 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱2·74
@@ -1923,7 +1923,7 @@ PM-VERBATIM-END PM1:✱2·74 -/
 PM-VERBATIM-END PM1:✱2·75 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱2·76
-✱2·76.  ⊢ : p ∨ (q ⊃ r) . ⊃ : p ∨ q . ⊃ . p ∨ r    [✱2·75 . Comm]
+✱2·76.  ⊢ :. p . ∨ . q ⊃ r : ⊃ : p ∨ q . ⊃ . p ∨ r   [✱2·75.Comm]
 PM-VERBATIM-END PM1:✱2·76 -/
 
 /- PM-FORMAL-GLOSS
@@ -1937,7 +1937,7 @@ differences are not inserted into PM's bytes; they are recorded item by item in
 -/
 
 def star_2_73_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : p ⊃ q . ⊃ : p ∨ q ∨ r . ⊃ . q ∨ r"
+  printed := PM.pmPrinted "⊢ :. p ⊃ q . ⊃ : p ∨ q ∨ r . ⊃ . q ∨ r"
   parsed := (p ⊃ₚ q) ⊃ₚ (((p ∨ₚ q) ∨ₚ r) ⊃ₚ (q ∨ₚ r))
   scopeReading := "The triple sum is left-associated; the outer antecedent is p ⊃ q."
 
@@ -2027,7 +2027,7 @@ theorem star_2_75 {Γ} (p q r : PM.Elementary Γ) :
     (PM.Derivation.star_1_5 (∼ₚ (p ∨ₚ (q ⊃ₚ r))) (∼ₚ (p ∨ₚ q)) (p ∨ₚ r))
 
 def star_2_76_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : p ∨ (q ⊃ r) . ⊃ : p ∨ q . ⊃ . p ∨ r"
+  printed := PM.pmPrinted "⊢ :. p . ∨ . q ⊃ r : ⊃ : p ∨ q . ⊃ . p ∨ r"
   parsed := (p ∨ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∨ₚ q) ⊃ₚ (p ∨ₚ r))
   scopeReading := "Comm exchanges the two antecedents of ✱2·75."
 

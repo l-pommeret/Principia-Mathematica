@@ -57,7 +57,7 @@ Dem.
 [✱13·195] ≡ .N₀cʻρ ∈ NC induct:⊃ ⊢ .Prop
 PM-VERBATIM-END PM2:✱120·21 -/
 /- PM-VERBATIM-BEGIN PM2:✱120·212
-✱120·212. ⊢ . Λ∈Cls induct
+✱120·212. ⊢ . Λ∈Cls induct [✱120·211·12]
 PM-VERBATIM-END PM2:✱120·212 -/
 /- PM-VERBATIM-BEGIN PM2:✱120·15
 ✱120·15. ⊢ : α∈NC induct . ∃!α .⊃. smʻʻα∈NC induct
@@ -75,7 +75,7 @@ Dem.
 ⊢ .(1).(6).✱120·11.✱4·6.⊃ ⊢ .Prop
 PM-VERBATIM-END PM2:✱120·15 -/
 /- PM-VERBATIM-BEGIN PM2:✱120·213
-✱120·213. ⊢ . ιʻx∈Cls induct
+✱120·213. ⊢ . ιʻα∈Cls induct  [✱120·211·122]
 PM-VERBATIM-END PM2:✱120·213 -/
 /- PM-VERBATIM-BEGIN PM2:✱120·251
 ✱120·251. ⊢ : η∈Cls induct .⊃. η∪ιʻy∈Cls induct

@@ -73,10 +73,10 @@ PM-VERBATIM-END PM1:✱30·34 -/
 ✱30·341. ⊢:. xRy.≡ₓ.xSy:⊃:E!Rʻy.≡.Rʻy=Sʻy
 PM-VERBATIM-END PM1:✱30·341 -/
 /- PM-VERBATIM-BEGIN PM1:✱30·35
-✱30·35. ⊢:. R=S.⊃:E!Rʻy.≡.E!Sʻy
+✱30·35. ⊢:. R=S.⊃:E!Rʻy.≡.E!Sʻy  [✱30·34.✱21·43]
 PM-VERBATIM-END PM1:✱30·35 -/
 /- PM-VERBATIM-BEGIN PM1:✱30·36
-✱30·36. ⊢:E!Rʻy.R=S.⊃.Rʻy=Sʻy
+✱30·36. ⊢:E!Rʻy.R=S.⊃.Rʻy=Sʻy  [✱14·27.Imp.✱21·43]
 PM-VERBATIM-END PM1:✱30·36 -/
 /- PM-VERBATIM-BEGIN PM1:✱30·37
 ✱30·37. ⊢:E!Rʻy.y=z.⊃.Rʻy=Rʻz
@@ -88,7 +88,7 @@ PM-VERBATIM-END PM1:✱30·4 -/
 ✱30·41. ⊢:. (y).Rʻy=Sʻy.≡:(y).E!Rʻy:R=S
 PM-VERBATIM-END PM1:✱30·41 -/
 /- PM-VERBATIM-BEGIN PM1:✱30·42
-✱30·42. ⊢:. (y).E!Rʻy.⊃:(y).Rʻy=Sʻy.≡.R=S
+✱30·42. ⊢:. (y).E!Rʻy.⊃:(y).Rʻy=Sʻy.≡.R=S  [✱30·41]
 PM-VERBATIM-END PM1:✱30·42 -/
 /- PM-VERBATIM-BEGIN PM1:✱30·5
 ✱30·5. ⊢:E!PʻQʻz.⊃.E!Qʻz
@@ -97,10 +97,10 @@ PM-VERBATIM-END PM1:✱30·5 -/
 ✱30·501. ⊢:φ(PʻQʻz).≡.(∃ b,c).c=Qʻz.b=Pʻc.φ b
 PM-VERBATIM-END PM1:✱30·501 -/
 /- PM-VERBATIM-BEGIN PM1:✱30·51
-✱30·51. ⊢:b=PʻQʻz.≡.(∃ c).b=Pʻc.c=Qʻz
+✱30·51. ⊢:b=PʻQʻz.≡.(∃ c).b=Pʻc.c=Qʻz  [✱30·501.✱13·195]
 PM-VERBATIM-END PM1:✱30·51 -/
 /- PM-VERBATIM-BEGIN PM1:✱30·52
-✱30·52. ⊢:E!PʻQʻz.≡.(∃ b,c).b=Pʻc.c=Qʻz
+✱30·52. ⊢:E!PʻQʻz.≡.(∃ b,c).b=Pʻc.c=Qʻz  [✱30·51.✱14·204]
 PM-VERBATIM-END PM1:✱30·52 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱30·01

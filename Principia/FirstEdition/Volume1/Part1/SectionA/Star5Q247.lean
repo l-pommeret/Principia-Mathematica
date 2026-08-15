@@ -67,7 +67,7 @@ theorem star_5_32 {Γ} (p q r : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·33. -/
 def star_5_33_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : p . q ⊃ r . ≡ : p : p . q . ⊃ . r"
+  printed := PM.pmPrinted "⊢ :. p . q ⊃ r . ≡ : p : p . q . ⊃ . r"
   parsed := ((p ∧ₚ (q ⊃ₚ r)) ≡ₚ (p ∧ₚ ((p ∧ₚ q) ⊃ₚ r)))
   scopeReading := "The principal equivalence relates p ∧ (q ⊃ r) to p ∧ ((p ∧ q) ⊃ r)."
 

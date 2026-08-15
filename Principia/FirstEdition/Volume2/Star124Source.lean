@@ -42,7 +42,7 @@ PM-VERBATIM-END PM2:✱124·16 -/
 ✱124·17. ⊢ : ρ∈Cls refl .≡. (∃x).x∈ρ.ρ−ιʻx sm ρ
 PM-VERBATIM-END PM2:✱124·17 -/
 /- PM-VERBATIM-BEGIN PM2:✱124·18
-✱124·18. ⊢ : ρ∈Cls refl.ρ sm σ .⊃. σ∈Cls refl
+✱124·18. ⊢ : ρ∈Cls refl.ρ sm σ .⊃. σ∈Cls refl [✱124·151 . ✱100·321]
 PM-VERBATIM-END PM2:✱124·18 -/
 /- PM-VERBATIM-BEGIN PM2:✱124·181
 ✱124·181. ⊢ : ρ∈Cls refl .⊃. ρ−ιʻx∈Cls refl.ρ−ιʻx sm ρ
@@ -63,7 +63,7 @@ PM-VERBATIM-END PM2:✱124·23 -/
 ✱124·231. ⊢ : ∃!NC refl .≡. ∃!Cls refl .≡. ∃!ℵ₀
 PM-VERBATIM-END PM2:✱124·231 -/
 /- PM-VERBATIM-BEGIN PM2:✱124·232
-✱124·232. ⊢ : ∃!NC refl .⊃. Infin ax
+✱124·232. ⊢ : ∃!NC refl .⊃. Infin ax [✱124·231 . ✱123·18]
 PM-VERBATIM-END PM2:✱124·232 -/
 /- PM-VERBATIM-BEGIN PM2:✱124·24
 ✱124·24. ⊢ : μ∈NC refl .≡: μ∈N₀C : (∃ν).μ=ℵ₀+꜀ν.ν∈NC
@@ -84,7 +84,7 @@ PM-VERBATIM-END PM2:✱124·253 -/
 ✱124·26. ⊢ : μ∈NC refl .⊃: ν∈NC induct .⊃ν. μ>ν
 PM-VERBATIM-END PM2:✱124·26 -/
 /- PM-VERBATIM-BEGIN PM2:✱124·27
-✱124·27. ⊢ . NC refl∩NC induct=Λ
+✱124·27. ⊢ . NC refl∩NC induct=Λ [✱124·26 . ✱117·42]
 PM-VERBATIM-END PM2:✱124·27 -/
 /- PM-VERBATIM-BEGIN PM2:✱124·271
 ✱124·271. ⊢ . Cls refl∩Cls induct=Λ
@@ -111,7 +111,7 @@ PM-VERBATIM-END PM2:✱124·34 -/
 ✱124·4. ⊢ : μ∈NC mult .≡: μ∈NC : κ∈μ∩Cls ex² excl .⊃κ. ∃!∈Δʻκ
 PM-VERBATIM-END PM2:✱124·4 -/
 /- PM-VERBATIM-BEGIN PM2:✱124·41
-✱124·41. ⊢ . NC induct⊂NC mult
+✱124·41. ⊢ . NC induct⊂NC mult [✱120·62 . ✱124·4]
 PM-VERBATIM-END PM2:✱124·41 -/
 /- PM-VERBATIM-BEGIN PM2:✱124·51
 ✱124·51. ⊢ : ρ∉Cls induct.Q=(∩Clʻρ)|N|Cnvʻ(∩Clʻρ) .⊃. Q∈Prog.DʻQ⊂ClʻClʻρ.DʻQ=(∩Clʻρ)ʻʻNC induct
@@ -135,7 +135,7 @@ PM-VERBATIM-END PM2:✱124·52 -/
 ✱124·521. ⊢ : Hp✱124·52.π=γ̂{γ∈DʻR.∃!γ−sʻ→R_poʻγ} .⊃. σ sm π
 PM-VERBATIM-END PM2:✱124·521 -/
 /- PM-VERBATIM-BEGIN PM2:✱124·53
-✱124·53. ⊢ : R∈Prog .⊃. sʻDʻR∉Cls induct
+✱124·53. ⊢ : R∈Prog .⊃. sʻDʻR∼∈Cls induct [✱120·75 . ✱122·37]
 PM-VERBATIM-END PM2:✱124·53 -/
 /- PM-VERBATIM-BEGIN PM2:✱124·531
 ✱124·531. ⊢ : R∈Prog.DʻR⊂Cls induct .⊃. sʻ→R_*ʻγ∈Cls induct
@@ -174,7 +174,7 @@ PM-VERBATIM-END PM2:✱124·57 -/
 ✱124·58. ⊢ : 2^μ∈NC refl .⊃μ. μ∈NC refl :⊃. N₀C−NC induct=NC refl
 PM-VERBATIM-END PM2:✱124·58 -/
 /- PM-VERBATIM-BEGIN PM2:✱124·6
-✱124·6. ⊢ : ρ∉Cls induct .≡. ClʻClʻρ∈Cls refl
+✱124·6. ⊢ : ρ∼∈Cls induct .≡. ClʻClʻρ∈Cls refl
 PM-VERBATIM-END PM2:✱124·6 -/
 /- PM-VERBATIM-BEGIN PM2:✱124·61
 ✱124·61. ⊢ : ℵ₀∈NC mult .⊃: ρ∈Cls refl .≡. Clʻρ∈Cls refl .≡. ClʻClʻρ∈Cls refl

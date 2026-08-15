@@ -85,7 +85,7 @@ PM-VERBATIM-END PM2:✱100·42 -/
 ✱100·43. ⊢ . NC∈Cls² excl  [✱100·42 . ✱84·11]
 PM-VERBATIM-END PM2:✱100·43 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·44
-✱100·44. ⊢ :: μ∈NC . ∃!Ncʻα .⊃ : α∈μ .≡. Ncʻα=μ
+✱100·44. ⊢ :. μ∈NC . ∃!Ncʻα .⊃ : α∈μ .≡. Ncʻα=μ
 PM-VERBATIM-END PM2:✱100·44 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·45
 ✱100·45. ⊢ : μ∈NC . α∈μ .⊃. Ncʻα=μ  [✱100·4·31·321]
@@ -109,7 +109,7 @@ PM-VERBATIM-END PM2:✱100·52 -/
 ✱100·521. ⊢ : μ∈NC . ∃!smʻʻμ .⊃. smʻʻsmʻʻμ=μ
 PM-VERBATIM-END PM2:✱100·521 -/
 /- PM-VERBATIM-BEGIN PM2:✱100·53
-✱100·53. ⊢ :: ∃!μ . ∃!ν .⊃ : μ∈NC . ν=smʻʻμ .≡. ν∈NC . μ=smʻʻν
+✱100·53. ⊢ :. ∃!μ . ∃!ν .⊃ : μ∈NC . ν=smʻʻμ .≡. ν∈NC . μ=smʻʻν
 PM-VERBATIM-END PM2:✱100·53 -/
 
 /- PM-VERBATIM-BEGIN PM2:✱100·6

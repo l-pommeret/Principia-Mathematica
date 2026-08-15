@@ -45,11 +45,11 @@ the falsehood of its negation.
 PM-VERBATIM-END PM1:✱4·13 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·14
-✱4·14.  ⊢ : p . q . ⊃ . r : ≡ : p . ∼r . ⊃ . ∼q   [✱3·37 . ✱4·13]
+✱4·14.  ⊢ :. p . q . ⊃ . r : ≡ : p . ∼r . ⊃ . ∼q   [✱3·37 . ✱4·13]
 PM-VERBATIM-END PM1:✱4·14 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·15
-✱4·15.  ⊢ : p . q . ⊃ . ∼r : ≡ : q . r . ⊃ . ∼p   [✱3·22 . ✱4·13·14]
+✱4·15.  ⊢ :. p . q . ⊃ . ∼r : ≡ : q . r . ⊃ . ∼p   [✱3·22 . ✱4·13·14]
 PM-VERBATIM-END PM1:✱4·15 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·2
@@ -144,19 +144,19 @@ theorem star_4_34_unfold (p q r : PM.Elementary Γ) :
     star_4_34 p q r = ((p ∧ₚ q) ∧ₚ r) := rfl
 
 /- PM-VERBATIM-BEGIN PM1:✱4·36
-✱4·36.  ⊢ : p ≡ q . ⊃ : p . r . ≡ . q . r   [Fact . ✱3·47]
+✱4·36.  ⊢ :. p ≡ q . ⊃ : p . r . ≡ . q . r   [Fact . ✱3·47]
 PM-VERBATIM-END PM1:✱4·36 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·37
-✱4·37.  ⊢ : p ≡ q . ⊃ : p ∨ r . ≡ . q ∨ r   [Sum . ✱3·47]
+✱4·37.  ⊢ :. p ≡ q . ⊃ : p ∨ r . ≡ . q ∨ r   [Sum . ✱3·47]
 PM-VERBATIM-END PM1:✱4·37 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·38
-✱4·38.  ⊢ : p ≡ r . q ≡ s . ⊃ : p . q . ≡ . r . s   [✱3·47 . ✱4·32 . ✱3·22]
+✱4·38.  ⊢ :. p ≡ r . q ≡ s . ⊃ : p . q . ≡ . r . s   [✱3·47 . ✱4·32 . ✱3·22]
 PM-VERBATIM-END PM1:✱4·38 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·39
-✱4·39.  ⊢ : p ≡ r . q ≡ s . ⊃ : p ∨ q . ≡ . r ∨ s   [✱3·48 . ✱4·32 . ✱3·22]
+✱4·39.  ⊢ :. p ≡ r . q ≡ s . ⊃ : p ∨ q . ≡ . r ∨ s   [✱3·48·47 . ✱4·32 . ✱3·22]
 PM-VERBATIM-END PM1:✱4·39 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·4
@@ -245,31 +245,31 @@ PM-VERBATIM-END PM1:✱4·5 -/
 PM-VERBATIM-END PM1:✱4·51 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·52
-✱4·52.  ⊢ : ∼∼p . ∼q . ≡ . ∼(∼q ∨ q)   [✱4·5 ∼q/q . ✱4·13]
+✱4·52.  ⊢ : p . ∼q . ≡ . ∼(∼p ∨ q)   [✱4·5 ∼q/q . ✱4·13]
 PM-VERBATIM-END PM1:✱4·52 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·53
-✱4·53.  ⊢ : ∼∼(p . ∼q) . ≡ . ∼p ∨ q   [✱4·52·12]
+✱4·53.  ⊢ : ∼(p . ∼q) . ≡ . ∼p ∨ q   [✱4·52·12]
 PM-VERBATIM-END PM1:✱4·53 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·54
-✱4·54.  ⊢ : ∼∼p . q . ≡ . ∼(p ∨ ∼q)   [✱4·5 ∼p/p . ✱4·13]
+✱4·54.  ⊢ : ∼p . q . ≡ . ∼(p ∨ ∼q)   [✱4·5 ∼p/p . ✱4·13]
 PM-VERBATIM-END PM1:✱4·54 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·55
-✱4·55.  ⊢ : ∼∼(∼p . q) . ≡ . p ∨ ∼q   [✱4·54·12]
+✱4·55.  ⊢ : ∼(∼p . q) . ≡ . p ∨ ∼q   [✱4·54·12]
 PM-VERBATIM-END PM1:✱4·55 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·56
-✱4·56.  ⊢ : ∼∼∼(∼p . ∼q) . ≡ . ∼(p ∨ q)   [✱4·54 ∼q/q . ✱4·13]
+✱4·56.  ⊢ : ∼p . ∼q . ≡ . ∼(p ∨ q)   [✱4·54 ∼q/q . ✱4·13]
 PM-VERBATIM-END PM1:✱4·56 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·57
-✱4·57.  ⊢ : ∼∼(p ∨ q) . ≡ . ∼p . ∼q   [✱4·56·13]
+✱4·57.  ⊢ : ∼(∼p . ∼q) . ≡ . p ∨ q   [✱4·56·12]
 PM-VERBATIM-END PM1:✱4·57 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·6
-✱4·6.  ⊢ : ∼p ⊃ q . ≡ . ∼p ∨ q   [✱4·2 . (✱1·01)]
+✱4·6.  ⊢ : p ⊃ q . ≡ . ∼p ∨ q   [✱4·2 . (✱1·01)]
 PM-VERBATIM-END PM1:✱4·6 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·61
@@ -277,19 +277,19 @@ PM-VERBATIM-END PM1:✱4·6 -/
 PM-VERBATIM-END PM1:✱4·61 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·62
-✱4·62.  ⊢ : ∼∼p ⊃ ∼q . ≡ . ∼p ∨ ∼q   [✱4·6 ∼q/q]
+✱4·62.  ⊢ : p ⊃ ∼q . ≡ . ∼p ∨ ∼q   [✱4·6 ∼q/q]
 PM-VERBATIM-END PM1:✱4·62 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·63
-✱4·63.  ⊢ : ∼∼∼(p ⊃ ∼q) . ≡ . p . q   [✱4·62·11·5]
+✱4·63.  ⊢ : ∼(p ⊃ ∼q) . ≡ . p . q   [✱4·62·11·5]
 PM-VERBATIM-END PM1:✱4·63 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·64
-✱4·64.  ⊢ : ∼∼∼p ⊃ q . ≡ . p ∨ q   [✱2·53·54]
+✱4·64.  ⊢ : ∼p ⊃ q . ≡ . p ∨ q   [✱2·53·54]
 PM-VERBATIM-END PM1:✱4·64 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·65
-✱4·65.  ⊢ : ∼∼∼(∼p ⊃ q) . ≡ . ∼p . ∼q   [✱4·64·11·56]
+✱4·65.  ⊢ : ∼(∼p ⊃ q) . ≡ . ∼p . ∼q   [✱4·64·11·56]
 PM-VERBATIM-END PM1:✱4·65 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·66
@@ -345,7 +345,7 @@ hypothesis may be omitted from an implication.
 PM-VERBATIM-END PM1:✱4·73 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·74
-✱4·74.  ⊢ : ∼p . ⊃ : q . ≡ . p ∨ q   [✱2·21 . ✱4·72]
+✱4·74.  ⊢ :. ∼p . ⊃ : q . ≡ . p ∨ q   [✱2·21 . ✱4·72]
 PM-VERBATIM-END PM1:✱4·74 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·76
@@ -353,11 +353,11 @@ PM-VERBATIM-END PM1:✱4·74 -/
 PM-VERBATIM-END PM1:✱4·76 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·77
-✱4·77.  ⊢ : q ⊃ p . r ⊃ p . ≡ : q ∨ r . ⊃ . p   [✱3·44 . Add . ✱2·2]
+✱4·77.  ⊢ :. q ⊃ p . r ⊃ p . ≡ : q ∨ r . ⊃ . p   [✱3·44 . Add . ✱2·2]
 PM-VERBATIM-END PM1:✱4·77 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·86
-✱4·86.  ⊢ : p ≡ q . ⊃ : p ≡ r . ≡ . q ≡ r   [✱4·21·22]
+✱4·86.  ⊢ :. p ≡ q . ⊃ : p ≡ r . ≡ . q ≡ r   [✱4·21·22]
 PM-VERBATIM-END PM1:✱4·86 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·87
@@ -378,11 +378,11 @@ other forms.
 PM-VERBATIM-END PM1:✱4·83 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·84
-✱4·84.  ⊢ : p ≡ q . ⊃ : p ⊃ r . ≡ . q ⊃ r   [✱2·06 . ✱3·47]
+✱4·84.  ⊢ :. p ≡ q . ⊃ : p ⊃ r . ≡ . q ⊃ r   [✱2·06 . ✱3·47]
 PM-VERBATIM-END PM1:✱4·84 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·85
-✱4·85.  ⊢ : p ≡ q . ⊃ : r ⊃ p . ≡ . r ⊃ q   [✱2·05 . ✱3·47]
+✱4·85.  ⊢ :. p ≡ q . ⊃ : r ⊃ p . ≡ . r ⊃ q   [✱2·05 . ✱3·47]
 PM-VERBATIM-END PM1:✱4·85 -/
 
 /- PM-VERBATIM-BEGIN PM1:✱4·78
@@ -773,7 +773,7 @@ theorem star_4_11 {Γ} (p q : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱4·77. -/
 def star_4_77_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱4·77.  ⊢ : q ⊃ p . r ⊃ p . ≡ : q ∨ r . ⊃ . p"
+  printed := PM.pmPrinted "✱4·77.  ⊢ :. q ⊃ p . r ⊃ p . ≡ : q ∨ r . ⊃ . p"
   parsed := ((q ⊃ₚ p) ∧ₚ (r ⊃ₚ p)) ≡ₚ ((q ∨ₚ r) ⊃ₚ p)
   scopeReading := "The juxtaposed left clauses form a conjunction; q ∨ r is the antecedent of the right implication."
 
@@ -859,7 +859,7 @@ theorem star_4_81 {Γ} (p : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱4·36. -/
 def star_4_36_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱4·36.  ⊢ : p ≡ q . ⊃ : p . r . ≡ . q . r"
+  printed := PM.pmPrinted "✱4·36.  ⊢ :. p ≡ q . ⊃ : p . r . ≡ . q . r"
   parsed := (p ≡ₚ q) ⊃ₚ ((p ∧ₚ r) ≡ₚ (q ∧ₚ r))
   scopeReading := "The first equivalence is the antecedent; the consequent equates the two conjunctions."
 
@@ -919,7 +919,7 @@ theorem star_4_7 {Γ} (p q : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱4·86. -/
 def star_4_86_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : p ≡ q . ⊃ : p ≡ r . ≡ . q ≡ r"
+  printed := PM.pmPrinted "⊢ :. p ≡ q . ⊃ : p ≡ r . ≡ . q ≡ r"
   parsed := (p ≡ₚ q) ⊃ₚ ((p ≡ₚ r) ≡ₚ (q ≡ₚ r))
   scopeReading := "The equivalence p ≡ q is the antecedent; the consequent equates p ≡ r with q ≡ r."
 
@@ -1037,7 +1037,7 @@ theorem star_4_87 {Γ} (p q r : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱4·37. -/
 def star_4_37_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱4·37.  ⊢ : p ≡ q . ⊃ : p ∨ r . ≡ . q ∨ r"
+  printed := PM.pmPrinted "✱4·37.  ⊢ :. p ≡ q . ⊃ : p ∨ r . ≡ . q ∨ r"
   parsed := (p ≡ₚ q) ⊃ₚ ((p ∨ₚ r) ≡ₚ (q ∨ₚ r))
   scopeReading := "The first equivalence is the antecedent; the consequent equates the two disjunctions."
 
@@ -1072,7 +1072,7 @@ theorem star_4_37 {Γ} (p q r : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱4·74. -/
 def star_4_74_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱4·74.  ⊢ : ∼p . ⊃ : q . ≡ . p ∨ q"
+  printed := PM.pmPrinted "✱4·74.  ⊢ :. ∼p . ⊃ : q . ≡ . p ∨ q"
   parsed := (∼ₚ p) ⊃ₚ (q ≡ₚ (p ∨ₚ q))
   scopeReading := "The negation ∼p is the antecedent; the consequent is the equivalence of q and p ∨ q."
 
@@ -1235,7 +1235,7 @@ theorem star_4_83 {Γ} (p q : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱4·84. -/
 def star_4_84_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱4·84.  ⊢ : p ≡ q . ⊃ : p ⊃ r . ≡ . q ⊃ r"
+  printed := PM.pmPrinted "✱4·84.  ⊢ :. p ≡ q . ⊃ : p ⊃ r . ≡ . q ⊃ r"
   parsed := (p ≡ₚ q) ⊃ₚ ((p ⊃ₚ r) ≡ₚ (q ⊃ₚ r))
   scopeReading := "The equivalence p ≡ q is the antecedent; the consequent equates the two implications to r."
 
@@ -1278,7 +1278,7 @@ theorem star_4_84 {Γ} (p q r : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱4·85. -/
 def star_4_85_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱4·85.  ⊢ : p ≡ q . ⊃ : r ⊃ p . ≡ . r ⊃ q   [✱2·05 . ✱3·47]"
+  printed := PM.pmPrinted "✱4·85.  ⊢ :. p ≡ q . ⊃ : r ⊃ p . ≡ . r ⊃ q   [✱2·05 . ✱3·47]"
   parsed := (p ≡ₚ q) ⊃ₚ ((r ⊃ₚ p) ≡ₚ (r ⊃ₚ q))
   scopeReading := "The equivalence p ≡ q is the antecedent; the consequent equates the two implications with antecedent r."
 
@@ -1349,7 +1349,7 @@ theorem star_4_73 {Γ} (p q : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱4·38. -/
 def star_4_38_reading (p q r s : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱4·38.  ⊢ : p ≡ r . q ≡ s . ⊃ : p . q . ≡ . r . s"
+  printed := PM.pmPrinted "✱4·38.  ⊢ :. p ≡ r . q ≡ s . ⊃ : p . q . ≡ . r . s"
   parsed := ((p ≡ₚ r) ∧ₚ (q ≡ₚ s)) ⊃ₚ ((p ∧ₚ q) ≡ₚ (r ∧ₚ s))
   scopeReading := "The two initial equivalences form a conjunctive antecedent; the consequent equates the two conjunctions."
 
@@ -1735,12 +1735,12 @@ theorem star_4_15 {Γ} (p q r : PM.Elementary Γ) :
     (syll _ _ _ (syll _ _ _ hRC hCB) hBA)
 /-- Audited scope reading of ✱4·14. -/
 def star_4_14_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱4·14.  ⊢ : p . q . ⊃ . r : ≡ : p . ∼r . ⊃ . ∼q"
+  printed := PM.pmPrinted "✱4·14.  ⊢ :. p . q . ⊃ . r : ≡ : p . ∼r . ⊃ . ∼q"
   parsed := ((p ∧ₚ q) ⊃ₚ r) ≡ₚ ((p ∧ₚ ∼ₚ r) ⊃ₚ ∼ₚ q)
   scopeReading := "The equivalence relates the two displayed implications."
 /-- Audited scope reading of ✱4·15. -/
 def star_4_15_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱4·15.  ⊢ : p . q . ⊃ . ∼r : ≡ : q . r . ⊃ . ∼p"
+  printed := PM.pmPrinted "✱4·15.  ⊢ :. p . q . ⊃ . ∼r : ≡ : q . r . ⊃ . ∼p"
   parsed := ((p ∧ₚ q) ⊃ₚ ∼ₚ r) ≡ₚ ((q ∧ₚ r) ⊃ₚ ∼ₚ p)
   scopeReading := "The equivalence relates the two displayed implications."
 theorem star_4_39 (p q r s : PM.Elementary Γ) :
@@ -1791,9 +1791,13 @@ Dem.
 -/
 theorem star_4_78 {Γ} (p q r : PM.Elementary Γ) :
     ⊢ₚ (((p ⊃ₚ q) ∨ₚ (p ⊃ₚ r)) ≡ₚ (p ⊃ₚ (q ∨ₚ r))) :=
+  let line1a : (p ⊃ₚ q) = ((∼ₚp) ∨ₚ q) := star_1_01 p q
+  let line1b : (p ⊃ₚ r) = ((∼ₚp) ∨ₚ r) := star_1_01 p r
   -- (1) ✱4·2 . (✱1·01)
   let s1 : ⊢ₚ (((p ⊃ₚ q) ∨ₚ (p ⊃ₚ r)) ≡ₚ ((∼ₚp ∨ₚ q) ∨ₚ (∼ₚp ∨ₚ r))) :=
-    star_4_2 ((p ⊃ₚ q) ∨ₚ (p ⊃ₚ r))
+    by
+      rw [line1a, line1b]
+      exact star_4_2 ((∼ₚp ∨ₚ q) ∨ₚ (∼ₚp ∨ₚ r))
   -- (2) ✱4·33
   let s2 : ⊢ₚ (((∼ₚp ∨ₚ q) ∨ₚ (∼ₚp ∨ₚ r)) ≡ₚ (((∼ₚp ∨ₚ q) ∨ₚ ∼ₚp) ∨ₚ r)) :=
     PM.Derivation.detach (star_4_33 (∼ₚp ∨ₚ q) (∼ₚp) r)
@@ -1822,7 +1826,11 @@ theorem star_4_78 {Γ} (p q r : PM.Elementary Γ) :
         (PM.Derivation.detach (star_4_21 (∼ₚp) (∼ₚp ∨ₚ ∼ₚp)) (star_3_26 _ _)))
       (star_4_37 (∼ₚp ∨ₚ ∼ₚp) (∼ₚp) (q ∨ₚ r))
   -- (6) ✱4·2 . (✱1·01)
-  let s6 : ⊢ₚ ((∼ₚp ∨ₚ (q ∨ₚ r)) ≡ₚ (p ⊃ₚ (q ∨ₚ r))) := star_4_2 (∼ₚp ∨ₚ (q ∨ₚ r))
+  let line6a : (p ⊃ₚ (q ∨ₚ r)) = ((∼ₚp) ∨ₚ (q ∨ₚ r)) :=
+    star_1_01 p (q ∨ₚ r)
+  let s6 : ⊢ₚ ((∼ₚp ∨ₚ (q ∨ₚ r)) ≡ₚ (p ⊃ₚ (q ∨ₚ r))) := by
+    rw [line6a]
+    exact star_4_2 (∼ₚp ∨ₚ (q ∨ₚ r))
   -- (1) . (2) . (3) . (4) . (5) . (6) . ✱4·22
   let t12 : ⊢ₚ (((p ⊃ₚ q) ∨ₚ (p ⊃ₚ r)) ≡ₚ (((∼ₚp ∨ₚ q) ∨ₚ ∼ₚp) ∨ₚ r)) :=
     PM.Derivation.detach (PM.Derivation.detach s2 (PM.Derivation.detach s1 (star_3_2
@@ -1902,8 +1910,11 @@ theorem star_4_79 {Γ} (p q r : PM.Elementary Γ) :
       (star_3_2 ((∼ₚp ⊃ₚ (∼ₚq ∨ₚ ∼ₚr)) ⊃ₚ (∼ₚ(∼ₚq ∨ₚ ∼ₚr) ⊃ₚ p))
         ((∼ₚ(∼ₚq ∨ₚ ∼ₚr) ⊃ₚ p) ⊃ₚ (∼ₚp ⊃ₚ (∼ₚq ∨ₚ ∼ₚr)))))
   -- (4) ✱4·2 . (✱3·01)
+  let line4a : (q ∧ₚ r) = ∼ₚ ((∼ₚ q) ∨ₚ (∼ₚ r)) := star_3_01 q r
   let s4 : ⊢ₚ ((∼ₚ(∼ₚq ∨ₚ ∼ₚr) ⊃ₚ p) ≡ₚ ((q ∧ₚ r) ⊃ₚ p)) :=
-    star_4_2 (∼ₚ(∼ₚq ∨ₚ ∼ₚr) ⊃ₚ p)
+    by
+      rw [line4a]
+      exact star_4_2 (∼ₚ(∼ₚq ∨ₚ ∼ₚr) ⊃ₚ p)
   -- (1) . (2) . (3) . (4) . ✱4·22
   let t12 : ⊢ₚ (((q ⊃ₚ p) ∨ₚ (r ⊃ₚ p)) ≡ₚ (∼ₚp ⊃ₚ (∼ₚq ∨ₚ ∼ₚr))) :=
     PM.Derivation.detach (PM.Derivation.detach s2 (PM.Derivation.detach s1 (star_3_2

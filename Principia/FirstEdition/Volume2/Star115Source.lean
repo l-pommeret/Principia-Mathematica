@@ -40,7 +40,7 @@ PM-VERBATIM-END PM2:✱115·142 -/
 ✱115·143. ⊢ . Prodʻιʻʻα=ιʻα [✱83·71]
 PM-VERBATIM-END PM2:✱115·143 -/
 /- PM-VERBATIM-BEGIN PM2:✱115·144
-✱115·144. ⊢ : κ⊆1 .⊃. Prodʻκ=ιʻsʻκ [✱83·72]
+✱115·144. ⊢ : κ⊂1 .⊃. Prodʻκ=ιʻsʻκ [✱83·72]
 PM-VERBATIM-END PM2:✱115·144 -/
 /- PM-VERBATIM-BEGIN PM2:✱115·145
 ✱115·145. ⊢ :: κ∈Cls² excl . α∈κ . μ∩α∈1 .⊃: μ−α∈Prodʻ(κ−ιʻα) .≡. μ∈Prodʻκ [✱84·422]

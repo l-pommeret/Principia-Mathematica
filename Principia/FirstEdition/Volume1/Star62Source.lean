@@ -17,10 +17,10 @@ PM-VERBATIM-END PM1:✱62·21 -/
 ✱62·22.  ⊢ . Dʻε = V
 PM-VERBATIM-END PM1:✱62·22 -/
 /- PM-VERBATIM-BEGIN PM1:✱62·23
-✱62·23.  ⊢ . Cʻε = Cls − ιʻΛ
+✱62·23.  ⊢ . ᗡʻε = Cls − ιʻΛ
 PM-VERBATIM-END PM1:✱62·23 -/
 /- PM-VERBATIM-BEGIN PM1:✱62·231
-✱62·231.  ⊢ : Λ ∉ Cʻε .≡ . Λ ε ιʻΛ
+✱62·231.  ⊢ : κ ⊂ ᗡʻε .≡ . Λ ∼ε κ  [✱24·63.✱33·131]
 PM-VERBATIM-END PM1:✱62·231 -/
 /- PM-VERBATIM-BEGIN PM1:✱62·24
 ✱62·24.  ⊢ . Cʻε = V
@@ -32,7 +32,7 @@ PM-VERBATIM-END PM1:✱62·25 -/
 ✱62·26.  ⊢ . R = ε ∣ R
 PM-VERBATIM-END PM1:✱62·26 -/
 /- PM-VERBATIM-BEGIN PM1:✱62·3
-✱62·3.  ⊢ . εʻε = Ẑα̂
+✱62·3.  ⊢ . εʻʻκ = sʻκ
 PM-VERBATIM-END PM1:✱62·3 -/
 /- PM-VERBATIM-BEGIN PM1:✱62·31
 ✱62·31.  ⊢ . εʻε = Ẑx̂

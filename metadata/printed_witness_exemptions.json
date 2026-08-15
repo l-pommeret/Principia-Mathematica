@@ -2,6 +2,48 @@
   "schema_version": 1,
   "exemptions": [
     {
+      "proposition": "PM1:✱22·61",
+      "gutenberg_reading": "\\(\\vdash:\\alpha\\subset\\beta.\\supset.\\alpha\\subset\\beta\\cup\\gamma \\quad[\\text{*22*44·58}]\\)",
+      "repository_reading": "⊢ : α ⊂ β .⊃ . α ⊂ β ∪ γ  [✱22·44·58]",
+      "reason": "La citation est mutilée par la transcription : Gutenberg porte « [*22*44·58] », une astérisque là où le point médian sépare les deux références concaténées. Les Principia citent « [✱22·44·58] », c'est-à-dire ✱22·44 et ✱22·58 ; « ✱22✱44·58 » ne désigne aucune proposition du livre."
+    },
+    {
+      "proposition": "PM1:✱22·84",
+      "gutenberg_reading": "\\(\\vdash.-(\\alpha\\cap\\beta)=-\\alpha\\lor-\\beta \\quad[\\text{*4·51}]\\)",
+      "repository_reading": "⊢ . −(α ∩ β) = −α ∪ −β  [✱4·51]",
+      "reason": "Gutenberg met la disjonction propositionnelle ∨ entre deux CLASSES. La loi de De Morgan énoncée ici porte sur les classes et exige la réunion ∪ : « −α ∨ −β » n'est pas une expression du système, la disjonction ne se forme pas entre classes. Le dépôt porte ∪."
+    },
+    {
+      "proposition": "PM1:✱22·85",
+      "gutenberg_reading": "\\(\\vdash.\\alpha\\cap\\beta=-(-\\alpha\\lor-\\beta) \\quad[\\text{*22·84·831}]\\)",
+      "repository_reading": "⊢ . α ∩ β = −(−α ∪ −β)  [✱22·84·831]",
+      "reason": "Même confusion que ✱22·84 : Gutenberg met ∨ entre deux classes là où la réunion ∪ est exigée. La proposition est la duale de la précédente et hérite de la même faute de transcription."
+    },
+    {
+      "proposition": "PM1:✱51·236",
+      "gutenberg_reading": "\\(\\vdash\\colon\\ldotp z\\in \\iotaʻ x\\cup \\beta.\\equiv:z=x.\\lor.z\\in\\beta \\quad[(\\text{*22·34.*51·15}]\\)",
+      "repository_reading": "⊢ : z ε ιʻx ∪ β .≡ : z = x .∨. z ε β  [✱22·34.*51·15]",
+      "reason": "La citation Gutenberg porte une parenthèse ouvrante jamais fermée : « [(*22·34.*51·15] ». Le déséquilibre est un artefact de transcription ; la citation imprimée est « [✱22·34.✱51·15] »."
+    },
+    {
+      "proposition": "PM1:✱51·25",
+      "gutenberg_reading": "\\(\\vdash:\\alpha\\supset \\iotaʻ x\\cup \\beta.x{\\sim}\\in\\alpha.\\supset.\\alpha\\subset \\beta \\quad[\\text{*51·211.*24·49}]\\)",
+      "repository_reading": "⊢ : α ⊂ ιʻx ∪ β . x ∼ε α .⊃ . α ⊂ β  [✱51·211.*24·49]",
+      "reason": "Gutenberg écrit « α ⊃ ιʻx ∪ β » : le fer à cheval de l'implication relie deux classes. L'hypothèse de la proposition est une inclusion de classes, et sa conclusion « α ⊂ β » l'emploie explicitement. Le dépôt porte l'inclusion ⊂."
+    },
+    {
+      "proposition": "PM1:✱9·131",
+      "gutenberg_reading": "Definition of \"being of the same type.\" The",
+      "repository_reading": "Definition of \"being of the same type.\" The following is a step-by-step definition, the definition for higher types presupposing that for lower types. We say that u and v \"are of the same type\" if (1) both are individuals, (2) both are elementary functions taking arguments of the same type, (3) u is a function and v is its negation, (4) u is φ x̂ or ψx̂ and v is φ x̂ ∨ ψ x̂ , where φ x̂ and ψ x̂ are elementary functions, (5) u is (y). φ (x̂,y) and v is ( z). ψ (x̂,z) , where φ (x̂, ŷ) , ψ (x̂, ŷ) are of the same type, (6) both are elementary propositions, (7) u is a proposition and v is ∼u , or (8) u is ( x).φ x and v is ( y).ψ y , where φ x̂ and ψ x̂ are of the same type.",
+      "reason": "La leçon Gutenberg est tronquée par une rupture de ligne : elle s'arrête au milieu d'une phrase, sur le mot « The », alors que la définition du « being of the same type » se poursuit sur huit clauses numérotées (djvu de 1910, page 160). Le bloc du dépôt porte la définition complète."
+    },
+    {
+      "proposition": "PM1:✱9·25",
+      "gutenberg_reading": "\\(\\vdash\\colon\\ldotp (x).p\\lor \\phi x.\\supset :p.\\lor .(x).\\phi x \\quad[\\text{*9·23.(*9·04)}]\\)",
+      "repository_reading": "⊢:.(x).p∨φx.⊃:p.∨.(x).φx   [Id.✱9·23.(✱9·04)]",
+      "reason": "Gutenberg omet le « Id. » qui ouvre la citation. La page 162 du djvu de 1910 porte « [Id. ∗9·23 . (∗9·04)] », vérifié sur la transcription indépendante de Wikisource. L'omission supprime une prémisse de la démonstration imprimée : ce n'est pas une variante de présentation."
+    },
+    {
       "proposition": "PM1:✱9·361",
       "gutenberg_reading": "\\(\\vdash\\colon\\ldotp (x).\\phi x.\\lor .p:\\supset :p.\\lor .(x).\\phi x \\quad[\\text{Similar proof}]\\)",
       "repository_reading": "⊢ : .(x).φx .∨. p : ⊃ : p .∨. (x).φx   [Similar Proof]",
@@ -50,16 +92,22 @@
       "reason": "La transcription Gutenberg décapitalise une note éditoriale que le livre imprime en capitales. La page 163 du djvu de 1910 porte « [Similar Proof] » neuf fois et « [As Above] » six fois, à côté de trois « [As above] » : les Principia sont eux-mêmes irréguliers sur ce point, et une transcription diplomatique conserve cette irrégularité là où une transcription modernisante l'aplatit. Le dépôt suit la page imprimée."
     },
     {
-      "proposition": "PM1:✱9·25",
-      "gutenberg_reading": "\\(\\vdash\\colon\\ldotp (x).p\\lor \\phi x.\\supset :p.\\lor .(x).\\phi x \\quad[\\text{*9·23.(*9·04)}]\\)",
-      "repository_reading": "⊢:.(x).p∨φx.⊃:p.∨.(x).φx   [Id.✱9·23.(✱9·04)]",
-      "reason": "Gutenberg omet le « Id. » qui ouvre la citation. La page 162 du djvu de 1910 porte « [Id. ∗9·23 . (∗9·04)] », vérifié sur la transcription indépendante de Wikisource. L'omission supprime une prémisse de la démonstration imprimée : ce n'est pas une variante de présentation."
+      "proposition": "PM2:✱102·22",
+      "gutenberg_reading": "\\(\\vdash :\\gamma \\text{ sm }(x,y)\\delta . \\equiv .\\gamma \\text{ sm } \\delta .\\gamma \\subset tʻx.\\delta \\subset tʻy \\quad[*63·5.(*65·12)]\\)",
+      "repository_reading": "⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . γ sm δ . γ ⊂ tʻx . δ ⊂ tʻy  [✱63·5 . (✱65·12)]",
+      "reason": "Gutenberg aplatit en parenthèses ordinaires l'indice « (x,y) » que le livre imprime en indice sous « sm ». La relation de similitude relative à (x,y) est notée par un indice dans les Principia ; le dépôt le rend par des caractères Unicode en indice, ce que la transcription perd."
     },
     {
-      "proposition": "PM1:✱9·131",
-      "gutenberg_reading": "Definition of \"being of the same type.\" The",
-      "repository_reading": "Definition of \"being of the same type.\" The following is a step-by-step definition, the definition for higher types presupposing that for lower types. We say that u and v \"are of the same type\" if (1) both are individuals, (2) both are elementary functions taking arguments of the same type, (3) u is a function and v is its negation, (4) u is φ x̂ or ψx̂ and v is φ x̂ ∨ ψ x̂ , where φ x̂ and ψ x̂ are elementary functions, (5) u is (y). φ (x̂,y) and v is ( z). ψ (x̂,z) , where φ (x̂, ŷ) , ψ (x̂, ŷ) are of the same type, (6) both are elementary propositions, (7) u is a proposition and v is ∼u , or (8) u is ( x).φ x and v is ( y).ψ y , where φ x̂ and ψ x̂ are of the same type.",
-      "reason": "La leçon Gutenberg est tronquée par une rupture de ligne : elle s'arrête au milieu d'une phrase, sur le mot « The », alors que la définition du « being of the same type » se poursuit sur huit clauses numérotées (djvu de 1910, page 160). Le bloc du dépôt porte la définition complète."
+      "proposition": "PM2:✱102·24",
+      "gutenberg_reading": "\\(\\vdash :\\gamma \\text{ sm } (x,y) \\delta . \\equiv .(\\exists R).R \\in 1(x)\\rightarrow 1(y).\\text{D}ʻR = \\gamma .\\text{ᗡ}ʻR = \\delta \\)",
+      "repository_reading": "⊢ : γ sm₍ₓ,ᵧ₎ δ .≡ . (∃R). R ∈ 1(x)→1(y) . DʻR = γ . ᗡʻR = δ",
+      "reason": "Même perte d'indice qu'à ✱102·22 : Gutenberg rend « sm (x,y) » en ligne là où le livre porte « (x,y) » en indice sous « sm »."
+    },
+    {
+      "proposition": "PM2:✱117·103",
+      "gutenberg_reading": "\\(\\vdash : \\mu \\mu \\quad[(*117·04)]\\)",
+      "repository_reading": "⊢ : μ < ν .≡. ν > μ",
+      "reason": "La leçon Gutenberg est mutilée : elle se réduit à « ⊢ : μ μ », sans relation ni connecteur. Le livre imprime l'équivalence complète « μ < ν . ≡ . ν > μ », que porte le bloc du dépôt. Une formule amputée de ses signes n'est pas une variante de présentation."
     }
   ]
 }

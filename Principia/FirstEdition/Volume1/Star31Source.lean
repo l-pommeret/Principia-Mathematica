@@ -10,7 +10,7 @@ PM-VERBATIM-END PM1:✱31·02 -/
 ✱31·1. ⊢ : Q Cnv P ≡ : xQy ≡ₓ,ᵧ yPx [✱21·3.(✱31·01)]
 PM-VERBATIM-END PM1:✱31·1 -/
 /- PM-VERBATIM-BEGIN PM1:✱31·101
-✱31·101. ⊢ : Q Cnv P . R Cnv P ⊃ . Q = R
+✱31·101. ⊢ : Q Cnv P . R Cnv P .⊃ . Q = R
 PM-VERBATIM-END PM1:✱31·101 -/
 /- PM-VERBATIM-BEGIN PM1:✱31·11
 ✱31·11. ⊢ : xP̌y ≡ . yPx [✱21·3.(✱31·02)]

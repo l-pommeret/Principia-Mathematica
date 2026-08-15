@@ -72,7 +72,7 @@ PM-VERBATIM-END PM2:✱216·34 -/
 ✱216·35. ⊢ : P∈Ser.Cl exʻα⊂ᗡʻlimaxP .⊃. Cl exʻδPʻα⊂ᗡʻlimaxP
 PM-VERBATIM-END PM2:✱216·35 -/
 /- PM-VERBATIM-BEGIN PM2:✱216·36
-✱216·36. ⊢ : α∈perfʻP .≡. α∈denseʻP∩closedʻP
+✱216·36. ⊢ : α∈perfʻP .≡. α∈denseʻP∩closedʻP [(✱216·04)]
 PM-VERBATIM-END PM2:✱216·36 -/
 /- PM-VERBATIM-BEGIN PM2:✱216·37
 ✱216·37. ⊢ : α∈perfʻP .≡. Cl exʻα⊂ᗡʻlimaxP.δPʻα=α−→minPʻα

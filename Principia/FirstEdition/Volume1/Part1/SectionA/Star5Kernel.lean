@@ -206,7 +206,7 @@ theorem star_5_21 {Γ} (p q : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·41. -/
 def star_5_41_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : p ⊃ q . ⊃ . p ⊃ r : ≡ : p . ⊃ . q ⊃ r"
+  printed := PM.pmPrinted "⊢ :. p ⊃ q . ⊃ . p ⊃ r : ≡ : p . ⊃ . q ⊃ r"
   parsed := (((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)) ≡ₚ (p ⊃ₚ (q ⊃ₚ r)))
   scopeReading := "The principal equivalence relates (p ⊃ q) ⊃ (p ⊃ r) to p ⊃ (q ⊃ r)."
 
@@ -230,7 +230,7 @@ theorem star_5_41 {Γ} (p q r : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·4. -/
 def star_5_4_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : p . ⊃ . p ⊃ q : ≡ . p ⊃ q"
+  printed := PM.pmPrinted "⊢ :. p . ⊃ . p ⊃ q : ≡ . p ⊃ q"
   parsed := ((p ⊃ₚ (p ⊃ₚ q)) ≡ₚ (p ⊃ₚ q))
   scopeReading := "The principal equivalence relates p ⊃ (p ⊃ q) to p ⊃ q."
 
@@ -254,7 +254,7 @@ theorem star_5_4 {Γ} (p q : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·31. -/
 def star_5_31_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : r . p ⊃ q . ⊃ : p . ⊃ . q . r"
+  printed := PM.pmPrinted "⊢ :. r . p ⊃ q : ⊃ : p . ⊃ . q . r"
   parsed := ((r ∧ₚ (p ⊃ₚ q)) ⊃ₚ (p ⊃ₚ (q ∧ₚ r)))
   scopeReading := "The conjunction r ∧ (p ⊃ q) is the antecedent; p ⊃ (q ∧ r) is the consequent."
 
@@ -295,7 +295,7 @@ theorem star_5_31 {Γ} (p q r : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·35. -/
 def star_5_35_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : p ⊃ q . p ⊃ r . ⊃ : p . ⊃ . q ≡ r"
+  printed := PM.pmPrinted "⊢ :. p ⊃ q . p ⊃ r . ⊃ : p . ⊃ . q ≡ r"
   parsed := (((p ⊃ₚ q) ∧ₚ (p ⊃ₚ r)) ⊃ₚ (p ⊃ₚ (q ≡ₚ r)))
   scopeReading := "The conjunction of the two p-conditionals is the antecedent; p ⊃ (q ≡ r) is the consequent."
 
@@ -330,7 +330,7 @@ theorem star_5_35 {Γ} (p q r : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·5. -/
 def star_5_5_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : p . ⊃ : p ⊃ q . ≡ . q"
+  printed := PM.pmPrinted "⊢ :. p . ⊃ : p ⊃ q . ≡ . q"
   parsed := (p ⊃ₚ ((p ⊃ₚ q) ≡ₚ q))
   scopeReading := "The outer implication has p as antecedent and (p ⊃ q) ≡ q as consequent."
 
@@ -360,7 +360,7 @@ theorem star_5_5 {Γ} (p q : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·501. -/
 def star_5_501_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : p . ⊃ : q . ≡ . p ≡ q"
+  printed := PM.pmPrinted "⊢ :. p . ⊃ : q . ≡ . p ≡ q"
   parsed := (p ⊃ₚ (q ≡ₚ (p ≡ₚ q)))
   scopeReading := "The outer implication has p as antecedent; q ≡ (p ≡ q) is its consequent."
 
@@ -399,7 +399,7 @@ theorem star_5_501 {Γ} (p q : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·53. -/
 def star_5_53_reading (p q r s : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱5·53.  ⊢ : p ∨ q ∨ r . ⊃ . s : ≡ : p ⊃ s . q ⊃ s . r ⊃ s"
+  printed := PM.pmPrinted "✱5·53.  ⊢ :. p ∨ q ∨ r . ⊃ . s : ≡ : p ⊃ s . q ⊃ s . r ⊃ s"
   parsed := ((((p ∨ₚ q) ∨ₚ r) ⊃ₚ s) ≡ₚ (((p ⊃ₚ s) ∧ₚ (q ⊃ₚ s)) ∧ₚ (r ⊃ₚ s)))
   scopeReading := "The principal equivalence relates ((p ∨ q) ∨ r) ⊃ s to the left-associated conjunction of the three conditionals."
 
@@ -452,7 +452,7 @@ theorem star_5_53 {Γ} (p q r s : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·44. -/
 def star_5_44_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱5·44.  ⊢ : :p ⊃ q . ⊃ : p ⊃ r . ≡ : p . ⊃ . q . r"
+  printed := PM.pmPrinted "✱5·44.  ⊢ : :p ⊃ q . ⊃ :. p ⊃ r . ≡ : p . ⊃ . q . r"
   parsed := ((p ⊃ₚ q) ⊃ₚ ((p ⊃ₚ r) ≡ₚ (p ⊃ₚ (q ∧ₚ r))))
   scopeReading := "The outer implication has p ⊃ q as antecedent and equates p ⊃ r with p ⊃ (q ∧ r)."
 
@@ -509,7 +509,7 @@ theorem star_5_44 {Γ} (p q r : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·42. -/
 def star_5_42_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱5·42.  ⊢ : :p . ⊃ . q ⊃ r : ≡ : p . ⊃ : q . ⊃ . p . r"
+  printed := PM.pmPrinted "✱5·42.  ⊢ : :p . ⊃ . q ⊃ r : ≡ :. p . ⊃ : q . ⊃ . p . r"
   parsed := ((p ⊃ₚ (q ⊃ₚ r)) ≡ₚ (p ⊃ₚ (q ⊃ₚ (p ∧ₚ r))))
   scopeReading := "The principal equivalence relates p ⊃ (q ⊃ r) to p ⊃ (q ⊃ (p ∧ r))."
 
@@ -577,7 +577,7 @@ theorem star_5_42 {Γ} (p q r : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·3. -/
 def star_5_3_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱5·3.  ⊢ : p . q . ⊃ . r : ≡ : p . q . ⊃ . p . r"
+  printed := PM.pmPrinted "✱5·3.  ⊢ :. p . q . ⊃ . r : ≡ : p . q . ⊃ . p . r"
   parsed := (((p ∧ₚ q) ⊃ₚ r) ≡ₚ ((p ∧ₚ q) ⊃ₚ (p ∧ₚ r)))
   scopeReading := "The principal equivalence relates (p ∧ q) ⊃ r to (p ∧ q) ⊃ (p ∧ r)."
 
@@ -845,7 +845,7 @@ theorem star_5_71 {Γ} (p q r : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·55. -/
 def star_5_55_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱5·55.  ⊢ : p ∨ q . ≡ . p : ∨ : p ∨ q . ≡ . q"
+  printed := PM.pmPrinted "✱5·55.  ⊢ :. p ∨ q . ≡ . p : ∨ : p ∨ q . ≡ . q"
   parsed := (((p ∨ₚ q) ≡ₚ p) ∨ₚ ((p ∨ₚ q) ≡ₚ q))
   scopeReading := "The principal disjunction joins (p ∨ q) ≡ p to (p ∨ q) ≡ q."
 
@@ -973,7 +973,7 @@ theorem star_5_63 {Γ} (p q : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·54. -/
 def star_5_54_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "✱5·54.  ⊢ : p . q . ≡ . p : ∨ : p . q . ≡ . q"
+  printed := PM.pmPrinted "✱5·54.  ⊢ :. p . q . ≡ . p : ∨ : p . q . ≡ . q"
   parsed := (((p ∧ₚ q) ≡ₚ p) ∨ₚ ((p ∧ₚ q) ≡ₚ q))
   scopeReading := "The principal disjunction joins (p ∧ q) ≡ p to (p ∧ q) ≡ q."
 
@@ -1074,7 +1074,7 @@ theorem star_5_6 {Γ} (p q r : PM.Elementary Γ) :
 
 /-- Audited scope reading of ✱5·7. -/
 def star_5_7_reading (p q r : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : p ∨ r . ≡ . q ∨ r : ≡ : r . ∨ . p ≡ q"
+  printed := PM.pmPrinted "⊢ :. p ∨ r . ≡ . q ∨ r : ≡ : r . ∨ . p ≡ q"
   parsed := ((((p ∨ₚ r) ≡ₚ (q ∨ₚ r)) ≡ₚ (r ∨ₚ (p ≡ₚ q))))
   scopeReading := "The outer equivalence relates (p ∨ r) ≡ (q ∨ r) to r ∨ (p ≡ q)."
 

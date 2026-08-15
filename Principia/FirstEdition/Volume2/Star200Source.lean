@@ -3,7 +3,7 @@
 ✱200·11. ⊢ : P∈RlʻJ .≡. CnvʻP∈RlʻJ
 PM-VERBATIM-END PM2:✱200·11 -/
 /- PM-VERBATIM-BEGIN PM2:✱200·12
-✱200·12. ⊢ : P∈RlʻJ .⊃. CʻP∉1
+✱200·12. ⊢ : P∈RlʻJ .⊃. CʻP∼∈1
 PM-VERBATIM-END PM2:✱200·12 -/
 /- PM-VERBATIM-BEGIN PM2:✱200·2
 ✱200·2. ⊢ : T∈1→1 .⊃. T;(P∩̇J)=T;P∩̇J

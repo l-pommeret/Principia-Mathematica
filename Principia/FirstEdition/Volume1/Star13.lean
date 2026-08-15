@@ -40,16 +40,16 @@ Dem.
 [Transp] ⊃ . ψx .≡ . ψy : ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱13·12 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·13
-✱13·13.  ⊢ : ψx . x = y .⊃ . ψy
+✱13·13.  ⊢ : ψx . x = y .⊃ . ψy  [✱13·101 . Comm . Imp]
 PM-VERBATIM-END PM1:✱13·13 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·14
-✱13·14.  ⊢ : ψx . ∼ψy .⊃ . x ≠ y
+✱13·14.  ⊢ : ψx . ∼ψy .⊃ . x ≠ y  [✱13·13 . ✱4·14]
 PM-VERBATIM-END PM1:✱13·14 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·15
-✱13·15.  ⊢ . x = x
+✱13·15.  ⊢ . x = x  [Id . ✱10·11 . ✱13·1]
 PM-VERBATIM-END PM1:✱13·15 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·16
-✱13·16.  ⊢ : x = y .≡ . y = x
+✱13·16.  ⊢ : x = y .≡ . y = x  [✱13·11 . ✱10·32]
 PM-VERBATIM-END PM1:✱13·16 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·17
 ✱13·17.  ⊢ : x = y . y = z .⊃ . x = z
@@ -58,19 +58,19 @@ Dem.
 [✱10·3] ⊃ :: φ!x .⊃φ . φ!z :: ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱13·17 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·171
-✱13·171.  ⊢ : x = y . x = z .⊃ . y = z
+✱13·171.  ⊢ : x = y . x = z .⊃ . y = z  [✱13·16·17]
 PM-VERBATIM-END PM1:✱13·171 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·172
-✱13·172.  ⊢ : y = x . z = x .⊃ . y = z
+✱13·172.  ⊢ : y = x . z = x .⊃ . y = z  [✱13·16·17]
 PM-VERBATIM-END PM1:✱13·172 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·18
-✱13·18.  ⊢ : x = y . x ≠ z .⊃ . y ≠ z
+✱13·18.  ⊢ : x = y . x ≠ z .⊃ . y ≠ z  [✱13·17 . ✱4·14]
 PM-VERBATIM-END PM1:✱13·18 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·181
-✱13·181.  ⊢ : x = y . y ≠ z .⊃ . x ≠ z
+✱13·181.  ⊢ : x = y . y ≠ z .⊃ . x ≠ z  [✱13·171 . ✱4·14]
 PM-VERBATIM-END PM1:✱13·181 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·182
-✱13·182.  ⊢ :: x = y .⊃ : z = x .≡ . z = y
+✱13·182.  ⊢ :. x = y .⊃ : z = x .≡ . z = y  [✱13·17·172 . Exp . Comp]
 PM-VERBATIM-END PM1:✱13·182 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·183
 ✱13·183.  ⊢ :: x = y .≡ : z = x .≡z . z = y
@@ -81,7 +81,7 @@ Dem.
 ⊢ . (1).(2) . ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱13·183 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·19
-✱13·19.  ⊢ . (∃y). y = x
+✱13·19.  ⊢ . (∃y). y = x  [✱13·15 . ✱10·24]
 PM-VERBATIM-END PM1:✱13·19 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·191
 ✱13·191.  ⊢ :: y = x .⊃y . φy : ≡ . φx
@@ -116,7 +116,7 @@ Dem.
 ⊢ . (3).(4) . ⊃ ⊢ . Prop
 PM-VERBATIM-END PM1:✱13·193 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·194
-✱13·194.  ⊢ : φx . x = y .≡ . φx . φy . x = y
+✱13·194.  ⊢ : φx . x = y .≡ . φx . φy . x = y  [✱13·13.✱4·71]
 PM-VERBATIM-END PM1:✱13·194 -/
 /- PM-VERBATIM-BEGIN PM1:✱13·195
 ✱13·195.  ⊢ : (∃y). y = x . φy .≡ . φx

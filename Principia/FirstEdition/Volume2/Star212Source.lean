@@ -201,7 +201,7 @@ PM-VERBATIM-END PM2:✱212·53 -/
 ✱212·54. ⊢ : P∈connex . ∃!sgmʻP .⊃. (sgmʻP)→ʻDʻP=sectʻsgmʻP−ιʻDʻP
 PM-VERBATIM-END PM2:✱212·54 -/
 /- PM-VERBATIM-BEGIN PM2:✱212·55
-✱212·55. ⊢ : P∈connex .⊃: λ∈CʻsgmʻsgmʻP .⊃. E!seq(sgmʻP)ʻλ
+✱212·55. ⊢ :. P∈connex .⊃: λ∈CʻsgmʻsgmʻP .⊃. E!seq(sgmʻP)ʻλ
 PM-VERBATIM-END PM2:✱212·55 -/
 /- PM-VERBATIM-BEGIN PM2:✱212·6
 ✱212·6. ⊢ : P∈Ser . α⊂CʻP .⊃. limax(ςʻP)→ʻP→ʻʻα=Pʻʻα

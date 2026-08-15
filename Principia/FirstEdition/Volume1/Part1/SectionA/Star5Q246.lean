@@ -45,7 +45,7 @@ theorem star_5_23 {Γ} (p q : PM.Elementary Γ) : ⊢ₚ ((p ≡ₚ q) ≡ₚ ((
 
 /-- Audited scope reading of ✱5·24. -/
 def star_5_24_reading (p q : PM.Elementary Γ) : PM.ElementaryReading Γ where
-  printed := PM.pmPrinted "⊢ : ∼(p . q . ∨ . ∼p . ∼q) . ≡ : p . ∼q . ∨ . q . ∼p"
+  printed := PM.pmPrinted "⊢ :. ∼(p . q . ∨ . ∼p . ∼q) . ≡ : p . ∼q . ∨ . q . ∼p"
   parsed := (∼ₚ ((p ∧ₚ q) ∨ₚ (∼ₚ p ∧ₚ ∼ₚ q)) ≡ₚ ((p ∧ₚ ∼ₚ q) ∨ₚ (q ∧ₚ ∼ₚ p)))
   scopeReading := "The principal equivalence relates the negation of (p ∧ q) ∨ (∼p ∧ ∼q) to (p ∧ ∼q) ∨ (q ∧ ∼p)."
 

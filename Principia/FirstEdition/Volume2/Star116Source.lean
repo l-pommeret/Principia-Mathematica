@@ -116,7 +116,7 @@ Dem.
  [✱83·15.*33·241] =ι ʻΛ .⊃ ⊢ .Prop
 PM-VERBATIM-END PM2:✱116·181 -/
 /- PM-VERBATIM-BEGIN PM2:✱116·182
-✱116·182. ⊢ : ∃!β .⊃. Λ exp β = Λ
+✱116·182. ⊢ : ∃!β .⊃. Λ exp β = Λ [✱113·112 . ✱83·11]
 PM-VERBATIM-END PM2:✱116·182 -/
 /- PM-VERBATIM-BEGIN PM2:✱116·183
 ✱116·183. ⊢ . sʻ(α exp β) = β×α
