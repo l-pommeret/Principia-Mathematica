@@ -196,6 +196,17 @@
         "scripts/verify_printed_citations.py",
         "scripts/verify_gate_integrity.py"
       ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "authorised_head": "1b9b52820cd3083acbb6456b28872266b0ca21c6",
+      "reason": "Autoriser le contenu pr\u00e9sent dans HEAD apr\u00e8s la correction des trois runs rouges : couverture CI de tout gate, tol\u00e9rance \u00e9ditoriale \u00e0 l'item catalogu\u00e9 non formalis\u00e9, ex\u00e9cution de verify_q301_gate, et miroir local de la CI.",
+      "scripts_changed": [
+        "scripts/verify_ci_covers_gates.py",
+        "tests/test_verify_ci_covers_gates.py",
+        "tests/test_verify_editorial_unformalized_item.py",
+        "scripts/verify_editorial.py"
+      ]
     }
   ],
   "digests": {
@@ -215,13 +226,14 @@
     "scripts/verify_architecture_experimental_interfaces.py": "fff4482e39ffe15674880bb871e5e7b3e303041115b19db53ba40adc0a335a7e",
     "scripts/verify_axiom_audit.py": "f0d74b4968bfd14c7a0632b56bfdf2fafa52d967e141bbe9edbc785bd752bb00",
     "scripts/verify_certification_tier.py": "4b222da9a3d9ed10fcea3081e0940747949dafdad6bb4ef2bc7402608191762d",
+    "scripts/verify_ci_covers_gates.py": "e9377128a94d5153de0fe9c3ec257639a48b2ad52279fb7c060d7c0dd36bd689",
     "scripts/verify_ci_evidence.py": "d5327fbaa28f57ab17377ffa2ea9ae5070cb339bd3afc8dd537d9c8beb4d439e",
     "scripts/verify_constrained_batches.py": "7fabe6623a4d42c44fea535a0ddcfda269e879880bb8d5a73d4c3caaaa68bf80",
     "scripts/verify_context_bundles.py": "d5b173936833260d090612ac578f722cc3dd327bd2d5fc3931644f8979d5d16b",
     "scripts/verify_dependencies.py": "3a84080e611224ff0dab9e765f3819a46d2eab380b4a64b75deba51e22ea42a3",
     "scripts/verify_description_architecture.py": "7b86b8a371f8f54c5296bf79e3acaeef36f06af9eb641829da96535c321cc527",
     "scripts/verify_description_scope_toy.py": "7f350f21fbb236adb7668ed2831bcde2742bb9d25b0c887cc7ba3948b805a3fb",
-    "scripts/verify_editorial.py": "3abf9942065d047dc1037f6ac9eb26bb64edf63e8afd8fb6d958637422e2dfe7",
+    "scripts/verify_editorial.py": "6047c8b335e1801568eae094ade0df1b574ba89cf96a510fc6b2e3af570398c1",
     "scripts/verify_elementary_formation_toy.py": "d3edc99c1acdc0f48a985da909226403237866e9f9c9fa7534ff3e3670ae1065",
     "scripts/verify_errata_registry.py": "05b918590b08dac42f8343c331d0c26c2c3be749175a2efb9ba947b97f39f106",
     "scripts/verify_gate_integrity.py": "8fb76859c5ecb96e8453004f9c1ff0fcb96bbd1486ebf54ca4df9924378eaf8c",
@@ -268,12 +280,14 @@
     "tests/test_verify_anomaly_registry.py": "17eb154da7d6f4f7bcd19c38c5dcc1334642e8e7928528ecc914959c23cd877e",
     "tests/test_verify_apparent_architecture.py": "0fea5ea9e5b1247d8e5f10038ec0ab76013f02eefa0dcaf92a5a577a0fa8ce1f",
     "tests/test_verify_certification_tier.py": "2677038f64560ca24c5b44580e49562e948cb3cb98c7b1690e92017aad10a37c",
+    "tests/test_verify_ci_covers_gates.py": "7be1429972814aee7752132e61677213144b79a64ec7a6343a0eed1dcf797ef7",
     "tests/test_verify_context_bundles.py": "30151d7ce13e0c66c27b9e7a08457e1a4b6cb569f3709f31fbfa6cdd5acc5c67",
     "tests/test_verify_dependencies.py": "4f10e21b91cb92159daf50330ae991f4a563c8d21474ef90739d29d2ec18b861",
     "tests/test_verify_dependencies_missing_declaration.py": "df1205a316343341eab26c24bc039a70511e1aeeaac18a0b980741dcd25bbb79",
     "tests/test_verify_dependencies_wrapper_self_reference.py": "89efcfc76c7597bb02edf61e08317ec7f652bb97426799629a5b42db76b775d0",
     "tests/test_verify_description_architecture.py": "cd9b10af56f3e3683c1e5aefaf966994151909dbaad2f50f0f9846b90527e24b",
     "tests/test_verify_description_scope_toy.py": "667a988bc88bdb8ca50b46c1d0a63cc5b92100ae291edd6153bada81769fcdf3",
+    "tests/test_verify_editorial_unformalized_item.py": "03824c4a8366ec1bdad424791de96760ec2f6a99837309d9ba3e0a298d29e3a0",
     "tests/test_verify_elementary_formation_toy.py": "38fb464745ab29c5395bdd8bed8ebf14bd9ef6b8aa7539b597c11886fc6678a9",
     "tests/test_verify_errata_registry.py": "b3bd0142fe8a6f0de41ef603034cbbf62a1478e6d579b28927eda124746269eb",
     "tests/test_verify_gate_integrity_head.py": "9f2cf30eb9423a0e3f49d9d0b39ba1214deeff6014553c1efce82966beb4ae19",
