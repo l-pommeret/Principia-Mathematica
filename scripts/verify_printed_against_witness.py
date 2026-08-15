@@ -233,6 +233,15 @@ def normalize_reading(reading: str, *, tex: bool) -> str:
             )
 
     # These are documented diplomatic equivalences, applied symmetrically.
+    #
+    # ∈ folds to ε because the 1910 edition sets class membership with a Greek
+    # epsilon, while the Gutenberg transcription modernises it to U+2208.  The
+    # repository follows the printed page, so the two readings say the same
+    # thing in two alphabets, and 15 blocks diverged on nothing else.  PM uses
+    # ε for membership and for no other purpose, so folding the pair cannot
+    # merge two distinct signs; and being a fold, it can only make readings
+    # agree that already agreed elsewhere -- it cannot turn a passing block
+    # into a failing one.
     text = text.translate(
         str.maketrans(
             {
@@ -241,6 +250,7 @@ def normalize_reading(reading: str, *, tex: bool) -> str:
                 "‘": "ʻ",
                 "’": "ʻ",
                 "′": "ʻ",
+                "∈": "ε",
             }
         )
     )
