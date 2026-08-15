@@ -1,4 +1,5 @@
 import Principia.FirstEdition.Volume1.Star21Source
+import Principia.Deduction.Star20Derived
 import Principia.Deduction.Star4Ramified
 import Principia.Deduction.Star10Derived
 import Principia.Deduction.Star11Derived
@@ -1282,9 +1283,10 @@ theorem star_21_7
     (negation : signature.Negation order)
     (disjunction : signature.Disjunction order)
     (body : Formula signature real [relationSort relationOrder 0] order) :
-    Derivation (.assertion
-      (star_12_1_formula existential universal negation disjunction body)) := by
-  have line1 := star_12_1 existential universal negation disjunction body
+    Derivation
+      (star_21_7_reading existential universal negation disjunction body).parsed := by
+  have line1 := star_20_7 (argumentSort := relationSort relationOrder 0)
+    existential universal negation disjunction body
   exact line1
 
 /-- Audited catalogue reading of ✱21·701. -/
@@ -1322,10 +1324,10 @@ theorem star_21_701
     (disjunction : signature.Disjunction order)
     (body : Formula signature real
       [relationSort relationOrder 0, .individual] order) :
-    Derivation (.assertion (star_12_11_formula existential relationUniversal
-      individualUniversal negation disjunction body)) := by
-  have line1 := star_12_11 existential relationUniversal individualUniversal
-    negation disjunction body
+    Derivation (star_21_701_reading existential relationUniversal
+      individualUniversal negation disjunction body).parsed := by
+  have line1 := star_20_701 (argumentSort := relationSort relationOrder 0)
+    existential relationUniversal individualUniversal negation disjunction body
   exact line1
 
 /-- Audited catalogue reading of ✱21·702.  The arbitrary matrix denotes
@@ -1364,10 +1366,10 @@ theorem star_21_702
     (disjunction : signature.Disjunction order)
     (body : Formula signature real
       [relationSort relationOrder 0, .individual] order) :
-    Derivation (.assertion (star_12_11_formula existential relationUniversal
-      individualUniversal negation disjunction body)) := by
-  have line1 := star_12_11 existential relationUniversal individualUniversal
-    negation disjunction body
+    Derivation (star_21_702_reading existential relationUniversal
+      individualUniversal negation disjunction body).parsed := by
+  have line1 := star_20_702 (argumentSort := relationSort relationOrder 0)
+    existential relationUniversal individualUniversal negation disjunction body
   exact line1
 
 /-- Audited catalogue reading of ✱21·703. -/
@@ -1411,10 +1413,12 @@ theorem star_21_703
     (body : Formula signature real
       [relationSort leftRelationOrder 0, relationSort rightRelationOrder 0]
       order) :
-    Derivation (.assertion (star_12_11_formula existential leftUniversal
-      rightUniversal negation disjunction body)) := by
-  have line1 := star_12_11 existential leftUniversal rightUniversal negation
-    disjunction body
+    Derivation (star_21_703_reading existential leftUniversal rightUniversal
+      negation disjunction body).parsed := by
+  have line1 := star_20_703
+    (leftSort := relationSort leftRelationOrder 0)
+    (rightSort := relationSort rightRelationOrder 0)
+    existential leftUniversal rightUniversal negation disjunction body
   exact line1
 
 /-- Audited catalogue reading of ✱21·704. -/
@@ -1456,10 +1460,12 @@ theorem star_21_704
     (disjunction : signature.Disjunction order)
     (body : Formula signature real
       [relationSort relationOrder 0, classSort classOrder 0] order) :
-    Derivation (.assertion (star_12_11_formula existential relationUniversal
-      classUniversal negation disjunction body)) := by
-  have line1 := star_12_11 existential relationUniversal classUniversal
-    negation disjunction body
+    Derivation (star_21_704_reading existential relationUniversal
+      classUniversal negation disjunction body).parsed := by
+  have line1 := star_20_703
+    (leftSort := relationSort relationOrder 0)
+    (rightSort := classSort classOrder 0)
+    existential relationUniversal classUniversal negation disjunction body
   exact line1
 
 /-- Audited catalogue reading of ✱21·705. -/
@@ -1499,10 +1505,12 @@ theorem star_21_705
     (disjunction : signature.Disjunction order)
     (body : Formula signature real
       [classSort classOrder 0, relationSort relationOrder 0] order) :
-    Derivation (.assertion (star_12_11_formula existential classUniversal
-      relationUniversal negation disjunction body)) := by
-  have line1 := star_12_11 existential classUniversal relationUniversal
-    negation disjunction body
+    Derivation (star_21_705_reading existential classUniversal
+      relationUniversal negation disjunction body).parsed := by
+  have line1 := star_20_703
+    (leftSort := classSort classOrder 0)
+    (rightSort := relationSort relationOrder 0)
+    existential classUniversal relationUniversal negation disjunction body
   exact line1
 
 /-- Printed left member of ✱21·71, built as relation identity. -/
@@ -1565,13 +1573,10 @@ theorem star_21_71
       (bindOrder order
         (.function [relationSort relationOrder 0] order 0)))
     (left right : Term signature real [] (relationSort relationOrder 0)) :
-    Derivation (.assertion (star_4_01 equivalenceNegation
-      equivalenceDisjunction
-      (star_21_71_left identityVocabulary left right)
-      (star_21_71_right identityVocabulary left right))) := by
-  have line1 := star_4_2 equivalenceNegation equivalenceDisjunction
-    (star_21_71_right identityVocabulary left right)
-  rw [star_21_71_left_unfold]
+    Derivation (star_21_71_reading identityVocabulary equivalenceNegation
+      equivalenceDisjunction left right).parsed := by
+  have line1 := star_20_71 (argumentSort := relationSort relationOrder 0)
+    identityVocabulary equivalenceNegation equivalenceDisjunction left right
   exact line1
 
 end PM.RamifiedSyntax

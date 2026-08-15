@@ -145,21 +145,98 @@ theorem star_3_3 (p q r : RFormula signature real order) :
       (star_2_06 negation disjunction ((p ∧ᵣ q) ⊃ᵣ r)
         (p ⊃ᵣ ((∼ᵣ r) ⊃ᵣ (∼ᵣ q))) (p ⊃ᵣ (q ⊃ᵣ r))))
 
-theorem star_3_33 (p q r : RFormula signature real order) :
-    ⊢ᵣ ((p ⊃ᵣ q) ∧ᵣ (q ⊃ᵣ r)) ⊃ᵣ (p ⊃ᵣ r) := by
-  have line1 := star_2_05 negation disjunction p q r
-  have line2 := detach negation disjunction _ _ line1
-    (star_2_04 negation disjunction (q ⊃ᵣ r) (p ⊃ᵣ q) (p ⊃ᵣ r))
-  exact detach negation disjunction _ _ line2
-    (star_3_31 negation disjunction (p ⊃ᵣ q) (q ⊃ᵣ r) (p ⊃ᵣ r))
+/-- The three independently read implications in the chains of ✱3·33 and
+✱3·34.  A shared negation presentation for each repeated antecedent is the
+exact syntactic coherence needed by the Sum instance ✱2·05. -/
+class ImplicationChainReading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q r : RFormula signature real order) where
+  pNegated : RFormula signature real order
+  qNegated : RFormula signature real order
+  pqFormula : RFormula signature real order
+  qrFormula : RFormula signature real order
+  prFormula : RFormula signature real order
+  pNegationDefinition :
+    ImplicationNegation signature real negation p pNegated
+  qNegationDefinition :
+    ImplicationNegation signature real negation q qNegated
+  pqDisjunctionDefinition :
+    ImplicationDisjunction signature real pNegated q pqFormula
+  qrDisjunctionDefinition :
+    ImplicationDisjunction signature real qNegated r qrFormula
+  prDisjunctionDefinition :
+    ImplicationDisjunction signature real pNegated r prFormula
 
-theorem star_3_34 (p q r : RFormula signature real order) :
-    ⊢ᵣ ((q ⊃ᵣ r) ∧ᵣ (p ⊃ᵣ q)) ⊃ᵣ (p ⊃ᵣ r) := by
-  have line1 := star_2_06 negation disjunction p q r
+/-- The elementary implication trees remain the inferred reading. -/
+instance implicationChainSameReading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q r : RFormula signature real order) :
+    ImplicationChainReading negation disjunction p q r where
+  pNegated := .neg negation p
+  qNegated := .neg negation q
+  pqFormula := implication negation disjunction p q
+  qrFormula := implication negation disjunction q r
+  prFormula := implication negation disjunction p r
+  pNegationDefinition := .star_1_01 negation p
+  qNegationDefinition := .star_1_01 negation q
+  pqDisjunctionDefinition := .star_1_01_same disjunction
+    (.neg negation p) q
+  qrDisjunctionDefinition := .star_1_01_same disjunction
+    (.neg negation q) r
+  prDisjunctionDefinition := .star_1_01_same disjunction
+    (.neg negation p) r
+
+/-- ✱2·06 repeated with the certified component readings, by the printed
+Comm instance and detachment from ✱2·05. -/
+private theorem star_2_06_ofImplicationChain
+    (p q r : RFormula signature real order)
+    [reading : ImplicationChainReading negation disjunction p q r] :
+    ⊢ᵣ reading.pqFormula ⊃ᵣ
+      (reading.qrFormula ⊃ᵣ reading.prFormula) := by
+  let syllReading := star2_05ReadingOfSameOrderComponents
+    negation disjunction p q r reading.pNegated reading.qNegated
+    reading.pqFormula reading.qrFormula reading.prFormula
+    reading.pNegationDefinition reading.qNegationDefinition
+    reading.pqDisjunctionDefinition reading.qrDisjunctionDefinition
+    reading.prDisjunctionDefinition
+  have line1 := star_2_05 negation disjunction p q r
+    (reading := syllReading)
+  exact detach negation disjunction _ _ line1
+    (star_2_04 negation disjunction reading.qrFormula
+      reading.pqFormula reading.prFormula)
+
+theorem star_3_33 (p q r : RFormula signature real order)
+    [reading : ImplicationChainReading negation disjunction p q r] :
+    ⊢ᵣ (reading.pqFormula ∧ᵣ reading.qrFormula) ⊃ᵣ
+      reading.prFormula := by
+  let syllReading := star2_05ReadingOfSameOrderComponents
+    negation disjunction p q r reading.pNegated reading.qNegated
+    reading.pqFormula reading.qrFormula reading.prFormula
+    reading.pNegationDefinition reading.qNegationDefinition
+    reading.pqDisjunctionDefinition reading.qrDisjunctionDefinition
+    reading.prDisjunctionDefinition
+  have line1 := star_2_05 negation disjunction p q r
+    (reading := syllReading)
   have line2 := detach negation disjunction _ _ line1
-    (star_2_04 negation disjunction (p ⊃ᵣ q) (q ⊃ᵣ r) (p ⊃ᵣ r))
+    (star_2_04 negation disjunction reading.qrFormula
+      reading.pqFormula reading.prFormula)
   exact detach negation disjunction _ _ line2
-    (star_3_31 negation disjunction (q ⊃ᵣ r) (p ⊃ᵣ q) (p ⊃ᵣ r))
+    (star_3_31 negation disjunction reading.pqFormula
+      reading.qrFormula reading.prFormula)
+
+theorem star_3_34 (p q r : RFormula signature real order)
+    [reading : ImplicationChainReading negation disjunction p q r] :
+    ⊢ᵣ (reading.qrFormula ∧ᵣ reading.pqFormula) ⊃ᵣ
+      reading.prFormula := by
+  have line1 := star_2_06_ofImplicationChain negation disjunction p q r
+  have line2 := detach negation disjunction _ _ line1
+    (star_2_04 negation disjunction reading.pqFormula
+      reading.qrFormula reading.prFormula)
+  exact detach negation disjunction _ _ line2
+    (star_3_31 negation disjunction reading.qrFormula
+      reading.pqFormula reading.prFormula)
 
 theorem star_3_35 (p q : RFormula signature real order) :
     ⊢ᵣ (p ∧ᵣ (p ⊃ᵣ q)) ⊃ᵣ q :=

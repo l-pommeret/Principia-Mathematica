@@ -47,10 +47,253 @@ theorem star_2_04 (p q r : Formula signature real [] order) :
     ⊢ᵣ ((p ⊃ᵣ (q ⊃ᵣ r)) ⊃ᵣ (q ⊃ᵣ (p ⊃ᵣ r))) :=
   Derivation.star_1_5_same negation disjunction (∼ᵣ p) (∼ᵣ q) r
 
-/-- ✱2·05, exactly the printed Sum instance. -/
-theorem star_2_05 (p q r : Formula signature real [] order) :
-    ⊢ᵣ ((q ⊃ᵣ r) ⊃ᵣ ((p ⊃ᵣ q) ⊃ᵣ (p ⊃ᵣ r))) :=
-  Derivation.star_1_6_same negation disjunction (∼ᵣ p) q r
+/-- The five implication readings occurring in ✱2·05.  The component
+implications and the two implications joining them may independently use
+✱1·01 or any of the scope definitions ✱9·01--·08. -/
+class Star2_05Reading
+    {vocabularyOrder pOrder qOrder rOrder : Nat}
+    {formulaOrder : outParam Nat}
+    (negation : signature.Negation vocabularyOrder)
+    (disjunction : signature.Disjunction vocabularyOrder)
+    (p : Formula signature real [] pOrder)
+    (q : Formula signature real [] qOrder)
+    (r : Formula signature real [] rOrder)
+    (formula : outParam (Formula signature real [] formulaOrder)) where
+  pNegated : Formula signature real [] pOrder
+  pNegation : signature.Negation pOrder
+  pNegationDefinition :
+    ImplicationNegation signature real pNegation p pNegated
+  primitiveQNegation : signature.Negation qOrder
+  primitiveQRDisjunction : signature.Disjunction (max qOrder rOrder)
+  primitiveOuterNegation : signature.Negation (max qOrder rOrder)
+  primitiveConsequenceNegation : signature.Negation (max pOrder qOrder)
+  primitivePQDisjunction : signature.Disjunction (max pOrder qOrder)
+  primitivePRDisjunction : signature.Disjunction (max pOrder rOrder)
+  primitiveConsequenceDisjunction : signature.Disjunction
+    (max (max pOrder qOrder) (max pOrder rOrder))
+  primitiveOuterDisjunction : signature.Disjunction
+    (max (max qOrder rOrder)
+      (max (max pOrder qOrder) (max pOrder rOrder)))
+  sumReading : Star1_6Reading primitiveQNegation primitiveQRDisjunction
+    primitiveOuterNegation primitiveConsequenceNegation
+    primitivePQDisjunction primitivePRDisjunction
+    primitiveConsequenceDisjunction primitiveOuterDisjunction
+    pNegated q r formula
+
+/-- The former mono-order statement is inferred as the elementary reading. -/
+instance star2_05SameReading
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q r : Formula signature real [] order) :
+    Star2_05Reading negation disjunction p q r
+      (implication negation disjunction
+        (implication negation disjunction q r)
+        (implication negation disjunction
+          (implication negation disjunction p q)
+          (implication negation disjunction p r))) := by
+  let pairDisjunction :=
+    Eq.mp (congrArg signature.Disjunction (natMaxSelf order).symm)
+      disjunction
+  let pairNegation :=
+    Eq.mp (congrArg signature.Negation (natMaxSelf order).symm) negation
+  let consequenceEquality := natMaxCongr (natMaxSelf order) (natMaxSelf order)
+  let consequenceDisjunction :=
+    Eq.mp (congrArg signature.Disjunction consequenceEquality.symm)
+      disjunction
+  let resultEquality := natMaxCongr (natMaxSelf order) consequenceEquality
+  let outerDisjunction :=
+    Eq.mp (congrArg signature.Disjunction resultEquality.symm) disjunction
+  refine {
+    pNegated := .neg negation p
+    pNegation := negation
+    pNegationDefinition := .star_1_01 negation p
+    primitiveQNegation := negation
+    primitiveQRDisjunction := pairDisjunction
+    primitiveOuterNegation := pairNegation
+    primitiveConsequenceNegation := pairNegation
+    primitivePQDisjunction := pairDisjunction
+    primitivePRDisjunction := pairDisjunction
+    primitiveConsequenceDisjunction := consequenceDisjunction
+    primitiveOuterDisjunction := outerDisjunction
+    sumReading := ?_
+  }
+  exact {
+    qrFormulaOrder := order
+    pqFormulaOrder := order
+    prFormulaOrder := order
+    consequenceFormulaOrder := order
+    qNegated := .neg negation q
+    qrFormula := implication negation disjunction q r
+    pqFormula := implication negation disjunction p q
+    prFormula := implication negation disjunction p r
+    consequenceNegated := .neg negation
+      (implication negation disjunction p q)
+    consequenceFormula := implication negation disjunction
+      (implication negation disjunction p q)
+      (implication negation disjunction p r)
+    qrNegated := .neg negation (implication negation disjunction q r)
+    consequenceNegation := negation
+    outerNegation := negation
+    qNegationDefinition := .star_1_01 negation q
+    qrDisjunctionDefinition := .star_1_01_same disjunction
+      (.neg negation q) r
+    pqDisjunctionDefinition := .star_1_01_same disjunction
+      (.neg negation p) q
+    prDisjunctionDefinition := .star_1_01_same disjunction
+      (.neg negation p) r
+    consequenceNegationDefinition := .star_1_01 negation
+      (implication negation disjunction p q)
+    consequenceDisjunctionDefinition := .star_1_01_same disjunction
+      (.neg negation (implication negation disjunction p q))
+      (implication negation disjunction p r)
+    outerNegationDefinition := .star_1_01 negation
+      (implication negation disjunction q r)
+    outerDisjunctionDefinition := .star_1_01_same disjunction
+      (.neg negation (implication negation disjunction q r))
+      (implication negation disjunction
+        (implication negation disjunction p q)
+        (implication negation disjunction p r))
+  }
+
+/-- Assemble the ✱2·05 certificate when its three component implications
+have one assigned order but independently chosen constructor trees.  The two
+outer implications retain the elementary ✱1·01 reading, exactly as in PM's
+printed Sum instance. -/
+@[reducible] def star2_05ReadingOfSameOrderComponents
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q r pNegated qNegated pqFormula qrFormula prFormula :
+      Formula signature real [] order)
+    (pNegationDefinition :
+      ImplicationNegation signature real negation p pNegated)
+    (qNegationDefinition :
+      ImplicationNegation signature real negation q qNegated)
+    (pqDisjunctionDefinition :
+      ImplicationDisjunction signature real pNegated q pqFormula)
+    (qrDisjunctionDefinition :
+      ImplicationDisjunction signature real qNegated r qrFormula)
+    (prDisjunctionDefinition :
+      ImplicationDisjunction signature real pNegated r prFormula) :
+    Star2_05Reading negation disjunction p q r
+      (implication negation disjunction qrFormula
+        (implication negation disjunction pqFormula prFormula)) := by
+  let pairDisjunction :=
+    Eq.mp (congrArg signature.Disjunction (natMaxSelf order).symm)
+      disjunction
+  let pairNegation :=
+    Eq.mp (congrArg signature.Negation (natMaxSelf order).symm) negation
+  let consequenceEquality := natMaxCongr (natMaxSelf order) (natMaxSelf order)
+  let consequenceDisjunction :=
+    Eq.mp (congrArg signature.Disjunction consequenceEquality.symm)
+      disjunction
+  let resultEquality := natMaxCongr (natMaxSelf order) consequenceEquality
+  let outerDisjunction :=
+    Eq.mp (congrArg signature.Disjunction resultEquality.symm) disjunction
+  refine {
+    pNegated := pNegated
+    pNegation := negation
+    pNegationDefinition := pNegationDefinition
+    primitiveQNegation := negation
+    primitiveQRDisjunction := pairDisjunction
+    primitiveOuterNegation := pairNegation
+    primitiveConsequenceNegation := pairNegation
+    primitivePQDisjunction := pairDisjunction
+    primitivePRDisjunction := pairDisjunction
+    primitiveConsequenceDisjunction := consequenceDisjunction
+    primitiveOuterDisjunction := outerDisjunction
+    sumReading := ?_
+  }
+  exact {
+    qrFormulaOrder := order
+    pqFormulaOrder := order
+    prFormulaOrder := order
+    consequenceFormulaOrder := order
+    qNegated := qNegated
+    qrFormula := qrFormula
+    pqFormula := pqFormula
+    prFormula := prFormula
+    consequenceNegated := .neg negation pqFormula
+    consequenceFormula := implication negation disjunction pqFormula prFormula
+    qrNegated := .neg negation qrFormula
+    consequenceNegation := negation
+    outerNegation := negation
+    qNegationDefinition := qNegationDefinition
+    qrDisjunctionDefinition := qrDisjunctionDefinition
+    pqDisjunctionDefinition := pqDisjunctionDefinition
+    prDisjunctionDefinition := prDisjunctionDefinition
+    consequenceNegationDefinition := .star_1_01 negation pqFormula
+    consequenceDisjunctionDefinition := .star_1_01_same disjunction
+      (.neg negation pqFormula) prFormula
+    outerNegationDefinition := .star_1_01 negation qrFormula
+    outerDisjunctionDefinition := .star_1_01_same disjunction
+      (.neg negation qrFormula)
+      (implication negation disjunction pqFormula prFormula)
+  }
+
+/-- ✱2·05, exactly the printed Sum instance, with every printed implication
+carried by its syntax certificate. -/
+theorem star_2_05
+    {pOrder qOrder rOrder formulaOrder : Nat}
+    (p : Formula signature real [] pOrder)
+    (q : Formula signature real [] qOrder)
+    (r : Formula signature real [] rOrder)
+    {formula : Formula signature real [] formulaOrder}
+    [reading : Star2_05Reading negation disjunction p q r formula] :
+    ⊢ᵣ formula := by
+  exact Derivation.star_1_6 reading.primitiveQNegation
+    reading.primitiveQRDisjunction reading.primitiveOuterNegation
+    reading.primitiveConsequenceNegation reading.primitivePQDisjunction
+    reading.primitivePRDisjunction reading.primitiveConsequenceDisjunction
+    reading.primitiveOuterDisjunction reading.pNegated q r
+    (reading := reading.sumReading)
+
+/-- Control for the generalized statement: `q ⊃ r` and `p ⊃ r` use the
+✱9·04 scope definition and therefore have `Formula.always` at the root. -/
+example {signature : Signature} {real : Context}
+    (universal : signature.Universal .individual 1)
+    (negation : signature.Negation 1)
+    (disjunction : signature.Disjunction 1)
+    (p q : Formula signature real [] 1)
+    (body : Formula signature real [.individual] 1)
+    (hQR : ⊢ᵣ star_9_04 universal disjunction (.neg negation q) body)
+    (hPQ : ⊢ᵣ implication negation disjunction p q) :
+    ⊢ᵣ star_9_04 universal disjunction (.neg negation p) body := by
+  let r : Formula signature real [] 1 := .always universal body
+  let pNegated : Formula signature real [] 1 := .neg negation p
+  let qNegated : Formula signature real [] 1 := .neg negation q
+  let pqFormula : Formula signature real [] 1 :=
+    implication negation disjunction p q
+  let qrFormula : Formula signature real [] 1 :=
+    star_9_04 universal disjunction qNegated body
+  let prFormula : Formula signature real [] 1 :=
+    star_9_04 universal disjunction pNegated body
+  have pNegationDefinition :
+      ImplicationNegation signature real negation p pNegated :=
+    ImplicationNegation.star_1_01 negation p
+  have qNegationDefinition :
+      ImplicationNegation signature real negation q qNegated :=
+    ImplicationNegation.star_1_01 negation q
+  have pqDisjunctionDefinition :
+      ImplicationDisjunction signature real pNegated q pqFormula :=
+    ImplicationDisjunction.star_1_01_same disjunction pNegated q
+  have qrDisjunctionDefinition :
+      ImplicationDisjunction signature real qNegated r qrFormula := by
+    apply ImplicationDisjunction.star_9_04 universal universal
+    exact ImplicationDisjunction.star_1_01_same disjunction
+      (qNegated.rename (fun v => .succ v)) body
+  have prDisjunctionDefinition :
+      ImplicationDisjunction signature real pNegated r prFormula := by
+    apply ImplicationDisjunction.star_9_04 universal universal
+    exact ImplicationDisjunction.star_1_01_same disjunction
+      (pNegated.rename (fun v => .succ v)) body
+  let syllReading := star2_05ReadingOfSameOrderComponents
+    negation disjunction p q r pNegated qNegated pqFormula qrFormula prFormula
+    pNegationDefinition qNegationDefinition pqDisjunctionDefinition
+    qrDisjunctionDefinition prDisjunctionDefinition
+  have syll := star_2_05 negation disjunction p q r
+    (reading := syllReading)
+  have line1 := detach negation disjunction hQR syll
+  exact Derivation.star_9_12_same negation disjunction hPQ line1
 
 /-- ✱2·06 (`Syll`), Comm applied to ✱2·05, then detachment. -/
 theorem star_2_06 (p q r : Formula signature real [] order) :
@@ -226,6 +469,16 @@ theorem star_2_32 (p q r : Formula signature real [] order) :
     (detach negation disjunction
       (star_2_3 negation disjunction p r q)
       (star_2_05 negation disjunction ((p ∨ᵣ q) ∨ᵣ r) (p ∨ᵣ (r ∨ᵣ q)) (p ∨ᵣ (q ∨ᵣ r))))
+
+
+/-- ✱2·33 (Df): the unbracketed disjunction abbreviates the
+left-associated form. -/
+def star_2_33 (p q r : Formula signature real [] order) :
+    Formula signature real [] order :=
+  (p ∨ᵣ q) ∨ᵣ r
+
+theorem star_2_33_unfold (p q r : Formula signature real [] order) :
+    star_2_33 disjunction p q r = ((p ∨ᵣ q) ∨ᵣ r) := rfl
 
 
 theorem star_2_36 (p q r : Formula signature real [] order) :
@@ -1712,3 +1965,5 @@ end PM.RamifiedSyntax
 #print axioms PM.RamifiedSyntax.star_2_16
 #print axioms PM.RamifiedSyntax.star_2_17
 #print axioms PM.RamifiedSyntax.star_2_21
+#print axioms PM.RamifiedSyntax.star_2_33
+#print axioms PM.RamifiedSyntax.star_2_33_unfold

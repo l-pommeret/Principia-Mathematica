@@ -1,4 +1,4 @@
-import Principia.Deduction.Star4Ramified
+import Principia.Deduction.Star10Derived
 
 namespace PM.RamifiedSyntax
 
@@ -2165,198 +2165,793 @@ theorem star_11_42
     inner outer negation disjunction phi psi
   exact line1
 
+private theorem star11_stableOrder (sort : RSort) :
+    bindOrder (Nat.succ sort.height) sort = Nat.succ sort.height := by
+  unfold bindOrder
+  exact natMaxSelf _
+
+private def Formula.star11AlwaysStable
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (body : Formula signature real (sort :: apparent)
+      (Nat.succ sort.height)) :
+    Formula signature real apparent (Nat.succ sort.height) :=
+  Eq.mp (congrArg (Formula signature real apparent) (star11_stableOrder sort))
+    (.always universal body)
+
+private def Formula.star11SometimesStable
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (body : Formula signature real (sort :: apparent)
+      (Nat.succ sort.height)) :
+    Formula signature real apparent (Nat.succ sort.height) :=
+  .neg negation (.star11AlwaysStable universal (.neg negation body))
+
+private def star11StableExistentialVocabulary
+    (existential : signature.Existential sort (Nat.succ sort.height))
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height)) :
+    ExistentialVocabulary signature sort (Nat.succ sort.height) where
+  printed := existential
+  matrixNegation := negation
+  universal := universal
+  outerNegation := Eq.mp
+    (congrArg signature.Negation (star11_stableOrder sort).symm) negation
+
+private def Formula.star11SometimesStableRaw
+    (existential : signature.Existential sort (Nat.succ sort.height))
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (body : Formula signature real (sort :: apparent)
+      (Nat.succ sort.height)) :
+    Formula signature real apparent (Nat.succ sort.height) :=
+  Eq.mp (congrArg (Formula signature real apparent) (star11_stableOrder sort))
+    (.sometimes
+      (star11StableExistentialVocabulary existential universal negation) body)
+
+private theorem star11_negation_normalizeOrder
+    (equality : sourceOrder = targetOrder)
+    (negation : signature.Negation targetOrder)
+    (body : Formula signature real apparent sourceOrder) :
+    Eq.mp (congrArg (Formula signature real apparent) equality)
+      (.neg (Eq.mp (congrArg signature.Negation equality.symm) negation) body) =
+      .neg negation
+        (Eq.mp (congrArg (Formula signature real apparent) equality) body) := by
+  cases equality
+  rfl
+
+private theorem Formula.star11SometimesStableRaw_normalize
+    (existential : signature.Existential sort (Nat.succ sort.height))
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (body : Formula signature real (sort :: apparent)
+      (Nat.succ sort.height)) :
+    Formula.star11SometimesStableRaw existential universal negation body =
+      Formula.star11SometimesStable universal negation body := by
+  unfold Formula.star11SometimesStableRaw star11StableExistentialVocabulary
+    Formula.sometimes Formula.star11SometimesStable
+    Formula.star11AlwaysStable
+  exact star11_negation_normalizeOrder (star11_stableOrder sort) negation
+    (.always universal (.neg negation body))
+
+private def star11FixSecondSubstitution :
+    Substitution signature (sort :: real) [sort, sort] [sort]
+  | _, .zero => .apparent .zero
+  | _, .succ .zero => .real .zero
+
+private def Formula.star11FixSecond
+    (body : Formula signature real [sort, sort] order) :
+    Formula signature (sort :: real) [sort] order :=
+  body.weakenReal.substitute star11FixSecondSubstitution
+
+private theorem Formula.star11CastCongr
+    (left right : Formula signature real apparent sourceOrder)
+    (leftOrder rightOrder : sourceOrder = targetOrder)
+    (equality : left = right) :
+    Eq.mp (congrArg (Formula signature real apparent) leftOrder) left =
+      Eq.mp (congrArg (Formula signature real apparent) rightOrder) right := by
+  cases leftOrder
+  cases rightOrder
+  exact equality
+
+private theorem Formula.star11AlwaysStable_weakenReal_instantiate
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (body : Formula signature real [sort, sort] (Nat.succ sort.height)) :
+    (Formula.star11AlwaysStable universal body).weakenReal.instantiate
+        (.real .zero) =
+      Formula.star11AlwaysStable universal (Formula.star11FixSecond body) := by
+  unfold Formula.star11AlwaysStable Formula.star11FixSecond
+    Formula.instantiate
+  rw [Formula.weakenReal_cast (star11_stableOrder sort),
+    Formula.substitute_cast (star11_stableOrder sort)]
+  refine Formula.star11CastCongr _ _ (star11_stableOrder sort)
+    (star11_stableOrder sort) ?_
+  change Formula.always universal
+      (body.weakenReal.substitute
+        (liftSubstitution (instantiateSubstitution (.real .zero)))) =
+    Formula.always universal
+      (body.weakenReal.substitute
+        star11FixSecondSubstitution)
+  apply congrArg (Formula.always universal)
+  apply Formula.substitute_of_pointwise
+  intro targetSort v
+  cases v with
+  | zero => rfl
+  | succ v =>
+      cases v with
+      | zero => rfl
+      | succ v => cases v
+
+private theorem Formula.star11SometimesStable_weakenReal_instantiate
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (body : Formula signature real [sort, sort] (Nat.succ sort.height)) :
+    (Formula.star11SometimesStable universal negation body).weakenReal.instantiate
+        (.real .zero) =
+      Formula.star11SometimesStable universal negation
+        (Formula.star11FixSecond body) := by
+  unfold Formula.star11SometimesStable
+  change Formula.neg negation
+      ((Formula.star11AlwaysStable universal
+        (.neg negation body)).weakenReal.instantiate (.real .zero)) = _
+  rw [Formula.star11AlwaysStable_weakenReal_instantiate]
+  rfl
+
+private theorem Formula.star11FixSecond_implication
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (phi psi : Formula signature real [sort, sort] order) :
+    Formula.star11FixSecond (implication negation disjunction phi psi) =
+      implication negation disjunction
+        (Formula.star11FixSecond phi) (Formula.star11FixSecond psi) := by
+  unfold Formula.star11FixSecond
+  rw [implication_weakenReal, implication_substitute]
+
+private theorem Formula.star11Implication_weakenReal_instantiate
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (phi psi : Formula signature real [sort] order) :
+    (implication negation disjunction phi psi).weakenReal.instantiate
+        (.real (.zero : Var (sort :: real) sort)) =
+      implication negation disjunction
+        (phi.weakenReal.instantiate (.real .zero))
+        (psi.weakenReal.instantiate (.real .zero)) := by
+  rw [implication_weakenReal]
+  unfold Formula.instantiate
+  rw [implication_substitute]
+
+private theorem Formula.closed_substitute
+    (formula : Formula signature real [] order)
+    (sigma : Substitution signature real [] target)
+    (rho : Renaming [] target) :
+    formula.substitute sigma =
+      formula.rename rho := by
+  let identity : Substitution signature real target target :=
+    fun v => .apparent v
+  have line1 := Formula.rename_substitute_of_pointwise
+    rho identity sigma
+    (fun v => nomatch v) formula
+  have line2 :
+      (formula.rename rho).substitute identity = formula.rename rho := by
+    exact Formula.substitute_eq_self
+      (formula.rename rho) (fun v => rfl)
+  rw [line2] at line1
+  exact line1.symm
+
+private theorem star_10_34_left_normalize
+    (existential : signature.Existential sort (Nat.succ sort.height))
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height)) :
+    star_10_34_left existential universal negation disjunction phi p =
+      Formula.star11SometimesStable universal negation
+        (implication negation disjunction phi
+          (p.rename (fun v => .succ v))) := by
+  unfold star_10_34_left Formula.star11SometimesStable
+    Formula.star11AlwaysStable
+  change Formula.star11SometimesStableRaw existential universal negation
+      (implication negation disjunction phi
+        (p.rename (fun v => .succ v))) = _
+  rw [Formula.star11SometimesStableRaw_normalize]
+  rfl
+
+private theorem star_10_34_right_normalize
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height)) :
+    star_10_34_right universal negation disjunction phi p =
+      implication negation disjunction
+        (Formula.star11AlwaysStable universal phi) p := by
+  rfl
+
+private theorem star11_equivalence_weakenReal
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature real apparent order) :
+    (equivalence negation disjunction left right).weakenReal
+      (fresh := fresh) =
+      equivalence negation disjunction left.weakenReal right.weakenReal := by
+  unfold equivalence conjunction
+  change Formula.neg negation
+    ((sameDisjunction disjunction
+      (.neg negation (implication negation disjunction left right))
+      (.neg negation (implication negation disjunction right left))).weakenReal) = _
+  rw [sameDisjunction_weakenReal]
+  change Formula.neg negation
+    (sameDisjunction disjunction
+      (.neg negation
+        ((implication negation disjunction left right).weakenReal))
+      (.neg negation
+        ((implication negation disjunction right left).weakenReal))) = _
+  rw [implication_weakenReal, implication_weakenReal]
+
+private theorem star11_equivalence_substitute
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature real source order)
+    (sigma : Substitution signature real source target) :
+    (equivalence negation disjunction left right).substitute sigma =
+      equivalence negation disjunction
+        (left.substitute sigma) (right.substitute sigma) := by
+  unfold equivalence conjunction
+  change Formula.neg negation
+    ((sameDisjunction disjunction
+      (.neg negation (implication negation disjunction left right))
+      (.neg negation (implication negation disjunction right left))).substitute
+        sigma) = _
+  rw [sameDisjunction_substitute]
+  change Formula.neg negation
+    (sameDisjunction disjunction
+      (.neg negation
+        ((implication negation disjunction left right).substitute sigma))
+      (.neg negation
+        ((implication negation disjunction right left).substitute sigma))) = _
+  rw [implication_substitute, implication_substitute]
+
+private theorem star11_stableGeneralize
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (body : Formula signature real [sort] (Nat.succ sort.height))
+    (line1 : Derivation (.assertion
+      (body.weakenReal.instantiate
+        (.real (.zero : Var (sort :: real) sort))))) :
+    Derivation (.assertion (Formula.star11AlwaysStable universal body)) := by
+  have line2 := star_10_11 universal body line1
+  unfold Formula.star11AlwaysStable
+  exact castAssertionOrder (star11_stableOrder sort) (.always universal body) line2
+
+private theorem star11_liftStableUniversalEquivalence
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi psi : Formula signature real [sort] (Nat.succ sort.height))
+    (line1 : Derivation (.assertion (star_4_01 negation disjunction
+      (phi.weakenReal.instantiate (.real .zero))
+      (psi.weakenReal.instantiate (.real .zero))))) :
+    Derivation (.assertion (star_4_01 negation disjunction
+      (Formula.star11AlwaysStable universal phi)
+      (Formula.star11AlwaysStable universal psi))) := by
+  have line2 : Derivation (.assertion
+      ((equivalence negation disjunction phi psi).weakenReal.instantiate
+        (.real (.zero : Var (sort :: real) sort)))) := by
+    rw [star11_equivalence_weakenReal, Formula.instantiate,
+      star11_equivalence_substitute]
+    exact line1
+  have line3 := star11_stableGeneralize universal
+    (equivalence negation disjunction phi psi) line2
+  have line4 := star_10_271 universal negation disjunction phi psi
+  unfold star_10_271_reading star_10_271_left star_10_271_right at line4
+  exact detach negation disjunction _ _ line3 line4
+
+private theorem star11_liftStableExistentialEquivalence
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi psi : Formula signature real [sort] (Nat.succ sort.height))
+    (line1 : Derivation (.assertion (star_4_01 negation disjunction
+      (phi.weakenReal.instantiate (.real .zero))
+      (psi.weakenReal.instantiate (.real .zero))))) :
+    Derivation (.assertion (star_4_01 negation disjunction
+      (Formula.star11SometimesStable universal negation phi)
+      (Formula.star11SometimesStable universal negation psi))) := by
+  let phiAtValue := phi.weakenReal.instantiate
+    (.real (.zero : Var (sort :: real) sort))
+  let psiAtValue := psi.weakenReal.instantiate
+    (.real (.zero : Var (sort :: real) sort))
+  let pointwise := star_4_01 negation disjunction phiAtValue psiAtValue
+  let negatedPointwise := star_4_01 negation disjunction
+    (.neg negation phiAtValue) (.neg negation psiAtValue)
+  have line2a := star_4_11 (negation := negation) (disjunction := disjunction)
+    phiAtValue psiAtValue
+  have line2b := detach negation disjunction _ _ line2a
+    (star_3_26 negation disjunction
+      (implication negation disjunction pointwise negatedPointwise)
+      (implication negation disjunction negatedPointwise pointwise))
+  have line2 := detach negation disjunction pointwise negatedPointwise line1 line2b
+  have line3 := star11_liftStableUniversalEquivalence universal negation
+    disjunction (.neg negation phi) (.neg negation psi) line2
+  let universalNegatedPhi := Formula.star11AlwaysStable universal
+    (.neg negation phi)
+  let universalNegatedPsi := Formula.star11AlwaysStable universal
+    (.neg negation psi)
+  let lifted := star_4_01 negation disjunction
+    universalNegatedPhi universalNegatedPsi
+  let negatedLifted := star_4_01 negation disjunction
+    (.neg negation universalNegatedPhi) (.neg negation universalNegatedPsi)
+  have line4a := star_4_11 (negation := negation) (disjunction := disjunction)
+    universalNegatedPhi universalNegatedPsi
+  have line4b := detach negation disjunction _ _ line4a
+    (star_3_26 negation disjunction
+      (implication negation disjunction lifted negatedLifted)
+      (implication negation disjunction negatedLifted lifted))
+  have line4 := detach negation disjunction lifted negatedLifted line3 line4b
+  unfold Formula.star11SometimesStable
+  exact line4
+
 def star_11_43_left
-    (inner : ExistentialVocabulary signature leftSort
-      (max matrixOrder fixedOrder))
-    (outer : ExistentialVocabulary signature rightSort
-      (bindOrder (max matrixOrder fixedOrder) leftSort))
-    (matrixNegation : signature.Negation matrixOrder)
-    (matrixDisjunction : signature.Disjunction
-      (max matrixOrder fixedOrder))
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
-    (p : Formula signature real [] fixedOrder) :
-    Formula signature real []
-      (bindOrder
-        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort) :=
-  star_11_03 inner outer
-    (.disj matrixDisjunction (.neg matrixNegation phi)
-      ((p.rename (emptyRenaming (target := [rightSort]))).rename
-        (fun v => .succ v)))
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height)) :
+    Formula signature real [] (Nat.succ sort.height) :=
+  Formula.star11SometimesStable outerUniversal negation
+    (Formula.star11SometimesStable innerUniversal negation
+      (implication negation disjunction phi
+        (p.rename (emptyRenaming (target := [sort, sort])))))
 
-/-- The printed right member `(x,y).φ(x,y) ⊃ p`.  ✱9·01 turns the
-negated universal antecedent into existentials, and ✱9·05 scopes the final
-disjunction with `p`. -/
+private def star_11_43_middle
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height)) :
+    Formula signature real [] (Nat.succ sort.height) :=
+  Formula.star11SometimesStable outerUniversal negation
+    (implication negation disjunction
+      (Formula.star11AlwaysStable innerUniversal phi)
+      (p.rename (fun v => .succ v)))
+
+/-- The printed right member `(x,y).φ(x,y) ⊃ p`, independently built from
+the double universal closure. -/
 def star_11_43_right
-    (inner : ExistentialVocabulary signature leftSort
-      (max matrixOrder fixedOrder))
-    (outer : ExistentialVocabulary signature rightSort
-      (bindOrder (max matrixOrder fixedOrder) leftSort))
-    (matrixNegation : signature.Negation matrixOrder)
-    (matrixDisjunction : signature.Disjunction
-      (max matrixOrder fixedOrder))
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
-    (p : Formula signature real [] fixedOrder) :
-    Formula signature real []
-      (bindOrder
-        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort) :=
-  Formula.sometimes outer
-    (star_9_05 inner matrixDisjunction (.neg matrixNegation phi)
-      (p.rename (emptyRenaming (target := [rightSort]))))
-
-theorem star_11_43_right_unfold
-    (inner : ExistentialVocabulary signature leftSort
-      (max matrixOrder fixedOrder))
-    (outer : ExistentialVocabulary signature rightSort
-      (bindOrder (max matrixOrder fixedOrder) leftSort))
-    (matrixNegation : signature.Negation matrixOrder)
-    (matrixDisjunction : signature.Disjunction
-      (max matrixOrder fixedOrder))
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
-    (p : Formula signature real [] fixedOrder) :
-    star_11_43_right inner outer matrixNegation matrixDisjunction phi p =
-      star_11_43_left inner outer matrixNegation matrixDisjunction phi p := by
-  unfold star_11_43_right star_11_43_left star_11_03
-  rw [star_9_05_unfold]
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height)) :
+    Formula signature real [] (Nat.succ sort.height) :=
+  implication negation disjunction
+    (Formula.star11AlwaysStable outerUniversal
+      (Formula.star11AlwaysStable innerUniversal phi)) p
 
 def star_11_43_reading
-    (inner : ExistentialVocabulary signature leftSort
-      (max matrixOrder fixedOrder))
-    (outer : ExistentialVocabulary signature rightSort
-      (bindOrder (max matrixOrder fixedOrder) leftSort))
-    (matrixNegation : signature.Negation matrixOrder)
-    (matrixDisjunction : signature.Disjunction
-      (max matrixOrder fixedOrder))
-    (outerNegation : signature.Negation
-      (bindOrder
-        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
-    (outerDisjunction : signature.Disjunction
-      (bindOrder
-        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
-    (p : Formula signature real [] fixedOrder) :
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height)) :
     Star11Reading signature real where
   printed := "⊢ : .(∃x, y) : φ(x, y) .⊃ .p : ≡ :\n(x, y).φ(x, y) .⊃ .p"
-  parsed := .assertion (star_4_01 outerNegation outerDisjunction
-    (star_11_43_left inner outer matrixNegation matrixDisjunction phi p)
-    (star_11_43_right inner outer matrixNegation matrixDisjunction phi p))
-  scopeReading := "The right member is parsed by ✱9·01 followed by the nested ✱9·05 scope abbreviation; the left member is the independently nested existential."
+  parsed := .assertion (star_4_01 negation disjunction
+    (star_11_43_left innerUniversal outerUniversal negation disjunction phi p)
+    (star_11_43_right innerUniversal outerUniversal negation disjunction phi p))
+  scopeReading := "The left member is the independently nested existential closure; the right member is an implication whose antecedent is the independently nested universal closure."
 
-/-- ✱11·43.  The cited ✱10·34 and ✱10·281 are the recursive
-✱9·01/✱9·05 normalization made explicit by the right member.
-`demonstration_provenance: follows-printed-definitional-normalization`. -/
+/-- ✱11·43.  `line1` is the inner ✱10·34 instance, `line2` is its
+printed ✱10·281 lift, and `line3` is the outer ✱10·34 instance.
+`demonstration_provenance: follows-printed`. -/
 theorem star_11_43
-    (inner : ExistentialVocabulary signature leftSort
-      (max matrixOrder fixedOrder))
-    (outer : ExistentialVocabulary signature rightSort
-      (bindOrder (max matrixOrder fixedOrder) leftSort))
-    (matrixNegation : signature.Negation matrixOrder)
-    (matrixDisjunction : signature.Disjunction
-      (max matrixOrder fixedOrder))
-    (outerNegation : signature.Negation
-      (bindOrder
-        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
-    (outerDisjunction : signature.Disjunction
-      (bindOrder
-        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
-    (p : Formula signature real [] fixedOrder) :
-    Derivation (.assertion (star_4_01 outerNegation outerDisjunction
-      (star_11_43_left inner outer matrixNegation matrixDisjunction phi p)
-      (star_11_43_right inner outer matrixNegation matrixDisjunction phi p))) := by
-  have line1 := star_4_2 outerNegation outerDisjunction
-    (star_11_43_left inner outer matrixNegation matrixDisjunction phi p)
-  rw [star_11_43_right_unfold]
-  exact line1
+    (innerExistential outerExistential :
+      signature.Existential sort (Nat.succ sort.height))
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height))
+    (witness : Term signature real [] sort) :
+    Derivation (star_11_43_reading innerUniversal outerUniversal negation
+      disjunction phi p).parsed := by
+  let innerLeft := Formula.star11SometimesStable innerUniversal negation
+    (implication negation disjunction phi
+      (p.rename (emptyRenaming (target := [sort, sort]))))
+  let innerRight := implication negation disjunction
+    (Formula.star11AlwaysStable innerUniversal phi)
+    (p.rename (fun v => .succ v))
+  have line1a := star_10_34 innerExistential innerUniversal negation disjunction
+    (Formula.star11FixSecond phi) p.weakenReal
+    (.real (.zero : Var (sort :: real) sort))
+  have line1b :
+      Formula.star11FixSecond
+        (p.rename (emptyRenaming (target := [sort, sort]))) =
+      p.weakenReal.rename (fun v => .succ v) := by
+    unfold Formula.star11FixSecond
+    rw [Formula.weakenReal_rename, Formula.rename_substitute]
+    exact Formula.closed_substitute p.weakenReal _ (fun v => .succ v)
+  have line1 : Derivation (.assertion (star_4_01 negation disjunction
+      (innerLeft.weakenReal.instantiate (.real .zero))
+      (innerRight.weakenReal.instantiate (.real .zero)))) := by
+    unfold innerLeft innerRight
+    rw [Formula.star11SometimesStable_weakenReal_instantiate,
+      Formula.star11FixSecond_implication, line1b,
+      Formula.star11Implication_weakenReal_instantiate,
+      Formula.star11AlwaysStable_weakenReal_instantiate,
+      Formula.closed_weakenReal_instantiate]
+    unfold star_10_34_reading at line1a
+    rw [star_10_34_left_normalize, star_10_34_right_normalize] at line1a
+    exact line1a
+  have line2 : Derivation (.assertion (star_4_01 negation disjunction
+      (star_11_43_left innerUniversal outerUniversal negation disjunction phi p)
+      (star_11_43_middle innerUniversal outerUniversal negation disjunction
+        phi p))) := by
+    unfold star_11_43_left star_11_43_middle
+    exact star11_liftStableExistentialEquivalence outerUniversal
+      negation disjunction innerLeft innerRight line1
+  have line3 : Derivation (.assertion (star_4_01 negation disjunction
+      (star_11_43_middle innerUniversal outerUniversal negation disjunction
+        phi p)
+      (star_11_43_right innerUniversal outerUniversal negation disjunction
+        phi p))) := by
+    have line3a := star_10_34 outerExistential outerUniversal negation
+      disjunction (Formula.star11AlwaysStable innerUniversal phi) p witness
+    unfold star_10_34_reading at line3a
+    rw [star_10_34_left_normalize, star_10_34_right_normalize] at line3a
+    unfold star_11_43_middle star_11_43_right
+    exact line3a
+  have line4 := conjoin negation disjunction _ _ line2 line3
+  exact detach negation disjunction _ _ line4
+    (star_4_22 negation disjunction
+      (star_11_43_left innerUniversal outerUniversal negation disjunction phi p)
+      (star_11_43_middle innerUniversal outerUniversal negation disjunction phi p)
+      (star_11_43_right innerUniversal outerUniversal negation disjunction phi p))
+
+private theorem Formula.star11FixSecond_sameDisjunction
+    (disjunction : signature.Disjunction order)
+    (phi psi : Formula signature real [sort, sort] order) :
+    Formula.star11FixSecond (sameDisjunction disjunction phi psi) =
+      sameDisjunction disjunction
+        (Formula.star11FixSecond phi) (Formula.star11FixSecond psi) := by
+  unfold Formula.star11FixSecond
+  rw [sameDisjunction_weakenReal, sameDisjunction_substitute]
+
+private theorem star11_disjunction_weakenReal_instantiate_closedRight
+    (disjunction : signature.Disjunction order)
+    (phi : Formula signature real [sort] order)
+    (p : Formula signature real [] order)
+    (value : Term signature (sort :: real) [] sort) :
+    (sameDisjunction disjunction phi
+      (p.rename (fun v => .succ v))).weakenReal.instantiate value =
+      sameDisjunction disjunction
+        (phi.weakenReal.instantiate value) p.weakenReal := by
+  rw [sameDisjunction_weakenReal]
+  unfold Formula.instantiate
+  rw [sameDisjunction_substitute,
+    Formula.closed_weakenReal_instantiateSubstitution]
+
+private theorem star11_disjunction_weakenReal_instantiate_closedLeft
+    (disjunction : signature.Disjunction order)
+    (p : Formula signature real [] order)
+    (phi : Formula signature real [sort] order)
+    (value : Term signature (sort :: real) [] sort) :
+    (sameDisjunction disjunction (p.rename (fun v => .succ v))
+      phi).weakenReal.instantiate value =
+      sameDisjunction disjunction p.weakenReal
+        (phi.weakenReal.instantiate value) := by
+  rw [sameDisjunction_weakenReal]
+  unfold Formula.instantiate
+  rw [sameDisjunction_substitute,
+    Formula.closed_weakenReal_instantiateSubstitution]
+
+private def star11CastImplicationDisjunctionOrder
+    (equality : sourceOrder = targetOrder)
+    (left : Formula signature real [] leftOrder)
+    (right result : Formula signature real [] sourceOrder)
+    (reading : ImplicationDisjunction signature real left right result) :
+    ImplicationDisjunction signature real left
+      (Eq.mp (congrArg (Formula signature real []) equality) right)
+      (Eq.mp (congrArg (Formula signature real []) equality) result) := by
+  cases equality
+  exact reading
+
+private def star11StableScopeDisjunction
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (fixed : Formula signature real [] (Nat.succ sort.height))
+    (body : Formula signature real [sort] (Nat.succ sort.height)) :
+    ImplicationDisjunction signature real fixed
+      (Formula.star11AlwaysStable universal body)
+      (Formula.star11AlwaysStable universal
+        (sameDisjunction disjunction
+          (fixed.rename (fun v => .succ v)) body)) := by
+  let result := sameDisjunction disjunction
+    (fixed.rename (fun v => .succ v)) body
+  have line1 : ImplicationDisjunction signature real fixed
+      (.always universal body) (.always universal result) := by
+    apply ImplicationDisjunction.star_9_04 universal universal
+    exact ImplicationDisjunction.star_1_01_same disjunction
+      (fixed.rename (fun v => .succ v)) body
+  exact star11CastImplicationDisjunctionOrder
+    (star11_stableOrder sort) fixed (.always universal body)
+    (.always universal result) line1
+
+private theorem star11_convertImplicationRepresentation
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q source target : Formula signature real [] order)
+    (sourceDefinition : ImplicationDisjunction signature real
+      (.neg negation p) q source)
+    (targetDefinition : ImplicationDisjunction signature real
+      (.neg negation p) q target) :
+    Derivation (.assertion (implication negation disjunction source target)) := by
+  let identity := implication negation disjunction q q
+  let reading := star2_05ReadingOfSameOrderComponents
+    negation disjunction p q q (.neg negation p) (.neg negation q)
+    source identity target
+    (ImplicationNegation.star_1_01 negation p)
+    (ImplicationNegation.star_1_01 negation q)
+    sourceDefinition
+    (ImplicationDisjunction.star_1_01_same disjunction
+      (.neg negation q) q)
+    targetDefinition
+  have line1 := star_2_05 negation disjunction p q q
+    (reading := reading)
+  exact detach negation disjunction identity
+    (implication negation disjunction source target)
+    (star_2_08 negation disjunction q) line1
+
+private theorem star11_equivalentImplicationRepresentations
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (p q source target : Formula signature real [] order)
+    (sourceDefinition : ImplicationDisjunction signature real
+      (.neg negation p) q source)
+    (targetDefinition : ImplicationDisjunction signature real
+      (.neg negation p) q target) :
+    Derivation (.assertion (star_4_01 negation disjunction source target)) := by
+  have line1 := star11_convertImplicationRepresentation negation disjunction
+    p q source target sourceDefinition targetDefinition
+  have line2 := star11_convertImplicationRepresentation negation disjunction
+    p q target source targetDefinition sourceDefinition
+  exact conjoin negation disjunction _ _ line1 line2
+
+private theorem star11_chainEquivalence
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left middle right : Formula signature real [] order)
+    (line1 : Derivation (.assertion
+      (star_4_01 negation disjunction left middle)))
+    (line2 : Derivation (.assertion
+      (star_4_01 negation disjunction middle right))) :
+    Derivation (.assertion (star_4_01 negation disjunction left right)) := by
+  have line3 := conjoin negation disjunction _ _ line1 line2
+  exact detach negation disjunction _ _ line3
+    (star_4_22 negation disjunction left middle right)
+
+/-- The stable-order instance of printed ✱10·2.  The ✱9·04 member is
+kept as a scope tree and converted to the external disjunction only through
+its `ImplicationDisjunction` certificate. -/
+private theorem star11_stableUniversalDisjunction
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height)) :
+    Derivation (.assertion (star_4_01 negation disjunction
+      (Formula.star11AlwaysStable universal
+        (sameDisjunction disjunction phi
+          (p.rename (fun v => .succ v))))
+      (sameDisjunction disjunction
+        (Formula.star11AlwaysStable universal phi) p))) := by
+  let value : Term signature (sort :: real) [] sort := .real .zero
+  let left := Formula.star11AlwaysStable universal
+    (sameDisjunction disjunction phi (p.rename (fun v => .succ v)))
+  let permuted := Formula.star11AlwaysStable universal
+    (sameDisjunction disjunction (p.rename (fun v => .succ v)) phi)
+  let doubled := Formula.star11AlwaysStable universal
+    (sameDisjunction disjunction
+      ((Formula.neg negation (Formula.neg negation p)).rename
+        (fun v => .succ v)) phi)
+  let universalPhi := Formula.star11AlwaysStable universal phi
+  let implicationForm := implication negation disjunction
+    (Formula.neg negation p) universalPhi
+  let fixedFirst := sameDisjunction disjunction p universalPhi
+  let right := sameDisjunction disjunction universalPhi p
+  have line1a : Derivation (.assertion (star_4_01 negation disjunction
+      ((sameDisjunction disjunction phi
+        (p.rename (fun v => .succ v))).weakenReal.instantiate value)
+      ((sameDisjunction disjunction (p.rename (fun v => .succ v))
+        phi).weakenReal.instantiate value))) := by
+    rw [star11_disjunction_weakenReal_instantiate_closedRight,
+      star11_disjunction_weakenReal_instantiate_closedLeft]
+    exact star_4_31 negation disjunction
+      (phi.weakenReal.instantiate value) p.weakenReal
+  have line1 : Derivation (.assertion
+      (star_4_01 negation disjunction left permuted)) := by
+    unfold left permuted
+    exact star11_liftStableUniversalEquivalence universal negation disjunction
+      (sameDisjunction disjunction phi (p.rename (fun v => .succ v)))
+      (sameDisjunction disjunction (p.rename (fun v => .succ v)) phi)
+      line1a
+  have line2a : Derivation (.assertion (star_4_01 negation disjunction
+      ((sameDisjunction disjunction (p.rename (fun v => .succ v))
+        phi).weakenReal.instantiate value)
+      ((sameDisjunction disjunction
+        ((Formula.neg negation (Formula.neg negation p)).rename
+          (fun v => .succ v))
+        phi).weakenReal.instantiate value))) := by
+    rw [star11_disjunction_weakenReal_instantiate_closedLeft,
+      star11_disjunction_weakenReal_instantiate_closedLeft]
+    have line2b := star_4_13 negation disjunction
+      (p.weakenReal (fresh := sort))
+    have line2c := star_4_2 negation disjunction
+      (phi.weakenReal.instantiate value)
+    have line2d := conjoin negation disjunction _ _ line2b line2c
+    exact detach negation disjunction _ _ line2d
+      (star_4_39 negation disjunction (p.weakenReal (fresh := sort))
+        (phi.weakenReal.instantiate value)
+        (Formula.neg negation
+          (Formula.neg negation (p.weakenReal (fresh := sort))))
+        (phi.weakenReal.instantiate value))
+  have line2 : Derivation (.assertion
+      (star_4_01 negation disjunction permuted doubled)) := by
+    unfold permuted doubled
+    exact star11_liftStableUniversalEquivalence universal negation disjunction
+      (sameDisjunction disjunction (p.rename (fun v => .succ v)) phi)
+      (sameDisjunction disjunction
+        ((Formula.neg negation (Formula.neg negation p)).rename
+          (fun v => .succ v)) phi)
+      line2a
+  have line3 : Derivation (.assertion
+      (star_4_01 negation disjunction doubled implicationForm)) := by
+    let sourceDefinition := star11StableScopeDisjunction universal disjunction
+      (Formula.neg negation (Formula.neg negation p)) phi
+    let targetDefinition := ImplicationDisjunction.star_1_01_same disjunction
+      (Formula.neg negation (Formula.neg negation p)) universalPhi
+    unfold doubled implicationForm
+    exact star11_equivalentImplicationRepresentations negation disjunction
+      (Formula.neg negation p) universalPhi
+      (Formula.star11AlwaysStable universal
+        (sameDisjunction disjunction
+          ((Formula.neg negation (Formula.neg negation p)).rename
+            (fun v => .succ v)) phi))
+      (implication negation disjunction (Formula.neg negation p) universalPhi)
+      sourceDefinition targetDefinition
+  have line4 : Derivation (.assertion
+      (star_4_01 negation disjunction implicationForm fixedFirst)) := by
+    unfold implicationForm fixedFirst
+    exact star_4_64 negation disjunction p universalPhi
+  have line5 : Derivation (.assertion
+      (star_4_01 negation disjunction fixedFirst right)) := by
+    unfold fixedFirst right
+    exact star_4_31 negation disjunction p universalPhi
+  exact star11_chainEquivalence negation disjunction left permuted right line1
+    (star11_chainEquivalence negation disjunction permuted doubled right line2
+      (star11_chainEquivalence negation disjunction doubled implicationForm
+        right line3
+        (star11_chainEquivalence negation disjunction implicationForm fixedFirst
+          right line4 line5)))
 
 def star_11_44_left
-    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
-    (outer : signature.Universal rightSort
-      (bindOrder (max matrixOrder fixedOrder) leftSort))
-    (matrixDisjunction : signature.Disjunction
-      (max matrixOrder fixedOrder))
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
-    (p : Formula signature real [] fixedOrder) :
-    Formula signature real []
-      (bindOrder
-        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort) :=
-  .always outer (.always inner
-    (.disj matrixDisjunction phi
-      ((p.rename (emptyRenaming (target := [rightSort]))).rename
-        (fun v => .succ v))))
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height)) :
+    Formula signature real [] (Nat.succ sort.height) :=
+  Formula.star11AlwaysStable outerUniversal
+    (Formula.star11AlwaysStable innerUniversal
+      (sameDisjunction disjunction phi
+        (p.rename (emptyRenaming (target := [sort, sort])))))
 
+private def star_11_44_middle
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height)) :
+    Formula signature real [] (Nat.succ sort.height) :=
+  Formula.star11AlwaysStable outerUniversal
+    (sameDisjunction disjunction
+      (Formula.star11AlwaysStable innerUniversal phi)
+      (p.rename (fun v => .succ v)))
+
+/-- The printed right member `(x,y).φ(x,y) ∨ p`, independently built as
+an external disjunction after the double universal closure. -/
 def star_11_44_right
-    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
-    (outer : signature.Universal rightSort
-      (bindOrder (max matrixOrder fixedOrder) leftSort))
-    (matrixDisjunction : signature.Disjunction
-      (max matrixOrder fixedOrder))
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
-    (p : Formula signature real [] fixedOrder) :
-    Formula signature real []
-      (bindOrder
-        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort) :=
-  .always outer
-    (star_9_03 inner matrixDisjunction phi
-      (p.rename (emptyRenaming (target := [rightSort]))))
-
-theorem star_11_44_right_unfold
-    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
-    (outer : signature.Universal rightSort
-      (bindOrder (max matrixOrder fixedOrder) leftSort))
-    (matrixDisjunction : signature.Disjunction
-      (max matrixOrder fixedOrder))
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
-    (p : Formula signature real [] fixedOrder) :
-    star_11_44_right inner outer matrixDisjunction phi p =
-      star_11_44_left inner outer matrixDisjunction phi p := by
-  unfold star_11_44_right star_11_44_left
-  rw [star_9_03_unfold]
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height)) :
+    Formula signature real [] (Nat.succ sort.height) :=
+  sameDisjunction disjunction
+    (Formula.star11AlwaysStable outerUniversal
+      (Formula.star11AlwaysStable innerUniversal phi)) p
 
 def star_11_44_reading
-    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
-    (outer : signature.Universal rightSort
-      (bindOrder (max matrixOrder fixedOrder) leftSort))
-    (matrixDisjunction : signature.Disjunction
-      (max matrixOrder fixedOrder))
-    (outerNegation : signature.Negation
-      (bindOrder
-        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
-    (outerDisjunction : signature.Disjunction
-      (bindOrder
-        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
-    (p : Formula signature real [] fixedOrder) :
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height)) :
     Star11Reading signature real where
   printed := "⊢ : .(x, y) : φ(x, y) .∨ .p : ≡ :\n(x, y).φ(x, y) .∨ .p"
-  parsed := .assertion (star_4_01 outerNegation outerDisjunction
-    (star_11_44_left inner outer matrixDisjunction phi p)
-    (star_11_44_right inner outer matrixDisjunction phi p))
-  scopeReading := "The right member retains the inner ✱9·03 scope abbreviation; the left member is the independently built double universal closure."
+  parsed := .assertion (star_4_01 negation disjunction
+    (star_11_44_left innerUniversal outerUniversal disjunction phi p)
+    (star_11_44_right innerUniversal outerUniversal disjunction phi p))
+  scopeReading := "The left member is the independently nested universal closure; the right member is an external disjunction whose left child is the independently nested universal closure."
 
-/-- ✱11·44.  The cited ✱10·2 and ✱10·271 reduce to the nested ✱9·03
-scope definition; the two members meet only after that Df is unfolded.
-`demonstration_provenance: follows-printed-definitional-normalization`. -/
+/-- ✱11·44.  `line1` is the inner ✱10·2 instance, `line2` is its
+printed ✱10·271 lift, and `line3` is the outer ✱10·2 instance.
+`demonstration_provenance: follows-printed`. -/
 theorem star_11_44
-    (inner : signature.Universal leftSort (max matrixOrder fixedOrder))
-    (outer : signature.Universal rightSort
-      (bindOrder (max matrixOrder fixedOrder) leftSort))
-    (matrixDisjunction : signature.Disjunction
-      (max matrixOrder fixedOrder))
-    (outerNegation : signature.Negation
-      (bindOrder
-        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
-    (outerDisjunction : signature.Disjunction
-      (bindOrder
-        (bindOrder (max matrixOrder fixedOrder) leftSort) rightSort))
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder)
-    (p : Formula signature real [] fixedOrder) :
-    Derivation (.assertion (star_4_01 outerNegation outerDisjunction
-      (star_11_44_left inner outer matrixDisjunction phi p)
-      (star_11_44_right inner outer matrixDisjunction phi p))) := by
-  have line1 := star_4_2 outerNegation outerDisjunction
-    (star_11_44_left inner outer matrixDisjunction phi p)
-  rw [star_11_44_right_unfold]
-  exact line1
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height)) :
+    Derivation (star_11_44_reading innerUniversal outerUniversal negation
+      disjunction phi p).parsed := by
+  let innerLeft := Formula.star11AlwaysStable innerUniversal
+    (sameDisjunction disjunction phi
+      (p.rename (emptyRenaming (target := [sort, sort]))))
+  let innerRight := sameDisjunction disjunction
+    (Formula.star11AlwaysStable innerUniversal phi)
+    (p.rename (fun v => .succ v))
+  have line1a :
+      Formula.star11FixSecond
+        (p.rename (emptyRenaming (target := [sort, sort]))) =
+      p.weakenReal.rename (fun v => .succ v) := by
+    unfold Formula.star11FixSecond
+    rw [Formula.weakenReal_rename, Formula.rename_substitute]
+    exact Formula.closed_substitute p.weakenReal _ (fun v => .succ v)
+  have line1 : Derivation (.assertion (star_4_01 negation disjunction
+      (innerLeft.weakenReal.instantiate (.real .zero))
+      (innerRight.weakenReal.instantiate (.real .zero)))) := by
+    unfold innerLeft innerRight
+    rw [Formula.star11AlwaysStable_weakenReal_instantiate,
+      Formula.star11FixSecond_sameDisjunction, line1a,
+      star11_disjunction_weakenReal_instantiate_closedRight,
+      Formula.star11AlwaysStable_weakenReal_instantiate]
+    exact star11_stableUniversalDisjunction innerUniversal negation
+      disjunction (Formula.star11FixSecond phi) p.weakenReal
+  have line2 : Derivation (.assertion (star_4_01 negation disjunction
+      (star_11_44_left innerUniversal outerUniversal disjunction phi p)
+      (star_11_44_middle innerUniversal outerUniversal disjunction phi p))) := by
+    have line2a : Derivation (.assertion
+        ((equivalence negation disjunction innerLeft innerRight).weakenReal.instantiate
+          (.real (.zero : Var (sort :: real) sort)))) := by
+      rw [star11_equivalence_weakenReal, Formula.instantiate,
+        star11_equivalence_substitute]
+      exact line1
+    have line2b := star11_stableGeneralize outerUniversal
+      (equivalence negation disjunction innerLeft innerRight) line2a
+    have line2c := star_10_271 outerUniversal negation disjunction
+      innerLeft innerRight
+    unfold star_10_271_reading star_10_271_left star_10_271_right at line2c
+    have line2d := detach negation disjunction _ _ line2b line2c
+    unfold star_11_44_left star_11_44_middle
+    exact line2d
+  have line3 : Derivation (.assertion (star_4_01 negation disjunction
+      (star_11_44_middle innerUniversal outerUniversal disjunction phi p)
+      (star_11_44_right innerUniversal outerUniversal disjunction phi p))) := by
+    unfold star_11_44_middle star_11_44_right
+    exact star11_stableUniversalDisjunction outerUniversal negation
+      disjunction (Formula.star11AlwaysStable innerUniversal phi) p
+  exact star11_chainEquivalence negation disjunction
+    (star_11_44_left innerUniversal outerUniversal disjunction phi p)
+    (star_11_44_middle innerUniversal outerUniversal disjunction phi p)
+    (star_11_44_right innerUniversal outerUniversal disjunction phi p)
+    line2 line3
 
 private def star_11_45_normalForm
     (inner : signature.Universal sort (bindOrder baseOrder sort))
@@ -2374,111 +2969,161 @@ private def star_11_45_normalForm
 /- ✱11·45 is intentionally absent: the two placements of the closed
 conjunct were not built independently. -/
 
-def star_11_46_left
-    (inner : ExistentialVocabulary signature leftSort
-      (max fixedOrder matrixOrder))
-    (outer : ExistentialVocabulary signature rightSort
-      (bindOrder (max fixedOrder matrixOrder) leftSort))
-    (fixedNegation : signature.Negation fixedOrder)
-    (matrixDisjunction : signature.Disjunction
-      (max fixedOrder matrixOrder))
-    (p : Formula signature real [] fixedOrder)
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
-    Formula signature real []
-      (bindOrder
-        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort) :=
-  star_11_03 inner outer
-    (.disj matrixDisjunction
-      (.neg fixedNegation
-        ((p.rename (emptyRenaming (target := [rightSort]))).rename
-          (fun v => .succ v)))
-      phi)
-
-/-- The printed right member `p ⊃ (∃x,y).φ(x,y)` retains the inner
-✱9·06 scope abbreviation after the outer existential is exposed. -/
-def star_11_46_right
-    (inner : ExistentialVocabulary signature leftSort
-      (max fixedOrder matrixOrder))
-    (outer : ExistentialVocabulary signature rightSort
-      (bindOrder (max fixedOrder matrixOrder) leftSort))
-    (fixedNegation : signature.Negation fixedOrder)
-    (matrixDisjunction : signature.Disjunction
-      (max fixedOrder matrixOrder))
-    (p : Formula signature real [] fixedOrder)
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
-    Formula signature real []
-      (bindOrder
-        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort) :=
-  Formula.sometimes outer
-    (star_9_06 inner matrixDisjunction
-      (.neg fixedNegation
-        (p.rename (emptyRenaming (target := [rightSort])))) phi)
-
-theorem star_11_46_right_unfold
-    (inner : ExistentialVocabulary signature leftSort
-      (max fixedOrder matrixOrder))
-    (outer : ExistentialVocabulary signature rightSort
-      (bindOrder (max fixedOrder matrixOrder) leftSort))
-    (fixedNegation : signature.Negation fixedOrder)
-    (matrixDisjunction : signature.Disjunction
-      (max fixedOrder matrixOrder))
-    (p : Formula signature real [] fixedOrder)
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
-    star_11_46_right inner outer fixedNegation matrixDisjunction p phi =
-      star_11_46_left inner outer fixedNegation matrixDisjunction p phi := by
-  unfold star_11_46_right star_11_46_left star_11_03
-  rw [star_9_06_unfold]
+private theorem star_10_37_left_normalize
+    (existential : signature.Existential sort (Nat.succ sort.height))
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height))
+    (phi : Formula signature real [sort] (Nat.succ sort.height)) :
+    star_10_37_left existential universal negation disjunction p phi =
+      Formula.star11SometimesStable universal negation
+        (implication negation disjunction
+          (p.rename (fun v => .succ v)) phi) := by
+  unfold star_10_37_left Formula.star11SometimesStable
+    Formula.star11AlwaysStable
+  change Formula.star11SometimesStableRaw existential universal negation
+      (implication negation disjunction
+        (p.rename (fun v => .succ v)) phi) = _
+  rw [Formula.star11SometimesStableRaw_normalize]
   rfl
 
+private theorem star_10_37_right_normalize
+    (existential : signature.Existential sort (Nat.succ sort.height))
+    (universal : signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height))
+    (phi : Formula signature real [sort] (Nat.succ sort.height)) :
+    star_10_37_right existential universal negation disjunction p phi =
+      implication negation disjunction p
+        (Formula.star11SometimesStable universal negation phi) := by
+  unfold star_10_37_right
+  change implication negation disjunction p
+      (Formula.star11SometimesStableRaw existential universal negation phi) = _
+  rw [Formula.star11SometimesStableRaw_normalize]
+
+def star_11_46_left
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height)) :
+    Formula signature real [] (Nat.succ sort.height) :=
+  Formula.star11SometimesStable outerUniversal negation
+    (Formula.star11SometimesStable innerUniversal negation
+      (implication negation disjunction
+        (p.rename (emptyRenaming (target := [sort, sort]))) phi))
+
+private def star_11_46_middle
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height)) :
+    Formula signature real [] (Nat.succ sort.height) :=
+  Formula.star11SometimesStable outerUniversal negation
+    (implication negation disjunction
+      (p.rename (fun v => .succ v))
+      (Formula.star11SometimesStable innerUniversal negation phi))
+
+/-- The printed right member `p ⊃ (∃x,y).φ(x,y)`, independently built as
+an implication whose consequent is the nested existential closure. -/
+def star_11_46_right
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height)) :
+    Formula signature real [] (Nat.succ sort.height) :=
+  implication negation disjunction p
+    (Formula.star11SometimesStable outerUniversal negation
+      (Formula.star11SometimesStable innerUniversal negation phi))
+
 def star_11_46_reading
-    (inner : ExistentialVocabulary signature leftSort
-      (max fixedOrder matrixOrder))
-    (outer : ExistentialVocabulary signature rightSort
-      (bindOrder (max fixedOrder matrixOrder) leftSort))
-    (fixedNegation : signature.Negation fixedOrder)
-    (matrixDisjunction : signature.Disjunction
-      (max fixedOrder matrixOrder))
-    (outerNegation : signature.Negation
-      (bindOrder
-        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
-    (outerDisjunction : signature.Disjunction
-      (bindOrder
-        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
-    (p : Formula signature real [] fixedOrder)
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height)) :
     Star11Reading signature real where
   printed := "⊢ : .(∃x, y) : p .⊃ .φ(x, y) : ≡ :\np .⊃ .(∃x, y).φ(x, y)"
-  parsed := .assertion (star_4_01 outerNegation outerDisjunction
-    (star_11_46_left inner outer fixedNegation matrixDisjunction p phi)
-    (star_11_46_right inner outer fixedNegation matrixDisjunction p phi))
-  scopeReading := "The right member is the nested ✱9·06 expansion of a fixed antecedent across two existential binders; the left member is built independently."
+  parsed := .assertion (star_4_01 negation disjunction
+    (star_11_46_left innerUniversal outerUniversal negation disjunction p phi)
+    (star_11_46_right innerUniversal outerUniversal negation disjunction p phi))
+  scopeReading := "The left member is the independently nested existential closure of the implication matrix; the right member is an implication whose consequent is the independently nested existential closure."
 
-/-- ✱11·46.  The cited ✱10·37 and ✱10·281 are exactly the two nested
-✱9·06 scope expansions retained in the right member.
-`demonstration_provenance: follows-printed-definitional-normalization`. -/
+/-- ✱11·46.  `line1` is the inner ✱10·37 instance, `line2` is its
+printed ✱10·281 lift, and `line3` is the outer ✱10·37 instance.
+`demonstration_provenance: follows-printed`. -/
 theorem star_11_46
-    (inner : ExistentialVocabulary signature leftSort
-      (max fixedOrder matrixOrder))
-    (outer : ExistentialVocabulary signature rightSort
-      (bindOrder (max fixedOrder matrixOrder) leftSort))
-    (fixedNegation : signature.Negation fixedOrder)
-    (matrixDisjunction : signature.Disjunction
-      (max fixedOrder matrixOrder))
-    (outerNegation : signature.Negation
-      (bindOrder
-        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
-    (outerDisjunction : signature.Disjunction
-      (bindOrder
-        (bindOrder (max fixedOrder matrixOrder) leftSort) rightSort))
-    (p : Formula signature real [] fixedOrder)
-    (phi : Formula signature real [leftSort, rightSort] matrixOrder) :
-    Derivation (.assertion (star_4_01 outerNegation outerDisjunction
-      (star_11_46_left inner outer fixedNegation matrixDisjunction p phi)
-      (star_11_46_right inner outer fixedNegation matrixDisjunction p phi))) := by
-  have line1 := star_4_2 outerNegation outerDisjunction
-    (star_11_46_left inner outer fixedNegation matrixDisjunction p phi)
-  rw [star_11_46_right_unfold]
-  exact line1
+    (innerExistential outerExistential :
+      signature.Existential sort (Nat.succ sort.height))
+    (innerUniversal outerUniversal :
+      signature.Universal sort (Nat.succ sort.height))
+    (negation : signature.Negation (Nat.succ sort.height))
+    (disjunction : signature.Disjunction (Nat.succ sort.height))
+    (p : Formula signature real [] (Nat.succ sort.height))
+    (phi : Formula signature real [sort, sort] (Nat.succ sort.height))
+    (witness : Term signature real [] sort) :
+    Derivation (star_11_46_reading innerUniversal outerUniversal negation
+      disjunction p phi).parsed := by
+  let innerLeft := Formula.star11SometimesStable innerUniversal negation
+    (implication negation disjunction
+      (p.rename (emptyRenaming (target := [sort, sort]))) phi)
+  let innerRight := implication negation disjunction
+    (p.rename (fun v => .succ v))
+    (Formula.star11SometimesStable innerUniversal negation phi)
+  have line1a :
+      Formula.star11FixSecond
+        (p.rename (emptyRenaming (target := [sort, sort]))) =
+      p.weakenReal.rename (fun v => .succ v) := by
+    unfold Formula.star11FixSecond
+    rw [Formula.weakenReal_rename, Formula.rename_substitute]
+    exact Formula.closed_substitute p.weakenReal _ (fun v => .succ v)
+  have line1b := star_10_37 innerExistential innerUniversal negation
+    disjunction p.weakenReal (Formula.star11FixSecond phi)
+    (.real (.zero : Var (sort :: real) sort))
+  have line1 : Derivation (.assertion (star_4_01 negation disjunction
+      (innerLeft.weakenReal.instantiate (.real .zero))
+      (innerRight.weakenReal.instantiate (.real .zero)))) := by
+    unfold innerLeft innerRight
+    rw [Formula.star11SometimesStable_weakenReal_instantiate,
+      Formula.star11FixSecond_implication, line1a,
+      Formula.star11Implication_weakenReal_instantiate,
+      Formula.closed_weakenReal_instantiate,
+      Formula.star11SometimesStable_weakenReal_instantiate]
+    unfold star_10_37_reading at line1b
+    rw [star_10_37_left_normalize, star_10_37_right_normalize] at line1b
+    exact line1b
+  have line2 : Derivation (.assertion (star_4_01 negation disjunction
+      (star_11_46_left innerUniversal outerUniversal negation disjunction p phi)
+      (star_11_46_middle innerUniversal outerUniversal negation disjunction
+        p phi))) := by
+    unfold star_11_46_left star_11_46_middle
+    exact star11_liftStableExistentialEquivalence outerUniversal negation
+      disjunction innerLeft innerRight line1
+  have line3 : Derivation (.assertion (star_4_01 negation disjunction
+      (star_11_46_middle innerUniversal outerUniversal negation disjunction
+        p phi)
+      (star_11_46_right innerUniversal outerUniversal negation disjunction
+        p phi))) := by
+    have line3a := star_10_37 outerExistential outerUniversal negation
+      disjunction p (Formula.star11SometimesStable innerUniversal negation phi)
+      witness
+    unfold star_10_37_reading at line3a
+    rw [star_10_37_left_normalize, star_10_37_right_normalize] at line3a
+    unfold star_11_46_middle star_11_46_right
+    exact line3a
+  exact star11_chainEquivalence negation disjunction
+    (star_11_46_left innerUniversal outerUniversal negation disjunction p phi)
+    (star_11_46_middle innerUniversal outerUniversal negation disjunction p phi)
+    (star_11_46_right innerUniversal outerUniversal negation disjunction p phi)
+    line2 line3
 
 private def star_11_47_normalForm
     (inner : signature.Universal sort (bindOrder baseOrder sort))
@@ -3867,11 +4512,8 @@ theorem star_11_61
 #print axioms star_11_4
 #print axioms star_11_401
 #print axioms star_11_42
-#print axioms star_11_43_right_unfold
 #print axioms star_11_43
-#print axioms star_11_44_right_unfold
 #print axioms star_11_44
-#print axioms star_11_46_right_unfold
 #print axioms star_11_46
 #print axioms star_11_61
 

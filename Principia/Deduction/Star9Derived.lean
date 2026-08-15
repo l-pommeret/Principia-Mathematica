@@ -1371,7 +1371,7 @@ private theorem Formula.s9_substitute_substitute
             (liftSubstitution (s9ComposeSubstitution sigma tau))))
           (Eq.trans continuationLine1 continuationLine2))
 private def star_9_22_slotY : Renaming [argument] [argument, argument, argument]
-  | _, .zero => .zero
+  | _, .zero => .succ (.succ .zero)
   | _, .succ v => nomatch v
 
 private def star_9_22_slotX : Renaming [argument] [argument, argument, argument]
@@ -1379,7 +1379,7 @@ private def star_9_22_slotX : Renaming [argument] [argument, argument, argument]
   | _, .succ v => nomatch v
 
 private def star_9_22_slotZ : Renaming [argument] [argument, argument, argument]
-  | _, .zero => .succ (.succ .zero)
+  | _, .zero => .zero
   | _, .succ v => nomatch v
 
 def star_9_22_matrix
@@ -1522,8 +1522,8 @@ def star_9_22_consequent
   .always existential1.universal
     (.sometimes existential0
       (implication negation disjunction
-        (phi.rename star_9_3x_slotInner)
-        (psi.rename star_9_3x_slotOuter)))
+        (phi.rename star_9_3x_slotOuter)
+        (psi.rename star_9_3x_slotInner)))
 
 theorem star_9_22_bodyX_at_z
     (existential : ExistentialVocabulary signature argument 0)
@@ -1562,51 +1562,6 @@ def star_9_22_reading
     (star_9_22_body existential0 existential1
       negation0 disjunction0 phi psi))
   scopeReading := "The parsed AST is printed line (4), which PM identifies with the displayed proposition by the eliminable scope definitions ✱9·06, ✱9·08, ✱9·07, ✱9·01, and ✱9·02."
-
-/-- ✱9·22. Lines 1–4 are PM's printed Id, two existential
-introductions with detachment, and real-to-apparent generalization. The
-remaining printed lines are the eliminable scope reading recorded above.
-`demonstration_provenance: follows-printed`. -/
-theorem star_9_22
-    (existential0 : ExistentialVocabulary signature argument 0)
-    (existential1 : ExistentialVocabulary signature argument (bindOrder 0 argument))
-    (universal2 : signature.Universal argument
-      (bindOrder (bindOrder 0 argument) argument))
-    (negation0 : signature.Negation 0)
-    (disjunction0 : signature.Disjunction 0)
-    (disjunction01 : signature.Disjunction
-      (max 0 (bindOrder 0 argument)))
-    (negation1 : signature.Negation (bindOrder 0 argument))
-    (disjunction12 : signature.Disjunction
-      (max (bindOrder 0 argument)
-        (bindOrder (bindOrder 0 argument) argument)))
-    (phi psi : Formula signature real [argument] 0) :
-    Derivation (.assertion (.always universal2
-      (star_9_22_body existential0 existential1 negation0 disjunction0 phi psi))) := by
-  let z : Term signature (argument :: real) [] argument := .real .zero
-  let core := implication negation0 disjunction0
-    (phi.weakenReal.instantiate z) (psi.weakenReal.instantiate z)
-  have line1 : Derivation (.assertion
-      ((star_9_22_bodyY negation0 disjunction0 phi psi).instantiate z)) :=
-    Derivation.castAssertion
-      (star_9_22_matrix_all_real negation0 disjunction0 phi psi)
-      (star_2_08 negation0 disjunction0 core)
-  have line2 : Derivation (.assertion
-      ((star_9_22_bodyX existential0 negation0 disjunction0 phi psi).instantiate z)) :=
-    Derivation.castAssertion
-      (star_9_22_bodyX_at_z existential0 negation0 disjunction0 phi psi)
-      (Derivation.star_9_12 negation0 disjunction01 line1
-        (Derivation.star_9_1 existential0 negation0 disjunction01
-          (star_9_22_bodyY negation0 disjunction0 phi psi) z))
-  have line3 := Derivation.star_9_12 negation1 disjunction12 line2
-    (Derivation.star_9_1 existential1 negation1 disjunction12
-      (star_9_22_bodyX existential0 negation0 disjunction0 phi psi) z)
-  have line4 := Derivation.star_9_13 universal2
-    (star_9_22_body existential0 existential1 negation0 disjunction0 phi psi)
-    (Derivation.castAssertion
-      (star_9_22_body_at_z existential0 existential1 negation0 disjunction0 phi psi)
-      line3)
-  exact line4
 
 /-! ### The fixed-premiss instance used on line (3) of ✱10·35
 
@@ -1986,8 +1941,8 @@ private theorem star_9_22_consequent_scope_rename
     (disjunction : signature.Disjunction 0)
     (phi psi : Formula signature real [argument] 0) :
     (implication negation disjunction
-      (phi.rename star_9_3x_slotInner)
-      (psi.rename star_9_3x_slotOuter)).rename
+      (phi.rename star_9_3x_slotOuter)
+      (psi.rename star_9_3x_slotInner)).rename
         (liftRenaming (fun v => .succ v)) =
       implication negation disjunction
         (phi.rename star_9_22_slotY) (psi.rename star_9_22_slotZ) := by
@@ -1996,7 +1951,7 @@ private theorem star_9_22_consequent_scope_rename
     Formula.star_9_21_rename_rename]
   have innerEq :
       phi.rename (fun v =>
-        liftRenaming (fun v => .succ v) (star_9_3x_slotInner v)) =
+        liftRenaming (fun v => .succ v) (star_9_3x_slotOuter v)) =
         phi.rename star_9_22_slotY :=
     Formula.star_9_21_rename_of_pointwise _ _ (by
       intro sort v
@@ -2005,7 +1960,7 @@ private theorem star_9_22_consequent_scope_rename
       | succ v => exact nomatch v) phi
   have outerEq :
       psi.rename (fun v =>
-        liftRenaming (fun v => .succ v) (star_9_3x_slotOuter v)) =
+        liftRenaming (fun v => .succ v) (star_9_3x_slotInner v)) =
         psi.rename star_9_22_slotZ :=
     Formula.star_9_21_rename_of_pointwise _ _ (by
       intro sort v
@@ -2013,6 +1968,39 @@ private theorem star_9_22_consequent_scope_rename
       | zero => rfl
       | succ v => exact nomatch v) psi
   rw [innerEq, outerEq]
+
+private theorem star_9_22_consequent_eq_star_9_07
+    (existential0 : ExistentialVocabulary signature argument 0)
+    (existential1 : ExistentialVocabulary signature argument
+      (bindOrder 0 argument))
+    (negation0 : signature.Negation 0)
+    (disjunction0 : signature.Disjunction 0)
+    (phi psi : Formula signature real [argument] 0) :
+    star_9_22_consequent existential0 existential1
+        negation0 disjunction0 phi psi =
+      star_9_07 existential0 existential1.universal disjunction0
+        ((Formula.neg negation0 phi).rename (fun v => .succ v))
+        (psi.rename implicationScopeHead) := by
+  unfold star_9_22_consequent star_9_07 implication mixedImplication
+  have phiRename :
+      (Formula.neg negation0 phi).rename (fun v => .succ v) =
+        Formula.neg negation0 (phi.rename star_9_3x_slotOuter) := by
+    change Formula.neg negation0 (phi.rename (fun v => .succ v)) = _
+    exact congrArg (Formula.neg negation0)
+      (Formula.star_9_21_rename_of_pointwise _ _ (by
+        intro sort v
+        cases v with
+        | zero => rfl
+        | succ v => exact nomatch v) phi)
+  have psiRename :
+      psi.rename implicationScopeHead =
+        psi.rename star_9_3x_slotInner := by
+    exact Formula.star_9_21_rename_of_pointwise _ _ (by
+      intro sort v
+      cases v with
+      | zero => rfl
+      | succ v => exact nomatch v) psi
+  rw [phiRename, psiRename]
 
 /-- The full-scope reading which makes ✱9·22 detachable by the single
 primitive rule ✱9·12.  Reading the negated universal premiss uses ✱9·01;
@@ -2061,6 +2049,198 @@ the quantified disjunction then follows ✱9·04, ✱9·05 and ✱9·06. -/
         (phi.rename star_9_22_slotX) (psi.rename star_9_22_slotX)))
       (implication negation0 disjunction0
         (phi.rename star_9_22_slotY) (psi.rename star_9_22_slotZ))
+
+private def star_9_22_line6Left
+    (existential0 : ExistentialVocabulary signature argument 0)
+    (negation0 : signature.Negation 0)
+    (disjunction0 : signature.Disjunction 0)
+    (phi psi : Formula signature real [argument] 0) :
+    Formula signature real [argument] (bindOrder 0 argument) :=
+  .sometimes existential0
+    (.neg negation0
+      (implication negation0 disjunction0
+        (phi.rename star_9_3x_slotOuter)
+        (psi.rename star_9_3x_slotOuter)))
+
+private def star_9_22_line6Right
+    (existential0 : ExistentialVocabulary signature argument 0)
+    (negation0 : signature.Negation 0)
+    (disjunction0 : signature.Disjunction 0)
+    (phi psi : Formula signature real [argument] 0) :
+    Formula signature real [argument] (bindOrder 0 argument) :=
+  .sometimes existential0
+    (implication negation0 disjunction0
+      (phi.rename star_9_3x_slotOuter)
+      (psi.rename star_9_3x_slotInner))
+
+/-- The proof line together with the three scope readings printed after it.
+`Derivation` stores only the expanded formula, so the readings are retained
+beside line (4) to record the eliminable steps ✱9·08, ✱9·07 and ✱9·01·02. -/
+private structure Star922PrintedDemonstration
+    (existential0 : ExistentialVocabulary signature argument 0)
+    (existential1 : ExistentialVocabulary signature argument
+      (bindOrder 0 argument))
+    (universal2 : signature.Universal argument
+      (bindOrder (bindOrder 0 argument) argument))
+    (negation0 : signature.Negation 0)
+    (disjunction0 : signature.Disjunction 0)
+    (negation1 : signature.Negation (bindOrder 0 argument))
+    (disjunction1 : signature.Disjunction (bindOrder 0 argument))
+    (disjunction11 : signature.Disjunction
+      (max (bindOrder 0 argument) (bindOrder 0 argument)))
+    (disjunction12 : signature.Disjunction
+      (max (bindOrder 0 argument)
+        (bindOrder (bindOrder 0 argument) argument)))
+    (phi psi : Formula signature real [argument] 0) where
+  line4 : Derivation (.assertion (.always universal2
+    (star_9_22_body existential0 existential1
+      negation0 disjunction0 phi psi)))
+  line5 : ImplicationReading negation1 disjunction12
+    (.always existential0.universal
+      (implication negation0 disjunction0 phi psi))
+    (.always universal2
+      (star_9_22_body existential0 existential1
+        negation0 disjunction0 phi psi))
+    (star_9_22_consequent existential0 existential1
+      negation0 disjunction0 phi psi)
+  line6 : ImplicationDisjunction signature real
+    (.sometimes existential1
+      (star_9_22_line6Left existential0 negation0 disjunction0 phi psi))
+    (.always existential1.universal
+      (star_9_22_line6Right existential0 negation0 disjunction0 phi psi))
+    (star_9_08 existential1 universal2 disjunction1
+      ((star_9_22_line6Left existential0 negation0 disjunction0 phi psi).rename
+        implicationScopeHead)
+      ((star_9_22_line6Right existential0 negation0 disjunction0 phi psi).rename
+        (fun v => .succ v)))
+  line7 : ImplicationReading negation1 disjunction11
+    (.sometimes existential0 phi)
+    (star_9_22_consequent existential0 existential1
+      negation0 disjunction0 phi psi)
+    (.sometimes existential0 psi)
+
+/-- ✱9·22. Lines 1–4 are PM's printed Id, two existential
+introductions with detachment, and real-to-apparent generalization. Lines
+5–7 retain the exact scope-definition certificates, including the final
+✱9·01·02 reading of the displayed implication.
+`demonstration_provenance: follows-printed`. -/
+theorem star_9_22
+    (existential0 : ExistentialVocabulary signature argument 0)
+    (existential1 : ExistentialVocabulary signature argument (bindOrder 0 argument))
+    (universal2 : signature.Universal argument
+      (bindOrder (bindOrder 0 argument) argument))
+    (negation0 : signature.Negation 0)
+    (disjunction0 : signature.Disjunction 0)
+    (disjunction01 : signature.Disjunction
+      (max 0 (bindOrder 0 argument)))
+    (negation1 : signature.Negation (bindOrder 0 argument))
+    (disjunction12 : signature.Disjunction
+      (max (bindOrder 0 argument)
+        (bindOrder (bindOrder 0 argument) argument)))
+    (phi psi : Formula signature real [argument] 0) :
+    Derivation (.assertion (.always universal2
+      (star_9_22_body existential0 existential1 negation0 disjunction0 phi psi))) := by
+  let z : Term signature (argument :: real) [] argument := .real .zero
+  let core := implication negation0 disjunction0
+    (phi.weakenReal.instantiate z) (psi.weakenReal.instantiate z)
+  have line1 : Derivation (.assertion
+      ((star_9_22_bodyY negation0 disjunction0 phi psi).instantiate z)) :=
+    Derivation.castAssertion
+      (star_9_22_matrix_all_real negation0 disjunction0 phi psi)
+      (star_2_08 negation0 disjunction0 core)
+  have line2 : Derivation (.assertion
+      ((star_9_22_bodyX existential0 negation0 disjunction0 phi psi).instantiate z)) :=
+    Derivation.castAssertion
+      (star_9_22_bodyX_at_z existential0 negation0 disjunction0 phi psi)
+      (Derivation.star_9_12 negation0 disjunction01 line1
+        (Derivation.star_9_1 existential0 negation0 disjunction01
+          (star_9_22_bodyY negation0 disjunction0 phi psi) z))
+  have line3 := Derivation.star_9_12 negation1 disjunction12 line2
+    (Derivation.star_9_1 existential1 negation1 disjunction12
+      (star_9_22_bodyX existential0 negation0 disjunction0 phi psi) z)
+  have line4 := Derivation.star_9_13 universal2
+    (star_9_22_body existential0 existential1 negation0 disjunction0 phi psi)
+    (Derivation.castAssertion
+      (star_9_22_body_at_z existential0 existential1 negation0 disjunction0 phi psi)
+      line3)
+  have line5 : ImplicationReading negation1 disjunction12
+      (.always existential0.universal
+        (implication negation0 disjunction0 phi psi))
+      (.always universal2
+        (star_9_22_body existential0 existential1
+          negation0 disjunction0 phi psi))
+      (star_9_22_consequent existential0 existential1
+        negation0 disjunction0 phi psi) := by
+    let premissMatrix := implication negation0 disjunction0 phi psi
+    let negatedPremiss := star_9_01 existential0 negation0 premissMatrix
+    refine {
+      negated := negatedPremiss
+      negationDefinition := ?_
+      disjunctionDefinition := ?_
+    }
+    · exact ImplicationNegation.star_9_01 negation1
+        existential0.universal existential0 negation0 premissMatrix
+    · unfold negatedPremiss premissMatrix star_9_22_consequent
+      unfold star_9_22_body
+      apply ImplicationDisjunction.star_9_04
+        existential1.universal universal2
+      apply ImplicationDisjunction.star_9_05 existential0 existential1
+      apply ImplicationDisjunction.star_9_06 existential0 existential0
+      rw [star_9_22_premiss_scope_rename,
+        star_9_22_consequent_scope_rename]
+      unfold star_9_22_matrix
+      let left := Formula.neg negation0 (implication negation0 disjunction0
+        (phi.rename star_9_22_slotX) (psi.rename star_9_22_slotX))
+      let right := implication negation0 disjunction0
+        (phi.rename star_9_22_slotY) (psi.rename star_9_22_slotZ)
+      let disjunction00 : signature.Disjunction (max 0 0) :=
+        Eq.mp (congrArg signature.Disjunction (natMaxSelf 0).symm)
+          disjunction0
+      exact Eq.mp (congrArg
+        (ImplicationDisjunction signature real left right)
+        (sameDisjunction_unfold disjunction0 left right).symm)
+        (ImplicationDisjunction.star_1_01 disjunction00 left right)
+  let disjunction1 : signature.Disjunction (bindOrder 0 argument) := by
+    change signature.Disjunction (max 0 (bindOrder 0 argument))
+    exact disjunction01
+  have line6 := ImplicationDisjunction.star_9_08
+    existential1 existential1.universal universal2 disjunction1
+    (star_9_22_line6Left existential0 negation0 disjunction0 phi psi)
+    (star_9_22_line6Right existential0 negation0 disjunction0 phi psi)
+  let disjunction11 : signature.Disjunction
+      (max (bindOrder 0 argument) (bindOrder 0 argument)) :=
+    Eq.mp (congrArg signature.Disjunction
+      (natMaxSelf (bindOrder 0 argument)).symm) disjunction1
+  have line7 : ImplicationReading negation1 disjunction11
+      (.sometimes existential0 phi)
+      (star_9_22_consequent existential0 existential1
+        negation0 disjunction0 phi psi)
+      (.sometimes existential0 psi) := by
+    refine {
+      negated := star_9_02 existential0.universal negation0 phi
+      negationDefinition := ?_
+      disjunctionDefinition := ?_
+    }
+    · exact ImplicationNegation.star_9_02 negation1 existential0
+        existential0.universal negation0 phi
+    · exact Eq.mp (congrArg
+        (ImplicationDisjunction signature real
+          (star_9_02 existential0.universal negation0 phi)
+          (.sometimes existential0 psi))
+        (star_9_22_consequent_eq_star_9_07 existential0 existential1
+          negation0 disjunction0 phi psi).symm)
+        (ImplicationDisjunction.star_9_07
+          existential0.universal existential0 existential1.universal
+          disjunction0 (.neg negation0 phi) psi)
+  let printedDemonstration : Star922PrintedDemonstration existential0
+      existential1 universal2 negation0 disjunction0 negation1
+      disjunction1 disjunction11 disjunction12 phi psi := {
+    line4 := line4
+    line5 := line5
+    line6 := line6
+    line7 := line7
+  }
+  exact printedDemonstration.line4
 
 /-- The Df reading of printed line (5).  The innermost occurrence of
 ✱9·06 is kept visible rather than replaced by its scoped normal form. -/

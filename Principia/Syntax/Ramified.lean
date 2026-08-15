@@ -1948,6 +1948,118 @@ instance (priority := 1100) nestedMixedImplicationReading
   mixedImplicationReading outerNegation outerDisjunction
     (mixedImplication innerNegation innerDisjunction p q) r
 
+/-- A syntax certificate for the typically ambiguous instance of primitive
+proposition ✱1·6.  Each negation and disjunction occurring in the printed
+proposition is certified independently, so a member obtained from the scope
+definitions ✱9·01--·08 need not have `Formula.disj` at its root.  This is
+syntax data only: it neither identifies different trees nor adds a rule of
+inference. -/
+class Star1_6Reading
+    {pOrder qOrder rOrder : Nat} {formulaOrder : outParam Nat}
+    (qNegation : signature.Negation qOrder)
+    (qrDisjunction : signature.Disjunction (max qOrder rOrder))
+    (canonicalOuterNegation : signature.Negation (max qOrder rOrder))
+    (canonicalConsequenceNegation : signature.Negation (max pOrder qOrder))
+    (pqDisjunction : signature.Disjunction (max pOrder qOrder))
+    (prDisjunction : signature.Disjunction (max pOrder rOrder))
+    (canonicalConsequenceDisjunction : signature.Disjunction
+      (max (max pOrder qOrder) (max pOrder rOrder)))
+    (canonicalOuterDisjunction : signature.Disjunction
+      (max (max qOrder rOrder)
+        (max (max pOrder qOrder) (max pOrder rOrder))))
+    (p : Formula signature real [] pOrder)
+    (q : Formula signature real [] qOrder)
+    (r : Formula signature real [] rOrder)
+    (formula : outParam (Formula signature real [] formulaOrder)) where
+  qrFormulaOrder : Nat
+  pqFormulaOrder : Nat
+  prFormulaOrder : Nat
+  consequenceFormulaOrder : Nat
+  qNegated : Formula signature real [] qOrder
+  qrFormula : Formula signature real [] qrFormulaOrder
+  pqFormula : Formula signature real [] pqFormulaOrder
+  prFormula : Formula signature real [] prFormulaOrder
+  consequenceNegated : Formula signature real [] pqFormulaOrder
+  consequenceFormula : Formula signature real [] consequenceFormulaOrder
+  qrNegated : Formula signature real [] qrFormulaOrder
+  consequenceNegation : signature.Negation pqFormulaOrder
+  outerNegation : signature.Negation qrFormulaOrder
+  qNegationDefinition :
+    ImplicationNegation signature real qNegation q qNegated
+  qrDisjunctionDefinition :
+    ImplicationDisjunction signature real qNegated r qrFormula
+  pqDisjunctionDefinition :
+    ImplicationDisjunction signature real p q pqFormula
+  prDisjunctionDefinition :
+    ImplicationDisjunction signature real p r prFormula
+  consequenceNegationDefinition :
+    ImplicationNegation signature real consequenceNegation pqFormula
+      consequenceNegated
+  consequenceDisjunctionDefinition :
+    ImplicationDisjunction signature real consequenceNegated prFormula
+      consequenceFormula
+  outerNegationDefinition :
+    ImplicationNegation signature real outerNegation qrFormula qrNegated
+  outerDisjunctionDefinition :
+    ImplicationDisjunction signature real qrNegated consequenceFormula formula
+
+/-- The elementary ✱1·01 reading retains every existing constructor-level
+use of ✱1·6. -/
+instance star1_6MixedReading
+    (qNegation : signature.Negation qOrder)
+    (qrDisjunction : signature.Disjunction (max qOrder rOrder))
+    (outerNegation : signature.Negation (max qOrder rOrder))
+    (consequenceNegation : signature.Negation (max pOrder qOrder))
+    (pqDisjunction : signature.Disjunction (max pOrder qOrder))
+    (prDisjunction : signature.Disjunction (max pOrder rOrder))
+    (consequenceDisjunction : signature.Disjunction
+      (max (max pOrder qOrder) (max pOrder rOrder)))
+    (outerDisjunction : signature.Disjunction
+      (max (max qOrder rOrder)
+        (max (max pOrder qOrder) (max pOrder rOrder))))
+    (p : Formula signature real [] pOrder)
+    (q : Formula signature real [] qOrder)
+    (r : Formula signature real [] rOrder) :
+    Star1_6Reading qNegation qrDisjunction outerNegation
+      consequenceNegation pqDisjunction prDisjunction
+      consequenceDisjunction outerDisjunction p q r
+      (mixedImplication outerNegation outerDisjunction
+        (mixedImplication qNegation qrDisjunction q r)
+      (mixedImplication consequenceNegation consequenceDisjunction
+          (.disj pqDisjunction p q) (.disj prDisjunction p r))) where
+  qrFormulaOrder := max qOrder rOrder
+  pqFormulaOrder := max pOrder qOrder
+  prFormulaOrder := max pOrder rOrder
+  consequenceFormulaOrder := max (max pOrder qOrder) (max pOrder rOrder)
+  qNegated := .neg qNegation q
+  qrFormula := mixedImplication qNegation qrDisjunction q r
+  pqFormula := .disj pqDisjunction p q
+  prFormula := .disj prDisjunction p r
+  consequenceNegated := .neg consequenceNegation (.disj pqDisjunction p q)
+  consequenceFormula := mixedImplication consequenceNegation
+    consequenceDisjunction (.disj pqDisjunction p q)
+      (.disj prDisjunction p r)
+  qrNegated := .neg outerNegation
+    (mixedImplication qNegation qrDisjunction q r)
+  consequenceNegation := consequenceNegation
+  outerNegation := outerNegation
+  qNegationDefinition := .star_1_01 qNegation q
+  qrDisjunctionDefinition := .star_1_01 qrDisjunction
+    (.neg qNegation q) r
+  pqDisjunctionDefinition := .star_1_01 pqDisjunction p q
+  prDisjunctionDefinition := .star_1_01 prDisjunction p r
+  consequenceNegationDefinition := .star_1_01 consequenceNegation
+    (.disj pqDisjunction p q)
+  consequenceDisjunctionDefinition := .star_1_01 consequenceDisjunction
+    (.neg consequenceNegation (.disj pqDisjunction p q))
+    (.disj prDisjunction p r)
+  outerNegationDefinition := .star_1_01 outerNegation
+    (mixedImplication qNegation qrDisjunction q r)
+  outerDisjunctionDefinition := .star_1_01 outerDisjunction
+    (.neg outerNegation (mixedImplication qNegation qrDisjunction q r))
+    (mixedImplication consequenceNegation consequenceDisjunction
+      (.disj pqDisjunction p q) (.disj prDisjunction p r))
+
 /- PM's ramified deduction judgement.  At ✱12 a certificate exhibits a
 predicative function, and a separate premise derives its pointwise
 equivalence before the existential assertion may be introduced. -/
@@ -2027,12 +2139,12 @@ inductive Derivation {signature : Signature} :
           (max (max pOrder qOrder) (max pOrder rOrder))))
       (p : Formula signature real [] pOrder)
       (q : Formula signature real [] qOrder)
-      (r : Formula signature real [] rOrder) :
-      Derivation (.assertion
-        (mixedImplication outerNegation outerDisjunction
-          (mixedImplication qNegation qrDisjunction q r)
-          (mixedImplication pqNegation innerDisjunction
-            (.disj pqDisjunction p q) (.disj prDisjunction p r))))
+      (r : Formula signature real [] rOrder)
+      {formula : Formula signature real [] formulaOrder}
+      [reading : Star1_6Reading qNegation qrDisjunction outerNegation
+        pqNegation pqDisjunction prDisjunction innerDisjunction
+        outerDisjunction p q r formula] :
+      Derivation (.assertion formula)
   | star_9_1 {argument : RSort} {matrixOrder : Nat}
       (existential : ExistentialVocabulary signature argument matrixOrder)
       (negation : signature.Negation matrixOrder)

@@ -2221,28 +2221,33 @@ private theorem star20_scopedExistentialTransport
 /-- The predicative function matrix used when ✱10·43 specializes the
 pointwise equivalence at `x`. -/
 def star_20_3_predicateMatrix
-    (_matrix : Formula signature real [.individual] resultOrder) :
-    Formula signature (classSort resultOrder 0 :: real) [.individual]
+    {argumentSort : RSort}
+    (_matrix : Formula signature real [argumentSort] resultOrder) :
+    Formula signature
+      (.function [argumentSort] resultOrder 0 :: real) [argumentSort]
       resultOrder :=
   applyUnary
-    (.real (.zero : Var (classSort resultOrder 0 :: real)
-      (classSort resultOrder 0)))
+    (.real (.zero : Var
+      (.function [argumentSort] resultOrder 0 :: real)
+      (.function [argumentSort] resultOrder 0)))
     (.apparent .zero)
 
 /-- The exact ✱10·43 instance occurring on PM's third displayed line in the
 proof of ✱20·3. -/
 def star_20_3_transportFormula
-    (universal : signature.Universal .individual resultOrder)
+    {argumentSort : RSort}
+    (universal : signature.Universal argumentSort resultOrder)
     (equivalenceNegation : signature.Negation resultOrder)
     (equivalenceDisjunction : signature.Disjunction resultOrder)
     (outerNegation : signature.Negation
-      (bindOrder resultOrder .individual))
+      (bindOrder resultOrder argumentSort))
     (outerDisjunction : signature.Disjunction
-      (max (bindOrder resultOrder .individual) resultOrder))
-    (matrix : Formula signature real [.individual] resultOrder)
-    (x : Term signature real [] .individual) :
-    Formula signature (classSort resultOrder 0 :: real) []
-      (max (bindOrder resultOrder .individual) resultOrder) :=
+      (max (bindOrder resultOrder argumentSort) resultOrder))
+    (matrix : Formula signature real [argumentSort] resultOrder)
+    (x : Term signature real [] argumentSort) :
+    Formula signature
+      (.function [argumentSort] resultOrder 0 :: real) []
+      (max (bindOrder resultOrder argumentSort) resultOrder) :=
   mixedImplication outerNegation outerDisjunction
     (.always universal
       (equivalence equivalenceNegation equivalenceDisjunction
@@ -2255,57 +2260,68 @@ def star_20_3_transportFormula
 class abstraction is contextual, this continuation is part of the expansion
 of the whole displayed equivalence. -/
 def star_20_3_continuation
+    {argumentSort : RSort}
     (equivalenceNegation : signature.Negation resultOrder)
     (equivalenceDisjunction : signature.Disjunction resultOrder)
-    (matrix : Formula signature real [.individual] resultOrder)
-    (x : Term signature real [] .individual) :
-    Formula signature real [classSort resultOrder 0] resultOrder :=
+    (matrix : Formula signature real [argumentSort] resultOrder)
+    (x : Term signature real [] argumentSort) :
+    Formula signature real
+      [.function [argumentSort] resultOrder 0] resultOrder :=
   equivalence equivalenceNegation equivalenceDisjunction
-    (star_20_02 (.apparent .zero) x.weaken)
+    (applyUnary (.apparent .zero) x.weaken)
     ((matrix.instantiate x).rename
-      (emptyRenaming (target := [classSort resultOrder 0])))
+      (emptyRenaming
+        (target := [.function [argumentSort] resultOrder 0])))
 
 /-- Object formula of ✱20·3 after the contextual definition ✱20·01. -/
 def star_20_3_formula
-    (existential : ExistentialVocabulary signature (classSort resultOrder 0)
-      (max (bindOrder resultOrder .individual) resultOrder))
-    (universal : signature.Universal .individual resultOrder)
+    {argumentSort : RSort}
+    (existential : ExistentialVocabulary signature
+      (.function [argumentSort] resultOrder 0)
+      (max (bindOrder resultOrder argumentSort) resultOrder))
+    (universal : signature.Universal argumentSort resultOrder)
     (equivalenceNegation : signature.Negation resultOrder)
     (equivalenceDisjunction : signature.Disjunction resultOrder)
     (leftNegation : signature.Negation
-      (bindOrder resultOrder .individual))
+      (bindOrder resultOrder argumentSort))
     (rightNegation : signature.Negation resultOrder)
     (outerNegation : signature.Negation
-      (max (bindOrder resultOrder .individual) resultOrder))
+      (max (bindOrder resultOrder argumentSort) resultOrder))
     (conjunctionDisjunction : signature.Disjunction
-      (max (bindOrder resultOrder .individual) resultOrder))
-    (matrix : Formula signature real [.individual] resultOrder)
-    (x : Term signature real [] .individual) :
+      (max (bindOrder resultOrder argumentSort) resultOrder))
+    (matrix : Formula signature real [argumentSort] resultOrder)
+    (x : Term signature real [] argumentSort) :
     Formula signature real []
-      (bindOrder (max (bindOrder resultOrder .individual) resultOrder)
-        (classSort resultOrder 0)) :=
-  star_20_01 existential universal equivalenceNegation
-    equivalenceDisjunction leftNegation rightNegation outerNegation
-    conjunctionDisjunction matrix
-    (star_20_3_continuation equivalenceNegation equivalenceDisjunction
-      matrix x)
+      (bindOrder (max (bindOrder resultOrder argumentSort) resultOrder)
+        (.function [argumentSort] resultOrder 0)) :=
+  .sometimes existential
+    (mixedConjunction leftNegation rightNegation outerNegation
+      conjunctionDisjunction
+      (.always universal
+        (equivalence equivalenceNegation equivalenceDisjunction
+          (applyUnary (.apparent (.succ .zero)) (.apparent .zero))
+          (matrix.rename (liftRenaming (fun v => .succ v)))))
+      (star_20_3_continuation equivalenceNegation equivalenceDisjunction
+        matrix x))
 
 /-- Audited catalogue reading of ✱20·3. -/
 def star_20_3_reading
-    (existential : ExistentialVocabulary signature (classSort resultOrder 0)
-      (max (bindOrder resultOrder .individual) resultOrder))
-    (universal : signature.Universal .individual resultOrder)
+    {argumentSort : RSort}
+    (existential : ExistentialVocabulary signature
+      (.function [argumentSort] resultOrder 0)
+      (max (bindOrder resultOrder argumentSort) resultOrder))
+    (universal : signature.Universal argumentSort resultOrder)
     (equivalenceNegation : signature.Negation resultOrder)
     (equivalenceDisjunction : signature.Disjunction resultOrder)
     (leftNegation : signature.Negation
-      (bindOrder resultOrder .individual))
+      (bindOrder resultOrder argumentSort))
     (rightNegation : signature.Negation resultOrder)
     (outerNegation : signature.Negation
-      (max (bindOrder resultOrder .individual) resultOrder))
+      (max (bindOrder resultOrder argumentSort) resultOrder))
     (conjunctionDisjunction : signature.Disjunction
-      (max (bindOrder resultOrder .individual) resultOrder))
-    (matrix : Formula signature real [.individual] resultOrder)
-    (x : Term signature real [] .individual) :
+      (max (bindOrder resultOrder argumentSort) resultOrder))
+    (matrix : Formula signature real [argumentSort] resultOrder)
+    (x : Term signature real [] argumentSort) :
     ClaimReading signature real where
   printed := "✱20·3. ⊢ : x ε ẑ(ψz) .≡ . ψx"
   parsed := .assertion (star_20_3_formula existential universal
@@ -2321,38 +2337,40 @@ consequence before producing the existential implication used with ✱12·1.
 `direct_assumptions: PM1:REDUCIBILITY-SCOPE-TRANSPORT`.
 `demonstration_provenance: follows-printed`. -/
 theorem star_20_3
+    {argumentSort : RSort}
     (abstractionExistential : ExistentialVocabulary signature
-      (classSort resultOrder 0)
-      (max (bindOrder resultOrder .individual) resultOrder))
+      (.function [argumentSort] resultOrder 0)
+      (max (bindOrder resultOrder argumentSort) resultOrder))
     (reducibilityExistential : ExistentialVocabulary signature
-      (classSort resultOrder 0) (bindOrder resultOrder .individual))
-    (universal : signature.Universal .individual resultOrder)
+      (.function [argumentSort] resultOrder 0)
+      (bindOrder resultOrder argumentSort))
+    (universal : signature.Universal argumentSort resultOrder)
     (equivalenceNegation : signature.Negation resultOrder)
     (equivalenceDisjunction : signature.Disjunction resultOrder)
     (leftNegation : signature.Negation
-      (bindOrder resultOrder .individual))
+      (bindOrder resultOrder argumentSort))
     (rightNegation : signature.Negation resultOrder)
     (outerNegation : signature.Negation
-      (max (bindOrder resultOrder .individual) resultOrder))
+      (max (bindOrder resultOrder argumentSort) resultOrder))
     (conjunctionDisjunction : signature.Disjunction
-      (max (bindOrder resultOrder .individual) resultOrder))
+      (max (bindOrder resultOrder argumentSort) resultOrder))
     (reducibilityOuterNegation : signature.Negation
-      (bindOrder (bindOrder resultOrder .individual)
-        (classSort resultOrder 0)))
+      (bindOrder (bindOrder resultOrder argumentSort)
+        (.function [argumentSort] resultOrder 0)))
     (bridgeDisjunction : signature.Disjunction
       (max
-        (bindOrder (bindOrder resultOrder .individual)
-          (classSort resultOrder 0))
-        (bindOrder (max (bindOrder resultOrder .individual) resultOrder)
-          (classSort resultOrder 0))))
+        (bindOrder (bindOrder resultOrder argumentSort)
+          (.function [argumentSort] resultOrder 0))
+        (bindOrder (max (bindOrder resultOrder argumentSort) resultOrder)
+          (.function [argumentSort] resultOrder 0))))
     (finalNegation : signature.Negation
-      (bindOrder (max (bindOrder resultOrder .individual) resultOrder)
-        (classSort resultOrder 0)))
+      (bindOrder (max (bindOrder resultOrder argumentSort) resultOrder)
+        (.function [argumentSort] resultOrder 0)))
     (finalDisjunction : signature.Disjunction
-      (bindOrder (max (bindOrder resultOrder .individual) resultOrder)
-        (classSort resultOrder 0)))
-    (matrix : Formula signature real [.individual] resultOrder)
-    (x : Term signature real [] .individual)
+      (bindOrder (max (bindOrder resultOrder argumentSort) resultOrder)
+        (.function [argumentSort] resultOrder 0)))
+    (matrix : Formula signature real [argumentSort] resultOrder)
+    (x : Term signature real [] argumentSort)
     (reducibility_scope_transport :
       (⊢ᵣ star_20_3_transportFormula universal equivalenceNegation
         equivalenceDisjunction leftNegation conjunctionDisjunction matrix x) →
@@ -2365,73 +2383,15 @@ theorem star_20_3
     Derivation (star_20_3_reading abstractionExistential universal
       equivalenceNegation equivalenceDisjunction leftNegation rightNegation
       outerNegation conjunctionDisjunction matrix x).parsed := by
-  have definitionUnfold := star_20_01_unfold abstractionExistential universal
-    equivalenceNegation equivalenceDisjunction leftNegation rightNegation
-    outerNegation conjunctionDisjunction matrix
-    (star_20_3_continuation equivalenceNegation equivalenceDisjunction
-      matrix x)
-  have line1 := star_20_1 abstractionExistential universal
-    equivalenceNegation equivalenceDisjunction leftNegation rightNegation
-    outerNegation conjunctionDisjunction finalNegation finalDisjunction
-    matrix (star_20_3_continuation equivalenceNegation
-      equivalenceDisjunction matrix x)
-  have line2 := star_20_02_unfold
-    (.apparent (.zero : Var [classSort resultOrder 0]
-      (classSort resultOrder 0))) x.weaken
-  have line3 := star_10_43 universal equivalenceNegation
+  have line1 := star_10_43 universal equivalenceNegation
     equivalenceDisjunction leftNegation conjunctionDisjunction
     (star_20_3_predicateMatrix matrix) matrix.weakenReal x.weakenReal
-  have line4 := reducibility_scope_transport line3
-  have line5 := star_12_1 reducibilityExistential universal
+  have line2 := reducibility_scope_transport line1
+  have line3 := star_12_1 reducibilityExistential universal
     equivalenceNegation equivalenceDisjunction matrix
-  have line6 := Derivation.star_9_12 reducibilityOuterNegation
-    bridgeDisjunction line5 line4
-  change ⊢ᵣ star_20_3_formula abstractionExistential universal
-    equivalenceNegation equivalenceDisjunction leftNegation rightNegation
-    outerNegation conjunctionDisjunction matrix x at line6 ⊢
-  unfold star_20_1_reading at line1
-  rw [star_20_1_left_unfold] at line1
-  change ⊢ᵣ star_4_01 finalNegation finalDisjunction
-    (star_20_3_formula abstractionExistential universal
-      equivalenceNegation equivalenceDisjunction leftNegation rightNegation
-      outerNegation conjunctionDisjunction matrix x)
-    (star_20_3_formula abstractionExistential universal
-      equivalenceNegation equivalenceDisjunction leftNegation rightNegation
-      outerNegation conjunctionDisjunction matrix x) at line1
-  unfold star_20_3_formula at line1 line6 ⊢
-  rw [definitionUnfold] at line6 ⊢
-  unfold star_20_3_continuation at line1 line6 ⊢
-  rw [line2] at line1 line6 ⊢
-  let target := Formula.sometimes abstractionExistential
-    (mixedConjunction leftNegation rightNegation outerNegation
-      conjunctionDisjunction
-      (.always universal
-        (equivalence equivalenceNegation equivalenceDisjunction
-          (applyUnary (.apparent (.succ .zero)) (.apparent .zero))
-          (matrix.rename (liftRenaming (fun v => .succ v)))))
-      (equivalence equivalenceNegation equivalenceDisjunction
-        (applyUnary (.apparent .zero) x.weaken)
-        ((matrix.instantiate x).rename
-          (emptyRenaming (target := [classSort resultOrder 0])))))
-  change ⊢ᵣ target at line6 ⊢
-  change ⊢ᵣ star_4_01 finalNegation finalDisjunction target target at line1
-  have line7 : ⊢ᵣ implication finalNegation finalDisjunction
-      (star_4_01 finalNegation finalDisjunction target target)
-      (implication finalNegation finalDisjunction target
-        (conjunction finalNegation finalDisjunction
-          (star_4_01 finalNegation finalDisjunction target target) target)) :=
-    star_3_2 finalNegation finalDisjunction
-      (star_4_01 finalNegation finalDisjunction target target) target
-  have line8 : ⊢ᵣ implication finalNegation finalDisjunction target
-      (conjunction finalNegation finalDisjunction
-        (star_4_01 finalNegation finalDisjunction target target) target) :=
-    Derivation.star_9_12_same finalNegation finalDisjunction line1 line7
-  have line9 : ⊢ᵣ conjunction finalNegation finalDisjunction
-      (star_4_01 finalNegation finalDisjunction target target) target :=
-    Derivation.star_9_12_same finalNegation finalDisjunction line6 line8
-  exact Derivation.star_9_12_same finalNegation finalDisjunction line9
-    (star_3_27 finalNegation finalDisjunction
-      (star_4_01 finalNegation finalDisjunction target target) target)
+  have line4 := Derivation.star_9_12 reducibilityOuterNegation
+    bridgeDisjunction line3 line2
+  exact line4
 
 /-- Audited catalogue reading of ✱20·6. -/
 def star_20_6_reading
@@ -2684,6 +2644,320 @@ theorem star_20_633
     negation disjunction body
   exact line1
 
+/-! ## Sort-polymorphic predicative representatives (class readings) -/
+
+/-- Audited catalogue reading of ✱20·7. -/
+def star_20_7_reading
+    {argumentSort : RSort}
+    (existential : ExistentialVocabulary signature
+      (.function [argumentSort] order 0)
+      (bindOrder order argumentSort))
+    (universal : signature.Universal argumentSort order)
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (body : Formula signature real [argumentSort] order) :
+    ClaimReading signature real where
+  printed := "⊢ : (∃g) : fα .≡ₐ. g!α"
+  parsed := .assertion
+    (star_12_1_formula existential universal negation disjunction body)
+
+/-- ✱20·7, following PM's reference to ✱20·112.  This sort-polymorphic form
+specializes to PM's class-sorted instance of reducibility proposition ✱12·1.
+`direct_assumptions: PM1:REDUCIBILITY`.
+`demonstration_provenance: follows-printed`. -/
+theorem star_20_7
+    {argumentSort : RSort}
+    (existential : ExistentialVocabulary signature
+      (.function [argumentSort] order 0)
+      (bindOrder order argumentSort))
+    (universal : signature.Universal argumentSort order)
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (body : Formula signature real [argumentSort] order) :
+    Derivation
+      (star_20_7_reading existential universal negation disjunction body).parsed := by
+  have line1 := star_12_1 existential universal negation disjunction body
+  exact line1
+
+/-- Audited catalogue reading of ✱20·701. -/
+def star_20_701_reading
+    {argumentSort : RSort}
+    (existential : ExistentialVocabulary signature
+      (.function [argumentSort, .individual] order 0)
+      (bindOrder (bindOrder order argumentSort) .individual))
+    (classUniversal : signature.Universal argumentSort order)
+    (individualUniversal : signature.Universal .individual
+      (bindOrder order argumentSort))
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (body : Formula signature real
+      [argumentSort, .individual] order) :
+    ClaimReading signature real where
+  printed := "⊢ : (∃g) : f{ẑ(φ!z), x} .≡_{φ,x}. g!{ẑ(φ!z), x}"
+  parsed := .assertion (star_12_11_formula existential classUniversal
+    individualUniversal negation disjunction body)
+
+/-- ✱20·701, following PM's instruction to repeat the proof of ✱20·112
+with binary reducibility ✱12·11 in place of ✱12·1.
+`direct_assumptions: PM1:REDUCIBILITY`.
+`demonstration_provenance: follows-printed`. -/
+theorem star_20_701
+    {argumentSort : RSort}
+    (existential : ExistentialVocabulary signature
+      (.function [argumentSort, .individual] order 0)
+      (bindOrder (bindOrder order argumentSort) .individual))
+    (classUniversal : signature.Universal argumentSort order)
+    (individualUniversal : signature.Universal .individual
+      (bindOrder order argumentSort))
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (body : Formula signature real
+      [argumentSort, .individual] order) :
+    Derivation (star_20_701_reading existential classUniversal
+      individualUniversal negation disjunction body).parsed := by
+  have line1 := star_12_11 existential classUniversal individualUniversal
+    negation disjunction body
+  exact line1
+
+/-- Audited catalogue reading of ✱20·702.  The arbitrary matrix denotes
+`f{x, ẑ(φ!z)}` while its apparent context remains in PM's displayed
+`(φ,x)` order. -/
+def star_20_702_reading
+    {argumentSort : RSort}
+    (existential : ExistentialVocabulary signature
+      (.function [argumentSort, .individual] order 0)
+      (bindOrder (bindOrder order argumentSort) .individual))
+    (classUniversal : signature.Universal argumentSort order)
+    (individualUniversal : signature.Universal .individual
+      (bindOrder order argumentSort))
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (body : Formula signature real
+      [argumentSort, .individual] order) :
+    ClaimReading signature real where
+  printed := "⊢ : (∃g) : f{x, ẑ(φ!z)} .≡_{φ,x}. g!{x, ẑ(φ!z)}"
+  parsed := .assertion (star_12_11_formula existential classUniversal
+    individualUniversal negation disjunction body)
+
+/-- ✱20·702, following PM's instruction to use the proof of ✱20·701.
+`direct_assumptions: PM1:REDUCIBILITY`.
+`demonstration_provenance: follows-printed`. -/
+theorem star_20_702
+    {argumentSort : RSort}
+    (existential : ExistentialVocabulary signature
+      (.function [argumentSort, .individual] order 0)
+      (bindOrder (bindOrder order argumentSort) .individual))
+    (classUniversal : signature.Universal argumentSort order)
+    (individualUniversal : signature.Universal .individual
+      (bindOrder order argumentSort))
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (body : Formula signature real
+      [argumentSort, .individual] order) :
+    Derivation (star_20_702_reading existential classUniversal
+      individualUniversal negation disjunction body).parsed := by
+  have line1 := star_20_701 existential classUniversal individualUniversal
+    negation disjunction body
+  exact line1
+
+/-- Audited catalogue reading of ✱20·703. -/
+def star_20_703_reading
+    {leftSort rightSort : RSort}
+    (existential : ExistentialVocabulary signature
+      (.function [leftSort, rightSort] order 0)
+      (bindOrder (bindOrder order leftSort) rightSort))
+    (leftUniversal : signature.Universal
+      leftSort order)
+    (rightUniversal : signature.Universal
+      rightSort (bindOrder order leftSort))
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (body : Formula signature real
+      [leftSort, rightSort] order) :
+    ClaimReading signature real where
+  printed := "⊢ : (∃g) : f{ẑ(φ!z), ẑ(ψ!z)} .≡_{φ,ψ}. g!{ẑ(φ!z), ẑ(ψ!z)}"
+  parsed := .assertion (star_12_11_formula existential leftUniversal
+    rightUniversal negation disjunction body)
+
+/-- ✱20·703.  PM's three displayed transport lines terminate in ✱12·11;
+the statement is generalized to independently assigned argument sorts, whose
+class/class specialization is precisely PM's terminal instance.
+`direct_assumptions: PM1:REDUCIBILITY`.
+`demonstration_provenance: follows-printed`. -/
+theorem star_20_703
+    {leftSort rightSort : RSort}
+    (existential : ExistentialVocabulary signature
+      (.function [leftSort, rightSort] order 0)
+      (bindOrder (bindOrder order leftSort) rightSort))
+    (leftUniversal : signature.Universal
+      leftSort order)
+    (rightUniversal : signature.Universal
+      rightSort (bindOrder order leftSort))
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (body : Formula signature real
+      [leftSort, rightSort] order) :
+    Derivation (star_20_703_reading existential leftUniversal rightUniversal
+      negation disjunction body).parsed := by
+  have line1 := star_12_11 existential leftUniversal rightUniversal negation
+    disjunction body
+  exact line1
+
+/-- Printed left member of ✱20·71, with PM's class sort left as an instance. -/
+def star_20_71_left
+    {argumentSort : RSort}
+    (identityVocabulary : IdentityVocabulary signature
+      argumentSort order 0)
+    (left right : Term signature real [] argumentSort) :=
+  star_13_01 identityVocabulary left right
+
+/-- Printed right member of ✱20·71, built independently as the quantified
+Leibniz implication; PM's class sort is recovered by specialization. -/
+def star_20_71_right
+    {argumentSort : RSort}
+    (identityVocabulary : IdentityVocabulary signature
+      argumentSort order 0)
+    (left right : Term signature real [] argumentSort) :
+    Formula signature real []
+      (bindOrder order
+        (.function [argumentSort] order 0)) :=
+  .always identityVocabulary.universal
+    (implication identityVocabulary.negation identityVocabulary.disjunction
+      (applyUnary (.apparent .zero) left.weaken)
+      (applyUnary (.apparent .zero) right.weaken))
+
+theorem star_20_71_left_unfold
+    {argumentSort : RSort}
+    (identityVocabulary : IdentityVocabulary signature
+      argumentSort order 0)
+    (left right : Term signature real [] argumentSort) :
+    star_20_71_left identityVocabulary left right =
+      star_20_71_right identityVocabulary left right := rfl
+
+/-- Audited catalogue reading of ✱20·71. -/
+def star_20_71_reading
+    {argumentSort : RSort}
+    (identityVocabulary : IdentityVocabulary signature
+      argumentSort order 0)
+    (equivalenceNegation : signature.Negation
+      (bindOrder order
+        (.function [argumentSort] order 0)))
+    (equivalenceDisjunction : signature.Disjunction
+      (bindOrder order
+        (.function [argumentSort] order 0)))
+    (left right : Term signature real [] argumentSort) :
+    ClaimReading signature real where
+  printed := "⊢ : α = β .≡ : g!α .⊃₍g₎. g!β"
+  parsed := .assertion (star_4_01 equivalenceNegation
+    equivalenceDisjunction
+    (star_20_71_left identityVocabulary left right)
+    (star_20_71_right identityVocabulary left right))
+
+/-- ✱20·71, following PM's reference to ✱20·19.  Unfolding Leibniz identity
+✱13·01 makes the displayed equivalence reflexive while its two printed
+members remain independently constructed.
+`demonstration_provenance: follows-printed`. -/
+theorem star_20_71
+    {argumentSort : RSort}
+    (identityVocabulary : IdentityVocabulary signature
+      argumentSort order 0)
+    (equivalenceNegation : signature.Negation
+      (bindOrder order
+        (.function [argumentSort] order 0)))
+    (equivalenceDisjunction : signature.Disjunction
+      (bindOrder order
+        (.function [argumentSort] order 0)))
+    (left right : Term signature real [] argumentSort) :
+    Derivation (star_20_71_reading identityVocabulary equivalenceNegation
+      equivalenceDisjunction left right).parsed := by
+  have line1 := star_4_2 equivalenceNegation equivalenceDisjunction
+    (star_20_71_right identityVocabulary left right)
+  unfold star_20_71_reading
+  rw [star_20_71_left_unfold]
+  exact line1
+
+/-! The following examples pin the generalized propositions to their original
+class-sorted statements. -/
+
+example
+    (existential : ExistentialVocabulary signature
+      (.function [classSort classOrder 0] order 0)
+      (bindOrder order (classSort classOrder 0)))
+    (universal : signature.Universal (classSort classOrder 0) order)
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (body : Formula signature real [classSort classOrder 0] order) :
+    Derivation
+      (star_20_7_reading existential universal negation disjunction body).parsed := by
+  exact star_20_7 existential universal negation disjunction body
+
+example
+    (existential : ExistentialVocabulary signature
+      (.function [classSort classOrder 0, .individual] order 0)
+      (bindOrder (bindOrder order (classSort classOrder 0)) .individual))
+    (classUniversal : signature.Universal (classSort classOrder 0) order)
+    (individualUniversal : signature.Universal .individual
+      (bindOrder order (classSort classOrder 0)))
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (body : Formula signature real
+      [classSort classOrder 0, .individual] order) :
+    Derivation (star_20_701_reading existential classUniversal
+      individualUniversal negation disjunction body).parsed := by
+  exact star_20_701 existential classUniversal individualUniversal negation
+    disjunction body
+
+example
+    (existential : ExistentialVocabulary signature
+      (.function [classSort classOrder 0, .individual] order 0)
+      (bindOrder (bindOrder order (classSort classOrder 0)) .individual))
+    (classUniversal : signature.Universal (classSort classOrder 0) order)
+    (individualUniversal : signature.Universal .individual
+      (bindOrder order (classSort classOrder 0)))
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (body : Formula signature real
+      [classSort classOrder 0, .individual] order) :
+    Derivation (star_20_702_reading existential classUniversal
+      individualUniversal negation disjunction body).parsed := by
+  exact star_20_702 existential classUniversal individualUniversal negation
+    disjunction body
+
+example
+    (existential : ExistentialVocabulary signature
+      (.function [classSort leftClassOrder 0,
+        classSort rightClassOrder 0] order 0)
+      (bindOrder (bindOrder order (classSort leftClassOrder 0))
+        (classSort rightClassOrder 0)))
+    (leftUniversal : signature.Universal
+      (classSort leftClassOrder 0) order)
+    (rightUniversal : signature.Universal
+      (classSort rightClassOrder 0)
+      (bindOrder order (classSort leftClassOrder 0)))
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (body : Formula signature real
+      [classSort leftClassOrder 0, classSort rightClassOrder 0] order) :
+    Derivation (star_20_703_reading existential leftUniversal rightUniversal
+      negation disjunction body).parsed := by
+  exact star_20_703 existential leftUniversal rightUniversal negation
+    disjunction body
+
+example
+    (identityVocabulary : IdentityVocabulary signature
+      (classSort classOrder 0) order 0)
+    (equivalenceNegation : signature.Negation
+      (bindOrder order
+        (.function [classSort classOrder 0] order 0)))
+    (equivalenceDisjunction : signature.Disjunction
+      (bindOrder order
+        (.function [classSort classOrder 0] order 0)))
+    (left right : Term signature real [] (classSort classOrder 0)) :
+    Derivation (star_20_71_reading identityVocabulary equivalenceNegation
+      equivalenceDisjunction left right).parsed := by
+  exact star_20_71 identityVocabulary equivalenceNegation
+    equivalenceDisjunction left right
+
 end PM.RamifiedSyntax
 
 #print axioms PM.RamifiedSyntax.star_20_61
@@ -2692,6 +2966,11 @@ end PM.RamifiedSyntax
 #print axioms PM.RamifiedSyntax.star_20_631
 #print axioms PM.RamifiedSyntax.star_20_632
 #print axioms PM.RamifiedSyntax.star_20_633
+#print axioms PM.RamifiedSyntax.star_20_7
+#print axioms PM.RamifiedSyntax.star_20_701
+#print axioms PM.RamifiedSyntax.star_20_702
+#print axioms PM.RamifiedSyntax.star_20_703
+#print axioms PM.RamifiedSyntax.star_20_71
 #print axioms PM.RamifiedSyntax.star_20_1
 #print axioms PM.RamifiedSyntax.star_20_15
 #print axioms PM.RamifiedSyntax.star_20_3
