@@ -1,18 +1,15 @@
 {
-  "context_closure": [
-    "PM1:✱2·05",
-    "PM1:✱2·07",
-    "PM1:✱2·08"
-  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "conclusion": "pending",
+    "run": "pending"
+  },
+  "context_closure": [],
   "current_item": "PM1:✱9·21",
   "integration_blocked": true,
-  "interface_dependencies": [
-    "PM1:✱2·05",
-    "PM1:✱2·07",
-    "PM1:✱2·08"
-  ],
+  "interface_dependencies": [],
   "kind": "pm-isolated-context-bundle",
-  "manifest_sha256": "5c7be25c5b9c6ca01bda6b19dfbd20e863de9a5fd2e4a371a0c40fc6df1d25dc",
+  "manifest_sha256": "8c0baedab72ddd2abc89c59dbde6f8ea8e8b01846db0b948726275632b8af834",
   "policy": {
     "canonical_integration_forbidden": true,
     "grants_no_additional_proof_permission": true,
@@ -43,8 +40,8 @@
     "status": "complete"
   },
   "source_backfill_required": false,
-  "source_bytes": 65884,
-  "source_sha256": "2aacd2c556d12815ca6adced1c551c3ae02244a1543cec519ffb0c4ad34a8cec",
+  "source_bytes": 265320,
+  "source_sha256": "df2cb94c4dfd2db502f8972866f9f20b64badb496e3ec5a95ef0be487977708b",
   "sources": [
     {
       "bytes": 1191,
@@ -82,53 +79,20 @@
       "source_sha256": "3b85384341477a79ef1300f30071294494bc7d0b303ef58fd1b59cf7ab64a156"
     },
     {
-      "bytes": 135,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_05",
-      "id": "PM1:✱2·05",
-      "kind": "opaque-interface-stub",
-      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
-      "remap_required": true,
-      "signature": "theorem star_2_05 {Γ : PM.RealContext} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((q ⊃ₚ r) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)))\n",
-      "signature_sha256": "47d078eb57da1c4d34e11bbc921ed010defb5d6cacaf29169da1eca7b84e7621",
-      "slice_sha256": "e87ed673f8c5677e1960ce8a541d9b2f583f0e23c1a3bc3f155d2c1162ab669f",
-      "source_sha256": "7c5dab2fef98c1599cdd87595805f0b5f2ba0189b59d35e68d04a0a5185cb0c9"
-    },
-    {
-      "bytes": 98,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_07",
-      "id": "PM1:✱2·07",
-      "kind": "opaque-interface-stub",
-      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
-      "remap_required": true,
-      "signature": "theorem star_2_07 {Γ : PM.RealContext} (p : PM.Elementary Γ) :\n    ⊢ₚ (p ⊃ₚ (p ∨ₚ p))\n",
-      "signature_sha256": "449d496350a24e203c417fa809c4b6fabb901f766141a3306141c99e92884428",
-      "slice_sha256": "b3cfcbb1ad8ef7d66738d46f1cba20562492c857a7b5d201939a9438a76af912",
-      "source_sha256": "7c5dab2fef98c1599cdd87595805f0b5f2ba0189b59d35e68d04a0a5185cb0c9"
-    },
-    {
-      "bytes": 87,
-      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_08",
-      "id": "PM1:✱2·08",
-      "kind": "opaque-interface-stub",
-      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
-      "remap_required": true,
-      "signature": "theorem star_2_08 {Γ : PM.RealContext} (p : PM.Elementary Γ) :\n    ⊢ₚ (p ⊃ₚ p)\n",
-      "signature_sha256": "0b0a24ff0e764d9b9bc9c2a71f2f0a0af31c364a6da9af2e8e63d64e64294287",
-      "slice_sha256": "f537a4551f847e6ae26a454cc653923567fe4f5bd090a64307fee4dd1b5ec5c7",
-      "source_sha256": "7c5dab2fef98c1599cdd87595805f0b5f2ba0189b59d35e68d04a0a5185cb0c9"
-    },
-    {
-      "bytes": 17418,
+      "bytes": 126498,
       "grants_proof_permission": false,
       "kind": "local-architecture-context",
-      "path": "Principia/Architecture/FirstOrderPrerequisites.lean",
-      "slice_sha256": "2b82d35db7d568c0108f28452dbde7e4fa8ffe4e10ea5e4d1879f71e84be4607",
-      "source_sha256": "23cc4c84fd3e49809bd10774d0ce13c3bea2e4a4b08e67bff2974bc10306e906"
+      "path": "Principia/Syntax/Ramified.lean",
+      "slice_sha256": "6d2ada61ac8c77bfa98a6c731144b8539b8c47e669d0f49832f97e58468c8842",
+      "source_sha256": "d8328f6074ba74487a071a0c3a7f9bb4745689449b5d298cd51ff2de449adb76"
+    },
+    {
+      "bytes": 91117,
+      "grants_proof_permission": false,
+      "kind": "local-architecture-context",
+      "path": "Principia/Deduction/Star2Ramified.lean",
+      "slice_sha256": "e291889a05e821233b877061cd0c1a6e860521cba92095127b442e59a952c730",
+      "source_sha256": "de082d44201177d8c62cf90d4c9cea8ff5ddb95defb6ef7720b1feb25379d12f"
     }
-  ],
-  "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
-  }
+  ]
 }

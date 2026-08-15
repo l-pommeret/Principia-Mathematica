@@ -1,5 +1,6 @@
 import Principia.Deduction.Star10Derived
 import Principia.Deduction.Star12Derived
+import Principia.Deduction.Star20Derived
 import Principia.FirstEdition.Volume1.Star52Source
 import Principia.Syntax.Printed
 
@@ -183,6 +184,12 @@ structure Star52EliminationVocabulary (signature : Signature)
         (.function [elementSort] resultOrder 0))
       (bindOrder (max (bindOrder resultOrder elementSort) resultOrder)
         (.function [elementSort] resultOrder 0)))
+  finalNegation : signature.Negation
+    (bindOrder (max (bindOrder resultOrder elementSort) resultOrder)
+      (.function [elementSort] resultOrder 0))
+  finalDisjunction : signature.Disjunction
+    (bindOrder (max (bindOrder resultOrder elementSort) resultOrder)
+      (.function [elementSort] resultOrder 0))
 
 /-- The still-missing contextual transport from unary reducibility to the
 expanded ✱52·01 abstraction.  It is stronger than the proved order-zero
@@ -223,13 +230,9 @@ def star_52_1_reading
 
 /-- ✱52·1, by the printed `[✱20·3.(✱52·01)]` route.
 
-The proved ✱10·35 concludes a `star_4_01` equivalence at order zero.  Here the
-required line is a `mixedImplication` from `.sometimes
-vocabulary.reducibilityExistential (unaryReducibilityMatrix ...)` to
-`.sometimes vocabulary.abstractionExistential (mixedConjunction ... ...)`;
-the two roots' vocabularies and bodies do not reduce to one another.
-`direct_assumptions: PM1:REDUCIBILITY` records the ✱12·1 vocabulary; the
-logical scope-transport premise remains explicit in the theorem signature.
+The generalized ✱20·3 is instantiated at `elementSort`; unfolding ✱52·01
+then identifies its contextual abstraction with the displayed formula.
+`direct_assumptions: PM1:REDUCIBILITY-SCOPE-TRANSPORT`.
 `demonstration_provenance: follows-printed`. -/
 theorem star_52_1
     (vocabulary : Star52EliminationVocabulary signature elementSort resultOrder)
@@ -243,17 +246,25 @@ theorem star_52_1
         vocabulary.equivalenceDisjunction vocabulary.leftNegation
         vocabulary.rightNegation vocabulary.outerNegation
         vocabulary.conjunctionDisjunction matrix element)) := by
-  have line1 := star_10_43 vocabulary.universal
+  have line1 := star_20_3 vocabulary.abstractionExistential
+    vocabulary.reducibilityExistential vocabulary.universal
     vocabulary.equivalenceNegation vocabulary.equivalenceDisjunction
-    vocabulary.leftNegation vocabulary.conjunctionDisjunction
-    (star_52_1_predicateMatrix matrix) matrix.weakenReal element.weakenReal
-  have line2 := reducibility_scope_transport line1
-  have line3 := star_12_1 vocabulary.reducibilityExistential
-    vocabulary.universal vocabulary.equivalenceNegation
-    vocabulary.equivalenceDisjunction matrix
-  have line4 := Derivation.star_9_12 vocabulary.reducibilityOuterNegation
-    vocabulary.bridgeDisjunction line3 line2
-  exact line4
+    vocabulary.leftNegation vocabulary.rightNegation vocabulary.outerNegation
+    vocabulary.conjunctionDisjunction vocabulary.reducibilityOuterNegation
+    vocabulary.bridgeDisjunction vocabulary.finalNegation
+    vocabulary.finalDisjunction matrix element reducibility_scope_transport
+  have line2 := congrArg
+    (fun continuation =>
+      star_52_01 vocabulary.abstractionExistential vocabulary.universal
+        vocabulary.equivalenceNegation vocabulary.equivalenceDisjunction
+        vocabulary.leftNegation vocabulary.rightNegation
+        vocabulary.outerNegation vocabulary.conjunctionDisjunction matrix
+        continuation)
+    (show star_52_1_continuation vocabulary.equivalenceNegation
+        vocabulary.equivalenceDisjunction matrix element =
+      star_20_3_continuation vocabulary.equivalenceNegation
+        vocabulary.equivalenceDisjunction matrix element from rfl)
+  exact Derivation.castAssertion line2 line1
 
 /-! ## The membership formula the later propositions are about
 

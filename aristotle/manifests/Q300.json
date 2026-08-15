@@ -23,7 +23,8 @@
     ]
   },
   "local_context_paths": [
-    "Principia/Architecture/FirstOrderPrerequisites.lean"
+    "Principia/Syntax/Ramified.lean",
+    "Principia/Deduction/Star2Ramified.lean"
   ],
   "allowed_pm_items": [
     "PM1:✱1·01",
@@ -36,14 +37,14 @@
     "PM1:✱9·13"
   ],
   "allowed_lean_declarations": {
-    "PM1:✱1·01": "PM.Elementary.imp",
-    "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08",
-    "PM1:✱9·01": "PM.FirstOrder.neg_always",
-    "PM1:✱9·06": "PM.FirstOrder.star_9_06_reduction",
-    "PM1:✱9·08": "PM.FirstOrder.star_9_08_reduction",
-    "PM1:✱9·1": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_1",
-    "PM1:✱9·12": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_12",
-    "PM1:✱9·13": "PM.Architecture.FirstOrderPrerequisites.OrderedAssertion.star_9_13 / star_9_13_first"
+    "PM1:✱1·01": "PM.RamifiedSyntax.implication",
+    "PM1:✱2·08": "PM.RamifiedSyntax.star_2_08",
+    "PM1:✱9·01": "PM.RamifiedSyntax.star_9_01",
+    "PM1:✱9·06": "PM.RamifiedSyntax.star_9_06",
+    "PM1:✱9·08": "PM.RamifiedSyntax.star_9_08",
+    "PM1:✱9·1": "PM.RamifiedSyntax.Derivation.star_9_1",
+    "PM1:✱9·12": "PM.RamifiedSyntax.Derivation.star_9_12",
+    "PM1:✱9·13": "PM.RamifiedSyntax.Derivation.star_9_13"
   },
   "proof_permissions": [
     "PM1:✱1·01",
@@ -55,24 +56,10 @@
     "PM1:✱9·12",
     "PM1:✱9·13"
   ],
-  "context_closure": [
-    "PM1:✱2·05",
-    "PM1:✱2·07",
-    "PM1:✱2·08"
-  ],
-  "context_predeclarations": [
-    "PM1:✱2·05",
-    "PM1:✱2·07",
-    "PM1:✱2·08"
-  ],
-  "context_declarations": {
-    "PM1:✱2·05": "PM.FirstEdition.Volume1.Star2.star_2_05",
-    "PM1:✱2·07": "PM.FirstEdition.Volume1.Star2.star_2_07",
-    "PM1:✱2·08": "PM.FirstEdition.Volume1.Star2.star_2_08"
-  },
-  "context_lean_paths": [
-    "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean"
-  ],
+  "context_closure": [],
+  "context_predeclarations": [],
+  "context_declarations": {},
+  "context_lean_paths": [],
   "interface_dependencies": [],
   "diagnostics": {
     "missing_items": [],
