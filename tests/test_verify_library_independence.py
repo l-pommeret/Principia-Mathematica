@@ -111,7 +111,9 @@ class DeclarationScanTests(unittest.TestCase):
 
 class ScopeTests(unittest.TestCase):
     def test_the_object_calculus_is_what_is_audited(self) -> None:
-        self.assertEqual(CORE_TREES, ("Principia/Syntax", "Principia/Deduction"))
+        # The purity decision now audits every declaration under Principia,
+        # including inductives, structures and classes outside the old pair.
+        self.assertEqual(CORE_TREES, ("Principia",))
 
     def test_the_scope_is_not_empty_in_this_repository(self) -> None:
         # A gate that silently audits nothing would pass vacuously.

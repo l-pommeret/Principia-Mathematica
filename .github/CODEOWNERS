@@ -15,3 +15,14 @@
 /docs/CERTIFICATION_TIERS.md  @l-pommeret
 /.github/workflows/           @l-pommeret
 /lakefile.toml                @l-pommeret
+
+# Exemption registries, workflow success conditions, and the test harness are
+# extensions of the certification standard, not ordinary data.
+/metadata/two_sided_exemptions.json   @l-pommeret
+/metadata/judgement_constructors.json @l-pommeret
+/metadata/assumptions.json            @l-pommeret
+/metadata/dependency_aliases.json     @l-pommeret
+/scripts/sync_item_printed.py         @l-pommeret
+/scripts/report_lean_source_coverage.py @l-pommeret
+/scripts/build_edition.py             @l-pommeret
+/tests/                               @l-pommeret

@@ -159,13 +159,15 @@ class ContextBundleTests(unittest.TestCase):
         self.assertNotIn("namespace PM.Experimental", source)
 
     def test_local_architecture_context_is_hashed_without_proof_permission(self):
+        # Architecture was deleted after its definitions moved to the ramified
+        # calculus, so the local-context contract now uses its surviving ✱9 file.
         manifest = {
             "kind": "pm-constrained-prover-manifest",
             "foundation_profile": "ordered-first-order-pm1",
             "context_closure": [],
             "allowed_pm_items": [],
             "policy": {"interface_gated": True},
-            "local_context_paths": ["Principia/Architecture/FirstOrderQ259.lean"],
+            "local_context_paths": ["Principia/Deduction/Star9.lean"],
         }
         bundle = build_bundle(manifest, {}, ROOT)
         local = [
@@ -173,10 +175,10 @@ class ContextBundleTests(unittest.TestCase):
             if source["kind"] == "local-architecture-context"
         ]
         self.assertEqual(len(local), 1)
-        self.assertEqual(local[0]["path"], "Principia/Architecture/FirstOrderQ259.lean")
+        self.assertEqual(local[0]["path"], "Principia/Deduction/Star9.lean")
         self.assertEqual(len(local[0]["source_sha256"]), 64)
         self.assertFalse(local[0]["grants_proof_permission"])
-        self.assertIn("def star_9_3_target", bundle["lean_source"])
+        self.assertIn("inductive Star9Derivation", bundle["lean_source"])
 
     def test_local_architecture_context_requires_interface_gate(self):
         manifest = {

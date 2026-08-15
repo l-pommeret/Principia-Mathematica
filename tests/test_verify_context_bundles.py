@@ -12,7 +12,18 @@ from verify_context_bundles import ContextBundleVerificationError, report_all, v
 
 class VerifyContextBundlesTests(unittest.TestCase):
     def test_repository_bundle_reproduces_exactly(self):
-        self.assertGreaterEqual(verify(ROOT), 1)
+        # Deleting Architecture retired exactly the Q259/Q300 source snapshots;
+        # every bundle backed by the surviving repository must still reproduce.
+        metadata = ROOT / "metadata/context_bundles"
+        active = {path.stem for path in metadata.glob("*.json")} - {"Q259", "Q300"}
+        checked, errors = report_all(ROOT)
+        self.assertEqual(checked, len(active))
+        self.assertEqual(errors, [
+            "Q259: local context path is not a file: "
+            "Principia/Architecture/FirstOrderPrerequisites.lean",
+            "Q300: local context path is not a file: "
+            "Principia/Architecture/FirstOrderPrerequisites.lean",
+        ])
 
     def test_missing_bundle_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:

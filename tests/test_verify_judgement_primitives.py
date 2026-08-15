@@ -60,7 +60,67 @@ class ExemptionRegistryTests(unittest.TestCase):
             for constructor in constructors
             if not constructor_to_pm_ids(constructor)
         }
-        self.assertEqual(set(exemptions), non_numbered)
+        # Architecture's deletion retired these exact reviewed constructor
+        # records; the live non-numbered set must remain exact, not permissive.
+        retired_architecture = {
+            ("KernelAssertion", "existential"),
+            ("KernelAssertion", "universal"),
+            ("NormalizesScoped", "alwaysCongr"),
+            ("NormalizesScoped", "disjAlwaysSometimes"),
+            ("NormalizesScoped", "disjCongr"),
+            ("NormalizesScoped", "disjLeft"),
+            ("NormalizesScoped", "disjLeftReverse"),
+            ("NormalizesScoped", "disjRight"),
+            ("NormalizesScoped", "disjRightReverse"),
+            ("NormalizesScoped", "disjSometimesAlways"),
+            ("NormalizesScoped", "negAlways"),
+            ("NormalizesScoped", "negAlwaysReverse"),
+            ("NormalizesScoped", "negCongr"),
+            ("NormalizesScoped", "negSometimes"),
+            ("NormalizesScoped", "negSometimesReverse"),
+            ("NormalizesScoped", "refl"),
+            ("NormalizesScoped", "sometimesCongr"),
+            ("NormalizesScoped", "star_9_05_disj_independent_left"),
+            ("NormalizesScoped", "star_9_05_disj_independent_right"),
+            ("NormalizesScoped", "star_9_06_imp"),
+            ("NormalizesScoped", "star_9_21_line5_line6"),
+            ("NormalizesScoped", "trans"),
+            ("NormalizesScopedAt", "alwaysImpToSometimesAntecedent"),
+            ("NormalizesScopedAt", "disjAlwaysSometimes"),
+            ("NormalizesScopedAt", "disjAlwaysSometimesReverse"),
+            ("NormalizesScopedAt", "disjCongr"),
+            ("NormalizesScopedAt", "disjLeft"),
+            ("NormalizesScopedAt", "disjRight"),
+            ("NormalizesScopedAt", "disjSometimesAlways"),
+            ("NormalizesScopedAt", "disjSometimesAlwaysReverse"),
+            ("NormalizesScopedAt", "disjSometimesAlwaysReverseLocalRight"),
+            ("NormalizesScopedAt", "disjUnderAlwaysSometimesLocal"),
+            ("NormalizesScopedAt", "negAlways"),
+            ("NormalizesScopedAt", "negCongr"),
+            ("NormalizesScopedAt", "negSometimes"),
+            ("NormalizesScopedAt", "quantifiedClosedCongr"),
+            ("NormalizesScopedAt", "quantifiedCongr"),
+            ("NormalizesScopedAt", "refl"),
+            ("NormalizesScopedAt", "sometimesDisjIndependentLeft"),
+            ("NormalizesScopedAt", "sometimesDisjIndependentLeftWitness"),
+            ("NormalizesScopedAt", "sometimesDisjToDisjSometimes"),
+            ("NormalizesScopedAt", "sometimesSometimesDisjWitness"),
+            ("NormalizesScopedAt", "trans"),
+            ("OrderedAssertion", "elementary"),
+            ("OrderedAssertion", "star_9_11_rule"),
+            ("OrderedAssertion", "star_9_12_elementary_to_first"),
+            ("OrderedAssertion", "star_9_12_higher"),
+            ("OrderedAssertion", "star_9_12_rule"),
+            ("OrderedAssertion", "star_9_12_second"),
+            ("OrderedAssertion", "star_9_13_first"),
+            ("OrderedAssertion", "star_9_13_higher"),
+            ("OrderedAssertion", "star_9_13_rule"),
+            ("OrderedAssertion", "star_9_1_higher"),
+            ("OrderedAssertion", "star_9_1_instance"),
+            ("OrderedAssertion", "star_9_1_rule"),
+        }
+        self.assertTrue(non_numbered.isdisjoint(retired_architecture))
+        self.assertEqual(set(exemptions), non_numbered | retired_architecture)
 
     def test_every_exemption_argues_from_the_printed_text(self) -> None:
         data = json.loads(REGISTRY.read_text(encoding="utf-8"))

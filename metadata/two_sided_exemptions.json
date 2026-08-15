@@ -1,0 +1,56 @@
+{
+  "exemptions": [
+    {
+      "proposition": "star_10_23",
+      "justifying_definition": "PM1:✱9·02--·03",
+      "reason": "Le membre droit utilise la portée always de ✱9·02 puis ✱9·03 ; construit séparément, il se réduit ainsi au membre gauche imprimé."
+    },
+    {
+      "proposition": "star_13_1",
+      "justifying_definition": "PM1:✱13·01",
+      "reason": "Le membre gauche x = y se déplie par ✱13·01 en la quantification fonctionnelle φ!x ⊃φ φ!y imprimée à droite."
+    },
+    {
+      "proposition": "star_14_1",
+      "justifying_definition": "PM1:✱14·01",
+      "reason": "La portée contextuelle du descripteur entre crochets est définie par ✱14·01 comme l'expansion existentielle imprimée à droite."
+    },
+    {
+      "proposition": "star_14_101",
+      "justifying_definition": "PM1:✱14·01",
+      "reason": "La convention de portée omet seulement les crochets de ✱14·1 ; ✱14·01 donne encore exactement la même expansion existentielle."
+    },
+    {
+      "proposition": "star_14_11",
+      "justifying_definition": "PM1:✱14·02",
+      "reason": "E!(℩x)(φx) est défini par ✱14·02 comme l'existentielle de la matrice d'unicité qui forme le membre droit imprimé."
+    },
+    {
+      "proposition": "star_20_1",
+      "justifying_definition": "PM1:✱20·01",
+      "reason": "L'application à la classe apparente f{ẑ(ψz)} se déplie par ✱20·01 en l'existentielle prédicative imprimée à droite."
+    },
+    {
+      "proposition": "star_21_1",
+      "justifying_definition": "PM1:✱21·01",
+      "reason": "L'application à la relation apparente se déplie par ✱21·01 en l'existentielle sur la relation prédicative imprimée à droite."
+    },
+    {
+      "proposition": "star_21_71",
+      "justifying_definition": "PM1:✱13·01",
+      "reason": "L'identité relationnelle R = S est l'instance de Leibniz ✱13·01, exactement la quantification fonctionnelle g!R ⊃g g!S."
+    }
+  ],
+  "printed_identities": [
+    {
+      "proposition": "star_9_23",
+      "printed_line": "✱9·23.  ⊢:(x).φx.⊃.(x).φx       [Id.✱9·13·21]",
+      "reason": "PM imprime la proposition comme une identité et la justifie par « Id » : affirmer une expression contre elle-même est ici ce que dit la page."
+    },
+    {
+      "proposition": "star_9_24",
+      "printed_line": "✱9·24.  ⊢:(∃x).φx.⊃.(∃x).φx     [Id.✱9·13·22]",
+      "reason": "Même cas que ✱9·23, transposé à l'existentielle, et justifié de la même manière par « Id » dans le texte imprimé."
+    }
+  ]
+}

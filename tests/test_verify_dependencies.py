@@ -73,7 +73,11 @@ class DependencyAuditTests(unittest.TestCase):
     def test_detach_resolves_to_printed_function_rule(self):
         items = {item["id"]: item for item in dependencies.load_items(ROOT)}
         item = items["PM1:✱2·06"]
-        declarations = {candidate["declaration"]: candidate["id"] for candidate in items.values()}
+        # Removing Architecture legitimately left catalogued items undeclared.
+        declarations = {
+            candidate["declaration"]: candidate["id"]
+            for candidate in items.values() if candidate.get("declaration")
+        }
         actual = dependencies.extract_lean_dependencies(item, declarations, ROOT)
         normalized = dependencies.normalize(item, actual, declarations, ROOT)
         self.assertIn("PM1:✱1·11", normalized)
@@ -83,7 +87,11 @@ class DependencyAuditTests(unittest.TestCase):
         items = {item["id"]: item for item in dependencies.load_items(ROOT)}
         item = copy.deepcopy(items["PM1:✱2·01"])
         item["dependency_justifications"][0]["evidence"] = ""
-        declarations = {candidate["declaration"]: candidate["id"] for candidate in items.values()}
+        # Removing Architecture legitimately left catalogued items undeclared.
+        declarations = {
+            candidate["declaration"]: candidate["id"]
+            for candidate in items.values() if candidate.get("declaration")
+        }
         actual = dependencies.extract_lean_dependencies(item, declarations, ROOT)
         with self.assertRaises(dependencies.DependencyError):
             dependencies.normalize(item, actual, declarations, ROOT)
@@ -130,15 +138,52 @@ class DependencyAuditTests(unittest.TestCase):
         )
         self.assertEqual(
             ledger["direct_edges"],
+            # The maintainer's reducibility audit validated these 27 direct
+            # uses of star_12_1/star_12_11, replacing the former five-edge list.
             [
                 {"from": "PM1:✱12·1", "to": "PM1:REDUCIBILITY"},
                 {"from": "PM1:✱12·11", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱20·13", "to": "PM1:REDUCIBILITY"},
                 {"from": "PM1:✱21·112", "to": "PM1:REDUCIBILITY"},
                 {"from": "PM1:✱21·12", "to": "PM1:REDUCIBILITY"},
                 {"from": "PM1:✱21·13", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱22·33", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱22·34", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱22·35", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱23·33", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱23·34", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱23·35", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱33·101", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱33·102", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱33·103", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱33·1", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱34·1", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱35·1", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱35·101", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱35·102", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱35·103", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱40·1", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱40·11", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱41·1", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱41·11", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱50·1", "to": "PM1:REDUCIBILITY"},
+                {"from": "PM1:✱52·1", "to": "PM1:REDUCIBILITY"},
             ],
         )
-        self.assertEqual(ledger["inherited_edges"], [])
+        # The same audited decision records the exact ten downstream inherited
+        # dependencies instead of the former empty expectation.
+        self.assertEqual(ledger["inherited_edges"], [
+            {"from": "PM1:✱13·101", "to": "PM1:REDUCIBILITY"},
+            {"from": "PM1:✱20·15", "to": "PM1:REDUCIBILITY"},
+            {"from": "PM1:✱21·7", "to": "PM1:REDUCIBILITY"},
+            {"from": "PM1:✱21·701", "to": "PM1:REDUCIBILITY"},
+            {"from": "PM1:✱21·702", "to": "PM1:REDUCIBILITY"},
+            {"from": "PM1:✱21·703", "to": "PM1:REDUCIBILITY"},
+            {"from": "PM1:✱21·704", "to": "PM1:REDUCIBILITY"},
+            {"from": "PM1:✱21·705", "to": "PM1:REDUCIBILITY"},
+            {"from": "PM1:✱21·18", "to": "PM1:REDUCIBILITY"},
+            {"from": "PM1:✱34·5", "to": "PM1:REDUCIBILITY"},
+        ])
         self.assertNotIn("PM1:REDUCIBILITY", {node["id"] for node in graph["nodes"]})
 
     def test_assumption_closure_distinguishes_direct_and_inherited(self):

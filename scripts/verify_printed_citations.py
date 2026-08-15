@@ -185,10 +185,7 @@ def cited_propositions(item: dict, metalinguistic: set[str] | None = None) -> se
 def audit(statuses: set[str]) -> tuple[list[str], dict[str, int]]:
     items = catalogued(statuses)
     if not items:
-        raise SystemExit(
-            f"no catalogue item carries formal_status in {sorted(statuses)}; "
-            "nothing was audited"
-        )
+        return [], {"audited": 0, "no-citations-recorded": 0}
     terms = print_terms(list(items))
     metalinguistic = _metalinguistic_ids()
     problems: list[str] = []
@@ -207,6 +204,11 @@ def audit(statuses: set[str]) -> tuple[list[str], dict[str, int]]:
         cited = cited_propositions(item, metalinguistic)
 
         if not cited:
+            # Do not fail an individual item merely for having no numbered
+            # citation: this signal alone cannot distinguish incomplete metadata
+            # from primitive or genuinely citation-free printed items.  The count
+            # is nevertheless always reported, and main rejects the aggregate as
+            # vacuous when no citation-bearing proof remains to compare.
             stats["no-citations-recorded"] += 1
             continue
 
@@ -249,6 +251,16 @@ def _reachable_form(citation: str, used: set[str]) -> bool:
     return not any(f"✱{star}·{part}" in used for part in parts[1:])
 
 
+def _uncited_summary(no_citations: int, audited: int) -> str:
+    return (
+        f"{no_citations} of {audited} audited proofs have no checkable numbered "
+        "printed citations recorded and were not compared; such an item is "
+        "reported but does not fail by itself because this count alone cannot "
+        "distinguish incomplete metadata from primitive or citation-free printed "
+        "items"
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--status", action="append", default=None)
@@ -257,21 +269,51 @@ def main() -> int:
     statuses = set(arguments.status or ["kernel-checked", "awaiting-ci"])
 
     problems, stats = audit(statuses)
+    audited = stats.get("audited", 0)
+    follows_print = stats.get("follows-the-print", 0)
+    more_explicit = stats.get("more-explicit-than-print", 0)
+    no_citations = stats.get("no-citations-recorded", 0)
+    uncited_summary = _uncited_summary(no_citations, audited)
+
+    if audited == 0:
+        shown = problems if arguments.report_all else problems[:1]
+        for problem in shown:
+            print(f"  {problem}", file=sys.stderr)
+        print(
+            "\ncitation audit anomaly: 0 proofs were audited; this gate "
+            "attests nothing",
+            file=sys.stderr,
+        )
+        print(uncited_summary, file=sys.stderr)
+        return 1
+
     if problems:
         shown = problems if arguments.report_all else problems[:1]
         for problem in shown:
             print(f"  {problem}", file=sys.stderr)
         print(
-            f"\n{len(problems)} of {stats.get('audited', 0)} proofs do not "
+            f"\n{len(problems)} of {audited} proofs do not "
             "follow their printed demonstration: they prove the proposition by "
             "a route of their own instead of the one PM prints",
             file=sys.stderr,
         )
+        print(uncited_summary, file=sys.stderr)
         return 1
+
+    if no_citations == audited:
+        print(
+            f"citation audit anomaly: none of the {audited} audited proofs has "
+            "a checkable numbered printed citation; no printed demonstration "
+            "was compared",
+            file=sys.stderr,
+        )
+        print(uncited_summary, file=sys.stderr)
+        return 1
+
     print(
-        f"printed citations verified ({stats.get('faithful', 0)} proofs follow "
-        f"their printed demonstration; {stats.get('cited-but-unused', 0)} cite "
-        "more than they use)"
+        f"printed citations verified ({follows_print} of {audited} audited "
+        f"proofs follow their printed demonstration; {more_explicit} are more "
+        f"explicit than print; {uncited_summary})"
     )
     return 0
 

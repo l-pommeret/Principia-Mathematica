@@ -207,6 +207,21 @@ class DependencyError(ValueError):
     pass
 
 
+def auditable_declaration(item: dict) -> str | None:
+    """Return the item's Lean declaration, or exclude an unformalized item."""
+    declaration = item.get("declaration")
+    if declaration:
+        return declaration
+    if "formalization_level" in item:
+        raise DependencyError(
+            f"{item['id']}: formalization_level is present but declaration is missing"
+        )
+    # Removing Principia/Architecture legitimately left catalogued propositions
+    # without a Lean declaration.  They are not proved nodes, so dependency
+    # auditing must ignore them rather than count them as conforming.
+    return None
+
+
 def strip_lean_comments(source: str) -> str:
     """Remove nested Lean block comments and line comments from source text.
 
@@ -529,13 +544,16 @@ def extract_lean_dependencies(
     item: dict, declarations: dict[str, str], root: Path = ROOT,
     dependency_index: DependencyIndex | None = None,
 ) -> list[str]:
+    declaration = auditable_declaration(item)
+    if declaration is None:
+        return []
     if (item["kind"] in PRIMITIVE_DECLARATION_KINDS or
-            ".OrderedAssertion." in item["declaration"]):
+            ".OrderedAssertion." in declaration):
         # These are inductive constructors, hence have no declaration body
         # and no prior dependencies to extract.
         return []
     body = strip_lean_comments(
-        declaration_body(root / item["lean_path"], item["declaration"])
+        declaration_body(root / item["lean_path"], declaration)
     )
     # A proof written with PM's own abbreviated title cites the numbered
     # proposition that title names: `[Taut ∼p/p]` is a citation of ✱1·2, exactly
@@ -543,10 +561,10 @@ def extract_lean_dependencies(
     # extracted dependencies in the catalogue's vocabulary.
     for title, numbered in PRINTED_TITLES.items():
         body = body.replace(title, numbered)
-    for token, (path, declaration) in TRANSPARENT_DEPENDENCY_WRAPPERS.items():
+    for token, (path, wrapper_declaration) in TRANSPARENT_DEPENDENCY_WRAPPERS.items():
         if token in body:
             body += "\n" + strip_lean_comments(
-                declaration_body(root / path, declaration)
+                declaration_body(root / path, wrapper_declaration)
             )
     aliases = json.loads((root / "metadata/dependency_aliases.json").read_text(encoding="utf-8"))
     realizations = aliases["lean_realizations"]
@@ -582,7 +600,7 @@ def extract_lean_dependencies(
             # reviewed short-name escape hatch.
             if name not in dependency_index.realizations or name in declared_realizations:
                 found.add(name)
-    found.discard(item["declaration"])
+    found.discard(declaration)
     # Resolve shortened qualified projections/constructors only when their
     # final component identifies a unique reviewed candidate. Fully qualified
     # tokens are already handled above and must not spuriously select another
@@ -599,7 +617,7 @@ def extract_lean_dependencies(
         suffix_matches = dependency_index.by_suffix.get(token, ())
         if len(suffix_matches) == 1:
             match_name = next(iter(suffix_matches))
-            if match_name != item["declaration"]:
+            if match_name != declaration:
                 found.add(match_name)
         # A qualified spelling in a different namespace is not the indexed
         # theorem merely because its final component is equal.  In particular
@@ -702,12 +720,15 @@ def audit_item(
     dependency_index: DependencyIndex | None = None,
 ) -> tuple[list[dict], list[dict], list[dict]]:
     """Audit one kernel-checked declaration without masking sibling failures."""
+    declaration = auditable_declaration(item)
+    if declaration is None:
+        return [], [], []
     for field in ("printed_dependencies", "lean_dependencies", "normalized_dependencies"):
         if field not in item or not isinstance(item[field], list):
             raise DependencyError(f"{item['id']}: missing dependency field {field}")
-    body = (declaration_body(root / item["lean_path"], item["declaration"])
+    body = (declaration_body(root / item["lean_path"], declaration)
             if (assumption_usage[item["id"]]["effective"] and
-                ".OrderedAssertion." not in item["declaration"]) else "")
+                ".OrderedAssertion." not in declaration) else "")
     verified_parameters = verify_assumption_parameters(
         item, assumption_usage[item["id"]], assumptions, body
     )
@@ -736,10 +757,20 @@ def audit_item(
 
 def audit(root: Path = ROOT, *, report_all: bool = False) -> dict:
     items = load_items(root)
+    declared_items = []
+    declarations = {}
+    for item in items:
+        declaration = auditable_declaration(item)
+        if declaration is None:
+            continue
+        declared_items.append(item)
+        declarations[declaration] = item["id"]
     assumptions = load_assumptions(root)
     assumption_usage = assumption_closure(items, assumptions)
-    checked = [item for item in items if item.get("formal_status") == "kernel-checked"]
-    declarations = {item["declaration"]: item["id"] for item in items}
+    checked = [
+        item for item in declared_items
+        if item.get("formal_status") == "kernel-checked"
+    ]
     order = {item["id"]: pm_order(item["id"]) for item in items}
     aliases = json.loads((root / "metadata/dependency_aliases.json").read_text(encoding="utf-8"))
     dependency_index = DependencyIndex.build(declarations, aliases)

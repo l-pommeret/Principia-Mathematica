@@ -1,6 +1,14 @@
 #!/bin/zsh
 # Verrouille en lecture seule ce qui définit le standard de certification.
 #
+# IMPORTANT : la liste normative est PROTECTED_GLOBS dans
+# scripts/verify_gate_integrity.py et doit être importée, jamais recopiée ici.
+# Les deux listes autrefois écrites à la main avaient divergé : après un
+# verrouillage complet, quatre registres d'exemption, trois scripts servant de
+# gates dans les workflows et les tests restaient modifiables. En particulier,
+# le registre capable de neutraliser le gate ajouté contre les 969
+# certifications fallacieuses était protégé par le manifeste mais pas verrouillé.
+#
 # Trois protections se complètent, et aucune ne remplace les autres :
 #
 #   ce verrou            empêche la modification distraite, sur cette machine ;
@@ -21,29 +29,50 @@
 set -e
 cd "$(dirname "$0")/.."
 
-FILES=(
-  scripts/verify_*.py
-  scripts/pm_lean_index.py
-  scripts/promote_awaiting_ci.py
-  .github/workflows/*.yml
-  metadata/gate_integrity.json
-  lakefile.toml
+# Compléments historiques au standard de certification : gate-lock les
+# verrouillait déjà avant d'être dérivé de PROTECTED_GLOBS.
+EXTRA_GLOBS=(
+  '.github/workflows/*.yml'
+  'metadata/gate_integrity.json'
+  'lakefile.toml'
 )
+
+collect_files() {
+  python3 - "${EXTRA_GLOBS[@]}" <<'PY'
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path.cwd() / "scripts"))
+from verify_gate_integrity import PROTECTED_GLOBS, ROOT
+
+files = set()
+for pattern in (*PROTECTED_GLOBS, *sys.argv[1:]):
+    matches = sorted(path for path in ROOT.glob(pattern) if path.is_file())
+    if not matches:
+        print(f"attention : aucun fichier pour le motif {pattern}", file=sys.stderr)
+    files.update(matches)
+
+for path in sorted(files):
+    print(path.relative_to(ROOT))
+PY
+}
+
+FILES=(${(f)"$(collect_files)"})
 
 case "${1:-}" in
   --unlock)
-    chmod u+w ${~FILES} 2>/dev/null || true
-    print -- "déverrouillé : ${#${(f)"$(ls ${~FILES} 2>/dev/null)"}} fichiers."
+    chmod u+w "${FILES[@]}" 2>/dev/null || true
+    print -- "déverrouillé : ${#${(f)"$(ls "${FILES[@]}" 2>/dev/null)"}} fichiers."
     print -- "Pense à relancer tools/gate-lock, puis, si tu as modifié un gate :"
     print -- "  python3 scripts/verify_gate_integrity.py --update \\"
     print -- "      --authorised-by <nom> --reason <pourquoi>"
     ;;
   --status)
-    ls -l ${~FILES} 2>/dev/null | awk '{print $1, $NF}'
+    ls -l "${FILES[@]}" 2>/dev/null | awk '{print $1, $NF}'
     ;;
   *)
-    chmod a-w ${~FILES} 2>/dev/null || true
-    n=$(ls -l ${~FILES} 2>/dev/null | grep -c '^-r--r--r--')
+    chmod a-w "${FILES[@]}" 2>/dev/null || true
+    n=$(ls -l "${FILES[@]}" 2>/dev/null | grep -c '^-r--r--r--')
     print -- "verrouillés : $n fichiers."
     ;;
 esac

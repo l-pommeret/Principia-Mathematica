@@ -54,6 +54,13 @@ GATES = (
     # that no catalogue item references yet — which is precisely how
     # `Nat.max_self` carried `propext` into every ramified connective while the
     # catalogued-declaration audit stayed green.
+    # A proposition PM prints as an equivalence has two sides to prove.  Three
+    # theorems were written whose statement named one side twice, collapsing to
+    # `N ≡ N` — pure, in PM's notation, compiling, and false to the page.  Every
+    # other gate is blind to it: the axiom audit sees a pure proof, T11 sees PM's
+    # connectives, and T4 compares the printed string against the already
+    # collapsed AST it is handed.
+    ("two-sided-readings", ["verify_two_sided_readings.py", "--report-all"]),
     (
         "library-independence",
         ["verify_library_independence.py", "--tactics-only", "--report-all"],

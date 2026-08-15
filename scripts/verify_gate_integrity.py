@@ -13,9 +13,10 @@ other.  What it buys is precise and worth stating exactly:
 
 * A gate edited by accident — or by an agent that found it easier to change the
   rule than to satisfy it — fails the build immediately, naming the file.
-* A gate edited on purpose still passes, but only after its digest is updated in
-  ``metadata/gate_integrity.json``.  That update lands in the same commit as the
-  edit, so the diff says plainly: *this commit changed what counts as proof*.
+* A gate edited on purpose still passes, but only after the gate itself has been
+  committed and its digest is updated in ``metadata/gate_integrity.json`` by a
+  separate, expressly authorised commit.  The digest is computed from HEAD,
+  never from uncommitted bytes that could make the check approve itself.
 
 What it does not buy: this is tamper-evident, not tamper-proof.  Anyone who can
 edit a gate can also run ``--update``.  The protection is that they cannot do it
@@ -29,6 +30,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import subprocess
 import sys
 import textwrap
 from pathlib import Path
@@ -41,8 +43,22 @@ MANIFEST = ROOT / "metadata" / "gate_integrity.json"
 #: `pm_lean_index.py` free would pin the judge and release the evidence.
 PROTECTED_GLOBS = (
     "scripts/verify_*.py",
+    "scripts/derive_certification_registry.py",
     "scripts/pm_lean_index.py",
     "scripts/promote_awaiting_ci.py",
+    # Exemption registries, workflow success conditions, and gate tests extend
+    # the certification standard; they are normative inputs, not ordinary data.
+    "metadata/two_sided_exemptions.json",
+    "metadata/judgement_constructors.json",
+    "metadata/assumptions.json",
+    "metadata/dependency_aliases.json",
+    "scripts/sync_item_printed.py",
+    "scripts/report_lean_source_coverage.py",
+    "scripts/build_edition.py",
+    "docs/certification_registry.json",
+    "tests/*.py",
+    "tests/**/*.py",
+    "tests/**/*.lean",
 )
 
 #: This script is pinned like the rest — a check that exempts itself protects
@@ -59,8 +75,17 @@ def protected_files() -> list[Path]:
     return sorted(found)
 
 
+def _is_protected(name: str) -> bool:
+    path = Path(name)
+    return any(path.match(pattern) for pattern in PROTECTED_GLOBS)
+
+
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def digest_bytes(content: bytes) -> str:
+    return hashlib.sha256(content).hexdigest()
 
 
 def current() -> dict[str, str]:
@@ -69,11 +94,54 @@ def current() -> dict[str, str]:
     }
 
 
-def recorded() -> dict[str, str]:
-    if not MANIFEST.is_file():
-        return {}
-    payload = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    return payload.get("digests", {})
+def _git(*arguments: str, check: bool = True) -> subprocess.CompletedProcess[bytes]:
+    result = subprocess.run(
+        ["git", *arguments],
+        cwd=ROOT,
+        capture_output=True,
+        check=False,
+    )
+    if check and result.returncode:
+        detail = result.stderr.decode("utf-8", errors="replace").strip()
+        raise RuntimeError(f"git {' '.join(arguments)} failed: {detail}")
+    return result
+
+
+def _git_blob(revision: str, name: str) -> bytes | None:
+    result = _git("show", f"{revision}:{name}", check=False)
+    return result.stdout if result.returncode == 0 else None
+
+
+def committed_at(revision: str) -> dict[str, str]:
+    """Return protected digests from a commit, never the worktree."""
+    listing = _git(
+        "ls-tree", "-r", "-z", "--name-only", revision, "--", "scripts"
+    )
+    names = listing.stdout.decode("utf-8").rstrip("\0").split("\0")
+    return {
+        name: digest_bytes(blob)
+        for name in names
+        if name and _is_protected(name)
+        for blob in [_git_blob(revision, name)]
+        if blob is not None
+    }
+
+
+def head_current() -> dict[str, str]:
+    return committed_at("HEAD")
+
+
+def head_oid() -> str:
+    return _git("rev-parse", "HEAD").stdout.decode("ascii").strip()
+
+
+def _payload(content: bytes) -> dict[str, object]:
+    return json.loads(content.decode("utf-8"))
+
+
+def head_payload() -> dict[str, object]:
+    content = _git_blob("HEAD", str(MANIFEST.relative_to(ROOT)))
+    return _payload(content) if content is not None else {}
 
 
 def differences(now: dict[str, str], before: dict[str, str]) -> list[str]:
@@ -99,6 +167,197 @@ def differences(now: dict[str, str], before: dict[str, str]) -> list[str]:
                 "commit altered what counts as proof"
             )
     return sorted(problems, key=lambda line: line.startswith(SELF))
+
+
+def manifest_head_differences(
+    committed: dict[str, str], pinned: dict[str, str]
+) -> list[str]:
+    """Compare the proposed manifest with the only auditable source: HEAD."""
+    problems: list[str] = []
+    for name in sorted(set(pinned) - set(committed)):
+        problems.append(
+            f"{name}: le manifeste épingle un gate absent de HEAD. Un fichier "
+            "non commité n'est pas une base d'autorisation vérifiable ; commitez "
+            "d'abord le gate, puis ré-épinglez-le dans un commit séparé"
+        )
+    for name in sorted(set(committed) - set(pinned)):
+        problems.append(
+            f"{name}: ce gate existe dans HEAD mais n'est pas épinglé par le "
+            "manifeste. Lancez --update seulement après avoir commité le gate"
+        )
+    for name in sorted(set(committed) & set(pinned)):
+        if committed[name] != pinned[name]:
+            problems.append(
+                f"{name}: l'empreinte épinglée {pinned[name][:12]} ne correspond "
+                f"pas au contenu connu de HEAD {committed[name][:12]}. "
+                "L'autorisation doit viser un gate déjà commité"
+            )
+    return sorted(problems, key=lambda line: line.startswith(SELF))
+
+
+def manifest_changed_from_head() -> bool:
+    committed = _git_blob("HEAD", str(MANIFEST.relative_to(ROOT)))
+    if not MANIFEST.is_file():
+        return committed is not None
+    return committed != MANIFEST.read_bytes()
+
+
+def worktree_head_differences(
+    committed: dict[str, str], manifest_changed: bool
+) -> list[str]:
+    """Reject protected bytes that have not yet acquired a commit identity."""
+    worktree = current()
+    problems: list[str] = []
+    for name in sorted(set(worktree) - set(committed)):
+        suffix = (
+            " Le manifeste change lui aussi : ré-épingler ces octets dans le "
+            "même geste rendrait le contrôle vide (vacuous)."
+            if manifest_changed
+            else ""
+        )
+        problems.append(
+            f"{name}: gate présent dans le répertoire mais absent de HEAD ; il "
+            f"n'est donc pas encore autorisable.{suffix} Commitez d'abord le "
+            "gate, puis modifiez seulement le manifeste dans un commit séparé"
+        )
+    for name in sorted(set(committed) - set(worktree)):
+        problems.append(
+            f"{name}: gate suivi dans HEAD mais absent du répertoire de travail"
+        )
+    for name in sorted(set(committed) & set(worktree)):
+        if committed[name] != worktree[name]:
+            if manifest_changed:
+                problems.append(
+                    f"{name}: le gate et le manifeste diffèrent tous deux de "
+                    "HEAD. Ré-épingler le gate en même temps que sa modification "
+                    "rend le contrôle vide (vacuous) : l'empreinte ne ferait que "
+                    "confirmer les octets qu'on vient de lui donner. Commitez "
+                    "d'abord le gate, puis lancez --update et commitez seulement "
+                    "le manifeste"
+                )
+            else:
+                problems.append(
+                    f"{name}: le gate diffère de HEAD. Commitez cette modification "
+                    "avant toute ré-autorisation ; --update ne lit que HEAD"
+                )
+    return sorted(problems, key=lambda line: line.startswith(SELF))
+
+
+def committed_cochanges() -> list[str]:
+    """Find gates changed with the manifest by the current HEAD commit."""
+    revision = _git("rev-list", "--parents", "-n", "1", "HEAD")
+    commits = revision.stdout.decode("ascii").split()
+    if len(commits) < 2:  # The root commit establishes the initial trust base.
+        return []
+    parent = commits[1]
+    changed = _git(
+        "diff",
+        "--name-only",
+        "-z",
+        parent,
+        "HEAD",
+        "--",
+        str(MANIFEST.relative_to(ROOT)),
+        "scripts",
+    ).stdout.decode("utf-8").rstrip("\0").split("\0")
+    if str(MANIFEST.relative_to(ROOT)) not in changed:
+        return []
+    gates = sorted(name for name in changed if _is_protected(name))
+    return [
+        f"{name}: ce gate et metadata/gate_integrity.json ont changé dans le "
+        "même commit HEAD. Cette ré-autorisation est suspecte : ré-épingler en "
+        "même temps que la modification rend le contrôle vide (vacuous). Le "
+        "gate doit être commité d'abord, puis --update et le manifeste doivent "
+        "faire l'objet d'un commit séparé"
+        for name in gates
+    ]
+
+
+def authorisation_boundary_problems(
+    payload: dict[str, object], pinned: dict[str, str], manifest_changed: bool
+) -> list[str]:
+    """Verify the durable commit boundary recorded by the latest --update."""
+    history = payload.get("authorisations", [])
+    if not isinstance(history, list) or not history:
+        return [
+            "metadata/gate_integrity.json: aucune autorisation journalisée ne "
+            "permet de relier les empreintes à un snapshot Git"
+        ]
+    latest = history[-1]
+    authorised = latest.get("authorised_head") if isinstance(latest, dict) else None
+    if not isinstance(authorised, str) or not authorised:
+        return [
+            "metadata/gate_integrity.json: la dernière autorisation ne contient "
+            "pas authorised_head. Elle précède le protocole vérifiable contre "
+            "HEAD ; après avoir commité les gates, relancez --update dans un "
+            "commit séparé"
+        ]
+
+    resolved = _git("rev-parse", "--verify", f"{authorised}^{{commit}}", check=False)
+    if resolved.returncode:
+        return [
+            "metadata/gate_integrity.json: authorised_head ne désigne pas un "
+            f"commit disponible ({authorised})"
+        ]
+    authorised = resolved.stdout.decode("ascii").strip()
+    ancestor = _git("merge-base", "--is-ancestor", authorised, "HEAD", check=False)
+    if ancestor.returncode:
+        return [
+            "metadata/gate_integrity.json: authorised_head n'est pas un ancêtre "
+            "de HEAD ; l'autorisation n'est pas vérifiable dans cet historique"
+        ]
+
+    snapshot = committed_at(authorised)
+    problems: list[str] = []
+    for name in sorted(set(pinned) | set(snapshot)):
+        if name not in snapshot:
+            problems.append(
+                f"{name}: absent du snapshot autorisé {authorised[:12]}"
+            )
+        elif name not in pinned:
+            problems.append(
+                f"{name}: présent dans le snapshot autorisé mais absent du manifeste"
+            )
+        elif pinned[name] != snapshot[name]:
+            problems.append(
+                f"{name}: l'empreinte du manifeste ne correspond pas au snapshot "
+                f"autorisé {authorised[:12]}"
+            )
+
+    current_head = head_oid()
+    if authorised == current_head:
+        if not manifest_changed:
+            problems.append(
+                "metadata/gate_integrity.json: authorised_head est le commit qui "
+                "contient déjà le manifeste. Une autorisation valide pointe le "
+                "commit antérieur qui contient les gates, puis le manifeste est "
+                "commité séparément"
+            )
+        return problems
+
+    changed = _git(
+        "diff",
+        "--name-only",
+        "-z",
+        authorised,
+        "HEAD",
+        "--",
+        str(MANIFEST.relative_to(ROOT)),
+        "scripts",
+    ).stdout.decode("utf-8").rstrip("\0").split("\0")
+    manifest_name = str(MANIFEST.relative_to(ROOT))
+    if manifest_name not in changed:
+        problems.append(
+            "metadata/gate_integrity.json: aucun commit du manifeste ne suit "
+            "authorised_head ; la séparation gate puis autorisation est absente"
+        )
+    for name in sorted(path for path in changed if _is_protected(path)):
+        problems.append(
+            f"{name}: ce gate a changé après le snapshot autorisé "
+            f"{authorised[:12]} et dans l'intervalle qui contient le manifeste. "
+            "Gate et ré-épinglage ne sont donc pas séparés de façon vérifiable"
+        )
+    return problems
 
 
 #: ANSI escapes, used only when stderr is a terminal.  A gate failure that
@@ -132,7 +391,7 @@ def main() -> int:
         "--update",
         action="store_true",
         help=(
-            "re-pin every protected file to its current content. Refused unless "
+            "re-pin every protected file to its content in HEAD. Refused unless "
             "--authorised-by and --reason are both given: changing a gate changes "
             "what counts as a proof of Principia Mathematica, and that is the "
             "editor's decision, not a build step"
@@ -173,19 +432,54 @@ def main() -> int:
         )
         return 1
 
-    now = current()
+    try:
+        committed = head_current()
+    except RuntimeError as error:
+        print(f"cannot verify gate integrity against HEAD: {error}", file=sys.stderr)
+        return 1
+
     if arguments.update:
-        before = recorded()
-        changed = differences(now, before) if before else []
-        MANIFEST.parent.mkdir(parents=True, exist_ok=True)
-        history = []
-        if MANIFEST.is_file():
-            history = json.loads(MANIFEST.read_text(encoding="utf-8")).get(
-                "authorisations", []
+        update_problems = worktree_head_differences(
+            committed, manifest_changed=manifest_changed_from_head()
+        )
+        if manifest_changed_from_head():
+            update_problems.insert(
+                0,
+                "metadata/gate_integrity.json diffère déjà de HEAD. --update "
+                "refuse de prendre un manifeste de travail comme base : "
+                "conservez ou annulez d'abord ces changements explicitement",
             )
+        if update_problems:
+            _banner([
+                "REFUSÉ — HEAD N'EST PAS UNE BASE D'AUTORISATION PROPRE",
+                "",
+                "Ré-épingler un gate dans le même geste que sa modification",
+                "rend le contrôle vide (vacuous). Commitez d'abord le gate,",
+                "puis, depuis un worktree de gates propre, lancez --update et",
+                "commitez seulement metadata/gate_integrity.json.",
+            ])
+            shown = update_problems if arguments.report_all else update_problems[:10]
+            for problem in shown:
+                print(_colour(f"  {problem}", _RED), file=sys.stderr)
+            if len(update_problems) > len(shown):
+                print(
+                    _colour(
+                        f"  ... and {len(update_problems) - len(shown)} more", _RED
+                    ),
+                    file=sys.stderr,
+                )
+            return 1
+
+        before_payload = head_payload()
+        before = before_payload.get("digests", {})
+        changed = differences(committed, before) if before else []
+        MANIFEST.parent.mkdir(parents=True, exist_ok=True)
+        history = before_payload.get("authorisations", [])
+        assert isinstance(history, list)
         history.append(
             {
                 "authorised_by": arguments.authorised_by,
+                "authorised_head": head_oid(),
                 "reason": arguments.reason,
                 "scripts_changed": [line.split(":")[0] for line in changed],
             }
@@ -197,12 +491,12 @@ def main() -> int:
                         "SHA-256 of every script that defines the certification "
                         "standard. Changing a gate is legitimate; changing one "
                         "without updating this file is not, and the preflight "
-                        "refuses it. Update lands in the same commit as the edit "
-                        "so the diff shows that the standard itself moved. Every "
+                        "refuses it. A gate must be committed first; a separate "
+                        "authorised commit then re-pins its HEAD content. Every "
                         "re-pinning records who authorised it and why."
                     ),
                     "authorisations": history,
-                    "digests": now,
+                    "digests": committed,
                 },
                 indent=2,
                 sort_keys=True,
@@ -216,14 +510,17 @@ def main() -> int:
                 + str(arguments.authorised_by),
                 "",
                 f"raison : {arguments.reason}",
-                f"scripts re-épinglés : {len(changed) or len(now)}",
+                f"scripts re-épinglés : {len(changed) or len(committed)}",
             ],
             _YELLOW,
         )
-        print(f"pinned {len(now)} gate scripts in {MANIFEST.relative_to(ROOT)}")
+        print(
+            f"pinned {len(committed)} gate scripts in {MANIFEST.relative_to(ROOT)}"
+        )
         return 0
 
-    before = recorded()
+    before_payload = _payload(MANIFEST.read_bytes()) if MANIFEST.is_file() else {}
+    before = before_payload.get("digests", {})
     if not before:
         print(
             f"{MANIFEST.relative_to(ROOT)} is missing: the gates are unpinned. "
@@ -232,22 +529,33 @@ def main() -> int:
         )
         return 1
 
-    problems = differences(now, before)
+    problems = manifest_head_differences(committed, before)
+    problems.extend(
+        worktree_head_differences(
+            committed, manifest_changed=manifest_changed_from_head()
+        )
+    )
+    problems.extend(committed_cochanges())
+    problems.extend(
+        authorisation_boundary_problems(
+            before_payload, before, manifest_changed=manifest_changed_from_head()
+        )
+    )
     if problems:
         _banner([
-            "ALERTE — UN GATE DE CERTIFICATION A ÉTÉ MODIFIÉ",
+            "ALERTE — RÉ-AUTORISATION DE GATE NON VÉRIFIABLE",
             "",
-            f"{len(problems)} script(s) ne correspondent plus à leur empreinte.",
+            f"{len(problems)} anomalie(s) entre le manifeste, HEAD et le worktree.",
             "",
-            "Les gates décident de ce qui peut être appelé une dérivation",
-            "des Principia. Ce dépôt a déjà connu 969 items marqués",
-            "« certifiés » qui ne l'étaient pas : la règle ne se modifie",
-            "pas en passant.",
+            "Ré-épingler un gate dans le même commit que sa modification",
+            "rend le contrôle vide (vacuous) : la nouvelle empreinte ne",
+            "prouve rien d'autre que le contenu qui vient de la produire.",
             "",
-            "Si la modification est délibérée, elle exige l'autorisation",
-            "expresse de l'éditeur :",
+            "À faire : commitez d'abord le gate sans toucher au manifeste.",
+            "Puis, dans un commit séparé, faites autoriser le contenu de HEAD :",
             "  python3 scripts/verify_gate_integrity.py --update \\",
             "      --authorised-by <nom> --reason <pourquoi>",
+            "Et commitez seulement metadata/gate_integrity.json.",
         ])
         shown = problems if arguments.report_all else problems[:10]
         for problem in shown:
@@ -259,7 +567,10 @@ def main() -> int:
             )
         return 1
 
-    print(f"gate integrity verified ({len(now)} scripts match their pinned digests)")
+    print(
+        "gate integrity verified "
+        f"({len(committed)} HEAD scripts match their pinned digests)"
+    )
     return 0
 
 

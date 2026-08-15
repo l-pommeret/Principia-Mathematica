@@ -53,15 +53,18 @@ class ModernFormulaTests(unittest.TestCase):
         self.assertIn("star_1_1", text)
 
     def test_explicit_secondary_statement_is_used(self):
+        # Architecture was deleted after its certified definitions were moved
+        # into the ramified calculus; exercise the surviving secondary reading.
         text, separately_certified = modern_formula({
             "id": "PM1:✱11·25",
-            "lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
-            "declaration": "PM.Architecture.Star11Q279Kernel.star_11_25",
-            "statement_lean_path": "Principia/Architecture/Star11Q279Kernel.lean",
-            "statement_declaration": "PM.Architecture.Star11Q279Kernel.star_11_25_prop",
+            "lean_path": "Principia/Deduction/Star11Derived.lean",
+            "declaration": "PM.RamifiedSyntax.star_11_25",
+            "statement_lean_path": "Principia/Deduction/Star11Derived.lean",
+            "statement_declaration": "PM.RamifiedSyntax.star_11_25_left_unfold",
         })
         self.assertTrue(separately_certified)
-        self.assertIn("¬ ∃ x y", text)
+        self.assertIn("star_11_25_left_unfold", text)
+        self.assertNotIn("Derivation", text)
 
 
 if __name__ == "__main__":

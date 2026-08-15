@@ -178,7 +178,10 @@ def main() -> int:
             file=sys.stderr,
         )
         return 1
-    print(f"axiom audit passed ({len(results)} declarations, no axioms)")
+    print(
+        f"axiom audit passed for {len(results)} catalogued declarations "
+        "(no axioms); this is not a full-library audit"
+    )
     return 0
 
 
