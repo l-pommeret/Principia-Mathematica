@@ -1870,6 +1870,29 @@ theorem star_4_21
 
 #print axioms star_4_21
 
+/-- ✱4·37 with independent orders for `p`, `q`, and `r`. -/
+def star_4_37_formula
+    (negation : TernaryNegations signature)
+    (disjunction : TernaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.pOrder)
+    (q : Formula signature real [] negation.qOrder)
+    (r : Formula signature real [] negation.rOrder) :=
+  ternaryInterpret negation disjunction p q r
+    ((ternaryP ≡ₚ ternaryQ) ⊃ₚ
+      ((ternaryP ∨ₚ ternaryR) ≡ₚ (ternaryQ ∨ₚ ternaryR)))
+
+theorem star_4_37
+    (negation : TernaryNegations signature)
+    (disjunction : TernaryDisjunctions signature negation)
+    (p : Formula signature real [] negation.pOrder)
+    (q : Formula signature real [] negation.qOrder)
+    (r : Formula signature real [] negation.rOrder) :
+    ⊢ᵣ star_4_37_formula negation disjunction p q r := by
+  exact ternaryTransport negation disjunction p q r
+    (PM.FirstEdition.Volume1.Star4.star_4_37 ternaryP ternaryQ ternaryR)
+
+#print axioms star_4_37
+
 end MixedOrder
 
 end PM.RamifiedSyntax
