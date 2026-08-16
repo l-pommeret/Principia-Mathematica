@@ -108,8 +108,20 @@ def scope_transport_closed_left_reading
 
 `⊢ : (x).p ∨ φx .⊃ : p .∨. (x).φx`.
 
-The existing `star_10_12` has the same scoped AST on both sides and therefore
-does not inhabit this reading. -/
+CAUTION -- this reading is no longer missing, and the sentence that used to
+stand here ("the existing `star_10_12` has the same scoped AST on both sides
+and therefore does not inhabit this reading") is false. `star_10_12_reading`
+in `Star10Derived` now has `.always universal …` on the left and
+`star_9_04 …` on the right, two distinct trees, and `star_10_12` inhabits it
+unconditionally in four lines from ✱9·25 -- its printed citation.
+
+What remains true is narrower: `star_9_25` and `star_10_12` are stated at
+order 0, so a caller needing them at another order must have them generalised
+first.
+
+The stale sentence stopped an agent that read it and believed it. Nothing in
+this file is compiled: no module imports it, so no gate ever checks a claim
+made here. Read it as a note, never as evidence. -/
 def scope_transport_missing_internal_to_external
     (matrixUniversal : signature.Universal argument matrixOrder)
     (scopeUniversal : signature.Universal argument
