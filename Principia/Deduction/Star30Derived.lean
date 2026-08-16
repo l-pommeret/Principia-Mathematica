@@ -378,9 +378,10 @@ PM prints
 member `x = Rʻy` is the ✱14·01 scope of that description whose continuation is
 PM's identity `x = b` between the free `x` and the description candidate `b`.
 The right members are built below from their own printed forms.  The step
-joining them is ✱14·202, whose printed demonstration is `✱14·1` then `✱13·195`;
-`star_13_195` is still conditional on `star_13_195_hypothesis`, so ✱14·202 has
-no unconditional derivation here and no theorem `star_30_3` is declared. -/
+joining them is ✱14·202, whose printed demonstration is `✱14·1` then `✱13·195`.
+`star_13_195` is now unconditional -- ✱13 carries no pending hypothesis at all --
+so the debt has moved one link down: ✱14·202 itself is not declared in
+`Star14Derived`, and until it is, no theorem `star_30_3` is declared here. -/
 
 /-- The order ✱13·01 assigns to `x = b` at `sort`.  ✱14·01 forces the
 condition of a description over `sort` to carry exactly this order, so the
@@ -597,9 +598,10 @@ def star_30_3_reading
 and ✱14·01 the left member is `.neg` rooted — the ✱10·01 expansion of `(∃b)`
 — over `.always`, while the right member is `.always` rooted over
 `equivalence`; nothing unfolds one into the other, and the bridge is exactly
-✱13·195, which `Star13Derived` still leaves conditional on
-`star_13_195_hypothesis`.  This structure names the debt.  It has no
-inhabitant, and no numbered PM proposition is asserted here. -/
+✱13·195, which `Star13Derived` now proves unconditionally.  What this structure
+names is therefore no longer the ✱13·195 debt but the one below it: ✱14·202 is
+still undeclared.  It has no inhabitant, and no numbered PM proposition is
+asserted here. -/
 structure Star30DescriptionIdentityStep
     (vocabulary : Star30_3Vocabulary signature sort
       identityBaseOrder identityExcess)

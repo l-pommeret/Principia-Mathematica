@@ -23,8 +23,9 @@ and the ✱10·35 transport between the two is missing.  ✱32·1 and ✱32·101
 therefore stated with exactly that one premise carried through.
 
 ✱32·11, ✱32·111, ✱32·13, ✱32·131, ✱32·21 and ✱32·211 all cite ✱30·3, whose own
-printed step ✱14·202 goes through ✱13·195, still conditional on
-`star_13_195_hypothesis` (see the ✱30·3 section of `Star30Derived`).  ✱32·12,
+printed step ✱14·202 goes through ✱13·195 (see the ✱30·3 section of
+`Star30Derived`).  ✱13·195 is now proved unconditionally; ✱14·202 remains
+undeclared, and it is the whole of what blocks these six.  ✱32·12,
 ✱32·121, ✱32·22 and ✱32·221 then cite ✱14·21, for which `Star14Derived`
 declares no theorem at all: only the audited reading and the missing
 `UniversalImplicationToExistentialAntecedentTransport`.  ✱32·18 and ✱32·181

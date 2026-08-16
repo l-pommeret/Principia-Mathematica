@@ -25,8 +25,9 @@ is therefore stated here with that one premise carried through under the name
 ✱31·12 (`P̌ = CnvʻP`) and everything that rests on it — ✱31·13, ✱31·131,
 ✱31·132, ✱31·14, ✱31·15, ✱31·16, ✱31·17, ✱31·18 — additionally require the
 descriptive-function identity ✱30·3, which `Star30Derived` leaves underived:
-its printed step ✱14·202 goes through ✱13·195, still conditional on
-`star_13_195_hypothesis`.
+its printed step ✱14·202 goes through ✱13·195.  ✱13·195 is now proved
+unconditionally, so what blocks this cascade is ✱14·202 alone, which
+`Star14Derived` does not yet declare.
 -/
 
 /-- The matrix `yPx` printed at ✱31·02.  Under the ✱21·01 binders the head
