@@ -79,28 +79,38 @@ theorem star_10_122
 
 /-- Audited catalogue reading of ✱10·12. -/
 def star_10_12_reading
-    (universal : signature.Universal argument 0)
-    (matrixDisjunction : signature.Disjunction 0)
-    (negation : signature.Negation (bindOrder 0 argument))
-    (disjunction : signature.Disjunction (bindOrder 0 argument))
-    (p : Formula signature real [] 0)
-    (phi : Formula signature real [argument] 0) :
+    {fixedOrder matrixOrder : Nat}
+    (universal : signature.Universal argument
+      (max fixedOrder matrixOrder))
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (negation : signature.Negation
+      (bindOrder (max fixedOrder matrixOrder) argument))
+    (disjunction : signature.Disjunction
+      (bindOrder (max fixedOrder matrixOrder) argument))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [argument] matrixOrder) :
     ClaimReading signature real where
   printed := "⊢ : .(x).p ∨ φx .⊃ : p .∨ .(x).φx  [✱9·25]"
   parsed := .assertion (implication negation disjunction
-    (.always universal (sameDisjunction matrixDisjunction
+    (.always universal (.disj matrixDisjunction
       (p.rename (fun v => .succ v)) phi))
     (star_9_04 universal matrixDisjunction p phi))
 
 /-- ✱10·12, exactly the instance of ✱9·25 cited in print.
 `demonstration_provenance: follows-printed`. -/
 theorem star_10_12
-    (universal : signature.Universal argument 0)
-    (matrixDisjunction : signature.Disjunction 0)
-    (negation : signature.Negation (bindOrder 0 argument))
-    (disjunction : signature.Disjunction (bindOrder 0 argument))
-    (p : Formula signature real [] 0)
-    (phi : Formula signature real [argument] 0) :
+    {fixedOrder matrixOrder : Nat}
+    (universal : signature.Universal argument
+      (max fixedOrder matrixOrder))
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (negation : signature.Negation
+      (bindOrder (max fixedOrder matrixOrder) argument))
+    (disjunction : signature.Disjunction
+      (bindOrder (max fixedOrder matrixOrder) argument))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [argument] matrixOrder) :
     Derivation
       (star_10_12_reading universal matrixDisjunction negation disjunction p phi).parsed := by
   have line1 := star_9_25 universal matrixDisjunction negation disjunction p phi

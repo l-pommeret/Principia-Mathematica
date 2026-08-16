@@ -482,10 +482,11 @@ theorem star_9_3 (universal : signature.Universal argument 0)
     Derivation (star_9_3_reading universal negation disjunction phi).parsed := by
   exact lift_star_1_2 universal negation disjunction phi
 
-def star_9_23_reading (universal : signature.Universal argument 0)
-    (negation : signature.Negation (bindOrder 0 argument))
-    (disjunction : signature.Disjunction (bindOrder 0 argument))
-    (phi : Formula signature real [argument] 0) :
+def star_9_23_reading {matrixOrder : Nat}
+    (universal : signature.Universal argument matrixOrder)
+    (negation : signature.Negation (bindOrder matrixOrder argument))
+    (disjunction : signature.Disjunction (bindOrder matrixOrder argument))
+    (phi : Formula signature real [argument] matrixOrder) :
     Star9Reading signature real where
   printed := PM.pmPrinted "⊢:(x).φx.⊃.(x).φx       [Id.✱9·13·21]"
   parsed := .assertion (implication negation disjunction
@@ -494,10 +495,11 @@ def star_9_23_reading (universal : signature.Universal argument 0)
 /-- ✱9·23.  The printed final `Id` is applied to the universally quantified
 proposition; the preceding citations explain its formation.
 `demonstration_provenance: follows-printed`. -/
-theorem star_9_23 (universal : signature.Universal argument 0)
-    (negation : signature.Negation (bindOrder 0 argument))
-    (disjunction : signature.Disjunction (bindOrder 0 argument))
-    (phi : Formula signature real [argument] 0) :
+theorem star_9_23 {matrixOrder : Nat}
+    (universal : signature.Universal argument matrixOrder)
+    (negation : signature.Negation (bindOrder matrixOrder argument))
+    (disjunction : signature.Disjunction (bindOrder matrixOrder argument))
+    (phi : Formula signature real [argument] matrixOrder) :
     Derivation (star_9_23_reading universal negation disjunction phi).parsed := by
   have line1 := star_2_08 negation disjunction (.always universal phi)
   exact line1
@@ -522,35 +524,45 @@ theorem star_9_24 (existential : ExistentialVocabulary signature argument 0)
   have line1 := star_2_08 negation disjunction (.sometimes existential phi)
   exact line1
 
-def star_9_25_reading (universal : signature.Universal argument 0)
-    (matrixDisjunction : signature.Disjunction 0)
-    (negation : signature.Negation (bindOrder 0 argument))
-    (disjunction : signature.Disjunction (bindOrder 0 argument))
-    (p : Formula signature real [] 0)
-    (phi : Formula signature real [argument] 0) :
+def star_9_25_reading {fixedOrder matrixOrder : Nat}
+    (universal : signature.Universal argument
+      (max fixedOrder matrixOrder))
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (negation : signature.Negation
+      (bindOrder (max fixedOrder matrixOrder) argument))
+    (disjunction : signature.Disjunction
+      (bindOrder (max fixedOrder matrixOrder) argument))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [argument] matrixOrder) :
     Star9Reading signature real where
   printed := PM.pmPrinted "⊢:.(x).p∨φx.⊃:p.∨.(x).φx   [Id.✱9·23.(✱9·04)]"
   parsed := .assertion (implication negation disjunction
-    (.always universal (sameDisjunction matrixDisjunction
+    (.always universal (.disj matrixDisjunction
       (p.rename (fun v => .succ v)) phi))
     (star_9_04 universal matrixDisjunction p phi))
 
 /-- ✱9·25.  Both displayed sides unfold by ✱9·04 to the same scoped
 formula, so PM's cited `Id` is literally the required instance.
 `demonstration_provenance: follows-printed`. -/
-theorem star_9_25 (universal : signature.Universal argument 0)
-    (matrixDisjunction : signature.Disjunction 0)
-    (negation : signature.Negation (bindOrder 0 argument))
-    (disjunction : signature.Disjunction (bindOrder 0 argument))
-    (p : Formula signature real [] 0)
-    (phi : Formula signature real [argument] 0) :
+theorem star_9_25 {fixedOrder matrixOrder : Nat}
+    (universal : signature.Universal argument
+      (max fixedOrder matrixOrder))
+    (matrixDisjunction : signature.Disjunction
+      (max fixedOrder matrixOrder))
+    (negation : signature.Negation
+      (bindOrder (max fixedOrder matrixOrder) argument))
+    (disjunction : signature.Disjunction
+      (bindOrder (max fixedOrder matrixOrder) argument))
+    (p : Formula signature real [] fixedOrder)
+    (phi : Formula signature real [argument] matrixOrder) :
     Derivation (star_9_25_reading universal matrixDisjunction negation disjunction p phi).parsed := by
   have line1 := star_9_23 universal negation disjunction
-    (sameDisjunction matrixDisjunction
+    (.disj matrixDisjunction
       (p.rename (fun v => .succ v)) phi)
   have line2 :
       Derivation (.assertion (implication negation disjunction
-        (.always universal (sameDisjunction matrixDisjunction
+        (.always universal (.disj matrixDisjunction
           (p.rename (fun v => .succ v)) phi))
         (star_9_04 universal matrixDisjunction p phi))) := by
     rw [star_9_04_unfold]
