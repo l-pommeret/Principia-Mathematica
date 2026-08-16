@@ -2446,7 +2446,8 @@ private theorem star11_liftStableUniversalEquivalence
     exact line1
   have line3 := star11_stableGeneralize universal
     (equivalence negation disjunction phi psi) line2
-  have line4 := star_10_271 universal negation disjunction phi psi
+  have line4 := star_10_271 (baseOrder := 0) universal negation disjunction
+    phi psi
   unfold star_10_271_reading star_10_271_left star_10_271_right at line4
   exact detach negation disjunction _ _ line3 line4
 
@@ -2940,7 +2941,8 @@ theorem star_11_44
       exact line1
     have line2b := star11_stableGeneralize outerUniversal
       (equivalence negation disjunction innerLeft innerRight) line2a
-    have line2c := star_10_271 outerUniversal negation disjunction
+    have line2c := star_10_271 (baseOrder := 0) outerUniversal negation
+      disjunction
       innerLeft innerRight
     unfold star_10_271_reading star_10_271_left star_10_271_right at line2c
     have line2d := detach negation disjunction _ _ line2b line2c

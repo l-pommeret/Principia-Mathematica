@@ -1883,9 +1883,9 @@ private theorem Formula.star_9_21_slotX_rename
   | succ v => exact nomatch v
 
 private theorem star_9_21_fixed_rename
-    (negation : signature.Negation 0)
-    (disjunction : signature.Disjunction 0)
-    (phi psi : Formula signature real [argument] 0) :
+    (negation : signature.Negation matrixOrder)
+    (disjunction : signature.Disjunction matrixOrder)
+    (phi psi : Formula signature real [argument] matrixOrder) :
     (Formula.neg negation (implication negation disjunction
       (phi.rename star_9_21_slotX) (psi.rename star_9_21_slotX))).rename
         (fun v => .succ v) =
@@ -2250,41 +2250,44 @@ theorem star_9_22
   }
   exact printedDemonstration.line4
 
-/-- The Df reading of printed line (5).  The innermost occurrence of
-✱9·06 is kept visible rather than replaced by its scoped normal form. -/
+/-- The Df reading of printed line (5).  The innermost ✱9·06 matrix is
+normalized at its common assigned order by `sameDisjunction`. -/
 private def star_9_21_line5Formula
-    (existential0 : ExistentialVocabulary signature argument 0)
+    (existential0 : ExistentialVocabulary signature argument matrixOrder)
     (existential1 : ExistentialVocabulary signature argument
-      (bindOrder 0 argument))
+      (bindOrder matrixOrder argument))
     (universal2 : signature.Universal argument
-      (bindOrder (bindOrder 0 argument) argument))
-    (negation0 : signature.Negation 0)
-    (disjunction0 : signature.Disjunction 0)
-    (phi psi : Formula signature real [argument] 0) :
+      (bindOrder (bindOrder matrixOrder argument) argument))
+    (negation0 : signature.Negation matrixOrder)
+    (disjunction0 : signature.Disjunction matrixOrder)
+    (phi psi : Formula signature real [argument] matrixOrder) :
     Formula signature real []
-      (bindOrder (bindOrder (bindOrder 0 argument) argument) argument) :=
-  .always universal2 (.sometimes existential1
-    (star_9_06 existential0 disjunction0
-      (.neg negation0 (implication negation0 disjunction0
-        (phi.rename star_9_21_slotX) (psi.rename star_9_21_slotX)))
+      (bindOrder
+        (bindOrder (bindOrder matrixOrder argument) argument) argument) :=
+  .always universal2 (.sometimes existential1 (.sometimes existential0
+    (sameDisjunction disjunction0
+      ((Formula.neg negation0 (implication negation0 disjunction0
+        (phi.rename star_9_21_slotX) (psi.rename star_9_21_slotX))).rename
+          (fun v => .succ v))
       (implication negation0 disjunction0
-        (phi.rename star_9_22_slotY) (psi.rename star_9_22_slotZ))))
+        (phi.rename star_9_22_slotY) (psi.rename star_9_22_slotZ)))))
 
 /-- The constructor-level reading of printed line (6), after ✱1·01 and the
 quantified-disjunction scope convention have been eliminated. -/
 private def star_9_21_line6Formula
-    (existential0 : ExistentialVocabulary signature argument 0)
+    (existential0 : ExistentialVocabulary signature argument matrixOrder)
     (existential1 : ExistentialVocabulary signature argument
-      (bindOrder 0 argument))
+      (bindOrder matrixOrder argument))
     (universal2 : signature.Universal argument
-      (bindOrder (bindOrder 0 argument) argument))
-    (negation0 : signature.Negation 0)
-    (disjunction0 : signature.Disjunction 0)
-    (phi psi : Formula signature real [argument] 0) :
+      (bindOrder (bindOrder matrixOrder argument) argument))
+    (negation0 : signature.Negation matrixOrder)
+    (disjunction0 : signature.Disjunction matrixOrder)
+    (phi psi : Formula signature real [argument] matrixOrder) :
     Formula signature real []
-      (bindOrder (bindOrder (bindOrder 0 argument) argument) argument) :=
+      (bindOrder
+        (bindOrder (bindOrder matrixOrder argument) argument) argument) :=
   .always universal2 (.sometimes existential1 (.sometimes existential0
-    (.disj disjunction0
+    (sameDisjunction disjunction0
       ((Formula.neg negation0 (implication negation0 disjunction0
         (phi.rename star_9_21_slotX) (psi.rename star_9_21_slotX))).rename
           (fun v => .succ v))
@@ -2295,32 +2298,35 @@ private def star_9_21_line6Formula
 Its three binders are the expansions of the three independently printed
 quantifiers; no two members of an implication are identified by construction. -/
 def star_9_21_formula
-    (existential0 : ExistentialVocabulary signature argument 0)
+    (existential0 : ExistentialVocabulary signature argument matrixOrder)
     (existential1 : ExistentialVocabulary signature argument
-      (bindOrder 0 argument))
+      (bindOrder matrixOrder argument))
     (universal2 : signature.Universal argument
-      (bindOrder (bindOrder 0 argument) argument))
-    (negation0 : signature.Negation 0)
-    (disjunction0 : signature.Disjunction 0)
-    (phi psi : Formula signature real [argument] 0) :
+      (bindOrder (bindOrder matrixOrder argument) argument))
+    (negation0 : signature.Negation matrixOrder)
+    (disjunction0 : signature.Disjunction matrixOrder)
+    (phi psi : Formula signature real [argument] matrixOrder) :
     Formula signature real []
-      (bindOrder (bindOrder (bindOrder 0 argument) argument) argument) :=
-  .always universal2 (.sometimes existential1
-    (star_9_06 existential0 disjunction0
-      (.neg negation0 (implication negation0 disjunction0
-        (phi.rename star_9_21_slotX) (psi.rename star_9_21_slotX)))
-      (.disj disjunction0 (.neg negation0 (phi.rename star_9_22_slotY))
-        (psi.rename star_9_22_slotZ))))
+      (bindOrder
+        (bindOrder (bindOrder matrixOrder argument) argument) argument) :=
+  .always universal2 (.sometimes existential1 (.sometimes existential0
+    (sameDisjunction disjunction0
+      ((Formula.neg negation0 (implication negation0 disjunction0
+        (phi.rename star_9_21_slotX) (psi.rename star_9_21_slotX))).rename
+          (fun v => .succ v))
+      (sameDisjunction disjunction0
+        (.neg negation0 (phi.rename star_9_22_slotY))
+        (psi.rename star_9_22_slotZ)))))
 
 def star_9_21_reading
-    (existential0 : ExistentialVocabulary signature argument 0)
+    (existential0 : ExistentialVocabulary signature argument matrixOrder)
     (existential1 : ExistentialVocabulary signature argument
-      (bindOrder 0 argument))
+      (bindOrder matrixOrder argument))
     (universal2 : signature.Universal argument
-      (bindOrder (bindOrder 0 argument) argument))
-    (negation0 : signature.Negation 0)
-    (disjunction0 : signature.Disjunction 0)
-    (phi psi : Formula signature real [argument] 0) :
+      (bindOrder (bindOrder matrixOrder argument) argument))
+    (negation0 : signature.Negation matrixOrder)
+    (disjunction0 : signature.Disjunction matrixOrder)
+    (phi psi : Formula signature real [argument] matrixOrder) :
     Star9Reading signature real where
   printed := PM.pmPrinted "⊢:.(x).φx⊃ψx.⊃:.(x).φx.⊃.(x).ψx"
   parsed := .assertion (star_9_21_formula existential0 existential1
@@ -2332,20 +2338,21 @@ introductions with detachment, and real-to-apparent generalization.  Lines
 5--7 are the printed definitional rewrites ✱9·06, ✱1·01, and ✱9·08.
 `demonstration_provenance: follows-printed`. -/
 theorem star_9_21
-    (existential0 : ExistentialVocabulary signature argument 0)
+    {matrixOrder : Nat}
+    (existential0 : ExistentialVocabulary signature argument matrixOrder)
     (existential1 : ExistentialVocabulary signature argument
-      (bindOrder 0 argument))
+      (bindOrder matrixOrder argument))
     (universal2 : signature.Universal argument
-      (bindOrder (bindOrder 0 argument) argument))
-    (negation0 : signature.Negation 0)
-    (disjunction0 : signature.Disjunction 0)
+      (bindOrder (bindOrder matrixOrder argument) argument))
+    (negation0 : signature.Negation matrixOrder)
+    (disjunction0 : signature.Disjunction matrixOrder)
     (disjunction01 : signature.Disjunction
-      (max 0 (bindOrder 0 argument)))
-    (negation1 : signature.Negation (bindOrder 0 argument))
+      (max matrixOrder (bindOrder matrixOrder argument)))
+    (negation1 : signature.Negation (bindOrder matrixOrder argument))
     (disjunction12 : signature.Disjunction
-      (max (bindOrder 0 argument)
-        (bindOrder (bindOrder 0 argument) argument)))
-    (phi psi : Formula signature real [argument] 0) :
+      (max (bindOrder matrixOrder argument)
+        (bindOrder (bindOrder matrixOrder argument) argument)))
+    (phi psi : Formula signature real [argument] matrixOrder) :
     Derivation (star_9_21_reading existential0 existential1 universal2
       negation0 disjunction0 phi psi).parsed := by
   let z : Term signature (argument :: real) [] argument := .real .zero
@@ -2374,20 +2381,17 @@ theorem star_9_21
   have line5 : Derivation (.assertion (star_9_21_line5Formula existential0
       existential1 universal2 negation0 disjunction0 phi psi)) := by
     unfold star_9_21_line5Formula
-    rw [star_9_06_unfold]
     rw [star_9_21_fixed_rename]
     unfold star_9_22_body star_9_22_matrix at line4
     exact line4
   have line6 : Derivation (.assertion (star_9_21_line6Formula existential0
       existential1 universal2 negation0 disjunction0 phi psi)) := by
     unfold star_9_21_line5Formula at line5
-    rw [star_9_06_unfold] at line5
     unfold star_9_21_line6Formula
     exact line5
   have line7 : Derivation (.assertion (star_9_21_formula existential0
       existential1 universal2 negation0 disjunction0 phi psi)) := by
     unfold star_9_21_formula
-    rw [star_9_06_unfold]
     unfold star_9_21_line6Formula at line6
     unfold implication mixedImplication at line6 ⊢
     exact line6
