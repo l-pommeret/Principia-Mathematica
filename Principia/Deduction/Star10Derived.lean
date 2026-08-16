@@ -3504,18 +3504,19 @@ independently scoped ✱10·28 consequence obtained from one of the two printed
 projections.  This is the form reached after the printed existential
 definitions and transpositions are eliminated. -/
 def star_10_5_formula
-    (existential0 : ExistentialVocabulary signature argument 0)
+    {matrixOrder : Nat}
+    (existential0 : ExistentialVocabulary signature argument matrixOrder)
     (existential1 : ExistentialVocabulary signature argument
-      (bindOrder 0 argument))
-    (negation0 : signature.Negation 0)
-    (disjunction0 : signature.Disjunction 0)
+      (bindOrder matrixOrder argument))
+    (negation0 : signature.Negation matrixOrder)
+    (disjunction0 : signature.Disjunction matrixOrder)
     (resultNegation : signature.Negation
-      (bindOrder (bindOrder 0 argument) argument))
+      (bindOrder (bindOrder matrixOrder argument) argument))
     (resultDisjunction : signature.Disjunction
-      (bindOrder (bindOrder 0 argument) argument))
-    (phi psi : Formula signature real [argument] 0) :
+      (bindOrder (bindOrder matrixOrder argument) argument))
+    (phi psi : Formula signature real [argument] matrixOrder) :
     Formula signature real []
-      (bindOrder (bindOrder 0 argument) argument) :=
+      (bindOrder (bindOrder matrixOrder argument) argument) :=
   let product := conjunction negation0 disjunction0 phi psi
   conjunction resultNegation resultDisjunction
     (star_9_22_consequent existential0 existential1
@@ -3525,16 +3526,17 @@ def star_10_5_formula
 
 /-- Audited catalogue reading of ✱10·5. -/
 def star_10_5_reading
-    (existential0 : ExistentialVocabulary signature argument 0)
+    {matrixOrder : Nat}
+    (existential0 : ExistentialVocabulary signature argument matrixOrder)
     (existential1 : ExistentialVocabulary signature argument
-      (bindOrder 0 argument))
-    (negation0 : signature.Negation 0)
-    (disjunction0 : signature.Disjunction 0)
+      (bindOrder matrixOrder argument))
+    (negation0 : signature.Negation matrixOrder)
+    (disjunction0 : signature.Disjunction matrixOrder)
     (resultNegation : signature.Negation
-      (bindOrder (bindOrder 0 argument) argument))
+      (bindOrder (bindOrder matrixOrder argument) argument))
     (resultDisjunction : signature.Disjunction
-      (bindOrder (bindOrder 0 argument) argument))
-    (phi psi : Formula signature real [argument] 0) :
+      (bindOrder (bindOrder matrixOrder argument) argument))
+    (phi psi : Formula signature real [argument] matrixOrder) :
     ClaimReading signature real where
   printed := "⊢ : .(∃x).φx .ψx .⊃ : (∃x).φx : (∃x).ψx"
   parsed := .assertion (star_10_5_formula existential0 existential1
@@ -3546,24 +3548,25 @@ performs the printed `Comp`; the target is already in the constructor-level
 normal form exposed by the existential definitions.
 `demonstration_provenance: follows-printed`. -/
 theorem star_10_5
-    (existential0 : ExistentialVocabulary signature argument 0)
+    {matrixOrder : Nat}
+    (existential0 : ExistentialVocabulary signature argument matrixOrder)
     (existential1 : ExistentialVocabulary signature argument
-      (bindOrder 0 argument))
+      (bindOrder matrixOrder argument))
     (universal2 : signature.Universal argument
-      (bindOrder (bindOrder 0 argument) argument))
-    (negation0 : signature.Negation 0)
-    (disjunction0 : signature.Disjunction 0)
+      (bindOrder (bindOrder matrixOrder argument) argument))
+    (negation0 : signature.Negation matrixOrder)
+    (disjunction0 : signature.Disjunction matrixOrder)
     (disjunction01 : signature.Disjunction
-      (max 0 (bindOrder 0 argument)))
-    (negation1 : signature.Negation (bindOrder 0 argument))
+      (max matrixOrder (bindOrder matrixOrder argument)))
+    (negation1 : signature.Negation (bindOrder matrixOrder argument))
     (disjunction12 : signature.Disjunction
-      (max (bindOrder 0 argument)
-        (bindOrder (bindOrder 0 argument) argument)))
+      (max (bindOrder matrixOrder argument)
+        (bindOrder (bindOrder matrixOrder argument) argument)))
     (resultNegation : signature.Negation
-      (bindOrder (bindOrder 0 argument) argument))
+      (bindOrder (bindOrder matrixOrder argument) argument))
     (resultDisjunction : signature.Disjunction
-      (bindOrder (bindOrder 0 argument) argument))
-    (phi psi : Formula signature real [argument] 0) :
+      (bindOrder (bindOrder matrixOrder argument) argument))
+    (phi psi : Formula signature real [argument] matrixOrder) :
     Derivation (star_10_5_reading existential0 existential1 negation0
       disjunction0 resultNegation resultDisjunction phi psi).parsed := by
   let z : Term signature (argument :: real) [] argument := .real .zero
