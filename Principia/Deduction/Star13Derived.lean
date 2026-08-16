@@ -2938,7 +2938,7 @@ private theorem star13_directTransitivity
     unfold identityXZ star_13_01 scopeBody
     apply ImplicationDisjunction.star_9_04 vocabulary.universal scopeUniversal
     exact ImplicationDisjunction.star_1_01 identityBaseDisjunction
-      ((.neg identityNegation source).rename (fun v => .succ v))
+      ((Formula.neg identityNegation source).rename (fun v => .succ v))
       (implication vocabulary.negation vocabulary.disjunction phiX phiZ)
   have line28 := star13_canonicalizeSameOrderImplication identityNegation
     identityDisjunction scopeNegation scopeConsequenceDisjunction
@@ -3245,11 +3245,11 @@ theorem star_13_18
 
 /-- Audited scope reading of ✱13·181. -/
 def star_13_181_reading
-    (vocabulary : IdentityVocabulary signature sort order excess)
+    (vocabulary : IdentityVocabulary signature sort order 0)
     (negation : signature.Negation
-      (bindOrder order (.function [sort] order excess)))
+      (bindOrder order (.function [sort] order 0)))
     (disjunction : signature.Disjunction
-      (bindOrder order (.function [sort] order excess)))
+      (bindOrder order (.function [sort] order 0)))
     (x y z : Term signature real [] sort) : ClaimReading signature real where
   printed := "⊢ : x = y . y ≠ z .⊃ . x ≠ z"
   parsed := .assertion (implication negation disjunction
@@ -3258,21 +3258,118 @@ def star_13_181_reading
       (star_13_02 vocabulary negation y z))
     (star_13_02 vocabulary negation x z))
 
-/-- ✱13·181 remains explicitly asserted.
-`demonstration_provenance: editorial-reconstruction`. -/
+/-- ✱13·181, by the printed `✱13·171 . ✱4·14` citation.
+`assumptions: PM1:REDUCIBILITY`.
+`demonstration_provenance: follows-printed`. -/
 theorem star_13_181
-    (vocabulary : IdentityVocabulary signature sort order excess)
-    (negation : signature.Negation
-      (bindOrder order (.function [sort] order excess)))
-    (disjunction : signature.Disjunction
-      (bindOrder order (.function [sort] order excess)))
-    (x y z : Term signature real [] sort)
-    (star_13_181_hypothesis : Derivation
-      (star_13_181_reading vocabulary negation disjunction x y z).parsed) :
+    (vocabulary : IdentityVocabulary signature sort order 0)
+    (reducibilityExistential : ExistentialVocabulary signature
+      (.function [sort] order 0) (bindOrder order sort))
+    (argumentUniversal : signature.Universal sort order)
+    (identityNegation : signature.Negation
+      (bindOrder order (.function [sort] order 0)))
+    (identityDisjunction : signature.Disjunction
+      (bindOrder order (.function [sort] order 0)))
+    (identityBaseDisjunction : signature.Disjunction
+      (max (bindOrder order (.function [sort] order 0)) order))
+    (reducibilityNegation : signature.Negation (bindOrder order sort))
+    (reducibilityIdentityNegation : signature.Negation
+      (max (bindOrder order sort)
+        (bindOrder order (.function [sort] order 0))))
+    (reducibilityBaseNegation : signature.Negation
+      (max (bindOrder order sort) order))
+    (identityBaseNegation : signature.Negation
+      (max (bindOrder order (.function [sort] order 0)) order))
+    (resultNegation : signature.Negation
+      (max (bindOrder order sort)
+        (max (bindOrder order (.function [sort] order 0)) order)))
+    (reducibilityDisjunction : signature.Disjunction
+      (bindOrder order sort))
+    (reducibilityIdentityDisjunction : signature.Disjunction
+      (max (bindOrder order sort)
+        (bindOrder order (.function [sort] order 0))))
+    (reducibilityBaseDisjunction : signature.Disjunction
+      (max (bindOrder order sort) order))
+    (resultDisjunction : signature.Disjunction
+      (max (bindOrder order sort)
+        (max (bindOrder order (.function [sort] order 0)) order)))
+    (reducibilityScopeUniversal : signature.Universal
+      (.function [sort] order 0)
+      (max (bindOrder order sort)
+        (max (bindOrder order (.function [sort] order 0)) order)))
+    (reducibilityScopeNegation : signature.Negation
+      (bindOrder
+        (max (bindOrder order sort)
+          (max (bindOrder order (.function [sort] order 0)) order))
+        (.function [sort] order 0)))
+    (reducibilityScopeDisjunction : signature.Disjunction
+      (bindOrder
+        (max (bindOrder order sort)
+          (max (bindOrder order (.function [sort] order 0)) order))
+        (.function [sort] order 0)))
+    (existentialTargetDisjunction : signature.Disjunction
+      (max
+        (bindOrder (bindOrder order sort) (.function [sort] order 0))
+        (max (bindOrder order (.function [sort] order 0)) order)))
+    (equivalenceScopeUniversal : signature.Universal
+      (.function [sort] order 0)
+      (max (bindOrder order (.function [sort] order 0)) order))
+    (symmetryScopeUniversal : signature.Universal
+      (.function [sort] order 0)
+      (bindOrder order (.function [sort] order 0)))
+    (scopedNegation : signature.Negation
+      (bindOrder
+        (max (bindOrder order (.function [sort] order 0)) order)
+        (.function [sort] order 0)))
+    (scopedConsequenceDisjunction : signature.Disjunction
+      (max
+        (bindOrder
+          (max (bindOrder order (.function [sort] order 0)) order)
+          (.function [sort] order 0))
+        (bindOrder order (.function [sort] order 0))))
+    (scopedOuterDisjunction : signature.Disjunction
+      (max (bindOrder order (.function [sort] order 0))
+        (max
+          (bindOrder
+            (max (bindOrder order (.function [sort] order 0)) order)
+            (.function [sort] order 0))
+          (bindOrder order (.function [sort] order 0)))))
+    (x y z : Term signature real [] sort) :
     Derivation
-      (star_13_181_reading vocabulary negation disjunction x y z).parsed := by
-  have line1 := star_13_181_hypothesis
-  exact line1
+      (star_13_181_reading vocabulary identityNegation
+        identityDisjunction x y z).parsed := by
+  let identityXY := star_13_01 vocabulary x y
+  let identityXZ := star_13_01 vocabulary x z
+  let identityYZ := star_13_01 vocabulary y z
+  let source := implication identityNegation identityDisjunction
+    (conjunction identityNegation identityDisjunction identityXY identityXZ)
+    identityYZ
+  let target := implication identityNegation identityDisjunction
+    (conjunction identityNegation identityDisjunction identityXY
+      (Formula.neg identityNegation identityYZ))
+    (Formula.neg identityNegation identityXZ)
+  have line1 := star_13_171 vocabulary reducibilityExistential
+    argumentUniversal identityNegation identityDisjunction
+    identityBaseDisjunction reducibilityNegation
+    reducibilityIdentityNegation reducibilityBaseNegation
+    identityBaseNegation resultNegation reducibilityDisjunction
+    reducibilityIdentityDisjunction reducibilityBaseDisjunction
+    resultDisjunction reducibilityScopeUniversal reducibilityScopeNegation
+    reducibilityScopeDisjunction existentialTargetDisjunction
+    equivalenceScopeUniversal symmetryScopeUniversal scopedNegation
+    scopedConsequenceDisjunction scopedOuterDisjunction x y z
+  change ⊢ᵣ source at line1
+  have line2 := star_4_14 identityNegation identityDisjunction
+    identityXY identityXZ identityYZ
+  unfold star_4_01 at line2
+  have line3 := star13_detach identityNegation identityDisjunction _ _ line2
+    (star_3_26 identityNegation identityDisjunction
+      (implication identityNegation identityDisjunction source target)
+      (implication identityNegation identityDisjunction target source))
+  have line4 := star13_detach identityNegation identityDisjunction
+    source target line1 line3
+  unfold star_13_181_reading star_13_02
+  exact line4
 
 /-- Audited scope reading of ✱13·19. -/
 def star_13_19_reading
