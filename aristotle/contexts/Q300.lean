@@ -2568,6 +2568,118 @@ def star_14_02
     Formula signature realCtx apparent (bindOrder uniquenessOrder sort) :=
   .sometimes existential uniquenessMatrix
 
+def star_14_descriptionIdentity
+    (existential : ExistentialVocabulary signature sort
+      (max (bindOrder (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess))
+        sort) (bindOrder continuationIdentityBaseOrder
+          (.function [sort] continuationIdentityBaseOrder
+            continuationIdentityExcess))))
+    (universal : signature.Universal sort
+      (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess)))
+    (conditionIdentity : IdentityVocabulary signature sort
+      conditionIdentityBaseOrder conditionIdentityExcess)
+    (conditionEquivalenceNegation : signature.Negation
+      (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess)))
+    (conditionEquivalenceDisjunction : signature.Disjunction
+      (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess)))
+    (uniquenessNegation : signature.Negation
+      (bindOrder (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess))
+        sort))
+    (continuationIdentity : IdentityVocabulary signature sort
+      continuationIdentityBaseOrder continuationIdentityExcess)
+    (continuationIdentityNegation : signature.Negation
+      (bindOrder continuationIdentityBaseOrder
+        (.function [sort] continuationIdentityBaseOrder
+          continuationIdentityExcess)))
+    (outerNegation : signature.Negation
+      (max (bindOrder (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess))
+        sort) (bindOrder continuationIdentityBaseOrder
+          (.function [sort] continuationIdentityBaseOrder
+            continuationIdentityExcess))))
+    (conjunctionDisjunction : signature.Disjunction
+      (max (bindOrder (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess))
+        sort) (bindOrder continuationIdentityBaseOrder
+          (.function [sort] continuationIdentityBaseOrder
+            continuationIdentityExcess))))
+    (condition : Formula signature realCtx (sort :: apparent)
+      (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess)))
+    (term : Term signature realCtx apparent sort) :
+    Formula signature realCtx apparent
+      (bindOrder
+        (max (bindOrder (bindOrder conditionIdentityBaseOrder
+          (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess))
+          sort) (bindOrder continuationIdentityBaseOrder
+            (.function [sort] continuationIdentityBaseOrder
+              continuationIdentityExcess))) sort) :=
+  star_14_01 existential universal conditionIdentity
+    conditionEquivalenceNegation conditionEquivalenceDisjunction
+    uniquenessNegation continuationIdentityNegation outerNegation
+    conjunctionDisjunction condition
+    (star_13_01 continuationIdentity (.apparent .zero) term.weaken)
+
+theorem star_14_descriptionIdentity_unfold
+    (existential : ExistentialVocabulary signature sort
+      (max (bindOrder (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess))
+        sort) (bindOrder continuationIdentityBaseOrder
+          (.function [sort] continuationIdentityBaseOrder
+            continuationIdentityExcess))))
+    (universal : signature.Universal sort
+      (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess)))
+    (conditionIdentity : IdentityVocabulary signature sort
+      conditionIdentityBaseOrder conditionIdentityExcess)
+    (conditionEquivalenceNegation : signature.Negation
+      (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess)))
+    (conditionEquivalenceDisjunction : signature.Disjunction
+      (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess)))
+    (uniquenessNegation : signature.Negation
+      (bindOrder (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess))
+        sort))
+    (continuationIdentity : IdentityVocabulary signature sort
+      continuationIdentityBaseOrder continuationIdentityExcess)
+    (continuationIdentityNegation : signature.Negation
+      (bindOrder continuationIdentityBaseOrder
+        (.function [sort] continuationIdentityBaseOrder
+          continuationIdentityExcess)))
+    (outerNegation : signature.Negation
+      (max (bindOrder (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess))
+        sort) (bindOrder continuationIdentityBaseOrder
+          (.function [sort] continuationIdentityBaseOrder
+            continuationIdentityExcess))))
+    (conjunctionDisjunction : signature.Disjunction
+      (max (bindOrder (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess))
+        sort) (bindOrder continuationIdentityBaseOrder
+          (.function [sort] continuationIdentityBaseOrder
+            continuationIdentityExcess))))
+    (condition : Formula signature realCtx (sort :: apparent)
+      (bindOrder conditionIdentityBaseOrder
+        (.function [sort] conditionIdentityBaseOrder conditionIdentityExcess)))
+    (term : Term signature realCtx apparent sort) :
+    star_14_descriptionIdentity existential universal conditionIdentity
+        conditionEquivalenceNegation conditionEquivalenceDisjunction
+        uniquenessNegation continuationIdentity continuationIdentityNegation
+        outerNegation
+        conjunctionDisjunction condition term =
+      star_14_01 existential universal conditionIdentity
+        conditionEquivalenceNegation conditionEquivalenceDisjunction
+        uniquenessNegation continuationIdentityNegation outerNegation
+        conjunctionDisjunction condition
+        (star_13_01 continuationIdentity (.apparent .zero) term.weaken) := rfl
+
 def unaryReducibilityMatrix
     (universal : signature.Universal argument order)
     (negation : signature.Negation order)

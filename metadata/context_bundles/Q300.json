@@ -1,24 +1,10 @@
 {
-  "ci_evidence": {
-    "commit": "pending",
-    "conclusion": "pending",
-    "run": "pending"
-  },
-  "context_closure": [],
-  "current_item": "PM1:✱9·21",
-  "integration_blocked": true,
-  "interface_dependencies": [],
   "kind": "pm-isolated-context-bundle",
-  "manifest_sha256": "8c0baedab72ddd2abc89c59dbde6f8ea8e8b01846db0b948726275632b8af834",
-  "policy": {
-    "canonical_integration_forbidden": true,
-    "grants_no_additional_proof_permission": true,
-    "interface_gated": true,
-    "requires_one_to_one_kernel_remap": true,
-    "requires_remote_kernel_check": true,
-    "standalone_context_only": true
-  },
   "profile": "ordered-first-order-pm1",
+  "current_item": "PM1:✱9·21",
+  "manifest_sha256": "8c0baedab72ddd2abc89c59dbde6f8ea8e8b01846db0b948726275632b8af834",
+  "source_sha256": "a09d8453a51e74a5c2ec692c7134ec46ece530bc7e013275d7254d7e81b6ab78",
+  "source_bytes": 271531,
   "proof_permissions": [
     "PM1:✱1·01",
     "PM1:✱2·08",
@@ -29,70 +15,84 @@
     "PM1:✱9·12",
     "PM1:✱9·13"
   ],
+  "context_closure": [],
+  "sources": [
+    {
+      "kind": "foundation",
+      "path": "Principia/Syntax/Formula.lean",
+      "source_sha256": "c21ac8e6599ffcbd05870819c284e8d48c2f20c09728a95a1ae85a02915d7217",
+      "slice_sha256": "753e6e7bccce1c9a73b50f79611685ed31ca90529ea0f4c767e69177c98f3955",
+      "bytes": 1191
+    },
+    {
+      "kind": "foundation",
+      "path": "Principia/Syntax/Apparent.lean",
+      "source_sha256": "3b8f4db005934b904a64a4793c9f399e4d400129c78d2b55a9e82027803d53e3",
+      "slice_sha256": "d3dfacbd52addc28d64c198c6d746ac996108e7859a7ada713d0c6ca8597b283",
+      "bytes": 38862
+    },
+    {
+      "kind": "foundation",
+      "path": "Principia/Syntax/Ordered.lean",
+      "source_sha256": "36b7e786e011c68a4f4a32fa0321536447aa0017f16441a0136963d152c396bb",
+      "slice_sha256": "ab0493e7dff124a1cd0ee925c112b8a0c090b0a16d97cfa23aa6a59df3c988fb",
+      "bytes": 4274
+    },
+    {
+      "kind": "foundation",
+      "path": "Principia/Deduction/System.lean",
+      "source_sha256": "65272bf79fc3aa50fab253c689cee8e2b0517255080a0992dc2bbea8b72de06d",
+      "slice_sha256": "6c1a587e2cde16b21120250ab9a6ce451a25d2d65291df08f4f6812facc1d08c",
+      "bytes": 2846
+    },
+    {
+      "kind": "foundation",
+      "path": "Principia/Deduction/Ordered.lean",
+      "source_sha256": "3b85384341477a79ef1300f30071294494bc7d0b303ef58fd1b59cf7ab64a156",
+      "slice_sha256": "d46ad39e3432753cdb53d7ab77e43da441eca796ff109b56c0a8471a53058332",
+      "bytes": 135
+    },
+    {
+      "kind": "local-architecture-context",
+      "path": "Principia/Syntax/Ramified.lean",
+      "source_sha256": "92a6c486e603a4aa4e935401f63ac59417de457f81461506d66d64f6ca3c7e21",
+      "slice_sha256": "4f0c00d7ee96322d1765dc0898529a76d227662695c576647635afea48ea0daf",
+      "bytes": 132709,
+      "grants_proof_permission": false
+    },
+    {
+      "kind": "local-architecture-context",
+      "path": "Principia/Deduction/Star2Ramified.lean",
+      "source_sha256": "de082d44201177d8c62cf90d4c9cea8ff5ddb95defb6ef7720b1feb25379d12f",
+      "slice_sha256": "e291889a05e821233b877061cd0c1a6e860521cba92095127b442e59a952c730",
+      "bytes": 91117,
+      "grants_proof_permission": false
+    }
+  ],
+  "policy": {
+    "standalone_context_only": true,
+    "grants_no_additional_proof_permission": true,
+    "requires_remote_kernel_check": true,
+    "interface_gated": true,
+    "canonical_integration_forbidden": true,
+    "requires_one_to_one_kernel_remap": true
+  },
+  "interface_dependencies": [],
+  "source_backfill_required": false,
+  "integration_blocked": true,
   "source_backfill_audit": {
+    "status": "complete",
     "basis": "PM-VERBATIM, item metadata, scan collation, and parsed diplomatic demonstration",
-    "demonstration_paths": [
-      "aristotle/demonstrations/PM1-star-9-21.txt"
-    ],
     "item_ids": [
       "PM1:✱9·21"
     ],
-    "status": "complete"
+    "demonstration_paths": [
+      "aristotle/demonstrations/PM1-star-9-21.txt"
+    ]
   },
-  "source_backfill_required": false,
-  "source_bytes": 265320,
-  "source_sha256": "df2cb94c4dfd2db502f8972866f9f20b64badb496e3ec5a95ef0be487977708b",
-  "sources": [
-    {
-      "bytes": 1191,
-      "kind": "foundation",
-      "path": "Principia/Syntax/Formula.lean",
-      "slice_sha256": "753e6e7bccce1c9a73b50f79611685ed31ca90529ea0f4c767e69177c98f3955",
-      "source_sha256": "c21ac8e6599ffcbd05870819c284e8d48c2f20c09728a95a1ae85a02915d7217"
-    },
-    {
-      "bytes": 38862,
-      "kind": "foundation",
-      "path": "Principia/Syntax/Apparent.lean",
-      "slice_sha256": "d3dfacbd52addc28d64c198c6d746ac996108e7859a7ada713d0c6ca8597b283",
-      "source_sha256": "3b8f4db005934b904a64a4793c9f399e4d400129c78d2b55a9e82027803d53e3"
-    },
-    {
-      "bytes": 4274,
-      "kind": "foundation",
-      "path": "Principia/Syntax/Ordered.lean",
-      "slice_sha256": "ab0493e7dff124a1cd0ee925c112b8a0c090b0a16d97cfa23aa6a59df3c988fb",
-      "source_sha256": "36b7e786e011c68a4f4a32fa0321536447aa0017f16441a0136963d152c396bb"
-    },
-    {
-      "bytes": 2846,
-      "kind": "foundation",
-      "path": "Principia/Deduction/System.lean",
-      "slice_sha256": "6c1a587e2cde16b21120250ab9a6ce451a25d2d65291df08f4f6812facc1d08c",
-      "source_sha256": "65272bf79fc3aa50fab253c689cee8e2b0517255080a0992dc2bbea8b72de06d"
-    },
-    {
-      "bytes": 135,
-      "kind": "foundation",
-      "path": "Principia/Deduction/Ordered.lean",
-      "slice_sha256": "d46ad39e3432753cdb53d7ab77e43da441eca796ff109b56c0a8471a53058332",
-      "source_sha256": "3b85384341477a79ef1300f30071294494bc7d0b303ef58fd1b59cf7ab64a156"
-    },
-    {
-      "bytes": 126498,
-      "grants_proof_permission": false,
-      "kind": "local-architecture-context",
-      "path": "Principia/Syntax/Ramified.lean",
-      "slice_sha256": "6d2ada61ac8c77bfa98a6c731144b8539b8c47e669d0f49832f97e58468c8842",
-      "source_sha256": "d8328f6074ba74487a071a0c3a7f9bb4745689449b5d298cd51ff2de449adb76"
-    },
-    {
-      "bytes": 91117,
-      "grants_proof_permission": false,
-      "kind": "local-architecture-context",
-      "path": "Principia/Deduction/Star2Ramified.lean",
-      "slice_sha256": "e291889a05e821233b877061cd0c1a6e860521cba92095127b442e59a952c730",
-      "source_sha256": "de082d44201177d8c62cf90d4c9cea8ff5ddb95defb6ef7720b1feb25379d12f"
-    }
-  ]
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
+  }
 }
