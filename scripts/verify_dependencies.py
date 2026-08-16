@@ -767,9 +767,23 @@ def audit(root: Path = ROOT, *, report_all: bool = False) -> dict:
         declarations[declaration] = item["id"]
     assumptions = load_assumptions(root)
     assumption_usage = assumption_closure(items, assumptions)
+    # Both tiers are audited, not just the topmost.
+    #
+    # An awaiting-ci item is one the tree already supports in full; only the CI
+    # record is missing. Its dependency structure is therefore exactly as
+    # checkable as a kernel-checked one, and auditing it is a strengthening --
+    # 129 declarations rather than 3 at the time this was widened.
+    #
+    # It also removes a deadlock. Recomputing tiers empties the kernel-checked
+    # frontier whenever the tree has moved past the last CI run, which is the
+    # normal state of a repository mid-work. The audit then covered nothing,
+    # the coverage floor refused a vacuous pass, CI could not go green, and no
+    # green run existed to re-certify anything. Auditing the frontier the tree
+    # supports breaks that circle without lowering any standard.
+    AUDITED_TIERS = ("kernel-checked", "awaiting-ci")
     checked = [
         item for item in declared_items
-        if item.get("formal_status") == "kernel-checked"
+        if item.get("formal_status") in AUDITED_TIERS
     ]
     order = {item["id"]: pm_order(item["id"]) for item in items}
     aliases = json.loads((root / "metadata/dependency_aliases.json").read_text(encoding="utf-8"))

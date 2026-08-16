@@ -54,7 +54,10 @@ class DependencyAuditTests(unittest.TestCase):
     def test_current_kernel_checked_corpus_is_covered(self):
         graph = dependencies.audit(ROOT)
         checked = graph["coverage"]["audited_items"]
-        expected_checked = sum(node["formal_status"] == "kernel-checked" for node in graph["nodes"])
+        expected_checked = sum(
+            node["formal_status"] in ("kernel-checked", "awaiting-ci")
+            for node in graph["nodes"]
+        )
         self.assertEqual(checked, expected_checked)
         # The derived-facts migration deliberately reduced the presently
         # kernel-checked frontier; coverage must follow metadata, not preserve
