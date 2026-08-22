@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 # Verrouille en lecture seule ce qui définit le standard de certification.
 #
 # IMPORTANT : la liste normative est PROTECTED_GLOBS dans
@@ -17,6 +17,13 @@
 #
 # Git ne transporte pas les permissions (seulement le bit exécutable), donc un
 # clone frais arrive déverrouillé : relancer `tools/gate-lock` après clonage.
+#
+# Ce script est en bash, pas en zsh, et délibérément. Il portait autrefois
+# `#!/bin/zsh` ; les runners ubuntu-latest n'ont pas de /bin/zsh, si bien que
+# execve échouait avec ENOENT et que Python rapportait un FileNotFoundError SUR
+# LE CHEMIN DU SCRIPT — donnant à croire que l'outil manquait du dépôt alors
+# qu'il y était, avec son bit exécutable. Le test qui vérifie le verrouillage
+# échouait donc sur la CI sans jamais échouer en local.
 #
 #   tools/gate-lock            verrouille
 #   tools/gate-lock --unlock   déverrouille, délibérément
@@ -57,15 +64,20 @@ for path in sorted(files):
 PY
 }
 
-FILES=(${(f)"$(collect_files)"})
+# Construction volontairement portable : `readarray` est un builtin bash 4,
+# absent du bash 3.2 que macOS installe encore. Cette boucle marche sur les deux.
+FILES=()
+while IFS= read -r ligne; do
+  [ -n "$ligne" ] && FILES+=("$ligne")
+done < <(collect_files)
 
 case "${1:-}" in
   --unlock)
     chmod u+w "${FILES[@]}" 2>/dev/null || true
-    print -- "déverrouillé : ${#${(f)"$(ls "${FILES[@]}" 2>/dev/null)"}} fichiers."
-    print -- "Pense à relancer tools/gate-lock, puis, si tu as modifié un gate :"
-    print -- "  python3 scripts/verify_gate_integrity.py --update \\"
-    print -- "      --authorised-by <nom> --reason <pourquoi>"
+    printf '%s\n' "déverrouillé : ${#FILES[@]} fichiers."
+    printf '%s\n' "Pense à relancer tools/gate-lock, puis, si tu as modifié un gate :"
+    printf '%s\n' "  python3 scripts/verify_gate_integrity.py --update \\"
+    printf '%s\n' "      --authorised-by <nom> --reason <pourquoi>"
     ;;
   --status)
     ls -l "${FILES[@]}" 2>/dev/null | awk '{print $1, $NF}'
@@ -73,6 +85,6 @@ case "${1:-}" in
   *)
     chmod a-w "${FILES[@]}" 2>/dev/null || true
     n=$(ls -l "${FILES[@]}" 2>/dev/null | grep -c '^-r--r--r--')
-    print -- "verrouillés : $n fichiers."
+    printf '%s\n' "verrouillés : $n fichiers."
     ;;
 esac
