@@ -176,6 +176,8 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     "Formula.star11Implication_weakenReal_instantiate",
     "Formula.star11CastCongr",
     "Formula.star11FixSecond_shift",
+    # Assertion-level cast on a derivation: carrier plumbing, never a citation.
+    "Derivation.castAssertion",
 }
 
 # Theorem-specific records may name fields after mathematical operations

@@ -146,7 +146,16 @@
     "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
    },
    "lean_path": "Principia/Deduction/Star34Derived.lean",
-   "declaration": "PM.RamifiedSyntax.star_34_5"
+   "declaration": "PM.RamifiedSyntax.star_34_5",
+   "historical_dependency_relaxation": {
+    "classification": "relaxed-closure",
+    "added_beyond_print": [],
+    "printed_but_unused": [
+     "PM1:✱34·02"
+    ],
+    "strict_attempt_evidence": "reviews/star-34-5-relaxed-closure-2026-08-22.md",
+    "editorial_note": "PM cites [✱34·1.(✱34·02)]; the parenthesised member is a Df. The proof term uses ✱34·1 and unfolds ✱34·02 definitionally, so the definition never appears as a dependency. Nothing is used beyond print -- the gap is entirely on the unused side, and closing it would mean making ✱34·02 opaque across all of ✱34 for a bookkeeping reason."
+   }
   },
   {
    "id": "PM1:✱34·51",

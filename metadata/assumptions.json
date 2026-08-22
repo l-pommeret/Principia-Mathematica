@@ -15,7 +15,8 @@
     "PM.Experimental.PredicativeGateToy.BinaryReducibility12_11",
     "PM.RamifiedSyntax.Star21EliminationHypothesis",
     "PM.RamifiedSyntax.BinaryEliminationHypothesis",
-    "PM.RamifiedSyntax.Star23Star10_35Hypothesis"
+    "PM.RamifiedSyntax.Star23Star10_35Hypothesis",
+    "PM.RamifiedSyntax.Star52ReducibilityScopeTransport"
    ],
    "editorial_note": "Future Lean declarations must carry reducibility as an explicit scoped hypothesis, never as a global axiom or instance. A parameter type is registered exactly as its Lean header spells it: the toy types appear fully qualified in their own file, while Star21EliminationHypothesis, BinaryEliminationHypothesis and Star23Star10_35Hypothesis are written unqualified inside namespace PM.RamifiedSyntax. All three build star_12_11_formula from a reducibilityExistential, so each is the axiom of reducibility under an eliminative name. Thirteen bindings across ✱23, ✱33, ✱34 and ✱35 previously declared an elided type containing a literal ellipsis, which no registry could ever match; their dependence on the axiom was therefore invisible to the audit."
   },

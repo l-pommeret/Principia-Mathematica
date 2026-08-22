@@ -238,7 +238,7 @@ theorem star_52_1
     (vocabulary : Star52EliminationVocabulary signature elementSort resultOrder)
     (matrix : Formula signature real [elementSort] resultOrder)
     (element : Term signature real [] elementSort)
-    (reducibility_scope_transport : Star52ReducibilityScopeTransport vocabulary
+    (reducibility_scope_transport : PM.RamifiedSyntax.Star52ReducibilityScopeTransport vocabulary
       matrix element) :
     Derivation (.assertion
       (star_52_1_formula vocabulary.abstractionExistential
