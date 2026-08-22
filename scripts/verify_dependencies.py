@@ -543,12 +543,7 @@ def reject_unindexed_references(item: dict, body: str, candidates: set[str]) -> 
     }
     indexed_short = {name.rsplit(".", 1)[-1] for name in candidates}
     for token in re.findall(r"\b[A-Z][A-Za-z0-9_']*(?:\.[A-Za-z0-9_']+)+", proof):
-        # The same allowlist the two checks below already consult. Kernel
-        # carrier names such as Nat.succ can never be a PM citation, and
-        # demanding an index entry for one reports a defect that does not
-        # exist. Widening the audited tiers brought proofs into scope that use
-        # them, which is how the omission surfaced.
-        if token in CALCULUS_TYPES or token in KNOWN_SYNTAX_INFRASTRUCTURE:
+        if token in CALCULUS_TYPES:
             continue
         if token not in candidates and token.rsplit(".", 1)[-1] not in indexed_short:
             raise DependencyError(f"{item['id']}: unindexed qualified Lean reference {token}")
