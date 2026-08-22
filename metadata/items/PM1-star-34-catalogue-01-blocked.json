@@ -1,196 +1,196 @@
 {
- "batch": "PM1-STAR34-CATALOGUE-01-BLOCKED",
- "edition": "first",
- "volume": 1,
- "source_range": {
-  "printed_pages": "273",
-  "scan_leaves": [
-   295
+  "batch": "PM1-STAR34-CATALOGUE-01-BLOCKED",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "273",
+    "scan_leaves": [
+      295
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
   ],
-  "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
-  "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
- },
- "witnesses": [
-  "PM1-1910-SCAN",
-  "PG78050"
- ],
- "items": [
-  {
-   "id": "PM1:✱34·01",
-   "kind": "definition",
-   "printed": "✱34·01. R| S=x̂ẑ{(∃ y).xRy.ySz} Df",
-   "source_status": "source-catalogued-PM-VERBATIM",
-   "formal_scope": "v1 blocked: the canonical PM object-language definition of relative product is absent; the architecture-level compose function is only a secondary semantic model",
-   "declaration": "source-only",
-   "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
-   "formal_status": "prepared",
-   "integration_status": "prepared",
-   "integration_blocked": true,
-   "printed_dependencies": [],
-   "lean_dependencies": [],
-   "normalized_dependencies": [],
-   "parser_status": "reviewed-gap",
-   "parser_evidence": "reviews/Star34-catalogue-review.md",
-   "semantic_audit_status": "v1-pm-judgment-blocked",
-   "pm_verbatim": "*34·01. \\( R\\mid S=\\hat{x}\\hat{z}\\{(\\exists y).xRy.ySz\\} \\quad\\text{Df}\\) ",
-   "printed_latex_witness": "*34·01. \\( R\\mid S=\\hat{x}\\hat{z}\\{(\\exists y).xRy.ySz\\} \\quad\\text{Df}\\) ",
-   "printed_page": 270,
-   "certification": {
-    "tier": "prepared",
-    "failed_criteria": [
-     "T2",
-     "T7",
-     "T8"
-    ],
-    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-   }
-  },
-  {
-   "id": "PM1:✱34·02",
-   "kind": "definition",
-   "printed": "✱34·02. R²=R| R Df",
-   "source_status": "source-catalogued-PM-VERBATIM",
-   "formal_scope": "v1 blocked: no canonical PM object-language definition derives relation squaring from ✱34·01",
-   "declaration": "source-only",
-   "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
-   "formal_status": "prepared",
-   "integration_status": "prepared",
-   "integration_blocked": true,
-   "printed_dependencies": [],
-   "lean_dependencies": [],
-   "normalized_dependencies": [],
-   "parser_status": "reviewed-gap",
-   "parser_evidence": "reviews/Star34-catalogue-review.md",
-   "semantic_audit_status": "v1-pm-judgment-blocked",
-   "pm_verbatim": "*34·02. \\(R^{2}=R\\mid R \\quad\\text{Df}\\) ",
-   "printed_latex_witness": "*34·02. \\(R^{2}=R\\mid R \\quad\\text{Df}\\) ",
-   "printed_page": 270,
-   "certification": {
-    "tier": "prepared",
-    "failed_criteria": [
-     "T2",
-     "T7",
-     "T8"
-    ],
-    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-   }
-  },
-  {
-   "id": "PM1:✱34·03",
-   "kind": "definition",
-   "printed": "✱34·03. R³=R²| R Df",
-   "source_status": "source-catalogued-PM-VERBATIM",
-   "formal_scope": "v1 blocked: no canonical PM object-language definition derives relation cubing from ✱34·01 and ✱34·02",
-   "declaration": "source-only",
-   "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
-   "formal_status": "prepared",
-   "integration_status": "prepared",
-   "integration_blocked": true,
-   "printed_dependencies": [],
-   "lean_dependencies": [],
-   "normalized_dependencies": [],
-   "parser_status": "reviewed-gap",
-   "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-   "semantic_audit_status": "v1-pm-judgment-blocked",
-   "pm_verbatim": "*34·03. \\(R^{3}=R^{2}\\mid R \\quad\\text{Df}\\) ",
-   "printed_latex_witness": "*34·03. \\(R^{3}=R^{2}\\mid R \\quad\\text{Df}\\) ",
-   "printed_page": 270,
-   "certification": {
-    "tier": "prepared",
-    "failed_criteria": [
-     "T2",
-     "T7",
-     "T8"
-    ],
-    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-   }
-  },
-  {
-   "id": "PM1:✱34·1",
-   "kind": "derived-proposition",
-   "printed": "✱34·1. ⊢:x(R| S)z.≡.(∃ y).xRy.ySz [✱21·3.(✱34·01)]",
-   "source_status": "source-catalogued-PM-VERBATIM",
-   "formal_scope": "exact relative-product application equivalence in the ramified PM judgement",
-   "formalization_level": "pm-derivation-v1",
-   "declaration": "PM.RamifiedSyntax.star_34_1",
-   "lean_path": "Principia/Deduction/Star34Derived.lean",
-   "formal_status": "prepared",
-   "integration_status": "awaiting-ci",
-   "integration_blocked": false,
-   "printed_dependencies": [
-    "PM1:✱21·3",
-    "PM1:✱34·01"
-   ],
-   "lean_dependencies": [
-    "PM.RamifiedSyntax.star_21_3"
-   ],
-   "normalized_dependencies": [
-    "PM1:✱21·3"
-   ],
-   "demonstration_provenance": "follows-printed",
-   "direct_assumptions": [
-    "PM1:REDUCIBILITY"
-   ],
-   "inherited_assumptions": [],
-   "assumption_parameters": {
-    "PM1:REDUCIBILITY": {
-     "parameter": "star_10_35_hypothesis",
-     "lean_type": "PM.RamifiedSyntax.Star21EliminationHypothesis"
+  "items": [
+    {
+      "id": "PM1:✱34·01",
+      "kind": "definition",
+      "printed": "✱34·01. R| S=x̂ẑ{(∃ y).xRy.ySz} Df",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_scope": "v1 blocked: the canonical PM object-language definition of relative product is absent; the architecture-level compose function is only a secondary semantic model",
+      "declaration": "source-only",
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "integration_blocked": true,
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star34-catalogue-review.md",
+      "semantic_audit_status": "v1-pm-judgment-blocked",
+      "pm_verbatim": "*34·01. \\( R\\mid S=\\hat{x}\\hat{z}\\{(\\exists y).xRy.ySz\\} \\quad\\text{Df}\\) ",
+      "printed_latex_witness": "*34·01. \\( R\\mid S=\\hat{x}\\hat{z}\\{(\\exists y).xRy.ySz\\} \\quad\\text{Df}\\) ",
+      "printed_page": 270,
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      }
+    },
+    {
+      "id": "PM1:✱34·02",
+      "kind": "definition",
+      "printed": "✱34·02. R²=R| R Df",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_scope": "v1 blocked: no canonical PM object-language definition derives relation squaring from ✱34·01",
+      "declaration": "source-only",
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "integration_blocked": true,
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/Star34-catalogue-review.md",
+      "semantic_audit_status": "v1-pm-judgment-blocked",
+      "pm_verbatim": "*34·02. \\(R^{2}=R\\mid R \\quad\\text{Df}\\) ",
+      "printed_latex_witness": "*34·02. \\(R^{2}=R\\mid R \\quad\\text{Df}\\) ",
+      "printed_page": 270,
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      }
+    },
+    {
+      "id": "PM1:✱34·03",
+      "kind": "definition",
+      "printed": "✱34·03. R³=R²| R Df",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_scope": "v1 blocked: no canonical PM object-language definition derives relation cubing from ✱34·01 and ✱34·02",
+      "declaration": "source-only",
+      "lean_path": "Principia/FirstEdition/Volume1/Star34Source.lean",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "integration_blocked": true,
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "v1-pm-judgment-blocked",
+      "pm_verbatim": "*34·03. \\(R^{3}=R^{2}\\mid R \\quad\\text{Df}\\) ",
+      "printed_latex_witness": "*34·03. \\(R^{3}=R^{2}\\mid R \\quad\\text{Df}\\) ",
+      "printed_page": 270,
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      }
+    },
+    {
+      "id": "PM1:✱34·1",
+      "kind": "derived-proposition",
+      "printed": "✱34·1. ⊢:x(R| S)z.≡.(∃ y).xRy.ySz [✱21·3.(✱34·01)]",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_scope": "exact relative-product application equivalence in the ramified PM judgement",
+      "formalization_level": "pm-derivation-v1",
+      "declaration": "PM.RamifiedSyntax.star_34_1",
+      "lean_path": "Principia/Deduction/Star34Derived.lean",
+      "formal_status": "prepared",
+      "integration_status": "awaiting-ci",
+      "integration_blocked": false,
+      "printed_dependencies": [
+        "PM1:✱21·3",
+        "PM1:✱34·01"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_21_3"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱21·3"
+      ],
+      "demonstration_provenance": "follows-printed",
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "star_10_35_hypothesis",
+          "lean_type": "PM.RamifiedSyntax.Star21EliminationHypothesis"
+        }
+      },
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "object-derivation-passed",
+      "pm_verbatim": "*34·1. \\(\\vdash:x(R\\mid S)z.\\equiv.(\\exists y).xRy.ySz \\quad[\\text{*21·3.(*34·01)}]\\) ",
+      "printed_latex_witness": "*34·1. \\(\\vdash:x(R\\mid S)z.\\equiv.(\\exists y).xRy.ySz \\quad[\\text{*21·3.(*34·01)}]\\) ",
+      "printed_page": 270,
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      }
+    },
+    {
+      "id": "PM1:✱34·11",
+      "kind": "derived-proposition",
+      "printed": "✱34·11. ⊢:x(R| S)z.≡.∃ !(R⃖ʻx∩ S⃗ʻz)",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_scope": "v1 blocked: the architecture theorem proves only the secondary inhabited-meeting Prop equivalence and does not replay the printed PM derivation",
+      "formal_status": "prepared",
+      "integration_status": "prepared",
+      "integration_blocked": true,
+      "printed_dependencies": [
+        "PM1:✱34·1",
+        "PM1:✱32·18",
+        "PM1:✱32·181",
+        "PM1:✱22·33",
+        "PM1:✱24·5"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "parser_status": "reviewed-gap",
+      "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
+      "semantic_audit_status": "v1-pm-judgment-blocked",
+      "pm_verbatim": "*34·11. \\(\\vdash:x(R\\mid S)z.\\equiv.\\exists !(\\overleftarrow{R}ʻx\\cap \\overrightarrow{S}ʻz)\\) \n\nDem.\n\n \\[ \\begin{array}{l} \\vdash.\\text{*34·1.*32·18·181}.\\supset\\\\ \\vdash:x(R\\mid S)z.&\\equiv.(\\exists y).y\\in \\overleftarrow{R}ʻx.y\\in \\overrightarrow{S}ʻz.\\\\ [\\text{*22·33}] & \\equiv.(\\exists y).y\\in \\overleftarrow{R}ʻx\\cap \\overrightarrow{S}ʻz.\\\\ [\\text{*24·5}] & \\equiv.\\exists !(\\overleftarrow{R}ʻx\\cap \\overrightarrow{S}ʻz):\\supset\\vdash.\\text{Prop} \\end{array} \\]",
+      "printed_latex_witness": "*34·11. \\(\\vdash:x(R\\mid S)z.\\equiv.\\exists !(\\overleftarrow{R}ʻx\\cap \\overrightarrow{S}ʻz)\\) ",
+      "printed_page": 270,
+      "certification": {
+        "tier": "prepared",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      }
     }
-   },
-   "parser_status": "reviewed-gap",
-   "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-   "semantic_audit_status": "object-derivation-passed",
-   "pm_verbatim": "*34·1. \\(\\vdash:x(R\\mid S)z.\\equiv.(\\exists y).xRy.ySz \\quad[\\text{*21·3.(*34·01)}]\\) ",
-   "printed_latex_witness": "*34·1. \\(\\vdash:x(R\\mid S)z.\\equiv.(\\exists y).xRy.ySz \\quad[\\text{*21·3.(*34·01)}]\\) ",
-   "printed_page": 270,
-   "certification": {
-    "tier": "prepared",
-    "failed_criteria": [
-     "T7"
-    ],
-    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-   }
-  },
-  {
-   "id": "PM1:✱34·11",
-   "kind": "derived-proposition",
-   "printed": "✱34·11. ⊢:x(R| S)z.≡.∃ !(R⃖ʻx∩ S⃗ʻz)",
-   "source_status": "source-catalogued-PM-VERBATIM",
-   "formal_scope": "v1 blocked: the architecture theorem proves only the secondary inhabited-meeting Prop equivalence and does not replay the printed PM derivation",
-   "formal_status": "prepared",
-   "integration_status": "prepared",
-   "integration_blocked": true,
-   "printed_dependencies": [
-    "PM1:✱34·1",
-    "PM1:✱32·18",
-    "PM1:✱32·181",
-    "PM1:✱22·33",
-    "PM1:✱24·5"
-   ],
-   "lean_dependencies": [],
-   "normalized_dependencies": [],
-   "parser_status": "reviewed-gap",
-   "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
-   "semantic_audit_status": "v1-pm-judgment-blocked",
-   "pm_verbatim": "*34·11. \\(\\vdash:x(R\\mid S)z.\\equiv.\\exists !(\\overleftarrow{R}ʻx\\cap \\overrightarrow{S}ʻz)\\) \n\nDem.\n\n \\[ \\begin{array}{l} \\vdash.\\text{*34·1.*32·18·181}.\\supset\\\\ \\vdash:x(R\\mid S)z.&\\equiv.(\\exists y).y\\in \\overleftarrow{R}ʻx.y\\in \\overrightarrow{S}ʻz.\\\\ [\\text{*22·33}] & \\equiv.(\\exists y).y\\in \\overleftarrow{R}ʻx\\cap \\overrightarrow{S}ʻz.\\\\ [\\text{*24·5}] & \\equiv.\\exists !(\\overleftarrow{R}ʻx\\cap \\overrightarrow{S}ʻz):\\supset\\vdash.\\text{Prop} \\end{array} \\]",
-   "printed_latex_witness": "*34·11. \\(\\vdash:x(R\\mid S)z.\\equiv.\\exists !(\\overleftarrow{R}ʻx\\cap \\overrightarrow{S}ʻz)\\) ",
-   "printed_page": 270,
-   "certification": {
-    "tier": "prepared",
-    "failed_criteria": [
-     "T1",
-     "T2",
-     "T7",
-     "T8"
-    ],
-    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-   }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
- ],
- "ci_evidence": {
-  "commit": "pending",
-  "run": "pending",
-  "conclusion": "pending"
- }
 }

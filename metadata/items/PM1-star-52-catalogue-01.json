@@ -1,181 +1,181 @@
 {
- "batch": "PM1-STAR52-CATALOGUE-01",
- "edition": "first",
- "volume": 1,
- "source_range": {
-  "printed_pages": "364",
-  "scan_leaves": [
-   386
+  "batch": "PM1-STAR52-CATALOGUE-01",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "364",
+    "scan_leaves": [
+      386
+    ],
+    "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+    "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
+  },
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "PG78050"
   ],
-  "canonical_scan": "https://commons.wikimedia.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
-  "project_gutenberg": "https://www.gutenberg.org/files/78050/78050-h/78050-h.htm"
- },
- "witnesses": [
-  "PM1-1910-SCAN",
-  "PG78050"
- ],
- "items": [
-  {
-   "id": "PM1:✱52·01",
-   "kind": "definition",
-   "printed": "✱52·01.  1 = α̂{(∃x). α = ιʻx}  Df",
-   "printed_page": 364,
-   "scan_leaf": 386,
-   "lean_path": "Principia/Deduction/Star52Derived.lean",
-   "declaration": "PM.RamifiedSyntax.star_52_01",
-   "formal_scope": "exact eliminable ramified class-abstraction definition, polymorphic in the assigned sort so that α may itself have class sort; star_52_01_unfold is rfl",
-   "source_status": "source-catalogued-PM-VERBATIM",
-   "formal_status": "awaiting-ci",
-   "demonstration_provenance": "editorial-reconstruction",
-   "integration_status": "awaiting-ci",
-   "printed_dependencies": [],
-   "lean_dependencies": [],
-   "normalized_dependencies": [],
-   "formalization_level": "pm-derivation-v1",
-   "certification": {
-    "tier": "awaiting-ci",
-    "failed_criteria": [
-     "T7"
-    ],
-    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-   }
-  },
-  {
-   "id": "PM1:✱52·1",
-   "kind": "derived-proposition",
-   "demonstration_provenance": "follows-printed",
-   "printed": "✱52·1.  ⊢ : α ∈ 1 .≡. (∃x). α = ιʻx  [✱20·3.(✱52·01)]",
-   "printed_page": 364,
-   "scan_leaf": 386,
-   "lean_path": "Principia/Deduction/Star52Derived.lean",
-   "declaration": "PM.RamifiedSyntax.star_52_1",
-   "formal_scope": "exact axiom-free ramified membership elimination for ✱52·01 by the systematically ambiguous unary instance of ✱20·3; conditional only on the explicitly named star_10_35_hypothesis retained by the current elimination layer",
-   "source_status": "source-catalogued-PM-VERBATIM",
-   "formal_status": "awaiting-ci",
-   "integration_status": "blocked-star-10-35-hypothesis",
-   "printed_dependencies": [
-    "PM1:✱20·3",
-    "PM1:✱52·01"
-   ],
-   "lean_dependencies": [
-    "PM.RamifiedSyntax.star_20_3",
-    "PM.RamifiedSyntax.star_52_01"
-   ],
-   "normalized_dependencies": [
-    "PM1:✱20·3",
-    "PM1:✱52·01"
-   ],
-   "direct_assumptions": [
-    "PM1:REDUCIBILITY"
-   ],
-   "inherited_assumptions": [],
-   "assumption_parameters": {
-    "PM1:REDUCIBILITY": {
-     "parameter": "reducibility_scope_transport",
-     "lean_type": "PM.RamifiedSyntax.Star52ReducibilityScopeTransport"
+  "items": [
+    {
+      "id": "PM1:✱52·01",
+      "kind": "definition",
+      "printed": "✱52·01.  1 = α̂{(∃x). α = ιʻx}  Df",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "lean_path": "Principia/Deduction/Star52Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_52_01",
+      "formal_scope": "exact eliminable ramified class-abstraction definition, polymorphic in the assigned sort so that α may itself have class sort; star_52_01_unfold is rfl",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "demonstration_provenance": "editorial-reconstruction",
+      "integration_status": "awaiting-ci",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      }
+    },
+    {
+      "id": "PM1:✱52·1",
+      "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
+      "printed": "✱52·1.  ⊢ : α ∈ 1 .≡. (∃x). α = ιʻx  [✱20·3.(✱52·01)]",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "lean_path": "Principia/Deduction/Star52Derived.lean",
+      "declaration": "PM.RamifiedSyntax.star_52_1",
+      "formal_scope": "exact axiom-free ramified membership elimination for ✱52·01 by the systematically ambiguous unary instance of ✱20·3; conditional only on the explicitly named star_10_35_hypothesis retained by the current elimination layer",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "awaiting-ci",
+      "integration_status": "blocked-star-10-35-hypothesis",
+      "printed_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱52·01"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_20_3",
+        "PM.RamifiedSyntax.star_52_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱20·3",
+        "PM1:✱52·01"
+      ],
+      "direct_assumptions": [
+        "PM1:REDUCIBILITY"
+      ],
+      "inherited_assumptions": [],
+      "assumption_parameters": {
+        "PM1:REDUCIBILITY": {
+          "parameter": "reducibility_scope_transport",
+          "lean_type": "PM.RamifiedSyntax.Star52ReducibilityScopeTransport"
+        }
+      },
+      "formalization_level": "pm-derivation-v1",
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      }
+    },
+    {
+      "id": "PM1:✱52·11",
+      "kind": "derived-proposition",
+      "demonstration_provenance": "follows-printed",
+      "printed": "✱52·11.  ⊢ :: α ∈ 1 .≡ : (∃x) : y ∈ α .≡ᵧ. y = x  [✱52·1.✱51·14]",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "formal_scope": "exact typed extensional characterization of singleton classes",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "unbuilt",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "✱52·1",
+        "✱51·14"
+      ],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [],
+        "printed_but_unused": [
+          "✱51·14",
+          "✱52·1"
+        ],
+        "strict_attempt_evidence": "reviews/Star52-opening-review.md",
+        "editorial_note": "The exact extensional equivalence is proved directly in the typed embedding; PM's printed singleton and class-extensionality route remains historical evidence."
+      },
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      }
+    },
+    {
+      "id": "PM1:✱52·12",
+      "kind": "derived-proposition",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed": "✱52·12.  ⊢ : ẑz(φz) ∈ 1 .≡. E!(℩x)(φx)",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "formal_scope": "exact typed equivalence between singleton extension and unique description existence",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "unbuilt",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      }
+    },
+    {
+      "id": "PM1:✱52·13",
+      "kind": "derived-proposition",
+      "demonstration_provenance": "editorial-reconstruction",
+      "printed": "✱52·13.  ⊢ . 1 = Dʻι",
+      "printed_page": 364,
+      "scan_leaf": 386,
+      "formal_scope": "exact typed identity of unit classes with the domain of the singleton relation",
+      "source_status": "source-catalogued-PM-VERBATIM",
+      "formal_status": "unbuilt",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [],
+      "lean_dependencies": [],
+      "normalized_dependencies": [],
+      "certification": {
+        "tier": "unbuilt",
+        "failed_criteria": [
+          "T1",
+          "T2",
+          "T7",
+          "T8"
+        ],
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      }
     }
-   },
-   "formalization_level": "pm-derivation-v1",
-   "certification": {
-    "tier": "awaiting-ci",
-    "failed_criteria": [
-     "T7"
-    ],
-    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-   }
-  },
-  {
-   "id": "PM1:✱52·11",
-   "kind": "derived-proposition",
-   "demonstration_provenance": "follows-printed",
-   "printed": "✱52·11.  ⊢ :: α ∈ 1 .≡ : (∃x) : y ∈ α .≡ᵧ. y = x  [✱52·1.✱51·14]",
-   "printed_page": 364,
-   "scan_leaf": 386,
-   "formal_scope": "exact typed extensional characterization of singleton classes",
-   "source_status": "source-catalogued-PM-VERBATIM",
-   "formal_status": "unbuilt",
-   "integration_status": "provisional-kernel-integrated",
-   "printed_dependencies": [
-    "✱52·1",
-    "✱51·14"
-   ],
-   "lean_dependencies": [],
-   "normalized_dependencies": [],
-   "historical_dependency_relaxation": {
-    "classification": "relaxed-closure",
-    "added_beyond_print": [],
-    "printed_but_unused": [
-     "✱51·14",
-     "✱52·1"
-    ],
-    "strict_attempt_evidence": "reviews/Star52-opening-review.md",
-    "editorial_note": "The exact extensional equivalence is proved directly in the typed embedding; PM's printed singleton and class-extensionality route remains historical evidence."
-   },
-   "certification": {
-    "tier": "unbuilt",
-    "failed_criteria": [
-     "T1",
-     "T2",
-     "T7",
-     "T8"
-    ],
-    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-   }
-  },
-  {
-   "id": "PM1:✱52·12",
-   "kind": "derived-proposition",
-   "demonstration_provenance": "editorial-reconstruction",
-   "printed": "✱52·12.  ⊢ : ẑz(φz) ∈ 1 .≡. E!(℩x)(φx)",
-   "printed_page": 364,
-   "scan_leaf": 386,
-   "formal_scope": "exact typed equivalence between singleton extension and unique description existence",
-   "source_status": "source-catalogued-PM-VERBATIM",
-   "formal_status": "unbuilt",
-   "integration_status": "provisional-kernel-integrated",
-   "printed_dependencies": [],
-   "lean_dependencies": [],
-   "normalized_dependencies": [],
-   "certification": {
-    "tier": "unbuilt",
-    "failed_criteria": [
-     "T1",
-     "T2",
-     "T7",
-     "T8"
-    ],
-    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-   }
-  },
-  {
-   "id": "PM1:✱52·13",
-   "kind": "derived-proposition",
-   "demonstration_provenance": "editorial-reconstruction",
-   "printed": "✱52·13.  ⊢ . 1 = Dʻι",
-   "printed_page": 364,
-   "scan_leaf": 386,
-   "formal_scope": "exact typed identity of unit classes with the domain of the singleton relation",
-   "source_status": "source-catalogued-PM-VERBATIM",
-   "formal_status": "unbuilt",
-   "integration_status": "provisional-kernel-integrated",
-   "printed_dependencies": [],
-   "lean_dependencies": [],
-   "normalized_dependencies": [],
-   "certification": {
-    "tier": "unbuilt",
-    "failed_criteria": [
-     "T1",
-     "T2",
-     "T7",
-     "T8"
-    ],
-    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-   }
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
- ],
- "ci_evidence": {
-  "commit": "pending",
-  "run": "pending",
-  "conclusion": "pending"
- }
 }

@@ -71,7 +71,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
       }
     },
     {
@@ -82,7 +82,7 @@
       "scan_leaf": 172,
       "formal_scope": "exact closed canonical formal syllogism",
       "source_status": "source-catalogued",
-      "formal_status": "unbuilt",
+      "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [
         "PM1:✱10·22·221",
@@ -105,15 +105,16 @@
         "editorial_note": "The ✱10·221 same-type side condition is discharged by the shared typed Apparent carrier and therefore has no theorem call; ✱10·22 and ✱10·27 remain explicit."
       },
       "certification": {
-        "tier": "unbuilt",
+        "tier": "lean-typechecked",
         "failed_criteria": [
-          "T1",
-          "T2",
+          "T4",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-      }
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      },
+      "declaration": "PM.RamifiedSyntax.star_10_3",
+      "lean_path": "Principia/Deduction/Star22Derived.lean"
     },
     {
       "id": "PM1:✱10·301",
@@ -156,7 +157,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
       },
       "declaration": "PM.RamifiedSyntax.star_10_301",
       "lean_path": "Principia/Deduction/Star10Derived.lean"
@@ -195,7 +196,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
       },
       "declaration": "PM.RamifiedSyntax.star_10_31",
       "lean_path": "Principia/Deduction/Star10Derived.lean"
@@ -238,7 +239,7 @@
           "T7",
           "T8"
         ],
-        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
       },
       "declaration": "PM.RamifiedSyntax.star_10_311",
       "lean_path": "Principia/Deduction/Star10Derived.lean"

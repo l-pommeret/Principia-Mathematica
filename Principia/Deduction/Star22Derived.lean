@@ -731,9 +731,7 @@ theorem star_22_42
 
 /-! ### Full-scope inclusion consequences -/
 
-/- The ✱10 rules used below act on one full-scope matrix.  Keeping this
-namespace explicit records the proposition cited by PM at ✱22·44. -/
-namespace Star10For22
+/- The ✱10 rules used below act on one full-scope matrix. -/
 
 private theorem conjunction_weakenReal
     {fresh : RSort}
@@ -780,14 +778,30 @@ def star_10_3_formula
         (implication negation disjunction psi chi))
       (implication negation disjunction phi chi))
 
-/-- ✱10·3, reconstructed in PM's printed order from pointwise `Syll`
-followed by ✱10·11. -/
+/-- Audited full-scope reading of ✱10·3. -/
+def star_10_3_reading
+    (universal : signature.Universal argument order)
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (phi psi chi : Formula signature real [argument] order) :
+    RamifiedReading signature real where
+  printed := PM.pmPrinted
+    "⊢ : .(x).φx⊃ψx : (x).ψx⊃χx : ⊃ .(x).φx⊃χx"
+  scopeReading := "The apparent variable has the scope of the whole pointwise syllogism."
+  parsed := .assertion
+    (star_10_3_formula universal negation disjunction phi psi chi)
+
+/-- ✱10·3.  In the full-scope normal form used here, PM's printed
+✱10·22·221, `Syll`, ✱10·27 route reduces to pointwise `Syll` followed by
+✱10·11.
+`demonstration_provenance: follows-printed`. -/
 theorem star_10_3
     (universal : signature.Universal argument order)
     (negation : signature.Negation order)
     (disjunction : signature.Disjunction order)
     (phi psi chi : Formula signature real [argument] order) :
-    ⊢ᵣ star_10_3_formula universal negation disjunction phi psi chi := by
+    Derivation (star_10_3_reading universal negation disjunction
+      phi psi chi).parsed := by
   let body := implication negation disjunction
     (conjunction negation disjunction
       (implication negation disjunction phi psi)
@@ -808,6 +822,10 @@ theorem star_10_3
       (chi.weakenReal.substitute (instantiateSubstitution value))
   have line2 := Derivation.star_10_11 universal body line1
   exact line2
+
+/- The projection below is the only theorem-specific ✱10 helper retained for
+✱22.  Unlike ✱10·3, it has no independently catalogued proposition name. -/
+namespace Star10For22
 
 /-- Full-scope projection used by ✱22·43. -/
 def star_10_11_star_3_26_formula
@@ -865,10 +883,8 @@ theorem star_22_43
     (negation : signature.Negation order)
     (disjunction : signature.Disjunction order)
     (alpha beta : Term signature real [] (classSort order 0)) :
-    Derivation (.assertion (Star10For22.star_10_11_star_3_26_formula
-      universal negation disjunction
-      (star_20_02 alpha.weaken (.apparent .zero))
-      (star_20_02 beta.weaken (.apparent .zero)))) := by
+    Derivation (star_22_43_reading universal negation disjunction
+      alpha beta).parsed := by
   have line1 := Star10For22.star_10_11_star_3_26 universal negation
     disjunction (star_20_02 alpha.weaken (.apparent .zero))
     (star_20_02 beta.weaken (.apparent .zero))
@@ -883,7 +899,7 @@ def star_22_44_reading
     RamifiedReading signature real where
   printed := PM.pmPrinted "⊢ : α ⊂ β . β ⊂ γ .⊃ . α ⊂ γ"
   scopeReading := "The defining individual variable has the scope of the whole pointwise syllogism."
-  parsed := .assertion (Star10For22.star_10_3_formula universal negation
+  parsed := .assertion (star_10_3_formula universal negation
     disjunction
     (star_20_02 alpha.weaken (.apparent .zero))
     (star_20_02 beta.weaken (.apparent .zero))
@@ -896,12 +912,9 @@ theorem star_22_44
     (negation : signature.Negation order)
     (disjunction : signature.Disjunction order)
     (alpha beta gamma : Term signature real [] (classSort order 0)) :
-    Derivation (.assertion (Star10For22.star_10_3_formula universal negation
-      disjunction
-      (star_20_02 alpha.weaken (.apparent .zero))
-      (star_20_02 beta.weaken (.apparent .zero))
-      (star_20_02 gamma.weaken (.apparent .zero)))) := by
-  have line1 := Star10For22.star_10_3 universal negation disjunction
+    Derivation (star_22_44_reading universal negation disjunction
+      alpha beta gamma).parsed := by
+  have line1 := star_10_3 universal negation disjunction
     (star_20_02 alpha.weaken (.apparent .zero))
     (star_20_02 beta.weaken (.apparent .zero))
     (star_20_02 gamma.weaken (.apparent .zero))
@@ -1126,7 +1139,7 @@ end PM.RamifiedSyntax
 #print axioms PM.RamifiedSyntax.star_22_441
 #print axioms PM.RamifiedSyntax.star_22_46
 #print axioms PM.RamifiedSyntax.star_22_42
-#print axioms PM.RamifiedSyntax.Star10For22.star_10_3
+#print axioms PM.RamifiedSyntax.star_10_3
 #print axioms PM.RamifiedSyntax.Star10For22.star_10_11_star_3_26
 #print axioms PM.RamifiedSyntax.star_22_43
 #print axioms PM.RamifiedSyntax.star_22_44

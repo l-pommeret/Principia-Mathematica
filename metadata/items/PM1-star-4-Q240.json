@@ -1,171 +1,171 @@
 {
- "batch": "PM1-STAR4-Q240",
- "edition": "first",
- "volume": 1,
- "source_range": {
-  "printed_pages": "127",
-  "scan_leaves": [
-   149
-  ],
-  "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
- },
- "witnesses": [
-  "PM1-1910-SCAN",
-  "WS-PM1"
- ],
- "items": [
-  {
-   "id": "PM1:✱4·78",
-   "kind": "derived-proposition",
-   "printed": "✱4·78.  ⊢ : p ⊃ q . ∨ . p ⊃ r . ≡ : p . ⊃ . q ∨ r",
-   "printed_page": 127,
-   "scan_leaf": 149,
-   "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
-   "declaration": "PM.FirstEdition.Volume1.Star4.star_4_78",
-   "formal_scope": "elementary",
-   "source_status": "source-catalogued",
-   "formal_status": "awaiting-ci",
-   "demonstration_provenance": "follows-printed",
-   "integration_status": "provisional-kernel-integrated",
-   "printed_dependencies": [
-    "PM1:✱4·2",
-    "PM1:✱1·01",
-    "PM1:✱4·33",
-    "PM1:✱4·31",
-    "PM1:✱4·37",
-    "PM1:✱4·25",
-    "PM1:✱4·22"
-   ],
-   "lean_dependencies": [
-    "PM.Derivation.detach",
-    "PM.FirstEdition.Volume1.Star3.star_3_2",
-    "PM.FirstEdition.Volume1.Star3.star_3_26",
-    "PM.FirstEdition.Volume1.Star4.star_4_2",
-    "PM.FirstEdition.Volume1.Star4.star_4_21",
-    "PM.FirstEdition.Volume1.Star4.star_4_22",
-    "PM.FirstEdition.Volume1.Star4.star_4_25",
-    "PM.FirstEdition.Volume1.Star4.star_4_31",
-    "PM.FirstEdition.Volume1.Star4.star_4_33",
-    "PM.RamifiedSyntax.star_4_37"
-   ],
-   "dependency_justifications": [
-    {
-     "kind": "metalinguistic-rule-selection",
-     "lean_dependency": "PM.Derivation.detach",
-     "pm_dependency": "PM1:✱1·11",
-     "evidence": "The Lean declaration star_4_78 quantifies an arbitrary elementary context `{Γ}`; detach therefore selects ✱1·11, the rule for a nonempty real-variable context, as in ✱2·06 and ✱2·08."
-    }
-   ],
-   "normalized_dependencies": [
-    "PM1:✱1·11",
-    "PM1:✱3·2",
-    "PM1:✱3·26",
-    "PM1:✱4·2",
-    "PM1:✱4·21",
-    "PM1:✱4·22",
-    "PM1:✱4·25",
-    "PM1:✱4·31",
-    "PM1:✱4·33",
-    "PM1:✱4·37"
-   ],
-   "historical_dependency_relaxation": {
-    "classification": "relaxed-closure",
-    "added_beyond_print": [
-     "PM1:✱1·11",
-     "PM1:✱3·2",
-     "PM1:✱3·26",
-     "PM1:✱4·21"
+  "batch": "PM1-STAR4-Q240",
+  "edition": "first",
+  "volume": 1,
+  "source_range": {
+    "printed_pages": "127",
+    "scan_leaves": [
+      149
     ],
-    "printed_but_unused": [
-     "PM1:✱1·01"
-    ],
-    "strict_attempt_evidence": "reviews/star-3-5-relaxed-closure-2026-08-22.md",
-    "editorial_note": "Definitions unfold judgmentally; explicit detachment, equivalence packaging, congruence and transitivity expose the kernel closure of the complete printed chain."
-   },
-   "certification": {
-    "tier": "awaiting-ci",
-    "failed_criteria": [
-     "T7"
-    ],
-    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-   },
-   "formalization_level": "pm-derivation-v1"
+    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
   },
-  {
-   "id": "PM1:✱4·79",
-   "kind": "derived-proposition",
-   "printed": "✱4·79.  ⊢ : q ⊃ p . ∨ . r ⊃ p . ≡ : q . r . ⊃ . p",
-   "printed_page": 127,
-   "scan_leaf": 149,
-   "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
-   "declaration": "PM.FirstEdition.Volume1.Star4.star_4_79",
-   "formal_scope": "elementary",
-   "source_status": "source-catalogued",
-   "formal_status": "awaiting-ci",
-   "demonstration_provenance": "follows-printed",
-   "integration_status": "provisional-kernel-integrated",
-   "printed_dependencies": [
-    "PM1:✱4·1",
-    "PM1:✱4·39",
-    "PM1:✱4·78",
-    "PM1:✱2·15",
-    "PM1:✱4·2",
-    "PM1:✱3·01",
-    "PM1:✱4·22"
-   ],
-   "lean_dependencies": [
-    "PM.Derivation.detach",
-    "PM.FirstEdition.Volume1.Star2.star_2_15",
-    "PM.FirstEdition.Volume1.Star3.star_3_2",
-    "PM.FirstEdition.Volume1.Star4.star_4_1",
-    "PM.FirstEdition.Volume1.Star4.star_4_2",
-    "PM.FirstEdition.Volume1.Star4.star_4_22",
-    "PM.FirstEdition.Volume1.Star4.star_4_39",
-    "PM.FirstEdition.Volume1.Star4.star_4_78"
-   ],
-   "dependency_justifications": [
+  "witnesses": [
+    "PM1-1910-SCAN",
+    "WS-PM1"
+  ],
+  "items": [
     {
-     "kind": "metalinguistic-rule-selection",
-     "lean_dependency": "PM.Derivation.detach",
-     "pm_dependency": "PM1:✱1·11",
-     "evidence": "reviews/Q240-star4-78-79-kernel-gate.md"
+      "id": "PM1:✱4·78",
+      "kind": "derived-proposition",
+      "printed": "✱4·78.  ⊢ : p ⊃ q . ∨ . p ⊃ r . ≡ : p . ⊃ . q ∨ r",
+      "printed_page": 127,
+      "scan_leaf": 149,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star4.star_4_78",
+      "formal_scope": "elementary",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "demonstration_provenance": "follows-printed",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱4·2",
+        "PM1:✱1·01",
+        "PM1:✱4·33",
+        "PM1:✱4·31",
+        "PM1:✱4·37",
+        "PM1:✱4·25",
+        "PM1:✱4·22"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.FirstEdition.Volume1.Star3.star_3_2",
+        "PM.FirstEdition.Volume1.Star3.star_3_26",
+        "PM.FirstEdition.Volume1.Star4.star_4_2",
+        "PM.FirstEdition.Volume1.Star4.star_4_21",
+        "PM.FirstEdition.Volume1.Star4.star_4_22",
+        "PM.FirstEdition.Volume1.Star4.star_4_25",
+        "PM.FirstEdition.Volume1.Star4.star_4_31",
+        "PM.FirstEdition.Volume1.Star4.star_4_33",
+        "PM.RamifiedSyntax.star_4_37"
+      ],
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·11",
+          "evidence": "The Lean declaration star_4_78 quantifies an arbitrary elementary context `{Γ}`; detach therefore selects ✱1·11, the rule for a nonempty real-variable context, as in ✱2·06 and ✱2·08."
+        }
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱3·2",
+        "PM1:✱3·26",
+        "PM1:✱4·2",
+        "PM1:✱4·21",
+        "PM1:✱4·22",
+        "PM1:✱4·25",
+        "PM1:✱4·31",
+        "PM1:✱4·33",
+        "PM1:✱4·37"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱1·11",
+          "PM1:✱3·2",
+          "PM1:✱3·26",
+          "PM1:✱4·21"
+        ],
+        "printed_but_unused": [
+          "PM1:✱1·01"
+        ],
+        "strict_attempt_evidence": "reviews/star-3-5-relaxed-closure-2026-08-22.md",
+        "editorial_note": "Definitions unfold judgmentally; explicit detachment, equivalence packaging, congruence and transitivity expose the kernel closure of the complete printed chain."
+      },
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      },
+      "formalization_level": "pm-derivation-v1"
+    },
+    {
+      "id": "PM1:✱4·79",
+      "kind": "derived-proposition",
+      "printed": "✱4·79.  ⊢ : q ⊃ p . ∨ . r ⊃ p . ≡ : q . r . ⊃ . p",
+      "printed_page": 127,
+      "scan_leaf": 149,
+      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star4.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star4.star_4_79",
+      "formal_scope": "elementary",
+      "source_status": "source-catalogued",
+      "formal_status": "awaiting-ci",
+      "demonstration_provenance": "follows-printed",
+      "integration_status": "provisional-kernel-integrated",
+      "printed_dependencies": [
+        "PM1:✱4·1",
+        "PM1:✱4·39",
+        "PM1:✱4·78",
+        "PM1:✱2·15",
+        "PM1:✱4·2",
+        "PM1:✱3·01",
+        "PM1:✱4·22"
+      ],
+      "lean_dependencies": [
+        "PM.Derivation.detach",
+        "PM.FirstEdition.Volume1.Star2.star_2_15",
+        "PM.FirstEdition.Volume1.Star3.star_3_2",
+        "PM.FirstEdition.Volume1.Star4.star_4_1",
+        "PM.FirstEdition.Volume1.Star4.star_4_2",
+        "PM.FirstEdition.Volume1.Star4.star_4_22",
+        "PM.FirstEdition.Volume1.Star4.star_4_39",
+        "PM.FirstEdition.Volume1.Star4.star_4_78"
+      ],
+      "dependency_justifications": [
+        {
+          "kind": "metalinguistic-rule-selection",
+          "lean_dependency": "PM.Derivation.detach",
+          "pm_dependency": "PM1:✱1·11",
+          "evidence": "reviews/Q240-star4-78-79-kernel-gate.md"
+        }
+      ],
+      "normalized_dependencies": [
+        "PM1:✱1·11",
+        "PM1:✱2·15",
+        "PM1:✱3·2",
+        "PM1:✱4·1",
+        "PM1:✱4·2",
+        "PM1:✱4·22",
+        "PM1:✱4·39",
+        "PM1:✱4·78"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱1·11",
+          "PM1:✱3·2"
+        ],
+        "printed_but_unused": [
+          "PM1:✱3·01"
+        ],
+        "strict_attempt_evidence": "reviews/Q240-star4-78-79-kernel-gate.md",
+        "editorial_note": "The citation ✱4·1·39 is preserved as two references; explicit packaging and transitivity expose the kernel closure."
+      },
+      "certification": {
+        "tier": "awaiting-ci",
+        "failed_criteria": [
+          "T7"
+        ],
+        "computed_at_commit": "afa5ad99e08739e56e75634f6628aa092b4bbe67"
+      },
+      "formalization_level": "pm-derivation-v1"
     }
-   ],
-   "normalized_dependencies": [
-    "PM1:✱1·11",
-    "PM1:✱2·15",
-    "PM1:✱3·2",
-    "PM1:✱4·1",
-    "PM1:✱4·2",
-    "PM1:✱4·22",
-    "PM1:✱4·39",
-    "PM1:✱4·78"
-   ],
-   "historical_dependency_relaxation": {
-    "classification": "relaxed-closure",
-    "added_beyond_print": [
-     "PM1:✱1·11",
-     "PM1:✱3·2"
-    ],
-    "printed_but_unused": [
-     "PM1:✱3·01"
-    ],
-    "strict_attempt_evidence": "reviews/Q240-star4-78-79-kernel-gate.md",
-    "editorial_note": "The citation ✱4·1·39 is preserved as two references; explicit packaging and transitivity expose the kernel closure."
-   },
-   "certification": {
-    "tier": "awaiting-ci",
-    "failed_criteria": [
-     "T7"
-    ],
-    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-   },
-   "formalization_level": "pm-derivation-v1"
+  ],
+  "ci_evidence": {
+    "commit": "pending",
+    "run": "pending",
+    "conclusion": "pending"
   }
- ],
- "ci_evidence": {
-  "commit": "pending",
-  "run": "pending",
-  "conclusion": "pending"
- }
 }
