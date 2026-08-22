@@ -534,6 +534,15 @@ axiom star_2_76 {Γ} (p q r : PM.Elementary Γ) :
 
 end PM.FirstEdition.Volume1.Star2
 
+-- PM-CONTEXT-ITEM PM1:✱2·77 PM.FirstEdition.Volume1.Star2.star_2_77
+namespace PM.FirstEdition.Volume1.Star2
+
+axiom star_2_77 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)))
+
+
+end PM.FirstEdition.Volume1.Star2
+
 -- PM-CONTEXT-ITEM PM1:✱2·8 PM.FirstEdition.Volume1.Star2.star_2_8
 namespace PM.FirstEdition.Volume1.Star2
 
@@ -649,6 +658,15 @@ namespace PM.FirstEdition.Volume1.Star3
 
 axiom star_3_27 {Γ} (p q : PM.Elementary Γ) :
     ⊢ₚ ((p ∧ₚ q) ⊃ₚ q)
+
+
+end PM.FirstEdition.Volume1.Star3
+
+-- PM-CONTEXT-ITEM PM1:✱3·31 PM.FirstEdition.Volume1.Star3.star_3_31
+namespace PM.FirstEdition.Volume1.Star3
+
+axiom star_3_31 {Γ} (p q r : PM.Elementary Γ) :
+    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r))
 
 
 end PM.FirstEdition.Volume1.Star3

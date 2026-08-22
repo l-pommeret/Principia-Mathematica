@@ -2,9 +2,9 @@
   "kind": "pm-isolated-context-bundle",
   "profile": "elementary-formation-pm1",
   "current_item": null,
-  "manifest_sha256": "8447b098779e3fb05e5e8a1ec6982f3d05cb9825ce4fc0b626fc1213223ebe5d",
-  "source_sha256": "4d539e75ac209d32cedaa3918576d17c2d4e51e9768dab7d9e2aeaaed3f38460",
-  "source_bytes": 21055,
+  "manifest_sha256": "ac03d2902996f219f7d3cbb71c5b43889fb2d690385d61d19abe644b17056676",
+  "source_sha256": "d09397f8b9f5a997a7cf4420f1ca45b807adaf67ab9f3fd22ffb6227f87cb05a",
+  "source_bytes": 21602,
   "proof_permissions": [
     "PM1:✱1·2",
     "PM1:✱1·3",
@@ -54,6 +54,7 @@
     "PM1:✱2·74",
     "PM1:✱2·75",
     "PM1:✱2·76",
+    "PM1:✱2·77",
     "PM1:✱2·8",
     "PM1:✱2·81",
     "PM1:✱2·82",
@@ -67,6 +68,7 @@
     "PM1:✱3·22",
     "PM1:✱3·26",
     "PM1:✱3·27",
+    "PM1:✱3·31",
     "PM1:✱3·43",
     "PM1:✱4·01",
     "PM1:✱4·02"
@@ -536,6 +538,18 @@
     },
     {
       "kind": "opaque-interface-stub",
+      "id": "PM1:✱2·77",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star2.star_2_77",
+      "source_sha256": "6d76d1502623fd8e34ecdb2cc282fc36f7b442fc95530dee3941d116c3bb0f82",
+      "slice_sha256": "dfeea96e169a54669989a5789387aeb0e5e7d6db7ea9cb33dfa5e360622855a5",
+      "bytes": 129,
+      "signature_sha256": "b0892a02c062e8286d48c632b0f470c611947e4c853559177f36f05c5ade0318",
+      "signature": "theorem star_2_77 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ⊃ₚ q) ⊃ₚ (p ⊃ₚ r)))\n",
+      "remap_required": true
+    },
+    {
+      "kind": "opaque-interface-stub",
       "id": "PM1:✱2·8",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star2.lean",
       "declaration": "PM.FirstEdition.Volume1.Star2.star_2_8",
@@ -692,6 +706,18 @@
     },
     {
       "kind": "opaque-interface-stub",
+      "id": "PM1:✱3·31",
+      "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_31",
+      "source_sha256": "3580c518be704e0130ce6c45d86d669f23d13ea5dc9d09470bd14c296d51722a",
+      "slice_sha256": "525d7ec419c329b0de9ad2a83f236e7ba65283363f19f72971954fe6ddb6e1bc",
+      "bytes": 118,
+      "signature_sha256": "2da0effdd18bab26c81ac80002706eed05a0a47afaf3df9153adc712a3bd5882",
+      "signature": "theorem star_3_31 {Γ} (p q r : PM.Elementary Γ) :\n    ⊢ₚ ((p ⊃ₚ (q ⊃ₚ r)) ⊃ₚ ((p ∧ₚ q) ⊃ₚ r))\n",
+      "remap_required": true
+    },
+    {
+      "kind": "opaque-interface-stub",
       "id": "PM1:✱3·43",
       "path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
       "declaration": "PM.FirstEdition.Volume1.Star3.star_3_43",
@@ -765,6 +791,7 @@
     "PM1:✱2·74",
     "PM1:✱2·75",
     "PM1:✱2·76",
+    "PM1:✱2·77",
     "PM1:✱2·8",
     "PM1:✱2·81",
     "PM1:✱2·82",
@@ -778,6 +805,7 @@
     "PM1:✱3·22",
     "PM1:✱3·26",
     "PM1:✱3·27",
+    "PM1:✱3·31",
     "PM1:✱3·43"
   ],
   "source_backfill_required": true,
