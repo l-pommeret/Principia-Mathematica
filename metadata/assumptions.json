@@ -1,35 +1,45 @@
 {
-  "schema_version": 1,
-  "assumptions": [
-    {
-      "id": "PM1:REDUCIBILITY",
-      "label": "Axiom of reducibility",
-      "volume": 1,
-      "loci": ["Introduction, Chapter II, pp. 58–60", "✱12·1 and ✱12·11"],
-      "status": "catalogued-not-yet-formalized",
-      "lean_parameter_types": [
-        "PM.Experimental.PredicativeGateToy.UnaryReducibility12_1",
-        "PM.Experimental.PredicativeGateToy.BinaryReducibility12_11"
-      ],
-      "editorial_note": "Future Lean declarations must carry reducibility as an explicit scoped hypothesis, never as a global axiom or instance."
-    },
-    {
-      "id": "PM2:INFINITY",
-      "label": "Axiom of infinity",
-      "volume": 2,
-      "loci": ["Volume II; exact first-edition proposition loci to be source-audited before item integration"],
-      "status": "catalogued-locus-pending-source-audit",
-      "lean_parameter_types": [],
-      "editorial_note": "Registered early so later items can expose, rather than erase, their non-logical assumptions."
-    },
-    {
-      "id": "PM2:MULTIPLICATIVE",
-      "label": "Multiplicative axiom",
-      "volume": 2,
-      "loci": ["Volume II; exact first-edition proposition loci to be source-audited before item integration"],
-      "status": "catalogued-locus-pending-source-audit",
-      "lean_parameter_types": [],
-      "editorial_note": "Registered early so later items can expose, rather than erase, their non-logical assumptions."
-    }
-  ]
+ "schema_version": 1,
+ "assumptions": [
+  {
+   "id": "PM1:REDUCIBILITY",
+   "label": "Axiom of reducibility",
+   "volume": 1,
+   "loci": [
+    "Introduction, Chapter II, pp. 58–60",
+    "✱12·1 and ✱12·11"
+   ],
+   "status": "catalogued-not-yet-formalized",
+   "lean_parameter_types": [
+    "PM.Experimental.PredicativeGateToy.UnaryReducibility12_1",
+    "PM.Experimental.PredicativeGateToy.BinaryReducibility12_11",
+    "PM.RamifiedSyntax.Star21EliminationHypothesis",
+    "PM.RamifiedSyntax.BinaryEliminationHypothesis",
+    "PM.RamifiedSyntax.Star23Star10_35Hypothesis"
+   ],
+   "editorial_note": "Future Lean declarations must carry reducibility as an explicit scoped hypothesis, never as a global axiom or instance. A parameter type is registered exactly as its Lean header spells it: the toy types appear fully qualified in their own file, while Star21EliminationHypothesis, BinaryEliminationHypothesis and Star23Star10_35Hypothesis are written unqualified inside namespace PM.RamifiedSyntax. All three build star_12_11_formula from a reducibilityExistential, so each is the axiom of reducibility under an eliminative name. Thirteen bindings across ✱23, ✱33, ✱34 and ✱35 previously declared an elided type containing a literal ellipsis, which no registry could ever match; their dependence on the axiom was therefore invisible to the audit."
+  },
+  {
+   "id": "PM2:INFINITY",
+   "label": "Axiom of infinity",
+   "volume": 2,
+   "loci": [
+    "Volume II; exact first-edition proposition loci to be source-audited before item integration"
+   ],
+   "status": "catalogued-locus-pending-source-audit",
+   "lean_parameter_types": [],
+   "editorial_note": "Registered early so later items can expose, rather than erase, their non-logical assumptions."
+  },
+  {
+   "id": "PM2:MULTIPLICATIVE",
+   "label": "Multiplicative axiom",
+   "volume": 2,
+   "loci": [
+    "Volume II; exact first-edition proposition loci to be source-audited before item integration"
+   ],
+   "status": "catalogued-locus-pending-source-audit",
+   "lean_parameter_types": [],
+   "editorial_note": "Registered early so later items can expose, rather than erase, their non-logical assumptions."
+  }
+ ]
 }
