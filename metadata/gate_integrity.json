@@ -292,6 +292,15 @@
         "metadata/assumptions.json",
         "scripts/verify_dependencies.py"
       ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "authorised_head": "b2eda4aa9fe1d11d26dde2996fe8d0c3ae5f3428",
+      "reason": "Canari restaur\u00e9, instantan\u00e9 de graphe remplac\u00e9 par un invariant",
+      "scripts_changed": [
+        "scripts/verify_dependencies.py",
+        "tests/test_verify_dependencies.py"
+      ]
     }
   ],
   "digests": {
@@ -320,7 +329,7 @@
     "scripts/verify_ci_evidence.py": "d5327fbaa28f57ab17377ffa2ea9ae5070cb339bd3afc8dd537d9c8beb4d439e",
     "scripts/verify_constrained_batches.py": "7fabe6623a4d42c44fea535a0ddcfda269e879880bb8d5a73d4c3caaaa68bf80",
     "scripts/verify_context_bundles.py": "d5b173936833260d090612ac578f722cc3dd327bd2d5fc3931644f8979d5d16b",
-    "scripts/verify_dependencies.py": "db00a16d88ab8db5d07eaf097f27293a878f64994936dfd44ea5b4777b8bcebe",
+    "scripts/verify_dependencies.py": "f07fe556c84affccbf9b997c0c971ded5b53f6a315a849f444add810fec52fc4",
     "scripts/verify_description_architecture.py": "7b86b8a371f8f54c5296bf79e3acaeef36f06af9eb641829da96535c321cc527",
     "scripts/verify_description_scope_toy.py": "7f350f21fbb236adb7668ed2831bcde2742bb9d25b0c887cc7ba3948b805a3fb",
     "scripts/verify_editorial.py": "6047c8b335e1801568eae094ade0df1b574ba89cf96a510fc6b2e3af570398c1",
@@ -374,7 +383,7 @@
     "tests/test_verify_certification_tier.py": "2677038f64560ca24c5b44580e49562e948cb3cb98c7b1690e92017aad10a37c",
     "tests/test_verify_ci_covers_gates.py": "7be1429972814aee7752132e61677213144b79a64ec7a6343a0eed1dcf797ef7",
     "tests/test_verify_context_bundles.py": "672c85c92558b7ecccc871f0d68d26994c5b059243f16bfac6f5ab790d9ca763",
-    "tests/test_verify_dependencies.py": "762c771c75a7262c4ffcbf0338b39411600f54c9563bb34042a5450ad8915cd7",
+    "tests/test_verify_dependencies.py": "0ec28b458eb0cd34f45e1d6eff930b155dc44fdf8d7f42578a98f7ec12d0ed6b",
     "tests/test_verify_dependencies_missing_declaration.py": "df1205a316343341eab26c24bc039a70511e1aeeaac18a0b980741dcd25bbb79",
     "tests/test_verify_dependencies_wrapper_self_reference.py": "89efcfc76c7597bb02edf61e08317ec7f652bb97426799629a5b42db76b775d0",
     "tests/test_verify_description_architecture.py": "cd9b10af56f3e3683c1e5aefaf966994151909dbaad2f50f0f9846b90527e24b",
