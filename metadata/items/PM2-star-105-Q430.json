@@ -89,8 +89,21 @@
       "formal_status": "awaiting-ci",
       "integration_status": "provisional-awaiting-ci",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_105_01"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱105·01"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM2:✱105·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/pm2-star-100-102-105-106-relaxed-closure-2026-08-22.md",
+        "editorial_note": "The Lean reconstruction forms DʻN₁c by existentially binding the contextual application supplied by the catalogued definition ✱105·01, so that earlier definition is a direct dependency."
+      },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [

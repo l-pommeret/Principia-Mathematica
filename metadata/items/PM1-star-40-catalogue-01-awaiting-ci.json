@@ -32,8 +32,21 @@
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_20_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱20·01"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱20·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star-40-01-relaxed-closure-2026-08-22.md",
+        "editorial_note": "PM prints ✱40·01 as a definition without dependencies, while the Lean encoding eliminates its class abstraction contextually by specializing ✱20·01 to the product matrix. This gap has been recorded but no strict proof-tightening attempt has yet been made."
+      },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [
@@ -57,8 +70,21 @@
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_20_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱20·01"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱20·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star-40-02-relaxed-closure-2026-08-22.md",
+        "editorial_note": "PM prints ✱40·02 as a definition without dependencies, while the Lean encoding eliminates its class abstraction contextually by specializing ✱20·01 to the sum matrix. This gap has been recorded but no strict proof-tightening attempt has yet been made."
+      },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [

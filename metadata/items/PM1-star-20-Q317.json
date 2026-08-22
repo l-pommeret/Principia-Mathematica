@@ -93,8 +93,21 @@
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
-      "lean_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱14·01"
+      ],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_14_01"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱14·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star-20-072-relaxed-closure-2026-08-22.md",
+        "editorial_note": "PM prints ✱20·072 as a definition without dependencies, while the Lean encoding represents its contextual class description by specializing the previously encoded contextual-description schema ✱14·01. This gap has been recorded but no strict proof-tightening attempt has yet been made."
+      },
       "formalization_level": "pm-derivation-v1",
       "certification": {
         "tier": "awaiting-ci",

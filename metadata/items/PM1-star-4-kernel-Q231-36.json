@@ -1,91 +1,76 @@
 {
-  "batch": "PM1-STAR4-KERNEL-Q231-36",
-  "edition": "first",
-  "volume": 1,
-  "source_range": {
-    "printed_pages": "124",
-    "scan_leaves": [
-      146
+ "batch": "PM1-STAR4-KERNEL-Q231-36",
+ "edition": "first",
+ "volume": 1,
+ "source_range": {
+  "printed_pages": "124",
+  "scan_leaves": [
+   146
+  ],
+  "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
+ },
+ "witnesses": [
+  "PM1-1910-SCAN"
+ ],
+ "items": [
+  {
+   "id": "PM1:✱4·36",
+   "kind": "derived-proposition",
+   "printed": "✱4·36.  ⊢ :. p ≡ q . ⊃ : p . r . ≡ . q . r",
+   "printed_page": 124,
+   "scan_leaf": 146,
+   "lean_path": "Principia/Deduction/Star4Ramified.lean",
+   "declaration": "PM.RamifiedSyntax.star_4_36",
+   "formal_scope": "ramified formula derivation, unconditional",
+   "source_status": "source-catalogued",
+   "formal_status": "awaiting-ci",
+   "demonstration_provenance": "follows-printed",
+   "integration_status": "provisional-kernel-checked",
+   "printed_dependencies": [
+    "Fact",
+    "PM1:✱3·47"
+   ],
+   "normalized_dependencies": [
+    "PM1:✱2·02",
+    "PM1:✱2·08",
+    "PM1:✱3·26",
+    "PM1:✱3·27",
+    "PM1:✱3·47"
+   ],
+   "lean_dependencies": [
+    "PM.FirstEdition.Volume1.Star2.star_2_02",
+    "PM.FirstEdition.Volume1.Star2.star_2_08",
+    "PM.FirstEdition.Volume1.Star3.star_3_26",
+    "PM.FirstEdition.Volume1.Star3.star_3_27",
+    "PM.FirstEdition.Volume1.Star3.star_3_47"
+   ],
+   "historical_dependency_relaxation": {
+    "classification": "relaxed-closure",
+    "added_beyond_print": [
+     "PM1:✱2·02",
+     "PM1:✱2·08",
+     "PM1:✱3·26",
+     "PM1:✱3·27"
     ],
-    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu"
-  },
-  "witnesses": [
-    "PM1-1910-SCAN"
-  ],
-  "items": [
-    {
-      "id": "PM1:✱4·36",
-      "kind": "derived-proposition",
-      "printed": "✱4·36.  ⊢ :. p ≡ q . ⊃ : p . r . ≡ . q . r",
-      "printed_page": 124,
-      "scan_leaf": 146,
-      "lean_path": "Principia/Deduction/Star4Ramified.lean",
-      "declaration": "PM.RamifiedSyntax.star_4_36",
-      "formal_scope": "ramified formula derivation, unconditional",
-      "source_status": "source-catalogued",
-      "formal_status": "awaiting-ci",
-      "demonstration_provenance": "follows-printed",
-      "integration_status": "provisional-kernel-checked",
-      "printed_dependencies": [
-        "Fact",
-        "PM1:✱3·47"
-      ],
-      "normalized_dependencies": [
-        "PM1:✱1·1",
-        "PM1:✱1·11",
-        "PM1:✱2·02",
-        "PM1:✱2·05",
-        "PM1:✱2·08",
-        "PM1:✱2·43",
-        "PM1:✱3·2",
-        "PM1:✱3·26",
-        "PM1:✱3·27",
-        "PM1:✱3·47"
-      ],
-      "lean_dependencies": [
-        "PM.Derivation.star_1_1",
-        "PM.Derivation.star_1_11",
-        "PM.FirstEdition.Volume1.Star2.star_2_02",
-        "PM.FirstEdition.Volume1.Star2.star_2_05",
-        "PM.FirstEdition.Volume1.Star2.star_2_08",
-        "PM.FirstEdition.Volume1.Star2.star_2_43",
-        "PM.FirstEdition.Volume1.Star3.star_3_2",
-        "PM.FirstEdition.Volume1.Star3.star_3_26",
-        "PM.FirstEdition.Volume1.Star3.star_3_27",
-        "PM.FirstEdition.Volume1.Star3.star_3_47"
-      ],
-      "historical_dependency_relaxation": {
-        "classification": "relaxed-closure",
-        "added_beyond_print": [
-          "PM1:✱1·1",
-          "PM1:✱1·11",
-          "PM1:✱2·02",
-          "PM1:✱2·05",
-          "PM1:✱2·08",
-          "PM1:✱2·43",
-          "PM1:✱3·2",
-          "PM1:✱3·26",
-          "PM1:✱3·27"
-        ],
-        "printed_but_unused": [
-          "Fact"
-        ],
-        "strict_attempt_evidence": "reviews/Q231-star4-36-kernel-gate.md",
-        "editorial_note": "The printed Fact convention is expanded into explicit projection, identity, composition, duplication, inference, and packaging steps; printed ✱3·47 is retained."
-      },
-      "certification": {
-        "tier": "awaiting-ci",
-        "failed_criteria": [
-          "T7"
-        ],
-        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-      },
-      "formalization_level": "pm-derivation-v1"
-    }
-  ],
-  "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+    "printed_but_unused": [
+     "Fact"
+    ],
+    "strict_attempt_evidence": "reviews/star-3-5-relaxed-closure-2026-08-22.md",
+    "editorial_note": "The formal proof expands PM's Fact convention into explicit implication ✱2·02, identity ✱2·08 and the two product projections ✱3·26 and ✱3·27, while retaining the printed ✱3·47."
+   },
+   "certification": {
+    "tier": "awaiting-ci",
+    "failed_criteria": [
+     "T7"
+    ],
+    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+   },
+   "formalization_level": "pm-derivation-v1"
   }
+ ],
+ "ci_evidence": {
+  "commit": "pending",
+  "run": "pending",
+  "conclusion": "pending"
+ }
 }

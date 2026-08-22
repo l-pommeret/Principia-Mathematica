@@ -29,11 +29,20 @@
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [
-        "PM.FirstEdition.Volume2.Star103Source.CardinalClass"
+        "PM.RamifiedSyntax.star_52_01"
       ],
       "normalized_dependencies": [
-        "PM2:✱103·02"
+        "PM1:✱52·01"
       ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱52·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star-54-01-relaxed-closure-2026-08-22.md",
+        "editorial_note": "PM prints ✱54·01 as a definition without dependencies, while the Lean encoding realizes its contextual class-of-classes abstraction by specializing ✱52·01. The previously recorded PM2 dependency does not occur in the extracted term; no strict proof-tightening attempt has yet been made."
+      },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [
@@ -57,11 +66,20 @@
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
       "lean_dependencies": [
-        "PM.FirstEdition.Volume2.Star103Source.CardinalClass"
+        "PM.RamifiedSyntax.star_52_01"
       ],
       "normalized_dependencies": [
-        "PM2:✱103·02"
+        "PM1:✱52·01"
       ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱52·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star-54-02-relaxed-closure-2026-08-22.md",
+        "editorial_note": "PM prints ✱54·02 as a definition without dependencies, while the Lean encoding realizes its contextual class abstraction by specializing ✱52·01 to the printed two-member matrix. The previously recorded PM2 dependency does not occur in the extracted term; no strict proof-tightening attempt has yet been made."
+      },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [

@@ -38,10 +38,23 @@
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱20·02"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q341-review.md",
-      "lean_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_20_02"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱20·02"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star-22-24-relaxed-closure-2026-08-22.md",
+        "editorial_note": "La définition Lean développe l'inclusion point par point au moyen de l'appartenance ✱20·02, que la définition imprimée ne cite pas entre crochets."
+      },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [
@@ -64,10 +77,26 @@
       "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱20·01",
+        "PM1:✱20·02"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q341-review.md",
-      "lean_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_20_01",
+        "PM.RamifiedSyntax.star_20_02"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱20·01",
+          "PM1:✱20·02"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star-22-24-relaxed-closure-2026-08-22.md",
+        "editorial_note": "La représentation contextuelle de l'intersection explicite l'abstraction de classe ✱20·01 et l'appartenance ✱20·02 que la définition imprimée laisse dans sa notation."
+      },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [
@@ -90,10 +119,26 @@
       "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱20·01",
+        "PM1:✱20·02"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q341-review.md",
-      "lean_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_20_01",
+        "PM.RamifiedSyntax.star_20_02"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱20·01",
+          "PM1:✱20·02"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star-22-24-relaxed-closure-2026-08-22.md",
+        "editorial_note": "La représentation contextuelle de l'union explicite l'abstraction de classe ✱20·01 et l'appartenance ✱20·02 que la définition imprimée laisse dans sa notation."
+      },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [
@@ -117,10 +162,26 @@
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱20·01",
+        "PM1:✱20·02"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q341-review.md",
-      "lean_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_20_01",
+        "PM.RamifiedSyntax.star_20_02"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱20·01",
+          "PM1:✱20·02"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star-22-24-relaxed-closure-2026-08-22.md",
+        "editorial_note": "La représentation contextuelle du complément explicite l'abstraction de classe ✱20·01 et l'appartenance ✱20·02 que la définition imprimée laisse dans sa notation."
+      },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [
@@ -142,10 +203,26 @@
       "formal_status": "awaiting-ci",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
-      "normalized_dependencies": [],
+      "normalized_dependencies": [
+        "PM1:✱20·01",
+        "PM1:✱20·02"
+      ],
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q341-review.md",
-      "lean_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_20_01",
+        "PM.RamifiedSyntax.star_20_02"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱20·01",
+          "PM1:✱20·02"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star-22-24-relaxed-closure-2026-08-22.md",
+        "editorial_note": "La formalisation élimine les abréviations d'intersection et de complément, puis construit la classe par ✱20·01 à partir de l'appartenance ✱20·02."
+      },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [

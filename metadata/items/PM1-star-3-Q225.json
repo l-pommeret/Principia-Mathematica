@@ -1,191 +1,366 @@
 {
-  "batch": "PM1-STAR3-Q225",
-  "edition": "first",
-  "volume": 1,
-  "source_range": {
-    "printed_pages": "118",
-    "scan_leaves": [
-      140
-    ],
-    "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
-    "scan_sha256": {
-      "140": "20db12e87b5e387660bb8d9fd44527b82fe2b63f0c1ea8211e89b8be1dd64ebe"
-    }
-  },
-  "witnesses": [
-    "PM1-1910-SCAN",
-    "WS-PM1"
+ "batch": "PM1-STAR3-Q225",
+ "edition": "first",
+ "volume": 1,
+ "source_range": {
+  "printed_pages": "118",
+  "scan_leaves": [
+   140
   ],
-  "items": [
-    {
-      "id": "PM1:✱3·37",
-      "kind": "derived-proposition",
-      "demonstration_provenance": "follows-printed",
-      "printed": "⊢ : p . q . ⊃ . r : ⊃ : p . ∼r . ⊃ . ∼q",
-      "printed_page": 118,
-      "scan_leaf": 140,
-      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_37",
-      "formal_scope": "((p·q)⊃r)⊃((p·∼r)⊃∼q), over an elementary real-variable context",
-      "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "awaiting-ci",
-      "formalization_level": "pm-derivation-v1",
-      "printed_dependencies": [
-        "Transp",
-        "Syll",
-        "Exp",
-        "Imp"
-      ],
-      "normalized_dependencies": [],
-      "blocked_dependencies": [
-        "PM1:✱3·3",
-        "PM1:✱3·31",
-        "PM1:✱3·33",
-        "PM1:✱3·34"
-      ],
-      "certification": {
-        "tier": "awaiting-ci",
-        "failed_criteria": [
-          "T7"
-        ],
-        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-      }
-    },
-    {
-      "id": "PM1:✱3·4",
-      "kind": "derived-proposition",
-      "demonstration_provenance": "follows-printed",
-      "printed": "⊢ : p . q . ⊃ . p ⊃ q",
-      "printed_page": 118,
-      "scan_leaf": 140,
-      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_4",
-      "formal_scope": "(p·q)⊃(p⊃q), over an elementary real-variable context",
-      "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "awaiting-ci",
-      "formalization_level": "pm-derivation-v1",
-      "printed_dependencies": [
-        "PM1:✱2·51",
-        "Transp",
-        "PM1:✱1·01",
-        "PM1:✱3·01"
-      ],
-      "normalized_dependencies": [],
-      "blocked_dependencies": [
-        "PM1:✱2·51",
-        "PM1:✱2·15",
-        "PM1:✱2·16",
-        "PM1:✱2·17"
-      ],
-      "certification": {
-        "tier": "awaiting-ci",
-        "failed_criteria": [
-          "T7"
-        ],
-        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-      }
-    },
-    {
-      "id": "PM1:✱3·41",
-      "kind": "derived-proposition",
-      "demonstration_provenance": "follows-printed",
-      "printed": "⊢ :. p ⊃ r . ⊃ : p . q . ⊃ . r",
-      "printed_page": 118,
-      "scan_leaf": 140,
-      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_41",
-      "formal_scope": "(p⊃r)⊃((p·q)⊃r), over an elementary real-variable context",
-      "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "awaiting-ci",
-      "formalization_level": "pm-derivation-v1",
-      "printed_dependencies": [
-        "PM1:✱3·26",
-        "Syll"
-      ],
-      "normalized_dependencies": [],
-      "blocked_dependencies": [
-        "PM1:✱3·26",
-        "PM1:✱3·33",
-        "PM1:✱3·34"
-      ],
-      "certification": {
-        "tier": "awaiting-ci",
-        "failed_criteria": [
-          "T7"
-        ],
-        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-      }
-    },
-    {
-      "id": "PM1:✱3·42",
-      "kind": "derived-proposition",
-      "demonstration_provenance": "follows-printed",
-      "printed": "⊢ :. q ⊃ r . ⊃ : p . q . ⊃ . r",
-      "printed_page": 118,
-      "scan_leaf": 140,
-      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_42",
-      "formal_scope": "(q⊃r)⊃((p·q)⊃r), over an elementary real-variable context",
-      "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "awaiting-ci",
-      "formalization_level": "pm-derivation-v1",
-      "printed_dependencies": [
-        "PM1:✱3·27",
-        "Syll"
-      ],
-      "normalized_dependencies": [],
-      "blocked_dependencies": [
-        "PM1:✱3·27",
-        "PM1:✱3·33",
-        "PM1:✱3·34"
-      ],
-      "certification": {
-        "tier": "awaiting-ci",
-        "failed_criteria": [
-          "T7"
-        ],
-        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-      }
-    },
-    {
-      "id": "PM1:✱3·43",
-      "kind": "derived-proposition",
-      "demonstration_provenance": "follows-printed",
-      "printed": "⊢ : p ⊃ q . p ⊃ r . ⊃ : p . ⊃ . q . r",
-      "printed_page": 118,
-      "scan_leaf": 140,
-      "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
-      "declaration": "PM.FirstEdition.Volume1.Star3.star_3_43",
-      "formal_scope": "((p⊃q)·(p⊃r))⊃(p⊃(q·r)), over an elementary real-variable context",
-      "source_status": "scan-hash-recorded-and-WS-collated",
-      "formal_status": "awaiting-ci",
-      "formalization_level": "pm-derivation-v1",
-      "printed_dependencies": [
-        "PM1:✱3·2",
-        "Syll",
-        "PM1:✱2·77",
-        "Imp"
-      ],
-      "normalized_dependencies": [],
-      "blocked_dependencies": [
-        "PM1:✱3·2",
-        "PM1:✱3·31",
-        "PM1:✱3·33",
-        "PM1:✱3·34",
-        "PM1:✱2·77"
-      ],
-      "certification": {
-        "tier": "awaiting-ci",
-        "failed_criteria": [
-          "T7"
-        ],
-        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
-      }
-    }
-  ],
-  "ci_evidence": {
-    "commit": "pending",
-    "run": "pending",
-    "conclusion": "pending"
+  "canonical_scan": "https://en.wikisource.org/wiki/File:Russell,_Whitehead_-_Principia_Mathematica,_vol._I,_1910.djvu",
+  "scan_sha256": {
+   "140": "20db12e87b5e387660bb8d9fd44527b82fe2b63f0c1ea8211e89b8be1dd64ebe"
   }
+ },
+ "witnesses": [
+  "PM1-1910-SCAN",
+  "WS-PM1"
+ ],
+ "items": [
+  {
+   "id": "PM1:✱3·37",
+   "kind": "derived-proposition",
+   "demonstration_provenance": "follows-printed",
+   "printed": "⊢ : p . q . ⊃ . r : ⊃ : p . ∼r . ⊃ . ∼q",
+   "printed_page": 118,
+   "scan_leaf": 140,
+   "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+   "declaration": "PM.FirstEdition.Volume1.Star3.star_3_37",
+   "formal_scope": "((p·q)⊃r)⊃((p·∼r)⊃∼q), over an elementary real-variable context",
+   "source_status": "scan-hash-recorded-and-WS-collated",
+   "formal_status": "awaiting-ci",
+   "formalization_level": "pm-derivation-v1",
+   "printed_dependencies": [
+    "Transp",
+    "Syll",
+    "Exp",
+    "Imp"
+   ],
+   "normalized_dependencies": [
+    "PM1:✱1·11",
+    "PM1:✱2·02",
+    "PM1:✱2·05",
+    "PM1:✱2·16",
+    "PM1:✱2·77",
+    "PM1:✱3·3",
+    "PM1:✱3·31"
+   ],
+   "dependency_justifications": [
+    {
+     "kind": "metalinguistic-rule-selection",
+     "lean_dependency": "PM.Derivation.detach",
+     "pm_dependency": "PM1:✱1·11",
+     "evidence": "The Lean declaration star_3_37 quantifies an arbitrary elementary context `{Γ}`; detach therefore selects ✱1·11, the rule for a nonempty real-variable context, as in ✱2·06 and ✱2·08."
+    }
+   ],
+   "historical_dependency_relaxation": {
+    "classification": "relaxed-closure",
+    "added_beyond_print": [
+     "PM1:✱1·11",
+     "PM1:✱2·02",
+     "PM1:✱2·05",
+     "PM1:✱2·16",
+     "PM1:✱2·77",
+     "PM1:✱3·3",
+     "PM1:✱3·31"
+    ],
+    "printed_but_unused": [
+     "Exp",
+     "Imp",
+     "Syll",
+     "Transp"
+    ],
+    "strict_attempt_evidence": "reviews/star-3-5-relaxed-closure-2026-08-22.md",
+    "editorial_note": "The formal proof expands PM's Transp, Syll, Exp and Imp instructions into explicit transposition, composition, rearrangement, importation and detachment propositions required by the object-language derivation."
+   },
+   "blocked_dependencies": [
+    "PM1:✱3·3",
+    "PM1:✱3·31",
+    "PM1:✱3·33",
+    "PM1:✱3·34"
+   ],
+   "certification": {
+    "tier": "awaiting-ci",
+    "failed_criteria": [
+     "T7"
+    ],
+    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+   },
+   "lean_dependencies": [
+    "PM.Derivation.detach",
+    "PM.FirstEdition.Volume1.Star2.star_2_02",
+    "PM.FirstEdition.Volume1.Star2.star_2_05",
+    "PM.FirstEdition.Volume1.Star2.star_2_16",
+    "PM.FirstEdition.Volume1.Star2.star_2_77",
+    "PM.FirstEdition.Volume1.Star3.star_3_3",
+    "PM.FirstEdition.Volume1.Star3.star_3_31"
+   ]
+  },
+  {
+   "id": "PM1:✱3·4",
+   "kind": "derived-proposition",
+   "demonstration_provenance": "follows-printed",
+   "printed": "⊢ : p . q . ⊃ . p ⊃ q",
+   "printed_page": 118,
+   "scan_leaf": 140,
+   "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+   "declaration": "PM.FirstEdition.Volume1.Star3.star_3_4",
+   "formal_scope": "(p·q)⊃(p⊃q), over an elementary real-variable context",
+   "source_status": "scan-hash-recorded-and-WS-collated",
+   "formal_status": "awaiting-ci",
+   "formalization_level": "pm-derivation-v1",
+   "printed_dependencies": [
+    "PM1:✱2·51",
+    "Transp",
+    "PM1:✱1·01",
+    "PM1:✱3·01"
+   ],
+   "normalized_dependencies": [
+    "PM1:✱1·11",
+    "PM1:✱2·05",
+    "PM1:✱2·14",
+    "PM1:✱2·16",
+    "PM1:✱2·51"
+   ],
+   "dependency_justifications": [
+    {
+     "kind": "metalinguistic-rule-selection",
+     "lean_dependency": "PM.Derivation.detach",
+     "pm_dependency": "PM1:✱1·11",
+     "evidence": "The Lean declaration star_3_4 quantifies an arbitrary elementary context `{Γ}`; detach therefore selects ✱1·11, the rule for a nonempty real-variable context, as in ✱2·06 and ✱2·08."
+    }
+   ],
+   "historical_dependency_relaxation": {
+    "classification": "relaxed-closure",
+    "added_beyond_print": [
+     "PM1:✱1·11",
+     "PM1:✱2·05",
+     "PM1:✱2·14",
+     "PM1:✱2·16"
+    ],
+    "printed_but_unused": [
+     "PM1:✱1·01",
+     "PM1:✱3·01",
+     "Transp"
+    ],
+    "strict_attempt_evidence": "reviews/star-3-5-relaxed-closure-2026-08-22.md",
+    "editorial_note": "The formal proof realizes transposition through ✱2·16, double-negation through ✱2·14, composition through ✱2·05 and detachment through ✱1·11, while the two printed definitions reduce by rewriting rather than remaining theorem edges."
+   },
+   "blocked_dependencies": [
+    "PM1:✱2·51",
+    "PM1:✱2·15",
+    "PM1:✱2·16",
+    "PM1:✱2·17"
+   ],
+   "certification": {
+    "tier": "awaiting-ci",
+    "failed_criteria": [
+     "T7"
+    ],
+    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+   },
+   "lean_dependencies": [
+    "PM.Derivation.detach",
+    "PM.FirstEdition.Volume1.Star2.star_2_05",
+    "PM.FirstEdition.Volume1.Star2.star_2_14",
+    "PM.FirstEdition.Volume1.Star2.star_2_16",
+    "PM.FirstEdition.Volume1.Star2.star_2_51"
+   ]
+  },
+  {
+   "id": "PM1:✱3·41",
+   "kind": "derived-proposition",
+   "demonstration_provenance": "follows-printed",
+   "printed": "⊢ :. p ⊃ r . ⊃ : p . q . ⊃ . r",
+   "printed_page": 118,
+   "scan_leaf": 140,
+   "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+   "declaration": "PM.FirstEdition.Volume1.Star3.star_3_41",
+   "formal_scope": "(p⊃r)⊃((p·q)⊃r), over an elementary real-variable context",
+   "source_status": "scan-hash-recorded-and-WS-collated",
+   "formal_status": "awaiting-ci",
+   "formalization_level": "pm-derivation-v1",
+   "printed_dependencies": [
+    "PM1:✱3·26",
+    "Syll"
+   ],
+   "normalized_dependencies": [
+    "PM1:✱1·11",
+    "PM1:✱2·06",
+    "PM1:✱3·26"
+   ],
+   "dependency_justifications": [
+    {
+     "kind": "metalinguistic-rule-selection",
+     "lean_dependency": "PM.Derivation.detach",
+     "pm_dependency": "PM1:✱1·11",
+     "evidence": "The Lean declaration star_3_41 quantifies an arbitrary elementary context `{Γ}`; detach therefore selects ✱1·11, the rule for a nonempty real-variable context, as in ✱2·06 and ✱2·08."
+    }
+   ],
+   "historical_dependency_relaxation": {
+    "classification": "relaxed-closure",
+    "added_beyond_print": [
+     "PM1:✱1·11",
+     "PM1:✱2·06"
+    ],
+    "printed_but_unused": [
+     "Syll"
+    ],
+    "strict_attempt_evidence": "reviews/star-3-5-relaxed-closure-2026-08-22.md",
+    "editorial_note": "The formal proof makes PM's Syll instruction concrete as ✱2·06 and applies it by detachment ✱1·11 to the retained citation ✱3·26."
+   },
+   "blocked_dependencies": [
+    "PM1:✱3·26",
+    "PM1:✱3·33",
+    "PM1:✱3·34"
+   ],
+   "certification": {
+    "tier": "awaiting-ci",
+    "failed_criteria": [
+     "T7"
+    ],
+    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+   },
+   "lean_dependencies": [
+    "PM.Derivation.detach",
+    "PM.FirstEdition.Volume1.Star2.star_2_06",
+    "PM.FirstEdition.Volume1.Star3.star_3_26"
+   ]
+  },
+  {
+   "id": "PM1:✱3·42",
+   "kind": "derived-proposition",
+   "demonstration_provenance": "follows-printed",
+   "printed": "⊢ :. q ⊃ r . ⊃ : p . q . ⊃ . r",
+   "printed_page": 118,
+   "scan_leaf": 140,
+   "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+   "declaration": "PM.FirstEdition.Volume1.Star3.star_3_42",
+   "formal_scope": "(q⊃r)⊃((p·q)⊃r), over an elementary real-variable context",
+   "source_status": "scan-hash-recorded-and-WS-collated",
+   "formal_status": "awaiting-ci",
+   "formalization_level": "pm-derivation-v1",
+   "printed_dependencies": [
+    "PM1:✱3·27",
+    "Syll"
+   ],
+   "normalized_dependencies": [
+    "PM1:✱1·11",
+    "PM1:✱2·06",
+    "PM1:✱3·27"
+   ],
+   "dependency_justifications": [
+    {
+     "kind": "metalinguistic-rule-selection",
+     "lean_dependency": "PM.Derivation.detach",
+     "pm_dependency": "PM1:✱1·11",
+     "evidence": "The Lean declaration star_3_42 quantifies an arbitrary elementary context `{Γ}`; detach therefore selects ✱1·11, the rule for a nonempty real-variable context, as in ✱2·06 and ✱2·08."
+    }
+   ],
+   "historical_dependency_relaxation": {
+    "classification": "relaxed-closure",
+    "added_beyond_print": [
+     "PM1:✱1·11",
+     "PM1:✱2·06"
+    ],
+    "printed_but_unused": [
+     "Syll"
+    ],
+    "strict_attempt_evidence": "reviews/star-3-5-relaxed-closure-2026-08-22.md",
+    "editorial_note": "The formal proof makes PM's Syll instruction concrete as ✱2·06 and applies it by detachment ✱1·11 to the retained citation ✱3·27."
+   },
+   "blocked_dependencies": [
+    "PM1:✱3·27",
+    "PM1:✱3·33",
+    "PM1:✱3·34"
+   ],
+   "certification": {
+    "tier": "awaiting-ci",
+    "failed_criteria": [
+     "T7"
+    ],
+    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+   },
+   "lean_dependencies": [
+    "PM.Derivation.detach",
+    "PM.FirstEdition.Volume1.Star2.star_2_06",
+    "PM.FirstEdition.Volume1.Star3.star_3_27"
+   ]
+  },
+  {
+   "id": "PM1:✱3·43",
+   "kind": "derived-proposition",
+   "demonstration_provenance": "follows-printed",
+   "printed": "⊢ : p ⊃ q . p ⊃ r . ⊃ : p . ⊃ . q . r",
+   "printed_page": 118,
+   "scan_leaf": 140,
+   "lean_path": "Principia/FirstEdition/Volume1/Part1/SectionA/Star3.lean",
+   "declaration": "PM.FirstEdition.Volume1.Star3.star_3_43",
+   "formal_scope": "((p⊃q)·(p⊃r))⊃(p⊃(q·r)), over an elementary real-variable context",
+   "source_status": "scan-hash-recorded-and-WS-collated",
+   "formal_status": "awaiting-ci",
+   "formalization_level": "pm-derivation-v1",
+   "printed_dependencies": [
+    "PM1:✱3·2",
+    "Syll",
+    "PM1:✱2·77",
+    "Imp"
+   ],
+   "normalized_dependencies": [
+    "PM1:✱1·11",
+    "PM1:✱2·05",
+    "PM1:✱2·77",
+    "PM1:✱3·2",
+    "PM1:✱3·31"
+   ],
+   "dependency_justifications": [
+    {
+     "kind": "metalinguistic-rule-selection",
+     "lean_dependency": "PM.Derivation.detach",
+     "pm_dependency": "PM1:✱1·11",
+     "evidence": "The Lean declaration star_3_43 quantifies an arbitrary elementary context `{Γ}`; detach therefore selects ✱1·11, the rule for a nonempty real-variable context, as in ✱2·06 and ✱2·08."
+    }
+   ],
+   "historical_dependency_relaxation": {
+    "classification": "relaxed-closure",
+    "added_beyond_print": [
+     "PM1:✱1·11",
+     "PM1:✱2·05",
+     "PM1:✱3·31"
+    ],
+    "printed_but_unused": [
+     "Imp",
+     "Syll"
+    ],
+    "strict_attempt_evidence": "reviews/star-3-5-relaxed-closure-2026-08-22.md",
+    "editorial_note": "The formal proof expands PM's Syll and Imp instructions into explicit composition ✱2·05 and importation ✱3·31, joined by detachment ✱1·11, while retaining ✱3·2 and ✱2·77."
+   },
+   "blocked_dependencies": [
+    "PM1:✱3·2",
+    "PM1:✱3·31",
+    "PM1:✱3·33",
+    "PM1:✱3·34",
+    "PM1:✱2·77"
+   ],
+   "certification": {
+    "tier": "awaiting-ci",
+    "failed_criteria": [
+     "T7"
+    ],
+    "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+   },
+   "lean_dependencies": [
+    "PM.Derivation.detach",
+    "PM.FirstEdition.Volume1.Star2.star_2_05",
+    "PM.FirstEdition.Volume1.Star2.star_2_77",
+    "PM.FirstEdition.Volume1.Star3.star_3_2",
+    "PM.FirstEdition.Volume1.Star3.star_3_31"
+   ]
+  }
+ ],
+ "ci_evidence": {
+  "commit": "pending",
+  "run": "pending",
+  "conclusion": "pending"
+ }
 }

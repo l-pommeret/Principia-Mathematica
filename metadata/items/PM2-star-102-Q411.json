@@ -41,8 +41,21 @@
       "integration_blocked": false,
       "integration_status": "provisional-kernel-checked",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_100_01"
+      ],
+      "normalized_dependencies": [
+        "PM2:✱100·01"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM2:✱100·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/pm2-star-100-102-105-106-relaxed-closure-2026-08-22.md",
+        "editorial_note": "The assigned-type domain is reconstructed by specializing the generic typed body of Nc from ✱100·01 and existentially binding its parameter, so the Lean term has that direct edge."
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/Q411-review.md",
       "semantic_audit_status": "strict-equivalence-passed",

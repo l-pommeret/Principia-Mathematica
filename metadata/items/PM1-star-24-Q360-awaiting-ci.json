@@ -29,9 +29,25 @@
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
-      "dependency_fidelity": "strict-closure",
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_13_01",
+        "PM.RamifiedSyntax.star_20_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱13·01",
+        "PM1:✱20·01"
+      ],
+      "dependency_fidelity": "relaxed-closure",
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱13·01",
+          "PM1:✱20·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star-22-24-relaxed-closure-2026-08-22.md",
+        "editorial_note": "La classe universelle est représentée contextuellement par l'abstraction ✱20·01 appliquée à la matrice de réflexivité de l'identité ✱13·01, sans citation imprimée."
+      },
       "certification": {
         "tier": "awaiting-ci",
         "failed_criteria": [
@@ -58,19 +74,22 @@
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "printed_dependencies": [],
       "lean_dependencies": [
-        "Star22Q341Definitions.Complement"
+        "PM.RamifiedSyntax.star_13_01",
+        "PM.RamifiedSyntax.star_20_01"
       ],
       "normalized_dependencies": [
-        "PM1:✱22·04"
+        "PM1:✱13·01",
+        "PM1:✱20·01"
       ],
       "historical_dependency_relaxation": {
         "classification": "relaxed-closure",
         "added_beyond_print": [
-          "PM1:✱22·04"
+          "PM1:✱13·01",
+          "PM1:✱20·01"
         ],
         "printed_but_unused": [],
-        "strict_attempt_evidence": "reviews/Q360-review.md",
-        "editorial_note": "The typed embedding realizes PM's complement notation through the earlier complement definition ✱22·04; the displayed definition has no bracketed citation."
+        "strict_attempt_evidence": "reviews/star-22-24-relaxed-closure-2026-08-22.md",
+        "editorial_note": "La définition Lean élimine la classe universelle et son complément jusqu'à la négation de l'identité ✱13·01, puis forme contextuellement la classe par ✱20·01."
       },
       "certification": {
         "tier": "awaiting-ci",

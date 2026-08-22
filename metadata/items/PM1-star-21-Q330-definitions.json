@@ -97,8 +97,21 @@
       "demonstration_provenance": "editorial-reconstruction",
       "integration_status": "provisional-kernel-integrated",
       "printed_dependencies": [],
-      "lean_dependencies": [],
-      "normalized_dependencies": [],
+      "lean_dependencies": [
+        "PM.RamifiedSyntax.star_14_01"
+      ],
+      "normalized_dependencies": [
+        "PM1:✱14·01"
+      ],
+      "historical_dependency_relaxation": {
+        "classification": "relaxed-closure",
+        "added_beyond_print": [
+          "PM1:✱14·01"
+        ],
+        "printed_but_unused": [],
+        "strict_attempt_evidence": "reviews/star-21-072-relaxed-closure-2026-08-22.md",
+        "editorial_note": "PM prints ✱21·072 as a definition without dependencies, while the Lean encoding represents its contextual relation description by specializing the previously encoded contextual-description schema ✱14·01. This gap has been recorded but no strict proof-tightening attempt has yet been made."
+      },
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
       "semantic_audit": "reviews/Q330-review.md",
