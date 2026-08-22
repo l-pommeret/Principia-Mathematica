@@ -274,13 +274,22 @@
         "scripts/verify_dependencies.py",
         "tests/test_verify_dependencies.py"
       ]
+    },
+    {
+      "authorised_by": "L. Pommeret",
+      "authorised_head": "f7be0e7a17beb5043eb878dc0806682ee0e33595",
+      "reason": "Audit de d\u00e9pendances \u00e9largi, op\u00e9rations de syntaxe d\u00e9clar\u00e9es comme infrastructure",
+      "scripts_changed": [
+        "metadata/dependency_aliases.json",
+        "scripts/verify_dependencies.py"
+      ]
     }
   ],
   "digests": {
     "docs/certification_registry.json": "654313fa7a207cc324f0334811acd2bc1dac1bf96765792656bba996e59ffe79",
     "metadata/assumptions.json": "62c06c3ad47e6b84428f7f2a0f3134498b5e0c8df42ab9c834f03f6bd59903fb",
     "metadata/catalogue_completeness_exemptions.json": "5cfba03cf85cbe19c4c4a9d21f3893eb08fa7dfc04c14276df78bc9a48204e18",
-    "metadata/dependency_aliases.json": "d1331ed17c27d94fb14bd99eb72440771e08117caa7e12b7f851935f7318c14c",
+    "metadata/dependency_aliases.json": "9f44c68829793037f9e71527ef03797f4603a203d17afbff1025c831b12da0ef",
     "metadata/judgement_constructors.json": "252b73a51c4814a98e9cb1e63653ababd3cbd588a0d89dcb6d85f3cbe1772bac",
     "metadata/printed_witness_exemptions.json": "e3488c2a1a795f23b3101f1db6382306d3fd86f85bd10207833a147e15d8f394",
     "metadata/two_sided_exemptions.json": "3ae93d86ea0d26bea6e0319179bbcd113ca529f58db0679b71b33041e5157a72",
@@ -302,7 +311,7 @@
     "scripts/verify_ci_evidence.py": "d5327fbaa28f57ab17377ffa2ea9ae5070cb339bd3afc8dd537d9c8beb4d439e",
     "scripts/verify_constrained_batches.py": "7fabe6623a4d42c44fea535a0ddcfda269e879880bb8d5a73d4c3caaaa68bf80",
     "scripts/verify_context_bundles.py": "d5b173936833260d090612ac578f722cc3dd327bd2d5fc3931644f8979d5d16b",
-    "scripts/verify_dependencies.py": "a0087525b1f941ba7689023b040d27bd517ec09575708e00bde24fe63386be6f",
+    "scripts/verify_dependencies.py": "722d46c17b447d27c6bf5af433fe46d8f9fe98c034bba358e7f0af4cc416c8e8",
     "scripts/verify_description_architecture.py": "7b86b8a371f8f54c5296bf79e3acaeef36f06af9eb641829da96535c321cc527",
     "scripts/verify_description_scope_toy.py": "7f350f21fbb236adb7668ed2831bcde2742bb9d25b0c887cc7ba3948b805a3fb",
     "scripts/verify_editorial.py": "6047c8b335e1801568eae094ade0df1b574ba89cf96a510fc6b2e3af570398c1",
