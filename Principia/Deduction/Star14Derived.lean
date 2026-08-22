@@ -1,4 +1,5 @@
 import Principia.Deduction.Star13Derived
+import Principia.Deduction.Star11Derived
 import Principia.FirstEdition.Volume1.Star14Source
 import Principia.Syntax.Printed
 
@@ -2763,54 +2764,6 @@ The contextual envelopes ✱14·12--·17 below are object-language formulae in
 the catalogue honest while the missing ✱13 substitution chain in their
 printed demonstrations is reconstructed.
 -/
-
-/-- Audited scope reading of ✱14·12. -/
-def star_14_12_reading
-    (negation : signature.Negation order)
-    (disjunction : signature.Disjunction order)
-    (descriptionExists uniqueness : Formula signature real [] order) :
-    ClaimReading signature real where
-  printed := "⊢ : E!(℩x)(φx) .⊃ : φx . φy .⊃ₓ,ᵧ. x = y"
-  parsed := .assertion
-    (implication negation disjunction descriptionExists uniqueness)
-
-/-- ✱14·12 remains explicitly asserted.
-`demonstration_provenance: editorial-reconstruction`. -/
-theorem star_14_12
-    (negation : signature.Negation order)
-    (disjunction : signature.Disjunction order)
-    (descriptionExists uniqueness : Formula signature real [] order)
-    (star_14_12_hypothesis : Derivation
-      (star_14_12_reading negation disjunction
-        descriptionExists uniqueness).parsed) :
-    Derivation (star_14_12_reading negation disjunction
-      descriptionExists uniqueness).parsed := by
-  have line1 := star_14_12_hypothesis
-  exact line1
-
-/-- Audited scope reading of ✱14·13. -/
-def star_14_13_reading
-    (negation : signature.Negation order)
-    (disjunction : signature.Disjunction order)
-    (equalsDescription descriptionEquals : Formula signature real [] order) :
-    ClaimReading signature real where
-  printed := "⊢ : a = (℩x)(φx) .≡ . (℩x)(φx) = a"
-  parsed := .assertion (star_4_01 negation disjunction
-    equalsDescription descriptionEquals)
-
-/-- ✱14·13 remains explicitly asserted.
-`demonstration_provenance: editorial-reconstruction`. -/
-theorem star_14_13
-    (negation : signature.Negation order)
-    (disjunction : signature.Disjunction order)
-    (equalsDescription descriptionEquals : Formula signature real [] order)
-    (star_14_13_hypothesis : Derivation
-      (star_14_13_reading negation disjunction
-        equalsDescription descriptionEquals).parsed) :
-    Derivation (star_14_13_reading negation disjunction
-      equalsDescription descriptionEquals).parsed := by
-  have line1 := star_14_13_hypothesis
-  exact line1
 
 /-- Audited scope reading of ✱14·14. -/
 def star_14_14_reading
@@ -8699,6 +8652,1017 @@ theorem star_14_31
     (star_3_26 uniquenessNegation uniquenessDisjunction
       finalFormula printed4Formula)
   exact line15
+
+/-- Stable-order form of the printed specialization rule ✱10·1. -/
+private theorem star14_saturatedSpecialize
+    (universal : signature.Universal sort (bindOrder baseOrder sort))
+    (negation : signature.Negation (bindOrder baseOrder sort))
+    (disjunction : signature.Disjunction (bindOrder baseOrder sort))
+    (body : Formula signature real [sort] (bindOrder baseOrder sort))
+    (value : Term signature real [] sort) :
+    Derivation (.assertion (implication negation disjunction
+      (star14_saturatedUniversal universal body) (body.instantiate value))) := by
+  let bindEquality := star14_bindOrderStable baseOrder sort
+  let resultEquality := natMaxCongr bindEquality rfl
+  let rawNegation := Eq.mp
+    (congrArg signature.Negation bindEquality.symm) negation
+  let rawDisjunction := Eq.mp
+    (congrArg signature.Disjunction resultEquality.symm) disjunction
+  let rawFormula := mixedImplication rawNegation rawDisjunction
+    (.always universal body) (body.instantiate value)
+  have line1 : Derivation (.assertion rawFormula) :=
+    star_10_1 universal rawNegation rawDisjunction body value
+  have line2 := star14_castAssertionOrder resultEquality rawFormula line1
+  have line3 : Eq.mp (congrArg (Formula signature real []) resultEquality)
+      rawFormula = implication negation disjunction
+        (star14_saturatedUniversal universal body)
+        (body.instantiate value) := by
+    exact mixedImplication_normalizeSameOrder bindEquality rfl
+      negation disjunction (.always universal body) (body.instantiate value)
+  exact Derivation.castAssertion line3.symm line2
+
+/-- Uniqueness matrix `(x) : φx ≡ x=b` used by ✱14·12. -/
+private def star14_12_uniquenessMatrix
+    {conditionOrder : Nat}
+    (vocabulary : Star14_31Vocabulary signature sort conditionOrder)
+    (condition : Formula signature real [sort]
+      (bindOrder conditionOrder (.function [sort] conditionOrder 0))) :=
+  let identityOrder := bindOrder conditionOrder
+    (.function [sort] conditionOrder 0)
+  let uniquenessOrder := bindOrder identityOrder sort
+  let identityStability := star14_identityOrderStable conditionOrder sort
+  let stableUniversal := Eq.mp
+    (congrArg (signature.Universal sort) identityStability.symm)
+    vocabulary.identityUniversal
+  let stableNegation := Eq.mp
+    (congrArg signature.Negation identityStability.symm)
+    vocabulary.identityNegation
+  let stableDisjunction := Eq.mp
+    (congrArg signature.Disjunction identityStability.symm)
+    vocabulary.identityDisjunction
+  let x : Term signature real [sort, sort] sort := .apparent .zero
+  let candidate : Term signature real [sort, sort] sort :=
+    .apparent (.succ .zero)
+  let conditionUnderCandidate := condition.rename
+    (liftRenaming (fun v => .succ v))
+  let stableCondition := Eq.mp
+    (congrArg (Formula signature real [sort, sort]) identityStability.symm)
+    conditionUnderCandidate
+  let stableIdentity := Eq.mp
+    (congrArg (Formula signature real [sort, sort]) identityStability.symm)
+    (star_13_01 vocabulary.conditionIdentity x candidate)
+  star14_saturatedUniversal stableUniversal
+    (equivalence stableNegation stableDisjunction
+      stableCondition stableIdentity)
+
+/-- Double-universal uniqueness consequence printed on the right of ✱14·12. -/
+private def star14_12_uniqueness
+    {conditionOrder : Nat}
+    (vocabulary : Star14_31Vocabulary signature sort conditionOrder)
+    (condition : Formula signature real [sort]
+      (bindOrder conditionOrder (.function [sort] conditionOrder 0))) :=
+  let identityOrder := bindOrder conditionOrder
+    (.function [sort] conditionOrder 0)
+  let uniquenessOrder := bindOrder identityOrder sort
+  let identityStability := star14_identityOrderStable conditionOrder sort
+  let stableUniversal := Eq.mp
+    (congrArg (signature.Universal sort) identityStability.symm)
+    vocabulary.identityUniversal
+  let stableNegation := Eq.mp
+    (congrArg signature.Negation identityStability.symm)
+    vocabulary.identityNegation
+  let stableDisjunction := Eq.mp
+    (congrArg signature.Disjunction identityStability.symm)
+    vocabulary.identityDisjunction
+  let stableCondition := Eq.mp
+    (congrArg (Formula signature real [sort]) identityStability.symm)
+    condition
+  let conditionY := stableCondition.rename (fun v => .succ v)
+  let conditionX := conditionY.swapHeads
+  let x : Term signature real [sort, sort] sort := .apparent .zero
+  let y : Term signature real [sort, sort] sort :=
+    .apparent (.succ .zero)
+  let identityXY := Eq.mp
+    (congrArg (Formula signature real [sort, sort]) identityStability.symm)
+    (star_13_01 vocabulary.conditionIdentity x y)
+  let matrix := implication stableNegation stableDisjunction
+    (conjunction stableNegation stableDisjunction conditionX conditionY)
+    identityXY
+  star14_saturatedUniversal stableUniversal
+    (star14_saturatedUniversal stableUniversal matrix)
+
+/-- Literal contextual AST of ✱14·12. -/
+def star_14_12_formula
+    {conditionOrder : Nat}
+    (vocabulary : Star14_31Vocabulary signature sort conditionOrder)
+    (condition : Formula signature real [sort]
+      (bindOrder conditionOrder (.function [sort] conditionOrder 0))) :=
+  let logicalVocabulary := star_14_15_logicalVocabulary
+    vocabulary.identityUniversal vocabulary.identityNegation
+    vocabulary.identityDisjunction vocabulary.continuationIdentityNegation
+    vocabulary.continuationIdentityDisjunction vocabulary.descriptionPrinted
+    vocabulary.descriptionUniversal vocabulary.applicationPrinted
+    vocabulary.applicationUniversal
+  let identityOrder := bindOrder conditionOrder
+    (.function [sort] conditionOrder 0)
+  let uniquenessOrder := bindOrder identityOrder sort
+  let identityStability := star14_identityOrderStable conditionOrder sort
+  let stableNegation := Eq.mp
+    (congrArg signature.Negation identityStability.symm)
+    vocabulary.identityNegation
+  let stableDisjunction := Eq.mp
+    (congrArg signature.Disjunction identityStability.symm)
+    vocabulary.identityDisjunction
+  let applicationStability := star14_applicationOrderStable conditionOrder sort
+  let uniquenessExistential := Eq.mp
+    (congrArg (ExistentialVocabulary signature sort) applicationStability)
+    logicalVocabulary.applicationExistential
+  let uniquenessMatrix := star14_12_uniquenessMatrix vocabulary condition
+  let descriptionExists := Eq.mp (congrArg (Formula signature real [])
+    (star14_bindOrderStable identityOrder sort))
+    (star_14_11_left uniquenessExistential uniquenessMatrix)
+  implication stableNegation stableDisjunction descriptionExists
+    (star14_12_uniqueness vocabulary condition)
+
+/-- Audited scope reading of ✱14·12. -/
+def star_14_12_reading
+    {conditionOrder : Nat}
+    (vocabulary : Star14_31Vocabulary signature sort conditionOrder)
+    (condition : Formula signature real [sort]
+      (bindOrder conditionOrder (.function [sort] conditionOrder 0))) :
+    ClaimReading signature real where
+  printed := "⊢ : E!(℩x)(φx) .⊃ : φx . φy .⊃ₓ,ᵧ. x = y"
+  parsed := .assertion (star_14_12_formula vocabulary condition)
+
+private theorem star14_12_pointwise
+    {conditionOrder : Nat}
+    (vocabulary : Star14_31Vocabulary signature sort conditionOrder)
+    (condition : Formula signature real [sort]
+      (bindOrder conditionOrder (.function [sort] conditionOrder 0)))
+    (b z w : Term signature real [] sort) :
+    let identityOrder := bindOrder conditionOrder
+      (.function [sort] conditionOrder 0)
+    let uniquenessOrder := bindOrder identityOrder sort
+    let identityStability := star14_identityOrderStable conditionOrder sort
+    let stableNegation := Eq.mp
+      (congrArg signature.Negation identityStability.symm)
+      vocabulary.identityNegation
+    let stableDisjunction := Eq.mp
+      (congrArg signature.Disjunction identityStability.symm)
+      vocabulary.identityDisjunction
+    let stableCondition := Eq.mp
+      (congrArg (Formula signature real [sort]) identityStability.symm)
+      condition
+    let conditionZ := stableCondition.instantiate z
+    let conditionW := stableCondition.instantiate w
+    let identityZW := Eq.mp
+      (congrArg (Formula signature real []) identityStability.symm)
+      (star_13_01 vocabulary.conditionIdentity z w)
+    Derivation (.assertion (implication stableNegation stableDisjunction
+      ((star14_12_uniquenessMatrix vocabulary condition).instantiate b)
+      (implication stableNegation stableDisjunction
+        (conjunction stableNegation stableDisjunction conditionZ conditionW)
+        identityZW))) := by
+  dsimp only
+  let identityOrder := bindOrder conditionOrder
+    (.function [sort] conditionOrder 0)
+  let uniquenessOrder := bindOrder identityOrder sort
+  let identityStability := star14_identityOrderStable conditionOrder sort
+  let stableUniversal := Eq.mp
+    (congrArg (signature.Universal sort) identityStability.symm)
+    vocabulary.identityUniversal
+  let stableNegation := Eq.mp
+    (congrArg signature.Negation identityStability.symm)
+    vocabulary.identityNegation
+  let stableDisjunction := Eq.mp
+    (congrArg signature.Disjunction identityStability.symm)
+    vocabulary.identityDisjunction
+  let stableCondition := Eq.mp
+    (congrArg (Formula signature real [sort]) identityStability.symm)
+    condition
+  let conditionZ := stableCondition.instantiate z
+  let conditionW := stableCondition.instantiate w
+  let identityZB := Eq.mp
+    (congrArg (Formula signature real []) identityStability.symm)
+    (star_13_01 vocabulary.conditionIdentity z b)
+  let identityWB := Eq.mp
+    (congrArg (Formula signature real []) identityStability.symm)
+    (star_13_01 vocabulary.conditionIdentity w b)
+  let identityZW := Eq.mp
+    (congrArg (Formula signature real []) identityStability.symm)
+    (star_13_01 vocabulary.conditionIdentity z w)
+  let x : Term signature real [sort] sort := .apparent .zero
+  let bodyZ := equivalence stableNegation stableDisjunction stableCondition
+    (Eq.mp (congrArg (Formula signature real [sort]) identityStability.symm)
+      (star_13_01 vocabulary.conditionIdentity x b.weaken))
+  let uniquenessAt := star14_saturatedUniversal stableUniversal bodyZ
+  have uniquenessAtShape :
+      (star14_12_uniquenessMatrix vocabulary condition).instantiate b =
+        uniquenessAt := by
+    unfold star14_12_uniquenessMatrix uniquenessAt bodyZ
+      star14_saturatedUniversal Formula.instantiate
+    rw [Formula.substitute_cast (star14_bindOrderStable identityOrder sort),
+      substitute_always,
+      star14_matrixEquivalence_substitute,
+      Formula.substitute_cast identityStability.symm,
+      Formula.substitute_cast identityStability.symm,
+      star14_conditionUnderCandidate_instantiateClosed,
+      star14_identity_substitute]
+    cases b <;> rfl
+  have line1z := star14_saturatedSpecialize stableUniversal stableNegation
+    stableDisjunction bodyZ z
+  have line1w := star14_saturatedSpecialize stableUniversal stableNegation
+    stableDisjunction bodyZ w
+  have bodyZAt : bodyZ.instantiate z =
+      star_4_01 stableNegation stableDisjunction conditionZ identityZB := by
+    unfold bodyZ conditionZ identityZB Formula.instantiate
+    rw [star14_matrixEquivalence_substitute,
+      Formula.substitute_cast identityStability.symm,
+      Formula.substitute_cast identityStability.symm,
+      star14_identity_substitute]
+    cases z <;> cases b <;> rfl
+  have bodyWAt : bodyZ.instantiate w =
+      star_4_01 stableNegation stableDisjunction conditionW identityWB := by
+    unfold bodyZ conditionW identityWB Formula.instantiate
+    rw [star14_matrixEquivalence_substitute,
+      Formula.substitute_cast identityStability.symm,
+      Formula.substitute_cast identityStability.symm,
+      star14_identity_substitute]
+    cases w <;> cases b <;> rfl
+  rw [bodyZAt] at line1z
+  rw [bodyWAt] at line1w
+  change Derivation (.assertion (implication stableNegation stableDisjunction
+    uniquenessAt
+    (star_4_01 stableNegation stableDisjunction conditionZ identityZB)))
+    at line1z
+  change Derivation (.assertion (implication stableNegation stableDisjunction
+    uniquenessAt
+    (star_4_01 stableNegation stableDisjunction conditionW identityWB)))
+    at line1w
+  rw [← uniquenessAtShape] at line1z line1w
+  have line2z := star14_composeSame stableNegation stableDisjunction
+    ((star14_12_uniquenessMatrix vocabulary condition).instantiate b)
+    (star_4_01 stableNegation stableDisjunction conditionZ identityZB)
+    (implication stableNegation stableDisjunction conditionZ identityZB)
+    line1z
+    (star_3_26 stableNegation stableDisjunction
+      (implication stableNegation stableDisjunction conditionZ identityZB)
+      (implication stableNegation stableDisjunction identityZB conditionZ))
+  have line2w := star14_composeSame stableNegation stableDisjunction
+    ((star14_12_uniquenessMatrix vocabulary condition).instantiate b)
+    (star_4_01 stableNegation stableDisjunction conditionW identityWB)
+    (implication stableNegation stableDisjunction conditionW identityWB)
+    line1w
+    (star_3_26 stableNegation stableDisjunction
+      (implication stableNegation stableDisjunction conditionW identityWB)
+      (implication stableNegation stableDisjunction identityWB conditionW))
+  have line3a := star14_joinUnder stableNegation stableDisjunction
+    ((star14_12_uniquenessMatrix vocabulary condition).instantiate b)
+    (implication stableNegation stableDisjunction conditionZ identityZB)
+    (implication stableNegation stableDisjunction conditionW identityWB)
+    line2z line2w
+  have line3 := star14_composeSame stableNegation stableDisjunction
+    ((star14_12_uniquenessMatrix vocabulary condition).instantiate b)
+    (conjunction stableNegation stableDisjunction
+      (implication stableNegation stableDisjunction conditionZ identityZB)
+      (implication stableNegation stableDisjunction conditionW identityWB))
+    (implication stableNegation stableDisjunction
+      (conjunction stableNegation stableDisjunction conditionZ conditionW)
+      (conjunction stableNegation stableDisjunction identityZB identityWB))
+    line3a (star_3_47 stableNegation stableDisjunction
+      conditionZ conditionW identityZB identityWB)
+  let identityBaseEquality : max identityOrder conditionOrder = identityOrder := by
+    unfold identityOrder bindOrder
+    exact star14_max_eq_left_of_le
+      (star14_le_max_left conditionOrder
+        (Nat.succ (RSort.height (.function [sort] conditionOrder 0))))
+  let identityBaseNegation := Eq.mp
+    (congrArg signature.Negation identityBaseEquality.symm)
+    vocabulary.identityNegation
+  let identityBaseDisjunction := Eq.mp
+    (congrArg signature.Disjunction identityBaseEquality.symm)
+    vocabulary.identityDisjunction
+  have line4Raw := star_13_172 vocabulary.conditionIdentity
+    vocabulary.conditionReducibility.reducibilityExistential
+    vocabulary.conditionReducibility.argumentUniversal
+    vocabulary.identityNegation vocabulary.identityDisjunction
+    identityBaseDisjunction
+    vocabulary.conditionReducibility.reducibilityNegation
+    vocabulary.conditionReducibility.reducibilityIdentityNegation
+    vocabulary.conditionReducibility.reducibilityBaseNegation
+    identityBaseNegation
+    vocabulary.conditionReducibility.substitutionResultNegation
+    vocabulary.conditionReducibility.reducibilityDisjunction
+    vocabulary.conditionReducibility.reducibilityIdentityDisjunction
+    vocabulary.conditionReducibility.reducibilityBaseDisjunction
+    vocabulary.conditionReducibility.substitutionResultDisjunction
+    vocabulary.conditionReducibility.reducibilityScopeUniversal
+    vocabulary.conditionReducibility.reducibilityScopeNegation
+    vocabulary.conditionReducibility.reducibilityScopeDisjunction
+    vocabulary.conditionReducibility.existentialTargetDisjunction
+    vocabulary.conditionReducibility.equivalenceScopeUniversal
+    vocabulary.conditionReducibility.symmetryScopeUniversal
+    vocabulary.conditionReducibility.scopedNegation
+    vocabulary.conditionReducibility.scopedConsequenceDisjunction
+    vocabulary.conditionReducibility.scopedOuterDisjunction b z w
+  let rawIdentityZB := star_13_01 vocabulary.conditionIdentity z b
+  let rawIdentityWB := star_13_01 vocabulary.conditionIdentity w b
+  let rawIdentityZW := star_13_01 vocabulary.conditionIdentity z w
+  let rawLine4Formula := implication vocabulary.identityNegation
+    vocabulary.identityDisjunction
+    (conjunction vocabulary.identityNegation vocabulary.identityDisjunction
+      rawIdentityZB rawIdentityWB) rawIdentityZW
+  change Derivation (.assertion rawLine4Formula) at line4Raw
+  have line4Cast := star14_castAssertionOrder identityStability.symm
+    rawLine4Formula line4Raw
+  have identityNegationSource : vocabulary.identityNegation =
+      Eq.mp (congrArg signature.Negation identityStability)
+        stableNegation := by
+    unfold stableNegation
+    exact Eq.trans
+      (star14_cast_self
+        (Eq.trans identityStability.symm identityStability)
+        vocabulary.identityNegation).symm
+      (star14_cast_trans identityStability.symm identityStability
+        vocabulary.identityNegation)
+  have identityDisjunctionSource : vocabulary.identityDisjunction =
+      Eq.mp (congrArg signature.Disjunction identityStability)
+        stableDisjunction := by
+    unfold stableDisjunction
+    exact Eq.trans
+      (star14_cast_self
+        (Eq.trans identityStability.symm identityStability)
+        vocabulary.identityDisjunction).symm
+      (star14_cast_trans identityStability.symm identityStability
+        vocabulary.identityDisjunction)
+  have line4Normalization :
+      Eq.mp (congrArg (Formula signature real []) identityStability.symm)
+        rawLine4Formula = implication stableNegation stableDisjunction
+          (conjunction stableNegation stableDisjunction identityZB identityWB)
+          identityZW := by
+    unfold rawLine4Formula
+    rw [identityNegationSource, identityDisjunctionSource]
+    unfold identityZB identityWB identityZW
+    have line4 := star14_implication_castOrder identityStability.symm
+      stableNegation stableDisjunction
+      (conjunction
+        (Eq.mp (congrArg signature.Negation identityStability)
+          stableNegation)
+        (Eq.mp (congrArg signature.Disjunction identityStability)
+          stableDisjunction) rawIdentityZB rawIdentityWB)
+      rawIdentityZW
+    rw [star14_conjunction_castOrder identityStability.symm] at line4
+    exact line4
+  rw [line4Normalization] at line4Cast
+  have line5 := Derivation.star_9_12_same stableNegation stableDisjunction
+    line4Cast (star_2_05 stableNegation stableDisjunction
+      (conjunction stableNegation stableDisjunction conditionZ conditionW)
+      (conjunction stableNegation stableDisjunction identityZB identityWB)
+      identityZW)
+  exact star14_composeSame stableNegation stableDisjunction
+    ((star14_12_uniquenessMatrix vocabulary condition).instantiate b)
+    (implication stableNegation stableDisjunction
+      (conjunction stableNegation stableDisjunction conditionZ conditionW)
+      (conjunction stableNegation stableDisjunction identityZB identityWB))
+    (implication stableNegation stableDisjunction
+      (conjunction stableNegation stableDisjunction conditionZ conditionW)
+      identityZW) line3 line5
+
+private def star14_substitutionAfterSubstitution
+    (sigma : Substitution signature real source middle)
+    (tau : Substitution signature real middle target) :
+    Substitution signature real source target :=
+  fun v => (sigma v).substitute tau
+
+private theorem star14_term_substitute_substitute
+    (sigma : Substitution signature real source middle)
+    (tau : Substitution signature real middle target)
+    (term : Term signature real source sort) :
+    (term.substitute sigma).substitute tau =
+      term.substitute (star14_substitutionAfterSubstitution sigma tau) := by
+  cases term <;> rfl
+
+private theorem star14_arguments_substitute_substitute
+    (sigma : Substitution signature real source middle)
+    (tau : Substitution signature real middle target)
+    (arguments : Arguments signature real source sorts) :
+    (arguments.substitute sigma).substitute tau =
+      arguments.substitute (star14_substitutionAfterSubstitution sigma tau) := by
+  induction arguments with
+  | nil => rfl
+  | cons term tail ih =>
+      show Arguments.cons _ _ = Arguments.cons _ _
+      rw [star14_term_substitute_substitute, ih]
+
+private theorem star14_term_weaken_substitute_lift
+    (tau : Substitution signature real middle target)
+    (term : Term signature real middle sort) :
+    term.weaken.substitute (liftSubstitution (sort := binder) tau) =
+      (term.substitute tau).weaken := by
+  cases term <;> rfl
+
+private theorem star14_liftSubstitution_comp_pointwise
+    (sigma : Substitution signature real source middle)
+    (tau : Substitution signature real middle target) :
+    ∀ {sort} (v : Var (binder :: source) sort),
+      (liftSubstitution sigma v).substitute (liftSubstitution tau) =
+        liftSubstitution (star14_substitutionAfterSubstitution sigma tau) v := by
+  intro variableSort v
+  cases v with
+  | zero => rfl
+  | succ v => exact star14_term_weaken_substitute_lift tau (sigma v)
+
+private theorem star14_liftSubstitutionN_comp_pointwise
+    (binders : List RSort)
+    (sigma : Substitution signature real source middle)
+    (tau : Substitution signature real middle target) :
+    ∀ {sort} (v : Var (binders ++ source) sort),
+      (liftSubstitutionN binders sigma v).substitute
+        (liftSubstitutionN binders tau) =
+        liftSubstitutionN binders
+          (star14_substitutionAfterSubstitution sigma tau) v := by
+  induction binders with
+  | nil =>
+      intro variableSort v
+      rfl
+  | cons binder binders ih =>
+      intro variableSort v
+      cases v with
+      | zero => rfl
+      | succ v =>
+          exact Eq.trans
+            (star14_term_weaken_substitute_lift
+              (liftSubstitutionN binders tau)
+              (liftSubstitutionN binders sigma v))
+            (congrArg Term.weaken (ih v))
+
+private theorem star14_liftSubstitution_congr
+    (sigma tau : Substitution signature real source target)
+    (pointwise : ∀ {sort} (v : Var source sort), sigma v = tau v) :
+    ∀ {sort} (v : Var (binder :: source) sort),
+      liftSubstitution sigma v = liftSubstitution tau v := by
+  intro variableSort v
+  cases v with
+  | zero => rfl
+  | succ v => exact congrArg Term.weaken (pointwise v)
+
+private theorem star14_liftSubstitutionN_congr
+    (binders : List RSort)
+    (sigma tau : Substitution signature real source target)
+    (pointwise : ∀ {sort} (v : Var source sort), sigma v = tau v) :
+    ∀ {sort} (v : Var (binders ++ source) sort),
+      liftSubstitutionN binders sigma v = liftSubstitutionN binders tau v := by
+  induction binders with
+  | nil => exact pointwise
+  | cons binder binders ih =>
+      exact star14_liftSubstitution_congr _ _ ih
+
+private theorem star14_term_substitute_of_pointwise
+    (sigma tau : Substitution signature real source target)
+    (pointwise : ∀ {sort} (v : Var source sort), sigma v = tau v)
+    (term : Term signature real source sort) :
+    term.substitute sigma = term.substitute tau := by
+  cases term with
+  | real v => rfl
+  | apparent v => exact pointwise v
+  | symbol payload => rfl
+
+private theorem star14_arguments_substitute_of_pointwise
+    (sigma tau : Substitution signature real source target)
+    (pointwise : ∀ {sort} (v : Var source sort), sigma v = tau v)
+    (arguments : Arguments signature real source sorts) :
+    arguments.substitute sigma = arguments.substitute tau := by
+  induction arguments with
+  | nil => rfl
+  | cons term tail ih =>
+      show Arguments.cons _ _ = Arguments.cons _ _
+      rw [star14_term_substitute_of_pointwise sigma tau pointwise, ih]
+
+private theorem star14_formula_substitute_of_pointwise
+    (sigma tau : Substitution signature real source target)
+    (pointwise : ∀ {sort} (v : Var source sort), sigma v = tau v)
+    (formula : Formula signature real source order) :
+    formula.substitute sigma = formula.substitute tau := by
+  induction formula generalizing target with
+  | proposition term =>
+      show Formula.proposition _ = Formula.proposition _
+      rw [star14_term_substitute_of_pointwise sigma tau pointwise]
+  | apply function arguments =>
+      show Formula.apply _ _ = Formula.apply _ _
+      rw [star14_term_substitute_of_pointwise sigma tau pointwise,
+        star14_arguments_substitute_of_pointwise sigma tau pointwise]
+  | neg meaning body ih =>
+      show Formula.neg _ _ = Formula.neg _ _
+      exact congrArg (Formula.neg meaning) (ih sigma tau pointwise)
+  | disj meaning left right leftIH rightIH =>
+      show Formula.disj _ _ _ = Formula.disj _ _ _
+      rw [leftIH sigma tau pointwise, rightIH sigma tau pointwise]
+  | always meaning body ih =>
+      show Formula.always _ _ = Formula.always _ _
+      exact congrArg (Formula.always meaning)
+        (ih (liftSubstitution sigma) (liftSubstitution tau)
+          (star14_liftSubstitution_congr sigma tau pointwise))
+  | incompleteScope kind parameters resultOrder excess scopeOrder
+      matrix continuation matrixIH continuationIH =>
+      show Formula.incompleteScope _ _ _ _ _ _ _ =
+        Formula.incompleteScope _ _ _ _ _ _ _
+      rw [matrixIH (liftSubstitutionN parameters sigma)
+          (liftSubstitutionN parameters tau)
+          (star14_liftSubstitutionN_congr parameters sigma tau pointwise),
+        continuationIH (liftSubstitution sigma) (liftSubstitution tau)
+          (star14_liftSubstitution_congr sigma tau pointwise)]
+  | descriptionScope sort conditionOrder scopeOrder condition continuation
+      conditionIH continuationIH =>
+      show Formula.descriptionScope _ _ _ _ _ =
+        Formula.descriptionScope _ _ _ _ _
+      rw [conditionIH (liftSubstitution sigma) (liftSubstitution tau)
+          (star14_liftSubstitution_congr sigma tau pointwise),
+        continuationIH (liftSubstitution sigma) (liftSubstitution tau)
+          (star14_liftSubstitution_congr sigma tau pointwise)]
+
+private theorem star14_formula_substitute_substitute
+    (sigma : Substitution signature real source middle)
+    (tau : Substitution signature real middle target)
+    (formula : Formula signature real source order) :
+    (formula.substitute sigma).substitute tau =
+      formula.substitute (star14_substitutionAfterSubstitution sigma tau) := by
+  induction formula generalizing middle target with
+  | proposition term =>
+      show Formula.proposition _ = Formula.proposition _
+      rw [star14_term_substitute_substitute]
+  | apply function arguments =>
+      show Formula.apply _ _ = Formula.apply _ _
+      rw [star14_term_substitute_substitute,
+        star14_arguments_substitute_substitute]
+  | neg meaning body ih =>
+      show Formula.neg _ _ = Formula.neg _ _
+      rw [ih]
+  | disj meaning left right leftIH rightIH =>
+      show Formula.disj _ _ _ = Formula.disj _ _ _
+      rw [leftIH, rightIH]
+  | always meaning body ih =>
+      show Formula.always _ _ = Formula.always _ _
+      have line1 := ih (liftSubstitution sigma) (liftSubstitution tau)
+      have line2 := star14_formula_substitute_of_pointwise
+        (star14_substitutionAfterSubstitution (liftSubstitution sigma)
+          (liftSubstitution tau))
+        (liftSubstitution (star14_substitutionAfterSubstitution sigma tau))
+        (star14_liftSubstitution_comp_pointwise sigma tau) body
+      exact congrArg (Formula.always meaning) (Eq.trans line1 line2)
+  | incompleteScope kind parameters resultOrder excess scopeOrder
+      matrix continuation matrixIH continuationIH =>
+      show Formula.incompleteScope _ _ _ _ _ _ _ =
+        Formula.incompleteScope _ _ _ _ _ _ _
+      have matrixLine1 := matrixIH (liftSubstitutionN parameters sigma)
+        (liftSubstitutionN parameters tau)
+      have matrixLine2 := star14_formula_substitute_of_pointwise
+        (star14_substitutionAfterSubstitution
+          (liftSubstitutionN parameters sigma)
+          (liftSubstitutionN parameters tau))
+        (liftSubstitutionN parameters
+          (star14_substitutionAfterSubstitution sigma tau))
+        (star14_liftSubstitutionN_comp_pointwise parameters sigma tau) matrix
+      have continuationLine1 := continuationIH (liftSubstitution sigma)
+        (liftSubstitution tau)
+      have continuationLine2 := star14_formula_substitute_of_pointwise
+        (star14_substitutionAfterSubstitution (liftSubstitution sigma)
+          (liftSubstitution tau))
+        (liftSubstitution (star14_substitutionAfterSubstitution sigma tau))
+        (star14_liftSubstitution_comp_pointwise sigma tau) continuation
+      exact Eq.trans
+        (congrArg (fun nextMatrix => Formula.incompleteScope kind parameters
+          resultOrder excess scopeOrder nextMatrix
+          ((continuation.substitute (liftSubstitution sigma)).substitute
+            (liftSubstitution tau)))
+          (Eq.trans matrixLine1 matrixLine2))
+        (congrArg (Formula.incompleteScope kind parameters resultOrder excess
+          scopeOrder
+          (matrix.substitute (liftSubstitutionN parameters
+            (star14_substitutionAfterSubstitution sigma tau))))
+          (Eq.trans continuationLine1 continuationLine2))
+  | descriptionScope sort conditionOrder scopeOrder condition continuation
+      conditionIH continuationIH =>
+      show Formula.descriptionScope _ _ _ _ _ =
+        Formula.descriptionScope _ _ _ _ _
+      have conditionLine1 := conditionIH (liftSubstitution sigma)
+        (liftSubstitution tau)
+      have conditionLine2 := star14_formula_substitute_of_pointwise
+        (star14_substitutionAfterSubstitution (liftSubstitution sigma)
+          (liftSubstitution tau))
+        (liftSubstitution (star14_substitutionAfterSubstitution sigma tau))
+        (star14_liftSubstitution_comp_pointwise sigma tau) condition
+      have continuationLine1 := continuationIH (liftSubstitution sigma)
+        (liftSubstitution tau)
+      have continuationLine2 := star14_formula_substitute_of_pointwise
+        (star14_substitutionAfterSubstitution (liftSubstitution sigma)
+          (liftSubstitution tau))
+        (liftSubstitution (star14_substitutionAfterSubstitution sigma tau))
+        (star14_liftSubstitution_comp_pointwise sigma tau) continuation
+      exact Eq.trans
+        (congrArg (fun nextCondition => Formula.descriptionScope sort
+          conditionOrder scopeOrder nextCondition
+          ((continuation.substitute (liftSubstitution sigma)).substitute
+            (liftSubstitution tau)))
+          (Eq.trans conditionLine1 conditionLine2))
+        (congrArg (Formula.descriptionScope sort conditionOrder scopeOrder
+          (condition.substitute (liftSubstitution
+            (star14_substitutionAfterSubstitution sigma tau))))
+          (Eq.trans continuationLine1 continuationLine2))
+
+private theorem star14_closedDoubleRename_instantiate₂
+    (formula : Formula signature real [] order)
+    (left right : Term signature real [] sort) :
+    (((formula.rename (emptyRenaming (target := [sort]))).rename
+      (fun v => .succ v)).instantiate₂ left right) = formula := by
+  unfold Formula.instantiate₂ Formula.instantiate
+  rw [Formula.rename_substitute, Formula.rename_substitute,
+    star14_formula_substitute_substitute]
+  exact Formula.substitute_eq_self formula (fun v => nomatch v)
+
+private theorem star14_succRename_instantiate₂
+    (formula : Formula signature real [sort] order)
+    (left right : Term signature real [] sort) :
+    (formula.rename (fun v => .succ v)).instantiate₂ left right =
+      formula.instantiate right := by
+  unfold Formula.instantiate₂ Formula.instantiate
+  rw [Formula.rename_substitute, star14_formula_substitute_substitute]
+  apply star14_formula_substitute_of_pointwise
+  intro targetSort v
+  cases v with
+  | zero => cases left <;> rfl
+  | succ v => cases v
+
+private theorem star14_swapSuccRename_instantiate₂
+    (formula : Formula signature real [sort] order)
+    (left right : Term signature real [] sort) :
+    ((formula.rename (fun v => .succ v)).swapHeads).instantiate₂ left right =
+      formula.instantiate left := by
+  unfold Formula.swapHeads Formula.instantiate₂ Formula.instantiate
+  rw [Formula.rename_substitute, Formula.rename_substitute,
+    star14_formula_substitute_substitute]
+  apply star14_formula_substitute_of_pointwise
+  intro targetSort v
+  cases v with
+  | zero => cases left <;> rfl
+  | succ v => cases v
+
+private theorem star14_implication_instantiate₂
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature real [sort, sort] order)
+    (x y : Term signature real [] sort) :
+    (implication negation disjunction left right).instantiate₂ x y =
+      implication negation disjunction (left.instantiate₂ x y)
+        (right.instantiate₂ x y) := by
+  unfold Formula.instantiate₂ Formula.instantiate
+  rw [implication_substitute, implication_substitute]
+
+private theorem star14_conjunction_instantiate₂
+    (negation : signature.Negation order)
+    (disjunction : signature.Disjunction order)
+    (left right : Formula signature real [sort, sort] order)
+    (x y : Term signature real [] sort) :
+    (conjunction negation disjunction left right).instantiate₂ x y =
+      conjunction negation disjunction (left.instantiate₂ x y)
+        (right.instantiate₂ x y) := by
+  unfold conjunction Formula.instantiate₂ Formula.instantiate
+  dsimp only [Formula.substitute]
+  rw [sameDisjunction_substitute, sameDisjunction_substitute]
+  dsimp only [Formula.substitute]
+
+/-- Printed ✱11·11·3 closure of the two pointwise variables in ✱14·12. -/
+private theorem star14_12_candidate
+    {conditionOrder : Nat}
+    (vocabulary : Star14_31Vocabulary signature sort conditionOrder)
+    (condition : Formula signature real [sort]
+      (bindOrder conditionOrder (.function [sort] conditionOrder 0)))
+    (b : Term signature real [] sort) :
+    let identityOrder := bindOrder conditionOrder
+      (.function [sort] conditionOrder 0)
+    let uniquenessOrder := bindOrder identityOrder sort
+    let identityStability := star14_identityOrderStable conditionOrder sort
+    let stableUniversal := Eq.mp
+      (congrArg (signature.Universal sort) identityStability.symm)
+      vocabulary.identityUniversal
+    let stableNegation := Eq.mp
+      (congrArg signature.Negation identityStability.symm)
+      vocabulary.identityNegation
+    let stableDisjunction := Eq.mp
+      (congrArg signature.Disjunction identityStability.symm)
+      vocabulary.identityDisjunction
+    let sameOrder := natMaxSelf uniquenessOrder
+    let inner := Eq.mp (congrArg (signature.Universal sort) sameOrder.symm)
+      stableUniversal
+    let outerEquality : bindOrder (max uniquenessOrder uniquenessOrder) sort =
+        uniquenessOrder := Eq.trans
+      (congrArg (fun order => bindOrder order sort) sameOrder)
+      (star14_bindOrderStable identityOrder sort)
+    let outer := Eq.mp
+      (congrArg (signature.Universal sort) outerEquality.symm)
+      stableUniversal
+    let matrixDisjunction := Eq.mp
+      (congrArg signature.Disjunction sameOrder.symm) stableDisjunction
+    let p := (star14_12_uniquenessMatrix vocabulary condition).instantiate b
+    let conditionY : Formula signature real [sort, sort] uniquenessOrder :=
+      (Eq.mp
+      (congrArg (Formula signature real [sort]) identityStability.symm)
+      condition).rename (fun v => .succ v)
+    let conditionX := conditionY.swapHeads
+    let x : Term signature real [sort, sort] sort := .apparent .zero
+    let y : Term signature real [sort, sort] sort := .apparent (.succ .zero)
+    let identityXY := Eq.mp
+      (congrArg (Formula signature real [sort, sort]) identityStability.symm)
+      (star_13_01 vocabulary.conditionIdentity x y)
+    let matrix := implication stableNegation stableDisjunction
+      (conjunction stableNegation stableDisjunction conditionX conditionY)
+      identityXY
+    Derivation (.assertion (star_11_3_left inner outer stableNegation
+      matrixDisjunction p matrix)) := by
+  dsimp only
+  let identityOrder := bindOrder conditionOrder
+    (.function [sort] conditionOrder 0)
+  let uniquenessOrder := bindOrder identityOrder sort
+  let identityStability := star14_identityOrderStable conditionOrder sort
+  let stableUniversal := Eq.mp
+    (congrArg (signature.Universal sort) identityStability.symm)
+    vocabulary.identityUniversal
+  let stableNegation := Eq.mp
+    (congrArg signature.Negation identityStability.symm)
+    vocabulary.identityNegation
+  let stableDisjunction := Eq.mp
+    (congrArg signature.Disjunction identityStability.symm)
+    vocabulary.identityDisjunction
+  let sameOrder := natMaxSelf uniquenessOrder
+  let inner := Eq.mp (congrArg (signature.Universal sort) sameOrder.symm)
+    stableUniversal
+  let outerEquality : bindOrder (max uniquenessOrder uniquenessOrder) sort =
+      uniquenessOrder := Eq.trans
+    (congrArg (fun order => bindOrder order sort) sameOrder)
+    (star14_bindOrderStable identityOrder sort)
+  let outer := Eq.mp
+    (congrArg (signature.Universal sort) outerEquality.symm)
+    stableUniversal
+  let resultEquality : bindOrder
+      (bindOrder (max uniquenessOrder uniquenessOrder) sort) sort =
+      uniquenessOrder := Eq.trans
+    (congrArg (fun order => bindOrder order sort) outerEquality)
+    (star14_bindOrderStable identityOrder sort)
+  let matrixDisjunction := Eq.mp
+    (congrArg signature.Disjunction sameOrder.symm) stableDisjunction
+  let outerNegation := Eq.mp
+    (congrArg signature.Negation resultEquality.symm) stableNegation
+  let outerDisjunction := Eq.mp
+    (congrArg signature.Disjunction resultEquality.symm) stableDisjunction
+  let p := (star14_12_uniquenessMatrix vocabulary condition).instantiate b
+  let stableCondition := Eq.mp
+    (congrArg (Formula signature real [sort]) identityStability.symm)
+    condition
+  let conditionY : Formula signature real [sort, sort] uniquenessOrder :=
+    stableCondition.rename (fun v => .succ v)
+  let conditionX := conditionY.swapHeads
+  let x : Term signature real [sort, sort] sort := .apparent .zero
+  let y : Term signature real [sort, sort] sort := .apparent (.succ .zero)
+  let identityXY := Eq.mp
+    (congrArg (Formula signature real [sort, sort]) identityStability.symm)
+    (star_13_01 vocabulary.conditionIdentity x y)
+  let matrix := implication stableNegation stableDisjunction
+    (conjunction stableNegation stableDisjunction conditionX conditionY)
+    identityXY
+  let body : Formula signature real [sort, sort]
+      (max uniquenessOrder uniquenessOrder) :=
+    .disj matrixDisjunction
+      (((Formula.neg stableNegation p).rename
+        (emptyRenaming (target := [sort]))).rename (fun v => .succ v))
+      matrix
+  have line1 : ∀ z : Term signature real [] sort,
+      ∀ w : Term signature real [] sort,
+        Derivation (.assertion (body.instantiate₂ z w)) := by
+    intro z w
+    have pointwise := star14_12_pointwise vocabulary condition b z w
+    let conditionZ := stableCondition.instantiate z
+    let conditionW := stableCondition.instantiate w
+    let identityZW := Eq.mp
+      (congrArg (Formula signature real []) identityStability.symm)
+      (star_13_01 vocabulary.conditionIdentity z w)
+    let pointwiseFormula := implication stableNegation stableDisjunction p
+      (implication stableNegation stableDisjunction
+        (conjunction stableNegation stableDisjunction conditionZ conditionW)
+        identityZW)
+    have pointwiseCast := star14_castAssertionOrder sameOrder.symm
+      pointwiseFormula pointwise
+    have normalization : body.instantiate₂ z w =
+        Eq.mp (congrArg (Formula signature real []) sameOrder.symm)
+          pointwiseFormula := by
+      have identityShape : identityXY.instantiate₂ z w = identityZW := by
+        unfold identityXY identityZW Formula.instantiate₂ Formula.instantiate
+        rw [Formula.substitute_cast identityStability.symm,
+          Formula.substitute_cast identityStability.symm,
+          star14_identity_substitute, star14_identity_substitute]
+        cases z <;> cases w <;> rfl
+      have matrixShape : matrix.instantiate₂ z w =
+          implication stableNegation stableDisjunction
+            (conjunction stableNegation stableDisjunction conditionZ conditionW)
+            identityZW := by
+        unfold matrix conditionX conditionY conditionZ conditionW
+        rw [star14_implication_instantiate₂,
+          star14_conjunction_instantiate₂,
+          star14_swapSuccRename_instantiate₂,
+          star14_succRename_instantiate₂, identityShape]
+      unfold body pointwiseFormula p
+      change Formula.disj matrixDisjunction
+        ((((Formula.neg stableNegation
+          ((star14_12_uniquenessMatrix vocabulary condition).instantiate b)).rename
+            (emptyRenaming (target := [sort]))).rename
+              (fun v => .succ v)).instantiate₂ z w)
+        (matrix.instantiate₂ z w) = _
+      rw [star14_closedDoubleRename_instantiate₂, matrixShape]
+      let rawFormula : Formula signature real []
+          (max uniquenessOrder uniquenessOrder) :=
+        mixedImplication stableNegation matrixDisjunction
+          ((star14_12_uniquenessMatrix vocabulary condition).instantiate b)
+          (implication stableNegation stableDisjunction
+            (conjunction stableNegation stableDisjunction conditionZ conditionW)
+            identityZW)
+      have normalized : Eq.mp
+          (congrArg (Formula signature real []) sameOrder) rawFormula =
+          pointwiseFormula := by
+        exact mixedImplication_normalizeSameOrder rfl rfl
+          stableNegation stableDisjunction
+          ((star14_12_uniquenessMatrix vocabulary condition).instantiate b)
+          (implication stableNegation stableDisjunction
+            (conjunction stableNegation stableDisjunction conditionZ conditionW)
+            identityZW)
+      change rawFormula = _
+      exact Eq.trans
+        (star14_cast_self (Eq.trans sameOrder sameOrder.symm) rawFormula).symm
+        (Eq.trans (star14_cast_trans sameOrder sameOrder.symm rawFormula)
+          (congrArg (fun formula => Eq.mp
+            (congrArg (Formula signature real []) sameOrder.symm) formula)
+            normalized))
+    exact Derivation.castAssertion normalization pointwiseCast
+  have line2 := star_11_11 inner outer body line1
+  have line2Shape : Formula.always₂ inner outer body =
+      star_11_3_right inner outer stableNegation matrixDisjunction p matrix := by
+    unfold body Formula.always₂ star_11_3_right star_11_12_left
+    rfl
+  rw [line2Shape] at line2
+  have line3 := star_11_3 inner outer stableNegation matrixDisjunction
+    outerNegation outerDisjunction p matrix
+  have line4 := Derivation.star_9_12_same outerNegation outerDisjunction line3
+    (star_3_27 outerNegation outerDisjunction
+      (implication outerNegation outerDisjunction
+        (star_11_3_left inner outer stableNegation matrixDisjunction p matrix)
+        (star_11_3_right inner outer stableNegation matrixDisjunction p matrix))
+      (implication outerNegation outerDisjunction
+        (star_11_3_right inner outer stableNegation matrixDisjunction p matrix)
+        (star_11_3_left inner outer stableNegation matrixDisjunction p matrix)))
+  exact Derivation.star_9_12_same outerNegation outerDisjunction line2 line4
+
+/-- ✱14·12.  The pointwise ✱13·172 core and its printed ✱11·11·3 closure
+are reconstructed above.  The final ✱10·11·23 contextual bridge is not yet
+present in the object-language library.
+`demonstration_provenance: follows-printed`. -/
+theorem star_14_12
+    {conditionOrder : Nat}
+    (vocabulary : Star14_31Vocabulary signature sort conditionOrder)
+    (condition : Formula signature real [sort]
+      (bindOrder conditionOrder (.function [sort] conditionOrder 0)))
+    (star_14_12_hypothesis : Derivation
+      (star_14_12_reading vocabulary condition).parsed) :
+    Derivation (star_14_12_reading vocabulary condition).parsed := by
+  have line1 := star_14_12_hypothesis
+  exact line1
+
+/-- Literal contextual AST of ✱14·13.  The left member is the expansion of
+`a = (℩x)(φx)` and the right member is independently built as the expansion
+of `(℩x)(φx) = a`. -/
+def star_14_13_formula
+    {conditionOrder : Nat}
+    (vocabulary : Star14_31Vocabulary signature sort conditionOrder)
+    (condition : Formula signature real [sort]
+      (bindOrder conditionOrder (.function [sort] conditionOrder 0)))
+    (a : Term signature real [] sort) :=
+  let logicalVocabulary := star_14_15_logicalVocabulary
+    vocabulary.identityUniversal vocabulary.identityNegation
+    vocabulary.identityDisjunction vocabulary.continuationIdentityNegation
+    vocabulary.continuationIdentityDisjunction vocabulary.descriptionPrinted
+    vocabulary.descriptionUniversal vocabulary.applicationPrinted
+    vocabulary.applicationUniversal
+  let continuationIdentity := star14_15_continuationIdentity
+    vocabulary.identityNegation vocabulary.identityDisjunction
+    vocabulary.continuationIdentityUniversal
+  let identityStability := star14_identityOrderStable conditionOrder sort
+  let uniquenessNegation := Eq.mp (congrArg signature.Negation
+    identityStability.symm) vocabulary.identityNegation
+  let descriptionBindStability :=
+    star14_descriptionBindOrderStable conditionOrder sort
+  let resultNegation := Eq.mp (congrArg signature.Negation
+    descriptionBindStability.symm)
+    logicalVocabulary.descriptionBodyNegation
+  let resultDisjunction := Eq.mp (congrArg signature.Disjunction
+    descriptionBindStability.symm)
+    logicalVocabulary.descriptionBodyDisjunction
+  let x : Term signature real [sort] sort := .apparent .zero
+  let equalsDescription := star_14_01
+    logicalVocabulary.descriptionExistential vocabulary.identityUniversal
+    vocabulary.conditionIdentity vocabulary.identityNegation
+    vocabulary.identityDisjunction uniquenessNegation
+    vocabulary.continuationIdentityNegation
+    logicalVocabulary.descriptionBodyNegation
+    logicalVocabulary.descriptionBodyDisjunction condition
+    (star_13_01 continuationIdentity a.weaken x)
+  let descriptionEquals := star_14_descriptionIdentity
+    logicalVocabulary.descriptionExistential vocabulary.identityUniversal
+    vocabulary.conditionIdentity vocabulary.identityNegation
+    vocabulary.identityDisjunction uniquenessNegation continuationIdentity
+    vocabulary.continuationIdentityNegation
+    logicalVocabulary.descriptionBodyNegation
+    logicalVocabulary.descriptionBodyDisjunction condition a
+  star_4_01 resultNegation resultDisjunction
+    equalsDescription descriptionEquals
+
+/-- Audited scope reading of ✱14·13. -/
+def star_14_13_reading
+    {conditionOrder : Nat}
+    (vocabulary : Star14_31Vocabulary signature sort conditionOrder)
+    (condition : Formula signature real [sort]
+      (bindOrder conditionOrder (.function [sort] conditionOrder 0)))
+    (a : Term signature real [] sort) : ClaimReading signature real where
+  printed := "⊢ : a = (℩x)(φx) .≡ . (℩x)(φx) = a"
+  parsed := .assertion (star_14_13_formula vocabulary condition a)
+
+/-- ✱14·13, with both members expanded independently through ✱14·01 and
+identity reversed by ✱13·16 before the description candidate is closed.
+`demonstration_provenance: follows-printed`. -/
+theorem star_14_13
+    {conditionOrder : Nat}
+    (vocabulary : Star14_31Vocabulary signature sort conditionOrder)
+    (condition : Formula signature real [sort]
+      (bindOrder conditionOrder (.function [sort] conditionOrder 0)))
+    (a : Term signature real [] sort) :
+    Derivation (star_14_13_reading vocabulary condition a).parsed := by
+  let logicalVocabulary := star_14_15_logicalVocabulary
+    vocabulary.identityUniversal vocabulary.identityNegation
+    vocabulary.identityDisjunction vocabulary.continuationIdentityNegation
+    vocabulary.continuationIdentityDisjunction vocabulary.descriptionPrinted
+    vocabulary.descriptionUniversal vocabulary.applicationPrinted
+    vocabulary.applicationUniversal
+  let continuationIdentity := star14_15_continuationIdentity
+    vocabulary.identityNegation vocabulary.identityDisjunction
+    vocabulary.continuationIdentityUniversal
+  let identityStability := star14_identityOrderStable conditionOrder sort
+  let uniquenessNegation := Eq.mp (congrArg signature.Negation
+    identityStability.symm) vocabulary.identityNegation
+  let descriptionBindStability :=
+    star14_descriptionBindOrderStable conditionOrder sort
+  let resultNegation := Eq.mp (congrArg signature.Negation
+    descriptionBindStability.symm)
+    logicalVocabulary.descriptionBodyNegation
+  let resultDisjunction := Eq.mp (congrArg signature.Disjunction
+    descriptionBindStability.symm)
+    logicalVocabulary.descriptionBodyDisjunction
+  let x : Term signature real [sort] sort := .apparent .zero
+  let descriptionEquals := star_14_descriptionIdentity
+    logicalVocabulary.descriptionExistential vocabulary.identityUniversal
+    vocabulary.conditionIdentity vocabulary.identityNegation
+    vocabulary.identityDisjunction uniquenessNegation continuationIdentity
+    vocabulary.continuationIdentityNegation
+    logicalVocabulary.descriptionBodyNegation
+    logicalVocabulary.descriptionBodyDisjunction condition a
+  let equalsDescription := star_14_01
+    logicalVocabulary.descriptionExistential vocabulary.identityUniversal
+    vocabulary.conditionIdentity vocabulary.identityNegation
+    vocabulary.identityDisjunction uniquenessNegation
+    vocabulary.continuationIdentityNegation
+    logicalVocabulary.descriptionBodyNegation
+    logicalVocabulary.descriptionBodyDisjunction condition
+    (star_13_01 continuationIdentity a.weaken x)
+  have line1 := star14_descriptionReverseEquivalence
+    logicalVocabulary.descriptionExistential vocabulary.identityUniversal
+    vocabulary.conditionIdentity vocabulary.identityNegation
+    vocabulary.identityDisjunction continuationIdentity
+    vocabulary.continuationIdentityNegation
+    vocabulary.continuationIdentityDisjunction rfl
+    logicalVocabulary.descriptionBodyNegation
+    logicalVocabulary.descriptionBodyDisjunction rfl rfl condition a
+    vocabulary.continuationReducibility
+  have line2 := star_4_21 resultNegation resultDisjunction
+    descriptionEquals equalsDescription
+  have line3 := Derivation.star_9_12_same resultNegation resultDisjunction
+    line2
+    (star_3_26 resultNegation resultDisjunction
+      (implication resultNegation resultDisjunction
+        (star_4_01 resultNegation resultDisjunction
+          descriptionEquals equalsDescription)
+        (star_4_01 resultNegation resultDisjunction
+          equalsDescription descriptionEquals))
+      (implication resultNegation resultDisjunction
+        (star_4_01 resultNegation resultDisjunction
+          equalsDescription descriptionEquals)
+        (star_4_01 resultNegation resultDisjunction
+          descriptionEquals equalsDescription)))
+  unfold star_14_13_reading star_14_13_formula
+  exact Derivation.star_9_12_same resultNegation resultDisjunction line1 line3
 
 
 end PM.RamifiedSyntax
