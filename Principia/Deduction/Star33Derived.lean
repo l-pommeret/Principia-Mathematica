@@ -499,7 +499,7 @@ theorem star_33_1
       (classSort (bindOrder relationOrder .individual) 0))
     (relation : Term signature real []
       (relationSort relationOrder relationExcess))
-    (star_10_35_hypothesis : BinaryEliminationHypothesis
+    (star_10_35_hypothesis : PM.RamifiedSyntax.BinaryEliminationHypothesis
       eliminationVocabulary
       (star_33_operatorMatrix operatorVocabulary
         (star_33_1_domainMatrix relationExistential)) alpha relation) :
@@ -571,7 +571,7 @@ theorem star_33_101
       (classSort (bindOrder relationOrder .individual) 0))
     (relation : Term signature real []
       (relationSort relationOrder relationExcess))
-    (star_10_35_hypothesis : BinaryEliminationHypothesis
+    (star_10_35_hypothesis : PM.RamifiedSyntax.BinaryEliminationHypothesis
       eliminationVocabulary
       (star_33_operatorMatrix operatorVocabulary
         (star_33_101_domainMatrix relationExistential)) beta relation) :
@@ -637,7 +637,7 @@ theorem star_33_102
       (classSort (bindOrder relationOrder .individual) 0))
     (relation : Term signature real []
       (relationSort relationOrder relationExcess))
-    (star_10_35_hypothesis : BinaryEliminationHypothesis
+    (star_10_35_hypothesis : PM.RamifiedSyntax.BinaryEliminationHypothesis
       eliminationVocabulary
       (star_33_operatorMatrix operatorVocabulary
         (star_33_102_domainMatrix relationExistential disjunction)) gamma relation) :
@@ -702,7 +702,7 @@ theorem star_33_103
     (x : Term signature real [] .individual)
     (relation : Term signature real []
       (relationSort relationOrder relationExcess))
-    (star_10_35_hypothesis : BinaryEliminationHypothesis vocabulary
+    (star_10_35_hypothesis : PM.RamifiedSyntax.BinaryEliminationHypothesis vocabulary
       (star_33_103_matrix existential disjunction) x relation) :
     Derivation (.assertion (binaryEliminationFormula
       vocabulary.abstractionExistential vocabulary.leftUniversal

@@ -1864,7 +1864,7 @@ theorem star_23_33
     (relation₁ relation₂ :
       Term signature real [] (relationSort order 0))
     (x y : Term signature real [] .individual)
-    (star_10_35_hypothesis : Star23Star10_35Hypothesis vocabulary
+    (star_10_35_hypothesis : PM.RamifiedSyntax.Star23Star10_35Hypothesis vocabulary
       (star_23_02_matrix negation disjunction relation₁ relation₂) x y) :
     Derivation (star_23_33_reading vocabulary negation disjunction
       relation₁ relation₂ x y).parsed := by
@@ -1902,7 +1902,7 @@ theorem star_23_34
     (relation₁ relation₂ :
       Term signature real [] (relationSort order 0))
     (x y : Term signature real [] .individual)
-    (star_10_35_hypothesis : Star23Star10_35Hypothesis vocabulary
+    (star_10_35_hypothesis : PM.RamifiedSyntax.Star23Star10_35Hypothesis vocabulary
       (star_23_03_matrix disjunction relation₁ relation₂) x y) :
     Derivation (star_23_34_reading vocabulary disjunction
       relation₁ relation₂ x y).parsed := by
@@ -1938,7 +1938,7 @@ theorem star_23_35
     (negation : signature.Negation order)
     (relation : Term signature real [] (relationSort order 0))
     (x y : Term signature real [] .individual)
-    (star_10_35_hypothesis : Star23Star10_35Hypothesis vocabulary
+    (star_10_35_hypothesis : PM.RamifiedSyntax.Star23Star10_35Hypothesis vocabulary
       (star_23_04_matrix negation relation) x y) :
     Derivation (star_23_35_reading vocabulary negation relation x y).parsed := by
   have line1 := eliminateRelationAbstraction vocabulary

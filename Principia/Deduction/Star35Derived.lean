@@ -141,7 +141,7 @@ theorem star_35_1
     (relation : Term signature real []
       (relationSort order relationExcess))
     (x y : Term signature real [] .individual)
-    (star_10_35_hypothesis : Star21EliminationHypothesis vocabulary
+    (star_10_35_hypothesis : PM.RamifiedSyntax.Star21EliminationHypothesis vocabulary
       (star_35_01 negation disjunction alpha.weaken.weaken
         relation.weaken.weaken (.apparent .zero) (.apparent (.succ .zero))) x y) :
     Derivation (.assertion (star_21_3_formula
@@ -194,7 +194,7 @@ theorem star_35_101
       (relationSort order relationExcess))
     (beta : Term signature real [] (classSort order classExcess))
     (x y : Term signature real [] .individual)
-    (star_10_35_hypothesis : Star21EliminationHypothesis vocabulary
+    (star_10_35_hypothesis : PM.RamifiedSyntax.Star21EliminationHypothesis vocabulary
       (star_35_02 negation disjunction relation.weaken.weaken
         beta.weaken.weaken (.apparent .zero) (.apparent (.succ .zero))) x y) :
     Derivation (.assertion (star_21_3_formula
@@ -250,7 +250,7 @@ theorem star_35_102
       (relationSort order relationExcess))
     (beta : Term signature real [] (classSort order rightClassExcess))
     (x y : Term signature real [] .individual)
-    (star_10_35_hypothesis : Star21EliminationHypothesis vocabulary
+    (star_10_35_hypothesis : PM.RamifiedSyntax.Star21EliminationHypothesis vocabulary
       (star_35_03 negation disjunction alpha.weaken.weaken
         relation.weaken.weaken beta.weaken.weaken (.apparent .zero)
         (.apparent (.succ .zero))) x y) :
@@ -303,7 +303,7 @@ theorem star_35_103
     (alpha : Term signature real [] (classSort order leftClassExcess))
     (beta : Term signature real [] (classSort order rightClassExcess))
     (x y : Term signature real [] .individual)
-    (star_10_35_hypothesis : Star21EliminationHypothesis vocabulary
+    (star_10_35_hypothesis : PM.RamifiedSyntax.Star21EliminationHypothesis vocabulary
       (star_35_04 negation disjunction alpha.weaken.weaken beta.weaken.weaken
         (.apparent .zero) (.apparent (.succ .zero))) x y) :
     Derivation (.assertion (star_21_3_formula

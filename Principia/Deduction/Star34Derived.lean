@@ -176,7 +176,7 @@ theorem star_34_1
     (right : Term signature real []
       (relationSort relationOrder rightExcess))
     (x z : Term signature real [] .individual)
-    (star_10_35_hypothesis : Star21EliminationHypothesis vocabulary
+    (star_10_35_hypothesis : PM.RamifiedSyntax.Star21EliminationHypothesis vocabulary
       (star_34_01 existential negation disjunction left.weaken.weaken
         right.weaken.weaken (.apparent .zero) (.apparent (.succ .zero))) x z) :
     Derivation (.assertion (star_21_3_formula
@@ -231,7 +231,7 @@ theorem star_34_5
     (relation : Term signature real []
       (relationSort relationOrder relationExcess))
     (x y : Term signature real [] .individual)
-    (star_10_35_hypothesis : Star21EliminationHypothesis vocabulary
+    (star_10_35_hypothesis : PM.RamifiedSyntax.Star21EliminationHypothesis vocabulary
       (star_34_02 existential negation disjunction relation.weaken.weaken
         (.apparent .zero) (.apparent (.succ .zero))) x y) :
     Derivation (.assertion (star_21_3_formula
