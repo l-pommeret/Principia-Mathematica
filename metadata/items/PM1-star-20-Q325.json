@@ -58,9 +58,10 @@
         "failed_criteria": [
           "T1",
           "T2",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "fd08e1d479204147e995c1b029de2b764e5ba877"
+        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
       }
     },
     {
@@ -71,7 +72,7 @@
       "scan_leaf": 230,
       "formal_scope": "exact unary class-function reducibility in the unramified Lean embedding",
       "source_status": "source-catalogued",
-      "formal_status": "unbuilt",
+      "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -90,14 +91,17 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "unbuilt",
+        "tier": "lean-typechecked",
         "failed_criteria": [
-          "T1",
-          "T2",
-          "T8"
+          "T4",
+          "T7",
+          "T8",
+          "T9"
         ],
-        "computed_at_commit": "fd08e1d479204147e995c1b029de2b764e5ba877"
-      }
+        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+      },
+      "declaration": "PM.RamifiedSyntax.star_20_7",
+      "lean_path": "Principia/Deduction/Star20Derived.lean"
     },
     {
       "id": "PM1:✱20·701",
@@ -107,7 +111,7 @@
       "scan_leaf": 230,
       "formal_scope": "exact class/object binary reducibility with both formal argument places",
       "source_status": "source-catalogued",
-      "formal_status": "unbuilt",
+      "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -128,14 +132,17 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "unbuilt",
+        "tier": "lean-typechecked",
         "failed_criteria": [
-          "T1",
-          "T2",
-          "T8"
+          "T4",
+          "T7",
+          "T8",
+          "T9"
         ],
-        "computed_at_commit": "fd08e1d479204147e995c1b029de2b764e5ba877"
-      }
+        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+      },
+      "declaration": "PM.RamifiedSyntax.star_20_701",
+      "lean_path": "Principia/Deduction/Star20Derived.lean"
     },
     {
       "id": "PM1:✱20·702",
@@ -145,7 +152,7 @@
       "scan_leaf": 230,
       "formal_scope": "exact object/class binary reducibility with reversed argument places",
       "source_status": "source-catalogued",
-      "formal_status": "unbuilt",
+      "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -164,14 +171,16 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "unbuilt",
+        "tier": "lean-typechecked",
         "failed_criteria": [
-          "T1",
-          "T2",
+          "T4",
+          "T7",
           "T8"
         ],
-        "computed_at_commit": "fd08e1d479204147e995c1b029de2b764e5ba877"
-      }
+        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+      },
+      "declaration": "PM.RamifiedSyntax.star_20_702",
+      "lean_path": "Principia/Deduction/Star20Derived.lean"
     },
     {
       "id": "PM1:✱20·703",
@@ -181,7 +190,7 @@
       "scan_leaf": 230,
       "formal_scope": "exact two-class binary reducibility with both formal class places",
       "source_status": "source-catalogued",
-      "formal_status": "unbuilt",
+      "formal_status": "lean-typechecked",
       "integration_status": "provisional-kernel-integrated",
       "parser_status": "reviewed-gap",
       "parser_evidence": "reviews/mass-catalogue-parser-gaps-2026-08-14.md",
@@ -216,14 +225,17 @@
         "editorial_note": "The theorem-specific closed Lean certificate retains exactly its audited direct kernel closure; remaining printed citations are internal to reused contracts or discharged by direct logical normalization."
       },
       "certification": {
-        "tier": "unbuilt",
+        "tier": "lean-typechecked",
         "failed_criteria": [
-          "T1",
-          "T2",
-          "T8"
+          "T4",
+          "T7",
+          "T8",
+          "T9"
         ],
-        "computed_at_commit": "fd08e1d479204147e995c1b029de2b764e5ba877"
-      }
+        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+      },
+      "declaration": "PM.RamifiedSyntax.star_20_703",
+      "lean_path": "Principia/Deduction/Star20Derived.lean"
     }
   ],
   "ci_evidence": {

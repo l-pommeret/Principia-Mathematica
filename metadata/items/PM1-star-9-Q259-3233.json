@@ -37,7 +37,7 @@
       "scan_leaf": 162,
       "formal_scope": "right injection into a universal first-order disjunction",
       "source_status": "source-catalogued",
-      "formal_status": "unbuilt",
+      "formal_status": "lean-typechecked",
       "integration_status": "provisional-first-order-kernel-integrated",
       "pm_migration_status": "blocked",
       "pm_ast": "FirstOrderQ259.star_9_32_target q φ",
@@ -71,15 +71,16 @@
         "editorial_note": "The Lean body expands PM’s compressed or cross-referenced proof into explicit typed inference constructors and definitional readings."
       },
       "certification": {
-        "tier": "unbuilt",
+        "tier": "lean-typechecked",
         "failed_criteria": [
-          "T1",
-          "T2",
+          "T4",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "fd08e1d479204147e995c1b029de2b764e5ba877"
-      }
+        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+      },
+      "declaration": "PM.RamifiedSyntax.star_9_32",
+      "lean_path": "Principia/Deduction/Star9Derived.lean"
     },
     {
       "id": "PM1:✱9·33",
@@ -89,7 +90,7 @@
       "scan_leaf": 162,
       "formal_scope": "right injection into an existential first-order disjunction",
       "source_status": "source-catalogued",
-      "formal_status": "unbuilt",
+      "formal_status": "lean-typechecked",
       "integration_status": "provisional-first-order-kernel-integrated",
       "printed_dependencies": [
         "Proof as above"
@@ -120,15 +121,16 @@
         "editorial_note": "The Lean body expands PM’s compressed or cross-referenced proof into explicit typed inference constructors and definitional readings."
       },
       "certification": {
-        "tier": "unbuilt",
+        "tier": "lean-typechecked",
         "failed_criteria": [
-          "T1",
-          "T2",
+          "T4",
           "T7",
           "T8"
         ],
-        "computed_at_commit": "fd08e1d479204147e995c1b029de2b764e5ba877"
-      }
+        "computed_at_commit": "346dae17b0b4d198b908d8fca03996c5d671789f"
+      },
+      "declaration": "PM.RamifiedSyntax.star_9_33",
+      "lean_path": "Principia/Deduction/Star9Derived.lean"
     }
   ]
 }

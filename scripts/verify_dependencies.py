@@ -96,6 +96,8 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     # Kernel arithmetic reassociation used internally by the typed finite
     # relation-power infrastructure (✱91), not a historical PM citation.
     "Nat.add_assoc",
+    # Kernel successor on natural numbers, used for ramified order arithmetic.
+    "Nat.succ",
     "RightGenerated.base",
     "RightGenerated.step",
     "And.left",
@@ -151,6 +153,29 @@ KNOWN_SYNTAX_INFRASTRUCTURE = {
     # indexed closed matrix-schema judgement below.
     "FirstOrderQ259.star_9_3_target",
     "Star921MatrixKernel.star_9_3_ordered_target",
+    # Formula-level syntax operations: substitution, renaming, instantiation,
+    # casting and the ✱11 stability helpers built from them. They form and
+    # inspect indexed syntax and can never be a PM citation. Widening the
+    # audited tiers brought the ✱11 proofs into scope, which is how these
+    # surfaced; they were always carrier infrastructure.
+    "Formula.instantiate",
+    "Formula.substitute_cast",
+    "Formula.substitute_of_pointwise",
+    "Formula.substitute_eq_self",
+    "Formula.closed_substitute",
+    "Formula.rename_substitute_of_pointwise",
+    "Formula.weakenReal_cast",
+    "Formula.star11AlwaysStable",
+    "Formula.star11AlwaysStable_weakenReal_instantiate",
+    "Formula.star11SometimesStable",
+    "Formula.star11SometimesStableRaw",
+    "Formula.star11SometimesStableRaw_normalize",
+    "Formula.star11SometimesStable_weakenReal_instantiate",
+    "Formula.star11FixSecond",
+    "Formula.star11FixSecond_implication",
+    "Formula.star11Implication_weakenReal_instantiate",
+    "Formula.star11CastCongr",
+    "Formula.star11FixSecond_shift",
 }
 
 # Theorem-specific records may name fields after mathematical operations
@@ -516,7 +541,12 @@ def reject_unindexed_references(item: dict, body: str, candidates: set[str]) -> 
     }
     indexed_short = {name.rsplit(".", 1)[-1] for name in candidates}
     for token in re.findall(r"\b[A-Z][A-Za-z0-9_']*(?:\.[A-Za-z0-9_']+)+", proof):
-        if token in CALCULUS_TYPES:
+        # The same allowlist the two checks below already consult. Kernel
+        # carrier names such as Nat.succ can never be a PM citation, and
+        # demanding an index entry for one reports a defect that does not
+        # exist. Widening the audited tiers brought proofs into scope that use
+        # them, which is how the omission surfaced.
+        if token in CALCULUS_TYPES or token in KNOWN_SYNTAX_INFRASTRUCTURE:
             continue
         if token not in candidates and token.rsplit(".", 1)[-1] not in indexed_short:
             raise DependencyError(f"{item['id']}: unindexed qualified Lean reference {token}")
